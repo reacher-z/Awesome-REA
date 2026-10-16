@@ -533,28 +533,5 @@
       "binary",
       "firmware"
     ]
-  },
-  {
-    "id": "rea-upstream",
-    "name": "REA — Reverse Engineer Anything",
-    "url": "https://github.com/morluto/rea",
-    "category": "core",
-    "relationship": "official-core",
-    "description_en": "The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior.",
-    "description_zh": "REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。",
-    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/README.md",
-    "verified_at": "2026-10-15",
-    "verification": "source-reviewed",
-    "requirements": [
-      "rea-agents 6.5.0 was the published npm version at review time.",
-      "Node.js ^22.19.0 || ^24.11.0 || >=26.0.0; additional tools depend on the target."
-    ],
-    "targets": [
-      "website",
-      "game",
-      "app",
-      "binary",
-      "firmware"
-    ]
   }
 ]
