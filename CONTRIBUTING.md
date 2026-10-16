@@ -38,3 +38,7 @@ Do not commit local credentials, application data, raw captures containing perso
 ## Review
 
 Catalog JSON and both README sections are validated together. Contributions should preserve link provenance and avoid unsupported claims of compatibility, accuracy, or endorsement. The repository's MIT license applies to original contributions; linked work keeps its own license.
+
+## Automated review and deployment
+
+Pull requests receive a [rule-based catalog review](docs/automation.md) from trusted base-branch code. It checks data and flags common privacy mistakes without running contributor code or automatically approving changes. CI validates the site and original lab; maintainers review code and compatibility claims. Website build and publication details are in the [website guide](docs/website.md).
