@@ -1,0 +1,4 @@
+/fonts/*
+  Access-Control-Allow-Origin: *
+/fontawesome.css
+  Access-Control-Allow-Origin: *

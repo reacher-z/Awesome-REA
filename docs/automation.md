@@ -8,7 +8,7 @@ The repository validates changes in CI and posts a rule-based review on pull req
 
 The reviewer also checks added patch text for common credential patterns, personal absolute paths, private configuration, raw output, and licensed font files. Reports identify the file and problem without repeating suspected secrets. Pattern checks are a backstop, not a complete secret audit.
 
-The job can write a review comment but does not check out or run the contributor's code, fetch contributor-provided external links, approve the PR, or merge it. Code and workflow changes remain subject to maintainer review. Reviews are attached to a specific head commit, and duplicate reviews of that commit are skipped.
+The job can write a review comment but does not check out or run the contributor's code, fetch contributor-provided external links, approve the PR, or merge it. Code and workflow changes remain subject to maintainer review. Reviews are attached to a specific head commit. Every run revalidates the data; a repeated run updates the existing bot review and preserves the current check result.
 
 ## Continuous integration
 

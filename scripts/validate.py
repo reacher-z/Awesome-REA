@@ -29,7 +29,7 @@ BENCHMARK_CATEGORIES = {
     'adjacent_catalog', 'official_skill_reference', 'workflow_product',
     'mature_re_tool', 'agent_re_tool',
 }
-IGNORED_DIRS = {'.git', 'node_modules', 'dist', 'output', '.venv', 'venv', '__pycache__'}
+IGNORED_DIRS = {'.git', 'node_modules', 'dist', 'output', '.cache', '.wrangler', '.venv', 'venv', '__pycache__'}
 
 
 def nonempty_string(value):
@@ -217,6 +217,55 @@ def validate_benchmarks(records, errors):
                 errors.append(f'{where}.observed_at: snapshot is in the future')
 
 
+def validate_source_index(document, errors):
+    if not isinstance(document, dict) or not isinstance(document.get('meta'), dict) or not isinstance(document.get('resources'), list):
+        errors.append('Source index must contain meta and resources.')
+        return 0
+    meta, records = document['meta'], document['resources']
+    if meta.get('status') != 'complete':
+        errors.append('Source index is an incomplete checkpoint; finish the scan before publication.')
+    if meta.get('successful_readme_scans') != len(records) or len(records) <= 1500:
+        errors.append('Source index must retain more than 1,500 successful scans and matching counts.')
+    failures = document.get('failures', [])
+    if not isinstance(failures, list) or meta.get('failed') != len(failures):
+        errors.append('Source index failure count does not match the recorded failures.')
+    if meta.get('attempted_readme_scans') != len(records) + len(failures):
+        errors.append('Source index attempted count must equal successful plus failed scans.')
+    ids, urls, names = set(), set(), set()
+    for index, record in enumerate(records):
+        where = f'source index record {index}'
+        if not isinstance(record, dict):
+            errors.append(f'{where}: expected an object')
+            continue
+        for field, seen in [('id', ids), ('url', urls), ('full_name', names)]:
+            value = record.get(field)
+            if not nonempty_string(value) or value.casefold() in seen:
+                errors.append(f'{where}: missing or duplicate {field}')
+            else:
+                seen.add(value.casefold())
+        if record.get('scan_status') != 'readme-scanned' or record.get('verification') != 'automated-readme-scan':
+            errors.append(f'{where}: preserve automated scan labels')
+        for field in ('url', 'readme_url'):
+            if public_https_error(record.get(field)):
+                errors.append(f'{where}: invalid public {field}')
+        if record.get('url') != 'https://github.com/' + str(record.get('full_name', '')):
+            errors.append(f'{where}: repository URL and full_name disagree')
+        if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
+            errors.append(f'{where}: missing README SHA-256')
+        if type(record.get('readme_bytes')) is not int or record['readme_bytes'] <= 0:
+            errors.append(f'{where}: missing positive README byte count')
+        targets = record.get('targets')
+        if not isinstance(targets, list) or any(target not in TARGETS for target in targets):
+            errors.append(f'{where}: invalid automatic target labels')
+        if type(record.get('stars')) is not int or record['stars'] < 0:
+            errors.append(f'{where}: stars must be a nonnegative snapshot count')
+        try:
+            parse_iso(record.get('observed_at'), require_time=True)
+        except (ValueError, TypeError):
+            errors.append(f'{where}: invalid scan timestamp')
+    return len(records)
+
+
 def prose_only(text):
     """Remove fenced/indented code while retaining line numbers."""
     lines, fence_char, fence_length = [], None, 0
@@ -336,6 +385,13 @@ def main():
     benchmarks = read_array(ROOT / 'data/benchmarks.json', errors)
     validate_resources(records, errors)
     validate_benchmarks(benchmarks, errors)
+    scanned = 0
+    index_path = ROOT / 'data/source-index.json'
+    if index_path.exists():
+        try:
+            scanned = validate_source_index(json.loads(index_path.read_text()), errors)
+        except (OSError, ValueError):
+            errors.append('Source index could not be read as JSON.')
     count = validate_markdown(ROOT, errors)
     result = subprocess.run([sys.executable, str(ROOT / 'scripts/build_readme.py'), '--check'],
                             cwd=ROOT, text=True, capture_output=True, check=False)
@@ -346,7 +402,7 @@ def main():
         for error in errors:
             print(f'- {error}', file=sys.stderr)
         return 1
-    print(f'Validated {len(records)} resources, {len(benchmarks)} benchmark snapshots, {count} Markdown files and both generated catalogs.')
+    print(f'Validated {len(records)} curated resources, {scanned} scanned sources, {len(benchmarks)} benchmark snapshots, {count} Markdown files and both generated catalogs.')
     return 0
 
 

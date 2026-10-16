@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Review catalog PRs with trusted base-branch code; never execute PR code."""
-import base64
 import json
+import html
 import os
 from pathlib import Path
 import re
@@ -10,7 +10,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from validate import validate_benchmarks, validate_resources, public_https_error
+from validate import validate_benchmarks, validate_resources, validate_source_index
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- awesome-rea-automated-review -->'
@@ -41,30 +41,6 @@ def content_at(repository, filename, sha, token):
     return api(repository, f'contents/{path}?ref={sha}', token, raw=True)
 
 
-def scan_index_errors(document):
-    errors = []
-    if not isinstance(document, dict) or not isinstance(document.get('resources'), list):
-        return ['Source index must contain a resources array.']
-    seen = set()
-    for index, record in enumerate(document['resources']):
-        if not isinstance(record, dict):
-            errors.append(f'Source index entry {index} must be an object.')
-            continue
-        identifier = record.get('id')
-        if not isinstance(identifier, str) or identifier in seen:
-            errors.append(f'Source index entry {index} has a missing or duplicate ID.')
-        else:
-            seen.add(identifier)
-        if record.get('scan_status') != 'readme-scanned':
-            errors.append(f'Source index entry {index} must preserve its automated scan status.')
-        for field in ('url', 'readme_url'):
-            if public_https_error(record.get(field)):
-                errors.append(f'Source index entry {index} has an invalid public {field}.')
-        if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
-            errors.append(f'Source index entry {index} needs a README SHA-256.')
-    return errors
-
-
 def review_data(contents, changed):
     errors, reviewed = [], []
     if set(CATALOGS) & changed:
@@ -86,7 +62,7 @@ def review_data(contents, changed):
             reviewed.append(f'{len(data)} benchmark records checked for timestamp, count, and source consistency.')
     if 'data/source-index.json' in changed:
         data = json.loads(contents['data/source-index.json'])
-        errors.extend(scan_index_errors(data))
+        validate_source_index(data, errors)
         reviewed.append('Automated source-index records checked separately from curated resources.')
     return errors, reviewed
 
@@ -94,8 +70,10 @@ def review_data(contents, changed):
 def safe_text(value):
     value = SENSITIVE.sub('[redacted credential-like value]', str(value))
     value = LOCAL_PATH.sub('[redacted local path]/', value)
-    value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f]', '', value)
-    return value.replace('`', "'").replace('@', '@\u200b')[:500]
+    value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f\u202a-\u202e\u2066-\u2069]', '', value)
+    value = ' '.join(value.split())[:500].replace('@', '@\u200b')
+    value = html.escape(value, quote=False)
+    return re.sub(r'([\\`*_{}\[\]()#+.!|])', r'\\\1', value)
 
 
 def main():
@@ -110,9 +88,11 @@ def main():
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise ValueError('Unexpected head SHA')
     reviews = api(repository, f'pulls/{number}/reviews?per_page=100', token)
-    if any(MARKER in review.get('body', '') and review.get('commit_id') == sha for review in reviews):
-        print('This commit already has an automated review.')
-        return
+    existing_review = next((review for review in reviews
+                            if review.get('user', {}).get('login') == 'github-actions[bot]'
+                            and review.get('user', {}).get('type') == 'Bot'
+                            and MARKER in review.get('body', '')
+                            and review.get('commit_id') == sha), None)
     files = []
     for page in range(1, 4):
         batch = api(repository, f'pulls/{number}/files?per_page=100&page={page}', token)
@@ -165,8 +145,12 @@ def main():
     if api(repository, f'pulls/{number}', token)['head']['sha'] != sha:
         print('PR head changed; the next run will review the new commit.')
         return
-    api(repository, f'pulls/{number}/reviews', token, method='POST',
-        payload={'commit_id': sha, 'event': 'COMMENT', 'body': '\n'.join(body)})
+    if existing_review:
+        api(repository, f"pulls/{number}/reviews/{int(existing_review['id'])}", token,
+            method='PUT', payload={'body': '\n'.join(body)})
+    else:
+        api(repository, f'pulls/{number}/reviews', token, method='POST',
+            payload={'commit_id': sha, 'event': 'COMMENT', 'body': '\n'.join(body)})
     print(f'Posted a rule-based review: {len(errors)} finding(s); no PR code executed.')
     if errors:
         sys.exit(1)

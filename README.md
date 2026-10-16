@@ -1,4 +1,6 @@
-[![Awesome REA — understand software, build from evidence](assets/readme-banner.svg)](https://awesomerea.org)
+[![Awesome Reverse Engineering Anything — understand software, build from evidence](assets/readme-banner.svg)](https://awesomerea.org)
+
+# Awesome Reverse Engineering Anything
 
 **A practical field guide to agent-assisted reverse engineering: choose a tool, trace a behavior, and keep the evidence.**
 
@@ -8,6 +10,8 @@
 English · [简体中文](README.zh-CN.md)
 
 **[Explore AwesomeREA.org](https://awesomerea.org)** — browse Website, Game, App, Binary, and Firmware resources.
+
+**81 curated resources · [1,600 scanned repository READMEs](https://awesomerea.org/?view=source-index#catalog) · 7 task workflows.** The broader source index is automatically scanned and kept separate from the curated collection. [Scan method and receipt](docs/source-scan.md).
 
 Start with [REA — Reverse Engineer Anything](https://github.com/morluto/rea), explore independent agent integrations, or follow a focused workflow below. This is an independent community collection. Each catalog record includes its original source, requirements, relationship to REA, and review date.
 
@@ -55,6 +59,7 @@ python3 scripts/catalog.py ghidra --language zh
 python3 scripts/catalog.py --relationship independent-agent-integration
 python3 scripts/catalog.py --list-categories
 python3 scripts/catalog.py android --json
+python3 scripts/catalog.py ghidra --source-index
 ```
 
 The [JSON catalog](data/README.md) is the source of truth. It is also usable by an agent without installing a skill or MCP server.

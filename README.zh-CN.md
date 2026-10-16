@@ -1,5 +1,7 @@
 [![Awesome REA — 理解软件行为，用证据支撑重建](assets/readme-banner.svg)](https://awesomerea.org)
 
+# Awesome Reverse Engineering Anything
+
 **Agent 辅助逆向工程资源指南：选工具、追踪行为、保留证据。**
 
 [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml)
@@ -8,6 +10,8 @@
 [English](README.md) · 简体中文
 
 **[访问 AwesomeREA.org](https://awesomerea.org)** — 按 Website、Game、App、Binary、Firmware 浏览资源。
+
+**81 条精选资源 · [1,600 个已扫描仓库 README](https://awesomerea.org/?view=source-index#catalog) · 7 类任务流程。** 自动扫描索引与人工审阅目录分开展示；扫描不等于运行测试或兼容性背书。[扫描方法与记录](docs/source-scan.md)。
 
 从 [REA — Reverse Engineer Anything](https://github.com/morluto/rea) 入门，按目标选择独立 Agent 集成、基础工具和学习资源。本项目是独立社区整理的资源库；每条记录包含原始来源、前置条件、与 REA 的关系和审阅日期。
 
@@ -53,6 +57,7 @@ python3 scripts/catalog.py ghidra --language zh
 python3 scripts/catalog.py --relationship independent-agent-integration
 python3 scripts/catalog.py --list-categories
 python3 scripts/catalog.py android --json
+python3 scripts/catalog.py ghidra --source-index
 ```
 
 [JSON 目录](data/README.md) 是条目的维护入口，Agent 也可直接读取，无需安装新的 skill 或 MCP 服务。
