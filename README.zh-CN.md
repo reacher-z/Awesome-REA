@@ -20,7 +20,7 @@
 
 **论文与更多资源**
 
-- [论文](#papers) (43) · [全部案例](https://awesomerea.org/zh/?view=curated&kind=case-study) (47) · [仓库索引](#完整仓库索引) (2,846)
+- [论文](#papers) (45) · [全部案例](https://awesomerea.org/zh/?view=curated&kind=case-study) (47) · [仓库索引](#完整仓库索引) (2,846)
 - [Agent 与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [学习资料](#references-and-learning) (17)
 <!-- END GENERATED CONTENTS -->
 
@@ -799,11 +799,11 @@
 <a id="papers"></a>
 ## 论文
 
-收录 **43 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
+收录 **45 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**按主题** · [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (7) · [网站](#papers-website-reconstruction) (12) · [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (5) · [固件](#papers-firmware-analysis) (4) · [协议](#papers-protocol-analysis) (4)
+**按主题** · [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (7) · [网站](#papers-website-reconstruction) (12) · [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (5) · [固件](#papers-firmware-analysis) (5) · [协议](#papers-protocol-analysis) (5)
 
 展开各条目的“范围与发表信息”可查看完整研究边界；以下按年份从新到旧排列。
 
@@ -1377,6 +1377,21 @@
 
   </details>
 
+- [**使用 Penguin 进行以目标为中心的固件重托管**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) · **2025 · 会议论文**
+
+  Penguin 以提取出的固件文件系统为输入，通过静态分析生成可编辑的仿真变换配置（如文件修改、伪文件、NVRAM 值和网络接口），用于重托管嵌入式 Linux 固件。动态分析插件揭示运行失败，便于针对具体目标完善配置；配置最小化工具则找出可用的重托管所必需的变换。
+
+  [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [代码](https://github.com/rehosting/penguin) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-penguin/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 面向嵌入式 Linux 固件，沿用 Firmadyne 和 FirmAE 的思路，采用替换内核的整机仿真；实现支持 x86、ARM 和 MIPS，并依赖 Linux 系统调用 ABI。与 FirmAE 对比时，判定成功的标准是有进程绑定 80 或 443 端口，更严格的检查是 HTTP 返回非空响应；作者指出两者都不代表系统功能完整。比 FirmAE 多出 75% 的结果由作者在其自建语料（13,649 个取自厂商网站的镜像）上报告。完善配置仍需分析人员参与；运行结果不完全确定，作者对配置最多重复运行十次。该工作构建的是分析环境，不代表忠实复现设备或恢复源代码。
+
+  **发表信息:** 2025 · Workshop on Binary Analysis Research (BAR) 2025 · 会议论文 · Andrew Fasano 等
+
+  </details>
+
 - [**Fuzzware：利用精确的 MMIO 建模提升固件模糊测试效果**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski) · **2022 · 会议论文**
 
   重托管单体 ARM Cortex-M 固件以开展模糊测试，利用局部符号执行为内存映射 I/O 访问建模，使输入变异集中于影响固件逻辑的值。
@@ -1439,6 +1454,21 @@
   **范围与限制:** 假设协议可抽象为有限 Mealy 状态机、已知输入字母表能到达相关状态，且决定状态的内存位于堆上并可由初始化查询触及。状态合并依赖所配置的搜索深度与符号执行前瞻上限。缺失的输入或存储在其他位置的状态可能导致行为未被建模；测试驱动程序构造的错误消息、响应抽象方式和超时也可能产生误导性转移。学习出的模型与有界检查不能证明实现完全等价，也不恢复未知消息格式或重建应用源代码。
 
   **发表信息:** 2022 · ACM CCS 2022 · 会议论文 · Chris McMahon Stone 等
+
+  </details>
+
+- [**基于自动机学习的蓝牙设备指纹识别与分析**](https://doi.org/10.1007/s10703-023-00425-y) · **2022 · 期刊论文**
+
+  通过主动自动机学习，为实体外设上的低功耗蓝牙（BLE）协议实现推断 Mealy 状态机模型。运行 SweynTooth 衍生固件的 nRF52840 中心设备发送抽象 BLE 输入，并以错误处理、重复查询和缓存应对丢包与不确定的响应。作者学习了六款设备的连接过程模型和其中三款的传统配对（legacy pairing）模型，并利用模型差异识别各设备的 SoC。
+
+  [PDF](https://arxiv.org/pdf/2211.16074v2) · [代码](https://github.com/apferscher/ble-learning) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-ble-automata-learning/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 模型受所选抽象输入字母表限制，仅覆盖连接过程和传统配对；不推断报文格式，安全配对留待后续研究。等价性仅以每个状态少量的一致性测试近似检验，因此模型只是假设而非证明。其中一款 SoC 只能缩减输入字母表后学习，两款设备从已建立连接的状态开始学习，部分配对实验还需人工硬重置设备。所得指纹识别序列仅适用于受测 SoC。除一条会导致设备崩溃的输入序列外，作者未在学习所得模型中发现安全漏洞。
+
+  **发表信息:** 2022 · Formal Methods in System Design · 期刊论文 · Andrea Pferscher 等
 
   </details>
 

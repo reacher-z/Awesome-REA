@@ -20,7 +20,7 @@ An independent collection reviewed against primary sources. **Source review does
 
 **Research and more**
 
-- [Papers](#papers) (43) · [All cases](https://awesomerea.org/?view=curated&kind=case-study) (47) · [Repository index](#full-repository-index) (2,846)
+- [Papers](#papers) (45) · [All cases](https://awesomerea.org/?view=curated&kind=case-study) (47) · [Repository index](#full-repository-index) (2,846)
 - [Agents & MCP](#agents-and-mcp) (18) · [Collections](#related-collections) (4) · [Learning](#references-and-learning) (17)
 <!-- END GENERATED CONTENTS -->
 
@@ -798,11 +798,11 @@ Independent projects and [REA](https://github.com/morluto/rea) resources are inc
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **43 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **45 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**By topic** · [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (7) · [Websites](#papers-website-reconstruction) (12) · [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (4) · [Protocols](#papers-protocol-analysis) (4)
+**By topic** · [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (7) · [Websites](#papers-website-reconstruction) (12) · [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (5) · [Firmware](#papers-firmware-analysis) (5) · [Protocols](#papers-protocol-analysis) (5)
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -1376,6 +1376,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 
   </details>
 
+- [**Target-Centric Firmware Rehosting with Penguin**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) · **2025 · Conference paper**
+
+  Penguin rehosts embedded Linux firmware from an extracted filesystem by deriving an editable configuration of emulation transformations, such as file changes, pseudofiles, NVRAM values and network interfaces, from static analysis. Dynamic-analysis plugins expose failures so the configuration can be refined for each target, and a minimizer identifies which transformations a working rehosting needs.
+
+  [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [Code](https://github.com/rehosting/penguin) · [Full entry & citation](https://awesomerea.org/papers/paper-penguin/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Targets embedded Linux firmware through whole-system emulation with kernel replacement, as in Firmadyne and FirmAE; the implementation covers x86, ARM and MIPS and relies on the Linux syscall ABI. In the FirmAE comparison, success means a process binds port 80 or 443; a non-empty HTTP response is a stricter check, and the authors note neither shows full functionality. The 75% gain over FirmAE is author-reported on their own corpus of 13,649 images from vendor websites. Refinement still needs an analyst, and nondeterministic runs were repeated up to ten times. It builds an analysis environment, not a faithful device reproduction or source recovery.
+
+  **Publication:** 2025 · Workshop on Binary Analysis Research (BAR) 2025 · Conference paper · Andrew Fasano et al.
+
+  </details>
+
 - [**Fuzzware: Using Precise MMIO Modeling for Effective Firmware Fuzzing**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski) · **2022 · Conference paper**
 
   Rehosts monolithic ARM Cortex-M firmware for fuzzing, using locally scoped symbolic execution to model memory-mapped I/O accesses and focus input mutations on values relevant to firmware logic.
@@ -1438,6 +1453,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
   **Scope and limits:** Assumes a finite Mealy-machine abstraction, a known input alphabet that can reach the relevant states, and state-defining memory on the heap exercised by bootstrap queries. State merging depends on configured search-depth and symbolic look-ahead bounds. Missing inputs or state stored elsewhere can leave behavior unmodeled; malformed harness messages, response abstraction and timeouts can create misleading transitions. Learned models and bounded checks do not establish full implementation equivalence, recover unknown message formats or reconstruct an application’s source code.
 
   **Publication:** 2022 · ACM CCS 2022 · Conference paper · Chris McMahon Stone et al.
+
+  </details>
+
+- [**Fingerprinting and analysis of Bluetooth devices with automata learning**](https://doi.org/10.1007/s10703-023-00425-y) · **2022 · Journal article**
+
+  Learns Mealy-machine models of Bluetooth Low Energy implementations on physical peripherals by active automata learning. An nRF52840 central running SweynTooth-derived firmware sends abstract BLE inputs, with error handling, repeated queries and caching for lost packets and non-deterministic replies. The authors learn connection-procedure models of six devices and legacy-pairing models of three, and use model differences to fingerprint their SoCs.
+
+  [PDF](https://arxiv.org/pdf/2211.16074v2) · [Code](https://github.com/apferscher/ble-learning) · [Full entry & citation](https://awesomerea.org/papers/paper-ble-automata-learning/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Models are bounded by the chosen abstract alphabet and cover only connection and legacy pairing; message formats are not inferred, and secure pairing is left to future work. Equivalence was approximated with a small number of conformance tests per state, so models are hypotheses, not proofs. One SoC was learnable only with reduced alphabets, two were learned from an already-connected state, and some pairing runs needed manual hard resets. The fingerprinting sequence holds only for the tested SoCs. Apart from one crashing input sequence, the authors report no security vulnerabilities in the learned models.
+
+  **Publication:** 2022 · Formal Methods in System Design · Journal article · Andrea Pferscher et al.
 
   </details>
 
