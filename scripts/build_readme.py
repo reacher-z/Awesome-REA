@@ -153,13 +153,16 @@ def entry_type(record, language):
     return ' · '.join(tags)
 
 
-def render_catalog(records, language):
+def render_catalog(records, language, paper_urls=frozenset()):
+    """One awesome-lint list item per resource; papers listed in the bibliography appear only there."""
     index = 0 if language == 'en' else 1
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text()) if language == 'zh' else {}
     groups = defaultdict(list)
     for record in records:
         if record['category'] not in CATEGORIES or record['relationship'] not in RELATIONSHIPS:
             raise ValueError(f"Unknown category or relationship for {record['id']}")
+        if record['url'] in paper_urls:
+            continue
         groups[collection_section(record)].append(record)
     lines = []
     for section, titles in COLLECTION_SECTIONS.items():
@@ -171,8 +174,8 @@ def render_catalog(records, language):
             name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
             description = plain_text(record[f'description_{language}'])
             metadata = plain_text(entry_type(record, language))
-            lines.extend([f"- **[{name}]({record['url']})** <sub>{metadata}</sub>", '',
-                          f"  {description}", ''])
+            lines.append(f"- [{name}]({record['url']}) - {description} <sub>{metadata}</sub>")
+        lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -236,11 +239,12 @@ def render_papers(papers, language):
             if paper['code_url']:
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
             lines.extend([
-                f"- [{title}]({paper['url']}) — **{metadata}**", '',
-                f"    {author} · " + ' · '.join(links), '',
-                '    ' + plain_text(paper[f'description_{language}']), '',
-                f"    **{'范围与限制' if zh else 'Scope and limits'}:** " + plain_text(paper[f'scope_limitations_{language}']), '',
+                f"- [{title}]({paper['url']}) - " + plain_text(paper[f'description_{language}'])
+                + f" <sub>**{metadata}** · {author} · " + ' · '.join(links) + '</sub>',
+                f"  <br><sub>**{'范围与限制' if zh else 'Scope and limits'}:** "
+                + plain_text(paper[f'scope_limitations_{language}']) + '</sub>',
             ])
+        lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -283,7 +287,7 @@ def main():
         for name, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
             path = ROOT / name
             current = path.read_text(encoding='utf-8')
-            expected = replace_catalog(current, render_catalog(records, language))
+            expected = replace_catalog(current, render_catalog(records, language, {paper['url'] for paper in papers}))
             expected = replace_papers(expected, render_papers(papers, language), language)
             if current != expected:
                 stale.append(name)
