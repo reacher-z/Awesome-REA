@@ -34,13 +34,13 @@
 
 ## 已有同名项目，定位需要更具体
 
-检索已确认至少两个同名 `awesome-rea`，不是无人占位的名字。`jyjyxt` 主打调查案例和证据，`kaixinbaba` 主打开源重建、兼容替代品及 REA 资源；两者都已有网站。另有专门的案例合集和 REA 作者自己的通用逆向清单。上述同题样本多数建于 2026 年 10 月，观察期很短；低 Star 不能用于证明需求不存在。[案例目录](https://github.com/jyjyxt/awesome-rea/blob/main/README.md)、[项目目录](https://github.com/kaixinbaba/awesome-rea/blob/main/README.md)、[上游作者清单](https://github.com/morluto/awesome-reverse-engineering/blob/main/README.md)
+检索已确认至少两个同名 `awesome-rea`，不是无人占位的名字。`jyjyxt` 主打调查案例和证据，`kaixinbaba` 主打开源重建、兼容替代品及 REA 资源；两者都已有网站。另有专门的案例合集和 REA 作者自己的通用逆向清单。上述同题样本多数建于 2026 年 10 月，观察期很短；低 Star 不能用于证明需求不存在。[案例目录](https://github.com/jyjyxt/awesome-rea/blob/934eb95fed94a8580901b9c3b6a40d20412954bb/README.md)、[项目目录](https://github.com/kaixinbaba/awesome-rea/blob/9e2a8c9eb98e384f59c447d7fa588e2b871bb359/README.md)、[上游作者清单](https://github.com/morluto/awesome-reverse-engineering/blob/c93a95169d94de9c1e9f39de0f4c865b48c7a9ed/README.md)
 
 建议英文副标题使用 **“Curated tools, reproducible workflows, and evidence for agent-assisted reverse engineering.”** 首屏直接给三个动作：选择分析对象、运行自带样例、查看预期证据。README 明确社区项目与上游的关系，避免让人误以为这是 REA 官方仓库。这个差异仍需通过用户使用来验证，不能只靠一句定位成立。
 
 ## 从 AAS 借什么
 
-核验时 AAS 的 README 标注版本为 **19.7.0**，自报 **2,690+ Skills**。它已经包含 CLI、本地 MCP、机器可读目录、专门的插件包和浏览器 Workbench。Core 当前支持发现、记录 Agent 选择、验证清单和预览计划；README 明确说明 Core 不负责推荐排序，apply/recovery 仍属实验路径。[README](https://github.com/sickn33/agentic-awesome-skills/blob/main/README.md)、[Core 指南](https://github.com/sickn33/agentic-awesome-skills/blob/main/docs/users/aas-core.md)
+核验时 AAS 的 README 标注版本为 **19.7.0**，自报 **2,690+ Skills**。它已经包含 CLI、本地 MCP、机器可读目录、专门的插件包和浏览器 Workbench。Core 当前支持发现、记录 Agent 选择、验证清单和预览计划；README 明确说明 Core 不负责推荐排序，apply/recovery 仍属实验路径。[README](https://github.com/sickn33/agentic-awesome-skills/blob/a3072641b750a1fb2f6ce695a5f984ea3d4c3ec1/README.md)、[Core 指南](https://github.com/sickn33/agentic-awesome-skills/blob/a3072641b750a1fb2f6ce695a5f984ea3d4c3ec1/docs/users/aas-core.md)
 
 | 可观察到的设计 | Awesome REA 首版做法 | 验证是否有用 |
 | --- | --- | --- |
@@ -50,7 +50,7 @@
 | 机器可读索引与网页目录 | 一份 JSON 生成 README 与可搜索网站 | 两个入口的条目、许可和验证状态是否一致 |
 | 模板、校验与人工审查 | 提交模板要求一手来源、用途、许可、验证级别与限制 | 新条目能否被独立审读，错误能否被纠正 |
 
-这些是产品设计建议，**没有证据证明其中某一项导致 AAS 获得 47,688 Stars**。首版不需要复制它的数千条内容、完整 CLI 或本地 MCP 服务；先验证选型和第一次成功的价值，再决定是否需要更复杂的分发工具。AAS 的源文件贡献、自动生成目录与人工逻辑审查方式值得参考。[贡献规范](https://github.com/sickn33/agentic-awesome-skills/blob/main/CONTRIBUTING.md)
+这些是产品设计建议，**没有证据证明其中某一项导致 AAS 获得 47,688 Stars**。首版不需要复制它的数千条内容、完整 CLI 或本地 MCP 服务；先验证选型和第一次成功的价值，再决定是否需要更复杂的分发工具。AAS 的源文件贡献、自动生成目录与人工逻辑审查方式值得参考。[贡献规范](https://github.com/sickn33/agentic-awesome-skills/blob/6197800e0eca61aea5bd76244b661abf4d8a0b6f/CONTRIBUTING.md)
 
 ## 30 天工作计划
 
@@ -79,10 +79,10 @@
 
 ## 会影响使用的核验细节
 
-- **AAS 不是全仓单一 MIT**：代码和工具 MIT，原创文字 CC-BY-4.0，第三方来源另行说明。[LICENSE-CONTENT](https://github.com/sickn33/agentic-awesome-skills/blob/main/LICENSE-CONTENT)
+- **AAS 不是全仓单一 MIT**：代码和工具 MIT，原创文字 CC-BY-4.0，第三方来源另行说明。[LICENSE-CONTENT](https://github.com/sickn33/agentic-awesome-skills/blob/a1e0adbed068ef8cf24e819e5929314b19ce2f9b/LICENSE-CONTENT)
 - **awesome-claude-code 有再利用限制**：当前 LICENSE 是 CC-BY-NC-ND-4.0，API 仅返回 `NOASSERTION`。本研究自行描述机制，不搬运其清单。[固定版本 LICENSE](https://github.com/hesreallyhim/awesome-claude-code/blob/21372d9e2dfb8bbeadff2b3a9907ee4c41569044/LICENSE)
-- **anthropics/skills 是混合许可**：多数示例 Apache-2.0；文档 Skills 为 source-available，README 明确不是开源。Composio 的 Apache-2.0 是 README 声明，API 没有识别到根许可证。[Anthropic README](https://github.com/anthropics/skills/blob/main/README.md)、[Composio README](https://github.com/ComposioHQ/awesome-claude-skills/blob/master/README.md#license)
+- **anthropics/skills 是混合许可**：多数示例 Apache-2.0；文档 Skills 为 source-available，README 明确不是开源。Composio 的 Apache-2.0 是 README 声明，API 没有识别到根许可证。[Anthropic README](https://github.com/anthropics/skills/blob/f458cee31a7577a47ba0c9a101976fa599385174/README.md)、[Composio README](https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md#license)
 - **许可证未知保留未知**：`jyjyxt`、`wtsxDev`、`alphaSeclab` 的 API 许可为 null，核验时根目录也未见 LICENSE；JSON 保留 null。x64dbg 的 LICENSE 是带插件例外的修改版 GPLv3 文本，API 返回 `NOASSERTION`。[x64dbg LICENSE](https://github.com/x64dbg/x64dbg/blob/4fc92664f0ea63136c07c68ea848a994ea2749c6/LICENSE)
-- **高 Star 不能替代迁移提示**：`mrexodia/ida-pro-mcp` 的 README 目前优先推荐 Hex-Rays 官方服务。目录若只同步 Star、忽略上游提示，就会把用户导向过时选择。[当前 README](https://github.com/mrexodia/ida-pro-mcp/blob/main/README.md)
+- **高 Star 不能替代迁移提示**：`mrexodia/ida-pro-mcp` 核验时的 README 优先推荐 Hex-Rays 官方服务。目录若只同步 Star、忽略上游提示，就会把用户导向过时选择。[核验时 README](https://github.com/mrexodia/ida-pro-mcp/blob/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md)
 
-本研究检查了官方仓库、README 和必要的许可证文件，未安装这些工具、未复现上游全部案例、未做安全或代码质量审计。仓库选择有意覆盖高关注参考与直接近邻，不是随机抽样，也不支持因果比较。`pushed_at` 只表示仓库推送时间；`readme_blob_sha` 用于辨识本次读取的 README 内容，不能误当成 Git 提交 ID。公开来源链接可能随 `main` 更新，Star 则是上述时间窗口的保留快照。
+本研究检查了官方仓库、README 和必要的许可证文件，未安装这些工具、未复现上游全部案例、未做安全或代码质量审计。仓库选择有意覆盖高关注参考与直接近邻，不是随机抽样，也不支持因果比较。`pushed_at` 只表示仓库推送时间；`readme_blob_sha` 用于辨识本次读取的 README 内容，不能误当成 Git 提交 ID。README 证据链接固定到观察时默认分支上最后修改该文件的提交，链接中的 README 与此哈希一致；其他 GitHub 文件链接固定到核验当时的提交，表格中的仓库主页仍指向当前内容。Star 则是上述时间窗口的保留快照。

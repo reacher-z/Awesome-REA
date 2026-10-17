@@ -15,7 +15,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/morluto/rea",
-      "https://github.com/morluto/rea/blob/main/README.md"
+      "https://github.com/morluto/rea/blob/c1fd496e6a1d3a08b30ee0f2157e827bb1049b58/README.md"
     ],
     "license": "MIT",
     "license_notes": "REA 原创代码为 MIT；第三方材料与外部分析工具保留各自条款。",
@@ -42,10 +42,10 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/sickn33/agentic-awesome-skills",
-      "https://github.com/sickn33/agentic-awesome-skills/blob/main/README.md",
-      "https://github.com/sickn33/agentic-awesome-skills/blob/main/CONTRIBUTING.md",
-      "https://github.com/sickn33/agentic-awesome-skills/blob/main/docs/users/aas-core.md",
-      "https://github.com/sickn33/agentic-awesome-skills/blob/main/LICENSE-CONTENT"
+      "https://github.com/sickn33/agentic-awesome-skills/blob/a3072641b750a1fb2f6ce695a5f984ea3d4c3ec1/README.md",
+      "https://github.com/sickn33/agentic-awesome-skills/blob/6197800e0eca61aea5bd76244b661abf4d8a0b6f/CONTRIBUTING.md",
+      "https://github.com/sickn33/agentic-awesome-skills/blob/a3072641b750a1fb2f6ce695a5f984ea3d4c3ec1/docs/users/aas-core.md",
+      "https://github.com/sickn33/agentic-awesome-skills/blob/a1e0adbed068ef8cf24e819e5929314b19ce2f9b/LICENSE-CONTENT"
     ],
     "license": "MIT (code); CC-BY-4.0 (original written content)",
     "license_notes": "README 和 LICENSE-CONTENT 区分代码与原创文字；第三方来源可能有不同许可证。",
@@ -70,7 +70,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/jyjyxt/awesome-rea",
-      "https://github.com/jyjyxt/awesome-rea/blob/main/README.md"
+      "https://github.com/jyjyxt/awesome-rea/blob/934eb95fed94a8580901b9c3b6a40d20412954bb/README.md"
     ],
     "license": null,
     "license_notes": "GitHub API 未识别许可证；核验时根目录未见 LICENSE，不能据此获得再分发授权。",
@@ -95,7 +95,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/kaixinbaba/awesome-rea",
-      "https://github.com/kaixinbaba/awesome-rea/blob/main/README.md",
+      "https://github.com/kaixinbaba/awesome-rea/blob/9e2a8c9eb98e384f59c447d7fa588e2b871bb359/README.md",
       "https://awesomerea.com/"
     ],
     "license": "MIT",
@@ -121,7 +121,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/songshikang0111/awesome-REA-cases",
-      "https://github.com/songshikang0111/awesome-REA-cases/blob/main/README.md"
+      "https://github.com/songshikang0111/awesome-REA-cases/blob/305da967206912faebb096fab8fba60ffca27842/README.md"
     ],
     "license": "MIT",
     "license_notes": "原创摘要、数据整理和代码为 MIT；外链内容保留各自权利。",
@@ -146,7 +146,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/DiscoverBox/awesome-ai-reverse",
-      "https://github.com/DiscoverBox/awesome-ai-reverse/blob/main/README.md"
+      "https://github.com/DiscoverBox/awesome-ai-reverse/blob/9e562ce75010fa45f42ee86cacc5e50f946996cd/README.md"
     ],
     "license": "MIT",
     "license_notes": "MIT 适用于列表；链接工具采用各自许可证。",
@@ -171,7 +171,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/morluto/awesome-reverse-engineering",
-      "https://github.com/morluto/awesome-reverse-engineering/blob/main/README.md"
+      "https://github.com/morluto/awesome-reverse-engineering/blob/c93a95169d94de9c1e9f39de0f4c865b48c7a9ed/README.md"
     ],
     "license": "CC0-1.0",
     "license_notes": "CC0-1.0 适用于目录；外部项目保持自己的许可证。",
@@ -195,7 +195,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/wtsxDev/reverse-engineering",
-      "https://github.com/wtsxDev/reverse-engineering/blob/master/README.md"
+      "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/README.md"
     ],
     "license": null,
     "license_notes": "GitHub API 未识别许可证；核验时根目录未见许可证文件。最后推送是 2023 年，条目时效需单独核验。",
@@ -219,7 +219,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/alphaSeclab/awesome-reverse-engineering",
-      "https://github.com/alphaSeclab/awesome-reverse-engineering/blob/master/Readme.md"
+      "https://github.com/alphaSeclab/awesome-reverse-engineering/blob/1a7445d2c7e3e42350a2556c70b469fb3429d49a/Readme.md"
     ],
     "license": null,
     "license_notes": "GitHub API 未识别许可证；核验时根目录未见许可证文件。最后推送是 2021 年，不能把累计 Star 当作近期活跃度。",
@@ -244,8 +244,8 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/punkpeye/awesome-mcp-servers",
-      "https://github.com/punkpeye/awesome-mcp-servers/blob/main/README.md",
-      "https://github.com/punkpeye/awesome-mcp-servers/blob/main/LICENSE"
+      "https://github.com/punkpeye/awesome-mcp-servers/blob/8a8b37d9a4c1c5e4fda88e6a56ba23d7755f6236/README.md",
+      "https://github.com/punkpeye/awesome-mcp-servers/blob/23a7558c5c9117e3381d122f20a2b01668c6be4e/LICENSE"
     ],
     "license": "MIT",
     "license_notes": "GitHub API 识别为 MIT；单个服务器拥有独立许可证。",
@@ -270,8 +270,8 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/VoltAgent/awesome-agent-skills",
-      "https://github.com/VoltAgent/awesome-agent-skills/blob/main/README.md",
-      "https://github.com/VoltAgent/awesome-agent-skills/blob/main/LICENSE"
+      "https://github.com/VoltAgent/awesome-agent-skills/blob/3cd17ca9f40796a5dc564ebc6d76b4aa1303ff07/README.md",
+      "https://github.com/VoltAgent/awesome-agent-skills/blob/83169c00a2e097906f391acb5a5679108cb82b9d/LICENSE"
     ],
     "license": "MIT",
     "license_notes": "目录 MIT；具体 Skill 应检查其来源仓库。",
@@ -296,7 +296,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/hesreallyhim/awesome-claude-code",
-      "https://github.com/hesreallyhim/awesome-claude-code/blob/main/README.md",
+      "https://github.com/hesreallyhim/awesome-claude-code/blob/c57b440b25a5c2a5a96bd06d6f42da89fc1486bb/README.md",
       "https://github.com/hesreallyhim/awesome-claude-code/blob/21372d9e2dfb8bbeadff2b3a9907ee4c41569044/LICENSE"
     ],
     "license": "CC-BY-NC-ND-4.0",
@@ -322,7 +322,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/ComposioHQ/awesome-claude-skills",
-      "https://github.com/ComposioHQ/awesome-claude-skills/blob/master/README.md"
+      "https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md"
     ],
     "license": "Apache-2.0 (README declaration)",
     "license_notes": "README 声明 Apache-2.0，但 GitHub API 未识别且根目录未见 LICENSE；子目录 Skill 可能使用其它许可证，复用前需查具体文件。",
@@ -347,7 +347,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/anthropics/skills",
-      "https://github.com/anthropics/skills/blob/main/README.md"
+      "https://github.com/anthropics/skills/blob/f458cee31a7577a47ba0c9a101976fa599385174/README.md"
     ],
     "license": "Mixed: Apache-2.0 examples; source-available document skills",
     "license_notes": "README 明确多数示例为 Apache-2.0，docx/pdf/pptx/xlsx 为 source-available、非开源；不存在可套用于全仓的单一开源许可。",
@@ -372,7 +372,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/obra/superpowers",
-      "https://github.com/obra/superpowers/blob/main/README.md"
+      "https://github.com/obra/superpowers/blob/bb92a77741419a4ab5f06e711a283343f1ada0c3/README.md"
     ],
     "license": "MIT",
     "license_notes": "GitHub API 与 README 均标注 MIT。",
@@ -396,7 +396,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/sindresorhus/awesome",
-      "https://github.com/sindresorhus/awesome/blob/main/readme.md"
+      "https://github.com/sindresorhus/awesome/blob/bc98e517ddca672f55f9857d714fc3ea3c3540b2/readme.md"
     ],
     "license": "CC0-1.0",
     "license_notes": "GitHub API 识别为 CC0-1.0；下游列表与项目独立授权。",
@@ -420,7 +420,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/NationalSecurityAgency/ghidra",
-      "https://github.com/NationalSecurityAgency/ghidra/blob/master/README.md"
+      "https://github.com/NationalSecurityAgency/ghidra/blob/864999d7ca67cd3f533be600860f102e54370661/README.md"
     ],
     "license": "Apache-2.0",
     "license_notes": "GitHub API 识别为 Apache-2.0；本研究未进行依赖和第三方组件许可审计。",
@@ -445,7 +445,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/x64dbg/x64dbg",
-      "https://github.com/x64dbg/x64dbg/blob/development/README.md",
+      "https://github.com/x64dbg/x64dbg/blob/ac4db12e133a3b2a91756fd2fbe864aa8dd1c453/README.md",
       "https://github.com/x64dbg/x64dbg/blob/4fc92664f0ea63136c07c68ea848a994ea2749c6/LICENSE"
     ],
     "license": "Modified GPLv3 text with plugin exception",
@@ -471,7 +471,7 @@
     ],
     "evidence_urls": [
       "https://api.github.com/repos/mrexodia/ida-pro-mcp",
-      "https://github.com/mrexodia/ida-pro-mcp/blob/main/README.md"
+      "https://github.com/mrexodia/ida-pro-mcp/blob/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md"
     ],
     "license": "MIT",
     "license_notes": "MCP 项目 MIT；IDA Pro 商业许可独立。当前推荐迁移的提示需与工具记录一同保留。",
