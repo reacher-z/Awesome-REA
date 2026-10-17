@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**432 个仓库** · 2026-10-16 UTC
+**434 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -33,6 +33,7 @@
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — 使用 Zygisk 在运行时转储 il2cpp 数据。 **[3,343 星标]**
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security（RMS）📱🔥：功能强大的 Web 界面，帮助你在运行时操控 Android 和 iOS 应用。 **[3,111 星标]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — 为 JADX 集成 MCP 服务器的插件。 **[2,906 星标]**
+- [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]**
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — 高级模糊测试库：使用 Rust 组合构建你的模糊测试器！可扩展到多核心和多机器，支持 Windows、Android、macOS、Linux、no_std 等。 **[2,660 星标]**
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]**
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]**
@@ -47,6 +48,7 @@
 - [nccgroup/house](https://github.com/nccgroup/house) — 基于 Frida、使用 Python 编写的移动应用运行时分析工具包，带有 Web GUI。 **[1,468 星标]**
 - [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — 本仓库包含一系列挑战，用于学习使用 Frida 进行 Android 漏洞利用。 **[1,331 星标]**
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]**
+- [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — 用于反编译和反汇编 React Native Hermes 字节码的逆向工程工具。 **[1,213 星标]**
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — 用于评估 Android 应用、逆向工程及恶意软件分析的虚拟机。 **[1,175 星标]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — 无需修改 DLL 文件（如 UnityEditor.dll），即可在运行时 hook C# 方法，支持 Windows、Mac 和 Android il2cpp（armv7a 与 armv8a）。 **[1,065 星标]**
@@ -64,6 +66,7 @@
 - [darbra/sign](https://github.com/darbra/sign) — 逆向分析应用参数的思路与经验，聚焦 Android 逆向。 **[675 星标]**
 - [evilpan/jni_helper](https://github.com/evilpan/jni_helper) — 在 APK 中查找 JNI 函数签名，并将其应用于逆向工程工具。 **[675 星标]**
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — 帮助你在 Android 平台上轻松使用 Frida 的工具。 **[654 星标]**
+- [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes 字节码逆向工程工具，可汇编与反汇编 Hermes 字节码。 **[642 星标]**
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — 轻量级仿真框架，用于仿真 iOS 可执行文件和库中的加密算法。 **[631 星标]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — 非官方的 VSCode Frida 扩展 **[592 星标]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Unity Android 应用 il2cpp 热更新完整解决方案的演示。更新 build_demo_apk 中的 Unity 路径后，执行即可一键重新构建补丁和 APK。由于 libunity 文件不会热更新，Unity 版本发生变化时此热更新方案不适用。 **[578 星标]**
@@ -172,9 +175,7 @@
 - [asmjmp0/AndroidRunnableJadx](https://github.com/asmjmp0/AndroidRunnableJadx) — 无需 Android 设备，直接在 Jadx 中运行 Android 的 Java 方法。 **[61 星标]**
 - [seedhollow/R3DNETWORK](https://github.com/seedhollow/R3DNETWORK) — 基于 LGL Mod Menu 的 Android 模组菜单模板，支持自动更新偏移量 **[58 星标]**
 - [ac3ss0r/frida-il2cpp-agent](https://github.com/ac3ss0r/frida-il2cpp-agent) — frida-il2cpp-bridge 库使用示例 **[57 星标]**
-- [fdfsdfsdfss/spacepeng-frida-playground](https://github.com/fdfsdfsdfss/spacepeng-frida-playground) — SpacePeng Trainer 2026：高级 Frida 脚本示例与游戏修改工具 **[55 星标]**
 - [Evil0ctal/Reverse-Engineering-Online-Toolkit](https://github.com/Evil0ctal/Reverse-Engineering-Online-Toolkit) — Reverse Engineering Online Toolkit（REOT）是纯前端实现的在线逆向工程与爬虫工具箱，为安全研究人员、逆向工程师、爬虫工程师和开发者提供便捷、高效、无需安装的工具，处理常见的编码、解码、加密、解密及数据转换操作。 **[54 星标]**
-- [Spleefy167/frida-orbit-lab](https://github.com/Spleefy167/frida-orbit-lab) — SpacePeng Trainer Frida 脚本与游戏修改示例，2026 版 **[53 星标]**
 - [vaibhavpandeyvpz/deapk](https://github.com/vaibhavpandeyvpz/deapk) — DeAPK 是开源在线 APK 反编译器，可上传 APK 并反编译为 Smali 或 Java 源码。采用 Laravel、Vue.js、Bootstrap、FontAwesome、Pusher、Redis、MySQL、apktool 和 jadx 构建，托管于 Oracle 云平台。 **[52 星标]**
 - [jbro129/Universal-Unity-NoClip](https://github.com/jbro129/Universal-Unity-NoClip) — 在 Unity 游戏（Mono/IL2CPP）中创建穿墙模组的通用方法 **[50 星标]**
 - [irrisolto/skyscanner](https://github.com/irrisolto/skyscanner) — 用于与 Skyscanner 航班和租车 API 交互的 Python 客户端库 **[49 星标]**
@@ -186,6 +187,7 @@
 - [harismuneer/AndroCompare](https://github.com/harismuneer/AndroCompare) — ⚙️ 高效深入比较两个 Android 应用的工具。 **[38 星标]**
 - [Octowolve/il2cpp-hacking](https://github.com/Octowolve/il2cpp-hacking) — 上游仓库未提供项目简介。 **[38 星标]**
 - [ZemerTeam/zemer-cipher](https://github.com/ZemerTeam/zemer-cipher) — 用于 YouTube cipher 去混淆、n-transform 和 PoToken（BotGuard）生成的独立 Android 库（Kotlin），具备可自修复的远程播放器配置。 **[38 星标]**
+- [BroNils/aotopsy](https://github.com/BroNils/aotopsy) — Flutter/Dart AOT 快照静态分析器：无需嵌入或执行 Dart VM，即可从 libapp.so 恢复函数名、类层级、调用图和行为线索。支持 ARM64、x86_64 以及 Dart 2.10–3.12。 **[37 星标]**
 - [YuutaTsubasa/ChaotixRecompiled](https://github.com/YuutaTsubasa/ChaotixRecompiled) — 将 Sega 32X 游戏《Knuckles' Chaotix》静态重编译为原生 C++，支持 Windows／Linux／macOS／Android 和真正的宽屏。需自备 ROM，不包含游戏数据。 **[37 星标]**
 - [AyaanB-DotCom/android-tv-supply-chain-malware](https://github.com/AyaanB-DotCom/android-tv-supply-chain-malware) — 对一款 25 美元的 Android 电视盒进行硬件层面的固件提取和恶意软件分析 **[36 星标]**
 - [FirmwareDroid/FirmwareDroid](https://github.com/FirmwareDroid/FirmwareDroid) — FirmwareDroid 是用于分析 Android 固件和应用的框架。 **[36 星标]**

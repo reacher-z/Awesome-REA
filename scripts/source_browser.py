@@ -22,7 +22,8 @@ RECORD_FIELDS = (
     'readme_url', 'readme_path', 'readme_sha256', 'readme_git_sha', 'readme_bytes',
     'readme_content_git_sha', 'readme_git_sha_matches_content', 'readme_integrity_review',
     'scan_status', 'verification', 'requirements',
-    'classification_origin', 'classification_reference_ids', 'scope_status', 'related_entries',
+    'classification_origin', 'classification_reference_ids', 'scan_classification',
+    'scope_status', 'related_entries',
 )
 REQUIRED_FIELDS = frozenset({
     'id', 'full_name', 'url', 'description_en', 'description_zh', 'description_original',

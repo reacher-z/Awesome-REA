@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**432 repositories** · 2026-10-16 UTC
+**434 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -33,6 +33,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — Plugin for JADX to integrate MCP server **[2,906 stars]**
+- [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]**
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — Advanced Fuzzing Library - Slot your Fuzzer together in Rust! Scales across cores and machines. For Windows, Android, MacOS, Linux, no_std, ... **[2,660 stars]**
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — Hand-crafted Frida examples **[2,539 stars]**
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC is a super FAST and lightweight Android decompiler designed for Agents/Mobile Researchers. **[2,410 stars]**
@@ -47,6 +48,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nccgroup/house](https://github.com/nccgroup/house) — A runtime mobile application analysis toolkit with a Web GUI, powered by Frida, written in Python. **[1,468 stars]**
 - [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]**
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
+- [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]**
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — hook C# method at runtime without modify dll file (such as UnityEditor.dll), works on Windows, Mac, Android il2cpp(armv7a and armv8a) **[1,065 stars]**
@@ -64,6 +66,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [darbra/sign](https://github.com/darbra/sign) — Ideas and experiences in reverse engineering app parameters, focused on Android. **[675 stars]**
 - [evilpan/jni_helper](https://github.com/evilpan/jni_helper) — Find JNI function signatures in APK and apply to reverse-engineering tools. **[675 stars]**
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — A tool that helps you work with frida easily for Android platform **[654 stars]**
+- [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]**
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — A lightweight emulation framework for emulating cryptographic algorithms in iOS executables and libraries. **[631 stars]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Demo of a complete hot-update solution for Unity Android IL2CPP apps. Update the Unity path in build_demo_apk, then run it to rebuild the patch and APK in one step. The libunity file is not hot-updated, so this solution does not apply if the Unity version changes. **[578 stars]**
@@ -172,9 +175,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [asmjmp0/AndroidRunnableJadx](https://github.com/asmjmp0/AndroidRunnableJadx) — run java method of Android in Jadx without Android device. **[61 stars]**
 - [seedhollow/R3DNETWORK](https://github.com/seedhollow/R3DNETWORK) — Android Mod Menu Template based on LGL Mod Menu with auto update offsets **[58 stars]**
 - [ac3ss0r/frida-il2cpp-agent](https://github.com/ac3ss0r/frida-il2cpp-agent) — Example of frida il2cpp bridge library usage **[57 stars]**
-- [fdfsdfsdfss/spacepeng-frida-playground](https://github.com/fdfsdfsdfss/spacepeng-frida-playground) — SpacePeng Trainer 2026: Advanced Frida Script Examples &amp; Game Hacks **[55 stars]**
 - [Evil0ctal/Reverse-Engineering-Online-Toolkit](https://github.com/Evil0ctal/Reverse-Engineering-Online-Toolkit) — Reverse Engineering Online Toolkit (REOT) is a browser-only toolkit for reverse engineering and web scraping. It provides security researchers, reverse engineers, web scraping engineers, and developers with convenient, efficient tools that require no installation, covering common encoding, decoding, encryption, decryption, and data conversion tasks. **[54 stars]**
-- [Spleefy167/frida-orbit-lab](https://github.com/Spleefy167/frida-orbit-lab) — SpacePeng Trainer Frida Scripts and Game Hacking Examples 2026 **[53 stars]**
 - [vaibhavpandeyvpz/deapk](https://github.com/vaibhavpandeyvpz/deapk) — DeAPK is an open-source, online APK decompiler which lets you upload an APK and then decompile it to Smali or Java sources. It is built using Laravel, Vue.js, Bootstrap, FontAwesome, Pusher, Redis, MySQL, apktool, jadx and hosted atop Oracle cloud platform. **[52 stars]**
 - [jbro129/Universal-Unity-NoClip](https://github.com/jbro129/Universal-Unity-NoClip) — A universal way to create a noclip mod in Unity games (Mono/IIL2CPP) **[50 stars]**
 - [irrisolto/skyscanner](https://github.com/irrisolto/skyscanner) — A Python client library for interacting with the Skyscanner flight and car rental APIs **[49 stars]**
@@ -186,6 +187,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [harismuneer/AndroCompare](https://github.com/harismuneer/AndroCompare) — ⚙️ An efficient tool to do in-depth comparison of two android apps. **[38 stars]**
 - [Octowolve/il2cpp-hacking](https://github.com/Octowolve/il2cpp-hacking) — No description supplied by the upstream repository. **[38 stars]**
 - [ZemerTeam/zemer-cipher](https://github.com/ZemerTeam/zemer-cipher) — YouTube cipher deobfuscation, n-transform &amp; PoToken (BotGuard) generation - a standalone Android library (Kotlin) with self-healing remote player configs. **[38 stars]**
+- [BroNils/aotopsy](https://github.com/BroNils/aotopsy) — Static analyzer for Flutter/Dart AOT snapshots — recovers function names, class hierarchies, call graphs, and behavioral signals from libapp.so without embedding or executing the Dart VM. Supports ARM64 and x86_64, Dart 2.10–3.12. **[37 stars]**
 - [YuutaTsubasa/ChaotixRecompiled](https://github.com/YuutaTsubasa/ChaotixRecompiled) — Static recompilation of the Sega 32X game Knuckles' Chaotix into native C++ (Windows/Linux/macOS/Android), with true widescreen. Bring your own ROM; no game data included. **[37 stars]**
 - [AyaanB-DotCom/android-tv-supply-chain-malware](https://github.com/AyaanB-DotCom/android-tv-supply-chain-malware) — Hardware-level firmware extraction and malware analysis of a $25 Android TV box **[36 stars]**
 - [FirmwareDroid/FirmwareDroid](https://github.com/FirmwareDroid/FirmwareDroid) — FirmwareDroid is an analysis framework for Android firmware and Apps. **[36 stars]**

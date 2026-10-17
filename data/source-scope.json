@@ -1222,5 +1222,167 @@
     "readme_sha256": "90a3e94258fe9477838ac928f2e5ea13904ca99dce0db1346bfe6be49b01a124",
     "evidence_url": "https://github.com/yurixcode/flutter-overview/blob/master/README.md",
     "reviewed_at": "2026-10-16T12:05:34.623047Z"
+  },
+  "scan-1345928135": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the ShadowStrike IL2CPP overlay trainer through a Download badge linking to a separate github.io page and a placeholder Releases link; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过指向独立 github.io 页面的下载徽章和一个占位的 Releases 链接推广 ShadowStrike IL2CPP 覆盖层训练工具，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "945471106c529bfa7d239a0d2f1cb6778ce122c6681710b6a248d649ce904593",
+    "evidence_url": "https://github.com/BADDIV/punchline-arena-enhancer/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1345931397": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the Elysian Ledger companion for Disco Elysium, described as a portable binary, through a Download badge linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过指向独立 github.io 页面的下载徽章推广以便携程序形式提供的 Disco Elysium 伴侣工具 Elysian Ledger，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "5eee24b5ee545193149012a39f148404522f0b8c49da99e8d2144b957ad9bcde",
+    "evidence_url": "https://github.com/Pacool1980/disco-psychometry-probe/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1345958659": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the Megabonk Forge reaction-training application through a Download badge linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过指向独立 github.io 页面的下载徽章推广反应训练应用 Megabonk Forge，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "057808d8e8ead060b4b1411f1784c4d8b9442babbd551fdd66ab907dbfe56982",
+    "evidence_url": "https://github.com/egalaksonoputra-commits/MegaBonk-Sparring/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1345962589": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the MonstersAreComing-Chronicler session companion through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广会话记录工具 MonstersAreComing-Chronicler，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "f27972538092cb740bd54cff77a0dfef732a53116d1464f96400b92a1063dd10",
+    "evidence_url": "https://github.com/aryanrajug23nsut/MonsterTide-Tactician/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1345975706": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the ChronoVault save manager for Rebirth Pub through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Rebirth Pub 存档管理工具 ChronoVault，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "a05dafc1836dca71445e1e3837f4877658d2d37e5cafe0e5995ae4cb119f78ac",
+    "evidence_url": "https://github.com/udflk/Rebirth-Pub-Save-Forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1345986452": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Frida script suite for SpacePeng through a Download badge linking to a separate github.io page; setup starts from an extracted archive, its command examples name scripts it does not link, and it gives no format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过指向独立 github.io 页面的下载徽章推广 SpacePeng 的 Frida 脚本套件；安装从解压归档开始，命令示例中的脚本均未提供链接，也没有格式分析或逆向分析结果。",
+    "readme_sha256": "7400ba3a56830942a0cd9e0653a7657d467d99c93b31fd54f237be7e2a02b714",
+    "evidence_url": "https://github.com/fdfsdfsdfss/spacepeng-frida-playground/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380512906": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes an Anime Shop Simulator mod toolkit through repeated Download badges linking to a separate github.io page; apart from a one-sentence generic build note it links no source files and gives no format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Anime Shop Simulator 模组工具包；除一句笼统的构建说明外，未链接任何源码文件，也没有格式分析或逆向分析结果。",
+    "readme_sha256": "6c6451370759d7614addaed4310633a15384c6119b16f55d1e9ae5f2f487ddee",
+    "evidence_url": "https://github.com/andreibalakin18-ai/anime-shop-sim-clerk-brain/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380513661": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the Apprentice memory editor and runtime instrumentation suite through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广内存编辑与运行时插桩套件 Apprentice，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "87611c0436e3477e925bc52b9217dc9f6a20097583210f96fa9fa47801a00134",
+    "evidence_url": "https://github.com/malukbattah-hue/memory-forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380536736": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the RoomRunner Toolkit gameplay overlay for Cumrooms through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Cumrooms 游戏覆盖层工具 RoomRunner Toolkit，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "9de5534c6233648fa0d3f0135f1a422b475d642481d6ae55abc28ce641899ab0",
+    "evidence_url": "https://github.com/aldimirosilva/Cumrooms-PUNCH-Trainer-Suite/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380541632": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Disco Elysium trainer companion suite through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Disco Elysium 修改器伴侣套件，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "f4aa786f4370246b62ac8666ee949db23dc6f78a3f63700f576a6995625cf736",
+    "evidence_url": "https://github.com/BlackBikerss/Elysium-Skill-Forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380573010": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Magical Princess trainer companion for macOS through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 macOS 版 Magical Princess 修改器伴侣工具，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "3c3ee74a2641a85184a128ef3a3092755365a57ba240b505eafeb5d4dc0563ae",
+    "evidence_url": "https://github.com/LuisFernando56/PrincessTrainer-Forge-macOS/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380575055": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Megabonk trainer companion through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Megabonk 修改器伴侣工具，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "8bd7e8d156cf6c6744d87f29a044066a8ad2c58b47ea2c6bb7686461ad0bdc7f",
+    "evidence_url": "https://github.com/revendaguestus-pixel/Megabonk-Companion-Suite/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380576047": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Megabonk trainer companion through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Megabonk 修改器伴侣工具，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "4358dd175d95d7276610aa50ad7c0d972d505d22b3cd6e32599b88bf40708d8c",
+    "evidence_url": "https://github.com/obitokirecovery-cpu/Megabonk-Companion-Suite/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380579130": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Monsters Are Coming trainer companion suite through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Monsters Are Coming 修改器伴侣套件，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "dac583613f8069c962e96faa1f6bd93ab3e9e94bccb705bcf591903ded7c2a5d",
+    "evidence_url": "https://github.com/satishjadhav77485-blip/Monsters-Are-Coming-Companion/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380594280": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Rebirth Pub save editor through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Rebirth Pub 存档编辑器，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "b29c67aaa89918d858dc7e268c8dbb968d24cf3f484a5451576c3ea8980ec5fc",
+    "evidence_url": "https://github.com/Madlil007/Rebirth-Pub-Save-Forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380604796": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the OrbitKit game-instrumentation playground through repeated Download badges linking to a separate github.io page; it describes folders and examples without linking any files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广游戏插桩实验工具 OrbitKit；文中描述了目录和示例，但未链接任何文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "63aa4e8b45db3ef344550329d2699284ef3246d6d289e71fcd9a664fff7d0f8f",
+    "evidence_url": "https://github.com/Spleefy167/frida-orbit-lab/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380608491": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes a Taskbar Hero automation companion through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Taskbar Hero 自动化伴侣工具，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "db3c51380a08758280a734b05eded2e03483150501d102f4ad71e60435e0396c",
+    "evidence_url": "https://github.com/MrCopperDev/TaskbarHero-Forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1380615185": {
+    "decision": "exclude",
+    "reason_code": "game-promotion-page",
+    "reason_en": "The README promotes the ModForge-IL2Cpp Unity trainer framework through repeated Download badges linking to a separate github.io page; it links no source files and gives no build steps, format analysis or reverse-engineering findings.",
+    "reason_zh": "README 通过多个指向独立 github.io 页面的下载徽章推广 Unity IL2Cpp 修改器框架 ModForge-IL2Cpp，未链接任何源码文件，也没有构建步骤、格式分析或逆向分析结果。",
+    "readme_sha256": "533fbf91c47345acdcf6069dc7bb4e41ceaf4471cc5ee03f09426c671092a1e4",
+    "evidence_url": "https://github.com/stine814-sk/Il2Cpp-Trainer-Forge/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
   }
 }

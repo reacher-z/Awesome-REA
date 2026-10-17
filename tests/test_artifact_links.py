@@ -1,11 +1,14 @@
 """Offline checks for evidence boundaries and internal artifact navigation."""
 import copy
+import json
 from pathlib import Path
 import sys
 import unittest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from artifact_links import github_repository, with_artifact_links
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from artifact_links import (BUILD_CROSS_REFERENCE, CURATED_PRIMARY_CATEGORIES, github_repository,
+                            with_artifact_links, with_curated_labels)
 from build_browse_pages import repository_card
 
 
@@ -95,6 +98,87 @@ class ArtifactLinkTests(unittest.TestCase):
         row['related_entries'][0]['href_en'] = 'https://example.com/#paper-example'
         with self.assertRaises(ValueError):
             repository_card(row, 'en', False)
+
+
+def labeled(**changes):
+    return source(**{'targets': ['binary'], 'category': 'native-analysis',
+                     'classification_origin': 'automatic-metadata', 'classification_reference_ids': [], **changes})
+
+
+class CuratedLabelTests(unittest.TestCase):
+    def test_exact_roots_receive_curated_labels_beside_the_scan_labels(self):
+        records = [labeled()]
+        resources = [resource(targets=['app', 'protocol'], category='android')]
+        before = copy.deepcopy((records, resources))
+        row = with_curated_labels(records, resources)[0]
+        self.assertEqual((records, resources), before)
+        self.assertEqual((row['targets'], row['category']), (['app', 'binary', 'protocol'], 'android'))
+        self.assertEqual(row['classification_origin'], BUILD_CROSS_REFERENCE)
+        self.assertEqual(row['classification_reference_ids'], ['example-tool'])
+        self.assertEqual(row['scan_classification'], {
+            'targets': ['binary'], 'category': 'native-analysis',
+            'classification_origin': 'automatic-metadata', 'classification_reference_ids': []})
+        # Matching curated labels still record the build-time provenance.
+        row = with_curated_labels([labeled()], [resource(targets=['binary'], category='native-analysis')])[0]
+        self.assertEqual((row['targets'], row['classification_origin']), (['binary'], BUILD_CROSS_REFERENCE))
+
+    def test_scoped_unreviewed_and_mismatched_records_do_not_set_labels(self):
+        curated = dict(targets=['game'], category='game-analysis')
+        resources = [resource(id='guide', url='https://github.com/owner/project/blob/main/README.md', **curated),
+                     resource(id='docs', url='https://github.com/owner/project/tree/main/docs', **curated),
+                     resource(id='mirror', url='https://gitlab.com/owner/project', **curated),
+                     resource(id='unreviewed', verification='automated-readme-scan', **curated)]
+        self.assertEqual(with_curated_labels([labeled()], resources), [labeled()])
+        mismatched = labeled(full_name='Different/Repository')
+        self.assertEqual(with_curated_labels([mismatched], [resource(**curated)]), [mismatched])
+
+    def test_unmapped_categories_add_targets_without_moving_the_record(self):
+        row = with_curated_labels([labeled()], [resource(targets=['app'], category='agent-mcp')])[0]
+        self.assertNotIn('agent-mcp', CURATED_PRIMARY_CATEGORIES)
+        self.assertEqual((row['targets'], row['category']), (['app', 'binary'], 'native-analysis'))
+        self.assertEqual(CURATED_PRIMARY_CATEGORIES['protocol-analysis'], 'protocol-analysis')
+
+    def test_scan_time_cross_references_change_only_for_curated_additions(self):
+        scanned = labeled(classification_origin='curated-cross-reference', classification_reference_ids=['example-tool'])
+        current = [resource(targets=['binary'], category='native-analysis')]
+        self.assertEqual(with_curated_labels([scanned], current), [scanned])
+        added = with_curated_labels([scanned], [resource(targets=['binary', 'protocol'], category='native-analysis')])[0]
+        self.assertEqual((added['targets'], added['classification_origin']), (['binary', 'protocol'], BUILD_CROSS_REFERENCE))
+        self.assertEqual(added['scan_classification']['classification_origin'], 'curated-cross-reference')
+        # Removing a curated target never erases a label recorded at scan time.
+        self.assertEqual(with_curated_labels([scanned], [resource(targets=[], category='native-analysis')]), [scanned])
+
+    def test_derivation_is_idempotent_order_independent_and_reversible(self):
+        resources = [resource(id='b-tool', targets=['game'], category='game-analysis'),
+                     resource(id='a-tool', targets=['app'], category='dotnet')]
+        once = with_curated_labels([labeled()], resources)
+        self.assertEqual(once, with_curated_labels([labeled()], list(reversed(resources))))
+        self.assertEqual(once[0]['classification_reference_ids'], ['a-tool', 'b-tool'])
+        self.assertEqual(once[0]['category'], 'managed-code')
+        self.assertEqual(with_curated_labels(once, resources), once)
+        self.assertEqual(with_curated_labels(once, []), [labeled()])
+
+    def test_repository_data_keeps_scan_labels_and_exports_every_exact_match(self):
+        source_index = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
+        resources = [record for name in ('rea-resources.json', 'tool-resources.json')
+                     for record in json.loads((ROOT / 'data' / name).read_text(encoding='utf-8'))]
+        self.assertFalse([record['id'] for record in source_index
+                          if 'scan_classification' in record or record.get('classification_origin') == BUILD_CROSS_REFERENCE])
+        roots = {}
+        for resource_record in resources:
+            if github_repository(resource_record['url']):
+                roots.setdefault(github_repository(resource_record['url']), []).append(resource_record)
+        derived = {record['id']: record for record in with_curated_labels(source_index, resources)}
+        matched = [record for record in source_index if github_repository(record['url']) in roots]
+        self.assertTrue(matched)
+        for record in matched:
+            row = derived[record['id']]
+            for curated in roots[github_repository(record['url'])]:
+                self.assertTrue(set(curated['targets']) <= set(row['targets']), record['id'])
+                if curated['category'] in CURATED_PRIMARY_CATEGORIES:
+                    self.assertEqual(row['category'], CURATED_PRIMARY_CATEGORIES[curated['category']], record['id'])
+            if record['classification_origin'] == 'automatic-metadata':
+                self.assertEqual(row['classification_origin'], BUILD_CROSS_REFERENCE, record['id'])
 
 
 if __name__ == '__main__':

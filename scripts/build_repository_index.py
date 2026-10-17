@@ -5,8 +5,9 @@ from collections import defaultdict
 import json
 import sys
 
+from artifact_links import with_curated_labels
 from build_readme import plain_text
-from catalog import ROOT
+from catalog import ROOT, load_resources
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_descriptions import description_fallback
@@ -32,7 +33,7 @@ def rendered_files():
     document = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))
     scanned = document['resources']
     localized = localized_records(scanned, read_localizations(ROOT))
-    scoped = apply_scope(localized, read_scope(ROOT))
+    scoped = with_curated_labels(apply_scope(localized, read_scope(ROOT)), load_resources())
     records = [record for record in scoped if record.get('scope_status') != 'excluded']
     groups = defaultdict(list)
     for record in records:

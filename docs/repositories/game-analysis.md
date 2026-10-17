@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**399 repositories** · 2026-10-16 UTC
+**386 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -13,6 +13,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [AssetRipper/AssetRipper](https://github.com/AssetRipper/AssetRipper) — GUI application to analyze game files **[8,643 stars]**
 - [rehan-remade/universal-modder](https://github.com/rehan-remade/universal-modder) — Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. **[7,939 stars]**
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — Tutorials, tools, and more as related to reverse engineering video games. **[5,609 stars]**
+- [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot reverse engineering tools **[4,330 stars]**
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — Cross-platform game hack for Counter-Strike 2 with Panorama-based GUI. **[3,891 stars]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]**
@@ -117,24 +118,10 @@ These are automatically discovered projects, not individually curated or tested 
 - [jozsefsallai/il2cpp-stringliteral-patcher](https://github.com/jozsefsallai/il2cpp-stringliteral-patcher) — Extract and patch string literals from Unity's global-metadata.dat files. **[62 stars]**
 - [novapowers0/BloodyRoar2Recomp](https://github.com/novapowers0/BloodyRoar2Recomp) — PSX recompilation of Bloody Roar II (SLES-01722 EU / SCUS-94424 USA). Anti-copyright: bring your own disc. Dual-region builds, from-scratch widescreen + curated mods. **[62 stars]**
 - [LostMyCode/redstone-js](https://github.com/LostMyCode/redstone-js) — RedStoneJS: a project porting the free online game RED STONE ONLINE to the web so you can play it in your browser. **[60 stars]**
-- [BlackBikerss/Elysium-Skill-Forge](https://github.com/BlackBikerss/Elysium-Skill-Forge) — Disco Elysium Trainer 2026 Enhanced Skills and Unlimited Resources Guide **[57 stars]**
 - [Mikompilation/Mikompilation](https://github.com/Mikompilation/Mikompilation) — Reimplementation project for the Fatal Frame 2: Crimson Butterfly (Project Zero 2 / Zero: Akai Chou) game engine. **[57 stars]**
 - [VOTV-MP/Multivoid](https://github.com/VOTV-MP/Multivoid) — Multiplayer co-op mod for Voices of the Void — a UE4SS mod for UE4.27 that syncs the game between a host and up to three clients, without modifying any game files. **[57 stars]**
 - [vyanhursky/DefJamFFNY-recomp](https://github.com/vyanhursky/DefJamFFNY-recomp) — Def Jam: Fight for NY PC port — static recompilation of the original Xbox game for native Windows and macOS (Direct3D 11 / Vulkan). Bring your own game dump. **[57 stars]**
-- [aldimirosilva/Cumrooms-PUNCH-Trainer-Suite](https://github.com/aldimirosilva/Cumrooms-PUNCH-Trainer-Suite) — Open Source Cumrooms PUNCH Trainer 2026 with ImGui IL2CPP Custom UI and Sprint Tools **[56 stars]**
 - [DaZombieKiller/TypeTreeDumper](https://github.com/DaZombieKiller/TypeTreeDumper) — Experimental tool to export type tree information from the Unity editor. **[56 stars]**
-- [malukbattah-hue/memory-forge](https://github.com/malukbattah-hue/memory-forge) — Open Source Windows Memory Editor and Game Trainer Alternative 2026 **[56 stars]**
-- [obitokirecovery-cpu/Megabonk-Companion-Suite](https://github.com/obitokirecovery-cpu/Megabonk-Companion-Suite) — Best Open-Source Megabonk Trainer &amp; Game Mods 2026 **[56 stars]**
-- [Pacool1980/disco-psychometry-probe](https://github.com/Pacool1980/disco-psychometry-probe) — Best Disco Elysium Police Build Guide 2026: Ultimate Detective Skills Tree **[56 stars]**
-- [revendaguestus-pixel/Megabonk-Companion-Suite](https://github.com/revendaguestus-pixel/Megabonk-Companion-Suite) — Best Open-Source Megabonk Trainer &amp; Game Mods 2026 **[56 stars]**
-- [aryanrajug23nsut/MonsterTide-Tactician](https://github.com/aryanrajug23nsut/MonsterTide-Tactician) — Ultimate Monsters Are Coming Trainer Guide 2026 – Top AI Cheats &amp; Hacks **[55 stars]**
-- [BADDIV/punchline-arena-enhancer](https://github.com/BADDIV/punchline-arena-enhancer) — Ultimate Trainer for Project L337 2026: Custom UI, Speed Boost &amp; XP Multipliers **[55 stars]**
-- [egalaksonoputra-commits/MegaBonk-Sparring](https://github.com/egalaksonoputra-commits/MegaBonk-Sparring) — Megabonk Max Trainer 2026: Ultimate AI-Powered DPS Optimizer **[55 stars]**
-- [udflk/Rebirth-Pub-Save-Forge](https://github.com/udflk/Rebirth-Pub-Save-Forge) — Best Rebirth Pub Save Manager 2026: Edit Gold, AP &amp; Stats **[55 stars]**
-- [Madlil007/Rebirth-Pub-Save-Forge](https://github.com/Madlil007/Rebirth-Pub-Save-Forge) — Rebirth Pub Save Companion 2026: Best Save Editor for Gold AP Stamina and Items **[53 stars]**
-- [MrCopperDev/TaskbarHero-Forge](https://github.com/MrCopperDev/TaskbarHero-Forge) — Best Taskbar Hero Automation Tools 2026: Auto-Fuse, Stage Teleport and Market Value Guide **[53 stars]**
-- [satishjadhav77485-blip/Monsters-Are-Coming-Companion](https://github.com/satishjadhav77485-blip/Monsters-Are-Coming-Companion) — Monsters Are Coming Trainer Hub 2026 Ultimate Game Mod Companion **[53 stars]**
-- [stine814-sk/Il2Cpp-Trainer-Forge](https://github.com/stine814-sk/Il2Cpp-Trainer-Forge) — Modular Unity IL2Cpp Trainer Framework 2026 **[53 stars]**
 - [korobetski/Vagrant-Story-Unity-Parser](https://github.com/korobetski/Vagrant-Story-Unity-Parser) — An editor script that reads data from the original Square game Vagrant Story to build prefabs and databases. **[51 stars]**
 - [lolo1208/unity3d-lolo](https://github.com/lolo1208/unity3d-lolo) — A Unity (Lua) game framework based on Unity and ToLua, with examples and packaging/hot-update tools. **[49 stars]**
 - [djkaty/Il2CppProtoExtractor-FallGuys](https://github.com/djkaty/Il2CppProtoExtractor-FallGuys) — IL2CPP protobuf-net reverse engineering tutorial for Fall Guys: Ultimate Knockout **[47 stars]**

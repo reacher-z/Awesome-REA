@@ -1,9 +1,23 @@
-"""Derive internal bibliography/catalog links without changing scan assertions."""
+"""Derive internal bibliography/catalog links and labels without changing scan assertions."""
 from __future__ import annotations
 
 from collections import defaultdict
+import copy
 import re
 from urllib.parse import urlsplit
+
+# Curated categories that also name a scanned repository's primary directory.
+CURATED_PRIMARY_CATEGORIES = {
+    'core': 'reverse-engineering', 'related-lists': 'reverse-engineering',
+    'native-analysis': 'native-analysis', 'dynamic-analysis': 'dynamic-analysis',
+    'dotnet': 'managed-code', 'android': 'android', 'firmware': 'firmware',
+    'game-analysis': 'game-analysis', 'web-analysis': 'web-analysis',
+    'javascript-electron': 'web-analysis', 'binary-libraries': 'native-analysis',
+    'binary-diffing': 'native-analysis', 'webassembly': 'web-analysis',
+    'protocol-analysis': 'protocol-analysis',
+}
+BUILD_CROSS_REFERENCE = 'curated-build-cross-reference'
+CLASSIFICATION_FIELDS = ('targets', 'category', 'classification_origin', 'classification_reference_ids')
 
 
 def github_repository(value: str, *, artifact: bool = False) -> str | None:
@@ -85,5 +99,43 @@ def with_artifact_links(records: list[dict], papers: list[dict], resources: list
             for identifier in record.get('seed_paper_ids', []):
                 if isinstance(identifier, str) and ('paper', identifier) not in matches:
                     diagnostics.append(f"{record['id']}: a seed paper has no exact bibliography repository match.")
+        result.append(record)
+    return result
+
+
+def with_curated_labels(records: list[dict], resources: list[dict]) -> list[dict]:
+    """Add current curated labels to exact repository roots, keeping the scan-time labels.
+
+    Only a reviewed record whose URL is the repository root counts; scoped pages
+    never match. Curated targets are added to the recorded ones and a mapped
+    curated category becomes the primary category, so later curated additions
+    propagate while removals never erase recorded labels.
+    """
+    by_repository = defaultdict(list)
+    for resource in sorted(resources, key=lambda item: item['id']):
+        repository = github_repository(resource.get('url'))
+        if repository and resource.get('verification') == 'source-reviewed':
+            by_repository[repository].append(resource)
+
+    result = []
+    for original in records:
+        record = dict(original)
+        scan = record.pop('scan_classification', None)
+        if isinstance(scan, dict):
+            record.update(copy.deepcopy(scan))
+        repository = github_repository(record.get('url'))
+        name_repository = github_repository('https://github.com/' + str(record.get('full_name', '')))
+        matches = by_repository.get(repository, []) if repository and repository == name_repository else []
+        stored_targets = sorted(record.get('targets') or [])
+        targets = sorted(set(stored_targets).union(*(match.get('targets', []) for match in matches)))
+        category = next((CURATED_PRIMARY_CATEGORIES[match['category']] for match in matches
+                         if match.get('category') in CURATED_PRIMARY_CATEGORIES), record.get('category'))
+        # A scan-time cross-reference that already carries the current labels stays as recorded.
+        if matches and (record.get('classification_origin') != 'curated-cross-reference'
+                        or targets != stored_targets or category != record.get('category')):
+            record['scan_classification'] = copy.deepcopy(
+                {field: record[field] for field in CLASSIFICATION_FIELDS if field in record})
+            record.update(targets=targets, category=category, classification_origin=BUILD_CROSS_REFERENCE,
+                          classification_reference_ids=[match['id'] for match in matches])
         result.append(record)
     return result

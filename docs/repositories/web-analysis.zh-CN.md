@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**175 个仓库** · 2026-10-16 UTC
+**177 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -34,7 +34,9 @@
 - [katana-project/slicer](https://github.com/katana-project/slicer) — 基于网页的现代 Java 逆向工程工具。 **[176 星标]**
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI 驱动的 JavaScript 反编译与去混淆工具，结合 AI 和 AST 进行代码分析与混淆还原，将难以阅读的构建产物转换为易懂的代码。 **[140 星标]**
 - [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — 我的 JavaScript 逆向工程博客 ReverseJS 配套的去混淆工具源码。 **[125 星标]**
+- [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — 照常浏览任意应用，Spectral 会捕获流量、理解每次 API 调用的作用，并生成 AI 智能体可直接调用的 MCP 工具。 **[121 星标]**
 - [lfi-project/lfi](https://github.com/lfi-project/lfi) — LFI 顶层仓库：实用、高效且安全的软件沙箱方案 **[120 星标]**
+- [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — 以可视化方式逆向分析混淆的 JavaScript，串联转换、检查 AST 变化，并编写可复用的去混淆插件。 **[120 星标]**
 - [X-3306/Project-Onyx](https://github.com/X-3306/Project-Onyx) — 通过 AI 遥测伪装与 WASM 沙箱实现高级 EDR 规避。Project Onyx 是红队概念验证流程，用于演示针对现代 EDR 系统的高级规避技术，从传统的基于特征的混淆转向行为伪装。 **[118 星标]**
 - [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — 基于 tree-sitter 的 PowerShell/JavaScript 去混淆工具 **[103 星标]**
 - [NotDec/NotDec](https://github.com/NotDec/NotDec) — 基于 LLVM IR 的 WebAssembly（Wasm）反编译器与静态分析框架，仍在开发中 **[94 星标]**

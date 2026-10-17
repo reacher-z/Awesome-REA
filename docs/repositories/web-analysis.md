@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
 
-**175 repositories** · 2026-10-16 UTC
+**177 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -34,7 +34,9 @@ These are automatically discovered projects, not individually curated or tested 
 - [katana-project/slicer](https://github.com/katana-project/slicer) — A modern Java reverse engineering tool for the web. **[176 stars]**
 - [zhongguagua/ai-code-decompile](https://github.com/zhongguagua/ai-code-decompile) — 🚀 AI-powered JavaScript decompiler and deobfuscator. Uses AI and ASTs for code analysis and deobfuscation, turning unreadable build artifacts into understandable code. **[140 stars]**
 - [SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials](https://github.com/SteakEnthusiast/Supplementary-AST-Based-Deobfuscation-Materials) — Supplementary deobfuscator source code from my Javascript reverse-engineering blog, ReverseJS. **[125 stars]**
+- [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — Browse any app normally. Spectral captures the traffic, understands what each API call does, and generates MCP tools that AI agents can call directly. **[121 stars]**
 - [lfi-project/lfi](https://github.com/lfi-project/lfi) — Top-level repository for LFI: Practical, Efficient, and Secure Software-based Sandboxing **[120 stars]**
+- [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — Reverse engineer obfuscated JavaScript visually. Chain transforms, inspect AST changes, write reusable deobfuscation plugins. **[120 stars]**
 - [X-3306/Project-Onyx](https://github.com/X-3306/Project-Onyx) — Advanced EDR Evasion via AI Telemetry Spoofing &amp; WASM Sandboxing. Project Onyx is a PoC Red Team pipeline designed to demonstrate advanced evasion techniques against modern EDR systems. It shifts away from traditional signature-based obfuscation towards behavioral camouflage. **[118 stars]**
 - [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — Powershell/Javascript deobfuscator based on tree-sitter **[103 stars]**
 - [NotDec/NotDec](https://github.com/NotDec/NotDec) — a webassembly wasm decompiler and Static Analysis Framework based on llvm IR. (Work In Progress) **[94 stars]**

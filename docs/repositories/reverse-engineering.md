@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**627 repositories** · 2026-10-16 UTC
+**623 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -33,7 +33,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — The world’s 1st book of very detailed iOS App reverse engineering skills :) **[4,440 stars]**
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — Decompiler from Java bytecode to Java, used in IntelliJ IDEA. **[4,422 stars]**
 - [rocky/python-uncompyle6](https://github.com/rocky/python-uncompyle6) — A cross-version Python bytecode decompiler **[4,331 stars]**
-- [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot reverse engineering tools **[4,330 stars]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — Cross-platform GUI tool for decompiling WeChat mini programs, with .wxapkg file scanning, decryption, and unpacking. **[4,261 stars]**
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — Cybersecurity oriented awesome list **[4,220 stars]**
 - [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE Obfuscated String Solver - Automatically extract obfuscated strings from malware. **[4,189 stars]**
@@ -58,7 +57,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — A reverse engineering of Linear's sync engine. **[2,865 stars]**
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter Reverse Engineering Framework **[2,775 stars]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — A list of Reverse Engineering articles, books, and papers **[2,750 stars]**
-- [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — A curated list of awesome Android Reverse Engineering training, resources, and tools. **[2,739 stars]**
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift Obfuscator that protects iOS apps against reverse engineering attacks. **[2,548 stars]**
 - [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — Modern Java decompiler aiming to be as accurate as possible, with an emphasis on output quality. Fork of the Fernflower decompiler. **[2,409 stars]**
@@ -235,7 +233,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — simple type recognition in decompiled executables **[123 stars]**
 - [imugee/pegasus](https://github.com/imugee/pegasus) — reverse engineering extension plugin for windbg **[123 stars]**
 - [mahaloz/sailr-eval](https://github.com/mahaloz/sailr-eval) — The SAILR paper's evaluation pipline for measuring the quality of decompilation **[121 stars]**
-- [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — Reverse engineer obfuscated JavaScript visually. Chain transforms, inspect AST changes, write reusable deobfuscation plugins. **[120 stars]**
 - [andkorzh/PPU-LITE](https://github.com/andkorzh/PPU-LITE) — The cheapest, clock-accurate FPGA replacement for PPU, created using reverse engineering. **[119 stars]**
 - [decrazyo/unifying](https://github.com/decrazyo/unifying) — FOSS re-implementation of the Logitech Unifying protocol **[119 stars]**
 - [Physics365/991CN-X-CW-Decompilation](https://github.com/Physics365/991CN-X-CW-Decompilation) — 991CN X decompilation and reference materials. **[119 stars]**
@@ -467,7 +464,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Magier/JavaScript2img_Decoder](https://github.com/Magier/JavaScript2img_Decoder) — Decoder for JavaScript code which was obfuscated by JavaScript2img **[5 stars]**
 - [Michelleeby/pokemodemerald](https://github.com/Michelleeby/pokemodemerald) — Decompilation of Pokémon Emerald **[5 stars]**
 - [TheQmaks/chatruletka](https://github.com/TheQmaks/chatruletka) — Some things of reversing **[5 stars]**
-- [tokenbleed/nibkit](https://github.com/tokenbleed/nibkit) — Decompiler for compiled iOS/macOS interface files (.nib, .storyboardc): object tree, wiring, custom classes, navigation graphs **[5 stars]**
 - [bethgelab/revenge-bench](https://github.com/bethgelab/revenge-bench) — RevengeBench: Reverse Engineering Code-Space Policies from Behavioral Experiments **[4 stars]**
 - [holly-hacker/hp3-gba-decomp](https://github.com/holly-hacker/hp3-gba-decomp) — A heavily AI-assisted decomp experiment **[4 stars]**
 - [JamesHopbourn/iOS-Reverse-Engineering-Tools](https://github.com/JamesHopbourn/iOS-Reverse-Engineering-Tools) — iOS Reverse Engineering Tools **[4 stars]**

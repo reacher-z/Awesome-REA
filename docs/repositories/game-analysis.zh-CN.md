@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**399 个仓库** · 2026-10-16 UTC
+**386 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -13,6 +13,7 @@
 - [AssetRipper/AssetRipper](https://github.com/AssetRipper/AssetRipper) — 用于分析游戏文件的图形界面应用。 **[8,643 星标]**
 - [rehan-remade/universal-modder](https://github.com/rehan-remade/universal-modder) — 让 Claude 处理任意游戏。通过技能、工具与 fal MCP，Claude Code 可为你拥有的几乎任何 PC 游戏制作模组，涵盖侦察、逆向工程、fal 生成的美术/3D/音频、游戏内测试及展示视频。 **[7,939 星标]**
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — 与电子游戏逆向工程相关的教程、工具及其他资源。 **[5,609 星标]**
+- [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot 逆向工程工具。 **[4,330 星标]**
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — 面向 Counter-Strike 2 的跨平台游戏作弊工具，采用基于 Panorama 的 GUI。 **[3,891 星标]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]**
@@ -117,24 +118,10 @@
 - [jozsefsallai/il2cpp-stringliteral-patcher](https://github.com/jozsefsallai/il2cpp-stringliteral-patcher) — 从 Unity 的 global-metadata.dat 文件提取并修改字符串字面量。 **[62 星标]**
 - [novapowers0/BloodyRoar2Recomp](https://github.com/novapowers0/BloodyRoar2Recomp) — PSX 游戏《Bloody Roar II》的重编译项目（欧版 SLES-01722／美版 SCUS-94424）。Anti-copyright：需自行提供光盘。支持双地区版本构建、从零实现的宽屏和精选模组。 **[62 星标]**
 - [LostMyCode/redstone-js](https://github.com/LostMyCode/redstone-js) — RedStoneJS：将免费网络游戏《RED STONE ONLINE》移植到网页，让你在浏览器中游玩。 **[60 星标]**
-- [BlackBikerss/Elysium-Skill-Forge](https://github.com/BlackBikerss/Elysium-Skill-Forge) — Disco Elysium Trainer 2026：增强技能与无限资源指南 **[57 星标]**
 - [Mikompilation/Mikompilation](https://github.com/Mikompilation/Mikompilation) — Fatal Frame 2: Crimson Butterfly（Project Zero 2 /《零～红蝶》）游戏引擎重新实现项目 **[57 星标]**
 - [VOTV-MP/Multivoid](https://github.com/VOTV-MP/Multivoid) — 《Voices of the Void》多人合作模组，适用于 UE4.27 的 UE4SS，可在一台主机与最多三个客户端之间同步游戏，无需修改任何游戏文件。 **[57 星标]**
 - [vyanhursky/DefJamFFNY-recomp](https://github.com/vyanhursky/DefJamFFNY-recomp) — 《Def Jam: Fight for NY》PC 移植版：将初代 Xbox 游戏静态重编译为原生 Windows 和 macOS 版本，使用 Direct3D 11／Vulkan。需自备游戏转储。 **[57 星标]**
-- [aldimirosilva/Cumrooms-PUNCH-Trainer-Suite](https://github.com/aldimirosilva/Cumrooms-PUNCH-Trainer-Suite) — 开源 Cumrooms PUNCH Trainer 2026，提供基于 ImGui IL2CPP 的自定义界面及冲刺工具 **[56 星标]**
 - [DaZombieKiller/TypeTreeDumper](https://github.com/DaZombieKiller/TypeTreeDumper) — 用于从 Unity 编辑器导出类型树信息的实验性工具。 **[56 星标]**
-- [malukbattah-hue/memory-forge](https://github.com/malukbattah-hue/memory-forge) — 2026 年开源 Windows 内存编辑器与游戏修改器替代方案。 **[56 星标]**
-- [obitokirecovery-cpu/Megabonk-Companion-Suite](https://github.com/obitokirecovery-cpu/Megabonk-Companion-Suite) — 2026 年最佳开源 Megabonk 修改器与游戏模组 **[56 星标]**
-- [Pacool1980/disco-psychometry-probe](https://github.com/Pacool1980/disco-psychometry-probe) — 2026 年最佳 Disco Elysium 警察角色构建指南：终极侦探技能树 **[56 星标]**
-- [revendaguestus-pixel/Megabonk-Companion-Suite](https://github.com/revendaguestus-pixel/Megabonk-Companion-Suite) — 2026 年最佳开源 Megabonk 修改器与游戏模组 **[56 星标]**
-- [aryanrajug23nsut/MonsterTide-Tactician](https://github.com/aryanrajug23nsut/MonsterTide-Tactician) — 2026 年终极 Monsters Are Coming 修改器指南：顶级 AI 作弊与游戏修改工具 **[55 星标]**
-- [BADDIV/punchline-arena-enhancer](https://github.com/BADDIV/punchline-arena-enhancer) — Project L337 2026 终极修改器：自定义界面、速度提升及经验倍率 **[55 星标]**
-- [egalaksonoputra-commits/MegaBonk-Sparring](https://github.com/egalaksonoputra-commits/MegaBonk-Sparring) — Megabonk Max Trainer 2026：AI 驱动的终极每秒伤害优化器 **[55 星标]**
-- [udflk/Rebirth-Pub-Save-Forge](https://github.com/udflk/Rebirth-Pub-Save-Forge) — 2026 年最佳 Rebirth Pub 存档管理器：编辑金币、AP 和属性。 **[55 星标]**
-- [Madlil007/Rebirth-Pub-Save-Forge](https://github.com/Madlil007/Rebirth-Pub-Save-Forge) — Rebirth Pub Save Companion 2026：用于编辑金币、AP、体力和物品的最佳存档编辑器。 **[53 星标]**
-- [MrCopperDev/TaskbarHero-Forge](https://github.com/MrCopperDev/TaskbarHero-Forge) — 2026 年最佳 Taskbar Hero 自动化工具：自动合成、关卡传送及市场价值指南 **[53 星标]**
-- [satishjadhav77485-blip/Monsters-Are-Coming-Companion](https://github.com/satishjadhav77485-blip/Monsters-Are-Coming-Companion) — Monsters Are Coming Trainer Hub 2026：终极游戏模组助手 **[53 星标]**
-- [stine814-sk/Il2Cpp-Trainer-Forge](https://github.com/stine814-sk/Il2Cpp-Trainer-Forge) — 模块化 Unity IL2CPP 修改器框架，2026 版 **[53 星标]**
 - [korobetski/Vagrant-Story-Unity-Parser](https://github.com/korobetski/Vagrant-Story-Unity-Parser) — 从 Square 的原版游戏《Vagrant Story》中读取数据，以构建预制体和数据库的编辑器脚本。 **[51 星标]**
 - [lolo1208/unity3d-lolo](https://github.com/lolo1208/unity3d-lolo) — Unity（Lua）游戏框架，基于 Unity 与 ToLua，包含部分示例以及打包和热更新工具。 **[49 星标]**
 - [djkaty/Il2CppProtoExtractor-FallGuys](https://github.com/djkaty/Il2CppProtoExtractor-FallGuys) — 针对 Fall Guys: Ultimate Knockout 的 IL2CPP protobuf-net 逆向工程教程 **[47 星标]**

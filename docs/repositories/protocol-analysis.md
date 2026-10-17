@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](protocol-analysis.zh-CN.md)
 
-**104 repositories** · 2026-10-16 UTC
+**103 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -15,7 +15,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili is a Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing. **[219 stars]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — Cryptographic protocol analysis for real-world protocols. **[133 stars]**
-- [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — Browse any app normally. Spectral captures the traffic, understands what each API call does, and generates MCP tools that AI agents can call directly. **[121 stars]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
 - [HackingLZ/maps_scanner](https://github.com/HackingLZ/maps_scanner) — MAPS cloud scanner and response parser for Microsoft Defender research. **[96 stars]**
 - [leodesigner/powmr_comm](https://github.com/leodesigner/powmr_comm) — PowMr Inverter serial communication protocol reverse engineering **[96 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**682 个仓库** · 2026-10-16 UTC
+**680 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -25,6 +25,7 @@
 - [bethington/ghidra-mcp](https://github.com/bethington/ghidra-mcp) — Ghidra MCP Server：提供 200 多个 MCP 工具，支持 AI 逆向工程。包含 GUI 插件与无界面服务器、工具延迟加载、约定约束、批量操作、Ghidra Server 集成和 Docker 部署。 **[5,659 星标]**
 - [lief-project/LIEF](https://github.com/lief-project/LIEF) — LIEF：用于可执行文件格式插桩的库，支持 C++、Python 和 Rust。 **[5,595 星标]**
 - [pret/pokered](https://github.com/pret/pokered) — 《宝可梦 红/蓝》的反汇编代码。 **[4,993 星标]**
+- [kaitai-io/kaitai_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct：用于生成二进制数据解析器的声明式语言，支持 C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust。 **[4,712 星标]**
 - [zrax/pycdc](https://github.com/zrax/pycdc) — 以 C++ 编写的 Python 字节码反汇编器与反编译器。 **[4,651 星标]**
 - [JonathanSalwan/ROPgadget](https://github.com/JonathanSalwan/ROPgadget) — 在二进制文件中搜索 gadget，方便进行 ROP 漏洞利用。ROPgadget 支持 x86、x64、ARM、ARM64、PowerPC、SPARC、MIPS、RISC-V 64 和 RISC-V Compressed 架构上的 ELF、PE 与 Mach-O 格式。 **[4,498 星标]**
 - [orhun/binsider](https://github.com/orhun/binsider) — 像高手一样分析 ELF 二进制文件 😼🕵️‍♂️。 **[4,481 星标]**
@@ -68,7 +69,6 @@
 - [horsicq/XPEViewer](https://github.com/horsicq/XPEViewer) — 适用于 Windows、Linux 和 macOS 的 PE 文件查看器与编辑器。 **[1,241 星标]**
 - [amruth-sn/kong](https://github.com/amruth-sn/kong) — 全球首个智能体式逆向工程师。 **[1,227 星标]**
 - [google/binexport](https://github.com/google/binexport) — 将反汇编结果导出为 Protocol Buffers。 **[1,214 星标]**
-- [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — 用于反编译和反汇编 React Native Hermes 字节码的逆向工程工具。 **[1,213 星标]**
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools：可移植可执行文件（PE）操作工具包。 **[1,201 星标]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 IDA MCP 服务器。 **[1,196 星标]**
 - [ghidraninja/ghidra_scripts](https://github.com/ghidraninja/ghidra_scripts) — 适用于 Ghidra 软件逆向工程套件的脚本。 **[1,177 星标]**
@@ -122,7 +122,6 @@
 - [mohitmishra786/reversingBits](https://github.com/mohitmishra786/reversingBits) — 涵盖逆向工程、二进制分析和汇编编程工具的全面速查表合集，为安全研究人员、逆向工程师和底层程序员提供一站式参考。 **[662 星标]**
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — 面向 MIPS、PowerPC、ARM 和 SuperH 的反编译器。 **[658 星标]**
 - [dmendel/bindata](https://github.com/dmendel/bindata) — BinData：在 Ruby 中读写二进制数据。 **[653 星标]**
-- [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes 字节码逆向工程工具，可汇编与反汇编 Hermes 字节码。 **[642 星标]**
 - [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — Kam1n0 汇编分析平台。 **[627 星标]**
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — 在 Ghidra 中使用 angr。 **[623 星标]**
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — 以智能体为核心、可由其他智能体持续改进的反编译器。Kuna 使用 Rust 编写，最初从 Ghidra 移植而来。 **[614 星标]**
@@ -419,7 +418,6 @@
 - [brnpl/Flutter-Reverse-Engineering-Labs](https://github.com/brnpl/Flutter-Reverse-Engineering-Labs) — 用于学习 Flutter 应用逆向工程的动手实践挑战。 **[59 星标]**
 - [iExplosiveRage/DBZ-Burst-Limit-Recompiled](https://github.com/iExplosiveRage/DBZ-Burst-Limit-Recompiled) — Dragon Ball Z: Burst Limit Recompiled：通过 ReXGlue 静态重编译实现的原生 PC 移植。 **[59 星标]**
 - [BlackwingHQ/iBoot64Binja](https://github.com/BlackwingHQ/iBoot64Binja) — Binary Ninja 的 Binary View 插件，用于对 iBoot 一类的二进制文件进行逆向工程 **[56 星标]**
-- [LuisFernando56/PrincessTrainer-Forge-macOS](https://github.com/LuisFernando56/PrincessTrainer-Forge-macOS) — Magical Princess Trainer 2026：macOS Apple Silicon M1、M2、M3、M4 ARM64 原生版 **[56 星标]**
 - [YuAo/MetalLibraryExplorer](https://github.com/YuAo/MetalLibraryExplorer) — 在浏览器中解析和反汇编 .metallib 文件。 **[56 星标]**
 - [1rhino2/fnprint](https://github.com/1rhino2/fnprint) — 根据函数行为匹配二进制文件中的函数，而非比较字节形式；通过微执行生成函数行为指纹。 **[55 星标]**
 - [seifreed/r2inspect](https://github.com/seifreed/r2inspect) — r2inspect 是专业恶意软件分析框架，利用 radare2 生态系统自动深入静态检查 PE、ELF 和 Mach-O 二进制文件。结合格式解析、启发式检测与丰富报告，为逆向工程师、事件响应人员和威胁分析师提供支持。 **[55 星标]**
@@ -447,7 +445,6 @@
 - [sterrasec/genpatch](https://github.com/sterrasec/genpatch) — genpatch 是一款 IDA 插件，可生成用于修补二进制文件的 Python 脚本。 **[38 星标]**
 - [therealdreg/linux_kernel_debug_disassemble_ida_vmware](https://github.com/therealdreg/linux_kernel_debug_disassemble_ida_vmware) — 在 VMware + GDB stub 环境中使用 IDA Pro 反汇编或调试 Linux 内核的辅助脚本，包含一些符号辅助工具。 **[38 星标]**
 - [vaguue/Ghidra.js](https://github.com/vaguue/Ghidra.js) — 支持 AI 智能体的 Ghidra JavaScript 绑定。 **[38 星标]**
-- [BroNils/aotopsy](https://github.com/BroNils/aotopsy) — Flutter/Dart AOT 快照静态分析器：无需嵌入或执行 Dart VM，即可从 libapp.so 恢复函数名、类层级、调用图和行为线索。支持 ARM64、x86_64 以及 Dart 2.10–3.12。 **[37 星标]**
 - [cxiao/ida-rust-untangler](https://github.com/cxiao/ida-rust-untangler) — 用于还原 Rust 函数名称的 IDA 插件。 **[37 星标]**
 - [E3V3A/hex2bin](https://github.com/E3V3A/hex2bin) — 一款旧的命令行工具，可将 Intel/Motorola 格式的 HEX ASCII 固件文件解析为二进制数据。 **[36 星标]**
 - [fearkov/3dsrecomp](https://github.com/fearkov/3dsrecomp) — Nintendo 3DS 游戏的静态重编译器，将 ARM 转换为 C。 **[36 星标]**
@@ -580,6 +577,7 @@
 - [ericyoc/iot_device_firmware_analysis_poc](https://github.com/ericyoc/iot_device_firmware_analysis_poc) — 对给定二进制文件执行固件分析。 **[5 星标]**
 - [jstrieb/remote-ofrak](https://github.com/jstrieb/remote-ofrak) — 远程运行 OFRAK，从浏览器修改和重新打包二进制文件。 **[5 星标]**
 - [one2blame/the-dark-arts](https://github.com/one2blame/the-dark-arts) — 保存作者自学二进制漏洞利用和逆向工程笔记的仓库。 **[5 星标]**
+- [tokenbleed/nibkit](https://github.com/tokenbleed/nibkit) — 针对已编译 iOS/macOS 界面文件（.nib、.storyboardc）的反编译器，可恢复对象树、连接关系、自定义类和导航图。 **[5 星标]**
 - [a0zhar/GandCrab](https://github.com/a0zhar/GandCrab) — 本仓库收录 GandCrab v5 JavaScript 二进制投放器的转储与去混淆版本，以及 GandCrab v5.1 感染系统上投放的网页文件，旨在让这些文件更易于处理和理解。 **[4 星标]**
 - [AlembicOrg/UniDumper](https://github.com/AlembicOrg/UniDumper) — 面向 Windows x64 的 Unity IL2CPP 元数据工作台，提供静态转储、包检查、跨版本迁移，以及基于 UniResolver 的确定性 C++20 SDK 生成。 **[4 星标]**
 - [keithgh1/star-nx1020-re](https://github.com/keithgh1/star-nx1020-re) — 对 Star NX-1020 九针点阵打印机的逆向工程，包含提取的内置字体、带标签的固件反汇编、ROM 映射和完整文档。 **[4 星标]**

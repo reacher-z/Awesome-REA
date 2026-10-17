@@ -100,6 +100,17 @@ class SourceBrowserTests(unittest.TestCase):
         self.assertIs(projected[1]['readme_git_sha_matches_content'], False)
         self.assertEqual(projected[1]['related_entries'], source['resources'][3]['related_entries'])
 
+    def test_build_time_labels_keep_their_scan_provenance(self):
+        source = full_export()
+        scanned = {'targets': ['app'], 'category': 'android', 'classification_origin': 'metadata',
+                   'classification_reference_ids': []}
+        source['resources'][3].update(targets=['app', 'protocol'], classification_origin='curated-build-cross-reference',
+                                      classification_reference_ids=['example-tool'], scan_classification=scanned)
+        projected = project_source_browser(export_bytes(source))['resources'][1]
+        self.assertEqual((projected['targets'], projected['classification_origin'], projected['scan_classification']),
+                         (['app', 'protocol'], 'curated-build-cross-reference', scanned))
+        self.assertNotIn('scan_classification', project_source_browser(export_bytes(full_export()))['resources'][1])
+
     def test_validator_rejects_field_loss_and_mutated_evidence(self):
         raw = export_bytes(full_export())
         expected = project_source_browser(raw)

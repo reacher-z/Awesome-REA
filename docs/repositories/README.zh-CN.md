@@ -2,7 +2,7 @@
 
 [精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)
 
-从 **3,000** 个已读取 README 的仓库中提供 **2,864** 个浏览条目；**136** 个明确超出范围的条目保留在原始扫描记录中。
+从 **3,000** 个已读取 README 的仓库中提供 **2,846** 个浏览条目；**154** 个明确超出范围的条目保留在原始扫描记录中。
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -10,15 +10,15 @@
 
 | 分类 | 仓库数 |
 | --- | ---: |
-| [网站](web-analysis.zh-CN.md) | 175 |
-| [游戏](game-analysis.zh-CN.md) | 399 |
-| [应用 · Android](android.zh-CN.md) | 432 |
-| [应用 · 托管代码](managed-code.zh-CN.md) | 133 |
-| [原生二进制](native-analysis.zh-CN.md) | 682 |
+| [网站](web-analysis.zh-CN.md) | 177 |
+| [游戏](game-analysis.zh-CN.md) | 386 |
+| [应用 · Android](android.zh-CN.md) | 434 |
+| [应用 · 托管代码](managed-code.zh-CN.md) | 131 |
+| [原生二进制](native-analysis.zh-CN.md) | 680 |
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 101 |
 | [固件](firmware.zh-CN.md) | 211 |
-| [协议](protocol-analysis.zh-CN.md) | 104 |
-| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 627 |
+| [协议](protocol-analysis.zh-CN.md) | 103 |
+| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 623 |
 
 [扫描方法](../source-scan.md) · [范围排除记录](../../data/source-scope.json)
 

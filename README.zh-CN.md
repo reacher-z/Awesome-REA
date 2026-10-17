@@ -15,7 +15,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 - **目标** · [网站](#website) <sub>14</sub> · [游戏](#game) <sub>37</sub> · [应用](#app) <sub>30</sub> · [原生二进制](#native-binary) <sub>20</sub> · [固件与硬件](#firmware) <sub>12</sub> · [协议](#protocol) <sub>11</sub>
 
-- [论文](#papers) <sub>33</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,864</sub>
+- [论文](#papers) <sub>33</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -820,7 +820,7 @@
 ## 完整仓库索引
 
 <!-- BEGIN REPOSITORY INDEX SUMMARY -->
-已读取 **3,000** 个仓库的 README，当前提供 **2,864** 个浏览条目，明确超出范围的 136 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项执行测试。
+已读取 **3,000** 个仓库的 README，当前提供 **2,846** 个浏览条目，明确超出范围的 154 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项执行测试。
 
 [按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)
 <!-- END REPOSITORY INDEX SUMMARY -->

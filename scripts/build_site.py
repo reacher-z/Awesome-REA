@@ -16,7 +16,7 @@ from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_manifest import write_build_manifest
 from homepage_locales import localized_homepage
-from artifact_links import with_artifact_links
+from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
 from source_scope import apply_scope, read_scope
@@ -190,6 +190,7 @@ def main() -> None:
                 index_data["resources"] = apply_scope(localized_records(successful, repository_locales), read_scope(ROOT))
                 link_diagnostics = []
                 index_data["resources"] = with_artifact_links(index_data["resources"], papers, resources, link_diagnostics)
+                index_data["resources"] = with_curated_labels(index_data["resources"], resources)
                 for message in link_diagnostics:
                     print('Related entry: ' + message)
                 index_data["meta"]["source_description_policy"] = index_data["meta"].get("description_policy", "")

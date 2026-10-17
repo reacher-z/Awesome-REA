@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](protocol-analysis.md)
 
-**104 个仓库** · 2026-10-16 UTC
+**103 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -15,7 +15,6 @@
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s 热敏标签打印机的 BLE 协议逆向工程与 Python 命令行工具 **[302 星标]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili 是一个用于网络扫描、中间人操作、协议逆向工程和模糊测试的工具。 **[219 星标]**
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — 对现实世界中的密码协议进行分析。 **[133 星标]**
-- [spectral-mcp/spectral](https://github.com/spectral-mcp/spectral) — 照常浏览任意应用，Spectral 会捕获流量、理解每次 API 调用的作用，并生成 AI 智能体可直接调用的 MCP 工具。 **[121 星标]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — 精选不同网站的 JavaScript 逆向实例，提供详细讲解、知识点概括、加密算法、难度对比及跳转链接，涵盖补环境、提取 JavaScript、webpack 和瑞数等难点。 **[111 星标]**
 - [HackingLZ/maps_scanner](https://github.com/HackingLZ/maps_scanner) — 用于 Microsoft Defender 研究的 MAPS 云扫描器及响应解析器。 **[96 星标]**
 - [leodesigner/powmr_comm](https://github.com/leodesigner/powmr_comm) — PowMr 逆变器串行通信协议逆向工程 **[96 星标]**

@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from artifact_links import with_curated_labels
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
@@ -37,7 +38,7 @@ def main():
         records = read_papers()
     elif args.source_index:
         records = json.loads((ROOT / 'data/source-index.json').read_text())['resources']
-        records = apply_scope(localized_records(records, read_localizations(ROOT)), read_scope(ROOT))
+        records = with_curated_labels(apply_scope(localized_records(records, read_localizations(ROOT)), read_scope(ROOT)), load_resources())
         records = [record for record in records if record.get('scope_status') != 'excluded']
     else:
         records = load_resources()

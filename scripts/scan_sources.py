@@ -68,6 +68,12 @@ QUERY_BASES = [
 QUERIES = [query + ' is:public fork:false archived:false' for query in QUERY_BASES]
 MAX_README_BYTES = 8 * 1024 * 1024
 MAX_API_BYTES = 12 * 1024 * 1024
+# Version 3 matches topics separately, ignores omitted descriptions and leaves curated labels to the build.
+CLASSIFICATION_ENGINE_VERSION = 3
+CLASSIFICATION_POLICY = ('Automatic labels use repository names, URL-stripped published descriptions and explicit topics, with primary-function precedence. '
+                         'Engine 3 matches each topic separately and never classifies an omitted description, so labels are a pure function of the published fields; '
+                         'records it captures carry classification_engine_version. Curated cross-references are derived when the site and directories are built, '
+                         'not at scan time; retained records keep their stored labels. Labels do not establish REA compatibility. Empty targets mean insufficient metadata.')
 
 
 def now():
@@ -195,16 +201,8 @@ class GitHub:
 
 @lru_cache(maxsize=1)
 def curated_references():
-    """Use explicit curated target tags; do not infer REA compatibility."""
+    """Seed explicit curated GitHub repositories; labels are derived at build time."""
     result = {}
-    primary = {
-        'core': 'reverse-engineering', 'related-lists': 'reverse-engineering',
-        'native-analysis': 'native-analysis', 'dynamic-analysis': 'dynamic-analysis',
-        'dotnet': 'managed-code', 'android': 'android', 'firmware': 'firmware',
-        'game-analysis': 'game-analysis', 'web-analysis': 'web-analysis',
-        'javascript-electron': 'web-analysis', 'binary-libraries': 'native-analysis',
-        'binary-diffing': 'native-analysis', 'webassembly': 'web-analysis',
-    }
     for filename in ('rea-resources.json', 'tool-resources.json'):
         path = ROOT / 'data' / filename
         if not path.exists():
@@ -215,12 +213,7 @@ def curated_references():
             if parsed.hostname != 'github.com' or len(parts) < 2:
                 continue
             key = '/'.join(parts[:2]).casefold()
-            value = result.setdefault(key, {'targets': set(), 'category': None, 'ids': []})
-            value['targets'].update(record.get('targets', []))
-            value['ids'].append(record['id'])
-            # A scoped page may support a target domain without defining a repository's main purpose.
-            if len(parts) == 2 and record['category'] in primary and value['category'] is None:
-                value['category'] = primary[record['category']]
+            result.setdefault(key, {'ids': []})['ids'].append(record['id'])
     return result
 
 
@@ -269,19 +262,25 @@ def repository_ineligibility(repo):
 
 
 def classify(repo):
+    """Label one capture from its name, published description and topics alone."""
     topics = {topic.lower() for topic in repo.get('topics', [])}
     description = re.sub(r'https?://[^\s<>]+', ' ', repo.get('description') or '', flags=re.I)
     name = repo['full_name'].lower()
     purpose = (name + ' ' + description).lower()
-    text = ' '.join([purpose, *topics])
+    # Each topic is matched alone, so adjacency patterns cannot join two unrelated topics.
+    segments = (purpose, *sorted(topics))
+
+    def mentions(pattern, values=segments):
+        return any(re.search(pattern, value) for value in values)
+
     targets = set()
     managed = bool(topics & {'csharp', 'c-sharp', 'managed-code', 'ilspy', 'dnspy'} or
                    any(t == 'dotnet' or t.startswith('dotnet-') for t in topics) or
-                   re.search(r'(?<![\w./-])\.net\b|\bdotnet\b|\bcsharp\b|\bc-sharp\b|\bcil\b|\bilspy\b|\bdnspy\b', text))
-    android = bool(re.search(r'\bandroid\b|\bapk\b|\bjadx\b|\bdex\b', text))
+                   mentions(r'(?<![\w./-])\.net\b|\bdotnet\b|\bcsharp\b|\bc-sharp\b|\bcil\b|\bilspy\b|\bdnspy\b'))
+    android = mentions(r'\bandroid\b|\bapk\b|\bjadx\b|\bdex\b')
     native = bool(topics & {'binary-analysis', 'binary-diffing', 'ghidra', 'ida-plugin', 'idapro',
                            'frida', 'radare2', 'rizin', 'disassembler', 'memory-forensics', 'debugger'} or
-                  re.search(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\brizin\b|\bcutter\b|\bx64dbg\b|\bgdb\b|\blldb\b|\belf\b|\bmach-o\b|\bnative\b|\bassembly\b|\bx86\b|\bx64\b|\barm(?:32|64)?\b|\bavr\b|\brisc-v\b|\briscv\b|\bmips\b', text))
+                  mentions(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\brizin\b|\bcutter\b|\bx64dbg\b|\bgdb\b|\blldb\b|\belf\b|\bmach-o\b|\bnative\b|\bassembly\b|\bx86\b|\bx64\b|\barm(?:32|64)?\b|\bavr\b|\brisc-v\b|\briscv\b|\bmips\b'))
     native_primary = bool(re.search(r'\bbinar(?:y|ies)\b|\bdisassembl|\bghidra\b|\bida\b|\bradare2\b|\brizin\b|\bcutter\b|\bx64dbg\b|\bgdb\b|\blldb\b|\bassembly\b|\bx86\b|\bx64\b|\barm(?:32|64)?\b|\bavr\b|\brisc-v\b|\briscv\b|\bmips\b', purpose))
     dynamic = bool(topics & {'frida', 'frida-script', 'memory-forensics', 'debugger'} or
                    re.search(r'\bdebugger\b|\binstrument(?:ation|able)\b', purpose))
@@ -290,18 +289,18 @@ def classify(repo):
                         re.search(r'\bwebsite\b|\bweb-site\b|\bbrowser\b|\belectron\b|\brest[- ]apis?\b|\bmitmproxy\b|\bweb\b|javascript.{0,30}(?:deobfuscat|decompil)|(?:deobfuscat|decompil).{0,30}javascript', purpose))
     if web_explicit or (topics & {'webassembly', 'wasm'} and not native_primary):
         targets.add('website')
-    if topics & {'game-reversing', 'game-decompilation', 'il2cpp', 'unity-reverse-engineering', 'galgame', 'visual-novel'} or re.search(r'\bgames?\b|\bunity\b|\bunreal\b|\bplaystation\b|\btouhou\b|\bgamecube\b|\bvisual novel\b', text):
+    if topics & {'game-reversing', 'game-decompilation', 'il2cpp', 'unity-reverse-engineering', 'galgame', 'visual-novel'} or mentions(r'\bgames?\b|\bunity\b|\bunreal\b|\bplaystation\b|\btouhou\b|\bgamecube\b|\bvisual novel\b'):
         targets.add('game')
-    if managed or android or re.search(r'\bios\b|\bipados\b|\belectron\b|\bmobile\b|\bdesktop\b|\bapp(?:lication)?s?\b|java[- ](?:bytecode|decompiler)', text):
+    if managed or android or mentions(r'\bios\b|\bipados\b|\belectron\b|\bmobile\b|\bdesktop\b|\bapp(?:lication)?s?\b|java[- ](?:bytecode|decompiler)'):
         targets.add('app')
-    if re.search(r'\bfirmware\b|\bbinwalk\b|\bunblob\b|\buefi\b|\bbios\b', text):
+    if mentions(r'\bfirmware\b|\bbinwalk\b|\bunblob\b|\buefi\b|\bbios\b'):
         targets.add('firmware')
     if native:
         targets.add('binary')
     # Model Context Protocol is an agent interface, not evidence of network-protocol analysis.
-    network_text = re.sub(r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b', ' ', text)
+    network_segments = [re.sub(r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b', ' ', value) for value in segments]
     network = bool(topics & {'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'mitmproxy', 'network-forensics'} or
-                   re.search(r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)|\brest[- ]apis?\b', network_text))
+                   mentions(r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)|\brest[- ]apis?\b', network_segments))
     collection = bool(topics & {'awesome', 'awesome-list', 'awesome-lists', 'references'} or
                       re.search(r'\b(?:collection|list|reference)\b', purpose))
     if managed:
@@ -326,15 +325,30 @@ def classify(repo):
         category = 'native-analysis'
     else:
         category = 'reverse-engineering'
-    reference = curated_references().get(name)
-    origin = 'automatic-metadata'
-    reference_ids = []
-    if reference:
-        targets.update(reference['targets'])
-        category = reference['category'] or category
-        origin = 'curated-cross-reference'
-        reference_ids = reference['ids']
-    return sorted(targets), category, origin, reference_ids
+    return sorted(targets), category
+
+
+def relabel_report(document):
+    """List retained automatic labels that this engine would change; nothing is rewritten."""
+    differences, compared, skipped = [], 0, 0
+    for record in document['resources']:
+        if record.get('classification_origin') != 'automatic-metadata':
+            skipped += 1
+            continue
+        compared += 1
+        description = '' if record.get('description_omission') else record.get('description_en') or ''
+        targets, category = classify({'full_name': record['full_name'], 'description': description,
+                                      'topics': record.get('topics', [])})
+        if targets != sorted(record.get('targets', [])) or category != record.get('category'):
+            differences.append({
+                'id': record['id'], 'full_name': record['full_name'],
+                'stored_engine_version': record.get('classification_engine_version'),
+                'stored': {'targets': record.get('targets', []), 'category': record.get('category')},
+                'rederived': {'targets': targets, 'category': category},
+            })
+    return {'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
+            'compared_automatic_records': compared, 'skipped_cross_referenced_records': skipped,
+            'differing_records': len(differences), 'records': differences}
 
 
 def scan_readme(api, repo):
@@ -380,11 +394,12 @@ def scan_readme(api, repo):
         ]:
             if re.search(pattern, text):
                 signals.append(label)
-        targets, category, classification_origin, classification_reference_ids = classify(repo)
         try:
             description_fields = capture_description(repo.get('description'))
         except ValueError:
             raise ScanError('invalid-repository-description') from None
+        # Labels use only the published description, never text omitted from the record.
+        targets, category = classify({**repo, 'description': description_fields['description_en']})
         record = {
             'id': 'scan-' + str(repo['id']),
             'name': repo['full_name'],
@@ -417,8 +432,9 @@ def scan_readme(api, repo):
             'requirements': 'See upstream requirements; not manually reviewed.',
             'targets': targets,
             'category': category,
-            'classification_origin': classification_origin,
-            'classification_reference_ids': classification_reference_ids,
+            'classification_origin': 'automatic-metadata',
+            'classification_reference_ids': [],
+            'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
             'matched_queries': repo['_matched_queries'],
             'discovery_methods': repo.get('_discovery_methods', ['github-search']),
         }
@@ -517,7 +533,7 @@ def load_resume(path):
 def initial_meta(args, started):
     return {
         'schema_version': 1,
-        'classification_engine_version': 2,
+        'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
         'started_at': started,
         'completed_at': None,
         'requested_successful_scans': args.target,
@@ -525,7 +541,7 @@ def initial_meta(args, started):
         'method': 'Public, non-fork, non-archived GitHub repository discovery through search, retained unattempted repository-ID lookups on resume, and optional curated-resource or bibliography-artifact metadata lookups, followed by an actual authenticated GET of each repository README. README bytes are decoded, analyzed for document features, SHA-256 hashed and discarded.',
         'description_policy': SOURCE_DESCRIPTION_POLICY,
         'readme_heading_count_policy': 'Count of distinct heading-like lines encountered, capped at six; a count of six means at least six. Heading text is not retained.',
-        'classification_policy': 'Automatic labels use repository names, URL-stripped descriptions and explicit topics, with primary-function precedence. Canonical repository matches can add curated target tags and a primary category; classification_origin and classification_reference_ids identify that cross-reference. Labels do not establish REA compatibility. Empty targets mean insufficient metadata.',
+        'classification_policy': CLASSIFICATION_POLICY,
         'limits': {
             'workers': args.workers, 'requests_per_second': args.requests_per_second,
             'search_interval_seconds': 2.1, 'max_readme_bytes': MAX_README_BYTES,
@@ -560,6 +576,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None):
             'started_at', 'completed_at', 'last_checkpoint_at', 'status',
             'requested_successful_scans', 'unique_repos', 'attempted_readme_scans',
             'successful_readme_scans', 'failed', 'unattempted_candidates', 'limits', 'method', 'description_policy',
+            'classification_engine_version', 'classification_policy',
         )}
         prior.update({'source_sha256': resume_sha256, 'query_count': len(meta['queries']),
                       'candidate_ids_retained': 'discovered_repository_ids' in meta,
@@ -571,6 +588,8 @@ def run_scan(api, args, resumed=None, resume_sha256=None):
         meta['limits'] = fresh_meta['limits']
     meta['method'] = fresh_meta['method']
     meta['description_policy'] = fresh_meta['description_policy']
+    meta['classification_engine_version'] = fresh_meta['classification_engine_version']
+    meta['classification_policy'] = fresh_meta['classification_policy']
     meta['unique_repos_policy'] = ('Distinct persisted repository IDs from retained attempts and discovery observations. '
                                    'Historical count-only unattempted candidates are not added to this union unless rediscovered; '
                                    'their original counts remain in resume_history.')
@@ -582,6 +601,7 @@ def run_scan(api, args, resumed=None, resume_sha256=None):
         'requested_new_successful_scans': max(0, args.target - retained_successes),
         'readme_queue_candidates': 0, 'seed_curated': args.seed_curated,
         'seed_papers': args.seed_papers,
+        'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
         'retained_unattempted_repository_ids': len(known_ids - attempted_ids),
         'query_plan': list(args.queries),
     }
@@ -792,6 +812,7 @@ def main():
     parser.add_argument('--seed-papers', action='store_true', help='Discover GitHub roots from bibliography code_url/project_url fields before search candidates')
     parser.add_argument('--query', action='append', help='Ordered search base; repeat to replace defaults. Public/non-fork/non-archived gates are always added.')
     parser.add_argument('--output', type=Path, help='Output snapshot; defaults to .cache/source-index-next.json when resuming')
+    parser.add_argument('--relabel-report', type=Path, help='Offline: print retained automatic labels that differ from this engine, without rewriting the snapshot')
     args = parser.parse_args()
     if (args.target < 1 or not 1 <= args.workers <= 32 or not 1 <= args.max_pages <= 10
             or not 0 < args.requests_per_second <= 14 or args.candidate_buffer < 0):
@@ -799,6 +820,14 @@ def main():
     if args.query and any(not value.strip() for value in args.query):
         parser.error('query bases must be nonempty')
     args.queries = [value.strip() + ' is:public fork:false archived:false' for value in args.query] if args.query else QUERIES
+    if args.relabel_report:
+        try:
+            document, _ = load_resume(args.relabel_report)
+        except (OSError, ValueError, TypeError, KeyError):
+            print('Relabel report snapshot could not be read or has inconsistent identities/counts.', flush=True)
+            return 2
+        print(json.dumps(relabel_report(document), ensure_ascii=False, indent=2), flush=True)
+        return 0
     args.output = args.output or (ROOT / '.cache/source-index-next.json' if args.resume else DEFAULT_OUTPUT)
     resumed, resume_sha256 = None, None
     if args.resume:

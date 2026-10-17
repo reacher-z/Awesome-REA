@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**627 个仓库** · 2026-10-16 UTC
+**623 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -33,7 +33,6 @@
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — 全球首本详尽介绍 iOS 应用逆向工程技巧的书籍 :)。 **[4,440 星标]**
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — 将 Java 字节码反编译为 Java 的工具，IntelliJ IDEA 使用了它。 **[4,422 星标]**
 - [rocky/python-uncompyle6](https://github.com/rocky/python-uncompyle6) — 跨版本 Python 字节码反编译器。 **[4,331 星标]**
-- [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot 逆向工程工具。 **[4,330 星标]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — 跨平台微信小程序反编译 GUI 工具，支持 .wxapkg 文件扫描、解密和解包。 **[4,261 星标]**
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — 面向网络安全的精选资源列表。 **[4,220 星标]**
 - [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE 混淆字符串求解器：自动提取恶意软件中的混淆字符串。 **[4,189 星标]**
@@ -58,7 +57,6 @@
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — 对 Linear 同步引擎的逆向工程。 **[2,865 星标]**
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter 逆向工程框架。 **[2,775 星标]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — 逆向工程文章、书籍和论文列表。 **[2,750 星标]**
-- [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — 精选 Android 逆向工程培训、资源和工具列表。 **[2,739 星标]**
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift 混淆工具，保护 iOS 应用免受逆向工程攻击。 **[2,548 星标]**
 - [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — 现代化 Java 反编译器，追求尽可能准确的结果，注重输出质量。基于 Fernflower 反编译器分支开发。 **[2,409 星标]**
@@ -235,7 +233,6 @@
 - [hgarrereyn/STRIDE](https://github.com/hgarrereyn/STRIDE) — 对反编译后的可执行文件进行简单类型识别 **[123 星标]**
 - [imugee/pegasus](https://github.com/imugee/pegasus) — WinDbg 逆向工程扩展插件 **[123 星标]**
 - [mahaloz/sailr-eval](https://github.com/mahaloz/sailr-eval) — SAILR 论文中用于衡量反编译质量的评估流水线 **[121 星标]**
-- [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — 以可视化方式逆向分析混淆的 JavaScript，串联转换、检查 AST 变化，并编写可复用的去混淆插件。 **[120 星标]**
 - [andkorzh/PPU-LITE](https://github.com/andkorzh/PPU-LITE) — 通过逆向工程制作、时钟级精确且成本最低的 FPGA PPU 替代品。 **[119 星标]**
 - [decrazyo/unifying](https://github.com/decrazyo/unifying) — Logitech Unifying 协议的自由开源重新实现 **[119 星标]**
 - [Physics365/991CN-X-CW-Decompilation](https://github.com/Physics365/991CN-X-CW-Decompilation) — 991CN X 反编译及资料整理 **[119 星标]**
@@ -467,7 +464,6 @@
 - [Magier/JavaScript2img_Decoder](https://github.com/Magier/JavaScript2img_Decoder) — 解码经 JavaScript2img 混淆的 JavaScript 代码的工具 **[5 星标]**
 - [Michelleeby/pokemodemerald](https://github.com/Michelleeby/pokemodemerald) — 《宝可梦 绿宝石》的反编译项目。 **[5 星标]**
 - [TheQmaks/chatruletka](https://github.com/TheQmaks/chatruletka) — 一些逆向工程相关内容 **[5 星标]**
-- [tokenbleed/nibkit](https://github.com/tokenbleed/nibkit) — 针对已编译 iOS/macOS 界面文件（.nib、.storyboardc）的反编译器，可恢复对象树、连接关系、自定义类和导航图。 **[5 星标]**
 - [bethgelab/revenge-bench](https://github.com/bethgelab/revenge-bench) — RevengeBench：通过行为实验逆向恢复代码空间策略。 **[4 星标]**
 - [holly-hacker/hp3-gba-decomp](https://github.com/holly-hacker/hp3-gba-decomp) — 大量借助 AI 的反编译实验。 **[4 星标]**
 - [JamesHopbourn/iOS-Reverse-Engineering-Tools](https://github.com/JamesHopbourn/iOS-Reverse-Engineering-Tools) — iOS 逆向工程工具 **[4 星标]**

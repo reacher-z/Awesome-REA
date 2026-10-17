@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 from build_manifest import read_build_manifest
 from build_paper_pages import TARGET_LABELS, bibtex_text
 from validate_papers import read_papers
-from artifact_links import with_artifact_links
+from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
@@ -271,9 +271,9 @@ def validate_artifact_links(output, pages):
             resource['name_zh'] = resource.get('name_zh') or translations.get(resource['id'], {}).get('name', resource['name'])
             resources.append(resource)
     projected = apply_scope(localized_records(records, read_localizations(ROOT)), read_scope(ROOT))
-    expected = with_artifact_links(projected, read_papers(ROOT), resources)
+    expected = with_curated_labels(with_artifact_links(projected, read_papers(ROOT), resources), resources)
     built = json.loads((Path(output) / 'source-index.json').read_text(encoding='utf-8'))
-    assert built['resources'] == expected, 'Generated sources differ from localized source evidence and reviewed artifact links'
+    assert built['resources'] == expected, 'Generated sources differ from localized source evidence, reviewed artifact links and curated labels'
     visible = [record for record in expected if record.get('scope_status') != 'excluded']
     normalize = lambda text: ' '.join(text.split())
     for language in ('en', 'zh'):

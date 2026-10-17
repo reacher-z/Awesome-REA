@@ -2,13 +2,12 @@
 
 [全部分类](README.zh-CN.md) · [English](managed-code.md)
 
-**133 个仓库** · 2026-10-16 UTC
+**131 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET 反编译器，支持生成 PDB、ReadyToRun、元数据等功能，而且跨平台！ **[26,662 星标]**
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR 是一个特性完整、零成本、高性能、低内存的 Unity 全平台原生 C# 热更新解决方案。 **[7,993 星标]**
-- [kaitai-io/kaitai_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct：用于生成二进制数据解析器的声明式语言，支持 C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust。 **[4,712 星标]**
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — 全球首个兼容 Il2Cpp 与 Mono 的 Unity 游戏通用模组加载器。 **[4,258 星标]**
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — YouTube 内部 API 的抽象层。 **[3,741 星标]**
 - [icedland/iced](https://github.com/icedland/iced) — 极速且准确的 x86/x64 反汇编器、汇编器、解码器和编码器，支持 Rust、.NET、Java、Python 和 Lua。 **[3,592 星标]**
@@ -52,7 +51,6 @@
 - [codemerx/JustDecompileEngine](https://github.com/codemerx/JustDecompileEngine) — CodemerxDecompile 的反编译引擎 **[66 星标]**
 - [getsentry/dotnet-assembly-alias](https://github.com/getsentry/dotnet-assembly-alias) — 重命名 .NET 程序集及引用的工具 **[57 星标]**
 - [Skyluker4/UnityAssetReplacer](https://github.com/Skyluker4/UnityAssetReplacer) — 使用修改后的文件替换 Unity Asset Bundle 中数据的工具。 **[57 星标]**
-- [andreibalakin18-ai/anime-shop-sim-clerk-brain](https://github.com/andreibalakin18-ai/anime-shop-sim-clerk-brain) — 2026 年最佳 Anime Shop Simulator 模组：更智能的员工与作弊菜单指南 **[56 星标]**
 - [cod3nym/Deobfuscar](https://github.com/cod3nym/Deobfuscar) — 简单的命令行应用，自动解密受 Obfuscator 保护的二进制文件中的字符串 **[48 星标]**
 - [CodeName-Anti/CrabGame-Cheat](https://github.com/CodeName-Anti/CrabGame-Cheat) — DaniDev 的 Crab Game 游戏作弊工具。 **[48 星标]**
 - [Ellerbach/LegoDimensions](https://github.com/Ellerbach/LegoDimensions) — 读写 Lego Dimensions 标签，并与传送门交互。 **[46 星标]**

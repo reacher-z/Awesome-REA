@@ -2,13 +2,12 @@
 
 [All categories](README.md) · [简体中文](managed-code.zh-CN.md)
 
-**133 repositories** · 2026-10-16 UTC
+**131 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET Decompiler with support for PDB generation, ReadyToRun, Metadata (&amp;more) - cross-platform! **[26,662 stars]**
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR is a fully featured, zero-cost, high-performance, low-memory solution for Unity's all-platform native C# hot updates. **[7,993 stars]**
-- [kaitai-io/kaitai_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct: declarative language to generate binary data parsers in C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust **[4,712 stars]**
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — The World's First Universal Mod Loader for Unity Games compatible with both Il2Cpp and Mono **[4,258 stars]**
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — Abstraction layer over YouTube's internal API **[3,741 stars]**
 - [icedland/iced](https://github.com/icedland/iced) — Blazing fast and correct x86/x64 disassembler, assembler, decoder, encoder for Rust, .NET, Java, Python, Lua **[3,592 stars]**
@@ -52,7 +51,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [codemerx/JustDecompileEngine](https://github.com/codemerx/JustDecompileEngine) — The decompilation engine of CodemerxDecompile **[66 stars]**
 - [getsentry/dotnet-assembly-alias](https://github.com/getsentry/dotnet-assembly-alias) — Tool to rename .NET assemblies and references **[57 stars]**
 - [Skyluker4/UnityAssetReplacer](https://github.com/Skyluker4/UnityAssetReplacer) — A tool to replace data in a Unity Asset Bundle from modified files. **[57 stars]**
-- [andreibalakin18-ai/anime-shop-sim-clerk-brain](https://github.com/andreibalakin18-ai/anime-shop-sim-clerk-brain) — Best Anime Shop Simulator Mods 2026: Smarter Staff and Cheat Menu Guide **[56 stars]**
 - [cod3nym/Deobfuscar](https://github.com/cod3nym/Deobfuscar) — A simple commandline application to automatically decrypt strings from Obfuscator protected binaries **[48 stars]**
 - [CodeName-Anti/CrabGame-Cheat](https://github.com/CodeName-Anti/CrabGame-Cheat) — A Cheat for CrabGame by DaniDev. **[48 stars]**
 - [Ellerbach/LegoDimensions](https://github.com/Ellerbach/LegoDimensions) — Read and write tags from Lego Dimensions. Interact with the portal. **[46 stars]**
