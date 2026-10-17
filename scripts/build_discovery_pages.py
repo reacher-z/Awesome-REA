@@ -15,6 +15,8 @@ from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta
 
 
+# The upstream project that the collection's name echoes.
+REA_REPOSITORY_URL = 'https://github.com/morluto/rea'
 SECTIONS = {
     'website': ('Websites', '网站'),
     'game': ('Games', '游戏'),
@@ -353,7 +355,13 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         licensing = ('本仓库原创说明和代码采用 MIT 许可。上游项目及其描述保留各自许可；许可证标识仅是采集时元数据。生成的双语索引保留 description_original 上游原文，翻译由 AI 辅助完成。'
                      if zh else 'Original editorial content and code in this repository use the MIT license. Upstream projects and their descriptions retain their own licenses; license identifiers are metadata snapshots. The generated bilingual index preserves upstream text as description_original, and translations are AI-assisted.')
         facts = [('收录范围' if zh else 'What is collected', summary), ('来源与更新' if zh else 'Evidence and updates', evidence), ('范围与复核' if zh else 'Scope and review', scope), ('语言与许可' if zh else 'Languages and licenses', licensing)]
-        fact_cards = ''.join(f'<section class="source-card browse-repository"><h2>{escape(heading)}</h2><p class="card-description">{escape(text)}</p></section>' for heading, text in facts)
+        # Same wording as the README About sections; the label comes from the shared relationship vocabulary.
+        documentation_label = RELATIONSHIPS['official-documentation'][1 if zh else 0]
+        rea_text = (f'是单独维护的上游 CLI 与 MCP 项目。本合集名称与之呼应，但并非 REA 官方仓库；条目标签及“{documentation_label}”等关系标注中的 REA 均指该项目。'
+                    if zh else f"is a separate upstream CLI and MCP project. This collection's name echoes it, but it is not the REA repository; “REA” in entry tags and labels such as “{documentation_label}” refers to that project.")
+        rea = f'<a href="{_url(REA_REPOSITORY_URL)}">{("REA（Reverse Engineer Anything）" if zh else "REA (Reverse Engineer Anything)")}</a> {escape(rea_text)}'
+        fact_cards = f'<section class="source-card browse-repository"><h2>{("与 REA 的关系" if zh else "REA and this collection")}</h2><p class="card-description">{rea}</p></section>'
+        fact_cards += ''.join(f'<section class="source-card browse-repository"><h2>{escape(heading)}</h2><p class="card-description">{escape(text)}</p></section>' for heading, text in facts)
         companion_url = 'https://aicanwhat.com/zh/' if zh else 'https://aicanwhat.com/'
         companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及智能体训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')

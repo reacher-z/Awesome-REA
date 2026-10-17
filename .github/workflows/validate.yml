@@ -32,3 +32,18 @@ jobs:
       # validate_discovery.py and validate_site.py. The asset URL is only written into HTML.
       - name: Run the production build
         run: python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
+      # The smoke test rebuilds dist/ with the public fallback icons and loads it in the runner's installed
+      # Chrome; the pinned puppeteer-core package downloads no browser. CI=true makes a missing Chrome fail.
+      - name: Install the browser smoke-test driver
+        run: npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
+      - name: Run the browser smoke test
+        run: node tests/browser/smoke.cjs
+      - name: Keep browser smoke-test screenshots for review
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: browser-smoke-screenshots
+          path: .cache/browser-smoke/
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 14

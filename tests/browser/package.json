@@ -1,0 +1,12 @@
+{
+  "name": "awesome-rea-browser-smoke",
+  "private": true,
+  "description": "Headless-browser smoke test for the built site; drives an installed Chrome and downloads no browser.",
+  "license": "MIT",
+  "scripts": {
+    "smoke": "node smoke.cjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "25.12.0"
+  }
+}

@@ -34,7 +34,7 @@ node --check site/app.js
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-The test command runs every Python and browser test offline; CI runs the same command.
+The test command runs every Python test and the Node tests of the browser scripts offline; CI runs the same command. The [browser smoke test](#browser-smoke-test) is a separate step.
 
 Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly, because the directory fetches `catalog.json` and `source-browser.json`. Stop the preview server with Ctrl+C.
 
@@ -42,11 +42,22 @@ After source, locale, or scope edits, regenerate the [GitHub browsing directory]
 
 The bare homepage always opens in English. Use `/zh/` or the language selector to open Chinese; old browser preferences do not override the default. Generated pages link to `/zh/` routes, while existing `?lang=zh` links still render Chinese.
 
-Before publication, check English and Chinese at desktop and 390 px widths: search, all filter types, empty results, clearing filters, loading more, prerequisite expansion, keyboard focus and the language selector. Confirm repository descriptions change language alongside the interface, including filtered and newly loaded cards. Check translated prerequisites and empty-description fallbacks, and confirm the canonical URL, social image URLs, `CNAME`, robots and sitemap agree on `awesomerea.org`.
+Before publication, check English and Chinese at desktop and 390 px widths: search, all filter types, empty results, clearing filters, loading more, prerequisite expansion, keyboard focus and the language selector. Confirm repository descriptions change language alongside the interface, including filtered and newly loaded cards. Check translated prerequisites and empty-description fallbacks, and confirm the canonical URL, social image URLs, `CNAME`, robots and sitemap agree on `awesomerea.org`. The browser smoke test below automates part of this list; it does not replace the review.
 
 The validators derive the sitemap inventory from collection routes, category definitions and current curated/paper IDs. Adding or removing a reviewed entry changes two detail URLs; there is no fixed page-count limit. Checks require exact detail IDs, complete localized content, ordinary listing links, reciprocal languages, self-canonicals and source-bound structured data. The entry builder removes only obsolete pages carrying its own generated-page marker and preserves listing pages and citation downloads.
 
 Review the exact `dist/` payload for credentials, account identifiers, administrative URLs, personal filesystem paths and unrelated files. The public catalog should contain public source links only. Publish generated assets, never an entire working directory or `.git` folder. `source-reviewed` describes a check of the resource's documentation; it does not assert that every listed tool has been executed.
+
+### Browser smoke test
+
+[smoke.cjs](../tests/browser/smoke.cjs) rebuilds `dist/` with the public fallback icons, serves it on `127.0.0.1` with the [site/_headers](../site/_headers) rules, and loads it in an installed headless Chrome or Chromium at 1280 px and 390 px. Requests to any other origin are blocked. Both homepages and a set of collection, about, browse and detail pages must load without console errors, Content Security Policy violations, failed local requests or horizontal page overflow. On each homepage it also checks the initial curated and repository card counts and status totals against the built JSON, a search-and-clear cycle, Show More in both views, requirement expansion, and a language switch that keeps a target filter.
+
+```sh
+npm ci --prefix tests/browser --ignore-scripts
+node tests/browser/smoke.cjs
+```
+
+The pinned `puppeteer-core` package drives the installed browser and downloads none; set `CHROME_PATH` when Chrome is not in a standard location. Without a browser or the package, the test prints the reason and skips locally, while CI fails. Screenshots are written to the ignored `.cache/browser-smoke/` directory, and CI keeps them as the `browser-smoke-screenshots` workflow artifact for 14 days. They are for people to inspect: the test does not compare images, approve the visual design, or open any linked resource.
 
 ### Optional licensed production icons
 

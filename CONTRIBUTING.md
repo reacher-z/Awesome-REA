@@ -40,12 +40,14 @@ Run every test with one command from the repository root. It needs Node.js for t
 python3 -m unittest discover -s tests -v
 ```
 
-The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the test command, then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin.
+The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the test command, then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin. Last, the [browser smoke test](docs/website.md#browser-smoke-test) rebuilds the site and loads it in headless Chrome; locally it skips with a message when Chrome or its pinned driver is missing.
 
 ```sh
 python3 -m compileall -q scripts tests
 python3 -m unittest discover -s tests -v
 python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
+npm ci --prefix tests/browser --ignore-scripts
+node tests/browser/smoke.cjs
 ```
 
 Use `python3 scripts/check_links.py` for live source checks. Rate limits and temporary network failures are reported separately from confirmed missing links.
