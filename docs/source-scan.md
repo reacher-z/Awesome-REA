@@ -44,15 +44,17 @@ These descriptions derive from attributed upstream text, not independent editori
 
 The curated `source-reviewed` records remain in [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json). Promotion from this source index requires a separate human or agent editorial review under the [contribution rules](../CONTRIBUTING.md).
 
-## Reproduce a scan
+## Run a fresh scan
 
-Use Python 3.10 or newer and an already authenticated GitHub CLI:
+Use Python 3.10 or newer and an already authenticated GitHub CLI. Write a fresh scan to the ignored `.cache/` directory:
 
 ```sh
-python3 scripts/scan_sources.py --target 1600 --workers 16 --requests-per-second 12
+python3 scripts/scan_sources.py --target 1600 --workers 16 --requests-per-second 12 --output .cache/source-index-fresh.json
 ```
 
-The default output is `data/source-index.json`. Use `--output` to write another snapshot. The script keeps authentication in process memory, sends it only to `api.github.com`, and refuses redirects that would send it elsewhere. It never writes or logs the credential.
+Without `--output`, a fresh run writes to `data/source-index.json` and saves its progress checkpoints there, replacing the retained snapshot. A fresh scan samples a new population: live search results, repository metadata and READMEs change over time, so it does not recreate the retained snapshot's candidates or counts. Replacing the canonical snapshot is a separate, reviewed step described below.
+
+The script keeps authentication in process memory, sends it only to `api.github.com`, and refuses redirects that would send it elsewhere. It never writes or logs the credential.
 
 ## Continue without replacing earlier evidence
 
@@ -68,7 +70,7 @@ The scanner preserves earlier record objects, hashes, timestamps, failed attempt
 
 Repeat `--query 'topic:javascript topic:reverse-engineering'` to supply focused search bases instead of the defaults; the public/non-fork/non-archived gates are appended automatically. The exact ordered plan and executed queries are in `meta.current_run.query_plan` and `meta.queries`. An interrupted checkpoint can be resumed to a different output path without re-reading its completed sources.
 
-Before replacing the canonical snapshot, add both-language descriptions for every new ID, review clear scope mismatches, regenerate both repository directories, and run validation. An in-progress checkpoint is not publishable. The source index keeps retained upstream text, explicit omission fingerprints and original README evidence; translation and scope decisions remain separate.
+Before replacing the canonical `data/source-index.json` with a fresh or resumed output, add both-language descriptions for every new ID, review clear scope mismatches, regenerate both repository directories, and run validation. Submit the replacement for review like any other data change. An in-progress checkpoint is not publishable. The source index keeps retained upstream text, explicit omission fingerprints and original README evidence; translation and scope decisions remain separate.
 
 Search calls are spaced by at least 2.1 seconds; README requests share a bounded request rate and a worker limit. HTTP rate-limit responses trigger a shared wait and retry, and progress checkpoints are saved after each 100 attempted READMEs. GitHub limits each search to at most 1,000 results, so the scanner uses distinct topical queries and records its pagination limits. See [GitHub search behavior](https://docs.github.com/en/rest/search/search#about-search) and [REST API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 

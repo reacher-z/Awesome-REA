@@ -20,7 +20,8 @@ body:
     attributes:
       label: Publication status
       options:
-        - Published conference or journal paper
+        - Published conference or workshop paper
+        - Published journal article
         - Accepted, proceedings not yet verified
         - Preprint
         - Status needs verification

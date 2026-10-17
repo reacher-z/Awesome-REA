@@ -8,6 +8,8 @@ Tools, reconstruction cases and research for understanding websites, games, apps
 
 An independent, source-reviewed collection. Review does not imply runtime verification. [Evidence, requirements and review method](https://awesomerea.org/about/).
 
+[REA (Reverse Engineer Anything)](https://github.com/morluto/rea) is a separate upstream CLI and MCP project. This collection's name echoes it, but it is not the REA repository; “REA” in entry tags and labels such as “Official REA documentation” refers to that project.
+
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
@@ -837,6 +839,8 @@ Help improve an entry or share a useful source. Start with the [contribution gui
 ## About
 
 This is an independent community collection. Original descriptions and code are [MIT licensed](LICENSE); linked projects retain their own licenses.
+
+To cite the collection itself, use its [citation metadata](CITATION.cff). Cite listed papers, tools and other works from their own primary sources, and give the commit or snapshot date with any scan-derived counts.
 
 For AI-built software and agent training or evaluation resources, explore [AI Can What?](https://aicanwhat.com/) across games, websites and applications.
 

@@ -26,7 +26,9 @@ body:
         - Case study
         - Integration
         - Collection
-        - Documentation or reference
+        - Documentation
+        - Learning resource
+        - Research
     validations:
       required: true
   - type: dropdown

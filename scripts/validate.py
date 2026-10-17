@@ -155,7 +155,7 @@ def validate_resources(records, errors):
         if record['relationship'] not in RELATIONSHIPS:
             errors.append(f"{where}: unknown relationship {record['relationship']!r}")
         if record['verification'] != 'source-reviewed':
-            errors.append(f'{where}.verification: use source-reviewed; runtime evidence belongs in a lab receipt')
+            errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not (nonempty_string(record['requirements']) or string_list(record['requirements'])):
             errors.append(f'{where}.requirements: use a nonempty string or list of nonempty strings')
         try:

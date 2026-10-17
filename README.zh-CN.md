@@ -8,6 +8,8 @@
 
 依据一手来源整理的独立合集，来源核查不代表运行验证。[了解证据、使用条件与核查方法](https://awesomerea.org/zh/about/)。
 
+[REA（Reverse Engineer Anything）](https://github.com/morluto/rea) 是单独维护的上游 CLI 与 MCP 项目。本合集名称与之呼应，但并非 REA 官方仓库；条目标签及“REA 官方文档”等关系标注中的 REA 均指该项目。
+
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
@@ -838,6 +840,8 @@
 ## 关于
 
 本项目是独立社区资源合集。原创说明和代码使用 [MIT 许可证](LICENSE)，外部项目保留各自的许可证。
+
+引用本合集时，请使用其[引用元数据](CITATION.cff)。所列论文、工具及其他作品请按各自的一手来源引用；引用扫描统计数据时，请注明对应的提交或快照日期。
 
 如需查找 AI 参与开发的软件，以及 Agent 训练和评测资料，可浏览 [AI Can What?](https://aicanwhat.com/zh/) 的游戏、网站和应用目录。
 

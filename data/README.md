@@ -1,16 +1,16 @@
 # Resource catalog format
 
-`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these required fields:
+`rea-resources.json` and `tool-resources.json` contain the records rendered into both READMEs. They are arrays of objects with these fields. Every field is required except `additional_evidence_urls`.
 
 | Field | Meaning |
 | --- | --- |
 | `id` | Stable lowercase slug, unique across both files |
 | `name` | Upstream project or resource name |
 | `url` | Canonical public destination |
-| `category` | Task or tool family |
+| `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |
 | `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration |
-| `relationship` | Relationship to REA, independent integration, foundation, or learning |
+| `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
 | `description_en` / `description_zh` | Original practical descriptions |
 | `evidence_url` | Primary source supporting the description |
 | `additional_evidence_urls` | Optional supporting documentation, release, or package-metadata URLs; these are validated and included in link checks |
@@ -18,11 +18,60 @@
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
 | `requirements` | Platform, engine, release, license, or input prerequisites |
 
-Inspect available categories and relationships with `python3 scripts/catalog.py --json`. Source review dates are snapshots; upstream requirements may change. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
+The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
+
+- `official-core` (Official REA project): the upstream REA project itself.
+- `official-skill` (Official REA skill): an agent skill published in the REA repository.
+- `official-documentation` (Official REA documentation): setup, CLI, contract or workflow documentation published by REA.
+- `official-guide` (Official REA guide): a walkthrough from REA's published guides.
+- `official-case-study` (Official REA case study): an investigation published by the REA project.
+- `community-integration` (Community REA integration): a third-party plugin, bridge or extension that documents working with REA.
+- `community-learning-resource` (Community REA learning resource): a third-party lab, playbook or collection that its authors associate with REA.
+- `community-reported-mixed-workflow` (Author-reported mixed workflow): a third-party case whose author reports using REA alongside other tools.
+- `upstream-maintainer-companion-list` (REA maintainer companion list): a related resource list maintained by REA's maintainer.
+- `independent-agent-integration` (Independent agent integration): an MCP server or agent workflow with no established REA connection.
+- `independent-reconstruction` (Independent reconstruction project): a documented reconstruction with no established REA connection.
+- `foundation` (Foundation tool): an established analysis tool, library or framework that works independently of REA.
+- `learning` (Learning resource): a course, book, reference or research resource with no established REA connection.
+
+Source review dates are snapshots; upstream requirements may change. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
 
 `benchmarks.json` is a separate repository comparison dataset. Star counts are observations at `observed_at`, not a live ranking, quality score, or predicted growth rate. The comparison notes explain the population and limitations.
 
 `papers.json` is a separate bibliography, rendered into the [English paper directory](https://awesomerea.org/papers/), [Chinese paper directory](https://awesomerea.org/zh/papers/), and both READMEs. The bibliography is counted separately from the repository scans. Some papers also appear in the curated collection, so paper and curated totals must not be added as unique entries. Records preserve original titles and author names, publication venue and status, date precision, DOI/arXiv identifiers, public primary sources, bilingual summaries and scope limitations. Chinese titles are translations. A preprint is labeled as such; an open paper does not imply an open dataset or evaluation service. Code links require an author-provided source. Review dates describe bibliography checks, not publication dates or reproduced results.
+
+Each paper record has exactly these fields; the validator rejects missing or extra keys. Nullable fields stay present with `null`. Text fields are nonempty, each `_zh` field needs Chinese text, and its English counterpart must be distinct English text.
+
+| Field | Value | Meaning |
+| --- | --- | --- |
+| `id` | `paper-` followed by a lowercase hyphenated slug | Stable identifier, unique in the bibliography |
+| `title` / `title_zh` | Text | Original title exactly as published / Chinese translation |
+| `authors` | Nonempty list of names | Full author names as published, without duplicates |
+| `year` | Integer | Publication year; not in the future |
+| `date_precision` | `year`, `month` or `day` | Finest verified precision of the publication date |
+| `publication_date` | `null`, `YYYY-MM` or `YYYY-MM-DD` | `null` for `year` precision, otherwise a month or day matching `date_precision`; within `year` and not in the future |
+| `date_basis` / `date_basis_zh` | Text | Source that establishes the recorded date |
+| `venue` | Text | Conference, workshop, journal or preprint server; journal articles use the journal title |
+| `publication_status` | `conference-paper`, `conference-accepted`, `journal-article` or `preprint` | Published conference or workshop paper; accepted but proceedings not verified; journal article, exported as BibTeX `@article`; preprint |
+| `arxiv_id` | arXiv identifier such as `2403.05286`, or `null` | arXiv paper identifier without a version suffix |
+| `arxiv_version_reviewed` | `v1`, `v2`, … or `null` | arXiv version checked; `null` when there is no `arxiv_id` |
+| `first_arxiv_date` | ISO date or `null` | First arXiv submission date; `null` when there is no `arxiv_id` |
+| `doi` | DOI such as `10.18653/v1/2024.emnlp-main.203`, or `null` | Paper DOI, never a software or dataset DOI |
+| `url` | HTTPS URL | Canonical paper page, unique in the bibliography |
+| `pdf_url` | HTTPS URL | Public PDF of the paper |
+| `code_url` / `project_url` | HTTPS URL or `null` | Author-provided code / project page |
+| `targets` | Nonempty list of unique target labels | Same labels as curated records; `targets[0]` chooses the primary section |
+| `description_en` / `description_zh` | Text | Original summary |
+| `scope_limitations_en` / `scope_limitations_zh` | Text | Evaluation scope, unavailable artifacts and other limits |
+| `why_fits_en` / `why_fits_zh` | Text | Why the paper belongs in the collection |
+| `evidence_urls` | Nonempty list of HTTPS URLs | Primary sources checked for the record |
+| `metadata_notes` / `metadata_notes_zh` | Text | Notes on identifiers, dates, acceptance or artifacts |
+| `kind` | `research` | Fixed value |
+| `verified_at` | ISO date | Date of the bibliography review; not in the future |
+| `verification` | `source-reviewed` | Fixed value; sources were checked, not reproduced |
+| `runtime_tested` | `false` | Fixed value; reproduction results are not recorded |
+
+`date_precision` states how much of the date a source verifies, and `publication_date` holds exactly that much: nothing for `year`, a month for `month`, a day for `day`. `year` is always recorded. `targets[0]` places the paper in one section of the READMEs and the paper directory; the agent-evaluation papers listed in `AGENT_EVALUATION_PAPERS` in [build_readme.py](../scripts/build_readme.py) form their own README section.
 
 Search the bibliography with `python3 scripts/catalog.py --papers --target website`, add a query such as `interaction`, or use `--language zh` for Chinese output. `--json` returns matching source records for tools and agents. Paper search is separate from `--source-index` and the default curated-resource search.
 

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >-
+  To cite the Awesome REA collection itself, use this metadata. It does not
+  cite the papers, tools or other works listed in the collection: cite those
+  from their own primary sources. When citing scan-derived counts, give the
+  commit or snapshot date they come from.
+title: Awesome Reverse Engineering Anything
+type: dataset
+authors:
+  - given-names: Yuxuan
+    family-names: Zhang
+    website: https://yuxuan.world/
+  - given-names: Haozhe
+    family-names: Wang
+    website: https://haozheh3.github.io/
+  - name: Awesome REA contributors
+abstract: >-
+  An independent, bilingual (English and Simplified Chinese) collection of
+  source-reviewed tools, reconstruction cases and research papers for
+  reverse engineering websites, games, apps, native binaries, firmware and
+  communication protocols, with a separate automated index of scanned
+  repository READMEs. Source review does not imply runtime verification.
+url: https://awesomerea.org/
+repository-code: https://github.com/reacher-z/Awesome-REA
+license: MIT
+keywords:
+  - reverse engineering
+  - decompilation
+  - binary analysis
+  - firmware analysis
+  - protocol analysis
+  - awesome list
