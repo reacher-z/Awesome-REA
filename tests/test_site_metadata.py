@@ -124,7 +124,8 @@ class SecurityHeaderTests(unittest.TestCase):
         self.assertEqual(site['x-frame-options'], 'DENY')
         self.assertEqual(site['strict-transport-security'], 'max-age=2592000')
         directives = csp_directives(site['content-security-policy'])
-        self.assertEqual(directives['script-src'], ["'self'"])
+        self.assertEqual(directives['script-src'], ["'self'", 'https://static.cloudflareinsights.com'])
+        self.assertEqual(directives['connect-src'], ["'self'", 'https://cloudflareinsights.com'])
         self.assertEqual(directives['font-src'], ["'self'", 'https://awesome-rea.pages.dev'])
         no_cache = {'cache-control': 'no-cache, must-revalidate'}
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
@@ -153,14 +154,15 @@ class SecurityHeaderTests(unittest.TestCase):
             'inline script': valid + '<script>alert(1)</script>',
             'event handler': valid + '<button onclick="go()">Go</button>',
             'style attribute': valid + '<p style="color:red">x</p>',
-            'third-party script': valid + '<script src="https://static.cloudflareinsights.com/beacon.min.js"></script>',
+            'third-party script': valid + '<script src="https://cdn.example.org/widget.js"></script>',
             'unlisted icon origin': valid.replace('awesome-rea.pages.dev', 'icons.example.org'),
             'frame': valid + '<iframe src="/"></iframe>',
         }
         for name, html in failures.items():
             with self.subTest(case=name), self.assertRaises(AssertionError):
                 self.check(html)
-        for name, changed in {'preload': headers.replace('max-age=2592000', 'max-age=2592000; includeSubDomains; preload'),
+        for name, changed in {'analytics removed': headers.replace(" https://static.cloudflareinsights.com", ''),
+                              'preload': headers.replace('max-age=2592000', 'max-age=2592000; includeSubDomains; preload'),
                               'unsafe inline': headers.replace("script-src 'self'", "script-src 'self' 'unsafe-inline'"),
                               'framing allowed': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: SAMEORIGIN'),
                               'no policy': headers.replace('Content-Security-Policy:', 'X-Content-Security-Policy:')}.items():

@@ -369,6 +369,9 @@ def validate_security_headers(output):
     for directive in ('script-src', 'style-src'):
         assert not {"'unsafe-inline'", "'unsafe-eval'", '*', 'data:', 'http:', 'https:'} & set(directives.get(directive, [])), f'CSP {directive} is too broad'
     assert csp_allows(directives, 'connect-src', '/catalog.json'), 'CSP must allow same-origin JSON fetches'
+    # Cloudflare Web Analytics is injected at the edge on the production domain, so built pages never show it.
+    assert csp_allows(directives, 'script-src', 'https://static.cloudflareinsights.com/beacon.min.js'), 'CSP must allow the Cloudflare Web Analytics beacon'
+    assert csp_allows(directives, 'connect-src', 'https://cloudflareinsights.com/cdn-cgi/rum'), 'CSP must allow Cloudflare Web Analytics reports'
     for path in sorted(output.rglob('*.html')):
         page = PageResources(path.read_text(encoding='utf-8'))
         where = '/' + path.relative_to(output).as_posix()
