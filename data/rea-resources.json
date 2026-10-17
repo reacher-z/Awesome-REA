@@ -508,8 +508,8 @@
     "relationship": "community-integration",
     "description_en": "A Claude Code plugin adds Jev-based routing and evidence checks around a pinned REA MCP integration.",
     "description_zh": "Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。",
-    "evidence_url": "https://github.com/juan-viox/rea-jev/blob/b30536e8b284ceabd8fc3a2d5bcb61630f876ff3/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/juan-viox/rea-jev/blob/236f149638971d1c98399fc9de864378b2011bfd/README.md",
+    "verified_at": "2026-10-17T12:48:42Z",
     "verification": "source-reviewed",
     "requirements": [
       "Claude Code, supported Node.js and the plugin's documented macOS/Linux environment.",
@@ -594,8 +594,8 @@
     "relationship": "upstream-maintainer-companion-list",
     "description_en": "A task-oriented reverse-engineering resource list by REA's maintainer, useful for broader tools and foundations.",
     "description_zh": "REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。",
-    "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/c93a95169d94de9c1e9f39de0f4c865b48c7a9ed/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/901e752191ebdff4f1b8e1a2f15c82fef2de77e7/README.md",
+    "verified_at": "2026-10-17T12:48:42Z",
     "verification": "source-reviewed",
     "requirements": [
       "Individual tools retain their own requirements and licenses.",
@@ -618,8 +618,11 @@
     "relationship": "community-learning-resource",
     "description_en": "A bilingual collection of REA and other AI-assisted reverse engineering cases, with source links and explicit distinctions between reported and reproduced outcomes.",
     "description_zh": "中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。",
-    "evidence_url": "https://github.com/songshikang0111/awesome-REA-cases/blob/305da967206912faebb096fab8fba60ffca27842/README.md",
-    "verified_at": "2026-10-16T01:08:16Z",
+    "evidence_url": "https://github.com/songshikang0111/awesome-REA-cases/blob/afea8a6c6ea29559533cf5ba4063e15b6649e0af/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/songshikang0111/awesome-REA-cases/blob/afea8a6c6ea29559533cf5ba4063e15b6649e0af/README.zh-CN.md"
+    ],
+    "verified_at": "2026-10-17T12:48:42Z",
     "verification": "source-reviewed",
     "requirements": "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it.",
     "targets": [
