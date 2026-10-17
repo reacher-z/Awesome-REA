@@ -1,5 +1,6 @@
 """Gone or reassigned upstreams are excluded only with a recheck result showing their scanned ID no longer resolves."""
 import copy
+import json
 from pathlib import Path
 import sys
 import unittest
@@ -8,10 +9,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from scan_sources import ScanError
 from source_availability import check_record
-from source_scope import (UNAVAILABLE_UPSTREAM_REASON, apply_scope, exclusion_counts, unavailable_clause,
-                          validate_scope)
+from source_scope import (UNAVAILABLE_UPSTREAM_REASON, apply_scope, exclusion_counts, read_scope,
+                          unavailable_clause, validate_scope)
 
 DIGEST = 'c' * 64
+REVIEWED = {'scan-1377172300': 'not-found', 'scan-1409072094': 'not-found', 'scan-1238268014': 'name-reassigned'}
 
 
 def scan(number, full_name):
@@ -161,6 +163,40 @@ class WordingTests(unittest.TestCase):
         self.assertEqual(unavailable_clause(3, False, '**'), ' and **3** whose upstream repository is no longer available')
         self.assertEqual(unavailable_clause(3, True), '及 3 个上游仓库已无法访问的条目')
         self.assertEqual(exclusion_counts([{'scope_status': 'excluded'}, {}]), (1, 0))
+
+
+class CollectionTests(unittest.TestCase):
+    """The reviewed records stay in the scan, leave browsing and are never linked by their old names."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.records = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
+        cls.scope = read_scope(ROOT)
+
+    def test_reviewed_records_are_excluded_with_gone_outcomes(self):
+        self.assertEqual(errors_for(self.scope, self.records), [])
+        unavailable = {identifier: entry for identifier, entry in self.scope.items()
+                       if entry['reason_code'] == UNAVAILABLE_UPSTREAM_REASON}
+        self.assertEqual({identifier: entry['availability_check']['outcome'] for identifier, entry in unavailable.items()},
+                         REVIEWED)
+        self.assertEqual(unavailable['scan-1238268014']['availability_check']['recorded_name_repository_id'],
+                         'scan-1244345068')
+        scoped = apply_scope(self.records, self.scope)
+        self.assertEqual(len(scoped), 3000)
+        self.assertEqual(exclusion_counts(scoped)[1], 3)
+        self.assertEqual({record['id'] for record in scoped if record['id'] in REVIEWED
+                          and record['scope_status'] == 'excluded'}, set(REVIEWED))
+
+    def test_directories_and_readmes_do_not_link_unavailable_names(self):
+        names = [record['full_name'] for record in self.records if record['id'] in REVIEWED]
+        self.assertEqual(len(names), 3)
+        paths = [ROOT / 'README.md', ROOT / 'README.zh-CN.md', *sorted((ROOT / 'docs/repositories').glob('*.md'))]
+        for path in paths:
+            text = path.read_text(encoding='utf-8')
+            for name in names:
+                self.assertNotIn('github.com/' + name, text, f'{path.name} links {name}')
+        index = (ROOT / 'docs/repositories/README.md').read_text(encoding='utf-8')
+        self.assertIn('**3** whose upstream repository is no longer available', index)
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**434 个仓库** · 2026-10-16 UTC
+**432 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -23,7 +23,6 @@
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 自动处理 Android APK 文件，使其便于进行 HTTPS 检查的命令行应用。 **[5,128 星标]**
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — 面向 APK、DEX、ODEX、OAT、JAR、AAR 和 CLASS 文件的高速强大 Android 反编译器，无需 Java 虚拟机即可运行的原生工具。支持恶意行为检测、隐私泄露检测、漏洞检测、路径求解、加壳识别、变量追踪、去混淆、Python/Java 脚本、设备内存提取、数据解密与加密等。 **[4,859 星标]**
-- [newliver666/apk-reverse](https://github.com/newliver666/apk-reverse) — 适用于 Android APK 逆向工程分析。 **[4,818 星标]**
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — 基于 Qt6 的开源跨平台 Android 应用包逆向工程 IDE，提供友好的 IDE 风格布局，包含支持 \*.smali 代码语法高亮的编辑器。 **[4,683 星标]**
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android 虚拟机与去混淆工具。 **[4,671 星标]**
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩 ReVanced Patches 模板仓库。 **[4,613 星标]**
@@ -257,7 +256,6 @@
 - [rashmiranjanp/frida-reversing-lab](https://github.com/rashmiranjanp/frida-reversing-lab) — 🧪 使用 Frida Reversing Lab 探索移动安全。这套工具用于分析和操控 Android 应用，以克服混淆与安全屏障。 **[7 星标]**
 - [AlexeyPerov/LogKeeper-Flutter-Firebase](https://github.com/AlexeyPerov/LogKeeper-Flutter-Firebase) — 使用 Flutter/Dart、Bloc 模式与 Firebase Firestore 后端构建的日志快照管理方案，支持 iOS、Android、Web 和服务端。 **[6 星标]**
 - [anpa1200/Android-Malware-Analysis](https://github.com/anpa1200/Android-Malware-Analysis) — Android APK 恶意软件初步分析，结合 YARA、VirusTotal 上下文、MITRE ATT&amp;CK 输出、Frida 钩子和多种大语言模型分析。 **[6 星标]**
-- [BAB2007/yuda-run-helper](https://github.com/BAB2007/yuda-run-helper) — 不想跑校园跑的来。 **[6 星标]**
 - [coroner4817/EnergyEfficiencyWebView](https://github.com/coroner4817/EnergyEfficiencyWebView) — 📲 可自定义重建网页的 Android WebView **[6 星标]**
 - [cybersecurity-dev/awesome-reverse-engineering](https://github.com/cybersecurity-dev/awesome-reverse-engineering) — 精选逆向工程资源。 **[6 星标]**
 - [ewt45/jadx-plugin-cfg-viewer](https://github.com/ewt45/jadx-plugin-cfg-viewer) — 用于生成方法控制流图并以图像显示的 jadx-gui 插件。 **[6 星标]**

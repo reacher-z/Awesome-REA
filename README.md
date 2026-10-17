@@ -26,7 +26,7 @@ Browse by target or topic below. **Source review does not imply runtime verifica
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (50) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,839)
+- [All cases](https://awesomerea.org/cases/) (50) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -1718,7 +1718,7 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 ## Full Repository Index
 
 <!-- BEGIN REPOSITORY INDEX SUMMARY -->
-**3,000** repository READMEs scanned; **2,839** entries available to browse. The 161 clearly out-of-scope entries remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.
+**3,000** repository READMEs scanned; **2,836** entries available to browse. The 161 clearly out-of-scope entries and 3 whose upstream repository is no longer available remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.
 
 [Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)
 <!-- END REPOSITORY INDEX SUMMARY -->

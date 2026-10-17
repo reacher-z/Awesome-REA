@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**623 个仓库** · 2026-10-16 UTC
+**622 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -469,7 +469,6 @@
 - [JamesHopbourn/iOS-Reverse-Engineering-Tools](https://github.com/JamesHopbourn/iOS-Reverse-Engineering-Tools) — iOS 逆向工程工具 **[4 星标]**
 - [Kuruyia/pokeranger2](https://github.com/Kuruyia/pokeranger2) — Pokémon Ranger: Shadows of Almia 的反编译项目。 **[4 星标]**
 - [malus-security/kextractor](https://github.com/malus-security/kextractor) — 内核缓存操作库。 **[4 星标]**
-- [Shellghostt/De-Caffeinator](https://github.com/Shellghostt/De-Caffeinator) — 面向安全审计的 JavaScript 逆向工程与资源分析流水线，可爬取目标、对代码包去混淆，并提取隐藏端点和密钥。 **[4 星标]**
 - [theamorn/flutter-snapshot-test](https://github.com/theamorn/flutter-snapshot-test) — 演示如何在 Flutter 中进行快照测试的示例。 **[4 星标]**
 - [tyonger-stack/GrokNode](https://github.com/tyonger-stack/GrokNode) — 基于公开发布的 Grok Bot 0.18.0 macOS 应用进行非官方源码级重建，产出可读 TypeScript，提供 Codex 与 OpenRouter 两档推理路由、本地 Docker 沙箱和本地用量统计，仅限研究用途。 **[4 星标]**
 - [Adilnasceng/requestlab](https://github.com/Adilnasceng/requestlab) — 用于拦截、修改和逆向分析 HTTP 请求的 Chrome DevTools 扩展，在深色开发者工具面板中提供实时请求日志、规则引擎、模拟响应、重放、速率限制绕过和 WebSocket 监控。 **[3 星标]**
