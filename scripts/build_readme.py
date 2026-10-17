@@ -4,9 +4,10 @@ import argparse
 import html
 import json
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 from catalog import ROOT, load_resources
+from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
 
 
@@ -14,6 +15,8 @@ BEGIN = '<!-- BEGIN GENERATED CATALOG -->'
 END = '<!-- END GENERATED CATALOG -->'
 PAPERS_BEGIN = '<!-- BEGIN GENERATED PAPERS -->'
 PAPERS_END = '<!-- END GENERATED PAPERS -->'
+CONTENTS_BEGIN = '<!-- BEGIN GENERATED CONTENTS -->'
+CONTENTS_END = '<!-- END GENERATED CONTENTS -->'
 CATEGORIES = {
     'core': ('Official REA: core and setup', 'REA 官方：核心与配置'),
     'workflow-guides': ('Official REA: investigation guides', 'REA 官方：调查指南'),
@@ -179,6 +182,53 @@ def render_catalog(records, language, paper_urls=frozenset()):
     return '\n'.join(lines).rstrip() + '\n'
 
 
+CONTENTS_TARGETS = [
+    ('website', 'Website', '网站'), ('game', 'Game', '游戏'), ('app', 'App', '应用'),
+    ('native-binary', 'Native Binary', '原生二进制'), ('firmware', 'Firmware & Hardware', '固件与硬件'),
+    ('protocol', 'Protocol', '协议'),
+]
+CONTENTS_MORE = [
+    ('agents-and-mcp', 'Agents & MCP', 'Agent 与 MCP'), ('related-collections', 'Collections', '相关合集'),
+    ('references-and-learning', 'Learning', '学习资料'),
+]
+
+
+def browsable_index_count():
+    document = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))
+    scoped = apply_scope(document['resources'], read_scope(ROOT))
+    return sum(record.get('scope_status') != 'excluded' for record in scoped)
+
+
+def render_contents(records, papers, index_count, language):
+    """Contents mirror the rendered sections and show how many entries each one holds."""
+    zh = language == 'zh'
+    paper_urls = {paper['url'] for paper in papers}
+    counts = Counter(collection_section(record) for record in records if record['url'] not in paper_urls)
+    cases = sum(record.get('kind') == 'case-study' for record in records)
+
+    def item(label, href, count):
+        return f'[{label}]({href}) <sub>{count:,}</sub>'
+
+    targets = [item(zh_label if zh else label, f'#{section}', counts[section])
+               for section, label, zh_label in CONTENTS_TARGETS if counts[section]]
+    more = [item('论文' if zh else 'Papers', '#papers', len(papers)),
+            item('案例' if zh else 'Cases', f"https://awesomerea.org/{'zh/' if zh else ''}?view=curated&kind=case-study", cases)]
+    more += [item(zh_label if zh else label, f'#{section}', counts[section])
+             for section, label, zh_label in CONTENTS_MORE if counts[section]]
+    more.append(item('仓库索引' if zh else 'Repository index', '#完整仓库索引' if zh else '#full-repository-index', index_count))
+    return f"- **{'目标' if zh else 'Targets'}** · " + ' · '.join(targets) + '\n\n- ' + ' · '.join(more) + '\n'
+
+
+def replace_contents(content, rendered):
+    if content.count(CONTENTS_BEGIN) != 1 or content.count(CONTENTS_END) != 1:
+        raise ValueError('Each README must contain exactly one BEGIN/END contents marker pair')
+    before, rest = content.split(CONTENTS_BEGIN, 1)
+    if CONTENTS_END not in rest:
+        raise ValueError('Contents END marker must follow BEGIN')
+    _, after = rest.split(CONTENTS_END, 1)
+    return before + CONTENTS_BEGIN + '\n' + rendered + CONTENTS_END + after
+
+
 def replace_catalog(content, rendered):
     if content.count(BEGIN) != 1 or content.count(END) != 1:
         raise ValueError('Each README must contain exactly one BEGIN/END catalog marker pair')
@@ -262,16 +312,6 @@ def replace_papers(content, rendered, language):
             raise ValueError('Paper END marker must follow BEGIN')
         _, after = rest.split(PAPERS_END, 1)
         content = before + PAPERS_BEGIN + '\n' + rendered + PAPERS_END + after
-    label = '论文' if language == 'zh' else 'Papers'
-    toc_entry = f'- [{label}](#papers)'
-    if toc_entry not in content:
-        reference_label = COLLECTION_SECTIONS['references-and-learning'][int(language == 'zh')]
-        reference_entry = f'- [{reference_label}](#references-and-learning)'
-        if content.count(reference_entry) != 1:
-            raise ValueError('Cannot locate the references entry in the README table of contents')
-        content = content.replace(reference_entry, reference_entry + '\n' + toc_entry, 1)
-    if content.count(toc_entry) != 1:
-        raise ValueError('README must contain one paper table-of-contents entry')
     return content
 
 
@@ -282,12 +322,14 @@ def main():
     try:
         records = load_resources()
         papers = read_papers(ROOT)
+        index_count = browsable_index_count()
         stale = []
         for name, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
             path = ROOT / name
             current = path.read_text(encoding='utf-8')
             expected = replace_catalog(current, render_catalog(records, language, {paper['url'] for paper in papers}))
             expected = replace_papers(expected, render_papers(papers, language), language)
+            expected = replace_contents(expected, render_contents(records, papers, index_count, language))
             if current != expected:
                 stale.append(name)
                 if not args.check:

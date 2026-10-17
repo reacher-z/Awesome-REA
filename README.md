@@ -10,9 +10,11 @@ An independent, source-reviewed collection. Review does not imply runtime verifi
 
 ## Contents
 
-- **Targets** · [Website](#website) · [Game](#game) · [App](#app) · [Native Binary](#native-binary) · [Firmware & Hardware](#firmware) · [Protocol](#protocol)
+<!-- BEGIN GENERATED CONTENTS -->
+- **Targets** · [Website](#website) <sub>11</sub> · [Game](#game) <sub>27</sub> · [App](#app) <sub>27</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>10</sub> · [Protocol](#protocol) <sub>7</sub>
 
-- [Papers](#papers) · [Cases](https://awesomerea.org/?view=curated&kind=case-study) · [Agents & MCP](#agents-and-mcp) · [Collections](#related-collections) · [Learning](#references-and-learning) · [Repository index](#full-repository-index)
+- [Papers](#papers) <sub>31</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>31</sub> · [Agents & MCP](#agents-and-mcp) <sub>17</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,864</sub>
+<!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
 ## Resources

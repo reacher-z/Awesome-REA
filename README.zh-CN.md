@@ -10,9 +10,11 @@
 
 ## 目录
 
-- **目标** · [网站](#website) · [游戏](#game) · [应用](#app) · [原生二进制](#native-binary) · [固件与硬件](#firmware) · [协议](#protocol)
+<!-- BEGIN GENERATED CONTENTS -->
+- **目标** · [网站](#website) <sub>11</sub> · [游戏](#game) <sub>27</sub> · [应用](#app) <sub>27</sub> · [原生二进制](#native-binary) <sub>20</sub> · [固件与硬件](#firmware) <sub>10</sub> · [协议](#protocol) <sub>7</sub>
 
-- [论文](#papers) · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) · [Agent 与 MCP](#agents-and-mcp) · [相关合集](#related-collections) · [学习资料](#references-and-learning) · [仓库索引](#完整仓库索引)
+- [论文](#papers) <sub>31</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>31</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>17</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,864</sub>
+<!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
 <a id="resource-catalog"></a>
