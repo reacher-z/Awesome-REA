@@ -4,7 +4,7 @@
 
 **177 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [ChromeDevTools/chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — 面向编程智能体的 Chrome DevTools。 **[53,630 星标]**
 - [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) — 支持 TLS 的交互式 HTTP 拦截代理，面向渗透测试人员和软件开发者。 **[45,662 星标]**

@@ -27,7 +27,7 @@ CATEGORIES = {
     'community-case-studies': ('Community REA investigations', 'REA 社区调查案例'),
     'reconstruction-cases': ('Independent reconstruction cases', '独立重建案例'),
     'agent-mcp': ('Independent MCP integrations', '独立 MCP 集成'),
-    'agent-workflows': ('Independent agent workflows', '独立 Agent 工作流'),
+    'agent-workflows': ('Independent agent workflows', '独立智能体工作流'),
     'game-analysis': ('Game analysis tools', '游戏分析工具'),
     'web-analysis': ('Website analysis tools', '网站分析工具'),
     'protocol-analysis': ('Protocol analysis tools', '协议分析工具'),
@@ -54,7 +54,7 @@ RELATIONSHIPS = {
     'community-learning-resource': ('Community REA learning resource', 'REA 社区学习资源'),
     'community-reported-mixed-workflow': ('Author-reported mixed workflow', '作者报告的混合工具流程'),
     'upstream-maintainer-companion-list': ('REA maintainer companion list', 'REA 维护者的相关目录'),
-    'independent-agent-integration': ('Independent agent integration', '独立 Agent 集成'),
+    'independent-agent-integration': ('Independent agent integration', '独立智能体集成'),
     'independent-reconstruction': ('Independent reconstruction project', '独立重建项目'),
     'foundation': ('Foundation tool', '基础工具'),
     'learning': ('Learning resource', '学习资源'),
@@ -100,22 +100,33 @@ def requirements_text(value):
     return plain_text(' '.join(value))
 
 
+# English and Chinese section names. Headings and Contents both use these labels so they cannot drift;
+# Chinese headings keep the English name as a prefix. Chinese terms follow the glossary in CONTRIBUTING.zh-CN.md.
 COLLECTION_SECTIONS = {
-    'website': ('Website', 'Website · 网站'),
-    'game': ('Game', 'Game · 游戏'),
-    'app': ('App', 'App · 应用'),
-    'native-binary': ('Native Binary', 'Native Binary · 原生二进制'),
-    'firmware': ('Firmware and Hardware', 'Firmware · 固件与硬件'),
-    'protocol': ('Protocols', 'Protocols · 协议'),
-    'agents-and-mcp': ('Agents and MCP', 'Agents & MCP · Agent 与集成'),
-    'related-collections': ('Related Collections', 'Related Collections · 相关合集'),
-    'references-and-learning': ('References and Learning', 'References & Learning · 文档与学习资料'),
+    'website': ('Website', '网站'),
+    'game': ('Game', '游戏'),
+    'app': ('App', '应用'),
+    'native-binary': ('Native Binary', '原生二进制'),
+    'firmware': ('Firmware and Hardware', '固件与硬件'),
+    'protocol': ('Protocol', '协议'),
+    'agents-and-mcp': ('Agents and MCP', '智能体与 MCP'),
+    'related-collections': ('Related Collections', '相关合集'),
+    'references-and-learning': ('References and Learning', '文档与学习资源'),
 }
+TARGET_SECTIONS = ('website', 'game', 'app', 'native-binary', 'firmware', 'protocol')
+INDEX_HEADINGS = ('Full Repository Index', '完整仓库索引')
+
+
+def section_heading(section, language):
+    english, chinese = COLLECTION_SECTIONS[section]
+    return english if language == 'en' else f'{english} · {chinese}'
+
+
 KIND_LABELS = {
     'project': ('Project', '项目'), 'tool': ('Tool', '工具'),
     'integration': ('Integration', '集成'), 'case-study': ('Case study', '案例'),
     'collection': ('Collection', '合集'), 'documentation': ('Documentation', '文档'),
-    'learning-resource': ('Learning resource', '学习资料'), 'research': ('Research', '研究'),
+    'learning-resource': ('Learning resource', '学习资源'), 'research': ('Research', '研究'),
 }
 
 
@@ -155,7 +166,7 @@ def entry_type(record, language):
     tags = [KIND_LABELS[kind][index]]
     relation, category = record['relationship'], record['category']
     if relation == 'independent-agent-integration':
-        tags.append(('Independent MCP' if category == 'agent-mcp' else 'Independent agent') if language == 'en' else ('独立 MCP' if category == 'agent-mcp' else '独立 Agent'))
+        tags.append(('Independent MCP' if category == 'agent-mcp' else 'Independent agent') if language == 'en' else ('独立 MCP' if category == 'agent-mcp' else '独立智能体'))
     elif relation.startswith('official-') or relation == 'community-integration':
         tags.append('REA')
     elif relation == 'community-reported-mixed-workflow':
@@ -187,11 +198,11 @@ def render_catalog(records, language, paper_urls=frozenset()):
             continue
         groups[collection_section(record)].append(record)
     lines = []
-    for section, titles in COLLECTION_SECTIONS.items():
+    for section in COLLECTION_SECTIONS:
         if not groups[section]:
             continue
         contents = '[↑ Contents](#contents)' if language == 'en' else '[↑ 返回目录](#目录)'
-        lines.extend([f'<a id="{section}"></a>', f'### {titles[index]}', '', contents, ''])
+        lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', '', contents, ''])
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
         tools = [record for record in groups[section] if record['kind'] != 'case-study']
         subgroups = [(None, groups[section])]
@@ -208,23 +219,12 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 description = plain_text(record[f'description_{language}'])
                 metadata = plain_text(entry_type(record, language))
                 detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                detail_label = '条件与证据' if language == 'zh' else 'Requirements & evidence'
+                detail_label = '使用条件与证据' if language == 'zh' else 'Requirements & evidence'
                 lines.extend([
                     f"- [**{name}**]({record['url']}) · {metadata} · [{detail_label}]({detail_url})", '',
                     f'  {description}', '',
                 ])
     return '\n'.join(lines).rstrip() + '\n'
-
-
-CONTENTS_TARGETS = [
-    ('website', 'Website', '网站'), ('game', 'Game', '游戏'), ('app', 'App', '应用'),
-    ('native-binary', 'Native Binary', '原生二进制'), ('firmware', 'Firmware & Hardware', '固件与硬件'),
-    ('protocol', 'Protocol', '协议'),
-]
-CONTENTS_MORE = [
-    ('agents-and-mcp', 'Agents & MCP', 'Agent 与 MCP'), ('related-collections', 'Collections', '相关合集'),
-    ('references-and-learning', 'Learning', '学习资料'),
-]
 
 
 def browsable_index_count():
@@ -243,13 +243,15 @@ def render_contents(records, papers, index_count, language):
     def item(label, href, count):
         return f'[{label}]({href}) ({count:,})'
 
-    targets = [item(zh_label if zh else label, f'#{section}', counts[section])
-               for section, label, zh_label in CONTENTS_TARGETS if counts[section]]
+    def section_item(section):
+        return item(COLLECTION_SECTIONS[section][int(zh)], f'#{section}', counts[section])
+
+    targets = [section_item(section) for section in TARGET_SECTIONS if counts[section]]
     reading = [item('论文' if zh else 'Papers', '#papers', len(papers)),
                item('全部案例' if zh else 'All cases', f"https://awesomerea.org/{'zh/' if zh else ''}?view=curated&kind=case-study", cases),
-               item('仓库索引' if zh else 'Repository index', '#完整仓库索引' if zh else '#full-repository-index', index_count)]
-    more = [item(zh_label if zh else label, f'#{section}', counts[section])
-            for section, label, zh_label in CONTENTS_MORE if counts[section]]
+               item(INDEX_HEADINGS[int(zh)], '#完整仓库索引' if zh else '#full-repository-index', index_count)]
+    more = [section_item(section) for section in COLLECTION_SECTIONS
+            if section not in TARGET_SECTIONS and counts[section]]
     lines = [f"**{'按目标找工具与案例' if zh else 'Tools and cases by target'}**", '']
     lines += ['- ' + ' · '.join(targets[start:start + 3]) for start in range(0, len(targets), 3)]
     lines += ['', f"**{'论文与更多资源' if zh else 'Research and more'}**", '', '- ' + ' · '.join(reading)]

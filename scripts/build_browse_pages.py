@@ -136,7 +136,7 @@ def build_browse_pages(
         curated_link = '/zh/resources/' if zh else '/resources/'
         scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{len(scanned)-len(records)} 个超出范围的条目仍保留在完整 JSON 中。'
                       if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {len(scanned)-len(records)} out-of-scope records remain in the full JSON.')
-        provenance = ('这是自动发现的仓库索引，未逐项精选或运行测试。分类依据元数据；简介提供 AI 辅助中英翻译。星标为采集时快照。'
+        provenance = ('这是自动发现的仓库索引，未逐项精选或运行验证。分类依据元数据；简介提供 AI 辅助中英翻译。星标为采集时快照。'
                       if zh else 'This automatically discovered repository index has not been individually curated or execution-tested. Categories come from metadata; descriptions have AI-assisted translations. Stars are collection-time snapshots.')
         for category in (None, *CATEGORIES):
             path = browse_path(language, category)
@@ -230,7 +230,7 @@ def build_browse_pages(
     <p>{escape(description)}</p>
   </section>
   <div class="browse-actions"><a class="button button-primary" href="{search_link}">{icon('search', use_pro)}{('搜索仓库' if zh else 'Search repositories')}</a><a class="button button-outline" href="{curated_link}">{('精选资源' if zh else 'Curated resources')} <span class="browse-count">{curated_count:,}</span></a><a class="browse-download" href="/source-index.json?v={data_revision}" download="awesomerea-repository-index.json" type="application/json">{('下载完整 JSON ↓' if zh else 'Download full JSON ↓')}</a></div>
-  <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法 ↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
+  <details class="browse-provenance"><summary>{('关于这个索引' if zh else 'About this index')}</summary><p>{escape(scope_note)}</p><p>{escape(provenance)}</p><p><a href="{escape(repository_url, quote=True)}/blob/main/docs/source-scan.md">{('扫描方法（英文）↗' if zh else 'Scan methodology ↗')}</a> · <a href="{escape(repository_url, quote=True)}/blob/main/data/source-scope.json">{('范围排除记录 ↗' if zh else 'Scope exclusions ↗')}</a></p></details>
   {('<nav class="browse-category-nav" aria-label="' + ('仓库分类' if zh else 'Repository categories') + '">' + ''.join(category_links) + '</nav>' if category else '')}
   <div class="browse-topline"><p>{count_text}</p><p>{date_text}</p></div>
   {content}

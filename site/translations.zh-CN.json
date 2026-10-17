@@ -279,7 +279,7 @@
     "name": "安装与客户端配置",
     "requirements": [
       "需要受支持的 Node.js 和 npm。",
-      "Setup 会预览客户端配置改动；原生分析引擎有各自的前置条件。"
+      "Setup 会预览客户端配置改动；原生分析引擎有各自的使用条件。"
     ]
   },
   "rea-cli-evidence": {
@@ -437,7 +437,7 @@
   "morluto-awesome-re": {
     "name": "Awesome Reverse Engineering",
     "requirements": [
-      "各工具保留各自的前置条件与许可。",
+      "各工具保留各自的使用条件与许可。",
       "被该相关目录收录不证明存在 REA 集成或兼容性。"
     ]
   },

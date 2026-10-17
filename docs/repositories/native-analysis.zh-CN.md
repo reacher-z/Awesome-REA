@@ -4,7 +4,7 @@
 
 **680 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) — Ghidra 是一个软件逆向工程（SRE）框架。 **[88,799 星标]**
 - [WerWolv/ImHex](https://github.com/WerWolv/ImHex) — 🔍 面向逆向工程师、程序员，以及凌晨 3 点工作时仍爱护视力的人士的十六进制编辑器。 **[55,252 星标]**

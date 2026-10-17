@@ -4,7 +4,7 @@
 
 **386 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — 视觉小说翻译器。 **[13,757 星标]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc 是独立的图形调试工具。 **[11,193 星标]**

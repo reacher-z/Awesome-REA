@@ -4,7 +4,7 @@
 
 **131 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET 反编译器，支持生成 PDB、ReadyToRun、元数据等功能，而且跨平台！ **[26,662 星标]**
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR 是一个特性完整、零成本、高性能、低内存的 Unity 全平台原生 C# 热更新解决方案。 **[7,993 星标]**

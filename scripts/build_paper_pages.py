@@ -141,10 +141,10 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
     if paper.get('arxiv_id'):
         metadata.append(('arXiv', paper['arxiv_id']))
     if paper.get('arxiv_version_reviewed'):
-        metadata.append((label('Reviewed arXiv version', '已核对的 arXiv 版本'), paper['arxiv_version_reviewed']))
+        metadata.append((label('Reviewed arXiv version', '已复核的 arXiv 版本'), paper['arxiv_version_reviewed']))
     if paper.get('doi'):
         metadata.append(('DOI', paper['doi']))
-    metadata.append((label('Sources checked', '来源核对日期'), formatted_date(paper['verified_at'], language)))
+    metadata.append((label('Sources checked', '来源复核日期'), formatted_date(paper['verified_at'], language)))
     details = ''.join(f'<dt>{escape(key)}</dt><dd>{escape(value)}</dd>' for key, value in metadata)
     source_links = ''.join(f'<li><a href="{web_url(url)}" target="_blank" rel="noopener noreferrer">{escape(url)}</a></li>' for url in paper['evidence_urls'])
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
@@ -152,7 +152,7 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
   <div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div>
   <nav class="paper-links" aria-label="{escape(label('Links for ' + paper['title'], title + '的相关链接'), quote=True)}">{''.join(links)}</nav>
-  <details class="paper-details"><summary>{label('Bibliographic details & sources', '引文详情与来源')}</summary><h4>{label('Why it fits this collection', '与本合集的关联')}</h4><p>{escape(paper[f'why_fits_{language}'])}</p><dl>{details}</dl><p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p><h4>{label('Primary sources', '一手来源')}</h4><ul>{source_links}</ul><p class="paper-review-note">{label('Source review only; experiments were not rerun for this collection.', '本合集仅核对来源，未重新运行论文实验。')}</p></details>
+  <details class="paper-details"><summary>{label('Bibliographic details & sources', '引文详情与来源')}</summary><h4>{label('Why it fits this collection', '与本合集的关联')}</h4><p>{escape(paper[f'why_fits_{language}'])}</p><dl>{details}</dl><p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p><h4>{label('Primary sources', '一手来源')}</h4><ul>{source_links}</ul><p class="paper-review-note">{label('Source review only; experiments were not rerun for this collection.', '本合集仅做来源复核，未重新运行论文实验。')}</p></details>
 </article>'''
 
 
@@ -231,7 +231,7 @@ def build_paper_pages(
         about = '/zh/about/' if zh else '/about/'
         title = label('Papers & benchmarks · AwesomeREA.org', '论文与评测基准 · AwesomeREA.org')
         protocol_scope = label('protocol inference, ', '协议推断、') if any('protocol' in paper['targets'] for paper in papers) else ''
-        description = label(f'{len(papers)} source-reviewed papers on binary reverse engineering, decompilation, agent evaluation, {protocol_scope}firmware analysis, and website, game, and app reconstruction, with citations and research limitations.', f'{len(papers)} 篇已核对来源的论文，涵盖二进制逆向、反编译、智能体评估、{protocol_scope}固件分析，以及网站、游戏和应用重建，附引文和研究边界。')
+        description = label(f'{len(papers)} source-reviewed papers on binary reverse engineering, decompilation, agent evaluation, {protocol_scope}firmware analysis, and website, game, and app reconstruction, with citations and research limitations.', f'{len(papers)} 篇来源已复核的论文，涵盖二进制逆向、反编译、智能体评估、{protocol_scope}固件分析，以及网站、游戏和应用重建，附引文和研究边界。')
         nav = []
         sections = []
         ordered = []

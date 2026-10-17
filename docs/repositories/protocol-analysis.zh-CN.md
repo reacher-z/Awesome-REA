@@ -4,7 +4,7 @@
 
 **103 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — 通过捕获流量，自动逆向分析 REST API。 **[9,652 星标]**
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — 全能协议分析工具：内置浏览器抓包、MITM 代理、JS hook、指纹伪装、AI 分析及 MCP Server，可无缝对接 AI 智能体与 IDE。 **[3,776 星标]**

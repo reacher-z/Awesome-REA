@@ -4,7 +4,7 @@
 
 **434 个仓库** · 2026-10-16 UTC
 
-这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
+这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
 - [skylot/jadx](https://github.com/skylot/jadx) — 将 Dex 反编译为 Java 的工具。 **[50,988 星标]**
 - [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]**

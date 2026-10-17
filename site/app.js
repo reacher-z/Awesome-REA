@@ -179,9 +179,9 @@ const UI = {
     "sourceSortStars": "星标最多",
     "sourceSortPushed": "最近推送",
     "sourceSortName": "仓库名称",
-    "sourceIntro": "自动收集的项目仓库，尚未逐项审阅。",
+    "sourceIntro": "自动收集的项目仓库，尚未逐项复核。",
     "aboutCollection": "关于此索引",
-    "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工审阅或执行测试；目标标签为自动分类，不表示已验证 REA 兼容性。",
+    "sourceDisclosure": "索引通过自动读取 README 建立，未逐项人工复核或运行验证；目标标签为自动分类，不表示已验证 REA 兼容性。",
     "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
@@ -198,8 +198,8 @@ const UI = {
     "allKinds": "所有类型",
     "categoryLabel": "类别",
     "allCategories": "所有类别",
-    "reviewNote": "依据来源整理的工具、案例与合集。展开详情可查看使用条件与局限。",
-    "aboutCurated": "收录说明 ↗",
+    "reviewNote": "来源已复核的工具、案例与合集。展开详情可查看使用条件与局限。",
+    "aboutCurated": "收录说明（英文）↗",
     "loading": "正在加载资源…",
     "emptyDescription": "换一个关键词，或扩大筛选范围。",
     "errorTitle": "资源集合暂时未能加载。",
@@ -215,7 +215,7 @@ const UI = {
     "readSource": "来源",
     "requirements": "详情与使用条件",
     "reviewed": "复核于",
-    "sourceReviewed": "资料已复核",
+    "sourceReviewed": "来源已复核",
     "sourceNotRecorded": "未记录",
     "sourceStars": "星标",
     "sourceStarsTitle": "元数据采集时的 GitHub 星标快照，不是实时数量。",
@@ -229,7 +229,7 @@ const UI = {
     "indexStatusLabel": "索引状态",
     "sourceScanStatus": "已读取 README",
     "sourceRequirementsLabel": "使用条件",
-    "sourceRequirements": "请阅读上游 README 中的前置条件；这些条件尚未人工复核。",
+    "sourceRequirements": "请阅读上游 README 中的使用条件；这些条件尚未人工复核。",
     "sourcePushedAt": "最近推送时间",
     "sourceReadmeAt": "README 读取时间",
     "sourceMetadataAt": "元数据采集时间",
@@ -246,6 +246,8 @@ const CATEGORY = {
 const RELATION = {
   "independent-reconstruction": ["INDEPENDENT · RECONSTRUCTION", "独立 · 重建项目"], "official-core": ["REA · OFFICIAL", "REA · 官方核心"], "official-skill": ["REA · OFFICIAL SKILL", "REA · 官方技能"], "official-documentation": ["REA · DOCUMENTATION", "REA · 官方文档"], "official-guide": ["REA · GUIDE", "REA · 官方指南"], "official-case-study": ["REA · CASE STUDY", "REA · 官方案例"], "community-integration": ["REA · COMMUNITY", "REA · 社区集成"], "community-reported-mixed-workflow": ["COMMUNITY · MIXED WORKFLOW", "社区 · 混合工作流"], "community-learning-resource": ["COMMUNITY · LEARNING", "社区 · 学习资源"], "upstream-maintainer-companion-list": ["COMPANION COLLECTION", "相关资源目录"], "independent-agent-integration": ["INDEPENDENT · AGENT", "独立 · 智能体集成"], "foundation": ["FOUNDATION TOOL", "基础工具"], "learning": ["LEARNING RESOURCE", "学习资源"]
 };
+// Repository documents with a Chinese counterpart; homepage_locales.py applies the same map to /zh/.
+const ZH_REPOSITORY_PATHS = {"blob/main/CONTRIBUTING.md": "blob/main/CONTRIBUTING.zh-CN.md"};
 const params = new URLSearchParams(location.search);
 // Keep the bare homepage English; shared links explicitly select another language.
 const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: params.has("lang") ? (params.get("lang") === "zh" ? "zh" : "en") : (location.pathname.startsWith("/zh/") ? "zh" : "en"), q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, records: [], loaded: false, error: false };
@@ -305,7 +307,7 @@ function renderCategories() {
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(CATEGORY,a), label(CATEGORY,b))).forEach(category => { const option = node("option", "", label(CATEGORY, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
-const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资料"],"research":["Research","研究"]};
+const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
 function card(record) {
@@ -339,7 +341,7 @@ async function load() {
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
-    $$('[data-repo-path]').forEach(el => el.href = data.meta.repository_url + (el.dataset.repoPath ? "/" + el.dataset.repoPath : ""));
+    $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
     state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
   } catch (error) { state.error = true; state.loaded = false; $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }

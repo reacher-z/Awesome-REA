@@ -26,6 +26,9 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
     node.hidden = /\bhidden\b/.test(match[0]);
     return node;
   });
+  const repositoryLinks = [...html.matchAll(/<a[^>]+data-repo-path="([^"]*)"[^>]*>/g)].map(match => {
+    const node = new Element('a'); node.dataset.repoPath = match[1]; return node;
+  });
   const protocolLabels = [new Element('span'), new Element('span')];
   protocolLabels.forEach(node => node.dataset.i18n = 'targetProtocol');
   const document = {baseURI: 'https://awesomerea.org/', documentElement: {dataset: {}}, activeElement: {tagName: 'BODY'},
@@ -37,6 +40,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
       if (selector === '[data-target]') return buttons.filter(node => node.dataset.target);
       if (selector === '[data-source-target]') return buttons.filter(node => node.dataset.sourceTarget);
       if (selector === '[data-i18n]') return protocolLabels;
+      if (selector === '[data-repo-path]') return repositoryLinks;
       return [];
     }, createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag),
     createDocumentFragment: () => new Element('fragment'), addEventListener() {}};
@@ -53,10 +57,10 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   location.assign = next => { location.lastNavigation = String(next); };
   const context = {document, location, URL, URLSearchParams, console,
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {source_index: {resource_count: rows.length}}} : browser}; }};
+    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);
-  return {api: context.audit, context, elements, buttons, protocolLabels, requests};
+  return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, requests};
 }
 (async () => {
   for (const lang of ['en', 'zh']) {
@@ -126,6 +130,14 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   assert.equal(switched.searchParams.has('lang'), false);
   const home = setup(''); await home.api.load();
   assert.equal(home.api.state.lang, 'en');
+  // Chinese views link the Chinese contribution guide; other repository links keep their paths.
+  const contribution = app => app.repositoryLinks.filter(node => node.href.includes('/CONTRIBUTING')).map(node => node.href);
+  assert.deepEqual(contribution(home), ['https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md']);
+  const legacyChinese = setup('?lang=zh'); await legacyChinese.api.load();
+  for (const app of [chinese, legacyChinese]) {
+    assert.deepEqual(contribution(app), ['https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.zh-CN.md']);
+    assert(app.repositoryLinks.some(node => node.href === 'https://github.com/reacher-z/Awesome-REA/blob/main/data/README.md'));
+  }
   assert.equal(home.api.sourceState.mode, 'curated');
   for (const lang of ['en', 'zh']) {
     const linked = setup(`?lang=${lang}`); await linked.api.load();
@@ -209,7 +221,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
     }
   }
   assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool']);
-  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资料', '研究']);
+  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究']);
   assert.deepEqual(orders.en.categories, ['JVM bytecode', 'MCP servers', 'REA essentials']);
   assert.deepEqual(orders.zh.categories, ['JVM 字节码', 'MCP 服务', 'REA 核心']);
   assert.deepEqual(orders.topics, ['aadog', 'zeta', 'reverse-engineering']);

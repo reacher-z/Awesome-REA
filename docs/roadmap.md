@@ -18,4 +18,4 @@ Track category coverage, useful additions, accepted corrections, contributors, a
 
 ## Scope
 
-The primary deliverables are the collection, its README, its data, and its browsing website. Supporting documentation explains catalog maintenance, source records, and publication.
+The primary deliverables are the collection, its README, its data, and its browsing website. Supporting documentation explains catalog maintenance, source records, and publication. The [documentation index](README.md) lists each guide with its language and status, including the dated launch-research notes (Chinese).

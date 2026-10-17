@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from homepage_locales import localized_homepage, _Document, _ui_strings
+from homepage_locales import localized_homepage, _Document, _ui_strings, _zh_repository_paths
 
 APP = (ROOT / 'site/app.js').read_text()
 TEMPLATE = (ROOT / 'site/index.html').read_text()
@@ -78,6 +78,28 @@ class HomepageLocaleTests(unittest.TestCase):
                 self.assertIn('{{RESOURCE_COUNT}}', html)
                 original_svg = re.search(r'<svg class="symbol-bank"[\s\S]*?</svg>', TEMPLATE)[0]
                 self.assertIn(original_svg, html)
+
+    def test_chinese_homepage_links_chinese_repository_documents(self):
+        paths = _zh_repository_paths(APP)
+        self.assertEqual(paths, {'blob/main/CONTRIBUTING.md': 'blob/main/CONTRIBUTING.zh-CN.md'})
+        for english, chinese in paths.items():
+            self.assertIn(f'data-repo-path="{english}"', TEMPLATE)
+            self.assertTrue((ROOT / chinese.removeprefix('blob/main/')).is_file())
+        repository = 'https://github.com/reacher-z/Awesome-REA/'
+
+        def repository_links(html):
+            return {n['attrs']['data-repo-path']: n['attrs']['href'] for n in nodes(html, 'a') if 'data-repo-path' in n['attrs']}
+
+        chinese, english = localized_homepage(TEMPLATE, APP, 'zh'), localized_homepage(TEMPLATE, APP, 'en')
+        self.assertEqual(repository_links(chinese)['blob/main/CONTRIBUTING.zh-CN.md'], repository + 'blob/main/CONTRIBUTING.zh-CN.md')
+        self.assertNotIn('blob/main/CONTRIBUTING.md', repository_links(chinese))
+        # English-only documents keep their target; the Chinese label says the page is in English.
+        self.assertEqual(repository_links(chinese)['blob/main/data/README.md'], repository + 'blob/main/data/README.md')
+        self.assertIn('（英文）', _ui_strings(APP)['zh']['aboutCurated'])
+        self.assertEqual(repository_links(english)['blob/main/CONTRIBUTING.md'], repository + 'blob/main/CONTRIBUTING.md')
+        self.assertEqual(repository_links(localized_homepage(chinese, APP, 'en')), repository_links(english))
+        with self.assertRaises(ValueError):
+            localized_homepage(TEMPLATE.replace(repository + 'blob/main/CONTRIBUTING.md"', repository + 'blob/main/OTHER.md"', 1), APP, 'zh')
 
     def test_metadata_schema_and_asset_routes(self):
         original = fixture(); html = localized_homepage(original, APP, 'zh')

@@ -23,7 +23,7 @@ SECTIONS = {
     'protocol': ('Protocols', '协议'),
     'agents-and-mcp': ('Agents and MCP', '智能体与 MCP'),
     'related-collections': ('Related collections', '相关资源合集'),
-    'references-and-learning': ('References and learning', '文档与学习资料'),
+    'references-and-learning': ('References and learning', '文档与学习资源'),
 }
 
 
@@ -138,7 +138,7 @@ def _resource_card(record: dict, language: str) -> str:
   <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
   <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{('原始来源 ↗' if zh else 'Primary source ↗')}</a></div>
-  <details class="requirements"><summary>{('详情与使用条件' if zh else 'Details and requirements')}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('资料已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time></div></details>
+  <details class="requirements"><summary>{('详情与使用条件' if zh else 'Details and requirements')}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time></div></details>
 </article>'''
 
 
@@ -259,7 +259,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         title = '精选逆向工程资源' if zh else 'Curated reverse engineering resources'
         description = (f'{len(resources):,} 项工具、项目、集成、案例与参考资源，覆盖网站、游戏、应用、原生二进制、固件及通信协议。'
                        if zh else f'{len(resources):,} tools, projects, integrations, case studies, and references for websites, games, apps, native binaries, firmware, and communication protocols.')
-        note = ('“资料已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。前置条件和审阅日期随条目保留。'
+        note = ('“来源已复核”表示说明已依据一手文档核对，不代表已安装、执行、安全审计或验证兼容性。使用条件和复核日期随条目保留。'
                 if zh else 'Source-reviewed means descriptions were checked against primary documentation. It does not mean installation, execution, security auditing, or compatibility testing. Each entry retains requirements and its review date.')
         sections, items, navigation = [], [], []
         for key, labels in SECTIONS.items():
@@ -284,7 +284,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         if papers:
             summary += (f' 研究论文目录单独整理 {len(papers):,} 篇论文，其中 {overlapping_papers:,} 篇也收录于这 {len(resources):,} 项精选资源。上述数量不能相加作为独立项目总数。'
                         if zh else f' The paper bibliography lists {len(papers):,} papers; {overlapping_papers:,} of these also appear among the {len(resources):,} curated resources. Do not sum these counts as unique projects.')
-        evidence = ('精选说明依据一手来源核对，并保留前置条件和复核日期。自动扫描记录来源、时间、README 字节数、Git blob 标识和 SHA-256；未执行上游代码，也不重新发布 README 正文。'
+        evidence = ('精选说明依据一手来源核对，并保留使用条件和复核日期。自动扫描记录来源、时间、README 字节数、Git blob 标识和 SHA-256；未执行上游代码，也不重新发布 README 正文。'
                     if zh else 'Curated descriptions are checked against primary sources, with requirements and review dates retained. Automated scans record sources, timestamps, README byte counts, Git blob identifiers, and SHA-256 hashes. Upstream code is not executed and README bodies are not republished.')
         if scan_date:
             evidence += (f' 最新扫描快照：{scan_date} UTC。' if zh else f' Latest scan snapshot: {scan_date} UTC.')
@@ -295,7 +295,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         facts = [('收录范围' if zh else 'What is collected', summary), ('来源与更新' if zh else 'Evidence and updates', evidence), ('范围与复核' if zh else 'Scope and review', scope), ('语言与许可' if zh else 'Languages and licenses', licensing)]
         fact_cards = ''.join(f'<section class="source-card browse-repository"><h2>{escape(heading)}</h2><p class="card-description">{escape(text)}</p></section>' for heading, text in facts)
         companion_url = 'https://aicanwhat.com/zh/' if zh else 'https://aicanwhat.com/'
-        companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及 Agent 训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
+        companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及智能体训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
         links = [
@@ -306,11 +306,11 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             ('/source-index.json', '完整双语扫描 JSON' if zh else 'Complete bilingual scan JSON'),
             ('/papers.json', '论文元数据 JSON' if zh else 'Paper metadata JSON'),
             (repository_url + '/blob/main/' + ('README.zh-CN.md' if zh else 'README.md'), 'GitHub README'),
-            (repository_url + '/blob/main/docs/source-scan.md', '扫描方法' if zh else 'Scan methodology'),
+            (repository_url + '/blob/main/docs/source-scan.md', '扫描方法（英文）' if zh else 'Scan methodology'),
             (repository_url + '/blob/main/data/source-scope.json', '范围排除记录' if zh else 'Scope exclusion records'),
-            (repository_url + '/blob/main/data/README.md', '数据格式与维护' if zh else 'Data format and maintenance'),
+            (repository_url + '/blob/main/data/README.md', '数据格式与维护（英文）' if zh else 'Data format and maintenance'),
             (repository_url + '/blob/main/LICENSE', 'MIT 许可证' if zh else 'MIT license'),
-            (repository_url + '/blob/main/CONTRIBUTING.md', '贡献指南' if zh else 'Contribution guide'),
+            (repository_url + '/blob/main/' + ('CONTRIBUTING.zh-CN.md' if zh else 'CONTRIBUTING.md'), '贡献指南' if zh else 'Contribution guide'),
         ]
         link_html = ''.join(f'<a href="{(_url(url) if url.startswith("http") else escape(url, quote=True))}">{escape(label)}</a>' for url, label in links)
         content = f'<div class="source-results">{fact_cards}</div><section><div class="browse-topline"><h2>{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div><nav class="browse-category-nav" aria-label="{("来源与下载" if zh else "Sources and downloads")}">{link_html}</nav></section>'
@@ -346,7 +346,7 @@ Source review checks documentation, not successful execution, security, or REA c
 
 ## 简体中文
 
-- [精选资源]({site_url}/zh/resources/): 精选条目、前置条件、来源链接与复核日期。
+- [精选资源]({site_url}/zh/resources/): 精选条目、使用条件、来源链接与复核日期。
 - [仓库目录]({site_url}/zh/browse/): 静态分类与公开项目简介。
 - [研究论文]({site_url}/zh/papers/): 单独维护的研究文献目录。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。

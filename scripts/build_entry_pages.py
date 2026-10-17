@@ -94,8 +94,8 @@ def _resource_content(record: dict, language: str) -> tuple[str, str, str]:
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)}{_link(record['evidence_url'], label('Primary source', '一手来源'))}</nav>
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{label('Requirements and limitations', '使用条件与局限')}</h2><ul class="entry-requirements">{requirements}</ul></section>
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>{_definitions(facts)}
-<p class="entry-reviewed">{label('Sources reviewed', '来源核查于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明依据一手来源核查，不表示已进行运行测试、安全审计或兼容性验证。')}</p></section>
+<p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
+<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p></section>
 {_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
     return title, description, content
 
@@ -117,7 +117,7 @@ def _paper_content(paper: dict, language: str) -> tuple[str, str, str]:
              (label('Publication / posting date', '出版／提交日期'), formatted_date(paper.get('publication_date'), language, paper['year'])),
              (label('Date source', '日期依据'), paper['date_basis_zh' if zh else 'date_basis'])]
     for field, en, cn in (('first_arxiv_date', 'First arXiv submission', 'arXiv 首次提交'),
-                           ('arxiv_id', 'arXiv', 'arXiv'), ('arxiv_version_reviewed', 'Reviewed arXiv version', '已核对的 arXiv 版本'), ('doi', 'DOI', 'DOI')):
+                           ('arxiv_id', 'arXiv', 'arXiv'), ('arxiv_version_reviewed', 'Reviewed arXiv version', '已复核的 arXiv 版本'), ('doi', 'DOI', 'DOI')):
         if paper.get(field):
             facts.append((label(en, cn), formatted_date(paper[field], language) if field == 'first_arxiv_date' else paper[field]))
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{paper['year']} · {escape(status)}</p><h1>{escape(title)}</h1>{original}
@@ -125,10 +125,10 @@ def _paper_content(paper: dict, language: str) -> tuple[str, str, str]:
 <nav class="entry-actions" aria-label="{label('Paper and citation links', '论文与引文链接')}">{''.join(links)}</nav>
 <section class="entry-section entry-scope" aria-labelledby="entry-scope"><h2 id="entry-scope">{label('Scope and limitations', '研究范围与局限')}</h2><p>{escape(paper[f'scope_limitations_{language}'])}</p></section>
 <section class="entry-section" aria-labelledby="entry-relevance"><h2 id="entry-relevance">{label('Why it fits this collection', '与本合集的关联')}</h2><p>{escape(paper[f'why_fits_{language}'])}</p></section>
-<section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与核查详情')}</h2>{_definitions(facts)}
+<section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
 <p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p>
-<p class="entry-reviewed">{label('Sources reviewed', '来源核查于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅核对来源，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p></section>
+<p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
+<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p></section>
 {_sources(paper['evidence_urls'], language)}'''
     return title, description, content
 

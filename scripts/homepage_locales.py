@@ -84,6 +84,21 @@ def _ui_strings(source):
     return result
 
 
+def _zh_repository_paths(source):
+    """Repository documents with a Chinese counterpart, read from the literal app.js also uses."""
+    declarations = list(re.finditer(r'(?m)^\s*const\s+ZH_REPOSITORY_PATHS\s*=\s*', source))
+    if not declarations:
+        return {}
+    if len(declarations) != 1:
+        raise ValueError('Expected at most one const ZH_REPOSITORY_PATHS dictionary')
+    parser = _Strings(source, declarations[0].end())
+    result = parser.object(); parser.take(';')
+    if any(not isinstance(value, str) or not re.fullmatch(r'blob/main/[A-Za-z0-9._/-]+\.md', value)
+           for item in result.items() for value in item):
+        raise ValueError('Chinese repository paths must map Markdown files under blob/main/')
+    return result
+
+
 _VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
 
@@ -176,6 +191,10 @@ def localized_homepage(html, app_source, language):
     if language not in {'en', 'zh'}:
         raise ValueError('Homepage language must be en or zh')
     strings = _ui_strings(app_source)[language]
+    # The build localizes the English template; the inverse map keeps a Chinese page convertible back.
+    repository_paths = _zh_repository_paths(app_source)
+    if language == 'en':
+        repository_paths = {chinese: english for english, chinese in repository_paths.items()}
     document = _Document(html)
     if document.stack:
         raise ValueError('Homepage markup has unclosed elements')
@@ -255,6 +274,13 @@ def localized_homepage(html, app_source, language):
             if key in attrs and isinstance(attrs[key], str): attrs[key] = _root_url(attrs[key])
         if tag == 'a' and 'href' in attrs:
             attrs['href'] = _locale_url(attrs['href'], origin, language)
+        if attrs.get('data-repo-path') in repository_paths:
+            # Chinese pages link the Chinese document; app.js then keeps the localized data-repo-path.
+            path, href = attrs['data-repo-path'], attrs.get('href', '')
+            if not href.endswith('/' + path):
+                raise ValueError('Homepage repository link does not end with its data-repo-path')
+            attrs['href'] = href[:-len(path)] + repository_paths[path]
+            attrs['data-repo-path'] = repository_paths[path]
         if 'data-locale-path' in attrs:
             path = attrs['data-locale-path']
             if not re.fullmatch(r'[a-z][a-z0-9-]*(?:/[a-z0-9-]+)*', path):

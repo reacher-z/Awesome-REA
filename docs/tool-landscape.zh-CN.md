@@ -1,18 +1,21 @@
 # REA 周边工具：按任务选型
 
-本页保留首轮 **47 个资源**的选型说明：15 个独立 agent/MCP 集成、28 个基础工具和 4 个学习入口。首轮核验日期为 **2026-10-15**。每条均阅读了项目自己的 README 或官方文档，核验等级为 `source-reviewed`；本轮工具目录未安装或运行这些工具，因此不把资料核验写成兼容性测试。随后补充的 8 条 Website/Game 资源见下节；当前工具目录共 55 条。
+> **存档快照**：本文保留 2026-10-15 合集首发时的选型说明，其中的数量与版本边界以当时为准，不随目录更新。当前收录数量请看 [README 目录](../README.zh-CN.md#目录)中的计数，或运行 `python3 scripts/catalog.py`；其他文档见[文档索引](README.zh-CN.md)。
+
+本页保留首轮 **47 个资源**的选型说明：15 个独立 agent/MCP 集成、28 个基础工具和 4 个学习入口。首轮核验日期为 **2026-10-15**。每条均阅读了项目自己的 README 或官方文档，核验等级为 `source-reviewed`；本轮工具目录未安装或运行这些工具，因此不把资料核验写成兼容性测试。随后补充的 8 条 Website/Game 资源见下节；截至 2026-10-15 首发时，工具目录共 55 条，此后继续增补。
 
 可复用数据见 [tool-resources.json](../data/tool-resources.json)。`verified_at` 表示资料检查日期；证据链接指向当时审读的文档分支或官网页面，并非锁定版本的执行记录。
 
 ## 与 REA 的关系
 
-首发补充的 Website/Game 资源为 [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)、[Playwright MCP](https://github.com/microsoft/playwright-mcp)、[mitmproxy](https://github.com/mitmproxy/mitmproxy)、[RenderDoc](https://github.com/baldurk/renderdoc)、[RenderDoc MCP](https://github.com/scarletfantasy/renderdoc-mcp)、[AssetRipper](https://github.com/AssetRipper/AssetRipper)、[Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) 与 [Il2CppDumper](https://github.com/Perfare/Il2CppDumper)。其前提和原文证据已写入数据记录；它们是独立配套工具，未据此宣称 REA 已原生集成。网站按 `targets` 标签提供 Website、Game、App、Binary、Firmware 入口，同一资源可出现在多个适用目标中。
+首发补充的 Website/Game 资源为 [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp)、[Playwright MCP](https://github.com/microsoft/playwright-mcp)、[mitmproxy](https://github.com/mitmproxy/mitmproxy)、[RenderDoc](https://github.com/baldurk/renderdoc)、[RenderDoc MCP](https://github.com/scarletfantasy/renderdoc-mcp)、[AssetRipper](https://github.com/AssetRipper/AssetRipper)、[Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) 与 [Il2CppDumper](https://github.com/Perfare/Il2CppDumper)。其前提和原文证据已写入数据记录；它们是独立配套工具，未据此宣称 REA 已原生集成。网站按 `targets` 标签提供 Website、Game、App、Binary、Firmware、Protocol 六类入口（Protocol 于 2026-10-16 加入，定义见[目录格式（英文）](../data/README.md)），同一资源可出现在多个适用目标中。
 
 | 数据标签 | 含义 |
 | --- | --- |
 | `independent-agent-integration` | 独立于 REA 的 MCP、AI 插件或 agent skill。“官方”指相应工具厂商的官方实现，不表示 REA 官方维护。 |
 | `foundation` | 可辅助理解文件、代码和运行时的基础工具；收录不代表 REA 已内置或验证其集成。 |
 | `learning` | 训练逆向分析能力的课程、书籍和实践入口。 |
+| `independent-reconstruction` | 首发后加入的独立重建案例：有记录的重建项目，与 REA 没有已确认的关联。这类记录同时存放在 tool-resources.json 和 rea-resources.json 中，不属于 REA 生态项目；是否集中到一个文件需另行评审。 |
 
 [Claude Reverse Engineering Skill](https://github.com/EncidXVII/claude-reverse-engineering-skill/blob/main/README.md) 的作者明确提到 REA 工作流；这仍是社区项目的说明。其余资源应按各自文档配置，不能从“都支持 MCP”推导出它们与 REA 存在官方集成关系。
 

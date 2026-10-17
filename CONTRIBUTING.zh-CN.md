@@ -1,0 +1,97 @@
+# 参与贡献：中文快速入门
+
+[English](CONTRIBUTING.md) · [文档索引](docs/README.zh-CN.md)
+
+本页概述向 Awesome Reverse Engineering Anything 推荐资源、论文和修正的基本规则。完整说明见[英文贡献指南](CONTRIBUTING.md)；两者如有出入，以英文版为准。
+
+## 推荐资源
+
+可以使用[资源推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)，也可以直接提交 pull request。请提供：
+
+- **名称与原始链接**：优先使用项目维护者的仓库或官网。
+- **资源类型**：项目、工具、集成、案例、合集、文档、学习资源或研究。
+- **目标领域**：网站、游戏、应用、二进制、固件或协议，可以多选。
+- **简短说明**：用自己的话说明资源提供什么。
+- **使用条件**：平台、许可、发布版本或外部工具要求会影响说明时，一并写明。
+
+提交前请先确认合集中没有重复条目。收录不设最低 Star 数；优先收录原创、仍在维护的项目，而不是复制的 fork。关于 REA 集成的说法须有项目自身文档支持。
+
+发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)。各表单目前只有英文界面。
+
+## 推荐论文
+
+使用[论文推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)，写明论文的规范页面或 DOI、发表状态、研究的逆向任务，以及作者提供的代码或数据链接（如有）。论文可以公开访问，不代表其基准或评测服务也已公开。
+
+书目记录保存在 `data/papers.json`，与工具目录和自动扫描索引分开维护。提交 pull request 时，请参照[目录格式（英文）](data/README.md)中的论文字段表和已有记录，保留原始标题和作者全名；只记录已核实的日期精度，不要编造发表日期或会议日期。DOI、arXiv 标识和出版方身份等规则见英文指南的[论文部分](CONTRIBUTING.md#suggest-a-research-paper)。
+
+## kind、relationship、category 与 targets
+
+精选记录保存在 `data/rea-resources.json` 和 `data/tool-resources.json`。中英文描述都应简洁；网站使用的中文名称和使用条件在 `site/translations.zh-CN.json`。下面四个字段各自独立选择，一个字段不能决定另一个：
+
+- `kind`：分享的是什么，例如工具、集成或案例。
+- `relationship`：证据证明了它与 REA 是什么关系，例如 REA 官方或社区资源、独立智能体集成或基础工具。
+- `category`：适合哪一类任务或工具族。
+- `targets`：帮助分析或重建的对象领域。
+
+当前可用值见[目录格式（英文）](data/README.md)。证据支持多个领域时可以选择多个 targets。为条目补充新的已复核领域时，保留原有 targets；不要自动重新归类历史扫描记录。
+
+### 何时使用协议（protocol）
+
+只有一手证据描述通信格式分析、流量解析、报文交互或协议状态推断（包括硬件总线）时，才使用 `protocol`。仅能联网、调用 API 或提供 MCP 接口都不符合条件。报文采用二进制编码，也不等于对可执行文件做 Binary 分析。
+
+### 重建案例
+
+案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
+
+## 来源已复核不等于运行验证
+
+每条记录都要有一手来源和复核日期。`source-reviewed`（来源已复核）只表示已对照项目文档核对说明，不表示已安装、审计或复现该项目。规模更大的 `data/source-index.json` 是自动建立的仓库索引，保留单独的来源记录，不属于精选资源。目录记录目前不收录运行或复现结果：所有精选记录都使用 `verification: source-reviewed`，所有论文的 `runtime_tested` 都为 false，也没有单独提交测试运行的格式。可以在 issue 中说明自己运行了什么，帮助审核者核实某个说法，但这些内容不会作为验证结果发布。
+
+## 不要提交的内容
+
+公开仓库中不得包含凭据、私人账户信息、个人文件系统路径、专有二进制文件、未处理的私人抓包数据，或受许可限制的 Font Awesome Pro 文件。原创贡献采用本仓库的 MIT 许可；链接的资源保留各自的许可。
+
+Issue 和 pull request 都是公开的。粘贴日志、截图等内容前，请删除令牌、Cookie、账户标识、本地文件路径和私人抓包数据。工作流漏洞、凭据泄露或已收录资源疑似被入侵等安全问题，请按[安全策略](SECURITY.md#中文摘要)私下报告。
+
+## 本地检查
+
+修改目录数据后，在仓库根目录运行：
+
+```sh
+python3 scripts/build_readme.py
+python3 scripts/build_repository_index.py
+python3 scripts/validate.py
+python3 scripts/build_site.py
+node --check site/app.js
+```
+
+运行全部测试（需要 Node.js，不访问网络）：
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+修改论文记录时，再运行 `python3 scripts/validate_papers.py`，重新生成两个 README，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。CI 的完整步骤见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
+
+## 审核与发布
+
+Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。
+
+## 术语对照
+
+界面文字、生成器标签和 README 中手写的说明统一使用下列译法，精选条目的中文描述也尽量沿用。自动扫描仓库的中文简介按上游原文翻译，不据此批量改写。
+
+| English | 中文 | 说明 |
+| --- | --- | --- |
+| source-reviewed | 来源已复核 | 已对照一手文档核对说明；名词作“来源复核”。不代表安装、运行、审计或复现。 |
+| runtime-tested | 已运行验证 | 指实际运行并留有可检查记录的结果；名词作“运行验证”。目录记录目前不使用这一状态，它与“来源已复核”不能互换。 |
+| requirements | 使用条件 | 平台、引擎、版本、许可或输入等要求，对应 `requirements` 字段。 |
+| review date | 复核日期 | 来源复核的日期（`verified_at`），界面显示为“复核于”加日期；不是发布或测试日期。 |
+| agent | 智能体 | 项目名、产品名和引用的原文保持原样。 |
+| integration | 集成 | 如“独立智能体集成”“REA 社区集成”；这个词本身不表示 REA 官方集成。 |
+| case study | 案例 | 对应 `kind: case-study`。 |
+| learning resource | 学习资源 | `kind: learning-resource` 与 `relationship: learning` 使用同一译法。 |
+| curated | 精选 | 经来源复核的目录条目，即 `rea-resources.json` 与 `tool-resources.json` 中的记录。 |
+| repository index (scan index) | 仓库索引 | 自动读取 README 建立的 `source-index.json`；与精选资源分开计数，条目未逐项复核。 |
+
+目标领域依次译为网站（website）、游戏（game）、应用（app）、二进制（binary）、固件（firmware）和协议（protocol）。
