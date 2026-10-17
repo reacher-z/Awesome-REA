@@ -28,7 +28,7 @@
 
 名称链接指向原始来源；“使用条件与证据”提供使用前提、限制与核查来源。每项资源按主要用途列出一次；[研究论文单独列出](#papers)。
 
-收录独立项目及 [REA](https://github.com/morluto/rea) 相关资源，不代表已接入 REA。“全部案例”复用本目录的条目，不另行计数。
+收录独立项目及 [REA（Reverse Engineer Anything）](https://github.com/morluto/rea) 相关资源。REA 是单独维护的上游 CLI 与 MCP 项目，本合集并非 REA 官方仓库；收录不代表已接入 REA。“全部案例”复用本目录的条目，不另行计数。
 
 <!-- BEGIN GENERATED CATALOG -->
 <a id="website"></a>

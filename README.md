@@ -27,7 +27,7 @@ Choose a target below. Entries link to primary sources; **source review does not
 
 Names link to original sources. “Requirements & evidence” opens prerequisites, limitations and review sources. Each resource appears once under its main purpose; [papers are listed separately](#papers).
 
-Includes independent projects and [REA](https://github.com/morluto/rea) resources. Listing does not imply REA integration, and the cases view reuses these entries.
+Includes independent projects and resources for [REA (Reverse Engineer Anything)](https://github.com/morluto/rea), a separate upstream CLI and MCP project; this collection is not the REA repository. Listing does not imply REA integration, and the cases view reuses these entries.
 
 <!-- BEGIN GENERATED CATALOG -->
 <a id="website"></a>
