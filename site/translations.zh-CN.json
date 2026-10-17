@@ -53,6 +53,14 @@
       "JADX 插件和独立 Python MCP 服务都要安装；Java 11+、Python 3.10+。"
     ]
   },
+  "apktool-mcp-server": {
+    "name": "apktool-mcp-server Apktool MCP 服务",
+    "requirements": [
+      "需安装 Apktool 并确保其位于 PATH 中。所审阅版本为 V3.0.2，发布于 2026-07-02，审阅时与默认分支一致。使用 uv 运行；README 和脚本头部声明 Python 3.10+，而 pyproject.toml 声明 >=3.13。采用 Apache-2.0 许可证。",
+      "默认通过 stdio 提供 MCP 服务，使用 --http 时改为在 8652 端口提供 Streamable HTTP 传输。README 列出 13 个工具；所审阅脚本另外注册了 health_check、analyze_project_structure 和 get_workspace_info。项目路径必须位于工作区目录内（默认为 apktool_mcp_server_workspace）。",
+      "modify_smali_file、modify_resource_file、clean_project 和 build_apk 会改动已解码的项目，应在副本上操作；修改类工具默认保留带时间戳的备份。与 Apktool 本身一样，重新构建 APK 不等于恢复原始 Java 源码。"
+    ]
+  },
   "frida-mcp-yfe404": {
     "requirements": [
       "Node.js 20+、Frida 17；设备端操作需可连接的目标及 frida-server。"
@@ -133,6 +141,14 @@
   "webcrack": {
     "requirements": [
       "当前 README 指定 Node.js 22 或 24；效果取决于混淆和打包模式。"
+    ]
+  },
+  "humanify": {
+    "name": "humanify JavaScript 标识符重命名工具",
+    "requirements": [
+      "所审阅版本为 v3.1.1，发布于 2026-07-29。第 3 版为单个 Rust 可执行文件，发行版提供 macOS arm64/x64、Linux x64/arm64 和 Windows x64 构建；也可通过 cargo install 从源码构建。采用 MIT 许可证。",
+      "需选择模型提供方预设：OpenAI、Gemini、Anthropic、OpenRouter 和 Requesty 需要 API 密钥，Ollama 则运行本地模型。humanify 对每个标识符调用一次模型，并附带其周围代码上下文（默认 500 个字符）；使用托管服务时，这些上下文会发送给所选提供方，费用和速率限制随标识符数量增长。",
+      "每次运行处理一个 JavaScript 文件，且只重命名标识符：不会拆解 webpack 打包结果，也不会去除控制流混淆，上游建议先用 webcrack 处理。命名质量取决于所用模型；上游指出本地模型比托管服务更慢、准确度更低。"
     ]
   },
   "wabt": {
@@ -472,6 +488,15 @@
       "需要 Node.js 18+ 和 MCP 客户端；上游另有面向编码智能体的 CLI 与技能方案。"
     ]
   },
+  "burp-suite-mcp-server": {
+    "name": "Burp Suite MCP Server 扩展",
+    "requirements": [
+      "需要安装 Burp Suite。Burp Suite 是 PortSwigger 的专有软件，适用其自身的最终用户许可协议：Professional 为付费订阅，Community Edition 按单独的社区版条款免费使用。扩展本身的 GPL-3.0 许可证不涵盖 Burp。扩展清单标明两个版本均受支持。",
+      "所审阅版本为 v1.3.0，发布于 2026-05-26，提供预编译的 burp-mcp-all.jar，也已上架 BApp Store。从源码构建需使用 Gradle，并要求 PATH 中有 Java 与 jar 命令；所审阅的构建使用 Java 21 工具链。",
+      "SSE 服务默认监听 127.0.0.1:9876；只支持 stdio 的客户端可使用随附的代理 JAR。发送 HTTP 请求以及读取 HTTP 历史、WebSocket 历史和 Organizer 条目时，默认会弹出审批提示。修改配置的工具需手动启用，导出配置时默认过滤凭据。",
+      "扫描器问题与 Collaborator 工具仅在 Burp Suite Professional 中注册。返回给 MCP 客户端的数据由该客户端所用的模型提供方处理。审阅时默认分支比 v1.3.0 多 7 个提交，注册的工具集合保持不变。"
+    ]
+  },
   "awesome-rea-cases": {
     "name": "Awesome REA Cases",
     "requirements": [
@@ -540,6 +565,15 @@
       "目标需满足文档中的 Frida 附加或应用修补流程。Android 修补需要 Android 构建工具及 Apktool 2.9.0+；iOS 修补需要文档规定的 Xcode 与签名工具。"
     ],
     "name": "objection"
+  },
+  "grapefruit": {
+    "name": "Grapefruit 移动应用动态插桩工具",
+    "requirements": [
+      "需在目标设备上运行 Frida server，并按照 Frida 官方 iOS 或 Android 指南完成配置；所审阅版本支持 Frida 16 或 17（默认 17）。本目录未测试任何设备端流程。",
+      "所审阅版本为 v1.1.2（npm 包名 igf），发布于 2026-03-30。npm 包要求 Node.js >=22.18.0，且不兼容 bunx；预编译程序覆盖 macOS arm64/x64、Linux x64 和 Windows x64。服务默认绑定 localhost 的 31337 端口；默认分支 README 提醒其没有内置身份验证。",
+      "可选的 AI 功能（包括生成 Hook 脚本）通过 LLM_* 环境变量配置模型：Anthropic、OpenAI、Gemini、OpenRouter，或本地 Ollama 等兼容 OpenAI 接口的端点；提示内容会发送到所配置的端点。",
+      "上游有意不内置 Frida 检测、证书固定或越狱／root 检测的绕过功能，并建议在获得授权的评估中配合专门的绕过工具使用。默认分支比 v1.1.2 多 47 个提交，新增了发行版 README 未列出的 Dart AOT 快照浏览功能。采用 MIT 许可证。"
+    ]
   },
   "r2frida": {
     "requirements": [
@@ -661,6 +695,14 @@
       "Node.js 重建器离线处理已保存的捕获数据。工具集仍处于实验阶段，生成的架构、OpenAPI、SDK 和模拟服务器结果需要复核，不代表完整恢复应用或后端。",
       "浏览器端捕获不能读取 HttpOnly Cookie 或绕过授权。请求钩子只能观察安装后的流量；源码映射引用仅作为线索，真实截图需要浏览器自动化。",
       "含认证状态的捕获数据可能包含敏感信息。上游脱敏说明仅经过来源审阅，未经独立测试。采用 MIT 许可证。"
+    ]
+  },
+  "screenshot-to-code": {
+    "name": "screenshot-to-code 截图转前端代码工具",
+    "requirements": [
+      "需自行部署这一采用 MIT 许可证的仓库：后端为使用 Poetry 管理的 FastAPI（Python ^3.10），前端为通过 pnpm 运行的 React/Vite，也可用 Docker Compose 一并启动。审阅时没有 GitHub Release 或标签。托管服务 screenshottocode.com 是独立产品，不在本条目审阅范围内。",
+      "至少需要一个 OpenAI、Anthropic 或 Gemini API 密钥，输入内容会交由所选提供方处理。视频模式必须使用 Gemini，素材提取也由 Gemini 完成；Replicate 密钥为可选项，上游建议配置以启用图像生成、编辑和背景移除。自检预览需要安装 Playwright 的 Chromium。",
+      "README 未报告还原度或准确率数据。生成代码需要人工复核，无法恢复输入中未呈现的后端逻辑、API 或数据。"
     ]
   },
   "nibkit": {

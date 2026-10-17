@@ -68,6 +68,11 @@ class ProtocolTargetTests(unittest.TestCase):
             (resource(category='web-analysis', targets=['website', 'protocol']), 'website'),
             (resource(category='reconstruction-cases', kind='case-study'), 'protocol'),
             (resource(category='reconstruction-cases', kind='case-study', targets=['protocol', 'app']), 'app'),
+            # Reviewed records whose category would otherwise route them to another section.
+            (resource(id='humanify', category='javascript-electron', targets=['website']), 'website'),
+            (resource(id='burp-suite-mcp-server', category='agent-mcp', kind='integration', targets=['website', 'app']), 'website'),
+            (resource(id='apktool-mcp-server', category='agent-mcp', kind='integration', targets=['app']), 'app'),
+            (resource(id='grapefruit', category='dynamic-analysis', targets=['app']), 'app'),
         ):
             with self.subTest(record=record['category'], kind=record['kind']):
                 self.assertEqual(collection_section(record), expected)

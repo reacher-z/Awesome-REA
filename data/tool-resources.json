@@ -170,6 +170,33 @@
     "kind": "integration"
   },
   {
+    "id": "apktool-mcp-server",
+    "name": "apktool-mcp-server",
+    "url": "https://github.com/zinja-coder/apktool-mcp-server",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Python MCP server that drives a local Apktool install so agents can decode APKs; list, read, search and edit smali and resource files; read AndroidManifest.xml and apktool.yml; and rebuild the project.",
+    "description_zh": "基于 Python 的 MCP 服务，调用本地安装的 Apktool，使智能体能够解码 APK，列出、读取、搜索和修改 smali 与资源文件，读取 AndroidManifest.xml 与 apktool.yml，并重新构建项目。",
+    "evidence_url": "https://github.com/zinja-coder/apktool-mcp-server/blob/12bb33134af905923a0a58643dcc35fd694ad6f6/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/zinja-coder/apktool-mcp-server/blob/12bb33134af905923a0a58643dcc35fd694ad6f6/apktool_mcp_server.py",
+      "https://github.com/zinja-coder/apktool-mcp-server/blob/12bb33134af905923a0a58643dcc35fd694ad6f6/pyproject.toml",
+      "https://github.com/zinja-coder/apktool-mcp-server/blob/12bb33134af905923a0a58643dcc35fd694ad6f6/LICENSE",
+      "https://github.com/zinja-coder/apktool-mcp-server/releases/tag/V3.0.2"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Apktool must be installed and available on PATH. Reviewed release: V3.0.2, published 2026-07-02 and identical to the default branch at review. Run it with uv; the README and script header state Python 3.10+, while pyproject.toml declares >=3.13. Apache-2.0.",
+      "MCP is served over stdio by default, or over streamable HTTP on port 8652 with --http. The README lists 13 tools; the reviewed script also registers health_check, analyze_project_structure and get_workspace_info. Project paths must stay inside the workspace directory (apktool_mcp_server_workspace by default).",
+      "modify_smali_file, modify_resource_file, clean_project and build_apk change the decoded project, so work on copies; the modify tools keep timestamped backups by default. As with Apktool, rebuilding an APK is distinct from recovering original Java source."
+    ]
+  },
+  {
     "id": "frida-mcp-yfe404",
     "name": "frida-mcp (yfe404)",
     "url": "https://github.com/yfe404/frida-mcp",
@@ -451,6 +478,32 @@
       "website"
     ],
     "kind": "tool"
+  },
+  {
+    "id": "humanify",
+    "name": "humanify",
+    "url": "https://github.com/jehna/humanify",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Rename identifiers in minified JavaScript with LLM-suggested names, applied through scope-aware AST rewriting so the program structure stays unchanged. The new names are model suggestions, not recovered original identifiers.",
+    "description_zh": "借助 LLM 为压缩后的 JavaScript 标识符建议名称，并通过遵循作用域的 AST 改写完成重命名，程序结构保持不变。新名称是模型给出的推测，并非恢复出的原始标识符。",
+    "evidence_url": "https://github.com/jehna/humanify/blob/65b90bc4743b23317f13d01894776643dbde7fdb/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/jehna/humanify/blob/65b90bc4743b23317f13d01894776643dbde7fdb/Cargo.toml",
+      "https://github.com/jehna/humanify/blob/65b90bc4743b23317f13d01894776643dbde7fdb/LICENSE",
+      "https://github.com/jehna/humanify/releases/tag/v3.1.1"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed release: v3.1.1, published 2026-07-29. Version 3 is a single Rust binary with release builds for macOS arm64/x64, Linux x64/arm64 and Windows x64; source builds use cargo install. MIT-licensed.",
+      "Select a provider preset: OpenAI, Gemini, Anthropic, OpenRouter and Requesty need an API key, while Ollama runs a local model. humanify makes one model call per identifier with surrounding code context (500 characters by default); hosted modes send that context to the selected provider, and cost and rate limits scale with the identifier count.",
+      "Each run processes one JavaScript file and renames identifiers only: it does not unbundle webpack output or remove control-flow obfuscation, and upstream suggests running webcrack first. Name quality depends on the model; upstream describes local models as slower and less accurate than hosted providers."
+    ]
   },
   {
     "id": "wabt",
@@ -965,6 +1018,39 @@
     "kind": "integration"
   },
   {
+    "id": "burp-suite-mcp-server",
+    "name": "Burp Suite MCP Server",
+    "url": "https://github.com/PortSwigger/mcp-server",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "website",
+      "app"
+    ],
+    "description_en": "PortSwigger's Burp Suite extension serves an MCP endpoint, plus a packaged stdio proxy, so agents can query proxy HTTP and WebSocket history, send HTTP/1.1 or HTTP/2 requests, and open Repeater or Intruder tabs.",
+    "description_zh": "PortSwigger 官方 Burp Suite 扩展，提供 MCP 端点并附带 stdio 代理，使智能体可以查询代理中的 HTTP 与 WebSocket 历史记录、发送 HTTP/1.1 或 HTTP/2 请求，并打开 Repeater 或 Intruder 标签页。",
+    "evidence_url": "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/src/main/kotlin/net/portswigger/mcp/tools/Tools.kt",
+      "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/src/main/kotlin/net/portswigger/mcp/config/McpConfig.kt",
+      "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/BappManifest.bmf",
+      "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/gradle.properties",
+      "https://github.com/PortSwigger/mcp-server/blob/5f76126409780ecba2b766c7f7388f465c5b5f94/LICENSE",
+      "https://github.com/PortSwigger/mcp-server/releases/tag/v1.3.0",
+      "https://portswigger.net/bappstore/9952290f04ed4f628e624d0aa9dccebc",
+      "https://portswigger.net/burp/eula"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Burp Suite, proprietary PortSwigger software under its own EULA: Professional is a paid subscription, while Community Edition is free under separate Community terms. The extension's GPL-3.0 license does not cover Burp. The extension manifest lists both editions as supported.",
+      "Reviewed release: v1.3.0, published 2026-05-26 with a prebuilt burp-mcp-all.jar and also listed in the BApp Store. Source builds use Gradle and need Java and the jar command on PATH; the reviewed build targets a Java 21 toolchain.",
+      "The SSE server listens on 127.0.0.1:9876 by default; stdio-only clients use the packaged proxy JAR. Approval prompts for sending HTTP requests and for reading HTTP history, WebSocket history and Organizer items are on by default. Config-editing tools are opt-in, and exported options filter credentials by default.",
+      "Scanner-issue and Collaborator tools are registered only in Burp Suite Professional. Data returned to the MCP client is handled by that client's model provider. The default branch was seven commits ahead of v1.3.0 at review, with the same registered tool set."
+    ]
+  },
+  {
     "id": "wakaru",
     "name": "Wakaru",
     "url": "https://github.com/pionxzh/wakaru",
@@ -1202,6 +1288,36 @@
     "requirements": [
       "Current package metadata requires Python 3.11+ and Frida 16+; this supersedes the older Python minimum still shown in the installation wiki.",
       "The target must support the documented Frida attachment or patched-app workflow. Android patching requires Android build tools and Apktool 2.9.0+; iOS patching requires the documented Xcode and signing tools."
+    ]
+  },
+  {
+    "id": "grapefruit",
+    "name": "Grapefruit",
+    "url": "https://github.com/ChiChou/grapefruit",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Inspect and hook running iOS and Android apps from a Frida-based web interface, with method and crypto-API hooks, filesystem and SQLite browsers, iOS keychain and UI-hierarchy views, and HTTP capture from common networking libraries.",
+    "description_zh": "通过基于 Frida 的 Web 界面检查并 Hook 运行中的 iOS 与 Android 应用，提供方法与加密 API 拦截、文件系统与 SQLite 浏览、iOS 钥匙串与界面层级查看，以及常见网络库的 HTTP 流量捕获。",
+    "evidence_url": "https://github.com/ChiChou/grapefruit/blob/b7176b409793a1395503fe78153e3b0ba888f77d/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/ChiChou/grapefruit/blob/b7176b409793a1395503fe78153e3b0ba888f77d/package.json",
+      "https://github.com/ChiChou/grapefruit/blob/b7176b409793a1395503fe78153e3b0ba888f77d/src/lib/env.ts",
+      "https://github.com/ChiChou/grapefruit/blob/b7176b409793a1395503fe78153e3b0ba888f77d/docs/llm.md",
+      "https://github.com/ChiChou/grapefruit/blob/b7176b409793a1395503fe78153e3b0ba888f77d/LICENSE",
+      "https://github.com/ChiChou/grapefruit/releases/tag/v1.1.2",
+      "https://github.com/ChiChou/grapefruit/blob/05852a9b6e32dcc5f1c7e5ca8d91bfabc9d691b9/README.md"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Frida server running on the target device, set up through Frida's iOS or Android guides; the reviewed release works with Frida 16 or 17 (default 17). No device workflow was tested for this catalog.",
+      "Reviewed release: v1.1.2 (npm package igf), published 2026-03-30. The npm package requires Node.js >=22.18.0 and is not compatible with bunx; prebuilt binaries cover macOS arm64/x64, Linux x64 and Windows x64. The server binds to localhost port 31337 by default; the default-branch README warns that it has no built-in authentication.",
+      "Optional AI features, including hook-script generation, use an LLM configured through LLM_* environment variables: Anthropic, OpenAI, Gemini, OpenRouter or an OpenAI-compatible endpoint such as local Ollama. Prompts are sent to the configured endpoint.",
+      "Upstream deliberately ships no Frida-detection, certificate-pinning or jailbreak/root-detection bypasses and suggests combining it with dedicated bypass tooling for authorized assessments. The default branch was 47 commits ahead of v1.1.2 and adds Dart AOT snapshot exploration that the release README does not list. MIT-licensed."
     ]
   },
   {
@@ -1702,6 +1818,32 @@
       "The Node.js reconstructor processes saved captures offline. The toolkit is experimental; generated architecture, OpenAPI, SDK and mock-server outputs need review and do not establish complete application or backend recovery.",
       "Browser-side capture cannot read HttpOnly cookies or bypass authorization. Request hooks see traffic only after installation; source-map references are hints, and true screenshots require browser automation.",
       "Authenticated captures may contain sensitive data. Upstream masking guidance was source-reviewed but not independently tested. MIT-licensed."
+    ]
+  },
+  {
+    "id": "screenshot-to-code",
+    "name": "screenshot-to-code",
+    "url": "https://github.com/abi/screenshot-to-code",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Generate HTML/CSS, Tailwind, React, Vue, Bootstrap or Ionic front-end code from screenshots, mockups, Figma designs or screen recordings with multimodal models; an optional headless-browser preview lets the model check its rendered output. The result is a visual reconstruction of the interface, not recovered original source or backend behavior.",
+    "description_zh": "借助多模态模型，根据截图、设计稿、Figma 设计或屏幕录像生成 HTML/CSS、Tailwind、React、Vue、Bootstrap 或 Ionic 前端代码；可选的无头浏览器预览可让模型渲染并自查输出。结果是对界面外观的视觉重建，并非恢复原始源码或后端行为。",
+    "evidence_url": "https://github.com/abi/screenshot-to-code/blob/a8139779f7c5ae231b7f2a86fa7f83ddc5f7badc/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/abi/screenshot-to-code/blob/a8139779f7c5ae231b7f2a86fa7f83ddc5f7badc/LICENSE",
+      "https://github.com/abi/screenshot-to-code/blob/a8139779f7c5ae231b7f2a86fa7f83ddc5f7badc/backend/pyproject.toml",
+      "https://github.com/abi/screenshot-to-code/blob/a8139779f7c5ae231b7f2a86fa7f83ddc5f7badc/frontend/package.json"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Self-host the MIT-licensed repository: a FastAPI backend managed with Poetry (Python ^3.10) and a React/Vite frontend run with pnpm, or both through Docker Compose. No GitHub release or tag existed at review. The hosted screenshottocode.com service is a separate product and is not what this entry reviews.",
+      "At least one OpenAI, Anthropic or Gemini API key is required, and inputs are processed by the selected providers. Gemini is required for video mode and handles asset extraction; a Replicate key is optional but recommended upstream for image generation, editing and background removal. The self-check preview needs Playwright's Chromium.",
+      "The README reports no fidelity or accuracy figures. Generated code needs review and cannot recover backend logic, APIs or data that the input does not show."
     ]
   },
   {
