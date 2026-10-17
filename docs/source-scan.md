@@ -81,3 +81,28 @@ Before replacing the canonical `data/source-index.json` with a fresh or resumed 
 Search calls are spaced by at least 2.1 seconds; README requests share a bounded request rate and a worker limit. HTTP rate-limit responses trigger a shared wait and retry, and progress checkpoints are saved after each 100 attempted READMEs. GitHub limits each search to at most 1,000 results, so the scanner uses distinct topical queries and records its pagination limits. See [GitHub search behavior](https://docs.github.com/en/rest/search/search#about-search) and [REST API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api).
 
 This is not a complete census of reverse engineering software. Search vocabulary, repository metadata, star ordering, API availability and the configured scan budget affect coverage. README URLs may change later; the SHA-256 and byte count identify the observed content. New scanner versions also compute `readme_content_git_sha` and set `readme_git_sha_matches_content` by comparing it with the API-advertised identifier. A false flag must not be treated as proof that the advertised blob contains the captured bytes. Explicit follow-up checks can be recorded in `readme_integrity_review`. A successful scan is a starting point for investigation, not a product recommendation.
+
+## Recheck availability
+
+The weekly link checker covers curated, benchmark and paper URLs only, and a URL check cannot tell when a scanned name now belongs to a different repository. The [availability recheck](../scripts/source_availability.py) asks GitHub for each retained scan by its numeric repository ID instead. It is opt-in: it runs only when invoked with a token in `GH_TOKEN` or `GITHUB_TOKEN`, and no test, validator or workflow calls it.
+
+```sh
+GH_TOKEN="$(gh auth token)" python3 scripts/source_availability.py --limit 3000
+```
+
+The command reads `data/source-index.json`, checks records in numeric-ID order and writes a dated JSON report, by default `.cache/source-availability-<UTC date>.json`. It refuses to write into `data/`. Each record costs one [repository metadata](https://docs.github.com/en/rest/repos/repos#get-a-repository) request by ID; when the ID is gone or its name has changed, a second request checks the recorded name. It uses the scanner's guarded API client, so authentication stays in memory, is sent only to `api.github.com`, and rate-limit responses pause and retry. Requests are sent one at a time, at most `--requests-per-second` (default 5). A run checks at most `--limit` records (default 500), stops before the core REST quota falls below `--reserve` (default 1,000 requests), and stops after `--max-consecutive-inconclusive` failures in a row (default 10). An incomplete or partial run records `next_offset`; pass it as `--offset` to continue.
+
+| Outcome | Meaning |
+| --- | --- |
+| `available` | The ID resolves to the recorded name and is still public, non-fork and non-archived. |
+| `renamed` | The ID resolves under the same owner with a different repository name. |
+| `transferred` | The ID resolves under a different owner login, which can also be an account rename. |
+| `ineligible` | The ID resolves but is `archived`, a `fork`, `private` or of unconfirmed status. Private and unconfirmed responses record only the reason, never a name, URL or ID. |
+| `not-found` | GitHub returned 404 or 410 for the ID: the repository was deleted, made private or hidden, which metadata cannot distinguish. |
+| `blocked` | GitHub returned 451 for the ID. |
+| `name-reassigned` | The ID is gone and the recorded name now resolves to another public repository ID, which the result names. |
+| `inconclusive` | Rate limits, server errors, network failures, other HTTP statuses or unexpected metadata prevented a conclusion. These are never treated as `not-found`. |
+
+Every changed name also gets `recorded_name_status`: `redirects-to-scanned-id`, `other-repository` (with `recorded_name_repository_id`), `not-found`, `private` (private or unconfirmed, with no ID recorded) or `inconclusive`. A renamed repository whose old name now belongs to someone else stays `renamed`, with that other ID recorded. The scanner's name-collision rule keeps such a repository out of future batches until a reviewer decides how to handle it.
+
+The recheck reads no README and changes no source record, hash, timestamp or count. Its report is not publishable data. Annotating or excluding a record because of an outcome is a separate reviewed change, and only `not-found`, `blocked`, `name-reassigned` and `ineligible` results are candidates for one; `inconclusive` results should be rechecked later.
