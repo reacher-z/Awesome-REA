@@ -539,6 +539,21 @@
       "v3.8.2 提供 Windows/Linux x86_64 和 macOS arm64/x86_64 GUI，CLI 还支持其他目标。源码构建需要 Rust。支持 ARM、ARM64、MIPS、PowerPC、SuperH 与 x86/x86_64。"
     ]
   },
+  "decomp-permuter": {
+    "requirements": [
+      "每个输入目录需要只含一个函数的 .c 文件、待匹配的 .o 目标文件、项目专用的编译脚本和设置 .toml；已配置好的 Make 或 Ninja 项目可用 import.py 自动生成。README 列出的支持范围为 MIPS（IDO，GCC 可能可用）、PowerPC 和 ARM32 汇编。",
+      "需要 Python 3 和 toml；pynacl 与 Levenshtein 为可选依赖。permuter@home 需由已加入网络的成员授权，只支持有限的编译器，不能在原生 Windows 上运行；工作节点还需要 Docker。",
+      "得分为零只表示评分所用的反汇编一致，不代表 C 代码合理。README 提醒随机改写常会找到不合常理的变化，仍需由人挑选可读、未过拟合的写法；工具不会恢复名称、类型或语义。",
+      "MIT 许可证。没有打包发布版本；审阅时最后一次提交为 2026-10-06。"
+    ]
+  },
+  "asm-differ": {
+    "requirements": [
+      "每个项目需要一个 diff_settings.py，指明原始镜像、重新编译的镜像和链接映射文件；目标文件模式与 expected/ 目录中的参考文件对比。需要 Python 3 及 colorama、watchdog、levenshtein、cxxfilt，并需对应目标架构的 objdump。",
+      "README 列出 MIPS、PPC、AArch64、ARM32、SH2、SH4、m68k，以及有限的 x86 支持。可作为子模块、直接复制 diff.py 或通过 pip 从 Git 安装；没有打包发布版本。审阅时最后一次提交为 2026-09-06。",
+      "采用 Unlicense。只显示指令级差异，不会恢复名称、类型或语义。"
+    ]
+  },
   "ue-explorer": {
     "requirements": [
       "基于 .NET Framework 4.8 的 Windows 应用，需要受支持的 Unreal Engine 1、2/2.5 或 3 包。审阅时最新稳定版为 1.6.2。",
@@ -722,6 +737,22 @@
       "上游说明不附带游戏数据，并要求用户不要再分发生成的游戏 C++ 或 WebAssembly。项目代码采用 MIT；所附 ATRAC 解码器保留 LGPL-2.1-or-later 许可。"
     ]
   },
+  "n64recomp": {
+    "requirements": [
+      "README 说明元数据需以 ELF 文件提供，最简便的来源是目标游戏已有的反汇编或反编译项目；所审阅的源码还接受符号文件加 ROM 的输入方式，README 尚未说明。TOML 配置文件指定输入、桩函数、跳过的函数及单条指令补丁；目前没有完整的选项文档。",
+      "N64Recomp 需递归克隆，并用 CMake 3.20+ 和支持 C++20 的编译器构建。GitHub 上唯一的发布版本（2025-05-04）是独立的 Recomp Mod Tool，而非重编译器本身。审阅时最后一次提交为 2026-05-27。",
+      "测试主要覆盖旧版 MIPS 编译器（GCC 2.7.2、IDO）和现代 clang 的输出；现代 MIPS GCC 编译的代码可能需要特定编译参数，TLB 映射代码的重定位支持仍在计划中。",
+      "工具采用 MIT 许可证，子模块保留各自的许可。工具本身不附带游戏代码或资产。Zelda 64: Recompiled 等下游重编译项目各自独立，本条目不代表任何游戏兼容性。"
+    ]
+  },
+  "xenonrecomp": {
+    "requirements": [
+      "每款游戏需要一个 TOML 配置，提供 XEX（以及可选的标题更新 XEXP）、输出目录、跳转表文件，以及寄存器保存／恢复函数和 setjmp/longjmp 的地址；部分函数边界可能需要手动填写。跳转表检测针对 Sonic Unleashed 的代码模式，其他游戏可能需要修改。",
+      "README 免责声明指出项目不提供运行时，让游戏正常运行是使用者自己的责任。MMIO 尚未实现，不支持异常，部分 PPC 指令变体仍缺失。",
+      "构建需递归克隆，并使用 CMake 3.20+ 和 Clang 18+；其他编译器未经测试且不推荐，包括用于编译生成代码。GitHub 上没有发布版本；审阅时最后一次提交为 2025-08-04。",
+      "项目代码采用 MIT 许可证，子模块保留各自的许可。工具本身不附带游戏代码或资产。Unleashed Recompiled 等下游项目需另行审阅，本条目不代表任何游戏兼容性。"
+    ]
+  },
   "aotopsy": {
     "name": "AOTopsy Flutter/Dart 静态分析工具",
     "requirements": [
@@ -880,6 +911,16 @@
       "项目以原编译器和二进制为参照；未提供公开实现或可复现产物。",
       "覆盖率和运行成功属于作者报告，未经本目录独立复现。",
       "这是有文档的案例研究，不是可获取的游戏移植，也不是已证实的 REA 集成。"
+    ]
+  },
+  "snowboardkids2-decomp-case": {
+    "name": "Snowboard Kids 2：大模型辅助的 N64 匹配反编译",
+    "requirements": [
+      "构建需要用户自己的大端序 Snowboard Kids 2 ROM、make、Python 3、MIPS binutils，以及通过 make setup 安装的工具链；README 只报告在 x86 Debian/Ubuntu 和 macOS 上测试过。README 称仓库不含任何游戏资产或汇编，但所审阅的提交仍在 assets/ 下收录了菜单精灵 PNG 和调色板文件。",
+      "进度数字均为作者报告。2026-02-16 的文章称，一次性匹配循环使已匹配代码从约 25% 升至 58%，之后达到约 75%，剩余 124 个函数；2026-05-17 的文章报告全部函数已匹配。2025-11-27 文章中的 79% 只是预测。本目录未构建 ROM，也未核对任何数字。",
+      "字节一致的 C 代码不等于有文档、符合习惯的源码。2026-05-17 的文章指出仍有针对性的 __asm__ 写法，大量名称和结构仍是自动生成或有待整理，图形和音频资产大多仍作为二进制块处理；2026-02-16 的文章也提到智能体的匹配结果较脆弱。",
+      "智能体的贡献比例只来自作者文章，未经量化。2026-05-17 的文章说明首次提交在 2024 年 9 月，并感谢四位具名的 N64 反编译社区成员作出重要贡献，尤其是在最后十个函数上；2025-11-04 的文章描述的是由人主导的流程。项目依赖 splat、m2c、decomp.me、asm-differ、decomp-permuter 等社区工具。",
+      "所审阅的提交中没有许可证文件。2026 年 6 月发布的 Snowboard Kids 2: Recompiled，以及 2026 年 8 月完成的初代 Snowboard Kids 反编译，都是本条目之外的独立项目；未建立 REA 集成。"
     ]
   },
   "yibie-awesome-rea": {

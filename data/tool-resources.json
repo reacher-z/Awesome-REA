@@ -1199,6 +1199,59 @@
     ]
   },
   {
+    "id": "decomp-permuter",
+    "name": "decomp-permuter",
+    "url": "https://github.com/simonlindholm/decomp-permuter",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Randomly or systematically permutes one C function, recompiling each variant and scoring it against a target object file to search for matching compiler output. PERM macros specify manual alternatives, and the optional permuter@home mode distributes runs to other workers.",
+    "description_zh": "随机或系统地改写单个 C 函数，逐个重新编译变体并与目标文件评分对比，以寻找与原编译输出一致的写法。可用 PERM 宏指定手动备选写法，可选的 permuter@home 模式能把运行分发给其他工作节点。",
+    "evidence_url": "https://github.com/simonlindholm/decomp-permuter/blob/8556c81d80d1c1af98a858c8f4dc951357f29139/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Each input directory needs a single-function .c file, the target .o, a project-specific compile script and a settings .toml; import.py can generate them for configured Make or Ninja projects. The README lists MIPS (IDO, possibly GCC), PowerPC and ARM32 assembly.",
+      "Requires Python 3 and toml; pynacl and Levenshtein are optional. permuter@home needs access granted by an existing network member, supports a limited compiler list and does not run on native Windows; workers also need Docker.",
+      "A zero score means the scored disassembly matches, not that the C is plausible. The README warns that random passes often find nonsensical changes, so a human must still choose readable, non-overfitted code; the tool does not recover names, types or semantics.",
+      "MIT license. No packaged release; last commit at review: 2026-10-06."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/simonlindholm/decomp-permuter/blob/8556c81d80d1c1af98a858c8f4dc951357f29139/LICENSE"
+    ]
+  },
+  {
+    "id": "asm-differ",
+    "name": "asm-differ",
+    "url": "https://github.com/simonlindholm/asm-differ",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Diffs original and rebuilt assembly for one function or ROM address to guide matching decompilation; its watch mode can rerun make when sources change. The README describes it as decomp.me’s default diff viewer and points to objdiff as a modern alternative.",
+    "description_zh": "对比单个函数或 ROM 地址的原始汇编与重新编译后的汇编，辅助匹配反编译；监视模式可在源码变更时重新运行 make。README 称它是 decomp.me 的默认差异查看器，并推荐 objdiff 作为现代替代方案。",
+    "evidence_url": "https://github.com/simonlindholm/asm-differ/blob/0dd09af8f8008f1f880327cf0aca3b26d2562ea2/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Each project needs a diff_settings.py naming the original and rebuilt images and linker map; object-file mode compares against references in an expected/ directory. Requires Python 3 with colorama, watchdog, levenshtein and cxxfilt, plus an objdump for the target.",
+      "The README lists MIPS, PPC, AArch64, ARM32, SH2, SH4, m68k and limited x86. Install it as a submodule, by copying diff.py or with pip from Git; there is no packaged release. Last commit at review: 2026-09-06.",
+      "Released under the Unlicense. It shows instruction-level differences only and does not recover names, types or semantics."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/simonlindholm/asm-differ/blob/0dd09af8f8008f1f880327cf0aca3b26d2562ea2/LICENSE",
+      "https://github.com/simonlindholm/asm-differ/blob/0dd09af8f8008f1f880327cf0aca3b26d2562ea2/diff_settings.py",
+      "https://github.com/decompme/decomp.me/blob/6056cf56b3bf4f1cfcf2496fe97f83cc09b08010/frontend/src/lib/settings.ts#L55-L58"
+    ]
+  },
+  {
     "id": "ue-explorer",
     "name": "UE Explorer",
     "url": "https://github.com/UE-Explorer/UE-Explorer",
@@ -1897,6 +1950,60 @@
       "Author demonstrations cover two Ready at Dawn titles sharing an engine. Other games can require missing HLE calls or graphics features. Movies are skipped, and encrypted saves from a PSP or PPSSPP do not yet load; this catalog did not reproduce compatibility or performance claims.",
       "Threaded browser hosting requires cross-origin isolation headers and HTTP Range support. The optional native runner also requires EGL/OpenGL ES development headers.",
       "Upstream states that game data is not included and asks users not to redistribute generated game C++ or WebAssembly. Project code uses MIT; the bundled ATRAC decoder retains LGPL-2.1-or-later."
+    ]
+  },
+  {
+    "id": "n64recomp",
+    "name": "N64: Recompiled",
+    "url": "https://github.com/N64Recomp/N64Recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Statically recompiles N64 MIPS binaries into C functions from symbol metadata, emitting function lookups and relocation macros so a runtime can handle statically linked and relocatable overlays. The output needs a runtime such as N64ModernRuntime; the repository also includes RSP microcode and mod tooling.",
+    "description_zh": "依据符号元数据将 N64 MIPS 二进制静态重编译为 C 函数，并生成函数查找与重定位宏，供运行时处理静态链接和可重定位的覆盖段。输出需配合 N64ModernRuntime 等运行时；仓库还包含 RSP 微码重编译与模组工具。",
+    "evidence_url": "https://github.com/N64Recomp/N64Recomp/blob/ffb39cdad1da5de07eaaa48bd1db4a89a7986771/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README documents an ELF as the metadata source, most easily produced from an existing disassembly or decompilation; the reviewed source also accepts a symbols file plus ROM, which the README does not yet describe. A TOML file sets inputs, stubs, skips and instruction patches; full option documentation is not available.",
+      "Build N64Recomp from a recursive clone with CMake 3.20+ and a C++20 compiler. The only GitHub release (2025-05-04) packages the separate Recomp Mod Tool, not the recompiler. Last commit at review: 2026-05-27.",
+      "Testing has mostly covered old MIPS compilers (GCC 2.7.2, IDO) and modern clang; modern MIPS GCC output may need specific flags, and relocation support for TLB-mapped code is still planned.",
+      "MIT-licensed tool; submodules keep their own licenses. It ships no game code or assets. Downstream recompilations such as Zelda 64: Recompiled are separate projects, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/N64Recomp/N64Recomp/blob/ffb39cdad1da5de07eaaa48bd1db4a89a7986771/LICENSE",
+      "https://github.com/N64Recomp/N64Recomp/blob/ffb39cdad1da5de07eaaa48bd1db4a89a7986771/src/main.cpp#L426-L443",
+      "https://github.com/N64Recomp/N64Recomp/releases/tag/mod-tool-release"
+    ]
+  },
+  {
+    "id": "xenonrecomp",
+    "name": "XenonRecomp",
+    "url": "https://github.com/hedge-dev/XenonRecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Converts Xbox 360 PowerPC executables into C++ that can be compiled for other platforms, with the XenonAnalyse companion detecting jump tables and function boundaries. Output is a literal instruction translation rather than decompiled code and needs a runtime that the project does not supply.",
+    "description_zh": "将 Xbox 360 PowerPC 可执行文件转换为可在其他平台编译的 C++ 代码，配套的 XenonAnalyse 负责检测跳转表和函数边界。输出是逐条指令的直译而非反编译代码，并需要项目本身不提供的运行时。",
+    "evidence_url": "https://github.com/hedge-dev/XenonRecomp/blob/ddd128bcca99fe8bfbb99bea583c972351fa6ace/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A per-game TOML file supplies the XEX (plus an optional title-update XEXP), output directory, jump-table file and addresses of register save/restore and setjmp/longjmp functions; some function boundaries may need manual entries. Jump-table detection targets Sonic Unleashed patterns and may need changes for other games.",
+      "The README disclaimer states that no runtime is provided and that making a game work is the user’s responsibility. MMIO is unimplemented, exceptions are unsupported, and some PPC instruction variants are missing.",
+      "Building needs a recursive clone, CMake 3.20+ and Clang 18+; other compilers are untested and not recommended, including for generated output. There is no GitHub release; last commit at review: 2025-08-04.",
+      "MIT-licensed project code; submodules keep their own licenses. It ships no game code or assets. Downstream projects such as Unleashed Recompiled need separate review, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hedge-dev/XenonRecomp/blob/ddd128bcca99fe8bfbb99bea583c972351fa6ace/LICENSE.md"
     ]
   },
   {

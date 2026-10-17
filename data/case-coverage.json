@@ -7758,13 +7758,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:using-coding-agents-to-decompile-nintendo-64-games",
@@ -7777,13 +7787,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:all-games-are-open-source-now",
@@ -7929,13 +7949,23 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
+      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:finding-jingle-town-debugging-an-n64-game-without-symbols",
@@ -8217,18 +8247,18 @@
     "inventory_units": 370,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 32,
+      "already-curated": 35,
       "insufficient-evidence": 49,
-      "pending": 291
+      "pending": 288
     },
     "units_by_state": {
-      "already-curated": 31,
+      "already-curated": 34,
       "insufficient-evidence": 49,
-      "pending": 290
+      "pending": 287
     },
-    "primary_reviewed_units": 20,
-    "catalog_linked_occurrences": 34,
-    "distinct_resource_ids": 32,
+    "primary_reviewed_units": 23,
+    "catalog_linked_occurrences": 37,
+    "distinct_resource_ids": 33,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

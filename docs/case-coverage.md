@@ -19,13 +19,13 @@ The ledger retains pinned file URLs, Git blob IDs, SHA-256 digests and byte coun
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 32 | 31 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 291 | 290 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 35 | 34 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 288 | 287 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 49 | 49 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-34 occurrences have catalog links. They reference 32 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+37 occurrences have catalog links. They reference 33 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 20 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 23 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -49,6 +49,9 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Super Mario 64 DS: matching decompilation with relocation checks | Already curated | [Source](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
+| Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
+| Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
+| Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | GoldenEye 007: an agent-assisted native port from a decompilation | Already curated | [Source](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip: an AI-assisted Super Smash Bros. native port | Already curated | [Source](https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/README.md) |
 | ssbu-recomp: static recompilation with explicit mode limits | Already curated | [Source](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |

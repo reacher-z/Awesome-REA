@@ -19,13 +19,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 32 | 31 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 291 | 290 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 35 | 34 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 288 | 287 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 49 | 49 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-34 个出现项含目录链接；共关联 32 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+37 个出现项含目录链接；共关联 33 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 20 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 23 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -49,6 +49,9 @@
 | IsaacRecomp：将 Flash 游戏字节码转换为原生 C++ | 已收录 | [来源](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
 | 飞书：作者报告的隔离第二应用实例 | 已收录 | [来源](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Super Mario 64 DS：带重定位核对的匹配反编译 | 已收录 | [来源](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
+| Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
+| Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
+| Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | GoldenEye 007：基于反编译成果的智能体辅助原生移植 | 已收录 | [来源](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip：AI 辅助的 Super Smash Bros. 原生移植 | 已收录 | [来源](https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/README.md) |
 | ssbu-recomp：明确玩法边界的静态重编译 | 已收录 | [来源](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |

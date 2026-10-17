@@ -860,6 +860,36 @@
     "kind": "case-study"
   },
   {
+    "id": "snowboardkids2-decomp-case",
+    "name": "Snowboard Kids 2: an LLM-assisted N64 matching decompilation",
+    "url": "https://github.com/cdlewis/snowboardkids2-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A public matching decompilation of the N64 game Snowboard Kids 2, begun in 2024 with community decompilation tools. The author’s dated posts document Claude, Codex and GLM workflows, including headless one-shot loops, similarity-based function scheduling and hook-guarded, hash-checked builds, through a reported complete function match.",
+    "description_zh": "N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。作者在按日期发布的文章中记录了 Claude、Codex 和 GLM 的使用流程，包括无界面的一次性匹配循环、按函数相似度安排任务，以及由钩子约束、经哈希校验的构建，直至报告全部函数完成匹配。",
+    "evidence_url": "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs the user’s own big-endian Snowboard Kids 2 ROM, make, Python 3, MIPS binutils and the toolchain installed by make setup; the README reports testing only on x86 Debian/Ubuntu and macOS. It states the repository has no game assets or assembly, although the reviewed tree tracks menu-sprite PNG and palette files under assets/.",
+      "Progress figures are author-reported. The 2026-02-16 post describes matched code rising from about 25% to 58% with one-shot loops, then to about 75%, with 124 functions left; the 2026-05-17 post reports every function matched. The 2025-11-27 post’s 79% figure was a projection. This catalog did not build the ROM or check any figure.",
+      "Byte-matching C is not documented or idiomatic source. The 2026-05-17 post notes remaining __asm__ coercions, many generated names and structures still needing cleanup, and graphics/audio assets mostly handled as binary blobs; the 2026-02-16 post describes brittle agent matches.",
+      "Agent assistance is not quantified beyond the posts. The 2026-05-17 post dates the first commit to September 2024 and credits four named N64 decomp community members with significant contributions, especially across the final ten functions; the 2025-11-04 post describes a human-led loop. The work relies on community tools such as splat, m2c, decomp.me, asm-differ and decomp-permuter.",
+      "No license file is present at the reviewed commit. The June 2026 Snowboard Kids 2: Recompiled release and the August 2026 decompilation of the original Snowboard Kids are separate projects outside this record; no REA integration is established."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
+      "https://blog.chrislewis.au/the-unexpected-effectiveness-of-one-shot-decompilation-with-claude/",
+      "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/",
+      "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/",
+      "https://github.com/cdlewis/snowboardkids2-decomp/tree/352a26fae08b3394e11f5e2b589e41a572d53288/assets/sprite_sheets/menuUiSprites"
+    ]
+  },
+  {
     "id": "yibie-awesome-rea",
     "name": "awesome-rea (yibie): verification-focused projects and practice reports",
     "url": "https://github.com/yibie/awesome-rea",
