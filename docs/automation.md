@@ -8,7 +8,7 @@ The repository validates changes in CI and posts a rule-based review on pull req
 
 The reviewer also checks added patch text, and the decoded string values of changed data JSON, for common credential patterns and personal filesystem paths. File names are checked against the private, generated and raw-output entries in `.gitignore`, common key and network-capture names, and licensed font files; these files are reported by path and never fetched. When GitHub omits a file's diff, the reviewer retrieves that file's text from the PR commit as size-bounded data for the same pattern checks. Files it cannot inspect, such as binary or oversized files, are listed for maintainer inspection before merging rather than reported as clean. Reports identify the file, and for data JSON the record and field where possible, without repeating suspected secrets. Pattern checks are a backstop, not a complete secret audit.
 
-The job can write a review comment but does not check out or run the contributor's code, fetch contributor-provided external links, approve the PR, or merge it. Code and workflow changes remain subject to maintainer review. Reviews are attached to a specific head commit. Every run revalidates the data; a repeated run updates the existing bot review and preserves the current check result.
+The job can write a review comment but does not check out or run the contributor's code, fetch contributor-provided external links, approve the PR, or merge it. Code and workflow changes remain subject to maintainer review. Reviews are attached to a specific head commit. Every run revalidates the data; a repeated run updates the existing bot review and preserves the current check result. Report a weakness in this automation privately under the [security policy](../SECURITY.md), not in a public issue.
 
 ## Continuous integration
 
@@ -19,6 +19,8 @@ The `main` branch requires the GitHub Actions `validate` and `review` checks, an
 The localization path was exercised in [PR #2](https://github.com/reacher-z/Awesome-REA/pull/2): valid data passed, an intentionally missing Chinese description failed both jobs, and restored data passed. Rerunning the reviewer updated the same head-specific bot review.
 
 `Source links` runs weekly and on manual request. It distinguishes confirmed missing links from rate limits and inconclusive network responses.
+
+Every workflow action is pinned to a full commit SHA with its exact release version in a comment. Dependabot checks these actions weekly and groups available updates into one pull request, waiting seven days after a release before proposing it. Its pull requests run the same `validate` and `review` checks and, as workflow changes, need maintainer review.
 
 ## Triage source-link results
 

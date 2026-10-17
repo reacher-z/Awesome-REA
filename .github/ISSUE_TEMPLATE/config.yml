@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security problem privately
+    url: https://github.com/reacher-z/Awesome-REA/security/policy
+    about: Workflow or reviewer weaknesses, exposed credentials or personal data, and listed resources that appear compromised. Do not open a public issue for these.

@@ -2,6 +2,10 @@ name: Report an outdated resource
 description: Report a dead link, changed feature, or unsupported compatibility claim.
 title: "Correction: "
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
   - type: input
     id: resource
     attributes:

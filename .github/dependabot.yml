@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Workflow actions stay pinned to full commit SHAs with exact `# vX.Y.Z` comments;
+  # Dependabot updates both. Its pull requests run the same validate and review checks.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Leave a new release a week to be retracted or flagged before it is proposed.
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - '*'

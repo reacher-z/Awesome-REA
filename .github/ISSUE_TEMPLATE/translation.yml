@@ -7,7 +7,9 @@ body:
       value: |
         Use this form for curated descriptions, names or requirements, or scanned repository locales. For dead links or upstream factual changes, use the [resource correction form](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml).
 
-        Preserve names, negation, versions, URLs and capability limits. Do not reproduce intentionally omitted source descriptions or include private information.
+        Preserve names, negation, versions, URLs and capability limits. Do not reproduce intentionally omitted source descriptions.
+
+        Issues are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
   - type: input
     id: resource
     attributes:

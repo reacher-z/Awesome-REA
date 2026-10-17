@@ -2,6 +2,10 @@ name: Suggest a research paper
 description: Add a paper on reverse engineering, reconstruction, or relevant evaluation.
 title: "Paper: "
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
   - type: input
     id: url
     attributes:

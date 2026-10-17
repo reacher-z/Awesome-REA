@@ -87,3 +87,5 @@ Pull requests receive a [rule-based review](docs/automation.md) from trusted bas
 The protected `main` branch requires the `validate` and `review` checks before merging, including for administrators. After changes reach `main`, the connected Cloudflare Pages project runs the collection checks and publishes the website. See the [website maintenance guide](docs/website.md).
 
 Do not include credentials, private account details, personal filesystem paths, proprietary binaries, raw private captures, or licensed Font Awesome Pro files in the public repository. Original contributions use the repository's MIT license; linked resources retain their own licenses.
+
+Issues and pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste into them, including logs and screenshots. Report security problems, such as a workflow weakness, an exposed credential or a listed resource that appears compromised, privately under the [security policy](SECURITY.md).
