@@ -11,9 +11,9 @@ An independent, source-reviewed collection. Review does not imply runtime verifi
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-- **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>37</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>18</sub> · [Firmware & Hardware](#firmware) <sub>10</sub> · [Protocol](#protocol) <sub>8</sub>
+- **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>37</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>12</sub> · [Protocol](#protocol) <sub>11</sub>
 
-- [Papers](#papers) <sub>33</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>17</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,864</sub>
+- [Papers](#papers) <sub>33</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,864</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -164,6 +164,8 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 - [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) - Format-aware file identification and static inspection using parsers, signatures and programmable heuristics. <sub>Tool</sub>
 - [**r2frida**](https://github.com/nowsecure/r2frida) - Use radare2 commands and Frida instrumentation together to inspect local or remote process memory, symbols, classes, and runtime calls on desktop and mobile targets. <sub>Tool</sub>
 - [**Kaitai Struct**](https://github.com/kaitai-io/kaitai_struct) - Turn documented binary layouts into reusable parsers for files and network packets. A .ksy specification can be inspected with visualizers and compiled to multiple languages, helping preserve reverse-engineered format knowledge in interoperable implementations. <sub>Tool · Library</sub>
+- [**GoReSym**](https://github.com/mandiant/GoReSym) - Recover Go build metadata, function names and address ranges, source file and line tables, embedded types and strings from Go binaries, including stripped and some malformed unpacked samples. JSON output can be imported into IDA Pro with the included IDAPython script. <sub>Tool</sub>
+- [**rev.ng**](https://github.com/revng/revng) - Open-source decompilation pipeline that lifts x86-64, AArch64, i386, ARM and MIPS code with QEMU, runs LLVM-based analyses and emits C designed to be valid and recompilable. Data layout analysis infers structures from pointer use; an editable YAML model and Python or TypeScript wrappers support automation. Its VSCode-based UI is a separate closed-beta product, with commercial plans announced. <sub>Tool</sub>
 
 <a id="firmware"></a>
 ### Firmware and Hardware
@@ -185,6 +187,8 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 - [**FirmAE**](https://github.com/pr0v3rbs/FirmAE) - Emulate router and IP-camera firmware to inspect network services and runtime behavior, with automated emulation checks and separate analysis, run, and debugging modes. <sub>Tool</sub>
 - [**PulseView**](https://github.com/sigrokproject/pulseview) - Examine captured logic and analog waveforms with sigrok's graphical frontend. Protocol decoders and decoder stacking expose bus messages and higher-level device operations, making hardware communication traces useful for firmware and interoperability investigations. <sub>Tool</sub>
 - [**UEFITool**](https://github.com/LongSoft/UEFITool) - Parse UEFI firmware images into an inspectable tree and check their structure. Companion UEFIExtract and UEFIFind tools extract parsed contents and locate patterns, supporting analysis of firmware components and vendor formats. <sub>Tool</sub>
+- [**Glasgow Interface Explorer**](https://github.com/GlasgowEmbedded/glasgow) - Use FPGA-based open hardware and Python applets to read and write SPI flash, I2C EEPROM and parallel memory chips, determine JTAG pinouts, debug supported processors and analyze UART, SPI and QSPI transactions on physical devices. <sub>Tool</sub>
+- [**Penguin**](https://github.com/rehosting/penguin) - Rehost embedded Linux firmware from an extracted root filesystem using a generated, editable configuration of emulation transformations, then refine it through a guest root shell, forwarded network services and recorded dynamic-analysis output. <sub>Tool</sub>
 
 <a id="protocol"></a>
 ### Protocols
@@ -204,6 +208,9 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 - [**Wireshark**](https://gitlab.com/wireshark/wireshark) - Inspect captured application and device traffic as decoded protocol fields, with filtering and shared GUI/TShark dissection. Custom dissectors let an analyst encode newly understood packet formats and compare protocol implementations. <sub>Tool</sub>
 - [**Netzob**](https://github.com/netzob/netzob) - Model communication protocols and infer message layouts from traces, with configured active learning for protocol state machines. Python APIs expose message fields, symbols and automata for parsing, traffic generation and fuzzing. <sub>Tool</sub>
 - [**Scapy**](https://github.com/secdev/scapy) - Script packet dissection, construction, request/reply matching and capture-file analysis in Python. Custom packet fields and layer bindings let analysts encode understood wire formats and investigate protocol behavior. <sub>Tool</sub>
+- [**Universal Radio Hacker (URH)**](https://github.com/jopohl/urh) - Demodulate and decode signals captured with software-defined radios, with automatic modulation-parameter detection and customizable decodings. Analysts assign protocol fields and message types by hand or review rule-based automatic field inference; a fuzzer targets stateless protocols and a simulator supports stateful exchanges. <sub>Tool</sub>
+- [**SavvyCAN**](https://github.com/collin80/SavvyCAN) - Capture or load CAN bus traffic and investigate frames with sniffer, graphing, file-comparison and ISO-TP/UDS decoding views; loaded or analyst-edited DBC files map raw bytes to named signals. Separate custom-sender, fuzzing and UDS-scan windows transmit frames on a live bus. <sub>Tool</sub>
+- [**AALpy**](https://github.com/DES-Lab/AALpy) - General-purpose Python automata-learning library that infers deterministic, non-deterministic, stochastic and pushdown models of black-box systems from active queries or passive traces. Its README links a separate Bluetooth Low Energy study whose repository reports learned connection and legacy-pairing state machines; message formats are not inferred. <sub>Tool</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
@@ -227,6 +234,7 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 - [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html) - LLDB's official MCP interface gives agents debugger sessions and commands for breakpoints, memory inspection and stepping. <sub>Integration · Independent MCP</sub>
 - [**Claude Reverse Engineering Skill**](https://github.com/EncidXVII/claude-reverse-engineering-skill) - Community agent skill for triage, headless exports and evidence-based RE reports; explicitly documents workflows with REA and other MCP servers. <sub>Integration · Independent agent</sub>
 - [**SpecterOps Reverse Engineering Skills**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) - Focused Binary Ninja and Ghidra analysis skills that describe MCP tool use, analysis recipes and annotation practices. <sub>Integration · Independent agent</sub>
+- [**pyghidra-mcp**](https://github.com/clearbluejar/pyghidra-mcp) - PyGhidra-based MCP server that analyzes every binary in a Ghidra project and exposes decompilation, cross-references, call graphs, symbol and string search, indexed semantic code search, and renaming, typing and comment edits. A separate HTTP CLI client and an optional mode driving a Ghidra GUI it launches are included. <sub>Integration · Independent MCP</sub>
 
 <a id="related-collections"></a>
 ### Related Collections

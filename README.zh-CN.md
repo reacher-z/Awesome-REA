@@ -11,9 +11,9 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-- **目标** · [网站](#website) <sub>14</sub> · [游戏](#game) <sub>37</sub> · [应用](#app) <sub>30</sub> · [原生二进制](#native-binary) <sub>18</sub> · [固件与硬件](#firmware) <sub>10</sub> · [协议](#protocol) <sub>8</sub>
+- **目标** · [网站](#website) <sub>14</sub> · [游戏](#game) <sub>37</sub> · [应用](#app) <sub>30</sub> · [原生二进制](#native-binary) <sub>20</sub> · [固件与硬件](#firmware) <sub>12</sub> · [协议](#protocol) <sub>11</sub>
 
-- [论文](#papers) <sub>33</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>17</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,864</sub>
+- [论文](#papers) <sub>33</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,864</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -165,6 +165,8 @@
 - [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) - 结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。 <sub>工具</sub>
 - [**r2frida**](https://github.com/nowsecure/r2frida) - 结合 radare2 命令与 Frida 插桩，检查桌面和移动目标中本地或远程进程的内存、符号、类及运行时调用。 <sub>工具</sub>
 - [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct) - 将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。 <sub>工具 · 程序库</sub>
+- [**GoReSym Go 符号恢复工具**](https://github.com/mandiant/GoReSym) - 从 Go 二进制中恢复构建元数据、函数名与地址范围、源文件和行号表、内嵌类型及字符串，也可处理已剥离符号以及部分经 UPX 等脱壳后结构异常的样本。JSON 输出可借助附带的 IDAPython 脚本导入 IDA Pro。 <sub>工具</sub>
+- [**rev.ng 二进制分析框架与反编译器**](https://github.com/revng/revng) - 开源反编译流水线：借助 QEMU 将 x86-64、AArch64、i386、ARM 和 MIPS 代码提升为与架构无关的表示，以 LLVM 进行分析，并输出以合法、可重新编译为设计目标的 C 代码。数据布局分析可根据指针用法推断数据结构；可编辑的 YAML 模型及 Python、TypeScript 封装便于自动化。基于 VSCode 的界面是单独的产品，目前处于封闭测试阶段，并计划推出商业方案。 <sub>工具</sub>
 
 <a id="firmware"></a>
 ### Firmware · 固件与硬件
@@ -186,6 +188,8 @@
 - [**FirmAE**](https://github.com/pr0v3rbs/FirmAE) - 仿真路由器与 IP 摄像机固件，检查网络服务和运行时行为，提供自动仿真检查，以及独立的分析、运行和调试模式。 <sub>工具</sub>
 - [**PulseView 信号与协议分析工具**](https://github.com/sigrokproject/pulseview) - 通过 sigrok 的图形前端检查逻辑与模拟波形；协议解码器及分层解码可展示总线消息和更高层的设备操作，便于利用硬件通信记录开展固件与互操作性分析。 <sub>工具</sub>
 - [**UEFITool 固件镜像分析工具**](https://github.com/LongSoft/UEFITool) - 将 UEFI 固件镜像解析为可检查的树状结构，并检查其结构；配套的 UEFIExtract 与 UEFIFind 可提取解析后的内容、查找模式，辅助分析固件组件与厂商格式。 <sub>工具</sub>
+- [**Glasgow Interface Explorer 数字接口探索工具**](https://github.com/GlasgowEmbedded/glasgow) - 借助基于 FPGA 的开源硬件和 Python 小程序（applet），读写 SPI 闪存、I2C EEPROM 及并行存储芯片，自动确定 JTAG 引脚，调试受支持的处理器，并分析实体设备上的 UART、SPI 和 QSPI 事务。 <sub>工具</sub>
+- [**Penguin 固件重托管工具**](https://github.com/rehosting/penguin) - 以提取出的根文件系统为输入，生成可编辑的仿真变换配置来重托管嵌入式 Linux 固件，再借助客户机 root shell、转发到主机的网络服务和记录下的动态分析输出，逐步完善配置。 <sub>工具</sub>
 
 <a id="protocol"></a>
 ### Protocols · 协议
@@ -205,6 +209,9 @@
 - [**Wireshark 协议分析工具**](https://gitlab.com/wireshark/wireshark) - 将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。 <sub>工具</sub>
 - [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob) - 对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。Python API 提供报文字段、符号和自动机，用于解析、流量生成及模糊测试。 <sub>工具</sub>
 - [**Scapy 报文分析与构造工具**](https://github.com/secdev/scapy) - 使用 Python 编写报文解析、构造、请求／响应匹配及捕获文件分析流程；自定义报文字段与层绑定可将已理解的线格式编码为可操作模型，辅助研究协议行为。 <sub>工具</sub>
+- [**Universal Radio Hacker（URH）无线协议分析工具**](https://github.com/jopohl/urh) - 解调并解码通过软件无线电捕获的信号，支持自动检测调制参数和自定义解码。分析者可手动标注协议字段与消息类型，或复核基于规则的字段自动推断结果；模糊测试组件面向无状态协议，仿真环境则用于有状态交互。 <sub>工具</sub>
+- [**SavvyCAN CAN 总线分析工具**](https://github.com/collin80/SavvyCAN) - 捕获或载入 CAN 总线流量，通过嗅探、绘图、文件比对及 ISO-TP／UDS 解码视图分析帧；借助载入或由分析者编辑的 DBC 文件，将原始字节映射为具名信号。自定义发送、模糊测试和 UDS 扫描则是独立窗口，会主动向实时总线发送帧。 <sub>工具</sub>
+- [**AALpy 自动机学习库**](https://github.com/DES-Lab/AALpy) - 通用的 Python 自动机学习库，可通过主动查询或被动轨迹数据，推断黑盒系统的确定性、非确定性、随机及下推自动机模型。其 README 链接了一项独立的低功耗蓝牙（BLE）研究，该研究的仓库报告了学习得到的设备连接与传统配对（legacy pairing）状态机；该库本身不推断报文格式。 <sub>工具</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents & MCP · Agent 与集成
@@ -228,6 +235,7 @@
 - [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html) - LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。 <sub>集成 · 独立 MCP</sub>
 - [**Claude 逆向工程技能**](https://github.com/EncidXVII/claude-reverse-engineering-skill) - 社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。 <sub>集成 · 独立 Agent</sub>
 - [**SpecterOps 逆向工程技能**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) - 针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。 <sub>集成 · 独立 Agent</sub>
+- [**pyghidra-mcp 项目级 Ghidra MCP 服务器**](https://github.com/clearbluejar/pyghidra-mcp) - 基于 PyGhidra 的 MCP 服务器，可分析 Ghidra 项目中的全部二进制，提供反编译、交叉引用、调用图、符号与字符串搜索、基于索引的语义代码检索，以及重命名、类型和注释编辑。另附基于 HTTP 的独立命令行客户端，以及可选的图形界面模式：由服务器自行启动 Ghidra 图形界面并加以操控。 <sub>集成 · 独立 MCP</sub>
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集

@@ -1131,5 +1131,75 @@
       "README 报告所有子程序均已反编译并转为 C++；这不等于独立核验过逐字节一致重构建。Full Tilt 的功能完善及其另外两张球桌的潜在支持仍是单独计划。",
       "此仓库采用 MIT 许可；原游戏资源和依赖保留各自条款。未证实 REA 使用，本合集未运行游戏、编译器或外部移植项目。"
     ]
+  },
+  "universal-radio-hacker": {
+    "name": "Universal Radio Hacker（URH）无线协议分析工具",
+    "requirements": [
+      "GitHub 自 2026-03-29 起将该仓库标记为已归档、只读。最后一个版本为 v2.10.0，发布于 2025-12-17，提供 Windows x64 安装程序和 macOS DMG；PyPI 上的 2.10.0 要求 Python >=3.9。不应默认上游仍在积极维护。",
+      "可使用 Windows 安装程序、macOS DMG（建议 macOS 13 及以上）或 Homebrew、Linux 上推荐的 pipx（附带预编译原生扩展）、发行版软件包以及 Docker 镜像安装。从源码安装需要 Python 3.9+ 和 setuptools，并会编译 C++ 扩展。",
+      "录制和发送信号需要受支持的 SDR 及其原生或外部后端，列表中有若干设备只能接收。Linux 下以非 root 用户访问设备需安装文档提供的 udev 规则；通过发行版软件包使用原生支持时，需先安装对应 SDR 的 -dev 软件包。",
+      "采用 GPL-3.0。字段自动推断只为分析者提供基于规则的起点，并不代表已确定完整的协议语义或设备行为。模糊测试和仿真需要通过支持发射的 SDR 发出信号。本次未安装软件，也未进行 SDR 采集或发射。"
+    ]
+  },
+  "savvycan": {
+    "name": "SavvyCAN CAN 总线分析工具",
+    "requirements": [
+      "GitHub 最新版本为 V220，发布于 2025-05-09，提供 Linux AppImage、Windows x64 和 macOS 构建；README 称当前 macOS 构建似乎需要 macOS 10.15+。项目网站上的二进制链接和更新日志止于 V208（2022 年），不能视为 V220 的发布说明。网站提到的持续构建跟随最新提交，不保证稳定性。",
+      "从源码构建需要带 QtSerialBus 支持的 Qt 5.14+；适配 Qt 6 的开发中分支，README 称其约为 beta 质量。界面至少需要 1024x768 分辨率。",
+      "实时采集可使用运行 GVRET 固件的板卡（如推荐的 CANDue），或 SocketCAN、Vector、PEAK、TinyCAN 等 Qt SerialBus 驱动。载入所列日志格式无需采集设备；CANDump／Kayak、PCAN Viewer 和 Wireshark SocketCAN PCAP 仅支持读取。",
+      "采用 MIT 许可。模糊测试和 UDS 扫描会向连接的车辆或设备发送帧，模糊测试帮助文档警告这可能引发危险行为。信号含义来自 DBC 定义或分析者的工作，并非自动恢复。本次未进行采集或发送。"
+    ]
+  },
+  "aalpy": {
+    "name": "AALpy 自动机学习库",
+    "requirements": [
+      "PyPI 最新版本为 1.6.2，上传于 2026-08-03，要求 Python >=3.6。所审阅的 master 分支自标为尚未发布的 2.0.0，要求 Python 3.10+；上游说明 1.6.2 是支持旧版 Python 的最后一个版本。",
+      "主动学习需要用户编写的被学习系统（SUL）适配器、输入字母表和等价判定器（equivalence oracle）；被动学习需要符合文档格式的轨迹数据。学到的模型受所选字母表、抽象方式和判定器限制，不能证明已覆盖完整的协议行为。",
+      "唯一的 Python 依赖是 pydot；可视化模型需要将 Graphviz 加入 PATH。采用 MIT 许可。",
+      "ble-learning 研究仓库独立于本库：需要一块 nRF52840 Dongle 或开发板，并刷入仓库提供的、源自 SweynTooth 的固件，还需要 Python 3.9 和所列依赖库；该仓库没有许可证文件。本次未运行学习实验。"
+    ]
+  },
+  "glasgow-interface-explorer": {
+    "name": "Glasgow Interface Explorer 数字接口探索工具",
+    "requirements": [
+      "需要 Glasgow 硬件（可购买成品或依据开源设计自行制作），并能实际接触目标、正确接线；部分目标还需外部供电。手册称所列功能用 revC 板即可完成，但 analyzer2 逻辑分析仪小程序目前仅支持 revD0 及更新版本。",
+      "Windows 提供自带全部依赖的 MSI 安装包，支持 Windows 7 SP1 及更新版本（Windows 7 还需先安装 KB4457144 更新）。其他平台按文档使用 git 和 pipx 从源码安装，需要 Python >=3.13,<3.16；Linux 还需安装随附的 udev 规则。仓库没有打标签的发行版本，包元数据将软件标为 alpha 阶段。",
+      "采用 0BSD 或 Apache-2.0 双许可。用于调试小程序的内置周期精确逻辑分析仪，文档说明已暂时移除，待内部架构改进后恢复。小程序只覆盖文档列出的接口以及存储器、处理器类型；使用时仍需识别目标接口和参数，Glasgow 不会自动提取固件。本次未进行硬件测试。"
+    ]
+  },
+  "penguin": {
+    "name": "Penguin 固件重托管工具",
+    "requirements": [
+      "所审阅版本为 v3.1.21，发布于 2026-10-06，其标签指向所审阅的提交。安装方式是从 Docker Hub 拉取 rehosting/penguin 容器，再安装其 penguin 包装脚本；源码构建和 Nix 构建另有文档说明。",
+      "输入为保留权限和属主信息的根文件系统 tar 包，可用附带的 fw2tar 生成或手工制作。Penguin 采用整机仿真，并根据检测到的架构换用替代内核，不能如实复现原始设备，也不恢复源代码。重托管失败时，需修改配置后重新运行。",
+      "与 NDSS 同期举办的 BAR 2025 研讨会论文报告了作者在 69 家厂商的 13,649 个嵌入式 Linux 镜像上的结果：能构建出可用重托管环境的固件比此前最佳方法多 75%。该评估早于本版本，不能视为当前版本的特性。",
+      "采用 GPL-2.0-or-later；README 另附美国政府权利声明。仿真系统中的发现需要分析者解读。本次未拉取容器，也未运行固件。"
+    ]
+  },
+  "pyghidra-mcp": {
+    "name": "pyghidra-mcp 项目级 Ghidra MCP 服务器",
+    "requirements": [
+      "所审阅版本为 v0.2.7，发布于 2026-09-25，包元数据要求 Python >=3.10。README 称该项目处于 beta 阶段并在积极开发中；main 分支另有尚未发布的 MCP Python SDK 2 相关改动。",
+      "除使用官方发布的容器镜像外，需单独安装 Ghidra，并将 GHIDRA_INSTALL_DIR 指向安装目录。语义检索依赖后台构建的本地 ChromaDB 索引，在大型项目中可能晚于反编译功能就绪；ChromaDB 与 GZF 产物保存在与 Ghidra 项目同级的目录中。",
+      "命令行客户端和图形界面模式都需要 streamable HTTP 传输；图形界面模式在同一进程内启动 Ghidra，无法连接已在运行的 Ghidra。导入、删除、重命名、类型和注释类工具会修改项目。",
+      "采用 Apache-2.0。本次未运行服务器、客户端或分析。"
+    ]
+  },
+  "goresym": {
+    "name": "GoReSym Go 符号恢复工具",
+    "requirements": [
+      "所审阅版本为 v3.4.1，发布于 2026-09-14，其标签指向所审阅的提交，提供 Linux、macOS 和 Windows 预编译压缩包；从源码构建需要较新的 Go 工具链。",
+      "文档所列支持范围涵盖 ARM64 与 Intel x86/x64 架构、Mach-O/ELF/PE 格式及大小端的各种组合；pclntab 解析和 moduledata 定位需要 Go 1.2+，类型解析需要 Go 1.5+。部分已剥离符号的二进制需手动指定 Go 版本，若版本不准确，类型解析会失败。",
+      "采用 MIT 许可。输出是运行时与符号元数据，并非原始源码或反编译代码。README 中的技术文章链接现跳转到 Mandiant 通用页面，文章本身位于 Google Cloud 博客。本次未分析任何二进制。"
+    ]
+  },
+  "revng": {
+    "name": "rev.ng 二进制分析框架与反编译器",
+    "requirements": [
+      "仅能在 Linux x86-64 上运行；文档建议 Windows 用户使用 WSL，macOS 用户使用 Docker（Apple Silicon 需指定 linux/amd64 平台）。用户安装脚本下载 master 分支的当前发行包，仓库也没有打标签的版本，因此本条目固定到所审阅的 develop 分支提交。",
+      "开发环境通过 orchestra 包管理器安装，可使用二进制归档或从源码构建。脚本可在本地或经网络连接 GraphQL API；QEMU 仅用作提升器，不会仿真执行代码。",
+      "由于依赖 QEMU 等 GPLv2 组件，项目整体采用 GPL-2.0，单个文件采用 MIT 许可。rev.ng 网站将反编译流水线描述为自由软件。界面目前处于封闭测试阶段，计划免费提供公开项目的云端使用，私有项目及完全离线版本则将推出商业方案。",
+      "生成合法且可重新编译的 C 代码是项目的设计目标，并非对任意二进制都已验证的特性；推断出的类型和名称需要分析者复核。本次未反编译任何二进制。"
+    ]
   }
 }

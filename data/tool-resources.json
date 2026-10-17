@@ -2219,5 +2219,243 @@
       "https://github.com/secdev/scapy/releases/tag/v2.8.0",
       "https://pypi.org/project/scapy/2.8.0/"
     ]
+  },
+  {
+    "id": "universal-radio-hacker",
+    "name": "Universal Radio Hacker (URH)",
+    "url": "https://github.com/jopohl/urh",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Demodulate and decode signals captured with software-defined radios, with automatic modulation-parameter detection and customizable decodings. Analysts assign protocol fields and message types by hand or review rule-based automatic field inference; a fuzzer targets stateless protocols and a simulator supports stateful exchanges.",
+    "description_zh": "解调并解码通过软件无线电捕获的信号，支持自动检测调制参数和自定义解码。分析者可手动标注协议字段与消息类型，或复核基于规则的字段自动推断结果；模糊测试组件面向无状态协议，仿真环境则用于有状态交互。",
+    "evidence_url": "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/setup.py",
+      "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/LICENSE",
+      "https://github.com/jopohl/urh/releases/tag/v2.10.0",
+      "https://pypi.org/project/urh/2.10.0/",
+      "https://github.com/jopohl/urh/wiki/Supported-devices",
+      "https://github.com/jopohl/urh/wiki/SDR-udev-rules"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GitHub marks the repository archived and read-only since 2026-03-29. The last release is v2.10.0, published 2025-12-17 with a Windows x64 installer and a macOS DMG; PyPI 2.10.0 requires Python >=3.9. Do not assume active upstream maintenance.",
+      "Install options are the Windows installer, the macOS DMG (macOS 13+ recommended) or Homebrew, pipx on Linux (recommended, with precompiled native extensions), distribution packages and the Docker image. Source installs need Python 3.9+ and setuptools, and build C++ extensions.",
+      "Recording and sending need a supported SDR with a native or external backend; several listed devices are receive-only. Non-root Linux access requires the documented udev rules, and native support from distribution packages needs the SDR -dev packages installed first.",
+      "GPL-3.0. Automatic field inference gives the analyst a rule-based starting point; it does not establish complete protocol semantics or device behavior. Fuzzing and simulation transmit through a TX-capable SDR. No installation, SDR capture or transmission was performed."
+    ]
+  },
+  {
+    "id": "savvycan",
+    "name": "SavvyCAN",
+    "url": "https://github.com/collin80/SavvyCAN",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Capture or load CAN bus traffic and investigate frames with sniffer, graphing, file-comparison and ISO-TP/UDS decoding views; loaded or analyst-edited DBC files map raw bytes to named signals. Separate custom-sender, fuzzing and UDS-scan windows transmit frames on a live bus.",
+    "description_zh": "捕获或载入 CAN 总线流量，通过嗅探、绘图、文件比对及 ISO-TP／UDS 解码视图分析帧；借助载入或由分析者编辑的 DBC 文件，将原始字节映射为具名信号。自定义发送、模糊测试和 UDS 扫描则是独立窗口，会主动向实时总线发送帧。",
+    "evidence_url": "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/LICENSE",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/sniffer.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/graphwindow.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/filecomparison.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/isotp_decoder.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/dbc_manager.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/customsender.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/fuzzingwindow.md",
+      "https://github.com/collin80/SavvyCAN/blob/3166d8cc6c8d12c2c7db78d96b24fc0f8bced1ef/help/uds_scanner.md",
+      "https://github.com/collin80/SavvyCAN/releases/tag/V220",
+      "https://www.savvycan.com/"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release: V220, published 2025-05-09, with Linux AppImage, Windows x64 and macOS builds; the README says the current macOS build appears to need macOS 10.15+. The project site's binary links and changelog end at V208 (2022) and are not V220 release notes. Its continuous build follows the newest commit without stability promises.",
+      "Source builds need Qt 5.14+ with QtSerialBus support; a Qt 6 work-in-progress branch is described as beta quality. The interface needs at least a 1024x768 display.",
+      "Live capture uses GVRET-firmware boards such as the recommended CANDue, or Qt SerialBus drivers including SocketCAN, Vector, PEAK and TinyCAN. Loading the listed log formats needs no capture device; CANDump/Kayak, PCAN Viewer and Wireshark SocketCAN PCAP support is read-only.",
+      "MIT. Fuzzing and UDS scanning send frames to connected vehicles or devices, and the fuzzing help warns this can cause unsafe behavior. Signal meanings come from DBC definitions or analyst work rather than automatic recovery. No capture or transmission was performed."
+    ]
+  },
+  {
+    "id": "aalpy",
+    "name": "AALpy",
+    "url": "https://github.com/DES-Lab/AALpy",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "General-purpose Python automata-learning library that infers deterministic, non-deterministic, stochastic and pushdown models of black-box systems from active queries or passive traces. Its README links a separate Bluetooth Low Energy study whose repository reports learned connection and legacy-pairing state machines; message formats are not inferred.",
+    "description_zh": "通用的 Python 自动机学习库，可通过主动查询或被动轨迹数据，推断黑盒系统的确定性、非确定性、随机及下推自动机模型。其 README 链接了一项独立的低功耗蓝牙（BLE）研究，该研究的仓库报告了学习得到的设备连接与传统配对（legacy pairing）状态机；该库本身不推断报文格式。",
+    "evidence_url": "https://github.com/DES-Lab/AALpy/blob/335c50a1b4b5a830d788f86b7c30a8cb6c73ecc0/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/DES-Lab/AALpy/blob/335c50a1b4b5a830d788f86b7c30a8cb6c73ecc0/pyproject.toml",
+      "https://github.com/DES-Lab/AALpy/blob/335c50a1b4b5a830d788f86b7c30a8cb6c73ecc0/LICENCE.txt",
+      "https://github.com/DES-Lab/AALpy/releases/tag/v.1.6.2",
+      "https://pypi.org/project/aalpy/1.6.2/",
+      "https://github.com/apferscher/ble-learning/blob/febd774109c41a6635659b8847cc766e667841dd/README.md"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest PyPI release: 1.6.2, uploaded 2026-08-03, requiring Python >=3.6. The reviewed master branch identifies itself as unreleased 2.0.0 and requires Python 3.10+; upstream says 1.6.2 is the last release for older Python versions.",
+      "Active learning needs a user-written system-under-learning adapter, an input alphabet and an equivalence oracle; passive learning needs traces in the documented format. Learned models are bounded by the chosen alphabet, abstraction and oracle and do not prove complete protocol behavior.",
+      "pydot is the only Python dependency; visualizing models needs Graphviz on the PATH. MIT-licensed.",
+      "The ble-learning study repository is separate: it needs an nRF52840 dongle or development kit flashed with the supplied SweynTooth-derived firmware, Python 3.9 and its listed libraries, and it has no repository license file. No learning experiments were run."
+    ]
+  },
+  {
+    "id": "glasgow-interface-explorer",
+    "name": "Glasgow Interface Explorer",
+    "url": "https://github.com/GlasgowEmbedded/glasgow",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Use FPGA-based open hardware and Python applets to read and write SPI flash, I2C EEPROM and parallel memory chips, determine JTAG pinouts, debug supported processors and analyze UART, SPI and QSPI transactions on physical devices.",
+    "description_zh": "借助基于 FPGA 的开源硬件和 Python 小程序（applet），读写 SPI 闪存、I2C EEPROM 及并行存储芯片，自动确定 JTAG 引脚，调试受支持的处理器，并分析实体设备上的 UART、SPI 和 QSPI 事务。",
+    "evidence_url": "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/docs/manual/src/intro.rst",
+    "additional_evidence_urls": [
+      "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/docs/manual/src/license.rst",
+      "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/docs/manual/src/purchase.rst",
+      "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/docs/manual/src/install/binary.rst",
+      "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/docs/manual/src/install/source.rst",
+      "https://github.com/GlasgowEmbedded/glasgow/blob/d51713b2141bba7958a073e99166ad01f5024c42/software/pyproject.toml"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Glasgow hardware, bought pre-assembled or built from the open design, plus physical access and correct wiring to the target; some targets need external power. The manual lists its features as working with a revC board, except the analyzer2 logic-analyzer applet, which is currently revD0+ only.",
+      "Windows has self-contained MSI installers for Windows 7 SP1 or newer (Windows 7 also needs update KB4457144). Other platforms use the documented git and pipx source install with Python >=3.13,<3.16; Linux also needs the supplied udev rules. The repository has no tagged releases, and the package metadata marks the software as alpha.",
+      "Dual-licensed 0BSD or Apache-2.0. The built-in cycle-accurate logic analyzer for debugging applets is documented as temporarily removed pending internal architecture improvements. Applets cover the documented interfaces and memory or processor families; the target interface and parameters must still be identified, and Glasgow does not extract firmware automatically. No hardware was tested."
+    ]
+  },
+  {
+    "id": "penguin",
+    "name": "Penguin",
+    "url": "https://github.com/rehosting/penguin",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Rehost embedded Linux firmware from an extracted root filesystem using a generated, editable configuration of emulation transformations, then refine it through a guest root shell, forwarded network services and recorded dynamic-analysis output.",
+    "description_zh": "以提取出的根文件系统为输入，生成可编辑的仿真变换配置来重托管嵌入式 Linux 固件，再借助客户机 root shell、转发到主机的网络服务和记录下的动态分析输出，逐步完善配置。",
+    "evidence_url": "https://github.com/rehosting/penguin/blob/b645cd23852a41781181a651779b82a48c0c3fd3/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/rehosting/penguin/blob/b645cd23852a41781181a651779b82a48c0c3fd3/LICENSE",
+      "https://github.com/rehosting/penguin/blob/b645cd23852a41781181a651779b82a48c0c3fd3/docs/workflow.md",
+      "https://github.com/rehosting/penguin/blob/b645cd23852a41781181a651779b82a48c0c3fd3/docs/schema_doc.md",
+      "https://github.com/rehosting/penguin/releases/tag/v3.1.21",
+      "https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed release: v3.1.21, published 2026-10-06 and tagged at the reviewed commit. Install by pulling the rehosting/penguin container from Docker Hub and installing its penguin wrapper script; source and Nix builds are documented separately.",
+      "Input is a root-filesystem tarball with permissions and ownership preserved, made with the bundled fw2tar or by hand. Penguin uses whole-system emulation with a replacement kernel selected for the detected architecture; it does not reproduce the original device faithfully or recover source code. Failed rehostings are refined by editing the configuration and rerunning.",
+      "The BAR 2025 workshop paper, co-located with NDSS, reports author-run results on 13,649 embedded Linux images from 69 vendors, with working rehostings for 75% more firmware than the prior state of the art. That evaluation predates this release and is not a property of the current version.",
+      "GPL-2.0-or-later; the README also carries a U.S. Government rights notice. Findings from the emulated system need analyst interpretation. No container was pulled and no firmware was run."
+    ]
+  },
+  {
+    "id": "pyghidra-mcp",
+    "name": "pyghidra-mcp",
+    "url": "https://github.com/clearbluejar/pyghidra-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "PyGhidra-based MCP server that analyzes every binary in a Ghidra project and exposes decompilation, cross-references, call graphs, symbol and string search, indexed semantic code search, and renaming, typing and comment edits. A separate HTTP CLI client and an optional mode driving a Ghidra GUI it launches are included.",
+    "description_zh": "基于 PyGhidra 的 MCP 服务器，可分析 Ghidra 项目中的全部二进制，提供反编译、交叉引用、调用图、符号与字符串搜索、基于索引的语义代码检索，以及重命名、类型和注释编辑。另附基于 HTTP 的独立命令行客户端，以及可选的图形界面模式：由服务器自行启动 Ghidra 图形界面并加以操控。",
+    "evidence_url": "https://github.com/clearbluejar/pyghidra-mcp/blob/323fbdb29dfed42241e6574806223a3454aca908/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/clearbluejar/pyghidra-mcp/blob/323fbdb29dfed42241e6574806223a3454aca908/pyproject.toml",
+      "https://github.com/clearbluejar/pyghidra-mcp/blob/323fbdb29dfed42241e6574806223a3454aca908/cli/pyproject.toml",
+      "https://github.com/clearbluejar/pyghidra-mcp/blob/323fbdb29dfed42241e6574806223a3454aca908/LICENSE",
+      "https://github.com/clearbluejar/pyghidra-mcp/releases/tag/v0.2.7",
+      "https://pypi.org/project/pyghidra-mcp/0.2.7/",
+      "https://github.com/clearbluejar/pyghidra-mcp/compare/v0.2.7...42d8f80551a765441b1a723f6f1ff45aa3914d5e"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed release: v0.2.7, published 2026-09-25, with package metadata requiring Python >=3.10. The README describes the project as beta and under active development; main has later, unreleased MCP Python SDK 2 changes.",
+      "Outside the published container image, install Ghidra separately and point GHIDRA_INSTALL_DIR at it. Semantic search uses a local ChromaDB index built in the background, so it can lag behind decompilation on large projects; ChromaDB and GZF artifacts are stored beside the Ghidra project.",
+      "The CLI client and GUI mode require the streamable HTTP transport; GUI mode launches Ghidra in-process and cannot attach to an already-running Ghidra. Import, delete, rename, type and comment tools change the project.",
+      "Apache-2.0. No server, client or analysis was run."
+    ]
+  },
+  {
+    "id": "goresym",
+    "name": "GoReSym",
+    "url": "https://github.com/mandiant/GoReSym",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Recover Go build metadata, function names and address ranges, source file and line tables, embedded types and strings from Go binaries, including stripped and some malformed unpacked samples. JSON output can be imported into IDA Pro with the included IDAPython script.",
+    "description_zh": "从 Go 二进制中恢复构建元数据、函数名与地址范围、源文件和行号表、内嵌类型及字符串，也可处理已剥离符号以及部分经 UPX 等脱壳后结构异常的样本。JSON 输出可借助附带的 IDAPython 脚本导入 IDA Pro。",
+    "evidence_url": "https://github.com/mandiant/GoReSym/blob/722897e0a80da0a06c00c5e40591a253a551f04e/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/GoReSym/blob/722897e0a80da0a06c00c5e40591a253a551f04e/LICENSE",
+      "https://github.com/mandiant/GoReSym/blob/722897e0a80da0a06c00c5e40591a253a551f04e/IDAPython/goresym_rename.py",
+      "https://github.com/mandiant/GoReSym/releases/tag/v3.4.1",
+      "https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed release: v3.4.1, published 2026-09-14 and tagged at the reviewed commit, with prebuilt Linux, macOS and Windows archives; source builds need a recent Go toolchain.",
+      "Documented support covers ARM64 and Intel x86/x64 Mach-O, ELF and PE binaries in either endianness; pclntab parsing and moduledata location need Go 1.2+, and type parsing Go 1.5+. Some stripped binaries need a manual version override, and type parsing fails if that version is wrong.",
+      "MIT. Output is runtime and symbol metadata, not original source or decompiled code. The README's write-up link now redirects to a generic Mandiant page; the article is on the Google Cloud blog. No binaries were analyzed."
+    ]
+  },
+  {
+    "id": "revng",
+    "name": "rev.ng",
+    "url": "https://github.com/revng/revng",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Open-source decompilation pipeline that lifts x86-64, AArch64, i386, ARM and MIPS code with QEMU, runs LLVM-based analyses and emits C designed to be valid and recompilable. Data layout analysis infers structures from pointer use; an editable YAML model and Python or TypeScript wrappers support automation. Its VSCode-based UI is a separate closed-beta product, with commercial plans announced.",
+    "description_zh": "开源反编译流水线：借助 QEMU 将 x86-64、AArch64、i386、ARM 和 MIPS 代码提升为与架构无关的表示，以 LLVM 进行分析，并输出以合法、可重新编译为设计目标的 C 代码。数据布局分析可根据指针用法推断数据结构；可编辑的 YAML 模型及 Python、TypeScript 封装便于自动化。基于 VSCode 的界面是单独的产品，目前处于封闭测试阶段，并计划推出商业方案。",
+    "evidence_url": "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/share/doc/revng/what-is-revng.md",
+    "additional_evidence_urls": [
+      "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/README.md",
+      "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/share/doc/revng/user-manual/initial-setup.md",
+      "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/LICENSE",
+      "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/LICENSE.mit",
+      "https://rev.ng/"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs only on Linux x86-64; the docs suggest WSL on Windows and Docker on macOS, using linux/amd64 on Apple Silicon. The user installer downloads the current master distributable and the repository has no tagged releases, so this entry pins the reviewed develop-branch commit.",
+      "Developer setups use the orchestra package manager with binary archives or source builds. Scripting connects to a GraphQL API, locally or over the network; QEMU serves only as a lifter and code is not emulated.",
+      "GPL-2.0 as a whole because it depends on GPLv2 components such as QEMU; individual files are MIT-licensed. The rev.ng site describes the decompilation pipeline as Free Software. The UI is in closed beta, with free cloud use planned for public projects and commercial plans for private projects and a fully offline version.",
+      "Valid, recompilable C is a stated design goal, not a verified property for arbitrary binaries; inferred types and names need analyst review. No binaries were decompiled."
+    ]
   }
 ]
