@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](firmware.md)
 
-**211 个仓库** · 2026-10-16 UTC
+**207 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -142,7 +142,6 @@
 - [atellaluca/humax-mstar-guardian](https://github.com/atellaluca/humax-mstar-guardian) — 基于 ESP32 的 UART 守护装置和 Python 工具，用于安全、受控地逆向分析 MStar MBoot 嵌入式系统。 **[2 星标]**
 - [djnnvx/balrog](https://github.com/djnnvx/balrog) — 固件提取后的 ELF 文件初步分析。 **[2 星标]**
 - [EngineerMazeed/Vendor](https://github.com/EngineerMazeed/Vendor) — 针对专用 OEM 和运营商硬件的固件转储，用于研究、分析及旧设备保存。 **[2 星标]**
-- [georgesmorales/rev-skills](https://github.com/georgesmorales/rev-skills) — 122 个可发布、跨平台的逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、嵌入式固件、协议逆向、移动应用、脱壳与反混淆、软件破解、漏洞挖掘、托管代码、取证情报和 CTF。 **[2 星标]**
 - [HexLasso/FF-16](https://github.com/HexLasso/FF-16) — 静态模式发现工具，通过高频模式定位结构并理解文件布局。 **[2 星标]**
 - [Hosbulduk/Hosbulduk-Profil-Analiz](https://github.com/Hosbulduk/Hosbulduk-Profil-Analiz) — 用于解锁智能电视 PVR、Netflix 和隐藏功能的工具。包含固件编辑器和 UART 解析器，可通过 USB 重新应用硬件/软件配置，支持基于 Vestel 的主板。 **[2 星标]**
 - [lsroe/IPC-Firmware](https://github.com/lsroe/IPC-Firmware) — 用于固件的进程间通信分析工具。 **[2 星标]**
@@ -190,13 +189,11 @@
 - [JackieZ123430/psdzdata-swfl-inspector](https://github.com/JackieZ123430/psdzdata-swfl-inspector) — 只读的 PSdZData XML 段提取与 KIS 元数据检查工具。 **[0 星标]**
 - [Jiang-sustech/REA-ZWO](https://github.com/Jiang-sustech/REA-ZWO) — 使用 REA 逆向分析 ZWO ASIAIR 固件，包含研究发现、笔记与工具，不重新分发厂商固件。 **[0 星标]**
 - [Jonaaaa/unshell](https://github.com/Jonaaaa/unshell) — 用于提取并记录 Nintendo Switch 2 配件通过 USB 暴露的数据的工具集，附有社区配件数据库。 **[0 星标]**
-- [JudithEngstrom89932/rev-skills](https://github.com/JudithEngstrom89932/rev-skills) — 122 个逆向工程 AI 技能，可发布、跨平台，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与反混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[0 星标]**
 - [Khedr0x00/Binwalk-Web-GUI](https://github.com/Khedr0x00/Binwalk-Web-GUI) — 上游仓库未提供项目简介。 **[0 星标]**
 - [lachlanchen/FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) — Fujitsu Quaderno 研究、固件笔记与挂载工具。 **[0 星标]**
 - [Lenny-AGI/firmware-defect-prediction](https://github.com/Lenny-AGI/firmware-defect-prediction) — 多智能体协作的嵌入式固件缺陷预测与自动修复系统。 **[0 星标]**
 - [likzq30-ship-it/youdao-dictpen-s6-notes](https://github.com/likzq30-ship-it/youdao-dictpen-s6-notes) — 有道词典笔 S6（YDPS6-1）固件分析笔记，涵盖 ADB 认证、OTA 安全、WebSocket 9307 及 setAdbEnable 调用链。只读研究档案，不含漏洞利用。 **[0 星标]**
 - [M-Tarantino/PFAT-Firmware-Audit-Tool](https://github.com/M-Tarantino/PFAT-Firmware-Audit-Tool) — 用于静态安全分析的专业交互式固件审计工具，可检测固件文件系统中的硬编码凭据、私钥和 Shell 后门。 **[0 星标]**
-- [MartinAydin/rev-skills](https://github.com/MartinAydin/rev-skills) — 122 个可发布、跨平台的逆向工程 AI 技能，覆盖恶意软件分析、软件逆向、固件嵌入式、协议逆向、移动应用、脱壳与反混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[0 星标]**
 - [Matin22/tenda-cp3-security-research](https://github.com/Matin22/tenda-cp3-security-research) — 为一台 30 美元的摄像头获取 root 权限。 **[0 星标]**
 - [mkrlabs-io/espfw](https://github.com/mkrlabs-io/espfw) — ESP32 固件检查器与 Xtensa 符号匹配工具。 **[0 星标]**
 - [nayanapriyaknaik-stack/Firmware-Crash-Dump-Analyzer](https://github.com/nayanapriyaknaik-stack/Firmware-Crash-Dump-Analyzer) — 使用 C 与 Python 编写的专业固件崩溃转储分析器，提供 CRC 校验、栈跟踪、符号解析、崩溃特征生成及崩溃统计仪表板。 **[0 星标]**
@@ -211,7 +208,6 @@
 - [teriyakki-jin/firm-sentry](https://github.com/teriyakki-jin/firm-sentry) — 防御用途的物联网固件静态分析与 AFL++ 模糊测试实验室 **[0 星标]**
 - [tpt-solutions/tpt-res](https://github.com/tpt-solutions/tpt-res) — 集成工具套件，通过自动捕获、机器学习辅助固件分析及社区知识共享，加快 Linux 硬件驱动开发，使逆向工程速度提升 10 倍，并让内核专家之外的人也能参与。 **[0 星标]**
 - [varyashine/honor-magicbook-nfc](https://github.com/varyashine/honor-magicbook-nfc) — 针对 HONOR MagicBook 内置 NFC 标签（Fudan FM11NT082C／ACPI NTAG0001）的逆向工程与 Linux 工具，包括变体检测（NTCI 与 NTCZ）以及安全的 NDEF 备份和写入。 **[0 星标]**
-- [walczak74/rev-skills](https://github.com/walczak74/rev-skills) — 122 个可发布、跨平台的逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与反混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[0 星标]**
 - [xXHenneBXx/TFTTools\_V2\_Decompiler](https://github.com/xXHenneBXx/TFTTools_V2_Decompiler) — 用于 TJC 和 Nextion 固件 .tft 文件解密、签名切换、反编译及提取的工具包。 **[0 星标]**
 - [youemeeare/IoT-Firmware-Security-Scanner](https://github.com/youemeeare/IoT-Firmware-Security-Scanner) — 模块化物联网固件安全扫描器，提供 CVE 和合规分析 **[0 星标]**
 - [YukiCodepth/firmware-security-workbench](https://github.com/YukiCodepth/firmware-security-workbench) — 面向命令行、Web 与桌面的新一代固件安全分析工作台，可扫描固件、检测秘密信息、生成 SBOM／CVE 候选结果、比较版本，并通过 Firmware Risk DNA 解释风险。 **[0 星标]**

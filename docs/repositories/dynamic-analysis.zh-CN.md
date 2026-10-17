@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
 
-**101 个仓库** · 2026-10-16 UTC
+**98 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -102,9 +102,6 @@
 - [joshrad-dev/frida-flutterfire](https://github.com/joshrad-dev/frida-flutterfire) — 一组 Frida 脚本，用于检查 iOS 上 Flutter 应用中的 Firebase 调用。 **[1 星标]**
 - [Real-Fruit-Snacks/x86-x64-assembly-lab](https://github.com/Real-Fruit-Snacks/x86-x64-assembly-lab) — 交互式 x86 与 x86-64 汇编模拟器和逆向工程实验室：32/64 位引擎单步执行、栈实验区、寄存器测验、28 篇教程及 7 个工具。纯浏览器运行，无需构建，无依赖。 **[1 星标]**
 - [BattlePriestBarbara/Revlab](https://github.com/BattlePriestBarbara/Revlab) — AI 辅助多平台逆向工程工作台，集成 Ghidra、Frida 和 MCP。提供 APK/ELF/PE 零依赖初步分析、基于熵的加壳检测，以及严格默认拒绝的授权机制，以支持安全、可复现的分析。 **[0 星标]**
-- [CemAhmed67836/MobileRE-Skill](https://github.com/CemAhmed67836/MobileRE-Skill) — AI 智能体驱动的移动端逆向技能集，包含 Frida 钩子、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。 **[0 星标]**
-- [ErikZhang22526/MobileRE-Skill](https://github.com/ErikZhang22526/MobileRE-Skill) — AI 智能体驱动的移动端逆向技能集，包含 Frida 钩子、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。 **[0 星标]**
-- [helmutleclerc09/MobileRE-Skill](https://github.com/helmutleclerc09/MobileRE-Skill) — AI 智能体驱动的移动端逆向技能集，包含 Frida 钩子、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。 **[0 星标]**
 - [Msr7799/Android-Deep-Analysis-Lab](https://github.com/Msr7799/Android-Deep-Analysis-Lab) — 开源 Android 安全审计与道德黑客工具包，用于授权 ADB 检查、APK 分析、逆向工程、动态分析和网络检查，使用 ADB、JADX、Apktool、Ghidra、Frida、MobSF 和 TShark。 **[0 星标]**
 - [SenjuWoo/reverse-this](https://github.com/SenjuWoo/reverse-this) — 一键式 Windows 模组工具包，为智能体应调用的现有 Ghidra、Unity、Unreal 和逆向工程工具提供稳定的 sandbox/bin 路径。 **[0 星标]**
 

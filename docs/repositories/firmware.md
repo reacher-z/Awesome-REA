@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](firmware.zh-CN.md)
 
-**211 repositories** · 2026-10-16 UTC
+**207 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -142,7 +142,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [atellaluca/humax-mstar-guardian](https://github.com/atellaluca/humax-mstar-guardian) — ESP32-based UART guardian and Python tooling for safe, controlled reverse engineering of MStar MBoot embedded systems. **[2 stars]**
 - [djnnvx/balrog](https://github.com/djnnvx/balrog) — post-extraction firmware triage for ELF files **[2 stars]**
 - [EngineerMazeed/Vendor](https://github.com/EngineerMazeed/Vendor) — Firmware dumps for specialized OEM and carrier hardware. Research, analysis, and legacy device preservation. **[2 stars]**
-- [georgesmorales/rev-skills](https://github.com/georgesmorales/rev-skills) — 122 publishable, cross-platform AI skills for reverse engineering: malware analysis, software reversing, embedded firmware, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence, and CTFs. **[2 stars]**
 - [HexLasso/FF-16](https://github.com/HexLasso/FF-16) — Static pattern discovery tool to locate structures from frequent patterns and understand file layout **[2 stars]**
 - [Hosbulduk/Hosbulduk-Profil-Analiz](https://github.com/Hosbulduk/Hosbulduk-Profil-Analiz) — Tool to unlock PVR, Netflix and hidden features on Smart TVs. Includes firmware editor and UART parser ,reapply HW/SW profiles via USB. Supports Vestel-based mainboards. **[2 stars]**
 - [lsroe/IPC-Firmware](https://github.com/lsroe/IPC-Firmware) — Interprocess communication analysis tools for firmware **[2 stars]**
@@ -190,13 +189,11 @@ These are automatically discovered projects, not individually curated or tested 
 - [JackieZ123430/psdzdata-swfl-inspector](https://github.com/JackieZ123430/psdzdata-swfl-inspector) — Read-only PSdZData XML segment extraction and KIS metadata inspection tools **[0 stars]**
 - [Jiang-sustech/REA-ZWO](https://github.com/Jiang-sustech/REA-ZWO) — Reverse-engineering ZWO ASIAIR firmware with REA - findings, notes and tooling (no vendor firmware redistributed) **[0 stars]**
 - [Jonaaaa/unshell](https://github.com/Jonaaaa/unshell) — A toolkit for extracting and documenting the data Nintendo Switch 2 accessories expose over USB, with a community accessory database. **[0 stars]**
-- [JudithEngstrom89932/rev-skills](https://github.com/JudithEngstrom89932/rev-skills) — 122 reverse-engineering AI skills, ready for publication and cross-platform: malware analysis / software reverse engineering / firmware and embedded systems / protocol reverse engineering / mobile applications / unpacking and deobfuscation / software cracking / vulnerability research / managed code / forensics and intelligence / CTF. **[0 stars]**
 - [Khedr0x00/Binwalk-Web-GUI](https://github.com/Khedr0x00/Binwalk-Web-GUI) — No description supplied by the upstream repository. **[0 stars]**
 - [lachlanchen/FujitsuQuaderno](https://github.com/lachlanchen/FujitsuQuaderno) — Fujitsu Quaderno research, firmware notes, and mount tooling **[0 stars]**
 - [Lenny-AGI/firmware-defect-prediction](https://github.com/Lenny-AGI/firmware-defect-prediction) — Multi-Agent Collaborative Embedded Firmware Defect Prediction and Automated Repair System **[0 stars]**
 - [likzq30-ship-it/youdao-dictpen-s6-notes](https://github.com/likzq30-ship-it/youdao-dictpen-s6-notes) — Youdao Dictionary Pen S6 (YDPS6-1) firmware analysis notes — ADB auth, OTA security, WebSocket 9307, setAdbEnable call chain. Read-only research archive, no exploits. **[0 stars]**
 - [M-Tarantino/PFAT-Firmware-Audit-Tool](https://github.com/M-Tarantino/PFAT-Firmware-Audit-Tool) — Professional interactive Firmware Audit Tool for static security analysis. Detects hardcoded credentials, private keys, and shell backdoors in firmware filesystems. **[0 stars]**
-- [MartinAydin/rev-skills](https://github.com/MartinAydin/rev-skills) — 122 publishable, cross-platform reverse-engineering AI skills covering malware analysis, software reverse engineering, embedded firmware, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence, and CTFs. **[0 stars]**
 - [Matin22/tenda-cp3-security-research](https://github.com/Matin22/tenda-cp3-security-research) — rooting a <span>$</span>30 camera. **[0 stars]**
 - [mkrlabs-io/espfw](https://github.com/mkrlabs-io/espfw) — ESP32 firmware inspector and Xtensa symbol matcher **[0 stars]**
 - [nayanapriyaknaik-stack/Firmware-Crash-Dump-Analyzer](https://github.com/nayanapriyaknaik-stack/Firmware-Crash-Dump-Analyzer) — Professional Firmware Crash Dump Analyzer written in C and Python with CRC verification, stack tracing, symbol resolution, crash signature generation, and crash statistics dashboard. **[0 stars]**
@@ -211,7 +208,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [teriyakki-jin/firm-sentry](https://github.com/teriyakki-jin/firm-sentry) — Defensive IoT firmware static analysis and AFL++ fuzzing lab **[0 stars]**
 - [tpt-solutions/tpt-res](https://github.com/tpt-solutions/tpt-res) — Integrated suite for accelerating Linux hardware driver development through automated capture, ML-assisted firmware analysis, and community-driven knowledge sharing — making reverse engineering 10x faster and accessible beyond kernel specialists. **[0 stars]**
 - [varyashine/honor-magicbook-nfc](https://github.com/varyashine/honor-magicbook-nfc) — Reverse engineering and Linux tools for the HONOR MagicBook built-in NFC tag (Fudan FM11NT082C / ACPI NTAG0001): variant detection (NTCI vs NTCZ), safe NDEF backup and write **[0 stars]**
-- [walczak74/rev-skills](https://github.com/walczak74/rev-skills) — 122 publishable, cross-platform reverse-engineering AI skills covering malware analysis, software reversing, firmware and embedded systems, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensic intelligence, and CTFs. **[0 stars]**
 - [xXHenneBXx/TFTTools\_V2\_Decompiler](https://github.com/xXHenneBXx/TFTTools_V2_Decompiler) — A package of tools for decrypting, signature switching, decompiling, and extraction of TJC and Nextion Firmware .tft files **[0 stars]**
 - [youemeeare/IoT-Firmware-Security-Scanner](https://github.com/youemeeare/IoT-Firmware-Security-Scanner) — Modular IoT Firmware Security Scanner with CVE and Compliance Analysis **[0 stars]**
 - [YukiCodepth/firmware-security-workbench](https://github.com/YukiCodepth/firmware-security-workbench) — Next-gen firmware security analysis workbench for CLI, web, and desktop. Scan firmware, detect secrets, generate SBOM/CVE candidates, compare versions, and explain risk with Firmware Risk DNA. **[0 stars]**

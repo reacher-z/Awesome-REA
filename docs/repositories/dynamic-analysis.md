@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**101 repositories** · 2026-10-16 UTC
+**98 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -102,9 +102,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [joshrad-dev/frida-flutterfire](https://github.com/joshrad-dev/frida-flutterfire) — A set of Frida scripts to help inspect Firebase calls in Flutter apps on iOS **[1 stars]**
 - [Real-Fruit-Snacks/x86-x64-assembly-lab](https://github.com/Real-Fruit-Snacks/x86-x64-assembly-lab) — Interactive x86 &amp; x86-64 assembly simulator and reverse-engineering lab — step-through 32/64-bit engines, stack playground, register quiz, 28 tutorials, and 7 tools. Pure browser, no build, no dependencies. **[1 stars]**
 - [BattlePriestBarbara/Revlab](https://github.com/BattlePriestBarbara/Revlab) — An AI-assisted, multi-platform reverse engineering workbench integrating Ghidra, Frida, and MCP. Features zero-dependency triage for APK/ELF/PE, entropy-based packer detection, and strict default-deny authorization for secure, reproducible analysis. **[0 stars]**
-- [CemAhmed67836/MobileRE-Skill](https://github.com/CemAhmed67836/MobileRE-Skill) — AI-agent-driven mobile reverse-engineering skills: Frida hooks, one-click unpacking, anti-detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP. **[0 stars]**
-- [ErikZhang22526/MobileRE-Skill](https://github.com/ErikZhang22526/MobileRE-Skill) — AI-agent-driven mobile reverse-engineering skills: Frida hooks, one-click unpacking, anti-detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP. **[0 stars]**
-- [helmutleclerc09/MobileRE-Skill](https://github.com/helmutleclerc09/MobileRE-Skill) — AI-agent-driven mobile reverse-engineering skills: Frida hooks, one-click unpacking, anti-detection bypasses, in-memory DEX dumping, and symbol/structure recovery through Ghidra MCP. **[0 stars]**
 - [Msr7799/Android-Deep-Analysis-Lab](https://github.com/Msr7799/Android-Deep-Analysis-Lab) — Open-source Android security auditing and ethical hacking toolkit for authorized ADB inspection, APK analysis, reverse engineering, network test Ethical Hacker Toolkit for Android security auditing, reverse engineering, dynamic analysis, network inspection, and APK analysis using ADB, JADX, Apktool, Ghidra, Frida, MobSF and TShark. **[0 stars]**
 - [SenjuWoo/reverse-this](https://github.com/SenjuWoo/reverse-this) — One-click Windows modkit with stable sandbox/bin paths for the current Ghidra, Unity, Unreal and reverse-engineering tools an agent should call. **[0 stars]**
 

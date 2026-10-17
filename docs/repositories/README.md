@@ -2,7 +2,7 @@
 
 [Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-index.json) · [简体中文](README.zh-CN.md)
 
-Browse **2,846** repositories from **3,000** successful README scans. **154** clearly out-of-scope entries remain in the underlying scan record.
+Browse **2,839** repositories from **3,000** successful README scans. **161** clearly out-of-scope entries remain in the underlying scan record.
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -15,8 +15,8 @@ Scan date: **2026-10-16 UTC**.
 | [Apps · Android](android.md) | 434 |
 | [Apps · Managed code](managed-code.md) | 131 |
 | [Native binaries](native-analysis.md) | 680 |
-| [Runtime and debugging](dynamic-analysis.md) | 101 |
-| [Firmware](firmware.md) | 211 |
+| [Runtime and debugging](dynamic-analysis.md) | 98 |
+| [Firmware](firmware.md) | 207 |
 | [Protocols](protocol-analysis.md) | 103 |
 | [General tools and collections](reverse-engineering.md) | 623 |
 

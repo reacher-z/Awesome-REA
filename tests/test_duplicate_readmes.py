@@ -104,13 +104,20 @@ class DuplicateReadmeReportTests(unittest.TestCase):
             hashes.setdefault(record['readme_sha256'], set()).add(record['id'])
         self.assertEqual({row['readme_sha256']: {record['id'] for record in row['records']} for row in report['groups']},
                          {digest: ids for digest, ids in hashes.items() if len(ids) > 1})
-        # The groups named in the scan review: two same-named non-fork copy sets and one excluded course group.
-        proposed = {review['id']: review['related_source_id'] for row in report['groups']
-                    for review in row['copy_reviews'] if review['proposed_scope_decision']}
-        self.assertEqual(proposed, {**dict.fromkeys(['scan-1421203934', 'scan-1421230756', 'scan-1421230956'], 'scan-1255951226'),
-                                    **dict.fromkeys(['scan-1418462661', 'scan-1421214499', 'scan-1421972961', 'scan-1421997475'],
-                                                    'scan-1337420546')})
+        # The groups named in the scan review: two same-named non-fork copy sets, now reviewed as copies of
+        # their earliest repository, and one excluded course group. No proposal remains open.
+        reviews = {review['id']: (review['related_source_id'], review['existing_reason_code'])
+                   for row in report['groups'] for review in row['copy_reviews']}
+        self.assertEqual(reviews, {
+            **dict.fromkeys(['scan-1421203934', 'scan-1421230756', 'scan-1421230956'], ('scan-1255951226', DUPLICATE_README_REASON)),
+            **dict.fromkeys(['scan-1418462661', 'scan-1421214499', 'scan-1421972961', 'scan-1421997475'],
+                            ('scan-1337420546', DUPLICATE_README_REASON)),
+            'scan-825315675': ('scan-623816748', 'unrelated-project-purpose')})
+        self.assertEqual(report['proposed_scope_reviews'], 0)
         scope = json.loads(before[1])
+        for identifier, (related, reason) in reviews.items():
+            if reason == DUPLICATE_README_REASON:
+                self.assertTrue(all(related in scope[identifier][field] for field in ('reason_en', 'reason_zh')), identifier)
         for row in report['groups']:
             for record in row['records']:
                 self.assertEqual(record['scope_status'], 'excluded' if record['id'] in scope else 'browsable')

@@ -1384,5 +1384,68 @@
     "readme_sha256": "533fbf91c47345acdcf6069dc7bb4e41ceaf4471cc5ee03f09426c671092a1e4",
     "evidence_url": "https://github.com/stine814-sk/Il2Cpp-Trainer-Forge/blob/main/README.md",
     "reviewed_at": "2026-10-17"
+  },
+  "scan-1421203934": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1255951226 (index-login/MobileRE-Skill, created 2026-06-01), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1255951226（index-login/MobileRE-Skill，创建于 2026-06-01）的扫描结果逐字节相同。",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "evidence_url": "https://github.com/helmutleclerc09/MobileRE-Skill/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1421230756": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1255951226 (index-login/MobileRE-Skill, created 2026-06-01), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1255951226（index-login/MobileRE-Skill，创建于 2026-06-01）的扫描结果逐字节相同。",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "evidence_url": "https://github.com/CemAhmed67836/MobileRE-Skill/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1421230956": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1255951226 (index-login/MobileRE-Skill, created 2026-06-01), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1255951226（index-login/MobileRE-Skill，创建于 2026-06-01）的扫描结果逐字节相同。",
+    "readme_sha256": "6d7ae893970a5fdee0729a75ff5c58c862b7b17e14e34e6f449a90bc778c5078",
+    "evidence_url": "https://github.com/ErikZhang22526/MobileRE-Skill/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1418462661": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1337420546 (dslsdzc/rev-skills, created 2026-08-17), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1337420546（dslsdzc/rev-skills，创建于 2026-08-17）的扫描结果逐字节相同。",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "evidence_url": "https://github.com/georgesmorales/rev-skills/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1421214499": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1337420546 (dslsdzc/rev-skills, created 2026-08-17), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1337420546（dslsdzc/rev-skills，创建于 2026-08-17）的扫描结果逐字节相同。",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "evidence_url": "https://github.com/walczak74/rev-skills/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1421972961": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1337420546 (dslsdzc/rev-skills, created 2026-08-17), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1337420546（dslsdzc/rev-skills，创建于 2026-08-17）的扫描结果逐字节相同。",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "evidence_url": "https://github.com/JudithEngstrom89932/rev-skills/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1421997475": {
+    "decision": "exclude",
+    "reason_code": "duplicate-readme-copy",
+    "reason_en": "The README is byte-identical to the scanned README of scan-1337420546 (dslsdzc/rev-skills, created 2026-08-17), an earlier repository with the same name.",
+    "reason_zh": "README 与更早创建的同名仓库 scan-1337420546（dslsdzc/rev-skills，创建于 2026-08-17）的扫描结果逐字节相同。",
+    "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
+    "evidence_url": "https://github.com/MartinAydin/rev-skills/blob/main/README.md",
+    "reviewed_at": "2026-10-17"
   }
 }
