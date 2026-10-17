@@ -168,6 +168,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-top p{margin:0;color:var(--muted);font-size:13px}
 .footer-links{display:flex;gap:10px 20px;align-items:center;flex-wrap:wrap;color:var(--link);font-size:12px}
+.footer-submit{display:none}
 .footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
 .footer-bottom{margin-top:17px;color:var(--muted);font:11px/1.75 var(--sans)}
 
@@ -231,6 +232,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 }
 @media(max-width:520px){
   .header-nav>.github-link,.header-nav>.submit-link{display:none}
+  /* The footer takes over the hidden header submission link, with 24px link targets. */
+  .collection-home .footer-links a{display:inline-flex;align-items:center;min-height:24px}
   .language-picker select{max-width:105px}
   .collection-intro h1{font-size:32px}
   html[lang="zh-CN"] .collection-intro h1{font-size:33px;letter-spacing:-.6px}
@@ -412,3 +415,14 @@ html[data-layout="compact"] .collection-home .detail-label-compact{display:inlin
   html[data-layout="compact"] .collection-home .requirements:not([open]),html[data-layout="compact"] .collection-home .source-record-details:not([open]){align-self:start}
 }
 html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,html[lang="zh-CN"][data-layout="compact"] .collection-home .source-card-description{max-width:42em;line-height:1.85}
+
+/* Contrast themes replace backgrounds and shadows, so selected states and primary buttons use system colors.
+   Selected controls opt out of the text backplate, which would otherwise hide HighlightText. */
+@media(forced-colors:active){
+  .target-filter.active{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}
+  .target-filter.active>.icon{color:HighlightText}
+  .target-filter.active:focus-visible{outline-color:CanvasText}
+  .index-mode{margin-bottom:0;border-bottom-color:Canvas}
+  .index-mode.active,.collection-home .index-mode.active{border-bottom-color:Highlight}
+  .button-primary{border:1px solid ButtonBorder}
+}

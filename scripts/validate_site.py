@@ -573,6 +573,33 @@ def validate_artifact_links(output, pages):
                                     for record in visible if record['category'] == category}, 'Related links must not replace repository schema descriptions'
 
 
+class Stylesheets(HTMLParser):
+    def __init__(self, text):
+        super().__init__()
+        self.hrefs = []
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'link' and 'stylesheet' in values.get('rel', '').lower().split() and values.get('href'):
+            self.hrefs.append(values['href'])
+
+
+def validate_stylesheet_references(output):
+    """Ship only stylesheets that at least one generated HTML page links."""
+    output = Path(output)
+    linked = set()
+    for page in output.rglob('*.html'):
+        page_url = ORIGIN + '/' + page.relative_to(output).as_posix()
+        for href in Stylesheets(page.read_text(encoding='utf-8')).hrefs:
+            target = urlsplit(urljoin(page_url, href))
+            if target.netloc == urlsplit(ORIGIN).netloc:
+                linked.add(unquote(target.path).lstrip('/'))
+    unlinked = sorted(path.relative_to(output).as_posix() for path in output.rglob('*.css')
+                      if path.relative_to(output).as_posix() not in linked)
+    assert not unlinked, 'Stylesheets not linked by any generated page: ' + ', '.join(unlinked)
+
+
 def validate_source_browser_output(output):
     """Keep the interactive payload exact, bounded in scope, and freshly served."""
     output = Path(output)
@@ -764,6 +791,7 @@ def main():
     validate_case_outputs(pages, resources)
     validate_artifact_links(OUTPUT, pages)
     validate_source_browser_output(OUTPUT)
+    validate_stylesheet_references(OUTPUT)
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
@@ -771,7 +799,7 @@ def main():
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, security headers and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers and the deployment manifest.')
 
 
 if __name__ == '__main__':

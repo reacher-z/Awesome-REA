@@ -60,3 +60,4 @@ html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-mai
 }
 
 .browse-category-nav a{min-height:44px}
+@media(forced-colors:active){.browse-category-nav a[aria-current="page"]{forced-color-adjust:none;background:Highlight;border-color:Highlight;color:HighlightText}.browse-category-nav a[aria-current="page"]:focus-visible{outline-color:CanvasText}}

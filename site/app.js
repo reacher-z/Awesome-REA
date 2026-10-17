@@ -90,6 +90,7 @@ const UI = {
     "errorDescription": "Please try again, or browse the collection on GitHub.",
     "loadMore": "Show more resources",
     "footerDescription": "An independent resource collection, updated in public.",
+    "footerSubmitResource": "Submit a resource ↗",
     "contributeButton": "Contribute ↗",
     "downloadSourceData": "Repository index JSON ↓",
     "browseDirectory": "Browse by category ↗",
@@ -210,6 +211,7 @@ const UI = {
     "errorDescription": "请重试，或在 GitHub 浏览资源集合。",
     "loadMore": "加载更多资源",
     "footerDescription": "独立的资源集合，在公开协作中持续更新。",
+    "footerSubmitResource": "提交资源 ↗",
     "contributeButton": "参与贡献 ↗",
     "downloadSourceData": "仓库索引 JSON ↓",
     "browseDirectory": "按分类浏览 ↗",
@@ -267,6 +269,9 @@ function dataURL(filename) { const url = new URL("/" + filename, location.origin
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
 const node = (tag, className, text) => { const el = document.createElement(tag); if (className) el.className = className; if (text !== undefined) el.textContent = text; return el; };
 function icon(name, small = false) { if (document.documentElement.dataset.iconSet === "fontawesome") { const span = node("span", "icon fa-symbol fa-" + name + (small ? " icon-small" : "")); span.setAttribute("aria-hidden", "true"); return span; } const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"); svg.setAttribute("class", "icon" + (small ? " icon-small" : "")); svg.setAttribute("aria-hidden", "true"); const use = document.createElementNS("http://www.w3.org/2000/svg", "use"); use.setAttribute("href", "#i-" + name); svg.append(use); return svg; }
+// Restoring open details is optional; an unsupported selector or missing element must not stop rendering.
+function expandedRecords(selector) { try { return new Set($$(selector).filter(card => card.querySelector("details[open]")).map(card => card.dataset.recordId)); } catch (_) { return new Set(); } }
+function restoreExpanded(selector, expanded) { try { $$(selector).forEach(card => { const details = expanded.has(card.dataset.recordId) && card.querySelector("details"); if (details) details.open = true; }); } catch (_) {} }
 function external(href, className, text) { const link = node("a", className, text); link.href = href; link.target = "_blank"; link.rel = "noopener noreferrer"; return link; }
 function entryHref(kind, identifier, language = state.lang) {
   if (!["paper", "curated"].includes(kind) || typeof identifier !== "string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(identifier)) return null;
@@ -326,8 +331,8 @@ function card(record) {
 }
 function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 function render() {
-  const expanded = new Set($$(".resource-card:has(details[open])").map(el=>el.dataset.recordId));
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); $$(".resource-card").forEach(el=>{if(expanded.has(el.dataset.recordId))el.querySelector("details").open=true;}); grid.setAttribute("aria-busy", "false");
+  const expanded = expandedRecords(".resource-card");
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
@@ -477,7 +482,7 @@ function sourceCard(record) {
   details.append(compactContext, dl); article.append(details); return article;
 }
 function renderSources() {
-  if (!sourceState.loaded) return; const expanded = new Set($$(".source-card:has(details[open])").map(el=>el.dataset.recordId)); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); $$(".source-card").forEach(el=>{if(expanded.has(el.dataset.recordId))el.querySelector("details").open=true;}); $("#source-results").setAttribute("aria-busy","false");
+  if (!sourceState.loaded) return; const expanded = expandedRecords(".source-card"); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); restoreExpanded(".source-card", expanded); $("#source-results").setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库` : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
   const completed = sourceState.meta.completed_at || sourceState.meta.finished_at || "";
   const scanned = Number(sourceState.meta.scope?.scanned_count || 0), excluded = Number(sourceState.meta.scope?.excluded_count || 0);
