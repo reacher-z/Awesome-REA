@@ -20,8 +20,8 @@
 
 **论文与更多资源**
 
-- [论文](#papers) (45) · [全部案例](https://awesomerea.org/zh/?view=curated&kind=case-study) (47) · [仓库索引](#完整仓库索引) (2,846)
-- [Agent 与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [学习资料](#references-and-learning) (17)
+- [论文](#papers) (45) · [全部案例](https://awesomerea.org/zh/?view=curated&kind=case-study) (47) · [完整仓库索引](#完整仓库索引) (2,846)
+- [智能体与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [文档与学习资源](#references-and-learning) (17)
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -40,61 +40,61 @@
 
 #### 案例
 
-- [**恐龙跑酷：恢复一条加速规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
+- [**恐龙跑酷：恢复一条加速规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
 
   REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。
 
 #### 工具、项目与集成
 
-- [**webcrack**](https://github.com/j4k0xb/webcrack) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/webcrack/)
+- [**webcrack**](https://github.com/j4k0xb/webcrack) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/webcrack/)
 
   识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。
 
-- [**humanify JavaScript 标识符重命名工具**](https://github.com/jehna/humanify) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/humanify/)
+- [**humanify JavaScript 标识符重命名工具**](https://github.com/jehna/humanify) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/humanify/)
 
   借助 LLM 为压缩后的 JavaScript 标识符建议名称，并通过遵循作用域的 AST 改写完成重命名，程序结构保持不变。新名称是模型给出的推测，并非恢复出的原始标识符。
 
-- [**WABT**](https://github.com/WebAssembly/wabt) · 工具 · WebAssembly · [条件与证据](https://awesomerea.org/zh/resources/wabt/)
+- [**WABT**](https://github.com/WebAssembly/wabt) · 工具 · WebAssembly · [使用条件与证据](https://awesomerea.org/zh/resources/wabt/)
 
   WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。
 
-- [**wasm-tools**](https://github.com/bytecodealliance/wasm-tools) · 工具 · WebAssembly · [条件与证据](https://awesomerea.org/zh/resources/wasm-tools/)
+- [**wasm-tools**](https://github.com/bytecodealliance/wasm-tools) · 工具 · WebAssembly · [使用条件与证据](https://awesomerea.org/zh/resources/wasm-tools/)
 
   Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。
 
-- [**Chrome DevTools MCP**](https://github.com/ChromeDevTools/chrome-devtools-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)
+- [**Chrome DevTools MCP**](https://github.com/ChromeDevTools/chrome-devtools-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)
 
   连接智能体与 Chrome，检查实时页面、调试网络并记录性能轨迹。
 
-- [**mitmproxy**](https://github.com/mitmproxy/mitmproxy) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/mitmproxy/)
+- [**mitmproxy**](https://github.com/mitmproxy/mitmproxy) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/mitmproxy/)
 
   通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。
 
-- [**Playwright MCP**](https://github.com/microsoft/playwright-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/playwright-mcp/)
+- [**Playwright MCP**](https://github.com/microsoft/playwright-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/playwright-mcp/)
 
   通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。
 
-- [**Burp Suite MCP Server 扩展**](https://github.com/PortSwigger/mcp-server) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)
+- [**Burp Suite MCP Server 扩展**](https://github.com/PortSwigger/mcp-server) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)
 
   PortSwigger 官方 Burp Suite 扩展，提供 MCP 端点并附带 stdio 代理，使智能体可以查询代理中的 HTTP 与 WebSocket 历史记录、发送 HTTP/1.1 或 HTTP/2 请求，并打开 Repeater 或 Intruder 标签页。
 
-- [**Wakaru**](https://github.com/pionxzh/wakaru) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/wakaru/)
+- [**Wakaru**](https://github.com/pionxzh/wakaru) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/wakaru/)
 
   通过还原已识别的压缩与转译模式，从发布后的 JavaScript 包中恢复可读模块，支持拆包与现代语法恢复，便于分析生产环境前端代码。
 
-- [**Spectral**](https://github.com/spectral-mcp/spectral) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/spectral-mcp/)
+- [**Spectral**](https://github.com/spectral-mcp/spectral) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/spectral-mcp/)
 
   用 LLM 分析捕获的应用 HTTP 流量，生成 MCP 工具、OpenAPI 3.1 规范或 GraphQL 模式；完成抓包与认证配置后，生成的工具可直接调用已观察到的 API。
 
-- [**jsdeob-workbench**](https://github.com/Owl4444/jsdeob-workbench) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/jsdeob-workbench/)
+- [**jsdeob-workbench**](https://github.com/Owl4444/jsdeob-workbench) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/jsdeob-workbench/)
 
   在查看 JavaScript AST 和变量作用域的同时，可视化编排 Babel 转换链；保存分析项目与可复用插件，逐步简化混淆脚本。
 
-- [**Browser Reverse Engineering Toolkit 浏览器逆向工程工具集**](https://github.com/Dvurechensky/Browser.Reverse.Engineering.Toolkit) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/browser-reverse-engineering-toolkit/)
+- [**Browser Reverse Engineering Toolkit 浏览器逆向工程工具集**](https://github.com/Dvurechensky/Browser.Reverse.Engineering.Toolkit) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/browser-reverse-engineering-toolkit/)
 
   采集浏览器会话证据，在持久 Chromium 会话中抓取网站，并根据已保存的捕获数据生成离线架构／API 报告，以及 OpenAPI、SDK 和模拟服务器草稿。
 
-- [**screenshot-to-code 截图转前端代码工具**](https://github.com/abi/screenshot-to-code) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/screenshot-to-code/)
+- [**screenshot-to-code 截图转前端代码工具**](https://github.com/abi/screenshot-to-code) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/screenshot-to-code/)
 
   借助多模态模型，根据截图、设计稿、Figma 设计或屏幕录像生成 HTML/CSS、Tailwind、React、Vue、Bootstrap 或 Ionic 前端代码；可选的无头浏览器预览可让模型渲染并自查输出。结果是对界面外观的视觉重建，并非恢复原始源码或后端行为。
 
@@ -105,173 +105,173 @@
 
 #### 案例
 
-- [**DX-Ball：重建声音声像计算**](https://rea.tools/showcase/dx-ball/) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-dxball-case/)
+- [**DX-Ball：重建声音声像计算**](https://rea.tools/showcase/dx-ball/) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dxball-case/)
 
   根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。
 
-- [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
+- [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
 
   检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。
 
-- [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)
+- [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)
 
   将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。
 
-- [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
+- [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
 
   在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。
 
-- [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/ssbu-recomp-case/)
+- [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ssbu-recomp-case/)
 
   将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。
 
-- [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/kartpad-case/)
+- [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/kartpad-case/)
 
   围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。
 
-- [**BattleShip：AI 辅助的 Super Smash Bros. 原生移植**](https://github.com/JRickey/BattleShip) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/battleship-port-case/)
+- [**BattleShip：AI 辅助的 Super Smash Bros. 原生移植**](https://github.com/JRickey/BattleShip) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/battleship-port-case/)
 
   使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者早期的 README 介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。
 
-- [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)
+- [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)
 
   Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。
 
-- [**Snowboard Kids 2：大模型辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids2-decomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
+- [**Snowboard Kids 2：大模型辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids2-decomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
 
   N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。作者在按日期发布的文章中记录了 Claude、Codex 和 GLM 的使用流程，包括无界面的一次性匹配循环、按函数相似度安排任务，以及由钩子约束、经哈希校验的构建，直至报告全部函数完成匹配。
 
-- [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/isaacrecomp-case/)
+- [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/isaacrecomp-case/)
 
   将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。
 
-- [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/nanolathe-case/)
+- [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/nanolathe-case/)
 
   用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。
 
-- [**TH08：精确源码重建与单独验证的移植**](https://github.com/N0zoM1z0/th08) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/th08-reconstruction-case/)
+- [**TH08：精确源码重建与单独验证的移植**](https://github.com/N0zoM1z0/th08) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th08-reconstruction-case/)
 
   依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。
 
-- [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/zelda64recomp-case/)
+- [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zelda64recomp-case/)
 
   通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。项目区分静态重编译与源码反编译，同时借用反编译项目的头文件和部分函数实现补丁与增强功能。
 
-- [**OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏**](https://github.com/open-goal/jak-project) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/opengoal-jak-case/)
+- [**OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏**](https://github.com/open-goal/jak-project) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/opengoal-jak-case/)
 
   从 Jak 原二进制重建可读的 GOAL 代码，再用新编写的 GOAL 编译器为现代 PC 编译。流程结合专用反编译器、人工补充的类型信息、素材提取和交互式开发运行时。
 
-- [**LEGO Island：源码重建与单独记录的精确重构建**](https://github.com/isledecomp/isle) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/lego-island-decomp-case/)
+- [**LEGO Island：源码重建与单独记录的精确重构建**](https://github.com/isledecomp/isle) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lego-island-decomp-case/)
 
   针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。项目区分函数对比报告、ReproBit 报告的零售版逐字节一致重构建，以及普通开发构建；现代跨平台适配位于另一仓库。
 
-- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
+- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
 
   作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。公开笔记区分恢复的数据表和机制、近似实现以及有意调整的表现效果。
 
-- [**SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/space-cadet-pinball-case/)
+- [**SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/space-cadet-pinball-case/)
 
   将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。README 标明 Windows XP 可执行文件及公开 PDB、Full Tilt 可执行文件，并描述恢复结构、命名变量和适配反编译例程的工作。
 
-- [**Super Mario 64：带明确比较开关的 ROM 重建**](https://github.com/n64decomp/sm64) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/sm64-decomp-case/)
+- [**Super Mario 64：带明确比较开关的 ROM 重建**](https://github.com/n64decomp/sm64) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sm64-decomp-case/)
 
   为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。构建文件区分原 ROM 哈希比较与非匹配或修改配置；源码命名和文档工作仍在推进。
 
-- [**Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器**](https://github.com/hedge-dev/UnleashedRecomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)
+- [**Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器**](https://github.com/hedge-dev/UnleashedRecomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)
 
   使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。项目增加现代显示与模组选项，同时记录原引擎限制和仍存在的兼容性问题。
 
-- [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/openmw-engine-case/)
+- [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openmw-engine-case/)
 
   提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。这是引擎替代实现，而非恢复出的 Bethesda 源码树。
 
-- [**REDRIVER2：借助 PlayStation 兼容层重建 Driver 2**](https://github.com/OpenDriver2/REDRIVER2) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/redriver2-case/)
+- [**REDRIVER2：借助 PlayStation 兼容层重建 Driver 2**](https://github.com/OpenDriver2/REDRIVER2) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/redriver2-case/)
 
   将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。项目记录借助符号的 Ghidra/IDA 分析，同时明确包含有意修复的错误和玩法改动。
 
-- [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/devilutionx-case/)
+- [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/devilutionx-case/)
 
   基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。项目记录了早期借助符号信息的重建过程，并包含特定地牢生成与存档回归检查。
 
-- [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/lasrecomp/)
+- [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lasrecomp/)
 
   通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。
 
-- [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/arkweb-two-game-case/)
+- [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/arkweb-two-game-case/)
 
   同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。这是实验性的运行时桥接，并非恢复出的独立游戏或新引擎。
 
 #### 工具、项目与集成
 
-- [**RenderDoc**](https://github.com/baldurk/renderdoc) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/renderdoc/)
+- [**RenderDoc**](https://github.com/baldurk/renderdoc) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/renderdoc/)
 
   检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。
 
-- [**AssetRipper**](https://github.com/AssetRipper/AssetRipper) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/assetripper/)
+- [**AssetRipper**](https://github.com/AssetRipper/AssetRipper) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/assetripper/)
 
   分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。
 
-- [**Cpp2IL**](https://github.com/SamboyCoding/Cpp2IL) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/cpp2il/)
+- [**Cpp2IL**](https://github.com/SamboyCoding/Cpp2IL) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/cpp2il/)
 
   结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。
 
-- [**Il2CppDumper**](https://github.com/Perfare/Il2CppDumper) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/il2cppdumper/)
+- [**Il2CppDumper**](https://github.com/Perfare/Il2CppDumper) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/il2cppdumper/)
 
   恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。
 
-- [**RenderDoc MCP**](https://github.com/scarletfantasy/renderdoc-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/renderdoc-mcp/)
+- [**RenderDoc MCP**](https://github.com/scarletfantasy/renderdoc-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/renderdoc-mcp/)
 
   向智能体开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。
 
-- [**UndertaleModTool**](https://github.com/UnderminersTeam/UndertaleModTool) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/undertalemodtool/)
+- [**UndertaleModTool**](https://github.com/UnderminersTeam/UndertaleModTool) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/undertalemodtool/)
 
   浏览和修改受支持的 GameMaker 数据文件、提取资源，以及反编译或编译 GML VM 代码；提供房间编辑、脚本化修改、CLI 和可复用的 UndertaleModLib 库。
 
-- [**frida-il2cpp-bridge**](https://github.com/vfsfitvnm/frida-il2cpp-bridge) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/frida-il2cpp-bridge/)
+- [**frida-il2cpp-bridge**](https://github.com/vfsfitvnm/frida-il2cpp-bridge) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/frida-il2cpp-bridge/)
 
   在运行中的进程里检查 IL2CPP 类、方法和字段，无需提供 global-metadata.dat 即可跟踪或拦截方法调用，为静态 IL2CPP 转储工具补充运行时观察能力。
 
-- [**objdiff**](https://github.com/encounter/objdiff) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/objdiff/)
+- [**objdiff**](https://github.com/encounter/objdiff) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/objdiff/)
 
   比较参考目标文件与重新编译目标文件中的函数和数据，辅助匹配反编译；显示指令级差异、还原 C++ 符号，并可在源码变更时自动重新构建。
 
-- [**decomp-permuter**](https://github.com/simonlindholm/decomp-permuter) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/decomp-permuter/)
+- [**decomp-permuter**](https://github.com/simonlindholm/decomp-permuter) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-permuter/)
 
   随机或系统地改写单个 C 函数，逐个重新编译变体并与目标文件评分对比，以寻找与原编译输出一致的写法。可用 PERM 宏指定手动备选写法，可选的 permuter<span>@</span>home 模式能把运行分发给其他工作节点。
 
-- [**asm-differ**](https://github.com/simonlindholm/asm-differ) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/asm-differ/)
+- [**asm-differ**](https://github.com/simonlindholm/asm-differ) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/asm-differ/)
 
   对比单个函数或 ROM 地址的原始汇编与重新编译后的汇编，辅助匹配反编译；监视模式可在源码变更时重新运行 make。README 称它是 decomp.me 的默认差异查看器，并推荐 objdiff 作为现代替代方案。
 
-- [**UE Explorer**](https://github.com/UE-Explorer/UE-Explorer) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/ue-explorer/)
+- [**UE Explorer**](https://github.com/UE-Explorer/UE-Explorer) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ue-explorer/)
 
   通过类、属性与依赖树浏览 Unreal 包，反编译和导出 UnrealScript 类、检查字节码，并查看结构化二进制数据。
 
-- [**GARbro**](https://github.com/morkt/GARbro) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/garbro/)
+- [**GARbro**](https://github.com/morkt/GARbro) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/garbro/)
 
   像浏览文件夹一样查看已识别的视觉小说资源归档，预览内容，并在提取图像或音频时转换为常用格式。
 
-- [**Godot 逆向工程工具**](https://github.com/GDRETools/gdsdecomp) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/godot-re-tools/)
+- [**Godot 逆向工程工具**](https://github.com/GDRETools/gdsdecomp) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/godot-re-tools/)
 
   从已导出的游戏中恢复受支持的 Godot 工程文件、GDScript 与导入资源，提供 PCK 检查与提取、脚本反编译及资源转换，便于分析和重建工程结构。
 
-- [**UE4SS（虚幻引擎脚本系统）**](https://github.com/UE4SS-RE/RE-UE4SS) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/ue4ss/)
+- [**UE4SS（虚幻引擎脚本系统）**](https://github.com/UE4SS-RE/RE-UE4SS) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ue4ss/)
 
   通过实时 UObject 属性视图、反射 C++ 头文件导出、属性映射和 Actor 转储分析虚幻引擎游戏；Lua 与 C++ API 可辅助实验和重建游戏结构。
 
-- [**FModel 游戏资源浏览器**](https://github.com/4sval/FModel) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/fmodel/)
+- [**FModel 游戏资源浏览器**](https://github.com/4sval/FModel) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/fmodel/)
 
   基于 CUE4Parse 浏览虚幻引擎游戏归档，检查资源包和属性，预览并导出资源；2026 年夏季发行版新增 USD 世界导出，可辅助重建受支持的场景内容。
 
-- [**PSP Web Recomp 浏览器游戏重编译项目**](https://github.com/snuri00/psp-web-recomp) · 项目 · [条件与证据](https://awesomerea.org/zh/resources/psp-web-recomp/)
+- [**PSP Web Recomp 浏览器游戏重编译项目**](https://github.com/snuri00/psp-web-recomp) · 项目 · [使用条件与证据](https://awesomerea.org/zh/resources/psp-web-recomp/)
 
   将 PSP MIPS 可执行文件转换为 C++ 与 WebAssembly，配合 PSP 高层仿真运行时和 WebGL2 渲染器；原生跟踪、画面捕获及音频工具可辅助调查游戏移植中缺失的行为。
 
-- [**N64: Recompiled**](https://github.com/N64Recomp/N64Recomp) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/n64recomp/)
+- [**N64: Recompiled**](https://github.com/N64Recomp/N64Recomp) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/n64recomp/)
 
   依据符号元数据将 N64 MIPS 二进制静态重编译为 C 函数，并生成函数查找与重定位宏，供运行时处理静态链接和可重定位的覆盖段。输出需配合 N64ModernRuntime 等运行时；仓库还包含 RSP 微码重编译与模组工具。
 
-- [**XenonRecomp**](https://github.com/hedge-dev/XenonRecomp) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/xenonrecomp/)
+- [**XenonRecomp**](https://github.com/hedge-dev/XenonRecomp) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/xenonrecomp/)
 
   将 Xbox 360 PowerPC 可执行文件转换为可在其他平台编译的 C++ 代码，配套的 XenonAnalyse 负责检测跳转表和函数边界。输出是逐条指令的直译而非反编译代码，并需要项目本身不提供的运行时。
 
@@ -282,141 +282,141 @@
 
 #### 案例
 
-- [**Aegis：追踪登录验证码计算**](https://rea.tools/showcase/aegis/) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-aegis-case/)
+- [**Aegis：追踪登录验证码计算**](https://rea.tools/showcase/aegis/) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-aegis-case/)
 
   追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。
 
-- [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-notion-case/)
+- [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-notion-case/)
 
   结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。
 
-- [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/reacut-reconstruction/)
+- [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/reacut-reconstruction/)
 
   独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。实现包含本地时间线、FFmpeg 导出，以及实验性的有损草稿导入。
 
-- [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
+- [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
 
   通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。
 
-- [**Virtual Desktop Streamer：在 Linux 上重建平台适配层**](https://github.com/cudanexus/vd-streamer-linux) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/vd-streamer-linux-case/)
+- [**Virtual Desktop Streamer：在 Linux 上重建平台适配层**](https://github.com/cudanexus/vd-streamer-linux) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/vd-streamer-linux-case/)
 
   作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。
 
-- [**Open Claude UI：基于 REA 调查的界面参考组件**](https://github.com/Caho1/open-claude-ui) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/open-claude-ui-case/)
+- [**Open Claude UI：基于 REA 调查的界面参考组件**](https://github.com/Caho1/open-claude-ui) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-claude-ui-case/)
 
   发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。
 
-- [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/plx-native-case/)
+- [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/plx-native-case/)
 
   作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。
 
-- [**Windows Calculator：重建百分比规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
+- [**Windows Calculator：重建百分比规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
 
   REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。
 
-- [**飞书：作者报告的隔离第二应用实例**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/feishu-dual-instance-case/)
+- [**飞书：作者报告的隔离第二应用实例**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/feishu-dual-instance-case/)
 
   作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。
 
-- [**PhotoCraft：编辑流程重建与 PSD 往返边界**](https://github.com/storytold/photocraft) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/photocraft-case/)
+- [**PhotoCraft：编辑流程重建与 PSD 往返边界**](https://github.com/storytold/photocraft) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/photocraft-case/)
 
   作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。
 
-- [**WordCraft：文档流程重建与有限范围 DOCX 兼容**](https://github.com/storytold/wordcraft) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/wordcraft-case/)
+- [**WordCraft：文档流程重建与有限范围 DOCX 兼容**](https://github.com/storytold/wordcraft) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wordcraft-case/)
 
   作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。
 
-- [**GridCraft：电子表格流程重建与 XLSX 往返边界**](https://github.com/storytold/gridcraft) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/gridcraft-case/)
+- [**GridCraft：电子表格流程重建与 XLSX 往返边界**](https://github.com/storytold/gridcraft) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gridcraft-case/)
 
   作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。
 
-- [**DeckCraft：演示文稿流程重建与有限范围 PPTX 交换**](https://github.com/storytold/deckcraft) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/deckcraft-case/)
+- [**DeckCraft：演示文稿流程重建与有限范围 PPTX 交换**](https://github.com/storytold/deckcraft) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/deckcraft-case/)
 
   作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。
 
-- [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/kef-lsx-volume-case/)
+- [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/kef-lsx-volume-case/)
 
   根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。项目报告音量步进更均匀，同时转发 USB 音频；扬声器固件未修改。
 
 #### 工具、项目与集成
 
-- [**JADX-AI-MCP**](https://github.com/zinja-coder/jadx-ai-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
+- [**JADX-AI-MCP**](https://github.com/zinja-coder/jadx-ai-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
 
   结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。
 
-- [**apktool-mcp-server Apktool MCP 服务**](https://github.com/zinja-coder/apktool-mcp-server) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/apktool-mcp-server/)
+- [**apktool-mcp-server Apktool MCP 服务**](https://github.com/zinja-coder/apktool-mcp-server) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/apktool-mcp-server/)
 
   基于 Python 的 MCP 服务，调用本地安装的 Apktool，使智能体能够解码 APK，列出、读取、搜索和修改 smali 与资源文件，读取 AndroidManifest.xml 与 apktool.yml，并重新构建项目。
 
-- [**frida-mcp (yfe404)**](https://github.com/yfe404/frida-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
+- [**frida-mcp (yfe404)**](https://github.com/yfe404/frida-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
 
   Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。
 
-- [**Super Trouper**](https://github.com/crissyfield/super-trouper) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/super-trouper/)
+- [**Super Trouper**](https://github.com/crissyfield/super-trouper) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/super-trouper/)
 
   单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。
 
-- [**Frida**](https://github.com/frida/frida) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/frida/)
+- [**Frida**](https://github.com/frida/frida) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/frida/)
 
   动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。
 
-- [**JADX**](https://github.com/skylot/jadx) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/jadx/)
+- [**JADX**](https://github.com/skylot/jadx) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/jadx/)
 
   将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。
 
-- [**Apktool**](https://github.com/iBotPeaches/Apktool) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/apktool/)
+- [**Apktool**](https://github.com/iBotPeaches/Apktool) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apktool/)
 
   将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。
 
-- [**Androguard**](https://github.com/androguard/androguard) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/androguard/)
+- [**Androguard**](https://github.com/androguard/androguard) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/androguard/)
 
   用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供智能体技能和 MCP 文档。
 
-- [**ILSpy**](https://github.com/icsharpcode/ILSpy) · 工具 · .NET · [条件与证据](https://awesomerea.org/zh/resources/ilspy/)
+- [**ILSpy**](https://github.com/icsharpcode/ILSpy) · 工具 · .NET · [使用条件与证据](https://awesomerea.org/zh/resources/ilspy/)
 
   .NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。
 
-- [**dnSpyEx**](https://github.com/dnSpyEx/dnSpy) · 工具 · .NET · [条件与证据](https://awesomerea.org/zh/resources/dnspyex/)
+- [**dnSpyEx**](https://github.com/dnSpyEx/dnSpy) · 工具 · .NET · [使用条件与证据](https://awesomerea.org/zh/resources/dnspyex/)
 
   dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。
 
-- [**<span>@</span>electron/asar**](https://github.com/electron/asar) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/electron-asar/)
+- [**<span>@</span>electron/asar**](https://github.com/electron/asar) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/electron-asar/)
 
   Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。
 
-- [**Mobile Security Framework（MobSF）**](https://github.com/MobSF/Mobile-Security-Framework-MobSF) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/mobsf/)
+- [**Mobile Security Framework（MobSF）**](https://github.com/MobSF/Mobile-Security-Framework-MobSF) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/mobsf/)
 
   通过 Web 界面与 API 检查移动应用包，结合静态分析及受支持设备上的动态测试，分析运行时行为与网络流量。
 
-- [**objection**](https://github.com/sensepost/objection) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/objection/)
+- [**objection**](https://github.com/sensepost/objection) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/objection/)
 
   通过基于 Frida 的命令界面探索运行中的 Android 与 iOS 应用，检查应用存储、内存、运行时对象和插桩后的行为。
 
-- [**Grapefruit 移动应用动态插桩工具**](https://github.com/ChiChou/grapefruit) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/grapefruit/)
+- [**Grapefruit 移动应用动态插桩工具**](https://github.com/ChiChou/grapefruit) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/grapefruit/)
 
   通过基于 Frida 的 Web 界面检查并 Hook 运行中的 iOS 与 Android 应用，提供方法与加密 API 拦截、文件系统与 SQLite 浏览、iOS 钥匙串与界面层级查看，以及常见网络库的 HTTP 流量捕获。
 
-- [**Blutter**](https://github.com/worawit/blutter) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/blutter/)
+- [**Blutter**](https://github.com/worawit/blutter) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/blutter/)
 
   利用匹配的 Dart 运行时分析 Flutter Android ARM64 AOT 二进制，生成带符号的汇编、对象池转储及面向目标的 Frida 脚本模板，辅助研究编译后的 Dart 应用逻辑。
 
-- [**hermes-dec**](https://github.com/P1sec/hermes-dec) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/hermes-dec/)
+- [**hermes-dec**](https://github.com/P1sec/hermes-dec) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-dec/)
 
   解析、反汇编并部分反编译 React Native 的 Hermes 字节码包，展示 HBC 文件头和指令，并生成伪代码以帮助理解编译后的应用逻辑。
 
-- [**Recaf 字节码分析与编辑工具**](https://github.com/Col-E/Recaf) · 工具 · JVM · [条件与证据](https://awesomerea.org/zh/resources/recaf/)
+- [**Recaf 字节码分析与编辑工具**](https://github.com/Col-E/Recaf) · 工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/recaf/)
 
   通过集成反编译器、字节码汇编、引用搜索、映射与去混淆工具检查和修改已编译的 JVM 应用；所审阅的 4.0 预览版还提供基础的只读 Android 字节码分析。
 
-- [**nibkit 原生界面结构分析工具**](https://github.com/tokenbleed/nibkit) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/nibkit/)
+- [**nibkit 原生界面结构分析工具**](https://github.com/tokenbleed/nibkit) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/nibkit/)
 
   将已编译的 iOS/macOS 界面归档解码为对象树、Outlet／Action 连接、自定义类及导航关系，可导出 JSON 或 Mermaid 图，并通过 MCP 提供只读检查命令。
 
-- [**AOTopsy Flutter/Dart 静态分析工具**](https://github.com/BroNils/aotopsy) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/aotopsy/)
+- [**AOTopsy Flutter/Dart 静态分析工具**](https://github.com/BroNils/aotopsy) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/aotopsy/)
 
   静态检查 Flutter/Dart AOT libapp.so 文件，恢复可用元数据、类结构、调用关系及伪代码，无需嵌入 Dart VM 或编译匹配的 SDK，提供 ARM64 与 x86\_64 分析路径。
 
-- [**hbctool Hermes 字节码汇编与反汇编工具**](https://github.com/bongtrop/hbctool) · 工具 · Android · [条件与证据](https://awesomerea.org/zh/resources/hbctool/)
+- [**hbctool Hermes 字节码汇编与反汇编工具**](https://github.com/bongtrop/hbctool) · 工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hbctool/)
 
   通过 HASM 文件反汇编和重新汇编受支持的 React Native Hermes 字节码包，为明确支持的旧版 HBC 提供字节码检查与修改能力。
 
@@ -427,276 +427,276 @@
 
 #### 案例
 
-- [**DownUnderCTF：masked-squares 校验器**](https://rea.tools/showcase/ctf/) · 案例 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
+- [**DownUnderCTF：masked-squares 校验器**](https://rea.tools/showcase/ctf/) · 案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
 
   官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。
 
 #### 工具、项目与集成
 
-- [**Ghidra**](https://github.com/NationalSecurityAgency/ghidra) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/ghidra/)
+- [**Ghidra**](https://github.com/NationalSecurityAgency/ghidra) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra/)
 
   开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。
 
-- [**radare2**](https://github.com/radareorg/radare2) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/radare2/)
+- [**radare2**](https://github.com/radareorg/radare2) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2/)
 
   可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。
 
-- [**Cutter**](https://github.com/rizinorg/cutter) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/cutter/)
+- [**Cutter**](https://github.com/rizinorg/cutter) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/cutter/)
 
   基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。
 
-- [**Qiling**](https://github.com/qilingframework/qiling) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/qiling/)
+- [**Qiling**](https://github.com/qilingframework/qiling) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/qiling/)
 
   在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。
 
-- [**Unicorn Engine**](https://github.com/unicorn-engine/unicorn) · 工具 · 程序库 · [条件与证据](https://awesomerea.org/zh/resources/unicorn/)
+- [**Unicorn Engine**](https://github.com/unicorn-engine/unicorn) · 工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/unicorn/)
 
   多架构 CPU 仿真引擎，可控制寄存器、内存和钩子，执行选定的指令片段。
 
-- [**angr**](https://github.com/angr/angr) · 工具 · 程序库 · [条件与证据](https://awesomerea.org/zh/resources/angr/)
+- [**angr**](https://github.com/angr/angr) · 工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/angr/)
 
   结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。
 
-- [**LIEF**](https://github.com/lief-project/LIEF) · 工具 · 程序库 · [条件与证据](https://awesomerea.org/zh/resources/lief/)
+- [**LIEF**](https://github.com/lief-project/LIEF) · 工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/lief/)
 
   对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。
 
-- [**Capstone**](https://github.com/capstone-engine/capstone) · 工具 · 程序库 · [条件与证据](https://awesomerea.org/zh/resources/capstone/)
+- [**Capstone**](https://github.com/capstone-engine/capstone) · 工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/capstone/)
 
   提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。
 
-- [**ImHex**](https://github.com/WerWolv/ImHex) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/imhex/)
+- [**ImHex**](https://github.com/WerWolv/ImHex) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/imhex/)
 
   带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。
 
-- [**x64dbg**](https://github.com/x64dbg/x64dbg) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/x64dbg/)
+- [**x64dbg**](https://github.com/x64dbg/x64dbg) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/x64dbg/)
 
   Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。
 
-- [**GDB**](https://sourceware.org/gdb/) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/gdb/)
+- [**GDB**](https://sourceware.org/gdb/) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/gdb/)
 
   支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。
 
-- [**rr**](https://github.com/rr-debugger/rr) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/rr/)
+- [**rr**](https://github.com/rr-debugger/rr) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rr/)
 
   记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。
 
-- [**Diaphora**](https://github.com/joxeankoret/diaphora) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/diaphora/)
+- [**Diaphora**](https://github.com/joxeankoret/diaphora) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/diaphora/)
 
   基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。
 
-- [**BinDiff**](https://github.com/google/bindiff) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/bindiff/)
+- [**BinDiff**](https://github.com/google/bindiff) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/bindiff/)
 
   比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。
 
-- [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/detect-it-easy/)
+- [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/detect-it-easy/)
 
   结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。
 
-- [**r2frida**](https://github.com/nowsecure/r2frida) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/r2frida/)
+- [**r2frida**](https://github.com/nowsecure/r2frida) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/r2frida/)
 
   结合 radare2 命令与 Frida 插桩，检查桌面和移动目标中本地或远程进程的内存、符号、类及运行时调用。
 
-- [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct) · 工具 · 程序库 · [条件与证据](https://awesomerea.org/zh/resources/kaitai-struct/)
+- [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct) · 工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/kaitai-struct/)
 
   将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。
 
-- [**GoReSym Go 符号恢复工具**](https://github.com/mandiant/GoReSym) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/goresym/)
+- [**GoReSym Go 符号恢复工具**](https://github.com/mandiant/GoReSym) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/goresym/)
 
   从 Go 二进制中恢复构建元数据、函数名与地址范围、源文件和行号表、内嵌类型及字符串，也可处理已剥离符号以及部分经 UPX 等脱壳后结构异常的样本。JSON 输出可借助附带的 IDAPython 脚本导入 IDA Pro。
 
-- [**rev.ng 二进制分析框架与反编译器**](https://github.com/revng/revng) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/revng/)
+- [**rev.ng 二进制分析框架与反编译器**](https://github.com/revng/revng) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/revng/)
 
   开源反编译流水线：借助 QEMU 将 x86-64、AArch64、i386、ARM 和 MIPS 代码提升为与架构无关的表示，以 LLVM 进行分析，并输出以合法、可重新编译为设计目标的 C 代码。数据布局分析可根据指针用法推断数据结构；可编辑的 YAML 模型及 Python、TypeScript 封装便于自动化。基于 VSCode 的界面是单独的产品，目前处于封闭测试阶段，并计划推出商业方案。
 
 <a id="firmware"></a>
-### Firmware · 固件与硬件
+### Firmware and Hardware · 固件与硬件
 
 [↑ 返回目录](#目录)
 
 #### 案例
 
-- [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) · 案例 · 混合工具流程 · [条件与证据](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
+- [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
 
   作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。
 
-- [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)
+- [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)
 
   从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。公开的 CPFF／AIQB 解析器、内核补丁及 libcamera 修改，配有作者报告的 Claude 辅助调查和有限范围的前后测量。
 
 #### 工具、项目与集成
 
-- [**Binwalk**](https://github.com/ReFirmLabs/binwalk) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/binwalk/)
+- [**Binwalk**](https://github.com/ReFirmLabs/binwalk) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binwalk/)
 
   识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。
 
-- [**unblob**](https://github.com/onekey-sec/unblob) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/unblob/)
+- [**unblob**](https://github.com/onekey-sec/unblob) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/unblob/)
 
   递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。
 
-- [**Ghidra 固件工具集**](https://github.com/al3xtjames/ghidra-firmware-utils) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
+- [**Ghidra 固件工具集**](https://github.com/al3xtjames/ghidra-firmware-utils) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
 
   面向 PCI Option ROM、UEFI 固件卷、Intel Flash Descriptor 和 coreboot 镜像的 Ghidra 加载器与辅助脚本。
 
-- [**EMBA**](https://github.com/e-m-b-a/emba) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/emba/)
+- [**EMBA**](https://github.com/e-m-b-a/emba) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/emba/)
 
   提取固件，结合静态检查与仿真分析，整理软件组件清单，并生成 Web 报告和 SBOM，供进一步调查。
 
-- [**固件分析与比较工具（FACT）**](https://github.com/fkie-cad/FACT_core) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/fact-core/)
+- [**固件分析与比较工具（FACT）**](https://github.com/fkie-cad/FACT_core) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/fact-core/)
 
   通过可扩展平台解包和分析固件，使用 Web 界面与 HTTP API 搜索组件内容和分析结果，并比较不同样本。
 
-- [**OFRAK**](https://github.com/redballoonsecurity/ofrak) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/ofrak/)
+- [**OFRAK**](https://github.com/redballoonsecurity/ofrak) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ofrak/)
 
   通过资源树图形界面与 Python API，递归识别、解包、分析、修改和重新打包固件及二进制格式，并可接入可选反汇编后端。
 
-- [**FirmAE**](https://github.com/pr0v3rbs/FirmAE) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/firmae/)
+- [**FirmAE**](https://github.com/pr0v3rbs/FirmAE) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/firmae/)
 
   仿真路由器与 IP 摄像机固件，检查网络服务和运行时行为，提供自动仿真检查，以及独立的分析、运行和调试模式。
 
-- [**PulseView 信号与协议分析工具**](https://github.com/sigrokproject/pulseview) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/pulseview/)
+- [**PulseView 信号与协议分析工具**](https://github.com/sigrokproject/pulseview) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/pulseview/)
 
   通过 sigrok 的图形前端检查逻辑与模拟波形；协议解码器及分层解码可展示总线消息和更高层的设备操作，便于利用硬件通信记录开展固件与互操作性分析。
 
-- [**UEFITool 固件镜像分析工具**](https://github.com/LongSoft/UEFITool) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/uefitool/)
+- [**UEFITool 固件镜像分析工具**](https://github.com/LongSoft/UEFITool) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/uefitool/)
 
   将 UEFI 固件镜像解析为可检查的树状结构，并检查其结构；配套的 UEFIExtract 与 UEFIFind 可提取解析后的内容、查找模式，辅助分析固件组件与厂商格式。
 
-- [**Glasgow Interface Explorer 数字接口探索工具**](https://github.com/GlasgowEmbedded/glasgow) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/glasgow-interface-explorer/)
+- [**Glasgow Interface Explorer 数字接口探索工具**](https://github.com/GlasgowEmbedded/glasgow) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/glasgow-interface-explorer/)
 
   借助基于 FPGA 的开源硬件和 Python 小程序（applet），读写 SPI 闪存、I2C EEPROM 及并行存储芯片，自动确定 JTAG 引脚，调试受支持的处理器，并分析实体设备上的 UART、SPI 和 QSPI 事务。
 
-- [**Penguin 固件重托管工具**](https://github.com/rehosting/penguin) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/penguin/)
+- [**Penguin 固件重托管工具**](https://github.com/rehosting/penguin) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/penguin/)
 
   以提取出的根文件系统为输入，生成可编辑的仿真变换配置来重托管嵌入式 Linux 固件，再借助客户机 root shell、转发到主机的网络服务和记录下的动态分析输出，逐步完善配置。
 
 <a id="protocol"></a>
-### Protocols · 协议
+### Protocol · 协议
 
 [↑ 返回目录](#目录)
 
 #### 案例
 
-- [**open-appleremote：Siri Remote 协议重建**](https://github.com/a-funk/open-appleremote) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/open-appleremote-case/)
+- [**open-appleremote：Siri Remote 协议重建**](https://github.com/a-funk/open-appleremote) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/open-appleremote-case/)
 
   重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。
 
-- [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/gamekb-k17-case/)
+- [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gamekb-k17-case/)
 
   实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。
 
-- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
+- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
 
   根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
 
-- [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/cooler-lcd-case/)
+- [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cooler-lcd-case/)
 
   为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。
 
-- [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) · 案例 · 独立重建 · [条件与证据](https://awesomerea.org/zh/resources/hw-harness-reference-case/)
+- [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/hw-harness-reference-case/)
 
   记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。公开工具负责组织参考采集与比较，并不自动恢复完整协议规范。
 
 #### 工具、项目与集成
 
-- [**Wireshark 协议分析工具**](https://gitlab.com/wireshark/wireshark) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/wireshark/)
+- [**Wireshark 协议分析工具**](https://gitlab.com/wireshark/wireshark) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark/)
 
   将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。
 
-- [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/netzob/)
+- [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/netzob/)
 
   对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。Python API 提供报文字段、符号和自动机，用于解析、流量生成及模糊测试。
 
-- [**Scapy 报文分析与构造工具**](https://github.com/secdev/scapy) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/scapy/)
+- [**Scapy 报文分析与构造工具**](https://github.com/secdev/scapy) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/scapy/)
 
   使用 Python 编写报文解析、构造、请求／响应匹配及捕获文件分析流程；自定义报文字段与层绑定可将已理解的线格式编码为可操作模型，辅助研究协议行为。
 
-- [**Universal Radio Hacker（URH）无线协议分析工具**](https://github.com/jopohl/urh) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/universal-radio-hacker/)
+- [**Universal Radio Hacker（URH）无线协议分析工具**](https://github.com/jopohl/urh) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-radio-hacker/)
 
   解调并解码通过软件无线电捕获的信号，支持自动检测调制参数和自定义解码。分析者可手动标注协议字段与消息类型，或复核基于规则的字段自动推断结果；模糊测试组件面向无状态协议，仿真环境则用于有状态交互。
 
-- [**SavvyCAN CAN 总线分析工具**](https://github.com/collin80/SavvyCAN) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/savvycan/)
+- [**SavvyCAN CAN 总线分析工具**](https://github.com/collin80/SavvyCAN) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/savvycan/)
 
   捕获或载入 CAN 总线流量，通过嗅探、绘图、文件比对及 ISO-TP／UDS 解码视图分析帧；借助载入或由分析者编辑的 DBC 文件，将原始字节映射为具名信号。自定义发送、模糊测试和 UDS 扫描则是独立窗口，会主动向实时总线发送帧。
 
-- [**AALpy 自动机学习库**](https://github.com/DES-Lab/AALpy) · 工具 · [条件与证据](https://awesomerea.org/zh/resources/aalpy/)
+- [**AALpy 自动机学习库**](https://github.com/DES-Lab/AALpy) · 工具 · [使用条件与证据](https://awesomerea.org/zh/resources/aalpy/)
 
   通用的 Python 自动机学习库，可通过主动查询或被动轨迹数据，推断黑盒系统的确定性、非确定性、随机及下推自动机模型。其 README 链接了一项独立的低功耗蓝牙（BLE）研究，该研究的仓库报告了学习得到的设备连接与传统配对（legacy pairing）状态机；该库本身不推断报文格式。
 
 <a id="agents-and-mcp"></a>
-### Agents & MCP · Agent 与集成
+### Agents and MCP · 智能体与 MCP
 
 [↑ 返回目录](#目录)
 
-- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) · 项目 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
+- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) · 项目 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
 
   REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。
 
-- [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) · 集成 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
+- [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) · 集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
 
   官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。
 
-- [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) · 集成 · REA · [条件与证据](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
+- [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) · 集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
 
   社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。
 
-- [**rea-jev**](https://github.com/juan-viox/rea-jev) · 集成 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-jev/)
+- [**rea-jev**](https://github.com/juan-viox/rea-jev) · 集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-jev/)
 
   Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。
 
-- [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook) · 集成 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
+- [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook) · 集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
 
   Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。
 
-- [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
+- [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
 
   Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。
 
-- [**GhidraMCP**](https://github.com/LaurieWired/GhidraMCP) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/ghidramcp/)
+- [**GhidraMCP**](https://github.com/LaurieWired/GhidraMCP) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/ghidramcp/)
 
   通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。
 
-- [**Binary Ninja MCP（官方）**](https://docs.binary.ninja/guide/mcp.html) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/binary-ninja-official-mcp/)
+- [**Binary Ninja MCP（官方）**](https://docs.binary.ninja/guide/mcp.html) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/binary-ninja-official-mcp/)
 
   Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。
 
-- [**Binary Ninja MCP（fosdickio）**](https://github.com/fosdickio/binary_ninja_mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/binary-ninja-community-mcp/)
+- [**Binary Ninja MCP（fosdickio）**](https://github.com/fosdickio/binary_ninja_mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/binary-ninja-community-mcp/)
 
   社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。
 
-- [**IDA Pro MCP（mrexodia）**](https://github.com/mrexodia/ida-pro-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/ida-pro-mcp-community/)
+- [**IDA Pro MCP（mrexodia）**](https://github.com/mrexodia/ida-pro-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/ida-pro-mcp-community/)
 
   已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。
 
-- [**Radare2 MCP Server**](https://github.com/radareorg/radare2-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/radare2-mcp/)
+- [**Radare2 MCP Server**](https://github.com/radareorg/radare2-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/radare2-mcp/)
 
   基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。
 
-- [**r2ai**](https://github.com/radareorg/r2ai) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/r2ai/)
+- [**r2ai**](https://github.com/radareorg/r2ai) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/r2ai/)
 
   在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。
 
-- [**DAILA**](https://github.com/mahaloz/DAILA) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/daila/)
+- [**DAILA**](https://github.com/mahaloz/DAILA) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/daila/)
 
   跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。
 
-- [**RevEng.AI Ghidra 插件**](https://github.com/RevEngAI/plugin-ghidra) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/revengai-ghidra/)
+- [**RevEng.AI Ghidra 插件**](https://github.com/RevEngAI/plugin-ghidra) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/revengai-ghidra/)
 
   将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。
 
-- [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/lldb-mcp/)
+- [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/lldb-mcp/)
 
   LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。
 
-- [**Claude 逆向工程技能**](https://github.com/EncidXVII/claude-reverse-engineering-skill) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/claude-reverse-engineering-skill/)
+- [**Claude 逆向工程技能**](https://github.com/EncidXVII/claude-reverse-engineering-skill) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/claude-reverse-engineering-skill/)
 
   社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。
 
-- [**SpecterOps 逆向工程技能**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) · 集成 · 独立 Agent · [条件与证据](https://awesomerea.org/zh/resources/specterops-re-skills/)
+- [**SpecterOps 逆向工程技能**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) · 集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/specterops-re-skills/)
 
   针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。
 
-- [**pyghidra-mcp 项目级 Ghidra MCP 服务器**](https://github.com/clearbluejar/pyghidra-mcp) · 集成 · 独立 MCP · [条件与证据](https://awesomerea.org/zh/resources/pyghidra-mcp/)
+- [**pyghidra-mcp 项目级 Ghidra MCP 服务器**](https://github.com/clearbluejar/pyghidra-mcp) · 集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/pyghidra-mcp/)
 
   基于 PyGhidra 的 MCP 服务器，可分析 Ghidra 项目中的全部二进制，提供反编译、交叉引用、调用图、符号与字符串搜索、基于索引的语义代码检索，以及重命名、类型和注释编辑。另附基于 HTTP 的独立命令行客户端，以及可选的图形界面模式：由服务器自行启动 Ghidra 图形界面并加以操控。
 
@@ -705,92 +705,92 @@
 
 [↑ 返回目录](#目录)
 
-- [**Awesome Reverse Engineering**](https://github.com/morluto/awesome-reverse-engineering) · 合集 · [条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
+- [**Awesome Reverse Engineering**](https://github.com/morluto/awesome-reverse-engineering) · 合集 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 
   REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。
 
-- [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases) · 合集 · [条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
+- [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases) · 合集 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
 
   中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。
 
-- [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea) · 合集 · [条件与证据](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
+- [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea) · 合集 · [使用条件与证据](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
 
   围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。
 
-- [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games) · 合集 · [条件与证据](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
+- [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games) · 合集 · [使用条件与证据](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
 
   按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。
 
 <a id="references-and-learning"></a>
-### References & Learning · 文档与学习资料
+### References and Learning · 文档与学习资源
 
 [↑ 返回目录](#目录)
 
-- [**安装与客户端配置**](https://github.com/morluto/rea/blob/main/docs/installation.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-installation/)
+- [**安装与客户端配置**](https://github.com/morluto/rea/blob/main/docs/installation.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-installation/)
 
   安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。
 
-- [**CLI 与 Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-cli-evidence/)
+- [**CLI 与 Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-cli-evidence/)
 
   保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。
 
-- [**MCP 接口约定与生成目录**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
+- [**MCP 接口约定与生成目录**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
 
   官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。
 
-- [**原生二进制调查**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-native-workflow/)
+- [**原生二进制调查**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-native-workflow/)
 
   从函数清单到指令、伪代码和引用链的原生二进制调查流程。
 
-- [**跨层 JavaScript 应用工作流**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-js-workflows/)
+- [**跨层 JavaScript 应用工作流**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-js-workflows/)
 
   从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。
 
-- [**Android APK 静态分析**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-android-guide/)
+- [**Android APK 静态分析**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-android-guide/)
 
   经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。
 
-- [**托管代码分析**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-managed-guide/)
+- [**托管代码分析**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-managed-guide/)
 
   静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。
 
-- [**历史网站网络记录**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-web-captures/)
+- [**历史网站网络记录**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-web-captures/)
 
   离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。
 
-- [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
+- [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
 
   用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。
 
-- [**浏览器观察指南**](https://rea.tools/guides/browser/) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
+- [**浏览器观察指南**](https://rea.tools/guides/browser/) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
 
   通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。
 
-- [**JavaScript 与 Electron：追踪 CSV 导出**](https://rea.tools/guides/javascript/) · 文档 · REA · [条件与证据](https://awesomerea.org/zh/resources/rea-electron-guide/)
+- [**JavaScript 与 Electron：追踪 CSV 导出**](https://rea.tools/guides/javascript/) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-electron-guide/)
 
   官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。
 
-- [**rea-playbook**](https://github.com/jinshi666888/rea-playbook) · 学习资料 · [条件与证据](https://awesomerea.org/zh/resources/rea-playbook/)
+- [**rea-playbook**](https://github.com/jinshi666888/rea-playbook) · 学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-playbook/)
 
   提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。
 
-- [**rea-lab**](https://github.com/pablodiazjorge/rea-lab) · 研究 · [条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
+- [**rea-lab**](https://github.com/pablodiazjorge/rea-lab) · 研究 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
 
   Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。
 
-- [**OpenSecurityTraining2**](https://ost2.fyi/) · 学习资料 · [条件与证据](https://awesomerea.org/zh/resources/ost2/)
+- [**OpenSecurityTraining2**](https://ost2.fyi/) · 学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/ost2/)
 
   免费的自主学习课程，提供逆向工程、固件和系统基础等学习路线。
 
-- [**pwn.college：逆向工程**](https://pwn.college/program-security/reverse-engineering/) · 学习资料 · [条件与证据](https://awesomerea.org/zh/resources/pwn-college-re/)
+- [**pwn.college：逆向工程**](https://pwn.college/program-security/reverse-engineering/) · 学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/pwn-college-re/)
 
   包含托管练习的逆向工程课程，覆盖函数、数据访问、静态工具和动态工具。
 
-- [**逆向工程入门**](https://beginners.re/) · 学习资料 · [条件与证据](https://awesomerea.org/zh/resources/re-for-beginners/)
+- [**逆向工程入门**](https://beginners.re/) · 学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/re-for-beginners/)
 
   Dennis Yurichev 编写的免费逆向入门书，以汇编与编译后程序理解为核心，提供多语言版本。
 
-- [**radare2 官方手册**](https://book.rada.re/) · 学习资料 · [条件与证据](https://awesomerea.org/zh/resources/radare2-book/)
+- [**radare2 官方手册**](https://book.rada.re/) · 学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2-book/)
 
   radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。
 <!-- END GENERATED CATALOG -->
@@ -1522,7 +1522,7 @@
 ## 完整仓库索引
 
 <!-- BEGIN REPOSITORY INDEX SUMMARY -->
-已读取 **3,000** 个仓库的 README，当前提供 **2,846** 个浏览条目，明确超出范围的 154 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项执行测试。
+已读取 **3,000** 个仓库的 README，当前提供 **2,846** 个浏览条目，明确超出范围的 154 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。
 
 [按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)
 <!-- END REPOSITORY INDEX SUMMARY -->
