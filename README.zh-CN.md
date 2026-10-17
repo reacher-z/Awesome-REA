@@ -26,194 +26,194 @@
 
 [↑ 返回目录](#目录)
 
-- [恐龙跑酷：恢复一条加速规则](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed) - REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。 <sub>案例 · REA</sub>
-- [webcrack](https://github.com/j4k0xb/webcrack) - 识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。 <sub>工具</sub>
-- [WABT](https://github.com/WebAssembly/wabt) - WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。 <sub>工具 · WebAssembly</sub>
-- [wasm-tools](https://github.com/bytecodealliance/wasm-tools) - Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。 <sub>工具 · WebAssembly</sub>
-- [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) - 连接智能体与 Chrome，检查实时页面、调试网络并记录性能轨迹。 <sub>集成 · 独立 MCP</sub>
-- [mitmproxy](https://github.com/mitmproxy/mitmproxy) - 通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。 <sub>工具</sub>
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp) - 通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。 <sub>集成 · 独立 MCP</sub>
-- [Wakaru](https://github.com/pionxzh/wakaru) - 通过还原已识别的压缩与转译模式，从发布后的 JavaScript 包中恢复可读模块，支持拆包与现代语法恢复，便于分析生产环境前端代码。 <sub>工具</sub>
-- [Spectral](https://github.com/spectral-mcp/spectral) - 用 LLM 分析捕获的应用 HTTP 流量，生成 MCP 工具、OpenAPI 3.1 规范或 GraphQL 模式；完成抓包与认证配置后，生成的工具可直接调用已观察到的 API。 <sub>集成 · 独立 Agent</sub>
-- [jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) - 在查看 JavaScript AST 和变量作用域的同时，可视化编排 Babel 转换链；保存分析项目与可复用插件，逐步简化混淆脚本。 <sub>工具</sub>
-- [Browser Reverse Engineering Toolkit 浏览器逆向工程工具集](https://github.com/Dvurechensky/Browser.Reverse.Engineering.Toolkit) - 采集浏览器会话证据，在持久 Chromium 会话中抓取网站，并根据已保存的捕获数据生成离线架构／API 报告，以及 OpenAPI、SDK 和模拟服务器草稿。 <sub>工具</sub>
+- [**恐龙跑酷：恢复一条加速规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#dinosaur-speed) - REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。 <sub>案例 · REA</sub>
+- [**webcrack**](https://github.com/j4k0xb/webcrack) - 识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。 <sub>工具</sub>
+- [**WABT**](https://github.com/WebAssembly/wabt) - WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。 <sub>工具 · WebAssembly</sub>
+- [**wasm-tools**](https://github.com/bytecodealliance/wasm-tools) - Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。 <sub>工具 · WebAssembly</sub>
+- [**Chrome DevTools MCP**](https://github.com/ChromeDevTools/chrome-devtools-mcp) - 连接智能体与 Chrome，检查实时页面、调试网络并记录性能轨迹。 <sub>集成 · 独立 MCP</sub>
+- [**mitmproxy**](https://github.com/mitmproxy/mitmproxy) - 通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。 <sub>工具</sub>
+- [**Playwright MCP**](https://github.com/microsoft/playwright-mcp) - 通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。 <sub>集成 · 独立 MCP</sub>
+- [**Wakaru**](https://github.com/pionxzh/wakaru) - 通过还原已识别的压缩与转译模式，从发布后的 JavaScript 包中恢复可读模块，支持拆包与现代语法恢复，便于分析生产环境前端代码。 <sub>工具</sub>
+- [**Spectral**](https://github.com/spectral-mcp/spectral) - 用 LLM 分析捕获的应用 HTTP 流量，生成 MCP 工具、OpenAPI 3.1 规范或 GraphQL 模式；完成抓包与认证配置后，生成的工具可直接调用已观察到的 API。 <sub>集成 · 独立 Agent</sub>
+- [**jsdeob-workbench**](https://github.com/Owl4444/jsdeob-workbench) - 在查看 JavaScript AST 和变量作用域的同时，可视化编排 Babel 转换链；保存分析项目与可复用插件，逐步简化混淆脚本。 <sub>工具</sub>
+- [**Browser Reverse Engineering Toolkit 浏览器逆向工程工具集**](https://github.com/Dvurechensky/Browser.Reverse.Engineering.Toolkit) - 采集浏览器会话证据，在持久 Chromium 会话中抓取网站，并根据已保存的捕获数据生成离线架构／API 报告，以及 OpenAPI、SDK 和模拟服务器草稿。 <sub>工具</sub>
 
 <a id="game"></a>
 ### Game · 游戏
 
 [↑ 返回目录](#目录)
 
-- [DX-Ball：重建声音声像计算](https://rea.tools/showcase/dx-ball/) - 根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。 <sub>案例 · REA</sub>
-- [TH04：恢复 DOS 子弹环辅助函数](https://rea.tools/showcase/th04/) - 检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。 <sub>案例 · REA</sub>
-- [Super Mario 64 DS：带重定位核对的匹配反编译](https://github.com/tangosdev/sm64ds-decomp) - 将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。 <sub>案例 · 独立重建</sub>
-- [GoldenEye 007：基于反编译成果的智能体辅助原生移植](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。 <sub>案例 · 独立重建</sub>
-- [ssbu-recomp：明确玩法边界的静态重编译](https://github.com/Denkishi/ssbu-recomp) - 将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。 <sub>案例 · 独立重建</sub>
-- [KartPad：Mario Kart Wii 重编译的平台集成](https://github.com/chrissotraidis/kartpad) - 围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。 <sub>案例 · 独立重建</sub>
-- [BattleShip：AI 辅助的 Super Smash Bros. 原生移植](https://github.com/vinvirile/BattleShip) - 使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。 <sub>案例 · 独立重建</sub>
-- [智能体反编译：字节匹配验收复盘](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。 <sub>案例 · 独立重建</sub>
-- [IsaacRecomp：将 Flash 游戏字节码转换为原生 C++](https://github.com/whylurking/IsaacRecomp) - 将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。 <sub>案例 · 独立重建</sub>
-- [Nanolathe：附研究文档的 Total Annihilation 引擎重实现](https://github.com/nanolathe-gg/nanolathe) - 用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。 <sub>案例 · 独立重建</sub>
-- [TH08：精确源码重建与单独验证的移植](https://github.com/N0zoM1z0/th08) - 依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。 <sub>案例 · 独立重建</sub>
-- [RenderDoc](https://github.com/baldurk/renderdoc) - 检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。 <sub>工具</sub>
-- [AssetRipper](https://github.com/AssetRipper/AssetRipper) - 分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。 <sub>工具</sub>
-- [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) - 结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。 <sub>工具</sub>
-- [Il2CppDumper](https://github.com/Perfare/Il2CppDumper) - 恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。 <sub>工具</sub>
-- [RenderDoc MCP](https://github.com/scarletfantasy/renderdoc-mcp) - 向智能体开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。 <sub>集成 · 独立 MCP</sub>
-- [UndertaleModTool](https://github.com/UnderminersTeam/UndertaleModTool) - 浏览和修改受支持的 GameMaker 数据文件、提取资源，以及反编译或编译 GML VM 代码；提供房间编辑、脚本化修改、CLI 和可复用的 UndertaleModLib 库。 <sub>工具</sub>
-- [frida-il2cpp-bridge](https://github.com/vfsfitvnm/frida-il2cpp-bridge) - 在运行中的进程里检查 IL2CPP 类、方法和字段，无需提供 global-metadata.dat 即可跟踪或拦截方法调用，为静态 IL2CPP 转储工具补充运行时观察能力。 <sub>工具</sub>
-- [objdiff](https://github.com/encounter/objdiff) - 比较参考目标文件与重新编译目标文件中的函数和数据，辅助匹配反编译；显示指令级差异、还原 C++ 符号，并可在源码变更时自动重新构建。 <sub>工具</sub>
-- [UE Explorer](https://github.com/UE-Explorer/UE-Explorer) - 通过类、属性与依赖树浏览 Unreal 包，反编译和导出 UnrealScript 类、检查字节码，并查看结构化二进制数据。 <sub>工具</sub>
-- [GARbro](https://github.com/morkt/GARbro) - 像浏览文件夹一样查看已识别的视觉小说资源归档，预览内容，并在提取图像或音频时转换为常用格式。 <sub>工具</sub>
-- [LASRecomp：《织梦岛》静态重编译案例](https://github.com/peiikai/LASRecomp) - 通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。 <sub>案例 · 独立重建</sub>
-- [Godot 逆向工程工具](https://github.com/GDRETools/gdsdecomp) - 从已导出的游戏中恢复受支持的 Godot 工程文件、GDScript 与导入资源，提供 PCK 检查与提取、脚本反编译及资源转换，便于分析和重建工程结构。 <sub>工具</sub>
-- [UE4SS（虚幻引擎脚本系统）](https://github.com/UE4SS-RE/RE-UE4SS) - 通过实时 UObject 属性视图、反射 C++ 头文件导出、属性映射和 Actor 转储分析虚幻引擎游戏；Lua 与 C++ API 可辅助实验和重建游戏结构。 <sub>工具</sub>
-- [FModel 游戏资源浏览器](https://github.com/4sval/FModel) - 基于 CUE4Parse 浏览虚幻引擎游戏归档，检查资源包和属性，预览并导出资源；2026 年夏季发行版新增 USD 世界导出，可辅助重建受支持的场景内容。 <sub>工具</sub>
-- [PSP Web Recomp 浏览器游戏重编译项目](https://github.com/snuri00/psp-web-recomp) - 将 PSP MIPS 可执行文件转换为 C++ 与 WebAssembly，配合 PSP 高层仿真运行时和 WebGL2 渲染器；原生跟踪、画面捕获及音频工具可辅助调查游戏移植中缺失的行为。 <sub>项目</sub>
-- [ArkWeb：双游戏动作与碰撞桥接实验](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。这是实验性的运行时桥接，并非恢复出的独立游戏或新引擎。 <sub>案例 · 独立重建</sub>
+- [**DX-Ball：重建声音声像计算**](https://rea.tools/showcase/dx-ball/) - 根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。 <sub>案例 · REA</sub>
+- [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/) - 检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。 <sub>案例 · REA</sub>
+- [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp) - 将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。 <sub>案例 · 独立重建</sub>
+- [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port) - 在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。 <sub>案例 · 独立重建</sub>
+- [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp) - 将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。 <sub>案例 · 独立重建</sub>
+- [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad) - 围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。 <sub>案例 · 独立重建</sub>
+- [**BattleShip：AI 辅助的 Super Smash Bros. 原生移植**](https://github.com/vinvirile/BattleShip) - 使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。 <sub>案例 · 独立重建</sub>
+- [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/) - Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。 <sub>案例 · 独立重建</sub>
+- [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp) - 将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。 <sub>案例 · 独立重建</sub>
+- [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe) - 用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。 <sub>案例 · 独立重建</sub>
+- [**TH08：精确源码重建与单独验证的移植**](https://github.com/N0zoM1z0/th08) - 依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。 <sub>案例 · 独立重建</sub>
+- [**RenderDoc**](https://github.com/baldurk/renderdoc) - 检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。 <sub>工具</sub>
+- [**AssetRipper**](https://github.com/AssetRipper/AssetRipper) - 分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。 <sub>工具</sub>
+- [**Cpp2IL**](https://github.com/SamboyCoding/Cpp2IL) - 结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。 <sub>工具</sub>
+- [**Il2CppDumper**](https://github.com/Perfare/Il2CppDumper) - 恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。 <sub>工具</sub>
+- [**RenderDoc MCP**](https://github.com/scarletfantasy/renderdoc-mcp) - 向智能体开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。 <sub>集成 · 独立 MCP</sub>
+- [**UndertaleModTool**](https://github.com/UnderminersTeam/UndertaleModTool) - 浏览和修改受支持的 GameMaker 数据文件、提取资源，以及反编译或编译 GML VM 代码；提供房间编辑、脚本化修改、CLI 和可复用的 UndertaleModLib 库。 <sub>工具</sub>
+- [**frida-il2cpp-bridge**](https://github.com/vfsfitvnm/frida-il2cpp-bridge) - 在运行中的进程里检查 IL2CPP 类、方法和字段，无需提供 global-metadata.dat 即可跟踪或拦截方法调用，为静态 IL2CPP 转储工具补充运行时观察能力。 <sub>工具</sub>
+- [**objdiff**](https://github.com/encounter/objdiff) - 比较参考目标文件与重新编译目标文件中的函数和数据，辅助匹配反编译；显示指令级差异、还原 C++ 符号，并可在源码变更时自动重新构建。 <sub>工具</sub>
+- [**UE Explorer**](https://github.com/UE-Explorer/UE-Explorer) - 通过类、属性与依赖树浏览 Unreal 包，反编译和导出 UnrealScript 类、检查字节码，并查看结构化二进制数据。 <sub>工具</sub>
+- [**GARbro**](https://github.com/morkt/GARbro) - 像浏览文件夹一样查看已识别的视觉小说资源归档，预览内容，并在提取图像或音频时转换为常用格式。 <sub>工具</sub>
+- [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp) - 通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。 <sub>案例 · 独立重建</sub>
+- [**Godot 逆向工程工具**](https://github.com/GDRETools/gdsdecomp) - 从已导出的游戏中恢复受支持的 Godot 工程文件、GDScript 与导入资源，提供 PCK 检查与提取、脚本反编译及资源转换，便于分析和重建工程结构。 <sub>工具</sub>
+- [**UE4SS（虚幻引擎脚本系统）**](https://github.com/UE4SS-RE/RE-UE4SS) - 通过实时 UObject 属性视图、反射 C++ 头文件导出、属性映射和 Actor 转储分析虚幻引擎游戏；Lua 与 C++ API 可辅助实验和重建游戏结构。 <sub>工具</sub>
+- [**FModel 游戏资源浏览器**](https://github.com/4sval/FModel) - 基于 CUE4Parse 浏览虚幻引擎游戏归档，检查资源包和属性，预览并导出资源；2026 年夏季发行版新增 USD 世界导出，可辅助重建受支持的场景内容。 <sub>工具</sub>
+- [**PSP Web Recomp 浏览器游戏重编译项目**](https://github.com/snuri00/psp-web-recomp) - 将 PSP MIPS 可执行文件转换为 C++ 与 WebAssembly，配合 PSP 高层仿真运行时和 WebGL2 渲染器；原生跟踪、画面捕获及音频工具可辅助调查游戏移植中缺失的行为。 <sub>项目</sub>
+- [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb) - 同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。这是实验性的运行时桥接，并非恢复出的独立游戏或新引擎。 <sub>案例 · 独立重建</sub>
 
 <a id="app"></a>
 ### App · 应用
 
 [↑ 返回目录](#目录)
 
-- [Aegis：追踪登录验证码计算](https://rea.tools/showcase/aegis/) - 追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。 <sub>案例 · REA</sub>
-- [Notion：追踪剪贴板桥接](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA</sub>
-- [ReaCut：视频编辑器重建案例](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。实现包含本地时间线、FFmpeg 导出，以及实验性的有损草稿导入。 <sub>案例 · 混合工具流程</sub>
-- [zee-rp：重建 Axure RP 11 的受支持文档操作](https://github.com/LilZeeCN/zee-rp) - 通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。 <sub>案例 · 独立重建</sub>
-- [Virtual Desktop Streamer：在 Linux 上重建平台适配层](https://github.com/cudanexus/vd-streamer-linux) - 作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。 <sub>案例 · 混合工具流程</sub>
-- [Open Claude UI：基于 REA 调查的界面参考组件](https://github.com/Caho1/open-claude-ui) - 发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。 <sub>案例 · 混合工具流程</sub>
-- [PlxNative：重建原生 webOS 媒体客户端接口](https://github.com/GLinnik21/plx-native) - 作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。 <sub>案例 · 独立重建</sub>
-- [Windows Calculator：重建百分比规则](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator) - REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。 <sub>案例 · REA</sub>
-- [飞书：作者报告的隔离第二应用实例](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) - 作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。 <sub>案例 · 混合工具流程</sub>
-- [JADX-AI-MCP](https://github.com/zinja-coder/jadx-ai-mcp) - 结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。 <sub>集成 · 独立 MCP</sub>
-- [frida-mcp (yfe404)](https://github.com/yfe404/frida-mcp) - Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。 <sub>集成 · 独立 MCP</sub>
-- [Super Trouper](https://github.com/crissyfield/super-trouper) - 单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。 <sub>集成 · 独立 MCP</sub>
-- [Frida](https://github.com/frida/frida) - 动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。 <sub>工具</sub>
-- [JADX](https://github.com/skylot/jadx) - 将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。 <sub>工具 · Android</sub>
-- [Apktool](https://github.com/iBotPeaches/Apktool) - 将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。 <sub>工具 · Android</sub>
-- [Androguard](https://github.com/androguard/androguard) - 用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供智能体技能和 MCP 文档。 <sub>工具 · Android</sub>
-- [ILSpy](https://github.com/icsharpcode/ILSpy) - .NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。 <sub>工具 · .NET</sub>
-- [dnSpyEx](https://github.com/dnSpyEx/dnSpy) - dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。 <sub>工具 · .NET</sub>
-- [@electron/asar](https://github.com/electron/asar) - Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。 <sub>工具</sub>
-- [Mobile Security Framework（MobSF）](https://github.com/MobSF/Mobile-Security-Framework-MobSF) - 通过 Web 界面与 API 检查移动应用包，结合静态分析及受支持设备上的动态测试，分析运行时行为与网络流量。 <sub>工具 · Android</sub>
-- [Blutter](https://github.com/worawit/blutter) - 利用匹配的 Dart 运行时分析 Flutter Android ARM64 AOT 二进制，生成带符号的汇编、对象池转储及面向目标的 Frida 脚本模板，辅助研究编译后的 Dart 应用逻辑。 <sub>工具 · Android</sub>
-- [hermes-dec](https://github.com/P1sec/hermes-dec) - 解析、反汇编并部分反编译 React Native 的 Hermes 字节码包，展示 HBC 文件头和指令，并生成伪代码以帮助理解编译后的应用逻辑。 <sub>工具</sub>
-- [Recaf 字节码分析与编辑工具](https://github.com/Col-E/Recaf) - 通过集成反编译器、字节码汇编、引用搜索、映射与去混淆工具检查和修改已编译的 JVM 应用；所审阅的 4.0 预览版还提供基础的只读 Android 字节码分析。 <sub>工具 · JVM</sub>
-- [nibkit 原生界面结构分析工具](https://github.com/tokenbleed/nibkit) - 将已编译的 iOS/macOS 界面归档解码为对象树、Outlet／Action 连接、自定义类及导航关系，可导出 JSON 或 Mermaid 图，并通过 MCP 提供只读检查命令。 <sub>工具</sub>
-- [AOTopsy Flutter/Dart 静态分析工具](https://github.com/BroNils/aotopsy) - 静态检查 Flutter/Dart AOT libapp.so 文件，恢复可用元数据、类结构、调用关系及伪代码，无需嵌入 Dart VM 或编译匹配的 SDK，提供 ARM64 与 x86_64 分析路径。 <sub>工具 · Android</sub>
-- [hbctool Hermes 字节码汇编与反汇编工具](https://github.com/bongtrop/hbctool) - 通过 HASM 文件反汇编和重新汇编受支持的 React Native Hermes 字节码包，为明确支持的旧版 HBC 提供字节码检查与修改能力。 <sub>工具 · Android</sub>
-- [LSX II 音量修正器：重建音量行为](https://github.com/roberdorfer/kef-lsx-volume) - 根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。项目报告音量步进更均匀，同时转发 USB 音频；扬声器固件未修改。 <sub>案例 · 独立重建</sub>
+- [**Aegis：追踪登录验证码计算**](https://rea.tools/showcase/aegis/) - 追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。 <sub>案例 · REA</sub>
+- [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/) - 结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。 <sub>案例 · REA</sub>
+- [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) - 独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。实现包含本地时间线、FFmpeg 导出，以及实验性的有损草稿导入。 <sub>案例 · 混合工具流程</sub>
+- [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp) - 通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。 <sub>案例 · 独立重建</sub>
+- [**Virtual Desktop Streamer：在 Linux 上重建平台适配层**](https://github.com/cudanexus/vd-streamer-linux) - 作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。 <sub>案例 · 混合工具流程</sub>
+- [**Open Claude UI：基于 REA 调查的界面参考组件**](https://github.com/Caho1/open-claude-ui) - 发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。 <sub>案例 · 混合工具流程</sub>
+- [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native) - 作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。 <sub>案例 · 独立重建</sub>
+- [**Windows Calculator：重建百分比规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator) - REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。 <sub>案例 · REA</sub>
+- [**飞书：作者报告的隔离第二应用实例**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) - 作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。 <sub>案例 · 混合工具流程</sub>
+- [**JADX-AI-MCP**](https://github.com/zinja-coder/jadx-ai-mcp) - 结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。 <sub>集成 · 独立 MCP</sub>
+- [**frida-mcp (yfe404)**](https://github.com/yfe404/frida-mcp) - Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。 <sub>集成 · 独立 MCP</sub>
+- [**Super Trouper**](https://github.com/crissyfield/super-trouper) - 单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。 <sub>集成 · 独立 MCP</sub>
+- [**Frida**](https://github.com/frida/frida) - 动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。 <sub>工具</sub>
+- [**JADX**](https://github.com/skylot/jadx) - 将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。 <sub>工具 · Android</sub>
+- [**Apktool**](https://github.com/iBotPeaches/Apktool) - 将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。 <sub>工具 · Android</sub>
+- [**Androguard**](https://github.com/androguard/androguard) - 用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供智能体技能和 MCP 文档。 <sub>工具 · Android</sub>
+- [**ILSpy**](https://github.com/icsharpcode/ILSpy) - .NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。 <sub>工具 · .NET</sub>
+- [**dnSpyEx**](https://github.com/dnSpyEx/dnSpy) - dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。 <sub>工具 · .NET</sub>
+- [**@electron/asar**](https://github.com/electron/asar) - Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。 <sub>工具</sub>
+- [**Mobile Security Framework（MobSF）**](https://github.com/MobSF/Mobile-Security-Framework-MobSF) - 通过 Web 界面与 API 检查移动应用包，结合静态分析及受支持设备上的动态测试，分析运行时行为与网络流量。 <sub>工具 · Android</sub>
+- [**Blutter**](https://github.com/worawit/blutter) - 利用匹配的 Dart 运行时分析 Flutter Android ARM64 AOT 二进制，生成带符号的汇编、对象池转储及面向目标的 Frida 脚本模板，辅助研究编译后的 Dart 应用逻辑。 <sub>工具 · Android</sub>
+- [**hermes-dec**](https://github.com/P1sec/hermes-dec) - 解析、反汇编并部分反编译 React Native 的 Hermes 字节码包，展示 HBC 文件头和指令，并生成伪代码以帮助理解编译后的应用逻辑。 <sub>工具</sub>
+- [**Recaf 字节码分析与编辑工具**](https://github.com/Col-E/Recaf) - 通过集成反编译器、字节码汇编、引用搜索、映射与去混淆工具检查和修改已编译的 JVM 应用；所审阅的 4.0 预览版还提供基础的只读 Android 字节码分析。 <sub>工具 · JVM</sub>
+- [**nibkit 原生界面结构分析工具**](https://github.com/tokenbleed/nibkit) - 将已编译的 iOS/macOS 界面归档解码为对象树、Outlet／Action 连接、自定义类及导航关系，可导出 JSON 或 Mermaid 图，并通过 MCP 提供只读检查命令。 <sub>工具</sub>
+- [**AOTopsy Flutter/Dart 静态分析工具**](https://github.com/BroNils/aotopsy) - 静态检查 Flutter/Dart AOT libapp.so 文件，恢复可用元数据、类结构、调用关系及伪代码，无需嵌入 Dart VM 或编译匹配的 SDK，提供 ARM64 与 x86_64 分析路径。 <sub>工具 · Android</sub>
+- [**hbctool Hermes 字节码汇编与反汇编工具**](https://github.com/bongtrop/hbctool) - 通过 HASM 文件反汇编和重新汇编受支持的 React Native Hermes 字节码包，为明确支持的旧版 HBC 提供字节码检查与修改能力。 <sub>工具 · Android</sub>
+- [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume) - 根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。项目报告音量步进更均匀，同时转发 USB 音频；扬声器固件未修改。 <sub>案例 · 独立重建</sub>
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
 
 [↑ 返回目录](#目录)
 
-- [DownUnderCTF：masked-squares 校验器](https://rea.tools/showcase/ctf/) - 官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。 <sub>案例 · REA</sub>
-- [Ghidra](https://github.com/NationalSecurityAgency/ghidra) - 开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。 <sub>工具</sub>
-- [radare2](https://github.com/radareorg/radare2) - 可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。 <sub>工具</sub>
-- [Cutter](https://github.com/rizinorg/cutter) - 基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。 <sub>工具</sub>
-- [Qiling](https://github.com/qilingframework/qiling) - 在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。 <sub>工具</sub>
-- [Unicorn Engine](https://github.com/unicorn-engine/unicorn) - 多架构 CPU 仿真引擎，可控制寄存器、内存和钩子，执行选定的指令片段。 <sub>工具 · 程序库</sub>
-- [angr](https://github.com/angr/angr) - 结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。 <sub>工具 · 程序库</sub>
-- [LIEF](https://github.com/lief-project/LIEF) - 对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。 <sub>工具 · 程序库</sub>
-- [Capstone](https://github.com/capstone-engine/capstone) - 提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。 <sub>工具 · 程序库</sub>
-- [ImHex](https://github.com/WerWolv/ImHex) - 带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。 <sub>工具</sub>
-- [x64dbg](https://github.com/x64dbg/x64dbg) - Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。 <sub>工具</sub>
-- [GDB](https://sourceware.org/gdb/) - 支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。 <sub>工具</sub>
-- [rr](https://github.com/rr-debugger/rr) - 记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。 <sub>工具</sub>
-- [Diaphora](https://github.com/joxeankoret/diaphora) - 基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。 <sub>工具</sub>
-- [BinDiff](https://github.com/google/bindiff) - 比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。 <sub>工具</sub>
-- [Detect It Easy](https://github.com/horsicq/Detect-It-Easy) - 结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。 <sub>工具</sub>
-- [objection](https://github.com/sensepost/objection) - 通过基于 Frida 的命令界面探索运行中的 Android 与 iOS 应用，检查应用存储、内存、运行时对象和插桩后的行为。 <sub>工具</sub>
-- [r2frida](https://github.com/nowsecure/r2frida) - 结合 radare2 命令与 Frida 插桩，检查桌面和移动目标中本地或远程进程的内存、符号、类及运行时调用。 <sub>工具</sub>
-- [Kaitai Struct 二进制格式描述与解析工具](https://github.com/kaitai-io/kaitai_struct) - 将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。 <sub>工具 · 程序库</sub>
-- [Wireshark 协议分析工具](https://gitlab.com/wireshark/wireshark) - 将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。 <sub>工具</sub>
+- [**DownUnderCTF：masked-squares 校验器**](https://rea.tools/showcase/ctf/) - 官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。 <sub>案例 · REA</sub>
+- [**Ghidra**](https://github.com/NationalSecurityAgency/ghidra) - 开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。 <sub>工具</sub>
+- [**radare2**](https://github.com/radareorg/radare2) - 可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。 <sub>工具</sub>
+- [**Cutter**](https://github.com/rizinorg/cutter) - 基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。 <sub>工具</sub>
+- [**Qiling**](https://github.com/qilingframework/qiling) - 在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。 <sub>工具</sub>
+- [**Unicorn Engine**](https://github.com/unicorn-engine/unicorn) - 多架构 CPU 仿真引擎，可控制寄存器、内存和钩子，执行选定的指令片段。 <sub>工具 · 程序库</sub>
+- [**angr**](https://github.com/angr/angr) - 结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。 <sub>工具 · 程序库</sub>
+- [**LIEF**](https://github.com/lief-project/LIEF) - 对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。 <sub>工具 · 程序库</sub>
+- [**Capstone**](https://github.com/capstone-engine/capstone) - 提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。 <sub>工具 · 程序库</sub>
+- [**ImHex**](https://github.com/WerWolv/ImHex) - 带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。 <sub>工具</sub>
+- [**x64dbg**](https://github.com/x64dbg/x64dbg) - Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。 <sub>工具</sub>
+- [**GDB**](https://sourceware.org/gdb/) - 支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。 <sub>工具</sub>
+- [**rr**](https://github.com/rr-debugger/rr) - 记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。 <sub>工具</sub>
+- [**Diaphora**](https://github.com/joxeankoret/diaphora) - 基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。 <sub>工具</sub>
+- [**BinDiff**](https://github.com/google/bindiff) - 比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。 <sub>工具</sub>
+- [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) - 结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。 <sub>工具</sub>
+- [**objection**](https://github.com/sensepost/objection) - 通过基于 Frida 的命令界面探索运行中的 Android 与 iOS 应用，检查应用存储、内存、运行时对象和插桩后的行为。 <sub>工具</sub>
+- [**r2frida**](https://github.com/nowsecure/r2frida) - 结合 radare2 命令与 Frida 插桩，检查桌面和移动目标中本地或远程进程的内存、符号、类及运行时调用。 <sub>工具</sub>
+- [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct) - 将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。 <sub>工具 · 程序库</sub>
+- [**Wireshark 协议分析工具**](https://gitlab.com/wireshark/wireshark) - 将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。 <sub>工具</sub>
 
 <a id="firmware"></a>
 ### Firmware · 固件与硬件
 
 [↑ 返回目录](#目录)
 
-- [PicoPrint：LX-D02 打印机调查](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程</sub>
-- [Binwalk](https://github.com/ReFirmLabs/binwalk) - 识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。 <sub>工具</sub>
-- [unblob](https://github.com/onekey-sec/unblob) - 递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。 <sub>工具</sub>
-- [Ghidra 固件工具集](https://github.com/al3xtjames/ghidra-firmware-utils) - 面向 PCI Option ROM、UEFI 固件卷、Intel Flash Descriptor 和 coreboot 镜像的 Ghidra 加载器与辅助脚本。 <sub>工具</sub>
-- [EMBA](https://github.com/e-m-b-a/emba) - 提取固件，结合静态检查与仿真分析，整理软件组件清单，并生成 Web 报告和 SBOM，供进一步调查。 <sub>工具</sub>
-- [固件分析与比较工具（FACT）](https://github.com/fkie-cad/FACT_core) - 通过可扩展平台解包和分析固件，使用 Web 界面与 HTTP API 搜索组件内容和分析结果，并比较不同样本。 <sub>工具</sub>
-- [OFRAK](https://github.com/redballoonsecurity/ofrak) - 通过资源树图形界面与 Python API，递归识别、解包、分析、修改和重新打包固件及二进制格式，并可接入可选反汇编后端。 <sub>工具</sub>
-- [FirmAE](https://github.com/pr0v3rbs/FirmAE) - 仿真路由器与 IP 摄像机固件，检查网络服务和运行时行为，提供自动仿真检查，以及独立的分析、运行和调试模式。 <sub>工具</sub>
-- [PulseView 信号与协议分析工具](https://github.com/sigrokproject/pulseview) - 通过 sigrok 的图形前端检查逻辑与模拟波形；协议解码器及分层解码可展示总线消息和更高层的设备操作，便于利用硬件通信记录开展固件与互操作性分析。 <sub>工具</sub>
-- [UEFITool 固件镜像分析工具](https://github.com/LongSoft/UEFITool) - 将 UEFI 固件镜像解析为可检查的树状结构，并检查其结构；配套的 UEFIExtract 与 UEFIFind 可提取解析后的内容、查找模式，辅助分析固件组件与厂商格式。 <sub>工具</sub>
+- [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) - 作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。 <sub>案例 · 混合工具流程</sub>
+- [**Binwalk**](https://github.com/ReFirmLabs/binwalk) - 识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。 <sub>工具</sub>
+- [**unblob**](https://github.com/onekey-sec/unblob) - 递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。 <sub>工具</sub>
+- [**Ghidra 固件工具集**](https://github.com/al3xtjames/ghidra-firmware-utils) - 面向 PCI Option ROM、UEFI 固件卷、Intel Flash Descriptor 和 coreboot 镜像的 Ghidra 加载器与辅助脚本。 <sub>工具</sub>
+- [**EMBA**](https://github.com/e-m-b-a/emba) - 提取固件，结合静态检查与仿真分析，整理软件组件清单，并生成 Web 报告和 SBOM，供进一步调查。 <sub>工具</sub>
+- [**固件分析与比较工具（FACT）**](https://github.com/fkie-cad/FACT_core) - 通过可扩展平台解包和分析固件，使用 Web 界面与 HTTP API 搜索组件内容和分析结果，并比较不同样本。 <sub>工具</sub>
+- [**OFRAK**](https://github.com/redballoonsecurity/ofrak) - 通过资源树图形界面与 Python API，递归识别、解包、分析、修改和重新打包固件及二进制格式，并可接入可选反汇编后端。 <sub>工具</sub>
+- [**FirmAE**](https://github.com/pr0v3rbs/FirmAE) - 仿真路由器与 IP 摄像机固件，检查网络服务和运行时行为，提供自动仿真检查，以及独立的分析、运行和调试模式。 <sub>工具</sub>
+- [**PulseView 信号与协议分析工具**](https://github.com/sigrokproject/pulseview) - 通过 sigrok 的图形前端检查逻辑与模拟波形；协议解码器及分层解码可展示总线消息和更高层的设备操作，便于利用硬件通信记录开展固件与互操作性分析。 <sub>工具</sub>
+- [**UEFITool 固件镜像分析工具**](https://github.com/LongSoft/UEFITool) - 将 UEFI 固件镜像解析为可检查的树状结构，并检查其结构；配套的 UEFIExtract 与 UEFIFind 可提取解析后的内容、查找模式，辅助分析固件组件与厂商格式。 <sub>工具</sub>
 
 <a id="protocol"></a>
 ### Protocols · 协议
 
 [↑ 返回目录](#目录)
 
-- [open-appleremote：Siri Remote 协议重建](https://github.com/a-funk/open-appleremote) - 重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。 <sub>案例 · 独立重建</sub>
-- [GAMEKB-K17：重建宏键盘配置协议](https://github.com/dvdarkin/gamekb-k17) - 实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。 <sub>案例 · 独立重建</sub>
-- [CF632BLE：基于体脂秤协议研究的本地客户端](https://github.com/guyru/cf632ble) - 根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。 <sub>案例 · 独立重建</sub>
-- [cooler-lcd：Thermalright 显示屏协议实现](https://github.com/kristjaningi/cooler-lcd) - 为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。 <sub>案例 · 独立重建</sub>
-- [hw-harness：扫描仪 USB 协议调查](https://github.com/cschalle/hw-harness) - 记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。公开工具负责组织参考采集与比较，并不自动恢复完整协议规范。 <sub>案例 · 独立重建</sub>
-- [Netzob 协议建模与推断框架](https://github.com/netzob/netzob) - 对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。Python API 提供报文字段、符号和自动机，用于解析、流量生成及模糊测试。 <sub>工具</sub>
-- [Scapy 报文分析与构造工具](https://github.com/secdev/scapy) - 使用 Python 编写报文解析、构造、请求／响应匹配及捕获文件分析流程；自定义报文字段与层绑定可将已理解的线格式编码为可操作模型，辅助研究协议行为。 <sub>工具</sub>
+- [**open-appleremote：Siri Remote 协议重建**](https://github.com/a-funk/open-appleremote) - 重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。 <sub>案例 · 独立重建</sub>
+- [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17) - 实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。 <sub>案例 · 独立重建</sub>
+- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble) - 根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。 <sub>案例 · 独立重建</sub>
+- [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) - 为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。 <sub>案例 · 独立重建</sub>
+- [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness) - 记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。公开工具负责组织参考采集与比较，并不自动恢复完整协议规范。 <sub>案例 · 独立重建</sub>
+- [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob) - 对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。Python API 提供报文字段、符号和自动机，用于解析、流量生成及模糊测试。 <sub>工具</sub>
+- [**Scapy 报文分析与构造工具**](https://github.com/secdev/scapy) - 使用 Python 编写报文解析、构造、请求／响应匹配及捕获文件分析流程；自定义报文字段与层绑定可将已理解的线格式编码为可操作模型，辅助研究协议行为。 <sub>工具</sub>
 
 <a id="agents-and-mcp"></a>
 ### Agents & MCP · Agent 与集成
 
 [↑ 返回目录](#目录)
 
-- [REA — Reverse Engineer Anything](https://github.com/morluto/rea) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA</sub>
-- [官方 reverse-engineer-anything 技能](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - 官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。 <sub>集成 · REA</sub>
-- [dsh-mcp-rea](https://github.com/Ersith/dsh-mcp-rea) - 社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。 <sub>集成 · REA</sub>
-- [rea-jev](https://github.com/juan-viox/rea-jev) - Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。 <sub>集成 · REA</sub>
-- [rea-casebook](https://github.com/pablodiazjorge/rea-casebook) - Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。 <sub>集成 · REA</sub>
-- [Hex-Rays IDA MCP](https://github.com/HexRaysSA/ida-mcp) - Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。 <sub>集成 · 独立 MCP</sub>
-- [GhidraMCP](https://github.com/LaurieWired/GhidraMCP) - 通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。 <sub>集成 · 独立 MCP</sub>
-- [Binary Ninja MCP（官方）](https://dev-docs.binary.ninja/guide/mcp.html) - Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。 <sub>集成 · 独立 MCP</sub>
-- [Binary Ninja MCP（fosdickio）](https://github.com/fosdickio/binary_ninja_mcp) - 社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。 <sub>集成 · 独立 MCP</sub>
-- [IDA Pro MCP（mrexodia）](https://github.com/mrexodia/ida-pro-mcp) - 已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。 <sub>集成 · 独立 MCP</sub>
-- [Radare2 MCP Server](https://github.com/radareorg/radare2-mcp) - 基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。 <sub>集成 · 独立 MCP</sub>
-- [r2ai](https://github.com/radareorg/r2ai) - 在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。 <sub>集成 · 独立 Agent</sub>
-- [DAILA](https://github.com/mahaloz/DAILA) - 跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。 <sub>集成 · 独立 Agent</sub>
-- [RevEng.AI Ghidra 插件](https://github.com/RevEngAI/plugin-ghidra) - 将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。 <sub>集成 · 独立 Agent</sub>
-- [LLDB MCP](https://lldb.llvm.org/use/mcp.html) - LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。 <sub>集成 · 独立 MCP</sub>
-- [Claude 逆向工程技能](https://github.com/EncidXVII/claude-reverse-engineering-skill) - 社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。 <sub>集成 · 独立 Agent</sub>
-- [SpecterOps 逆向工程技能](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) - 针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。 <sub>集成 · 独立 Agent</sub>
+- [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea) - REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。 <sub>项目 · REA</sub>
+- [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) - 官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。 <sub>集成 · REA</sub>
+- [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea) - 社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。 <sub>集成 · REA</sub>
+- [**rea-jev**](https://github.com/juan-viox/rea-jev) - Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。 <sub>集成 · REA</sub>
+- [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook) - Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。 <sub>集成 · REA</sub>
+- [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp) - Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。 <sub>集成 · 独立 MCP</sub>
+- [**GhidraMCP**](https://github.com/LaurieWired/GhidraMCP) - 通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。 <sub>集成 · 独立 MCP</sub>
+- [**Binary Ninja MCP（官方）**](https://dev-docs.binary.ninja/guide/mcp.html) - Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。 <sub>集成 · 独立 MCP</sub>
+- [**Binary Ninja MCP（fosdickio）**](https://github.com/fosdickio/binary_ninja_mcp) - 社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。 <sub>集成 · 独立 MCP</sub>
+- [**IDA Pro MCP（mrexodia）**](https://github.com/mrexodia/ida-pro-mcp) - 已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。 <sub>集成 · 独立 MCP</sub>
+- [**Radare2 MCP Server**](https://github.com/radareorg/radare2-mcp) - 基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。 <sub>集成 · 独立 MCP</sub>
+- [**r2ai**](https://github.com/radareorg/r2ai) - 在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。 <sub>集成 · 独立 Agent</sub>
+- [**DAILA**](https://github.com/mahaloz/DAILA) - 跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。 <sub>集成 · 独立 Agent</sub>
+- [**RevEng.AI Ghidra 插件**](https://github.com/RevEngAI/plugin-ghidra) - 将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。 <sub>集成 · 独立 Agent</sub>
+- [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html) - LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。 <sub>集成 · 独立 MCP</sub>
+- [**Claude 逆向工程技能**](https://github.com/EncidXVII/claude-reverse-engineering-skill) - 社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。 <sub>集成 · 独立 Agent</sub>
+- [**SpecterOps 逆向工程技能**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering) - 针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。 <sub>集成 · 独立 Agent</sub>
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
 
 [↑ 返回目录](#目录)
 
-- [Awesome Reverse Engineering](https://github.com/morluto/awesome-reverse-engineering) - REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。 <sub>合集</sub>
-- [Awesome REA Cases](https://github.com/songshikang0111/awesome-REA-cases) - 中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。 <sub>合集</sub>
-- [awesome-rea（yibie）：关注验证的项目与实践报告](https://github.com/yibie/awesome-rea) - 围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。 <sub>合集</sub>
-- [Awesome REA/Decompiled Games：按游戏组织的重建项目目录](https://github.com/HaozheH3/awesome-rea-games) - 按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。 <sub>合集</sub>
+- [**Awesome Reverse Engineering**](https://github.com/morluto/awesome-reverse-engineering) - REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。 <sub>合集</sub>
+- [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases) - 中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。 <sub>合集</sub>
+- [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea) - 围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。 <sub>合集</sub>
+- [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games) - 按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。 <sub>合集</sub>
 
 <a id="references-and-learning"></a>
 ### References & Learning · 文档与学习资料
 
 [↑ 返回目录](#目录)
 
-- [安装与客户端配置](https://github.com/morluto/rea/blob/main/docs/installation.md) - 安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。 <sub>文档 · REA</sub>
-- [CLI 与 Evidence](https://github.com/morluto/rea/blob/main/docs/cli.md) - 保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。 <sub>文档 · REA</sub>
-- [MCP 接口约定与生成目录](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog) - 官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。 <sub>文档 · REA</sub>
-- [原生二进制调查](https://github.com/morluto/rea/blob/main/docs/native-investigation.md) - 从函数清单到指令、伪代码和引用链的原生二进制调查流程。 <sub>文档 · REA</sub>
-- [跨层 JavaScript 应用工作流](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md) - 从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。 <sub>文档 · REA</sub>
-- [Android APK 静态分析](https://github.com/morluto/rea/blob/main/docs/android-analysis.md) - 经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。 <sub>文档 · REA</sub>
-- [托管代码分析](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) - 静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。 <sub>文档 · REA</sub>
-- [历史网站网络记录](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md) - 离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。 <sub>文档 · REA</sub>
-- [固件分析](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) - 用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。 <sub>文档 · REA</sub>
-- [浏览器观察指南](https://rea.tools/guides/browser/) - 通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。 <sub>文档 · REA</sub>
-- [JavaScript 与 Electron：追踪 CSV 导出](https://rea.tools/guides/javascript/) - 官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。 <sub>文档 · REA</sub>
-- [rea-playbook](https://github.com/jinshi666888/rea-playbook) - 提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。 <sub>学习资料</sub>
-- [rea-lab](https://github.com/pablodiazjorge/rea-lab) - Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。 <sub>研究</sub>
-- [OpenSecurityTraining2](https://ost2.fyi/) - 免费的自主学习课程，提供逆向工程、固件和系统基础等学习路线。 <sub>学习资料</sub>
-- [pwn.college：逆向工程](https://pwn.college/program-security/reverse-engineering/) - 包含托管练习的逆向工程课程，覆盖函数、数据访问、静态工具和动态工具。 <sub>学习资料</sub>
-- [逆向工程入门](https://beginners.re/) - Dennis Yurichev 编写的免费逆向入门书，以汇编与编译后程序理解为核心，提供多语言版本。 <sub>学习资料</sub>
-- [radare2 官方手册](https://book.rada.re/) - radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。 <sub>学习资料</sub>
+- [**安装与客户端配置**](https://github.com/morluto/rea/blob/main/docs/installation.md) - 安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。 <sub>文档 · REA</sub>
+- [**CLI 与 Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md) - 保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。 <sub>文档 · REA</sub>
+- [**MCP 接口约定与生成目录**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog) - 官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。 <sub>文档 · REA</sub>
+- [**原生二进制调查**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md) - 从函数清单到指令、伪代码和引用链的原生二进制调查流程。 <sub>文档 · REA</sub>
+- [**跨层 JavaScript 应用工作流**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md) - 从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。 <sub>文档 · REA</sub>
+- [**Android APK 静态分析**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md) - 经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。 <sub>文档 · REA</sub>
+- [**托管代码分析**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md) - 静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。 <sub>文档 · REA</sub>
+- [**历史网站网络记录**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md) - 离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。 <sub>文档 · REA</sub>
+- [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) - 用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。 <sub>文档 · REA</sub>
+- [**浏览器观察指南**](https://rea.tools/guides/browser/) - 通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。 <sub>文档 · REA</sub>
+- [**JavaScript 与 Electron：追踪 CSV 导出**](https://rea.tools/guides/javascript/) - 官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。 <sub>文档 · REA</sub>
+- [**rea-playbook**](https://github.com/jinshi666888/rea-playbook) - 提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。 <sub>学习资料</sub>
+- [**rea-lab**](https://github.com/pablodiazjorge/rea-lab) - Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。 <sub>研究</sub>
+- [**OpenSecurityTraining2**](https://ost2.fyi/) - 免费的自主学习课程，提供逆向工程、固件和系统基础等学习路线。 <sub>学习资料</sub>
+- [**pwn.college：逆向工程**](https://pwn.college/program-security/reverse-engineering/) - 包含托管练习的逆向工程课程，覆盖函数、数据访问、静态工具和动态工具。 <sub>学习资料</sub>
+- [**逆向工程入门**](https://beginners.re/) - Dennis Yurichev 编写的免费逆向入门书，以汇编与编译后程序理解为核心，提供多语言版本。 <sub>学习资料</sub>
+- [**radare2 官方手册**](https://book.rada.re/) - radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。 <sub>学习资料</sub>
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

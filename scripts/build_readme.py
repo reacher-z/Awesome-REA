@@ -174,7 +174,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
             name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
             description = plain_text(record[f'description_{language}'])
             metadata = plain_text(entry_type(record, language))
-            lines.append(f"- [{name}]({record['url']}) - {description} <sub>{metadata}</sub>")
+            lines.append(f"- [**{name}**]({record['url']}) - {description} <sub>{metadata}</sub>")
         lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
