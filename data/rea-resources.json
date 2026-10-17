@@ -392,7 +392,7 @@
     "relationship": "community-learning-resource",
     "description_en": "An Electron practice target, Evidence extractor and MCP probe; offline fixture mode is distinguished from real REA analysis.",
     "description_zh": "提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。",
-    "evidence_url": "https://github.com/jinshi666888/rea-playbook/blob/main/README.md",
+    "evidence_url": "https://github.com/jinshi666888/rea-playbook/blob/0ad65a85139025f32402be13ed64c8003e39b00a/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
     "requirements": [
@@ -412,7 +412,7 @@
     "relationship": "community-integration",
     "description_en": "A community MCP bridge presents a smaller selected tool surface and forwards explicit commands to the REA CLI.",
     "description_zh": "社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。",
-    "evidence_url": "https://github.com/Ersith/dsh-mcp-rea/blob/main/README.md",
+    "evidence_url": "https://github.com/Ersith/dsh-mcp-rea/blob/74e82f09e3f78fc945e07321d729e2e6b56406a8/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
     "requirements": [
@@ -437,7 +437,7 @@
     "relationship": "community-integration",
     "description_en": "A Claude Code plugin adds Jev-based routing and evidence checks around a pinned REA MCP integration.",
     "description_zh": "Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。",
-    "evidence_url": "https://github.com/juan-viox/rea-jev/blob/main/README.md",
+    "evidence_url": "https://github.com/juan-viox/rea-jev/blob/b30536e8b284ceabd8fc3a2d5bcb61630f876ff3/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
     "requirements": [
@@ -459,8 +459,8 @@
     "relationship": "community-learning-resource",
     "description_en": "A Windows REA/Ghidra lab with seeded challenges, published studies, upstream contributions and recorded limitations.",
     "description_zh": "Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。",
-    "evidence_url": "https://github.com/pablodiazjorge/rea-lab/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/pablodiazjorge/rea-lab/blob/c96b76b75046fc884b8d7526205f1adb9497a5d7/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "The documented environment uses Windows 11, REA 6.4.0 and Ghidra 12.1.4.",
@@ -480,7 +480,7 @@
     "relationship": "community-integration",
     "description_en": "A Claude Code mod collects received REA Evidence, tracks unknowns and records findings that cite delivered evidence IDs.",
     "description_zh": "Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。",
-    "evidence_url": "https://github.com/pablodiazjorge/rea-casebook/blob/main/README.md",
+    "evidence_url": "https://github.com/pablodiazjorge/rea-casebook/blob/311c29688c82048971b2ef86df59e0ed78310fd8/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
     "requirements": [
@@ -524,7 +524,7 @@
     "relationship": "upstream-maintainer-companion-list",
     "description_en": "A task-oriented reverse-engineering resource list by REA's maintainer, useful for broader tools and foundations.",
     "description_zh": "REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。",
-    "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/main/README.md",
+    "evidence_url": "https://github.com/morluto/awesome-reverse-engineering/blob/c93a95169d94de9c1e9f39de0f4c865b48c7a9ed/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
     "requirements": [
@@ -548,7 +548,7 @@
     "relationship": "community-learning-resource",
     "description_en": "A bilingual collection of REA and other AI-assisted reverse engineering cases, with source links and explicit distinctions between reported and reproduced outcomes.",
     "description_zh": "中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。",
-    "evidence_url": "https://github.com/songshikang0111/awesome-REA-cases/blob/main/README.md",
+    "evidence_url": "https://github.com/songshikang0111/awesome-REA-cases/blob/305da967206912faebb096fab8fba60ffca27842/README.md",
     "verified_at": "2026-10-16T01:08:16Z",
     "verification": "source-reviewed",
     "requirements": "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it.",
