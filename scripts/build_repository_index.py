@@ -9,7 +9,7 @@ from artifact_links import with_curated_labels
 from build_readme import plain_text
 from catalog import ROOT, load_resources
 from localization import localized_records, read_localizations
-from source_scope import apply_scope, read_scope
+from source_scope import apply_scope, exclusion_counts, read_scope, unavailable_clause
 from source_descriptions import description_fallback
 
 OUTPUT = ROOT / 'docs/repositories'
@@ -35,6 +35,7 @@ def rendered_files():
     localized = localized_records(scanned, read_localizations(ROOT))
     scoped = with_curated_labels(apply_scope(localized, read_scope(ROOT)), load_resources())
     records = [record for record in scoped if record.get('scope_status') != 'excluded']
+    out_of_scope, unavailable = exclusion_counts(scoped)
     groups = defaultdict(list)
     for record in records:
         if record['category'] not in CATEGORIES:
@@ -45,13 +46,13 @@ def rendered_files():
     for language, suffix, index in [('en', '', 0), ('zh', '.zh-CN', 1)]:
         zh = language == 'zh'
         title = '仓库扫描索引' if zh else 'Scanned Repository Index'
-        intro = (f'从 **{len(scanned):,}** 个已读取 README 的仓库中提供 **{len(records):,}** 个浏览条目；**{len(scanned)-len(records)}** 个明确超出范围的条目保留在原始扫描记录中。'
-                 if zh else f'Browse **{len(records):,}** repositories from **{len(scanned):,}** successful README scans. **{len(scanned)-len(records)}** clearly out-of-scope entries remain in the underlying scan record.')
+        intro = (f'从 **{len(scanned):,}** 个已读取 README 的仓库中提供 **{len(records):,}** 个浏览条目；**{out_of_scope}** 个明确超出范围的条目{unavailable_clause(unavailable, zh, "**")}保留在原始扫描记录中。'
+                 if zh else f'Browse **{len(records):,}** repositories from **{len(scanned):,}** successful README scans. **{out_of_scope}** clearly out-of-scope entries{unavailable_clause(unavailable, zh, "**")} remain in the underlying scan record.')
         note = ('这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。'
                 if zh else 'These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.')
-        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {len(scanned)-len(records)} 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。', '',
+        summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {out_of_scope} 个条目{unavailable_clause(unavailable, zh)}保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项运行验证。', '',
                     '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
-                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {len(scanned)-len(records)} clearly out-of-scope entries remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
+                   if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {out_of_scope} clearly out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
                                '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
         root_name = f'README{suffix}.md'
         root_text = (ROOT / root_name).read_text(encoding='utf-8')

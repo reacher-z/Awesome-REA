@@ -1,5 +1,5 @@
 """Keep collection scope decisions separate from the original README scan."""
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 import json
 from pathlib import Path
 import re
@@ -13,6 +13,80 @@ FIELDS = {
 # A copy decision cites the one retained scan whose README bytes it shares.
 DUPLICATE_README_REASON = 'duplicate-readme-copy'
 SOURCE_ID_MENTION = r'(?<![A-Za-z0-9-])scan-[0-9]+(?![0-9])'
+# A gone or reassigned upstream is bound to a scripts/source_availability.py result
+# instead of a README URL that no longer serves, or never served, the scanned bytes.
+UNAVAILABLE_UPSTREAM_REASON = 'upstream-unavailable'
+UNAVAILABLE_FIELDS = FIELDS - {'evidence_url'} | {'availability_check'}
+CHECK_FIELDS = {'id', 'recorded_full_name', 'observed_at', 'outcome', 'http_status',
+                'recorded_name_status', 'recorded_name_http_status'}
+# Only outcomes whose ID lookup failed qualify: (ID lookup statuses, accepted recorded-name lookups).
+UNAVAILABLE_OUTCOMES = {
+    'not-found': ({404, 410}, {('not-found', 404), ('not-found', 410)}),
+    'blocked': ({451}, {('not-found', 404), ('not-found', 410), ('inconclusive', 451)}),
+    'name-reassigned': ({404, 410}, {('other-repository', 200)}),
+}
+
+
+def timestamp(value):
+    """Parse a timezone-aware ISO timestamp, or return None."""
+    try:
+        parsed = datetime.fromisoformat(value.replace('Z', '+00:00')) if isinstance(value, str) else None
+    except ValueError:
+        return None
+    return parsed if parsed is not None and parsed.tzinfo is not None else None
+
+
+def validate_availability(identifier, entry, source, reviewed, errors):
+    """Accept an unavailable-upstream decision only with a recheck that found the scanned ID unresolved."""
+    prefix = f'{identifier}: {UNAVAILABLE_UPSTREAM_REASON}'
+    check = entry.get('availability_check')
+    if not isinstance(check, dict):
+        errors.append(f'{prefix} requires an availability_check recheck result')
+        return
+    outcome = check.get('outcome')
+    if outcome not in UNAVAILABLE_OUTCOMES:
+        errors.append(f'{prefix} requires a recheck outcome in which the scanned ID no longer resolves')
+        return
+    expected = set(CHECK_FIELDS)
+    if check.get('recorded_name_status') == 'inconclusive':
+        expected.add('recorded_name_reason')
+    if outcome == 'name-reassigned':
+        expected |= {'recorded_name_repository_id', 'recorded_name_current_full_name'}
+    if set(check) != expected:
+        errors.append(f'{prefix} availability_check has missing or unknown fields')
+        return
+    if check['id'] != identifier or (source is not None and check['recorded_full_name'] != source.get('full_name')):
+        errors.append(f'{prefix} availability_check must name the scanned ID and recorded repository name')
+    id_statuses, name_lookups = UNAVAILABLE_OUTCOMES[outcome]
+    if type(check['http_status']) is not int or check['http_status'] not in id_statuses:
+        errors.append(f'{prefix} ID lookup status does not match the {outcome} outcome')
+    if (type(check['recorded_name_http_status']) is not int
+            or (check['recorded_name_status'], check['recorded_name_http_status']) not in name_lookups):
+        errors.append(f'{prefix} recorded-name lookup does not match the {outcome} outcome')
+    mentions = [identifier[5:], f'HTTP {check["http_status"]}', str(check['recorded_full_name'])]
+    if outcome == 'name-reassigned':
+        other = check['recorded_name_repository_id']
+        current = check['recorded_name_current_full_name']
+        if not isinstance(other, str) or not re.fullmatch(r'scan-[1-9][0-9]*', other) or other == identifier:
+            errors.append(f'{prefix} must record the other repository ID that now holds the recorded name')
+        else:
+            mentions.append(other[5:])
+        if not isinstance(current, str) or current.casefold() != str(check['recorded_full_name']).casefold():
+            errors.append(f'{prefix} must record the recorded name as the other repository\'s current name')
+    checked = timestamp(check['observed_at'])
+    scanned = timestamp(source.get('observed_at')) if source is not None else None
+    if checked is None:
+        errors.append(f'{prefix} recheck observed_at must be a timezone-aware timestamp')
+        return
+    checked_day = checked.astimezone(timezone.utc).date()
+    if scanned is not None and checked <= scanned:
+        errors.append(f'{prefix} recheck must follow the README scan')
+    if reviewed is not None and (checked_day > reviewed if type(reviewed) is date else checked > reviewed):
+        errors.append(f'{prefix} recheck must precede the review')
+    mentions.append(checked_day.isoformat())
+    for field in ('reason_en', 'reason_zh'):
+        if isinstance(entry.get(field), str) and not all(mention in entry[field] for mention in mentions):
+            errors.append(f'{prefix} {field} must state the check date, repository IDs, ID lookup status and recorded name')
 
 
 def read_scope(root=ROOT):
@@ -48,11 +122,12 @@ def validate_scope(records, scope, errors):
         if not isinstance(entry, dict):
             errors.append(f'{identifier}: scope decision must be an object')
             continue
-        if set(entry) != FIELDS:
+        reason_code = entry.get('reason_code')
+        unavailable = reason_code == UNAVAILABLE_UPSTREAM_REASON
+        if set(entry) != (UNAVAILABLE_FIELDS if unavailable else FIELDS):
             errors.append(f'{identifier}: scope decision has missing or unknown fields')
         if entry.get('decision') != 'exclude':
             errors.append(f'{identifier}: unsupported scope decision')
-        reason_code = entry.get('reason_code')
         if not isinstance(reason_code, str) or not re.fullmatch(r'[a-z][a-z0-9]*(?:-[a-z0-9]+)*', reason_code):
             errors.append(f'{identifier}: invalid scope reason_code')
         for field in ('reason_en', 'reason_zh'):
@@ -68,7 +143,7 @@ def validate_scope(records, scope, errors):
                 errors.append(f'{identifier}: scope decision requires a successful README scan')
             if digest != source.get('readme_sha256'):
                 errors.append(f'{identifier}: scope README hash differs from the scanned snapshot')
-            if entry.get('evidence_url') != source.get('readme_url'):
+            if not unavailable and entry.get('evidence_url') != source.get('readme_url'):
                 errors.append(f'{identifier}: scope evidence URL differs from the scanned README URL')
         if reason_code == DUPLICATE_README_REASON:
             cited = [set(re.findall(SOURCE_ID_MENTION, entry[field])) if isinstance(entry.get(field), str) else set()
@@ -79,16 +154,18 @@ def validate_scope(records, scope, errors):
             elif (related is None or related.get('scan_status') != 'readme-scanned'
                   or related.get('readme_sha256') != digest):
                 errors.append(f'{identifier}: {DUPLICATE_README_REASON} must cite a scanned source with the same README hash')
-        reviewed_at = entry.get('reviewed_at')
+        reviewed_at, reviewed = entry.get('reviewed_at'), None
         try:
             if not isinstance(reviewed_at, str):
                 raise ValueError
             if re.fullmatch(r'\d{4}-\d{2}-\d{2}', reviewed_at):
-                date.fromisoformat(reviewed_at)
-            elif datetime.fromisoformat(reviewed_at.replace('Z', '+00:00')).tzinfo is None:
+                reviewed = date.fromisoformat(reviewed_at)
+            elif (reviewed := timestamp(reviewed_at)) is None:
                 raise ValueError
         except ValueError:
             errors.append(f'{identifier}: scope reviewed_at must be an ISO date or timezone-aware timestamp')
+        if unavailable:
+            validate_availability(identifier, entry, source, reviewed, errors)
 
 
 def apply_scope(records, scope):
@@ -106,3 +183,19 @@ def apply_scope(records, scope):
             record['scope_review'] = dict(entry)
         result.append(record)
     return result
+
+
+def exclusion_counts(records):
+    """Split annotated exclusions into (out of scope, upstream no longer available)."""
+    reasons = [(record.get('scope_review') or {}).get('reason_code') for record in records
+               if record.get('scope_status') == 'excluded']
+    unavailable = reasons.count(UNAVAILABLE_UPSTREAM_REASON)
+    return len(reasons) - unavailable, unavailable
+
+
+def unavailable_clause(count, zh, mark=''):
+    """Name unavailable upstreams after the out-of-scope count; they are not out of scope."""
+    if not count:
+        return ''
+    number = f'{mark}{count:,}{mark}'
+    return f'及 {number} 个上游仓库已无法访问的条目' if zh else f' and {number} whose upstream repository is no longer available'

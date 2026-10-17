@@ -47,17 +47,20 @@ def recorded_name_lookup(api, full_name, identifier):
     try:
         repo = api.json('/repos/' + quote(full_name, safe='/'))
     except ScanError as error:
+        status = {'recorded_name_http_status': error.status}
         if error.status in (404, 410):
-            return {'recorded_name_status': 'not-found'}
-        return {'recorded_name_status': 'inconclusive', 'recorded_name_reason': error.reason}
+            return {'recorded_name_status': 'not-found', **status}
+        return {'recorded_name_status': 'inconclusive', 'recorded_name_reason': error.reason, **status}
+    # The client returns a body only for a successful response, which this endpoint sends as 200.
+    status = {'recorded_name_http_status': 200}
     if isinstance(repo, dict) and repository_ineligibility(repo) in HIDDEN_REASONS:
-        return {'recorded_name_status': 'private'}
+        return {'recorded_name_status': 'private', **status}
     public = public_repository(repo)
     if public is None:
-        return {'recorded_name_status': 'inconclusive', 'recorded_name_reason': 'invalid-repository-metadata'}
+        return {'recorded_name_status': 'inconclusive', 'recorded_name_reason': 'invalid-repository-metadata', **status}
     if public[0] == identifier:
-        return {'recorded_name_status': 'redirects-to-scanned-id'}
-    return {'recorded_name_status': 'other-repository', 'recorded_name_repository_id': public[0],
+        return {'recorded_name_status': 'redirects-to-scanned-id', **status}
+    return {'recorded_name_status': 'other-repository', **status, 'recorded_name_repository_id': public[0],
             'recorded_name_current_full_name': public[1]}
 
 

@@ -166,7 +166,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(retried.element('source-error').hidden, true);
     assert.deepEqual(shownNames(retried), ['valid/one', 'valid/two']);
     assert.equal(retried.element('source-status').textContent, '2 repositories');
-    assert.match(retried.element('source-snapshot').textContent, /Scanned 3 repositories; 1 outside this collection’s scope are omitted/);
+    assert.match(retried.element('source-snapshot').textContent, /Scanned 3 repositories; 1 outside this collection’s scope or no longer available upstream are omitted/);
   }
 
   // Related entries keep only exact detail or listing links for paper and curated slugs, once each.

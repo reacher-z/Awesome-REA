@@ -282,7 +282,7 @@ def review_data(contents, changed):
                     errors.append(f'{SOURCE_SCOPE}: expected valid JSON without duplicate keys.')
                 else:
                     validate_scope(data['resources'], scope, errors)
-                    reviewed.append('Source-scope exclusions checked against repository IDs, README hashes, evidence links, dates, and bilingual reasons.')
+                    reviewed.append('Source-scope exclusions checked against repository IDs, README hashes, evidence links or availability rechecks, dates, and bilingual reasons.')
     return errors, reviewed
 
 

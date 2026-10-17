@@ -103,9 +103,11 @@ class OutcomeTests(unittest.TestCase):
     def test_missing_and_blocked_ids_are_distinguished(self):
         entry, _ = self.check(scan(1377172300, 'newliver666/apk-reverse'), {
             '/repositories/1377172300': gone(404), '/repos/newliver666/apk-reverse': gone(404)})
-        self.assertEqual((entry['outcome'], entry['recorded_name_status']), ('not-found', 'not-found'))
+        self.assertEqual((entry['outcome'], entry['recorded_name_status'], entry['recorded_name_http_status']),
+                         ('not-found', 'not-found', 404))
         entry, _ = self.check(scan(12, 'owner/tool'), {'/repositories/12': gone(451), '/repos/owner/tool': gone(451)})
-        self.assertEqual((entry['outcome'], entry['http_status'], entry['recorded_name_status']), ('blocked', 451, 'inconclusive'))
+        self.assertEqual((entry['outcome'], entry['http_status'], entry['recorded_name_status'], entry['recorded_name_http_status']),
+                         ('blocked', 451, 'inconclusive', 451))
 
     def test_archived_and_fork_repositories_are_ineligible(self):
         entry, _ = self.check(scan(13, 'owner/tool'), {'/repositories/13': repo(13, 'owner/tool', archived=True)})
@@ -128,7 +130,7 @@ class OutcomeTests(unittest.TestCase):
             '/repositories/17': gone(404), '/repos/owner/tool': repo(99, 'secret/name', private=True)})
         self.assertEqual((entry['outcome'], entry['recorded_name_status']), ('not-found', 'private'))
         self.assertNotIn('secret', json.dumps(entry))
-        self.assertNotIn('99', json.dumps(entry))
+        self.assertNotIn('99', json.dumps({key: value for key, value in entry.items() if key != 'observed_at'}))
 
     def test_rate_limits_server_and_network_failures_are_inconclusive_never_not_found(self):
         for error in (ScanError('http-403', 403), ScanError('http-429', 429), ScanError('http-503', 503),

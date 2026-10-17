@@ -12,6 +12,7 @@ from build_discovery_pages import collection_page_schema, jsonld_script
 from open_graph import open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
+from source_scope import exclusion_counts, unavailable_clause
 
 CATEGORY_ICONS = {
     'web-analysis': 'globe', 'game-analysis': 'gamepad', 'android': 'phone',
@@ -110,6 +111,7 @@ def build_browse_pages(
 
     scanned = [record for record in source_document.get('resources', []) if record.get('scan_status') == 'readme-scanned']
     records = [record for record in scanned if record.get('scope_status') != 'excluded']
+    out_of_scope, unavailable = exclusion_counts(scanned)
     identifiers = [record['id'] for record in records]
     if len(identifiers) != len(set(identifiers)):
         raise ValueError('Duplicate repository IDs in browse pages')
@@ -135,8 +137,8 @@ def build_browse_pages(
         root_link = '/zh/' if zh else '/'
         search_link = '/zh/?view=source-index' if zh else '/?view=source-index&amp;lang=en'
         curated_link = '/zh/resources/' if zh else '/resources/'
-        scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{len(scanned)-len(records)} 个超出范围的条目仍保留在完整 JSON 中。'
-                      if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {len(scanned)-len(records)} out-of-scope records remain in the full JSON.')
+        scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}仍保留在完整 JSON 中。'
+                      if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {out_of_scope} out-of-scope records{unavailable_clause(unavailable, zh)} remain in the full JSON.')
         provenance = ('这是自动发现的仓库索引，未逐项精选或运行验证。分类依据元数据；简介提供 AI 辅助中英翻译。星标为采集时快照。'
                       if zh else 'This automatically discovered repository index has not been individually curated or execution-tested. Categories come from metadata; descriptions have AI-assisted translations. Stars are collection-time snapshots.')
         for category in (None, *CATEGORIES):

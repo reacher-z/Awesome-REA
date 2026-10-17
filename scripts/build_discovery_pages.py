@@ -13,6 +13,7 @@ from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta
+from source_scope import exclusion_counts, unavailable_clause
 
 
 # The upstream project that the collection's name echoes.
@@ -279,6 +280,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         raise ValueError('Duplicate curated IDs in discovery pages')
     scanned = [record for record in (source_index or {}).get('resources', []) if record.get('scan_status') == 'readme-scanned']
     excluded = sum(record.get('scope_status') == 'excluded' for record in scanned)
+    out_of_scope, unavailable = exclusion_counts(scanned)
     browse_count = len(scanned) - excluded
     paper_path = site_dir / 'papers.json'
     papers = json.loads(paper_path.read_text(encoding='utf-8')) if paper_path.is_file() else []
@@ -341,8 +343,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         path = prefix + '/about/'
         title = '关于合集与数据来源' if zh else 'About the collection and its sources'
         description = ('AwesomeREA.org 是独立的逆向工程资源合集，收录工具、项目、案例和参考资料。' if zh else 'AwesomeREA.org is an independent collection of reverse-engineering tools, projects, case studies, and references.')
-        summary = (f'{len(resources):,} 项精选资源；{len(scanned):,} 个实际读取 README 的仓库；{browse_count:,} 个可浏览条目。{excluded} 个超出范围的条目保留在完整扫描数据中。'
-                   if zh else f'{len(resources):,} curated resources; {len(scanned):,} repositories whose READMEs were fetched; {browse_count:,} browsable entries. The {excluded} out-of-scope entries remain in the complete scan data.')
+        summary = (f'{len(resources):,} 项精选资源；{len(scanned):,} 个实际读取 README 的仓库；{browse_count:,} 个可浏览条目。{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}保留在完整扫描数据中。'
+                   if zh else f'{len(resources):,} curated resources; {len(scanned):,} repositories whose READMEs were fetched; {browse_count:,} browsable entries. The {out_of_scope} out-of-scope entries{unavailable_clause(unavailable, zh)} remain in the complete scan data.')
         if papers:
             summary += (f' 研究论文目录单独整理 {len(papers):,} 篇论文，其中 {overlapping_papers:,} 篇也收录于这 {len(resources):,} 项精选资源。上述数量不能相加作为独立项目总数。'
                         if zh else f' The paper bibliography lists {len(papers):,} papers; {overlapping_papers:,} of these also appear among the {len(resources):,} curated resources. Do not sum these counts as unique projects.')
