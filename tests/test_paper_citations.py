@@ -86,6 +86,30 @@ class ContainerMetadataTests(unittest.TestCase):
         self.assertFalse({'volume', 'number', 'pages', 'eid', 'publisher', 'series'} & set(journal))
 
 
+class ReviewedContainerRecordTests(unittest.TestCase):
+    def test_reviewed_records_export_their_cited_containers(self):
+        redraw = fields(bibtex_text(PAPERS['paper-redraw']))
+        self.assertEqual((redraw['journal'], redraw['volume'], redraw['number'], redraw['pages']),
+                         ('{IEEE Transactions on Software Engineering}', '{46}', '{2}', '{196--221}'))
+        declarui = fields(bibtex_text(PAPERS['paper-declarui']))
+        self.assertEqual((declarui['journal'], declarui['volume'], declarui['number'], declarui['pages'], declarui['eid']),
+                         ('{Proceedings of the ACM on Software Engineering}', '{2}', '{FSE}', '{219--241}', '{FSE011}'))
+        self.assertEqual((declarui['doi'], declarui['eprint'], declarui['archivePrefix']),
+                         ('{10.1145/3715726}', '{2409.11667}', '{arXiv}'))
+
+    def test_only_reviewed_records_carry_container_metadata(self):
+        expected = {'paper-dire', 'paper-resym', 'paper-redraw', 'paper-declarui', 'paper-fuzzware',
+                    'paper-firmae', 'paper-vision2web', 'paper-ui2code', 'paper-worldcoder',
+                    'paper-jsdeobsbench', 'paper-cascade', 'paper-dcgen', 'paper-code-world-models',
+                    'paper-stateinspector', 'paper-halucinator'}
+        self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
+        for identifier in sorted(PAPERS.keys() - expected):
+            # Records without verified container metadata keep the short venue label.
+            with self.subTest(paper=identifier):
+                entry = fields(bibtex_text(PAPERS[identifier]))
+                self.assertFalse({'volume', 'number', 'series', 'pages', 'eid', 'publisher'} & set(entry))
+
+
 class ArxivLocatorTests(unittest.TestCase):
     def test_preprints_print_their_arxiv_identifier_in_classic_styles(self):
         for identifier, record in PAPERS.items():

@@ -118,6 +118,14 @@
     "arxiv_version_reviewed": "v2",
     "first_arxiv_date": "2019-09-19",
     "doi": "10.1109/ASE.2019.00064",
+    "citation": {
+      "container_title": "2019 34th IEEE/ACM International Conference on Automated Software Engineering (ASE)",
+      "pages": "628-639",
+      "publisher": "IEEE",
+      "sources": [
+        "https://api.crossref.org/works/10.1109/ASE.2019.00064"
+      ]
+    },
     "url": "https://doi.org/10.1109/ASE.2019.00064",
     "pdf_url": "https://arxiv.org/pdf/1909.09029",
     "code_url": "https://github.com/pcyin/dire",
@@ -218,6 +226,14 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": null,
     "doi": "10.1145/3658644.3670340",
+    "citation": {
+      "container_title": "Proceedings of the 2024 on ACM SIGSAC Conference on Computer and Communications Security",
+      "pages": "4554-4568",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3658644.3670340"
+      ]
+    },
     "url": "https://doi.org/10.1145/3658644.3670340",
     "pdf_url": "https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf",
     "code_url": "https://github.com/lt-asset/resym",
@@ -982,6 +998,16 @@
     "arxiv_version_reviewed": "v2",
     "first_arxiv_date": "2018-02-07",
     "doi": "10.1109/TSE.2018.2844788",
+    "citation": {
+      "container_title": "IEEE Transactions on Software Engineering",
+      "volume": "46",
+      "issue": "2",
+      "pages": "196-221",
+      "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+      "sources": [
+        "https://api.crossref.org/works/10.1109/TSE.2018.2844788"
+      ]
+    },
     "code_url": null,
     "project_url": "https://www.android-dev-tools.com/redraw",
     "targets": [
@@ -1029,6 +1055,18 @@
     "publication_status": "journal-article",
     "arxiv_id": "2409.11667",
     "doi": "10.1145/3715726",
+    "citation": {
+      "container_title": "Proceedings of the ACM on Software Engineering",
+      "volume": "2",
+      "issue": "FSE",
+      "pages": "219-241",
+      "article_number": "FSE011",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3715726",
+        "https://xinyi-hou.github.io/files/zhou2024bridging.pdf"
+      ]
+    },
     "url": "https://doi.org/10.1145/3715726",
     "pdf_url": "https://xinyi-hou.github.io/files/zhou2024bridging.pdf",
     "code_url": "https://github.com/security-pride/DeclarUI",
@@ -1217,6 +1255,14 @@
     "date_basis_zh": "采用 USENIX 官方论文集引用中的出版月份，不推定具体出版日。",
     "venue": "USENIX Security 2022",
     "doi": null,
+    "citation": {
+      "container_title": "31st USENIX Security Symposium (USENIX Security 22)",
+      "pages": "1239-1256",
+      "publisher": "USENIX Association",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski"
+      ]
+    },
     "url": "https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski",
     "pdf_url": "https://www.usenix.org/system/files/sec22-scharnowski.pdf",
     "code_url": "https://github.com/fuzzware-fuzzer/fuzzware",
@@ -1270,6 +1316,14 @@
     "date_basis_zh": "采用 ACM 在 Crossref 登记的印刷出版日期；在线出版日期在元数据说明中单独记录。",
     "venue": "ACSAC 2020",
     "doi": "10.1145/3427228.3427294",
+    "citation": {
+      "container_title": "Annual Computer Security Applications Conference",
+      "pages": "733-745",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3427228.3427294"
+      ]
+    },
     "url": "https://doi.org/10.1145/3427228.3427294",
     "pdf_url": "https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf",
     "code_url": "https://github.com/pr0v3rbs/FirmAE",
@@ -1476,6 +1530,16 @@
     "arxiv_version_reviewed": "v3",
     "first_arxiv_date": "2026-03-27",
     "doi": null,
+    "citation": {
+      "container_title": "Proceedings of the 43rd International Conference on Machine Learning",
+      "volume": "306",
+      "series": "Proceedings of Machine Learning Research",
+      "pages": "41393-41415",
+      "publisher": "PMLR",
+      "sources": [
+        "https://proceedings.mlr.press/v306/he26n.html"
+      ]
+    },
     "url": "https://proceedings.mlr.press/v306/he26n.html",
     "pdf_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26n/he26n.pdf",
     "code_url": "https://github.com/zai-org/Vision2Web",
@@ -1524,6 +1588,14 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": null,
     "doi": "10.1145/3180155.3180240",
+    "citation": {
+      "container_title": "Proceedings of the 40th International Conference on Software Engineering",
+      "pages": "665-676",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3180155.3180240"
+      ]
+    },
     "url": "https://doi.org/10.1145/3180155.3180240",
     "pdf_url": "https://chunyang-chen.github.io/publication/ui2code.pdf",
     "code_url": "https://github.com/ccywch/UI2code",
@@ -1625,6 +1697,15 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": "2024-02-19",
     "doi": "10.52202/079017-2243",
+    "citation": {
+      "container_title": "Advances in Neural Information Processing Systems",
+      "volume": "37",
+      "pages": "70148-70212",
+      "sources": [
+        "https://papers.nips.cc/paper_files/paper/2024/hash/820c61a0cd419163ccbd2c33b268816e-Abstract-Conference.html",
+        "https://api.crossref.org/works/10.52202/079017-2243"
+      ]
+    },
     "url": "https://papers.nips.cc/paper_files/paper/2024/hash/820c61a0cd419163ccbd2c33b268816e-Abstract-Conference.html",
     "pdf_url": "https://papers.neurips.cc/paper_files/paper/2024/file/820c61a0cd419163ccbd2c33b268816e-Paper-Conference.pdf",
     "code_url": "https://github.com/haotang1995/WorldCoder",
@@ -1735,6 +1816,14 @@
     "arxiv_version_reviewed": "v1",
     "first_arxiv_date": "2025-06-25",
     "doi": "10.1145/3719027.3744871",
+    "citation": {
+      "container_title": "Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security",
+      "pages": "36-50",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3719027.3744871"
+      ]
+    },
     "url": "https://doi.org/10.1145/3719027.3744871",
     "pdf_url": "https://arxiv.org/pdf/2506.20170v1",
     "code_url": "https://github.com/Ch3nYe/JsDeObsBench",
@@ -1784,6 +1873,14 @@
     "arxiv_version_reviewed": "v2",
     "first_arxiv_date": "2025-07-23",
     "doi": "10.1145/3786583.3786873",
+    "citation": {
+      "container_title": "Proceedings of the IEEE/ACM 48th International Conference on Software Engineering: Software Engineering in Practice",
+      "pages": "292-302",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3786583.3786873"
+      ]
+    },
     "url": "https://doi.org/10.1145/3786583.3786873",
     "pdf_url": "https://arxiv.org/pdf/2507.17691v2",
     "code_url": "https://github.com/google/jsir",
@@ -1837,6 +1934,18 @@
     "arxiv_version_reviewed": "v3",
     "first_arxiv_date": "2024-06-24",
     "doi": "10.1145/3729364",
+    "citation": {
+      "container_title": "Proceedings of the ACM on Software Engineering",
+      "volume": "2",
+      "issue": "FSE",
+      "pages": "2099-2122",
+      "article_number": "FSE094",
+      "publisher": "Association for Computing Machinery (ACM)",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3729364",
+        "https://arxiv.org/pdf/2406.16386v3"
+      ]
+    },
     "url": "https://doi.org/10.1145/3729364",
     "pdf_url": "https://arxiv.org/pdf/2406.16386v3",
     "code_url": "https://github.com/WebPAI/DCGen",
@@ -2043,6 +2152,15 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": "2024-05-24",
     "doi": "10.52202/079017-1933",
+    "citation": {
+      "container_title": "Advances in Neural Information Processing Systems",
+      "volume": "37",
+      "pages": "60429-60474",
+      "sources": [
+        "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html",
+        "https://api.crossref.org/works/10.52202/079017-1933"
+      ]
+    },
     "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html",
     "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf",
     "code_url": "https://github.com/nicoladainese96/code-world-models",
@@ -2101,6 +2219,14 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": null,
     "doi": "10.1145/3548606.3559365",
+    "citation": {
+      "container_title": "Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security",
+      "pages": "2265-2278",
+      "publisher": "ACM",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3548606.3559365"
+      ]
+    },
     "url": "https://doi.org/10.1145/3548606.3559365",
     "pdf_url": "https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf",
     "code_url": "https://github.com/ChrisMcMStone/state-inspector",
@@ -2156,6 +2282,14 @@
     "arxiv_version_reviewed": null,
     "first_arxiv_date": null,
     "doi": null,
+    "citation": {
+      "container_title": "29th USENIX Security Symposium (USENIX Security 20)",
+      "pages": "1201-1218",
+      "publisher": "USENIX Association",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity20/presentation/clements"
+      ]
+    },
     "url": "https://www.usenix.org/conference/usenixsecurity20/presentation/clements",
     "pdf_url": "https://www.usenix.org/system/files/sec20-clements.pdf",
     "code_url": "https://github.com/embedded-sec/halucinator",
