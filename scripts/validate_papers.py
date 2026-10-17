@@ -62,6 +62,8 @@ def has_reviewed_publisher_identity(record, evidence):
 
     This checks a source-review contract, not publication authenticity. Additional
     publisher profiles require review; a software-artifact DOI is not a paper ID.
+    WOOT 19 final PDFs use a reviewed underscore form outside conference/woot19/;
+    suffixed copies such as woot19-paper_oflynn_0.pdf need their own exact review.
     """
     if record.get('publication_status') != 'conference-paper':
         return False
@@ -74,10 +76,12 @@ def has_reviewed_publisher_identity(record, evidence):
     if not match or type(record.get('year')) is not int:
         return False
     series, year, presenter = match.groups()
-    expected_pdf = (
-        f'https://www.usenix.org/system/files/sec{year}-{presenter}.pdf'
-        if series == 'usenixsecurity' else
-        f'https://www.usenix.org/system/files/conference/woot{year}/woot{year}-paper-{presenter}.pdf')
+    if series == 'usenixsecurity':
+        expected_pdf = f'https://www.usenix.org/system/files/sec{year}-{presenter}.pdf'
+    elif year == '19':
+        expected_pdf = f'https://www.usenix.org/system/files/woot19-paper_{presenter}.pdf'
+    else:
+        expected_pdf = f'https://www.usenix.org/system/files/conference/woot{year}/woot{year}-paper-{presenter}.pdf'
     return (record['year'] == 2000 + int(year)
             and pdf == expected_pdf
             and landing in evidence and pdf in evidence)

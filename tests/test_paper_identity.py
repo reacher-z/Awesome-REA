@@ -40,7 +40,70 @@ def workshop_paper():
     return record
 
 
+def woot19_paper():
+    record = publisher_paper()
+    record.update(year=2019, publication_date='2019-08', venue='WOOT 19',
+                  url='https://www.usenix.org/conference/woot19/presentation/pohl',
+                  pdf_url='https://www.usenix.org/system/files/woot19-paper_pohl.pdf')
+    record['evidence_urls'] = [record['url'], record['pdf_url']]
+    return record
+
+
 class PaperIdentityTests(unittest.TestCase):
+    def test_woot19_accepts_only_its_exact_underscore_final_pdf(self):
+        record = woot19_paper()
+        self.assertEqual(errors_for([record]), [])
+        self.assertTrue(bibtex_text(record).startswith('@inproceedings{'))
+        self.assertNotIn('identifier', scholarly_article(record, 'en'))
+        for pdf in (
+            'https://www.usenix.org/system/files/woot19-paper_noack.pdf',
+            'https://www.usenix.org/system/files/woot18-paper_pohl.pdf',
+            'https://www.usenix.org/system/files/woot19-paper_pohl_0.pdf',
+            'https://www.usenix.org/system/files/woot19-paper_pohl-0.pdf',
+            'https://www.usenix.org/system/files/woot19-paper-pohl.pdf',
+            'https://www.usenix.org/system/files/woot19-slides_pohl.pdf',
+            'https://www.usenix.org/system/files/conference/woot19/woot19-paper-pohl.pdf',
+            'https://www.usenix.org/system/files/conference/woot19/woot19-paper_pohl.pdf',
+        ):
+            with self.subTest(pdf=pdf):
+                altered = deepcopy(record)
+                altered['pdf_url'] = pdf
+                altered['evidence_urls'][1] = pdf
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([altered])))
+
+    def test_woot19_variant_needs_matching_series_year_and_evidence(self):
+        cases = []
+        for year, landing, pdf in (
+            (2018, 'https://www.usenix.org/conference/woot18/presentation/pohl',
+             'https://www.usenix.org/system/files/woot19-paper_pohl.pdf'),
+            (2018, 'https://www.usenix.org/conference/woot18/presentation/kleber',
+             'https://www.usenix.org/system/files/woot18-paper_kleber.pdf'),
+            (2020, 'https://www.usenix.org/conference/woot20/presentation/pohl',
+             'https://www.usenix.org/system/files/woot20-paper_pohl.pdf'),
+            (2019, 'https://www.usenix.org/conference/usenixsecurity19/presentation/pohl',
+             'https://www.usenix.org/system/files/woot19-paper_pohl.pdf'),
+            (2019, 'https://www.usenix.org/conference/woot19/presentation/oflynn',
+             'https://www.usenix.org/system/files/woot19-paper_oflynn_0.pdf'),
+        ):
+            record = woot19_paper()
+            record.update(year=year, publication_date=f'{year}-08', url=landing, pdf_url=pdf)
+            record['evidence_urls'] = [landing, pdf]
+            cases.append(record)
+        for year in (2018, 2020):
+            record = woot19_paper()
+            record.update(year=year, publication_date=f'{year}-08')
+            cases.append(record)
+        for evidence in ([woot19_paper()['url']], [woot19_paper()['pdf_url']],
+                         [woot19_paper()['url'], woot19_paper()['pdf_url'] + '?download=1']):
+            record = woot19_paper()
+            record['evidence_urls'] = evidence
+            cases.append(record)
+        for record in cases:
+            with self.subTest(url=record['url'], pdf=record['pdf_url'], year=record['year'],
+                              evidence=record['evidence_urls']):
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([record])))
+
+
     def test_workshop_publication_has_its_own_exact_final_pdf_profile(self):
         record = workshop_paper()
         self.assertEqual(errors_for([record]), [])
