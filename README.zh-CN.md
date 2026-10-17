@@ -249,7 +249,7 @@
 
   <sub>**范围与限制:** 推理阶段禁止检查二进制内容、反编译和访问互联网。通过有限测试不能证明完整行为等价或恢复了原始源码。实时榜单中的后续运行结果应与所审阅 arXiv 版本的结果区分。</sub>
 
-- [CREBench：评估大语言模型的密码二进制逆向工程能力](https://arxiv.org/abs/2604.03750) - 通过 432 个受控挑战，评估密码二进制逆向中的算法识别、密钥或 IV 提取、包装层重建及标志恢复。 <sub>**2026 · COLM 2026 · 已接收** · Baicheng Chen 等 · [PDF](https://arxiv.org/pdf/2604.03750) · [代码](https://github.com/wangyu-ovo/CREBench)</sub>
+- [CREBench：评估大语言模型的密码二进制逆向工程能力](https://openreview.net/forum?id=tLYdf8hWJB) - 通过 432 个受控挑战，评估密码二进制逆向中的算法识别、密钥或 IV 提取、包装层重建及标志恢复。 <sub>**2026 · COLM 2026 · 会议论文** · Baicheng Chen 等 · [PDF](https://arxiv.org/pdf/2604.03750v2) · [代码](https://github.com/wangyu-ovo/CREBench)</sub>
 
   <sub>**范围与限制:** 语料组合 48 种算法、三类不安全密钥使用场景和三个难度等级。它不覆盖 Tigress、O-LLVM 等专业混淆器，结果不应推广到任意重度保护的二进制文件。</sub>
 
@@ -263,19 +263,19 @@
 
   <sub>**范围与限制:** 该工作研究函数级反编译。重新执行测试覆盖 HumanEval、MBPP；GitHub2025 未提供单元测试。内联可能使二进制与源码无法一一对应，微调实验仅使用 10% 的语料。这些结果不能证明整程序恢复能力。</sub>
 
-- [LLM4Decompile：使用大语言模型反编译二进制代码](https://aclanthology.org/2024.emnlp-main.203/) - 训练语言模型将汇编反编译为 C，并改进 Ghidra 伪代码，以恢复函数能否重新编译并正确执行为评估目标。 <sub>**2024 · EMNLP 2024 · 会议论文** · Hanzhuo Tan 等 · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [代码](https://github.com/albertan017/LLM4Decompile)</sub>
-
-  <sub>**范围与限制:** 论文实验限定于 x86 平台的 C 代码和函数级基准。通过抽样测试重新执行，不代表整程序等价或恢复了原始源码。仓库后续版本应与 2024 年论文区分。</sub>
-
 - [ReSym：利用大语言模型恢复去符号二进制中的变量与数据结构符号](https://doi.org/10.1145/3658644.3670340) - 结合两个微调语言模型与基于 Prolog 的跨函数推理，从去符号二进制的反编译结果中推断局部变量符号及用户自定义数据结构。 <sub>**2024 · ACM CCS 2024 · 会议论文** · Danning Xie 等 · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [代码](https://github.com/lt-asset/resym)</sub>
 
   <sub>**范围与限制:** 该方法依赖底层反编译结果及针对 C/C++ 数据学习的预测。交叉检查可减少预测冲突，但不能证明恢复的名称或布局与缺失源码完全一致。公开研究产物包含模型、处理后的数据与评估代码。</sub>
+
+- [LLM4Decompile：使用大语言模型反编译二进制代码](https://aclanthology.org/2024.emnlp-main.203/) - 训练语言模型将汇编反编译为 C，并改进 Ghidra 伪代码，以恢复函数能否重新编译并正确执行为评估目标。 <sub>**2024 · EMNLP 2024 · 会议论文** · Hanzhuo Tan 等 · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [代码](https://github.com/albertan017/LLM4Decompile)</sub>
+
+  <sub>**范围与限制:** 论文实验限定于 x86 平台的 C 代码和函数级基准。通过抽样测试重新执行，不代表整程序等价或恢复了原始源码。仓库后续版本应与 2024 年论文区分。</sub>
 
 - [利用学习得到的变量名称与类型增强反编译输出](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin) - 提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。 <sub>**2022 · USENIX Security 2022 · 会议论文** · Qibin Chen 等 · [PDF](https://arxiv.org/pdf/2108.06363) · [代码](https://github.com/CMUSTRUDEL/DIRTY)</sub>
 
   <sub>**范围与限制:** 原始流程围绕 C 程序和 Hex-Rays 输出构建。预测名称与类型是模型推断，不保证与原始符号一致。正式论文发表于 2022 年，arXiv 预印本首次提交于 2021 年。</sub>
 
-- [DIRE：基于神经网络的反编译标识符命名方法](https://arxiv.org/abs/1909.09029) - 结合反编译输出中的词法与结构信息预测有意义的变量名，并使用编译 C 项目构建训练和评估语料。 <sub>**2019 · ASE 2019 · 会议论文** · Jeremy Lacomis 等 · [PDF](https://arxiv.org/pdf/1909.09029) · [代码](https://github.com/pcyin/dire)</sub>
+- [DIRE：基于神经网络的反编译标识符命名方法](https://doi.org/10.1109/ASE.2019.00064) - 结合反编译输出中的词法与结构信息预测有意义的变量名，并使用编译 C 项目构建训练和评估语料。 <sub>**2019 · ASE 2019 · 会议论文** · Jeremy Lacomis 等 · [PDF](https://arxiv.org/pdf/1909.09029) · [代码](https://github.com/pcyin/dire)</sub>
 
   <sub>**范围与限制:** 该工作研究学习式标识符命名，并非完整源码重建或自主智能体。报告结果针对 x86-64 C 代码语料，并依赖反编译器输出。原作者仓库已标记弃用，并指向后续项目。</sub>
 
