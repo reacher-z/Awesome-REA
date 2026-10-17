@@ -1973,5 +1973,53 @@
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-wireless-protocol-re",
+    "title": "Automatic Wireless Protocol Reverse Engineering",
+    "title_zh": "无线协议自动逆向工程",
+    "authors": [
+      "Johannes Pohl",
+      "Andreas Noack"
+    ],
+    "year": 2019,
+    "publication_date": "2019-08",
+    "date_precision": "month",
+    "date_basis": "The official USENIX BibTeX entry identifies August 2019 for the WOOT 19 workshop publication.",
+    "date_basis_zh": "USENIX 官方 BibTeX 将 WOOT 19 研讨会论文的出版月份列为2019年8月。",
+    "venue": "13th USENIX Workshop on Offensive Technologies (WOOT 19)",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "url": "https://www.usenix.org/conference/woot19/presentation/pohl",
+    "pdf_url": "https://www.usenix.org/system/files/woot19-paper_pohl.pdf",
+    "code_url": "https://github.com/jopohl/urh",
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Infers message formats of proprietary wireless protocols from demodulated physical-layer captures: it aligns messages by preamble and sync word, then uses RSSI and dedicated engines to label length, address, sequence-number and checksum fields, optionally using known addresses or field positions.",
+    "description_zh": "从解调后的物理层捕获数据推断专有无线协议的报文格式：先依据前导码和同步字对齐报文，再结合 RSSI 与专用引擎标注长度、地址、序列号和校验和字段，并可利用已知地址或字段位置等先验信息。",
+    "scope_limitations_en": "Only message formats are inferred: preamble, sync, length, address, sequence number and checksum. State-machine inference and payload fields, such as an on/off bit, are out of scope. The method assumes length-efficient binary messages with one preamble and sync word each. Accuracy is measured on 8 generated protocols; 3 real smart-home captures (EnOcean, Homematic BidCoS and an eQ-3 protocol used by RWE Smarthome) serve for performance tests, which the authors call a limited test set.",
+    "scope_limitations_zh": "仅推断报文格式，即前导码、同步字、长度、地址、序列号和校验和；协议状态机推断以及开关位等载荷字段不在研究范围内。方法假设报文为紧凑的二进制格式，且每条报文只有一个前导码和同步字。准确率在 8 个生成协议上评测；3 份真实智能家居捕获（EnOcean、Homematic BidCoS 及 RWE Smarthome 使用的 eQ-3 协议）用于性能测试，作者也承认这是有限的测试集。",
+    "why_fits_en": "Extends protocol inference from network-message traces to physical-layer wireless captures, with the field-labeling method implemented in a public analysis tool.",
+    "why_fits_zh": "将协议推断从网络报文轨迹扩展到物理层无线捕获数据，其字段标注方法已集成到公开的分析工具中。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/woot19/presentation/pohl",
+      "https://www.usenix.org/system/files/woot19-paper_pohl.pdf",
+      "https://www.usenix.org/biblio/export/bibtex/238586",
+      "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/README.md",
+      "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/LICENSE",
+      "https://github.com/jopohl/urh/tree/1403d92987cc3d01d41aff64250955ce455dabd2/src/urh/awre",
+      "https://github.com/jopohl/urh/releases/tag/v2.10.0"
+    ],
+    "metadata_notes": "The official USENIX page, its BibTeX entry and the final PDF verify this workshop paper; no DOI or arXiv identifier was verified. The final PDF uses the WOOT 19 underscore path, and the conference/woot19 form returns 404. The PDF carries an Artifact Evaluated 'Passed' badge. The paper names Universal Radio Hacker as its implementation, and the URH README links its automatic field inference to this paper. At the pinned commit the GPL-3.0 repository is archived, its inference code is in src/urh/awre, and the latest release is v2.10.0. URH's WOOT 18 tool paper is a separate publication.",
+    "metadata_notes_zh": "USENIX 官方页面、其中的 BibTeX 条目和正式 PDF 确认了这篇研讨会论文；尚未核实 DOI 或 arXiv 标识。正式 PDF 采用 WOOT 19 的下划线路径，conference/woot19 形式的地址返回 404。PDF 带有 Artifact Evaluated “Passed”（工件评估通过）标志。论文指明其实现位于 Universal Radio Hacker 中，URH README 也将自动字段推断功能链接到本文。固定提交中该 GPL-3.0 仓库已归档，推断代码位于 src/urh/awre，最新发行版为 v2.10.0。URH 自身的 WOOT 18 工具论文是另一篇独立发表的论文。",
+    "kind": "research",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
