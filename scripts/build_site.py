@@ -17,7 +17,7 @@ from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_entry_pages import build_entry_pages
 from build_manifest import write_build_manifest
-from homepage_locales import localized_homepage
+from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
 from source_browser import write_source_browser
 from localization import read_localizations, localized_records
@@ -213,7 +213,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for key, value in {"BROWSE_COUNT": metadata["source_index"]["resource_count"], "SCANNED_COUNT": metadata["source_index"].get("scanned_count", 0), "PAPER_COUNT": len(papers)}.items():
         html = html.replace("{{" + key + "}}", f"{value:,}")
-    navigation = [("browse", "Repository directory"), ("resources", "Curated resources"), ("papers", "Research papers"), ("about", "About the collection")]
+    navigation = [(path, names[0]) for path, names in HOMEPAGE_DESTINATIONS.items()]
     structured = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebSite", "@id": SITE_URL + "/#website", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "alternateName": "Awesome REA", "inLanguage": ["en", "zh-CN"]},
         {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "An independent collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}

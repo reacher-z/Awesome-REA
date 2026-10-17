@@ -12,6 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, TARGETS, collection_section
+from open_graph import open_graph_meta
 
 
 SECTIONS = {
@@ -161,6 +162,10 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
                    else '<span class="icon browse-github-fallback" aria-hidden="true">GH</span>')
     language_link = '' if noindex else f'<a class="browse-language" href="{counterpart}" lang="{("en" if zh else "zh-CN")}" hreflang="{("en" if zh else "zh-CN")}">{globe_icon}<span>{("English" if zh else "简体中文")}</span></a>'
     prefix = '/zh' if zh else ''
+    # The bilingual 404 template has no canonical address or language counterpart.
+    social = open_graph_meta(language=language, title=title + ' · AwesomeREA.org', description=description,
+                             image_url=site_url + assets['social'],
+                             url=None if noindex else canonical, paired=not noindex)
     footer = ('原创说明和代码采用 MIT 许可；上游描述与链接项目保留各自的许可。' if zh
               else 'Original editorial content and code: MIT. Upstream descriptions and linked projects retain their own licenses.')
     return f'''<!doctype html>
@@ -172,18 +177,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <title>{escape(title)} · AwesomeREA.org</title>
   <meta name="description" content="{escape(description, quote=True)}">
   {metadata}
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AwesomeREA.org">
-  <meta property="og:locale" content="{('zh_CN' if zh else 'en_US')}">
-  <meta property="og:title" content="{escape(title, quote=True)} · AwesomeREA.org">
-  <meta property="og:description" content="{escape(description, quote=True)}">
-  <meta property="og:url" content="{_url(canonical)}">
-  <meta property="og:image" content="{_url(site_url + assets['social'])}">
-  <meta property="og:image:alt" content="{escape(title, quote=True)}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{escape(title, quote=True)} · AwesomeREA.org">
-  <meta name="twitter:description" content="{escape(description, quote=True)}">
-  <meta name="twitter:image" content="{_url(site_url + assets['social'])}">
+  {social}
   <link rel="icon" href="{assets['favicon']}" type="image/svg+xml">
   <link rel="stylesheet" href="{assets['styles']}">
   <link rel="stylesheet" href="{assets['browse']}">

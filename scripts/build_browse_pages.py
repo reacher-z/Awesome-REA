@@ -9,6 +9,7 @@ import shutil
 from urllib.parse import urlsplit
 
 from build_discovery_pages import collection_page_schema, jsonld_script
+from open_graph import open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
 
@@ -194,19 +195,7 @@ def build_browse_pages(
   <link rel="alternate" hreflang="en" href="{english_url}">
   <link rel="alternate" hreflang="zh-CN" href="{chinese_url}">
   <link rel="alternate" hreflang="x-default" href="{english_url}">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AwesomeREA.org">
-  <meta property="og:locale" content="{('zh_CN' if zh else 'en_US')}">
-  <meta property="og:locale:alternate" content="{('en_US' if zh else 'zh_CN')}">
-  <meta property="og:title" content="{escape(title, quote=True)}">
-  <meta property="og:description" content="{escape(description, quote=True)}">
-  <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{escape(social_image_href, quote=True)}">
-  <meta property="og:image:alt" content="{escape(title, quote=True)}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{escape(title, quote=True)}">
-  <meta name="twitter:description" content="{escape(description, quote=True)}">
-  <meta name="twitter:image" content="{escape(social_image_href, quote=True)}">
+  {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{escape(favicon_href, quote=True)}" type="image/svg+xml">
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
   <link rel="stylesheet" href="{escape(browse_styles_href, quote=True)}">

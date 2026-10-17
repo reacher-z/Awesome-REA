@@ -10,6 +10,8 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
+from open_graph import open_graph_meta
+
 STATUS_LABELS = {
     'conference-paper': ('Conference paper', '会议论文'),
     'conference-accepted': ('Conference accepted', '会议已接收'),
@@ -73,14 +75,21 @@ def bibtex_text(paper: dict) -> str:
         ('year', str(paper['year'])),
         ('url', paper['url']),
     ]
-    if kind == 'inproceedings':
-        fields.append(('booktitle', literal(paper['venue'])))
-    elif kind == 'article':
-        fields.append(('journal', literal(paper['venue'])))
-    elif paper['publication_status'] == 'conference-accepted':
-        fields.append(('note', literal('Accepted at ' + paper['venue'] + '; exact proceedings date not verified')))
+    # Container fields come only from the publisher metadata cited in `citation`;
+    # without it, published entries keep the short venue label.
+    container = paper.get('citation') or {}
+    if kind in {'inproceedings', 'article'}:
+        fields.append(('booktitle' if kind == 'inproceedings' else 'journal', literal(container.get('container_title') or paper['venue'])))
+        for key, field in (('volume', 'volume'), ('issue', 'number'), ('series', 'series'), ('pages', 'pages'),
+                           ('article_number', 'eid'), ('publisher', 'publisher')):
+            if container.get(key):
+                fields.append((field, literal(container[key]).replace('-', '--') if key == 'pages' else literal(container[key])))
     else:
-        fields.append(('note', 'Preprint'))
+        # plain.bst and plainnat.bst ignore eprint, so misc entries also print the arXiv locator.
+        if paper.get('arxiv_id'):
+            fields.append(('howpublished', 'arXiv:' + paper['arxiv_id']))
+        # Review caveats stay on the paper page; the reference states only the status.
+        fields.append(('note', literal('Accepted to ' + paper['venue']) if paper['publication_status'] == 'conference-accepted' else 'Preprint'))
     if paper.get('doi'):
         fields.append(('doi', paper['doi']))
     if paper.get('arxiv_id'):
@@ -274,18 +283,7 @@ def build_paper_pages(
   <link rel="alternate" hreflang="en" href="{site_url}/papers/">
   <link rel="alternate" hreflang="zh-CN" href="{site_url}/zh/papers/">
   <link rel="alternate" hreflang="x-default" href="{site_url}/papers/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="AwesomeREA.org">
-  <meta property="og:locale" content="{('zh_CN' if zh else 'en_US')}">
-  <meta property="og:title" content="{title}">
-  <meta property="og:description" content="{escape(description, quote=True)}">
-  <meta property="og:url" content="{canonical}">
-  <meta property="og:image" content="{escape(social_image_href, quote=True)}">
-  <meta property="og:image:alt" content="{title}">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{title}">
-  <meta name="twitter:description" content="{escape(description, quote=True)}">
-  <meta name="twitter:image" content="{escape(social_image_href, quote=True)}">
+  {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{escape(favicon_href, quote=True)}" type="image/svg+xml">
   <link rel="stylesheet" href="{escape(styles_href, quote=True)}">
   <link rel="stylesheet" href="{escape(papers_styles_href, quote=True)}">

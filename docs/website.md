@@ -5,6 +5,7 @@
 ## Source and generated files
 
 - [site/](../site/) contains the dependency-free HTML, CSS, JavaScript, favicon and social image. Update the SVG and PNG together when the illustration changes.
+- [open_graph.py](../scripts/open_graph.py) writes the Open Graph and Twitter card tags for the homepage and every generated page, with the image type and size read from `social-card.png` and a localized description of the card as its alt text. The 404 page has no `og:url`.
 - [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json) are the resource sources. Keep bilingual descriptions, evidence links, prerequisites, review dates and target labels accurate.
 - [translations.zh-CN.json](../site/translations.zh-CN.json) supplies Chinese resource names and prerequisites. New records also need translations here.
 - [topics.i18n.json](../site/topics.i18n.json) supplies bilingual display labels for common repository topics. Canonical upstream topic IDs remain intact for links and exact filtering.
@@ -69,6 +70,8 @@ python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea
 The website uses **Cloudflare Pages**. Keep this collection's source public; `Awesome-REA/awesome-rea.github.io` is reserved for **private artifact backups**, independently of the hosting service. Confirm its visibility when maintaining that backup. GitHub Free for organizations supports Pages from public repositories; private-repository Pages requires a qualifying paid plan. [GitHub Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
 
 For automatic deployment, connect the public source repository through Pages Git integration, select the production branch, use the asset-URL build command above, and set the output directory to `dist`. The build starts at the repository root and needs Python 3.10+. Git integration can build and deploy pushed changes without storing a separate deployment token in this repository. Confirm the deployed commit and domain state after configuring the integration. [Official Git integration instructions](https://developers.cloudflare.com/pages/get-started/git-integration/).
+
+[site/_headers](../site/_headers) adds site-wide security headers: a Content Security Policy, `X-Frame-Options: DENY`, a Permissions Policy that disables unused device features, and HSTS with a 30-day `max-age`. The policy allows only same-origin scripts, styles, images and JSON requests, plus the icon stylesheet and fonts from `https://awesome-rea.pages.dev`; `validate_site.py` fails the build if a page adds inline code, inline styles, frames or another asset origin. Cloudflare's same-origin email-decoding script is allowed. Enabling Web Analytics, Zaraz, JavaScript detections or any other injected script requires updating the policy first. `includeSubDomains` and `preload` need an owner decision about every subdomain before they are added.
 
 ## Direct Upload for the icon origin or a manual deployment
 

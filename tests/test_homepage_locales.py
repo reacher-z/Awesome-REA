@@ -7,7 +7,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from homepage_locales import localized_homepage, _Document, _ui_strings, _zh_repository_paths
+from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage, _Document, _ui_strings, _zh_repository_paths
+from open_graph import SOCIAL_IMAGE_ALT, open_graph_meta
 
 APP = (ROOT / 'site/app.js').read_text()
 TEMPLATE = (ROOT / 'site/index.html').read_text()
@@ -45,6 +46,7 @@ def fixture():
 <meta property="og:description" content="Old"><meta property="og:locale" content="en_US">
 <meta property="og:url" content="{ORIGIN}/"><meta name="twitter:title" content="Old">
 <meta name="twitter:description" content="Old"><meta property="og:image:alt" content="Old">
+<meta property="og:image" content="{ORIGIN}/social-card.png?v=abc">
 <link rel="stylesheet" href="styles.css?v=abc"><link rel="icon" href="./favicon.svg">
 <script type="application/ld+json">{schema}</script><script src="app.js?v=abc" defer></script>
 <script>window.neverExecuted = "preserved";</script></head><body>
@@ -125,7 +127,46 @@ class HomepageLocaleTests(unittest.TestCase):
         page = after['@graph'][1]
         self.assertEqual((page['url'], page['@id'], page['inLanguage']), (ORIGIN + '/zh/', ORIGIN + '/zh/#collection', 'zh-CN'))
         self.assertEqual(page['mainEntity']['itemListElement'][0]['url'], ORIGIN + '/zh/papers/#paper-example')
-        self.assertEqual(page['mainEntity']['itemListElement'][0]['name'], _ui_strings(APP)['zh']['directoryPapers'])
+        self.assertEqual(page['mainEntity']['itemListElement'][0]['name'], HOMEPAGE_DESTINATIONS['papers'][1])
+
+    def test_social_block_is_the_shared_generator_output(self):
+        for lang in ('en', 'zh'):
+            with self.subTest(language=lang):
+                html = localized_homepage(fixture(), APP, lang)
+                strings = _ui_strings(APP)[lang]
+                home = ORIGIN + ('/zh/' if lang == 'zh' else '/')
+                self.assertIn(open_graph_meta(language=lang, title=strings['pageTitle'], description=strings['pageDescription'],
+                                              image_url=ORIGIN + '/social-card.png?v=abc', url=home), html)
+                social = [n['attrs'] for n in nodes(html, 'meta')
+                          if (n['attrs'].get('property') or n['attrs'].get('name') or '').startswith(('og:', 'twitter:'))]
+                keys = [attrs.get('property') or attrs.get('name') for attrs in social]
+                self.assertEqual(len(keys), len(set(keys)), 'Template social tags must not survive beside the shared block')
+                meta = {key: attrs['content'] for key, attrs in zip(keys, social)}
+                self.assertEqual(meta['og:image:alt'], SOCIAL_IMAGE_ALT[lang])
+                self.assertNotEqual(meta['og:image:alt'], strings['pageTitle'])
+                self.assertEqual((meta['og:locale'], meta['og:locale:alternate']),
+                                 ('zh_CN', 'en_US') if lang == 'zh' else ('en_US', 'zh_CN'))
+                self.assertEqual((meta['og:image:width'], meta['og:image:height'], meta['og:image:type']), ('1200', '630', 'image/png'))
+        with self.assertRaises(ValueError):
+            localized_homepage(fixture().replace('<meta property="og:image" content="' + ORIGIN + '/social-card.png?v=abc">', ''), APP, 'en')
+
+    def test_itemlist_names_are_destination_titles_not_link_text(self):
+        template = TEMPLATE.replace('</head>', '<script type="application/ld+json">' + json.dumps({
+            '@context': 'https://schema.org', '@graph': [{'@type': 'CollectionPage', '@id': ORIGIN + '/#collection', 'url': ORIGIN + '/',
+            'mainEntity': {'@type': 'ItemList', 'numberOfItems': 4, 'itemListElement': [
+                {'@type': 'ListItem', 'position': index, 'name': 'Old', 'url': f'{ORIGIN}/{path}/'}
+                for index, path in enumerate(HOMEPAGE_DESTINATIONS, 1)]}}]}) + '</script></head>')
+        for lang in ('en', 'zh'):
+            html = localized_homepage(template, APP, lang)
+            schema = json.loads(content(html, next(n for n in nodes(html, 'script') if n['attrs'].get('type') == 'application/ld+json')))
+            items = schema['@graph'][0]['mainEntity']['itemListElement']
+            prefix = ORIGIN + ('/zh' if lang == 'zh' else '')
+            self.assertEqual([(item['position'], item['url']) for item in items],
+                             [(index, f'{prefix}/{path}/') for index, path in enumerate(HOMEPAGE_DESTINATIONS, 1)])
+            names = [item['name'] for item in items]
+            self.assertEqual(names, [labels[lang == 'zh'] for labels in HOMEPAGE_DESTINATIONS.values()])
+            self.assertFalse(set(names) & set(_ui_strings(APP)[lang].values()))
+            self.assertFalse(any(arrow in name for name in names for arrow in '↗↓→'))
 
     def test_navigation_fragments_and_selected_language(self):
         html = localized_homepage(fixture(), APP, 'zh')

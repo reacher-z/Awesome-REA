@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import KIND_LABELS, RELATIONSHIPS
 from validate import validate_resources
-from validate_papers import FIELDS as PAPER_FIELDS, STATUSES as PAPER_STATUSES
+from validate_papers import FIELDS as PAPER_FIELDS, OPTIONAL_FIELDS as OPTIONAL_PAPER_FIELDS, STATUSES as PAPER_STATUSES
 
 # Issue-form labels and the record values a maintainer records for them.
 PAPER_FORM_STATUSES = {
@@ -63,7 +63,7 @@ class ContributorReferenceTests(unittest.TestCase):
             for field in re.findall(r'`([a-z_]+)`', cells[0]):
                 self.assertNotIn(field, rows, field + ' is documented twice')
                 rows[field] = cells[1]
-        self.assertEqual(set(rows), PAPER_FIELDS)
+        self.assertEqual(set(rows), PAPER_FIELDS | OPTIONAL_PAPER_FIELDS)
         self.assertEqual(set(re.findall(r'`([a-z-]+)`', rows['publication_status'])), PAPER_STATUSES)
         self.assertEqual(re.findall(r'`([a-z]+)`', rows['date_precision']), ['year', 'month', 'day'])
         for field in ('doi', 'arxiv_id', 'arxiv_version_reviewed', 'first_arxiv_date',

@@ -1,3 +1,10 @@
+# Site-wide security headers. The policy allows same-origin scripts, styles, images and JSON
+# fetches, plus the licensed icon stylesheet and fonts served from awesome-rea.pages.dev.
+/*
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self' https://awesome-rea.pages.dev; font-src 'self' https://awesome-rea.pages.dev; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=2592000
 /fonts/*
   Access-Control-Allow-Origin: *
 /fontawesome.css

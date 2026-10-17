@@ -5,6 +5,16 @@ import json
 import re
 from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 
+from open_graph import open_graph_meta
+
+# Homepage ItemList names: each destination page's H1, not the arrowed link text.
+HOMEPAGE_DESTINATIONS = {
+    'browse': ('Browse repositories by category', '按分类浏览仓库'),
+    'resources': ('Curated reverse engineering resources', '精选逆向工程资源'),
+    'papers': ('Papers & benchmarks', '论文与评测基准'),
+    'about': ('About the collection and its sources', '关于合集与数据来源'),
+}
+
 
 class _Strings:
     """A deliberately small parser: objects, quoted strings, comments, trailing commas."""
@@ -236,7 +246,6 @@ def localized_homepage(html, app_source, language):
             if '@id' in result:
                 result['@id'] = home + ('#' + urlsplit(result['@id']).fragment if '#' in result['@id'] else '')
             items = result.get('mainEntity', {}).get('itemListElement', []) if isinstance(result.get('mainEntity'), dict) else []
-            labels = {'browse': 'browseDirectory', 'resources': 'curatedMode', 'papers': 'directoryPapers', 'about': 'directoryAbout'}
             for item in items:
                 if isinstance(item, dict) and isinstance(item.get('url'), str):
                     parsed = urlsplit(item['url'])
@@ -244,9 +253,23 @@ def localized_homepage(html, app_source, language):
                         continue
                     path = parsed.path.removeprefix('/zh').strip('/')
                     item['url'] = _locale_url(item['url'], origin, language)
-                    if path in labels:
-                        item['name'] = translated(labels[path])
+                    if path in HOMEPAGE_DESTINATIONS:
+                        item['name'] = HOMEPAGE_DESTINATIONS[path][language == 'zh']
         return result
+
+    # The template's social tags are replaced by the block every generator shares.
+    social = [n for n in document.nodes if n['tag'] == 'meta' and (
+        (n['attrs'].get('property') or '').startswith('og:') or (n['attrs'].get('name') or '').startswith('twitter:'))]
+    images = [n['attrs'].get('content') for n in social if n['attrs'].get('property') == 'og:image']
+    if len(images) != 1 or not images[0]:
+        raise ValueError('Homepage needs exactly one og:image URL')
+
+    def own_line(node):
+        """Span a tag with its indentation and newline when it is alone on its line."""
+        start = html.rfind('\n', 0, node['start']) + 1
+        if html[start:node['start']].strip() or html[node['end']:node['end'] + 1] != '\n':
+            return node['start'], node['end']
+        return start, node['end'] + 1
 
     for node in document.nodes:
         tag, original = node['tag'], node['attrs']
@@ -254,6 +277,12 @@ def localized_homepage(html, app_source, language):
         if tag == 'link' and attrs.get('rel') == 'alternate' and 'hreflang' in attrs:
             end = node['end'] + int(html[node['end']:node['end'] + 1] == '\n')
             edits.append((node['start'], end, '')); continue
+        if social and node is social[0]:
+            edits.append((node['start'], node['end'], open_graph_meta(
+                language=language, title=translated('pageTitle'), description=translated('pageDescription'),
+                image_url=images[0], url=home))); continue
+        if any(node is other for other in social):
+            edits.append((*own_line(node), '')); continue
         if tag == 'html': attrs['lang'] = locale
         if node is canonical_nodes[0]: attrs['href'] = home
         if tag == 'title': edits.append((node['inner'], node['close'], escape(translated('pageTitle'))))
@@ -261,12 +290,8 @@ def localized_homepage(html, app_source, language):
             edits.append((node['inner'], node['close'], _markup(translated(attrs['data-i18n']))))
         for marker, target in [('data-i18n-placeholder', 'placeholder'), ('data-i18n-aria', 'aria-label')]:
             if marker in attrs: attrs[target] = translated(attrs[marker])
-        if tag == 'meta':
-            key = attrs.get('name') or attrs.get('property')
-            if key in {'description', 'og:description', 'twitter:description'}: attrs['content'] = translated('pageDescription')
-            elif key in {'og:title', 'twitter:title', 'og:image:alt', 'twitter:image:alt'}: attrs['content'] = translated('pageTitle')
-            elif key == 'og:locale': attrs['content'] = 'zh_CN' if language == 'zh' else 'en_US'
-            elif key == 'og:url': attrs['content'] = home
+        if tag == 'meta' and attrs.get('name') == 'description':
+            attrs['content'] = translated('pageDescription')
         if tag == 'option' and node['parent'] and node['parent']['attrs'].get('id') == 'language-select':
             attrs.pop('selected', None)
             if attrs.get('value') == language: attrs['selected'] = None

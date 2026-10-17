@@ -288,7 +288,7 @@ function applyLanguage() {
   document.title = t("pageTitle");
   $("#browse-directory").href = state.lang === "zh" ? "/zh/browse/" : "/browse/";
   $$('[data-locale-path]').forEach(el => { el.href = `${state.lang === "zh" ? "/zh" : ""}/${el.dataset.localePath}/${el.dataset.localeFragment ? "#" + el.dataset.localeFragment : ""}`; });
-  $('meta[property="og:image:alt"]')?.setAttribute("content", t("pageTitle"));
+  $('meta[property="og:locale:alternate"]')?.setAttribute("content", state.lang === "zh" ? "en_US" : "zh_CN");
   $("#language-select").value = state.lang;
   for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) $(selector)?.setAttribute("content", t("pageDescription"));
   for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) $(selector)?.setAttribute("content", t("pageTitle"));

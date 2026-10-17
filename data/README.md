@@ -57,6 +57,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `arxiv_version_reviewed` | `v1`, `v2`, … or `null` | arXiv version checked; `null` when there is no `arxiv_id` |
 | `first_arxiv_date` | ISO date or `null` | First arXiv submission date; `null` when there is no `arxiv_id` |
 | `doi` | DOI such as `10.18653/v1/2024.emnlp-main.203`, or `null` | Paper DOI, never a software or dataset DOI |
+| `citation` | Optional object; omit when unverified | Published papers only. `container_title` and, where the publisher states them, `volume`, `issue`, `series`, `pages` (`first-last`), `article_number` and `publisher`, copied from the sources listed in `sources` (the paper URL, PDF or `evidence_urls`). BibTeX uses them; cards and READMEs keep `venue` |
 | `url` | HTTPS URL | Canonical paper page, unique in the bibliography |
 | `pdf_url` | HTTPS URL | Public PDF of the paper |
 | `code_url` / `project_url` | HTTPS URL or `null` | Author-provided code / project page |

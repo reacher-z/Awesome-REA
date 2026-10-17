@@ -9,6 +9,7 @@ from urllib.parse import urlsplit
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
+from open_graph import open_graph_meta
 
 MARKER = '<!-- Generated curated entry page. -->'
 
@@ -156,6 +157,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
             {'@type': 'ListItem', 'position': 1, 'name': label('Home', '首页'), 'item': site_url + prefix + '/'},
             {'@type': 'ListItem', 'position': 2, 'name': list_name, 'item': site_url + listing},
             {'@type': 'ListItem', 'position': 3, 'name': title, 'item': canonical}]}, entity]}
+    _public_url(social_image_href)  # The shared social block escapes but does not vet the URL.
     icon_css = f'<link rel="stylesheet" href="{_asset_url(icon_stylesheet_href)}">' if icon_stylesheet_href else ''
     github_icon = ('<span class="icon fa-symbol fa-github" aria-hidden="true"></span>' if icon_stylesheet_href
                    else '<span class="icon entry-github-fallback" aria-hidden="true">GH</span>')
@@ -167,10 +169,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
   <title>{escape(title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{_public_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_public_url(english)}"><link rel="alternate" hreflang="zh-CN" href="{_public_url(chinese)}"><link rel="alternate" hreflang="x-default" href="{_public_url(english)}">
-  <meta property="og:type" content="website"><meta property="og:site_name" content="AwesomeREA.org"><meta property="og:locale" content="{('zh_CN' if zh else 'en_US')}">
-  <meta property="og:title" content="{escape(title, quote=True)}"><meta property="og:description" content="{escape(description, quote=True)}"><meta property="og:url" content="{_public_url(canonical)}">
-  <meta property="og:image" content="{_public_url(social_image_href)}"><meta property="og:image:alt" content="{label('AwesomeREA.org — reverse-engineering resource collection', 'AwesomeREA.org 逆向工程资源合集')}">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title, quote=True)}"><meta name="twitter:description" content="{escape(description, quote=True)}"><meta name="twitter:image" content="{_public_url(social_image_href)}">
+  {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
   <link rel="icon" href="{_asset_url(favicon_href)}" type="image/svg+xml"><link rel="stylesheet" href="{_asset_url(styles_href)}"><link rel="stylesheet" href="{_asset_url(entry_styles_href)}">{icon_css}
   {jsonld_script(schema)}
 </head><body>

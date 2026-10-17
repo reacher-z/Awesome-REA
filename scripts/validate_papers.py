@@ -26,6 +26,13 @@ FIELDS = TEXT_FIELDS | {
     'first_arxiv_date', 'doi', 'code_url', 'project_url', 'targets',
     'evidence_urls', 'runtime_tested',
 }
+# Optional publisher container metadata for published papers; omitted when unverified.
+OPTIONAL_FIELDS = {'citation'}
+CITATION_PATTERNS = {
+    'container_title': None, 'publisher': None, 'series': None,
+    'volume': re.compile(r'[1-9]\d*'), 'issue': re.compile(r'[A-Za-z0-9]+'),
+    'pages': re.compile(r'([1-9]\d*)(?:-([1-9]\d*))?'), 'article_number': re.compile(r'[A-Za-z0-9]+'),
+}
 ARXIV_ID = re.compile(r'\d{4}\.\d{4,5}')
 
 
@@ -104,7 +111,7 @@ def validate_papers(records, errors, *, url_check, now=None):
             continue
         if isinstance(record.get('id'), str) and record['id'].strip():
             where = f"paper {record['id']!r}"
-        missing, unknown = FIELDS - record.keys(), record.keys() - FIELDS
+        missing, unknown = FIELDS - record.keys(), record.keys() - FIELDS - OPTIONAL_FIELDS
         if missing:
             errors.append(f"{where}: missing fields {', '.join(sorted(missing))}")
         if unknown:
@@ -224,6 +231,36 @@ def validate_papers(records, errors, *, url_check, now=None):
             problem = url_check(url)
             if problem:
                 errors.append(f'{where}.evidence_urls: {problem}')
+        if 'citation' in record:
+            validate_citation(record, evidence, where, errors)
+
+
+def validate_citation(record, evidence, where, errors):
+    """Container fields are verbatim publisher metadata from cited evidence, never inferred."""
+    citation = record['citation']
+    if not isinstance(citation, dict) or not citation:
+        errors.append(f'{where}.citation: use a nonempty object, or omit unverified container metadata')
+        return
+    if record.get('publication_status') not in {'conference-paper', 'journal-article'}:
+        errors.append(f'{where}.citation: container metadata applies only to published papers')
+    if not {'container_title', 'sources'} <= set(citation) or set(citation) - set(CITATION_PATTERNS) - {'sources'}:
+        errors.append(f'{where}.citation: needs container_title and sources, and only supported fields')
+    for field, pattern in CITATION_PATTERNS.items():
+        if field not in citation:
+            continue
+        value = citation[field]
+        if not isinstance(value, str) or not value.strip() or value != value.strip() or (pattern and not pattern.fullmatch(value)):
+            errors.append(f'{where}.citation.{field}: invalid value')
+        elif field == 'pages':
+            first, last = pattern.fullmatch(value).groups()
+            if last is not None and int(last) < int(first):
+                errors.append(f'{where}.citation.pages: last page precedes the first')
+    if 'issue' in citation and 'volume' not in citation:
+        errors.append(f'{where}.citation: an issue requires its volume')
+    sources, reviewed = citation.get('sources'), {*evidence, record.get('url'), record.get('pdf_url')}
+    if (not isinstance(sources, list) or not sources or len(set(map(str, sources))) != len(sources)
+            or any(source not in reviewed for source in sources)):
+        errors.append(f'{where}.citation.sources: cite the reviewed paper, PDF or evidence URLs that state these values')
 
 
 def main():
