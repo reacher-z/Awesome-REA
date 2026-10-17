@@ -479,8 +479,8 @@
     "venue": "NAACL 2025",
     "publication_status": "conference-paper",
     "arxiv_id": "2403.03163",
-    "arxiv_version_reviewed": null,
-    "first_arxiv_date": null,
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2024-03-05",
     "doi": "10.18653/v1/2025.naacl-long.199",
     "url": "https://aclanthology.org/2025.naacl-long.199/",
     "pdf_url": "https://aclanthology.org/2025.naacl-long.199.pdf",
@@ -498,17 +498,19 @@
     "evidence_urls": [
       "https://aclanthology.org/2025.naacl-long.199/",
       "https://aclanthology.org/2025.naacl-long.199.pdf",
+      "https://arxiv.org/abs/2403.03163",
+      "https://arxiv.org/abs/2403.03163v1",
       "https://salt-nlp.github.io/Design2Code/",
       "https://github.com/NoviScl/Design2Code"
     ],
-    "metadata_notes": "Use the final NAACL 2025 title and six-author list; the older project page/arXiv-era citation has a different title and omits Ryan Li. SALT-NLP/Design2Code hosts the project website, whereas NoviScl/Design2Code is the verified research-code repository.",
+    "metadata_notes": "Use the final NAACL 2025 title and six-author list. arXiv v1 (2024-03-05) and the project page’s BibTeX use the earlier title “Design2Code: How Far Are We From Automating Front-End Engineering?” and list five authors without Ryan Li; v2 and the reviewed v3 match the final title and authors. SALT-NLP/Design2Code hosts the project website, whereas NoviScl/Design2Code is the verified research-code repository.",
     "kind": "research",
-    "verified_at": "2026-10-16",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "Design2Code：面向自动化前端工程的多模态代码生成评测",
     "date_basis_zh": "ACL 会议论文集的出版月份。",
-    "metadata_notes_zh": "采用正式 NAACL 2025 标题及六位作者名单；较早的项目页和 arXiv 阶段引用使用不同标题，且未列 Ryan Li。SALT-NLP/Design2Code 托管项目网站，NoviScl/Design2Code 才是已确认的研究代码仓库。"
+    "metadata_notes_zh": "采用正式 NAACL 2025 标题及六位作者名单。arXiv v1（2024-03-05）和项目页 BibTeX 使用较早的标题“Design2Code: How Far Are We From Automating Front-End Engineering?”，只列五位作者，未含 Ryan Li；v2 和本次核对的 v3 已与正式标题及作者一致。SALT-NLP/Design2Code 托管项目网站，NoviScl/Design2Code 才是已确认的研究代码仓库。"
   },
   {
     "kind": "research",
