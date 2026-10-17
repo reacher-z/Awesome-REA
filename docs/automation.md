@@ -12,7 +12,7 @@ The job can write a review comment but does not check out or run the contributor
 
 ## Continuous integration
 
-`Catalog checks` runs on pushes and PRs. It validates curated data and local Markdown links, checks generated README sections and the bilingual repository directory, builds the collection website, and checks JavaScript syntax. The workflow has read-only repository permissions.
+`Catalog checks` runs on pull requests, including those from forks, and on pushes to `main`. A newer push to a pull request cancels its superseded run; runs on `main` are never cancelled. The `validate` job byte-compiles every script and test, runs the unit tests with `python3 -m unittest discover -s tests -v`, then runs the [production build command](website.md#optional-licensed-production-icons) with the Pages asset-URL option. That build validates curated data and local Markdown links, checks generated README sections and the bilingual repository directory, checks JavaScript syntax, builds the collection website, and runs the discovery and site validators. These steps need no secrets or network access. The workflow has read-only repository permissions, and every job has a time limit.
 
 The `main` branch requires the GitHub Actions `validate` and `review` checks, an up-to-date branch, and a pull request before merging. These rules also apply to administrators; force pushes and branch deletion are disabled. No human approval count is imposed, and the bot's review comment is not an approval. Use a feature branch and merge after the required checks pass.
 

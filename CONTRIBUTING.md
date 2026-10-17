@@ -30,6 +30,20 @@ python3 scripts/build_site.py
 node --check site/app.js
 ```
 
+Run every test with one command from the repository root. It needs Node.js for the browser tests and makes no network requests. A single module also runs from the root, for example `python3 -m unittest tests.test_protocol_target`.
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the test command, then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin.
+
+```sh
+python3 -m compileall -q scripts tests
+python3 -m unittest discover -s tests -v
+python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
+```
+
 Use `python3 scripts/check_links.py` for live source checks. Rate limits and temporary network failures are reported separately from confirmed missing links.
 
 ### Choose kind, relationship, category and targets

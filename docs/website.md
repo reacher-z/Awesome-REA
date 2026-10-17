@@ -23,10 +23,13 @@ Run from the repository root with Python 3.10+ and Node.js available:
 
 ```sh
 python3 scripts/validate.py
+python3 -m unittest discover -s tests -v
 python3 scripts/build_site.py
 node --check site/app.js
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
+
+The test command runs every Python and browser test offline; CI runs the same command.
 
 Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly, because the directory fetches `catalog.json` and `source-browser.json`. Stop the preview server with Ctrl+C.
 
@@ -54,7 +57,7 @@ CI can instead reference the collection's existing authorized static icon deploy
 python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
 ```
 
-The local-package and asset-URL options are mutually exclusive. The asset origin must continue serving `fontawesome.css` and its two relative `fonts/` URLs with font CORS enabled. Keep that Direct Upload project available while production uses it; [site/_headers](../site/_headers) supplies the corresponding public asset headers.
+`Catalog checks` runs this exact command on every pull request and push to `main`. The asset URL is only written into the generated HTML; the build does not fetch it. The local-package and asset-URL options are mutually exclusive. The asset origin must continue serving `fontawesome.css` and its two relative `fonts/` URLs with font CORS enabled. Keep that Direct Upload project available while production uses it; [site/_headers](../site/_headers) supplies the corresponding public asset headers.
 
 ## Hosting
 

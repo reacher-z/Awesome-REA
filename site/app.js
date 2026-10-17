@@ -250,6 +250,10 @@ const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
+// Explicit collators keep menu and result order independent of the browser's default locale.
+const COLLATORS = { en: new Intl.Collator("en"), zh: new Intl.Collator("zh-CN") };
+const compareLabels = (a, b) => COLLATORS[state.lang === "zh" ? "zh" : "en"].compare(a, b);
+const compareIDs = COLLATORS.en.compare;
 function targetSearchLabels(target) { const key = "target" + target[0].toUpperCase() + target.slice(1); return [target, UI.en[key] || "", UI.zh[key] || ""]; }
 function dataURL(filename) { const url = new URL("/" + filename, location.origin); const revision = document.documentElement.dataset.catalogRevision; if (revision) url.searchParams.set("v", revision); return url; }
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
@@ -291,12 +295,12 @@ function applyLanguage() {
 }
 function renderCategories() {
   const select = $("#category-select"); select.replaceChildren(); const first = node("option", "", t("allCategories")); first.value = "all"; select.append(first);
-  [...new Set(state.records.map(r => r.category))].sort((a,b) => label(CATEGORY,a).localeCompare(label(CATEGORY,b), state.lang === "zh" ? "zh-CN" : "en")).forEach(category => { const option = node("option", "", label(CATEGORY, category)); option.value = category; select.append(option); });
+  [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(CATEGORY,a), label(CATEGORY,b))).forEach(category => { const option = node("option", "", label(CATEGORY, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资料"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
-function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>label(KIND,a).localeCompare(label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
+function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
@@ -360,7 +364,7 @@ function canonicalTopic(value) { const trimmed=value.trim().toLocaleLowerCase();
 function indexSourceTopics() {
   const topicCounts = new Map(); sourceState.records.forEach(r => r.topics.forEach(topic => topicCounts.set(topic,(topicCounts.get(topic)||0)+1)));
   sourceState.topicIDs = new Set(topicCounts.keys());
-  sourceState.topicCounts = [...topicCounts].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+  sourceState.topicCounts = [...topicCounts].sort((a,b) => b[1]-a[1] || compareIDs(a[0],b[0]));
 }
 function topicSuggestions(value = "") {
   const query = canonicalTopic(value).toLocaleLowerCase().trim();
@@ -414,16 +418,16 @@ function sourceFiltered() {
   const terms = sourceState.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); const topic = sourceState.topic.toLocaleLowerCase().trim();
   const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
   const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
-  if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || a.full_name.localeCompare(b.full_name));
-  else if (sourceState.sort === "pushed") result.sort((a,b) => String(b.pushed_at || "").localeCompare(String(a.pushed_at || "")) || a.full_name.localeCompare(b.full_name));
-  else if (sourceState.sort === "name") result.sort((a,b) => a.full_name.localeCompare(b.full_name));
+  if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
+  else if (sourceState.sort === "pushed") result.sort((a,b) => compareIDs(String(b.pushed_at || ""),String(a.pushed_at || "")) || compareIDs(a.full_name,b.full_name));
+  else if (sourceState.sort === "name") result.sort((a,b) => compareIDs(a.full_name,b.full_name));
   else if (terms.length) result.sort((a,b) => score(b)-score(a) || a.order-b.order);
   else {
     const githubRepo = value => { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } };
     const curatedRepos = new Set(state.records.map(record => githubRepo(record.url)).filter(Boolean));
     const reverseEngineering = /\b(?:reverse[-\s]engineering|binary[-\s]analysis|decompil\w*|disassembl\w*|ghidra|ida|frida|firmware[-\s]analysis)\b/i;
     const priority = record => curatedRepos.has(githubRepo(record.url)) ? 2 : reverseEngineering.test([...record.topics,record.description_en || ""].join(" ")) ? 1 : 0;
-    result.sort((a,b) => priority(b)-priority(a) || (b.stars ?? -1)-(a.stars ?? -1) || a.full_name.localeCompare(b.full_name));
+    result.sort((a,b) => priority(b)-priority(a) || (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
   }
   return result;
 }

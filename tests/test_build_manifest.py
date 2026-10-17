@@ -1,5 +1,9 @@
 """Regression checks for CDN-only transformations in deployment verification."""
+from pathlib import Path
+import sys
 import unittest
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from build_manifest import html_digest, normalized_html_bytes
 
 

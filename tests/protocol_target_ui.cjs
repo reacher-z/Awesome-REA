@@ -18,7 +18,7 @@ class Element {
   focus() {}
   scrollIntoView() {}
 }
-function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname = "/"} = {}) {
+function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname = "/", records} = {}) {
   const elements = new Map();
   const buttons = [...html.matchAll(/<button[^>]+data-(source-target|target)="([^"]+)"[^>]*>/g)].map(match => {
     const node = new Element('button');
@@ -40,20 +40,20 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
       return [];
     }, createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag),
     createDocumentFragment: () => new Element('fragment'), addEventListener() {}};
-  const rows = ['protocol', 'app'].map((target, index) => ({id: 'fixture-' + index, name: 'Fixture ' + index, name_zh: '测试 ' + index,
+  const rows = records || ['protocol', 'app'].map((target, index) => ({id: 'fixture-' + index, name: 'Fixture ' + index, name_zh: '测试 ' + index,
     full_name: 'Fixture/project' + index, url: 'https://github.com/Fixture/project' + index,
     evidence_url: 'https://github.com/Fixture/project' + index, description_en: '', description_zh: '',
     targets: [target], topics: index === 0 ? ["protocol-analysis", "fixtures"] : ["apps"], category: 'dynamic-analysis', group: 'tools', kind: 'tool', relationship: 'foundation',
     requirements: ['A fixture'], requirements_zh: ['测试条件'], verified_at: '2026-01-01', scan_status: 'readme-scanned', stars: index}));
   const browser = {meta: {schema_version: 1, status: 'complete', full_export: 'source-index.json', full_export_sha256: 'a'.repeat(64),
-    scope: {scanned_count: 2, excluded_count: 0, browse_count: 2}}, resources: rows.map((row, i) => ({...row, targets: !i && !sourceProtocol ? ['app'] : row.targets}))};
+    scope: {scanned_count: rows.length, excluded_count: 0, browse_count: rows.length}}, resources: rows.map((row, i) => ({...row, targets: !i && !sourceProtocol ? ['app'] : row.targets}))};
   const curatedRows = rows.map((row, i) => ({...row, targets: !i && !curatedProtocol ? ['app'] : row.targets}));
   const location = new URL('https://awesomerea.org' + pathname + query);
   const requests = [];
   location.assign = next => { location.lastNavigation = String(next); };
   const context = {document, location, URL, URLSearchParams, console,
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {source_index: {resource_count: 2}}} : browser}; }};
+    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode};', context);
   return {api: context.audit, context, elements, buttons, protocolLabels, requests};
@@ -161,5 +161,40 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   await invalid.api.load();
   assert.equal(invalid.api.state.target, 'all');
   assert.equal(invalid.api.sourceState.target, 'all');
-  process.stdout.write('Protocol UI boundaries passed\n');
+  // Menu and repository order must not follow the process locale; the Python test runs this file under several.
+  const sortRecords = [
+    ['zeta/project', 'project', 'jvm', 5, '2026-03-01T00:00:00Z', ['zeta', 'aadog']],
+    ['aadog/fd-back', 'tool', 'core', 5, '2026-03-01T00:00:00Z', ['aadog', 'zeta']],
+    ['mid/reverse-engineering', 'integration', 'agent-mcp', 9, '2026-01-01T00:00:00Z', ['reverse-engineering']],
+    ['Beta/viewer', 'case-study', 'jvm', 1, '2026-02-01T00:00:00Z', []],
+    ['delta/list', 'collection', 'core', 1, '', []],
+    ['echo/docs', 'documentation', 'agent-mcp', 0, '2026-02-01T00:00:00Z', []],
+    ['fox/course', 'learning-resource', 'jvm', null, '', []],
+    ['gamma/paper', 'research', 'core', 0, '2026-04-01T00:00:00Z', []],
+  ].map(([full_name, kind, category, stars, pushed_at, topics], index) => ({id: 'sort-' + index, name: full_name, name_zh: full_name,
+    full_name, url: 'https://github.com/' + full_name, evidence_url: 'https://github.com/' + full_name, description_en: '', description_zh: '',
+    targets: ['app'], topics, category, group: 'tools', kind, relationship: 'foundation', requirements: [], requirements_zh: [],
+    verified_at: '2026-01-01', scan_status: 'readme-scanned', stars, pushed_at}));
+  const orders = {};
+  for (const lang of ['en', 'zh']) {
+    const sorted = setup(`?view=curated&lang=${lang}`, {records: sortRecords});
+    await sorted.api.load(); await sorted.api.loadSources(); sorted.api.applyLanguage();
+    assert.equal(sorted.api.sourceState.error, false);
+    const menu = selector => sorted.elements.get(selector).children.slice(1).map(option => option.textContent);
+    orders[lang] = {kinds: menu('#kind-select'), categories: menu('#category-select')};
+    orders.topics = Array.from(sorted.api.sourceState.topicCounts, ([topic]) => topic);
+    for (const sort of ['name', 'stars', 'pushed', 'relevance']) {
+      sorted.api.sourceState.sort = sort; orders[sort] = Array.from(sorted.api.sourceFiltered(), record => record.full_name);
+    }
+  }
+  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool']);
+  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资料', '研究']);
+  assert.deepEqual(orders.en.categories, ['JVM bytecode', 'MCP servers', 'REA essentials']);
+  assert.deepEqual(orders.zh.categories, ['JVM 字节码', 'MCP 服务', 'REA 核心']);
+  assert.deepEqual(orders.topics, ['aadog', 'zeta', 'reverse-engineering']);
+  assert.deepEqual(orders.name, ['aadog/fd-back', 'Beta/viewer', 'delta/list', 'echo/docs', 'fox/course', 'gamma/paper', 'mid/reverse-engineering', 'zeta/project']);
+  assert.deepEqual(orders.stars, ['mid/reverse-engineering', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'delta/list', 'echo/docs', 'gamma/paper', 'fox/course']);
+  assert.deepEqual(orders.pushed, ['gamma/paper', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'echo/docs', 'mid/reverse-engineering', 'delta/list', 'fox/course']);
+  assert.deepEqual(orders.relevance, ['mid/reverse-engineering', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'delta/list', 'echo/docs', 'gamma/paper', 'fox/course']);
+  process.stdout.write(`Protocol UI boundaries passed under ${Intl.Collator().resolvedOptions().locale}\n`);
 })().catch(error => { console.error(error); process.exitCode = 1; });

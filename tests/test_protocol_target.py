@@ -3,6 +3,7 @@ from contextlib import redirect_stdout
 from copy import deepcopy
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -12,6 +13,8 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
+# Shared fixtures also resolve when this module runs on its own from the repository root.
+sys.path.insert(1, str(ROOT / 'tests'))
 import catalog
 from build_readme import TARGETS, collection_section, render_catalog, render_papers
 from build_site import TARGETS as BUILD_TARGETS, default_targets, fontawesome_markup
@@ -150,9 +153,16 @@ class ProtocolTargetTests(unittest.TestCase):
                     catalog.main()
                 self.assertEqual([row['id'] for row in json.loads(stdout.getvalue())], ['protocol-fixture'])
 
-    def test_browser_protocol_filters_and_query_restoration(self):
-        subprocess.run(['node', str(ROOT / 'tests/protocol_target_ui.cjs')], check=True,
-                       cwd=ROOT, capture_output=True, text=True)
+    def test_browser_protocol_filters_query_restoration_and_locale_independent_order(self):
+        reported = set()
+        for locale in ('en_US.UTF-8', 'da_DK.UTF-8', 'zh_CN.UTF-8'):
+            with self.subTest(locale=locale):
+                result = subprocess.run(['node', str(ROOT / 'tests/protocol_target_ui.cjs')], cwd=ROOT,
+                                        env={**os.environ, 'LC_ALL': locale}, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+                reported.add(result.stdout.strip().rsplit(' ', 1)[-1])
+        # Each run used a different default collation locale, so identical expected orders are meaningful.
+        self.assertEqual(reported, {'en-US', 'da-DK', 'zh-CN'})
 
 
 if __name__ == '__main__':

@@ -1,12 +1,19 @@
 name: Catalog checks
 on:
   push:
+    branches: [main]
   pull_request:
 permissions:
   contents: read
+# PR runs share one group per pull request, so a newer push cancels the superseded run.
+# Every main run gets its own group and is never cancelled or replaced by a later push.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref == 'refs/heads/main' && github.run_id || github.ref }}
+  cancel-in-progress: true
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -17,10 +24,11 @@ jobs:
       - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: '26'
-      - run: python3 scripts/validate.py
-      - run: python3 -m unittest discover -s tests -v
-      - run: python3 scripts/test_build_manifest.py
-      - run: python3 scripts/build_site.py
-      - run: python3 scripts/validate_discovery.py
-      - run: python3 scripts/validate_site.py
-      - run: node --check site/app.js
+      - name: Compile Python scripts and tests
+        run: python3 -m compileall -q scripts tests
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -v
+      # The Cloudflare Pages build command: validate.py, node --check, build_site.py,
+      # validate_discovery.py and validate_site.py. The asset URL is only written into HTML.
+      - name: Run the production build
+        run: python3 scripts/build_production.py --fontawesome-assets-url https://awesome-rea.pages.dev
