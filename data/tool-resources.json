@@ -24,8 +24,8 @@
     "relationship": "independent-agent-integration",
     "description_en": "Ghidra extension and MCP bridge exposing decompilation, symbol navigation and renaming to agents, with GUI and headless modes.",
     "description_zh": "通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。",
-    "evidence_url": "https://github.com/LaurieWired/GhidraMCP/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/LaurieWired/GhidraMCP/blob/1e980252087b2479a21b9ca6d82d5829538651a7/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "Match the extension to the documented Ghidra release; Python 3.10+ for the bridge, with additional PyGhidra requirements for headless mode.",
     "targets": [
@@ -36,15 +36,18 @@
   {
     "id": "binary-ninja-official-mcp",
     "name": "Binary Ninja MCP (official)",
-    "url": "https://dev-docs.binary.ninja/guide/mcp.html",
+    "url": "https://docs.binary.ninja/guide/mcp.html",
     "category": "agent-mcp",
     "relationship": "independent-agent-integration",
     "description_en": "Binary Ninja's own MCP interface exposes functions, symbols, disassembly, intermediate languages and decompiled text to agents.",
     "description_zh": "Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。",
-    "evidence_url": "https://dev-docs.binary.ninja/guide/mcp.html",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://docs.binary.ninja/guide/mcp.html",
+    "additional_evidence_urls": [
+      "https://binary.ninja/2026/09/03/binary-ninja-6.0-krypton.html#mcp"
+    ],
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "Reviewed in the development manual: use a build containing MCP. GUI server uses HTTP; headless stdio requires Commercial or Ultimate on macOS/Linux.",
+    "requirements": "First shipped in stable Binary Ninja 6.0 (2026-09-03). The GUI server uses HTTP and is included in every edition, Free included; headless stdio binaryninja_mcp requires Commercial or Ultimate on macOS/Linux and is not yet in native Windows packages, where upstream suggests the Linux build under WSL.",
     "targets": [
       "binary"
     ],
@@ -75,8 +78,8 @@
     "relationship": "independent-agent-integration",
     "description_en": "Community IDA integration useful for existing setups and migration context; its maintainer now recommends the official Hex-Rays MCP server.",
     "description_zh": "已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。",
-    "evidence_url": "https://github.com/mrexodia/ida-pro-mcp/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/mrexodia/ida-pro-mcp/blob/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "IDA Pro rather than IDA Free, Python 3.11+ and an MCP client; consult the upstream migration notice before choosing a new setup.",
     "targets": [
@@ -143,8 +146,8 @@
     "relationship": "independent-agent-integration",
     "description_en": "Connects Ghidra to RevEng.AI for function similarity, recovered names, AI explanations and agent-assisted annotation.",
     "description_zh": "将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。",
-    "evidence_url": "https://github.com/RevEngAI/plugin-ghidra/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/RevEngAI/plugin-ghidra/blob/7d386f772530905222c8aa9276de06995b289930/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "A compatible Ghidra/Java build and a RevEng.AI API key; creating service-side analysis uploads the selected binary.",
     "targets": [
@@ -204,10 +207,17 @@
     "relationship": "independent-agent-integration",
     "description_en": "Frida MCP server with persistent instrumentation sessions, runtime inspection and Android static-to-dynamic navigation.",
     "description_zh": "Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。",
-    "evidence_url": "https://github.com/yfe404/frida-mcp/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/yfe404/frida-mcp/blob/fb7d6c7c74bd249dbc86b8a3c14df79d9486b114/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/yfe404/frida-mcp/blob/fb7d6c7c74bd249dbc86b8a3c14df79d9486b114/package.json",
+      "https://github.com/yfe404/frida-mcp/tree/fb7d6c7c74bd249dbc86b8a3c14df79d9486b114"
+    ],
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "Node.js 20+, Frida 17 and an accessible target; on-device operations require the documented device/frida-server setup.",
+    "requirements": [
+      "Node.js 20+, Frida 17 and an accessible target; on-device operations require the documented device/frida-server setup.",
+      "The README’s License heading names MIT, but the pinned commit has no LICENSE file and package.json has no license field; the declaration appears only in the README."
+    ],
     "targets": [
       "app",
       "game"
@@ -222,8 +232,8 @@
     "relationship": "independent-agent-integration",
     "description_en": "Single-binary Frida MCP server for discovering devices, managing process sessions and loading instrumentation scripts.",
     "description_zh": "单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。",
-    "evidence_url": "https://github.com/crissyfield/super-trouper/blob/main/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/crissyfield/super-trouper/blob/b3d31adbdb4be2f1a456dc9108ef25655ea206fe/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "Published host binaries target macOS/Linux; target connectivity must support Frida. Source builds need Go, CGO and a matching Frida Core DevKit.",
     "targets": [
@@ -241,7 +251,10 @@
     "description_en": "LLDB's official MCP interface gives agents debugger sessions and commands for breakpoints, memory inspection and stepping.",
     "description_zh": "LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。",
     "evidence_url": "https://lldb.llvm.org/use/mcp.html",
-    "verified_at": "2026-10-15",
+    "additional_evidence_urls": [
+      "https://github.com/llvm/llvm-project/blob/793ff02cdb351f064b019681663b805e10cdc9b2/lldb/docs/use/mcp.md"
+    ],
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "An LLDB distribution/build containing lldb-mcp and a compatible stdio MCP client; debug-target access follows the host platform's requirements.",
     "targets": [
@@ -366,8 +379,8 @@
     "relationship": "foundation",
     "description_en": "Dex-to-Java decompiler with CLI/GUI navigation, resource decoding and cross-reference search for Android packages.",
     "description_zh": "将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。",
-    "evidence_url": "https://github.com/skylot/jadx/blob/master/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/skylot/jadx/blob/c4c45fde27b4f3386dc2ff016ff187229a60a716/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "64-bit Java 11+ unless using a bundled runtime; decompilation can be incomplete and should be checked against bytecode.",
     "targets": [
@@ -637,8 +650,8 @@
     "relationship": "foundation",
     "description_en": "Python binary-analysis framework combining control-flow recovery, symbolic execution, data-flow analysis and decompilation.",
     "description_zh": "结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。",
-    "evidence_url": "https://github.com/angr/angr/blob/master/README.md",
-    "verified_at": "2026-10-15",
+    "evidence_url": "https://github.com/angr/angr/blob/ae9f5786fd94410ca400063bf21719aa8b564d3e/README.md",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": "A compatible Python 3 environment; useful results require an appropriate model of program inputs, state and external functions.",
     "targets": [
@@ -1113,14 +1126,16 @@
     "description_en": "Inspect JavaScript ASTs and variable scopes while building visual chains of Babel transforms. Save analysis projects and reusable plugins to iteratively simplify obfuscated scripts.",
     "description_zh": "在查看 JavaScript AST 和变量作用域的同时，可视化编排 Babel 转换链；保存分析项目与可复用插件，逐步简化混淆脚本。",
     "evidence_url": "https://github.com/Owl4444/jsdeob-workbench/blob/e51a8281cb2ee11e95c5f7cafaa2090569a91abf/README.md",
-    "verified_at": "2026-10-16",
+    "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
       "Run from source with Node.js and npm; the documented default standalone build targets Windows. No GitHub release was available at review time.",
-      "Built-in transforms may need sample-specific scripts, and deeply nested input can overflow the stack. Its optional evaluation helper executes code and should be used in a local sandbox, as upstream explicitly advises."
+      "Built-in transforms may need sample-specific scripts, and deeply nested input can overflow the stack. Its optional evaluation helper executes code and should be used in a local sandbox, as upstream explicitly advises.",
+      "No license was found at the pinned commit: the repository root has no LICENSE file, and neither the README nor package.json declares one. Public source availability is not a reuse grant."
     ],
     "additional_evidence_urls": [
-      "https://github.com/Owl4444/jsdeob-workbench/blob/e51a8281cb2ee11e95c5f7cafaa2090569a91abf/package.json"
+      "https://github.com/Owl4444/jsdeob-workbench/blob/e51a8281cb2ee11e95c5f7cafaa2090569a91abf/package.json",
+      "https://github.com/Owl4444/jsdeob-workbench/tree/e51a8281cb2ee11e95c5f7cafaa2090569a91abf"
     ]
   },
   {
@@ -1327,7 +1342,7 @@
     "id": "objection",
     "name": "objection",
     "url": "https://github.com/sensepost/objection",
-    "category": "dynamic-analysis",
+    "category": "android",
     "relationship": "foundation",
     "kind": "tool",
     "targets": [
@@ -1681,7 +1696,7 @@
     "id": "hermes-dec",
     "name": "hermes-dec",
     "url": "https://github.com/P1sec/hermes-dec",
-    "category": "javascript-electron",
+    "category": "android",
     "relationship": "foundation",
     "kind": "tool",
     "targets": [
@@ -1763,7 +1778,7 @@
     "id": "wireshark",
     "name": "Wireshark",
     "url": "https://gitlab.com/wireshark/wireshark",
-    "category": "dynamic-analysis",
+    "category": "protocol-analysis",
     "relationship": "foundation",
     "kind": "tool",
     "targets": [

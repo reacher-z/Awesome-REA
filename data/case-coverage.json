@@ -8069,12 +8069,13 @@
       "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-17",
-      "reason_en": "Primary sources reviewed for a bounded case; author-reported outcomes were not independently reproduced.",
-      "reason_zh": "已核查此有限范围案例的一手来源；未独立复现作者报告的结果。",
+      "reason_en": "The collection links the vinvirile fork, whose only own commits add a Switch port; primary sources were reviewed in the original JRickey repository. Author-reported outcomes were not independently reproduced.",
+      "reason_zh": "合集链接的是 vinvirile 分叉，其独有提交仅新增 Switch 移植；一手来源改在原始 JRickey 仓库中核查。未独立复现作者报告的结果。",
       "primary_evidence_urls": [
-        "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/README.md",
-        "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/docs/BUILDING.md",
-        "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/LICENSE"
+        "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md",
+        "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
+        "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
+        "https://github.com/JRickey/BattleShip/blob/5c3e6bf58f19ba07d0fa33cfc324294bf4c658a2/README.md"
       ],
       "catalog_matches": [
         {
@@ -8211,7 +8212,7 @@
       "reason_en": "Identity mapped to the existing catalog at the record’s stated scope; this is not independent runtime reproduction.",
       "reason_zh": "身份已对应到现有目录条目所声明的范围；这不代表独立运行复现。",
       "primary_evidence_urls": [
-        "https://github.com/mrexodia/ida-pro-mcp/blob/main/README.md"
+        "https://github.com/mrexodia/ida-pro-mcp/blob/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md"
       ],
       "catalog_matches": [
         {

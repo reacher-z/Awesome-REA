@@ -6,12 +6,12 @@
   },
   "ghidramcp": {
     "requirements": [
-      "Ghidra 与扩展版本必须匹配；桥接需要 Python，无界面模式另有 PyGhidra 条件。"
+      "Ghidra 扩展须与文档列出的 Ghidra 版本匹配；桥接需要 Python 3.10+，无界面模式另有 PyGhidra 相关要求。"
     ]
   },
   "binary-ninja-official-mcp": {
     "requirements": [
-      "核验的是开发版文档；GUI 使用 HTTP，无界面 stdio 需要 macOS/Linux 的 Commercial 或 Ultimate。"
+      "Binary Ninja 6.0 稳定版（2026-09-03）首次提供。GUI 服务器使用 HTTP，包括 Free 在内的所有版本均已包含；无界面 stdio 服务器 binaryninja_mcp 需要 macOS/Linux 上的 Commercial 或 Ultimate，原生 Windows 安装包尚未包含，上游建议在 WSL 中使用 Linux 版。"
     ],
     "name": "Binary Ninja MCP（官方）"
   },
@@ -23,7 +23,7 @@
   },
   "ida-pro-mcp-community": {
     "requirements": [
-      "需要 IDA Pro；新配置先看维护者指向官方服务的迁移说明。"
+      "需要 IDA Pro（不支持 IDA Free）、Python 3.11+ 和 MCP 客户端；选择新配置前，请先查看上游的迁移说明。"
     ],
     "name": "IDA Pro MCP（mrexodia）"
   },
@@ -44,7 +44,7 @@
   },
   "revengai-ghidra": {
     "requirements": [
-      "需要 RevEng.AI API key；创建服务端分析会上传所选二进制。"
+      "需要兼容的 Ghidra/Java 构建和 RevEng.AI API key；创建服务端分析会上传所选二进制文件。"
     ],
     "name": "RevEng.AI Ghidra 插件"
   },
@@ -63,17 +63,18 @@
   },
   "frida-mcp-yfe404": {
     "requirements": [
-      "Node.js 20+、Frida 17；设备端操作需可连接的目标及 frida-server。"
+      "需要 Node.js 20+、Frida 17 和可访问的目标；设备端操作需按文档配置设备和 frida-server。",
+      "README 的 License 标题下写明 MIT，但固定提交中没有 LICENSE 文件，package.json 也没有 license 字段；该声明仅见于 README。"
     ]
   },
   "super-trouper": {
     "requirements": [
-      "预编译主机版本面向 macOS/Linux；目标需满足 Frida 连接条件。"
+      "发布的主机二进制面向 macOS/Linux；目标连接方式须支持 Frida。从源码构建需要 Go、CGO 及匹配的 Frida Core DevKit。"
     ]
   },
   "lldb-mcp": {
     "requirements": [
-      "需要包含 lldb-mcp 的 LLDB 构建；不能默认系统预装版本已具备此接口。"
+      "需要包含 lldb-mcp 的 LLDB 发行版或构建，以及兼容的 stdio MCP 客户端；对调试目标的访问遵循宿主平台的要求。"
     ]
   },
   "claude-reverse-engineering-skill": {
@@ -110,7 +111,7 @@
   },
   "jadx": {
     "requirements": [
-      "Java 11+ 或内置运行时；反编译不保证完整，关键结论需对照字节码。"
+      "需要 64 位 Java 11+，使用内置运行时的版本除外；反编译可能不完整，应对照字节码核查。"
     ]
   },
   "apktool": {
@@ -189,7 +190,7 @@
   },
   "angr": {
     "requirements": [
-      "需要 Python 环境，以及合理的输入、状态和外部函数模型。"
+      "需要兼容的 Python 3 环境；要获得有用结果，还需合理建模程序输入、状态和外部函数。"
     ]
   },
   "lief": {
@@ -518,7 +519,8 @@
   "jsdeob-workbench": {
     "requirements": [
       "通过 Node.js 和 npm 从源码运行；文档中的默认独立构建目标为 Windows。审阅时未提供 GitHub Release。",
-      "内置转换可能需要针对样本编写脚本，深层嵌套输入可能造成栈溢出。可选的求值辅助功能会执行代码，上游明确建议在本地沙箱中使用。"
+      "内置转换可能需要针对样本编写脚本，深层嵌套输入可能造成栈溢出。可选的求值辅助功能会执行代码，上游明确建议在本地沙箱中使用。",
+      "固定提交中未找到许可证：仓库根目录没有 LICENSE 文件，README 和 package.json 也未声明许可证。源码公开不等于授予复用许可。"
     ]
   },
   "undertalemodtool": {
@@ -665,43 +667,83 @@
   },
   "godot-re-tools": {
     "name": "Godot 逆向工程工具",
-    "requirements": "支持 Godot 2.x、3.x 和 4.x 工程反编译，提供 Windows、macOS 与 Linux 发行程序。编辑恢复的工程时应使用原游戏对应的 Godot 版本。 加密输入需要对应密钥；不支持 Godot 2.x 模型转换，以及 GDNative/GDExtension 脚本恢复。 工具采用 MIT 许可证。编译当前源码还需要文档指定的 Godot 分支、rustup 和 .NET 10 SDK。"
+    "requirements": [
+      "支持 Godot 2.x、3.x 和 4.x 工程反编译，提供 Windows、macOS 与 Linux 发行程序。编辑恢复的工程时应使用原游戏对应的 Godot 版本。",
+      "加密输入需要对应密钥；不支持 Godot 2.x 模型转换，以及 GDNative/GDExtension 脚本恢复。",
+      "工具采用 MIT 许可证。编译当前源码还需要文档指定的 Godot 分支、rustup 和 .NET 10 SDK。"
+    ]
   },
   "ue4ss": {
     "name": "UE4SS（虚幻引擎脚本系统）",
-    "requirements": "面向 Win64 虚幻引擎游戏；兼容性取决于具体游戏，可能需要自定义特征码或配置。 开发分支 README 的目标范围为 UE 4.7–5.8，而最新稳定标签仍是 2024 年的 v3.0.1。应使用与所选构建对应的文档，不能假定稳定版包含全部开发功能。 采用 MIT 许可证。当前源码构建需要文档指定的 C++23、Rust 与 CMake 工具链，以及经 Epic 授权的 Unreal 子模块访问权限；Linux 交叉编译产物仍是 Windows 程序。"
+    "requirements": [
+      "面向 Win64 虚幻引擎游戏；兼容性取决于具体游戏，可能需要自定义特征码或配置。",
+      "开发分支 README 的目标范围为 UE 4.7–5.8，而最新稳定标签仍是 2024 年的 v3.0.1。应使用与所选构建对应的文档，不能假定稳定版包含全部开发功能。",
+      "采用 MIT 许可证。当前源码构建需要文档指定的 C++23、Rust 与 CMake 工具链，以及经 Epic 授权的 Unreal 子模块访问权限；Linux 交叉编译产物仍是 Windows 程序。"
+    ]
   },
   "fmodel": {
     "name": "FModel 游戏资源浏览器",
-    "requirements": "需要 Windows x64 与 .NET 10 或更高版本的桌面运行时，输入须为受支持的虚幻引擎游戏归档；加密归档需要对应的 AES 密钥。 所审阅的 aug-2026 版本仅支持以 USD 导出世界，插槽与附属对象可能定位不准；资源导出不等于恢复原始游戏逻辑源码。 项目采用 GPL-3.0 许可证；所附依赖另有各自的声明。"
+    "requirements": [
+      "需要 Windows x64 与 .NET 10 或更高版本的桌面运行时，输入须为受支持的虚幻引擎游戏归档；加密归档需要对应的 AES 密钥。",
+      "所审阅的 aug-2026 版本仅支持以 USD 导出世界，插槽与附属对象可能定位不准；资源导出不等于恢复原始游戏逻辑源码。",
+      "项目采用 GPL-3.0 许可证；所附依赖另有各自的声明。"
+    ]
   },
   "blutter": {
     "name": "Blutter",
-    "requirements": "输入须为已提取的 Android ARM64 库，包含 libapp.so 与 Flutter 引擎；仅支持较新的 Dart 版本。直接读取 APK/IPA 及 iOS 二进制仍列为待实现功能。 需要 Python 3、支持 C++20 的工具链（如 GCC 13+ 或 Clang 16+）及文档列出的原生依赖；包装脚本可能下载并编译匹配的 Dart 源码。 上游推荐 Linux，也提供 Windows 与 macOS 配置说明。采用 MIT 许可证；混淆应用仍可能缺失函数，工具并非完整的 Dart 源码反编译器。"
+    "requirements": [
+      "输入须为已提取的 Android ARM64 库，包含 libapp.so 与 Flutter 引擎；仅支持较新的 Dart 版本。直接读取 APK/IPA 及 iOS 二进制仍列为待实现功能。",
+      "需要 Python 3、支持 C++20 的工具链（如 GCC 13+ 或 Clang 16+）及文档列出的原生依赖；包装脚本可能下载并编译匹配的 Dart 源码。",
+      "上游推荐 Linux，也提供 Windows 与 macOS 配置说明。采用 MIT 许可证；混淆应用仍可能缺失函数，工具并非完整的 Dart 源码反编译器。"
+    ]
   },
   "hermes-dec": {
     "name": "hermes-dec",
-    "requirements": "当前包元数据要求 Python 3.10+，程序使用 Python 标准库。输入须为已提取的 Hermes HBC 包，而非纯文本压缩 JavaScript 包。 反编译输出不能直接作为 JavaScript 执行：循环和条件结构尚未完整重建。字节码兼容性取决于已支持的操作码定义。 工具采用 AGPL-3.0-or-later 许可证，与 Hermes 虚拟机本身的许可证不同。"
+    "requirements": [
+      "当前包元数据要求 Python 3.10+，程序使用 Python 标准库。输入须为已提取的 Hermes HBC 包，而非纯文本压缩 JavaScript 包。",
+      "反编译输出不能直接作为 JavaScript 执行：循环和条件结构尚未完整重建。字节码兼容性取决于已支持的操作码定义。",
+      "工具采用 AGPL-3.0-or-later 许可证，与 Hermes 虚拟机本身的许可证不同。"
+    ]
   },
   "recaf": {
     "name": "Recaf 字节码分析与编辑工具",
-    "requirements": "需要 JDK 22+ 与 JavaFX 22+；推荐启动器会下载兼容的 JavaFX 组件。应选择与操作系统及 CPU 匹配的构建。 4.0.0-alpha 在 GitHub 上虽然列为常规发行版，上游仍明确称其为预览版。该版本的 Android 支持为只读，不能将 JVM 编辑能力视为 Android 编辑能力。 采用 MIT 许可证。输入须为已编译的应用；反编译文本用于分析，不保证还原原始源码。"
+    "requirements": [
+      "需要 JDK 22+ 与 JavaFX 22+；推荐启动器会下载兼容的 JavaFX 组件。应选择与操作系统及 CPU 匹配的构建。",
+      "4.0.0-alpha 在 GitHub 上虽然列为常规发行版，上游仍明确称其为预览版。该版本的 Android 支持为只读，不能将 JVM 编辑能力视为 Android 编辑能力。",
+      "采用 MIT 许可证。输入须为已编译的应用；反编译文本用于分析，不保证还原原始源码。"
+    ]
   },
   "kaitai-struct": {
     "name": "Kaitai Struct 二进制格式描述与解析工具",
-    "requirements": "需要提供 .ksy 规范，或改编已有格式描述；Kaitai 根据规范生成解析器，不会自动发现未知协议的语义。稳定版 0.11 通用编译器可在 Linux、macOS 和 Windows 上运行，需要 Java 8+，推荐 Java 21 LTS；生成的解析器还需要目标语言的 Kaitai 运行库。编译器与可视化工具采用 GPL-3.0-or-later，运行库分别采用 MIT、Apache-2.0 等许可证；编译器许可证不会因此强制施加于输入规范或生成结果。"
+    "requirements": [
+      "需要提供 .ksy 规范，或改编已有格式描述；Kaitai 根据规范生成解析器，不会自动发现未知协议的语义。",
+      "稳定版 0.11 通用编译器可在 Linux、macOS 和 Windows 上运行，需要 Java 8+，推荐 Java 21 LTS；生成的解析器还需要目标语言的 Kaitai 运行库。",
+      "编译器与可视化工具采用 GPL-3.0-or-later，运行库分别采用 MIT、Apache-2.0 等许可证；编译器许可证不会因此强制施加于输入规范或生成结果。"
+    ]
   },
   "wireshark": {
     "name": "Wireshark 协议分析工具",
-    "requirements": "使用受支持的 Windows、macOS 或 Linux/Unix 构建及兼容的抓包文件；实时抓包还需要受支持的接口、抓包驱动和相应访问权限。可捕获的介质取决于操作系统与硬件。自定义格式需要适合的协议解析器；检查报文不会自动恢复通信对端的完整实现。发行软件采用 GNU GPLv2，并附有组件各自的许可声明。GitLab 为上游仓库，GitHub 是官方只读镜像。"
+    "requirements": [
+      "使用受支持的 Windows、macOS 或 Linux/Unix 构建及兼容的抓包文件；实时抓包还需要受支持的接口、抓包驱动和相应访问权限。",
+      "可捕获的介质取决于操作系统与硬件。自定义格式需要适合的协议解析器；检查报文不会自动恢复通信对端的完整实现。",
+      "发行软件采用 GNU GPLv2，并附有组件各自的许可声明。GitLab 为上游仓库，GitHub 是官方只读镜像。"
+    ]
   },
   "pulseview": {
     "name": "PulseView 信号与协议分析工具",
-    "requirements": "需要受支持的已录制波形，或兼容的逻辑分析仪、示波器及相应设备访问权限。设备覆盖范围小于整个 sigrok 套件，PulseView 并非万用表前端。协议解码需要 libsigrokdecode，且作用于逻辑信号；模拟采样需要适当转换。所审阅源码接受 Qt 5.3+ 或 Qt 6.2+、libsigrokcxx 0.5.2+ 与 libsigrokdecode 0.5.2+。软件采用 GPL-3.0-or-later，GitHub 仓库为官方镜像。开发快照与打包发行版可能不同，不能把所审阅源码当作新稳定版。"
+    "requirements": [
+      "需要受支持的已录制波形，或兼容的逻辑分析仪、示波器及相应设备访问权限。设备覆盖范围小于整个 sigrok 套件，PulseView 并非万用表前端。",
+      "协议解码需要 libsigrokdecode，且作用于逻辑信号；模拟采样需要适当转换。所审阅源码接受 Qt 5.3+ 或 Qt 6.2+、libsigrokcxx 0.5.2+ 与 libsigrokdecode 0.5.2+。",
+      "软件采用 GPL-3.0-or-later，GitHub 仓库为官方镜像。开发快照与打包发行版可能不同，不能把所审阅源码当作新稳定版。"
+    ]
   },
   "uefitool": {
     "name": "UEFITool 固件镜像分析工具",
-    "requirements": "输入须为兼容的固件镜像。A75 提供 Windows、macOS、Linux 与 FreeBSD 构建；编译 GUI 需要 C++ 编译器及 Qt5 或 Qt6。当前新引擎不支持镜像重建；编辑功能依赖已被上游明确标为过时、停止支持的 0.28 旧引擎，本条目不将当前 UEFITool 描述为受支持的镜像编辑器。A75 仍禁用 AMD 镜像解析，部分厂商更新容器不受支持或可能解析错误。项目采用 BSD-2-Clause 许可证。"
+    "requirements": [
+      "输入须为兼容的固件镜像。A75 提供 Windows、macOS、Linux 与 FreeBSD 构建；编译 GUI 需要 C++ 编译器及 Qt5 或 Qt6。",
+      "当前新引擎不支持镜像重建；编辑功能依赖已被上游明确标为过时、停止支持的 0.28 旧引擎，本条目不将当前 UEFITool 描述为受支持的镜像编辑器。",
+      "A75 仍禁用 AMD 镜像解析，部分厂商更新容器不受支持或可能解析错误。项目采用 BSD-2-Clause 许可证。"
+    ]
   },
   "browser-reverse-engineering-toolkit": {
     "name": "Browser Reverse Engineering Toolkit 浏览器逆向工程工具集",
@@ -897,10 +939,10 @@
   "battleship-port-case": {
     "name": "BattleShip：AI 辅助的 Super Smash Bros. 原生移植",
     "requirements": [
-      "需要用户自己的 Super Smash Bros. N64 美版 NTSC-U v1.0 转储，并匹配文档中的哈希；Torch 在本地提取资产。",
-      "文档列出的桌面目标为 Windows、Linux 和 Apple Silicon macOS。构建需要 Git/子模块、CMake 和 Python 3；Windows 使用 Visual Studio 2022/MSVC v143/Windows SDK，Linux/macOS 使用 Ninja。",
-      "作者关于 AI 贡献和开发时间的说法属于自述。ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。",
-      "LICENSE 仅对移植专用代码、构建脚本、工具和文档授予 MIT。反编译 src 及 libultraship/Torch 依赖保留各自上游条款；游戏权利另行处理。",
+      "需要用户自己的 Super Smash Bros. N64 转储，并匹配文档中的哈希：美版 NTSC-U v1.0（NALE）或日版 v1.0（NALJ）。两个地区版本需分别构建；Torch 在源码构建时或打包版首次运行时于本地提取资产。",
+      "README 列出 Windows、Linux、Apple Silicon macOS 和 Android 原生版本；原生 C 模组和 GameCube 适配器驱动仅限桌面平台。BUILDING.md 说明桌面源码构建，需要 Git/子模块、CMake 和 Python 3，Linux/macOS 另需 Ninja，Windows 需要 Visual Studio 2022 和 Windows SDK。",
+      "作者自述在 v0.3-beta 之前独自借助 Claude 开发，并表示项目现已不再是纯 AI 项目，感谢社区提供的测试、修复和功能。这些说法属于自述；ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。",
+      "LICENSE 仅对移植专用代码、构建脚本、工具和文档授予 MIT。反编译子模块及由其派生的文件遵从上游反编译项目，该项目未发布明确许可证；libultraship/Torch、随附字体和手柄映射保留各自条款；游戏权利另行处理。",
       "本次仅审阅文档和许可范围，没有获取游戏转储、构建、运行模拟器或独立复现。未证实使用 REA。"
     ]
   },

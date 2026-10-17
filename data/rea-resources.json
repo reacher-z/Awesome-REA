@@ -813,19 +813,19 @@
   {
     "id": "battleship-port-case",
     "name": "BattleShip: an AI-assisted Super Smash Bros. native port",
-    "url": "https://github.com/vinvirile/BattleShip",
+    "url": "https://github.com/JRickey/BattleShip",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
-    "description_en": "Ports the existing Super Smash Bros. N64 decompilation using libultraship and Torch. The author describes agent-built graphics/audio comparison tools and differential debugging against emulator behavior, rather than claiming AI recovered the game from a cartridge without prior community work.",
-    "description_zh": "使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。",
-    "evidence_url": "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/README.md",
+    "description_en": "Ports the existing Super Smash Bros. N64 decompilation using libultraship and Torch. The author’s earlier README describes agent-built graphics/audio comparison tools and differential debugging against emulator behavior, rather than claiming AI recovered the game from a cartridge without prior community work.",
+    "description_zh": "使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者早期的 README 介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。",
+    "evidence_url": "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
     "requirements": [
-      "Requires the user’s Super Smash Bros. N64 NTSC-U v1.0 dump matching the documented hash; assets are extracted locally with Torch.",
-      "Documented desktop targets are Windows, Linux and Apple Silicon macOS. Builds need Git/submodules, CMake and Python 3; Windows uses Visual Studio 2022/MSVC v143/Windows SDK, while Linux/macOS use Ninja.",
-      "The author’s AI-contribution and development-time statements are self-reported. ROM identity checks and described rendering/audio comparisons do not prove complete behavioral equivalence.",
-      "The LICENSE grants MIT only to port-specific code, build scripts, tools and docs. Decompiled src and libultraship/Torch dependencies retain their own upstream terms; game rights are separate.",
+      "Requires the user’s own Super Smash Bros. N64 dump matching a documented hash: US NTSC-U v1.0 (NALE) or Japanese v1.0 (NALJ). Each region is a separate build; Torch extracts assets locally during a source build or on a packaged build’s first run.",
+      "The README lists native Windows, Linux, Apple Silicon macOS and Android builds; native C mods and the GameCube adapter driver are desktop-only. BUILDING.md covers desktop source builds with Git/submodules, CMake and Python 3, plus Ninja on Linux/macOS or Visual Studio 2022 and the Windows SDK on Windows.",
+      "The author reports developing the port alone with Claude until v0.3-beta and says it is no longer a pure AI project, crediting community testing, fixes and features. These statements are self-reported; ROM identity checks and described rendering/audio comparisons do not prove complete behavioral equivalence.",
+      "The LICENSE grants MIT only to port-specific code, build scripts, tools and docs. The decomp submodule and decomp-derived files defer to the upstream decompilation, which publishes no explicit license; libultraship/Torch, bundled fonts and controller mappings keep their own terms; game rights are separate.",
       "This review read documentation and license scope only, without a game dump, build, emulator session or independent runtime reproduction. REA use is not established."
     ],
     "targets": [
@@ -833,8 +833,9 @@
     ],
     "kind": "case-study",
     "additional_evidence_urls": [
-      "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/docs/BUILDING.md",
-      "https://github.com/vinvirile/BattleShip/blob/ed9d32504de9fe69b92ad4869643ed5d37a42256/LICENSE"
+      "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
+      "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
+      "https://github.com/JRickey/BattleShip/blob/5c3e6bf58f19ba07d0fa33cfc324294bf4c658a2/README.md"
     ]
   },
   {
