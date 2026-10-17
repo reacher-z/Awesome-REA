@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Review catalog PRs with trusted base-branch code; never execute PR code."""
+import fnmatch
 import json
 import html
 import os
@@ -25,9 +26,33 @@ CASE_COVERAGE = 'data/case-coverage.json'
 CASE_INPUTS = (CASE_COVERAGE, *CATALOGS, 'data/papers.json')
 REVIEW_FILES = frozenset((*CATALOGS, 'data/benchmarks.json', 'data/papers.json', *SOURCE_INPUTS, CASE_COVERAGE))
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
-SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----')
-LOCAL_PATH = re.compile(r'/Users/[^/\s]+/|/home/[^/\s]+/')
+SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
+# Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
+# Matches stop before the next separator.
+_SEGMENT = r'[^\s/\\"\'`<>{}()\[\]|:;,*?]+'
+_SEP = r'(?:/|\\+)'
+_PROFILE = _SEP + '(?i:users)' + _SEP + _SEGMENT
+LOCAL_PATH = re.compile('|'.join((
+    r'/(?:Users|home)/' + _SEGMENT + '(?=' + _SEP + ')',
+    # The other forms must start at a path boundary, so URLs and prose such as login/root/premium do not match.
+    r'/(?<![\w.~$%-]/)(?:(?:Users|home)/' + _SEGMENT + '|(?i:users|home)/' + _SEGMENT + '(?=' + _SEP + ')'
+    r'|mnt/[A-Za-z]' + _PROFILE + r'|root(?=/[^\s/]))',
+    r'[A-Za-z]:(?<![\w.~$%-]..)' + _PROFILE,
+    r'~(?<![\w.~$%/\\-]~)(?=' + _SEP + r'[^\s/\\])',
+    r'\$(?<![\w.~$%/\\-]\$)(?:HOME|\{HOME\})(?=' + _SEP + r'[^\s/\\])',
+)))
+JSON_ESCAPE = re.compile(r'\\(?:u([0-9A-Fa-f]{4})|([\\/]))')
+SAFE_LABEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:/-]{0,99}')
+# File-name rules cover every .gitignore pattern (tests/test_review_pr.py checks this) plus keys, captures and fonts.
+PRIVATE_NAMES = ('.env', '.env.*', 'secrets.json', 'credentials*.json', '*.local.json', '*.pem', '*.key',
+                 'id_rsa', 'id_dsa', 'id_ecdsa', 'id_ed25519', '*.har', '*.pcap', '*.pcapng')
+PRIVATE_DIRS = {'.cloudflare', '.wrangler'}
+GENERATED_NAMES = ('*.py[cod]', '.ds_store', '*.woff', '*.woff2')
+GENERATED_DIRS = {'__pycache__', '.cache', '.venv', 'dist', 'node_modules', 'output'}
+PUBLIC_NAMES = {'.env.example'}
 MAX_FILE_BYTES = 8 * 1024 * 1024
+MAX_OMITTED_FILES = 20
+MAX_REVIEW_PAGES = 10
 
 
 def api(repository, endpoint, token, method='GET', payload=None, raw=False):
@@ -46,12 +71,83 @@ def api(repository, endpoint, token, method='GET', payload=None, raw=False):
     return data.decode('utf-8') if raw else json.loads(data)
 
 
+def raw_text_at(repository, filename, sha, token):
+    path = urllib.parse.quote(filename, safe='/')
+    return api(repository, f'contents/{path}?ref={sha}', token, raw=True)
+
+
 def content_at(repository, filename, sha, token):
     # Contributor files are retrieved only as text from this exact data allowlist.
     if filename not in REVIEW_FILES:
         raise ValueError('File is not an allowed review data input')
-    path = urllib.parse.quote(filename, safe='/')
-    return api(repository, f'contents/{path}?ref={sha}', token, raw=True)
+    return raw_text_at(repository, filename, sha, token)
+
+
+def omitted_text_at(repository, filename, sha, token):
+    # Only for a changed file whose diff GitHub omitted: its text is pattern-checked as
+    # size-bounded data and is never executed, parsed as code, or echoed.
+    if filename in REVIEW_FILES or path_rule(filename) or any(part in ('', '.', '..') for part in filename.split('/')):
+        raise ValueError('File is not an allowed omitted-diff input')
+    text = raw_text_at(repository, filename, sha, token)
+    if '\x00' in text:
+        raise UnicodeError('Binary file')
+    return text
+
+
+def private_text(text):
+    """Pattern backstop on raw text and on the same text with JSON-style escapes decoded."""
+    values = [text]
+    if '\\' in text:
+        values.append(JSON_ESCAPE.sub(lambda match: chr(int(match[1], 16)) if match[1] else match[2], text))
+    return any(pattern.search(value) for value in values for pattern in (SENSITIVE, LOCAL_PATH))
+
+
+def path_rule(path):
+    *directories, name = path.lower().split('/')
+    if ((name not in PUBLIC_NAMES and any(fnmatch.fnmatchcase(name, rule) for rule in PRIVATE_NAMES))
+            or PRIVATE_DIRS.intersection(directories)):
+        return 'private configuration, keys, and raw captures should not be committed.'
+    if any(fnmatch.fnmatchcase(name, rule) for rule in GENERATED_NAMES) or GENERATED_DIRS.intersection(directories):
+        return 'generated, raw, or licensed production assets do not belong in this public source repository.'
+    return None
+
+
+def private_json_locations(value, record=None, field=None, top=True):
+    """Return (record ID, field) for decoded JSON keys and strings that match the privacy patterns."""
+    if isinstance(value, str):
+        return [(record, field)] if private_text(value) else []
+    found = []
+    if isinstance(value, dict):
+        if isinstance(value.get('id'), str):
+            record = value['id']
+        for key, item in value.items():
+            if private_text(key):
+                found.append((record, None))
+            # Locale and scope files are objects keyed by resource ID.
+            found += private_json_locations(item, key if top and isinstance(item, dict) else record, key, False)
+    elif isinstance(value, list):
+        for item in value:
+            found += private_json_locations(item, record, field, False)
+    return found
+
+
+def json_privacy_findings(filename, text):
+    # GitHub can omit or truncate a large file's patch, and JSON escapes change raw text but
+    # not the published value, so check the fetched text and its decoded strings.
+    try:
+        locations = list(dict.fromkeys(private_json_locations(parse_json(text))))
+    except (ValueError, TypeError, RecursionError):
+        locations = []
+    if not locations:
+        return [f'{filename}: full JSON content contains a credential-like value or personal path; inspect locally. The value is omitted here.'] if private_text(text) else []
+    findings = []
+    for record, field in locations[:5]:
+        where = [f'{name} {value}' for name, value in (('record', record), ('field', field))
+                 if isinstance(value, str) and SAFE_LABEL.fullmatch(value) and not private_text(value)]
+        findings.append(f'{filename}: a decoded JSON string{" in " + ", ".join(where) if where else ""} contains a credential-like value or personal path; inspect locally. The value is omitted here.')
+    if len(locations) > 5:
+        findings.append(f'{filename}: {len(locations) - 5} more decoded JSON strings match these patterns.')
+    return findings
 
 
 def parse_json(text):
@@ -122,10 +218,8 @@ def load_review_contents(repository, sha, token, files, changed, errors):
             else:
                 # Unchanged source, locale, and scope dependencies come from the trusted base.
                 contents[filename] = (ROOT / filename).read_text(encoding='utf-8')
-            # GitHub can omit or truncate a large file's patch. Check the already
-            # fetched, exact-allowlisted changed JSON without exposing matches.
-            if filename in changed and (SENSITIVE.search(contents[filename]) or LOCAL_PATH.search(contents[filename])):
-                errors.append(f'{filename}: full JSON content contains a credential-like value or personal absolute path; inspect locally. The value is omitted here.')
+            if filename in changed:
+                errors.extend(json_privacy_findings(filename, contents[filename]))
         except (OSError, UnicodeError, ValueError):
             errors.append(f'{filename}: could not safely retrieve required JSON data for this review.')
     return contents
@@ -193,11 +287,27 @@ def review_data(contents, changed):
 
 def safe_text(value):
     value = SENSITIVE.sub('[redacted credential-like value]', str(value))
-    value = LOCAL_PATH.sub('[redacted local path]/', value)
+    value = LOCAL_PATH.sub('[redacted local path]', value)
+    if private_text(value):
+        value = '[redacted text with an escaped credential-like value or personal path]'
     value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f\u202a-\u202e\u2066-\u2069]', '', value)
     value = ' '.join(value.split())[:500].replace('@', '@\u200b')
     value = html.escape(value, quote=False)
     return re.sub(r'([\\`*_{}\[\]()#+.!|])', r'\\\1', value)
+
+
+def find_existing_review(repository, number, sha, token):
+    # Reviews are listed oldest first; a deleted account's review has a null user.
+    for page in range(1, MAX_REVIEW_PAGES + 1):
+        batch = api(repository, f'pulls/{number}/reviews?per_page=100&page={page}', token)
+        for review in batch:
+            user = review.get('user')
+            if (isinstance(user, dict) and user.get('login') == 'github-actions[bot]' and user.get('type') == 'Bot'
+                    and MARKER in (review.get('body') or '') and review.get('commit_id') == sha):
+                return review
+        if len(batch) < 100:
+            break
+    return None
 
 
 def main():
@@ -211,12 +321,7 @@ def main():
     sha = pull['head']['sha']
     if not re.fullmatch(r'[0-9a-f]{40}', sha):
         raise ValueError('Unexpected head SHA')
-    reviews = api(repository, f'pulls/{number}/reviews?per_page=100', token)
-    existing_review = next((review for review in reviews
-                            if review.get('user', {}).get('login') == 'github-actions[bot]'
-                            and review.get('user', {}).get('type') == 'Bot'
-                            and MARKER in review.get('body', '')
-                            and review.get('commit_id') == sha), None)
+    existing_review = find_existing_review(repository, number, sha, token)
     files = []
     for page in range(1, 4):
         batch = api(repository, f'pulls/{number}/files?per_page=100&page={page}', token)
@@ -226,22 +331,35 @@ def main():
     changed = {entry['filename'] for entry in files}
     changed.update(entry['previous_filename'] for entry in files
                    if entry['status'] == 'renamed' and 'previous_filename' in entry)
-    errors, reviewed = [], []
+    errors, reviewed, omitted, not_inspected = [], [], [], []
     if pull.get('changed_files', len(files)) > 300:
         errors.append('This PR exceeds the 300-file automatic review limit; split it for a complete review.')
     for entry in files:
         path = entry['filename']
-        patch = entry.get('patch', '')
-        added = '\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))
-        if SENSITIVE.search(added) or LOCAL_PATH.search(added):
-            errors.append(f'{path}: added text contains a credential-like value or personal absolute path; inspect locally. The value is omitted here.')
-        if re.search(r'(^|/)(\.env(?:\..*)?|secrets\.json|credentials[^/]*\.json)$', path) and not path.endswith('.env.example'):
-            errors.append(f'{path}: private configuration should not be committed.')
-        if path.startswith(('.cache/', '.wrangler/', 'dist/')) or '/output/' in path or path.endswith(('.woff', '.woff2')):
-            errors.append(f'{path}: generated, raw, or licensed production assets do not belong in this public source repository.')
+        rule = path_rule(path)
+        if rule:
+            # Named by path only; such files are never fetched.
+            errors.append(f'{path}: {rule}')
+        patch = entry.get('patch')
+        if patch:
+            added = '\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))
+            if private_text(added):
+                errors.append(f'{path}: added text contains a credential-like value or personal path; inspect locally. The value is omitted here.')
+        elif entry['status'] not in ('removed', 'unchanged') and not rule and path not in REVIEW_FILES:
+            # GitHub omits the patch of binary files and very large diffs.
+            omitted.append(path)
         if (path.startswith('data/locales/') and path not in LOCALE_FILES
                 and path != 'data/locales/README.md'):
             errors.append(f'{path}: locale file is not in the trusted review allowlist; maintainer review is required.')
+    for index, path in enumerate(omitted):
+        try:
+            text = omitted_text_at(repository, path, sha, token) if index < MAX_OMITTED_FILES else None
+        except (OSError, UnicodeError, ValueError):
+            text = None
+        if text is None:
+            not_inspected.append(path)
+        elif private_text(text):
+            errors.append(f'{path}: GitHub omitted this diff, and the file text at this commit contains a credential-like value or personal path; inspect locally. The value is omitted here.')
     contents = load_review_contents(repository, sha, token, files, changed, errors)
     try:
         findings, checked = review_data(contents, changed & REVIEW_FILES)
@@ -250,14 +368,24 @@ def main():
     except (ValueError, TypeError, KeyError):
         errors.append('Required catalog, localization, or source-scope JSON could not be parsed or validated. Check its shape locally.')
     manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
-    body = [MARKER, '### Automated catalog review', '', f'Commit: `{sha[:12]}`.', '',
-            '**Changes need attention.**' if errors else '**No issues found by these automatic checks.**', '']
+    if errors:
+        status = '**Changes need attention.**'
+    elif not_inspected:
+        status = f'**No issues found by these automatic checks, but {len(not_inspected)} changed file(s) were not inspected.**'
+    else:
+        status = '**No issues found by these automatic checks.**'
+    body = [MARKER, '### Automated catalog review', '', f'Commit: `{sha[:12]}`.', '', status, '']
     body.extend('- ' + safe_text(item) for item in reviewed)
     if errors:
         body.extend(['', 'Findings:'])
         body.extend('- ' + safe_text(item) for item in errors[:30])
         if len(errors) > 30:
             body.append(f'- {len(errors) - 30} additional findings; run the local validator for the complete list.')
+    if not_inspected:
+        body.extend(['', 'Not inspected automatically: GitHub omitted the diff, and the file could not be retrieved as text within the review limits. A maintainer should check these files:'])
+        body.extend('- ' + safe_text(path) for path in not_inspected[:30])
+        if len(not_inspected) > 30:
+            body.append(f'- {len(not_inspected) - 30} additional files.')
     if manual:
         body.extend(['', 'Code, automation, or site changes require a maintainer to review behavior and permissions.'])
     body.extend(['', 'This is a rule-based review, not a runtime compatibility test or an approval. PR code is never executed by this review job. CI checks and maintainer review remain separate.'])
@@ -271,7 +399,7 @@ def main():
     else:
         api(repository, f'pulls/{number}/reviews', token, method='POST',
             payload={'commit_id': sha, 'event': 'COMMENT', 'body': '\n'.join(body)})
-    print(f'Posted a rule-based review: {len(errors)} finding(s); no PR code executed.')
+    print(f'Posted a rule-based review: {len(errors)} finding(s), {len(not_inspected)} file(s) not inspected; no PR code executed.')
     if errors:
         sys.exit(1)
 
