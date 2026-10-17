@@ -218,7 +218,8 @@
     ],
     "targets": [
       "website",
-      "app"
+      "app",
+      "protocol"
     ],
     "kind": "documentation"
   },

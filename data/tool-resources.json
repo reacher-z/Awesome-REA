@@ -1756,7 +1756,8 @@
     "kind": "tool",
     "targets": [
       "binary",
-      "firmware"
+      "firmware",
+      "protocol"
     ],
     "description_en": "Turn documented binary layouts into reusable parsers for files and network packets. A .ksy specification can be inspected with visualizers and compiled to multiple languages, helping preserve reverse-engineered format knowledge in interoperable implementations.",
     "description_zh": "将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。",
