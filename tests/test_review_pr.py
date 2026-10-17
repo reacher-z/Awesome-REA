@@ -36,6 +36,7 @@ PERSONAL_PATHS = {
     'JSON-escaped Windows profile': fixture('C:', '\\\\Users\\\\alice\\\\Desktop'),
     'Windows forward slashes': fixture('C:/', 'Users', '/alice/'),
     'WSL mount': fixture('/mnt/c/', 'Users', '/alice/'),
+    'Git Bash drive': fixture('/c/', 'Users', '/alice'),
     'home-relative tilde': fixture('~', '/captures/private.har'),
     'HOME variable': fixture('$HOME', '/captures/private.har'),
     'root home': fixture('/root', '/.config/gh/hosts.yml'),
@@ -54,6 +55,7 @@ ORDINARY_TEXT = [
     'https://example.edu/~alice/paper.pdf', 'GET /users/{id}', 'GET /users/:id/repos', 'GET /users/octocat',
     'const plain = text.replace(/~/g, "")', '~~old~~/new', 'export PATH before using $HOME', 'C:\\Program Files\\Tool',
     'run ./root/setup.sh', 'under /home or /Users', '-----BEGIN PUBLIC KEY-----', 'ghp_short', 'scripts/home/index.md',
+    'GET /root/{id}', 'the `/root/` directory', '~/{config}', 'const route = /^\\/root\\/(.+)/',
 ]
 
 
@@ -243,6 +245,12 @@ class ReviewerPrivacyTest(unittest.TestCase):
         self.assertNotIn('\u2066', text)
         self.assertNotIn(TOKEN, text)
         self.assertEqual(review_pr.safe_text('Notes in ' + ESCAPED_JSON['slash-escaped path']).count('redacted'), 1)
+        for hidden in (TOKEN[:3] + '\x01' + TOKEN[3:], TOKEN[:3] + '\u202e' + TOKEN[3:], KEY_HEADER.replace(' ', '\n', 1),
+                       PERSONAL_PATHS['Linux home'].replace('home', 'ho\x00me')):
+            with self.subTest(repr(hidden)):
+                self.assertIn('redacted', review_pr.safe_text(hidden))
+                self.assertNotIn('Ab12', review_pr.safe_text(hidden))
+                self.assertNotIn('alice', review_pr.safe_text(hidden))
 
 
 class ReviewerOmittedPatchTest(unittest.TestCase):
@@ -347,6 +355,13 @@ class PrivateFileRulesTest(unittest.TestCase):
                         self.assertIsNone(review_pr.path_rule(path))
                     else:
                         self.assertIsNotNone(review_pr.path_rule(path))
+
+    def test_removing_a_private_file_is_not_a_finding(self):
+        github = FakeGitHub([entry('deploy/site.pem', '@@ -1 +0,0 @@\n-old', status='removed'),
+                             entry('dist/index.html', status='removed')])
+        self.assertEqual(run_review(github)[0], 0)
+        self.assertEqual(github.fetched(), [])
+        self.assertIn('**No issues found by these automatic checks.**', github.body())
 
     def test_pr_files_are_flagged_without_fetching_them(self):
         files = [entry('deploy/site.pem', added(fixture('-----BEGIN ', 'PRIVATE KEY-----'), 'MIIB')),

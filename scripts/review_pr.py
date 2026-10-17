@@ -29,17 +29,18 @@ LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'te
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
 # Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
 # Matches stop before the next separator.
-_SEGMENT = r'[^\s/\\"\'`<>{}()\[\]|:;,*?]+'
+_NAME = r'[^\s/\\"\'`<>{}()\[\]|:;,*?]'
+_SEGMENT = _NAME + '+'
 _SEP = r'(?:/|\\+)'
 _PROFILE = _SEP + '(?i:users)' + _SEP + _SEGMENT
 LOCAL_PATH = re.compile('|'.join((
     r'/(?:Users|home)/' + _SEGMENT + '(?=' + _SEP + ')',
     # The other forms must start at a path boundary, so URLs and prose such as login/root/premium do not match.
     r'/(?<![\w.~$%-]/)(?:(?:Users|home)/' + _SEGMENT + '|(?i:users|home)/' + _SEGMENT + '(?=' + _SEP + ')'
-    r'|mnt/[A-Za-z]' + _PROFILE + r'|root(?=/[^\s/]))',
+    r'|(?:mnt/)?[A-Za-z]' + _PROFILE + '|root(?=/' + _NAME + '))',
     r'[A-Za-z]:(?<![\w.~$%-]..)' + _PROFILE,
-    r'~(?<![\w.~$%/\\-]~)(?=' + _SEP + r'[^\s/\\])',
-    r'\$(?<![\w.~$%/\\-]\$)(?:HOME|\{HOME\})(?=' + _SEP + r'[^\s/\\])',
+    r'~(?<![\w.~$%/\\-]~)(?=' + _SEP + _NAME + ')',
+    r'\$(?<![\w.~$%/\\-]\$)(?:HOME|\{HOME\})(?=' + _SEP + _NAME + ')',
 )))
 JSON_ESCAPE = re.compile(r'\\(?:u([0-9A-Fa-f]{4})|([\\/]))')
 SAFE_LABEL = re.compile(r'[A-Za-z0-9][A-Za-z0-9_.:/-]{0,99}')
@@ -286,12 +287,13 @@ def review_data(contents, changed):
 
 
 def safe_text(value):
-    value = SENSITIVE.sub('[redacted credential-like value]', str(value))
+    # Strip controls and join whitespace before redacting, so neither can rejoin a hidden value.
+    value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f\u202a-\u202e\u2066-\u2069]', '', str(value))
+    value = SENSITIVE.sub('[redacted credential-like value]', ' '.join(value.split()))
     value = LOCAL_PATH.sub('[redacted local path]', value)
     if private_text(value):
         value = '[redacted text with an escaped credential-like value or personal path]'
-    value = re.sub(r'[\x00-\x08\x0b-\x1f\x7f\u202a-\u202e\u2066-\u2069]', '', value)
-    value = ' '.join(value.split())[:500].replace('@', '@\u200b')
+    value = value[:500].replace('@', '@\u200b')
     value = html.escape(value, quote=False)
     return re.sub(r'([\\`*_{}\[\]()#+.!|])', r'\\\1', value)
 
@@ -336,7 +338,8 @@ def main():
         errors.append('This PR exceeds the 300-file automatic review limit; split it for a complete review.')
     for entry in files:
         path = entry['filename']
-        rule = path_rule(path)
+        # Removing such a file is a cleanup, not a new commit of it.
+        rule = path_rule(path) if entry['status'] != 'removed' else None
         if rule:
             # Named by path only; such files are never fetched.
             errors.append(f'{path}: {rule}')
