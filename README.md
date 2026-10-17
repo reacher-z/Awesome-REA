@@ -19,7 +19,7 @@ Choose a target below. Entries link to primary sources; **source review does not
 **Research and more**
 
 - [Papers](#papers) (46) · [All cases](https://awesomerea.org/cases/) (47) · [Full Repository Index](#full-repository-index) (2,839)
-- [Agents and MCP](#agents-and-mcp) (18) · [Related Collections](#related-collections) (4) · [References and Learning](#references-and-learning) (17)
+- [Agents and MCP](#agents-and-mcp) (18) · [Related Collections](#related-collections) (4) · [References and Learning](#references-and-learning) (20)
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -758,6 +758,18 @@ Includes independent projects and [REA](https://github.com/morluto/rea) resource
 - [**Firmware analysis**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) · Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-firmware-guide/)
 
   Inspect firmware regions with Binwalk and explicitly extract with Unblob, retaining tool and artifact identity.
+
+- [**Recorded packet capture inspection**](https://github.com/morluto/rea/blob/main/docs/packet-captures.md) · Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-packet-captures/)
+
+  Select TShark fields, display filters and decode-as rules over an existing network, USB or Bluetooth capture, and look up installed field names. It does not capture traffic, open an interface or control a device.
+
+- [**Packet capture summaries**](https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md) · Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-pcap-summaries/)
+
+  Summarize a saved pcap or pcapng file’s endpoints, DNS questions and addresses, TLS SNI, protocol stacks and HTTP URIs into paged Evidence views. It does not capture traffic or fetch recorded targets.
+
+- [**Recorded signal decoding**](https://github.com/morluto/rea/blob/main/docs/signal-recordings.md) · Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-signal-recordings/)
+
+  Run caller-chosen sigrok protocol decoders, such as UART or I2C, over an existing logic-signal recording and keep annotation text with sample ranges. It does not acquire samples or communicate with hardware.
 
 - [**Browser observation guide**](https://rea.tools/guides/browser/) · Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-browser-guide/)
 

@@ -19,7 +19,7 @@
 **论文与更多资源**
 
 - [论文](#papers) (46) · [全部案例](https://awesomerea.org/zh/cases/) (47) · [完整仓库索引](#完整仓库索引) (2,839)
-- [智能体与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [文档与学习资源](#references-and-learning) (17)
+- [智能体与 MCP](#agents-and-mcp) (18) · [相关合集](#related-collections) (4) · [文档与学习资源](#references-and-learning) (20)
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -759,6 +759,18 @@
 - [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
 
   用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。
+
+- [**抓包记录检查**](https://github.com/morluto/rea/blob/main/docs/packet-captures.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-packet-captures/)
+
+  用 TShark 字段、显示过滤器和 decode-as 规则检查已有的网络、USB 或蓝牙抓包，并可查询已安装的字段名；不抓取流量、不打开网络接口，也不控制设备。
+
+- [**抓包摘要**](https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-pcap-summaries/)
+
+  把已保存 pcap/pcapng 文件中的端点、DNS 查询与地址、TLS SNI、协议栈和 HTTP URI 汇总为可分页的 Evidence 视图；不抓取流量，也不访问记录中的目标。
+
+- [**信号记录解码**](https://github.com/morluto/rea/blob/main/docs/signal-recordings.md) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-signal-recordings/)
+
+  用调用方指定的 sigrok 协议解码器（如 UART、I2C）解码已有的逻辑信号记录，并保留带采样区间的注释文本；不采集样本，也不与硬件通信。
 
 - [**浏览器观察指南**](https://rea.tools/guides/browser/) · 文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
 

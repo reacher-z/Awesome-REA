@@ -338,6 +338,27 @@
       "上游记录的验证范围为 Linux x64；提取需要新的、自行指定的输出目录。"
     ]
   },
+  "rea-packet-captures": {
+    "name": "抓包记录检查",
+    "requirements": [
+      "需在 Linux 上自行提供 TShark 4.x 和 util-linux prlimit；macOS 与 Windows 主机会在检查前被拒绝。rea-agents 6.5.0 的发布说明已列出此功能。",
+      "解析结果只反映所选记录，不等于已验证的设备行为。上游测试样例是生成的以太网/UDP/DNS 和蓝牙 HCI PCAP，不能据此确认 PCAPNG、USB、BLE ATT 或实际抓包。"
+    ]
+  },
+  "rea-pcap-summaries": {
+    "name": "抓包摘要",
+    "requirements": [
+      "需自行提供 Wireshark 4.x 的 tshark 和 capinfos。检查抓包需要带 util-linux prlimit 的 Linux，或使用 Job Object 的 Windows；macOS 会报告能力缺口。rea-agents 6.5.0 的发布说明已列出此功能。",
+      "上游当前验证使用 Linux、Node 24.18.0 和 Wireshark 4.0.17，Windows 实际执行尚未验证。汇总结果不能证明解密后的内容或进程身份，也不能证明不存在未记录的流量。"
+    ]
+  },
+  "rea-signal-recordings": {
+    "name": "信号记录解码",
+    "requirements": [
+      "需在 Linux 上自行提供 sigrok-cli 0.7.2、libsigrokdecode 和 util-linux prlimit；macOS 与 Windows 会被拒绝。rea-agents 6.5.0 的发布说明已列出此功能。",
+      "解码器栈、通道名和波特率等设置由调用方指定。上游测试样例是合成的 9600 波特 UART VCD，其他格式、解码器和实际采集均未得到验证。"
+    ]
+  },
   "rea-browser-guide": {
     "name": "浏览器观察指南",
     "requirements": [

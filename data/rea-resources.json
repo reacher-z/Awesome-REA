@@ -243,6 +243,76 @@
     "kind": "documentation"
   },
   {
+    "id": "rea-packet-captures",
+    "name": "Recorded packet capture inspection",
+    "url": "https://github.com/morluto/rea/blob/main/docs/packet-captures.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Select TShark fields, display filters and decode-as rules over an existing network, USB or Bluetooth capture, and look up installed field names. It does not capture traffic, open an interface or control a device.",
+    "description_zh": "用 TShark 字段、显示过滤器和 decode-as 规则检查已有的网络、USB 或蓝牙抓包，并可查询已安装的字段名；不抓取流量、不打开网络接口，也不控制设备。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/packet-captures.md",
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Caller-supplied TShark 4.x on Linux with util-linux prlimit; macOS and Windows hosts are refused before inspection. Listed in the rea-agents 6.5.0 release notes.",
+      "Dissector output describes the selected recording, not verified device behavior. Upstream fixtures are generated Ethernet/UDP/DNS and Bluetooth HCI PCAPs; PCAPNG, USB, BLE ATT and physical capture are not established by them."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "documentation"
+  },
+  {
+    "id": "rea-pcap-summaries",
+    "name": "Packet capture summaries",
+    "url": "https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Summarize a saved pcap or pcapng file’s endpoints, DNS questions and addresses, TLS SNI, protocol stacks and HTTP URIs into paged Evidence views. It does not capture traffic or fetch recorded targets.",
+    "description_zh": "把已保存 pcap/pcapng 文件中的端点、DNS 查询与地址、TLS SNI、协议栈和 HTTP URI 汇总为可分页的 Evidence 视图；不抓取流量，也不访问记录中的目标。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/pcap-analysis.md",
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Caller-supplied Wireshark 4.x tshark and capinfos. Capture inspection needs Linux with util-linux prlimit or Windows Job Objects; macOS reports a capability gap. Listed in the rea-agents 6.5.0 release notes.",
+      "Upstream’s current verification used Linux, Node 24.18.0 and Wireshark 4.0.17; actual Windows execution is unverified. Summaries do not establish decrypted payloads, process identity or the absence of unrecorded traffic."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "documentation"
+  },
+  {
+    "id": "rea-signal-recordings",
+    "name": "Recorded signal decoding",
+    "url": "https://github.com/morluto/rea/blob/main/docs/signal-recordings.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "description_en": "Run caller-chosen sigrok protocol decoders, such as UART or I2C, over an existing logic-signal recording and keep annotation text with sample ranges. It does not acquire samples or communicate with hardware.",
+    "description_zh": "用调用方指定的 sigrok 协议解码器（如 UART、I2C）解码已有的逻辑信号记录，并保留带采样区间的注释文本；不采集样本，也不与硬件通信。",
+    "evidence_url": "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/signal-recordings.md",
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/3b79af28e80785afce9f5998d8f03289402a1847/CHANGELOG.md"
+    ],
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Caller-supplied sigrok-cli 0.7.2 with libsigrokdecode on Linux, plus util-linux prlimit; macOS and Windows are refused. Listed in the rea-agents 6.5.0 release notes.",
+      "The caller supplies decoder stacks, channel names and settings such as baud rate. Upstream’s fixture is a synthesized 9600-baud UART VCD; other formats, decoders and physical acquisition are not established."
+    ],
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "kind": "documentation"
+  },
+  {
     "id": "rea-browser-guide",
     "name": "Browser observation guide",
     "url": "https://rea.tools/guides/browser/",
