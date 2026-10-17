@@ -4,6 +4,7 @@ import datetime as dt
 import html
 import ipaddress
 import json
+import os
 from pathlib import Path
 import re
 import socket
@@ -626,21 +627,50 @@ def validate_source_index(document, errors):
     return len(records)
 
 
+LIST_MARKER = re.compile(r'([-+*]|\d{1,9}[.)])( +|$)')
+BLOCK_START = re.compile(r'(?:[-+*]|\d{1,9}[.)])(?: |$)|`{3,}|~{3,}|#{1,6}(?: |$)|>')
+
+
 def prose_only(text):
-    """Remove fenced/indented code while retaining line numbers."""
-    lines, fence_char, fence_length = [], None, 0
+    """Remove fenced and indented code while retaining line numbers.
+
+    As in CommonMark, indentation counts from the enclosing list item's content, so
+    nested items and continuation paragraphs remain prose, and indented code cannot
+    interrupt a paragraph.
+    """
+    lines, fence, items, paragraph = [], None, [], False
     for line in text.splitlines(keepends=True):
-        match = re.match(r'^ {0,3}(`{3,}|~{3,})', line)
-        if fence_char:
-            if match and match[1][0] == fence_char and len(match[1]) >= fence_length:
-                fence_char = None
-            lines.append('\n' if line.endswith('\n') else '')
+        hidden = '\n' if line.endswith('\n') else ''
+        expanded = line.rstrip('\r\n').expandtabs(4)
+        content = expanded.lstrip(' ')
+        indent = len(expanded) - len(content)
+        if not content:
+            lines.append(hidden)
+            paragraph = False
+            continue
+        # A lazy continuation line extends the open paragraph without closing its list items.
+        lazy = paragraph and not BLOCK_START.match(content)
+        while items and indent < items[-1] and not lazy:
+            items.pop()
+        base = items[-1] if items else 0
+        if fence and indent < fence[2]:
+            fence = None  # Its list item has ended.
+        match = re.match(r'(`{3,}|~{3,})', content) if indent - base < 4 else None
+        if fence:
+            if match and match[1][0] == fence[0] and len(match[1]) >= fence[1]:
+                fence = None
+            lines.append(hidden)
         elif match:
-            fence_char, fence_length = match[1][0], len(match[1])
-            lines.append('\n' if line.endswith('\n') else '')
-        elif line.startswith(('    ', '\t')):
-            lines.append('\n' if line.endswith('\n') else '')
+            fence, paragraph = (match[1][0], len(match[1]), base), False
+            lines.append(hidden)
+        elif indent - base >= 4 and not paragraph:
+            lines.append(hidden)
         else:
+            marker = LIST_MARKER.match(content) if indent - base < 4 else None
+            if marker:
+                spaces = len(marker[2])
+                items.append(indent + len(marker[1]) + (spaces if spaces <= 4 and content[marker.end():] else 1))
+            paragraph = not re.match(r'#{1,6}(?: |$)', content)
             lines.append(line)
     return ''.join(lines)
 
@@ -756,7 +786,7 @@ def main():
     index_path = ROOT / 'data/source-index.json'
     if index_path.exists():
         try:
-            index_document = json.loads(index_path.read_text())
+            index_document = json.loads(index_path.read_text(encoding='utf-8'))
         except (OSError, ValueError):
             errors.append('Source index could not be read as JSON.')
         else:
@@ -776,7 +806,8 @@ def main():
     count = validate_markdown(ROOT, errors)
     for script in ('build_readme.py', 'build_repository_index.py', 'build_case_coverage.py'):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'],
-                                cwd=ROOT, text=True, capture_output=True, check=False)
+                                cwd=ROOT, encoding='utf-8', capture_output=True, check=False,
+                                env={**os.environ, 'PYTHONIOENCODING': 'utf-8'})
         if result.returncode:
             errors.append((result.stderr or result.stdout).strip() or f'{script}: generated content check failed.')
     if errors:

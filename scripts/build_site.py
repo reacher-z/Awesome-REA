@@ -206,7 +206,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         source_index_output.unlink(missing_ok=True)
         write_source_browser(output, None)
     topic_labels_path = SOURCE / "topics.i18n.json"
-    topic_labels = json.loads(topic_labels_path.read_text()) if topic_labels_path.exists() else {}
+    topic_labels = json.loads(topic_labels_path.read_text(encoding="utf-8")) if topic_labels_path.exists() else {}
     metadata["paper_count"] = len(papers)
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -332,7 +332,7 @@ def main() -> None:
         fontawesome_dir=args.fontawesome_dir,
         fontawesome_assets_url=args.fontawesome_assets_url,
     )
-    print(f"Built {resources} curated resources, {papers} papers and {pages} indexable pages → dist/ ({SITE_URL})")
+    print(f"Built {resources} curated resources, {papers} papers and {pages} indexable pages in dist/ ({SITE_URL})")
 
 
 if __name__ == "__main__":

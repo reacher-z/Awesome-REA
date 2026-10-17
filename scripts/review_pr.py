@@ -317,7 +317,7 @@ def main():
     repository = os.environ['GITHUB_REPOSITORY']
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', repository):
         raise ValueError('Invalid repository name')
-    event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+    event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text(encoding='utf-8'))
     number = int(event['pull_request']['number'])
     pull = api(repository, f'pulls/{number}', token)
     sha = pull['head']['sha']

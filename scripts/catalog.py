@@ -16,7 +16,7 @@ RESOURCE_FILES = (ROOT / 'data/rea-resources.json', ROOT / 'data/tool-resources.
 
 
 def load_resources():
-    return [record for path in RESOURCE_FILES for record in json.loads(path.read_text())]
+    return [record for path in RESOURCE_FILES for record in json.loads(path.read_text(encoding='utf-8'))]
 
 
 def main():
@@ -37,7 +37,7 @@ def main():
             parser.error('Paper searches support --target and --language; categories and relationships apply to resource catalogs.')
         records = read_papers()
     elif args.source_index:
-        records = json.loads((ROOT / 'data/source-index.json').read_text())['resources']
+        records = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
         records = with_curated_labels(apply_scope(localized_records(records, read_localizations(ROOT)), read_scope(ROOT)), load_resources())
         records = [record for record in records if record.get('scope_status') != 'excluded']
     else:

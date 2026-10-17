@@ -84,8 +84,8 @@ class Document(HTMLParser):
 def main():
     sitemap = ET.parse(OUTPUT / "sitemap.xml")
     urls = [node.text for node in sitemap.findall("{*}url/{*}loc")]
-    records = json.loads((OUTPUT / "catalog.json").read_text())["resources"]
-    papers = json.loads((OUTPUT / "papers.json").read_text())
+    records = json.loads((OUTPUT / "catalog.json").read_text(encoding="utf-8"))["resources"]
+    papers = json.loads((OUTPUT / "papers.json").read_text(encoding="utf-8"))
     entries = validate_route_inventory(urls, records, papers, include_browse=(OUTPUT / "source-index.json").is_file())
     documents = {}
     for url in urls:
@@ -94,7 +94,7 @@ def main():
         assert not parsed.query and not parsed.fragment, url
         path = OUTPUT / parsed.path.lstrip("/") / "index.html"
         assert path.is_file(), f"Sitemap route does not exist: {url}"
-        page = Document(path.read_text())
+        page = Document(path.read_text(encoding="utf-8"))
         documents[url] = page
         assert page.h1 == 1, f"Expected one H1: {url}"
         assert page.meta.get("description"), f"Missing description: {url}"
@@ -132,7 +132,7 @@ def main():
         page = documents[ORIGIN + path]
         assert len(page.resources) == len(expected) and set(page.resources) == expected, path
     robots = RobotFileParser()
-    robots.parse((OUTPUT / "robots.txt").read_text().splitlines())
+    robots.parse((OUTPUT / "robots.txt").read_text(encoding="utf-8").splitlines())
     for bot in ("Googlebot", "bingbot", "OAI-SearchBot", "PerplexityBot"):
         assert all(robots.can_fetch(bot, url) for url in urls), f"Robots blocks {bot}"
     assert ORIGIN + "/sitemap.xml" in (robots.site_maps() or []), "Missing sitemap declaration"

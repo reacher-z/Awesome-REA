@@ -102,8 +102,13 @@ def validate_papers(records, errors, *, url_check, now=None):
         if not isinstance(record, dict):
             errors.append(f'{where}: must be an object')
             continue
-        if set(record) != FIELDS:
-            errors.append(f'{where}: missing or unknown paper fields')
+        if isinstance(record.get('id'), str) and record['id'].strip():
+            where = f"paper {record['id']!r}"
+        missing, unknown = FIELDS - record.keys(), record.keys() - FIELDS
+        if missing:
+            errors.append(f"{where}: missing fields {', '.join(sorted(missing))}")
+        if unknown:
+            errors.append(f"{where}: unknown fields {', '.join(sorted(unknown))}")
         for field in TEXT_FIELDS:
             value = record.get(field)
             if not isinstance(value, str) or not value.strip():

@@ -85,7 +85,7 @@ def main():
     parser.add_argument('--submit', action='store_true', help='Verify deployed ownership, manifest and canonical HTML, then submit their URLs')
     args = parser.parse_args()
     # This is intentionally public ownership proof, not an account credential.
-    key = (ROOT / 'site/indexnow.txt').read_text().strip()
+    key = (ROOT / 'site/indexnow.txt').read_text(encoding='utf-8').strip()
     if not re.fullmatch(r'[a-f0-9]{32}', key):
         raise ValueError('Invalid public IndexNow verification key')
     output = ROOT / 'dist'

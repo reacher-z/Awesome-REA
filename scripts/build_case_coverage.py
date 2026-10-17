@@ -100,22 +100,22 @@ def main():
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     records = [row for filename in ('rea-resources.json', 'tool-resources.json')
-               for row in json.loads((ROOT / 'data' / filename).read_text())]
-    papers = json.loads((ROOT / 'data/papers.json').read_text())
+               for row in json.loads((ROOT / 'data' / filename).read_text(encoding='utf-8'))]
+    papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
     document = read_case_coverage(ROOT)
     errors = []
     validate_case_coverage(document, records, papers, errors, url_check=public_https_error)
     if errors:
         print('\n'.join(errors), file=sys.stderr)
         return 1
-    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text())
+    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))
     resources = {row['id']: row for row in records}
     stale = []
     for suffix, zh in (('', False), ('.zh-CN', True)):
         path = ROOT / ('docs/case-coverage' + suffix + '.md')
         expected = render(document, resources, translations, zh)
         if args.check:
-            if not path.exists() or path.read_text() != expected:
+            if not path.exists() or path.read_text(encoding='utf-8') != expected:
                 stale.append(path.name)
         else:
             path.write_text(expected, encoding='utf-8')

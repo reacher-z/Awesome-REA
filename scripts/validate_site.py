@@ -27,6 +27,7 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
+        self.anchor_names = []
         self.noindex, self.lang, self.json_script = False, None, None
         self.paper_ids, self.paper_texts, self.paper_links = [], {}, {}
         self.current_paper = None
@@ -66,6 +67,8 @@ class Page(HTMLParser):
             self.lang = values.get('lang')
         if values.get('id'):
             self.ids.append(values['id'])
+        if tag == 'a' and values.get('name'):
+            self.anchor_names.append(values['name'])
         if tag == 'article' and 'data-paper-id' in values:
             assert self.current_paper is None, 'Nested paper articles are invalid'
             identifier = values['data-paper-id']
@@ -207,6 +210,28 @@ def validate_language_links(route, page):
         served = 'zh' if target.path == '/zh' or target.path.startswith('/zh/') else 'en'
         requested = parse_qs(target.query).get('lang', [])
         assert all(value == served for value in requested), f'Link selects a language its route does not serve on {route}: {link}'
+
+
+def validate_link_fragments(output, pages, links):
+    """Check internal #fragments once every page is parsed, so cross-page targets are known.
+
+    links holds (source route, href, built target file). A fragment must match an id or
+    an <a name> on its HTML target, raw or percent-decoded; other file types are not
+    checked. Pages outside the sitemap are parsed on demand.
+    """
+    output = Path(output)
+    parsed = {(output / route.lstrip('/') / 'index.html').resolve(): page for route, page in pages.items()}
+    missing = []
+    for route, link, local in links:
+        if local.suffix.lower() not in {'.html', '.htm'}:
+            continue
+        key = local.resolve()
+        if key not in parsed:
+            parsed[key] = Page(local.read_text(encoding='utf-8'))
+        fragment = urlsplit(link).fragment
+        if not {fragment, unquote(fragment)} & {*parsed[key].ids, *parsed[key].anchor_names}:
+            missing.append(f'{route}: {link}')
+    assert not missing, 'Missing link fragment targets: ' + '; '.join(missing)
 
 
 def validate_paper_groups(page, papers, language):
@@ -475,15 +500,15 @@ def validate_entry_outputs(pages, resources, papers):
 
 def main():
     urls = [element.text for element in ET.parse(OUTPUT / 'sitemap.xml').findall('{*}url/{*}loc')]
-    resources = json.loads((OUTPUT / 'catalog.json').read_text())['resources']
-    papers = json.loads((OUTPUT / 'papers.json').read_text())
+    resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
+    papers = json.loads((OUTPUT / 'papers.json').read_text(encoding='utf-8'))
     validate_route_inventory(urls, resources, papers, include_browse=(OUTPUT / 'source-index.json').is_file())
-    pages = {}
+    pages, fragment_links = {}, []
     for url in urls:
         parsed = urlsplit(url)
         assert parsed.netloc == 'awesomerea.org' and parsed.scheme == 'https' and not parsed.query and not parsed.fragment
         path = OUTPUT / parsed.path.lstrip('/') / 'index.html'
-        text = path.read_text()
+        text = path.read_text(encoding='utf-8')
         assert not re.search(r'\{\{[A-Z_]+\}\}', text), f'Unresolved template in {parsed.path}'
         page = Page(text)
         pages[parsed.path] = page
@@ -508,13 +533,16 @@ def main():
             if local.is_dir():
                 local /= 'index.html'
             assert local.is_file(), f'Missing local link on {parsed.path}: {link}'
+            if target.fragment:
+                fragment_links.append((parsed.path, link, local))
+    validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_artifact_links(OUTPUT, pages)
     validate_source_browser_output(OUTPUT)
-    assert Page((OUTPUT / '404.html').read_text()).noindex, '404 must be noindex'
-    assert (OUTPUT / 'llms.txt').read_text().startswith('# '), 'llms.txt must contain Markdown'
-    assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text()), 'Invalid public ownership proof'
+    assert Page((OUTPUT / '404.html').read_text(encoding='utf-8')).noindex, '404 must be noindex'
+    assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
+    assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
     print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, local links and the deployment manifest.')
 

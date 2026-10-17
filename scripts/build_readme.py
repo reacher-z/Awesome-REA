@@ -178,7 +178,7 @@ def entry_type(record, language):
 def render_catalog(records, language, paper_urls=frozenset()):
     """Keep each source title and full description distinct; bibliography overlaps appear only there."""
     index = 0 if language == 'en' else 1
-    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text()) if language == 'zh' else {}
+    translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if language == 'zh' else {}
     groups = defaultdict(list)
     for record in records:
         if record['category'] not in CATEGORIES or record['relationship'] not in RELATIONSHIPS:
