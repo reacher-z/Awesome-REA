@@ -15,7 +15,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 - **目标** · [网站](#website) <sub>14</sub> · [游戏](#game) <sub>37</sub> · [应用](#app) <sub>30</sub> · [原生二进制](#native-binary) <sub>20</sub> · [固件与硬件](#firmware) <sub>12</sub> · [协议](#protocol) <sub>11</sub>
 
-- [论文](#papers) <sub>38</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,846</sub>
+- [论文](#papers) <sub>39</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -277,11 +277,11 @@
 <a id="papers"></a>
 ## 论文
 
-收录 **38 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
+收录 **39 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**按主题** · [智能体评测](#papers-agent-evaluation) <sub>5</sub> · [反编译](#papers-decompilation) <sub>7</sub> · [网站](#papers-website-reconstruction) <sub>12</sub> · [游戏](#papers-game-reconstruction) <sub>5</sub> · [应用](#papers-app-reconstruction) <sub>5</sub> · [固件](#papers-firmware-analysis) <sub>2</sub> · [协议](#papers-protocol-analysis) <sub>2</sub>
+**按主题** · [智能体评测](#papers-agent-evaluation) <sub>5</sub> · [反编译](#papers-decompilation) <sub>7</sub> · [网站](#papers-website-reconstruction) <sub>12</sub> · [游戏](#papers-game-reconstruction) <sub>5</sub> · [应用](#papers-app-reconstruction) <sub>5</sub> · [固件](#papers-firmware-analysis) <sub>2</sub> · [协议](#papers-protocol-analysis) <sub>3</sub>
 
 展开各条目的“范围与发表信息”可查看完整研究边界；以下按年份从新到旧排列。
 
@@ -872,6 +872,21 @@
   **范围与限制:** 需要未加密的报文记录，无法恢复从未出现的报文类型。较大的比对、亚字节关键字段及单向流量可能降低准确性。格式／有限状态机推断属于下游评测而非主要贡献；一个案例中的状态语义由人工标注。这些模型不能证明已完整重建应用／设备。
 
   **发表信息:** 2021 · NDSS 2021 · 会议论文 · Yapeng Ye 等
+
+  </details>
+
+- [**无线协议自动逆向工程**](https://www.usenix.org/conference/woot19/presentation/pohl) · **2019 · 会议论文**
+
+  从解调后的物理层捕获数据推断专有无线协议的报文格式：先依据前导码和同步字对齐报文，再结合 RSSI 与专用引擎标注长度、地址、序列号和校验和字段，并可利用已知地址或字段位置等先验信息。
+
+  [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [代码](https://github.com/jopohl/urh)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 仅推断报文格式，即前导码、同步字、长度、地址、序列号和校验和；协议状态机推断以及开关位等载荷字段不在研究范围内。方法假设报文为紧凑的二进制格式，且每条报文只有一个前导码和同步字。准确率在 8 个生成协议上评测；3 份真实智能家居捕获（EnOcean、Homematic BidCoS 及 RWE Smarthome 使用的 eQ-3 协议）用于性能测试，作者也承认这是有限的测试集。
+
+  **发表信息:** 2019 · 13th USENIX Workshop on Offensive Technologies (WOOT 19) · 会议论文 · Johannes Pohl 等
 
   </details>
 

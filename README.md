@@ -15,7 +15,7 @@ An independent, source-reviewed collection. Review does not imply runtime verifi
 <!-- BEGIN GENERATED CONTENTS -->
 - **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>37</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>12</sub> · [Protocol](#protocol) <sub>11</sub>
 
-- [Papers](#papers) <sub>38</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
+- [Papers](#papers) <sub>39</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -276,11 +276,11 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **38 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **39 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>7</sub> · [Websites](#papers-website-reconstruction) <sub>12</sub> · [Games](#papers-game-reconstruction) <sub>5</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>2</sub>
+**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>7</sub> · [Websites](#papers-website-reconstruction) <sub>12</sub> · [Games](#papers-game-reconstruction) <sub>5</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>3</sub>
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -871,6 +871,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
   **Scope and limits:** Requires unencrypted traces and cannot recover unseen message types. Larger alignments, sub-byte keywords and one-way traffic can reduce accuracy. Format/FSM inference is downstream evaluation rather than the main contribution; state semantics in a case study were manually annotated. These models do not establish complete application/device reconstruction.
 
   **Publication:** 2021 · NDSS 2021 · Conference paper · Yapeng Ye et al.
+
+  </details>
+
+- [**Automatic Wireless Protocol Reverse Engineering**](https://www.usenix.org/conference/woot19/presentation/pohl) · **2019 · Conference paper**
+
+  Infers message formats of proprietary wireless protocols from demodulated physical-layer captures: it aligns messages by preamble and sync word, then uses RSSI and dedicated engines to label length, address, sequence-number and checksum fields, optionally using known addresses or field positions.
+
+  [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [Code](https://github.com/jopohl/urh)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Only message formats are inferred: preamble, sync, length, address, sequence number and checksum. State-machine inference and payload fields, such as an on/off bit, are out of scope. The method assumes length-efficient binary messages with one preamble and sync word each. Accuracy is measured on 8 generated protocols; 3 real smart-home captures (EnOcean, Homematic BidCoS and an eQ-3 protocol used by RWE Smarthome) serve for performance tests, which the authors call a limited test set.
+
+  **Publication:** 2019 · 13th USENIX Workshop on Offensive Technologies (WOOT 19) · Conference paper · Johannes Pohl et al.
 
   </details>
 
