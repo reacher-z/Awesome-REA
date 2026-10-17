@@ -15,7 +15,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 - **目标** · [网站](#website) <sub>14</sub> · [游戏](#game) <sub>37</sub> · [应用](#app) <sub>30</sub> · [原生二进制](#native-binary) <sub>20</sub> · [固件与硬件](#firmware) <sub>12</sub> · [协议](#protocol) <sub>11</sub>
 
-- [论文](#papers) <sub>33</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,846</sub>
+- [论文](#papers) <sub>38</sub> · [案例](https://awesomerea.org/zh/?view=curated&kind=case-study) <sub>37</sub> · [Agent 与 MCP](#agents-and-mcp) <sub>18</sub> · [相关合集](#related-collections) <sub>4</sub> · [学习资料](#references-and-learning) <sub>17</sub> · [仓库索引](#完整仓库索引) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="资源目录"></a>
@@ -277,11 +277,11 @@
 <a id="papers"></a>
 ## 论文
 
-收录 **33 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
+收录 **38 篇论文**，涵盖逆向工程智能体评测、反编译、协议推断、固件分析，以及网站、游戏和应用重建。部分论文也出现在精选资源目录中，两者数量不可相加。发表状态与研究范围分别标注，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**按主题** · [智能体评测](#papers-agent-evaluation) <sub>5</sub> · [反编译](#papers-decompilation) <sub>6</sub> · [网站](#papers-website-reconstruction) <sub>8</sub> · [游戏](#papers-game-reconstruction) <sub>5</sub> · [应用](#papers-app-reconstruction) <sub>5</sub> · [固件](#papers-firmware-analysis) <sub>2</sub> · [协议](#papers-protocol-analysis) <sub>2</sub>
+**按主题** · [智能体评测](#papers-agent-evaluation) <sub>5</sub> · [反编译](#papers-decompilation) <sub>7</sub> · [网站](#papers-website-reconstruction) <sub>12</sub> · [游戏](#papers-game-reconstruction) <sub>5</sub> · [应用](#papers-app-reconstruction) <sub>5</sub> · [固件](#papers-firmware-analysis) <sub>2</sub> · [协议](#papers-protocol-analysis) <sub>2</sub>
 
 展开各条目的“范围与发表信息”可查看完整研究边界；以下按年份从新到旧排列。
 
@@ -369,6 +369,21 @@
 ### 反编译与符号恢复
 
 [↑ 论文主题](#papers) · [目录](#目录)
+
+- [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) · **2026 · 会议论文**
+
+  将 LLM 反编译分为两个阶段：结构恢复模型把反编译器伪代码转换为保留控制流和数据结构、但不含标识符的中间表示，并以编译器反馈作为强化学习奖励；标识符命名模型再以语义相似度为奖励恢复名称。作者报告，其在 HumanEval 上的平均可重新执行率比 GPT-5-mini 高 21.6%，在 GitHub2025 上的平均 R2I 比 Idioms 提升 29.4%。
+
+  [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [代码](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练和主要评测均使用函数级 C 代码，以 GCC 和 Clang 在 -O0 至 -O3 下编译为 x86-64 Linux 二进制，并以 IDA Pro 伪代码作为模型输入。可重新执行率仅在 HumanEval 和 MBPP 上测量；ExeBench 与 GitHub2025 采用 R2I 可读性指标和 GPT-5-mini 评审。附录实验扩展到 BringUpBench 项目、macOS arm64 与 Windows MSVC 构建以及 Obfuscator-LLVM，但模型仅以 C 代码训练，论文预计遇到 C++ 模板等没有 C 对应物的语言特性时效果会下降。
+
+  **发表信息:** 2026 · ICLR 2026 · 会议论文 · Hanzhuo Tan 等
+
+  </details>
 
 - [**DecompileBench：面向真实场景的反编译器综合评测基准**](https://aclanthology.org/2025.findings-acl.1194/) · **2025 · 会议论文**
 
@@ -525,6 +540,36 @@
 
   </details>
 
+- [**CASCADE：谷歌基于大语言模型的 JavaScript 反混淆器**](https://doi.org/10.1145/3786583.3786873) · **2026 · 会议论文**
+
+  利用 Gemini 定位 Obfuscator.IO 为字符串混淆插入的前置（prelude）函数，再在 JSIR 编译器中间表示上执行常量传播与内联，以确定性方式还原字符串字面量和 API 名称。
+
+  [PDF](https://arxiv.org/pdf/2507.17691v2) · [代码](https://github.com/google/jsir)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该方法针对 Obfuscator.IO 的字符串混淆；控制流平坦化、其他混淆器及基于智能体的设计留待后续工作。评测以 Obfuscator.IO 的四种预设配置混淆 ETH 150k JavaScript 数据集中的 3,000 个程序，衡量前置函数识别、还原的字面量数量和运行时间，而非功能等价性。生产部署及扫描规模均为作者自述，生产环境的预筛选依赖一条未公开的 YARA 规则。
+
+  **发表信息:** 2026 · ICSE-SEIP 2026 · 会议论文 · Shan Jiang 等
+
+  </details>
+
+- [**ScreenCoder：以模块化多模态智能体推进面向前端自动化的视觉到代码生成**](https://arxiv.org/abs/2507.22827) · **2026 · 已接收**
+
+  将截图到代码的生成分配给定位、规划和生成三个智能体，分别标注界面区域、构建层级布局树并编写 HTML/CSS。该流程还生成了用于监督微调和强化学习的 Screen-10K 训练数据；论文另提出包含 1,000 个网页的 ScreenBench。
+
+  [PDF](https://arxiv.org/pdf/2507.22827v2) · [代码](https://github.com/leigest519/ScreenCoder)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 输出为静态 HTML/CSS 布局，不重建交互、JavaScript 行为或后端逻辑。结果是 ScreenBench 与 Design2Code 上的视觉相似度分数（CLIP 及经 OCR 匹配的文本块），不能证明代码层面或功能上的等价。公开流程需调用托管模型 API，默认使用豆包（Doubao）。审阅文本为 arXiv v2，EMNLP 接收版本可能有所不同。
+
+  **发表信息:** 2026 · EMNLP 2026 · 已接收 · Yilei Jiang 等
+
+  </details>
+
 - [**IWR-Bench：大型视觉语言模型能否根据用户交互视频重建可交互网页？**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/55bfedfd31489e5ae83c9ce8eec7b0e1-Abstract-Conference.html) · **2026 · 会议论文**
 
   测试模型利用用户交互视频和提供的静态资源重建可交互网页的能力。其 113 项任务通过重放标注的操作序列，评估已观察页面状态的视觉保真度与功能行为。
@@ -537,6 +582,21 @@
   **范围与限制:** 要求输出单个 HTML 文件；论文明确要求用 JavaScript 静态数据模拟隐含的后端逻辑。轨迹覆盖和模型评审均不能证明完整网站或后端等价。
 
   **发表信息:** 2026 · ICLR 2026 · 会议论文 · Yang Chen 等
+
+  </details>
+
+- [**JsDeObsBench：衡量与评测大语言模型的 JavaScript 反混淆能力**](https://doi.org/10.1145/3719027.3744871) · **2025 · 会议论文**
+
+  对附带测试用例的 Project CodeNet 程序施加 JavaScript-Obfuscator 的七种混淆变换，构建可通过执行验证的 JavaScript 反混淆基准，并从语法、执行结果、代码简化程度及与原始代码的相似度评估 LLM 和现有工具的输出。
+
+  [PDF](https://arxiv.org/pdf/2506.20170v1) · [代码](https://github.com/Ch3nYe/JsDeObsBench)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 平均而言，LLM 输出通过执行检查的比例为 60.93%，两种现有反混淆工具基线为 83%。所有样本均由单一混淆器生成，原始程序是长度适中的编程竞赛解答。4,515 个经混淆的恶意代码样本没有测试用例，只能通过行为轨迹比较。
+
+  **发表信息:** 2025 · ACM CCS 2025 · 会议论文 · Guoqiang Chen 等
 
   </details>
 
@@ -567,6 +627,21 @@
   **范围与限制:** 主要评估视觉与 HTML 重建技能。论文虽含初步交互研究，但并非完整流程或后端等价评测。官方仓库目前提供 README 和图片，未提供说明中提及的评估脚本。
 
   **发表信息:** 2025 · Findings of ACL 2025 · 会议论文 · Zhiyu Lin 等
+
+  </details>
+
+- [**分而治之：从截图生成界面代码**](https://doi.org/10.1145/3729364) · **2025 · 期刊论文**
+
+  沿视觉分隔线递归切分网页截图，由多模态模型为每个叶子片段生成 HTML/CSS，再将子片段代码逐级向上组装为完整页面；评估涵盖 GPT-4o、Gemini 与 Claude 系列模型以及一项小规模开发者研究。
+
+  [PDF](https://arxiv.org/pdf/2406.16386v3) · [代码](https://github.com/WebPAI/DCGen)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该方法以 HTML/CSS 重建静态视觉布局，不重建交互、JavaScript 行为或后端逻辑。测试页面是将图片替换为占位图的自包含快照；主要评测从 348 个热门网站中抽取 111 个，另加 80 个更复杂的 GitHub Pages 页面，可用性研究仅有四名参与者。分割依赖人工设定的阈值，组装阶段仍可能错排元素。
+
+  **发表信息:** 2025 · Proceedings of the ACM on Software Engineering · 期刊论文 · Yuxuan Wan 等
 
   </details>
 

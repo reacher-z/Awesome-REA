@@ -15,7 +15,7 @@ An independent, source-reviewed collection. Review does not imply runtime verifi
 <!-- BEGIN GENERATED CONTENTS -->
 - **Targets** · [Website](#website) <sub>14</sub> · [Game](#game) <sub>37</sub> · [App](#app) <sub>30</sub> · [Native Binary](#native-binary) <sub>20</sub> · [Firmware & Hardware](#firmware) <sub>12</sub> · [Protocol](#protocol) <sub>11</sub>
 
-- [Papers](#papers) <sub>33</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
+- [Papers](#papers) <sub>38</sub> · [Cases](https://awesomerea.org/?view=curated&kind=case-study) <sub>37</sub> · [Agents & MCP](#agents-and-mcp) <sub>18</sub> · [Collections](#related-collections) <sub>4</sub> · [Learning](#references-and-learning) <sub>17</sub> · [Repository index](#full-repository-index) <sub>2,846</sub>
 <!-- END GENERATED CONTENTS -->
 
 <a id="resource-catalog"></a>
@@ -276,11 +276,11 @@ Browse by purpose, with case studies separated from tools and integrations. Each
 <a id="papers"></a>
 ## Papers
 
-A bibliography of **33 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
+A bibliography of **38 papers** on reverse-engineering agent evaluation, decompilation, protocol inference, firmware analysis, and website, game, and app reconstruction. Some papers also appear among curated resources; counts are not additive. Publication status and study scope are made explicit.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
-**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>6</sub> · [Websites](#papers-website-reconstruction) <sub>8</sub> · [Games](#papers-game-reconstruction) <sub>5</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>2</sub>
+**By topic** · [Agent evaluation](#papers-agent-evaluation) <sub>5</sub> · [Decompilation](#papers-decompilation) <sub>7</sub> · [Websites](#papers-website-reconstruction) <sub>12</sub> · [Games](#papers-game-reconstruction) <sub>5</sub> · [Apps](#papers-app-reconstruction) <sub>5</sub> · [Firmware](#papers-firmware-analysis) <sub>2</sub> · [Protocols](#papers-protocol-analysis) <sub>2</sub>
 
 Open “Scope and publication details” for each study’s full limitations. Papers are ordered newest first within each topic.
 
@@ -368,6 +368,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 ### Decompilation and symbol recovery
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html) · **2026 · Conference paper**
+
+  Splits LLM decompilation into two phases: a Structure Recovery model turns decompiler pseudocode into an identifier-free IR that keeps control flow and data structures, trained with compiler-based RL rewards, and an Identifier Naming model then restores names under a semantic-similarity reward. The authors report a 21.6% average re-executability gain over GPT-5-mini on HumanEval and a 29.4% average R2I improvement over Idioms on GitHub2025.
+
+  [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [Code](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Training and main evaluation use function-level C compiled for x86-64 Linux with GCC and Clang at -O0 to -O3, with IDA Pro pseudocode as model input. Re-executability is measured only on HumanEval and MBPP; ExeBench and GitHub2025 use R2I readability and a GPT-5-mini judge. Appendix experiments extend to BringUpBench projects, macOS arm64 and Windows MSVC builds, and Obfuscator-LLVM, but the models are trained on C only and the paper expects them to degrade on features without C equivalents, such as C++ templates.
+
+  **Publication:** 2026 · ICLR 2026 · Conference paper · Hanzhuo Tan et al.
+
+  </details>
 
 - [**DecompileBench: A Comprehensive Benchmark for Evaluating Decompilers in Real-World Scenarios**](https://aclanthology.org/2025.findings-acl.1194/) · **2025 · Conference paper**
 
@@ -524,6 +539,36 @@ Open “Scope and publication details” for each study’s full limitations. Pa
 
   </details>
 
+- [**CASCADE: LLM-powered JavaScript Deobfuscator at Google**](https://doi.org/10.1145/3786583.3786873) · **2026 · Conference paper**
+
+  Uses Gemini to locate the prelude functions that Obfuscator.IO inserts for string obfuscation, then applies constant-propagation and inlining passes in the JSIR compiler IR to restore string literals and API names deterministically.
+
+  [PDF](https://arxiv.org/pdf/2507.17691v2) · [Code](https://github.com/google/jsir)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The method addresses Obfuscator.IO string obfuscation; control-flow flattening, other obfuscators and an agent-based design are future work. Evaluation obfuscates 3,000 programs from the ETH 150k JavaScript dataset with four Obfuscator.IO presets and measures prelude detection, recovered literals and run time, not functional equivalence. Production deployment and scan volume are author-reported, and production pre-filtering uses a proprietary YARA rule.
+
+  **Publication:** 2026 · ICSE-SEIP 2026 · Conference paper · Shan Jiang et al.
+
+  </details>
+
+- [**ScreenCoder: Advancing Visual-to-Code Generation for Front-End Automation via Modular Multimodal Agents**](https://arxiv.org/abs/2507.22827) · **2026 · Accepted**
+
+  Splits screenshot-to-code generation among grounding, planning and generation agents that label UI regions, build a hierarchical layout tree and write HTML/CSS. The pipeline also produces the Screen-10K training pairs used for supervised and reinforcement fine-tuning, and the paper introduces the 1,000-page ScreenBench.
+
+  [PDF](https://arxiv.org/pdf/2507.22827v2) · [Code](https://github.com/leigest519/ScreenCoder)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Output is static HTML/CSS layout; interaction, JavaScript behavior and backend logic are not reconstructed. Results are visual-similarity scores (CLIP and OCR-matched text blocks) on ScreenBench and Design2Code, which do not establish code-level or functional equivalence. The released pipeline calls a hosted model API, Doubao by default. The reviewed text is arXiv v2; the accepted EMNLP version may differ.
+
+  **Publication:** 2026 · EMNLP 2026 · Accepted · Yilei Jiang et al.
+
+  </details>
+
 - [**IWR-Bench: Can LVLMs reconstruct interactive webpage from a user interaction video?**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/55bfedfd31489e5ae83c9ce8eec7b0e1-Abstract-Conference.html) · **2026 · Conference paper**
 
   Tests reconstruction of interactive webpages from user-interaction videos and supplied static assets. Its 113 tasks replay annotated action sequences to assess visual fidelity and functional behavior across observed page states.
@@ -536,6 +581,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
   **Scope and limits:** The required output is one HTML file; the paper explicitly instructs models to mock implied backend logic with static JavaScript data. Trajectory coverage and model-based judgments do not prove complete website or backend equivalence.
 
   **Publication:** 2026 · ICLR 2026 · Conference paper · Yang Chen et al.
+
+  </details>
+
+- [**JsDeObsBench: Measuring and Benchmarking LLMs for JavaScript Deobfuscation**](https://doi.org/10.1145/3719027.3744871) · **2025 · Conference paper**
+
+  Builds an execution-verifiable JavaScript deobfuscation benchmark by applying seven JavaScript-Obfuscator transformations to Project CodeNet programs with test cases, then scores LLM and tool outputs for syntax, execution, code simplification and similarity to the original code.
+
+  [PDF](https://arxiv.org/pdf/2506.20170v1) · [Code](https://github.com/Ch3nYe/JsDeObsBench)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** On average, LLM outputs passed execution checks 60.93% of the time, against 83% for the two existing deobfuscator baselines. All samples come from a single obfuscator applied to moderate-length competitive-programming solutions. The 4,515 obfuscated malware samples have no test cases and are compared only through behavior traces.
+
+  **Publication:** 2025 · ACM CCS 2025 · Conference paper · Guoqiang Chen et al.
 
   </details>
 
@@ -566,6 +626,21 @@ Open “Scope and publication details” for each study’s full limitations. Pa
   **Scope and limits:** Primarily evaluates visual and HTML reconstruction skills. The paper includes a preliminary interaction study, not a full workflow or backend-equivalence benchmark. The official repository currently exposes README and images but not the evaluation scripts described in its instructions.
 
   **Publication:** 2025 · Findings of ACL 2025 · Conference paper · Zhiyu Lin et al.
+
+  </details>
+
+- [**Divide-and-Conquer: Generating UI Code from Screenshots**](https://doi.org/10.1145/3729364) · **2025 · Journal article**
+
+  Recursively divides a webpage screenshot along visual separation lines, has a multimodal model generate HTML/CSS for each leaf segment, and assembles child code upward into the full page; evaluated with GPT-4o, Gemini and Claude models and a small developer study.
+
+  [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** It reconstructs static visual layout as HTML/CSS, not interaction, JavaScript behavior or backend logic. Test pages are self-contained snapshots with images replaced by placeholders; the main evaluation samples 111 of 348 top-ranked sites, adds 80 harder GitHub Pages pages, and the usefulness study has four participants. Segmentation uses manually set thresholds, and assembly can still misarrange elements.
+
+  **Publication:** 2025 · Proceedings of the ACM on Software Engineering · Journal article · Yuxuan Wan et al.
 
   </details>
 
