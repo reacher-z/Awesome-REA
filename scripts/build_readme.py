@@ -240,11 +240,10 @@ def render_papers(papers, language):
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
             lines.extend([
                 f"- [{title}]({paper['url']}) - " + plain_text(paper[f'description_{language}'])
-                + f" <sub>**{metadata}** · {author} · " + ' · '.join(links) + '</sub>',
-                f"  <br><sub>**{'范围与限制' if zh else 'Scope and limits'}:** "
-                + plain_text(paper[f'scope_limitations_{language}']) + '</sub>',
+                + f" <sub>**{metadata}** · {author} · " + ' · '.join(links) + '</sub>', '',
+                f"  <sub>**{'范围与限制' if zh else 'Scope and limits'}:** "
+                + plain_text(paper[f'scope_limitations_{language}']) + '</sub>', '',
             ])
-        lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
