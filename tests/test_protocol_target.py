@@ -76,6 +76,9 @@ class ProtocolTargetTests(unittest.TestCase):
             (resource(id='burp-suite-mcp-server', category='agent-mcp', kind='integration', targets=['website', 'app']), 'website'),
             (resource(id='apktool-mcp-server', category='agent-mcp', kind='integration', targets=['app']), 'app'),
             (resource(id='grapefruit', category='dynamic-analysis', targets=['app']), 'app'),
+            # Community device cases follow their reviewed targets rather than an ID override.
+            (resource(id='picoprint-rea-investigation', category='community-case-studies', kind='case-study',
+                      relationship='community-reported-mixed-workflow', targets=['app', 'protocol']), 'app'),
         ):
             with self.subTest(record=record['category'], kind=record['kind']):
                 self.assertEqual(collection_section(record), expected)

@@ -13,8 +13,8 @@ Choose a target below. Entries link to primary sources; **source review does not
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (14) · [Game](#game) (42) · [App](#app) (34)
-- [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
+- [Website](#website) (14) · [Game](#game) (42) · [App](#app) (36)
+- [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (10)
 
 **Research and more**
 
@@ -287,9 +287,17 @@ Includes independent projects and [REA](https://github.com/morluto/rea) resource
 
   Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit.
 
+- [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint) · Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/picoprint-rea-investigation/)
+
+  The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer.
+
 - [**ReaCut: video-editor reconstruction**](https://github.com/Xiangyu-CAS/rea-capcut) · Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/reacut-reconstruction/)
 
   An independent video editor whose authors document REA-assisted investigation of Jianying/CapCut behavior and project formats. The public implementation includes a local timeline, FFmpeg export and an experimental, lossy draft importer.
+
+- [**CF632BLE: a local client from scale-protocol research**](https://github.com/guyru/cf632ble) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/cf632ble-case/)
+
+  Reimplements the CF632BLE scale’s BLE protocol and body-composition calculations from research on the vendor’s Unique Health Android app. A static Web Bluetooth client receives measurements, manages device profiles and keeps its history in browser storage.
 
 - [**zee-rp: reconstructing supported Axure RP 11 document operations**](https://github.com/LilZeeCN/zee-rp) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/zee-rp-case/)
 
@@ -513,10 +521,6 @@ Includes independent projects and [REA](https://github.com/morluto/rea) resource
 
 #### Case studies
 
-- [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint) · Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/picoprint-rea-investigation/)
-
-  The author describes REA-assisted Android investigation followed by separate Hermes decompilation to support a Windows BLE printer.
-
 - [**ThinkPad IMX471: recovering camera tuning for Linux**](https://github.com/cschalle/mipi-fixes-x1-aura) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/thinkpad-imx471-camera-case/)
 
   Recovers selected camera-tuning structures from an Intel Windows driver package and uses them to repair Linux image capture on one ThinkPad model. Public CPFF/AIQB parsers, kernel patches and libcamera changes accompany the author’s Claude-assisted investigation and bounded before/after measurements.
@@ -581,10 +585,6 @@ Includes independent projects and [REA](https://github.com/morluto/rea) resource
 - [**GAMEKB-K17: reconstructing a macropad configuration protocol**](https://github.com/dvdarkin/gamekb-k17) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/gamekb-k17-case/)
 
   Implements the vendor HID configuration protocol for the GAMEKB-K17/HCY-K017 macropad. It writes key mappings, firmware macros and RGB settings, then reads them back; protocol notes separate tested commands from unconfirmed observations and other-device findings.
-
-- [**CF632BLE: a local client from scale-protocol research**](https://github.com/guyru/cf632ble) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/cf632ble-case/)
-
-  Reimplements the CF632BLE scale’s BLE protocol and body-composition calculations from research on the vendor’s Unique Health Android app. A static Web Bluetooth client receives measurements, manages device profiles and keeps its history in browser storage.
 
 - [**cooler-lcd: a Thermalright display protocol implementation**](https://github.com/kristjaningi/cooler-lcd) · Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/cooler-lcd-case/)
 

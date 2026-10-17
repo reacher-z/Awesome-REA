@@ -582,7 +582,6 @@
     ],
     "targets": [
       "app",
-      "firmware",
       "protocol"
     ],
     "kind": "case-study"
@@ -732,7 +731,8 @@
       "Device compatibility and formula accuracy are project claims not independently tested here. The reviewed primary files do not establish REA use."
     ],
     "targets": [
-      "protocol"
+      "protocol",
+      "app"
     ],
     "kind": "case-study",
     "additional_evidence_urls": [

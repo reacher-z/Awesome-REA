@@ -144,7 +144,7 @@ def collection_section(record):
         return 'game'
     if record['id'] in {'jadx-ai-mcp', 'apktool-mcp-server', 'frida-mcp-yfe404', 'super-trouper', 'frida', 'grapefruit', 'rea-aegis-case', 'rea-notion-case', 'nibkit'} or category in {'android', 'dotnet', 'jvm', 'javascript-electron'}:
         return 'app'
-    if category == 'firmware' or record['id'] == 'picoprint-rea-investigation':
+    if category == 'firmware':
         return 'firmware'
     if category in {'core', 'agent-mcp', 'agent-workflows', 'community-integrations'}:
         return 'agents-and-mcp'

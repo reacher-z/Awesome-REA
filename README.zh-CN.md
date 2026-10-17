@@ -13,8 +13,8 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (14) · [游戏](#game) (42) · [应用](#app) (34)
-- [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
+- [网站](#website) (14) · [游戏](#game) (42) · [应用](#app) (36)
+- [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (10)
 
 **论文与更多资源**
 
@@ -288,9 +288,17 @@
 
   结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。
 
+- [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
+
+  作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。
+
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/reacut-reconstruction/)
 
   独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。实现包含本地时间线、FFmpeg 导出，以及实验性的有损草稿导入。
+
+- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
+
+  根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
 
 - [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
 
@@ -514,10 +522,6 @@
 
 #### 案例
 
-- [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint) · 案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
-
-  作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。
-
 - [**ThinkPad IMX471：为 Linux 恢复相机调校信息**](https://github.com/cschalle/mipi-fixes-x1-aura) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)
 
   从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。公开的 CPFF／AIQB 解析器、内核补丁及 libcamera 修改，配有作者报告的 Claude 辅助调查和有限范围的前后测量。
@@ -582,10 +586,6 @@
 - [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gamekb-k17-case/)
 
   实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。
-
-- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
-
-  根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
 
 - [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd) · 案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cooler-lcd-case/)
 
