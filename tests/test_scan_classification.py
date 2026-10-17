@@ -15,7 +15,8 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from scan_sources import CLASSIFICATION_ENGINE_VERSION, classify, initial_meta, relabel_report, run_scan, scan_readme
+from scan_sources import (CLASSIFICATION_ENGINE_VERSION, classify, initial_meta, protocol_report, protocol_signals,
+                          published_fields, relabel_report, run_scan, scan_readme)
 
 # Joined in some orders, these topics used to read as "java decompiler",
 # "protocol reverse-engineering" or "model context protocol".
@@ -75,7 +76,7 @@ class ClassificationDeterminismTests(unittest.TestCase):
         self.assertEqual(classify({'full_name': 'example/tool', 'description': '',
                                    'topics': ['java-decompiler']})[0], ['app'])
         self.assertEqual(classify({'full_name': 'example/tool', 'description': '',
-                                   'topics': ['protocol-reverse-engineering']}), ([], 'protocol-analysis'))
+                                   'topics': ['protocol-reverse-engineering']}), (['protocol'], 'protocol-analysis'))
         self.assertEqual(classify({'full_name': 'example/tool', 'description': 'Network protocol reverse engineering',
                                    'topics': []})[1], 'protocol-analysis')
         self.assertEqual(classify({'full_name': 'example/tool', 'description': 'Model Context Protocol reverse engineering',
@@ -122,6 +123,97 @@ class ClassificationDeterminismTests(unittest.TestCase):
         self.assertEqual(result['meta']['current_run']['classification_engine_version'], CLASSIFICATION_ENGINE_VERSION)
         self.assertEqual(result['meta']['resume_history'][-1]['classification_engine_version'], 2)
         self.assertEqual(result['meta']['resume_history'][-1]['classification_policy'], 'Historical policy')
+
+
+class ProtocolTargetTests(unittest.TestCase):
+    def test_explicit_protocol_signals_add_the_target(self):
+        for fixture, expected in (
+            ({'description': '', 'topics': ['protocol-analysis']}, (['protocol'], 'protocol-analysis')),
+            ({'description': '', 'topics': ['wireshark']}, (['protocol'], 'protocol-analysis')),
+            ({'description': 'BLE protocol reverse engineering for a label printer', 'topics': []},
+             (['protocol'], 'protocol-analysis')),
+            ({'description': 'Network protocol fuzzing framework', 'topics': []}, (['protocol'], 'protocol-analysis')),
+            # A higher-precedence category keeps its place; the target is still added.
+            ({'description': 'Ghidra loader for captured traffic', 'topics': ['pcap']},
+             (['binary', 'protocol'], 'native-analysis')),
+        ):
+            with self.subTest(fixture=fixture):
+                self.assertEqual(classify({'full_name': 'example/tool', **fixture}), expected)
+
+    def test_mcp_rest_api_and_mitmproxy_alone_do_not_qualify(self):
+        for fixture, expected in (
+            ({'description': 'A Model Context Protocol server', 'topics': ['mcp', 'model-context-protocol']},
+             ([], 'reverse-engineering')),
+            ({'description': 'Model Context Protocol reverse engineering', 'topics': []}, ([], 'reverse-engineering')),
+            ({'description': 'Client for a REST API', 'topics': ['rest-api']}, (['website'], 'web-analysis')),
+            ({'description': 'Certificate pinning removal', 'topics': ['mitmproxy']}, (['website'], 'web-analysis')),
+        ):
+            with self.subTest(fixture=fixture):
+                self.assertEqual(classify({'full_name': 'example/tool', **fixture}), expected)
+                self.assertEqual(protocol_signals({'full_name': 'example/tool', **fixture}), [])
+        # This retained record reached protocol-analysis only through its rest-api topic.
+        flight = next(record for record in json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
+                      if record['id'] == 'scan-1393536781')
+        self.assertEqual((flight['targets'], flight['category']), (['app', 'website'], 'protocol-analysis'))
+        self.assertEqual(classify(published_fields(flight)), (['app', 'website'], 'web-analysis'))
+
+    def test_target_and_category_share_one_signal(self):
+        records = json.loads((ROOT / 'data/source-index.json').read_text(encoding='utf-8'))['resources']
+        fixtures = FIXTURES + [published_fields(record) for record in records]
+        tagged = 0
+        for fixture in fixtures:
+            targets, category = classify(fixture)
+            signalled = bool(protocol_signals(fixture))
+            tagged += signalled
+            self.assertEqual('protocol' in targets, signalled, fixture['full_name'])
+            if category == 'protocol-analysis':
+                self.assertIn('protocol', targets, fixture['full_name'])
+        self.assertGreater(tagged, 0)
+
+    def test_new_captures_carry_the_protocol_target(self):
+        record, _ = scan_readme(readme_api(), repository(description='Wireshark dissector', topics=['wireshark']))
+        self.assertEqual(record['classification_engine_version'], CLASSIFICATION_ENGINE_VERSION)
+        self.assertEqual((record['targets'], record['category']), (['protocol'], 'protocol-analysis'))
+
+
+class ProtocolReportTests(unittest.TestCase):
+    def test_report_lists_protocol_changes_without_rewriting_records(self):
+        def stored(identifier, targets, category, **changes):
+            return {'id': identifier, 'full_name': 'example/' + identifier, 'description_en': '',
+                    'topics': [], 'targets': targets, 'category': category,
+                    'classification_origin': 'automatic-metadata', **changes}
+        document = {'resources': [
+            stored('unchanged', [], 'reverse-engineering'),
+            stored('capture', [], 'protocol-analysis', topics=['pcap']),
+            stored('rest', ['website'], 'protocol-analysis', topics=['rest-api']),
+            stored('curated', ['binary'], 'protocol-analysis', topics=['pcap'],
+                   classification_origin='curated-cross-reference'),
+        ]}
+        before = copy.deepcopy(document)
+        report = protocol_report(document)
+        self.assertEqual(document, before)
+        self.assertEqual((report['compared_automatic_records'], report['skipped_cross_referenced_records'],
+                          report['differing_records']), (3, 1, 2))
+        self.assertEqual(report['changes'], {'adds-protocol-target': 1, 'enters-protocol-analysis': 0,
+                                             'leaves-protocol-analysis': 1})
+        self.assertEqual([(row['id'], row['changes'], row['protocol_signals'], row['rederived']) for row in report['records']], [
+            ('capture', ['adds-protocol-target'], ['topic:pcap'], {'targets': ['protocol'], 'category': 'protocol-analysis'}),
+            ('rest', ['leaves-protocol-analysis'], [], {'targets': ['website'], 'category': 'web-analysis'}),
+        ])
+
+    def test_command_reads_the_snapshot_offline_and_retags_nothing(self):
+        snapshot = ROOT / 'data/source-index.json'
+        before = snapshot.read_bytes()
+        result = subprocess.run([sys.executable, str(ROOT / 'scripts/scan_sources.py'), '--protocol-report', str(snapshot)],
+                                capture_output=True, text=True, check=True, env={**os.environ, 'PATH': ''})
+        report = json.loads(result.stdout)
+        self.assertEqual(snapshot.read_bytes(), before)
+        # Retained records keep their stored labels; none was given the target automatically.
+        self.assertFalse(any('protocol' in record['targets'] for record in json.loads(before)['resources']))
+        self.assertGreater(report['changes']['adds-protocol-target'], 0)
+        for row in report['records']:
+            self.assertEqual('adds-protocol-target' in row['changes'], bool(row['protocol_signals']), row['id'])
+        self.assertIn('scan-1393536781', [row['id'] for row in report['records'] if 'leaves-protocol-analysis' in row['changes']])
 
 
 class RelabelReportTests(unittest.TestCase):

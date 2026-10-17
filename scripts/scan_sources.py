@@ -23,6 +23,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from source_descriptions import SOURCE_DESCRIPTION_POLICY, capture_description
+from source_scope import DUPLICATE_README_REASON, read_scope
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -69,11 +70,18 @@ QUERIES = [query + ' is:public fork:false archived:false' for query in QUERY_BAS
 MAX_README_BYTES = 8 * 1024 * 1024
 MAX_API_BYTES = 12 * 1024 * 1024
 # Version 3 matches topics separately, ignores omitted descriptions and leaves curated labels to the build.
-CLASSIFICATION_ENGINE_VERSION = 3
+# Version 4 adds the protocol target from the same explicit signal as the protocol-analysis category.
+CLASSIFICATION_ENGINE_VERSION = 4
 CLASSIFICATION_POLICY = ('Automatic labels use repository names, URL-stripped published descriptions and explicit topics, with primary-function precedence. '
                          'Engine 3 matches each topic separately and never classifies an omitted description, so labels are a pure function of the published fields; '
-                         'records it captures carry classification_engine_version. Curated cross-references are derived when the site and directories are built, '
+                         'records it captures carry classification_engine_version. Engine 4 assigns the protocol target and the protocol-analysis category from one '
+                         'explicit protocol-analysis signal; MCP, REST API and mitmproxy mentions alone do not qualify. Curated cross-references are derived when the site and directories are built, '
                          'not at scan time; retained records keep their stored labels. Labels do not establish REA compatibility. Empty targets mean insufficient metadata.')
+# Explicit communication-format or traffic analysis. Model Context Protocol wording is removed before matching;
+# REST API usage and mitmproxy as a toolkit component remain website signals only.
+PROTOCOL_TOPICS = frozenset({'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'network-forensics'})
+PROTOCOL_WORDING = r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)'
+MCP_WORDING = r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b'
 
 
 def now():
@@ -261,14 +269,30 @@ def repository_ineligibility(repo):
     return None
 
 
-def classify(repo):
-    """Label one capture from its name, published description and topics alone."""
+def classification_segments(repo):
+    """Return the lowercased topics, name-and-description text and separately matched segments."""
     topics = {topic.lower() for topic in repo.get('topics', [])}
     description = re.sub(r'https?://[^\s<>]+', ' ', repo.get('description') or '', flags=re.I)
-    name = repo['full_name'].lower()
-    purpose = (name + ' ' + description).lower()
+    purpose = (repo['full_name'] + ' ' + description).lower()
     # Each topic is matched alone, so adjacency patterns cannot join two unrelated topics.
-    segments = (purpose, *sorted(topics))
+    return topics, purpose, (purpose, *sorted(topics))
+
+
+def protocol_signals(repo):
+    """List the explicit protocol-analysis evidence that sets both the target and the category."""
+    topics, purpose, _ = classification_segments(repo)
+    signals = ['topic:' + topic for topic in sorted(topics & PROTOCOL_TOPICS)]
+    # Model Context Protocol is an agent interface, not evidence of network-protocol analysis.
+    text = re.sub(MCP_WORDING, ' ', purpose)
+    signals += ['text:' + match for match in sorted({match[0] for match in re.finditer('(?:' + PROTOCOL_WORDING + r')\w*', text)})]
+    signals += ['topic:' + topic for topic in sorted(topics - PROTOCOL_TOPICS)
+                if re.search(PROTOCOL_WORDING, re.sub(MCP_WORDING, ' ', topic))]
+    return signals
+
+
+def classify(repo):
+    """Label one capture from its name, published description and topics alone."""
+    topics, purpose, segments = classification_segments(repo)
 
     def mentions(pattern, values=segments):
         return any(re.search(pattern, value) for value in values)
@@ -297,10 +321,10 @@ def classify(repo):
         targets.add('firmware')
     if native:
         targets.add('binary')
-    # Model Context Protocol is an agent interface, not evidence of network-protocol analysis.
-    network_segments = [re.sub(r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b', ' ', value) for value in segments]
-    network = bool(topics & {'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'mitmproxy', 'network-forensics'} or
-                   mentions(r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)|\brest[- ]apis?\b', network_segments))
+    # The protocol target and the protocol-analysis category share one qualifying signal.
+    protocol = bool(protocol_signals(repo))
+    if protocol:
+        targets.add('protocol')
     collection = bool(topics & {'awesome', 'awesome-list', 'awesome-lists', 'references'} or
                       re.search(r'\b(?:collection|list|reference)\b', purpose))
     if managed:
@@ -315,7 +339,7 @@ def classify(repo):
         category = 'firmware'
     elif 'game' in targets:
         category = 'game-analysis'
-    elif network:
+    elif protocol:
         category = 'protocol-analysis'
     elif 'website' in targets:
         category = 'web-analysis'
@@ -328,6 +352,12 @@ def classify(repo):
     return sorted(targets), category
 
 
+def published_fields(record):
+    """Rebuild the classifier input from a retained record; omitted descriptions stay empty."""
+    description = '' if record.get('description_omission') else record.get('description_en') or ''
+    return {'full_name': record['full_name'], 'description': description, 'topics': record.get('topics', [])}
+
+
 def relabel_report(document):
     """List retained automatic labels that this engine would change; nothing is rewritten."""
     differences, compared, skipped = [], 0, 0
@@ -336,9 +366,7 @@ def relabel_report(document):
             skipped += 1
             continue
         compared += 1
-        description = '' if record.get('description_omission') else record.get('description_en') or ''
-        targets, category = classify({'full_name': record['full_name'], 'description': description,
-                                      'topics': record.get('topics', [])})
+        targets, category = classify(published_fields(record))
         if targets != sorted(record.get('targets', [])) or category != record.get('category'):
             differences.append({
                 'id': record['id'], 'full_name': record['full_name'],
@@ -349,6 +377,99 @@ def relabel_report(document):
     return {'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
             'compared_automatic_records': compared, 'skipped_cross_referenced_records': skipped,
             'differing_records': len(differences), 'records': differences}
+
+
+def protocol_report(document):
+    """List retained automatic records whose protocol labels this engine would change, with the qualifying evidence."""
+    rows, compared, skipped = [], 0, 0
+    counts = {'adds-protocol-target': 0, 'enters-protocol-analysis': 0, 'leaves-protocol-analysis': 0}
+    for record in document['resources']:
+        if record.get('classification_origin') != 'automatic-metadata':
+            skipped += 1
+            continue
+        compared += 1
+        fields = published_fields(record)
+        targets, category = classify(fields)
+        stored_targets, stored_category = record.get('targets', []), record.get('category')
+        changes = []
+        if 'protocol' in targets and 'protocol' not in stored_targets:
+            changes.append('adds-protocol-target')
+        if (category == 'protocol-analysis') != (stored_category == 'protocol-analysis'):
+            changes.append('enters-protocol-analysis' if category == 'protocol-analysis' else 'leaves-protocol-analysis')
+        if not changes:
+            continue
+        for change in changes:
+            counts[change] += 1
+        rows.append({
+            'id': record['id'], 'full_name': record['full_name'], 'changes': changes,
+            'protocol_signals': protocol_signals(fields),
+            'stored_engine_version': record.get('classification_engine_version'),
+            'stored': {'targets': stored_targets, 'category': stored_category},
+            'rederived': {'targets': targets, 'category': category},
+        })
+    return {'classification_engine_version': CLASSIFICATION_ENGINE_VERSION,
+            'policy': 'Offline comparison only. Retained records keep their stored labels; adding the protocol target to any of them is a separate reviewed change.',
+            'compared_automatic_records': compared, 'skipped_cross_referenced_records': skipped,
+            'changes': counts, 'differing_records': len(rows), 'records': rows}
+
+
+def duplicate_readme_report(document, scope):
+    """Group successful scans by README SHA-256 and propose scope reviews only for same-named copies."""
+    resources = document['resources']
+    groups = {}
+    for record in resources:
+        groups.setdefault(record['readme_sha256'], []).append(record)
+    rows, proposals = [], 0
+    for digest, members in groups.items():
+        if len(members) < 2:
+            continue
+        members = sorted(members, key=lambda record: int(record['id'][5:]))
+        by_name = {}
+        for record in members:
+            by_name.setdefault(record['full_name'].split('/', 1)[1].casefold(), []).append(record)
+        copies = []
+        for same_name in by_name.values():
+            # The lowest repository ID is the earliest created; stars never choose the related record.
+            related = same_name[0]
+            for record in same_name[1:]:
+                existing = scope.get(record['id'])
+                proposal = None
+                if existing is None:
+                    proposals += 1
+                    proposal = {
+                        'decision': 'exclude', 'reason_code': DUPLICATE_README_REASON,
+                        'reason_en': (f"The README is byte-identical to the scan of the earlier same-named repository {related['id']} "
+                                      f"({related['full_name']}); it does not show what this copy contains."),
+                        'reason_zh': (f"其 README 与更早创建的同名仓库 {related['id']}（{related['full_name']}）的扫描结果逐字节相同，"
+                                      '无法说明此副本本身的内容。'),
+                        'readme_sha256': record['readme_sha256'], 'evidence_url': record['readme_url'],
+                        'reviewed_at': None,
+                    }
+                copies.append({'id': record['id'], 'full_name': record['full_name'],
+                               'related_source_id': related['id'], 'related_full_name': related['full_name'],
+                               'existing_reason_code': existing.get('reason_code') if existing else None,
+                               'proposed_scope_decision': proposal})
+        rows.append({
+            'readme_sha256': digest, 'readme_bytes': members[0]['readme_bytes'],
+            'shared_repository_names': sorted(name for name, same in by_name.items() if len(same) > 1),
+            'records': [{'id': record['id'], 'full_name': record['full_name'], 'repository_id': int(record['id'][5:]),
+                         'stars': record.get('stars'), 'pushed_at': record.get('pushed_at'),
+                         'observed_at': record.get('observed_at'), 'readme_url': record['readme_url'],
+                         'scope_status': 'excluded' if record['id'] in scope else 'browsable',
+                         'scope_reason_code': scope.get(record['id'], {}).get('reason_code')} for record in members],
+            'copy_reviews': copies,
+        })
+    rows.sort(key=lambda row: row['records'][0]['repository_id'])
+    return {
+        'policy': ('Offline grouping of successful scans by README SHA-256; nothing is rewritten or excluded. Only repositories that also share '
+                   'a repository name receive a proposed scope review, citing the same-named record with the lowest GitHub repository ID, '
+                   'which increases with creation time. Stars, push times and README size are recorded for the reviewer but select nothing. '
+                   'A proposal keeps reviewed_at null until a reviewer confirms the copy; validation rejects it until then.'),
+        'successful_readme_scans': len(resources),
+        'distinct_repository_ids': len({record['id'] for record in resources}),
+        'distinct_readme_sha256': len(groups),
+        'identical_readme_groups': len(rows), 'proposed_scope_reviews': proposals, 'groups': rows,
+    }
 
 
 def scan_readme(api, repo):
@@ -813,6 +934,8 @@ def main():
     parser.add_argument('--query', action='append', help='Ordered search base; repeat to replace defaults. Public/non-fork/non-archived gates are always added.')
     parser.add_argument('--output', type=Path, help='Output snapshot; defaults to .cache/source-index-next.json when resuming')
     parser.add_argument('--relabel-report', type=Path, help='Offline: print retained automatic labels that differ from this engine, without rewriting the snapshot')
+    parser.add_argument('--protocol-report', type=Path, help='Offline: print retained automatic records whose protocol target or category this engine would change')
+    parser.add_argument('--duplicate-readme-report', type=Path, help='Offline: group successful scans by README hash and propose scope reviews for same-named copies')
     args = parser.parse_args()
     if (args.target < 1 or not 1 <= args.workers <= 32 or not 1 <= args.max_pages <= 10
             or not 0 < args.requests_per_second <= 14 or args.candidate_buffer < 0):
@@ -820,13 +943,16 @@ def main():
     if args.query and any(not value.strip() for value in args.query):
         parser.error('query bases must be nonempty')
     args.queries = [value.strip() + ' is:public fork:false archived:false' for value in args.query] if args.query else QUERIES
-    if args.relabel_report:
+    for path, report in ((args.relabel_report, relabel_report), (args.protocol_report, protocol_report),
+                         (args.duplicate_readme_report, lambda document: duplicate_readme_report(document, read_scope()))):
+        if not path:
+            continue
         try:
-            document, _ = load_resume(args.relabel_report)
+            document, _ = load_resume(path)
         except (OSError, ValueError, TypeError, KeyError):
-            print('Relabel report snapshot could not be read or has inconsistent identities/counts.', flush=True)
+            print('Report snapshot could not be read or has inconsistent identities/counts.', flush=True)
             return 2
-        print(json.dumps(relabel_report(document), ensure_ascii=False, indent=2), flush=True)
+        print(json.dumps(report(document), ensure_ascii=False, indent=2), flush=True)
         return 0
     args.output = args.output or (ROOT / '.cache/source-index-next.json' if args.resume else DEFAULT_OUTPUT)
     resumed, resume_sha256 = None, None

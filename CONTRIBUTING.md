@@ -50,7 +50,7 @@ Use `python3 scripts/check_links.py` for live source checks. Rate limits and tem
 
 ### Choose kind, relationship, category and targets
 
-Choose these fields independently; one does not determine the others:
+Choose these fields independently; apart from the [reconstruction pairing](#reconstruction-cases), one does not determine the others:
 
 - `kind`: what is being shared, such as a tool, integration or case study?
 - `relationship`: what connection to REA, an independent agent workflow, or a foundation tool does the evidence establish?
@@ -78,7 +78,7 @@ Use a verified paper DOI or arXiv identifier whenever available. Never substitut
 
 ## Reconstruction cases
 
-Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
+Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category; validation rejects either value without the other. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
 
 ## Review and publication
 

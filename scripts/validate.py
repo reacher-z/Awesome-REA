@@ -157,6 +157,11 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: unknown resource kind {record['kind']!r}")
         if record['relationship'] not in RELATIONSHIPS:
             errors.append(f"{where}: unknown relationship {record['relationship']!r}")
+        # CONTRIBUTING pairs independent reconstruction projects with their category; neither is inferred.
+        if record['relationship'] == 'independent-reconstruction' and record['category'] != 'reconstruction-cases':
+            errors.append(f"{where}: relationship 'independent-reconstruction' requires category 'reconstruction-cases'")
+        elif record['category'] == 'reconstruction-cases' and record['relationship'] != 'independent-reconstruction':
+            errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
         if not (nonempty_string(record['requirements']) or string_list(record['requirements'])):

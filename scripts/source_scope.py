@@ -10,6 +10,9 @@ FIELDS = {
     'decision', 'reason_code', 'reason_en', 'reason_zh',
     'readme_sha256', 'evidence_url', 'reviewed_at',
 }
+# A copy decision cites the one retained scan whose README bytes it shares.
+DUPLICATE_README_REASON = 'duplicate-readme-copy'
+SOURCE_ID_MENTION = r'(?<![A-Za-z0-9-])scan-[0-9]+(?![0-9])'
 
 
 def read_scope(root=ROOT):
@@ -67,6 +70,15 @@ def validate_scope(records, scope, errors):
                 errors.append(f'{identifier}: scope README hash differs from the scanned snapshot')
             if entry.get('evidence_url') != source.get('readme_url'):
                 errors.append(f'{identifier}: scope evidence URL differs from the scanned README URL')
+        if reason_code == DUPLICATE_README_REASON:
+            cited = [set(re.findall(SOURCE_ID_MENTION, entry[field])) if isinstance(entry.get(field), str) else set()
+                     for field in ('reason_en', 'reason_zh')]
+            related = sources.get(min(cited[0])) if len(cited[0]) == 1 else None
+            if len(cited[0]) != 1 or cited[0] != cited[1] or identifier in cited[0]:
+                errors.append(f'{identifier}: {DUPLICATE_README_REASON} reasons must cite the same single related source ID')
+            elif (related is None or related.get('scan_status') != 'readme-scanned'
+                  or related.get('readme_sha256') != digest):
+                errors.append(f'{identifier}: {DUPLICATE_README_REASON} must cite a scanned source with the same README hash')
         reviewed_at = entry.get('reviewed_at')
         try:
             if not isinstance(reviewed_at, str):
