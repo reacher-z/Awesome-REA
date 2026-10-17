@@ -380,7 +380,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     keydown('/');
     assert.equal(app.document.activeElement, app.element('source-search'));
     app.element('mode-curated').handlers.click();
-    assert.deepEqual([app.api.sourceState.mode, app.element('mode-curated').attrs['aria-pressed'], urlParam(app, 'view')], ['curated', 'true', 'curated']);
+    assert.deepEqual([app.api.sourceState.mode, app.element('mode-curated').attrs['aria-pressed'], urlParam(app, 'view')], ['curated', 'true', null], 'The default curated view stays out of the URL');
   }
   process.stdout.write('Repository browser logic passed\n');
 })().catch(error => { console.error(error); process.exitCode = 1; });
