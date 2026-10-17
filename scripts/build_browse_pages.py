@@ -131,8 +131,8 @@ def build_browse_pages(
         zh = language == 'zh'
         locale = 'zh-CN' if zh else 'en'
         language_index = 1 if zh else 0
-        root_link = '/?lang=zh' if zh else '/'
-        search_link = f'/?view=source-index&amp;lang={language}'
+        root_link = '/zh/' if zh else '/'
+        search_link = '/zh/?view=source-index' if zh else '/?view=source-index&amp;lang=en'
         curated_link = '/zh/resources/' if zh else '/resources/'
         scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{len(scanned)-len(records)} 个超出范围的条目仍保留在完整 JSON 中。'
                       if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {len(scanned)-len(records)} out-of-scope records remain in the full JSON.')

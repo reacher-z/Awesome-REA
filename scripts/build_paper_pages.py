@@ -25,6 +25,7 @@ TARGET_LABELS = {
     'protocol': ('Protocol inference and analysis', '协议推断与分析'),
 }
 MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
+BIBTEX_MONTHS = tuple(name[:3].lower() for name in MONTHS)
 
 
 def web_url(value: str) -> str:
@@ -84,9 +85,14 @@ def bibtex_text(paper: dict) -> str:
         fields.append(('doi', paper['doi']))
     if paper.get('arxiv_id'):
         fields.extend((('eprint', paper['arxiv_id']), ('archivePrefix', 'arXiv')))
+    lines = [f'  {key} = {{{value}}}' for key, value in fields]
     if paper.get('publication_date') and len(paper['publication_date']) >= 7:
-        fields.append(('month', paper['publication_date'][5:7]))
-    return '@' + kind + '{' + paper['id'] + ',\n' + ',\n'.join(f'  {key} = {{{value}}}' for key, value in fields) + '\n}\n'
+        month = int(paper['publication_date'][5:7])
+        if not 1 <= month <= 12:
+            raise ValueError('Invalid bibliography month')
+        # Unbraced standard macros let BibTeX styles print the month name; no day is emitted.
+        lines.append('  month = ' + BIBTEX_MONTHS[month - 1])
+    return '@' + kind + '{' + paper['id'] + ',\n' + ',\n'.join(lines) + '\n}\n'
 
 
 def scholarly_article(paper: dict, language: str) -> dict:
@@ -216,7 +222,7 @@ def build_paper_pages(
         counterpart = '/papers/' if zh else '/zh/papers/'
         canonical = site_url + path
         locale = 'zh-CN' if zh else 'en'
-        home = '/?lang=zh' if zh else '/'
+        home = '/zh/' if zh else '/'
         browse = '/zh/browse/' if zh else '/browse/'
         curated = '/zh/resources/' if zh else '/resources/'
         about = '/zh/about/' if zh else '/about/'

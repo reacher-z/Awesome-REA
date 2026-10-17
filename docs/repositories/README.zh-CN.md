@@ -1,6 +1,6 @@
 # 仓库扫描索引
 
-[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/?lang=zh&view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)
+[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)
 
 从 **3,000** 个已读取 README 的仓库中提供 **2,864** 个浏览条目；**136** 个明确超出范围的条目保留在原始扫描记录中。
 

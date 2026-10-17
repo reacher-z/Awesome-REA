@@ -145,7 +145,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
               assets: dict, icon_stylesheet: str | None, noindex: bool = False) -> str:
     zh = language == 'zh'
     locale = 'zh-CN' if zh else 'en'
-    root = '/?lang=zh' if zh else '/'
+    root = '/zh/' if zh else '/'
     english_path = path.removeprefix('/zh') if zh else path
     chinese_path = '/zh' + english_path
     counterpart = english_path if zh else chinese_path
@@ -269,7 +269,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             for record in groups[key]:
                 name = (record.get('name_zh') or record['name']) if zh else record['name']
                 items.append({'name': name, 'url': record['url'], 'description': record[f'description_{language}']})
-        content = f'''<div class="browse-actions"><a class="button button-primary" href="/?view=curated&amp;lang={language}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a class="browse-download" href="/catalog.json" download="awesomerea-curated-catalog.json">{('下载精选 JSON ↓' if zh else 'Download curated JSON ↓')}</a></div>
+        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a class="browse-download" href="/catalog.json" download="awesomerea-curated-catalog.json">{('下载精选 JSON ↓' if zh else 'Download curated JSON ↓')}</a></div>
 <p class="collection-note">{escape(note)}</p><nav class="browse-category-nav" aria-label="{('资源分类' if zh else 'Resource categories')}">{''.join(navigation)}</nav>{''.join(sections)}'''
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href)
         paths.append(path)

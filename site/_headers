@@ -16,3 +16,7 @@
   Cache-Control: no-cache, must-revalidate
 /build-manifest.json
   Cache-Control: no-cache, must-revalidate
+/papers/references.bib
+  Content-Type: application/x-bibtex; charset=utf-8
+/papers/citations/*.bib
+  Content-Type: application/x-bibtex; charset=utf-8

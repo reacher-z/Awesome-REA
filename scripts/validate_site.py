@@ -5,7 +5,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 from build_manifest import read_build_manifest
@@ -144,6 +144,17 @@ def schema_entities(value, type_name):
             yield from schema_entities(item, type_name)
 
 
+def validate_language_links(route, page):
+    """Link Chinese navigation to /zh/ routes, never to English routes with ?lang=zh."""
+    for link in page.links:
+        target = urlsplit(urljoin(ORIGIN + route, link))
+        if target.netloc != 'awesomerea.org':
+            continue
+        served = 'zh' if target.path == '/zh' or target.path.startswith('/zh/') else 'en'
+        requested = parse_qs(target.query).get('lang', [])
+        assert all(value == served for value in requested), f'Link selects a language its route does not serve on {route}: {link}'
+
+
 def validate_paper_groups(page, papers, language):
     """Check visible section membership and headings against primary targets."""
     expected = defaultdict(list)
@@ -238,6 +249,9 @@ def validate_paper_outputs(output, pages, source_papers=None):
         entries.append(entry)
     bibliography = '% Generated from source-reviewed metadata. Author names retain their listed order without inferred surname parsing.\n\n' + ''.join(entry + '\n' for entry in entries)
     assert (output / 'papers' / 'references.bib').read_text(encoding='utf-8') == bibliography, 'Combined BibTeX differs from the source bibliography'
+    headers = (output / '_headers').read_text(encoding='utf-8')
+    for route in ('/papers/references.bib', '/papers/citations/*.bib'):
+        assert re.search(rf'(?m)^{re.escape(route)}\n[ \t]+Content-Type: application/x-bibtex; charset=utf-8[ \t]*$', headers), f'BibTeX downloads require an explicit UTF-8 content type: {route}'
 
 
 def validate_artifact_links(output, pages):
@@ -320,6 +334,7 @@ def main():
             expected = {'en': ORIGIN + english, 'zh-CN': ORIGIN + '/zh' + english, 'x-default': ORIGIN + english}
             assert len(page.alternates) == 3 and dict(page.alternates) == expected, f'Incorrect reciprocal language alternatives: {parsed.path}'
         assert page.lang == ('zh-CN' if parsed.path.startswith('/zh/') else 'en')
+        validate_language_links(parsed.path, page)
         for link in page.links:
             target = urlsplit(link)
             if target.netloc not in ('', 'awesomerea.org') or target.scheme not in ('', 'https'):

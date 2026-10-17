@@ -32,7 +32,7 @@ Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly
 
 After source, locale, or scope edits, regenerate the [GitHub browsing directory](repositories/README.md) with `python3 scripts/build_repository_index.py` before validation. It also updates the counts and directory links in both root READMEs.
 
-The bare homepage always opens in English. Use `?lang=zh` or the language selector to open Chinese; old browser preferences do not override the default.
+The bare homepage always opens in English. Use `/zh/` or the language selector to open Chinese; old browser preferences do not override the default. Generated pages link to `/zh/` routes, while existing `?lang=zh` links still render Chinese.
 
 Before publication, check English and Chinese at desktop and 390 px widths: search, all filter types, empty results, clearing filters, loading more, prerequisite expansion, keyboard focus and the language selector. Confirm repository descriptions change language alongside the interface, including filtered and newly loaded cards. Check translated prerequisites and empty-description fallbacks, and confirm the canonical URL, social image URLs, `CNAME`, robots and sitemap agree on `awesomerea.org`.
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">Awesome Reverse Engineering Anything</title>
-  <desc id="description">A collection of tools, projects, integrations, and resources, organized by Website, Game, App, Native Binary, and Firmware.</desc>
+  <desc id="description">A collection of tools, projects, integrations, and resources, organized by Website, Game, App, Native Binary, Firmware, and Protocol.</desc>
   <rect width="1200" height="630" fill="#FFFFFF"/>
   <path d="M760 48V582" stroke="#A8DADC" stroke-opacity=".5"/>
   <g font-family="Arial, Helvetica, sans-serif" fill="#1D3557">
@@ -17,25 +17,28 @@
   <g transform="translate(813 141)" font-family="Arial, Helvetica, sans-serif">
     <text x="8" y="0" font-size="11" font-weight="700" letter-spacing="1.6" fill="#1D3557">EXPLORE THE COLLECTION</text>
     <g fill="#FFFFFF" stroke="#A8DADC" stroke-width="1.2">
-      <rect x="0" y="27" width="315" height="57" rx="8"/>
-      <rect x="0" y="101" width="315" height="57" rx="8"/>
-      <rect x="0" y="175" width="315" height="57" rx="8"/>
-      <rect x="0" y="249" width="315" height="57" rx="8"/>
-      <rect x="0" y="323" width="315" height="57" rx="8"/>
+      <rect x="0" y="27" width="315" height="48" rx="8"/>
+      <rect x="0" y="88" width="315" height="48" rx="8"/>
+      <rect x="0" y="149" width="315" height="48" rx="8"/>
+      <rect x="0" y="210" width="315" height="48" rx="8"/>
+      <rect x="0" y="271" width="315" height="48" rx="8"/>
+      <rect x="0" y="332" width="315" height="48" rx="8"/>
     </g>
     <g fill="#1D3557" font-size="20">
-      <text x="22" y="63">Website</text>
-      <text x="22" y="137">Game</text>
-      <text x="22" y="211">App</text>
-      <text x="22" y="285">Native Binary</text>
-      <text x="22" y="359">Firmware</text>
+      <text x="22" y="58">Website</text>
+      <text x="22" y="119">Game</text>
+      <text x="22" y="180">App</text>
+      <text x="22" y="241">Native Binary</text>
+      <text x="22" y="302">Firmware</text>
+      <text x="22" y="363">Protocol</text>
     </g>
     <g stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-opacity=".55">
-      <path d="M242 51H288M242 61H275"/>
-      <path d="M242 125H278M242 135H288"/>
-      <path d="M242 199H288M242 209H270"/>
-      <path d="M242 273H280M242 283H288"/>
-      <path d="M242 347H288M242 357H276"/>
+      <path d="M242 46H288M242 56H275"/>
+      <path d="M242 107H278M242 117H288"/>
+      <path d="M242 168H288M242 178H270"/>
+      <path d="M242 229H280M242 239H288"/>
+      <path d="M242 290H288M242 300H276"/>
+      <path d="M242 351H282M242 361H288"/>
     </g>
   </g>
 </svg>

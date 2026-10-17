@@ -6,7 +6,7 @@ The canonical website is [AwesomeREA.org](https://awesomerea.org/); the public s
 
 ## What the site provides
 
-- `/papers/` and `/zh/papers/` provide the source-reviewed bibliography with original author names, publication status, precise dates, bilingual scope limits and BibTeX downloads. Some papers also appear in the curated catalog; the counts are not additive.
+- `/papers/` and `/zh/papers/` provide the source-reviewed bibliography with original author names, publication status, precise dates, bilingual scope limits and BibTeX downloads. The `.bib` files use standard month macros and are served as `application/x-bibtex; charset=utf-8` through [site/_headers](../site/_headers). Some papers also appear in the curated catalog; the counts are not additive.
 - `/resources/` and `/zh/resources/` contain every curated record in ordinary HTML, with its original source, review date, requirements, and a stable section link.
 - `/about/` and `/zh/about/` explain the collection, its relationship to REA, source review, and the separate automated repository index.
 - `/browse/` and `/zh/browse/` provide category pages for the automated index. Their provenance stays distinct from curated resources.

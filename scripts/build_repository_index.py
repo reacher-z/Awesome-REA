@@ -48,7 +48,7 @@ def rendered_files():
         note = ('这些是自动发现的项目，不是逐项精选或运行测试后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。'
                 if zh else 'These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.')
         summary = ([f'已读取 **{len(scanned):,}** 个仓库的 README，当前提供 **{len(records):,}** 个浏览条目，明确超出范围的 {len(scanned)-len(records)} 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项执行测试。', '',
-                    '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/?view=source-index&lang=zh) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
+                    '[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)']
                    if zh else [f'**{len(scanned):,}** repository READMEs scanned; **{len(records):,}** entries available to browse. The {len(scanned)-len(records)} clearly out-of-scope entries remain in the scan data. This automatically discovered index is separate from the curated resources above and has not been individually execution-tested.', '',
                                '[Browse by category on GitHub](docs/repositories/README.md) · [Search website](https://awesomerea.org/?view=source-index&lang=en) · [Full bilingual index JSON](https://awesomerea.org/source-index.json) · [Curated catalog JSON](https://awesomerea.org/catalog.json)'])
         root_name = f'README{suffix}.md'
@@ -58,7 +58,7 @@ def rendered_files():
         before, rest = root_text.split(SUMMARY_BEGIN, 1)
         _, after = rest.split(SUMMARY_END, 1)
         files[f'../../{root_name}'] = before + SUMMARY_BEGIN + '\n' + '\n'.join(summary) + '\n' + SUMMARY_END + after
-        navigation = ('[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/?lang=zh&view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)'
+        navigation = ('[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)'
                       if zh else '[Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-index.json) · [简体中文](README.zh-CN.md)')
         lines = [f'# {title}', '', navigation, '', intro, '', note, '',
                  f"{'扫描日期' if zh else 'Scan date'}: **{date} UTC**.", '',

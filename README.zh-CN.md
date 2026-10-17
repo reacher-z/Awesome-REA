@@ -394,7 +394,7 @@
 <!-- BEGIN REPOSITORY INDEX SUMMARY -->
 已读取 **3,000** 个仓库的 README，当前提供 **2,864** 个浏览条目，明确超出范围的 136 个条目保留在扫描数据中。自动发现的项目与上方精选资源分别维护，未逐项执行测试。
 
-[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/?view=source-index&lang=zh) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)
+[按分类在 GitHub 浏览](docs/repositories/README.zh-CN.md) · [网站搜索](https://awesomerea.org/zh/?view=source-index) · [完整双语索引 JSON](https://awesomerea.org/source-index.json) · [精选目录 JSON](https://awesomerea.org/catalog.json)
 <!-- END REPOSITORY INDEX SUMMARY -->
 
 上面的资源清单依据一手来源整理。详细前置条件、原始来源与审阅日期保存在[目录数据](data/README.md)中。
