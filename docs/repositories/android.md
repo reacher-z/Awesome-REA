@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**434 repositories** · 2026-10-16 UTC
+**432 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -23,7 +23,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 A CLI application that automatically prepares Android APK files for HTTPS inspection **[5,128 stars]**
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — Reverse Engineering Resources About All Platforms(Windows/Linux/macOS/Android/iOS/IoT) And Every Aspect! (More than 3500 open source tools and 2300 posts&amp;videos) **[5,127 stars]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — the fastest and most powerful android decompiler(native tool working without Java VM) for the APK, DEX, ODEX, OAT, JAR, AAR, and CLASS file. which supports malicious behavior detection, privacy leaking detection, vulnerability detection, path solving, packer identification, variable tracking, deobfuscation, python&amp;java scripts, device memory extraction, data decryption, and encryption, etc. **[4,859 stars]**
-- [newliver666/apk-reverse](https://github.com/newliver666/apk-reverse) — Suitable for Android APK reverse engineering analysis **[4,818 stars]**
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — Open-source, cross platform Qt6 based IDE for reverse-engineering Android application packages. It features a friendly IDE-like layout including code editor with syntax highlighting support for \*.smali code files. **[4,683 stars]**
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android virtual machine and deobfuscator **[4,671 stars]**
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩Template repository for ReVanced Patches **[4,613 stars]**
@@ -257,7 +256,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [rashmiranjanp/frida-reversing-lab](https://github.com/rashmiranjanp/frida-reversing-lab) — 🧪 Explore mobile security with Frida Reversing Lab, a toolkit for analyzing and manipulating Android apps to overcome obfuscation and security barriers. **[7 stars]**
 - [AlexeyPerov/LogKeeper-Flutter-Firebase](https://github.com/AlexeyPerov/LogKeeper-Flutter-Firebase) — Log snapshot management solution (iOS/Android/Web/Server) built with Flutter/Dart using Bloc pattern and Firebase Firestore backend. **[6 stars]**
 - [anpa1200/Android-Malware-Analysis](https://github.com/anpa1200/Android-Malware-Analysis) — Android APK malware triage with YARA, VirusTotal context, MITRE ATT&amp;CK output, Frida hooks, and multi-LLM analysis. **[6 stars]**
-- [BAB2007/yuda-run-helper](https://github.com/BAB2007/yuda-run-helper) — For those who don't want to do the campus running requirement. **[6 stars]**
 - [coroner4817/EnergyEfficiencyWebView](https://github.com/coroner4817/EnergyEfficiencyWebView) — 📲 Android Webview which allows custom reconstruction of the web page **[6 stars]**
 - [cybersecurity-dev/awesome-reverse-engineering](https://github.com/cybersecurity-dev/awesome-reverse-engineering) — Awesome Reverse Engineering **[6 stars]**
 - [ewt45/jadx-plugin-cfg-viewer](https://github.com/ewt45/jadx-plugin-cfg-viewer) — a jadx-gui plugin to genereate method's control flow gragh and display it as image **[6 stars]**

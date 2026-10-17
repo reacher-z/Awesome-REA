@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**623 repositories** · 2026-10-16 UTC
+**622 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -469,7 +469,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [JamesHopbourn/iOS-Reverse-Engineering-Tools](https://github.com/JamesHopbourn/iOS-Reverse-Engineering-Tools) — iOS Reverse Engineering Tools **[4 stars]**
 - [Kuruyia/pokeranger2](https://github.com/Kuruyia/pokeranger2) — Decompilation of Pokémon Ranger: Shadows of Almia **[4 stars]**
 - [malus-security/kextractor](https://github.com/malus-security/kextractor) — Kernel Cache Manipulation Library **[4 stars]**
-- [Shellghostt/De-Caffeinator](https://github.com/Shellghostt/De-Caffeinator) — A JavaScript reverse engineering and asset analysis pipeline for security auditing. Crawls targets, deobfuscates bundles , and extracts hidden endpoints and secrets. **[4 stars]**
 - [theamorn/flutter-snapshot-test](https://github.com/theamorn/flutter-snapshot-test) — Sample of how to do snapshot testing in Flutter **[4 stars]**
 - [tyonger-stack/GrokNode](https://github.com/tyonger-stack/GrokNode) — An unofficial source-level reconstruction of the publicly released Grok Bot 0.18.0 macOS app, producing readable TypeScript with two inference routes through Codex and OpenRouter, a local Docker sandbox, and local usage statistics. For research only. **[4 stars]**
 - [Adilnasceng/requestlab](https://github.com/Adilnasceng/requestlab) — Chrome DevTools extension for intercepting, modifying &amp; reverse engineering HTTP requests. Real-time request log, rules engine, mock responses, replay, rate-limit bypass, WebSocket monitor — all in a dark-theme DevTools panel. **[3 stars]**

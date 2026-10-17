@@ -1447,5 +1447,58 @@
     "readme_sha256": "fbce34be0aa0108b202f9485039352ca560f2aeee0e79a28a81e4c39fa7d737f",
     "evidence_url": "https://github.com/MartinAydin/rev-skills/blob/main/README.md",
     "reviewed_at": "2026-10-17"
+  },
+  "scan-1377172300": {
+    "decision": "exclude",
+    "reason_code": "upstream-unavailable",
+    "reason_en": "On 2026-10-17, GitHub returned HTTP 404 for both repository ID 1377172300 and the recorded name newliver666/apk-reverse.",
+    "reason_zh": "2026-10-17 复查时，GitHub 对仓库 ID 1377172300 和记录的名称 newliver666/apk-reverse 均返回 HTTP 404。",
+    "readme_sha256": "0b9e98e99566da7c38d4314d62e83c14f058e98c3ee38c8481489a2b8b9a597f",
+    "availability_check": {
+      "id": "scan-1377172300",
+      "recorded_full_name": "newliver666/apk-reverse",
+      "observed_at": "2026-10-17T13:47:11.766764Z",
+      "outcome": "not-found",
+      "http_status": 404,
+      "recorded_name_status": "not-found",
+      "recorded_name_http_status": 404
+    },
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1409072094": {
+    "decision": "exclude",
+    "reason_code": "upstream-unavailable",
+    "reason_en": "On 2026-10-17, GitHub returned HTTP 404 for both repository ID 1409072094 and the recorded name BAB2007/yuda-run-helper.",
+    "reason_zh": "2026-10-17 复查时，GitHub 对仓库 ID 1409072094 和记录的名称 BAB2007/yuda-run-helper 均返回 HTTP 404。",
+    "readme_sha256": "4008588feac4e464e9d1e4182413b1447916fe5c46c8f2bd988f3cffe4e736b3",
+    "availability_check": {
+      "id": "scan-1409072094",
+      "recorded_full_name": "BAB2007/yuda-run-helper",
+      "observed_at": "2026-10-17T13:47:12.840690Z",
+      "outcome": "not-found",
+      "http_status": 404,
+      "recorded_name_status": "not-found",
+      "recorded_name_http_status": 404
+    },
+    "reviewed_at": "2026-10-17"
+  },
+  "scan-1238268014": {
+    "decision": "exclude",
+    "reason_code": "upstream-unavailable",
+    "reason_en": "On 2026-10-17, GitHub returned HTTP 404 for repository ID 1238268014, and the recorded name Shellghostt/De-Caffeinator now resolves to a different repository, ID 1244345068.",
+    "reason_zh": "2026-10-17 复查时，GitHub 对仓库 ID 1238268014 返回 HTTP 404，记录的名称 Shellghostt/De-Caffeinator 现已指向另一个仓库（ID 1244345068）。",
+    "readme_sha256": "1305310db9d2fec4ae499d0f22338604c8239052355b9fdb523d94da46689a15",
+    "availability_check": {
+      "id": "scan-1238268014",
+      "recorded_full_name": "Shellghostt/De-Caffeinator",
+      "observed_at": "2026-10-17T13:47:10.599033Z",
+      "outcome": "name-reassigned",
+      "http_status": 404,
+      "recorded_name_status": "other-repository",
+      "recorded_name_http_status": 200,
+      "recorded_name_repository_id": "scan-1244345068",
+      "recorded_name_current_full_name": "Shellghostt/De-Caffeinator"
+    },
+    "reviewed_at": "2026-10-17"
   }
 }
