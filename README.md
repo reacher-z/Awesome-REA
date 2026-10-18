@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 288](https://img.shields.io/badge/resources-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 146](https://img.shields.io/badge/cases-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 55](https://img.shields.io/badge/papers-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 288](https://img.shields.io/badge/resources-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 146](https://img.shields.io/badge/cases-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 56](https://img.shields.io/badge/papers-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (55) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (56) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1839,13 +1839,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**55 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**56 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (11) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (11) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -1898,6 +1898,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The v0 study uses 12 generated tasks and eight public calibration tasks, Linux x86-64 ELF binaries, a shell interface, and a five-minute budget. Its compact educational tasks do not establish performance on large applications. No paper-linked public artifact URL was verified.
 
   **Publication:** 2026 · arXiv · Preprint · Isaac David et al.
+
+  </details>
+
+- [**Towards LLM-Resistant Software Protection: Agent Failure Patterns in CTF Reverse Engineering**](https://www.ndss-symposium.org/ndss-paper/auto-draft-657/)
+
+  Runs Claude Code, Codex CLI and ChatGPT-5.2 Pro on 24 crackme-style challenges selected from 15 international CTF events held in 2025, and attributes their failures to stages of an Observe–Comprehend–Plan loop and to three protection effects: concealment, complication and misdirection. From the failure logs, the authors derive four recurring weaknesses (training bias, over-trust in observations, context limitation and plan persistence). They rerun both CLI agents without a decompiler and compare outcomes with in-competition solve rates.
+
+  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-resistant-protection/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The study covers 24 locally solvable Linux x86-64 ELF crackmes and three commercial agents (Claude Opus 4.5 and GPT-5.1-Codex-Max in the CLI tools, and an undisclosed ChatGPT model), evaluated in December 2025 with network access; runs that consulted public write-ups were excluded. The binaries are small relative to real-world software, and malware analysis and vulnerability discovery are out of scope. Each configuration had at most three attempts with early stopping, which the authors call noisy; success means printing the correct flag or finding an accepted input. Weakness labels come from qualitative log analysis by two evaluators and describe these runs, not general properties of LLM agents. ChatGPT-5.2 Pro ran in an uncontrolled web sandbox and is excluded from the decompiler comparison. Solve rates are among teams that solved at least one challenge, unavailable for six tasks, and may include LLM-assisted teams. Training-data exposure remains a validity threat, and the paper does not publish its assembled challenge set, run logs or code.
+
+  **Publication:** 2026 · Workshop on Binary Analysis Research (BAR) 2026 · Conference paper · Ryutaro Nishizaka et al.
 
   </details>
 

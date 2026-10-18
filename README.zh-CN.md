@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 288](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 146](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 55](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 288](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 146](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 56](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (55) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (56) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1840,13 +1840,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**55 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**56 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (11) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (11) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -1899,6 +1899,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** v0 研究使用 12 个生成任务和 8 个公开校准任务，限定 Linux x86-64 ELF、Shell 接口和五分钟预算。紧凑的教学任务不能证明大型应用上的表现。未确认论文直接关联的公开研究产物 URL。
 
   **发表信息:** 2026 · arXiv · 预印本 · Isaac David 等
+
+  </details>
+
+- [**迈向抗 LLM 的软件保护：CTF 逆向工程中的智能体失败模式**](https://www.ndss-symposium.org/ndss-paper/auto-draft-657/)
+
+  让 Claude Code、Codex CLI 与 ChatGPT-5.2 Pro 求解从 2025 年 15 场国际 CTF 赛事中选出的 24 道 crackme 类题目，并将失败归因到“观察—理解—计划”循环的各阶段，以及隐藏、复杂化与误导三类保护效果。作者从失败日志中归纳出四类反复出现的弱点：训练偏差、过度信任观察结果、上下文限制和计划固守。他们还在移除反编译器后重新运行两个命令行智能体，并将结果与赛时解题率对比。
+
+  2026 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-llm-resistant-protection/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 研究覆盖 24 道可在本地求解的 Linux x86-64 ELF crackme 题目和三个商用智能体（命令行工具使用 Claude Opus 4.5 与 GPT-5.1-Codex-Max，ChatGPT 所用模型未公开），于 2025 年 12 月在允许联网的条件下评测；查阅公开题解的运行已被排除。这些二进制相比真实软件规模较小，恶意软件分析与漏洞发现不在范围内。每种配置最多尝试三次，成功即停止，作者承认这种估计噪声较大；成功指输出正确 flag 或找到被程序接受的输入。弱点标签来自两名评估者对日志的定性分析，描述的是这些运行，并非 LLM 智能体的普遍属性。ChatGPT-5.2 Pro 在无法控制的网页沙箱中运行，未纳入反编译器对比。解题率按至少解出一题的队伍计算，其中六题没有数据，参赛队伍也可能借助 LLM。训练数据泄露仍是有效性威胁；论文未公开其整理的题目集、运行日志或代码。
+
+  **发表信息:** 2026 · Workshop on Binary Analysis Research (BAR) 2026 · 会议论文 · Ryutaro Nishizaka 等
 
   </details>
 
