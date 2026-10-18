@@ -2297,5 +2297,15 @@
       "项目报告对未改动重建做了独立字节核对，对替换例程做了隔离行为测试与运行时 RPC 回读，并有 60 项源码自带测试通过。运行证据只是同一段录制输入下有限的启动、设置与卧室场景对比；例程执行次数、战斗、野外地图覆盖、完整录像播放和时序确定性仍未验证。测试使用项目自有的样例数据而非零售字节；本合集未运行这些工具或游戏。",
       "README 规定通过 REA 与 Ghidra 进行可供代理访问的分析，并要求 AI 辅助的重建必须依据二进制证据审查；AGENTS.md 和 HANDOFF.md 面向继续工作的代理会话编写，RUNTIME.md 记录了由独立审查代理检查画面的过程。仓库没有许可证文件，GitHub 也未识别出许可证；项目自称是与 Nintendo、Game Freak 及 The Pokémon Company 无关的独立爱好者研究。不主张运行复现。"
     ]
+  },
+  "goldeneye-007-matching-decomp-case": {
+    "name": "GoldenEye 007：覆盖三个版本的一致性 Nintendo 64 反编译",
+    "requirements": [
+      "所审 GitHub 仓库自称是 kholdfuzion GitLab 项目的镜像。README 称其为进行中的反编译项目，可构建美版、日版和欧版 ROM，并分别列出 SHA-1。可变的状态页报告 208 个文件已全部完成，src、src/game、src/inflate 和 src/libultra 均为 100%，但未说明计量单位。产物是 N64 ROM，不是另行收录的原生 PC 移植。",
+      "需自行取得未经修改的美版 ROM；构建日版和 PAL 版还需各自的原始 ROM，且须先完成美版素材提取。README 声明仓库不包含编译 ROM 所需的全部素材。",
+      "文档说明的宿主环境为 Linux、WSL 或虚拟机，以及 Docker 或 Docker Compose。构建使用 GNU make、MIPS binutils、Python 3 和宿主构建工具。默认情况下，它使用从内置的 decompals/ido-static-recomp 在本地生成的 IRIX IDO 5.3 编译器静态重编译版本编译 C 代码；也可改为在 qemu-irix 下运行原始 IDO 二进制文件。",
+      "在默认的 COMPARE=1 下，构建会检查输出 ROM 的 SHA-1，并为所选版本输出 OK 行；COMPARE=0 以及 DEBUG、USB 变体会跳过该检查，因此不属于一致性结果。NTSC、日版和欧版 CI 工作流使用以密钥方式提供的原 ROM 构建并生成状态报告；本合集未运行其中任何检查。",
+      "GitHub 未识别出许可证，所审源码树也没有顶层许可证文件，因此未确立再使用授权。原 ROM 和提取的素材仍受各自权利约束，仓库中的 IRIX IDO 二进制文件及内置工具另有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

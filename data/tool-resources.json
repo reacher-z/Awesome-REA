@@ -5165,5 +5165,41 @@
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/LICENSE",
       "https://github.com/flyngmt/ACGC-PC-Port/releases/tag/v0.9.3-playtest"
     ]
+  },
+  {
+    "id": "goldeneye-007-matching-decomp-case",
+    "name": "GoldenEye 007: matching Nintendo 64 decompilation for three releases",
+    "url": "https://github.com/n64decomp/007",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs GoldenEye 007’s Nintendo 64 code as C source that rebuilds the US, Japanese and PAL ROMs. Assets come from a user-supplied US ROM, with Japanese and PAL differences taken from their own ROMs, and the default build compares each output with a recorded SHA-1. The README still calls the project work in progress, while a mutable status page reports all 208 files done; it is distinct from the separately curated PC port.",
+    "description_zh": "将 GoldenEye 007 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版和 PAL 版 ROM。素材取自使用者自备的美版 ROM，日版与 PAL 版的差异部分则取自各自的 ROM；默认构建会将每个产物与记录的 SHA-1 比对。README 仍称项目在进行中，而可变的状态页报告全部 208 个文件已完成；它与另行收录的 PC 移植不同。",
+    "evidence_url": "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/readme.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed GitHub repository describes itself as a mirror of the kholdfuzion GitLab project. README calls it a work-in-progress decompilation that builds US, JP and EU ROMs, each with a listed SHA-1. The mutable status page reports 208 of 208 files done and 100% for src, src/game, src/inflate and src/libultra without stating its unit. The output is an N64 ROM, not the separately curated native PC port.",
+      "Requires an unmodified, independently obtained US ROM; JP and PAL builds additionally need their own original ROMs, and US asset extraction must come first. The README states that the repository does not include all assets needed to compile the ROMs.",
+      "Documented hosts are Linux, WSL or a VM, plus Docker or Docker Compose. The build uses GNU make, MIPS binutils, Python 3 and host build tools. By default it compiles C with a locally generated static recompilation of the IRIX IDO 5.3 compiler from vendored decompals/ido-static-recomp; alternatively it runs the original IDO binaries under qemu-irix.",
+      "With the default COMPARE=1, the build checks the output ROM’s SHA-1 and prints an OK line for the selected version; COMPARE=0 and the DEBUG and USB variants skip that check, so they are not matching results. NTSC, JP and EU CI workflows build from secretly supplied base ROMs and generate status reports; this collection ran none of these checks.",
+      "GitHub detects no license and the reviewed tree has no top-level license file, so no reuse grant is established. Original ROMs and extracted assets retain separate rights, and the checked-in IRIX IDO binaries and vendored tools keep their own terms. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/docs/SetupGuide.md",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/Makefile",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/ge007.u.sha1",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/ge007.j.sha1",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/ge007.e.sha1",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/.github/workflows/main.yml",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/.github/workflows/JPN.yml",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/.github/workflows/EU.yml",
+      "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/tools/ido5.3_recomp/README.md",
+      "https://kholdfuzion.github.io/goldeneyestatus/",
+      "https://gitlab.com/kholdfuzion/goldeneye_src"
+    ]
   }
 ]

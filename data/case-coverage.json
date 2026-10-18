@@ -12299,13 +12299,29 @@
         "https://github.com/n64decomp/007",
         "https://gitlab.com/kholdfuzion/goldeneye_src"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 81 (README line 817) lists n64decomp/007 under ⚔️ GoldenEye 007. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 81 行（README 第 817 行）在 ⚔️ GoldenEye 007 下列出 n64decomp/007。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, setup guide, Makefile, three SHA-1 manifests, CI workflows and IDO recompilation notes support the named three-release N64 matching-decompilation report; the mutable status page reports all files done. Full mapping covers this decompilation, which the GitHub repository mirrors from GitLab, not the separately curated PC port. Original-ROM dependencies, the absent license and project-reported matching remain explicit.",
+      "reason_zh": "固定版本的 README、安装指南、Makefile、三份 SHA-1 清单、CI 工作流及 IDO 重编译说明，支持该三版本 N64 一致性反编译报告；可变的状态页报告全部文件已完成。完整映射覆盖此反编译项目（GitHub 仓库镜像自 GitLab），不涵盖另行收录的 PC 移植。原 ROM 依赖、许可证缺失及项目报告的一致性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/readme.md",
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/docs/SetupGuide.md",
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/Makefile",
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/ge007.u.sha1",
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/.github/workflows/main.yml",
+        "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/tools/ido5.3_recomp/README.md",
+        "https://kholdfuzion.github.io/goldeneyestatus/",
+        "https://gitlab.com/kholdfuzion/goldeneye_src"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "goldeneye-007-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-082",
@@ -14740,18 +14756,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 142,
-      "insufficient-evidence": 125,
-      "pending": 324
-    },
-    "units_by_state": {
-      "already-curated": 141,
+      "already-curated": 143,
       "insufficient-evidence": 125,
       "pending": 323
     },
-    "primary_reviewed_units": 206,
-    "catalog_linked_occurrences": 153,
-    "distinct_resource_ids": 147,
+    "units_by_state": {
+      "already-curated": 142,
+      "insufficient-evidence": 125,
+      "pending": 322
+    },
+    "primary_reviewed_units": 207,
+    "catalog_linked_occurrences": 154,
+    "distinct_resource_ids": 148,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
