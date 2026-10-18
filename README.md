@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 249](https://img.shields.io/badge/resources-249-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 109](https://img.shields.io/badge/cases-109-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 250](https://img.shields.io/badge/resources-250-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 110](https://img.shields.io/badge/cases-110-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (90) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (91) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (109) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (110) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -610,6 +610,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Compiles the decompiled code of Dragon Ball Z: Budokai Tenkaichi 3 (PS2, USA release SLUS-21678) for PC on a new renderer, sound, input and platform layer rather than an emulator. The game code comes from the separate BT3-Decompiled matching decompilation, and the game's data is read from the user's own disc image. The README reports the full game loop and experimental online play and says AI helped make the project; these results remain project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/tenkaichi3-pc-port-case/)
+
+- [**D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices**](https://github.com/jhaizhou-ops/d2r-mobile)
+
+  Runs the Nintendo Switch release’s own aarch64 program natively on iPhone, iPad and Apple silicon Macs, rewriting only instructions that depend on the Horizon kernel and supplying its system services and the NVN graphics API on Metal. Shaders are translated offline from the user’s files, and the project adds its own touch interface and endgame features. It is a rehosting compatibility layer, not a decompilation or recompiled source.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/d2r-mobile-switch-rehost-case/)
 
 #### Tools, projects and integrations
 
