@@ -2705,11 +2705,17 @@
         "https://x.com/i/status/2109717890262053108"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Matt Farina's open draft helm/specs PR #2 adds a CC-BY-4.0 Chart API v2 specification derived from Helm's open-source main branch, its documentation and a survey of 190 public charts, with an appendix of documentation-versus-implementation differences. It is an unmerged draft that an automated review says still conflicts with the reference implementation in places, and it specifies an open format rather than reconstructing a closed artifact; AI use rests only on the author's post. Classification stays pending until the draft settles and a maintainer decides whether specification recovery from open source fits the reconstruction cases.",
+      "reason_zh": "Matt Farina 在 helm/specs 提交的草案 PR #2 新增一份 CC-BY-4.0 的 Chart API v2 规范，依据 Helm 开源 main 分支、其文档及对 190 个公开 chart 的调查整理而成，并附录文档与实现之间的差异。该草案尚未合并，自动审查指出部分内容仍与参考实现冲突；它规范的是开放格式，而非重建闭源产物，AI 的使用仅见于作者帖文。在草案定稿、维护者决定从开源代码恢复规范是否属于重建案例之前，分类保持待定。",
+      "primary_evidence_urls": [
+        "https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md",
+        "https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/README.md",
+        "https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/LICENSE",
+        "https://github.com/helm/specs/pull/2",
+        "https://x.com/i/status/2109717890262053108"
+      ],
       "catalog_matches": []
     },
     {
@@ -13324,7 +13330,7 @@
       "insufficient-evidence": 66,
       "pending": 457
     },
-    "primary_reviewed_units": 78,
+    "primary_reviewed_units": 79,
     "catalog_linked_occurrences": 74,
     "distinct_resource_ids": 65,
     "distinct_paper_ids": 1,
