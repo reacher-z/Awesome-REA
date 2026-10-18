@@ -10394,13 +10394,27 @@
         "https://github.com/Rainchus/Donkey-Kong-64-Recompiled",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 30 (README line 282) lists Rainchus/Donkey-Kong-64-Recompiled under 🦍 Donkey Kong 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 30 行（README 第 282 行）在 🦍 Donkey Kong 64 下列出 Rainchus/Donkey-Kong-64-Recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build guide, recompiler configuration, submodule list and license document an N64Recomp static recompilation of the US Donkey Kong 64 ROM into a native port that borrows decompilation headers only for patches. Full mapping covers this port, not the separate DK64 decompilation or independently reproduced gameplay. The collection row’s linked image was not used as evidence.",
+      "reason_zh": "固定版本的 README、构建指南、重编译配置、子模块列表和许可证，记录了用 N64Recomp 将美版《大金刚 64》ROM 静态重编译为原生移植的过程，反编译项目的头文件仅用于补丁。完整映射覆盖该移植，不涵盖独立的 DK64 反编译项目或独立复现的游戏行为。合集条目链接的图片未作为证据。",
+      "primary_evidence_urls": [
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/README.md",
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/BUILDING.md",
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/us.toml",
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/.gitmodules",
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/COPYING",
+        "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/tag/v1.0.3"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dk64-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-031",
@@ -13769,18 +13783,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 86,
-      "insufficient-evidence": 76,
-      "pending": 429
-    },
-    "units_by_state": {
-      "already-curated": 85,
+      "already-curated": 87,
       "insufficient-evidence": 76,
       "pending": 428
     },
-    "primary_reviewed_units": 104,
-    "catalog_linked_occurrences": 97,
-    "distinct_resource_ids": 91,
+    "units_by_state": {
+      "already-curated": 86,
+      "insufficient-evidence": 76,
+      "pending": 427
+    },
+    "primary_reviewed_units": 105,
+    "catalog_linked_occurrences": 98,
+    "distinct_resource_ids": 92,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

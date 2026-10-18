@@ -3444,5 +3444,37 @@
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/.github/workflows/build.yml",
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE"
     ]
+  },
+  {
+    "id": "dk64-recompiled-case",
+    "name": "Donkey Kong 64: Recompiled — an N64Recomp native port",
+    "url": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Uses N64Recomp to statically recompile the US Nintendo 64 release of Donkey Kong 64 into a native port, with RT64 as the renderer. The port is not built from decompiled source, but borrows headers and some functions from the in-progress DK64 decompilation for patches and enhancements. Its recompiler configuration reads a checked-in symbol dump and the ROM rather than a decompilation ELF.",
+    "description_zh": "使用 N64Recomp 将美版 Nintendo 64《大金刚 64》静态重编译为原生移植版，并以 RT64 作为渲染器。该移植并非基于反编译源码构建，但借用仍在进行中的 DK64 反编译项目的头文件和部分函数来实现补丁与增强。其重编译配置读取仓库内的符号转储和 ROM，而非反编译生成的 ELF。",
+    "evidence_url": "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Plays only the user’s US Nintendo 64 Donkey Kong 64 ROM; other dump formats of that ROM are converted to .z64. The repository and releases contain no game assets, it is not an emulator for other ROMs, and the README describes modding and other-language support as future work.",
+      "Release v1.0.3 (2026-09-30) ships Windows, Linux x64/ARM64, Flatpak x64 and macOS ARM64 archives. The README requires a Direct3D 12.0 (Shader Model 6) or Vulkan 1.2 GPU and an AVX-capable CPU, and lists Intel GPUs on Linux, the prebuilt Linux binary on some distributions, and overlay software as known problems.",
+      "Source builds need a recursive clone, CMake and Ninja with Clang (Visual Studio 2022 with Clang and vcpkg curl on Windows), separately built N64Recomp and RSPRecomp, and a decompressed copy of the NTSC-U 1.0 ROM matching the SHA-1 in BUILDING.md; play still uses the standard ROM.",
+      "The README reports high-frame-rate, widescreen and input-lag improvements alongside cutscene edge quirks at very wide aspect ratios. It publishes no equivalence or gameplay test; pinned-commit CI only builds the port, with extra inputs from a secret-configured checkout. These claims were not rerun here.",
+      "GPLv3 project license; the original game, the decompilation submodule and other dependencies keep separate terms. CONTRIBUTING.md forbids AI-generated code contributions, and no REA or coding-agent involvement is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/BUILDING.md",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/us.toml",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/.gitmodules",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/.github/workflows/validate.yml",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/COPYING",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/CONTRIBUTING.md",
+      "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/tag/v1.0.3"
+    ]
   }
 ]

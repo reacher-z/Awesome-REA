@@ -1740,5 +1740,15 @@
       "README（2026-09-29）报告：模糊匹配 99.60%、逐字节一致 73.65%、源码链接 34.79%，12,904 个函数中 12,052 个完全一致，732 个目标文件中 542 个由源码链接；PROGRESS.md（2026-09-27）的数字略低。因此 DOL 逐字节一致并不代表源码已经完整。分支的 CI 矩阵只构建 GMSJ01，GMSE01 结果均为本地报告，本合集也未重跑。",
       "AGENTS.md（CLAUDE.md 与 GEMINI.md 为指向它的符号链接）取消了上游对智能体自主处理库代码的禁令。它要求智能体只依据二进制、链接映射和本仓库开展工作，禁止伪匹配和使用泄露的 SDK 源码，但没有统计智能体编写了多少代码。仓库沿用 CC0-1.0，任天堂内容和编译器另有权利约束。未确立 REA 的使用。"
     ]
+  },
+  "dk64-recompiled-case": {
+    "name": "Donkey Kong 64: Recompiled：基于 N64Recomp 的原生移植",
+    "requirements": [
+      "仅可游玩用户自备的美版 Nintendo 64《大金刚 64》ROM；该 ROM 的其他转储格式会被转换为 .z64。仓库和发布包均不含游戏素材，它不是可运行其他 ROM 的模拟器；README 将模组和其他语言支持列为后续工作。",
+      "v1.0.3 版本（2026-09-30）提供 Windows、Linux x64／ARM64、Flatpak x64 和 macOS ARM64 压缩包。README 要求显卡支持带 Shader Model 6 的 Direct3D 12.0 或 Vulkan 1.2，CPU 支持 AVX，并将 Linux 上的 Intel 显卡、部分发行版上的预编译 Linux 程序以及叠加层软件列为已知问题。",
+      "源码构建需要递归克隆、CMake 与 Ninja 加 Clang（Windows 上为带 Clang 的 Visual Studio 2022 及 vcpkg curl）、另行构建的 N64Recomp 和 RSPRecomp，以及与 BUILDING.md 所列 SHA-1 一致的 NTSC-U 1.0 ROM 解压副本；游玩时仍使用标准 ROM。",
+      "README 称实现了高帧率、宽屏和低输入延迟改进，同时提到极宽画面比例下过场动画边缘的异常。项目未公布等价性或游戏流程测试；固定提交上的 CI 仅构建移植程序，额外输入来自由密钥配置的检出仓库。本合集未重跑这些说法。",
+      "项目采用 GPLv3；原游戏、反编译子模块及其他依赖保留各自条款。CONTRIBUTING.md 禁止提交 AI 生成的代码，所审来源未确立 REA 或编程智能体参与。"
+    ]
   }
 }
