@@ -5367,5 +5367,38 @@
       "https://decomp.dev/ACreTeam/ac-decomp",
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md"
     ]
+  },
+  {
+    "id": "kingdom-hearts-days-matching-decomp-case",
+    "name": "Kingdom Hearts 358/2 Days: a matching Nintendo DS decompilation",
+    "url": "https://github.com/Yokimitsuro/khdays-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the ARM9 program and overlays of the EU Nintendo DS release of Kingdom Hearts 358/2 Days as C that recompiles byte for byte with CodeWarrior. README reports all 306 modules byte-identical, with about 99.5% of functions in real C and library assembly counted separately; the ARM7 binary is outside its scope. The repository holds no ROM, game assets or extracted disassembly and produces no playable build.",
+    "description_zh": "将 Nintendo DS 欧版《王国之心 358/2 Days》的 ARM9 程序及覆盖模块重建为 C 源码，以 CodeWarrior 重新编译后逐字节一致。README 报告全部 306 个模块字节一致，约 99.5% 的函数为真正的 C，库自身的汇编另行统计；ARM7 二进制不在范围内。仓库不含 ROM、游戏素材或提取的反汇编，也不生成可玩版本。",
+    "evidence_url": "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports every function of the EU (YKGP) ARM9 program and its overlays matched and all initialized data reconstructed, with 306 of 306 rebuilt modules byte-identical; the remaining work is readability, such as shared structures, naming and file grouping. It counts 23,125 of about 23,233 functions as real C and tracks 108 assembly implementations (library routines and two game functions that need clz) separately. docs/ARM7.md states that the decomp covers the ARM9 only. This is a matching decompilation, not a port, and it produces no playable build or redistributable binary.",
+      "Requires the user’s own EU ROM dump, days.nds: 268,435,456 bytes, SHA-1 6fae8f5bbe80114b4e2535260eab5f4d0fc8a844 (CONTRIBUTING.md also lists SHA-256 and MD5). Other dumps will not line up with the committed addresses. The repository tracks no ROM, extracted data (including the extracted asm/ tree), build output or proprietary toolchain, and a pull-request check rejects added ROM, binary or asset files.",
+      "CONTRIBUTING.md lists Python 3 with capstone, pyelftools and ndspy, the dsd extraction and delinking tool, the proprietary CodeWarrior mwccarm 3.0 build 139 compiler (not supplied), arm-none-eabi-as and a Ninja-driven mwccarm/mwldarm build; its commands call tools/dsd.exe alongside Bash scripts. A few precompiled-middleware units use an older mwccarm through per-file compiler overrides.",
+      "dsd check modules compares each built module with the base ROM, verify_idx.py checks single functions including relocations, and the ROM round-trip script is expected to differ from the reference dump only in four non-functional CRC bytes. CONTRIBUTING notes that functions listed as known mismatches are kept out of the link and filled with original bytes. CI does not build the game; it rejects forbidden files and regenerates progress reports. decomp.dev reports YKGP 100.00% decompiled and fully linked at the reviewed commit, counting verified SDK assembly; this collection did not rerun these checks.",
+      "Contributors’ decompilation and tooling are dedicated to the public domain under CC0 1.0; the original game and its assets remain their owners’ property, and the CodeWarrior compiler is not distributed. DS Protect sources are reconstructed after taxicat1/dsprot, and the SDK identification harness compiles NitroSDK sources from pret/pokediamond. The reviewed sources disclose no REA or AI use, and no runtime reproduction is claimed; the separate khdays-port PC runtime is not covered."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/CONTRIBUTING.md",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/PROGRESS.md",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/docs/PROGRESS_POLICY.md",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/docs/ARM7.md",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/.github/workflows/checks.yml",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/.github/workflows/report.yml",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/LICENSE",
+      "https://decomp.dev/Yokimitsuro/khdays-decomp"
+    ]
   }
 ]

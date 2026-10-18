@@ -11777,13 +11777,29 @@
       "reported_source_urls": [
         "https://github.com/Yokimitsuro/khdays-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 63 (README line 629) lists Yokimitsuro/khdays-decomp under 🗝️ Kingdom Hearts 358/2 Days. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 63 行（README 第 629 行）在 🗝️ Kingdom Hearts 358/2 Days 下列出 Yokimitsuro/khdays-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, contributing guide, progress table and policy, ARM7 note, CI workflows and CC0 license, plus decomp.dev’s report for the same commit, support a matching decompilation of the EU ARM9 program with project-reported byte-identical modules. Full mapping covers this repository, not the ARM7 binary, a playable build or the separate khdays-port runtime. The required EU dump is named by hash only, and matching remains project-reported.",
+      "reason_zh": "固定版本的 README、贡献指南、进度表与进度政策、ARM7 说明、CI 工作流和 CC0 许可证，以及 decomp.dev 针对同一提交的报告，支持这是一个欧版 ARM9 程序的一致性反编译项目，其模块字节一致由项目报告。完整映射覆盖本仓库，不包括 ARM7 二进制、可玩版本或独立的 khdays-port 运行时。所需的欧版转储仅以哈希标识，一致性仍属项目报告。",
+      "primary_evidence_urls": [
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/README.md",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/CONTRIBUTING.md",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/PROGRESS.md",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/docs/PROGRESS_POLICY.md",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/docs/ARM7.md",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/.github/workflows/report.yml",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/LICENSE",
+        "https://decomp.dev/Yokimitsuro/khdays-decomp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "kingdom-hearts-days-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-064",
@@ -14832,18 +14848,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 148,
-      "insufficient-evidence": 125,
-      "pending": 318
-    },
-    "units_by_state": {
-      "already-curated": 147,
+      "already-curated": 149,
       "insufficient-evidence": 125,
       "pending": 317
     },
-    "primary_reviewed_units": 212,
-    "catalog_linked_occurrences": 159,
-    "distinct_resource_ids": 153,
+    "units_by_state": {
+      "already-curated": 148,
+      "insufficient-evidence": 125,
+      "pending": 316
+    },
+    "primary_reviewed_units": 213,
+    "catalog_linked_occurrences": 160,
+    "distinct_resource_ids": 154,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

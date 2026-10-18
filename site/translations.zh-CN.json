@@ -2357,5 +2357,15 @@
       "默认 ninja 目标会用 decomp-toolkit 依据 build.sha1 校验 static.dol 和 foresta.rel 的 SHA-1。configure.py 将 4,005 个目标文件标为一致，没有标为不一致的项；CI 在提供原始文件的私有容器中构建。可变的 decomp.dev 页面报告此提交已 100.00% 反编译并完全链接；本次审阅未重新运行构建或校验。",
       "仓库以 CC0 1.0 释出。原游戏内容及下载的工具链二进制不在该释出范围内，各自保留权利。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "kingdom-hearts-days-matching-decomp-case": {
+    "name": "《王国之心 358/2 Days》：逐字节一致的 Nintendo DS 反编译重建",
+    "requirements": [
+      "README 报告欧版（YKGP）ARM9 程序及其覆盖模块的所有函数均已匹配，初始化数据全部重建，重建的 306 个模块全部字节一致；剩余工作是提升可读性，例如共享结构体、命名和按文件归类。其中约 23,233 个函数中有 23,125 个计为真正的 C，另行统计 108 个汇编实现（库例程以及两个需要 clz 指令的游戏函数）。docs/ARM7.md 说明反编译只覆盖 ARM9。这是一致性反编译而非移植，不生成可玩版本或可再分发的二进制。",
+      "需使用者自备欧版 ROM 转储 days.nds：大小 268,435,456 字节，SHA-1 为 6fae8f5bbe80114b4e2535260eab5f4d0fc8a844（CONTRIBUTING.md 另列出 SHA-256 和 MD5）。其他转储与已提交的地址对不上。仓库不跟踪 ROM、提取数据（包括提取出的 asm/ 目录）、构建产物或专有工具链，拉取请求检查也会拒绝新增的 ROM、二进制或素材文件。",
+      "CONTRIBUTING.md 列出所需工具：带 capstone、pyelftools 和 ndspy 的 Python 3，dsd 提取与反链接工具，专有的 CodeWarrior mwccarm 3.0 build 139 编译器（不随仓库提供），arm-none-eabi-as，以及由 Ninja 驱动的 mwccarm／mwldarm 构建；其命令同时调用 tools/dsd.exe 与 Bash 脚本。少数预编译中间件单元通过逐文件的编译器覆盖设置改用更早版本的 mwccarm。",
+      "dsd check modules 将每个构建出的模块与原 ROM 比对，verify_idx.py 校验单个函数（包括重定位），ROM 往返脚本的预期结果是与参考转储只差四个不影响功能的 CRC 字节。CONTRIBUTING 说明，列为已知不匹配的函数不会参与链接，其位置以原始字节填充。CI 不构建游戏，只拒绝禁止的文件并重新生成进度报告。decomp.dev 报告所审提交的 YKGP 已 100.00% 反编译并完全链接，其中计入经验证的 SDK 汇编；本合集未重跑这些检查。",
+      "贡献者的反编译和工具以 CC0 1.0 贡献到公有领域；原游戏及其素材仍归其所有者，CodeWarrior 编译器也不随仓库分发。DS Protect 源码参照 taxicat1/dsprot 重建，SDK 识别工具编译 pret/pokediamond 中的 NitroSDK 源码。所审来源未披露 REA 或 AI 使用，也不主张运行复现；独立的 khdays-port PC 运行时不在本记录范围内。"
+    ]
   }
 }
