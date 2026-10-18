@@ -1052,12 +1052,15 @@
         "https://github.com/morluto/rea/issues/1801",
         "https://github.com/morluto/rea/issues/1371"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Both linked REA issues are tool bug reports, not a reconstruction. #1801 reports that rea-agents 6.4.0 returned no types or methods for a Unity Assembly-CSharp.dll and Valheim's assembly_valheim.dll under the managed decode budget; #1371 reports a CLI JSON-output crash on an unnamed Unity game assembly, which its reporter later found fixed on main. Neither thread publishes recovered Valheim logic, a modification, reconstructed output or a comparison, and no Valheim retest is reported. Retain the lead without a catalog mapping; this is not a judgment of REA's managed-code support.",
+      "reason_zh": "两个关联的 REA issue 都是工具缺陷报告，而非重建案例。#1801 报告 rea-agents 6.4.0 受托管解码预算限制，对一个 Unity Assembly-CSharp.dll 和 Valheim 的 assembly_valheim.dll 均未返回任何类型或方法；#1371 报告 CLI 在一个未具名 Unity 游戏程序集上输出 JSON 时崩溃，报告者随后确认 main 分支已修复。两个讨论串均未公开恢复的 Valheim 逻辑、修改、重建产物或对照结果，也未报告对 Valheim 的复测。保留此线索而不建立目录映射；这不是对 REA 托管代码支持能力的评判。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/1801",
+        "https://github.com/morluto/rea/issues/1371"
+      ],
       "catalog_matches": []
     },
     {
@@ -13144,15 +13147,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 59,
-      "insufficient-evidence": 53,
-      "pending": 479
+      "insufficient-evidence": 54,
+      "pending": 478
     },
     "units_by_state": {
       "already-curated": 58,
-      "insufficient-evidence": 53,
-      "pending": 478
+      "insufficient-evidence": 54,
+      "pending": 477
     },
-    "primary_reviewed_units": 57,
+    "primary_reviewed_units": 58,
     "catalog_linked_occurrences": 66,
     "distinct_resource_ids": 57,
     "distinct_paper_ids": 1,
