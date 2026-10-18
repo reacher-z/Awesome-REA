@@ -23,8 +23,8 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 69 | 68 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 453 | 452 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 69 | 69 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 452 | 451 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 70 | 70 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 76 occurrences have catalog links. They reference 67 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
@@ -45,9 +45,9 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Flutter build identification | Already curated | [Source](https://github.com/morluto/rea/pull/1582) |
 | MIPS ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1620) |
 | PSP static ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1330) |
-| TH08: exact-source reconstruction and separately tested ports | Pending | [Source](https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md) |
+| Touhou reconstruction projects | Pending | [Source](https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md) |
 | Dinosaur runner: recovering one acceleration rule | Already curated | [Source](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md) |
-| PhotoCraft: editor workflow reconstruction and PSD round-trip boundaries | Pending | [Source](https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/README.md) |
+| ArtCraft: not proven Adobe or Office reverse engineering | Insufficient evidence | [Source](https://getartcraft.com/apps) |
 | Unity/Valheim assemblies | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/1801) |
 | Large multidex Android APK | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/893) |
 | .NET NativeAOT recovery request | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/744) |
@@ -85,9 +85,9 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Mi Health: timestamp repair and a cloud-data exporter | Insufficient evidence | [Source](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
-| hw-harness: scanner USB protocol investigation | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
+| Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
-| Pocket Tasks: reconstructing task state and persistence | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
+| REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
 | NJFE: a Soulear camera protocol bridge for desktop inspection | Already curated | [Source](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA | Already curated | [Source](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
 | Super Mario 64 DS: matching decompilation with relocation checks | Already curated | [Source](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
@@ -126,7 +126,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 Partial or related catalog mappings:
 
 - `song:touhou-reconstruction` — The TH08 component is curated; TH04 and TH095 components in this combined report remain outside the mapping.
-- `song:artcraft-boundary` — PhotoCraft, WordCraft, GridCraft and DeckCraft cover four documented application implementations only. The broader Adobe/Office claims remain outside these partial mappings; proprietary source recovery, complete original-application/backend equivalence, legal clean-room certification and independent runtime reproduction are not established.
+- `song:artcraft-boundary` — The ArtCraft apps page says every Crafting App is written from scratch in Rust and makes no reverse-engineering claim; the four reviewed READMEs describe clean-room implementations from public specifications and observed behavior, with no proprietary code. No primary source documents decompilation or recovery of Adobe or Microsoft software, and none establishes the third-party REA attribution. PhotoCraft, WordCraft, GridCraft and DeckCraft keep partial mappings to their implementation records; other listed apps such as FilmCraft, LightCraft and CADCraft have public repositories not reviewed here. Retain the lead without a full mapping; this is not a judgment of the apps’ quality.
 - `song:schaller-opticfilm-thinkpad-linux` — The existing scanner investigation and the separate ThinkPad IMX471 tuning/driver case cover two bounded components of this report. Their mappings remain partial: neither asserts complete scanner/camera behavior, all-device compatibility or independent runtime reproduction.
 - `song:rea-reconstruction-companion` — The Pocket Tasks mapping covers one maintainer-informed command-line reconstruction with published candidate and bounded comparison evidence. It does not cover the broader Companion workflow, other examples or model/host effectiveness. Prior source exposure, pending human review and the historical instruction-packet hash remain explicit; no independent runtime reproduction is established.
 - `hao-games:row-134` — The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.
