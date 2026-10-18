@@ -10661,13 +10661,25 @@
         "https://github.com/ughman/c2c",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 33 (README line 311) lists ughman/c2c under 🌀 Crash Bandicoot 2: Cortex Strikes Back. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 33 行（README 第 311 行）在 🌀 Crash Bandicoot 2: Cortex Strikes Back 下列出 ughman/c2c。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, function list, disassembler, emulator sources and translated-function tree document a 2015 hybrid reconstruction of PAL Crash Bandicoot 2: mechanical MIPS-to-C translation backed by an emulator library, with hand decompilation of a small set of functions. Full mapping covers this early, not-for-regular-use project, not a complete port or independently reproduced gameplay. The collection row’s linked image was not used as evidence.",
+      "reason_zh": "固定版本的 README、函数列表、反汇编器、模拟器源码和转换函数目录，记录了 2015 年针对 PAL 版《古惑狼 2》的混合重建：由模拟器库支撑的 MIPS 到 C 机械转换，加上少量函数的手工反编译。完整映射覆盖这一早期、不适合日常使用的项目，不代表完整移植或独立复现的游戏行为。合集条目链接的图片未作为证据。",
+      "primary_evidence_urls": [
+        "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/README.md",
+        "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/docs/FUNCTIONS.md",
+        "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcdisasm/Main.cs",
+        "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcemu/gte.c"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "c2c-crash2-hybrid-recompilation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-034",
@@ -14048,18 +14060,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 103,
-      "insufficient-evidence": 81,
-      "pending": 407
-    },
-    "units_by_state": {
-      "already-curated": 102,
+      "already-curated": 104,
       "insufficient-evidence": 81,
       "pending": 406
     },
-    "primary_reviewed_units": 126,
-    "catalog_linked_occurrences": 114,
-    "distinct_resource_ids": 108,
+    "units_by_state": {
+      "already-curated": 103,
+      "insufficient-evidence": 81,
+      "pending": 405
+    },
+    "primary_reviewed_units": 127,
+    "catalog_linked_occurrences": 115,
+    "distinct_resource_ids": 109,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -1909,5 +1909,14 @@
       "CI 构建 Windows x86、x64、Linux 和 Android 版本。项目未公开与原版引擎二进制文件的对照结果，常见问题还说明官方版本中已有的缺陷大多不会修复。本合集未构建或运行该项目。",
       "自定义的《RSDKv5(U) 反编译源码许可证 v2.1》要求任何对外提供的预构建可执行文件默认关闭 DLC，禁止商业用途及分发独特模组素材以外的游戏素材，要求注明 Evening Star 与反编译作者 Rubberduckycooly、chuliRMG，并要求所有派生版本遵守同一许可。README 称 Retro Engine 归 Evening Star 所有；所审阅来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "c2c-crash2-hybrid-recompilation-case": {
+    "name": "C2C：《古惑狼 2》的混合重编译与手工反编译",
+    "requirements": [
+      "运行需要用户自有的 PAL 版《古惑狼 2》光盘原始 BIN 镜像（含完整扇区头）及该光盘中的 SCES_009.67 可执行文件，另需第三方 PlayStation 模拟器的 GPU、SPU 和两个手柄插件，以及一个 128 KB 记忆卡文件；仓库不附带游戏数据。",
+      "仅支持 Windows：主程序在 Cygwin 下使用 GNU Make、GCC 和 SDL2 构建，模拟器库需要 Microsoft Visual C++ 2005 或更高版本，可选的 C# 反汇编器需要 Visual C# 2005 或更高版本。develop 分支的开发集中在 2015 年 1 月至 4 月，没有发布版本。",
+      "README 警告该软件不适合日常使用，也未报告可游玩程度。其转换器几乎不做反编译，也不解析间接跳转或跳转表，因此代码区域须手工列出；docs/FUNCTIONS.md 在列出的 818 个函数入口中仅为 18 个命名。",
+      "项目未公布字节一致或等价性检查，本合集也未构建或运行。仓库没有许可证文件；源自 PCSX-R 的模拟器源码带有 GPL-2.0 或更高版本的文件头，原游戏保留各自权利。所审来源未记录 REA 或 AI 参与。"
+    ]
   }
 }

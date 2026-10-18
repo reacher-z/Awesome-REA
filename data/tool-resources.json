@@ -3898,5 +3898,34 @@
       "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/.github/workflows/build.yml",
       "https://github.com/RSDKModding/RSDKv5-Decompilation/releases/tag/v1.1.1"
     ]
+  },
+  {
+    "id": "c2c-crash2-hybrid-recompilation-case",
+    "name": "C2C: hybrid recompilation and hand decompilation of Crash Bandicoot 2",
+    "url": "https://github.com/ughman/c2c",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An early reverse-engineering effort on PlayStation Crash Bandicoot 2 that converts the engine’s MIPS machine code directly into a very large C file and runs it against a modified PCSX-R emulator library for hardware I/O. Translated functions are meant to be decompiled by hand and moved into ordinary C, gradually replacing the mechanical translation.",
+    "description_zh": "一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。转换出的函数计划逐个手工反编译为普通 C 代码，逐步替换机械转换的部分。",
+    "evidence_url": "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Running needs the user’s own PAL Crash Bandicoot 2 disc as a raw BIN image with full sector headers and that disc’s SCES_009.67 executable, plus third-party PlayStation emulator GPU, SPU and two gamepad plugins and a 128 KB memory-card file; the repository ships no game data.",
+      "Windows only: the main program builds under Cygwin with GNU Make, GCC and SDL2, the emulator library needs Microsoft Visual C++ 2005 or later, and the optional C# disassembler needs Visual C# 2005 or later. Development ran on the develop branch from January to April 2015, and there are no releases.",
+      "The README warns that the software is not intended for regular use and reports no playability status. Its translator does little decompiling and does not resolve indirect branches or jump tables, so code regions must be listed by hand; docs/FUNCTIONS.md names 18 of 818 listed function entry points.",
+      "No matching or equivalence check is published, and nothing was built or run here. The repository has no license file; the PCSX-R-derived emulator sources carry GPL-2.0-or-later headers, and the original game retains its own rights. No REA or AI involvement is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/docs/FUNCTIONS.md",
+      "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcdisasm/Main.cs",
+      "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcemu/gte.c",
+      "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/Makefile",
+      "https://github.com/ughman/c2c/tree/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srczz"
+    ]
   }
 ]
