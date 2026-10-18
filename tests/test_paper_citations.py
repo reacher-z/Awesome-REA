@@ -167,6 +167,10 @@ class ReviewedContainerRecordTests(unittest.TestCase):
         self.assertEqual(satbleed['author'],
                          '{{Ulysse Planta} and {Julian Rederlechner} and {Martin Strohmeier} '
                          'and {Mathias Fischer} and {Ali Abbasi}}')
+        p2im = fields(bibtex_text(PAPERS['paper-p2im']))
+        self.assertEqual((p2im['booktitle'], p2im['pages'], p2im['publisher'], p2im['eprint']),
+                         ('{29th USENIX Security Symposium (USENIX Security 20)}',
+                          '{1237--1254}', '{USENIX Association}', '{1909.06472}'))
 
     def test_only_reviewed_records_carry_container_metadata(self):
         expected = {'paper-dire', 'paper-resym', 'paper-redraw', 'paper-declarui', 'paper-fuzzware',
@@ -212,7 +216,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-uemu',
                     'paper-semu',
                     'paper-conware',
-                    'paper-decompiler-fidelity-taxonomy'}
+                    'paper-decompiler-fidelity-taxonomy',
+                    'paper-p2im'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.

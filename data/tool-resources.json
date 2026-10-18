@@ -36528,5 +36528,35 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "dexsql",
+    "name": "DexSQL",
+    "url": "https://github.com/LSPosed/dexsql-release",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Queries classes, methods, fields, strings, call edges and Smali disassembly across Android APK and DEX files with SQL. Shipped as a single prebuilt binary that runs either as a local stdio MCP server (`dexsql mcp`) or as a standalone CLI (`dexsql query`).",
+    "description_zh": "使用 SQL 查询 Android APK 与 DEX 文件中的类、方法、字段、字符串、调用边及 Smali 反汇编。以单个预构建二进制发布，既可作为本地 stdio MCP 服务（`dexsql mcp`）运行，也可作为独立命令行工具（`dexsql query`）使用。",
+    "evidence_url": "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed release repository publishes prebuilt binaries for Linux, macOS and Windows on x86_64 and arm64 (latest release v0.1.5 at review time) without core engine source code. Running requires downloading the matching platform archive and supplying local APK or DEX files.",
+      "In MCP mode (`dexsql mcp`), the binary exposes open_dataset, query and decode over stdio alongside schema and query-guide resources; in CLI mode (`dexsql query`), it executes SQL against one or more --path inputs and returns markdown, json or csv.",
+      "The core executable is governed by the proprietary DexSQL Binary License 1.0, which permits free use and verbatim redistribution of the unmodified archive but forbids reverse engineering, modification or commercial redistribution of the binary. Only the installation skill, benchmark harness and documentation carry the separate MIT license in LICENSE-AUXILIARY.",
+      "Author benchmarks on a 372 MiB QQ 9.3.55 APK (41 DEX files) compare eight code-location query tasks and process memory against a warm DexDec daemon and JADX MCP, noting that DexDec’s reference cache is faster on repeated direct-caller lookups. Those benchmarks do not measure Java decompilation quality or prove original-source recovery, and were not rerun here.",
+      "APK and DEX parsing runs locally without modifying input packages, while any connected AI client governs what query output is sent to external model providers. The reviewed repository establishes no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.zh-CN.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/benchmarks/README.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/skills/install-dexsql/SKILL.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE-AUXILIARY"
+    ]
   }
 ]
