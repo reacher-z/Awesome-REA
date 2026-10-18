@@ -10144,13 +10144,27 @@
       "reported_source_urls": [
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 18 (README line 171) lists ZeldaWWHDRecomp/ZeldaWWHDRecomp under 🗡️ The Legend of Zelda: The Wind Waker (including HD). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 18 行（README 第 171 行）在 🗡️ The Legend of Zelda: The Wind Waker (including HD) 下列出 ZeldaWWHDRecomp/ZeldaWWHDRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, technical overview, decomp-build and verification notes, license and submodule list support a static recompilation of the Wii U Wind Waker HD into native desktop and Android builds. Full mapping covers this port; the separate ZeldaWWHDDecomp/wwhd decompilation and the community Switch port are not covered. The required user dump and keys, known rendering gaps and project-reported playability remain explicit.",
+      "reason_zh": "固定版本的 README、技术概述、反编译构建与验证说明、许可证及子模块列表，支持这是将 Wii U 版《风之杖 HD》静态重编译为桌面与 Android 原生版本的项目。完整映射覆盖该移植；独立的 ZeldaWWHDDecomp/wwhd 反编译和社区 Switch 移植不在范围内。所需的使用者转储与密钥、已知的渲染缺口及项目报告的可玩性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/README.md",
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/how-it-works.md",
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/decomp-build.md",
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/tools/verify/README.md",
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/LICENSE",
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "wind-waker-hd-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-019",
@@ -13990,18 +14004,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 99,
-      "insufficient-evidence": 82,
-      "pending": 410
-    },
-    "units_by_state": {
-      "already-curated": 98,
+      "already-curated": 100,
       "insufficient-evidence": 82,
       "pending": 409
     },
-    "primary_reviewed_units": 123,
-    "catalog_linked_occurrences": 110,
-    "distinct_resource_ids": 104,
+    "units_by_state": {
+      "already-curated": 99,
+      "insufficient-evidence": 82,
+      "pending": 408
+    },
+    "primary_reviewed_units": 124,
+    "catalog_linked_occurrences": 111,
+    "distinct_resource_ids": 105,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

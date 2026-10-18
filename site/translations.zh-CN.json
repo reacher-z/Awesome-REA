@@ -1869,5 +1869,15 @@
       "CONTRIBUTING.md 要求标记为已反编译的目标文件必须 1:1 匹配，须通过 objdiff 检查并成功链接。拉取请求中的每个非一致函数都必须附上 decomp.me 草稿链接，且不得直接复制反编译器输出。README 注明部分代码和头文件来自 doldecomp bte、zeldaret tp（JSystem）及 ogws。",
       "README 声明 AI／LLM 未参与反编译，并将允许的 AI 用途限于代码清理、格式化、文档和命名。这是项目自述，本次审阅无法核实。仓库声明采用 CC0-1.0，任天堂内容、提取的文件及工具链另有权利约束。未确立 REA 的使用；README 提到的独立 PC 移植 AstroCore 在此没有公开源码。"
     ]
+  },
+  "wind-waker-hd-recomp-case": {
+    "name": "Wind Waker HD Recomp：通过静态重编译实现的 Wii U 游戏原生移植",
+    "requirements": [
+      "README 说明该项目是对美版或欧版 Wii U 发行版（版本 0，不含更新）的静态重编译，并报告游戏在 macOS、Windows、Linux 和 Android 上均可从头玩到尾。已知缺口包括尚未实现的几何着色器和矩形图元，以及 macOS 上尚不支持手柄震动；真 60 fps 仍为实验性。与 zeldaret/tww 等源码反编译不同，默认构建运行的是机器转换的游戏代码。",
+      "需要使用者自己合法取得的游戏：附有光盘密钥和 Wii U 通用密钥的 .wud／.wux 光盘镜像、Cemu 的 .wua 归档，或已解包的游戏目录。设置程序会将 code/cking.rpx 与各受支持版本的 SHA-256 比对。仓库和发行包均不含游戏代码、素材或密钥，本地生成的代码与缓存不得再分发。",
+      "发行版面向 macOS 14+（Apple Silicon）、x86-64 或 arm64 上的 Windows 10 1903+ 或 Windows 11，以及 x86-64 或 arm64 上 glibc 2.35+ 的 Linux；使用 Vulkan 时需 Vulkan 1.3（或支持 VK_KHR_dynamic_rendering 的 1.1／1.2）；Android arm64 版在手机上构建游戏。首次设置时，在本地用下载的编译器（Windows 为 llvm-mingw，Linux 为 zig）或 Apple 命令行工具转换并编译代码。从源码构建需 CMake 3.20+ 和 Python 3。",
+      "项目报告的检查包括与 Cemu 并排比较渲染效果、玩家已通关，以及在反编译路径上由 tools/verify 以生成输入和录制输入，逐函数比较手写 C++ 与重编译原版的行为。实验性反编译构建（仅 macOS、仅美版）在固定的子模块版本中运行 862 个单元内的 22,705 个已验证函数。所有结果均为项目报告，本合集未运行任何内容。",
+      "项目代码采用 MPL-2.0；内置的 Cemu 代码为 MPL-2.0，metal-cpp、{fmt}、Dear ImGui、zstd 及 AppImage 运行时组件各自保留其许可证，游戏仍归任天堂所有。README 称其为非官方粉丝项目；所审来源未确立 REA 或编码代理的参与。"
+    ]
   }
 }

@@ -3801,5 +3801,35 @@
       "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/LICENSE",
       "https://decomp.dev/SMGCommunity/Petari"
     ]
+  },
+  {
+    "id": "wind-waker-hd-recomp-case",
+    "name": "Wind Waker HD Recomp: a native port by static recompilation of the Wii U game",
+    "url": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles The Wind Waker HD’s Wii U PowerPC code to C ahead of time, reimplements the Cafe OS libraries the game uses and implements GX2 graphics on Metal or Vulkan, producing native macOS, Linux, Windows and Android builds without a Cemu runtime. All game code and data are generated locally from the user’s own dump; an experimental macOS-only build can instead run functions from the separate ZeldaWWHDDecomp/wwhd decompilation.",
+    "description_zh": "将《塞尔达传说 风之杖 HD》Wii U 版的 PowerPC 代码预先静态重编译为 C，原生重新实现游戏所用的 Cafe OS 库，并在 Metal 或 Vulkan 上实现 GX2 图形，生成无需 Cemu 运行时的 macOS、Linux、Windows 和 Android 原生版本。所有游戏代码和数据都由使用者自己的转储在本地生成；另有仅限 macOS 的实验性构建，可改为运行独立的 ZeldaWWHDDecomp/wwhd 反编译中的函数。",
+    "evidence_url": "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a static recompilation of the USA or European Wii U release (version 0, without the update) and reports the game playable from start to finish on macOS, Windows, Linux and Android. Known gaps include unimplemented geometry shaders and rectangle primitives and no controller rumble on macOS; true 60 fps is experimental. Unlike source decompilations such as zeldaret/tww, the default build runs machine-translated game code.",
+      "Needs the user’s own, legally obtained game: a .wud/.wux disc image with its disc key and the Wii U common key, a Cemu .wua archive, or an extracted game folder. Setup checks code/cking.rpx against the SHA-256 of each supported version. The repository and releases contain no game code, assets or keys, and the locally generated code and caches must not be redistributed.",
+      "Releases target Apple Silicon macOS 14+, Windows 10 1903+ or 11 on x86-64 or arm64, and glibc 2.35+ Linux on x86-64 or arm64, with Vulkan 1.3 (or 1.1/1.2 with VK_KHR_dynamic_rendering) where Vulkan is used; Android arm64 builds the game on the phone. First setup translates and compiles the code locally with a downloaded compiler (llvm-mingw on Windows, zig on Linux) or Apple’s command-line tools. Source builds need CMake 3.20+ and Python 3.",
+      "Reported checks are side-by-side rendering comparison with Cemu, players completing the game and, for the decompiled path, tools/verify’s function-by-function comparison of hand-written C++ with the recompiled original on generated and recorded inputs. The experimental decomp build (macOS, USA game only) runs 22,705 verified functions in 862 units at the pinned submodule. All results are project-reported; this collection ran nothing.",
+      "Project code is MPL-2.0; vendored Cemu code is MPL-2.0, while metal-cpp, {fmt}, Dear ImGui, zstd and the AppImage runtime components keep their own licenses, and the game remains Nintendo’s property. README calls it an unofficial fan project; the reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/how-it-works.md",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/decomp-build.md",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/tools/verify/README.md",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/LICENSE",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules"
+    ]
   }
 ]
