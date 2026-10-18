@@ -4195,5 +4195,76 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-webcode2m",
+    "title": "WebCode2M: A Real-World Dataset for Code Generation from Webpage Designs",
+    "title_zh": "WebCode2M：面向网页设计稿代码生成的真实世界数据集",
+    "authors": [
+      "Yi Gui",
+      "Zhen Li",
+      "Yao Wan",
+      "Yemin Shi",
+      "Hongyu Zhang",
+      "Bohua Chen",
+      "Yi Su",
+      "Dongping Chen",
+      "Siyuan Wu",
+      "Xing Zhou",
+      "Wenbin Jiang",
+      "Hai Jin",
+      "Xiangliang Zhang"
+    ],
+    "year": 2025,
+    "publication_date": "2025-04-22",
+    "date_precision": "day",
+    "date_basis": "The ACM article page and ACM-deposited Crossref metadata agree on publication on 2025-04-22; the April 28–May 2 conference dates are not used as the publication date.",
+    "date_basis_zh": "ACM 文章页面与 ACM 提交的 Crossref 元数据均将出版日期记为 2025-04-22；本条目不以 4 月 28 日至 5 月 2 日的会议日期作为出版日期。",
+    "venue": "WWW 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2404.06369",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2024-04-09",
+    "doi": "10.1145/3696410.3714889",
+    "citation": {
+      "container_title": "Proceedings of the ACM on Web Conference 2025",
+      "publisher": "ACM",
+      "pages": "1834-1845",
+      "sources": [
+        "https://dl.acm.org/doi/10.1145/3696410.3714889",
+        "https://api.crossref.org/works/10.1145/3696410.3714889"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3696410.3714889",
+    "pdf_url": "https://arxiv.org/pdf/2404.06369v2",
+    "code_url": "https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m",
+    "project_url": "https://webcode2m.github.io/",
+    "targets": [
+      "website"
+    ],
+    "description_en": "WebCode2M pairs about 2.56 million real-world webpage screenshots with purified HTML/CSS code and element bounding-box layout trees. Pages sampled from a Common Crawl snapshot are cleaned (scripts, metadata and hidden elements removed, styles merged into one block), rendered with Playwright, and filtered by a neural scorer trained on 10,000 annotated samples. The paper fine-tunes Pix2Struct-1.3B as the WebCoder baseline, introduces TreeBLEU to measure DOM-structure recall, and benchmarks specialized, open and commercial multimodal models on short, medium and long test subsets of 256 pages each.",
+    "description_zh": "WebCode2M 将约 256 万张真实网页截图与净化后的 HTML/CSS 代码及元素边界框布局树配对。数据取样自 Common Crawl 快照，经清洗（移除脚本、元数据与隐藏元素，并将样式合并为单一样式块）后用 Playwright 渲染，再由基于 10,000 条人工标注样本训练的神经评分器筛选。论文以 Pix2Struct-1.3B 微调出基线模型 WebCoder，提出衡量 DOM 结构召回率的 TreeBLEU 指标，并在短、中、长三个各含 256 个网页的测试子集上评测专用、开源及商业多模态模型。",
+    "scope_limitations_en": "The task is static HTML/CSS generation from a design image. Scripts are stripped during purification, so interaction, client-side behavior and backend logic are not reconstructed, and outputs are judged by visual score, CLIP similarity and TreeBLEU rather than functional equivalence. The paper reports that no evaluated model reproduces image elements accurately, and scores fall as target code grows longer. The 768 test pages were drawn from high-scoring candidates and manually inspected; the scorer is about 90% accurate, so low-quality training samples remain, and the authors warn that crawled content may still include inappropriate material. Commercial models are named only by family, and about one-third of Gemini test cases failed with recitation errors, so those comparisons are snapshots. The dataset card's CC BY 4.0 license does not clear rights in the crawled pages' code, text or images.",
+    "scope_limitations_zh": "任务是根据设计图生成静态 HTML/CSS。净化过程会移除脚本，因此不重建交互、客户端行为或后端逻辑；输出以视觉得分、CLIP 相似度和 TreeBLEU 评判，而非功能等价性。论文报告，所有被评测模型都无法准确还原图像元素，且目标代码越长得分越低。768 个测试网页取自高分候选并经人工检查；评分器准确率约为 90%，训练集中仍有低质量样本，作者也提醒爬取内容可能仍含不当材料。商业模型仅以模型家族命名，约三分之一的 Gemini 测试样例因 recitation 错误失败，因此相关比较只反映当时情况。数据集卡片声明的 CC BY 4.0 许可不能清除所爬取网页代码、文本或图片的权利。",
+    "why_fits_en": "Adds a large real-world design-to-code training corpus with layout trees and a structure metric, complementing the smaller real-page and synthetic website-reconstruction benchmarks in this section.",
+    "why_fits_zh": "补充带布局树和结构指标的大规模真实设计稿到代码训练语料，与本节中规模较小的真实网页基准及合成网站重建基准互补。",
+    "metadata_notes": "arXiv v1 (2024-04-09) was titled “VISION2UI: A Real-World Dataset with Layout for Code Generation from UI Designs”; the reviewed v2 (2025-02-22, comment “WWW'25”) carries the final title and DOI. The ACM page and Crossref list Bohua Chen before Yi Su, while arXiv v2 lists Yi Su first; this record follows the publisher order. The project page links the paper, the naturalcc code directory and the Hugging Face dataset. The reviewed dataset-card revision f53cd4a (2025-03-05) declares CC BY 4.0, says the dataset is also called Vision2UI, warns of inappropriate content and points to a purified variant; its data directory is about 1.1 TB. The naturalcc repository declares MIT. Its webcode2m README still uses earlier names: the UICoder model and the vision2ui_test set, which now redirects to webcode2m_test. The environment file pins Python 3.10, PyTorch 2.1.2 and Transformers 4.33.1. No dataset, model or code was downloaded or run.",
+    "metadata_notes_zh": "arXiv v1（2024-04-09）的标题为“VISION2UI: A Real-World Dataset with Layout for Code Generation from UI Designs”；所审阅的 v2（2025-02-22，备注“WWW'25”）采用最终标题并载有 DOI。ACM 页面与 Crossref 将 Bohua Chen 列于 Yi Su 之前，而 arXiv v2 将 Yi Su 列前；本条目遵循出版方顺序。项目页面链接论文、naturalcc 代码目录及 Hugging Face 数据集。所审阅的数据集卡片修订版 f53cd4a（2025-03-05）声明 CC BY 4.0，说明该数据集也称 Vision2UI，提醒可能含不当内容，并指向一个净化版本；其数据目录约 1.1 TB。naturalcc 仓库声明 MIT 许可。其 webcode2m README 仍使用早期名称：UICoder 模型与 vision2ui_test 测试集，后者现已重定向至 webcode2m_test。环境文件固定 Python 3.10、PyTorch 2.1.2 与 Transformers 4.33.1。本次未下载或运行数据集、模型或代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3696410.3714889",
+      "https://api.crossref.org/works/10.1145/3696410.3714889",
+      "https://arxiv.org/abs/2404.06369",
+      "https://arxiv.org/pdf/2404.06369v2",
+      "https://webcode2m.github.io/",
+      "https://huggingface.co/datasets/xcodemind/webcode2m/blob/f53cd4a9317364e32a6fc7d99dc50761fe54715f/README.md",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/webcode2m/README.MD",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/webcode2m/environment.yml",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/webcode2m/requirements.txt",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
