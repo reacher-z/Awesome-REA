@@ -3476,5 +3476,37 @@
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/CONTRIBUTING.md",
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/releases/tag/v1.0.3"
     ]
+  },
+  {
+    "id": "twilight-princess-decomp-case",
+    "name": "Twilight Princess: a decompilation with fully matching GameCube code",
+    "url": "https://github.com/zeldaret/tp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Twilight Princess source that compiles back to binaries identical to the originals, building GameCube, Wii and Nvidia Shield releases from one codebase through conditional compilation. README reports the GameCube code as completely matching but not every translation unit linked yet, with Debug and Wii alignment ongoing; the repository ships no assets or assembly and will not produce a port.",
+    "description_zh": "重建《塞尔达传说 黄昏公主》的源码，使其能重新编译出与原版一致的二进制文件；GameCube、Wii 与 Nvidia Shield 各版本通过条件编译共用同一套代码。README 报告 GameCube 版代码已完全一致，但尚未链接全部翻译单元，调试版与 Wii 版的对齐仍在进行；仓库不含素材或汇编，也不会制作移植。",
+    "evidence_url": "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress decompilation with ten listed targets: three GameCube releases (GZ2E01, GZ2P01, GZ2J01), five Wii builds including a kiosk demo, and two Nvidia Shield China builds. Output is the original platform’s executable and REL modules; README states the project will not produce a PC or other port, and Dusklight is a separate project built on this code.",
+      "Building needs the user’s own disc image of the chosen version in a supported format (ISO/GCM, RVZ, WIA, WBFS, CISO, NFS, GCZ or TGC), which can be deleted after the first build. The repository contains no game assets or assembly; decomp-toolkit splits the original locally.",
+      "Builds run natively on Windows with Python and ninja, or on Linux/macOS with ninja and the automatically downloaded wibo wrapper. configure.py pins decomp-toolkit v1.8.0, objdiff v3.6.1, binutils 2.42-1 and a 20251118 compiler bundle, selecting Metrowerks compiler versions per target and library; objdiff provides per-object diffing.",
+      "The default build links source-built objects for units marked complete and original extracted objects for the rest, then checks the output against each version’s build.sha1 (758 entries for GZ2E01). decomp.dev’s reports for the pinned commit list 100% of code matched for all three GameCube versions, with 2,583 of 2,608 units complete, against 54.47% for ShieldD and 47.06% for Wii RZDE01_00. CI runs in a private container holding game files; this collection ran no build.",
+      "LICENSE.md is CC0-1.0; it does not cover Nintendo’s game, disc content or the downloaded compilers. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/configure.py",
+      "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/tools/project.py",
+      "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/config/GZ2E01/build.sha1",
+      "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/LICENSE.md",
+      "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/.github/workflows/build.yml",
+      "https://github.com/zeldaret/tp/actions/runs/28052837187",
+      "https://decomp.dev/zeldaret/tp"
+    ]
   }
 ]

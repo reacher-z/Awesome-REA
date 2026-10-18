@@ -10005,13 +10005,29 @@
         "https://github.com/zeldaret/tp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 16 (README line 158) lists zeldaret/tp under 🗡️ The Legend of Zelda: Twilight Princess. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 16 行（README 第 158 行）在 🗡️ The Legend of Zelda: Twilight Princess 下列出 zeldaret/tp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, configure script, dtk-template linking logic, SHA-1 manifest, CI workflow and license, plus decomp.dev’s per-version reports for the same commit, support a decompilation with completely matching GameCube code and partial Wii and Shield progress. Full mapping covers this reconstruction, not Dusklight or any other port. User-supplied disc images, the unlinked units and project-reported figures remain explicit.",
+      "reason_zh": "固定版本的 README、配置脚本、dtk-template 链接逻辑、SHA-1 清单、CI 工作流和许可证，以及 decomp.dev 针对同一提交的分版本报告，支持这是一项 GameCube 版代码完全一致、Wii 与 Shield 版部分完成的反编译。完整映射覆盖此重建项目，不包括 Dusklight 或其他移植。使用者自备的光盘镜像、尚未链接的单元及项目报告的数据均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/README.md",
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/configure.py",
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/tools/project.py",
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/config/GZ2E01/build.sha1",
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/LICENSE.md",
+        "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/.github/workflows/build.yml",
+        "https://github.com/zeldaret/tp/actions/runs/28052837187",
+        "https://decomp.dev/zeldaret/tp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "twilight-princess-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-017",
@@ -13786,18 +13802,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 87,
-      "insufficient-evidence": 77,
-      "pending": 427
-    },
-    "units_by_state": {
-      "already-curated": 86,
+      "already-curated": 88,
       "insufficient-evidence": 77,
       "pending": 426
     },
-    "primary_reviewed_units": 106,
-    "catalog_linked_occurrences": 98,
-    "distinct_resource_ids": 92,
+    "units_by_state": {
+      "already-curated": 87,
+      "insufficient-evidence": 77,
+      "pending": 425
+    },
+    "primary_reviewed_units": 107,
+    "catalog_linked_occurrences": 99,
+    "distinct_resource_ids": 93,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

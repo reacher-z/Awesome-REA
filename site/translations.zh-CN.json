@@ -1750,5 +1750,15 @@
       "README 称实现了高帧率、宽屏和低输入延迟改进，同时提到极宽画面比例下过场动画边缘的异常。项目未公布等价性或游戏流程测试；固定提交上的 CI 仅构建移植程序，额外输入来自由密钥配置的检出仓库。本合集未重跑这些说法。",
       "项目采用 GPLv3；原游戏、反编译子模块及其他依赖保留各自条款。CONTRIBUTING.md 禁止提交 AI 生成的代码，所审来源未确立 REA 或编程智能体参与。"
     ]
+  },
+  "twilight-princess-decomp-case": {
+    "name": "《黄昏公主》：GameCube 版代码完全一致的反编译",
+    "requirements": [
+      "README 将其描述为进行中的反编译，列出十个目标版本：三个 GameCube 发行版（GZ2E01、GZ2P01、GZ2J01）、包括体验版在内的五个 Wii 版本，以及两个 Nvidia Shield 中国版。产物是原平台的可执行文件和 REL 模块；README 说明项目不会制作 PC 或其他平台的移植，Dusklight 是基于这些代码的独立项目。",
+      "构建需要使用者自备所选版本的光盘镜像，格式可为 ISO／GCM、RVZ、WIA、WBFS、CISO、NFS、GCZ 或 TGC，首次构建后即可删除。仓库不含游戏素材或汇编；decomp-toolkit 在本地拆分原文件。",
+      "在 Windows 上可直接用 Python 与 ninja 构建；Linux／macOS 需 ninja，并会自动下载 wibo 包装器。configure.py 固定 decomp-toolkit v1.8.0、objdiff v3.6.1、binutils 2.42-1 及 20251118 编译器包，并按目标版本和库选用相应的 Metrowerks 编译器版本；objdiff 用于逐个对象比对。",
+      "默认构建对标为完成的单元链接由源码编译的对象，其余单元使用从原文件提取的对象，再按各版本的 build.sha1 校验输出（GZ2E01 有 758 条记录）。decomp.dev 针对该固定提交的报告显示，三个 GameCube 版本的代码均已 100% 匹配，2,608 个单元中有 2,583 个已完成；ShieldD 为 54.47%，Wii 版 RZDE01_00 为 47.06%。CI 在存有游戏文件的私有容器中运行；本合集未运行任何构建。",
+      "LICENSE.md 采用 CC0-1.0，不涵盖任天堂的游戏、光盘内容或下载的编译器。所审来源未确立 REA 或编码代理的参与。"
+    ]
   }
 }
