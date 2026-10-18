@@ -11456,13 +11456,27 @@
       "reported_source_urls": [
         "https://github.com/Yokimitsuro/khdays-port"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 64 (README line 630) lists Yokimitsuro/khdays-port under 🗝️ Kingdom Hearts 358/2 Days. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 64 行（README 第 630 行）在 🗝️ Kingdom Hearts 358/2 Days 下列出 Yokimitsuro/khdays-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build notes, third-party notices, the supported-ROM table and the pinned decompilation submodule’s README support this Windows x64 port built on the khdays-decomp matching decompilation. Full mapping covers the port project, not the separate byte-matching DS reconstruction or independently reproduced gameplay. The original-ROM dependency, Windows-only builds and project-reported test results remain explicit.",
+      "reason_zh": "固定版本的 README、构建说明、第三方声明、受支持 ROM 列表及固定版本反编译子模块的 README，支持这一基于 khdays-decomp 一致性反编译的 Windows x64 移植。完整映射覆盖该移植项目，不涵盖独立的逐字节一致 DS 重建，也不代表独立复现的游戏行为。原 ROM 依赖、仅限 Windows 的构建及项目报告的测试结果均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md",
+        "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/docs/BUILD.md",
+        "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/THIRD_PARTY_NOTICES.md",
+        "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/tools/supported_roms.json",
+        "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/.gitmodules",
+        "https://github.com/Yokimitsuro/khdays-decomp/blob/a2b0478b87e3102732094c34f6ca89595f98ab93/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "khdays-native-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-065",
@@ -14142,18 +14156,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 109,
-      "insufficient-evidence": 86,
-      "pending": 396
-    },
-    "units_by_state": {
-      "already-curated": 108,
+      "already-curated": 110,
       "insufficient-evidence": 86,
       "pending": 395
     },
-    "primary_reviewed_units": 137,
-    "catalog_linked_occurrences": 120,
-    "distinct_resource_ids": 114,
+    "units_by_state": {
+      "already-curated": 109,
+      "insufficient-evidence": 86,
+      "pending": 394
+    },
+    "primary_reviewed_units": 138,
+    "catalog_linked_occurrences": 121,
+    "distinct_resource_ids": 115,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -1968,5 +1968,15 @@
       "替换固件 v00.14 在松开时发送短按、按住 1 秒发送长按，向 Zigbee2MQTT 呈现为原厂 TS0044/TS0046，并保留用于 OTA 的 BLE 维护模式。进度表记录了早期版本的硬件检查；v00.14 已刷入一台 TS0046，但在 Zigbee2MQTT 中的配对、动作及电量上报被标注为尚未验证。另一款 ZG-226Z 报警器固件据文档已能构建，但尚未在硬件上运行。本次审阅未运行任何程序。",
       "仓库根目录没有许可证。固件目录附有取自 pvvx/BZdevice 的构建文件的宽松许可声明及 Telink SDK 的 Apache-2.0 许可，笔记也注明借鉴 pvvx 的 SWire 工作。README 称项目大量依靠氛围编程；作者帖子称由运行 GLM-5.3 的 pi 智能体完成，而所审文件未指明模型，也未确立与 REA 的关联。"
     ]
+  },
+  "khdays-native-pc-port-case": {
+    "name": "Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植",
+    "requirements": [
+      "所审阅的 0.1.2 版标注为开发中。README 报告标题画面、Story Mode、Mission Mode、战斗、商店及存档读写均可原生运行；目前仅有 Windows x64 构建，Linux、macOS、Windows on ARM 和 Switch 列为计划。固定版本的 khdays-decomp 子模块（a2b0478）报告欧版 YKGP 全部 306 个模块逐字节一致；移植是在构建时改写这些 C 代码后编译，并不复现 DS 二进制。",
+      "需自备欧版 Kingdom Hearts 358/2 Days ROM（游戏代码 YKGP）；工具会先将其与唯一一条受支持 ROM 记录比对，再在本地准备游戏数据。可选的高清画面、视频和菜单由玩家自有的 KINGDOM HEARTS HD 1.5+2.5 ReMIX 与 HD 2.8 Final Chapter Prologue 生成。仓库不含 ROM、素材、SDK 文件或游戏二进制。",
+      "构建需要 Windows、带 C++ 工作负载的 Visual Studio 2026、CMake、Ninja、Python 3.11+ 及 pycparser；运行需要支持 Direct3D 12 或 Vulkan 的显卡。构建准备阶段把游戏指针改写为 DS 地址引用，并依据从 ROM 得出的 Ghidra ABI 表修补 ARM 调用约定缺口；无法机械修补之处会停在具名的 KHDAYS_ABI_GAP 位置。",
+      "项目报告的检查包括 ctest 套件（MSVC 静态分析、短时 libFuzzer 运行、GPU 渲染与移植自身软件 DS 引擎的对照、DeSmuME 存档状态对照），以及覆盖 Mission Mode、Story Mode、存档和联机的脚本化回归流程。需要玩家数据的测试在缺少数据时跳过，CI 仅在 Windows 和 Linux 上构建格式库。报告称已通过维护者服务器试过互联网联机，两台 PC 间的局域网联机尚未试过；本合集未运行上述任何检查。",
+      "移植声明采用 MIT；第三方声明记录反编译部分为 CC0 1.0，并列出 SDL3（zlib）、Lua、Dear ImGui 等各按自身条款授权的组件。仓库中的任何许可均不适用于原游戏或从中提取的材料。README 说明使用了 AI 辅助编码工具；未确立与 REA 的关联。"
+    ]
   }
 }

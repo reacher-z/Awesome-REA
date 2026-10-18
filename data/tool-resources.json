@@ -4088,5 +4088,38 @@
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/LICENSE.BZdevice",
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/SDK/LICENSE.txt"
     ]
+  },
+  {
+    "id": "khdays-native-pc-port-case",
+    "name": "Kingdom Hearts 358/2 Days: native PC port built on a matching decompilation",
+    "url": "https://github.com/Yokimitsuro/khdays-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles the C of the khdays-decomp matching decompilation for Windows x64 and supplies a native platform layer for the Nintendo DS hardware, SDK services and sound driver. README reports the whole game running without an ARM interpreter; its rendering, controls, mod support and network multiplayer are the port’s own additions. This is a decompilation-based port, distinct from the byte-matching DS reconstruction it builds on.",
+    "description_zh": "将 khdays-decomp 一致性反编译的 C 代码编译为 Windows x64 程序，并以原生平台层替代 Nintendo DS 硬件、SDK 服务及声音驱动。README 报告整款游戏无需 ARM 解释器即可运行；渲染、操作、模组支持与网络联机均为移植自身新增。这是基于反编译的移植，与其所依托的逐字节一致 DS 重建并非同一产物。",
+    "evidence_url": "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed version 0.1.2 is labelled work in progress. README reports the title, Story Mode, Mission Mode, combat, the shop and save round-trips running natively; builds exist only for Windows x64, with Linux, macOS, Windows on ARM and Switch listed as planned. The pinned khdays-decomp submodule (a2b0478) reports all 306 EU YKGP modules byte-identical; the port compiles that C after build-time rewriting and does not reproduce the DS binary.",
+      "Supply your own European Kingdom Hearts 358/2 Days ROM (game code YKGP); the tools check it against a single supported-ROM entry before preparing local game data. Optional HD screens, videos and menus are generated from the player’s own KINGDOM HEARTS HD 1.5+2.5 ReMIX and HD 2.8 Final Chapter Prologue copies. The repository includes no ROM, assets, SDK files or game binaries.",
+      "Building needs Windows, Visual Studio 2026 with the C++ workload, CMake, Ninja, Python 3.11+ and pycparser; running needs a Direct3D 12 or Vulkan GPU. Build preparation rewrites game pointers as DS-address references and repairs ARM calling-convention gaps from a ROM-derived Ghidra ABI table; cases it cannot repair mechanically stop at named KHDAYS_ABI_GAP points.",
+      "Reported checks are ctest suites (MSVC static analysis, short libFuzzer runs, GPU renders compared with the port’s software DS engines, a DeSmuME savestate comparison) and scripted regression walks through Mission Mode, Story Mode, saving and multiplayer. Tests needing player data are skipped without it, and CI builds only the format library on Windows and Linux. Internet play is reported tried through the maintainer’s server, local-network play between two PCs not yet; this collection ran none of these checks.",
+      "The port declares MIT; its third-party notices record the decompilation as CC0 1.0 and list SDL3 (zlib), Lua, Dear ImGui and other components under their own terms. No repository license applies to the original game or material extracted from it. README states that AI-assisted coding tools were used; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/docs/BUILD.md",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/THIRD_PARTY_NOTICES.md",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/LICENSE",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/.gitmodules",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/tools/supported_roms.json",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/installer/README.md",
+      "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/.github/workflows/build.yml",
+      "https://github.com/Yokimitsuro/khdays-decomp/blob/a2b0478b87e3102732094c34f6ca89595f98ab93/README.md"
+    ]
   }
 ]
