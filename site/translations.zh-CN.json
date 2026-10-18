@@ -2717,5 +2717,15 @@
       "报告的检查包括安装可执行文件名称与源码一致性测试，以及 YAML 和发布工作流审计。README 还描述了作者各移植项目共用的启动关卡检查及与 Beetle、DuckStation 的 A/B 对比，但所审阅的源码树未公布本游戏的对比结果。这些均为项目报告；本合集未运行任何检查。",
       "项目自有文件采用 GPL-3.0-only；psxrecomp 保留 PolyForm Noncommercial 1.0.0，recomp-ui 保留 MIT，GPL 不涵盖零售内容或生成的零售代码。README 称这些移植在大量 AI 协助下开发，大部分代码由 AI 编写；未声明使用 REA。"
     ]
+  },
+  "himuro-fatal-frame-decomp-case": {
+    "name": "Himuro：Fatal Frame（《零》）PS2 一致性反编译",
+    "requirements": [
+      "涵盖 SLUS_203.88（美版）、SLES_508.21（欧版）和 SLPS_250.74（日版）；产物是重建的 PS2 ELF，而非 PC 移植，README 只把移植列为后续目标。经项目自带的报告调整脚本处理后，已提交的 objdiff 报告显示美版 3,437 个函数、欧版 3,464 个函数全部匹配，代码与数据均为 100%；日版则为 3,394 个函数中匹配 2,712 个（代码 73.64%）。README 中的 decomp.dev 徽章会随时变化。",
+      "需从自有光盘或 ISO 将对应的主可执行文件复制到 config/<地区>/ 中，README 给出了各地区所需的 SHA-1。数据提取、代码拆分和预期汇编都在本地生成，仓库不提交游戏素材。",
+      "必须使用 Linux：需虚拟环境中的 Python 3.8+、make、供仓库内 32 位 EE-GCC 2.9-991111-01 编译器运行的 i386 libc／libstdc++，以及另行安装的 decompals PS2 binutils v0.10；仓库也提交了 objdiff-cli。各地区版本需分别提取、配置和构建。",
+      "ninja 构建会依据 config/<地区>/checksum.sha1 运行 sha1sum，因此构建成功即重现所提供的可执行文件。为达到该哈希，构建会按 asm_patches.json 改写部分编译器输出，并把列出的字节范围从原始可执行文件复制到构建产物中（美版与欧版的 PhotoScoreCount、欧版的 DspSpData）。CI 只上传已提交的报告，没有可执行文件就无法构建；本合集未重跑任何构建。",
+      "项目采用 MIT 许可；Fatal Frame 及其可执行文件另有权利约束，仓库中的编译器二进制文件也适用各自条款。所审来源未确立 AI 或 REA 使用归因，报告中 X 帖子的存档链接也未作为证据使用。"
+    ]
   }
 }

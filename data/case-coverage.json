@@ -13081,13 +13081,28 @@
         "https://github.com/Mikompilation/Himuro",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 101 (README line 1046) lists Mikompilation/Himuro under 👻 Fatal Frame. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 101 行（README 第 1046 行）在 👻 Fatal Frame 下列出 Mikompilation/Himuro。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, license, build configuration, checksum file, committed objdiff reports and the binary and assembly patch lists support the reported PS2 matching decompilation of Fatal Frame. Full mapping covers this decompilation project, not a PC port or an independently rerun build; the archive linked from the reported post was not used. User-supplied executables, partial Japanese progress and patched routines remain explicit.",
+      "reason_zh": "固定版本的 README、许可证、构建配置、校验文件、已提交的 objdiff 报告以及二进制与汇编补丁清单，支持所报告的 Fatal Frame PS2 一致性反编译。完整映射覆盖此反编译项目，不涵盖 PC 移植或独立重跑的构建；报告帖子所链接的存档未被使用。使用者自备的可执行文件、日版的部分进度以及打过补丁的例程均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/configure.py",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/us/report.json",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/jp/report.json",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/eu/bin_patches.json",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_bin_matching.py"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "himuro-fatal-frame-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-102",
@@ -15268,18 +15283,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 173,
-      "insufficient-evidence": 140,
-      "pending": 278
-    },
-    "units_by_state": {
-      "already-curated": 172,
+      "already-curated": 174,
       "insufficient-evidence": 140,
       "pending": 277
     },
-    "primary_reviewed_units": 252,
-    "catalog_linked_occurrences": 184,
-    "distinct_resource_ids": 178,
+    "units_by_state": {
+      "already-curated": 173,
+      "insufficient-evidence": 140,
+      "pending": 276
+    },
+    "primary_reviewed_units": 253,
+    "catalog_linked_occurrences": 185,
+    "distinct_resource_ids": 179,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

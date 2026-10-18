@@ -6459,5 +6459,43 @@
       "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.github/workflows/release.yml",
       "https://github.com/Alexbeav/psxrecomp/blob/08ec704a974b1f3a16335b4afeb340b9eff19926/README.md"
     ]
+  },
+  {
+    "id": "himuro-fatal-frame-decomp-case",
+    "name": "Himuro: a matching Fatal Frame PS2 decompilation",
+    "url": "https://github.com/Mikompilation/Himuro",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Fatal Frame’s PS2 executable as C for the US, EU and Japanese releases, built with the original EE-GCC 2.9 toolchain and checked by SHA-1 against the user’s own executables. Committed objdiff reports list the US and EU code as fully matched and the Japanese code as partial, and a few routines still rely on assembly or byte patches. Porting to modern hardware is a stated later goal, not part of this repository.",
+    "description_zh": "将 Fatal Frame（《零》）PS2 可执行文件的美版、欧版和日版重建为 C，使用原始的 EE-GCC 2.9 工具链构建，并以使用者自备可执行文件的 SHA-1 校验结果。仓库提交的 objdiff 报告显示美版和欧版代码已全部匹配、日版仅部分匹配，少数例程仍依赖汇编或字节补丁。移植到现代硬件是项目声明的后续目标，不在本仓库范围内。",
+    "evidence_url": "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers SLUS_203.88 (US), SLES_508.21 (EU) and SLPS_250.74 (JP); the output is a rebuilt PS2 ELF, not a PC port, which the README names only as a later goal. After the project’s own report-adjustment script, the committed objdiff reports list 3,437 of 3,437 US and 3,464 of 3,464 EU functions with all code and data matched, but 2,712 of 3,394 JP functions (73.64% of code). The README’s decomp.dev badges are mutable.",
+      "Copy the matching main executable from your own disc or ISO into config/<region>/; the README gives the required SHA-1 for each region. Data extraction, splitting and the expected assembly are generated locally, and no game assets are committed.",
+      "Linux is required: Python 3.8+ in a virtual environment, make, i386 libc/libstdc++ for the committed 32-bit EE-GCC 2.9-991111-01 compiler, and the decompals PS2 binutils v0.10 installed separately; objdiff-cli is also committed. Each region is extracted, configured and built separately.",
+      "The ninja build runs sha1sum against config/<region>/checksum.sha1, so a successful build reproduces the supplied executable. To reach that hash, the build rewrites selected compiler output from asm_patches.json and copies listed byte ranges from the original executable into the built file (PhotoScoreCount in US and EU, DspSpData in EU). CI only uploads the committed reports and cannot build without the executables; this collection did not rerun anything.",
+      "MIT license for the project; Fatal Frame and its executables retain separate rights, and the committed compiler binaries keep their own terms. The reviewed sources establish no AI or REA attribution, and the archive link in the reported X post was not used as evidence."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/configure.py",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/Makefile",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/us/checksum.sha1",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/us/report.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/eu/report.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/jp/report.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/us/bin_patches.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/eu/bin_patches.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/config/us/asm_patches.json",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_bin_matching.py",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_report.py",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/.github/workflows/progress.yml"
+    ]
   }
 ]
