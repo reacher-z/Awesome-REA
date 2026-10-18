@@ -2187,5 +2187,15 @@
       "1.9.2 报告的测试覆盖 Wine 下及 Linux OpenGL 环境中多种语言的菜单、关卡加载和字体，并称 Windows、Linux 和 macOS 构建均可编译。所审提交没有自动化测试或 CI 运行记录，本合集也未下载发布包或重跑任何内容。",
       "LICENSE.txt 对移植自身代码（twotowers/ 和 generate.py）采用 MIT；内置的 xboxrecomp 保留 MIT，其中取自 xemu 的部分为 LGPL-2.1-or-later。许可证还说明，发布包中的游戏程序含有从原始可执行文件机械转换而来的代码，这部分不受该许可证覆盖，仍归权利人所有。所审来源未确立 REA 参与，也不主张运行复现。"
     ]
+  },
+  "melee-unlocked-case": {
+    "name": "Melee Unlocked：Melee 的 Windows 源码移植与静态重编译",
+    "requirements": [
+      "README 将其描述为 Windows 测试版构建，可在启动器中选择两套引擎。源码移植将 doldecomp/melee（固定于 039c4bf 的子模块，外加单独维护的原生补丁）编译为 melee_game.dll，运行在原生运行时上，提供 Direct3D 12／11 渲染、混音器和直接控制器输入。静态重编译使用项目自带的 Python 重编译器，把零售版 DOL 的 PowerPC 代码和 Slippi 的 Gecko 代码预先转换为 C++，并在 GameCube SDK 的高层模拟上运行。游戏逻辑保持 60 Hz，显示则依据动画数据插帧；VERSION 与最新发布为 0.8.99，但 README 仍写 0.8.76。",
+      "需自备 Melee NTSC 1.02 ISO：游戏从中读取数据，从源码构建时也以其中的零售版 main.dol 作为重编译器输入。光盘内容不会提交到仓库或随发行包分发。联网对战需通过 Slippi Launcher 使用 Slippi 账户；可选的 DLSS 5 路径需另行提供 NVIDIA 的运行时与模型。",
+      "仅支持 Windows 10／11。静态重编译的构建使用 Python、CMake 和 Visual Studio 2022 Build Tools（play.bat 可通过 winget 安装）。源码移植另需 MinGW-w64 GCC 14 或更新版本及 Ninja 构建游戏 DLL、以 MSVC 构建宿主程序，并执行同样的客体代码转换步骤；它固定 doldecomp/melee 与 encounter/aurora 子模块，并用带检查的脚本应用补丁。",
+      "README 列出 CTest 单元测试、要求无窗口、隐藏窗口、多线程与插帧渲染下 2,400 个模拟检查点一致的验证器，以及两个实例完成一场 Slippi 对战且日志中不得出现 DESYNC 的测试。docs/replay-validation.md 按帧比较回放中的八个 Slippi 帧后字段，并说明这不能证明完整游戏状态相同；PORT_COMPLETION.md 将解决一处不同的回放字节列为宣称联网确定性兼容的前提。这些均为项目报告，此处未运行任何内容。",
+      "自 0.8.5 起采用 GPL-3.0-or-later（0.8.1 及更早为 GPL-2.0-or-later）；NOTICE 列出移植自 Dolphin、Slippi Ishiiruka 和 Slippi 的代码、各有许可的随附组件，以及针对 NVIDIA 与 Intel SDK 的 GPL 第 7 条附加许可。Melee 归 Nintendo 和 HAL Laboratory 所有，项目与 Slippi 团队无关。README 称项目借助 Fable 5.1 和 GPT 6 Astra 开发，PORT_COMPLETION.md 也提到 Fable 与 Codex 工作分支；未记录 REA 使用，也不主张运行复现。"
+    ]
   }
 }

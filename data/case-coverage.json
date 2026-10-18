@@ -12374,13 +12374,27 @@
       "reported_source_urls": [
         "https://github.com/Hero88go/melee-unlocked"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 88 (README line 887) lists Hero88go/melee-unlocked under 🥊 Super Smash Bros. Melee. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 88 行（README 第 887 行）在 🥊 Super Smash Bros. Melee 下列出 Hero88go/melee-unlocked。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, source-port build guide, replay-validation notes, completion tracker, submodule list and licence notices support the reported Windows port with a decompilation-based engine and a static-recompilation engine. Full mapping covers this repository, not the upstream decompilation, independently verified online determinism or gameplay parity. The user-supplied ISO, Windows-only builds, beta status and stated AI assistance remain explicit.",
+      "reason_zh": "固定版本的 README、源码移植构建指南、回放验证说明、完成度记录、子模块列表及许可声明，支持该包含反编译引擎与静态重编译引擎的 Windows 移植报告。完整映射覆盖此仓库，不涵盖上游反编译项目、经独立核验的联网确定性或游戏行为一致性。使用者自备 ISO、仅限 Windows 构建、测试版状态及所述 AI 辅助均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/README.md",
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/docs/build-source-port.md",
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/docs/replay-validation.md",
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/PORT_COMPLETION.md",
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/.gitmodules",
+        "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/NOTICE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "melee-unlocked-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-089",
@@ -14520,18 +14534,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 131,
-      "insufficient-evidence": 104,
-      "pending": 356
-    },
-    "units_by_state": {
-      "already-curated": 130,
+      "already-curated": 132,
       "insufficient-evidence": 104,
       "pending": 355
     },
-    "primary_reviewed_units": 174,
-    "catalog_linked_occurrences": 142,
-    "distinct_resource_ids": 136,
+    "units_by_state": {
+      "already-curated": 131,
+      "insufficient-evidence": 104,
+      "pending": 354
+    },
+    "primary_reviewed_units": 175,
+    "catalog_linked_occurrences": 143,
+    "distinct_resource_ids": 137,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

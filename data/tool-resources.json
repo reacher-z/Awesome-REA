@@ -4830,5 +4830,39 @@
       "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/LICENSE",
       "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.2"
     ]
+  },
+  {
+    "id": "melee-unlocked-case",
+    "name": "Melee Unlocked: a Windows source port and static recompilation of Melee",
+    "url": "https://github.com/Hero88go/melee-unlocked",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A beta Windows build of Super Smash Bros. Melee (NTSC 1.02) with two engines: a source port that compiles the doldecomp decompilation as a native library, and a static recompilation that translates the retail DOL's PowerPC code and Slippi's Gecko codes into C++. Both run on a native runtime with Direct3D rendering, unlocked display rates and natively implemented Slippi rollback play. The user's own ISO supplies all game data, and the README says the work was AI-assisted.",
+    "description_zh": "Super Smash Bros. Melee（NTSC 1.02）的 Windows 测试版构建，包含两套引擎：源码移植将 doldecomp 反编译编译为原生库，静态重编译则将零售版 DOL 的 PowerPC 代码及 Slippi 的 Gecko 代码转换为 C++。两者都运行在原生运行时上，提供 Direct3D 渲染、解锁的显示帧率和原生实现的 Slippi 回滚对战。全部游戏数据来自使用者自备的 ISO，README 称开发借助了 AI。",
+    "evidence_url": "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a beta Windows build with two engines chosen in the launcher. The Source Port compiles doldecomp/melee (a submodule pinned at 039c4bf plus a tracked native patch) into melee_game.dll on a native runtime with Direct3D 12/11 rendering, a mixer and direct controller input. The Static Recomp uses the project's Python recompiler to translate the retail DOL's PowerPC code and Slippi's Gecko codes ahead of time into C++, over HLE of the GameCube SDK. Game logic stays at 60 Hz while the display interpolates from animation data; VERSION and the latest release are 0.8.99, though README still names 0.8.76.",
+      "Supply your own Melee NTSC 1.02 ISO: the game reads its data from it, and the from-source build takes the retail main.dol from it as the recompiler's input. Nothing from the disc is committed or shipped. Online play needs a Slippi account through the Slippi Launcher; the optional DLSS 5 path needs NVIDIA's separately supplied runtime and model.",
+      "Windows 10/11 only. The Static Recomp build uses Python, CMake and the Visual Studio 2022 Build Tools (play.bat can install them with winget). The Source Port additionally needs MinGW-w64 GCC 14 or newer with Ninja for the game DLL, an MSVC-built host, and the same guest-translation step; it pins the doldecomp/melee and encounter/aurora submodules and applies its patch with a checking script.",
+      "README lists CTest unit tests, a validator requiring 2,400 simulation checkpoints to match across headless, hidden, threaded and authored rendering, and a two-instance Slippi match that must log no DESYNC. docs/replay-validation.md compares replays frame by frame in eight Slippi post-frame fields and says this does not establish equality of the complete game state; PORT_COMPLETION.md makes resolving a differing replay byte a precondition for claiming deterministic online compatibility. These are project-reported; nothing was run here.",
+      "GPL-3.0-or-later from 0.8.5 (GPL-2.0-or-later through 0.8.1); NOTICE lists code ported from Dolphin, Slippi Ishiiruka and Slippi, bundled components with their own licences, and a GPL section 7 permission for NVIDIA and Intel SDKs. Melee belongs to Nintendo and HAL Laboratory, and the project is unaffiliated with the Slippi team. README says it was developed with Fable 5.1 and GPT 6 Astra, and PORT_COMPLETION.md names Fable and Codex working branches; no REA use is documented and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/docs/build-source-port.md",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/docs/replay-validation.md",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/PORT_COMPLETION.md",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/.gitmodules",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/VERSION",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/NOTICE",
+      "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/LICENSE",
+      "https://github.com/Hero88go/melee-unlocked/releases/tag/v0.8.99",
+      "https://github.com/doldecomp/melee/tree/039c4bf4ca33338c35d21901ad19b7ede19d19ad"
+    ]
   }
 ]
