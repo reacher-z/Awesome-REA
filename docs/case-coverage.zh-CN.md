@@ -22,11 +22,11 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 95 | 94 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 415 | 414 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 96 | 95 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 414 | 413 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 81 | 81 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-106 个出现项含目录链接；共关联 100 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+107 个出现项含目录链接；共关联 101 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
 此记录为 119 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
@@ -135,7 +135,7 @@
 | z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目 | 已收录 | [来源](https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md) |
 | Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现 | 已收录 | [来源](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
 | Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植 | 已收录 | [来源](https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/README.md) |
-| 🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation | 待核查 | [来源](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
+| Sonic Mania：面向 RSDKv5 引擎的游戏代码反编译重建 | 已收录 | [来源](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
 | Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器 | 已收录 | [来源](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |
 | Donkey Kong 64: Recompiled：基于 N64Recomp 的原生移植 | 已收录 | [来源](https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/README.md) |
 | c1：PlayStation 版《古惑狼》的 C 语言移植 | 已收录 | [来源](https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/README.md) |
