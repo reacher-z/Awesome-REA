@@ -4534,5 +4534,66 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-symlm",
+    "title": "SymLM: Predicting Function Names in Stripped Binaries via Context-Sensitive Execution-Aware Code Embeddings",
+    "title_zh": "SymLM：基于上下文敏感、执行感知代码嵌入的去符号二进制函数名预测",
+    "authors": [
+      "Xin Jin",
+      "Kexin Pei",
+      "Jun Yeon Won",
+      "Zhiqiang Lin"
+    ],
+    "year": 2022,
+    "publication_date": "2022-11-07",
+    "date_precision": "day",
+    "date_basis": "The ACM article page and the publisher’s Crossref deposit both give publication on 2022-11-07, which is also the first day of the November 7–11 conference; the publisher-stated date is recorded.",
+    "date_basis_zh": "ACM 文章页面与出版方提交的 Crossref 元数据均将出版日期列为 2022-11-07，这也是 11 月 7—11 日会议的首日；本条目记录出版方给出的日期。",
+    "venue": "ACM CCS 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3548606.3560612",
+    "citation": {
+      "container_title": "Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "1631-1645",
+      "sources": [
+        "https://dl.acm.org/doi/10.1145/3548606.3560612",
+        "https://api.crossref.org/works/10.1145/3548606.3560612"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3548606.3560612",
+    "pdf_url": "https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf",
+    "code_url": "https://github.com/OSUSecLab/SymLM",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SymLM predicts function names for stripped binaries as sets of name words. It encodes each function’s instructions with a Trex model pretrained on micro-execution traces, fuses them with embeddings of callers, internal callees and external library calls taken from Ghidra’s interprocedural CFG, and scores words from a fixed vocabulary with an MLP decoder; name preprocessing and a word-embedding module, CodeWordNet, handle abbreviations and synonyms. On 1,431,169 functions from 16,027 binaries of 27 projects across x86, x64, ARM and MIPS, O0–O3 and four Hikari obfuscations, the authors report weighted average precision 0.634, recall 0.677 and F1 0.655, plus a firmware case study.",
+    "description_zh": "SymLM 将去符号二进制的函数名预测为一组名称单词。它使用在微执行轨迹上预训练的 Trex 模型编码每个函数的指令，将其与取自 Ghidra 过程间控制流图的调用者、内部被调用函数及外部库调用的嵌入融合，再由 MLP 解码器对固定词表中的单词打分；名称预处理和词嵌入模块 CodeWordNet 用于处理缩写与同义词。在 27 个项目的 16,027 个二进制、共 1,431,169 个函数上（涵盖 x86、x64、ARM 与 MIPS，O0–O3 优化级别及四种 Hikari 混淆），作者报告加权平均精确率 0.634、召回率 0.677、F1 0.655，并给出固件案例研究。",
+    "scope_limitations_en": "Names are predicted as unordered word sets from a fixed training vocabulary and scored with word-level precision, recall and F1, with CodeWordNet counting semantically similar words as matches. This is not exact source-name recovery, and out-of-vocabulary words cannot be produced. Binaries were built with GCC 7.5 for Linux and split by binary within the same 27 projects. On 540 binaries from 12 unseen projects, overall performance remains lower, which the authors partly attribute to vocabulary mismatch; a later NDSS 2025 comparison on deduplicated data reports SymLM’s average F1 at 0.105. NFRE comparisons are x64-only, and NERO comparisons use NERO’s dataset. Obfuscation covers four Hikari passes, not packing or encryption. In the firmware case study, 172 of 1,061 functions in eight 32-bit ARM firmware images received partially correct names.",
+    "scope_limitations_zh": "函数名被预测为来自固定训练词表的无序单词集合，并按单词级精确率、召回率和 F1 评分，CodeWordNet 会将语义相近的单词计为匹配。这并非精确恢复源码名称，且无法生成词表外的单词。二进制由 GCC 7.5 为 Linux 构建，并在同样的 27 个项目内按二进制划分数据集。在来自 12 个未见项目的 540 个二进制上，整体表现仍然较低，作者将部分原因归于词表不匹配；后来一项 NDSS 2025 研究在去重数据上比较时，报告 SymLM 的平均 F1 为 0.105。与 NFRE 的比较仅针对 x64，与 NERO 的比较使用 NERO 的数据集。混淆实验覆盖四种 Hikari 混淆，不包括加壳或加密。固件案例中，八个 32 位 ARM 固件映像的 1,061 个函数里有 172 个得到部分正确的名称。",
+    "why_fits_en": "Adds execution-aware, calling-context function-name prediction for stripped binaries, evaluated across architectures, optimizations and obfuscations, complementing variable-name, type and data-structure recovery research.",
+    "why_fits_zh": "补充结合执行语义与调用上下文的去符号二进制函数名预测方法，并在多种架构、优化级别和混淆设置下评估，与变量名、类型及数据结构恢复研究互补。",
+    "metadata_notes": "Crossref truncates the title to “SymLM”; the full title follows the ACM page and the author-hosted PDF, which carries the CCS ’22 header and DOI. ACM and Crossref agree on the four-author order and pages 1631–1645, and ACM marks the article free to read. An arXiv title search found no preprint. The reviewed 2025-07-06 repository snapshot is MIT-licensed and includes a vendored fairseq, dataset-generation scripts, a sample x64 dataset, training, prediction and evaluation scripts, and CodeWordNet training code. Its README sets up Python 3.8 with CUDA 11.3 PyTorch and pinned requirements such as transformers 4.16.2 and gensim 3.8.1; training needs a December 2021 Trex checkpoint and CodeWordNet models from Google Drive links, and it warns that newer Trex checkpoints may be incompatible. The full dataset is Zenodo record 8306055 (about 9.4 GB; CC BY 4.0 in its metadata), which is registered under the paper’s DOI rather than a separate dataset DOI. The paper reports 8 days of training on top of the Trex pretraining. Nothing was run or downloaded.",
+    "metadata_notes_zh": "Crossref 将标题截断为“SymLM”；完整标题以 ACM 页面和作者托管的 PDF 为准，该 PDF 带有 CCS ’22 页眉及 DOI。ACM 与 Crossref 的四位作者顺序和页码 1631–1645 一致，ACM 将文章标为免费阅读。按标题检索 arXiv 未发现预印本。所审阅的 2025-07-06 仓库快照采用 MIT 许可证，包含内置的 fairseq、数据集生成脚本、x64 样例数据集、训练、预测与评估脚本以及 CodeWordNet 训练代码。其 README 使用 Python 3.8 与 CUDA 11.3 版 PyTorch，并固定 transformers 4.16.2、gensim 3.8.1 等依赖；训练需要通过 Google Drive 链接获取 2021 年 12 月的 Trex 检查点和 CodeWordNet 模型，README 并提示较新的 Trex 检查点可能不兼容。完整数据集位于 Zenodo 记录 8306055（约 9.4 GB；元数据标注 CC BY 4.0），该记录登记的是论文 DOI，而非单独的数据集 DOI。论文报告在 Trex 预训练之外还需训练 8 天。本次未运行或下载任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3548606.3560612",
+      "https://api.crossref.org/works/10.1145/3548606.3560612",
+      "https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf",
+      "https://github.com/OSUSecLab/SymLM/blob/89a4815bb9e75e381b45665e40884f936986ed96/README.md",
+      "https://github.com/OSUSecLab/SymLM/blob/89a4815bb9e75e381b45665e40884f936986ed96/LICENSE",
+      "https://github.com/OSUSecLab/SymLM/blob/89a4815bb9e75e381b45665e40884f936986ed96/requirements.txt",
+      "https://zenodo.org/records/8306055",
+      "https://zenodo.org/api/records/8306055",
+      "https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
