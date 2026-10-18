@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 134 | 133 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 353 | 352 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 104 | 104 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 347 | 346 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 110 | 110 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 145 occurrences have catalog links. They reference 139 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 177 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 183 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -88,7 +88,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Hermes Agent: Hark-assisted harness reconstruction | Insufficient evidence | [Source](https://x.com/pablothethinker/status/2109509759044854087) |
 | Apple Preview: adding AI directly to a compiled app | Insufficient evidence | [Source](https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/README.md) |
 | PS5 security: reported AI-assisted investigation | Insufficient evidence | [Source](https://x.com/0x0SojalSec/status/2109517461921902780) |
+| Air-conditioner protocol for AR gesture control | Insufficient evidence | [Source](https://x.com/justhalfbit/status/2109524402765488499) |
 | wine-uwp: running packaged Windows Store apps on a patched Wine | Already curated | [Source](https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md) |
+| Redmi TV: browser inspection for a dashboard | Insufficient evidence | [Source](https://x.com/zxlie_fehelper/status/2109533072370917846) |
+| CleanMyMac: reported native-app prototype | Insufficient evidence | [Source](https://x.com/xiaoshan0413/status/2109540598633877515) |
+| Nexalytics: testing REA on the author's own app | Insufficient evidence | [Source](https://x.com/wikwanat/status/2109542201927647588) |
+| MetaTrader: a reported signal-analysis use case | Insufficient evidence | [Source](https://x.com/TheKing_Rapture/status/2109547879199056181) |
+| Red Alert 2: an engine rewrite for reinforcement learning | Insufficient evidence | [Source](https://x.com/Chen1090874226/status/2109548112281055674) |
 | CF632BLE: a local client from scale-protocol research | Already curated | [Source](https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md) |
 | DLSS on AMD: reported AI-assisted compute-shader reconstruction | Pending | [Source](https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md) |
 | Netflix/Prime: a reported unified streaming interface | Insufficient evidence | [Source](https://x.com/HigbeyMyrta/status/2109596534350524664) |
