@@ -6446,12 +6446,18 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110817677778489400"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post’s “reverse engineered Resend” wording introduces Reloop, whose pinned Apache-2.0 repository, created in July 2025, implements an independent self-hostable email platform: REST and SMTP sending, inbound mail, campaigns, webhooks and an MCP server. Neither the repository nor its Resend comparison pages document a study of Resend’s service, an interface reconstruction or compatibility tests, and the project’s own FAQ says it is not a drop-in Resend replacement and needs a client adapter. Retain the lead without a catalog mapping; this is not a judgment of Reloop as a product.",
+      "reason_zh": "帖子以“逆向了 Resend”的说法推出 Reloop。其固定版本仓库采用 Apache-2.0，创建于 2025 年 7 月，实现的是独立、可自托管的邮件平台：REST 与 SMTP 发信、收信、营销活动、Webhook 及 MCP 服务。仓库及其 Resend 对比页面均未记录对 Resend 服务的研究、接口重建或兼容性测试；项目自己的常见问题还说明它不能直接替代 Resend，需要编写客户端适配层。保留此线索而不建立目录映射；这不是对 Reloop 产品本身的评价。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110817677778489400",
+        "https://github.com/reloop-labs/reloop/blob/0cdfd8011faed051b5a3304a6981ef469f35c58c/README.md",
+        "https://github.com/reloop-labs/reloop/blob/0cdfd8011faed051b5a3304a6981ef469f35c58c/LICENSE",
+        "https://github.com/reloop-labs/reloop/blob/0cdfd8011faed051b5a3304a6981ef469f35c58c/apps/frontend/web/src/lib/landing/alternatives/resend.ts",
+        "https://reloop.sh/"
+      ],
       "catalog_matches": []
     },
     {
@@ -15522,15 +15528,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 187,
-      "insufficient-evidence": 154,
-      "pending": 250
+      "insufficient-evidence": 155,
+      "pending": 249
     },
     "units_by_state": {
       "already-curated": 185,
-      "insufficient-evidence": 154,
-      "pending": 250
+      "insufficient-evidence": 155,
+      "pending": 249
     },
-    "primary_reviewed_units": 280,
+    "primary_reviewed_units": 281,
     "catalog_linked_occurrences": 197,
     "distinct_resource_ids": 191,
     "distinct_paper_ids": 1,
