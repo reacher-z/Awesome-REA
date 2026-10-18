@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 139 | 138 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 334 | 333 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 118 | 118 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 328 | 327 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 124 | 124 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 150 个出现项含目录链接；共关联 144 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 196 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 202 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -102,11 +102,17 @@
 | Kindle: Android firmware for WeRead | 证据不足 | [来源](https://x.com/hbyxabc/status/2109583911483519202) |
 | Proxy client: restoring a Clash subscription bridge | 证据不足 | [来源](https://x.com/web3_fising/status/2109601382273880327) |
 | Controlled JS/.NET samples: Codex with and without REA | 证据不足 | [来源](https://x.com/0xlangeai/status/2109603485914206498) |
+| The Incredible Machine: a Claude-assisted browser rebuild | 证据不足 | [来源](https://x.com/staskulesh/status/2109605915175596275) |
 | DLSS on AMD: reported AI-assisted compute-shader reconstruction | 待核查 | [来源](https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md) |
 | Netflix/Prime: a reported unified streaming interface | 证据不足 | [来源](https://x.com/HigbeyMyrta/status/2109596534350524664) |
 | fowlbrowser: an existing-session browser bridge for agents | 证据不足 | [来源](https://github.com/argofowl/FowlBrowser/blob/18f7519fa27289885c95b67eff714401ffff51f0/README.md) |
 | OpenSetter: rebuilding comment-to-DM flows with an AI setter | 证据不足 | [来源](https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/README.md) |
+| Street Fighter III: AI refactoring of decompiled C | 证据不足 | [来源](https://x.com/renmu2017/status/2109581250424123651) |
 | zee-rp：重建 Axure RP 11 的受支持文档操作 | 已收录 | [来源](https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/README.md) |
+| CapCut: a REA/Claude video-editor rebuild | 证据不足 | [来源](https://x.com/Mehal_Kay/status/2109665456735076494) |
+| ClearSpace: a CleanMyMac-inspired native cleanup app | 证据不足 | [来源](https://x.com/iceman_shen/status/2109665812017746132) |
+| Home devices: a reported desktop controller | 证据不足 | [来源](https://x.com/Jumpan1111/status/2109664718499762606) |
+| Discontinued accounting app: blocked by encryption | 证据不足 | [来源](https://x.com/liguozzz/status/2109671680977367085) |
 | Classic shooters: reported AI-assisted browser ports | 证据不足 | [来源](https://x.com/i/status/2109639780577190171) |
 | Nanolathe：附研究文档的 Total Annihilation 引擎重实现 | 已收录 | [来源](https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md) |
 | cooler-lcd：Thermalright 显示屏协议实现 | 已收录 | [来源](https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md) |
