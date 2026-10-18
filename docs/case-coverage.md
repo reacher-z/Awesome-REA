@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 124 | 123 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 369 | 368 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 125 | 124 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 368 | 367 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 98 | 98 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-135 occurrences have catalog links. They reference 129 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+136 occurrences have catalog links. They reference 130 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 162 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 163 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -189,6 +189,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | 🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed | Pending | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
 | Paper Mario: matching Nintendo 64 decompilation for four releases | Already curated | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
 | PaperBoat: a native Paper Mario port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/README.md) |
+| Lost Odyssey Recomp: statically recompiling an Xbox 360 RPG into native ports | Already curated | [Source](https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md) |
 | Budokai Tenkaichi 3: a native PC port built on a matching decompilation | Already curated | [Source](https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md) |
 | Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build | Already curated | [Source](https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/README.md) |
 | 🥊 Super Smash Bros. Melee — doldecomp/melee | Pending | [Source](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
