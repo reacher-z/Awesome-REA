@@ -9943,13 +9943,29 @@
         "https://github.com/TwilitRealm/dusklight",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 15 (README line 157) lists TwilitRealm/dusklight under 🗡️ The Legend of Zelda: Twilight Princess. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 15 行（README 第 157 行）在 🗡️ The Legend of Zelda: Twilight Princess 下列出 TwilitRealm/dusklight。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build guide, license, submodule list, platform folders and CI workflow, plus Aurora’s pinned README, support a native Twilight Princess port built on the zeldaret/tp decompilation. Full mapping covers this port, not the decompilation itself, which is a separate lead. Disc-image dependence, the GameCube-only matching base, GPU limits and project-reported accuracy remain explicit.",
+      "reason_zh": "固定版本的 README、构建指南、许可证、子模块列表、平台目录和 CI 工作流，以及 Aurora 的固定版本 README，支持这是一个基于 zeldaret/tp 反编译的《黄昏公主》原生移植。完整映射覆盖该移植，不包括作为另一条线索的反编译项目本身。对光盘镜像的依赖、仅 GameCube 版一致的反编译基础、GPU 限制及项目报告的准确性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/README.md",
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/docs/building.md",
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/LICENSE.md",
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.gitmodules",
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/CMakeLists.txt",
+        "https://github.com/TwilitRealm/dusklight/tree/34a144a493b7f57adeb4034d382317c826eb5c8d/platforms",
+        "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.github/workflows/build.yml",
+        "https://github.com/encounter/aurora/blob/3227d76c60e1e782ca576610bce61c9e7744d8be/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dusklight-twilight-princess-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-016",
@@ -13717,18 +13733,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 83,
-      "insufficient-evidence": 74,
-      "pending": 434
-    },
-    "units_by_state": {
-      "already-curated": 82,
+      "already-curated": 84,
       "insufficient-evidence": 74,
       "pending": 433
     },
-    "primary_reviewed_units": 100,
-    "catalog_linked_occurrences": 94,
-    "distinct_resource_ids": 88,
+    "units_by_state": {
+      "already-curated": 83,
+      "insufficient-evidence": 74,
+      "pending": 432
+    },
+    "primary_reviewed_units": 101,
+    "catalog_linked_occurrences": 95,
+    "distinct_resource_ids": 89,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

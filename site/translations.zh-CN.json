@@ -1710,5 +1710,15 @@
       "AGENTS.md 要求对全部五个版本运行 ninja baseline 与 changes_all 生成回归报告，且每个版本的 DOL 仍须显示 OK。CI 在提供原始文件的构建容器中构建所有版本，并对改动的单元检查符号顺序。这些都是项目自报的检查与进度数据，不能证明已重建出完整或可游玩的游戏；本合集未运行任何构建。",
       "AGENTS.md（CLAUDE.md 与 GEMINI.md 均为指向它的符号链接）规定了 AI 智能体的工作流程：禁止无人监督的智能体处理 MSL、MetroTRK、THPPlayer、Dolphin SDK 和 JSystem 代码，并把难以判断的决定交给人类，但没有量化智能体编写的代码比例。仓库声明采用 CC0-1.0；任天堂的游戏、光盘内容及下载的编译器另有权利约束。未确立 REA 的使用。"
     ]
+  },
+  "dusklight-twilight-princess-port-case": {
+    "name": "Dusklight：基于反编译的《黄昏公主》原生移植",
+    "requirements": [
+      "README 称 Dusklight 是通过逆向工程实现的重新实现，力求尽可能忠于原作，同时提供新选项、增强功能和工具。它基于 zeldaret/tp 反编译项目，而 README 指出该项目目前只有 GameCube 版一致，因此即使使用 Wii 光盘，也会呈现 GameCube 版的 HUD 及其他特性。这是修改后的移植，不是原可执行文件的一致性重建。",
+      "项目不提供任何受版权保护的素材：使用者须自行转储自己的光盘；README 说明支持除韩版 Wii 以外的所有正式发行光盘。程序可直接读取 ISO（GCM）、RVZ、WIA、WBFS、CISO 和 GCZ 镜像。",
+      "运行需要支持 D3D12、Vulkan 1.1+ 或 Metal 的 GPU；D3D11 和 Android 的 OpenGL ES 仅为尽力支持，无法达到完整的准确性或性能。固定版本中有 Windows、Linux、macOS、iOS、tvOS 和 Android 平台目录，CI 构建 Linux、macOS、iOS、Android 和 Windows 目标。从源码构建需 CMake 3.25+、Python 3、各系统列明的工具链，以及包括 Aurora 在内的递归子模块。",
+      "所审 CI 工作流只构建软件包，不与原版游戏进行比对。准确性与增强功能均为项目报告，本合集未构建或运行任何内容。",
+      "LICENSE.md 采用 CC0-1.0，不涵盖任天堂的游戏或光盘内容；Aurora 与随机器模组等子模块为独立仓库。README 声明不接受主要由 AI 生成的贡献，并提醒存在传播 AI 生成错误信息的非官方网站；所审来源未确立 REA 的参与。"
+    ]
   }
 }

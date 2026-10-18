@@ -3346,5 +3346,37 @@
       "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/LICENSE",
       "https://decomp.dev/doldecomp/sms"
     ]
+  },
+  {
+    "id": "dusklight-twilight-princess-port-case",
+    "name": "Dusklight: a native Twilight Princess port built on the decompilation",
+    "url": "https://github.com/TwilitRealm/dusklight",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Twilight Princess as a native application for desktop and mobile platforms, building on the zeldaret/tp decompilation and the Aurora GameCube/Wii compatibility layer. It runs from the user’s own disc image with no bundled assets and aims to stay accurate to the original while adding options, enhancements and mods.",
+    "description_zh": "以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。程序读取使用者自备的光盘镜像运行，不附带任何素材；项目力求忠于原作，同时加入新选项、增强功能和模组。",
+    "evidence_url": "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls Dusklight a reverse-engineered reimplementation that aims to be as accurate as possible while adding options, enhancements and tools. It is based on the zeldaret/tp decompilation, which README says is matching only for GameCube, so Wii discs still show the GameCube HUD and other GameCube specifics. This is a modified port, not a matching rebuild of the original executable.",
+      "No copyrighted assets are provided: the user supplies a dump of their own disc, and README says every commercial disc except the Korean Wii release is supported. The executable reads ISO (GCM), RVZ, WIA, WBFS, CISO and GCZ images directly.",
+      "Runtime needs a GPU with D3D12, Vulkan 1.1+ or Metal; D3D11 and Android OpenGL ES are best-effort without full accuracy or performance. The pinned tree has Windows, Linux, macOS, iOS, tvOS and Android platform folders, and CI builds Linux, macOS, iOS, Android and Windows targets. Source builds need CMake 3.25+, Python 3, the listed per-OS toolchains and recursive submodules, including Aurora.",
+      "The reviewed CI workflow builds packages but runs no comparison against the original game. Accuracy and enhancement claims are project-reported, and this collection built or ran nothing.",
+      "LICENSE.md is CC0-1.0; it does not cover Nintendo’s game or disc content, and submodules such as Aurora and the randomizer mod are separate repositories. README says the project does not accept primarily AI-generated contributions and warns of unaffiliated sites spreading AI-generated misinformation; the reviewed sources establish no REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/docs/building.md",
+      "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/LICENSE.md",
+      "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.gitmodules",
+      "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/CMakeLists.txt",
+      "https://github.com/TwilitRealm/dusklight/tree/34a144a493b7f57adeb4034d382317c826eb5c8d/platforms",
+      "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.github/workflows/build.yml",
+      "https://github.com/encounter/aurora/blob/3227d76c60e1e782ca576610bce61c9e7744d8be/README.md"
+    ]
   }
 ]
