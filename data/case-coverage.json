@@ -13714,12 +13714,14 @@
         "https://github.com/ACreTeam/forest",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 119 (README line 1254) lists ACreTeam/forest under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 119 行（README 第 1254 行）在 🏡 Animal Crossing 下列出 ACreTeam/forest。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned sources describe a work-in-progress x86 PC port based on the Animal Crossing matching decompilation, but the README documents only the decompilation build and states no port status, PC-build inputs or limits. The tree also holds an undocumented 16 MiB binary named aram.bin at its root, with no stated provenance. The collection therefore does not link the repository and retains the lead without a catalog mapping; port documentation and a provenance note could support another review.",
+      "reason_zh": "固定版本来源描述了一个基于 Animal Crossing 一致性反编译、仍在进行中的 x86 PC 移植，但 README 只记录反编译构建流程，未说明移植状态、PC 构建所需输入或限制。源码树根目录还有一个名为 aram.bin、大小 16 MiB 的二进制文件，未说明来源。因此本合集不链接该仓库，保留此线索而不建立目录映射；补充移植文档和来源说明后可再次核查。",
+      "primary_evidence_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -15404,15 +15406,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 181,
-      "insufficient-evidence": 146,
-      "pending": 264
+      "insufficient-evidence": 147,
+      "pending": 263
     },
     "units_by_state": {
       "already-curated": 179,
-      "insufficient-evidence": 146,
-      "pending": 264
+      "insufficient-evidence": 147,
+      "pending": 263
     },
-    "primary_reviewed_units": 265,
+    "primary_reviewed_units": 266,
     "catalog_linked_occurrences": 191,
     "distinct_resource_ids": 185,
     "distinct_paper_ids": 1,
