@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 287](https://img.shields.io/badge/resources-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 145](https://img.shields.io/badge/cases-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 287](https://img.shields.io/badge/resources-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 145](https://img.shields.io/badge/cases-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 55](https://img.shields.io/badge/papers-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (54) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (55) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1833,13 +1833,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**54 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**55 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (10) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (11) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -2077,6 +2077,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Training and test programs are randomly generated from Karel commands, math.h calls and arithmetic or logical expressions, in short and long variants (average length 15 and 30), 50,000 pairs per task, compiled without optimization: clang -O0 for the main MIPS results and gcc -O0 for an x86-64 appendix that reports sketch token accuracy only, about 6% lower on average. Real-world checks are small PyTorch C++ API model-construction and Hacker's Delight loop-free programs. Program accuracy requires an exact token match with the ground-truth source, the metric under which the paper reports 0% for conventional decompilers. Error correction assumes the compiler configuration is known, and token accuracy drops for longer programs. The results show neither optimized, whole-program nor binary-equivalent decompilation, and the paper names no author implementation.
 
   **Publication:** 2019 · NeurIPS 2019 · Conference paper · Cheng Fu et al.
+
+  </details>
+
+- [**Debin: Predicting Debug Information in Stripped Binaries**](https://dl.acm.org/doi/10.1145/3243734.3243866)
+
+  Debin predicts debug information for stripped ELF binaries on x86, x64 and ARM. After lifting code to BAP-IR, an Extremely randomized Trees classifier decides which registers and memory offsets hold source-level variables. A conditional random field, solved with Nice2Predict, then jointly predicts names and types for variables and functions, and the result is written back as DWARF sections. On 300 held-out binaries per architecture, the authors report 68.8% precision and 68.3% recall for x64 names and types.
+
+  2018 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [Code](https://github.com/eth-sri/debin) · [Full entry & citation](https://awesomerea.org/papers/paper-debin/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.
+
+  **Publication:** 2018 · ACM CCS 2018 · Conference paper · Jingxuan He et al.
 
   </details>
 

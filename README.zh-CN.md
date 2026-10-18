@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 287](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 145](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 54](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 287](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 145](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 55](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (54) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (55) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1834,13 +1834,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**54 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**55 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (10) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (11) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -2078,6 +2078,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 训练与测试程序均为随机生成，涵盖 Karel 指令、math.h 调用及算术或逻辑表达式，分为短、长两种（平均长度 15 与 30），每项任务 50,000 对，并在不开启优化的条件下编译：主要 MIPS 结果使用 clang -O0，x86-64 附录使用 gcc -O0，且只报告草图词元准确率，平均约低 6%。真实场景检查仅包括小型 PyTorch C++ API 模型构建程序和 Hacker’s Delight 无循环程序。程序准确率要求与真实源码词元完全一致，论文正是在该指标下报告常规反编译器为 0%。错误修正假定已知编译器配置，程序变长时词元准确率下降。这些结果既不能说明优化代码、整程序或二进制等价的反编译能力，论文也未给出作者实现。
 
   **发表信息:** 2019 · NeurIPS 2019 · 会议论文 · Cheng Fu 等
+
+  </details>
+
+- [**Debin：预测去符号二进制中的调试信息**](https://dl.acm.org/doi/10.1145/3243734.3243866)
+
+  Debin 为 x86、x64 与 ARM 上去符号的 ELF 二进制预测调试信息。它先将代码提升为 BAP-IR，用极端随机树分类器判断哪些寄存器和内存偏移对应源码级变量；再借助 Nice2Predict 求解条件随机场，联合预测变量与函数的名称和类型，并将结果以 DWARF 节写回二进制。作者在每种架构 300 个留出二进制上报告，x64 名称与类型预测的精确率为 68.8%、召回率为 68.3%。
+
+  2018 · 会议论文 · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [代码](https://github.com/eth-sri/debin) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-debin/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 数据集为每种架构 3,000 个未去符号的可执行文件与共享库，来自 830 个 Linux 调试符号软件包，源码为 C 语言并按各包默认设置编译，按 2,700／300 划分训练与测试。准确率评估假定函数边界已知；对于完全去符号的输入，由 BAP 的 ByteWeight 推断函数边界，论文引用其准确率约为 93%。Debin 预测 17 种类型，struct 与 union 的内部内容、行号以及 PE 等其他格式不在评测范围内。只有与原始调试信息完全相同的预测才计为正确。基于编译器生成的良性代码学习的模型，在混淆二进制、手写汇编或恶意软件上可能准确率较低。针对 35 个恶意样本的研究是对反编译输出的人工检查，由于样本缺少调试信息真实标签，未报告准确率。
+
+  **发表信息:** 2018 · ACM CCS 2018 · 会议论文 · Jingxuan He 等
 
   </details>
 
