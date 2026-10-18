@@ -2237,5 +2237,15 @@
       "可玩性与已知问题列表均为作者报告。唯一的 CI 工作流构建安装程序；仓库中的测试涵盖合作模式、模组和地图工具，未记录将重编译行为与主机自动比较的测试。本合集未构建或运行该移植。",
       "项目代码采用 Apache-2.0，再分发者须保留 NOTICE 并署名 Saints Reborn by Whompay。SDK 补丁沿用 ReXGlue SDK 的 BSD 式许可，该 SDK 部分源自 Xenia，构建时下载的库保留各自条款。Saints Row 仍归其所有者，NOTICE 不涵盖从游戏中提取或生成的任何文件。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "pokemon-platinum-pc-port-case": {
+    "name": "Pokémon Platinum PC Port：基于 pret 反编译的原生移植",
+    "requirements": [
+      "README 将其描述为基于 pret 反编译项目的美版《宝可梦 白金》实验性 PC 移植，以 libntr、libntrsystem、libntrwifi 和 libntrdwc 替代 NitroSDK 及相关 DS 库。Meson 的 build_target 选项可选 arm（DS ROM）、linux、win64 或 nx，README 称 NX 目标可用但性能较差。完整支持 WiFi 与多人功能及日后移植到其他主机自制环境，都是所述目标，并非已核实的功能。",
+      "README 要求使用预构建发行版的玩家自行提供已转储的美版白金 ROM（游戏代码 CPUE01），在首次启动时选择；目前只支持美版。源码树保留 pret 已提交的 res/ 数据，README 要求分支不要发布将编译后素材与 PC 程序打包在一起的版本。",
+      "README 推荐通过 Docker 包装脚本 drun.sh 进行 Linux 构建；在 Arch Linux 上不使用容器构建时需 nasm、enet、arm-none-eabi-gcc、Ninja、flex 和 bison。Windows 先用 PowerShell 脚本创建便携 MSYS2 环境，再运行 make win64；NX 目标需要 devkitA64。ARM 与 Linux 的 CI 作业会安装沿用的 metroskrew Metrowerks 编译器，libntr 系列子项目跟踪各自的 main 分支，而非固定版本。",
+      "CI 在 pc_port 分支推送时构建 ARM ROM、Linux 和 Windows 目标，并打包 Linux 与 Windows 产物；最新发行版 v0.1.12（2026-10-10）提供 Linux 和 Windows 压缩包，来自早于所审提交的版本。该分支的默认 make 目标去掉了 pret 的校验依赖，CI 也不运行 make check，因此所审来源不能说明其 DS ROM 仍与零售版一致，也不能说明 PC 版行为完全相同。本合集未运行任何构建。",
+      "该分支没有顶层许可证文件，GitHub 也未识别出许可证；libntr 声明 MIT，README 要求发布者遵守其条款，而 pret 的反编译项目未声明许可证，原游戏内容仍受其权利人约束。README 表示未使用生成式 AI／大语言模型捷径，并拒绝借助 AI 的拉取请求，AGENTS.md 也重申了这一拒绝。未确立任何 REA 使用，也不主张运行复现。"
+    ]
   }
 }

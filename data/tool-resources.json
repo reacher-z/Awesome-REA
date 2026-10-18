@@ -4999,5 +4999,41 @@
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/NOTICE",
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/THIRD_PARTY_NOTICES.md"
     ]
+  },
+  {
+    "id": "pokemon-platinum-pc-port-case",
+    "name": "Pokémon Platinum PC Port: a native port built on the pret decompilation",
+    "url": "https://github.com/cybervisi0n/pokeplatinum",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds native 64-bit Windows and Linux executables of Pokémon Platinum from a fork of pret’s decompilation, replacing NitroSDK with the author’s libntr libraries; the same tree keeps the DS ROM build and an experimental Switch target. README says the game should be playable from start to finish but may crash or show graphical bugs. Prebuilt binaries require the player’s own US ROM, and the fork’s default build no longer runs pret’s checksum tests.",
+    "description_zh": "基于 pret 反编译项目的分支，为《宝可梦 白金》构建原生 64 位 Windows 和 Linux 可执行文件，并以作者的 libntr 库替代 NitroSDK；同一源码树仍保留 DS ROM 构建和实验性的 Switch 目标。README 称游戏应可从头玩到尾，但可能出现崩溃和图形错误。预构建程序需要玩家自备美版 ROM，且该分支的默认构建不再运行 pret 的校验测试。",
+    "evidence_url": "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes an experimental PC port of US Pokémon Platinum based on pret’s decompilation, using libntr, libntrsystem, libntrwifi and libntrdwc in place of NitroSDK and related DS libraries. The Meson build_target option selects arm (DS ROM), linux, win64 or nx, and README calls the NX target working but slow. Its goals of full WiFi and multiplayer support and later homebrew console ports are stated aims, not verified features.",
+      "README requires users of the prebuilt release binaries to supply their own dumped US Platinum ROM (game code CPUE01), selected on first launch; only the US version is supported. The source tree keeps pret’s committed res/ data, and README asks forks not to publish releases that bundle compiled assets with PC binaries.",
+      "Linux builds are recommended through the Docker wrapper drun.sh; a non-container build on Arch Linux lists nasm, enet, arm-none-eabi-gcc, Ninja, flex and bison. Windows uses PowerShell scripts that create a portable MSYS2 environment before make win64, and the NX target needs devkitA64. The ARM and Linux CI jobs install the inherited metroskrew Metrowerks compiler, and the libntr subprojects track their main branches rather than pinned revisions.",
+      "CI builds the ARM ROM, Linux and Windows targets on pc_port pushes and packages Linux and Windows artifacts; the latest release, v0.1.12 (2026-10-10), ships Linux and Windows zip archives from a commit earlier than the reviewed one. The fork’s default make target drops pret’s checksum dependency and CI does not run make check, so the reviewed sources do not show that its DS ROM still matches retail or that the PC build behaves identically. This collection ran neither build.",
+      "The fork has no top-level license file and GitHub detects none; libntr declares MIT, which README says release publishers must honor, while pret’s decompilation declares no license and original game content remains subject to its rights holders. README states that generative AI/LLM shortcuts were not used and that AI-made pull requests are rejected, and AGENTS.md repeats that refusal. No REA use is established, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/Makefile",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/meson.build",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/meson.options",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/.github/workflows/build_arm.yml",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/.github/workflows/build_linux.yml",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/.github/workflows/build_win.yml",
+      "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/AGENTS.md",
+      "https://github.com/cybervisi0n/pokeplatinum/tree/35067868f64f23d25d17ac3e536cfdd9a7f40523/subprojects",
+      "https://github.com/cybervisi0n/pokeplatinum/releases/tag/v0.1.12",
+      "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/README.md",
+      "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/LICENSE"
+    ]
   }
 ]

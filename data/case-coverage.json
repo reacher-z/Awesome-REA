@@ -11691,13 +11691,28 @@
         "https://github.com/cybervisi0n/pokeplatinum",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 61 (README line 601) lists cybervisi0n/pokeplatinum under ⚡ Pokémon Platinum. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 61 行（README 第 601 行）在 ⚡ Pokémon Platinum 下列出 cybervisi0n/pokeplatinum。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build files, CI workflows and contributor notes, plus libntr’s README and license, support an experimental native PC port of US Platinum built on pret’s decompilation. Full mapping covers this fork; playability is author-reported, the binaries need a user-supplied ROM, and the default build no longer runs pret’s checksum tests. The linked X post, also reviewed, only promotes a third-party archive of game builds and adds no evidence about this project.",
+      "reason_zh": "固定版本的 README、构建文件、CI 工作流和贡献者说明，以及 libntr 的 README 与许可证，支持这是一个基于 pret 反编译项目、面向美版白金的实验性原生 PC 移植。完整映射覆盖此分支；可玩性为作者报告，程序需使用者自备 ROM，且默认构建不再运行 pret 的校验测试。所附 X 帖子也经查看，它只是推广第三方游戏构建存档，未提供关于本项目的证据。",
+      "primary_evidence_urls": [
+        "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/README.md",
+        "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/Makefile",
+        "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/meson.options",
+        "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/.github/workflows/build_arm.yml",
+        "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/AGENTS.md",
+        "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/README.md",
+        "https://x.com/mdaman010/status/2109111127238230239"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-platinum-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-062",
@@ -14629,18 +14644,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 136,
-      "insufficient-evidence": 117,
-      "pending": 338
-    },
-    "units_by_state": {
-      "already-curated": 135,
+      "already-curated": 137,
       "insufficient-evidence": 117,
       "pending": 337
     },
-    "primary_reviewed_units": 192,
-    "catalog_linked_occurrences": 147,
-    "distinct_resource_ids": 141,
+    "units_by_state": {
+      "already-curated": 136,
+      "insufficient-evidence": 117,
+      "pending": 336
+    },
+    "primary_reviewed_units": 193,
+    "catalog_linked_occurrences": 148,
+    "distinct_resource_ids": 142,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
