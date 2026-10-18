@@ -5558,5 +5558,38 @@
       "https://github.com/HarbourMasters/Torch/blob/2d474ddb8da8b213fbdbb49d0273ce31fa955f35/README.md",
       "https://github.com/HarbourMasters/SpaghettiKart/releases/tag/1.0.0"
     ]
+  },
+  {
+    "id": "animal-crossing-wild-world-decomp-case",
+    "name": "Animal Crossing: Wild World: matching Korean DS decompilation with differential runtime checks",
+    "url": "https://github.com/banatic/acww-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the ARM9 game code of Animal Crossing: Wild World’s Korean DS release as one C or C++ source per function, checked against the user’s ROM with the original Metrowerks compiler and linker. Each function also has a readable Clean rewrite, and an included DS interpreter compares the ROM code, natively compiled sources and rewrites on recorded play. Data sections, the ARM7 binary, the linked SDK libraries and regrouping into original source files remain outside the reconstruction.",
+    "description_zh": "将 Animal Crossing: Wild World 韩版 DS 游戏的 ARM9 游戏代码重建为每个函数一个 C 或 C++ 源文件，并用原版 Metrowerks 编译器和链接器对照使用者自己的 ROM 校验。每个函数另有可读的 Clean 改写版本，仓库自带的 DS 解释器在录制的游玩过程中比较 ROM 代码、原生编译的源码和改写版本。数据段、ARM7 程序、链接的 SDK 库及按原始源文件重新归组仍不在重建范围内。",
+    "evidence_url": "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers only the Korean release (ADMK) ARM9 code. The verification page, dated 2026-10-18, reports all 25,247 game functions passing byte and relocation checks, 24,767 linked with mwldarm into modules that match the ROM, and 17 marked FAKEMATCH. Data sections mostly still come from the ROM through ds-decomp objects; the ARM7 binary, .bss pointers and source-file regrouping are not covered, and most names are placeholders.",
+      "Requires the user’s own Korean ROM matching SHA-1 1fffd601d3439e37cd934e72d08e487a93fc449b and the Metrowerks CodeWarrior for DS compiler (mwccarm); neither is distributed. NitroSDK, NitroSystem, NitroDWC with the GameSpy SDK, NitroWiFi and the Metrowerks runtime (4,083 functions) are excluded, and the tools count them as not decompiled when absent.",
+      "Python 3.11+ drives extraction, verification and linking, and ds-decomp’s dsd v0.12.1 performs the whole-program link and module comparison. Linux and macOS run the Windows compiler through wibo. The PC runtime builds as a 32-bit program with clang on Windows or gcc on Linux.",
+      "CI runs in a private container that holds the ROM and compiler. runtime.md reports Reference, Native and Clean runs agreeing on a 1,300-frame title recording, a 13,760-frame new-game recording and eight scenes from a save that is not in the repository, while three scenes still differ. The GitHub Actions build for the reviewed commit passed verification, linking and the Native checks but failed its Clean-function differential check. This review ran none of these checks.",
+      "The repository is dedicated under CC0 1.0 and states that it is not affiliated with Nintendo. The ROM, compiler, SDK libraries and test save keep their own rights. The reviewed sources state no AI or REA involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/verification.md",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/runtime.md",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/INSTALL.md",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/libs/README.md",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/ci.md",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/.github/workflows/build.yml",
+      "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/LICENSE",
+      "https://github.com/banatic/acww-decomp/actions/runs/39115041988"
+    ]
   }
 ]

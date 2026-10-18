@@ -2414,5 +2414,15 @@
       "CI 编译 Windows、Linux 与 macOS 软件包，并打包项目自有的 spaghetti.o2r；未发布基于 ROM 的测试、一致性检查或游戏行为对比。FAQ 列出了若干限制，例如最多八名赛车手和八个可选角色、高清纹理支持有限且没有联机功能。本合集未构建或运行该移植。",
       "所审源码树没有顶层许可证文件，因此项目代码的再利用条款未予说明；libultraship 和 Torch 声明 MIT，任天堂内容另有权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "animal-crossing-wild-world-decomp-case": {
+    "name": "Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建",
+    "requirements": [
+      "仅覆盖韩版（ADMK）的 ARM9 代码。注明 2026-10-18 的验证页面报告，全部 25,247 个游戏函数通过字节与重定位检查，24,767 个已用 mwldarm 链接成与 ROM 一致的模块，17 个标为 FAKEMATCH。数据段大多仍经 ds-decomp 生成的目标文件取自 ROM；ARM7 程序、.bss 指针及按源文件重新归组尚未覆盖，多数名称仍是占位符。",
+      "需使用者自备哈希为 SHA-1 1fffd601d3439e37cd934e72d08e487a93fc449b 的韩版 ROM，以及 Metrowerks CodeWarrior for DS 编译器（mwccarm），两者均不随项目分发。NitroSDK、NitroSystem、含 GameSpy SDK 的 NitroDWC、NitroWiFi 及 Metrowerks 运行库（共 4,083 个函数）不在仓库中，缺失时工具会将其计为未反编译。",
+      "提取、校验与链接由 Python 3.11+ 驱动，整程序链接和模块比对由 ds-decomp 的 dsd v0.12.1 完成。Linux 和 macOS 通过 wibo 运行该 Windows 编译器。PC 运行时以 32 位程序构建，Windows 上用 clang，Linux 上用 gcc。",
+      "CI 在存放 ROM 和编译器的私有容器中运行。runtime.md 报告 Reference、Native 与 Clean 三种运行在 1,300 帧标题画面录制、13,760 帧新游戏录制及八个基于存档（存档不在仓库中）的场景中一致，另有三个场景仍有差异。所审提交的 GitHub Actions 构建通过了校验、链接与 Native 检查，但未通过 Clean 函数差分检查。本次审阅未运行上述任何检查。",
+      "仓库以 CC0 1.0 释出，并声明与 Nintendo 无关。ROM、编译器、SDK 库和测试存档各自保留权利。所审来源未说明 AI 或 REA 参与，也不主张运行复现。"
+    ]
   }
 }

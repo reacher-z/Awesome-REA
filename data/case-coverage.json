@@ -13472,13 +13472,30 @@
       "reported_source_urls": [
         "https://github.com/banatic/acww-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 122 (README line 1270) lists banatic/acww-decomp under 🏡 Animal Crossing: Wild World. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 122 行（README 第 1270 行）在 🏡 Animal Crossing: Wild World 下列出 banatic/acww-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, verification and runtime documents, install notes, CI workflow and CC0 dedication support this row as a matching decompilation of the Korean DS release’s ARM9 game code, with readable rewrites checked differentially. Full mapping covers that ARM9 code reconstruction, not data sections, ARM7, SDK libraries or other regions. Project-reported counts, the failed Clean-function CI check at this commit and the ROM/compiler dependencies remain explicit.",
+      "reason_zh": "固定版本的 README、验证与运行时文档、安装说明、CI 工作流及 CC0 释出声明，支持将此行认定为韩版 DS ARM9 游戏代码的一致性反编译重建，并附经差分检查的可读改写版本。完整映射覆盖该 ARM9 代码重建，不涵盖数据段、ARM7、SDK 库或其他地区版本。项目报告的数字、此提交未通过的 Clean 函数 CI 检查以及 ROM 和编译器依赖均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/README.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/verification.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/runtime.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/INSTALL.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/libs/README.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/ci.md",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/.github/workflows/build.yml",
+        "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/LICENSE",
+        "https://github.com/banatic/acww-decomp/actions/runs/39115041988"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "animal-crossing-wild-world-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-123",
@@ -14897,18 +14914,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 152,
-      "insufficient-evidence": 126,
-      "pending": 313
-    },
-    "units_by_state": {
-      "already-curated": 151,
+      "already-curated": 153,
       "insufficient-evidence": 126,
       "pending": 312
     },
-    "primary_reviewed_units": 217,
-    "catalog_linked_occurrences": 163,
-    "distinct_resource_ids": 157,
+    "units_by_state": {
+      "already-curated": 152,
+      "insufficient-evidence": 126,
+      "pending": 311
+    },
+    "primary_reviewed_units": 218,
+    "catalog_linked_occurrences": 164,
+    "distinct_resource_ids": 158,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
