@@ -1823,12 +1823,19 @@
         "https://x.com/i2huer/status/2109511316465414274",
         "https://github.com/Pasta-Lab/edit-my-app"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository is an MIT-licensed agent skill: instructions for modifying authorized copies of compiled apps, with no bundled analysis tools and tests that only check the package and installers. Its macOS guide says the workflow was verified in a MyPreview prototype, and the author’s post and linked talk describe an agent adding a PDF-chat sidebar to Apple Preview by binary patching, but no patch scripts, change log, test results or modified-app artifact are published. The demo is binary augmentation rather than a documented reconstruction and remains video-only; this is not a finding about the skill, and published prototype evidence can support another review.",
+      "reason_zh": "固定版本仓库是采用 MIT 许可的智能体技能：指导修改已获授权的已编译应用副本的说明文档，不附带分析工具，测试仅检查技能包和安装脚本。其 macOS 指南称该流程已在 MyPreview 原型中验证，作者帖子和所链接的演讲也描述了智能体通过二进制补丁为 Apple Preview 添加 PDF 对话侧栏，但未公开补丁脚本、变更记录、测试结果或修改后的应用产物。该演示属于二进制功能扩展，而非有记录的重建，目前仅有视频；这不是对该技能本身的评价，公开原型证据后可再次核查。",
+      "primary_evidence_urls": [
+        "https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/README.md",
+        "https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/skills/edit-my-app/SKILL.md",
+        "https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/skills/edit-my-app/references/macos.md",
+        "https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/AGENTS.md",
+        "https://x.com/i2huer/status/2109511316465414274",
+        "https://zzhang.xyz/talks/OmniformSE-Oct11-8205c9fe05ac76a2e08f67059179819d/"
+      ],
       "catalog_matches": []
     },
     {
@@ -13361,15 +13368,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 69,
-      "insufficient-evidence": 68,
-      "pending": 454
+      "insufficient-evidence": 69,
+      "pending": 453
     },
     "units_by_state": {
       "already-curated": 68,
-      "insufficient-evidence": 68,
-      "pending": 453
+      "insufficient-evidence": 69,
+      "pending": 452
     },
-    "primary_reviewed_units": 83,
+    "primary_reviewed_units": 84,
     "catalog_linked_occurrences": 76,
     "distinct_resource_ids": 67,
     "distinct_paper_ids": 1,
