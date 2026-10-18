@@ -3927,5 +3927,38 @@
       "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/Makefile",
       "https://github.com/ughman/c2c/tree/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srczz"
     ]
+  },
+  {
+    "id": "medievil-decomp-case",
+    "name": "MediEvil decompilation: an early checksum-gated PlayStation project",
+    "url": "https://github.com/MediEvilDecompilation/medievil-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the US PlayStation release of MediEvil toward C source that rebuilds its main executable, game executable and 26 overlays. splat splits the user's own disc files, and the default build compares all 28 outputs with SHA-1 checksums. README describes the project as a work in progress and publishes no progress figure.",
+    "description_zh": "将美版 PlayStation《MediEvil》逐步反编译为 C 源码，目标是重新生成其主程序、游戏程序及 26 个覆盖模块。splat 拆分使用者自备的光盘文件，默认构建会将全部 28 个产物与 SHA-1 校验值比较。README 称项目仍在进行中，未公布进度数据。",
+    "evidence_url": "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress decompilation of the US PlayStation MediEvil 1, with MediEvil 2 left for later. The Makefile targets SCUS_942.27, MEDIEVIL.EXE and 26 overlay binaries. In the reviewed tree most functions are still included as split assembly through INCLUDE_ASM rather than written in C, README's progress section is a placeholder, and the pinned commit dates from 2026-02-23.",
+      "Requires files from the user's own US MediEvil disc in disk/; the splat configuration expects SCUS_942.27 with a fixed SHA-1, and make extract splits the executables and overlays from those files. The repository supplies no game files.",
+      "The build expects a Linux-style host: GNU make, mipsel-linux-gnu binutils, Python 3 with the listed packages such as spimdisasm and rabbitizer, and the splat, m2c, maspsx and asm-differ submodules. C files go through a bundled PlayStation GCC 2.8.1 cc1 binary and maspsx. README points contributors to wiki pages for setup, the rebase workflow and the decompilation process.",
+      "make all builds every binary and runs sha1sum against config/medievil.check.sha; CI runs extraction and that check using disc files from an access-restricted repository. A passing check shows that the assembled outputs match those checksums, not how much code has been decompiled to C or that gameplay was exercised. This collection did not build or run the project.",
+      "The repository declares MIT; original game content, the bundled compiler binaries and the PSY-Q headers and data in the tree retain their own terms. The reviewed sources establish no AI or REA attribution, and the project is separate from the MediEvil Recomp static recompilation."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/Makefile",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/config/medievil.check.sha",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/config/splat.main.yaml",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/.gitmodules",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/tools/requirements-python.txt",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/.github/workflows/ci.yaml",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/src/game/800.c",
+      "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/LICENSE"
+    ]
   }
 ]

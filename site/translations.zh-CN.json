@@ -1918,5 +1918,15 @@
       "README 警告该软件不适合日常使用，也未报告可游玩程度。其转换器几乎不做反编译，也不解析间接跳转或跳转表，因此代码区域须手工列出；docs/FUNCTIONS.md 在列出的 818 个函数入口中仅为 18 个命名。",
       "项目未公布字节一致或等价性检查，本合集也未构建或运行。仓库没有许可证文件；源自 PCSX-R 的模拟器源码带有 GPL-2.0 或更高版本的文件头，原游戏保留各自权利。所审来源未记录 REA 或 AI 参与。"
     ]
+  },
+  "medievil-decomp-case": {
+    "name": "MediEvil 反编译：早期阶段、以校验值把关的 PlayStation 项目",
+    "requirements": [
+      "README 将其描述为针对美版 PlayStation《MediEvil》初代、仍在进行中的反编译项目，MediEvil 2 留待以后。Makefile 的目标为 SCUS_942.27、MEDIEVIL.EXE 及 26 个覆盖模块二进制文件。在所审版本中，大部分函数仍通过 INCLUDE_ASM 以拆分出的汇编形式纳入，而非以 C 编写；README 的进度部分仅为占位，固定的提交日期为 2026-02-23。",
+      "需将使用者自有美版 MediEvil 光盘中的文件放入 disk/；splat 配置要求 SCUS_942.27 具有固定的 SHA-1，make extract 从这些文件拆分出各可执行文件和覆盖模块。仓库不提供任何游戏文件。",
+      "构建需类 Linux 宿主环境：GNU make、mipsel-linux-gnu binutils、安装所列软件包（如 spimdisasm、rabbitizer）的 Python 3，以及 splat、m2c、maspsx 和 asm-differ 子模块。C 文件经由仓库内置的 PlayStation GCC 2.8.1 cc1 二进制文件和 maspsx 处理。README 让贡献者参阅 wiki 页面，了解环境配置、变基工作流和反编译流程。",
+      "make all 构建全部二进制文件，并依据 config/medievil.check.sha 运行 sha1sum；CI 使用访问受限仓库中的光盘文件执行拆分和该检查。检查通过只说明汇编产物与这些校验值一致，并不表示已有多少代码反编译为 C，也不表示测试过游戏行为。本合集未构建或运行该项目。",
+      "仓库声明采用 MIT；原游戏内容、内置的编译器二进制文件以及仓库中的 PSY-Q 头文件和数据仍适用各自条款。所审来源未确立 AI 或 REA 使用归因，该项目也独立于 MediEvil Recomp 静态重编译项目。"
+    ]
   }
 }

@@ -11104,13 +11104,27 @@
         "https://github.com/MediEvilDecompilation/medievil-decomp",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 50 (README line 463) lists MediEvilDecompilation/medievil-decomp under 🧭 MediEvil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 50 行（README 第 463 行）在 🧭 MediEvil 下列出 MediEvilDecompilation/medievil-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, Makefile, splat configuration, checksum manifest and CI workflow support the reported work-in-progress decompilation of the US PlayStation MediEvil and its checksum-gated build. The full mapping covers this early project; it claims no C-decompilation share, gameplay testing or link to the separate static recompilation. Disc-file requirements and component rights remain explicit, and no runtime reproduction is claimed.",
+      "reason_zh": "固定版本的 README、Makefile、splat 配置、校验清单及 CI 工作流，支持该报告所述针对美版 PlayStation《MediEvil》、仍在进行中的反编译项目及其以校验值把关的构建。完整映射覆盖这一早期项目，不主张已反编译为 C 的比例、游戏行为测试，也不主张与另一静态重编译项目存在关联。光盘文件要求和组件权利均明确保留，未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md",
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/Makefile",
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/config/medievil.check.sha",
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/config/splat.main.yaml",
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/.github/workflows/ci.yaml",
+        "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "medievil-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-051",
@@ -14062,18 +14076,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 104,
-      "insufficient-evidence": 82,
-      "pending": 405
-    },
-    "units_by_state": {
-      "already-curated": 103,
+      "already-curated": 105,
       "insufficient-evidence": 82,
       "pending": 404
     },
-    "primary_reviewed_units": 128,
-    "catalog_linked_occurrences": 115,
-    "distinct_resource_ids": 109,
+    "units_by_state": {
+      "already-curated": 104,
+      "insufficient-evidence": 82,
+      "pending": 403
+    },
+    "primary_reviewed_units": 129,
+    "catalog_linked_occurrences": 116,
+    "distinct_resource_ids": 110,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
