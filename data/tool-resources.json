@@ -3769,5 +3769,37 @@
       "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/renderer_parity",
       "https://github.com/Zumbo06/Crash2Recomp/releases/tag/v0.9.6"
     ]
+  },
+  {
+    "id": "petari-smg-decomp-case",
+    "name": "Petari: a matching Super Mario Galaxy decompilation",
+    "url": "https://github.com/SMGCommunity/Petari",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Super Mario Galaxy’s Wii code as C++ that rebuilds, object by object, against main.dol files extracted from the user’s own Japanese, North American, PAL or Korean disc. Matched objects are linked from source and checked with objdiff and a target hash. The project describes itself as a work in progress, separate from any PC port, and says it does not accept AI-generated decompilation.",
+    "description_zh": "将 Super Mario Galaxy 的 Wii 代码重建为 C++，并以使用者从自有日版、北美版、PAL 版或韩版光盘中提取的 main.dol 为目标，逐个目标文件重建。已匹配的目标文件由源码链接，并通过 objdiff 和目标哈希检查。项目自称仍在进行中，与任何 PC 移植无关，并表示不接受 AI 生成的反编译代码。",
+    "evidence_url": "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "configure.py targets RMGJ01, RMGE01, RMGP01 and RMGK01, defaulting to the Korean RMGK01 build. Only objects marked Matching are linked unless --non-matching is used. For the reviewed commit, decomp.dev reported 100.00% of RMGK01 code decompiled with 68.75% fully linked, and 99.70% decompiled for the other three versions, with 55.61–58.17% linked. These figures are project-tracker results, not a complete source-built game.",
+      "Extract your own copy of the game for the chosen region with Dolphin into orig/RMG<region>01; only sys/main.dol is needed. The repository says it contains no game assets or assembly. Each version’s config records the expected DOL SHA-1 in config.yml and build.sha1.",
+      "Builds need Python and Ninja on Windows, macOS or Linux; wibo runs the Windows tools on macOS and Linux. configure.py pins Metrowerks compiler packages from the GC 2.7–3.0a5.2 and Wii 1.0 families. The GitHub Actions workflow builds all four versions in a build container its comments call private. This collection did not build or diff the project.",
+      "CONTRIBUTING.md requires 1:1 matching for objects marked as decompiled, objdiff checks and a successful link. Every non-matching function in a pull request must link a decomp.me scratch, and decompiler output must not be copied directly. The README credits doldecomp bte, zeldaret tp (JSystem) and ogws as sources of code and headers.",
+      "The README states that AI or LLMs played no role in the decompilation and limits permitted AI use to cleanup, formatting, documentation and naming. That is a project statement, not something this review can verify. The repository declares CC0-1.0, while Nintendo content, extracted files and toolchains keep separate rights. No REA use is established, and the separate AstroCore PC port mentioned in the README has no public source here."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/configure.py",
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/CONTRIBUTING.md",
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/config/RMGK01/config.yml",
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/config/RMGK01/build.sha1",
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/.github/workflows/build.yml",
+      "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/LICENSE",
+      "https://decomp.dev/SMGCommunity/Petari"
+    ]
   }
 ]

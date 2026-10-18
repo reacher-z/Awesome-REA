@@ -9818,13 +9818,28 @@
       "reported_source_urls": [
         "https://github.com/SMGCommunity/Petari"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 9 (README line 88) lists SMGCommunity/Petari under 🍄 Super Mario Galaxy. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 9 行（README 第 88 行）在 🍄 Super Mario Galaxy 下列出 SMGCommunity/Petari。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, configure.py, version configs, CI workflow and contribution rules document a four-version matching Wii decompilation built against user-extracted main.dol files, and decomp.dev reports per-version progress for this commit. Full mapping covers this decompilation, not the unpublished AstroCore PC port. Progress figures, the no-AI statement and matching status remain project-reported.",
+      "reason_zh": "固定版本的 README、configure.py、各版本配置、CI 工作流和贡献规则，记录了一个覆盖四个版本的 Wii 一致性反编译工程，构建目标为使用者提取的 main.dol，decomp.dev 也报告了该提交的各版本进度。完整映射覆盖此反编译项目，不包括未公开的 AstroCore PC 移植。进度数字、未使用 AI 的声明及一致性状态均为项目自报。",
+      "primary_evidence_urls": [
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/README.md",
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/configure.py",
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/CONTRIBUTING.md",
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/config/RMGK01/config.yml",
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/.github/workflows/build.yml",
+        "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/LICENSE",
+        "https://decomp.dev/SMGCommunity/Petari"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "petari-smg-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-010",
@@ -13972,18 +13987,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 98,
-      "insufficient-evidence": 81,
-      "pending": 412
-    },
-    "units_by_state": {
-      "already-curated": 97,
+      "already-curated": 99,
       "insufficient-evidence": 81,
       "pending": 411
     },
-    "primary_reviewed_units": 121,
-    "catalog_linked_occurrences": 109,
-    "distinct_resource_ids": 103,
+    "units_by_state": {
+      "already-curated": 98,
+      "insufficient-evidence": 81,
+      "pending": 410
+    },
+    "primary_reviewed_units": 122,
+    "catalog_linked_occurrences": 110,
+    "distinct_resource_ids": 104,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

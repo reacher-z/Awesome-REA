@@ -1859,5 +1859,15 @@
       "已公开的检查包括启动器设置与界面冒烟测试、场景脚本，以及比较其自身 Direct3D 12 与 OpenGL 渲染器的测试框架；均未声称与原硬件等价，本合集也未重跑任何结果。",
       "仓库没有顶层许可证文件。README 列出 PSXRecomp 采用 PolyForm Noncommercial 1.0.0、OpenBIOS 采用 MIT、SDL3 采用 zlib、Qt／PySide6 采用 LGPLv3；游戏及其商标归各自权利人所有。所审来源未记录 REA 或编程智能体参与。"
     ]
+  },
+  "petari-smg-decomp-case": {
+    "name": "Petari：Super Mario Galaxy 一致性反编译重建",
+    "requirements": [
+      "configure.py 支持 RMGJ01、RMGE01、RMGP01 和 RMGK01，默认构建韩版 RMGK01。除非使用 --non-matching，否则只链接标记为 Matching 的目标文件。在所审阅的提交上，decomp.dev 报告 RMGK01 代码已反编译 100.00%、完全链接 68.75%；其余三个版本反编译 99.70%，链接比例为 55.61%–58.17%。这些是项目进度追踪结果，不代表已能完全由源码构建游戏。",
+      "需用 Dolphin 将自有游戏中所选地区的版本提取到 orig/RMG<地区>01，只需要 sys/main.dol。仓库声明不包含任何游戏素材或汇编。各版本配置在 config.yml 和 build.sha1 中记录预期的 DOL SHA-1。",
+      "构建需在 Windows、macOS 或 Linux 上安装 Python 和 Ninja；在 macOS 和 Linux 上通过 wibo 运行 Windows 工具。configure.py 固定使用 GC 2.7–3.0a5.2 与 Wii 1.0 系列的 Metrowerks 编译器包。GitHub Actions 工作流在注释所称的私有构建容器中构建全部四个版本。本合集未构建或比对该项目。",
+      "CONTRIBUTING.md 要求标记为已反编译的目标文件必须 1:1 匹配，须通过 objdiff 检查并成功链接。拉取请求中的每个非一致函数都必须附上 decomp.me 草稿链接，且不得直接复制反编译器输出。README 注明部分代码和头文件来自 doldecomp bte、zeldaret tp（JSystem）及 ogws。",
+      "README 声明 AI／LLM 未参与反编译，并将允许的 AI 用途限于代码清理、格式化、文档和命名。这是项目自述，本次审阅无法核实。仓库声明采用 CC0-1.0，任天堂内容、提取的文件及工具链另有权利约束。未确立 REA 的使用；README 提到的独立 PC 移植 AstroCore 在此没有公开源码。"
+    ]
   }
 }
