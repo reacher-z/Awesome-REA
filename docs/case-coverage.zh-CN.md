@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 136 | 135 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 344 | 343 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 111 | 111 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 338 | 337 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 117 | 117 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 147 个出现项含目录链接；共关联 141 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 186 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 192 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -95,7 +95,13 @@
 | Nexalytics: testing REA on the author's own app | 证据不足 | [来源](https://x.com/wikwanat/status/2109542201927647588) |
 | MetaTrader: a reported signal-analysis use case | 证据不足 | [来源](https://x.com/TheKing_Rapture/status/2109547879199056181) |
 | Red Alert 2: an engine rewrite for reinforcement learning | 证据不足 | [来源](https://x.com/Chen1090874226/status/2109548112281055674) |
+| Business software: an ongoing agent-assisted rebuild | 证据不足 | [来源](https://x.com/iamsupersocks/status/2109553690595979371) |
+| CapCut transitions: a module-reconstruction lead | 证据不足 | [来源](https://x.com/fireandstart/status/2109554617004466397) |
 | CF632BLE：基于体脂秤协议研究的本地客户端 | 已收录 | [来源](https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md) |
+| Android app: inspecting root checks and certificate pinning | 证据不足 | [来源](https://x.com/IanJKerins/status/2109559519584088093) |
+| Kindle: Android firmware for WeRead | 证据不足 | [来源](https://x.com/hbyxabc/status/2109583911483519202) |
+| Proxy client: restoring a Clash subscription bridge | 证据不足 | [来源](https://x.com/web3_fising/status/2109601382273880327) |
+| Controlled JS/.NET samples: Codex with and without REA | 证据不足 | [来源](https://x.com/0xlangeai/status/2109603485914206498) |
 | DLSS on AMD: reported AI-assisted compute-shader reconstruction | 待核查 | [来源](https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md) |
 | Netflix/Prime: a reported unified streaming interface | 证据不足 | [来源](https://x.com/HigbeyMyrta/status/2109596534350524664) |
 | fowlbrowser: an existing-session browser bridge for agents | 证据不足 | [来源](https://github.com/argofowl/FowlBrowser/blob/18f7519fa27289885c95b67eff714401ffff51f0/README.md) |

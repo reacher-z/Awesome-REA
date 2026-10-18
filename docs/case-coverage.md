@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 136 | 135 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 344 | 343 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 111 | 111 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 338 | 337 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 117 | 117 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 147 occurrences have catalog links. They reference 141 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 186 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 192 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -95,7 +95,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Nexalytics: testing REA on the author's own app | Insufficient evidence | [Source](https://x.com/wikwanat/status/2109542201927647588) |
 | MetaTrader: a reported signal-analysis use case | Insufficient evidence | [Source](https://x.com/TheKing_Rapture/status/2109547879199056181) |
 | Red Alert 2: an engine rewrite for reinforcement learning | Insufficient evidence | [Source](https://x.com/Chen1090874226/status/2109548112281055674) |
+| Business software: an ongoing agent-assisted rebuild | Insufficient evidence | [Source](https://x.com/iamsupersocks/status/2109553690595979371) |
+| CapCut transitions: a module-reconstruction lead | Insufficient evidence | [Source](https://x.com/fireandstart/status/2109554617004466397) |
 | CF632BLE: a local client from scale-protocol research | Already curated | [Source](https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md) |
+| Android app: inspecting root checks and certificate pinning | Insufficient evidence | [Source](https://x.com/IanJKerins/status/2109559519584088093) |
+| Kindle: Android firmware for WeRead | Insufficient evidence | [Source](https://x.com/hbyxabc/status/2109583911483519202) |
+| Proxy client: restoring a Clash subscription bridge | Insufficient evidence | [Source](https://x.com/web3_fising/status/2109601382273880327) |
+| Controlled JS/.NET samples: Codex with and without REA | Insufficient evidence | [Source](https://x.com/0xlangeai/status/2109603485914206498) |
 | DLSS on AMD: reported AI-assisted compute-shader reconstruction | Pending | [Source](https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md) |
 | Netflix/Prime: a reported unified streaming interface | Insufficient evidence | [Source](https://x.com/HigbeyMyrta/status/2109596534350524664) |
 | fowlbrowser: an existing-session browser bridge for agents | Insufficient evidence | [Source](https://github.com/argofowl/FowlBrowser/blob/18f7519fa27289885c95b67eff714401ffff51f0/README.md) |
