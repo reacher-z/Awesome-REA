@@ -2168,5 +2168,14 @@
       "注明日期的发布审计（2026-10-12）报告源码上传扫描无问题、26 项输入配置与菜单测试通过、Windows 和 Linux 发布构建成功，物理手柄行为则未测量。README 未引用与硬件或模拟器的对照结果；本合集未运行任何内容。",
       "FFTARecomp 的修改采用 MIT，并保留上游 gba-recomp 的声明（MIT OR Apache-2.0）；gamedb.sqlite 函数元数据为 CC0 1.0，w64devkit 工具保留各自的 GPL 系许可。项目审计未确立标志与图标的来源，Square Enix 与 Nintendo 仍保有游戏权利。上游 gba-recomp 自称为 AI 辅助项目；未确立与 REA 的关联。"
     ]
+  },
+  "symphonyrecomp-case": {
+    "name": "SymphonyRecomp：用 RecompOne 静态重编译《恶魔城：月下夜想曲》",
+    "requirements": [
+      "需要用户自有北美版光盘（序列号 SLUS-00067），格式为双音轨 BIN／CUE 或 CHD，并使用固定文件名；其他语言版本的光盘仅被描述为未来语言切换工具的素材来源。仓库不含游戏数据，RecompOne 也不需要 BIOS 或其他 Sony 组件。",
+      "v0.5.1b 版本（2026-08-19）提供 Windows x64／ARM64、macOS ARM64／x64 和 Linux x64 构建；Linux ARM64 版本已在 0.5b 中移除。源码构建的前置条件包括支持 OpenGL 2.1+ 的显卡、.NET 10、OpenAL 和 Git；更新日志称 OpenGL 2.1 路径仍属实验性质且存在位掩码问题。游戏代码由 RecompOne 子模块依据 config/sotn.json 生成。",
+      "README 称这是公开测试版，可能存在严重破坏游戏的错误，1.0 版本尚未发布。项目未公布等价性或自动化游戏流程测试，本合集也未重跑更新日志中的任何修复或功能。",
+      "SymphonyRecomp 没有许可证文件，复用条款未明确；固定版本的 RecompOne 重编译器与运行时采用 MIT 许可，游戏保留各自权利。两个项目均声明代码编写未使用 AI，并拒绝 AI 生成的拉取请求；所审来源未确立 REA 使用。"
+    ]
   }
 }
