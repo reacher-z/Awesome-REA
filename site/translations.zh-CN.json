@@ -2575,5 +2575,15 @@
       "VERIFICATION.md 报告：在 Windows 上完整通关，在 Steam Deck 和 GitHub 托管的虚拟 Mac 上进行了部分运行，作者构建的 1.1.5 可执行文件使用录制回放通过了 33／33 项无界面测试套件检查及 5／5 项 Snap Station 检查。这些检查针对移植的行为，并非与卡带逐字节等价；尚无实体 Mac 或 Linux 桌面的报告。本合集未构建或运行该项目。",
       "移植代码采用 GPLv3，第三方组件列于 NOTICE.md。NOTICE.md 说明仓库跟踪的文件不含 ROM 字节，但分发的可执行文件由 N64Recomp 从游戏指令转换出的 C 代码编译而成，补丁也是修改过的反编译函数；游戏本身仍归其权利人所有。作者报告在其主导下使用 Claude Code 编写此移植；未记录 REA 使用。"
     ]
+  },
+  "dead-rising-2-case-zero-recomp-case": {
+    "name": "Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植",
+    "requirements": [
+      "需使用者自有的游戏 58410A8D 的 XBLA 游戏包（约 825 MB，无扩展名），放入 assets/package；首次运行会在本地解包，并准备 1,367 个着色器及菜单与按键提示素材。仓库与发布包均不含游戏数据：assets/ 和由零售版可执行文件生成的 ppc/ C++ 代码都被 git 忽略，仓库中的键帽提示贴图是项目自绘的美术。",
+      "运行发布版需支持 Vulkan 1.3 的显卡，以及 Windows 10+ x86-64、glibc 2.35+ 的 Linux x86-64、Steam Deck 专用包或 Apple Silicon 上的 macOS 13+；不支持 Intel Mac，解包后约需 2 GB 空间。从源码构建需按 patches/README.md 所列基准提交取得 hedge-dev 的 XenonRecomp 与 XenosRecomp，并应用导出的 14 个和 23 个补丁；配置时还需同级目录下的 XenonLive 检出，以及 CMake 和 Ninja；ppc/ 须先依据 config/CaseZero.toml 重新生成。",
+      "README 宣布项目已于 v1.1.3（2026 年 10 月）完结，在 Windows 和 Linux 上可单人及双人在线合作通关，并提高了等级上限，支持 60 fps、恢复的 PC 选项界面和超宽屏。Steam Deck 与 macOS 版本测试最少；macOS 版闲置约 15 分钟后可能卡死，流式加载时的物件闪现和招牌破洞问题仍未解决。维护者已停止开发，问题可能无人回复。",
+      "CI 在 Linux 和 Windows 上构建宿主运行时，并以占位映像做冒烟测试；所审提交的运行已成功，但无法运行游戏本身，因此通关结果来自维护者报告。补丁说明称两套导出补丁可重现 v1.1.3 所用的重编译器检出。本合集未构建或运行该移植。",
+      "项目代码采用 PolyForm Noncommercial 1.0.0，允许非商业使用、修改和分叉，但不允许出售；XenonRecomp 与 XenosRecomp 为 MIT 许可，游戏权利归 Capcom。THIRD_PARTY.md 称 UnleashedRecomp 仅作结构参考，未复制任何 GPL 代码。开发日志以 CLAUDE.md 提交，但 README 未说明 AI 使用政策；未确立与 REA 的关联。"
+    ]
   }
 }

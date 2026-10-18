@@ -12971,13 +12971,26 @@
       "reported_source_urls": [
         "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 99 (README line 1018) lists wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp under 🧟 Dead Rising 2: Case Zero. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 99 行（README 第 1018 行）在 🧟 Dead Rising 2: Case Zero 下列出 wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, third-party and licence notes, recompiler-patch documentation, translation configuration, hand-off notes and a successful CI run support the reported XenonRecomp/XenosRecomp port of Case Zero. Full mapping covers this static recompilation, not recovered source or independently reproduced gameplay. The user-supplied package, the noncommercial licence and maintainer-reported completion remain explicit.",
+      "reason_zh": "固定版本的 README、第三方与许可说明、重编译器补丁文档、转换配置、交接说明及一次成功的 CI 运行，支持所报告的基于 XenonRecomp／XenosRecomp 的 Case Zero 移植。完整映射覆盖此静态重编译，不涵盖恢复的源码或独立复现的游戏行为。使用者自备的游戏包、非商业许可以及维护者报告的通关情况均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/README.md",
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/THIRD_PARTY.md",
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/patches/README.md",
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/docs/final-state.md",
+        "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/actions/runs/38534235503"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dead-rising-2-case-zero-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-100",
@@ -15093,18 +15106,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 163,
-      "insufficient-evidence": 132,
-      "pending": 296
-    },
-    "units_by_state": {
-      "already-curated": 162,
+      "already-curated": 164,
       "insufficient-evidence": 132,
       "pending": 295
     },
-    "primary_reviewed_units": 234,
-    "catalog_linked_occurrences": 174,
-    "distinct_resource_ids": 168,
+    "units_by_state": {
+      "already-curated": 163,
+      "insufficient-evidence": 132,
+      "pending": 294
+    },
+    "primary_reviewed_units": 235,
+    "catalog_linked_occurrences": 175,
+    "distinct_resource_ids": 169,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
