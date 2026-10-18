@@ -360,8 +360,8 @@ def render_papers(papers, language):
     index = int(zh)
     directory = 'https://awesomerea.org/zh/papers/' if zh else 'https://awesomerea.org/papers/'
     lines = ['<a id="papers"></a>', '## 论文' if zh else '## Papers', '',
-             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。'
-              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each entry shows its publication status.'), '',
+             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。'
+              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.'), '',
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
     groups = defaultdict(list)
     for paper in papers:
@@ -385,7 +385,7 @@ def render_papers(papers, language):
         for paper in papers_newest_first(groups[section]):
             title = plain_text(paper['title_zh'] if zh else paper['title'])
             status = PAPER_STATUSES[paper['publication_status']][index]
-            metadata = plain_text(f"{paper['year']} · {paper['venue']} · {status}")
+            metadata = plain_text(f'{paper_venue(paper)} · {status}')
             author = plain_text(paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else ''))
             detail_url = f"https://awesomerea.org/{'zh/' if zh else ''}papers/{paper['id']}/"
             links = [f"[PDF]({paper['pdf_url']})"]
@@ -395,15 +395,21 @@ def render_papers(papers, language):
             lines.extend([
                 f"- [**{title}**]({paper['url']})", '',
                 '  ' + plain_text(paper[f'description_{language}']), '',
-                f"  {paper['year']} · {status} · " + ' · '.join(links), '',
+                f'  {metadata} · ' + ' · '.join(links), '',
                 '  <details>',
                 f"  <summary>{'范围与发表信息' if zh else 'Scope and publication details'}</summary>", '',
                 f"  **{'范围与限制' if zh else 'Scope and limits'}:** "
                 + plain_text(paper[f'scope_limitations_{language}']), '',
-                f"  **{'发表信息' if zh else 'Publication'}:** {metadata} · {author}", '',
+                f"  **{'作者' if zh else 'Authors'}:** {author}", '',
                 '  </details>', '',
             ])
     return '\n'.join(lines).rstrip() + '\n'
+
+
+def paper_venue(paper):
+    """Most venue names already carry the year; add it once to the rest (arXiv, journals, WOOT 18)."""
+    venue = paper['venue']
+    return venue if re.search(rf"(?<!\d){paper['year']}(?!\d)", venue) else f"{venue} {paper['year']}"
 
 
 def replace_papers(content, rendered, language):
