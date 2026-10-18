@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 240](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-240-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 100](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-100-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 241](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-241-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 101](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-101-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (82) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (83) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (100) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (101) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -563,6 +563,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   使用 N64Recomp 将美版 Nintendo 64《Conker's Bad Fur Day》静态重编译为基于 N64ModernRuntime 和 RT64 的原生 Windows、Linux 与 macOS 移植版。函数名称与边界来自仓库内置、仍以汇编为主的反编译项目，而重编译的代码取自用户的 ROM，因此尚未匹配的反编译 C 代码不会改变游戏行为。作者称整个项目大量使用了 Claude Code。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cbfd-recompiled-case/)
+
+- [**ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植**](https://github.com/theclub654/ProjectCane)
+
+  将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。README 报告整部游戏均可游玩，同时仍在改进准确性并处理与原版的剩余差异。项目未说明其逆向工程方法，也未说明与另一个 sly1 反编译项目的关系。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)
 
 #### 工具、项目与集成
 
