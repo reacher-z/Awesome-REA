@@ -10967,13 +10967,27 @@
         "https://github.com/BlackLabelHQ/MediEvilRecomp",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 49 (README line 462) lists BlackLabelHQ/MediEvilRecomp under 🧭 MediEvil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 49 行（README 第 462 行）在 🧭 MediEvil 下列出 BlackLabelHQ/MediEvilRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, disc instructions, recompilation config, changelog, build workflow and the RecompOne submodule's README support the reported PlayStation static recompilation, its North American disc requirement and its beta status. The full mapping covers this recompilation, not a source decompilation or independently tested gameplay. The missing project license and the authors' no-AI statement are recorded; the collection post's archive link is outside this mapping.",
+      "reason_zh": "固定版本的 README、光盘说明、重编译配置、更新日志、构建工作流及 RecompOne 子模块的 README，支持该报告所述的 PlayStation 静态重编译、北美版光盘要求及测试版状态。完整映射覆盖此重编译项目，不涵盖源码反编译或经独立测试的游戏行为。项目缺少许可证及作者声明未使用 AI 等情况均已记录；合集帖子中的存档链接不在此映射范围内。",
+      "primary_evidence_urls": [
+        "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/README.md",
+        "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/disc/README.md",
+        "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/config/MediEvil.json",
+        "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/changelog.md",
+        "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/.github/workflows/build.yml",
+        "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "medievil-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-050",
@@ -13945,18 +13959,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 96,
-      "insufficient-evidence": 81,
-      "pending": 414
-    },
-    "units_by_state": {
-      "already-curated": 95,
+      "already-curated": 97,
       "insufficient-evidence": 81,
       "pending": 413
     },
-    "primary_reviewed_units": 119,
-    "catalog_linked_occurrences": 107,
-    "distinct_resource_ids": 101,
+    "units_by_state": {
+      "already-curated": 96,
+      "insufficient-evidence": 81,
+      "pending": 412
+    },
+    "primary_reviewed_units": 120,
+    "catalog_linked_occurrences": 108,
+    "distinct_resource_ids": 102,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -1839,5 +1839,15 @@
       "CI 针对 RSDKv5 和 RSDKv5U 两种配置构建 Windows x86、x64 及 Linux 版本。项目未公开与原版二进制文件的对照结果，其常见问题还说明官方版本中已有的缺陷大多不会修复。本合集未构建或运行该项目。",
       "自定义的《Sonic Mania 反编译源码许可证 v1》仅允许非商业用途的复制、修改和分发，要求声明代码并非分发者所有，禁止分发独特模组素材以外的游戏素材，并要求所有派生版本遵守同一许可。Sega 的游戏和素材保留各自权利。所审阅来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "medievil-recomp-case": {
+    "name": "MediEvil Recomp：PlayStation 游戏静态重编译为 C#",
+    "requirements": [
+      "所审版本针对北美版 PlayStation 发行版（SCUS-942.27）；config/MediEvil.json 列出供 RecompOne 转译的主程序及其覆盖模块。README 称其为公开测试版，功能必然会出现故障，稳定的 1.0 版尚未发布。v0.2b 更新日志以原生浮点渲染补丁取代 PGXP 渲染器，并加入宽屏修正和自动更新。",
+      "需合法拥有的北美版 MediEvil 光盘，格式为 bin/cue 或 CHD；README 和 disc/README.md 列明 disc/ 目录中应放置的两个音轨 .bin 文件及 .cue 文件。项目不提供游戏文件。RecompOne 称其运行时只需游戏文件，不需要 BIOS 或其他 Sony 文件。",
+      "构建需要 Git、固定版本的 RecompOne 与 ShaderMod 子模块，以及 .NET 10 SDK。通过 Windows 批处理脚本，或手动以 config/MediEvil.json 运行 RecompOne，生成游戏代码，再将其编译为 .NET 10 应用。运行需 .NET 10 运行时、OpenAL 及支持 OpenGL 2.1 的 GPU；v0.2b 发布包涵盖 Windows x64／arm64、macOS x64／arm64 和 Linux x64。",
+      "构建工作流使用另一个访问受限仓库中的光盘输入完成重编译和编译，然后上传构建产物；它不运行游戏，也不与原版行为比较。README 致谢一个未具名的反编译项目，其成果用作函数命名和补丁参考。本合集未构建或运行该项目。",
+      "所审版本的 MediEvilRecomp 没有许可证文件，复用条款未作说明；RecompOne 子模块声明采用 MIT。原游戏内容，包括重编译器所转译的可执行代码，仍有各自权利约束。两份 README 均称编写代码时未使用 AI，并拒绝 AI 生成的贡献；这不是 REA 辅助案例。"
+    ]
   }
 }

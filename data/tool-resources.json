@@ -3703,5 +3703,39 @@
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.github/workflows/build.yml",
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/releases/tag/v1.1.1"
     ]
+  },
+  {
+    "id": "medievil-recomp-case",
+    "name": "MediEvil Recomp: a PlayStation static recompilation to C#",
+    "url": "https://github.com/BlackLabelHQ/MediEvilRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the North American PlayStation release of MediEvil into C# with the RecompOne recompiler and runtime. The runtime stands in for BIOS, GPU, CD-ROM and other hardware services, and project patches change rendering, widescreen and terrain behavior. README stresses that this is a recompilation, not a decompilation, and labels it an open beta.",
+    "description_zh": "使用 RecompOne 重编译器及运行时，将北美版 PlayStation《MediEvil》静态重编译为 C# 代码。运行时代为提供 BIOS、GPU、CD-ROM 等硬件服务，项目补丁则修改渲染、宽屏和地形表现。README 强调这是重编译而非反编译，并将其标为公开测试版。",
+    "evidence_url": "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed tree targets the North American PlayStation release (SCUS-942.27); config/MediEvil.json lists the main executable and its overlays for RecompOne to translate. README calls this an open beta in which things will break, with stable 1.0 unreleased. The v0.2b changelog replaces the PGXP renderer with a native floating-point rendering patch and adds widescreen fixes and an automatic updater.",
+      "Requires a legally owned North American MediEvil disc in bin/cue or CHD form; README and disc/README.md name the two track .bin files and the .cue expected in disc/. The project does not supply game files. RecompOne states that its runtime needs no BIOS or other Sony files, only the game files.",
+      "Building needs Git with the pinned RecompOne and ShaderMod submodules and the .NET 10 SDK. Windows batch scripts or a manual RecompOne run against config/MediEvil.json generate the game code, which is then compiled as a .NET 10 application. Running needs the .NET 10 runtime, OpenAL and an OpenGL 2.1 GPU; v0.2b release packages cover Windows x64/arm64, macOS x64/arm64 and Linux x64.",
+      "The build workflow recompiles and compiles the project using disc inputs from a separate access-restricted repository, then uploads the build; it does not run the game or compare behavior with the original. README credits references from an unnamed decompilation for function names and patches. This collection did not build or run the project.",
+      "MediEvilRecomp has no license file in the reviewed tree, so its reuse terms are unstated; the RecompOne submodule declares MIT. Original game content, including the executable code the recompiler translates, retains separate rights. Both READMEs state that no AI was used to write the code and that AI-generated contributions are rejected; this is not an REA-assisted case."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/disc/README.md",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/config/MediEvil.json",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/changelog.md",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/.gitmodules",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/RecompOne.MediEvil.csproj",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/.github/workflows/build.yml",
+      "https://github.com/BlackLabelHQ/MediEvilRecomp/releases/tag/v0.2b",
+      "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/README.md",
+      "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/LICENSE"
+    ]
   }
 ]
