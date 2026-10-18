@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 256](https://img.shields.io/badge/resources-256-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 116](https://img.shields.io/badge/cases-116-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 257](https://img.shields.io/badge/resources-257-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 117](https://img.shields.io/badge/cases-117-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (97) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (98) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (116) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (117) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -652,6 +652,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runs Diablo in web browsers by compiling a stripped-down fork of Devilution, the community reconstruction of the game’s original source, to WebAssembly behind a React front end. The fork removes the Storm, DiabloUI, DirectX and Windows dependencies and reworks event handling for the browser. It is a port built on a reconstruction and reports no matching or behavior-equivalence checks of its own.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/diabloweb-devilution-wasm-port-case/)
+
+- [**pokered: a matching Pokémon Red and Blue disassembly**](https://github.com/pret/pokered)
+
+  Reconstructs the Game Boy games Pokémon Red and Blue as RGBDS assembly, with graphics and data kept as editable source files. One tree builds the USA/Europe Red and Blue ROMs, a Blue debug build and patches for the Virtual Console releases, each checked against a recorded SHA-1. It is a full disassembly rather than a decompilation into a higher-level language.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokered-disassembly-case/)
 
 #### Tools, projects and integrations
 
