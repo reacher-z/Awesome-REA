@@ -3347,5 +3347,61 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-jtrans",
+    "title": "jTrans: Jump-Aware Transformer for Binary Code Similarity Detection",
+    "title_zh": "jTrans：面向二进制代码相似性检测的跳转感知 Transformer",
+    "authors": [
+      "Hao Wang",
+      "Wenjie Qu",
+      "Gilad Katz",
+      "Wenyu Zhu",
+      "Zeyu Gao",
+      "Han Qiu",
+      "Jianwei Zhuge",
+      "Chao Zhang"
+    ],
+    "year": 2022,
+    "publication_date": "2022-07-18",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records published/print and online publication on 2022-07-18. The date comes from that publisher deposit, not from the July 18–22 conference dates.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将 published／纸质与在线出版日期均记为 2022-07-18；该日期取自出版方元数据，而非 7 月 18–22 日的会议日期。",
+    "venue": "ACM ISSTA 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2205.12713",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2022-05-25",
+    "doi": "10.1145/3533767.3534367",
+    "url": "https://dl.acm.org/doi/10.1145/3533767.3534367",
+    "pdf_url": "https://arxiv.org/pdf/2205.12713v1",
+    "code_url": "https://github.com/vul337/jTrans",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "jTrans embeds binary functions for similarity search with a BERT-style Transformer. Its jump-aware representation shares parameters between a direct jump’s operand token and the positional embedding of the jump target, so control flow enters the instruction sequence without a separate graph network. The model is pre-trained with masked language modeling and jump-target prediction, then fine-tuned with a cosine triplet objective on functions compiled from the same source at different optimization levels. The paper also introduces BinaryCorp, built by compiling C/C++ packages from Arch Linux’s official repositories and the AUR with gcc and g++.",
+    "description_zh": "jTrans 使用 BERT 风格的 Transformer 为二进制函数生成嵌入，以支持相似性检索。其跳转感知表示让直接跳转的操作数词元与跳转目标的位置嵌入共享参数，从而无需单独的图神经网络即可将控制流引入指令序列。模型先以掩码语言建模和跳转目标预测进行预训练，再以余弦三元组目标在同一源码不同优化级别编译出的函数上微调。论文还发布了 BinaryCorp，它由 gcc 与 g++ 编译 Arch Linux 官方仓库及 AUR 中的 C/C++ 软件包构建而成。",
+    "scope_limitations_en": "The model is trained on a single architecture (x86, per the paper’s discussion); cross-architecture search is not evaluated. Only direct jumps are encoded, and indirect-jump targets are left out of scope. Disassembly and function extraction rely on IDA Pro 7.5, so boundary errors upstream are not measured. BinaryCorp pairs gcc/g++ builds across O0–O3 and Os, with train and test split by project; it does not cover obfuscation or other compilers, and only the vulnerability study adds clang variants. Author-reported Recall@1 at pool size 10,000 on BinaryCorp-26M averages 62.5% against 32.0% for the best baseline, and accuracy still falls as pools grow, which the authors note for larger real-world pools. The vulnerability search uses eight CVEs with ten variants each. Baselines date from 2022, and Asm2Vec and OrderMatters were reimplemented, so the comparison does not establish current rankings. Similarity ranking identifies candidate matches; it does not recover source code, names or types.",
+    "scope_limitations_zh": "模型仅在单一架构上训练（据论文讨论部分为 x86），未评估跨架构检索。方法只编码直接跳转，间接跳转目标不在研究范围内。反汇编与函数提取依赖 IDA Pro 7.5，上游的边界识别错误未被衡量。BinaryCorp 在 O0–O3 与 Os 之间配对 gcc／g++ 构建结果，并按项目划分训练集与测试集；它不涵盖混淆或其他编译器，只有漏洞检索实验额外加入 clang 变体。作者报告在 BinaryCorp-26M、候选池规模为 10,000 时，平均 Recall@1 为 62.5%，最佳基线为 32.0%；随着候选池增大，准确率仍会下降，作者也指出真实场景的候选池更大。漏洞检索实验使用八个 CVE，每个有十个变体。基线来自 2022 年，其中 Asm2Vec 与 OrderMatters 为重新实现，因此该比较不能确立当前排名。相似性排序只给出候选匹配，并不恢复源码、名称或类型。",
+    "why_fits_en": "Adds learned binary code similarity search, a reverse-engineering aid for function matching, library identification and known-vulnerability search, complementing decompilation and symbol-recovery research.",
+    "why_fits_zh": "补充基于学习的二进制代码相似性检索。它可辅助逆向工程中的函数匹配、库识别与已知漏洞检索，与反编译和符号恢复研究互补。",
+    "metadata_notes": "The arXiv abstract page titles the paper “jTrans: Jump-Aware Transformer for Binary Code Similarity”; its v1 PDF, the only version, carries the full ISSTA title, ACM reference format and DOI, and its comment cites ISSTA 2022. Crossref and the PDF agree on the eight-author order, the DOI, pages 1–13 and a CC BY 4.0 license. The README at the reviewed 2025-04-10 commit declares MIT and lists Linux, Python 3.8+, PyTorch 1.10+, CUDA 10.2+ and IDA Pro 7.5+ for dataset processing. Trained models, experiment files, the processed BinaryCorp and its original binaries are hosted on the authors’ lab file server outside GitHub, so their availability is separate from the repository. The released data-loading code truncates each function to 512 token positions. Packaged software in BinaryCorp retains its own licenses. Nothing was downloaded beyond the paper and repository files, and no code or experiments were run.",
+    "metadata_notes_zh": "arXiv 摘要页将论文标题写作“jTrans: Jump-Aware Transformer for Binary Code Similarity”；其唯一版本 v1 的 PDF 使用完整的 ISSTA 标题、ACM 引用格式及 DOI，备注也注明 ISSTA 2022。Crossref 与 PDF 一致给出八位作者顺序、DOI、第 1–13 页及 CC BY 4.0 许可。所审阅的 2025-04-10 提交中，README 声明 MIT 许可，并列出 Linux、Python 3.8+、PyTorch 1.10+、CUDA 10.2+，以及用于数据集处理的 IDA Pro 7.5+。训练好的模型、实验文件、处理后的 BinaryCorp 及其原始二进制托管在作者实验室的 GitHub 之外的文件服务器上，其可用性与代码仓库无关。发布的数据加载代码将每个函数截断为 512 个词元位置。BinaryCorp 中的软件包各自保留原有许可。本次除论文与仓库文件外未下载其他内容，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3533767.3534367",
+      "https://api.crossref.org/works/10.1145/3533767.3534367",
+      "https://arxiv.org/abs/2205.12713",
+      "https://arxiv.org/pdf/2205.12713v1",
+      "https://github.com/vul337/jTrans/blob/1d405156865e3c582e4f183cbaa623b700ea0e9e/README.md",
+      "https://github.com/vul337/jTrans/blob/1d405156865e3c582e4f183cbaa623b700ea0e9e/LICENSE",
+      "https://github.com/vul337/jTrans/blob/1d405156865e3c582e4f183cbaa623b700ea0e9e/datautils/README.md",
+      "https://github.com/vul337/jTrans/blob/1d405156865e3c582e4f183cbaa623b700ea0e9e/data.py",
+      "https://github.com/vul337/jTrans/blob/1d405156865e3c582e4f183cbaa623b700ea0e9e/finetune.py"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
