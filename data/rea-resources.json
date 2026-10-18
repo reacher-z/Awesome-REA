@@ -2146,5 +2146,36 @@
       "https://github.com/morluto/rea/tree/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/tests/conformance/psp",
       "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE"
     ]
+  },
+  {
+    "id": "rea-touhou-reconstruction-method-case",
+    "name": "Touhou reconstructions: an agent-driven method across three games",
+    "url": "https://rea.tools/blog/touhou-reconstruction/",
+    "category": "official-case-studies",
+    "relationship": "official-case-study",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. It dates milestones from public commits and progress ledgers, separates exact-comparison and playable-build oracles, and documents a TH08 check that missed wrong floating-literal data. Project results remain author-reported, and REA is credited with supplying analysis evidence, not the reconstructions themselves.",
+    "description_zh": "REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。",
+    "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The evidence notes, checked on 10 October 2026, treat three separate projects: a continuation of GensokyoClub’s TH08 1.00d reconstruction, a TH095 1.02a reconstruction started from zero confirmed functions, and a PC-98 TH04 reconstruction crediting ReC98. Milestone intervals use public commit timestamps and measure recorded spacing, not compute time, effort or a controlled speedup.",
+      "Pinned ledgers report 1,106 of 1,107 TH08 functions accepted, 696 exact TH095 functions out of 697 confirmed, and 661 exact TH04 functions out of 663 reviewed candidates, each under its own definitions; the notes warn against cross-game rates or whole-executable completion percentages. TH08 Linux and Web ports, a playable TH095 Windows i386 build and four TH04 DOS products are recorded milestones. TH04 play results rest on the maintainer’s manual observations, and its 64-bit port is in development.",
+      "In TH08, an instruction-byte comparison accepted source using 0.0 where the original executable used 128.0, because it did not check the referenced literal data. TH08 PRs #11 and #13 added literal-data checks and corrected twelve more stale references among 1,548 audited. The website work reexamined history and metadata without rerunning the historical compiler or game.",
+      "The essay and notes supply no game files, compilers or builds; each project’s repository documents its own original-game and toolchain requirements, and game rights stay with their owners. GensokyoClub’s TH08 history keeps its attribution and license, and its public policy excluding AI-primary contributions is paraphrased rather than adopted. TH08 has a separate catalog record; this review did not separately review the TH095 or TH04 repositories or run any project.",
+      "REA is described as supplying analysis evidence to agents; the projects also used their own analysis bridges and tooling, and historical results are not relabeled as REA output. The author presents the method and its industrial analogy as an account and argument, not a measured agent-versus-human comparison or proof that it transfers to other fields."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/public/blog/touhou-reconstruction/index.html",
+      "https://github.com/morluto/rea/pull/1475",
+      "https://github.com/N0zoM1z0/th08/issues/10",
+      "https://github.com/N0zoM1z0/th08/pull/11",
+      "https://github.com/N0zoM1z0/th08/pull/13"
+    ]
   }
 ]

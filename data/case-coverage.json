@@ -822,12 +822,16 @@
         "https://github.com/N0zoM1z0/th08/issues/10",
         "https://github.com/N0zoM1z0/th08/pull/13"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The TH08 component is curated; TH04 and TH095 components in this combined report remain outside the mapping.",
-      "reason_zh": "TH08 部分已有精选条目；组合报告中的 TH04 和 TH095 部分仍不在该映射范围内。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The REA-published essay, its pinned evidence notes and merged REA PR #1475 cover this combined report: TH08, TH095 and TH04 milestones, ledger counts under separate definitions, and the TH08 floating-literal oracle gap. The full mapping is to that method case; the TH08 project record remains a partial match. Results stay author-reported, the TH095 and TH04 repositories were not separately reviewed, and no build or runtime reproduction is claimed.",
+      "reason_zh": "REA 发表的文章、其固定版本的证据说明及已合并的 REA PR #1475 覆盖了这份组合报告：TH08、TH095 与 TH04 的里程碑、各自定义下的进度计数，以及 TH08 浮点字面量判定依据的漏洞。完整映射指向该方法案例；TH08 项目条目仍为部分匹配。结果仍为作者报告，未单独审阅 TH095 与 TH04 仓库，也未主张构建或运行复现。",
       "primary_evidence_urls": [
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/public/blog/touhou-reconstruction/index.html",
+        "https://github.com/morluto/rea/pull/1475",
+        "https://rea.tools/blog/touhou-reconstruction/",
         "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
         "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
         "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
@@ -836,6 +840,12 @@
         "https://github.com/N0zoM1z0/th08/pull/13"
       ],
       "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-touhou-reconstruction-method-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
         {
           "catalog": "resource",
           "id": "th08-reconstruction-case",
@@ -13415,18 +13425,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 71,
-      "insufficient-evidence": 71,
-      "pending": 449
-    },
-    "units_by_state": {
-      "already-curated": 70,
+      "already-curated": 72,
       "insufficient-evidence": 71,
       "pending": 448
     },
+    "units_by_state": {
+      "already-curated": 71,
+      "insufficient-evidence": 71,
+      "pending": 447
+    },
     "primary_reviewed_units": 87,
     "catalog_linked_occurrences": 78,
-    "distinct_resource_ids": 69,
+    "distinct_resource_ids": 70,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
