@@ -5428,5 +5428,39 @@
       "https://github.com/merbanan/rtl_433/blob/80f7bcc3a3dc6edf537544593bf367241a225215/COPYING",
       "https://github.com/merbanan/rtl_433/releases/tag/25.12"
     ]
+  },
+  {
+    "id": "decomp-me",
+    "name": "decomp.me",
+    "url": "https://decomp.me",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Collaborative decompilation website for matching work: its compile service builds candidate source with a selected platform compiler, assembles the target assembly and diffs the two objects with asm-differ. m2c drafts initial decompilations for its MIPS, PowerPC, ARM and SuperH platforms. The 18 platform definitions span N64, PlayStation, PS2, PSP, GameCube/Wii, Wii U, DS, GBA, 3DS, Switch, Saturn, Dreamcast and Xbox 360 plus IRIX, Mac OS X, MS-DOS, Win32 and Android x86.",
+    "description_zh": "面向匹配反编译的协作网站：其编译服务用选定平台的编译器编译候选源码，汇编目标汇编代码，并用 asm-differ 对比两个目标文件。对其 MIPS、PowerPC、ARM 和 SuperH 平台，m2c 可生成初步反编译代码。18 个平台定义涵盖 N64、PlayStation、PS2、PSP、GameCube/Wii、Wii U、DS、GBA、3DS、Switch、Saturn、Dreamcast 和 Xbox 360，以及 IRIX、Mac OS X、MS-DOS、Win32 和 Android x86。",
+    "evidence_url": "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Use the hosted site or self-host the Next.js/Django stack with Docker and Docker Compose; the self-hosting guide asks for at least 4 GB RAM, ideally 6 GB+. Its Docker configuration disables Switch support by default because of the Clang compilers' size, and ENABLE_<PLATFORM>_SUPPORT variables enable platforms. The live site answered automated requests with a browser check, so its pages, accounts and available compilers were not reviewed.",
+      "Each platform definition names its assembler, objdump and nm commands; compilers are added as packages in the separate decompme/compilers repository, which was not reviewed. Compiler, assembler and objdump subprocesses can run in an nsjail sandbox, enabled by default in the cromper container; outside it, nsjail must be built locally with unprivileged user namespaces enabled.",
+      "MIT license; the README notes that dependencies keep their own licenses, and this entry makes no claim about compiler licensing. No tagged releases, so this entry pins the reviewed main-branch commit. Diffs show instruction-level differences for the compiled code and m2c output is a draft; neither recovers names, types or semantics. No code was compiled and no instance was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/LICENSE",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/platforms.py#L80-L301",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/compiler_wrapper.py",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/diff_wrapper.py",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/m2c_wrapper.py#L14-L31",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/decompiler_wrapper.py",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/pyproject.toml",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/docs/DOCKER.md",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/docs/SANDBOX.md",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/docs/COMPILER.md"
+    ]
   }
 ]
