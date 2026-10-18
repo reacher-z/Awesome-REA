@@ -2197,5 +2197,15 @@
       "README 列出 CTest 单元测试、要求无窗口、隐藏窗口、多线程与插帧渲染下 2,400 个模拟检查点一致的验证器，以及两个实例完成一场 Slippi 对战且日志中不得出现 DESYNC 的测试。docs/replay-validation.md 按帧比较回放中的八个 Slippi 帧后字段，并说明这不能证明完整游戏状态相同；PORT_COMPLETION.md 将解决一处不同的回放字节列为宣称联网确定性兼容的前提。这些均为项目报告，此处未运行任何内容。",
       "自 0.8.5 起采用 GPL-3.0-or-later（0.8.1 及更早为 GPL-2.0-or-later）；NOTICE 列出移植自 Dolphin、Slippi Ishiiruka 和 Slippi 的代码、各有许可的随附组件，以及针对 NVIDIA 与 Intel SDK 的 GPL 第 7 条附加许可。Melee 归 Nintendo 和 HAL Laboratory 所有，项目与 Slippi 团队无关。README 称项目借助 Fable 5.1 和 GPT 6 Astra 开发，PORT_COMPLETION.md 也提到 Fable 与 Codex 工作分支；未记录 REA 使用，也不主张运行复现。"
     ]
+  },
+  "pokeruby-decomp-case": {
+    "name": "pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译",
+    "requirements": [
+      "README 仍称该项目为反汇编，并列出英文版 pokeruby.gba 和 pokesapphire.gba 的哈希；INSTALL.md 另列 1.1／1.2 修订版目标、仅支持 1.0 的调试目标及德文初版构建，仓库中共有 14 个 SHA-1 文件。所审版本已没有 asm/ 目录：游戏代码均为 src/ 下的 C 源码，仅手写的启动与库汇编以及标为 NONMATCHING 的函数除外，后者在一致构建中仍使用内联汇编。贡献指南仍描述早期从汇编逐步转为 C 的流程。",
+      "构建不读取任何原版 ROM：代码、脚本、文本、图像和音频源文件都在仓库中，因此仓库本身以源文件形式包含游戏内容。德文构建需先运行设置脚本再编译，并在构建任何英文版之前运行还原脚本。",
+      "INSTALL.md 列出 Linux、需 Xcode Command Line Tools 的 macOS，以及通过 WSL 或 devkitPro MSYS2 环境的 Windows，并要求 build-essential、git、libpng 和 devkitARM。需克隆、构建 pret 的 agbcc 并安装到仓库中；make modern 则改用 devkitARM 的 arm-none-eabi-gcc，也可通过 TOOLCHAIN 指定其他工具链。",
+      "设置 COMPARE=1 时，Makefile 会用对应的 SHA-1 文件检查所选构建。GitHub Actions 工作流比对英文版 1.0／1.1／1.2 的红宝石和蓝宝石构建及德文初版各变体，随后编译 NONMATCHING 源码和 modern 目标但不作比对；README 的构建徽章仍指向 Travis CI。哈希一致说明 ROM 字节相同，并不说明 NONMATCHING C 代码或 modern 构建的行为相同。本合集未构建这些 ROM。",
+      "仓库没有许可证文件，复用条款未作说明；原游戏内容仍归其权利人所有，agbcc 和 devkitPro 组件各自适用其条款。所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }

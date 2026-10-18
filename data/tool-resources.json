@@ -4864,5 +4864,38 @@
       "https://github.com/Hero88go/melee-unlocked/releases/tag/v0.8.99",
       "https://github.com/doldecomp/melee/tree/039c4bf4ca33338c35d21901ad19b7ede19d19ad"
     ]
+  },
+  {
+    "id": "pokeruby-decomp-case",
+    "name": "pokeruby: a matching Pokémon Ruby and Sapphire decompilation",
+    "url": "https://github.com/pret/pokeruby",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the Game Boy Advance games Pokémon Ruby and Sapphire as C source built with pret's agbcc compiler, alongside assembly data scripts and editable graphics. Matching builds cover the English 1.0, 1.1 and 1.2 revisions, debug builds and the first German editions, each checked against a stored SHA-1. A separate modern-GCC target is not expected to match.",
+    "description_zh": "以 C 源码重建 Game Boy Advance 游戏《精灵宝可梦 红宝石／蓝宝石》，使用 pret 的 agbcc 编译器构建，并附有汇编数据脚本和可编辑图像。一致构建涵盖英文版 1.0、1.1、1.2 修订版、调试构建以及德文初版，并逐一与保存的 SHA-1 比对。另有使用现代 GCC 的构建目标，不以一致为目标。",
+    "evidence_url": "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README still calls the project a disassembly and lists hashes for English pokeruby.gba and pokesapphire.gba; INSTALL.md adds 1.1/1.2 revision targets, 1.0-only debug targets and first-edition German builds, and the tree holds 14 SHA-1 files. No asm/ directory remains in the reviewed tree: game code is C under src/, apart from handwritten startup and library assembly and functions marked NONMATCHING whose matching builds keep inline assembly. The contributor guide still describes the earlier asm-to-C workflow.",
+      "The build reads no original ROM: code, scripts, text, graphics and sound sources are in the repository, so the repository carries the game's content in source form. German builds need a setup script before compiling and a teardown script before any English build.",
+      "INSTALL.md lists Linux, macOS with Xcode Command Line Tools, and Windows through WSL or the devkitPro MSYS2 environment, plus build-essential, git, libpng and devkitARM. pret's agbcc must be cloned, built and installed into the tree; make modern uses devkitARM's arm-none-eabi-gcc instead, and other toolchains can be set with TOOLCHAIN.",
+      "With COMPARE=1 the Makefile checks the selected build against its SHA-1 file. The GitHub Actions workflow compares the English 1.0/1.1/1.2 Ruby and Sapphire builds and German first-edition variants, then compiles the NONMATCHING sources and the modern target without comparison; README's build badge still points to Travis CI. Matching hashes show identical ROM bytes, not that NONMATCHING C or modern builds behave identically. This collection did not build the ROMs.",
+      "No license file is present, so reuse terms are unstated; the original game's content remains its rights holders', and agbcc and devkitPro components keep their own terms. The reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/INSTALL.md",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/CONTRIBUTING.md",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/Makefile",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/config.mk",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/ruby.sha1",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/sapphire.sha1",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/.github/workflows/build.yml",
+      "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/src/money.c"
+    ]
   }
 ]

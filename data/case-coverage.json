@@ -11472,13 +11472,27 @@
       "reported_source_urls": [
         "https://github.com/pret/pokeruby"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 55 (README line 538) lists pret/pokeruby under ⚡ Pokémon Ruby & Sapphire. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 55 行（README 第 538 行）在 ⚡ Pokémon Ruby & Sapphire 下列出 pret/pokeruby。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, install and contributor guides, Makefile, configuration, hash manifests and CI workflow support the reported Ruby and Sapphire reconstruction as a matching C decompilation, although the README still calls it a disassembly. The full mapping covers these matching builds; NONMATCHING and modern targets are recorded as unverified alternatives, and matching was not rerun here. The missing license and the game content carried in the tree are recorded.",
+      "reason_zh": "固定版本的 README、安装与贡献指南、Makefile、配置、哈希清单及 CI 工作流，支持该报告所述红宝石／蓝宝石重建为一致构建的 C 反编译，尽管 README 仍称其为反汇编。完整映射覆盖这些一致构建；NONMATCHING 与 modern 目标记为未经验证的替代构建，一致性本次未重新运行。缺少许可证及仓库内含游戏内容的情况均已记录。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/README.md",
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/INSTALL.md",
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/CONTRIBUTING.md",
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/Makefile",
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/ruby.sha1",
+        "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/.github/workflows/build.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokeruby-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-056",
@@ -14534,18 +14548,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 132,
-      "insufficient-evidence": 104,
-      "pending": 355
-    },
-    "units_by_state": {
-      "already-curated": 131,
+      "already-curated": 133,
       "insufficient-evidence": 104,
       "pending": 354
     },
-    "primary_reviewed_units": 175,
-    "catalog_linked_occurrences": 143,
-    "distinct_resource_ids": 137,
+    "units_by_state": {
+      "already-curated": 132,
+      "insufficient-evidence": 104,
+      "pending": 353
+    },
+    "primary_reviewed_units": 176,
+    "catalog_linked_occurrences": 144,
+    "distinct_resource_ids": 138,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
