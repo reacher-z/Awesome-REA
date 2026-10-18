@@ -3965,5 +3965,61 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-fidelitygpt",
+    "title": "FidelityGPT: Correcting Decompilation Distortions with Retrieval Augmented Generation",
+    "title_zh": "FidelityGPT：利用检索增强生成纠正反编译失真",
+    "authors": [
+      "Zhiping Zhou",
+      "Xiaohong Li",
+      "Ruitao Feng",
+      "Yao Zhang",
+      "Yuekang Li",
+      "Wenbu Feng",
+      "Yunqian Wang",
+      "Yuqing Li"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The Internet Society’s Crossref deposit and the official NDSS paper identify publication year 2026. No finer publication date is asserted from the 23–27 February 2026 symposium dates.",
+    "date_basis_zh": "Internet Society 提交的 Crossref 元数据与 NDSS 官方论文标明出版年份为 2026；不根据 2026 年 2 月 23–27 日的会议日期推定更精确的出版日期。",
+    "venue": "NDSS 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2510.19615",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-10-22",
+    "doi": "10.14722/ndss.2026.230989",
+    "url": "https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf",
+    "code_url": "https://github.com/ZhouZhiping045/FidelityGPT",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "FidelityGPT post-processes existing decompiler output: an LLM labels lines with six distortion types, such as non-conventional dereferencing, redundant variables and confusing control flow, and then rewrites the labeled lines. Its prompts define the distortion types and add retrieval-augmented context from a manually annotated database of distorted IDA Pro and Ghidra lines. A semantic-intensity algorithm chooses which lines to query, and a variable-dependency analysis carries redundant-variable context across 50-line chunks. On 620 function pairs, the authors report 89% detection accuracy and 83% precision, and correction fix rates of 94% (FR) and 64% (CFR) against 83% and 37% for their DeGPT runs.",
+    "description_zh": "FidelityGPT 对现有反编译器输出进行后处理：由大语言模型为代码行标注六类失真（如非常规解引用、冗余变量和令人困惑的控制流），再改写被标注的行。其提示词定义各失真类型，并从人工标注的 IDA Pro 与 Ghidra 失真代码行数据库中检索增强上下文。语义强度算法负责选择用于查询的代码行，变量依赖分析则在 50 行分块之间传递冗余变量上下文。作者在 620 对函数上报告检测准确率 89%、精确率 83%，纠正的修复率（FR）为 94%、正确修复率（CFR）为 64%，而他们运行的 DeGPT 分别为 83% 和 37%。",
+    "scope_limitations_en": "The 620 pairs are mostly -O0 IDA Pro 7.5 functions sampled from Coreutils, curl, ImageMagick, OpenSSL, PuTTY and SQLite builds in a binary-similarity dataset, across ARM-32, MIPS-32 and x86-32, plus x86-64 TheAlgorithms/C code; separate -O1–-O3 and Ghidra sets test generalization. Ground-truth labels and FR/CFR were assessed manually by the author team against the paper’s criteria. Fix rates count lines marked as fixed and are not semantic-equivalence proofs: the authors note that repaired code often cannot be recompiled or executed. Correction runs on whole functions and may degrade on long ones, and the distortion database, built from 150 IDA Pro and 91 Ghidra lines, may miss rarer anomalies. Main results use GPT-4o at temperature 0.5 and remain stochastic; DeepSeek-chat and temperature-0 runs are reported separately. Training-data exposure of the open-source projects cannot be ruled out.",
+    "scope_limitations_zh": "620 对函数大多取自二进制相似性数据集中 Coreutils、curl、ImageMagick、OpenSSL、PuTTY 与 SQLite 的构建产物，经 IDA Pro 7.5 在 -O0 下反编译，覆盖 ARM-32、MIPS-32 与 x86-32，另含 x86-64 的 TheAlgorithms/C 代码；另有 -O1–-O3 与 Ghidra 数据集用于检验泛化能力。真实标签与 FR／CFR 均由作者团队依照论文标准人工评估。修复率统计的是被标为已修复的行，并非语义等价证明：作者指出修复后的代码往往无法重新编译或执行。纠正阶段以整个函数为单位，函数较长时效果可能下降；失真数据库由 150 行 IDA Pro 与 91 行 Ghidra 代码构建，可能遗漏较少见的异常。主要结果使用温度为 0.5 的 GPT-4o，仍具随机性；DeepSeek-chat 与温度为 0 的结果另行报告。无法排除这些开源项目出现在训练数据中的可能。",
+    "why_fits_en": "Adds LLM-based detection and correction of distortions in decompiler output, complementing DeGPT-style refinement and end-to-end LLM decompilation.",
+    "why_fits_zh": "补充基于大语言模型检测并纠正反编译输出失真的方法，与 DeGPT 式输出优化和端到端大语言模型反编译互补。",
+    "metadata_notes": "The eight-author order follows the NDSS paper page, the PDF, Crossref and arXiv v1, which carries the same DOI. The PDF footer gives ISBN 979-8-9919276-8-0; Crossref lists no pages. The paper’s reference [31] points to the authors’ repository, reviewed at a 2025-09-07 commit. It has no license file, so no reuse terms are inferred; its datasets contain decompiled functions and source code from third-party projects with their own licenses. The snapshot includes the detection and correction scripts, prompt templates, both distortion databases, seven decompiled-function sets with ground truth and a detection evaluator; the -O1–-O3 and Ghidra evaluation sets were not identified in it. Its README requires manual merging of chunked detection output and states that correction must be evaluated manually using the paper’s Table I. The configuration targets an OpenAI-compatible GPT-4o endpoint at temperature 0 with pinned LangChain 0.1 and Chroma dependencies. No code, API calls or experiments were run.",
+    "metadata_notes_zh": "八位作者的顺序以 NDSS 论文页、PDF、Crossref 及 arXiv v1 为准，arXiv 记录载有相同 DOI。PDF 页脚标注 ISBN 979-8-9919276-8-0；Crossref 未列出页码。论文参考文献 [31] 指向作者仓库，本次审阅其 2025-09-07 提交。仓库没有许可证文件，因此不推定任何复用条款；其数据集包含来自第三方项目的反编译函数与源码，这些项目保留各自许可证。该快照包含检测与纠正脚本、提示词模板、两套失真数据库、七组带真实标签的反编译函数以及检测评估脚本；未在其中找到 -O1–-O3 与 Ghidra 评估集。README 要求人工合并分块检测的输出，并说明纠正结果须依照论文表 I 人工评估。配置面向兼容 OpenAI 接口的 GPT-4o 端点，温度为 0，并固定 LangChain 0.1 与 Chroma 依赖版本。本次未运行代码、调用 API 或复现实验。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf",
+      "https://api.crossref.org/works/10.14722/ndss.2026.230989",
+      "https://arxiv.org/abs/2510.19615",
+      "https://github.com/ZhouZhiping045/FidelityGPT/blob/b464960961ec48c63dea16069740b3d8003193bc/README.md",
+      "https://github.com/ZhouZhiping045/FidelityGPT/blob/b464960961ec48c63dea16069740b3d8003193bc/config.ini",
+      "https://github.com/ZhouZhiping045/FidelityGPT/blob/b464960961ec48c63dea16069740b3d8003193bc/requirements.txt",
+      "https://github.com/ZhouZhiping045/FidelityGPT/blob/b464960961ec48c63dea16069740b3d8003193bc/Evaluation/README.md",
+      "https://github.com/ZhouZhiping045/FidelityGPT/tree/b464960961ec48c63dea16069740b3d8003193bc/Dataset"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
