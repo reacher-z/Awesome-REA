@@ -3472,5 +3472,57 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-nero",
+    "title": "Neural reverse engineering of stripped binaries using augmented control flow graphs",
+    "title_zh": "基于增强控制流图的剥离符号二进制神经逆向工程",
+    "authors": [
+      "Yaniv David",
+      "Uri Alon",
+      "Eran Yahav"
+    ],
+    "year": 2020,
+    "publication_date": "2020-11-13",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit gives print and online publication on 2020-11-13, and an archived copy of the ACM article page shows the same publication date. The OOPSLA conference dates and the arXiv versions are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2020-11-13，ACM 文章页面的存档副本也显示同一出版日期。本条目不以 OOPSLA 会议日期或各 arXiv 版本日期代替。",
+    "venue": "Proceedings of the ACM on Programming Languages (OOPSLA 2020)",
+    "publication_status": "journal-article",
+    "arxiv_id": "1902.09122",
+    "arxiv_version_reviewed": "v4",
+    "first_arxiv_date": "2019-02-25",
+    "doi": "10.1145/3428293",
+    "url": "https://dl.acm.org/doi/10.1145/3428293",
+    "pdf_url": "https://arxiv.org/pdf/1902.09122v4",
+    "code_url": "https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Nero predicts names for procedures in stripped x86-64 Linux executables; it does not produce decompiled code. Static analysis reconstructs call sites, including imported API names, and augments their arguments with concrete and abstract values along control-flow paths. LSTM, Transformer and graph neural network encoders over the resulting augmented call-site graph feed a decoder that generates the name as subtokens. On a GNU-package test set the authors report 45.53 F1 for Nero-GNN, against 35.52 for an adapted DIRE and 33.66 for Debin.",
+    "description_zh": "Nero 为剥离符号的 x86-64 Linux 可执行文件中的过程预测名称，并不生成反编译代码。它通过静态分析重建调用点（包括导入的 API 名称），并沿控制流路径为参数补充具体值与抽象值。LSTM、Transformer 与图神经网络编码器处理由此得到的增强调用点图，再由解码器以子词序列生成名称。在 GNU 软件包测试集上，作者报告 Nero-GNN 的 F1 为 45.53，改造后的 DIRE 为 35.52，Debin 为 33.66。",
+    "scope_limitations_en": "Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.",
+    "scope_limitations_zh": "评测使用来自纯 C 语言 GNU 软件包、构建为 x86-64 Linux 可执行文件的 67,246 个过程；在剔除 C++ 可执行文件、测试程序、静态链接软件包及同一软件包的重复版本后，按软件包划分为 60,403／2,034／4,809 个样本。标签取自剥离前的名称，F1 按名称子词计算，因此输出是模型学到的建议，而非恢复出的原始符号。模拟 API 名称混淆（将 .dynstr 节清零）会使 Nero-GNN 的 F1 降至 38.83；论文未处理加壳和更强的混淆。每个过程至少需要一个可静态检测的调用点，内联过程无法命名。数据生成依赖已授权的 IDA Pro（测试版本 6.95）识别过程边界并导出，另需 angr 与 LLVM 10；模型代码使用 TensorFlow 1.13.1。本条不对与当前工具版本的兼容性作任何判断。",
+    "why_fits_en": "Adds learned procedure-name prediction for stripped binaries driven by static call-site analysis, complementing the variable-name and type-recovery papers in this section.",
+    "why_fits_zh": "补充由静态调用点分析驱动、面向剥离符号二进制的过程名称学习式预测，与本节的变量名和类型恢复论文互补。",
+    "metadata_notes": "ACM metadata in Crossref and in an Internet Archive copy of the ACM article page (the live page served a browser check during review) give the sentence-case title, volume 4, issue OOPSLA, article 225, pages 1–28; arXiv and the paper PDF capitalise it as 'Neural Reverse Engineering of Stripped Binaries using Augmented Control Flow Graphs'. Crossref records a CC BY-NC-SA 4.0 licence for the article. arXiv has four versions, v1 of 2019-02-25 to v4 of 2020-10-16, and links the DOI; v4 was reviewed and serves as the PDF because the ACM-hosted PDF was not retrieved. The README calls the repository the official Nero-GNN implementation; the reviewed 2021-05-10 commit carries GPL-3.0. Data generation targets Ubuntu 20 with Python 3.8, LLVM 10, angr and a licensed IDA Pro (IDAPython 2.7 scripts tested with 6.95); the model uses Python 3.6 and TensorFlow 1.13.1. The README warns that regenerated representations may differ slightly from the Zenodo copies after a Python 3 port. Zenodo (concept DOI 10.5281/zenodo.4081641) hosts the binaries, procedure representations and a trained GNN model under a CC-BY-4.0 record label. No archives were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 中的 ACM 元数据及 ACM 文章页面的互联网档案馆存档副本（审阅时实时页面显示浏览器验证）给出句首大写形式的标题、第 4 卷、OOPSLA 期、第 225 篇、第 1–28 页；arXiv 与论文 PDF 将标题写作“Neural Reverse Engineering of Stripped Binaries using Augmented Control Flow Graphs”。Crossref 记录该文章采用 CC BY-NC-SA 4.0 许可。arXiv 共有四个版本，从 2019-02-25 的 v1 到 2020-10-16 的 v4，并链接该 DOI；本次审阅 v4，并因未能获取 ACM 托管的 PDF 而以其作为 PDF 链接。README 称该仓库为 Nero-GNN 的官方实现，所审阅的 2021-05-10 提交采用 GPL-3.0。数据生成面向 Ubuntu 20，需要 Python 3.8、LLVM 10、angr 及已授权的 IDA Pro（IDAPython 2.7 脚本以 6.95 测试）；模型使用 Python 3.6 与 TensorFlow 1.13.1。README 提示，由于移植到 Python 3，重新生成的表示可能与 Zenodo 中的副本略有差异。Zenodo（概念 DOI 10.5281/zenodo.4081641）托管二进制文件、过程表示及训练好的 GNN 模型，记录标注为 CC-BY-4.0。本次未下载任何压缩包，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3428293",
+      "https://web.archive.org/web/20250415223553/https://dl.acm.org/doi/10.1145/3428293",
+      "https://api.crossref.org/works/10.1145/3428293",
+      "https://arxiv.org/abs/1902.09122",
+      "https://arxiv.org/pdf/1902.09122v4",
+      "https://github.com/tech-srl/Nero/blob/7dac9f5748974ea8f39b5f29bb3c7d33f971077e/README.md",
+      "https://github.com/tech-srl/Nero/blob/7dac9f5748974ea8f39b5f29bb3c7d33f971077e/LICENSE",
+      "https://github.com/tech-srl/Nero/blob/7dac9f5748974ea8f39b5f29bb3c7d33f971077e/requirements.txt",
+      "https://zenodo.org/api/records/4099685",
+      "https://zenodo.org/api/records/4095276"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
