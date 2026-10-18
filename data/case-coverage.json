@@ -4694,12 +4694,17 @@
         "https://x.com/i/status/2110610758212145408",
         "https://github.com/bassnova42/rokoinput"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository is a source-only macOS dictation input method built on Apple's Speech framework and InputMethodKit, enforcing on-device recognition from v0.4.0, with local history and statistics, unit tests and a personal non-commercial license. The author's post says REA was first used to study a foreign input method, but the repository does not name that product or document the investigation, reference behavior or any comparison, so it reads as an independent implementation rather than a documented reconstruction. Retain the lead without a catalog mapping; this is not a judgment of the app's privacy or usability.",
+      "reason_zh": "固定版本仓库是一个仅提供源码的 macOS 语音输入法，基于 Apple 的 Speech 框架与 InputMethodKit，自 v0.4.0 起强制设备端识别，带本地历史与统计、单元测试，并采用仅限个人非商业使用的许可证。作者帖子称先用 REA 研究了一款国外输入法，但仓库未写明该产品，也未记录调查过程、参考行为或任何对照，因此它更像一个独立实现，而非有文档支撑的重建。保留此线索而不建立目录映射；这不是对该应用隐私性或可用性的评判。",
+      "primary_evidence_urls": [
+        "https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md",
+        "https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/LICENSE",
+        "https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/Sources/main.swift",
+        "https://x.com/i/status/2110610758212145408"
+      ],
       "catalog_matches": []
     },
     {
@@ -13827,15 +13832,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 89,
-      "insufficient-evidence": 77,
-      "pending": 425
+      "insufficient-evidence": 78,
+      "pending": 424
     },
     "units_by_state": {
       "already-curated": 88,
-      "insufficient-evidence": 77,
-      "pending": 424
+      "insufficient-evidence": 78,
+      "pending": 423
     },
-    "primary_reviewed_units": 108,
+    "primary_reviewed_units": 109,
     "catalog_linked_occurrences": 100,
     "distinct_resource_ids": 94,
     "distinct_paper_ids": 1,
