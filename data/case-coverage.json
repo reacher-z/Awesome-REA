@@ -11742,13 +11742,29 @@
       "reported_source_urls": [
         "https://github.com/tylergraydev/UltraSunnyMoon"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 62 (README line 615) lists tylergraydev/UltraSunnyMoon under ⚡ Pokémon Ultra Sun. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 62 行（README 第 615 行）在 ⚡ Pokémon Ultra Sun 下列出 tylergraydev/UltraSunnyMoon。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, status, setup, target, rebuild, source and runtime notes document an REA-and-Ghidra workflow that rebuilds the user’s Ultra Sun base executable and integrates two behavior-tested, nonmatching C routines. Full mapping covers this partial hybrid reconstruction as the collection row describes it; exact matching, compiler identity, module loading and broad gameplay remain open by the project’s own account. Author-documented REA and agent use is recorded as reported, not independently reproduced.",
+      "reason_zh": "固定版本的 README、状态、环境配置、目标、重建、源码及运行记录，说明了以 REA 与 Ghidra 重建使用者自备的究极之日基础版可执行文件，并集成两个经行为测试但不一致的 C 例程的工作流程。完整映射覆盖合集所述的这一部分混合重建；按项目自述，精确匹配、编译器识别、模块加载和广泛游戏行为仍未解决。作者记录的 REA 与代理使用按其报告收录，未经独立复现。",
+      "primary_evidence_urls": [
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/README.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/STATUS.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/SETUP.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/TARGET.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/MAIN_REBUILD.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/FIRST_SOURCE.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/docs/RUNTIME.md",
+        "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/AGENTS.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ultrasunnymoon-rea-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-063",
@@ -14724,18 +14740,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 141,
-      "insufficient-evidence": 125,
-      "pending": 325
-    },
-    "units_by_state": {
-      "already-curated": 140,
+      "already-curated": 142,
       "insufficient-evidence": 125,
       "pending": 324
     },
-    "primary_reviewed_units": 205,
-    "catalog_linked_occurrences": 152,
-    "distinct_resource_ids": 146,
+    "units_by_state": {
+      "already-curated": 141,
+      "insufficient-evidence": 125,
+      "pending": 323
+    },
+    "primary_reviewed_units": 206,
+    "catalog_linked_occurrences": 153,
+    "distinct_resource_ids": 147,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

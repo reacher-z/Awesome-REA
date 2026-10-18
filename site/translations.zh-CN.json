@@ -2287,5 +2287,15 @@
       "约 100 个反编译文件含有 TARGET_PC 改动，可选的 PC_ENHANCEMENTS 增加设置项、MSAA 和材质包加载。项目称 Windows 版已全面测试，并记录一处尚未解决的低音失真问题，但没有为移植版发布自动化测试或逐字节一致性检查。与 GameCube 原版的等价性未获证实，本次审阅也未构建或运行。",
       "LICENSE 说明反编译代码沿用 ac-decomp 的 CC0 1.0，pc/ 层及 TARGET_PC 新增代码采用 MIT，FixNES 另附 MIT 声明；GitHub 未识别出单一许可证。游戏内容权利另计。README 披露仅在移植代码中使用了 Claude 等 AI 工具；未确立 REA 使用。"
     ]
+  },
+  "ultrasunnymoon-rea-case": {
+    "name": "UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建",
+    "requirements": [
+      "README 报告原版与组合重建版都能重现可操作的卧室场景游玩，两处 C 替换均经行为测试但与原字节不一致，且不主张任何完成百分比。STATUS.md（2026-10-12 更新）列出：未改动的主可执行文件和一个 CRO 模块已逐字节重建，已集成 __aeabi_vec_ctor_nocookie_nodtor 辅助函数和一个 36 字节的启动 BSS 清零例程。混合构建仍主要由原始代码和素材组成，需要 3DS 运行环境；原生 PC 移植属于后续阶段。",
+      "需使用者自备《宝可梦 究极之日》基础版 0 容器（title 00040000001b5000，产品代码 CTR-P-A2AA）并保存在本地；v1.2 更新仅作为单独的比较输入。TARGET.md 记录作者基础容器的 SHA-256 为 3bb3b4eb0d17f18875d8b847c871dc97a172beeda03ce99e59e62a78ed5c1a53，并说明这些哈希只标识所用转储，而非所有副本。零售容器、提取的代码、原始 REA 档案、游戏画面和模拟器日志均保存在被忽略的私有目录中。",
+      "SETUP.md 在 Windows 的 Ubuntu WSL 中使用 Node.js 22、Python 3、GCC 和 readelf。引导脚本从源码修订 7ae3c50a9d49c480035855de9fcc4484befacd92（包版本 6.4.0）构建 REA，并搭配 Ghidra 12.1.4 与 Temurin JDK 21 运行，另用 Capstone 5.0.7 作为独立解码器。重建使用固定修订的 3DS Decomp Pipeline，C 替换以 Ubuntu 的 gcc-arm-none-eabi（GCC 10.3.1）编译，运行检查使用 Azahar 2126.2 及其 RPC 接口。",
+      "项目报告对未改动重建做了独立字节核对，对替换例程做了隔离行为测试与运行时 RPC 回读，并有 60 项源码自带测试通过。运行证据只是同一段录制输入下有限的启动、设置与卧室场景对比；例程执行次数、战斗、野外地图覆盖、完整录像播放和时序确定性仍未验证。测试使用项目自有的样例数据而非零售字节；本合集未运行这些工具或游戏。",
+      "README 规定通过 REA 与 Ghidra 进行可供代理访问的分析，并要求 AI 辅助的重建必须依据二进制证据审查；AGENTS.md 和 HANDOFF.md 面向继续工作的代理会话编写，RUNTIME.md 记录了由独立审查代理检查画面的过程。仓库没有许可证文件，GitHub 也未识别出许可证；项目自称是与 Nintendo、Game Freak 及 The Pokémon Company 无关的独立爱好者研究。不主张运行复现。"
+    ]
   }
 }
