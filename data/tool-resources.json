@@ -6634,5 +6634,37 @@
       "https://github.com/N0zoM1z0/th08-web/releases/tag/v0.1.0",
       "https://th08-web.pages.dev/"
     ]
+  },
+  {
+    "id": "ipsw",
+    "name": "ipsw",
+    "url": "https://github.com/blacktop/ipsw",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "app",
+      "binary"
+    ],
+    "description_en": "Command-line toolkit for Apple firmware research and reverse engineering. It downloads and unpacks IPSWs, OTAs and KDKs and compares builds; inspects Mach-O load commands, symbols, signatures and entitlements with ARM64 disassembly; finds symbols and cross-references in dyld shared caches, extracts dylibs and dumps Objective-C headers and Swift metadata; extracts KEXTs and compares kernelcaches; and parses IMG4, decrypts AEA archives and inspects iBoot and coprocessor firmware.",
+    "description_zh": "面向 Apple 固件研究与逆向工程的命令行工具包。可下载并解包 IPSW、OTA 和 KDK 并比较不同构建；检查 Mach-O 的加载命令、符号、签名和权限，并反汇编 ARM64 代码；在 dyld 共享缓存中查找符号和交叉引用、提取 dylib、导出 Objective-C 头文件并查看 Swift 元数据；提取 KEXT 并比较 kernelcache；还能解析 IMG4、解密 AEA 归档，以及检查 iBoot 和协处理器固件。",
+    "evidence_url": "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v3.1.739, published 2026-10-16, with Linux, macOS, Windows and iOS builds plus deb, rpm, apk and Arch packages; the reviewed master commit is three cache and documentation commits ahead. Install with Homebrew (tap or core formula), snap or Scoop. The extras build (Unicorn-based dyld emulation, libusb device commands) and the Frida build are macOS only. Source builds need a C toolchain for CGO and, per the README, Go 1.26+, although go.mod declares go 1.27.",
+      "Firmware, caches and binaries are supplied by the user or fetched with the download commands. The README's device and App Store Connect commands are outside this entry's reverse-engineering scope. With --dec, macho disass and dyld disass send disassembly to the LLM provider chosen with --dec-llm: hosted OpenAI-compatible, Anthropic, Gemini or router APIs, ACP agent CLIs, or local Ollama. The separate ipswd daemon exposes a REST API, and the README points agents to the separate ipsw-skill repository, which was not reviewed.",
+      "MIT license. The README notes that extracted dylibs can still reference metadata elsewhere in the cache, so it recommends Objective-C analysis on the cache itself. LLM decompilation output is model-generated and needs verification. No firmware was downloaded or analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/README.md#L68-L80",
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/README.md#L137-L168",
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/www/docs/guides/decompiler.md",
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/www/docs/getting-started/installation.md",
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/go.mod",
+      "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/LICENSE",
+      "https://github.com/blacktop/ipsw/releases/tag/v3.1.739"
+    ]
   }
 ]

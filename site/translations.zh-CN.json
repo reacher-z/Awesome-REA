@@ -2766,5 +2766,13 @@
       "WEB_ARCHITECTURE.md 记录了作者使用自选零售文件完成的检查：在 Chromium 及较早的 Firefox 桥接方案上完整通关 Lunatic Final-B 路线、一次 Stage 6B 练习、证明 IndexedDB 中不含 DAT 的持久化测试，以及在 SwiftShader 与 llvmpipe 软件渲染器下接近 60 Hz 的回放驱动帧节奏采样。这些是有限范围的正确性观察，不是硬件基准或二进制比较；本合集未运行任何检查。",
       "MIT 许可覆盖仓库代码与文档，不涵盖原游戏、DAT 文件、音乐或图像；固定版本的 Detours 子模块另有条款。README 称此仓库是 N0zoM1z0/th08 面向网页的分支，并保留其历史。所审网页移植来源未确立 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "ipsw": {
+    "name": "ipsw Apple 固件研究工具包",
+    "requirements": [
+      "审阅时的版本为 v3.1.739，发布于 2026-10-16，提供 Linux、macOS、Windows 和 iOS 构建，以及 deb、rpm、apk 和 Arch 软件包；所审阅的 master 分支提交比该版本多三个缓存与文档提交。可通过 Homebrew（作者的 tap 或核心公式）、snap 或 Scoop 安装。extras 构建（基于 Unicorn 的 dyld 模拟、依赖 libusb 的设备命令）和 Frida 构建仅支持 macOS。从源码构建需要用于 CGO 的 C 工具链，README 要求 Go 1.26+，但 go.mod 声明的是 go 1.27。",
+      "固件、缓存和二进制由使用者提供，或通过下载命令获取。README 中的设备与 App Store Connect 命令不在本条目的逆向工程范围内。使用 --dec 时，macho disass 和 dyld disass 会把反汇编发送给 --dec-llm 指定的 LLM 服务：托管的 OpenAI 兼容、Anthropic、Gemini 或路由 API、ACP 智能体命令行，或本地 Ollama。独立的 ipswd 守护进程提供 REST API；README 还建议智能体使用独立的 ipsw-skill 仓库，本次未审阅该仓库。",
+      "采用 MIT 许可。README 指出提取出的 dylib 仍可能引用缓存中其他位置的元数据，因此建议直接在缓存上进行 Objective-C 分析。LLM 反编译输出由模型生成，需要核实。本次未下载或分析任何固件。"
+    ]
   }
 }
