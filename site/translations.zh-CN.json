@@ -2794,5 +2794,15 @@
       "所审源码树中没有 CI 工作流、测试套件或还原度对比，README 也说明尚未在原生渲染器上完整通关。画面一致性说法均为项目主张；本合集未构建或运行该移植。",
       "仓库及其 GitHub 元数据均未声明项目代码的许可证；rexglue 分支附有源自 Xenia 的 BSD-3-Clause 声明，《Skate 3》内容的权利归 Electronic Arts 所有。所审来源未确立 AI 或 REA 参与，也不主张运行复现。"
     ]
+  },
+  "decomp-wtf-agent-decompilation": {
+    "name": "decomp.wtf 智能体反编译工具",
+    "requirements": [
+      "所审阅的固定版本是已归档仓库中宣布停止开发的提交，对应包版本 0.10.6，README 称这是最后一个可安装的版本。作者不再修复问题、审阅拉取请求或发布新版本；已安装的副本仍可使用，但不会更新。它可在 Linux 上运行，也可在 Windows 上通过自带的 WSL 2 发行版运行（标注为不稳定）；不支持 macOS。需要 Python 3.12 或更高版本，安装脚本会配置 uv、应用本身、固定版本且经过校验的旧版编译器，以及 m2c 初稿反编译器。",
+      "智能体通过本地 decomp mcp 服务，或添加 decompile 技能的 Claude Code 插件接入。README 列出 Claude Code、Codex CLI、Antigravity CLI、opencode、其他 MCP 客户端，以及适用于 OpenAI 兼容 API（含本地模型）的内置循环。智能体只获得 decomp.wtf 自身的工具，没有 shell。模型费用由用户自付；作者报告用 Claude Code 处理一个小函数约需 8 美分，并提醒大型函数需要多得多的尝试。",
+      "用户需自备 ROM、光盘镜像或程序文件。除一个由公有领域代码和 zlib 构建的 N64 演示 ROM 外，工具不含游戏代码或 ROM。IDO、CodeWarrior 等专有旧版编译器仅在用户同意后才会安装。继续公开反编译项目时会在本地克隆该项目并运行其构建脚本，因此 README 建议只分叉可信的项目。",
+      "README 将 GameCube、Wii 与 N64 列为推荐平台，PlayStation、PlayStation 2、Game Boy Advance 与 DS 列为测试版，后者主要用自制游戏测试。它报告已在若干具名商业游戏上测试导入，导出的项目能逐字节重建输入，GameCube 与 Wii 文件会在 dtk-template 项目中链接并通过校验和检查。这些仍是作者陈述：仓库有 pytest 测试套件，但固定版本中没有 CI 工作流，也未公布任何游戏的结果；本合集未运行任何内容。",
+      "仓库采用 MIT 许可。README 要求用户只处理自己拥有的游戏、不得规避复制保护、不得发布自己不享有权利的游戏的反编译代码，并遵守各公开项目的贡献规则，同时指出许多社区反编译项目拒绝 AI 编写的贡献。工具不会自动向上游提交任何内容。项目声明与其所依赖的工具均无关联，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

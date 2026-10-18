@@ -6822,13 +6822,30 @@
         "https://x.com/i/status/2110905152173400298",
         "https://x.com/i/status/2111166914919875063"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned, archived repository establishes decomp.wtf as a local app and MCP server that drives AI agents toward byte-matching decompilation of user-owned games. Its final README confirms the reported discontinuation, the MIT license and the request to use only owned games and not share produced code. The full mapping covers it as an agent integration, not a reconstruction case: no game result is published, and platform, matching and cost statements remain author-reported. Third-party posts’ engagement figures are not assessed, and no REA use is established.",
+      "reason_zh": "固定版本的已归档仓库确立了 decomp.wtf：一款本地应用与 MCP 服务，驱动 AI 智能体对用户自有游戏进行逐字节一致的反编译。其最终 README 证实了所报道的停止开发、MIT 许可，以及只处理自有游戏、不分享产出代码的请求。完整映射将其作为智能体集成而非重建案例覆盖：项目未公布任何游戏结果，平台、一致性与费用说明仍为作者陈述。第三方帖子的互动数据未予评估，也未确立 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/LICENSE",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/pyproject.toml",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/skills/decompile/SKILL.md",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/.mcp.json",
+        "https://x.com/i/status/2110899022932418745",
+        "https://x.com/i/status/2111084605973672036",
+        "https://x.com/i/status/2110905152173400298",
+        "https://x.com/i/status/2111166914919875063"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "decomp-wtf-agent-decompilation",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-local-office-workbench-idea",
@@ -9598,13 +9615,26 @@
       "reported_source_urls": [
         "https://github.com/i12bp8/decomp.wtf"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The listed repository, reviewed at its pinned discontinuation commit, is the decomp.wtf agent-decompilation app and MCP server. The full mapping covers it as an agent integration: the README documents its workflow, platforms, owned-game rules and discontinuation, while matching, platform and cost statements remain author-reported. No game result, runtime reproduction or REA use is established.",
+      "reason_zh": "所列仓库在宣布停止开发的固定提交上经过审阅，即 decomp.wtf 智能体反编译应用与 MCP 服务。完整映射将其作为智能体集成覆盖：README 记录了其工作流程、平台、自有游戏规则与停止开发声明，而一致性、平台与费用说明仍为作者陈述。未确立任何游戏结果、运行复现或 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/LICENSE",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/pyproject.toml",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/skills/decompile/SKILL.md",
+        "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/.mcp.json"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "decomp-wtf-agent-decompilation",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:awesome-decomp-games",
@@ -15373,18 +15403,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 179,
+      "already-curated": 181,
       "insufficient-evidence": 146,
-      "pending": 266
+      "pending": 264
     },
     "units_by_state": {
-      "already-curated": 178,
+      "already-curated": 179,
       "insufficient-evidence": 146,
-      "pending": 265
+      "pending": 264
     },
-    "primary_reviewed_units": 264,
-    "catalog_linked_occurrences": 189,
-    "distinct_resource_ids": 184,
+    "primary_reviewed_units": 265,
+    "catalog_linked_occurrences": 191,
+    "distinct_resource_ids": 185,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -6731,5 +6731,35 @@
       "https://github.com/mchughalex/rexglue-skate3/blob/7eb0faf7787f5e01333c228b8e3f03c32f7295ea/LICENSE",
       "https://github.com/mchughalex/skate3recomp/releases/tag/v2.0.2"
     ]
+  },
+  {
+    "id": "decomp-wtf-agent-decompilation",
+    "name": "decomp.wtf",
+    "url": "https://github.com/i12bp8/decomp.wtf",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A discontinued local app and MCP server that hands AI coding agents one function of a user-owned console game at a time, compiles each C attempt with the game’s period compiler and accepts it only when the linked result matches the original bytes. It can start a project from a ROM or disc image, or work inside forks of public decompilation projects listed on decomp.dev, where objdiff judges the result. Its final commit, dated 15 October 2026, marks it discontinued in response to opposition in the decompilation community; the code stays under MIT without further fixes or releases.",
+    "description_zh": "一款已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体，用该游戏当年的编译器编译每次提交的 C 代码，只有链接后的结果与原始字节一致才算通过。它可从 ROM 或光盘镜像新建项目，也可在 decomp.dev 所列公开反编译项目的分叉中工作，由 objdiff 判定结果。其 2026 年 10 月 15 日的最后一次提交宣布停止开发，理由是反编译社区的反对；代码仍以 MIT 许可保留，但不再修复或发布新版本。",
+    "evidence_url": "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is the discontinuation commit of the archived repository, at package version 0.10.6, which the README names as the last installable release. The author will not fix issues, review pull requests or publish releases; existing installs keep working without updates. It runs on Linux and, marked unstable, on Windows inside its own WSL 2 distribution; macOS is unsupported. It needs Python 3.12 or later, and its installer sets up uv, the app, pinned checksum-verified period compilers and the m2c draft decompiler.",
+      "Agents connect through the local decomp mcp server or a Claude Code plugin that adds a decompile skill. README lists Claude Code, Codex CLI, Antigravity CLI, opencode, other MCP clients and a built-in loop for OpenAI-compatible APIs, including local models. Agents receive only decomp.wtf’s tools, without a shell. Users pay their own model provider; the author reports about 8 cents for a small function with Claude Code and warns that large functions take many more attempts.",
+      "Users supply their own ROM, disc image or program file. The tool contains no game code or ROMs apart from a bundled demo N64 ROM built from public-domain code and zlib. Proprietary period compilers such as IDO and CodeWarrior are installed only after the user agrees. Continuing a public decomp clones that project locally and runs its build scripts, so the README advises forking only trusted projects.",
+      "README lists GameCube, Wii and N64 as recommended and PlayStation, PlayStation 2, Game Boy Advance and DS as beta, tested mostly on homemade games. It reports imports tested on named commercial titles and exports that rebuild the input byte for byte, with GameCube and Wii files linked and checksum-checked in dtk-template projects. These remain author statements: the repository has a pytest suite but no CI workflow at the pin, publishes no game results, and this collection ran nothing.",
+      "The repository is MIT-licensed. Its README asks users to work only on games they own, not to circumvent copy protection, not to publish decompiled code of games whose rights they do not hold, and to follow each public project’s contribution rules, noting that many community decomps reject AI-written contributions. Nothing is sent upstream automatically. The project disclaims affiliation with the tools it builds on, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/LICENSE",
+      "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/pyproject.toml",
+      "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/skills/decompile/SKILL.md",
+      "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/.mcp.json",
+      "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/site/tools/build_sim.py"
+    ]
   }
 ]
