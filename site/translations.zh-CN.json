@@ -2699,5 +2699,13 @@
       "报告的验证包括：将记录车速与按 haversine 公式推算的车速比较（误差低于 1%），以 1 g 核对垂直加速度均值，依据 GPS 航向变化拟合约 28 的陀螺仪除数，并将海拔与赛道地形比对。CRC 多项式、周期与计时字段、结束记录中的两个字段以及陀螺仪的精确标定仍未知或属经验值。CI 在 Python 3.9、3.11 与 3.13 上运行测试并要求 100% 分支覆盖率，另在 Ubuntu 与 macOS 上运行 Go 测试，将 Go 输出与仓库中的 Python 参考 CSV 和 GPX 比较；本合集未运行这些测试。",
       "项目声明采用 MIT，并称其独立于 Race-Keeper 和 Trivinci Systems LLC，未获其认可。解读范围限于作者检查过的硬件版本和录制数据，其他设备或固件版本可能不同。所审阅来源未确立 REA 使用。"
     ]
+  },
+  "pwndbg": {
+    "name": "pwndbg GDB/LLDB 调试增强插件",
+    "requirements": [
+      "兼容性表：pwndbg-gdb 需要 Python 3.10+ 与 GDB 12.1+（在 Ubuntu 22.04/24.04 上经过测试）；pwndbg-lldb 需要 Python 3.12+ 与 LLDB 19+，其支持被标为实验性／早期阶段；qemu-user 需要 QEMU 8.1+（vmmap 依赖其 vFile API），qemu-system 需要 QEMU 6.2+。在 macOS 上调试 Mach-O 需使用 LLDB，qemu-user 调试仅支持 GDB。",
+      "审阅时的版本为 2026.09.15，发布于 2026-09-20，提供便携压缩包（含 macOS 便携版）和 deb/rpm/apk/Arch 软件包；安装指南涵盖 Linux 和 macOS，可通过安装脚本、Homebrew、Nix、发行版软件包或源码安装。所审阅的 dev 分支提交声明的版本相同。",
+      "采用 MIT 许可。反编译器集成需另行安装相应反编译器。本次未运行任何调试会话。"
+    ]
   }
 }

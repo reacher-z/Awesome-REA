@@ -6397,5 +6397,34 @@
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/.github/workflows/ci.yml",
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/LICENSE"
     ]
+  },
+  {
+    "id": "pwndbg",
+    "name": "pwndbg",
+    "url": "https://github.com/pwndbg/pwndbg",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python plug-in that loads into GDB, or runs as a REPL around LLDB, to make live program state easier to inspect. Each stop prints a context of registers, stack, call frames and annotated disassembly with recursively dereferenced pointers; commands cover memory maps, search, telescoping, heap allocators and Go values, with Capstone/Unicorn emulation and decompiler integration for IDA, Binary Ninja, Ghidra and angr-management. The README lists Linux ELF, macOS Mach-O, QEMU user/system and embedded Cortex-M or RISC-V/32 debugging.",
+    "description_zh": "可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。",
+    "evidence_url": "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Compatibility table: pwndbg-gdb needs Python 3.10+ and GDB 12.1+ (tested on Ubuntu 22.04/24.04); pwndbg-lldb needs Python 3.12+ and LLDB 19+, and its support is marked experimental/early-stage; qemu-user needs QEMU 8.1+ (its vFile API is needed for vmmap) and qemu-system QEMU 6.2+. Mach-O debugging on macOS uses LLDB, and qemu-user debugging is GDB only.",
+      "Release at review: 2026.09.15, published 2026-09-20, with portable archives, deb/rpm/apk/Arch packages, including macOS portable builds; the setup guide covers Linux and macOS through an install script, Homebrew, Nix, distro packages and source installs. The reviewed dev commit declares the same version.",
+      "MIT license. Decompiler integration needs the separately installed decompiler. No debugging sessions were run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/README.md#L54-L81",
+      "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/docs/features.md",
+      "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/docs/setup.md",
+      "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/pyproject.toml",
+      "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/LICENSE.md",
+      "https://github.com/pwndbg/pwndbg/releases/tag/2026.09.15"
+    ]
   }
 ]
