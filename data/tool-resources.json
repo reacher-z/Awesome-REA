@@ -5400,5 +5400,33 @@
       "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/LICENSE",
       "https://decomp.dev/Yokimitsuro/khdays-decomp"
     ]
+  },
+  {
+    "id": "rtl-433",
+    "name": "rtl_433",
+    "url": "https://github.com/merbanan/rtl_433",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Receives and decodes transmissions from ISM-band devices such as weather sensors, remote controls, doorbells and alarm sensors, using RTL-SDR or SoapySDR receivers or recorded I/Q files, and emits decoded fields as JSON, CSV, MQTT and other outputs. For signals no built-in decoder recognizes, a pulse analyzer reports OOK/FSK timings and hints for a flexible -X decoder that slices frames into bits; its analysis guide leaves mapping those bits to values to the analyst, working from known readings.",
+    "description_zh": "接收并解码 ISM 频段设备（如气象传感器、遥控器、门铃和报警传感器）的无线传输，可使用 RTL-SDR 或 SoapySDR 接收机，也可读取录制的 I/Q 文件，并以 JSON、CSV、MQTT 等格式输出解码字段。对内置解码器无法识别的信号，脉冲分析器会报告 OOK/FSK 时序，并给出灵活 -X 解码器的提示，用于将帧切分为比特；按其分析指南，把这些比特对应到具体数值仍需分析者依据已知读数完成。",
+    "evidence_url": "https://github.com/merbanan/rtl_433/blob/80f7bcc3a3dc6edf537544593bf367241a225215/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Live reception needs an RTL2832-based RTL-SDR dongle or a SoapySDR device; the README names LimeSDR, PlutoSDR, HackRF One and SoapyRemote among actively tested devices, and rtl_tcp servers are accepted. Without a receiver, it reads recorded CU8, CS16 or CF32 I/Q and AM sample files, and -S saves captured signals as files.",
+      "Written in portable C99 and built with CMake; RTL-SDR and SoapySDR libraries are optional at build time, and OpenSSL is needed only for TLS outputs. Packages exist for Debian/Ubuntu (rtl-433), FreeBSD and Homebrew; release 25.12 (2025-12-12) ships Linux, macOS arm64 and Windows binaries, and the reviewed master commit is dated 2026-10-11.",
+      "At review the README listed 380 device protocols numbered up to 386, 44 of them disabled by default and enabled with -R or a configuration file. Built-in decoders cover those listed models only; for other signals the analyzer and flex decoders frame OOK/FSK pulses and slice them into bits, and do not infer field meanings or protocol semantics.",
+      "GPL-2.0. The optional HTTP API output listens on 0.0.0.0:8433 by default. No capture, decoding or analysis was run, and no device compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/merbanan/rtl_433/blob/80f7bcc3a3dc6edf537544593bf367241a225215/docs/ANALYZE.md",
+      "https://github.com/merbanan/rtl_433/blob/80f7bcc3a3dc6edf537544593bf367241a225215/docs/BUILDING.md",
+      "https://github.com/merbanan/rtl_433/blob/80f7bcc3a3dc6edf537544593bf367241a225215/COPYING",
+      "https://github.com/merbanan/rtl_433/releases/tag/25.12"
+    ]
   }
 ]

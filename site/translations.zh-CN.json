@@ -2367,5 +2367,14 @@
       "dsd check modules 将每个构建出的模块与原 ROM 比对，verify_idx.py 校验单个函数（包括重定位），ROM 往返脚本的预期结果是与参考转储只差四个不影响功能的 CRC 字节。CONTRIBUTING 说明，列为已知不匹配的函数不会参与链接，其位置以原始字节填充。CI 不构建游戏，只拒绝禁止的文件并重新生成进度报告。decomp.dev 报告所审提交的 YKGP 已 100.00% 反编译并完全链接，其中计入经验证的 SDK 汇编；本合集未重跑这些检查。",
       "贡献者的反编译和工具以 CC0 1.0 贡献到公有领域；原游戏及其素材仍归其所有者，CodeWarrior 编译器也不随仓库分发。DS Protect 源码参照 taxicat1/dsprot 重建，SDK 识别工具编译 pret/pokediamond 中的 NitroSDK 源码。所审来源未披露 REA 或 AI 使用，也不主张运行复现；独立的 khdays-port PC 运行时不在本记录范围内。"
     ]
+  },
+  "rtl-433": {
+    "name": "rtl_433 ISM 频段设备无线协议解码器",
+    "requirements": [
+      "实时接收需要基于 RTL2832 的 RTL-SDR 接收棒或 SoapySDR 设备；README 列出的积极测试设备包括 LimeSDR、PlutoSDR、HackRF One 和 SoapyRemote，也可连接 rtl_tcp 服务器。没有接收机时，可读取录制的 CU8、CS16 或 CF32 I/Q 及 AM 采样文件；-S 选项可把捕获到的信号保存为文件。",
+      "以可移植的 C99 编写，使用 CMake 构建；RTL-SDR 与 SoapySDR 库在构建时均为可选，只有 TLS 输出需要 OpenSSL。Debian/Ubuntu（rtl-433）、FreeBSD 和 Homebrew 提供软件包；25.12 版（2025-12-12）提供 Linux、macOS arm64 和 Windows 二进制文件，所审阅的 master 提交日期为 2026-10-11。",
+      "审阅时 README 列出 380 个设备协议，编号至 386，其中 44 个默认禁用，需通过 -R 或配置文件启用。内置解码器只覆盖所列型号；对其他信号，分析器和灵活解码器只对 OOK/FSK 脉冲分帧并切分为比特，不会推断字段含义或协议语义。",
+      "采用 GPL-2.0。可选的 HTTP API 输出默认监听 0.0.0.0:8433。本次未进行任何采集、解码或分析，也不代表任何设备兼容性。"
+    ]
   }
 }
