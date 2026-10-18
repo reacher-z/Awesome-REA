@@ -11639,13 +11639,29 @@
         "https://github.com/pret/pokeplatinum",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 60 (README line 600) lists pret/pokeplatinum under ⚡ Pokémon Platinum. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 60 行（README 第 600 行）在 ⚡ Pokémon Platinum 下列出 pret/pokeplatinum。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, install guide, contributing notes, Makefile, Meson checksum tests, SHA-1 manifests and CI workflow support a US Platinum decompilation whose default build is hash-checked, though README still labels it work in progress. Full mapping covers this repository, not the separate PC-port fork in the next row. The linked X post, also reviewed, only promotes a third-party archive of game builds and adds no evidence about this project.",
+      "reason_zh": "固定版本的 README、安装指南、贡献说明、Makefile、Meson 校验测试、SHA-1 清单和 CI 工作流，支持这是一个默认构建经哈希校验的美版白金反编译项目，但 README 仍标注为进行中。完整映射覆盖本仓库，不包括下一行所列的独立 PC 移植分支。所附 X 帖子也经查看，它只是推广第三方游戏构建存档，未提供关于本项目的证据。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/README.md",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/INSTALL.md",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/CONTRIBUTING.md",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/Makefile",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/meson.build",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/platinum.us/rom_rev1.sha1",
+        "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/.github/workflows/build.yml",
+        "https://x.com/mdaman010/status/2109111127238230239"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-platinum-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-061",
@@ -14577,18 +14593,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 134,
-      "insufficient-evidence": 110,
-      "pending": 347
-    },
-    "units_by_state": {
-      "already-curated": 133,
+      "already-curated": 135,
       "insufficient-evidence": 110,
       "pending": 346
     },
-    "primary_reviewed_units": 183,
-    "catalog_linked_occurrences": 145,
-    "distinct_resource_ids": 139,
+    "units_by_state": {
+      "already-curated": 134,
+      "insufficient-evidence": 110,
+      "pending": 345
+    },
+    "primary_reviewed_units": 184,
+    "catalog_linked_occurrences": 146,
+    "distinct_resource_ids": 140,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

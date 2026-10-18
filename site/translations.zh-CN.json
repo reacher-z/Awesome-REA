@@ -2217,5 +2217,15 @@
       "项目报告的检查包括两个地区版本的 make check、修复七个潜在越界缺陷的 AddressSanitizer 与 UBSan 扫描、以 BizHawk 验证的音画还原，以及软件光栅化器与 DuckStation 显存截取对比达 99.84–99.99% 像素一致。已知问题列表将剩余缺陷归于移植的渲染与后端层；本合集未运行上述任何检查。",
       "GPL-2.0 仅涵盖项目原创的移植代码、工具和文档。反编译的游戏代码（源自 shao113 未附许可的反编译）及重建的数据表属于 Konami，项目并不授予其许可；预构建版本嵌入部分游戏派生数据段及源自 BIOS 的字库。仓库将构建环境配置说明保存在 Claude Code 技能文件中；未确立与 REA 的关联。"
     ]
+  },
+  "pokemon-platinum-decomp-case": {
+    "name": "《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建",
+    "requirements": [
+      "README 称其为美版《宝可梦 白金》的进行中反编译项目。CONTRIBUTING.md 表示仓库已是 100% C 代码，但其中大量仍晦涩难懂，因此当前工作主要是文档和工具；在所审提交中，asm/ 只有宏包含文件，src/ 中有 1,013 个 C 文件。产物为 pokeplatinum.us.nds ROM 镜像，不是 PC 移植。",
+      "文档所述的构建不读取原 ROM：图像、音频、文本和数据源文件（含部分预构建数据）提交在 res/ 下。默认的修订版 1 的 SHA-1 为 0862ec35b24de5c7e2dcb88c9eea0873110d755c；ROM_REVISION=0 构建修订版 0，SHA-1 为 ce81046eda7d232513069519cb2085349896dec7，INSTALL.md 称其对应北美最初零售版，GTS 中存在等级范围显示错误，后续批次已修正。README 链接两者的 No-Intro 条目。",
+      "INSTALL.md 涵盖 WSL2（推荐）、WSL1、MSYS2、macOS 以及 Debian、Arch 和 Fedora Linux；所需软件包括 ARM GCC 工具链、bison、flex、Ninja、Python 3、libpng 和 32 位 libc，macOS 另需 Wine。Makefile 会克隆 Meson 1.12.0，并下载 metroskrew 0.1.3 发行版，其仓库称之为通过重新链接移植到 Linux 的专有 Windows 版 Metrowerks ARM 编译器；Meson 拉取固定版本的 NitroSDK、NitroSystem、NitroDWC、NitroWiFi 和 libvct 子项目。make debug 构建支持 GDB 的 ROM，INSTALL.md 为此指向一个支持覆盖层的 binutils-gdb 分支。",
+      "make 运行 Meson 测试，按 SHA-1 清单校验共享、分修订版及 ARM7 二进制、文件系统和完整 ROM；修改代码时可用 make rom 跳过校验。CI 安装 metroskrew 并对默认修订版运行 make check。哈希一致只确认所列美版镜像的一致性，不覆盖游戏行为路径；本合集未自行构建。",
+      "仓库没有顶层许可证文件，GitHub 也未识别出许可证；部分附带工具有各自的许可证，metroskrew 及 ntrtwl 的 SDK 仓库在 GitHub 上均未声明许可证。SDK 库和原游戏内容仍受其权利人约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
