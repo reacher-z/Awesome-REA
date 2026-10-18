@@ -6952,5 +6952,37 @@
       "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/LICENSE.txt",
       "https://github.com/CorsixTH/CorsixTH/releases/tag/v0.70.1"
     ]
+  },
+  {
+    "id": "openriseofnations-engine-case",
+    "name": "OpenRiseOfNations: a native macOS engine reimplementation",
+    "url": "https://github.com/ben-wright-1/OpenRiseOfNations",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the Rise of Nations: Extended Edition engine as a native macOS app with a Metal renderer, a deterministic simulation, a computer opponent and a compatible BigHugeScript compiler and virtual machine, loading art, maps, rules and scripts from the user’s own Windows installation. Subsystem specifications written from Ghidra study of the symbol-bearing executable, together with JavaScript reference tools, guided a C++17 implementation built with heavy Claude Code assistance. The alpha plays tutorials and scenarios, and its bit-exactness checks remain project-reported.",
+    "description_zh": "以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。项目依据对带调试符号的可执行文件进行 Ghidra 研究后撰写的子系统规范及 JavaScript 参考工具，在大量使用 Claude Code 的情况下编写 C++17 实现。该早期版本可游玩教程与场景，其逐位一致性检查仍为项目报告。",
+    "evidence_url": "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is version 0.1.1; releases v0.1.0 and v0.1.1 are dated 2026-10-14. README calls the C++17 engine early but playable on macOS 12+ with Metal and AppKit, covering tutorials and stock scenarios, unit control, economy, construction, combat, a computer opponent and the game’s scripts. Random maps and the skirmish setup screen, the Conquer the World campaign, multiplayer, saves and replays, garrisons, heroes and several other systems are not yet implemented.",
+      "Users must own Rise of Nations: Extended Edition and supply the Windows version’s game folder, whose Data and scenario directories provide the art, maps, rules, scripts and audio; README names SteamCMD or a copy from a Windows PC as routes. The repository and the un-notarised DMG ship no game files or original program code, with a fan-adapted main-menu logo as the stated exception. Building from source needs only Apple’s Command Line Tools and build-mac.sh.",
+      "README says the executable ships with full debug symbols, which enabled Ghidra study; about thirty specifications in docs/ describe each subsystem in paraphrase, citing original functions by name and address, and JavaScript reference tools in re/tools read the game data. README credits heavy use of Claude Code, directed and reviewed by the maintainer. STATUS.md says the reverse engineering ran as background agents that each produced a spec, while the author’s reply says he reverse-engineered in Ghidra and wrote the specs himself; the sources do not settle that division of work.",
+      "Verification is project-reported. C++ checkers compare damage on all 169,312 attacker/target pairs, prices, income and interface layouts with the reference tools, rules tables with a recorded game’s memory image and world grids across 156 stock scenarios, and a headless harness checks determinism. The simulation targets bit-identical lockstep behavior but has not yet been compared with recorded games, and rendering was checked by reading snapshots. This collection ran none of these tools.",
+      "The engine is GPL-3.0; the menu logo is excluded, and its rights stay with the original owners. The project states that it is unaffiliated with Microsoft, Big Huge Games and SkyBox Labs. .gitignore keeps decompiler output, symbol dumps and extracted data out of the repository, although two small instruction-search outputs listing original addresses are committed under re/jobs. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/docs/STATUS.md",
+      "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/build-mac.sh",
+      "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/.gitignore",
+      "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/VERSION",
+      "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/LICENSE",
+      "https://x.com/benw_____/status/2111116976168779845",
+      "https://x.com/benw_____/status/2111260204884967933"
+    ]
   }
 ]

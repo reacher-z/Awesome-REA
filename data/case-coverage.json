@@ -7839,13 +7839,28 @@
         "https://x.com/i/status/2111116976168779845",
         "https://x.com/i/status/2111260204884967933"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The posts link a pinned GPL-3.0 repository that documents OpenRiseOfNations, a native macOS reimplementation of the Rise of Nations: Extended Edition engine built from paraphrased Ghidra-derived specifications with heavy Claude Code use, together with reference tools, checkers and a status record. The full mapping covers this engine-reimplementation case. Results are project-reported, the simulation has not been compared with recorded games, STATUS.md and the author’s reply describe the spec authorship differently, and no REA use or runtime reproduction is established.",
+      "reason_zh": "帖子链接到一个固定版本、采用 GPL-3.0 的仓库，记录了 OpenRiseOfNations：依据转述 Ghidra 研究结果的规范、在大量使用 Claude Code 的情况下完成的 Rise of Nations: Extended Edition 原生 macOS 引擎重新实现，并附参考工具、检查工具和进度记录。完整映射覆盖该引擎重新实现案例。结果为项目报告，模拟尚未与录制对局比较，STATUS.md 与作者回复对规范撰写者的描述不一，也未确立 REA 使用或运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md",
+        "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/docs/STATUS.md",
+        "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/build-mac.sh",
+        "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/.gitignore",
+        "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/LICENSE",
+        "https://x.com/benw_____/status/2111116976168779845",
+        "https://x.com/benw_____/status/2111260204884967933"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "openriseofnations-engine-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:computer-rea-five-app-rebuild-demos",
@@ -15496,18 +15511,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 186,
+      "already-curated": 187,
       "insufficient-evidence": 153,
-      "pending": 252
+      "pending": 251
     },
     "units_by_state": {
-      "already-curated": 184,
+      "already-curated": 185,
       "insufficient-evidence": 153,
-      "pending": 252
+      "pending": 251
     },
-    "primary_reviewed_units": 277,
-    "catalog_linked_occurrences": 196,
-    "distinct_resource_ids": 190,
+    "primary_reviewed_units": 278,
+    "catalog_linked_occurrences": 197,
+    "distinct_resource_ids": 191,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
