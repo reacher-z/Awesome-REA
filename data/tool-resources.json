@@ -3281,5 +3281,37 @@
       "https://github.com/sm64pc/sm64ex/wiki/Known-issues/94d262d19ea9e16990d955de28560df563dc5372",
       "https://github.com/sm64-port/sm64-port/blob/2b17d081c9798b31b91dc71f37994b0da28cffc9/README.md"
     ]
+  },
+  {
+    "id": "ghostship-sm64-port-case",
+    "name": "Ghostship: a libultraship native port of Super Mario 64",
+    "url": "https://github.com/HarbourMasters/Ghostship",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds Super Mario 64 as a native PC, Switch and Android program by compiling decompilation-style game source against the libultraship platform library. A bundled extractor converts the user’s US or Japanese ROM into an O2R archive at first launch or build time. The project ships modern renderers, configuration menus and mod-archive loading, not a matching ROM.",
+    "description_zh": "将反编译风格的游戏源码编译到 libultraship 平台库上，把 Super Mario 64 构建为原生 PC、Switch 和 Android 程序。附带的提取工具会在首次启动或构建时，把使用者自备的美版或日版 ROM 转换为 O2R 存档。项目提供现代渲染器、配置菜单和模组存档加载，而不是生成一致的 ROM。",
+    "evidence_url": "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed develop branch declares version 3.0.0, matching the latest “Alfa” release. Its src tree keeps the audio, engine, game, goddard and menu layout of the n64decomp/sm64 reconstruction, with port code under src/port, and two sampled source files closely follow their n64decomp counterparts with port changes. The README itself does not name an upstream decompilation, so that lineage is a review observation.",
+      "Supply your own Super Mario 64 ROM in .z64 byte order: the README accepts only the US and Japanese releases and lists their SHA-1 values. PC releases convert it to sm64.o2r; the Switch build reuses an O2R generated on PC, and the Android app checks the ROM hash and converts it on the device. No game data is bundled.",
+      "Source builds use CMake with the libultraship and Torch submodules: Visual Studio 2022 with the v143 toolset, Python 3 and CMake on Windows, or GCC/Clang, Ninja, SDL2, libzip and the listed libraries on Linux. Renderers are DirectX 11, OpenGL, Metal and Vulkan where drivers allow. The building guide still names sf64.o2r and 2s2h.elf from other Harbour Masters ports, so its file names need checking against the current targets.",
+      "GitHub Actions workflows build Windows, macOS, Linux, Switch and web packages. The README calls CI builds playtest-only and warns of bugs and crashes. No matching, regression or original-hardware comparison result is published, and this collection did not build or run the port.",
+      "The root LICENSE.md is MIT (2026, Lywx) for the project’s own code. Submodules keep their own terms, and Nintendo’s code-derived content and ROM assets are not licensed by it; the README says it does not condone piracy. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/docs/building.md",
+      "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/CMakeLists.txt",
+      "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/.gitmodules",
+      "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/LICENSE.md",
+      "https://github.com/HarbourMasters/Ghostship/tree/40eef13823a954a466574dc78e73187a17a2dd42/src",
+      "https://github.com/HarbourMasters/Ghostship/tree/40eef13823a954a466574dc78e73187a17a2dd42/.github/workflows",
+      "https://github.com/HarbourMasters/Ghostship/releases/tag/3.0.0"
+    ]
   }
 ]

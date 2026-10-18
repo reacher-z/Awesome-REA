@@ -9573,13 +9573,37 @@
       "reported_source_urls": [
         "https://github.com/HarbourMasters/Ghostship"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 3 (README line 60) lists HarbourMasters/Ghostship under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 3 行（README 第 60 行）在 🍄 Super Mario 64 下列出 HarbourMasters/Ghostship。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, building guide, CMake file, submodules, workflows and license document a native libultraship port that converts a user-supplied US or Japanese ROM and claims no matching output. Full mapping covers this port. The related n64decomp mapping rests on the shared source layout and two sampled files, because the README does not name its upstream.",
+      "reason_zh": "固定版本的 README、构建指南、CMake 文件、子模块、工作流和许可证记录了一个基于 libultraship 的原生移植：它转换使用者自备的美版或日版 ROM，不主张生成一致的输出。完整映射覆盖此移植。与 n64decomp 的相关映射依据共同的源码结构和抽查的两个文件，因为 README 没有指明上游项目。",
+      "primary_evidence_urls": [
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/README.md",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/docs/building.md",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/CMakeLists.txt",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/.gitmodules",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/LICENSE.md",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/src/game/mario_step.c",
+        "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/src/engine/surface_collision.c",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/src/game/mario_step.c",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/src/engine/surface_collision.c"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ghostship-sm64-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "sm64-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "hao-games:row-004",
@@ -13662,18 +13686,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 81,
-      "insufficient-evidence": 73,
-      "pending": 437
-    },
-    "units_by_state": {
-      "already-curated": 80,
+      "already-curated": 82,
       "insufficient-evidence": 73,
       "pending": 436
     },
-    "primary_reviewed_units": 97,
-    "catalog_linked_occurrences": 91,
-    "distinct_resource_ids": 86,
+    "units_by_state": {
+      "already-curated": 81,
+      "insufficient-evidence": 73,
+      "pending": 435
+    },
+    "primary_reviewed_units": 98,
+    "catalog_linked_occurrences": 92,
+    "distinct_resource_ids": 87,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

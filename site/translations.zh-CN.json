@@ -1690,5 +1690,15 @@
       "Jenkinsfile 构建 us、eu、jp 三个版本，并在应用每个增强补丁后重新构建 us 版，全部关闭比较；这只检查能否构建成功，不检查输出一致性或游戏行为等价。取消绘制距离、模拟摇杆视角、贴图修正和作弊等选项会有意改变行为，wiki 也指出取消绘制距离可能影响游戏玩法。本合集未构建或运行该移植。",
       "GitHub 未检测到仓库许可证，所审阅的代码树根目录也没有许可证文件；附带工具各有许可，src/pc 中的声明转载了禁止以二进制形式再分发的 n64-fast3d-engine 许可。项目不提供任天堂原始内容，README 明确禁止上传受版权保护的素材。所审来源未确立 REA 或编码智能体的参与。"
     ]
+  },
+  "ghostship-sm64-port-case": {
+    "name": "Ghostship：基于 libultraship 的 Super Mario 64 原生移植",
+    "requirements": [
+      "所审阅的 develop 分支声明版本为 3.0.0，与最新的“Alfa”发行版一致。其 src 目录保留了 n64decomp/sm64 重建项目的 audio、engine、game、goddard 和 menu 结构，移植代码位于 src/port；抽查的两个源文件与 n64decomp 对应文件高度相近，只有移植相关改动。README 本身没有指明上游反编译项目，因此这一来源关系属于审阅观察。",
+      "需自备 .z64 字节序的 Super Mario 64 ROM：README 只接受美版和日版，并列出两者的 SHA-1 值。PC 发行版会把 ROM 转换为 sm64.o2r；Switch 版复用在 PC 上生成的 O2R，Android 应用则先核对 ROM 哈希，再在设备上完成转换。项目不附带任何游戏数据。",
+      "源码构建使用 CMake 及 libultraship、Torch 子模块：Windows 需 Visual Studio 2022（v143 工具集）、Python 3 和 CMake，Linux 需 GCC／Clang、Ninja、SDL2、libzip 及列出的其他库。渲染器包括 DirectX 11、OpenGL、Metal，以及驱动支持时的 Vulkan。构建指南仍写着其他 Harbour Masters 移植项目的 sf64.o2r 和 2s2h.elf，文件名需对照当前构建目标核实。",
+      "GitHub Actions 工作流构建 Windows、macOS、Linux、Switch 和网页版本。README 称 CI 构建仅供试玩，并提醒可能出现错误和崩溃。项目没有公布一致性、回归或与原硬件对比的结果，本合集也未构建或运行该移植。",
+      "根目录 LICENSE.md 以 MIT（2026，Lywx）授权项目自有代码。子模块各有条款；源自任天堂代码的内容和 ROM 素材不受该许可覆盖，README 表示不支持盗版。所审来源未确立 REA 或编码智能体的参与。"
+    ]
   }
 }
