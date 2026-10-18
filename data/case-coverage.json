@@ -3456,12 +3456,30 @@
         "https://x.com/i/status/2109858919111913543"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post’s two links resolve to celsowm’s repositories. The pinned vf2-decomp documents a BSD-3-Clause, non-matching C17 recovery of Virtua Fighter 2 Version 2.1 that accepts paths only when they match a reference i960 executor; it is now curated, but that mapping is partial. The pinned vf3-decomp, a work-in-progress Dreamcast Virtua Fighter 3tb C port, has agent notes and coverage logs but no README or license file, so it stays uncurated and the combined report remains pending. REA use is not established; results are project-reported.",
+      "reason_zh": "帖文中的两个链接指向 celsowm 的两个仓库。固定版本的 vf2-decomp 记录了 Virtua Fighter 2 Version 2.1 的 BSD-3-Clause、非一致性 C17 恢复，只有与参考 i960 执行器一致的路径才被接受；该项目现已收录，但映射仅为部分覆盖。固定版本的 vf3-decomp 是进行中的 Dreamcast 版 Virtua Fighter 3tb C 移植，有代理说明和覆盖率日志，但没有 README 或许可证文件，因此暂不收录，合并报告仍为待定。REA 的使用未确立；结果均为项目报告。",
+      "primary_evidence_urls": [
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md",
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/LICENSE",
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/docs/LEGAL.md",
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/THIRD_PARTY.md",
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/docs/STATUS.md",
+        "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/AGENTS.md",
+        "https://github.com/celsowm/vf3-decomp/blob/8314754a14d28e6432c97ea058d41d9d289f4c8d/AGENTS.md",
+        "https://github.com/celsowm/vf3-decomp/blob/8314754a14d28e6432c97ea058d41d9d289f4c8d/docs/coverage.md",
+        "https://github.com/celsowm/vf3-decomp/blob/8314754a14d28e6432c97ea058d41d9d289f4c8d/docs/progress.md",
+        "https://x.com/i/status/2109858919111913543"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "vf2-decomp-differential-recovery-case",
+          "kind": "case-study",
+          "scope": "partial"
+        }
+      ]
     },
     {
       "id": "song:rea-typeless-local",
@@ -13594,9 +13612,9 @@
       "insufficient-evidence": 72,
       "pending": 439
     },
-    "primary_reviewed_units": 93,
-    "catalog_linked_occurrences": 87,
-    "distinct_resource_ids": 81,
+    "primary_reviewed_units": 94,
+    "catalog_linked_occurrences": 88,
+    "distinct_resource_ids": 82,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

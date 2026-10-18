@@ -1660,5 +1660,15 @@
       "README 说明 tools/decomp.sh 用于提取光盘、重新汇编 asm/ 并逐个文件比较；tests/rc_check.sh 在 96 段脚本化关卡中，比较重编译运行与 --interp 运行每帧的 RAM 及 CPU PC 哈希。README 还报告 SingleStepTests 结果：Z80 通过全部 160 万个用例，68000 除部分未公开的 DIVS／ASR 及地址错误用例外通过全部 100 万个用例。CI 仅以自制测试光盘进行测试；本合集未运行任何检查。",
       "MIT 覆盖运行时、工具和安装程序。third_party/ 代码、随附的 LGPL 2.1 FFmpeg 以及经许可收录的 LuanUP 重制版开场各自保留条款，任何从光盘提取的内容均不在许可范围内。所审阅 LICENSE 的排除说明写的是 Star Fox 2 而非 Sonic CD。该项目为非官方作品，与 Sega 无关，也未作任何 AI 或 REA 归因。"
     ]
+  },
+  "vf2-decomp-differential-recovery-case": {
+    "name": "vf2-decomp：经差分验证的 Virtua Fighter 2 代码恢复",
+    "requirements": [
+      "README 将其描述为净室、非一致性的恢复项目：原生运行时在重复的调度器与游戏分派中保持 CPU、调用帧、计数器及可变内存状态，其中调度器之后的一段严格路径包含 1,270,824 条恢复指令，且无解释执行指令。项目明确不主张完整反编译、可游玩的可执行文件、完整的 Model 2／TGP 模拟、SCSP DSP 音频或覆盖全部游戏分支。未验证路径以 VF2_ERROR_UNSUPPORTED 失败关闭。",
+      "依赖 ROM 的分析和差分测试，需要使用者自行提供合法取得的受支持街机 ROM 组。config/vf2_v22_roms.csv 仅记录文件名、大小和哈希，vf2rom 用于校验该 ROM 组。仓库不含任何 Sega 游戏数据，贡献者不得提交 ROM 或重建的区域映像。",
+      "使用 CMake 与 C17 编译器构建，警告视为错误，并可选用 sanitizer 配置。STATUS 列出 GCC／Clang CI，README 将原生 Windows MSVC 称为代理的标准工作流程。设置 VF2_ROM_DIR 后启用依赖 ROM 的 CTest 目标；否则只运行不依赖 ROM 的测试。",
+      "vf2i960 的原生分派命令运行已记录的差分里程碑；vf2cycles 从同一快照推进恢复的 C 代码与参考执行器，严格模式下遇到首个不受支持的代码块、参考执行失败或状态不一致即停止。STATUS 报告第三至第六次分派均为 MATCH。CI 只运行不依赖 ROM 的测试，因此依赖 ROM 的结果仍为项目报告，本合集未重跑。",
+      "项目代码采用 BSD-3-Clause；MAME 与公开的 Intel i960 文档仅作交叉参考，未收录其源码。docs/LEGAL.md 披露 301 个取自后续 Model 2 移植版 DLL 的 Sega 原始符号名，并说明这部分命名并非净室成果；未纳入版本库的 Sonic The Fighters 反汇编快照仅作导航参考。AGENTS.md 面向编码代理，但所审来源未确立 REA 的使用。"
+    ]
   }
 }

@@ -3181,5 +3181,37 @@
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tests/rc_check.sh",
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/.github/workflows/build.yml"
     ]
+  },
+  {
+    "id": "vf2-decomp-differential-recovery-case",
+    "name": "vf2-decomp: differentially validated Virtua Fighter 2 recovery",
+    "url": "https://github.com/celsowm/vf2-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recovers Virtua Fighter 2 Version 2.1’s Sega Model 2A i960 program into portable, non-matching C17, accepting each recovered path only when it matches a reference i960 executor at controlled boundaries. The repository adds ROM validation, i960 and 68000 analysis tools, a bounded Model 2A hardware model and snapshot-based differential runners. README states that it is not yet a playable port; match flow, combat, physics, AI, rasterization and much of the audio remain open.",
+    "description_zh": "将 Virtua Fighter 2 Version 2.1 的 Sega Model 2A i960 程序恢复为可移植、非一致性的 C17 代码，每条恢复路径须在受控边界上与参考 i960 执行器一致才被接受。仓库还提供 ROM 校验、i960 与 68000 分析工具、有限范围的 Model 2A 硬件模型，以及基于快照的差分运行器。README 说明它尚不是可游玩的移植；对战流程、格斗、物理、AI、光栅化及大部分音频仍未完成。",
+    "evidence_url": "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a clean-room, non-matching recovery whose native runtime preserves CPU, frame, counter and mutable-memory state through repeated scheduler and gameplay dispatches, including a 1,270,824-instruction post-scheduler corridor with no interpreted instructions. It explicitly does not claim complete decompilation, a playable executable, full Model 2/TGP emulation, SCSP DSP audio or every gameplay branch. Unverified paths fail closed with VF2_ERROR_UNSUPPORTED.",
+      "ROM-backed analysis and differential tests need a user-supplied, legally obtained copy of the supported arcade ROM set. config/vf2_v22_roms.csv records only filenames, sizes and hashes, and vf2rom verifies the set. The repository contains no Sega game data, and contributors must not commit ROMs or reconstructed region images.",
+      "Builds use CMake with a C17 compiler and warnings treated as errors, plus an optional sanitizer configuration. STATUS lists GCC/Clang CI, and README names native Windows MSVC as the canonical agent workflow. Setting VF2_ROM_DIR enables the ROM-backed CTest targets; otherwise only ROM-independent tests run.",
+      "The vf2i960 native-dispatch commands run the recorded differential milestones, and vf2cycles advances recovered C and the reference executor from a shared snapshot, stopping in strict mode at the first unsupported block, reference failure or state mismatch. STATUS reports MATCH for the third through sixth dispatches. CI runs only ROM-independent tests, so the ROM-backed results remain project-reported and were not rerun for this collection.",
+      "BSD-3-Clause covers the project’s code; MAME and public Intel i960 documentation serve as cross-references, not included source. docs/LEGAL.md discloses 301 original Sega symbol names, taken from a later Model 2 port DLL, as non-clean-room naming, and an untracked Sonic The Fighters disassembly is used only as a navigation aid. AGENTS.md addresses coding agents, but the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/LICENSE",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/docs/LEGAL.md",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/THIRD_PARTY.md",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/docs/STATUS.md",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/AGENTS.md",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/config/vf2_v22_roms.csv",
+      "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/.github/workflows/ci.yml"
+    ]
   }
 ]
