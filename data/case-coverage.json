@@ -2247,12 +2247,28 @@
         "https://github.com/mochizuki0323/DLSSNR-AMD"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked DLSSNR-AMD repository, reviewed at a pinned commit, documents a Vulkan reimplementation of DLSS 5’s neural-rendering network with user-extracted weights and comparisons against NVIDIA’s DLL; it is curated separately and mapped here as related only. The commented thread quotes an announcement of a different project, HelixSR, which runs a DLSS 3.7 network on AMD, so the comment’s referent is not DLSSNR-AMD as established. Neither DLSSNR-AMD’s documentation nor HelixSR’s README describes AI-assisted reverse engineering. A full mapping needs the thread’s subject reviewed; the AI claim remains unestablished.",
+      "reason_zh": "所链接的 DLSSNR-AMD 仓库经固定版本审阅，记录了 DLSS 5 神经渲染网络的 Vulkan 重新实现，权重由使用者自行提取，并与 NVIDIA DLL 的输出对比；该项目已另行收录，此处仅作为相关映射。被回复的帖子串引用的是另一个项目 HelixSR 的发布消息（在 AMD 上运行 DLSS 3.7 网络），因此不能确定该评论指的是 DLSSNR-AMD。DLSSNR-AMD 的文档和 HelixSR 的 README 都未描述 AI 辅助的逆向工程。完整映射需先审阅该帖子串所指项目；AI 主张仍未确立。",
+      "primary_evidence_urls": [
+        "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md",
+        "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ARCHITECTURE.md",
+        "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ngx-verification/310.9.16/NGX-VERIFICATION.md",
+        "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/CLAUDE.md",
+        "https://x.com/MisterSpace3/status/2109578076648874292",
+        "https://x.com/SebAaltonen/status/2108990746280038649",
+        "https://x.com/chasmmmmmmmmmmm/status/2108722176371073354",
+        "https://github.com/lonewolf0622/HelixSR/blob/2a909588a7f2df33f93dab6ec45a7140278db0e2/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dlssnr-amd-neural-rendering-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:streaming-service-integration-report",
@@ -13434,9 +13450,9 @@
       "insufficient-evidence": 71,
       "pending": 447
     },
-    "primary_reviewed_units": 87,
-    "catalog_linked_occurrences": 78,
-    "distinct_resource_ids": 70,
+    "primary_reviewed_units": 88,
+    "catalog_linked_occurrences": 79,
+    "distinct_resource_ids": 71,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -2825,5 +2825,37 @@
       "https://x.com/DesignGears/status/2109530620321788301",
       "https://x.com/DesignGears/status/2109532140907921698"
     ]
+  },
+  {
+    "id": "dlssnr-amd-neural-rendering-case",
+    "name": "DLSSNR-AMD: reimplementing DLSS 5 neural rendering for RDNA4",
+    "url": "https://github.com/mochizuki0323/DLSSNR-AMD",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Reimplements the neural-rendering network of NVIDIA’s DLSS 5 library as Vulkan compute shaders for AMD RX 9000 (RDNA4) cards and supplies it to games through an NGX-compatible core and ReShade or Vulkan-layer routes. The weights are not distributed: installers extract them, hash-checked, from the user’s own nvngx_dlssnr.dll 310.9.16 or 310.8.0. The project compares its output with NVIDIA’s DLL on an RTX 5090 and reports close, not bit-identical, pictures.",
+    "description_zh": "将 NVIDIA DLSS 5 库中的神经渲染网络重新实现为面向 AMD RX 9000（RDNA4）显卡的 Vulkan 计算着色器，并通过兼容 NGX 的核心模块以及 ReShade 或 Vulkan 层等途径提供给游戏。项目不分发权重：安装程序从使用者自己的 nvngx_dlssnr.dll 310.9.16 或 310.8.0 中提取权重并核对哈希。项目将输出与 NVIDIA DLL 在 RTX 5090 上的结果对比，报告画面接近但并非逐位一致。",
+    "evidence_url": "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed 0.0.x main targets RX 9000 cards because the network needs RDNA4 FP8 matrix instructions, reached through VK_KHR_cooperative_matrix; README says it was tested only on an RX 9070 XT. Linux under Steam/Proton with Mesa 26.2+ is the main version; Windows is an experimental preview tested with AMD Software 26.9.2, slower by default and closer to Linux with precompiled ACO machine code. OpenGL games are unsupported, and README warns against online games with anti-cheat.",
+      "Requires the user’s own nvngx_dlssnr.dll, version 310.9.16 (both models) or 310.8.0 (the old model only); other versions are refused, and a model file is written only when every extracted entry matches a known hash. README says packages containing the model must not be shared. The optional int4-mixed network derives its weights at install from the user’s model and project calibration tables, which THIRD_PARTY.md says hold no weight values.",
+      "The documented build runs on Ubuntu 24.04 with git, curl, Python 3, CMake, Ninja, MinGW-w64 and multilib g++; fetch_deps.sh pins third-party components, including glslang 16.5.0 for reproducible SPIR-V, and the Windows DLLs are cross-compiled. Games reach the network through an NGX core loaded by OptiScaler-NR, for DirectX 11/12 titles with an upscaler option, or through ReShade-based routes that estimate motion from the picture.",
+      "For the 310.9.16 model, the verification notes report single-frame PSNR of 49.15–50.59 dB and SSIM of about 0.997 against NVIDIA’s unmodified DLL on an RTX 5090, plus short moving sequences, from one Tomb Raider (2013) frame and its downscales; the 310.8.0 comparison reports 45.56–49.06 dB. These are project measurements on one AMD card; this collection ran neither side.",
+      "MIT covers the repository’s code; third-party components keep their own licenses, including GPL-3.0 OptiScaler-NR shipped as released. NVIDIA’s DLL and weights remain NVIDIA’s, and the project states it is not affiliated with NVIDIA or AMD. The repository does not describe how the network structure was recovered; its CLAUDE.md addresses coding assistants but does not establish AI authorship. REA use is not established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ARCHITECTURE.md",
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ngx-verification/310.9.16/NGX-VERIFICATION.md",
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ngx-verification/310.8.0/NGX-VERIFICATION.md",
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/THIRD_PARTY.md",
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/CLAUDE.md",
+      "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/LICENSE"
+    ]
   }
 ]

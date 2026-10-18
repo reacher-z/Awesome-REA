@@ -1550,5 +1550,15 @@
       "文章与说明不提供游戏文件、编译器或构建产物；各项目仓库自行说明对原游戏与工具链的要求，游戏权利仍归原权利人。GensokyoClub 的 TH08 历史保留其署名与许可；其排除以 AI 为主的贡献的公开政策仅被转述，并未被采纳。TH08 另有独立的目录条目；本次审阅未单独审阅 TH095 或 TH04 仓库，也未运行任何项目。",
       "文章说明 REA 为智能体提供分析证据；各项目也使用了自己的分析桥接与工具，历史结果不被重新标记为 REA 的输出。作者将该方法及其工业化类比作为经验陈述和观点提出，并非经测量的智能体与人工对比，也不证明它能推广到其他领域。"
     ]
+  },
+  "dlssnr-amd-neural-rendering-case": {
+    "name": "DLSSNR-AMD：为 RDNA4 重新实现 DLSS 5 神经渲染",
+    "requirements": [
+      "所审阅的 0.0.x 版 main 分支面向 RX 9000 显卡，因为网络需要通过 VK_KHR_cooperative_matrix 调用 RDNA4 的 FP8 矩阵指令；README 称仅在 RX 9070 XT 上测试。主版本运行于 Steam／Proton 下的 Linux，需要 Mesa 26.2+；Windows 为实验性预览版，测试驱动为 AMD Software 26.9.2，默认较慢，使用预编译的 ACO 机器码后接近 Linux。不支持 OpenGL 游戏，README 还警告不要在带反作弊的在线游戏中使用。",
+      "需要使用者自己的 nvngx_dlssnr.dll：310.9.16 版（含两个模型）或 310.8.0 版（仅旧模型）；其他版本会被拒绝，只有当每个提取条目都与已知哈希一致时才会写出模型文件。README 说明不得分享包含模型的软件包。可选的 int4 混合网络在安装时由使用者的模型和项目校准表生成权重，THIRD_PARTY.md 称这些表不含权重数值。",
+      "文档说明的构建环境为 Ubuntu 24.04，需要 git、curl、Python 3、CMake、Ninja、MinGW-w64 和 multilib g++；fetch_deps.sh 固定第三方组件版本，其中 glslang 16.5.0 用于生成可复现的 SPIR-V，Windows DLL 通过交叉编译生成。游戏可经由 OptiScaler-NR 加载的 NGX 核心模块接入网络（适用于带超分辨率选项的 DirectX 11／12 游戏），也可经由从画面估计运动的 ReShade 途径接入。",
+      "对于 310.9.16 模型，验证说明报告：以一帧 Tomb Raider (2013) 画面及其缩小版本为输入，与在 RTX 5090 上运行的未修改 NVIDIA DLL 相比，单帧 PSNR 为 49.15–50.59 dB，SSIM 约 0.997，并比较了短运动序列；310.8.0 的对比结果为 45.56–49.06 dB。这些是项目在单张 AMD 显卡上的测量；本合集两侧均未运行。",
+      "仓库代码采用 MIT 许可；第三方组件保留各自许可，其中按原样附带的 OptiScaler-NR 为 GPL-3.0。NVIDIA 的 DLL 和权重仍归 NVIDIA 所有，项目声明与 NVIDIA 或 AMD 无关。仓库未说明网络结构如何恢复；其 CLAUDE.md 面向编码助手，但不能确立 AI 署名。未确立 REA 使用。"
+    ]
   }
 }
