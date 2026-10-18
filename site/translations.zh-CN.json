@@ -2394,5 +2394,15 @@
       "decomp/tools/check_all.mjs 会重新编译 matched.tsv 中的每个函数，并与零售版字节比对；取代手写汇编和 Sony 库的 C 代码，则通过重放录制的游戏状态与原 MIPS 代码对照检查。移植层的改动通过确定性运行检查，将画面帧和存档与早期构建比较。README 报告九个经典生涯关卡均可游玩，PS1 混响仅为近似实现；本合集未重跑这些检查。",
       "README 和移植层 README 称项目自身代码采用仓库 LICENSE 中的 MIT 许可，但所审阅的源码树中没有 LICENSE 文件，GitHub 也未检测到许可。移植层 README 说明反编译的游戏代码、数据及全部素材仍归 Activision／Neversoft 所有；SDL 2、PL_MPEG、glad 等链接库保留各自条款。源码树含 CLAUDE.md 项目笔记和 GhidraMCP 配置，但 README 未声明使用 AI 或 REA，因此本条目不记录此类归因。"
     ]
+  },
+  "pt-pc-port-case": {
+    "name": "P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎",
+    "requirements": [
+      "需使用者自有的 P.T.：移植版以美版 CUSA01127 构建和测试，可使用主机转储目录或由该转储制作的 fake PKG；欧版和日版可以安装但会给出提示，作者未见过其数据。商店 PKG 针对所属主机加密，项目不会将其解密。安装程序只复制 chunk1.psarc、texture.qar 和 pathid_list_ps4.bin，仓库与安装程序中都不含游戏数据。",
+      "可在 Windows 10／11 x64、glibc 2.38+ 的 Linux x86-64 或 macOS 14+ 上运行，需支持 Vulkan 1.3 的显卡（macOS 上通过 MoltenVK）。构建需 CMake 和 Ninja；Windows 另需 Visual Studio 2022 Build Tools、clang-cl 和 Vulkan SDK，Linux 需 GCC 13／clang 17 及 glslc。CMake 会获取 SDL3、Lua 5.1、whisper.cpp 等依赖，并用 SHA-256 校验下载的模型和 SDK。有一段流程需要麦克风，或改用配置的替代按键。",
+      "这是引擎重新实现，而非模拟器、反编译或静态重编译：README 称游戏逻辑依据原作行为重建。README 报告整部试玩可完整游玩（含语音环节），并新增可选的超分辨率、光线追踪效果、拍照模式、博物馆、模组、额外语言，以及实验性的 VR 和第三人称视角。VR 仅在模拟运行时上运行过，Intel Mac 版尚未实际运行，代码树还包含尚未发布的 1.0.2 改动。",
+      "验证由作者执行：包括 CMake 单元测试目标、一个无窗口按脚本路线游玩并检查日志的通关脚本，以及与 shadPS4 的画面对比。本合集未构建或运行该移植，这些检查也不能证明与 PS4 版等价。",
+      "MIT 许可仅覆盖移植版自身代码；随附的 Noto 字体（OFL）、LGPL 授权的 LibOrbisPkg 安装辅助程序及其他依赖保留各自许可，P.T. 的内容属于 Konami。README 披露开发和调试中使用了 AI 编程工具；未确立与 REA 的关联。"
+    ]
   }
 }

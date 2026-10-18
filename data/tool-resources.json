@@ -5494,5 +5494,35 @@
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/docs/coverage-report.md",
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/dist/THIRD-PARTY-NOTICES.txt"
     ]
+  },
+  {
+    "id": "pt-pc-port-case",
+    "name": "P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data",
+    "url": "https://github.com/LoreanXavier/pt-pc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. The author documents reverse-engineered file formats and used the shadPS4 emulator as a behavior and frame reference. Fidelity to the original is author-reported, and the use of AI coding tools is disclosed.",
+    "description_zh": "在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。作者记录了逆向得出的文件格式，并以 shadPS4 模拟器作为行为与画面的对照参考。与原作的一致程度为作者报告，项目也披露使用了 AI 编程工具。",
+    "evidence_url": "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s own copy of P.T.: the port is built and tested with the US release CUSA01127, as a console dump folder or a fake PKG made from it; the EU and Japanese releases install with a note but the author has not seen their data. Store PKGs are encrypted for their console and are not decrypted. The installer copies only chunk1.psarc, texture.qar and pathid_list_ps4.bin, and no game data is in the repository or installer.",
+      "Runs on Windows 10/11 x64, Linux x86-64 with glibc 2.38+, or macOS 14+, with a Vulkan 1.3 GPU (MoltenVK on macOS). Building needs CMake and Ninja, plus Visual Studio 2022 Build Tools, clang-cl and the Vulkan SDK on Windows, or GCC 13/clang 17 with glslc on Linux; CMake fetches SDL3, Lua 5.1, whisper.cpp and other dependencies and checks downloaded models and SDKs by SHA-256. One section needs a microphone or a configured substitute key.",
+      "This is an engine reimplementation, not an emulator, decompilation or static recompilation: the README says the logic was rebuilt from the original’s behavior. It reports the whole teaser as playable, including the voice section, and adds optional upscalers, ray-traced effects, photo mode, a museum, mods, extra languages and experimental VR and third-person views. VR has run only against a simulated runtime, the Intel Mac build has not been run, and the tree contains unreleased 1.0.2 changes.",
+      "Verification is author-run: CMake unit-test targets, a windowless walkthrough script that plays scripted routes and checks the log, and frame comparisons against shadPS4. This collection did not build or run the port, and those checks do not establish equivalence with the PS4 release.",
+      "MIT covers the port’s own code; the bundled Noto fonts (OFL), the LGPL LibOrbisPkg installer helper and other dependencies keep their own licenses, and P.T. content belongs to Konami. The README discloses AI coding tools in development and debugging; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/LICENSE",
+      "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/formats/README.md",
+      "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/installer.md",
+      "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/assets/fonts/README.md",
+      "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/.github/workflows/macos.yml"
+    ]
   }
 ]

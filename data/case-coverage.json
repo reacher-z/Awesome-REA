@@ -12828,13 +12828,25 @@
         "https://github.com/LoreanXavier/pt-pc",
         "https://archive.org/details/p.-t.-pc-port-"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 97 (README line 990) lists LoreanXavier/pt-pc under 👻 P.T.. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 97 行（README 第 990 行）在 👻 P.T. 下列出 LoreanXavier/pt-pc。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, license, file-format notes and installer documentation support the reported native P.T. port as an engine reimplementation that loads the user’s PS4 data. Full mapping covers this repository; the Archive item named in the collection row is not linked. Data requirements, platform limits, disclosed AI use and author-reported fidelity remain explicit.",
+      "reason_zh": "固定版本的 README、许可证、文件格式说明和安装程序文档，支持所报告的 P.T. 原生移植，其性质是读取使用者 PS4 数据的引擎重新实现。完整映射覆盖此仓库；合集行中列出的 Archive 条目不予链接。数据要求、平台限制、所披露的 AI 使用以及作者报告的一致程度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/README.md",
+        "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/LICENSE",
+        "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/formats/README.md",
+        "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/installer.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pt-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-098",
@@ -14867,18 +14879,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 150,
-      "insufficient-evidence": 126,
-      "pending": 315
-    },
-    "units_by_state": {
-      "already-curated": 149,
+      "already-curated": 151,
       "insufficient-evidence": 126,
       "pending": 314
     },
-    "primary_reviewed_units": 215,
-    "catalog_linked_occurrences": 161,
-    "distinct_resource_ids": 155,
+    "units_by_state": {
+      "already-curated": 150,
+      "insufficient-evidence": 126,
+      "pending": 313
+    },
+    "primary_reviewed_units": 216,
+    "catalog_linked_occurrences": 162,
+    "distinct_resource_ids": 156,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
