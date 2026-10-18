@@ -11670,13 +11670,27 @@
         "https://github.com/d07RiV/diabloweb",
         "https://d07riv.github.io/diabloweb/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 67 (README line 659) lists d07RiV/diabloweb under 🔥 Diablo / DevilutionX. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 67 行（README 第 659 行）在 🔥 Diablo / DevilutionX 下列出 d07RiV/diabloweb。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned diabloweb sources, the WebAssembly fork’s README, license and build script, and upstream Devilution’s README support this browser port built on the Devilution reconstruction. Full mapping covers the web port, not Devilution, DevilutionX or independently reproduced gameplay. User-supplied MPQ data, prebuilt modules, the fork’s stated behavior and network limits and its conflicting license terms remain explicit.",
+      "reason_zh": "固定版本的 diabloweb 源码、WebAssembly 分支的 README、许可与构建脚本，以及上游 Devilution 的 README，支持这一基于 Devilution 重建成果的浏览器移植。完整映射覆盖该网页移植，不涵盖 Devilution、DevilutionX 或独立复现的游戏行为。使用者自备的 MPQ 数据、预构建模块、分支自述的行为与网络限制及其相互矛盾的许可条款均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/README.md",
+        "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/src/App.js",
+        "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/src/fs.js",
+        "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/README.md",
+        "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/LICENSE",
+        "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "diabloweb-devilution-wasm-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-068",
@@ -14342,18 +14356,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 121,
-      "insufficient-evidence": 92,
-      "pending": 378
-    },
-    "units_by_state": {
-      "already-curated": 120,
+      "already-curated": 122,
       "insufficient-evidence": 92,
       "pending": 377
     },
-    "primary_reviewed_units": 153,
-    "catalog_linked_occurrences": 132,
-    "distinct_resource_ids": 126,
+    "units_by_state": {
+      "already-curated": 121,
+      "insufficient-evidence": 92,
+      "pending": 376
+    },
+    "primary_reviewed_units": 154,
+    "catalog_linked_occurrences": 133,
+    "distinct_resource_ids": 127,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -4500,5 +4500,38 @@
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/decomp-dev.yml",
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LICENSE"
     ]
+  },
+  {
+    "id": "diabloweb-devilution-wasm-port-case",
+    "name": "DiabloWeb: a WebAssembly browser port built on Devilution",
+    "url": "https://github.com/d07RiV/diabloweb",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runs Diablo in web browsers by compiling a stripped-down fork of Devilution, the community reconstruction of the game’s original source, to WebAssembly behind a React front end. The fork removes the Storm, DiabloUI, DirectX and Windows dependencies and reworks event handling for the browser. It is a port built on a reconstruction and reports no matching or behavior-equivalence checks of its own.",
+    "description_zh": "将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。该分支移除了 Storm、DiabloUI、DirectX 和 Windows 依赖，并为浏览器改写事件处理。这是基于重建成果的移植，本身未报告一致性或行为等价检查。",
+    "evidence_url": "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed diabloweb 1.0.39 at its last commit (May 2022). Prebuilt WebAssembly modules for the retail and shareware builds, and an MPQ compressor, are committed; their C/C++ source is the separate d07RiV/devilution fork. That fork’s README says many parts of the code were modified, correct behavior is not guaranteed and network play was broken; diabloweb carries WebSocket and WebRTC client modules, but multiplayer status is not established here.",
+      "The full game needs the user’s own DIABDAT.MPQ from an original copy (the page points to the GOG release); the shareware SPAWN.MPQ runs the free demo. Data files are selected or dropped in the browser, saves are kept in IndexedDB and can be downloaded or uploaded as .sv files, and the app can optionally compress the MPQ locally. Neither repository includes retail game data.",
+      "The front end is a webpack/React project built with Node.js. Rebuilding the WebAssembly modules requires Emscripten and the fork’s node build.js; the fork can also build a Windows app in Visual Studio 2017. README says the hosted page serves the shareware SPAWN.MPQ; local runs need it placed in the public folder.",
+      "Neither README reports tests, matching results or comparisons with the original executable, and the reviewed front-end tree has no test files. Reported playability rests on the hosted deployment; this collection ran nothing.",
+      "diabloweb has no license file. The fork ships Unlicense text, yet its README limits the source to non-commercial use; current upstream Devilution uses the Sustainable Use License 1.0, and Blizzard retains its rights in Diablo and its data. The reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/package.json",
+      "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/src/App.js",
+      "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/src/fs.js",
+      "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/README.md",
+      "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/LICENSE",
+      "https://github.com/d07RiV/devilution/blob/798b5122731ae4b5e0c91348e5c44cf79354a94e/build.js",
+      "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/README.md",
+      "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/LICENSE.md"
+    ]
   }
 ]

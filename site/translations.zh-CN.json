@@ -2088,5 +2088,15 @@
       "匹配数来自项目自身的检查器；tools/masked.py 列出地址屏蔽可能掩盖的差异，例如相近的浮点常量和字符串。PROVENANCE.md 报告，早期命名曾借助其政策禁止的来源（源自未公开 2003 年链接映射的第三方命名，以及一份内部 2007 年调试版本）；这些名称已删除或改名，函数匹配状态不变，而部分沿用 Halo CE 反编译的命名，其来源仍在审查中。本合集未运行任何检查。",
       "贡献者自身的工作采用 CC0 1.0；LEGAL.md 说明此举不会使 Halo 2 的代码、内容或商标进入公有领域，项目也与 Microsoft、Bungie 或 343 Industries 无关。README 称维护者的大量反编译工作在由 Claude 和 Codex 驱动的自动化流水线中进行，每批改动合入前都经审查与检查，并为贡献者提供可交给 AI 编程智能体的提示词。未记录 REA 使用，也不主张运行复现。"
     ]
+  },
+  "diabloweb-devilution-wasm-port-case": {
+    "name": "DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植",
+    "requirements": [
+      "所审阅的是 diabloweb 1.0.39 的最后一次提交（2022 年 5 月）。零售版与共享软件版的预构建 WebAssembly 模块及一个 MPQ 压缩器已提交入库；其 C／C++ 源码位于独立的 d07RiV/devilution 分支。该分支 README 称修改了大量代码、不保证行为正确且网络对战不可用；diabloweb 虽含 WebSocket 和 WebRTC 客户端模块，但此处未确认联机状态。",
+      "完整游戏需使用者从正版取得的 DIABDAT.MPQ（页面指向 GOG 版）；共享软件版 SPAWN.MPQ 可运行免费试玩。数据文件在浏览器中选择或拖入，存档保存在 IndexedDB，可作为 .sv 文件下载或上传，应用也可在本地选择压缩 MPQ。两个仓库均不含零售版游戏数据。",
+      "前端是以 Node.js 构建的 webpack／React 项目。重建 WebAssembly 模块需要 Emscripten 及分支中的 node build.js；该分支也可用 Visual Studio 2017 构建 Windows 应用。README 称托管页面提供共享软件版 SPAWN.MPQ；本地运行需将其放入 public 文件夹。",
+      "两份 README 均未报告测试、一致性结果或与原可执行文件的对照，所审阅的前端代码树也没有测试文件。可游玩性的依据是托管部署；本合集未运行任何内容。",
+      "diabloweb 没有许可文件。分支附带 Unlicense 文本，但其 README 将源码限于非商业用途；当前上游 Devilution 采用 Sustainable Use License 1.0，Blizzard 仍保有 Diablo 及其数据的权利。所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }
