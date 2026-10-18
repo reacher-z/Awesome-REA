@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 249](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-249-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 109](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-109-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 251](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-251-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 111](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-111-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (90) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (92) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (109) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (111) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -611,6 +611,18 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Dragon Ball Z: Budokai Tenkaichi 3（PS2 美版 SLUS-21678）的反编译代码编译到 PC，运行在新的渲染、音频、输入和平台层上，而非借助模拟器。游戏代码来自独立的 BT3-Decompiled 一致性反编译项目，游戏数据从使用者自备的光盘镜像读取。README 报告完整游戏流程可运行、联网对战处于实验阶段，并称项目借助 AI 完成；这些结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/tenkaichi3-pc-port-case/)
+
+- [**JSRF Unleashed：Jet Set Radio Future 静态重编译移植**](https://github.com/JuMatt/JetSetRadioFuture-Unleashed)
+
+  借助 xboxrecomp 工具包，把 Jet Set Radio Future 美版 Xbox 游戏的 x86 代码静态重编译为 C，并模拟 Xbox 内核、图形与音频硬件，从而移植到 macOS、Windows、Linux、iOS 与 Android。仓库包含运行时、转换流水线与手写覆盖代码；生成的 C 代码由玩家用自己的可执行文件在本地产生。README 称其可玩但仍处早期，尚未完整通关；状态仍为项目报告。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/jsrf-unleashed-static-recomp-case/)
+
+- [**Jet Set Radio Future：早期 Xbox 一致性反编译**](https://codeberg.org/KeybadeBlox/JSRF-Decompilation)
+
+  托管于 Codeberg 的早期一致性反编译项目，目标是 Jet Set Radio Future 北美单独发行版的 Xbox 可执行文件。贡献者先在 Ghidra 中把 default.xbe 拆分为对应各源文件的目标文件，再编写经 Visual C++ 7.0 编译后与之一致的 C++ 代码，并用 objdiff 比对。README 报告目前已完成整个 XBE 的 1.50%，并禁止使用大语言模型完成的贡献。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/jsrf-matching-decomp-case/)
 
 #### 工具、项目与集成
 

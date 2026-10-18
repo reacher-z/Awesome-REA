@@ -2028,5 +2028,25 @@
       "BT3-Decompiled 的 README 报告主程序 99.92%、菜单程序 99.97% 的游戏代码已为一致的 C 代码，两个重建二进制均与原版逐字节相同；Sony SDK 与 CRI 库不在范围内。移植日志报告，一段在 PCSX2 中录制的回放在抽样时刻的体力值及最终计时上与主机一致，但早期记录仍指出部分角色状态字不同；macOS 版据报告在演示对战的每一帧都与 Linux 状态相同。这些仍为项目报告，本合集未运行任何内容。",
       "移植自身的代码在提交 06e4671 之后采用 AGPL-3.0-only，此前（含该提交）采用 MIT；随附库保留各自条款。README 说明 src/ 和 include/ 中的游戏代码归游戏权利人所有，BT3-Decompiled 的 CC0 1.0 声明只覆盖其自身的重建工作。README 称项目借助 AI 完成，文档中也有供并行反编译智能体使用的工作规则；未记录 REA 使用，也不主张运行复现。"
     ]
+  },
+  "jsrf-unleashed-static-recomp-case": {
+    "name": "JSRF Unleashed：Jet Set Radio Future 静态重编译移植",
+    "requirements": [
+      "审阅版本为记录 0.4.7 更新日志的提交（2026 年 10 月 15 日）。README 将其描述为仅针对这一款游戏的静态重编译，而非 Xbox 模拟器或反编译。其状态表报告标题画面、菜单、存档、开场区域、滑行、涂鸦与音频可用，后期区域测试很少，加载时偶尔出现光盘错误画面。Linux 版远少于 macOS 版的游玩测试，Windows 版在 Wine 下测试，Android 版仅在 Android 模拟器中运行过。",
+      "玩家需自备美版（NTSC-U）Jet Set Radio Future 光盘：可提供包含 default.xbe 与 Media 的解包目录，或由应用借助 extract-xiso 解包的光盘镜像。README 说明其他地区版本无法使用。仓库不含游戏数据或生成的游戏代码；所审阅的 README 与入口程序指明了所需版本，但未给出其校验值。",
+      "从源码构建时，先用 tools/recomp 中的 Python 流水线处理用户自己的 default.xbe，把输出放入 port/recomp/gen，再用 CMake 构建移植程序。平台说明涵盖 macOS 的 Metal 或 OpenGL 渲染、Linux 的 SDL OpenGL 上下文、用 llvm-mingw 交叉编译 Windows 版、Xcode 的 iOS SDK，以及 Android NDK 与 SDL 2.32 源码。图形与音频硬件模型基于 xemu 的 NV2A 与 MCPX 工作。",
+      "更新日志记录了有针对性的手动测试，例如在 Android 模拟器中的运行；仓库含有工具包的测试与一致性检查目录，但固定版本中没有 CI 工作流。从 xboxrecomp 继承的贡献者说明称，该工具包的部分内容及部分贡献借助 AI 编程工具完成，随附的工具包文档也致谢 Claude Code。所审阅来源未说明 JSRF 专属移植部分是如何完成的。本合集未构建或运行该项目。",
+      "项目自有代码采用 MIT 许可，从 xemu 提取的 MCPX 音频代码仍为 LGPL-2.1-or-later。README 说明发布下载包含运行时以及机器翻译为原生代码的游戏自身代码，但不含纹理、模型、音乐、视频或文本。Jet Set Radio Future 版权归 SEGA 所有；项目自称为非官方同人项目，与 SEGA 无关联，也未获其认可。所审来源未确立与 REA 的关联。"
+    ]
+  },
+  "jsrf-matching-decomp-case": {
+    "name": "Jet Set Radio Future：早期 Xbox 一致性反编译",
+    "requirements": [
+      "审阅版本为提交 3058bf98（2026 年 10 月 16 日）。README 报告 XBE 地址空间中已拆分 2,574,172 字节中的 61,640 字节（2.39%），已拆分字节的模糊匹配率为 62.59%，相当于整个 XBE 的 1.50%。路线图后续步骤，即链接出 Windows 可执行文件并用 cxbe 重新打包为 Xbox 可执行文件，尚未开始，因此还没有重建的可执行文件、可玩版本或原生移植。",
+      "贡献者需要来自 NTSC-U 单独发行版光盘的 default.xbe 作为匹配目标。仓库包含重建源码，以及供 Ghidra 导入的符号、类型和内存映射清单，不含游戏可执行文件或素材。",
+      "工具版本均有固定要求：Microsoft Visual C++ 7.0（Visual C++ .NET 2002）编译器（在 Windows 以外通过 Wine 运行）、Git、Java 21 或更高版本、Ghidra 12.0.3 及 XboxDev XBE 扩展与 ghidra-delinker-extension v0.8.0，以及 objdiff 3.8.1，且 objdiff-cli 需在 PATH 中。该编译器是另行授权的 Microsoft 产品，仓库不提供。",
+      "进度数据来自仓库基于 objdiff 的进度脚本，仍为项目报告。模糊匹配不等于逐字节一致，本合集也未重新运行该脚本。入门指南中部分 Ghidra 导入说明仍标为 TODO。",
+      "仓库以 CC0 1.0 释出，Ghidra 脚本目录附有 GPL-3.0 文本；游戏与 Microsoft 工具链保留各自权利。README 禁止在贡献中使用大语言模型或生成式 AI，并说明不会接受来自由智能体驱动的分叉的合并请求。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

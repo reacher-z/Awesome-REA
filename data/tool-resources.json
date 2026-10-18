@@ -4295,5 +4295,68 @@
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md",
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/LICENSE"
     ]
+  },
+  {
+    "id": "jsrf-unleashed-static-recomp-case",
+    "name": "JSRF Unleashed: Jet Set Radio Future static recompilation",
+    "url": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ports the USA Xbox release of Jet Set Radio Future to macOS, Windows, Linux, iOS and Android by statically recompiling the game’s x86 code into C with the xboxrecomp toolkit, while emulating the Xbox kernel, graphics and audio hardware. The repository holds the runtime, the translation pipeline and hand-written overrides; the generated C is produced locally from the player’s own executable. The README calls it playable but early and not yet played from start to finish; status remains project-reported.",
+    "description_zh": "借助 xboxrecomp 工具包，把 Jet Set Radio Future 美版 Xbox 游戏的 x86 代码静态重编译为 C，并模拟 Xbox 内核、图形与音频硬件，从而移植到 macOS、Windows、Linux、iOS 与 Android。仓库包含运行时、转换流水线与手写覆盖代码；生成的 C 代码由玩家用自己的可执行文件在本地产生。README 称其可玩但仍处早期，尚未完整通关；状态仍为项目报告。",
+    "evidence_url": "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the commit recording the 0.4.7 changelog (15 October 2026). README describes a static recompilation for this one game, not an Xbox emulator or a decompilation. Its status table reports title, menus, saving, the opening areas, skating, graffiti and audio working, later areas little tested and an occasional disc-error screen during loads. Linux is far less played than macOS, Windows is tested under Wine, and Android has run only in the Android emulator.",
+      "Players supply their own USA (NTSC-U) Jet Set Radio Future disc, either as the extracted folder containing default.xbe and Media or as a disc image that the app unpacks with extract-xiso. README states that other regions will not work. The repository holds no game data or generated game code; the reviewed README and entry point name the required release but give no checksum for it.",
+      "Building from source runs the Python pipeline in tools/recomp on the user’s default.xbe, places its output in port/recomp/gen and builds the port with CMake. Platform notes cover Metal or OpenGL rendering on macOS, an SDL OpenGL context on Linux, llvm-mingw cross-compilation for Windows, Xcode’s iOS SDK and the Android NDK with SDL 2.32 source. The graphics and audio hardware models build on xemu’s NV2A and MCPX work.",
+      "Changelog entries record targeted manual tests, such as Android-emulator runs; toolkit test and conformance directories are present, but no CI workflow exists at the pin. Contributor notes inherited from xboxrecomp say parts of that toolkit and some contributions were developed with AI coding tools, and the vendored toolkit documentation credits Claude Code. The reviewed sources do not describe how the JSRF-specific port was produced. This collection did not build or run it.",
+      "MIT covers the project’s own code, and the MCPX audio code extracted from xemu remains LGPL-2.1-or-later. README states that release downloads contain the runtime plus the game’s own code machine-translated to native code, with no textures, models, music, video or text. Jet Set Radio Future is © SEGA; the project calls itself an unofficial fan project, not affiliated with or endorsed by SEGA. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/port/README.md",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/CHANGELOG.md",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/CONTRIBUTORS.md",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/docs/xboxrecomp-toolkit.md",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/docs/DECOMP.md",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/LICENSE",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/NOTICE",
+      "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/releases/tag/v0.4.7"
+    ]
+  },
+  {
+    "id": "jsrf-matching-decomp-case",
+    "name": "Jet Set Radio Future: early matching Xbox decompilation",
+    "url": "https://codeberg.org/KeybadeBlox/JSRF-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An early matching decompilation of the North American standalone Xbox release of Jet Set Radio Future, hosted on Codeberg. Contributors delink default.xbe into per-source object files in Ghidra, then write C++ that compiles to matching objects with Visual C++ 7.0, compared with objdiff. Its README reports 1.50% of the XBE decompiled so far and disallows contributions made with large language models.",
+    "description_zh": "托管于 Codeberg 的早期一致性反编译项目，目标是 Jet Set Radio Future 北美单独发行版的 Xbox 可执行文件。贡献者先在 Ghidra 中把 default.xbe 拆分为对应各源文件的目标文件，再编写经 Visual C++ 7.0 编译后与之一致的 C++ 代码，并用 objdiff 比对。README 报告目前已完成整个 XBE 的 1.50%，并禁止使用大语言模型完成的贡献。",
+    "evidence_url": "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/readme.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 3058bf98 (16 October 2026). README reports 61,640 of 2,574,172 bytes (2.39%) of XBE address space delinked and a 62.59% fuzzy match of the delinked bytes, equal to 1.50% of the whole XBE. The roadmap’s later steps, linking a Windows executable and repackaging it as an Xbox executable with cxbe, are not yet under way, so there is no rebuilt executable, playable build or native port.",
+      "Contributors need default.xbe from the NTSC-U standalone release disc as the matching target. The repository holds reconstructed sources and Ghidra import listings of symbols, types and the memory map, not the game executable or its assets.",
+      "Tooling is version-pinned: the Microsoft Visual C++ 7.0 (Visual C++ .NET 2002) compiler, run through Wine outside Windows, plus Git, Java 21 or later, Ghidra 12.0.3 with the XboxDev XBE extension and ghidra-delinker-extension v0.8.0, and objdiff 3.8.1 with objdiff-cli on PATH. The compiler is a separately licensed Microsoft product and is not supplied.",
+      "Progress figures come from the repository’s objdiff-based progress script and remain project-reported. A fuzzy match is not a byte-identical result, and this collection did not rerun the script. The getting-started guide still marks part of the Ghidra import instructions as TODO.",
+      "The repository is dedicated under CC0 1.0, with GPL-3.0 text in the Ghidra scripts directory; the game and the Microsoft toolchain keep their own rights. README disallows large language models and generative AI in contributions and states that merge requests from agent-driven forks will not be accepted. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/documentation/gettingstarted.md",
+      "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/decompile/progress.sh",
+      "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/decompile/objdiff.json",
+      "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/LICENSE",
+      "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/ghidra/ghidra_scripts/COPYING"
+    ]
   }
 ]

@@ -6478,13 +6478,37 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110863304444813357"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The critic’s post quotes an announcement of JSRF Unleashed and recommends a human-led decompilation instead. The pinned JSRF Unleashed repository documents a static recompilation port with inputs, build route, status and limits, so the full mapping covers that project; the Codeberg matching decompilation is recorded separately as related. The port calls itself recompilation rather than decompilation, its inherited toolkit notes acknowledge AI coding tools, and the decompilation bans LLM contributions. Neither approach is assessed, and no REA use is established.",
+      "reason_zh": "批评帖引用了 JSRF Unleashed 的发布消息，并推荐支持一个由人工主导的反编译项目。固定版本的 JSRF Unleashed 仓库记录了静态重编译移植的输入、构建流程、状态与限制，因此完整映射覆盖该项目；Codeberg 上的一致性反编译另行记录为相关项目。该移植自称重编译而非反编译，其继承的工具包说明承认使用 AI 编程工具，而该反编译项目禁止大语言模型贡献。本合集不评判任一做法，也未确立 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/README.md",
+        "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/port/README.md",
+        "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/CONTRIBUTORS.md",
+        "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/docs/xboxrecomp-toolkit.md",
+        "https://github.com/JuMatt/JetSetRadioFuture-Unleashed/blob/36828c4d2d80bf8cd1b4962579a2cdb10f4f05a9/LICENSE",
+        "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/readme.md",
+        "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/documentation/gettingstarted.md",
+        "https://codeberg.org/KeybadeBlox/JSRF-Decompilation/src/commit/3058bf9861bd35b964cde988d217f0a77eac4412/LICENSE",
+        "https://x.com/i/status/2110863304444813357",
+        "https://x.com/i/status/2110499711191048555"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "jsrf-unleashed-static-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "jsrf-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:greenlight-video-api-field-probing",
@@ -14233,18 +14257,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 115,
-      "insufficient-evidence": 86,
-      "pending": 390
-    },
-    "units_by_state": {
-      "already-curated": 114,
+      "already-curated": 116,
       "insufficient-evidence": 86,
       "pending": 389
     },
-    "primary_reviewed_units": 142,
-    "catalog_linked_occurrences": 126,
-    "distinct_resource_ids": 120,
+    "units_by_state": {
+      "already-curated": 115,
+      "insufficient-evidence": 86,
+      "pending": 388
+    },
+    "primary_reviewed_units": 143,
+    "catalog_linked_occurrences": 127,
+    "distinct_resource_ids": 122,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
