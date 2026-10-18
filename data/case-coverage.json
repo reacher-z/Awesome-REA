@@ -9693,13 +9693,28 @@
       "reported_source_urls": [
         "https://github.com/chasem-dev/sms-english"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 6 (README line 74) lists chasem-dev/sms-english under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 6 行（README 第 74 行）在 🍄 Super Mario Sunshine 下列出 chasem-dev/sms-english。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, progress file, GMSE01 build notes, agent rules and CI workflow document this fork’s own North American matching work, with AI assistance stated by its author. Full mapping covers the fork, not upstream doldecomp/sms or the separate native PC port. Its byte-identical DOL still links unfinished objects from the original disc, its GMSE01 figures are author-reported, and its US map provenance is internally inconsistent.",
+      "reason_zh": "固定版本的 README、进度文件、GMSE01 构建说明、智能体规则和 CI 工作流记录了该分支自身的北美版一致性工作，作者明确说明使用了 AI 辅助。完整映射覆盖此分支，不包括上游 doldecomp/sms 或独立的原生 PC 移植。其逐字节一致的 DOL 仍链接取自原光盘的未完成目标文件，GMSE01 数字为作者报告，美版映射文件的来源说明也前后不一。",
+      "primary_evidence_urls": [
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/PROGRESS.md",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/config/GMSE01/README.md",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/AGENTS.md",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/STRATEGY.md",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/.github/workflows/build.yml",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sms-english-gmse01-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-007",
@@ -13754,18 +13769,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 85,
-      "insufficient-evidence": 76,
-      "pending": 430
-    },
-    "units_by_state": {
-      "already-curated": 84,
+      "already-curated": 86,
       "insufficient-evidence": 76,
       "pending": 429
     },
-    "primary_reviewed_units": 103,
-    "catalog_linked_occurrences": 96,
-    "distinct_resource_ids": 90,
+    "units_by_state": {
+      "already-curated": 85,
+      "insufficient-evidence": 76,
+      "pending": 428
+    },
+    "primary_reviewed_units": 104,
+    "catalog_linked_occurrences": 97,
+    "distinct_resource_ids": 91,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

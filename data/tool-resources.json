@@ -3412,5 +3412,37 @@
       "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/LICENSE.decomp",
       "https://github.com/encounter/aurora/blob/40cf48fce6ce85366608596bae018c6188f2b2e7/README.md"
     ]
+  },
+  {
+    "id": "sms-english-gmse01-decomp-case",
+    "name": "Super Mario Sunshine (USA): an AI-assisted matching decompilation fork",
+    "url": "https://github.com/chasem-dev/sms-english",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Extends the doldecomp Super Mario Sunshine decompilation to the North American GMSE01 release. The README says AI was used extensively, and the repository’s agent rules, work order and progress files describe batch-based Claude and Codex orchestration. Its rebuilt DOL is reported byte-identical, but unfinished objects are still linked from code extracted from the user’s disc.",
+    "description_zh": "将 doldecomp 的 Super Mario Sunshine 反编译工作扩展到北美 GMSE01 版本。README 称大量使用了 AI，仓库中的智能体规则、工作顺序和进度文件也记录了按批次编排 Claude 与 Codex 的方式。项目报告重建的 DOL 逐字节一致，但尚未完成的目标文件仍取自使用者光盘中提取的代码。",
+    "evidence_url": "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "This hobby fork of doldecomp/sms targets GMSE01 (USA Rev 0). The README says it began when upstream’s Japanese decompilation was about 38% matched, and PROGRESS.md names upstream ab00c3c9 as its base. GMSJ01 and GMSP01 configs remain, but the README marks PAL as slightly broken and AGENTS.md says neither can be built or regression-tested in this clone.",
+      "Supply your own North American Rev 0 disc image in orig/GMSE01 (ISO, RVZ, WIA, WBFS, CISO, NFS, GCZ or TGC). The GMSE01 build notes record the required extracted-DOL SHA-1. Those notes say the initial symbols came from a community-hosted marioUS.map that is not on the US disc, while AGENTS.md calls the US map a real map shipped on the disc; that provenance conflict is left unresolved here.",
+      "Builds use Python 3 and Ninja on Windows, macOS (with Wine Crossover) or Linux (wibo on x86, Wine elsewhere), plus the pinned decomp-toolkit and Metrowerks tools. The output is build/GMSE01/mario.dol, checked against the extracted original. Playing it still needs the original disc image in Dolphin; a separate native PC port uses this fork as its decompilation submodule.",
+      "The README (2026-09-29) reports 99.60% fuzzy, 73.65% byte-perfect and 34.79% source-linked code, with 12,052 of 12,904 functions exact and 542 of 732 objects linked; PROGRESS.md (2026-09-27) gives slightly lower figures. A byte-identical DOL therefore does not mean complete source. The fork’s CI matrix builds only GMSJ01, so GMSE01 results are locally reported, and none were rerun here.",
+      "AGENTS.md, symlinked as CLAUDE.md and GEMINI.md, lifts upstream’s ban on autonomous library work. It requires agents to work only from the binary, the linker map and the repository, and forbids fakematches and leaked SDK sources. It does not measure how much code agents wrote. The repository keeps CC0-1.0, while Nintendo content and the compilers keep separate rights. No REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/PROGRESS.md",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/config/GMSE01/README.md",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/AGENTS.md",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/STRATEGY.md",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/DECOMPILATION_PLAN.md",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/.github/workflows/build.yml",
+      "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE"
+    ]
   }
 ]

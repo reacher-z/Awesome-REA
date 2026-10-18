@@ -1730,5 +1730,15 @@
       "configure.py 仍为独立的 GameCube 构建记录十个光盘版本的逐对象一致性状态，但 CI 忽略这些文件，只构建原生安装包。所审阅来源未公开原生应用的保真度或游戏行为检查，本合集也未构建或运行它。",
       "Metaforce 贡献者的代码采用 MIT，另有一份 LICENSE.decomp 采用 CC0 1.0；所审阅文件未说明二者各自覆盖哪些目录。光盘内容保留各自权利。所审阅来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "sms-english-gmse01-decomp-case": {
+    "name": "Super Mario Sunshine（美版）：AI 辅助的一致性反编译分支",
+    "requirements": [
+      "这是 doldecomp/sms 的业余分支，目标为 GMSE01（美版 Rev 0）。README 称分支创建时上游日版反编译约完成 38% 的匹配，PROGRESS.md 注明以上游 ab00c3c9 为基础。GMSJ01 与 GMSP01 配置仍在代码树中，但 README 标注 PAL 版略有问题，AGENTS.md 也说明二者在本分支中都无法构建或做回归测试。",
+      "需将自备的北美 Rev 0 光盘镜像放入 orig/GMSE01（ISO、RVZ、WIA、WBFS、CISO、NFS、GCZ 或 TGC）。GMSE01 构建说明记录了提取出的 DOL 必须符合的 SHA-1。该说明称初始符号来自社区托管的 marioUS.map，并不在美版光盘上；而 AGENTS.md 却称美版映射是光盘自带的真实链接映射。此处不对这一来源矛盾作出判断。",
+      "构建需在 Windows、macOS（配合 Wine Crossover）或 Linux（x86 使用 wibo，其他架构使用 Wine）上安装 Python 3 和 Ninja，并使用固定版本的 decomp-toolkit 与 Metrowerks 工具。产物为 build/GMSE01/mario.dol，并与提取的原始文件比对。运行时仍需在 Dolphin 中使用原光盘镜像；另有一个原生 PC 移植以该分支作为反编译子模块。",
+      "README（2026-09-29）报告：模糊匹配 99.60%、逐字节一致 73.65%、源码链接 34.79%，12,904 个函数中 12,052 个完全一致，732 个目标文件中 542 个由源码链接；PROGRESS.md（2026-09-27）的数字略低。因此 DOL 逐字节一致并不代表源码已经完整。分支的 CI 矩阵只构建 GMSJ01，GMSE01 结果均为本地报告，本合集也未重跑。",
+      "AGENTS.md（CLAUDE.md 与 GEMINI.md 为指向它的符号链接）取消了上游对智能体自主处理库代码的禁令。它要求智能体只依据二进制、链接映射和本仓库开展工作，禁止伪匹配和使用泄露的 SDK 源码，但没有统计智能体编写了多少代码。仓库沿用 CC0-1.0，任天堂内容和编译器另有权利约束。未确立 REA 的使用。"
+    ]
   }
 }
