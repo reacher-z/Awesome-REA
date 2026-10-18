@@ -4182,13 +4182,31 @@
         "https://x.com/i/status/2110563764886266167",
         "https://x.com/i/status/2110565455039799441"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "A two-post thread reports hands-on tests of npm rea-agents 6.4.0 on Windows with Node 24: about 200 .NET Framework assemblies against the managed decode budget, an AI-built Electron-style sample, a Trap.dll side-effect check and a one-constant assembly comparison. The samples, raw command output and full environment are not published, and the thread evaluates REA's static analysis rather than reconstructing any software. Retain the lead without a curated case; the related mappings point to the catalog's REA managed-code and JavaScript-workflow documentation, which describe the representation budget, --type selection and application-graph analysis that the posts test.",
+      "reason_zh": "一组两条帖子的讨论串报告了在 Windows + Node 24 上实测 npm 版 rea-agents 6.4.0：约 200 个 .NET Framework 程序集在托管解码预算下的表现、一个由 AI 构造的 Electron 风格样例、一个 Trap.dll 副作用检查，以及仅差一个常量的程序集比对。样本、原始命令输出和完整环境均未公开，且帖子评估的是 REA 的静态分析能力，而非重建任何软件。保留此线索而不收录为案例；相关映射指向目录中 REA 托管代码与 JavaScript 工作流文档，这些文档描述了帖子所测试的表示预算、--type 选择及应用图分析。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110563764886266167",
+        "https://x.com/i/status/2110565455039799441",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/managed-code-analysis.md",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/javascript-application-workflows.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-managed-guide",
+          "kind": "documentation",
+          "scope": "related"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-js-workflows",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:links-awakening-claude-pc-port-report",
@@ -13621,17 +13639,17 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 80,
-      "insufficient-evidence": 72,
-      "pending": 439
+      "insufficient-evidence": 73,
+      "pending": 438
     },
     "units_by_state": {
       "already-curated": 79,
-      "insufficient-evidence": 72,
-      "pending": 438
+      "insufficient-evidence": 73,
+      "pending": 437
     },
-    "primary_reviewed_units": 95,
-    "catalog_linked_occurrences": 89,
-    "distinct_resource_ids": 83,
+    "primary_reviewed_units": 96,
+    "catalog_linked_occurrences": 90,
+    "distinct_resource_ids": 85,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
