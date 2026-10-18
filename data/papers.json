@@ -3239,5 +3239,55 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-firmadyne",
+    "title": "Towards Automated Dynamic Analysis for Linux-based Embedded Firmware",
+    "title_zh": "面向基于 Linux 的嵌入式固件的自动化动态分析",
+    "authors": [
+      "Daming D. Chen",
+      "Manuel Egele",
+      "Maverick Woo",
+      "David Brumley"
+    ],
+    "year": 2016,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2016; the publisher PDF separately identifies the 21–24 February 2016 symposium, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2016；出版方 PDF 另列研讨会日期为 2016 年 2 月 21—24 日，本条目不据此推定出版月份或日期。",
+    "venue": "NDSS 2016",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2016.23415",
+    "url": "https://doi.org/10.14722/ndss.2016.23415",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf",
+    "code_url": "https://github.com/firmadyne/firmadyne",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Firmadyne crawls, extracts and emulates Linux-based firmware for network-connected commercial devices such as routers and IP cameras. It replaces the vendor kernel with pre-built, instrumented kernels for little-endian ARM and little- and big-endian MIPS, boots the extracted filesystem under QEMU full-system emulation with a userspace NVRAM library, infers the network configuration, then runs automated analyses including 60 known and 14 newly found exploits. From 23,035 images across 42 vendors, the authors extracted 9,486 and report 887 of the 1,971 network-reachable images vulnerable to at least one sampled exploit.",
+    "description_zh": "Firmadyne 对路由器、IP 摄像头等联网商用设备中基于 Linux 的固件进行爬取、提取与仿真。它以预先构建并插桩的小端 ARM 及小端、大端 MIPS 内核替换厂商内核，在 QEMU 全系统仿真中配合用户态 NVRAM 库启动提取出的文件系统，推断网络配置，再运行自动化分析，包括 60 个已知漏洞利用和 14 个新发现的漏洞利用。作者从 42 家厂商的 23,035 个固件映像中提取出 9,486 个，并报告在 1,971 个网络可达映像中有 887 个至少受一个所选漏洞利用影响。",
+    "scope_limitations_en": "The work targets Linux-based firmware on little-endian ARM and little- and big-endian MIPS, which made up 90.8% of the dataset; x86, VxWorks and other real-time operating systems are outside the system. Its pre-built kernels do not load vendor out-of-tree kernel modules, so vendor kernels and modules cannot be checked, and instrumented emulation is not identical device behavior. The emulation funnel narrows sharply: of 8,591 images that initially emulated, 2,797 had a network configuration inferred and 1,971 answered ping. NVRAM semantics, interface naming and a single emulated Ethernet device on ARM are among the reported causes. WAN and LAN ports are not distinguished, so remote exploitability is not established, and results count firmware images rather than unique products and are skewed by vendor composition. FirmAE, already in this bibliography, extends Firmadyne to address such emulation failures; these 2016 rates are not current emulation figures.",
+    "scope_limitations_zh": "该工作面向小端 ARM 及小端、大端 MIPS 上基于 Linux 的固件，这些平台占数据集的 90.8%；x86、VxWorks 及其他实时操作系统不在系统支持范围内。其预构建内核不加载厂商的树外内核模块，因此无法检查厂商内核及模块，插桩仿真也不等同于设备原有行为。仿真流程逐级大幅收窄：在初始仿真成功的 8,591 个映像中，2,797 个推断出网络配置，1,971 个能响应 ping。论文列出的原因包括 NVRAM 语义、网络接口命名，以及 ARM 平台仅仿真一个以太网设备等。系统不区分 WAN 与 LAN 端口，因此不能确认可否远程利用；结果按固件映像而非独立产品计数，并受厂商构成偏差影响。本收录中已有的 FirmAE 扩展了 Firmadyne 以解决此类仿真失败；这些 2016 年的比率并非当前的仿真数据。",
+    "why_fits_en": "Adds the full-system firmware-emulation framework, with kernel replacement and userspace NVRAM, that later rehosting research such as FirmAE builds on.",
+    "why_fits_zh": "补充采用内核替换与用户态 NVRAM 的全系统固件仿真框架，FirmAE 等后续重托管研究在其基础上展开。",
+    "metadata_notes": "Crossref gives only the year and no pages; the PDF footer identifies NDSS ’16, 21–24 February 2016, San Diego, with ISBN 1-891562-41-X and the DOI. The DOI resolves directly to the NDSS PDF, so the DOI URL serves as the paper page. Figures differ between sources: the paper's per-vendor appendix table totals 8,893 extracted images where its abstract and body give 9,486, and the repository README reports 846 of 1,971 (43%) vulnerable images where the paper reports 887 (45%). This record follows the paper body. The reviewed 2024-07-21 snapshot of firmadyne/firmadyne is MIT-licensed, calls itself a research tool that is not production ready, and says the paper's results used pre-release toolchains, kernels and components that it lists by version or commit. Its current Dockerfile uses Ubuntu 22.04 and runs in privileged mode, and download.sh fetches pre-built kernels, console and libnvram binaries from GitHub releases. Vendor firmware images and Metasploit exploits carry their own terms. No firmware, binaries or exploits were downloaded, and nothing was run.",
+    "metadata_notes_zh": "Crossref 仅给出年份而无页码；PDF 页脚标明 NDSS ’16 于 2016 年 2 月 21—24 日在圣迭戈举行，并载有 ISBN 1-891562-41-X 与 DOI。该 DOI 直接解析至 NDSS PDF，因此以 DOI 链接作为论文页面。各来源的数字存在差异：论文附录按厂商列出的表格合计 8,893 个已提取映像，而摘要与正文为 9,486 个；仓库 README 报告 1,971 个映像中有 846 个（43%）存在漏洞，论文则为 887 个（45%）。本条目以论文正文为准。所审阅的 firmadyne/firmadyne 2024-07-21 快照采用 MIT 许可，自称是尚不适合生产环境的研究工具，并说明论文结果使用了预发布版本的工具链、内核及组件，按版本或提交逐项列出。当前 Dockerfile 使用 Ubuntu 22.04 并以特权模式运行，download.sh 从 GitHub 发布页下载预构建的内核、console 与 libnvram 二进制。厂商固件映像与 Metasploit 漏洞利用适用各自条款。本次未下载固件、二进制或漏洞利用，也未运行任何内容。",
+    "evidence_urls": [
+      "https://doi.org/10.14722/ndss.2016.23415",
+      "https://api.crossref.org/works/10.14722/ndss.2016.23415",
+      "https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf",
+      "https://github.com/firmadyne/firmadyne/blob/11cb574cda0a5540ab7e36aa9b43679dc02c5788/README.md",
+      "https://github.com/firmadyne/firmadyne/blob/11cb574cda0a5540ab7e36aa9b43679dc02c5788/LICENSE.txt",
+      "https://github.com/firmadyne/firmadyne/blob/11cb574cda0a5540ab7e36aa9b43679dc02c5788/Dockerfile",
+      "https://github.com/firmadyne/firmadyne/blob/11cb574cda0a5540ab7e36aa9b43679dc02c5788/download.sh"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
