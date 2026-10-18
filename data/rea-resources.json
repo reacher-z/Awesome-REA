@@ -2439,5 +2439,31 @@
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/THIRD_PARTY_NOTICES.md",
       "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/LICENSE"
     ]
+  },
+  {
+    "id": "screen-studio-auto-zoom-case",
+    "name": "Screen Studio: an author-reported REA study of auto-zoom rules",
+    "url": "https://x.com/i/article/2109834677343432704",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author reports using REA to map Screen Studio’s Electron package, reading six auto-zoom and cursor rules from its obfuscated code with Claude Code’s help, and having Claude Code write an independent recorder and renderer from those rules. The article describes the commands, evidence, a cursor-alignment check and the clone’s gaps; neither the clone nor the decoded code is published.",
+    "description_zh": "作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。文章介绍了所用命令、证据、光标对齐检查以及复刻版的不足；复刻版和解出的代码均未公开。",
+    "evidence_url": "https://x.com/i/article/2109834677343432704",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The 2026-10-13 article targets the macOS Screen Studio app’s app.asar with REA’s JavaScript application analyzer, run from the command line on the author’s Mac with a supported Node.js version and Xcode Command Line Tools; it names neither the REA nor the Screen Studio version. The author reports a 101-second run producing a 124 MB evidence file over 3,695 files, using an integrity policy that records, rather than stops on, 25 bundled native programs whose fingerprints no longer matched.",
+      "The relevant code was obfuscated. The author says REA’s source-recovery command was unavailable on macOS, so Claude Code wrote a separate script to make it readable; that step is the agent’s work, not REA output, and this entry records no method details. The decoded code is deliberately unpublished.",
+      "From the six rules, Claude Code reportedly wrote about 1,300 lines from scratch: a Swift ScreenCaptureKit recorder that logs cursor positions separately, and a Remotion renderer. The author reports 60 fps capture without dropped frames and a 22-second clip rendered in about 50 seconds on an M4 Pro, and says a redrawn cursor overlaid on a recording of the system cursor matched in most frames, with one fast-motion frame off by a few pixels.",
+      "The author lists gaps: no graphical editor, three cursor types, simplified motion blur, no typing zoom or click sounds, and camera and microphone code that has not been tested with a real camera; the clone is far from replacing Screen Studio. Its source is unpublished, so none of these results can be checked here.",
+      "The author says the clone uses no Screen Studio code or assets and advises reading a product’s user agreement first. This study of a commercial app establishes no vendor approval or redistribution right, and the reported rules may not hold for other versions."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://x.com/HanZhang415188/status/2109843188341207283"
+    ]
   }
 ]

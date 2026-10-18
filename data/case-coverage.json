@@ -3491,13 +3491,24 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109842197654692349"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@greco_dev, 2026-10-13), in Portuguese, says the author reverse-engineered a TV using REA and lists app and input switching, volume, remote control, Mac screen mirroring, screen time and picture controls; it shows a video. The GitHub account that names this X handle publishes LGwebOS-menubar, created later that day and pinned here: a native macOS remote for LG webOS TVs, tested on one webOS 5.0 set. Full mapping covers it. The README credits Connect SDK and PyWebOSTV for protocol behavior and limits mirroring to guidance; it does not mention REA, so REA’s role remains the author’s claim.",
+      "reason_zh": "作者以葡萄牙语发布的帖子（@greco_dev，2026-10-13）称借助 REA 逆向了自家电视，并列出切换应用和输入源、音量、遥控、镜像 Mac 屏幕、屏幕使用时间及画面调节等功能；帖子附视频。资料中注明该 X 账号的 GitHub 账号在当天稍晚发布了 LGwebOS-menubar（此处固定到具体提交）：一款 LG webOS 电视的原生 macOS 遥控器，测试仅覆盖一台 webOS 5.0 电视。完整映射覆盖该项目。README 称协议行为参考了 Connect SDK 和 PyWebOSTV，屏幕镜像仅提供操作指引；仓库未提及 REA，因此 REA 的作用仍是作者说法。",
+      "primary_evidence_urls": [
+        "https://x.com/greco_dev/status/2109842197654692349",
+        "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/README.md",
+        "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lgwebos-menubar-remote-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:screen-studio-rebuild",
@@ -3511,13 +3522,23 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109843188341207283"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@HanZhang415188, 2026-10-13) links the author’s X article published the same day, read here through the public post API. The article documents REA analysis of Screen Studio’s Electron package, an agent-written step to read obfuscated code, six reported auto-zoom and cursor rules, a from-scratch Swift and Remotion clone written by Claude Code, a cursor-alignment check and stated gaps. Full mapping covers that report; the clone and decoded code are unpublished, so its results remain author-reported.",
+      "reason_zh": "作者帖子（@HanZhang415188，2026-10-13）链接了作者当天发布的 X 文章，此处通过公开帖子 API 阅读全文。文章记录了用 REA 分析 Screen Studio 的 Electron 安装包、由 Agent 编写脚本读懂混淆代码、所报告的六条自动缩放与光标规则、由 Claude Code 从零编写的 Swift 与 Remotion 复刻版、光标对齐检查及其自述不足。完整映射覆盖这份报告；复刻版和解出的代码均未公开，因此其结果仍属作者报告。",
+      "primary_evidence_urls": [
+        "https://x.com/HanZhang415188/status/2109843188341207283",
+        "https://x.com/i/article/2109834677343432704"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "screen-studio-auto-zoom-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:armed-and-dangerous-remaster",
@@ -3531,12 +3552,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109911827203358998"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@NikhilVerma, 2026-10-13) describes an Armed and Dangerous remaster in progress and two candidate approaches: decompiling with Ghidra, having AI write C and swapping functions at runtime, which the author says enabled better anti-aliasing but not physics changes because the game runs on Havok; or a Rust rewrite on Bevy. The author says the first approach lets an LLM load the original game at chosen levels and scenes to compare results, and hopes to share a video. No code, build notes or comparison output are linked, and the GitHub account linked from the profile has no such project. Retain the lead without a catalog mapping; the approach is undecided and nothing is published.",
+      "reason_zh": "作者的纯文字帖子（@NikhilVerma，2026-10-13）介绍了正在进行的《Armed and Dangerous》重制，以及两种备选方案：用 Ghidra 反编译、让 AI 写 C 代码并在运行时替换函数（作者称这已实现更好的抗锯齿，但因游戏运行在 Havok 引擎上而无法改进物理表现）；或用 Rust 基于 Bevy 重写。作者称第一种方案能让大模型在任意关卡和场景载入原版游戏以对比结果，并希望之后分享视频。帖中未链接代码、构建说明或对比输出，资料中链接的 GitHub 账号也没有此项目。保留此线索而不建立目录映射；方案尚未确定，也没有任何公开成果。",
+      "primary_evidence_urls": [
+        "https://x.com/NikhilVerma/status/2109911827203358998"
+      ],
       "catalog_matches": []
     },
     {
@@ -3591,12 +3614,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109865837477716324"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@JesperAdolf, 2026-10-13) says the author ported the C64 game Fort Apocalypse to Android using Codex and Ghidra, adding that C64 game companies are dead; it shows two images. It publishes no source, build, method or comparison with the original and does not address the game’s rights. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the port and how it was made are unestablished.",
+      "reason_zh": "作者帖子（@JesperAdolf，2026-10-13）称借助 Codex 和 Ghidra 把 C64 游戏《Fort Apocalypse》移植到了 Android，并称 C64 游戏公司早已不复存在；帖子附两张图片。帖中未公开源码、构建、方法或与原版的对照，也未说明游戏的权利问题。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该移植及其制作方式均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/JesperAdolf/status/2109865837477716324"
+      ],
       "catalog_matches": []
     },
     {
@@ -3611,12 +3636,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109912103813599539"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Relph35432, 2026-10-13) says that within an hour of trying REA the author used it for reverse engineering and built a playable Minecraft × Plants vs. Zombies mashup with sunflowers and peashooters; it shows one image and quotes a general REA post by another user. It does not say what was reverse-engineered and publishes no mod, code or build. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the mashup and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Relph35432，2026-10-13）称试用 REA 一小时内就用它做了逆向，并做出可玩的《Minecraft》×《植物大战僵尸》混搭作品，加入了向日葵和豌豆射手；帖子附一张图片，并引用另一位用户关于 REA 的泛泛帖子。帖子未说明逆向了什么，也未公开模组、代码或构建。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该混搭作品及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Relph35432/status/2109912103813599539"
+      ],
       "catalog_matches": []
     },
     {
@@ -3631,12 +3658,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109913567428592046"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@0xMcDonald, 2026-10-13) says the author used REA to study two existing third-party trainers for Romance of the Three Kingdoms XIV and combined their functions into an MCP server, so batch edits to game data can be requested from an AI instead. It names no game version and publishes no code, tool or test, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the MCP project and REA’s contribution are unestablished, and the third-party trainers keep their own rights.",
+      "reason_zh": "作者的纯文字帖子（@0xMcDonald，2026-10-13）称借助 REA 研究了《三国志14》的两款现有第三方修改器，并把它们的功能合并成一个 MCP 服务，从而可直接让 AI 批量修改游戏数据。帖子未指明游戏版本，也未公开代码、工具或测试，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该 MCP 项目及 REA 的作用均未确立，第三方修改器的权利仍归其作者。",
+      "primary_evidence_urls": [
+        "https://x.com/0xMcDonald/status/2109913567428592046"
+      ],
       "catalog_matches": []
     },
     {
@@ -15447,18 +15476,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 183,
-      "insufficient-evidence": 148,
-      "pending": 260
+      "already-curated": 185,
+      "insufficient-evidence": 152,
+      "pending": 254
     },
     "units_by_state": {
-      "already-curated": 181,
-      "insufficient-evidence": 148,
-      "pending": 260
+      "already-curated": 183,
+      "insufficient-evidence": 152,
+      "pending": 254
     },
-    "primary_reviewed_units": 269,
-    "catalog_linked_occurrences": 193,
-    "distinct_resource_ids": 187,
+    "primary_reviewed_units": 275,
+    "catalog_linked_occurrences": 195,
+    "distinct_resource_ids": 189,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

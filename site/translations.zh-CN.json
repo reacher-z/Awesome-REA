@@ -2832,5 +2832,25 @@
       "自定义工具基于其 API 编写，API 文档随发布包提供，也可在线查阅；API 示例涵盖内存地址、指令和基本块跟踪以及指令计数。README 列出 WinAFL、Arm Instruction Emulator、DrCCTProf、VClinic 和 GWPSan 等基于它构建的外部工具，发布包还附带 Dr. Memory；本条目未单独收录这些工具。",
       "主体采用 BSD 许可。drsyscall、drwrap 和 drutil 扩展以及 Dr. Memory Framework 库采用 LGPL 2.1，drsyms 扩展所链接的 elfutils 库采用 LGPL 3。README 中关于效率和透明性的说法未经测试；本次未对任何程序插桩。"
     ]
+  },
+  "lgwebos-menubar-remote-case": {
+    "name": "LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器",
+    "requirements": [
+      "审阅版本为 2026-10-13 的最新提交。需要 macOS 14 及以上、带 Swift 5.9 及以上的 Xcode Command Line Tools，以及位于同一网络的 LG webOS 电视；唯一测试过的机型是 webOS 5.0 的 LG 50UN7310PSC，其他型号和版本未经验证。配对须在电视上确认，需使用 IPv4 地址，网络唤醒还需要电视的 MAC 地址。",
+      "scripts/build.sh 生成本地签名、未经公证的应用包。配对使用 3001 端口上的加密 WebSocket；应用在用户明确同意后固定电视证书，并把配对密钥保存在钥匙串中。仓库不含任何设备地址或配对密钥，另有隐私检查脚本在发布前扫描文件。",
+      "离线 --self-check 无需电视即可运行偏好设置、证书、指针、主页、使用统计、资源和本地回环媒体测试。这些属于实现层面的检查，而非针对 LG 接口的一致性测试；本次核查既未运行这些测试，也未连接电视。",
+      "README 收窄了作者帖子中的说法：屏幕使用时间只在应用连接期间于本地统计，AirPlay 仅提供 macOS 屏幕镜像的操作指引，画面设置能否修改取决于电视权限，投放媒体则取决于电视支持的编码和 DLNA 服务。",
+      "MIT 许可覆盖项目代码；PyWebOSTV 清单保留其 MIT 声明，LG、各应用及游戏主机图标归其所有者。提交记录将 Claude 列为共同作者，同一账号的 X 帖子称使用了 REA，但仓库未提及 REA，因此 REA 的使用未经确认。这是非官方客户端，并非恢复出的 LG 软件。"
+    ]
+  },
+  "screen-studio-auto-zoom-case": {
+    "name": "Screen Studio：作者报告的 REA 自动缩放规则研究",
+    "requirements": [
+      "这篇 2026-10-13 的文章在作者的 Mac 上用命令行运行 REA 的 JavaScript 应用分析器，分析 macOS 版 Screen Studio 的 app.asar，环境为受支持的 Node.js 版本和 Xcode Command Line Tools；文中未注明 REA 或 Screen Studio 的版本。作者报告这次运行用时 101 秒，生成覆盖 3,695 个文件的 124 MB 证据文件；由于 25 个随包原生程序的指纹不再匹配，运行时采用了只记录而不停止的完整性策略。",
+      "相关代码经过混淆。作者称 REA 的源码还原命令在 macOS 上不可用，于是由 Claude Code 另写脚本使代码可读；这一步是 Agent 的工作而非 REA 的输出，本条目不记录任何方法细节。解出的代码按作者意愿不公开。",
+      "据作者报告，Claude Code 依据六条规则从零写了约 1,300 行代码：一个单独记录光标位置的 Swift ScreenCaptureKit 录屏器，以及一个 Remotion 渲染器。作者报告在 M4 Pro 上以 60 fps 录制无丢帧，22 秒的片子约 50 秒渲染完成；并称把重绘光标叠加到录有系统光标的画面上逐帧比对，大多数帧完全重合，只有一帧快速移动时偏差几个像素。",
+      "作者列出的不足包括：没有图形界面编辑器、只有三种光标、运动模糊较简单、没有打字放大和点击音效，摄像头与麦克风代码已写好但尚未用真实摄像头测试；复刻版距离替代 Screen Studio 还差得远。其源码未公开，因此这些结果在此均无法核查。",
+      "作者称复刻版未使用 Screen Studio 的代码和素材，并建议分析他人软件前先阅读其用户协议。这项对商业应用的研究不代表厂商认可或再分发权利，所报告的规则也未必适用于其他版本。"
+    ]
   }
 }
