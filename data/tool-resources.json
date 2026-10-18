@@ -6699,5 +6699,37 @@
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/src/main.cpp",
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/LICENSE.txt"
     ]
+  },
+  {
+    "id": "skate3-recomp-case",
+    "name": "Skate 3 Recomp: a native Xbox 360 recompilation through ReXGlue",
+    "url": "https://github.com/mchughalex/skate3recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recompiles the Xbox 360 version of Skate 3 into native Windows, Linux and macOS builds with a Skate-specific fork of the ReXGlue SDK. Since v2.0.0 a native Direct3D 12 and Vulkan renderer with ports of the game’s own material shading replaces emulation of the Xbox 360 GPU, which remains as a fallback. Game files come from the user’s disc image; the author calls the native renderer early and has not tested the game end to end.",
+    "description_zh": "借助 ReXGlue SDK 的 Skate 专用分支，将 Xbox 360 版《Skate 3》重编译为 Windows、Linux 与 macOS 原生版本。自 v2.0.0 起，基于 Direct3D 12 和 Vulkan、移植了游戏自身材质着色的原生渲染器取代对 Xbox 360 GPU 的模拟，模拟渲染器保留为后备。游戏文件来自使用者的光盘镜像；作者称原生渲染器尚处早期，且尚未完整测试整个游戏。",
+    "evidence_url": "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The latest reviewed release is v2.0.2 (July 2026) for Windows, Linux and experimental Apple-silicon macOS; the README calls Windows the most tested platform. Known native-renderer issues include streaming pop-in, skater-customization rendering, Hall of Meat highlights and skate-park parity; frame-rate and power gains over the emulated renderer are author-reported.",
+      "Players choose an ISO of their own Xbox 360 copy of Skate 3 for the built-in installer, and DLC needs the user’s own package files. Source codegen reads default.xex and data/webkit/EAWebkit.xex from an extracted dump and should also be given the Title Update 3 package, whose patched executables release builds require. Retail files and generated recompilation sources are git-ignored.",
+      "Builds need CMake 3.25+, Ninja and Clang 18 or newer (Clang 20 is recommended on Ubuntu 24.04); MSVC and Apple Clang are unsupported. The pinned rexglue-sdk submodule is the author’s fork on the rexglue 0.8.0 line, holding the runtime, codegen, input, timing and both graphics backends. Vulkan SPIR-V shader binaries are committed, and macOS uses Homebrew LLVM with MoltenVK.",
+      "The reviewed tree contains no CI workflow, test suite or fidelity comparison, and the README says the game has not been played through on the native renderer. Visual-parity statements are project claims; this collection did not build or run the port.",
+      "Neither the repository nor its GitHub metadata declares a license for the project’s code; the rexglue fork carries a Xenia-derived BSD-3-Clause notice, and Skate 3 content retains Electronic Arts’ rights. The reviewed sources establish no AI or REA involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/CMakeLists.txt",
+      "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/.gitignore",
+      "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/.gitmodules",
+      "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/cmake/ApplySkate3CodegenPatches.cmake",
+      "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/config/skate3.example.toml",
+      "https://github.com/mchughalex/rexglue-skate3/blob/7eb0faf7787f5e01333c228b8e3f03c32f7295ea/LICENSE",
+      "https://github.com/mchughalex/skate3recomp/releases/tag/v2.0.2"
+    ]
   }
 ]

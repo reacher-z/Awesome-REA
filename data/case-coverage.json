@@ -13327,13 +13327,29 @@
       "reported_source_urls": [
         "https://github.com/mchughalex/skate3recomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 108 (README line 1108) lists mchughalex/skate3recomp under 🏁 Skate 3. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 108 行（README 第 1108 行）在 🏁 Skate 3 下列出 mchughalex/skate3recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build files, ignore rules, submodule pin and the rexglue fork’s license document a ReXGlue static recompilation of the Xbox 360 Skate 3 executables with a native renderer and user-supplied disc, update and DLC files. Full mapping covers this port; renderer parity and performance remain author-reported, and the missing project license is explicit.",
+      "reason_zh": "固定版本的 README、构建文件、忽略规则、子模块固定版本及 rexglue 分支的许可证，记录了使用 ReXGlue 对 Xbox 360 版《Skate 3》可执行文件进行的静态重编译，配有原生渲染器，并由使用者提供光盘、更新和 DLC 文件。完整映射覆盖此移植；渲染一致性和性能仍为作者自述，缺少项目许可证的情况也已明确记录。",
+      "primary_evidence_urls": [
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/README.md",
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/CMakeLists.txt",
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/.gitignore",
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/.gitmodules",
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/cmake/ApplySkate3CodegenPatches.cmake",
+        "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/config/skate3.example.toml",
+        "https://github.com/mchughalex/rexglue-skate3/blob/7eb0faf7787f5e01333c228b8e3f03c32f7295ea/LICENSE",
+        "https://github.com/mchughalex/skate3recomp/releases/tag/v2.0.2"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "skate3-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-109",
@@ -15357,18 +15373,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 178,
-      "insufficient-evidence": 146,
-      "pending": 267
-    },
-    "units_by_state": {
-      "already-curated": 177,
+      "already-curated": 179,
       "insufficient-evidence": 146,
       "pending": 266
     },
-    "primary_reviewed_units": 263,
-    "catalog_linked_occurrences": 188,
-    "distinct_resource_ids": 183,
+    "units_by_state": {
+      "already-curated": 178,
+      "insufficient-evidence": 146,
+      "pending": 265
+    },
+    "primary_reviewed_units": 264,
+    "catalog_linked_occurrences": 189,
+    "distinct_resource_ids": 184,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

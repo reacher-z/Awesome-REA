@@ -2784,5 +2784,15 @@
       "CI 只编译代码，仓库没有自动化行为测试，因此与原游戏的一致程度没有公开检查予以证明。本次审阅未构建或运行该项目。",
       "源文件头声明采用 GPL-3.0-or-later，README 说明经作者许可使用修改过的 SDL_gfx 代码（LGPL）。原游戏资源保留各自权利。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "skate3-recomp-case": {
+    "name": "Skate 3 Recomp：通过 ReXGlue 实现的 Xbox 360 原生重编译",
+    "requirements": [
+      "所审最新发布版为 v2.0.2（2026 年 7 月），提供 Windows、Linux 以及实验性的 Apple 芯片 macOS 版本；README 称 Windows 版测试最充分。原生渲染器的已知问题包括快速移动时的素材加载闪现、滑手自定义外观渲染、Hall of Meat 高亮以及滑板公园的画面一致性；相对模拟渲染器的帧率与功耗提升为作者自述。",
+      "玩家通过内置安装程序选择自有 Xbox 360 版《Skate 3》的 ISO；DLC 需使用者自有的内容包文件。源码代码生成需从提取的游戏转储中读取 default.xex 和 data/webkit/EAWebkit.xex，并应提供 Title Update 3 更新包，发布版构建依赖其修补后的可执行文件。零售文件和生成的重编译源码均被 git 忽略。",
+      "构建需要 CMake 3.25+、Ninja 和 Clang 18 或更新版本（在 Ubuntu 24.04 上建议 Clang 20）；不支持 MSVC 和 Apple Clang。固定版本的 rexglue-sdk 子模块是作者基于 rexglue 0.8.0 系列的分支，包含运行时、代码生成、输入、计时及两种图形后端。Vulkan SPIR-V 着色器二进制已提交到仓库，macOS 使用 Homebrew LLVM 与 MoltenVK。",
+      "所审源码树中没有 CI 工作流、测试套件或还原度对比，README 也说明尚未在原生渲染器上完整通关。画面一致性说法均为项目主张；本合集未构建或运行该移植。",
+      "仓库及其 GitHub 元数据均未声明项目代码的许可证；rexglue 分支附有源自 Xenia 的 BSD-3-Clause 声明，《Skate 3》内容的权利归 Electronic Arts 所有。所审来源未确立 AI 或 REA 参与，也不主张运行复现。"
+    ]
   }
 }
