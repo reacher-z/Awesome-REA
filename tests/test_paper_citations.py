@@ -140,7 +140,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-deguard',
                     'paper-symgen',
                     'paper-webcode2m',
-                    'paper-xfl'}
+                    'paper-xfl',
+                    'paper-wadec'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.

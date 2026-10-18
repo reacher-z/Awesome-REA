@@ -4475,5 +4475,64 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-wadec",
+    "title": "WaDec: Decompiling WebAssembly Using Large Language Model",
+    "title_zh": "WaDec：基于大语言模型的 WebAssembly 反编译",
+    "authors": [
+      "Xinyu She",
+      "Yanjie Zhao",
+      "Haoyu Wang"
+    ],
+    "year": 2024,
+    "publication_date": "2024-10-27",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives print and online publication on 2024-10-27. That is also the first day of the October 27–November 1 conference; the date comes from the publisher record, not from the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2024-10-27。该日期恰为 10 月 27 日至 11 月 1 日会议的首日；本条目依据出版方记录，而非根据会议日程推定。",
+    "venue": "ASE 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2406.11346",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2024-06-17",
+    "doi": "10.1145/3691620.3695020",
+    "citation": {
+      "container_title": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering",
+      "publisher": "ACM",
+      "pages": "481-492",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3691620.3695020"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3691620.3695020",
+    "pdf_url": "https://arxiv.org/pdf/2406.11346v3",
+    "code_url": "https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be",
+    "project_url": null,
+    "targets": [
+      "binary",
+      "website"
+    ],
+    "description_en": "WaDec decompiles WebAssembly text (wat) into C by fine-tuning CodeLlama-7b with LoRA on loop-level wat–C snippet pairs. Functions are ordered by dependency and sliced so that each input holds at most one loop, with nested loops replaced by markers. Prompts add declarations of called functions, previously defined local variables and offset-to-string mappings; the outputs are then reassembled, with string constants restored and variables renamed. Training data come from 51,768 the-stack-dedup and 377 TheAlgorithms/C programs compiled with Emscripten. On 3,977 C files, the authors report 3.34% code inflation, 52.11% recompilability, 43.55% re-execution and 27.15% output consistency, compared with Wasm2c and Ghidra.",
+    "description_zh": "WaDec 使用循环级 wat–C 代码片段对，以 LoRA 微调 CodeLlama-7b，将 WebAssembly 文本格式（wat）反编译为 C。它按依赖关系排列函数并进行切片，使每个输入至多包含一个循环，嵌套循环以标记替代。提示中补充被调用函数的声明、此前已定义的局部变量以及偏移到字符串的映射；随后重组输出，恢复字符串常量并重命名变量。训练数据来自经 Emscripten 编译的 51,768 个 the-stack-dedup 程序和 377 个 TheAlgorithms/C 程序。作者在 3,977 个 C 文件上报告，代码膨胀率为 3.34%，可重新编译率为 52.11%，可重新执行率为 43.55%，输出一致率为 27.15%，并与 Wasm2c 及 Ghidra 进行比较。",
+    "scope_limitations_en": "The reported rates are author results on C programs compiled to Wasm with Emscripten. About half of the outputs recompile, fewer than half re-execute and roughly a quarter reproduce the original output, so decompiled code is generally not semantically equivalent. The 3,977-file benchmark comes from the same two sources as the training programs. Optimized builds are not evaluated: the authors neither adapted the method to nor trained it on O1/O2 code. The model also handles data structures poorly, often flattening them into separate variables or arrays. Only C sources are studied; Wasm produced from other languages or toolchains is not evaluated. Baselines are Wasm2c and Ghidra's Wasm plugin, and LLM baselines were excluded because none could decompile Wasm functions without fine-tuning. Slicing means one function may be decompiled several times, at about 0.1 to 2 seconds per prompt.",
+    "scope_limitations_zh": "所报告的比率是作者在经 Emscripten 编译为 Wasm 的 C 程序上取得的结果。约一半输出可重新编译，不到一半可重新执行，约四分之一能复现原始输出，因此反编译代码总体上并不语义等价。含 3,977 个文件的基准与训练程序来自相同的两个来源。未评估优化构建：作者既未针对 O1/O2 代码调整方法，也未用其训练模型。模型处理数据结构的能力也较弱，常将其拆成独立变量或数组。研究仅涉及 C 源码，未评估由其他语言或工具链生成的 Wasm。基线为 Wasm2c 与 Ghidra 的 Wasm 插件；由于没有大语言模型能在未经微调时反编译 Wasm 函数，此类基线被排除。切片意味着一个函数可能需多次反编译，每个提示约需 0.1 至 2 秒。",
+    "why_fits_en": "Adds LLM decompilation of WebAssembly with recompilation and re-execution checks, complementing the native-binary decompilation research in this section and the WebAssembly tools in the catalog.",
+    "why_fits_zh": "补充带重新编译与重新执行检查的大语言模型 WebAssembly 反编译方法，与本节中的原生二进制反编译研究及目录中的 WebAssembly 工具互补。",
+    "metadata_notes": "ACM's Crossref deposit gives the three-author order, pages 481–492 and publication on 2024-10-27. The reviewed arXiv v3 (2024-09-11, comment “This paper was accepted by ASE 2024”) carries the ACM reference format and DOI; v1 dates from 2024-06-17. The paper's footnote names github.com/XinyuShe/WaDec as the replication artifact, while its reference list and the README's clone command still point to an anonymous review mirror. The reviewed 2024-07-24 snapshot contains dataset-construction notebooks, an evaluation JSON file and inference and metric scripts, but no license file or declaration, so no open license is inferred. The README lists only Python 3.x and Git as prerequisites. It points to the wadecc/FGW2C dataset (110,096 examples, no license declared) and the wadecc/Wat2c model, a LoRA adapter whose configuration names codellama/CodeLlama-7b-hf as its base, so the base model's own license also applies. No dataset, model or code was downloaded or run.",
+    "metadata_notes_zh": "ACM 提交的 Crossref 元数据给出三位作者的顺序、481–492 页码及 2024-10-27 出版日期。所审阅的 arXiv v3（2024-09-11，备注“This paper was accepted by ASE 2024”）载有 ACM 引用格式与 DOI；v1 发布于 2024-06-17。论文脚注将 github.com/XinyuShe/WaDec 列为复现产物，但其参考文献和 README 中的克隆命令仍指向匿名评审镜像。所审阅的 2024-07-24 快照包含数据集构建笔记本、一份评估 JSON 文件以及推断与指标脚本，但没有许可证文件或声明，因此不推定为开放许可。README 仅列出 Python 3.x 与 Git 作为前提条件，并指向 wadecc/FGW2C 数据集（110,096 条样本，未声明许可证）及 wadecc/Wat2c 模型；后者是 LoRA 适配器，其配置将 codellama/CodeLlama-7b-hf 列为基座模型，因此基座模型自身的许可证同样适用。本次未下载或运行数据集、模型或代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3691620.3695020",
+      "https://api.crossref.org/works/10.1145/3691620.3695020",
+      "https://arxiv.org/abs/2406.11346",
+      "https://arxiv.org/pdf/2406.11346v3",
+      "https://github.com/XinyuShe/WaDec/blob/e244f7172539478a5b64bbb86e1fd03e527cb6be/README.md",
+      "https://github.com/XinyuShe/WaDec/blob/e244f7172539478a5b64bbb86e1fd03e527cb6be/Scripts/infering.py",
+      "https://huggingface.co/datasets/wadecc/FGW2C/blob/572a8501594303a369df1b0152812a5e9e0f16ed/README.md",
+      "https://huggingface.co/wadecc/Wat2c/blob/e7e740ea819fedbc7da19b7a22f82b4b2c049a90/adapter_config.json"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
