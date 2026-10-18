@@ -1096,12 +1096,16 @@
         "https://github.com/morluto/rea/issues/746",
         "https://x.com/i/status/2110407610134663474"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "REA issue #746 is a large-input bug report: analyze-javascript-application failed on the 24,060,763-byte Obsidian 1.12.7 ASAR until fixes including merged PR #1055. On rea-agents 6.0.0 the reporter confirms a complete JSONL result in 86 seconds, with semantic coverage still partial under the node budget. The X post reports JavaScript-layer static analysis after passing a parameter to get past an integrity check, and a failed native-binary attempt. Neither source publishes recovered Obsidian behavior, a rebuilt feature or a comparison, so no reconstruction is established. Retain the lead without a catalog mapping; this is not a judgment of REA’s JavaScript analysis.",
+      "reason_zh": "REA 议题 #746 是一份大型输入的缺陷报告：analyze-javascript-application 在 24,060,763 字节的 Obsidian 1.12.7 ASAR 上失败，直至包括已合并 PR #1055 在内的修复完成。报告者确认在 rea-agents 6.0.0 上 86 秒内得到完整的 JSONL 结果，但在节点预算下语义覆盖仍为部分。X 帖子报告在通过参数越过完整性校验后完成了 JavaScript 层静态分析，原生二进制分析则未成功。两处来源均未公开恢复的 Obsidian 行为、重建的功能或对照，因此未确立重建。保留此线索而不建立目录映射；这并非对 REA JavaScript 分析能力的评价。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/746",
+        "https://github.com/morluto/rea/pull/1055",
+        "https://x.com/i/status/2110407610134663474"
+      ],
       "catalog_matches": []
     },
     {
@@ -13394,15 +13398,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 70,
-      "insufficient-evidence": 70,
-      "pending": 451
+      "insufficient-evidence": 71,
+      "pending": 450
     },
     "units_by_state": {
       "already-curated": 69,
-      "insufficient-evidence": 70,
-      "pending": 450
+      "insufficient-evidence": 71,
+      "pending": 449
     },
-    "primary_reviewed_units": 85,
+    "primary_reviewed_units": 86,
     "catalog_linked_occurrences": 77,
     "distinct_resource_ids": 68,
     "distinct_paper_ids": 1,
