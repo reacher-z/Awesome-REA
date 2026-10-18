@@ -13554,13 +13554,29 @@
       "reported_source_urls": [
         "https://github.com/DaBrown95/tsbodp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 123 (README line 1284) lists DaBrown95/tsbodp under 🏠 The Sims Bustin' Out. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 123 行（README 第 1284 行）在 🏠 The Sims Bustin' Out 下列出 DaBrown95/tsbodp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, progress report, target identities, build rules and LICENSE support this row as an AI-driven matching decompilation of the USA/Europe GBA release that is still early: whole-ROM equality relies mostly on regions copied from the user’s dump. Full mapping covers this partial reconstruction, not a completed decompilation or gameplay equivalence. Project-reported counts, provisional boundaries and the split licence terms remain explicit.",
+      "reason_zh": "固定版本的 README、进度报告、目标版本标识、构建规则及 LICENSE，支持将此行认定为美欧版 GBA 游戏的 AI 驱动一致性反编译重建，但仍处早期：整个 ROM 的一致性主要依靠从使用者转储复制的区域。完整映射覆盖这一部分重建，不代表反编译已完成或游戏行为等价。项目报告的数字、暂定的函数边界及分立的许可条款均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/README.md",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/assets/progress.json",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/config/targets/us-eu.json",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/config/targets/us-rev1.json",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/Makefile",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/tools/build_rom.py",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/AGENTS.md",
+        "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/LICENSE.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sims-bustin-out-gba-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-124",
@@ -14979,18 +14995,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 308
-    },
-    "units_by_state": {
-      "already-curated": 156,
+      "already-curated": 158,
       "insufficient-evidence": 126,
       "pending": 307
     },
-    "primary_reviewed_units": 222,
-    "catalog_linked_occurrences": 168,
-    "distinct_resource_ids": 162,
+    "units_by_state": {
+      "already-curated": 157,
+      "insufficient-evidence": 126,
+      "pending": 306
+    },
+    "primary_reviewed_units": 223,
+    "catalog_linked_occurrences": 169,
+    "distinct_resource_ids": 163,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

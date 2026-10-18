@@ -5786,5 +5786,37 @@
       "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/LICENSE",
       "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.6"
     ]
+  },
+  {
+    "id": "sims-bustin-out-gba-decomp-case",
+    "name": "The Sims: Bustin' Out: an AI-driven partial GBA matching decompilation",
+    "url": "https://github.com/DaBrown95/tsbodp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the USA/Europe Game Boy Advance release of The Sims: Bustin' Out byte for byte while gradually replacing ROM regions with matching C compiled by agbcc. The README calls it an AI-driven experiment in which almost all code, analysis and tooling are AI-generated. Most of the ROM is still copied from the user’s dump, so whole-ROM equality does not mean the game has been decompiled.",
+    "description_zh": "逐字节重建 The Sims: Bustin' Out 的 Game Boy Advance 美欧版，并逐步用 agbcc 编译、结果一致的 C 代码替换 ROM 区域。README 称这是由 AI 驱动的实验，几乎所有代码、分析与工具都由 AI 生成。ROM 的大部分仍从使用者的转储中复制，因此整个 ROM 一致并不代表游戏已完成反编译。",
+    "evidence_url": "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The progress report at this commit (verified 18 Oct 2026) counts 2,285 matching C functions covering 288,700 bytes and 4,060 bytes of assembly glue, while 16,484,456 of the 16,777,216 ROM bytes remain unconverted. It marks the code inventory as incomplete, and the README treats function boundaries in the ROM map as provisional.",
+      "Requires the user’s own USA/Europe revision 0 ROM (game code ASIE) matching SHA-1 fb5662172fadebf4577f6f6f163741fc041c11e6; unconverted regions in the built ROM come from that dump. A USA revision 1 dump serves only as an audit and comparison reference. ROMs, extracted assets and game binaries are not included.",
+      "The documented build host is macOS with Python 3.10+ and Xcode’s command line tools. The pinned toolchain uses pret/agbcc as the matching C compiler, selected GCC 3.0.2 and Binutils 2.10.1 builds with host-compatibility patches, Binutils 2.43.1, Capstone, pyelftools and Pillow. The README notes that choosing these tools does not establish the original game’s toolchain.",
+      "make build fails if any byte differs, and each verified build includes changed-source negative controls that must be rejected; make test runs tests without a ROM. mGBA is listed only for optional bounded runtime observations, and no gameplay equivalence is claimed. This review did not build or run the project.",
+      "MIT covers the project’s own source, tools and documentation, not original game code, assets, trademarks or Nintendo’s header logo. Adapted Krawall routines (LGPL-2.1), selected GCC runtime sources (GPL-2.0 with exceptions) and Newlib string functions keep their own notices. The project accepts no contributions; the agents or models used are not named, and no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/assets/progress.json",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/config/targets/us-eu.json",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/config/targets/us-rev1.json",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/Makefile",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/tools/build_rom.py",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/AGENTS.md",
+      "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/LICENSE.md"
+    ]
   }
 ]
