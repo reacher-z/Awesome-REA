@@ -4078,5 +4078,64 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-symgen",
+    "title": "Beyond Classification: Inferring Function Names in Stripped Binaries via Domain Adapted LLMs",
+    "title_zh": "超越分类：借助领域适配的大语言模型推断去符号二进制中的函数名",
+    "authors": [
+      "Linxi Jiang",
+      "Xin Jin",
+      "Zhiqiang Lin"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The official NDSS paper and the Internet Society’s Crossref deposit establish publication year 2025. The February 24–28 symposium dates are not used as a publication day.",
+    "date_basis_zh": "NDSS 官方论文与 Internet Society 提交的 Crossref 元数据确认出版年份为 2025；不以 2 月 24—28 日的研讨会日期作为出版日。",
+    "venue": "NDSS 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2025.240797",
+    "citation": {
+      "container_title": "Proceedings 2025 Network and Distributed System Security Symposium",
+      "publisher": "Internet Society",
+      "sources": [
+        "https://api.crossref.org/works/10.14722/ndss.2025.240797"
+      ]
+    },
+    "url": "https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf",
+    "code_url": "https://github.com/OSUSecLab/SymGen",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "SymGen infers function names for stripped binaries by generating them with a LoRA-fine-tuned Code Llama model instead of classifying over a fixed name vocabulary. Ghidra decompiles each stripped function, its own name is masked, and callee names are normalized for deduplication. Before fine-tuning, the model is domain-adapted on decompiled code paired with LLM-generated summaries of the matching source functions. On functions from 33 C projects built for x86-64, x86-32, ARM and MIPS at O0–O3, deduplicated from 2,237,915 to 495,494, the authors report average word-level F1 of 0.277 (0.380 on x86-64), plus case studies on obfuscated binaries and Linux malware.",
+    "description_zh": "SymGen 使用经 LoRA 微调的 Code Llama 模型生成去符号二进制的函数名，而不是在固定的名称词表上分类。每个去符号函数先由 Ghidra 反编译，再屏蔽其自身名称，并对被调用函数名进行归一化以便去重。微调之前，模型先以反编译代码及其对应源函数的大语言模型生成摘要进行领域适配。在 33 个 C 项目针对 x86-64、x86-32、ARM 和 MIPS 架构及 O0–O3 优化级别构建的函数上（经去重由 2,237,915 个减至 495,494 个），作者报告词级平均 F1 为 0.277（x86-64 上为 0.380），并给出混淆二进制与 Linux 恶意软件的案例研究。",
+    "scope_limitations_en": "Names are split into words and scored with precision, recall and F1, with SymLM’s CodeWordNet grouping similar words; predictions are descriptive guesses, not recovered original symbols. Average F1 is 0.277 and lower on MIPS (0.137) and ARM (0.262). The gains of up to 409.3%, 553.5% and 489.4% in the abstract are author-reported relative improvements over AsmDepictor; the baselines were retrained on the authors’ deduplicated dataset, where they score far below their own papers, and XFL was compared on x86-64 only. A separate model is trained for each architecture and optimization level. All binaries were built with GCC 9.4.0, inputs depend on Ghidra output, and Code Llama’s closed pretraining data leaves leakage possible. Obfuscation tests apply three default Hikari passes to 363 binaries from six projects (F1 0.271–0.303); the malware study covers 812 functions in 16 x86-64 builds (F1 0.348).",
+    "scope_limitations_zh": "函数名被拆分为单词，并以精确率、召回率和 F1 评分，同时使用 SymLM 的 CodeWordNet 归并语义相近的词；预测结果是描述性的推测，并非恢复的原始符号。平均 F1 为 0.277，在 MIPS（0.137）和 ARM（0.262）上更低。摘要中最高 409.3%、553.5% 与 489.4% 的提升是作者报告的相对 AsmDepictor 的改进；各基线在作者去重后的数据集上重新训练，得分远低于其原论文结果，XFL 仅在 x86-64 上比较。每种架构和优化级别分别训练一个模型。所有二进制均由 GCC 9.4.0 构建，输入依赖 Ghidra 输出，且 Code Llama 的预训练数据未公开，仍可能存在数据泄漏。混淆测试对来自六个项目的 363 个二进制应用 Hikari 的三种默认混淆（F1 为 0.271–0.303）；恶意软件研究涵盖 16 个 x86-64 构建中的 812 个函数（F1 为 0.348）。",
+    "why_fits_en": "Adds generative LLM-based function-name inference for stripped binaries with explicit deduplication, complementing classification-based function naming and variable, type and data-structure recovery research.",
+    "why_fits_zh": "补充采用显式去重、基于生成式大语言模型的去符号二进制函数名推断方法，与基于分类的函数命名及变量、类型和数据结构恢复研究互补。",
+    "metadata_notes": "The NDSS page, final PDF and Crossref agree on the title, three-author order and DOI; Crossref lists no pages. The PDF marks Linxi Jiang and Xin Jin as equal-contribution first authors. SymGen is the system name and is not part of the title; an arXiv title search found no preprint. The paper links the reviewed 2025-06-05 repository snapshot, which provides Ghidra decompilation, data-processing, summary-generation, alpaca-lora-based fine-tuning, prediction and evaluation scripts, a sample dataset and a 39 MB LoRA adapter (r=8) for codellama/CodeLlama-34b-Instruct-hf; base weights are not included and keep their own terms. The paper reports about 37 hours of LoRA training on one 80 GB A100. The README uses a Python 3.9 conda environment with largely unpinned requirements, including peft installed from Git. It links Zenodo record 10.5281/zenodo.15530083 (about 7.5 GB of source projects, binaries and decompiled data; CC BY 4.0 in its metadata), whose third-party projects keep their own licenses. The README states Apache License 2.0 and LICENSE contains Apache 2.0 text after an OSU copyright header, but GitHub reports NOASSERTION; this record does not resolve that discrepancy. No code, models or datasets were run or downloaded.",
+    "metadata_notes_zh": "NDSS 页面、最终 PDF 与 Crossref 的标题、三位作者顺序和 DOI 一致；Crossref 未列出页码。PDF 注明 Linxi Jiang 与 Xin Jin 为同等贡献的第一作者。SymGen 是系统名称，并不属于论文标题；按标题检索 arXiv 未发现预印本。论文链接的仓库按 2025-06-05 快照审阅，提供 Ghidra 反编译、数据处理、摘要生成、基于 alpaca-lora 的微调、预测与评估脚本，一份样例数据集，以及面向 codellama/CodeLlama-34b-Instruct-hf 的 39 MB LoRA 适配器（r=8）；不含基础模型权重，其权重适用各自条款。论文报告在一块 80 GB A100 上进行 LoRA 训练约需 37 小时。README 使用 Python 3.9 conda 环境，依赖大多未固定版本，其中 peft 从 Git 安装。README 链接 Zenodo 记录 10.5281/zenodo.15530083（约 7.5 GB，含源项目、二进制与反编译数据；元数据标注 CC BY 4.0），其中第三方项目保留各自许可证。README 声明采用 Apache License 2.0，LICENSE 文件在 OSU 版权声明之后包含 Apache 2.0 文本，但 GitHub 报告为 NOASSERTION；本条目不对这一差异作出判断。本次未运行或下载代码、模型及数据集。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf",
+      "https://api.crossref.org/works/10.14722/ndss.2025.240797",
+      "https://github.com/OSUSecLab/SymGen/blob/78df514a2f228fee9f671f1d71737ea725b008f4/README.md",
+      "https://github.com/OSUSecLab/SymGen/blob/78df514a2f228fee9f671f1d71737ea725b008f4/LICENSE",
+      "https://github.com/OSUSecLab/SymGen/blob/78df514a2f228fee9f671f1d71737ea725b008f4/requirements.txt",
+      "https://github.com/OSUSecLab/SymGen/blob/78df514a2f228fee9f671f1d71737ea725b008f4/lora_weights/adapter_config.json",
+      "https://github.com/OSUSecLab/SymGen/blob/78df514a2f228fee9f671f1d71737ea725b008f4/scripts/evaluation/calculate_score.py",
+      "https://zenodo.org/records/15530083",
+      "https://zenodo.org/api/records/15530083"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

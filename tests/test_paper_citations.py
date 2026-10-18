@@ -137,7 +137,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-typeforge',
                     'paper-decllm',
                     'paper-idioms',
-                    'paper-deguard'}
+                    'paper-deguard',
+                    'paper-symgen'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.
