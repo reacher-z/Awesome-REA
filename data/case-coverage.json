@@ -4185,13 +4185,22 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110558521209356397"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked Zenn article documents the author’s REA 6.4.0 setup in Claude Code, its configuration-based safety limits and a two-task, one-run-per-arm comparison with REA enabled and disabled. The full mapping covers this author-reported evaluation as a community case study, not a reconstruction, sandbox design or general performance result. Scripts and logs are unpublished, and nothing was rerun here.",
+      "reason_zh": "所链接的 Zenn 文章记录了作者在 Claude Code 中配置 REA 6.4.0 的方式、基于配置的安全限制，以及在两个任务上各运行一次、启用与禁用 REA 的对照。完整映射将这一作者报告的评估作为社区案例收录，而非重建、沙箱设计或普遍性能结论。脚本和日志未公开，本次也未重新运行。",
+      "primary_evidence_urls": [
+        "https://zenn.dev/keigoly/articles/8738d8d241b5a1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-claude-code-isolated-ab-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-640-windows-managed-electron-test",
@@ -13921,18 +13930,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 94,
-      "insufficient-evidence": 81,
-      "pending": 416
-    },
-    "units_by_state": {
-      "already-curated": 93,
+      "already-curated": 95,
       "insufficient-evidence": 81,
       "pending": 415
     },
-    "primary_reviewed_units": 117,
-    "catalog_linked_occurrences": 105,
-    "distinct_resource_ids": 99,
+    "units_by_state": {
+      "already-curated": 94,
+      "insufficient-evidence": 81,
+      "pending": 414
+    },
+    "primary_reviewed_units": 118,
+    "catalog_linked_occurrences": 106,
+    "distinct_resource_ids": 100,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

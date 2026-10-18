@@ -2213,5 +2213,29 @@
       "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/package.json",
       "https://github.com/tatlead/TicTacToe-AI/tree/ce0f81b05e190dcfb72ea68c5fbb1114fa994a5a"
     ]
+  },
+  {
+    "id": "rea-claude-code-isolated-ab-case",
+    "name": "REA in Claude Code: an isolated static-analysis A/B trial",
+    "url": "https://zenn.dev/keigoly/articles/8738d8d241b5a1",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "website"
+    ],
+    "description_en": "A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. Both arms answered correctly, while the REA arm took up to 2.00× the time and 1.67× the API-equivalent cost. It is an analysis-evaluation and safety-configuration case, not a reconstruction.",
+    "description_zh": "一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。",
+    "evidence_url": "https://zenn.dev/keigoly/articles/8738d8d241b5a1",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The article by keigoly was published on Zenn on 2026-10-14 (JST). It pins REA 6.4.0 from the rea-agents package and runs it with a checksum-verified official Node.js 24.21.0 placed inside the project, because the host’s Homebrew Node 25.8.1 is outside REA’s supported range. All trials used non-interactive claude -p with Claude Opus 5.5 and permission prompts bypassed; the Claude Code version is not stated.",
+      "Isolation is configuration, not a sandbox: REA is enabled only through a project-local .mcp.json, a generated deny list blocks 43 tools selected from effect metadata, and Bash prefix rules block common package-runner launches. The author states that deny rules are a fence rather than isolation, that other invocation forms bypass the prefix rules, and that prompt injection through analysis output was not tested.",
+      "The tasks were MIT-licensed Orca terminal v1.4.224 (128 MB of distributed Electron files) and a 2.5 MB HAR from an unnamed venue website; answers were checked against Orca’s public source and the HAR data. The author excluded DRM or license circumvention, online multiplayer games, business or customer data and malware from scope.",
+      "Each condition ran once (n=1), the REA arm was told to prefer REA tools, parallel processes make timings approximate, and only static JavaScript/web work with one model was tested; an interrupted run was excluded and repeated. One REA analysis result exceeded the 10 MB MCP response limit. Scripts and JSONL logs are excerpted rather than published, so this collection could not and did not rerun the trials.",
+      "The author reports that REA helped with extraction, such as asar unpacking and HAR element extraction, while grep and small scripts carried code reading in both arms. Nothing was reconstructed: the HAR task identified an existing request path. Native binaries and APKs are deferred to a planned second step; Orca, the venue site, REA and the model service keep their own terms."
+    ]
   }
 ]
