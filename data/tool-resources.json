@@ -4363,5 +4363,37 @@
       "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/THIRD_PARTY_NOTICES.md",
       "https://bytematch.dev/OpenRAC/rac1-decomp"
     ]
+  },
+  {
+    "id": "banjo-recompiled-case",
+    "name": "Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port",
+    "url": "https://github.com/BanjoRecomp/BanjoRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Banjo-Kazooie into a native port on N64ModernRuntime, rendered by RT64 and extended with mod support. Like Zelda 64: Recompiled, it is not built from decompiled source; a symbols repository generated from the Banjo-Kazooie decompilation supplies function names for locating code in the ROM and writing patches.",
+    "description_zh": "使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。与 Zelda 64: Recompiled 一样，它并非基于反编译源码构建；由《Banjo-Kazooie》反编译项目生成的符号仓库提供函数名称，用于在 ROM 中定位代码和编写补丁。",
+    "evidence_url": "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Plays only the user’s US 1.0 Nintendo 64 Banjo-Kazooie ROM, loading assets from it at startup; other dump formats of that ROM are converted to .z64. The repository and releases contain no game assets, and it is not an emulator for other ROMs; the game is changed through mods instead.",
+      "Release v1.0.2 (2026-07-31) ships Windows, macOS, Linux x64/ARM64 and Flatpak x64 builds. Runtime graphics need Direct3D 12.0 with Shader Model 6, Vulkan 1.2 or Metal Argument Buffers Tier 2; x86-64 CPUs need SSE4.1, and Macs need macOS 13.0+ with Apple Silicon or a 7th-generation Intel CPU.",
+      "Source builds need a recursive clone, CMake and Ninja with Clang (Visual Studio 2022 with Clang plus make on Windows), separately built N64Recomp and RSPRecomp, the BanjoRecompSyms submodule and a decompressed copy of the NTSC-U 1.0 ROM matching the SHA-1 in BUILDING.md; play uses the standard ROM.",
+      "The README reports faithful audio, intact N64 effects, widescreen, high frame rates, note saving and fixed duplicate Mumbo token IDs, and lists overlay software as a known problem. It publishes no equivalence or gameplay test; pinned-commit CI only builds the port, and none of these claims was rerun here.",
+      "GPLv3 project license; the original game, the decompilation and other dependencies keep separate terms. The team states that it does not use generative AI and bans GenAI-assisted contributions; this is not an REA-assisted case."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/BUILDING.md",
+      "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/banjo.us.rev0.toml",
+      "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/.gitmodules",
+      "https://github.com/BanjoRecomp/BanjoRecompSyms/blob/6820055ca076e94e30e53d917bd9e5f71c28ca20/README.md",
+      "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/COPYING",
+      "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/CONTRIBUTING.md",
+      "https://github.com/BanjoRecomp/BanjoRecomp/releases/tag/v1.0.2"
+    ]
   }
 ]

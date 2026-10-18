@@ -2048,5 +2048,15 @@
       "tools/build_sn.sh 会从头重建，对照零售版审核每个已反编译函数的字节与地址，并比较所有加载段，仅允许已知未完全匹配的 C 函数内部存在差异；关卡代码按函数逐一检查。因此映像只在进行中的函数之外与零售版一致，并非整体一致。CI 会强制执行构建保真清单，本合集未重跑任何检查。",
       "AGENT_WORKFLOW.md 描述由一个主导模型调度多层工作模型，候选结果由严格的匹配工具判定接受与否；仓库提交了一个 Claude Code 工作代理定义，并提供向代理提供反编译结果的 Ghidra MCP 容器。所审来源未确立 REA 使用。项目代码采用 GPLv3；重建的库和第三方组件保留各自许可证，游戏和工具链另有权利约束。CONTRIBUTING 禁止使用 Sony SDK 源码和泄露材料，LEGAL.md 记录源自 SDK 示例的影片代码已于 2026-09-30 退回汇编。不主张运行复现。"
     ]
+  },
+  "banjo-recompiled-case": {
+    "name": "Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植",
+    "requirements": [
+      "仅可游玩用户自备的美版 1.0 Nintendo 64《Banjo-Kazooie》ROM，启动时从中加载素材；该 ROM 的其他转储格式会被转换为 .z64。仓库和发布包均不含游戏素材，它不是可运行其他 ROM 的模拟器，改动游戏需通过模组实现。",
+      "v1.0.2 版本（2026-07-31）提供 Windows、macOS、Linux x64／ARM64 及 Flatpak x64 构建。运行时显卡需支持带 Shader Model 6 的 Direct3D 12.0、Vulkan 1.2 或 Metal Argument Buffers Tier 2；x86-64 CPU 需支持 SSE4.1，Mac 需 macOS 13.0+ 并配备 Apple Silicon 或第 7 代 Intel CPU。",
+      "源码构建需要递归克隆、CMake 与 Ninja 加 Clang（Windows 上为带 Clang 的 Visual Studio 2022 及 make）、另行构建的 N64Recomp 和 RSPRecomp、BanjoRecompSyms 子模块，以及与 BUILDING.md 所列 SHA-1 一致的 NTSC-U 1.0 ROM 解压副本；游玩时使用标准 ROM。",
+      "README 称实现了忠实音频、完整保留的 N64 特效、宽屏、高帧率、音符保存，并修复了重复的 Mumbo 代币 ID，同时将叠加层软件列为已知问题。项目未公布等价性或游戏流程测试；固定提交上的 CI 仅构建移植程序，本合集未重跑任何说法。",
+      "项目采用 GPLv3；原游戏、反编译项目及其他依赖保留各自条款。团队声明不使用生成式 AI，并禁止使用生成式 AI 辅助的贡献；这不是 REA 辅助案例。"
+    ]
   }
 }
