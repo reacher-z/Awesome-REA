@@ -6566,5 +6566,38 @@
       "https://github.com/talkaboutdesign/elgato-hdr/pull/1",
       "https://x.com/talkaboutdesign/status/2109795113807630735"
     ]
+  },
+  {
+    "id": "ido-static-recomp",
+    "name": "ido-static-recomp",
+    "url": "https://github.com/decompals/ido-static-recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Statically recompiles the IRIX MIPS programs of SGI's IDO 5.3 and 7.1 C toolchain, such as cc, cfe, uopt, ugen and as1, into native Linux, macOS and Windows executables, so matching decompilation projects can build with the original compiler code on modern hosts. It recompiles compilers, not games: it neither decompiles nor translates game code.",
+    "description_zh": "将 SGI IDO 5.3 与 7.1 C 工具链中的 IRIX MIPS 程序（如 cc、cfe、uopt、ugen 和 as1）静态重编译为原生 Linux、macOS 和 Windows 可执行文件，使匹配式反编译项目能在现代主机上以原始编译器代码进行构建。它重编译的是编译器而非游戏，本身既不反编译也不转换游戏代码。",
+    "evidence_url": "https://github.com/decompals/ido-static-recomp/blob/d5aec59932034b8a20f23f471297a55c45dcbc45/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs make and a C11/C++17 compiler (build-essential on Debian/Ubuntu, Homebrew make on macOS). make setup builds the vendored rabbitizer disassembler and the recompiler; make VERSION=5.3 or VERSION=7.1 then emits the toolchain under build/<version>/out, with RELEASE=1 for optimized builds and TARGET=universal for universal macOS binaries. Release v1.2 (2024-11-12) ships IDO 5.3 and 7.1 archives for Linux, Linux ARM, macOS and Windows; the reviewed main commit dates from 2025-07-05.",
+      "Recompiled programs expect a flattened directory beside cc, with USR_LIB and USR_INCLUDE environment overrides for the /usr/lib and /usr/include redirection. The IDO 5.3 program list includes copt, ld and strip, which the 7.1 list lacks.",
+      "Perfect Dark pins github.com/Emill/ido-static-recomp at 421e546 (per-function branch, 2021-11-03) as its tools/recomp submodule. GitHub compares that commit with this entry's pin as diverged, 87 commits ahead and 2 behind, and Emill is among the decompals contributors; neither repository is marked as a fork, and the Perfect Dark entry keeps its own pin. Other matching decompilations, such as Majora's Mask, download builds from decompals.",
+      "The repository bundles the original IRIX compiler binaries under ido/5.3 and ido/7.1. Only ido/5.3 carries an SGI freeware notice; no license file covers the recompiler or the IDO 7.1 binaries at the reviewed commit, GitHub detects no repository license, and the vendored rabbitizer keeps its own MIT license. No license is asserted here, and no toolchain was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/decompals/ido-static-recomp/blob/d5aec59932034b8a20f23f471297a55c45dcbc45/DOCS.md",
+      "https://github.com/decompals/ido-static-recomp/blob/d5aec59932034b8a20f23f471297a55c45dcbc45/Makefile",
+      "https://github.com/decompals/ido-static-recomp/blob/d5aec59932034b8a20f23f471297a55c45dcbc45/ido/5.3/LICENSE.md",
+      "https://github.com/decompals/ido-static-recomp/tree/d5aec59932034b8a20f23f471297a55c45dcbc45/ido/7.1",
+      "https://github.com/decompals/ido-static-recomp/blob/d5aec59932034b8a20f23f471297a55c45dcbc45/tools/rabbitizer/LICENSE",
+      "https://github.com/decompals/ido-static-recomp/releases/tag/v1.2",
+      "https://github.com/n64decomp/perfect_dark/blob/169ed48bdcbfb3b568b028bd5bebb27680073514/.gitmodules",
+      "https://github.com/decompals/ido-static-recomp/compare/421e546956ceae984927e609b083195e9e81659e...d5aec59932034b8a20f23f471297a55c45dcbc45"
+    ]
   }
 ]

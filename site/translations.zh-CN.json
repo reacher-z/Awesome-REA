@@ -2747,5 +2747,14 @@
       "README 及 Game 模式拉取请求报告：在 120 Hz MacBook Pro 上以 1440p60 采集时，Smooth、Game 和 Lowest Latency 三种模式的显示延迟约为 48、22 和 5 毫秒，计时从 USB 传输完成到画面显示，以 macOS 报告为准；采集卡自身的处理时间另计，该 PR 还指出测试用采集卡输出的是静音音频。这些均为作者测量，本目录未复现。",
       "MIT 许可覆盖项目代码；打包的 libusb 库和采集内容保留各自条款，项目声明与 Elgato 或 Corsair 无关联。同名 X 账号的帖子称 REA 协助了这项延迟工作，但仓库未提及 REA，因此 REA 的使用未经确认。"
     ]
+  },
+  "ido-static-recomp": {
+    "name": "ido-static-recomp IRIX IDO 编译器静态重编译工具",
+    "requirements": [
+      "构建需要 make 以及支持 C11/C++17 的编译器（Debian/Ubuntu 上为 build-essential，macOS 上为 Homebrew 的 make）。make setup 会构建随附的 rabbitizer 反汇编库和重编译器；随后运行 make VERSION=5.3 或 VERSION=7.1，即可在 build/<版本>/out 下生成工具链，RELEASE=1 生成优化构建，TARGET=universal 生成 macOS 通用二进制。v1.2 版（2024-11-12）提供 Linux、Linux ARM、macOS 和 Windows 上的 IDO 5.3 与 7.1 归档；所审阅的 main 提交日期为 2025-07-05。",
+      "重编译后的程序要求所有文件平铺在 cc 所在目录中，可通过 USR_LIB 和 USR_INCLUDE 环境变量覆盖 /usr/lib 与 /usr/include 的重定向。IDO 5.3 的程序列表包含 copt、ld 和 strip，7.1 的列表中没有这三项。",
+      "Perfect Dark 将 github.com/Emill/ido-static-recomp 固定在 421e546（per-function 分支，2021-11-03），作为其 tools/recomp 子模块。GitHub 将该提交与本条目的固定提交比较，结果为已分叉：领先 87 个提交、落后 2 个；Emill 也是 decompals 仓库的贡献者之一。两个仓库都未被标记为派生仓库，Perfect Dark 条目保留其自身的固定版本。Majora's Mask 等其他匹配式反编译项目则从 decompals 下载构建产物。",
+      "仓库在 ido/5.3 与 ido/7.1 下附带原始 IRIX 编译器二进制文件。只有 ido/5.3 带有 SGI 自由软件声明；在所审阅的提交中，没有任何许可文件覆盖重编译器本身或 IDO 7.1 二进制文件，GitHub 也未检测到仓库许可证，随附的 rabbitizer 保留其 MIT 许可。本条目不认定任何许可，也未构建或运行任何工具链。"
+    ]
   }
 }
