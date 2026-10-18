@@ -3453,12 +3453,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110010062597230838"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The only source is the author’s post, which reports asking Codex to use REA to reverse a named third-party tea-export website and deploy a local copy in about 40 minutes, with two screenshots. No repository, published rebuild, prompts, process log or comparison with the reference site is linked, so the reported reconstruction and REA’s role cannot be checked. Retain the lead without a catalog mapping; a public artifact could support another review.",
+      "reason_zh": "唯一来源是作者帖子：帖子称让 Codex 使用 REA 逆向一个具名第三方茶叶出海网站，约 40 分钟后在本地部署副本，并附两张截图。帖子未链接仓库、公开的重建结果、提示词、过程记录或与参考网站的对照，因此无法核实所报告的重建及 REA 的作用。保留此线索而不建立目录映射；若出现公开成果，可再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110010062597230838"
+      ],
       "catalog_matches": []
     },
     {
@@ -13259,15 +13261,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 63,
-      "insufficient-evidence": 64,
-      "pending": 464
+      "insufficient-evidence": 65,
+      "pending": 463
     },
     "units_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 64,
-      "pending": 463
+      "insufficient-evidence": 65,
+      "pending": 462
     },
-    "primary_reviewed_units": 72,
+    "primary_reviewed_units": 73,
     "catalog_linked_occurrences": 70,
     "distinct_resource_ids": 61,
     "distinct_paper_ids": 1,
