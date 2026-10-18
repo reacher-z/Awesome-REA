@@ -305,6 +305,19 @@ def header_rules(text):
     return rules
 
 
+# Cloudflare Pages host placeholders for the production alias and preview/branch deployments.
+PAGES_DEV_HOSTS = ('https://:project.pages.dev/*', 'https://:version.:project.pages.dev/*')
+
+
+def validate_host_indexing(rules):
+    """Only *.pages.dev copies are noindex; no path rule may deindex the canonical host."""
+    for pattern in PAGES_DEV_HOSTS:
+        assert rules.get(pattern, {}).get('x-robots-tag') == 'noindex', f'pages.dev copies need X-Robots-Tag: noindex: {pattern}'
+    for pattern, headers in rules.items():
+        if pattern not in PAGES_DEV_HOSTS:
+            assert 'x-robots-tag' not in headers, f'X-Robots-Tag would apply to the canonical host: {pattern}'
+
+
 def csp_directives(policy):
     directives = {}
     for part in policy.split(';'):
@@ -363,6 +376,7 @@ def validate_security_headers(output):
     """Keep the site-wide policy strict and sufficient for everything the built HTML loads."""
     output = Path(output)
     rules = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    validate_host_indexing(rules)
     site = rules.get('/*', {})
     assert site.get('x-frame-options') == 'DENY', 'Site pages must not be framed'
     assert site.get('permissions-policy'), 'Missing Permissions-Policy'

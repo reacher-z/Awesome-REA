@@ -27,3 +27,9 @@
   Content-Type: application/x-bibtex; charset=utf-8
 /papers/citations/*.bib
   Content-Type: application/x-bibtex; charset=utf-8
+# Keep *.pages.dev copies (production alias, previews and the icon-asset Direct Upload project)
+# out of search results; absolute-URL rules never match the canonical awesomerea.org host.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex

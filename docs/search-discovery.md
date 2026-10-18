@@ -59,7 +59,7 @@ At launch, use Games / Websites / Apps as content types, platform and Showcase /
 
 ## Repeatable IndexNow submission
 
-A top-level `404.html` makes unknown paths return HTTP 404 instead of the homepage. The sitemap omits modification dates when a significant page-change date cannot be established reliably; a source-review timestamp is not a page-modification timestamp.
+A top-level `404.html` makes unknown paths on awesomerea.org return HTTP 404 instead of the homepage. Every `pages.dev` copy also sends `X-Robots-Tag: noindex`; the icon-asset host must hold only [its icon files](website.md#icon-origin-contents). The sitemap omits modification dates when a significant page-change date cannot be established reliably; a source-review timestamp is not a page-modification timestamp.
 
 Run `python3 scripts/submit_indexnow.py` to preview the sitemap URL batch, then `python3 scripts/submit_indexnow.py --submit` after deployment. The command checks the live ownership file, sitemap, public build manifest and canonical page content against this build before sending a notification. It submits only canonical awesomerea.org URLs. HTTP 200 confirms receipt; HTTP 202 means key validation is pending. Neither confirms indexing. See the [IndexNow protocol](https://www.indexnow.org/documentation).
 

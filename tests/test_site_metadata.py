@@ -139,6 +139,8 @@ class SecurityHeaderTests(unittest.TestCase):
             **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/source-index.json',
                                              '/source-browser.json', '/papers.json', '/build-manifest.json')},
             '/papers/references.bib': bibtex, '/papers/citations/*.bib': bibtex,
+            **{host: {'x-robots-tag': 'noindex'} for host in ('https://:project.pages.dev/*',
+                                                              'https://:version.:project.pages.dev/*')},
         })
 
     def check(self, html, headers=None):
@@ -173,7 +175,10 @@ class SecurityHeaderTests(unittest.TestCase):
                               'preload': headers.replace('max-age=2592000', 'max-age=2592000; includeSubDomains; preload'),
                               'unsafe inline': headers.replace("script-src 'self'", "script-src 'self' 'unsafe-inline'"),
                               'framing allowed': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: SAMEORIGIN'),
-                              'no policy': headers.replace('Content-Security-Policy:', 'X-Content-Security-Policy:')}.items():
+                              'no policy': headers.replace('Content-Security-Policy:', 'X-Content-Security-Policy:'),
+                              'pages.dev indexable': headers.replace('X-Robots-Tag: noindex', 'X-Robots-Tag: all'),
+                              'preview indexable': headers.replace('https://:version.:project.pages.dev/*', '/preview/*'),
+                              'canonical noindex': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: DENY\n  X-Robots-Tag: noindex')}.items():
             with self.subTest(case=name), self.assertRaises(AssertionError):
                 self.check(valid, changed)
         # A staged rollout may use the Report-Only header with the same policy.

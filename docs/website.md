@@ -97,6 +97,8 @@ The first request should return `301` and `location: https://awesomerea.org/pape
 
 [site/_headers](../site/_headers) adds site-wide security headers: a Content Security Policy, `X-Frame-Options: DENY`, a Permissions Policy that disables unused device features, and HSTS with a 30-day `max-age`. The policy allows only same-origin scripts, styles, images and JSON requests, plus the icon stylesheet and fonts from `https://awesome-rea.pages.dev`; `validate_site.py` fails the build if a page adds inline code, inline styles, frames or another asset origin. Cloudflare's same-origin email-decoding script is allowed, and so is Cloudflare Web Analytics, which the edge injects only on the production domain (its beacon from `https://static.cloudflareinsights.com` and its reports to `https://cloudflareinsights.com`); `validate_site.py` keeps both origins in the policy because built pages never show the beacon. Enabling Zaraz, JavaScript detections or any other injected script requires updating the policy first. `includeSubDomains` and `preload` need an owner decision about every subdomain before they are added.
 
+Two absolute-URL rules in the same file add `X-Robots-Tag: noindex` to `https://:project.pages.dev/*` and `https://:version.:project.pages.dev/*`, so a project's `pages.dev` alias, its preview and branch deployments, and any Direct Upload of this build stay out of search results. They never match `awesomerea.org`, and `validate_site.py` fails if any path rule would send that header to the canonical host. [Cloudflare Pages headers](https://developers.cloudflare.com/pages/configuration/headers/).
+
 ## Direct Upload for the icon origin or a manual deployment
 
 Build first. Cloudflare accepts a folder or ZIP through drag and drop; Wrangler accepts the asset folder. Direct Upload is a different project mode from Git integration. [Official Direct Upload instructions](https://developers.cloudflare.com/pages/get-started/direct-upload/).
@@ -120,6 +122,28 @@ npx wrangler pages deploy dist
 ```
 
 After deployment, verify the returned deployment URL, then confirm the custom-domain and DNS configuration for `awesomerea.org`. A generated `CNAME` file or a successful local build does not establish hosting, DNS or TLS status. Keep hosting credentials outside the repository; only the approved static artifacts belong in the optional backup repository.
+
+### Icon origin contents
+
+The `awesome-rea.pages.dev` project exists only to serve the licensed icon stylesheet and fonts. Deploy nothing else there: a full site copy answers every path, including unknown ones, with HTTP 200 duplicates of older pages. The deployment may contain only `fontawesome.css`, `fonts/fa-light-300.woff2`, `fonts/fa-brands-400.woff2`, a `404.html` and this build's `_headers`, which keeps the font CORS rules and adds the `pages.dev` noindex rules above. Do not redirect that host, because production pages load their icons from it. From a build made with `--fontawesome-dir`:
+
+```sh
+python3 - <<'PY'
+from pathlib import Path
+import shutil
+
+origin = Path(".cache/icon-origin")
+shutil.rmtree(origin, ignore_errors=True)
+(origin / "fonts").mkdir(parents=True)
+for name in ("fontawesome.css", "_headers", "fonts/fa-light-300.woff2", "fonts/fa-brands-400.woff2"):
+    shutil.copy2(Path("dist") / name, origin / name)
+(origin / "404.html").write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="robots" content="noindex">'
+                                 '<title>Not found</title><p>This host serves icon assets for <a href="https://awesomerea.org/">AwesomeREA.org</a>.</p></html>\n',
+                                 encoding="utf-8")
+PY
+```
+
+Replacing that deployment is a Cloudflare action: an authorized maintainer uploads `.cache/icon-origin/` to the Direct Upload project as a new production deployment. Keep the folder in the private artifact backup, never in this repository. Afterwards, `fontawesome.css` and both font URLs should return `200` with `Access-Control-Allow-Origin: *`, icons should still render on `https://awesomerea.org/`, the root, an old page path such as `/resources/ghidra/` and an unknown path should return `404`, every response should carry `X-Robots-Tag: noindex`, and `/sitemap.xml` should no longer exist there.
 
 ## Homepage languages and discovery
 
