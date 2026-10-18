@@ -2404,5 +2404,15 @@
       "验证由作者执行：包括 CMake 单元测试目标、一个无窗口按脚本路线游玩并检查日志的通关脚本，以及与 shadPS4 的画面对比。本合集未构建或运行该移植，这些检查也不能证明与 PS4 版等价。",
       "MIT 许可仅覆盖移植版自身代码；随附的 Noto 字体（OFL）、LGPL 授权的 LibOrbisPkg 安装辅助程序及其他依赖保留各自许可，P.T. 的内容属于 Konami。README 披露开发和调试中使用了 AI 编程工具；未确立与 REA 的关联。"
     ]
+  },
+  "spaghettikart-mk64-port-case": {
+    "name": "SpaghettiKart：基于反编译源码的《马力欧卡丁车 64》原生移植",
+    "requirements": [
+      "README 未写明上游项目，但源码树沿用了《马力欧卡丁车 64》反编译项目的 src/、赛道数据、提取脚本及进度工具结构；新增的 engine 和 port 目录加入了 C++ 系统、模组加载、自定义赛道以及尚未完成的 HM64 Labs 编辑器。1.0.0 “Bolognese Alfa”（2026 年 2 月）是最新稳定版；CI 夜间构建仅供试玩测试。",
+      "仅支持 SHA-1 为 579C48E211AE952530FFC8738709F078D5DD215E、采用 .z64 字节序的美版 ROM。随附的提取器将使用者自备的 ROM 转换为 mk64.o2r；README 声明 SpaghettiKart 不包含任何受版权保护的素材，Switch 版沿用 PC 发布版生成的归档。",
+      "源码构建需要子模块（libultraship、Torch、fast64 等）、CMake 3.16+ 和 Python 3。Windows 需使用带 v143 工具集的 Visual Studio 2022，并至少有 8 GB 内存；Linux 需 GCC 或 Clang，以及 SDL2、libzip、tinyxml2、spdlog、Boost 和 Ogg／Vorbis 等软件包。渲染后端包括 Windows 上的 DirectX 11、各平台通用的 OpenGL 以及 macOS 上的 Metal。",
+      "CI 编译 Windows、Linux 与 macOS 软件包，并打包项目自有的 spaghetti.o2r；未发布基于 ROM 的测试、一致性检查或游戏行为对比。FAQ 列出了若干限制，例如最多八名赛车手和八个可选角色、高清纹理支持有限且没有联机功能。本合集未构建或运行该移植。",
+      "所审源码树没有顶层许可证文件，因此项目代码的再利用条款未予说明；libultraship 和 Torch 声明 MIT，任天堂内容另有权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

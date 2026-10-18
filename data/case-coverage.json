@@ -13030,13 +13030,31 @@
       "reported_source_urls": [
         "https://github.com/HarbourMasters/SpaghettiKart"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 105 (README line 1066) lists HarbourMasters/SpaghettiKart under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 105 行（README 第 1066 行）在 🏎️ Mario Kart 64 下列出 HarbourMasters/SpaghettiKart。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, building guide, FAQ, CI workflows and submodule pins document SpaghettiKart as a native libultraship port whose source tree keeps the Mario Kart 64 decompilation’s layout, with Torch converting the user’s US ROM. Full mapping covers this port, not the separate decompilation or MarioKart64Recomp; the missing license and project-reported behavior remain explicit.",
+      "reason_zh": "固定版本的 README、构建指南、FAQ、CI 工作流和子模块固定版本表明，SpaghettiKart 是基于 libultraship 的原生移植，其源码树沿用《马力欧卡丁车 64》反编译项目的结构，并由 Torch 转换使用者自备的美版 ROM。完整映射覆盖此移植，不涵盖独立的反编译项目或 MarioKart64Recomp；缺少许可证及行为说法为项目自述等情况均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/README.md",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/docs/BUILDING.md",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/docs/faq.md",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/CMakeLists.txt",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/.gitmodules",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/.github/workflows/main.yml",
+        "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/.github/workflows/linux-compile.yml",
+        "https://github.com/Kenix3/libultraship/blob/60c9bb713ed0850da66559fc17c556d03da649cd/README.md",
+        "https://github.com/HarbourMasters/Torch/blob/2d474ddb8da8b213fbdbb49d0273ce31fa955f35/README.md",
+        "https://github.com/HarbourMasters/SpaghettiKart/releases/tag/1.0.0"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "spaghettikart-mk64-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-106",
@@ -14879,18 +14897,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 151,
-      "insufficient-evidence": 126,
-      "pending": 314
-    },
-    "units_by_state": {
-      "already-curated": 150,
+      "already-curated": 152,
       "insufficient-evidence": 126,
       "pending": 313
     },
-    "primary_reviewed_units": 216,
-    "catalog_linked_occurrences": 162,
-    "distinct_resource_ids": 156,
+    "units_by_state": {
+      "already-curated": 151,
+      "insufficient-evidence": 126,
+      "pending": 312
+    },
+    "primary_reviewed_units": 217,
+    "catalog_linked_occurrences": 163,
+    "distinct_resource_ids": 157,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
