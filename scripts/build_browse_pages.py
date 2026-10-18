@@ -202,7 +202,7 @@ def build_browse_pages(
             if category:
                 count = len(groups[category])
                 description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。卡片保留采集时的星标快照与最近推送时间，并可通过分类导航切换到其他仓库分类继续浏览。'
-                               if zh else f'Browse {count:,} repositories with project descriptions, upstream links, and license information.')
+                               if zh else f'{label}: {count:,} reverse engineering repositories with project descriptions, upstream links, and license information.')
                 count_text = f'{count:,} 个仓库' if zh else f'{count:,} repositories'
             else:
                 description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。每个分类页列出项目简介、原始链接、许可证信息、采集时的星标快照与最近推送时间。'
