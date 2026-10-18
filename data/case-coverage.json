@@ -780,13 +780,27 @@
         "https://github.com/morluto/rea/issues/1330",
         "https://github.com/morluto/rea/pull/1599"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Issue #1330, merged REA PR #1599 and the pinned PSP guide, verifier, profile source and self-built fixture establish the reported PSP/Allegrex static-analysis path through a caller-installed Ghidra extension. The full mapping covers this report as official documentation, not a PSP game reconstruction. Verification covers selected static facts on one fixture; PRX, containers, VFPU semantics and commercial executables remain unverified, and no runtime reproduction is claimed.",
+      "reason_zh": "议题 #1330、已合并的 REA PR #1599，以及固定版本的 PSP 指南、验证脚本、配置源码与自建测试样本，确立了该报告所述、经使用者安装的 Ghidra 扩展进行 PSP／Allegrex 静态分析的能力。完整映射以官方文档覆盖该报告，并不将其视为 PSP 游戏重建。验证仅覆盖一个样本上的选定静态事实；PRX、容器格式、VFPU 语义与商业可执行文件仍未验证，也未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/1330",
+        "https://github.com/morluto/rea/pull/1599",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-psp.md",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-real-ghidra-mips.mjs",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraPspProfile.ts",
+        "https://github.com/morluto/rea/tree/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/tests/conformance/psp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-ghidra-psp-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:touhou-reconstruction",
@@ -13321,18 +13335,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 67,
-      "insufficient-evidence": 66,
-      "pending": 458
-    },
-    "units_by_state": {
-      "already-curated": 66,
+      "already-curated": 68,
       "insufficient-evidence": 66,
       "pending": 457
     },
-    "primary_reviewed_units": 79,
-    "catalog_linked_occurrences": 74,
-    "distinct_resource_ids": 65,
+    "units_by_state": {
+      "already-curated": 67,
+      "insufficient-evidence": 66,
+      "pending": 456
+    },
+    "primary_reviewed_units": 80,
+    "catalog_linked_occurrences": 75,
+    "distinct_resource_ids": 66,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

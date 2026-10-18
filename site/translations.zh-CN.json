@@ -1501,5 +1501,14 @@
       "项目没有测试套件：CONTRIBUTING 要求协议改动附上实机试用说明和 wire.log 片段，CLAUDE.md 称截至 2026-10-05 应用可在实机上运行。wiki 标出未确认的事实并列出未解问题，包括尚未解读的负载和与型号相关的取值；CLAUDE.md 还提到一个桌面 Python 客户端快照，但仓库中并未包含。本目录只阅读源码和文档，未运行应用或眼镜。",
       "Visor 采用 AGPL-3.0，并声明与 Meta 或 EssilorLuxottica 无关；Meta 的服务、应用令牌、固件和商标保留各自条款。CONTRIBUTING 禁止让未经 Meta 签名的软件绕过眼镜的签名检查。Claude 只是可选的助手后端之一，仓库中的 CLAUDE.md 是贡献者指南，所审阅来源未确立 REA 的使用。"
     ]
+  },
+  "rea-ghidra-psp-guide": {
+    "name": "通过 Ghidra 静态分析 PSP ELF",
+    "requirements": [
+      "初始配置只在 Linux x64 宿主上运行，接受小端 ELF32 可执行文件，要求文件头为 PSPSDK 声明 e_flags 0x10a23001，并有经检查的版本 0 ABI 标志记录，与文档列明的单精度浮点 Allegrex 声明一致。PRX、可重定位或共享镜像、PBP／ISO／CSO 容器、模拟执行与实时代码覆盖均不在范围内；缺失或不同的声明会被拒绝，文件名也不能用来识别目标。",
+      "需在所选 Ghidra 发行版内安装兼容的 ghidra-allegrex 扩展；REA 从不下载、安装、重新构建或内置该扩展，并在启动前为其文件计算指纹。公开的兼容组合为 Ghidra 12.1.3、扩展 v21.4、PSPDEV v20261001 与 JDK 21；其他仅通过元数据检查的构建不被视为经过独立验证。缺少前置条件时返回 PSP_EXTENSION_UNAVAILABLE，不会回退到其他分析引擎。",
+      "验证使用真实 MIPS 验证脚本的 PSP 模式，需自行提供 PSPDEV 工具。由 tests/conformance/psp 构建的维护样本只做静态分析、不执行，并与 PSP GNU 工具的观察结果对照：已知函数、一次直接调用、一个立即数、BITREV、一个全局字、快照重新打开，以及 A-B-A 目标切换。已合并的 PR #1599 报告在较早的贡献分支版本上通过了真实 Ghidra 验证，并说明该次运行并未重新验证最终版本。",
+      "这些检查只是选定的静态事实，不代表行为等价、完整 VFPU 语义或对商业 PSP 可执行文件的普遍兼容；该扩展也未完整模拟 VFPU 前缀效果。未使用或重建任何商业游戏数据，议题 #1330 仍处于开放状态。REA 声明 MIT；ghidra-allegrex、Ghidra、PSPDEV 与所分析的可执行文件仍有各自条款。本合集未运行任何内容。"
+    ]
   }
 }

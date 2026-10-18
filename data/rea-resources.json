@@ -2114,5 +2114,37 @@
       "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraMipsProfile.ts",
       "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE"
     ]
+  },
+  {
+    "id": "rea-ghidra-psp-guide",
+    "name": "PSP static ELF analysis through Ghidra",
+    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "kind": "documentation",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Documents REA’s bounded Ghidra profile for static PSP ELF executables, which leaves Allegrex instructions, PSP loading and calling conventions to a caller-installed ghidra-allegrex extension while reusing REA’s CLI, MCP, Evidence and snapshot workflows. It admits one PSPSDK header and ABI declaration on Linux x64 and verifies selected static facts on a self-built fixture, not commercial games or PRX modules.",
+    "description_zh": "说明 REA 针对静态 PSP ELF 可执行文件的受限 Ghidra 配置：Allegrex 指令、PSP 加载与调用约定交由使用者安装的 ghidra-allegrex 扩展处理，同时沿用 REA 的命令行、MCP、证据与快照流程。它仅在 Linux x64 上接受一种 PSPSDK 文件头与 ABI 声明，并在自行构建的测试样本上验证选定的静态事实，不涉及商业游戏或 PRX 模块。",
+    "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-psp.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The initial profile runs on a Linux x64 host and admits little-endian ELF32 executables with the PSPSDK declaration e_flags 0x10a23001 and an inspected version-0 ABI-flags record matching the documented single-float Allegrex declarations. PRX, relocatable or shared images, PBP/ISO/CSO containers, emulation and live overlays are out of scope; missing or different declarations are refused, and file names do not identify a target.",
+      "Install a compatible ghidra-allegrex extension inside the selected Ghidra distribution; REA never downloads, installs, rebuilds or vendors it, and fingerprints its files before launch. The published compatibility pairing is Ghidra 12.1.3, extension v21.4, PSPDEV v20261001 and JDK 21; other builds that pass the metadata check are not described as independently verified. Missing prerequisites return PSP_EXTENSION_UNAVAILABLE without fallback.",
+      "Verification uses the real MIPS verifier’s PSP mode with caller-supplied PSPDEV tools. A maintained fixture built from tests/conformance/psp is analysed without execution and checked against PSP GNU tool observations: known functions, a direct call, an immediate, BITREV, a global word, snapshot reopening and an A-B-A target switch. Merged PR #1599 reports a passing real-Ghidra run on an earlier contribution head and says the final head was not freshly revalidated by that run.",
+      "These are selected static facts, not behavioral equivalence, complete VFPU semantics or general compatibility with commercial PSP executables; the extension does not fully model VFPU prefix effects. No commercial game data is used or reconstructed, and issue #1330 remains open. REA declares MIT; ghidra-allegrex, Ghidra, PSPDEV and analysed executables keep their own terms. This collection ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/issues/1330",
+      "https://github.com/morluto/rea/pull/1599",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-real-ghidra-mips.mjs",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraPspProfile.ts",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraPspExtension.ts",
+      "https://github.com/morluto/rea/tree/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/tests/conformance/psp",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE"
+    ]
   }
 ]
