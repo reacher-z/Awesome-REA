@@ -1383,12 +1383,19 @@
         "https://x.com/anupambatra_/status/2047767285969145883",
         "https://github.com/actuallyepic/background-computer-use"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned MIT-licensed Swift package implements a local macOS computer-use runtime: a loopback HTTP API reads window screenshots and Accessibility state and dispatches clicks, scrolling, text, keys and window motion, partly through private SkyLight/WindowServer event APIs. README asserts rough parity with OpenAI’s Codex Computer Use plugin, but neither the repository nor the author’s thread documents an investigation of that plugin, recovered behavior or comparison results; elsewhere Codex appears only as a cursor label and in skill wording. Retain the lead without a catalog mapping; this is not a finding that the runtime is broken, and new primary evidence can support another review.",
+      "reason_zh": "固定版本、采用 MIT 许可的 Swift 包实现了本地 macOS 计算机使用运行时：回环 HTTP API 读取窗口截图和无障碍状态，并派发点击、滚动、文本、按键和窗口移动操作，其中部分依赖私有 SkyLight／WindowServer 事件 API。README 声称与 OpenAI Codex Computer Use 插件大致相当，但仓库和作者帖子串都未记录对该插件的调查、恢复出的行为或对照结果；此外 Codex 仅作为光标标签和技能说明用语出现。保留此线索而不建立目录映射；这不表示该运行时损坏，新的一手证据可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/README.md",
+        "https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/Sources/BackgroundComputerUse/Actions/Click/NativeBackgroundClickTransport.swift",
+        "https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/Sources/BackgroundComputerUse/Cursor/CursorModels.swift",
+        "https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/skills/background-computer-use/SKILL.md",
+        "https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/LICENSE",
+        "https://x.com/anupambatra_/status/2047767285969145883"
+      ],
       "catalog_matches": []
     },
     {
@@ -13233,15 +13240,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 61,
-      "pending": 468
+      "insufficient-evidence": 62,
+      "pending": 467
     },
     "units_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 61,
-      "pending": 467
+      "insufficient-evidence": 62,
+      "pending": 466
     },
-    "primary_reviewed_units": 68,
+    "primary_reviewed_units": 69,
     "catalog_linked_occurrences": 69,
     "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
