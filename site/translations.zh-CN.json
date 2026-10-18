@@ -1988,5 +1988,15 @@
       "CI 运行代码规范与审计检查，在 x86-64 和 arm64 Linux 上构建并运行 ctest，交叉构建 Windows 版本，并打包 Android、iPhone 和 macOS 版本；缺少玩家光盘镜像时，依赖光盘的测试会跳过。差异列表记录了与 PS2 的已知差别，并说明没有任何测试将运行结果与 PS2 比较。上游反编译项目另行报告其 PAL 版和日版启动 ELF 逐字节一致，但大部分只读数据仍取自光盘；本合集未构建或运行这两个项目。",
       "README 和 LICENSE 规定 MIT 仅适用于项目自身的代码、脚本和文档，不授予游戏、其数据或 Sony 及 Team Ico 商标的任何权利；第三方代码另行列出。LICENSE 声明称构建需要光盘镜像，与构建指南不一致。所审来源未确立 AI 或 REA 使用归因。"
     ]
+  },
+  "sly1-matching-decomp-case": {
+    "name": "Sly Cooper and the Thievius Raccoonus：PlayStation 2 一致性反编译",
+    "requirements": [
+      "README 将其描述为针对美版可执行文件 SCUS_971.98（SHA-1 前缀 57dc305d）的进行中反编译，目标是把游戏引擎反编译为可一致编译的源码。FAQ 称项目自 2024 年 7 月起已能构建一致的 ELF，最终目标仍是匹配全部函数。引擎、Splice 脚本引擎和数据的进度在 decomp.dev 上报告；本合集未记录百分比。",
+      "仓库不含游戏素材或原始代码。使用者需从自己合法取得的光盘提供 SCUS_971.98，或为快速入门脚本提供美版 ISO。运行构建产物需要 PCSX2 2.0、使用者自己的游戏 ISO（用于加载素材）以及来自使用者自有 PS2 的 BIOS。",
+      "构建可在基于 Debian 的 Linux 或 WSL 上进行，其他发行版可参考 Distrobox 指南。需要 Python 3.9+ 及所列软件包、MIPS binutils、Ninja，并以 Wine 或 wibo 运行下载的 ee-gcc 2.95.2 SN（ProDG）编译器归档。configure.py 使用 splat 拆分 ELF，以拆分出的汇编替代尚未一致的函数，并链接可执行文件；objdiff、decomp.me 和 CodeMatcher 用于辅助匹配，其中 CodeMatcher 目前以 2002 年 5 月 19 日原型版为对照。",
+      "默认构建会依据 config/checksum.sha1 校验 out/SCUS_971.98；文档说明有意修改代码时可使用 --skip-checksum，但其产物可能无法启动。CI 通过仓库机密下载原版 ELF，并在 main 分支上执行此校验，所审提交记录的检查结果为成功。这只验证单个可执行文件的逐字节一致，不代表反编译已经完成，本合集也未重跑。",
+      "仓库以 CC0 1.0 发布；原版游戏、提取的汇编和数据，以及 ProDG 编译器和 SCE 运行库各有权利约束。CONTRIBUTING 从 2002 年 5 月原型版的调试符号中获取经过名称修饰的函数名。所审来源未确立 REA 参与，也不主张运行复现。"
+    ]
   }
 }

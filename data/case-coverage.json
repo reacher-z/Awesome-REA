@@ -10962,13 +10962,31 @@
         "https://github.com/TheOnlyZac/sly1",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 42 (README line 381) lists TheOnlyZac/sly1 under 🧭 Sly Cooper and the Thievius Raccoonus. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 42 行（README 第 381 行）在 🧭 Sly Cooper and the Thievius Raccoonus 下列出 TheOnlyZac/sly1。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, configure script, SHA-1 manifest, compiler setup, contributing guide and CI workflow support this matching-decompilation report for the NTSC-U PS2 executable. Full mapping covers the decompilation; it remains a separate record from ProjectCane's native PC port, and neither source links the two. The user-supplied ELF, disc and BIOS requirements, assembly fallback for unmatched functions and project-reported matching stay explicit.",
+      "reason_zh": "固定版本的 README、配置脚本、SHA-1 清单、编译器安装脚本、贡献指南及 CI 工作流，支持这份针对 PS2 美版可执行文件的一致性反编译报告。完整映射覆盖该反编译项目；它与 ProjectCane 的原生 PC 移植分属不同记录，两者来源均未说明彼此关系。须由用户自备的 ELF、光盘和 BIOS，尚未匹配函数所用的汇编替代，以及项目报告的一致性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/README.md",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/configure.py",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/config/checksum.sha1",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/config/readme.md",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/scripts/setup_prodg_linux.sh",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/docs/CONTRIBUTING.md",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/.github/workflows/build.yml",
+        "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/LICENSE",
+        "https://decomp.dev/TheOnlyZac/sly1",
+        "https://theonlyzac.github.io/sly1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sly1-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-043",
@@ -14171,18 +14189,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 111,
-      "insufficient-evidence": 86,
-      "pending": 394
-    },
-    "units_by_state": {
-      "already-curated": 110,
+      "already-curated": 112,
       "insufficient-evidence": 86,
       "pending": 393
     },
-    "primary_reviewed_units": 139,
-    "catalog_linked_occurrences": 122,
-    "distinct_resource_ids": 116,
+    "units_by_state": {
+      "already-curated": 111,
+      "insufficient-evidence": 86,
+      "pending": 392
+    },
+    "primary_reviewed_units": 140,
+    "catalog_linked_occurrences": 123,
+    "distinct_resource_ids": 117,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

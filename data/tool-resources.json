@@ -4155,5 +4155,39 @@
       "https://github.com/nathanialf/ico-pc/releases/tag/v0.7.10",
       "https://github.com/nathanialf/ico/blob/3496140f784fdf2d0b10e30b3b3024046c586ce1/README.md"
     ]
+  },
+  {
+    "id": "sly1-matching-decomp-case",
+    "name": "Sly Cooper and the Thievius Raccoonus: matching PlayStation 2 decompilation",
+    "url": "https://github.com/TheOnlyZac/sly1",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs source code for SCUS_971.98, the NTSC-U PlayStation 2 executable of Sly Cooper and the Thievius Raccoonus, as a work-in-progress matching decompilation. Functions not yet matched are still assembled from code split out of the user's own executable, and the build checks the linked ELF's SHA-1. The result runs in PCSX2 with the original disc for assets; it is not a native PC port.",
+    "description_zh": "将《Sly Cooper and the Thievius Raccoonus》PlayStation 2 美版可执行文件 SCUS_971.98 重建为源码，属于进行中的一致性反编译。尚未匹配的函数仍由从使用者自备可执行文件中拆分出的汇编构建，构建会检查链接后 ELF 的 SHA-1。产物需在 PCSX2 中配合原版光盘素材运行，并不是原生 PC 移植。",
+    "evidence_url": "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress decompilation of the NTSC-U executable SCUS_971.98 (SHA-1 prefix 57dc305d) that aims to decompile the game engine to matching source. Its FAQ says the project has built a matching ELF since July 2024 and still aims to match 100% of functions. Engine, Splice scripting-engine and data progress are reported on decomp.dev; this collection recorded no percentage.",
+      "The repository contains no game assets or original code. Users supply SCUS_971.98 from their own legally obtained disc, or an NTSC-U ISO for the quickstart script. Running the build requires PCSX2 2.0, the user's game ISO for assets and a BIOS from the user's own PS2.",
+      "Builds run on Debian-based Linux or WSL, with a Distrobox guide for other distributions. They need Python 3.9+ with the listed packages, MIPS binutils, Ninja, and Wine or wibo to run the downloaded ee-gcc 2.95.2 SN (ProDG) compiler archive. configure.py splits the ELF with splat, inserts split assembly in place of non-matching functions and links the executable; objdiff, decomp.me and CodeMatcher support matching, the last currently against the May 19, 2002 prototype.",
+      "By default the build checks out/SCUS_971.98 against config/checksum.sha1; --skip-checksum is documented for intentional code changes, whose output may not boot. CI downloads the original ELF through a repository secret and runs this check on main, and the check run recorded for the reviewed commit succeeded. This verifies byte identity of one executable, not complete decompilation, and this collection did not rerun it.",
+      "The repository is dedicated under CC0 1.0; the original game, extracted assembly and data, and the ProDG compiler and SCE runtime library keep separate rights. CONTRIBUTING takes mangled function names from the May 2002 prototype's debug symbols. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/configure.py",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/config/checksum.sha1",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/config/readme.md",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/scripts/setup_prodg_linux.sh",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/docs/CONTRIBUTING.md",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/.github/workflows/build.yml",
+      "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/LICENSE",
+      "https://decomp.dev/TheOnlyZac/sly1",
+      "https://theonlyzac.github.io/sly1"
+    ]
   }
 ]
