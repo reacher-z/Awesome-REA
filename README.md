@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 267](https://img.shields.io/badge/resources-267-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 127](https://img.shields.io/badge/cases-127-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 268](https://img.shields.io/badge/resources-268-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 128](https://img.shields.io/badge/cases-128-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (108) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (109) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (127) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (128) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -718,6 +718,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs the Game Boy Advance games Pokémon Ruby and Sapphire as C source built with pret's agbcc compiler, alongside assembly data scripts and editable graphics. Matching builds cover the English 1.0, 1.1 and 1.2 revisions, debug builds and the first German editions, each checked against a stored SHA-1. A separate modern-GCC target is not expected to match.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokeruby-decomp-case/)
+
+- [**Vandal Hearts: native PC port built on matching decompilations**](https://github.com/HalmyLyseas/VandalHearts-PcPort)
+
+  Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. SDL2, OpenGL or Metal and OpenAL backends replace the console’s GPU, GTE, CD-ROM/XA, SPU, MDEC and pad interfaces, and one executable runs the USA, Asia and Japan discs. The matching builds are still checked on every change; PC-only features such as Tactical Mode and HD packs are opt-in.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/vandal-hearts-pc-port-case/)
 
 #### Tools, projects and integrations
 
