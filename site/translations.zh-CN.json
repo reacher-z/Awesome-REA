@@ -2632,5 +2632,13 @@
       "CI 本应以占位 ppc/ 代码树在 Linux 和 Windows 上构建宿主运行时，但所审提交的运行因缺少 XenonLive 部署密钥而跳过了两个构建任务，而且 CI 本身也无法运行游戏。通关结果以及从 Case Zero 移植过来的修复均为维护者报告；本合集未构建或运行该移植。",
       "项目代码采用 PolyForm Noncommercial 1.0.0，允许非商业使用、修改和分叉，但不允许出售；XenonRecomp 与 XenosRecomp 为 MIT 许可，游戏权利归 Capcom。THIRD_PARTY.md 复制自 Case Zero 移植，并称未使用 UnleashedRecomp 的 GPL 代码。开发日志以 CLAUDE.md 提交，但 README 未说明 AI 使用政策；未确立与 REA 的关联。"
     ]
+  },
+  "decompiler-explorer": {
+    "name": "Decompiler Explorer 反编译器对比服务",
+    "requirements": [
+      "公共服务会保存每个提交的二进制，并提供给所含反编译器的作者，因此不要上传机密、专有或其他不可分享的二进制。服务刻意不提供公开的自动化 API；如需自动化比较，须向相应许可证持有方取得使用条款。",
+      "自行部署需要 Python 3.8+、pipenv、Docker 和 docker-compose；scripts/dce.py 负责构建反编译器镜像并启动服务。Binary Ninja 和 Hex-Rays 镜像需要部署者自备二进制和许可证文件。FAQ 禁止运行包含商业工具的公开实例，私有实例是否允许则取决于各厂商的许可条款。",
+      "采用 MIT 许可（Vector 35 Inc.）；仓库没有打标签的版本，因此本条目固定到所审阅的 master 分支提交。FAQ 指出反编译效果因编译器、编译设置、语言、架构和复杂度而异；未审阅线上网站所用的反编译器版本，本次也未上传任何二进制。"
+    ]
   }
 }

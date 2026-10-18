@@ -6171,5 +6171,33 @@
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/tools/gen_kbm_icons.py",
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/actions/runs/38533020839"
     ]
+  },
+  {
+    "id": "decompiler-explorer",
+    "name": "Decompiler Explorer",
+    "url": "https://dogbolt.org",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Web service at dogbolt.org that runs one small uploaded executable through many decompilers and shows their C-like output side by side, described as Compiler Explorer in reverse. The pinned source has runners for angr, Binary Ninja, Boomerang, dewolf, Ghidra, Hex-Rays, Kuna, REC Studio, Reko, Relyze, RetDec, rev.ng and Snowman, which helps compare how different decompilers render the same code.",
+    "description_zh": "位于 dogbolt.org 的网络服务：将上传的单个小型可执行文件交给多款反编译器处理，并排显示它们输出的类 C 代码，自称“反向的 Compiler Explorer”。所固定版本的源码包含 angr、Binary Ninja、Boomerang、dewolf、Ghidra、Hex-Rays、Kuna、REC Studio、Reko、Relyze、RetDec、rev.ng 和 Snowman 的运行器，便于比较不同反编译器如何呈现同一段代码。",
+    "evidence_url": "https://github.com/decompiler-explorer/decompiler-explorer/blob/a7b8381b610478f67b6dd35b6812878f08636c54/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The public service saves every submitted binary and makes it available to the authors of the included decompilers, so do not upload confidential, proprietary or other binaries you may not share. There is intentionally no public automation API; automating comparisons requires terms from the respective license holders.",
+      "Self-hosting needs Python 3.8+, pipenv, Docker and docker-compose; scripts/dce.py builds the decompiler images and starts the service. Binary Ninja and Hex-Rays images need the operator's own binaries and license files. The FAQ forbids public instances that include the commercial tools and says private instances depend on each vendor's license terms.",
+      "MIT license (Vector 35 Inc.); no tagged releases, so this entry pins the reviewed master commit. As the FAQ notes, decompiler results vary with compiler, settings, language, architecture and complexity; the decompiler versions on the live site were not reviewed and no binaries were uploaded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/decompiler-explorer/decompiler-explorer/tree/a7b8381b610478f67b6dd35b6812878f08636c54/runners/decompiler",
+      "https://github.com/decompiler-explorer/decompiler-explorer/blob/a7b8381b610478f67b6dd35b6812878f08636c54/runners/decompiler/tools/README.md",
+      "https://github.com/decompiler-explorer/decompiler-explorer/blob/a7b8381b610478f67b6dd35b6812878f08636c54/templates/explorer/faq.html#L69-L112",
+      "https://github.com/decompiler-explorer/decompiler-explorer/blob/a7b8381b610478f67b6dd35b6812878f08636c54/LICENSE.txt",
+      "https://dogbolt.org/faq"
+    ]
   }
 ]
