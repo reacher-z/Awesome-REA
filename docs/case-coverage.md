@@ -22,11 +22,11 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 76 | 75 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 444 | 443 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 77 | 76 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 443 | 442 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 71 | 71 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-83 occurrences have catalog links. They reference 75 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+84 occurrences have catalog links. They reference 76 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
 This ledger records a new primary-source review for 91 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
@@ -109,7 +109,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation | Already curated | [Source](https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md) |
 | Majora’s Mask: matching US N64 decompilation | Already curated | [Source](https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md) |
 | 2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation | Already curated | [Source](https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md) |
-| 🗡️ The Legend of Zelda: The Minish Cap — zeldaret/tmc | Pending | [Source](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
+| The Minish Cap: a GBA decompilation targeting five ROMs | Already curated | [Source](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
 | 🚀 Metroid Prime — AxioDL/metaforce | Pending | [Source](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
 | 🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation | Pending | [Source](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
 | Unleashed Recompiled: translating Xbox 360 game code and shaders | Already curated | [Source](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |
