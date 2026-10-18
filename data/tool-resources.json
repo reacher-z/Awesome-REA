@@ -3674,5 +3674,34 @@
       "https://github.com/zeldaret/tww/actions/runs/38619222013",
       "https://decomp.dev/zeldaret/tww"
     ]
+  },
+  {
+    "id": "sonic-mania-decomp-case",
+    "name": "Sonic Mania: a game-code decompilation for the RSDKv5 engine",
+    "url": "https://github.com/RSDKModding/Sonic-Mania-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Sonic Mania’s game code in C and builds it with the separately decompiled RSDKv5 or RSDKv5U engine for Windows, Linux, Switch and Android. Assets must come from an official Sonic Mania (Plus) release; the project adds a mod loader and can build several retail versions. Its license describes the code as mostly functionally the same as the original, not byte-matching.",
+    "description_zh": "以 C 重建《索尼克狂欢》的游戏代码，并与另行反编译的 RSDKv5 或 RSDKv5U 引擎一起构建，支持 Windows、Linux、Switch 和 Android。素材必须来自官方发行的 Sonic Mania (Plus)；项目加入了模组加载器，并可构建多个零售版本。其许可证称代码大多在功能上与原作相同，而不是逐字节一致。",
+    "evidence_url": "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository describes itself as a complete decompilation of Sonic Mania (2017); its license says it also contains original code and that most code is expected to be functionally the same, so no byte-matching build is claimed. It adds a built-in mod loader and API and can build 1.00 (console launch), 1.03 (PC launch) and 1.06 (Plus update) variants. The reviewed commit is 15 commits after release v1.1.1 (2025-11-01).",
+      "It does not run without assets from an official Sonic Mania (Plus) release for Windows (Steam or Epic Games Store), Switch, PS4 or Xbox One; the Netflix Games version is not supported. By default it builds with the bundled RSDKv5 engine submodule at revision 3 (RSDKv5U) and game version 6, the last Steam release; with WITH_RSDK off it builds only the game code, and RETRO_DISABLE_PLUS is to be enabled for distribution builds.",
+      "Clone recursively, because GitHub’s source ZIPs omit the required submodules. CMake builds use Visual Studio with vcpkg (libtheora, libogg, GLEW, GLFW3, SDL2) on Windows, build tools with GLEW, GLFW and libtheora development packages on Linux, devkitPro packages for Switch, and the engine repository’s instructions for Android. GL builds need a user-made shader mod for videos and filters.",
+      "CI builds Windows x86 and x64 and Linux binaries against both the RSDKv5 and RSDKv5U configurations. The project publishes no comparison with the original binaries, and its FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
+      "The custom Sonic Mania Decompilation Source Code License v1 allows copying, modification and distribution only for non-commercial use, requires stating that the code is not the distributor’s, forbids distributing game assets other than unique modded ones, and binds forks to the same terms. Sega’s game and assets keep their own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/LICENSE.md",
+      "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.gitmodules",
+      "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.github/workflows/build.yml",
+      "https://github.com/RSDKModding/Sonic-Mania-Decompilation/releases/tag/v1.1.1"
+    ]
   }
 ]

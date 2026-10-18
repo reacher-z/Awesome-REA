@@ -10422,15 +10422,26 @@
       "reported_source_urls": [
         "https://github.com/RSDKModding/Sonic-Mania-Decompilation"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Sonic Mania decompilation adds a mod loader and supports the separate RSDKv5(U) engine. README requires official assets, excludes the Netflix version, and warns that nonrecursive ZIPs omit required submodules. Review its custom licensing and exact supported game/engine build combination before drafting; do not merge the separate engine row into one completed case.",
-      "reason_zh": "Sonic Mania 反编译项目包含模组支持，并可结合独立 RSDKv5(U) 引擎；README 要求官方素材、不支持 Netflix 版，并提醒非递归 ZIP 缺少子模块。发表前需核查许可和具体游戏／引擎组合，不将引擎行合并为同一完成案例。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Building on the bounded README look, the pinned README, custom license, submodule list, CI workflow and v1.1.1 release support this Sonic Mania game-code decompilation built with the RSDKv5 or RSDKv5U engine. The full mapping covers the game repository only; the engine row stays separate. Official-asset dependency, the excluded Netflix version, the default engine/game build combination, non-byte-matching scope and non-commercial license terms remain explicit.",
+      "reason_zh": "在此前有限的 README 核查基础上，固定版本的 README、自定义许可证、子模块清单、CI 工作流和 v1.1.1 发布，支持这一与 RSDKv5 或 RSDKv5U 引擎一起构建的 Sonic Mania 游戏代码反编译。完整映射只覆盖游戏仓库，引擎项目另行处理。依赖官方素材、不支持 Netflix 版本、默认引擎与游戏版本组合、非逐字节一致的范围以及非商业许可条款均明确保留。",
       "primary_evidence_urls": [
-        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md"
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md",
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/LICENSE.md",
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.gitmodules",
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.github/workflows/build.yml",
+        "https://github.com/RSDKModding/Sonic-Mania-Decompilation/releases/tag/v1.1.1"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sonic-mania-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-028",
@@ -13934,18 +13945,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 95,
-      "insufficient-evidence": 81,
-      "pending": 415
-    },
-    "units_by_state": {
-      "already-curated": 94,
+      "already-curated": 96,
       "insufficient-evidence": 81,
       "pending": 414
     },
+    "units_by_state": {
+      "already-curated": 95,
+      "insufficient-evidence": 81,
+      "pending": 413
+    },
     "primary_reviewed_units": 119,
-    "catalog_linked_occurrences": 106,
-    "distinct_resource_ids": 100,
+    "catalog_linked_occurrences": 107,
+    "distinct_resource_ids": 101,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

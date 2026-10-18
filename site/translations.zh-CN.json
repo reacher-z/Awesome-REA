@@ -1829,5 +1829,15 @@
       "每种条件只运行一次（n=1），启用 REA 的一组被要求优先使用 REA 工具，多个进程并行运行使耗时只能作参考，且只测试了单一模型下的静态 JavaScript／Web 工作；一次中断的运行被剔除并重做。有一项 REA 分析结果超过了 MCP 的 10 MB 响应上限。脚本和 JSONL 日志只以摘录形式出现而未公开，因此本目录无法也未曾重新运行这些试验。",
       "作者报告 REA 在提取环节（如展开 asar、从 HAR 中提取元素）有所帮助，而两组的代码阅读都主要依靠 grep 和小脚本。没有重建任何内容：HAR 任务确认的是一条已有的请求路径。原生二进制和 APK 留待计划中的第二步；Orca、会场网站、REA 及模型服务保留各自条款。"
     ]
+  },
+  "sonic-mania-decomp-case": {
+    "name": "Sonic Mania：面向 RSDKv5 引擎的游戏代码反编译重建",
+    "requirements": [
+      "仓库自述为《索尼克狂欢》（2017）的完整反编译；其许可证说明仓库中也有原创代码，且大部分代码预期在功能上与原作相同，因此并不主张能构建逐字节一致的产物。项目加入了内置模组加载器与 API，并可构建 1.00（主机首发）、1.03（PC 首发）和 1.06（Plus 更新）版本。所审阅提交位于 v1.1.1 版（2025-11-01）之后 15 个提交。",
+      "缺少官方发行版 Sonic Mania (Plus) 的素材便无法运行，素材可来自 Windows（Steam 或 Epic Games Store）、Switch、PS4 或 Xbox One 版本；不支持 Netflix Games 版本。默认会连同内置的 RSDKv5 引擎子模块一起构建，引擎修订版为 3（RSDKv5U），游戏版本为 6，即最后一个 Steam 版本；关闭 WITH_RSDK 时只构建游戏代码，用于分发的构建应开启 RETRO_DISABLE_PLUS。",
+      "须递归克隆仓库，因为 GitHub 的源码 ZIP 不含所需子模块。CMake 构建在 Windows 上使用 Visual Studio 与 vcpkg（libtheora、libogg、GLEW、GLFW3、SDL2），在 Linux 上使用构建工具及 GLEW、GLFW、libtheora 开发包，Switch 使用 devkitPro 软件包，Android 则按引擎仓库的说明构建。GL 构建需要使用者自建着色器模组，才能正常显示视频和滤镜。",
+      "CI 针对 RSDKv5 和 RSDKv5U 两种配置构建 Windows x86、x64 及 Linux 版本。项目未公开与原版二进制文件的对照结果，其常见问题还说明官方版本中已有的缺陷大多不会修复。本合集未构建或运行该项目。",
+      "自定义的《Sonic Mania 反编译源码许可证 v1》仅允许非商业用途的复制、修改和分发，要求声明代码并非分发者所有，禁止分发独特模组素材以外的游戏素材，并要求所有派生版本遵守同一许可。Sega 的游戏和素材保留各自权利。所审阅来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
