@@ -6666,5 +6666,38 @@
       "https://github.com/blacktop/ipsw/blob/a9eae76e8b1e901e4a03dd530defac8a1b33f91a/LICENSE",
       "https://github.com/blacktop/ipsw/releases/tag/v3.1.739"
     ]
+  },
+  {
+    "id": "openxcom-engine-case",
+    "name": "OpenXcom: an open-source clone of X-COM: UFO Defense and Terror from the Deep",
+    "url": "https://github.com/OpenXcom/OpenXcom",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements MicroProse’s UFO: Enemy Unknown (X-COM: UFO Defense) and X-COM: Terror from the Deep as a C++/SDL engine that runs on the user’s original game resources. Game data such as items, craft, research and missions is expressed in YAML rulesets, which also carry its standard mods and a wider modding ecosystem. It is a clone that reuses original content, not recovered MicroProse code.",
+    "description_zh": "以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。物品、飞行器、研究和任务等游戏数据以 YAML 规则集表达，这些规则集也承载其标准模组及更广泛的模组生态。这是复用原内容的克隆实现，而非恢复出的 MicroProse 代码。",
+    "evidence_url": "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master snapshot reports version 1.0 Dev; the last tagged release is v1.0 from 2014, and a nightly workflow builds later Windows, Linux and macOS versions. It covers both games and can import saved games from the originals, while standard mods based on XcomUtil and UFOExtender add optional changes. The reviewed sources do not describe how original behaviour was determined.",
+      "Requires an unmodified copy of the resources from either or both original games. For UFO these include the GEODATA, GEOGRAPH, MAPS, ROUTES, SOUND, TERRAIN, UFOGRAPH and UNITS folders, and TFTD needs a similar set. The README warns against modded copies such as XcomUtil-patched data; the Windows installer can detect Steam editions.",
+      "Building targets C++11 with CMake 3.5+, Visual C++, Xcode or a plain Makefile, against SDL 1.2, SDL_mixer, SDL_gfx 2.0.22+, SDL_image and yaml-cpp 0.5.3+. CI compiles debug builds on Linux, 32-bit Windows and macOS.",
+      "CI only compiles the code, and the repository has no automated behaviour tests, so fidelity to the original games is not demonstrated by published checks. This review did not build or run the project.",
+      "Source headers apply GPL-3.0-or-later, and the README notes modified SDL_gfx code (LGPL) used with its author’s permission. Original game resources keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/bin/UFO/README.txt",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/bin/TFTD/README.txt",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/CMakeLists.txt",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/src/version.h",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/.github/workflows/ci.yml",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/.github/workflows/nightly.yml",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/src/main.cpp",
+      "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/LICENSE.txt"
+    ]
   }
 ]

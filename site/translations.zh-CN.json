@@ -2774,5 +2774,15 @@
       "固件、缓存和二进制由使用者提供，或通过下载命令获取。README 中的设备与 App Store Connect 命令不在本条目的逆向工程范围内。使用 --dec 时，macho disass 和 dyld disass 会把反汇编发送给 --dec-llm 指定的 LLM 服务：托管的 OpenAI 兼容、Anthropic、Gemini 或路由 API、ACP 智能体命令行，或本地 Ollama。独立的 ipswd 守护进程提供 REST API；README 还建议智能体使用独立的 ipsw-skill 仓库，本次未审阅该仓库。",
       "采用 MIT 许可。README 指出提取出的 dylib 仍可能引用缓存中其他位置的元数据，因此建议直接在缓存上进行 Objective-C 分析。LLM 反编译输出由模型生成，需要核实。本次未下载或分析任何固件。"
     ]
+  },
+  "openxcom-engine-case": {
+    "name": "OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆",
+    "requirements": [
+      "所审阅的 master 快照版本标为 1.0 Dev；最后一个带标签的发行版是 2014 年的 v1.0，之后的 Windows、Linux 和 macOS 版本由每日构建工作流生成。项目覆盖两款游戏，并可导入原版存档；基于 XcomUtil 与 UFOExtender 的标准模组提供可选改动。所审来源未说明如何确定原版行为。",
+      "需要一份未经修改的原游戏资源，可来自其中一款或两款游戏。UFO 需包括 GEODATA、GEOGRAPH、MAPS、ROUTES、SOUND、TERRAIN、UFOGRAPH 和 UNITS 等文件夹，TFTD 需要类似的一组。README 提醒不要使用 XcomUtil 修改过的数据等改版副本；Windows 安装程序可检测 Steam 版本。",
+      "构建以 C++11 为目标，可使用 CMake 3.5+、Visual C++、Xcode 或简易 Makefile，依赖 SDL 1.2、SDL_mixer、SDL_gfx 2.0.22+、SDL_image 和 yaml-cpp 0.5.3+。CI 在 Linux、32 位 Windows 和 macOS 上编译调试版本。",
+      "CI 只编译代码，仓库没有自动化行为测试，因此与原游戏的一致程度没有公开检查予以证明。本次审阅未构建或运行该项目。",
+      "源文件头声明采用 GPL-3.0-or-later，README 说明经作者许可使用修改过的 SDL_gfx 代码（LGPL）。原游戏资源保留各自权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
