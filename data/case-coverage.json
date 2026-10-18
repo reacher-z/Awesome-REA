@@ -4054,13 +4054,31 @@
         "https://x.com/i/status/2110641814545764484",
         "https://x.com/i/status/2110737629465514404"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked fork, renamed from rea-engine to RE-Agent, publishes the TicTacToe target report, recovered source, recovery and probe scripts and a current result file for the reported rebuild. The full mapping covers that bounded case: one method passes over its 19,683-board domain, while executables, terminal bytes and whole-game behavior are not equivalent or verified. The separate Heaven Skills post adds workflow context only; nothing was rerun here.",
+      "reason_zh": "所链接的分叉（由 rea-engine 更名为 RE-Agent）公开了所报告重建的 TicTacToe 目标报告、恢复出的源码、恢复与探针脚本及当前结果文件。完整映射覆盖这一有限案例：一个方法在 19,683 种棋盘输入域上通过，而可执行文件、终端字节和整个游戏行为并不等价或未经验证。另一条 Heaven Skills 帖子只提供工作流背景；本次未重新运行任何内容。",
+      "primary_evidence_urls": [
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/native-windows-ports/reports/targets/tictactoe.md",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/README.md",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/docs/verification/rea-engine/game-report-current-2026-10-14.json",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/recover-tictactoe-replica.mjs",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/verify-tictactoe-reconstruction.mjs",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/benchmarks/TicTacToeProbe.cs",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/tictactoe/LICENSE",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/README.md",
+        "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/LICENSE",
+        "https://github.com/tatlead/TicTacToe-AI/tree/ce0f81b05e190dcfb72ea68c5fbb1114fa994a5a"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-engine-tictactoe-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:bitfish-local-llm-home-control",
@@ -13903,18 +13921,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 93,
-      "insufficient-evidence": 81,
-      "pending": 417
-    },
-    "units_by_state": {
-      "already-curated": 92,
+      "already-curated": 94,
       "insufficient-evidence": 81,
       "pending": 416
     },
-    "primary_reviewed_units": 116,
-    "catalog_linked_occurrences": 104,
-    "distinct_resource_ids": 98,
+    "units_by_state": {
+      "already-curated": 93,
+      "insufficient-evidence": 81,
+      "pending": 415
+    },
+    "primary_reviewed_units": 117,
+    "catalog_linked_occurrences": 105,
+    "distinct_resource_ids": 99,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

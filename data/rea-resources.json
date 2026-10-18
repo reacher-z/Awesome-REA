@@ -2177,5 +2177,41 @@
       "https://github.com/N0zoM1z0/th08/pull/11",
       "https://github.com/N0zoM1z0/th08/pull/13"
     ]
+  },
+  {
+    "id": "rea-engine-tictactoe-case",
+    "name": "TicTacToe-AI: a bounded REA-fork reconstruction of one game method",
+    "url": "https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "The author’s REA fork, posted as rea-engine and since renamed RE-Agent, decompiles the shipped .NET executable of the GPL-licensed TicTacToe-AI game, recompiles the recovered C# and resources, and repairs one decompiler error against the original IL. A differential probe runs original and rebuilt code on all 19,683 board assignments for one status method and compares six form renders. The report passes only that method; the whole game remains partial.",
+    "description_zh": "作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。差分探针在一个状态判定方法的全部 19,683 种棋盘赋值上运行原版与重建代码，并比较六张窗体渲染图。报告只判定该方法通过，整个游戏仍属部分重建。",
+    "evidence_url": "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/native-windows-ports/reports/targets/tictactoe.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed develop commit (2026-10-15) reports Feature PASS for CheckGameStatus over its declared 3^9 board domain and PARTIAL for the whole game. AI move selection and RNG, menus, timing and sound are unverified, the executables are not byte-identical, and raw terminal captures differ by one carriage return. The posts’ “byte for byte” wording therefore applies to structured board records and six render PNGs, not to the program.",
+      "The input is the published TicTacToe-AI executable from tatlead’s GPL-3.0 repository, identified by SHA-256 in the report. The repository redistributes it with the GPL text and a source archive kept for license compliance; the statement that this source was not consulted during reconstruction is author-reported.",
+      "The fork needs Node.js 22.19+ or 24.11+; recovery uses ilspycmd plus a host Roslyn compiler and Mono references, with script defaults pointing at Homebrew paths on macOS. Verification needs a local X11 display and Mono/libgdiplus. The recorded run used macOS 15.3.1 on ARM64 with Xvfb, so both renders come from the same Mono runtime rather than native Windows.",
+      "Scripts recover a fresh replica, then a probe executes the original and rebuilt assemblies, compares return values and indicator bytes for every board, and captures Form.DrawToBitmap images after button sequences. The current result JSON records zero board-record mismatches and terminalBytesEqual false. This collection read the reports and scripts without running the executables, tools or probe.",
+      "The fork is MIT with morluto’s REA copyright retained and lists optional engines such as Ghidra and Frida under their own licenses; the game and its reconstruction carry GPL-3.0 obligations. Fork-specific code is not part of upstream REA releases, and the repository was renamed after the posts, whose rea-engine link now redirects to RE-Agent."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/README.md",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/docs/verification/rea-engine/game-report-current-2026-10-14.json",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/recover-tictactoe-replica.mjs",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/verify-tictactoe-reconstruction.mjs",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/scripts/benchmarks/TicTacToeProbe.cs",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/tictactoe/LICENSE",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/README.md",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/THIRD_PARTY_NOTICES.md",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/LICENSE",
+      "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/package.json",
+      "https://github.com/tatlead/TicTacToe-AI/tree/ce0f81b05e190dcfb72ea68c5fbb1114fa994a5a"
+    ]
   }
 ]
