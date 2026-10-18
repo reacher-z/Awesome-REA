@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 114 | 113 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 391 | 390 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 115 | 114 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 390 | 389 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 86 | 86 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-125 occurrences have catalog links. They reference 119 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+126 occurrences have catalog links. They reference 120 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 141 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 142 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -170,6 +170,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | OpenMW: replacing Morrowind’s engine while reusing original content | Already curated | [Source](https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md) |
 | 🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed | Pending | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
 | Paper Mario: matching Nintendo 64 decompilation for four releases | Already curated | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
+| Budokai Tenkaichi 3: a native PC port built on a matching decompilation | Already curated | [Source](https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md) |
 | 🥊 Super Smash Bros. Melee — doldecomp/melee | Pending | [Source](https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md) |
 | ⚔️ Perfect Dark — perfect-dark-pc-port/perfect_dark | Pending | [Source](https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md) |
 | Perfect Dark: matching Nintendo 64 decompilation | Already curated | [Source](https://github.com/n64decomp/perfect_dark/blob/169ed48bdcbfb3b568b028bd5bebb27680073514/README.md) |
