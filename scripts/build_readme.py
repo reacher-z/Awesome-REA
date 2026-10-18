@@ -347,6 +347,7 @@ PAPER_STATUSES = {
     'preprint': ('Preprint', '预印本'),
 }
 AGENT_EVALUATION_PAPERS = {
+    'paper-llm-resistant-protection',
     'paper-crackmebench', 'paper-crebench', 'paper-sre-bench', 'paper-humans-machines-sre',
     'paper-programbench',
 }

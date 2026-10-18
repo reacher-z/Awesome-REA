@@ -3127,5 +3127,54 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-llm-resistant-protection",
+    "title": "Towards LLM-Resistant Software Protection: Agent Failure Patterns in CTF Reverse Engineering",
+    "title_zh": "迈向抗 LLM 的软件保护：CTF 逆向工程中的智能体失败模式",
+    "authors": [
+      "Ryutaro Nishizaka",
+      "Yudai Fujiwara",
+      "Takuya Shimizu",
+      "Kazushi Kato",
+      "Yuichi Sugiyama"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The Internet Society’s Crossref deposit gives publication year 2026. The PDF footer names the 27 February 2026 workshop; no finer publication date is asserted from the event date.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据给出出版年份 2026。PDF 页脚标注研讨会于 2026 年 2 月 27 日举行；不据此推定更精确的出版日期。",
+    "venue": "Workshop on Binary Analysis Research (BAR) 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/bar.2026.23058",
+    "url": "https://www.ndss-symposium.org/ndss-paper/auto-draft-657/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Runs Claude Code, Codex CLI and ChatGPT-5.2 Pro on 24 crackme-style challenges selected from 15 international CTF events held in 2025, and attributes their failures to stages of an Observe–Comprehend–Plan loop and to three protection effects: concealment, complication and misdirection. From the failure logs, the authors derive four recurring weaknesses (training bias, over-trust in observations, context limitation and plan persistence). They rerun both CLI agents without a decompiler and compare outcomes with in-competition solve rates.",
+    "description_zh": "让 Claude Code、Codex CLI 与 ChatGPT-5.2 Pro 求解从 2025 年 15 场国际 CTF 赛事中选出的 24 道 crackme 类题目，并将失败归因到“观察—理解—计划”循环的各阶段，以及隐藏、复杂化与误导三类保护效果。作者从失败日志中归纳出四类反复出现的弱点：训练偏差、过度信任观察结果、上下文限制和计划固守。他们还在移除反编译器后重新运行两个命令行智能体，并将结果与赛时解题率对比。",
+    "scope_limitations_en": "The study covers 24 locally solvable Linux x86-64 ELF crackmes and three commercial agents (Claude Opus 4.5 and GPT-5.1-Codex-Max in the CLI tools, and an undisclosed ChatGPT model), evaluated in December 2025 with network access; runs that consulted public write-ups were excluded. The binaries are small relative to real-world software, and malware analysis and vulnerability discovery are out of scope. Each configuration had at most three attempts with early stopping, which the authors call noisy; success means printing the correct flag or finding an accepted input. Weakness labels come from qualitative log analysis by two evaluators and describe these runs, not general properties of LLM agents. ChatGPT-5.2 Pro ran in an uncontrolled web sandbox and is excluded from the decompiler comparison. Solve rates are among teams that solved at least one challenge, unavailable for six tasks, and may include LLM-assisted teams. Training-data exposure remains a validity threat, and the paper does not publish its assembled challenge set, run logs or code.",
+    "scope_limitations_zh": "研究覆盖 24 道可在本地求解的 Linux x86-64 ELF crackme 题目和三个商用智能体（命令行工具使用 Claude Opus 4.5 与 GPT-5.1-Codex-Max，ChatGPT 所用模型未公开），于 2025 年 12 月在允许联网的条件下评测；查阅公开题解的运行已被排除。这些二进制相比真实软件规模较小，恶意软件分析与漏洞发现不在范围内。每种配置最多尝试三次，成功即停止，作者承认这种估计噪声较大；成功指输出正确 flag 或找到被程序接受的输入。弱点标签来自两名评估者对日志的定性分析，描述的是这些运行，并非 LLM 智能体的普遍属性。ChatGPT-5.2 Pro 在无法控制的网页沙箱中运行，未纳入反编译器对比。解题率按至少解出一题的队伍计算，其中六题没有数据，参赛队伍也可能借助 LLM。训练数据泄露仍是有效性威胁；论文未公开其整理的题目集、运行日志或代码。",
+    "why_fits_en": "Links reverse-engineering agent failures to specific protection effects and analysis stages, complementing benchmarks that mainly report success rates.",
+    "why_fits_zh": "将逆向工程智能体的失败与具体保护效果和分析阶段联系起来，补充主要报告成功率的基准。",
+    "metadata_notes": "BAR 2026 is a workshop co-located with NDSS Symposium 2026, not the NDSS main track. The five-author order follows the PDF, the NDSS paper and program pages, and the Internet Society’s Crossref deposit. The DOI resolves directly to the PDF, whose footer gives ISBN 978-1-970672-08-4; Crossref lists no pages, and no page range was verified. No arXiv version was found. Table I gives per-task times and weakness labels for each configuration; the per-agent counts (15, 17, 14, 14 and 19 of 24) and the decompiler comparison are author-reported. The paper names no code or data release. Experiments were not rerun for this collection.",
+    "metadata_notes_zh": "BAR 2026 是与 NDSS Symposium 2026 同期举办的研讨会，并非 NDSS 主会。五位作者的顺序以 PDF、NDSS 论文页与日程页及 Internet Society 向 Crossref 提交的元数据为准。该 DOI 直接解析到 PDF，PDF 页脚标注 ISBN 978-1-970672-08-4；Crossref 未列出页码，本条目未核实页码范围。未找到 arXiv 版本。表 I 给出各配置在每道题上的用时与弱点标签；各智能体解出的题数（24 题中分别为 15、17、14、14 和 19 题）及反编译器对比结果均由作者报告。论文未提及代码或数据发布。本合集未重新运行实验。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/auto-draft-657/",
+      "https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf",
+      "https://doi.org/10.14722/bar.2026.23058",
+      "https://api.crossref.org/works/10.14722/bar.2026.23058",
+      "https://www.ndss-symposium.org/ndss-program/bar-2026/"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
