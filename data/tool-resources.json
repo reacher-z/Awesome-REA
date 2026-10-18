@@ -6497,5 +6497,41 @@
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/tools/python/fix_report.py",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/.github/workflows/progress.yml"
     ]
+  },
+  {
+    "id": "doaxvb-native-port-case",
+    "name": "DOAXVB Native PC Port: statically recompiling Dead or Alive Xtreme Beach Volleyball",
+    "url": "https://github.com/NoRain211/doaxvb-re",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Lifts the original Xbox executable of Dead or Alive Xtreme Beach Volleyball to C with a fork of xboxrecomp and links it with a hand-written runtime that replaces kernel imports, audio and key Direct3D 8 and DirectSound APIs. Setup builds the runner locally from the user’s USA disc image and checks generated files against hashes in an authenticated recipe; releases carry only tools and source. Rewriting game logic as readable source has so far reached only the startup thread entry.",
+    "description_zh": "借助 xboxrecomp 的分支将原版 Xbox《Dead or Alive Xtreme Beach Volleyball》可执行文件提升为 C 代码，并与手写运行时链接，由运行时替代内核导入、音频以及关键的 Direct3D 8 和 DirectSound API。安装程序依据使用者自有的美版光盘镜像在本地构建运行程序，并按经认证配方中的哈希校验生成文件；发布包只含工具和源码。将游戏逻辑改写为可读源码的工作目前只完成了启动线程入口。",
+    "evidence_url": "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls the port fully playable as of 0.4 Beta: long player sessions covered every stage, the Casino, Hotel and Shops, saving and reloading, and a vacation’s end, the last starting from an edited save. Lighting, camera and full rendering fidelity remain incomplete, three known issues are open, and the 0.6.0 RC1 prerelease has had only macOS and Steam Deck smoke runs. Hand-written game logic covers only the startup thread entry.",
+      "Requires the user’s own USA Xbox disc image; setup extracts it, checks the XBE and stops if any recipe input or generated file differs from the recorded hashes. Generated game C, extracted files, saves and run evidence stay in an ignored private folder, and NOTICE states that the repository distributes no game, generated game code, assets or console firmware.",
+      "Windows release setup bundles Python, Capstone, Git, CMake and extract-xiso and downloads a pinned llvm-mingw clang release. macOS and Linux/SteamOS builds need CMake, Ninja, SDL3, Python with Capstone 5.0.9 and a self-built extract-xiso, with Vulkan through SDL3 and shaderc on Linux. The lifter is a pinned branch of NoRain211’s fork of sp00nznet/xboxrecomp.",
+      "Public CI checks the recipe, setup and ISO-extraction scripts with synthetic inputs and builds and runs the runtime tests on Windows without game files. The status page states that these tests do not show the game boots or plays; playability rests on owner and contributor sessions, and PlayStation pads are unconfirmed on hardware. This collection did not build or run the port.",
+      "Original code is GPL-3.0-or-later, and NOTICE grants no rights to the game; xboxrecomp is MIT and other components keep their own licenses. The README and NOTICE state substantial use of LLMs and AI coding agents for code, reverse-engineering analysis, debugging, tests and documentation, with changes reviewed and tested; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/public-status.md",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/building.md",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/NOTICE",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/LICENSE",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/CONTRIBUTING.md",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.gitmodules",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.gitignore",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.github/workflows/public-ci.yml",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/wayfinder/research/host-shell-redistribution.md",
+      "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/tools/game-recipe/README.md",
+      "https://github.com/NoRain211/doaxvb-re/releases/tag/v0.5.3"
+    ]
   }
 ]

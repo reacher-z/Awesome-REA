@@ -2727,5 +2727,15 @@
       "ninja 构建会依据 config/<地区>/checksum.sha1 运行 sha1sum，因此构建成功即重现所提供的可执行文件。为达到该哈希，构建会按 asm_patches.json 改写部分编译器输出，并把列出的字节范围从原始可执行文件复制到构建产物中（美版与欧版的 PhotoScoreCount、欧版的 DspSpData）。CI 只上传已提交的报告，没有可执行文件就无法构建；本合集未重跑任何构建。",
       "项目采用 MIT 许可；Fatal Frame 及其可执行文件另有权利约束，仓库中的编译器二进制文件也适用各自条款。所审来源未确立 AI 或 REA 使用归因，报告中 X 帖子的存档链接也未作为证据使用。"
     ]
+  },
+  "doaxvb-native-port-case": {
+    "name": "DOAXVB Native PC Port：对《Dead or Alive Xtreme Beach Volleyball》的静态重编译",
+    "requirements": [
+      "README 称自 0.4 Beta 起可完整游玩：长时间试玩覆盖了所有场地、赌场、酒店和商店、存档与读档，以及一次假期结束后进入新假期（该次试玩从修改过的存档开始）。光照、镜头和完整渲染还原度仍不完整，仍有三个已知问题未解决，0.6.0 RC1 预发布版仅在 macOS 和 Steam Deck 上做过冒烟测试。手写游戏逻辑仅覆盖启动线程入口。",
+      "需要使用者自有的美版 Xbox 光盘镜像；安装程序会提取镜像、检查 XBE，若任一配方输入或生成文件与记录的哈希不符即停止。生成的游戏 C 代码、提取文件、存档和运行记录都保存在被忽略的私有目录中，NOTICE 声明仓库不分发游戏、生成的游戏代码、素材或主机固件。",
+      "Windows 发布包的安装程序附带 Python、Capstone、Git、CMake 和 extract-xiso，并下载固定版本的 llvm-mingw clang。macOS 与 Linux／SteamOS 构建需要 CMake、Ninja、SDL3、安装了 Capstone 5.0.9 的 Python 以及自行构建的 extract-xiso；Linux 上通过 SDL3 使用 Vulkan，并需要 shaderc。提升器为 NoRain211 对 sp00nznet/xboxrecomp 所建分支中的固定版本。",
+      "公开 CI 用合成输入检查配方、安装和 ISO 提取脚本，并在 Windows 上无需游戏文件构建并运行运行时测试。状态页说明这些测试不能证明游戏可以启动或游玩；可玩性依据所有者与贡献者的试玩，PlayStation 手柄尚未在实机上确认。本合集未构建或运行该移植。",
+      "原创代码采用 GPL-3.0-or-later，NOTICE 说明不授予任何游戏权利；xboxrecomp 为 MIT，其他组件保留各自许可证。README 与 NOTICE 声明项目在代码、逆向分析、调试、测试和文档中大量使用 LLM 和 AI 编程代理，修改经过审阅和测试；未提及 REA 使用。"
+    ]
   }
 }

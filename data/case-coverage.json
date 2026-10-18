@@ -13322,13 +13322,33 @@
         "https://github.com/NoRain211/doaxvb-re",
         "https://archive.org/details/dead-or-alive-xtreme-beach-volleyball_202610"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 109 (README line 1122) lists NoRain211/doaxvb-re under 🏁 Dead or Alive Xtreme Beach Volleyball. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 109 行（README 第 1122 行）在 🏁 Dead or Alive Xtreme Beach Volleyball 下列出 NoRain211/doaxvb-re。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, status page, build guide, notices, CI workflow, redistribution policy and recipe notes document an xboxrecomp static recompilation of the USA Xbox executable with a hand-written runtime and locally generated, hash-checked output. Full mapping covers this port; playability rests on project sessions, and the author-disclosed AI assistance does not establish REA use. The other reported link was not used as evidence.",
+      "reason_zh": "固定版本的 README、状态页、构建指南、声明文件、CI 工作流、再分发政策和配方说明，记录了使用 xboxrecomp 对美版 Xbox 可执行文件进行的静态重编译，配有手写运行时，输出在本地生成并经哈希校验。完整映射覆盖此移植；可玩性依据项目试玩，作者披露的 AI 辅助不构成 REA 使用。另一个报告链接未作为证据使用。",
+      "primary_evidence_urls": [
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/README.md",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/public-status.md",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/building.md",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/NOTICE",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/LICENSE",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/CONTRIBUTING.md",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.gitmodules",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.gitignore",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/.github/workflows/public-ci.yml",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/wayfinder/research/host-shell-redistribution.md",
+        "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/tools/game-recipe/README.md",
+        "https://github.com/NoRain211/doaxvb-re/releases/tag/v0.5.3"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "doaxvb-native-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-110",
@@ -15283,18 +15303,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 174,
-      "insufficient-evidence": 140,
-      "pending": 277
-    },
-    "units_by_state": {
-      "already-curated": 173,
+      "already-curated": 175,
       "insufficient-evidence": 140,
       "pending": 276
     },
-    "primary_reviewed_units": 253,
-    "catalog_linked_occurrences": 185,
-    "distinct_resource_ids": 179,
+    "units_by_state": {
+      "already-curated": 174,
+      "insufficient-evidence": 140,
+      "pending": 275
+    },
+    "primary_reviewed_units": 254,
+    "catalog_linked_occurrences": 186,
+    "distinct_resource_ids": 180,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
