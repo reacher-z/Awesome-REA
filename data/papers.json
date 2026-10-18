@@ -3403,5 +3403,74 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-decllm",
+    "title": "DecLLM: LLM-Augmented Recompilable Decompilation for Enabling Programmatic Use of Decompiled Code",
+    "title_zh": "DecLLM：借助大语言模型实现可重新编译的反编译，支持以程序化方式使用反编译代码",
+    "authors": [
+      "Wai Kin Wong",
+      "Daoyuan Wu",
+      "Huaijin Wang",
+      "Zongjie Li",
+      "Zhibo Liu",
+      "Shuai Wang",
+      "Qiyi Tang",
+      "Sen Nie",
+      "Shi Wu"
+    ],
+    "year": 2025,
+    "publication_date": "2025-06-22",
+    "date_precision": "day",
+    "date_basis": "The ACM article page and publisher-deposited Crossref metadata agree on publication on 2025-06-22. The ISSTA presentation date is not substituted for this journal publication date.",
+    "date_basis_zh": "ACM 文章页面与出版方提交的 Crossref 元数据均将出版日期列为 2025-06-22；本条目不以 ISSTA 报告日期替代该期刊出版日期。",
+    "venue": "Proceedings of the ACM on Software Engineering (ISSTA 2025)",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3728958",
+    "citation": {
+      "container_title": "Proceedings of the ACM on Software Engineering",
+      "publisher": "ACM",
+      "volume": "2",
+      "issue": "ISSTA",
+      "pages": "1841-1864",
+      "article_number": "ISSTA081",
+      "sources": [
+        "https://dl.acm.org/doi/10.1145/3728958",
+        "https://api.crossref.org/works/10.1145/3728958"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3728958",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3728958",
+    "code_url": null,
+    "project_url": "https://sites.google.com/view/decllm",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DecLLM repairs decompiler pseudocode that does not recompile into C that compiles and runs, so source-level tools such as CodeQL can be applied to binaries. An iterative loop feeds compiler errors to an off-the-shelf LLM, reverting illegal outputs and large deletions, then uses mismatched test outputs and AddressSanitizer reports from the rebuilt program to repair behavior, and finally fuzzes the original and rebuilt executables for divergences. With GPT-3.5 and GPT-4 the authors report 74% and 78.3% success on 300 Code Contest programs; on Coreutils and CGC binaries, 61.9–70.9% recompile and 48.1–59.0% are fully functional.",
+    "description_zh": "DecLLM 将无法重新编译的反编译伪代码修复为可编译、可运行的 C 代码，使 CodeQL 等源码级工具能够用于二进制分析。其迭代流程把编译器错误反馈给现成的大语言模型，并回退非法输出和大段删除；随后利用重建程序与预期不符的测试输出及 AddressSanitizer 报告修复行为，最后对原始与重建的可执行文件进行模糊测试以发现行为差异。作者报告，使用 GPT-3.5 与 GPT-4 时，在 300 个 Code Contest 程序上的成功率分别为 74% 和 78.3%；在 Coreutils 与 CGC 二进制上，61.9%–70.9% 可重新编译，完全功能正常的占 48.1%–59.0%。",
+    "scope_limitations_en": "On Code Contest, success means the repaired code compiles and the rebuilt executable passes the supplied test cases, with AFL++ fuzzing as an extra check; the Coreutils and CGC overall rates also count rebuilt binaries that malfunction or crash. This establishes compilability and test-based agreement, not semantic equivalence, which the authors note is undecidable. Results depend on IDA Pro 8.3 output, with one Ghidra 10.4 repetition, and on the API-served gpt-3.5-turbo-0613 and gpt-4-0314 snapshots with a 4,096-token limit, so programs were chosen to fit within half of it. The 300 Code Contest programs average 112.9 lines; Coreutils 9.5 and CGC binaries were compiled without stripping symbols and repaired function by function, which cannot infer undefined globals. Around 30% of hard cases still fail, mainly from decompiler address/data confusion, ill-inferred buffer sizes, long outputs that include STL code and LLM type-cast shortcuts; deviations not exercised by tests remain undetected. CodeQL analysis of Juliet samples needed manual query adaptation.",
+    "scope_limitations_zh": "在 Code Contest 上，成功的含义是修复后的代码能够编译，且重建的可执行文件通过所提供的测试用例，并以 AFL++ 模糊测试作额外检查；Coreutils 与 CGC 的总体比率还计入功能异常或崩溃的重建二进制。这确立的是可编译性和基于测试的一致性，而非语义等价性，作者亦指出后者不可判定。结果依赖 IDA Pro 8.3 的输出（另以 Ghidra 10.4 重复一次实验），以及通过 API 提供、上下文上限为 4,096 个词元的 gpt-3.5-turbo-0613 与 gpt-4-0314 快照，因此所选程序须控制在该上限的一半以内。300 个 Code Contest 程序平均 112.9 行；Coreutils 9.5 与 CGC 二进制编译时未剥离符号，并逐函数修复，这种方式无法推断未定义的全局变量。约 30% 的困难案例仍然失败，主要原因包括反编译器混淆地址与数据、缓冲区大小推断错误、包含 STL 代码的过长输出，以及大语言模型以类型强制转换走捷径；测试未覆盖的行为偏差仍无法发现。对 Juliet 样本进行 CodeQL 分析时需要人工调整查询。",
+    "why_fits_en": "Adds recompilability-oriented repair of decompiler output, complementing readability-oriented LLM refinement and neural decompilation research.",
+    "why_fits_zh": "补充以可重新编译为目标的反编译输出修复方法，与以可读性为目标的大语言模型改写及神经反编译研究互补。",
+    "metadata_notes": "The ACM page and Crossref agree on the title, nine-author order, DOI, volume 2, issue ISSTA, pages 1841–1864 and the 2025-06-22 publication date (received 2025-02-27, accepted 2025-03-31); the ACM page supplies article number ISSTA081, which Crossref omits. ACM marks the article open access under CC BY-ND 4.0, and its HTML full text was reviewed. No arXiv version of DecLLM was found. The related preprint arXiv:2310.06530, “Refining Decompiled C Code with Large Language Models” (DecGPT; v1 2023-10-10, v2 2023-11-28), shares eight of the nine authors, omitting Daoyuan Wu, and the recompilation goal, but its title, author list and reported results differ, so it is not recorded as this paper’s arXiv identifier. The Data Availability section points only to the Google Sites artifact page. As reviewed, it describes DecRule’s preprocessing rules, error examples, dynamic-repair case analysis and the CWE list; no source repository, prompt package or dataset download was identified, so code_url stays null. The prototype targeted output from the commercial IDA Pro decompiler and used OpenAI model snapshots that may no longer be served. Nothing was run.",
+    "metadata_notes_zh": "ACM 页面与 Crossref 的标题、九位作者顺序、DOI、第 2 卷 ISSTA 期、页码 1841–1864 及 2025-06-22 出版日期一致（2025-02-27 收稿，2025-03-31 接收）；文章编号 ISSTA081 由 ACM 页面提供，Crossref 未列出。ACM 将文章标为开放获取，采用 CC BY-ND 4.0 许可，本次审阅了其 HTML 全文。未发现 DecLLM 的 arXiv 版本。相关预印本 arXiv:2310.06530《Refining Decompiled C Code with Large Language Models》（DecGPT；v1 为 2023-10-10，v2 为 2023-11-28）与本文共有九位作者中的八位（未列 Daoyuan Wu），研究目标同为可重新编译，但标题、作者列表与报告结果不同，因此不作为本文的 arXiv 标识符记录。数据可用性章节仅指向 Google Sites 产物页面。经审阅，该页面介绍 DecRule 的预处理规则、错误示例、动态修复案例分析及 CWE 列表，未发现源码仓库、提示词包或数据集下载，因此 code_url 保持为空。原型针对商业反编译器 IDA Pro 的输出，所用 OpenAI 模型快照可能已停止提供。本次未运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3728958",
+      "https://api.crossref.org/works/10.1145/3728958",
+      "https://dl.acm.org/doi/pdf/10.1145/3728958",
+      "https://sites.google.com/view/decllm",
+      "https://sites.google.com/view/decllm/decrule",
+      "https://sites.google.com/view/decllm/decrule-errors",
+      "https://sites.google.com/view/decllm/dynamic-repairing",
+      "https://sites.google.com/view/decllm/cwe",
+      "https://arxiv.org/abs/2310.06530"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
