@@ -1570,5 +1570,15 @@
       "tools/check 将每个列出的函数与原可执行文件逐一比对，data/uking_functions.csv 记录各函数状态。在固定提交中，该列表的 113,490 个函数里，32,079 个标为一致，514 个不一致，7,601 个进行中，6,270 个为库函数，67,026 个尚未反编译；审阅时可变的 botw.link 徽章显示按大小计 17.493%、按函数数计 30.398%。本合集未运行该检查工具。",
       "固定版本的仓库根目录没有许可证文件，GitHub 也未识别出许可证，因此未声明复用许可；子模块和任天堂内容各有其条款，About 页面也称这项工作处于法律灰色地带。AGENTS.md 为 AI 辅助贡献规定了披露和人工审核要求，但所审文件既未将重建归因于 REA，也未量化 AI 的使用。"
     ]
+  },
+  "skyward-sword-decomp-case": {
+    "name": "《天空之剑》：以哈希校验重新链接的 Wii 版反编译",
+    "requirements": [
+      "README 称其为进行中的 Wii 版反编译，目前唯一支持的版本是 SOUE01（NTSC-U 1.0）；configure.py 还列出 SOUP01，但固定版本中只有 SOUE01 的配置。产物是 Wii 用的重建 main.dol 和 REL 组，不是 PC 可执行文件或移植。",
+      "构建需要使用者自己的 SOUE01 游戏：README 指明只需其数据分区中的 sys/main.dol 和 files/rels.arc。仓库不含游戏素材或汇编；decomp-toolkit 依据 config/SOUE01 中的输入哈希和拆分表，在本地将使用者的文件拆分为对象。",
+      "在 Windows 上可直接用 Python 与 ninja 构建；Linux／macOS 需 ninja，并会自动下载 wibo 包装器。configure.py 固定 decomp-toolkit v1.7.1、objdiff v3.4.1、binutils 2.42-1 及 20250812 编译器包，大部分代码选用 Metrowerks Wii/1.5，大部分 NW4R 代码选用 Wii/1.3；开发时用 objdiff 逐个对象比对。",
+      "默认 ninja 目标只对标为 Matching 的单元（configure.py 中有 493 个，另有 536 个仍为 NonMatching）链接由源码编译的对象，其余单元使用从原文件提取的对象，再按 build.sha1 校验 main.dol 和 636 个 REL。因此校验通过表示输出一致，并不代表反编译已完成。decomp.dev 针对该固定提交的报告显示，27.89% 的代码字节及 76,968 个函数中的 33,940 个已匹配；CI 使用存放游戏文件的私有容器，本合集两者均未运行。",
+      "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其文件，也不涵盖下载的编译器。所审来源未确立 REA 或编码代理的参与。"
+    ]
   }
 }

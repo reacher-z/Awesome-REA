@@ -2893,5 +2893,37 @@
       "https://github.com/open-ead/nx-decomp-tools/blob/e0eae2f7f403befec6b60cb615f6680a6937d0c9/viking/src/functions.rs",
       "https://botw.link/progress"
     ]
+  },
+  {
+    "id": "skyward-sword-decomp-case",
+    "name": "Skyward Sword: Wii decompilation with hash-checked relinking",
+    "url": "https://github.com/zeldaret/ss",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for The Legend of Zelda: Skyward Sword’s Wii main.dol and REL modules, starting from the user’s NTSC-U 1.0 (SOUE01) disc files. Objects marked matching are compiled from source and linked with objects split from the original, and the result is checked against SHA-1 hashes; the repository ships no assets or assembly and is not a port.",
+    "description_zh": "以使用者自备的 NTSC-U 1.0（SOUE01）光盘文件为起点，为《塞尔达传说 天空之剑》Wii 版的 main.dol 和 REL 模块重建 C++ 源码。标为一致的对象由源码编译，再与从原文件拆分出的其余对象链接，并以 SHA-1 哈希校验结果；仓库不含素材或汇编，也不是移植。",
+    "evidence_url": "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress Wii decompilation whose only supported version is SOUE01 (NTSC-U 1.0); configure.py also lists SOUP01, but the pinned tree has configuration only for SOUE01. The output is a rebuilt main.dol and REL set for the Wii, not a PC executable or port.",
+      "Building needs the user’s own SOUE01 game: README names sys/main.dol and files/rels.arc from its data partition as the only required files. The repository contains no game assets or assembly; decomp-toolkit splits the user’s files into objects locally, using the input hash and split tables in config/SOUE01.",
+      "Builds run natively on Windows with Python and ninja, or on Linux/macOS with ninja and the automatically downloaded wibo wrapper. configure.py pins decomp-toolkit v1.7.1, objdiff v3.4.1, binutils 2.42-1 and a 20250812 compiler bundle, selecting Metrowerks Wii/1.5 for most code and Wii/1.3 for most NW4R code; objdiff compares individual objects during development.",
+      "The default ninja target links source-built objects only for units marked Matching (493 in configure.py; 536 remain NonMatching) and uses the original extracted object for the rest, then checks main.dol and 636 RELs against build.sha1. A passing check shows output identity, not complete decompilation. decomp.dev’s report for the pinned commit lists 27.89% of code bytes and 33,940 of 76,968 functions matched; CI uses a private container holding game files, and this collection ran neither.",
+      "The repository carries CC0-1.0; that dedication does not cover Nintendo’s game, its files or the downloaded compilers. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/configure.py",
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/tools/project.py",
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/config/SOUE01/config.yml",
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/config/SOUE01/build.sha1",
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/LICENSE",
+      "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/.github/workflows/build.yml",
+      "https://decomp.dev/zeldaret/ss"
+    ]
   }
 ]

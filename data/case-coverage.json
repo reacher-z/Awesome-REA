@@ -9668,13 +9668,29 @@
       "reported_source_urls": [
         "https://github.com/zeldaret/ss"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 12 (README line 128) lists zeldaret/ss under 🗡️ The Legend of Zelda: Skyward Sword. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 12 行（README 第 128 行）在 🗡️ The Legend of Zelda: Skyward Sword 下列出 zeldaret/ss。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, configure script, build tooling, SHA-1 manifest and license, plus decomp.dev’s report for the same commit, support a work-in-progress Wii decompilation with hash-checked relinking. Full mapping covers this reconstruction, not a port or a complete decompilation; unmatched units still link original extracted objects. The user-supplied SOUE01 files and project-reported progress remain explicit.",
+      "reason_zh": "固定版本的 README、配置脚本、构建工具、SHA-1 清单与许可证，以及 decomp.dev 针对同一提交的报告，支持这是一项以哈希校验重新链接的进行中 Wii 版反编译。完整映射覆盖此重建项目，不代表移植或已完成的反编译；未匹配单元仍链接从原文件提取的对象。使用者自备的 SOUE01 文件及项目报告的进度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/README.md",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/configure.py",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/tools/project.py",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/config/SOUE01/config.yml",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/config/SOUE01/build.sha1",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/LICENSE",
+        "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/.github/workflows/build.yml",
+        "https://decomp.dev/zeldaret/ss"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "skyward-sword-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-013",
@@ -13459,18 +13475,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 73,
-      "insufficient-evidence": 71,
-      "pending": 447
-    },
-    "units_by_state": {
-      "already-curated": 72,
+      "already-curated": 74,
       "insufficient-evidence": 71,
       "pending": 446
     },
-    "primary_reviewed_units": 88,
-    "catalog_linked_occurrences": 80,
-    "distinct_resource_ids": 72,
+    "units_by_state": {
+      "already-curated": 73,
+      "insufficient-evidence": 71,
+      "pending": 445
+    },
+    "primary_reviewed_units": 89,
+    "catalog_linked_occurrences": 81,
+    "distinct_resource_ids": 73,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
