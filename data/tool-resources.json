@@ -3096,5 +3096,90 @@
       "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/THIRD_PARTY_NOTICES.md",
       "https://github.com/JimLiu/baocut/commit/7aa049e82e1367da013b7aba80f0b79033fa04ad"
     ]
+  },
+  {
+    "id": "project-arwing-star-fox-recomp-case",
+    "name": "Project Arwing: Star Fox recompiled from a matching disassembly",
+    "url": "https://github.com/carlosrmz009/arwing",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Disassembles Star Fox’s 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux. Code never reached in recorded sessions, and RAM code that no longer matches the ROM, falls back to an interpreter; the README reports identical per-frame hashes for both paths. The generated C is a mechanical translation rather than hand-decompiled source, and results remain project-reported.",
+    "description_zh": "依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。录制会话中未执行到的代码，以及与 ROM 不再一致的 RAM 代码，回退到解释器执行；README 报告两条路径的逐帧哈希一致。生成的 C 是机械翻译而非手工反编译的源码，结果仍为项目报告。",
+    "evidence_url": "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports a byte-identical ROM rebuild, 34,472 65816 and 14,577 SuperFX instructions, and 99.4% CPU / 100% SuperFX dispatches running recompiled over 20k gameplay frames. It lists the intro, title, training, Corneria and other levels reached by random play as playable. Labels are auto-generated, unreached code remains data run by the interpreter, and audio was checked only indirectly, not against hardware.",
+      "Supply your own Star Fox (USA) (Rev 2) ROM matching the SHA-1 in README; other revisions and regions are untested. Graphics, models and music are extracted from it at build time. The source build expects a headerless image, while the installer strips a 512-byte copier header. No game data is included.",
+      "Releases target Windows x64, macOS 11+ (not notarized) and Linux x86_64/ARM64 AppImages. Source builds need Python (3.10+ on Windows) with Visual Studio 2022 Build Tools, Xcode command-line tools and SDL2, or gcc, SDL2, FreeType and DejaVu fonts; tools/build.py chains extraction, assembly, recompilation and compilation.",
+      "tools/build.py compares the reassembled ROM’s SHA-1 but only warns on a mismatch. The documented contributor check diffs --hashlog output from recompiled and --interp runs. CI assembles and recompiles without a ROM, zero-filling data, so it confirms neither matching nor gameplay; this collection did not rerun any check.",
+      "MIT covers tools/, src/, installer/, res/ and the build scripts; LICENSE excludes asm/, a disassembly of Nintendo's Star Fox code, and anything extracted from a ROM. This is an unofficial fan project unaffiliated with Nintendo. The reviewed repository makes no AI or REA attribution, so a circulating post's account of Opus 5.5 and a single prompt is unconfirmed here."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/LICENSE",
+      "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/build.py",
+      "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/recomp.py",
+      "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/.github/workflows/build.yml"
+    ]
+  },
+  {
+    "id": "project-arwing-2-star-fox-2-recomp-case",
+    "name": "Project Arwing (2): Star Fox 2 recompiled from a matching disassembly",
+    "url": "https://github.com/carlosrmz009/arwing2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Star Fox 2 from a coverage-seeded 65816 and SuperFX disassembly that reassembles to the original ROM, then translates it statically to C for native Windows, macOS and Linux builds. Unreached code and RAM code that differs from the ROM run through an interpreter, and the README reports identical per-frame hashes against interpreted runs. It accepts the SNES Classic release image, not the 1995 prototypes; results remain project-reported.",
+    "description_zh": "从以运行覆盖率为种子的 65816 与 SuperFX 反汇编重建 Star Fox 2：反汇编可重新汇编为与原 ROM 一致的文件，再静态翻译为 C，生成原生 Windows、macOS 和 Linux 版本。未执行到的代码及与 ROM 不一致的 RAM 代码由解释器执行，README 报告其与解释运行的逐帧哈希一致。项目接受 SNES Classic 版映像，不支持 1995 年的原型版；结果仍为项目报告。",
+    "evidence_url": "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports a byte-identical ROM rebuild, 66,520 65816 and 23,186 SuperFX instructions, and 99.7% CPU / 100% SuperFX dispatches running recompiled over 20k gameplay frames, listing intro, title, menus, map and missions as playable. Labels are auto-generated, unreached code stays as interpreted data, and audio was checked only indirectly. README says Smooth mode removes slowdown but, unlike the Star Fox project, adds no interpolated 60 fps frames yet.",
+      "Supply your own Star Fox 2 ROM from the SNES Classic / Mini release, matching the SHA-1 in README; the 1995 prototypes will not work. Graphics, models and music are extracted from it at build time, and battery saves are written beside the rebuilt ROM. No game data is included.",
+      "Releases target Windows x64, macOS 11+ (not notarized) and Linux x86_64/ARM64 AppImages. Source builds need Python (3.10+ on Windows) with Visual Studio 2022 Build Tools, Xcode command-line tools and SDL2, or gcc, SDL2, FreeType and DejaVu fonts; tools/build.py chains extraction, assembly, recompilation and compilation.",
+      "tools/build.py compares the reassembled ROM’s SHA-1 but only warns on a mismatch, and the documented contributor check diffs --hashlog output from recompiled and --interp runs. HD 3D hooks one of several projection routines and recovers sub-pixel positions for about 66–90% of vertices. This collection did not rerun these checks.",
+      "MIT covers tools/, src/, installer/, res/ and the build scripts; LICENSE excludes asm/, a disassembly of Nintendo's Star Fox 2 code, and anything extracted from a ROM. This is an unofficial fan project unaffiliated with Nintendo. The reviewed repository makes no AI or REA attribution, so a circulating post's account of Opus 5.5 and a single prompt is unconfirmed here."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/LICENSE",
+      "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/tools/build.py"
+    ]
+  },
+  {
+    "id": "little-planet-sonic-cd-recomp-case",
+    "name": "Little Planet: Sonic CD recompiled from a matching disassembly",
+    "url": "https://github.com/carlosrmz009/littleplanet",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Disassembles every executable file on the Sonic CD disc from runtime coverage and recursive descent, reassembles them byte-identically, and translates the code statically to C on a from-scratch Mega-CD runtime that replaces the BIOS with a high-level implementation. Recompiled blocks run only where memory still holds the code they came from, and a script compares 96 stage runs frame by frame against the interpreter. The project also patches in widescreen and per-zone saves; results remain project-reported.",
+    "description_zh": "依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再将代码静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行，并有脚本以 96 段关卡运行逐帧对照解释器。项目还以补丁加入宽屏和逐区存档；结果仍为项目报告。",
+    "evidence_url": "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports that all 112 executable files reassemble byte-identically to the Japanese release, that 622k instructions recompile into 22,897 blocks, and that boot, gameplay, audio and bit-exact save states work. The disassembly is code only; graphics, sound and level data stay on the user’s disc. True16:9 widescreen and saves after every zone patch the game’s own programs, so those options depart from the original game.",
+      "Supply your own Sonic CD disc image (cue/bin, iso, ccd/img/sub, chd, or cue with compressed audio). The Japanese G-6021 release, identified by a data-track SHA-1 in README, is the tested one; other releases boot but are untested. No BIOS dump is needed, and no disc data is included.",
+      "Releases target Windows x64 (installer or portable zip), macOS 11+ (not notarized) and Linux x86_64/ARM64 AppImages. Source builds need Python (3.10+ on Windows) and SDL3, with Visual Studio 2022 Build Tools, Xcode command-line tools or gcc/g++. The optional remastered opening also needs a separately built FFmpeg and a fetched video.",
+      "README documents tools/decomp.sh for extracting the disc, reassembling asm/ and comparing each file; tests/rc_check.sh compares per-frame RAM and CPU-PC hashes of recompiled and --interp runs across 96 scripted stages. README also reports SingleStepTests results: all 1.6M Z80 cases, and all 1M 68000 cases apart from some undocumented DIVS/ASR and address-error cases. CI tests only a homebrew test disc; this collection ran nothing.",
+      "MIT covers the runtime, tools and installer. third_party/ code, the bundled LGPL 2.1 FFmpeg and LuanUP’s remastered opening, included with permission, keep their own terms, and nothing extracted from a disc is covered. The reviewed LICENSE’s exclusion note names Star Fox 2 rather than Sonic CD. The project is unofficial, unaffiliated with Sega, and makes no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/LICENSE",
+      "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tools/decomp.sh",
+      "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tests/rc_check.sh",
+      "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/.github/workflows/build.yml"
+    ]
   }
 ]

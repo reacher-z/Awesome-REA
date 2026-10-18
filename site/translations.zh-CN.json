@@ -1630,5 +1630,35 @@
       "design-runtime 的 README 报告：先对照原脚本修正标识符，再用 Babel 做结构指纹比对，原画布主页面 20463 个函数中有 19111 个完全一致；其余仅绑定不同的函数都在依赖中，而 1019 个结构有差异的最内层函数以及被改名的 property-scrubber 内部属性仍未审阅，属残余风险。公开测试覆盖设计稿检查、文件路由与授权、下载及标注目标，验收用例 UI-11–UI-13 描述了 Web／桌面端的手动流程。这些都不是与原服务对照的行为测试基准；本合集未运行它们。",
       "根目录的 BaoCut Community License 1.0 是源码可见许可：允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化则需另行许可。第三方声明涵盖随包的 npm 依赖，但不能确立所重建的 Claude Design 代码或图标字体的复用权。作者帖子未说明此次移植使用了 REA；后来的第三方帖子所称的 REA 使用未获作者或仓库证实。本次仅审阅固定版本的来源，未运行编辑器、智能体或测试。"
     ]
+  },
+  "project-arwing-star-fox-recomp-case": {
+    "name": "Project Arwing：由一致性反汇编重编译的 Star Fox",
+    "requirements": [
+      "README 报告重新汇编的 ROM 逐字节一致，含 34,472 条 65816 指令和 14,577 条 SuperFX 指令；在 2 万帧游戏过程中，99.4% 的 CPU 分派和 100% 的 SuperFX 分派以重编译代码执行。README 列出可游玩的部分为开场、标题、训练、Corneria 及随机游玩到达的其他关卡。标签均为自动生成，未执行到的代码仍作为数据由解释器运行，音频仅经过间接检查，未与实机对照。",
+      "需自备 Star Fox (USA) (Rev 2) ROM，并与 README 给出的 SHA-1 一致；其他修订版和地区版本未经测试。构建时从该 ROM 提取图形、模型与音乐。源码构建需要无文件头的映像，安装程序则会去除 512 字节的拷贝机文件头。仓库不含任何游戏数据。",
+      "发布版面向 Windows x64、macOS 11+（未经公证）及 Linux x86_64／ARM64 AppImage。源码构建需要 Python（Windows 上为 3.10+），并分别搭配 Visual Studio 2022 Build Tools、Xcode 命令行工具与 SDL2，或 gcc、SDL2、FreeType 与 DejaVu 字体；tools/build.py 依次执行提取、汇编、重编译和编译。",
+      "tools/build.py 会比较重新汇编 ROM 的 SHA-1，但不一致时只发出警告。文档中的贡献者检查会比对重编译运行与 --interp 运行的 --hashlog 输出。CI 在没有 ROM 的情况下以零填充数据完成汇编和重编译，因此既不能确认一致性，也不能确认游戏行为；本合集未重跑任何检查。",
+      "MIT 覆盖 tools/、src/、installer/、res/ 及构建脚本；LICENSE 排除 asm/（Nintendo Star Fox 代码的反汇编）及任何从 ROM 提取的内容。这是与 Nintendo 无关的非官方爱好者项目。所审阅仓库未作任何 AI 或 REA 归因，因此流传帖文所称 Opus 5.5 加单一提示完成的说法在此未获证实。"
+    ]
+  },
+  "project-arwing-2-star-fox-2-recomp-case": {
+    "name": "Project Arwing (2)：由一致性反汇编重编译的 Star Fox 2",
+    "requirements": [
+      "README 报告重新汇编的 ROM 逐字节一致，含 66,520 条 65816 指令和 23,186 条 SuperFX 指令；在 2 万帧游戏过程中，99.7% 的 CPU 分派和 100% 的 SuperFX 分派以重编译代码执行，并列出开场、标题、菜单、地图和任务为可游玩。标签均为自动生成，未执行到的代码仍作为数据由解释器运行，音频仅经过间接检查。README 说明 Smooth 模式可消除减速，但与 Star Fox 项目不同，目前尚未加入插值的 60 fps 画面。",
+      "需自备 SNES Classic／Mini 版的 Star Fox 2 ROM，并与 README 给出的 SHA-1 一致；1995 年的原型版无法使用。构建时从该 ROM 提取图形、模型与音乐，电池存档写在重建的 ROM 旁边。仓库不含任何游戏数据。",
+      "发布版面向 Windows x64、macOS 11+（未经公证）及 Linux x86_64／ARM64 AppImage。源码构建需要 Python（Windows 上为 3.10+），并分别搭配 Visual Studio 2022 Build Tools、Xcode 命令行工具与 SDL2，或 gcc、SDL2、FreeType 与 DejaVu 字体；tools/build.py 依次执行提取、汇编、重编译和编译。",
+      "tools/build.py 会比较重新汇编 ROM 的 SHA-1，但不一致时只发出警告；文档中的贡献者检查会比对重编译运行与 --interp 运行的 --hashlog 输出。HD 3D 仅挂接多个投影例程中的一个，约为 66–90% 的顶点恢复亚像素位置。本合集未重跑这些检查。",
+      "MIT 覆盖 tools/、src/、installer/、res/ 及构建脚本；LICENSE 排除 asm/（Nintendo Star Fox 2 代码的反汇编）及任何从 ROM 提取的内容。这是与 Nintendo 无关的非官方爱好者项目。所审阅仓库未作任何 AI 或 REA 归因，因此流传帖文所称 Opus 5.5 加单一提示完成的说法在此未获证实。"
+    ]
+  },
+  "little-planet-sonic-cd-recomp-case": {
+    "name": "Little Planet：由一致性反汇编重编译的 Sonic CD",
+    "requirements": [
+      "README 报告全部 112 个可执行文件可重新汇编为与日版逐字节一致的文件，62.2 万条指令重编译为 22,897 个代码块，启动、游戏、音频及逐位一致的即时存档均可运行。反汇编只含代码，图形、声音和关卡数据保留在使用者的光盘中。True16:9 宽屏和每区存档通过修改游戏自身程序实现，因此这些选项有别于原版游戏。",
+      "需自备 Sonic CD 光盘映像（cue/bin、iso、ccd/img/sub、chd，或附压缩音轨的 cue）。经测试的是日版 G-6021，README 给出其数据轨 SHA-1；其他版本可以启动但未经测试。无需 BIOS 转储，仓库也不含任何光盘数据。",
+      "发布版面向 Windows x64（安装程序或便携 zip）、macOS 11+（未经公证）及 Linux x86_64／ARM64 AppImage。源码构建需要 Python（Windows 上为 3.10+）和 SDL3，并分别搭配 Visual Studio 2022 Build Tools、Xcode 命令行工具或 gcc/g++。可选的重制版开场还需另行构建 FFmpeg 并获取视频。",
+      "README 说明 tools/decomp.sh 用于提取光盘、重新汇编 asm/ 并逐个文件比较；tests/rc_check.sh 在 96 段脚本化关卡中，比较重编译运行与 --interp 运行每帧的 RAM 及 CPU PC 哈希。README 还报告 SingleStepTests 结果：Z80 通过全部 160 万个用例，68000 除部分未公开的 DIVS／ASR 及地址错误用例外通过全部 100 万个用例。CI 仅以自制测试光盘进行测试；本合集未运行任何检查。",
+      "MIT 覆盖运行时、工具和安装程序。third_party/ 代码、随附的 LGPL 2.1 FFmpeg 以及经许可收录的 LuanUP 重制版开场各自保留条款，任何从光盘提取的内容均不在许可范围内。所审阅 LICENSE 的排除说明写的是 Star Fox 2 而非 Sonic CD。该项目为非官方作品，与 Sega 无关，也未作任何 AI 或 REA 归因。"
+    ]
   }
 }

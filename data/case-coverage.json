@@ -2941,12 +2941,43 @@
         "https://x.com/i/status/2109734599865540661"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post’s three links resolve to carlosrmz009’s arwing, arwing2 and littleplanet repositories, each now curated as its own case: pinned READMEs document coverage-seeded disassemblies that reassemble to the original images, static recompilation to C with interpreter fallback, and recompiled-versus-interpreted hash checks. Each mapping covers one project, so the combined report stays pending. None of the repositories attributes the work to AI, REA or Opus 5.5, leaving the post’s single-prompt account unsupported; matching and runtime results are project-reported, not reproduced.",
+      "reason_zh": "帖文中的三个链接分别指向 carlosrmz009 的 arwing、arwing2 和 littleplanet 仓库，现各自作为独立案例收录：固定版本 README 记录了以运行覆盖率为种子、可重新汇编为原映像的反汇编，带解释器回退的 C 静态重编译，以及重编译与解释执行的哈希对照。每个映射只覆盖一个项目，因此这份合并报告仍为待定。三个仓库均未将工作归因于 AI、REA 或 Opus 5.5，帖文所称单一提示即完成的说法仍无依据；一致性与运行结果均为项目报告，未经复现。",
+      "primary_evidence_urls": [
+        "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md",
+        "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/LICENSE",
+        "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/build.py",
+        "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/README.md",
+        "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/LICENSE",
+        "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/tools/build.py",
+        "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/README.md",
+        "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/LICENSE",
+        "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tools/decomp.sh",
+        "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/tests/rc_check.sh",
+        "https://x.com/i/status/2109734599865540661"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "project-arwing-star-fox-recomp-case",
+          "kind": "case-study",
+          "scope": "partial"
+        },
+        {
+          "catalog": "resource",
+          "id": "project-arwing-2-star-fox-2-recomp-case",
+          "kind": "case-study",
+          "scope": "partial"
+        },
+        {
+          "catalog": "resource",
+          "id": "little-planet-sonic-cd-recomp-case",
+          "kind": "case-study",
+          "scope": "partial"
+        }
+      ]
     },
     {
       "id": "song:omarchy-mobile-odin2",
@@ -13562,9 +13593,9 @@
       "insufficient-evidence": 71,
       "pending": 440
     },
-    "primary_reviewed_units": 92,
-    "catalog_linked_occurrences": 86,
-    "distinct_resource_ids": 78,
+    "primary_reviewed_units": 93,
+    "catalog_linked_occurrences": 87,
+    "distinct_resource_ids": 81,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
