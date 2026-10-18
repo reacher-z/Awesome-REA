@@ -6761,5 +6761,39 @@
       "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/plugins/decomp-wtf/.mcp.json",
       "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/site/tools/build_sim.py"
     ]
+  },
+  {
+    "id": "uncharted-collection-pc-port-case",
+    "name": "Uncharted: The Nathan Drake Collection native Windows port",
+    "url": "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runs the PS4 Uncharted: The Nathan Drake Collection’s own x86-64 executables natively on Windows: a runtime supplies the PS4 system libraries and a shadPS4-derived Vulkan renderer executes the GPU work. The port adds a per-game launcher, resolution patches and modern upscaling, and its status table reports all three games playable with listed open issues. It is a compatibility-runtime port rather than a decompilation, and its results remain project-reported.",
+    "description_zh": "在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。该移植提供按游戏保存设置的启动器、分辨率补丁与现代超分辨率技术，其状态表报告三部游戏均可游玩，并列出未解决问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。",
+    "evidence_url": "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the commit of release v0.2.3 (2026-10-18); v0.1.0 was published on 2026-10-15. README reports Drake’s Fortune, Among Thieves and Drake’s Deception playable, with the Collection menu, game switching, saves, audio, movies and controllers working. Known issues include a Drake’s Fortune grenade-launcher fault, cropped ultrawide views, single-core GPU-command limits on slower CPUs, experimental multithreaded rendering and less play-testing for Uncharted 3. The original game code is run with local patches, not rebuilt from recovered source.",
+      "Supply your own dumped copy of the PS4 game CUSA02344, the folder holding eboot.bin and sce_sys; game update 1.02 is optional and recommended. README says no game files are in the repository or its builds, and the preparation script patches the game executables locally for resolution and update handling. The project disclaims affiliation with Sony, Naughty Dog and Bluepoint Games, and the games keep their own rights.",
+      "Play needs 64-bit Windows 10 or 11, a CPU with AVX, F16C, BMI1, MOVBE and LZCNT (Intel Haswell or newer, or any AMD Ryzen), a Vulkan 1.3 GPU and about 6 GB of free RAM, with 16 GB recommended. Local builds use an MSYS2 CLANG64 toolchain with CMake, Ninja, the Vulkan stack, SDL3, FFmpeg, Boost and other listed packages, plus a Windows Python 3.10+ with Pillow for packaging. GitHub Actions builds the Windows package on each push, and the launcher’s updater checks release SHA-256 digests.",
+      "Evidence is play-testing and diagnostics: STATUS.md records native runtime tests for fibers, services, video decoding, buffered input and clock timing, with the cause and user confirmation of individual fixes. README frame rates come from the author’s RTX 5080 and integrated Radeon tests plus one player report. The CI workflow builds and publishes packages without automated game tests. This collection read the sources without running the port or any game.",
+      "README declares GPL v2 or later. The runtime started from FelipePrado0’s GPL-2.0 gow3_pc and the shadPS4 video core, and the TAA camera approach credits SuperMedo’s GPL v2 Uncharted port. Packages bundle third-party libraries; NVIDIA’s DLSS DLL, fetched by a build script from NVIDIA’s DLSS repository, stays under NVIDIA’s license. STATUS.md mentions REA only as unable to decompile the prepared ELF on Windows and names no AI model; the post’s Claude attribution comes from a third-party account, so no AI or REA workflow is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/analysis/STATUS.md",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/analysis/PLAN.md",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/CHANGELOG.md",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/gow3_pc/LICENSE",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/.github/workflows/build-windows.yml",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/tools/package_windows.sh",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/tools/fetch_aa_files.sh",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/.gitmodules",
+      "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/releases/tag/v0.2.3"
+    ]
   }
 ]

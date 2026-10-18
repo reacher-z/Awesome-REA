@@ -2804,5 +2804,15 @@
       "README 将 GameCube、Wii 与 N64 列为推荐平台，PlayStation、PlayStation 2、Game Boy Advance 与 DS 列为测试版，后者主要用自制游戏测试。它报告已在若干具名商业游戏上测试导入，导出的项目能逐字节重建输入，GameCube 与 Wii 文件会在 dtk-template 项目中链接并通过校验和检查。这些仍是作者陈述：仓库有 pytest 测试套件，但固定版本中没有 CI 工作流，也未公布任何游戏的结果；本合集未运行任何内容。",
       "仓库采用 MIT 许可。README 要求用户只处理自己拥有的游戏、不得规避复制保护、不得发布自己不享有权利的游戏的反编译代码，并遵守各公开项目的贡献规则，同时指出许多社区反编译项目拒绝 AI 编写的贡献。工具不会自动向上游提交任何内容。项目声明与其所依赖的工具均无关联，所审来源未确立与 REA 的关联。"
     ]
+  },
+  "uncharted-collection-pc-port-case": {
+    "name": "《神秘海域：内森·德雷克合集》原生 Windows 移植",
+    "requirements": [
+      "审阅版本即 v0.2.3 发布版（2026-10-18）所对应的提交；v0.1.0 发布于 2026-10-15。README 报告《德雷克的宝藏》《纵横四海》《德雷克的诡计》均可游玩，合集菜单、游戏切换、存档、音频、过场影片和手柄均可使用。已知问题包括《德雷克的宝藏》中榴弹发射器的故障、超宽屏视野被裁切、较慢 CPU 上 GPU 命令单核处理的瓶颈、实验性的多线程渲染，以及《神秘海域 3》测试较少。原游戏代码经本地补丁后直接运行，并非由恢复的源码重新构建。",
+      "需自备 PS4 游戏 CUSA02344 的转储副本，即包含 eboot.bin 与 sce_sys 的文件夹；1.02 游戏更新可选但推荐。README 称仓库及其构建均不含游戏文件，准备脚本会在本地为分辨率和更新处理修补游戏可执行文件。项目声明与 Sony、Naughty Dog 和 Bluepoint Games 无关联，游戏本身仍有其权利约束。",
+      "游玩需要 64 位 Windows 10 或 11、支持 AVX、F16C、BMI1、MOVBE 与 LZCNT 的 CPU（Intel Haswell 或更新，或任意 AMD Ryzen）、支持 Vulkan 1.3 的 GPU，以及约 6 GB 可用内存，建议整机 16 GB。本地构建使用 MSYS2 CLANG64 工具链，以及 CMake、Ninja、Vulkan 组件、SDL3、FFmpeg、Boost 等列明的软件包，打包还需带 Pillow 的 Windows Python 3.10+。GitHub Actions 在每次推送时构建 Windows 安装包，启动器的更新程序会核对发布包的 SHA-256 摘要。",
+      "证据来自试玩与诊断：STATUS.md 记录了纤程、系统服务、视频解码、缓冲输入与时钟计时的原生运行时测试，以及各项修复的原因和用户确认。README 中的帧率来自作者在 RTX 5080 与集成 Radeon 显卡上的测试和一份玩家报告。CI 工作流只构建并发布安装包，不运行自动化游戏测试。本合集仅阅读来源，未运行该移植或任何游戏。",
+      "README 声明采用 GPL v2 或更高版本。运行时起源于 FelipePrado0 以 GPL-2.0 发布的 gow3_pc 与 shadPS4 视频核心，TAA 相机数据的取法注明来自 SuperMedo 以 GPL v2 发布的 Uncharted 移植。安装包附带第三方库；NVIDIA 的 DLSS DLL 由构建脚本从 NVIDIA 的 DLSS 仓库获取，仍受 NVIDIA 许可约束。STATUS.md 仅提到 REA 在 Windows 上无法反编译准备好的 ELF，且未提及任何 AI 模型；帖子中的 Claude 说法来自第三方账号，因此未确立 AI 或 REA 工作流。"
+    ]
   }
 }
