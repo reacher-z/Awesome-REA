@@ -3769,5 +3769,33 @@
       "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/renderer_parity",
       "https://github.com/Zumbo06/Crash2Recomp/releases/tag/v0.9.6"
     ]
+  },
+  {
+    "id": "ue5-binka-to-wav",
+    "name": "UE5 BINKA to WAV",
+    "url": "https://github.com/AbienteSadness/ue5-binka-to-wav",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "description_en": "Rejoins UE5 BINKA audio exported by FModel and calls an external Bink decoder to produce WAV files, with a Windows GUI, batch CLI and paired-asset metadata warnings.",
+    "description_zh": "重新拼接 FModel 导出的 UE5 BINKA 音频，并调用外部 Bink 解码器生成 WAV，提供 Windows 图形界面、批量命令行和配对资源的元数据异常提示。",
+    "evidence_url": "https://github.com/AbienteSadness/ue5-binka-to-wav/blob/9b906c8b5e7fa74d5378ddb7e568527f93fe03e8/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/AbienteSadness/ue5-binka-to-wav/blob/9b906c8b5e7fa74d5378ddb7e568527f93fe03e8/binka2wav/core.py",
+      "https://github.com/AbienteSadness/ue5-binka-to-wav/blob/9b906c8b5e7fa74d5378ddb7e568527f93fe03e8/binka2wav/cli.py",
+      "https://github.com/AbienteSadness/ue5-binka-to-wav/blob/9b906c8b5e7fa74d5378ddb7e568527f93fe03e8/binka2wav/gui.py",
+      "https://github.com/AbienteSadness/ue5-binka-to-wav/blob/9b906c8b5e7fa74d5378ddb7e568527f93fe03e8/LICENSE"
+    ],
+    "verified_at": "2026-10-18T12:24:36.703893+00:00",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows and a separately obtained binkadec.exe that writes a proper WAV header. This proprietary decoder is not bundled. Running the source requires Python 3.9+; the GUI uses tkinter, and packaging uses PyInstaller.",
+      "Inputs are matching .ubulk and .uasset or .uexp files, or a complete .binka file. The wrapper locates the UEBA header, rejoins it with the bulk stream and delegates decoding. Other cooked codecs and inline-only assets are outside the documented scope.",
+      "For paired assets, sample-rate and channel mismatches or a duration difference above 2% become warnings. They do not fail the CLI exit code, and --quiet suppresses them. Direct .binka inputs have no original-asset metadata comparison; header checks do not establish audio fidelity.",
+      "MIT covers this repository code, not binkadec or game assets. The README credits FModel, BinkadecWithWavHeader and ue2wav prior art. No decoder, game content or conversion workflow was executed for this source review."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "tool"
   }
 ]

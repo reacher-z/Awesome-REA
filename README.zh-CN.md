@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 232](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-232-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 93](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-93-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 233](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-233-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 93](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-93-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (75) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (76) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -631,6 +631,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Xbox 360 PowerPC 可执行文件转换为可在其他平台编译的 C++ 代码，配套的 XenonAnalyse 负责检测跳转表和函数边界。输出是逐条指令的直译而非反编译代码，并需要项目本身不提供的运行时。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/xenonrecomp/)
+
+- [**UE5 BINKA 转 WAV**](https://github.com/AbienteSadness/ue5-binka-to-wav)
+
+  重新拼接 FModel 导出的 UE5 BINKA 音频，并调用外部 Bink 解码器生成 WAV，提供 Windows 图形界面、批量命令行和配对资源的元数据异常提示。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ue5-binka-to-wav/)
 
 <a id="app"></a>
 ### App · 应用

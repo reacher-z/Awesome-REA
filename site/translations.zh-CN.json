@@ -1859,5 +1859,14 @@
       "已公开的检查包括启动器设置与界面冒烟测试、场景脚本，以及比较其自身 Direct3D 12 与 OpenGL 渲染器的测试框架；均未声称与原硬件等价，本合集也未重跑任何结果。",
       "仓库没有顶层许可证文件。README 列出 PSXRecomp 采用 PolyForm Noncommercial 1.0.0、OpenBIOS 采用 MIT、SDL3 采用 zlib、Qt／PySide6 采用 LGPLv3；游戏及其商标归各自权利人所有。所审来源未记录 REA 或编程智能体参与。"
     ]
+  },
+  "ue5-binka-to-wav": {
+    "name": "UE5 BINKA 转 WAV",
+    "requirements": [
+      "需要 Windows 和自行提供、能写入正确 WAV 头的 binkadec.exe；仓库不附带该专有解码器。运行源码要求 Python 3.9+；图形界面使用 tkinter，打包使用 PyInstaller。",
+      "输入为配对的 .ubulk 与 .uasset／.uexp，或完整 .binka 文件。封装程序定位 UEBA 头并与批量数据流重新拼接，然后调用外部解码器。其他烘焙音频编码及仅内嵌于资源文件的音频不在文档支持范围内。",
+      "对配对资源，采样率、声道数不符或时长偏差超过 2% 会生成警告；这些警告不会让 CLI 返回失败退出码，--quiet 还会隐藏警告。直接输入 .binka 时不对比原始资源元数据；头部检查不代表音频内容已经验证一致。",
+      "MIT 仅覆盖仓库代码，不覆盖 binkadec 或游戏素材。README 注明 FModel、BinkadecWithWavHeader 与 ue2wav 的既有工作。本次仅审阅源码，未运行解码器、游戏内容或转换流程。"
+    ]
   }
 }
