@@ -3067,5 +3067,65 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-debin",
+    "title": "Debin: Predicting Debug Information in Stripped Binaries",
+    "title_zh": "Debin：预测去符号二进制中的调试信息",
+    "authors": [
+      "Jingxuan He",
+      "Pesho Ivanov",
+      "Petar Tsankov",
+      "Veselin Raychev",
+      "Martin Vechev"
+    ],
+    "year": 2018,
+    "publication_date": "2018-10-15",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives print and online publication on 2018-10-15. That is also the first day of the October 15–19 conference; the date comes from the publisher record, not from the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2018-10-15。该日期恰为 10 月 15—19 日会议的首日；本条目依据出版方记录，而非根据会议日程推定。",
+    "venue": "ACM CCS 2018",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3243734.3243866",
+    "citation": {
+      "container_title": "Proceedings of the 2018 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "1667-1680",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3243734.3243866"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3243734.3243866",
+    "pdf_url": "https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf",
+    "code_url": "https://github.com/eth-sri/debin",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Debin predicts debug information for stripped ELF binaries on x86, x64 and ARM. After lifting code to BAP-IR, an Extremely randomized Trees classifier decides which registers and memory offsets hold source-level variables. A conditional random field, solved with Nice2Predict, then jointly predicts names and types for variables and functions, and the result is written back as DWARF sections. On 300 held-out binaries per architecture, the authors report 68.8% precision and 68.3% recall for x64 names and types.",
+    "description_zh": "Debin 为 x86、x64 与 ARM 上去符号的 ELF 二进制预测调试信息。它先将代码提升为 BAP-IR，用极端随机树分类器判断哪些寄存器和内存偏移对应源码级变量；再借助 Nice2Predict 求解条件随机场，联合预测变量与函数的名称和类型，并将结果以 DWARF 节写回二进制。作者在每种架构 300 个留出二进制上报告，x64 名称与类型预测的精确率为 68.8%、召回率为 68.3%。",
+    "scope_limitations_en": "The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.",
+    "scope_limitations_zh": "数据集为每种架构 3,000 个未去符号的可执行文件与共享库，来自 830 个 Linux 调试符号软件包，源码为 C 语言并按各包默认设置编译，按 2,700／300 划分训练与测试。准确率评估假定函数边界已知；对于完全去符号的输入，由 BAP 的 ByteWeight 推断函数边界，论文引用其准确率约为 93%。Debin 预测 17 种类型，struct 与 union 的内部内容、行号以及 PE 等其他格式不在评测范围内。只有与原始调试信息完全相同的预测才计为正确。基于编译器生成的良性代码学习的模型，在混淆二进制、手写汇编或恶意软件上可能准确率较低。针对 35 个恶意样本的研究是对反编译输出的人工检查，由于样本缺少调试信息真实标签，未报告准确率。",
+    "why_fits_en": "Adds learned name and type prediction that works directly on stripped binaries and emits standard debug sections, complementing identifier-naming and symbol-recovery research that operates on decompiler output.",
+    "why_fits_zh": "补充直接作用于去符号二进制、并输出标准调试节的学习式名称与类型预测方法，与基于反编译输出的标识符命名及符号恢复研究互补。",
+    "metadata_notes": "Crossref's title field holds only “Debin”; the full title follows the ETH-hosted author PDF, which carries the ACM reference format, DOI and CCS ’18 rights notice. Crossref and the PDF agree on the five-author order and pages 1667–1680. The paper names https://debin.ai as the public tool; that host did not respond on 2026-10-18, so no project page is recorded. The reviewed 2022-05-20 snapshot of eth-sri/debin is Apache-2.0, links the paper and depends on Nice2Predict and BAP. Its README says the setup scripts were tested only on Ubuntu 16.04 with gcc 5.4.0; the Dockerfile pins Ubuntu 16.04, Bazel 0.19.2, OCaml 4.05.0 and BAP 1.4.0, and requirements.txt pins numpy 1.19 and scikit-learn 0.19.2. Pretrained models are a separate archive of about 923 MB from files.sri.inf.ethz.ch. These are historical requirements, not evidence that the code builds on current systems. The model archive was not downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 的标题字段仅为“Debin”；完整标题依据 ETH 托管的作者版 PDF，该文件载有 ACM 引用格式、DOI 及 CCS ’18 版权声明。Crossref 与 PDF 的五位作者顺序及 1667–1680 页码一致。论文将 https://debin.ai 列为公开工具地址；该主机在 2026-10-18 无响应，因此未记录项目页面。所审阅的 eth-sri/debin 2022-05-20 快照采用 Apache-2.0 许可，链接了论文，并依赖 Nice2Predict 与 BAP。其 README 说明安装脚本仅在 Ubuntu 16.04 与 gcc 5.4.0 上测试；Dockerfile 固定 Ubuntu 16.04、Bazel 0.19.2、OCaml 4.05.0 与 BAP 1.4.0，requirements.txt 固定 numpy 1.19 与 scikit-learn 0.19.2。预训练模型是来自 files.sri.inf.ethz.ch、约 923 MB 的独立压缩包。这些是历史要求，不能证明代码可在当前系统上构建。本次未下载模型压缩包，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3243734.3243866",
+      "https://api.crossref.org/works/10.1145/3243734.3243866",
+      "https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf",
+      "https://github.com/eth-sri/debin/blob/715771c1e1468eaafbb599d8bf81a19b5b2e22d2/README.md",
+      "https://github.com/eth-sri/debin/blob/715771c1e1468eaafbb599d8bf81a19b5b2e22d2/LICENSE",
+      "https://github.com/eth-sri/debin/blob/715771c1e1468eaafbb599d8bf81a19b5b2e22d2/dockerfile",
+      "https://github.com/eth-sri/debin/blob/715771c1e1468eaafbb599d8bf81a19b5b2e22d2/requirements.txt",
+      "https://github.com/eth-sri/debin/blob/715771c1e1468eaafbb599d8bf81a19b5b2e22d2/install_dependencies.sh"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
