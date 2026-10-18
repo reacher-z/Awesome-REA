@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 269](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-269-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 129](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-129-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 270](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-270-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 130](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-130-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (110) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (111) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (129) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (130) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -731,6 +731,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将美版 Nintendo DS《宝可梦 白金》重建为 C 源码，默认重建修订版 1，也可按需构建修订版 0。默认的 make 目标会运行 Meson 检查，按 SHA-1 清单校验代码二进制、文件系统及完整 ROM。README 仍称项目在进行中；贡献指南表示代码已全部为 C，但其中大量仍晦涩难懂，因此主要工作是文档和工具。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
+
+- [**Saints Reborn：基于 ReXGlue 的 Saints Row 静态重编译**](https://github.com/whompay/SaintsReborn)
+
+  Saints Row（Xbox 360，2006）的非官方原生 Windows 移植：借助 ReXGlue SDK 将游戏的 PowerPC 可执行文件静态重编译为面向 x86-64 的 C++ 代码，该 SDK 还重新实现了主机的内核、GPU（基于 Direct3D 12）、音频与输入。重编译清单、游戏专用的函数替换和 SDK 补丁使结果得以运行，每位使用者都用自己的光盘在本地构建。README 报告游戏可完整通关、内置合作模式，并列出已知问题。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/saints-reborn-recomp-case/)
 
 #### 工具、项目与集成
 
