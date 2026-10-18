@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 132 | 131 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 355 | 354 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 133 | 132 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 354 | 353 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 104 | 104 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-143 个出现项含目录链接；共关联 137 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+144 个出现项含目录链接；共关联 138 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 175 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 176 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -188,6 +188,7 @@
 | ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植 | 已收录 | [来源](https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md) |
 | pokered：一致构建的《精灵宝可梦 红／蓝》反汇编 | 已收录 | [来源](https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md) |
 | pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编 | 已收录 | [来源](https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md) |
+| pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译 | 已收录 | [来源](https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/README.md) |
 | 《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md) |
 | 《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
 | 《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目 | 已收录 | [来源](https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md) |
