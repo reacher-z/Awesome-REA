@@ -2925,5 +2925,38 @@
       "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/.github/workflows/build.yml",
       "https://decomp.dev/zeldaret/ss"
     ]
+  },
+  {
+    "id": "2ship2harkinian-mm-port-case",
+    "name": "2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation",
+    "url": "https://github.com/2ship2harkinian/2ship2harkinian",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds native Windows, Linux and macOS versions of The Legend of Zelda: Majora’s Mask from an adapted copy of the zeldaret/mm decompilation, with libultraship reimplementing N64 SDK functions. Game data comes from a user-supplied ROM and is packed into an archive that custom asset packs can override. It targets a playable PC port with enhancements, not a byte-identical ROM.",
+    "description_zh": "以改编自 zeldaret/mm 反编译的源码为基础，构建《塞尔达传说：姆吉拉的假面》的原生 Windows、Linux 和 macOS 版本，并由 libultraship 重新实现 N64 SDK 函数。游戏数据来自使用者自备的 ROM，打包为可被自定义素材包覆盖的存档文件。它面向带增强功能的可玩 PC 移植，而不是逐字节一致的 ROM。",
+    "evidence_url": "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed develop commit follows release 5.0.1 (2026-08-25), published as Windows, Linux and macOS archives; nightly CI builds are for playtesting and may have bugs and crashes. The repository’s decomp_diff.py describes its game sources as changed decompilation code compared with the official zeldaret/mm repository. Rendering uses DirectX 11, OpenGL or Metal.",
+      "No copyrighted assets are included: supply a supported copy of Majora’s Mask. The docs list SHA-1 hashes for NTSC-U 1.0 and NTSC-U GC versions. Built-in extraction turns the supplied game into an mm.o2r archive; custom .o2r or .otr packs go in a mods folder, and the README notes that fast64 does not fully support MM.",
+      "Source builds need the libultraship, OTRExporter and ZAPDTR submodules plus CMake. Windows uses Visual Studio 2022 with the v143 toolset, Python 3 and at least 8 GB of RAM; the Linux lists include GCC or Clang, Ninja, SDL2, libzip, spdlog, tinyxml2 and Opus/Vorbis libraries; macOS needs Xcode tools with SDL2, libpng, GLEW, Ninja, CMake, nlohmann-json and libzip.",
+      "The reviewed README and build guide report no matching, checksum or fidelity checks for the port; the release notes list tweaks and bug fixes. Enhancement and randomizer code changes behavior relative to the original game. This collection did not build or run it.",
+      "The repository is CC0 1.0, and the libultraship submodule is MIT; game content from the user’s copy keeps its own rights, and the README says the project does not condone piracy. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/docs/BUILDING.md",
+      "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/docs/supportedHashes.json",
+      "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/decomp_diff.py",
+      "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/.gitmodules",
+      "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/LICENSE",
+      "https://github.com/2ship2harkinian/2ship2harkinian/releases/tag/5.0.1",
+      "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/README.md",
+      "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/LICENSE"
+    ]
   }
 ]

@@ -1580,5 +1580,15 @@
       "默认 ninja 目标只对标为 Matching 的单元（configure.py 中有 493 个，另有 536 个仍为 NonMatching）链接由源码编译的对象，其余单元使用从原文件提取的对象，再按 build.sha1 校验 main.dol 和 636 个 REL。因此校验通过表示输出一致，并不代表反编译已完成。decomp.dev 针对该固定提交的报告显示，27.89% 的代码字节及 76,968 个函数中的 33,940 个已匹配；CI 使用存放游戏文件的私有容器，本合集两者均未运行。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其文件，也不涵盖下载的编译器。所审来源未确立 REA 或编码代理的参与。"
     ]
+  },
+  "2ship2harkinian-mm-port-case": {
+    "name": "2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植",
+    "requirements": [
+      "所审阅的 develop 提交位于 5.0.1 版（2026-08-25）之后，该版本提供 Windows、Linux 和 macOS 压缩包；CI 每夜构建仅供试玩，可能存在缺陷和崩溃。仓库中的 decomp_diff.py 将其游戏源码描述为相对官方 zeldaret/mm 仓库有所修改的反编译代码。渲染可使用 DirectX 11、OpenGL 或 Metal。",
+      "仓库不含受版权保护的素材：需自备受支持的《姆吉拉的假面》副本。文档列出 NTSC-U 1.0 与 NTSC-U GC 版本的 SHA-1 哈希。内置提取功能会将所供游戏转换为 mm.o2r 存档；自定义 .o2r 或 .otr 素材包放入 mods 文件夹，README 提醒 fast64 尚未完全支持 MM。",
+      "源码构建需要 libultraship、OTRExporter 和 ZAPDTR 子模块以及 CMake。Windows 使用带 v143 工具集的 Visual Studio 2022、Python 3，并至少需要 8 GB 内存；Linux 依赖清单包括 GCC 或 Clang、Ninja、SDL2、libzip、spdlog、tinyxml2 以及 Opus/Vorbis 库；macOS 需要 Xcode 工具及 SDL2、libpng、GLEW、Ninja、CMake、nlohmann-json 和 libzip。",
+      "所审阅的 README 和构建指南没有报告针对移植版的一致性、校验或保真度检查；发布说明列出的是调整和缺陷修复。增强功能和随机化代码会改变相对原版游戏的行为。本合集未构建或运行该项目。",
+      "仓库采用 CC0 1.0，libultraship 子模块采用 MIT；来自使用者副本的游戏内容保留各自权利，README 表示项目不纵容盗版。所审阅来源未确立 AI 或 REA 使用。"
+    ]
   }
 }

@@ -9897,13 +9897,27 @@
       "reported_source_urls": [
         "https://github.com/2ship2harkinian/2ship2harkinian"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 21 (README line 187) lists 2ship2harkinian/2ship2harkinian under 🗡️ The Legend of Zelda: Majora’s Mask. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 21 行（README 第 187 行）在 🗡️ The Legend of Zelda: Majora’s Mask 下列出 2ship2harkinian/2ship2harkinian。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build guide, supported-hash list, license and decomp-diff script support this native Majora’s Mask port built on the zeldaret/mm decompilation. The full mapping covers the port, not the separate decompilation or Zelda 64: Recompiled. User-supplied game data, playtest-only nightlies and the absence of published fidelity checks remain explicit.",
+      "reason_zh": "固定版本的 README、构建指南、受支持哈希清单、许可证和反编译差异脚本，支持这一基于 zeldaret/mm 反编译的《姆吉拉的假面》原生移植。完整映射只覆盖该移植，不涵盖独立的反编译项目或 Zelda 64: Recompiled。使用者自备游戏数据、每夜构建仅供试玩以及未公开保真度检查等限制均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md",
+        "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/docs/BUILDING.md",
+        "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/docs/supportedHashes.json",
+        "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/decomp_diff.py",
+        "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/LICENSE",
+        "https://github.com/2ship2harkinian/2ship2harkinian/releases/tag/5.0.1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "2ship2harkinian-mm-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-022",
@@ -13475,18 +13489,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 74,
-      "insufficient-evidence": 71,
-      "pending": 446
-    },
-    "units_by_state": {
-      "already-curated": 73,
+      "already-curated": 75,
       "insufficient-evidence": 71,
       "pending": 445
     },
-    "primary_reviewed_units": 89,
-    "catalog_linked_occurrences": 81,
-    "distinct_resource_ids": 73,
+    "units_by_state": {
+      "already-curated": 74,
+      "insufficient-evidence": 71,
+      "pending": 444
+    },
+    "primary_reviewed_units": 90,
+    "catalog_linked_occurrences": 82,
+    "distinct_resource_ids": 74,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
