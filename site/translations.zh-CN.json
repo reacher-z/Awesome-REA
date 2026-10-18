@@ -2257,5 +2257,15 @@
       "CI 在推送和拉取请求时构建 Windows、Linux 与 macOS 目标，并发布夜间预发布压缩包。所审源码树中没有测试套件、一致性检查或游戏行为对比结果，因此与 PS2 原版的行为等价性仍未核实；本合集未构建或运行该移植。",
       "MikuPan 声明 AGPL-3.0，Himuro 声明 MIT；随附的第三方二进制文件和库保留各自条款，Fatal Frame 游戏数据另有权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "starfox64-recompiled-case": {
+    "name": "Starfox 64: Recompiled：基于 N64Recomp 的静态重编译移植",
+    "requirements": [
+      "README 将其描述为静态重编译，既非模拟器，也非基于反编译源码的移植：N64Recomp 转换 ROM 中的游戏代码（us.rev1.toml，符号来自 Starfox64RecompSyms 子模块），RSPRecomp 转换音频微码（aspMain.us.rev1.toml），并运行在 N64ModernRuntime 与 RT64 之上。补丁使用 sf64 反编译子模块中的头文件和部分函数。README 链接的 1.0.3 是 GitHub 上的最新发布（2025-12-30），并列出计划功能和一项与叠加层软件有关的已知问题，还称 Starship 是采用不同技术的姊妹移植。",
+      "玩家在主菜单中提供美版 1.1（Rev A）N64 ROM；移植只接受该 ROM，会把其他转储格式自动转换为 .z64，并从中载入素材。构建时还需同一 ROM 的解压副本作为重编译器输入，BUILDING.md 以 MD5 标识该文件。仓库与发行包都不含游戏素材；CI 通过密钥从私有仓库复制解压后的 ROM。",
+      "可在 Windows、Linux（x64、ARM64、Flatpak、Steam Deck）及 macOS 13 或更新版本上运行，需要支持 Direct3D 12（Shader Model 6）、Vulkan 1.2 或 Metal Argument Buffers Tier 2 的 GPU，x86-64 上还需 SSE4.1。构建需要 CMake、Ninja 和 clang（Windows 上为带 Clang 与 CMake 组件的 Visual Studio 2022 及 make；Ubuntu 上为 SDL2、GTK 3、LLVM 与 lld），并需另行构建 N64Recomp 与 RSPRecomp；CI 将 N64Recomp 固定在提交 98bf104。",
+      "所审来源记录了功能说明以及 Windows、macOS 和 Linux 的每夜 CI 构建，但没有针对原版比较重编译行为的测试或对照。DOCS/fox_lore.md 回顾的是 sf64 反编译的一致性进展，属于那个独立项目。本合集未下载构建，也未运行任何内容。",
+      "COPYING 为 GPLv3；原 ROM 与随附库保留各自条款。这是静态重编译，不是恢复出的原作者源码；README 将移植增强功能归功于反编译团队的逆向工作。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

@@ -12537,13 +12537,27 @@
       "reported_source_urls": [
         "https://github.com/sonicdcer/Starfox64Recomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 90 (README line 913) lists sonicdcer/Starfox64Recomp under 🦊 Star Fox 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 90 行（README 第 913 行）在 🦊 Star Fox 64 下列出 sonicdcer/Starfox64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build guide, recompiler configs, submodule list, CI workflow, project history and GPLv3 licence support the named N64Recomp static recompilation of Star Fox 64. Full mapping covers this port, not the separate sf64 decompilation, the Starship port or independently tested gameplay. The single accepted US 1.1 ROM, private CI input and decompilation-derived patch headers remain explicit.",
+      "reason_zh": "固定版本的 README、构建指南、重编译配置、子模块列表、CI 工作流、项目历史与 GPLv3 许可，支持该具名的 Star Fox 64 N64Recomp 静态重编译。完整映射覆盖此移植，不涵盖独立的 sf64 反编译、Starship 移植或经独立测试的游戏行为。仅接受美版 1.1 ROM、CI 使用私有输入及补丁借用反编译头文件均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/README.md",
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/BUILDING.md",
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/us.rev1.toml",
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/.gitmodules",
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/.github/workflows/validate.yml",
+        "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/COPYING"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "starfox64-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-091",
@@ -14662,18 +14676,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 138,
-      "insufficient-evidence": 118,
-      "pending": 335
-    },
-    "units_by_state": {
-      "already-curated": 137,
+      "already-curated": 139,
       "insufficient-evidence": 118,
       "pending": 334
     },
-    "primary_reviewed_units": 195,
-    "catalog_linked_occurrences": 149,
-    "distinct_resource_ids": 143,
+    "units_by_state": {
+      "already-curated": 138,
+      "insufficient-evidence": 118,
+      "pending": 333
+    },
+    "primary_reviewed_units": 196,
+    "catalog_linked_occurrences": 150,
+    "distinct_resource_ids": 144,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

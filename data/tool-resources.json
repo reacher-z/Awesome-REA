@@ -5067,5 +5067,38 @@
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE"
     ]
+  },
+  {
+    "id": "starfox64-recompiled-case",
+    "name": "Starfox 64: Recompiled — an N64Recomp static-recompilation port",
+    "url": "https://github.com/sonicdcer/Starfox64Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Uses N64: Recompiled to statically recompile the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 into a native port for Windows, Linux and macOS, rendered with RT64. Its patches and enhancements draw on headers and some functions from the separate sf64 decompilation, but the port is not compiled from that decompilation's source. The README reports high-frame-rate, widescreen and mod support, with assets loaded from the user's own ROM.",
+    "description_zh": "使用 N64: Recompiled 将 Nintendo 64 版 Star Fox 64 美版 1.1（Rev A）静态重编译为面向 Windows、Linux 和 macOS 的原生移植，并以 RT64 渲染。补丁与增强功能借用独立的 sf64 反编译项目中的头文件和部分函数，但移植本身并非由该反编译源码编译而成。README 报告支持高帧率、宽屏与模组，素材从使用者自备的 ROM 载入。",
+    "evidence_url": "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a static recompilation, not an emulator or a decompilation-based source port: N64Recomp translates the game code in the ROM (us.rev1.toml, with symbols from the Starfox64RecompSyms submodule) and RSPRecomp the audio microcode (aspMain.us.rev1.toml), running on N64ModernRuntime with RT64. Patches use headers and some functions from the sf64 decompilation submodule. README links release 1.0.3, the latest GitHub release (2025-12-30), lists planned features and one overlay-related known issue, and calls Starship a sibling port built with different technology.",
+      "Players provide the US 1.1 (Rev A) N64 ROM in the main menu; the port accepts only that ROM, converting other dump formats of it to .z64, and loads its assets from it. Building also needs a decompressed copy of the same ROM as recompiler input, identified in BUILDING.md by MD5. The repository and releases contain no game assets; CI copies the decompressed ROM from a private repository through secrets.",
+      "Runs on Windows, Linux (x64, ARM64, Flatpak, Steam Deck) and macOS 13 or newer, with a GPU supporting Direct3D 12 (Shader Model 6), Vulkan 1.2 or Metal Argument Buffers Tier 2, and SSE4.1 on x86-64. Building needs CMake, Ninja and clang (on Windows Visual Studio 2022 with its Clang and CMake components plus make; on Ubuntu SDL2, GTK 3, LLVM and lld), with N64Recomp and RSPRecomp built separately; CI pins N64Recomp at commit 98bf104.",
+      "The reviewed sources document features and nightly CI builds for Windows, macOS and Linux, not tests or comparisons of recompiled behaviour against the original. DOCS/fox_lore.md recounts the sf64 decompilation's matching history, which belongs to that separate project. This collection did not download builds or run anything.",
+      "COPYING is GPLv3; the original ROM and the bundled libraries keep their own terms. This is a static recompilation, not recovered authored source, and README credits the decompilation team's reverse engineering for the port's enhancements. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/BUILDING.md",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/us.rev1.toml",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/aspMain.us.rev1.toml",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/.gitmodules",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/.github/workflows/validate.yml",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/DOCS/fox_lore.md",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/COPYING",
+      "https://github.com/sonicdcer/Starfox64Recomp/releases/tag/1.0.3"
+    ]
   }
 ]
