@@ -6080,5 +6080,34 @@
       "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/AUTHORS",
       "https://github.com/OpenRA/OpenRA/releases/tag/release-20250330"
     ]
+  },
+  {
+    "id": "rizin",
+    "name": "Rizin",
+    "url": "https://github.com/rizinorg/rizin",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.",
+    "description_zh": "源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。",
+    "evidence_url": "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.9.1, published 2026-06-29, with a static Linux x86_64 build, a macOS package, Windows installers and static/shared archives, Android arm, aarch64 and x86_64 archives and a source tarball. The reviewed dev branch already declares the unreleased v0.10.0; this entry pins that commit for documentation only.",
+      "Source builds use meson and ninja; meson.build requires meson 0.58.0+, although the README mentions 0.55.0. The README lists Windows 7+, macOS/iOS/iPadOS, GNU/Linux, the BSDs, Android, QNX, Solaris/Illumos, Haiku and GNU/Hurd hosts. rzpipe lives in a separate repository, and plugins, including decompiler plugins, were not reviewed.",
+      "meson.build declares LGPL-3.0-only, with COPYING and COPYING.LESSER; the LICENSES directory holds further licenses used by individual files. Listed architecture and format support was not exercised; no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/README.md#L61-L110",
+      "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/meson.build#L1-L4",
+      "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/BUILDING.md",
+      "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/COPYING.LESSER",
+      "https://github.com/rizinorg/rizin/tree/db112e55614b8635b42d7515a2790ca9fb4e5d05/LICENSES",
+      "https://github.com/rizinorg/rizin/releases/tag/v0.9.1"
+    ]
   }
 ]

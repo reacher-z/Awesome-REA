@@ -2595,5 +2595,13 @@
       "Linux 与 Windows 上的 CI 运行代码检查、OpenRA.Test 单元测试、Lua 脚本检查及各模组的 MiniYAML 校验。这些检查针对引擎与模组数据，不涉及与原游戏的等价性；本次审阅均未运行。",
       "COPYING 规定 OpenRA 采用 GPL-3.0-or-later，AUTHORS 列出的随附库各有条款，例如 SDL2-CS 与 OpenAL-CS 采用 zlib，Eluant 采用 MIT。README 声明 EA 未认可也不支持该项目。原游戏内容保留各自权利；未确立 REA 或 AI 使用。"
     ]
+  },
+  "rizin": {
+    "name": "Rizin 逆向工程框架",
+    "requirements": [
+      "审阅时最新版本为 v0.9.1，发布于 2026-06-29，提供 Linux x86_64 静态构建、macOS 安装包、Windows 安装程序及静态／共享库压缩包、Android arm、aarch64 和 x86_64 压缩包，以及源码包。所审阅的 dev 分支已标为尚未发布的 v0.10.0；本条目固定该提交仅用于引用文档。",
+      "从源码构建使用 meson 和 ninja；meson.build 要求 meson 0.58.0+，而 README 提到的是 0.55.0。README 列出的宿主系统包括 Windows 7+、macOS/iOS/iPadOS、GNU/Linux、各 BSD、Android、QNX、Solaris/Illumos、Haiku 和 GNU/Hurd。rzpipe 位于独立仓库；插件（包括反编译器插件）未经审阅。",
+      "meson.build 声明 LGPL-3.0-only，并附 COPYING 和 COPYING.LESSER；LICENSES 目录还收录了个别文件所用的其他许可证。未实际验证所列的架构和格式支持；本次未分析任何二进制。"
+    ]
   }
 }
