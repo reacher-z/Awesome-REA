@@ -4434,5 +4434,38 @@
       "https://github.com/pret/pokefirered/tree/037335f4c725d7c9aecdac87066f2002b4bd7e14/tools",
       "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
     ]
+  },
+  {
+    "id": "paperboat-paper-mario-port-case",
+    "name": "PaperBoat: a native Paper Mario port built on the decompilation",
+    "url": "https://github.com/HarbourMasters/PaperBoat",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles Paper Mario decompilation sources, credited to the pmret and Paper Mario DX projects, into a native US-version application on libultraship. Torch converts the user’s own ROM into a local asset archive, and the port adds rendering backends, enhancements and archive-based mods. Desktop releases are published, while Android, iOS and web builds are documented on the development branch.",
+    "description_zh": "以 pmret 和 Paper Mario DX 项目为基础，将 Paper Mario 反编译源码编译为基于 libultraship 的原生美版应用。Torch 把使用者自己的 ROM 转换为本地素材归档，移植另加入多种渲染后端、增强功能和归档式模组。桌面版已有正式发布；Android、iOS 和网页构建则在开发分支中有文档说明。",
+    "evidence_url": "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed develop snapshot follows release 1.0.3 (2026-10-11), whose packages cover Windows, Linux and macOS. CMake compiles the decompilation’s game C sources for VERSION_US with port code replacing the N64 boot and most OS layers. This is a native port that deliberately adds enhancements and fixes, not a matching ROM build or a static recompilation.",
+      "Requires the user’s US Paper Mario ROM with the SHA-1 listed in the README; config.yml carries recipes for that hash only, and the README states no copyrighted assets are included. Torch generates the pm64.o2r game archive on the user’s machine or device; that archive never ships with the app.",
+      "Source builds need the Torch and libultraship submodules, CMake 3.24+, Ninja and C99/C++20 compilers. Windows uses Visual Studio 2022 with clang-cl, because plain MSVC cl.exe is unsupported for the C99 decompilation sources. Renderers are DirectX 11, OpenGL and Metal. Android arm64-v8a, iOS 16.3+ and Emscripten builds are documented, with scripting and native mods disabled there.",
+      "The CI workflow builds Linux, Windows, macOS, iOS, Android and web artifacts and checks package contents; the platform guide states CI never touches a ROM, and its named desktop check script is absent from the reviewed tree. Nightly builds are labeled playtest-only with expected bugs and crashes. No gameplay-equivalence or performance results are reported, and this collection ran nothing.",
+      "The repository carries CC0-1.0 text, but GitHub detects no license for the credited pmret and Paper Mario DX repositories, and submodules have separate terms; the CC0 file is not treated as a grant over inherited code or game content. The README says AI-assisted pull requests are accepted under a HarbourMasters policy; that establishes no REA use or measured AI contribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/docs/BUILDING.md",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/docs/android-ios-web.md",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/CMakeLists.txt",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/config.yml",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/.gitmodules",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/.github/workflows/build.yml",
+      "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/LICENSE",
+      "https://github.com/HarbourMasters/PaperBoat/releases/tag/1.0.3"
+    ]
   }
 ]
