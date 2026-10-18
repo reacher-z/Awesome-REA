@@ -20,7 +20,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (20)
+- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (21)
 
 **更多浏览方式**
 
@@ -1226,6 +1226,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。
 
   研究 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
+
+- [**Flutter 构建识别**](https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md)
+
+  通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。
+
+  文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-flutter-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 

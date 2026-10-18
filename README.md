@@ -20,7 +20,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (20)
+- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (21)
 
 **More ways to browse**
 
@@ -1225,6 +1225,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A Windows REA/Ghidra lab with seeded challenges, published studies, upstream contributions and recorded limitations.
 
   Research · [Requirements & evidence](https://awesomerea.org/resources/rea-lab/)
+
+- [**Flutter build identification**](https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md)
+
+  Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs, not deserialized Dart classes or recovered source.
+
+  Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-flutter-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 
