@@ -7549,13 +7549,28 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111082259096945133"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The roundup post links a Reddit report whose GitHub repository was reviewed at a pinned commit: it publishes the Race-Keeper .rkd format specification, Claude Code research notes and session log, matching Python and Go parsers, a truncated sample and CI tests. The full mapping covers this file-format reconstruction case. Validation comes from the author’s own recordings, several fields remain undecoded, transcripts are unpublished, and no runtime reproduction is claimed.",
+      "reason_zh": "该汇总帖链接到一篇 Reddit 报告，其 GitHub 仓库已按固定版本审阅：仓库公开 Race-Keeper .rkd 格式规范、Claude Code 研究笔记与会话日志、结果一致的 Python 与 Go 解析器、截断样本及 CI 测试。完整映射覆盖该文件格式重建案例。验证依据为作者自有录制数据，若干字段仍未解读，对话记录未公开，也未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/README.md",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RKD_FORMAT_SPEC.md",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/SESSION_LOG.md",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/samples/README.md",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/.github/workflows/ci.yml",
+        "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rkd-telemetry-extractor-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:qqpet-arctic-penguin-ai-rebuild",
@@ -15239,18 +15254,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 171,
-      "insufficient-evidence": 140,
-      "pending": 280
-    },
-    "units_by_state": {
-      "already-curated": 170,
+      "already-curated": 172,
       "insufficient-evidence": 140,
       "pending": 279
     },
-    "primary_reviewed_units": 250,
-    "catalog_linked_occurrences": 182,
-    "distinct_resource_ids": 176,
+    "units_by_state": {
+      "already-curated": 171,
+      "insufficient-evidence": 140,
+      "pending": 278
+    },
+    "primary_reviewed_units": 251,
+    "catalog_linked_occurrences": 183,
+    "distinct_resource_ids": 177,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

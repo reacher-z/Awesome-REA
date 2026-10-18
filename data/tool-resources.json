@@ -6364,5 +6364,38 @@
       "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/CLA.md",
       "https://github.com/openbin-ai/binny/releases/tag/v0.1.0-beta.2"
     ]
+  },
+  {
+    "id": "rkd-telemetry-extractor-case",
+    "name": "RKD Telemetry Extractor: decoding Race-Keeper track-day recordings",
+    "url": "https://github.com/sam-dumont/rkd-telemetry-extractor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Documents the proprietary .rkd telemetry format written by Race-Keeper “Instant Video” recorders, whose bundled player runs only on Windows, and implements matching Python and Go parsers that export GPS and IMU channels as Telemetry Overlay CSV and GPX. The author credits Claude Code with the hex-dump analysis and hypothesis testing, anchored by known car IDs, circuit location and speeds. Field meanings rest on physical cross-checks from the author’s own recordings, and several record types remain partly unknown.",
+    "description_zh": "记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析和假设检验由 Claude Code 协助完成，并以已知车辆编号、赛道位置和车速作为锚点。字段含义依据作者自有录制数据的物理交叉核对得出，若干记录类型仍未完全解读。",
+    "evidence_url": "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is Python package version 1.0.0 from February 2026. It decodes the 8-byte signature, meta header, 10-byte record headers and the configuration, GPS, accelerometer, gyroscope, periodic, timestamp and terminator records, then exports 30 Hz Telemetry Overlay CSV, roughly 5 Hz GPX and a session summary. It reads telemetry only; the .mp4 video is used as is, and OBD-II channels are unsupported because the source recordings had no scanner connected.",
+      "Users supply .rkd files from their own Race-Keeper recordings. The repository includes a truncated sample of about 50 GPS fixes from the author’s 2021 session with reference CSV and GPX output, but not the vendor player, the USB-stick contents or full recordings. Python 3.9+ and the Go toolchain use only standard libraries; README says Go 1.21+, while go.mod declares go 1.24.7.",
+      "Research notes and a session log attribute the analysis to Claude Code (claude-opus-4-6) across three February 2026 sessions plus a fourth for tests, documentation and the Go port. The README and notes give about four hours, while the log’s per-session durations total more. The JSONL transcripts are described but not published, so the dialogue cannot be checked from the repository.",
+      "Reported validation compares recorded speed with haversine-derived speed (under 1% error), checks mean vertical acceleration against 1 g, fits a gyroscope divisor of about 28 against GPS heading changes and matches altitude to circuit topography. The CRC polynomial, periodic and timer fields, two terminator fields and the exact gyroscope calibration remain unknown or empirical. CI runs Python 3.9, 3.11 and 3.13 tests with a 100% branch-coverage gate, and Go tests on Ubuntu and macOS that compare Go output with the committed Python reference CSV and GPX; this collection ran neither suite.",
+      "The project declares MIT and states that it is independent of and not endorsed by Race-Keeper or Trivinci Systems LLC. Decoding is limited to the hardware revision and recordings the author examined, and other devices or firmware versions may differ. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/README.md",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RKD_FORMAT_SPEC.md",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/SESSION_LOG.md",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/samples/README.md",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/python/pyproject.toml",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/go/go.mod",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/.github/workflows/ci.yml",
+      "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/LICENSE"
+    ]
   }
 ]
