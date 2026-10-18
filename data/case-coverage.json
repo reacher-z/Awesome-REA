@@ -9629,12 +9629,16 @@
       "reported_source_urls": [
         "https://www.reddit.com/r/technology/comments/1ww1twg/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The r/technology link post (2026-10-02) points to a same-day FRVR news article. It reports that Dario, described as the Banjo: Recompiled project lead, warned on X that a Banjo-Tooie recompilation is not associated with the Zelda: Recompiled or Banjo: Recompiled teams and is entirely AI-generated, and that both projects have no-AI stances; the comments debate recompilation and decompilation quality. Neither the thread, the article nor the developer's post links source, builds or comparison evidence for the criticized releases. Retain the lead without a catalog mapping; it records a community quality debate, not a reviewed reconstruction case.",
+      "reason_zh": "r/technology 上的这则链接帖（2026-10-02）指向 FRVR 同日发表的新闻文章。文章称，被介绍为 Banjo: Recompiled 项目负责人的 Dario 在 X 上提醒：一个 Banjo-Tooie 重编译版本与 Zelda: Recompiled 和 Banjo: Recompiled 团队无关，完全由 AI 生成，且这两个项目都明确不使用 AI；帖子评论则在争论重编译与反编译的质量。讨论帖、文章及开发者的帖子都没有为受批评的版本链接源码、构建或对照证据。保留此线索而不建立目录映射；它记录的是社区对质量的讨论，而非经审阅的重建案例。",
+      "primary_evidence_urls": [
+        "https://www.reddit.com/r/technology/comments/1ww1twg/",
+        "https://frvr.com/blog/news/zelda-and-banjo-recompiled-dev-slams-poor-quality-slopcomps-by-vibecoders-that-completely-fail-to-reach-the-same-level-of-quality/",
+        "https://x.com/dariosamo/status/2105798188292604267"
+      ],
       "catalog_matches": []
     },
     {
@@ -15528,15 +15532,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 187,
-      "insufficient-evidence": 155,
-      "pending": 249
+      "insufficient-evidence": 156,
+      "pending": 248
     },
     "units_by_state": {
       "already-curated": 185,
-      "insufficient-evidence": 155,
-      "pending": 249
+      "insufficient-evidence": 156,
+      "pending": 248
     },
-    "primary_reviewed_units": 281,
+    "primary_reviewed_units": 282,
     "catalog_linked_occurrences": 197,
     "distinct_resource_ids": 191,
     "distinct_paper_ids": 1,
