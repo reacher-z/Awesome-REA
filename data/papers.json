@@ -3176,5 +3176,68 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-typeforge",
+    "title": "TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries",
+    "title_zh": "TypeForge：为去符号二进制合成并选择最适配的复合数据类型",
+    "authors": [
+      "Yanzhong Wang",
+      "Ruigang Liang",
+      "Yilin Li",
+      "Peiwei Hu",
+      "Kai Chen",
+      "Bolun Zhang"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "IEEE Xplore and the publisher’s Crossref deposit establish publication year 2025. Both list 12 May 2025, the first day of the May 12–15 symposium, and IEEE added the article to Xplore on 16 June 2025; neither date is treated as a verified publication day.",
+    "date_basis_zh": "IEEE Xplore 与出版方提交的 Crossref 元数据确认出版年份为 2025。两者均列出 2025 年 5 月 12 日，即 5 月 12—15 日研讨会的首日；IEEE 于 2025 年 6 月 16 日将文章加入 Xplore。本条目不将这两个日期视为已核实的出版日。",
+    "venue": "IEEE S&P 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1109/SP61157.2025.00193",
+    "citation": {
+      "container_title": "2025 IEEE Symposium on Security and Privacy (SP)",
+      "publisher": "IEEE",
+      "sources": [
+        "https://ieeexplore.ieee.org/document/11023499",
+        "https://api.crossref.org/works/10.1109/SP61157.2025.00193"
+      ]
+    },
+    "url": "https://ieeexplore.ieee.org/document/11023499",
+    "pdf_url": "https://noobone123.github.io/papers/typeforge-sp25.pdf",
+    "code_url": "https://github.com/noobone123/TypeForge",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "TypeForge recovers composite data types, including struct layouts, unions and pointer or nesting relationships, from stripped binaries. A whole-program Type Flow Graph over Ghidra’s decompiler-inferred variables propagates member offsets and sizes, cuts conflicting edges caused by casts and unions, and synthesizes candidate type declarations. An LLM only selects among these statically synthesized candidates: each is applied through the decompiler’s retype interface, and a double-elimination tournament compares the resulting pseudocode for readability. On OSPREY’s coreutils dataset the authors report F1 of 81.7% for composite-type identification, 88.2% for layout recovery and 72.1% for relationship recovery.",
+    "description_zh": "TypeForge 从去符号二进制中恢复复合数据类型，包括结构体布局、联合体以及指针引用和嵌套关系。它在 Ghidra 反编译器推断出的变量之上构建全程序类型流图，传播成员偏移与大小，切断由类型转换和联合体引起的冲突边，并合成候选类型声明。大语言模型只在这些静态合成的候选中进行选择：每个候选通过反编译器的重定类型接口应用，再以双败淘汰赛比较所得伪代码的可读性。作者在 OSPREY 的 coreutils 数据集上报告复合类型识别 F1 为 81.7%、布局恢复 F1 为 88.2%、关系恢复 F1 为 72.1%。",
+    "scope_limitations_en": "Recovers member offsets, sizes and relationships, not original type or member names; relationship correctness is judged by matching layouts because names are unavailable. The main evaluation uses OSPREY’s dataset of GNU coreutils and larger Howard-dataset programs, over 10,000 functions and 11,000 composite-typed variables at O0–O3, with ground truth from debug information; the paper does not report results per architecture. In the baseline comparison, OSPREY results were supplied by its authors and its runtime is an estimate, and ReSym figures are its published results, so not every baseline was rerun. Conservative removal of conflicting edges can drop valid members, and compiler optimizations that merge or flatten members lower accuracy at higher levels. About 75% of runtime is the LLM selection stage; the default model was GPT-4o mini, with each comparison run three times. Downstream readability and vulnerability examples are case studies, not proof of semantic equivalence.",
+    "scope_limitations_zh": "恢复的是成员偏移、大小和类型间关系，而非原始类型名或成员名；由于名称不可得，关系是否正确以布局匹配判定。主要评测使用 OSPREY 的数据集，包括 GNU coreutils 与 Howard 数据集中较大的程序，涵盖超过 10,000 个函数和 11,000 个复合类型变量，优化级别为 O0–O3，真实标签取自调试信息；论文未按架构分别报告结果。基线比较中，OSPREY 的结果由其作者提供，运行时间为估算值，ReSym 的数据取自其已发表结果，因此并非所有基线均经重新运行。保守地删除冲突边可能遗漏有效成员；合并或展平成员的编译器优化会降低较高优化级别下的准确率。约 75% 的运行时间用于大语言模型选择阶段；默认模型为 GPT-4o mini，每轮比较执行三次。下游可读性与漏洞检测示例属于案例研究，不能证明语义等价。",
+    "why_fits_en": "Adds static composite-type and struct-layout recovery that feeds decompiler readability, complementing learned variable naming, data-structure symbol recovery and LLM refinement of decompiler output.",
+    "why_fits_zh": "补充以静态分析恢复复合类型与结构体布局、进而提升反编译结果可读性的方法，与基于学习的变量命名、数据结构符号恢复及大语言模型改写反编译输出的研究互补。",
+    "metadata_notes": "IEEE Xplore and Crossref agree on the title, six-author order and DOI; an arXiv title search found no preprint. Both list article-relative pages 1–18, whereas the repository’s BibTeX gives 2847–2864; neither range is recorded in the citation. The author-hosted PDF is the final paper, including the S&P meta-review appendix. The reviewed 2026-03-17 snapshot, identical to its dev branch at review time, is a Ghidra extension tested with Ghidra 11.0.3; its Python 3.13 selection scripts pin LangChain 0.3.23 and openai 1.75.0, and their README example names gpt-4.1-mini rather than the paper’s GPT-4o mini. Ground-truth extraction needs DWARF 4 debug information. LICENSE contains BSD 3-Clause-style terms with an added requirement to cite the paper in academic work; the README badge says BSD 3-Clause and GitHub reports NOASSERTION, so no single license is asserted here. Evaluation.md links early-version data captured before LLM selection, notes a June 2025 identification bug fix after submission, and withholds the variable-alignment evaluation script, so the paper’s metrics cannot be recomputed from the release alone. No code, model calls or downloads were run.",
+    "metadata_notes_zh": "IEEE Xplore 与 Crossref 的标题、六位作者顺序和 DOI 一致；按标题检索 arXiv 未发现预印本。两者均列出按文章计的页码 1–18，而仓库提供的 BibTeX 为 2847–2864；引用信息不记录这两种页码范围。作者托管的 PDF 是最终论文，包含 S&P 元评审附录。所审阅的 2026-03-17 快照在审阅时与 dev 分支相同，是在 Ghidra 11.0.3 上测试的 Ghidra 扩展；其 Python 3.13 选择脚本固定 LangChain 0.3.23 与 openai 1.75.0，README 示例使用 gpt-4.1-mini，而非论文中的 GPT-4o mini。提取真实标签需要 DWARF 4 调试信息。LICENSE 文件采用 BSD 3-Clause 风格条款，另加在学术工作中须引用论文的要求；README 徽章标为 BSD 3-Clause，GitHub 则报告 NOASSERTION，因此本条目不认定单一许可证。Evaluation.md 链接的是 LLM 选择阶段之前、由早期版本生成的数据，说明投稿后于 2025 年 6 月修复了影响类型识别的缺陷，并且未公开变量对齐评估脚本，因此仅凭发布内容无法重新计算论文指标。本次未运行代码、调用模型或下载数据。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/11023499",
+      "https://api.crossref.org/works/10.1109/SP61157.2025.00193",
+      "https://noobone123.github.io/papers/typeforge-sp25.pdf",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/README.md",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/LICENSE",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/Evaluation.md",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/scripts/README.md",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/scripts/requirements.txt",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/scripts/judge/README.md",
+      "https://github.com/noobone123/TypeForge/blob/0f2ceff872362a1e4a4e927c589f9f5be465ebeb/scripts/judge/llm.py"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -133,7 +133,8 @@ class ReviewedContainerRecordTests(unittest.TestCase):
                     'paper-jsdeobsbench', 'paper-cascade', 'paper-dcgen', 'paper-code-world-models',
                     'paper-stateinspector', 'paper-halucinator', 'paper-web2code', 'paper-degpt',
                     'paper-binpre', 'paper-binaryinferno', 'paper-icepre', 'paper-netlifter', 'paper-uiorchestra', 'paper-slade',
-                    'paper-debin'}
+                    'paper-debin',
+                    'paper-typeforge'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.
