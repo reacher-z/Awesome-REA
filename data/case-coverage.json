@@ -11504,13 +11504,28 @@
       "reported_source_urls": [
         "https://github.com/pret/pokeheartgold"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 58 (README line 574) lists pret/pokeheartgold under ⚡ Pokémon HeartGold. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. Shared repository links do not merge separately listed game rows.",
-      "reason_zh": "项目第 58 行（README 第 574 行）在 ⚡ Pokémon HeartGold 下列出 pret/pokeheartgold。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。共享仓库链接不会合并分别列出的游戏行。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, install guide, Makefile, Meson checksum tests, per-game SHA-1 manifests, contributing rules and CI workflow support a work-in-progress US HeartGold/SoulSilver disassembly whose builds are hash-checked. Full mapping covers this row’s HeartGold game within a record that also covers SoulSilver; decompilation completeness, gameplay equivalence and SDK or asset rights are not established. The project’s ban on LLM-generated contributions is recorded as stated.",
+      "reason_zh": "固定版本的 README、安装指南、Makefile、Meson 校验测试、分游戏 SHA-1 清单、贡献规则和 CI 工作流，支持这是一个构建产物经哈希校验的进行中美版心金／魂银反汇编项目。完整映射覆盖本行的心金，所对应的记录也涵盖魂银；反编译完成度、游戏行为等价性及 SDK 或素材权利均未确立。项目禁止大语言模型生成贡献的规定按原文记录。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/INSTALL.md",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/Makefile",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/meson.build",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/heartgold.us/rom.sha1",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/CONTRIBUTING.md",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/.github/workflows/build.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-heartgold-soulsilver-disassembly-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-059",
@@ -14439,18 +14454,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 127,
-      "insufficient-evidence": 98,
-      "pending": 366
-    },
-    "units_by_state": {
-      "already-curated": 126,
+      "already-curated": 128,
       "insufficient-evidence": 98,
       "pending": 365
     },
-    "primary_reviewed_units": 164,
-    "catalog_linked_occurrences": 138,
-    "distinct_resource_ids": 132,
+    "units_by_state": {
+      "already-curated": 127,
+      "insufficient-evidence": 98,
+      "pending": 364
+    },
+    "primary_reviewed_units": 165,
+    "catalog_linked_occurrences": 139,
+    "distinct_resource_ids": 133,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

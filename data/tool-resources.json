@@ -4698,5 +4698,41 @@
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/vc_patch.md",
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/bugs_and_glitches.md"
     ]
+  },
+  {
+    "id": "pokemon-heartgold-soulsilver-disassembly-case",
+    "name": "Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly",
+    "url": "https://github.com/pret/pokeheartgold",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the US Nintendo DS releases of Pokémon HeartGold and SoulSilver from a work-in-progress disassembly in which part of the code has been decompiled to C. Each default build checks the ARM9 and ARM7 binaries, the filesystem and the complete ROM against per-game SHA-1 manifests. README warns that, because decompilation is incomplete, edits that change code or data layout can crash the game.",
+    "description_zh": "以进行中的反汇编项目重建美版 Nintendo DS《宝可梦 心金／魂银》，其中部分代码已反编译为 C。每次默认构建都会按各游戏的 SHA-1 清单校验 ARM9 与 ARM7 二进制、文件系统及完整 ROM。README 提醒，由于反编译尚未完成，改变代码或数据布局的修改可能导致游戏崩溃。",
+    "evidence_url": "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a work-in-progress disassembly of the US releases; it warns that symbol names and code structure can change, and that edits altering the size or layout of any function or data structure can crash the game because the ROM is not fully decompiled. At the reviewed commit asm/ still holds 283 assembly files beside 406 C files in src/, and CONTRIBUTING.md describes NONMATCHING C kept beside the inline-assembly versions used for matching builds. Outputs are pokeheartgold.us.nds and pokesoulsilver.us.nds, not a PC port.",
+      "The documented build reads no original ROM: the DS filesystem’s graphics, model, text and data files are committed under files/. The target images are identified by SHA-1 (HeartGold 4fcded0e2713dc03929845de631d0932ea2b5a37, SoulSilver f8dc38ea20c17541a43b58c5e6d18c1732c7e582), and README links their No-Intro records. Only the contributor asmdiff tool refers to a user-supplied base ROM.",
+      "INSTALL.md covers WSL2 (recommended), WSL1, MSYS2, macOS and Debian, Arch and Fedora Linux; packages include an ARM GCC toolchain, bison, flex, Ninja, Python 3, libpng and 32-bit libc, and macOS also needs Wine. The Makefile clones Meson 1.12.0 and downloads the metroskrew 0.1.3 release, which its repository describes as a relinked Linux port of the proprietary Windows Metrowerks ARM compiler; Meson fetches pinned NitroSDK, NitroSystem, NitroDWC, NitroWiFi and libvct subprojects. make builds HeartGold and make soulsilver builds SoulSilver.",
+      "make runs Meson tests after building that check the ARM9 main binary, ARM7 binary, filesystem and complete ROM against SHA-1 manifests; the Makefile tells modders they may drop that check after their first build. CI builds and checks both games and runs a progress calculation on pushes. Matching hashes establish identity for these two US images, not decompilation completeness or gameplay coverage; this collection did not build them.",
+      "The repository has no top-level license file and GitHub detects none; some bundled tools carry their own licenses, and the metroskrew and ntrtwl SDK repositories declare no license on GitHub. SDK libraries and original game content remain subject to their rights holders. CONTRIBUTING.md prohibits LLM-generated contributions apart from narrow, disclosed exceptions; the reviewed sources establish no AI or REA use in the project, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/INSTALL.md",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/Makefile",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/meson.build",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/heartgold.us/rom.sha1",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/soulsilver.us/rom.sha1",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/CONTRIBUTING.md",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/.github/workflows/build.yml",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/tools/devtools/get_metroskrew.sh",
+      "https://github.com/pret/pokeheartgold/tree/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/subprojects",
+      "https://github.com/pret/pokeheartgold/tree/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/files",
+      "https://github.com/mid-kid/metroskrew/releases/tag/0.1.3"
+    ]
   }
 ]
