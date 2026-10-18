@@ -11441,13 +11441,27 @@
         "https://github.com/TekRantGaming/king-kong-recompiled",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 52 (README line 491) lists TekRantGaming/king-kong-recompiled under 🧭 Peter Jackson’s King Kong. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 52 行（README 第 491 行）在 🧭 Peter Jackson’s King Kong 下列出 TekRantGaming/king-kong-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, project metadata, setup script, ignore rules, changelog and port sources support the reported ReXGlue static recompilation of the Xbox 360 release, its disc requirement and its Windows-only release. The full mapping covers this port and the author's Claude Code disclosure, but not a confirmed full play-through, native Linux support or independent runtime checks. The missing license and default-on online check-in are recorded; the collection post's archive link is outside this mapping.",
+      "reason_zh": "固定版本的 README、项目元数据、安装脚本、忽略规则、更新日志及移植源码，支持该报告所述基于 ReXGlue 的 Xbox 360 版静态重编译、光盘要求以及仅限 Windows 的发布。完整映射覆盖此移植项目及作者对 Claude Code 的披露，但不涵盖已确认的完整通关、原生 Linux 支持或独立运行检查。缺少许可证及默认开启的在线上报均已记录；合集帖子中的存档链接不在此映射范围内。",
+      "primary_evidence_urls": [
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/README.md",
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/.recomp.json",
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/setup.ps1",
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/.gitignore",
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/CHANGELOG.md",
+        "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/src/io_fix.cpp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "king-kong-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-053",
@@ -14914,18 +14928,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 153,
-      "insufficient-evidence": 126,
-      "pending": 312
-    },
-    "units_by_state": {
-      "already-curated": 152,
+      "already-curated": 154,
       "insufficient-evidence": 126,
       "pending": 311
     },
-    "primary_reviewed_units": 218,
-    "catalog_linked_occurrences": 164,
-    "distinct_resource_ids": 158,
+    "units_by_state": {
+      "already-curated": 153,
+      "insufficient-evidence": 126,
+      "pending": 310
+    },
+    "primary_reviewed_units": 219,
+    "catalog_linked_occurrences": 165,
+    "distinct_resource_ids": 159,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

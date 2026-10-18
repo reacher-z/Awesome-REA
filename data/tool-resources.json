@@ -5591,5 +5591,38 @@
       "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/LICENSE",
       "https://github.com/banatic/acww-decomp/actions/runs/39115041988"
     ]
+  },
+  {
+    "id": "king-kong-recompiled-case",
+    "name": "King Kong Recompiled: an AI-developed Xbox 360 static recompilation",
+    "url": "https://github.com/TekRantGaming/king-kong-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the Xbox 360 release of Peter Jackson's King Kong into native Windows code with the ReXGlue static-recompilation SDK, adding a launcher and display, control and graphics options. Project code completes streamed disc reads the way the console does, which README credits with getting past an opening freeze seen under Xenia. The author discloses that the port was made almost entirely with Claude Code, directed and tested by the repository owner.",
+    "description_zh": "借助 ReXGlue 静态重编译 SDK，将 Xbox 360 版 Peter Jackson's King Kong 转译为原生 Windows 代码，并加入启动器以及显示、操控和图形选项。项目代码按主机的方式完成流式光盘读取；README 称这使游戏越过了在 Xenia 中出现的开场卡死。作者披露，该移植几乎完全由 Claude Code 完成，仓库所有者负责指导和测试。",
+    "evidence_url": "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README and .recomp.json describe a static recompilation of the USA/Europe Xbox 360 disc (title ID 555307D3, version 0.0.0.1) with ReXGlue, which credits Xenia and XenonRecomp. Release v1.9.11 ships only a Windows x64 package; Linux and Steam Deck run it through Proton experimentally, while a native Linux build and a native Vulkan/DirectX 12 renderer are described as in progress. README says a full play-through has not been confirmed.",
+      "Requires a full disc image made from the player's own copy of that release; README gives its expected size and SHA-1, and the launcher checks the title ID before copying about 6.3 GB of game files next to the program. No game files are included, and the recompiled C++ derived from the game's code is regenerated locally and excluded from the repository.",
+      "Playing needs 64-bit Windows 10 or 11, a DirectX 12 graphics card and about 7 GB of space. Source builds need Visual Studio 2022 Build Tools with Clang, CMake and Ninja; setup.ps1 downloads ReXGlue SDK 0.10.0 and generates the recompiled sources from the player's disc image before kk/build.bat compiles them.",
+      "Reported checks are the owner's testing and developer autoplay builds that also collect shader packs; the reviewed tree has no CI workflow. Known issues include wrong character animations above 30 fps and periodic pauses in pre-rendered videos. The launcher's anonymous online-player check-in is on by default. This collection did not build or run the port.",
+      "No license file is present, so reuse terms for the port's code are unstated; the bundled upscaler notices are MIT, and ReXGlue and other dependencies keep their own terms. Game code, assets and trademarks remain their owners', and the project disclaims affiliation with Ubisoft, Universal, Microsoft and others. The AI disclosure names Claude Code, not REA, so this is not an REA case."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/.recomp.json",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/setup.ps1",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/.gitignore",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/CHANGELOG.md",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/king_kong_manifest.toml",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/src/io_fix.cpp",
+      "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/THIRD-PARTY-NOTICES.txt",
+      "https://github.com/TekRantGaming/king-kong-recompiled/releases/tag/v1.9.11"
+    ]
   }
 ]

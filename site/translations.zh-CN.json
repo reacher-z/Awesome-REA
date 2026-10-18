@@ -2424,5 +2424,15 @@
       "CI 在存放 ROM 和编译器的私有容器中运行。runtime.md 报告 Reference、Native 与 Clean 三种运行在 1,300 帧标题画面录制、13,760 帧新游戏录制及八个基于存档（存档不在仓库中）的场景中一致，另有三个场景仍有差异。所审提交的 GitHub Actions 构建通过了校验、链接与 Native 检查，但未通过 Clean 函数差分检查。本次审阅未运行上述任何检查。",
       "仓库以 CC0 1.0 释出，并声明与 Nintendo 无关。ROM、编译器、SDK 库和测试存档各自保留权利。所审来源未说明 AI 或 REA 参与，也不主张运行复现。"
     ]
+  },
+  "king-kong-recompiled-case": {
+    "name": "King Kong Recompiled：由 AI 开发的 Xbox 360 静态重编译",
+    "requirements": [
+      "README 和 .recomp.json 将其描述为使用 ReXGlue 对美版／欧版 Xbox 360 光盘（标题 ID 555307D3，版本 0.0.0.1）进行的静态重编译；ReXGlue 致谢 Xenia 和 XenonRecomp。v1.9.11 版只提供 Windows x64 安装包；Linux 和 Steam Deck 通过 Proton 以实验方式运行，原生 Linux 版本和原生 Vulkan／DirectX 12 渲染器据称仍在开发。README 称尚未确认能完整通关。",
+      "需使用玩家自有的该版本光盘制作完整光盘镜像；README 给出预期大小和 SHA-1，启动器会先检查标题 ID，再将约 6.3 GB 游戏文件复制到程序旁。项目不含任何游戏文件，由游戏代码生成的重编译 C++ 在本地重新生成，并排除在仓库之外。",
+      "运行需 64 位 Windows 10 或 11、支持 DirectX 12 的显卡及约 7 GB 空间。从源码构建需 Visual Studio 2022 Build Tools（含 Clang）、CMake 和 Ninja；setup.ps1 会下载 ReXGlue SDK 0.10.0，并从玩家的光盘镜像生成重编译源码，再由 kk/build.bat 编译。",
+      "报告的检查包括所有者的测试，以及同时用于收集着色器包的开发者自动游玩构建；所审版本没有 CI 工作流。已知问题包括 30 fps 以上部分角色动画不正确，以及预渲染视频周期性停顿。启动器的匿名在线人数上报默认开启。本合集未构建或运行该移植。",
+      "仓库没有许可证文件，移植代码的复用条款未作说明；内置的超分辨率组件声明为 MIT，ReXGlue 及其他依赖各自适用其条款。游戏代码、素材和商标仍归各自权利人所有，项目声明与 Ubisoft、Universal、Microsoft 等无关。AI 披露所指为 Claude Code 而非 REA，因此这不是 REA 案例。"
+    ]
   }
 }
