@@ -1207,13 +1207,23 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/pull/1447"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Merged REA PR #1447 and the pinned official guide establish the reported HarmonyOS package-inventory capability: static HAP, HSP and App Pack recognition and a path-based application-graph projection, checked on a pinned harmony-next-pipeline 1.0.1 HAP with CLI/MCP parity. The full mapping covers this report as official documentation, not a reconstruction case: Ark bytecode, manifests, resources and signatures are not decoded or verified. No runtime reproduction is claimed.",
+      "reason_zh": "已合并的 REA PR #1447 与固定版本的官方指南确立了该报告所述的 HarmonyOS 应用包清点能力：静态识别 HAP、HSP 与 App Pack，并基于路径投影应用图，已在一个固定的 harmony-next-pipeline 1.0.1 HAP 上检查命令行与 MCP 的一致性。完整映射以官方文档覆盖该报告，并不将其视为重建案例：Ark 字节码、清单、资源与签名均未被解码或验证。未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/pull/1447",
+        "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/harmony-analysis.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-harmony-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:firmware-extract-handoff",
@@ -13260,18 +13270,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 63,
-      "insufficient-evidence": 65,
-      "pending": 463
-    },
-    "units_by_state": {
-      "already-curated": 62,
+      "already-curated": 64,
       "insufficient-evidence": 65,
       "pending": 462
     },
-    "primary_reviewed_units": 73,
-    "catalog_linked_occurrences": 70,
-    "distinct_resource_ids": 61,
+    "units_by_state": {
+      "already-curated": 63,
+      "insufficient-evidence": 65,
+      "pending": 461
+    },
+    "primary_reviewed_units": 74,
+    "catalog_linked_occurrences": 71,
+    "distinct_resource_ids": 62,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

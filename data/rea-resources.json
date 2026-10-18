@@ -2055,5 +2055,32 @@
       "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE",
       "https://github.com/morluto/rea/pull/1582"
     ]
+  },
+  {
+    "id": "rea-harmony-guide",
+    "name": "Static HarmonyOS package inventory",
+    "url": "https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Inventories HarmonyOS HAP, HSP and App Pack files through REA’s hardened ZIP reader and projects an execution-free application graph: component paths, IDs and hashes, Stage/FA packaging hints, runtime-family hints and path-based native-bridge hypotheses. Every claim rests on path presence; manifests, Ark bytecode, resources and signatures are not decoded or verified.",
+    "description_zh": "通过 REA 加固的 ZIP 读取器清点 HarmonyOS 的 HAP、HSP 与 App Pack 文件，并投影出无需执行的应用图：组件路径、ID 与哈希、Stage／FA 打包模型提示、运行时类别提示，以及基于路径的原生桥接假设。所有结论仅基于路径存在；清单、Ark 字节码、资源和签名均未被解码或验证。",
+    "evidence_url": "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/harmony-analysis.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. No HarmonyOS SDK, toolchain or engine is needed: inspect-artifact produces the inventory and project-harmony-application-graph (MCP project_harmony_application_graph) projects it, with CLI and MCP sharing one workflow. .hap, .hsp and ZIP-verified root .app inputs are recognized; .har shared libraries are deferred because the suffix also names HTTP Archive JSON.",
+      "Outputs are path-presence claims: Stage is inferred only from module.json and FA only from config.json, App Pack children are listed without recursive inventory, encrypted or unavailable entries make coverage partial, and N-API bridge entries are hypotheses. Manifest semantics, Ark bytecode contents and versions, resource resolution, signing verification and observed native boundaries stay listed as limitations, and inventories that cannot be authenticated fail closed.",
+      "The verification lane downloads a SHA-256-pinned harmony-next-pipeline 1.0.1 HAP from an MIT-licensed source repository into an ignored directory and checks inventory authenticity, projection determinism, Stage path hints, exact component sets, complete coverage and CLI/MCP parity. The fixture’s compiler/SDK versions and reproducible build are not established, the lane does not complete the pinned-toolchain acceptance in roadmap issue #1431, and missing META-INF entries do not establish signing status.",
+      "REA declares MIT. Analysed packages keep their own licenses, and the guide says the fixture’s bundled component licenses were not independently audited; the downloaded artifact is not redistributed. Merged PR #1447 introduced this increment. This collection did not run REA or any package."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/package.json",
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/LICENSE",
+      "https://github.com/morluto/rea/pull/1447"
+    ]
   }
 ]

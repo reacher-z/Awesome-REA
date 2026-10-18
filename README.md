@@ -20,7 +20,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (21)
+- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (22)
 
 **More ways to browse**
 
@@ -1231,6 +1231,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs, not deserialized Dart classes or recovered source.
 
   Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-flutter-guide/)
+
+- [**Static HarmonyOS package inventory**](https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md)
+
+  Inventories HarmonyOS HAP, HSP and App Pack files through REA’s hardened ZIP reader and projects an execution-free application graph: component paths, IDs and hashes, Stage/FA packaging hints, runtime-family hints and path-based native-bridge hypotheses. Every claim rests on path presence; manifests, Ark bytecode, resources and signatures are not decoded or verified.
+
+  Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-harmony-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 

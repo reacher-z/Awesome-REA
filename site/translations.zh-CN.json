@@ -1472,5 +1472,14 @@
       "文档中的验证脚本经编译后的命令行与 stdio MCP 运行两个工具，以 Flutter Gallery 2.9.2 发布版 APK 对照固定的期望文件：三个 ABI 上快照哈希一致，并核对引擎标签与 URI 数量；另用普通 aapt2 构建的 APK 检查不误报。指南报告 Gallery 流程与 147 项 Flutter 专项测试在 macOS 14.8.9 x86-64 与 Windows 11 x64 虚拟机中通过。",
       "在已合并的 PR #1582 中，一位独立审阅者报告：在合并前的分支版本上，三个 F-Droid 应用 PocketDhamma、Flutter McSweepy 与 cone 的哈希、ELF 段和 package 列表与 readelf／strings 检查一致，非 Flutter 对照应用未被识别为 Flutter；讨论串记录了对所发现问题的修复。这些检查针对构建身份与结构，不是应用逻辑重建。REA 声明 MIT，所分析的 APK 保留各自许可；本合集未运行 REA 或任何 APK。"
     ]
+  },
+  "rea-harmony-guide": {
+    "name": "HarmonyOS 应用包静态清点",
+    "requirements": [
+      "审阅时 main 上为 rea-agents 6.7.0，声明支持 Node ^22.19.0、^24.11.0 或 26 及以上。无需 HarmonyOS SDK、工具链或引擎：inspect-artifact 生成清单，project-harmony-application-graph（对应 MCP 的 project_harmony_application_graph）对其投影，命令行与 MCP 共用同一工作流。可识别 .hap、.hsp 及经 ZIP 校验的根级 .app 输入；由于后缀 .har 也用于 HTTP Archive JSON，HarmonyOS 共享库 .har 暂不支持。",
+      "输出均为基于路径存在的结论：仅凭 module.json 判断 Stage 模型、仅凭 config.json 判断 FA 模型；App Pack 的子包只列出路径而不递归清点；加密或不可用的条目会使覆盖率标为部分；N-API 桥接条目仅为假设。清单语义、Ark 字节码内容与版本、资源解析、签名验证以及实际观察到的原生边界均列为局限；无法验证真实性的清单会直接失败。",
+      "验证流程将一个以 SHA-256 固定的 harmony-next-pipeline 1.0.1 HAP（源码仓库采用 MIT 许可）下载到被忽略的目录，检查清单真实性、投影确定性、Stage 路径提示、精确组件集合、完整覆盖以及命令行与 MCP 的一致性。该测试包的编译器／SDK 版本与可复现构建尚未确立，此流程也未完成路线图 issue #1431 中固定工具链的验收；缺少 META-INF 条目不能说明包是否已签名。",
+      "REA 声明 MIT。被分析的应用包保留各自许可；指南说明测试包内捆绑组件的许可未经独立审核，下载的产物也不会再分发。已合并的 PR #1447 引入了这一增量。本合集未运行 REA 或任何应用包。"
+    ]
   }
 }
