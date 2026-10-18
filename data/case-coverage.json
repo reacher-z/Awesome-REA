@@ -12472,13 +12472,28 @@
         "https://github.com/whompay/SaintsReborn",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 89 (README line 901) lists whompay/SaintsReborn under ⚔️ Saints Row. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 89 行（README 第 901 行）在 ⚔️ Saints Row 下列出 whompay/SaintsReborn。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build and how-it-works notes, setup script, recompiler metadata and licence notices support the named ReXGlue static recompilation of Saints Row. Full mapping covers this repository; the attached post only links a third-party archive of games, which was not followed or linked and is not this project's source. The user-supplied disc, single supported XEX and author-reported playability remain explicit.",
+      "reason_zh": "固定版本的 README、构建与原理说明、安装脚本、重编译元数据及许可声明，支持该具名的 Saints Row ReXGlue 静态重编译。完整映射覆盖此仓库；所附帖子只链接第三方游戏存档，本合集未访问或链接该存档，它也不是本项目的来源。使用者自备光盘、仅支持单一 XEX 版本及作者报告的可玩性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/README.md",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/BUILDING.md",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/HOW_IT_WORKS.md",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/scripts/setup.ps1",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/.recomp.json",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/LICENSE",
+        "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/NOTICE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "saints-reborn-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-090",
@@ -14598,18 +14613,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 135,
-      "insufficient-evidence": 111,
-      "pending": 345
-    },
-    "units_by_state": {
-      "already-curated": 134,
+      "already-curated": 136,
       "insufficient-evidence": 111,
       "pending": 344
     },
-    "primary_reviewed_units": 185,
-    "catalog_linked_occurrences": 146,
-    "distinct_resource_ids": 140,
+    "units_by_state": {
+      "already-curated": 135,
+      "insufficient-evidence": 111,
+      "pending": 343
+    },
+    "primary_reviewed_units": 186,
+    "catalog_linked_occurrences": 147,
+    "distinct_resource_ids": 141,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

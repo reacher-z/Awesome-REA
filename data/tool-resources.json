@@ -4965,5 +4965,39 @@
       "https://github.com/pret/pokeplatinum/tree/1dc13dcea40c04ab53f1f607de46023dc409ef20/res",
       "https://github.com/mid-kid/metroskrew/releases/tag/0.1.3"
     ]
+  },
+  {
+    "id": "saints-reborn-recomp-case",
+    "name": "Saints Reborn: a ReXGlue static recompilation of Saints Row",
+    "url": "https://github.com/whompay/SaintsReborn",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "An unofficial native Windows port of Saints Row (Xbox 360, 2006) that statically recompiles the game's PowerPC executable to C++ for x86-64 with the ReXGlue SDK, which also reimplements the console's kernel, GPU (on Direct3D 12), audio and input. A recompiler manifest, game-specific function overrides and an SDK patch make the result run, and each user builds it locally from their own disc. The README reports the game fully playable with built-in co-op and lists known issues.",
+    "description_zh": "Saints Row（Xbox 360，2006）的非官方原生 Windows 移植：借助 ReXGlue SDK 将游戏的 PowerPC 可执行文件静态重编译为面向 x86-64 的 C++ 代码，该 SDK 还重新实现了主机的内核、GPU（基于 Direct3D 12）、音频与输入。重编译清单、游戏专用的函数替换和 SDK 补丁使结果得以运行，每位使用者都用自己的光盘在本地构建。README 报告游戏可完整通关、内置合作模式，并列出已知问题。",
+    "evidence_url": "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a static recompilation, not a decompilation or an emulator: the ReXGlue SDK, pinned at v0.10.0 (commit c94f5eb) and patched by patches/rexglue-sdk.patch, translates every PowerPC function in default.xex to C++. config/saintsrow_manifest.toml adds ABI helpers, 19 functions reached only through vtables and two mid-function hooks, and project/src overrides rendering (predicated tiling), audio, kernel-object and occlusion-query behaviour. README reports the game fully playable from start to finish, with co-op over LAN, direct IP or a join code, an optional 60 FPS mod and a mod loader; known issues include texture flicker in the character creator.",
+      "Supply your own Saints Row (Xbox 360) disc as an .iso, or a game folder containing default.xex and packfiles. Only the disc version the port was made with is supported: setup compares default.xex with one known SHA-1 for the World disc release and warns otherwise, because the hooks use fixed addresses. The repository contains no game code, data, recompiled output or executables, and its legal notice forbids using it to distribute them.",
+      "Windows 10/11 (64-bit) with a Direct3D 12 GPU, about 15 GB of disk space and 16 GB of RAM. Setup downloads a portable clang, CMake, Ninja and Microsoft's C++ headers and libraries (about 1.5 GB) and builds the game locally in 10–60 minutes; the older setup.bat path needs Visual Studio 2022 with its Clang and CMake components, plus Git. README lists Linux (through Proton) as coming soon, although BUILDING.md already describes Setup as working on Windows and Linux.",
+      "Playability and the known-issue list are the author's reports. The only CI workflow builds the setup application; the repository's tests cover co-op, modding and map tools, and no automated comparison of recompiled behaviour against the console is documented. This collection did not build or run the port.",
+      "Project code is Apache-2.0 with a NOTICE that redistributors must keep, crediting Saints Reborn by Whompay. The SDK patch keeps the ReXGlue SDK's BSD-style licence, the SDK derives in part from Xenia, and libraries downloaded at build time keep their own terms. Saints Row remains its owners' property, and the NOTICE covers no file extracted or generated from the game. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/BUILDING.md",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/HOW_IT_WORKS.md",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/scripts/setup.ps1",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/.recomp.json",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/.github/workflows/setup-app.yml",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/CONTRIBUTING.md",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/LICENSE",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/NOTICE",
+      "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/THIRD_PARTY_NOTICES.md"
+    ]
   }
 ]

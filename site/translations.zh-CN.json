@@ -2227,5 +2227,15 @@
       "make 运行 Meson 测试，按 SHA-1 清单校验共享、分修订版及 ARM7 二进制、文件系统和完整 ROM；修改代码时可用 make rom 跳过校验。CI 安装 metroskrew 并对默认修订版运行 make check。哈希一致只确认所列美版镜像的一致性，不覆盖游戏行为路径；本合集未自行构建。",
       "仓库没有顶层许可证文件，GitHub 也未识别出许可证；部分附带工具有各自的许可证，metroskrew 及 ntrtwl 的 SDK 仓库在 GitHub 上均未声明许可证。SDK 库和原游戏内容仍受其权利人约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "saints-reborn-recomp-case": {
+    "name": "Saints Reborn：基于 ReXGlue 的 Saints Row 静态重编译",
+    "requirements": [
+      "README 将其描述为静态重编译，而非反编译或模拟器：固定于 v0.10.0（提交 c94f5eb）并经 patches/rexglue-sdk.patch 修改的 ReXGlue SDK，把 default.xex 中的每个 PowerPC 函数转换为 C++。config/saintsrow_manifest.toml 补充 ABI 辅助例程、19 个只经虚表调用的函数和两处函数内钩子，project/src 则替换了渲染（预测式分块）、音频、内核对象和遮挡查询相关行为。README 报告游戏可从头到尾完整游玩，支持局域网、直连 IP 或加入码的合作模式，附带可选的 60 FPS 模组和模组加载器；已知问题包括角色创建界面的纹理闪烁。",
+      "需自备 Saints Row（Xbox 360）光盘，以 .iso 或包含 default.xex 与 packfiles 的游戏文件夹形式提供。只支持移植所用的光盘版本：安装程序将 default.xex 与全球版光盘的已知 SHA-1 比较，不一致时发出警告，因为钩子使用固定地址。仓库不含游戏代码、数据、重编译产物或可执行文件，其法律声明也禁止借此分发这些内容。",
+      "需要 64 位 Windows 10／11、支持 Direct3D 12 的 GPU、约 15 GB 磁盘空间和 16 GB 内存。安装程序下载便携版 clang、CMake、Ninja 以及 Microsoft 的 C++ 头文件和库（约 1.5 GB），在本地用 10–60 分钟构建游戏；较早的 setup.bat 路径需要带 Clang 与 CMake 组件的 Visual Studio 2022 和 Git。README 称 Linux（通过 Proton）支持即将推出，但 BUILDING.md 已将安装程序描述为可在 Windows 和 Linux 上运行。",
+      "可玩性与已知问题列表均为作者报告。唯一的 CI 工作流构建安装程序；仓库中的测试涵盖合作模式、模组和地图工具，未记录将重编译行为与主机自动比较的测试。本合集未构建或运行该移植。",
+      "项目代码采用 Apache-2.0，再分发者须保留 NOTICE 并署名 Saints Reborn by Whompay。SDK 补丁沿用 ReXGlue SDK 的 BSD 式许可，该 SDK 部分源自 Xenia，构建时下载的库保留各自条款。Saints Row 仍归其所有者，NOTICE 不涵盖从游戏中提取或生成的任何文件。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }
