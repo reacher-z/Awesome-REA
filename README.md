@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 261](https://img.shields.io/badge/resources-261-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 121](https://img.shields.io/badge/cases-121-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 262](https://img.shields.io/badge/resources-262-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 122](https://img.shields.io/badge/cases-122-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (102) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (103) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (121) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (122) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -682,6 +682,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs the Game Boy Color game Pokémon Crystal as RGBDS assembly, with graphics, maps and data stored as editable sources. One tree builds the international 1.0 and 1.1 releases, the Australian release, two debug builds and a Virtual Console patch, each checked against a recorded SHA-1. Companion documentation covers script command formats and known bugs in the original game.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokecrystal-disassembly-case/)
+
+- [**Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly**](https://github.com/pret/pokeheartgold)
+
+  Rebuilds the US Nintendo DS releases of Pokémon HeartGold and SoulSilver from a work-in-progress disassembly in which part of the code has been decompiled to C. Each default build checks the ARM9 and ARM7 binaries, the filesystem and the complete ROM against per-game SHA-1 manifests. README warns that, because decompilation is incomplete, edits that change code or data layout can crash the game.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokemon-heartgold-soulsilver-disassembly-case/)
 
 #### Tools, projects and integrations
 
