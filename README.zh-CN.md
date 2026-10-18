@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 289](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 147](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 56](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 289](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 147](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 57](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (56) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (57) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1846,13 +1846,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**56 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**57 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (11) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (12) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -1985,6 +1985,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 评估语料包含 130 个程序中的 23,400 个函数。基于模糊测试的检查覆盖有限，可理解性评分部分依赖 LLM 评审器。研究产物说明，重新构建的 OSS-Fuzz 项目可能与论文版本不同。
 
   **发表信息:** 2025 · Findings of ACL 2025 · 会议论文 · Zeyu Gao 等
+
+  </details>
+
+- [**TypeForge：为去符号二进制合成并选择最适配的复合数据类型**](https://ieeexplore.ieee.org/document/11023499)
+
+  TypeForge 从去符号二进制中恢复复合数据类型，包括结构体布局、联合体以及指针引用和嵌套关系。它在 Ghidra 反编译器推断出的变量之上构建全程序类型流图，传播成员偏移与大小，切断由类型转换和联合体引起的冲突边，并合成候选类型声明。大语言模型只在这些静态合成的候选中进行选择：每个候选通过反编译器的重定类型接口应用，再以双败淘汰赛比较所得伪代码的可读性。作者在 OSPREY 的 coreutils 数据集上报告复合类型识别 F1 为 81.7%、布局恢复 F1 为 88.2%、关系恢复 F1 为 72.1%。
+
+  2025 · 会议论文 · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [代码](https://github.com/noobone123/TypeForge) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-typeforge/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 恢复的是成员偏移、大小和类型间关系，而非原始类型名或成员名；由于名称不可得，关系是否正确以布局匹配判定。主要评测使用 OSPREY 的数据集，包括 GNU coreutils 与 Howard 数据集中较大的程序，涵盖超过 10,000 个函数和 11,000 个复合类型变量，优化级别为 O0–O3，真实标签取自调试信息；论文未按架构分别报告结果。基线比较中，OSPREY 的结果由其作者提供，运行时间为估算值，ReSym 的数据取自其已发表结果，因此并非所有基线均经重新运行。保守地删除冲突边可能遗漏有效成员；合并或展平成员的编译器优化会降低较高优化级别下的准确率。约 75% 的运行时间用于大语言模型选择阶段；默认模型为 GPT-4o mini，每轮比较执行三次。下游可读性与漏洞检测示例属于案例研究，不能证明语义等价。
+
+  **发表信息:** 2025 · IEEE S&amp;P 2025 · 会议论文 · Yanzhong Wang 等
 
   </details>
 

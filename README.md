@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 289](https://img.shields.io/badge/resources-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 147](https://img.shields.io/badge/cases-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 56](https://img.shields.io/badge/papers-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 289](https://img.shields.io/badge/resources-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 147](https://img.shields.io/badge/cases-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (56) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (57) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1845,13 +1845,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**56 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**57 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (11) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (12) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -1984,6 +1984,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The evaluated corpus has 23,400 functions from 130 programs. Fuzzing-based checks have finite coverage, and understandability scores depend partly on an LLM judge. The artifact warns that rebuilt OSS-Fuzz projects can differ from the paper's versions.
 
   **Publication:** 2025 · Findings of ACL 2025 · Conference paper · Zeyu Gao et al.
+
+  </details>
+
+- [**TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries**](https://ieeexplore.ieee.org/document/11023499)
+
+  TypeForge recovers composite data types, including struct layouts, unions and pointer or nesting relationships, from stripped binaries. A whole-program Type Flow Graph over Ghidra’s decompiler-inferred variables propagates member offsets and sizes, cuts conflicting edges caused by casts and unions, and synthesizes candidate type declarations. An LLM only selects among these statically synthesized candidates: each is applied through the decompiler’s retype interface, and a double-elimination tournament compares the resulting pseudocode for readability. On OSPREY’s coreutils dataset the authors report F1 of 81.7% for composite-type identification, 88.2% for layout recovery and 72.1% for relationship recovery.
+
+  2025 · Conference paper · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [Code](https://github.com/noobone123/TypeForge) · [Full entry & citation](https://awesomerea.org/papers/paper-typeforge/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Recovers member offsets, sizes and relationships, not original type or member names; relationship correctness is judged by matching layouts because names are unavailable. The main evaluation uses OSPREY’s dataset of GNU coreutils and larger Howard-dataset programs, over 10,000 functions and 11,000 composite-typed variables at O0–O3, with ground truth from debug information; the paper does not report results per architecture. In the baseline comparison, OSPREY results were supplied by its authors and its runtime is an estimate, and ReSym figures are its published results, so not every baseline was rerun. Conservative removal of conflicting edges can drop valid members, and compiler optimizations that merge or flatten members lower accuracy at higher levels. About 75% of runtime is the LLM selection stage; the default model was GPT-4o mini, with each comparison run three times. Downstream readability and vulnerability examples are case studies, not proof of semantic equivalence.
+
+  **Publication:** 2025 · IEEE S&amp;P 2025 · Conference paper · Yanzhong Wang et al.
 
   </details>
 
