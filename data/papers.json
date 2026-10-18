@@ -3524,5 +3524,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-decompiling-synergy",
+    "title": "Decompiling the Synergy: An Empirical Study of Human–LLM Teaming in Software Reverse Engineering",
+    "title_zh": "解构协同：软件逆向工程中人类与 LLM 协作的实证研究",
+    "authors": [
+      "Zion Leonahenahe Basque",
+      "Samuele Doria",
+      "Ananta Soneji",
+      "Wil Gibbs",
+      "Adam Doupé",
+      "Yan Shoshitaishvili",
+      "Eleonora Losiouk",
+      "Ruoyu Wang",
+      "Simone Aonzo"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The Internet Society’s Crossref deposit and the official NDSS paper identify publication year 2026. The PDF footer names the 23–27 February 2026 symposium; no finer publication date is asserted from the event dates.",
+    "date_basis_zh": "Internet Society 提交的 Crossref 元数据与 NDSS 官方论文标明出版年份为 2026。PDF 页脚标注研讨会于 2026 年 2 月 23–27 日举行；不根据会议举办日期推定更精确的出版日期。",
+    "venue": "NDSS 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2026.240380",
+    "url": "https://www.ndss-symposium.org/ndss-paper/decompiling-the-synergy-an-empirical-study-of-human-llm-teaming-in-software-reverse-engineering/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf",
+    "code_url": "https://github.com/mahaloz/dec-synergy-study",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Studies how human analysts work with LLM assistance during static software reverse engineering. A survey of 153 practitioners informed six LLM features built into an instrumented IDA Pro plugin. Then 48 participants (24 self-reported novices and 24 experts) analyzed two CTF-style binaries, with the features enabled on one randomly assigned challenge. From graded writeups, interaction logs and surveys, the authors report 18 findings: novice understanding rose by about 98% to expert levels while experts gained little, known-algorithm functions were triaged up to 2.4× faster, and artifact recovery rose by at least 66%, alongside harmful hallucinations.",
+    "description_zh": "研究人类分析人员在静态软件逆向工程中如何借助 LLM 辅助开展工作。作者依据对 153 名从业者的问卷，在带插桩的 IDA Pro 插件中实现六项 LLM 功能；随后 48 名参与者（自报新手与专家各 24 名）分析两个 CTF 风格的二进制程序，其中一道随机指定的题目启用这些功能。基于评分后的解题报告、交互日志和问卷，作者报告 18 项发现：新手的理解程度提升约 98%，达到专家水平，而专家收益甚微；已知算法函数的分诊速度最高提升 2.4 倍，产物恢复量至少增加 66%；同时也出现了有害的幻觉。",
+    "scope_limitations_en": "A human study of LLM-assisted analysis, not an evaluation of autonomous agents or of LLM decompilation accuracy. It uses two unobfuscated C challenges of 26 functions each, static analysis in IDA Pro only (no debuggers or symbolic execution), researcher-written prompts, and a choice of GPT-4o, GPT-4o-Mini, GPT-4-Turbo, Claude-3-5-Sonnet or Gemini-Pro. The 2024–2025 sessions retain 48 of 51 participants; expertise is self-reported, and understanding is a rubric score of writeups graded by two researchers. LLM-created artifacts were not correlated with better understanding, and three LLM users reported a nonexistent buffer overflow that an LLM had suggested; the vulnerability-finding feature was negatively correlated with understanding. Individual observations, writeups and survey responses are not released, even on request; aggregated data is available only on request.",
+    "scope_limitations_zh": "这是一项关于 LLM 辅助分析的人类研究，并非对自主智能体或 LLM 反编译准确率的评测。研究使用两个未经混淆、各含 26 个函数的 C 语言题目，仅允许在 IDA Pro 中进行静态分析（不能使用调试器或符号执行），提示词由研究团队编写，模型可在 GPT-4o、GPT-4o-Mini、GPT-4-Turbo、Claude-3-5-Sonnet 与 Gemini-Pro 中选择。2024–2025 年的实验在 51 名参与者中保留 48 名；专业水平为自报，理解程度是由两名研究人员按评分细则给解题报告打出的分数。LLM 直接生成的产物与理解程度提升无相关性；三名 LLM 用户报告了一个由 LLM 提示、实际并不存在的缓冲区溢出，而“查找漏洞”功能与理解得分呈负相关。个人观察记录、解题报告和问卷回答均不公开，也不接受申请；汇总数据仅可申请获取。",
+    "why_fits_en": "Measures how LLM assistance inside a decompiler changes human reverse-engineering outcomes, complementing agent-only evaluations. The paper points to DAILA, listed in the curated catalog, as the actively maintained version of its study plugin.",
+    "why_fits_zh": "衡量反编译器内的 LLM 辅助如何改变人类逆向工程的结果，与仅评测智能体的研究互补。论文指出，精选目录收录的 DAILA 是其研究插件持续维护的版本。",
+    "metadata_notes": "The nine-author order follows the PDF, the NDSS paper page and Crossref. The PDF spells ‘Adam Doupé’, while Crossref and the paper page give ‘Doupe’; the page also lists Ruoyu “Fish” Wang. The PDF footer gives ISBN 979-8-9919276-8-0 and the DOI; Crossref lists no pages, and no page range was verified. No arXiv version was found. Footnote 1 and the Open Science section link mahaloz/dec-synergy-study. Its reviewed 2026-07-22 snapshot declares BSD-2-Clause and contains both challenges (sources, binaries, IDA databases and a solver) and the study infrastructure: a pwn.college Dojo module and REaLLM, the study version of DAILA. REaLLM requires Python 3.10+, libbs 2.9.1 and dailalib 3.15.6; study functionality needs a separately licensed IDA Pro 9 installation and the user’s own OpenAI, Anthropic or Gemini API keys. The infrastructure README documents a Docker build and a dojo.patch that this snapshot does not contain. The paper reports the known-algorithm speedup as up to 2.4× in the abstract, 238% in the introduction and at least 248% for experts on four functions in Finding 7. Finding 6 calls a p = 0.4 result statistically significant, despite the paper’s α = 0.05. These figures are author-reported. No upstream code was run and no experiments were reproduced.",
+    "metadata_notes_zh": "九位作者的顺序以 PDF、NDSS 论文页和 Crossref 为准。PDF 写作“Adam Doupé”，Crossref 与论文页写作“Doupe”；论文页还将 Ruoyu Wang 列为 Ruoyu “Fish” Wang。PDF 页脚标注 ISBN 979-8-9919276-8-0 及 DOI；Crossref 未列出页码，本条目未核实页码范围。未找到 arXiv 版本。论文脚注 1 与开放科学一节链接 mahaloz/dec-synergy-study。所审阅的 2026-07-22 快照声明采用 BSD-2-Clause，包含两道题目（源码、二进制、IDA 数据库与求解程序）及研究基础设施：一个 pwn.college Dojo 模块，以及 DAILA 的研究版本 REaLLM。REaLLM 需要 Python 3.10+、libbs 2.9.1 与 dailalib 3.15.6；要使用研究中的功能，还需另行获得许可的 IDA Pro 9 安装，以及用户自己的 OpenAI、Anthropic 或 Gemini API 密钥。基础设施 README 说明了 Docker 构建步骤和 dojo.patch，但该快照中没有这些文件。论文对已知算法加速幅度的表述不一：摘要为最高 2.4 倍，引言为 238%，发现 7 则称专家在四个函数上至少快 248%。发现 6 将 p = 0.4 的结果称为统计显著，而论文设定的显著性阈值为 α = 0.05。这些数字均由作者报告。本次未运行上游代码，也未复现实验。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/decompiling-the-synergy-an-empirical-study-of-human-llm-teaming-in-software-reverse-engineering/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf",
+      "https://doi.org/10.14722/ndss.2026.240380",
+      "https://api.crossref.org/works/10.14722/ndss.2026.240380",
+      "https://github.com/mahaloz/dec-synergy-study/blob/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/README.md",
+      "https://github.com/mahaloz/dec-synergy-study/blob/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/LICENSE",
+      "https://github.com/mahaloz/dec-synergy-study/blob/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/infrastructure/README.md",
+      "https://github.com/mahaloz/dec-synergy-study/blob/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/infrastructure/reallm-plugin/setup.cfg",
+      "https://github.com/mahaloz/dec-synergy-study/blob/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/infrastructure/reallm-plugin/reallm/__init__.py",
+      "https://github.com/mahaloz/dec-synergy-study/tree/aef1c5b0f5cb5aed6661a2bd47e2d0b3225e62e2/challenges"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

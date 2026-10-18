@@ -349,6 +349,7 @@ PAPER_STATUSES = {
 AGENT_EVALUATION_PAPERS = {
     'paper-llm-resistant-protection',
     'paper-crackmebench', 'paper-crebench', 'paper-sre-bench', 'paper-humans-machines-sre',
+    'paper-decompiling-synergy',
     'paper-programbench',
 }
 
