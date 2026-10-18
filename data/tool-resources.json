@@ -6919,5 +6919,38 @@
       "https://github.com/ran-j/PS2Recomp/releases/tag/v0.4",
       "https://github.com/ran-j/PS2Recomp/compare/v0.4...eb8688b2fd191129f103a39543002c005b33409c"
     ]
+  },
+  {
+    "id": "corsixth-engine-case",
+    "name": "CorsixTH: an open reimplementation of Theme Hospital",
+    "url": "https://github.com/CorsixTH/CorsixTH",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the engine of Bullfrog’s 1997 Theme Hospital, with game logic in Lua and C++ for graphics, sound, movies and pathfinding, on top of the original game’s data files. The README reports that the full campaign can be completed, lists features that are still missing, and adds extensions such as high resolutions and a map editor. It recreates the game’s behaviour on original content rather than recovering Bullfrog source code.",
+    "description_zh": "重新实现 Bullfrog 1997 年游戏 Theme Hospital 的引擎：游戏逻辑以 Lua 编写，图形、声音、影片和寻路由 C++ 处理，并建立在原游戏数据文件之上。README 报告完整战役已可通关，列出仍缺失的功能，并加入高分辨率和地图编辑器等扩展。它在原内容上重现游戏行为，而不是恢复 Bullfrog 的源码。",
+    "evidence_url": "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master snapshot follows the v0.70.1 release of 2026-08-28. The README lists multiplayer/LAN, AI hospitals, rats and the bonus rat level, vomit waves and the win-level video or letter as missing, and warns that some objects may glitch with walls. Custom campaigns, 4K support, the level editor and improved game logic are deliberate extensions.",
+      "Needs the user’s Theme Hospital data from the original CD, the GOG.com or EA editions, or the Theme Hospital demo, including the resource folder with ANIMS and LEVELS (sometimes named HOSP). The original graphics lack complete sets for some patient types, so enabling their regular spawning may cause anomalies.",
+      "Source builds use CMake 3.16+ with a C++17 compiler, SDL3, SDL3_mixer, Lua (or optionally LuaJIT) and zlib; FFmpeg enables in-game movies, and vcpkg manages dependencies for preset builds. The README lists builds for Windows and macOS, a Linux AppImage, Flatpak and Snap, and distribution packages for Linux and BSD.",
+      "CI runs luacheck and busted Lua unit tests on Linux, plus CMake builds with CTest on Windows. These cover CorsixTH’s own code, not equivalence with the original executable, and this review ran none of them.",
+      "LICENSE.txt grants MIT terms for CorsixTH and includes notices for bundled components such as Lua 5.5, LPeg and LuaFileSystem, so GitHub does not classify it as one licence. Original Theme Hospital data keeps its own rights. AGENTS.md gives instructions for AI coding agents, but the reviewed sources do not attribute the implementation to AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/README.txt",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/CMakeLists.txt",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/CorsixTH/CMakeLists.txt",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/.github/workflows/Linux.yml",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/.github/workflows/Windows.yml",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/AGENTS.md",
+      "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/LICENSE.txt",
+      "https://github.com/CorsixTH/CorsixTH/releases/tag/v0.70.1"
+    ]
   }
 ]
