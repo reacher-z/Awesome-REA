@@ -1453,5 +1453,15 @@
       "协议说明来自作者的 X 帖子串，而非 Anthropic 文档；未公开与真实扩展的抓包或对照结果。package.json 声明了 Node 测试脚本，但所审阅的代码树中没有 tests 目录。本合集未运行插件、云端会话或扩展；这一未公开的本地接口可能随 Claude Code 或扩展更新而改变。",
       "README 声明 MIT，但所审阅代码树中没有 LICENSE 文件，GitHub 也未识别出许可证。Claude Code、Claude in Chrome 扩展及 Browserbase 服务各自保留条款，浏览的页面会在 Browserbase 基础设施上处理。所审阅来源未确立 REA 使用。"
     ]
+  },
+  "eleven-agent-re-workbench": {
+    "name": "Eleven",
+    "requirements": [
+      "审阅版本为 0.1.9（发布日期 2026-10-16），面向 Apple Silicon 上的 macOS 14+、Windows x64 和 Linux x64。文档中的 macOS 与 Windows 安装方式会把远程脚本直接交给命令行执行；macOS 构建未经公证，因此安装脚本会清除下载隔离标记。待分析的应用、二进制或 APK 需由使用者自行提供。",
+      "原生分析通过 REA 调用 Ghidra 12.x 与 Java 21，或改用打开更快的 Rizin；首次运行会下载缺失的引擎或复用本机已有副本，Ghidra 本身不随应用捆绑。分析 Android 安装包需要 jadx，apktool 为可选，用于生成 smali。从源码构建需要 Bun、Node 20+、Ghidra、JDK 和 REA 6.x 检出；发布工作流使用 Zfinix/rea 分叉的 feat/set-code-type 分支构建 REA，而非上游正式版本。",
+      "智能体通过 Agent Client Protocol 接入，README 列出 Claude、Codex、Gemini、Cursor、Copilot 等选项；模型访问、费用和数据处理取决于所选智能体。智能体可获得 Eleven 自身的 MCP 服务，以及 eleven-rea 代理：该代理转发 REA 工具，但把 REA 的命名、注释、书签和代码类型写入改由 Eleven 项目处理。按工具设置的允许／询问／禁止权限和隐私提示只是配置项；本目录未审计哪些内容会发送到智能体服务。",
+      "字节补丁写入副本，智能体补丁以建议形式出现，项目修改会记录作者并可撤销。所审阅提交的 CI 在 Ubuntu 和 macOS 上运行类型检查；依赖 Ghidra 的测试套件是单独的本地脚本。本次核查只阅读源码和文档，未安装应用、运行智能体或分析任何目标。",
+      "Eleven 采用 Apache-2.0；内置的 REA 和 Node.js 保留各自的 MIT 及其他许可，智能体标志仍归各自所有者。该工具不授予分析、修补或再分发第三方软件的权利，其输出属于智能体辅助分析，而非经验证的源码恢复。"
+    ]
   }
 }

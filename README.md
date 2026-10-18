@@ -1000,6 +1000,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-casebook/)
 
+- [**Eleven**](https://github.com/Zfinix/eleven)
+
+  An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines, not a new decompiler or a reconstruction case.
+
+  Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/eleven-agent-re-workbench/)
+
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
   Official Hex-Rays MCP server for agent access to IDA databases, with headless operation and optional GUI integration.

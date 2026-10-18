@@ -3288,13 +3288,29 @@
         "https://x.com/i/status/2110634488938275080",
         "https://x.com/i/status/2110655118282781161"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository documents Eleven as an agent-first reverse-engineering desktop app that bundles REA to drive Ghidra and exposes REA tools to ACP agents through a filtering proxy. The full mapping covers the reported tool as a community integration, not a reconstruction case. Release builds use a REA fork branch, and this review ran no installation, agent session or analysis.",
+      "reason_zh": "固定版本仓库将 Eleven 记录为以智能体为核心的桌面逆向工程应用：内置 REA 以驱动 Ghidra，并通过过滤代理向 ACP 智能体提供 REA 工具。完整映射将所报告工具归为社区集成，而非重建案例。发布构建使用 REA 分叉分支，本次核查未安装应用、运行智能体会话或开展分析。",
+      "primary_evidence_urls": [
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/THIRD_PARTY_NOTICES.md",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/docs/mcp-tools.md",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/src/engine/rea.ts",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/src/bridge/reaProxy.ts",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/script/bundle-macos",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/.github/workflows/release.yml",
+        "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "eleven-agent-re-workbench",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-database-query-optimization-report",
@@ -13189,18 +13205,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 61,
-      "insufficient-evidence": 56,
-      "pending": 474
-    },
-    "units_by_state": {
-      "already-curated": 60,
+      "already-curated": 62,
       "insufficient-evidence": 56,
       "pending": 473
     },
-    "primary_reviewed_units": 62,
-    "catalog_linked_occurrences": 68,
-    "distinct_resource_ids": 59,
+    "units_by_state": {
+      "already-curated": 61,
+      "insufficient-evidence": 56,
+      "pending": 472
+    },
+    "primary_reviewed_units": 63,
+    "catalog_linked_occurrences": 69,
+    "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

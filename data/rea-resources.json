@@ -1989,5 +1989,41 @@
       "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/.github/workflows/ci.yml",
       "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/CHANGELOG.md"
     ]
+  },
+  {
+    "id": "eleven-agent-re-workbench",
+    "name": "Eleven",
+    "url": "https://github.com/Zfinix/eleven",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines, not a new decompiler or a reconstruction case.",
+    "description_zh": "以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。",
+    "evidence_url": "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed version 0.1.9 (release dated 2026-10-16) targets macOS 14+ on Apple Silicon, Windows x64 and Linux x64. The documented macOS and Windows installers pipe a remote script into the shell; macOS builds are not notarized, so the installer clears the download quarantine. Users supply the apps, binaries or APKs they analyze.",
+      "Native analysis uses Ghidra 12.x with Java 21 through REA, or Rizin for faster opening; first-run setup downloads missing engines or reuses local copies, and Ghidra is not bundled. Android packages need jadx, with apktool optional for smali. Building from source needs Bun, Node 20+, Ghidra, a JDK and a REA 6.x checkout; the release workflow builds REA from the Zfinix/rea fork’s feat/set-code-type branch rather than an upstream release.",
+      "Agents connect over the Agent Client Protocol, including the README’s Claude, Codex, Gemini, Cursor and Copilot options; model access, cost and data handling follow the chosen agent. Agents receive Eleven’s own MCP server and an eleven-rea proxy that passes REA tools through but redirects REA’s name, comment, bookmark and code-type writes into Eleven’s project. Per-tool Allow/Ask/Never permissions and privacy prompts are settings; this collection did not audit what reaches an agent’s service.",
+      "Byte patches are written to a copy, agent patches arrive as suggestions, and project changes are logged with their author and can be undone. CI at the reviewed commit runs typechecks on Ubuntu and macOS; the Ghidra-backed test suite is a separate local script. This review read source and documentation without installing the app, running agents or analyzing a target.",
+      "Eleven is Apache-2.0; the bundled REA and Node.js keep their MIT and other licenses, and agent logos remain their owners’ trademarks. The tool grants no rights to analyze, patch or redistribute third-party software, and its outputs are agent-assisted analysis rather than verified source recovery."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/THIRD_PARTY_NOTICES.md",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/LICENSE",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/package.json",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/docs/mcp-tools.md",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/src/engine/rea.ts",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/src/bridge/reaProxy.ts",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/script/bundle-macos",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/app/script/test",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/.github/workflows/release.yml",
+      "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/.github/workflows/ci.yml"
+    ]
   }
 ]

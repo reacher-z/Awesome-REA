@@ -1001,6 +1001,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
 
+- [**Eleven**](https://github.com/Zfinix/eleven)
+
+  以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。
+
+  集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
+
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
   Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。
