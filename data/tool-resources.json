@@ -5818,5 +5818,34 @@
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/AGENTS.md",
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/LICENSE.md"
     ]
+  },
+  {
+    "id": "m2c",
+    "name": "m2c",
+    "url": "https://github.com/matt-kempster/m2c",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Decompiler for matching projects that turns GNU as-format 32-bit MIPS, ARM, PowerPC and SuperH assembly into draft C, with partial C++ support. A target combines platform, compiler (IDO, GCC or MetroWerks CodeWarrior) and language; context files supply types, and it can infer unknown struct fields and emit global initializers. The README places it alongside splat, asm-differ and decomp-permuter, and decomp.me calls it for initial decompilations.",
+    "description_zh": "面向匹配反编译项目的反编译器，将 GNU as 格式的 32 位 MIPS、ARM、PowerPC 和 SuperH 汇编转换为 C 代码初稿，并部分支持 C++。目标由平台、编译器（IDO、GCC 或 MetroWerks CodeWarrior）和语言组成；上下文文件提供类型信息，还能推断未知的结构体字段并生成全局变量初始化代码。README 将它与 splat、asm-differ 和 decomp-permuter 并列使用，decomp.me 也调用它生成初步反编译结果。",
+    "evidence_url": "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.8+ with graphviz. Run m2c.py from a checkout or install it from the Git repository as a Python package; the package named m2c on PyPI is an unrelated project. There are no releases or tags, so this entry pins the reviewed master commit (last commit at review: 2026-09-16).",
+      "Input must match the GNU as assembly format, such as spimdisasm output. The README lists the mips, mipsel, mipsee (eabi64), ppc, arm, gba (APCS) and sh2 platforms, the ido, gcc and mwcc compilers, and the c and c++ languages. Struct-field inference skips structs with bitfields or unnamed union fields, and initializers cannot be generated for bitfield structs or symbols of unknown type.",
+      "GPL-3.0-only. The README warns that output is sometimes suboptimal, especially for loops; it is a starting point to refine and check with a compiler and diff tool, not byte-identical source. No assembly was decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/README.md#L26-L49",
+      "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/README.md#L387-L404",
+      "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/pyproject.toml",
+      "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/LICENSE",
+      "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/m2c_wrapper.py"
+    ]
   }
 ]

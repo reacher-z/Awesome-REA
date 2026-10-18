@@ -35,6 +35,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — The Touhou PC-98 Restoration Project **[875 stars]**
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]**
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — Frida-based libil2cpp.so runtime parsing script **[664 stars]**
+- [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — A decompiler targeting MIPS, PowerPC, ARM, and SuperH. **[658 stars]**
 - [xenia-canary/game-patches](https://github.com/xenia-canary/game-patches) — Game patches for the Xenia emulator **[619 stars]**
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — Decompilation of 東方紅魔郷 ～ the Embodiment of Scarlet Devil (1.02h) **[616 stars]**
 - [encounter/objdiff](https://github.com/encounter/objdiff) — A local diffing tool for decompilation projects **[586 stars]**

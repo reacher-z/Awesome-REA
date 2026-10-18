@@ -35,6 +35,7 @@
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — 使用 C 编写的 Game Boy Advance 游戏《索尼克进化 1 与 2》的反编译和移植项目。 **[678 星标]**
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — 基于 Frida 的 libil2cpp.so 运行时解析脚本。 **[664 星标]**
+- [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — 面向 MIPS、PowerPC、ARM 和 SuperH 的反编译器。 **[658 星标]**
 - [xenia-canary/game-patches](https://github.com/xenia-canary/game-patches) — 适用于 Xenia 模拟器的游戏补丁。 **[619 星标]**
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — 《东方红魔乡 ～ the Embodiment of Scarlet Devil》（1.02h）的反编译代码。 **[616 星标]**
 - [encounter/objdiff](https://github.com/encounter/objdiff) — 面向反编译项目的本地差异比较工具。 **[586 星标]**

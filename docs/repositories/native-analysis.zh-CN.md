@@ -120,7 +120,6 @@
 - [Accenture/VulFi](https://github.com/Accenture/VulFi) — 用于在二进制文件中进行查询式搜索的 IDA Pro 插件，主要服务于漏洞研究。 **[673 星标]**
 - [tmr232/Sark](https://github.com/tmr232/Sark) — 让 IDAPython 变得简单。 **[672 星标]**
 - [mohitmishra786/reversingBits](https://github.com/mohitmishra786/reversingBits) — 涵盖逆向工程、二进制分析和汇编编程工具的全面速查表合集，为安全研究人员、逆向工程师和底层程序员提供一站式参考。 **[662 星标]**
-- [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — 面向 MIPS、PowerPC、ARM 和 SuperH 的反编译器。 **[658 星标]**
 - [dmendel/bindata](https://github.com/dmendel/bindata) — BinData：在 Ruby 中读写二进制数据。 **[653 星标]**
 - [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — Kam1n0 汇编分析平台。 **[627 星标]**
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — 在 Ghidra 中使用 angr。 **[623 星标]**

@@ -120,7 +120,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Accenture/VulFi](https://github.com/Accenture/VulFi) — IDA Pro plugin for query based searching within the binary useful mainly for vulnerability research. **[673 stars]**
 - [tmr232/Sark](https://github.com/tmr232/Sark) — IDAPython Made Easy **[672 stars]**
 - [mohitmishra786/reversingBits](https://github.com/mohitmishra786/reversingBits) — A comprehensive collection of cheatsheets for reverse engineering, binary analysis, and assembly programming tools. This repository serves as a one-stop reference for security researchers, reverse engineers, and low-level programmers. **[662 stars]**
-- [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — A decompiler targeting MIPS, PowerPC, ARM, and SuperH. **[658 stars]**
 - [dmendel/bindata](https://github.com/dmendel/bindata) — BinData - Reading and Writing Binary Data in Ruby **[653 stars]**
 - [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — The Kam1n0 Assembly Analysis Platform **[627 stars]**
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — Use angr in Ghidra **[623 stars]**
