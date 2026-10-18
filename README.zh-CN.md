@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 225](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-225-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 86](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-86-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 226](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-226-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 87](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (17) · [游戏](#game) (69) · [应用](#app) (44)
+- [网站](#website) (17) · [游戏](#game) (70) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (86) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (87) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -479,6 +479,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。目前只有基于 OpenGL、SDL2 和 FluidSynth 的 PC 构建可用；它读取用户自备游戏光盘中的素材文件，仅能部分游玩。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)
+
+- [**Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植**](https://github.com/Odrannnn/MetroidPrimePort)
+
+  将 PrimeDecomp 对《密特罗德 Prime》游戏与引擎代码的反编译结果编译为原生 C++20 程序，支持 Linux、Windows 和 Android，另有实验性 macOS 版本。Aurora 提供 GameCube SDK 兼容层和渲染，移植版在运行时读取使用者自备的光盘镜像。作者声明部分代码是在其监督下借助 AI 编程助手编写的。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/metroid-prime-port-case/)
 
 #### 工具、项目与集成
 
