@@ -10206,13 +10206,30 @@
       "reported_source_urls": [
         "https://github.com/YesterMester/TheSimpsonsGameRecomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 45 (README line 421) lists YesterMester/TheSimpsonsGameRecomp under 🧭 The Simpsons Game (2007). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 45 行（README 第 421 行）在 🧭 The Simpsons Game (2007) 下列出 YesterMester/TheSimpsonsGameRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, recompiler manifest, build files, renderer notes, contributing guide and CI workflows support this Xbox 360 static-recompilation report. Full mapping covers this port. The user-supplied ISO, committed recompiler output, author-reported playability and known issues, and the disclosed occasional ChatGPT and Claude assistance stay explicit; source review does not mean runtime reproduction.",
+      "reason_zh": "固定版本的 README、重编译清单、构建文件、渲染器说明、贡献指南和 CI 工作流，支持这份 Xbox 360 静态重编译报告。完整映射覆盖此移植。须由用户自备的 ISO、仓库提交的重编译输出、作者报告的可玩性与已知问题，以及其披露的少量 ChatGPT 和 Claude 辅助均明确保留；来源核查不表示运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/README.md",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/simpsons_manifest.toml",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/CMakeLists.txt",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/re/native_renderer_plan.md",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/CONTRIBUTING.md",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/.github/workflows/build.yml",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/.github/workflows/release.yml",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/LICENSE",
+        "https://github.com/YesterMester/TheSimpsonsGameRecomp/releases/tag/v0.0.6.5"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "simpsons-game-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-046",
@@ -13274,18 +13291,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 64,
-      "insufficient-evidence": 66,
-      "pending": 461
-    },
-    "units_by_state": {
-      "already-curated": 63,
+      "already-curated": 65,
       "insufficient-evidence": 66,
       "pending": 460
     },
-    "primary_reviewed_units": 75,
-    "catalog_linked_occurrences": 71,
-    "distinct_resource_ids": 62,
+    "units_by_state": {
+      "already-curated": 64,
+      "insufficient-evidence": 66,
+      "pending": 459
+    },
+    "primary_reviewed_units": 76,
+    "catalog_linked_occurrences": 72,
+    "distinct_resource_ids": 63,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

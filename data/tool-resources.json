@@ -2681,5 +2681,38 @@
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
     ]
+  },
+  {
+    "id": "simpsons-game-recompiled-case",
+    "name": "The Simpsons Game Recompiled: an Xbox 360 static-recompilation port",
+    "url": "https://github.com/YesterMester/TheSimpsonsGameRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the PowerPC code of The Simpsons Game (Xbox 360, 2007) into C++ for native x86-64 builds on Linux, Steam Deck and Windows. The ReXGlue runtime, derived from Xenia, supplies the console kernel, audio, input and graphics layers, while the GPU emulation is being replaced with native rendering step by step. Game data comes only from the player's own ISO.",
+    "description_zh": "将《The Simpsons Game》（Xbox 360，2007）的 PowerPC 代码静态重编译为 C++，生成 Linux、Steam Deck 和 Windows 上的原生 x86-64 构建。源自 Xenia 的 ReXGlue 运行时提供主机内核、音频、输入和图形层，GPU 模拟正逐步替换为原生渲染。游戏数据只来自玩家自己的 ISO。",
+    "evidence_url": "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports Linux and Steam Deck as playable, with the Deck as the main test platform, Windows as playable but less tested, and Android as planned; the game boots, plays its videos, saves, loads and runs its levels. Known issues include scripted sequences that can misbehave above 30 FPS, black videos on some Windows setups, and experimental Direct3D 11 and tessellation paths. The latest release at review was v0.0.6.5.",
+      "Players need their own Xbox 360 ISO: the USA release (title ID 45410809) is the main target, and the European release boots but is less tested; the launcher installs about 5 GB of game data from it. The repository and releases contain no game assets, but the recompiler's C++ output from the game's executable code is committed under simpsons/generated, which README says holds none of the game's data.",
+      "Running needs an x86-64 CPU with AVX2, or the slower NoAVX2 package for SSE4.2 CPUs, and a current Vulkan (Linux) or Direct3D 12 (Windows) driver; the experimental Direct3D 11 renderer needs feature level 11.0. Source builds use Clang 20, CMake 3.25+, Ninja and the listed Linux development packages, or LLVM/Clang 20 with Visual Studio Build Tools on Windows. The manifest records ReXGlue 0.8.0 generating the C++ from the game's default.xex; README lists the bundled XenonRecomp as the PowerPC-to-C++ recompiler and an extract-xiso tool for the installer.",
+      "The Build check recorded for the reviewed commit passed on Linux and Windows, and README says every release is built by the public release workflow. Scene checks and Steam Deck frame rates are author-reported, and README says the whole campaign still needs testing at 60 FPS and above. This collection did not download releases or rerun anything.",
+      "Project code is GPLv3; the ReXGlue SDK and the Xenia code it derives from are BSD 3-Clause, XenonRecomp is MIT, and third-party libraries and the original game keep their own terms. README's note on AI assistance says the author has used ChatGPT and Claude a handful of times for research, bug fixes and improvements. No REA use is established, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/simpsons_manifest.toml",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/CMakeLists.txt",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/simpsons/re/native_renderer_plan.md",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/CONTRIBUTING.md",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/.github/workflows/build.yml",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/.github/workflows/release.yml",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/blob/4ff637bc47900c86f003a48ec3f5ab6cbefc55c6/LICENSE",
+      "https://github.com/YesterMester/TheSimpsonsGameRecomp/releases/tag/v0.0.6.5"
+    ]
   }
 ]

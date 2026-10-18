@@ -1481,5 +1481,15 @@
       "验证流程将一个以 SHA-256 固定的 harmony-next-pipeline 1.0.1 HAP（源码仓库采用 MIT 许可）下载到被忽略的目录，检查清单真实性、投影确定性、Stage 路径提示、精确组件集合、完整覆盖以及命令行与 MCP 的一致性。该测试包的编译器／SDK 版本与可复现构建尚未确立，此流程也未完成路线图 issue #1431 中固定工具链的验收；缺少 META-INF 条目不能说明包是否已签名。",
       "REA 声明 MIT。被分析的应用包保留各自许可；指南说明测试包内捆绑组件的许可未经独立审核，下载的产物也不会再分发。已合并的 PR #1447 引入了这一增量。本合集未运行 REA 或任何应用包。"
     ]
+  },
+  "simpsons-game-recompiled-case": {
+    "name": "The Simpsons Game Recompiled：Xbox 360 静态重编译移植",
+    "requirements": [
+      "README 报告 Linux 和 Steam Deck 版可玩，Steam Deck 是主要测试平台；Windows 版可玩但测试较少；Android 版仍在计划中。游戏可以启动、播放影片、存档读档并运行各关卡。已知问题包括：帧率高于 30 FPS 时部分脚本演出可能出错、部分 Windows 环境下影片黑屏，以及 Direct3D 11 和曲面细分路径仍属实验性。核查时的最新发布为 v0.0.6.5。",
+      "玩家需自备 Xbox 360 版 ISO：主要目标为美版（标题 ID 45410809），欧版可以启动并游玩但测试较少；启动器会从 ISO 安装约 5 GB 游戏数据。仓库和发布包不含游戏素材，但仓库在 simpsons/generated 下提交了由游戏可执行代码重编译而成的 C++ 输出，README 称其中不含游戏数据。",
+      "运行需要支持 AVX2 的 x86-64 CPU（仅支持 SSE4.2 的 CPU 可用较慢的 NoAVX2 包），以及较新的 Vulkan（Linux）或 Direct3D 12（Windows）驱动；实验性的 Direct3D 11 渲染器需要 11.0 或更高功能级别。源码构建在 Linux 上使用 Clang 20、CMake 3.25+、Ninja 和列明的开发包，在 Windows 上使用 LLVM/Clang 20 与 Visual Studio Build Tools。清单文件记录由 ReXGlue 0.8.0 从游戏的 default.xex 生成 C++；README 将随附的 XenonRecomp 列为 PowerPC 到 C++ 的重编译器，并为安装程序提供 extract-xiso 工具。",
+      "所审提交记录的 Build check 在 Linux 和 Windows 上均通过，README 称每个发布都由公开的发布工作流构建。场景检查和 Steam Deck 帧率均为作者报告，README 也指出整个流程仍需在 60 FPS 及以上测试。本合集未下载发布包，也未重跑任何内容。",
+      "项目自身代码采用 GPLv3；ReXGlue SDK 及其所源自的 Xenia 代码采用 BSD 3-Clause，XenonRecomp 采用 MIT，第三方库和原版游戏另有条款。README 关于 AI 辅助的说明称，作者曾少量使用 ChatGPT 和 Claude 协助研究、修复错误和改进功能。未确立 REA 使用，也不主张运行复现。"
+    ]
   }
 }
