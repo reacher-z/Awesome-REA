@@ -10999,13 +10999,34 @@
       "reported_source_urls": [
         "https://github.com/OpenRAC/rac1-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 43 (README line 395) lists OpenRAC/rac1-decomp under 🧭 Ratchet & Clank. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 43 行（README 第 395 行）在 🧭 Ratchet & Clank 下列出 OpenRAC/rac1-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, legal scope, build-fidelity rules, build and image-check scripts and the agent-workflow documents support this matching-decompilation report for the PAL v2.00 PS2 executable. Full mapping covers rac1-decomp only, not the credited Lombyte or ReRAC projects. The user-supplied executable, assembly fallback for unmatched functions, documented LLM-agent workflow and project-reported progress stay explicit; source review does not mean runtime reproduction.",
+      "reason_zh": "固定版本的 README、法律范围说明、构建保真规则、构建与映像检查脚本以及代理流程文档，支持这份针对 PS2 欧版 v2.00 可执行文件的一致性反编译报告。完整映射仅覆盖 rac1-decomp，不涵盖致谢中的 Lombyte 或 ReRAC 项目。须由用户自备的可执行文件、尚未匹配函数所用的汇编替代、成文的 LLM 代理流程以及项目报告的进度均明确保留；来源核查不表示运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/README.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LEGAL.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/CONTRIBUTING.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/BUILD_FIDELITY.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/tools/build_sn.sh",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/tools/check_image.py",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/AGENT_WORKFLOW.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/CONTAINERS.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/.claude/agents/match-worker.md",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/.recomp.json",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LICENSE",
+        "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/THIRD_PARTY_NOTICES.md",
+        "https://bytematch.dev/OpenRAC/rac1-decomp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rac1-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-044",
@@ -14247,18 +14268,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 116,
-      "insufficient-evidence": 86,
-      "pending": 389
-    },
-    "units_by_state": {
-      "already-curated": 115,
+      "already-curated": 117,
       "insufficient-evidence": 86,
       "pending": 388
     },
-    "primary_reviewed_units": 143,
-    "catalog_linked_occurrences": 127,
-    "distinct_resource_ids": 121,
+    "units_by_state": {
+      "already-curated": 116,
+      "insufficient-evidence": 86,
+      "pending": 387
+    },
+    "primary_reviewed_units": 144,
+    "catalog_linked_occurrences": 128,
+    "distinct_resource_ids": 122,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

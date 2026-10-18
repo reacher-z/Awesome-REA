@@ -2038,5 +2038,15 @@
       "dm/verify 记录了对每个改写位置的结构检查和基于 Unicorn 的等价测试（只需使用者自有文件）以及单元测试。存档、逐 tick 状态和截图关卡与修补版 Ryujinx 录制的基准数据比对；这些录制及驱动脚本不随仓库提供，因此无法仅凭仓库重跑这些关卡。README 报告 44 台设备的封闭测试及注明日期的 iPhone 17 Pro Max 实测；本合集未运行上述任何检查。",
       "项目声明采用 MIT；内置第三方代码保留各自许可（Ryujinx 转译器为 MIT，源自 deko3d 的代码为 zlib，FLIP 为 BSD 3-Clause）。七条离线运行改写取自作者与许可均不明的社区补丁。Blizzard 与 Nintendo 对游戏的权利不受影响；所审来源未确立 AI 或 REA 使用归因。"
     ]
+  },
+  "rac1-matching-decomp-case": {
+    "name": "Ratchet & Clank：记录了代理流程的 PS2 一致性反编译",
+    "requirements": [
+      "README 将其描述为 OpenRAC 计划中针对 SCES_509.16（欧版 v2.00）的进行中一致性反编译；已匹配的代码会进一步重构为可读的 C++，并以一致构建作为回归测试。BUILD_FIDELITY.md 记录截至 2026-10-07 已匹配 3,591 个函数，实时进度发布在 openrac.dev 和 bytematch.dev 上。仓库简介把原生 PC 重新实现列为后续目标；本仓库不包含任何移植。",
+      "仓库不含游戏素材、零售版可执行文件或反汇编。使用者需从自有光盘镜像提供 SCES_509.16，并按 README 和 LEGAL.md 中的 SHA-1 校验，tools/setup_asm.sh 会在本地生成反汇编。LEGAL.md 指出，未自行拥有并转储游戏副本的人无法用本仓库构建出可运行的游戏。致谢中的同类项目（如 Lombyte 美版反编译和 ReRAC PC 移植）只是参考，不在本记录范围内。",
+      "Linux 和 macOS 构建在 Docker 或 Podman 下的预构建 Wine 容器中运行；Windows 构建使用 Git Bash 和 Python 3.10+ 原生进行，仓库路径须保持简短。两种方式都需克隆 SN Systems ProDG for PS2 3.01 和 SCE PS2 SDK 2.4 的社区镜像。游戏代码使用 ProDG GCC 2.95.3 编译，Sony SDK 目标文件使用 EE-GCC 2.9-ee-991111；汇编使用 GNU as，并配合列明的工具模拟原 ps2eeas 汇编器和链接器的行为。",
+      "tools/build_sn.sh 会从头重建，对照零售版审核每个已反编译函数的字节与地址，并比较所有加载段，仅允许已知未完全匹配的 C 函数内部存在差异；关卡代码按函数逐一检查。因此映像只在进行中的函数之外与零售版一致，并非整体一致。CI 会强制执行构建保真清单，本合集未重跑任何检查。",
+      "AGENT_WORKFLOW.md 描述由一个主导模型调度多层工作模型，候选结果由严格的匹配工具判定接受与否；仓库提交了一个 Claude Code 工作代理定义，并提供向代理提供反编译结果的 Ghidra MCP 容器。所审来源未确立 REA 使用。项目代码采用 GPLv3；重建的库和第三方组件保留各自许可证，游戏和工具链另有权利约束。CONTRIBUTING 禁止使用 Sony SDK 源码和泄露材料，LEGAL.md 记录源自 SDK 示例的影片代码已于 2026-09-30 退回汇编。不主张运行复现。"
+    ]
   }
 }

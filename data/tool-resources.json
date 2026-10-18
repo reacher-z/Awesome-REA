@@ -4326,5 +4326,42 @@
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DEPENDENCIES.md",
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/LICENSE"
     ]
+  },
+  {
+    "id": "rac1-matching-decomp-case",
+    "name": "Ratchet & Clank: a matching PS2 decompilation with a documented agent workflow",
+    "url": "https://github.com/OpenRAC/rac1-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C source for SCES_509.16, the PAL v2.00 PlayStation 2 executable of Ratchet & Clank (2002), with every function linked at its retail address. Functions not yet decompiled are still built from disassembly generated from the user's own executable, and the build audits functions, layout and the whole image against retail. The project documents an LLM-agent matching workflow and written build-fidelity rules for what counts as a match.",
+    "description_zh": "为 2002 年《Ratchet & Clank》PlayStation 2 欧版 v2.00 可执行文件 SCES_509.16 重建 C 源码，每个函数都链接在零售版的原地址。尚未反编译的函数仍由从使用者自备可执行文件生成的反汇编构建，构建会对照零售版审核函数、布局和整个映像。项目记录了由 LLM 代理执行匹配的流程，并以成文的构建保真规则界定何为匹配。",
+    "evidence_url": "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress matching decompilation of SCES_509.16 (PAL v2.00) within the OpenRAC initiative; matched code is then refactored toward readable C++, with matching builds as regression tests. BUILD_FIDELITY.md records 3,591 matched functions as of 2026-10-07, and live progress is published on openrac.dev and bytematch.dev. The repository description names native PC reimplementation as a later goal; no port is part of this repository.",
+      "No game assets, retail executables or disassembly are included. Users supply SCES_509.16 from their own disc image, checked against the SHA-1 in README and LEGAL.md, and tools/setup_asm.sh generates the disassembly locally. LEGAL.md says the repository will not build a runnable game for anyone who does not own and dump a copy. Credited sibling projects, such as the Lombyte NTSC decompilation and the ReRAC PC port, are references and are not covered by this record.",
+      "Linux and macOS builds run in a prebuilt Wine container under Docker or Podman; Windows builds use Git Bash and Python 3.10+ natively, with a short repository path. Both clone community mirrors of SN Systems ProDG for PS2 3.01 and the SCE PS2 SDK 2.4. Game code compiles with ProDG GCC 2.95.3 and Sony SDK objects with EE-GCC 2.9-ee-991111; GNU as is used together with listed tools that model the original ps2eeas assembler and linker behaviour.",
+      "tools/build_sn.sh rebuilds from scratch, audits each decompiled function's bytes and address against retail, and compares every loaded section, allowing differences only inside known near-miss C functions; level code is checked per function. The image therefore matches retail outside in-progress functions rather than as a whole. CI enforces the build-fidelity list, and this collection did not rerun any check.",
+      "AGENT_WORKFLOW.md describes a lead model directing tiers of worker models whose candidates a strict match tool accepts or rejects; a Claude Code worker definition is committed, and a Ghidra MCP container serves decompilation to agents. The reviewed sources establish no REA use. Project code is GPLv3; reconstructed libraries and third-party components keep their own licenses, and the game and toolchains keep separate rights. CONTRIBUTING bans Sony SDK source and leaked material, and LEGAL.md reports that movie code derived from an SDK sample was reverted to assembly on 2026-09-30. No runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LEGAL.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/CONTRIBUTING.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/BUILD_FIDELITY.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/tools/build_sn.sh",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/tools/check_image.py",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/AGENT_WORKFLOW.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/docs/CONTAINERS.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/.claude/agents/match-worker.md",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/.recomp.json",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LICENSE",
+      "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/THIRD_PARTY_NOTICES.md",
+      "https://bytematch.dev/OpenRAC/rac1-decomp"
+    ]
   }
 ]
