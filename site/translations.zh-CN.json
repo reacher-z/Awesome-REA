@@ -2756,5 +2756,15 @@
       "Perfect Dark 将 github.com/Emill/ido-static-recomp 固定在 421e546（per-function 分支，2021-11-03），作为其 tools/recomp 子模块。GitHub 将该提交与本条目的固定提交比较，结果为已分叉：领先 87 个提交、落后 2 个；Emill 也是 decompals 仓库的贡献者之一。两个仓库都未被标记为派生仓库，Perfect Dark 条目保留其自身的固定版本。Majora's Mask 等其他匹配式反编译项目则从 decompals 下载构建产物。",
       "仓库在 ido/5.3 与 ido/7.1 下附带原始 IRIX 编译器二进制文件。只有 ido/5.3 带有 SGI 自由软件声明；在所审阅的提交中，没有任何许可文件覆盖重编译器本身或 IDO 7.1 二进制文件，GitHub 也未检测到仓库许可证，随附的 rabbitizer 保留其 MIT 许可。本条目不认定任何许可，也未构建或运行任何工具链。"
     ]
+  },
+  "th08-web-wasm-port-case": {
+    "name": "TH08 Web：基于重建源码的 WebAssembly 移植",
+    "requirements": [
+      "README 报告游戏可在桌面浏览器中从标题画面玩到结局，推荐使用最新版 Chrome；Firefox 会自动使用专门的免回读构建，Safari 和移动浏览器尚未验证。页面需要 WebAssembly 线程、SharedArrayBuffer、WebGL 2、Web Audio 及跨源隔离的 HTTPS 环境。列出的后续工作包括 Firefox 硬件性能分析、回放耐久测试和内存上限测量。",
+      "需从自己合法取得的 TH08 安装中选择 th08.dat 和 thbgm.dat。启动器把 th08.dat 复制到会话内存，并按范围读取 thbgm.dat；README 说明两者都不会被上传、打包或持久保存。仓库、部署站点和 v0.1.0 发布均不含零售数据或可执行文件，来源检查脚本会拒绝禁止的内容及九文件白名单之外的任何产物。",
+      "本地构建需要 Docker、Python 3 和桌面浏览器：scripts/build-web-game.sh 使用以摘要固定的 Emscripten 6.0.8 镜像，scripts/serve-web.py 提供普通静态服务器缺少的 COOP、COEP 和 CORP 响应头。公开站点由 main 分支部署到 Cloudflare Pages，自行托管发布包也需要相同的隔离响应头。",
+      "WEB_ARCHITECTURE.md 记录了作者使用自选零售文件完成的检查：在 Chromium 及较早的 Firefox 桥接方案上完整通关 Lunatic Final-B 路线、一次 Stage 6B 练习、证明 IndexedDB 中不含 DAT 的持久化测试，以及在 SwiftShader 与 llvmpipe 软件渲染器下接近 60 Hz 的回放驱动帧节奏采样。这些是有限范围的正确性观察，不是硬件基准或二进制比较；本合集未运行任何检查。",
+      "MIT 许可覆盖仓库代码与文档，不涵盖原游戏、DAT 文件、音乐或图像；固定版本的 Detours 子模块另有条款。README 称此仓库是 N0zoM1z0/th08 面向网页的分支，并保留其历史。所审网页移植来源未确立 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

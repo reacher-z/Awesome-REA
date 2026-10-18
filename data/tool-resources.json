@@ -6599,5 +6599,40 @@
       "https://github.com/n64decomp/perfect_dark/blob/169ed48bdcbfb3b568b028bd5bebb27680073514/.gitmodules",
       "https://github.com/decompals/ido-static-recomp/compare/421e546956ceae984927e609b083195e9e81659e...d5aec59932034b8a20f23f471297a55c45dcbc45"
     ]
+  },
+  {
+    "id": "th08-web-wasm-port-case",
+    "name": "TH08 Web: a WebAssembly port built from reconstructed source",
+    "url": "https://github.com/N0zoM1z0/th08-web",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles the reconstructed C++ source of the Japanese Touhou 8 1.00d release to WebAssembly with Emscripten, adding WebGL 2 rendering, Web Audio, browser input and IndexedDB saves behind the game’s D3D8-, DirectSound- and DirectInput-shaped interfaces. Players select their own retail DAT files locally. The web build makes no binary-exact claim and is a separate port from the curated TH08 reconstruction.",
+    "description_zh": "使用 Emscripten 将日版 Touhou 8 1.00d 的重建 C++ 源码编译为 WebAssembly，并在游戏原有的 D3D8、DirectSound 与 DirectInput 形态接口之后接入 WebGL 2 渲染、Web Audio、浏览器输入和 IndexedDB 存档。玩家在本地选择自备的正版 DAT 文件。网页构建不主张与原二进制逐字节一致，是独立于已收录 TH08 重建的移植。",
+    "evidence_url": "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports the game playable from title to ending in desktop browsers and recommends current Chrome; Firefox automatically uses a dedicated no-readback build, while Safari and mobile browsers are not verified. The page needs WebAssembly threads, SharedArrayBuffer, WebGL 2, Web Audio and cross-origin-isolated HTTPS. Listed remaining work includes Firefox hardware profiling, replay endurance and memory-ceiling measurement.",
+      "Select th08.dat and thbgm.dat from your own legally obtained TH08 installation. The launcher copies th08.dat into session memory and range-reads thbgm.dat; README says neither is uploaded, bundled or persisted. The repository, deployment and release v0.1.0 contain no retail data or executable, and a provenance script rejects forbidden payloads and any artifact outside the nine-file allowlist.",
+      "Local builds need Docker, Python 3 and a desktop browser: scripts/build-web-game.sh uses a digest-pinned Emscripten 6.0.8 image, and scripts/serve-web.py supplies the COOP, COEP and CORP headers a generic static server lacks. The public site is a Cloudflare Pages deployment from main, and self-hosting the release archive needs the same isolation headers.",
+      "WEB_ARCHITECTURE.md records author-run checks with user-selected retail files: a complete Lunatic Final-B route in Chromium and on an earlier Firefox bridge, a Stage 6B practice run, persistence tests showing no DAT in IndexedDB, and replay-driven pacing samples near 60 Hz under the SwiftShader and llvmpipe software renderers. These are bounded correctness observations, not hardware benchmarks or binary comparisons; this collection ran nothing.",
+      "MIT covers repository code and documentation, not the original game, DAT files, music or graphics; the pinned Detours submodule keeps its own terms. README describes this repository as the web-focused fork of N0zoM1z0/th08 with its history retained. The reviewed web-port sources establish no REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/docs/WEB_ARCHITECTURE.md",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/docs/WEB_PORTING.md",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/scripts/build-web-game.sh",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/scripts/check-web-provenance.py",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.github/workflows/deploy-web.yml",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.github/workflows/ci.yml",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.gitmodules",
+      "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/LICENSE",
+      "https://github.com/N0zoM1z0/th08-web/releases/tag/v0.1.0",
+      "https://th08-web.pages.dev/"
+    ]
   }
 ]

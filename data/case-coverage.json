@@ -14156,20 +14156,32 @@
         "https://th08-web.pages.dev/",
         "https://github.com/N0zoM1z0/th08"
       ],
-      "state": "pending",
-      "review_level": "catalog-mapped",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.",
-      "reason_zh": "TH08 重建已收录，但此独立 WebAssembly 配套仓库不能作为同一制品视为已覆盖；其自身实现与部署说法仍待核查。",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, web-porting and architecture documents, build, provenance and deployment scripts, license and the v0.1.0 release support this repository as a separate WebAssembly port built from the TH08 reconstruction source. Full mapping covers the browser port and its author-run checks, not binary identity, hardware performance or independently reproduced play; the curated TH08 reconstruction stays linked as related. Local retail-data requirements and browser limits remain explicit.",
+      "reason_zh": "固定版本的 README、网页移植与架构文档、构建、来源检查和部署脚本、许可证及 v0.1.0 发布，支持此仓库作为基于 TH08 重建源码的独立 WebAssembly 移植。完整映射覆盖该浏览器移植及作者自行完成的检查，不涵盖二进制一致性、硬件性能或独立复现的游戏过程；已收录的 TH08 重建仍作为相关条目关联。本地零售数据要求与浏览器限制均明确保留。",
       "primary_evidence_urls": [
-        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
-        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
-        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
-        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/LICENSE",
-        "https://github.com/N0zoM1z0/th08/issues/10",
-        "https://github.com/N0zoM1z0/th08/pull/13"
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/README.md",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/docs/WEB_ARCHITECTURE.md",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/docs/WEB_PORTING.md",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/scripts/build-web-game.sh",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/scripts/check-web-provenance.py",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.github/workflows/deploy-web.yml",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.github/workflows/ci.yml",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/.gitmodules",
+        "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/LICENSE",
+        "https://github.com/N0zoM1z0/th08-web/releases/tag/v0.1.0",
+        "https://th08-web.pages.dev/",
+        "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md"
       ],
       "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th08-web-wasm-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
         {
           "catalog": "resource",
           "id": "th08-reconstruction-case",
@@ -15326,18 +15338,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 176,
-      "insufficient-evidence": 145,
-      "pending": 270
-    },
-    "units_by_state": {
-      "already-curated": 175,
+      "already-curated": 177,
       "insufficient-evidence": 145,
       "pending": 269
     },
-    "primary_reviewed_units": 260,
+    "units_by_state": {
+      "already-curated": 176,
+      "insufficient-evidence": 145,
+      "pending": 268
+    },
+    "primary_reviewed_units": 261,
     "catalog_linked_occurrences": 187,
-    "distinct_resource_ids": 181,
+    "distinct_resource_ids": 182,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
