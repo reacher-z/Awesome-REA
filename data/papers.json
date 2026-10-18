@@ -3910,5 +3910,60 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-deguard",
+    "title": "Statistical Deobfuscation of Android Applications",
+    "title_zh": "Android 应用的统计式反混淆",
+    "authors": [
+      "Benjamin Bichsel",
+      "Veselin Raychev",
+      "Petar Tsankov",
+      "Martin Vechev"
+    ],
+    "year": 2016,
+    "publication_date": "2016-10-24",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives print and online publication on 2016-10-24. That is also the first day of the October 24–28 conference; the date comes from the publisher record, not from the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2016-10-24。该日期恰为 10 月 24—28 日会议的首日；本条目依据出版方记录，而非根据会议日程推定。",
+    "venue": "ACM CCS 2016",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/2976749.2978422",
+    "citation": {
+      "container_title": "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "343-355",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/2976749.2978422"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/2976749.2978422",
+    "pdf_url": "https://files.sri.inf.ethz.ch/website/papers/deguard.pdf",
+    "code_url": null,
+    "project_url": "https://www.sri.inf.ethz.ch/deguard",
+    "targets": [
+      "app"
+    ],
+    "description_en": "DeGuard reverses layout obfuscation in Android APKs, predicting original names for the fields, methods, classes and packages that ProGuard renames. Built on Soot, it represents an app as a dependency graph over program elements and keeps Android API and other unobfuscated names fixed. It then runs MAP inference with Nice2Predict on a conditional random field learned from 1,684 F-Droid apps, under constraints that keep the renamed APK semantically equivalent. On 100 held-out F-Droid apps obfuscated with ProGuard, names identical to the originals rise from 13.3% to 79.1%, and third-party library prediction reaches 91.3% precision and 91.0% recall.",
+    "description_zh": "DeGuard 逆转 Android APK 中的布局混淆，为被 ProGuard 重命名的字段、方法、类和包预测原始名称。它基于 Soot 将应用表示为程序元素之间的依赖图，并保持 Android API 及其他未混淆名称不变；随后在从 1,684 个 F-Droid 应用学习的条件随机场上借助 Nice2Predict 进行 MAP 推断，并以约束保证重命名后的 APK 语义等价。在 100 个留出的、经 ProGuard 混淆的 F-Droid 应用上，与原始名称完全相同的比例从 13.3% 提升至 79.1%，第三方库预测的精确率为 91.3%、召回率为 91.0%。",
+    "scope_limitations_en": "Only layout (identifier) obfuscation is addressed. Data, control-flow and cryptographic obfuscation, custom string encryption, reflection and goto-based code reordering are not reversed, and the paper notes that most malware samples it inspected also used such techniques. The benchmark is 100 benign, open-source F-Droid apps, obfuscated by enabling ProGuard without changing its rules and scored by exact match to the original names, so semantically close names count as errors; elements that ProGuard removed are not scored. Accuracy on other obfuscators or on malware may be lower. Libraries are identified by a package-name heuristic covering 133 libraries, and the training apps may import the same libraries. The 49-family malware study gives manual examples, such as Base64 decoders and location handling, without precision figures.",
+    "scope_limitations_zh": "仅处理布局（标识符）混淆。数据、控制流与密码学混淆、自定义字符串加密、反射以及基于 goto 的代码重排均不在逆转范围内；论文指出，其检查的大多数恶意样本同时使用了这些技术。基准为 100 个良性开源 F-Droid 应用，通过启用 ProGuard 且不修改其规则进行混淆，并以与原始名称完全一致作为评分标准，因此语义相近的名称也计为错误；被 ProGuard 删除的元素不计分。在其他混淆器或恶意软件上的准确率可能较低。第三方库依据包名启发式规则识别，共涵盖 133 个库，训练应用也可能导入相同的库。针对 49 个恶意软件家族的研究给出 Base64 解码器、位置信息处理等人工检查示例，未报告精确率。",
+    "why_fits_en": "Adds learned identifier recovery for obfuscated Android packages, complementing the interface-reconstruction papers in the app section and the binary symbol-recovery research elsewhere in the bibliography.",
+    "why_fits_zh": "补充面向混淆 Android 安装包的学习式标识符恢复方法，与应用部分的界面重建论文及本文献目录中其他二进制符号恢复研究互补。",
+    "metadata_notes": "ACM's Crossref deposit and the ETH-hosted author PDF agree on the title, four-author order and CCS ’16 DOI; Crossref gives pages 343–355. The paper and the SRI project page name http://apk-deguard.com as the public DeGuard service; on 2026-10-18 it redirected to HTTPS and then did not respond, so it is not linked as a working service. No DeGuard source repository was found, and code_url is null. The project page says DeGuard is built on the open-source Nice2Predict framework; that separate inference engine is not recorded as this paper's code. Nothing was run.",
+    "metadata_notes_zh": "ACM 提交的 Crossref 元数据与 ETH 托管的作者版 PDF 在标题、四位作者顺序及 CCS ’16 DOI 上一致；Crossref 给出页码 343–355。论文与 SRI 项目页面将 http://apk-deguard.com 列为公开的 DeGuard 服务；该地址在 2026-10-18 跳转至 HTTPS 后无响应，因此未作为可用服务链接。未找到 DeGuard 源码仓库，code_url 为 null。项目页面说明 DeGuard 构建于开源的 Nice2Predict 框架之上；该独立推断引擎不作为本论文的代码记录。本次未运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/2976749.2978422",
+      "https://api.crossref.org/works/10.1145/2976749.2978422",
+      "https://files.sri.inf.ethz.ch/website/papers/deguard.pdf",
+      "https://www.sri.inf.ethz.ch/deguard"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
