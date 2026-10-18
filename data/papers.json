@@ -3289,5 +3289,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-sc2dec",
+    "title": "Self-Constructed Context Decompilation with Fined-grained Alignment Enhancement",
+    "title_zh": "自构造上下文反编译与细粒度对齐增强",
+    "authors": [
+      "Yunlong Feng",
+      "Dechuan Teng",
+      "Yang Xu",
+      "Honglin Mu",
+      "Xiao Xu",
+      "Libo Qin",
+      "Qingfu Zhu",
+      "Wanxiang Che"
+    ],
+    "year": 2024,
+    "publication_date": "2024-11",
+    "date_precision": "month",
+    "date_basis": "The official ACL Anthology citation gives November 2024. Crossref records only the year; the November 12–16 conference dates printed in the PDF are not treated as a publication day.",
+    "date_basis_zh": "ACL Anthology 官方引文给出 2024 年 11 月。Crossref 仅记录年份；PDF 中印有的 11 月 12–16 日会议日期不作为具体出版日。",
+    "venue": "Findings of EMNLP 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2406.17233",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2024-06-25",
+    "doi": "10.18653/v1/2024.findings-emnlp.385",
+    "url": "https://aclanthology.org/2024.findings-emnlp.385/",
+    "pdf_url": "https://aclanthology.org/2024.findings-emnlp.385.pdf",
+    "code_url": "https://github.com/AlongWY/sccdec",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Adds two techniques to LLM decompilation of function-level x86-64 GCC assembly into C. Self-Constructed Context Decompilation (sc²dec) recompiles a model’s first compilable output and uses the resulting assembly–source pair as an in-context example for a second attempt, without fine-tuning. Fine-grained Alignment Enhancement (FAE) fine-tunes llm4decompile-6.7b with LoRA on statement-level assembly–C alignments derived from DWARF debug information. Combining both, the authors report 52.41% average re-executability on Decompile-Eval, against 48.60% for the base model.",
+    "description_zh": "为大语言模型将函数级 x86-64 GCC 汇编反编译为 C 的流程增加两项技术。自构造上下文反编译（sc²dec）无需微调：把模型首次生成且可编译的结果重新编译，以得到的汇编—源码对作为上下文示例再次反编译。细粒度对齐增强（FAE）利用 DWARF 调试信息构造语句级汇编—C 对齐数据，以 LoRA 微调 llm4decompile-6.7b。两者结合后，作者报告在 Decompile-Eval 上的平均可重执行率为 52.41%，基础模型为 48.60%。",
+    "scope_limitations_en": "Results are function-level re-executability on Decompile-Eval: 164 HumanEval-derived C problems compiled at O0–O3 and checked by recompilation and HumanEval test cases. Passing these tests is not whole-program or all-input equivalence, and the paper does not evaluate real-world binaries, other architectures or readability. sc²dec helps only when the first output recompiles, so low re-compilability limits its gains; the authors report 1–2% lower results when context is built at a mismatched optimization level, and clang-built contexts scored slightly below GCC. FAE used 10,000 ExeBench functions limited to the standard C library, one training epoch and a single 6.7B base model; the authors did not validate it on larger datasets or models, and it slightly lowered the 1-shot result. GPT-4 and DeepSeek baselines are API snapshots that may not be reproducible.",
+    "scope_limitations_zh": "结果为 Decompile-Eval 上的函数级可重执行率：164 道源自 HumanEval 的 C 题目，分别以 O0–O3 编译，并通过重新编译和 HumanEval 测试用例检查。通过这些测试不代表完整程序或全部输入上的等价性；论文也未评估真实二进制、其他架构或可读性。只有首次输出能够重新编译时 sc²dec 才有帮助，因此可重编译率低会限制其收益；作者报告以不匹配的优化级别构造上下文会使结果降低 1–2%，用 clang 构造的上下文得分也略低于 GCC。FAE 仅使用 10,000 个只依赖 C 标准库的 ExeBench 函数，训练一个轮次，且只基于一个 6.7B 基础模型；作者未在更大数据集或模型上验证，它还使 1-shot 结果略有下降。GPT-4 与 DeepSeek 基线是 API 快照，未必可复现。",
+    "why_fits_en": "Adds recompilation feedback and debug-information alignment to end-to-end LLM decompilation, complementing LLM4Decompile and execution-checked decompilation benchmarks.",
+    "why_fits_zh": "为端到端大语言模型反编译补充重新编译反馈与调试信息对齐方法，与 LLM4Decompile 及基于执行检查的反编译基准互补。",
+    "metadata_notes": "The title keeps the published spelling ‘Fined-grained’. The eight-author order follows the Anthology, PDF, Crossref and arXiv. arXiv v2 (2024-10-03) is labeled EMNLP 2024 Findings; v1 was submitted on 2024-06-25. The Anthology and Crossref give pages 6603–6614. The abstract’s ‘approximately 3.90%’ gain differs from the 3.81-point gap between Table 1’s 48.60% base result and 52.41%; this entry cites the table values. At the reviewed 2025-02-18 commit, the repository declares MIT, although LICENSE.txt keeps template placeholders for year and holders. It provides an evaluation script and GCC Decompile-Eval data, and links a LoRA adapter for LLM4Binary/llm4decompile-6.7b-v1.5 and a training dataset on Hugging Face, both tagged MIT; the base model and ExeBench keep their own terms. Its README results table adds readability scores and the authors’ later ReF Decompile, and its FAE-only averages differ slightly from the paper (51.07% versus 50.88%). The evaluator uses local gcc and objdump and, with --compiler, sends code to the public Compiler Explorer API. No weights or datasets were downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "标题保留出版时的拼写“Fined-grained”。八位作者的顺序以 Anthology、PDF、Crossref 与 arXiv 为准。arXiv v2（2024-10-03）标注为 EMNLP 2024 Findings；v1 于 2024-06-25 提交。Anthology 与 Crossref 给出页码 6603–6614。摘要所称约 3.90% 的提升与表 1 中基础结果 48.60% 和 52.41% 之间 3.81 个百分点的差值不一致；本条目引用表中数值。在所审阅的 2025-02-18 提交中，仓库声明采用 MIT，但 LICENSE.txt 仍保留年份与版权人的模板占位符。仓库提供评估脚本和 GCC 版 Decompile-Eval 数据，并链接 Hugging Face 上基于 LLM4Binary/llm4decompile-6.7b-v1.5 的 LoRA 适配器与训练数据集，两者均标为 MIT；基础模型与 ExeBench 保留各自条款。README 的结果表另加入可读性分数和作者后续的 ReF Decompile，其中仅用 FAE 的平均值与论文略有不同（51.07% 对 50.88%）。评估器使用本地 gcc 与 objdump；指定 --compiler 时会把代码发送到公共 Compiler Explorer API。本次未下载权重或数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://aclanthology.org/2024.findings-emnlp.385/",
+      "https://aclanthology.org/2024.findings-emnlp.385.pdf",
+      "https://aclanthology.org/2024.findings-emnlp.385.bib",
+      "https://api.crossref.org/works/10.18653/v1/2024.findings-emnlp.385",
+      "https://arxiv.org/abs/2406.17233",
+      "https://github.com/AlongWY/sccdec/blob/22745ea6249a4ae73d3d00fe9da2e0c7c78a748c/README.md",
+      "https://github.com/AlongWY/sccdec/blob/22745ea6249a4ae73d3d00fe9da2e0c7c78a748c/LICENSE.txt",
+      "https://github.com/AlongWY/sccdec/blob/22745ea6249a4ae73d3d00fe9da2e0c7c78a748c/pyproject.toml",
+      "https://github.com/AlongWY/sccdec/blob/22745ea6249a4ae73d3d00fe9da2e0c7c78a748c/src/sccdec/eval.py",
+      "https://huggingface.co/ylfeng/sccdec-lora",
+      "https://huggingface.co/datasets/ylfeng/sccdec-dataset"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
