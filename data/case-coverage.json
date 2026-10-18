@@ -3792,12 +3792,18 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110335911992979960"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post links a pinned Next.js/SQLite repository presented as an educational 1:1 replica of Profound’s marketing site, product workspace and admin console. Its README says pages and data come from scraping the public marketing site without logging in, and it ships fictional sample data. Neither the repository nor the post publishes the REA investigation, captured references or comparisons, so the reported REA use and the fidelity of the non-public workspace and admin views cannot be checked. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者帖子链接的固定版本 Next.js／SQLite 仓库，自称是 Profound 营销官网、产品工作台和管理后台的 1:1 学习性复刻。README 称页面与数据来自对公开营销站点的抓取，未登录访问任何页面，并附虚构示例数据。仓库和帖子均未公开 REA 调查过程、抓取的参考材料或对照结果，因此无法核实所报告的 REA 使用，也无法核实未公开的工作台与后台界面的还原程度。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/README.md",
+        "https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/AGENTS.md",
+        "https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/package.json",
+        "https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/LICENSE",
+        "https://x.com/i/status/2110335911992979960"
+      ],
       "catalog_matches": []
     },
     {
@@ -13355,15 +13361,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 69,
-      "insufficient-evidence": 67,
-      "pending": 455
+      "insufficient-evidence": 68,
+      "pending": 454
     },
     "units_by_state": {
       "already-curated": 68,
-      "insufficient-evidence": 67,
-      "pending": 454
+      "insufficient-evidence": 68,
+      "pending": 453
     },
-    "primary_reviewed_units": 82,
+    "primary_reviewed_units": 83,
     "catalog_linked_occurrences": 76,
     "distinct_resource_ids": 67,
     "distinct_paper_ids": 1,
