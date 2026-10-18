@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (22)
+- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (23)
 
 **More ways to browse**
 
@@ -1245,6 +1245,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Inventories HarmonyOS HAP, HSP and App Pack files through REA’s hardened ZIP reader and projects an execution-free application graph: component paths, IDs and hashes, Stage/FA packaging hints, runtime-family hints and path-based native-bridge hypotheses. Every claim rests on path presence; manifests, Ark bytecode, resources and signatures are not decoded or verified.
 
   Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-harmony-guide/)
+
+- [**MIPS ELF analysis through Ghidra**](https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md)
+
+  Documents REA’s Ghidra lane for MIPS ELF executables, relocatable objects and MIPS16 shared images, including a pinned 32-bit language for recordless legacy firmware executables that Ghidra would otherwise import as 64-bit. Admission is bounded by declared header and ABI-record facts, and verification compares source-owned fixtures with independent readelf output rather than executing or rehosting firmware.
+
+  Documentation · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-mips-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 
