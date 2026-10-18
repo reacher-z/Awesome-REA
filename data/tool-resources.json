@@ -3831,5 +3831,41 @@
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/LICENSE",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules"
     ]
+  },
+  {
+    "id": "cv64-recompiled-case",
+    "name": "Castlevania 64: Recompiled — a beta static-recompilation port",
+    "url": "https://github.com/RevoSucks/CV64Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Castlevania into a native PC port rendered with RT64. Game-specific C patches build against headers from a separate Castlevania 64 decompilation. A beta release tagged at the reviewed commit reports a working build with known issues, while the README there still describes an unfinished project.",
+    "description_zh": "使用 N64Recomp 将 Nintendo 64 版 Castlevania 美版 1.0 静态重编译为原生 PC 移植，并以 RT64 渲染。游戏专用的 C 补丁基于另一个 Castlevania 64 反编译项目的头文件构建。在所审提交上标记的测试版发布报告构建可用并列出已知问题，而同一提交的 README 仍称项目尚未完成。",
+    "evidence_url": "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/flatpak/io.github.cv64recomp.cv64recomp.metainfo.xml",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The AppStream metadata describes Castlevania 64: Recompiled as an N64: Recompiled static recompilation into a native port using RT64 for rendering. The v0.5.0 beta release, tagged at the reviewed commit, calls itself a working build and lists known issues: Banjo Recomp assets still to be replaced, texture scrolls that do not animate above 30 FPS, and glitches in some looping animations. At the same commit the README still says the WIP recomp does not build, and BUILDING.md only says WIP.",
+      "The metadata says the original game is required. The launcher accepts a single entry, the US 1.0 release (game ID cv64.us.1.0) identified by a fixed ROM hash, and cv64.toml configures the NTSC 1.0 recompilation from a decompressed ELF plus an overlay list. CI copies that ELF and a decompressed ROM from a private repository through secrets; neither is in the public tree.",
+      "The CMake project needs CMake 3.20+, C++20 and the N64Recomp and RSPRecomp tools; the workflow pins an N64Recomp commit and builds Linux x64 and ARM64 AppImages, an x64 Flatpak, Windows and macOS targets. Patches compile as MIPS code with clang and ld.lld against headers from the k64ret/cv64 decompilation submodule, with symbol dumps from CV64Syms and submodules for N64ModernRuntime, RecompFrontend and RT64. Several sources and functions still carry Banjo names.",
+      "GitHub check runs recorded for the reviewed commit report successful builds on those platforms. That shows the private inputs compile, not gameplay fidelity; no matching, test or performance results are documented. This collection did not download the release binaries or rerun any build.",
+      "COPYING is GPLv3 and the metadata declares GPL-3.0+; the original ROM and the dependencies keep their own terms. This is a static recompilation, not recovered authored source or a complete decompilation. The reviewed sources establish no REA or coding-agent involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/README.md",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/BUILDING.md",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/cv64.toml",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/patches.toml",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/src/main/main.cpp",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/CMakeLists.txt",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/patches/Makefile",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/.gitmodules",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/.github/workflows/validate.yml",
+      "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/COPYING",
+      "https://github.com/RevoSucks/CV64Recomp/releases/tag/v0.5.0"
+    ]
   }
 ]

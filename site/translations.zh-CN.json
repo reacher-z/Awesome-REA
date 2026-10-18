@@ -1879,5 +1879,15 @@
       "项目报告的检查包括与 Cemu 并排比较渲染效果、玩家已通关，以及在反编译路径上由 tools/verify 以生成输入和录制输入，逐函数比较手写 C++ 与重编译原版的行为。实验性反编译构建（仅 macOS、仅美版）在固定的子模块版本中运行 862 个单元内的 22,705 个已验证函数。所有结果均为项目报告，本合集未运行任何内容。",
       "项目代码采用 MPL-2.0；内置的 Cemu 代码为 MPL-2.0，metal-cpp、{fmt}、Dear ImGui、zstd 及 AppImage 运行时组件各自保留其许可证，游戏仍归任天堂所有。README 称其为非官方粉丝项目；所审来源未确立 REA 或编码代理的参与。"
     ]
+  },
+  "cv64-recompiled-case": {
+    "name": "Castlevania 64: Recompiled：测试版静态重编译移植",
+    "requirements": [
+      "AppStream 元数据将 Castlevania 64: Recompiled 描述为使用 N64: Recompiled 的静态重编译项目，生成以 RT64 渲染的原生移植。在所审提交上标记的 v0.5.0 测试版发布称构建可用，并列出已知问题：Banjo Recomp 素材尚待替换、纹理滚动在 30 FPS 以上不会播放动画，以及部分循环动画会出现异常。同一提交的 README 仍称这个进行中的重编译项目无法构建，BUILDING.md 也只写有 WIP。",
+      "元数据说明运行需要原版游戏。启动器只接受一个条目，即以固定 ROM 哈希识别的美版 1.0（游戏 ID 为 cv64.us.1.0）；cv64.toml 以解压后的 ELF 及覆盖模块列表配置 NTSC 1.0 重编译。CI 通过机密信息从私有仓库复制该 ELF 和解压后的 ROM，二者均不在公开仓库中。",
+      "CMake 项目需要 CMake 3.20+、C++20 以及 N64Recomp 和 RSPRecomp 工具；工作流固定一个 N64Recomp 提交，构建 Linux x64 与 ARM64 AppImage、x64 Flatpak、Windows 及 macOS 目标。补丁以 clang 和 ld.lld 编译为 MIPS 代码，依赖 k64ret/cv64 反编译子模块的头文件、CV64Syms 的符号导出，以及 N64ModernRuntime、RecompFrontend 和 RT64 子模块。部分源文件和函数仍沿用 Banjo 命名。",
+      "所审提交记录的 GitHub 检查报告上述平台构建成功。这只表明私有输入可以编译，不代表游戏行为保真；项目未记录一致性、测试或性能结果。本合集未下载发布的二进制文件，也未重跑任何构建。",
+      "COPYING 为 GPLv3，元数据声明 GPL-3.0+；原 ROM 和各依赖仍有各自条款。这是静态重编译，不是恢复原作者源码，也不是完整反编译。所审来源未确立 REA 或编码代理参与，也不主张运行复现。"
+    ]
   }
 }

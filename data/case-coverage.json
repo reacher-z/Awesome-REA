@@ -10778,13 +10778,33 @@
         "https://github.com/RevoSucks/CV64Recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 39 (README line 365) lists RevoSucks/CV64Recomp under 🏰 Castlevania 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 39 行（README 第 365 行）在 🏰 Castlevania 64 下列出 RevoSucks/CV64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned metadata, recompiler configuration, launcher code, workflow and the v0.5.0 beta release tagged at the same commit support this N64Recomp static-recompilation report for the US 1.0 release. Full mapping covers this repository's port; the README's stale not-building note, private CI inputs and release-reported known issues stay explicit. Source review does not mean independent runtime reproduction.",
+      "reason_zh": "固定版本的元数据、重编译配置、启动器代码、工作流，以及在同一提交上标记的 v0.5.0 测试版发布，支持这份针对美版 1.0 的 N64Recomp 静态重编译报告。完整映射覆盖本仓库的移植；README 中已过时的无法构建说明、CI 使用的私有输入及发布说明报告的已知问题均明确保留。来源核查不表示独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/flatpak/io.github.cv64recomp.cv64recomp.metainfo.xml",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/README.md",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/BUILDING.md",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/cv64.toml",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/patches.toml",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/src/main/main.cpp",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/CMakeLists.txt",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/patches/Makefile",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/.gitmodules",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/.github/workflows/validate.yml",
+        "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/COPYING",
+        "https://github.com/RevoSucks/CV64Recomp/releases/tag/v0.5.0"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "cv64-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-040",
@@ -14004,18 +14024,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 100,
-      "insufficient-evidence": 82,
-      "pending": 409
-    },
-    "units_by_state": {
-      "already-curated": 99,
+      "already-curated": 101,
       "insufficient-evidence": 82,
       "pending": 408
     },
-    "primary_reviewed_units": 124,
-    "catalog_linked_occurrences": 111,
-    "distinct_resource_ids": 105,
+    "units_by_state": {
+      "already-curated": 100,
+      "insufficient-evidence": 82,
+      "pending": 407
+    },
+    "primary_reviewed_units": 125,
+    "catalog_linked_occurrences": 112,
+    "distinct_resource_ids": 106,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
