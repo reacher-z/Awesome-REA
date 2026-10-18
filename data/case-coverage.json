@@ -13406,12 +13406,14 @@
         "https://kaikoclanworth1.github.io/wwe-svr2011-pc/",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 114 (README line 1179) lists KaikoClanworth1/wwe-svr2011-pc under 🏁 WWE SmackDown vs. Raw 2011. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 114 行（README 第 1179 行）在 🏁 WWE SmackDown vs. Raw 2011 下列出 KaikoClanworth1/wwe-svr2011-pc。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README describes a ReXGlue recompilation of the Xbox 360 game for Windows and Android that needs the user’s own disc image. The project’s release notes state that release packages bundle superstar mods and an arena from WWE ’13, content that does not come from the user’s own copy. The collection therefore does not link the repository, and the lead is retained without a catalog mapping; this is not a judgement of the port’s function or its authors.",
+      "reason_zh": "固定版本 README 描述了借助 ReXGlue 将这款 Xbox 360 游戏重编译到 Windows 与 Android 的移植，需使用者自备光盘镜像。项目发布说明称，发布包捆绑了超级巨星模组以及来自 WWE ’13 的场馆，这些内容并非来自使用者自己的游戏副本。因此本合集不链接该仓库，保留此线索而不建立目录映射；这不是对移植功能或作者的评判。",
+      "primary_evidence_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -15137,15 +15139,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 165,
-      "insufficient-evidence": 138,
-      "pending": 288
+      "insufficient-evidence": 139,
+      "pending": 287
     },
     "units_by_state": {
       "already-curated": 164,
-      "insufficient-evidence": 138,
-      "pending": 287
+      "insufficient-evidence": 139,
+      "pending": 286
     },
-    "primary_reviewed_units": 242,
+    "primary_reviewed_units": 243,
     "catalog_linked_occurrences": 176,
     "distinct_resource_ids": 170,
     "distinct_paper_ids": 1,
