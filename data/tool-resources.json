@@ -2958,5 +2958,38 @@
       "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/README.md",
       "https://github.com/Kenix3/libultraship/blob/7f9b86a593c526fc42261d7fe197100cecf57178/LICENSE"
     ]
+  },
+  {
+    "id": "ship-of-harkinian-oot-port-case",
+    "name": "Ship of Harkinian: a native Ocarina of Time port built on the decompilation",
+    "url": "https://github.com/HarbourMasters/Shipwright",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds Ocarina of Time as a native PC application from the OoT decompilation’s source, with libultraship standing in for the N64 libultra SDK and DirectX 11, OpenGL or Metal rendering. No game assets are shipped: they are converted from the user’s supported ROM into an .o2r archive, and the port adds save states, alternate and custom assets and other enhancements.",
+    "description_zh": "以《时之笛》反编译项目的源码为基础，将游戏构建为原生 PC 程序，用 libultraship 替代 N64 的 libultra SDK，并以 DirectX 11、OpenGL 或 Metal 渲染。不随附游戏素材，而是从使用者自备的受支持 ROM 转换生成 .o2r 归档；移植版还加入了即时存档、替换与自定义素材等增强功能。",
+    "evidence_url": "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README presents Ship of Harkinian as built on libultraship and dependent on source from the OoT decompilation project; the soh/src tree carries that decomp-derived game code. The output is a modified native port (CMake project version 9.3.0) with added features, not a matching ROM build or a byte-for-byte reconstruction.",
+      "Play requires a legally acquired, supported Ocarina of Time ROM; docs/supportedHashes.json lists 19 SHA-1 entries covering PAL, NTSC (US/JP), GameCube, Master Quest and debug variants. Copyrighted assets are not included and are converted from that ROM into oot.o2r or oot-mq.o2r; prebuilt releases still need the ROM.",
+      "README documents Windows, Linux (AppImage) and macOS releases with DirectX 11, OpenGL or Metal; CMake also has Nintendo Switch and CafeOS (Wii U) branches. Source builds need CMake 3.26+, Python 3, Git and the libultraship and Torch submodules, plus Visual Studio 2022 (v143) on Windows or the listed distribution packages and minimum GCC/Clang versions on Linux.",
+      "The reviewed CI workflow builds Windows, macOS and Linux packages and generates soh.o2r; it runs no gameplay or fidelity comparison against the original game. Behavior and enhancements are project-documented, and this collection built or ran nothing.",
+      "The pinned tree has no root license file and GitHub detects none; the randomizer’s 3drando component carries its own license, the submodules are separate repositories and Nintendo content keeps its own rights. README says the project does not condone piracy; the reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/BUILDING.md",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/supportedHashes.json",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/CMakeLists.txt",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/.gitmodules",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/soh/.gitrepo",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/CREDITS.md",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/.github/workflows/generate-builds.yml",
+      "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/soh/soh/Enhancements/randomizer/3drando/LICENSE.md"
+    ]
   }
 ]

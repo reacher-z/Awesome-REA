@@ -1590,5 +1590,15 @@
       "所审阅的 README 和构建指南没有报告针对移植版的一致性、校验或保真度检查；发布说明列出的是调整和缺陷修复。增强功能和随机化代码会改变相对原版游戏的行为。本合集未构建或运行该项目。",
       "仓库采用 CC0 1.0，libultraship 子模块采用 MIT；来自使用者副本的游戏内容保留各自权利，README 表示项目不纵容盗版。所审阅来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "ship-of-harkinian-oot-port-case": {
+    "name": "Ship of Harkinian：基于反编译源码的《时之笛》原生移植",
+    "requirements": [
+      "README 介绍 Ship of Harkinian 以 libultraship 为基础，并依赖《时之笛》反编译项目提供的源码；soh/src 目录即为这部分源自反编译的游戏代码。产物是加入新功能的修改版原生移植（CMake 项目版本 9.3.0），不是一致性 ROM 构建，也不是逐字节重建。",
+      "游玩需要合法取得且受支持的《时之笛》ROM；docs/supportedHashes.json 列出 19 条 SHA-1 记录，涵盖 PAL、NTSC（美版／日版）、GameCube、Master Quest 及调试版。仓库不含受版权保护的素材，素材由该 ROM 转换为 oot.o2r 或 oot-mq.o2r；使用预构建版本同样需要 ROM。",
+      "README 说明提供 Windows、Linux（AppImage）和 macOS 版本，渲染可选 DirectX 11、OpenGL 或 Metal；CMake 中还有 Nintendo Switch 与 CafeOS（Wii U）分支。从源码构建需 CMake 3.26+、Python 3、Git 以及 libultraship 和 Torch 子模块；Windows 另需 Visual Studio 2022（v143），Linux 需列明的发行版软件包及最低 GCC／Clang 版本。",
+      "所审 CI 工作流构建 Windows、macOS 和 Linux 软件包并生成 soh.o2r，不与原版游戏进行玩法或保真度比对。游戏行为与增强功能均为项目文档所述，本合集未构建或运行任何内容。",
+      "固定版本的仓库根目录没有许可证文件，GitHub 也未识别出许可证；随机器中的 3drando 组件附有自身的许可证，子模块为独立仓库，任天堂内容仍保有其权利。README 声明项目不支持盗版；所审来源未确立 REA 或编码代理的参与。"
+    ]
   }
 }
