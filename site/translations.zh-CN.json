@@ -2679,5 +2679,15 @@
       "贡献者使用 reccmp 比较差异，它以 HTML 报告给出重建可执行文件相对原文件的逐函数准确率。CI 在 Windows 上构建，并将 objdiff 构建与通过 Ghidra 从原文件拆出的目标文件比较；一套小型 munit 测试会读取使用者的游戏资源包。徽章数字由项目生成，本合集未进行任何构建或比较。",
       "仓库以 CC0 1.0 释出；原游戏、下载的 Microsoft 工具链及第三方工具各有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "binny-agent-harness": {
+    "name": "BINNY 逆向分析智能体框架",
+    "requirements": [
+      "所审阅的固定版本位于 2026-10-15 发布的 v0.1.0-beta.2 之后。BINNY 是 Go 编写的终端程序；发布构建使用 Go 1.22，覆盖 Linux、macOS 与 Windows，README 中的安装命令从 openbin.ai 获取脚本。启动需要登录 OpenBin：main.go 读取 openbin 命令行工具保存的凭据，若不存在则停止并提示运行 openbin login。源码注释称计划采用付费访问，测试期间暂缓收费限制。",
+      "模型需自备密钥，预置 Anthropic、OpenAI、DeepSeek、Qwen、Kimi、经 OpenAI 兼容接口接入的 Gemini 以及 Bedrock；Ollama 或 LM Studio 本地模型须支持工具调用，且上下文窗口需大于 Ollama 默认的 4k。分析数据来自使用者的 OpenBin 或 OpenAPK 项目或本地文件。本地反编译与沙箱需要 Docker，首次本地反编译会下载约 700 MB 的 OpenBin Ghidra 工作镜像。",
+      "沙箱工具在容器中运行脚本：无网络、根文件系统与样本挂载均为只读、移除全部权能，并限制 CPU、内存和进程数。分诊按 STIX 2.1 恶意软件词表标注样本，恶意软件与漏洞两种模式切换报告视角，自主、监督与协作模式决定智能体何时停下询问。README 将已有报告视为待核实的主张，并把草稿保存待审阅后再发布。",
+      "仓库包含 Go 单元测试，发布工作流会在交叉编译前运行；仓库未公开基准、准确性测量或完整示例报告，因此本合集无法确立其分析质量。其 README 仍称源码仓库为私有，而该仓库实际公开。本合集仅审阅源码与文档，未运行 BINNY、模型、容器或样本。",
+      "LICENSE 为 AGPL-3.0，README 表述为 AGPL-3.0 或更高版本。贡献者需签署 CLA，使 OpenBin 也能以商业许可提供代码；README 称其连接的 OpenBin 平台采用相同许可。模型服务、OpenBin 账户、Ghidra 与被分析样本各有条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

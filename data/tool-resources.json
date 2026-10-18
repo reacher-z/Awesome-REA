@@ -6329,5 +6329,40 @@
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/tests/test_Pbg3Archive.cpp",
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/LICENSE"
     ]
+  },
+  {
+    "id": "binny-agent-harness",
+    "name": "BINNY",
+    "url": "https://github.com/openbin-ai/binny",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary",
+      "app",
+      "firmware"
+    ],
+    "description_en": "An open-source terminal agent harness from OpenBin that runs a user-chosen hosted or local model over binary-analysis data. It reads decompiled functions, strings, imports and data from an OpenBin or OpenAPK project or a local Ghidra container run, follows triage, investigation and drafting playbooks, and saves a draft malware-analysis or vulnerability-research report for human review. It is an analysis harness with draft outputs, not a reconstruction project.",
+    "description_zh": "OpenBin 推出的开源终端智能体框架，让使用者自选的托管或本地模型处理二进制分析数据。它从 OpenBin 或 OpenAPK 项目、或本地 Ghidra 容器的分析结果中读取反编译函数、字符串、导入表和数据，按分诊、调查与起草流程工作，并保存恶意软件分析或漏洞研究报告草稿供人工审阅。它是输出草稿的分析框架，而非重建项目。",
+    "evidence_url": "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin follows the v0.1.0-beta.2 release of 2026-10-15. BINNY is a Go terminal program; release builds use Go 1.22 and cover Linux, macOS and Windows, and the README installers fetch scripts from openbin.ai. Startup needs an OpenBin sign-in: main.go loads the openbin CLI’s stored credentials and stops with an instruction to run openbin login when none exist. Source comments describe planned paid access whose gating is deferred during testing.",
+      "Models are bring-your-own-key, with Anthropic, OpenAI, DeepSeek, Qwen, Kimi, Gemini through an OpenAI-compatible endpoint and Bedrock preconfigured; Ollama or LM Studio models must support tool calling and need a larger context window than Ollama’s 4k default. Analysis data comes from the user’s OpenBin or OpenAPK projects or a local file. Local decompilation and the sandbox need Docker, and the first local decompile downloads an OpenBin Ghidra worker image of about 700 MB.",
+      "The sandbox tool runs scripts in a container with no network, a read-only root and sample mount, dropped capabilities and CPU, memory and process limits. Triage labels samples with the STIX 2.1 malware vocabulary, malware and vulnerability modes change the report lens, and autonomous, supervised or collaborative modes decide when the agent stops to ask. The README treats existing reports as claims to check and saves drafts for review before publication.",
+      "The repository has Go unit tests, which the release workflow runs before cross-compiling; it publishes no benchmark, accuracy measurement or worked example report, so analysis quality is not established here. Its README still calls the source repository private while it is public. This collection reviewed source and documentation without running BINNY, models, containers or samples.",
+      "LICENSE is AGPL-3.0; the README states AGPL-3.0 or later. Contributors sign a CLA so OpenBin can also offer the code under a commercial licence, and the README says the OpenBin platform it talks to uses the same licence. Model services, OpenBin accounts, Ghidra and analysed samples carry their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/main.go",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/internal/auth/auth.go",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/internal/ghidra/ghidra.go",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/internal/sandbox/sandbox.go",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/.github/workflows/release.yml",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/LICENSE",
+      "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/CLA.md",
+      "https://github.com/openbin-ai/binny/releases/tag/v0.1.0-beta.2"
+    ]
   }
 ]

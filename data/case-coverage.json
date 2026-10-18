@@ -6138,13 +6138,28 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110767491286716525"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned BINNY repository establishes the announced open-source harness: a Go terminal agent that runs a user-chosen hosted or local model over decompiled project data or a local Ghidra container, with a no-network extraction sandbox and draft malware or vulnerability reports, and a v0.1.0-beta.2 release dated 2026-10-15. The full mapping covers this report as an independent agent integration, not a reconstruction case. It requires an OpenBin login, publishes no accuracy evaluation, and no REA use or runtime reproduction is established.",
+      "reason_zh": "固定版本的 BINNY 仓库确立了所发布的开源框架：一个 Go 终端智能体，让使用者自选的托管或本地模型处理反编译项目数据或本地 Ghidra 容器结果，配有无网络的提取沙箱，并生成恶意软件或漏洞报告草稿；v0.1.0-beta.2 版本发布于 2026-10-15。完整映射将该报告作为独立智能体集成覆盖，而非重建案例。它需要登录 OpenBin，未公开准确性评估，也未确立 REA 使用或运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md",
+        "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/main.go",
+        "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/internal/auth/auth.go",
+        "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/internal/sandbox/sandbox.go",
+        "https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/LICENSE",
+        "https://github.com/openbin-ai/binny/releases/tag/v0.1.0-beta.2",
+        "https://x.com/i/status/2110767491286716525"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "binny-agent-harness",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-clean-room-illustrative-oracles",
@@ -15224,18 +15239,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 170,
-      "insufficient-evidence": 140,
-      "pending": 281
-    },
-    "units_by_state": {
-      "already-curated": 169,
+      "already-curated": 171,
       "insufficient-evidence": 140,
       "pending": 280
     },
-    "primary_reviewed_units": 249,
-    "catalog_linked_occurrences": 181,
-    "distinct_resource_ids": 175,
+    "units_by_state": {
+      "already-curated": 170,
+      "insufficient-evidence": 140,
+      "pending": 279
+    },
+    "primary_reviewed_units": 250,
+    "catalog_linked_occurrences": 182,
+    "distinct_resource_ids": 176,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
