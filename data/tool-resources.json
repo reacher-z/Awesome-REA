@@ -5234,5 +5234,38 @@
       "https://github.com/HarbourMasters/Starship/releases/tag/v2.0.0",
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/DOCS/fox_lore.md"
     ]
+  },
+  {
+    "id": "ctr-turbocharged-port-case",
+    "name": "CTR Turbocharged: a PC sourceport built on the Crash Team Racing decompilation",
+    "url": "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Extends the Crash Team Racing: High Octane sourceport, which derives from the CTR Native port of the CTR-ModSDK PlayStation decompilation, into Windows and Linux builds with a native 3D renderer, selectable aspect ratios and frame rates up to 240 FPS. The decompiled game code still assumes 32-bit pointers and loads assets from the player’s own NTSC-U disc image. Renderer, timing and option tests exist, but device coverage and fidelity remain project-reported.",
+    "description_zh": "在 Crash Team Racing: High Octane 移植版基础上扩展而成；High Octane 源自基于 CTR-ModSDK PlayStation 反编译成果的 CTR Native 移植。本分支面向 Windows 与 Linux，提供原生 3D 渲染器、可选画面比例及最高 240 FPS 帧率。反编译游戏代码仍假定 32 位指针，并从玩家自备的 NTSC-U 光盘镜像读取素材。项目附有渲染、计时和选项测试，但设备覆盖与还原度仍为项目自述。",
+    "evidence_url": "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed turbocharged branch (VERSION 2026.10.1) forks High Octane v1.4.1, which builds on CTR Native and the CTR-ModSDK decompilation. It is a source port of decompiled C, not a matching decompilation or a static recompilation. Only Windows and Linux PC builds are supported; the inherited PS Vita and web builds are not, and the online leaderboard and Discord Rich Presence are disabled.",
+      "Game data is not included. The player supplies a raw MODE2/2352 BIN image of the NTSC-U (US) retail Crash Team Racing disc, used as assets/ctr-u.bin; 2048-byte ISO images and CUE files are not accepted. The first-run importer checks sector layout, the NTSC-U executable and boot configuration, required files and the audio manifest, but does not compare the image against a retail checksum. Optional PAL voiceovers and custom characters need a PAL or NTSC-U disc image and the project’s Python tools.",
+      "Builds must target 32-bit x86 because the decompiled code assumes 4-byte pointers. The documented CMake 3.20+ presets cover Linux gcc-multilib, Windows MinGW32/MSYS2 and Visual Studio 2022, with SDL3 and other dependencies vendored; Linux builds also need 32-bit X11, OpenGL, audio, udev and D-Bus development packages. Running needs an OpenGL 3.3 GPU and driver, plus 32-bit runtime libraries on Linux.",
+      "README reports 31 CTest tests with renderer tests enabled: 25 display-independent and 6 needing an OpenGL context. CI runs the display-independent subset on Linux and Windows and the GPU subset under Xvfb with software GL, which may skip without a context. The tested-devices table confirms one Linux setup and no Windows machine, and known issues include Wayland problems with 32-bit libraries. These are project reports, not byte-matching or gameplay-equivalence results; this collection did not run them.",
+      "The repository is GPLv3. Its third-party notices record PsyCross-derived platform code (MIT), PSn00bSDK headers (MPL 2.0), SDL and other vendored components under their own licenses, and the bundled fonts keep Apache 2.0 and OFL terms. Contributing rules keep retail disc data and extracted assets out of commits; the original game remains its owners’ property. The reviewed sources state no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/CONTRIBUTING.md",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/THIRD_PARTY_NOTICES.md",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/LICENSE",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/VERSION",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/.github/workflows/build-native.yml",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/docs/DATA_SECTIONS.md",
+      "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/assets/fonts/README.md",
+      "https://github.com/CTR-tools/ctr-native/blob/4682773232715bfd3f39b8c7066ab12e1c37c23e/README.md"
+    ]
   }
 ]

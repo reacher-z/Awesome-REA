@@ -13083,13 +13083,27 @@
         "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 111 (README line 1150) lists CameronRedmore/Crash-Team-Racing-Turbocharged under 🌀 Crash Team Racing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 111 行（README 第 1150 行）在 🌀 Crash Team Racing 下列出 CameronRedmore/Crash-Team-Racing-Turbocharged。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, CI workflow, contributing rules and third-party notices support a documented PC sourceport of decompiled Crash Team Racing code that loads the player’s own NTSC-U disc image. Full mapping covers this Turbocharged fork, not the upstream CTR-ModSDK decompilation, CTR Native or High Octane as separate projects. Device coverage, test results and fidelity remain project-reported.",
+      "reason_zh": "固定版本的 README、CI 工作流、贡献规则和第三方声明，支持这一有文档记录的 PC 源码移植：它基于 Crash Team Racing 反编译代码，并读取玩家自备的 NTSC-U 光盘镜像。完整映射覆盖该 Turbocharged 分支，不把上游 CTR-ModSDK 反编译、CTR Native 或 High Octane 作为独立项目收录。设备覆盖、测试结果和还原度仍为项目自述。",
+      "primary_evidence_urls": [
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/README.md",
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/CONTRIBUTING.md",
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/THIRD_PARTY_NOTICES.md",
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/LICENSE",
+        "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/.github/workflows/build-native.yml",
+        "https://github.com/CTR-tools/ctr-native/blob/4682773232715bfd3f39b8c7066ab12e1c37c23e/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ctr-turbocharged-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-112",
@@ -14770,18 +14784,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 144,
-      "insufficient-evidence": 125,
-      "pending": 322
-    },
-    "units_by_state": {
-      "already-curated": 143,
+      "already-curated": 145,
       "insufficient-evidence": 125,
       "pending": 321
     },
-    "primary_reviewed_units": 208,
-    "catalog_linked_occurrences": 155,
-    "distinct_resource_ids": 149,
+    "units_by_state": {
+      "already-curated": 144,
+      "insufficient-evidence": 125,
+      "pending": 320
+    },
+    "primary_reviewed_units": 209,
+    "catalog_linked_occurrences": 156,
+    "distinct_resource_ids": 150,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

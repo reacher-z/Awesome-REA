@@ -2317,5 +2317,15 @@
       "README 与 BUILDING.md 均未记录自动化游戏测试或与原版的对照；反编译的一致性状态属于独立的 sf64 项目。本合集未下载构建，也未运行任何内容。",
       "LICENSE.md 为 CC0 1.0 Universal；ROM、提取出的素材及游戏本身仍归其所有者，子模块保留各自条款。README 表示项目不纵容盗版。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "ctr-turbocharged-port-case": {
+    "name": "CTR Turbocharged：基于 Crash Team Racing 反编译成果的 PC 移植",
+    "requirements": [
+      "所审阅的 turbocharged 分支（VERSION 为 2026.10.1）派生自 High Octane v1.4.1，后者基于 CTR Native 及 CTR-ModSDK 反编译成果。它是对反编译 C 代码的源码移植，不是生成一致产物的反编译重建，也不是静态重编译。仅支持 Windows 与 Linux PC 构建；继承的 PS Vita 和网页构建不受支持，在线排行榜与 Discord Rich Presence 已停用。",
+      "不含游戏数据。玩家需自备 NTSC-U（美版）零售版 Crash Team Racing 光盘的原始 MODE2/2352 BIN 镜像，作为 assets/ctr-u.bin 使用；不接受 2048 字节扇区的 ISO 镜像或 CUE 文件。首次运行的导入程序会检查扇区布局、NTSC-U 可执行文件与启动配置、必需文件及音频清单，但不会将镜像与零售版校验值比对。可选的 PAL 配音和自定义角色需要 PAL 或 NTSC-U 光盘镜像及项目提供的 Python 工具。",
+      "构建必须面向 32 位 x86，因为反编译代码假定指针为 4 字节。文档给出的 CMake 3.20+ 预设覆盖 Linux gcc-multilib、Windows MinGW32／MSYS2 和 Visual Studio 2022，SDL3 等依赖已随仓库提供；Linux 构建还需 32 位 X11、OpenGL、音频、udev 和 D-Bus 开发包。运行需支持 OpenGL 3.3 的 GPU 与驱动，Linux 上还需 32 位运行库。",
+      "README 报告启用渲染器测试后共有 31 项 CTest 测试：25 项不依赖显示，6 项需要 OpenGL 上下文。CI 在 Linux 和 Windows 上运行不依赖显示的子集，并在 Xvfb 中以软件 GL 运行 GPU 子集，缺少上下文时可能跳过。已测试设备表仅确认一套 Linux 配置，尚无已确认的 Windows 机器；已知问题包括 32 位库在 Wayland 下的故障。这些均为项目报告，不是字节一致或游戏行为等价结果，本合集未运行。",
+      "仓库采用 GPLv3。第三方声明列出派生自 PsyCross 的平台代码（MIT）、PSn00bSDK 头文件（MPL 2.0）、SDL 及其他随附组件各自的许可，捆绑字体保留 Apache 2.0 和 OFL 条款。贡献规则要求零售光盘数据和提取的素材不得提交；原版游戏仍归其权利人所有。所审来源未声明使用 AI 或 REA。"
+    ]
   }
 }
