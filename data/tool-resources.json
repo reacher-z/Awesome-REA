@@ -2681,5 +2681,40 @@
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
     ]
+  },
+  {
+    "id": "psprecomp-vice-city-stories-case",
+    "name": "PSPRecomp: statically recompiling GTA: Vice City Stories into a native Windows build",
+    "url": "https://github.com/jessicanataliagta/PSPRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Provides a PSP static-recompilation framework that analyzes Allegrex/MIPS executables and emits C++ for a native host runtime, without an interpreter or JIT. Its Vice City Stories profile checks in code generated for the US ULUS-10160 executable, plus HLE, Direct3D 12 rendering, audio and input layers. The decrypted executable and game data come from the user’s own copy, and no gameplay status is published.",
+    "description_zh": "提供 PSP 静态重编译框架，分析 Allegrex／MIPS 可执行文件并生成 C++，交由原生宿主运行时执行，不使用解释器或 JIT。其 Vice City Stories 配置档收录针对美版 ULUS-10160 可执行文件生成的代码，以及 HLE、Direct3D 12 渲染、音频与输入层。已解密的可执行文件和游戏数据需来自使用者自己的副本，项目未公布游戏运行状态。",
+    "evidence_url": "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit (2026-08-14) has no releases or tags. README calls VCS the first working profile but publishes no compatibility, completion or known-issue report; stage reports and handoffs stay in an ignored progress directory. The output is a native VCSNative.exe for one PSP release, not recovered authored source or a general PSP emulator.",
+      "Requires the user’s own ULUS-10160 (NTSC-U) copy: a decrypted EBOOT, for which the profile configuration records an expected SHA-256, plus the PSP_GAME/USRDIR data. The repository deliberately contains no decryption code, game executable or commercial assets.",
+      "The framework needs CMake 3.20+ and a C++20 compiler. The VCS profile currently targets Windows with Visual Studio 2022, MSVC and Direct3D 12, using batch scripts for release and fast builds plus an optional Ninja workflow. Its vcs_recomp generator target regenerates the checked-in corpus of 234 generated translation units.",
+      "ctest runs framework regression tests; profile tests cover synthetic graphics-engine rendering, configuration, bootstrap paths and audio resampling. The configuration stops on missing functions or unsupported instructions, with no interpreter or JIT fallback. These are component checks, not gameplay or fidelity results, and this collection ran none of them.",
+      "MIT covers framework code. The VCS profile bundles FFmpeg (LGPL 2.1+), SMAA, HDR shader material, MIT Project2DFX-derived data and CloudWorks material under CC BY-NC-SA 3.0. The checked-in corpus is generated from the commercial executable, and the MIT grant does not resolve rights in it or in game content. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/README.md",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/docs/ARCHITECTURE.md",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/docs/PROFILE_GUIDE.md",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/docs/SOURCE_PROVENANCE.md",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/config/vcs_ulus10160.toml",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/CMakeLists.txt",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/THIRD_PARTY.md",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/tests/vcs_profile_tests.cpp",
+      "https://github.com/jessicanataliagta/PSPRecomp/tree/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/generated",
+      "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/LICENSE"
+    ]
   }
 ]

@@ -10918,13 +10918,29 @@
         "https://github.com/jessicanataliagta/PSPRecomp/tree/main/profiles/vcs",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 78 (README line 788) lists PSPRecomp · Vice City Stories profile under 🚗 Grand Theft Auto: Vice City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 78 行（README 第 788 行）在 🚗 Grand Theft Auto: Vice City Stories 下列出 PSPRecomp · Vice City Stories profile。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned framework and VCS-profile documentation, configuration, build file, tests and license notices support a PSP static recompilation of the US Vice City Stories executable into a native Windows build. Full mapping covers this repository’s VCS profile, not the separate Android adaptation. The reported post only links a general third-party archive and adds no evidence; user-supplied inputs, absent gameplay status and rights limits remain explicit.",
+      "reason_zh": "固定版本的框架与 VCS 配置档文档、配置、构建文件、测试及许可声明，支持将美版 Vice City Stories 可执行文件静态重编译为原生 Windows 构建的 PSP 重建项目。完整映射覆盖此仓库的 VCS 配置档，不涵盖独立的 Android 适配。所报告的帖子仅链接一个第三方综合存档，未提供证据；自备输入、缺少游戏运行状态及权利限制均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/README.md",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/README.md",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/docs/SOURCE_PROVENANCE.md",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/config/vcs_ulus10160.toml",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/CMakeLists.txt",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/profiles/vcs/THIRD_PARTY.md",
+        "https://github.com/jessicanataliagta/PSPRecomp/blob/f6e7d415c7f447b934cc3865a31eb725f353d659/LICENSE",
+        "https://x.com/mdaman010/status/2109111127238230239"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "psprecomp-vice-city-stories-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-079",
@@ -13284,18 +13300,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 65,
-      "insufficient-evidence": 66,
-      "pending": 460
-    },
-    "units_by_state": {
-      "already-curated": 64,
+      "already-curated": 66,
       "insufficient-evidence": 66,
       "pending": 459
     },
-    "primary_reviewed_units": 76,
-    "catalog_linked_occurrences": 72,
-    "distinct_resource_ids": 63,
+    "units_by_state": {
+      "already-curated": 65,
+      "insufficient-evidence": 66,
+      "pending": 458
+    },
+    "primary_reviewed_units": 77,
+    "catalog_linked_occurrences": 73,
+    "distinct_resource_ids": 64,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
