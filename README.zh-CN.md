@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 274](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-274-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 134](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 275](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-275-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 135](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (115) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (116) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (134) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (135) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -761,6 +761,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Syphon Filter: The Omega Strain 北美版 PlayStation 2 可执行文件的大部分代码重建为 C；其余函数保留为拆分出的汇编，整体构建可逐字节重现零售版 SCUS\_972.64。仓库提交的 objdiff 报告以使用者自备的可执行文件为基准，追踪逐函数的匹配进度。这是一致性反编译案例，不是 PC 移植；进度数字仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/syphon-filter-omega-strain-decomp-case/)
+
+- [**Animal Crossing：基于 GameCube 反编译成果的原生 PC 移植**](https://github.com/flyngmt/ACGC-PC-Port)
+
+  让 Animal Crossing 反编译所得的 GameCube C 代码在 32 位 x86 上原生运行，用转换层把 GX 图形 API 映射到 OpenGL 3.3，并以基于 SDL2 的平台代码替代主机服务。游戏素材在启动时从使用者自己的光盘镜像读取，不随项目分发。这是基于 ACreTeam ac-decomp 的移植，而非与原可执行文件一致的重建。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-pc-port-case/)
 
 #### 工具、项目与集成
 
