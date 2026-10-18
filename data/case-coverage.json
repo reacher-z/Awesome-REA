@@ -9629,15 +9629,33 @@
       "reported_source_urls": [
         "https://github.com/zeldaret/botw"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Explicit experimental WIP decompilation of Breath of the Wild Switch 1.5.0. README says it cannot be used to play the game and contains no assets/RomFS. Potential research-source case, not a playable-port case; follow primary technical documentation and license before drafting.",
-      "reason_zh": "README 明确将 Switch 1.5.0《旷野之息》列为实验性未完成反编译，并说明不含素材或 RomFS、不能用于游玩。可作为研究代码线索；发表前仍需核查技术文档与许可，不能描述为可玩的移植。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, setup script, function-status list and the project’s About and installation pages support a per-function matching decompilation of the Switch v1.5.0 main executable. Full mapping covers this research reconstruction, not a playable build, a port or independently rerun matching checks. The required user-owned executable, missing license file and project-reported progress remain explicit.",
+      "reason_zh": "固定版本的 README、安装脚本、函数状态列表以及项目的 About 与安装页面，支持这是一项针对 Switch v1.5.0 主程序的逐函数一致性反编译。完整映射覆盖此研究性重建，不代表可游玩构建、移植或独立重跑的一致性检查。所需的使用者自有可执行文件、缺失的许可证文件及项目报告的进度均明确保留。",
       "primary_evidence_urls": [
-        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md"
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/tools/setup.py",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/CMakeLists.txt",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/.gitmodules",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/tools/config.toml",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/data/uking_functions.csv",
+        "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/AGENTS.md",
+        "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/about.mdx",
+        "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/contribute/installation.mdx",
+        "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/contribute/how-to-decompile.mdx",
+        "https://github.com/open-ead/nx-decomp-tools/blob/e0eae2f7f403befec6b60cb615f6680a6937d0c9/viking/src/functions.rs",
+        "https://botw.link/progress"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "botw-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-012",
@@ -13441,18 +13459,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 72,
-      "insufficient-evidence": 71,
-      "pending": 448
-    },
-    "units_by_state": {
-      "already-curated": 71,
+      "already-curated": 73,
       "insufficient-evidence": 71,
       "pending": 447
     },
+    "units_by_state": {
+      "already-curated": 72,
+      "insufficient-evidence": 71,
+      "pending": 446
+    },
     "primary_reviewed_units": 88,
-    "catalog_linked_occurrences": 79,
-    "distinct_resource_ids": 71,
+    "catalog_linked_occurrences": 80,
+    "distinct_resource_ids": 72,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

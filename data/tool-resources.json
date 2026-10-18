@@ -2857,5 +2857,41 @@
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/CLAUDE.md",
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/LICENSE"
     ]
+  },
+  {
+    "id": "botw-decomp-case",
+    "name": "Breath of the Wild: per-function matching decompilation of the Switch executable",
+    "url": "https://github.com/zeldaret/botw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements part of Breath of the Wild’s Switch v1.5.0 main executable in C++ and checks each function against the original machine code. The project calls itself a hybrid decompilation/reimplementation: it contains no assets, its ELF holds only reimplemented functions and cannot run the game, and porting is an explicit non-goal.",
+    "description_zh": "以 C++ 重新实现《塞尔达传说 旷野之息》Switch v1.5.0 主程序的部分代码，并逐个函数与原始机器码比对。项目自称是反编译与重新实现的混合体：不含游戏素材，生成的 ELF 仅包含已重新实现的函数、无法运行游戏，移植到其他平台也明确不是目标。",
+    "evidence_url": "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this an experimental work-in-progress decompilation of Switch v1.5.0. The About page scopes it to the main executable (game code and most statically linked libraries), excluding RomFS assets, dynamically linked SDK libraries, libcurl, NEX and most of Havok. Functions are matched individually rather than placed at original addresses, so this is not a whole-executable matching build, a playable game or a port.",
+      "Setup needs the user’s own main NSO executable from the Switch release. The pinned setup script verifies its hash, uses 1.5.0 directly and converts listed 1.6.0 or 1.9.0 executables to 1.5.0 with a project-hosted patch; RomFS and other game content are not used. The About page says the project is useless to anyone who does not own the game.",
+      "The installation guide assumes Linux (native or WSL) or macOS and lists Python 3, Ninja, CMake, ccache, xdelta3, Clang and a Rust toolchain; the pinned CMakeLists requires CMake 3.30. Setup fetches Clang 4.0.1 for game code and installs tools/check. Submodules supply sead, agl, EventFlow, NintendoSDK headers and the shared nx-decomp-tools; the decompiling guide works from Hex-Rays or Ghidra output.",
+      "tools/check diffs each listed function against the original executable, and data/uking_functions.csv records its status. At the pinned commit that list marks 32,079 of 113,490 functions matching, 514 non-matching, 7,601 work in progress, 6,270 library and 67,026 not decompiled; the mutable botw.link badges showed 17.493% by size and 30.398% by function on review. This collection did not run the checker.",
+      "The pinned tree has no root license file and GitHub detects none, so no reuse license is stated; submodules and Nintendo content keep their own terms, and the About page calls the work a legal gray zone. AGENTS.md sets disclosure and human-review rules for AI-assisted contributions, but the reviewed files neither attribute the reconstruction to REA nor quantify AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/tools/setup.py",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/CMakeLists.txt",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/.gitmodules",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/tools/config.toml",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/data/uking_functions.csv",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/AGENTS.md",
+      "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/about.mdx",
+      "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/contribute/installation.mdx",
+      "https://github.com/open-ead/botw-decomp-www/blob/bafa2192811908bdba7c558dca0e1584900d9866/docs/contribute/how-to-decompile.mdx",
+      "https://github.com/open-ead/nx-decomp-tools/blob/e0eae2f7f403befec6b60cb615f6680a6937d0c9/viking/src/functions.rs",
+      "https://botw.link/progress"
+    ]
   }
 ]
