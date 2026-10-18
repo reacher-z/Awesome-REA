@@ -2681,5 +2681,45 @@
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
     ]
+  },
+  {
+    "id": "visor-ray-ban-meta-client-case",
+    "name": "Visor: an independent Ray-Ban Meta glasses client",
+    "url": "https://github.com/macedonga/visor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Implements an Android replacement for the Meta AI companion app that speaks the Ray-Ban Meta glasses’ own Bluetooth and Wi-Fi Direct protocol, imports media, exposes settings and answers “Hey Meta” with a model the user chooses. The project wiki documents the link layers, encryption, services and Meta-side ownership steps, and lists 153 open questions. Testing is on real glasses rather than test suites, so behavior beyond the stated model and firmware remains unverified.",
+    "description_zh": "实现可替代 Meta AI 配套应用的 Android 客户端：直接使用 Ray-Ban Meta 眼镜自有的蓝牙与 Wi-Fi Direct 协议，导入媒体、提供设置，并用用户选择的模型回应“Hey Meta”。项目 wiki 记录了链路分层、加密、服务及 Meta 端的所有权流程，并列出 153 个未解问题。项目以实机试用代替测试套件，因此所述型号和固件之外的行为仍未经验证。",
+    "evidence_url": "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed just after release v1.3.1 (2026-10-18). README targets Ray-Ban Meta (Gen 2) tested on firmware 72387580077200100; other Meta glasses are untested. It needs an Android 10+ phone, a Meta account using password or email-code login (passkeys do not work) and, for the assistant, an Anthropic or OpenAI-compatible API key. The glasses accept one session at a time, so Visor and the Meta AI app displace each other.",
+      "Setup makes Visor the glasses’ owner app through Meta’s login and ownership-receipt services, so it still depends on a Meta account and Meta servers for setup, frame style and language packs. Source builds need three client tokens from the official Meta AI app, which the repository does not include; without them the app builds but login and ownership fail. Release builds read them from CI secrets.",
+      "Building needs JDK 21 and the Android SDK with platform 37. CI builds a debug APK with Gradle, and tagged releases publish a signed APK with a SHA-256 file; README lists the release certificate fingerprint. Modules separate wire format and ciphers, transport, session, identity, media, settings and the assistant, which stands in for Meta’s server with Claude or an OpenAI-compatible model.",
+      "There are no test suites: CONTRIBUTING asks for hardware trials and wire.log excerpts for protocol changes, and CLAUDE.md says the app works on real glasses as of 2026-10-05. The wiki marks unconfirmed facts and lists open questions, including unread payloads and model-specific values; CLAUDE.md also refers to a desktop Python client snapshot that the repository does not contain. This collection read source and documentation without running the app or glasses.",
+      "Visor is AGPL-3.0 and states it is unaffiliated with Meta or EssilorLuxottica; Meta’s services, app tokens, firmware and trademarks keep their own terms. CONTRIBUTING forbids getting unsigned software past the glasses’ signature checks. Claude is one selectable assistant backend, the repository’s CLAUDE.md is a contributor guide, and the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/CLAUDE.md",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/CONTRIBUTING.md",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/SECURITY.md",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/LICENSE",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/app/build.gradle.kts",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/.github/workflows/build.yml",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/.github/workflows/release.yml",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/core/protocol/src/main/kotlin/com/macedonga/visor/core/protocol/Framing.kt",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/core/protocol/src/main/kotlin/com/macedonga/visor/core/protocol/Cipher.kt",
+      "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/core/assistant/src/main/kotlin/com/macedonga/visor/core/assistant/Brain.kt",
+      "https://github.com/macedonga/visor/wiki/Home/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+      "https://github.com/macedonga/visor/wiki/Protocol-overview/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+      "https://github.com/macedonga/visor/wiki/Meta-login-and-ownership/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+      "https://github.com/macedonga/visor/wiki/Open-questions/7358c5a1c39a6354d2170f89133b184f7f2b82e7"
+    ]
   }
 ]

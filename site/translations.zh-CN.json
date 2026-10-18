@@ -1491,5 +1491,15 @@
       "议题作者报告曾在四个真实 MIPS32 小端固件 ELF 上检验本地补丁，其函数入口与另行生成的 32 位 Ghidra 导出一致，并报告其中一个镜像在自动选择语言时丢失 5,250 个函数中的 400 个；这些文件未公开。一位 PR 审阅者测试了改写文件头的 OpenWrt 内核与 BusyBox 构建，用 Capstone 交叉核对，且未找到未经改写的公开无记录文件。未确立具体设备型号、固件修改或运行时行为。",
       "REA 声明 MIT。Ghidra、编译器、binutils 与所分析的固件仍有各自条款，作者结果所用的固件也未提供。本合集审阅了议题、PR 讨论串与固定版本源码，未运行 REA、Ghidra 或任何目标。"
     ]
+  },
+  "visor-ray-ban-meta-client-case": {
+    "name": "Visor：独立的 Ray-Ban Meta 眼镜客户端",
+    "requirements": [
+      "审阅时间紧随 v1.3.1 发布（2026-10-18）。README 面向 Ray-Ban Meta（第二代），测试固件为 72387580077200100；其他 Meta 眼镜未经测试。需要 Android 10+ 手机、使用密码或邮箱验证码登录的 Meta 账号（不支持通行密钥），使用助手功能还需 Anthropic 或兼容 OpenAI 接口的 API 密钥。眼镜一次只接受一个会话，因此 Visor 与 Meta AI 应用会互相顶替连接。",
+      "设置流程通过 Meta 的登录与所有权凭据服务，使 Visor 成为眼镜的所有者应用，因此设置、镜框样式和语言包仍依赖 Meta 账号及 Meta 服务器。从源码构建需要来自官方 Meta AI 应用的三个客户端令牌，仓库并未包含；缺少令牌时应用可以构建，但登录和所有权步骤会失败。发布构建从 CI 密钥中读取这些令牌。",
+      "构建需要 JDK 21 和带 platform 37 的 Android SDK。CI 使用 Gradle 构建调试 APK，打标签的版本会发布签名 APK 及 SHA-256 文件；README 列出了发布证书指纹。模块分为线路格式与加密、传输、会话、身份、媒体、设置和助手；助手模块代替 Meta 服务器，改用 Claude 或兼容 OpenAI 接口的模型。",
+      "项目没有测试套件：CONTRIBUTING 要求协议改动附上实机试用说明和 wire.log 片段，CLAUDE.md 称截至 2026-10-05 应用可在实机上运行。wiki 标出未确认的事实并列出未解问题，包括尚未解读的负载和与型号相关的取值；CLAUDE.md 还提到一个桌面 Python 客户端快照，但仓库中并未包含。本目录只阅读源码和文档，未运行应用或眼镜。",
+      "Visor 采用 AGPL-3.0，并声明与 Meta 或 EssilorLuxottica 无关；Meta 的服务、应用令牌、固件和商标保留各自条款。CONTRIBUTING 禁止让未经 Meta 签名的软件绕过眼镜的签名检查。Claude 只是可选的助手后端之一，仓库中的 CLAUDE.md 是贡献者指南，所审阅来源未确立 REA 的使用。"
+    ]
   }
 }

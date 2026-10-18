@@ -3695,13 +3695,31 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110224031794241676"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked Visor repository and its wiki document an independent Android client that implements the Ray-Ban Meta glasses’ link, encryption and service protocol and Meta’s ownership steps, with stated model/firmware limits and recorded open questions. The full mapping covers this hardware-tested protocol reconstruction as the project reports it, not other glasses models or independent runtime reproduction. The reviewed sources establish no REA use.",
+      "reason_zh": "所链接的 Visor 仓库及其 wiki 记录了一个独立的 Android 客户端：实现 Ray-Ban Meta 眼镜的链路、加密和服务协议以及 Meta 的所有权流程，并说明型号／固件限制和未解问题。完整映射覆盖项目报告的这一实机测试协议重建，不涵盖其他眼镜型号或独立运行复现。所审阅来源未确立 REA 的使用。",
+      "primary_evidence_urls": [
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/README.md",
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/CLAUDE.md",
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/CONTRIBUTING.md",
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/LICENSE",
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/core/protocol/src/main/kotlin/com/macedonga/visor/core/protocol/Framing.kt",
+        "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/core/assistant/src/main/kotlin/com/macedonga/visor/core/assistant/Brain.kt",
+        "https://github.com/macedonga/visor/wiki/Home/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+        "https://github.com/macedonga/visor/wiki/Protocol-overview/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+        "https://github.com/macedonga/visor/wiki/Meta-login-and-ownership/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
+        "https://github.com/macedonga/visor/wiki/Open-questions/7358c5a1c39a6354d2170f89133b184f7f2b82e7"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "visor-ray-ban-meta-client-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:hongguo-short-drama-ad-removal",
@@ -13297,18 +13315,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 66,
-      "insufficient-evidence": 66,
-      "pending": 459
-    },
-    "units_by_state": {
-      "already-curated": 65,
+      "already-curated": 67,
       "insufficient-evidence": 66,
       "pending": 458
     },
-    "primary_reviewed_units": 77,
-    "catalog_linked_occurrences": 73,
-    "distinct_resource_ids": 64,
+    "units_by_state": {
+      "already-curated": 66,
+      "insufficient-evidence": 66,
+      "pending": 457
+    },
+    "primary_reviewed_units": 78,
+    "catalog_linked_occurrences": 74,
+    "distinct_resource_ids": 65,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
