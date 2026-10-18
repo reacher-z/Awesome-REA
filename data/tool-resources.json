@@ -36528,5 +36528,37 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "perfect-dark-pc-port-case",
+    "name": "Perfect Dark: a native port of the matching decompilation",
+    "url": "https://github.com/perfect-dark-pc-port/perfect_dark",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress port of the n64decomp Perfect Dark decompilation to Windows, Linux, macOS and Nintendo Switch, replacing the N64 platform with an SDL2 and OpenGL layer, a libultraship-derived fast3d renderer and an audio mixer. The executable reads game data from the user's own ROM at run time and adds mouselook, widescreen, higher frame rates and basic mod support. The README calls the game mostly functional, with minor graphics and gameplay issues and possible crashes.",
+    "description_zh": "将 n64decomp 的 Perfect Dark 反编译移植到 Windows、Linux、macOS 与 Nintendo Switch 的进行中项目，以 SDL2 与 OpenGL 平台层、源自 libultraship 的 fast3d 渲染器和音频混音器取代 N64 平台。可执行文件在运行时从使用者自备的 ROM 读取游戏数据，并加入鼠标视角、宽屏、更高帧率和基础模组支持。README 称游戏大体可用，仍有轻微的图形与玩法问题，并可能崩溃。",
+    "evidence_url": "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "This GitHub fork of n64decomp/perfect_dark (default branch port) has diverged from the curated decompilation commit, 1,129 commits ahead and 91 behind. It ports the decompiled C to modern platforms through port/ (platform, input, video, audio and file code), with fast3d from libultraship and a mixer from sm64-port. README reports single-player and split-screen multiplayer fully working, minor graphics and gameplay issues, possible crashes, and experimental tick rates up to 240 FPS that misbehave above about 165. The netplay port-net branch and other forks are outside this record.",
+      "Supply your own ROM: ntsc-final (US V1.1, recommended), ntsc-1.0, or pal-final and jpn-final, each of the last two needing a separately built executable; README lists an MD5 for each. The executable reads asset files and ROM segments from that .z64 file at run time, byte-swapping its big-endian data, and an optional Perfect Dark Game Boy Color ROM emulates the Transfer Pak cheat unlocks. Like the upstream decompilation, the tree commits asset manifests plus the game's text strings and level tile data as JSON sources (some tile files exceed 10 MB); other asset files and ROM segments come from the user's ROM.",
+      "Officially supported and tested: Windows 7+ and Linux on i686 and x86_64, macOS on x86_64 (10.9+) and arm64 (11.0+), and Nintendo Switch; a GPU with OpenGL 3.0 or ES 3.0 is required. Builds use CMake with GCC 10 or newer (MSYS2 MinGW on Windows; Visual Studio is not supported), Python 3, SDL2 2.0.12+ and zlib, or devkitA64 with libnx for Switch, and ROMID selects ntsc-final, pal-final or jpn-final at configure time. CI builds every region for the Windows, Linux and macOS targets, and a rolling ci-dev-build release hosts automatic builds.",
+      "No matching or gameplay comparison is claimed for the port: the checksum manifests and ido-static-recomp submodule inherited from the decompilation are not described as checks of the PC executable, and README reports only the status above and its tested platforms. This collection did not download builds or run anything.",
+      "LICENSE is MIT (copyright 2022 Ryan Dwyer, as in the decompilation); the ROM and the game's text and assets keep their rights holders' terms, and components credited in README, such as fast3d and minimp3, come from other projects. README credits the decompilation authors and Ryan Dwyer's pd-extract. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/CMakeLists.txt",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/port/src/romdata.c",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/.github/workflows/c-cpp.yml",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/.gitmodules",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/blob/32a1cb9f268dd3ac73016801025c6bbbfa20130f/LICENSE",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/releases/tag/ci-dev-build",
+      "https://github.com/perfect-dark-pc-port/perfect_dark/compare/169ed48bdcbfb3b568b028bd5bebb27680073514...32a1cb9f268dd3ac73016801025c6bbbfa20130f"
+    ]
   }
 ]
