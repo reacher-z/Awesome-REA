@@ -4220,5 +4220,46 @@
       "https://github.com/pret/pokeemerald/tree/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/tools",
       "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
     ]
+  },
+  {
+    "id": "paper-mario-matching-decomp-case",
+    "name": "Paper Mario: matching Nintendo 64 decompilation for four releases",
+    "url": "https://github.com/pmret/papermario",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Paper Mario’s Nintendo 64 code as C source that rebuilds the US, Japanese, PAL and iQue ROMs. The build takes assets and comparison inputs from a user-supplied original ROM, then checks each output against a recorded SHA-1. Mutable project reports list no remaining nonmatching functions, while the README still calls the decompilation work in progress; it is distinct from the PaperBoat native port.",
+    "description_zh": "将 Paper Mario 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版、PAL 版和 iQue 版 ROM。构建流程从使用者自备的原 ROM 取得素材和比较输入，再将每个产物与记录的 SHA-1 比对。项目可变的进度报告显示已无未匹配函数，但 README 仍称反编译在进行中；该项目与 PaperBoat 原生移植不同。",
+    "evidence_url": "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a work-in-progress decompilation that builds US, JP, PAL and iQue ROMs, each with a listed SHA-1. For the reviewed commit, papermar.io’s mutable progress CSVs list zero nonmatching functions for all four versions (12,679 for US), and its US page announces 100% for US, PAL and iQue. The output is an N64 ROM, not a native PC executable; HarbourMasters’ PaperBoat port is a separate project.",
+      "At least one independently obtained original ROM matching a listed SHA-1 is required, supplied as that version’s baserom.z64; the Nix route expects all four. configure splits assets from those ROMs, and neither ROMs nor extracted assets are distributed with the source.",
+      "SETUP.md supports Linux, macOS, WSL 2 and Nix. The build uses a Python configure script with ninja, pigment64 from cargo, host MIPS binutils/GCC/cpp, and downloaded compiler builds: project GCC/binutils, GCC 2.7.2, EGCS and statically recompiled IDO 5.3. configure refuses a matching iQue build on macOS because EGCS is unavailable there.",
+      "A matching build ends with sha1sum checks against each version’s checksum.sha1, reporting “papermario.z64: OK”. --non-matching, --modern-gcc and --shift builds skip that check, so they are not matching results. Jenkins builds all four versions plus a shiftable US build and publishes the progress reports; this collection ran none of these checks.",
+      "The reviewed tree has no top-level license file and GitHub detects none, so no reuse grant is established for the source. Original ROMs and extracted assets retain separate rights, and downloaded compilers carry their own terms. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/SETUP.md",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/CONTRIBUTING.md",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/tools/configure/src/configure/main.py",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/install_compilers.sh",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/install_deps.sh",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/Jenkinsfile",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/progress.py",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/ver/us/checksum.sha1",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/ver/jp/checksum.sha1",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/ver/pal/checksum.sha1",
+      "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/ver/ique/checksum.sha1",
+      "https://papermar.io/progress-us",
+      "https://papermar.io/reports/progress_us.csv",
+      "https://papermar.io/reports/progress_jp.csv",
+      "https://papermar.io/reports/progress_pal.csv",
+      "https://papermar.io/reports/progress_ique.csv"
+    ]
   }
 ]

@@ -11745,15 +11745,30 @@
         "https://github.com/pmret/papermario",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Paper Mario README calls the decompilation WIP and lists US/JP/PAL/iQue target ROM hashes; setup and current progress are separate linked resources. Review SETUP/license/current progress before drafting; do not equate this repo with the recompilation or PaperBoat native port rows.",
-      "reason_zh": "Paper Mario README 将反编译标为进行中，列出美、日、PAL 和 iQue ROM 哈希；安装及当前进度由独立链接提供。发表前需核查设置、许可和进度，不能等同于重编译项目或 PaperBoat 移植。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, setup guide, configure script, CI file and four SHA-1 manifests support the named four-release N64 matching-decompilation report; mutable project reports list no nonmatching functions. Full mapping covers this decompilation, not the PaperBoat native port or recompilation rows. Original-ROM dependencies, the absent license and project-reported matching remain explicit.",
+      "reason_zh": "固定版本的 README、安装指南、configure 脚本、CI 文件及四份 SHA-1 清单，支持该四版本 N64 一致性反编译报告；项目可变的进度报告显示已无未匹配函数。完整映射覆盖此反编译项目，不涵盖 PaperBoat 原生移植或重编译条目。原 ROM 依赖、许可证缺失及项目报告的一致性均明确保留。",
       "primary_evidence_urls": [
-        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md"
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/SETUP.md",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/CONTRIBUTING.md",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/tools/configure/src/configure/main.py",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/install_compilers.sh",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/Jenkinsfile",
+        "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/ver/us/checksum.sha1",
+        "https://papermar.io/progress-us",
+        "https://papermar.io/reports/progress_us.csv"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "paper-mario-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-075",
@@ -14202,18 +14217,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 113,
-      "insufficient-evidence": 86,
-      "pending": 392
-    },
-    "units_by_state": {
-      "already-curated": 112,
+      "already-curated": 114,
       "insufficient-evidence": 86,
       "pending": 391
     },
+    "units_by_state": {
+      "already-curated": 113,
+      "insufficient-evidence": 86,
+      "pending": 390
+    },
     "primary_reviewed_units": 141,
-    "catalog_linked_occurrences": 124,
-    "distinct_resource_ids": 118,
+    "catalog_linked_occurrences": 125,
+    "distinct_resource_ids": 119,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
