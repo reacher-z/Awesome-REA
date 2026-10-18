@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 286](https://img.shields.io/badge/resources-286-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 144](https://img.shields.io/badge/cases-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 287](https://img.shields.io/badge/resources-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 145](https://img.shields.io/badge/cases-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (126) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (127) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (144) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (145) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -820,6 +820,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Ports Tony Hawk’s Pro Skater (PlayStation, USA) to native Windows and Linux builds from a fork of an in-progress matching decompilation of the retail executable. The decompilation recompiles reconstructed functions with a Psy-Q toolchain and compares them byte for byte with the user’s retail executable, while the port replaces PlayStation hardware and libraries with SDL2 and OpenGL services. Play needs the user’s own disc image; matching and gameplay results remain project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/thps1-decomp-native-port-case/)
+
+- [**P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data**](https://github.com/LoreanXavier/pt-pc)
+
+  Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. The author documents reverse-engineered file formats and used the shadPS4 emulator as a behavior and frame reference. Fidelity to the original is author-reported, and the use of AI coding tools is disclosed.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pt-pc-port-case/)
 
 #### Tools, projects and integrations
 

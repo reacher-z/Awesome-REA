@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 286](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-286-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 144](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 54](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 287](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 145](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 54](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (126) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (127) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (144) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (145) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -821,6 +821,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   从一个仍在进行中的零售版可执行文件一致性反编译项目派生分支，将 Tony Hawk’s Pro Skater（PlayStation 美版）移植为原生 Windows 与 Linux 程序。反编译部分用 Psy-Q 工具链重新编译已重建的函数，并与使用者自备的零售可执行文件逐字节比对；移植部分则以 SDL2 和 OpenGL 服务取代 PlayStation 硬件和库。运行需使用者自备光盘镜像；一致性与可玩性结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/thps1-decomp-native-port-case/)
+
+- [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc)
+
+  在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。作者记录了逆向得出的文件格式，并以 shadPS4 模拟器作为行为与画面的对照参考。与原作的一致程度为作者报告，项目也披露使用了 AI 编程工具。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pt-pc-port-case/)
 
 #### 工具、项目与集成
 
