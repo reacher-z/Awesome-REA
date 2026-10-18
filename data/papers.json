@@ -4595,5 +4595,62 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-nova",
+    "title": "Nova: Generative Language Models for Assembly Code with Hierarchical Attention and Contrastive Learning",
+    "title_zh": "Nova：结合层次注意力与对比学习的汇编代码生成式语言模型",
+    "authors": [
+      "Nan Jiang",
+      "Chengxiao Wang",
+      "Kevin Liu",
+      "Xiangzhe Xu",
+      "Lin Tan",
+      "Xiangyu Zhang",
+      "Petr Babkin"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year stated by the official ICLR proceedings; no finer publication date is asserted. The proceedings page's citation date of 2025-05-01 is not adopted, and the arXiv dates are not substituted.",
+    "date_basis_zh": "采用 ICLR 官方论文集标明的出版年份，不推定更精确的出版日期。论文集页面 2025-05-01 的引用日期未被采用，也不以 arXiv 日期代替。",
+    "venue": "ICLR 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2311.13721",
+    "arxiv_version_reviewed": "v7",
+    "first_arxiv_date": "2023-11-22",
+    "doi": null,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ef283d62b4bce30854a8d4827f331229-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/ef283d62b4bce30854a8d4827f331229-Paper-Conference.pdf",
+    "code_url": "https://github.com/lt-asset/nova/tree/6dfaf438fb23a8f024d0297653571615631ad8f4",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Nova is a generative LLM for x86-64 assembly, trained from DeepSeek-Coder checkpoints on stripped, normalized gcc -O0 to -O3 assembly built from AnghaBench and The Stack. It adds hierarchical attention that builds per-instruction summaries, and contrastive objectives that keep a function's source and O0–O3 assembly close while ordering them by optimization level. Fine-tuned for decompilation, Nova-1.3B and Nova-6.7B reach 25.17% and 34.36% average Pass@1 on HumanEval-Decompile, 14.84 and 12.41 points above same-size LLM4Decompile; separately fine-tuned models report the highest average Recall@1 for O0-to-O3 binary code similarity on six real-world projects.",
+    "description_zh": "Nova 是面向 x86-64 汇编的生成式大语言模型，从 DeepSeek-Coder 检查点出发，以 AnghaBench 与 The Stack 代码经 gcc -O0 至 -O3 编译、剥离符号并规范化后的汇编训练。它加入为每条指令构建摘要的层次注意力，以及对比学习目标：使同一函数的源码与 O0–O3 汇编表示彼此接近，并按优化级别排序。针对反编译微调后，Nova-1.3B 与 Nova-6.7B 在 HumanEval-Decompile 上的平均 Pass@1 分别为 25.17% 和 34.36%，比同规模 LLM4Decompile 高 14.84 和 12.41 个百分点；另行微调的模型在六个真实项目上的 O0 对 O3 二进制代码相似性检测中取得最高的平均 Recall@1。",
+    "scope_limitations_en": "Decompilation is evaluated function by function on the 164 HumanEval-Decompile C problems, each compiled for x86-64 at O0–O3, by running 20 samples per function against the problems' test cases; Pass@k on these tests is neither whole-program nor equivalence evidence. Baselines other than LLM4Decompile and Nova were prompted with three-shot examples rather than fine-tuned. Similarity results cover O0 queries against O3 candidates in pools of 50–500 functions from Binutils, Curl, ImageMagick, SQLite, OpenSSL and PuTTY, after fine-tuning on BinaryCorp-3M. Decompilation fine-tuning used a 2.16M-pair sample, the README says only 50K files came from The Stack, and the paper limits Nova to x86-64 assembly and 1.3B and 6.7B models. Inputs require the paper's assembly normalization.",
+    "scope_limitations_zh": "反编译以函数为单位，在 HumanEval-Decompile 的 164 个 C 问题上评测；每个问题在 O0–O3 下编译为 x86-64，每个函数采样 20 次并以题目测试用例运行。基于这些测试的 Pass@k 既不能证明整程序反编译能力，也不能证明等价性。除 LLM4Decompile 与 Nova 外，其他基线采用三样例提示而非微调。相似性结果针对 O0 查询与 O3 候选，候选池为来自 Binutils、Curl、ImageMagick、SQLite、OpenSSL 与 PuTTY 的 50–500 个函数，模型先在 BinaryCorp-3M 上微调。反编译微调使用抽样的 216 万对数据，README 称仅从 The Stack 获取 5 万个文件；论文也说明 Nova 仅支持 x86-64 汇编，模型规模限于 1.3B 和 6.7B。输入需要按论文方式规范化汇编。",
+    "why_fits_en": "Adds an assembly-specialized foundation model evaluated on both decompilation and binary code similarity, complementing the decompilation-specific LLM papers in this section.",
+    "why_fits_zh": "补充一个面向汇编的基础模型，同时评测反编译与二进制代码相似性，与本节专注反编译的大语言模型论文互补。",
+    "metadata_notes": "Authors follow the proceedings, which list pages 95905–95926. arXiv has seven versions: v1 of 2023-11-22 was titled 'Nova+: Generative Language Models for Binaries' (written Nova$^+$ in the arXiv metadata) and listed six authors, without Petr Babkin; the checked later versions (v3, v5, v7) use the final title, and v7 of 2025-11-11 states ICLR 2025 publication. The repository README's abstract gives a relative decompilation gain of up to 146.54%, while the paper reports absolute percentage points. Licence signals are listed separately: the reviewed 2026-01-04 repository commit carries a BSD 3-Clause LICENSE, and the Hugging Face cards for nova-1.3b, nova-6.7b and their -bcr decompilation variants are tagged bsd-3-clause-clear; the models start from DeepSeek-Coder checkpoints, whose terms are not assessed here. requirements.txt pins torch 2.3.0, transformers 4.40.2, vllm 0.5.0 and deepspeed 0.14.4 for a Python 3.10 environment, and training examples use four GPUs. No models were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "作者以论文集为准，论文集列出第 95905–95926 页。arXiv 共有七个版本：2023-11-22 的 v1 题为“Nova+: Generative Language Models for Binaries”（arXiv 元数据写作 Nova$^+$），列出六位作者，不含 Petr Babkin；本次核查的后续版本（v3、v5、v7）均使用最终标题，2025-11-11 的 v7 注明发表于 ICLR 2025。仓库 README 的摘要称反编译相对提升最高达 146.54%，论文报告的则是绝对百分点。各项许可信息分开记录：所审阅的 2026-01-04 仓库提交附有 BSD 3-Clause LICENSE，Hugging Face 上 nova-1.3b、nova-6.7b 及其 -bcr 反编译变体的模型卡均标注 bsd-3-clause-clear；模型从 DeepSeek-Coder 检查点出发，本条不评估其条款。requirements.txt 为 Python 3.10 环境固定 torch 2.3.0、transformers 4.40.2、vllm 0.5.0 与 deepspeed 0.14.4，训练示例使用四块 GPU。本次未下载模型，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2025/hash/ef283d62b4bce30854a8d4827f331229-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2025/file/ef283d62b4bce30854a8d4827f331229-Paper-Conference.pdf",
+      "https://arxiv.org/abs/2311.13721",
+      "https://arxiv.org/abs/2311.13721v1",
+      "https://github.com/lt-asset/nova/blob/6dfaf438fb23a8f024d0297653571615631ad8f4/README.md",
+      "https://github.com/lt-asset/nova/blob/6dfaf438fb23a8f024d0297653571615631ad8f4/LICENSE",
+      "https://github.com/lt-asset/nova/blob/6dfaf438fb23a8f024d0297653571615631ad8f4/requirements.txt",
+      "https://huggingface.co/lt-asset/nova-1.3b/blob/4b4805bac4f13ef8bec678072ef60609ea3b0e77/README.md",
+      "https://huggingface.co/lt-asset/nova-6.7b/blob/dd808302b3f5929c29e8940f4e0c0e4cc38a5a63/README.md",
+      "https://huggingface.co/lt-asset/nova-1.3b-bcr/blob/9101c192eb22bbb982ebe94830385cedee5b78e0/README.md",
+      "https://huggingface.co/lt-asset/nova-6.7b-bcr/blob/69a8ccd089abc902b7ce9b4e17298a887fbe3626/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
