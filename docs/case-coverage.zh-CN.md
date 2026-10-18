@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 126 | 125 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 367 | 366 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 127 | 126 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 366 | 365 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 98 | 98 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-137 个出现项含目录链接；共关联 131 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+138 个出现项含目录链接；共关联 132 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 163 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 164 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -179,6 +179,7 @@
 | MediEvil 反编译：早期阶段、以校验值把关的 PlayStation 项目 | 已收录 | [来源](https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md) |
 | ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植 | 已收录 | [来源](https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md) |
 | pokered：一致构建的《精灵宝可梦 红／蓝》反汇编 | 已收录 | [来源](https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md) |
+| pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编 | 已收录 | [来源](https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md) |
 | 《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md) |
 | 《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建 | 已收录 | [来源](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
 | Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md) |

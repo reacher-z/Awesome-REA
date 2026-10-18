@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 126 | 125 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 367 | 366 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 127 | 126 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 366 | 365 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 98 | 98 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-137 occurrences have catalog links. They reference 131 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+138 occurrences have catalog links. They reference 132 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 163 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 164 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -179,6 +179,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | MediEvil decompilation: an early checksum-gated PlayStation project | Already curated | [Source](https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/README.md) |
 | ico-pc: a native ICO port compiled from the PS2 decompilation | Already curated | [Source](https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md) |
 | pokered: a matching Pokémon Red and Blue disassembly | Already curated | [Source](https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md) |
+| pokecrystal: a matching Pokémon Crystal disassembly | Already curated | [Source](https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md) |
 | Pokémon Emerald: a matching Game Boy Advance decompilation | Already curated | [Source](https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md) |
 | Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation | Already curated | [Source](https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md) |
 | Kingdom Hearts 358/2 Days: native PC port built on a matching decompilation | Already curated | [Source](https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/README.md) |
