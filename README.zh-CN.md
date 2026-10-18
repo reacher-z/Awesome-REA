@@ -20,7 +20,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (19) · [文档与学习资源](#references-and-learning) (20)
+- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (20) · [文档与学习资源](#references-and-learning) (20)
 
 **更多浏览方式**
 
@@ -1078,6 +1078,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   独立智能体技能，使用普通命令行工具开展应用与二进制调查，提供批量初查、针对性源码／反汇编阅读，以及明确的已观察／推断／未知证据标记，并附有作者报告的 REA MCP 工作流小规模对照。
 
   集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/leanrea-skill/)
+
+- [**Universal Modder 游戏模组智能体工具包**](https://github.com/rehan-remade/universal-modder)
+
+  为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。
+
+  集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集

@@ -2611,5 +2611,39 @@
       "https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/THIRD_PARTY_NOTICES.md",
       "https://github.com/nemesa/ha-tcl-home-unofficial-integration/blob/fdba4d7a0b8213f4f68a74b4ce0f932343802b6b/LICENSE"
     ]
+  },
+  {
+    "id": "universal-modder-agent-toolkit",
+    "name": "Universal Modder",
+    "url": "https://github.com/rehan-remade/universal-modder",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Packages agent skills, three role briefs, a Python CLI and preconfigured fal MCP settings for modding PC games the user owns. Its reverse-engineering guidance sends managed, native and data-format work to external decompilers and debuggers, and requires a round-trip check before a reverse-engineered file format is used; one worked example ships an Age of Empires II sprite writer built this way. It is a modding toolkit with agent-written field notes, not a game decompilation, and its example results remain project-reported.",
+    "description_zh": "为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。",
+    "evidence_url": "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is Python package version 0.2.0. It ships twelve Agent Skills-format skills, three subagent role files, the um CLI and per-client settings for the hosted fal MCP server, with install routes for Claude Code, Codex, Gemini CLI, VS Code/Copilot, Cursor and OpenCode. The host needs Git, Python 3.10+ and ffmpeg, with uv recommended and Blender only for 3D-to-sprite rendering; Windows capture, input and launch commands run natively or from WSL.",
+      "Work starts from a game installation the user owns. The toolkit supplies no game files, ROMs or decompiled code, and tells agents to keep decompiles and extracted assets outside the repository. Asset generation needs a fal API key or fal’s browser sign-in; a local ComfyUI server is an image alternative, and Sprixen is a separate paid API. Decompilers, debuggers, loaders and MCP servers named in the skills, such as ILSpy, Cpp2IL, Ghidra, IDA, Cheat Engine, Frida and RenderDoc, are installed separately.",
+      "The reverse-engineering skill asks agents to read decompiled code, data or live memory, confirm guesses dynamically, and prove a reverse-engineered file format with a decode–encode–decode round trip before writing new files. It reports that the Age of Empires II DE .sld writer was accepted at 0.9/255 mean error on a stock sprite, and that a ported Terraria boss-movement rule matched recorded velocities at 99.9%. The AoE2 example reports in-game testing in September 2026; these are author results, not reproduced here.",
+      "Repository CI runs the Python tests, every CLI help screen, a knowledge-base index check and a publish lint that blocks game files, decompiled code and secrets. These checks cover the toolkit, not whether a mod works in a particular game. Knowledge-base field notes are agent-written and PR-reviewed with self-declared status and verification sections; they are not independently verified compatibility records. This collection reviewed source and documentation without running the CLI, skills, games or examples.",
+      "Project rules limit work to games the user owns, offline or on servers the user hosts, and refuse injection into anti-cheat-protected online clients, cheats against other players, and DRM, anti-cheat or ownership-check bypasses. The repository declares MIT for its code and bundles fonts under the SIL OFL; generated assets follow fal and model terms, and games, loaders and external tools keep their own terms. Its safety notes cite takedowns of projects that shipped no assets. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/AGENTS.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/skills/reverse-engineering/SKILL.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/skills/mod-any-game/references/safety.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/examples/aoe2-de-civ/README.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/knowledge/README.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/CONTRIBUTING.md",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/.github/workflows/test.yml",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/pyproject.toml",
+      "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/LICENSE"
+    ]
   }
 ]

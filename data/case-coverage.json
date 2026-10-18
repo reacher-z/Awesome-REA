@@ -279,13 +279,30 @@
       "reported_source_urls": [
         "https://x.com/rehan_shei/status/2105161487509852622"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository establishes the named Universal Modder toolkit: agent skills, role briefs, a CLI, fal MCP settings, worked mod examples and a field-note knowledge base. The full mapping covers this report as an agent integration for game modding, not a reconstruction case or game decompilation. Example results and field-note status remain author-reported, and no REA use or runtime reproduction is established.",
+      "reason_zh": "固定版本仓库确立了具名的 Universal Modder 工具包：智能体技能、角色说明、命令行工具、fal MCP 配置、模组示例与实践笔记知识库。完整映射以游戏模组智能体集成覆盖该报告，并不将其视为重建案例或游戏反编译。示例结果与笔记状态仍为作者报告，未确立 REA 使用，也未进行运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/AGENTS.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/skills/reverse-engineering/SKILL.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/skills/mod-any-game/references/safety.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/examples/aoe2-de-civ/README.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/knowledge/README.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/CONTRIBUTING.md",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/.github/workflows/test.yml",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/pyproject.toml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "universal-modder-agent-toolkit",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:firefighter-rust",
@@ -13146,18 +13163,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 59,
-      "insufficient-evidence": 54,
-      "pending": 478
-    },
-    "units_by_state": {
-      "already-curated": 58,
+      "already-curated": 60,
       "insufficient-evidence": 54,
       "pending": 477
     },
-    "primary_reviewed_units": 58,
-    "catalog_linked_occurrences": 66,
-    "distinct_resource_ids": 57,
+    "units_by_state": {
+      "already-curated": 59,
+      "insufficient-evidence": 54,
+      "pending": 476
+    },
+    "primary_reviewed_units": 59,
+    "catalog_linked_occurrences": 67,
+    "distinct_resource_ids": 58,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

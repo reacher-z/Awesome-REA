@@ -20,7 +20,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (19) · [References and Learning](#references-and-learning) (20)
+- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (20) · [References and Learning](#references-and-learning) (20)
 
 **More ways to browse**
 
@@ -1077,6 +1077,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   An independent agent skill that routes application and binary investigations through ordinary command-line tools. It supplies batched triage recipes, targeted source/disassembly reading and explicit seen/inferred/unknown evidence labels, accompanied by a small author-reported comparison against an REA MCP workflow.
 
   Integration · Independent agent · [Requirements & evidence](https://awesomerea.org/resources/leanrea-skill/)
+
+- [**Universal Modder**](https://github.com/rehan-remade/universal-modder)
+
+  Packages agent skills, three role briefs, a Python CLI and preconfigured fal MCP settings for modding PC games the user owns. Its reverse-engineering guidance sends managed, native and data-format work to external decompilers and debuggers, and requires a round-trip check before a reverse-engineered file format is used; one worked example ships an Age of Empires II sprite writer built this way. It is a modding toolkit with agent-written field notes, not a game decompilation, and its example results remain project-reported.
+
+  Integration · Independent agent · [Requirements & evidence](https://awesomerea.org/resources/universal-modder-agent-toolkit/)
 
 <a id="related-collections"></a>
 ### Related Collections
