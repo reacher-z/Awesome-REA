@@ -2705,12 +2705,16 @@
         "https://x.com/i/status/2110441399279604113",
         "https://x.com/i/status/2110709861042503706"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Three posts are cited. @riyoway (2026-10-12) asks whether prompt-injection text planted in a binary’s strings, resources or dead code could contaminate agent-driven analysis such as REA’s, and proposes trying it. @make_claude (2026-10-14) reports running REA 6.5.0’s JavaScript analyzer on a toy Electron app with nine planted benign strings and finding six in the report, noting this measures what reaches the output, not whether a model obeys; it shows only a video. @mosscghere (2026-10-15) only jokes about such prompts. No app, report or script is published, and no matching repository was found for any handle. Retain the lead without a catalog mapping; neither the idea nor the test is a reviewable artifact.",
+      "reason_zh": "所引三则帖子：@riyoway（2026-10-12）设想在二进制的字符串、资源或死代码中植入提示注入文字，能否污染 REA 这类由 Agent 驱动的分析，并打算实验。@make_claude（2026-10-14）报告用 REA 6.5.0 的 JavaScript 分析器分析一个植入九条无害字符串的玩具 Electron 应用，其中六条出现在报告里，并说明这只衡量哪些内容进入输出，而非模型是否会听从；帖子仅附视频。@mosscghere（2026-10-15）只是调侃此类提示词。帖中未公开应用、报告或脚本，也未找到任一账号的对应仓库。保留此线索而不建立目录映射；无论是设想还是所报告的测试，都没有可审阅的成果。",
+      "primary_evidence_urls": [
+        "https://x.com/riyoway/status/2109670989319868863",
+        "https://x.com/make_claude/status/2110441399279604113",
+        "https://x.com/mosscghere/status/2110709861042503706"
+      ],
       "catalog_matches": []
     },
     {
@@ -2751,12 +2755,15 @@
         "https://x.com/i/status/2109676911500951649",
         "https://x.com/i/status/2110355975974596826"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts are cited. @tokyo10086 (2026-10-12) says the author asked GPT to pick a project to reverse-engineer, it chose Obsidian, and the implementation took about ten minutes; it shows one image. @ZDetong (2026-10-14) says GPT 5.6 reverse-engineered an Obsidian with basic backlinks plus a copilot and packaged it as an exe for a client in 15 conversation turns, tagging #rea; it also shows one image. Neither post publishes source, a feature comparison or REA output. The GitHub account linked from @tokyo10086’s site has no such repository, and no GitHub account matching @ZDetong was found. Retain the lead without a catalog mapping; the rebuilds and any REA contribution are unestablished.",
+      "reason_zh": "所引两则帖子：@tokyo10086（2026-10-12）称让 GPT 挑一个项目来逆向，它选了 Obsidian，实现约用了十来分钟；帖子附一张图片。@ZDetong（2026-10-14）称用 GPT 5.6 逆向出一个带基础双链功能的 Obsidian 外加一个 copilot，并在 15 轮对话内打包成 exe 交付客户，帖子带 #rea 标签并附一张图片。两帖均未公开源码、功能对照或 REA 输出。@tokyo10086 个人网站链接的 GitHub 账号没有此类仓库，也未找到与 @ZDetong 对应的 GitHub 账号。保留此线索而不建立目录映射；两个重建成果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/tokyo10086/status/2109676911500951649",
+        "https://x.com/ZDetong/status/2110355975974596826"
+      ],
       "catalog_matches": []
     },
     {
@@ -2811,12 +2818,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109689282336346575"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@GeekCatX, 2026-10-12) describes reading REA’s source, gives its own tool, command and skill counts, and lists five commercial directions such as converting web flows to REST APIs; in passing it says the author ran one large company’s web flow end to end and obtained interface definitions in seconds. It names no site, publishes no specification, captures or method, and quotes only an unrelated paid-community post. No GitHub account matching the handle was found; the author’s site lists an REA video about analyzing the author’s own code, not this flow. Retain the lead without a catalog mapping; the reported REST specification is unestablished.",
+      "reason_zh": "作者帖子（@GeekCatX，2026-10-12）描述其阅读 REA 源码，给出作者统计的工具、命令和 Skill 数量，并列出把网页流程转成 REST API 等五个商业方向；帖中顺带称拿某大厂的网页流程跑了一遍闭环，几秒内就转出接口定义。帖子未指明网站，未公开接口规范、抓包或方法，所引帖子只是一则无关的付费社群广告。未找到与该账号名对应的 GitHub 账号；作者网站列出的是一段用 REA 分析其自身代码的视频，而非该流程。保留此线索而不建立目录映射；所报告的 REST 规范未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/GeekCatX/status/2109689282336346575"
+      ],
       "catalog_matches": []
     },
     {
@@ -2886,12 +2895,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109711257779765741"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@sisiisthinking, 2026-10-12) says, within a thread, that the author saw no privileged payment component but found what looks like a China Telecom package under priv-app, and is handing it to GPT to reverse-engineer. It names no device, package or permission and reports no finding. The GitHub account with the same handle holds only an unrelated OLLVM deobfuscation tool. Retain the lead without a catalog mapping; this is an in-progress remark, not a documented inspection.",
+      "reason_zh": "所引回复（@sisiisthinking，2026-10-12）在一段讨论中称，作者没看到具有特权的支付组件，反而在 priv-app 中发现一个看似中国电信的软件包，正交给 GPT 逆向。回复未指明设备、软件包或权限，也未报告任何结论。同名 GitHub 账号只有一个无关的 OLLVM 反混淆工具。保留此线索而不建立目录映射；这只是进行中的一句话，而非有记录的检查。",
+      "primary_evidence_urls": [
+        "https://x.com/sisiisthinking/status/2109711257779765741"
+      ],
       "catalog_matches": []
     },
     {
@@ -2939,12 +2950,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109715839117316150"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The pinned collection describes an ongoing camera-firmware VM-boot attempt and does not establish successful boot. The primary post was inaccessible; device identity, architecture, emulator and boot evidence remain unreviewed.",
-      "reason_zh": "固定合集描述的是仍在进行的相机固件虚拟机启动尝试，并不确立启动成功。一手帖子无法访问；设备身份、架构、仿真器及启动证据仍未获审阅。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@elliehuxtable, 2026-10-12) says Codex will keep going until the author’s camera firmware boots in a VM. It names no camera, firmware version, emulator or result, and does not say the firmware booted. The GitHub account linked from the author’s site has no camera-firmware or emulation repository. Retain the lead without a catalog mapping; the boot attempt and its outcome are unestablished.",
+      "reason_zh": "作者的纯文字帖子（@elliehuxtable，2026-10-12）称 Codex 会一直干下去，直到作者的相机固件能在虚拟机里启动。帖子未指明相机、固件版本、模拟器或结果，也没有说固件已经启动。作者网站链接的 GitHub 账号没有相机固件或模拟相关仓库。保留此线索而不建立目录映射；该启动尝试及其结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/elliehuxtable/status/2109715839117316150"
+      ],
       "catalog_matches": []
     },
     {
@@ -3005,12 +3018,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109721540245782843"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@Steven_Soto, 2026-10-12) says the author is trying to decompile a mobile game with REA through Codex, and that Codex combines REA’s process evidence with the game’s compute usage to identify the scripts and files each interaction uses. It names no game and shares no output, mapping or method notes. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is an observation from an attempt in progress, not a documented result.",
+      "reason_zh": "所引回复（@Steven_Soto，2026-10-12）称作者正尝试通过 Codex 借助 REA 反编译一款手机游戏，并观察到 Codex 会结合 REA 的进程证据与游戏的计算资源占用，识别每次交互所用的脚本和文件。回复未指明游戏，也未分享输出、映射或方法记录。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是对进行中尝试的观察，而非有记录的结果。",
+      "primary_evidence_urls": [
+        "https://x.com/Steven_Soto/status/2109721540245782843"
+      ],
       "catalog_matches": []
     },
     {
@@ -15028,15 +15043,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 160,
-      "insufficient-evidence": 126,
-      "pending": 305
+      "insufficient-evidence": 132,
+      "pending": 299
     },
     "units_by_state": {
       "already-curated": 159,
-      "insufficient-evidence": 126,
-      "pending": 304
+      "insufficient-evidence": 132,
+      "pending": 298
     },
-    "primary_reviewed_units": 225,
+    "primary_reviewed_units": 231,
     "catalog_linked_occurrences": 171,
     "distinct_resource_ids": 165,
     "distinct_paper_ids": 1,
