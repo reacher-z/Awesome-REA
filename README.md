@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 234](https://img.shields.io/badge/resources-234-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 95](https://img.shields.io/badge/cases-95-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 235](https://img.shields.io/badge/resources-235-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 96](https://img.shields.io/badge/cases-96-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (77) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (78) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (95) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (96) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -532,6 +532,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Statically recompiles The Wind Waker HD’s Wii U PowerPC code to C ahead of time, reimplements the Cafe OS libraries the game uses and implements GX2 graphics on Metal or Vulkan, producing native macOS, Linux, Windows and Android builds without a Cemu runtime. All game code and data are generated locally from the user’s own dump; an experimental macOS-only build can instead run functions from the separate ZeldaWWHDDecomp/wwhd decompilation.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/wind-waker-hd-recomp-case/)
+
+- [**Castlevania 64: Recompiled — a beta static-recompilation port**](https://github.com/RevoSucks/CV64Recomp)
+
+  Uses N64Recomp to statically recompile the US 1.0 Nintendo 64 release of Castlevania into a native PC port rendered with RT64. Game-specific C patches build against headers from a separate Castlevania 64 decompilation. A beta release tagged at the reviewed commit reports a working build with known issues, while the README there still describes an unfinished project.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/cv64-recompiled-case/)
 
 #### Tools, projects and integrations
 
