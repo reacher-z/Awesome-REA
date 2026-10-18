@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 93 | 92 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 419 | 418 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 79 | 79 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 418 | 417 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 80 | 80 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 104 occurrences have catalog links. They reference 98 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 114 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 115 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -96,6 +96,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Roko Input: Apple on-device dictation after Typeless research | Insufficient evidence | [Source](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | Insufficient evidence | [Source](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
+| REA and archify: interactive architecture diagrams | Insufficient evidence | [Source](https://x.com/i/status/2110570919169286424) |
 | Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
 | REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
