@@ -518,12 +518,16 @@
       "reported_source_urls": [
         "https://x.com/levelsio/status/2106150888289009666"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The X post reports that an ioUrbanTerror WebAssembly build failed until a model found a 4-byte mismatch between an engine struct and the game bytecode and rewrote the bytecode. The live ut.pieter.com page states that it runs ioUrbanTerror compiled to WebAssembly with multiplayer. No source, bytecode patch, build notes or comparison evidence for the port is public, and the pinned ioUrbanTerror repository has no WebAssembly build files. Retain the lead without a catalog mapping; this is not a finding that the site does not work, and a published patch or build can support another review.",
+      "reason_zh": "X 帖子报告：ioUrbanTerror 的 WebAssembly 构建原本无法运行，后由模型发现引擎结构体与游戏字节码相差 4 字节，并改写字节码使其运行。ut.pieter.com 页面说明其运行编译为 WebAssembly 的 ioUrbanTerror 引擎并支持多人游戏。该移植的源码、字节码补丁、构建说明或对照证据均未公开，固定版本的 ioUrbanTerror 仓库也不含 WebAssembly 构建文件。保留此线索而不建立目录映射；这不表示该网站无法运行，公开的补丁或构建可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/levelsio/status/2106150888289009666",
+        "https://ut.pieter.com/",
+        "https://github.com/urbanterror/ioUrbanTerror/tree/d47a84a1851367037c818b085b4c708bbfeb1289"
+      ],
       "catalog_matches": []
     },
     {
@@ -13206,15 +13210,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 56,
-      "pending": 473
+      "insufficient-evidence": 57,
+      "pending": 472
     },
     "units_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 56,
-      "pending": 472
+      "insufficient-evidence": 57,
+      "pending": 471
     },
-    "primary_reviewed_units": 63,
+    "primary_reviewed_units": 64,
     "catalog_linked_occurrences": 69,
     "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
