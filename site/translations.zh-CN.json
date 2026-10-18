@@ -2307,5 +2307,15 @@
       "在默认的 COMPARE=1 下，构建会检查输出 ROM 的 SHA-1，并为所选版本输出 OK 行；COMPARE=0 以及 DEBUG、USB 变体会跳过该检查，因此不属于一致性结果。NTSC、日版和欧版 CI 工作流使用以密钥方式提供的原 ROM 构建并生成状态报告；本合集未运行其中任何检查。",
       "GitHub 未识别出许可证，所审源码树也没有顶层许可证文件，因此未确立再使用授权。原 ROM 和提取的素材仍受各自权利约束，仓库中的 IRIX IDO 二进制文件及内置工具另有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "starship-sf64-pc-port-case": {
+    "name": "Starship：基于反编译的 Star Fox 64 PC 移植",
+    "requirements": [
+      "Starship 的 README 将其介绍为 PC 移植，并提供正式发布与测试构建。姊妹项目 Starfox64Recomp 仓库中的 DOCS/fox_lore.md 将其描述为基于 sf64 反编译 C 代码、运行在 libultraship（重新实现大部分 libultra 并使用 Fast3D 渲染器）上的原生移植，并称原生移植暴露了仅靠一致性代码无法发现的素材链接错误和未定义行为。CMakeLists.txt 编译 src/engine、src/overlays、src/sys 和 src/audio，移植层位于 src/port。最新发布为 v2.0.0（2025-05-25），README 提醒 CI 测试构建很可能出现缺陷，甚至可能崩溃。",
+      "需自备 .z64 格式的美版 1.0 或美版 1.1 Rev A ROM；README 列出了各自的 SHA-1。首次运行或 ExtractAssets 构建目标会借助 Torch，按照 config.yml 和 assets/yaml 中的定义把它转换为 sf64.o2r。日版和欧版 ROM 只能与美版 ROM 搭配用于替换语音语言，Switch 版需使用在 PC 上生成的资源包。仓库只含提取定义，不含游戏素材。",
+      "发行版面向 Windows、Linux（AppImage）、macOS 和 Nintendo Switch，提供 DirectX 11、OpenGL 与 Metal 后端。构建需要 CMake、Python 3 和 Git：Windows 上另需 Visual Studio 2022（v143 工具集，至少 8 GB 内存），Linux 上需 gcc 或 clang、Ninja 以及 SDL2、libzip、spdlog、tinyxml2、Boost、Ogg／Vorbis 等库。子模块为 libultraship、Torch 和 asm-differ；CI 只生成移植自身的 starship.o2r，打包构建时不使用 ROM。",
+      "README 与 BUILDING.md 均未记录自动化游戏测试或与原版的对照；反编译的一致性状态属于独立的 sf64 项目。本合集未下载构建，也未运行任何内容。",
+      "LICENSE.md 为 CC0 1.0 Universal；ROM、提取出的素材及游戏本身仍归其所有者，子模块保留各自条款。README 表示项目不纵容盗版。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

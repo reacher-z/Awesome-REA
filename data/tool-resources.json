@@ -5201,5 +5201,38 @@
       "https://kholdfuzion.github.io/goldeneyestatus/",
       "https://gitlab.com/kholdfuzion/goldeneye_src"
     ]
+  },
+  {
+    "id": "starship-sf64-pc-port-case",
+    "name": "Starship: a Star Fox 64 PC port built from the decompilation",
+    "url": "https://github.com/HarbourMasters/Starship",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A native PC port of Star Fox 64 that compiles the game's decompiled C code against libultraship, an N64 porting library that reimplements libultra and renders through Fast3D. On first run it uses the Torch tool to turn the user's US ROM into an asset archive, and it ships for Windows, Linux, macOS and Switch. The README of the separate Starfox 64: Recompiled static recompilation calls this port its sibling, built with different technology.",
+    "description_zh": "Star Fox 64 的原生 PC 移植：将游戏的反编译 C 代码与 libultraship 一同编译，该 N64 移植库重新实现了 libultra，并通过 Fast3D 渲染。首次运行时借助 Torch 工具把使用者的美版 ROM 转换为素材资源包，提供 Windows、Linux、macOS 和 Switch 版本。独立的静态重编译项目 Starfox 64: Recompiled 在其 README 中称本移植为采用不同技术的姊妹项目。",
+    "evidence_url": "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Starship's README presents a PC port with release and playtest builds. DOCS/fox_lore.md in the sibling Starfox64Recomp repository describes it as a native port of the sf64 decompilation's C code on libultraship (which reimplements most of libultra and uses a Fast3D renderer) and says native porting exposed asset-linking errors and undefined behaviour that matching code alone did not reveal. CMakeLists.txt compiles src/engine, src/overlays, src/sys and src/audio with a port layer in src/port. The latest release is v2.0.0 (2025-05-25), and README warns that CI playtest builds will likely show bugs and possibly crashes.",
+      "Supply a US 1.0 or US 1.1 Rev A ROM in .z64 form; README lists the SHA-1 of each. The first run, or the ExtractAssets build target, turns it into sf64.o2r through Torch, using the definitions in config.yml and assets/yaml. JP and EU ROMs serve only as voice-language replacements alongside a US ROM, and the Switch build needs the archive generated on PC. The repository holds extraction definitions, not game assets.",
+      "Releases target Windows, Linux (AppImage), macOS and Nintendo Switch, with DirectX 11, OpenGL and Metal back ends. Building needs CMake, Python 3 and Git with Visual Studio 2022 (v143 tools; at least 8 GB of RAM) on Windows, or gcc or clang with Ninja and libraries including SDL2, libzip, spdlog, tinyxml2, Boost and Ogg/Vorbis on Linux. Submodules are libultraship, Torch and asm-differ; CI generates only the port's own starship.o2r and packages builds without a ROM.",
+      "Neither README nor BUILDING.md documents automated gameplay tests or comparisons with the original game, and the decompilation's matching status belongs to the separate sf64 project. This collection did not download builds or run anything.",
+      "LICENSE.md is CC0 1.0 Universal; the ROM, extracted assets and the game remain their owners' property, and the submodules keep their own terms. README says the project does not condone piracy. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/docs/BUILDING.md",
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/CMakeLists.txt",
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/config.yml",
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/.gitmodules",
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/.github/workflows/main.yml",
+      "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/LICENSE.md",
+      "https://github.com/HarbourMasters/Starship/releases/tag/v2.0.0",
+      "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/DOCS/fox_lore.md"
+    ]
   }
 ]
