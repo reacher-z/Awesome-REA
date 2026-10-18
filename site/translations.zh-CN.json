@@ -1463,5 +1463,14 @@
       "字节补丁写入副本，智能体补丁以建议形式出现，项目修改会记录作者并可撤销。所审阅提交的 CI 在 Ubuntu 和 macOS 上运行类型检查；依赖 Ghidra 的测试套件是单独的本地脚本。本次核查只阅读源码和文档，未安装应用、运行智能体或分析任何目标。",
       "Eleven 采用 Apache-2.0；内置的 REA 和 Node.js 保留各自的 MIT 及其他许可，智能体标志仍归各自所有者。该工具不授予分析、修补或再分发第三方软件的权利，其输出属于智能体辅助分析，而非经验证的源码恢复。"
     ]
+  },
+  "rea-flutter-guide": {
+    "name": "Flutter 构建识别",
+    "requirements": [
+      "审阅时 main 上为 rea-agents 6.7.0，声明支持 Node ^22.19.0、^24.11.0 或 26 及以上。identify-flutter-build 与 inspect-dart-aot（对应 MCP 的 identify_flutter_build 与 inspect_dart_aot）解析使用者提供的 APK 中的 libapp.so 和 libflutter.so，无需引擎、外部工具、执行或联网查询。输入先复制为分析器独占的只读快照，并有文档列明的上限，例如每个 APK 2 GiB、每个库 256 MiB。",
+      "REA 不做哈希到 SDK 的查询；把快照哈希对应到 Dart 版本需借助外部数据集，例如 reFlutter 维护的数据。目前只有所支持的 Dart 2.14 快照布局中的 FullAOT 类型能得到完整结构覆盖，其他类型会保留为部分覆盖。恢复带类型的类与函数需要针对特定 SDK 的解析器，类名样式的标记也包含偶然匹配。",
+      "文档中的验证脚本经编译后的命令行与 stdio MCP 运行两个工具，以 Flutter Gallery 2.9.2 发布版 APK 对照固定的期望文件：三个 ABI 上快照哈希一致，并核对引擎标签与 URI 数量；另用普通 aapt2 构建的 APK 检查不误报。指南报告 Gallery 流程与 147 项 Flutter 专项测试在 macOS 14.8.9 x86-64 与 Windows 11 x64 虚拟机中通过。",
+      "在已合并的 PR #1582 中，一位独立审阅者报告：在合并前的分支版本上，三个 F-Droid 应用 PocketDhamma、Flutter McSweepy 与 cone 的哈希、ELF 段和 package 列表与 readelf／strings 检查一致，非 Flutter 对照应用未被识别为 Flutter；讨论串记录了对所发现问题的修复。这些检查针对构建身份与结构，不是应用逻辑重建。REA 声明 MIT，所分析的 APK 保留各自许可；本合集未运行 REA 或任何 APK。"
+    ]
   }
 }

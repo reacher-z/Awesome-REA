@@ -713,13 +713,25 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/pull/1582"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Merged REA PR #1582 and the pinned Flutter guide, verifier and Gallery expectations file establish the reported build-identity and AOT-structure capability, with an independent pre-merge check on three F-Droid apps. The full mapping covers this report as official documentation, not a reconstruction case: outputs are hashes, digests, sections and a bounded string projection, not recovered Dart source. No runtime reproduction is claimed.",
+      "reason_zh": "已合并的 REA PR #1582，以及固定版本的 Flutter 指南、验证脚本和 Gallery 期望文件，确立了该报告所述的构建身份与 AOT 结构分析能力，并附有对三个 F-Droid 应用的合并前独立检查。完整映射以官方文档覆盖该报告，并不将其视为重建案例：输出是哈希、摘要、快照段和有界字符串投影，而非恢复的 Dart 源码。未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/pull/1582",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/flutter-analysis.md",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-flutter.mjs",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/fixtures/flutter-gallery-expectations.json"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-flutter-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:mips-firmware",
@@ -13241,18 +13253,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 62,
-      "insufficient-evidence": 63,
-      "pending": 466
-    },
-    "units_by_state": {
-      "already-curated": 61,
+      "already-curated": 63,
       "insufficient-evidence": 63,
       "pending": 465
     },
-    "primary_reviewed_units": 70,
-    "catalog_linked_occurrences": 69,
-    "distinct_resource_ids": 60,
+    "units_by_state": {
+      "already-curated": 62,
+      "insufficient-evidence": 63,
+      "pending": 464
+    },
+    "primary_reviewed_units": 71,
+    "catalog_linked_occurrences": 70,
+    "distinct_resource_ids": 61,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

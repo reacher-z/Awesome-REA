@@ -2025,5 +2025,35 @@
       "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/.github/workflows/release.yml",
       "https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/.github/workflows/ci.yml"
     ]
+  },
+  {
+    "id": "rea-flutter-guide",
+    "name": "Flutter build identification",
+    "url": "https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "kind": "documentation",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs, not deserialized Dart classes or recovered source.",
+    "description_zh": "通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。",
+    "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/flutter-analysis.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. identify-flutter-build and inspect-dart-aot (MCP identify_flutter_build and inspect_dart_aot) parse a caller-supplied APK’s libapp.so and libflutter.so without an engine, external tool, execution or network lookup. Inputs are copied into an owned read-only snapshot, with documented bounds such as 2 GiB per APK and 256 MiB per library.",
+      "REA performs no hash-to-SDK lookup; mapping a snapshot hash to a Dart release needs an external dataset such as reFlutter’s. Complete structural coverage currently requires the FullAOT kind of the supported Dart 2.14 snapshot layout, and other kinds are kept with partial coverage. Typed class and function recovery needs an SDK-specific parser, and class-like tokens include incidental matches.",
+      "The documented verifier runs both tools through the compiled CLI and stdio MCP on the Flutter Gallery 2.9.2 release APK against a pinned expectations file: one agreeing snapshot hash on all three ABIs, engine labels and URI counts. A plain aapt2-built APK checks negative detection. The guide reports the Gallery workflow and 147 focused tests passing on macOS 14.8.9 x86-64 and Windows 11 x64 guests.",
+      "In merged PR #1582, an independent reviewer reports that hashes, ELF sections and package lists matched readelf/strings checks on three F-Droid apps, PocketDhamma, Flutter McSweepy and cone, on pre-merge heads, with a non-Flutter control not detected; the thread records fixes for gaps found. These checks cover build identity and structure, not app-logic reconstruction. REA declares MIT; analysed APKs keep their own licenses, and this collection did not run REA or any APK."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-flutter.mjs",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/fixtures/flutter-gallery-expectations.json",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/README.md",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/package.json",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE",
+      "https://github.com/morluto/rea/pull/1582"
+    ]
   }
 ]
