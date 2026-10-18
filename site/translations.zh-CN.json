@@ -1670,5 +1670,15 @@
       "vf2i960 的原生分派命令运行已记录的差分里程碑；vf2cycles 从同一快照推进恢复的 C 代码与参考执行器，严格模式下遇到首个不受支持的代码块、参考执行失败或状态不一致即停止。STATUS 报告第三至第六次分派均为 MATCH。CI 只运行不依赖 ROM 的测试，因此依赖 ROM 的结果仍为项目报告，本合集未重跑。",
       "项目代码采用 BSD-3-Clause；MAME 与公开的 Intel i960 文档仅作交叉参考，未收录其源码。docs/LEGAL.md 披露 301 个取自后续 Model 2 移植版 DLL 的 Sega 原始符号名，并说明这部分命名并非净室成果；未纳入版本库的 Sonic The Fighters 反汇编快照仅作导航参考。AGENTS.md 面向编码代理，但所审来源未确立 REA 的使用。"
     ]
+  },
+  "z2rs-zelda2-reconstruction-case": {
+    "name": "z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目",
+    "requirements": [
+      "所审阅提交即 v0.5.2 版（2026-10-10），提供 Linux、macOS（Intel 与 Apple Silicon）和 Windows 压缩包以及适用于 Android 8.0+ 的 APK；z2rs.com 提供浏览器版本。PROVENANCE.md 表示它还不是独立的重新实现：已移植例程注册在陷阱表中，ROM 的其余部分由解释器执行。固定版本的 ports.toml 仍把全部 2,960 个例程标为未移植，因此无法从中得知有多少逻辑以 Rust 运行。",
+      "只接受 No-Intro 美版镜像，以去掉 16 字节 iNES 文件头后的 ROM 主体哈希识别（CRC32 BA322865）。图形、地图、文本和音乐在运行时从该 ROM 读取，仓库中不含任何游戏内容。合作模式、宽屏、高清素材包、随机化和其他增强功能均为可选附加内容；Android 版暂不支持在线合作、随机化和增强功能。",
+      "源码构建需要稳定版 Rust；浏览器版本另需 wasm32-unknown-unknown 目标和 wasm-pack，Android 版另需 SDK、NDK 和 cargo-ndk，桌面版默认启用的联网功能还需要 C 编译器。发布包未经代码签名。在线合作默认使用公共信令服务器，桌面版在未关闭时会显示 Discord 状态。",
+      "z2-verify 在 tetanes-core 0.15 中与 z2rs 并行运行同一 ROM 并输入相同操作，每帧比较 RAM、电池 WRAM、精灵 OAM、调色板和帧缓冲，并对该模拟器的两处画面边缘差异作了说明性豁免。长时测试回放需另行下载的 TASVideos 录像，缺少输入时依赖 ROM 的测试会自动跳过。所审阅的工作流只负责打包发布；未发现公开的验证结果，本合集也未运行任何检查。",
+      "代码由唯一维护者以 MIT 发布；内置的 matchbox_socket 采用 MIT 或 Apache-2.0，游戏本身不在许可范围内。例程布局来自 CC0 的 FiendsOfTheElements/z2disassembly 子模块和 Data Crystal 资料；项目说明这是一名维护者依据这些材料完成的工作，并非双团队净室流程，且只公开了早期私有历史的快照。PROVENANCE.md 未说明编写代码所用工具，因此未确立 AI 或 REA 使用。"
+    ]
   }
 }

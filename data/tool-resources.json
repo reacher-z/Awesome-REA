@@ -3213,5 +3213,39 @@
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/config/vf2_v22_roms.csv",
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/.github/workflows/ci.yml"
     ]
+  },
+  {
+    "id": "z2rs-zelda2-reconstruction-case",
+    "name": "z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator",
+    "url": "https://github.com/troyedwardsjr/z2rs",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. A built-in interpreter still runs the user’s ROM and hands ported routines to Rust, while a verifier compares RAM, sprites, palette and frames with a reference emulator. It is a behavioral, clean-room-style reconstruction guided by a community disassembly, not a decompilation or a finished standalone engine.",
+    "description_zh": "以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。内置解释器仍执行使用者的 ROM，并把已移植例程交给 Rust 实现；验证工具将 RAM、精灵、调色板和画面与参考模拟器逐帧比较。它是参考社区反汇编、以行为为准的类净室重建，而不是反编译，也还不是独立完整的引擎。",
+    "evidence_url": "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit is release v0.5.2 (2026-10-10), with Linux, macOS (Intel and Apple Silicon) and Windows archives plus an Android 8.0+ APK; z2rs.com hosts the browser build. PROVENANCE.md says it is not yet a standalone reimplementation: ported routines register in trap tables and the rest of the ROM is interpreted. The pinned ports.toml still marks all 2,960 routines unported, so it does not document how much logic runs as Rust.",
+      "Only the No-Intro USA dump is accepted, identified by the hash of the ROM body without its 16-byte iNES header (CRC32 BA322865). Graphics, maps, text and music are read from that ROM at run time, and nothing from the game is in the repository. Co-op, widescreen, HD packs, the randomizer and other enhancements are optional additions; Android lacks online co-op, the randomizer and enhancements.",
+      "Source builds need stable Rust; the browser build adds the wasm32-unknown-unknown target and wasm-pack, Android adds the SDK, NDK and cargo-ndk, and the default desktop netplay feature needs a C compiler. Release archives are not code-signed. Online co-op uses a public signalling server by default, and the desktop build shows Discord presence unless it is turned off.",
+      "z2-verify runs the ROM in tetanes-core 0.15 beside z2rs with identical input and compares RAM, battery WRAM, sprite OAM, palette and framebuffer after every frame, with two documented edge allowances for that emulator. Long tests replay TASVideos movies downloaded separately, and ROM-dependent tests skip without their inputs. The reviewed workflow only packages releases; no published verification results were found, and this collection ran no checks.",
+      "The sole maintainer releases the code under MIT; vendored matchbox_socket is MIT OR Apache-2.0, and the game itself is not covered. Routine layout comes from the CC0 FiendsOfTheElements/z2disassembly submodule and Data Crystal notes; the project describes one maintainer working from that material, not a two-team clean room, and publishes only a snapshot of earlier private history. PROVENANCE.md does not describe the tools used to write code, so no AI or REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/PROVENANCE.md",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/LEGAL.md",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/guide/development.md",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/ports.toml",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/crates/z2-core/src/traps.rs",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/.github/workflows/release.yml",
+      "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/LICENSE",
+      "https://github.com/troyedwardsjr/z2rs/releases/tag/v0.5.2",
+      "https://z2rs.com/"
+    ]
   }
 ]

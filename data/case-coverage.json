@@ -10066,13 +10066,30 @@
         "https://github.com/troyedwardsjr/z2rs",
         "https://z2rs.com/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 23 (README line 215) lists troyedwardsjr/z2rs under 🗡️ Zelda II: The Adventure of Link. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 23 行（README 第 215 行）在 🗡️ Zelda II: The Adventure of Link 下列出 troyedwardsjr/z2rs。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, provenance and legal records, development guide, routine ledger and trap-table source support this incremental Rust reconstruction of Zelda II, checked frame by frame against a reference emulator. The full mapping covers the repository and its browser site. It keeps the hybrid interpreter model, a routine ledger whose statuses all read unported, the single accepted USA dump and the absence of published verification results explicit.",
+      "reason_zh": "固定版本的 README、来源与法律记录、开发指南、例程台账和陷阱表源码，支持这一与参考模拟器逐帧对照、逐步以 Rust 重建《塞尔达传说 II》的项目。完整映射覆盖该仓库及其浏览器站点，并明确保留解释器混合运行模式、状态全为“未移植”的例程台账、仅接受一种美版镜像以及未公开验证结果等限制。",
+      "primary_evidence_urls": [
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/PROVENANCE.md",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/LEGAL.md",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/guide/development.md",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/ports.toml",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/crates/z2-core/src/traps.rs",
+        "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/.github/workflows/release.yml",
+        "https://github.com/troyedwardsjr/z2rs/releases/tag/v0.5.2",
+        "https://z2rs.com/"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "z2rs-zelda2-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-024",
@@ -13603,18 +13620,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 79,
-      "insufficient-evidence": 72,
-      "pending": 440
-    },
-    "units_by_state": {
-      "already-curated": 78,
+      "already-curated": 80,
       "insufficient-evidence": 72,
       "pending": 439
     },
-    "primary_reviewed_units": 94,
-    "catalog_linked_occurrences": 88,
-    "distinct_resource_ids": 82,
+    "units_by_state": {
+      "already-curated": 79,
+      "insufficient-evidence": 72,
+      "pending": 438
+    },
+    "primary_reviewed_units": 95,
+    "catalog_linked_occurrences": 89,
+    "distinct_resource_ids": 83,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
