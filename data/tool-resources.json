@@ -3611,5 +3611,35 @@
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/src/main.c",
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/Makefile"
     ]
+  },
+  {
+    "id": "metroid-prime-port-case",
+    "name": "Metroid Prime Port: an AI-assisted native port of the PrimeDecomp decompilation",
+    "url": "https://github.com/Odrannnn/MetroidPrimePort",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles the PrimeDecomp decompilation of Metroid Prime’s game and engine code as native C++20 for Linux, Windows and Android, with an experimental macOS build. Aurora supplies the GameCube SDK compatibility layer and rendering, and the port reads a user-supplied disc image at run time. The author states that parts were written with AI coding assistants under their oversight.",
+    "description_zh": "将 PrimeDecomp 对《密特罗德 Prime》游戏与引擎代码的反编译结果编译为原生 C++20 程序，支持 Linux、Windows 和 Android，另有实验性 macOS 版本。Aurora 提供 GameCube SDK 兼容层和渲染，移植版在运行时读取使用者自备的光盘镜像。作者声明部分代码是在其监督下借助 AI 编程助手编写的。",
+    "evidence_url": "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed port-branch commit is 16 commits after release v0.29.0 (2026-10-17), which ships Windows, Linux tarball, AppImage, Flatpak, Android and macOS arm64 packages; the macOS build is experimental and has not been played on a real Mac. The repository forks PrimeDecomp/prime and adds widescreen, uncapped frame rate, controls, save conversion, a randomizer and an Archipelago client. It does not link the separate DolRecomp recompilation experiment, and its decomp/ GameCube build is not used by the port.",
+      "No game content is included: supply a GameCube USA 1.00, 1.01 or 1.02 (GM8E01) or PAL (GM8P01) disc image as .iso, .gcm, .rvz, .wbfs, .ciso or .nkit. Japanese, Korean, Wii Trilogy and Remastered releases are not run as the base game; an experimental importer can read models and effects from the user’s own Remastered dump.",
+      "Builds need CMake 3.25+, Ninja, a C++20 compiler and a C23-capable C compiler for MusyX; Windows uses clang-cl from LLVM in an MSVC developer environment, and Android builds through Gradle. Configuring downloads about a dozen SHA-256-checked dependencies; Linux links several statically and then needs only OpenSSL 3 and the C/C++ runtime. The macOS app is ad-hoc signed and not notarized.",
+      "CI builds and runs the disc-free CTest port suite on Linux with GCC 14 and Clang 18 for pushes and pull requests; Windows and macOS workflows run weekly or by hand, and the Windows job also checks that the package reaches main and reports the missing disc. Opt-in real-disc smoke drivers cover lifecycle, mouse, area-reload and world-jump scenarios, with results reported by the author. The 1.00 sequence-break option restores named script locks, not missing 1.00 geometry; this collection did not build or run the port.",
+      "MIT covers only the project’s platform layer, scripts, tests, tools and docs. NOTICE says the game code in src/ and include/, the decompiled Dolphin SDK and the config/ symbol data derive from the retail executable, remain with their owners and are outside that grant, and that no game assets may be packaged; vendored and fetched components keep their own licenses. AI coding assistance is author-disclosed, and no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/NOTICE",
+      "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/LICENSE",
+      "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/docs/NATIVE_PORT.md",
+      "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/.github/workflows/native-linux.yml",
+      "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.29.0"
+    ]
   }
 ]

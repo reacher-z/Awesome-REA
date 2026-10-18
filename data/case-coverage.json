@@ -10332,13 +10332,27 @@
         "https://github.com/Odrannnn/MetroidPrimePort/releases/latest",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 26 (README line 243) lists Odrannnn/MetroidPrimePort under 🚀 Metroid Prime. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 26 行（README 第 243 行）在 🚀 Metroid Prime 下列出 Odrannnn/MetroidPrimePort。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, NOTICE, license, native-port guide, Linux CI workflow and v0.29.0 release support this AI-assisted native Metroid Prime port compiled from the PrimeDecomp decompilation. The full mapping covers this repository only, separate from the collection’s Metaforce row. Supported disc revisions, the narrow MIT scope over non-game code and author-reported smoke tests remain explicit; the linked post is not reviewed as evidence.",
+      "reason_zh": "固定版本的 README、NOTICE、许可证、原生移植指南、Linux CI 工作流和 v0.29.0 发布，支持这一由 PrimeDecomp 反编译编译而成、借助 AI 辅助完成的《密特罗德 Prime》原生移植。完整映射仅覆盖此仓库，与合集中的 Metaforce 项目分开。受支持的光盘版本、仅覆盖非游戏代码的 MIT 授权范围以及作者报告的冒烟测试均明确保留；所链接帖子未作为证据核查。",
+      "primary_evidence_urls": [
+        "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/README.md",
+        "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/NOTICE",
+        "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/LICENSE",
+        "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/docs/NATIVE_PORT.md",
+        "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/.github/workflows/native-linux.yml",
+        "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.29.0"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "metroid-prime-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-027",
@@ -13863,18 +13877,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 91,
-      "insufficient-evidence": 79,
-      "pending": 421
-    },
-    "units_by_state": {
-      "already-curated": 90,
+      "already-curated": 92,
       "insufficient-evidence": 79,
       "pending": 420
     },
-    "primary_reviewed_units": 112,
-    "catalog_linked_occurrences": 102,
-    "distinct_resource_ids": 96,
+    "units_by_state": {
+      "already-curated": 91,
+      "insufficient-evidence": 79,
+      "pending": 419
+    },
+    "primary_reviewed_units": 113,
+    "catalog_linked_occurrences": 103,
+    "distinct_resource_ids": 97,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

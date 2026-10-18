@@ -1789,5 +1789,15 @@
       "仅支持 32 位 x86 可执行文件，需使用 GNU Make 和 32 位 GNU 工具链（64 位宿主上为 multilib GCC／G++），并依赖 OpenGL 2.0+、SDL2 和 FluidSynth（已内置 cimgui）。编译仅在 Ubuntu／Debian 上测试过；没有发布版本，审阅时最后一次提交为 2024-01-22。",
       "项目未公布字节一致、等价性或自动化游戏流程检查，本合集也未复现其进度数字。仓库没有许可证文件，复用权利未明确，原游戏保留各自权利；所审来源未记录 REA 或 AI 参与。"
     ]
+  },
+  "metroid-prime-port-case": {
+    "name": "Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植",
+    "requirements": [
+      "所审阅的 port 分支提交位于 v0.29.0 版（2026-10-17）之后 16 个提交；该版本提供 Windows、Linux 压缩包、AppImage、Flatpak、Android 和 macOS arm64 安装包，其中 macOS 版本仍属实验性质，尚无人在真实 Mac 上游玩。仓库派生自 PrimeDecomp/prime，增加了宽屏、不锁帧率、操作、存档转换、随机化和 Archipelago 客户端等功能。它不链接另一个 DolRecomp 重编译实验，decomp/ 中的 GameCube 构建也不用于移植版。",
+      "仓库不含任何游戏内容：需自备 GameCube 美版 1.00、1.01 或 1.02（GM8E01）或 PAL 版（GM8P01）光盘镜像，格式可为 .iso、.gcm、.rvz、.wbfs、.ciso 或 .nkit。日版、韩版、Wii 三部曲和重制版不能作为基础游戏运行；实验性导入功能可从使用者自备的重制版镜像读取模型和特效。",
+      "构建需要 CMake 3.25+、Ninja、C++20 编译器，以及支持 C23 的 C 编译器（供 MusyX 使用）；Windows 在 MSVC 开发者环境中使用 LLVM 的 clang-cl，Android 通过 Gradle 构建。配置时会下载约十几个经 SHA-256 校验的依赖；Linux 版本静态链接其中多项，运行时只需 OpenSSL 3 和 C/C++ 运行库。macOS 应用仅作临时签名，未经公证。",
+      "CI 在推送和拉取请求时于 Linux 上用 GCC 14 与 Clang 18 构建并运行无需光盘的 CTest 移植测试；Windows 和 macOS 工作流每周运行或手动触发，Windows 作业还检查安装包能进入 main 并报告缺少光盘。可选的真实光盘冒烟驱动覆盖生命周期、鼠标、区域重载和世界跳转等场景，结果由作者报告。1.00 版速通兼容选项只恢复指定的脚本锁，不恢复 1.00 版缺失的几何结构；本合集未构建或运行该移植版。",
+      "MIT 仅覆盖项目自身的平台层、脚本、测试、工具和文档。NOTICE 说明 src/ 与 include/ 中的游戏代码、反编译的 Dolphin SDK 以及 config/ 中的符号数据均源自零售版可执行文件，归各自所有者，不在该授权范围内，且不得随构建打包任何游戏素材；内置和下载的组件保留各自许可。AI 编程辅助由作者自行披露，未确立 REA 使用。"
+    ]
   }
 }
