@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 285](https://img.shields.io/badge/resources-285-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 143](https://img.shields.io/badge/cases-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 286](https://img.shields.io/badge/resources-286-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 144](https://img.shields.io/badge/cases-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (125) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (126) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (143) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (144) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -814,6 +814,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs the ARM9 program and overlays of the EU Nintendo DS release of Kingdom Hearts 358/2 Days as C that recompiles byte for byte with CodeWarrior. README reports all 306 modules byte-identical, with about 99.5% of functions in real C and library assembly counted separately; the ARM7 binary is outside its scope. The repository holds no ROM, game assets or extracted disassembly and produces no playable build.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/kingdom-hearts-days-matching-decomp-case/)
+
+- [**TonyWasAProSkater: a THPS1 native port forked from a matching decompilation**](https://github.com/LANCommander/TonyWasAProSkater)
+
+  Ports Tony Hawk’s Pro Skater (PlayStation, USA) to native Windows and Linux builds from a fork of an in-progress matching decompilation of the retail executable. The decompilation recompiles reconstructed functions with a Psy-Q toolchain and compares them byte for byte with the user’s retail executable, while the port replaces PlayStation hardware and libraries with SDL2 and OpenGL services. Play needs the user’s own disc image; matching and gameplay results remain project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/thps1-decomp-native-port-case/)
 
 #### Tools, projects and integrations
 
