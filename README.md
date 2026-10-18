@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 216](https://img.shields.io/badge/resources-216-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 77](https://img.shields.io/badge/cases-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 217](https://img.shields.io/badge/resources-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 78](https://img.shields.io/badge/cases-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (17) · [Game](#game) (60) · [App](#app) (44)
+- [Website](#website) (17) · [Game](#game) (61) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (77) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (78) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -424,6 +424,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Builds Super Mario 64 as a native PC, Switch and Android program by compiling decompilation-style game source against the libultraship platform library. A bundled extractor converts the user’s US or Japanese ROM into an O2R archive at first launch or build time. The project ships modern renderers, configuration menus and mod-archive loading, not a matching ROM.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/ghostship-sm64-port-case/)
+
+- [**Super Mario Sunshine: an in-progress matching GameCube decompilation**](https://github.com/doldecomp/sms)
+
+  Reconstructs Super Mario Sunshine’s C++ source so that the original Metrowerks compiler reproduces byte-identical object files for four GameCube releases and the Switch 3D All-Stars build. The target binary comes from the user’s own disc image, and objdiff compares rebuilt objects function by function. The work is incomplete, and the repository publishes contribution rules for AI agents alongside its human workflow.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/sms-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
