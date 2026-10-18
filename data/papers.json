@@ -3582,5 +3582,56 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-dynpre",
+    "title": "DynPRE: Protocol Reverse Engineering via Dynamic Inference",
+    "title_zh": "DynPRE：基于动态推断的协议逆向工程",
+    "authors": [
+      "Zhengxiong Luo",
+      "Kai Liang",
+      "Yanyang Zhao",
+      "Feifan Wu",
+      "Junze Yu",
+      "Heyuan Shi",
+      "Yu Jiang"
+    ],
+    "year": 2024,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2024; the publisher PDF separately identifies the 26 February–1 March 2024 symposium, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2024；出版方 PDF 另列研讨会日期为 2024 年 2 月 26 日至 3 月 1 日，本条目不据此推定出版月份或日期。",
+    "venue": "NDSS 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2024.24083",
+    "url": "https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "DynPRE starts from captured client–server traces and then interacts with a live protocol server to infer message formats and types. It detects session-specific identifiers such as cookies and rewrites them on the fly so that replayed requests stay valid. It then sends byte-level probe requests whose responses serve as semantic feedback for field identification, aligns the responses, and applies a request–response mapping refinement that also recognizes message types. On 12 protocols with 10-, 100- and 1,000-message datasets, the authors report average field perfection of 0.50 and message-type V-measure of 0.94, against 0.15–0.31 perfection for Netzob, NetPlier, FieldHunter, BinaryInferno and NEMESYS.",
+    "description_zh": "DynPRE 以捕获的客户端—服务端流量为起点，再与在线协议服务端交互，推断报文格式与类型。它检测 Cookie 等会话特定标识符并实时改写，使重放的请求保持有效；随后发送字节级探测请求，以服务端响应作为字段识别的语义反馈，对响应进行对齐分析，并通过请求—响应映射细化格式，同时识别报文类型。作者在 12 种协议、规模分别为 10、100 与 1,000 条报文的数据集上，报告平均字段完美分割率为 0.50、报文类型 V-measure 为 0.94，而 Netzob、NetPlier、FieldHunter、BinaryInferno 与 NEMESYS 的完美分割率为 0.15–0.31。",
+    "scope_limitations_en": "The method needs captured traces plus a reachable server that it can query repeatedly; it does not work from passive captures alone. Probing changes server state: each probe opens a new session, but protocols with global state, such as IoT device power state, can still degrade feedback. On the 1,000-message datasets an analysis averaged 259 minutes, 50,344 connection attempts and about 3.98 million exchanged messages, so slow or rate-limiting servers reduce efficiency. Encryption and authentication were disabled in the open-source evaluation setups, and encrypted traffic in the IoT case studies was decrypted with device private keys. Checksummed protocols need an added checksum-reversal step, shown only on ICMP. Format ground truth comes from tshark dissectors, and message types from manual reading of protocol documents. The five-device IoT case studies test whether generated messages trigger device behaviors, not whether specifications are complete. State-machine inference reuses existing methods and is not evaluated as a contribution.",
+    "scope_limitations_zh": "该方法需要捕获流量以及可被反复查询的可达服务端，无法仅凭被动捕获流量工作。探测会改变服务端状态：每次探测都会新建会话，但具有全局状态的协议（如 IoT 设备的开关状态）仍可能降低反馈质量。在 1,000 条报文的数据集上，单次分析平均耗时 259 分钟，平均发起 50,344 次连接、交换约 398 万条报文，因此低速或限流的服务端会降低效率。在开源评测环境中，加密与认证机制均被关闭；IoT 案例研究中的加密流量则借助设备私钥解密。带校验和的协议需要额外的校验和逆向步骤，且仅在 ICMP 上演示。格式真实标签来自 tshark 解析器，报文类型则来自人工阅读协议文档。针对五台设备的 IoT 案例研究检验生成的报文能否触发设备行为，而非规范是否完整。状态机推断沿用已有方法，并未作为贡献加以评估。",
+    "why_fits_en": "Adds active, server-interactive protocol inference, complementing the trace-only, binary-assisted and source-based protocol reconstruction research in this section.",
+    "why_fits_zh": "补充主动与服务端交互的协议推断方法，与本节中仅基于流量、借助二进制及基于源码的协议重建研究互补。",
+    "metadata_notes": "The NDSS paper page lists the seven authors with affiliations and links the PDF and slides; Crossref gives the same author order and only the year 2024. The PDF footer gives the 26 February–1 March 2024 symposium in San Diego, ISBN 1-891562-93-2 and the DOI. No arXiv version was found. The paper says DynPRE is available at github.com/DynPRE/DynPRE, but the reviewed 2025-08-27 snapshot contains only a README asking readers to contact the authors by email for the code and declares no license. code_url is therefore null, and no public implementation is claimed. The paper ran the baselines from public releases, using a public re-implementation for FieldHunter. Nothing was run for this review.",
+    "metadata_notes_zh": "NDSS 论文页面列出七位作者及其单位，并链接 PDF 与演示幻灯片；Crossref 给出相同的作者顺序，仅记载年份 2024。PDF 页脚标明研讨会于 2024 年 2 月 26 日至 3 月 1 日在圣迭戈举行，并载有 ISBN 1-891562-93-2 与 DOI。未找到 arXiv 版本。论文称 DynPRE 可在 github.com/DynPRE/DynPRE 获取，但所审阅的 2025-08-27 快照仅有一份 README，请读者通过电子邮件联系作者获取代码，且未声明许可证。因此 code_url 为 null，本条目不声称存在公开实现。论文的基线工具来自公开版本，其中 FieldHunter 使用公开的重新实现。本次审阅未运行任何内容。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf",
+      "https://api.crossref.org/works/10.14722/ndss.2024.24083",
+      "https://doi.org/10.14722/ndss.2024.24083",
+      "https://github.com/DynPRE/DynPRE/blob/3a0fdcef1d9245db6bc0a4e25f66d04e34d14bca/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
