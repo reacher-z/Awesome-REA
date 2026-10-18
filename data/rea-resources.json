@@ -2237,5 +2237,36 @@
       "Each condition ran once (n=1), the REA arm was told to prefer REA tools, parallel processes make timings approximate, and only static JavaScript/web work with one model was tested; an interrupted run was excluded and repeated. One REA analysis result exceeded the 10 MB MCP response limit. Scripts and JSONL logs are excerpted rather than published, so this collection could not and did not rerun the trials.",
       "The author reports that REA helped with extraction, such as asar unpacking and HAR element extraction, while grep and small scripts carried code reading in both arms. Nothing was reconstructed: the HAR task identified an existing request path. Native binaries and APKs are deferred to a planned second step; Orca, the venue site, REA and the model service keep their own terms."
     ]
+  },
+  {
+    "id": "rea-ghidra-nativeaot-guide",
+    "name": "NativeAOT metadata recovery with Ghidra",
+    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "kind": "documentation",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Recovers .NET 8 NativeAOT metadata from x64 PE executables during REA’s Ghidra analysis: MethodTable relationships, virtual slots and frozen strings from RTR 9.1 data, through a built-in read-only parser or an optional headless adapter that annotates the Ghidra database. Generated names, inferred prototypes and recovered native pseudocode stay separate from the unknown original C# names, fields and source.",
+    "description_zh": "在 REA 的 Ghidra 分析中，从 x64 PE 可执行文件恢复 .NET 8 NativeAOT 元数据：通过内置只读解析器或可选的无界面适配器（会为 Ghidra 数据库添加注释），从 RTR 9.1 数据中取得 MethodTable 关系、虚表槽位与冻结字符串。生成的名称、推断的原型和恢复的原生伪代码，与未知的原始 C# 名称、字段和源码明确区分。",
+    "evidence_url": "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/ghidra-nativeaot.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed on main as rea-agents 6.7.0, which declares Node ^22.19.0, ^24.11.0 or 26+. Bring your own Ghidra and JDK; the guide’s Windows check used Ghidra 12.1.4 and JDK 21. The built-in parser handles x64 PE32+ with .NET 8 RTR 9.1 metadata and needs a unique RTR header and exactly one DEHYDRATED_DATA row; other RTR versions and PE architectures are reported as unsupported or partial. Ordinary PE/CLI or ReadyToRun assemblies belong to REA’s managed-code tools instead.",
+      "The optional adapter is built from a clean pinned checkout of Washi1337/ghidra-nativeaot with existing git, javac and jar; REA records the JAR’s SHA-256, copies it and rechecks the digest before loading, and JARs run inside Ghidra, so supply a trusted build. It annotates within an ephemeral Program transaction and never changes the original executable. It is unavailable on Windows Ghidra P0, where database tools do not see rehydrated bytes and slot targets come from the parser report.",
+      "Outputs include MethodTable addresses, base types, interfaces, virtual slots and frozen strings, within documented local limits such as 128 MiB of captured PE bytes and 4 MiB of report JSON; rows beyond the report budget are omitted with partial coverage. Type identification uses upstream heuristics and prototypes remain inferences. Pseudocode is recovered native logic, not original C# source, and original class/member names and custom field layouts stay unknown.",
+      "Verification uses benign source-built .NET 8.0.22 fixtures with independent compiler/linker-symbol and directory-byte oracles, plus stripped and negative inputs; fixtures are never executed, and building them needs .NET SDK 8.0.416 and platform NativeAOT tools. The real MCP lane runs only on Linux x64 with the adapter. Windows-host behavior was checked manually once on Windows 11 x64 without the JAR against the fixture oracle and linker map; no CI lane repeats that check.",
+      "REA declares MIT. The parser’s hydration semantics are adapted from Washi1337/ghidra-nativeaot (MIT, with its notice shipped under licenses/) and cross-checked against .NET’s MethodTable.h. Analysed executables keep their own licenses. Merged PR #748 introduced the integration and issue #744 records the request and its closure without claiming C# project reconstruction. This collection did not run REA, Ghidra or any fixture."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/testing.md",
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/licenses/nativeaot-parser-MIT.txt",
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/package.json",
+      "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/LICENSE",
+      "https://github.com/morluto/rea/pull/748",
+      "https://github.com/morluto/rea/issues/744"
+    ]
   }
 ]

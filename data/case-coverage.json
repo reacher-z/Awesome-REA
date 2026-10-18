@@ -1177,16 +1177,25 @@
         "https://github.com/morluto/rea/issues/744",
         "https://github.com/morluto/rea/pull/748"
       ],
-      "state": "insufficient-evidence",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "Issue #744 is a capability request: the reporter's agent could not lift a .NET 8 NativeAOT executable back to readable C#. Merged REA PR #748 and later comments document NativeAOT metadata recovery (type hierarchy, interfaces, virtual slots) and native pseudocode, checked on benign source-built fixtures against independent compiler-symbol or linker-map oracles. The maintainer's closing comment states that reconstructing the original C# project is not claimed. This is tool capability work, not a reconstruction case with a named target, recovered output and comparison. Retain the lead without a catalog mapping.",
-      "reason_zh": "Issue #744 是能力请求：报告者的智能体无法将 .NET 8 NativeAOT 可执行文件还原为可读的 C#。已合并的 REA PR #748 及后续评论记录了 NativeAOT 元数据恢复（类型层次、接口、虚表槽位）和原生伪代码输出，并在无害的自建测试程序上对照独立的编译器符号或链接映射进行检查。维护者关闭时明确表示不主张重建原始 C# 项目。这属于工具能力开发，而非具备具体目标、恢复产物和对照结果的重建案例。保留此线索而不建立目录映射。",
+      "reason_en": "Issue #744 requested NativeAOT recovery; merged REA PR #748 and the pinned official guide document the delivered capability: built-in and optional-adapter recovery of MethodTable relationships, virtual slots and frozen strings plus native pseudocode, checked on source-built fixtures against independent symbol oracles and once manually on a Windows host. The full mapping covers this request-and-progress report as official documentation, not a reconstruction case: original C# names, fields and source are not recovered. No runtime reproduction is claimed.",
+      "reason_zh": "Issue #744 请求 NativeAOT 恢复能力；已合并的 REA PR #748 与固定版本的官方指南记录了已交付的能力：通过内置解析器或可选适配器恢复 MethodTable 关系、虚表槽位与冻结字符串，并输出原生伪代码，在自建测试程序上对照独立符号基准检查，并在 Windows 主机上手动检查过一次。完整映射以官方文档覆盖这份请求与进展报告，并不将其视为重建案例：原始 C# 名称、字段和源码并未恢复。未主张运行复现。",
       "primary_evidence_urls": [
         "https://github.com/morluto/rea/issues/744",
-        "https://github.com/morluto/rea/pull/748"
+        "https://github.com/morluto/rea/pull/748",
+        "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/ghidra-nativeaot.md",
+        "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/docs/testing.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-ghidra-nativeaot-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:windows-calculator-percent",
@@ -14024,18 +14033,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 101,
-      "insufficient-evidence": 82,
+      "already-curated": 102,
+      "insufficient-evidence": 81,
       "pending": 408
     },
     "units_by_state": {
-      "already-curated": 100,
-      "insufficient-evidence": 82,
+      "already-curated": 101,
+      "insufficient-evidence": 81,
       "pending": 407
     },
     "primary_reviewed_units": 125,
-    "catalog_linked_occurrences": 112,
-    "distinct_resource_ids": 106,
+    "catalog_linked_occurrences": 113,
+    "distinct_resource_ids": 107,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
