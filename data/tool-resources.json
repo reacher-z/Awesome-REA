@@ -6795,5 +6795,38 @@
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/.gitmodules",
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/releases/tag/v0.2.3"
     ]
+  },
+  {
+    "id": "th095-reconstruction-case",
+    "name": "TH095: function-level reconstruction of Shoot the Bullet 1.02a",
+    "url": "https://github.com/N0zoM1z0/th095",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs source for the original Japanese Touhou 9.5: Shoot the Bullet 1.02a executable, accepting function exactness only through reproducible byte comparison of pinned Visual C++ .NET 2003 builds against one hash-attested target. The whole program also compiles and links into a playable Windows i386 executable, while README keeps playability, function matching and whole-executable identity as separate statuses.",
+    "description_zh": "为日版 Touhou 9.5：东方文花帖 1.02a 原可执行文件重建源码；只有使用固定版本 Visual C++ .NET 2003 构建、并与单一经哈希核验的目标进行可复现字节比较后，才认定函数级一致。整个程序也能编译链接为可游玩的 Windows i386 可执行文件，而 README 将可玩性、函数匹配与整个可执行文件一致性列为相互独立的状态。",
+    "evidence_url": "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Generated PROGRESS.md reports 697 confirmed authored functions among 1,880 candidates, all with source, and 696 canonically exact, covering 99.22% of confirmed authored bytes; Controller::GetInput keeps one differing byte. README does not claim whole-executable byte identity, lists semantic reconstruction as active and Windows x86-64, Linux and Web ports as planned, and tags the playable baseline v0.1.0-windows-i386 without release binaries.",
+      "Supply your own original Japanese 1.02a th095.exe matching the size, SHA-256 and MD5 in README, imported as resources/th095.exe; playing also needs the game’s data. README says copyrighted executables, game data and private analysis databases are not included, and public CI runs only target-independent checks.",
+      "scripts/bootstrap-tools.sh needs curl, git, sha256sum, tar, unzip, uv and Wine, then fetches checksum-pinned Ghidra 12.1.3, Temurin JDK 21, objdiff 3.8.0 and Microsoft Visual C++ .NET 2003 (13.10.3077) binaries from a third-party archive repository; reccmp 0.1.6 is also pinned. scripts/build-whole.py cold-compiles and links the production graph and refuses stubbed or force-linked images.",
+      "Exact credit requires a zero-difference COFF function comparison recorded in the match ledgers; Ghidra, IDA MCP and runtime observation count only as supporting evidence. README cites a full-game runtime video using a test-only no-death launcher plus separate normal-build tests, and RUNTIME_ISSUES.md notes those checks used 2026-09-10 source, with later semantic changes only compile- and link-validated. This collection ran nothing.",
+      "MIT covers repository code and documentation, not the game or its assets; the downloaded compiler and tools keep their own terms. The repository carries coding-agent rules and skills and a GPT web Ghidra bridge but does not itself document REA use; REA’s separately published Touhou essay discusses this project. No runtime reproduction is claimed here."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/PROGRESS.md",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/ORACLES.md",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/RUNTIME_ISSUES.md",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/TOOLS.md",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/config/tools.lock.toml",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/scripts/bootstrap-tools.sh",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/.github/workflows/ci.yml",
+      "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/LICENSE"
+    ]
   }
 ]

@@ -14286,13 +14286,37 @@
       "reported_source_urls": [
         "https://github.com/N0zoM1z0/th095"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 135 (README line 1443) lists N0zoM1z0/th095 under 🌙 Touhou 9.5: Shoot the Bullet. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 135 行（README 第 1443 行）在 🌙 Touhou 9.5: Shoot the Bullet 下列出 N0zoM1z0/th095。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, generated progress, oracle and runtime-issue notes, tool lock, bootstrap script, CI and license support the named TH095 1.02a reconstruction report. Full mapping covers this repository’s function-level reconstruction and playable Windows i386 build, not whole-executable identity, planned ports or independently reproduced play; REA’s Touhou method essay is linked as related. Original-executable requirements and project-reported counts remain explicit.",
+      "reason_zh": "固定版本的 README、自动生成的进度、判定依据与运行问题说明、工具锁定文件、初始化脚本、CI 及许可证，支持该 TH095 1.02a 重建报告。完整映射覆盖此仓库的函数级重建及可游玩的 Windows i386 构建，不涵盖整个可执行文件一致性、计划中的移植或独立复现的游戏过程；REA 的东方重建方法文章作为相关条目关联。原可执行文件要求和项目报告的数字均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/PROGRESS.md",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/ORACLES.md",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/RUNTIME_ISSUES.md",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/TOOLS.md",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/config/tools.lock.toml",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/scripts/bootstrap-tools.sh",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/.github/workflows/ci.yml",
+        "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/LICENSE",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th095-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-touhou-reconstruction-method-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "hao-games:row-136",
@@ -15423,18 +15447,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 182,
+      "already-curated": 183,
       "insufficient-evidence": 148,
-      "pending": 261
+      "pending": 260
     },
     "units_by_state": {
-      "already-curated": 180,
+      "already-curated": 181,
       "insufficient-evidence": 148,
-      "pending": 261
+      "pending": 260
     },
-    "primary_reviewed_units": 268,
-    "catalog_linked_occurrences": 192,
-    "distinct_resource_ids": 186,
+    "primary_reviewed_units": 269,
+    "catalog_linked_occurrences": 193,
+    "distinct_resource_ids": 187,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

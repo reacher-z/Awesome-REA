@@ -2814,5 +2814,15 @@
       "证据来自试玩与诊断：STATUS.md 记录了纤程、系统服务、视频解码、缓冲输入与时钟计时的原生运行时测试，以及各项修复的原因和用户确认。README 中的帧率来自作者在 RTX 5080 与集成 Radeon 显卡上的测试和一份玩家报告。CI 工作流只构建并发布安装包，不运行自动化游戏测试。本合集仅阅读来源，未运行该移植或任何游戏。",
       "README 声明采用 GPL v2 或更高版本。运行时起源于 FelipePrado0 以 GPL-2.0 发布的 gow3_pc 与 shadPS4 视频核心，TAA 相机数据的取法注明来自 SuperMedo 以 GPL v2 发布的 Uncharted 移植。安装包附带第三方库；NVIDIA 的 DLSS DLL 由构建脚本从 NVIDIA 的 DLSS 仓库获取，仍受 NVIDIA 许可约束。STATUS.md 仅提到 REA 在 Windows 上无法反编译准备好的 ELF，且未提及任何 AI 模型；帖子中的 Claude 说法来自第三方账号，因此未确立 AI 或 REA 工作流。"
     ]
+  },
+  "th095-reconstruction-case": {
+    "name": "TH095：东方文花帖 1.02a 的函数级重建",
+    "requirements": [
+      "自动生成的 PROGRESS.md 报告：1,880 个候选中有 697 个已确认的原作函数，全部具备源码，其中 696 个达到规范一致，覆盖已确认原作字节的 99.22%；Controller::GetInput 仍有一个字节不同。README 不主张整个可执行文件逐字节一致，将语义重建列为进行中、Windows x86-64／Linux／Web 移植列为计划，并以 v0.1.0-windows-i386 标签固定可玩基线，但未附发布二进制。",
+      "需自备与 README 所列大小、SHA-256 和 MD5 一致的日版 1.02a 原版 th095.exe，并导入为 resources/th095.exe；游玩还需要游戏数据。README 说明仓库不含受版权保护的可执行文件、游戏数据和私有分析数据库，公开 CI 只运行不依赖目标文件的检查。",
+      "scripts/bootstrap-tools.sh 需要 curl、git、sha256sum、tar、unzip、uv 和 Wine，随后获取以校验和固定的 Ghidra 12.1.3、Temurin JDK 21、objdiff 3.8.0，以及来自第三方存档仓库的 Microsoft Visual C++ .NET 2003（13.10.3077）二进制；reccmp 0.1.6 也固定版本。scripts/build-whole.py 从零编译并链接生产构建图，拒绝生成桩代码或强制链接的映像。",
+      "认定一致须通过零差异的 COFF 函数比较，并记录在匹配台账中；Ghidra、IDA MCP 和运行观察只作为辅助证据。README 引用一段使用仅供测试的无敌启动器完成的全流程运行视频，另有正常构建的单独测试；RUNTIME_ISSUES.md 注明这些检查针对 2026-09-10 的源码，之后的语义改动只经过编译和链接验证。本合集未运行任何检查。",
+      "MIT 许可覆盖仓库代码与文档，不涵盖游戏或其素材；下载的编译器与工具各有条款。仓库包含编程智能体规则与技能以及 GPT 网页版 Ghidra 桥接，但本身未记录 REA 使用；REA 另行发表的东方重建文章讨论了此项目。此处不主张运行复现。"
+    ]
   }
 }
