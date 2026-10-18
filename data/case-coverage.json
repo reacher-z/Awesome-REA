@@ -13761,13 +13761,30 @@
       "reported_source_urls": [
         "https://github.com/OpenRCT2/OpenRCT2"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 125 (README line 1312) lists OpenRCT2/OpenRCT2 under 🏗️ RollerCoaster Tycoon 2 / OpenRCT2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 125 行（README 第 1312 行）在 🏗️ RollerCoaster Tycoon 2 / OpenRCT2 下列出 OpenRCT2/OpenRCT2。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build configuration, asset manifest, CI workflow, tests, save-format notes and licence support this row as OpenRCT2, a C++ re-implementation of RollerCoaster Tycoon 2 that runs on the user’s original game data. Full mapping covers the engine project, not recovered original code or equivalence with the RCT2 executable. Original-data requirements, deliberate extensions and the scope of the project’s own tests remain explicit.",
+      "reason_zh": "固定版本的 README、构建配置、资源清单、CI 工作流、测试、存档格式说明及许可证，支持将此行认定为 OpenRCT2：一个在使用者原游戏数据上运行、以 C++ 重新实现 RollerCoaster Tycoon 2 的项目。完整映射覆盖该引擎项目，不代表恢复了原始代码或与 RCT2 可执行文件等价。原数据要求、有意扩展以及项目自有测试的范围均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/CMakeLists.txt",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/assets.json",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/docs/save-format.md",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/.github/workflows/ci.yml",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/test/tests/ReplayTests.cpp",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/test/tests/S6ImportExportTests.cpp",
+        "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/licence.txt",
+        "https://github.com/OpenRCT2/OpenRCT2/releases/tag/v0.5.6"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "openrct2-engine-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-126",
@@ -15189,18 +15206,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 168,
-      "insufficient-evidence": 140,
-      "pending": 283
-    },
-    "units_by_state": {
-      "already-curated": 167,
+      "already-curated": 169,
       "insufficient-evidence": 140,
       "pending": 282
     },
-    "primary_reviewed_units": 247,
-    "catalog_linked_occurrences": 179,
-    "distinct_resource_ids": 173,
+    "units_by_state": {
+      "already-curated": 168,
+      "insufficient-evidence": 140,
+      "pending": 281
+    },
+    "primary_reviewed_units": 248,
+    "catalog_linked_occurrences": 180,
+    "distinct_resource_ids": 174,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

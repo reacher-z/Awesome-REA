@@ -2659,5 +2659,15 @@
       "TECHNICAL.md 报告在一台 Ryzen 7 7800X3D／RTX 4070 Ti PC 上，两个场馆的演示比赛以 1.00 倍速度稳定运行在 60 FPS，并给出与原版计时相比的跳跃高度和行走距离。Linux 仅在 WSL2 下检查过；AppImage 尚未在原生 Linux 或 Steam Deck 上测试。这些是作者测量结果，并非等价性检查；本合集未运行。",
       "GitHub 未检测到许可，所审阅的源码树中也没有 LICENSE 文件，因此项目自身代码的再使用条款未予说明；固定版本的 psxrecomp 分支采用 PolyForm Noncommercial 1.0.0 许可。游戏及其商标仍归 Fox Interactive、Activision 及其他列明的权利人所有。README 披露该移植几乎完全借助 Claude Code 完成，由仓库所有者指导；未声明使用 REA。"
     ]
+  },
+  "openrct2-engine-case": {
+    "name": "OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现",
+    "requirements": [
+      "所审阅的 develop 分支快照晚于 2026-10-10 发布的 v0.5.6。README 称 OpenRCT2 力求提供 RCT2 的全部内容并加入许多改进，还恢复了部分 RollerCoaster Tycoon 机制，因此与原版的有意差异是设计的一部分。所审文件没有记录分析原游戏的方法，也没有恢复任何原始源码。",
+      "运行需要使用者自备 RollerCoaster Tycoon 2 文件；README 提到 Steam 和 GOG.com 版本。初代 RollerCoaster Tycoon 文件为可选项，用于游玩其场景。安装过程默认下载 OpenRCT2 自有的对象、标题动画、OpenSoundEffects 与 OpenMusic 资源包，启用测试的构建还会获取回放文件，均以 SHA-256 固定。",
+      "源码构建使用 CMake 3.24+ 和 C++20 编译器，wiki 提供 Linux、macOS、Windows、WSL 及 MSYS2 MinGW 的构建指南，并有强制 32 位构建的选项。面向玩家列出了便携版、安装包、启动器以及多个 Linux 和 BSD 软件包。",
+      "CI 检查代码格式、在多个平台构建，并运行 GoogleTest 测试套件，包括基于项目测试数据的回放、RCT2 存档导入导出、设施评分、寻路和场景解密测试。这些测试保障 OpenRCT2 自身行为与文件兼容性，并不证明与 RCT2 可执行文件等价；本次审阅均未运行。",
+      "licence.txt 规定 OpenRCT2 采用 GPL-3.0-or-later；原游戏数据及购买的版本保留各自权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }

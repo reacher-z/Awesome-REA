@@ -6262,5 +6262,38 @@
       "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/README.md",
       "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/LICENSE"
     ]
+  },
+  {
+    "id": "openrct2-engine-case",
+    "name": "OpenRCT2: an open re-implementation of RollerCoaster Tycoon 2",
+    "url": "https://github.com/OpenRCT2/OpenRCT2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements RollerCoaster Tycoon 2, originally written in x86 assembly, as a C++ engine that runs on the original game’s data. It loads RCT2 saves and scenarios, and RCT1 scenarios when those files are present, while saving to its own documented park format. Modern-platform support, interface and AI changes, higher limits and multiplayer are deliberate extensions, not reproductions of the original.",
+    "description_zh": "以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。它可载入 RCT2 存档和场景，具备相应文件时也能载入 RCT1 场景，而保存时使用自己有文档说明的乐园格式。现代平台支持、界面与 AI 改动、更高上限和多人游戏都是有意扩展，并非对原版的复现。",
+    "evidence_url": "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/readme.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed develop snapshot follows the v0.5.6 release of 2026-10-10. The README says OpenRCT2 attempts to provide everything from RCT2 plus many improvements, and restores some RollerCoaster Tycoon mechanics, so intentional differences are part of the design. The reviewed files do not document how the original game was analysed, and no original source is recovered.",
+      "Playing requires the user’s own RollerCoaster Tycoon 2 files; the README names Steam and GOG.com editions. Original RollerCoaster Tycoon files are optional and enable its scenarios. By default, installation downloads OpenRCT2’s own objects, title sequences, OpenSoundEffects and OpenMusic packs, and test builds also fetch replays, each pinned by SHA-256.",
+      "Source builds use CMake 3.24+ and a C++20 compiler, with wiki guides for Linux, macOS, Windows, WSL and MSYS2 MinGW and an option to force 32-bit builds. Portable builds, installers, a launcher and several Linux and BSD packages are listed for players.",
+      "CI checks formatting, builds on several platforms and runs the GoogleTest suite, including replay, RCT2 save import/export, ride-rating, pathfinding and scenario-decryption tests on project test data. These guard OpenRCT2’s own behaviour and file compatibility, not equivalence with the RCT2 executable; this review ran none of them.",
+      "licence.txt applies GPL-3.0-or-later to OpenRCT2; original game data and purchased editions keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/CMakeLists.txt",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/assets.json",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/docs/save-format.md",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/.github/workflows/ci.yml",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/test/tests/ReplayTests.cpp",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/test/tests/S6ImportExportTests.cpp",
+      "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/licence.txt",
+      "https://github.com/OpenRCT2/OpenRCT2/releases/tag/v0.5.6"
+    ]
   }
 ]
