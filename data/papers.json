@@ -3685,5 +3685,57 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-disco",
+    "title": "DiSCo: Towards Decompiling EVM Bytecode to Source Code using Large Language Models",
+    "title_zh": "DiSCo：利用大语言模型将 EVM 字节码反编译为源代码",
+    "authors": [
+      "Xing Su",
+      "Hanzhong Liang",
+      "Hao Wu",
+      "Ben Niu",
+      "Fengyuan Xu",
+      "Sheng Zhong"
+    ],
+    "year": 2025,
+    "publication_date": "2025-06-19",
+    "date_precision": "day",
+    "date_basis": "The ACM article page and publisher-deposited Crossref metadata agree on publication on 2025-06-19. The PDF footer’s July 2025 issue date and the FSE conference dates are not substituted for this publication date.",
+    "date_basis_zh": "ACM 文章页面与出版方提交的 Crossref 元数据均将出版日期列为 2025-06-19；本条目不以 PDF 页脚的 2025 年 7 月期号日期或 FSE 会议日期替代该出版日期。",
+    "venue": "Proceedings of the ACM on Software Engineering (FSE 2025)",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3729373",
+    "url": "https://dl.acm.org/doi/10.1145/3729373",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3729373",
+    "code_url": null,
+    "project_url": "https://github.com/b1ue3ky/disco",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DiSCo lifts Ethereum contract creation bytecode to Solidity source by prompting a frozen LLM, instead of emitting decompiler pseudocode. It abstracts control-flow paths into logic-invariant semantic units, recovers constructor logic by simulating creation bytecode captured from block execution, and infers stripped names with signature databases and a type-aware graph model. These units become natural-language descriptions plus coding specifications in the prompt. GPT-4 is the primary model; Llama 3 is also tested.",
+    "description_zh": "DiSCo 通过提示冻结参数的大语言模型，把以太坊合约的创建字节码提升为 Solidity 源码，而不是输出反编译伪代码。它将控制流路径抽象为逻辑不变的语义单元，模拟执行从区块执行中捕获的创建字节码以恢复构造函数逻辑，并借助签名数据库与类型感知图模型推断被剥离的名称。这些单元被转写为自然语言描述，并与编码规范一起放入提示词。主要模型为 GPT-4，另测试了 Llama 3。",
+    "scope_limitations_en": "Ground truth comes from Etherscan source files: 200 highest-balance contracts for all baselines and 1,000 for automated tests; separate studies add 50 Vyper, 50 newly deployed and 149 closed-source attack contracts. Compilability (about 75% with best-of-five sampling, 46% for a single run), differential-fuzzing pass rates and embedding similarity do not establish equivalence to deployed source. Nearly half of the imitation-learning fuzzer’s transactions revert, and manual review judged about 28.5% of generated contracts semantically consistent, and 12% for Vyper inputs. The authors report timeouts or unsound analysis on contracts with many paths, and name inference remains weak. Baselines give the same LLM output from Panoramix, Ethervm and Elipmoc, mostly taken from their websites or decompiled manually; this is not a comparison of standalone decompilers. Results depend on a GPT-4 preview snapshot. Attack reproduction covers ten January 2025 incidents, four of which were reproduced.",
+    "scope_limitations_zh": "真实标签来自 Etherscan 上的源码文件：200 个余额最高的合约用于全部基线，1,000 个用于自动化测试；另有独立实验使用 50 个 Vyper 合约、50 个新部署合约和 149 个闭源攻击合约。可编译率（五次采样取优约为 75%，单次运行为 46%）、差分模糊测试通过率与嵌入相似度都不能证明与已部署源码等价。模仿学习模糊测试器生成的交易近半数会回滚；人工审查认为约 28.5% 的生成合约语义一致，Vyper 输入仅为 12%。作者报告路径过多的合约会导致超时或分析不可靠，名称推断能力也仍然有限。基线是将 Panoramix、Ethervm 和 Elipmoc 的输出（多取自其网站，部分为人工反编译）交给同一大语言模型，并非独立反编译器之间的比较。结果依赖某个 GPT-4 预览版快照。攻击复现仅覆盖 2025 年 1 月的十起事件，其中四起复现成功。",
+    "why_fits_en": "Extends LLM-assisted decompilation to EVM smart-contract bytecode, recovering constructor logic and identifiers and checking results by compilation and differential execution.",
+    "why_fits_zh": "将大语言模型辅助反编译扩展到 EVM 智能合约字节码，恢复构造函数逻辑与标识符，并通过编译和差分执行检查结果。",
+    "metadata_notes": "The six-author order follows the ACM PDF and Crossref. ACM lists article FSE103 in volume 2, issue FSE, pages 2311–2334, and licenses the paper under CC BY 4.0. No arXiv version was found. The Data Availability section points to github.com/suxnju/disco, which now redirects to b1ue3ky/disco. At the reviewed 2025-04-13 commit, that MIT-licensed repository holds dataset CSVs of contract addresses, evaluation results and user-study material, but no DiSCo implementation, so it is recorded as a project link rather than code. Contract sources and on-chain data keep their own terms. The primary model is given as GPT-4-0315-Preview. No code, prompts or experiments were run.",
+    "metadata_notes_zh": "六位作者的顺序以 ACM PDF 与 Crossref 为准。ACM 列出第 2 卷 FSE 期、文章编号 FSE103、页码 2311–2334，并以 CC BY 4.0 授权论文。未找到 arXiv 版本。论文的数据可用性章节指向 github.com/suxnju/disco，该地址现重定向至 b1ue3ky/disco。在所审阅的 2025-04-13 提交中，这个采用 MIT 许可证的仓库包含列出合约地址的数据集 CSV、评估结果与用户研究材料，但没有 DiSCo 实现，因此记录为项目链接而非代码。合约源码与链上数据保留各自条款。论文所列主要模型为 GPT-4-0315-Preview。本次未运行代码、提示词或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3729373",
+      "https://dl.acm.org/doi/pdf/10.1145/3729373",
+      "https://api.crossref.org/works/10.1145/3729373",
+      "https://github.com/b1ue3ky/disco/tree/ee04ae812c2239a42fef8046f3c2486c36d7d296",
+      "https://github.com/b1ue3ky/disco/blob/ee04ae812c2239a42fef8046f3c2486c36d7d296/README.md",
+      "https://github.com/b1ue3ky/disco/blob/ee04ae812c2239a42fef8046f3c2486c36d7d296/LICENSE",
+      "https://github.com/b1ue3ky/disco/blob/ee04ae812c2239a42fef8046f3c2486c36d7d296/disco_artifacts/datasets/d_small.csv"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
