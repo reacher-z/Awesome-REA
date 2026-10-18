@@ -9754,12 +9754,17 @@
       "reported_source_urls": [
         "https://github.com/chasem-dev/sms-launcher"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 8 (README line 76) lists chasem-dev/sms-launcher under 🍄 Super Mario Sunshine. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 8 行（README 第 76 行）在 🍄 Super Mario Sunshine 下列出 chasem-dev/sms-launcher。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README describes an Electron launcher for the separate sms-pc-port. It downloads build tools, builds a pinned port and decompilation commit from the user’s GMSE01 disc image, and manages settings, HD packs, mods and saves. The launcher itself contains no decompilation, recompilation or matching work, so it is retained as a lead without its own record. The port and its decompilation are reviewed as separate leads; this is not a finding about the launcher’s usefulness.",
+      "reason_zh": "固定版本的 README 说明这是独立项目 sms-pc-port 的 Electron 启动器：它下载构建工具，用使用者自备的 GMSE01 光盘镜像构建固定版本的移植与反编译提交，并管理设置、高清素材包、模组和存档。启动器本身不含反编译、重编译或一致性工作，因此保留为线索而不单独建档。移植及其反编译工程作为独立线索另行核查；这不是对启动器实用性的评价。",
+      "primary_evidence_urls": [
+        "https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/README.md",
+        "https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/src/game-release.json",
+        "https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/docs/build-tools.md",
+        "https://github.com/chasem-dev/sms-launcher/blob/c04b5a40788050ce15deb7955d215cbeea4fa125/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -13846,15 +13851,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 90,
-      "insufficient-evidence": 78,
-      "pending": 423
+      "insufficient-evidence": 79,
+      "pending": 422
     },
     "units_by_state": {
       "already-curated": 89,
-      "insufficient-evidence": 78,
-      "pending": 422
+      "insufficient-evidence": 79,
+      "pending": 421
     },
-    "primary_reviewed_units": 110,
+    "primary_reviewed_units": 111,
     "catalog_linked_occurrences": 101,
     "distinct_resource_ids": 95,
     "distinct_paper_ids": 1,
