@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 135 | 134 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 346 | 345 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 110 | 110 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 345 | 344 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 111 | 111 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 146 occurrences have catalog links. They reference 140 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 184 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 185 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -207,6 +207,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | FFTARecomp: static recompilation of Final Fantasy Tactics Advance | Already curated | [Source](https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/README.md) |
 | 🧙 Ultima Underworld: The Stygian Abyss — abedegno/underworld-exhumed | Pending | [Source](https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md) |
 | Vandal Hearts: native PC port built on matching decompilations | Already curated | [Source](https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md) |
+| 🧙 Paper Mario — lucyawrey/Paper_Mario_64_Recomp | Insufficient evidence | [Source](https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/README.md) |
 | Paper Mario: matching Nintendo 64 decompilation for four releases | Already curated | [Source](https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/README.md) |
 | PaperBoat: a native Paper Mario port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/README.md) |
 | Lost Odyssey Recomp: statically recompiling an Xbox 360 RPG into native ports | Already curated | [Source](https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md) |
