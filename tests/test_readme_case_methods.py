@@ -41,9 +41,9 @@ class ReadmeCaseMethodTests(unittest.TestCase):
                 headings = re.findall(r'^(#{4,5}) (.+)$', rendered, re.MULTILINE)
                 labels = [names[language == 'zh'] for names in RECONSTRUCTION_METHODS.values()]
                 self.assertEqual(headings, [
-                    ('####', '案例' if language == 'zh' else 'Case studies'),
+                    ('####', ('案例' if language == 'zh' else 'Case studies') + ' (4)'),
                     ('#####', labels[0] + ' (1)'), ('#####', labels[3] + ' (3)'),
-                    ('####', '工具、项目与集成' if language == 'zh' else 'Tools, projects and integrations')])
+                    ('####', ('工具、项目与集成' if language == 'zh' else 'Tools, projects and integrations') + ' (1)')])
                 self.assertIn('<a id="game-port"></a>\n##### ', rendered)
                 order = re.findall(r'example\.com/([\w-]+)\)', rendered)
                 self.assertEqual(order, ['match', 'Alpha', 'beta', 'zeta', 'game-tool'])

@@ -403,15 +403,22 @@ def render_catalog(records, language, paper_urls=frozenset()):
                            for method, block in method_groups(cases)]
                 lines.extend([f"**{'按重建方式：' if index else 'By method:'}** " + ' · '.join(methods), ''])
         shown_cases = recent_cases(cases)
-        subgroups = [(None, shown_cases + tools)]
+        subgroups = [(None, None, shown_cases + tools)]
         if cases and tools:
+            # Explicit anchors keep the jump links stable whatever the heading text and count say.
             subgroups = [
-                (('Case studies', '案例')[index], shown_cases),
-                (('Tools, projects and integrations', '工具、项目与集成')[index], tools),
+                (f'{section}-cases', ('Case studies', '案例')[index], shown_cases),
+                (f'{section}-tools', ('Tools, projects and integrations', '工具、项目与集成')[index], tools),
             ]
-        for label, entries in subgroups:
+            if language == 'zh':
+                jumps = [f'{len(cases)} 个案例', f'{len(tools)} 个工具、项目与集成']
+            else:
+                jumps = [f"{len(cases)} case {'study' if len(cases) == 1 else 'studies'}",
+                         f'{len(tools)} tools, projects and integrations']
+            lines.extend([' · '.join(f'[{text}](#{anchor})' for text, (anchor, _, _) in zip(jumps, subgroups)), ''])
+        for anchor, label, entries in subgroups:
             if label:
-                lines.extend([f'#### {label}', ''])
+                lines.extend([f'<a id="{anchor}"></a>', f'#### {label} ({len(entries)})', ''])
             blocks = [(None, entries)]
             if section in METHOD_SECTIONS and len(cases) <= RECENT_CASES and all(record['kind'] == 'case-study' for record in entries):
                 # Case studies here are grouped by reconstruction method, one level below their own heading.

@@ -117,7 +117,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 **13 case studies**. The 10 newest are below. [Full case list](docs/cases.md#website).
 
-#### Case studies
+[13 case studies](#website-cases) · [48 tools, projects and integrations](#website-tools)
+
+<a id="website-cases"></a>
+#### Case studies (10)
 
 - [**Power BI API Scraper: decoding a published report query format**](https://github.com/artemiyDev/powerbi_api_scraper) - Power BI API Scraper reconstructs the web client's undocumented query and response format for published reports. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/power-bi-report-query-case/)</sub>
 - [**Sheypoor MCP: mapping marketplace APIs from browser traffic**](https://github.com/FarhamAghdasi/sheypoor-mcp) - Sheypoor MCP implements a client and MCP server for the Sheypoor classifieds site using API behavior documented from browser traffic. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sheypoor-mcp-case/)</sub>
@@ -130,7 +133,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**BaoCut Design: porting reconstructed canvas and design-system editors**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime) - Documents BaoCut’s design-canvas and design-system editors, which the project says it ported 1:1 from TypeScript reconstructions of Claude Design’s editors and hosts in agent sessions with annotation and export. <sub>Case study · Independent reconstruction · Also: App · [Full entry](https://awesomerea.org/resources/baocut-design-canvas-case/)</sub>
 - [**REA in Claude Code: an isolated static-analysis A/B trial**](https://zenn.dev/keigoly/articles/8738d8d241b5a1) - A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. <sub>Case study · Mixed workflow · Also: App · [Full entry](https://awesomerea.org/resources/rea-claude-code-isolated-ab-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="website-tools"></a>
+#### Tools, projects and integrations (48)
 
 - [**webcrack**](https://github.com/j4k0xb/webcrack) - Improves JavaScript readability by reversing supported obfuscation patterns and unpacking webpack/Browserify bundles. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/webcrack/)</sub>
 - [**humanify**](https://github.com/jehna/humanify) - Rename identifiers in minified JavaScript with LLM-suggested names, applied through scope-aware AST rewriting so the program structure stays unchanged. <sub>Tool · [Full entry](https://awesomerea.org/resources/humanify/)</sub>
@@ -190,7 +194,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 **By method:** <a id="game-matching-decompilation"></a>[Matching decompilations and disassemblies](docs/cases.md#game-matching-decompilation) (69) · <a id="game-decompilation"></a>[Non-matching decompilations](docs/cases.md#game-decompilation) (19) · <a id="game-static-recompilation"></a>[Static recompilations](docs/cases.md#game-static-recompilation) (48) · <a id="game-port"></a>[Ports of reconstructed source](docs/cases.md#game-port) (33) · <a id="game-engine-reimplementation"></a>[Engine reimplementations](docs/cases.md#game-engine-reimplementation) (47) · <a id="game-other"></a>[Other methods and analyses](docs/cases.md#game-other) (23)
 
-#### Case studies
+[239 case studies](#game-cases) · [79 tools, projects and integrations](#game-tools)
+
+<a id="game-cases"></a>
+#### Case studies (10)
 
 - [**Atlantis Native: porting the Atlantis and Atlantis II engines to Rust**](https://github.com/ripleyXLR8/atlantis-native) - Atlantis Native ports the reverse-engineered CryOmni3D Atlantis engine to Rust for Atlantis: The Lost Tales and Atlantis II. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/atlantis-native-case/)</sub>
 - [**bf-private-server: a Brave Frontier revival server**](https://github.com/joppe2001/bf-private-server) - bf-private-server recreates a self-hosted server for Brave Frontier client version 2.19.6. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/bf-private-server-case/)</sub>
@@ -203,7 +210,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**FreeRS42: reimplementing Ricochet Xtreme**](https://github.com/NuVelocity/FRS42) - FreeRS42 is a C++ project to reimplement the PC game Ricochet Xtreme using the NuVelocity engine. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/freers42-ricochet-xtreme-case/)</sub>
 - [**GTA Mode: reverse-engineering SimCity 3000 Unlimited for a native plugin**](https://github.com/DenisSergeevitch/simcity3000-gta-mode) - GTA Mode is a native plugin that adds direct control of spawned citizens and cars to SimCity 3000 Unlimited. <sub>Case study · Also: Binary · [Full entry](https://awesomerea.org/resources/simcity-3000-gta-mode-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="game-tools"></a>
+#### Tools, projects and integrations (79)
 
 - [**RenderDoc**](https://github.com/baldurk/renderdoc) - Inspect frame captures, draw calls, shaders, and graphics resources in your own game or graphics application. <sub>Tool · Also: App · [Full entry](https://awesomerea.org/resources/renderdoc/)</sub>
 - [**AssetRipper**](https://github.com/AssetRipper/AssetRipper) - Analyze Unity game files, inspect asset dependencies, and convert supported assets into Unity project formats. <sub>Tool · [Full entry](https://awesomerea.org/resources/assetripper/)</sub>
@@ -292,7 +300,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 **62 case studies**. The 10 newest are below. [Full case list](docs/cases.md#app).
 
-#### Case studies
+[62 case studies](#app-cases) · [112 tools, projects and integrations](#app-tools)
+
+<a id="app-cases"></a>
+#### Case studies (10)
 
 - [**AOL 7.0 Retro Server: reconstructing the P3 server session**](https://github.com/pioneerman2k1/AOL7-Retro-Server) - AOL 7.0 Retro Server implements local Python servers for the 2001 AOL 7.0 client. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/aol7-retro-server-case/)</sub>
 - [**Benro Polaris Firmware Patcher: rebuilding camera control and mapping the app protocol**](https://github.com/blaineam/benro-polaris-firmware-patcher) - Benro Polaris Firmware Patcher investigates the Polaris camera controller and repacks a user-supplied firmware image with a newer libgphoto2 stack and targeted pgphoto changes. <sub>Case study · Independent reconstruction · Also: Firmware, Protocol · [Full entry](https://awesomerea.org/resources/benro-polaris-firmware-patcher-case/)</sub>
@@ -305,7 +316,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**RTO eChalan: investigating a BankBot Android APK**](https://github.com/Gautam-CyberSec/Android-Malware-Analysis-Report) - The RTO eChalan report investigates an Android APK impersonating an Indian government eChallan service through manifest review, JADX decompilation and sandbox analysis. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/rto-echalan-android-analysis-case/)</sub>
 - [**Siriously: recovering macOS Writing Tools entry points**](https://github.com/bo2themax/Siriously) - Siriously investigates how macOS 27 changed access to Writing Tools and restores its popover through a Services client. <sub>Case study · Independent reconstruction · Also: Binary · [Full entry](https://awesomerea.org/resources/siriously-writing-tools-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="app-tools"></a>
+#### Tools, projects and integrations (112)
 
 - [**JADX-AI-MCP**](https://github.com/zinja-coder/jadx-ai-mcp) - JADX plugin paired with a Python MCP server to inspect decompiled Android classes, resources, cross-references and debugger context. <sub>Integration · Independent MCP · [Full entry](https://awesomerea.org/resources/jadx-ai-mcp/)</sub>
 - [**apktool-mcp-server**](https://github.com/zinja-coder/apktool-mcp-server) - Python MCP server that drives a local Apktool install so agents can decode APKs; list, read, search and edit smali and resource files; read AndroidManifest.xml and apktool.yml; and rebuild the project. <sub>Integration · Independent MCP · [Full entry](https://awesomerea.org/resources/apktool-mcp-server/)</sub>
@@ -425,7 +437,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 [↑ Contents](#contents)
 
-#### Case studies
+[7 case studies](#native-binary-cases) · [262 tools, projects and integrations](#native-binary-tools)
+
+<a id="native-binary-cases"></a>
+#### Case studies (7)
 
 - [**CPQ IO Scheduler: reconstructing Xiaomi's block scheduler**](https://github.com/Rasenkai/CPQ_IOSched) - CPQ IO Scheduler reconstructs Xiaomi's proprietary cpq.ko Linux block scheduler from a stripped ARM64 kernel module. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cpq-iosched-case/)</sub>
 - [**m0rph: tracing an obfuscated ELF flag checker**](https://github.com/UmbertoDellaMonica/m0rph-CTF-CyberChallenge.IT) - The m0rph investigation examines an obfuscated x86-64 ELF CTF flag checker with readelf, strings, Cutter and Radare2. <sub>Case study · [Full entry](https://awesomerea.org/resources/m0rph-ctf-analysis-case/)</sub>
@@ -435,7 +450,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Show Your Work: a measured dissection of REA's evidence architecture**](https://no-flag.com/2026/10/18/REA-paper/) - An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. <sub>Case study · Mixed workflow · [Full entry](https://awesomerea.org/resources/noflag-rea-evidence-architecture-study/)</sub>
 - [**DownUnderCTF: masked-squares flag checker**](https://rea.tools/showcase/ctf/) - An official educational challenge investigation connects binary checks to equations and records an original-program validation. <sub>Case study · Official REA · [Full entry](https://awesomerea.org/resources/rea-ctf-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="native-binary-tools"></a>
+#### Tools, projects and integrations (262)
 
 - [**Ghidra**](https://github.com/NationalSecurityAgency/ghidra) - Open-source analysis suite for disassembly, decompilation, graphs and Java/Python automation across executable formats. <sub>Tool · Also: Game, Firmware · [Full entry](https://awesomerea.org/resources/ghidra/)</sub>
 - [**radare2**](https://github.com/radareorg/radare2) - Scriptable command-line framework for inspecting, disassembling, debugging and modifying binaries across many architectures. <sub>Tool · Also: Game · [Full entry](https://awesomerea.org/resources/radare2/)</sub>
@@ -707,7 +723,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 **19 case studies**. The 10 newest are below. [Full case list](docs/cases.md#firmware).
 
-#### Case studies
+[19 case studies](#firmware-cases) · [70 tools, projects and integrations](#firmware-tools)
+
+<a id="firmware-cases"></a>
+#### Case studies (10)
 
 - [**Hisense AEH-W41H1: local A/C control over a reconstructed RS-485 bus**](https://github.com/AndrewDemsDS/hisense-w41h1) - Hisense AEH-W41H1 local control replaces the air conditioner's cloud-connected Wi-Fi module with ESPHome firmware for an ESP32 board or the stock RTL8710C module. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/hisense-aeh-w41h1-local-control-case/)</sub>
 - [**nRF52 e-paper tag: reconstructing an undocumented display interface**](https://github.com/niazlv/nrf52-eink-price-tag) - nRF52 e-paper tag reconstructs control of an undocumented electronic shelf label with an nRF52832 board and SSD1675A-class panel. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/nrf52-eink-price-tag-case/)</sub>
@@ -720,7 +739,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Virtual MPC Sample: rehosting Akai MPC Sample firmware in QEMU**](https://github.com/orrpunk-art/virtual-mpc-sample) - Virtual MPC Sample rehosts Akai MPC Sample 1.3.0.12 firmware in QEMU using a custom lab kernel and a browser panel for the device controls. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/virtual-mpc-sample-case/)</sub>
 - [**EchoMuse: replacement software that turns the Echo Dot 2nd gen into a Home Assistant voice satellite**](https://github.com/wilbowes/EchoMuse) - Replaces the software on an unlocked second-generation Amazon Echo Dot (2016, codename biscuit) so it works as a local Home Assistant voice satellite over the ESPHome API: EchoMuse's own Go firmware drives the microphones, speaker, LED ring and buttons, and a controller on the LAN handles wake words, devices and a dashboard. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/echomuse-echo-dot-voice-satellite-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="firmware-tools"></a>
+#### Tools, projects and integrations (70)
 
 - [**Binwalk**](https://github.com/ReFirmLabs/binwalk) - Identifies embedded formats and optionally extracts their contents, with entropy analysis for firmware triage. <sub>Tool · [Full entry](https://awesomerea.org/resources/binwalk/)</sub>
 - [**unblob**](https://github.com/onekey-sec/unblob) - Recursively extracts archives and filesystems from binary blobs while reporting chunk boundaries and unknown regions. <sub>Tool · [Full entry](https://awesomerea.org/resources/unblob/)</sub>
@@ -800,7 +820,10 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 **91 case studies**. The 10 newest are below. [Full case list](docs/cases.md#protocol).
 
-#### Case studies
+[91 case studies](#protocol-cases) · [49 tools, projects and integrations](#protocol-tools)
+
+<a id="protocol-cases"></a>
+#### Case studies (10)
 
 - [**A.O. Smith water heater: local CTA-2045 control and protocol findings**](https://github.com/ericboehs/aosmith-water-heater) - The A.O. Smith water-heater project implements local monitoring and demand-response control of an HPS10-50H45DV over its CTA-2045 RS-485 port, publishing readings to MQTT. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aosmith-water-heater-case/)</sub>
 - [**ACiQ K18W: reconstructing a mini split's UART protocol**](https://github.com/codypendant/aciq-minisplit-protocol) - ACiQ K18W documents the UART protocol between a mini split's indoor board and TCL WBR1 Wi-Fi module. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/aciq-minisplit-protocol-case/)</sub>
@@ -813,7 +836,8 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**claude-rc-api: reconstructing Claude Code Remote Control endpoints**](https://github.com/ThatCrispyToast/claude-rc-api) - claude-rc-api reconstructs the private HTTP interface used to control local Claude Code sessions from claude.ai/code. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/claude-rc-api-case/)</sub>
 - [**Cooper Hunter AC: UART and infrared protocol investigation**](https://github.com/kronhait/cooper-hunter-ac-esphome) - Cooper Hunter AC documents the COM1 UART and infrared control messages of CH-IF140RK and CH-IF140RK2 units with a Gree GRZQ3-R V1 board. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/cooper-hunter-ac-protocol-case/)</sub>
 
-#### Tools, projects and integrations
+<a id="protocol-tools"></a>
+#### Tools, projects and integrations (49)
 
 - [**Wireshark**](https://gitlab.com/wireshark/wireshark) - Inspect captured application and device traffic as decoded protocol fields, with filtering and shared GUI/TShark dissection. <sub>Tool · Also: App, Firmware · [Full entry](https://awesomerea.org/resources/wireshark/)</sub>
 - [**Netzob**](https://github.com/netzob/netzob) - Model communication protocols and infer message layouts from traces, with configured active learning for protocol state machines. <sub>Tool · [Full entry](https://awesomerea.org/resources/netzob/)</sub>
