@@ -3992,12 +3992,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110151664846139425"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@aloosekite, 2026-10-13), in a discussion about REA, says that after trying REA the author reverse-engineered how a closed-source coding agent coordinates multiple models, because it worked well, and built a pi plugin on the same logic so the capability no longer depends on that agent. It names neither the agent nor the plugin and links no code or notes. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the recovered logic, the plugin and REA’s contribution are unestablished.",
+      "reason_zh": "所引回复（@aloosekite，2026-10-13）在一场关于 REA 的讨论中称，接触 REA 后，作者因为觉得好用，逆向了一款闭源编程 Agent 协调多个模型协同工作的逻辑，并按同样逻辑开发了 pi 插件，从而不依赖该 Agent 也能用上这项能力。回复既未指明该 Agent，也未指明插件，也未链接代码或记录。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；所还原的逻辑、该插件及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/aloosekite/status/2110151664846139425"
+      ],
       "catalog_matches": []
     },
     {
@@ -4012,12 +4014,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110108201043775589"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@xhfloz, 2026-10-13) says that instead of building a smart-pen prototype, a collaborator (@shensitivity) bought an off-the-shelf pen and used Codex to decompile it and integrate it into their software system; it shows a video. It names no pen, protocol or software and publishes no code or notes. The GitHub account with the author’s handle has no public repositories, no GitHub account matching the collaborator’s handle was found, and the author’s linked site has no write-up of it. Retain the lead without a catalog mapping; the decompilation and integration are unestablished.",
+      "reason_zh": "作者帖子（@xhfloz，2026-10-13）称团队原本打算自制智能笔原型，后来合作者（@shensitivity）直接买了一支现成的智能笔，用 Codex 反编译后接入了他们的软件系统；帖子附视频。帖子未指明笔的型号、协议或软件，也未公开代码或记录。与作者同名的 GitHub 账号没有公开仓库，未找到与合作者账号名对应的 GitHub 账号，作者链接的网站也没有相关文章。保留此线索而不建立目录映射；该反编译与集成工作均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/xhfloz/status/2110108201043775589"
+      ],
       "catalog_matches": []
     },
     {
@@ -4032,12 +4036,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110207568090198474"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@LinearUncle, 2026-10-14) says the author used ChatGPT with REA to add a gradient background to the ChatGPT desktop app’s right-hand chat pane, an Electron project, as reverse-engineering practice; it gives the prompt and says REA first set out to decompile the code until told to use dynamic debugging with code injected at startup. It shows two images but publishes no code or REA output. The GitHub account with the same handle has no repository for this change. Retain the lead without a catalog mapping; the modification and REA’s part in it are unestablished.",
+      "reason_zh": "作者帖子（@LinearUncle，2026-10-14）称作为逆向分析练习，用 ChatGPT 加 REA 给 ChatGPT 桌面应用（Electron 项目）右侧的聊天窗口加了渐变背景；帖子给出提示词，并称 REA 起初打算反编译代码，直到作者要求改用动态调试、在启动时注入代码。帖子附两张图片，但未公开代码或 REA 输出。同名 GitHub 账号没有与这项修改相关的仓库。保留此线索而不建立目录映射；该修改及 REA 在其中的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/LinearUncle/status/2110207568090198474"
+      ],
       "catalog_matches": []
     },
     {
@@ -4052,13 +4058,23 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110230860717060262"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@0x0SojalSec, 2026-10-14) says AI reverse-engineered Dragon Ball Budokai so that it runs at 60 fps in any browser, including mobile and online play; it shows one image and links a third-party play website. It names no author, method or source. That website credits a Tenkaichi3Decomp repository as its engine, while the curated Tenkaichi3Decomp README, pinned here, says the project never ships the game, requires the player’s own disc and is not affiliated with browser-play sites. The website is not cited as evidence. Retain the lead with only a related mapping to the curated PC port; the reported browser port is not a reviewable project.",
+      "reason_zh": "所引帖子（@0x0SojalSec，2026-10-14）称 AI 逆向了《Dragon Ball Budokai》，使其能在任意浏览器中以 60 fps 运行，支持手机和联机；帖子附一张图片，并链接一个第三方游玩网站。帖子未指明作者、方法或源码。该网站称其引擎来自某个 Tenkaichi3Decomp 仓库，而已收录的 Tenkaichi3Decomp 的 README（此处固定到具体提交）称该项目从不分发游戏本体，需要玩家自备光盘，并且与浏览器游玩网站无关。本记录不将该网站作为证据引用。保留此线索，仅与已收录的 PC 移植建立相关映射；所报告的浏览器移植并非可审阅的项目。",
+      "primary_evidence_urls": [
+        "https://x.com/0x0SojalSec/status/2110230860717060262",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "tenkaichi3-pc-port-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:ledger-reborn-accounting-app",
@@ -4151,12 +4167,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110320554049941661"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@web3_goto, 2026-10-14) says REA was used to reverse-engineer the Hongguo Short Drama app and add ad-removal and floating-window-removal features, so that a day of viewing showed no ads. It names no app version or platform and publishes no code, build or method. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the modification and REA’s contribution are unestablished, and this ledger records no method.",
+      "reason_zh": "作者的纯文字帖子（@web3_goto，2026-10-14）称借助 REA 逆向了红果短剧应用，做出去广告和去悬浮窗两项功能，看了一整天剧都没有弹出广告。帖子未指明应用版本或平台，也未公开代码、构建或方法。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该修改及 REA 的作用均未确立，本记录也不收录任何方法。",
+      "primary_evidence_urls": [
+        "https://x.com/web3_goto/status/2110320554049941661"
+      ],
       "catalog_matches": []
     },
     {
@@ -4197,12 +4215,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110377021402661320"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@ZhenHan261538, 2026-10-14) reports that two of the author’s Codex accounts were banned after renewal and lists two activities that might be relevant, one of them trying REA to reverse-engineer Codex Desktop to understand why it works better than the Codex CLI. It reports no findings and links no output. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; only an attempt is mentioned, and no link between it and the bans is established.",
+      "reason_zh": "作者的纯文字帖子（@ZhenHan261538，2026-10-14）称作者的两个 Codex 账号在续订后被封，并列出两件可能相关的事，其中之一是尝试用 REA 逆向 Codex Desktop，想弄清它为何比 Codex CLI 好用。帖子没有报告任何发现，也未链接任何输出。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；帖中仅提到一次尝试，它与封号之间的关联也未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ZhenHan261538/status/2110377021402661320"
+      ],
       "catalog_matches": []
     },
     {
@@ -15661,16 +15681,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 193,
-      "insufficient-evidence": 162,
-      "pending": 236
+      "insufficient-evidence": 168,
+      "pending": 230
     },
     "units_by_state": {
       "already-curated": 191,
-      "insufficient-evidence": 162,
-      "pending": 236
+      "insufficient-evidence": 168,
+      "pending": 230
     },
-    "primary_reviewed_units": 295,
-    "catalog_linked_occurrences": 201,
+    "primary_reviewed_units": 301,
+    "catalog_linked_occurrences": 202,
     "distinct_resource_ids": 197,
     "distinct_paper_ids": 1,
     "unique_projects": null
