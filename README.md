@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 273](https://img.shields.io/badge/resources-273-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 133](https://img.shields.io/badge/cases-133-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 274](https://img.shields.io/badge/resources-274-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 134](https://img.shields.io/badge/cases-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (114) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (115) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (133) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (134) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -754,6 +754,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Uses N64: Recompiled to statically recompile the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 into a native port for Windows, Linux and macOS, rendered with RT64. Its patches and enhancements draw on headers and some functions from the separate sf64 decompilation, but the port is not compiled from that decompilation's source. The README reports high-frame-rate, widescreen and mod support, with assets loaded from the user's own ROM.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/starfox64-recompiled-case/)
+
+- [**Syphon Filter: The Omega Strain — matching PS2 executable decompilation**](https://github.com/zm2283145/syphon-filter-omega-strain-decomp)
+
+  Reconstructs much of the NTSC-U PlayStation 2 executable of Syphon Filter: The Omega Strain as C; with the remaining functions kept as split assembly, the build reproduces the retail SCUS\_972.64 byte for byte. Committed objdiff reports track per-function matching against the user’s own executable. This is a matching-decompilation case, not a PC port; progress figures remain project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/syphon-filter-omega-strain-decomp-case/)
 
 #### Tools, projects and integrations
 
