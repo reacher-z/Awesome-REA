@@ -3508,5 +3508,45 @@
       "https://github.com/zeldaret/tp/actions/runs/28052837187",
       "https://decomp.dev/zeldaret/tp"
     ]
+  },
+  {
+    "id": "sotn-matching-decomp-case",
+    "name": "Castlevania: Symphony of the Night: matching decompilation across PlayStation, PSP and Saturn builds",
+    "url": "https://github.com/Xeeynamo/sotn-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates C source for Castlevania: Symphony of the Night from its PlayStation, PSP and Saturn binaries, aiming for code that compiles byte for byte to the original game files. The work-in-progress build combines decompiled code with assets and assembly extracted from a user-supplied disc image, then checks per-version SHA-1 hashes. Native PC experiments in the same tree are documented as unfinished and are not a released port.",
+    "description_zh": "从《恶魔城 月下夜想曲》的 PlayStation、PSP 和 Saturn 版二进制重建 C 源码，目标是逐字节编译出与原游戏文件一致的产物。这一进行中的构建将已反编译代码与从使用者自备光盘镜像提取的素材和汇编结合，再按版本检查 SHA-1 哈希。同一仓库中的原生 PC 实验被文档说明为尚未完成，并不是已发布的移植。",
+    "evidence_url": "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress matching decompilation of four builds: us (PlayStation SLUS-00067, the reference), hd (an unreleased Japanese PS1 build found in Castlevania: Dracula X Chronicles data), pspeu (the European Dracula X Chronicles release) and saturn (the externally developed Saturn port). The Build wiki notes that some non-matching functions remain behind a NON_MATCHING macro and are not guaranteed to be functionally equivalent. README links mutable progress pages on sotn.xee.dev and decomp.dev; this collection recorded no completion figure.",
+      "The repository includes no game assets and none of the assembly needed to compile; README requires a prior copy of the game. The Build wiki asks for an unmodified US PlayStation disc as BIN/CUE, while the pinned Makefile reads both PSP-derived builds from a European Dracula X Chronicles ISO and the Saturn build from a Saturn BIN/CUE, each placed under disks/ with a version-specific name.",
+      "The Build wiki is tested against Ubuntu 24.04 LTS in CI and also covers Windows through WSL 2 and Arch-based distributions; a Dockerfile provides an Ubuntu Noble environment. Builds need Go, Rust, Python 3.12+, MIPS and SH binutils, a MIPS GCC, ninja and submodule tools such as m2c, maspsx, asm-differ, mipsmatch and decomp-permuter. Project-hosted prebuilt archives, including cc1-psx, mwccpsp, a Cygnus 2.7 toolchain and wibo, are checked against SHA-256 files; the Saturn build also uses dosemu.",
+      "Unless SKIP_CHECK is set, the pinned build code hashes its outputs against config/check.<version>.sha, which lists main.exe, DRA.BIN, RIC.BIN and stage and overlay files for us and shorter lists for hd, pspeu and saturn. The wiki still names a make check step that the pinned Makefile does not define. These checks compare file identity for the supplied version, not gameplay coverage, and this collection did not rerun them.",
+      "The Makefile also accepts a pc version and src/pc holds native-port code, but the PC Port wiki page says no working end-to-end port based on the decompilation exists yet; no PC port is claimed here. The repository declares AGPL-3.0, while disc images, extracted assets and assembly, and the downloaded compilers keep separate rights. CONTRIBUTING allows coding-agent assistance only for changes contributors can justify and operate manually and requires commits and pull requests without autonomous tooling; this establishes no REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/Makefile",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/LICENSE",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/CONTRIBUTING.md",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/.gitmodules",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/Dockerfile",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/disks/README",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/requirements-debian.txt",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/sotn-assets/build.go",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/sotn-assets/check.go",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.us.sha",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.hd.sha",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.pspeu.sha",
+      "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.saturn.sha",
+      "https://github.com/Xeeynamo/sotn-decomp/wiki/Build",
+      "https://github.com/Xeeynamo/sotn-decomp/wiki/PC-Port"
+    ]
   }
 ]

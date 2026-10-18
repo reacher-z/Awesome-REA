@@ -1760,5 +1760,15 @@
       "默认构建对标为完成的单元链接由源码编译的对象，其余单元使用从原文件提取的对象，再按各版本的 build.sha1 校验输出（GZ2E01 有 758 条记录）。decomp.dev 针对该固定提交的报告显示，三个 GameCube 版本的代码均已 100% 匹配，2,608 个单元中有 2,583 个已完成；ShieldD 为 54.47%，Wii 版 RZDE01_00 为 47.06%。CI 在存有游戏文件的私有容器中运行；本合集未运行任何构建。",
       "LICENSE.md 采用 CC0-1.0，不涵盖任天堂的游戏、光盘内容或下载的编译器。所审来源未确立 REA 或编码代理的参与。"
     ]
+  },
+  "sotn-matching-decomp-case": {
+    "name": "Castlevania: Symphony of the Night：覆盖 PlayStation、PSP 与 Saturn 版本的一致性反编译",
+    "requirements": [
+      "README 将其描述为进行中的一致性反编译，涵盖四个构建：us（PlayStation 版 SLUS-00067，为参考版本）、hd（在 Castlevania: Dracula X Chronicles 数据中发现的未发售日版 PS1 构建）、pspeu（Dracula X Chronicles 欧版）和 saturn（由外部团队开发的 Saturn 移植版）。Build wiki 说明仍有部分不一致函数置于 NON_MATCHING 宏下，不保证功能等价。README 链接 sotn.xee.dev 和 decomp.dev 上会变动的进度页面；本合集未记录完成度数字。",
+      "仓库不含游戏素材，也不含编译所需的汇编；README 要求事先拥有游戏副本。Build wiki 要求未经修改的美版 PlayStation 光盘的 BIN/CUE 镜像；固定版本的 Makefile 则从欧版 Dracula X Chronicles ISO 读取两个 PSP 来源的构建，并从 Saturn 的 BIN/CUE 镜像读取 Saturn 构建，这些文件均以对应版本的名称放在 disks/ 下。",
+      "Build wiki 以 CI 所用的 Ubuntu 24.04 LTS 为测试环境，也涵盖通过 WSL 2 使用 Windows 以及基于 Arch 的发行版；Dockerfile 提供 Ubuntu Noble 环境。构建需要 Go、Rust、Python 3.12+、MIPS 与 SH binutils、MIPS GCC、ninja，以及 m2c、maspsx、asm-differ、mipsmatch、decomp-permuter 等子模块工具。项目托管的预编译归档（包括 cc1-psx、mwccpsp、Cygnus 2.7 工具链和 wibo）会依据 SHA-256 文件校验；Saturn 构建还需要 dosemu。",
+      "除非设置 SKIP_CHECK，固定版本的构建代码会依据 config/check.<version>.sha 对产物计算哈希：us 清单列出 main.exe、DRA.BIN、RIC.BIN 及关卡和覆盖模块文件，hd、pspeu 与 saturn 的清单较短。wiki 仍提到 make check 步骤，但固定版本的 Makefile 并未定义该目标。这些检查比较所供版本的文件一致性，不覆盖游戏行为，本合集也未重跑。",
+      "Makefile 也接受 pc 版本，src/pc 中有原生移植代码，但 PC Port wiki 页面说明目前尚无基于反编译、可端到端运行的移植；此处不主张存在 PC 移植。仓库声明采用 AGPL-3.0，光盘镜像、提取的素材和汇编以及下载的编译器各有权利约束。CONTRIBUTING 仅允许贡献者能够说明理由并可手动操作的编码代理辅助改动，并要求提交与拉取请求不得由自主工具生成；这不确立 REA 使用，也不主张运行复现。"
+    ]
   }
 }

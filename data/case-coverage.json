@@ -10584,13 +10584,37 @@
       "reported_source_urls": [
         "https://github.com/Xeeynamo/sotn-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 38 (README line 351) lists Xeeynamo/sotn-decomp under 🏰 Castlevania: Symphony of the Night. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 38 行（README 第 351 行）在 🏰 Castlevania: Symphony of the Night 下列出 Xeeynamo/sotn-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build rules, build-check code and four per-version SHA-1 manifests support this work-in-progress matching-decompilation report for the PlayStation, PSP and Saturn builds. Full mapping covers the decompilation project, not the unfinished native PC experiments or independently reproduced gameplay. Disc-image dependencies, remaining non-matching code and project-reported matching stay explicit.",
+      "reason_zh": "固定版本的 README、构建规则、构建校验代码及四份按版本划分的 SHA-1 清单，支持这份针对 PlayStation、PSP 和 Saturn 构建、仍在进行中的一致性反编译报告。完整映射覆盖该反编译项目，不涵盖尚未完成的原生 PC 实验或独立复现的游戏行为。光盘镜像依赖、尚存的不一致代码及项目报告的一致性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/README.md",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/Makefile",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/LICENSE",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/CONTRIBUTING.md",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/.gitmodules",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/Dockerfile",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/disks/README",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/requirements-debian.txt",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/sotn-assets/build.go",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/tools/sotn-assets/check.go",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.us.sha",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.hd.sha",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.pspeu.sha",
+        "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.saturn.sha",
+        "https://github.com/Xeeynamo/sotn-decomp/wiki/Build",
+        "https://github.com/Xeeynamo/sotn-decomp/wiki/PC-Port"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sotn-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-039",
@@ -13802,18 +13826,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 88,
-      "insufficient-evidence": 77,
-      "pending": 426
-    },
-    "units_by_state": {
-      "already-curated": 87,
+      "already-curated": 89,
       "insufficient-evidence": 77,
       "pending": 425
     },
-    "primary_reviewed_units": 107,
-    "catalog_linked_occurrences": 99,
-    "distinct_resource_ids": 93,
+    "units_by_state": {
+      "already-curated": 88,
+      "insufficient-evidence": 77,
+      "pending": 424
+    },
+    "primary_reviewed_units": 108,
+    "catalog_linked_occurrences": 100,
+    "distinct_resource_ids": 94,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
