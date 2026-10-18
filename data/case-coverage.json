@@ -10457,13 +10457,26 @@
         "https://github.com/wurlyfox/c1",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 31 (README line 296) lists wurlyfox/c1 under 🌀 Crash Bandicoot. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 31 行（README 第 296 行）在 🌀 Crash Bandicoot 下列出 wurlyfox/c1。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, coding standard, issue list, changelog and source document a function-by-function C port of PlayStation Crash Bandicoot whose PC build is partially playable with user-supplied disc assets. Full mapping covers this port and its self-reported 78% functionality, not a matching decompilation or independently reproduced gameplay. The collection row’s linked image was not used as evidence.",
+      "reason_zh": "固定版本的 README、编码规范、问题列表、更新日志和源码，记录了 PlayStation 版《古惑狼》的逐函数 C 语言移植；其 PC 构建依赖用户自备光盘素材，仅能部分游玩。完整映射覆盖该移植及其自报的 78% 功能完成度，不代表字节一致的反编译或独立复现的游戏行为。合集条目链接的图片未作为证据。",
+      "primary_evidence_urls": [
+        "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/README.md",
+        "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/issues.md",
+        "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/coding.md",
+        "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/changelog.md",
+        "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/src/main.c"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "crash-bandicoot-c1-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-032",
@@ -13850,18 +13863,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 90,
-      "insufficient-evidence": 79,
-      "pending": 422
-    },
-    "units_by_state": {
-      "already-curated": 89,
+      "already-curated": 91,
       "insufficient-evidence": 79,
       "pending": 421
     },
-    "primary_reviewed_units": 111,
-    "catalog_linked_occurrences": 101,
-    "distinct_resource_ids": 95,
+    "units_by_state": {
+      "already-curated": 90,
+      "insufficient-evidence": 79,
+      "pending": 420
+    },
+    "primary_reviewed_units": 112,
+    "catalog_linked_occurrences": 102,
+    "distinct_resource_ids": 96,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
