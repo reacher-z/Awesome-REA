@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (16) · [游戏](#game) (43) · [应用](#app) (42)
+- [网站](#website) (16) · [游戏](#game) (44) · [应用](#app) (42)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (57) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (58) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -317,6 +317,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   重建 Perfect Dark 的 Nintendo 64 代码，并提供生成一致 ROM 的构建流程。项目将重建源码与使用者自备原 ROM 中的素材结合，再检查各版本产物的哈希。这是可复现构建研究案例，与独立的原生 PC 移植不同；此处的一致性结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)
+
+- [**PSPRecomp VCS Android：Vice City Stories 重编译成果的实验性 Android 移植**](https://github.com/codepdbh/PSPRecomp-VCS-Android)
+
+  在 PSPRecomp 的 Vice City Stories 静态重编译基础上，加入 Android ARM64 平台服务、Vulkan 图形路径、触控与手柄输入及即时存档，并保留 Windows Direct3D 12 构建。测试版 APK 只含程序本身，读取使用者自己的 ULUS-10160 数据。README 报告游戏已可在 Android 上游玩，但固定版本中的技术说明仍描述早期移植阶段和实验性渲染器。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/psprecomp-vcs-android-case/)
 
 #### 工具、项目与集成
 

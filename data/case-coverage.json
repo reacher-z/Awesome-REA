@@ -10938,13 +10938,29 @@
         "https://github.com/codepdbh/PSPRecomp-VCS-Android",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 79 (README line 789) lists codepdbh/PSPRecomp-VCS-Android under 🚗 Grand Theft Auto: Vice City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 79 行（README 第 789 行）在 🚗 Grand Theft Auto: Vice City Stories 下列出 codepdbh/PSPRecomp-VCS-Android。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, release notes, Android port and Vulkan notes, setup script, build file and license notices support an experimental Android ARM64 port of PSPRecomp’s Vice City Stories static recompilation. Full mapping covers this adaptation, not the upstream Windows profile. The reported post only links a general third-party archive; user-supplied inputs, known issues, lagging technical notes and rights limits remain explicit.",
+      "reason_zh": "固定版本的 README、发布说明、Android 移植与 Vulkan 说明、准备脚本、构建文件及许可声明，支持这一 PSPRecomp Vice City Stories 静态重编译成果的实验性 Android ARM64 移植。完整映射覆盖此适配版本，不涵盖上游 Windows 配置档。所报告的帖子仅链接一个第三方综合存档；自备输入、已知问题、滞后的技术说明及权利限制均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/README.md",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/docs/ANDROID_PORT_ANALYSIS.md",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/docs/ANDROID_VULKAN.md",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/setup_vcs.ps1",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/profiles/vcs/THIRD_PARTY.md",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/LICENSE",
+        "https://github.com/codepdbh/PSPRecomp-VCS-Android/releases/tag/v0.3.0-beta",
+        "https://x.com/mdaman010/status/2109111127238230239"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "psprecomp-vcs-android-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-080",
@@ -13284,18 +13300,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 65,
-      "insufficient-evidence": 66,
-      "pending": 460
-    },
-    "units_by_state": {
-      "already-curated": 64,
+      "already-curated": 66,
       "insufficient-evidence": 66,
       "pending": 459
     },
-    "primary_reviewed_units": 76,
-    "catalog_linked_occurrences": 72,
-    "distinct_resource_ids": 63,
+    "units_by_state": {
+      "already-curated": 65,
+      "insufficient-evidence": 66,
+      "pending": 458
+    },
+    "primary_reviewed_units": 77,
+    "catalog_linked_occurrences": 73,
+    "distinct_resource_ids": 64,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -2681,5 +2681,37 @@
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
     ]
+  },
+  {
+    "id": "psprecomp-vcs-android-case",
+    "name": "PSPRecomp VCS Android: an experimental Android port of the Vice City Stories recompilation",
+    "url": "https://github.com/codepdbh/PSPRecomp-VCS-Android",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Extends PSPRecomp’s Vice City Stories static recompilation with Android ARM64 platform services, a Vulkan graphics path, touch and controller input, and save states, while keeping a Windows Direct3D 12 build. Beta APKs contain only the program and read the user’s own ULUS-10160 data. The README reports the game as playable on Android, but the pinned technical notes still describe earlier bring-up and an experimental renderer.",
+    "description_zh": "在 PSPRecomp 的 Vice City Stories 静态重编译基础上，加入 Android ARM64 平台服务、Vulkan 图形路径、触控与手柄输入及即时存档，并保留 Windows Direct3D 12 构建。测试版 APK 只含程序本身，读取使用者自己的 ULUS-10160 数据。README 报告游戏已可在 Android 上游玩，但固定版本中的技术说明仍描述早期移植阶段和实验性渲染器。",
+    "evidence_url": "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the v0.3.0-beta tag commit (2026-09-28). Its APKs are arm64 plus an armv7 build the release notes call untested on 32-bit phones, both debug-signed. README known issues include slow high-resolution or low-end play, black screens at some save icons and mission endings, and skipped intro videos for lack of an Android video decoder.",
+      "Requires Android 8.0+ on ARM with Vulkan (tested on a Galaxy S25 Ultra), all-files storage access, and the user’s own GTA: Vice City Stories PSP copy (USA, ULUS10160), including a decrypted executable and the PSP_GAME data. The README credits setup_vcs.ps1 with producing the decrypted ELF, but the reviewed script only verifies and extracts a ULUS10160 ISO and states that PSPRecomp ships no EBOOT decryption.",
+      "Android builds use the Android SDK, NDK 28.2.13676358, CMake 3.22.1 and Java compatible with Gradle 8.11.1, driven by PowerShell scripts; Windows builds need Visual Studio 2022 and the Windows SDK. ANDROID_VULKAN.md calls the Vulkan backend experimental, with visible image errors and a software fallback, and ANDROID_PORT_ANALYSIS.md still describes a shell that did not run the game.",
+      "Reported checks are device observations, such as about 59–60 vblanks/s with no new audio underruns on the S25 Ultra; the notes say this neither equals 60 game frames per second nor validates the image. No automated gameplay or fidelity comparison is published, and this collection ran nothing.",
+      "MIT is declared for the framework, credited to PSPRecomp contributors. The VCS profile adds FFmpeg and PPSSPP’s ATRAC decoder extraction (LGPL 2.1+), SMAA, HDR shaders, MIT Project2DFX-derived data and CloudWorks material under CC BY-NC-SA 3.0. Code generated from the commercial executable and all game content keep separate rights; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/docs/ANDROID_PORT_ANALYSIS.md",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/docs/ANDROID_VULKAN.md",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/setup_vcs.ps1",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/android/app/build.gradle",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/profiles/vcs/THIRD_PARTY.md",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/blob/50690c45308ef8a575950c56edd22a5674a0fe9d/LICENSE",
+      "https://github.com/codepdbh/PSPRecomp-VCS-Android/releases/tag/v0.3.0-beta"
+    ]
   }
 ]

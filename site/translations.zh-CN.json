@@ -1481,5 +1481,15 @@
       "验证流程将一个以 SHA-256 固定的 harmony-next-pipeline 1.0.1 HAP（源码仓库采用 MIT 许可）下载到被忽略的目录，检查清单真实性、投影确定性、Stage 路径提示、精确组件集合、完整覆盖以及命令行与 MCP 的一致性。该测试包的编译器／SDK 版本与可复现构建尚未确立，此流程也未完成路线图 issue #1431 中固定工具链的验收；缺少 META-INF 条目不能说明包是否已签名。",
       "REA 声明 MIT。被分析的应用包保留各自许可；指南说明测试包内捆绑组件的许可未经独立审核，下载的产物也不会再分发。已合并的 PR #1447 引入了这一增量。本合集未运行 REA 或任何应用包。"
     ]
+  },
+  "psprecomp-vcs-android-case": {
+    "name": "PSPRecomp VCS Android：Vice City Stories 重编译成果的实验性 Android 移植",
+    "requirements": [
+      "审阅版本为 v0.3.0-beta 标签提交（2026-09-28）。其 APK 包括 arm64 版和一个 armv7 版，发布说明称后者尚未在 32 位手机上测试，两者均使用调试密钥签名。README 列出的已知问题包括高分辨率或低端设备上速度不足、部分存档图标和任务结尾处黑屏，以及因缺少 Android 视频解码器而跳过片头视频。",
+      "需要搭载 ARM 且支持 Vulkan 的 Android 8.0+ 设备（在 Galaxy S25 Ultra 上测试）、“所有文件访问”权限，以及使用者自己的 GTA: Vice City Stories PSP 副本（美版，ULUS10160），包括已解密的可执行文件和 PSP_GAME 数据。README 称 setup_vcs.ps1 会生成解密后的 ELF，但所审脚本只验证并提取 ULUS10160 ISO，并说明 PSPRecomp 不附带 EBOOT 解密功能。",
+      "Android 构建使用 Android SDK、NDK 28.2.13676358、CMake 3.22.1 及与 Gradle 8.11.1 兼容的 Java，由 PowerShell 脚本驱动；Windows 构建需 Visual Studio 2022 和 Windows SDK。ANDROID_VULKAN.md 称 Vulkan 后端仍属实验性质，画面有明显错误并保留软件回退；ANDROID_PORT_ANALYSIS.md 仍描述一个尚不能运行游戏的外壳程序。",
+      "报告的检查属于设备观察，例如在 S25 Ultra 上约 59–60 vblank/秒且没有新增音频欠载；说明文档指出这既不等于游戏每秒 60 帧，也不能验证画面。项目未公布自动化的游戏行为或保真度对照，本合集也未运行任何内容。",
+      "框架声明采用 MIT，版权归 PSPRecomp contributors。VCS 配置档另含 FFmpeg 及 PPSSPP 提取的 ATRAC 解码器（LGPL 2.1+）、SMAA、HDR 着色器、采用 MIT 的 Project2DFX 衍生数据，以及采用 CC BY-NC-SA 3.0 的 CloudWorks 素材。由商业可执行文件生成的代码及所有游戏内容仍有各自权利约束；所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
