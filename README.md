@@ -15,7 +15,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (16) · [Game](#game) (43) · [App](#app) (41)
+- [Website](#website) (16) · [Game](#game) (43) · [App](#app) (42)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (56) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (57) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -551,6 +551,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Implements selected TCL Home air-conditioner controls and electricity reporting in a native macOS menu-bar app. It adapts earlier community protocol work and documents an Android-module investigation to recover a separate statistics request. Reported validation checks cloud state, not independent physical operation or complete device equivalence.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/tclimate-cloud-controls-case/)
+
+- [**Browserbase plugin: re-hosting Claude in Chrome’s browser bridge**](https://github.com/browserbase/claude-code-plugin)
+
+  Stands in for the Claude in Chrome extension side of Claude Code’s local browser bridge and runs the requested actions in Browserbase cloud browsers. The author’s thread describes the reverse-engineered framing, a 4-byte little-endian length before each JSON tool call, and the plugin maps 17 named tools onto Stagehand/CDP operations. It is an archived interoperability shim with several placeholder tools, not recovered Anthropic code or a verified equivalent of the extension.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/browserbase-claude-chrome-bridge-case/)
 
 #### Tools, projects and integrations
 

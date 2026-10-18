@@ -2645,5 +2645,41 @@
       "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/pyproject.toml",
       "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/LICENSE"
     ]
+  },
+  {
+    "id": "browserbase-claude-chrome-bridge-case",
+    "name": "Browserbase plugin: re-hosting Claude in Chrome’s browser bridge",
+    "url": "https://github.com/browserbase/claude-code-plugin",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Stands in for the Claude in Chrome extension side of Claude Code’s local browser bridge and runs the requested actions in Browserbase cloud browsers. The author’s thread describes the reverse-engineered framing, a 4-byte little-endian length before each JSON tool call, and the plugin maps 17 named tools onto Stagehand/CDP operations. It is an archived interoperability shim with several placeholder tools, not recovered Anthropic code or a verified equivalent of the extension.",
+    "description_zh": "在 Claude Code 本地浏览器桥接中替代 Claude in Chrome 扩展一端，把请求的操作交给 Browserbase 云端浏览器执行。作者的帖子串描述了逆向得到的消息格式，即每条 JSON 工具调用前加 4 字节小端长度；插件则将 17 个具名工具映射为 Stagehand／CDP 操作。这是已归档的互操作适配层，部分工具仅为占位实现，并非恢复出的 Anthropic 代码，也未经验证与扩展等价。",
+    "evidence_url": "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/forwarding-server.js",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch is archived, and its commits are dated 2025-12-27. A SessionStart hook launches a Node forwarding server that moves any existing claude-mcp-browser-bridge-<user> socket in the temporary directory aside and listens in its place. Messages carry a 4-byte little-endian length plus JSON; only the execute_tool method is accepted, with 17 named tool handlers and errors for anything else.",
+      "Requires Claude Code with plugin support, the Claude in Chrome extension, Node.js 18+, the Browserbase SDK and Stagehand npm packages, and a Browserbase API key and project ID. As written, the start hook looks for the extension only under the macOS Chrome profile directory and stops when it is missing, so other hosts fail that check.",
+      "Navigation, input, screenshots, page reading, form filling and JavaScript run through Stagehand on cloud sessions; console and network reads rely on the plugin’s own listeners and page-injected tracking. update_plan only echoes the submitted plan, shortcuts return an empty list or a placeholder, and image upload and GIF export are placeholders. The author’s thread counts 19 extension tools; the reviewed dispatcher names 17.",
+      "The protocol account comes from the author’s X thread, not Anthropic documentation, and no captures or comparisons against the real extension are published. package.json declares Node test scripts, but the reviewed tree has no tests directory. This collection did not run the plugin, a cloud session or the extension; the undocumented local interface may change with Claude Code or extension updates.",
+      "README states MIT, but the reviewed tree has no LICENSE file and GitHub detects no license. Claude Code, the Claude in Chrome extension and Browserbase services keep their own terms, and browsed pages are processed on Browserbase infrastructure. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/README.md",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/browserbase-client.js",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/index.js",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/hooks/hooks.json",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/scripts/session-start.sh",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/package.json",
+      "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/.claude-plugin/marketplace.json",
+      "https://x.com/pk_iv/status/2005694082627297735",
+      "https://x.com/pk_iv/status/2005694088038015106",
+      "https://x.com/pk_iv/status/2005694096791523692"
+    ]
   }
 ]

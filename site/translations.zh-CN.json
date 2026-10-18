@@ -1443,5 +1443,15 @@
       "仓库 CI 运行 Python 测试、全部命令行帮助页面、知识库索引检查，以及阻止发布游戏文件、反编译代码和密钥的发布检查。这些检查覆盖工具包本身，不代表某个模组能在特定游戏中运行。知识库实践笔记由智能体撰写并经 PR 审阅，状态与验证部分为自行声明，并非经独立核实的兼容性记录。本合集仅审阅源码与文档，未运行命令行工具、技能、游戏或示例。",
       "项目规则将工作限定于用户自有的游戏，且只在离线或用户自建服务器上进行；拒绝注入受反作弊保护的在线客户端、拒绝编写针对其他玩家的作弊程序，也拒绝绕过 DRM、反作弊或所有权检查。仓库为其代码声明 MIT，并附带 SIL OFL 授权的字体；生成素材遵循 fal 及所用模型的条款，游戏、加载器与外部工具仍有各自条款。其安全说明援引了未分发素材的项目仍遭下架的事例。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "browserbase-claude-chrome-bridge-case": {
+    "name": "Browserbase 插件：将 Claude in Chrome 浏览器桥接转接到云端",
+    "requirements": [
+      "所审阅的 main 分支已归档，提交日期均为 2025-12-27。SessionStart 钩子会启动 Node 转发服务器：它把临时目录中已有的 claude-mcp-browser-bridge-<用户名> 套接字移到一旁，再在原位置监听。消息由 4 字节小端长度加 JSON 组成；仅接受 execute_tool 方法，含 17 个具名工具处理器，其余请求返回错误。",
+      "需要支持插件的 Claude Code、Claude in Chrome 扩展、Node.js 18+、Browserbase SDK 与 Stagehand npm 包，以及 Browserbase API 密钥和项目 ID。按现有写法，启动钩子只在 macOS 的 Chrome 配置目录中查找扩展，找不到即停止，因此其他系统无法通过这项检查。",
+      "导航、输入、截图、页面读取、表单填写和 JavaScript 均通过 Stagehand 在云端会话中执行；控制台和网络读取依赖插件自身的监听器及注入页面的跟踪脚本。update_plan 只回显提交的计划，快捷方式工具返回空列表或占位结果，图片上传和 GIF 导出也是占位实现。作者帖子串称扩展有 19 个工具，所审阅的分发代码列出 17 个。",
+      "协议说明来自作者的 X 帖子串，而非 Anthropic 文档；未公开与真实扩展的抓包或对照结果。package.json 声明了 Node 测试脚本，但所审阅的代码树中没有 tests 目录。本合集未运行插件、云端会话或扩展；这一未公开的本地接口可能随 Claude Code 或扩展更新而改变。",
+      "README 声明 MIT，但所审阅代码树中没有 LICENSE 文件，GitHub 也未识别出许可证。Claude Code、Claude in Chrome 扩展及 Browserbase 服务各自保留条款，浏览的页面会在 Browserbase 基础设施上处理。所审阅来源未确立 REA 使用。"
+    ]
   }
 }

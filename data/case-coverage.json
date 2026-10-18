@@ -1309,13 +1309,29 @@
         "https://x.com/pk_iv/status/2005694082627297735",
         "https://github.com/browserbase/claude-code-plugin"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned, archived plugin implements the reported interception: a forwarding server takes over Claude Code’s local browser-bridge socket, accepts length-prefixed JSON tool calls and runs them on Browserbase through Stagehand. The author’s thread documents the reverse-engineered framing. Full mapping covers this interoperability implementation; placeholder tools, the missing LICENSE file and tests, and the absence of any comparison with the real extension remain explicit.",
+      "reason_zh": "固定版本的已归档插件实现了所报告的拦截方式：转发服务器接管 Claude Code 本地浏览器桥接套接字，接收带长度前缀的 JSON 工具调用，并通过 Stagehand 在 Browserbase 上执行。作者帖子串记录了逆向得到的消息格式。完整映射覆盖这一互操作实现；占位工具、缺少 LICENSE 文件和测试，以及未与真实扩展对照等限制均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/forwarding-server.js",
+        "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/README.md",
+        "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/browserbase-client.js",
+        "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/scripts/session-start.sh",
+        "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/package.json",
+        "https://x.com/pk_iv/status/2005694082627297735",
+        "https://x.com/pk_iv/status/2005694088038015106",
+        "https://x.com/pk_iv/status/2005694096791523692"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "browserbase-claude-chrome-bridge-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:pi-computer-use",
@@ -13163,18 +13179,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 60,
-      "insufficient-evidence": 54,
-      "pending": 477
-    },
-    "units_by_state": {
-      "already-curated": 59,
+      "already-curated": 61,
       "insufficient-evidence": 54,
       "pending": 476
     },
-    "primary_reviewed_units": 59,
-    "catalog_linked_occurrences": 67,
-    "distinct_resource_ids": 58,
+    "units_by_state": {
+      "already-curated": 60,
+      "insufficient-evidence": 54,
+      "pending": 475
+    },
+    "primary_reviewed_units": 60,
+    "catalog_linked_occurrences": 68,
+    "distinct_resource_ids": 59,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
