@@ -1352,12 +1352,19 @@
         "https://x.com/injaneity/status/2046302876453232667",
         "https://github.com/injaneity/pi-computer-use"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository is an MIT-licensed Pi extension that operates desktop apps on macOS, Windows and Linux through platform accessibility APIs, window capture and input. Its initial implementation plan modeled Codex-style computer use on the public Responses API schema and SDK types; neither that plan nor the current documentation records an investigation of OpenAI’s Codex Computer Use implementation, recovered behavior or reference comparisons. The reported reverse-engineering claim therefore does not support a reconstruction case; this is not a finding that the tool is unusable, and it could be reviewed separately as an agent tool.",
+      "reason_zh": "固定版本仓库是采用 MIT 许可的 Pi 扩展，借助平台无障碍 API、窗口截取和输入操作 macOS、Windows 与 Linux 上的桌面应用。其最初的实现计划依据公开的 Responses API 架构和 SDK 类型来建模 Codex 式计算机使用；该计划和当前文档都未记录对 OpenAI Codex Computer Use 实现的调查、恢复出的行为或参考对照。因此所报告的逆向工程主张不足以支持重建案例；这不表示该工具不可用，它可另行作为智能体工具审阅。",
+      "primary_evidence_urls": [
+        "https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/README.md",
+        "https://github.com/injaneity/pi-computer-use/blob/7cb62642b9f2a09a8199a1521d9fb834e5042ebb/pi-computer-use-implementation-plan.md",
+        "https://github.com/injaneity/pi-computer-use/blob/7cb62642b9f2a09a8199a1521d9fb834e5042ebb/README.md",
+        "https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/notes/release-v0.1.7.md",
+        "https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/LICENSE",
+        "https://x.com/injaneity/status/2046302876453232667"
+      ],
       "catalog_matches": []
     },
     {
@@ -13210,15 +13217,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 57,
-      "pending": 472
+      "insufficient-evidence": 58,
+      "pending": 471
     },
     "units_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 57,
-      "pending": 471
+      "insufficient-evidence": 58,
+      "pending": 470
     },
-    "primary_reviewed_units": 64,
+    "primary_reviewed_units": 65,
     "catalog_linked_occurrences": 69,
     "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
