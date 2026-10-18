@@ -10958,13 +10958,29 @@
         "https://github.com/elmasas/lcs-recomp",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 80 (README line 803) lists elmasas/lcs-recomp under 🚗 Grand Theft Auto: Liberty City Stories. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 80 行（README 第 803 行）在 🚗 Grand Theft Auto: Liberty City Stories 下列出 elmasas/lcs-recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, profile notes, build files, tests, license notices and release notes support a PSPRecomp-based static recompilation of the US v1.05 Liberty City Stories executable into Windows and Linux builds. Full mapping covers this repository. The reported post only links a general third-party archive; user-supplied inputs, the missing compatibility report and rights in the generated corpus remain explicit.",
+      "reason_zh": "固定版本的 README、配置档说明、构建文件、测试、许可声明及发布说明，支持这一基于 PSPRecomp、将美版 v1.05 Liberty City Stories 可执行文件静态重编译为 Windows 与 Linux 构建的项目。完整映射覆盖此仓库。所报告的帖子仅链接一个第三方综合存档；自备输入、缺少兼容性报告及生成代码的权利问题均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/README.md",
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/README.md",
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/CMakeLists.txt",
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/THIRD_PARTY.md",
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/tests/lcs_host_menu_test.cpp",
+        "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/LICENSE",
+        "https://github.com/elmasas/lcs-recomp/releases/tag/v0.1.6",
+        "https://x.com/mdaman010/status/2109111127238230239"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lcs-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-081",
@@ -13284,18 +13300,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 65,
-      "insufficient-evidence": 66,
-      "pending": 460
-    },
-    "units_by_state": {
-      "already-curated": 64,
+      "already-curated": 66,
       "insufficient-evidence": 66,
       "pending": 459
     },
-    "primary_reviewed_units": 76,
-    "catalog_linked_occurrences": 72,
-    "distinct_resource_ids": 63,
+    "units_by_state": {
+      "already-curated": 65,
+      "insufficient-evidence": 66,
+      "pending": 458
+    },
+    "primary_reviewed_units": 77,
+    "catalog_linked_occurrences": 73,
+    "distinct_resource_ids": 64,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

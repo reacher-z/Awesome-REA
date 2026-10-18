@@ -2681,5 +2681,40 @@
       "https://x.com/pk_iv/status/2005694088038015106",
       "https://x.com/pk_iv/status/2005694096791523692"
     ]
+  },
+  {
+    "id": "lcs-recomp-case",
+    "name": "LCS Recomp: a PSPRecomp-based PC port of GTA: Liberty City Stories",
+    "url": "https://github.com/elmasas/lcs-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Applies the PSPRecomp static-recompilation framework to Liberty City Stories, checking in C++ generated from the US v1.05 PSP executable along with HLE, rendering, audio, input and game patches. Windows builds render through Direct3D 12, while Linux builds use Vulkan and SDL2. The user supplies the decrypted executable and disc data; releases are published without a compatibility or known-issue report.",
+    "description_zh": "将 PSPRecomp 静态重编译框架应用于 Liberty City Stories，收录由美版 v1.05 PSP 可执行文件生成的 C++ 代码，以及 HLE、渲染、音频、输入和游戏补丁。Windows 构建经 Direct3D 12 渲染，Linux 构建则使用 Vulkan 与 SDL2。使用者需自备已解密的可执行文件和光盘数据；项目发布了版本，但未附兼容性或已知问题报告。",
+    "evidence_url": "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the v0.1.7 pre-release tag commit (2026-10-09); v0.1.6 is the latest full release. The v0.1.6 notes list optimizations and behavior changes such as a removed island loading screen and an AutoAim setting. Only the ULUS-10041 v1.05 release is targeted, and the output is a native LCSNative build, not recovered authored source or a PSP emulator.",
+      "Requires the user’s own US v1.05 (ULUS-10041) copy: a decrypted EBOOT.ELF and the disc’s PSP_GAME folder. The README states that game files are not included.",
+      "Windows builds need Visual Studio 2022 and LLVM clang-cl, linking Direct3D 12 and bundled FFmpeg. Linux builds need glslangValidator plus Vulkan, SDL2 and FFmpeg development packages; Debian and Arch Docker environments and a route for building the Windows binary on Linux are included. The framework needs CMake 3.20+ and C++20.",
+      "Tests cover the host settings menu, key bindings, presentation policy and frame counting, alongside synthetic framework fixtures; Linux can enable the Khronos Vulkan validation layer. No gameplay, fidelity or performance results are published, and this collection ran nothing.",
+      "The repository declares MIT, credited to PSPRecomp contributors, with FFmpeg under LGPL 2.1+. The checked-in generated corpus derives from the commercial executable, so the MIT file does not resolve rights in it or in game content. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/README.md",
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/CMakeLists.txt",
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/CMakeLists.txt",
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/THIRD_PARTY.md",
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/tests/lcs_host_menu_test.cpp",
+      "https://github.com/elmasas/lcs-recomp/tree/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/lcs/generated",
+      "https://github.com/elmasas/lcs-recomp/tree/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/docker",
+      "https://github.com/elmasas/lcs-recomp/blob/ab91e87fe38f3efc5e4443069e7ce6b5a43e615b/LICENSE",
+      "https://github.com/elmasas/lcs-recomp/releases/tag/v0.1.6",
+      "https://github.com/elmasas/lcs-recomp/releases/tag/v0.1.7"
+    ]
   }
 ]

@@ -1481,5 +1481,15 @@
       "验证流程将一个以 SHA-256 固定的 harmony-next-pipeline 1.0.1 HAP（源码仓库采用 MIT 许可）下载到被忽略的目录，检查清单真实性、投影确定性、Stage 路径提示、精确组件集合、完整覆盖以及命令行与 MCP 的一致性。该测试包的编译器／SDK 版本与可复现构建尚未确立，此流程也未完成路线图 issue #1431 中固定工具链的验收；缺少 META-INF 条目不能说明包是否已签名。",
       "REA 声明 MIT。被分析的应用包保留各自许可；指南说明测试包内捆绑组件的许可未经独立审核，下载的产物也不会再分发。已合并的 PR #1447 引入了这一增量。本合集未运行 REA 或任何应用包。"
     ]
+  },
+  "lcs-recomp-case": {
+    "name": "LCS Recomp：基于 PSPRecomp 的 GTA: Liberty City Stories PC 移植",
+    "requirements": [
+      "审阅版本为 v0.1.7 预发布标签提交（2026-10-09）；v0.1.6 是最新正式版本。v0.1.6 的发布说明列出性能优化和行为变化，例如移除岛屿加载画面、加入 AutoAim 设置。项目只面向 ULUS-10041 v1.05 版本，产物是原生 LCSNative 构建，不是恢复出的原作者源码，也不是 PSP 模拟器。",
+      "需使用者自己的美版 v1.05（ULUS-10041）副本：一个已解密的 EBOOT.ELF 和光盘中的 PSP_GAME 文件夹。README 声明不包含游戏文件。",
+      "Windows 构建需 Visual Studio 2022 和 LLVM clang-cl，并链接 Direct3D 12 及附带的 FFmpeg。Linux 构建需 glslangValidator 以及 Vulkan、SDL2 和 FFmpeg 开发包；仓库还提供 Debian 与 Arch 的 Docker 环境，以及在 Linux 上构建 Windows 二进制文件的方式。框架需 CMake 3.20+ 和 C++20。",
+      "测试涵盖宿主设置菜单、按键绑定、呈现策略和帧计数，并附有合成的框架测试数据；Linux 可启用 Khronos Vulkan 校验层。项目未公布游戏行为、保真度或性能结果，本合集也未运行任何内容。",
+      "仓库声明采用 MIT，版权归 PSPRecomp contributors，FFmpeg 采用 LGPL 2.1+。已提交的生成代码源自商业可执行文件，因此 MIT 文件不能解决其中或游戏内容的权利问题。所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
