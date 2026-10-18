@@ -2585,5 +2585,15 @@
       "CI 在 Linux 和 Windows 上构建宿主运行时，并以占位映像做冒烟测试；所审提交的运行已成功，但无法运行游戏本身，因此通关结果来自维护者报告。补丁说明称两套导出补丁可重现 v1.1.3 所用的重编译器检出。本合集未构建或运行该移植。",
       "项目代码采用 PolyForm Noncommercial 1.0.0，允许非商业使用、修改和分叉，但不允许出售；XenonRecomp 与 XenosRecomp 为 MIT 许可，游戏权利归 Capcom。THIRD_PARTY.md 称 UnleashedRecomp 仅作结构参考，未复制任何 GPL 代码。开发日志以 CLAUDE.md 提交，但 README 未说明 AI 使用政策；未确立与 REA 的关联。"
     ]
+  },
+  "openra-engine-case": {
+    "name": "OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现",
+    "requirements": [
+      "所审阅的是 bleed（开发）分支快照，晚于 release-20250330，版本号为开发占位符。README 将 Red Alert、Tiberian Dawn 和 Dune 2000 模组列为重新诠释之作，INSTALL 称 Tiberian Sun 模组仍属实验性质。项目没有恢复或复现任何 Westwood 源码。",
+      "INSTALL 说明运行需要原游戏光盘中的若干文件；就 Red Alert 而言，内容清单会检查 allies.mix、conquer.mix 等归档。内容安装器可识别原版光盘、The First Decade 以及 Steam 或 Origin 版本（含 Remastered Collection），也可安装项目托管的最小素材包。提交历史显示，mods/*/bits 下部分补充音效和图标取自 Sole Survivor 等 Westwood 游戏，所审来源未说明这些文件另有何种许可。",
+      "构建需要 .NET 10 SDK：Linux 和 macOS 上使用 make，Windows 上使用 make.ps1 与 dotnet。在 x86_64 Linux 上，构建默认通过 NuGet 获取预编译的原生库；其他系统使用系统自带的 SDL 2、FreeType、OpenAL 和 Lua 5.1。",
+      "Linux 与 Windows 上的 CI 运行代码检查、OpenRA.Test 单元测试、Lua 脚本检查及各模组的 MiniYAML 校验。这些检查针对引擎与模组数据，不涉及与原游戏的等价性；本次审阅均未运行。",
+      "COPYING 规定 OpenRA 采用 GPL-3.0-or-later，AUTHORS 列出的随附库各有条款，例如 SDL2-CS 与 OpenAL-CS 采用 zlib，Eluant 采用 MIT。README 声明 EA 未认可也不支持该项目。原游戏内容保留各自权利；未确立 REA 或 AI 使用。"
+    ]
   }
 }

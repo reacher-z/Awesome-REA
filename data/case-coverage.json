@@ -13681,13 +13681,30 @@
       "reported_source_urls": [
         "https://github.com/OpenRA/OpenRA"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 124 (README line 1298) lists OpenRA/OpenRA under 🏗️ Command & Conquer / Dune 2000 / OpenRA. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 124 行（README 第 1298 行）在 🏗️ Command & Conquer / Dune 2000 / OpenRA 下列出 OpenRA/OpenRA。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, INSTALL notes, Red Alert content manifest, build and CI files, COPYING and AUTHORS support this row as OpenRA, an engine reimplementation whose mods reimagine early Westwood games using their original content. Full mapping covers the engine project, not recovered Westwood code or faithful gameplay. Original-content requirements, the project-hosted asset pack and Westwood-derived supplementary assets remain explicit.",
+      "reason_zh": "固定版本的 README、INSTALL 说明、Red Alert 内容清单、构建与 CI 文件、COPYING 及 AUTHORS，支持将此行认定为 OpenRA：一个以模组形式、使用原内容重新诠释早期 Westwood 游戏的引擎重新实现。完整映射覆盖该引擎项目，不代表恢复了 Westwood 代码或忠实重现玩法。原内容要求、项目托管的素材包及取自 Westwood 的补充素材均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/INSTALL.md",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/mods/ra-content/mod.yaml",
+        "https://github.com/OpenRA/OpenRA/commit/9657d697fc6465616a93f2ed39f48da2aa61139b",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/Makefile",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/.github/workflows/ci.yml",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/COPYING",
+        "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/AUTHORS",
+        "https://github.com/OpenRA/OpenRA/releases/tag/release-20250330"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "openra-engine-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-125",
@@ -15106,18 +15123,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 164,
-      "insufficient-evidence": 132,
-      "pending": 295
-    },
-    "units_by_state": {
-      "already-curated": 163,
+      "already-curated": 165,
       "insufficient-evidence": 132,
       "pending": 294
     },
-    "primary_reviewed_units": 235,
-    "catalog_linked_occurrences": 175,
-    "distinct_resource_ids": 169,
+    "units_by_state": {
+      "already-curated": 164,
+      "insufficient-evidence": 132,
+      "pending": 293
+    },
+    "primary_reviewed_units": 236,
+    "catalog_linked_occurrences": 176,
+    "distinct_resource_ids": 170,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

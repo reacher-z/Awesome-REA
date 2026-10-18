@@ -6047,5 +6047,38 @@
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/tools/gen_kbm_icons.py",
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/actions/runs/38534235503"
     ]
+  },
+  {
+    "id": "openra-engine-case",
+    "name": "OpenRA: an engine reimplementation reimagining early Westwood RTS games",
+    "url": "https://github.com/OpenRA/OpenRA",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Provides a C# engine for early Westwood real-time strategy games, with mods that reimagine Command & Conquer: Red Alert, Tiberian Dawn and Dune 2000. It loads the original games’ content through its own file-system, MiniYAML rules and Lua mission layers rather than running or recovering Westwood code. Gameplay and interface deliberately follow OpenRA’s own design, so it is not a faithful recreation of the original executables.",
+    "description_zh": "为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command & Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。它通过自己的文件系统、MiniYAML 规则和 Lua 任务层加载原游戏内容，而不是运行或恢复 Westwood 的代码。玩法和界面有意遵循 OpenRA 自身的设计，因此并非对原可执行文件的忠实重现。",
+    "evidence_url": "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed bleed (development) snapshot postdates release-20250330 and carries a development version placeholder. The README lists the Red Alert, Tiberian Dawn and Dune 2000 mods as reimaginings, and INSTALL calls the Tiberian Sun mod experimental. No Westwood source code is recovered or reproduced.",
+      "INSTALL states that several files from the original game disks are needed; for Red Alert, the content manifest checks for archives such as allies.mix and conquer.mix. The content installers recognise original discs, The First Decade and the Steam or Origin editions, including the Remastered Collection, or install a minimal asset pack hosted by the project. Commit history shows that some supplementary sounds and icons under mods/*/bits came from Westwood games such as Sole Survivor, and the reviewed sources state no separate licence for them.",
+      "Building needs the .NET 10 SDK: make on Linux and macOS, or make.ps1 and dotnet on Windows. On x86_64 Linux the build fetches prebuilt native libraries through NuGet by default; other systems use system SDL 2, FreeType, OpenAL and Lua 5.1.",
+      "CI on Linux and Windows runs code checks, the OpenRA.Test unit tests, Lua script checks and MiniYAML validation for every mod. These checks cover the engine and mod data, not equivalence with the original games, and this review ran none of them.",
+      "COPYING applies GPL-3.0-or-later to OpenRA, and AUTHORS lists bundled libraries under their own terms, such as zlib for SDL2-CS and OpenAL-CS and MIT for Eluant. The README states that EA has not endorsed and does not support the project. Original game content keeps its own rights; no REA or AI use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/INSTALL.md",
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/mods/ra-content/mod.yaml",
+      "https://github.com/OpenRA/OpenRA/commit/9657d697fc6465616a93f2ed39f48da2aa61139b",
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/Makefile",
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/.github/workflows/ci.yml",
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/COPYING",
+      "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/AUTHORS",
+      "https://github.com/OpenRA/OpenRA/releases/tag/release-20250330"
+    ]
   }
 ]
