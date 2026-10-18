@@ -2337,5 +2337,15 @@
       "构建会运行由原生测试与契约测试组成的 CTest 套件，更新程序也会重新测试构建，并用 SHA-256 校验打包文件。这些是项目对移植版本的检查，不能证明与主机版行为等价；本合集未构建或运行该项目。",
       "依 COPYING 采用 GPLv3，与 UnleashedRecomp／XenonRecomp 一致；生成器补丁同为 GPLv3，SMAA 和 CC0 授权的 Xelu 按键图标保留各自条款，游戏本身另有权利约束。这是静态重编译，并非恢复原作者编写的源码。README 说明开发过程使用了 OpenAI Codex 辅助；未确立与 REA 的关联。"
     ]
+  },
+  "mariokart64-recompiled-case": {
+    "name": "MarioKart 64: Recompiled：通过 N64Recomp 静态重编译实现的原生移植",
+    "requirements": [
+      "仅接受使用者自备的美版 N64《马力欧卡丁车 64》ROM；该 ROM 的其他转储格式会被自动转换，README 说明它不是可运行任意 ROM 的模拟器。仓库及发布版均不含游戏素材。源码构建读取同一美版 ROM（命名为 mk64.us.z64）以及单独的符号文件子模块。",
+      "运行需支持 Direct3D 12.0（Shader Model 6）、Vulkan 1.2 或 Metal Argument Buffers Tier 2 的显卡；x86-64 CPU 需支持 SSE4.1，README 列出 macOS 13.0+ 搭配 Apple Silicon 或第 7 代 Intel CPU。已知问题包括 Linux 上的 Intel GPU，以及预编译 Linux 版本在部分发行版上无法正常运行。",
+      "源码构建需要子模块、CMake 3.20+、C++20，Linux 上需 Clang／LLD、SDL2 与 GTK 3，Windows 上需带 Clang 工具的 Visual Studio 2022 及 make。需另行构建 N64Recomp 和 RSPRecomp，并用项目提供的 TOML 配置运行以生成 C 代码；补丁基于 mk64 反编译分支的头文件编译。",
+      "CI 使用存放在私有仓库、经 CI 密钥访问的 ROM 执行重编译，并构建 Linux、Windows 与 macOS 目标；不发布一致性、还原度或游戏行为对比结果。v0.9.2 发布版（2026 年 2 月）提供 Windows、Linux、Flatpak 与 macOS 压缩包。渲染准确性、帧率和输入延迟等说法均为项目主张；本合集未构建或运行该移植。",
+      "COPYING 为 GPL-3.0；原游戏内容、源自反编译的头文件以及 RT64、RmlUi 等库保留各自条款。静态重编译转换的是机器码，并不恢复原作者编写的源码；所审文件未确立 AI 或 REA 参与，也不主张运行复现。"
+    ]
   }
 }

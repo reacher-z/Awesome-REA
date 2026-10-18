@@ -12961,13 +12961,30 @@
       "reported_source_urls": [
         "https://github.com/sonicdcer/MarioKart64Recomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 104 (README line 1065) lists sonicdcer/MarioKart64Recomp under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 104 行（README 第 1065 行）在 🏎️ Mario Kart 64 下列出 sonicdcer/MarioKart64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, building guide, recompiler configuration, CI workflow and license document an N64Recomp static recompilation of the US Mario Kart 64 ROM with RT64 rendering and decompilation-derived patches. Full mapping covers this port, not the separate decompilation or SpaghettiKart; enhancement and fidelity claims remain project-reported.",
+      "reason_zh": "固定版本的 README、构建指南、重编译器配置、CI 工作流和许可证记录了使用 N64Recomp 对美版《马力欧卡丁车 64》ROM 进行的静态重编译，采用 RT64 渲染并配合源自反编译的补丁。完整映射覆盖此移植，不涵盖独立的反编译项目或 SpaghettiKart；增强功能与还原度说法仍为项目自述。",
+      "primary_evidence_urls": [
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/README.md",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/BUILDING.md",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/us.toml",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/.gitmodules",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/patches/Makefile",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/CMakeLists.txt",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/.github/workflows/validate.yml",
+        "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/COPYING",
+        "https://github.com/sonicdcer/MarioKart64Recomp/releases/tag/v0.9.2"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "mariokart64-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-105",
@@ -14798,18 +14815,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 146,
-      "insufficient-evidence": 125,
-      "pending": 320
-    },
-    "units_by_state": {
-      "already-curated": 145,
+      "already-curated": 147,
       "insufficient-evidence": 125,
       "pending": 319
     },
-    "primary_reviewed_units": 210,
-    "catalog_linked_occurrences": 157,
-    "distinct_resource_ids": 151,
+    "units_by_state": {
+      "already-curated": 146,
+      "insufficient-evidence": 125,
+      "pending": 318
+    },
+    "primary_reviewed_units": 211,
+    "catalog_linked_occurrences": 158,
+    "distinct_resource_ids": 152,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
