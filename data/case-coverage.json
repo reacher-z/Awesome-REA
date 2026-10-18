@@ -7962,13 +7962,28 @@
         "https://x.com/i/status/2111057177200738632",
         "https://github.com/whaesemeyer/claude-intercept"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository establishes the named Claude Intercept tool: a local HTTP/S interception proxy, dashboard, CLI and Claude Code skill whose exports support agent analysis of captured API traffic. The full mapping covers this report as an agent integration, not a reconstruction case. The post’s claim of decrypting all traffic is not adopted, network exposure and the non-commercial license are recorded, capture specifics are omitted, and no REA use or runtime test is established.",
+      "reason_zh": "固定版本仓库确立了具名的 Claude Intercept 工具：本地 HTTP/S 拦截代理、控制面板、命令行工具及 Claude Code 技能，其导出内容支持智能体分析所捕获的 API 流量。完整映射将该报告归为智能体集成，而非重建案例。帖子所称可解密全部流量的说法未被采纳，网络暴露和非商业许可已予记录，捕获细节不予收录，也未确立 REA 使用或运行测试。",
+      "primary_evidence_urls": [
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md",
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/skill.md",
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/package.json",
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/src/ui/server.js",
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/src/proxy/index.js",
+        "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/LICENSE",
+        "https://x.com/Nol_Mak/status/2111057177200738632"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "claude-intercept-traffic-capture",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:claude-client-environment-telemetry",
@@ -15627,18 +15642,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 191,
+      "already-curated": 192,
       "insufficient-evidence": 162,
-      "pending": 238
+      "pending": 237
     },
     "units_by_state": {
-      "already-curated": 189,
+      "already-curated": 190,
       "insufficient-evidence": 162,
-      "pending": 238
+      "pending": 237
     },
-    "primary_reviewed_units": 293,
-    "catalog_linked_occurrences": 199,
-    "distinct_resource_ids": 195,
+    "primary_reviewed_units": 294,
+    "catalog_linked_occurrences": 200,
+    "distinct_resource_ids": 196,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

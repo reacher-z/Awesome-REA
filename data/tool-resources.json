@@ -7083,5 +7083,37 @@
       "https://github.com/nccgroup/blackboxprotobuf/releases/tag/v1.4.2",
       "https://pypi.org/project/bbpb/1.4.2/"
     ]
+  },
+  {
+    "id": "claude-intercept-traffic-capture",
+    "name": "Claude Intercept",
+    "url": "https://github.com/whaesemeyer/claude-intercept",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "A local man-in-the-middle proxy and dashboard that captures HTTP/S traffic from the user’s own computer and devices, stores it in SQLite and hands it to Claude Code through an /intercept skill and CLI. Exports such as API documentation and traffic summaries support investigating request patterns and undocumented endpoints. It is an agent-facing capture tool for authorized testing, not a reconstruction case, and it has no established REA connection.",
+    "description_zh": "本地中间人代理与控制面板，捕获使用者自有电脑和设备的 HTTP/S 流量，存入 SQLite，并通过 /intercept 技能和命令行交给 Claude Code。API 文档、流量摘要等导出模式可用于调查请求模式与未公开接口。这是面向智能体、用于授权测试的抓包工具，不是重建案例，也未确立与 REA 的关联。",
+    "evidence_url": "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is package version 1.0.0, last updated 2026-06-02. It combines a Node.js proxy with a per-machine CA, a live web dashboard, local SQLite storage, a CLI and a Claude Code /intercept skill, with Markdown or JSON exports shaped for agent analysis. README asks for Node.js 22.5+, while package.json declares 22.15.0 or later; the system-proxy toggle and certificate trust are automated on macOS and GNOME/KDE Linux, and Windows needs manual configuration.",
+      "HTTPS capture requires installing and trusting the generated CA and routing a device through the proxy; README covers macOS, Linux, iOS, Android and Firefox, and warns that leaving the system proxy enabled after stopping the server breaks connectivity. README says some certificate-pinned domains fail under the proxy, and the skill states that WebSocket connections are tunneled and logged without frame parsing. This record omits capture and extraction specifics.",
+      "In the reviewed source the proxy and the dashboard listen on all network interfaces, and the dashboard API has no access check; README warns against running it on untrusted networks. Captures and some exports can contain account credentials and personal data, and anything passed to Claude for analysis leaves the machine under the model provider’s terms. The project limits use to devices and accounts the user owns or is explicitly permitted to test.",
+      "Tests under src/__tests__ run with node --test, but the repository has no CI workflow, and the README’s install example still uses a placeholder repository URL. This collection reviewed source and documentation without installing certificates, enabling the proxy or capturing traffic.",
+      "The repository is licensed under CC BY-NC 4.0, a non-commercial Creative Commons license rather than a software license, so commercial use is not permitted. The reported post presents it as a Ship Systems project built with William Haesemeyer. The reviewed sources establish no REA connection and document no specific reconstruction."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/skill.md",
+      "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/package.json",
+      "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/src/ui/server.js",
+      "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/src/proxy/index.js",
+      "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/LICENSE",
+      "https://x.com/Nol_Mak/status/2111057177200738632"
+    ]
   }
 ]
