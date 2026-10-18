@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 129 | 128 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 358 | 357 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 130 | 129 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 357 | 356 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 104 | 104 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-140 occurrences have catalog links. They reference 134 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+141 occurrences have catalog links. They reference 135 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 172 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 173 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -172,6 +172,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Conker's Bad Fur Day: Recompiled — an N64Recomp native port | Already curated | [Source](https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/README.md) |
 | Banjo: Recompiled — an N64Recomp Banjo-Kazooie native port | Already curated | [Source](https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/README.md) |
 | Lighthouse: a Banjo-Kazooie PC port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/README.md) |
+| SymphonyRecomp: a RecompOne static recompilation of Symphony of the Night | Already curated | [Source](https://github.com/BlackLabelHQ/SymphonyRecomp/blob/c94a9096bab25bf513cceea50d6838a4c8d7bf5b/README.md) |
 | Castlevania: Symphony of the Night: matching decompilation across PlayStation, PSP and Saturn builds | Already curated | [Source](https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/README.md) |
 | Castlevania 64: Recompiled — a beta static-recompilation port | Already curated | [Source](https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/flatpak/io.github.cv64recomp.cv64recomp.metainfo.xml) |
 | 🏰 Castlevania 64 — spacefarergames/CV64-Recomp | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
