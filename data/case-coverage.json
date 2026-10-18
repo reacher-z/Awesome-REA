@@ -2078,12 +2078,14 @@
       "reported_source_urls": [
         "https://x.com/HigbeyMyrta/status/2109596534350524664"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The only source is a secondhand post that credits no developer, links no repository and describes no interface, protocol or client analysis; it points to a demo video in an unidentified original post. The linked site's landing page names no author, publishes no source and documents no method or authorization. Retain the lead without a catalog mapping; no Netflix/Prime reconstruction, AI contribution or lawful access is established.",
+      "reason_zh": "唯一来源是一则转述帖，未注明开发者、未链接仓库，也未描述任何接口、协议或客户端分析；帖中所称演示视频位于未注明的原帖中。帖中链接网站的首页未署作者、未公开源码，也未记录方法或授权。保留此线索而不建立目录映射；Netflix／Prime 重建、AI 的贡献及合法访问均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/HigbeyMyrta/status/2109596534350524664"
+      ],
       "catalog_matches": []
     },
     {
@@ -13142,15 +13144,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 59,
-      "insufficient-evidence": 52,
-      "pending": 480
+      "insufficient-evidence": 53,
+      "pending": 479
     },
     "units_by_state": {
       "already-curated": 58,
-      "insufficient-evidence": 52,
-      "pending": 479
+      "insufficient-evidence": 53,
+      "pending": 478
     },
-    "primary_reviewed_units": 56,
+    "primary_reviewed_units": 57,
     "catalog_linked_occurrences": 66,
     "distinct_resource_ids": 57,
     "distinct_paper_ids": 1,
