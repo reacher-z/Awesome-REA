@@ -316,13 +316,26 @@
       "reported_source_urls": [
         "https://x.com/esrtweet/status/2106983467141509385"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post links no artifact, but his GitLab project, pinned at the 1.2.0 release, documents the reported port: history notes on decompiling the 1985 DOS shareware binary to Borland Pascal with ChatGPT 5.5 and translating it to Rust, plus the Rust source, build rules and BSD-2-Clause license. Full mapping covers this port; the intermediate Pascal and any comparison with the original are unpublished, and unchanged gameplay remains the author’s claim.",
+      "reason_zh": "作者帖子未链接任何成果，但其 GitLab 项目（固定于 1.2.0 版本）记录了所报告的移植：历史文档说明借助 ChatGPT 5.5 将 1985 年的 DOS 共享软件二进制反编译为 Borland Pascal 并译为 Rust，另有 Rust 源码、构建规则及 BSD-2-Clause 许可。完整映射覆盖该移植；中间 Pascal 代码及与原版的对照均未公开，玩法未变仍是作者的说法。",
+      "primary_evidence_urls": [
+        "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/history.adoc",
+        "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/README.adoc",
+        "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/src/main.rs",
+        "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/COPYING",
+        "https://x.com/esrtweet/status/2106983467141509385"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "firefighter-rust-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:lg-plxnative",
@@ -439,12 +452,14 @@
       "reported_source_urls": [
         "https://x.com/luchoalfonso_/status/2108200739495362718"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@luchoalfonso_, 2026-10-08) reports using Claude to capture an iPhone’s Bluetooth packets to a Tuya beacon bulb, work out its sequence number and checksum, and drive the bulb from a Mac script; it carries only a video and a photo. Neither the post, the post it quotes nor the author’s follow-up links code, captures or protocol notes, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; a published script or protocol write-up can support another review.",
+      "reason_zh": "作者帖子（@luchoalfonso_，2026-10-08）称借助 Claude 抓取 iPhone 发往一款 Tuya beacon 灯泡的蓝牙数据包，弄清其序列号与校验和算法，并用 Mac 脚本直接控制灯泡；帖子仅附视频和图片。该帖、其引用的帖子及作者的后续帖均未链接代码、抓包或协议说明，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；公开的脚本或协议说明可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/luchoalfonso_/status/2108200739495362718"
+      ],
       "catalog_matches": []
     },
     {
@@ -498,12 +513,14 @@
         "https://x.com/i/status/2110550597527339230",
         "https://x.com/i/status/2111020085330481582"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@servasyy_ai, 2026-10-10) says an agent installed REA and analyzed Claude Code’s 47 MB of minified code, running out of memory but still producing a result; it shows only a video, and the quoted post is the author’s general REA overview linking the REA repository. No output, method notes or repository for this investigation is public. Retain the lead without a catalog mapping; neither the findings nor REA’s contribution is established.",
+      "reason_zh": "作者帖子（@servasyy_ai，2026-10-10）称让智能体安装 REA 后分析 Claude Code 47 MB 的压缩代码，内存被耗尽但仍得出结果；帖子只附视频，所引用的帖子是作者对 REA 的概述，仅链接 REA 仓库。此次分析的输出、方法说明或仓库均未公开。保留此线索而不建立目录映射；分析结论及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/servasyy_ai/status/2108846931183378537"
+      ],
       "catalog_matches": []
     },
     {
@@ -542,12 +559,14 @@
       "reported_source_urls": [
         "https://x.com/leeoxiang/status/2109159806183538768"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@leeoxiang, 2026-10-11) reports using REA on an unnamed encrypted binary library, having Claude Code reimplement it and measuring metrics close to the original. It names neither the library nor the metrics and links no code or results; the author’s linked site redirects to a GitHub organization whose public repositories document no such reimplementation. Retain the lead without a catalog mapping; the target, the reimplementation and the comparison are all unestablished.",
+      "reason_zh": "作者的纯文字帖子（@leeoxiang，2026-10-11）称用 REA 逆向了一个未具名的加密二进制库，再由 Claude Code 重新实现，测得指标与原库相近。帖子未说明是哪个库、哪些指标，也未链接代码或结果；作者主页链接跳转到一个 GitHub 组织，其公开仓库中没有记录此类重新实现。保留此线索而不建立目录映射；目标、重新实现及对比结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/leeoxiang/status/2109159806183538768"
+      ],
       "catalog_matches": []
     },
     {
@@ -899,12 +918,14 @@
         "https://x.com/thinkszyg/status/2109309251533570509",
         "https://x.com/thinkszyg/status/2109526361971073103"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@thinkszyg, 2026-10-11) reports using Codex and REA to reverse-engineer a WeChat mini program’s Bluetooth protocol and build a native status-bar remote that opens a smart toilet’s lid; it includes a screen recording, and the author’s follow-up adds only a photo. Neither post names the device or links code, and the GitHub account in the author’s profile (dososo) has no matching repository. Retain the lead without a catalog mapping; the protocol work and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@thinkszyg，2026-10-11）称与 Codex 一起借助 REA 逆向微信小程序的蓝牙协议，做出可在电脑状态栏控制智能马桶翻盖的原生遥控程序；帖子附录屏，作者的后续帖仅附图片。两条帖子均未说明设备型号，也未链接代码；作者资料中列出的 GitHub 账号（dososo）没有相应仓库。保留此线索而不建立目录映射；协议工作及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/thinkszyg/status/2109309251533570509"
+      ],
       "catalog_matches": []
     },
     {
@@ -919,13 +940,26 @@
       "reported_source_urls": [
         "https://x.com/ngxson/status/2107787195918475432"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The pinned collection reports a Tuya-button firmware investigation, but its linked primary post was inaccessible during this review. No identity-bound implementation, firmware revision or reproducible result was inspected; this remains an inventory-only lead.",
-      "reason_zh": "固定合集报告了 Tuya 按钮固件调查，但本次审阅无法访问其所链接的一手帖子。未审阅到与该案例身份绑定的实现、固件版本或可复现结果；仍为仅编目的线索。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post describes dumping, analyzing, rewriting and reflashing a Tuya TS0046 button’s firmware to remove a 500 ms delay. His public flipper-telink repository, pinned here, documents the Flipper Zero SWS flasher, sanitized dumps, the TS0044/TS0046 latency analysis and replacement firmware with a hardware-progress table. Full mapping covers that work; the author marks the latest Zigbee build’s pairing and reporting as unverified, and no runtime reproduction is claimed.",
+      "reason_zh": "作者帖子描述了转储、分析、重写并重刷 Tuya TS0046 按钮固件以消除 500 ms 延迟的过程。其公开的 flipper-telink 仓库（此处固定版本）记录了 Flipper Zero SWS 刷写工具、脱敏转储、TS0044/TS0046 延迟分析，以及附硬件进度表的替换固件。完整映射覆盖这项工作；作者将最新 Zigbee 版本的配对与上报标注为尚未验证，本次也不主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/README.md",
+        "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/README.md",
+        "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/AGENTS.md",
+        "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/src/buttons.c",
+        "https://x.com/ngxson/status/2107787195918475432"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "flipper-telink-tuya-remote-firmware-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:website-rebuild-report",
@@ -14104,18 +14138,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 107,
-      "insufficient-evidence": 82,
-      "pending": 402
+      "already-curated": 109,
+      "insufficient-evidence": 86,
+      "pending": 396
     },
     "units_by_state": {
-      "already-curated": 106,
-      "insufficient-evidence": 82,
-      "pending": 401
+      "already-curated": 108,
+      "insufficient-evidence": 86,
+      "pending": 395
     },
-    "primary_reviewed_units": 131,
-    "catalog_linked_occurrences": 118,
-    "distinct_resource_ids": 112,
+    "primary_reviewed_units": 137,
+    "catalog_linked_occurrences": 120,
+    "distinct_resource_ids": 114,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

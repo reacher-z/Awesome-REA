@@ -1948,5 +1948,25 @@
       "项目未记录自动化测试、一致性检查或并排对照，因此可玩性和保真度仍为项目自述。本合集未下载发布版本，也未提取任何光盘。",
       "仓库没有许可证文件，源码的再使用条款未说明；Sly Cooper 名称和素材归各自权利人所有，README 声明与 Sony Interactive Entertainment 和 Sucker Punch Productions 无关。README 还征集带符号的 Sly 2 或 Sly 3 调试版本，用于今后的移植。所审来源未确立 REA 参与，也不主张运行复现。"
     ]
+  },
+  "firefighter-rust-port-case": {
+    "name": "Firefighter：将反编译的 DOS 游戏移植为 Rust",
+    "requirements": [
+      "审阅版本为 1.2.0（2026-06-08），是面向类 Unix 系统的 Rust 终端游戏：25×25 的森林火灾棋盘，提供简单、中等、困难三种模式，支持可选的随机数种子和鼠标移动光标。需要至少 80×25、支持 UTF-8 与 ANSI 控制序列、备用屏幕及原始模式输入的终端；鼠标移动还需终端支持鼠标报告。",
+      "使用 Cargo 构建（依赖 crossterm 与 rand）；Makefile 封装 cargo build、安装可执行文件，并用 Asciidoctor 生成手册页。构建或游玩该移植版无需原 DOS 二进制或游戏数据；历史文档链接了 Internet Archive 上的共享软件原版。",
+      "历史文档列出的恢复步骤为：借助 ChatGPT 5.5 将 DOS 二进制反编译为 Borland Pascal，再译为 Rust，随后加入界面改动、种子选项，并修正各难度最高分与计分方式不符的问题。反编译得到的 Pascal、提示词及原二进制均未收录在仓库中，因此无法检查反编译过程本身。",
+      "验证仅限 make check（cargo check 与 clippy）及少量单元测试，覆盖参数解析、显示测试图案和最高分一致性。未公开与原程序的对照；“玩法逻辑未变”是作者的说法，本次审阅未运行任何程序。",
+      "COPYING 为 BSD-2-Clause，源码头部将 Raymond 与 Sprinsock 列为共同版权人；README 称该移植经原作者许可发布。共享软件原版仍保有各自权利。所审来源归功于 ChatGPT，未确立与 REA 的关联。"
+    ]
+  },
+  "flipper-telink-tuya-remote-firmware-case": {
+    "name": "flipper-telink：Tuya Zigbee 遥控器的替换固件",
+    "requirements": [
+      "硬件：运行 Unleashed 固件的 Flipper Zero（笔记注明 API 87.8；用官方 SDK 构建的应用无法加载），连接目标设备的 SWS 引脚、地线和 3.3 V。刷写应用用 ufbt 及项目内的 SDK 构建；固件在 Docker tc32 工具链中用 Telink Zigbee+BLE SDK 构建，装入后可通过 BLE OTA 更新。",
+      "输入为使用者自己的设备及其闪存转储。dumps/ 公开了四款设备的脱敏原厂镜像，Zigbee 网络状态和 Tuya 凭据已由 tools/sanitize_dump.py 清除；原始转储不公开。原厂固件的权利仍归各厂商，仓库未说明这些镜像的使用条款。",
+      "TS0044/TS0046 笔记依据出厂 JSON 配置推导 GPIO 用途，并引用转储中的代码地址，将单击的处理路径追溯为 300 ms 双击判定窗口，加上事件队列、去抖和唤醒开销。反汇编使用仓库自带、基于第三方操作码表的 TC32 反汇编器；笔记称 TS0046 的应用镜像除出厂数据外与 TS0044 逐字节相同。",
+      "替换固件 v00.14 在松开时发送短按、按住 1 秒发送长按，向 Zigbee2MQTT 呈现为原厂 TS0044/TS0046，并保留用于 OTA 的 BLE 维护模式。进度表记录了早期版本的硬件检查；v00.14 已刷入一台 TS0046，但在 Zigbee2MQTT 中的配对、动作及电量上报被标注为尚未验证。另一款 ZG-226Z 报警器固件据文档已能构建，但尚未在硬件上运行。本次审阅未运行任何程序。",
+      "仓库根目录没有许可证。固件目录附有取自 pvvx/BZdevice 的构建文件的宽松许可声明及 Telink SDK 的 Apache-2.0 许可，笔记也注明借鉴 pvvx 的 SWire 工作。README 称项目大量依靠氛围编程；作者帖子称由运行 GLM-5.3 的 pi 智能体完成，而所审文件未指明模型，也未确立与 REA 的关联。"
+    ]
   }
 }

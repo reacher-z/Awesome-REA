@@ -4022,5 +4022,71 @@
       "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/File%20Extractor%20GUI.csproj",
       "https://github.com/theclub654/ProjectCane/releases/tag/v0.4.1-beta.1"
     ]
+  },
+  {
+    "id": "firefighter-rust-port-case",
+    "name": "Firefighter: a decompiled DOS game ported to Rust",
+    "url": "https://gitlab.com/esr/firefighter",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Eric S. Raymond’s terminal port of Firefighter, Eben Sprinsock’s 1985 DOS shareware game. The project history says ChatGPT 5.5 decompiled the DOS binary to Borland Pascal and translated it to Rust, after which Raymond modernized the interface and corrected a scoring mismatch. Unchanged gameplay is the author’s statement; the intermediate Pascal and any comparison runs are not published.",
+    "description_zh": "Eric S. Raymond 将 Eben Sprinsock 于 1985 年发布的 DOS 共享软件游戏 Firefighter 移植为终端游戏。项目历史记载，ChatGPT 5.5 先将 DOS 二进制反编译为 Borland Pascal，再译为 Rust；之后 Raymond 改进了界面，并修正一处计分不符。玩法未变是作者的说法；中间 Pascal 代码及任何对照运行均未公开。",
+    "evidence_url": "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/history.adoc",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed 1.2.0 release (2026-06-08) is a Rust terminal game for Unix-like systems: a 25×25 forest-fire board with easy, medium and hard modes, an optional RNG seed and mouse cursor movement. It needs a UTF-8 ANSI terminal of at least 80×25 with alternate-screen and raw-mode input; mouse movement also needs mouse reporting.",
+      "Build with Cargo (crossterm and rand); the Makefile wraps cargo build, installs the binary and renders the manual page with Asciidoctor. Building or playing the port needs no original DOS binary or game data; the history page links an Internet Archive copy of the shareware original.",
+      "The history lists the recovery steps: decompiling the DOS binary to Borland Pascal with ChatGPT 5.5, translating that to Rust, then adding interface changes, a seed option and a fix for per-difficulty maximum scores that did not match the score computation. The decompiled Pascal, prompts and original binary are not in the repository, so the decompilation itself cannot be inspected.",
+      "Verification is limited to make check (cargo check and clippy) and a few unit tests for option parsing, the display test pattern and maximum-score consistency. No comparison with the original program is published; unchanged gameplay logic is the author’s claim, and this review ran nothing.",
+      "COPYING is BSD-2-Clause, and source headers name Raymond and Sprinsock as joint copyright holders; the README says the port is released with the original author’s permission. The shareware original keeps its own rights. The reviewed sources credit ChatGPT and establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/README.adoc",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/NEWS.adoc",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/firefighter.adoc",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/Makefile",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/Cargo.toml",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/src/main.rs",
+      "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/COPYING"
+    ]
+  },
+  {
+    "id": "flipper-telink-tuya-remote-firmware-case",
+    "name": "flipper-telink: replacement firmware for Tuya Zigbee remotes",
+    "url": "https://github.com/ngxson/flipper-telink",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "A Flipper Zero app that bit-bangs Telink’s SWire debug interface to dump and reflash TLSR825x Zigbee devices, with static-analysis notes on the dumps and freshly written firmware for two of them. For Tuya TS0044/TS0046 scene remotes, the notes trace the stock ~500 ms single-click delay to a double-click window; the replacement firmware drops that window while presenting the stock model IDs to Zigbee2MQTT. The latest Zigbee build is marked unverified for pairing, actions and battery reporting.",
+    "description_zh": "一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。针对 Tuya TS0044/TS0046 场景遥控器，笔记将原厂约 500 ms 的单击延迟追溯到双击判定窗口；替换固件取消该窗口，同时向 Zigbee2MQTT 呈现原厂型号标识。最新 Zigbee 版本的配对、动作及电量上报被标注为尚未验证。",
+    "evidence_url": "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Hardware: a Flipper Zero on Unleashed firmware (the notes name API 87.8; apps built with the official SDK will not load), wired to the target’s SWS pin, ground and 3.3 V. The flasher app builds with ufbt and a project-local SDK; the firmware builds with the Telink Zigbee+BLE SDK in a Docker tc32 toolchain and, once installed, updates over BLE OTA.",
+      "Inputs are the user’s own devices and their flash dumps. dumps/ publishes sanitized stock images of four devices, with Zigbee network state and Tuya credentials blanked by tools/sanitize_dump.py; raw dumps stay private. Stock firmware rights stay with its vendors, and the repository states no terms for these images.",
+      "The TS0044/TS0046 notes derive GPIO roles from the factory JSON config and trace a single click through a 300 ms double-click window plus event-queue, debounce and wake overhead, citing code addresses in the dump. Disassembly uses an included TC32 disassembler built from a third-party opcode table; the TS0046 application image is reported byte-identical to the TS0044 one apart from factory data.",
+      "Replacement firmware v00.14 sends short presses on release and holds after 1 s, identifies as the stock TS0044/TS0046 to Zigbee2MQTT and keeps a BLE service mode for OTA. The progress table records hardware checks for earlier versions; v00.14 was flashed to a TS0046, but pairing, actions and battery reporting in Zigbee2MQTT are marked unverified. The separate ZG-226Z alarm firmware is documented as built but not yet run on hardware. This review ran nothing.",
+      "The repository has no top-level license. Firmware directories carry a permissive notice for build files taken from pvvx/BZdevice and the Telink SDK’s Apache-2.0 license, and the notes credit pvvx’s SWire work. The README calls the project highly vibe-coded; the author’s post credits a pi agent running GLM-5.3, while the reviewed files name no model and establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/README.md",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/AGENTS.md",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/src/buttons.c",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/ss6400zb/src/zb_dev.c",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/DETAILS.md",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/tools/sanitize_dump.py",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/tools/tc32dis.py",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/LICENSE.BZdevice",
+      "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/custom_fw/zg226z/SDK/LICENSE.txt"
+    ]
   }
 ]
