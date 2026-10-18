@@ -12773,13 +12773,27 @@
         "https://github.com/portingpete/The-Darkness-Recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 96 (README line 971) lists portingpete/The-Darkness-Recomp under ⚔️ The Darkness. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 96 行（README 第 971 行）在 ⚔️ The Darkness 下列出 portingpete/The-Darkness-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, setup notes, translation configuration, revision gate and generator-patch documentation support the reported XenonRecomp-based native port of The Darkness. Full mapping covers this static recompilation, not recovered source or independently reproduced gameplay. User-supplied dump requirements, platform limits, licenses and the disclosed Codex assistance remain explicit.",
+      "reason_zh": "固定版本的 README、安装说明、转换配置、版本校验和生成器补丁文档，支持所报告的基于 XenonRecomp 的 The Darkness 原生移植。完整映射覆盖此静态重编译，不涵盖恢复的源码或独立复现的游戏行为。使用者自备转储的要求、平台限制、许可条款以及所披露的 Codex 辅助均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/README.md",
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/START_HERE.txt",
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/config/darkness.toml",
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/config/game_revisions.toml",
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/tools/patches/README.md",
+        "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/COPYING"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "the-darkness-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-097",
@@ -14784,18 +14798,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 145,
-      "insufficient-evidence": 125,
-      "pending": 321
-    },
-    "units_by_state": {
-      "already-curated": 144,
+      "already-curated": 146,
       "insufficient-evidence": 125,
       "pending": 320
     },
-    "primary_reviewed_units": 209,
-    "catalog_linked_occurrences": 156,
-    "distinct_resource_ids": 150,
+    "units_by_state": {
+      "already-curated": 145,
+      "insufficient-evidence": 125,
+      "pending": 319
+    },
+    "primary_reviewed_units": 210,
+    "catalog_linked_occurrences": 157,
+    "distinct_resource_ids": 151,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

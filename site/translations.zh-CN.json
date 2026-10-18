@@ -2327,5 +2327,15 @@
       "README 报告启用渲染器测试后共有 31 项 CTest 测试：25 项不依赖显示，6 项需要 OpenGL 上下文。CI 在 Linux 和 Windows 上运行不依赖显示的子集，并在 Xvfb 中以软件 GL 运行 GPU 子集，缺少上下文时可能跳过。已测试设备表仅确认一套 Linux 配置，尚无已确认的 Windows 机器；已知问题包括 32 位库在 Wayland 下的故障。这些均为项目报告，不是字节一致或游戏行为等价结果，本合集未运行。",
       "仓库采用 GPLv3。第三方声明列出派生自 PsyCross 的平台代码（MIT）、PSn00bSDK 头文件（MPL 2.0）、SDL 及其他随附组件各自的许可，捆绑字体保留 Apache 2.0 和 OFL 条款。贡献规则要求零售光盘数据和提取的素材不得提交；原版游戏仍归其权利人所有。所审来源未声明使用 AI 或 REA。"
     ]
+  },
+  "the-darkness-recomp-case": {
+    "name": "The Darkness Recomp：配有原生 D3D11 渲染器的 Xbox 360 静态重编译",
+    "requirements": [
+      "需使用者自备已解包的 Xbox 360 游戏转储：原始加密的 default.xex，以及 Content、System 等全部转储目录。仅有 ISO 不可用；仓库不含游戏代码、素材或生成的转换产物。运行时在内存中解码 default.xex，并只接受经 SHA-256 核准的原版光盘版本和俄语本地化版本；游戏更新补丁和其他 Xbox 游戏都需要各自经过验证的转换。",
+      "运行发布版需 64 位 Windows 10／11 及支持 Direct3D 11 的显卡。从源码构建需 Git、带 ClangCL 的 Visual Studio 2022、CMake 3.24+、Python 3.11+、MSYS2 MinGW64 工具、独立安装的 LLVM，以及约 15 GB 空间。构建会获取 c5bfd90d 版本的 hedge-dev/XenonRecomp，并在生成转换代码前应用随附的 Darkness 补丁和修正补丁。",
+      "README 报告可完整游玩，支持鼠标／手柄输入、XMA 音频、存档、本地成就，并新增视频设置与按键重映射菜单；Xbox Live 同步不可用。在 WSL2 中通过 Proton 运行时，开场关卡可带声音渲染，但镜头移动和完成教程尚未确认；Steam Deck 仍未验证，也没有原生 Linux 构建。",
+      "构建会运行由原生测试与契约测试组成的 CTest 套件，更新程序也会重新测试构建，并用 SHA-256 校验打包文件。这些是项目对移植版本的检查，不能证明与主机版行为等价；本合集未构建或运行该项目。",
+      "依 COPYING 采用 GPLv3，与 UnleashedRecomp／XenonRecomp 一致；生成器补丁同为 GPLv3，SMAA 和 CC0 授权的 Xelu 按键图标保留各自条款，游戏本身另有权利约束。这是静态重编译，并非恢复原作者编写的源码。README 说明开发过程使用了 OpenAI Codex 辅助；未确立与 REA 的关联。"
+    ]
   }
 }

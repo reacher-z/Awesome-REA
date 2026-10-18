@@ -5267,5 +5267,39 @@
       "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/assets/fonts/README.md",
       "https://github.com/CTR-tools/ctr-native/blob/4682773232715bfd3f39b8c7066ab12e1c37c23e/README.md"
     ]
+  },
+  {
+    "id": "the-darkness-recomp-case",
+    "name": "The Darkness Recomp: an Xbox 360 static recompilation with a native D3D11 renderer",
+    "url": "https://github.com/portingpete/The-Darkness-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds a native Windows x64 port of The Darkness by translating its Xbox 360 executable to C++ ahead of time with a patched XenonRecomp. A D3D11 renderer draws from the engine’s original geometry, shader sources and device state instead of interpreting console GPU packets. Gameplay coverage and Linux results are project-reported, and the author discloses OpenAI Codex assistance.",
+    "description_zh": "使用打过补丁的 XenonRecomp 将 Xbox 360 可执行文件提前转换为 C++，构建 The Darkness 的原生 Windows x64 移植。D3D11 渲染器直接使用引擎原有的几何数据、着色器源码和设备状态绘制，而不解释主机 GPU 命令包。游戏覆盖范围与 Linux 测试结果均为项目报告，作者披露开发中使用了 OpenAI Codex 辅助。",
+    "evidence_url": "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s extracted Xbox 360 dump: the original encrypted default.xex plus Content, System and the other dump folders. An ISO alone is not accepted, and the repository includes no game code, assets or generated translation output. The runtime decodes default.xex in memory and accepts only the approved original disc revision and Russian localization by SHA-256; title updates and other Xbox games need their own verified translation.",
+      "Playing the release needs 64-bit Windows 10/11 with a Direct3D 11 device. Source builds need Git, Visual Studio 2022 with ClangCL, CMake 3.24+, Python 3.11+, MSYS2 MinGW64 tools, standalone LLVM and about 15 GB. The build fetches hedge-dev/XenonRecomp at c5bfd90d and applies the bundled Darkness and correction patches before generating the translation.",
+      "The README reports full gameplay with mouse/controller input, XMA audio, saves, local achievements and added video and remapping menus; Xbox Live synchronization is unavailable. Under Proton in WSL2, the opening level rendered with audio, but camera movement and tutorial completion were not confirmed; Steam Deck remains unverified and there is no native Linux build.",
+      "The build runs a CTest suite of native and contract tests, and the updater re-tests builds and checks packaged files with SHA-256. These are project checks of the port, not proof of behavioral equivalence with the console release; this collection did not build or run it.",
+      "GPLv3 per COPYING, matching UnleashedRecomp/XenonRecomp; the generator patches are GPLv3, SMAA and the CC0 Xelu prompt icons keep their own terms, and the game retains separate rights. This is static recompilation, not recovered authored source. The README states that development includes OpenAI Codex assistance; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/START_HERE.txt",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/config/darkness.toml",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/config/game_revisions.toml",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/tools/patches/README.md",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/tools/setup_generator.py",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/tools/build.ps1",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/RENDERING.md",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/STEAM_DECK.md",
+      "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/COPYING"
+    ]
   }
 ]
