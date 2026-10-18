@@ -152,7 +152,7 @@ def build_browse_pages(
             if category:
                 count = len(groups[category])
                 description = (f'浏览 {count:,} 个{label}相关仓库，查看项目简介、原始链接与许可证信息。'
-                               if zh else f'Browse {count:,} repositories with project descriptions, upstream links, and license information.')
+                               if zh else f'{label}: {count:,} reverse engineering repositories with project descriptions, upstream links, and license information.')
                 count_text = f'{count:,} 个仓库' if zh else f'{count:,} repositories'
             else:
                 description = (f'按网站、游戏、应用、二进制、固件与协议等分类浏览 {len(records):,} 个逆向工程仓库。'
