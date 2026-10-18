@@ -8344,11 +8344,15 @@
         "https://www.anthropic.com/research/ecdsa-curve-origins"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Anthropic’s Frontier Red Team page (2026-10-16) reports that an internal research model, without the earlier passphrase tip, found in under half an hour that the NIST P-192 to P-521 seeds are lrand48 outputs seeded with 1997–1998 Unix timestamps, and that P-192 and five ANSI X9.62 example base points come from FreeLIP’s generator. Inline CC0 code regenerates those values; B-163 and the other base points remain unexplained, and the page calls this no cryptographic break. One cited post attributes the seeds to FreeLIP, unlike the page. The source supports the finding, but it analyzes standardized parameters, not a website, game, app, binary, firmware or protocol, so no record is added; a maintainer decides whether parameter-provenance cases belong in the catalog.",
+      "reason_zh": "Anthropic Frontier Red Team 页面（2026-10-16）称，一个内部研究模型在未获知早先口令线索的情况下，不到半小时便发现 NIST P-192 至 P-521 的种子是以 1997–1998 年 Unix 时间戳初始化的 lrand48 输出，而 P-192 与五条 ANSI X9.62 示例曲线的基点来自 FreeLIP 的随机数生成器。页面附带的 CC0 代码可重新生成这些数值；B-163 与其余基点仍未查明，页面也明确表示这并非密码学破解。所引一条帖子称种子来自 FreeLIP，与页面说法不同。该来源支持所报告的发现，但分析对象是标准化参数，而非网站、游戏、应用、二进制、固件或协议，因此未新增目录条目；此类参数来源调查是否纳入目录，由维护者决定。",
+      "primary_evidence_urls": [
+        "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "https://x.com/0x0SojalSec/status/2111200317866172887",
+        "https://x.com/LilithDatura/status/2111231968549666836"
+      ],
       "catalog_matches": []
     },
     {
@@ -15614,7 +15618,7 @@
       "insufficient-evidence": 162,
       "pending": 239
     },
-    "primary_reviewed_units": 291,
+    "primary_reviewed_units": 292,
     "catalog_linked_occurrences": 199,
     "distinct_resource_ids": 194,
     "distinct_paper_ids": 1,
