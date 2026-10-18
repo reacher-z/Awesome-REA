@@ -8148,12 +8148,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111184500093026340"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ChaiWithAi, 2026-10-16) reports building a Grok Bot template that connects REA so software can be taken apart in chat, and links a template page. That page, titled “REA Reverse Engineer by Sushant”, says the third-party template adds REA as a custom MCP server for binaries, JavaScript/Electron apps, SQLite, WASM and other artifacts, sets up Node 22+ with optional Ghidra and JDK 21, and asks before changing the computer. The public page offers only an in-app “Add to Grok Bot” link: no configuration, prompts, source, worked investigation or reconstruction is published. Retain the lead without a catalog mapping; this is not a finding that the template does not work, and a published configuration or investigation can support another review.",
+      "reason_zh": "作者帖子（@ChaiWithAi，2026-10-16）称用 Grok Bot 搭建了一个接入 REA 的模板，可直接在聊天中拆解软件，并附模板页面链接。该页面标题为“REA Reverse Engineer by Sushant”，说明这一第三方模板把 REA 添加为自定义 MCP 服务，用于分析二进制、JavaScript／Electron 应用、SQLite、WASM 等产物，会配置 Node 22+，可选安装 Ghidra 与 JDK 21，并在更改电脑前先征求同意。公开页面只提供应用内的“Add to Grok Bot”链接，没有公布配置、提示词、源码、实际调查过程或重建结果。保留此线索而不建立目录映射；这不表示该模板无法使用，公开的配置或调查记录可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/ChaiWithAi/status/2111184500093026340",
+        "https://x.ai/bot/S9icu4jLkc2arGjn3Vf-6"
+      ],
       "catalog_matches": []
     },
     {
@@ -15494,15 +15497,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 186,
-      "insufficient-evidence": 152,
-      "pending": 253
+      "insufficient-evidence": 153,
+      "pending": 252
     },
     "units_by_state": {
       "already-curated": 184,
-      "insufficient-evidence": 152,
-      "pending": 253
+      "insufficient-evidence": 153,
+      "pending": 252
     },
-    "primary_reviewed_units": 276,
+    "primary_reviewed_units": 277,
     "catalog_linked_occurrences": 196,
     "distinct_resource_ids": 190,
     "distinct_paper_ids": 1,
