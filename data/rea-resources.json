@@ -2465,5 +2465,38 @@
     "additional_evidence_urls": [
       "https://x.com/HanZhang415188/status/2109843188341207283"
     ]
+  },
+  {
+    "id": "claude-code-background-lab-case",
+    "name": "Claude Code background lab: an REA-informed reimplementation of a desktop animation",
+    "url": "https://github.com/Henry-fan88/claude-code-background",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "Reimplements the glyph-wind background of the Claude desktop app’s Claude Code New session view as an offline WebGL2 page with a 38-slider control panel. The author reports a static REA investigation of the desktop shell and its remote web bundle, followed by a newly written renderer that reuses recovered timing and layout values. It shares the original’s visual vocabulary and interaction model but is not a pixel-identical extraction.",
+    "description_zh": "将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近，但不是逐像素一致的提取。",
+    "evidence_url": "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/PROVENANCE.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is the repository’s single public commit, dated 16 October 2026. PROVENANCE.md reports that the study targeted Claude desktop 2.37337.1, began with REA’s analyze_javascript_application, traced the shell’s remote page to the background module and stayed static: Claude was not launched or inspected at runtime. It records SHA-256 hashes of the retained ASAR and the decoded module and lists local REA evidence IDs whose archives are not published.",
+      "The public edition reuses recovered factual parameters, including 6.5 × 13 CSS-pixel cells, a nominal 9 px font, a 3 s entrance delay and fade-in, a 4 s wind reveal, a 500 ms focus fade-out and 42–64 px/s wind speeds. Its shaders, noise field, random generator, glyph sequences and single-pass instanced rendering are newly written. The author states that an earlier private prototype used extracted source and a bundled font, and does not claim a formal clean-room process.",
+      "Running it needs only a WebGL2 browser opening index.html, or a local static server where the browser restricts local files; there is no Canvas2D fallback, and system monospace fonts change glyph metrics. Development needs Python 3 and Node.js 18+, with no third-party runtime or build dependencies.",
+      "CI runs six Node tests of deterministic helpers, rebuilds the offline page, checks that it is current and runs a release check for offline output, syntax, local links and excluded extracted assets and local paths. VALIDATION.md reports manual Chrome-on-macOS checks of rendering and controls, but not a browser-verified settings import, runtime testing of Claude or a pixel comparison with the original. The reference recording’s remote build, seed, theme and font are unknown, and this collection did not run the page or tests.",
+      "MIT covers the original code and documentation. The repository states that it distributes no recovered Anthropic source, shaders, fonts, ASAR files, screenshots of the original, recordings or account data, and that its license grants no rights in Anthropic’s software, fonts or trademarks. It is unofficial and unaffiliated with Anthropic; REA is credited as the investigation tool rather than bundled, and the author also credits AI-assisted development."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/VALIDATION.md",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/THIRD_PARTY_NOTICES.md",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/.github/workflows/ci.yml",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/scripts/check_release.py",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/scripts/renderer.test.cjs",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/CONTRIBUTING.md",
+      "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/LICENSE"
+    ]
   }
 ]

@@ -7312,13 +7312,29 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110984628836376688"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository publishes the reported animation reimplementation with an author-written REA provenance note, an implementation boundary, CI checks and manual validation notes. The full mapping covers it as an author-reported REA-informed reimplementation, not a pixel-identical extraction, runtime test of Claude or independently reproduced investigation. The post’s one-shot claim is not documented in the repository.",
+      "reason_zh": "固定版本仓库公开了所报道的动画重新实现，并附有作者撰写的 REA 来源说明、实现边界、CI 检查与手动验证记录。完整映射将其作为作者报告的、基于 REA 调查的重新实现覆盖，不代表逐像素一致的提取、对 Claude 的运行测试或经独立复现的调查。帖子所称“一次完成”在仓库中没有记录。",
+      "primary_evidence_urls": [
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/PROVENANCE.md",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/docs/VALIDATION.md",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/THIRD_PARTY_NOTICES.md",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/.github/workflows/ci.yml",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/scripts/check_release.py",
+        "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/LICENSE",
+        "https://x.com/i/status/2110984628836376688"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "claude-code-background-lab-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:stonkers-spectrum-ai-crash-fix-idea",
@@ -15589,18 +15605,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 189,
+      "already-curated": 190,
       "insufficient-evidence": 162,
-      "pending": 240
+      "pending": 239
     },
     "units_by_state": {
-      "already-curated": 187,
+      "already-curated": 188,
       "insufficient-evidence": 162,
-      "pending": 240
+      "pending": 239
     },
-    "primary_reviewed_units": 290,
-    "catalog_linked_occurrences": 198,
-    "distinct_resource_ids": 193,
+    "primary_reviewed_units": 291,
+    "catalog_linked_occurrences": 199,
+    "distinct_resource_ids": 194,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
