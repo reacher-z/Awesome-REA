@@ -5341,12 +5341,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110713533193453572"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's post and linked Notion page describe a Dragon Ball-themed 3D story game made in about five hours with Claude Opus 5.5 after reverse-engineering the Little Prince AI+3D game, offered as a 24.3 MB single-file HTML download that the page says embeds Three.js r170. The page documents no recovered components, method, reference comparison or license, and this review did not download or run the file. The post says no other tools were used, so no REA involvement is established. Retain the lead without a catalog mapping; the original game is listed separately as hao-games:row-139.",
+      "reason_zh": "作者帖子及所链接的 Notion 页面称，在逆向《小王子》AI+3D 游戏后，借助 Claude Opus 5.5 用约五小时做出一款龙珠主题 3D 剧情游戏，并以 24.3 MB 的单文件 HTML 提供下载；页面称文件内嵌 Three.js r170。页面未记录恢复了哪些组件、所用方法、与原作的对照或许可证，本次审阅也未下载或运行该文件。帖子称未使用其他工具，因此未确立 REA 参与。保留此线索而不建立目录映射；原作游戏另列为 hao-games:row-139。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110713533193453572",
+        "https://periodic-lynx-544.notion.site/AI-3D-84be9192c75144e287e47a48579eaa8d"
+      ],
       "catalog_matches": []
     },
     {
@@ -13988,15 +13991,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 99,
-      "insufficient-evidence": 81,
-      "pending": 411
+      "insufficient-evidence": 82,
+      "pending": 410
     },
     "units_by_state": {
       "already-curated": 98,
-      "insufficient-evidence": 81,
-      "pending": 410
+      "insufficient-evidence": 82,
+      "pending": 409
     },
-    "primary_reviewed_units": 122,
+    "primary_reviewed_units": 123,
     "catalog_linked_occurrences": 110,
     "distinct_resource_ids": 104,
     "distinct_paper_ids": 1,
