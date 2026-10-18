@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 215](https://img.shields.io/badge/resources-215-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 76](https://img.shields.io/badge/cases-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 216](https://img.shields.io/badge/resources-216-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 77](https://img.shields.io/badge/cases-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (17) · [Game](#game) (59) · [App](#app) (44)
+- [Website](#website) (17) · [Game](#game) (60) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (76) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (77) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -418,6 +418,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Builds native Super Mario 64 executables from decompiled source, extending the sm64-port fork of the n64decomp reconstruction with renderer, input, camera, save-format and external-data options. Game assets are extracted from the user’s own ROM at build time. It is a non-matching enhanced port, not a byte-identical ROM reconstruction.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/sm64ex-pc-port-case/)
+
+- [**Ghostship: a libultraship native port of Super Mario 64**](https://github.com/HarbourMasters/Ghostship)
+
+  Builds Super Mario 64 as a native PC, Switch and Android program by compiling decompilation-style game source against the libultraship platform library. A bundled extractor converts the user’s US or Japanese ROM into an O2R archive at first launch or build time. The project ships modern renderers, configuration menus and mod-archive loading, not a matching ROM.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/ghostship-sm64-port-case/)
 
 #### Tools, projects and integrations
 
