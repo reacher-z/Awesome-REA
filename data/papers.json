@@ -3016,5 +3016,56 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-coda",
+    "title": "Coda: An End-to-End Neural Program Decompiler",
+    "title_zh": "Coda：端到端神经程序反编译器",
+    "authors": [
+      "Cheng Fu",
+      "Huili Chen",
+      "Haolan Liu",
+      "Xinyun Chen",
+      "Yuandong Tian",
+      "Farinaz Koushanfar",
+      "Jishen Zhao"
+    ],
+    "year": 2019,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The NeurIPS proceedings page and its metadata give publication year 2019 (Advances in Neural Information Processing Systems 32). No publication day is asserted; neither the December conference dates nor the June 2019 arXiv submission is substituted.",
+    "date_basis_zh": "NeurIPS 论文集页面及其元数据给出出版年份 2019（Advances in Neural Information Processing Systems 第 32 卷）。本条目不推定具体出版日，也不以 12 月的会议日期或 2019 年 6 月的 arXiv 提交日期代替。",
+    "venue": "NeurIPS 2019",
+    "publication_status": "conference-paper",
+    "arxiv_id": "1906.12029",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2019-06-28",
+    "doi": null,
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Coda decompiles the assembly of short functions into C in two phases. An instruction-type-aware N-ary Tree-LSTM encoder and an attention-fed AST decoder first generate a code sketch; an ensemble of neural error predictors then proposes token corrections, each kept only if recompiling the candidate does not increase its edit distance to the input assembly. On synthetic benchmarks the authors report 82% average program accuracy after correction, against 12% for a sequence-to-sequence baseline with attention.",
+    "description_zh": "Coda 分两个阶段将短函数的汇编反编译为 C。首先由区分指令类型的 N 叉 Tree-LSTM 编码器与带注意力输入的 AST 解码器生成代码草图；随后由多个神经错误预测器的集成提出词元修正，只有当候选代码重新编译后与输入汇编的编辑距离不增加时，才保留该修正。在合成基准上，作者报告修正后的平均程序准确率为 82%，而带注意力的序列到序列基线为 12%。",
+    "scope_limitations_en": "Training and test programs are randomly generated from Karel commands, math.h calls and arithmetic or logical expressions, in short and long variants (average length 15 and 30), 50,000 pairs per task, compiled without optimization: clang -O0 for the main MIPS results and gcc -O0 for an x86-64 appendix that reports sketch token accuracy only, about 6% lower on average. Real-world checks are small PyTorch C++ API model-construction and Hacker's Delight loop-free programs. Program accuracy requires an exact token match with the ground-truth source, the metric under which the paper reports 0% for conventional decompilers. Error correction assumes the compiler configuration is known, and token accuracy drops for longer programs. The results show neither optimized, whole-program nor binary-equivalent decompilation, and the paper names no author implementation.",
+    "scope_limitations_zh": "训练与测试程序均为随机生成，涵盖 Karel 指令、math.h 调用及算术或逻辑表达式，分为短、长两种（平均长度 15 与 30），每项任务 50,000 对，并在不开启优化的条件下编译：主要 MIPS 结果使用 clang -O0，x86-64 附录使用 gcc -O0，且只报告草图词元准确率，平均约低 6%。真实场景检查仅包括小型 PyTorch C++ API 模型构建程序和 Hacker’s Delight 无循环程序。程序准确率要求与真实源码词元完全一致，论文正是在该指标下报告常规反编译器为 0%。错误修正假定已知编译器配置，程序变长时词元准确率下降。这些结果既不能说明优化代码、整程序或二进制等价的反编译能力，论文也未给出作者实现。",
+    "why_fits_en": "Adds an early (2019) end-to-end neural decompiler that pairs learned code generation with compiler-checked iterative correction, predating the LLM-based decompilation papers in this section.",
+    "why_fits_zh": "补充一种 2019 年的早期端到端神经反编译器，它将学习式代码生成与经编译器检验的迭代修正相结合，早于本节中基于大语言模型的反编译论文。",
+    "metadata_notes": "The sole arXiv version, v1 of 2019-06-28, is titled 'A Neural-based Program Decompiler' and lists the same seven authors; this record uses the proceedings title. NeurIPS metadata gives Advances in Neural Information Processing Systems 32, pages 3708–3719; the proceedings page lists no DOI. A footnote expands Coda as CodeAttack. The proceedings supplemental ZIP holds one appendix PDF with dataset statistics, hyper-parameters, the x86-64 table and RetDec examples. The paper cites third-party disassemblers (mipt-mips, REDasm) but no author code, data or model release. No code or experiments were run.",
+    "metadata_notes_zh": "arXiv 仅有 2019-06-28 提交的 v1，题为“A Neural-based Program Decompiler”，作者同为七人；本条目采用论文集标题。NeurIPS 元数据给出 Advances in Neural Information Processing Systems 第 32 卷第 3708–3719 页，论文集页面未列出 DOI。论文脚注说明 Coda 是 CodeAttack 的缩写。论文集补充材料 ZIP 内含一份附录 PDF，提供数据集统计、超参数、x86-64 结果表及 RetDec 示例。论文引用了第三方反汇编器（mipt-mips、REDasm），但未发布作者代码、数据或模型。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html",
+      "https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Metadata.json",
+      "https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf",
+      "https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Supplemental.zip",
+      "https://arxiv.org/abs/1906.12029v1"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
