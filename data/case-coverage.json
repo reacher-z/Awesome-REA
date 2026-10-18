@@ -2026,12 +2026,17 @@
       "reported_source_urls": [
         "https://x.com/justhalfbit/status/2109524402765488499"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@justhalfbit, 2026-10-12) relays @icanberk’s demo of controlling an air conditioner from AR glasses and describes the method as capturing the official app’s requests in an Android emulator, decoding the protocol with REA and having Codex build the Lens Studio interface. @icanberk’s own posts, which it links, say only that the AC was reverse-engineered, a status-bar app was built and Codex ported it to the glasses in under 15 minutes; they show a photo and a video and do not mention REA. No code, captures or protocol notes are linked, and no GitHub account matching @icanberk was found. Retain the lead without a catalog mapping; the protocol work and REA’s contribution are unestablished.",
+      "reason_zh": "所引帖子（@justhalfbit，2026-10-12）转述 @icanberk 用 AR 眼镜控制空调的演示，并将方法描述为：在安卓模拟器中运行空调官方 App 抓取请求，借助 REA 分析出通信协议，再由 Codex 在 Lens Studio 中制作界面。该帖链接的 @icanberk 本人帖子只说逆向了自家空调、做了一个状态栏小应用，并由 Codex 在 15 分钟内移植到眼镜上；这些帖子附图片和视频，未提及 REA。各帖均未链接代码、抓包或协议说明，也未找到与 @icanberk 对应的 GitHub 账号。保留此线索而不建立目录映射；协议工作及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/justhalfbit/status/2109524402765488499",
+        "https://x.com/justhalfbit/status/2109524407324721295",
+        "https://x.com/icanberk/status/2109031477484937571",
+        "https://x.com/icanberk/status/2109122304429236559"
+      ],
       "catalog_matches": []
     },
     {
@@ -2087,12 +2092,14 @@
       "reported_source_urls": [
         "https://x.com/zxlie_fehelper/status/2109533072370917846"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@zxlie_fehelper, 2026-10-12) is a how-to for turning an idle Redmi TV into a sales dashboard with Muse and Codex over ADB. It records which TV browsers failed (per the post, Codex decompiled some APKs and found system WebView wrappers), the Firefox build that worked, a viewport-unit layout and a remote-debugging trick that triggers fullscreen. This is a deployment account rather than a reconstruction; its one-click fullscreen script and dashboard code are not published, and the author’s GitHub has no matching repository. Retain the lead without a catalog mapping; nothing is reconstructed, and the post does not mention REA.",
+      "reason_zh": "作者帖子（@zxlie_fehelper，2026-10-12）是一篇实操记录，讲述借助 Muse 和 Codex 通过 ADB 把闲置的红米电视改造成数据大屏。帖子列出哪些电视浏览器无法使用（据帖子所述，Codex 反编译部分 APK 后发现它们只是系统 WebView 套壳）、最终可用的 Firefox 版本、改用视口单位的布局，以及借助远程调试触发全屏的方法。这是一份部署记录而非重建；帖中提到的一键全屏脚本和大屏代码均未公开，作者的 GitHub 上也没有相应仓库。保留此线索而不建立目录映射；该帖没有重建任何软件，也未提及 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/zxlie_fehelper/status/2109533072370917846"
+      ],
       "catalog_matches": []
     },
     {
@@ -2107,12 +2114,14 @@
       "reported_source_urls": [
         "https://x.com/xiaoshan0413/status/2109540598633877515"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@xiaoshan0413, 2026-10-12) is commentary on REA that says, secondhand, that 宝玉 (Baoyu) used it to take apart four core CleanMyMac features and had AI write a native Mac prototype from them. It links neither that test nor any code, and a GitHub search found no public repository for such a prototype. Retain the lead without a catalog mapping; the CleanMyMac analysis and the prototype are unestablished.",
+      "reason_zh": "所引帖子（@xiaoshan0413，2026-10-12）是对 REA 的评论，其中转述「宝玉」已用它拆解 CleanMyMac 的四项核心功能，并让 AI 照此写出原生 Mac 应用雏形。帖子未链接该实测或任何代码，GitHub 搜索也未找到此类雏形的公开仓库。保留此线索而不建立目录映射；对 CleanMyMac 的分析及该雏形均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/xiaoshan0413/status/2109540598633877515"
+      ],
       "catalog_matches": []
     },
     {
@@ -2127,12 +2136,14 @@
       "reported_source_urls": [
         "https://x.com/wikwanat/status/2109542201927647588"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@wikwanat, 2026-10-12) reports testing REA on the author’s own app, Nexalytics: reverse-engineering its frontend-backend communication and selected flows, adding Playwright so the agent could exercise features, and reaching a result the author calls close to the original in function and architecture, though not 1:1. No code, comparison or logs are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the reconstruction and its closeness to the original are unestablished.",
+      "reason_zh": "作者帖子（@wikwanat，2026-10-12）报告在自己开发的应用 Nexalytics 上测试 REA：逆向其前后端通信及部分流程，并加入 Playwright 让智能体自行操作功能；作者称所得结果在功能和架构上都接近原版，但尚非 1:1。帖中未链接代码、对比或日志，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；重建结果及其与原版的接近程度均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/wikwanat/status/2109542201927647588"
+      ],
       "catalog_matches": []
     },
     {
@@ -2147,12 +2158,14 @@
       "reported_source_urls": [
         "https://x.com/TheKing_Rapture/status/2109547879199056181"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@TheKing_Rapture, 2026-10-12) says, without examples, that people are using REA on MetaTrader to get signals, as well as on emulators and games. It is a secondhand remark that names no project, author or result and links nothing. Retain the lead without a catalog mapping; no MetaTrader analysis or REA use is established.",
+      "reason_zh": "所引回复（@TheKing_Rapture，2026-10-12）未举任何实例，只称有人用 REA 处理 MetaTrader 以获取信号，也用于模拟器和游戏等。这是一条转述性评论，未指明项目、作者或结果，也未链接任何内容。保留此线索而不建立目录映射；对 MetaTrader 的分析及 REA 的使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/TheKing_Rapture/status/2109547879199056181"
+      ],
       "catalog_matches": []
     },
     {
@@ -2167,12 +2180,14 @@
       "reported_source_urls": [
         "https://x.com/Chen1090874226/status/2109548112281055674"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Chen1090874226, 2026-10-12), an essay on AI-written software, says the author rewrote the Red Alert 2 engine for reinforcement learning with help from the Chrono Divide engine, with Opus using 6,000+ test cases to check unit behavior. No repository, tests or results are linked. The author’s GitHub account (xichen1997, behind the profile’s site) has an older browser RTS inspired by Red Alert 2, last pushed in 2025 and not described as this rewrite, and the blog has no post on it. Retain the lead without a catalog mapping; the engine rewrite and its test suite are unestablished.",
+      "reason_zh": "作者帖子（@Chen1090874226，2026-10-12）是一篇关于 AI 编写软件的长文，其中称作者借助 Chrono Divide 引擎为强化学习重写了 Red Alert 2 的引擎，并由 Opus 用 6000 多个测试用例核对单位行为。帖中未链接仓库、测试或结果。作者主页网站对应的 GitHub 账号（xichen1997）有一个受 Red Alert 2 启发、较早的浏览器即时战略游戏，最后推送于 2025 年，且未被描述为这次重写；其博客也没有相关文章。保留此线索而不建立目录映射；引擎重写及其测试集均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Chen1090874226/status/2109548112281055674"
+      ],
       "catalog_matches": []
     },
     {
@@ -14563,15 +14578,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 134,
-      "insufficient-evidence": 104,
-      "pending": 353
+      "insufficient-evidence": 110,
+      "pending": 347
     },
     "units_by_state": {
       "already-curated": 133,
-      "insufficient-evidence": 104,
-      "pending": 352
+      "insufficient-evidence": 110,
+      "pending": 346
     },
-    "primary_reviewed_units": 177,
+    "primary_reviewed_units": 183,
     "catalog_linked_occurrences": 145,
     "distinct_resource_ids": 139,
     "distinct_paper_ids": 1,
