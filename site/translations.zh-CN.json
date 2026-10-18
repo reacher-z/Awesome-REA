@@ -1928,5 +1928,15 @@
       "make all 构建全部二进制文件，并依据 config/medievil.check.sha 运行 sha1sum；CI 使用访问受限仓库中的光盘文件执行拆分和该检查。检查通过只说明汇编产物与这些校验值一致，并不表示已有多少代码反编译为 C，也不表示测试过游戏行为。本合集未构建或运行该项目。",
       "仓库声明采用 MIT；原游戏内容、内置的编译器二进制文件以及仓库中的 PSY-Q 头文件和数据仍适用各自条款。所审来源未确立 AI 或 REA 使用归因，该项目也独立于 MediEvil Recomp 静态重编译项目。"
     ]
+  },
+  "cbfd-recompiled-case": {
+    "name": "Conker's Bad Fur Day: Recompiled：基于 N64Recomp 的原生移植",
+    "requirements": [
+      "需要用户自备的美版 ROM，格式为大端序 .z64，且 SHA-1 与 README 所列一致；仓库和发布包均不含游戏数据。仅修改素材的 ROM 修改版可以使用，修改代码的版本以及其他地区的 ROM 会被拒绝。",
+      "V0.1.6 版本（2026-10-13）提供 Windows、Linux 和 macOS 构建以及模组压缩包。Windows 上使用 Direct3D 12 或 Vulkan 渲染，Linux 上使用 Vulkan，macOS 上使用 Metal；Linux 构建在 Ubuntu 24.04 上测试，未签名的 macOS 发布版面向 macOS 15 或更高版本的 Apple Silicon。",
+      "源码构建需要递归克隆、Git 和 Python 3，另需 Windows 上的 Visual Studio 2022+、Linux 上的 CMake、Ninja、Clang 与 SDL2，或 macOS 上的完整 Xcode 与 Homebrew，且路径中不能含撇号。N64Recomp 和 RSPRecomp 依据仓库内提交的符号文件运行；若通过可选的反编译构建重新生成该文件，还需要 IDO 和 MIPS binutils。",
+      "README 称游戏已被完整通关，但宽屏下暂停菜单背景仍有问题；macOS 上尚未确认通关，Intel Mac 尚未尝试。反编译的 C 代码必须逐字节重建 ROM 中的代码，移植版则通过游玩及与模拟器中原版对比来检查；名称被标注为推测，本合集未重跑任何检查。",
+      "作者称在重编译配置、工具补丁、宿主程序、模组和反编译函数中大量使用 Claude Code；所审来源未记录 REA 使用。项目自有代码采用 MIT，但包含 GPLv3 N64ModernRuntime 的构建整体按 GPLv3 分发，另有一个 RT64 补丁采用 GPL-2.0 或更高版本，游戏本身不在许可范围内。"
+    ]
   }
 }

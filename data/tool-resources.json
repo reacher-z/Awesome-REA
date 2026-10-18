@@ -3960,5 +3960,36 @@
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/src/game/800.c",
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/LICENSE"
     ]
+  },
+  {
+    "id": "cbfd-recompiled-case",
+    "name": "Conker's Bad Fur Day: Recompiled — an N64Recomp native port",
+    "url": "https://github.com/sciaschi/CBFD-Recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the US Nintendo 64 release of Conker’s Bad Fur Day with N64Recomp into a native Windows, Linux and macOS port on N64ModernRuntime and RT64. Function names and boundaries come from a vendored, still mostly assembly decompilation, while the recompiled code is taken from the user’s ROM so unmatched decompiled C cannot change behavior. The author reports heavy use of Claude Code across the project.",
+    "description_zh": "使用 N64Recomp 将美版 Nintendo 64《Conker's Bad Fur Day》静态重编译为基于 N64ModernRuntime 和 RT64 的原生 Windows、Linux 与 macOS 移植版。函数名称与边界来自仓库内置、仍以汇编为主的反编译项目，而重编译的代码取自用户的 ROM，因此尚未匹配的反编译 C 代码不会改变游戏行为。作者称整个项目大量使用了 Claude Code。",
+    "evidence_url": "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s US ROM in big-endian .z64 form with the SHA-1 listed in the README; the repository and release packages contain no game data. ROM hacks that change only assets are accepted, while hacks that change code and other regions’ ROMs are refused.",
+      "Release V0.1.6 (2026-10-13) packages Windows, Linux and macOS builds plus a mods archive. Rendering uses Direct3D 12 or Vulkan on Windows, Vulkan on Linux and Metal on macOS; Linux builds are tested on Ubuntu 24.04, and the unsigned macOS release targets Apple Silicon with macOS 15 or later.",
+      "Source builds need a recursive clone, Git and Python 3 plus Visual Studio 2022+ on Windows, CMake, Ninja, Clang and SDL2 on Linux, or full Xcode and Homebrew on macOS, in a path without an apostrophe. N64Recomp and RSPRecomp run from a committed symbol file; regenerating it with the optional decompilation build also needs IDO and MIPS binutils.",
+      "The README reports the game played through to the end, with a widescreen pause-background issue; a macOS play-through is not yet confirmed and Intel Macs are untried. Decompiled C must rebuild the ROM’s code byte for byte, and the port is checked by play and by comparison with the original in an emulator; names are marked as guesses, and nothing was rerun here.",
+      "The author reports heavy Claude Code use for the recompilation setup, tool patches, host application, mods and decompiled functions; no REA use is documented. Own code is MIT, but builds including GPLv3 N64ModernRuntime are distributed under GPLv3, an RT64 patch is GPL-2.0-or-later, and the game is not covered."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/recomp/README.md",
+      "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/.gitmodules",
+      "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/conker/README.md",
+      "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/CONTRIBUTING.md",
+      "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/LICENSE",
+      "https://github.com/sciaschi/CBFD-Recompiled/releases/tag/V0.1.6"
+    ]
   }
 ]

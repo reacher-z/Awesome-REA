@@ -10692,13 +10692,26 @@
       "reported_source_urls": [
         "https://github.com/sciaschi/CBFD-Recompiled"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 34 (README line 325) lists sciaschi/CBFD-Recompiled under 🧭 Conker's Bad Fur Day. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 34 行（README 第 325 行）在 🧭 Conker's Bad Fur Day 下列出 sciaschi/CBFD-Recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, pipeline notes, submodule list, vendored decompilation, contributing guide, license and V0.1.6 release document an N64Recomp static recompilation of the US Conker’s Bad Fur Day ROM into a native multi-platform port, with symbols derived from a mostly assembly decompilation. Full mapping covers this port and its author-reported Claude Code use, not the upstream decompilation, REA use or independently reproduced gameplay.",
+      "reason_zh": "固定版本的 README、流程说明、子模块列表、内置反编译项目、贡献指南、许可证和 V0.1.6 版本，记录了用 N64Recomp 将美版《Conker's Bad Fur Day》ROM 静态重编译为多平台原生移植的过程，其符号来自仍以汇编为主的反编译项目。完整映射覆盖该移植及作者自述的 Claude Code 使用，不涵盖上游反编译项目、REA 使用或独立复现的游戏行为。",
+      "primary_evidence_urls": [
+        "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/README.md",
+        "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/recomp/README.md",
+        "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/.gitmodules",
+        "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/LICENSE",
+        "https://github.com/sciaschi/CBFD-Recompiled/releases/tag/V0.1.6"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "cbfd-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-035",
@@ -14076,18 +14089,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 105,
-      "insufficient-evidence": 82,
-      "pending": 404
-    },
-    "units_by_state": {
-      "already-curated": 104,
+      "already-curated": 106,
       "insufficient-evidence": 82,
       "pending": 403
     },
-    "primary_reviewed_units": 129,
-    "catalog_linked_occurrences": 116,
-    "distinct_resource_ids": 110,
+    "units_by_state": {
+      "already-curated": 105,
+      "insufficient-evidence": 82,
+      "pending": 402
+    },
+    "primary_reviewed_units": 130,
+    "catalog_linked_occurrences": 117,
+    "distinct_resource_ids": 111,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
