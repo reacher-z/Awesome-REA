@@ -5917,5 +5917,35 @@
       "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/package-portable.ps1",
       "https://github.com/rexglue/rexglue-sdk/blob/f5337cdc947ff6d4c4196737e2c807a48f2a1fc2/README.md"
     ]
+  },
+  {
+    "id": "mcp-windbg",
+    "name": "mcp-windbg",
+    "url": "https://github.com/svnscha/mcp-windbg",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Independent, community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can open and triage user-mode and kernel crash dumps, attach to cdb remote debug servers and KD kernel targets, and run arbitrary debugger commands in separately addressed sessions. Its README points users who want AI inside WinDbg to Microsoft's official WinDbg MCP and positions this project as an alternative for other MCP clients, remote HTTP use and batch dump triage; it calls itself a wrapper that runs real debugger commands, not an automatic fix.",
+    "description_zh": "由社区独立开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能够打开并初步分析用户态与内核崩溃转储，连接 cdb 远程调试服务器和 KD 内核目标，并在可分别寻址的会话中执行任意调试器命令。其 README 建议希望在 WinDbg 内使用 AI 的用户选择微软官方的 WinDbg MCP，并把本项目定位为面向其他 MCP 客户端、远程 HTTP 使用和批量转储分析的替代方案；项目自称只是执行真实调试器命令的封装，而非自动修复工具。",
+    "evidence_url": "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows with Debugging Tools for Windows or WinDbg from the Microsoft Store, which provide cdb.exe and kd.exe. Install from PyPI (mcp-windbg 1.5.1, Python 3.10+), through the uvx-based Claude Code plugin, or as the signed standalone mcp-windbg.exe attached to each release with SHA256SUMS; optional plugins add four skills and a crash-analyst agent. The reviewed develop commit is one commit after v1.5.1 (2026-10-10).",
+      "Symbols come from _NT_SYMBOL_PATH or --symbols-path, typically the Microsoft symbol server. Remote user-mode debugging needs a running cdb or WinDbg debug server; kernel sessions need a KD-enabled machine or VM reached over KDNET, a named pipe or serial, and closing a kernel session resumes the target.",
+      "stdio is the default transport. The streamable HTTP transport binds 127.0.0.1:8000 by default and has no authentication: anyone who can reach the port can drive cdb.exe on the host, so the docs advise a trusted network, an SSH tunnel or an authenticating proxy. A --filter-script hook can redact data from tool arguments and output before they leave the machine.",
+      "MIT. Microsoft's official WinDbg MCP, which the README dates from WinDbg 1.2610.1001.0, is a separate product not covered by this entry. No dumps, live targets or kernel sessions were analyzed, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/docs/scenarios/http-service.md",
+      "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/docs/reference/cli.md",
+      "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/pyproject.toml",
+      "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/LICENSE",
+      "https://github.com/svnscha/mcp-windbg/releases/tag/v1.5.1",
+      "https://pypi.org/project/mcp-windbg/1.5.1/"
+    ]
   }
 ]

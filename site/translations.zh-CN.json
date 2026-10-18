@@ -2527,5 +2527,14 @@
       "测试环境为配备 AMD Radeon RX 7900 XT 的 Windows 11，其他 GPU 和 Windows 10 尚未尝试。Python 与 PowerShell 测试覆盖光盘检查、着色器缓存合并、启动器以及使用合成镜像的便携版安装，带日期的笔记记录了启动与帧时间调查。这些是作者报告，并非等价性检查；本合集未运行。",
       "项目自身代码采用 BSD 3-Clause；ReXGlue 按其自身许可使用，项目脚手架和 generated/rexglue.cmake 来自 ReXGlue 模板。游戏权利仍归其权利人，README 要求使用者不要分享 gamedata、assets 或光盘镜像。README 未声明使用 AI 或 REA；仓库虽有 docs/agents 下的工作跟踪说明，但不据此推断归因。"
     ]
+  },
+  "mcp-windbg": {
+    "name": "mcp-windbg WinDbg 调试 MCP 服务器",
+    "requirements": [
+      "需要 Windows，以及提供 cdb.exe 和 kd.exe 的 Debugging Tools for Windows 或 Microsoft Store 版 WinDbg。可从 PyPI 安装（mcp-windbg 1.5.1，需 Python 3.10+），也可通过基于 uvx 的 Claude Code 插件安装，或使用每个版本附带的已签名独立程序 mcp-windbg.exe 及 SHA256SUMS；可选插件另提供四个技能和一个 crash-analyst 智能体。所审阅的 develop 提交比 v1.5.1（2026-10-10）多一个提交。",
+      "符号来自 _NT_SYMBOL_PATH 或 --symbols-path，通常指向微软符号服务器。远程用户态调试需要已运行的 cdb 或 WinDbg 调试服务器；内核会话需要通过 KDNET、命名管道或串口连接已启用 KD 的机器或虚拟机，关闭内核会话会让目标继续运行。",
+      "默认传输方式为 stdio。streamable HTTP 传输默认绑定 127.0.0.1:8000，且没有任何认证：任何能访问该端口的人都能在主机上操控 cdb.exe，因此文档建议只在可信网络中使用，或通过 SSH 隧道、带认证的反向代理访问。--filter-script 钩子可在数据离开本机前对工具参数和输出进行脱敏。",
+      "采用 MIT 许可。README 称微软官方 WinDbg MCP 自 WinDbg 1.2610.1001.0 起提供，它是另一款产品，不在本条目范围内。本次未分析任何转储、实时目标或内核会话，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
