@@ -6945,12 +6945,17 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110916629244641548"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The promotional post names Ledger Opus but links no repository or release for it. The GitHub account it links had four public repositories on review, none named Ledger Opus or described as a Claude finance agent. The quoted post and the guide it links describe rebuilding paid tools and REA in general terms, without publishing Ledger Opus code, comparison logs or tests. Identity, affiliation, REA-use, fee and financial-capability claims remain unverified; new primary evidence can support another review.",
+      "reason_zh": "推广帖提到 Ledger Opus，但未链接其仓库或发布版本。帖中链接的 GitHub 账号在审阅时有四个公开仓库，均未以 Ledger Opus 命名，也未被描述为 Claude 金融智能体。被引用的帖子及其链接的指南只是泛泛介绍重建付费工具与 REA，并未公开 Ledger Opus 的代码、对照记录或测试。身份、任职、REA 使用、费用及金融能力等说法均未经核实；新的一手证据可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110916629244641548",
+        "https://x.com/i/status/2110694053595517061",
+        "https://x.com/i/status/2110309125322162178",
+        "https://github.com/RazeDen"
+      ],
       "catalog_matches": []
     },
     {
@@ -15512,15 +15517,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 187,
-      "insufficient-evidence": 153,
-      "pending": 251
+      "insufficient-evidence": 154,
+      "pending": 250
     },
     "units_by_state": {
       "already-curated": 185,
-      "insufficient-evidence": 153,
-      "pending": 251
+      "insufficient-evidence": 154,
+      "pending": 250
     },
-    "primary_reviewed_units": 278,
+    "primary_reviewed_units": 279,
     "catalog_linked_occurrences": 197,
     "distinct_resource_ids": 191,
     "distinct_paper_ids": 1,
