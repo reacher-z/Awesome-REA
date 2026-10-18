@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 276](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-276-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 136](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 277](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-277-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 137](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (117) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (118) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (136) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (137) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -773,6 +773,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   让 Animal Crossing 反编译所得的 GameCube C 代码在 32 位 x86 上原生运行，用转换层把 GX 图形 API 映射到 OpenGL 3.3，并以基于 SDL2 的平台代码替代主机服务。游戏素材在启动时从使用者自己的光盘镜像读取，不随项目分发。这是基于 ACreTeam ac-decomp 的移植，而非与原可执行文件一致的重建。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-pc-port-case/)
+
+- [**GoldenEye 007：覆盖三个版本的一致性 Nintendo 64 反编译**](https://github.com/n64decomp/007)
+
+  将 GoldenEye 007 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版和 PAL 版 ROM。素材取自使用者自备的美版 ROM，日版与 PAL 版的差异部分则取自各自的 ROM；默认构建会将每个产物与记录的 SHA-1 比对。README 仍称项目在进行中，而可变的状态页报告全部 208 个文件已完成；它与另行收录的 PC 移植不同。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/goldeneye-007-matching-decomp-case/)
 
 #### 工具、项目与集成
 

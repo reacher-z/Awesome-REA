@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 276](https://img.shields.io/badge/resources-276-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 136](https://img.shields.io/badge/cases-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 277](https://img.shields.io/badge/resources-277-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 137](https://img.shields.io/badge/cases-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (117) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (118) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (136) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (137) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -772,6 +772,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runs Animal Crossing’s decompiled GameCube C code natively on 32-bit x86, replacing the GX graphics API with an OpenGL 3.3 translation layer and console services with SDL2-based platform code. Game assets are read at startup from the user’s own disc image instead of being shipped. It is a port built on ACreTeam’s ac-decomp, not a matching rebuild of the original executable.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/animal-crossing-pc-port-case/)
+
+- [**GoldenEye 007: matching Nintendo 64 decompilation for three releases**](https://github.com/n64decomp/007)
+
+  Reconstructs GoldenEye 007’s Nintendo 64 code as C source that rebuilds the US, Japanese and PAL ROMs. Assets come from a user-supplied US ROM, with Japanese and PAL differences taken from their own ROMs, and the default build compares each output with a recorded SHA-1. The README still calls the project work in progress, while a mutable status page reports all 208 files done; it is distinct from the separately curated PC port.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/goldeneye-007-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
