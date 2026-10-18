@@ -1925,13 +1925,31 @@
         "https://github.com/designgears/wine-uwp",
         "https://github.com/designgears/shapr3d-linux"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned wine-uwp sources, plan, findings log, regression script and license headers, plus the Shapr3D for Linux packaging repository that pins the same commit, support the reported Store-app runtime and Shapr3D package. Full mapping covers both repositories as one case; per-app status, user-supplied Windows components and app packages, missing top-level licenses, author-disclosed Claude assistance and project-reported checks remain explicit. No REA use or independent runtime reproduction is established.",
+      "reason_zh": "固定版本的 wine-uwp 源码、计划、调查日志、回归脚本和许可声明，以及固定同一提交的 Shapr3D for Linux 打包仓库，支持所报告的商店应用运行时和 Shapr3D 软件包。完整映射将两个仓库作为同一案例覆盖；各应用状态、需用户自备的 Windows 组件和应用包、缺少顶层许可证、作者披露的 Claude 辅助及项目自报的检查均明确保留。未确立 REA 使用或独立运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md",
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/AGENTS.md",
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/docs/Plan.md",
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/wine/BASE.txt",
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/wine/dlls/dcomp/composition.c",
+        "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/regress.sh",
+        "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/README.md",
+        "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/.gitmodules",
+        "https://x.com/DesignGears/status/2109530620321788301",
+        "https://x.com/DesignGears/status/2109532140907921698"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "wine-uwp-store-apps-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:redmi-tv-dashboard",
@@ -13397,18 +13415,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 70,
-      "insufficient-evidence": 71,
-      "pending": 450
-    },
-    "units_by_state": {
-      "already-curated": 69,
+      "already-curated": 71,
       "insufficient-evidence": 71,
       "pending": 449
     },
-    "primary_reviewed_units": 86,
-    "catalog_linked_occurrences": 77,
-    "distinct_resource_ids": 68,
+    "units_by_state": {
+      "already-curated": 70,
+      "insufficient-evidence": 71,
+      "pending": 448
+    },
+    "primary_reviewed_units": 87,
+    "catalog_linked_occurrences": 78,
+    "distinct_resource_ids": 69,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

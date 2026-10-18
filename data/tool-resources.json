@@ -2787,5 +2787,43 @@
       "https://zelda.deco.mp/assets/csv/progress-mm-shield.json",
       "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md"
     ]
+  },
+  {
+    "id": "wine-uwp-store-apps-case",
+    "name": "wine-uwp: running packaged Windows Store apps on a patched Wine",
+    "url": "https://github.com/designgears/wine-uwp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Extends Wine 11.17 so that signed MSIX Store apps, with Shapr3D as the main target, install and run on Linux without their source or symbols. About 49,000 changed lines add a DirectComposition implementation, composition swap chains and an app-model host, while Microsoft’s own XAML and app-model DLLs, harvested from a Windows 11 image on the user’s machine, run unmodified. The author says Claude did most of the reverse engineering and code; app support is uneven and checked by a project regression suite.",
+    "description_zh": "扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要目标为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。约 49,000 行改动新增了 DirectComposition 实现、合成交换链和应用模型宿主；微软自己的 XAML 与应用模型 DLL 则在使用者机器上从 Windows 11 镜像中提取后原样运行。作者称大部分逆向工程和代码由 Claude 完成；各应用支持程度不一，由项目回归测试检查。",
+    "evidence_url": "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README’s app table reports Shapr3D sketching, modelling, menus, cloud sync, sign-in and STL/PDF export; Solitaire playable; Media Player playing audio from its own UI; Calculator fully working; Feedback Hub interactive; and Camera only reaching its own error page. Shapr3D for Linux (58d9173) packages this same pinned wine-uwp commit as a beta AppImage and Flatpak; it is unofficial and not affiliated with Shapr3D.",
+      "Needs the user’s own app package (.msix or .msixbundle, or Shapr3D’s .appinstaller, from which setup downloads about 1.8 GB) and Windows components extracted from Microsoft’s free Windows 11 evaluation ISO or another Windows 11 image. Neither the repositories nor the release packages contain them, and a commit hook refuses Windows binaries. Shapr3D also needs an account and a browser sign-in.",
+      "Building copies the vendored wine/ files over the Wine 11.17 source, then runs autoreconf, configure with --enable-archs=x86_64 and make; the WinRT stand-in shims build with clang-cl and lld-link against Windows SDK headers fetched by xwin. Shapr3D for Linux needs 64-bit Linux with glibc 2.38+, working Vulkan drivers and about 11 GB free during setup, and its releases build with flatpak-builder on the freedesktop 25.08 SDK.",
+      "regress.sh requires Calculator to stay pixel-identical to a committed baseline and other apps to come up on a private Xvfb display; release.sh smoke-tests that an empty setup reaches Shapr3D’s first screen. The Findings logs record failed approaches as well as fixes. These checks are project-reported; this collection did not build Wine or run any app.",
+      "Neither repository has a top-level license file, and GitHub detects none. The vendored Wine files carry LGPL-2.1-or-later headers and the setup app’s Cargo manifest declares the same; the shims and investigation tools state no license. Harvested Microsoft components and Store apps keep their own terms, and the plan notes that a distributable product would need clean-room replacements for them. The author’s X posts disclose heavy Claude assistance; REA use is not established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/AGENTS.md",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/docs/Plan.md",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/docs/Findings-M4.md",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/wine/README.md",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/wine/BASE.txt",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/wine/dlls/dcomp/composition.c",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/regress.sh",
+      "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/packaging/harvest/manifest.txt",
+      "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/README.md",
+      "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/.gitmodules",
+      "https://github.com/designgears/shapr3d-linux/blob/58d91731a3cef9f9279a9f277f0f6d87e3ec7e41/installer/Cargo.toml",
+      "https://x.com/DesignGears/status/2109530620321788301",
+      "https://x.com/DesignGears/status/2109532140907921698"
+    ]
   }
 ]

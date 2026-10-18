@@ -1530,5 +1530,15 @@
       "默认构建会用仓库保存的 MD5 值检查两个 ROM，输出 OK 或 FAILED；FAILED 表示基础 ROM 有误或代码不一致。CI 以一致模式构建美版、以非一致模式构建日版 1.1，基础 ROM 由项目构建容器提供。核查时项目可变的进度徽章显示 100%，README 仍标注为进行中；本合集未重新运行构建。",
       "所审阅代码树没有顶层许可证文件，GitHub 也未识别出许可证，因此源码的再使用条款未予说明；ROM 内容和由其得到的素材保留各自权利。README 禁止任何曾接触泄露的 Nintendo 64 SDK、libultra 或 Zelda 64 源码的人参与贡献。所审阅来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "wine-uwp-store-apps-case": {
+    "name": "wine-uwp：在修改版 Wine 上运行打包的 Windows 商店应用",
+    "requirements": [
+      "README 的应用列表报告：Shapr3D 的草图、建模、菜单、云同步、登录及 STL／PDF 导出可用；Solitaire 可游玩；Media Player 能从自身界面播放音频；Calculator 完全可用；Feedback Hub 可交互；Camera 只能进入它自己的错误页面。Shapr3D for Linux（58d9173）将同一固定版本的 wine-uwp 打包为测试版 AppImage 和 Flatpak；它是非官方项目，与 Shapr3D 无关。",
+      "需要使用者自己的应用包（.msix 或 .msixbundle，或 Shapr3D 的 .appinstaller，安装程序据此下载约 1.8 GB），以及从微软免费的 Windows 11 评估版 ISO 或其他 Windows 11 镜像中提取的 Windows 组件。仓库和发布包均不含这些内容，提交钩子会拒绝 Windows 二进制文件。Shapr3D 还需要账号并通过浏览器登录。",
+      "构建时把仓库内的 wine/ 文件复制到 Wine 11.17 源码之上，再运行 autoreconf、带 --enable-archs=x86_64 的 configure 和 make；WinRT 替身组件使用 clang-cl 与 lld-link，针对 xwin 获取的 Windows SDK 头文件构建。Shapr3D for Linux 需要 glibc 2.38+ 的 64 位 Linux、可用的 Vulkan 驱动，安装期间约需 11 GB 空闲空间；其发布包用 flatpak-builder 在 freedesktop 25.08 SDK 中构建。",
+      "regress.sh 要求 Calculator 与仓库中保存的基线逐像素一致，并要求其他应用能在私有 Xvfb 显示上启动；release.sh 的冒烟测试检查全新安装能否进入 Shapr3D 的首个界面。Findings 日志既记录修复，也记录失败的尝试。这些检查均为项目自报；本合集未构建 Wine，也未运行任何应用。",
+      "两个仓库都没有顶层许可证文件，GitHub 也未识别出许可证。仓库内的 Wine 文件带有 LGPL-2.1-or-later 声明，安装程序的 Cargo 清单也声明相同许可；替身组件和调查工具未声明许可证。提取的微软组件和商店应用各自保留条款，项目计划也指出，可分发的产品需要以净室方式替换这些组件。作者在 X 帖子中披露大量借助 Claude；未确立 REA 使用。"
+    ]
   }
 }
