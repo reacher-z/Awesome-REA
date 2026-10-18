@@ -1720,5 +1720,15 @@
       "所审 CI 工作流只构建软件包，不与原版游戏进行比对。准确性与增强功能均为项目报告，本合集未构建或运行任何内容。",
       "LICENSE.md 采用 CC0-1.0，不涵盖任天堂的游戏或光盘内容；Aurora 与随机器模组等子模块为独立仓库。README 声明不接受主要由 AI 生成的贡献，并提醒存在传播 AI 生成错误信息的非官方网站；所审来源未确立 REA 的参与。"
     ]
+  },
+  "metaforce-metroid-prime-case": {
+    "name": "Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现",
+    "requirements": [
+      "README 称项目由 Cirrus 和 Antidote 于 2015 年 6 月开始开发，近期已在 PrimeDecomp 一致性反编译之上重写；稳定之前不提供构建版本，尽管 CI 会构建 Windows、Linux、Apple 和 Android 安装包。GitHub 上唯一的发布是 2015 年的预发布版，没有与重写版对应的发布。它与另一个基于 PrimeDecomp 的原生移植 Odrannnn/MetroidPrimePort 是不同项目。",
+      "仓库不附带任何游戏文件，orig/ 下各版本文件夹仅有占位文件。应用启动时通过参数或选择窗口读取《密特罗德 Prime》光盘镜像（ISO、GCM、CISO、GCZ、RVZ、WIA 或 TGC）。CMake 以 TARGET_PC、NONMATCHING 和 VERSION=1 编译原生目标，configure.py 将版本 1 定为默认的 GM8E01_00（NTSC-U v1.088）构建；README 未列出受支持的光盘版本。",
+      "构建需要 CMake 3.25+、Python 3，并递归克隆 aurora、borealis 和 musyx 子模块；Windows 使用带 Clang 与 clang-cl 组件的 Visual Studio 2019，macOS 需要 Xcode 11.5+，Linux 需要所列的 Ubuntu、Arch 或 Fedora 软件包。README 列出的平台为 Windows 10+（D3D12、Vulkan 或 D3D11）、macOS 10.15+（Metal）、Linux（Vulkan）、Android（Vulkan 或 OpenGL ES）和 iOS（Metal）；Android 另需 SDK Platform 37、NDK 和 JDK 17+。",
+      "configure.py 仍为独立的 GameCube 构建记录十个光盘版本的逐对象一致性状态，但 CI 忽略这些文件，只构建原生安装包。所审阅来源未公开原生应用的保真度或游戏行为检查，本合集也未构建或运行它。",
+      "Metaforce 贡献者的代码采用 MIT，另有一份 LICENSE.decomp 采用 CC0 1.0；所审阅文件未说明二者各自覆盖哪些目录。光盘内容保留各自权利。所审阅来源未确立 AI 或 REA 使用。"
+    ]
   }
 }

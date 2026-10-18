@@ -3378,5 +3378,39 @@
       "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/.github/workflows/build.yml",
       "https://github.com/encounter/aurora/blob/3227d76c60e1e782ca576610bce61c9e7744d8be/README.md"
     ]
+  },
+  {
+    "id": "metaforce-metroid-prime-case",
+    "name": "Metaforce: a Metroid Prime engine reimplementation rebuilt on the decompilation",
+    "url": "https://github.com/AxioDL/metaforce",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Started in 2015 as a reverse-engineered reimplementation of the Metroid Prime engine, Metaforce has been rewritten on top of the PrimeDecomp matching decompilation. Its native app compiles that game code as non-matching C++ for desktop and mobile through the Aurora GameCube compatibility layer and loads a user-selected disc image. The README says builds are unavailable while the rewrite stabilizes.",
+    "description_zh": "Metaforce 于 2015 年作为《密特罗德 Prime》引擎的逆向重实现项目启动，现已在 PrimeDecomp 一致性反编译之上重写。其原生应用借助 Aurora GameCube 兼容层，将这些游戏代码以非一致模式编译为桌面和移动端程序，并读取使用者选择的光盘镜像。README 表示重写稳定之前暂不提供构建版本。",
+    "evidence_url": "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README dates development to June 2015 by Cirrus and Antidote and says the project was recently rewritten on the PrimeDecomp matching decompilation; builds are unavailable while it stabilizes, although CI builds Windows, Linux, Apple and Android packages. The only GitHub release is a 2015 prerelease, so none corresponds to the rewrite. This is separate from Odrannnn/MetroidPrimePort, another native port built from PrimeDecomp.",
+      "The repository ships no game files; its orig/ version folders hold only placeholders. At startup the app takes or asks for a Metroid Prime disc image (ISO, GCM, CISO, GCZ, RVZ, WIA or TGC). CMake compiles the native target with TARGET_PC, NONMATCHING and VERSION=1, and configure.py names version 1 as the default GM8E01_00 (NTSC-U v1.088) build; the README lists no supported disc revisions.",
+      "Building needs CMake 3.25+, Python 3 and a recursive clone with the aurora, borealis and musyx submodules; Windows uses Visual Studio 2019 with the Clang and clang-cl components, macOS needs Xcode 11.5+, and Linux needs the listed Ubuntu, Arch or Fedora packages. README platforms are Windows 10+ (D3D12, Vulkan or D3D11), macOS 10.15+ (Metal), Linux (Vulkan), Android (Vulkan or OpenGL ES) and iOS (Metal); Android also needs SDK Platform 37, the NDK and JDK 17+.",
+      "configure.py still records per-object matching status across ten disc versions for the separate GameCube build, but CI ignores those files and builds only native packages. The reviewed sources publish no fidelity or gameplay checks for the native app, and this collection did not build or run it.",
+      "Metaforce contributors’ code is MIT, and a separate LICENSE.decomp carries CC0 1.0; the reviewed files do not say which directories each covers. Disc content keeps its own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/CMakeLists.txt",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/configure.py",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/src/Metaforce/Runtime.cpp",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/.github/workflows/build.yml",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/.gitmodules",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/platforms/android/README.md",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/LICENSE",
+      "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/LICENSE.decomp",
+      "https://github.com/encounter/aurora/blob/40cf48fce6ce85366608596bae018c6188f2b2e7/README.md"
+    ]
   }
 ]
