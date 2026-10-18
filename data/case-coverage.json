@@ -516,10 +516,13 @@
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "The author’s post (@servasyy_ai, 2026-10-10) says an agent installed REA and analyzed Claude Code’s 47 MB of minified code, running out of memory but still producing a result; it shows only a video, and the quoted post is the author’s general REA overview linking the REA repository. No output, method notes or repository for this investigation is public. Retain the lead without a catalog mapping; neither the findings nor REA’s contribution is established.",
-      "reason_zh": "作者帖子（@servasyy_ai，2026-10-10）称让智能体安装 REA 后分析 Claude Code 47 MB 的压缩代码，内存被耗尽但仍得出结果；帖子只附视频，所引用的帖子是作者对 REA 的概述，仅链接 REA 仓库。此次分析的输出、方法说明或仓库均未公开。保留此线索而不建立目录映射；分析结论及 REA 的作用均未确立。",
+      "reason_en": "Four posts are cited. @servasyy_ai (2026-10-10) says an agent installed REA and analyzed Claude Code’s 47 MB of minified code, running out of memory but still producing a result; it shows only a video, and its quoted post is a general REA overview. @mylifcc reports finding with REA that Claude Code follows the system language setting, with an image; @MingTian685474 only proposes such an analysis; @botkooper says a model chose to decompile the live Claude Code binary, with an image. None links output, method notes or a repository, and the GitHub account in @mylifcc’s profile has none for this finding. Retain the lead without a catalog mapping; neither the findings nor REA’s contribution is established.",
+      "reason_zh": "所引四条帖子中：@servasyy_ai（2026-10-10）称让智能体安装 REA 后分析 Claude Code 47 MB 的压缩代码，内存被耗尽但仍得出结果，帖子只附视频，其引用的帖子是对 REA 的概述；@mylifcc 称借助 REA 发现 Claude Code 依据系统语言设置，仅附一张图片；@MingTian685474 只是提出打算做此类分析；@botkooper 称模型选择直接反编译运行中的 Claude Code 二进制，附一张图片。各帖均未链接输出、方法说明或仓库，@mylifcc 资料中的 GitHub 账号也没有与该发现对应的仓库。保留此线索而不建立目录映射；分析结论及 REA 的作用均未确立。",
       "primary_evidence_urls": [
-        "https://x.com/servasyy_ai/status/2108846931183378537"
+        "https://x.com/servasyy_ai/status/2108846931183378537",
+        "https://x.com/i/status/2110027278570635457",
+        "https://x.com/i/status/2110550597527339230",
+        "https://x.com/i/status/2111020085330481582"
       ],
       "catalog_matches": []
     },
@@ -921,10 +924,11 @@
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "The author’s post (@thinkszyg, 2026-10-11) reports using Codex and REA to reverse-engineer a WeChat mini program’s Bluetooth protocol and build a native status-bar remote that opens a smart toilet’s lid; it includes a screen recording, and the author’s follow-up adds only a photo. Neither post names the device or links code, and the GitHub account in the author’s profile (dososo) has no matching repository. Retain the lead without a catalog mapping; the protocol work and REA’s contribution are unestablished.",
-      "reason_zh": "作者帖子（@thinkszyg，2026-10-11）称与 Codex 一起借助 REA 逆向微信小程序的蓝牙协议，做出可在电脑状态栏控制智能马桶翻盖的原生遥控程序；帖子附录屏，作者的后续帖仅附图片。两条帖子均未说明设备型号，也未链接代码；作者资料中列出的 GitHub 账号（dososo）没有相应仓库。保留此线索而不建立目录映射；协议工作及 REA 的作用均未确立。",
+      "reason_en": "The author’s post (@thinkszyg, 2026-10-11) reports using Codex and REA to reverse-engineer a WeChat mini program’s Bluetooth protocol and build a native Mac status-bar remote that opens a smart toilet’s lid; it includes a screen recording. The author’s replies add a photo and say the approach was later extended to other home devices. No post names the device or links code, and the GitHub account in the author’s profile (dososo) has no matching repository. Retain the lead without a catalog mapping; the protocol work and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@thinkszyg，2026-10-11）称与 Codex 一起借助 REA 逆向微信小程序的蓝牙协议，做出可在 Mac 状态栏控制智能马桶翻盖的原生遥控程序；帖子附录屏。作者的回复另附图片，并称之后把这一做法扩展到家中其他设备。各帖均未说明设备型号，也未链接代码；作者资料中列出的 GitHub 账号（dososo）没有相应仓库。保留此线索而不建立目录映射；协议工作及 REA 的作用均未确立。",
       "primary_evidence_urls": [
-        "https://x.com/thinkszyg/status/2109309251533570509"
+        "https://x.com/thinkszyg/status/2109309251533570509",
+        "https://x.com/thinkszyg/status/2109526361971073103"
       ],
       "catalog_matches": []
     },
