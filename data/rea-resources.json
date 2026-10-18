@@ -2407,5 +2407,37 @@
       "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/LICENSE",
       "https://x.com/rae1101x/status/2111052456151154858"
     ]
+  },
+  {
+    "id": "rea-dino-runner-community-case",
+    "name": "Dinosaur runner: an REA-inspected speed rule rebuilt with Codex",
+    "url": "https://github.com/zhxunzh84/rea-dino-reverse-engineering",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author uses REA’s MCP browser tools to passively capture the JavaScript loaded by wayou’s open-source T-Rex Runner page, then has Codex rebuild its acceleration rule in one self-contained HTML5 Canvas game. The report identifies the captured script by SHA-256 and separates verified source facts from reconstruction choices; only the speed rule is claimed, not full gameplay equivalence.",
+    "description_zh": "作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。",
+    "evidence_url": "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The target is wayou’s open-source, Chromium-derived T-Rex Runner page, not chrome://dino/ or hidden proprietary code; the investigation read JavaScript the browser had already loaded. Only the acceleration rule is reconstructed: start at 6 and add 0.001 per eligible update while below 13, with no elapsed-time factor. Artwork, physics, obstacles and scoring are new or simplified, and the intro, ducking, audio and narrow-screen speed reduction are omitted.",
+      "README and the report record REA MCP list_browser_targets and inspect_web_page calls over a local Chrome DevTools Protocol endpoint, with no navigation, clicks or page evaluation; Codex handled analysis, implementation and tests. Evidence IDs and excerpts come from the author’s REA results, but the full evidence bundle is not published and the live upstream script may change.",
+      "Playing needs only a browser: dino-demo.html is self-contained, with no external assets, packages or build step, and a GitHub Pages copy is linked. The embedded tests run from the page’s Run speed tests button, the browser console or the documented Node.js harness with mocked DOM, Canvas and animation-frame interfaces.",
+      "The author reports 67 of 67 embedded tests passing (15 unit, 52 integration), ten rejected in-memory mutations and seven owner-reported manual browser checks on 2026-10-13 without browser or OS details. Floating-point results such as the extra step past 13 at update 7,001 were measured in the reconstruction, not sampled from the original. There is no CI or cross-browser coverage, and this collection ran nothing.",
+      "The project is MIT-licensed; short original-source excerpts keep the Chromium BSD-style header, and THIRD_PARTY_NOTICES.md reproduces the upstream BSD-3-Clause terms. This third-party repository is separate from REA’s own dinosaur-speed teaching case."
+    ],
+    "targets": [
+      "game",
+      "website"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/reverse-engineering.md",
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/testing.md",
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/lessons-learned.md",
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/dino-demo.html",
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/THIRD_PARTY_NOTICES.md",
+      "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/LICENSE"
+    ]
   }
 ]

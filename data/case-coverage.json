@@ -13867,13 +13867,35 @@
       "reported_source_urls": [
         "https://github.com/zhxunzh84/rea-dino-reverse-engineering"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 130 (README line 1387) lists zhxunzh84/rea-dino-reverse-engineering under 🕹️ Chrome Dinosaur Runner. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. The existing dinosaur-speed teaching case is a distinct artifact, not this repository.",
-      "reason_zh": "项目第 130 行（README 第 1387 行）在 🕹️ Chrome Dinosaur Runner 下列出 zhxunzh84/rea-dino-reverse-engineering。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。现有恐龙加速规则教学案例是另一制品，不是此仓库。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, reverse-engineering report, testing notes, game file and notices document the author’s REA MCP inspection of the open-source T-Rex Runner page and a Codex-built reconstruction of its speed rule. Full mapping covers this repository’s bounded acceleration case, not gameplay equivalence; REA’s separate dinosaur teaching case is linked only as related. Author-reported tests and manual checks were not rerun.",
+      "reason_zh": "固定版本的 README、逆向报告、测试说明、游戏文件及第三方声明，记录了作者使用 REA MCP 检查开源 T-Rex Runner 页面，并由 Codex 重建其速度规则。完整映射覆盖此仓库范围有限的加速规则案例，不代表玩法等价；REA 另行发布的恐龙教学案例仅作为相关条目关联。作者报告的测试与手动检查未经重跑。",
+      "primary_evidence_urls": [
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/reverse-engineering.md",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/testing.md",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/docs/lessons-learned.md",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/dino-demo.html",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/THIRD_PARTY_NOTICES.md",
+        "https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/LICENSE",
+        "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-dino-runner-community-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-dinosaur-speed-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "hao-games:row-131",
@@ -15140,18 +15162,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 165,
-      "insufficient-evidence": 140,
-      "pending": 286
-    },
-    "units_by_state": {
-      "already-curated": 164,
+      "already-curated": 166,
       "insufficient-evidence": 140,
       "pending": 285
     },
-    "primary_reviewed_units": 244,
-    "catalog_linked_occurrences": 176,
-    "distinct_resource_ids": 170,
+    "units_by_state": {
+      "already-curated": 165,
+      "insufficient-evidence": 140,
+      "pending": 284
+    },
+    "primary_reviewed_units": 245,
+    "catalog_linked_occurrences": 177,
+    "distinct_resource_ids": 171,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

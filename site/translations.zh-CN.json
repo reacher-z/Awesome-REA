@@ -2612,5 +2612,15 @@
       "使用前须在 Cheat Engine 中关闭 Settings → Extra → Query memory region routines；README 警告该选项开启时，与 DBVM 或反作弊软件冲突会导致 CLOCK_WATCHDOG_TIMEOUT 蓝屏。DBVM 工具需要先启用 DBVM，内核模式工具依赖 Cheat Engine 的 DBK 驱动。",
       "写内存、分配内存、注入、创建进程、发送窗口消息和模拟按键等工具会改变目标进程或桌面会话。采用 MIT 许可。项目自带的测试脚本需要实际运行的 Cheat Engine 会话；本次未运行桥接、游戏或任何目标进程，不代表任何游戏兼容性，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "rea-dino-runner-community-case": {
+    "name": "恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则",
+    "requirements": [
+      "调查对象是 wayou 的开源 T-Rex Runner 页面（源自 Chromium），不是 chrome://dino/，也不是隐藏的专有代码；调查读取的是浏览器已加载的 JavaScript。仅重建加速规则：从 6 开始，速度低于 13 时每次符合条件的更新加 0.001，不乘以经过时间。美术、物理、障碍物和计分为新写或简化实现，并省略开场动画、下蹲、音频及窄屏降速。",
+      "README 与报告记录了通过本地 Chrome DevTools Protocol 端点调用 REA MCP 的 list_browser_targets 和 inspect_web_page，未进行页面导航、点击或页面内求值；分析、实现和测试由 Codex 完成。证据 ID 与摘录来自作者的 REA 结果，但完整证据包未公开，线上的上游脚本也可能变化。",
+      "运行只需浏览器：dino-demo.html 为自包含文件，无外部素材、依赖包或构建步骤，并附有 GitHub Pages 版本链接。内嵌测试可通过页面上的 Run speed tests 按钮、浏览器控制台，或文档给出的 Node.js 测试脚本（模拟 DOM、Canvas 和动画帧接口）运行。",
+      "作者报告 67 项内嵌测试全部通过（15 项单元测试、52 项集成测试），10 个内存中的变异版本均被测试拒绝，项目所有者另报告于 2026-10-13 完成 7 项手动浏览器检查，但未提供浏览器或操作系统信息。第 7,001 次更新越过 13 多加一步等浮点结果是在重建版本中测得，并非对原游戏采样。没有 CI 或跨浏览器覆盖，本合集未运行任何检查。",
+      "项目采用 MIT 许可；简短的原始源码摘录保留 Chromium 的 BSD 风格版权头，THIRD_PARTY_NOTICES.md 完整转载上游 BSD-3-Clause 条款。此第三方仓库与 REA 官方的恐龙加速教学案例相互独立。"
+    ]
   }
 }
