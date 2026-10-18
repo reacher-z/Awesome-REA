@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 259](https://img.shields.io/badge/resources-259-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 119](https://img.shields.io/badge/cases-119-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 260](https://img.shields.io/badge/resources-260-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 120](https://img.shields.io/badge/cases-120-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (100) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (101) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (119) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (120) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -670,6 +670,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Translates Lost Odyssey’s Xbox 360 PowerPC executable with patched XenonRecomp tooling and runs the generated code on a native runtime that renders through Direct3D 12, Vulkan or Metal. Windows, Linux, macOS and Android packages import the user’s own disc data. The maintainer documents development with Claude Code and Codex CLI and records each release separately from validation and acceptance.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lost-odyssey-recomp-case/)
+
+- [**Super Smash Bros. Melee: a matching GameCube decompilation with a shiftable build**](https://github.com/doldecomp/melee)
+
+  A matching decompilation of Super Smash Bros. Melee's US 1.02 release (GALE01) that rebuilds main.dol from C with the original Metrowerks compilers and checks it against the retail SHA-1. decomp.dev reports the code fully decompiled and linked at the reviewed commit, and the README says current work is mostly naming and cleanup. Because the build can be shifted, a separate non-matching mode lets modders add code to a DOL run with their own disc dump.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/melee-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
