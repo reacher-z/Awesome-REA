@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 287](https://img.shields.io/badge/resources-287-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 145](https://img.shields.io/badge/cases-145-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 55](https://img.shields.io/badge/papers-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 288](https://img.shields.io/badge/resources-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 146](https://img.shields.io/badge/cases-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 55](https://img.shields.io/badge/papers-55-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (127) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (128) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (145) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (146) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -826,6 +826,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements P.T.’s game logic in C++ on a new Vulkan engine that reads levels, models, textures, sounds, scripts and cutscenes from the user’s own PS4 copy at run time. The author documents reverse-engineered file formats and used the shadPS4 emulator as a behavior and frame reference. Fidelity to the original is author-reported, and the use of AI coding tools is disclosed.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pt-pc-port-case/)
+
+- [**SpaghettiKart: a native Mario Kart 64 port built on decompiled source**](https://github.com/HarbourMasters/SpaghettiKart)
+
+  Builds a native Mario Kart 64 port for Windows, Linux, macOS and Switch from source that keeps the Mario Kart 64 decompilation’s file layout, running on libultraship’s reimplemented N64 SDK. Its bundled Torch extractor converts the user’s US ROM into an asset archive, and the port adds mods, custom tracks and an editor. The README does not name its upstream decompilation, and no matching or fidelity checks are published.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/spaghettikart-mk64-port-case/)
 
 #### Tools, projects and integrations
 
