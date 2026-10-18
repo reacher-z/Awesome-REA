@@ -87,9 +87,8 @@ async function main() {
     assert.equal(location.searchParams.get('sort'), 'stars');
     assert.equal(location.searchParams.get('layout'), 'cards');
     assert.equal(location.searchParams.get('keep'), 'yes');
-    element(app, '#language-select').value = language === 'zh' ? 'en' : 'zh';
-    element(app, '#language-select').emit('change');
-    const counterpart = new URL(location.lastNavigation);
+    const other = app.languageLinks.find(link => link.dataset.languageLink === (language === 'zh' ? 'en' : 'zh'));
+    const counterpart = new URL(other.href, location.href);
     assert.equal(counterpart.pathname, language === 'zh' ? '/' : '/zh/');
     assert.equal(counterpart.searchParams.get('sourceq'), 'protobuf');
     assert.equal(counterpart.searchParams.get('q'), 'protobuf');

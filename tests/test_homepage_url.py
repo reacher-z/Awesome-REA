@@ -25,6 +25,9 @@ class HomepageURLTests(unittest.TestCase):
     def test_valid_inactive_filters_and_unrelated_url_parts(self):
         self.check_group('inactive')
 
+    def test_language_links_follow_url_state_and_fragment(self):
+        self.check_group('languageLinks')
+
     def test_same_query_repository_handoff_and_reset(self):
         self.check_group('handoff')
 

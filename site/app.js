@@ -297,7 +297,11 @@ function curatedURL() {
   }
   return next;
 }
-function replaceURL(next) { if (next.href !== location.href) history.replaceState(null, "", next); }
+// Language links are ordinary links to the counterpart homepage; they carry the current query and fragment,
+// and the path, not a legacy ?lang override, selects the language.
+function languageHref(language) { const next = new URL(location.href); next.pathname = language === "zh" ? "/zh/" : "/"; next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
+function syncLanguageLinks() { $$('[data-language-link]').forEach(link => { link.href = languageHref(link.dataset.languageLink); link.setAttribute("aria-current", String(link.dataset.languageLink === state.lang)); }); }
+function replaceURL(next) { if (next.href !== location.href) { history.replaceState(null, "", next); syncLanguageLinks(); } }
 function updateURL() { replaceURL(curatedURL()); }
 function applyLayout() {
   document.documentElement.dataset.layout = state.layout;
@@ -315,7 +319,7 @@ function applyLanguage() {
   $("#browse-directory").href = state.lang === "zh" ? "/zh/browse/" : "/browse/";
   $$('[data-locale-path]').forEach(el => { el.href = `${state.lang === "zh" ? "/zh" : ""}/${el.dataset.localePath}/${el.dataset.localeFragment ? "#" + el.dataset.localeFragment : ""}`; });
   $('meta[property="og:locale:alternate"]')?.setAttribute("content", state.lang === "zh" ? "en_US" : "zh_CN");
-  $("#language-select").value = state.lang;
+  syncLanguageLinks();
   for (const selector of ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]']) $(selector)?.setAttribute("content", t("pageDescription"));
   for (const selector of ['meta[property="og:title"]', 'meta[name="twitter:title"]']) $(selector)?.setAttribute("content", t("pageTitle"));
   $('meta[property="og:locale"]')?.setAttribute("content", state.lang === "zh" ? "zh_CN" : "en_US");
@@ -398,7 +402,7 @@ $("#category-select").addEventListener("change", event => { state.category = eve
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
-$("#language-select").addEventListener("change", event => { const next = new URL(location.href); next.pathname = event.target.value === "zh" ? "/zh/" : "/"; next.searchParams.delete("lang"); location.assign(next); });
+window.addEventListener("hashchange", syncLanguageLinks);
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });

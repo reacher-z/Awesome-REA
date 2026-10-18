@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
 ORIGIN = 'https://awesomerea.org'
 ARROWS = re.compile('[\u2190-\u21ff\u27f0-\u27ff\u2900-\u297f]')
+PRELOAD_DIRECTIVES = {'fetch': 'connect-src', 'script': 'script-src', 'style': 'style-src', 'font': 'font-src', 'image': 'img-src'}
 VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 
 
@@ -327,13 +328,16 @@ class PageResources(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.scripts, self.inline_scripts, self.stylesheets, self.images = [], 0, [], []
-        self.inline_styles, self.handlers, self.embeds = 0, [], []
+        self.inline_styles, self.handlers, self.embeds, self.preloads = 0, [], [], []
+        self.catalog_revision = None
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
         self.handlers.extend(name for name in values if name.startswith('on'))
         self.inline_styles += 'style' in values or tag == 'style'
+        if tag == 'html':
+            self.catalog_revision = values.get('data-catalog-revision')
         if tag == 'script':
             if values.get('src'):
                 self.scripts.append(values['src'])
@@ -345,6 +349,10 @@ class PageResources(HTMLParser):
                 self.stylesheets.append(values['href'])
             elif relations & {'icon', 'apple-touch-icon'}:
                 self.images.append(values['href'])
+            elif 'preload' in relations:
+                # fetch() requests in CORS mode with same-origin credentials; only crossorigin="anonymous" matches it.
+                self.preloads.append({'as': values.get('as'), 'href': values['href'],
+                                      'cors': 'crossorigin' in values and values['crossorigin'] in (None, '', 'anonymous')})
         if tag == 'img' and values.get('src'):
             self.images.append(values['src'])
         if tag in {'iframe', 'object', 'embed', 'base', 'frame'}:
@@ -379,10 +387,23 @@ def validate_security_headers(output):
         for directive, urls in (('script-src', page.scripts), ('style-src', page.stylesheets), ('img-src', page.images)):
             for url in urls:
                 assert csp_allows(directives, directive, url), f'CSP {directive} blocks {url} on {where}'
+        for preload in page.preloads:
+            directive = PRELOAD_DIRECTIVES.get(preload['as'])
+            assert directive and csp_allows(directives, directive, preload['href']), f'CSP blocks the {preload["as"]} preload {preload["href"]} on {where}'
         for url in page.stylesheets:
             # The icon stylesheet loads its fonts relative to its own origin.
             if urlsplit(url).path.endswith('/fontawesome.css'):
                 assert csp_allows(directives, 'font-src', url), f'CSP font-src blocks the fonts of {url}'
+
+
+def validate_catalog_preload(output):
+    """Each homepage preloads exactly the catalog URL app.js fetches for its data revision, and nothing else."""
+    for route in ('index.html', 'zh/index.html'):
+        page = PageResources((Path(output) / route).read_text(encoding='utf-8'))
+        revision = page.catalog_revision
+        assert revision and re.fullmatch(r'[0-9a-f]{16}', revision), f'Homepage needs a data-catalog-revision: /{route}'
+        expected = [{'as': 'fetch', 'href': '/catalog.json?v=' + revision, 'cors': True}]
+        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog.json?v={revision}: /{route} has {page.preloads}'
 
 
 def validate_language_links(route, page):
@@ -797,10 +818,11 @@ def main():
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
     validate_security_headers(OUTPUT)
+    validate_catalog_preload(OUTPUT)
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, the homepage catalog preload and the deployment manifest.')
 
 
 if __name__ == '__main__':

@@ -293,13 +293,18 @@ def localized_homepage(html, app_source, language):
             if marker in attrs: attrs[target] = translated(attrs[marker])
         if tag == 'meta' and attrs.get('name') == 'description':
             attrs['content'] = translated('pageDescription')
-        if tag == 'option' and node['parent'] and node['parent']['attrs'].get('id') == 'language-select':
-            attrs.pop('selected', None)
-            if attrs.get('value') == language: attrs['selected'] = None
         for key in ('src', 'href', 'poster'):
             if key in attrs and isinstance(attrs[key], str): attrs[key] = _root_url(attrs[key])
         if tag == 'a' and 'href' in attrs:
             attrs['href'] = _locale_url(attrs['href'], origin, language)
+        if 'data-language-link' in attrs:
+            # Each language link keeps its own homepage on both pages, so it works before JavaScript runs.
+            link_language = attrs['data-language-link']
+            if tag != 'a' or link_language not in {'en', 'zh'}:
+                raise ValueError('Homepage language links must be en or zh anchors')
+            attrs['href'] = '/zh/' if link_language == 'zh' else '/'
+            attrs.pop('aria-current', None)
+            if link_language == language: attrs['aria-current'] = 'true'
         if attrs.get('data-repo-path') in repository_paths:
             # Chinese pages link the Chinese document; app.js then keeps the localized data-repo-path.
             path, href = attrs['data-repo-path'], attrs.get('href', '')

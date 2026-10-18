@@ -57,7 +57,7 @@ def fixture():
 <a href="/cases/#case">Case directory</a><a href="/resources/#case">Case</a><a href="#catalog">Local</a>
 <a href="https://example.org/papers/#external">External</a><a href="catalog.json?v=abc" download>JSON</a>
 <img src="images/preview.png"><video poster="poster.png"></video>
-<select id="language-select"><option value="en" selected>English</option><option value="zh">简体中文</option></select>
+<div role="group"><a href="/" lang="en" hreflang="en" data-language-link="en" aria-current="true">English</a><a href="/zh/" lang="zh-CN" hreflang="zh-CN" data-language-link="zh">简体中文</a></div>
 </body></html>'''
 
 
@@ -177,11 +177,37 @@ class HomepageLocaleTests(unittest.TestCase):
         self.assertIn('/zh/resources/#game', hrefs)
         self.assertIn('#catalog', hrefs)
         self.assertIn('https://example.org/papers/#external', hrefs)
-        options = {n['attrs']['value']: n['attrs'] for n in nodes(html, 'option')}
-        self.assertNotIn('selected', options['en']); self.assertIn('selected', options['zh'])
         english = localized_homepage(html, APP, 'en')
         self.assertIn('href="/resources/#case"', english)
         self.assertNotIn('/zh/resources/#case', english)
+        # Language links reach their own homepage on both pages; only the page language is current.
+        for page, language in ((html, 'zh'), (english, 'en')):
+            links = {n['attrs']['data-language-link']: n['attrs'] for n in nodes(page, 'a') if 'data-language-link' in n['attrs']}
+            self.assertEqual({key: attrs['href'] for key, attrs in links.items()}, {'en': '/', 'zh': '/zh/'})
+            self.assertEqual({key for key, attrs in links.items() if attrs.get('aria-current') == 'true'}, {language})
+            self.assertEqual({key for key, attrs in links.items() if 'aria-current' in attrs}, {language})
+        for bad in ('<a data-language-link="fr" href="/">Français</a>', '<span data-language-link="zh">中文</span>'):
+            with self.assertRaises(ValueError):
+                localized_homepage(fixture().replace('</body>', bad + '</body>'), APP, 'zh')
+
+    def test_inert_catalog_controls_are_script_only(self):
+        styles = (ROOT / 'site/styles.css').read_text(encoding='utf-8')
+        self.assertIn('@media(scripting:none){.script-only{display:none!important}}', styles)
+        for lang in ('en', 'zh'):
+            with self.subTest(language=lang):
+                html = localized_homepage(TEMPLATE, APP, lang)
+                document = _Document(html).nodes
+                by_id = {n['attrs']['id']: n for n in document if n['attrs'].get('id')}
+                switch = next(n for n in document if 'index-mode-switch' in (n['attrs'].get('class') or '').split())
+                for node in (switch, by_id['curated-view']):
+                    self.assertIn('script-only', node['attrs']['class'].split())
+                # Status regions start empty; app.js writes loading text only once it requests data.
+                for status in ('results-status', 'source-status'):
+                    self.assertEqual(content(html, by_id[status]), '')
+                    self.assertNotIn('data-i18n', by_id[status]['attrs'])
+                # The static directory links come first in the collection section.
+                self.assertLess(html.index('<noscript>'), switch['start'])
+                self.assertGreater(html.index('<noscript>'), by_id['catalog-title']['start'])
 
     def test_output_is_deterministic_and_idempotent(self):
         for lang in ('en', 'zh'):

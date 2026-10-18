@@ -16,7 +16,7 @@ from build_paper_pages import build_paper_pages
 from homepage_locales import HOMEPAGE_DESTINATIONS, _ui_strings
 from open_graph import SOCIAL_CARD, SOCIAL_IMAGE_ALT, open_graph_meta, png_size
 from test_source_browser import full_export
-from validate_site import (Page, csp_directives, header_rules, validate_homepage_destinations,
+from validate_site import (Page, csp_directives, header_rules, validate_catalog_preload, validate_homepage_destinations,
                            validate_open_graph, validate_security_headers)
 
 ORIGIN = 'https://awesomerea.org'
@@ -146,6 +146,7 @@ class SecurityHeaderTests(unittest.TestCase):
     def test_policy_covers_what_pages_load_and_rejects_new_inline_code(self):
         valid = ('<head><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css?v=1">'
                  '<link rel="stylesheet" href="https://awesome-rea.pages.dev/fontawesome.css">'
+                 '<link rel="preload" href="/catalog.json?v=1" as="fetch" crossorigin>'
                  '<script type="application/ld+json">{}</script><script src="/app.js?v=1" defer></script></head>'
                  '<body><script id="data" type="application/json">{}</script></body>')
         self.check(valid)
@@ -157,6 +158,8 @@ class SecurityHeaderTests(unittest.TestCase):
             'third-party script': valid + '<script src="https://cdn.example.org/widget.js"></script>',
             'unlisted icon origin': valid.replace('awesome-rea.pages.dev', 'icons.example.org'),
             'frame': valid + '<iframe src="/"></iframe>',
+            'third-party preload': valid.replace('href="/catalog.json?v=1"', 'href="https://cdn.example.org/catalog.json"'),
+            'untyped preload': valid.replace(' as="fetch"', ''),
         }
         for name, html in failures.items():
             with self.subTest(case=name), self.assertRaises(AssertionError):
@@ -170,6 +173,38 @@ class SecurityHeaderTests(unittest.TestCase):
                 self.check(valid, changed)
         # A staged rollout may use the Report-Only header with the same policy.
         self.check(valid, headers.replace('Content-Security-Policy:', 'Content-Security-Policy-Report-Only:'))
+
+
+class CatalogPreloadTests(unittest.TestCase):
+    REVISION = '0123456789abcdef'
+
+    def check(self, english, chinese=None):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            (output / 'zh').mkdir()
+            for path, head in (('index.html', english), ('zh/index.html', english if chinese is None else chinese)):
+                (output / path).write_text(f'<html data-catalog-revision="{self.REVISION}" lang="en"><head>{head}'
+                                           '<script src="/app.js?v=1" defer></script></head><body></body></html>', encoding='utf-8')
+            validate_catalog_preload(output)
+
+    def test_preload_must_be_the_revision_stamped_catalog_fetch(self):
+        valid = f'<link rel="preload" href="/catalog.json?v={self.REVISION}" as="fetch" crossorigin>'
+        self.check(valid)
+        self.check(valid.replace('crossorigin', 'crossorigin="anonymous"'))
+        failures = {
+            'missing': '',
+            'stale revision': valid.replace(self.REVISION, 'fedcba9876543210'),
+            'no CORS mode': valid.replace(' crossorigin', ''),
+            'credentialed': valid.replace('crossorigin', 'crossorigin="use-credentials"'),
+            'wrong destination': valid.replace('as="fetch"', 'as="script"'),
+            'repository payload': valid + valid.replace('catalog.json', 'source-browser.json'),
+            'duplicate': valid + valid,
+        }
+        for name, head in failures.items():
+            with self.subTest(case=name), self.assertRaises(AssertionError):
+                self.check(head)
+            with self.subTest(case=name + ' on /zh/'), self.assertRaises(AssertionError):
+                self.check(valid, head)
 
 
 if __name__ == '__main__':

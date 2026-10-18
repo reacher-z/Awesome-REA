@@ -233,6 +233,12 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
     data_revision = data_digest.hexdigest()[:16]
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
+    # Start the catalog request while the page parses. The URL and CORS mode match app.js's
+    # fetch(dataURL("catalog.json")), so that fetch reuses this response; source-browser.json stays on demand.
+    script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
+    if html.count(script_tag) != 1:
+        raise ValueError("Homepage needs exactly one deferred app.js script")
+    html = html.replace(script_tag, f'<link rel="preload" href="/catalog.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
     # Both entry pages contain their own language before JavaScript runs.
     app_source = (SOURCE / "app.js").read_text(encoding="utf-8")
     (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")

@@ -48,11 +48,12 @@ input::placeholder{color:var(--muted);opacity:1}
 .brand-mark{display:flex;align-items:center;position:relative;width:33px;height:33px;padding:0 5px;background:var(--ink);color:var(--surface);border-radius:8px;font:29px/1 var(--mono)}
 .brand-mark span{position:absolute;right:3px;top:0;font-size:17px;color:var(--accent)}
 .header-nav{display:flex;align-items:center;gap:24px;font-size:13px}
-.language-picker{position:relative;display:flex;align-items:center;gap:9px;min-height:40px;padding-left:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
-.language-picker:hover{border-color:var(--strong)}
-.language-picker select{appearance:none;border:0;background:transparent;min-height:38px;padding:8px 30px 8px 0;font:13px var(--sans);cursor:pointer;max-width:118px}
-.language-picker>.icon{width:17px;height:17px;pointer-events:none;font-size:17px;color:var(--muted)}
-.language-picker>.language-chevron{position:absolute;right:11px;width:10px;height:10px;font-size:10px}
+/* Two ordinary links instead of a select, so arrow keys never navigate; the current language is marked. */
+.language-switch{display:flex;align-items:center;gap:2px;min-height:40px;padding:0 3px 0 11px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.language-switch>.icon{width:17px;height:17px;margin-right:5px;font-size:17px;color:var(--muted)}
+.language-switch a{display:inline-flex;align-items:center;min-height:32px;padding:4px 8px;border-radius:6px;color:var(--muted);white-space:nowrap}
+.language-switch a:hover{color:var(--ink);background:var(--soft)}
+.language-switch a[aria-current="true"]{color:var(--ink);font-weight:650;background:var(--tint)}
 .fa-symbol.fa-globe::before{content:"\f0ac"}
 .fa-symbol.fa-gamepad::before{content:"\f11b"}
 .github-link{display:inline-flex;align-items:center;gap:8px;min-height:40px;font-weight:600}
@@ -166,6 +167,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .load-more-row>p{margin:12px 0 0;font:12px/1.6 var(--sans);color:var(--muted)}
 .noscript-note{padding:24px 0}
 .noscript-note a{text-decoration:underline}
+/* Without scripting, the noscript directory links take the place of the catalog's inert controls. */
+@media(scripting:none){.script-only{display:none!important}}
 .site-footer{border-top:1px solid var(--line);padding:28px 0;background:var(--paper)}
 .footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .footer-top p{margin:0;color:var(--muted);font-size:13px}
@@ -196,8 +199,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .wordmark{font-size:21px;gap:9px}
   .brand-mark{width:30px;height:30px;font-size:27px}
   .header-nav{gap:12px}
-  .language-picker{min-height:38px;gap:7px;padding-left:10px}
-  .language-picker select{min-height:36px;font-size:13px;max-width:110px}
+  .language-switch{min-height:38px;padding-left:9px}
   .submit-link{font-size:12px;padding:8px 11px}
   .submit-link>.icon{display:none}
   .collection-intro{padding:24px 0 18px}
@@ -233,7 +235,6 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .header-nav>.github-link,.header-nav>.submit-link{display:none}
   /* The footer takes over the hidden header submission link, with 24px link targets. */
   .collection-home .footer-links a{display:inline-flex;align-items:center;min-height:24px}
-  .language-picker select{max-width:105px}
   .collection-intro h1{font-size:32px}
   html[lang="zh-CN"] .collection-intro h1{font-size:33px;letter-spacing:-.6px}
   .index-mode-switch{gap:20px}
@@ -343,7 +344,7 @@ html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
 .footer-bottom{font-size:13px}
 html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description,html[lang="zh-CN"] .requirements ul{max-width:36em;line-height:1.85}
 @media(max-width:900px){.resource-grid,.source-results{grid-template-columns:1fr}.resource-card,.source-card{padding:24px}}
-@media(max-width:700px){.source-field>input,.source-field>select,.target-filter{min-height:44px}.source-field>input,.source-field>select{font-size:16px}.resource-card,.source-card{padding:22px}.collection-note,.collection-note>a,.collection-note summary,.results-topline p{font-size:14px}.home-intro .collection-description{font-size:16px}.subject-directory a{font-size:14px}.language-picker select{font-size:16px}}
+@media(max-width:700px){.source-field>input,.source-field>select,.target-filter{min-height:44px}.source-field>input,.source-field>select{font-size:16px}.resource-card,.source-card{padding:22px}.collection-note,.collection-note>a,.collection-note summary,.results-topline p{font-size:14px}.home-intro .collection-description{font-size:16px}.subject-directory a{font-size:14px}}
 @media(max-width:520px){.source-record-details dl{grid-template-columns:minmax(0,1fr);gap:3px}.source-record-details dd{margin-bottom:12px}.home-intro .collection-directory a{font-size:12px}.home-intro .collection-directory .directory-about{font-size:13px}.hero-text-link{font-size:13px}.collection-note details[open]{padding:13px}}
 @media(max-width:420px){.target-filter{font-size:14px;padding-inline:7px;gap:5px}.search-box{padding-inline:13px}}
 @media(max-width:360px){.source-target-filters,.group-filters,.subject-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.source-field{flex-basis:100%}}
@@ -352,12 +353,13 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
   .wordmark{font-size:18px;gap:6px;letter-spacing:-.6px}
   .brand-mark{width:28px;height:28px;font-size:24px}
   .header-nav{gap:0}
-  .language-picker{padding-left:8px;gap:0}
-  .language-picker>.icon:not(.language-chevron){display:none}
-  .language-picker select{padding-right:24px;font-size:16px}
-  .language-picker>.language-chevron{right:8px}
+  .language-switch{padding:0 2px;gap:0}
+  .language-switch>.icon{display:none}
+  .language-switch a{padding-inline:6px}
   .header-nav .browse-language,.header-nav .papers-language{padding-inline:9px}
 }
+/* Both language names still fit beside the wordmark inside the 16px gutters at 320px. */
+@media(max-width:340px){.language-switch{padding-inline:1px}.language-switch a{padding-inline:3px;font-size:12px}}
 .clear-button{white-space:nowrap}
 
 /* Compact entries follow one reading path: title, summary, then links and evidence. */
@@ -416,4 +418,5 @@ html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,htm
   .index-mode{margin-bottom:0;border-bottom-color:Canvas}
   .index-mode.active,.collection-home .index-mode.active{border-bottom-color:Highlight}
   .button-primary{border:1px solid ButtonBorder}
+  .language-switch a[aria-current="true"]{text-decoration:underline;text-underline-offset:4px}
 }

@@ -4,6 +4,8 @@ const {setup} = require('./protocol_target_ui.cjs');
 const settle = () => new Promise(resolve => setImmediate(resolve));
 const element = (app, selector) => app.elements.get(selector);
 const value = (app, key) => app.context.location.searchParams.get(key);
+const languageLink = (app, language) => app.languageLinks.find(link => link.dataset.languageLink === language);
+const languageTarget = (app, language) => new URL(languageLink(app, language).href, app.context.location.href);
 
 function application(query = '', {pathname = '/', unavailable = false, catalogFailure = false} = {}) {
   const app = setup(query, {pathname});
@@ -146,8 +148,7 @@ const tests = {
       for (const [key, expected] of Object.entries(saved)) assert.equal(value(app, key), expected);
       assert.equal(app.context.location.hash, '#details');
       assert.deepEqual(Array.from(app.context.location.searchParams.getAll('keep')), ['x', 'y']);
-      input(app, '#language-select', 'en', 'change');
-      const navigation = new URL(app.context.location.lastNavigation);
+      const navigation = languageTarget(app, 'en');
       assert.equal(navigation.pathname, '/');
       assert.equal(navigation.searchParams.has('lang'), false);
       for (const [key, expected] of Object.entries(saved)) assert.equal(navigation.searchParams.get(key), expected);
@@ -163,6 +164,47 @@ const tests = {
       assert.equal(value(app, 'sourceq'), text);
       assert.equal(value(app, 'topic'), text);
     }
+  },
+  async languageLinks() {
+    for (const pathname of ['/', '/zh/']) {
+      const language = pathname === '/zh/' ? 'zh' : 'en';
+      const app = application('?q=ghidra&target=binary#catalog', {pathname});
+      assert.equal(app.languageLinks.length, 2, 'the header has one link per homepage');
+      const expect = suffix => {
+        assert.equal(languageLink(app, 'en').href, '/' + suffix);
+        assert.equal(languageLink(app, 'zh').href, '/zh/' + suffix);
+      };
+      // Before the catalog loads, the links already carry the current state.
+      expect('?q=ghidra&target=binary#catalog');
+      for (const link of app.languageLinks) assert.equal(link.attrs['aria-current'], String(link.dataset.languageLink === language));
+      await app.api.load();
+      expect('?q=ghidra&target=binary#catalog');
+      input(app, '#search-input', 'mitm proxy');
+      input(app, '#layout-select', 'cards', 'change');
+      expect('?q=mitm+proxy&target=binary&layout=cards#catalog');
+      element(app, '#mode-sources').emit('click'); await settle();
+      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#catalog');
+      // Fragment navigation does not pass through replaceState.
+      app.context.location.hash = '#contributors'; app.windowListeners.hashchange();
+      expect('?q=mitm+proxy&target=binary&layout=cards&view=source-index#contributors');
+      element(app, '#mode-curated').emit('click'); element(app, '#empty-reset').emit('click');
+      input(app, '#layout-select', 'compact', 'change');
+      expect('#contributors');
+      assert.equal(app.context.location.lastNavigation, undefined, 'the links navigate only when activated');
+    }
+    // A legacy ?lang override marks its own language as current; the destination paths drop it.
+    for (const [pathname, override] of [['/', 'zh'], ['/zh/', 'en']]) {
+      const app = application(`?lang=${override}&target=game#catalog`, {pathname});
+      await app.api.load();
+      for (const link of app.languageLinks) assert.equal(link.attrs['aria-current'], String(link.dataset.languageLink === override));
+      assert.equal(languageLink(app, 'en').href, '/?target=game#catalog');
+      assert.equal(languageLink(app, 'zh').href, '/zh/?target=game#catalog');
+    }
+    // Normalizing rejected filters updates the links in the same step as the address.
+    const rejected = application('?category=bogus&keep=1#catalog');
+    assert.equal(languageLink(rejected, 'zh').href, '/zh/?category=bogus&keep=1#catalog');
+    await rejected.api.load();
+    assert.equal(languageLink(rejected, 'zh').href, '/zh/?keep=1#catalog');
   },
   async handoff() {
     for (const pathname of ['/', '/zh/']) {

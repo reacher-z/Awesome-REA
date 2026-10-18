@@ -50,7 +50,7 @@ function setup({brokenDetails = false} = {}) {
     scope: {scanned_count: rows.length, excluded_count: 0, browse_count: rows.length}}, resources: rows};
   const location = new URL('https://awesomerea.org/?view=curated');
   location.assign = () => {};
-  const context = {document, location, URL, URLSearchParams, console,
+  const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
     fetch: async url => ({ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: rows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser})};
   vm.createContext(context);

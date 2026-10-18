@@ -71,7 +71,7 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
   const location = new URL('https://awesomerea.org/' + query);
   location.assign = next => { location.lastNavigation = String(next); };
   const responses = {catalog, browser};
-  const context = {document, location, URL, URLSearchParams, console,
+  const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
     fetch: async url => {
       const body = responses[new URL(url).pathname === '/catalog.json' ? 'catalog' : 'browser'];

@@ -29,6 +29,9 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   const repositoryLinks = [...html.matchAll(/<a[^>]+data-repo-path="([^"]*)"[^>]*>/g)].map(match => {
     const node = new Element('a'); node.dataset.repoPath = match[1]; return node;
   });
+  const languageLinks = [...html.matchAll(/<a[^>]+data-language-link="([^"]+)"[^>]*>/g)].map(match => {
+    const node = new Element('a'); node.dataset.languageLink = match[1]; return node;
+  });
   const protocolLabels = [new Element('span'), new Element('span')];
   protocolLabels.forEach(node => node.dataset.i18n = 'targetProtocol');
   const document = {baseURI: 'https://awesomerea.org/', documentElement: {dataset: {}}, activeElement: {tagName: 'BODY'},
@@ -41,6 +44,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
       if (selector === '[data-source-target]') return buttons.filter(node => node.dataset.sourceTarget);
       if (selector === '[data-i18n]') return protocolLabels;
       if (selector === '[data-repo-path]') return repositoryLinks;
+      if (selector === '[data-language-link]') return languageLinks;
       return [];
     }, createElement: tag => new Element(tag), createElementNS: (_, tag) => new Element(tag),
     createDocumentFragment: () => new Element('fragment'), addEventListener() {}};
@@ -55,12 +59,13 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   const location = new URL('https://awesomerea.org' + pathname + query);
   const requests = [];
   location.assign = next => { location.lastNavigation = String(next); };
-  const context = {document, location, URL, URLSearchParams, console,
+  const windowListeners = {};
+  const context = {document, location, URL, URLSearchParams, console, window: {addEventListener(event, callback) { windowListeners[event] = callback; }},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
     fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);
-  return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, requests};
+  return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, languageLinks, windowListeners, requests};
 }
 module.exports = {setup};
 
@@ -123,9 +128,8 @@ if (require.main === module) (async () => {
   await chinese.api.load();
   assert.equal(chinese.api.state.lang, 'zh');
   assert(chinese.requests.every(url => !new URL(url).pathname.startsWith('/zh/')));
-  const picker = chinese.elements.get('#language-select');
-  picker.value = 'en'; picker.emit('change');
-  const switched = new URL(chinese.context.location.lastNavigation);
+  const english = chinese.languageLinks.find(link => link.dataset.languageLink === 'en');
+  const switched = new URL(english.href, chinese.context.location.href);
   assert.equal(switched.pathname, '/');
   assert.equal(switched.searchParams.get('target'), 'protocol');
   assert.equal(switched.hash, '#catalog');
