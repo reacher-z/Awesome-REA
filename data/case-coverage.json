@@ -1173,12 +1173,14 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/pull/738"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Merged REA PR #738 adds five static Android operations through headless JADX: package and manifest inspection, class search, member and selected-method Java/smali inspection, and static caller tracing. It reports a verification lane on Appium's public ApiDemos 6.0.18 APK in which all five CLI and MCP operations passed without executing the APK. This validates a tool integration, not a reconstruction: no ApiDemos feature or behavior is rebuilt or compared. Retain the lead without a catalog mapping; this does not question the reported verification.",
+      "reason_zh": "已合并的 REA PR #738 通过无界面 JADX 新增五项静态 Android 操作：包与清单检查、类搜索、成员及选定方法的 Java／smali 检查，以及静态调用者追踪。PR 报告了一条基于 Appium 公开 ApiDemos 6.0.18 APK 的验证流程，五项 CLI 与 MCP 操作均通过，且未执行该 APK。这验证的是工具集成，而非重建：没有重建或对照 ApiDemos 的任何功能或行为。保留此线索而不建立目录映射；这不质疑所报告的验证结果。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/pull/738"
+      ],
       "catalog_matches": []
     },
     {
@@ -13240,15 +13242,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 62,
-      "pending": 467
+      "insufficient-evidence": 63,
+      "pending": 466
     },
     "units_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 62,
-      "pending": 466
+      "insufficient-evidence": 63,
+      "pending": 465
     },
-    "primary_reviewed_units": 69,
+    "primary_reviewed_units": 70,
     "catalog_linked_occurrences": 69,
     "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
