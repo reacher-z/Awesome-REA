@@ -2950,5 +2950,15 @@
       "结果是作者在一次调试过程中的观察，本合集未重做。文章称该流程非常依赖手工操作，并说明 gdbgui 未能在该环境下正常使用。文中自动生成的名称后来已更改：在所审阅的提交 7600c79 中，symbol_addrs.txt 将 0x8003D560 命名为 initRace，将 0x800AFE8C 命名为 gGameSessionContext，脚注链接的 src/3E160.c 也已不在源码树中。",
       "文章记录的是手动调试，未提及 AI 或 REA 的使用；借助 LLM 的匹配工作另见 Snowboard Kids 2 案例条目。所审阅提交中的反编译仓库没有许可证文件，游戏 ROM 及其内容仍受各自权利约束。"
     ]
+  },
+  "re2ds-nds-engine-case": {
+    "name": "re2ds：Resident Evil 2 的原生 Nintendo DS 引擎",
+    "requirements": [
+      "所审阅的提交针对 PS1 PAL 版（SLES-00972）的第一张光盘，即 Leon 篇。README 报告已覆盖第一张光盘的全部 125 个房间、可执行该光盘所用全部操作码的脚本解释器、丧尸、下屏状态菜单、音效、语音、开场动画及打字机存档；同时列出地图与文件、其他敌人类型、其余动画以及 Claire 光盘仍缺失。这是原生引擎，不是模拟器、匹配反编译或完整移植。",
+      "需要使用者自有的 Resident Evil 2 PAL 第一张光盘的 .bin/.cue 镜像，且只使用 Track 1；本地转换会生成约 290 MB 的 DS 数据。仓库声明不含任何游戏数据，并说明生成的 build/、nitrofiles/ 及 re2ds.nds 含有 Capcom 的数据，绝不能提交或分享。",
+      "构建需要 devkitARM 与 libnds（devkitPro nds-dev）、Python 3、FFmpeg 及其开发库、C 编译器和 pkg-config。Windows 下在 WSL Ubuntu 中构建；未找到本地 devkitARM 时，make 会改用 devkitPro 的 Docker 镜像。README 使用 melonDS 运行 ROM，存档需要设置 DLDI SD 卡，并附有一张标注为在 Nintendo DSi XL 上运行的照片。",
+      "宿主测试会在 PC 上编译与平台无关的脚本、敌人和过场代码，并以使用者转换出的数据运行；脚本测试会报告未知操作码，scd_disasm.py --check 会校验所有房间的跳转目标。分析笔记引用 PS1 地址，并区分观察所得与推测的行为。psxexe_to_elf.py 把可执行文件和符号列表包装成 REA 的 Ghidra 通道可接受的 MIPS ELF；Claude Code 的使用只见于 Reddit 帖，且未量化。本目录未构建或运行该引擎。",
+      "所审阅的提交中没有许可证文件。README 说明，若干转换工具以采用 MIT 许可的 OpenBiohazard2 重新实现项目的文件格式成果和脚本操作码表为起点。Capcom 的游戏数据、动画和音频不在仓库中，仍受其各自权利约束。"
+    ]
   }
 }

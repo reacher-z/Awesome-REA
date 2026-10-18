@@ -2535,5 +2535,37 @@
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/.github/workflows/ci.yml",
       "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/LICENSE"
     ]
+  },
+  {
+    "id": "re2ds-nds-engine-case",
+    "name": "re2ds: a native Nintendo DS engine for Resident Evil 2",
+    "url": "https://github.com/eray1605/re2ds",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. A helper wraps the PS1 executable as an ELF for REA’s Ghidra lane, analysis notes name the PS1 functions and tables each part follows, and the Reddit post linking it credits REA and Claude Code. Leon’s disc 1 is reported playable, while Claire’s disc, most enemy types and some menus remain unfinished.",
+    "description_zh": "在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。辅助脚本把 PS1 可执行文件包装成 ELF，供 REA 的 Ghidra 通道分析；分析笔记注明各部分所依据的 PS1 函数与数据表，链接该项目的 Reddit 帖称其借助 REA 和 Claude Code 完成。据报告 Leon 第一张光盘已可游玩，Claire 光盘、多数敌人类型和部分菜单仍未完成。",
+    "evidence_url": "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit targets the PAL PS1 release (SLES-00972), disc 1 with Leon. README reports all 125 disc 1 rooms, a script interpreter covering every opcode used on that disc, zombies, the lower-screen status menu, sound, voices, the opening movies and typewriter saves; it lists the map and files, other enemy types, the remaining movies and Claire’s disc as missing. It is a native engine, not an emulator, a matching decompilation or a complete port.",
+      "Requires the user’s own Resident Evil 2 PAL disc 1 as a .bin/.cue dump, of which only Track 1 is used; local conversion produces about 290 MB of DS data. The repository states that it contains no game data and that the generated build/, nitrofiles/ and re2ds.nds outputs contain Capcom data that must never be committed or shared.",
+      "Building uses devkitARM and libnds (devkitPro nds-dev), Python 3, FFmpeg with its development libraries, a C compiler and pkg-config. Windows builds run in WSL Ubuntu, and make falls back to devkitPro’s Docker image when no local devkitARM is found. The README plays the ROM in melonDS, needs DLDI SD-card setup for saves and shows a photo captioned as running on a Nintendo DSi XL.",
+      "Host tests compile the platform-independent script, enemy and cutscene code for a PC and run it against the user’s converted data; the script test reports unknown opcodes, and scd_disasm.py --check validates jump targets across rooms. Analysis notes cite PS1 addresses and mark observed versus assumed behavior. psxexe_to_elf.py wraps the executable and symbol lists as a MIPS ELF accepted by REA’s Ghidra lane; Claude Code use is stated only in the Reddit post and is not quantified. This catalog did not build or run the engine.",
+      "No license file is present at the reviewed commit. The README credits the MIT-licensed OpenBiohazard2 reimplementation’s file-format work and script opcode table as the starting point for several converters. Capcom’s game data, movies and audio stay outside the repository and retain their own rights."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/ROADMAP.md",
+      "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/Makefile",
+      "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/.gitignore",
+      "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/docs/engine-notes.md",
+      "https://github.com/eray1605/re2ds/blob/f1e120ec50f6b072d7283a2d3dd35611d656c9b7/tools/research/psxexe_to_elf.py",
+      "https://www.reddit.com/r/ReverseEngineering/comments/1x85dp5/a_port_of_resident_evil_2_for_the_nintendo_ds/",
+      "https://github.com/OpenBiohazard2/OpenBiohazard2/blob/173f900d174a41af56bd478692892254a2e31aae/LICENSE.md"
+    ]
   }
 ]
