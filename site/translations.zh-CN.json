@@ -2603,5 +2603,14 @@
       "从源码构建使用 meson 和 ninja；meson.build 要求 meson 0.58.0+，而 README 提到的是 0.55.0。README 列出的宿主系统包括 Windows 7+、macOS/iOS/iPadOS、GNU/Linux、各 BSD、Android、QNX、Solaris/Illumos、Haiku 和 GNU/Hurd。rzpipe 位于独立仓库；插件（包括反编译器插件）未经审阅。",
       "meson.build 声明 LGPL-3.0-only，并附 COPYING 和 COPYING.LESSER；LICENSES 目录还收录了个别文件所用的其他许可证。未实际验证所列的架构和格式支持；本次未分析任何二进制。"
     ]
+  },
+  "cheatengine-mcp-bridge": {
+    "name": "Cheat Engine MCP Bridge 进程内存分析桥接",
+    "requirements": [
+      "需要 Windows 和 Cheat Engine；在 Cheat Engine 中执行 MCP_Server/ce_mcp_bridge.lua 即可加载桥接，仓库附带的 Lua 参考文档对应 Cheat Engine 7.6。Python MCP 服务器需要 Python 3.10+、mcp>=1.28,<2（尚不支持 MCP SDK v2 API），原生命名管道模式还需 pywin32，且仅限 Windows。仓库没有 GitHub 发布版本；README 将代码标为 v12.0.0，所审阅的 main 提交日期为 2026-08-14。",
+      "TCP 中继（ce_tcp_relay.py，默认 127.0.0.1:9876）可让 MCP 服务器在 Windows 主机之外运行。README 警告任何能访问该中继的人都能控制桥接，并要求只绑定可信的网络接口。除非启动时设置 CE_MCP_ALLOW_SHELL=1，Python MCP 服务器中的 run_command 与 shell_execute 均保持禁用。",
+      "使用前须在 Cheat Engine 中关闭 Settings → Extra → Query memory region routines；README 警告该选项开启时，与 DBVM 或反作弊软件冲突会导致 CLOCK_WATCHDOG_TIMEOUT 蓝屏。DBVM 工具需要先启用 DBVM，内核模式工具依赖 Cheat Engine 的 DBK 驱动。",
+      "写内存、分配内存、注入、创建进程、发送窗口消息和模拟按键等工具会改变目标进程或桌面会话。采用 MIT 许可。项目自带的测试脚本需要实际运行的 Cheat Engine 会话；本次未运行桥接、游戏或任何目标进程，不代表任何游戏兼容性，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

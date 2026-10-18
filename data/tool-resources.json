@@ -6109,5 +6109,34 @@
       "https://github.com/rizinorg/rizin/tree/db112e55614b8635b42d7515a2790ca9fb4e5d05/LICENSES",
       "https://github.com/rizinorg/rizin/releases/tag/v0.9.1"
     ]
+  },
+  {
+    "id": "cheatengine-mcp-bridge",
+    "name": "Cheat Engine MCP Bridge",
+    "url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Connects MCP clients to Cheat Engine through a Lua bridge script and a Python MCP server, so an agent can inspect a process the user runs under Cheat Engine: memory reads and value scans, pointer-chain resolution, structure dissection, RTTI class names, disassembly, cross-references and hardware or DBVM breakpoints. Further tool groups write memory, inject DLLs or code, automate input and use Cheat Engine's kernel-mode driver. The README limits it to educational and research use and disclaims multiplayer cheating and Terms of Service violations.",
+    "description_zh": "通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能够检查用户在 Cheat Engine 下运行的进程：读取内存与扫描数值、解析指针链、剖析结构体、识别 RTTI 类名、反汇编、查找交叉引用，以及设置硬件或 DBVM 断点。另有工具组可写入内存、注入 DLL 或代码、自动化输入，并调用 Cheat Engine 的内核模式驱动。README 将其限定于教学和研究用途，并声明不支持多人游戏作弊或违反服务条款的行为。",
+    "evidence_url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows with Cheat Engine; the bridge is loaded by executing MCP_Server/ce_mcp_bridge.lua from Cheat Engine, and the repository's bundled Lua reference documents Cheat Engine 7.6. The Python MCP server needs Python 3.10+, mcp>=1.28,<2 (the MCP SDK v2 API is not yet supported) and pywin32 for the native named-pipe mode, which is Windows-only. There are no GitHub releases; the README labels the code v12.0.0, and the reviewed main commit is dated 2026-08-14.",
+      "A TCP relay (ce_tcp_relay.py, default 127.0.0.1:9876) lets the MCP server run outside the Windows host. The README warns that anyone who can reach the relay can control the bridge and says to bind it to trusted interfaces only. run_command and shell_execute stay disabled in the Python MCP server unless CE_MCP_ALLOW_SHELL=1 is set at startup.",
+      "Before use, disable Settings → Extra → Query memory region routines in Cheat Engine; the README warns that leaving it enabled causes CLOCK_WATCHDOG_TIMEOUT blue screens with DBVM or anti-cheat software. DBVM tools need DBVM enabled, and kernel-mode tools rely on Cheat Engine's DBK driver.",
+      "Memory-write, allocation, injection, process-creation, window-message and key-press tools change the target or the desktop session. MIT. The project's test script needs a live Cheat Engine session; no bridge, game or target process was run here, no game compatibility is implied, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/MCP_Server/requirements.txt",
+      "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/MCP_Server/ce_tcp_relay.py",
+      "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/MCP_Server/mcp_cheatengine.py",
+      "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/LICENSE"
+    ]
   }
 ]
