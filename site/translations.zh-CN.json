@@ -2118,5 +2118,15 @@
       "README 未公布字节一致或保真度检查。大多数受支持的 ROM 修改版尚未充分测试，CI 每夜构建仅供试玩且可能崩溃；本合集未构建或运行。",
       "仓库以 CC0 1.0 发布；子模块保留各自许可证，游戏本身不在许可范围内。README 披露曾借助 AI 收集信息，并按 HarbourMasters 政策接受使用 AI 的拉取请求；所审来源未记录 REA 使用。"
     ]
+  },
+  "lost-odyssey-recomp-case": {
+    "name": "Lost Odyssey Recomp：将 Xbox 360 角色扮演游戏静态重编译为原生移植",
+    "requirements": [
+      "所审 main 快照晚于 v1.0.4（2026-10-18），安装包覆盖支持 AVX 的 Windows x64、Linux x64 AppImage／Flatpak、Apple Silicon 上的 macOS 15+，以及支持 Vulkan 的 64 位 Android 8.0+。STATUS.md 和 ROADMAP.md 将每个版本记录为已发布但未经维护者验收。这是对已发行可执行文件的静态重编译，不是恢复出的原作者源码，也不是通用 Xbox 360 模拟器。",
+      "玩家需从一套受支持的四碟版本导入数据：亚洲多语言版或美欧版（Title ID 4D5307FA）；必须有第 1 碟，DLC 可选，其他地区版本、标题更新和修改过的 XEX 均不受支持。源码构建使用亚洲多语言版第 1 碟的 default.xex、LO.fpi 及资源归档，且 BUILDING.md 仍称四碟集成尚未完成。游戏数据和生成代码均不纳入仓库。",
+      "构建需 XenonRecomp、XenosRecomp、plume、SDL 3 等子模块并应用项目补丁，另需 Python 3.11+、CMake 3.28+、Ninja 和 Clang：Windows 10 1803+ 上使用 Visual Studio 2022 Build Tools 的 clang-cl，Linux 上使用 Clang／LLD 及 Vulkan 驱动。tools/ppc_codegen.py 会在构建运行时之前于本地重新生成客体代码源文件。",
+      "STATUS.md 将实现、验证、验收和发布分开记录；例如 v1.0.4 的存档修复通过了逻辑审查、一项 CPU 测试夹具和 Release 链接，但未在游戏中运行。超分辨率与渲染检查只针对列明的有限测试夹具和 GPU。工作流指南说明，发布不代表游戏已从头到尾通关；本合集未运行任何内容。",
+      "项目代码采用 GPL-3.0；Lost Odyssey 及其素材归各自权利人所有，Xenia FFmpeg 分支、DXC、可选的 DLSS／FSR／XeSS SDK 及 Android GPU 驱动等依赖保留各自条款。docs/AI_WORKFLOW.md 说明由一名维护者以 Claude Code 作为主会话，并配合 Codex CLI 与子代理开发；文档提到 Ghidra 脚本和第三方逆向技能，但未确立 REA 使用。"
+    ]
   }
 }

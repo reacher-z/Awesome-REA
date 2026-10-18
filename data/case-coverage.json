@@ -11979,13 +11979,30 @@
       "reported_source_urls": [
         "https://github.com/freefrank/LostOdysseyRecomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 77 (README line 769) lists freefrank/LostOdysseyRecomp under 🧙 Lost Odyssey. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 77 行（README 第 769 行）在 🧙 Lost Odyssey 下列出 freefrank/LostOdysseyRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build, installation, status and AI-workflow documents support an Xbox 360 static-recompilation port built with patched XenonRecomp tooling, with releases published but not maintainer-accepted. Full mapping covers this port. User-supplied disc data, edition limits, Claude Code/Codex assistance and the absence of independent runtime checks remain explicit.",
+      "reason_zh": "固定版本的 README 以及构建、安装、状态和 AI 工作流文档，支持这一使用打过补丁的 XenonRecomp 工具构建的 Xbox 360 静态重编译移植，其版本已发布但未经维护者验收。完整映射覆盖此移植。自备光盘数据、版本限制、Claude Code／Codex 辅助及缺少独立运行检查均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/BUILDING.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/INSTALLING.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/STATUS.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/AI_WORKFLOW.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/notes/recomp.md",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/.gitmodules",
+        "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/LICENSE",
+        "https://github.com/freefrank/LostOdysseyRecomp/releases/tag/v1.0.4"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lost-odyssey-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-078",
@@ -14396,18 +14413,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 124,
-      "insufficient-evidence": 98,
-      "pending": 369
-    },
-    "units_by_state": {
-      "already-curated": 123,
+      "already-curated": 125,
       "insufficient-evidence": 98,
       "pending": 368
     },
-    "primary_reviewed_units": 162,
-    "catalog_linked_occurrences": 135,
-    "distinct_resource_ids": 129,
+    "units_by_state": {
+      "already-curated": 124,
+      "insufficient-evidence": 98,
+      "pending": 367
+    },
+    "primary_reviewed_units": 163,
+    "catalog_linked_occurrences": 136,
+    "distinct_resource_ids": 130,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

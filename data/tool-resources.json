@@ -4598,5 +4598,40 @@
       "https://github.com/HarbourMasters/Torch/blob/72960ca16f4723f96aaf4037b76072c230af8c11/README.md",
       "https://github.com/HarbourMasters/Lighthouse/releases/tag/1.1.0"
     ]
+  },
+  {
+    "id": "lost-odyssey-recomp-case",
+    "name": "Lost Odyssey Recomp: statically recompiling an Xbox 360 RPG into native ports",
+    "url": "https://github.com/freefrank/LostOdysseyRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates Lost Odyssey’s Xbox 360 PowerPC executable with patched XenonRecomp tooling and runs the generated code on a native runtime that renders through Direct3D 12, Vulkan or Metal. Windows, Linux, macOS and Android packages import the user’s own disc data. The maintainer documents development with Claude Code and Codex CLI and records each release separately from validation and acceptance.",
+    "description_zh": "使用打过补丁的 XenonRecomp 工具转换 Lost Odyssey 的 Xbox 360 PowerPC 可执行文件，并在原生运行时上运行生成代码，经 Direct3D 12、Vulkan 或 Metal 渲染。Windows、Linux、macOS 和 Android 安装包导入使用者自己的光盘数据。维护者记录了借助 Claude Code 与 Codex CLI 的开发过程，并把每次发布与验证、验收分开记录。",
+    "evidence_url": "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main snapshot follows v1.0.4 (2026-10-18), packaged for Windows x64 with AVX, Linux x64 AppImage/Flatpak, macOS 15+ on Apple Silicon and 64-bit Android 8.0+ with Vulkan. STATUS.md and ROADMAP.md record each release as published but not accepted by the maintainer. This is static recompilation of the shipped executable, not recovered authored source or a general Xbox 360 emulator.",
+      "Players import data from one supported four-disc set, Asian multilingual or USA/Europe (Title ID 4D5307FA); Disc 1 is required, DLC is optional, and other regions, title updates and modified XEX files are unsupported. Source builds use the Asian multilingual Disc 1 default.xex, LO.fpi and resource archives, and BUILDING.md still calls four-disc integration incomplete. Game data and generated code are kept out of the repository.",
+      "Builds need submodules including XenonRecomp, XenosRecomp, plume and SDL 3, with project patches applied, plus Python 3.11+, CMake 3.28+, Ninja and Clang: clang-cl with Visual Studio 2022 Build Tools on Windows 10 1803+, or Clang/LLD with a Vulkan driver on Linux. tools/ppc_codegen.py regenerates the guest sources locally before the runtime build.",
+      "STATUS.md separates implementation, validation, acceptance and release; for example, v1.0.4’s save fix passed a logic review, a CPU fixture and a Release link but was not run in-game. Upscaler and rendering checks name bounded fixtures and GPUs. The workflow guide states that a release does not mean the game was completed start to finish; this collection ran nothing.",
+      "GPL-3.0 covers project code; Lost Odyssey and its assets belong to their owners, and dependencies such as the Xenia FFmpeg fork, DXC, optional DLSS/FSR/XeSS SDKs and Android GPU drivers keep their own terms. docs/AI_WORKFLOW.md says one maintainer used Claude Code as the main session with Codex CLI and subagents; Ghidra scripts and a third-party reverse-engineering skill are referenced, but no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/BUILDING.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/INSTALLING.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/STATUS.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/AI_WORKFLOW.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/notes/recomp.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/ROADMAP.md",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/.gitmodules",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/CMakeLists.txt",
+      "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/LICENSE",
+      "https://github.com/freefrank/LostOdysseyRecomp/releases/tag/v1.0.4"
+    ]
   }
 ]
