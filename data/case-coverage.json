@@ -12866,12 +12866,14 @@
       "reported_source_urls": [
         "https://github.com/n64decomp/mk64"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 103 (README line 1064) lists n64decomp/mk64 under 🏎️ Mario Kart 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 103 行（README 第 1064 行）在 🏎️ Mario Kart 64 下列出 n64decomp/mk64。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository documents a Mario Kart 64 decompilation for the US and two EU ROM versions with SHA-1 targets, and its README says it contains no assets. Its tree also holds a 34 MB archive named after a course under models/tracks, where the project organizes model-extraction output; its contents could not be reviewed without downloading it. The collection therefore does not link the repository and retains the lead without a catalog mapping; this is not a judgment of the decompilation itself.",
+      "reason_zh": "固定版本仓库记录了针对美版及两个欧版 ROM 的 Mario Kart 64 反编译并列出 SHA-1 目标，其 README 声明不含素材。但源码树的 models/tracks 目录（项目存放模型提取产物的位置）中还有一个以赛道命名、约 34 MB 的压缩包，不下载便无法核查其内容。因此本合集不链接该仓库，保留此线索而不建立目录映射；这并非对该反编译项目本身的评判。",
+      "primary_evidence_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -14694,15 +14696,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 139,
-      "insufficient-evidence": 124,
-      "pending": 328
+      "insufficient-evidence": 125,
+      "pending": 327
     },
     "units_by_state": {
       "already-curated": 138,
-      "insufficient-evidence": 124,
-      "pending": 327
+      "insufficient-evidence": 125,
+      "pending": 326
     },
-    "primary_reviewed_units": 202,
+    "primary_reviewed_units": 203,
     "catalog_linked_occurrences": 150,
     "distinct_resource_ids": 144,
     "distinct_paper_ids": 1,
