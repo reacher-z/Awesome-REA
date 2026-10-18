@@ -4315,5 +4315,52 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-beyond-the-c",
+    "title": "Beyond the C: Retargetable Decompilation using Neural Machine Translation",
+    "title_zh": "超越 C：基于神经机器翻译的可重定向反编译",
+    "authors": [
+      "Iman Hosseini",
+      "Brendan Dolan-Gavitt"
+    ],
+    "year": 2022,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2022; the publisher PDF separately identifies the 24 April 2022 workshop, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2022；出版方 PDF 另列研讨会日期为 2022 年 4 月 24 日，本条目不据此推定出版月份或日期。",
+    "venue": "Workshop on Binary Analysis Research (BAR) 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2212.08950",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2022-12-17",
+    "doi": "10.14722/bar.2022.23009",
+    "url": "https://www.ndss-symposium.org/ndss-paper/auto-draft-298/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf",
+    "code_url": "https://figshare.com/s/2c68b9c181e80f4e3b06",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BTC (Beyond The C) treats decompilation as plain-text translation from compiler-emitted x86-64 assembly to source code. It uses byte-pair-encoding tokenizers trained separately on assembly and source, and a standard fairseq transformer. Function pairs are matched through the compiler's CFI and line directives rather than language-specific parsers, compiler plugins or lifters, so the same pipeline is retrained for Go, Fortran, OCaml and C. Training sets range from about 10,000 functions for small C, Go and Fortran corpora to 2 million C functions built from Debian packages. The best model, trained on the large C set, reaches a normalized average edit distance of 0.46 on held-out functions.",
+    "description_zh": "BTC（Beyond The C）将反编译视为从编译器输出的 x86-64 汇编到源码的纯文本翻译，分别在汇编与源码上训练字节对编码分词器，并使用标准 fairseq Transformer。它借助编译器输出的 CFI 与行号指令配对函数，而非依赖特定语言的解析器、编译器插件或提升器，因此同一流程可针对 Go、Fortran、OCaml 与 C 重新训练。训练集规模从小型 C、Go 与 Fortran 语料的约 10,000 个函数，到基于 Debian 软件包构建的 200 万个 C 函数不等。在大型 C 数据集上训练的最佳模型，在留出函数上的归一化平均编辑距离为 0.46。",
+    "scope_limitations_en": "Evaluation covers four languages at function level and scores outputs only by normalized edit distance to the original source. No compilation, test-based or semantic-equivalence check is reported, and whole-program decompilation is not evaluated. The authors state that the method cannot guarantee semantic correctness and is not yet ready for practical use on real code: even the best score means changes to roughly half of a function's tokens. Input is compiler-produced x86-64 assembly with labels and CFI directives intact, so disassembly of stripped binaries, other architectures and compilers without such directives are outside the evaluation. Sequence-length limits exclude long functions, and the small corpora are mostly competitive-programming and small utility code. The comparison with Katz et al. cites that work's reported score on shorter snippets rather than rerunning it on the same data.",
+    "scope_limitations_zh": "评测在函数层面覆盖四种语言，仅以与原始源码的归一化编辑距离评分；未报告编译、测试或语义等价检查，也未评估完整程序的反编译。作者指出该方法无法保证语义正确，尚不能用于真实代码：即便最佳分数也意味着大约一半的函数词元需要修改。输入是保留标签与 CFI 指令的编译器生成 x86-64 汇编，因此对去符号二进制的反汇编、其他架构以及不输出此类指令的编译器均不在评测范围内。序列长度限制排除了较长函数，小型语料主要来自编程竞赛题和小型工具代码。与 Katz 等人的比较引用的是该工作在更短代码片段上报告的分数，而非在相同数据上重新运行。",
+    "why_fits_en": "Adds neural decompilation evaluated beyond C, in Go, Fortran and OCaml, with a language-agnostic data pipeline, complementing the C-focused neural and LLM decompilation research in this section.",
+    "why_fits_zh": "补充在 C 之外的 Go、Fortran 与 OCaml 上评测、并采用语言无关数据流程的神经反编译研究，与本节中聚焦 C 语言的神经网络及大语言模型反编译研究互补。",
+    "metadata_notes": "The NDSS paper page lists Iman Hosseini and Brendan Dolan-Gavitt (NYU) and links the PDF and slides; Crossref gives the same two authors and only the year 2022. The PDF footer gives BAR 2022, 24 April 2022, San Diego, with ISBN 1-891562-76-2 and the DOI. arXiv v1 (2022-12-17), the only version, was posted after the workshop and links the BAR DOI. The paper's Availability section gives the figshare link for code, data and trained models. It is a private-share link: a scripted request received an HTTP 202 challenge, while a browser showed an item titled “Beyond the C - data & code”, marked as privately shared, CC BY 4.0, modified 2022-01-04, with btc.zip (18.98 GB) and additional.zip. The archives were not downloaded or inspected, and the promised VS Code extension was not located. Nothing was run.",
+    "metadata_notes_zh": "NDSS 论文页面列出 Iman Hosseini 与 Brendan Dolan-Gavitt（纽约大学），并链接 PDF 与演示幻灯片；Crossref 给出相同的两位作者，仅记载年份 2022。PDF 页脚标明 BAR 2022 于 2022 年 4 月 24 日在圣迭戈举行，并载有 ISBN 1-891562-76-2 与 DOI。arXiv v1（2022-12-17）是唯一版本，发布于研讨会之后，并链接 BAR DOI。论文的可用性章节给出存放代码、数据与训练模型的 figshare 链接。该链接为私有分享链接：脚本请求收到 HTTP 202 质询，而浏览器显示一个名为“Beyond the C - data & code”的条目，标注为私有分享、CC BY 4.0、修改于 2022-01-04，含 btc.zip（18.98 GB）与 additional.zip。本次未下载或检查这些压缩包，也未找到论文提及的 VS Code 扩展。本次未运行任何内容。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/auto-draft-298/",
+      "https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf",
+      "https://doi.org/10.14722/bar.2022.23009",
+      "https://api.crossref.org/works/10.14722/bar.2022.23009",
+      "https://arxiv.org/abs/2212.08950v1",
+      "https://figshare.com/s/2c68b9c181e80f4e3b06"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
