@@ -3641,5 +3641,38 @@
       "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/.github/workflows/native-linux.yml",
       "https://github.com/Odrannnn/MetroidPrimePort/releases/tag/v0.29.0"
     ]
+  },
+  {
+    "id": "wind-waker-decomp-case",
+    "name": "The Wind Waker: a GameCube decompilation with hash-checked relinking",
+    "url": "https://github.com/zeldaret/tww",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs source for The Wind Waker’s GameCube executable and REL modules across the USA/Korea, PAL and Japanese releases and a Japanese kiosk demo. Matched units are compiled from source and linked with objects split from the user’s disc, then checked against per-version SHA-1 hashes; the repository ships no assets or assembly and covers the GameCube game, not the HD remaster.",
+    "description_zh": "为《塞尔达传说 风之杖》GameCube 版的可执行文件和 REL 模块重建源码，涵盖美版／韩版、PAL 版、日版及日本体验版。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含素材或汇编，范围是 GameCube 版而非 HD 重制版。",
+    "evidence_url": "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress GameCube decompilation supporting every GameCube version: GZLE01 (USA Rev 0 and Korea Rev 48), GZLP01 (PAL), GZLJ01 (Japan) and the D44J01 Japanese kiosk demo. Output is the original executable and REL modules, not a port; the reviewed sources do not cover the Wii U HD remaster.",
+      "Building needs the user’s own disc image of the chosen version in a supported format (ISO/GCM, RVZ, WIA, WBFS, CISO, NFS, GCZ or TGC), which can be deleted after the first build. The repository contains no game assets or assembly; decomp-toolkit splits the original locally.",
+      "Builds run natively on Windows with Python and ninja, or on Linux/macOS with ninja and the automatically downloaded wibo wrapper. configure.py pins decomp-toolkit v1.8.3, objdiff v3.7.3, binutils 2.42-1 and a 20251118 compiler bundle; README also describes a shared Ghidra project as an aid whose output is not accurate enough to copy directly.",
+      "The default build links source-built objects only for units marked complete, uses original extracted objects for the rest and checks the result against the version’s build.sha1 (415–417 entries per version). decomp.dev’s reports for the pinned commit list 79.58% of GZLE01 code (32,968 of 39,324 functions) matched, 78.38–78.65% for the other retail versions and 74.08% for the demo. CI runs in a private container holding game files; this collection ran no build.",
+      "The repository carries CC0-1.0, which does not cover Nintendo’s game, disc content or the downloaded compilers. CONTRIBUTING.md rejects primarily AI-generated pull requests; the reviewed sources establish no REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/configure.py",
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/tools/project.py",
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/config/GZLE01/build.sha1",
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/CONTRIBUTING.md",
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/LICENSE",
+      "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/.github/workflows/build.yml",
+      "https://github.com/zeldaret/tww/actions/runs/38619222013",
+      "https://decomp.dev/zeldaret/tww"
+    ]
   }
 ]

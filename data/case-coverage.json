@@ -10050,13 +10050,30 @@
       "reported_source_urls": [
         "https://github.com/zeldaret/tww"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 17 (README line 170) lists zeldaret/tww under 🗡️ The Legend of Zelda: The Wind Waker (including HD). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 17 行（README 第 170 行）在 🗡️ The Legend of Zelda: The Wind Waker (including HD) 下列出 zeldaret/tww。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, configure script, dtk-template linking logic, SHA-1 manifests, CI workflow, contributing rules and license, plus decomp.dev’s per-version reports for the same commit, support a work-in-progress GameCube decompilation with hash-checked relinking. Full mapping covers this repository; the HD remaster named in the collection heading and the separate Wind Waker HD recompilation are outside it. User-supplied disc images and project-reported progress remain explicit.",
+      "reason_zh": "固定版本的 README、配置脚本、dtk-template 链接逻辑、SHA-1 清单、CI 工作流、贡献规则和许可证，以及 decomp.dev 针对同一提交的分版本报告，支持这是一项以哈希校验重新链接的进行中 GameCube 版反编译。完整映射覆盖本仓库；合集标题中的 HD 重制版及另行记录的 Wind Waker HD 重编译项目不在其范围内。使用者自备的光盘镜像及项目报告的进度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/README.md",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/configure.py",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/tools/project.py",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/config/GZLE01/build.sha1",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/CONTRIBUTING.md",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/LICENSE",
+        "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/.github/workflows/build.yml",
+        "https://github.com/zeldaret/tww/actions/runs/38619222013",
+        "https://decomp.dev/zeldaret/tww"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "wind-waker-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-018",
@@ -13877,18 +13894,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 92,
-      "insufficient-evidence": 79,
-      "pending": 420
-    },
-    "units_by_state": {
-      "already-curated": 91,
+      "already-curated": 93,
       "insufficient-evidence": 79,
       "pending": 419
     },
-    "primary_reviewed_units": 113,
-    "catalog_linked_occurrences": 103,
-    "distinct_resource_ids": 97,
+    "units_by_state": {
+      "already-curated": 92,
+      "insufficient-evidence": 79,
+      "pending": 418
+    },
+    "primary_reviewed_units": 114,
+    "catalog_linked_occurrences": 104,
+    "distinct_resource_ids": 98,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
