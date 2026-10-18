@@ -10827,13 +10827,27 @@
         "https://github.com/HarbourMasters/Lighthouse",
         "https://github.com/HarbourMasters/Lighthouse/releases"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 36 (README line 338) lists HarbourMasters/Lighthouse under 🐻 Banjo-Kazooie. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 36 行（README 第 338 行）在 🐻 Banjo-Kazooie 下列出 HarbourMasters/Lighthouse。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build guide, CMake file, decompilation-tagged source, submodule list, license, pinned libultraship and Torch READMEs and the 1.1.0 release document a native Banjo-Kazooie port compiled from decompilation-derived C with ROM-extracted assets. Full mapping covers this port, not the upstream decompilation, Banjo: Recompiled or independently reproduced gameplay.",
+      "reason_zh": "固定版本的 README、构建指南、CMake 文件、标注反编译路径的源码、子模块列表、许可证、固定版本的 libultraship 与 Torch README 及 1.1.0 版本，记录了一个以反编译衍生 C 代码和 ROM 提取素材构建的《Banjo-Kazooie》原生移植。完整映射覆盖该移植，不涵盖上游反编译项目、Banjo: Recompiled 或独立复现的游戏行为。",
+      "primary_evidence_urls": [
+        "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/README.md",
+        "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/docs/BUILDING.md",
+        "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/src/core2/ba/anim.c",
+        "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/.gitmodules",
+        "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/LICENSE.md",
+        "https://github.com/HarbourMasters/Lighthouse/releases/tag/1.1.0"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lighthouse-banjo-kazooie-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-037",
@@ -14382,18 +14396,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 123,
-      "insufficient-evidence": 98,
-      "pending": 370
-    },
-    "units_by_state": {
-      "already-curated": 122,
+      "already-curated": 124,
       "insufficient-evidence": 98,
       "pending": 369
     },
-    "primary_reviewed_units": 161,
-    "catalog_linked_occurrences": 134,
-    "distinct_resource_ids": 128,
+    "units_by_state": {
+      "already-curated": 123,
+      "insufficient-evidence": 98,
+      "pending": 368
+    },
+    "primary_reviewed_units": 162,
+    "catalog_linked_occurrences": 135,
+    "distinct_resource_ids": 129,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

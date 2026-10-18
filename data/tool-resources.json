@@ -4565,5 +4565,38 @@
       "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.github/checkdiff.sh",
       "https://github.com/pret/pokered/tree/af519899719f0754965776faac0e836a3b906e6d/vc"
     ]
+  },
+  {
+    "id": "lighthouse-banjo-kazooie-port-case",
+    "name": "Lighthouse: a Banjo-Kazooie PC port built on the decompilation",
+    "url": "https://github.com/HarbourMasters/Lighthouse",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A native Windows, Linux and macOS port of Banjo-Kazooie that compiles game C sources, many tagged with their Banjo-Kazooie decompilation file paths, against libultraship, a reimplementation of the N64 SDK. Torch extracts the user’s ROM into an asset archive, and the port adds Anchor multiplayer, romhack and language-pack support and a randomizer. Unlike Banjo: Recompiled, it builds from decompiled source rather than statically recompiling the ROM’s code.",
+    "description_zh": "一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。Torch 将用户的 ROM 提取为素材归档；移植版还加入了 Anchor 联机、ROM 修改版与语言包支持以及随机器。与 Banjo: Recompiled 不同，它基于反编译源码构建，而非对 ROM 代码进行静态重编译。",
+    "evidence_url": "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a supported retail ROM in .z64 form, identified by SHA-1 in the README: US 1.0, US 1.1, Japanese or PAL. It is extracted into a local bk.o2r archive; other regions can be added as language packs, and romhacks need the US 1.0 base. The repository includes no copyrighted game assets.",
+      "Release 1.1.0 “Hatteras Alfa” (2026-08-17) ships Windows x64, Linux and macOS archives. Rendering backends are DirectX 11 (Windows default), OpenGL on all platforms and Metal (macOS default).",
+      "Source builds need the libultraship and Torch submodules and CMake, plus Visual Studio 2022 (MSVC v143), Python 3 and at least 8 GB RAM on Windows, GCC or Clang with Ninja and the listed SDL2, libzip, tinyxml2, spdlog, Boost and Vorbis packages on Linux, or Xcode and the listed packages on macOS. Build targets extract bk.o2r from the ROM and package port assets as lighthouse.o2r.",
+      "The README publishes no matching or fidelity checks. Most supported romhacks are not fully tested, and CI nightly builds are for playtesting and may crash; nothing was built or run here.",
+      "The repository is dedicated under CC0 1.0; submodules keep their own licenses, and the game is not covered. The README discloses AI assistance for information gathering and accepts AI-assisted pull requests under the HarbourMasters policy; no REA use is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/docs/BUILDING.md",
+      "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/src/core2/ba/anim.c",
+      "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/CMakeLists.txt",
+      "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/.gitmodules",
+      "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/LICENSE.md",
+      "https://github.com/Kenix3/libultraship/blob/62e973aeb4a53ad4d22bb91e2d9373ecdfcd246c/README.md",
+      "https://github.com/HarbourMasters/Torch/blob/72960ca16f4723f96aaf4037b76072c230af8c11/README.md",
+      "https://github.com/HarbourMasters/Lighthouse/releases/tag/1.1.0"
+    ]
   }
 ]

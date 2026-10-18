@@ -2108,5 +2108,15 @@
       "make compare 构建全部目标，并依据 roms.sha1 运行 sha1sum。pret 的 CI 在 Linux 和 macOS 上用 rgbds 1.0.4 执行此检查，构建若留下未提交的改动即判失败，分叉仓库则只构建。哈希一致说明输出字节相同，并不说明标签和文档已经完整，也不说明修改后的构建行为正确。本合集未构建这些 ROM。",
       "仓库没有许可证文件，反汇编的复用条款未作说明，原游戏内容仍归其权利人所有。rgbds 是独立项目，适用其自身条款。所审来源未确立 AI 或 REA 使用归因。"
     ]
+  },
+  "lighthouse-banjo-kazooie-port-case": {
+    "name": "Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植",
+    "requirements": [
+      "需要 README 中以 SHA-1 标明的受支持零售版 .z64 ROM：美版 1.0、美版 1.1、日版或 PAL 版。ROM 会被提取为本地 bk.o2r 归档；其他地区版本可作为语言包加入，ROM 修改版则需以美版 1.0 为基础。仓库不含受版权保护的游戏素材。",
+      "1.1.0“Hatteras Alfa”版本（2026-08-17）提供 Windows x64、Linux 和 macOS 压缩包。渲染后端包括 DirectX 11（Windows 默认）、全平台可用的 OpenGL 以及 Metal（macOS 默认）。",
+      "源码构建需要 libultraship 与 Torch 子模块和 CMake；Windows 上另需 Visual Studio 2022（MSVC v143）、Python 3 和至少 8 GB 内存，Linux 上需 GCC 或 Clang、Ninja 及列出的 SDL2、libzip、tinyxml2、spdlog、Boost 和 Vorbis 软件包，macOS 上需 Xcode 及列出的软件包。构建目标会从 ROM 提取 bk.o2r，并将移植专用素材打包为 lighthouse.o2r。",
+      "README 未公布字节一致或保真度检查。大多数受支持的 ROM 修改版尚未充分测试，CI 每夜构建仅供试玩且可能崩溃；本合集未构建或运行。",
+      "仓库以 CC0 1.0 发布；子模块保留各自许可证，游戏本身不在许可范围内。README 披露曾借助 AI 收集信息，并按 HarbourMasters 政策接受使用 AI 的拉取请求；所审来源未记录 REA 使用。"
+    ]
   }
 }
