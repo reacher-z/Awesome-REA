@@ -2207,5 +2207,15 @@
       "设置 COMPARE=1 时，Makefile 会用对应的 SHA-1 文件检查所选构建。GitHub Actions 工作流比对英文版 1.0／1.1／1.2 的红宝石和蓝宝石构建及德文初版各变体，随后编译 NONMATCHING 源码和 modern 目标但不作比对；README 的构建徽章仍指向 Travis CI。哈希一致说明 ROM 字节相同，并不说明 NONMATCHING C 代码或 modern 构建的行为相同。本合集未构建这些 ROM。",
       "仓库没有许可证文件，复用条款未作说明；原游戏内容仍归其权利人所有，agbcc 和 devkitPro 组件各自适用其条款。所审来源未确立 AI 或 REA 使用归因。"
     ]
+  },
+  "vandal-hearts-pc-port-case": {
+    "name": "Vandal Hearts：基于一致性反编译的原生 PC 移植",
+    "requirements": [
+      "所审阅源码晚于 v2.1.0（2026-08-31）。README 报告所有非 PsyQ 函数均已反编译，make check 通过 MD5 确认美版 SLUS_004.47 及（自 2.0.0 起）日版 SLPM_860.07 可逐字节一致地重建，并在 Windows 与 Linux 上完成直至结局的完整通关。macOS 为社区支持的实验性构建，已测试到第一场战斗；其完整通关与公证验证仍待完成。",
+      "需自备美版（SLUS-00447）、亚洲版（SCPS-45183）或日版（SLPM-86007）的原始 .bin 光盘镜像；移植会校验并自动识别各光盘。一致性构建还需原可执行文件作为 MD5 参照，以及在本地取得的专有 PsyQ SDK 文件（README 以 MD5 列出 ASPSX 2.21 和 LIB34.ZIP）。汉字字库、游戏内文本和静态数据段均由使用者自有副本生成，不提交入库。",
+      "移植可用 Make 或 CMake 构建，依赖 SDL2、OpenAL、OpenGL（macOS 上为 Metal）、libwebp、libav 和 Python 3；Windows 二进制在 Linux 上以 MinGW-w64 交叉编译，Linux 版以 AppImage 发布。一致性构建使用 splat、maspsx、decompals 的 GCC 2.5.7／2.6.3 前端及 MIPS binutils；由于这些前端是 32 位 Linux 可执行文件，必须在 Linux 主机上进行。",
+      "项目报告的检查包括两个地区版本的 make check、修复七个潜在越界缺陷的 AddressSanitizer 与 UBSan 扫描、以 BizHawk 验证的音画还原，以及软件光栅化器与 DuckStation 显存截取对比达 99.84–99.99% 像素一致。已知问题列表将剩余缺陷归于移植的渲染与后端层；本合集未运行上述任何检查。",
+      "GPL-2.0 仅涵盖项目原创的移植代码、工具和文档。反编译的游戏代码（源自 shao113 未附许可的反编译）及重建的数据表属于 Konami，项目并不授予其许可；预构建版本嵌入部分游戏派生数据段及源自 BIOS 的字库。仓库将构建环境配置说明保存在 Claude Code 技能文件中；未确立与 REA 的关联。"
+    ]
   }
 }

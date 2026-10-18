@@ -4897,5 +4897,37 @@
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/.github/workflows/build.yml",
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/src/money.c"
     ]
+  },
+  {
+    "id": "vandal-hearts-pc-port-case",
+    "name": "Vandal Hearts: native PC port built on matching decompilations",
+    "url": "https://github.com/HalmyLyseas/VandalHearts-PcPort",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds on shao113’s matching decompilation of PlayStation Vandal Hearts, adds a Japanese matching tree, and carries both through to a native Windows and Linux port. SDL2, OpenGL or Metal and OpenAL backends replace the console’s GPU, GTE, CD-ROM/XA, SPU, MDEC and pad interfaces, and one executable runs the USA, Asia and Japan discs. The matching builds are still checked on every change; PC-only features such as Tactical Mode and HD packs are opt-in.",
+    "description_zh": "以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。SDL2、OpenGL 或 Metal 及 OpenAL 后端替代主机的 GPU、GTE、CD-ROM／XA、SPU、MDEC 和手柄接口，同一可执行文件可运行美版、亚洲版和日版光盘。每次修改仍须通过一致性构建检查；Tactical Mode、高清包等 PC 专属功能均为可选。",
+    "evidence_url": "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed source follows v2.1.0 (2026-08-31). README reports every non-PsyQ function decompiled, with make check confirming byte-identical rebuilds of the US SLUS_004.47 and, since 2.0.0, the Japanese SLPM_860.07 by MD5, and full playthroughs through the endgame on Windows and Linux. macOS is a community-supported experimental build tested through the first battle; its full-playthrough and notarisation validation are pending.",
+      "Supply your own raw .bin disc image of the USA (SLUS-00447), Asia (SCPS-45183) or Japan (SLPM-86007) release; the port verifies and auto-detects each disc. The matching build also needs the original executable as its MD5 reference and locally sourced proprietary PsyQ SDK files (README lists ASPSX 2.21 and LIB34.ZIP by MD5). The kanji font, in-game text and static data segment are generated from the user’s copy, not committed.",
+      "The port builds with Make or CMake against SDL2, OpenAL, OpenGL (Metal on macOS), libwebp, libav and Python 3; Windows binaries are cross-compiled from Linux with MinGW-w64, and Linux ships as an AppImage. The matching build uses splat, maspsx, decompals’ GCC 2.5.7/2.6.3 frontends and MIPS binutils, and needs a Linux host because those frontends are 32-bit Linux executables.",
+      "Project-reported checks include make check for both regions, AddressSanitizer and UBSan sweeps that fixed seven latent out-of-bounds bugs, audio/visual fidelity validated against BizHawk, and a software rasterizer reported 99.84–99.99% pixel-exact against DuckStation VRAM captures. The known-issues list places remaining defects in the port’s rendering and backend layer; this collection ran none of these checks.",
+      "GPL-2.0 covers only the project’s original port code, tooling and documentation. The decompiled game code, derived from shao113’s unlicensed decompilation, and the reconstructed data tables are Konami’s and are not licensed by the project; pre-built releases embed part of the game-derived data segment and a BIOS-derived font. The repository keeps its setup recipe in Claude Code skill files; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/NOTICE",
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CLAUDE.md",
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/building.md",
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/known_issues.md",
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CHANGELOG.md",
+      "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/LICENSE",
+      "https://github.com/shao113/vh/tree/a9e53de9484d4b42b023411617fe6d44acf592bc"
+    ]
   }
 ]

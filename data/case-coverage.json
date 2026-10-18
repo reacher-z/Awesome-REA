@@ -11946,13 +11946,27 @@
       "reported_source_urls": [
         "https://github.com/HalmyLyseas/VandalHearts-PcPort"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 72 (README line 729) lists HalmyLyseas/VandalHearts-PcPort under 🧙 Vandal Hearts. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 72 行（README 第 729 行）在 🧙 Vandal Hearts 下列出 HalmyLyseas/VandalHearts-PcPort。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, NOTICE, build and known-issues documentation, changelog and project context support this native PC port built on US and Japanese matching decompilations of Vandal Hearts. Full mapping covers the port repository, not shao113’s upstream decompilation or independently reproduced gameplay. User-supplied discs and SDK files, the narrow GPL-2.0 scope and project-reported matching and fidelity results remain explicit.",
+      "reason_zh": "固定版本的 README、NOTICE、构建与已知问题文档、更新日志及项目背景说明，支持这一基于 Vandal Hearts 美版和日版一致性反编译的原生 PC 移植。完整映射覆盖该移植仓库，不涵盖 shao113 的上游反编译，也不代表独立复现的游戏行为。使用者自备的光盘与 SDK 文件、范围有限的 GPL-2.0 授权及项目报告的一致性与还原结果均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/NOTICE",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/building.md",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/docs/known_issues.md",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CHANGELOG.md",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CLAUDE.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "vandal-hearts-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-073",
@@ -14548,18 +14562,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 133,
-      "insufficient-evidence": 104,
-      "pending": 354
-    },
-    "units_by_state": {
-      "already-curated": 132,
+      "already-curated": 134,
       "insufficient-evidence": 104,
       "pending": 353
     },
-    "primary_reviewed_units": 176,
-    "catalog_linked_occurrences": 144,
-    "distinct_resource_ids": 138,
+    "units_by_state": {
+      "already-curated": 133,
+      "insufficient-evidence": 104,
+      "pending": 352
+    },
+    "primary_reviewed_units": 177,
+    "catalog_linked_occurrences": 145,
+    "distinct_resource_ids": 139,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
