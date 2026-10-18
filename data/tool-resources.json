@@ -6199,5 +6199,36 @@
       "https://github.com/decompiler-explorer/decompiler-explorer/blob/a7b8381b610478f67b6dd35b6812878f08636c54/LICENSE.txt",
       "https://dogbolt.org/faq"
     ]
+  },
+  {
+    "id": "wireshark-mcp",
+    "name": "Wireshark MCP",
+    "url": "https://github.com/bx33661/Wireshark-MCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "MCP server that wraps tshark, and optionally other Wireshark command-line tools, so agents can query saved captures through Wireshark's dissectors: packet lists and details, stream following, arbitrary field extraction, protocol hierarchies and conversations, decode-as rules for non-standard ports, protocol preferences, TLS and WPA decryption with user-supplied keys, and one tool that applies preset fields and filters for 25 protocols such as Modbus, S7comm, MQTT, Zigbee and BLE. Separate security-heuristic, live-capture and capture-editing tools sit beside the dissection tools.",
+    "description_zh": "封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。",
+    "evidence_url": "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.10+ and Wireshark with tshark on PATH; capinfos, mergecap, editcap, dumpcap and text2pcap are auto-detected optional extras, and live capture needs the platform's capture drivers and permissions. Install from PyPI (wireshark-mcp 3.1.0, built on MCP Python SDK 2.x) with its client installer, or through the Claude Code or Codex plugin route with uv. Reviewed at the v3.1.0 tag, released 2026-10-18 at the main head; the project changes quickly.",
+      "stdio is the default transport. SSE and streamable HTTP bind 127.0.0.1 by default and are unauthenticated, so the server refuses a non-loopback bind unless --allow-insecure-http is passed behind a trusted authenticated TLS proxy. The 11 file-writing tools (live capture, merge, filter-save, editcap, text2pcap, frame and object export) fail closed until WIRESHARK_MCP_ALLOWED_DIRS names existing directories; --profile analysis or core advertises fewer tools.",
+      "Protocol results come from Wireshark's existing dissectors and preset field lists; decode-as rules and preferences only redirect or configure those dissectors, and the server does not infer unknown message formats. Credential, scan, tunnelling, beaconing, exfiltration and YARA tools are security heuristics rather than protocol reverse engineering, and their findings need analyst review.",
+      "MIT; Wireshark and its tools keep their own GPL terms. REA's packet-capture guide documents a separate TShark workflow inside REA; this independent server establishes no REA connection. No server, capture or analysis was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/src/wireshark_mcp/tools/advanced.py",
+      "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/src/wireshark_mcp/server.py",
+      "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/docs/security-hardening-v3.md",
+      "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/pyproject.toml",
+      "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/LICENSE",
+      "https://github.com/bx33661/Wireshark-MCP/releases/tag/v3.1.0",
+      "https://pypi.org/project/wireshark-mcp/3.1.0/"
+    ]
   }
 ]

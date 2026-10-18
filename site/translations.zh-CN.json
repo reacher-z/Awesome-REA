@@ -2640,5 +2640,14 @@
       "自行部署需要 Python 3.8+、pipenv、Docker 和 docker-compose；scripts/dce.py 负责构建反编译器镜像并启动服务。Binary Ninja 和 Hex-Rays 镜像需要部署者自备二进制和许可证文件。FAQ 禁止运行包含商业工具的公开实例，私有实例是否允许则取决于各厂商的许可条款。",
       "采用 MIT 许可（Vector 35 Inc.）；仓库没有打标签的版本，因此本条目固定到所审阅的 master 分支提交。FAQ 指出反编译效果因编译器、编译设置、语言、架构和复杂度而异；未审阅线上网站所用的反编译器版本，本次也未上传任何二进制。"
     ]
+  },
+  "wireshark-mcp": {
+    "name": "Wireshark MCP 基于 tshark 的协议解析服务器",
+    "requirements": [
+      "需要 Python 3.10+，以及 tshark 位于 PATH 中的 Wireshark；capinfos、mergecap、editcap、dumpcap 和 text2pcap 为自动检测的可选组件，实时抓包还需要所在平台的抓包驱动与权限。可从 PyPI 安装（wireshark-mcp 3.1.0，基于 MCP Python SDK 2.x）并使用其客户端安装器，也可借助 uv 走 Claude Code 或 Codex 插件安装路线。审阅对象为 v3.1.0 标签，于 2026-10-18 在 main 分支最新提交上发布；项目更新很快。",
+      "默认传输方式为 stdio。SSE 和 streamable HTTP 默认绑定 127.0.0.1 且没有认证，因此除非在可信且带认证的 TLS 代理之后传入 --allow-insecure-http，服务器会拒绝绑定非回环地址。11 个写文件工具（实时抓包、合并、过滤保存、editcap、text2pcap、帧导出与对象导出）在 WIRESHARK_MCP_ALLOWED_DIRS 指定已存在的目录之前一律拒绝执行；--profile analysis 或 core 可减少对外公布的工具。",
+      "协议结果来自 Wireshark 现有的解析器和预设字段列表；decode-as 规则与协议首选项只是重定向或配置这些解析器，服务器不会推断未知的报文格式。凭据扫描、端口扫描、隧道、信标、数据外传和 YARA 等工具属于安全启发式检测，而非协议逆向，其结果需要分析者复核。",
+      "采用 MIT 许可；Wireshark 及其工具保留各自的 GPL 条款。REA 的抓包指南记录了在 REA 内使用 TShark 的另一套流程；这个独立服务器并未确立与 REA 的关联。本次未运行服务器，也未进行抓包或分析。"
+    ]
   }
 }
