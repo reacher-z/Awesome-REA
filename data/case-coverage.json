@@ -2203,12 +2203,19 @@
         "https://x.com/xbirimensah/status/2109571298020274530",
         "https://github.com/xbirimensah/opensetter"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned MIT repository is a self-hosted Instagram comment-to-DM and AI-reply app built on Meta's official Instagram API and webhooks. Its flow docs and decisions log describe ManyChat-style flows and a 'ManyChat rebuild', but no study of ManyChat's interface, protocol or code and no behavior comparison against it. The author's 'reverse engineered' post is therefore unsupported as a reconstruction; retain the lead without a catalog mapping, which is not a judgment on the app itself.",
+      "reason_zh": "固定版本的 MIT 仓库是一个自托管的 Instagram 评论转私信及 AI 回复应用，基于 Meta 官方 Instagram API 与 webhook 构建。其流程文档和决策日志描述了 ManyChat 风格的流程及“ManyChat rebuild”，但未记录对 ManyChat 界面、协议或代码的研究，也没有与其行为的对照。因此作者帖文所称“逆向”不足以支持重建主张；保留此线索而不建立目录映射，这不是对应用本身的评价。",
+      "primary_evidence_urls": [
+        "https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/README.md",
+        "https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/docs/flows.md",
+        "https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/docs/DECISIONS.md",
+        "https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/META_APP_REVIEW.md",
+        "https://github.com/xbirimensah/opensetter/blob/40dc5ae2fde0b3930e6b59132eaf061edb0da0a8/LICENSE",
+        "https://x.com/xbirimensah/status/2109571298020274530"
+      ],
       "catalog_matches": []
     },
     {
@@ -13226,15 +13233,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 60,
-      "pending": 469
+      "insufficient-evidence": 61,
+      "pending": 468
     },
     "units_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 60,
-      "pending": 468
+      "insufficient-evidence": 61,
+      "pending": 467
     },
-    "primary_reviewed_units": 67,
+    "primary_reviewed_units": 68,
     "catalog_linked_occurrences": 69,
     "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
