@@ -22,11 +22,11 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 71 | 70 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 449 | 448 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 72 | 71 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 448 | 447 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 71 | 71 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-78 occurrences have catalog links. They reference 69 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+78 occurrences have catalog links. They reference 70 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
 This ledger records a new primary-source review for 87 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
@@ -45,7 +45,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Flutter build identification | Already curated | [Source](https://github.com/morluto/rea/pull/1582) |
 | MIPS ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1620) |
 | PSP static ELF analysis through Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/1330) |
-| Touhou reconstruction projects | Pending | [Source](https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md) |
+| Touhou reconstructions: an agent-driven method across three games | Already curated | [Source](https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md) |
 | Dinosaur runner: recovering one acceleration rule | Already curated | [Source](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md) |
 | ArtCraft: not proven Adobe or Office reverse engineering | Insufficient evidence | [Source](https://getartcraft.com/apps) |
 | Obsidian ASAR: large-package analysis | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/746) |
@@ -128,7 +128,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 
 Partial or related catalog mappings:
 
-- `song:touhou-reconstruction` — The TH08 component is curated; TH04 and TH095 components in this combined report remain outside the mapping.
+- `song:touhou-reconstruction` — The REA-published essay, its pinned evidence notes and merged REA PR #1475 cover this combined report: TH08, TH095 and TH04 milestones, ledger counts under separate definitions, and the TH08 floating-literal oracle gap. The full mapping is to that method case; the TH08 project record remains a partial match. Results stay author-reported, the TH095 and TH04 repositories were not separately reviewed, and no build or runtime reproduction is claimed.
 - `song:artcraft-boundary` — The ArtCraft apps page says every Crafting App is written from scratch in Rust and makes no reverse-engineering claim; the four reviewed READMEs describe clean-room implementations from public specifications and observed behavior, with no proprietary code. No primary source documents decompilation or recovery of Adobe or Microsoft software, and none establishes the third-party REA attribution. PhotoCraft, WordCraft, GridCraft and DeckCraft keep partial mappings to their implementation records; other listed apps such as FilmCraft, LightCraft and CADCraft have public repositories not reviewed here. Retain the lead without a full mapping; this is not a judgment of the apps’ quality.
 - `song:schaller-opticfilm-thinkpad-linux` — The existing scanner investigation and the separate ThinkPad IMX471 tuning/driver case cover two bounded components of this report. Their mappings remain partial: neither asserts complete scanner/camera behavior, all-device compatibility or independent runtime reproduction.
 - `song:rea-reconstruction-companion` — The Pocket Tasks mapping covers one maintainer-informed command-line reconstruction with published candidate and bounded comparison evidence. It does not cover the broader Companion workflow, other examples or model/host effectiveness. Prior source exposure, pending human review and the historical instruction-packet hash remain explicit; no independent runtime reproduction is established.
