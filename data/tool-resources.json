@@ -6295,5 +6295,39 @@
       "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/licence.txt",
       "https://github.com/OpenRCT2/OpenRCT2/releases/tag/v0.5.6"
     ]
+  },
+  {
+    "id": "th06-decomp-case",
+    "name": "Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source",
+    "url": "https://github.com/GensokyoClub/th06",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for the Windows executable of Touhou 6: Embodiment of Scarlet Devil version 1.02h, aiming at an exact rebuild with the original Visual Studio .NET 2002 and DirectX 8 toolchain. reccmp and objdiff compare the rebuilt binary with the user’s original executable function by function. The committed progress badge reports every function implemented but 98.03% byte accuracy, so whole-binary identity is not claimed.",
+    "description_zh": "为 Touhou 6：东方红魔乡 1.02h 版的 Windows 可执行文件重建 C++ 源码，目标是用原版 Visual Studio .NET 2002 与 DirectX 8 工具链精确重新构建。reccmp 和 objdiff 将重建的二进制与使用者自备的原可执行文件逐函数比较。仓库内的进度徽章报告函数已全部实现、字节准确率为 98.03%，因此不主张整个二进制完全一致。",
+    "evidence_url": "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README states the aim of perfectly reconstructing the 1.02h source; the committed, mutable progress badge reports 100.0% implemented and 98.03% byte accuracy for TH06.EXE. README points to a separate portable branch for Linux and modern Windows, which is not covered here. The team’s Ghidra work is exported as XML to the companion happyhavoc/th06-re repository.",
+      "Supply your own original 東方紅魔郷.exe version 1.02h matching the SHA-256 in README, copied to resources/th06.exe; reccmp checks the same hash, and the build extracts the game icon from that file. The repository contains no game executable or data; the comparison workflow fetches the original binary from a secret-configured URL.",
+      "Builds need Python 3.4+, plus msiextract and Wine outside Windows (CrossOver is suggested on macOS); aria2c is optional. scripts/create_devenv.py downloads Visual Studio .NET 2002 and the DirectX 8.0 SDK from web archives, along with ninja, objdiff, Ghidra and helper tools, and scripts/build.py generates and runs a ninja build.",
+      "Contributors diff with reccmp, which reports per-function accuracy of the rebuilt executable against the original as an HTML report. CI builds on Windows and compares an objdiff build with objects delinked from the original through Ghidra; a small munit suite reads the user’s game archive. Badge figures are project-generated, and this collection did not build or compare anything.",
+      "The repository is dedicated under CC0 1.0; the original game, the downloaded Microsoft toolchain and third-party tools keep their own terms. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/reccmp-project.yml",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/resources/progress.svg",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/create_devenv.py",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/build.py",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/extract_icon.py",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/.github/workflows/ci.yml",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/.github/workflows/compare.yml",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/tests/test_Pbg3Archive.cpp",
+      "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/LICENSE"
+    ]
   }
 ]

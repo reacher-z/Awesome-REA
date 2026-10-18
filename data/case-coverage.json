@@ -13982,13 +13982,31 @@
       "reported_source_urls": [
         "https://github.com/GensokyoClub/th06"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 132 (README line 1413) lists GensokyoClub/th06 under 🌙 Touhou 6: Embodiment of Scarlet Devil. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 132 行（README 第 1413 行）在 🌙 Touhou 6: Embodiment of Scarlet Devil 下列出 GensokyoClub/th06。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, reccmp configuration, progress badge, build scripts, CI workflows and license support the named Touhou 6 source-reconstruction report. Full mapping covers the master branch’s 1.02h reconstruction, not the separate portable branch, whole-binary identity or independently reproduced gameplay. Original-executable requirements, toolchain terms and project-generated accuracy figures remain explicit.",
+      "reason_zh": "固定版本的 README、reccmp 配置、进度徽章、构建脚本、CI 工作流及许可证，支持该 Touhou 6 源码重建报告。完整映射覆盖 master 分支的 1.02h 重建，不涵盖独立的 portable 分支、整个二进制一致性或独立复现的游戏行为。原可执行文件要求、工具链条款及项目生成的准确率数字均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/README.md",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/reccmp-project.yml",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/resources/progress.svg",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/create_devenv.py",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/build.py",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/scripts/extract_icon.py",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/.github/workflows/ci.yml",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/.github/workflows/compare.yml",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/tests/test_Pbg3Archive.cpp",
+        "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th06-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-133",
@@ -15206,18 +15224,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 169,
-      "insufficient-evidence": 140,
-      "pending": 282
-    },
-    "units_by_state": {
-      "already-curated": 168,
+      "already-curated": 170,
       "insufficient-evidence": 140,
       "pending": 281
     },
-    "primary_reviewed_units": 248,
-    "catalog_linked_occurrences": 180,
-    "distinct_resource_ids": 174,
+    "units_by_state": {
+      "already-curated": 169,
+      "insufficient-evidence": 140,
+      "pending": 280
+    },
+    "primary_reviewed_units": 249,
+    "catalog_linked_occurrences": 181,
+    "distinct_resource_ids": 175,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

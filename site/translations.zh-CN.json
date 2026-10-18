@@ -2669,5 +2669,15 @@
       "CI 检查代码格式、在多个平台构建，并运行 GoogleTest 测试套件，包括基于项目测试数据的回放、RCT2 存档导入导出、设施评分、寻路和场景解密测试。这些测试保障 OpenRCT2 自身行为与文件兼容性，并不证明与 RCT2 可执行文件等价；本次审阅均未运行。",
       "licence.txt 规定 OpenRCT2 采用 GPL-3.0-or-later；原游戏数据及购买的版本保留各自权利。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "th06-decomp-case": {
+    "name": "Touhou 6：重建东方红魔乡 1.02h 版源码",
+    "requirements": [
+      "README 表明目标是完美重建 1.02h 版源码；仓库内可变的进度徽章报告 TH06.EXE 已 100.0% 实现、字节准确率 98.03%。README 另指向用于 Linux 和新版 Windows 的独立 portable 分支，本条目不涵盖该分支。团队的 Ghidra 成果以 XML 形式导出到配套仓库 happyhavoc/th06-re。",
+      "需自备与 README 中 SHA-256 一致的原版 1.02h 东方紅魔郷.exe，并复制为 resources/th06.exe；reccmp 校验同一哈希，构建也会从该文件提取游戏图标。仓库不含游戏可执行文件或数据；比较工作流通过机密配置的 URL 获取原始二进制。",
+      "构建需要 Python 3.4 及以上；非 Windows 平台还需 msiextract 和 Wine（macOS 建议使用 CrossOver）；aria2c 为可选。scripts/create_devenv.py 从网络存档下载 Visual Studio .NET 2002 和 DirectX 8.0 SDK，并获取 ninja、objdiff、Ghidra 等辅助工具；scripts/build.py 生成并运行 ninja 构建。",
+      "贡献者使用 reccmp 比较差异，它以 HTML 报告给出重建可执行文件相对原文件的逐函数准确率。CI 在 Windows 上构建，并将 objdiff 构建与通过 Ghidra 从原文件拆出的目标文件比较；一套小型 munit 测试会读取使用者的游戏资源包。徽章数字由项目生成，本合集未进行任何构建或比较。",
+      "仓库以 CC0 1.0 释出；原游戏、下载的 Microsoft 工具链及第三方工具各有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }
