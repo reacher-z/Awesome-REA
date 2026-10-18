@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 254](https://img.shields.io/badge/resources-254-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 114](https://img.shields.io/badge/cases-114-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 255](https://img.shields.io/badge/resources-255-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 115](https://img.shields.io/badge/cases-115-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (95) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (96) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (114) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (115) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -640,6 +640,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Compiles Paper Mario decompilation sources, credited to the pmret and Paper Mario DX projects, into a native US-version application on libultraship. Torch converts the user’s own ROM into a local asset archive, and the port adds rendering backends, enhancements and archive-based mods. Desktop releases are published, while Android, iOS and web builds are documented on the development branch.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/paperboat-paper-mario-port-case/)
+
+- [**Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build**](https://github.com/kirklandsig/halo2-decompiled)
+
+  A work-in-progress matching decompilation of Halo 2 for the original Xbox: contributors write C and C++ that the period compiler, building the whole program with link-time code generation, must turn back into the retail executable's bytes function by function. The README reports just under half of the game-function bytes matched and leaves a native port for a later stage. It discloses that much of the maintainer's work runs in Claude and Codex coding-agent lanes.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/halo2-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
