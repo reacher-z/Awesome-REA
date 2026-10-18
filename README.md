@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 195](https://img.shields.io/badge/resources-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 57](https://img.shields.io/badge/cases-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 196](https://img.shields.io/badge/resources-196-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 58](https://img.shields.io/badge/cases-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (16) · [Game](#game) (43) · [App](#app) (42)
+- [Website](#website) (16) · [Game](#game) (43) · [App](#app) (43)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (57) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (58) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -565,6 +565,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Stands in for the Claude in Chrome extension side of Claude Code’s local browser bridge and runs the requested actions in Browserbase cloud browsers. The author’s thread describes the reverse-engineered framing, a 4-byte little-endian length before each JSON tool call, and the plugin maps 17 named tools onto Stagehand/CDP operations. It is an archived interoperability shim with several placeholder tools, not recovered Anthropic code or a verified equivalent of the extension.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/browserbase-claude-chrome-bridge-case/)
+
+- [**Visor: an independent Ray-Ban Meta glasses client**](https://github.com/macedonga/visor)
+
+  Implements an Android replacement for the Meta AI companion app that speaks the Ray-Ban Meta glasses’ own Bluetooth and Wi-Fi Direct protocol, imports media, exposes settings and answers “Hey Meta” with a model the user chooses. The project wiki documents the link layers, encryption, services and Meta-side ownership steps, and lists 153 open questions. Testing is on real glasses rather than test suites, so behavior beyond the stated model and firmware remains unverified.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/visor-ray-ban-meta-client-case/)
 
 #### Tools, projects and integrations
 

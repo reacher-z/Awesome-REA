@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 195](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 57](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 196](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-196-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 58](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (16) · [游戏](#game) (43) · [应用](#app) (42)
+- [网站](#website) (16) · [游戏](#game) (43) · [应用](#app) (43)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (57) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (58) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -566,6 +566,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Claude Code 本地浏览器桥接中替代 Claude in Chrome 扩展一端，把请求的操作交给 Browserbase 云端浏览器执行。作者的帖子串描述了逆向得到的消息格式，即每条 JSON 工具调用前加 4 字节小端长度；插件则将 17 个具名工具映射为 Stagehand／CDP 操作。这是已归档的互操作适配层，部分工具仅为占位实现，并非恢复出的 Anthropic 代码，也未经验证与扩展等价。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/browserbase-claude-chrome-bridge-case/)
+
+- [**Visor：独立的 Ray-Ban Meta 眼镜客户端**](https://github.com/macedonga/visor)
+
+  实现可替代 Meta AI 配套应用的 Android 客户端：直接使用 Ray-Ban Meta 眼镜自有的蓝牙与 Wi-Fi Direct 协议，导入媒体、提供设置，并用用户选择的模型回应“Hey Meta”。项目 wiki 记录了链路分层、加密、服务及 Meta 端的所有权流程，并列出 153 个未解问题。项目以实机试用代替测试套件，因此所述型号和固件之外的行为仍未经验证。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/visor-ray-ban-meta-client-case/)
 
 #### 工具、项目与集成
 
