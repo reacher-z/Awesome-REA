@@ -4533,5 +4533,37 @@
       "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/README.md",
       "https://github.com/diasurgical/devilution/blob/9f01757243412bb154d02d9af65c804159e6e0ea/LICENSE.md"
     ]
+  },
+  {
+    "id": "pokered-disassembly-case",
+    "name": "pokered: a matching Pokémon Red and Blue disassembly",
+    "url": "https://github.com/pret/pokered",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the Game Boy games Pokémon Red and Blue as RGBDS assembly, with graphics and data kept as editable source files. One tree builds the USA/Europe Red and Blue ROMs, a Blue debug build and patches for the Virtual Console releases, each checked against a recorded SHA-1. It is a full disassembly rather than a decompilation into a higher-level language.",
+    "description_zh": "以 RGBDS 汇编重建 Game Boy 游戏《精灵宝可梦 红／蓝》，图像和数据以可编辑的源文件保存。同一源码树可构建美版／欧版红、蓝 ROM、一个蓝版调试构建以及 Virtual Console 版本的补丁，并逐一与记录的 SHA-1 比对。它是完整的反汇编项目，而非反编译为高级语言的源码。",
+    "evidence_url": "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README says the disassembly builds Pokemon Red (UE), Pokemon Blue (UE), the BLUEMONS.GB debug build and two Virtual Console patch files, listing a SHA-1 for each. Code, text, maps and audio are RGBDS assembly, and graphics are PNG files converted during the build; Virtual Console patches come from separate VC builds and patch templates.",
+      "The build reads no original ROM: every input is in the repository, so the outputs are rebuilt from source rather than combined with extracted assets. The repository therefore carries the game's text, graphics and data in source form.",
+      "INSTALL.md covers Linux distributions, macOS with Homebrew, Windows through WSL (or Cygwin on older Windows) and Termux. The build needs make, gcc or clang, git and rgbds 1.0.4, which the repository pins; helper tools under tools/ handle graphics conversion, compression and patch generation.",
+      "make compare builds every target and runs sha1sum against roms.sha1. pret's CI does this on Linux and macOS with rgbds 1.0.4 and fails when the build leaves uncommitted changes, while forks only build. Matching hashes show identical output bytes, not that labels and documentation are complete or that modified builds behave correctly. This collection did not build the ROMs.",
+      "The repository has no license file, so reuse terms for the disassembly are unstated, and the original game's content remains its rights holders'. rgbds is a separate project with its own terms. The reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/INSTALL.md",
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/Makefile",
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/roms.sha1",
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.rgbds-version",
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.github/workflows/main.yml",
+      "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/.github/checkdiff.sh",
+      "https://github.com/pret/pokered/tree/af519899719f0754965776faac0e836a3b906e6d/vc"
+    ]
   }
 ]

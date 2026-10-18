@@ -2098,5 +2098,15 @@
       "两份 README 均未报告测试、一致性结果或与原可执行文件的对照，所审阅的前端代码树也没有测试文件。可游玩性的依据是托管部署；本合集未运行任何内容。",
       "diabloweb 没有许可文件。分支附带 Unlicense 文本，但其 README 将源码限于非商业用途；当前上游 Devilution 采用 Sustainable Use License 1.0，Blizzard 仍保有 Diablo 及其数据的权利。所审来源未确立 AI 或 REA 使用归因。"
     ]
+  },
+  "pokered-disassembly-case": {
+    "name": "pokered：一致构建的《精灵宝可梦 红／蓝》反汇编",
+    "requirements": [
+      "README 称该反汇编可构建 Pokemon Red (UE)、Pokemon Blue (UE)、BLUEMONS.GB 调试构建及两个 Virtual Console 补丁文件，并逐一列出 SHA-1。代码、文本、地图和音频均为 RGBDS 汇编，图像为构建时转换的 PNG 文件；Virtual Console 补丁由单独的 VC 构建和补丁模板生成。",
+      "构建不读取任何原版 ROM：所有输入都在仓库中，因此产物完全由源码重新生成，而不是与提取的素材合并。也就是说，仓库本身以源文件形式包含游戏的文本、图像和数据。",
+      "INSTALL.md 涵盖各 Linux 发行版、通过 Homebrew 的 macOS、通过 WSL 的 Windows（旧版 Windows 用 Cygwin）以及 Termux。构建需要 make、gcc 或 clang、git 和仓库固定的 rgbds 1.0.4；tools/ 下的辅助工具负责图像转换、压缩及补丁生成。",
+      "make compare 构建全部目标，并依据 roms.sha1 运行 sha1sum。pret 的 CI 在 Linux 和 macOS 上用 rgbds 1.0.4 执行此检查，构建若留下未提交的改动即判失败，分叉仓库则只构建。哈希一致说明输出字节相同，并不说明标签和文档已经完整，也不说明修改后的构建行为正确。本合集未构建这些 ROM。",
+      "仓库没有许可证文件，反汇编的复用条款未作说明，原游戏内容仍归其权利人所有。rgbds 是独立项目，适用其自身条款。所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }
