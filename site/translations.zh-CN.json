@@ -2058,5 +2058,15 @@
       "README 称实现了忠实音频、完整保留的 N64 特效、宽屏、高帧率、音符保存，并修复了重复的 Mumbo 代币 ID，同时将叠加层软件列为已知问题。项目未公布等价性或游戏流程测试；固定提交上的 CI 仅构建移植程序，本合集未重跑任何说法。",
       "项目采用 GPLv3；原游戏、反编译项目及其他依赖保留各自条款。团队声明不使用生成式 AI，并禁止使用生成式 AI 辅助的贡献；这不是 REA 辅助案例。"
     ]
+  },
+  "pokemon-firered-leafgreen-decomp-case": {
+    "name": "《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建",
+    "requirements": [
+      "README 将其描述为英文版火红与叶绿的反编译项目，可构建六个 ROM 镜像：两款游戏的原版与 rev1 版，以及名为 _switch 的变体（config.mk 以修订版 10 构建）。INSTALL.md 说明 make、make leafgreen 及 rev1 目标；Makefile 另有 _switch 目标。大部分代码为 C，启动代码、m4a 音频库的一部分及 GameCube 多重启动库仍为汇编，三个多重启动程序以预编译 .gba 二进制形式收录。产物是 GBA ROM，不是原生 PC 移植。",
+      "文档所述的构建不读取原 ROM：图像、音频采样和地图数据以 PNG、WAV／AIF 和 JSON 文件提交在仓库中，由附带工具转换。六份 .sha1 清单列出目标镜像（例如 pokefirered.gba 的 SHA-1 为 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc），README 链接各镜像的 No-Intro 条目。贡献者辅助脚本 compare.sh 只在存在 baserom.gba 时对其与产物做十六进制差异比较。",
+      "INSTALL.md 涵盖 Windows（推荐 WSL1，也可用 msys2 或 Cygwin）、macOS 和 Linux。在 Debian／Ubuntu 上需 build-essential、binutils-arm-none-eabi、git 和 libpng-dev；一致性构建还需先构建 pret/agbcc 并安装到仓库中。make modern 及对应的 *_modern 目标使用 devkitARM 的 arm-none-eabi-gcc，TOOLCHAIN 变量可指定其他 ARM 工具链。",
+      "make compare 及各 compare_* 目标将构建出的镜像与对应 .sha1 清单比对；config.mk 注明比对只适用于非现代编译器构建。CI 比对全部六个镜像，并另外构建现代目标。docs/bugs_and_glitches.md 列出原游戏中的缺陷，可选的 BUGFIX 和 UBFIX 定义会修改这些行为，因此此类构建有意偏离原版。这些检查确认所列镜像的字节一致性，不覆盖游戏行为路径；本合集未自行构建 ROM。",
+      "仓库没有顶层许可证文件，GitHub 也未识别出许可证；许可证文件只覆盖部分附带工具，agbcc 的 GCC 源码附 GPL v2。原游戏的代码、图像和音频仍受其权利人约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

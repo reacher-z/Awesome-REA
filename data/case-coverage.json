@@ -11417,15 +11417,27 @@
       "reported_source_urls": [
         "https://github.com/pret/pokefirered"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Pokémon FireRed/LeafGreen README identifies six English ROM image variants and exact hashes, with setup delegated to INSTALL.md. Need installation and rights/asset provenance review before publication; a README output-hash list alone is not independent matching verification.",
-      "reason_zh": "README 列出英文 FireRed/LeafGreen 的六个 ROM 变体及哈希，安装步骤另见 INSTALL.md。发表前还需核查安装和素材／权利来源；仅列输出哈希不等于独立验证匹配。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Building on the earlier bounded README look, pinned install guide, build configuration, six SHA-1 manifests and CI workflow support an English FireRed/LeafGreen decompilation whose agbcc builds are hash-checked image by image. Full mapping covers this row’s FireRed game within a record that also covers LeafGreen; modern-GCC and bug-fix builds, gameplay equivalence and asset rights are not established. The documented build reads no base ROM because graphics and audio are committed in the tree.",
+      "reason_zh": "在此前有限的 README 查看基础上，固定版本的安装指南、构建配置、六份 SHA-1 清单和 CI 工作流，支持这是一个 agbcc 构建逐镜像做哈希校验的英文版火红／叶绿反编译项目。完整映射覆盖本行的火红，所对应的记录也涵盖叶绿；现代 GCC 构建与缺陷修正构建、游戏行为等价性及素材权利均未确立。由于图像和音频已提交在仓库中，文档所述的构建不读取原 ROM。",
       "primary_evidence_urls": [
-        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md"
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md",
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/INSTALL.md",
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/config.mk",
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/Makefile",
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/firered.sha1",
+        "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/.github/workflows/build.yml"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-firered-leafgreen-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-058",
@@ -14299,18 +14311,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 118,
-      "insufficient-evidence": 92,
-      "pending": 381
-    },
-    "units_by_state": {
-      "already-curated": 117,
+      "already-curated": 119,
       "insufficient-evidence": 92,
       "pending": 380
     },
+    "units_by_state": {
+      "already-curated": 118,
+      "insufficient-evidence": 92,
+      "pending": 379
+    },
     "primary_reviewed_units": 151,
-    "catalog_linked_occurrences": 129,
-    "distinct_resource_ids": 123,
+    "catalog_linked_occurrences": 130,
+    "distinct_resource_ids": 124,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

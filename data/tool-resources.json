@@ -4395,5 +4395,44 @@
       "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/CONTRIBUTING.md",
       "https://github.com/BanjoRecomp/BanjoRecomp/releases/tag/v1.0.2"
     ]
+  },
+  {
+    "id": "pokemon-firered-leafgreen-decomp-case",
+    "name": "Pokémon FireRed and LeafGreen: a matching Game Boy Advance decompilation",
+    "url": "https://github.com/pret/pokefirered",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the English Game Boy Advance releases of Pokémon FireRed and LeafGreen as buildable C source, with game scripts and data kept as assembler directives. Default agbcc builds produce six ROM images, covering both games' 1.0 and 1.1 releases and two variants labeled switch, each checked against its own SHA-1 manifest. Graphics and audio sources are committed in the tree, so the documented build reads no base ROM.",
+    "description_zh": "为 Game Boy Advance 英文版《宝可梦 火红／叶绿》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。默认的 agbcc 构建可生成六个 ROM 镜像，涵盖两款游戏的 1.0 与 1.1 版本及两个标为 switch 的变体，并分别按各自的 SHA-1 清单校验。图像和音频源文件已提交在仓库中，因此文档所述的构建流程不读取原 ROM。",
+    "evidence_url": "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a decompilation of English FireRed and LeafGreen that builds six ROM images: each game’s original and rev1 releases plus variants named _switch, which config.mk builds as revision 10. INSTALL.md documents make, make leafgreen and the rev1 targets; the Makefile adds the _switch targets. Most code is C, while startup code, part of the m4a sound library and the GameCube multiboot library remain assembly, and three multiboot programs are included as prebuilt .gba binaries. The outputs are GBA ROMs, not a native PC port.",
+      "The documented build reads no original ROM: graphics, audio samples and map data are committed as PNG, WAV/AIF and JSON files and converted by bundled tools. Six .sha1 manifests name the target images (for example pokefirered.gba, SHA-1 41cb23d8dccc8ebd7c649cd8fbb58eeace6e2fdc), and README links each image’s No-Intro record. The contributor helper compare.sh hex-diffs the output against a baserom.gba only when one is present.",
+      "INSTALL.md covers Windows (WSL1 recommended; msys2 or Cygwin), macOS and Linux. On Debian/Ubuntu it lists build-essential, binutils-arm-none-eabi, git and libpng-dev; the matching builds also need pret/agbcc built and installed into the tree. make modern and the matching *_modern targets use devkitARM’s arm-none-eabi-gcc, and a TOOLCHAIN variable selects another ARM toolchain.",
+      "make compare and the compare_* targets check each built image against its .sha1 manifest; config.mk notes that comparison only makes sense for non-modern builds. CI compares all six images and also builds the modern target. docs/bugs_and_glitches.md lists original-game bugs that the optional BUGFIX and UBFIX defines change, so those builds intentionally diverge. These checks establish byte identity for the listed images, not gameplay coverage; this collection did not build the ROMs.",
+      "The repository has no top-level license file and GitHub detects none; license files cover only some bundled tools, and agbcc’s GCC sources carry GPL v2. The original games’ code, graphics and audio remain subject to their rights holders. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/INSTALL.md",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/config.mk",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/Makefile",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/firered.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/leafgreen.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/firered_rev1.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/leafgreen_rev1.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/firered_switch.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/leafgreen_switch.sha1",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/compare.sh",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/.github/workflows/build.yml",
+      "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/docs/bugs_and_glitches.md",
+      "https://github.com/pret/pokefirered/tree/037335f4c725d7c9aecdac87066f2002b4bd7e14/tools",
+      "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
+    ]
   }
 ]
