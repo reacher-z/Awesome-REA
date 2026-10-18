@@ -14413,20 +14413,43 @@
       "reported_source_urls": [
         "https://github.com/N0zoM1z0/th04"
       ],
-      "state": "pending",
-      "review_level": "catalog-mapped",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Only the official TH04 bullet-ring helper showcase is covered. This collection row identifies a broader reconstruction repository, so full repository/game coverage remains pending.",
-      "reason_zh": "目前只覆盖官方 TH04 弹幕角度辅助函数展示；此合集行指向更广的重建仓库，因此完整仓库／游戏覆盖仍待核查。",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, generated progress, DOS build, toolchain, oracle, runtime and reference notes, CI and license support the named TH04 reconstruction report. Full mapping covers this repository’s four-program DOS reconstruction and its author-reported differential replays, not byte identity, complete campaigns, the native x64 branch or independent reproduction. REA’s one-helper showcase remains a partial match and its Touhou essay a related one.",
+      "reason_zh": "固定版本的 README、自动生成的进度、DOS 构建、工具链、判定依据、运行与参考说明、CI 及许可证，支持该 TH04 重建报告。完整映射覆盖此仓库的四程序 DOS 重建及作者报告的差分回放，不涵盖字节一致性、完整流程、原生 x64 分支或独立复现。REA 的单函数展示仍为部分匹配，其东方重建文章为相关条目。",
       "primary_evidence_urls": [
-        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md"
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/PROGRESS.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/DOS_BUILD.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/TOOLCHAIN.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/ORACLES.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/RUNTIME.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/REFERENCE_ANALYSIS.md",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/config/toolchain.toml",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/.github/workflows/ci.yml",
+        "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/LICENSE",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md"
       ],
       "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "th04-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
         {
           "catalog": "resource",
           "id": "rea-th04-case",
           "kind": "case-study",
           "scope": "partial"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-touhou-reconstruction-method-case",
+          "kind": "case-study",
+          "scope": "related"
         }
       ]
     },
@@ -15531,18 +15554,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 187,
+      "already-curated": 188,
       "insufficient-evidence": 156,
-      "pending": 248
+      "pending": 247
     },
     "units_by_state": {
-      "already-curated": 185,
+      "already-curated": 186,
       "insufficient-evidence": 156,
-      "pending": 248
+      "pending": 247
     },
-    "primary_reviewed_units": 282,
+    "primary_reviewed_units": 283,
     "catalog_linked_occurrences": 197,
-    "distinct_resource_ids": 191,
+    "distinct_resource_ids": 192,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

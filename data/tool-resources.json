@@ -6984,5 +6984,39 @@
       "https://x.com/benw_____/status/2111116976168779845",
       "https://x.com/benw_____/status/2111260204884967933"
     ]
+  },
+  {
+    "id": "th04-reconstruction-case",
+    "name": "TH04: rebuilding Lotus Land Story’s four PC-98 programs from source",
+    "url": "https://github.com/N0zoM1z0/th04",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs source for the Japanese PC-98 Touhou 4: Lotus Land Story and rebuilds all four DOS programs, MAIN.EXE, OP.EXE, MAINE.EXE and ZUN.COM, with a pinned Borland toolchain under Wine. Function acceptance against the original binaries is tracked separately from emulator replays that compare inputs, RNG, object pools and video with the original game. Complete-campaign, original-timing and byte-identity goals remain open.",
+    "description_zh": "为日版 PC-98 Touhou 4：东方幻想乡重建源码，并在 Wine 下用固定版本的 Borland 工具链重新构建全部四个 DOS 程序：MAIN.EXE、OP.EXE、MAINE.EXE 和 ZUN.COM。针对原二进制的函数认定，与在模拟器中对照原游戏比较输入、随机数、对象池和画面的回放分开记录。完整流程、原始时序与字节一致性目标仍未完成。",
+    "evidence_url": "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Generated PROGRESS.md reports 661 of 663 reviewed authored functions exact across the four artifacts and 99.97% of confirmed MAIN authored bytes, with two MAIN cases deferred. README says the rebuilt products need not reproduce the original executable bytes and that complete-game and original-timing acceptance are unfinished. A 64-bit native port on the port/modern-64 branch, reported with scoped Linux clears, is not reviewed here.",
+      "Supply your own legal copy containing the Japanese zun.hdi; the importer requires OP.EXE, MAIN.EXE, MAINE.EXE and ZUN.COM matching the sizes and SHA-256 values in README, whose provenance is marked candidate-local-attested pending an independent pristine dump. Image preparation modifies a disposable copy of that image, and original executables and assets are never committed.",
+      "Builds use Turbo C++ 4.0J, TASM 5.0 and TLINK under Wine; the bootstrapper fetches them from third-party mirrors that TOOLCHAIN.md does not treat as authoritative, and takes MS-DOS Player from a pinned ReC98 checkout. The tested host is Debian 12 x86-64 with Python 3.11. Runtime checks also need DOSBox-X 2024.03.01, Xvfb, xdotool and ImageMagick, and the Windows build entry point uses a WSL toolchain bridge.",
+      "README reports original-versus-reconstructed DOS replays agreeing on consumed input, score, RNG, nine actor pools, 22 state blocks and configured video regions across the four bundled demos and longer Stage 1–3 routes, while raw GDC timing and some post-reset input samples still differ. A 2026-10-16 audit found frozen native programs and candidate MAIN files missing from local storage, so historical replay first needs recovery. Public CI runs target-independent checks only; this collection ran nothing.",
+      "MIT covers repository-authored code and documentation, not the game, its assets or third-party work; ReC98, credited as a migration input, has no license file at the pinned revision, and the Borland tools stay proprietary. The repository is organized around coding-agent handoffs but does not itself document REA use; REA’s TH04 helper showcase and Touhou essay cover parts of it. No runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/PROGRESS.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/DOS_BUILD.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/TOOLCHAIN.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/ORACLES.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/RUNTIME.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/REFERENCE_ANALYSIS.md",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/config/toolchain.toml",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/.github/workflows/ci.yml",
+      "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/LICENSE"
+    ]
   }
 ]
