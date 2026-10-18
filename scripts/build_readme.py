@@ -351,6 +351,7 @@ AGENT_EVALUATION_PAPERS = {
     'paper-crackmebench', 'paper-crebench', 'paper-sre-bench', 'paper-humans-machines-sre',
     'paper-decompiling-synergy',
     'paper-programbench',
+    'paper-enigma',
 }
 
 
