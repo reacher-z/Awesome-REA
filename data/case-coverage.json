@@ -4609,12 +4609,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110641024389271883"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's post and linked YouTube video report using Claude Code with REA on Chocolate Doom and Terraria 1.4.5.8 without source. The video description lists 43 byte patches for DOOM, which the author checked against the open Chocolate Doom source, and a tModLoader mod for Terraria after REA hit its 64 MB managed-metadata limit and the agent switched to ILSpy. No patch files, mod source, agent transcript or comparison record is published, so the results remain an author-reported game-modification demonstration rather than a documented reconstruction. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者的帖子及所链接的 YouTube 视频称，在没有源码的情况下用 Claude Code 配合 REA 处理 Chocolate Doom 和 Terraria 1.4.5.8。视频简介列出 DOOM 的 43 处字节补丁，作者称已对照公开的 Chocolate Doom 源码核对；Terraria 方面，REA 触及 64 MB 托管元数据上限后，智能体改用 ILSpy，最终产出一个 tModLoader 模组。补丁文件、模组源码、智能体对话记录或对照记录均未公开，因此这些结果仍属作者报告的游戏修改演示，而非有文档支撑的重建案例。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110641024389271883",
+        "https://www.youtube.com/watch?v=UZgKSKvEFWA"
+      ],
       "catalog_matches": []
     },
     {
@@ -13784,15 +13787,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 87,
-      "insufficient-evidence": 76,
-      "pending": 428
+      "insufficient-evidence": 77,
+      "pending": 427
     },
     "units_by_state": {
       "already-curated": 86,
-      "insufficient-evidence": 76,
-      "pending": 427
+      "insufficient-evidence": 77,
+      "pending": 426
     },
-    "primary_reviewed_units": 105,
+    "primary_reviewed_units": 106,
     "catalog_linked_occurrences": 98,
     "distinct_resource_ids": 92,
     "distinct_paper_ids": 1,
