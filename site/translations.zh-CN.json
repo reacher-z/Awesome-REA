@@ -2158,5 +2158,15 @@
       "make 构建完成后运行 Meson 测试，按 SHA-1 清单校验 ARM9 主程序、ARM7 程序、文件系统及完整 ROM；Makefile 说明改版作者可在首次构建后去掉这项检查。CI 构建并校验两款游戏，推送时还会计算进度。哈希一致只确认这两个美版镜像的一致性，不代表反编译已完成或覆盖游戏行为路径；本合集未自行构建。",
       "仓库没有顶层许可证文件，GitHub 也未识别出许可证；部分附带工具有各自的许可证，metroskrew 及 ntrtwl 的 SDK 仓库在 GitHub 上均未声明许可证。SDK 库和原游戏内容仍受其权利人约束。CONTRIBUTING.md 禁止由大语言模型生成的贡献，仅有少数需完整披露的例外；所审来源未确立本项目的 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "fftarecomp-gba-static-recomp-case": {
+    "name": "FFTARecomp：Final Fantasy Tactics Advance 的静态重编译",
+    "requirements": [
+      "所审阅源码晚于 v2.0 版（2026-10-13），标注为开发中。README 面向 Windows 10／11、Linux 和 Steam Deck；其重编译清单还列出 Android，并称游戏可从头到尾完整游玩。缺少 C 编译器时，重编译器会退回解释器；上游保留该解释器以处理自修改代码，并作为差分测试的参照。已知问题包括第一关短暂出现精灵剪影，以及首次启动时可能检测不到手柄。",
+      "需自备 Final Fantasy Tactics Advance（美版）ROM，序列号 AFXE；项目清单记录了预期的 SHA-1。BIOS 调用采用高层模拟，因此无需主机 BIOS。安装程序在使用者的 PC 上重编译游戏，项目上传内容排除 ROM、存档、内存转储及生成的游戏 C 代码。",
+      "从源码构建需要 Rust 和 Windows PowerShell（build-all.ps1）。C 编译器同时是运行时需求：重编译器输出 C11 并链接每款游戏的库。Windows 安装程序会下载 w64devkit 2.10.0 GCC 工具链，Linux 发布构建使用仅供构建的 Zig 交叉编译器。",
+      "注明日期的发布审计（2026-10-12）报告源码上传扫描无问题、26 项输入配置与菜单测试通过、Windows 和 Linux 发布构建成功，物理手柄行为则未测量。README 未引用与硬件或模拟器的对照结果；本合集未运行任何内容。",
+      "FFTARecomp 的修改采用 MIT，并保留上游 gba-recomp 的声明（MIT OR Apache-2.0）；gamedb.sqlite 函数元数据为 CC0 1.0，w64devkit 工具保留各自的 GPL 系许可。项目审计未确立标志与图标的来源，Square Enix 与 Nintendo 仍保有游戏权利。上游 gba-recomp 自称为 AI 辅助项目；未确立与 REA 的关联。"
+    ]
   }
 }

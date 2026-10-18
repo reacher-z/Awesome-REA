@@ -11805,13 +11805,27 @@
       "reported_source_urls": [
         "https://github.com/Jorge262007/FFTARecomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 69 (README line 687) lists Jorge262007/FFTARecomp under 🧙 Final Fantasy Tactics Advance. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 69 行（README 第 687 行）在 🧙 Final Fantasy Tactics Advance 下列出 Jorge262007/FFTARecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, recomp manifest, build and architecture notes, release audit, credits and upstream gba-recomp README support this GBA static recompilation of Final Fantasy Tactics Advance. Full mapping covers the FFTARecomp port, not the general gba-recomp toolkit or independently reproduced gameplay. The user-supplied USA ROM, local compilation, interpreter fallback and project-reported results remain explicit.",
+      "reason_zh": "固定版本的 README、重编译清单、构建与架构说明、发布审计、致谢文件及上游 gba-recomp 的 README，支持这一 Final Fantasy Tactics Advance 的 GBA 静态重编译。完整映射覆盖 FFTARecomp 移植，不涵盖通用的 gba-recomp 工具链，也不代表独立复现的游戏行为。使用者自备的美版 ROM、本地编译、解释器后备及项目报告的结果均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/README.md",
+        "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/.recomp.json",
+        "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/BUILDING.md",
+        "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/docs/release_audit.md",
+        "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/Licenses/CREDITS.md",
+        "https://github.com/JRickey/gba-recomp/blob/de4edf59b872d887046d6a3b005e2df551b6d44c/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "fftarecomp-gba-static-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-070",
@@ -14454,18 +14468,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 128,
-      "insufficient-evidence": 98,
-      "pending": 365
-    },
-    "units_by_state": {
-      "already-curated": 127,
+      "already-curated": 129,
       "insufficient-evidence": 98,
       "pending": 364
     },
-    "primary_reviewed_units": 165,
-    "catalog_linked_occurrences": 139,
-    "distinct_resource_ids": 133,
+    "units_by_state": {
+      "already-curated": 128,
+      "insufficient-evidence": 98,
+      "pending": 363
+    },
+    "primary_reviewed_units": 166,
+    "catalog_linked_occurrences": 140,
+    "distinct_resource_ids": 134,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

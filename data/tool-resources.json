@@ -4734,5 +4734,37 @@
       "https://github.com/pret/pokeheartgold/tree/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/files",
       "https://github.com/mid-kid/metroskrew/releases/tag/0.1.3"
     ]
+  },
+  {
+    "id": "fftarecomp-gba-static-recomp-case",
+    "name": "FFTARecomp: static recompilation of Final Fantasy Tactics Advance",
+    "url": "https://github.com/Jorge262007/FFTARecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recompiles the user’s Final Fantasy Tactics Advance (USA) Game Boy Advance ROM ahead of time into native code for Windows, Linux and Steam Deck, building on JRickey’s gba-recomp toolkit. ARM and Thumb code is translated to C and compiled locally, while a Rust runtime models the console’s graphics, sound, DMA, timers and BIOS calls. The port adds widescreen, zoom, fast-forward and remappable controls.",
+    "description_zh": "基于 JRickey 的 gba-recomp 工具链，将使用者自有的 Final Fantasy Tactics Advance（美版）Game Boy Advance ROM 预先重编译为可在 Windows、Linux 和 Steam Deck 上运行的原生代码。ARM 与 Thumb 代码被转译为 C 并在本地编译，Rust 运行时则模拟主机的图形、声音、DMA、定时器及 BIOS 调用。移植另行加入宽屏、缩放、快进和可重映射操作。",
+    "evidence_url": "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed source follows the v2.0 release (2026-10-13) and is labelled a work in progress. README targets Windows 10/11, Linux and Steam Deck; its recomp manifest also lists Android and calls the game fully playable from start to finish. Without a C compiler the recompiler falls back to an interpreter, which upstream keeps for self-modifying code and as a differential-testing oracle. Known issues include brief sprite silhouettes in the first level and a gamepad that may go undetected on first launch.",
+      "Supply your own Final Fantasy Tactics Advance (USA) ROM, serial AFXE; the project manifest records the expected SHA-1. No console BIOS is needed, because BIOS calls are high-level emulated. The installer recompiles the game on the user’s PC, and the project excludes ROMs, saves, memory dumps and generated game C from its uploads.",
+      "Building from source needs Rust and Windows PowerShell (build-all.ps1). A C compiler is also a runtime requirement: the recompiler emits C11 and links a per-title library. The Windows installer downloads the w64devkit 2.10.0 GCC toolchain, and Linux release builds use Zig as a build-only cross compiler.",
+      "A dated release audit (2026-10-12) reports clean source-upload scans, 26 passing input-configuration and menu tests and successful Windows and Linux release builds, and leaves physical-controller behavior unmeasured. README cites no hardware or emulator comparison results; this collection ran nothing.",
+      "FFTARecomp changes are MIT and retain upstream gba-recomp notices (MIT OR Apache-2.0); gamedb.sqlite function metadata is CC0 1.0, and w64devkit tools keep their GPL-family licenses. The project’s audit does not establish logo and icon provenance, and Square Enix and Nintendo retain their game rights. Upstream gba-recomp describes itself as AI-assisted; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/.recomp.json",
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/BUILDING.md",
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/docs/architecture.md",
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/docs/release_audit.md",
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/Licenses/CREDITS.md",
+      "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/Licenses/LICENSE",
+      "https://github.com/JRickey/gba-recomp/blob/de4edf59b872d887046d6a3b005e2df551b6d44c/README.md"
+    ]
   }
 ]
