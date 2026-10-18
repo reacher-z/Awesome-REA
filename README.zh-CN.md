@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 217](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 78](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 218](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 79](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (17) · [游戏](#game) (61) · [应用](#app) (44)
+- [网站](#website) (17) · [游戏](#game) (62) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (78) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (79) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -431,6 +431,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   重建 Super Mario Sunshine 的 C++ 源码，目标是让原版 Metrowerks 编译器为四个 GameCube 发行版本及 Switch 版 3D All-Stars 生成逐字节一致的目标文件。目标二进制取自使用者自备的光盘镜像，objdiff 按函数比对重建出的目标文件。工作尚未完成，仓库在人工流程之外还发布了面向 AI 智能体的贡献规则。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sms-matching-decomp-case/)
+
+- [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight)
+
+  以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。程序读取使用者自备的光盘镜像运行，不附带任何素材；项目力求忠于原作，同时加入新选项、增强功能和模组。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)
 
 #### 工具、项目与集成
 

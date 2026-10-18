@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 83 | 82 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 434 | 433 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 84 | 83 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 433 | 432 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 74 | 74 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-94 occurrences have catalog links. They reference 88 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+95 occurrences have catalog links. They reference 89 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 100 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 101 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -114,6 +114,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Skyward Sword: Wii decompilation with hash-checked relinking | Already curated | [Source](https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/README.md) |
 | Ship of Harkinian: a native Ocarina of Time port built on the decompilation | Already curated | [Source](https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/README.md) |
 | Ocarina of Time: decompilation with MD5-checked ROM builds for 16 versions | Already curated | [Source](https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md) |
+| Dusklight: a native Twilight Princess port built on the decompilation | Already curated | [Source](https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/README.md) |
 | Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation | Already curated | [Source](https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md) |
 | Majora’s Mask: matching US N64 decompilation | Already curated | [Source](https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md) |
 | 2 Ship 2 Harkinian: a native Majora’s Mask port built on the decompilation | Already curated | [Source](https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md) |
