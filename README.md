@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 248](https://img.shields.io/badge/resources-248-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 108](https://img.shields.io/badge/cases-108-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 249](https://img.shields.io/badge/resources-249-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 109](https://img.shields.io/badge/cases-109-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (89) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (90) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (108) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (109) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -604,6 +604,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Paper Mario’s Nintendo 64 code as C source that rebuilds the US, Japanese, PAL and iQue ROMs. The build takes assets and comparison inputs from a user-supplied original ROM, then checks each output against a recorded SHA-1. Mutable project reports list no remaining nonmatching functions, while the README still calls the decompilation work in progress; it is distinct from the PaperBoat native port.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
+
+- [**Need for Speed Underground 2 — Recompiled: lifting SPEED2.EXE to C with pcrecomp**](https://github.com/codepdbh/nfsu2-recompiled)
+
+  Lifts the 32-bit x86 executable of Need for Speed: Underground 2 into C with a patched pcrecomp, then builds it as a Windows host program or as an Android app that maps Direct3D 9 to Vulkan through a DXVK Native port. Project documents report instruction-level and real-function differential tests against Unicorn and use the original code as a whole-program oracle. Game files come from the user’s PC installation; playability and performance are project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/nfsu2-recompiled-case/)
 
 #### Tools, projects and integrations
 

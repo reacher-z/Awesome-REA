@@ -12466,13 +12466,31 @@
       "reported_source_urls": [
         "https://github.com/codepdbh/nfsu2-recompiled"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 107 (README line 1094) lists codepdbh/nfsu2-recompiled under 🏎️ Need for Speed: Underground 2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 107 行（README 第 1094 行）在 🏎️ Need for Speed: Underground 2 下列出 codepdbh/nfsu2-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, status, differential-test, binary-report and Android documents plus build files document a pcrecomp static recompilation of SPEED2.EXE with Windows and Android hosts and project-reported differential checks. Full mapping covers this project; release APKs that embed code generated from the owner’s copy and the unpacked input executable are recorded as rights limits.",
+      "reason_zh": "固定版本的 README、状态、差分测试、二进制报告和 Android 文档以及构建文件，记录了使用 pcrecomp 对 SPEED2.EXE 进行的静态重编译，包括 Windows 与 Android 宿主及项目报告的差分检查。完整映射覆盖此项目；发布的 APK 内含由所有者自有副本生成的代码，以及输入可执行文件为已脱壳映像，均作为权利限制予以记录。",
+      "primary_evidence_urls": [
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/README.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/STATUS.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/DIFFTEST_REPORT.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/NFSU2_BINARY_REPORT.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/ANDROID_PORT.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/ISSUE_REVIEW_2026_10_16.md",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/.gitignore",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/CMakeLists.txt",
+        "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/android/app/src/main/cpp/CMakeLists.txt",
+        "https://github.com/codepdbh/nfsu2-recompiled/tree/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/patches/pcrecomp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "nfsu2-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-108",
@@ -14217,18 +14235,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 114,
-      "insufficient-evidence": 86,
-      "pending": 391
-    },
-    "units_by_state": {
-      "already-curated": 113,
+      "already-curated": 115,
       "insufficient-evidence": 86,
       "pending": 390
     },
-    "primary_reviewed_units": 141,
-    "catalog_linked_occurrences": 125,
-    "distinct_resource_ids": 119,
+    "units_by_state": {
+      "already-curated": 114,
+      "insufficient-evidence": 86,
+      "pending": 389
+    },
+    "primary_reviewed_units": 142,
+    "catalog_linked_occurrences": 126,
+    "distinct_resource_ids": 120,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

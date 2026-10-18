@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 248](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-248-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 108](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-108-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 249](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-249-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 109](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-109-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (89) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (90) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (108) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (109) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -605,6 +605,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Paper Mario 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版、PAL 版和 iQue 版 ROM。构建流程从使用者自备的原 ROM 取得素材和比较输入，再将每个产物与记录的 SHA-1 比对。项目可变的进度报告显示已无未匹配函数，但 README 仍称反编译在进行中；该项目与 PaperBoat 原生移植不同。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
+
+- [**Need for Speed Underground 2 — Recompiled：用 pcrecomp 将 SPEED2.EXE 提升为 C 代码**](https://github.com/codepdbh/nfsu2-recompiled)
+
+  使用打过补丁的 pcrecomp 将《极品飞车：地下狂飙 2》的 32 位 x86 可执行文件提升为 C 代码，再构建为 Windows 宿主程序或 Android 应用，后者通过移植的 DXVK Native 将 Direct3D 9 映射到 Vulkan。项目文档报告了基于 Unicorn 的指令级与真实函数差分测试，并以原始代码作为全程序对照。游戏文件来自使用者的 PC 安装目录；可玩性和性能均为项目自述。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/nfsu2-recompiled-case/)
 
 #### 工具、项目与集成
 

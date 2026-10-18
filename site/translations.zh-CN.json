@@ -2018,5 +2018,15 @@
       "一致性构建最后会依据各版本的 checksum.sha1 执行 sha1sum 校验，输出“papermario.z64: OK”。--non-matching、--modern-gcc 和 --shift 构建跳过该校验，因此不属于一致性结果。Jenkins 构建全部四个版本及一个可平移的美版构建，并发布进度报告；本合集未运行上述任何检查。",
       "所审源码树没有顶层许可证文件，GitHub 也未识别出许可证，因此未确立源码的再使用授权。原 ROM 和提取的素材仍受各自权利约束，下载的编译器另有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "nfsu2-recompiled-case": {
+    "name": "Need for Speed Underground 2 — Recompiled：用 pcrecomp 将 SPEED2.EXE 提升为 C 代码",
+    "requirements": [
+      "README 报告共提升 27,742 个函数（约 890 万行 C 代码）且无提升失败，Windows 与 Android 上已有可玩的比赛原型，并提供 v0.14.7 Android APK（2026 年 10 月）。STATUS 只把有证据的里程碑标为完成；其 10 月 7 日记录显示测试集中仍缺少端到端的脚本化比赛，10 月 16 日的 issue 复查也仍有若干崩溃报告未解决。",
+      "需要使用者自有的该游戏 PC 安装。经测试的 SPEED2.EXE 大小为 4,800,512 字节，并列出 SHA-256；项目称其为已脱壳的映像，无法确认对应的零售版本，因此其他可执行文件未经测试。Android 版从设备存储读取 PC 游戏文件，README 声明仓库不含游戏代码或素材。",
+      "Windows 构建需要 Windows 10／11、带 MSVC x86 工具集的 Visual Studio 2022 或 2026、用于差分测试的 LLVM／Clang、Python 3.10+（含 Capstone、pefile、Unicorn 和 Keystone），以及上游提交 35548b8 的 pcrecomp 加上项目补丁；README 列出 0001–0011，而源码树中有十四个补丁。Android 构建使用 SDK 35 和 NDK r25c+；下载说明要求 Android 10+ 与 Vulkan 1.1+，构建部分则写明最低 SDK 26 和 Vulkan 1.3。",
+      "DIFFTEST_REPORT 记录了打过补丁的 pcrecomp 与 Unicorn 对照的 246／246 条指令用例全部通过，以及真实函数批次测试，少量失败被归因于数值、CRT 边界情况或测试工具差异；全程序对照在同一宿主下运行原始代码。Android 设备说明仅覆盖少数手机。这些均为项目报告的检查；本合集未构建或运行任何内容。",
+      "README 称项目自写的工具代码采用 MIT，但源码树中没有许可证文件；DXVK 移植部分附有其自身许可证。发布的 APK 包含由所有者自有游戏副本生成的代码，项目的 .gitignore 将这类生成代码称为专有代码的衍生物；游戏内容归 Electronic Arts 所有。所审来源未确立 AI 或 REA 参与。"
+    ]
   }
 }

@@ -4261,5 +4261,39 @@
       "https://papermar.io/reports/progress_pal.csv",
       "https://papermar.io/reports/progress_ique.csv"
     ]
+  },
+  {
+    "id": "nfsu2-recompiled-case",
+    "name": "Need for Speed Underground 2 — Recompiled: lifting SPEED2.EXE to C with pcrecomp",
+    "url": "https://github.com/codepdbh/nfsu2-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Lifts the 32-bit x86 executable of Need for Speed: Underground 2 into C with a patched pcrecomp, then builds it as a Windows host program or as an Android app that maps Direct3D 9 to Vulkan through a DXVK Native port. Project documents report instruction-level and real-function differential tests against Unicorn and use the original code as a whole-program oracle. Game files come from the user’s PC installation; playability and performance are project-reported.",
+    "description_zh": "使用打过补丁的 pcrecomp 将《极品飞车：地下狂飙 2》的 32 位 x86 可执行文件提升为 C 代码，再构建为 Windows 宿主程序或 Android 应用，后者通过移植的 DXVK Native 将 Direct3D 9 映射到 Vulkan。项目文档报告了基于 Unicorn 的指令级与真实函数差分测试，并以原始代码作为全程序对照。游戏文件来自使用者的 PC 安装目录；可玩性和性能均为项目自述。",
+    "evidence_url": "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README reports 27,742 lifted functions (about 8.9 million lines of C) with no lift failures, a playable race prototype on Windows and Android, and v0.14.7 Android APKs (October 2026). STATUS marks only evidenced milestones as done; its 7 October log still lacks an end-to-end scripted race in the test set, and the 16 October issue review leaves several crash reports unresolved.",
+      "Requires the user’s own PC installation of the game. The tested SPEED2.EXE is 4,800,512 bytes with a listed SHA-256; the project describes it as an already-unpacked image whose retail version cannot be confirmed, so other executables are untested. Android reads the PC game files from device storage, and the README states that the repository contains no game code or assets.",
+      "Windows builds need Windows 10/11, Visual Studio 2022 or 2026 with the MSVC x86 toolset, LLVM/Clang for differential tests, Python 3.10+ with Capstone, pefile, Unicorn and Keystone, and pcrecomp at upstream commit 35548b8 with the project’s patches; the README lists 0001–0011, while the tree holds fourteen. Android builds use SDK 35 and NDK r25c+; the download notes require Android 10+ with Vulkan 1.1+, while the build section lists min SDK 26 and Vulkan 1.3.",
+      "DIFFTEST_REPORT records 246/246 patched-pcrecomp instruction cases against Unicorn and real-function batches whose few failures are attributed to numerical, CRT-edge or harness differences; a whole-program oracle runs the original code under the same host. Android device notes cover a limited set of phones. These are project-reported checks; this collection did not build or run anything.",
+      "The README places project-authored tooling under MIT, but the tree has no license file; the DXVK port carries its own license. Release APKs include code generated from the owner’s copy of the game, which the project’s .gitignore calls a derivative of proprietary code, and game content belongs to Electronic Arts. The reviewed sources establish no AI or REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/STATUS.md",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/DIFFTEST_REPORT.md",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/NFSU2_BINARY_REPORT.md",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/ANDROID_PORT.md",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/docs/ISSUE_REVIEW_2026_10_16.md",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/.gitignore",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/CMakeLists.txt",
+      "https://github.com/codepdbh/nfsu2-recompiled/blob/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/android/app/src/main/cpp/CMakeLists.txt",
+      "https://github.com/codepdbh/nfsu2-recompiled/tree/62a1d3a17fc7619b9d32df182b4b47d1a4f2e959/patches/pcrecomp"
+    ]
   }
 ]
