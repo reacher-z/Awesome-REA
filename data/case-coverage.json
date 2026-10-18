@@ -3348,12 +3348,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109785163475591510"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@LeonardVolner, 2026-10-12) credits Wes Bos with the idea of reverse-engineering cheap touchscreen photo frames that run Android, and says the author opened a frame within ten minutes of delivery and connected it to Codex pointed at Wes Bos’s repository; it shows two photos. The quoted Wes Bos post links the photo-frame-dashboard repository, which documents Wes Bos’s own rooting and custom-app work, not this author’s. No model, steps or outcome are reported, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the author’s device work is unreported, and the Wes Bos repository would need its own review.",
+      "reason_zh": "作者帖子（@LeonardVolner，2026-10-12）称逆向这类暗中运行 Android 的廉价触屏相框的创意来自 Wes Bos，并称相框到货后不到十分钟就拆开外壳、接上 Codex，并让它参考 Wes Bos 的仓库；帖子附两张照片。所引 Wes Bos 帖子链接的是 photo-frame-dashboard 仓库，记录的是 Wes Bos 本人的 root 和自定义应用工作，而非本帖作者的成果。帖中未报告设备型号、步骤或结果，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；作者本人的设备工作未见报告，Wes Bos 的仓库需另行核查。",
+      "primary_evidence_urls": [
+        "https://x.com/LeonardVolner/status/2109785163475591510",
+        "https://x.com/wesbos/status/2109282977146355862"
+      ],
       "catalog_matches": []
     },
     {
@@ -3368,12 +3371,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109789864891940904"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@LIQUID8RPF, 2026-10-12) says REA produced, in 16 minutes, a LightBurn equivalent for the author’s exact laser, “nothing more, nothing less”; it shows two images and links only the REA repository. It names no laser or controller and publishes no source, protocol notes or test against the device. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the laser-control software and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@LIQUID8RPF，2026-10-12）称借助 REA 在 16 分钟内做出了一个专为作者那台激光机打造的 LightBurn 替代品，“不多也不少”；帖子附两张图片，仅链接 REA 仓库。帖子未指明激光机或控制器型号，也未公开源码、协议记录或对设备的测试。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该激光控制软件及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/LIQUID8RPF/status/2109789864891940904"
+      ],
       "catalog_matches": []
     },
     {
@@ -3388,12 +3393,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109791974014496983"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Kurcide, 2026-10-12) says the author reverse-engineered the Echo Show 5 (2nd generation) and built a personal system connected to a Hermes Agent that works as an intercom and security-camera system across two houses, then bought 20 more units; it shows two photos. It describes no method, firmware access or software and links no artifact. The GitHub account with the same handle holds only two forks, one of them Hermes Agent, and nothing for the Echo Show. Retain the lead without a catalog mapping; the device work is unestablished.",
+      "reason_zh": "作者帖子（@Kurcide，2026-10-12）称逆向了 Echo Show 5（第二代），并做出一套接入 Hermes Agent 的自用系统，在两处住宅间用作对讲和安防摄像头系统，随后又买了 20 台；帖子附两张照片。帖子未描述方法、固件访问方式或软件，也未链接任何成果。同名 GitHub 账号只有两个分叉仓库（其中之一是 Hermes Agent），没有与 Echo Show 相关的内容。保留此线索而不建立目录映射；该设备工作未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Kurcide/status/2109791974014496983"
+      ],
       "catalog_matches": []
     },
     {
@@ -3408,13 +3415,24 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109795113807630735"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@talkaboutdesign, 2026-10-12) says REA is helping reverse-engineer the Elgato 4K X capture card for better performance and lower latency. A GitHub account with the same handle and first name publishes elgato-hdr, pinned here: a native macOS app, released 2026-09-08, whose README documents a libusb UVC path to the card’s hidden 10-bit mode, and whose Game-mode and USB-timing pull request, merged about 23 minutes after the post, reports measured display delays. Full mapping covers that work. The repository does not mention REA, so REA’s role remains the author’s claim; the latency figures were not reproduced.",
+      "reason_zh": "作者帖子（@talkaboutdesign，2026-10-12）称正借助 REA 逆向 Elgato 4K X 采集卡，以获得更好的性能和更低的延迟。账号名与名字都相同的 GitHub 账号发布了 elgato-hdr（此处固定到具体提交）：这是一款于 2026-09-08 发布的原生 macOS 应用，README 记录了通过 libusb 走 UVC 获取采集卡隐藏 10 位模式的通路；其加入 Game 模式与 USB 计时的拉取请求在该帖发布约 23 分钟后合并，并报告了实测显示延迟。完整映射覆盖这项工作。仓库未提及 REA，因此 REA 的作用仍是作者说法；延迟数据未经复现。",
+      "primary_evidence_urls": [
+        "https://x.com/talkaboutdesign/status/2109795113807630735",
+        "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/README.md",
+        "https://github.com/talkaboutdesign/elgato-hdr/pull/1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "elgato-hdr-uvc-capture-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:gardena-mower-codex",
@@ -3428,12 +3446,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109840164004737341"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s opening post (@BderKhan, 2026-10-12) says the author is reverse-engineering a lawn mower with Claude and Codex, with one photo. The cited update (2026-10-13) says Codex has “completely hacked” the Gardena mower, that motor control works and a new firmware is in progress, controlled from a phone over Wi-Fi to an ESP32 and over Bluetooth to the mower; it shows a video. Neither names the model or publishes protocol notes, code or firmware. The GitHub account with the same handle and name has no mower repository. Retain the lead without a catalog mapping; the control path and firmware work are unestablished.",
+      "reason_zh": "作者的首帖（@BderKhan，2026-10-12）称正借助 Claude 和 Codex 逆向一台割草机，并附一张照片。所引更新帖（2026-10-13）称 Codex 已把这台 Gardena 割草机“彻底破解”，电机控制已可用，新固件正在开发中，控制链路为手机经 Wi-Fi 连 ESP32，再经蓝牙连割草机；帖子附视频。两帖均未指明型号，也未公开协议记录、代码或固件。账号名与名字都相同的 GitHub 账号没有割草机相关仓库。保留此线索而不建立目录映射；该控制链路和固件工作均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/BderKhan/status/2109840164004737341",
+        "https://x.com/BderKhan/status/2109731357824020932"
+      ],
       "catalog_matches": []
     },
     {
@@ -3448,12 +3469,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109839329933824026"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@KKetemepi, 2026-10-13) says the author’s AI agents traced MarkText’s HTML export from the built app with REA, rebuilt it and logged every claim with evidence, reporting 17 passing tests and one open Windows check, with “receipts in the video”. It shows only that video and links no repository, test suite or evidence log. No GitHub account matching the handle was found; the profile’s website is a YouTube channel. Retain the lead without a catalog mapping; the rebuilt exporter, its tests and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@KKetemepi，2026-10-13）称作者的 AI Agent 借助 REA 从已构建的 MarkText 应用中追踪其 HTML 导出功能并重建，每条结论都附证据记录，报告 17 项测试通过、仍有一项 Windows 检查未完成，“凭证在视频里”。帖子仅附该视频，未链接仓库、测试套件或证据记录。未找到与该账号名对应的 GitHub 账号，个人资料中的网站是一个 YouTube 频道。保留此线索而不建立目录映射；重建的导出功能、其测试及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/KKetemepi/status/2109839329933824026"
+      ],
       "catalog_matches": []
     },
     {
@@ -15303,18 +15326,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 175,
-      "insufficient-evidence": 140,
-      "pending": 276
+      "already-curated": 176,
+      "insufficient-evidence": 145,
+      "pending": 270
     },
     "units_by_state": {
-      "already-curated": 174,
-      "insufficient-evidence": 140,
-      "pending": 275
+      "already-curated": 175,
+      "insufficient-evidence": 145,
+      "pending": 269
     },
-    "primary_reviewed_units": 254,
-    "catalog_linked_occurrences": 186,
-    "distinct_resource_ids": 180,
+    "primary_reviewed_units": 260,
+    "catalog_linked_occurrences": 187,
+    "distinct_resource_ids": 181,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

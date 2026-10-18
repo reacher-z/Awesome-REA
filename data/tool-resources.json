@@ -6533,5 +6533,38 @@
       "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/tools/game-recipe/README.md",
       "https://github.com/NoRain211/doaxvb-re/releases/tag/v0.5.3"
     ]
+  },
+  {
+    "id": "elgato-hdr-uvc-capture-case",
+    "name": "Elgato HDR: a userspace capture path for the Elgato 4K X’s 10-bit mode",
+    "url": "https://github.com/talkaboutdesign/elgato-hdr",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "A native macOS app that reaches the Elgato 4K X capture card’s 10-bit P010 video mode, which the project says Apple’s built-in webcam driver does not expose to apps. A root helper detaches that driver and runs the card’s USB Video Class streaming directly through libusb, feeding a Metal HDR viewer, an HDR10 recorder and an editor. Latency figures and device coverage remain author-reported.",
+    "description_zh": "一款原生 macOS 应用，用于获取 Elgato 4K X 采集卡的 10 位 P010 视频模式；项目称苹果内置的摄像头驱动不会向应用开放该模式。一个 root 权限辅助程序卸下该驱动，通过 libusb 直接执行采集卡的 USB 视频类（UVC）串流，为 Metal HDR 预览、HDR10 录制和编辑器提供画面。延迟数据和设备覆盖范围仍为作者报告。",
+    "evidence_url": "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-13 head, after release 1.0.0 (2026-09-08). It targets an Elgato 4K X on macOS 14 or newer; the README reports building and testing on Apple Silicon only, and other Elgato cards with a P010 UVC format are untested. The HDR preview needs an HDR/EDR display. Among the 10-bit modes, 4K is limited to 30 fps by USB bandwidth.",
+      "Building needs Xcode Command Line Tools and Homebrew’s libusb: build.sh compiles the C helper against libusb, bundles the library, compiles the Swift app and signs it ad hoc, and releases are not notarized. The helper needs one administrator prompt because detaching the macOS kernel driver requires root; it exits about 20 seconds after the app quits and hands the card back to macOS.",
+      "The repository keeps the USB descriptor-dump tools used while reverse-engineering the card and a script that sweeps every capture mode; it contains no vendor firmware or driver binaries. Recordings carry fixed HDR10 mastering metadata because, per the README, the card does not pass the source’s HDMI HDR metadata over USB.",
+      "The README and the Game-mode pull request report display delays of about 48, 22 and 5 ms for the Smooth, Game and Lowest Latency modes at 1440p60 on a 120 Hz MacBook Pro, measured from USB transfer completion to display as reported by macOS; the card’s own processing comes on top, and the PR notes that the test card sent silent audio. These are author measurements and were not reproduced here.",
+      "MIT covers the project code; the bundled libusb library and captured content keep their own terms, and the project states it is not affiliated with Elgato or Corsair. An X post under the same handle credits REA with helping this latency work, but the repository does not mention REA, so REA use is unconfirmed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/tools/uvc_capture.c",
+      "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/tools/usb_desc_dump.c",
+      "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/tools/modetest.py",
+      "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/build.sh",
+      "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/LICENSE",
+      "https://github.com/talkaboutdesign/elgato-hdr/pull/1",
+      "https://x.com/talkaboutdesign/status/2109795113807630735"
+    ]
   }
 ]
