@@ -2008,5 +2008,15 @@
       "make compare 将构建出的 ROM 与 rom.sha1 做 SHA-1 校验，匹配时报告 pokeemerald.gba: OK；Makefile 注明比对只适用于非现代编译器构建。CI 以 COMPARE=1 构建，并另外构建现代目标。这些检查确认该单一版本的字节一致性，不覆盖游戏行为路径；本合集未自行构建 ROM。",
       "仓库没有顶层许可证文件，GitHub 也未识别出许可证；许可证文件只覆盖部分附带工具，agbcc 的 GCC 源码附 GPL v2。原游戏的代码、图像和音频仍受其权利人约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "silent-hill-decomp-case": {
+    "name": "Silent Hill：可执行文件与覆盖模块的 PlayStation 一致性反编译",
+    "requirements": [
+      "主要目标是北美 1.1 版（SLUS-00707）；配置也涵盖欧版 1.0 和三个日版，但安装指南称工作重点在北美 1.1 版。README 声明本项目不是、也不会成为 PC 或其他平台的移植，代码库也不适合直接用于移植。产物是 PlayStation 可执行文件 SLUS_007.07 及其覆盖模块文件。",
+      "需自备北美 1.1 版光盘转储，形式为单个 .BIN 文件，其 SHA-1 须与安装指南给出的一致，并放在 rom/image 下；setup 步骤会在本地提取所需代码和素材。仓库不提交光盘镜像或游戏素材，但 lib/ 中提交了 Sony PsyQ 4.3／4.4 库目标文件（部分经修改以求匹配），tools/ 中也包含预编译的编译器和 ISO 工具二进制文件。",
+      "推荐的 Make 构建可在 Linux 或通过 WSL2 在 Windows 上运行，需 git、build-essential、MIPS binutils 与 cpp、带虚拟环境的 Python 3、bchunk 和 7z，并递归拉取 asm-differ、decomp-permuter、m2c、maspsx 子模块。Ninja 构建也可在 Windows 原生运行，但指南称其仍不完善，并报告在该环境中会出现不匹配。安装页面最后修订于 2026 年 4 月，仍写着早先的 Vatuu/silent-hill-decomp 地址。",
+      "构建会将可执行文件和每个覆盖模块的 SHA-256 与 configs/USA/checksum.sha 比对；仓库的 Check Executables Match 工作流在提供 ROM 的容器中运行，对所审提交执行成功。decomp.dev 报告该提交 6,527 个函数全部匹配（代码 100%），但数据仅匹配 36.99%。目前不支持可重定位构建和文件替换，本合集未重跑构建。",
+      "项目采用 GPLv3；Silent Hill、其光盘数据及 Sony SDK 目标文件另有权利约束。README 声明反编译中未在知情情况下加入 AI 生成的代码，至多只有一次性的辅助脚本由 AI 编写；未确立与 REA 的关联。"
+    ]
   }
 }

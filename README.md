@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 247](https://img.shields.io/badge/resources-247-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 107](https://img.shields.io/badge/cases-107-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 248](https://img.shields.io/badge/resources-248-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 108](https://img.shields.io/badge/cases-108-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (88) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (89) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (107) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (108) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -598,6 +598,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Pokémon Emerald for the Game Boy Advance as buildable C source, with game scripts and data kept as assembler directives. The default agbcc build produces pokeemerald.gba, and make compare checks it against the SHA-1 of the original English ROM; an optional modern-GCC build is not hash-checked. Graphics and audio sources are committed in the tree, so the documented build reads no base ROM.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokemon-emerald-decomp-case/)
+
+- [**Silent Hill: matching PlayStation decompilation of the executable and overlays**](https://github.com/shdecompilations/silent-hill-decomp)
+
+  Reconstructs Silent Hill’s PlayStation code, the main executable plus its engine, screen and map overlays, as C that rebuilds byte-identical binaries from the user’s own NTSC-U 1.1 disc image. The project focuses on matching and naming rather than porting. decomp.dev reports every function matched for the reviewed commit, while data migration, shiftable builds and documentation remain open.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/silent-hill-decomp-case/)
 
 #### Tools, projects and integrations
 

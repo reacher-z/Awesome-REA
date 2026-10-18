@@ -4220,5 +4220,39 @@
       "https://github.com/pret/pokeemerald/tree/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/tools",
       "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
     ]
+  },
+  {
+    "id": "silent-hill-decomp-case",
+    "name": "Silent Hill: matching PlayStation decompilation of the executable and overlays",
+    "url": "https://github.com/shdecompilations/silent-hill-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Silent Hill’s PlayStation code, the main executable plus its engine, screen and map overlays, as C that rebuilds byte-identical binaries from the user’s own NTSC-U 1.1 disc image. The project focuses on matching and naming rather than porting. decomp.dev reports every function matched for the reviewed commit, while data migration, shiftable builds and documentation remain open.",
+    "description_zh": "将 Silent Hill 的 PlayStation 代码（主可执行文件及其引擎、界面和地图覆盖模块）重建为 C，可依据使用者自备的北美 1.1 版光盘镜像构建出逐字节一致的二进制文件。项目专注于匹配与命名，而非移植。decomp.dev 报告所审提交的全部函数均已匹配，数据迁移、可重定位构建和文档工作仍待完成。",
+    "evidence_url": "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The primary target is the NTSC-U 1.1 release (SLUS-00707); configurations also cover PAL 1.0 and three NTSC-J releases, but the setup guide says work focuses on NTSC-U 1.1. The README states that the project is not and will not be a PC or other port, and that the codebase is not port-ready. The output is the PlayStation executable SLUS_007.07 and its overlay files.",
+      "Supply your own NTSC-U 1.1 disc dump as a single .BIN with the SHA-1 given in the setup guide, placed under rom/image; setup extracts the needed code and assets locally. No disc image or game assets are committed, but lib/ commits Sony PsyQ 4.3/4.4 library objects, some edited to match, and tools/ includes prebuilt compiler and ISO-tool binaries.",
+      "The recommended Make build runs on Linux or on Windows through WSL2 with git, build-essential, MIPS binutils and cpp, Python 3 with a virtual environment, bchunk and 7z, plus the recursive submodules asm-differ, decomp-permuter, m2c and maspsx. A Ninja path also runs natively on Windows, but the guide calls that build rough and reports mismatches there. The setup page was last revised in April 2026 and still names the earlier Vatuu/silent-hill-decomp location.",
+      "A build compares SHA-256 checksums of the executable and every overlay with configs/USA/checksum.sha; the repository’s Check Executables Match workflow, run in a container that supplies the ROM, succeeded for the reviewed commit. decomp.dev reports 6,527 of 6,527 functions (100% of code) but 36.99% of data matched for that commit. Shiftable builds and file replacement are not available, and this collection did not rerun the build.",
+      "GPLv3 for the project; Silent Hill, its disc data and the Sony SDK objects retain separate rights. The README states that no AI-generated code has knowingly been added to the decompilation, apart from possible throwaway helper scripts; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/LICENSE",
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/lib/versions.txt",
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/configs/USA/checksum.sha",
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/.github/workflows/check.yml",
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/.gitmodules",
+      "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/Makefile",
+      "https://github.com/shdecompilations/silent-hill-decomp/actions/runs/39120072732",
+      "https://github.com/shdecompilations/silent-hill-decomp/wiki/Setup/8e17f29b6e88a5fc0dfaa5be427211fae2f76ddf",
+      "https://decomp.dev/shdecompilations/silent-hill-decomp"
+    ]
   }
 ]

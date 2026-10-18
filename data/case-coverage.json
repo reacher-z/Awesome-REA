@@ -12278,13 +12278,28 @@
         "https://github.com/shdecompilations/silent-hill-decomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 98 (README line 1004) lists shdecompilations/silent-hill-decomp under 👻 Silent Hill. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 98 行（README 第 1004 行）在 👻 Silent Hill 下列出 shdecompilations/silent-hill-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, license, SDK-object notes, checksum manifest and CI workflow, the successful CI run, the setup guide revision and decomp.dev’s per-commit report support the reported PS1 matching decompilation. Full mapping covers this reconstruction; it is not a port, and the build was not independently rerun. The user-supplied disc image, committed SDK objects and project-reported data progress remain explicit.",
+      "reason_zh": "固定版本的 README、许可证、SDK 目标文件说明、校验清单与 CI 工作流，加上成功的 CI 运行、安装指南修订版及 decomp.dev 对该提交的报告，支持所报告的 PS1 一致性反编译。完整映射覆盖此重建项目；它不是移植，构建也未经独立重跑。使用者自备的光盘镜像、仓库提交的 SDK 目标文件以及项目报告的数据进度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/README.md",
+        "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/LICENSE",
+        "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/lib/versions.txt",
+        "https://github.com/shdecompilations/silent-hill-decomp/blob/73a9f176fa04a0268c5dc0263ba35b1fe23498b8/configs/USA/checksum.sha",
+        "https://github.com/shdecompilations/silent-hill-decomp/actions/runs/39120072732",
+        "https://github.com/shdecompilations/silent-hill-decomp/wiki/Setup/8e17f29b6e88a5fc0dfaa5be427211fae2f76ddf",
+        "https://decomp.dev/shdecompilations/silent-hill-decomp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "silent-hill-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-099",
@@ -14202,18 +14217,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 113,
-      "insufficient-evidence": 86,
-      "pending": 392
-    },
-    "units_by_state": {
-      "already-curated": 112,
+      "already-curated": 114,
       "insufficient-evidence": 86,
       "pending": 391
     },
-    "primary_reviewed_units": 141,
-    "catalog_linked_occurrences": 124,
-    "distinct_resource_ids": 118,
+    "units_by_state": {
+      "already-curated": 113,
+      "insufficient-evidence": 86,
+      "pending": 390
+    },
+    "primary_reviewed_units": 142,
+    "catalog_linked_occurrences": 125,
+    "distinct_resource_ids": 119,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
