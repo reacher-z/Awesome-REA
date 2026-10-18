@@ -2277,5 +2277,15 @@
       "验证方式是整个映像的 SHA-256 比对：重建的可执行文件与零售版哈希不符时 ninja 即报错，项目只有在通过该检查且 objdiff 显示一致时才声称函数匹配。CI 没有可执行文件，无法构建，只上传本地生成的报告供 decomp.dev 读取。项目将 build 38 的兼容性视为代码生成方面的证据，而非原始编译器的证明；本合集未重跑任何构建。",
       "所审提交中没有许可证文件，因此项目代码的复用条款未说明；游戏、其可执行文件及专有的 Metrowerks 编译器另有权利约束。交接说明面向“人或 AI 代理”，进度日志也计划并行使用代理，但未将具体匹配归于它们；未确立与 REA 的关联。"
     ]
+  },
+  "animal-crossing-pc-port-case": {
+    "name": "Animal Crossing：基于 GameCube 反编译成果的原生 PC 移植",
+    "requirements": [
+      "所审阅快照为 v0.9.3-playtest 预发布版，仅支持美版 Rev 0（GAFE01_00）。README 称其依托的 ac-decomp 已完整，开发者文档则称完成度为 99.52%；本合集未核实这两个数字。项目不计划支持联机；Animal Crossing Deluxe 模组与之不兼容，但此版本改编了其中部分便利性改动。",
+      "需使用者自备 Animal Crossing（美版）光盘镜像，格式为 ISO、GCM 或 CISO；移植版启动时在内存中从镜像载入 main.dol、foresta.rel.szs 及约 2,500 项素材。README 声明仓库不含任何游戏素材或汇编。存档使用与 Dolphin 兼容的 GCI 文件，可选高清材质包沿用 Dolphin 的命名格式。",
+      "Windows 为主要目标平台：文档所述构建在 MSYS2 MINGW32 环境中进行，需 32 位 MinGW GCC、CMake 3.16+ 和 SDL2，并用随附的 GLAD 创建 OpenGL 3.3 Core 上下文。必须以 32 位、不优化（-O0）并定义 NDEBUG 的方式构建，因为反编译代码把指针转换为 32 位数值，且含有对优化敏感的未定义行为。Linux i686 据称可以编译链接，但未获正式支持。",
+      "约 100 个反编译文件含有 TARGET_PC 改动，可选的 PC_ENHANCEMENTS 增加设置项、MSAA 和材质包加载。项目称 Windows 版已全面测试，并记录一处尚未解决的低音失真问题，但没有为移植版发布自动化测试或逐字节一致性检查。与 GameCube 原版的等价性未获证实，本次审阅也未构建或运行。",
+      "LICENSE 说明反编译代码沿用 ac-decomp 的 CC0 1.0，pc/ 层及 TARGET_PC 新增代码采用 MIT，FixNES 另附 MIT 声明；GitHub 未识别出单一许可证。游戏内容权利另计。README 披露仅在移植代码中使用了 Claude 等 AI 工具；未确立 REA 使用。"
+    ]
   }
 }

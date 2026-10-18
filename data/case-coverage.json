@@ -13246,13 +13246,28 @@
         "https://github.com/flyngmt/ACGC-PC-Port",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 120 (README line 1255) lists flyngmt/ACGC-PC-Port under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 120 行（README 第 1255 行）在 🏡 Animal Crossing 下列出 flyngmt/ACGC-PC-Port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, developer documentation, FAQ, build files, LICENSE and matching v0.9.3-playtest release support this row as a native Windows port built on ACreTeam’s Animal Crossing decompilation, loading assets from a user-supplied USA disc image. Full mapping covers the port, not the upstream decompilation’s matching status or independently reproduced gameplay. Pre-release status, 32-bit build constraints, split CC0/MIT terms and the author’s AI-use notice remain explicit.",
+      "reason_zh": "固定版本的 README、开发者文档、FAQ、构建文件、LICENSE 及对应的 v0.9.3-playtest 发布页，支持将此行认定为基于 ACreTeam Animal Crossing 反编译成果、从使用者自备美版光盘镜像载入素材的原生 Windows 移植。完整映射覆盖该移植，不涵盖上游反编译的一致性状态或独立复现的游戏行为。预发布状态、32 位构建限制、CC0／MIT 分立条款及作者的 AI 使用声明均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/DOCUMENTATION.md",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/FAQ.md",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/build_pc.sh",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/CMakeLists.txt",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/LICENSE",
+        "https://github.com/flyngmt/ACGC-PC-Port/releases/tag/v0.9.3-playtest"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "animal-crossing-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-121",
@@ -14709,18 +14724,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 140,
-      "insufficient-evidence": 125,
-      "pending": 326
-    },
-    "units_by_state": {
-      "already-curated": 139,
+      "already-curated": 141,
       "insufficient-evidence": 125,
       "pending": 325
     },
-    "primary_reviewed_units": 204,
-    "catalog_linked_occurrences": 151,
-    "distinct_resource_ids": 145,
+    "units_by_state": {
+      "already-curated": 140,
+      "insufficient-evidence": 125,
+      "pending": 324
+    },
+    "primary_reviewed_units": 205,
+    "catalog_linked_occurrences": 152,
+    "distinct_resource_ids": 146,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

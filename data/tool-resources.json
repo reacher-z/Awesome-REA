@@ -5134,5 +5134,36 @@
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/data_gen.md",
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/.github/workflows/report.yml"
     ]
+  },
+  {
+    "id": "animal-crossing-pc-port-case",
+    "name": "Animal Crossing: a native PC port of the GameCube decompilation",
+    "url": "https://github.com/flyngmt/ACGC-PC-Port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runs Animal Crossing’s decompiled GameCube C code natively on 32-bit x86, replacing the GX graphics API with an OpenGL 3.3 translation layer and console services with SDL2-based platform code. Game assets are read at startup from the user’s own disc image instead of being shipped. It is a port built on ACreTeam’s ac-decomp, not a matching rebuild of the original executable.",
+    "description_zh": "让 Animal Crossing 反编译所得的 GameCube C 代码在 32 位 x86 上原生运行，用转换层把 GX 图形 API 映射到 OpenGL 3.3，并以基于 SDL2 的平台代码替代主机服务。游戏素材在启动时从使用者自己的光盘镜像读取，不随项目分发。这是基于 ACreTeam ac-decomp 的移植，而非与原可执行文件一致的重建。",
+    "evidence_url": "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed snapshot is the v0.9.3-playtest pre-release and supports only the USA Rev 0 release (GAFE01_00). The README calls the underlying ac-decomp complete, while the developer documentation calls it 99.52% complete; neither figure was checked here. Online play is not planned, and the Animal Crossing Deluxe mod is incompatible, although this release adapts some of its quality-of-life changes.",
+      "Requires the user’s own Animal Crossing (USA) disc image in ISO, GCM or CISO form; at startup the port loads main.dol, foresta.rel.szs and about 2,500 assets from it in memory. The README states that the repository contains no game assets or assembly. Saves use Dolphin-compatible GCI files, and optional HD texture packs use Dolphin’s naming format.",
+      "Windows is the primary target: the documented build uses an MSYS2 MINGW32 shell with 32-bit MinGW GCC, CMake 3.16+ and SDL2, plus vendored GLAD for an OpenGL 3.3 Core context. Builds must be 32-bit, unoptimized (-O0) and define NDEBUG, because the decompiled code casts pointers to 32-bit values and contains optimization-sensitive undefined behavior. Linux i686 is described as compiling and linking but is not officially supported.",
+      "About 100 decompilation files carry TARGET_PC changes, and optional PC_ENHANCEMENTS add settings, MSAA and texture-pack loading. The project describes Windows as fully tested and records an unresolved bass-distortion audio issue, but publishes no automated tests or byte-matching checks for the port. Equivalence with the GameCube original is not established, and this review did not build or run it.",
+      "LICENSE keeps the decompilation code under CC0 1.0 from ac-decomp and licenses the pc/ layer and TARGET_PC additions under MIT, with a separate MIT notice for FixNES; GitHub classifies no single license. Game content rights are separate. The README discloses that AI tools such as Claude were used for port code only; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/DOCUMENTATION.md",
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/FAQ.md",
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/build_pc.sh",
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/CMakeLists.txt",
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/LICENSE",
+      "https://github.com/flyngmt/ACGC-PC-Port/releases/tag/v0.9.3-playtest"
+    ]
   }
 ]
