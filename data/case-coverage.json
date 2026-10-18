@@ -5037,11 +5037,15 @@
         "https://x.com/i/status/2110680583634366777"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Primary look recorded. The post links zhaoxuya520/reverse-skill, which at the pinned commit is an MIT-licensed skill router for coding agents: it routes APK, binary, .NET and JavaScript reverse-engineering tasks alongside penetration-testing, exploit-development, EDR-bypass and CTF modules (the CTF component is GPLv3), with routing-regression CI. It is a tool rather than a reconstruction case and states no REA connection. Whether to curate it as an agent-integration record given that broad offensive-security scope is left to a maintainer; the post's claims are not adopted.",
+      "reason_zh": "已记录一手查看。帖子链接的 zhaoxuya520/reverse-skill 在固定版本中是一个采用 MIT 许可、面向编程智能体的 skill 路由包：除 APK、二进制、.NET 与 JavaScript 逆向任务外，还路由渗透测试、漏洞利用开发、EDR 绕过及 CTF 模块（CTF 组件采用 GPLv3），并以 CI 运行路由回归测试。它是工具而非重建案例，也未说明与 REA 的关联。鉴于其进攻性安全范围较广，是否作为智能体集成条目收录留待维护者决定；帖子中的说法不予采纳。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110680583634366777",
+        "https://github.com/zhaoxuya520/reverse-skill/blob/cab634bd855fc287f6e420c1f36fd1a6b9245960/README.md",
+        "https://github.com/zhaoxuya520/reverse-skill/blob/cab634bd855fc287f6e420c1f36fd1a6b9245960/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -13939,7 +13943,7 @@
       "insufficient-evidence": 81,
       "pending": 414
     },
-    "primary_reviewed_units": 118,
+    "primary_reviewed_units": 119,
     "catalog_linked_occurrences": 106,
     "distinct_resource_ids": 100,
     "distinct_paper_ids": 1,
