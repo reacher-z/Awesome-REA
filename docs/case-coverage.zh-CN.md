@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 79 | 78 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 440 | 439 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 80 | 79 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 439 | 438 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 72 | 72 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-88 个出现项含目录链接；共关联 82 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+89 个出现项含目录链接；共关联 83 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 94 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 95 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -113,6 +113,7 @@
 | 《姆吉拉的假面》：生成一致美版 N64 ROM 的反编译重建 | 已收录 | [来源](https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md) |
 | 2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植 | 已收录 | [来源](https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/README.md) |
 | 《缩小帽》：面向五个 ROM 的 GBA 反编译重建 | 已收录 | [来源](https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md) |
+| z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目 | 已收录 | [来源](https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/README.md) |
 | 🚀 Metroid Prime — AxioDL/metaforce | 待核查 | [来源](https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/README.md) |
 | 🦔 Sonic Mania — RSDKModding/Sonic-Mania-Decompilation | 待核查 | [来源](https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/README.md) |
 | Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器 | 已收录 | [来源](https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md) |

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 213](https://img.shields.io/badge/resources-213-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 74](https://img.shields.io/badge/cases-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 214](https://img.shields.io/badge/resources-214-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 75](https://img.shields.io/badge/cases-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (17) · [Game](#game) (57) · [App](#app) (44)
+- [Website](#website) (17) · [Game](#game) (58) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (74) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (75) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -406,6 +406,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Recovers Virtua Fighter 2 Version 2.1’s Sega Model 2A i960 program into portable, non-matching C17, accepting each recovered path only when it matches a reference i960 executor at controlled boundaries. The repository adds ROM validation, i960 and 68000 analysis tools, a bounded Model 2A hardware model and snapshot-based differential runners. README states that it is not yet a playable port; match flow, combat, physics, AI, rasterization and much of the audio remain open.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/vf2-decomp-differential-recovery-case/)
+
+- [**z2rs: an incremental Rust reconstruction of Zelda II checked against an emulator**](https://github.com/troyedwardsjr/z2rs)
+
+  Rebuilds Zelda II: The Adventure of Link (NES) in Rust for desktop, browser and Android by replacing the game’s 6502 routines one at a time. A built-in interpreter still runs the user’s ROM and hands ported routines to Rust, while a verifier compares RAM, sprites, palette and frames with a reference emulator. It is a behavioral, clean-room-style reconstruction guided by a community disassembly, not a decompilation or a finished standalone engine.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/z2rs-zelda2-reconstruction-case/)
 
 #### Tools, projects and integrations
 
