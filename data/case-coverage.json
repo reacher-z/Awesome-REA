@@ -7890,12 +7890,20 @@
         "https://x.com/i/status/2111120943540289627",
         "https://x.com/i/status/2111302536846258223"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Perplexity’s thread (@AskPerplexity, 2026-10-16) announces REA as a /reverse-engineer skill in its Computer product and links five hosted demo apps modeled on Figma, LibreOffice Calc, Photopea, Harvey and Audacity; a third-party post adds that the Figma-style demo, Assemblage, reproduces only part of the original. The demo sites still responded on 2026-10-18 but publish no source, inputs, method or comparison with the original apps, and REA’s repository at commit 23f984b1a884baefc3c44e4ab697f6eff61dffb6 documents no Perplexity integration, so no official REA documentation record exists to map. Retain the lead without a catalog mapping; the integration and each demo’s reconstruction quality remain vendor-reported.",
+      "reason_zh": "Perplexity 的帖子串（@AskPerplexity，2026-10-16）宣布 REA 已作为 /reverse-engineer 技能加入其 Computer 产品，并链接五个仿照 Figma、LibreOffice Calc、Photopea、Harvey 和 Audacity 的在线演示应用；另一位第三方发帖称，仿 Figma 的演示 Assemblage 只复刻了原版的一部分。这些演示站点在 2026-10-18 仍可访问，但未公开源码、输入、方法或与原应用的对照；REA 仓库在提交 23f984b1a884baefc3c44e4ab697f6eff61dffb6 中也未记录 Perplexity 集成，因此没有可映射的 REA 官方文档记录。保留此线索而不建立目录映射；该集成及各演示的重建质量仍为厂商报告。",
+      "primary_evidence_urls": [
+        "https://x.com/AskPerplexity/status/2111120664543596957",
+        "https://x.com/AskPerplexity/status/2111120738078044244",
+        "https://x.com/AskPerplexity/status/2111120790683050106",
+        "https://x.com/AskPerplexity/status/2111120848186982838",
+        "https://x.com/AskPerplexity/status/2111120943540289627",
+        "https://x.com/LinearUncle/status/2111302536846258223",
+        "https://github.com/morluto/rea/blob/23f984b1a884baefc3c44e4ab697f6eff61dffb6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -15555,15 +15563,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 188,
-      "insufficient-evidence": 156,
-      "pending": 247
+      "insufficient-evidence": 157,
+      "pending": 246
     },
     "units_by_state": {
       "already-curated": 186,
-      "insufficient-evidence": 156,
-      "pending": 247
+      "insufficient-evidence": 157,
+      "pending": 246
     },
-    "primary_reviewed_units": 283,
+    "primary_reviewed_units": 284,
     "catalog_linked_occurrences": 197,
     "distinct_resource_ids": 192,
     "distinct_paper_ids": 1,
