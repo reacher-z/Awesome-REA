@@ -3867,5 +3867,36 @@
       "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/COPYING",
       "https://github.com/RevoSucks/CV64Recomp/releases/tag/v0.5.0"
     ]
+  },
+  {
+    "id": "rsdkv5-engine-decomp-case",
+    "name": "RSDKv5 Decompilation: reconstructing Retro Engine v5 and v5U",
+    "url": "https://github.com/RSDKModding/RSDKv5-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the Retro Engine (RSDK) v5 and v5 Ultimate runtime, the engine that runs Sonic Mania’s game code, and builds it for Windows, Linux, Switch and Android. RSDKv5U can also run RSDKv3 and RSDKv4 games such as Sonic CD and Sonic 1 & 2. The project adds a mod loader, a shader compiler and extra Windows backends, and ships no game data.",
+    "description_zh": "重建 Retro Engine（RSDK）v5 及 v5 Ultimate 运行时，即运行《索尼克狂欢》游戏代码的引擎，可构建 Windows、Linux、Switch 和 Android 版本。RSDKv5U 还能运行 RSDKv3 与 RSDKv4 游戏，例如 Sonic CD 和 Sonic 1 & 2。项目增加了模组加载器、着色器编译器和额外的 Windows 后端，且不附带任何游戏数据。",
+    "evidence_url": "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository describes itself as a complete decompilation of Retro Engine v5 and v5Ultimate; its license says it also contains original code and that most code is meant to be functionally the same as the specified RSDK version, so no byte-matching build is claimed. RETRO_REVISION defaults to 3 (RSDKv5U). The reviewed commit is 13 commits after release v1.1.1 (2025-11-01).",
+      "Neither game data nor game logic ships here. The engine loads data files from an official RSDKv5(U) game such as Sonic Mania (Plus), and game code comes from a separate project linked as Game, such as the Sonic Mania decompilation, which also bundles this engine. The FAQ covers Sonic Origins data files, which lack the games’ music and sound effects, and notes that release builds block the Origins Plus characters.",
+      "Clone recursively, because GitHub’s source ZIPs omit the required submodules. CMake builds use Visual Studio with vcpkg on Windows, GLEW, GLFW and libtheora development packages on Linux, devkitPro packages for Switch, and a separate Android guide; community forks for WebAssembly, New 3DS, Wii U, Wii and Vita are listed as possibly WIP or outdated. The default Windows DirectX backends support only XInput controllers, and GL builds need a user-made shader mod for videos and filters.",
+      "CI builds Windows x86 and x64, Linux and Android binaries. The project publishes no comparison with the original engine binaries, and the FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
+      "The custom RSDKv5(U) Decompilation Source Code License v2.1 requires any distributed prebuilt executable to have DLC disabled by default, forbids commercial use and distributing game assets other than unique modded ones, requires crediting Evening Star and the decompilation authors Rubberduckycooly and chuliRMG, and binds forks to the same terms. The README says Evening Star owns the Retro Engine; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/FAQ.md",
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/LICENSE.md",
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/dependencies/android/README.md",
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/RSDKv5/RSDK/Core/RetroEngine.cpp",
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/.github/workflows/build.yml",
+      "https://github.com/RSDKModding/RSDKv5-Decompilation/releases/tag/v1.1.1"
+    ]
   }
 ]

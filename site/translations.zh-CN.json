@@ -1899,5 +1899,15 @@
       "验证使用自行构建的无害 .NET 8.0.22 测试程序，以独立的编译器／链接器符号和目录字节作为对照基准，另有去除符号的样本和负面输入；测试程序从不执行，构建它们需要 .NET SDK 8.0.416 及对应平台的 NativeAOT 工具。真实 MCP 测试流程只在装有适配器的 Linux x64 主机上运行。Windows 主机行为仅在 Windows 11 x64 上不带 JAR 手动检查过一次，对照测试程序基准与链接映射；没有 CI 流程重复该检查。",
       "REA 声明 MIT。解析器的水合语义改编自 Washi1337/ghidra-nativeaot（MIT，其声明随附于 licenses/ 目录），并对照 .NET 的 MethodTable.h 核对。被分析的可执行文件保留各自许可。已合并的 PR #748 引入了该集成，issue #744 记录了相应请求及其关闭，且未主张重建 C# 项目。本合集未运行 REA、Ghidra 或任何测试程序。"
     ]
+  },
+  "rsdkv5-engine-decomp-case": {
+    "name": "RSDKv5 Decompilation：重建 Retro Engine v5 与 v5U",
+    "requirements": [
+      "仓库自述为 Retro Engine v5 与 v5Ultimate 的完整反编译；其许可证说明仓库中也有原创代码，且大部分代码旨在与所指定 RSDK 版本在功能上相同，因此并不主张能构建逐字节一致的产物。RETRO_REVISION 默认为 3（RSDKv5U）。所审阅提交位于 v1.1.1 版（2025-11-01）之后 13 个提交。",
+      "仓库既不附带游戏数据，也不包含游戏逻辑。引擎读取官方 RSDKv5(U) 游戏（如 Sonic Mania (Plus)）的数据文件，游戏代码则来自以 Game 链接的独立项目，例如同样内置本引擎的 Sonic Mania 反编译项目。常见问题说明了使用 Sonic Origins 数据文件的情况：这些文件不含游戏音乐和音效，发布版构建也会屏蔽 Origins Plus 新增角色。",
+      "须递归克隆仓库，因为 GitHub 的源码 ZIP 不含所需子模块。CMake 构建在 Windows 上使用 Visual Studio 与 vcpkg，在 Linux 上使用 GLEW、GLFW 和 libtheora 开发包，Switch 使用 devkitPro 软件包，Android 另有构建指南；README 列出的 WebAssembly、New 3DS、Wii U、Wii 和 Vita 社区分支可能仍在开发或已过时。Windows 默认的 DirectX 后端只支持 XInput 手柄，GL 构建需要使用者自建着色器模组才能显示视频和滤镜。",
+      "CI 构建 Windows x86、x64、Linux 和 Android 版本。项目未公开与原版引擎二进制文件的对照结果，常见问题还说明官方版本中已有的缺陷大多不会修复。本合集未构建或运行该项目。",
+      "自定义的《RSDKv5(U) 反编译源码许可证 v2.1》要求任何对外提供的预构建可执行文件默认关闭 DLC，禁止商业用途及分发独特模组素材以外的游戏素材，要求注明 Evening Star 与反编译作者 Rubberduckycooly、chuliRMG，并要求所有派生版本遵守同一许可。README 称 Retro Engine 归 Evening Star 所有；所审阅来源未确立 AI 或 REA 使用。"
+    ]
   }
 }

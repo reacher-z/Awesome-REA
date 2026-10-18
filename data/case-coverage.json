@@ -10495,13 +10495,28 @@
       "reported_source_urls": [
         "https://github.com/RSDKModding/RSDKv5-Decompilation"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 28 (README line 256) lists RSDKModding/RSDKv5-Decompilation under 🦔 Sonic Mania. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 28 行（README 第 256 行）在 🦔 Sonic Mania 下列出 RSDKModding/RSDKv5-Decompilation。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, FAQ, custom license, Android notes, engine startup source, CI workflow and v1.1.1 release support this decompilation of the RSDKv5 and v5U engine that the Sonic Mania decompilation builds with. The full mapping covers the engine repository only; the game-code row stays a separate case. Absent game data, the DLC-off distribution rule, non-byte-matching scope and non-commercial terms remain explicit.",
+      "reason_zh": "固定版本的 README、常见问题、自定义许可证、Android 说明、引擎启动源码、CI 工作流和 v1.1.1 发布，支持这一被 Sonic Mania 反编译项目用于构建的 RSDKv5 与 v5U 引擎反编译。完整映射只覆盖引擎仓库，游戏代码项目另作独立案例。不含游戏数据、分发时须关闭 DLC、非逐字节一致的范围以及非商业许可条款均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/README.md",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/FAQ.md",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/LICENSE.md",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/dependencies/android/README.md",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/RSDKv5/RSDK/Core/RetroEngine.cpp",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/.github/workflows/build.yml",
+        "https://github.com/RSDKModding/RSDKv5-Decompilation/releases/tag/v1.1.1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rsdkv5-engine-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-029",
@@ -14033,18 +14048,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 102,
-      "insufficient-evidence": 81,
-      "pending": 408
-    },
-    "units_by_state": {
-      "already-curated": 101,
+      "already-curated": 103,
       "insufficient-evidence": 81,
       "pending": 407
     },
-    "primary_reviewed_units": 125,
-    "catalog_linked_occurrences": 113,
-    "distinct_resource_ids": 107,
+    "units_by_state": {
+      "already-curated": 102,
+      "insufficient-evidence": 81,
+      "pending": 406
+    },
+    "primary_reviewed_units": 126,
+    "catalog_linked_occurrences": 114,
+    "distinct_resource_ids": 108,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
