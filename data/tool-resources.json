@@ -5334,5 +5334,38 @@
       "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/COPYING",
       "https://github.com/sonicdcer/MarioKart64Recomp/releases/tag/v0.9.2"
     ]
+  },
+  {
+    "id": "animal-crossing-gamecube-decomp-case",
+    "name": "Animal Crossing: matching GameCube decompilation",
+    "url": "https://github.com/ACreTeam/ac-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Animal Crossing’s GameCube code as C and C++ source that rebuilds the USA release’s main executable and its foresta.rel module. The dtk-template build reads the original binaries and assets from a user-supplied disc image, then checks both outputs against SHA-1 hashes. A separate native PC port builds on it; completeness figures remain project-reported here.",
+    "description_zh": "将 Animal Crossing 的 GameCube 代码重建为 C 与 C++ 源码，可重新构建美版的主可执行文件及 foresta.rel 模块。基于 dtk-template 的构建从使用者自备的光盘镜像读取原始二进制与素材，再用 SHA-1 哈希校验两个产物。另有原生 PC 移植以它为基础；此处的完成度数字仍为项目报告。",
+    "evidence_url": "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README lists one supported version, USA Rev 0 (GAFE01_00). configure.py also defines an Australia Rev 0 (GAFU01_00) target, but CI builds only the USA version and 19 objects are marked matching for USA alone. The outputs are a GameCube DOL and REL module, not a PC executable; the separate N64 Animal Forest decompilation the README links to is not covered here.",
+      "Requires the user’s own Animal Crossing (USA) disc image; README states the repository contains no game assets or assembly. The build configuration expects the disc’s main.dol to match a recorded SHA-1 before splitting it, so other revisions or modified images are not supported inputs.",
+      "Windows builds use native Python and ninja; macOS adds wine-crossover, and Linux uses an automatically downloaded wibo wrapper on x86 or Wine elsewhere. configure.py downloads pinned decomp-toolkit, binutils, Metrowerks CodeWarrior GameCube compiler, objdiff and sjiswrap releases; objdiff supports per-object diffing.",
+      "The default ninja target runs decomp-toolkit’s SHA-1 check of static.dol and foresta.rel against build.sha1. configure.py lists 4,005 objects as matching and none as non-matching, and CI builds with a private container that supplies the original files. The mutable decomp.dev page reports 100.00% decompiled and fully linked at this commit; this review did not rerun the build or checks.",
+      "The repository is dedicated under CC0 1.0. Original game content and the downloaded toolchain binaries are outside that dedication and keep their own rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/configure.py",
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/config/GAFE01_00/build.sha1",
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/config/GAFE01_00/config.yml",
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/tools/project.py",
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/.github/workflows/build.yml",
+      "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/LICENSE",
+      "https://decomp.dev/ACreTeam/ac-decomp",
+      "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md"
+    ]
   }
 ]

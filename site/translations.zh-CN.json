@@ -2347,5 +2347,15 @@
       "CI 使用存放在私有仓库、经 CI 密钥访问的 ROM 执行重编译，并构建 Linux、Windows 与 macOS 目标；不发布一致性、还原度或游戏行为对比结果。v0.9.2 发布版（2026 年 2 月）提供 Windows、Linux、Flatpak 与 macOS 压缩包。渲染准确性、帧率和输入延迟等说法均为项目主张；本合集未构建或运行该移植。",
       "COPYING 为 GPL-3.0；原游戏内容、源自反编译的头文件以及 RT64、RmlUi 等库保留各自条款。静态重编译转换的是机器码，并不恢复原作者编写的源码；所审文件未确立 AI 或 REA 参与，也不主张运行复现。"
     ]
+  },
+  "animal-crossing-gamecube-decomp-case": {
+    "name": "Animal Crossing：生成一致产物的 GameCube 反编译重建",
+    "requirements": [
+      "README 列出唯一支持的版本为美版 Rev 0（GAFE01_00）。configure.py 另定义了澳洲版 Rev 0（GAFU01_00）目标，但 CI 只构建美版，且有 19 个目标文件仅对美版标为一致。产物是 GameCube DOL 与 REL 模块，不是 PC 可执行文件；README 链接的另一个 N64 版 Animal Forest 反编译项目不在此覆盖范围内。",
+      "需使用者自备 Animal Crossing（美版）光盘镜像；README 声明仓库不含任何游戏素材或汇编。构建配置要求光盘中的 main.dol 与记录的 SHA-1 一致后才进行拆分，因此其他修订版或改动过的镜像不是受支持的输入。",
+      "Windows 构建使用原生 Python 与 ninja；macOS 另需 wine-crossover，Linux 在 x86 上自动下载 wibo 包装器，其他架构使用 Wine。configure.py 会下载固定版本的 decomp-toolkit、binutils、Metrowerks CodeWarrior GameCube 编译器、objdiff 和 sjiswrap；objdiff 用于逐个目标文件比对。",
+      "默认 ninja 目标会用 decomp-toolkit 依据 build.sha1 校验 static.dol 和 foresta.rel 的 SHA-1。configure.py 将 4,005 个目标文件标为一致，没有标为不一致的项；CI 在提供原始文件的私有容器中构建。可变的 decomp.dev 页面报告此提交已 100.00% 反编译并完全链接；本次审阅未重新运行构建或校验。",
+      "仓库以 CC0 1.0 释出。原游戏内容及下载的工具链二进制不在该释出范围内，各自保留权利。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }

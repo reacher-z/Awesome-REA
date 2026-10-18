@@ -13371,13 +13371,30 @@
       "reported_source_urls": [
         "https://github.com/ACreTeam/ac-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 121 (README line 1256) lists ACreTeam/ac-decomp under 🏡 Animal Crossing. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 121 行（README 第 1256 行）在 🏡 Animal Crossing 下列出 ACreTeam/ac-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build configuration, SHA-1 manifest, CI workflow and CC0 dedication support this row as a matching GameCube decompilation of the USA release, with decomp.dev’s mutable progress page cited for the 100% figure. Full mapping covers this decompilation, not the separate PC port, the Australian target or independently reproduced builds. Disc-image dependency, downloaded toolchain and project-reported completeness remain explicit.",
+      "reason_zh": "固定版本的 README、构建配置、SHA-1 清单、CI 工作流及 CC0 释出声明，支持将此行认定为美版 GameCube 的一致性反编译重建；100% 的数字引自可变的 decomp.dev 进度页。完整映射覆盖此反编译项目，不涵盖独立的 PC 移植、澳洲版目标或独立复现的构建。光盘镜像依赖、下载的工具链及项目报告的完成度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/README.md",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/configure.py",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/config/GAFE01_00/build.sha1",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/config/GAFE01_00/config.yml",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/tools/project.py",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/.github/workflows/build.yml",
+        "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/LICENSE",
+        "https://decomp.dev/ACreTeam/ac-decomp",
+        "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "animal-crossing-gamecube-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-122",
@@ -14815,18 +14832,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 147,
-      "insufficient-evidence": 125,
-      "pending": 319
-    },
-    "units_by_state": {
-      "already-curated": 146,
+      "already-curated": 148,
       "insufficient-evidence": 125,
       "pending": 318
     },
-    "primary_reviewed_units": 211,
-    "catalog_linked_occurrences": 158,
-    "distinct_resource_ids": 152,
+    "units_by_state": {
+      "already-curated": 147,
+      "insufficient-evidence": 125,
+      "pending": 317
+    },
+    "primary_reviewed_units": 212,
+    "catalog_linked_occurrences": 159,
+    "distinct_resource_ids": 153,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
