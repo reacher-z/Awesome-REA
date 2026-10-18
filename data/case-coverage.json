@@ -13094,13 +13094,32 @@
       "reported_source_urls": [
         "https://github.com/SpeedBreakerProject/speedbreaker"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 106 (README line 1080) lists SpeedBreakerProject/speedbreaker under 🏎️ Need for Speed: Most Wanted (2005). Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 106 行（README 第 1080 行）在 🏎️ Need for Speed: Most Wanted (2005) 下列出 SpeedBreakerProject/speedbreaker。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, contributing guide, recompiler configuration, XenonRecomp patches, tests and license notices document a XenonRecomp static recompilation of the US Xbox 360 executable, with a project runtime and data from the player’s own disc. Full mapping covers this port; rendering, pacing and platform results remain project- or player-reported, and the generated code is not committed.",
+      "reason_zh": "固定版本的 README、贡献指南、重编译器配置、XenonRecomp 补丁、测试和许可声明记录了使用 XenonRecomp 对美版 Xbox 360 可执行文件进行的静态重编译，配有项目自建运行时，数据来自玩家自有光盘。完整映射覆盖此移植；渲染、帧节奏和平台结果仍为项目或玩家报告，生成的代码未提交到仓库。",
+      "primary_evidence_urls": [
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/README.md",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/CONTRIBUTING.md",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/CHANGELOG.md",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/.gitignore",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/config/nfsmw.toml",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/patches/xenonrecomp/0001-Add-instructions-used-by-NFS-Most-Wanted-Xbox-360.patch",
+        "https://github.com/SpeedBreakerProject/speedbreaker/tree/31849f5f1d275bf21987440cdc27d94071013656/tests",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/COPYING",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/NOTICE",
+        "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/THIRD_PARTY_NOTICES.md",
+        "https://github.com/SpeedBreakerProject/speedbreaker/releases/tag/v0.1.7"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "speedbreaker-nfs-most-wanted-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-107",
@@ -14960,18 +14979,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 156,
-      "insufficient-evidence": 126,
-      "pending": 309
-    },
-    "units_by_state": {
-      "already-curated": 155,
+      "already-curated": 157,
       "insufficient-evidence": 126,
       "pending": 308
     },
-    "primary_reviewed_units": 221,
-    "catalog_linked_occurrences": 167,
-    "distinct_resource_ids": 161,
+    "units_by_state": {
+      "already-curated": 156,
+      "insufficient-evidence": 126,
+      "pending": 307
+    },
+    "primary_reviewed_units": 222,
+    "catalog_linked_occurrences": 168,
+    "distinct_resource_ids": 162,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

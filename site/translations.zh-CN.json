@@ -2470,5 +2470,15 @@
       "默认构建的检查步骤调用 decomp-toolkit，按所选版本的清单对 main.dol 和 99 个 REL 模块执行 SHA-1 校验；objdiff 用于逐目标文件比较。可变的 decomp.dev 页面报告 GMPE01_00 在所审提交时已 100.00% 反编译并完全链接。本合集未重跑这些检查，也未运行游戏。",
       "仓库以 CC0 1.0 释出；固定版本的 MusyX 子模块另附 MIT 许可，下载的编译器与工具各有条款。光盘镜像和游戏内容仍有各自权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "speedbreaker-nfs-most-wanted-case": {
+    "name": "SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译",
+    "requirements": [
+      "README 将其描述为针对 Xbox 360 版的非官方静态重编译而非模拟器，当前版本为 v0.1.7（2026 年 10 月）。Windows 和 Android 版本已宣布但尚未提供，没有 Intel Mac 版本，无法导入 Xbox 360 存档，也不支持该游戏的 PC 版。",
+      "需要玩家自有美版（NTSC-U）Xbox 360 光盘的镜像或其中的文件；安装程序会校验 49 个文件，PAL 版、日版、再发行版和 Games on Demand 版本未经测试或不受支持。源码构建会重编译玩家自己的 default.xex，并按文件大小和 SHA-256 识别。游戏文件和生成的 ppc/ 代码均被 git 忽略，README 声明不分发任何游戏数据或素材。",
+      "运行需要：SteamOS 或 Linux 上支持 Vulkan 1.2 的显卡和支持 AVX2 的 x86-64 CPU；Apple 芯片上的 macOS 15+（通过 MoltenVK 使用 Metal）；或 A15 级芯片上的 iOS／iPadOS 17+。构建使用 Clang 18+、lld、CMake 和 Ninja（SteamOS 上在 Arch distrobox 中进行），并通过安装脚本准备带八个项目补丁的 XenonRecomp、extract-xiso 及仅含解码器的 FFmpeg（用于 XMA）；平台层和界面由 SDL3 与 Dear ImGui 提供。",
+      "可选的单元测试以及针对 XenonRecomp 补丁的指令测试无需游戏文件，但其中一项测试需要生成的代码；指令测试目前仅在 Mac 上运行过。下载表列出作者及玩家报告的设备，多项行为（包括 IPA 安装和真实 120 Hz 显示器）标注为尚未测试。本合集未构建或运行该移植。",
+      "采用 GPL-3.0-or-later 并附 NOTICE 文件；改编自 Unleashed Recompiled 的运行时代码、XenonRecomp、源自 Xenia 的头文件、FFmpeg 等组件保留 THIRD_PARTY_NOTICES 中列出的许可证。项目声明与 EA 和 Valve 无关。CONTRIBUTING 接受借助 AI 工具的修改，前提是贡献者本人已阅读、理解并测试；未确立 REA 使用。"
+    ]
   }
 }

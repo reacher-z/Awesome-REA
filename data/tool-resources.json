@@ -5722,5 +5722,40 @@
       "https://github.com/AxioDL/musyx/blob/adc8df9a959f1e37f71bdf3155e229f9f87ad166/LICENSE",
       "https://decomp.dev/mariopartyrd/marioparty4"
     ]
+  },
+  {
+    "id": "speedbreaker-nfs-most-wanted-case",
+    "name": "SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360",
+    "url": "https://github.com/SpeedBreakerProject/speedbreaker",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the Xbox 360 executable of Need for Speed: Most Wanted (2005) into native C++ with a patched XenonRecomp and runs it on a project runtime that stands in for the console’s kernel, Xenos GPU, XMA audio and controllers. Releases target SteamOS, Linux and Apple silicon Macs, with an experimental iPhone and iPad build, while all game data comes from the player’s own US disc. Rendering and frame-pacing improvements are project-reported.",
+    "description_zh": "使用打过补丁的 XenonRecomp 将 Xbox 360 版《极品飞车：最高通缉》（2005）的可执行文件转换为原生 C++，并在项目自建的运行时上执行，由运行时代替主机的内核、Xenos GPU、XMA 音频和控制器。发布版面向 SteamOS、Linux 和 Apple 芯片 Mac，另有实验性的 iPhone 与 iPad 版本，所有游戏数据均来自玩家自有的美版光盘。渲染与帧节奏方面的改进均为项目自述。",
+    "evidence_url": "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes an unofficial static recompilation of the Xbox 360 release, not an emulator, at v0.1.7 (October 2026). Windows and Android builds are announced but unavailable, there is no Intel Mac build, Xbox 360 saves cannot be imported, and the PC edition of the game is unsupported.",
+      "Requires a disc image or extracted files from the player’s own USA (NTSC-U) Xbox 360 disc; the installer verifies 49 files, and PAL, Japanese, re-release and Games on Demand copies are untested or unsupported. Source builds recompile the player’s default.xex, identified by size and SHA-256. Game files and the generated ppc/ code are git-ignored, and the README states that no game data or assets are distributed.",
+      "Running needs a Vulkan 1.2 GPU and an AVX2 x86-64 CPU on SteamOS or Linux, macOS 15+ on Apple silicon (Metal through MoltenVK), or iOS/iPadOS 17+ on an A15-class chip. Builds use Clang 18+ with lld, CMake and Ninja (on SteamOS inside an Arch distrobox), plus setup scripts for XenonRecomp with eight project patches, extract-xiso and a decoder-only FFmpeg for XMA; SDL3 and Dear ImGui provide the platform layer and UI.",
+      "Optional unit tests and instruction tests for the XenonRecomp patches need no game files, although one test needs the generated code; the instruction tests have so far run only on a Mac. Download tables list author- and player-reported devices, and several behaviors, including the IPA install and real 120 Hz displays, are marked untested. This collection did not build or run the port.",
+      "GPL-3.0-or-later with a NOTICE file; adapted Unleashed Recompiled runtime code, XenonRecomp, Xenia-derived headers, FFmpeg and other components keep the licenses listed in THIRD_PARTY_NOTICES. The project disclaims affiliation with EA and Valve. CONTRIBUTING accepts AI-assisted changes only when the contributor has read, understood and tested them; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/CONTRIBUTING.md",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/CHANGELOG.md",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/.gitignore",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/config/nfsmw.toml",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/patches/xenonrecomp/0001-Add-instructions-used-by-NFS-Most-Wanted-Xbox-360.patch",
+      "https://github.com/SpeedBreakerProject/speedbreaker/tree/31849f5f1d275bf21987440cdc27d94071013656/tests",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/COPYING",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/NOTICE",
+      "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/THIRD_PARTY_NOTICES.md",
+      "https://github.com/SpeedBreakerProject/speedbreaker/releases/tag/v0.1.7"
+    ]
   }
 ]
