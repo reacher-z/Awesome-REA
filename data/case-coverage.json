@@ -1484,12 +1484,17 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/issues/1741"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The primary source is an open REA feature request, opened 2026-10-11, for 32-bit big-endian PowerPC ELF analysis through Ghidra, with GameCube/Wii DOL support as a later milestone. Its author reports separate headless-Ghidra work on an unnamed Wii title but publishes no reconstruction artifact, source, matching result or REA run. The PowerPC ELF milestone was merged as REA pull request #1747 on 2026-10-13; DOL, Gekko/Broadway paired-single and REL support remain outside it. Retain this as a request lead, not a reconstruction case.",
+      "reason_zh": "一手来源是 2026-10-11 提交、仍处于开放状态的 REA 功能请求，要求通过 Ghidra 分析 32 位大端 PowerPC ELF，并将 GameCube／Wii DOL 支持列为后续里程碑。作者称曾在 REA 之外用无界面 Ghidra 分析一款未具名的 Wii 游戏，但未公开重建产物、源码、一致性结果或 REA 运行记录。PowerPC ELF 里程碑已于 2026-10-13 通过 REA 拉取请求 #1747 合并；DOL、Gekko／Broadway 成对单精度指令和 REL 支持不在其中。此条作为请求线索保留，而非重建案例。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/1741",
+        "https://github.com/morluto/rea/pull/1747",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/domain/binaryTargetTypes.ts",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-ppc.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -13254,15 +13259,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 63,
-      "insufficient-evidence": 63,
-      "pending": 465
+      "insufficient-evidence": 64,
+      "pending": 464
     },
     "units_by_state": {
       "already-curated": 62,
-      "insufficient-evidence": 63,
-      "pending": 464
+      "insufficient-evidence": 64,
+      "pending": 463
     },
-    "primary_reviewed_units": 71,
+    "primary_reviewed_units": 72,
     "catalog_linked_occurrences": 70,
     "distinct_resource_ids": 61,
     "distinct_paper_ids": 1,
