@@ -4780,12 +4780,15 @@
         "https://x.com/i/status/2110570919169286424",
         "https://github.com/tt-a1i/archify"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's X article is a usage tutorial: it explains installing REA, retells REA's official Notion and DX-Ball cases, and recommends the MIT-licensed archify agent skill for turning REA findings into interactive HTML architecture diagrams. The author says unnamed software was studied this way but publishes no target, diagram files, analysis record or comparison. archify's README describes a general diagram skill without REA-specific claims. This is a visualization workflow, not a documented reconstruction. Retain the lead without a catalog mapping; nice diagrams do not establish analysis correctness.",
+      "reason_zh": "作者的 X 长文是一篇使用教程：介绍 REA 的安装，复述 REA 官方的 Notion 与 DX-Ball 案例，并推荐用 MIT 许可的 archify 智能体 skill 把 REA 的分析结果生成交互式 HTML 架构图。作者称以此方式研究了未具名的软件，但未公开目标、图表文件、分析记录或对照结果。archify 的 README 描述的是通用的图表 skill，未提出与 REA 相关的主张。这是可视化工作流，而非有文档支撑的重建。保留此线索而不建立目录映射；图表美观并不能证明分析正确。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110570919169286424",
+        "https://github.com/tt-a1i/archify/blob/b25142deac4b19b293e45b6bf6d69351d3c8f3b6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -13895,15 +13898,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 93,
-      "insufficient-evidence": 79,
-      "pending": 419
+      "insufficient-evidence": 80,
+      "pending": 418
     },
     "units_by_state": {
       "already-curated": 92,
-      "insufficient-evidence": 79,
-      "pending": 418
+      "insufficient-evidence": 80,
+      "pending": 417
     },
-    "primary_reviewed_units": 114,
+    "primary_reviewed_units": 115,
     "catalog_linked_occurrences": 104,
     "distinct_resource_ids": 98,
     "distinct_paper_ids": 1,
