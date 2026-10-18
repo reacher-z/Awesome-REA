@@ -6828,5 +6828,33 @@
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/.github/workflows/ci.yml",
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/LICENSE"
     ]
+  },
+  {
+    "id": "dynamorio",
+    "name": "DynamoRIO",
+    "url": "https://github.com/DynamoRIO/dynamorio",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Runtime code manipulation system for building dynamic tools that observe or transform any part of an unmodified program while it runs. Its API and IA-32/AMD64/ARM/AArch64 instruction manipulation library allow arbitrary changes to application instructions, not only inserted callouts. The release package bundles tools including drcov for code coverage, drltrace for library-call tracing, drstrace for Windows system calls, drmemtrace instruction and memory traces and the drdisas disassembler. It is a framework for building instrumentation tools, distinct from Frida's scripting of live processes.",
+    "description_zh": "运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。",
+    "evidence_url": "https://github.com/DynamoRIO/dynamorio/blob/6d2165aa485ca91bf10faa64440cfadce850b0bc/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README lists Windows, Linux and Android on IA-32, AMD64, ARM and AArch64 hardware; macOS support is in progress. Latest stable release at review: release_11.3.0-1, published 2025-01-11, with Windows, Linux, AArch64 Linux, ARM Linux EABIHF and ARM Android packages. Weekly cronbuild packages follow master (cronbuild-11.91.20741, published 2026-10-17, with no Android package); this entry pins the reviewed master commit.",
+      "Custom tools are written against the API, whose documentation ships in the release package and online; API samples cover memory-address, instruction and basic-block tracing and instruction counting. The README names WinAFL, the Arm Instruction Emulator, DrCCTProf, VClinic and GWPSan as external tools built on it and bundles Dr. Memory; none is catalogued separately here.",
+      "Primarily BSD. The drsyscall, drwrap and drutil extensions and the Dr. Memory Framework libraries are LGPL 2.1, and the drsyms extension links elfutils libraries under LGPL 3. The README's efficiency and transparency statements were not tested; no programs were instrumented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DynamoRIO/dynamorio/blob/6d2165aa485ca91bf10faa64440cfadce850b0bc/README.md#L19-L50",
+      "https://github.com/DynamoRIO/dynamorio/blob/6d2165aa485ca91bf10faa64440cfadce850b0bc/License.txt",
+      "https://github.com/DynamoRIO/dynamorio/releases/tag/release_11.3.0-1",
+      "https://github.com/DynamoRIO/dynamorio/releases/tag/cronbuild-11.91.20741",
+      "https://dynamorio.org/page_download.html"
+    ]
   }
 ]

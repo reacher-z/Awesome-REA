@@ -2824,5 +2824,13 @@
       "认定一致须通过零差异的 COFF 函数比较，并记录在匹配台账中；Ghidra、IDA MCP 和运行观察只作为辅助证据。README 引用一段使用仅供测试的无敌启动器完成的全流程运行视频，另有正常构建的单独测试；RUNTIME_ISSUES.md 注明这些检查针对 2026-09-10 的源码，之后的语义改动只经过编译和链接验证。本合集未运行任何检查。",
       "MIT 许可覆盖仓库代码与文档，不涵盖游戏或其素材；下载的编译器与工具各有条款。仓库包含编程智能体规则与技能以及 GPT 网页版 Ghidra 桥接，但本身未记录 REA 使用；REA 另行发表的东方重建文章讨论了此项目。此处不主张运行复现。"
     ]
+  },
+  "dynamorio": {
+    "name": "DynamoRIO 动态二进制插桩框架",
+    "requirements": [
+      "README 列出 Windows、Linux 和 Android 系统，以及 IA-32、AMD64、ARM 和 AArch64 硬件；macOS 支持仍在开发中。审阅时最新稳定版为 release_11.3.0-1，发布于 2025-01-11，提供 Windows、Linux、AArch64 Linux、ARM Linux EABIHF 和 ARM Android 软件包。每周 cronbuild 构建跟随 master 分支（cronbuild-11.91.20741，发布于 2026-10-17，不含 Android 包）；本条目固定到所审阅的 master 分支提交。",
+      "自定义工具基于其 API 编写，API 文档随发布包提供，也可在线查阅；API 示例涵盖内存地址、指令和基本块跟踪以及指令计数。README 列出 WinAFL、Arm Instruction Emulator、DrCCTProf、VClinic 和 GWPSan 等基于它构建的外部工具，发布包还附带 Dr. Memory；本条目未单独收录这些工具。",
+      "主体采用 BSD 许可。drsyscall、drwrap 和 drutil 扩展以及 Dr. Memory Framework 库采用 LGPL 2.1，drsyms 扩展所链接的 elfutils 库采用 LGPL 3。README 中关于效率和透明性的说法未经测试；本次未对任何程序插桩。"
+    ]
   }
 }
