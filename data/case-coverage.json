@@ -746,13 +746,26 @@
         "https://github.com/morluto/rea/issues/1620",
         "https://github.com/morluto/rea/pull/1898"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Issue #1620, merged REA PR #1898 and the pinned Ghidra MIPS guide, verifier and profile source establish the reported recordless legacy MIPS32 admission with a pinned 32-bit language. The full mapping covers this report as official documentation, not a firmware reconstruction. The four real firmware ELFs behind the author’s comparison are not public; public checks use synthetic fixtures and header-edited open-source binaries. No device or runtime result is claimed.",
+      "reason_zh": "议题 #1620、已合并的 REA PR #1898，以及固定版本的 Ghidra MIPS 指南、验证脚本与配置源码，确立了该报告所述、以固定 32 位语言接受无 ABI 记录旧式 MIPS32 文件的能力。完整映射以官方文档覆盖该报告，并不将其视为固件重建。作者对照所用的四个真实固件 ELF 未公开；公开检查使用合成样本与改写文件头的开源二进制。未主张设备或运行结果。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/1620",
+        "https://github.com/morluto/rea/pull/1898",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-mips.md",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-real-ghidra-mips.mjs",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraMipsProfile.ts"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-ghidra-mips-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:psp-allegrex",
@@ -13284,18 +13297,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 65,
-      "insufficient-evidence": 66,
-      "pending": 460
-    },
-    "units_by_state": {
-      "already-curated": 64,
+      "already-curated": 66,
       "insufficient-evidence": 66,
       "pending": 459
     },
-    "primary_reviewed_units": 76,
-    "catalog_linked_occurrences": 72,
-    "distinct_resource_ids": 63,
+    "units_by_state": {
+      "already-curated": 65,
+      "insufficient-evidence": 66,
+      "pending": 458
+    },
+    "primary_reviewed_units": 77,
+    "catalog_linked_occurrences": 73,
+    "distinct_resource_ids": 64,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

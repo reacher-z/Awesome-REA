@@ -2082,5 +2082,37 @@
       "https://github.com/morluto/rea/blob/093ce695f0a7c3407c7fde520ed8b20c0981b408/LICENSE",
       "https://github.com/morluto/rea/pull/1447"
     ]
+  },
+  {
+    "id": "rea-ghidra-mips-guide",
+    "name": "MIPS ELF analysis through Ghidra",
+    "url": "https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md",
+    "category": "workflow-guides",
+    "relationship": "official-documentation",
+    "kind": "documentation",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Documents REA’s Ghidra lane for MIPS ELF executables, relocatable objects and MIPS16 shared images, including a pinned 32-bit language for recordless legacy firmware executables that Ghidra would otherwise import as 64-bit. Admission is bounded by declared header and ABI-record facts, and verification compares source-owned fixtures with independent readelf output rather than executing or rehosting firmware.",
+    "description_zh": "说明 REA 通过 Ghidra 分析 MIPS ELF 可执行文件、可重定位目标文件与 MIPS16 共享镜像的流程，包括为缺少 ABI 记录的旧式固件可执行文件固定 32 位语言，以免 Ghidra 将其按 64 位导入。准入以文件头声明和 ABI 记录为界；验证将项目自有的测试样本与独立的 readelf 输出对照，而不执行或重新托管固件。",
+    "evidence_url": "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-mips.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a caller-installed Ghidra and compatible JDK on a supported Linux or macOS host; Windows Ghidra P0 does not admit MIPS, and Hopper/IDA gain no MIPS support. The lane does not execute MIPS code or rehost firmware. The standard profile admits ELF32 executables and relocatable objects declaring o32 and MIPS32r2; MIPS16 shared images have a separate bounded profile. ELF64, n32/n64, microMIPS, machine variants, FP64, NAN2008 and PSP PRX are refused.",
+      "Merged PR #1898, for issue #1620, admits recordless legacy ELF32 executables with EF_MIPS_ARCH_32 or 32R2, an unspecified ABI field and an inspected absence of ABI-flags records. It pins MIPS:<LE|BE>:32:default and checks the language Ghidra reports after import. o32 is recorded as an analysis assumption, not a declared fact, and floating-point ABI semantics stay unverified.",
+      "Optional real-provider lanes need caller-supplied Clang with MIPS targets, LLD, GNU readelf or MIPS cross-binutils, and Ghidra. They build source-owned fixtures in both byte orders without executing them, comparing instruction bytes, symbols, languages and relocations with independent readelf facts. The guide states that pseudocode presence and decoding agreement do not establish runtime, delay-slot or complete floating-point semantics.",
+      "The issue author reports gating a local patch on four real MIPS32 LE firmware ELFs whose function entries matched separate 32-bit Ghidra exports, and 400 of 5,250 functions lost on one image under auto-selection; those files are not public. A PR reviewer tested header-edited OpenWrt kernels and BusyBox builds with Capstone cross-checks and found no unedited public recordless file. No device model, firmware change or runtime behavior is established.",
+      "REA declares MIT. Ghidra, compilers, binutils and analysed firmware keep their own terms, and the firmware behind the author’s results is not supplied. This collection reviewed the issue, PR thread and pinned sources without running REA, Ghidra or any target."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/morluto/rea/issues/1620",
+      "https://github.com/morluto/rea/pull/1898",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/scripts/verify-real-ghidra-mips.mjs",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/tests/conformance/ghidra/mips-fixture.mjs",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/src/ghidra/GhidraMipsProfile.ts",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/LICENSE"
+    ]
   }
 ]
