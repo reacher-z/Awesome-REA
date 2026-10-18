@@ -8546,12 +8546,17 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111215569047314589"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "A third-party post (@BrianDevoor, 2026-10-16) says a developer used REA to reverse-engineer Wikipedia into “Wiki Lab” for AI agents, linking github.com/RazeDen and quoting @razeden0. The quoted post (2026-10-15) instead describes REA mapping an app’s functions, a model explaining selected ones into Obsidian notes and Claude Code rebuilding a feature; it reports a Calendly booking-page rebuild passing 50 of 50 tests, with only a video. Neither that post nor the author’s linked X guide mentions Wiki Lab or links code, notes or tests, and none of the account’s four public repositories contains this work. Retain the lead without a catalog mapping; both the Wikipedia claim and the reported rebuild are unestablished.",
+      "reason_zh": "第三方帖子（@BrianDevoor，2026-10-16）称一名开发者用 REA 逆向维基百科，做出面向 AI 智能体的“Wiki Lab”，帖子链接 github.com/RazeDen 并引用 @razeden0 的帖子。被引帖子（2026-10-15）描述的却是另一套流程：REA 梳理应用函数，模型把选定函数整理成 Obsidian 笔记，再由 Claude Code 重建功能；帖子称重建的 Calendly 预约页通过了 50 项测试中的 50 项，但只附视频。该帖及作者链接的 X 指南均未提到 Wiki Lab，也未链接代码、笔记或测试；该账号的四个公开仓库中也没有相关工作。保留此线索而不建立目录映射；维基百科相关说法和所报告的重建均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/BrianDevoor/status/2111215569047314589",
+        "https://x.com/razeden0/status/2110830952893010162",
+        "https://x.com/razeden0/status/2110309125322162178",
+        "https://github.com/RazeDen"
+      ],
       "catalog_matches": []
     },
     {
@@ -16096,15 +16101,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 203,
-      "insufficient-evidence": 252,
-      "pending": 136
+      "insufficient-evidence": 253,
+      "pending": 135
     },
     "units_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 252,
-      "pending": 136
+      "insufficient-evidence": 253,
+      "pending": 135
     },
-    "primary_reviewed_units": 394,
+    "primary_reviewed_units": 395,
     "catalog_linked_occurrences": 216,
     "distinct_resource_ids": 207,
     "distinct_paper_ids": 2,
