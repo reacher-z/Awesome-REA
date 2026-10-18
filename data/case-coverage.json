@@ -3719,12 +3719,17 @@
         "https://x.com/i/status/2109971905336037671",
         "https://x.com/i/status/2110386418929594439"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts are cited. @TuyetloanP81840 (2026-10-13) says two prompts to Claude Code had REA unpack Typeless, found that its speech recognition and polishing run server-side, and produced a 1,112-line Swift local alternative using whisper.cpp and Ollama; it shows two images and quotes @Chris62771610’s similar account, which shows a video. @heyxenho (2026-10-14) says Claude Code built a Windows Typeless-style tool, Saydra, inspired by @Chris62771610, without saying REA was used. A public PPory/saydra repository describes an independent Windows voice-input tool whose interaction design is inspired by Typeless; it documents no reverse engineering or REA use. Retain the lead without a catalog mapping; no REA-built alternative is published.",
+      "reason_zh": "所引两则帖子：@TuyetloanP81840（2026-10-13）称对 Claude Code 说了两句话，就让 REA 拆开 Typeless，发现其语音识别和润色都在服务器端完成，并做出一个 1,112 行、基于 whisper.cpp 和 Ollama 的 Swift 本地替代品；帖子附两张图片，并引用 @Chris62771610 的类似经历（附视频）。@heyxenho（2026-10-14）称受 @Chris62771610 启发，用 Claude Code 做了一个 Windows 版 Typeless 式工具 Saydra，但未说使用了 REA。公开的 PPory/saydra 仓库描述的是一款交互设计受 Typeless 启发的独立 Windows 语音输入工具，未记录任何逆向或 REA 使用。保留此线索而不建立目录映射；没有公开任何借助 REA 构建的替代品。",
+      "primary_evidence_urls": [
+        "https://x.com/TuyetloanP81840/status/2109971905336037671",
+        "https://x.com/Chris62771610/status/2109887689147421063",
+        "https://x.com/heyxenho/status/2110386418929594439",
+        "https://github.com/PPory/saydra/blob/c2b8e147634bee6f5103d71cc196436dc385303e/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -3739,13 +3744,25 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110028302215999825"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@BartronPolygon, 2026-10-13) answers praise for the author’s post about Pro-1000 SDK demo videos: it credits that work entirely to Ian and says the author has been using Claude to emulate the actual Pro-1000 firmware. The thread concerns Real3D’s Pro-1000 image generator, not a Canon printer. The author’s linked GitHub account maintains Supermodel, whose pull request #343, merged 2026-10-14 and pinned here, adds initial Pro-1000 emulation that boots the firmware to its monitor but renders nothing yet. Full mapping covers that work; Claude’s role is the author’s claim, and REA use is not established.",
+      "reason_zh": "所引回复（@BartronPolygon，2026-10-13）回应他人对作者 Pro-1000 SDK 演示视频帖子的称赞：称那项工作完全归功于 Ian，作者自己则在借助 Claude 模拟真正的 Pro-1000 固件。该讨论涉及的是 Real3D 的 Pro-1000 图像生成器，而非佳能打印机。作者资料链接的 GitHub 账号维护着 Supermodel，其 2026-10-14 合并的拉取请求 #343（此处固定到合并提交）加入了 Pro-1000 的初步模拟，可将固件启动到监控程序，但尚无画面输出。完整映射覆盖这项工作；Claude 的作用为作者说法，REA 的使用未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/BartronPolygon/status/2110028302215999825",
+        "https://x.com/BartronPolygon/status/2109806939718943205",
+        "https://github.com/trzy/Supermodel/pull/343",
+        "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Src/Pro1000/Pro1000.cpp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "supermodel-real3d-pro1000-emulation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:eleven-agent-reverse-engineering",
@@ -3799,12 +3816,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110037357164441796"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@mika_systems, 2026-10-13) is a second-hand account attributing to a named Anthropic engineer a Claude Code and REA project: ten agents, a snapshot and a week of query logs from a 48-million-row database, 15 accepted query changes, median dashboard load from 8.6 to 0.7 seconds and 4,800 result comparisons without mismatches. It shows a video and quotes another user’s general REA article post, but links no write-up, repository or logs from the engineer, and the engineer’s GitHub account has no such project. Retain the lead without a catalog mapping; the primary source and all figures are unestablished.",
+      "reason_zh": "所引帖子（@mika_systems，2026-10-13）是二手转述，称一位具名的 Anthropic 工程师用 Claude Code 搭配 REA 完成一个项目：十个 Agent、一个 4,800 万行数据库的快照及一周查询日志、15 项通过审查的查询修改，仪表盘加载中位数从 8.6 秒降至 0.7 秒，4,800 次结果比对无一不符。帖子附视频，并引用另一位用户泛论 REA 的文章帖，但未链接该工程师的文章、仓库或日志，该工程师的 GitHub 账号也没有此项目。保留此线索而不建立目录映射；一手来源及全部数据均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/mika_systems/status/2110037357164441796"
+      ],
       "catalog_matches": []
     },
     {
@@ -3903,12 +3922,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110091122517410164"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@khaled_cli, 2026-10-13), in Arabic, says the author used REA on iTerm to examine its features and workings, took the resulting specification into a separate project aimed at full Arabic support in the author’s own terminal, then merged and tested the result locally, ending with a terminal that renders Arabic fully. It names no terminal project and publishes no specification, code or rendering tests. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the terminal and REA’s contribution are unestablished.",
+      "reason_zh": "作者以阿拉伯语发布的纯文字帖子（@khaled_cli，2026-10-13）称用 REA 分析 iTerm 的功能和工作方式，把得到的规格文件带入另一个项目，目标是让作者自己的终端完整支持阿拉伯语，随后合并并在本机测试，最终得到能完整渲染阿拉伯语的终端。帖子未指明终端项目，也未公开规格文件、代码或渲染测试。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该终端及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/khaled_cli/status/2110091122517410164"
+      ],
       "catalog_matches": []
     },
     {
@@ -3925,12 +3946,16 @@
         "https://x.com/i/status/2110880082289922361",
         "https://x.com/i/status/2111222172698218781"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Three posts are cited. @ludoonchart (2026-10-13) lists seven steps for building a Bloomberg-style research terminal with REA and Claude Opus 5.5 from publicly observable dashboards and free data, with one image. @le0xet (2026-10-15) relays a story of an 18-year-old rebuilding the Bloomberg Terminal’s alerts in an evening, with a video. @sopersone (2026-10-16) says a weekend build used REA to study the terminal from outside and Opus to write a spec, adding data feeds, a screener and a backtester. None links code, a demo or tests; the GitHub account in @sopersone’s profile has three repositories, all created before the post and none described as this build. Retain the lead without a catalog mapping; no terminal or REA contribution is established.",
+      "reason_zh": "所引三则帖子：@ludoonchart（2026-10-13）列出借助 REA 和 Claude Opus 5.5、依据公开可见的仪表盘和免费数据搭建 Bloomberg 风格研究终端的七个步骤，附一张图片。@le0xet（2026-10-15）转述一名 18 岁青年一晚上重建 Bloomberg 终端提醒功能的故事，附视频。@sopersone（2026-10-16）称用一个周末搭建终端：用 REA 从外部研究该终端，再让 Opus 写规格，并加入数据源、筛选器和回测器。三帖均未链接代码、演示或测试；@sopersone 资料中的 GitHub 账号有三个仓库，均创建于该帖之前，且都未被描述为这一终端。保留此线索而不建立目录映射；没有任何终端或 REA 作用得到确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ludoonchart/status/2110082824371908790",
+        "https://x.com/le0xet/status/2110880082289922361",
+        "https://x.com/sopersone/status/2111222172698218781"
+      ],
       "catalog_matches": []
     },
     {
@@ -3945,12 +3970,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110090047579926826"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@notyroon, 2026-10-13) says Codex helped reconstruct a projector’s missing Focus+ infrared command without the original remote: from raw IR timings, pattern analysis and a working Focus− code it predicted the missing command, which worked when pasted into the IRplus app; it shows one image. It names no projector or IR protocol and publishes no timings or codes. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the inferred command is unpublished and unverifiable here.",
+      "reason_zh": "作者帖子（@notyroon，2026-10-13）称在没有原装遥控器的情况下，借助 Codex 复原了投影仪缺失的 Focus+ 红外命令：根据原始红外时序、模式分析和一个可用的 Focus− 代码推断出缺失的命令，粘贴到 IRplus 应用后可以使用；帖子附一张图片。帖子未指明投影仪或红外协议，也未公开时序或代码。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；推断出的命令未公开，在此无法核实。",
+      "primary_evidence_urls": [
+        "https://x.com/notyroon/status/2110090047579926826"
+      ],
       "catalog_matches": []
     },
     {
@@ -15562,18 +15589,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 188,
-      "insufficient-evidence": 157,
-      "pending": 246
+      "already-curated": 189,
+      "insufficient-evidence": 162,
+      "pending": 240
     },
     "units_by_state": {
-      "already-curated": 186,
-      "insufficient-evidence": 157,
-      "pending": 246
+      "already-curated": 187,
+      "insufficient-evidence": 162,
+      "pending": 240
     },
-    "primary_reviewed_units": 284,
-    "catalog_linked_occurrences": 197,
-    "distinct_resource_ids": 192,
+    "primary_reviewed_units": 290,
+    "catalog_linked_occurrences": 198,
+    "distinct_resource_ids": 193,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

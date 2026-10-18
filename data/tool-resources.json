@@ -7018,5 +7018,38 @@
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/.github/workflows/ci.yml",
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/LICENSE"
     ]
+  },
+  {
+    "id": "supermodel-real3d-pro1000-emulation-case",
+    "name": "Supermodel: initial Real3D Pro-1000 image-generator emulation",
+    "url": "https://github.com/trzy/Supermodel",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Adds emulation of Real3D’s Pro-1000, the SCSI-attached image generator from which Sega’s Model 3 graphics hardware derives, to the Supermodel arcade emulator. It boots user-supplied Pro-1000 firmware from the SDK disc, emulates the board’s interrupt, JTAG and UART hardware, and exposes the firmware’s built-in monitor on the console. Nothing renders yet, and SCSI host communication is unimplemented.",
+    "description_zh": "为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。Pro-1000 是通过 SCSI 连接主机的图像生成器，世嘉 Model 3 的图形硬件即由其衍生。该实现可启动使用者自备的、来自 SDK 光盘的 Pro-1000 固件，模拟板上的中断、JTAG 与 UART 硬件，并在控制台中提供固件内置的监控程序。目前尚无任何画面输出，与 SCSI 主机的通信也尚未实现。",
+    "evidence_url": "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Src/Pro1000/Pro1000.cpp",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at merge commit 4f5d686 of pull request #343, merged 2026-10-14, which adds a CPro1000 emulator class beside the Model 3 one. The PR boots the firmware to its UART monitor and accepts console commands such as help; it states that nothing is drawn, not even the start-up logo, and that SCSI communication is the next step.",
+      "Supply the Pro-1000 firmware images p1_p4.bin and p2.bin from the SDK disc; Config/Games.xml lists their CRC32 values, and the repository does not include them. The PR says the default scene and model data sat in a SCSI ROM that the SDK lacks and would have to come from original hardware that likely no longer exists; a synthetic SCSI ROM only gets past renderer initialization.",
+      "Supermodel documents builds with GCC and Make on Windows (MSYS2, with SDL2 and SDL2_net), Linux and macOS, and a Visual Studio project; the PR adds its sources to the shared Makefile rules and that project. No Pro-1000 test or rendering comparison accompanies the change, and this review did not build or run it.",
+      "Source comments describe the hardware findings as reverse-engineered working hypotheses drawn from firmware disassembly, logs of unmapped accesses and UART output, embedded SCCS module strings, address cross-references, part datasheets and the SDK manuals. Some registers and the JTAG scan chain remain unknown.",
+      "Supermodel’s source headers declare GPL-3.0-or-later; the firmware, SDK material and demo databases keep their own rights. The author’s X post credits Claude with doing the reverse engineering and writing the emulation, and credits co-author Ian Curtis with the earlier SCSI-interception demos; the PR does not mention AI tools, and REA use is not established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/trzy/Supermodel/pull/343",
+      "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Src/Pro1000/Pro1000.h",
+      "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Config/Games.xml",
+      "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/README.md",
+      "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Makefiles/Rules.inc",
+      "https://github.com/trzy/Supermodel/blob/4f5d686bbdd4a58d50a9fe66971ae5396626f1a1/Docs/LICENSE.txt",
+      "https://x.com/BartronPolygon/status/2110028302215999825",
+      "https://x.com/BartronPolygon/status/2109806939718943205"
+    ]
   }
 ]
