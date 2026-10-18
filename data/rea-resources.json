@@ -2305,5 +2305,35 @@
       "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/tools/rea.sh",
       "https://github.com/morluto/rea/tree/7ae3c50a9d49c480035855de9fcc4484befacd92"
     ]
+  },
+  {
+    "id": "reversed-with-ai-directory",
+    "name": "Reversed with AI",
+    "url": "https://reversedwithai.com/",
+    "category": "related-lists",
+    "relationship": "community-learning-resource",
+    "description_en": "A moderated website directory of AI-assisted reverse-engineering projects across games, firmware, file formats, APIs and protocols, apps and legacy software. Each entry links to its primary source and records the author-reported model, tools, time, cost and outcome, with four checks for public source, reproduction steps, real-hardware testing and third-party confirmation.",
+    "description_zh": "经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。每个条目链接一手来源，记录作者报告的模型、工具、耗时、费用与结果，并标注源码公开、复现步骤、真实硬件测试和第三方确认四项检查。",
+    "evidence_url": "https://reversedwithai.com/about",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed as a live website on 2026-10-18, when the homepage reported 180 projects, 100 marked Works, 12 guides and 166 tools, and the sitemap listed 180 project pages. The site has no pinned revision or public source repository, so entries, counts and labels can change after this review.",
+      "Entries record target, model, tools, time, cost, outcome (Works, Partial or Research), a 1–5 human-effort scale and four reproducibility checks. The About page says figures are reported by authors, not measured by the site, and unknown fields are marked Not reported; a Works label is the author’s claim. A Reproducible badge needs Works plus public source and repro steps, with real-hardware or third-party confirmation for firmware and devices.",
+      "The policy lists interoperability, preservation, modding that does not bypass DRM or anti-cheat, legacy-software recovery, format, protocol and API documentation, the user’s own devices, CTFs and defensive malware analysis without live samples. It declines DRM, licence-check and anti-cheat bypasses, online cheats, leaked source, live malware samples and weaponised exploits. The site says it hosts no binaries or code and accepts takedown requests; each linked project still needs its own rights and original-asset review.",
+      "The maintainer, smyaseen (@whyamas on X), reviews every submission; sponsored placements are labelled, and the site says sponsors do not affect listings or order. Its guides include a third-party REA setup guide updated 2026-10-14, but the directory covers many tools beyond REA and is not an official REA resource. The reviewed pages show a copyright notice and no reuse license for directory content."
+    ],
+    "targets": [
+      "game",
+      "firmware",
+      "app",
+      "protocol",
+      "binary"
+    ],
+    "kind": "collection",
+    "additional_evidence_urls": [
+      "https://reversedwithai.com/policy",
+      "https://reversedwithai.com/learn/getting-started-with-rea"
+    ]
   }
 ]

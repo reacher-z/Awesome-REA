@@ -5555,13 +5555,26 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110730358153269753"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The live Reversed with AI site, reviewed on 2026-10-18, establishes the named moderated directory: 180 listed projects, per-entry links to primary sources, author-reported model, tools, time, cost and outcome fields, four public-evidence checks and a published acceptance policy. The full mapping covers this report as a related collection, not a reconstruction case. Entry figures and Works labels remain author-reported; the site has no pinned revision, and no listed project was reviewed or reproduced through this mapping.",
+      "reason_zh": "2026-10-18 审阅的 Reversed with AI 在线网站确立了该具名、经人工审核的目录：收录 180 个项目，每个条目链接一手来源，列出作者报告的模型、工具、耗时、费用与结果字段，标注四项公开证据检查，并公开收录政策。完整映射将该报告作为相关合集覆盖，而非重建案例。条目数据与“可用”标签仍为作者报告；网站没有固定版本，本映射也未审阅或复现其中任何项目。",
+      "primary_evidence_urls": [
+        "https://reversedwithai.com/about",
+        "https://reversedwithai.com/policy",
+        "https://reversedwithai.com/",
+        "https://reversedwithai.com/learn/getting-started-with-rea",
+        "https://x.com/i/status/2110730358153269753"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "reversed-with-ai-directory",
+          "kind": "collection",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:idx-core-ai-data-inspection-idea",
@@ -14928,18 +14941,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 311
-    },
-    "units_by_state": {
-      "already-curated": 153,
+      "already-curated": 155,
       "insufficient-evidence": 126,
       "pending": 310
     },
-    "primary_reviewed_units": 219,
-    "catalog_linked_occurrences": 165,
-    "distinct_resource_ids": 159,
+    "units_by_state": {
+      "already-curated": 154,
+      "insufficient-evidence": 126,
+      "pending": 309
+    },
+    "primary_reviewed_units": 220,
+    "catalog_linked_occurrences": 166,
+    "distinct_resource_ids": 160,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
