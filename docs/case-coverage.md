@@ -23,8 +23,8 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 79 | 78 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 441 | 440 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 71 | 71 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 440 | 439 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 72 | 72 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 87 occurrences have catalog links. They reference 81 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
@@ -76,7 +76,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | cooler-lcd: a Thermalright display protocol implementation | Already curated | [Source](https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md) |
 | Helm Chart API v2: an AI-assisted specification draft | Pending | [Source](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
 | Star Fox and Sonic CD: reported AI-assisted native ports | Pending | [Source](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
-| AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Pending | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
+| AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Insufficient evidence | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer: rehosting the platform layer on Linux | Already curated | [Source](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |
 | Open Claude UI: REA-informed interface reference components | Already curated | [Source](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
