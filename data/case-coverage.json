@@ -12011,12 +12011,17 @@
         "https://github.com/lucyawrey/Paper_Mario_64_Recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 73 (README line 743) lists lucyawrey/Paper_Mario_64_Recomp under 🧙 Paper Mario. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 73 行（README 第 743 行）在 🧙 Paper Mario 下列出 lucyawrey/Paper_Mario_64_Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository holds only an N64Recomp configuration for Paper Mario NTSC 1.0, an empty CMakeLists.txt and a .gitmodules list whose submodules are not recorded in the tree. Its README says the recompiler currently crashes on an unresolved jal target and that no native build, runtime or renderer integration exists yet. Retain the lead without a catalog mapping; a later recompilation with documented build output and results can support another review.",
+      "reason_zh": "固定版本的仓库仅含 Paper Mario NTSC 1.0 的 N64Recomp 配置、一个空的 CMakeLists.txt，以及所列子模块并未登记在代码树中的 .gitmodules。其 README 称重编译器目前会因无法解析的 jal 目标而崩溃，尚无原生构建，也未整合运行时或渲染器。保留此线索而不建立目录映射；日后若有记录构建产物与结果的重编译，可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/README.md",
+        "https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/paper_mario_usa_rev1.toml",
+        "https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/.gitmodules",
+        "https://github.com/lucyawrey/Paper_Mario_64_Recomp/blob/09dcb129ab4c3ab5ae4d1838841f05decb6e7b26/CMakeLists.txt"
+      ],
       "catalog_matches": []
     },
     {
@@ -14594,15 +14599,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 135,
-      "insufficient-evidence": 110,
-      "pending": 346
+      "insufficient-evidence": 111,
+      "pending": 345
     },
     "units_by_state": {
       "already-curated": 134,
-      "insufficient-evidence": 110,
-      "pending": 345
+      "insufficient-evidence": 111,
+      "pending": 344
     },
-    "primary_reviewed_units": 184,
+    "primary_reviewed_units": 185,
     "catalog_linked_occurrences": 146,
     "distinct_resource_ids": 140,
     "distinct_paper_ids": 1,
