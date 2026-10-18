@@ -5624,5 +5624,36 @@
       "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/kk/THIRD-PARTY-NOTICES.txt",
       "https://github.com/TekRantGaming/king-kong-recompiled/releases/tag/v1.9.11"
     ]
+  },
+  {
+    "id": "reva-ghidra-mcp",
+    "name": "ReVa (Reverse Engineering Assistant)",
+    "url": "https://github.com/cyberkaida/reverse-engineering-assistant",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension that runs an MCP server inside Ghidra, giving agents decompilation with namespace and cross-reference context, symbol, string, data-type, structure and call-graph tools, program diffing, renaming and PyGhidra scripting. Its README attributes the project's distinction to tool design for LLM use: many small tools whose schemas tolerate other input, redirect correctable mistakes and return short fragments linked to related information. Assistant mode serves an open Ghidra project to several clients at once; headless mode starts Ghidra itself with session-scoped projects.",
+    "description_zh": "在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，为智能体提供附带命名空间与交叉引用上下文的反编译、符号、字符串、数据类型、结构体与调用图工具，以及程序比对、重命名和 PyGhidra 脚本执行。其 README 将项目的特点归于面向大模型使用的工具设计：提供许多小工具，其模式在给定结构之外也能容忍其他输入，把可纠正的错误反馈给模型，并返回附带相关信息链接的简短片段。助手模式可让多个客户端同时连接已打开的 Ghidra 项目；无界面模式则由 ReVa 自行启动 Ghidra，项目仅在会话期间存在。",
+    "evidence_url": "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ghidra 12.0 or later only. Install the release zip built for the matching Ghidra version through the extension manager, or build with gradle against GHIDRA_INSTALL_DIR, then enable the ReVa Application Plugin in the project view and the ReVa Plugin in the Code Browser. Release v7.3.1 (2026-09-03) ships zips for Ghidra 12.0, 12.1 and 12.1.3 with Sigstore bundles and a matching PyPI package; the reviewed main commit adds unreleased dependency updates and a breaking CLI migration to MCP Python SDK v2.",
+      "Assistant mode needs a running Ghidra with an open project and serves streamable HTTP on port 8080 by default. Headless mode needs GHIDRA_INSTALL_DIR, Python 3.10+ and the reverse-engineering-assistant package installed with uv, which provides the mcp-reva command; the README describes its projects as session-scoped and cleaned up automatically, created under .reva/projects in the working directory.",
+      "The server exposes Ghidra's PyGhidra scripting environment, and renaming and data-type tools change the project. Defaults bind 127.0.0.1 with scripting tools enabled and API-key authentication off; the README asks for API-key authentication or disabled scripting tools before listening on a public interface, and the reviewed source refuses an unauthenticated public binding in headless mode and asks for consent in the GUI.",
+      "Apache-2.0. The repository also publishes a Claude Code plugin marketplace with triage, deep-analysis, cryptography and CTF skills. README statements about context use and performance on large binaries or firmware images are the author's; no extension, server or analysis was run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/LICENSE",
+      "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/pyproject.toml",
+      "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/src/main/java/reva/plugin/ConfigManager.java",
+      "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/src/main/java/reva/server/McpServerManager.java",
+      "https://github.com/cyberkaida/reverse-engineering-assistant/releases/tag/v7.3.1",
+      "https://pypi.org/project/reverse-engineering-assistant/7.3.1/",
+      "https://github.com/cyberkaida/reverse-engineering-assistant/compare/v7.3.1...a05a6b0a18649efd6d74ec8447bdadf8d468c365"
+    ]
   }
 ]

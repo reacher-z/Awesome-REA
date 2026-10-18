@@ -2434,5 +2434,14 @@
       "报告的检查包括所有者的测试，以及同时用于收集着色器包的开发者自动游玩构建；所审版本没有 CI 工作流。已知问题包括 30 fps 以上部分角色动画不正确，以及预渲染视频周期性停顿。启动器的匿名在线人数上报默认开启。本合集未构建或运行该移植。",
       "仓库没有许可证文件，移植代码的复用条款未作说明；内置的超分辨率组件声明为 MIT，ReXGlue 及其他依赖各自适用其条款。游戏代码、素材和商标仍归各自权利人所有，项目声明与 Ubisoft、Universal、Microsoft 等无关。AI 披露所指为 Claude Code 而非 REA，因此这不是 REA 案例。"
     ]
+  },
+  "reva-ghidra-mcp": {
+    "name": "ReVa 面向大模型工具设计的 Ghidra MCP 扩展",
+    "requirements": [
+      "仅支持 Ghidra 12.0 及以上版本。可通过扩展管理器安装与所用 Ghidra 版本匹配的发布 zip，或指定 GHIDRA_INSTALL_DIR 后用 gradle 构建；之后需在项目视图中启用 ReVa Application Plugin，并在 Code Browser 中启用 ReVa Plugin。v7.3.1 版（2026-09-03）提供针对 Ghidra 12.0、12.1 和 12.1.3 的 zip 及 Sigstore 签名包，并有对应的 PyPI 软件包；所审阅的 main 提交另含尚未发布的依赖更新，以及命令行工具迁移到 MCP Python SDK v2 的不兼容改动。",
+      "助手模式需要正在运行且已打开项目的 Ghidra，默认在 8080 端口提供 streamable HTTP 服务。无界面模式需要设置 GHIDRA_INSTALL_DIR、Python 3.10+，并用 uv 安装提供 mcp-reva 命令的 reverse-engineering-assistant 软件包；README 称其项目仅在会话期间存在并会自动清理，创建于工作目录下的 .reva/projects 中。",
+      "服务器开放 Ghidra 的 PyGhidra 脚本环境，重命名和数据类型类工具会修改项目。默认绑定 127.0.0.1，脚本工具处于启用状态，API 密钥认证关闭；README 要求在监听公共网络接口前启用 API 密钥认证或禁用脚本工具。所审阅源码在无界面模式下拒绝无认证的公共绑定，在图形界面中则会先征求用户同意。",
+      "采用 Apache-2.0。仓库还发布了 Claude Code 插件市场，提供初步分析、深入分析、密码学分析和 CTF 等技能。README 中关于上下文用量以及处理大型二进制或固件镜像表现的说法均为作者陈述；本次未运行扩展、服务器或任何分析，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
