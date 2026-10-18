@@ -1092,12 +1092,14 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/issues/893"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked REA issue is a tool bug report, not a reconstruction: rea-agents 4.1.0's JADX provider ran out of Java heap on an unnamed 133 MB production APK with 11 DEX files. The closing reply describes heap-control and memory changes on main but states that they were not retested against that APK. The thread names no app, recovered feature, reconstructed output or comparison. Retain the lead without a catalog mapping; this is not a judgment of REA's current Android support.",
+      "reason_zh": "关联的 REA issue 是工具缺陷报告，而非重建案例：rea-agents 4.1.0 的 JADX 提供方在一个未具名、133 MB、含 11 个 DEX 文件的生产 APK 上耗尽 Java 堆内存。关闭时的回复说明 main 分支已加入堆内存控制和内存优化，但明确表示未针对该 APK 复测。讨论串未写明应用名称，也没有恢复的功能、重建产物或对照结果。保留此线索而不建立目录映射；这不是对 REA 当前 Android 支持能力的评判。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/issues/893"
+      ],
       "catalog_matches": []
     },
     {
@@ -13180,15 +13182,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 61,
-      "insufficient-evidence": 54,
-      "pending": 476
+      "insufficient-evidence": 55,
+      "pending": 475
     },
     "units_by_state": {
       "already-curated": 60,
-      "insufficient-evidence": 54,
-      "pending": 475
+      "insufficient-evidence": 55,
+      "pending": 474
     },
-    "primary_reviewed_units": 60,
+    "primary_reviewed_units": 61,
     "catalog_linked_occurrences": 68,
     "distinct_resource_ids": 59,
     "distinct_paper_ids": 1,
