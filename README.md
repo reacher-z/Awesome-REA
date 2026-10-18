@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 270](https://img.shields.io/badge/resources-270-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 130](https://img.shields.io/badge/cases-130-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 271](https://img.shields.io/badge/resources-271-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 131](https://img.shields.io/badge/cases-131-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (111) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (112) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (130) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (131) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -736,6 +736,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   An unofficial native Windows port of Saints Row (Xbox 360, 2006) that statically recompiles the game's PowerPC executable to C++ for x86-64 with the ReXGlue SDK, which also reimplements the console's kernel, GPU (on Direct3D 12), audio and input. A recompiler manifest, game-specific function overrides and an SDK patch make the result run, and each user builds it locally from their own disc. The README reports the game fully playable with built-in co-op and lists known issues.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/saints-reborn-recomp-case/)
+
+- [**Pokémon Platinum PC Port: a native port built on the pret decompilation**](https://github.com/cybervisi0n/pokeplatinum)
+
+  Builds native 64-bit Windows and Linux executables of Pokémon Platinum from a fork of pret’s decompilation, replacing NitroSDK with the author’s libntr libraries; the same tree keeps the DS ROM build and an experimental Switch target. README says the game should be playable from start to finish but may crash or show graphical bugs. Prebuilt binaries require the player’s own US ROM, and the fork’s default build no longer runs pret’s checksum tests.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokemon-platinum-pc-port-case/)
 
 #### Tools, projects and integrations
 
