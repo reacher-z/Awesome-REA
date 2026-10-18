@@ -3023,5 +3023,37 @@
       "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/progress.py",
       "https://zelda.deco.mp/assets/csv/progress-tmc-matching.csv"
     ]
+  },
+  {
+    "id": "ocarina-of-time-decomp-case",
+    "name": "Ocarina of Time: decompilation with MD5-checked ROM builds for 16 versions",
+    "url": "https://github.com/zeldaret/oot",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates a C source base for Ocarina of Time that rebuilds 16 Nintendo 64, GameCube and iQue Player ROM versions, using information from the game and static and dynamic analysis. Assets come from the user’s own ROM and each default build is checked against that version’s MD5; README states the project is not producing a PC port and still calls the repository a work in progress.",
+    "description_zh": "借助游戏本身的信息以及静态与动态分析，为《时之笛》重建 C 源码库，可重新构建 Nintendo 64、GameCube 和 iQue Player 共 16 个 ROM 版本。素材取自使用者自备的 ROM，默认构建会以对应版本的 MD5 校验；README 说明项目不制作 PC 移植，并仍称仓库处于开发中。",
+    "evidence_url": "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes recreating a source base from scratch using information inside the game and static and/or dynamic analysis, and states that it is not producing a PC port. It builds 16 N64, GameCube and iQue Player ROM versions (default gc-eu-mq-dbg); some ROM parts may not yet be shiftable, so modding can be difficult.",
+      "Each build needs the user’s own base ROM for the chosen version, matching an MD5 listed in README; the repository includes no game assets and extracts them from that ROM during setup. Native ports such as Ship of Harkinian, and recompilation projects, are separate from this repository’s output.",
+      "README documents Linux or WSL builds, with separate macOS and Docker guides, needing Git, build-essential, curl, Python 3.10+ with pip and venv, libxml2 and a MIPS binutils toolchain. N64 and GameCube code builds with IDO 7.1 and 5.3 through ido-static-recomp; iQue builds also use EGCS for some files, and an optional GCC build is non-matching.",
+      "With the default COMPARE=1, make checks the built ROM’s MD5 against the version’s checksum file and prints OK or FAILED; NON_MATCHING=1 or COMPILER=gcc turns the check off. GitHub Actions, using a private container holding the base ROMs, reported all 16 version builds successful for the pinned commit, and the mutable progress badge read 100% on review. This collection ran no build.",
+      "The pinned tree has no license file and GitHub detects none, so no reuse license is stated; Nintendo content and compiler components keep their own terms. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/Makefile",
+      "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/docs/compilers.md",
+      "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/docs/BUILDING_MACOS.md",
+      "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/baseroms/ntsc-1.0/checksum-US.md5",
+      "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/.github/workflows/ci.yml",
+      "https://github.com/zeldaret/oot/actions/runs/38614247271",
+      "https://zelda.deco.mp/games/oot"
+    ]
   }
 ]

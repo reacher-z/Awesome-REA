@@ -1610,5 +1610,15 @@
       "COMPARE 对常规构建执行 SHA-1 检查，对 CUSTOM 构建默认关闭；按 INSTALL.md，修改游戏后必须使用 CUSTOM 构建。Jenkins 流水线使用构建节点上保存的 ROM 构建全部五个版本，并依据美版 map 文件发布进度。就所审阅提交而言，一致性进度日志按脚本自身规则（也把 asm/src、asm/lib 和 libc 目标计入）将美版全部 647,908 个代码字节计为源码，而 13,933,140 个数据字节中仅计入 238,628 个；本合集未重新构建。",
       "所审阅代码树没有许可证文件，GitHub 也未识别出许可证，因此源码的再使用条款未予说明；原始 ROM、由其得到的素材以及 agbcc 保留各自条款。所审阅来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "ocarina-of-time-decomp-case": {
+    "name": "《时之笛》：16 个版本均以 MD5 校验 ROM 构建的反编译",
+    "requirements": [
+      "README 说明项目利用游戏内部信息及静态和／或动态分析，从零重建源码库，并明确表示不制作 PC 移植。项目可构建 N64、GameCube 和 iQue Player 共 16 个 ROM 版本（默认 gc-eu-mq-dbg）；ROM 的部分内容可能尚不能移位，因此修改起来可能较困难。",
+      "每次构建都需要使用者自备所选版本的基础 ROM，且须与 README 列出的 MD5 一致；仓库不含游戏素材，素材在设置阶段从该 ROM 中提取。Ship of Harkinian 等原生移植及重编译项目都是独立项目，并非本仓库的产物。",
+      "README 说明在 Linux 或 WSL 上构建，另有 macOS 与 Docker 指南；需要 Git、build-essential、curl、带 pip 与 venv 的 Python 3.10+、libxml2 以及 MIPS binutils 工具链。N64 和 GameCube 代码通过 ido-static-recomp 使用 IDO 7.1 与 5.3 编译；iQue 版本还有部分文件使用 EGCS，可选的 GCC 构建不保证一致。",
+      "默认 COMPARE=1 时，make 会将构建出的 ROM 的 MD5 与该版本的校验文件比对，并输出 OK 或 FAILED；设置 NON_MATCHING=1 或 COMPILER=gcc 会关闭该检查。GitHub Actions 在存有基础 ROM 的私有容器中运行，报告固定提交的 16 个版本均构建成功；审阅时可变的进度徽章显示 100%。本合集未运行任何构建。",
+      "固定版本的仓库中没有许可证文件，GitHub 也未识别出许可证，因此未声明复用许可；任天堂内容与编译器组件各有其条款。所审来源未确立 REA 或编码代理的参与。"
+    ]
   }
 }

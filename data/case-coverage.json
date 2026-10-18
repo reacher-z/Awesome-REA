@@ -9742,15 +9742,30 @@
         "https://github.com/zeldaret/oot",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. WIP Ocarina of Time source reconstruction uses static/dynamic analysis and explicitly is not producing a PC port. Version-specific ROMs and checksums are listed; original assets and Python 3.10+ are required by its setup. Review license/build notes and pin any progress figure; do not treat Shipwright or future Zelda64Recomp support as this repo’s output.",
-      "reason_zh": "《时之笛》项目通过静态或动态分析重建源码，README 明确表示不制作 PC 移植，并列出版本对应 ROM 与哈希。还需核查许可、构建和进度；不能把 Shipwright 或 Zelda64Recomp 的成果归入此仓库。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, Makefile, compiler notes, checksum files and CI workflow, plus the successful Actions run for that commit, support an Ocarina of Time decompilation that rebuilds 16 ROM versions with MD5 comparison. Full mapping covers this ROM reconstruction, not Ship of Harkinian, Zelda64Recomp or any other port. User-supplied base ROMs, shiftability limits and the missing license file remain explicit; the linked archive post is not used as evidence.",
+      "reason_zh": "固定版本的 README、Makefile、编译器说明、校验文件和 CI 工作流，以及该提交成功的 Actions 运行记录，支持这是一个可重建 16 个 ROM 版本并进行 MD5 比对的《时之笛》反编译项目。完整映射覆盖此 ROM 重建，不包括 Ship of Harkinian、Zelda64Recomp 或其他移植。使用者自备的基础 ROM、可移位性限制及缺失的许可证文件均明确保留；所附存档帖文不作为证据。",
       "primary_evidence_urls": [
-        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md"
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/README.md",
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/Makefile",
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/docs/compilers.md",
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/docs/BUILDING_MACOS.md",
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/baseroms/ntsc-1.0/checksum-US.md5",
+        "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/.github/workflows/ci.yml",
+        "https://github.com/zeldaret/oot/actions/runs/38614247271",
+        "https://zelda.deco.mp/games/oot",
+        "https://x.com/mdaman010/status/2109111127238230239"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ocarina-of-time-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-015",
@@ -13521,18 +13536,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 77,
-      "insufficient-evidence": 71,
-      "pending": 443
-    },
-    "units_by_state": {
-      "already-curated": 76,
+      "already-curated": 78,
       "insufficient-evidence": 71,
       "pending": 442
     },
+    "units_by_state": {
+      "already-curated": 77,
+      "insufficient-evidence": 71,
+      "pending": 441
+    },
     "primary_reviewed_units": 91,
-    "catalog_linked_occurrences": 84,
-    "distinct_resource_ids": 76,
+    "catalog_linked_occurrences": 85,
+    "distinct_resource_ids": 77,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
