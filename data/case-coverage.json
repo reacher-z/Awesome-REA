@@ -12497,13 +12497,28 @@
         "https://github.com/samuelit0davila/fifa-street-pc-port",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 110 (README line 1136) lists samuelit0davila/fifa-street-pc-port under 🏁 FIFA Street. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 110 行（README 第 1136 行）在 🏁 FIFA Street 下列出 samuelit0davila/fifa-street-pc-port。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build guide, status and testing notes, installer documentation and license scope support a documented ReXGlue recompilation of FIFA Street (2012) for Windows that needs the user’s own ISO. Full mapping covers this repository’s recompilation and tooling, not the separate archive post linked from the row. The README’s own statement that release installers include generated game binaries without redistribution clearance remains explicit.",
+      "reason_zh": "固定版本的 README、构建指南、状态与测试说明、安装程序文档及许可范围说明，支持这一有文档记录的 FIFA Street（2012）Windows 版 ReXGlue 重编译，需使用者自备 ISO。完整映射覆盖此仓库的重编译与工具，不涵盖该行另附的归档帖子。README 自述发布的安装程序含生成的游戏二进制文件且未获再分发许可，此点予以明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/README.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/BUILDING.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/STATUS.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/TESTING.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/Installer/README.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/Installer/PRECOMPILED.md",
+        "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/licenses/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "restreet-fifa-street-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-111",
@@ -14189,18 +14204,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 112,
-      "insufficient-evidence": 86,
-      "pending": 393
-    },
-    "units_by_state": {
-      "already-curated": 111,
+      "already-curated": 113,
       "insufficient-evidence": 86,
       "pending": 392
     },
-    "primary_reviewed_units": 140,
-    "catalog_linked_occurrences": 123,
-    "distinct_resource_ids": 117,
+    "units_by_state": {
+      "already-curated": 112,
+      "insufficient-evidence": 86,
+      "pending": 391
+    },
+    "primary_reviewed_units": 141,
+    "catalog_linked_occurrences": 124,
+    "distinct_resource_ids": 118,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

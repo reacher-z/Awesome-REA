@@ -4189,5 +4189,38 @@
       "https://decomp.dev/TheOnlyZac/sly1",
       "https://theonlyzac.github.io/sly1"
     ]
+  },
+  {
+    "id": "restreet-fifa-street-recomp-case",
+    "name": "ReStreet: a ReXGlue recompilation of FIFA Street (2012) for Windows",
+    "url": "https://github.com/samuelit0davila/fifa-street-pc-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recompiles the Xbox 360 FIFA Street (2012) executable and two guest modules into a Windows build with ReXGlue, adding a launcher with Direct3D 12 and Vulkan backends. The documented source workflow generates and compiles the game code locally from the user’s own ISO, while the README states that release installers include generated game binaries without claimed redistribution clearance. Testing is author-reported and centred on one Windows PC.",
+    "description_zh": "借助 ReXGlue 将 Xbox 360 版 FIFA Street（2012）的主程序及两个客体模块重编译为 Windows 程序，并提供支持 Direct3D 12 与 Vulkan 后端的启动器。文档中的源码构建流程会依据使用者自备的 ISO 在本地生成并编译游戏代码；README 则说明发布的安装程序包含生成的游戏二进制文件，且未声称已获再分发许可。测试由作者报告，主要在一台 Windows PC 上进行。",
+    "evidence_url": "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch describes ReStreet v1.5.4 Online Beta. It is a ReXGlue static recompilation rather than a decompilation: C++ is generated from default.xex, fifadllzf.xex.dll and the DLC module FootballCompEngzf.xex.dll. v1.0–v1.3 are offline releases; v1.4 and later add an online beta on community servers in Europe and South America, with listed gaps such as no rematch. Windows 10/11 64-bit is the documented platform.",
+      "The user supplies their own FIFA Street (2012) Xbox 360 ISO; the ISO and game files are not included. Installers accept only builds whose three original executable modules match recorded SHA-256 hashes, so other regions and revisions are rejected and untested. The menu-credit change is stored as a difference recipe applied locally to the user’s archives.",
+      "Release installs need an x86-64 CPU with SSSE3, a Direct3D 12 or Vulkan GPU, 8 GB RAM and 12 GB free disk; the README calls these estimates. Source builds need Windows x64, Git, the .NET 8 SDK, Visual Studio C++ Build Tools with the Windows SDK, LLVM/Clang 18+, CMake 3.25+, Ninja, a locally supplied extract-xiso, and ReXGlue at commit c94f5ebd with the project’s patch. BUILDING.md records a 2026-10-04 development-machine Direct3D 12 source build; a complete Vulkan source build was not tested.",
+      "STATUS.md records v1.3 checks on one Windows 11 PC with an AMD Radeon RX 9070 XT, covering frame pacing, VSync, both backends, a menu crash fix and the update path. NVIDIA and Intel GPUs, Windows 10, long sessions and all venues are listed as untested, and readback modes other than Full are not validated. These are author reports, not equivalence checks; this collection did not run them.",
+      "MIT covers the author’s installer, launcher and scripts; ReXGlue and the local patch are BSD 3-Clause, the LZX decoder is Ms-PL, and FIFA Street branding images stay with their holders. README states that the release installer includes generated game binaries, that MIT does not establish the right to redistribute them and that no legal clearance is claimed; PRECOMPILED.md says such a package needs a rights review before publication. The author reports developing with ChatGPT, OpenAI Codex and Claude Code; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/BUILDING.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/STATUS.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/docs/TESTING.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/Installer/README.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/Installer/PRECOMPILED.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/licenses/README.md",
+      "https://github.com/samuelit0davila/fifa-street-pc-port/blob/b63f5bd92741fff6e5c128bf8fc2458d9affa47a/LICENSE",
+      "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/README.md"
+    ]
   }
 ]

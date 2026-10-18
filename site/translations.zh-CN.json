@@ -1998,5 +1998,15 @@
       "默认构建会依据 config/checksum.sha1 校验 out/SCUS_971.98；文档说明有意修改代码时可使用 --skip-checksum，但其产物可能无法启动。CI 通过仓库机密下载原版 ELF，并在 main 分支上执行此校验，所审提交记录的检查结果为成功。这只验证单个可执行文件的逐字节一致，不代表反编译已经完成，本合集也未重跑。",
       "仓库以 CC0 1.0 发布；原版游戏、提取的汇编和数据，以及 ProDG 编译器和 SCE 运行库各有权利约束。CONTRIBUTING 从 2002 年 5 月原型版的调试符号中获取经过名称修饰的函数名。所审来源未确立 REA 参与，也不主张运行复现。"
     ]
+  },
+  "restreet-fifa-street-recomp-case": {
+    "name": "ReStreet：借助 ReXGlue 将 FIFA Street（2012）重编译到 Windows",
+    "requirements": [
+      "所审阅的 main 分支描述 ReStreet v1.5.4 Online Beta。它是 ReXGlue 静态重编译，而非反编译：C++ 代码由 default.xex、fifadllzf.xex.dll 及 DLC 模块 FootballCompEngzf.xex.dll 生成。v1.0–v1.3 为离线版本；v1.4 起加入在欧洲和南美社区服务器上运行的在线测试版，并列出尚无再战等缺口。文档说明的平台为 64 位 Windows 10／11。",
+      "使用者需自备 FIFA Street（2012）Xbox 360 ISO；项目不包含 ISO 或游戏文件。安装程序只接受三个原始可执行模块的 SHA-256 与记录值一致的版本，因此其他地区和修订版会被拒绝，也未经测试。菜单制作人员名单的修改以差异配方形式保存，在本地应用到使用者的存档文件。",
+      "发布版安装需支持 SSSE3 的 x86-64 CPU、支持 Direct3D 12 或 Vulkan 的 GPU、8 GB 内存及 12 GB 可用磁盘空间；README 称这些只是估计值。源码构建需 Windows x64、Git、.NET 8 SDK、含 Windows SDK 的 Visual Studio C++ 生成工具、LLVM／Clang 18+、CMake 3.25+、Ninja、自行提供的 extract-xiso，以及打上项目补丁的 ReXGlue（提交 c94f5ebd）。BUILDING.md 记录了 2026-10-04 在开发机上完成的 Direct3D 12 源码构建；完整的 Vulkan 源码构建尚未测试。",
+      "STATUS.md 记录了 v1.3 在一台配备 AMD Radeon RX 9070 XT 的 Windows 11 PC 上的检查，涵盖帧节奏、垂直同步、两种后端、一项菜单崩溃修复及更新流程。NVIDIA 与 Intel GPU、Windows 10、长时间游玩和全部场地均列为未测试，Full 以外的回读模式也未经验证。这些是作者报告，并非等价性检查；本合集未运行。",
+      "MIT 涵盖作者编写的安装程序、启动器和脚本；ReXGlue 及本地补丁采用 BSD 3-Clause，LZX 解码器采用 Ms-PL，FIFA Street 品牌图片的权利仍归其持有人。README 说明发布的安装程序包含生成的游戏二进制文件，MIT 许可不能确立其再分发权利，且未声称已获法律许可；PRECOMPILED.md 称此类安装包发布前需另行审查权利。作者自述借助 ChatGPT、OpenAI Codex 和 Claude Code 开发；未声明使用 REA。"
+    ]
   }
 }

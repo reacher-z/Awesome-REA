@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 246](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-246-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 106](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-106-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 247](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-247-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 107](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-107-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (87) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (88) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (106) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (107) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -593,6 +593,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将《Sly Cooper and the Thievius Raccoonus》PlayStation 2 美版可执行文件 SCUS\_971.98 重建为源码，属于进行中的一致性反编译。尚未匹配的函数仍由从使用者自备可执行文件中拆分出的汇编构建，构建会检查链接后 ELF 的 SHA-1。产物需在 PCSX2 中配合原版光盘素材运行，并不是原生 PC 移植。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sly1-matching-decomp-case/)
+
+- [**ReStreet：借助 ReXGlue 将 FIFA Street（2012）重编译到 Windows**](https://github.com/samuelit0davila/fifa-street-pc-port)
+
+  借助 ReXGlue 将 Xbox 360 版 FIFA Street（2012）的主程序及两个客体模块重编译为 Windows 程序，并提供支持 Direct3D 12 与 Vulkan 后端的启动器。文档中的源码构建流程会依据使用者自备的 ISO 在本地生成并编译游戏代码；README 则说明发布的安装程序包含生成的游戏二进制文件，且未声称已获再分发许可。测试由作者报告，主要在一台 Windows PC 上进行。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/restreet-fifa-street-recomp-case/)
 
 #### 工具、项目与集成
 
