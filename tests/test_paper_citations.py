@@ -126,13 +126,18 @@ class ReviewedContainerRecordTests(unittest.TestCase):
         self.assertEqual((netlifter['booktitle'], netlifter['pages'], netlifter['doi'], netlifter['eprint']),
                          ('{Proceedings of the 2023 ACM SIGSAC Conference on Computer and Communications Security}',
                           '{1287--1301}', '{10.1145/3576915.3616614}', '{2305.11781}'))
+        p2im = fields(bibtex_text(PAPERS['paper-p2im']))
+        self.assertEqual((p2im['booktitle'], p2im['pages'], p2im['publisher'], p2im['eprint']),
+                         ('{29th USENIX Security Symposium (USENIX Security 20)}',
+                          '{1237--1254}', '{USENIX Association}', '{1909.06472}'))
 
     def test_only_reviewed_records_carry_container_metadata(self):
         expected = {'paper-dire', 'paper-resym', 'paper-redraw', 'paper-declarui', 'paper-fuzzware',
                     'paper-firmae', 'paper-vision2web', 'paper-ui2code', 'paper-worldcoder',
                     'paper-jsdeobsbench', 'paper-cascade', 'paper-dcgen', 'paper-code-world-models',
                     'paper-stateinspector', 'paper-halucinator', 'paper-web2code', 'paper-degpt',
-                    'paper-binpre', 'paper-binaryinferno', 'paper-icepre', 'paper-netlifter', 'paper-uiorchestra', 'paper-slade'}
+                    'paper-binpre', 'paper-binaryinferno', 'paper-icepre', 'paper-netlifter', 'paper-uiorchestra', 'paper-slade',
+                    'paper-p2im'}
         self.assertEqual({identifier for identifier, record in PAPERS.items() if 'citation' in record}, expected)
         for identifier in sorted(PAPERS.keys() - expected):
             # Records without verified container metadata keep the short venue label.

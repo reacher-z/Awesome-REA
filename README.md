@@ -15,16 +15,16 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (16) · [Game](#game) (43) · [App](#app) (41)
+- [Website](#website) (16) · [Game](#game) (44) · [App](#app) (42)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (19) · [References and Learning](#references-and-learning) (20)
+- [Papers](#papers) (54) · [Agents and MCP](#agents-and-mcp) (20) · [References and Learning](#references-and-learning) (20)
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (56) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (57) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -308,6 +308,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Perfect Dark’s Nintendo 64 code with a documented matching-ROM build. The project combines reconstructed source with assets from a user-supplied original ROM, then checks version-specific artifact hashes. It is a reproducible-build research case, distinct from the separate native PC port; matching results remain project-reported here.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/perfect-dark-matching-decomp-case/)
+
+- [**Underworld Exhumed: Ultima Underworld I &amp; II decompilations and ports**](https://github.com/abedegno/underworld-exhumed)
+
+  Combines byte-matching DOS decompilations and native SDL3/WebAssembly ports for both Ultima Underworld: The Stygian Abyss and Ultima Underworld II: Labyrinth of Worlds. The DOS link flow pairs reconstructed C and assembly with original compiler libraries and extracted data gaps from a user-supplied executable.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/underworld-exhumed-case/)
 
 #### Tools, projects and integrations
 
@@ -674,6 +680,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/hbctool/)
 
+- [**DexSQL**](https://github.com/LSPosed/dexsql-release)
+
+  Queries classes, methods, fields, strings, call edges and Smali disassembly across Android APK and DEX files with SQL. Shipped as a single prebuilt binary that runs either as a local stdio MCP server (\`dexsql mcp\`) or as a standalone CLI (\`dexsql query\`).
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/dexsql/)
+
 <a id="native-binary"></a>
 ### Native Binary
 
@@ -994,6 +1006,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-casebook/)
 
+- [**Decepticon: REA reversing service and subagent tools**](https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md)
+
+  An optional reversing workload in BitterSecurity’s Decepticon wraps rea-agents and Ghidra inside a dedicated HTTP/MCP container and exposes three tools to its reverser subagent. It pins the inspected binary by SHA-256 and exports REA Evidence files to the shared workspace before returning results.
+
+  Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/decepticon-rea-reverser/)
+
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
   Official Hex-Rays MCP server for agent access to IDA databases, with headless operation and optional GUI integration.
@@ -1237,14 +1255,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**53 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**54 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (9) · [Websites](#papers-website-reconstruction) (13)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -1921,6 +1939,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Arbitration deliberately changes execution and targets functioning web interfaces, not identical physical-device behavior. The evaluation covers ARM little-endian and MIPS little-/big-endian firmware from routers and IP cameras; heuristics may fail on unseen devices or configurations. It reuses firmware binaries rather than recovering their source.
 
   **Publication:** 2020 · ACSAC 2020 · Conference paper · Mingeun Kim et al.
+
+  </details>
+
+- [**P2IM: Scalable and Hardware-independent Firmware Testing via Automatic Peripheral Interface Modeling**](https://www.usenix.org/conference/usenixsecurity20/presentation/feng)
+
+  P2IM emulates monolithic ARM Cortex-M firmware in a modified QEMU by classifying memory-mapped I/O registers as control-status, status, data or control-data during speculative execution runs and feeding fuzzer inputs through data registers and round-robin interrupts.
+
+  2020 · Conference paper · [PDF](https://www.usenix.org/system/files/sec20-feng.pdf) · [Code](https://github.com/RiS3-Lab/p2im) · [Full entry & citation](https://awesomerea.org/papers/paper-p2im/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Scoped to processor-peripheral interfaces in monolithic ARM Cortex-M firmware without OS kernels; it does not model DMA, nuanced interrupt timing or external hardware devices connected across buses, and it assumes firmware runs through peripheral abstraction layers (HAL/driver libraries). Misclassified registers, unmodeled hardware semantics or unsupported MCU layouts can stall booting or cause false crashes and hangs. Evaluating 70 sample programs and 10 real-world device firmwares establishes a fuzzing environment rather than hardware equivalence or original-source recovery.
+
+  **Publication:** 2020 · USENIX Security 2020 · Conference paper · Bo Feng et al.
 
   </details>
 

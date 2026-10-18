@@ -2611,5 +2611,78 @@
       "https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/THIRD_PARTY_NOTICES.md",
       "https://github.com/nemesa/ha-tcl-home-unofficial-integration/blob/fdba4d7a0b8213f4f68a74b4ce0f932343802b6b/LICENSE"
     ]
+  },
+  {
+    "id": "underworld-exhumed-case",
+    "name": "Underworld Exhumed: Ultima Underworld I & II decompilations and ports",
+    "url": "https://github.com/abedegno/underworld-exhumed",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Combines byte-matching DOS decompilations and native SDL3/WebAssembly ports for both Ultima Underworld: The Stygian Abyss and Ultima Underworld II: Labyrinth of Worlds. The DOS link flow pairs reconstructed C and assembly with original compiler libraries and extracted data gaps from a user-supplied executable.",
+    "description_zh": "汇集《Ultima Underworld: The Stygian Abyss》与《Ultima Underworld II: Labyrinth of Worlds》的 DOS 字节匹配反编译重建及原生 SDL3／WebAssembly 移植。DOS 链接流程将重建的 C 与汇编代码同原始编译器库及从用户自备可执行文件中提取的数据空缺结合。",
+    "evidence_url": "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed monorepo covers two targets: uw1 (89 C files and 50 assembly modules for GOG UW.EXE, MD5 8afc3c29ef5667a3ab6667e8cbc8d63a) and uw2 (99 C files and assembly modules for GOG UW2.EXE). Both share the Exhume submodule for DOS runtime shims, audio synthesis and verification harnesses. The inspected sources establish no REA or AI-agent attribution.",
+      "Native SDL3 ports (uw1port, uw2port) require CMake 3.20+, Ninja or Make, a C11/C++17 toolchain, Python 3 and the initialized exhume submodule; Emscripten builds the optional WebAssembly target. Runtime requires the user’s own original game data (UW/DATA and UW/SOUND or UW2/DATA and UW2/SOUND), and optional MT-32 synthesis requires user-supplied CM32L/MT32 control and PCM ROMs.",
+      "Rebuilding byte-identical DOS executables additionally requires DOSBox, original Borland Turbo C++ 1.01, Turbo Assembler 2.0 and Turbo Link 3.01 binaries, and the user’s original UW.EXE or UW2.EXE. As documented in each target’s LINKING.md, every non-CRT code segment is compiled from source while Borland’s CM.LIB provides CRT routines and extract.py pulls remaining unowned far-data and DGROUP byte ranges from the original executable.",
+      "Port verification replays 11 recorded DOS golden sessions for uw1 and 12 for uw2 alongside routine fuzzing. uw2/docs/COVERAGE.md reports 46.0% overall line coverage (60.0% of functions) across replay and fuzz harnesses, noting that the spell system, most SCD world events/traps and many object and conversation paths are not reached by the recorded sessions. Public CI accuracy workflows depend on private encrypted asset and toolchain archives; this review did not run builds or replays.",
+      "MIT covers only the project’s own tools, port glue, documentation and annotations. Each NOTICE explicitly states that no license is granted for EA-owned game-derived code, Borland’s OVERLAY.ASM or game data; bundled Nuked OPL3 and Munt libmt32emu carry LGPL-2.1+. A separate web-deployment note about bundled game data is not a repository license grant."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/BUILDING.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/PORT.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/README.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/exhume.toml",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/docs/LINKING.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/docs/PLAN.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/NOTICE",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/THIRD-PARTY-NOTICES",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/README.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/docs/LINKING.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/docs/COVERAGE.md",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/NOTICE",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/THIRD-PARTY-NOTICES",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/LICENSE",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/NOTICE",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/.github/workflows/uw1-accuracy.yml",
+      "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/.github/workflows/uw2-accuracy.yml"
+    ]
+  },
+  {
+    "id": "dexsql",
+    "name": "DexSQL",
+    "url": "https://github.com/LSPosed/dexsql-release",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Queries classes, methods, fields, strings, call edges and Smali disassembly across Android APK and DEX files with SQL. Shipped as a single prebuilt binary that runs either as a local stdio MCP server (`dexsql mcp`) or as a standalone CLI (`dexsql query`).",
+    "description_zh": "使用 SQL 查询 Android APK 与 DEX 文件中的类、方法、字段、字符串、调用边及 Smali 反汇编。以单个预构建二进制发布，既可作为本地 stdio MCP 服务（`dexsql mcp`）运行，也可作为独立命令行工具（`dexsql query`）使用。",
+    "evidence_url": "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed release repository publishes prebuilt binaries for Linux, macOS and Windows on x86_64 and arm64 (latest release v0.1.5 at review time) without core engine source code. Running requires downloading the matching platform archive and supplying local APK or DEX files.",
+      "In MCP mode (`dexsql mcp`), the binary exposes open_dataset, query and decode over stdio alongside schema and query-guide resources; in CLI mode (`dexsql query`), it executes SQL against one or more --path inputs and returns markdown, json or csv.",
+      "The core executable is governed by the proprietary DexSQL Binary License 1.0, which permits free use and verbatim redistribution of the unmodified archive but forbids reverse engineering, modification or commercial redistribution of the binary. Only the installation skill, benchmark harness and documentation carry the separate MIT license in LICENSE-AUXILIARY.",
+      "Author benchmarks on a 372 MiB QQ 9.3.55 APK (41 DEX files) compare eight code-location query tasks and process memory against a warm DexDec daemon and JADX MCP, noting that DexDec’s reference cache is faster on repeated direct-caller lookups. Those benchmarks do not measure Java decompilation quality or prove original-source recovery, and were not rerun here.",
+      "APK and DEX parsing runs locally without modifying input packages, while any connected AI client governs what query output is sent to external model providers. The reviewed repository establishes no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.zh-CN.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/benchmarks/README.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/skills/install-dexsql/SKILL.md",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE",
+      "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE-AUXILIARY"
+    ]
   }
 ]

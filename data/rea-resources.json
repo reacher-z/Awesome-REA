@@ -1989,5 +1989,37 @@
       "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/.github/workflows/ci.yml",
       "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/CHANGELOG.md"
     ]
+  },
+  {
+    "id": "decepticon-rea-reverser",
+    "name": "Decepticon: REA reversing service and subagent tools",
+    "url": "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An optional reversing workload in BitterSecurity’s Decepticon wraps rea-agents and Ghidra inside a dedicated HTTP/MCP container and exposes three tools to its reverser subagent. It pins the inspected binary by SHA-256 and exports REA Evidence files to the shared workspace before returning results.",
+    "description_zh": "BitterSecurity 的 Decepticon 将 rea-agents 与 Ghidra 封装在独立的 HTTP/MCP 容器中，作为可选逆向工作负载向 reverser 子智能体暴露三个工具。该集成按 SHA-256 固定待查二进制，并在返回结果前将 REA Evidence 文件导出到共享工作区。",
+    "evidence_url": "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Covers only the optional REA reversing integration in Decepticon’s reverser subagent, not the repository’s broader offensive-security workflows. The reviewed container image installs Node.js 22, OpenJDK 21, Python 3, Ghidra 12.1.4 and rea-agents@6.3.0, serving FastMCP and a health endpoint on port 8892 over a shared /workspace mount.",
+      "When DECEPTICON_REA_URL is set, the reverser subagent loads rea_status, rea_find_tools and rea_call_tool alongside bash; when unset, it falls back to local Radare2 and triage tools without failing initialization. Tool discovery hides session-lifecycle tools and filters the catalog to tools reported available by binary_session.",
+      "Each rea_call_tool invocation copies the target binary into a read-only 0400 file under /workspace/.analysis/rea/<run_id>, verifies its SHA-256 against open_binary, runs the requested tool, and exports evidence-<sha256>.json plus manifest.json before closing the session. For trace_native_values, the service first runs analyze_function to supply the required source Evidence artifact.",
+      "Unit tests mock httpx responses, FastMCP sessions and LangChain tools to check tool filtering, argument validation, trace_native_values source-evidence wiring and fallback when DECEPTICON_REA_URL is unset. They do not run a live REA/Ghidra container or benchmark reversing accuracy, and project-wide XBOW claims in the root README are outside this integration.",
+      "The repository is licensed under Apache-2.0; upstream REA, Ghidra and model providers retain their own terms. Static analysis through this service does not prove runtime behavior or preserve user-edited Ghidra GUI projects. This collection reviewed the pinned source and test definitions without running the container or subagent."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea.Dockerfile",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea_service.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/tools/reversing/rea.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/agents/standard/reverser.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/tools/reversing/test_rea_tools.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/agents/test_reverser_workload_fallback.py",
+      "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/LICENSE"
+    ]
   }
 ]

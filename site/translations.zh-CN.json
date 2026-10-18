@@ -1433,5 +1433,35 @@
       "用电量解析保留真实零值、排除无效读数，并将缺失日期留为空缺；七日总量需具备全部七天的读数。未实现持久用电历史或费用估算。文档报告了离线测试，但所审阅文件树／包目标未包含这些测试。本次来源核查未运行测试或设备。",
       "MIT 覆盖项目代码，并保留既有集成的署名。官方服务及第三方材料保留各自条款。这是依赖云端的非官方客户端，并非恢复 TCL 源码或固件；API 可独立于应用发生变化。"
     ]
+  },
+  "decepticon-rea-reverser": {
+    "name": "Decepticon：REA 逆向服务与子智能体工具",
+    "requirements": [
+      "本条目仅覆盖 Decepticon 中 reverser 子智能体的可选 REA 逆向集成，不涵盖仓库其余攻击性安全工作流。所审阅容器镜像安装 Node.js 22、OpenJDK 21、Python 3、Ghidra 12.1.4 与 rea-agents@6.3.0，在共享 /workspace 挂载上通过 8892 端口提供 FastMCP 与健康检查接口。",
+      "设置 DECEPTICON_REA_URL 后，reverser 子智能体除 bash 外还会加载 rea_status、rea_find_tools 与 rea_call_tool；未设置时则回退到本地 Radare2 及初步分诊工具，不会导致初始化失败。工具发现逻辑隐藏会话生命周期工具，并将目录过滤为 binary_session 报告可用的工具。",
+      "每次调用 rea_call_tool 都会把目标二进制复制为 /workspace/.analysis/rea/<run_id> 下权限为 0400 的只读文件，对照 open_binary 核验其 SHA-256，运行所请求的工具，并在关闭会话前导出 evidence-<sha256>.json 与 manifest.json。调用 trace_native_values 时，服务会先运行 analyze_function 以提供所需的前置 Evidence 产物。",
+      "单元测试通过模拟 httpx 响应、FastMCP 会话及 LangChain 工具，检查工具过滤、参数校验、trace_native_values 前置证据串联以及未设置 DECEPTICON_REA_URL 时的回退行为。这些测试不运行真实的 REA/Ghidra 容器，也不评测逆向准确率；根目录 README 中的全项目 XBOW 指标不属于该集成的验证结果。",
+      "仓库采用 Apache-2.0 许可；上游 REA、Ghidra 与模型服务保留各自条款。通过该服务执行的静态分析不能证明运行时行为，也不会保留用户在 Ghidra 图形界面中手工编辑的项目。本合集仅审阅固定版本的源码与测试定义，未运行容器或子智能体。"
+    ]
+  },
+  "underworld-exhumed-case": {
+    "name": "Underworld Exhumed：《Ultima Underworld I & II》反编译重建与移植",
+    "requirements": [
+      "所审阅的单体仓库包含两个目标：uw1（面向 GOG 版 UW.EXE，MD5 为 8afc3c29ef5667a3ab6667e8cbc8d63a，含 89 个 C 文件和 50 个汇编模块）与 uw2（面向 GOG 版 UW2.EXE，含 99 个 C 文件及汇编模块）。两者共用 Exhume 子模块提供 DOS 运行时适配、音频合成及验证框架。所核查来源未确立 REA 或 AI 智能体使用归因。",
+      "构建原生 SDL3 移植版（uw1port、uw2port）需要 CMake 3.20+、Ninja 或 Make、C11/C++17 工具链、Python 3 及已初始化的 exhume 子模块；可选 WebAssembly 目标使用 Emscripten 构建。运行时需用户自备原版游戏数据（UW/DATA 与 UW/SOUND，或 UW2/DATA 与 UW2/SOUND），可选 MT-32 音源合成还需用户自备 CM32L/MT32 控制与 PCM ROM。",
+      "若要重建字节一致的 DOS 可执行文件，还需 DOSBox、原版 Borland Turbo C++ 1.01、Turbo Assembler 2.0 与 Turbo Link 3.01 程序，以及用户自己的原版 UW.EXE 或 UW2.EXE。正如各目标 LINKING.md 所述，所有非 CRT 代码段均由源码编译生成，而 Borland 的 CM.LIB 提供 CRT 例程，extract.py 则从原版可执行文件中提取其余未拆解的远数据与 DGROUP 字节区间。",
+      "移植验证针对 uw1 回放 11 段录制好的 DOS 基准会话，针对 uw2 回放 12 段会话，并结合例行模糊测试。uw2/docs/COVERAGE.md 报告回放与模糊测试合计覆盖 46.0% 的代码行（60.0% 的函数），并指出法术系统、多数 SCD 世界事件／机关以及许多物品与对话路径尚未被录制会话触发。公开 CI 的一致性工作流依赖私有加密的素材与工具链归档；本次审阅未运行构建或回放。",
+      "MIT 仅覆盖项目自身的工具、移植适配层、文档与注释。各目录 NOTICE 明确说明，不对 EA 享有权利的游戏衍生代码、Borland 的 OVERLAY.ASM 或游戏数据授予任何许可；随附的 Nuked OPL3 与 Munt libmt32emu 采用 LGPL-2.1+。关于独立网页部署随附游戏数据的说明不构成仓库层面的再分发授权。"
+    ]
+  },
+  "dexsql": {
+    "name": "DexSQL",
+    "requirements": [
+      "所审阅的发布仓库仅提供面向 Linux、macOS 与 Windows（x86_64 与 arm64）的预构建二进制文件（审阅时最新版本为 v0.1.5），不包含核心引擎源码。运行需下载对应平台的归档并提供本地 APK 或 DEX 文件。",
+      "在 MCP 模式（`dexsql mcp`）下，二进制通过 stdio 暴露 open_dataset、query 与 decode 工具以及表结构和查询指南资源；在 CLI 模式（`dexsql query`）下，可针对一个或多个 --path 输入执行 SQL 并输出 markdown、json 或 csv。",
+      "核心可执行文件受专有的 DexSQL Binary License 1.0 约束：允许免费使用并原样分发未修改的归档，但禁止对该二进制进行逆向工程、修改或商业再分发。仅安装技能、基准测试脚本与文档适用 LICENSE-AUXILIARY 中的独立 MIT 许可。",
+      "作者在约 372 MiB 的 QQ 9.3.55 APK（41 个 DEX 文件）上开展基准测试，将八项代码定位查询任务及进程内存占用同预热后的 DexDec 守护进程与 JADX MCP 对比，并说明在重复的直接调用方查询上 DexDec 的引用缓存更快。这些基准不评估 Java 反编译质量，也不证明恢复原始源码；本合集未重新运行基准测试。",
+      "APK 与 DEX 解析在本地完成且不修改输入安装包，而连接到该服务的 AI 客户端决定将哪些查询输出发送给外部模型服务商。所审阅仓库未确立 REA 使用。"
+    ]
   }
 }

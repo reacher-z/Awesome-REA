@@ -15,16 +15,16 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (16) · [游戏](#game) (43) · [应用](#app) (41)
+- [网站](#website) (16) · [游戏](#game) (44) · [应用](#app) (42)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (19) · [文档与学习资源](#references-and-learning) (20)
+- [论文](#papers) (54) · [智能体与 MCP](#agents-and-mcp) (20) · [文档与学习资源](#references-and-learning) (20)
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (56) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (57) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -309,6 +309,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   重建 Perfect Dark 的 Nintendo 64 代码，并提供生成一致 ROM 的构建流程。项目将重建源码与使用者自备原 ROM 中的素材结合，再检查各版本产物的哈希。这是可复现构建研究案例，与独立的原生 PC 移植不同；此处的一致性结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)
+
+- [**Underworld Exhumed：《Ultima Underworld I &amp; II》反编译重建与移植**](https://github.com/abedegno/underworld-exhumed)
+
+  汇集《Ultima Underworld: The Stygian Abyss》与《Ultima Underworld II: Labyrinth of Worlds》的 DOS 字节匹配反编译重建及原生 SDL3／WebAssembly 移植。DOS 链接流程将重建的 C 与汇编代码同原始编译器库及从用户自备可执行文件中提取的数据空缺结合。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/underworld-exhumed-case/)
 
 #### 工具、项目与集成
 
@@ -675,6 +681,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hbctool/)
 
+- [**DexSQL**](https://github.com/LSPosed/dexsql-release)
+
+  使用 SQL 查询 Android APK 与 DEX 文件中的类、方法、字段、字符串、调用边及 Smali 反汇编。以单个预构建二进制发布，既可作为本地 stdio MCP 服务（\`dexsql mcp\`）运行，也可作为独立命令行工具（\`dexsql query\`）使用。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/dexsql/)
+
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
 
@@ -995,6 +1007,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
 
+- [**Decepticon：REA 逆向服务与子智能体工具**](https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md)
+
+  BitterSecurity 的 Decepticon 将 rea-agents 与 Ghidra 封装在独立的 HTTP/MCP 容器中，作为可选逆向工作负载向 reverser 子智能体暴露三个工具。该集成按 SHA-256 固定待查二进制，并在返回结果前将 REA Evidence 文件导出到共享工作区。
+
+  集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/decepticon-rea-reverser/)
+
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
   Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。
@@ -1238,14 +1256,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**53 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**54 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (9) · [网站](#papers-website-reconstruction) (13)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -1922,6 +1940,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 仲裁式干预会有意改变执行过程，目标是运行 Web 界面，而非完整复现物理设备行为。评测覆盖路由器与 IP 摄像机的 ARM 小端、MIPS 小端及大端固件；启发式规则可能不适用于未见过的设备或配置。该方法复用固件二进制，并不恢复其源码。
 
   **发表信息:** 2020 · ACSAC 2020 · 会议论文 · Mingeun Kim 等
+
+  </details>
+
+- [**P2IM：通过自动外设接口建模实现可扩展且不依赖硬件的固件测试**](https://www.usenix.org/conference/usenixsecurity20/presentation/feng)
+
+  P2IM 在修改版 QEMU 中仿真单体 ARM Cortex-M 固件，通过试探性执行将内存映射 I/O 寄存器归类为控制—状态、状态、数据或控制—数据寄存器，并通过数据寄存器与轮询中断向固件提供模糊测试输入。
+
+  2020 · 会议论文 · [PDF](https://www.usenix.org/system/files/sec20-feng.pdf) · [代码](https://github.com/RiS3-Lab/p2im) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-p2im/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 范围限于无操作系统内核的单体 ARM Cortex-M 固件中的处理器—外设接口；不为 DMA、精细中断时序或总线外接的外部硬件设备建模，并假设固件通过外设抽象层（HAL／驱动库）访问外设。寄存器归类错误、未建模的硬件语义或不支持的 MCU 内存布局都可能阻塞启动或引发误报崩溃与挂起。对 70 个示例程序及 10 个真实设备固件的评测仅建立模糊测试环境，不代表硬件等价或恢复原始源代码。
+
+  **发表信息:** 2020 · USENIX Security 2020 · 会议论文 · Bo Feng 等
 
   </details>
 

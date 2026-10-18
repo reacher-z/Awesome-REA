@@ -3016,5 +3016,67 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-p2im",
+    "title": "P2IM: Scalable and Hardware-independent Firmware Testing via Automatic Peripheral Interface Modeling",
+    "title_zh": "P2IM：通过自动外设接口建模实现可扩展且不依赖硬件的固件测试",
+    "authors": [
+      "Bo Feng",
+      "Alejandro Mera",
+      "Long Lu"
+    ],
+    "year": 2020,
+    "publication_date": "2020-08",
+    "date_precision": "month",
+    "date_basis": "The official USENIX Security 2020 proceedings page gives August 2020. Month precision is retained rather than treating the conference schedule as a publication day.",
+    "date_basis_zh": "USENIX Security 2020 官方论文集页面给出 2020 年 8 月。保留月份精度，不把会议日程当作具体出版日。",
+    "venue": "USENIX Security 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": "1909.06472",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2019-09-13",
+    "doi": null,
+    "citation": {
+      "container_title": "29th USENIX Security Symposium (USENIX Security 20)",
+      "pages": "1237-1254",
+      "publisher": "USENIX Association",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity20/presentation/feng",
+        "https://www.usenix.org/system/files/sec20-feng.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity20/presentation/feng",
+    "pdf_url": "https://www.usenix.org/system/files/sec20-feng.pdf",
+    "code_url": "https://github.com/RiS3-Lab/p2im",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "P2IM emulates monolithic ARM Cortex-M firmware in a modified QEMU by classifying memory-mapped I/O registers as control-status, status, data or control-data during speculative execution runs and feeding fuzzer inputs through data registers and round-robin interrupts.",
+    "description_zh": "P2IM 在修改版 QEMU 中仿真单体 ARM Cortex-M 固件，通过试探性执行将内存映射 I/O 寄存器归类为控制—状态、状态、数据或控制—数据寄存器，并通过数据寄存器与轮询中断向固件提供模糊测试输入。",
+    "scope_limitations_en": "Scoped to processor-peripheral interfaces in monolithic ARM Cortex-M firmware without OS kernels; it does not model DMA, nuanced interrupt timing or external hardware devices connected across buses, and it assumes firmware runs through peripheral abstraction layers (HAL/driver libraries). Misclassified registers, unmodeled hardware semantics or unsupported MCU layouts can stall booting or cause false crashes and hangs. Evaluating 70 sample programs and 10 real-world device firmwares establishes a fuzzing environment rather than hardware equivalence or original-source recovery.",
+    "scope_limitations_zh": "范围限于无操作系统内核的单体 ARM Cortex-M 固件中的处理器—外设接口；不为 DMA、精细中断时序或总线外接的外部硬件设备建模，并假设固件通过外设抽象层（HAL／驱动库）访问外设。寄存器归类错误、未建模的硬件语义或不支持的 MCU 内存布局都可能阻塞启动或引发误报崩溃与挂起。对 70 个示例程序及 10 个真实设备固件的评测仅建立模糊测试环境，不代表硬件等价或恢复原始源代码。",
+    "why_fits_en": "Establishes access-pattern-based MMIO register classification for hardware-independent Cortex-M firmware rehosting, complementing library-matching rehosting in HALucinator and symbolic MMIO modeling in Fuzzware.",
+    "why_fits_zh": "建立基于访问模式的 MMIO 寄存器归类方法以实现不依赖硬件的 Cortex-M 固件重托管，与 HALucinator 的库匹配重托管及 Fuzzware 的符号化 MMIO 建模互补。",
+    "metadata_notes": "Reviewed the 18-page USENIX Security 2020 proceedings PDF (pages 1237–1254) alongside arXiv 1909.06472v3 (submitted 2019-09-13, v3 dated 2020-06-15); no publisher DOI is assigned on the USENIX page. The linked RiS3-Lab/p2im repository is licensed under GPL-2.0 at the root while tracking patched AFL, QEMU and unit_testing submodules separately. Its documentation targets 64-bit Ubuntu 16.04/18.04, GCC and the GNU Arm Embedded Toolchain, and requires manual fuzz.cfg setup (MCU model, ROM/RAM layout and interrupt interval) plus firmware-specific input instrumentation when applications read peripheral buffers indirectly. No firmware images or emulators were executed in this review.",
+    "metadata_notes_zh": "核查 18 页 USENIX Security 2020 论文集 PDF（第 1237–1254 页）及 arXiv 1909.06472v3（2019-09-13 首次提交，v3 日期为 2020-06-15）；USENIX 页面未分配出版方 DOI。所链接的 RiS3-Lab/p2im 仓库根目录采用 GPL-2.0，并分别引用打补丁的 AFL、QEMU 与 unit_testing 子模块。其文档面向 64 位 Ubuntu 16.04/18.04、GCC 及 GNU Arm Embedded Toolchain，要求手工配置 fuzz.cfg（MCU 型号、ROM/RAM 布局与中断间隔），并在应用间接读取外设缓冲区时对固件做定制输入插桩。本次审阅未运行任何固件镜像或仿真器。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity20/presentation/feng",
+      "https://www.usenix.org/system/files/sec20-feng.pdf",
+      "https://arxiv.org/abs/1909.06472",
+      "https://arxiv.org/abs/1909.06472v3",
+      "https://arxiv.org/pdf/1909.06472v3.pdf",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/README.md",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/LICENSE",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/.gitmodules",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/docs/build_qemu.md",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/docs/prep_fw_for_fuzzing.md",
+      "https://github.com/RiS3-Lab/p2im/blob/0e64506a371b9c66ff67ed64a3fa65fa7e197e21/fuzzing/templates/fuzz.cfg.template"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

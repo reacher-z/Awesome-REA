@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "reviewed_at": "2026-10-18",
-  "catalog_revision": "28ae38f70a27f56a73a4a5f48476713f07d20011",
+  "catalog_revision": "ebb69072b6c6518a0bf69183dc06dde10b879f44",
   "runtime_reproduced": false,
   "project_identity_resolution": "incomplete",
   "collections": [
@@ -6428,13 +6428,27 @@
         "https://x.com/i/status/2110962000675434613",
         "https://github.com/LSPosed/dexsql-release"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned release documentation, skill instructions, benchmark materials and license files establish DexSQL as a single prebuilt binary providing both a local stdio MCP server (`dexsql mcp`) and a CLI (`dexsql query`) for SQL queries over APK and DEX files. The core binary is proprietary under DexSQL Binary License 1.0 while the skill, benchmark harness and docs carry MIT; author QQ APK benchmarks were not rerun and no REA use is established.",
+      "reason_zh": "固定版本的发布文档、技能说明、基准测试材料与许可文件确立 DexSQL 为单个预构建二进制，同时提供本地 stdio MCP 服务（`dexsql mcp`）与命令行接口（`dexsql query`），用于通过 SQL 查询 APK 与 DEX 文件。核心二进制适用专有的 DexSQL Binary License 1.0，技能、基准脚本和文档适用 MIT；未重新运行作者的 QQ APK 基准测试，也未确立 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.md",
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/README.zh-CN.md",
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/benchmarks/README.md",
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/skills/install-dexsql/SKILL.md",
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE",
+        "https://github.com/LSPosed/dexsql-release/blob/77ee5cc449500d25afa160a35e122a4cbcc11d4e/LICENSE-AUXILIARY"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dexsql",
+          "kind": "tool",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-csv-evaluator-mutation-test",
@@ -10608,15 +10622,33 @@
         "https://github.com/abedegno/underworld-exhumed",
         "https://abedegno.github.io/underworld-exhumed-web/"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. One Underworld Exhumed repo covers both games and reports exact DOS executable rebuilds plus limited recorded-session parity across native/web builds. Its own-work MIT license explicitly grants no rights in game-derived code. Review game-specific manifests/NOTICE/build prerequisites and finite session records; the separate web site’s bundled-data statement is not a redistribution grant. Row 71 shares the same repository and was not counted as another review.",
-      "reason_zh": "同一 Underworld Exhumed 仓库涵盖两款游戏，报告 DOS 可执行文件精确重构建及有限录制场景对照；自身工作的 MIT 许可明确不授予游戏派生代码权利。须核查各游戏清单、NOTICE、依赖与场景证据；第 71 行共享仓库，但不自动合并或计作另一独立审阅。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned uw1 manifests, linking docs, NOTICE files and CI workflows establish the Ultima Underworld I decompilation (89 C files and 50 assembly modules for GOG UW.EXE) and SDL3/Wasm port in Underworld Exhumed. Exact DOS linking combines reconstructed segments with Borland CM.LIB and extracted far-data/DGROUP gaps from a user-supplied UW.EXE; 11 recorded DOS sessions and fuzzing do not establish full-game parity, and MIT covers only project tools, port glue and docs.",
+      "reason_zh": "固定版本的 uw1 清单、链接文档、NOTICE 文件与 CI 工作流确立了 Underworld Exhumed 中的《Ultima Underworld I》反编译重建（面向 GOG 版 UW.EXE 的 89 个 C 文件与 50 个汇编模块）及 SDL3／Wasm 移植。精确 DOS 链接将重建代码段同 Borland CM.LIB 及从用户自备 UW.EXE 提取的远数据／DGROUP 空缺结合；11 段录制会话与模糊测试不代表完整游戏等价，且 MIT 仅覆盖项目工具、移植适配层与文档。",
       "primary_evidence_urls": [
-        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md"
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/BUILDING.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/PORT.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/README.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/exhume.toml",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/docs/LINKING.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/docs/PLAN.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/NOTICE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw1/THIRD-PARTY-NOTICES",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/LICENSE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/NOTICE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/.github/workflows/uw1-accuracy.yml"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "underworld-exhumed-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-071",
@@ -10630,13 +10662,32 @@
         "https://github.com/abedegno/underworld-exhumed",
         "https://abedegno.github.io/underworld-exhumed-web/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 71 (README line 715) lists abedegno/underworld-exhumed under 🧙 Ultima Underworld II: Labyrinth of Worlds. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction. Shared repository links do not merge separately listed game rows.",
-      "reason_zh": "项目第 71 行（README 第 715 行）在 🧙 Ultima Underworld II: Labyrinth of Worlds 下列出 abedegno/underworld-exhumed。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。共享仓库链接不会合并分别列出的游戏行。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned uw2 documentation, linking and coverage notes, NOTICE files and CI workflows establish the Ultima Underworld II decompilation (99 C files and assembly modules for GOG UW2.EXE) and SDL3/Wasm port in Underworld Exhumed. Exact DOS linking uses Borland CM.LIB and extracted data gaps from a user-supplied UW2.EXE; 12 recorded sessions and fuzzing reach 46.0% line coverage (60.0% of functions), leaving spells and most SCD events unexercised. Separate row identity is preserved.",
+      "reason_zh": "固定版本的 uw2 文档、链接与覆盖率说明、NOTICE 文件及 CI 工作流确立了 Underworld Exhumed 中的《Ultima Underworld II》反编译重建（面向 GOG 版 UW2.EXE 的 99 个 C 文件与汇编模块）及 SDL3／Wasm 移植。精确 DOS 链接使用 Borland CM.LIB 及从用户自备 UW2.EXE 提取的数据空缺；12 段录制会话与模糊测试覆盖 46.0% 代码行（60.0% 函数），法术与多数 SCD 事件尚未触发。保留独立行标识。",
+      "primary_evidence_urls": [
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/README.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/BUILDING.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/docs/PORT.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/README.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/docs/LINKING.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/docs/COVERAGE.md",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/NOTICE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/uw2/THIRD-PARTY-NOTICES",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/LICENSE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/NOTICE",
+        "https://github.com/abedegno/underworld-exhumed/blob/e5deadd6945b492636aadccc14f52caa908b4186/.github/workflows/uw2-accuracy.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "underworld-exhumed-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-072",
@@ -12911,13 +12962,29 @@
         "https://github.com/BitterSecurity/Decepticon",
         "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "Pinned container, service, tool-adapter and unit-test files establish Decepticon’s optional REA reversing workload (`rea-agents@6.3.0` + Ghidra 12.1.4) for its reverser subagent. Full mapping covers this scoped REA integration, not Decepticon’s broader offensive workflows or root-README XBOW claims; unit tests use mocks and no container was executed.",
+      "reason_zh": "固定版本的容器、服务、工具适配与单元测试文件确立了 Decepticon 面向 reverser 子智能体的可选 REA 逆向工作负载（`rea-agents@6.3.0` + Ghidra 12.1.4）。完整映射仅覆盖该限定范围的 REA 集成，不包括 Decepticon 其余攻击性工作流或根目录 README 的 XBOW 指标；单元测试使用模拟对象，本次未运行容器。",
+      "primary_evidence_urls": [
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/docs/features/rea-reversing.md",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea.Dockerfile",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/containers/rea_service.py",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/tools/reversing/rea.py",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/decepticon/agents/standard/reverser.py",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/tools/reversing/test_rea_tools.py",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/packages/decepticon/tests/unit/agents/test_reverser_workload_fallback.py",
+        "https://github.com/BitterSecurity/Decepticon/blob/0647e8bd24110960a8c8e3654a8a944647bee3d0/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "decepticon-rea-reverser",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:xiaozhi-box-ai-vps-memory",
@@ -13146,18 +13213,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 59,
+      "already-curated": 63,
       "insufficient-evidence": 54,
-      "pending": 478
+      "pending": 474
     },
     "units_by_state": {
-      "already-curated": 58,
+      "already-curated": 62,
       "insufficient-evidence": 54,
-      "pending": 477
+      "pending": 473
     },
-    "primary_reviewed_units": 58,
-    "catalog_linked_occurrences": 66,
-    "distinct_resource_ids": 57,
+    "primary_reviewed_units": 61,
+    "catalog_linked_occurrences": 70,
+    "distinct_resource_ids": 60,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
