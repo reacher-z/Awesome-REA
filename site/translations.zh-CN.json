@@ -2901,5 +2901,14 @@
       "源码注释将硬件结论描述为经逆向得出的工作假设，依据包括固件反汇编、未映射访问日志和 UART 输出、内嵌的 SCCS 模块字符串、地址交叉引用、芯片数据手册以及 SDK 手册。部分寄存器和 JTAG 扫描链仍然未知。",
       "Supermodel 源码文件头声明采用 GPL-3.0-or-later；固件、SDK 资料和演示数据库保留各自的权利。作者的 X 帖子称逆向工作和模拟代码都由 Claude 完成，并将更早的 SCSI 拦截演示归功于合著者 Ian Curtis；该 PR 未提及 AI 工具，REA 的使用也未确立。"
     ]
+  },
+  "blackbox-protobuf": {
+    "name": "Blackbox Protobuf 无定义 Protobuf 解码与重编码工具",
+    "requirements": [
+      "库与命令行工具可从 PyPI 以 bbpb 安装（1.4.2，要求 Python >=3.8,<4.0）；README 指出 PyPI 上的 blackboxprotobuf 软件包是较早的派生版本。mitmproxy 插件加载 mitmproxy/bbpb.py，并要求在同一环境中安装 bbpb；只有设置 bbpb_project_file 选项，编辑过的类型才能在重启后保留，mitmweb 中也无法使用编辑命令。",
+      "Burp 扩展需要配置了 Jython 2.7+ 的 Burp Suite，并在克隆仓库后运行 git submodule update --init。处理 gRPC 需开启 Burp 的 HTTP/2 支持，且只支持未压缩的 gRPC 负载。",
+      "字段类型根据线路类型（偶尔结合字段内容）推测，类型定义可能需要分析者修正；字段名称和含义无法恢复，类型发现工具仅列为未来计划。.proto 导入导出使用不完整的解析器，不处理 import 语句。",
+      "采用 MIT 许可。默认分支最后一次提交于 2025-03-14，与 v1.4.2 发布同日；这只是观察记录，不代表对维护状态的判断。本次未进行任何解码、代理或流量分析，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

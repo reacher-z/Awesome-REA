@@ -7051,5 +7051,37 @@
       "https://x.com/BartronPolygon/status/2110028302215999825",
       "https://x.com/BartronPolygon/status/2109806939718943205"
     ]
+  },
+  {
+    "id": "blackbox-protobuf",
+    "name": "Blackbox Protobuf",
+    "url": "https://github.com/nccgroup/blackboxprotobuf",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "NCC Group's tools for decoding and re-encoding Protocol Buffers messages without the matching .proto definition. The decoder returns the message data with an editable type definition built from best-effort guesses based on wire types; analysts can name fields, correct types and re-encode edited messages, which protoc --decode_raw cannot do. It ships as a Python library with a bbpb CLI, a Jython Burp Suite extension and a mitmproxy addon, and its README traces it to modifying messages during mobile penetration tests.",
+    "description_zh": "NCC Group 推出的工具集，可在没有对应 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器返回报文数据，以及根据线路类型尽力推测生成、可编辑的类型定义；分析者可以为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode_raw 做不到的。它提供 Python 库及 bbpb 命令行工具、基于 Jython 的 Burp Suite 扩展和 mitmproxy 插件，README 说明它最初用于在移动应用渗透测试中修改报文。",
+    "evidence_url": "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The library and CLI install from PyPI as bbpb (1.4.2, Python >=3.8,<4.0); the README calls the blackboxprotobuf PyPI package an older fork. The mitmproxy addon loads mitmproxy/bbpb.py with bbpb installed in the same environment; edited types survive restarts only with the bbpb_project_file option, and editing commands are unavailable in mitmweb.",
+      "The Burp extension needs Burp Suite configured with Jython 2.7+ and a clone with git submodule update --init. gRPC needs Burp's HTTP/2 support, and only uncompressed gRPC payloads are handled.",
+      "Field types are guessed from wire types and occasionally field content, so type definitions may need analyst correction; field names and meanings are not recovered, and a type-discovery tool is listed only as future work. .proto import and export use a partial parser that does not resolve import statements.",
+      "MIT. The default branch was last committed on 2025-03-14, the day of release v1.4.2; this is an observation, not a maintenance verdict. No decoding, proxying or traffic analysis was run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/lib/README.md",
+      "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/burp/README.md",
+      "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/mitmproxy/README.md",
+      "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/lib/pyproject.toml",
+      "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/LICENSE",
+      "https://github.com/nccgroup/blackboxprotobuf/releases/tag/v1.4.2",
+      "https://pypi.org/project/bbpb/1.4.2/"
+    ]
   }
 ]
