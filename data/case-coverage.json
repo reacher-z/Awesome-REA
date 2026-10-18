@@ -2992,11 +2992,11 @@
         "https://x.com/i/status/2109736028538093774",
         "https://github.com/TechLuddite/omarchy-mobile-odin2"
       ],
-      "state": "pending",
+      "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Public code and dated acceptance records document native Linux/Omarchy bring-up and AVB/FAT boot recovery on the Odin 2 Portal using existing kernel/device support. The inspected material supports a native integration and recovery report; reconstruction classification remains pending. Cold power-cycle and slot-B acceptance remain open.",
-      "reason_zh": "公开代码和注明日期的验收记录，说明了借助既有内核／设备支持在 Odin 2 Portal 上进行原生 Linux／Omarchy 适配及 AVB／FAT 启动恢复。所审阅资料支持原生适配与恢复报告；是否归类为重建案例仍待确认。冷启动断电循环和 slot-B 验收仍未完成。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, hardware checklist, boot-recovery record, backlog and credits document a hands-on native Omarchy/Arch Linux ARM installation on the Odin 2 Portal, which the author's post describes as Codex-assisted. The running kernel, device tree, firmware and bootloader come from ROCKNIX, and AVB-metadata, FAT-sector and slot recovery use standard AOSP and Linux tools; no decompiled code, recovered protocol or reimplemented firmware is documented, and the repository has no top-level license. Retain the integration report without a reconstruction mapping; cold power-cycle, slot-B and wider hardware acceptance also remain open.",
+      "reason_zh": "固定版本的 README、硬件验收清单、启动恢复记录、待办清单及致谢，记录了在 Odin 2 Portal 上原生安装 Omarchy／Arch Linux ARM 的实操过程，作者帖文称其由 Codex 协助完成。运行中的内核、设备树、固件和引导程序来自 ROCKNIX，AVB 元数据、FAT 扇区及槽位恢复使用标准 AOSP 与 Linux 工具；未记录任何反编译代码、恢复的协议或重新实现的固件，仓库也没有顶层许可证。保留这份适配报告而不建立重建映射；冷启动断电循环、slot-B 及更广泛的硬件验收也仍未完成。",
       "primary_evidence_urls": [
         "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md",
         "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/docs/hardware.md",
@@ -3005,7 +3005,8 @@
         "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/native/repair-esp.py",
         "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/scripts/build-native-vbmeta.py",
         "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/native/build-rootfs.sh",
-        "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/CREDITS.md"
+        "https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/CREDITS.md",
+        "https://x.com/i/status/2109736028538093774"
       ],
       "catalog_matches": []
     },
@@ -13585,13 +13586,13 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 79,
-      "insufficient-evidence": 71,
-      "pending": 441
+      "insufficient-evidence": 72,
+      "pending": 440
     },
     "units_by_state": {
       "already-curated": 78,
-      "insufficient-evidence": 71,
-      "pending": 440
+      "insufficient-evidence": 72,
+      "pending": 439
     },
     "primary_reviewed_units": 93,
     "catalog_linked_occurrences": 87,
