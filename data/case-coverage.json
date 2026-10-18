@@ -9616,13 +9616,29 @@
       "reported_source_urls": [
         "https://github.com/coop-deluxe/sm64coopdx"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 4 (README line 61) lists coop-deluxe/sm64coopdx under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 4 行（README 第 61 行）在 🍄 Super Mario 64 下列出 coop-deluxe/sm64coopdx。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, wiki and build files present an online-multiplayer and Lua-modding project for the Super Mario 64 PC port, continuing sm64ex-coop, itself a fork of sm64ex. Source checks a user-supplied US ROM, and PC builds force non-matching code. No reconstruction work of its own is documented: no decompilation account, comparison or matching evidence. The related mapping records only its descent from the separately curated decompilation. This is not a finding about the multiplayer project itself.",
+      "reason_zh": "固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录它源自另行收录的反编译重建项目，并非对多人项目本身的评价。",
+      "primary_evidence_urls": [
+        "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/README.md",
+        "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/Makefile",
+        "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/src/pc/rom_checker.cpp",
+        "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/credits.txt",
+        "https://github.com/coop-deluxe/sm64coopdx/wiki/Home/aa0f5a9c0e56d9faa44ce185b8a8bc2f63e97742",
+        "https://github.com/coop-deluxe/sm64coopdx/wiki/Build-Flags/0d5716ff916791c28f3444917786a4135c8a832f",
+        "https://github.com/djoslin0/sm64ex-coop",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sm64-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "hao-games:row-005",
@@ -13687,16 +13703,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 82,
-      "insufficient-evidence": 73,
-      "pending": 436
+      "insufficient-evidence": 74,
+      "pending": 435
     },
     "units_by_state": {
       "already-curated": 81,
-      "insufficient-evidence": 73,
-      "pending": 435
+      "insufficient-evidence": 74,
+      "pending": 434
     },
-    "primary_reviewed_units": 98,
-    "catalog_linked_occurrences": 92,
+    "primary_reviewed_units": 99,
+    "catalog_linked_occurrences": 93,
     "distinct_resource_ids": 87,
     "distinct_paper_ids": 1,
     "unique_projects": null
