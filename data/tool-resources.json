@@ -5947,5 +5947,36 @@
       "https://github.com/svnscha/mcp-windbg/releases/tag/v1.5.1",
       "https://pypi.org/project/mcp-windbg/1.5.1/"
     ]
+  },
+  {
+    "id": "decomp-toolkit",
+    "name": "decomp-toolkit",
+    "url": "https://github.com/encounter/decomp-toolkit",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "GameCube/Wii matching-decompilation toolkit that analyzes DOL and REL executables and, from a project configuration, splits them into relocatable objects plus an ldscript.lcf for CodeWarrior's linker, so decompiled objects can replace original ones while the relinked binary is checked against the original. Analysis covers function boundaries, a Metrowerks/SDK signature database, relocations, sections and data objects, and objects are written without an assembler. Its CLI also handles disc images, archives, compression formats, CodeWarrior demangling and DWARF dumps.",
+    "description_zh": "面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置将其拆分为可重定位目标文件，并为 CodeWarrior 链接器生成 ldscript.lcf，使反编译出的目标文件可逐个替换原有部分，同时将重新链接的二进制与原版核对。分析涵盖函数边界、Metrowerks/SDK 签名库、重定位、节区和数据对象，且无需汇编器即可直接写出目标文件。其命令行还可处理光盘镜像、归档、压缩格式、CodeWarrior 符号还原和 DWARF 转储。",
+    "evidence_url": "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Distributed as a single portable binary: release v1.8.4, published 2026-09-09, provides Linux x86_64/i686/aarch64, macOS arm64/x86_64 and Windows x86_64/x86/arm64 builds. The reviewed main commit is one commit ahead of that tag, restoring a metroidbuildinfo command. Building from source needs Rust 1.85+.",
+      "dol split is intended to run inside a decompilation project's build system; the README points new projects to dtk-template for project structure and configuration documentation. Matching builds often need the original game's compiler, Metrowerks CodeWarrior on GameCube/Wii, and the generated linker script targets mwldeppc.exe. DOL/REL files and disc images must come from the user's own game copies.",
+      "Dual-licensed MIT OR Apache-2.0. It analyzes, splits and relinks binaries; it does not decompile to C, and dol diff only reports the most obvious difference in a linked ELF, so per-function matching is checked with tools such as objdiff. No game files were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/README.md#L97-L130",
+      "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/README.md#L249-L271",
+      "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/Cargo.toml",
+      "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/LICENSE-MIT",
+      "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/LICENSE-APACHE",
+      "https://github.com/encounter/decomp-toolkit/releases/tag/v1.8.4",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/README.md#L32-L34"
+    ]
   }
 ]

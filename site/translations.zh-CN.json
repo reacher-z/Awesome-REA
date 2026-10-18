@@ -2557,5 +2557,13 @@
       "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有端到端任务安装 gdb、pwntools 与最新版 rea-agents，并检查一个编译后发生空指针解引用的程序所生成的报告。README 称使用 crashlens 的智能体在七类无符号二进制崩溃中找出了六类的根因，这是作者报告，未公开对话记录。本合集审阅了源码与文档，未运行该工具、REA 或智能体。",
       "项目声明采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序仍适用各自条款。作者帖子提议在 reverse-engineer-anything 技能旁增加崩溃分诊技能，并表示愿向 Hermes 插件仓库提交拉取请求；所审阅来源未确立该请求已提交、合并或被采纳。"
     ]
+  },
+  "decomp-toolkit": {
+    "name": "decomp-toolkit GameCube/Wii 反编译工具包",
+    "requirements": [
+      "以单个可移植二进制分发：v1.8.4 发布于 2026-09-09，提供 Linux x86_64/i686/aarch64、macOS arm64/x86_64 和 Windows x86_64/x86/arm64 版本。所审阅的 main 分支提交比该标签多一个提交，用于恢复 metroidbuildinfo 命令。从源码构建需要 Rust 1.85+。",
+      "dol split 设计为在反编译项目的构建系统中运行；README 建议新项目参考 dtk-template 的项目结构和配置文档。匹配构建通常需要原游戏所用的编译器（GameCube/Wii 上为 Metrowerks CodeWarrior），生成的链接脚本面向 mwldeppc.exe。DOL/REL 文件和光盘镜像须来自使用者自有的游戏副本。",
+      "采用 MIT 或 Apache-2.0 双重许可。它负责分析、拆分和重新链接二进制，不会反编译出 C 代码；dol diff 只报告已链接 ELF 中最明显的差异，逐函数的匹配情况需借助 objdiff 等工具核对。本次未分析任何游戏文件。"
+    ]
   }
 }
