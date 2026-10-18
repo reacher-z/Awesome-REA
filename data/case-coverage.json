@@ -5510,12 +5510,17 @@
         "https://x.com/i/status/2110726263392387158",
         "https://x.com/i/status/2110758857555509385"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "OpenAI’s customer story dated 2026-10-14 quotes SentinelOne’s Chief AI Officer as saying Daybreak produces human-level malware reverse-engineering output in about eight hours, against four to six weeks for a top researcher. SentinelOne’s 2026-09-03 press release describes AI-assisted disassembly and deobfuscation in a private-preview service and cites internal SentinelLABS benchmarks. Neither names samples, tasks, baselines, error rates or outputs, and no code, report or reproducible artifact is published. This is a vendor-reported analysis-speed claim, not a documented reconstruction. Retain the lead without a catalog mapping; this does not dispute the claim, and a published evaluation can support another review.",
+      "reason_zh": "OpenAI 于 2026-10-14 发布的客户案例引述 SentinelOne 首席 AI 官的说法：Daybreak 约八小时即可产出达到人类水平的恶意软件逆向分析结果，而顶尖研究员需要四至六周。SentinelOne 2026-09-03 的新闻稿介绍了一项处于私有预览阶段、由 AI 辅助反汇编与去混淆的服务，并援引 SentinelLABS 的内部基准。两者均未说明样本、任务、对照基线、错误率或产出，也未公开代码、报告或可复现的产物。这是厂商报告的分析提速主张，并非有记录的重建案例。保留此线索而不建立目录映射；这不表示否定该主张，公开的评估可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110726263392387158",
+        "https://x.com/i/status/2110758857555509385",
+        "https://openai.com/index/sentinelone/",
+        "https://www.sentinelone.com/press/sentinelone-expands-wayfinder-frontier-ai-services-with-openai-daybreak-models/"
+      ],
       "catalog_matches": []
     },
     {
@@ -14849,15 +14854,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 149,
-      "insufficient-evidence": 125,
-      "pending": 317
+      "insufficient-evidence": 126,
+      "pending": 316
     },
     "units_by_state": {
       "already-curated": 148,
-      "insufficient-evidence": 125,
-      "pending": 316
+      "insufficient-evidence": 126,
+      "pending": 315
     },
-    "primary_reviewed_units": 213,
+    "primary_reviewed_units": 214,
     "catalog_linked_occurrences": 160,
     "distinct_resource_ids": 154,
     "distinct_paper_ids": 1,
