@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 196](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-196-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 58](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 197](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 58](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (23)
+- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (24)
 
 **更多浏览方式**
 
@@ -1258,6 +1258,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   说明 REA 通过 Ghidra 分析 MIPS ELF 可执行文件、可重定位目标文件与 MIPS16 共享镜像的流程，包括为缺少 ABI 记录的旧式固件可执行文件固定 32 位语言，以免 Ghidra 将其按 64 位导入。准入以文件头声明和 ABI 记录为界；验证将项目自有的测试样本与独立的 readelf 输出对照，而不执行或重新托管固件。
 
   文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-mips-guide/)
+
+- [**通过 Ghidra 静态分析 PSP ELF**](https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md)
+
+  说明 REA 针对静态 PSP ELF 可执行文件的受限 Ghidra 配置：Allegrex 指令、PSP 加载与调用约定交由使用者安装的 ghidra-allegrex 扩展处理，同时沿用 REA 的命令行、MCP、证据与快照流程。它仅在 Linux x64 上接受一种 PSPSDK 文件头与 ABI 声明，并在自行构建的测试样本上验证选定的静态事实，不涉及商业游戏或 PRX 模块。
+
+  文档 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-psp-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 
