@@ -1700,5 +1700,15 @@
       "GitHub Actions 工作流构建 Windows、macOS、Linux、Switch 和网页版本。README 称 CI 构建仅供试玩，并提醒可能出现错误和崩溃。项目没有公布一致性、回归或与原硬件对比的结果，本合集也未构建或运行该移植。",
       "根目录 LICENSE.md 以 MIT（2026，Lywx）授权项目自有代码。子模块各有条款；源自任天堂代码的内容和 ROM 素材不受该许可覆盖，README 表示不支持盗版。所审来源未确立 REA 或编码智能体的参与。"
     ]
+  },
+  "sms-matching-decomp-case": {
+    "name": "Super Mario Sunshine：仍在推进的 GameCube 一致性反编译重建",
+    "requirements": [
+      "README 称该项目为仍在进行中的反编译工程。configure.py 默认目标为 GMSJ01（日版 Rev 0），另支持 GMSP01、GMSE01、GMSJ01 Rev 1，以及 Super Mario 3D All-Stars 中的 GMSP01_NX。默认只链接标记为 Matching 的目标文件；--non-matching 会链接等价或经修改的目标文件。在所审阅的提交上，decomp.dev 报告 GMSJ01 已反编译 49.51% 的代码、完全链接 18.42%；本合集未重新计算这些数字。",
+      "需将各版本自备的光盘镜像放入 orig/<version>。支持 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式，仓库声明不包含任何游戏素材或汇编。GMSJ01 的符号配置由该光盘中的 mario.MAP 链接映射生成；CI 工作流注明 GMSE01 没有 MAP 文件，因此跳过其符号顺序检查。",
+      "构建需在 Windows、macOS 或 Linux 上安装 Python 和 Ninja；构建过程会获取 decomp-toolkit、binutils 和旧版 Metrowerks 编译器（大部分代码使用 GC 1.2.5），在 macOS 和 Linux 上通过 wibo 包装器运行。objdiff 将重建的目标文件与从原 DOL 中提取的目标文件比对，各版本的 build.sha1 记录目标 DOL 的哈希。",
+      "AGENTS.md 要求对全部五个版本运行 ninja baseline 与 changes_all 生成回归报告，且每个版本的 DOL 仍须显示 OK。CI 在提供原始文件的构建容器中构建所有版本，并对改动的单元检查符号顺序。这些都是项目自报的检查与进度数据，不能证明已重建出完整或可游玩的游戏；本合集未运行任何构建。",
+      "AGENTS.md（CLAUDE.md 与 GEMINI.md 均为指向它的符号链接）规定了 AI 智能体的工作流程：禁止无人监督的智能体处理 MSL、MetroTRK、THPPlayer、Dolphin SDK 和 JSystem 代码，并把难以判断的决定交给人类，但没有量化智能体编写的代码比例。仓库声明采用 CC0-1.0；任天堂的游戏、光盘内容及下载的编译器另有权利约束。未确立 REA 的使用。"
+    ]
   }
 }

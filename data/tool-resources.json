@@ -3313,5 +3313,38 @@
       "https://github.com/HarbourMasters/Ghostship/tree/40eef13823a954a466574dc78e73187a17a2dd42/.github/workflows",
       "https://github.com/HarbourMasters/Ghostship/releases/tag/3.0.0"
     ]
+  },
+  {
+    "id": "sms-matching-decomp-case",
+    "name": "Super Mario Sunshine: an in-progress matching GameCube decompilation",
+    "url": "https://github.com/doldecomp/sms",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Super Mario Sunshine’s C++ source so that the original Metrowerks compiler reproduces byte-identical object files for four GameCube releases and the Switch 3D All-Stars build. The target binary comes from the user’s own disc image, and objdiff compares rebuilt objects function by function. The work is incomplete, and the repository publishes contribution rules for AI agents alongside its human workflow.",
+    "description_zh": "重建 Super Mario Sunshine 的 C++ 源码，目标是让原版 Metrowerks 编译器为四个 GameCube 发行版本及 Switch 版 3D All-Stars 生成逐字节一致的目标文件。目标二进制取自使用者自备的光盘镜像，objdiff 按函数比对重建出的目标文件。工作尚未完成，仓库在人工流程之外还发布了面向 AI 智能体的贡献规则。",
+    "evidence_url": "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls this a work-in-progress decompilation. configure.py defaults to GMSJ01 (JPN Rev 0) and also targets GMSP01, GMSE01, GMSJ01 Rev 1 and the GMSP01_NX build from Super Mario 3D All-Stars. Only objects marked Matching are linked by default; --non-matching links equivalent or modded objects. For GMSJ01 at the reviewed commit, decomp.dev reported 49.51% of code decompiled and 18.42% fully linked; this collection did not recompute those figures.",
+      "Copy your own disc image for each version into orig/<version>. ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC images are accepted, and the repository says it contains no game assets or assembly. The GMSJ01 symbol configuration is generated from the mario.MAP linker map found on that disc; the CI workflow notes that GMSE01 has no MAP file and skips symbol-order checks for it.",
+      "Builds need Python and Ninja on Windows, macOS or Linux; the build fetches decomp-toolkit, binutils and retro Metrowerks compilers (GC 1.2.5 for most code), and runs them through the wibo wrapper on macOS and Linux. objdiff compares rebuilt objects with those extracted from the original DOL, and each version’s build.sha1 records the target DOL hash.",
+      "AGENTS.md requires ninja baseline and changes_all regression reports for all five versions, each still reporting its DOL as OK. CI builds every version in a build container that supplies the original files and checks symbol order for changed units. These are project-reported checks and progress figures, not evidence of a complete or playable rebuilt game; no build was run here.",
+      "AGENTS.md, symlinked as CLAUDE.md and GEMINI.md, sets workflows for AI agents. It bars unsupervised agents from MSL, MetroTRK, THPPlayer, Dolphin SDK and JSystem code and defers hard judgment calls to humans, but it does not quantify agent-written code. The repository declares CC0-1.0; Nintendo’s game, disc contents and the downloaded compilers keep separate rights. No REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/AGENTS.md",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/configure.py",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/config/GMSJ01/config.yml",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/config/GMSJ01/build.sha1",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/.github/workflows/build.yml",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/docs/AGENT_MATCHING_TIPS.md",
+      "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/LICENSE",
+      "https://decomp.dev/doldecomp/sms"
+    ]
   }
 ]
