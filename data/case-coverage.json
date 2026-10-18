@@ -11184,13 +11184,30 @@
         "https://github.com/Gumpolas/TooTawersRecomp",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 46 (README line 435) lists Gumpolas/TooTawersRecomp under 🧭 The Lord of the Rings: The Two Towers. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 46 行（README 第 435 行）在 🧭 The Lord of the Rings: The Two Towers 下列出 Gumpolas/TooTawersRecomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, generation script, CMake project, toolkit change log, license and vendored xboxrecomp notices support this original-Xbox static-recompilation report. Full mapping covers this port. The user-supplied XBE and disc data, locally generated recompiled code, author-reported playability and testing, and the license's carve-out for translated game code stay explicit; source review does not mean runtime reproduction.",
+      "reason_zh": "固定版本的 README、生成脚本、CMake 项目、工具包修改记录、许可证及内置 xboxrecomp 的声明文件，支持这份初代 Xbox 静态重编译报告。完整映射覆盖此移植。须由用户自备的 XBE 与光盘数据、在本地生成的重编译代码、作者报告的可玩性与测试，以及许可证对转换所得游戏代码的排除条款均明确保留；来源核查不表示运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/README.md",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/generate.py",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/twotowers/CMakeLists.txt",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/CHANGES.md",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/LICENSE.txt",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/README.md",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/NOTICE",
+        "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/LICENSE",
+        "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.2"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "two-towers-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-047",
@@ -14503,18 +14520,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 130,
-      "insufficient-evidence": 104,
-      "pending": 357
-    },
-    "units_by_state": {
-      "already-curated": 129,
+      "already-curated": 131,
       "insufficient-evidence": 104,
       "pending": 356
     },
-    "primary_reviewed_units": 173,
-    "catalog_linked_occurrences": 141,
-    "distinct_resource_ids": 135,
+    "units_by_state": {
+      "already-curated": 130,
+      "insufficient-evidence": 104,
+      "pending": 355
+    },
+    "primary_reviewed_units": 174,
+    "catalog_linked_occurrences": 142,
+    "distinct_resource_ids": 136,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

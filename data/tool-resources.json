@@ -4797,5 +4797,38 @@
       "https://github.com/BlackLabelHQ/RecompOne/blob/3c34e6ea830152711e4a1ae0d0b2df523cbe8fdb/LICENSE",
       "https://github.com/BlackLabelHQ/SymphonyRecomp/releases/tag/v0.5.1b"
     ]
+  },
+  {
+    "id": "two-towers-recompiled-case",
+    "name": "The Two Towers Recompiled: an original Xbox static-recompilation port",
+    "url": "https://github.com/Gumpolas/TooTawersRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the x86 code of The Lord of the Rings: The Two Towers (Xbox, USA, 2002) into C with the bundled xboxrecomp toolkit, producing native Windows, Linux and experimental macOS builds. The recompiled sources are generated locally from the player's own default.xbe, and game data comes from their disc image or extracted folder. README reports the game as fully playable, with visual, frame-rate and mod issues listed.",
+    "description_zh": "使用随附的 xboxrecomp 工具包，将《The Lord of the Rings: The Two Towers》（Xbox 美版，2002）的 x86 代码静态重编译为 C，生成原生 Windows、Linux 及实验性 macOS 构建。重编译源码由玩家自己的 default.xbe 在本地生成，游戏数据来自其光盘镜像或已提取的文件夹。README 报告游戏可以完整游玩，并列出画面、帧率和模组方面的问题。",
+    "evidence_url": "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README for v1.9.2 calls the port a fully playable work in progress and recommends 60 FPS; unlocked frame rates and widescreen are experimental. Downloads cover 64-bit Windows 7 SP1 to 11, x86-64 Linux with glibc 2.27+, and macOS 10.15+ on Intel or through Rosetta 2, with the macOS build not yet tested on a Mac. Known issues include stretched character shadows, lighting glitches, Vulkan black screens and several problems with the bundled extra-heroes mod.",
+      "Players need their own USA Xbox disc image or extracted game folder, and no game data is included. generate.py checks the retail default.xbe against a fixed SHA-256, then runs the xboxrecomp pipeline (XBE parsing, disassembly, function identification, ABI analysis, naming and recompilation) to write the C sources locally, so no recompiled code is committed. A separately distributed GameCube high-resolution texture pack is optional and not part of the release.",
+      "The repository vendors the xboxrecomp 0.12.0 static-recompilation toolkit, which translates an XBE's x86 code into C, and CHANGES.md lists the fixes made to it for this game. The game project builds with CMake 3.20+ and C11 under MSVC, MinGW or Clang/GCC; Linux uses SDL2 with OpenGL loaded at run time, and the renderer options are Direct3D 11, Vulkan through DXVK or OpenGL. The README at this revision has no build section; generate.py only says to build with CMake afterwards.",
+      "Testing reported for 1.9.2 covers menus, level loading and fonts in several languages under Wine and on Linux with OpenGL, and states that the Windows, Linux and macOS builds compile. No automated tests or CI runs are recorded for the reviewed commit, and this collection did not download releases or rerun anything.",
+      "LICENSE.txt applies MIT to the port's own code (twotowers/ and generate.py); the vendored xboxrecomp keeps MIT plus LGPL-2.1-or-later for parts taken from xemu. The license adds that the release's game program contains code mechanically translated from the original executable, which it does not cover and which remains the rights holders' property. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/generate.py",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/twotowers/CMakeLists.txt",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/CHANGES.md",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/LICENSE.txt",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/README.md",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/NOTICE",
+      "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/xboxrecomp-0.12.0/LICENSE",
+      "https://github.com/Gumpolas/TooTawersRecomp/releases/tag/1.9.2"
+    ]
   }
 ]
