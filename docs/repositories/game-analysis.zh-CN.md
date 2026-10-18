@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**386 个仓库** · 2026-10-16 UTC
+**387 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -46,6 +46,7 @@
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — 《古惑狼赛车》反编译项目。 **[405 星标]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — 面向 Unreal Engine（.upk、.u）文件的反编译器与软件包浏览器。 **[371 星标]**
+- [ethteck/splat](https://github.com/ethteck/splat) — 用于辅助反编译和模组制作项目的二进制拆分工具。 **[368 星标]**
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — 可生成匹配原始二进制结果的《密特罗德 Prime》反编译项目。 **[367 星标]**
 - [0xDC00/agent](https://github.com/0xDC00/agent) — 基于脚本的通用文本 hook 工具，由 Frida 驱动。 **[357 星标]**
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — 《生化危机 4》（GameCube，G4BE08 调试版本）：完整反编译为 C/C++，生成与原版逐字节一致的结果。 **[345 星标]**

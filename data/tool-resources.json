@@ -5655,5 +5655,37 @@
       "https://pypi.org/project/reverse-engineering-assistant/7.3.1/",
       "https://github.com/cyberkaida/reverse-engineering-assistant/compare/v7.3.1...a05a6b0a18649efd6d74ec8447bdadf8d468c365"
     ]
+  },
+  {
+    "id": "splat",
+    "name": "splat",
+    "url": "https://github.com/ethteck/splat",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Binary splitter for decompilation and modding projects: a YAML config says where and how to cut an N64 ROM or PSX, PS2 or PSP binary into code, data and asset segments. A scan phase disassembles code and data, with MIPS handled by spimdisasm; a split phase writes the files and a linker script for rebuilding the input. Custom segment types can extend the pipeline.",
+    "description_zh": "面向反编译与模组项目的二进制拆分工具：由 YAML 配置指定在何处、以何种方式把 N64 ROM 或 PSX、PS2、PSP 二进制切分为代码、数据和素材段。扫描阶段反汇编代码与数据，MIPS 部分由 spimdisasm 处理；拆分阶段写出文件以及用于重新构建输入文件的链接脚本。可编写自定义段类型扩展该流程。",
+    "evidence_url": "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Python 3.9+; install the splat64 package with the mips extra, which the N64, PSX, PS2 and PSP platforms require. The PyPI release at review was 0.50.1, uploaded 2026-10-10; 0.50.0 introduced breaking symbol and overlay changes. The repository has no GitHub releases, so this entry pins the reviewed main-branch commit.",
+      "Only the n64, psx, ps2 and psp platforms are documented; the overview calls PSX and PS2 support limited, the ELF quickstart excludes relocatable ELFs, and the README points GameCube/Wii projects to decomp-toolkit. create_config generates a starting YAML from a user-supplied ROM or ELF, which must then be refined segment by segment.",
+      "MIT license. splat splits, disassembles and emits a linker script; it does not decompile to C or by itself produce a matching build, and symbol names and types come from the analyst's optional symbol_addrs file. No binaries were split."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/docs/Home.md",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/docs/Configuration.md#L76-L88",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/docs/Quickstart.md",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/docs/Quickstart-Elf.md",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/pyproject.toml",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/CHANGELOG.md",
+      "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/LICENSE",
+      "https://pypi.org/project/splat64/0.50.1/"
+    ]
   }
 ]

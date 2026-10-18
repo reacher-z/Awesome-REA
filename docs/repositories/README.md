@@ -11,10 +11,10 @@ Scan date: **2026-10-16 UTC**.
 | Category | Repositories |
 | --- | ---: |
 | [Websites](web-analysis.md) | 177 |
-| [Games](game-analysis.md) | 386 |
+| [Games](game-analysis.md) | 387 |
 | [Apps · Android](android.md) | 432 |
 | [Apps · Managed code](managed-code.md) | 131 |
-| [Native binaries](native-analysis.md) | 680 |
+| [Native binaries](native-analysis.md) | 679 |
 | [Runtime and debugging](dynamic-analysis.md) | 98 |
 | [Firmware](firmware.md) | 207 |
 | [Protocols](protocol-analysis.md) | 103 |

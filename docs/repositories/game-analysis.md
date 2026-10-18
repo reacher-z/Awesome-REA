@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**386 repositories** · 2026-10-16 UTC
+**387 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -46,6 +46,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — Decompiler and package explorer for Unreal Engine (.upk, .u) files. **[371 stars]**
+- [ethteck/splat](https://github.com/ethteck/splat) — A binary splitting tool to assist with decompilation and modding projects **[368 stars]**
 - [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — A matching decompilation of Metroid Prime **[367 stars]**
 - [0xDC00/agent](https://github.com/0xDC00/agent) — Universal script based text hooker (powered by FRIDA). **[357 stars]**
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]**
