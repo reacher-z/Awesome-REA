@@ -4189,5 +4189,36 @@
       "https://decomp.dev/TheOnlyZac/sly1",
       "https://theonlyzac.github.io/sly1"
     ]
+  },
+  {
+    "id": "pokemon-emerald-decomp-case",
+    "name": "Pokémon Emerald: a matching Game Boy Advance decompilation",
+    "url": "https://github.com/pret/pokeemerald",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Pokémon Emerald for the Game Boy Advance as buildable C source, with game scripts and data kept as assembler directives. The default agbcc build produces pokeemerald.gba, and make compare checks it against the SHA-1 of the original English ROM; an optional modern-GCC build is not hash-checked. Graphics and audio sources are committed in the tree, so the documented build reads no base ROM.",
+    "description_zh": "为 Game Boy Advance 版《宝可梦 绿宝石》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。默认的 agbcc 构建生成 pokeemerald.gba，make compare 将其与英文原版 ROM 的 SHA-1 比对；可选的现代 GCC 构建不做哈希校验。图像和音频源文件已提交在仓库中，因此文档所述的构建流程不读取原 ROM。",
+    "evidence_url": "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a decompilation of Pokémon Emerald that builds a single ROM, pokeemerald.gba; the Makefile sets game code BPEE, revision 0, and CI builds the English version. Most game code is C, while startup code, part of the m4a sound library and the GameCube multiboot library remain assembly files, and three multiboot programs (berry fix, Colosseum, e-Reader) are included as prebuilt .gba binaries. The output is a GBA ROM, not a native PC port.",
+      "The documented build reads no original ROM: graphics, audio samples and map data are committed as PNG, WAV/AIF and JSON files and converted by bundled tools. rom.sha1 records the target English release as SHA-1 f3ae088181bf583e55daf962a92bb46f4f1d07b7, and README links that ROM’s No-Intro record.",
+      "INSTALL.md covers Windows (WSL1 recommended; msys2 or Cygwin), macOS and Linux. On Debian/Ubuntu it lists build-essential, binutils-arm-none-eabi, git and libpng-dev; the matching build also needs pret/agbcc built and installed into the tree. make modern instead uses devkitARM’s arm-none-eabi-gcc and writes pokeemerald_modern.gba.",
+      "make compare runs a SHA-1 check of the built ROM against rom.sha1 and reports pokeemerald.gba: OK on a match; the Makefile notes that comparison only makes sense for non-modern builds. CI builds with COMPARE=1 and also builds the modern target. These checks establish byte identity for this one release, not gameplay coverage; this collection did not build the ROM.",
+      "The repository has no top-level license file and GitHub detects none; license files cover only some bundled tools, and agbcc’s GCC sources carry GPL v2. The original game’s code, graphics and audio remain subject to their rights holders. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/INSTALL.md",
+      "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/Makefile",
+      "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/rom.sha1",
+      "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/.github/workflows/build.yml",
+      "https://github.com/pret/pokeemerald/tree/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/tools",
+      "https://github.com/pret/agbcc/blob/da598c1d918402c42c0c0d7128ba14567f3175e9/gcc/COPYING"
+    ]
   }
 ]

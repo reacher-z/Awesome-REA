@@ -11333,13 +11333,26 @@
       "reported_source_urls": [
         "https://github.com/pret/pokeemerald"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 56 (README line 550) lists pret/pokeemerald under ⚡ Pokémon Emerald. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 56 行（README 第 550 行）在 ⚡ Pokémon Emerald 下列出 pret/pokeemerald。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, install guide, Makefile, SHA-1 manifest and CI workflow support a Game Boy Advance decompilation whose default agbcc build is hash-checked against the English Emerald ROM. Full mapping covers this repository; the optional modern-GCC build, gameplay equivalence and asset rights are not established by it. The documented build reads no base ROM because graphics and audio are committed in the tree.",
+      "reason_zh": "固定版本的 README、安装指南、Makefile、SHA-1 清单和 CI 工作流，支持这是一个默认 agbcc 构建会与英文版绿宝石 ROM 做哈希校验的 Game Boy Advance 反编译项目。完整映射覆盖本仓库；可选的现代 GCC 构建、游戏行为等价性及素材权利均未由此确立。由于图像和音频已提交在仓库中，文档所述的构建不读取原 ROM。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/README.md",
+        "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/INSTALL.md",
+        "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/Makefile",
+        "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/rom.sha1",
+        "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/.github/workflows/build.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-emerald-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-057",
@@ -14189,18 +14202,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 112,
-      "insufficient-evidence": 86,
-      "pending": 393
-    },
-    "units_by_state": {
-      "already-curated": 111,
+      "already-curated": 113,
       "insufficient-evidence": 86,
       "pending": 392
     },
-    "primary_reviewed_units": 140,
-    "catalog_linked_occurrences": 123,
-    "distinct_resource_ids": 117,
+    "units_by_state": {
+      "already-curated": 112,
+      "insufficient-evidence": 86,
+      "pending": 391
+    },
+    "primary_reviewed_units": 141,
+    "catalog_linked_occurrences": 124,
+    "distinct_resource_ids": 118,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
