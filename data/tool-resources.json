@@ -6888,5 +6888,36 @@
       "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/LICENSE",
       "https://x.com/greco_dev/status/2109842197654692349"
     ]
+  },
+  {
+    "id": "ps2recomp",
+    "name": "PS2Recomp",
+    "url": "https://github.com/ran-j/PS2Recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Experimental static recompiler that translates MIPS R5900 code from PlayStation 2 ELF executables into C++ and links it with a bundled runtime. ps2xAnalyzer or a Ghidra export script produces a per-game TOML of functions, stubs, skips and instruction patches; ps2xRecomp emits a literal instruction-by-instruction translation; ps2xRuntime and ps2xIOP supply guest memory, syscall dispatch, IOP module execution with HLE fallbacks and partial, largely stubbed GS/VU hardware. Output is not decompiled source, and getting a game to run remains per-game porting work.",
+    "description_zh": "实验性的静态重编译器，将 PlayStation 2 ELF 可执行文件中的 MIPS R5900 代码转换为 C++，并与随附的运行时链接。ps2xAnalyzer 或 Ghidra 导出脚本为每款游戏生成包含函数、存根、跳过项和指令补丁的 TOML 配置；ps2xRecomp 输出逐条指令的直译代码；ps2xRuntime 与 ps2xIOP 提供客户机内存、系统调用分发、带 HLE 回退的 IOP 模块执行，以及仅部分实现、大多为存根的 GS/VU 硬件。输出不是反编译源码，让游戏真正运行仍需针对每款游戏进行移植。",
+    "evidence_url": "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs CMake 3.20+ and a C++20 compiler; the README says it is tested mainly with MSVC, and some vector paths need SSE4/AVX host support. CMake fetches ELFIO, toml11, fmt, libdwarf and raylib at configure time, plus Dear ImGui when the debug UI is enabled. GitHub lists five source-only prereleases, v0.0 to v0.4 (the latest from 2026-04-05), with no binaries attached; the reviewed main commit (2026-10-14) is 36 commits after v0.4.",
+      "The user supplies the game ELF; the project ships no game code, and its project-description guidance names the original release as one the user must own. The preferred workflow exports functions from Ghidra with the bundled ExportPS2Functions.java script, while ps2_analyzer suits ELFs with debug symbols. Stub address bindings and game overrides target one exact ELF build and are not portable across games, regions or builds.",
+      "The README lists very poor VU and GS performance and partial, often stubbed hardware emulation as limitations. No game compatibility or finished port is implied; downstream ports built with it need separate review. The tree also holds Android and PS Vita build directories and a ps2xStudio front end, which were not reviewed.",
+      "GPL-3.0; fetched dependencies keep their own licenses, and the README cites PCSX2 as a runtime reference. No recompilation, build or game was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/LICENSE",
+      "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/ps2xRecomp/CMakeLists.txt",
+      "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/ps2xRuntime/CMakeLists.txt",
+      "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/ps2xRecomp/tools/ghidra/ExportPS2Functions.java",
+      "https://github.com/ran-j/PS2Recomp/releases/tag/v0.4",
+      "https://github.com/ran-j/PS2Recomp/compare/v0.4...eb8688b2fd191129f103a39543002c005b33409c"
+    ]
   }
 ]
