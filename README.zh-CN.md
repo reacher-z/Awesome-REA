@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 203](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-203-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 64](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 204](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-204-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 65](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-65-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (16) · [游戏](#game) (48) · [应用](#app) (44)
+- [网站](#website) (16) · [游戏](#game) (49) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (12) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (64) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (65) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -347,6 +347,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以 C++ 重新实现《塞尔达传说 旷野之息》Switch v1.5.0 主程序的部分代码，并逐个函数与原始机器码比对。项目自称是反编译与重新实现的混合体：不含游戏素材，生成的 ELF 仅包含已重新实现的函数、无法运行游戏，移植到其他平台也明确不是目标。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/botw-decomp-case/)
+
+- [**《天空之剑》：以哈希校验重新链接的 Wii 版反编译**](https://github.com/zeldaret/ss)
+
+  以使用者自备的 NTSC-U 1.0（SOUE01）光盘文件为起点，为《塞尔达传说 天空之剑》Wii 版的 main.dol 和 REL 模块重建 C++ 源码。标为一致的对象由源码编译，再与从原文件拆分出的其余对象链接，并以 SHA-1 哈希校验结果；仓库不含素材或汇编，也不是移植。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/skyward-sword-decomp-case/)
 
 #### 工具、项目与集成
 
