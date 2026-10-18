@@ -4137,5 +4137,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-varbert",
+    "title": "“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning",
+    "title_zh": "“len、index 或 count，就是别叫 v1”：基于迁移学习预测反编译输出中的变量名",
+    "authors": [
+      "Kuntal Kumar Pal",
+      "Ati Priya Bajaj",
+      "Pratyay Banerjee",
+      "Audrey Dutcher",
+      "Mutsumi Nakamura",
+      "Zion Leonahenahe Basque",
+      "Himanshu Gupta",
+      "Saurabh Arjun Sawant",
+      "Ujjwala Anantheswaran",
+      "Yan Shoshitaishvili",
+      "Adam Doupé",
+      "Chitta Baral",
+      "Ruoyu Wang"
+    ],
+    "year": 2024,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "IEEE’s Crossref deposit and the proceedings title establish publication year 2024. Its published-print date, 2024-05-19, is the first day of the May 19–23 symposium, and the IEEE Xplore record could not be retrieved to confirm a separate publication date, so no day is asserted.",
+    "date_basis_zh": "IEEE 提交的 Crossref 元数据及论文集名称确认出版年份为 2024。其 published／纸质出版日期 2024-05-19 恰为 5 月 19—23 日会议的首日，且未能获取 IEEE Xplore 记录以确认另有出版日期，因此本条目不推定具体日期。",
+    "venue": "IEEE S&P 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1109/SP54263.2024.00152",
+    "url": "https://ieeexplore.ieee.org/document/10646727",
+    "pdf_url": "https://www.atipriya.com/files/papers/varbert_oakland24.pdf",
+    "code_url": "https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "VarBERT suggests variable names for IDA Hex-Rays and Ghidra decompiler output with a BERT-style model pre-trained on 5.2M human-written C functions from Debian and fine-tuned on decompiled code; it also predicts whether each variable came from the developer or was introduced by the decompiler. The authors build VarCorpus from Gentoo C and C++ packages compiled for x86-64 at O0–O3, labeling decompiled variables from debug symbols. On per-function splits of O2 binaries, top-1 accuracy is 54.43% for IDA and 54.49% for Ghidra; on an IDA-O0 subset it reaches 50.70%, against 35.94% for DIRE and 38.00% for DIRTY.",
+    "description_zh": "VarBERT 使用 BERT 式模型为 IDA Hex-Rays 与 Ghidra 的反编译输出建议变量名：模型先以来自 Debian 的 520 万个人工编写的 C 函数预训练，再以反编译代码微调；它还预测每个变量出自开发者，还是由反编译器引入。作者从 Gentoo 的 C 与 C++ 软件包构建 VarCorpus，在 O0 至 O3 下编译为 x86-64，并借助调试符号为反编译变量标注名称。在 O2 二进制的按函数划分上，IDA 与 Ghidra 的 Top-1 准确率分别为 54.43% 和 54.49%；在 IDA-O0 子集上为 50.70%，DIRE 与 DIRTY 分别为 35.94% 和 38.00%。",
+    "scope_limitations_en": "Predicted names are learned suggestions scored against developer names, not recovered originals. Top-1 accuracy drops to 42.40% (IDA) and 40.49% (Ghidra) on per-binary O2 splits, and the per-binary IDA-O0 lead over DIRTY is 4.52 points. The DIRE and DIRTY comparison covers IDA at O0 only, on about 400K functions (roughly 15% of VarCorpus), because DIRE's training time was prohibitive. The method can name only variables the decompiler recovers, and labeling relies on IDA and Ghidra preserving variables when matching debug symbols. Corpora come from Linux distribution packages, mainly x86-64 with a smaller AArch64 O2 experiment, and may not represent Windows or macOS executables; deduplication removes exact duplicates only. The user study had 27 students who completed 13 function pairs. Types, structures and recompilable code are outside its scope.",
+    "scope_limitations_zh": "预测名称是模型学到的建议，以开发者原名称评分，并非恢复出的原始符号。在 O2 的按二进制划分上，Top-1 准确率降至 42.40%（IDA）与 40.49%（Ghidra）；在 IDA-O0 的按二进制划分上，其领先 DIRTY 的幅度为 4.52 个百分点。与 DIRE、DIRTY 的比较仅覆盖 O0 下的 IDA，并因 DIRE 训练耗时过长而只使用约 40 万个函数（约占 VarCorpus 的 15%）。方法只能为反编译器恢复出的变量命名，标注则依赖 IDA 与 Ghidra 在匹配调试符号时保留变量。语料来自 Linux 发行版软件包，以 x86-64 为主，另有规模较小的 AArch64 O2 实验，可能不代表 Windows 或 macOS 可执行文件；去重仅删除完全重复项。用户研究由 27 名完成全部 13 组函数的学生参与。类型、数据结构与可重新编译的代码不在其范围内。",
+    "why_fits_en": "Adds transfer-learning variable-name prediction across two decompilers and four optimization levels, with a dataset that addresses train–test overlap in earlier naming benchmarks.",
+    "why_fits_zh": "补充跨两种反编译器与四种优化级别的迁移学习变量名预测方法，并提供一个针对早期命名基准训练集与测试集重叠问题的数据集。",
+    "metadata_notes": "Crossref gives the 13 authors in this order and pages 4069–4087 of the 2024 IEEE Symposium on Security and Privacy; the DOI resolves to IEEE Xplore document 10646727, whose page could not be retrieved during review. The title follows the paper's curly quotation marks; Crossref stores straight quotes. The 19-page author-hosted PDF, linked from the repository, lacks IEEE pagination and includes the program committee's meta-review. No arXiv version was found. The paper used IDA Pro 7.6, Ghidra 10.4, PyTorch 1.9.0, Transformers 4.10.0 and FairSeq 0.10.0. The reviewed 2025-12-17 repository commit has no license file, so no open license is asserted; its README lists Python 3.8+, Java 11 for Joern and Java 17+ for Ghidra 10.4, requirements.txt leaves torch and transformers unpinned, the Dockerfile (Ubuntu 22.04, Python 3.11) fetches a modified Joern from Dropbox, and the README serves the HSC and VarCorpus data, Gentoo binaries and 16 fine-tuned models from Dropbox. Inference is offered through the separate binsync/varbert_api library and the DAILA plugin. No data or models were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 按此顺序列出 13 位作者，并给出 2024 IEEE Symposium on Security and Privacy 第 4069–4087 页；DOI 指向 IEEE Xplore 文档 10646727，审阅时未能获取该页面。标题沿用论文中的弯引号，Crossref 记录的是直引号。仓库链接的 19 页作者自存 PDF 没有 IEEE 页码，并附有程序委员会的元评审。未找到 arXiv 版本。论文使用 IDA Pro 7.6、Ghidra 10.4、PyTorch 1.9.0、Transformers 4.10.0 与 FairSeq 0.10.0。所审阅的 2025-12-17 仓库提交没有许可证文件，因此本条不认定开放许可；其 README 要求 Python 3.8+、供 Joern 使用的 Java 11 和供 Ghidra 10.4 使用的 Java 17+；requirements.txt 未固定 torch 与 transformers 版本，Dockerfile（Ubuntu 22.04、Python 3.11）会从 Dropbox 下载修改版 Joern；README 还通过 Dropbox 提供 HSC 与 VarCorpus 数据、Gentoo 二进制文件及 16 个微调模型。推理功能由独立的 binsync/varbert_api 库与 DAILA 插件提供。本次未下载数据或模型，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/10646727",
+      "https://api.crossref.org/works/10.1109/SP54263.2024.00152",
+      "https://www.atipriya.com/files/papers/varbert_oakland24.pdf",
+      "https://github.com/sefcom/VarBERT/blob/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc/README.md",
+      "https://github.com/sefcom/VarBERT/blob/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc/requirements.txt",
+      "https://github.com/sefcom/VarBERT/blob/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc/Dockerfile"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
