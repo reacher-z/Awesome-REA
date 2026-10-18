@@ -1978,5 +1978,15 @@
       "项目报告的检查包括 ctest 套件（MSVC 静态分析、短时 libFuzzer 运行、GPU 渲染与移植自身软件 DS 引擎的对照、DeSmuME 存档状态对照），以及覆盖 Mission Mode、Story Mode、存档和联机的脚本化回归流程。需要玩家数据的测试在缺少数据时跳过，CI 仅在 Windows 和 Linux 上构建格式库。报告称已通过维护者服务器试过互联网联机，两台 PC 间的局域网联机尚未试过；本合集未运行上述任何检查。",
       "移植声明采用 MIT；第三方声明记录反编译部分为 CC0 1.0，并列出 SDL3（zlib）、Lua、Dear ImGui 等各按自身条款授权的组件。仓库中的任何许可均不适用于原游戏或从中提取的材料。README 说明使用了 AI 辅助编码工具；未确立与 REA 的关联。"
     ]
+  },
+  "ico-pc-port-case": {
+    "name": "ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植",
+    "requirements": [
+      "README 将其描述为 PAL 版 PS2 发行版（SCES-50760）的移植。架构文档称，ico2/ 下的游戏反编译 C 源码为宿主平台编译，port/ 则替代 EE 内核、GS／VU1 渲染、SPU2 音频、光盘、手柄和记忆卡服务。其平台表（审阅时最新发布为 v0.7.10）列出 64 位 Windows 10／11、x86-64 及 arm64 Linux、Steam Deck、Android 10+、通过 LiveContainer 运行的 iPhone，以及 macOS 12+ 的 Apple 芯片 Mac；维护者称未测试 iPhone 和 Mac 版本。",
+      "需玩家自备 PAL 版《ICO》光盘镜像（SCES-50760），格式为 .iso、.chd 或 .bin/.cue；不支持其他地区和版本。构建无需光盘镜像，但首次运行会将约 1 GB 的游戏文件复制到 ico.o2r 归档，并从中加载数据表。法律说明规定，仓库和下载包不含光盘数据、启动 ELF、素材或数据表。",
+      "构建使用 CMake 预设和 Ninja。Linux 快速入门面向 Debian 13 或 Ubuntu 24.04，需 gcc 14（gcc 13 亦可构建）、Python 3，以及一个下载约 1.6 GB 固定版本工具链和依赖的脚本，其中包括 llvm-mingw、mingw-w64 gcc、SDL3、Vulkan 组件和 DXC。渲染使用 Vulkan、Windows 上的 Direct3D 12，或 Apple 平台上的 MoltenVK。",
+      "CI 运行代码规范与审计检查，在 x86-64 和 arm64 Linux 上构建并运行 ctest，交叉构建 Windows 版本，并打包 Android、iPhone 和 macOS 版本；缺少玩家光盘镜像时，依赖光盘的测试会跳过。差异列表记录了与 PS2 的已知差别，并说明没有任何测试将运行结果与 PS2 比较。上游反编译项目另行报告其 PAL 版和日版启动 ELF 逐字节一致，但大部分只读数据仍取自光盘；本合集未构建或运行这两个项目。",
+      "README 和 LICENSE 规定 MIT 仅适用于项目自身的代码、脚本和文档，不授予游戏、其数据或 Sony 及 Team Ico 商标的任何权利；第三方代码另行列出。LICENSE 声明称构建需要光盘镜像，与构建指南不一致。所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }

@@ -4121,5 +4121,39 @@
       "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/.github/workflows/build.yml",
       "https://github.com/Yokimitsuro/khdays-decomp/blob/a2b0478b87e3102732094c34f6ca89595f98ab93/README.md"
     ]
+  },
+  {
+    "id": "ico-pc-port-case",
+    "name": "ico-pc: a native ICO port compiled from the PS2 decompilation",
+    "url": "https://github.com/nathanialf/ico-pc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles the decompiled C of the PlayStation 2 game ICO natively for Windows, Linux, Android, iPhone and Apple-silicon Macs, with host code standing in for the PS2 hardware and Sony libraries. No PS2 code is interpreted or recompiled, and the program reads the player's PAL disc image on first start. It is a native port of a separately byte-matched decompilation, with documented divergences and optional enhancements.",
+    "description_zh": "将 PlayStation 2 游戏《ICO》的反编译 C 源码原生编译到 Windows、Linux、Android、iPhone 及 Apple 芯片 Mac 上，并以宿主代码替代 PS2 硬件和 Sony 函数库。项目不解释执行或重编译任何 PS2 代码，程序在首次启动时读取玩家自备的 PAL 光盘镜像。它是另一个逐字节匹配的反编译项目的原生移植，记录了与原版的差异，并提供可选增强功能。",
+    "evidence_url": "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a port of the PAL PS2 release (SCES-50760). The architecture guide says the game's decompiled C under ico2/ is compiled for the host, while port/ replaces the EE kernel, GS/VU1 rendering, SPU2 audio, disc, pad and memory-card services. Its platform table, current at release v0.7.10, lists 64-bit Windows 10/11, x86-64 and arm64 Linux, Steam Deck, Android 10+, iPhone through LiveContainer and Apple-silicon macOS 12+; the maintainer reports not testing the iPhone and Mac builds.",
+      "Requires the player's own PAL ICO disc image (SCES-50760) as .iso, .chd or .bin/.cue; other regions and editions are unsupported. Building needs no disc image, but the first run copies the game's files, about 1 GB, into the ico.o2r archive and loads the data tables from it. The legal notes exclude disc data, boot ELFs, assets and data tables from the repository and downloads.",
+      "Builds use CMake presets with Ninja. The Linux quickstart targets Debian 13 or Ubuntu 24.04 with gcc 14 (gcc 13 also builds), Python 3 and a fetch script that downloads about 1.6 GB of pinned toolchains and dependencies, among them llvm-mingw, mingw-w64 gcc, SDL3, Vulkan components and DXC. Rendering uses Vulkan, Direct3D 12 on Windows, or MoltenVK on Apple platforms.",
+      "CI runs hygiene and audit checks, builds and runs ctest on x86-64 and arm64 Linux, cross-builds Windows and packages Android, iPhone and macOS; disc-dependent tests skip without the player's image. The divergence list documents known differences from the PS2 and states that no test compares a run with the PS2. The upstream decompilation separately reports byte-identical PAL and Japanese boot ELFs, with most read-only data still taken from the disc; this collection did not build or run either project.",
+      "README and LICENSE apply MIT only to the project's own code, scripts and documentation, granting no rights in the game, its data or Sony and Team Ico trademarks; third-party code is listed separately. The LICENSE notice says building requires a disc image, unlike the build guide. The reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/BUILDING.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/ARCHITECTURE.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/GAME_CODE.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/TESTING.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/DIVERGENCES.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/LEGAL.md",
+      "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/LICENSE",
+      "https://github.com/nathanialf/ico-pc/releases/tag/v0.7.10",
+      "https://github.com/nathanialf/ico/blob/3496140f784fdf2d0b10e30b3b3024046c586ce1/README.md"
+    ]
   }
 ]
