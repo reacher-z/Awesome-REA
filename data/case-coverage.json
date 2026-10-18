@@ -10854,12 +10854,14 @@
         "https://github.com/spacefarergames/CV64-Recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 40 (README line 366) lists spacefarergames/CV64-Recomp under 🏰 Castlevania 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 40 行（README 第 366 行）在 🏰 Castlevania 64 下列出 spacefarergames/CV64-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The reported recompilation that needs no ROM is not supported by the pinned source. It wraps an N64 emulator core with a small set of recompiled functions, and its loader opens an embedded resource that it treats as the original ROM. The collection therefore does not link the repository, and the lead is retained without a catalog mapping.",
+      "reason_zh": "固定版本源码不支持所报告的“无需 ROM 的重编译”：它封装了 N64 模拟器核心，只重编译少量函数，其加载器还会打开一个被当作原版 ROM 处理的内嵌资源。因此本合集不链接该仓库，保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -14061,15 +14063,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 104,
-      "insufficient-evidence": 81,
-      "pending": 406
+      "insufficient-evidence": 82,
+      "pending": 405
     },
     "units_by_state": {
       "already-curated": 103,
-      "insufficient-evidence": 81,
-      "pending": 405
+      "insufficient-evidence": 82,
+      "pending": 404
     },
-    "primary_reviewed_units": 127,
+    "primary_reviewed_units": 128,
     "catalog_linked_occurrences": 115,
     "distinct_resource_ids": 109,
     "distinct_paper_ids": 1,
