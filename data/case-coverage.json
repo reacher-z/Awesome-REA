@@ -6016,12 +6016,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110759663822352852"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The X post claims a devirtualization of Easy Anti-Cheat for Linux using two named models through Hex-Rays IDA Assist’s MCP interface, and links one GitHub repository, 19h/eac-linux-devirt, as its only source. On 2026-10-18 that repository returned HTTP 404 from both the GitHub API and the web, so no write-up, target version, recovered scope or comparison evidence is publicly available. Because the subject is protection analysis, this record keeps only the high-level claim and no method details. Retain the lead without a catalog mapping; this is not a finding about the work itself.",
+      "reason_zh": "该 X 帖子声称借助 Hex-Rays IDA Assist 的 MCP 接口和两个具名模型，对 Linux 版 Easy Anti-Cheat 完成了去虚拟化，并仅链接 GitHub 仓库 19h/eac-linux-devirt 作为来源。2026-10-18 该仓库在 GitHub API 与网页上均返回 HTTP 404，因此没有可公开查阅的说明、目标版本、恢复范围或对照证据。由于主题涉及保护机制分析，本记录只保留高层次的主张，不记录任何方法细节。保留此线索而不建立目录映射；这不是对该工作本身的结论。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110759663822352852"
+      ],
       "catalog_matches": []
     },
     {
@@ -15139,15 +15141,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 165,
-      "insufficient-evidence": 139,
-      "pending": 287
+      "insufficient-evidence": 140,
+      "pending": 286
     },
     "units_by_state": {
       "already-curated": 164,
-      "insufficient-evidence": 139,
-      "pending": 286
+      "insufficient-evidence": 140,
+      "pending": 285
     },
-    "primary_reviewed_units": 243,
+    "primary_reviewed_units": 244,
     "catalog_linked_occurrences": 176,
     "distinct_resource_ids": 170,
     "distinct_paper_ids": 1,
