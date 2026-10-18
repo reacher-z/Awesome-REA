@@ -7298,13 +7298,27 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111066785890054605"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The dated OtterSec article linked from the post, together with the pinned companion repository, documents the reported AI-assisted Rust recompilation of GoonFi V2, its scoring and judging method, and build and on-chain verification scripts. The full mapping covers this reconstruction case. The internal pipeline and agent transcripts are unpublished, the repository declares no license, no independent rebuild was run, and the reported vulnerability is not detailed here.",
+      "reason_zh": "帖子所链接的 OtterSec 署日期文章与固定版本的配套仓库，记录了所报告的 GoonFi V2 AI 辅助 Rust 重编译、其评分与评审方法，以及构建和链上验证脚本。完整映射覆盖该重建案例。内部流程和智能体对话记录未公开，仓库未声明许可证，本次未独立重新构建，所报告的漏洞也不在此详述。",
+      "primary_evidence_urls": [
+        "https://osec.io/blog/goonfi-decompilation/",
+        "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/README.md",
+        "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/build.sh",
+        "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/VERIFY.sh",
+        "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/verify_onchain.py",
+        "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/Cargo.toml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "goonfi-v2-rust-recompilation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:creality-spacepix4-gemini-firmware-idea",
@@ -14233,18 +14247,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 115,
-      "insufficient-evidence": 86,
-      "pending": 390
-    },
-    "units_by_state": {
-      "already-curated": 114,
+      "already-curated": 116,
       "insufficient-evidence": 86,
       "pending": 389
     },
-    "primary_reviewed_units": 142,
-    "catalog_linked_occurrences": 126,
-    "distinct_resource_ids": 120,
+    "units_by_state": {
+      "already-curated": 115,
+      "insufficient-evidence": 86,
+      "pending": 388
+    },
+    "primary_reviewed_units": 143,
+    "catalog_linked_occurrences": 127,
+    "distinct_resource_ids": 121,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

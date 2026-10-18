@@ -4295,5 +4295,36 @@
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md",
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/LICENSE"
     ]
+  },
+  {
+    "id": "goonfi-v2-rust-recompilation-case",
+    "name": "GoonFi V2: byte-identical Rust recompilation of a Solana program",
+    "url": "https://osec.io/blog/goonfi-decompilation/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "OtterSec researchers describe an agent pipeline that reconstructed Rust source for the closed-source GoonFi V2 Solana program until a rebuild with the original toolchain reproduced the deployed ELF. Per-function instruction scoring, a deterministic merge judge and bans on assembly and other score-gaming constructs steered the agents; matching function order and panic-location paths closed the last differences. The article and a companion repository document the method and a verification script, while the internal tooling and agent transcripts remain unpublished.",
+    "description_zh": "OtterSec 研究人员介绍了一套智能体流程：为闭源的 GoonFi V2 Solana 程序重建 Rust 源码，直至用原工具链重新构建即可复现所部署的 ELF。逐函数指令评分、确定性合并评审，以及对汇编等刷分写法的禁用约束引导智能体工作；对齐函数顺序和 panic 位置路径后，最后的差异得以消除。文章与配套仓库记录了方法和验证脚本，内部工具及智能体对话记录仍未公开。",
+    "evidence_url": "https://osec.io/blog/goonfi-decompilation/",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The article by Renato Marziano and Robert Chen is dated 2026-10-15. Its target is the GoonFi V2 sBPF program as originally deployed at slot 448984043, which the verification script identifies as a 243,080-byte ELF; the article shows 26,432 .text instructions. The companion README says the live program was upgraded on 2026-10-06 to fix the reported bugs, so current on-chain code is a different build. The output is reconstructed Rust source, not a client for the protocol or an update of the live program.",
+      "The described inputs are the deployed binary, the program’s IDL and on-chain transactions. The authors report using Claude Opus 5.5 as orchestrator with Astra subagents, an architect agent that split work by top-level instruction, per-worker branches, Binary Ninja with their bn-ebpf-solana plugin, their earlier patina-research setup, an ibrl.golf diff viewer forked from decomp.me, and on-chain data services. They call the core pipeline internal tooling; its harness, judge and agent transcripts are not published.",
+      "Each function is scored by aligning its instructions with the target: 100 points per missing or extra instruction, 60 per misordered one, 5 per wrong register or immediate and 1 per stack-offset byte. A deterministic judge rebuilt the program on every commit and merged only total-score gains with no function regressing and no flagged construct; an LLVM pass plugin banned score-gaming constructs, and patterns such as asm!, black_box, volatile writes, transmute and exported internal helpers were banned or penalized. Reviewer and orchestrator agents handled readability. Per-function matches still left a diff of about 93k bytes, closed by matching function order and panic-location file paths and line numbers.",
+      "The repository’s build.sh downloads Solana platform-tools v1.48 for Linux x86-64 (rustc 1.84.1-dev, LLVM 19.1.7), runs a locked cargo build, strips the result and prints its SHA-256; the expected value is 6a2a8670…600f767d. VERIFY.sh also needs an Alchemy archive key or another archival RPC, because the original ELF survives only in the deploy transaction’s buffer writes, and compares the reassembled ELF with the build byte for byte. No binary is committed. The README describes the check as a match beyond padding, while the script compares exactly; this collection ran neither.",
+      "The article reports that an auditing agent then found a critical accounting vulnerability and says it was responsibly disclosed; exploitation details are out of scope here. The companion repository declares no license, and its source is reconstructed from a third party’s closed-source program, so reuse rights are unclear and remain with the program’s owners. The reviewed sources establish no REA use, and agent results remain author-reported."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/README.md",
+      "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/build.sh",
+      "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/VERIFY.sh",
+      "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/verify_onchain.py",
+      "https://github.com/renato-osec/goonfi-v2-decompiled/blob/381cc31945474ba6b5b56b32a8cad5266602d612/Cargo.toml",
+      "https://x.com/pashov/status/2111066785890054605"
+    ]
   }
 ]
