@@ -8317,12 +8317,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111182893313613877"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@0xKurogamii, 2026-10-16) reports a read-only Claude inspection of the local Notion desktop app.asar that counted files, JavaScript files, domain strings and one error-reporting endpoint, concluding that the client is largely a wrapper around the website; an attached image lists the counts. The author states that REA was not yet used and that what the app sends remains unknown, and no app version, package hash, script, data or follow-up comparison is published. A static string inventory is not a documented reconstruction; retain the lead without a catalog mapping, and a published REA comparison could support another review.",
+      "reason_zh": "作者帖子（@0xKurogamii，2026-10-16）报告让 Claude 以只读方式检查本地 Notion 桌面版 app.asar，统计了文件、JavaScript 文件、域名字符串及一个错误上报端点，并认为该客户端主要是网站的外壳；所附图片列出了这些计数。作者表示尚未使用 REA，应用实际发送的内容仍不清楚，也未公开应用版本、包哈希、脚本、数据或后续对比。静态字符串清点不构成有记录的重建；保留此线索而不建立目录映射，若公开与 REA 的对比结果可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/0xKurogamii/status/2111182893313613877"
+      ],
       "catalog_matches": []
     },
     {
@@ -16072,15 +16074,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 251,
-      "pending": 139
+      "insufficient-evidence": 252,
+      "pending": 138
     },
     "units_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 251,
-      "pending": 139
+      "insufficient-evidence": 252,
+      "pending": 138
     },
-    "primary_reviewed_units": 393,
+    "primary_reviewed_units": 394,
     "catalog_linked_occurrences": 214,
     "distinct_resource_ids": 206,
     "distinct_paper_ids": 2,
