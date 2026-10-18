@@ -6426,5 +6426,38 @@
       "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/LICENSE.md",
       "https://github.com/pwndbg/pwndbg/releases/tag/2026.09.15"
     ]
+  },
+  {
+    "id": "driver-recomp-setup-host-case",
+    "name": "Driver Recompiled: a psxrecomp setup host that builds the game locally",
+    "url": "https://github.com/alexbeavs-ps1-ports/driver-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Packages a psxrecomp static-recompilation project for Driver (PlayStation, USA) as a setup host: releases carry the recompiler, runtime and a recomp-ui launcher, and the player’s machine generates and compiles the game from the user’s own disc image. The repository holds configuration, Ghidra-derived function seeds and release automation rather than game code. Its documented status is thin: an operator-confirmed private build reaches gameplay, while package release gates remain open.",
+    "description_zh": "将 Driver（PlayStation 美版）的 psxrecomp 静态重编译项目打包为“安装宿主”：发布包含重编译器、运行时和 recomp-ui 启动器，再由玩家电脑依据使用者自备的光盘镜像生成并编译游戏。仓库只包含配置、来自 Ghidra 的函数种子和发布自动化脚本，不含游戏代码。文档记录的状态较为有限：维护者确认一个私有构建可以进入游戏，而发布包的验收门槛仍未完成。",
+    "evidence_url": "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch (VERSION 0.3.6) targets only the USA release SLUS-00842 and pins Alexbeav’s psxrecomp fork at 08ec704a and recomp-ui at be8ac1d0. FEASIBILITY.md records the status bootstrap_verified: the operator confirmed that a private promoted build reaches gameplay. No mode or feature coverage is documented, and the README notes that public v0.3.0 can relaunch the wrong executable after its first build.",
+      "The player supplies an owned disc image of Driver (USA, SLUS-00842); game.toml records the expected data-track size and hashes. Release CI packages a setup host without game C, BIOS backends, disc images or a prebuilt playable executable. The workflow says users generate OpenBIOS, with a retail BIOS optional, while FEASIBILITY.md mentions the player supplying a BIOS; generated code and the executable stay on the user’s machine.",
+      "v0.3.6 publishes packages for Windows x64, Linux x64, macOS Apple Silicon and macOS Intel, but the documentation keeps each platform claim pending exact-package setup, startup and clean-exit gates; the README describes 0.3.0 as Windows x64 only. Local builds use the psxrecomp CLI, CMake, Ninja, Python and C/C++ toolchains, with Windows on the framework’s portable toolchain route.",
+      "Reported checks are setup executable-name and source-parity tests and YAML and release-workflow audits. The README also describes boot gates and A/B comparisons against Beetle and DuckStation across the author’s ports, but the reviewed tree publishes no comparison results for this title. These are project reports; this collection ran nothing.",
+      "Project-owned files are GPL-3.0-only; psxrecomp keeps PolyForm Noncommercial 1.0.0 and recomp-ui MIT, and the GPL does not cover retail content or generated retail code. The README says the ports are developed with substantial AI assistance, with AI writing most of the code; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/LICENSE",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/FEASIBILITY.md",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/DEVLOG.md",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/PSX_PORT_KNOWLEDGE_REPORT.md",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/game.toml",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.gitmodules",
+      "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.github/workflows/release.yml",
+      "https://github.com/Alexbeav/psxrecomp/blob/08ec704a974b1f3a16335b4afeb340b9eff19926/README.md"
+    ]
   }
 ]

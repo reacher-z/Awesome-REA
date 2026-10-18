@@ -13507,13 +13507,27 @@
         "https://github.com/alexbeavs-ps1-ports/driver-recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 116 (README line 1207) lists alexbeavs-ps1-ports/driver-recomp under 🚘 Driver: You Are the Wheelman. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 116 行（README 第 1207 行）在 🚘 Driver: You Are the Wheelman 下列出 alexbeavs-ps1-ports/driver-recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, feasibility and knowledge reports, game configuration and release workflow support a psxrecomp static recompilation of Driver (USA) distributed as a setup host that generates and builds the game from the user’s own disc. Full mapping covers this repository, not psxrecomp itself or the separate REDRIVER2 project for Driver 2. The thin gameplay status and open release gates remain explicit.",
+      "reason_zh": "固定版本的 README、可行性与知识报告、游戏配置及发布工作流，支持这一以安装宿主形式分发的 Driver（美版）psxrecomp 静态重编译：游戏依据使用者自备的光盘在本地生成并构建。完整映射覆盖此仓库，不涵盖 psxrecomp 本身或针对 Driver 2 的独立 REDRIVER2 项目。有限的可玩状态和尚未完成的发布验收均予以明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md",
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/FEASIBILITY.md",
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/PSX_PORT_KNOWLEDGE_REPORT.md",
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/game.toml",
+        "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/.github/workflows/release.yml",
+        "https://github.com/Alexbeav/psxrecomp/blob/08ec704a974b1f3a16335b4afeb340b9eff19926/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "driver-recomp-setup-host-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-117",
@@ -15254,18 +15268,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 172,
-      "insufficient-evidence": 140,
-      "pending": 279
-    },
-    "units_by_state": {
-      "already-curated": 171,
+      "already-curated": 173,
       "insufficient-evidence": 140,
       "pending": 278
     },
-    "primary_reviewed_units": 251,
-    "catalog_linked_occurrences": 183,
-    "distinct_resource_ids": 177,
+    "units_by_state": {
+      "already-curated": 172,
+      "insufficient-evidence": 140,
+      "pending": 277
+    },
+    "primary_reviewed_units": 252,
+    "catalog_linked_occurrences": 184,
+    "distinct_resource_ids": 178,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

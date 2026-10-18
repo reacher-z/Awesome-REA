@@ -2707,5 +2707,15 @@
       "审阅时的版本为 2026.09.15，发布于 2026-09-20，提供便携压缩包（含 macOS 便携版）和 deb/rpm/apk/Arch 软件包；安装指南涵盖 Linux 和 macOS，可通过安装脚本、Homebrew、Nix、发行版软件包或源码安装。所审阅的 dev 分支提交声明的版本相同。",
       "采用 MIT 许可。反编译器集成需另行安装相应反编译器。本次未运行任何调试会话。"
     ]
+  },
+  "driver-recomp-setup-host-case": {
+    "name": "Driver Recompiled：在本地构建游戏的 psxrecomp 安装宿主",
+    "requirements": [
+      "所审阅的 main 分支（VERSION 0.3.6）仅针对美版 SLUS-00842，并固定 Alexbeav 的 psxrecomp 分支于 08ec704a、recomp-ui 于 be8ac1d0。FEASIBILITY.md 记录的状态为 bootstrap_verified：维护者确认一个私有的提升构建可以进入游戏。文档未说明模式或功能覆盖范围；README 还指出，公开的 v0.3.0 在首次构建后可能启动错误的可执行文件。",
+      "玩家需自备 Driver（美版，SLUS-00842）的光盘镜像；game.toml 记录了数据轨道的预期大小和哈希。发布 CI 打包的安装宿主不含游戏 C 代码、BIOS 后端、光盘镜像或预先构建的可运行程序。工作流说明由用户生成 OpenBIOS，零售 BIOS 为可选项，而 FEASIBILITY.md 提到由玩家提供 BIOS；生成的代码和可执行文件均保留在用户电脑上。",
+      "v0.3.6 发布了 Windows x64、Linux x64、macOS Apple Silicon 和 macOS Intel 的安装包，但文档仍将各平台支持列为待定，须先通过针对确切安装包的安装、启动和正常退出验收；README 称 0.3.0 仅支持 Windows x64。本地构建使用 psxrecomp 命令行、CMake、Ninja、Python 及 C／C++ 工具链，Windows 采用框架的便携工具链方案。",
+      "报告的检查包括安装可执行文件名称与源码一致性测试，以及 YAML 和发布工作流审计。README 还描述了作者各移植项目共用的启动关卡检查及与 Beetle、DuckStation 的 A/B 对比，但所审阅的源码树未公布本游戏的对比结果。这些均为项目报告；本合集未运行任何检查。",
+      "项目自有文件采用 GPL-3.0-only；psxrecomp 保留 PolyForm Noncommercial 1.0.0，recomp-ui 保留 MIT，GPL 不涵盖零售内容或生成的零售代码。README 称这些移植在大量 AI 协助下开发，大部分代码由 AI 编写；未声明使用 REA。"
+    ]
   }
 }
