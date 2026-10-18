@@ -20,7 +20,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (20) · [文档与学习资源](#references-and-learning) (20)
+- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (20)
 
 **更多浏览方式**
 
