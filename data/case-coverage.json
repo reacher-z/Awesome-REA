@@ -10572,13 +10572,26 @@
         "https://github.com/Zumbo06/Crash2Recomp",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 32 (README line 310) lists Zumbo06/Crash2Recomp under 🌀 Crash Bandicoot 2: Cortex Strikes Back. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 32 行（README 第 310 行）在 🌀 Crash Bandicoot 2: Cortex Strikes Back 下列出 Zumbo06/Crash2Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, generated-project files, recompiler build script, runtime patches and bring-up notes document a PSXRecomp static recompilation of the user’s North American Crash Bandicoot 2 disc into a native Windows build with an emulated hardware layer and interpreter fallback. Full mapping covers this launcher and runtime case, not the separate PSXRecomp project or independently reproduced gameplay. The collection row’s linked image was not used as evidence.",
+      "reason_zh": "固定版本的 README、生成项目文件、重编译器构建脚本、运行时补丁和调试记录，说明了用 PSXRecomp 将用户自备的北美版《古惑狼 2》光盘静态重编译为原生 Windows 构建的过程，并保留模拟硬件层与解释器回退。完整映射覆盖该启动器与运行时案例，不涵盖独立的 PSXRecomp 项目或独立复现的游戏行为。合集条目链接的图片未作为证据。",
+      "primary_evidence_urls": [
+        "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/README.md",
+        "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/NOTES.md",
+        "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/Crash2Recomp/README.md",
+        "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/build_recompiler.ps1",
+        "https://github.com/Zumbo06/Crash2Recomp/releases/tag/v0.9.6"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "crash2recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-033",
@@ -13959,18 +13972,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 97,
-      "insufficient-evidence": 81,
-      "pending": 413
-    },
-    "units_by_state": {
-      "already-curated": 96,
+      "already-curated": 98,
       "insufficient-evidence": 81,
       "pending": 412
     },
-    "primary_reviewed_units": 120,
-    "catalog_linked_occurrences": 108,
-    "distinct_resource_ids": 102,
+    "units_by_state": {
+      "already-curated": 97,
+      "insufficient-evidence": 81,
+      "pending": 411
+    },
+    "primary_reviewed_units": 121,
+    "catalog_linked_occurrences": 109,
+    "distinct_resource_ids": 103,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

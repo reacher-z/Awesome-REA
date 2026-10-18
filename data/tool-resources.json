@@ -3737,5 +3737,37 @@
       "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/README.md",
       "https://github.com/BlackLabelHQ/RecompOne/blob/1272fb80b1638efdae8f281ff6c6e90f93866ae6/LICENSE"
     ]
+  },
+  {
+    "id": "crash2recomp-case",
+    "name": "Crash Bandicoot 2 Recompiled: a PSXRecomp native build",
+    "url": "https://github.com/Zumbo06/Crash2Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A Windows launcher that uses the PSXRecomp recompiler and runtime to translate the user’s Crash Bandicoot 2: Cortex Strikes Back disc to C and compile it locally, so the game runs as native code with an emulated PlayStation hardware layer. The repository holds the launcher, a patched vendored runtime and a long bring-up log; it distributes no game code or data.",
+    "description_zh": "一个 Windows 启动器，借助 PSXRecomp 重编译器与运行时，将用户自备的《古惑狼 2：大脑博士的反击》光盘转换为 C 代码并在本地编译，使游戏以原生代码配合模拟的 PlayStation 硬件层运行。仓库包含启动器、打过补丁的内置运行时以及详细的调试记录，不分发任何游戏代码或数据。",
+    "evidence_url": "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a disc image the user owns of the North American release (serial SCUS-94154), as .cue/.bin or .chd; the launcher checks tracks, sectors and boot serial and hashes the image. No PlayStation BIOS is required because MIT-licensed OpenBIOS is included, and locally generated files derived from the disc must not be redistributed.",
+      "Release v0.9.6 (2026-10-08) is a 64-bit Windows 10+ bundle; a first build takes about 3 GB of disk space and five to twenty minutes. Source use needs Python 3.11+ with PySide6 and the PSXRecomp MinGW-w64 Clang toolchain; the notes say MSVC is unsupported, and 59 runtime patches are kept in tuning/patches.",
+      "The README calls the game completable from start to finish but a work-in-progress preview with minor sound and graphical issues. Streamed level-code overlays are compiled natively when possible and otherwise fall back to a MIPS interpreter; the opt-in 60 FPS mode runs the emulated CPU at 200% and is not verified across the whole game.",
+      "Published checks are launcher settings and UI smoke tests, scenario scripts and a harness comparing its own Direct3D 12 and OpenGL renderers; none claims equivalence with original hardware, and no result was rerun here.",
+      "There is no top-level license file. The README lists PolyForm Noncommercial 1.0.0 for PSXRecomp, MIT for OpenBIOS, zlib for SDL3 and LGPLv3 for Qt/PySide6; the game and its trademarks belong to their owners. No REA or coding-agent involvement is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/NOTES.md",
+      "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/Crash2Recomp/README.md",
+      "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/Crash2Recomp/CMakeLists.txt",
+      "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/build_recompiler.ps1",
+      "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/patches",
+      "https://github.com/Zumbo06/Crash2Recomp/tree/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/renderer_parity",
+      "https://github.com/Zumbo06/Crash2Recomp/releases/tag/v0.9.6"
+    ]
   }
 ]

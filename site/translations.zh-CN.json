@@ -1849,5 +1849,15 @@
       "构建工作流使用另一个访问受限仓库中的光盘输入完成重编译和编译，然后上传构建产物；它不运行游戏，也不与原版行为比较。README 致谢一个未具名的反编译项目，其成果用作函数命名和补丁参考。本合集未构建或运行该项目。",
       "所审版本的 MediEvilRecomp 没有许可证文件，复用条款未作说明；RecompOne 子模块声明采用 MIT。原游戏内容，包括重编译器所转译的可执行代码，仍有各自权利约束。两份 README 均称编写代码时未使用 AI，并拒绝 AI 生成的贡献；这不是 REA 辅助案例。"
     ]
+  },
+  "crash2recomp-case": {
+    "name": "Crash Bandicoot 2 Recompiled：基于 PSXRecomp 的原生构建",
+    "requirements": [
+      "需要用户自有北美版（序列号 SCUS-94154）的光盘镜像，格式为 .cue／.bin 或 .chd；启动器会检查音轨、扇区和启动序列号并计算镜像哈希。由于内置 MIT 许可的 OpenBIOS，无需 PlayStation BIOS；本地生成的、源自光盘的文件不得再分发。",
+      "v0.9.6 版本（2026-10-08）为 64 位 Windows 10+ 安装包；首次构建约占 3 GB 磁盘空间、耗时五到二十分钟。从源码使用需要 Python 3.11+ 与 PySide6 以及 PSXRecomp 的 MinGW-w64 Clang 工具链；记录称不支持 MSVC，tuning/patches 中保存了 59 个运行时补丁。",
+      "README 称游戏可从头到尾通关，但仍是存在轻微声音与画面问题的开发中预览版。流式加载的关卡代码覆盖段会尽量原生编译，否则回退到 MIPS 解释器；可选的 60 FPS 模式会将模拟 CPU 提速到 200%，且未在全游戏范围内验证。",
+      "已公开的检查包括启动器设置与界面冒烟测试、场景脚本，以及比较其自身 Direct3D 12 与 OpenGL 渲染器的测试框架；均未声称与原硬件等价，本合集也未重跑任何结果。",
+      "仓库没有顶层许可证文件。README 列出 PSXRecomp 采用 PolyForm Noncommercial 1.0.0、OpenBIOS 采用 MIT、SDL3 采用 zlib、Qt／PySide6 采用 LGPLv3；游戏及其商标归各自权利人所有。所审来源未记录 REA 或编程智能体参与。"
+    ]
   }
 }
