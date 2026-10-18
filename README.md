@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 282](https://img.shields.io/badge/resources-282-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 142](https://img.shields.io/badge/cases-142-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 283](https://img.shields.io/badge/resources-283-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 143](https://img.shields.io/badge/cases-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (123) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (124) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (142) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (143) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -808,6 +808,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Animal Crossing’s GameCube code as C and C++ source that rebuilds the USA release’s main executable and its foresta.rel module. The dtk-template build reads the original binaries and assets from a user-supplied disc image, then checks both outputs against SHA-1 hashes. A separate native PC port builds on it; completeness figures remain project-reported here.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/animal-crossing-gamecube-decomp-case/)
+
+- [**Kingdom Hearts 358/2 Days: a matching Nintendo DS decompilation**](https://github.com/Yokimitsuro/khdays-decomp)
+
+  Reconstructs the ARM9 program and overlays of the EU Nintendo DS release of Kingdom Hearts 358/2 Days as C that recompiles byte for byte with CodeWarrior. README reports all 306 modules byte-identical, with about 99.5% of functions in real C and library assembly counted separately; the ARM7 binary is outside its scope. The repository holds no ROM, game assets or extracted disassembly and produces no playable build.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/kingdom-hearts-days-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
