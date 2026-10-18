@@ -2202,12 +2202,14 @@
       "reported_source_urls": [
         "https://x.com/iamsupersocks/status/2109553690595979371"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@iamsupersocks, 2026-10-12), in a discussion of REA-style reverse engineering, says the author is cloning an unnamed business application by studying its behavior. It names no product, module or tool and links no code; the author’s GitHub holds unrelated projects and no such clone. Retain the lead without a catalog mapping; the rebuild and any REA use are unestablished.",
+      "reason_zh": "所引回复（@iamsupersocks，2026-10-12）在一场关于 REA 式逆向的讨论中称作者正通过研究行为来克隆一款未具名的商业软件。回复未指明产品、模块或工具，也未链接代码；作者的 GitHub 上是无关项目，没有此类克隆。保留此线索而不建立目录映射；该重建及任何 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/iamsupersocks/status/2109553690595979371"
+      ],
       "catalog_matches": []
     },
     {
@@ -2222,12 +2224,15 @@
       "reported_source_urls": [
         "https://x.com/fireandstart/status/2109554617004466397"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@fireandstart, 2026-10-12) is commentary on a quoted post by @GeekCatX, who says he ran CapCut through REA to study its transitions module as a learning exercise, cautioning against copying. Neither the quoted post nor the reply gives analysis results, parameters or code, and the quoted author’s linked GitHub has no such project. Retain the lead without a catalog mapping; the transition-module analysis is unestablished.",
+      "reason_zh": "所引帖子（@fireandstart，2026-10-12）是对 @GeekCatX 一条帖子的评论；@GeekCatX 称他把 CapCut 放进 REA 研究其转场模块，作为学习性质的实测，并提醒不要照抄。被引帖与该评论均未给出分析结果、参数或代码，被引作者主页对应的 GitHub 也没有此类项目。保留此线索而不建立目录映射；转场模块分析未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/fireandstart/status/2109554617004466397",
+        "https://x.com/GeekCatX/status/2109348712489287833"
+      ],
       "catalog_matches": []
     },
     {
@@ -2273,12 +2278,16 @@
       "reported_source_urls": [
         "https://x.com/IanJKerins/status/2109559519584088093"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@IanJKerins, 2026-10-12) is one tweet in a thread summarizing a Reddit AMA with freelance engineer Ibrahim El Khalil Mlata; it recounts, secondhand, that a recent mobile-app investigation used tools including Claude Code to identify an app’s protections, naming no app. The linked ScrapeOps write-up (Ian Kerins, 2026-10-06) and the engineer’s GitHub profile publish no code or report for this specific investigation. Retain the lead without a catalog mapping; it is a secondhand account with no reproducible artifact and describes no bypass.",
+      "reason_zh": "所引帖子（@IanJKerins，2026-10-12）是一条总结 Reddit AMA（受访者为自由工程师 Ibrahim El Khalil Mlata）的推文串中的一条，转述称最近一次移动应用调查使用了包括 Claude Code 在内的工具来识别某应用的保护措施，未指明具体应用。帖中链接的 ScrapeOps 文章（Ian Kerins，2026-10-06）及该工程师的 GitHub 主页均未就这次具体调查公开代码或报告。保留此线索而不建立目录映射；这是一则转述说明，没有可复现的成果，也未描述任何绕过方法。",
+      "primary_evidence_urls": [
+        "https://x.com/IanJKerins/status/2109559519584088093",
+        "https://scrapeops.io/blog/why-diagnosis-beats-more-stealth/",
+        "https://github.com/MlataIbrahim"
+      ],
       "catalog_matches": []
     },
     {
@@ -2293,12 +2302,14 @@
       "reported_source_urls": [
         "https://x.com/hbyxabc/status/2109583911483519202"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@hbyxabc, 2026-10-12) reports having Codex and then Claude Opus 5.5 study a Kindle’s firmware to put Android on it for the e-ink WeRead app, saying the device began showing a system UI; it carries a photo. No Kindle model, firmware code, driver work or evidence of WeRead running is given, and the author’s GitHub has no matching repository. Retain the lead without a catalog mapping; this is an in-progress porting report, not a documented reconstruction.",
+      "reason_zh": "作者帖子（@hbyxabc，2026-10-12）称先后让 Codex 和 Claude Opus 5.5 研究 Kindle 固件，以便在其上运行安卓来使用墨水屏版微信读书，并称设备已开始显示系统界面；帖子附一张图片。帖中未提供 Kindle 型号、固件代码、驱动工作或微信读书实际运行的证据，作者的 GitHub 也没有相应仓库。保留此线索而不建立目录映射；这是一份进行中的移植报告，而非有记录的重建。",
+      "primary_evidence_urls": [
+        "https://x.com/hbyxabc/status/2109583911483519202"
+      ],
       "catalog_matches": []
     },
     {
@@ -2313,12 +2324,14 @@
       "reported_source_urls": [
         "https://x.com/web3_fising/status/2109601382273880327"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@web3_fising, 2026-10-12) is a retrospective saying that earlier this year they had Codex analyze a proxy provider’s client and build a relay to keep using a hidden subscription. It names no provider and links no code or results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the work is undocumented and unverifiable, and the post’s account of the provider’s terms is the author’s alone.",
+      "reason_zh": "作者的纯文字帖子（@web3_fising，2026-10-12）是一则回顾，称今年上半年曾让 Codex 分析某代理服务的客户端并搭建中转，以继续使用被隐藏的订阅。帖子未指明服务商，也未链接代码或结果，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该工作无公开记录、无法核验，帖中对服务商条款的说法亦仅为作者一面之词。",
+      "primary_evidence_urls": [
+        "https://x.com/web3_fising/status/2109601382273880327"
+      ],
       "catalog_matches": []
     },
     {
@@ -2333,12 +2346,15 @@
       "reported_source_urls": [
         "https://x.com/0xlangeai/status/2109603485914206498"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@0xlangeai, 2026-10-12) quotes an X article by the same author comparing plain Codex with Codex plus REA on three controlled samples (a readable script, an unpacked JavaScript bundle and a small managed .NET file), reporting that all 360 unified cases passed and that REA supplied method locations and instruction clues while the model still wrote the decoders. The article’s evidence (a report and a verification bundle) is referenced only by relative in-article paths; no public repository, data or logs are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the test samples and results are not independently reproducible.",
+      "reason_zh": "作者帖子（@0xlangeai，2026-10-12）引用了同一作者的一篇 X 长文，文中在三个受控样本（可读脚本、解包后仍为 JavaScript 的包，以及一个小型托管 .NET 文件）上对比原生 Codex 与接入 REA 的 Codex，报告 360 个统一用例全部通过，并称 REA 提供了方法位置和指令线索，完整解码仍由模型自行编写脚本完成。文中所称的证据（报告与核验包）仅以文章内的相对路径引用；未链接任何公开仓库、数据或日志，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；测试样本与结果无法独立复现。",
+      "primary_evidence_urls": [
+        "https://x.com/0xlangeai/status/2109603485914206498",
+        "https://x.com/RealYDT/status/2109597433936425442"
+      ],
       "catalog_matches": []
     },
     {
@@ -14614,15 +14630,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 136,
-      "insufficient-evidence": 111,
-      "pending": 344
+      "insufficient-evidence": 117,
+      "pending": 338
     },
     "units_by_state": {
       "already-curated": 135,
-      "insufficient-evidence": 111,
-      "pending": 343
+      "insufficient-evidence": 117,
+      "pending": 337
     },
-    "primary_reviewed_units": 186,
+    "primary_reviewed_units": 192,
     "catalog_linked_occurrences": 147,
     "distinct_resource_ids": 141,
     "distinct_paper_ids": 1,
