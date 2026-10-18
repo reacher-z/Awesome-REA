@@ -2448,12 +2448,16 @@
         "https://x.com/i/status/2109639780577190171",
         "https://x.com/i/status/2109652812577517754"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Both posts and the GeekPark article one of them links describe a wave of browser-playable classic games in general terms; none names a developer, repository, project page or build method for any listed port. The article's game list also differs from the second post, and the byte-matching decompilation it discusses is a separate developer's work, not tied to these ports. Retain the lead without a catalog mapping; no specific port, AI or REA contribution, multiplayer claim or rights basis is established.",
+      "reason_zh": "两则帖文及其中一则链接的极客公园文章只笼统描述一批可在浏览器中游玩的经典游戏，均未就所列任何移植给出开发者、仓库、项目页或构建方法。文章列出的游戏也与第二则帖文不同，文中讨论的逐字节一致反编译则是另一位开发者的成果，未与这些移植关联。保留此线索而不建立目录映射；具体移植、AI 或 REA 的贡献、联机主张及权利依据均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2109639780577190171",
+        "https://x.com/i/status/2109652812577517754",
+        "https://www.geekpark.net/news/372263"
+      ],
       "catalog_matches": []
     },
     {
@@ -13271,15 +13275,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 64,
-      "insufficient-evidence": 65,
-      "pending": 462
+      "insufficient-evidence": 66,
+      "pending": 461
     },
     "units_by_state": {
       "already-curated": 63,
-      "insufficient-evidence": 65,
-      "pending": 461
+      "insufficient-evidence": 66,
+      "pending": 460
     },
-    "primary_reviewed_units": 74,
+    "primary_reviewed_units": 75,
     "catalog_linked_occurrences": 71,
     "distinct_resource_ids": 62,
     "distinct_paper_ids": 1,
