@@ -4362,5 +4362,57 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-exebench",
+    "title": "ExeBench: an ML-scale dataset of executable C functions",
+    "title_zh": "ExeBench：机器学习规模的可执行 C 函数数据集",
+    "authors": [
+      "Jordi Armengol-Estapé",
+      "Jackson Woodruff",
+      "Alexander Brauckmann",
+      "José Wesley de Souza Magalhães",
+      "Michael F. P. O'Boyle"
+    ],
+    "year": 2022,
+    "publication_date": "2022-06-13",
+    "date_precision": "day",
+    "date_basis": "The ACM article page and ACM’s Crossref deposit both give publication on 2022-06-13, which is also the day of the MAPS ’22 symposium. The date follows the publisher’s stated publication date, not the event schedule.",
+    "date_basis_zh": "ACM 文章页面与 ACM 提交的 Crossref 元数据均将出版日期列为 2022-06-13，这一天也是 MAPS ’22 研讨会的举办日。本条目采用出版方标明的出版日期，而非依据会议日程推定。",
+    "venue": "ACM SIGPLAN MAPS 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3520312.3534867",
+    "url": "https://dl.acm.org/doi/10.1145/3520312.3534867",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3520312.3534867",
+    "code_url": "https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f",
+    "project_url": "https://huggingface.co/datasets/jordiae/exebench",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ExeBench is a dataset, not a decompiler. It extracts C functions from GitHub and AnghaBench, makes them compilable by locating real headers and definitions or injecting synthetic ones, and generates input/output examples from function signatures with a C++ wrapper that runs each function. After exact deduplication the authors report 4,485,817 compilable and 687,843 executable functions, of which 124,612 have rich IO that a constant or identity implementation cannot pass; the paper also describes x86 and ARM assembly at O0, Os and Ofast for each row. Decompilation studies such as SLaDe and LLM4Decompile later used it to test whether decompiled functions re-execute correctly.",
+    "description_zh": "ExeBench 是数据集，而非反编译器。它从 GitHub 与 AnghaBench 中提取 C 函数，通过查找真实的头文件与定义或注入合成定义使其可编译，再依据函数签名生成输入／输出样例，并以 C++ 包装器运行每个函数。精确去重后，作者报告共有 4,485,817 个可编译函数和 687,843 个可执行函数，其中 124,612 个带有常量或恒等实现无法通过的丰富 IO；论文还说明每行数据附有 O0、Os 与 Ofast 下的 x86 和 ARM 汇编。SLaDe、LLM4Decompile 等反编译研究随后用它检验反编译函数能否正确重新执行。",
+    "scope_limitations_en": "IO is generated from signatures without program context: 10 pairs per function (30 across three seeds of synthetic definitions), arrays default to 32 elements, and success falls below 5% for functions with pointer–integer conversions and stays low for goto, labels and complex control flow, so executable functions skew simpler than the compilable population. Synthetic IO is produced with injected stand-in definitions rather than the functions’ real dependencies; only 4,464 functions have rich IO with real definitions. Finite IO pairs test behavior on sampled inputs, not semantic equivalence, and deduplication removes exact matches after tokenization only. Running functions with real dependencies executes untrusted code; the authors used restricted containers. The paper’s exact v1.00 data is available only on request, while the public v1.01 release has revised splits (for example 2,134 instead of 2,232 real test functions). Each function keeps its source repository’s license; ExeBench additions are MIT.",
+    "scope_limitations_zh": "IO 依据函数签名生成，不考虑程序上下文：每个函数 10 对（合成定义使用三个随机种子，共 30 对），数组默认长度为 32；含指针与整数互转的函数生成成功率低于 5%，含 goto、标签及复杂控制流的函数成功率也较低，因此可执行函数整体比可编译函数更简单。合成 IO 基于注入的替代定义，而非函数的真实依赖生成；带有真实定义且具备丰富 IO 的函数仅有 4,464 个。有限的 IO 对只检验采样输入上的行为，并不证明语义等价；去重也只删除分词后完全相同的函数。运行带真实依赖的函数意味着执行不受信任的代码，作者使用了权限受限的容器。论文所用的 v1.00 原始数据仅可申请获取，公开的 v1.01 版本调整了数据划分（例如真实测试函数为 2,134 个，而非 2,232 个）。每个函数保留其来源仓库的许可证，ExeBench 新增内容采用 MIT 许可。",
+    "why_fits_en": "Adds the executable C-function benchmark behind several decompilation papers in this section, so readers can check its construction, IO limits and version differences directly.",
+    "why_fits_zh": "补充本节多篇反编译论文所依赖的可执行 C 函数基准，便于读者直接核查其构建方式、IO 局限与版本差异。",
+    "metadata_notes": "ACM metadata in Crossref and on the article page gives the sentence-case title and pages 50–59 of the Proceedings of the 6th ACM SIGPLAN International Symposium on Machine Programming; the 10-page PDF capitalises it as 'ExeBench: An ML-Scale Dataset of Executable C Functions'. No arXiv version was found. The live ACM pages served a browser check to plain HTTP clients and were read through a browser session; the article page marks the full text world-readable, while the PDF's 2022 notice licenses publication rights to ACM, so no open content license is asserted for the paper. The reviewed 2022-09-15 repository commit has no LICENSE file; its README assigns each C function its source repository's license and releases IO examples and wrappers under MIT. Its helper compiles a function's assembly with the C++ wrapper using g++ -O0 and runs it as a host subprocess without its own sandbox. Hugging Face revision 093085f (2023-03-09) hosts v1.01 as zstandard JSON-lines TAR archives with no license tag in the card metadata; the v1.00 dataset jordiae/exebench_legacy requires contacting the authors. No data was downloaded and no code was run.",
+    "metadata_notes_zh": "Crossref 与文章页面中的 ACM 元数据给出句首大写形式的标题，以及 Proceedings of the 6th ACM SIGPLAN International Symposium on Machine Programming 第 50–59 页；10 页的 PDF 将标题写作“ExeBench: An ML-Scale Dataset of Executable C Functions”。未找到 arXiv 版本。ACM 实时页面对普通 HTTP 客户端显示浏览器验证，本次通过浏览器会话阅读；文章页面将全文标记为公开可读，但 PDF 中的 2022 年声明将出版权授予 ACM，因此本条不认定论文采用开放内容许可。所审阅的 2022-09-15 仓库提交没有 LICENSE 文件；其 README 说明每个 C 函数沿用来源仓库的许可证，IO 样例与包装器以 MIT 发布。仓库辅助代码使用 g++ -O0 将函数汇编与 C++ 包装器一同编译，并作为宿主机子进程直接运行，本身不提供沙箱。Hugging Face 修订版 093085f（2023-03-09）以 zstandard 压缩的 JSON Lines TAR 包托管 v1.01，数据卡元数据中没有许可证标签；v1.00 数据集 jordiae/exebench_legacy 需联系作者获取。本次未下载数据，也未运行代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3520312.3534867",
+      "https://dl.acm.org/doi/pdf/10.1145/3520312.3534867",
+      "https://api.crossref.org/works/10.1145/3520312.3534867",
+      "https://github.com/jordiae/exebench/blob/8b47d483c2e39ea40a304fbaac46e41a1a14272f/README.md",
+      "https://github.com/jordiae/exebench/blob/8b47d483c2e39ea40a304fbaac46e41a1a14272f/exebench/__init__.py",
+      "https://github.com/jordiae/exebench/blob/8b47d483c2e39ea40a304fbaac46e41a1a14272f/examples/basic.py",
+      "https://huggingface.co/datasets/jordiae/exebench",
+      "https://huggingface.co/datasets/jordiae/exebench/blob/093085f8558cfd53de8e2c8f4ccc7b9e73dc22ae/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
