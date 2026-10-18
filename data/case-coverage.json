@@ -12141,13 +12141,28 @@
       "reported_source_urls": [
         "https://github.com/kirklandsig/halo2-decompiled"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 86 (README line 874) lists kirklandsig/halo2-decompiled under 🛡️ Halo 2. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 86 行（README 第 874 行）在 🛡️ Halo 2 下列出 kirklandsig/halo2-decompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, legal and provenance notes, progress log, checker and CI workflows support the reported matching decompilation of Halo 2's retail Xbox executable. Full mapping covers this work-in-progress decompilation, not a playable build, a native port or independently rerun match counts. The user-supplied XBE and SDK, provenance remediation and disclosed Claude/Codex lanes remain explicit.",
+      "reason_zh": "固定版本的 README、法律与来源说明、进度日志、检查器及 CI 工作流，支持该针对 Halo 2 零售版 Xbox 可执行文件的一致性反编译报告。完整映射覆盖此进行中的反编译，不代表可游玩构建、原生移植或独立重跑的匹配数。使用者自备 XBE 与 SDK、来源问题的整改及已披露的 Claude／Codex 流水线均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/README.md",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LEGAL.md",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/PROVENANCE.md",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/docs/PROGRESS.md",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/tools/check.py",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/python-tests.yml",
+        "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "halo2-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-087",
@@ -14327,18 +14342,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 120,
-      "insufficient-evidence": 92,
-      "pending": 379
-    },
-    "units_by_state": {
-      "already-curated": 119,
+      "already-curated": 121,
       "insufficient-evidence": 92,
       "pending": 378
     },
-    "primary_reviewed_units": 152,
-    "catalog_linked_occurrences": 131,
-    "distinct_resource_ids": 125,
+    "units_by_state": {
+      "already-curated": 120,
+      "insufficient-evidence": 92,
+      "pending": 377
+    },
+    "primary_reviewed_units": 153,
+    "catalog_linked_occurrences": 132,
+    "distinct_resource_ids": 126,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

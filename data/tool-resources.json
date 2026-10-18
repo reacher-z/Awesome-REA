@@ -4467,5 +4467,38 @@
       "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/LICENSE",
       "https://github.com/HarbourMasters/PaperBoat/releases/tag/1.0.3"
     ]
+  },
+  {
+    "id": "halo2-matching-decomp-case",
+    "name": "Halo 2: an agent-assisted matching decompilation of an LTCG Xbox build",
+    "url": "https://github.com/kirklandsig/halo2-decompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress matching decompilation of Halo 2 for the original Xbox: contributors write C and C++ that the period compiler, building the whole program with link-time code generation, must turn back into the retail executable's bytes function by function. The README reports just under half of the game-function bytes matched and leaves a native port for a later stage. It discloses that much of the maintainer's work runs in Claude and Codex coding-agent lanes.",
+    "description_zh": "Halo 2（初代 Xbox）的进行中一致性反编译：贡献者编写 C 与 C++ 代码，由原时代编译器以链接时代码生成方式构建整个程序，须逐函数还原出零售版可执行文件的字节。README 报告游戏函数字节的匹配比例接近一半，原生移植留待后续阶段。项目披露维护者的大量工作在 Claude 与 Codex 编程智能体流水线中进行。",
+    "evidence_url": "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README targets the retail disc build's default.xbe (internal name halo2ship.exe, linked 2004-09-28, XDK 5849, Visual C++ 7.1 with /LTCG), identified by SHA-256. At the reviewed commit it reports 9,115 of 11,321 game functions matched (46.90% of game-function bytes; 35.59% of all in-scope bytes). Decompilation and readability work are in progress and a native port is a later stage, so the project produces no playable or ported build.",
+      "Supply the retail default.xbe from a copy you are entitled to use, and the XDK 5849 development toolchain, yourself; neither is provided, and the maintainers will not help obtain the SDK. README says byte-for-byte checking currently depends on that original compiler, which no open-source toolchain can yet reproduce; analysis and documentation need neither. The repository holds no game assets, disc images or leaked material.",
+      "The tools are Python (requirements-dev.txt, with capstone for the checker). tools/build.py builds the whole game as one LTCG image with each source file's flags; tools/check.py compares every marked function with the retail bytes apart from relocated address fields, writes matched/near/todo status to config/functions.csv and exits nonzero while any function differs. Public CI runs the Python tests, whose retail and SDK tests skip without those local inputs, and exports the decomp.dev report from the committed CSV.",
+      "Match counts come from the project's checker; tools/masked.py lists differences the address masking can hide, such as nearby float constants and strings. PROVENANCE.md reports that earlier names drew on sources its policy forbids (third-party names derived from unreleased 2003 linker maps, and an internal 2007 debug build); those were removed or renamed with match status unchanged, while the derivation of names that follow the Halo CE decompilation is still under review. This collection ran no checks.",
+      "Contributors' own work is CC0 1.0; LEGAL.md states this places no Halo 2 code, content or trademarks in the public domain, and the project is unaffiliated with Microsoft, Bungie or 343 Industries. README says much of the maintainer's decompilation runs in automated lanes driven by Claude and Codex, with each batch reviewed and checked before it lands, and it offers contributors a prompt for AI coding agents. No REA use is documented and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LEGAL.md",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/PROVENANCE.md",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/docs/PROGRESS.md",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/tools/check.py",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/CONTRIBUTING.md",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/python-tests.yml",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/.github/workflows/decomp-dev.yml",
+      "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LICENSE"
+    ]
   }
 ]
