@@ -977,12 +977,14 @@
       "reported_source_urls": [
         "https://x.com/goan999999/status/2109080288823562734"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@goan999999, 2026-10-11) says REA was used to study a client’s reference website (its pages, scripts and requests) while Codex wrote the code, finishing a paid job in three hours; it includes a video and links only the REA repository. Neither the reference site, the delivered site nor any investigation notes are identified, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the reconstruction and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@goan999999，2026-10-11）称借助 REA 研究客户提供的参考网站的页面、脚本和请求，由 Codex 编写代码，三小时完成一单付费需求；帖子附视频，仅链接 REA 仓库。参考网站、交付网站及任何调查记录均未指明，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；重建及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/goan999999/status/2109080288823562734"
+      ],
       "catalog_matches": []
     },
     {
@@ -998,12 +1000,15 @@
         "https://x.com/RohOnChain/status/2109347169316839434",
         "https://x.com/i/status/2110692386854555977"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts are cited. @RohOnChain (2026-10-11) says he reverse-engineered TradingView and now uses its premium indicators for free, then lists generic steps from REA investigation to an Opus-written rebuild; @0xDeniAi (2026-10-15) describes the same steps for a self-built quant terminal with standard indicators and a backtester, attaching a video and an image. Neither links code, specifications, comparison results or anything showing how paid features were reached. Retain the lead without a catalog mapping; no reconstruction, REA contribution or lawful access is established.",
+      "reason_zh": "所引两条帖子中：@RohOnChain（2026-10-11）称逆向了 TradingView，现可免费使用其付费指标，随后列出从 REA 调查到由 Opus 重建的通用步骤；@0xDeniAi（2026-10-15）以相同步骤描述自建的量化终端，含常见技术指标和回测引擎，并附视频与图片。两帖均未链接代码、规格说明或对照结果，也未说明付费功能如何获得。保留此线索而不建立目录映射；重建、REA 的作用及合法访问均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/RohOnChain/status/2109347169316839434",
+        "https://x.com/i/status/2110692386854555977"
+      ],
       "catalog_matches": []
     },
     {
@@ -1019,12 +1024,15 @@
         "https://x.com/uwwgo/status/2109217632758976755",
         "https://x.com/i/status/2110602443814047871"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The original post (@uwwgo, 2026-10-11) says Claude downloaded the author’s WHOOP Android APK and was fully decompiling it; a follow-up links only the REA repository, and the GitHub account behind the author’s site (Hugo0) has no WHOOP project. The second cited post (@sleepy0x13) recounts another developer’s Zhoop app, a fork of the open-source NOOP project, without tying it to this APK investigation; that path is tracked as the separate lead song:whoop-noop-zhoop-ios. Retain this lead without a catalog mapping; no decompilation results or client are established for the APK report.",
+      "reason_zh": "原帖（@uwwgo，2026-10-11）称 Claude 下载了作者的 WHOOP Android APK 并正在完整反编译；后续帖仅链接 REA 仓库，作者网站对应的 GitHub 账号（Hugo0）也没有 WHOOP 相关项目。所引第二条帖子（@sleepy0x13）讲述另一位开发者基于开源项目 NOOP 分叉出的 Zhoop 应用，并未将其与这次 APK 调查关联；该路线另由 song:whoop-noop-zhoop-ios 线索跟踪。保留此线索而不建立目录映射；该 APK 报告的反编译结果或客户端均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/uwwgo/status/2109217632758976755",
+        "https://x.com/i/status/2110602443814047871"
+      ],
       "catalog_matches": []
     },
     {
@@ -1362,12 +1370,16 @@
         "https://x.com/i/status/2110613996382654771",
         "https://x.com/i/status/2110935009775546599"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Three posts are cited. @maheshboda006 (2026-10-11) reports rebuilding macOS Preview with and without REA and says the REA build was closer to the original; his follow-up links only the REA repository, and his linked site lists no such project. An X article by @__fantasyman describes a side-by-side run in which the REA route parsed Preview’s toolbar plist, menu nib and private selectors and reported 47 passing self-tests, and @tvytlx relays a video account, noting that the AI wrote and ran those tests and set their pass criteria. None publishes source, logs or an independent comparison. Retain the lead without a catalog mapping; the rebuilds and their fidelity are unestablished.",
+      "reason_zh": "所引三条帖子中：@maheshboda006（2026-10-11）称分别在使用与不使用 REA 的情况下重建 macOS「预览」，并称 REA 版本更接近原版；其后续帖仅链接 REA 仓库，作者主页也未列出此项目。@__fantasyman 的 X 长文描述了一次并排对比：REA 路线解析了「预览」的工具栏 plist、菜单 nib 和私有选择器，并报告 47 项自测全部通过；@tvytlx 转述一段视频，并指出这些测试由 AI 自行编写、运行并设定通过标准。各来源均未公开源码、日志或独立对照。保留此线索而不建立目录映射；两种重建及其还原程度均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/maheshboda006/status/2109154423712977359",
+        "https://x.com/i/status/2110613996382654771",
+        "https://x.com/i/status/2110935009775546599"
+      ],
       "catalog_matches": []
     },
     {
@@ -1444,12 +1456,14 @@
       "reported_source_urls": [
         "https://x.com/fexisnpc/status/2103865671608307838"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The pinned collection describes an author-reported ViGEm controller bridge without a model, source or test details. The primary post was inaccessible; no driver or protocol implementation was independently inspected.",
-      "reason_zh": "固定合集描述了作者报告的 ViGEm 手柄桥接，但没有型号、源码或测试细节。一手帖子无法访问；未独立审阅驱动或协议实现。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@fexisnpc; the collection dates it 2026-09-26) could not be read on 2026-10-18 because the public post API reports it as protected. The collection entry summarizes it as the author’s account of reverse-engineering a Bluetooth controller’s protocol and writing a ViGEm driver with AI help, and notes that it gave no model, driver source or test details. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; a published driver or protocol notes can support another review.",
+      "reason_zh": "所引帖子（@fexisnpc，合集记录的发布日期为 2026-09-26）在 2026-10-18 无法读取：公开帖子接口显示其为受保护帖子。合集条目将其概括为作者自述借助 AI 逆向一款蓝牙手柄的控制协议并编写 ViGEm 驱动，并注明帖子未提供模型、驱动源码或测试细节。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；公开的驱动或协议说明可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/fexisnpc/status/2103865671608307838"
+      ],
       "catalog_matches": []
     },
     {
@@ -1557,12 +1571,14 @@
       "reported_source_urls": [
         "https://x.com/anshuc/status/2106131543752122774"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@anshuc, 2026-10-02) presents a music video and says that, among other steps, Claude reverse-engineered GarageBand’s file format to compose with its instruments; the post carries only the video. It links no format notes, code or project files, and a GitHub account with the same name has no public repositories. Retain the lead without a catalog mapping; the file-format work is unestablished.",
+      "reason_zh": "作者帖子（@anshuc，2026-10-02）发布了一段音乐视频，并称制作步骤之一是由 Claude 逆向 GarageBand 文件格式，以便用其乐器作曲；帖子仅附该视频。帖中未链接格式说明、代码或工程文件，同名 GitHub 账号也没有公开仓库。保留此线索而不建立目录映射；文件格式工作未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/anshuc/status/2106131543752122774"
+      ],
       "catalog_matches": []
     },
     {
@@ -14284,15 +14300,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 118,
-      "insufficient-evidence": 86,
-      "pending": 387
+      "insufficient-evidence": 92,
+      "pending": 381
     },
     "units_by_state": {
       "already-curated": 117,
-      "insufficient-evidence": 86,
-      "pending": 386
+      "insufficient-evidence": 92,
+      "pending": 380
     },
-    "primary_reviewed_units": 145,
+    "primary_reviewed_units": 151,
     "catalog_linked_occurrences": 129,
     "distinct_resource_ids": 123,
     "distinct_paper_ids": 1,
