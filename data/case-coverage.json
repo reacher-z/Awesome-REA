@@ -3040,12 +3040,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109722857207115879"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@qwerty__cs, 2026-10-12) says that after a Homatics Box R 4K Plus was upgraded to Android TV 14, Dolby Vision playback showed a green tint, and that Claude with REA reverse-engineered the firmware, found the cause and fixed it. It names no firmware build, cause or change and publishes no patch, method or before/after evidence. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the diagnosis, the fix and REA’s contribution are unestablished.",
+      "reason_zh": "作者的纯文字帖子（@qwerty__cs，2026-10-12）称 Homatics Box R 4K Plus 升级到 Android TV 14 后，杜比视界播放出现绿屏偏色，借助 Claude 与 REA 逆向固件后找到原因并修好。帖子未指明固件版本、原因或改动，也未公开补丁、方法或修复前后的证据。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；诊断、修复及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/qwerty__cs/status/2109722857207115879"
+      ],
       "catalog_matches": []
     },
     {
@@ -3060,12 +3062,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109733299115475393"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@khaled_cli, 2026-10-12), written in Arabic, says the author used the REA repository to take apart one website’s design, rebuilt it from scratch with personal changes and made a personal site; it shows a video of web and iPhone versions. It names neither the source site nor the new one and publishes no code or REA output. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the reconstruction and REA’s contribution are unestablished.",
+      "reason_zh": "作者以阿拉伯语发布的帖子（@khaled_cli，2026-10-12）称借助 REA 仓库拆解了某个网站的设计，从零重建并加入自己的修改，做成个人网站；帖子附网页版和 iPhone 版的演示视频。帖子既未指明原网站，也未指明新网站，未公开代码或 REA 输出。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该重建及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/khaled_cli/status/2109733299115475393"
+      ],
       "catalog_matches": []
     },
     {
@@ -3080,12 +3084,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109733493202981247"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Andrew_Blumson, 2026-10-12) comments on a third-party YouTube video about REA and describes the author’s general method: Codex computer use operates the app to be replicated, then Replit builds it; the author says many SaaS products were replaced this way by building only the features actually used. It names no target app or rebuild and links no artifact. Among the public repositories of the GitHub account linked to the handle, none is described as such a rebuild. Retain the lead without a catalog mapping; this is a workflow claim, not a documented case.",
+      "reason_zh": "作者帖子（@Andrew_Blumson，2026-10-12）评论了一段第三方 REA 视频，并描述作者的通用做法：用 Codex 的电脑操作功能使用想复刻的应用，再让 Replit 构建；作者称已用这种方式替换许多 SaaS，只做实际用到的功能。帖子未指明任何目标应用或重建成果，也未链接任何成果。与该账号关联的 GitHub 账号中，没有公开仓库被描述为此类重建。保留此线索而不建立目录映射；这是工作流说法，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/Andrew_Blumson/status/2109733493202981247"
+      ],
       "catalog_matches": []
     },
     {
@@ -3233,12 +3239,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109774258738176000"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ceoico, 2026-10-12) says the author reverse-engineered an LG TV and made it run Claude Code natively, with speech-to-text from the remote; it shows a video and quotes another user’s air-conditioner post. It names no TV model or webOS version and publishes no code, build steps or method. No GitHub account matching the handle was found, and the author’s linked site has no write-up of it. Retain the lead without a catalog mapping; how Claude Code runs on the TV, and whether natively, is unestablished.",
+      "reason_zh": "作者帖子（@ceoico，2026-10-12）称作者逆向了一台 LG 电视，让它原生运行 Claude Code，还能用遥控器语音转文字输入；帖子附视频，并引用另一位用户关于空调的帖子。帖子未指明电视型号或 webOS 版本，也未公开代码、构建步骤或方法。未找到与该账号名对应的 GitHub 账号，作者链接的网站也没有相关文章。保留此线索而不建立目录映射；Claude Code 如何在电视上运行、是否为原生运行均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ceoico/status/2109774258738176000"
+      ],
       "catalog_matches": []
     },
     {
@@ -3253,12 +3261,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109779123778490858"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@trendtranslate1, 2026-10-12) says, in passing, that the author used Codex to decrypt WeChat’s locally stored encrypted chat records and Claude to reverse-engineer old iOS games, both on official accounts. It names no client version or platform and gives no method, output or artifact. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the reported decryption is unestablished, and this ledger records no method.",
+      "reason_zh": "所引回复（@trendtranslate1，2026-10-12）顺带称作者曾用 Codex 解开微信本地加密的聊天记录，也用 Claude 逆向过旧 iOS 游戏，且都在正式账号上进行。回复未指明客户端版本或平台，也没有方法、输出或成果。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；所报告的解密未确立，本记录也不收录任何方法。",
+      "primary_evidence_urls": [
+        "https://x.com/trendtranslate1/status/2109779123778490858"
+      ],
       "catalog_matches": []
     },
     {
@@ -3315,12 +3325,15 @@
         "https://x.com/i/status/2109783203892597103",
         "https://x.com/i/status/2109783810472845779"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited posts (@operatranscend, 2026-10-12) are an English essay and its Korean translation about REA. They relay a video’s test: sixteen note files, one damaged, ten minutes per attempt, once with REA and once without, and by the video’s account both attempts produced a working decoder. The essay neither names nor links the video, the note application or the decoders. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a second-hand account and its primary source is not identified.",
+      "reason_zh": "所引帖子（@operatranscend，2026-10-12）是一篇关于 REA 的英文随笔及其韩文译文。文中转述某段视频的测试：16 个笔记文件（其中一个损坏），每次尝试限时十分钟，分别使用和不使用 REA 各一次；按视频的说法，两次都做出了可用的解码器。随笔未指明或链接该视频、笔记应用或解码器。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是二手转述，其一手来源未能确认。",
+      "primary_evidence_urls": [
+        "https://x.com/operatranscend/status/2109783203892597103",
+        "https://x.com/operatranscend/status/2109783810472845779"
+      ],
       "catalog_matches": []
     },
     {
@@ -15124,15 +15137,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 165,
-      "insufficient-evidence": 132,
-      "pending": 294
+      "insufficient-evidence": 138,
+      "pending": 288
     },
     "units_by_state": {
       "already-curated": 164,
-      "insufficient-evidence": 132,
-      "pending": 293
+      "insufficient-evidence": 138,
+      "pending": 287
     },
-    "primary_reviewed_units": 236,
+    "primary_reviewed_units": 242,
     "catalog_linked_occurrences": 176,
     "distinct_resource_ids": 170,
     "distinct_paper_ids": 1,
