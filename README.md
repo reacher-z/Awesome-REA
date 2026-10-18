@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 224](https://img.shields.io/badge/resources-224-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 85](https://img.shields.io/badge/cases-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 225](https://img.shields.io/badge/resources-225-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 86](https://img.shields.io/badge/cases-86-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (17) · [Game](#game) (68) · [App](#app) (44)
+- [Website](#website) (17) · [Game](#game) (69) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (12) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (85) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (86) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -472,6 +472,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Adapts the LEGO Island decompilation into a portable build for desktop, mobile, console, DOS and Web targets. Windows-only subsystems are replaced with SDL3, miniaudio, iniparser and a custom Direct3D Retained Mode re-implementation, while core gameplay is meant to stay unchanged. It ports reconstructed source rather than checking byte-identical binaries, so it is distinct from the exact-rebuild decompilation case.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lego-island-portable-case/)
+
+- [**c1: a C port of PlayStation Crash Bandicoot**](https://github.com/wurlyfox/c1)
+
+  Ports the original PlayStation Crash Bandicoot game code to C function by function; its coding standard labels functions with the addresses of their original implementations. Only the PC build, using OpenGL, SDL2 and FluidSynth, currently works; it loads asset files from the user’s game disc and is only partially playable.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/crash-bandicoot-c1-port-case/)
 
 #### Tools, projects and integrations
 
