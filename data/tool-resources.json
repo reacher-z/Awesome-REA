@@ -6138,5 +6138,38 @@
       "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/MCP_Server/mcp_cheatengine.py",
       "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/LICENSE"
     ]
+  },
+  {
+    "id": "dead-rising-2-case-west-recomp-case",
+    "name": "Dead Rising 2: Case West — a sibling Xbox 360 XBLA static recompilation port",
+    "url": "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA epilogue Dead Rising 2: Case West by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. It shares most of its runtime with the author’s separate Case Zero port, executing the console GPU command stream on Vulkan with XMA audio and keyboard/mouse input. Completion and platform results are project-reported.",
+    "description_zh": "使用打过补丁的 XenonRecomp 静态重编译 Xbox 360 代码，并用打过补丁的 XenosRecomp 转换着色器，为 XBLA 尾声篇 Dead Rising 2: Case West 构建可在 Windows、Linux、Steam Deck 和 Apple Silicon Mac 上运行的原生移植。它与作者另一个 Case Zero 移植共用大部分运行时，在 Vulkan 上执行主机 GPU 命令流，并提供 XMA 音频和键鼠输入。通关情况与各平台结果均为项目报告。",
+    "evidence_url": "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s own XBLA package for title 58410B00 (about 1.2 GB, no file extension) in assets/package; the first run unpacks it and prepares the 1,322 shaders and the keyboard prompt art locally. No game data is committed or shipped: assets/ and the ppc/ C++ generated from the retail executable are gitignored, and the committed key-cap chips are the project’s own art.",
+      "Releases need a Vulkan 1.3 GPU with Windows 10+ x86-64, Linux x86-64 with glibc 2.35+, the Steam Deck archive, or macOS 13+ on Apple Silicon; Intel Macs are unsupported, and about 3 GB is needed after unpacking. Source builds apply the two combined patches in tools/ci to hedge-dev XenonRecomp and XenosRecomp at the base commits pinned in the CI workflow, need a sibling XenonLive checkout, CMake and Ninja, and first regenerate ppc/ from config/CaseWest.toml.",
+      "The README declares v1.1.2 (October 2026) the final build: single-player is completable start to finish, and two-player online co-op works only when started from the XenonLive launcher. It reports 58,345 recompiled PowerPC functions, 60 fps, an in-game graphics menu and ultrawide and 16:10 support. Shading differences and an AMD-only black square remain known issues, and the Steam Deck build has not been tested on Deck hardware.",
+      "CI is meant to build the host runtime on Linux and Windows against a stub ppc/ tree, but its run for the reviewed commit skipped both build jobs because the XenonLive deploy key was unavailable, and CI cannot run the game in any case. Playthroughs and fixes imported from Case Zero are the maintainer’s reports; this collection did not build or run the port.",
+      "Project code is under PolyForm Noncommercial 1.0.0, which permits noncommercial use, modification and forks but not sale; XenonRecomp and XenosRecomp are MIT, and Capcom retains the game’s rights. THIRD_PARTY.md was copied from the Case Zero port and says no UnleashedRecomp GPL code is used. The development journal is committed as CLAUDE.md, but the README states no AI-use policy; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/THIRD_PARTY.md",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/LICENSE",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/.github/workflows/build.yml",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/tools/ci/regen_patches.sh",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/config/CaseWest.toml",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/runtime/CMakeLists.txt",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/tools/gen_kbm_icons.py",
+      "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/actions/runs/38533020839"
+    ]
   }
 ]

@@ -2622,5 +2622,15 @@
       "作者报告 67 项内嵌测试全部通过（15 项单元测试、52 项集成测试），10 个内存中的变异版本均被测试拒绝，项目所有者另报告于 2026-10-13 完成 7 项手动浏览器检查，但未提供浏览器或操作系统信息。第 7,001 次更新越过 13 多加一步等浮点结果是在重建版本中测得，并非对原游戏采样。没有 CI 或跨浏览器覆盖，本合集未运行任何检查。",
       "项目采用 MIT 许可；简短的原始源码摘录保留 Chromium 的 BSD 风格版权头，THIRD_PARTY_NOTICES.md 完整转载上游 BSD-3-Clause 条款。此第三方仓库与 REA 官方的恐龙加速教学案例相互独立。"
     ]
+  },
+  "dead-rising-2-case-west-recomp-case": {
+    "name": "Dead Rising 2: Case West：同系列的 Xbox 360 XBLA 静态重编译移植",
+    "requirements": [
+      "需使用者自有的游戏 58410B00 的 XBLA 游戏包（约 1.2 GB，无扩展名），放入 assets/package；首次运行会在本地解包，并准备 1,322 个着色器及键盘提示贴图。仓库与发布包均不含游戏数据：assets/ 和由零售版可执行文件生成的 ppc/ C++ 代码都被 git 忽略，仓库中的键帽贴图是项目自绘的美术。",
+      "运行发布版需支持 Vulkan 1.3 的显卡，以及 Windows 10+ x86-64、glibc 2.35+ 的 Linux x86-64、Steam Deck 专用包或 Apple Silicon 上的 macOS 13+；不支持 Intel Mac，解包后约需 3 GB 空间。从源码构建需将 tools/ci 中的两个合并补丁应用到 CI 工作流所固定基准提交的 hedge-dev XenonRecomp 与 XenosRecomp 上，还需同级目录下的 XenonLive 检出、CMake 和 Ninja，并先依据 config/CaseWest.toml 重新生成 ppc/。",
+      "README 宣布 v1.1.2（2026 年 10 月）为最终版本：单人模式可从头玩到尾，双人在线合作只有从 XenonLive 启动器启动时才可用。README 报告共静态重编译 58,345 个 PowerPC 函数，支持 60 fps、游戏内图形菜单以及超宽屏和 16:10 显示。部分着色差异和仅见于 AMD 显卡的黑色方块仍是已知问题，Steam Deck 版也未在实机上测试。",
+      "CI 本应以占位 ppc/ 代码树在 Linux 和 Windows 上构建宿主运行时，但所审提交的运行因缺少 XenonLive 部署密钥而跳过了两个构建任务，而且 CI 本身也无法运行游戏。通关结果以及从 Case Zero 移植过来的修复均为维护者报告；本合集未构建或运行该移植。",
+      "项目代码采用 PolyForm Noncommercial 1.0.0，允许非商业使用、修改和分叉，但不允许出售；XenonRecomp 与 XenosRecomp 为 MIT 许可，游戏权利归 Capcom。THIRD_PARTY.md 复制自 Case Zero 移植，并称未使用 UnleashedRecomp 的 GPL 代码。开发日志以 CLAUDE.md 提交，但 README 未说明 AI 使用政策；未确立与 REA 的关联。"
+    ]
   }
 }
