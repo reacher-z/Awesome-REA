@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 255](https://img.shields.io/badge/resources-255-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 115](https://img.shields.io/badge/cases-115-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 256](https://img.shields.io/badge/resources-256-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 116](https://img.shields.io/badge/cases-116-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (96) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (97) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (115) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (116) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -646,6 +646,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A work-in-progress matching decompilation of Halo 2 for the original Xbox: contributors write C and C++ that the period compiler, building the whole program with link-time code generation, must turn back into the retail executable's bytes function by function. The README reports just under half of the game-function bytes matched and leaves a native port for a later stage. It discloses that much of the maintainer's work runs in Claude and Codex coding-agent lanes.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/halo2-matching-decomp-case/)
+
+- [**DiabloWeb: a WebAssembly browser port built on Devilution**](https://github.com/d07RiV/diabloweb)
+
+  Runs Diablo in web browsers by compiling a stripped-down fork of Devilution, the community reconstruction of the game’s original source, to WebAssembly behind a React front end. The fork removes the Storm, DiabloUI, DirectX and Windows dependencies and reworks event handling for the browser. It is a port built on a reconstruction and reports no matching or behavior-equivalence checks of its own.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/diabloweb-devilution-wasm-port-case/)
 
 #### Tools, projects and integrations
 
