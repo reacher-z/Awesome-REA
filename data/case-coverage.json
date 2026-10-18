@@ -1753,12 +1753,16 @@
         "https://x.com/i/status/2110692783375757778",
         "https://x.com/i/status/2110415588438733222"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@thisishars; its ID dates it 2026-10-12) returned not found from the public post API on 2026-10-18; the collection entry summarizes it as a plan to study Codex’s computer-use, in-app browser and extension features with REA so another model could gain similar control, with no completion reported. The two other cited posts belong to a separate thread: @andrehfp suggests using Codex’s computer-use MCP from Opus, and @sigaoed says it accepted only Codex’s process signature and that they will try forking it with REA. No code, findings or fork is linked, and no GitHub account matching @thisishars or @sigaoed was found. Retain the lead without a catalog mapping; the research is planned or unreported.",
+      "reason_zh": "所引帖子（@thisishars，按帖子 ID 推算发布于 2026-10-12）在 2026-10-18 通过公开帖子接口查询时显示不存在；合集条目将其概括为计划借助 REA 研究 Codex 的计算机操作、内置浏览器及扩展功能，让另一模型获得类似的操控能力，且未报告完成。另两条所引帖子属于另一讨论串：@andrehfp 建议让 Opus 使用 Codex 的计算机操作 MCP，@sigaoed 称该 MCP 只接受 Codex 的进程签名，并表示打算用 REA 分叉它。各帖均未链接代码、发现或分叉，也未找到与 @thisishars 或 @sigaoed 对应的 GitHub 账号。保留此线索而不建立目录映射；该研究仍处于计划阶段或未见报告。",
+      "primary_evidence_urls": [
+        "https://x.com/thisishars/status/2109461719789735948",
+        "https://x.com/i/status/2110692783375757778",
+        "https://x.com/i/status/2110415588438733222"
+      ],
       "catalog_matches": []
     },
     {
@@ -1777,12 +1781,18 @@
         "https://x.com/i/status/2109761893808365700",
         "https://x.com/i/status/2110080570612941090"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Five posts are cited. @0rdlibrary says pump.fun is being reverse-engineered in public by an agent forked from the REA repository and running autonomously, pointing to @clawddevs. @clawddevs reports a launch-and-migration test against Raydium’s mainnet program, posts a screenshot of Codex runs, and quotes an agent status saying REA traced two creation paths while source/build verification and production readiness were unproven. None links the fork, code, test logs or program analysis, and no GitHub account matching either handle was found. Retain the lead without a catalog mapping; no pump.fun reconstruction or REA contribution is established.",
+      "reason_zh": "所引五条帖子中：@0rdlibrary 称有一个从 REA 仓库分叉的智能体正在自主运行、公开逆向 pump.fun，并提到 @clawddevs。@clawddevs 报告了针对 Raydium 主网程序的发行与迁移测试，贴出 Codex 运行截图，并引述智能体的状态说明：REA 已追踪两条创建路径，但源码／构建验证和生产可用性仍未证实。各帖均未链接分叉、代码、测试日志或程序分析，也未找到与这两个账号名对应的 GitHub 账号。保留此线索而不建立目录映射；pump.fun 重建及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/0rdlibrary/status/2109464346103263523",
+        "https://x.com/clawddevs/status/2109461838144458936",
+        "https://x.com/i/status/2109730115152216125",
+        "https://x.com/i/status/2109761893808365700",
+        "https://x.com/i/status/2110080570612941090"
+      ],
       "catalog_matches": []
     },
     {
@@ -1854,12 +1864,14 @@
       "reported_source_urls": [
         "https://x.com/Astronaut_1216/status/2109487167726903560"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@Astronaut_1216; its ID dates it 2026-10-12) returned not found from the public post API on 2026-10-18. The collection entry summarizes it as a personal cover-making workbench that Codex built with Fabric.js, with the author only planning to study Gaoding Design’s interface and logic with REA and not claiming recovery of its features. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the workbench nor any REA analysis is publicly documented.",
+      "reason_zh": "所引帖子（@Astronaut_1216，按帖子 ID 推算发布于 2026-10-12）在 2026-10-18 通过公开帖子接口查询时显示不存在。合集条目将其概括为作者让 Codex 用 Fabric.js 搭建的个人封面制作工具，作者只是计划借助 REA 研究稿定设计的界面与逻辑，并未声称恢复其功能。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该工具及任何 REA 分析均无公开记录。",
+      "primary_evidence_urls": [
+        "https://x.com/Astronaut_1216/status/2109487167726903560"
+      ],
       "catalog_matches": []
     },
     {
@@ -1874,12 +1886,14 @@
       "reported_source_urls": [
         "https://x.com/MovingCharts11/status/2109491501013377526"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@MovingCharts11, 2026-10-12) says an application that does not support the author’s gaming mouse on macOS was reverse-engineered with ChatGPT, listing RGB changes, DPI customization and button mappings; it carries two photos. It names neither the mouse nor the vendor software and links no code or protocol notes, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the protocol work is unestablished.",
+      "reason_zh": "作者帖子（@MovingCharts11，2026-10-12）称借助 ChatGPT 逆向了一款不支持其游戏鼠标在 macOS 上使用的应用，并列出 RGB 调整、DPI 自定义和按键映射；帖子附两张图片。帖子未说明鼠标型号或原厂软件，也未链接代码或协议说明，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；协议工作未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/MovingCharts11/status/2109491501013377526"
+      ],
       "catalog_matches": []
     },
     {
@@ -1914,12 +1928,14 @@
       "reported_source_urls": [
         "https://x.com/pablothethinker/status/2109509759044854087"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@pablothethinker, 2026-10-12) says the author has been reverse-engineering several GitHub projects to test what Hark can do and created a new AI harness after reverse-engineering Hermes Agent. It names no harness and links nothing; the author’s GitHub holds Hermes Agent add-ons and a fork of Hermes Agent’s public source, but none is described as a harness derived from that analysis. Retain the lead without a catalog mapping; the harness and the reverse-engineering work are unestablished.",
+      "reason_zh": "所引回复（@pablothethinker，2026-10-12）称作者一直在逆向多个 GitHub 项目以测试 Hark 的能力，并在逆向 Hermes Agent 之后创建了一个新的 AI 智能体框架（harness）。回复未说明该框架名称，也未链接任何内容；作者的 GitHub 上有若干 Hermes Agent 插件及其公开源码的分叉，但均未被描述为基于这项分析构建的框架。保留此线索而不建立目录映射；该框架及逆向工作均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/pablothethinker/status/2109509759044854087"
+      ],
       "catalog_matches": []
     },
     {
@@ -1963,12 +1979,17 @@
         "https://x.com/0x0SojalSec/status/2109517461921902780",
         "https://x.com/i/status/2110549825548959842"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts are cited. @0x0SojalSec (2026-10-12) claims AI reverse-engineered PS5 security within weeks and links a video of an unofficial store on jailbroken consoles; a follow-up points to another of the author’s posts, which links a releases repository for that store that GitHub reports as not found on 2026-10-18. @AGTPinsights summarizes PS5 homebrew and emulation news and says the store’s repository reportedly vanished after a cease-and-desist. Neither post documents any security analysis or AI contribution. Retain the lead without a catalog mapping; AI-assisted PS5 reverse engineering is not established, and the posts describe the store as giving away paid games, updates and DLC.",
+      "reason_zh": "所引两条帖子中：@0x0SojalSec（2026-10-12）称 AI 在数周内逆向了 PS5 的安全机制，并链接一段越狱主机上非官方商店的视频；后续帖指向作者的另一条帖子，其中链接了该商店的发布仓库，GitHub 在 2026-10-18 显示该仓库不存在。@AGTPinsights 汇总了 PS5 自制软件与模拟器动态，并称据报道该商店的仓库在收到停止侵权函后消失。两帖均未记录任何安全分析或 AI 的作用。保留此线索而不建立目录映射；AI 辅助逆向 PS5 一事并未确立，且帖子描述该商店免费提供付费游戏、更新和 DLC。",
+      "primary_evidence_urls": [
+        "https://x.com/0x0SojalSec/status/2109517461921902780",
+        "https://x.com/0x0SojalSec/status/2109517839250194466",
+        "https://x.com/0x0SojalSec/status/2109514141811847641",
+        "https://x.com/i/status/2110549825548959842"
+      ],
       "catalog_matches": []
     },
     {
@@ -14469,15 +14490,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 129,
-      "insufficient-evidence": 98,
-      "pending": 364
+      "insufficient-evidence": 104,
+      "pending": 358
     },
     "units_by_state": {
       "already-curated": 128,
-      "insufficient-evidence": 98,
-      "pending": 363
+      "insufficient-evidence": 104,
+      "pending": 357
     },
-    "primary_reviewed_units": 166,
+    "primary_reviewed_units": 172,
     "catalog_linked_occurrences": 140,
     "distinct_resource_ids": 134,
     "distinct_paper_ids": 1,
