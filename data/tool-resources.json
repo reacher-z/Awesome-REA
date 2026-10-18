@@ -4295,5 +4295,36 @@
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md",
       "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/LICENSE"
     ]
+  },
+  {
+    "id": "d2r-mobile-switch-rehost-case",
+    "name": "D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices",
+    "url": "https://github.com/jhaizhou-ops/d2r-mobile",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runs the Nintendo Switch release’s own aarch64 program natively on iPhone, iPad and Apple silicon Macs, rewriting only instructions that depend on the Horizon kernel and supplying its system services and the NVN graphics API on Metal. Shaders are translated offline from the user’s files, and the project adds its own touch interface and endgame features. It is a rehosting compatibility layer, not a decompilation or recompiled source.",
+    "description_zh": "在 iPhone、iPad 和 Apple 芯片 Mac 上原生运行 Nintendo Switch 版自身的 aarch64 程序，仅改写依赖 Horizon 内核的指令，并以 Metal 提供其系统服务与 NVN 图形 API。着色器由使用者自有文件离线转译，项目另行加入触控界面与终局玩法。这是重新托管的兼容层，不是反编译或重编译出的源码。",
+    "evidence_url": "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets only the Switch release with the Reign of the Warlock expansion at 1.0.34.0 (PC 3.3.94012); the rewrite rules stop on other versions. README reports iPhone/iPad builds for A14/M1 or later (iOS 26, or iOS 18–25 via an older-API build) and native Apple silicon Mac builds; A16-and-earlier devices need an extra texture pack, Apple TV is a community developer preview, and Intel Macs, A13-and-earlier chips and online play are unsupported.",
+      "Supply your own Switch program files (ExeFS main, sdk and subsdk0) and RomFS update data for that version; the rewritten program, translated shaders and on-device resource folder are generated locally from them. The repository holds no game code, art, text or shaders, but records shader interface tables, graphics-API names and about 800 main-program addresses, itemized in docs/DERIVED.md.",
+      "The main route is a full build on an Apple silicon Mac with Xcode, the Python environment that setup.sh prepares and an Apple signing account; a no-Xcode route packages a prebuilt shell on Windows, with Linux packaging and sideloading-tool signing reported unverified. Shader translation bundles Ryujinx’s translator, and SPIRV-Cross emits Metal source.",
+      "dm/verify documents structural checks and Unicorn-based equivalence tests for every rewrite site, which need only the user’s files, plus unit tests. Save, tick-state and screenshot gates compare against ground-truth recordings from a patched Ryujinx; those recordings and driver scripts are not shipped, so these gates cannot be rerun from the repository. README reports a 44-device closed beta and dated iPhone 17 Pro Max measurements; this collection ran none of these checks.",
+      "The project declares MIT; bundled third-party code keeps its own license (the Ryujinx translator MIT, deko3d-derived code zlib, FLIP BSD 3-Clause). Seven offline-play rewrites come from a community patch whose authorship and license are unknown. Blizzard and Nintendo retain their rights in the game; the reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/README.md",
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/verify/README.md",
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/GAME_FILES.md",
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DERIVED.md",
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DEPENDENCIES.md",
+      "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/LICENSE"
+    ]
   }
 ]

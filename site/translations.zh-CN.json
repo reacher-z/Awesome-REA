@@ -2028,5 +2028,15 @@
       "BT3-Decompiled 的 README 报告主程序 99.92%、菜单程序 99.97% 的游戏代码已为一致的 C 代码，两个重建二进制均与原版逐字节相同；Sony SDK 与 CRI 库不在范围内。移植日志报告，一段在 PCSX2 中录制的回放在抽样时刻的体力值及最终计时上与主机一致，但早期记录仍指出部分角色状态字不同；macOS 版据报告在演示对战的每一帧都与 Linux 状态相同。这些仍为项目报告，本合集未运行任何内容。",
       "移植自身的代码在提交 06e4671 之后采用 AGPL-3.0-only，此前（含该提交）采用 MIT；随附库保留各自条款。README 说明 src/ 和 include/ 中的游戏代码归游戏权利人所有，BT3-Decompiled 的 CC0 1.0 声明只覆盖其自身的重建工作。README 称项目借助 AI 完成，文档中也有供并行反编译智能体使用的工作规则；未记录 REA 使用，也不主张运行复现。"
     ]
+  },
+  "d2r-mobile-switch-rehost-case": {
+    "name": "D2R Mobile：在 Apple 设备上重新托管 Diablo II: Resurrected 的 Switch 程序",
+    "requirements": [
+      "仅支持带 Reign of the Warlock 资料片、版本 1.0.34.0（对应 PC 3.3.94012）的 Switch 版；其他版本会被改写规则拦下。README 报告支持 A14／M1 及以上的 iPhone／iPad 构建（iOS 26，或经旧版 API 构建支持 iOS 18–25）以及原生 Apple 芯片 Mac 构建；A16 及更早设备需额外纹理包，Apple TV 为社区开发者预览版，Intel Mac、A13 及更早芯片和联机均不支持。",
+      "需自备该版本的 Switch 程序文件（ExeFS 中的 main、sdk、subsdk0）及 RomFS 更新数据；改写后的程序、转译后的着色器和设备端资源文件夹均据此在本地生成。仓库不含游戏代码、美术、文本或着色器，但记录了着色器接口表、图形 API 名称及约 800 个主程序地址，并在 docs/DERIVED.md 中逐项列明。",
+      "主要途径是在装有 Xcode 的 Apple 芯片 Mac 上完整构建，需 setup.sh 准备的 Python 环境及 Apple 签名账户；无 Xcode 途径在 Windows 上为预构建外壳打包，Linux 打包及侧载工具签名报告尚未验证。着色器转译内置 Ryujinx 的转译器，并由 SPIRV-Cross 生成 Metal 源码。",
+      "dm/verify 记录了对每个改写位置的结构检查和基于 Unicorn 的等价测试（只需使用者自有文件）以及单元测试。存档、逐 tick 状态和截图关卡与修补版 Ryujinx 录制的基准数据比对；这些录制及驱动脚本不随仓库提供，因此无法仅凭仓库重跑这些关卡。README 报告 44 台设备的封闭测试及注明日期的 iPhone 17 Pro Max 实测；本合集未运行上述任何检查。",
+      "项目声明采用 MIT；内置第三方代码保留各自许可（Ryujinx 转译器为 MIT，源自 deko3d 的代码为 zlib，FLIP 为 BSD 3-Clause）。七条离线运行改写取自作者与许可均不明的社区补丁。Blizzard 与 Nintendo 对游戏的权利不受影响；所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }

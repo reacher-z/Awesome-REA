@@ -11535,13 +11535,27 @@
       "reported_source_urls": [
         "https://github.com/jhaizhou-ops/d2r-mobile"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 65 (README line 644) lists jhaizhou-ops/d2r-mobile under 🔥 Diablo II: Resurrected. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 65 行（README 第 644 行）在 🔥 Diablo II: Resurrected 下列出 jhaizhou-ops/d2r-mobile。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, architecture and verification notes, game-file and derived-material inventories and dependency licenses support this rehosting of the Switch program on Apple platforms. Full mapping covers that compatibility layer, not a decompilation or independently reproduced gameplay. The single supported game version, user-supplied files, unshipped ground-truth recordings and project-reported results remain explicit.",
+      "reason_zh": "固定版本的 README、架构与验证说明、游戏文件及派生材料清单和依赖许可，支持这一在 Apple 平台上重新托管 Switch 程序的项目。完整映射覆盖该兼容层，不代表反编译或独立复现的游戏行为。唯一受支持的游戏版本、使用者自备文件、未随附的基准录制及项目报告的结果均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/README.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/README.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/verify/README.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/GAME_FILES.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DERIVED.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DEPENDENCIES.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "d2r-mobile-switch-rehost-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-066",
@@ -14233,18 +14247,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 115,
-      "insufficient-evidence": 86,
-      "pending": 390
-    },
-    "units_by_state": {
-      "already-curated": 114,
+      "already-curated": 116,
       "insufficient-evidence": 86,
       "pending": 389
     },
-    "primary_reviewed_units": 142,
-    "catalog_linked_occurrences": 126,
-    "distinct_resource_ids": 120,
+    "units_by_state": {
+      "already-curated": 115,
+      "insufficient-evidence": 86,
+      "pending": 388
+    },
+    "primary_reviewed_units": 143,
+    "catalog_linked_occurrences": 127,
+    "distinct_resource_ids": 121,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
