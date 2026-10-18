@@ -9498,13 +9498,37 @@
         "https://github.com/sm64pc/sm64ex",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 1 (README line 58) lists sm64pc/sm64ex under 🍄 Super Mario 64. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 1 行（README 第 58 行）在 🍄 Super Mario 64 下列出 sm64pc/sm64ex。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, Makefile, asset extractor, Jenkinsfile and build wiki document an enhanced native port built on decompiled Super Mario 64 source, with assets extracted from an original ROM and output comparison disabled. The full mapping covers this port; the related mapping records its lineage from the separately curated n64decomp reconstruction, not a matching result. The linked post only points to a general archive of decompiled games and was not used as evidence.",
+      "reason_zh": "固定版本的 README、Makefile、素材提取脚本、Jenkinsfile 和构建 wiki 记录了基于 Super Mario 64 反编译源码的增强版原生移植：素材从原 ROM 提取，输出比较处于关闭状态。完整映射覆盖此移植；相关映射记录其源自另行收录的 n64decomp 重建项目，并不表示一致性结果。所链帖子仅指向一个反编译游戏综合存档，未作为证据使用。",
+      "primary_evidence_urls": [
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/README.md",
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/Makefile",
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/extract_assets.py",
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/Jenkinsfile",
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/src/pc/README-n64-fast32-engine.md",
+        "https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Linux/f2a7911133395886a2dce815f5cb5773e6c2ad8d",
+        "https://github.com/sm64pc/sm64ex/wiki/Build-options/f9aff0b0db9cd4ec1c40ac7a2bc42af969edb42f",
+        "https://github.com/sm64pc/sm64ex/wiki/Known-issues/94d262d19ea9e16990d955de28560df563dc5372",
+        "https://github.com/sm64-port/sm64-port/blob/2b17d081c9798b31b91dc71f37994b0da28cffc9/README.md",
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sm64ex-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "sm64-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "hao-games:row-002",
@@ -13638,18 +13662,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 80,
-      "insufficient-evidence": 73,
-      "pending": 438
-    },
-    "units_by_state": {
-      "already-curated": 79,
+      "already-curated": 81,
       "insufficient-evidence": 73,
       "pending": 437
     },
-    "primary_reviewed_units": 96,
-    "catalog_linked_occurrences": 90,
-    "distinct_resource_ids": 85,
+    "units_by_state": {
+      "already-curated": 80,
+      "insufficient-evidence": 73,
+      "pending": 436
+    },
+    "primary_reviewed_units": 97,
+    "catalog_linked_occurrences": 91,
+    "distinct_resource_ids": 86,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

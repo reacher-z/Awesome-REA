@@ -1680,5 +1680,15 @@
       "z2-verify 在 tetanes-core 0.15 中与 z2rs 并行运行同一 ROM 并输入相同操作，每帧比较 RAM、电池 WRAM、精灵 OAM、调色板和帧缓冲，并对该模拟器的两处画面边缘差异作了说明性豁免。长时测试回放需另行下载的 TASVideos 录像，缺少输入时依赖 ROM 的测试会自动跳过。所审阅的工作流只负责打包发布；未发现公开的验证结果，本合集也未运行任何检查。",
       "代码由唯一维护者以 MIT 发布；内置的 matchbox_socket 采用 MIT 或 Apache-2.0，游戏本身不在许可范围内。例程布局来自 CC0 的 FiendsOfTheElements/z2disassembly 子模块和 Data Crystal 资料；项目说明这是一名维护者依据这些材料完成的工作，并非双团队净室流程，且只公开了早期私有历史的快照。PROVENANCE.md 未说明编写代码所用工具，因此未确立 AI 或 REA 使用。"
     ]
+  },
+  "sm64ex-pc-port-case": {
+    "name": "sm64ex：基于反编译成果的 Super Mario 64 增强版 PC 移植",
+    "requirements": [
+      "所审阅的 nightly 分支（最后推送于 2024-12-17）自述为 sm64-port/sm64-port 的分支，而 GitHub 将后者记录为 n64decomp/sm64 的分支；n64decomp/sm64 这一 ROM 重建项目另行收录。Makefile 只构建 PC 目标：它定义 NON_MATCHING 与 AVOID_UB，并强制将 COMPARE 设为 0，因此构建成功并不代表生成了一致的 ROM。",
+      "每构建一个版本，都需自备对应的 Super Mario 64 原始 ROM，命名为 baserom.<version>.z64（默认 us，另可选 jp 或 eu）；extract_assets.py 会先将其 SHA-1 与仓库附带的参考值比对，再提取素材。sh（Shindou）选项跳过提取，Makefile 标注为实验性，wiki 选项表则标注为无法使用；一份 2020 年的已知问题页面报告欧版文本有误且没有声音。",
+      "README 将构建说明交由 wiki 提供，相关页面涵盖 Linux（Python 3.6+、SDL2、GLEW、宿主 GCC 工具链）、通过 MSYS2 的 Windows、FreeBSD、Raspberry Pi 及 Emscripten／WebGL 目标；在 Linux 或 WSL 上交叉编译 Windows 版需要 MXE，OSX_BUILD 用于启用 macOS 修正。渲染器包括 OpenGL 2.1、OpenGL 1.3、Direct3D 11 和 Direct3D 12，其中 DirectX 渲染器仅限 Windows。",
+      "Jenkinsfile 构建 us、eu、jp 三个版本，并在应用每个增强补丁后重新构建 us 版，全部关闭比较；这只检查能否构建成功，不检查输出一致性或游戏行为等价。取消绘制距离、模拟摇杆视角、贴图修正和作弊等选项会有意改变行为，wiki 也指出取消绘制距离可能影响游戏玩法。本合集未构建或运行该移植。",
+      "GitHub 未检测到仓库许可证，所审阅的代码树根目录也没有许可证文件；附带工具各有许可，src/pc 中的声明转载了禁止以二进制形式再分发的 n64-fast3d-engine 许可。项目不提供任天堂原始内容，README 明确禁止上传受版权保护的素材。所审来源未确立 REA 或编码智能体的参与。"
+    ]
   }
 }

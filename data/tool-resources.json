@@ -3247,5 +3247,39 @@
       "https://github.com/troyedwardsjr/z2rs/releases/tag/v0.5.2",
       "https://z2rs.com/"
     ]
+  },
+  {
+    "id": "sm64ex-pc-port-case",
+    "name": "sm64ex: an enhanced Super Mario 64 PC port from the decompilation",
+    "url": "https://github.com/sm64pc/sm64ex",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds native Super Mario 64 executables from decompiled source, extending the sm64-port fork of the n64decomp reconstruction with renderer, input, camera, save-format and external-data options. Game assets are extracted from the user’s own ROM at build time. It is a non-matching enhanced port, not a byte-identical ROM reconstruction.",
+    "description_zh": "基于反编译源码构建原生 Super Mario 64 可执行文件，在 n64decomp 重建成果的 sm64-port 分支之上，增加渲染器、输入、视角、存档格式和外部数据等选项。游戏素材在构建时从使用者自备的 ROM 中提取。这是非一致性的增强移植，而不是逐字节一致的 ROM 重建。",
+    "evidence_url": "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed nightly branch (last pushed 2024-12-17) describes itself as a fork of sm64-port/sm64-port, which GitHub records as a fork of n64decomp/sm64, the separately catalogued ROM reconstruction. The Makefile builds PC targets only: it defines NON_MATCHING and AVOID_UB and forces COMPARE to 0, so a successful build is not a matching-ROM result.",
+      "Supply an original Super Mario 64 ROM named baserom.<version>.z64 for each version built (us by default, jp or eu); extract_assets.py compares its SHA-1 with the bundled reference before extracting assets. The sh (Shindou) option skips extraction and is labelled experimental in the Makefile and broken in the wiki option table; a 2020 known-issues page reports buggy EU text and missing EU audio.",
+      "The README defers building to the wiki, whose pages cover Linux (Python 3.6+, SDL2, GLEW, host GCC toolchain), Windows through MSYS2, FreeBSD, Raspberry Pi and an Emscripten/WebGL target; cross-compiling for Windows from Linux or WSL needs MXE, and OSX_BUILD enables macOS fixes. Renderers are OpenGL 2.1, OpenGL 1.3, Direct3D 11 and Direct3D 12, the DirectX ones only on Windows.",
+      "The Jenkinsfile builds us, eu and jp and rebuilds us after each enhancement patch, all with comparison disabled; this checks that builds succeed, not output identity or gameplay equivalence. Options such as disabled draw distance, analog camera, texture fixes and cheats intentionally change behavior, and the wiki notes the draw-distance option may affect gameplay. This collection did not build or run the port.",
+      "GitHub detects no repository license and the reviewed tree has no root license file; bundled tools carry their own licenses, and the src/pc notice reproduces an n64-fast3d-engine license that forbids binary redistribution. Original Nintendo content is not supplied, and the README forbids uploading copyrighted assets. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/Makefile",
+      "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/extract_assets.py",
+      "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/Jenkinsfile",
+      "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/src/pc/README-n64-fast32-engine.md",
+      "https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Linux/f2a7911133395886a2dce815f5cb5773e6c2ad8d",
+      "https://github.com/sm64pc/sm64ex/wiki/Compiling-on-Windows/0e64ea14174606d83a7b75f20d14dce1b6e6e200",
+      "https://github.com/sm64pc/sm64ex/wiki/Build-options/f9aff0b0db9cd4ec1c40ac7a2bc42af969edb42f",
+      "https://github.com/sm64pc/sm64ex/wiki/Known-issues/94d262d19ea9e16990d955de28560df563dc5372",
+      "https://github.com/sm64-port/sm64-port/blob/2b17d081c9798b31b91dc71f37994b0da28cffc9/README.md"
+    ]
   }
 ]
