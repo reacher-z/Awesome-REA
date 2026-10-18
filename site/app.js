@@ -397,8 +397,26 @@ async function load() {
     state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
   } catch (error) { state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }
+function onCommittedInput(input, commit) {
+  let composing = false;
+  let finalValue = null;
+  input.addEventListener("compositionstart", () => { composing = true; finalValue = null; });
+  input.addEventListener("compositionend", () => {
+    composing = false; finalValue = input.value; commit(input.value, true);
+  });
+  input.addEventListener("input", event => {
+    if (composing || event.isComposing) return;
+    const finalInput = input.value === finalValue;
+    finalValue = null;
+    commit(input.value, finalInput);
+  });
+}
 $("#search-input").value = state.q;
-$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+onCommittedInput($("#search-input"), (value, finalInput) => {
+  // Browsers may send another input with the same value after compositionend.
+  if (finalInput && value === state.q) return;
+  state.q = value; state.visible = 15; updateURL(); if (state.loaded) render();
+});
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
@@ -593,7 +611,16 @@ if (!["all","website","game","app","binary","firmware","protocol"].includes(sour
 if (sourceState.sort === "updated") sourceState.sort = "pushed";
 if (!["relevance","stars","pushed","name"].includes(sourceState.sort)) sourceState.sort="relevance";
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
-for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
+for (const [selector,key] of [["#source-search","q"],["#source-topic","topic"]]) {
+  onCommittedInput($(selector), (value, finalInput) => {
+    const next = key === "topic" ? canonicalTopic(value) : value;
+    if (finalInput && next === sourceState[key]) return;
+    sourceState[key] = next;
+    if (key === "topic") renderTopicOptions(value);
+    sourceState.visible = 24; sourceURL(); renderSources();
+  });
+}
+$("#source-sort").addEventListener("change", event => { sourceState.sort=event.target.value; sourceState.visible=24; sourceURL(); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
 $("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
