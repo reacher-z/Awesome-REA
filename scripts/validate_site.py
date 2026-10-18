@@ -1780,6 +1780,17 @@ def validate_llms_and_ownership_proof():
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
 
 
+def validate_unique_descriptions(pages):
+    """A count change alone must not distinguish two indexable page descriptions."""
+    seen = {}
+    for route, page in pages.items():
+        description = page.meta.get('description', '')
+        normalized = re.sub(r'\s+', ' ', re.sub(r'[\d,]', '', description)).strip()
+        assert normalized, f'Missing description: {route}'
+        assert normalized not in seen, f'Duplicate page description: {seen.get(normalized)} and {route}'
+        seen[normalized] = route
+
+
 def main():
     case_pages = [ROOT / path for path in CASE_FILES.values()] + sorted((ROOT / 'docs/cases').glob('*.md'))
     assert case_pages and all(path.is_file() and path.stat().st_size <= README_SIZE_WARNING for path in case_pages), \
@@ -1850,6 +1861,7 @@ def _validate_pages(urls, resources, papers):
         validate_theme_color(parsed.path, page)
         problem = description_problem(page.meta.get('description') or '')
         assert problem is None, f'{problem}: {parsed.path}: {page.meta.get("description")}'
+    validate_unique_descriptions(pages)
     report_listing_sizes(OUTPUT)
     queue = build_discoveries.discovery_queue(ROOT, published_repository_document(OUTPUT), papers, resources)
     queue = queue if queue['batches'] else None
