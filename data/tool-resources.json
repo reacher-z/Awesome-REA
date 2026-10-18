@@ -6230,5 +6230,37 @@
       "https://github.com/bx33661/Wireshark-MCP/releases/tag/v3.1.0",
       "https://pypi.org/project/wireshark-mcp/3.1.0/"
     ]
+  },
+  {
+    "id": "simpsons-wrestling-recompiled-case",
+    "name": "The Simpsons Wrestling Recompiled: a psxrecomp PlayStation static recompilation",
+    "url": "https://github.com/TekRantGaming/simpsons-wrestling-recompiled",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the PlayStation game’s MIPS code to C with a pinned psxrecomp fork and builds Windows and Linux programs on its hardware-modelling runtime, with a launcher and a game-specific plugin. Without patching game code, the plugin adds 16:9 matches, 60 FPS by raising the emulated CPU clock and rescaling movement, intro skipping and unlocks. The user’s own NTSC-U disc image is required, and the measurements are author-reported.",
+    "description_zh": "借助固定版本的 psxrecomp 分支，将这款 PlayStation 游戏的 MIPS 代码转换为 C，并基于其模拟硬件行为的运行时构建 Windows 与 Linux 程序，另附启动器和专用插件。插件在不修补游戏代码的前提下，实现比赛中的 16:9 画面、通过提高模拟 CPU 频率并修正移动量达到 60 FPS、跳过片头及全部解锁。需使用者自备 NTSC-U 光盘镜像；测量结果为作者报告。",
+    "evidence_url": "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master branch (VERSION 1.0.0, matching the v1.0.0 release) is a static recompilation, not a decompilation: psxrecomp translates SLUS_012.27’s R3000A code into a local generated/ tree using Ghidra-derived function seeds. psxrecomp is a pinned submodule from TekRantGaming’s fork of RetroPortingToolKit/psxrecomp, whose README describes a hardware-accurate runtime with bundled OpenBIOS as the default, so a retail BIOS is not normally required. Known issues include misplaced widescreen pause-screen HUD elements and uneven experimental 120 FPS.",
+      "The user supplies The Simpsons Wrestling (PlayStation, North America, SLUS-01227) as a .cue with its .bin. game.toml records the expected data-track size and hashes; the launcher checks the disc before play and reads it in place. Building also needs that disc to generate the C code. README states that the repository holds no game code and that the download contains no game files.",
+      "Play needs 64-bit Windows 10/11 or 64-bit Linux with glibc 2.38, plus OpenGL 3.3. Windows builds use Visual Studio 2022 Build Tools, CMake, Ninja and the bundled clang-cl with ThinLTO and a committed PGO profile; Linux builds use gcc with X11, Wayland, GL, ALSA, PulseAudio and udev development packages. The launcher is a separate SDL2 program from the TRG Launcher submodule, while the runtime uses SDL3.",
+      "TECHNICAL.md reports attract-demo matches in two arenas at 1.00x speed and a steady 60 FPS on one Ryzen 7 7800X3D/RTX 4070 Ti PC, plus jump-height and walking-distance comparisons with stock timing. Linux was checked only under WSL2; the AppImage is untested on native Linux and Steam Deck. These are author measurements, not equivalence checks; this collection did not run them.",
+      "GitHub detects no license and the reviewed tree has no LICENSE file, so reuse terms for the project’s own code are not stated; the pinned psxrecomp fork carries the PolyForm Noncommercial 1.0.0 license. The game and its trademarks remain with Fox Interactive, Activision and the other named owners. README discloses that the port was made almost entirely with Claude Code under the owner’s direction; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/docs/TECHNICAL.md",
+      "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/game.toml",
+      "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/.gitmodules",
+      "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/framework_pins.txt",
+      "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/mods/preloaded/README.md",
+      "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/README.md",
+      "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/LICENSE"
+    ]
   }
 ]

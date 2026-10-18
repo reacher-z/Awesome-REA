@@ -13443,13 +13443,27 @@
         "https://github.com/TekRantGaming/simpsons-wrestling-recompiled",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 115 (README line 1193) lists TekRantGaming/simpsons-wrestling-recompiled under 🏁 The Simpsons Wrestling. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 115 行（README 第 1193 行）在 🏁 The Simpsons Wrestling 下列出 TekRantGaming/simpsons-wrestling-recompiled。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, technical notes, recompiler configuration and submodule pins support a documented psxrecomp static recompilation of The Simpsons Wrestling that needs the user’s own NTSC-U disc image. Full mapping covers this game repository, not psxrecomp itself or the archive post linked from the row. Performance and movement comparisons remain author-reported, and the missing project license stays explicit.",
+      "reason_zh": "固定版本的 README、技术说明、重编译配置和子模块固定信息，支持这一有文档记录的 The Simpsons Wrestling psxrecomp 静态重编译，需使用者自备 NTSC-U 光盘镜像。完整映射覆盖此游戏仓库，不涵盖 psxrecomp 本身或该行另附的归档帖子。性能与移动量对比仍为作者报告，项目缺少许可的情况也予以明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/README.md",
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/docs/TECHNICAL.md",
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/game.toml",
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/.gitmodules",
+        "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/framework_pins.txt",
+        "https://github.com/TekRantGaming/psxrecomp/blob/03d383fe855c25edc52aabdee750ffc12f3d8bdd/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "simpsons-wrestling-recompiled-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-116",
@@ -15175,18 +15189,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 167,
-      "insufficient-evidence": 140,
-      "pending": 284
-    },
-    "units_by_state": {
-      "already-curated": 166,
+      "already-curated": 168,
       "insufficient-evidence": 140,
       "pending": 283
     },
-    "primary_reviewed_units": 246,
-    "catalog_linked_occurrences": 178,
-    "distinct_resource_ids": 172,
+    "units_by_state": {
+      "already-curated": 167,
+      "insufficient-evidence": 140,
+      "pending": 282
+    },
+    "primary_reviewed_units": 247,
+    "catalog_linked_occurrences": 179,
+    "distinct_resource_ids": 173,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

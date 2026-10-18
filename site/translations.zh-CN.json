@@ -2649,5 +2649,15 @@
       "协议结果来自 Wireshark 现有的解析器和预设字段列表；decode-as 规则与协议首选项只是重定向或配置这些解析器，服务器不会推断未知的报文格式。凭据扫描、端口扫描、隧道、信标、数据外传和 YARA 等工具属于安全启发式检测，而非协议逆向，其结果需要分析者复核。",
       "采用 MIT 许可；Wireshark 及其工具保留各自的 GPL 条款。REA 的抓包指南记录了在 REA 内使用 TShark 的另一套流程；这个独立服务器并未确立与 REA 的关联。本次未运行服务器，也未进行抓包或分析。"
     ]
+  },
+  "simpsons-wrestling-recompiled-case": {
+    "name": "The Simpsons Wrestling Recompiled：基于 psxrecomp 的 PlayStation 静态重编译",
+    "requirements": [
+      "所审阅的 master 分支（VERSION 1.0.0，与 v1.0.0 发布一致）是静态重编译，而非反编译：psxrecomp 借助来自 Ghidra 的函数种子，将 SLUS_012.27 的 R3000A 代码转换到本地 generated/ 目录。psxrecomp 以子模块形式固定在 TekRantGaming 对 RetroPortingToolKit/psxrecomp 的分支上，其 README 描述了硬件精确的运行时，并默认使用随附的 OpenBIOS，因此通常无需零售版 BIOS。已知问题包括宽屏暂停画面的 HUD 元素错位，以及实验性 120 FPS 下画面不够均匀。",
+      "使用者需自备 The Simpsons Wrestling（PlayStation 北美版，SLUS-01227）的 .cue 及对应 .bin 文件。game.toml 记录了数据轨道的预期大小和哈希；启动器在游玩前检查光盘，并直接读取原位置的镜像。构建同样需要该光盘来生成 C 代码。README 称仓库不含游戏代码，下载包也不含游戏文件。",
+      "运行需 64 位 Windows 10／11，或 glibc 2.38 的 64 位 Linux，以及 OpenGL 3.3。Windows 构建使用 Visual Studio 2022 生成工具、CMake、Ninja 和随附的 clang-cl，并启用 ThinLTO 及仓库中提交的 PGO 配置文件；Linux 构建使用 gcc 及 X11、Wayland、GL、ALSA、PulseAudio、udev 开发包。启动器是来自 TRG Launcher 子模块的独立 SDL2 程序，运行时则使用 SDL3。",
+      "TECHNICAL.md 报告在一台 Ryzen 7 7800X3D／RTX 4070 Ti PC 上，两个场馆的演示比赛以 1.00 倍速度稳定运行在 60 FPS，并给出与原版计时相比的跳跃高度和行走距离。Linux 仅在 WSL2 下检查过；AppImage 尚未在原生 Linux 或 Steam Deck 上测试。这些是作者测量结果，并非等价性检查；本合集未运行。",
+      "GitHub 未检测到许可，所审阅的源码树中也没有 LICENSE 文件，因此项目自身代码的再使用条款未予说明；固定版本的 psxrecomp 分支采用 PolyForm Noncommercial 1.0.0 许可。游戏及其商标仍归 Fox Interactive、Activision 及其他列明的权利人所有。README 披露该移植几乎完全借助 Claude Code 完成，由仓库所有者指导；未声明使用 REA。"
+    ]
   }
 }
