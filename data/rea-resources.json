@@ -2268,5 +2268,41 @@
       "https://github.com/morluto/rea/pull/748",
       "https://github.com/morluto/rea/issues/744"
     ]
+  },
+  {
+    "id": "lezac-rea-decompilation-case",
+    "name": "Larax & Zaco: an REA-exported evidence base and partial routine recovery",
+    "url": "https://github.com/Hubert-Rybak/lezac-decompilation",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author uses REA 6.3.0 with Ghidra to export dossiers, pseudocode and assembly for all 215 discovered procedures in the DOS shareware LEZAC.EXE, then recovers a small set of routines as Pascal and portable C. Recovered code is tested against the original x86 instructions, and a pinned DOSBox-X baseline records original-game runs. README states this is not a playable or bit-identical rebuild, nor the author’s original source.",
+    "description_zh": "作者使用 REA 6.3.0 与 Ghidra，为 DOS 共享软件 LEZAC.EXE 中发现的全部 215 个过程导出档案、伪代码和汇编，再将其中少量例程恢复为 Pascal 和可移植 C。恢复的代码以原 x86 指令为对照进行测试，固定版本的 DOSBox-X 基线记录了原游戏的运行情况。README 说明这既不是可游玩或逐位一致的重建，也不是原作者的源码。",
+    "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports seven routines in original-style Pascal (six core operations plus the RLE decompressor), sixteen packed record layouts and six portable C routines, with resource-format decoders for sprites, palette, scores, sounds and levels. Interrupt handlers, most gameplay, rendering, audio and DOS services remain unrecovered, and the 215 discovered procedures are not presented as exhaustive code discovery.",
+      "The target is Larax & Zaco v1.0 shareware by Stefano Zanobi / Zanobi Software. tools/fetch_original.py downloads a pinned archived copy or accepts an offline ZIP, then verifies every file hash. RIGHTS.md says the original ZIP, executable and resources are not committed, the bundled documentation carries the game’s own distribution terms, and archival availability is not treated as public-domain status.",
+      "Verification needs Python 3.12+, a C99 compiler, Free Pascal 3.2.2, make, npm and a Node.js version REA accepts; DOS probes also need the FPC i8086 cross compiler. Rerunning the export needs REA 6.3.0 from the npm lockfile, Ghidra 12.1.4 and a full JDK, and original-game runs use a hash-pinned DOSBox-X 2024.03.01 with Xvfb.",
+      "README reports 174,777 Pascal-versus-original and 173,725 C-versus-original x86 comparisons, the C cases also passing under GCC’s undefined-behavior sanitizer; a rebuilt 16-bit DOS probe compares twelve original invocations, all 94 loaded-image checks pass, and level 1 was completed in the original game. Replays are host-timed, not cycle-exact. CI fetches the shareware and runs these tests, but this collection ran nothing.",
+      "The repository has no license file, and RIGHTS.md asserts no blanket open-source license for recovered game logic or generated pseudocode. It does commit REA-exported assembly and decompiler pseudocode for all 215 procedures, derived from the original executable; those files and the game keep the original rights. REA and Ghidra are separately licensed and not vendored."
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/RIGHTS.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/analysis.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/pascal-recovery.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/reproduction.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/emulator-baseline.md",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/provenance.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/coverage.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/emulator.json",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/Makefile",
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/.github/workflows/verify.yml"
+    ]
   }
 ]

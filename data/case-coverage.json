@@ -13185,13 +13185,32 @@
       "reported_source_urls": [
         "https://github.com/Hubert-Rybak/lezac-decompilation"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 138 (README line 1485) lists Hubert-Rybak/lezac-decompilation under 🕹️ Larax & Zaco. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 138 行（README 第 1485 行）在 🕹️ Larax & Zaco 下列出 Hubert-Rybak/lezac-decompilation。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, rights and provenance notes, analysis, Pascal-recovery, reproduction and emulator documents, coverage data, CI and Makefile document the author’s REA 6.3.0 and Ghidra export and a bounded routine recovery for LEZAC.EXE. Full mapping covers that evidence base and partial reconstruction, not a playable or bit-identical rebuild. Committed disassembly and pseudocode derived from the shareware executable, and the absence of a license, remain explicit.",
+      "reason_zh": "固定版本的 README、权利与来源说明、分析、Pascal 恢复、复现与模拟器文档、覆盖数据、CI 及 Makefile，记录了作者使用 REA 6.3.0 与 Ghidra 对 LEZAC.EXE 的导出及有限的例程恢复。完整映射覆盖该证据库与部分重建，不代表可游玩或逐位一致的重建。仓库提交的源自共享软件可执行文件的汇编与伪代码，以及缺少许可证一事，均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/README.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/RIGHTS.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/analysis.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/pascal-recovery.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/reproduction.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/docs/emulator-baseline.md",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/provenance.json",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/coverage.json",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/analysis/emulator.json",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/Makefile",
+        "https://github.com/Hubert-Rybak/lezac-decompilation/blob/73b4bdb3a79cf26346c148d1024c3da5eb3b8333/.github/workflows/verify.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lezac-rea-decompilation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-139",
@@ -14247,18 +14266,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 116,
-      "insufficient-evidence": 86,
-      "pending": 389
-    },
-    "units_by_state": {
-      "already-curated": 115,
+      "already-curated": 117,
       "insufficient-evidence": 86,
       "pending": 388
     },
-    "primary_reviewed_units": 143,
-    "catalog_linked_occurrences": 127,
-    "distinct_resource_ids": 121,
+    "units_by_state": {
+      "already-curated": 116,
+      "insufficient-evidence": 86,
+      "pending": 387
+    },
+    "primary_reviewed_units": 144,
+    "catalog_linked_occurrences": 128,
+    "distinct_resource_ids": 122,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
