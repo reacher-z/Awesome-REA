@@ -5100,5 +5100,39 @@
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/COPYING",
       "https://github.com/sonicdcer/Starfox64Recomp/releases/tag/1.0.3"
     ]
+  },
+  {
+    "id": "syphon-filter-omega-strain-decomp-case",
+    "name": "Syphon Filter: The Omega Strain — matching PS2 executable decompilation",
+    "url": "https://github.com/zm2283145/syphon-filter-omega-strain-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs much of the NTSC-U PlayStation 2 executable of Syphon Filter: The Omega Strain as C; with the remaining functions kept as split assembly, the build reproduces the retail SCUS_972.64 byte for byte. Committed objdiff reports track per-function matching against the user’s own executable. This is a matching-decompilation case, not a PC port; progress figures remain project-reported.",
+    "description_zh": "将 Syphon Filter: The Omega Strain 北美版 PlayStation 2 可执行文件的大部分代码重建为 C；其余函数保留为拆分出的汇编，整体构建可逐字节重现零售版 SCUS_972.64。仓库提交的 objdiff 报告以使用者自备的可执行文件为基准，追踪逐函数的匹配进度。这是一致性反编译案例，不是 PC 移植；进度数字仍为项目报告。",
+    "evidence_url": "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets only the NTSC-U executable SCUS_972.64; the output is a rebuilt PS2 ELF, not a native PC program. At the reviewed commit, the committed objdiff report and handoff note list 13,413 of 14,331 functions (93.59%), 76.59% of code bytes and 99.92% of data as matched, with the rest still assembly. The dated status table in PROGRESS.md shows older, lower figures, and function totals shift as boundaries are refined.",
+      "Supply SCUS_972.64 from an independently owned disc or image; configure.py checks its SHA-256 against config/target.sha256 before splitting. No disc data, split assembly, objects or rebuilt executable is committed; derived files are generated in git-ignored folders. Executable data regions are committed as generated C definitions.",
+      "Setup needs Python 3.10+ with pinned splat 0.50.0 and spimdisasm 1.42.4, ninja, MIPS binutils and objdiff-cli. Windows runs the tools natively; Linux/macOS run the Windows compiler through wibo or wine. The setup script downloads a CodeWarrior PS2 3.0.3 build archived by decomp.me, but the licensed 3.0 build 38 and 3.04 build 22 installations used by per-unit overrides are not supplied; without them those units fall back to retail assembly. Library units use EE-GCC 2.95.3 and 2.96.",
+      "Verification is a whole-image SHA-256 comparison: ninja fails unless the rebuilt executable matches the retail hash, and the project claims a function match only with that check and objdiff identity. CI cannot build without the executable and only uploads the locally generated report for decomp.dev. The project treats build 38 compatibility as code-generation evidence, not proof of the original compiler; this collection did not rerun any build.",
+      "No license file is present at the reviewed commit, so reuse terms for the project’s code are unstated; the game, its executable and the proprietary Metrowerks compilers retain separate rights. The handoff note addresses a person or AI agent and the progress log plans parallel agent work, without attributing specific matches; no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/PROGRESS.md",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/HANDOFF.md",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/progress/report.json",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/DECOMP_DEV.md",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/config/target.sha256",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/tools/check_sha256.py",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/requirements.txt",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/data_gen.md",
+      "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/.github/workflows/report.yml"
+    ]
   }
 ]

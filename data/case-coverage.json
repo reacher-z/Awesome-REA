@@ -12693,13 +12693,27 @@
       "reported_source_urls": [
         "https://github.com/zm2283145/syphon-filter-omega-strain-decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 95 (README line 957) lists zm2283145/syphon-filter-omega-strain-decomp under 🕵️ Syphon Filter: The Omega Strain. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 95 行（README 第 957 行）在 🕵️ Syphon Filter: The Omega Strain 下列出 zm2283145/syphon-filter-omega-strain-decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, progress log, handoff note, committed objdiff report and hash-check tooling support the reported PS2 matching decompilation of SCUS_972.64. Full mapping covers this executable reconstruction, not a native port or an independently rerun build. The user-supplied executable, licensed compiler builds, missing license file and project-reported progress remain explicit.",
+      "reason_zh": "固定版本的 README、进度日志、交接说明、已提交的 objdiff 报告及哈希校验工具，支持所报告的 SCUS_972.64 PS2 一致性反编译。完整映射覆盖此可执行文件重建，不涵盖原生移植或独立重跑的构建。使用者自备的可执行文件、需授权的编译器版本、缺失的许可证文件以及项目报告的进度均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/README.md",
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/PROGRESS.md",
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/HANDOFF.md",
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/progress/report.json",
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/config/target.sha256",
+        "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/tools/check_sha256.py"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "syphon-filter-omega-strain-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-096",
@@ -14695,18 +14709,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 139,
-      "insufficient-evidence": 125,
-      "pending": 327
-    },
-    "units_by_state": {
-      "already-curated": 138,
+      "already-curated": 140,
       "insufficient-evidence": 125,
       "pending": 326
     },
-    "primary_reviewed_units": 203,
-    "catalog_linked_occurrences": 150,
-    "distinct_resource_ids": 144,
+    "units_by_state": {
+      "already-curated": 139,
+      "insufficient-evidence": 125,
+      "pending": 325
+    },
+    "primary_reviewed_units": 204,
+    "catalog_linked_occurrences": 151,
+    "distinct_resource_ids": 145,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
