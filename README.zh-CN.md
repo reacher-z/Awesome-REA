@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 288](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-288-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 146](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-146-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 56](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 289](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 147](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 56](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-56-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (128) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (129) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (146) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (147) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -833,6 +833,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   基于沿用《马力欧卡丁车 64》反编译项目文件结构的源码，构建适用于 Windows、Linux、macOS 和 Switch 的原生移植，运行在 libultraship 重新实现的 N64 SDK 之上。随附的 Torch 提取器将使用者自备的美版 ROM 转换为素材归档，移植还增加了模组、自定义赛道和编辑器。README 未写明其上游反编译项目，也未发布一致性或还原度检查。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/spaghettikart-mk64-port-case/)
+
+- [**Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建**](https://github.com/banatic/acww-decomp)
+
+  将 Animal Crossing: Wild World 韩版 DS 游戏的 ARM9 游戏代码重建为每个函数一个 C 或 C++ 源文件，并用原版 Metrowerks 编译器和链接器对照使用者自己的 ROM 校验。每个函数另有可读的 Clean 改写版本，仓库自带的 DS 解释器在录制的游玩过程中比较 ROM 代码、原生编译的源码和改写版本。数据段、ARM7 程序、链接的 SDK 库及按原始源文件重新归组仍不在重建范围内。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-wild-world-decomp-case/)
 
 #### 工具、项目与集成
 
