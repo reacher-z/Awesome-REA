@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 285](https://img.shields.io/badge/resources-285-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 143](https://img.shields.io/badge/cases-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 285](https://img.shields.io/badge/resources-285-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 143](https://img.shields.io/badge/cases-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 54](https://img.shields.io/badge/papers-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (53) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (54) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1821,13 +1821,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**53 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**54 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (9) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (5) · [Decompilation](#papers-decompilation) (10) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -2050,6 +2050,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** This is learned identifier naming, not complete source reconstruction or an autonomous agent. Its reported results concern an x86-64 C corpus and depend on decompiler output. The original author repository is deprecated and points to a successor.
 
   **Publication:** 2019 · ASE 2019 · Conference paper · Jeremy Lacomis et al.
+
+  </details>
+
+- [**Coda: An End-to-End Neural Program Decompiler**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html)
+
+  Coda decompiles the assembly of short functions into C in two phases. An instruction-type-aware N-ary Tree-LSTM encoder and an attention-fed AST decoder first generate a code sketch; an ensemble of neural error predictors then proposes token corrections, each kept only if recompiling the candidate does not increase its edit distance to the input assembly. On synthetic benchmarks the authors report 82% average program accuracy after correction, against 12% for a sequence-to-sequence baseline with attention.
+
+  2019 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-coda/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Training and test programs are randomly generated from Karel commands, math.h calls and arithmetic or logical expressions, in short and long variants (average length 15 and 30), 50,000 pairs per task, compiled without optimization: clang -O0 for the main MIPS results and gcc -O0 for an x86-64 appendix that reports sketch token accuracy only, about 6% lower on average. Real-world checks are small PyTorch C++ API model-construction and Hacker's Delight loop-free programs. Program accuracy requires an exact token match with the ground-truth source, the metric under which the paper reports 0% for conventional decompilers. Error correction assumes the compiler configuration is known, and token accuracy drops for longer programs. The results show neither optimized, whole-program nor binary-equivalent decompilation, and the paper names no author implementation.
+
+  **Publication:** 2019 · NeurIPS 2019 · Conference paper · Cheng Fu et al.
 
   </details>
 

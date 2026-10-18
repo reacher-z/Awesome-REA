@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 285](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-285-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 143](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 285](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-285-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 143](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-143-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 54](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-54-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (53) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (54) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1822,13 +1822,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**53 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**54 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (9) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (5) · [反编译](#papers-decompilation) (10) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -2051,6 +2051,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该工作研究学习式标识符命名，并非完整源码重建或自主智能体。报告结果针对 x86-64 C 代码语料，并依赖反编译器输出。原作者仓库已标记弃用，并指向后续项目。
 
   **发表信息:** 2019 · ASE 2019 · 会议论文 · Jeremy Lacomis 等
+
+  </details>
+
+- [**Coda：端到端神经程序反编译器**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html)
+
+  Coda 分两个阶段将短函数的汇编反编译为 C。首先由区分指令类型的 N 叉 Tree-LSTM 编码器与带注意力输入的 AST 解码器生成代码草图；随后由多个神经错误预测器的集成提出词元修正，只有当候选代码重新编译后与输入汇编的编辑距离不增加时，才保留该修正。在合成基准上，作者报告修正后的平均程序准确率为 82%，而带注意力的序列到序列基线为 12%。
+
+  2019 · 会议论文 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-coda/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练与测试程序均为随机生成，涵盖 Karel 指令、math.h 调用及算术或逻辑表达式，分为短、长两种（平均长度 15 与 30），每项任务 50,000 对，并在不开启优化的条件下编译：主要 MIPS 结果使用 clang -O0，x86-64 附录使用 gcc -O0，且只报告草图词元准确率，平均约低 6%。真实场景检查仅包括小型 PyTorch C++ API 模型构建程序和 Hacker’s Delight 无循环程序。程序准确率要求与真实源码词元完全一致，论文正是在该指标下报告常规反编译器为 0%。错误修正假定已知编译器配置，程序变长时词元准确率下降。这些结果既不能说明优化代码、整程序或二进制等价的反编译能力，论文也未给出作者实现。
+
+  **发表信息:** 2019 · NeurIPS 2019 · 会议论文 · Cheng Fu 等
 
   </details>
 
