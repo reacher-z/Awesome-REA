@@ -14519,15 +14519,33 @@
       "reported_source_urls": [
         "https://github.com/N0zoM1z0/dx-ball"
       ],
-      "state": "pending",
-      "review_level": "catalog-mapped",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.",
-      "reason_zh": "目前只覆盖官方 DX-Ball 声像函数展示，不能据此认定此更广的游戏重建仓库已被精选收录或已完成。",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, REA worked example, matching, build and progress notes, target and tool locks, a differential test, CI and license support the named DX-Ball reconstruction with author-documented REA and Codex use. Full mapping covers this in-progress function-level reconstruction, not byte identity, a finished playable VC4 build or independent reproduction; REA’s one-function sound-pan showcase remains a partial match. The original-archive requirement and its unverified download source remain explicit.",
+      "reason_zh": "固定版本的 README、REA 实例说明、匹配、构建与进度说明、目标与工具锁定文件、一项差分测试、CI 及许可证，支持该 DX-Ball 重建报告及作者记录的 REA 与 Codex 使用。完整映射覆盖这一进行中的函数级重建，不代表字节一致、已完成的可游玩 VC4 构建或独立复现；REA 的单函数声像展示仍为部分匹配。原版压缩包要求及其未经核实的下载来源均明确保留。",
       "primary_evidence_urls": [
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/REA.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/MATCHING.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/BUILD.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/PROGRESS.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/research/ORIGINAL_CAMPAIGN.md",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/target.toml",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/tools.lock.toml",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/rea.lock.json",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/tests/test_boards_differential.py",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/.github/workflows/ci.yml",
+        "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/LICENSE",
         "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/dx-ball-sound-pan.md"
       ],
       "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "dx-ball-rea-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
         {
           "catalog": "resource",
           "id": "rea-dxball-case",
@@ -15609,18 +15627,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 190,
+      "already-curated": 191,
       "insufficient-evidence": 162,
-      "pending": 239
+      "pending": 238
     },
     "units_by_state": {
-      "already-curated": 188,
+      "already-curated": 189,
       "insufficient-evidence": 162,
-      "pending": 239
+      "pending": 238
     },
-    "primary_reviewed_units": 292,
+    "primary_reviewed_units": 293,
     "catalog_linked_occurrences": 199,
-    "distinct_resource_ids": 194,
+    "distinct_resource_ids": 195,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

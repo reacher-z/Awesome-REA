@@ -2498,5 +2498,42 @@
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/CONTRIBUTING.md",
       "https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/LICENSE"
     ]
+  },
+  {
+    "id": "dx-ball-rea-reconstruction-case",
+    "name": "DX-Ball: an REA-guided function-level reconstruction with Codex",
+    "url": "https://github.com/N0zoM1z0/dx-ball",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "The author has Codex use REA’s Ghidra tools to inspect the English DX-Ball 1.07 executable and recover it as typed C/C++, then compiles each function with the original-era Visual C++ 4.0 and compares it byte for byte with the original after mapping relocations. The same source also builds a MinGW Windows game and a portable core library. Exact reconstruction is still in progress; REA’s separate sound-pan showcase covers just one function.",
+    "description_zh": "作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。同一套源码还可构建 MinGW Windows 游戏和可移植核心库。精确重建仍在进行中；REA 另行发布的声像展示只覆盖其中一个函数。",
+    "evidence_url": "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README marks exact reconstruction as in progress, to be followed by a playable Visual C++ 4.0 build and later platform ports. Generated PROGRESS.md counts 553 provisional function candidates, 475 with source, 395 byte-exact (85,106 exact code bytes) and 249 with scoped semantic acceptance, and says both Windows builds completed recorded original-board campaigns under Wine. A separate 50-board restored-CRT attempt on October 17 ended at its time limit without a full pass.",
+      "Supply the English v1.07 Windows archive identified in config/target.toml; the importer verifies the archive and DXBALL.EXE hashes and puts the executable and assets in the git-ignored original/ directory. README points to a third-party download site for that archive; the repository does not establish its distribution rights, and this catalog does not link it.",
+      "The documented host is Linux x86-64 with Git, Python 3.11+, Node.js 22.19.0, 32-bit Wine, Xvfb, CMake, Ninja and GCC or Clang, plus i686 MinGW for Windows cross-builds. Bootstrap scripts fetch a hash-pinned JDK, Ghidra and a Visual C++ 4.0 compiler from a third-party archive repository. The REA lock file pins rea-agents 6.5.0 with Ghidra 12.1.4, while docs/REA.md still names 6.4.0; the Codex goal workflow needs Codex 0.128.0 or newer.",
+      "An exact unit has zero differences across the whole function after COFF relocations are mapped to original functions, imports and data, with literal data also checked; match-units.toml records the inputs needed to replay each unit. Differential tests run original x86 routines under Unicorn emulation against the compiled maintained C, and public CI builds the portable source, validates recorded evidence and compiles the Windows adapter without game resources. All results are project-reported; this collection ran nothing.",
+      "MIT covers repository code; the original game, credited to Michael P. Welch with 3D graphics by Seumas McNally, is supplied separately and keeps its own rights, as do the downloaded compiler and tools. REA use is documented through saved responses and a worked projectile-list example, but agent effectiveness is not independently measured, and no runtime reproduction is claimed."
+    ],
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/REA.md",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/MATCHING.md",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/BUILD.md",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/PROGRESS.md",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/docs/research/ORIGINAL_CAMPAIGN.md",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/target.toml",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/tools.lock.toml",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/config/rea.lock.json",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/tests/test_boards_differential.py",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/.github/workflows/ci.yml",
+      "https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/LICENSE"
+    ]
   }
 ]
