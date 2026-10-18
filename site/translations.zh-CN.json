@@ -2384,5 +2384,15 @@
       "每个平台定义都指定了汇编器、objdump 和 nm 命令；编译器以软件包形式加入独立的 decompme/compilers 仓库，本次未审阅该仓库。编译器、汇编器和 objdump 子进程可在 nsjail 沙箱中运行，cromper 容器内默认启用；在容器外使用需自行构建 nsjail 并开启非特权用户命名空间。",
       "采用 MIT 许可；README 说明各依赖保留各自的许可证，本条目不对编译器许可作任何声明。仓库没有打标签的版本，因此本条目固定到所审阅的 main 分支提交。差异视图只显示编译结果的指令级差异，m2c 输出只是初稿，两者都不会恢复名称、类型或语义。本次未编译任何代码，也未运行任何实例。"
     ]
+  },
+  "thps1-decomp-native-port-case": {
+    "name": "TonyWasAProSkater：派生自一致性反编译的 THPS1 原生移植",
+    "requirements": [
+      "所审阅的 main 分支派生自 LANCommander/THPS，仅针对 PS1 美版零售可执行文件 SLUS_008.60，不涵盖系列后续作品。2026-10-13 生成的 decomp/PROGRESS.md 报告游戏代码字节中 88.0%（1,178 个函数中的 928 个）逐字节一致，Psy-Q 库不在范围内。移植在 game/ 中编译该代码的独立分支；decomp/ 作为逐字节一致的参照保留，不参与移植构建，因此可运行的程序本身并非一致性构建产物。",
+      "运行需使用者自备 Tony Hawk’s Pro Skater（美版）PlayStation 光盘的原始 MODE2/2352 BIN 镜像；也可改用 Dreamcast 光盘镜像（.gdi 及其轨道）提供素材。首次启动会把约 630 MB 内容复制到 Data 文件夹。构建还需使用者光盘中的零售版 SLUS_008.60 可执行文件，以获取函数布局。README 说明仓库未提交任何游戏素材或原始可执行文件，但包含反编译代码和已初始化数据。",
+      "构建可在 Windows 上使用 MSYS2 的 32 位 MinGW 工具链和 SDL2（64 位构建使用 ucrt64），或在 x86 Linux 上使用 multilib GCC 与 32 位 SDL2，另需 Python 3 和 Ghidra 的 GNU 反修饰器；Psy-Q 库名称表依据 ghidra_psx_ldr 的签名生成。运行需 64 位 Windows 10／11，或具备 32 位 SDL2 与 OpenGL 库的 x86 Linux，以及支持 OpenGL 3.3 的 GPU。重新校验已匹配函数还需 Node 和未随项目分发的 Psy-Q 4.5 编译器。",
+      "decomp/tools/check_all.mjs 会重新编译 matched.tsv 中的每个函数，并与零售版字节比对；取代手写汇编和 Sony 库的 C 代码，则通过重放录制的游戏状态与原 MIPS 代码对照检查。移植层的改动通过确定性运行检查，将画面帧和存档与早期构建比较。README 报告九个经典生涯关卡均可游玩，PS1 混响仅为近似实现；本合集未重跑这些检查。",
+      "README 和移植层 README 称项目自身代码采用仓库 LICENSE 中的 MIT 许可，但所审阅的源码树中没有 LICENSE 文件，GitHub 也未检测到许可。移植层 README 说明反编译的游戏代码、数据及全部素材仍归 Activision／Neversoft 所有；SDL 2、PL_MPEG、glad 等链接库保留各自条款。源码树含 CLAUDE.md 项目笔记和 GhidraMCP 配置，但 README 未声明使用 AI 或 REA，因此本条目不记录此类归因。"
+    ]
   }
 }

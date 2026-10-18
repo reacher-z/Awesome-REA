@@ -13169,13 +13169,27 @@
         "https://github.com/LANCommander/TonyWasAProSkater",
         "https://i.4cdn.org/vr/1791496164085175.png"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 112 (README line 1164) lists LANCommander/TonyWasAProSkater under 🏁 Tony Hawk’s Pro Skater 1–4. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 112 行（README 第 1164 行）在 🏁 Tony Hawk’s Pro Skater 1–4 下列出 LANCommander/TonyWasAProSkater。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, port documentation, decompilation progress manifest and verification script support the reported reconstruction of the first Tony Hawk’s Pro Skater: an in-progress matching decompilation plus a native port built from a fork of it. Full mapping covers this repository, not the upstream LANCommander/THPS history or later series games. Byte-match percentages, playability and the missing LICENSE file remain explicit.",
+      "reason_zh": "固定版本的 README、移植文档、反编译进度清单和校验脚本，支持所报告的初代 Tony Hawk’s Pro Skater 重建：一个进行中的一致性反编译，以及基于其分支构建的原生移植。完整映射覆盖此仓库，不涵盖上游 LANCommander/THPS 的历史或系列后续作品。逐字节一致比例、可玩性及缺少 LICENSE 文件等情况均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/README.md",
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/README.md",
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/README.md",
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/PROGRESS.md",
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/tools/check_all.mjs",
+        "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/docs/coverage-report.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "thps1-decomp-native-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-113",
@@ -14853,18 +14867,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 149,
-      "insufficient-evidence": 126,
-      "pending": 316
-    },
-    "units_by_state": {
-      "already-curated": 148,
+      "already-curated": 150,
       "insufficient-evidence": 126,
       "pending": 315
     },
-    "primary_reviewed_units": 214,
-    "catalog_linked_occurrences": 160,
-    "distinct_resource_ids": 154,
+    "units_by_state": {
+      "already-curated": 149,
+      "insufficient-evidence": 126,
+      "pending": 314
+    },
+    "primary_reviewed_units": 215,
+    "catalog_linked_occurrences": 161,
+    "distinct_resource_ids": 155,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

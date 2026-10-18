@@ -5462,5 +5462,37 @@
       "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/docs/SANDBOX.md",
       "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/docs/COMPILER.md"
     ]
+  },
+  {
+    "id": "thps1-decomp-native-port-case",
+    "name": "TonyWasAProSkater: a THPS1 native port forked from a matching decompilation",
+    "url": "https://github.com/LANCommander/TonyWasAProSkater",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ports Tony Hawk’s Pro Skater (PlayStation, USA) to native Windows and Linux builds from a fork of an in-progress matching decompilation of the retail executable. The decompilation recompiles reconstructed functions with a Psy-Q toolchain and compares them byte for byte with the user’s retail executable, while the port replaces PlayStation hardware and libraries with SDL2 and OpenGL services. Play needs the user’s own disc image; matching and gameplay results remain project-reported.",
+    "description_zh": "从一个仍在进行中的零售版可执行文件一致性反编译项目派生分支，将 Tony Hawk’s Pro Skater（PlayStation 美版）移植为原生 Windows 与 Linux 程序。反编译部分用 Psy-Q 工具链重新编译已重建的函数，并与使用者自备的零售可执行文件逐字节比对；移植部分则以 SDL2 和 OpenGL 服务取代 PlayStation 硬件和库。运行需使用者自备光盘镜像；一致性与可玩性结果仍为项目报告。",
+    "evidence_url": "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch, a fork of LANCommander/THPS, targets only the retail PS1 USA executable SLUS_008.60, not later games in the series. decomp/PROGRESS.md, generated 2026-10-13, reports 88.0% of game-code bytes (928 of 1,178 functions) byte-exact, with the Psy-Q libraries out of scope. The port compiles a separate fork of that code in game/; decomp/ stays the byte-matching reference and is not built into the port, so the playable executable is not itself a matching build.",
+      "Play requires a raw MODE2/2352 BIN image of the user’s own Tony Hawk’s Pro Skater (USA) PlayStation disc; the Dreamcast disc image (.gdi and its tracks) can supply the assets instead. The first start copies about 630 MB into a Data folder. Building also needs the retail SLUS_008.60 executable from the user’s disc for the function layout. README states that no game assets or original executable are committed, while decompiled code and initialised data are included.",
+      "Builds run on Windows with MSYS2’s 32-bit MinGW toolchain and SDL2 (64-bit builds use ucrt64) or on x86 Linux with multilib GCC and 32-bit SDL2, plus Python 3 and Ghidra’s GNU demangler; a Psy-Q library name table is generated from ghidra_psx_ldr signatures. Running needs 64-bit Windows 10/11 or x86 Linux with 32-bit SDL2 and OpenGL libraries, and an OpenGL 3.3 GPU. Re-verifying matched functions additionally needs Node and the Psy-Q 4.5 compiler, which is not distributed.",
+      "decomp/tools/check_all.mjs recompiles every function in matched.tsv and compares it with the retail bytes; C that replaces hand-written assembly and Sony libraries is checked by replaying recorded game states against the original MIPS code. Port changes are checked with deterministic runs whose frames and saves are compared with an earlier build. README reports all nine career levels playable and an approximate rather than exact PS1 reverb; this collection did not rerun these checks.",
+      "README and the port README describe the project’s own code as MIT under a repository LICENSE, but the reviewed tree has no LICENSE file and GitHub detects none. The port README states that decompiled game code, data and all assets remain © Activision/Neversoft; linked libraries such as SDL 2, PL_MPEG and glad keep their own terms. The tree includes CLAUDE.md project notes and a GhidraMCP configuration, but the README states no AI or REA use, so none is recorded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/README.md",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/README.md",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/PROGRESS.md",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/matched.tsv",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/tools/check_all.mjs",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/docs/coverage-report.md",
+      "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/dist/THIRD-PARTY-NOTICES.txt"
+    ]
   }
 ]
