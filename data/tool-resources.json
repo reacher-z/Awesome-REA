@@ -2756,5 +2756,36 @@
       "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/AGENTS.md",
       "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/LICENSE"
     ]
+  },
+  {
+    "id": "zelda-mm-decomp-case",
+    "name": "Majora’s Mask: matching US N64 decompilation",
+    "url": "https://github.com/zeldaret/mm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates a C source base for The Legend of Zelda: Majora’s Mask from information in the game and static or dynamic analysis, then rebuilds the US Nintendo 64 ROM. The build takes assets and assembly from a user-supplied ROM and checks the output against stored MD5 checksums. The team states it will not produce a PC port; the separately curated Zelda 64: Recompiled only credits it for headers and some functions.",
+    "description_zh": "依据游戏内信息和静态或动态分析，为《塞尔达传说：姆吉拉的假面》重建 C 源码库，并重新构建美版 Nintendo 64 ROM。构建流程从使用者自备的 ROM 中取得素材和汇编，再用仓库保存的 MD5 校验输出。团队声明不会制作 PC 移植；另行收录的 Zelda 64: Recompiled 只注明借用了其头文件和部分函数。",
+    "evidence_url": "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a work-in-progress decompilation whose codebase may still change drastically, and warns that some parts of the ROM may not yet be shiftable, so modifications can be difficult. Only N64 US 1.0 is supported; the Makefile also lists a WIP N64 Japan 1.1 target with checksum comparison disabled. Majora’s Mask 3D is out of scope, and the output is an N64 ROM, not a PC executable.",
+      "Supply your own US Majora’s Mask ROM as the base ROM; .z64, .n64 and .v64 byte orders are accepted. The repository includes no game assets or assembly: the build decompresses the supplied ROM and derives files, assets and disassembled code and data from it before compiling a ROM and a compressed ROM.",
+      "The documented host is Linux, native or under WSL or a VM, with Debian or Ubuntu recommended: Git, build-essential, MIPS binutils, curl, Python 3 with pip and venv, libpng and libxml2. macOS and Docker have separate guides. The default compiler is a static recompilation of IDO 5.3 and 7.1 that the tools Makefile downloads from decompals/ido-static-recomp; GCC and NON_MATCHING builds turn the checksum comparison off.",
+      "A default build checks both ROMs against stored MD5 values and prints OK or FAILED; FAILED means a bad base ROM or non-matching code. CI builds the US version in matching mode and Japan 1.1 as non-matching, using base ROMs from the project’s build container. The project’s mutable progress badge read 100% at review while the README still says WIP; this collection did not rerun the build.",
+      "The reviewed tree has no top-level license file and GitHub detects no license, so source reuse terms are unstated; ROM contents and derived assets keep their own rights. The README forbids contributions from anyone who has ever accessed leaked Nintendo 64 SDK, libultra or Zelda 64 source. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/Makefile",
+      "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/tools/Makefile",
+      "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/baseroms/n64-us/checksum.md5",
+      "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/.github/workflows/ci.yml",
+      "https://zelda.deco.mp/assets/csv/progress-mm-shield.json",
+      "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md"
+    ]
   }
 ]
