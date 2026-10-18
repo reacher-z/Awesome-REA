@@ -1593,12 +1593,14 @@
       "reported_source_urls": [
         "https://x.com/ChrisGPT/status/2106925689190354989"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ChrisGPT, 2026-10-05) reports that Claude moved Boba Fett’s Battlefront II model into Red Dead Redemption 2, fitted it to Arthur Morgan’s skeleton, and reverse-engineered the file formats to write its own exporter; the quoted post describes an earlier Arthur Morgan mod for Battlefront II. Both posts carry only videos and link no exporter, format notes or mod files, and no GitHub account matching the author’s or the credited collaborator’s handle has public repositories. Retain the lead without a catalog mapping; the format work is unestablished, and the game assets keep their own rights.",
+      "reason_zh": "作者帖子（@ChrisGPT，2026-10-05）称 Claude 把 Battlefront II 中的 Boba Fett 模型移入 Red Dead Redemption 2，适配到 Arthur Morgan 的骨骼上，并逆向文件格式、自行编写导出器；所引帖子描述的是更早将 Arthur Morgan 移入 Battlefront II 的模组。两条帖子均只附视频，未链接导出器、格式说明或模组文件；与作者及其注明的合作者账号名对应的 GitHub 账号均无公开仓库。保留此线索而不建立目录映射；文件格式工作未确立，游戏素材仍保有各自权利。",
+      "primary_evidence_urls": [
+        "https://x.com/ChrisGPT/status/2106925689190354989"
+      ],
       "catalog_matches": []
     },
     {
@@ -1613,12 +1615,15 @@
       "reported_source_urls": [
         "https://x.com/ozgrozer/status/2035124755854979272"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ozgrozer, 2026-03-20) says Apple Notes was reverse-engineered with Claude Code so that the author’s Grape note app can import its folders, notes and images; it shows a video, and the follow-up links only Grape’s website. The author’s GitHub has only a releases repository for Grape whose README points to that site, with no importer source or format notes. Retain the lead without a catalog mapping; the Apple Notes data-format work is unestablished.",
+      "reason_zh": "作者帖子（@ozgrozer，2026-03-20）称借助 Claude Code 逆向了 Apple Notes，使作者开发的笔记应用 Grape 能导入其中的文件夹、笔记和图片；帖子附视频，后续帖仅链接 Grape 官网。作者的 GitHub 上只有 Grape 的发布仓库，其 README 仅指向该网站，没有导入器源码或格式说明。保留此线索而不建立目录映射；Apple Notes 数据格式工作未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ozgrozer/status/2035124755854979272",
+        "https://github.com/ozgrozer/grape-releases/blob/40b21bb696798f6f999d7fae509cd621723c4ec1/readme.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -1658,12 +1663,14 @@
       "reported_source_urls": [
         "https://x.com/corndogjpn2/status/2109289076243525916"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@corndogjpn2, 2026-10-11) says REA was used to reverse-engineer the stock Bluetooth protocol of a small controller and asks which stack to use for a better Mac and Windows settings app; it carries two photos. The settings app is planned rather than built, no protocol notes or code are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the protocol work and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@corndogjpn2，2026-10-11）称借助 REA 逆向了一款小手柄的原厂蓝牙协议，并询问为其编写更好用的 Mac 与 Windows 设置程序该选哪种技术栈；帖子附两张图片。设置程序仍在计划中，尚未做出，帖中也未链接协议说明或代码，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；协议工作及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/corndogjpn2/status/2109289076243525916"
+      ],
       "catalog_matches": []
     },
     {
@@ -1678,12 +1685,14 @@
       "reported_source_urls": [
         "https://x.com/200Tabs1Brain/status/2108983700776186112"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@200Tabs1Brain, 2026-10-10) says Codex reverse-engineered ACPI and enabled an NVIDIA GPU under CachyOS on an Asus laptop without booting Windows. It names neither the laptop model nor the method and links no ACPI tables, patches or scripts, and a GitHub account with the same name holds only an unrelated fork. Retain the lead without a catalog mapping; the ACPI work is unestablished.",
+      "reason_zh": "作者的纯文字帖子（@200Tabs1Brain，2026-10-10）称 Codex 逆向了 ACPI，无需进入 Windows 即在一台华硕笔记本的 CachyOS 上启用了 NVIDIA 显卡。帖子未说明笔记本型号或具体方法，也未链接 ACPI 表、补丁或脚本；同名 GitHub 账号仅有一个无关的分叉仓库。保留此线索而不建立目录映射；ACPI 工作未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/200Tabs1Brain/status/2108983700776186112"
+      ],
       "catalog_matches": []
     },
     {
@@ -1698,12 +1707,14 @@
       "reported_source_urls": [
         "https://x.com/lipinhobeats/status/2109435654962655526"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@lipinhobeats, 2026-10-12) says the author cloned a poker app in about 40 minutes with PowerShell, REA, Ghidra and Codex to organize tables without paying. It names no app and links no code or results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the clone, REA’s contribution and the rights position are unestablished.",
+      "reason_zh": "所引回复（@lipinhobeats，2026-10-12）称作者用 PowerShell、REA、Ghidra 和 Codex，在约 40 分钟内克隆了一款扑克应用来整理牌桌，从而不必再付费。回复未说明是哪款应用，也未链接代码或结果，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；克隆结果、REA 的作用及相关权利问题均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/lipinhobeats/status/2109435654962655526"
+      ],
       "catalog_matches": []
     },
     {
@@ -1718,12 +1729,14 @@
       "reported_source_urls": [
         "https://x.com/TSFisher24nrex/status/2109452544913326086"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@TSFisher24nrex; its ID dates it 2026-10-12) returned not found from the public post API on 2026-10-18. The collection entry summarizes it as an attempt to decompile KOEI’s 1993 Aerobiz 2 with REA and Kimi K3, shared with an image but no recovery percentage, compilable code or playable build. No GitHub account matching the handle was found; Aerobiz projects that a repository search returns are by other authors and are not cited by this lead. Retain the lead without a catalog mapping; the decompilation and REA’s contribution are unestablished.",
+      "reason_zh": "所引帖子（@TSFisher24nrex，按帖子 ID 推算发布于 2026-10-12）在 2026-10-18 通过公开帖子接口查询时显示不存在。合集条目将其概括为借助 REA 和 Kimi K3 反编译 KOEI 1993 年的 Aerobiz 2 的尝试，帖子附一张图片，但没有恢复比例、可编译代码或可运行版本。未找到与该账号名对应的 GitHub 账号；仓库搜索得到的 Aerobiz 项目均出自其他作者，也未被此线索引用。保留此线索而不建立目录映射；反编译工作及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/TSFisher24nrex/status/2109452544913326086"
+      ],
       "catalog_matches": []
     },
     {
@@ -14370,15 +14383,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 123,
-      "insufficient-evidence": 92,
-      "pending": 376
+      "insufficient-evidence": 98,
+      "pending": 370
     },
     "units_by_state": {
       "already-curated": 122,
-      "insufficient-evidence": 92,
-      "pending": 375
+      "insufficient-evidence": 98,
+      "pending": 369
     },
-    "primary_reviewed_units": 155,
+    "primary_reviewed_units": 161,
     "catalog_linked_occurrences": 134,
     "distinct_resource_ids": 128,
     "distinct_paper_ids": 1,
