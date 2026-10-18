@@ -2546,5 +2546,16 @@
       "README 报告在一台 Linux 主机上以二进制优先方式测试 WinSCP 6.7：控制台启动器约 30 秒完成导入；GUI 可执行文件在需要 Hermes v0.23.0 的 1000 秒调用预算下耗时 663 秒，随后一次真实对话的首个查询耗时 580 秒。两次运行均恢复 28,701 个过程，且未启动该 Windows 可执行文件。这些是作者的观察结果，并非耗时保证；反编译输出也不是重建的原始源码。插件将 Ghidra 启动时限提高到 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
       "2026-10-15 的一次提交删除了 Hermes v0.22.2 拒绝的按服务 timeout 键，使插件包可在该版本上安装；按服务的调用预算须等待 Hermes v0.23.0。约 170 个工具和约 460 KB 工具定义的数字是 README 对 REA 6.4.0 的说明。插件包与改编技能采用 MIT，附有 REA 的 MIT 声明，崩溃分诊流程注明改编自 crashlens（MIT）；外部引擎与被分析目标仍有各自条款。本合集仅审阅源码，未安装 Hermes、插件或 REA。"
     ]
+  },
+  "crashlens-rea-crash-triage": {
+    "name": "crashlens 崩溃分诊工具",
+    "requirements": [
+      "所审阅的固定版本声明软件包版本为 0.1.0、插件版本为 0.2.0，README 称项目处于早期原型阶段。文本输入，即 Go／Rust panic、Python、Java 与 Node.js 堆栈以及 ASan／LSan／UBSan 报告，只需 Node.js 22.19+ 或 24.11+。分析核心转储需要 Linux x86-64、Python 3、rea-agents 包，以及通过 REA_PWNTOOLS_PYTHON 指定的独立 pwntools 环境；gdb、objdump 以及 Ghidra 12.1.x 与 JDK 21 为可选项。Windows minidump 与 macOS 崩溃报告仍在路线图中。",
+      "使用者需提供核心转储及发生崩溃的同一版本二进制。源码调用 rea inspect-recorded-crash 与 inspect-binary-layout，并对无符号函数调用使用 Ghidra 引擎的 rea decompile；加载偏移计算、GNU build ID 比对及不一致警告由 crashlens 自身完成。package.json 将 rea-agents 6.4.0 及以上版本声明为可选对等依赖，作者帖子称其可配合固定的 rea-agents 6.4.0 使用；本合集未检查其他 REA 版本。",
+      "插件包含一个技能和一个 MCP 服务。README 称提供三个只读工具，却列出四个名称；服务源码定义了 analyze_failure、analyze_core_dump、decompile_function 与 analyze_crash_folder，均带只读标记。另有一份可直接粘贴的提示词，供连接 REA 自身 MCP 服务的智能体执行同样的核心转储流程。伪代码标注为反编译器输出，崩溃类型属于启发式判断并附置信度。",
+      "项目称不会运行被分析的程序，gdb 打开核心文件时关闭脚本自动加载与 debuginfod。可选的 --ai 参数会把 Markdown 报告（包括代码片段和日志行）发送至 Anthropic API；本地网页应用只监听 127.0.0.1，并要求会话令牌。核心转储可能含有机密信息，报告也会包含本地路径、日志行和寄存器值。",
+      "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有端到端任务安装 gdb、pwntools 与最新版 rea-agents，并检查一个编译后发生空指针解引用的程序所生成的报告。README 称使用 crashlens 的智能体在七类无符号二进制崩溃中找出了六类的根因，这是作者报告，未公开对话记录。本合集审阅了源码与文档，未运行该工具、REA 或智能体。",
+      "项目声明采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序仍适用各自条款。作者帖子提议在 reverse-engineer-anything 技能旁增加崩溃分诊技能，并表示愿向 Hermes 插件仓库提交拉取请求；所审阅来源未确立该请求已提交、合并或被采纳。"
+    ]
   }
 }

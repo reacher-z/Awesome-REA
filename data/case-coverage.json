@@ -7363,13 +7363,29 @@
         "https://x.com/i/status/2111007641715786116",
         "https://github.com/mingleiw/crashlens"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository establishes crashlens as a crash-triage CLI, local web app and Claude Code plugin whose core-dump path calls the REA CLI, together with a REA-based agent prompt. The full mapping covers the reported project as a community REA integration, not a reconstruction case. The proposed Hermes skill remains an offer in posts, diagnostic results stay author-reported, and no runtime reproduction is claimed.",
+      "reason_zh": "固定版本仓库确立了 crashlens 是一个崩溃分诊命令行工具、本地网页应用和 Claude Code 插件，其核心转储分析调用 REA 命令行，并附有基于 REA 的智能体提示词。完整映射将所报告项目归为 REA 社区集成，而非重建案例。所提议的 Hermes 技能仍只是帖子中的提议，诊断结果仍为作者报告，也未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/plugin/skills/crashlens/SKILL.md",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/docs/prompts/crash-triage.md",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/src/rea.ts",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/src/mcp.ts",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/package.json",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/.github/workflows/ci.yml",
+        "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "crashlens-rea-crash-triage",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:halo3-reforged-ai-decompile-report",
@@ -15058,18 +15074,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 161,
-      "insufficient-evidence": 132,
-      "pending": 298
-    },
-    "units_by_state": {
-      "already-curated": 160,
+      "already-curated": 162,
       "insufficient-evidence": 132,
       "pending": 297
     },
-    "primary_reviewed_units": 232,
-    "catalog_linked_occurrences": 172,
-    "distinct_resource_ids": 166,
+    "units_by_state": {
+      "already-curated": 161,
+      "insufficient-evidence": 132,
+      "pending": 296
+    },
+    "primary_reviewed_units": 233,
+    "catalog_linked_occurrences": 173,
+    "distinct_resource_ids": 167,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

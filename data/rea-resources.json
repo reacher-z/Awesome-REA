@@ -2371,5 +2371,41 @@
       "https://github.com/NousResearch/hermes-agent/blob/22063fc099ec9ad8357d7f8f6e6248a0400680d3/plugin-catalog/rea.yaml",
       "https://hermes-agent.nousresearch.com/docs/plugins/rea"
     ]
+  },
+  {
+    "id": "crashlens-rea-crash-triage",
+    "name": "crashlens",
+    "url": "https://github.com/mingleiw/crashlens",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.",
+    "description_zh": "崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。",
+    "evidence_url": "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin declares package version 0.1.0 and plugin version 0.2.0, and the README calls the project an early prototype. Text inputs, namely Go/Rust panics, Python, Java and Node.js traces and ASan/LSan/UBSan reports, need only Node.js 22.19+ or 24.11+. Core dumps need Linux x86-64, Python 3, the rea-agents package and a separate pwntools environment named by REA_PWNTOOLS_PYTHON; gdb, objdump and Ghidra 12.1.x with JDK 21 are optional. Windows minidumps and macOS crash reports remain roadmap items.",
+      "Users supply the core dump and the exact binary that crashed. The source calls rea inspect-recorded-crash and inspect-binary-layout, and rea decompile with the Ghidra provider for stripped functions; crashlens itself computes the load bias, compares GNU build IDs and warns on a mismatch. package.json declares rea-agents 6.4.0 or later as an optional peer dependency, and the author’s post describes compatibility with a pinned rea-agents 6.4.0; this collection did not check other REA versions.",
+      "The plugin bundles a skill and an MCP server. The README says three read-only tools but names four, and the server source defines analyze_failure, analyze_core_dump, decompile_function and analyze_crash_folder with read-only hints. A copy-paste prompt documents the same core-dump workflow for agents connected to REA’s own MCP server. Pseudocode is labeled as decompiler output, and crash types are heuristics with a stated confidence.",
+      "The project states that the analyzed program is never executed and that gdb opens the core with script auto-loading and debuginfod disabled. The optional --ai flag sends the Markdown report, including code snippets and log lines, to the Anthropic API; the local web app listens on 127.0.0.1 and requires a session token. Core dumps can hold secrets, and reports include local paths, log lines and register values.",
+      "CI runs typechecks and unit tests on Node 22 and 24, plus an end-to-end job that installs gdb, pwntools and the latest rea-agents and checks a report for a compiled NULL-dereference program. The README’s statement that agents using crashlens found the root cause in six of seven stripped-binary crash types is author-reported without published transcripts. This collection reviewed source and documentation without running the tool, REA or an agent.",
+      "The project declares MIT and uses REA, also MIT, through its public CLI; Ghidra, the Anthropic API and analyzed programs keep their own terms. The author’s posts propose a crash-triage skill beside the reverse-engineer-anything skill and offer a pull request to a Hermes plugin repository; the reviewed sources do not establish that it was submitted, merged or adopted."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/plugin/skills/crashlens/SKILL.md",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/docs/prompts/crash-triage.md",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/src/rea.ts",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/src/mcp.ts",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/package.json",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/plugin/.claude-plugin/plugin.json",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/.github/workflows/ci.yml",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/test/e2e.test.ts",
+      "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/LICENSE",
+      "https://x.com/rae1101x/status/2111052456151154858"
+    ]
   }
 ]
