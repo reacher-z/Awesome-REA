@@ -2128,5 +2128,15 @@
       "STATUS.md 将实现、验证、验收和发布分开记录；例如 v1.0.4 的存档修复通过了逻辑审查、一项 CPU 测试夹具和 Release 链接，但未在游戏中运行。超分辨率与渲染检查只针对列明的有限测试夹具和 GPU。工作流指南说明，发布不代表游戏已从头到尾通关；本合集未运行任何内容。",
       "项目代码采用 GPL-3.0；Lost Odyssey 及其素材归各自权利人所有，Xenia FFmpeg 分支、DXC、可选的 DLSS／FSR／XeSS SDK 及 Android GPU 驱动等依赖保留各自条款。docs/AI_WORKFLOW.md 说明由一名维护者以 Claude Code 作为主会话，并配合 Codex CLI 与子代理开发；文档提到 Ghidra 脚本和第三方逆向技能，但未确立 REA 使用。"
     ]
+  },
+  "melee-matching-decomp-case": {
+    "name": "Super Smash Bros. Melee：可移位构建的 GameCube 一致性反编译",
+    "requirements": [
+      "README 将其描述为一致性反编译，构建美版 1.02 的 main.dol（游戏 ID GALE01），SHA-1 为 08e0bf20134dfcb260699671004527b2d6bb1a45，即 config/GALE01/build.sha1 校验的摘要。decomp.dev 报告此提交 100.00% 已反编译、100.00% 已完全链接，README 称目前主要精力在命名与清理。产物是 GameCube DOL，不是 PC 可执行文件；CI 另外构建的 CMake 库与 DWARF 软件包并未被记载为可游玩的移植，此处也不作此主张。",
+      "需从自己的 GALE01 光盘取得 main.dol；仓库中的 orig/GALE01 目录只有占位文件。README 的模组流程需把整张光盘转储到文件夹，启用 configure.py --non-matching 并将新对象标为 Equivalent，再在 Dolphin 中运行重建的 DOL。这类修改后的构建与零售版并非逐字节相同，不属于一致性结果。",
+      "宿主工具为 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（以 Game Porting Toolkit 运行 Windows 编译器）或 Linux（x86 上用 WiBo，其他架构用 Wine）上使用。configure.py 配置 decomp-toolkit、sjiswrap 以及 Metrowerks GC/1.2.5 与 GC/1.1p1 编译器和 GC/1.3.2 链接器；objdiff 用于逐对象比较，tools/decomp.py 借助 m2c 生成函数草稿。CI 在提供原始文件的构建容器中构建 link、test 和 debug 三种模式，并另做一次基于 Nix 的一致性构建。",
+      "一致性依据链接后 DOL 的 SHA-1 与 objdiff 的逐单元报告；CI 的 check_complete.py 会在某单元已完全匹配但尚未标记完成时发出警告。100% 数据为 decomp.dev 对此提交的报告；本合集未构建 DOL，也未重跑任何比较。",
+      "所审提交没有仓库级许可文件，GitHub 也未识别出许可；tools/ 下随附的工具各有许可，游戏本身、其 DOL 与素材仍受权利人条款约束。CONTRIBUTING.md 说明用 AI 匹配函数是可接受且常见的做法，但要求贡献者不要让 AI 命名结构体字段或全局标识符，也不要让其尝试匹配数据段。未记录 REA 使用，也不主张运行复现。"
+    ]
   }
 }

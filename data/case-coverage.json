@@ -12246,15 +12246,27 @@
       "reported_source_urls": [
         "https://github.com/doldecomp/melee"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Bounded primary README review only; further focused review is pending. Melee README describes matching US 1.02 main.dol reconstruction and notes shiftable builds for modding. Most current effort is naming/cleanup; nonmatching mod configuration is a separate path. Review license/source provenance and exact build gating before drafting. Original DOL extraction, Python/Ninja and platform toolchain constraints remain relevant.",
-      "reason_zh": "Melee README 描述美版 1.02 main.dol 的匹配重建及可移动代码构建，目前工作主要为命名和清理；非匹配模组配置是另一条路径。发表前仍需核查许可、来源和精确构建验证，不把修改版视为原二进制一致结果。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build checksum, configure script, contribution guide, CI workflow and decomp.dev report support the named matching decompilation of Melee's US 1.02 main.dol. Full mapping covers this decompilation, not non-matching mod builds, a PC port or independently rebuilt output. The user-supplied DOL, absent repository licence and project-reported completion remain explicit.",
+      "reason_zh": "固定版本的 README、构建校验值、配置脚本、贡献指南、CI 工作流及 decomp.dev 报告，支持该 Melee 美版 1.02 main.dol 的具名一致性反编译。完整映射覆盖此反编译，不涵盖非一致性模组构建、PC 移植或独立重建的产物。使用者自备 DOL、仓库缺少许可文件及项目报告的完成度均明确保留。",
       "primary_evidence_urls": [
-        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md"
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md",
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/config/GALE01/build.sha1",
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/configure.py",
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/CONTRIBUTING.md",
+        "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/workflows/build.yml",
+        "https://decomp.dev/doldecomp/melee"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "melee-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-088",
@@ -14413,18 +14425,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 125,
-      "insufficient-evidence": 98,
-      "pending": 368
-    },
-    "units_by_state": {
-      "already-curated": 124,
+      "already-curated": 126,
       "insufficient-evidence": 98,
       "pending": 367
     },
+    "units_by_state": {
+      "already-curated": 125,
+      "insufficient-evidence": 98,
+      "pending": 366
+    },
     "primary_reviewed_units": 163,
-    "catalog_linked_occurrences": 136,
-    "distinct_resource_ids": 130,
+    "catalog_linked_occurrences": 137,
+    "distinct_resource_ids": 131,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

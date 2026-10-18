@@ -4633,5 +4633,37 @@
       "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/LICENSE",
       "https://github.com/freefrank/LostOdysseyRecomp/releases/tag/v1.0.4"
     ]
+  },
+  {
+    "id": "melee-matching-decomp-case",
+    "name": "Super Smash Bros. Melee: a matching GameCube decompilation with a shiftable build",
+    "url": "https://github.com/doldecomp/melee",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A matching decompilation of Super Smash Bros. Melee's US 1.02 release (GALE01) that rebuilds main.dol from C with the original Metrowerks compilers and checks it against the retail SHA-1. decomp.dev reports the code fully decompiled and linked at the reviewed commit, and the README says current work is mostly naming and cleanup. Because the build can be shifted, a separate non-matching mode lets modders add code to a DOL run with their own disc dump.",
+    "description_zh": "Super Smash Bros. Melee 美版 1.02（GALE01）的一致性反编译：使用原版 Metrowerks 编译器从 C 代码重建 main.dol，并与零售版的 SHA-1 比对。decomp.dev 报告所审提交的代码已完全反编译并链接，README 称目前工作主要是命名与清理。由于构建可以移位，另有非一致性模式，供模组作者加入代码，再配合自己转储的光盘运行生成的 DOL。",
+    "evidence_url": "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a matching decompilation that builds the US 1.02 main.dol (game ID GALE01) with SHA-1 08e0bf20134dfcb260699671004527b2d6bb1a45, the digest config/GALE01/build.sha1 checks. decomp.dev reports 100.00% decompiled and 100.00% fully linked for this commit, and README says most effort now goes to naming and cleanup. The output is a GameCube DOL, not a PC executable; the CMake library and DWARF packages CI also builds are not documented as a playable port, and none is claimed here.",
+      "Supply main.dol from your own GALE01 disc; the repository's orig/GALE01 folders hold only placeholders. The README's modding path needs the whole disc dumped to a folder, enables configure.py --non-matching with new objects marked Equivalent, and runs the rebuilt DOL in Dolphin. Such modified builds are not byte-identical to retail and fall outside the matching result.",
+      "Host tools are Python and ninja on Windows (native tooling recommended), macOS (Game Porting Toolkit runs the Windows compilers) or Linux (WiBo on x86, Wine elsewhere). configure.py sets up decomp-toolkit, sjiswrap and the Metrowerks GC/1.2.5 and GC/1.1p1 compilers with the GC/1.3.2 linker; objdiff diffs objects and tools/decomp.py drafts functions with m2c. CI builds link, test and debug modes in a build container that provides the original files, plus a Nix matching build.",
+      "Matching rests on the linked DOL's SHA-1 and objdiff's per-unit report; CI's check_complete.py warns when a unit matches fully but is not yet marked complete. The 100% figures are decomp.dev's report for this commit; this collection did not build the DOL or rerun any comparison.",
+      "No repository-wide licence file is present at the reviewed commit and GitHub detects none; bundled tools under tools/ carry their own licences, and the game, its DOL and assets keep their rights holders' terms. CONTRIBUTING.md says using AI to match functions is acceptable and frequently practiced, while asking contributors not to let AI name struct fields or global identifiers or attempt data-section matches. No REA use is documented and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/config/GALE01/build.sha1",
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/configure.py",
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/CONTRIBUTING.md",
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/workflows/build.yml",
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/.github/scripts/check_complete.py",
+      "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/CMakeLists.txt",
+      "https://decomp.dev/doldecomp/melee"
+    ]
   }
 ]
