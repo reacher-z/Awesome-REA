@@ -5687,5 +5687,40 @@
       "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/LICENSE",
       "https://pypi.org/project/splat64/0.50.1/"
     ]
+  },
+  {
+    "id": "mario-party-4-decomp-case",
+    "name": "Mario Party 4: matching GameCube decompilation of the USA releases",
+    "url": "https://github.com/mariopartyrd/marioparty4",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Mario Party 4’s GameCube main executable and REL modules as C source that rebuilds both USA releases. The build analyzes the user’s own disc image and checks every linked output against version-specific SHA-1 lists. PAL and Japanese work is stale and no PC port exists yet; matching results remain project-reported here.",
+    "description_zh": "将 Mario Party 4 的 GameCube 主程序和 REL 模块重建为 C 源码，可重新构建两个美版发行版本。构建会分析使用者自备的光盘镜像，并按各版本的 SHA-1 清单检查每个链接产物。欧版和日版工作已停滞，也尚无 PC 移植；此处的一致性结果仍为项目报告。",
+    "evidence_url": "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress decompilation whose two USA versions, GMPE01_00 (Rev 0) and GMPE01_01 (Rev 1), are completely matching; three PAL revisions and the Japanese release are unfinished and their work is stale. Most non-engine code is undocumented, and README states there is no working PC port yet.",
+      "Supply your own disc image for a supported game ID; README lists ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC containers. The repository says it contains no game assets or assembly, and each version’s config checks the original main.dol hash before analysis.",
+      "Documented hosts are native Windows (Python and ninja), macOS (ninja and Wine Crossover) and Linux (ninja, with wibo fetched automatically on x86 or Wine elsewhere). configure.py pins decomp-toolkit, GameCube binutils, a Metrowerks CodeWarrior compiler bundle, objdiff, sjiswrap and wibo releases that the build downloads; the MusyX audio library is a pinned submodule.",
+      "The default build’s check step runs decomp-toolkit SHA-1 verification over main.dol and 99 REL modules listed for the selected version; objdiff supports per-object comparison. The mutable decomp.dev page reports GMPE01_00 as 100.00% decompiled and fully linked at the reviewed commit. This collection did not rerun these checks or play the game.",
+      "The repository is dedicated under CC0 1.0; the pinned MusyX submodule carries its own MIT license, and downloaded compilers and tools keep their own terms. The disc image and game content retain separate rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/configure.py",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_00/config.yml",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_00/build.sha1",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_01/build.sha1",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/tools/project.py",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/tools/download_tool.py",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/LICENSE",
+      "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/.gitmodules",
+      "https://github.com/AxioDL/musyx/blob/adc8df9a959f1e37f71bdf3155e229f9f87ad166/LICENSE",
+      "https://decomp.dev/mariopartyrd/marioparty4"
+    ]
   }
 ]

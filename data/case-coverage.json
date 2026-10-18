@@ -13630,13 +13630,32 @@
       "reported_source_urls": [
         "https://github.com/mariopartyrd/marioparty4"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 128 (README line 1359) lists mariopartyrd/marioparty4 under 🎲 Mario Party 4. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 128 行（README 第 1359 行）在 🎲 Mario Party 4 下列出 mariopartyrd/marioparty4。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build configuration, per-version SHA-1 lists and license support the named Mario Party 4 GameCube decompilation report. Full mapping covers this repository’s matching USA rebuilds, not the unfinished PAL/Japanese versions, a PC port or independently reproduced gameplay. Disc-image requirements, toolchain terms and project-reported matching remain explicit.",
+      "reason_zh": "固定版本的 README、构建配置、各版本 SHA-1 清单及许可证，支持该 Mario Party 4 GameCube 反编译重建报告。完整映射覆盖此仓库的美版一致重建，不涵盖未完成的欧版／日版、PC 移植或独立复现的游戏行为。光盘镜像要求、工具链条款及项目报告的一致性均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/configure.py",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_00/config.yml",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_00/build.sha1",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_01/build.sha1",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/tools/project.py",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/tools/download_tool.py",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/LICENSE",
+        "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/.gitmodules",
+        "https://github.com/AxioDL/musyx/blob/adc8df9a959f1e37f71bdf3155e229f9f87ad166/LICENSE",
+        "https://decomp.dev/mariopartyrd/marioparty4"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "mario-party-4-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-129",
@@ -14941,18 +14960,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
-    },
-    "units_by_state": {
-      "already-curated": 154,
+      "already-curated": 156,
       "insufficient-evidence": 126,
       "pending": 309
     },
-    "primary_reviewed_units": 220,
-    "catalog_linked_occurrences": 166,
-    "distinct_resource_ids": 160,
+    "units_by_state": {
+      "already-curated": 155,
+      "insufficient-evidence": 126,
+      "pending": 308
+    },
+    "primary_reviewed_units": 221,
+    "catalog_linked_occurrences": 167,
+    "distinct_resource_ids": 161,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

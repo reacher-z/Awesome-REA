@@ -2460,5 +2460,15 @@
       "收录政策包括互操作、保存、不绕过 DRM 或反作弊的模组制作、旧软件恢复、文件格式／协议／API 文档、用户自有设备、CTF 以及不含活体样本的防御性恶意软件分析；不收录 DRM、许可证检查与反作弊绕过、在线游戏作弊、泄露源码、活体恶意软件样本和武器化漏洞利用。网站称不托管二进制或代码，并受理下架请求；每个链接项目仍需单独核查其权利与原始素材要求。",
       "维护者 smyaseen（X 账号 @whyamas）审核每条提交；赞助位置均有标注，网站称赞助不影响收录或排序。其指南包括一篇 2026-10-14 更新的第三方 REA 安装指南，但目录涵盖 REA 以外的大量工具，并非 REA 官方资源。所审页面显示版权声明，未提供目录内容的复用许可。"
     ]
+  },
+  "mario-party-4-decomp-case": {
+    "name": "Mario Party 4：美版 GameCube 一致性反编译重建",
+    "requirements": [
+      "README 将其描述为进行中的反编译项目，两个美版 GMPE01_00（Rev 0）和 GMPE01_01（Rev 1）已完全一致；三个欧版修订版及日版尚未完成，相关工作已停滞。大部分非引擎代码尚无注释文档，README 并说明目前还没有可用的 PC 移植。",
+      "需自备受支持游戏 ID 的光盘镜像；README 列出的容器格式包括 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC。仓库声明不含任何游戏素材或汇编，各版本配置在分析前会检查原 main.dol 的哈希。",
+      "文档说明的宿主包括原生 Windows（Python 与 ninja）、macOS（ninja 与 Wine Crossover）和 Linux（ninja；x86 上自动获取 wibo，其他架构使用 Wine）。configure.py 固定 decomp-toolkit、GameCube binutils、Metrowerks CodeWarrior 编译器包、objdiff、sjiswrap 和 wibo 的发布版本，由构建自动下载；MusyX 音频库以固定版本子模块引入。",
+      "默认构建的检查步骤调用 decomp-toolkit，按所选版本的清单对 main.dol 和 99 个 REL 模块执行 SHA-1 校验；objdiff 用于逐目标文件比较。可变的 decomp.dev 页面报告 GMPE01_00 在所审提交时已 100.00% 反编译并完全链接。本合集未重跑这些检查，也未运行游戏。",
+      "仓库以 CC0 1.0 释出；固定版本的 MusyX 子模块另附 MIT 许可，下载的编译器与工具各有条款。光盘镜像和游戏内容仍有各自权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }
