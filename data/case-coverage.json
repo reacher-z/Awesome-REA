@@ -1237,13 +1237,23 @@
       "reported_source_urls": [
         "https://github.com/morluto/rea/pull/741"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Merged REA PR #741 and REA's pinned official firmware guide establish the reported workflow: Binwalk region inspection, Unblob extraction with independently verified SHA-256 outputs, and separate selection of an extracted ELF for Ghidra analysis, verified on generated gzip, USTAR and ext4 images with a Linux x64 ELF child. The full mapping covers this report as official documentation, not a reconstruction case; SquashFS, UBIFS, proprietary firmware, other hosts and architectures remain unverified. No runtime reproduction is claimed.",
+      "reason_zh": "已合并的 REA PR #741 与固定版本的 REA 官方固件指南确立了该报告所述的工作流：用 Binwalk 检查区域、用 Unblob 提取并独立校验输出的 SHA-256，再另行选取提取出的 ELF 交给 Ghidra 分析；验证基于自行生成的 gzip、USTAR 与 ext4 镜像及一个 Linux x64 ELF 子文件。完整映射以官方文档覆盖该报告，并不将其视为重建案例；SquashFS、UBIFS、专有固件以及其他宿主和架构仍未验证。未主张运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/morluto/rea/pull/741",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/firmware-analysis.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-firmware-guide",
+          "kind": "documentation",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:preview-rebuild",
@@ -13274,18 +13284,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 64,
-      "insufficient-evidence": 66,
-      "pending": 461
-    },
-    "units_by_state": {
-      "already-curated": 63,
+      "already-curated": 65,
       "insufficient-evidence": 66,
       "pending": 460
     },
-    "primary_reviewed_units": 75,
-    "catalog_linked_occurrences": 71,
-    "distinct_resource_ids": 62,
+    "units_by_state": {
+      "already-curated": 64,
+      "insufficient-evidence": 66,
+      "pending": 459
+    },
+    "primary_reviewed_units": 76,
+    "catalog_linked_occurrences": 72,
+    "distinct_resource_ids": 63,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
