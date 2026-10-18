@@ -2369,12 +2369,16 @@
       "reported_source_urls": [
         "https://x.com/staskulesh/status/2109605915175596275"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@staskulesh, 2026-10-12) says Claude Opus 5.5 reverse-engineered Sierra’s The Incredible Machine, regenerated assets and made it playable in a browser; it shows a video, and the author’s reply links a live page. The page is playable and credits Dynamix’s 1993 soundtrack, but it names no author, publishes no source or build notes, states no license and documents no method or level coverage. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a playable demo, not a documented reconstruction, and asset rights are unaddressed.",
+      "reason_zh": "作者帖子（@staskulesh，2026-10-12）称 Claude Opus 5.5 逆向了 Sierra 的 The Incredible Machine，重新生成素材并做成可在浏览器游玩的版本；帖子附视频，作者回复链接了一个在线页面。该页面可游玩，并标注使用 Dynamix 1993 年的原声，但未署作者、未公开源码或构建说明、未声明许可，也未记录方法或关卡覆盖情况。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是一个可游玩的演示，而非有记录的重建，素材权利亦未说明。",
+      "primary_evidence_urls": [
+        "https://x.com/staskulesh/status/2109605915175596275",
+        "https://x.com/staskulesh/status/2109605918480740837",
+        "https://aincredible-machine.stas6236.workers.dev/"
+      ],
       "catalog_matches": []
     },
     {
@@ -2527,12 +2531,16 @@
       "reported_source_urls": [
         "https://x.com/renmu2017/status/2109581250424123651"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@renmu2017, 2026-10-12) relays, in Chinese, CodeScene’s case study of AI refactoring an open-source Street Fighter III: 3rd Strike decompilation. The primary sources are CodeScene’s blog post (Adam Tornhill, 2026-09-24) and the InfoQ write-up, which report raising Code Health from 5.6 to 10.0 across 726 files with Claude Opus and a frame-by-frame replay-trace check, over three weeks for about $4,000. Neither names or links the decompilation project or the fork the 54 PRs merged into, so no reviewable repository exists, and the work is maintainability refactoring of existing code rather than a reconstruction. Retain the lead without a catalog mapping; the refactored code and the underlying decompilation are not public here.",
+      "reason_zh": "所引帖子（@renmu2017，2026-10-12）以中文转述 CodeScene 关于用 AI 重构一个开源《街头霸王 III：三度冲击》反编译项目的案例研究。一手来源为 CodeScene 的博客文章（Adam Tornhill，2026-09-24）及 InfoQ 的报道，二者称借助 Claude Opus 并配合逐帧回放轨迹校验，在约三周、约 4000 美元成本内，将 726 个文件的 Code Health 从 5.6 提升至 10.0。两者均未指明或链接该反编译项目，也未指明 54 个 PR 合入的分叉仓库，因此没有可审阅的仓库，且该工作属于对既有代码的可维护性重构，而非重建。保留此线索而不建立目录映射；重构后的代码及其所依赖的反编译项目在此均不公开。",
+      "primary_evidence_urls": [
+        "https://x.com/renmu2017/status/2109581250424123651",
+        "https://codescene.com/blog/case-study-refactoring-at-scale-with-agents",
+        "https://www.infoq.cn/article/Qk7CzmLpDCvfYpAiU6Tf"
+      ],
       "catalog_matches": []
     },
     {
@@ -2586,12 +2594,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109665456735076494"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Mehal_Kay, 2026-10-12) says he used REA with Claude Code to study CapCut and build a personal video editor with auto captions, transitions, animations and text in about 30 minutes; it shows a video, and the follow-up gives generic steps linking only the REA repository. No source, export or comparison tests are published, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the editor and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Mehal_Kay，2026-10-12）称借助 REA 与 Claude Code 研究 CapCut，并在约 30 分钟内做出一个带自动字幕、转场、动画和文字的个人视频编辑器；帖子附视频，后续帖给出通用步骤，仅链接 REA 仓库。帖中未公开源码、导出或对照测试，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该编辑器及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Mehal_Kay/status/2109665456735076494",
+        "https://x.com/Mehal_Kay/status/2109665459163521383"
+      ],
       "catalog_matches": []
     },
     {
@@ -2606,12 +2617,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109665812017746132"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@iceman_shen, 2026-10-12) says he used Codex and REA to study CleanMyMac and build ClearSpace, a native macOS cleanup app with cache cleanup, app management, large-file and duplicate detection and storage visualization; it shows two interface images. No source, deletion-safety checks or feature-equivalence tests are published, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the app and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@iceman_shen，2026-10-12）称借助 Codex 与 REA 研究 CleanMyMac，并做出原生 macOS 清理应用 ClearSpace，具备缓存清理、应用管理、大文件与重复文件检测及存储可视化；帖子附两张界面图片。帖中未公开源码、删除安全性检查或功能等价测试，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该应用及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/iceman_shen/status/2109665812017746132"
+      ],
       "catalog_matches": []
     },
     {
@@ -2626,12 +2639,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109664718499762606"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@Jumpan1111, 2026-10-12), responding to the smart-toilet post, says the author had Codex install REA, reverse-engineer the connected devices at home and build desktop control software. It lists no device models, protocols, source or demonstration, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the controller and REA’s contribution are unestablished.",
+      "reason_zh": "所引回复（@Jumpan1111，2026-10-12）是对智能马桶帖子的回复，称作者让 Codex 安装 REA，逆向家中联网设备并做出电脑端控制软件。回复未列出设备型号、协议、源码或演示，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该控制软件及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Jumpan1111/status/2109664718499762606"
+      ],
       "catalog_matches": []
     },
     {
@@ -2646,12 +2661,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2109671680977367085"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@liguozzz, 2026-10-12), in an REA discussion, recalls that the author tried the previous month to study a discontinued bookkeeping app’s binary but stalled because the AI could not get past its encryption layer. It names no app and links no artifact; it reports a failed attempt rather than a result. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; no recovery or REA use is established.",
+      "reason_zh": "所引回复（@liguozzz，2026-10-12）在一场关于 REA 的讨论中回忆：作者上个月曾尝试研究一款停更记账软件的二进制，但因 AI 无法突破其加密层而受阻。回复未指明是哪款应用，也未链接任何成果；它陈述的是一次失败尝试，而非结果。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；任何恢复成果或 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/liguozzz/status/2109671680977367085"
+      ],
       "catalog_matches": []
     },
     {
@@ -14677,15 +14694,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 139,
-      "insufficient-evidence": 118,
-      "pending": 334
+      "insufficient-evidence": 124,
+      "pending": 328
     },
     "units_by_state": {
       "already-curated": 138,
-      "insufficient-evidence": 118,
-      "pending": 333
+      "insufficient-evidence": 124,
+      "pending": 327
     },
-    "primary_reviewed_units": 196,
+    "primary_reviewed_units": 202,
     "catalog_linked_occurrences": 150,
     "distinct_resource_ids": 144,
     "distinct_paper_ids": 1,
