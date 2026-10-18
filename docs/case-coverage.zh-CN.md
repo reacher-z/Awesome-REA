@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 123 | 122 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 376 | 375 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 92 | 92 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 370 | 369 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 98 | 98 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 134 个出现项含目录链接；共关联 128 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 155 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 161 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -73,7 +73,13 @@
 | pi-computer-use: desktop interaction for other models | 证据不足 | [来源](https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/README.md) |
 | Background Computer Use in Swift | 证据不足 | [来源](https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/README.md) |
 | GarageBand format for automated composition | 证据不足 | [来源](https://x.com/anshuc/status/2106131543752122774) |
+| Boba Fett in Red Dead Redemption 2 | 证据不足 | [来源](https://x.com/ChrisGPT/status/2106925689190354989) |
+| Apple Notes migration to Grape | 证据不足 | [来源](https://x.com/ozgrozer/status/2035124755854979272) |
 | GameCube/Wii PowerPC support request | 证据不足 | [来源](https://github.com/morluto/rea/issues/1741) |
+| Gamepad settings after Bluetooth analysis | 证据不足 | [来源](https://x.com/corndogjpn2/status/2109289076243525916) |
+| ASUS ACPI and Linux GPU support | 证据不足 | [来源](https://x.com/200Tabs1Brain/status/2108983700776186112) |
+| Poker table organizer | 证据不足 | [来源](https://x.com/lipinhobeats/status/2109435654962655526) |
+| Aerobiz 2: REA and Kimi decompilation | 证据不足 | [来源](https://x.com/TSFisher24nrex/status/2109452544913326086) |
 | Super Mario Sunshine：基于 AI 辅助反编译的原生 PC 移植 | 已收录 | [来源](https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/README.md) |
 | Apple Preview: adding AI directly to a compiled app | 证据不足 | [来源](https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/README.md) |
 | wine-uwp：在修改版 Wine 上运行打包的 Windows 商店应用 | 已收录 | [来源](https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md) |

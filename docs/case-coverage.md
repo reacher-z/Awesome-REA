@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 123 | 122 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 376 | 375 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 92 | 92 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 370 | 369 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 98 | 98 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 134 occurrences have catalog links. They reference 128 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 155 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 161 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -73,7 +73,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | pi-computer-use: desktop interaction for other models | Insufficient evidence | [Source](https://github.com/injaneity/pi-computer-use/blob/67e9e2f77643f84605b738a3198048a88e92190e/README.md) |
 | Background Computer Use in Swift | Insufficient evidence | [Source](https://github.com/actuallyepic/background-computer-use/blob/52116acfe0f2f57174f5e0166881abe944cb6eeb/README.md) |
 | GarageBand format for automated composition | Insufficient evidence | [Source](https://x.com/anshuc/status/2106131543752122774) |
+| Boba Fett in Red Dead Redemption 2 | Insufficient evidence | [Source](https://x.com/ChrisGPT/status/2106925689190354989) |
+| Apple Notes migration to Grape | Insufficient evidence | [Source](https://x.com/ozgrozer/status/2035124755854979272) |
 | GameCube/Wii PowerPC support request | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/1741) |
+| Gamepad settings after Bluetooth analysis | Insufficient evidence | [Source](https://x.com/corndogjpn2/status/2109289076243525916) |
+| ASUS ACPI and Linux GPU support | Insufficient evidence | [Source](https://x.com/200Tabs1Brain/status/2108983700776186112) |
+| Poker table organizer | Insufficient evidence | [Source](https://x.com/lipinhobeats/status/2109435654962655526) |
+| Aerobiz 2: REA and Kimi decompilation | Insufficient evidence | [Source](https://x.com/TSFisher24nrex/status/2109452544913326086) |
 | Super Mario Sunshine: a native PC port from an AI-assisted decompilation | Already curated | [Source](https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/README.md) |
 | Apple Preview: adding AI directly to a compiled app | Insufficient evidence | [Source](https://github.com/Pasta-Lab/edit-my-app/blob/7f469c1f179e2552cd3c5b46ab29b21aeadc838f/README.md) |
 | wine-uwp: running packaged Windows Store apps on a patched Wine | Already curated | [Source](https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md) |
