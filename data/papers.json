@@ -3785,5 +3785,63 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-idioms",
+    "title": "Idioms: A Simple and Effective Framework for Turbo-Charging Local Neural Decompilation with Well-Defined Types",
+    "title_zh": "Idioms：以明确定义的类型显著增强局部神经反编译的简单有效框架",
+    "authors": [
+      "Luke Dramko",
+      "Claire Le Goues",
+      "Edward J. Schwartz"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The official NDSS paper and the Internet Society’s Crossref deposit establish publication year 2026. The February 23–27 symposium dates are not used as a publication day.",
+    "date_basis_zh": "NDSS 官方论文与 Internet Society 提交的 Crossref 元数据确认出版年份为 2026；不以 2 月 23—27 日的研讨会日期作为出版日。",
+    "venue": "NDSS 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2502.04536",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2025-02-06",
+    "doi": "10.14722/ndss.2026.240795",
+    "citation": {
+      "container_title": "Proceedings 2026 Network and Distributed System Security Symposium",
+      "publisher": "Internet Society",
+      "sources": [
+        "https://api.crossref.org/works/10.14722/ndss.2026.240795"
+      ]
+    },
+    "url": "https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf",
+    "code_url": "https://github.com/squaresLab/idioms",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Idioms fine-tunes code language models to turn Hex-Rays output for one target function into predicted original C together with definitions of the user-defined structs, unions and typedefs it uses. Input can include neighboring decompiled functions in breadth-first call-graph order, so evidence about a type scattered across callers and callees reaches the model. The authors also build Realtype, 157,163 functions from compiled open-source C repositories with full type definitions. Their CodeGemma-7b-based model passes ExeBench unit tests for 54.4% of functions versus 46.3% for LLM4Decompile and 37.5% for Nova, and scores at least 95% higher on Realtype.",
+    "description_zh": "Idioms 微调代码语言模型，把单个目标函数的 Hex-Rays 输出转换为预测的原始 C 代码，并同时给出其中使用的用户自定义结构体、联合体和类型别名定义。输入可按调用图广度优先顺序附带相邻的反编译函数，使分散在调用者与被调用者中的类型线索能够提供给模型。作者还构建了 Realtype 数据集，包含来自已编译开源 C 仓库的 157,163 个函数及完整类型定义。其基于 CodeGemma-7b 的模型在 ExeBench 上有 54.4% 的函数通过单元测试，LLM4Decompile 为 46.3%，Nova 为 37.5%；在 Realtype 上的得分至少高出 95%。",
+    "scope_limitations_en": "This is local, function-level neural decompilation: each prediction covers one target function and its type definitions, not a compilable whole program. Evaluation uses x86-64 Linux gcc binaries from open-source GitHub projects and ExeBench’s “real” subset; O1–O3 builds disable inlining, and keeping only functions that decompiled at every level removes 21% of the Hex-Rays and 76% of the Ghidra test sets. ExeBench unit tests are an optimistic proxy; Realtype has no tests, so dependency-graph equivalence and exact name and type matches serve as conservative proxies, and a Realtype user-defined type counts as correct only if all of its fields, 17.6 on average when counted recursively, match. The main models use proprietary Hex-Rays output and context windows of 2,048 or 4,096 tokens. Predicted names and types are statistical, not recovered originals. Pretraining leakage from GitHub remains possible, and obfuscated code and malware were not evaluated.",
+    "scope_limitations_zh": "这是局部、函数级的神经反编译：每次预测只覆盖一个目标函数及其类型定义，而非可编译的完整程序。评测使用来自 GitHub 开源项目的 x86-64 Linux gcc 二进制及 ExeBench 的“real”子集；O1–O3 构建禁用内联，且只保留在所有优化级别均能反编译的函数，使 Hex-Rays 与 Ghidra 测试集分别减少 21% 和 76%。ExeBench 单元测试是偏乐观的代理指标；Realtype 没有测试，因此以依赖图等价性及名称、类型的完全匹配作为偏保守的代理指标，且 Realtype 的用户自定义类型须所有字段（递归计算平均 17.6 个）均匹配才算正确。主要模型使用专有 Hex-Rays 的输出，上下文窗口为 2,048 或 4,096 个词元。预测的名称与类型属于统计推断，并非恢复的原始信息。仍可能存在来自 GitHub 的预训练数据泄漏，且未评估混淆代码和恶意软件。",
+    "why_fits_en": "Adds neural decompilation that jointly predicts code and user-defined type definitions with interprocedural context, and introduces a type-rich benchmark, complementing assembly-to-source models and type and symbol recovery research.",
+    "why_fits_zh": "补充借助过程间上下文、同时预测代码与用户自定义类型定义的神经反编译方法，并提供类型丰富的基准，与从汇编生成源码的模型及类型、符号恢复研究互补。",
+    "metadata_notes": "The NDSS page, final PDF and Crossref agree on the published title, three-author order and DOI; Crossref lists no pages. arXiv:2502.04536 v1 (2025-02-06) is titled “Idioms: Neural Decompilation With Joint Code and Type Prediction” and v2 (2025-06-17) “Idioms: Neural Decompilation With Joint Code and Type Definition Prediction”; the repository README still uses the v1 title. The paper links Zenodo version 10.5281/zenodo.15683630, while the README links its concept DOI 10.5281/zenodo.14797016; both resolve to the same open 2025-06-17 record of about 11.8 GB, including a 10.1 GB models archive, and the Zenodo metadata names no license. The reviewed 2025-12-03 repository snapshot has no license file, and GitHub detects none, so no open-source license is asserted. Its env.yml pins Python 3.11, CUDA 12.1, transformers 4.46.3 and peft 0.17.0; training also needs unsloth on GPUs with compute capability 7.0 or greater, dataset building runs GHCC builds in Docker that can take weeks, and the main decompilation step needs IDA Pro’s Hex-Rays. ExeBench tests run in a provided Docker image. No code, models or datasets were run or downloaded.",
+    "metadata_notes_zh": "NDSS 页面、最终 PDF 与 Crossref 的正式标题、三位作者顺序和 DOI 一致；Crossref 未列出页码。arXiv:2502.04536 的 v1（2025-02-06）题为《Idioms: Neural Decompilation With Joint Code and Type Prediction》，v2（2025-06-17）题为《Idioms: Neural Decompilation With Joint Code and Type Definition Prediction》；仓库 README 仍使用 v1 标题。论文链接 Zenodo 版本 DOI 10.5281/zenodo.15683630，README 则链接其概念 DOI 10.5281/zenodo.14797016；两者指向同一个 2025-06-17 发布的开放记录，约 11.8 GB，其中模型压缩包约 10.1 GB，Zenodo 元数据未注明许可证。所审阅的 2025-12-03 仓库快照没有许可证文件，GitHub 也未检测到许可证，因此本条目不认定任何开源许可证。其 env.yml 固定 Python 3.11、CUDA 12.1、transformers 4.46.3 与 peft 0.17.0；训练还需要在计算能力 7.0 及以上的 GPU 上使用 unsloth，构建数据集需在 Docker 中运行可能耗时数周的 GHCC 编译，主要反编译步骤需要 IDA Pro 的 Hex-Rays。ExeBench 测试在提供的 Docker 镜像中运行。本次未运行或下载代码、模型及数据集。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf",
+      "https://api.crossref.org/works/10.14722/ndss.2026.240795",
+      "https://arxiv.org/abs/2502.04536v1",
+      "https://arxiv.org/abs/2502.04536v2",
+      "https://github.com/squaresLab/idioms/blob/d08791287545c6d4b1e0d5f79e28ae5e6542b493/README.md",
+      "https://github.com/squaresLab/idioms/blob/d08791287545c6d4b1e0d5f79e28ae5e6542b493/env.yml",
+      "https://zenodo.org/records/15683630",
+      "https://zenodo.org/api/records/15683630"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
