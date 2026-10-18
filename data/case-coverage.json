@@ -12800,13 +12800,29 @@
         "https://github.com/Mikompilation/MikuPan",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 102 (README line 1047) lists Mikompilation/MikuPan under 👻 Fatal Frame. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 102 行（README 第 1047 行）在 👻 Fatal Frame 下列出 Mikompilation/MikuPan。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build files, CI workflows and license document MikuPan as an early native PC port of Fatal Frame whose repository description names the Himuro decompilation as its basis; the pinned Himuro README supports that decompilation context. Full mapping covers the port, not Himuro’s matching progress or verified gameplay parity. The reported post’s external archive link was not used as evidence.",
+      "reason_zh": "固定版本的 README、构建文件、CI 工作流和许可证表明，MikuPan 是 Fatal Frame 的早期原生 PC 移植，仓库简介称其基于 Himuro 反编译项目；固定版本的 Himuro README 支持这一反编译背景。完整映射覆盖此移植，不涵盖 Himuro 的一致性进度或已核实的游戏行为等价性。报告帖子中的外部存档链接未作为证据使用。",
+      "primary_evidence_urls": [
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/README.md",
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakeLists.txt",
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakePresets.json",
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/.github/workflows/Build.yml",
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/.github/workflows/Nightly.yml",
+        "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/LICENSE",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
+        "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "mikupan-fatal-frame-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-103",
@@ -14646,18 +14662,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 137,
-      "insufficient-evidence": 118,
-      "pending": 336
-    },
-    "units_by_state": {
-      "already-curated": 136,
+      "already-curated": 138,
       "insufficient-evidence": 118,
       "pending": 335
     },
-    "primary_reviewed_units": 194,
-    "catalog_linked_occurrences": 148,
-    "distinct_resource_ids": 142,
+    "units_by_state": {
+      "already-curated": 137,
+      "insufficient-evidence": 118,
+      "pending": 334
+    },
+    "primary_reviewed_units": 195,
+    "catalog_linked_occurrences": 149,
+    "distinct_resource_ids": 143,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

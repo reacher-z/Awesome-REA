@@ -5035,5 +5035,37 @@
       "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/README.md",
       "https://github.com/cybervisi0n/libntr/blob/1555d911ac80c0190ac1c321f99f1323de8b3c09/LICENSE"
     ]
+  },
+  {
+    "id": "mikupan-fatal-frame-port-case",
+    "name": "MikuPan: a native Fatal Frame PC port built on the Himuro decompilation",
+    "url": "https://github.com/Mikompilation/MikuPan",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ports the PS2 game Fatal Frame to native PC builds without emulation; its repository description names the Himuro decompilation as its basis. Stubs replace PS2 kernel calls and a new SDL3-based layer handles rendering, audio and UI, while game data comes from the user’s own disc. The README calls the port very early work and publishes no matching or fidelity checks.",
+    "description_zh": "将 PS2 游戏 Fatal Frame（《零》）移植为无需模拟器的原生 PC 版本；仓库简介称其基于 Himuro 反编译项目。PS2 内核调用由桩函数替代，渲染、音频和界面由基于 SDL3 的新层实现，游戏数据则来自使用者自有的光盘。README 称移植仍处于很早期阶段，未发布一致性或还原度检查。",
+    "evidence_url": "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes an in-progress native PC port of the PS2 game with no emulation and calls it very early work; debug builds are recommended because release builds have issues. Per the repository description its basis is Himuro, a separate decompilation aiming for matching US, EU and JP PS2 executables, and MikuPan’s game-code directories follow Himuro’s source layout. This record covers the port, not Himuro’s matching progress.",
+      "Requires IMG_HD.BIN and IMG_BD.BIN from an independently obtained Fatal Frame disc image of the matching region: NTSC-U for the default presets or PAL/EU for the *-eu presets. NTSC-J images are unsupported. The README states that the game data is not packaged, including in Android APKs.",
+      "Builds use CMake 3.28+ and C++20 and fetch SDL3, FFmpeg, SDL_shadercross and other libraries; Windows uses MinGW, Cygwin or MSVC, and Linux uses GCC. macOS is not officially supported, though contributors report Apple Silicon builds on SDL_GPU’s Metal backend. Android packaging needs Android SDK 35+, NDK r28c+ and prebuilt FFmpeg libraries.",
+      "CI builds Windows, Linux and macOS targets on pushes and pull requests and publishes nightly prerelease archives. The reviewed tree has no test suite, matching check or gameplay-comparison result, so behavioral parity with the PS2 game remains unverified; this collection did not build or run the port.",
+      "MikuPan declares AGPL-3.0 and Himuro declares MIT; bundled third-party binaries and libraries keep their own terms, and Fatal Frame data retains separate rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakeLists.txt",
+      "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakePresets.json",
+      "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/.github/workflows/Build.yml",
+      "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/.github/workflows/Nightly.yml",
+      "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/LICENSE",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/README.md",
+      "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE"
+    ]
   }
 ]

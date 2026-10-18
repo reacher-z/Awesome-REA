@@ -2247,5 +2247,15 @@
       "CI 在 pc_port 分支推送时构建 ARM ROM、Linux 和 Windows 目标，并打包 Linux 与 Windows 产物；最新发行版 v0.1.12（2026-10-10）提供 Linux 和 Windows 压缩包，来自早于所审提交的版本。该分支的默认 make 目标去掉了 pret 的校验依赖，CI 也不运行 make check，因此所审来源不能说明其 DS ROM 仍与零售版一致，也不能说明 PC 版行为完全相同。本合集未运行任何构建。",
       "该分支没有顶层许可证文件，GitHub 也未识别出许可证；libntr 声明 MIT，README 要求发布者遵守其条款，而 pret 的反编译项目未声明许可证，原游戏内容仍受其权利人约束。README 表示未使用生成式 AI／大语言模型捷径，并拒绝借助 AI 的拉取请求，AGENTS.md 也重申了这一拒绝。未确立任何 REA 使用，也不主张运行复现。"
     ]
+  },
+  "mikupan-fatal-frame-port-case": {
+    "name": "MikuPan：基于 Himuro 反编译的 Fatal Frame 原生 PC 移植",
+    "requirements": [
+      "README 将其描述为无需模拟器、仍在进行中的 PS2 游戏原生 PC 移植，并称其处于很早期阶段；由于发布版构建存在问题，建议使用调试版构建。仓库简介称其基于 Himuro，即另一个以生成与美版、欧版、日版 PS2 可执行文件一致的结果为目标的反编译项目；MikuPan 的游戏代码目录沿用 Himuro 的源码结构。本记录覆盖该移植，不涵盖 Himuro 的一致性进度。",
+      "需要从自行合法取得、区域匹配的 Fatal Frame 光盘镜像中获得 IMG_HD.BIN 和 IMG_BD.BIN：默认预设对应 NTSC-U，*-eu 预设对应 PAL／EU；不支持 NTSC-J 镜像。README 说明游戏数据不随项目打包，Android APK 也不包含。",
+      "构建使用 CMake 3.28+ 和 C++20，并自动获取 SDL3、FFmpeg、SDL_shadercross 等库；Windows 可使用 MinGW、Cygwin 或 MSVC，Linux 使用 GCC。macOS 不在官方支持范围内，但贡献者报告已基于 SDL_GPU 的 Metal 后端在 Apple Silicon 上构建。Android 打包需要 Android SDK 35+、NDK r28c+ 及预编译的 FFmpeg 库。",
+      "CI 在推送和拉取请求时构建 Windows、Linux 与 macOS 目标，并发布夜间预发布压缩包。所审源码树中没有测试套件、一致性检查或游戏行为对比结果，因此与 PS2 原版的行为等价性仍未核实；本合集未构建或运行该移植。",
+      "MikuPan 声明 AGPL-3.0，Himuro 声明 MIT；随附的第三方二进制文件和库保留各自条款，Fatal Frame 游戏数据另有权利约束。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
+    ]
   }
 }
