@@ -2536,5 +2536,15 @@
       "默认传输方式为 stdio。streamable HTTP 传输默认绑定 127.0.0.1:8000，且没有任何认证：任何能访问该端口的人都能在主机上操控 cdb.exe，因此文档建议只在可信网络中使用，或通过 SSH 隧道、带认证的反向代理访问。--filter-script 钩子可在数据离开本机前对工具参数和输出进行脱敏。",
       "采用 MIT 许可。README 称微软官方 WinDbg MCP 自 WinDbg 1.2610.1001.0 起提供，它是另一款产品，不在本条目范围内。本次未分析任何转储、实时目标或内核会话，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "hermes-rea-plugin": {
+    "name": "Hermes Agent 的 REA 插件",
+    "requirements": [
+      "所审阅的固定版本是 Hermes 插件目录实际安装的 hermes-official-plugins 提交；plugin.json 声明版本 0.1.0，采用 MIT。插件目录将其列为 Nous Research 官方插件，要求 Hermes 0.22.0 或更高版本，通过 hermes plugins install rea 与 hermes plugins enable rea 安装。它是 Hermes 的官方插件，并非 REA 发布的集成。需要 Node.js 22.19+、24.11+ 或 26+ 及 npx，不支持 23 与 25；首次启动会下载固定版本的软件包。若再为 Hermes 运行 rea-agents setup，会写入冲突的服务配置并替换固定版本的服务。",
+      "静态 JavaScript／Electron／ASAR 分析、软件包清点、Go／Rust 元数据、PE 资源、.NET 元数据与 HAR 分析无需其他组件。核心转储与离线 ELF 布局工具需要装有 pwntools 4.15.0、pyelftools 0.33 和 Unicorn 2.1.2 的 Python，并在 Hermes 的 .env 文件中指定。原生反编译需要使用者自备 Ghidra 及 JDK、Hopper 或 IDA；Android 代码需要 JADX 与 Java，固件或抓包格式需要 Binwalk／Unblob、TShark、sigrok 或 WABT。REA 与插件均不会安装这些工具。",
+      "部分 REA 工具会在 PTY 中运行命令、启动或操控应用窗口、改动已连接的 Android 设备，或覆盖指定文件，而 Hermes 在调用前不会提示。改编技能要求智能体先说明具体操作并征得同意，在无人值守运行中跳过此类调用。README 说明 REA 不发送遥测数据，仅访问使用者指定的目标；不受信任的程序应在专门准备的环境中分析。",
+      "README 报告在一台 Linux 主机上以二进制优先方式测试 WinSCP 6.7：控制台启动器约 30 秒完成导入；GUI 可执行文件在需要 Hermes v0.23.0 的 1000 秒调用预算下耗时 663 秒，随后一次真实对话的首个查询耗时 580 秒。两次运行均恢复 28,701 个过程，且未启动该 Windows 可执行文件。这些是作者的观察结果，并非耗时保证；反编译输出也不是重建的原始源码。插件将 Ghidra 启动时限提高到 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
+      "2026-10-15 的一次提交删除了 Hermes v0.22.2 拒绝的按服务 timeout 键，使插件包可在该版本上安装；按服务的调用预算须等待 Hermes v0.23.0。约 170 个工具和约 460 KB 工具定义的数字是 README 对 REA 6.4.0 的说明。插件包与改编技能采用 MIT，附有 REA 的 MIT 声明，崩溃分诊流程注明改编自 crashlens（MIT）；外部引擎与被分析目标仍有各自条款。本合集仅审阅源码，未安装 Hermes、插件或 REA。"
+    ]
   }
 }

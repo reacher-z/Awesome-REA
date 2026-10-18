@@ -5644,13 +5644,29 @@
         "https://x.com/i/status/2110738801660219869",
         "https://x.com/i/status/2110758099866771894"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned hermes-official-plugins REA package establishes the reported Hermes plugin: an MCP server pinned to rea-agents 6.4.0, an adapted REA skill and confirm-before-execute rules. Its README documents the WinSCP 6.7 test, including the 663-second GUI import on one Linux host, and a 2026-10-15 commit records the Hermes v0.22.2 unknown-timeout-key failure and removes that key. The full mapping covers this report as a community integration, not a WinSCP reconstruction; timings remain author-reported, and no installation or runtime reproduction is claimed.",
+      "reason_zh": "固定版本的 hermes-official-plugins REA 插件包确立了所报告的 Hermes 插件：固定为 rea-agents 6.4.0 的 MCP 服务、改编的 REA 技能及执行前确认规则。其 README 记录了 WinSCP 6.7 测试，包括在一台 Linux 主机上 GUI 程序 663 秒的导入耗时；2026-10-15 的提交记录了 Hermes v0.22.2 拒绝未知 timeout 键的安装失败，并删除了该键。完整映射将该报告作为社区集成覆盖，而非 WinSCP 重建；耗时仍为作者报告，未进行安装或运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md",
+        "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/mcp.json",
+        "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/plugin.json",
+        "https://github.com/NousResearch/hermes-official-plugins/commit/69ea758bf3a9793f98933c757ec457b79338a994",
+        "https://github.com/NousResearch/hermes-agent/blob/22063fc099ec9ad8357d7f8f6e6248a0400680d3/plugin-catalog/rea.yaml",
+        "https://hermes-agent.nousresearch.com/docs/plugins/rea",
+        "https://x.com/i/status/2110738801660219869",
+        "https://x.com/i/status/2110758099866771894"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "hermes-rea-plugin",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:compression-app-ai-learning-idea",
@@ -15042,18 +15058,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 160,
-      "insufficient-evidence": 132,
-      "pending": 299
-    },
-    "units_by_state": {
-      "already-curated": 159,
+      "already-curated": 161,
       "insufficient-evidence": 132,
       "pending": 298
     },
-    "primary_reviewed_units": 231,
-    "catalog_linked_occurrences": 171,
-    "distinct_resource_ids": 165,
+    "units_by_state": {
+      "already-curated": 160,
+      "insufficient-evidence": 132,
+      "pending": 297
+    },
+    "primary_reviewed_units": 232,
+    "catalog_linked_occurrences": 172,
+    "distinct_resource_ids": 166,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

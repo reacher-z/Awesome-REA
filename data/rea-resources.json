@@ -2335,5 +2335,41 @@
       "https://reversedwithai.com/policy",
       "https://reversedwithai.com/learn/getting-started-with-rea"
     ]
+  },
+  {
+    "id": "hermes-rea-plugin",
+    "name": "REA plugin for Hermes Agent",
+    "url": "https://github.com/NousResearch/hermes-official-plugins/tree/main/rea",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "binary",
+      "app",
+      "firmware",
+      "website"
+    ],
+    "description_en": "Nous Research’s Hermes Agent plugin package for REA. One catalog install registers REA’s MCP server, pinned to rea-agents 6.4.0 and launched through npx over stdio, with REA’s workflow skill adapted for Hermes and a separate crash-triage skill. About 170 REA tools stay behind Hermes’ on-demand tool search, and the adapted skill asks before tools that run programs, drive apps or change a connected Android device.",
+    "description_zh": "Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。",
+    "evidence_url": "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is the hermes-official-plugins commit that Hermes’ plugin catalog installs; plugin.json declares version 0.1.0 under MIT. The catalog lists it as an official Nous Research plugin for Hermes 0.22.0 or newer, installed with hermes plugins install rea and hermes plugins enable rea. It is official for Hermes, not an integration published by REA. Node.js 22.19+, 24.11+ or 26+ with npx is required, not 23 or 25, and the first start downloads the pinned package. Also running rea-agents setup for Hermes writes a conflicting server entry that replaces the pinned one.",
+      "Static JavaScript/Electron/ASAR, package-inventory, Go/Rust metadata, PE-resource, .NET-metadata and HAR work needs nothing else. Core-dump and offline ELF-layout tools need a Python with pwntools 4.15.0, pyelftools 0.33 and Unicorn 2.1.2, named in Hermes’ .env file. Native decompilation needs a user-supplied Ghidra with a JDK, Hopper or IDA; Android code needs JADX and Java, and firmware or capture formats need Binwalk/Unblob, TShark, sigrok or WABT. Neither REA nor the plugin installs them.",
+      "Some REA tools run a command under a PTY, launch or drive an application window, change a connected Android device or overwrite a chosen file, and Hermes does not prompt before them. The adapted skill tells the agent to name the action and ask first, and to skip such calls in unattended runs. The README says REA sends no telemetry and reaches the network only for targets the user names; untrusted programs belong in an environment prepared for them.",
+      "The README reports a binary-first WinSCP 6.7 test on one Linux host: the console launcher imported in about 30 seconds, while the GUI executable took 663 seconds under a 1000-second Hermes budget that needs Hermes v0.23.0, and a later chat’s first query took 580 seconds. Both runs recovered 28,701 procedures without launching the Windows executable. These are author observations, not timing guarantees, and decompiler output is not reconstructed source. The plugin raises Ghidra’s startup deadline to 900 seconds; each call keeps Hermes’ default 300-second MCP deadline.",
+      "A 2026-10-15 commit removed a per-server timeout key that Hermes v0.22.2 rejected, so the package installs on that release; the per-server call budget waits for Hermes v0.23.0. The about-170-tool and roughly 460 KB schema figures describe REA 6.4.0 as stated in the README. The package and adapted skill are MIT, with REA’s MIT notice reproduced and the crash-triage workflow credited to crashlens (MIT); external engines and analysed targets keep their own terms. This collection reviewed source without installing Hermes, the plugin or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/mcp.json",
+      "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/plugin.json",
+      "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/skills/reverse-engineer-anything/SKILL.md",
+      "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/skills/crash-triage/SKILL.md",
+      "https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/LICENSE",
+      "https://github.com/NousResearch/hermes-official-plugins/commit/69ea758bf3a9793f98933c757ec457b79338a994",
+      "https://github.com/NousResearch/hermes-agent/blob/22063fc099ec9ad8357d7f8f6e6248a0400680d3/plugin-catalog/rea.yaml",
+      "https://hermes-agent.nousresearch.com/docs/plugins/rea"
+    ]
   }
 ]
