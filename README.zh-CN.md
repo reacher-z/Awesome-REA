@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 268](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-268-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 128](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-128-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 269](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-269-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 129](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-129-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (109) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (110) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (128) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (129) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -725,6 +725,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。SDL2、OpenGL 或 Metal 及 OpenAL 后端替代主机的 GPU、GTE、CD-ROM／XA、SPU、MDEC 和手柄接口，同一可执行文件可运行美版、亚洲版和日版光盘。每次修改仍须通过一致性构建检查；Tactical Mode、高清包等 PC 专属功能均为可选。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)
+
+- [**《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建**](https://github.com/pret/pokeplatinum)
+
+  将美版 Nintendo DS《宝可梦 白金》重建为 C 源码，默认重建修订版 1，也可按需构建修订版 0。默认的 make 目标会运行 Meson 检查，按 SHA-1 清单校验代码二进制、文件系统及完整 ROM。README 仍称项目在进行中；贡献指南表示代码已全部为 C，但其中大量仍晦涩难懂，因此主要工作是文档和工具。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
 
 #### 工具、项目与集成
 
