@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 59 | 58 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 478 | 477 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 60 | 59 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 477 | 476 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 54 | 54 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-66 occurrences have catalog links. They reference 57 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+67 occurrences have catalog links. They reference 58 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 58 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 59 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -36,6 +36,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 
 | Case | State | Primary evidence |
 | --- | --- | --- |
+| Universal Modder | Already curated | [Source](https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md) |
 | PlxNative: reconstructing a native webOS media-client interface | Already curated | [Source](https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/README.md) |
 | Agent decompilation: a byte-matching retrospective | Already curated | [Source](https://momo5502.com/posts/2026-10-09-game-decompilation/) |
 | open-appleremote: Siri Remote protocol reconstruction | Already curated | [Source](https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/README.md) |
