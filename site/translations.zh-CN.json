@@ -2940,5 +2940,15 @@
       "src/__tests__ 下的测试通过 node --test 运行，但仓库没有 CI 工作流，README 的安装示例仍使用占位仓库地址。本合集审阅了源码与文档，未安装证书、启用代理或捕获流量。",
       "仓库采用 CC BY-NC 4.0 许可，这是非商业性的知识共享许可而非软件许可，因此不允许商业使用。所报告的帖子将其介绍为 Ship Systems 与 William Haesemeyer 合作的项目。所审阅来源未确立与 REA 的关联，也未记录具体重建案例。"
     ]
+  },
+  "finding-jingle-town-n64-debugging": {
+    "name": "寻找 Jingle Town：在没有调试符号时调试 N64 游戏",
+    "requirements": [
+      "文章日期为 2025 年 12 月 23 日，只回答一个问题：Snowboard Kids 2 进入关卡时如何选择要加载的关卡 overlay。文中在一个按索引访问 16 个 overlay 的函数处设断点，并读取 Sunny Mountain、Turtle Island 和 Jingle Town 三个关卡对应的候选字节（0、1、2）。其他关卡及设置该索引的代码均未追踪。",
+      "照做需要 Snowboard Kids 2 的 N64 ROM（原版或由反编译项目重建的版本，文中认为两者逐字节一致），以及反编译项目生成的 build/snowboardkids2.elf 以提供函数名。文章未说明如何取得或构建二者。",
+      "所用工具为设定 mips:4000 架构的 gdb-multiarch，以及开启调试功能的 Ares，二者通过 Ares 的 GDB 远程调试支持连接；若 GDB 运行在另一台主机上（如作者使用的 x86 Ubuntu 服务器），可另用 SSH 反向隧道。文章解释，在依赖绝对地址的构建中加入 -g 会使各段偏移，游戏通常无法启动，因此只能手动计算指针偏移来读取结构体字段。",
+      "结果是作者在一次调试过程中的观察，本合集未重做。文章称该流程非常依赖手工操作，并说明 gdbgui 未能在该环境下正常使用。文中自动生成的名称后来已更改：在所审阅的提交 7600c79 中，symbol_addrs.txt 将 0x8003D560 命名为 initRace，将 0x800AFE8C 命名为 gGameSessionContext，脚注链接的 src/3E160.c 也已不在源码树中。",
+      "文章记录的是手动调试，未提及 AI 或 REA 的使用；借助 LLM 的匹配工作另见 Snowboard Kids 2 案例条目。所审阅提交中的反编译仓库没有许可证文件，游戏 ROM 及其内容仍受各自权利约束。"
+    ]
   }
 }

@@ -9751,13 +9751,31 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The dated post documents a manual GDB-and-Ares workflow for testing one runtime hypothesis in the Snowboard Kids 2 decompilation, with its tools, steps, three observed values and stated limits. Full mapping covers this debugging write-up as a learning resource; the decompilation it studies keeps its own case record, linked here as related. The observations were not repeated, and the post claims no AI or REA use.",
+      "reason_zh": "这篇注明日期的文章记录了在 Snowboard Kids 2 反编译中用 GDB 与 Ares 手动检验一个运行时假设的流程，包括所用工具、步骤、观察到的三个值及作者说明的局限。完整映射将这篇调试记录作为学习资源收录；其研究的反编译项目另有案例条目，此处以相关映射链接。文中观察未经重做，文章也未声称使用 AI 或 REA。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/README.md",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/symbol_addrs.txt",
+        "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "finding-jingle-town-n64-debugging",
+          "kind": "learning-resource",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "snowboardkids2-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "yibie:decomp-wtf",
@@ -15642,18 +15660,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 192,
+      "already-curated": 193,
       "insufficient-evidence": 162,
-      "pending": 237
+      "pending": 236
     },
     "units_by_state": {
-      "already-curated": 190,
+      "already-curated": 191,
       "insufficient-evidence": 162,
-      "pending": 237
+      "pending": 236
     },
-    "primary_reviewed_units": 294,
-    "catalog_linked_occurrences": 200,
-    "distinct_resource_ids": 196,
+    "primary_reviewed_units": 295,
+    "catalog_linked_occurrences": 201,
+    "distinct_resource_ids": 197,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -7115,5 +7115,32 @@
       "https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/LICENSE",
       "https://x.com/Nol_Mak/status/2111057177200738632"
     ]
+  },
+  {
+    "id": "finding-jingle-town-n64-debugging",
+    "name": "Finding Jingle Town: Debugging an N64 Game without Symbols",
+    "url": "https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A walkthrough from the Snowboard Kids 2 decompilation project on attaching gdb-multiarch to the Ares emulator while the matching build still cannot carry debug information. It breaks on a function by its ELF symbol name and reads one structure byte by hand to test whether that byte selects the level overlay. A short method note on checking decompilation hypotheses at runtime, not a reconstruction result.",
+    "description_zh": "Snowboard Kids 2 反编译项目的一篇操作说明：在一致性构建仍无法加入调试信息时，把 gdb-multiarch 接到 Ares 模拟器上。文中按 ELF 符号名在函数处设断点，再手动读取结构体中的一个字节，检验它是否决定加载哪个关卡 overlay。这是在运行时检验反编译假设的简短方法记录，而非重建成果。",
+    "evidence_url": "https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The post, dated 23 December 2025, asks one question: how Snowboard Kids 2 picks the level overlay on level entry. It breaks on a function that indexes 16 overlays and reads the candidate byte for Sunny Mountain, Turtle Island and Jingle Town (0, 1 and 2). Other levels and the code that sets the index are not traced.",
+      "Following it needs a Snowboard Kids 2 N64 ROM, original or rebuilt by the decompilation (the post treats them as byte-identical), and the decompilation's build/snowboardkids2.elf for function names. The post does not cover obtaining or building either.",
+      "Tools are gdb-multiarch set to mips:4000 and Ares with debugging enabled, connected through Ares's GDB remote support; an SSH reverse tunnel is optional when GDB runs on another host, as on the author's x86 Ubuntu server. The post explains that adding -g would shift sections in the absolute-address build and usually stop it booting, so structure fields are read by manual pointer arithmetic.",
+      "Results are the author's observations from one debugging session; this collection did not repeat them. The post calls the workflow painfully manual and reports gdbgui did not work with the setup. Its generated names have since changed: at reviewed commit 7600c79, symbol_addrs.txt names 0x8003D560 initRace and 0x800AFE8C gGameSessionContext, and the footnoted src/3E160.c is no longer in the tree.",
+      "The post describes manual debugging and mentions no AI or REA use; the LLM-assisted matching work is recorded separately in the Snowboard Kids 2 case. The decompilation repository has no license file at the reviewed commit, and the game ROM and its content keep their own rights."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/README.md",
+      "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/symbol_addrs.txt"
+    ]
   }
 ]
