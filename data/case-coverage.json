@@ -11387,13 +11387,27 @@
       "reported_source_urls": [
         "https://github.com/pret/pokecrystal"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 54 (README line 524) lists pret/pokecrystal under ⚡ Pokémon Crystal. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 54 行（README 第 524 行）在 ⚡ Pokémon Crystal 下列出 pret/pokecrystal。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, install guide, FAQ, Makefile, hash manifest, CI workflow and documentation support the reported full disassembly of Pokémon Crystal, which rebuilds the listed releases, debug builds and Virtual Console patch from source. The full mapping covers this disassembly; matching is project-reported and was not rerun here. The missing license and the game content carried in the tree are recorded.",
+      "reason_zh": "固定版本的 README、安装指南、FAQ、Makefile、哈希清单、CI 工作流及文档，支持该报告所述《精灵宝可梦 水晶》的完整反汇编，可由源码重新构建所列发行版、调试构建和 Virtual Console 补丁。完整映射覆盖此反汇编项目；一致性为项目报告，本次未重新运行。缺少许可证及仓库内含游戏内容的情况均已记录。",
+      "primary_evidence_urls": [
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md",
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/INSTALL.md",
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/FAQ.md",
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/Makefile",
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/roms.sha1",
+        "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/.github/workflows/main.yml"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokecrystal-disassembly-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-055",
@@ -14425,18 +14439,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 126,
-      "insufficient-evidence": 98,
-      "pending": 367
-    },
-    "units_by_state": {
-      "already-curated": 125,
+      "already-curated": 127,
       "insufficient-evidence": 98,
       "pending": 366
     },
-    "primary_reviewed_units": 163,
-    "catalog_linked_occurrences": 137,
-    "distinct_resource_ids": 131,
+    "units_by_state": {
+      "already-curated": 126,
+      "insufficient-evidence": 98,
+      "pending": 365
+    },
+    "primary_reviewed_units": 164,
+    "catalog_linked_occurrences": 138,
+    "distinct_resource_ids": 132,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

@@ -4665,5 +4665,38 @@
       "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/CMakeLists.txt",
       "https://decomp.dev/doldecomp/melee"
     ]
+  },
+  {
+    "id": "pokecrystal-disassembly-case",
+    "name": "pokecrystal: a matching Pokémon Crystal disassembly",
+    "url": "https://github.com/pret/pokecrystal",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the Game Boy Color game Pokémon Crystal as RGBDS assembly, with graphics, maps and data stored as editable sources. One tree builds the international 1.0 and 1.1 releases, the Australian release, two debug builds and a Virtual Console patch, each checked against a recorded SHA-1. Companion documentation covers script command formats and known bugs in the original game.",
+    "description_zh": "以 RGBDS 汇编重建 Game Boy Color 游戏《精灵宝可梦 水晶》，图像、地图和数据以可编辑的源文件保存。同一源码树可构建国际版 1.0 与 1.1、澳大利亚版、两个调试构建以及一个 Virtual Console 补丁，并逐一与记录的 SHA-1 比对。配套文档说明脚本命令格式以及原版游戏中的已知错误。",
+    "evidence_url": "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README lists six outputs with SHA-1s: Crystal (UE) 1.0 and 1.1, the Australian release, two debug builds and the CGBBYTE1.784 Virtual Console patch. Version differences are selected with assembler defines such as _CRYSTAL11 and _CRYSTAL_AU, and plain make builds only the 1.0 ROM. The Japanese release is not among the listed targets.",
+      "The build reads no original ROM: code, text, maps, audio, PNG graphics and other data are in the repository, including the mobile library code linked into the ROM. The repository therefore carries the game's content in source form. Packaging the Virtual Console patch into an installable title is outside the project's scope.",
+      "INSTALL.md covers Linux distributions, macOS with Homebrew, Windows through WSL (or Cygwin on older Windows) and Termux. The build needs make, gcc or clang, git and rgbds 1.0.4, which the repository pins; FAQ.md notes that rgbds releases before 1.0.0 fail.",
+      "make compare builds every target and runs sha1sum against roms.sha1. pret's CI does this on Linux and macOS with rgbds 1.0.4 and fails when the build leaves uncommitted changes, while forks only build. Bug and design-flaw notes describe fixes as optional diffs, since the matching build keeps the original behavior. This collection did not build the ROMs.",
+      "The repository has no license file, so reuse terms for the disassembly are unstated, and the original game's content remains its rights holders'. rgbds is a separate project with its own terms. The reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/INSTALL.md",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/FAQ.md",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/Makefile",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/roms.sha1",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/.rgbds-version",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/.github/workflows/main.yml",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/vc_patch.md",
+      "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/docs/bugs_and_glitches.md"
+    ]
   }
 ]

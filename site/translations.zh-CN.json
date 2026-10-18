@@ -2138,5 +2138,15 @@
       "一致性依据链接后 DOL 的 SHA-1 与 objdiff 的逐单元报告；CI 的 check_complete.py 会在某单元已完全匹配但尚未标记完成时发出警告。100% 数据为 decomp.dev 对此提交的报告；本合集未构建 DOL，也未重跑任何比较。",
       "所审提交没有仓库级许可文件，GitHub 也未识别出许可；tools/ 下随附的工具各有许可，游戏本身、其 DOL 与素材仍受权利人条款约束。CONTRIBUTING.md 说明用 AI 匹配函数是可接受且常见的做法，但要求贡献者不要让 AI 命名结构体字段或全局标识符，也不要让其尝试匹配数据段。未记录 REA 使用，也不主张运行复现。"
     ]
+  },
+  "pokecrystal-disassembly-case": {
+    "name": "pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编",
+    "requirements": [
+      "README 列出六个产物及其 SHA-1：Crystal (UE) 1.0 和 1.1、澳大利亚版、两个调试构建，以及 CGBBYTE1.784 Virtual Console 补丁。各版本差异通过 _CRYSTAL11、_CRYSTAL_AU 等汇编宏选择，直接运行 make 只构建 1.0 版 ROM。日版不在所列目标之内。",
+      "构建不读取任何原版 ROM：代码、文本、地图、音频、PNG 图像及其他数据都在仓库中，链接进 ROM 的移动通信库代码也包括在内。也就是说，仓库本身以源文件形式包含游戏内容。将 Virtual Console 补丁打包为可安装软件不在项目范围之内。",
+      "INSTALL.md 涵盖各 Linux 发行版、通过 Homebrew 的 macOS、通过 WSL 的 Windows（旧版 Windows 用 Cygwin）以及 Termux。构建需要 make、gcc 或 clang、git 和仓库固定的 rgbds 1.0.4；FAQ.md 指出，1.0.0 之前的 rgbds 版本无法构建。",
+      "make compare 构建全部目标，并依据 roms.sha1 运行 sha1sum。pret 的 CI 在 Linux 和 macOS 上用 rgbds 1.0.4 执行此检查，构建若留下未提交的改动即判失败，分叉仓库则只构建。关于错误和设计缺陷的文档以可选 diff 形式给出修正，因为一致构建保留原版行为。本合集未构建这些 ROM。",
+      "仓库没有许可证文件，反汇编的复用条款未作说明，原游戏内容仍归其权利人所有。rgbds 是独立项目，适用其自身条款。所审来源未确立 AI 或 REA 使用归因。"
+    ]
   }
 }
