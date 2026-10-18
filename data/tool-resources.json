@@ -4326,5 +4326,35 @@
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/docs/DEPENDENCIES.md",
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/LICENSE"
     ]
+  },
+  {
+    "id": "playstunts-browser-reconstruction-case",
+    "name": "Play Stunts: a native browser reconstruction of Stunts",
+    "url": "https://github.com/ACatWithEbola/playstunts",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the December 1990 Mindscape release of Stunts / 4D Sports Driving in TypeScript for the browser. Instead of running the DOS executable, it uses resources decoded locally from the player’s own installation. The author reports directing the work with OpenAI Codex, studying the original executable and comparing reconstructed state with captures of original execution. An optional enhanced renderer and remixed music sit beside the original graphics modes; fidelity remains author-reported.",
+    "description_zh": "用 TypeScript 在浏览器中重新实现 Stunts／4D Sports Driving 的 1990 年 12 月 Mindscape 版本。它不运行 DOS 可执行文件，而是使用从玩家自有安装文件在本地解码的资源。作者报告由其主导、借助 OpenAI Codex 完成工作，研究了原版可执行文件，并把重建状态与原版运行捕获进行比较。可选的增强渲染器与重新编曲的音乐与原版图形模式并存；还原度仍为作者报告。",
+    "evidence_url": "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the head commit of 17 October 2026. README calls it an unofficial reconstruction that may contain visual, audio or simulation discrepancies, and the reconstruction notes disclaim perfect equivalence. The checkout also contains the hosted edition’s high-score, replay-verification and community-track services, which use a separate database; a local build does not connect to the public leaderboard.",
+      "Building needs the player’s own complete extracted PC installation of Mindscape’s 4D Sports Driving 1.1, finalized 13 December 1990 (MS 1990 in the community’s version table), identified by published checksums. The dual-edition checkout also needs the February 1991 release, and MT-32 sound needs separately supplied Roland control and PCM ROMs. Brøderbund releases or single files are not accepted. The repository states that it distributes no original game files, ROMs or captured sessions.",
+      "Preparation needs Node.js 24 or newer, Python 3.11 or newer with Pillow, and a desktop browser with WebAssembly, Web Audio and WebGL; the procedure is reported verified on macOS. The tool decodes resources, unpacks the EXEPACK display binaries and builds sound states locally; production builds target Cloudflare Workers through Vinext. Resource formats were checked against the public 4d-stunts/restunts work, and sound uses bundled Munt and OPL synthesizers.",
+      "Public checks are Python unit tests, an asset checker, a runtime smoke test that drives a race past the original protection interval, a TypeScript check and a build; README says these establish an installable game, not equivalence in every race. Comparisons with original-execution registers, memory and framebuffers use private fixtures containing original data, so the reported runs of 1,518 and 1,543 tests cannot be repeated from the repository. No CI workflow is present, and this collection ran nothing.",
+      "Original source code is GPL-3.0-only; bundled synthesizers, fonts and a DOSBox hardware text font keep their own notices. The license excludes the original executables, artwork, game data, ROMs and extracted data. README notes that the reconstruction does not execute the original programs and so bypasses their copy-protection path, and that deploying original assets publicly is a separate decision. The repository also ships project-supplied Suno recordings arranging the original music, which leave the compositions’ rights unchanged. No REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/docs/RECONSTRUCTION.md",
+      "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/THIRD_PARTY_NOTICES.md",
+      "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/vendor/README.md",
+      "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/vendor/runtime/audio/remixed/NOTICE.md",
+      "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/LICENSE"
+    ]
   }
 ]

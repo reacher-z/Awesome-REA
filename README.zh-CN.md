@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 250](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-250-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 110](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-110-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 251](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-251-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 111](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-111-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 53](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (91) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (92) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (11)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (110) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (111) · [相关合集](#related-collections) (4) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -617,6 +617,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 iPhone、iPad 和 Apple 芯片 Mac 上原生运行 Nintendo Switch 版自身的 aarch64 程序，仅改写依赖 Horizon 内核的指令，并以 Metal 提供其系统服务与 NVN 图形 API。着色器由使用者自有文件离线转译，项目另行加入触控界面与终局玩法。这是重新托管的兼容层，不是反编译或重编译出的源码。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/d2r-mobile-switch-rehost-case/)
+
+- [**Play Stunts：Stunts 的浏览器原生重建**](https://github.com/ACatWithEbola/playstunts)
+
+  用 TypeScript 在浏览器中重新实现 Stunts／4D Sports Driving 的 1990 年 12 月 Mindscape 版本。它不运行 DOS 可执行文件，而是使用从玩家自有安装文件在本地解码的资源。作者报告由其主导、借助 OpenAI Codex 完成工作，研究了原版可执行文件，并把重建状态与原版运行捕获进行比较。可选的增强渲染器与重新编曲的音乐与原版图形模式并存；还原度仍为作者报告。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/playstunts-browser-reconstruction-case/)
 
 #### 工具、项目与集成
 

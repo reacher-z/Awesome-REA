@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 250](https://img.shields.io/badge/resources-250-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 110](https://img.shields.io/badge/cases-110-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 251](https://img.shields.io/badge/resources-251-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 111](https://img.shields.io/badge/cases-111-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 53](https://img.shields.io/badge/papers-53-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (91) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (92) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (11)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (110) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (111) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -616,6 +616,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runs the Nintendo Switch release’s own aarch64 program natively on iPhone, iPad and Apple silicon Macs, rewriting only instructions that depend on the Horizon kernel and supplying its system services and the NVN graphics API on Metal. Shaders are translated offline from the user’s files, and the project adds its own touch interface and endgame features. It is a rehosting compatibility layer, not a decompilation or recompiled source.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/d2r-mobile-switch-rehost-case/)
+
+- [**Play Stunts: a native browser reconstruction of Stunts**](https://github.com/ACatWithEbola/playstunts)
+
+  Reimplements the December 1990 Mindscape release of Stunts / 4D Sports Driving in TypeScript for the browser. Instead of running the DOS executable, it uses resources decoded locally from the player’s own installation. The author reports directing the work with OpenAI Codex, studying the original executable and comparing reconstructed state with captures of original execution. An optional enhanced renderer and remixed music sit beside the original graphics modes; fidelity remains author-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/playstunts-browser-reconstruction-case/)
 
 #### Tools, projects and integrations
 

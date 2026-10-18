@@ -7034,13 +7034,28 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110995514468479312"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post links a Reddit thread whose author links the pinned PlayStunts repository and describes reverse engineering with OpenAI Codex. The repository documents a TypeScript reconstruction built from user-supplied original files, with inputs, preparation, checks and limits, so the full mapping covers that project. Fidelity, private-fixture test results and AI-assistance claims remain author-reported, and no REA use is established.",
+      "reason_zh": "所引帖子链接到一则 Reddit 讨论，发帖作者在其中给出固定版本的 PlayStunts 仓库，并描述借助 OpenAI Codex 进行逆向。该仓库记录了以用户自备原版文件构建的 TypeScript 重建，包括输入、准备流程、检查与限制，因此完整映射覆盖该项目。还原度、私有夹具测试结果与 AI 辅助说法仍为作者报告，也未确立 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/README.md",
+        "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/docs/RECONSTRUCTION.md",
+        "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/THIRD_PARTY_NOTICES.md",
+        "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/vendor/runtime/audio/remixed/NOTICE.md",
+        "https://github.com/ACatWithEbola/playstunts/blob/eae59defe484c0e340a1834ffca6bb14a9a94756/LICENSE",
+        "https://www.reddit.com/r/dosgaming/comments/1wct0pp/i_reverse_engineered_stunts_11_1990/",
+        "https://x.com/i/status/2110995514468479312"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "playstunts-browser-reconstruction-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-circuit-board-functional-rebuild-idea",
@@ -14247,18 +14262,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 116,
-      "insufficient-evidence": 86,
-      "pending": 389
-    },
-    "units_by_state": {
-      "already-curated": 115,
+      "already-curated": 117,
       "insufficient-evidence": 86,
       "pending": 388
     },
-    "primary_reviewed_units": 143,
-    "catalog_linked_occurrences": 127,
-    "distinct_resource_ids": 121,
+    "units_by_state": {
+      "already-curated": 116,
+      "insufficient-evidence": 86,
+      "pending": 387
+    },
+    "primary_reviewed_units": 144,
+    "catalog_linked_occurrences": 128,
+    "distinct_resource_ids": 122,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
