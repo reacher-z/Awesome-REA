@@ -2721,5 +2721,40 @@
       "https://github.com/macedonga/visor/wiki/Meta-login-and-ownership/7358c5a1c39a6354d2170f89133b184f7f2b82e7",
       "https://github.com/macedonga/visor/wiki/Open-questions/7358c5a1c39a6354d2170f89133b184f7f2b82e7"
     ]
+  },
+  {
+    "id": "sms-pc-port-case",
+    "name": "Super Mario Sunshine: a native PC port from an AI-assisted decompilation",
+    "url": "https://github.com/chasem-dev/sms-pc-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds a native PC port of Super Mario Sunshine’s North American release from a pinned matching-decompilation fork, adding a host platform layer for graphics, disc, audio, input and OS services. The fork’s README says AI was used extensively to reconstruct and match its code; the port documents scripted regression hashes and lockstep comparisons with retail captures. Functions that do not yet match can still behave differently from retail, and the game must come from the user’s own disc image.",
+    "description_zh": "以固定版本的一致性反编译分支为基础，构建 Super Mario Sunshine 北美版的原生 PC 移植，并为图形、光盘、音频、输入和系统服务提供宿主平台层。该分支的 README 称，其代码的重建与匹配大量借助 AI；移植项目记录了脚本化回归哈希，以及与原版捕获数据的逐步对照。尚未匹配的函数仍可能与原版行为不同，游戏数据须来自使用者自己的光盘镜像。",
+    "evidence_url": "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Targets only the North American GMSE01 Rev 0 release. README reports the 32-bit Linux and macOS builds as playable, 64-bit Linux as playable but still being tested stage by stage, and 64-bit Windows as booting under Wine with native runtime checks. macOS builds x86_64, run under Rosetta 2 on Apple Silicon, because native arm64 cannot map game memory below 4 GiB.",
+      "Requires the user’s own GMSE01 Rev 0 disc image as .iso, .gcm or Dolphin .ciso; the port reads models, textures, levels, music and movies from it at run time and ships no game data. Given the image, the build also makes a standalone executable containing the game’s files, which README says must not be shared. Optional language, texture and HD-cutscene packs are separate.",
+      "build.sh and run.sh drive CMake, Python 3, patch, SDL2 and a host compiler: Ubuntu/Debian multilib GCC for the default 32-bit Linux build, Homebrew LLVM clang targeting x86_64 on macOS, or MSYS2 MINGW64 GCC on Windows. The decomp submodule is pinned to sms-english 967436b; PC-only changes are patches applied to copies of its sources, and the separate decomp build to a matching mario.dol uses its own GameCube toolchain.",
+      "At that pin, the fork’s PROGRESS.md reports, as of 2026-09-27, 99.57% fuzzy, 72.94% byte-perfect and 33.18% source-linked code, with 12,002 of 12,904 functions matching and a byte-identical rebuilt DOL that still links extracted objects for unfinished code; its README gives slightly higher 2026-09-29 figures. The port compiles the decomp’s 588 game, JSystem and THPPlayer units, so non-matching functions can still diverge from retail. It reports scripted headless runs hashed against a baseline and compared between 32- and 64-bit builds, lockstep tracing against retail Dolphin captures and qemu-ppc checks of math routines; this collection ran none of them.",
+      "The port is MIT-licensed (SoftwareAura LLC) and the decomp fork is CC0-1.0; the game and the user’s disc contents keep separate rights. AI involvement is stated by the fork’s README and agent guides, which describe Claude and Codex orchestrators, without measuring it; the reported X post adds no separate technical evidence. REA use is not established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/BUILD.md",
+      "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/docs/DEVELOPMENT.md",
+      "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/LICENSE",
+      "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/.gitmodules",
+      "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/assets/progress.svg",
+      "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/README.md",
+      "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/PROGRESS.md",
+      "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/config/GMSE01/README.md",
+      "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/AGENTS.md",
+      "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/LICENSE"
+    ]
   }
 ]

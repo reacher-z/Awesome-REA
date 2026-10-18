@@ -1510,5 +1510,15 @@
       "验证使用真实 MIPS 验证脚本的 PSP 模式，需自行提供 PSPDEV 工具。由 tests/conformance/psp 构建的维护样本只做静态分析、不执行，并与 PSP GNU 工具的观察结果对照：已知函数、一次直接调用、一个立即数、BITREV、一个全局字、快照重新打开，以及 A-B-A 目标切换。已合并的 PR #1599 报告在较早的贡献分支版本上通过了真实 Ghidra 验证，并说明该次运行并未重新验证最终版本。",
       "这些检查只是选定的静态事实，不代表行为等价、完整 VFPU 语义或对商业 PSP 可执行文件的普遍兼容；该扩展也未完整模拟 VFPU 前缀效果。未使用或重建任何商业游戏数据，议题 #1330 仍处于开放状态。REA 声明 MIT；ghidra-allegrex、Ghidra、PSPDEV 与所分析的可执行文件仍有各自条款。本合集未运行任何内容。"
     ]
+  },
+  "sms-pc-port-case": {
+    "name": "Super Mario Sunshine：基于 AI 辅助反编译的原生 PC 移植",
+    "requirements": [
+      "仅针对北美版 GMSE01 Rev 0。README 报告 32 位 Linux 与 macOS 版本可游玩，64 位 Linux 可游玩但仍在逐关测试，64 位 Windows 可在 Wine 下启动并附有原生运行检查。macOS 构建 x86_64 程序，在 Apple Silicon 上经 Rosetta 2 运行，因为原生 arm64 无法将游戏内存映射到 4 GiB 以下。",
+      "需要使用者自己的 GMSE01 Rev 0 光盘镜像，格式为 .iso、.gcm 或 Dolphin .ciso；移植在运行时从中读取模型、纹理、关卡、音乐和影片，本身不附带游戏数据。提供镜像时，构建还会生成内含游戏文件的独立可执行文件，README 说明不得分享。可选的语言包、纹理包和高清过场包需另行获取。",
+      "build.sh 与 run.sh 调用 CMake、Python 3、patch、SDL2 和宿主编译器：默认的 32 位 Linux 构建使用 Ubuntu／Debian 多架构 GCC，macOS 使用面向 x86_64 的 Homebrew LLVM clang，Windows 使用 MSYS2 MINGW64 GCC。反编译子模块固定在 sms-english 967436b；仅限 PC 的改动以补丁形式应用于其源码副本，另行构建一致 mario.dol 的反编译工程使用自己的 GameCube 工具链。",
+      "在该固定版本中，分支的 PROGRESS.md 报告截至 2026-09-27：模糊相似度 99.57%、逐字节一致代码 72.94%、由源码链接的代码 33.18%，12,904 个函数中有 12,002 个匹配；重建的 DOL 与原版逐字节一致，但未完成部分仍链接提取出的目标文件。其 README 给出 2026-09-29 略高的数字。移植编译反编译中的 588 个游戏、JSystem 和 THPPlayer 单元，因此未匹配的函数仍可能与原版不同。项目报告了按基线哈希核对、并在 32 位与 64 位构建间比较的脚本化无界面运行，与原版 Dolphin 捕获数据的逐步追踪对照，以及在 qemu-ppc 下检查数学例程；本合集均未运行。",
+      "移植项目采用 MIT 许可（SoftwareAura LLC），反编译分支采用 CC0-1.0；游戏本身及使用者光盘内容的权利另行保留。AI 参与情况来自分支 README 和智能体指南（其中描述 Claude 与 Codex 编排流程），未作量化；所报告的 X 帖子未提供额外技术证据。未确立 REA 使用。"
+    ]
   }
 }
