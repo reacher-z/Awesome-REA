@@ -5847,5 +5847,43 @@
       "https://github.com/matt-kempster/m2c/blob/708d2d2cb2698f091a92492b328f73b24209f72d/LICENSE",
       "https://github.com/decompme/decomp.me/blob/f5850753ef561a3d79e6eb7e96ff08e78154b91d/cromper/cromper/wrappers/m2c_wrapper.py"
     ]
+  },
+  {
+    "id": "destiny2-build-86657-reconstruction-report-case",
+    "name": "Destiny 2 build 86657: Sunrise/Dawn reconstruction research report",
+    "url": "https://github.com/isinternets/d2-research",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "A dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie service contracts locally and adds reconstructed mission host policy. It records transport, decoding, object creation, presentation and gameplay results separately, and keeps superseded conclusions with their cited sources. It documents the case rather than shipping the runtime implementation or a recovered Bungie backend; playthroughs and native results remain project-reported.",
+    "description_zh": "一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。报告把传输、解码、对象创建、呈现与游戏玩法结果分开记录，并连同所引来源保留已被推翻的结论。它记录案例本身，不提供运行时实现，也不是恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。",
+    "evidence_url": "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed edition is dated 21 September 2026: 20 chapters, 289 source records (280 Markdown notes, two PDF text extracts and seven source excerpts) and hash inventories of 2,832 implementation files and 336 lanes-archive files. It covers BAP secure services, matchmaking and peer channels, activity replication, package schemas, mission reconstructions, persistence and native hooks for build 86657.20.08.23.1800.d2_rc. The report states that its corpus does not establish Bungie’s complete backend or a general interpreter for original missions.",
+      "Native work depends on a separately obtained archived Destiny 2 build 86657 client and its game packages; the report neither supplies them nor explains how to obtain them. Game binaries, package payloads, artwork, a manifest database, credentials, personal saves, raw runtime captures and the two supplied PDFs are not published. Several referenced binary fixtures and traces are also absent, which the report names as a limit on independent reproduction from this repository.",
+      "The described reconstruction runs as a proxy DLL inside the game process, combining Steam platform-interface and sign-on emulation, an embedded service layer, C++ native contracts and Lua or C++ mission definitions. ATTRIBUTION.md names the separate Dawn project as the reconstruction and integration work, building on Sunrise and Sundial research. Its source was collected from a modified worktree based on commit e801e23e, so file hashes rather than that commit identify the captured files; checking the report itself needs only Python and its two bundled scripts.",
+      "The bundled validation record reports passing checks of report assembly, 1,191 local links, citations, evidence hashes, 37 claim references and selected publication exclusions, with no game or native runtime tests. Its acceptance table records a complete Omega run, accepted sections of other missions and an Eater of Worlds slice that excludes the barrier and Argos fights; Spark live testing, coherent native-world resume and detached camera behavior remain unverified or unimplemented. This collection read the report and evidence metadata without running its scripts, the game or the implementation.",
+      "No repository-wide license is declared. ATTRIBUTION.md retains Dawn’s GPL-3.0 text for the included source excerpts, credits Sunrise and Sundial contributors, asserts no Bungie endorsement and does not relicense third-party material. The report concerns local reconstruction of an archived build, and states that its security findings are not vulnerability claims against the current online game. It does not document Claude or other AI-assisted decompilation or recreated in-engine assets, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/REPORT.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/01-scope-and-conclusions.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/02-research-method.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/03-system-and-identities.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/17-security-engineering-findings.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/19-reproducibility-and-open-questions.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/COLLECTION.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/ATTRIBUTION.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/evidence/README.md",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/evidence/validation.json",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/CITATION.cff",
+      "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/LICENSES/Dawn-GPL-3.0.txt"
+    ]
   }
 ]

@@ -6360,13 +6360,31 @@
         "https://x.com/i/status/2110983618155929648",
         "https://x.com/i/status/2110982629214327033"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The linked repository is a pinned research report on the Sunrise/Dawn reconstruction of archived Destiny 2 build 86657, documenting local service and protocol contracts, mission host policy, evidence classes, corrections and acceptance limits. The full mapping covers that community project as documented, not a complete backend, the runtime implementation or independent reproduction. The reported Claude decompilation and in-engine asset recreation, the quoted Wrath of the Machine post and a separate disputed Godot rebuild are not established by the reviewed files, and no REA use is established.",
+      "reason_zh": "所链接仓库是一份固定版本的研究报告，记录已归档 Destiny 2 build 86657 的 Sunrise／Dawn 重建，包括本地服务与协议契约、任务主机策略、证据分级、更正记录及验收边界。完整映射覆盖报告所记录的这一社区项目，不代表完整后端、运行时实现或独立复现。帖子所称借助 Claude 反编译并在引擎内重建素材、被引用的 Wrath of the Machine 帖子，以及另一项存在争议的 Godot 重建，均未由所审阅文件确立；也未确立 REA 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/README.md",
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/01-scope-and-conclusions.md",
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/19-reproducibility-and-open-questions.md",
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/COLLECTION.md",
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/ATTRIBUTION.md",
+        "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/evidence/validation.json",
+        "https://x.com/i/status/2110818698109899108",
+        "https://x.com/i/status/2110422033662124277",
+        "https://x.com/i/status/2110983618155929648",
+        "https://x.com/i/status/2110982629214327033"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "destiny2-build-86657-reconstruction-report-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:itunes-ai-modernization-idea",
@@ -14995,18 +15013,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 158,
-      "insufficient-evidence": 126,
-      "pending": 307
-    },
-    "units_by_state": {
-      "already-curated": 157,
+      "already-curated": 159,
       "insufficient-evidence": 126,
       "pending": 306
     },
-    "primary_reviewed_units": 223,
-    "catalog_linked_occurrences": 169,
-    "distinct_resource_ids": 163,
+    "units_by_state": {
+      "already-curated": 158,
+      "insufficient-evidence": 126,
+      "pending": 305
+    },
+    "primary_reviewed_units": 224,
+    "catalog_linked_occurrences": 170,
+    "distinct_resource_ids": 164,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
