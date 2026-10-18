@@ -12012,13 +12012,29 @@
       "reported_source_urls": [
         "https://github.com/z3xox/Tenkaichi3Decomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 85 (README line 860) lists z3xox/Tenkaichi3Decomp under ⚔️ Dragon Ball Z: Budokai Tenkaichi 3. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 85 行（README 第 860 行）在 ⚔️ Dragon Ball Z: Budokai Tenkaichi 3 下列出 z3xox/Tenkaichi3Decomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, port log, install script, split config, release workflow and licenses support the reported PC port built on the BT3-Decompiled matching decompilation. Full mapping covers this port repository, not independently reproduced gameplay, online play or the decompilation's matching figures. The user-supplied disc image, AI-assisted authorship and split code licensing remain explicit.",
+      "reason_zh": "固定版本的 README、移植日志、安装脚本、拆分配置、发行工作流和许可文件，支持该基于 BT3-Decompiled 一致性反编译的 PC 移植报告。完整映射覆盖此移植仓库，不代表独立复现的游戏行为、联网对战或反编译的一致性数据。使用者自备光盘镜像、借助 AI 完成及分段代码许可均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/docs/port/README.md",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/install.py",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/config/SLUS_216.78.yaml",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/.github/workflows/release.yml",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/LICENSE",
+        "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/LICENSE-MIT",
+        "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "tenkaichi3-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-086",
@@ -14217,18 +14233,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 114,
-      "insufficient-evidence": 86,
-      "pending": 391
-    },
-    "units_by_state": {
-      "already-curated": 113,
+      "already-curated": 115,
       "insufficient-evidence": 86,
       "pending": 390
     },
-    "primary_reviewed_units": 141,
-    "catalog_linked_occurrences": 125,
-    "distinct_resource_ids": 119,
+    "units_by_state": {
+      "already-curated": 114,
+      "insufficient-evidence": 86,
+      "pending": 389
+    },
+    "primary_reviewed_units": 142,
+    "catalog_linked_occurrences": 126,
+    "distinct_resource_ids": 120,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

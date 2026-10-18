@@ -2018,5 +2018,15 @@
       "一致性构建最后会依据各版本的 checksum.sha1 执行 sha1sum 校验，输出“papermario.z64: OK”。--non-matching、--modern-gcc 和 --shift 构建跳过该校验，因此不属于一致性结果。Jenkins 构建全部四个版本及一个可平移的美版构建，并发布进度报告；本合集未运行上述任何检查。",
       "所审源码树没有顶层许可证文件，GitHub 也未识别出许可证，因此未确立源码的再使用授权。原 ROM 和提取的素材仍受各自权利约束，下载的编译器另有条款。所审来源未确立 AI 或 REA 使用归因，也不主张运行复现。"
     ]
+  },
+  "tenkaichi3-pc-port-case": {
+    "name": "Budokai Tenkaichi 3：基于一致性反编译的原生 PC 移植",
+    "requirements": [
+      "README 将其描述为 PS2 美版的原生 PC 移植，而非模拟器：来自 BT3-Decompiled 的游戏代码位于 src/ 和 include/，PC 改动置于 #ifdef PORT 中，并运行在新的平台层上，提供 Vulkan 与 OpenGL 3.3 渲染、音频和输入。README 报告完整游戏流程可运行（启动、过场影片、菜单、存档、对战、分屏），另有实验性的回滚联网对战，通过随附源码的 Cloudflare Worker 配对服务连接；32 位 Linux 版本不支持回滚。docs/port 中的移植日志记录了哪些内容已核验、哪些尚未核验。",
+      "需自备未经修改的美版（SLUS-21678）光盘镜像，格式为 .iso。安装程序与 install.py 从中读取游戏数据，并校验提取出的主程序（SLUS_216.78）和菜单程序（BIN/DBZP.BIN）的 SHA-1 摘要；打过补丁或损坏的镜像会被拒绝。仓库仅以不含数值的结构形式保存内置数据表（port/data），程序启动时再从光盘填充；不分发任何游戏数据。",
+      "发行版面向 64 位 x86 Linux（glibc 2.35 或更新）和 Windows 10／11，需 Vulkan，无法使用时回退到 OpenGL；Apple Silicon macOS 为实验性支持，只能从源码构建。在 Linux 上，install.py 检查 gcc／g++、带 Python 绑定的 clang（用于 64 位指针改写）、glslc 和 SDL3，随后读取光盘、构建程序，并以无窗口方式运行游戏自带的演示对战作为自检。Linux 与 Windows 发行包在 Docker 容器（clang／LLVM、SDL3、mingw-w64）中构建，不使用任何光盘输入。",
+      "BT3-Decompiled 的 README 报告主程序 99.92%、菜单程序 99.97% 的游戏代码已为一致的 C 代码，两个重建二进制均与原版逐字节相同；Sony SDK 与 CRI 库不在范围内。移植日志报告，一段在 PCSX2 中录制的回放在抽样时刻的体力值及最终计时上与主机一致，但早期记录仍指出部分角色状态字不同；macOS 版据报告在演示对战的每一帧都与 Linux 状态相同。这些仍为项目报告，本合集未运行任何内容。",
+      "移植自身的代码在提交 06e4671 之后采用 AGPL-3.0-only，此前（含该提交）采用 MIT；随附库保留各自条款。README 说明 src/ 和 include/ 中的游戏代码归游戏权利人所有，BT3-Decompiled 的 CC0 1.0 声明只覆盖其自身的重建工作。README 称项目借助 AI 完成，文档中也有供并行反编译智能体使用的工作规则；未记录 REA 使用，也不主张运行复现。"
+    ]
   }
 }

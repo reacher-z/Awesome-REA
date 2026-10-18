@@ -4261,5 +4261,39 @@
       "https://papermar.io/reports/progress_pal.csv",
       "https://papermar.io/reports/progress_ique.csv"
     ]
+  },
+  {
+    "id": "tenkaichi3-pc-port-case",
+    "name": "Budokai Tenkaichi 3: a native PC port built on a matching decompilation",
+    "url": "https://github.com/z3xox/Tenkaichi3Decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiles the decompiled code of Dragon Ball Z: Budokai Tenkaichi 3 (PS2, USA release SLUS-21678) for PC on a new renderer, sound, input and platform layer rather than an emulator. The game code comes from the separate BT3-Decompiled matching decompilation, and the game's data is read from the user's own disc image. The README reports the full game loop and experimental online play and says AI helped make the project; these results remain project-reported.",
+    "description_zh": "将 Dragon Ball Z: Budokai Tenkaichi 3（PS2 美版 SLUS-21678）的反编译代码编译到 PC，运行在新的渲染、音频、输入和平台层上，而非借助模拟器。游戏代码来自独立的 BT3-Decompiled 一致性反编译项目，游戏数据从使用者自备的光盘镜像读取。README 报告完整游戏流程可运行、联网对战处于实验阶段，并称项目借助 AI 完成；这些结果仍为项目报告。",
+    "evidence_url": "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a native PC port of the PS2 USA release, not an emulator: the game's code from BT3-Decompiled sits in src/ and include/ with PC changes behind #ifdef PORT, on a new platform layer with Vulkan and OpenGL 3.3 renderers, sound and input. It reports the whole game loop working (boot, movies, menus, saves, fights, split screen), plus experimental online play with rollback through a Cloudflare Worker matchmaking service whose source is included; the 32-bit Linux build has no rollback. The port log in docs/port records what is and is not verified.",
+      "Supply your own disc image of the unmodified USA release (SLUS-21678) as an .iso. The setup and install.py read the game's data from it and check SHA-1 digests of the extracted main program (SLUS_216.78) and menu program (BIN/DBZP.BIN); a patched or damaged image is rejected. The repository carries the built-in data tables as shapes without values (port/data), which the program fills from the disc at start; no game data is distributed.",
+      "Releases target 64-bit x86 Linux (glibc 2.35 or newer) and Windows 10/11 with Vulkan, falling back to OpenGL; Apple Silicon macOS is experimental and source-only. On Linux, install.py checks gcc/g++, clang with its Python bindings for the 64-bit pointer rewriting, glslc and SDL3, then reads the disc, builds the program and runs the game's demo fight headless as a self-test. Linux and Windows release archives are built in a Docker container (clang/LLVM, SDL3, mingw-w64) without any disc input.",
+      "The BT3-Decompiled README reports 99.92% of the main program's game code and 99.97% of the menu program in matching C, with both rebuilt binaries byte-identical; Sony SDK and CRI libraries are out of scope. The port log reports a replay recorded in PCSX2 matching console health values at sampled ticks and the final clock, while an early entry still noted differing fighter state words; macOS is reported to match the Linux state on every demo frame. These remain project-reported, and this collection ran nothing.",
+      "The port's own code is AGPL-3.0-only after commit 06e4671 and MIT up to and including it; bundled libraries keep their own terms. README states that the game code in src/ and include/ belongs to the game's rights holders, and BT3-Decompiled's CC0 1.0 dedication covers only its own reconstruction work. README says the project was made with AI help, and the docs carry working rules for parallel decompilation agents; no REA use is documented and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/docs/port/README.md",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/install.py",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/config/SLUS_216.78.yaml",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/.github/workflows/release.yml",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/docs/agent_rules.md",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/LICENSE",
+      "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/LICENSE-MIT",
+      "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/README.md",
+      "https://github.com/z3xox/BT3-Decompiled/blob/95b950367364137130758ef82a218e607a54b703/LICENSE"
+    ]
   }
 ]
