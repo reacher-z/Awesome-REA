@@ -5757,5 +5757,34 @@
       "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/THIRD_PARTY_NOTICES.md",
       "https://github.com/SpeedBreakerProject/speedbreaker/releases/tag/v0.1.7"
     ]
+  },
+  {
+    "id": "x64dbg-mcp-server",
+    "name": "x64dbg-MCP Server",
+    "url": "https://github.com/duty1g/x64dbg-mcp-server",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Native x64dbg plugin, written in Zig for both x32dbg and x64dbg, that serves an MCP endpoint over streamable HTTP and SSE from inside the debugger. Agents can load or attach to a process, set software, hardware, memory and conditional breakpoints, step and trace, read registers, call stacks, threads, memory maps, imports, strings and cross-references, and run arbitrary x64dbg commands. A bundled SKILL.md guide tells agents to confirm the debugger state before every action.",
+    "description_zh": "以 Zig 编写、同时支持 x32dbg 与 x64dbg 的原生 x64dbg 插件，在调试器内部通过 streamable HTTP 和 SSE 提供 MCP 端点。智能体可以加载或附加进程，设置软件、硬件、内存及条件断点，单步与跟踪执行，读取寄存器、调用栈、线程、内存映射、导入表、字符串和交叉引用，并执行任意 x64dbg 命令。随附的 SKILL.md 指南要求智能体在每次操作前先确认调试器状态。",
+    "evidence_url": "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Windows with x64dbg; the plugin loads into x32dbg or x64dbg and resolves the debugger API at runtime. Install by copying the x32 and x64 plugin folders from the v1.6 release zip (2026-10-12) or a dist/ build into the x64dbg root; building needs Zig 0.16-dev or later and can cross-compile from Linux, macOS or WSL. The server starts automatically with the debugger.",
+      "Ports are 9094 for x64 and 9095 for x32. The README lists 0.0.0.0 as the default bind address, but the reviewed configuration code has defaulted to 127.0.0.1 since v1.2; the plugin's config dialog changes the address, port and token and saves them to mcp_config.json beside the x64dbg executable. A bearer token generated on first run is required on every request, and traffic is unencrypted HTTP, so the README warns against exposing the server to untrusted networks.",
+      "Many tools change the target or debugger state: memory writes and patches, instruction assembly, register writes, memory allocation, thread suspension, breakpoint commands and arbitrary debugger commands. DumpMemory and DumpModule write files to disk, and OEP detection and module dumping are aimed at packed executables.",
+      "MIT. The README limits use to authorized reverse engineering, malware analysis, security research and education. No plugin, debugger session or target was run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/SKILL.md",
+      "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/src/core/config.zig",
+      "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/src/core/mcp_server.zig",
+      "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/LICENSE",
+      "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.6"
+    ]
   }
 ]
