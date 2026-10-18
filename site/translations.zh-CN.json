@@ -1600,5 +1600,15 @@
       "所审 CI 工作流构建 Windows、macOS 和 Linux 软件包并生成 soh.o2r，不与原版游戏进行玩法或保真度比对。游戏行为与增强功能均为项目文档所述，本合集未构建或运行任何内容。",
       "固定版本的仓库根目录没有许可证文件，GitHub 也未识别出许可证；随机器中的 3drando 组件附有自身的许可证，子模块为独立仓库，任天堂内容仍保有其权利。README 声明项目不支持盗版；所审来源未确立 REA 或编码代理的参与。"
     ]
+  },
+  "zelda-tmc-decomp-case": {
+    "name": "《缩小帽》：面向五个 ROM 的 GBA 反编译重建",
+    "requirements": [
+      "README 称其为仍在进行中的反编译项目，代码库仍可能大幅变动，并提醒 ROM 的部分内容可能尚不能移动，因此修改可能较困难。构建目标为 tmc.gba（美版，默认）、tmc_eu.gba、tmc_jp.gba、tmc_demo_usa.gba 和 tmc_demo_jp.gba。产物是 GBA ROM，而不是原生 PC 移植。",
+      "仓库不含任何游戏素材。每个要构建的版本都需要各自的原始基础 ROM，其 SHA-1 须与 INSTALL.md 所列一致；构建过程从该 ROM 中取得素材。",
+      "可在 Linux、装有 Xcode 命令行工具的 macOS（建议使用 GNU make 和 sed），或通过 WSL、WSL2、Cygwin 在 Windows 上构建。需要 build-essential、Git、带 pip 和 pycparser 的 Python 3、CMake、libpng、arm-none-eabi-gcc 工具链（独立安装或 devkitPro 的 gba-dev），以及安装到仓库中的 pret 独立 agbcc 编译器。",
+      "COMPARE 对常规构建执行 SHA-1 检查，对 CUSTOM 构建默认关闭；按 INSTALL.md，修改游戏后必须使用 CUSTOM 构建。Jenkins 流水线使用构建节点上保存的 ROM 构建全部五个版本，并依据美版 map 文件发布进度。就所审阅提交而言，一致性进度日志按脚本自身规则（也把 asm/src、asm/lib 和 libc 目标计入）将美版全部 647,908 个代码字节计为源码，而 13,933,140 个数据字节中仅计入 238,628 个；本合集未重新构建。",
+      "所审阅代码树没有许可证文件，GitHub 也未识别出许可证，因此源码的再使用条款未予说明；原始 ROM、由其得到的素材以及 agbcc 保留各自条款。所审阅来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

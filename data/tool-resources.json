@@ -2991,5 +2991,37 @@
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/.github/workflows/generate-builds.yml",
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/soh/soh/Enhancements/randomizer/3drando/LICENSE.md"
     ]
+  },
+  {
+    "id": "zelda-tmc-decomp-case",
+    "name": "The Minish Cap: a GBA decompilation targeting five ROMs",
+    "url": "https://github.com/zeldaret/tmc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates a C source base for The Legend of Zelda: The Minish Cap from information in the game and static or dynamic analysis, building five Game Boy Advance ROMs: USA, EU, JP and two demos. Each version takes its assets from a user-supplied original ROM, and normal builds check the output’s SHA-1 hash. The project remains a work in progress, and some parts of the ROM may not yet be shiftable.",
+    "description_zh": "依据游戏内信息和静态或动态分析，为《塞尔达传说：缩小帽》重建 C 源码库，可构建美版、欧版、日版及两个演示版共五个 Game Boy Advance ROM。每个版本的素材都来自使用者自备的原始 ROM，常规构建会核对产物的 SHA-1 哈希。项目仍在进行中，ROM 的部分内容可能尚不能移动。",
+    "evidence_url": "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a WIP decompilation whose codebase can still change drastically, and warns that some parts of the ROM may not yet be shiftable, so modifications can be difficult. Its targets are tmc.gba (USA, the default), tmc_eu.gba, tmc_jp.gba, tmc_demo_usa.gba and tmc_demo_jp.gba. The output is a GBA ROM, not a native PC port.",
+      "The repository includes no game assets. Each version to be built needs its own original base ROM matching the SHA-1 listed in INSTALL.md; the build derives its assets from that ROM.",
+      "Builds run on Linux, on macOS with the Xcode command line tools (GNU make and sed are recommended), or on Windows through WSL, WSL2 or Cygwin. They need build-essential, Git, Python 3 with pip and pycparser, CMake, libpng, an arm-none-eabi-gcc toolchain (standalone or devkitPro gba-dev) and pret’s separate agbcc compiler installed into the tree.",
+      "COMPARE runs the SHA-1 check for normal builds and is off for CUSTOM builds, which INSTALL.md requires after modifying the game. The Jenkins pipeline builds all five versions with ROMs held on its build agent and publishes progress from the USA map file. For the reviewed commit, the matching log counts all 647,908 USA code bytes as source by the script’s own rules, which also count asm/src, asm/lib and libc objects, but only 238,628 of 13,933,140 data bytes; this collection did not rebuild it.",
+      "The reviewed tree has no license file and GitHub detects no license, so reuse terms for the source are unstated; original ROMs, derived assets and agbcc keep their own terms. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/INSTALL.md",
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/Makefile",
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/GBA.mk",
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/tmc.sha1",
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/Jenkinsfile",
+      "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/progress.py",
+      "https://zelda.deco.mp/assets/csv/progress-tmc-matching.csv"
+    ]
   }
 ]
