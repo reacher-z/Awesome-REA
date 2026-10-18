@@ -1938,5 +1938,15 @@
       "README 称游戏已被完整通关，但宽屏下暂停菜单背景仍有问题；macOS 上尚未确认通关，Intel Mac 尚未尝试。反编译的 C 代码必须逐字节重建 ROM 中的代码，移植版则通过游玩及与模拟器中原版对比来检查；名称被标注为推测，本合集未重跑任何检查。",
       "作者称在重编译配置、工具补丁、宿主程序、模组和反编译函数中大量使用 Claude Code；所审来源未记录 REA 使用。项目自有代码采用 MIT，但包含 GPLv3 N64ModernRuntime 的构建整体按 GPLv3 分发，另有一个 RT64 补丁采用 GPL-2.0 或更高版本，游戏本身不在许可范围内。"
     ]
+  },
+  "projectcane-sly1-pc-port-case": {
+    "name": "ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植",
+    "requirements": [
+      "README 将其描述为 NTSC 版的完整可玩原生移植，支持 Windows 和 Linux（包括 Steam Deck），最初是一个地图查看器；Beta 0.4.1 发布标记在所审版本的前一个提交上。项目称仍在改进准确性、性能、控制器支持、平台兼容性，以及与 PS2 原版的剩余差异。仓库简介称移植通过逆向工程重建，但 README 未说明方法、符号来源或与原版的对照。",
+      "仓库不含任何原版游戏数据。玩家需自备 NTSC 光盘镜像，附带的提取器以序列号 SCUS-97198 识别该镜像，提取出的 Worlds 和 Cutscenes 目录须放在可执行文件旁。Beta 0.4.1 的发布说明指出，更新后须重新提取游戏数据。",
+      "Windows 构建使用安装了 C++ 桌面开发工作负载的 Visual Studio 2022，基于 Avalonia 的提取器另需 .NET 9 SDK；也可使用 CMake 预设。Linux 构建需要 CMake 3.22+、Ninja、C++20 编译器、pkg-config 和 FFmpeg 开发库；CMake 会获取 GLFW 3.4 和 SDL2，图形通过 glad 使用 OpenGL，并使用 Dear ImGui。可移植 AppImage 在 Docker 中以 Ubuntu 22.04／glibc 2.35 为基线构建。",
+      "项目未记录自动化测试、一致性检查或并排对照，因此可玩性和保真度仍为项目自述。本合集未下载发布版本，也未提取任何光盘。",
+      "仓库没有许可证文件，源码的再使用条款未说明；Sly Cooper 名称和素材归各自权利人所有，README 声明与 Sony Interactive Entertainment 和 Sucker Punch Productions 无关。README 还征集带符号的 Sly 2 或 Sly 3 调试版本，用于今后的移植。所审来源未确立 REA 参与，也不主张运行复现。"
+    ]
   }
 }

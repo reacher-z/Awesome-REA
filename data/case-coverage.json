@@ -10889,13 +10889,28 @@
         "https://github.com/theclub654/ProjectCane",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 41 (README line 380) lists theclub654/ProjectCane under 🧭 Sly Cooper and the Thievius Raccoonus. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 41 行（README 第 380 行）在 🧭 Sly Cooper and the Thievius Raccoonus 下列出 theclub654/ProjectCane。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, build files, packaging guide, disc-image detector and Beta 0.4.1 release notes support this native PC port report for the NTSC release. Full mapping covers ProjectCane itself, not the separate sly1 decompilation, whose relationship the sources do not state. The project-reported playability, required user-supplied disc data, undocumented method and missing license stay explicit; source review does not mean runtime reproduction.",
+      "reason_zh": "固定版本的 README、构建文件、打包指南、光盘镜像检测代码及 Beta 0.4.1 发布说明，支持这份针对 NTSC 版的原生 PC 移植报告。完整映射覆盖 ProjectCane 本身，不涵盖另一个 sly1 反编译项目，来源也未说明两者关系。项目自述的可玩性、须由用户自备的光盘数据、未说明的方法及缺失的许可证均明确保留；来源核查不表示运行复现。",
+      "primary_evidence_urls": [
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/README.md",
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/CMakeLists.txt",
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/CMakePresets.json",
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/packaging/linux/README.md",
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/Services/Sly1IsoDetector.cs",
+        "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/File%20Extractor%20GUI.csproj",
+        "https://github.com/theclub654/ProjectCane/releases/tag/v0.4.1-beta.1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "projectcane-sly1-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-042",
@@ -14089,18 +14104,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 106,
-      "insufficient-evidence": 82,
-      "pending": 403
-    },
-    "units_by_state": {
-      "already-curated": 105,
+      "already-curated": 107,
       "insufficient-evidence": 82,
       "pending": 402
     },
-    "primary_reviewed_units": 130,
-    "catalog_linked_occurrences": 117,
-    "distinct_resource_ids": 111,
+    "units_by_state": {
+      "already-curated": 106,
+      "insufficient-evidence": 82,
+      "pending": 401
+    },
+    "primary_reviewed_units": 131,
+    "catalog_linked_occurrences": 118,
+    "distinct_resource_ids": 112,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

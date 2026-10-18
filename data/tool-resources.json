@@ -3991,5 +3991,36 @@
       "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/LICENSE",
       "https://github.com/sciaschi/CBFD-Recompiled/releases/tag/V0.1.6"
     ]
+  },
+  {
+    "id": "projectcane-sly1-pc-port-case",
+    "name": "ProjectCane: a native PC port of Sly Cooper and the Thievius Raccoonus",
+    "url": "https://github.com/theclub654/ProjectCane",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the NTSC PlayStation 2 release of Sly Cooper and the Thievius Raccoonus as a native C++ game for Windows and Linux, running on data extracted from the player's own disc image. The README reports the full game as playable while work continues on accuracy and remaining differences from the original. It does not describe its reverse-engineering method or relate the port to the separate sly1 decompilation.",
+    "description_zh": "将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。README 报告整部游戏均可游玩，同时仍在改进准确性并处理与原版的剩余差异。项目未说明其逆向工程方法，也未说明与另一个 sly1 反编译项目的关系。",
+    "evidence_url": "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a complete, playable native port of the NTSC release for Windows and Linux, including Steam Deck, that began as a map viewer; the Beta 0.4.1 release is tagged one commit before the reviewed revision. Work is said to continue on accuracy, performance, controller support, platform compatibility and remaining differences from the PS2 release. The repository description says the port was rebuilt through reverse engineering, but the README gives no method, symbol source or comparison with the original.",
+      "No original game data is included. Players supply their own NTSC disc image, which the bundled extractor identifies by the serial SCUS-97198, and the extracted Worlds and Cutscenes directories must sit beside the executable. The Beta 0.4.1 notes say game data must be extracted again after that update.",
+      "Windows builds use Visual Studio 2022 with the C++ desktop workload, plus the .NET 9 SDK for the Avalonia-based extractor, or CMake presets. Linux builds need CMake 3.22+, Ninja, a C++20 compiler, pkg-config and FFmpeg development libraries; CMake fetches GLFW 3.4 and SDL2, and graphics use OpenGL through glad with Dear ImGui. Portable AppImages are built in Docker against an Ubuntu 22.04 / glibc 2.35 baseline.",
+      "No automated tests, matching checks or side-by-side comparisons are documented, so playability and fidelity remain project claims. This collection did not download releases or extract any disc.",
+      "No license file is present, so reuse terms for the source are unstated; Sly Cooper names and assets belong to their owners, and the README disclaims affiliation with Sony Interactive Entertainment and Sucker Punch Productions. The README also asks for Sly 2 or Sly 3 debug builds with symbols to support future ports. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/CMakeLists.txt",
+      "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/CMakePresets.json",
+      "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/packaging/linux/README.md",
+      "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/Services/Sly1IsoDetector.cs",
+      "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/File%20Extractor%20GUI/File%20Extractor%20GUI.csproj",
+      "https://github.com/theclub654/ProjectCane/releases/tag/v0.4.1-beta.1"
+    ]
   }
 ]
