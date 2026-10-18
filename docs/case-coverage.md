@@ -22,11 +22,11 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 101 | 100 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Already curated (`already-curated`) | 102 | 101 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
 | Pending (`pending`) | 408 | 407 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 82 | 82 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Insufficient evidence (`insufficient-evidence`) | 81 | 81 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-112 occurrences have catalog links. They reference 106 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+113 occurrences have catalog links. They reference 107 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
 This ledger records a new primary-source review for 125 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
@@ -51,7 +51,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Obsidian ASAR: large-package analysis | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/746) |
 | Unity/Valheim assemblies | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/1801) |
 | Large multidex Android APK | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/893) |
-| .NET NativeAOT recovery request | Insufficient evidence | [Source](https://github.com/morluto/rea/issues/744) |
+| NativeAOT metadata recovery with Ghidra | Already curated | [Source](https://github.com/morluto/rea/issues/744) |
 | Windows Calculator: reconstructing percentage rules | Already curated | [Source](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md) |
 | Android ApiDemos: tracing Java methods from an APK | Insufficient evidence | [Source](https://github.com/morluto/rea/pull/738) |
 | Static HarmonyOS package inventory | Already curated | [Source](https://github.com/morluto/rea/pull/1447) |
