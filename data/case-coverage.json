@@ -13782,13 +13782,32 @@
       "reported_source_urls": [
         "https://github.com/JackandBeans/Snap64Recomp"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 129 (README line 1373) lists JackandBeans/Snap64Recomp under ⚡ Pokémon Snap. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 129 行（README 第 1373 行）在 ⚡ Pokémon Snap 下列出 JackandBeans/Snap64Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, build and verification notes, third-party notice, recompiler configuration and the v1.1.5 release support the named Pokémon Snap static-recompilation port. Full mapping covers this US-only N64Recomp port, not the separate decompilation, other regions or independently reproduced gameplay. ROM requirements, the statement that release binaries are compiled from translated game code, and author-reported Claude Code use remain explicit.",
+      "reason_zh": "固定版本的 README、构建与验证说明、第三方声明、重编译器配置及 v1.1.5 发布，支持该 Pokémon Snap 静态重编译移植报告。完整映射覆盖此仅限美版的 N64Recomp 移植，不涵盖独立的反编译项目、其他地区版本或独立复现的游戏行为。ROM 要求、发布二进制由转换后的游戏代码编译而成的说明，以及作者报告的 Claude Code 使用均明确保留。",
+      "primary_evidence_urls": [
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/BUILDING.md",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/docs/VERIFICATION.md",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/docs/KNOWN-ISSUES.md",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/NOTICE.md",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/CMakeLists.txt",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/pokemonsnap.us.toml",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/.gitmodules",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/LICENSE",
+        "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/CONTRIBUTING.md",
+        "https://github.com/JackandBeans/Snap64Recomp/releases/tag/v1.1.5"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snap64-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-130",
@@ -15074,18 +15093,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 162,
-      "insufficient-evidence": 132,
-      "pending": 297
-    },
-    "units_by_state": {
-      "already-curated": 161,
+      "already-curated": 163,
       "insufficient-evidence": 132,
       "pending": 296
     },
-    "primary_reviewed_units": 233,
-    "catalog_linked_occurrences": 173,
-    "distinct_resource_ids": 167,
+    "units_by_state": {
+      "already-curated": 162,
+      "insufficient-evidence": 132,
+      "pending": 295
+    },
+    "primary_reviewed_units": 234,
+    "catalog_linked_occurrences": 174,
+    "distinct_resource_ids": 168,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

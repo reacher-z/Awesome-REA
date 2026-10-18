@@ -5978,5 +5978,40 @@
       "https://github.com/encounter/decomp-toolkit/releases/tag/v1.8.4",
       "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/README.md#L32-L34"
     ]
+  },
+  {
+    "id": "snap64-recomp-case",
+    "name": "Snap64 Recomp: a static-recompilation port of Pokémon Snap",
+    "url": "https://github.com/JackandBeans/Snap64Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Uses N64Recomp to statically recompile the US Nintendo 64 release of Pokémon Snap into a native Windows, Linux, Steam Deck and macOS port rendered with RT64. The recompiler reads a relocatable ELF linked from the matching ethteck/pokemonsnap decompilation together with the user’s ROM, and game-side patches are modified copies of decompiled functions. The author reports building the port with Claude Code; results remain project-reported.",
+    "description_zh": "使用 N64Recomp 将 Pokémon Snap 美版 Nintendo 64 发行版静态重编译为原生 Windows、Linux、Steam Deck 和 macOS 移植，由 RT64 负责渲染。重编译器读取从一致性 ethteck/pokemonsnap 反编译项目链接出的可重定位 ELF 及使用者自备的 ROM，游戏侧补丁则是反编译函数的修改副本。作者报告借助 Claude Code 完成移植；各项结果仍为项目报告。",
+    "evidence_url": "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed tree is version 1.1.5, published as release v1.1.5 on 2026-10-17, and targets only the US cartridge; README says the Japanese, European and Australian releases are different builds. Cartridge behavior is the default and every enhancement is opt-in. Listed known issues include some 2D elements stepping at the game’s rate at higher frame rates, estimated Snap Station printer details and lightly tested Vulkan on Windows.",
+      "Supply your own US ROM matching the SHA-1 in README, the checksum the decompilation publishes; .z64, .v64 and .n64 files are accepted and a wrong file is refused. The repository and releases contain no game assets. Building also needs that ROM for the matching decompilation build, the recompiler inputs and the RSP audio-microcode translation.",
+      "Releases need 64-bit Windows 10 (1809+) or 11 with Direct3D 12 Shader Model 6.3, Linux or Steam Deck with Vulkan 1.2 (experimental), or macOS 14+, on an SSE4.1 x86-64 CPU or the ARM builds provided. BUILDING.md records a two-machine build: WSL Ubuntu 24.04 with MIPS binutils, the decompilation, its downloaded IDO compilers and N64Recomp, then Visual Studio 2019, CMake 3.20+ and Python 3 on Windows after tools/fetch_deps.py checks out the pinned submodules. The relocatable-ELF relink is marked as derived, not recorded.",
+      "VERIFICATION.md reports a full Windows play-through, partial Steam Deck and GitHub-hosted virtual Mac runs, and 33 of 33 headless-suite checks plus 5 of 5 Snap Station checks on the author’s 1.1.5 executable from recorded replays. These test the port’s behavior, not byte-level equivalence with the cartridge; no physical Mac or Linux desktop report is recorded. This collection did not build or run it.",
+      "Port code is GPLv3, with third-party components listed in NOTICE.md. NOTICE.md says no tracked file carries ROM bytes, but the distributed executable is compiled from C that N64Recomp translates from the game’s instructions, and patches are modified decompiled functions; the game remains its owners’. The author reports writing the port with Claude Code under their direction; no REA use is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/BUILDING.md",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/docs/VERIFICATION.md",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/docs/KNOWN-ISSUES.md",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/NOTICE.md",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/CMakeLists.txt",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/pokemonsnap.us.toml",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/.gitmodules",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/LICENSE",
+      "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/CONTRIBUTING.md",
+      "https://github.com/JackandBeans/Snap64Recomp/releases/tag/v1.1.5"
+    ]
   }
 ]

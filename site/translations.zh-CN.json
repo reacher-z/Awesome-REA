@@ -2565,5 +2565,15 @@
       "dol split 设计为在反编译项目的构建系统中运行；README 建议新项目参考 dtk-template 的项目结构和配置文档。匹配构建通常需要原游戏所用的编译器（GameCube/Wii 上为 Metrowerks CodeWarrior），生成的链接脚本面向 mwldeppc.exe。DOL/REL 文件和光盘镜像须来自使用者自有的游戏副本。",
       "采用 MIT 或 Apache-2.0 双重许可。它负责分析、拆分和重新链接二进制，不会反编译出 C 代码；dol diff 只报告已链接 ELF 中最明显的差异，逐函数的匹配情况需借助 objdiff 等工具核对。本次未分析任何游戏文件。"
     ]
+  },
+  "snap64-recomp-case": {
+    "name": "Snap64 Recomp：Pokémon Snap 的静态重编译移植",
+    "requirements": [
+      "所审代码树为 1.1.5 版，对应 2026-10-17 发布的 v1.1.5，仅支持美版卡带；README 说明日版、欧版和澳版是不同的游戏构建。默认保持卡带原有行为，所有增强功能均需手动开启。列出的已知问题包括：提高帧率时部分 2D 元素仍按游戏原速步进、Snap Station 打印机的部分细节为估计值，以及 Windows 上的 Vulkan 测试较少。",
+      "需自备与 README 中 SHA-1 一致的美版 ROM，该校验值即反编译项目公布的值；接受 .z64、.v64 和 .n64 文件，错误文件会被拒绝。仓库与发布包均不含游戏素材。构建时同样需要该 ROM，用于一致性反编译构建、重编译器输入及 RSP 音频微码转换。",
+      "发布版需要 64 位 Windows 10（1809 及以上）或 11 并支持 Direct3D 12 Shader Model 6.3，或支持 Vulkan 1.2 的 Linux／Steam Deck（实验性），或 macOS 14 及以上；CPU 需为支持 SSE4.1 的 x86-64，或使用提供的 ARM 构建。BUILDING.md 记录的是双机构建：先在 WSL Ubuntu 24.04 上使用 MIPS binutils、反编译项目及其下载的 IDO 编译器和 N64Recomp，再在 Windows 上用 tools/fetch_deps.py 检出固定版本子模块后，以 Visual Studio 2019、CMake 3.20+ 和 Python 3 构建。可重定位 ELF 的重新链接步骤标注为推导所得，并非实际记录的命令。",
+      "VERIFICATION.md 报告：在 Windows 上完整通关，在 Steam Deck 和 GitHub 托管的虚拟 Mac 上进行了部分运行，作者构建的 1.1.5 可执行文件使用录制回放通过了 33／33 项无界面测试套件检查及 5／5 项 Snap Station 检查。这些检查针对移植的行为，并非与卡带逐字节等价；尚无实体 Mac 或 Linux 桌面的报告。本合集未构建或运行该项目。",
+      "移植代码采用 GPLv3，第三方组件列于 NOTICE.md。NOTICE.md 说明仓库跟踪的文件不含 ROM 字节，但分发的可执行文件由 N64Recomp 从游戏指令转换出的 C 代码编译而成，补丁也是修改过的反编译函数；游戏本身仍归其权利人所有。作者报告在其主导下使用 Claude Code 编写此移植；未记录 REA 使用。"
+    ]
   }
 }
