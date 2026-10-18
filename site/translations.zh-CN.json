@@ -1620,5 +1620,15 @@
       "默认 COMPARE=1 时，make 会将构建出的 ROM 的 MD5 与该版本的校验文件比对，并输出 OK 或 FAILED；设置 NON_MATCHING=1 或 COMPILER=gcc 会关闭该检查。GitHub Actions 在存有基础 ROM 的私有容器中运行，报告固定提交的 16 个版本均构建成功；审阅时可变的进度徽章显示 100%。本合集未运行任何构建。",
       "固定版本的仓库中没有许可证文件，GitHub 也未识别出许可证，因此未声明复用许可；任天堂内容与编译器组件各有其条款。所审来源未确立 REA 或编码代理的参与。"
     ]
+  },
+  "baocut-design-canvas-case": {
+    "name": "BaoCut Design：移植重建的设计稿与设计系统编辑器",
+    "requirements": [
+      "本条目覆盖固定版本提交中加入的设计稿（画布）与设计系统编辑器，不涵盖整个 BaoCut 产品，也不涵盖另行收录的 Slides 编辑器。运行时 README 称二者分别按 1:1 移植自原编辑器类型的 TypeScript 重建（src/design-type、src/design-system-type），保留文件格式、界面、行为与模块结构，BaoCut 托管所需的改动以 BaoCut: 注释标出。这些重建工程及其笔记与证据不在本仓库中，来源也未写明对应的原版确切版本。",
+      "托管改动将原有的 globalThis.claude 宿主接口换成 BaoCut 的 shim，清空父窗口 origin 白名单，关闭使用分析，并去掉多人房间、sample 及从托管地址安装设计系统等能力。移植版不内置 Anthropic Sans 而改用系统字体，但仍内联原有的 Anthropicons 图标字体；README 称其分发许可待确认，且计划替换。请使用已获独立授权的设计内容与素材。",
+      "构建编辑器需要 Node.js >=22.12.0、npm 工作区依赖，以及 apps/design-editor 与 apps/design-system-editor 的构建。画布运行时在工作区的 React 19 之外为画板保留 React 18.3.1，并使用 Babel standalone 7.29.0、happy-dom、jQuery 与 dom-to-svg；完整 BaoCut 源码构建另需 Rust、CMake 及平台构建工具。由智能体制作设计稿时，经已配置的本机智能体 CLI（如 Codex）使用 BaoCut 内置的 design 与 design-system skill，并遵守其账号与服务条款。",
+      "design-runtime 的 README 报告：先对照原脚本修正标识符，再用 Babel 做结构指纹比对，原画布主页面 20463 个函数中有 19111 个完全一致；其余仅绑定不同的函数都在依赖中，而 1019 个结构有差异的最内层函数以及被改名的 property-scrubber 内部属性仍未审阅，属残余风险。公开测试覆盖设计稿检查、文件路由与授权、下载及标注目标，验收用例 UI-11–UI-13 描述了 Web／桌面端的手动流程。这些都不是与原服务对照的行为测试基准；本合集未运行它们。",
+      "根目录的 BaoCut Community License 1.0 是源码可见许可：允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化则需另行许可。第三方声明涵盖随包的 npm 依赖，但不能确立所重建的 Claude Design 代码或图标字体的复用权。作者帖子未说明此次移植使用了 REA；后来的第三方帖子所称的 REA 使用未获作者或仓库证实。本次仅审阅固定版本的来源，未运行编辑器、智能体或测试。"
+    ]
   }
 }

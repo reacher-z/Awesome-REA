@@ -1360,13 +1360,30 @@
         "https://github.com/JimLiu/baocut/commit/7aa049e8",
         "https://x.com/i/status/2109830792851448099"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned runtime READMEs, design notes, tests and license support the named Claude Design port in BaoCut: canvas and design-system editors ported 1:1 from TypeScript reconstructions, with identifier fixes and a function-level structural comparison against the shipped scripts. Full mapping covers these two editors, not the separately curated Slides editor, all of BaoCut or original backend behavior. The author’s post does not name REA for this port, the reconstruction record is unpublished, and reuse rights remain unestablished.",
+      "reason_zh": "固定版本的运行时 README、设计说明、测试与许可支持该具名的 BaoCut 版 Claude Design 移植：设计稿与设计系统编辑器按 1:1 移植自 TypeScript 重建，并记录了对照原脚本的标识符修正和逐函数结构比对。完整映射仅覆盖这两个编辑器，不涵盖另行收录的 Slides 编辑器、整个 BaoCut 或原有后端行为。作者帖子未说明此次移植使用 REA，重建记录未公开，复用权利亦未确立。",
+      "primary_evidence_urls": [
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime/README.md",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-system-runtime/README.md",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/docs/design/canvas/README.md",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design/src/canvas-check.test.ts",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-system/src/routes.test.ts",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/LICENSE",
+        "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/THIRD_PARTY_NOTICES.md",
+        "https://x.com/dotey/status/2109482425722057154",
+        "https://x.com/i/status/2109830792851448099"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "baocut-design-canvas-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:bluetooth-gamepad-windows",
@@ -13536,18 +13553,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 78,
-      "insufficient-evidence": 71,
-      "pending": 442
-    },
-    "units_by_state": {
-      "already-curated": 77,
+      "already-curated": 79,
       "insufficient-evidence": 71,
       "pending": 441
     },
-    "primary_reviewed_units": 91,
-    "catalog_linked_occurrences": 85,
-    "distinct_resource_ids": 77,
+    "units_by_state": {
+      "already-curated": 78,
+      "insufficient-evidence": 71,
+      "pending": 440
+    },
+    "primary_reviewed_units": 92,
+    "catalog_linked_occurrences": 86,
+    "distinct_resource_ids": 78,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
