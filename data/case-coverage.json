@@ -1316,12 +1316,15 @@
       "reported_source_urls": [
         "https://x.com/dotey/status/2109417222724600172"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's post reports using Codex with REA to inspect the Codex/ChatGPT desktop app's Electron code for how browser annotations reach the composer, then building a local test page. The post says the page could open and prefill an annotation but not attach it to the composer; the entry point it names, document.oai.annotation.request(), is described in OpenAI's public annotation documentation. The analysis record, test-page source and any comparison are not public, and screenshots alone do not establish a reconstruction. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者帖子称，其使用 Codex 配合 REA 检查 Codex／ChatGPT 桌面应用的 Electron 代码，了解浏览器标注如何进入输入框，随后制作了一个本地测试网页。帖子表示该网页能弹出并预填标注，但无法将其附加到输入框；所提到的入口 document.oai.annotation.request() 已见于 OpenAI 公开的标注文档。分析记录、测试网页源码及任何对照结果均未公开，仅凭截图不足以确立重建。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/dotey/status/2109417222724600172",
+        "https://learn.chatgpt.com/docs/annotations-extensibility"
+      ],
       "catalog_matches": []
     },
     {
@@ -13336,15 +13339,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 68,
-      "insufficient-evidence": 66,
-      "pending": 457
+      "insufficient-evidence": 67,
+      "pending": 456
     },
     "units_by_state": {
       "already-curated": 67,
-      "insufficient-evidence": 66,
-      "pending": 456
+      "insufficient-evidence": 67,
+      "pending": 455
     },
-    "primary_reviewed_units": 80,
+    "primary_reviewed_units": 81,
     "catalog_linked_occurrences": 75,
     "distinct_resource_ids": 66,
     "distinct_paper_ids": 1,
