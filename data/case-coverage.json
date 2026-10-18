@@ -9048,11 +9048,16 @@
         "https://x.com/i/status/2111230627877908914"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Primary look recorded. Dan Kornas's posts link mytechnotalent/rea, which at the pinned commit is Reverse Engineering Assistant v7.0.0, an MIT-licensed Rust file-analysis tool whose LICENSE names Kevin Thomas: rea <file> writes Markdown, PDF and JSON reports beside the target, an MCP server mode exposes the engine to coding agents, and an optional OpenRouter-backed analyst loop can write the report; the README says it runs fully offline without an API key. It is a tool rather than a reconstruction case and, despite the shared acronym, is unrelated to morluto/rea. Whether to curate it as a tool record is left to a maintainer; the README's capability and trust claims were not tested.",
+      "reason_zh": "已记录一手查看。Dan Kornas 的帖子链接 mytechnotalent/rea，该仓库在固定版本中是 Reverse Engineering Assistant v7.0.0，一款采用 MIT 许可的 Rust 文件分析工具，LICENSE 署名 Kevin Thomas：rea <file> 会在目标旁生成 Markdown、PDF 与 JSON 报告，MCP 服务器模式向编程智能体开放分析引擎，可选的基于 OpenRouter 的分析循环可撰写报告；README 称未配置 API 密钥时可完全离线运行。它是工具而非重建案例，虽缩写相同，但与 morluto/rea 无关。是否作为工具条目收录留待维护者决定；README 关于功能与可信度的说法未经测试。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111230457568227404",
+        "https://x.com/i/status/2111230627877908914",
+        "https://github.com/mytechnotalent/rea/blob/a2f8a158eb2161899f479018db2630e7e9b93145/README.md",
+        "https://github.com/mytechnotalent/rea/blob/a2f8a158eb2161899f479018db2630e7e9b93145/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -15525,7 +15530,7 @@
       "insufficient-evidence": 154,
       "pending": 250
     },
-    "primary_reviewed_units": 279,
+    "primary_reviewed_units": 280,
     "catalog_linked_occurrences": 197,
     "distinct_resource_ids": 191,
     "distinct_paper_ids": 1,
