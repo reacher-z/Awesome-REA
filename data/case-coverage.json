@@ -13298,13 +13298,27 @@
         "https://github.com/shaneomac1337/SVR2011-Recomp/releases",
         "https://x.com/mdaman010/status/2109111127238230239?s=46"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "Project row 113 (README line 1178) lists shaneomac1337/SVR2011-Recomp under 🏁 WWE SmackDown vs. Raw 2011. Primary implementation, prerequisites and reported results remain unreviewed; this row is not a verified reconstruction.",
-      "reason_zh": "项目第 113 行（README 第 1178 行）在 🏁 WWE SmackDown vs. Raw 2011 下列出 shaneomac1337/SVR2011-Recomp。其一手实现、使用条件和报告结果仍待核查；该行不是已经核验的重建成果。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Pinned README, recompilation manifest, build and packaging scripts, and dated investigation notes support a documented ReXGlue recompilation of WWE SmackDown vs. Raw 2011 that needs the user’s own USA/Europe disc image. Full mapping covers this repository, not the separate wwe-svr2011-pc port or the archive post linked from the row. Mode coverage and single-GPU testing remain project-reported.",
+      "reason_zh": "固定版本的 README、重编译清单、构建与打包脚本以及带日期的调查笔记，支持这一有文档记录的 WWE SmackDown vs. Raw 2011 ReXGlue 重编译，需使用者自备美版／欧版光盘镜像。完整映射覆盖此仓库，不涵盖另一个 wwe-svr2011-pc 移植或该行另附的归档帖子。模式覆盖范围和单一 GPU 测试仍为项目自述。",
+      "primary_evidence_urls": [
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/README.md",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/LICENSE",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/svr2011_manifest.toml",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/docs/feasibility.md",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/docs/boot-investigation.md",
+        "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/package-portable.ps1"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "svr2011-recomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-114",
@@ -15013,18 +15027,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 159,
-      "insufficient-evidence": 126,
-      "pending": 306
-    },
-    "units_by_state": {
-      "already-curated": 158,
+      "already-curated": 160,
       "insufficient-evidence": 126,
       "pending": 305
     },
-    "primary_reviewed_units": 224,
-    "catalog_linked_occurrences": 170,
-    "distinct_resource_ids": 164,
+    "units_by_state": {
+      "already-curated": 159,
+      "insufficient-evidence": 126,
+      "pending": 304
+    },
+    "primary_reviewed_units": 225,
+    "catalog_linked_occurrences": 171,
+    "distinct_resource_ids": 165,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

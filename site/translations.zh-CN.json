@@ -2517,5 +2517,15 @@
       "随附的验证记录报告：报告组装、1,191 个本地链接、引用、证据哈希、37 条论断引用及部分发布排除项均通过检查，但不含游戏或原生运行测试。其验收表记录了一次完整的 Omega 通关、其他任务的若干已验收段落，以及不含屏障战与 Argos 战的 Eater of Worlds 可玩片段；Spark 实机测试、原生世界的一致恢复和分离式镜头行为仍未验证或未实现。本合集只阅读报告与证据元数据，未运行其脚本、游戏或实现。",
       "仓库未声明整体许可证。ATTRIBUTION.md 为所含源码摘录保留 Dawn 的 GPL-3.0 文本，署名 Sunrise 与 Sundial 贡献者，不声称获得 Bungie 认可，也不对第三方材料重新授权。报告针对已归档版本的本地重建，并说明其安全发现并非针对当前在线游戏的漏洞主张。报告未记录借助 Claude 或其他 AI 反编译，也未记录在引擎内重建素材；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "svr2011-recomp-case": {
+    "name": "SVR2011-Recomp：借助 ReXGlue 重编译 WWE SmackDown vs. Raw 2011",
+    "requirements": [
+      "所审阅的 main 分支（即 v0.5.0 发布所在提交）是静态重编译，而非反编译；其可行性说明强调，转换得到的代码并非恢复出的开发者源码。构建只接受 SHA-256 为 6aead4cb…d3ebc1 的 default.xex，svr2011_manifest.toml 则补充 ReXGlue v0.10.0 遗漏的间接调用目标。README 报告表演赛、入场、菜单、后台乱斗及 Create a Superstar 工具可以游玩；Road to WrestleMania、其他创建模式、Universe 和在线功能未经测试，可能崩溃。",
+      "玩家需自备美版／欧版 Xbox 360 光盘镜像。启动器会对照该版本检查全部 366 个文件，拒绝其他镜像，并一次性复制到 gamedata。README 称仓库不含游戏代码或数据，二者均由构建依据使用者的镜像生成；玩家压缩包包含已构建的可执行文件、ReXGlue 运行时 DLL 和预编译着色器，但不含光盘文件。",
+      "运行需 64 位 Windows 10 或 11（仅测试过 Windows 11）、驱动较新的 Vulkan GPU 及约 6 GB 空间。源码构建需约 25 GB 空间、PowerShell 7、Python 3、Git、7-Zip，以及含 CMake、Ninja 和 Windows SDK 的 Visual Studio 2026 生成工具；bootstrap.ps1 会下载以 SHA-256 固定的 ReXGlue 0.10.0 和 LLVM 21.1.8。必须选择 Vulkan 渲染器，因为默认的 D3D12 路径在测试 GPU 上会卡死。",
+      "测试环境为配备 AMD Radeon RX 7900 XT 的 Windows 11，其他 GPU 和 Windows 10 尚未尝试。Python 与 PowerShell 测试覆盖光盘检查、着色器缓存合并、启动器以及使用合成镜像的便携版安装，带日期的笔记记录了启动与帧时间调查。这些是作者报告，并非等价性检查；本合集未运行。",
+      "项目自身代码采用 BSD 3-Clause；ReXGlue 按其自身许可使用，项目脚手架和 generated/rexglue.cmake 来自 ReXGlue 模板。游戏权利仍归其权利人，README 要求使用者不要分享 gamedata、assets 或光盘镜像。README 未声明使用 AI 或 REA；仓库虽有 docs/agents 下的工作跟踪说明，但不据此推断归因。"
+    ]
   }
 }

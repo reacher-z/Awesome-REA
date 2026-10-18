@@ -5885,5 +5885,37 @@
       "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/CITATION.cff",
       "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/LICENSES/Dawn-GPL-3.0.txt"
     ]
+  },
+  {
+    "id": "svr2011-recomp-case",
+    "name": "SVR2011-Recomp: a ReXGlue recompilation of WWE SmackDown vs. Raw 2011",
+    "url": "https://github.com/shaneomac1337/SVR2011-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the Xbox 360 executable of WWE SmackDown vs. Raw 2011 to C++ ahead of time with ReXGlue and builds it as a Windows program on a Vulkan runtime derived from Xenia. A hand-maintained manifest adds function entry points the automatic pass misses, and project patches address frame pacing, a music-player delay and pipeline stalls. Exhibition play is author-tested on one AMD GPU; career mode and online remain untested.",
+    "description_zh": "借助 ReXGlue 将 WWE SmackDown vs. Raw 2011 的 Xbox 360 可执行文件提前转换为 C++，并在源自 Xenia 的 Vulkan 运行时上构建为 Windows 程序。手工维护的清单补充自动分析遗漏的函数入口，项目补丁则处理帧节奏、音乐播放器延迟和渲染管线卡顿。作者仅在一款 AMD GPU 上测试了表演赛等模式；生涯模式与在线功能仍未测试。",
+    "evidence_url": "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch (the v0.5.0 release commit) is a static recompilation, not a decompilation; its feasibility notes stress that translated code is not recovered developer source. The build accepts only the default.xex with SHA-256 6aead4cb…d3ebc1, and svr2011_manifest.toml seeds indirect-call targets that ReXGlue v0.10.0 misses. README reports exhibition matches, entrances, menus, backstage brawls and the Create a Superstar tools as playable; Road to WrestleMania, other create modes, Universe and online are untested and may crash.",
+      "The player supplies an Xbox 360 disc image of the USA/Europe release. The launcher checks all 366 files against that release, refuses other images and copies the files into gamedata once. README states that the repository contains no game code or data and that the build generates both from the user’s image; the player zip carries the built executable, ReXGlue runtime DLLs and prebuilt shaders, but no disc files.",
+      "Play needs 64-bit Windows 10 or 11 (only Windows 11 was tested), a Vulkan GPU with a current driver and about 6 GB of space. Source builds need about 25 GB, PowerShell 7, Python 3, Git, 7-Zip and Visual Studio 2026 Build Tools with CMake, Ninja and the Windows SDK; bootstrap.ps1 downloads SHA-256-pinned ReXGlue 0.10.0 and LLVM 21.1.8. The Vulkan renderer must be selected, because the default D3D12 path hangs on the tested GPU.",
+      "Testing is reported on Windows 11 with an AMD Radeon RX 7900 XT; other GPUs and Windows 10 have not been tried. Python and PowerShell tests cover disc inspection, shader-cache merging, the launcher and portable setup with a synthetic image, and dated notes record the boot and frame-time investigations. These are author reports, not equivalence checks; this collection did not run them.",
+      "The project’s own code is BSD 3-Clause; ReXGlue is used under its own license, and the project scaffold and generated/rexglue.cmake come from ReXGlue templates. The game remains with its rights holders, and README asks users not to share gamedata, assets or disc images. README states no AI or REA use; a docs/agents work-tracking note exists, but no attribution is inferred from it."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/LICENSE",
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/svr2011_manifest.toml",
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/docs/feasibility.md",
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/docs/boot-investigation.md",
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/bootstrap.ps1",
+      "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/scripts/package-portable.ps1",
+      "https://github.com/rexglue/rexglue-sdk/blob/f5337cdc947ff6d4c4196737e2c807a48f2a1fc2/README.md"
+    ]
   }
 ]
