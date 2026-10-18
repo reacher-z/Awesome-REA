@@ -147,6 +147,24 @@ class CaseCoverageTests(unittest.TestCase):
             self.assertIn('`one:first`, `one:alias` → `one:first`', summary)
             self.assertNotIn('decomp.wtf', summary)
 
+    def test_primary_review_table_names_a_record_only_for_full_matches(self):
+        document = fixture()
+        entry = document['entries'][2]
+        entry.update({'state': 'insufficient-evidence', 'review_level': 'primary-source-reviewed', 'title': 'Broader claim'})
+        entry['catalog_matches'][0]['scope'] = 'partial'
+        document['counts'] = coverage_counts(document['entries'])
+        self.assertEqual(self.errors(document), [])
+        resources = {row['id']: dict(row, name='Example record') for row in RESOURCES}
+        for zh in (False, True):
+            summary = render(document, resources, {}, zh)
+            self.assertIn('| Broader claim |', summary)
+            self.assertNotIn('| Example record |', summary)
+        entry.update({'state': 'already-curated'})
+        entry['catalog_matches'][0]['scope'] = 'full'
+        document['counts'] = coverage_counts(document['entries'])
+        self.assertEqual(self.errors(document), [])
+        self.assertIn('| Example record |', render(document, resources, {}, False))
+
     def test_partial_or_unreviewed_match_cannot_claim_full_coverage(self):
         for field, value in [('scope', 'partial'), ('scope', 'related'), ('id', 'missing'), ('kind', 'tool')]:
             document = fixture(); document['entries'][2]['catalog_matches'][0][field] = value

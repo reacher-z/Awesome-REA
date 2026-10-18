@@ -63,7 +63,7 @@ def render(document, resources, translations, zh=False):
         if entry['review_level'] != 'primary-source-reviewed' or entry['unit_id'] in seen:
             continue
         seen.add(entry['unit_id'])
-        match = next((m for m in entry['catalog_matches'] if m['catalog'] == 'resource'), None)
+        match = next((m for m in entry['catalog_matches'] if m['catalog'] == 'resource' and m['scope'] == 'full'), None)
         record = resources.get(match['id']) if match else None
         name = (translations.get(record['id'], {}).get('name', record['name']) if zh else record['name']) if record else entry['title']
         name = name.replace('|', '\\|').replace('\n', ' ')
