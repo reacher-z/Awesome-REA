@@ -90,7 +90,7 @@
 - [ucsb-seclab/BootStomp](https://github.com/ucsb-seclab/BootStomp) — BootStomp：引导加载程序漏洞查找工具。 **[417 星标]**
 - [TheQmaks/phantom-frida](https://github.com/TheQmaks/phantom-frida) — 从源码构建抗检测 Frida 服务器，约 90 个补丁覆盖 16 类检测途径，每周以随机名称自动构建。 **[395 星标]**
 - [mirfansulaiman/Command-Mobile-Penetration-Testing-Cheatsheet](https://github.com/mirfansulaiman/Command-Mobile-Penetration-Testing-Cheatsheet) — Android 与 iOS 移动端渗透测试命令速查表。 **[392 星标]**
-- [ejfkdev/ddc](https://github.com/ejfkdev/ddc) — 使用 Rust 编写、专为速度设计的 Android DEX → Java 反编译器：数秒处理完整应用，毫秒级查询。支持渐进式分析、经 javac 验证的输出、所有 DEX 版本、multi-dex 及 XAPK/APKS/APKM 容器。 **[390 星标]**
+- [ejfkdev/ddc](https://github.com/ejfkdev/ddc) — 使用 Rust 编写、专为速度设计的 Android DEX → Java 反编译器：数秒处理完整应用，毫秒级查询。支持渐进式分析、经 javac 验证的输出、所有 DEX 版本、multi-dex 及 XAPK/APKS/APKM 容器。 **[390 星标]** · 精选：[ddc Android DEX 反编译器](https://awesomerea.org/zh/resources/ddc/)
 - [z3n70/Frida-Script-Runner](https://github.com/z3n70/Frida-Script-Runner) — 基于 Web 的 Frida 框架与工具包，面向 Android/iOS 渗透测试、移动安全及动态分析，支持 AI 辅助生成 Frida 脚本。 **[381 星标]**
 - [ByNameModding/BNM-Android](https://github.com/ByNameModding/BNM-Android) — 在 Android 上通过类名、方法名和字段名修改 il2cpp 游戏。 **[373 星标]**
 - [MartinStyk/apk-analyzer](https://github.com/MartinStyk/apk-analyzer) — Google Play 下载量最高的 APK 分析应用，为设备上的每个应用生成详细报告。无需 root、无广告，数据不会离开手机。 **[371 星标]**
