@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 359](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 359](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2270,13 +2270,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2874,6 +2874,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 数据集为每种架构 3,000 个未去符号的可执行文件与共享库，来自 830 个 Linux 调试符号软件包，源码为 C 语言并按各包默认设置编译，按 2,700／300 划分训练与测试。准确率评估假定函数边界已知；对于完全去符号的输入，由 BAP 的 ByteWeight 推断函数边界，论文引用其准确率约为 93%。Debin 预测 17 种类型，struct 与 union 的内部内容、行号以及 PE 等其他格式不在评测范围内。只有与原始调试信息完全相同的预测才计为正确。基于编译器生成的良性代码学习的模型，在混淆二进制、手写汇编或恶意软件上可能准确率较低。针对 35 个恶意样本的研究是对反编译输出的人工检查，由于样本缺少调试信息真实标签，未报告准确率。
 
   **作者:** Jingxuan He 等
+
+  </details>
+
+- [**Ramblr：让二进制重汇编重新可行**](https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/)
+
+  Ramblr 生成可重汇编的反汇编结果，即从去除符号的二进制中恢复出、可以修改并用现成汇编器重新汇编的汇编代码。它以 angr 的控制流图恢复为基础，对数据区内容进行分类，再判断哪些立即数和数据值是对代码或数据的引用、必须转换为符号。基址指针重归属用于处理经编译器优化后指向目标对象之外的引用；健全性检查则使 Ramblr 能够拒绝重汇编无法安全处理的二进制，例如对指针进行加密的程序。作者在为 x86 与 x86-64 编译的 106 个 GNU Coreutils 程序，以及 143 个 DARPA 网络超级挑战赛（CGC）二进制上，按六种优化级别进行评测。他们报告，Uroboros 会破坏 22.64% 的 -O0 及 56.61% 的 -O1 32 位 Coreutils 二进制，而 Ramblr 一个也未破坏；在 CGC 二进制上，Ramblr 在每种优化级别下的重汇编成功率均超过 98%。
+
+  NDSS 2017 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-ramblr/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 原型适用于由 GCC 或 Clang 生成的 x86 与 x86-64 ELF 二进制，这类二进制的代码区不含内联数据；MSVC 等编译器会把跳转表放在代码中，处理其生成的二进制仍需进一步工作。作者强调静态内容分类在一般情况下不可行：Ramblr 是一种经验性方法，例如当二进制被链接到特定基址、使其地址与普通常量冲突时，很可能失败。与 Uroboros 的比较只覆盖 32 位二进制，在 Coreutils 上也只比较 -O0 与 -O1，因为 Uroboros 无法处理 64 位输入，且在高于 -O1 时的失败率已无比较意义。正确性依据相对链接器真实信息的符号化结果以及各程序的测试用例衡量，不能证明完全等价。这些结果基于 2017 年时的 angr 及所评测的工具链。
+
+  **作者:** Ruoyu Wang 等
 
   </details>
 

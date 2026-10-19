@@ -4713,5 +4713,56 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-ramblr",
+    "title": "Ramblr: Making Reassembly Great Again",
+    "title_zh": "Ramblr：让二进制重汇编重新可行",
+    "authors": [
+      "Ruoyu Wang",
+      "Yan Shoshitaishvili",
+      "Antonio Bianchi",
+      "Aravind Machiry",
+      "John Grosen",
+      "Paul Grosen",
+      "Christopher Kruegel",
+      "Giovanni Vigna"
+    ],
+    "year": 2017,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2017; the publisher PDF separately identifies the 26 February–1 March 2017 symposium, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2017；出版方 PDF 另列研讨会日期为 2017 年 2 月 26 日至 3 月 1 日，本条目不据此推定出版月份或日期。",
+    "venue": "NDSS 2017",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2017.23225",
+    "url": "https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ramblr produces reassembleable disassembly: assembly recovered from a stripped binary that can be edited and assembled again with an off-the-shelf assembler. Starting from angr's CFG recovery, it classifies the contents of data regions, then decides which immediates and data values are references to code or data that must become symbols. Base-pointer reattribution handles compiler-optimized references that point outside their target object, and sanity checks let Ramblr refuse to reassemble a binary it cannot handle safely, such as one that encrypts pointers. The authors evaluate 106 GNU Coreutils programs for x86 and x86-64 and 143 DARPA Cyber Grand Challenge binaries at six optimization levels. They report that Uroboros broke 22.64% of 32-bit Coreutils binaries at -O0 and 56.61% at -O1, while Ramblr broke none, and that Ramblr reassembled over 98% of CGC binaries at every level.",
+    "description_zh": "Ramblr 生成可重汇编的反汇编结果，即从去除符号的二进制中恢复出、可以修改并用现成汇编器重新汇编的汇编代码。它以 angr 的控制流图恢复为基础，对数据区内容进行分类，再判断哪些立即数和数据值是对代码或数据的引用、必须转换为符号。基址指针重归属用于处理经编译器优化后指向目标对象之外的引用；健全性检查则使 Ramblr 能够拒绝重汇编无法安全处理的二进制，例如对指针进行加密的程序。作者在为 x86 与 x86-64 编译的 106 个 GNU Coreutils 程序，以及 143 个 DARPA 网络超级挑战赛（CGC）二进制上，按六种优化级别进行评测。他们报告，Uroboros 会破坏 22.64% 的 -O0 及 56.61% 的 -O1 32 位 Coreutils 二进制，而 Ramblr 一个也未破坏；在 CGC 二进制上，Ramblr 在每种优化级别下的重汇编成功率均超过 98%。",
+    "scope_limitations_en": "The prototype handles x86 and x86-64 ELF binaries produced by GCC or Clang, whose code regions contain no inline data; binaries from compilers such as MSVC, which place jump tables inline, need further work. The authors stress that static content classification is infeasible in general: Ramblr is an empirical approach that is likely to fail if, for example, a binary is linked at a base address chosen so its addresses collide with ordinary constants. The Uroboros comparison covers only 32-bit binaries and, on Coreutils, only -O0 and -O1, because Uroboros failed on 64-bit inputs and its failure rate above -O1 was not meaningful. Correctness is measured by symbolization against linker ground truth and by each program's test cases, which do not prove full equivalence. Results are from 2017 versions of angr and the evaluated toolchains.",
+    "scope_limitations_zh": "原型适用于由 GCC 或 Clang 生成的 x86 与 x86-64 ELF 二进制，这类二进制的代码区不含内联数据；MSVC 等编译器会把跳转表放在代码中，处理其生成的二进制仍需进一步工作。作者强调静态内容分类在一般情况下不可行：Ramblr 是一种经验性方法，例如当二进制被链接到特定基址、使其地址与普通常量冲突时，很可能失败。与 Uroboros 的比较只覆盖 32 位二进制，在 Coreutils 上也只比较 -O0 与 -O1，因为 Uroboros 无法处理 64 位输入，且在高于 -O1 时的失败率已无比较意义。正确性依据相对链接器真实信息的符号化结果以及各程序的测试用例衡量，不能证明完全等价。这些结果基于 2017 年时的 angr 及所评测的工具链。",
+    "why_fits_en": "Adds reassembleable disassembly, the basis of static binary rewriting that emits modifiable assembly instead of patching bytes, alongside the collection's decompilation and binary-recovery research.",
+    "why_fits_zh": "补充可重汇编反汇编研究，这是一种输出可修改汇编代码而非直接修补字节的静态二进制改写基础技术，与合集中的反编译及二进制恢复研究并列。",
+    "metadata_notes": "Crossref gives the title, the eight-author order and year 2017 with no pages; the DOI resolves to the NDSS programme page, which links the 15-page PDF and slides. The PDF footer identifies NDSS ’17, 26 February–1 March 2017, San Diego. The paper says the entire Ramblr toolchain is open source, with Ramblr included in angr as a Python analysis and other parts in the Patcherex binary-patching platform, but it gives no repository URL, version or commit. angr currently ships a Reassembler analysis (reviewed at commit ae9f578), but that source never names Ramblr or the paper, so neither angr nor Patcherex is recorded as the paper’s code_url. The evaluation ran under PyPy 5.3.1 on Ubuntu Server 16.04. Nothing was installed or run.",
+    "metadata_notes_zh": "Crossref 给出标题、八位作者顺序及年份 2017，未列页码；DOI 解析至 NDSS 会议议程页面，该页面链接 15 页 PDF 与幻灯片。PDF 页脚标明 NDSS ’17 于 2017 年 2 月 26 日至 3 月 1 日在圣迭戈举行。论文称整个 Ramblr 工具链均已开源，Ramblr 以 Python 分析模块的形式包含在 angr 中，其余部分包含在二进制修补平台 Patcherex 中，但未给出仓库地址、版本或提交。angr 目前提供一个 Reassembler 分析（审阅于提交 ae9f578），但其源码从未提及 Ramblr 或该论文，因此 angr 与 Patcherex 均未被记为论文的 code_url。评测在 Ubuntu Server 16.04 上的 PyPy 5.3.1 中进行。本次未安装或运行任何内容。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/",
+      "https://api.crossref.org/works/10.14722/ndss.2017.23225",
+      "https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf",
+      "https://github.com/angr/angr/blob/ae9f5786fd94410ca400063bf21719aa8b564d3e/angr/analyses/reassembler.py"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

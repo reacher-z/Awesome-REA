@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 359](https://img.shields.io/badge/resources-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 359](https://img.shields.io/badge/resources-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2269,13 +2269,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2873,6 +2873,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.
 
   **Authors:** Jingxuan He et al.
+
+  </details>
+
+- [**Ramblr: Making Reassembly Great Again**](https://www.ndss-symposium.org/ndss2017/ndss-2017-programme/ramblr-making-reassembly-great-again/)
+
+  Ramblr produces reassembleable disassembly: assembly recovered from a stripped binary that can be edited and assembled again with an off-the-shelf assembler. Starting from angr's CFG recovery, it classifies the contents of data regions, then decides which immediates and data values are references to code or data that must become symbols. Base-pointer reattribution handles compiler-optimized references that point outside their target object, and sanity checks let Ramblr refuse to reassemble a binary it cannot handle safely, such as one that encrypts pointers. The authors evaluate 106 GNU Coreutils programs for x86 and x86-64 and 143 DARPA Cyber Grand Challenge binaries at six optimization levels. They report that Uroboros broke 22.64% of 32-bit Coreutils binaries at -O0 and 56.61% at -O1, while Ramblr broke none, and that Ramblr reassembled over 98% of CGC binaries at every level.
+
+  NDSS 2017 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/ndss2017_10-5_Wang_paper_0.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-ramblr/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The prototype handles x86 and x86-64 ELF binaries produced by GCC or Clang, whose code regions contain no inline data; binaries from compilers such as MSVC, which place jump tables inline, need further work. The authors stress that static content classification is infeasible in general: Ramblr is an empirical approach that is likely to fail if, for example, a binary is linked at a base address chosen so its addresses collide with ordinary constants. The Uroboros comparison covers only 32-bit binaries and, on Coreutils, only -O0 and -O1, because Uroboros failed on 64-bit inputs and its failure rate above -O1 was not meaningful. Correctness is measured by symbolization against linker ground truth and by each program's test cases, which do not prove full equivalence. Results are from 2017 versions of angr and the evaluated toolchains.
+
+  **Authors:** Ruoyu Wang et al.
 
   </details>
 
