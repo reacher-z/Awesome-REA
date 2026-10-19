@@ -7701,5 +7701,43 @@
       "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
       "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
     ]
+  },
+  {
+    "id": "pharos",
+    "name": "Pharos",
+    "url": "https://github.com/cmu-sei/pharos",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Carnegie Mellon SEI's framework of automated static analysis tools for binary programs, built on LLNL's ROSE compiler infrastructure for disassembly, control-flow analysis and instruction semantics. Its best-known tool, OOAnalyzer, recovers C++ classes, methods and other object-oriented constructs from 32-bit x86 executables built with Microsoft Visual C++ by applying Prolog rules to facts about how object pointers move between functions, as described in a CCS 2018 paper, and exports JSON for an included IDA plugin or the separate Kaiju Ghidra plugin. Other tools find API call sequences (ApiAnalyzer), report static API-call parameters (CallAnalyzer), produce function hashes and YARA signatures for similarity analysis (FN2Hash, FN2Yara) and work out the conditions for reaching one address from another (PathAnalyzer).",
+    "description_zh": "卡内基梅隆大学软件工程研究所（SEI）推出的二进制程序自动化静态分析工具框架，基于劳伦斯利弗莫尔国家实验室的 ROSE 编译器基础设施完成反汇编、控制流分析和指令语义建模。其中最知名的 OOAnalyzer 跟踪对象指针在函数之间的传递，再用 Prolog 规则从这些事实中恢复 C++ 类、方法等面向对象结构，适用于 Microsoft Visual C++ 编译的 32 位 x86 可执行文件，方法见 CCS 2018 论文；结果以 JSON 导出，可供仓库自带的 IDA 插件或独立的 Kaiju Ghidra 插件使用。其他工具可查找 API 调用序列（ApiAnalyzer）、报告 API 调用的静态参数（CallAnalyzer）、生成用于相似性分析的函数哈希和 YARA 签名（FN2Hash、FN2Yara），以及求出从一个地址到达另一地址所需的条件（PathAnalyzer）。",
+    "evidence_url": "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no tagged releases; the reviewed master commit is from 2026-08-03. The README calls Pharos a research project under active development whose documentation is incomplete and whose portability has not been actively tested, and it says DumpMASM is no longer maintained, recommending ROSE's own tools instead.",
+      "The easiest route is the prebuilt ghcr.io/cmu-sei/pharos Docker image, which the GitHub workflow builds for amd64 and arm64 on each push and weekly. Building from source is heavy: C++14 with CMake, Boost, yaml-cpp, SQLite, Z3, SWI-Prolog and ROSE, with the build script pinning ROSE v2.6.0, Z3 4.8.7 and SWI-Prolog 8.5.12. INSTALL.md suggests about 4 GiB of RAM per build CPU for small CPU counts, supports its build script only on the latest Ubuntu, and lists older manually tested configurations on RHEL 7, Ubuntu 19.04 and openSUSE 15.1.",
+      "Provide the executables to analyze yourself. OOAnalyzer is limited to 32-bit MSVC binaries and has been tested little on 64-bit executables or other compilers; its JSON output feeds the IDA plugin in the repository or the separate Kaiju Ghidra plugin, and very large executables need the extra steps in the oorules notes.",
+      "The Dockerfile has a test stage that runs ctest against test executables compiled from the sources in tests/, but the GitHub workflow builds only the release image. Nothing was built or run in this review.",
+      "LICENSE.md is an SEI BSD-style license (Copyright 2021 Carnegie Mellon University) that also restricts use of the CMU and SEI names, which is why GitHub reports NOASSERTION. ROSE, SWI-Prolog, Z3, Boost, yaml-cpp and SQLite keep their own licenses. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/INSTALL.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/Dockerfile",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/.github/workflows/docker.yml",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/scripts/build_prereqs.bash",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/CMakeLists.txt",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/ooanalyzer/ooanalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/ooanalyzer/ida/README.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/share/prolog/oorules/README.md",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/apianalyzer/apianalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/tools/pathanalyzer/pathanalyzer.pod",
+      "https://github.com/cmu-sei/pharos/blob/782492fe3b854c02f3b6257e9be3b6de87be1960/LICENSE.md",
+      "https://edmcman.github.io/papers/ccs18.pdf",
+      "https://github.com/cmu-sei/pharos/pkgs/container/pharos"
+    ]
   }
 ]
