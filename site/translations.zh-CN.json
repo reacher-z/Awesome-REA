@@ -4912,5 +4912,15 @@
       "代码树包含 84 个 CMake 回归测试套件，可通过 BUILD-TEST.ps1 逐个运行，其中部分需要使用者的 ROM，但没有 CI 工作流；生成过程会按 config/generated-code.json 中的哈希核对每个生成文件。README 报告对比赛、菜单、赛道介绍及锦标赛结局做过反复的实机测试。本合集未构建或运行任何内容。",
       "项目的原创部分采用 GPL-3.0-only；N64ModernRuntime 采用 GPLv3，其他随附组件保留各自的声明，Nintendo 仍保有游戏素材与商标权利。README 声明 AI 工具用于代码实现、调试、研究和文档编写，项目方向、审查决定与实机测试则由维护者负责；未确立 REA 的使用。"
     ]
+  },
+  "opendrop-airdrop-reimplementation-case": {
+    "name": "OpenDrop：Apple AirDrop 的开源重新实现",
+    "requirements": [
+      "README 称 OpenDrop 是 Open Wireless Link 逆向工程工作的实验性成果，缺少部分 AirDrop 功能，也可能与未来的 AirDrop 版本不兼容，并声明其与 Apple 无关联、未获 Apple 认可。最新发行版为 0.13.0（PyPI，2021-04-29）；所审阅的 master 提交（2026-08-17）此后只增加了引用文件并修改了链接。",
+      "AirDrop 只运行在 Apple Wireless Direct Link（AWDL）上，因此 OpenDrop 支持 macOS，或运行 SEEMOO 的 OWL 等开源 AWDL 实现的 Linux；默认网络接口为 awdl0。需要 Python 3.6+（分类标签列出 3.6–3.9）、较新的 libarchive（macOS 上用 Homebrew 版本）、openssl 命令，以及 setup.py 所列软件包，包括 zeroconf 和 libarchive-c。",
+      "默认情况下，它会自行生成自签名密钥和证书。要向默认处于“仅限联系人”模式的接收方发送，需要来自使用者自己 Mac 的 AirDrop 密钥、证书和 Apple ID 验证记录，README 称这些由 SEEMOO 另一款提取工具获得；仓库只附带 Apple 公开的根 CA 证书。",
+      "README 列出已知缺口：没有蓝牙低功耗触发，因此 Apple 接收方可能无法被发现；没有对端认证（既不校验 TLS 证书链，也不校验验证记录），并会自动接受所有传入文件；每次只能发送一个文件，链接只能发送而不能接收。CI 在 Python 3.6–3.9 上运行 black、flake8 和 pytest；其两项测试只是在回环接口上启动浏览器与服务器组件。",
+      "采用 GPL-3.0 许可。README 指向作者发表于 USENIX Security 2019 的 AWDL 论文和 2021 年的 PrivateDrop 论文以了解协议细节；AirDrop 和 AWDL 仍是 Apple 的协议。"
+    ]
   }
 }

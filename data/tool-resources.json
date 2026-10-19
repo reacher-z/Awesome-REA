@@ -14903,5 +14903,40 @@
       "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/COPYING",
       "https://github.com/DomazinUS/RaceWave46/releases/tag/v1.0.0"
     ]
+  },
+  {
+    "id": "opendrop-airdrop-reimplementation-case",
+    "name": "OpenDrop: an open reimplementation of Apple AirDrop",
+    "url": "https://github.com/seemoo-lab/opendrop",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python command-line reimplementation of Apple's AirDrop protocol from SEEMOO Lab's reverse-engineering research. It finds receivers via _airdrop._tcp DNS-SD, sends binary-plist /Discover and /Ask requests over HTTPS and uploads gzip-compressed CPIO archives to exchange files with iOS and macOS. It is not affiliated with Apple.",
+    "description_zh": "基于 SEEMOO 实验室逆向研究、用 Python 编写的 Apple AirDrop 协议命令行重新实现。它通过 _airdrop._tcp DNS-SD 发现接收方，经 HTTPS 发送二进制 plist 格式的 /Discover 和 /Ask 请求，并上传 gzip 压缩的 CPIO 归档，与 iOS 和 macOS 设备互传文件。它与 Apple 无关联。",
+    "evidence_url": "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls OpenDrop experimental output of the Open Wireless Link reverse-engineering effort that lacks some AirDrop features and may break with future AirDrop versions, and says Apple neither affiliates with nor endorses it. The latest release is 0.13.0 (PyPI, 2021-04-29); the reviewed master commit of 2026-08-17 adds only a citation file and link edits since.",
+      "AirDrop runs only over Apple Wireless Direct Link, so OpenDrop is supported on macOS or on Linux with an open AWDL implementation such as SEEMOO's OWL; the default interface is awdl0. It needs Python 3.6+ (classifiers list 3.6–3.9), a current libarchive (Homebrew's on macOS), the openssl command and the packages in setup.py, including zeroconf and libarchive-c.",
+      "By default it creates its own self-signed key and certificate. Receivers in the default contacts-only mode need AirDrop keys, a certificate and an Apple ID validation record from the user's own Mac, which README says come from a separate SEEMOO extractor; the repository ships only Apple's public root CA certificate.",
+      "README lists known gaps: no Bluetooth Low Energy trigger, so Apple receivers may stay undiscovered; no peer authentication (neither TLS certificate chains nor validation records are checked) and automatic acceptance of every incoming file; and one file per transfer, with links sent but not received. CI runs black, flake8 and pytest on Python 3.6–3.9; its two tests only start the browser and server on loopback.",
+      "GPL-3.0. README points to the authors' USENIX Security 2019 AWDL paper and 2021 PrivateDrop paper for protocol details; AirDrop and AWDL remain Apple's protocols."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/setup.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/config.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/client.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/opendrop/server.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/.github/workflows/testpackage.yml",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/tests/test_server.py",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/CITATION.cff",
+      "https://github.com/seemoo-lab/opendrop/blob/11fe7ba7861093b302bc0637e8cb10adf2d29337/LICENSE",
+      "https://pypi.org/project/opendrop/0.13.0/",
+      "https://www.usenix.org/conference/usenixsecurity19/presentation/stute"
+    ]
   }
 ]
