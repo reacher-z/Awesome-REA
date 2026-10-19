@@ -10,7 +10,7 @@
 - [librepods-org/librepods](https://github.com/librepods-org/librepods) — 让 AirPods 摆脱 Apple 生态系统的限制。 **[30,324 星标]**
 - [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — 用于逆向工程 Android APK 文件的工具。 **[25,935 星标]** · 精选：[Apktool](https://awesomerea.org/zh/resources/apktool/)
 - [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework（MobSF）是自动化的一体化移动应用（Android/iOS/Windows）渗透测试、恶意软件分析与安全评估框架，支持静态和动态分析。 **[21,966 星标]** · 精选：[Mobile Security Framework（MobSF）](https://awesomerea.org/zh/resources/mobsf/)
-- [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — 面向 Java 8+ JAR 与 Android APK 的逆向工程套件，包含反编译器、编辑器、调试器等。 **[15,677 星标]**
+- [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — 面向 Java 8+ JAR 与 Android APK 的逆向工程套件，包含反编译器、编辑器、调试器等。 **[15,677 星标]** · 精选：[Bytecode Viewer Java/Android 逆向工程套件](https://awesomerea.org/zh/resources/bytecode-viewer/)
 - [OWASP/mastg](https://github.com/OWASP/mastg) — OWASP 移动应用安全测试指南（MASTG）是一部涵盖移动应用安全测试和逆向工程的全面手册，介绍验证 OWASP 移动安全弱点枚举（MASWE）中各项弱点的技术流程，并与 OWASP MASVS 保持一致。 **[13,258 星标]**
 - [sensepost/objection](https://github.com/sensepost/objection) — 📱 objection：移动端运行时探索工具。 **[9,446 星标]** · 精选：[objection](https://awesomerea.org/zh/resources/objection/)
 - [We5ter/Scanners-Box](https://github.com/We5ter/Scanners-Box) — 面向黑客、企业与 AI 智能体的全域开源安全工具库。 **[9,108 星标]**
