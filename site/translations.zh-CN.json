@@ -3485,5 +3485,14 @@
       "需提供同一二进制的两个或更多版本，按从旧到新的顺序排列，多个新版本时可附加汇总；凡是 Ghidra 能导入和分析的文件都可比较，并可为固件或引导程序镜像指定基址、自定义分析器选项和 GDT 类型库。支持平台页面指出原生代码效果最好，托管 .NET 代码结果不一，APK 中的原生库需先取出。预检若发现两个程序的处理器语言不同，或符号数量相差 4,000 个及以上，就会中止比对，除非指定 --force-diff。默认会配置 Ghidra 内置的知名 PDB 符号服务器和本地符号库，可用 --no-symbols 关闭。",
       "采用 GPL-3.0 许可。匹配质量取决于 Ghidra 的分析和反编译结果。README 的用例和文档站的示例差异报告针对另行获取的 Windows 和 macOS 系统二进制；仓库本身不附带任何目标二进制。本条目未对任何二进制进行比对。"
     ]
+  },
+  "vmlinux-to-elf": {
+    "name": "vmlinux-to-elf 内核符号恢复工具",
+    "requirements": [
+      "审阅时最新版本为 1.3.6，于 2026-05-20 发布在 GitHub 和 PyPI；其发布说明包括对去除节区的 ELF 内核重新序列化的初步支持，以及 uImage LZMA 解压。所审阅的 master 提交比它多四个提交，内容为图形界面和打包更新，并带有一个没有对应发布的 1.3.6.1 标签。PyPI 将项目标为 beta 阶段。",
+      "需要 Python 3.9+ 以及 lz4、zstandard、minilzo 和 peewee。README 介绍了几种安装命令行和图形界面的方式：Ubuntu 上用 snap，或从 AUR 安装，或用 uv 并配合 GTK 4、libadwaita 和 PyGObject 开发包；在 libadwaita 低于 1.6 的发行版上，可通过 Flathub 使用图形界面。",
+      "输入为分析者已有的内核镜像；未启用 CONFIG_KALLSYMS 编译的内核不受支持。README 称截至 2023 年 8 月支持 Linux 2.6.10 至 6.4，可为原始内核检测 MIPS、ARM、ARM64、PowerPC、SPARC、x86、x86-64、SuperH 和 ARC 架构，支持 XZ、LZMA、GZip、BZ2、LZ4、LZO 和 Zstd 解压，并能处理 OpenWrt 的未压缩 kallsyms 变体。自动检测失败时，可手动指定指令集、位宽、文件偏移和基址。",
+      "采用 GPL-3.0-or-later。恢复出的符号只包含 kallsyms 中存储的名称、地址和 nm 风格的类型；基址为启发式推断，即第一个代码段符号地址清除低 12 位后的值。本次未转换任何内核镜像。"
+    ]
   }
 }
