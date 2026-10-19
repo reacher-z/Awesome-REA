@@ -10110,5 +10110,35 @@
       "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/LICENSE",
       "https://github.com/marcosd4h/DeepExtractIDA/releases/tag/v0.9.14"
     ]
+  },
+  {
+    "id": "simplify-android-deobfuscator",
+    "name": "Simplify",
+    "url": "https://github.com/CalebFenton/simplify",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Generic Android deobfuscator built on smalivm, a sandboxed Dalvik virtual machine that executes each method and records every possible register and class value along all execution paths, taking both branches when a value such as file or network input is unknown. Simplify then repeatedly applies constant propagation, dead-code removal, unreflection and peephole optimizations to the APK or DEX, which can decrypt strings and remove reflection while keeping behaviour the same; it does not rename classes or methods. smalivm can also be used as a library, and the last release adds sdbg, a step-through Smali debugger built on it.",
+    "description_zh": "基于 smalivm 的通用 Android 反混淆工具。smalivm 是一个沙箱化的 Dalvik 虚拟机，会逐个执行方法并记录所有执行路径上可能的寄存器与类取值；遇到文件或网络输入等未知值时，两个分支都会执行。Simplify 随后对 APK 或 DEX 反复进行常量传播、死代码删除、反射还原和窥孔优化，可在保持行为不变的前提下解密字符串、去除反射；它不会重命名类或方法。smalivm 也可作为库使用，最新发布版还附带基于它的单步 Smali 调试器 sdbg。",
+    "evidence_url": "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Development is inactive: the latest release, v1.3.0 of 2020-03-30, ships simplify, smalivm and sdbg jars, and the reviewed master commit dates from 2021-05-23. The project pins smali/dexlib2 2.4.0 and, by default, builds its Android framework reference from android-25 classes, so check results on apps that use newer DEX or API features.",
+      "Run it as java -jar simplify.jar on a user-supplied APK or DEX. Building needs JDK 8, a recursive clone for the AndroidFrameworkSmali submodule of reference framework classes, and the Gradle fatjar task. Execution limits on visits, call depth and time apply per method; the README advises narrowing large apps with include and exclude patterns, and output DEX defaults to API level 15.",
+      "--remove-weak, on by default, removes code even when it has weak side effects, and --ignore-errors may lead to unexpected behaviour, so compare output with the original code. The repository includes a project-provided obfuscated example app for testing; tests ran through a Travis CI configuration using Oracle JDK 8, the repository has no GitHub Actions workflow, and nothing was run in this review.",
+      "Dual-licensed: GPL-3.0 for open-source use, or a commercial license that permits binary distribution without source redistribution. Android framework classes and dependencies keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/LICENSE.GPL",
+      "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/LICENSE.COMMERCIAL",
+      "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/.gitmodules",
+      "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/.travis.yml",
+      "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/smalivm/build.gradle",
+      "https://github.com/CalebFenton/simplify/releases/tag/v1.3.0"
+    ]
   }
 ]

@@ -3795,5 +3795,14 @@
       "虚表与间接调用解析标注为实验性功能，并说明了限制，例如仅处理对象偏移 0 处的单个虚表，且只在过程内的短指令窗口中匹配。测试在 IDA 之外加载模式定义、配置和代码格式化等不依赖 IDA 的模块，发布工作流只负责打包插件。本合集仅审阅源码与文档，未运行 IDA 或提取器。",
       "采用 MIT 许可，附带的 pefile 保留其自身的 MIT 许可；IDA Pro、Hex-Rays 反编译器和 Windows SDK 工具需另行获得许可。README 将其输出定位于 AI 辅助的漏洞研究、逆向工程、威胁狩猎和代码审查。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "simplify-android-deobfuscator": {
+    "name": "Simplify Android 反混淆工具",
+    "requirements": [
+      "项目已不再活跃：最新发布版 v1.3.0 于 2020-03-30 发布，提供 simplify、smalivm 和 sdbg 三个 jar；所审阅的 master 分支提交日期为 2021-05-23。项目固定使用 smali/dexlib2 2.4.0，默认以 android-25 的类构建 Android 框架参考，因此分析使用较新 DEX 或 API 特性的应用时应核对结果。",
+      "使用方式是对使用者自备的 APK 或 DEX 运行 java -jar simplify.jar。构建需要 JDK 8，需递归克隆 AndroidFrameworkSmali 子模块以获取参考框架类，并执行 Gradle 的 fatjar 任务。每个方法的执行受访问次数、调用深度和时间限制；README 建议对大型应用用包含与排除模式缩小范围，输出 DEX 默认 API 级别为 15。",
+      "--remove-weak 默认开启，即使代码存在弱副作用也会删除；--ignore-errors 可能导致意外结果，因此应将输出与原始代码对照。仓库附带项目提供的混淆示例应用用于测试；测试曾通过使用 Oracle JDK 8 的 Travis CI 配置运行，仓库没有 GitHub Actions 工作流，本次审阅未运行任何内容。",
+      "采用双重许可：开源用途适用 GPL-3.0，或选择允许分发二进制但禁止再分发源码的商业许可。Android 框架类和各依赖保留各自条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
