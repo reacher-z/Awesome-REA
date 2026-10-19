@@ -9344,5 +9344,30 @@
       "https://github.com/m4b/goblin/tree/0.10.6",
       "https://docs.rs/crate/goblin/0.10.7"
     ]
+  },
+  {
+    "id": "mitmproxy2swagger",
+    "name": "mitmproxy2swagger",
+    "url": "https://github.com/alufers/mitmproxy2swagger",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "protocol"
+    ],
+    "description_en": "Command-line tool that reverse-engineers undocumented REST APIs from captured traffic. It reads a mitmproxy flow file, or a HAR export from the browser DevTools, and generates an OpenAPI 3.0 specification describing the observed endpoints. Running it again over further captures safely merges the new data into an existing schema.",
+    "description_zh": "命令行工具，从捕获的流量还原未公开的 REST API。它读取 mitmproxy 流文件或浏览器 DevTools 导出的 HAR，生成描述所观察端点的 OpenAPI 3.0 规范。对更多捕获再次运行时，会将新数据安全合并到已有规范中。",
+    "evidence_url": "https://github.com/alufers/mitmproxy2swagger/blob/f432acafa5907258f0f529ff582c75fefdca00d7/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/alufers/mitmproxy2swagger/blob/f432acafa5907258f0f529ff582c75fefdca00d7/pyproject.toml"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installed from PyPI (also packaged for Arch Linux) or run via the provided Dockerfile; pyproject.toml marks version 0.15.0 and requires Python 3.12+.",
+      "Takes a mitmproxy flow file or a browser HAR export as input; the analyst captures that traffic separately, for example with mitmproxy, and supplies the API base-URL prefix. The two-pass workflow lets several captures be merged into an existing schema.",
+      "Intended for APIs and traffic the analyst is authorized to capture and analyze. The project metadata in pyproject.toml declares the MIT license; no standalone LICENSE file is present for GitHub to detect."
+    ]
   }
 ]

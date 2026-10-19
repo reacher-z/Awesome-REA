@@ -3584,5 +3584,12 @@
       "输入为用户自行提供的可执行文件、目标文件或归档的字节切片。goblin 只解析格式元数据，不包含反汇编器，代码部分需另用指令解码器处理。PE 解析选项可跳过 RVA 解析、属性证书、TLS 数据、资源或导入表；更新日志还提到 ELF 与 PE 的宽松解析模式，用于处理加壳、损坏或恶意软件样本。",
       "MIT 许可证。README 引用了一份 1 亿次模糊测试的报告，仓库中也有 cargo-fuzz 与 AFL 测试框架；两者均未重新运行，本次也未解析任何二进制。"
     ]
+  },
+  "mitmproxy2swagger": {
+    "requirements": [
+      "通过 PyPI 安装（亦有 Arch Linux 软件包），或使用随附的 Dockerfile 运行；pyproject.toml 标注版本 0.15.0，要求 Python 3.12+。",
+      "以 mitmproxy 流文件或浏览器 HAR 导出作为输入；使用者需另行捕获这些流量（例如通过 mitmproxy），并提供 API 的基础 URL 前缀。两阶段流程可将多次捕获合并到已有规范中。",
+      "仅用于分析者有权捕获与分析的 API 和流量。pyproject.toml 中的项目元数据声明采用 MIT 许可证；仓库没有可供 GitHub 识别的独立 LICENSE 文件。"
+    ]
   }
 }
