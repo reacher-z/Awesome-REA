@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 319](https://img.shields.io/badge/resources-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 162](https://img.shields.io/badge/cases-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 74](https://img.shields.io/badge/papers-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 320](https://img.shields.io/badge/resources-320-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 163](https://img.shields.io/badge/cases-163-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 74](https://img.shields.io/badge/papers-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (146) · [App](#app) (45)
+- [Website](#website) (19) · [Game](#game) (147) · [App](#app) (45)
 - [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (162) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (163) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -922,6 +922,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs C++ source for the Windows executable of Touhou 6: Embodiment of Scarlet Devil version 1.02h, aiming at an exact rebuild with the original Visual Studio .NET 2002 and DirectX 8 toolchain. reccmp and objdiff compare the rebuilt binary with the user’s original executable function by function. The committed progress badge reports every function implemented but 98.03% byte accuracy, so whole-binary identity is not claimed.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/th06-decomp-case/)
+
+- [**Driver Recompiled: a psxrecomp setup host that builds the game locally**](https://github.com/alexbeavs-ps1-ports/driver-recomp)
+
+  Packages a psxrecomp static-recompilation project for Driver (PlayStation, USA) as a setup host: releases carry the recompiler, runtime and a recomp-ui launcher, and the player’s machine generates and compiles the game from the user’s own disc image. The repository holds configuration, Ghidra-derived function seeds and release automation rather than game code. Its documented status is thin: an operator-confirmed private build reaches gameplay, while package release gates remain open.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/driver-recomp-setup-host-case/)
 
 #### Tools, projects and integrations
 

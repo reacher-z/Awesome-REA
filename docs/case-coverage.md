@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 172 | 171 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 279 | 278 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 173 | 172 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 278 | 277 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 140 | 140 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-183 occurrences have catalog links. They reference 177 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+184 occurrences have catalog links. They reference 178 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 251 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 252 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -273,6 +273,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | SVR2011-Recomp: a ReXGlue recompilation of WWE SmackDown vs. Raw 2011 | Already curated | [Source](https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/README.md) |
 | 🏁 WWE SmackDown vs. Raw 2011 — KaikoClanworth1/wwe-svr2011-pc | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
 | The Simpsons Wrestling Recompiled: a psxrecomp PlayStation static recompilation | Already curated | [Source](https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/README.md) |
+| Driver Recompiled: a psxrecomp setup host that builds the game locally | Already curated | [Source](https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md) |
 | REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer | Already curated | [Source](https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md) |
 | Snowball War: a bounded REA-assisted minigame reconstruction | Already curated | [Source](https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md) |
 | Animal Crossing: a native PC port of the GameCube decompilation | Already curated | [Source](https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md) |
