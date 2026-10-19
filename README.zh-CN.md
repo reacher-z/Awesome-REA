@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 401](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-401-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 402](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-402-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (38) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (39) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1875,6 +1875,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   非官方的 Visual Studio Code 扩展，用于 Frida 相关工作。侧边栏列出本地、Apple 模拟器、USB 和远程设备上的应用与进程，可附加、启动或结束它们；运行时面板可浏览已附加进程的原生模块与导出函数，以及 Java 和 Objective-C 的类、方法与协议，并根据所选项目生成 Interceptor、Objective-C 或 Java 的 Hook 代码框架（可选用 GitHub Copilot 推断原生函数签名），还能导出 Objective-C 头文件或 Java 类存根。语言服务器根据运行中的目标补全类名、选择器和模块名；扩展还提供 Frida agent 与 C 模块项目脚手架、脚本调试配置、系统日志流以及 Android frida-server 部署。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/vscode-frida/)
+
+- [**ghidriff Ghidra 二进制差异分析引擎**](https://github.com/clearbluejar/ghidriff)
+
+  命令行二进制差异分析引擎，通过 pyghidra 以无界面方式驱动 Ghidra：导入并分析新旧两个版本的二进制，列出新增、删除和修改的函数，主要用于补丁比对。默认的 VersionTrackingDiff 引擎组合了多个 Ghidra 版本跟踪关联器和 BSim 匹配，另有基于符号名和结构图的较简单引擎，并提供 GhidraDiffEngine 基类供编写自定义比对器。结果以 JSON 和带 Mermaid 图表的 Markdown 输出，附有字符串、被调用与调用函数及二进制元数据的元差异，也可另外生成并排对照的 HTML。
+
+  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidriff/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
