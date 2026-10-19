@@ -7142,5 +7142,28 @@
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/README.md",
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/symbol_addrs.txt"
     ]
+  },
+  {
+    "id": "jpcert-apk-api-attack-infrastructure-report",
+    "name": "JPCERT/CC: APK analysis and API probing on attack servers",
+    "url": "https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html",
+    "category": "learning",
+    "relationship": "learning",
+    "description_en": "JPCERT/CC’s 15 October 2026 blog post on the infrastructure behind a series of unauthorized-access incidents in Japan. It reports that the attackers used AI for known-vulnerability scanning and API attacks, and that attack servers held APKs, jadx- and Blutter-related files, APK-extraction directories and an SSRF test script used to probe app APIs. It is a defender’s account of observed attacker tooling with mitigation advice, not a published AI-assisted analysis method or reproducible workflow.",
+    "description_zh": "JPCERT/CC 于 2026 年 10 月 15 日发布的博客文章，调查日本国内一系列不正当访问事件背后的攻击基础设施。文章报告攻击者利用 AI 扫描已知漏洞并经由 API 发动攻击，攻击服务器上存有 APK 文件、与 jadx 和 Blutter 相关的文件、APK 解包目录，以及用于探测应用 API 的 SSRF 验证脚本。这是防御方对所观察到的攻击者工具的记述并附缓解建议，而非公开的 AI 辅助分析方法或可复现的工作流程。",
+    "evidence_url": "https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed source is the Japanese-language JPCERT/CC Eyes post dated 15 October 2026; no English version was found at the corresponding URL during review. It follows JPCERT/CC’s 8 October alert about personal-data leaks reported by several organizations in Japan, and describes three investigated servers, one of which it states is not directly related to these attacks.",
+      "The post states that JPCERT/CC confirmed AI use for scanning and API attacks, but it does not name the AI system or tooling or explain how AI was applied. The roles of the SSRF script and some files are described as likely rather than confirmed. Findings are illustrated with partial file listings and one script; no samples, logs, prompts or timelines are published.",
+      "Appendix A describes Blutter as an open-source tool for analyzing the Dart AOT-compiled code in Flutter apps, and cites third-party write-ups that combine Frida, Blutter, LIEF and Capstone to recover embedded keys and request-signing logic. These are referenced examples, not JPCERT/CC’s own reproduction.",
+      "Recommended mitigations are to keep API signing keys and long-lived credentials out of apps, to authenticate and authorize users on the server rather than rely on in-app signing or obfuscation, to rate-limit and monitor API use, and to restrict SSRF-prone URL fetches and re-validate redirect destinations. The post also lists three attacker IP indicators.",
+      "The post names jadx and Blutter but no other analysis tools, and documents no REA use. This collection read only the post; the referenced alert, third-party articles and indicators were not separately reviewed."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "learning-resource"
   }
 ]

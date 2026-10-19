@@ -7509,13 +7509,23 @@
         "https://x.com/i/status/2111048734926836191",
         "https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The JPCERT/CC post is the primary source for this lead. It reports confirmed AI use in scanning and API attacks and documents APKs, jadx- and Blutter-related files and an SSRF test script on attack servers, with mitigation advice. The full mapping covers it as a learning resource, not a reconstruction case or published AI method: JPCERT/CC does not identify the AI used or how it was applied, and no REA use is stated. The secondhand X commentary and other vendors’ observations it cites are not adopted.",
+      "reason_zh": "JPCERT/CC 的文章是此线索的一手来源。文章报告已确认攻击者在扫描和 API 攻击中使用 AI，记录了攻击服务器上的 APK 文件、与 jadx 和 Blutter 相关的文件以及 SSRF 验证脚本，并给出缓解建议。完整映射将其作为学习资源覆盖，而非重建案例或公开的 AI 方法：JPCERT/CC 未指明所用 AI 及其用法，也未提及 REA。转述该文章的 X 评论及其引用的其他厂商观测均未采纳。",
+      "primary_evidence_urls": [
+        "https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html",
+        "https://x.com/i/status/2111048734926836191"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "jpcert-apk-api-attack-infrastructure-report",
+          "kind": "learning-resource",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:polymarket-updown-rea-replay-report",
@@ -15695,18 +15705,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 194,
+      "already-curated": 195,
       "insufficient-evidence": 168,
-      "pending": 229
+      "pending": 228
     },
     "units_by_state": {
-      "already-curated": 192,
+      "already-curated": 193,
       "insufficient-evidence": 168,
-      "pending": 229
+      "pending": 228
     },
-    "primary_reviewed_units": 302,
-    "catalog_linked_occurrences": 203,
-    "distinct_resource_ids": 198,
+    "primary_reviewed_units": 303,
+    "catalog_linked_occurrences": 204,
+    "distinct_resource_ids": 199,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
