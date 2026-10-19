@@ -7925,5 +7925,53 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-stride",
+    "title": "STRIDE: Simple Type Recognition In Decompiled Executables",
+    "title_zh": "STRIDE：反编译可执行文件中的简单类型识别",
+    "authors": [
+      "Harrison Green",
+      "Edward J. Schwartz",
+      "Claire Le Goues",
+      "Bogdan Vasilescu"
+    ],
+    "year": 2024,
+    "publication_date": "2024-07-03",
+    "date_precision": "day",
+    "date_basis": "arXiv v1 submission on 2024-07-03, the only version at review time. No later venue publication was found, so no publication date beyond the preprint is asserted.",
+    "date_basis_zh": "采用 arXiv v1 的 2024-07-03 提交日期，审阅时这是唯一版本。未找到后续正式发表记录，因此不主张预印本之外的出版日期。",
+    "venue": "arXiv",
+    "publication_status": "preprint",
+    "arxiv_id": "2407.02733",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-07-03",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2407.02733",
+    "pdf_url": "https://arxiv.org/pdf/2407.02733v1",
+    "code_url": "https://github.com/hgarrereyn/STRIDE",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "STRIDE predicts the names and types of variables in decompiler output without a neural model. From training decompilation with known labels, it builds a database mapping the token sequences (N-grams, with N from 2 to 60) immediately left and right of each variable occurrence to the five most frequent names or types. Variable placeholders are canonicalized, and address-like tokens and large constants are bucketed so that N-grams can match. At prediction time it looks up the longest matching N-gram on each side of every occurrence, scores the returned labels by how specific the match is, and sums the scores across the function. The prototype is about 1,000 lines of Python and runs on a CPU. On DIRT functions not seen in training, the authors report 66.4% retyping accuracy, against 52.3% for DIRTY with beam search, and 56.2% renaming accuracy, against 51.3% reported for VarBERT. Across 16 VarCorpus splits, renaming accuracy is higher than VarBERT on 11 and 1.55 points higher on average. Prediction takes 8.2 ms per function on a CPU, against 43.7 ms for VarBERT on an NVIDIA L4 GPU.",
+    "description_zh": "STRIDE 不使用神经网络模型，而是预测反编译器输出中变量的名称和类型。它基于带已知标签的训练反编译结果构建数据库，将每处变量出现位置紧邻左右两侧的词元序列（N-gram，N 取 2 至 60）映射到出现频率最高的五个名称或类型。变量占位名会被规范化，类似地址的词元和较大的常量会被分桶，以便 N-gram 能够匹配。预测时，它在每处出现位置的两侧查找最长的匹配 N-gram，按匹配的特异程度为返回的标签打分，并在整个函数内累加得分。原型约有 1,000 行 Python 代码，在 CPU 上运行。作者报告，在训练集中未出现的 DIRT 函数上，类型恢复准确率为 66.4%（启用束搜索的 DIRTY 为 52.3%），重命名准确率为 56.2%（VarBERT 的已报告结果为 51.3%）。在 16 个 VarCorpus 划分中，其重命名准确率在 11 个划分上高于 VarBERT，平均高 1.55 个百分点。预测在 CPU 上每个函数耗时 8.2 毫秒，而 VarBERT 在 NVIDIA L4 GPU 上为 43.7 毫秒。",
+    "scope_limitations_en": "An arXiv preprint with no stated venue; this record makes no claim of peer review. STRIDE classifies by exact N-gram matches, so its predictions depend on token sequences seen in the training data: it cannot fuzzy-match or predict a name or type absent from training, and a model trained on one decompiler's token format is not expected to transfer to another. Results are reported on decompiler output from the DIRT, DIRE and VarCorpus benchmark datasets. DIRT pairs Hex-Rays output for GCC -O0 builds of GitHub projects with DWARF-derived labels, the older DIRE dataset was prepared similarly, and VarCorpus covers Gentoo packages decompiled with Hex-Rays and Ghidra at -O0 to -O3. Retyping is evaluated only on DIRT, and only x86 C/C++ code is covered. Accuracy is exact match, so near-synonyms count as errors. About 60% of DIRT test functions also appear in training, where STRIDE reaches about 99% by memorization; the not-in-train figures are the more representative ones. DIRT keeps function and global names, and removing them lowers renaming accuracy by a few points. Several baseline numbers are copied from earlier publications rather than rerun. The authors' README expects poor results on custom closed-source binaries with structures absent from training. The reviewed repository is a research prototype with no decompiler plugin or trained databases.",
+    "scope_limitations_zh": "这是一篇未标明发表场所的 arXiv 预印本；本条目不主张其经过同行评审。STRIDE 依据完全一致的 N-gram 匹配进行分类，因此预测取决于训练数据中出现过的词元序列：它无法模糊匹配，也无法预测训练中未出现的名称或类型；基于某一反编译器词元格式训练的模型预计不能迁移到其他反编译器。结果基于 DIRT、DIRE 与 VarCorpus 三个基准数据集中的反编译器输出。DIRT 使用 GitHub 项目经 GCC -O0 编译后的 Hex-Rays 输出，并以 DWARF 信息生成标签，较早的 DIRE 数据集以类似方式构建；VarCorpus 覆盖以 Hex-Rays 和 Ghidra 在 -O0 至 -O3 下反编译的 Gentoo 软件包。类型恢复只在 DIRT 上评测，且仅覆盖 x86 C/C++ 代码。准确率按完全匹配计算，近义名称也算作错误。约 60% 的 DIRT 测试函数同样出现在训练集中，STRIDE 在这部分依靠记忆达到约 99% 的准确率；训练集中未出现的函数上的结果更具代表性。DIRT 保留了函数名与全局变量名，去除这些标识符后重命名准确率会下降几个百分点。部分基线数据摘自既有论文，并未重新运行。作者在 README 中预计，对包含训练中未出现结构体的自定义闭源二进制文件效果不佳。所审阅的仓库是研究原型，不含反编译器插件或训练好的数据库。",
+    "why_fits_en": "Adds a non-neural, sequence-matching baseline for decompiled variable name and type recovery, complementing the transformer-based DIRTY and VarBERT records it compares against.",
+    "why_fits_zh": "补充一个非神经网络、基于序列匹配的反编译变量名称与类型恢复基线，与书目中作为其比较对象、基于 Transformer 的 DIRTY 和 VarBERT 互补。",
+    "metadata_notes": "Reviewed arXiv v1 (2024-07-03), the only version at review time; the abstract page lists no comment or journal reference, and the PDF names Carnegie Mellon University and the CMU Software Engineering Institute as affiliations. A Crossref bibliographic search and an OpenAlex search found only the arXiv preprint; DBLP's search API returned a bot check and could not be consulted. The abstract links hgarrereyn/STRIDE, reviewed at its latest commit ebaab25 (2024-07-04): MIT license, copyright 2024 Harrison Green. The README documents converters for the DIRE, DIRT and VarCorpus datasets, which are downloaded separately from Google Drive, Amazon S3 and Dropbox; the repository ships no trained N-gram databases or requirements file, and its FAQ says no decompiler plugin exists yet. The paper says the N-gram database takes a few gigabytes of memory. The repository also appears in the automated scan index, whose record is unchanged. No datasets were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "审阅 arXiv v1（2024-07-03），审阅时这是唯一版本；摘要页没有注释或期刊引用信息，PDF 列出的单位为卡内基梅隆大学及其软件工程研究所。Crossref 书目检索与 OpenAlex 检索只找到该 arXiv 预印本；DBLP 检索接口返回机器人验证页面，无法查询。摘要链接的 hgarrereyn/STRIDE 按其最新提交 ebaab25（2024-07-04）审阅：采用 MIT 许可证，版权归 Harrison Green（2024）。README 说明了 DIRE、DIRT 与 VarCorpus 数据集的转换脚本，这些数据集需另行从 Google Drive、Amazon S3 和 Dropbox 下载；仓库不含训练好的 N-gram 数据库或依赖清单，其常见问题说明尚无反编译器插件。论文指出 N-gram 数据库会占用数 GB 内存。该仓库也出现在自动扫描索引中，其索引记录未作改动。本次未下载数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2407.02733",
+      "https://arxiv.org/pdf/2407.02733v1",
+      "https://github.com/hgarrereyn/STRIDE/blob/ebaab25f2bb71a40c2dd70382270d77d7f002777/README.md",
+      "https://github.com/hgarrereyn/STRIDE/blob/ebaab25f2bb71a40c2dd70382270d77d7f002777/LICENSE",
+      "https://github.com/hgarrereyn/STRIDE/tree/ebaab25f2bb71a40c2dd70382270d77d7f002777/stride"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
