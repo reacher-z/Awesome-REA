@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 365](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-365-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (32) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2086,6 +2086,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   由 Ghidra 图形界面插件、独立无界面服务器和 Python MCP 桥接组成，提供含 209 个工具的目录：反编译、交叉引用、重命名、类型设定、结构体、注释与批量编辑，另有 P-code 模拟执行、经 Ghidra TraceRmi 框架的实时调试、共享 Ghidra Server 仓库与版本控制操作，以及基于哈希在不同版本二进制之间迁移函数文档。桥接在连接时只加载三组工具，其余由模型按需搜索并加载；命名与类型规范在工具层强制执行。其 NOTICE 说明，项目于 2025 年 8 月由 LaurieWired 的 GhidraMCP 衍生而来，此后已大幅重写和扩展。
 
   集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-mcp-bethington/)
+
+- [**DecompilerServer .NET 反编译 MCP 服务器**](https://github.com/pardeike/DecompilerServer)
+
+  基于 ICSharpCode.Decompiler 引擎的 stdio MCP 服务器，智能体可借此加载托管 .NET 程序集（包括从游戏目录中定位到的 Unity 游戏 Assembly-CSharp.dll），继而搜索符号、字符串字面量和特性，阅读反编译得到的 C# 或 IL，并追踪调用方、被调用方、使用位置和继承关系。多个程序集可以用别名同时保持加载，便于智能体对两个版本做结构比较或逐个比对方法体，README 举的例子是 RimWorld 模组移植。面向模组开发的工具还能根据所查看的成员，以文本形式生成 Harmony 补丁骨架、绕行存根和 Transpiler 锚点建议。
+
+  集成 · 独立 MCP · 目标：游戏、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/decompilerserver-dotnet-mcp/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
