@@ -13967,5 +13967,50 @@
       "https://github.com/dweinstein/awesome-frida/blob/e20da3b2ae3a30cd65ab0e4a0f0345bb909ecb10/CONTRIBUTING.md",
       "https://github.com/dweinstein/awesome-frida/blob/e20da3b2ae3a30cd65ab0e4a0f0345bb909ecb10/LICENSE"
     ]
+  },
+  {
+    "id": "3sx-third-strike-native-port-case",
+    "name": "3SX: a native Street Fighter III: 3rd Strike port continuing the PS2 decompilation",
+    "url": "https://github.com/crowded-street/3sx",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Builds Street Fighter III: 3rd Strike as native C for Windows, macOS and Linux, continuing the 3s-decomp PS2 decompilation, with SDL3 for video, input and audio and GekkoNet for rollback netplay. README stresses that it is neither a recompilation nor emulation. The port needs the player’s own PS2 game files and works toward arcade-accurate balance, which an optional Statcheck build tests against CPS3 RAM states recorded from Fightcade replays.",
+    "description_zh": "延续 3s-decomp 的 PS2 反编译成果，将《街头霸王 III：3rd Strike》构建为可在 Windows、macOS 和 Linux 上运行的原生 C 程序，以 SDL3 处理画面、输入和声音，以 GekkoNet 实现回滚联机。README 强调它既不是重编译，也不是模拟。移植版需要玩家自备 PS2 游戏文件，并以接近街机版的平衡性为目标；可选的 Statcheck 构建会用 Fightcade 对战录像中记录的 CPS3 内存状态来检验这一点。",
+    "evidence_url": "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls 3SX a native port and a continuation of 3s-decomp, explicitly neither a recompilation nor emulation. At the reviewed commit the game code under src/sf33rd has no remaining INCLUDE_ASM stubs, and src/port supplies SDL3 platform, input and sound layers, including its own ADX decoder. This is a modified port: its goals include fixing balance regressions the PS2 version introduced, and the arcade-balance option is marked work in progress. The only release is a rolling pre-release rebuilt from main, and goals such as stable PC play and the arcade ROM as sole dependency remain on the 1.0 milestone.",
+      "Play requires a legally obtained PS2 copy of Street Fighter III: 3rd Strike or Street Fighter Anniversary Collection: a startup wizard reads the user’s disc image, or SF33RD.AFS from it is placed in the resources folder, and release builds compare that file with a SHA-256 in resources.c. The arcade-balance option also needs the user’s sfiii3nr1.zip CPS3 ROM set. The tree ships no game archives, but src/bin2obj carries large C data tables from the decompilation.",
+      "Prebuilt rolling releases cover Windows, macOS, and x86_64 and arm64 Linux. Source builds use CMake 3.24+ with Clang, after MSYS2 MinGW64 packages on Windows, the listed Ubuntu packages or Xcode Command Line Tools on macOS; build-deps.sh fetches and builds SDL3, SDL_net, GekkoNet, libcdio, minizip-ng and TF-PSA-Crypto. CMake and CI also carry a PSP branch built with Docker tooling.",
+      "Pull-request CI only builds the Windows, macOS, Linux and PSP targets. Arcade accuracy is checked with the optional Statcheck build: tools/fcade-replays, described as a reverse-engineering helper for Fightcade’s replay stream, downloads replays; a custom FBNeo fork records per-frame CPS3 RAM dumps; and Statcheck stops at the first mismatch in health, positions, stun, super-art meter, timer or round phase. The reviewed tree publishes no Statcheck results, and this collection built or ran nothing.",
+      "The repository carries an agent skill with a Codex interface file. It directs a coding agent to compare local functions with a CPS3 program through a read-only Ghidra MCP server, mark each function’s parity and add CPS3 behaviour behind the arcade-balance flag; the reviewed files do not say how much code was written this way, and no REA use is established. LICENSE is AGPL-3.0. THIRD_PARTY_NOTICES lists GPLv3+ libcdio with zlib, BSD-2-Clause, MIT and Apache-2.0 components, the game and its assets keep their own rights, and README says the project does not condone piracy."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/docs/building.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/docs/statcheck.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/docs/config.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/docs/resources.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/CMakeLists.txt",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/build-deps.sh",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/src/port/resources.c",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/src/arcade/rom/rom.c",
+      "https://github.com/crowded-street/3sx/tree/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/src/port",
+      "https://github.com/crowded-street/3sx/tree/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/src/bin2obj",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/tools/fcade-replays/README.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/.agents/skills/compare-cps3-code/SKILL.md",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/.agents/skills/compare-cps3-code/agents/openai.yaml",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/.github/workflows/build_linux.yml",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/.github/workflows/build_psp.yml",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/.github/workflows/release.yml",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/THIRD_PARTY_NOTICES.txt",
+      "https://github.com/crowded-street/3sx/blob/bdc2cd351aad35d7e251a5a6d63a3368bd31cbaa/LICENSE",
+      "https://github.com/crowded-street/3sx/releases/tag/rolling-pre-release",
+      "https://github.com/crowded-street/3sx/milestone/1"
+    ]
   }
 ]
