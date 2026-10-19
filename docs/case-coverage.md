@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 165 | 164 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 294 | 293 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 132 | 132 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 288 | 287 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 138 | 138 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 176 occurrences have catalog links. They reference 170 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 236 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 242 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -123,9 +123,15 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Camera firmware: a Codex-driven VM boot investigation | Insufficient evidence | [Source](https://x.com/elliehuxtable/status/2109715839117316150) |
 | Helm Chart API v2: an AI-assisted specification draft | Pending | [Source](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
 | Mobile game interactions: Codex and REA evidence mapping | Insufficient evidence | [Source](https://x.com/Steven_Soto/status/2109721540245782843) |
+| Homatics ATV14: a reported Dolby Vision firmware fix | Insufficient evidence | [Source](https://x.com/qwerty__cs/status/2109722857207115879) |
+| Personal website: a REA-assisted design reconstruction | Insufficient evidence | [Source](https://x.com/khaled_cli/status/2109733299115475393) |
+| SaaS feature subsets: Codex observation and Replit rebuilding | Insufficient evidence | [Source](https://x.com/Andrew_Blumson/status/2109733493202981247) |
 | Star Fox and Sonic CD: reported AI-assisted native ports | Pending | [Source](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
 | AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Insufficient evidence | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer: rehosting the platform layer on Linux | Already curated | [Source](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |
+| LG TV: a reported native Claude Code terminal | Insufficient evidence | [Source](https://x.com/ceoico/status/2109774258738176000) |
+| WeChat local chats: a reported Codex-assisted decryption task | Insufficient evidence | [Source](https://x.com/trendtranslate1/status/2109779123778490858) |
+| Sixteen note files: a reported REA/no-REA decoder comparison | Insufficient evidence | [Source](https://x.com/operatranscend/status/2109783203892597103) |
 | Open Claude UI: REA-informed interface reference components | Already curated | [Source](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | Pending | [Source](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |

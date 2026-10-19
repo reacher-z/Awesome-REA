@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 165 | 164 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 294 | 293 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 132 | 132 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 288 | 287 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 138 | 138 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 176 个出现项含目录链接；共关联 170 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 236 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 242 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -123,9 +123,15 @@
 | Camera firmware: a Codex-driven VM boot investigation | 证据不足 | [来源](https://x.com/elliehuxtable/status/2109715839117316150) |
 | Helm Chart API v2: an AI-assisted specification draft | 待核查 | [来源](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
 | Mobile game interactions: Codex and REA evidence mapping | 证据不足 | [来源](https://x.com/Steven_Soto/status/2109721540245782843) |
+| Homatics ATV14: a reported Dolby Vision firmware fix | 证据不足 | [来源](https://x.com/qwerty__cs/status/2109722857207115879) |
+| Personal website: a REA-assisted design reconstruction | 证据不足 | [来源](https://x.com/khaled_cli/status/2109733299115475393) |
+| SaaS feature subsets: Codex observation and Replit rebuilding | 证据不足 | [来源](https://x.com/Andrew_Blumson/status/2109733493202981247) |
 | Star Fox and Sonic CD: reported AI-assisted native ports | 待核查 | [来源](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
 | AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | 证据不足 | [来源](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer：在 Linux 上重建平台适配层 | 已收录 | [来源](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |
+| LG TV: a reported native Claude Code terminal | 证据不足 | [来源](https://x.com/ceoico/status/2109774258738176000) |
+| WeChat local chats: a reported Codex-assisted decryption task | 证据不足 | [来源](https://x.com/trendtranslate1/status/2109779123778490858) |
+| Sixteen note files: a reported REA/no-REA decoder comparison | 证据不足 | [来源](https://x.com/operatranscend/status/2109783203892597103) |
 | Open Claude UI：基于 REA 调查的界面参考组件 | 已收录 | [来源](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | 待核查 | [来源](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
 | Eleven | 已收录 | [来源](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
