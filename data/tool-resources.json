@@ -15478,5 +15478,39 @@
       "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/ThirdParty/blowfish.c",
       "https://github.com/nygard/class-dump/releases/tag/3.4"
     ]
+  },
+  {
+    "id": "openawe-alan-wake-engine-case",
+    "name": "OpenAWE: an open reimplementation of Remedy’s Alan Wake engine",
+    "url": "https://github.com/OpenAWE-Project/OpenAWE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Remedy Entertainment’s Alan Wake engine, later known as Northlight, in C++ and OpenGL, aiming to run Alan Wake and Alan Wake’s American Nightmare portably from the user’s game data, with Quantum Break and possibly Control as later goals. README documents only a free camera for moving through loaded game data, and the American Nightmare script table implements 16 of its 278 native functions. The repository also includes command-line tools for the games’ archive, texture, Havok and sound formats.",
+    "description_zh": "以 C++ 和 OpenGL 重新实现 Remedy Entertainment 的 Alan Wake 引擎（后来称为 Northlight），目标是借助使用者自己的游戏数据，以可移植方式运行《心灵杀手》和《心灵杀手：美国梦魇》，并把《量子破碎》乃至《控制》列为后续目标。README 只介绍了一个用于在已加载游戏数据中移动的自由视角相机，《美国梦魇》的脚本函数表在 278 个原生函数中实现了 16 个。仓库还附带处理这些游戏的归档、纹理、Havok 和音频格式的命令行工具。",
+    "evidence_url": "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-11; there are no releases or tags, and CMake declares version 0.0.1. README states the goals but gives no gameplay status beyond a keyboard-and-mouse free camera, and the game selector rejects Quantum Break and Alan Wake Remastered as not yet supported. In the reviewed American Nightmare native-function table, 16 of 278 script functions are implemented and the rest are placeholders. The reviewed sources do not describe how the engine’s formats and behaviour were analysed.",
+      "OpenAWE runs from the data directory of the user’s own Alan Wake or Alan Wake’s American Nightmare installation, passed with -p, together with the shaders compiled during the build, passed with -s. The repository contains no game data: the archive tests use small synthetic byte arrays, and data/ holds a single XML file that carries the project’s GPL header.",
+      "Builds use CMake 3.21+ and C++20 with development packages for zlib, GLFW 3.4+, GLM, TinyXML2, OpenAL, Bullet, fmt 9+, Ogg, Theora, Vorbis and spdlog, GTest for the optional tests, the EnTT and CLI11 submodules or system copies, and the glslc shader compiler. CI builds with GCC and Clang on Linux, MSVC on Windows and Clang on Intel macOS.",
+      "Each CI job runs ctest with GoogleTest unit tests for the archive readers, streams, compression, XML and TOML parsing and geometry utilities, then packages the build with cpack. No test reads the games’ data or compares behaviour with the original executables; the README screenshot shows an American Nightmare scene. This collection did not build or run OpenAWE.",
+      "README places the code under GPL-3.0-or-later except the libraries in 3rdparty, which keep their own licenses. Alan Wake and its data keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/LICENSE",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/CMakeLists.txt",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/.gitmodules",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/.github/workflows/main.yml",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/src/game.cpp",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/src/engines/awan/functions_table.cpp",
+      "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/test",
+      "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/tools",
+      "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/data/male_player_class.xml"
+    ]
   }
 ]

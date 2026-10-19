@@ -5080,5 +5080,15 @@
       "输入为使用者已有的 Mach-O 文件、框架或 bundle，且只解析 Objective-C 元数据；带有加密加载命令的文件会在输出头部被标出。未发布部分的更新日志称 Swift 类型的类型编码为空，现以 MISSING_TYPE 写出，因此无法还原 Swift 类型。输出只有声明，不含方法实现。",
       "Tests/doTests.py 是一个 Python 2 脚本，用于在已安装的系统框架上比较新旧两个构建的输出差异；仓库没有 CI。README 中的声明采用 GPL-2.0-or-later 许可，版权归 Steve Nygard（1997–2019），仓库中没有单独的许可证文件；ThirdParty/blowfish.c 采用 LGPL-2.1-or-later。根据闭源二进制生成的头文件仍受其权利人的权利约束。本次未构建或运行该工具。"
     ]
+  },
+  "openawe-alan-wake-engine-case": {
+    "name": "OpenAWE：Remedy 的 Alan Wake 引擎的开源重新实现",
+    "requirements": [
+      "审阅版本为 2026-10-11 的 master 提交；仓库没有发布版或标签，CMake 中的版本为 0.0.1。README 说明了项目目标，但除键盘鼠标操作的自由视角相机外，没有介绍任何游戏玩法进度；游戏识别逻辑会以“尚不支持”拒绝《量子破碎》和《心灵杀手：重制版》。在所审的《美国梦魇》原生函数表中，278 个脚本函数只实现了 16 个，其余均为占位。所审来源没有说明引擎的格式与行为是如何分析的。",
+      "OpenAWE 需用 -p 指定使用者自有的《心灵杀手》或《心灵杀手：美国梦魇》安装中的数据目录，并用 -s 指定构建时编译出的着色器。仓库不含游戏数据：归档测试使用的是小型合成字节数组，data/ 中只有一个带有项目 GPL 许可头的 XML 文件。",
+      "构建使用 CMake 3.21+ 和 C++20，需要 zlib、GLFW 3.4+、GLM、TinyXML2、OpenAL、Bullet、fmt 9+、Ogg、Theora、Vorbis 和 spdlog 的开发包，可选测试需要 GTest，EnTT 和 CLI11 可用子模块或系统版本，此外还需要 glslc 着色器编译器。CI 在 Linux 上用 GCC 和 Clang、在 Windows 上用 MSVC、在 Intel macOS 上用 Clang 构建。",
+      "每个 CI 任务都会用 ctest 运行 GoogleTest 单元测试，覆盖归档读取器、数据流、压缩、XML 与 TOML 解析以及几何工具，然后用 cpack 打包。没有测试读取游戏数据或与原版可执行文件对比行为；README 中的截图展示的是《美国梦魇》的一个场景。本合集未构建或运行 OpenAWE。",
+      "README 规定代码采用 GPL-3.0-or-later，3rdparty 中的库除外，这些库保留各自的许可证。Alan Wake 系列及其数据仍归权利人所有。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
