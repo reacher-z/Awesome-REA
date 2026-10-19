@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 440](https://img.shields.io/badge/resources-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 440](https://img.shields.io/badge/resources-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (28)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (28)
 
 **More ways to browse**
 
@@ -2755,13 +2755,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -3164,6 +3164,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Inputs are short exercise functions from the C++ splits of HumanEval-X (161 of 164 compiled) and MBXP (773 of 974), built as Emscripten 3.1.46 side modules at -Oz with function names kept by --profiling-funcs and converted with wasm2wat 1.0.33; minified, obfuscated or whole-application WebAssembly is not evaluated. Correctness is the share of outputs that compile and pass the benchmarks' test cases after a test oracle renames functions, inserts tests and adds namespace directives, with manual pass-by-value edits. Passing these tests is not proof of equivalence with the original module. Summaries are scored by BERTScore and SBERT; the user study had 15 participants on 20 snippets per dataset. wasm2c and an earlier neural decompiler were excluded for producing no compilable output, and results depend on specific hosted model versions.
 
   **Authors:** Weike Fang et al.
+
+  </details>
+
+- [**BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching**](https://dl.acm.org/doi/10.1145/3597503.3639100)
+
+  BinaryAI identifies which open-source C/C++ libraries a stripped binary reuses by matching its functions to source code. Ghidra decompiles each binary function to pseudo-C, and a Pythia-410M model, trained with a CLIP-style contrastive loss on about 10 million binary–source function pairs, embeds pseudo-code and source functions in one space. Candidates retrieved from a corpus of 56,342,179 source functions from 12,013 libraries are refined with link-time locality and the call graph, and a library is reported when the share of its matched functions exceeds a threshold. The authors report 22.54% recall<span>@</span>1 against 10.75% for CodeCMR, and library-detection precision and recall of 85.84% and 64.98% against 73.36% and 59.81% for an unnamed commercial tool.
+
+  ICSE 2024 · Conference paper · [PDF](https://arxiv.org/pdf/2401.11161v3) · [Full entry & citation](https://awesomerea.org/papers/paper-binaryai/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Training pairs come from ArchLinux and AUR packages compiled automatically with DWARF debug information, and the corpus and test set cover C/C++ projects only. The SCA test set is 150 stripped binaries the authors compiled from 85 GitHub projects, with 1,045 reused libraries labeled manually from build files, headers and license metadata; function-level ground truth covers 15 of those binaries (23,529 pairs). The recall<span>@</span>1 figures combine the model's validation set with those 15 binaries. The two commercial baselines are anonymized under confidentiality agreements, and every baseline was rebuilt on the authors' 12,013-library dataset. The 112 false positives the authors examined all trace to incomplete library-dependency data. The model, training pairs, source-function corpus and labeled test set are not public, and the hosted service the paper links may run a different model and corpus from the evaluated 2024 system. Matches identify reused source; they are not a decompilation or proof that the binary is unmodified.
+
+  **Authors:** Ling Jiang et al.
 
   </details>
 

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 440](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 440](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (28)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (28)
 
 **更多浏览方式**
 
@@ -2756,13 +2756,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -3165,6 +3165,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 输入是 HumanEval-X（164 个中 161 个可编译）与 MBXP（974 个中 773 个）C++ 子集中的简短练习函数，以 Emscripten 3.1.46 按 -Oz 编译为侧模块，通过 --profiling-funcs 保留函数名，再用 wasm2wat 1.0.33 转换；未评估经过压缩、混淆或完整应用规模的 WebAssembly。正确性指输出能够编译并通过基准测试用例的比例；测试判定器会重命名函数、插入测试并补充命名空间指令，按值传参则由人工修改。通过这些测试并不证明与原始模块等价。函数摘要以 BERTScore 和 SBERT 评分；用户研究有 15 名参与者，每个数据集 20 个代码片段。wasm2c 与一种早期神经反编译器因无法生成可编译输出而未纳入比较，结果也依赖特定版本的托管模型。
 
   **作者:** Weike Fang 等
+
+  </details>
+
+- [**BinaryAI：基于智能二进制—源代码匹配的二进制软件成分分析**](https://dl.acm.org/doi/10.1145/3597503.3639100)
+
+  BinaryAI 通过将剥离符号的二进制中的函数与源代码匹配，识别其复用了哪些开源 C/C++ 库。它先用 Ghidra 将每个二进制函数反编译为类 C 伪代码，再用以 CLIP 式对比损失、在约 1,000 万对二进制—源码函数上训练的 Pythia-410M 模型，把伪代码与源码函数嵌入同一向量空间。从包含 12,013 个库、56,342,179 个源码函数的语料中检索出候选后，方法借助链接时的位置局部性和调用图加以精炼；当某个库中被匹配函数的比例超过阈值时，即判定二进制包含该库。作者报告其 recall<span>@</span>1 为 22.54%，CodeCMR 为 10.75%；库识别的精确率与召回率分别为 85.84% 和 64.98%，一款未具名商业工具为 73.36% 和 59.81%。
+
+  ICSE 2024 · 会议论文 · [PDF](https://arxiv.org/pdf/2401.11161v3) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-binaryai/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练函数对来自自动编译并保留 DWARF 调试信息的 ArchLinux 与 AUR 软件包，语料和测试集均只涵盖 C/C++ 项目。软件成分分析测试集是作者由 85 个 GitHub 项目编译出的 150 个剥离符号的二进制，其中 1,045 个被复用库依据构建文件、头文件和许可证元数据人工标注；函数级真实标签仅覆盖其中 15 个二进制（23,529 对）。recall<span>@</span>1 数据合并了模型验证集与这 15 个二进制。两款商业基线依保密协议匿名，所有基线均在作者的 12,013 个库数据集上重建。作者检查的 112 个误报都可追溯到不完整的库依赖数据。模型、训练函数对、源码函数语料和带标注的测试集均未公开；论文链接的在线服务所用模型与语料可能不同于 2024 年评测的系统。匹配结果说明复用了哪些源码，并不是反编译结果，也不能证明二进制未被修改。
+
+  **作者:** Ling Jiang 等
 
   </details>
 
