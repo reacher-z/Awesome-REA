@@ -4349,5 +4349,14 @@
       "拉取请求的 CI 在 Linux、macOS 和 Windows 上以 Python 3.9–3.12 运行 Ruff 和 pytest。测试会向 Apple 服务器激活、建立 APNs 连接，并通过限定令牌往返一条沙盒通知，因此依赖线上服务，而非离线协议样本。本次来源核查未运行测试、激活或连接。",
       "LICENSE 为 Server Side Public License v1，包元数据将其归类为 Other/Proprietary；README 称项目已被 Beeper 收购，许可问题需联系 Beeper。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "luajit-decompiler-v2": {
+    "name": "LuaJIT Decompiler v2 字节码反编译器",
+    "requirements": [
+      "使用者需提供 LuaJIT 字节码文件或包含这些文件的文件夹，可拖放到程序上或通过命令行传入；反编译出的 .lua 文件默认写入可执行文件旁的 output 文件夹，也可另行指定。选项包括按扩展名筛选、忽略调试信息、跳过失败文件而不弹出断言窗口，以及调整输出格式以减少差异。",
+      "读取器接受第 1 和第 2 版字节码格式，拒绝大端字节码；README 将大端支持和改进条件赋值的反编译列为待办事项。仓库没有测试、CI 或公开的准确率结果；程序会报告反编译失败的文件数。",
+      "仅支持 Windows：README 引导使用者下载发布页的可执行文件（Mar_24_2024 版本，其说明称已于 2026-05-14 重新编译），main.h 列出的构建要求为 Visual Studio、C++20、Windows API 以及默认 char 为无符号，仓库未附带项目或构建文件。另有一个 Call-of-Duty 分支，比 master 多四个提交，并有单独的发布可执行文件。审阅时最后一次提交为 2026-05-14。",
+      "许可证为 MIT 文本，并附有 LuaJIT 和 Lua 的版权声明；GitHub 未能识别其类型。所审阅资料未提及使用 REA，本目录未运行该反编译器。"
+    ]
   }
 }
