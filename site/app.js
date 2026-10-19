@@ -285,7 +285,7 @@ function icon(name, small = false) { if (document.documentElement.dataset.iconSe
 // Restoring open details is optional; an unsupported selector or missing element must not stop rendering.
 function expandedRecords(selector) { try { return new Set($$(selector).filter(card => card.querySelector("details[open]")).map(card => card.dataset.recordId)); } catch (_) { return new Set(); } }
 function restoreExpanded(selector, expanded) { try { $$(selector).forEach(card => { const details = expanded.has(card.dataset.recordId) && card.querySelector("details"); if (details) details.open = true; }); } catch (_) {} }
-function external(href, className, text) { const link = node("a", className, text); link.href = href; link.target = "_blank"; link.rel = "noopener noreferrer"; return link; }
+function external(href, className, text) { const link = node("a", className, text); link.href = href; link.target = "_blank"; link.rel = "noopener"; return link; }
 function entryHref(kind, identifier, language = state.lang) {
   if (!["paper", "curated"].includes(kind) || typeof identifier !== "string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(identifier)) return null;
   if (kind === "paper" && !identifier.startsWith("paper-")) return null;

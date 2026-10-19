@@ -133,15 +133,15 @@ def _resource_card(record: dict, language: str) -> str:
     targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
     additional = ''.join(
-        f'<li><a href="{_url(url)}" target="_blank" rel="noopener noreferrer">'
+        f'<li><a href="{_url(url)}" target="_blank" rel="noopener">'
         f'{("补充来源" if zh else "Additional source")} {index} ↗</a></li>'
         for index, url in enumerate(record.get('additional_evidence_urls', []), 1)
     )
     reviewed = str(record['verified_at'])
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
-  <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
+  <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
-  <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{('原始来源 ↗' if zh else 'Primary source ↗')}</a></div>
+  <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{('原始来源 ↗' if zh else 'Primary source ↗')}</a></div>
   <details class="requirements"><summary>{('详情与使用条件' if zh else 'Details and requirements')}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time></div></details>
 </article>'''
 
@@ -159,13 +159,13 @@ def _case_row(record: dict, language: str, section: str) -> str:
     evidence = [(record['evidence_url'], '原始证据' if zh else 'Primary evidence')]
     evidence += [(url, f'补充来源 {index}' if zh else f'Additional source {index}')
                  for index, url in enumerate(record.get('additional_evidence_urls', []), 1)]
-    evidence_links = ''.join(f'<li><a href="{_url(url)}" target="_blank" rel="noopener noreferrer">{escape(label)} <span aria-hidden="true">↗</span></a></li>'
+    evidence_links = ''.join(f'<li><a href="{_url(url)}" target="_blank" rel="noopener">{escape(label)} <span aria-hidden="true">↗</span></a></li>'
                              for url, label in evidence)
     reviewed = str(record['verified_at'])
     return f'''<article class="case-row" id="{identifier}" data-case-id="{identifier}" data-resource-id="{identifier}" data-case-section="{escape(section, quote=True)}">
   <div class="case-heading"><h3><a href="{detail_path}">{escape(name)}</a></h3><span class="case-relationship">{escape(relationship)}</span></div>
   <p class="case-description">{escape(record[f'description_{language}'])}</p>
-  <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{('案例来源' if zh else 'Case source')} <span aria-hidden="true">↗</span></a></div>
+  <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['url'])}" target="_blank" rel="noopener">{('案例来源' if zh else 'Case source')} <span aria-hidden="true">↗</span></a></div>
   <details class="case-evidence"><summary>{('使用条件与证据' if zh else 'Requirements and evidence')}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul><ul class="case-evidence-links">{evidence_links}</ul><p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
   </div>
 </article>'''
@@ -248,7 +248,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
 <a class="skip-link" href="#discovery-content">{('跳到内容' if zh else 'Skip to content')}</a>
 <header class="site-header"><div class="shell header-inner">
   <a class="wordmark" href="{root}" aria-label="{('AwesomeREA.org 首页' if zh else 'AwesomeREA.org home')}"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
-  <nav class="header-nav" aria-label="{('主导航' if zh else 'Main navigation')}">{language_link}<a class="github-link" href="{_url(repository_url)}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav>
+  <nav class="header-nav" aria-label="{('主导航' if zh else 'Main navigation')}">{language_link}<a class="github-link" href="{_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav>
 </div></header>
 <main id="discovery-content" class="shell browse-main{page_class}">
   <nav class="browse-breadcrumbs" aria-label="{('当前位置' if zh else 'Breadcrumb')}"><a href="{root}">{('首页' if zh else 'Home')}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>

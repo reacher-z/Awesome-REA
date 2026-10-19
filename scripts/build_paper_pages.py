@@ -147,14 +147,14 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
     status = STATUS_LABELS[paper['publication_status']][1 if zh else 0]
     title = paper['title_zh'] if zh else paper['title']
     original_title = f'<p class="paper-original-title" lang="en">{escape(paper["title"])}</p>' if zh else ''
-    links = [f'<a class="paper-link paper-link-primary" href="{web_url(paper["url"])}" target="_blank" rel="noopener noreferrer">{label("Paper", "论文")}{icon("external", use_pro)}</a>',
-             f'<a class="paper-link" href="{web_url(paper["pdf_url"])}" target="_blank" rel="noopener noreferrer">PDF{icon("external", use_pro)}</a>']
+    links = [f'<a class="paper-link paper-link-primary" href="{web_url(paper["url"])}" target="_blank" rel="noopener">{label("Paper", "论文")}{icon("external", use_pro)}</a>',
+             f'<a class="paper-link" href="{web_url(paper["pdf_url"])}" target="_blank" rel="noopener">PDF{icon("external", use_pro)}</a>']
     detail_path = f"{'/zh' if zh else ''}/papers/{paper['id']}/"
     detail_label = label('Full entry: ' + title, '完整条目：' + title)
     links.append(f'<a class="paper-link entry-detail-link" data-entry-link="{paper["id"]}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{label("Full entry", "完整条目")}</a>')
     for field, en, cn in (('code_url', 'Code', '代码'), ('project_url', 'Project', '项目')):
         if paper.get(field):
-            links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener noreferrer">{label(en, cn)}{icon("external", use_pro)}</a>')
+            links.append(f'<a class="paper-link" href="{web_url(paper[field])}" target="_blank" rel="noopener">{label(en, cn)}{icon("external", use_pro)}</a>')
     links.append(f'<a class="paper-link" href="/papers/citations/{paper["id"]}.bib" download="{paper["id"]}.bib" type="application/x-bibtex">BibTeX ↓</a>')
     metadata = [(label('Publication / posting date', '出版／提交日期'), formatted_date(paper.get('publication_date'), language, paper['year'])),
                 (label('Date source', '日期依据'), paper['date_basis_zh' if zh else 'date_basis'])]
@@ -168,9 +168,9 @@ def paper_card(paper: dict, language: str, use_pro: bool) -> str:
         metadata.append(('DOI', paper['doi']))
     metadata.append((label('Sources checked', '来源复核日期'), formatted_date(paper['verified_at'], language)))
     details = ''.join(f'<dt>{escape(key)}</dt><dd>{escape(value)}</dd>' for key, value in metadata)
-    source_links = ''.join(f'<li><a href="{web_url(url)}" target="_blank" rel="noopener noreferrer">{escape(url)}</a></li>' for url in paper['evidence_urls'])
+    source_links = ''.join(f'<li><a href="{web_url(url)}" target="_blank" rel="noopener">{escape(url)}</a></li>' for url in paper['evidence_urls'])
     return f'''<article class="paper-card" id="{paper['id']}" data-paper-id="{paper['id']}">
-  <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener noreferrer">{escape(title)}{icon('external', use_pro)}</a></h3>{original_title}<div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div><p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p></header>
+  <header><h3><a href="{web_url(paper['url'])}" target="_blank" rel="noopener">{escape(title)}{icon('external', use_pro)}</a></h3>{original_title}<div class="paper-meta"><span class="paper-year">{paper['year']}</span><span class="paper-venue" lang="en">{escape(paper['venue'])}</span><span class="paper-status paper-status-{paper['publication_status']}">{status}</span></div><p class="paper-authors" lang="en">{escape('; '.join(paper['authors']))}</p></header>
   <p class="paper-description">{escape(paper[f'description_{language}'])}</p>
   <div class="paper-scope"><h4>{label('Scope & limitations', '研究范围与局限')}</h4><p>{escape(paper[f'scope_limitations_{language}'])}</p></div>
   <nav class="paper-links" aria-label="{escape(label('Links for ' + paper['title'], title + '的相关链接'), quote=True)}">{''.join(links)}</nav>
@@ -308,11 +308,11 @@ def build_paper_pages(
 </head>
 <body>
 <a class="skip-link" href="#papers-content">{label('Skip to the papers', '跳到论文目录')}</a>
-<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="{home}" aria-label="{label('AwesomeREA.org home', 'AwesomeREA.org 首页')}"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a><nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="papers-language" href="{counterpart}" lang="{label('zh-CN', 'en')}" hreflang="{label('zh-CN', 'en')}" aria-label="{label('Switch to Simplified Chinese', '切换为英文')}">{icon('globe', use_pro)}<span>{label('简体中文', 'English')}</span></a><a class="github-link" href="{web_url(repository_url)}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a></nav></div></header>
+<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="{home}" aria-label="{label('AwesomeREA.org home', 'AwesomeREA.org 首页')}"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a><nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="papers-language" href="{counterpart}" lang="{label('zh-CN', 'en')}" hreflang="{label('zh-CN', 'en')}" aria-label="{label('Switch to Simplified Chinese', '切换为英文')}">{icon('globe', use_pro)}<span>{label('简体中文', 'English')}</span></a><a class="github-link" href="{web_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a></nav></div></header>
 <main id="papers-content" class="shell papers-main">
   <nav class="papers-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{home}">{label('Home', '首页')}</a><span aria-hidden="true">/</span><span aria-current="page">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}</span></nav>
   <section class="collection-intro papers-intro" aria-labelledby="papers-title"><p class="eyebrow">{label('RESEARCH & EVIDENCE', '研究与证据')}</p><h1 id="papers-title">{label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准')}<span class="title-dot" aria-hidden="true">.</span></h1><p>{escape(intro)}</p></section>
-  <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener noreferrer">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a><a class="papers-bibliography" href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">{label('Download bibliography', '下载参考文献')} · BibTeX ↓</a></div>
+  <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a><a class="papers-bibliography" href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">{label('Download bibliography', '下载参考文献')} · BibTeX ↓</a></div>
   <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
   <form id="paper-search" class="paper-search" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" hidden>
     <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, keyword, DOI or arXiv ID', '标题、作者、关键词、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
@@ -328,7 +328,7 @@ def build_paper_pages(
   {''.join(sections)}
   <script id="paper-search-data" type="application/json">{search_data}</script>
 </main>
-<footer class="site-footer"><div class="shell footer-top"><p>{label('An independent resource collection, updated in public.', '独立的资源集合，在公开协作中持续更新。')}</p><div class="footer-links"><a href="{home}">{label('Interactive collection', '交互式合集')}</a><a href="{browse}">{label('Repository directory', '仓库分类目录')}</a><a href="{curated}">{label('Curated resources', '精选资源')}</a><a href="{about}">{label('About and sources', '关于与来源')}</a><a href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">BibTeX ↓</a><a href="{web_url(repository_url)}" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div><div class="shell footer-bottom">{label('Paper and code links retain their own licenses. Bibliographic metadata is supplied for citation; follow the original sources for version and access details.', '论文和代码保留各自的许可。引文元数据用于引用；版本和访问详情请以原始来源为准。')}</div></footer>
+<footer class="site-footer"><div class="shell footer-top"><p>{label('An independent resource collection, updated in public.', '独立的资源集合，在公开协作中持续更新。')}</p><div class="footer-links"><a href="{home}">{label('Interactive collection', '交互式合集')}</a><a href="{browse}">{label('Repository directory', '仓库分类目录')}</a><a href="{curated}">{label('Curated resources', '精选资源')}</a><a href="{about}">{label('About and sources', '关于与来源')}</a><a href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">BibTeX ↓</a><a href="{web_url(repository_url)}" target="_blank" rel="noopener">GitHub ↗</a></div></div><div class="shell footer-bottom">{label('Paper and code links retain their own licenses. Bibliographic metadata is supplied for citation; follow the original sources for version and access details.', '论文和代码保留各自的许可。引文元数据用于引用；版本和访问详情请以原始来源为准。')}</div></footer>
 </body>
 </html>
 '''

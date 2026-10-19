@@ -57,7 +57,7 @@ def _asset_url(value: str) -> str:
 
 def _link(url: str, label: str, *, primary: bool = False) -> str:
     cls = 'entry-link entry-link-primary' if primary else 'entry-link'
-    return f'<a class="{cls}" href="{_public_url(url)}" target="_blank" rel="noopener noreferrer">{escape(label)} <span aria-hidden="true">↗</span></a>'
+    return f'<a class="{cls}" href="{_public_url(url)}" target="_blank" rel="noopener">{escape(label)} <span aria-hidden="true">↗</span></a>'
 
 
 def _sources(urls: list[str], language: str) -> str:
@@ -76,7 +76,7 @@ def _sources(urls: list[str], language: str) -> str:
             revision_label = '修订' if language == 'zh' else 'Revision'
             context = (f' <span class="entry-source-context">GitHub · {escape(owner + "/" + repository)}'
                        f' · {revision_label} <span title="{revision}">{revision[:7]}</span></span>')
-        links.append(f'<li><a href="{href}" title="{href}" target="_blank" rel="noopener noreferrer">{escape(label)}</a>{context}</li>')
+        links.append(f'<li><a href="{href}" title="{href}" target="_blank" rel="noopener">{escape(label)}</a>{context}</li>')
     return f'<section class="entry-section" aria-labelledby="entry-sources"><h2 id="entry-sources">{("一手来源" if language == "zh" else "Primary sources")}</h2><ol class="entry-sources">{"".join(links)}</ol></section>'
 
 
@@ -211,7 +211,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 </head><body>
 <a class="skip-link" href="#entry-content">{label('Skip to content', '跳到内容')}</a>
 <header class="site-header"><div class="shell header-inner"><a class="wordmark" href="{prefix}/" aria-label="{label('AwesomeREA.org home', 'AwesomeREA.org 首页')}"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
-<nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
+<nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
 <nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>

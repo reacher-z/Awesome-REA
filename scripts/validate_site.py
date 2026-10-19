@@ -330,11 +330,16 @@ class PageResources(HTMLParser):
         self.scripts, self.inline_scripts, self.stylesheets, self.images = [], 0, [], []
         self.inline_styles, self.handlers, self.embeds, self.preloads = 0, [], [], []
         self.catalog_revision = None
+        self.new_tab_relations, self.referrer_suppressed = [], 0
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
         self.handlers.extend(name for name in values if name.startswith('on'))
+        relations = set((values.get('rel') or '').lower().split())
+        self.referrer_suppressed += 'noreferrer' in relations
+        if tag in {'a', 'area', 'form'} and values.get('target') == '_blank':
+            self.new_tab_relations.append(relations)
         self.inline_styles += 'style' in values or tag == 'style'
         if tag == 'html':
             self.catalog_revision = values.get('data-catalog-revision')
@@ -368,6 +373,8 @@ def validate_security_headers(output):
     assert site.get('permissions-policy'), 'Missing Permissions-Policy'
     hsts = site.get('strict-transport-security', '')
     assert re.fullmatch(r'max-age=[1-9]\d*', hsts), 'HSTS needs a positive max-age; includeSubDomains and preload need a documented owner decision'
+    # Linked projects may see that a visit came from the site, never which page or search led there.
+    assert site.get('referrer-policy') == 'strict-origin-when-cross-origin', 'Referrer-Policy must send other origins only the site origin'
     policies = [site[name] for name in ('content-security-policy', 'content-security-policy-report-only') if name in site]
     assert len(policies) == 1, 'Use one site-wide Content-Security-Policy (or its Report-Only form)'
     directives = csp_directives(policies[0])
@@ -380,10 +387,13 @@ def validate_security_headers(output):
     # Cloudflare Web Analytics is injected at the edge on the production domain, so built pages never show it.
     assert csp_allows(directives, 'script-src', 'https://static.cloudflareinsights.com/beacon.min.js'), 'CSP must allow the Cloudflare Web Analytics beacon'
     assert csp_allows(directives, 'connect-src', 'https://cloudflareinsights.com/cdn-cgi/rum'), 'CSP must allow Cloudflare Web Analytics reports'
+    for script in sorted(output.glob('*.js')):
+        assert 'noreferrer' not in script.read_text(encoding='utf-8'), f'Script-built links keep the origin-only referrer: /{script.name}'
     for path in sorted(output.rglob('*.html')):
         page = PageResources(path.read_text(encoding='utf-8'))
         where = '/' + path.relative_to(output).as_posix()
         assert not page.inline_scripts and not page.inline_styles and not page.handlers and not page.embeds, f'Inline code, styles, handlers or embeds need a CSP review: {where}'
+        assert not page.referrer_suppressed and all('noopener' in relations for relations in page.new_tab_relations), f'Links keep the origin-only referrer, and new-tab links need noopener: {where}'
         for directive, urls in (('script-src', page.scripts), ('style-src', page.stylesheets), ('img-src', page.images)):
             for url in urls:
                 assert csp_allows(directives, directive, url), f'CSP {directive} blocks {url} on {where}'
