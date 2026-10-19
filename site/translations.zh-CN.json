@@ -6546,5 +6546,14 @@
       "原创代码采用 GPL-3.0-only，版权属于 dumbad 及贡献者；内置并打过补丁的 Bevy crate 和 tools/vendor/ 下的工具保留各自的许可证，该许可证不授予对 Electronic Arts 的代码、数据、素材或商标的任何权利，也不涉及第三方地图和模组。项目为非官方项目，与 EA 无关。",
       "tools/claude-skills 收录了用于开发该引擎的 Claude Code 技能。该项目独立于本目录中的 Skate 3 Recomp 条目。"
     ]
+  },
+  "rikugan": {
+    "requirements": [
+      "所审 main 提交晚于 2026-09-25 发布的 v1.4.0，pyproject.toml 和两个插件清单声明的也是该版本。README 要求带 Hex-Rays 反编译器的 IDA Pro 9.0+ 或界面模式下的 Binary Ninja，以及 Python 3.10+，而 pyproject.toml 要求 3.11+；ida-plugin.json 列出 Windows、Linux 和 macOS 上的 IDA 9.0 至 9.2。通过管道从 GitHub 原始地址运行的安装脚本会自动检测宿主；Windows 还需安装最新的 Visual C++ 2015–2022 x64 运行库，因为 Rikugan 使用 IDA 自带的 PySide6/Shiboken。",
+      "至少需要一个模型服务：代码内置 Anthropic、OpenAI、Gemini、MiniMax、Codex 和本地 Ollama 提供程序，并支持任何 OpenAI 兼容端点；README 推荐使用 Claude 订阅的 OAuth 而非 API 密钥。打开的数据库中的工具结果会发送给所选服务；配置档可限制模型能读取哪些数据、使用哪些工具。Rikugan 还能连接 MCP 服务器，并复用 Claude Code 和 Codex 的技能。",
+      "README 称智能体在运行脚本前会征求许可，且绝不执行目标二进制文件。计划模式、运行中提问和消息排队都在宿主内完成，12 个内置技能可以用自定义技能扩展。自然语言打补丁（/modify）和 Binary Ninja 的 /deobfuscation 技能标为实验性。",
+      "CI 运行 Ruff 格式与代码检查、对核心和提供程序模块的 mypy 类型检查、借助 IDA 模拟对象对 tests/ 运行 pytest，以及 desloppify 评分回归门槛；发布工作流会检查标签与 plugin.json 的版本一致。仓库未发布基准测试；Synacktiv 2026-10-13 的一篇文章在 CREBench 的两个任务上将它与另一款 Binary Ninja 智能体比较，并把差距主要归因于提示词差异。本合集审阅了源码和文档，未运行插件或任何模型。",
+      "依 LICENSE 和两个插件清单采用 MIT 许可；IDA Pro、Hex-Rays、Binary Ninja 及模型服务保留各自的许可与条款。README 称项目仍在完善中，是与 Claude Code 一起“氛围编程”完成的，第一个版本一夜写成；仓库还附有 AGENTS.md 开发者指南。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
