@@ -3302,5 +3302,15 @@
       "DOS 程序及其文件由分析者自行提供；模拟的 C: 盘默认指向程序所在文件夹。转储文件存放在以程序 SHA-256 哈希命名的子文件夹中，生成的项目会传入预期校验和，因此覆盖代码不会作用于其他二进制。GDB 服务器默认在 10000 端口启动，文档说明 MCP HTTP 服务器默认启用，端口为 8081。Ghidra 插件位于单独的仓库，需要 Java 17。README 建议借助大语言模型改写生成的函数，并以该项目对 Cryo《沙丘》的 Cryogenic 重写作为实际示例。",
       "采用 Apache-2.0 许可；NOTICE 致谢 Aeon 项目，README 说明声音代码移植自 DOSBox Staging，CD 与软盘模拟也以其为参照，3rdparty 目录内置了预编译的 FastExpressionCompiler DLL。测试资源是小型 DOS 测试程序，大多在仓库中附有汇编源码。本次未模拟或重写任何程序，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "ps2-web-recomp": {
+    "name": "PS2 Web Recomp 浏览器游戏重编译工具",
+    "requirements": [
+      "README 报告目前已移植两款游戏：PAL 版 Gran Turismo 4 可在 Chrome 中全速运行，从启动一直玩到比赛；God of War II 可从菜单进入战斗，它没有用到任何游戏专用代码，但暴露了重编译器中的一个错误和向量单元时序中的一个错误。README 提醒，其他游戏很可能停在尚未实现的系统调用、IOP 库函数或 GS 功能上，而且向量单元的计算结果可能在最后一位与主机不同。",
+      "使用者需自备所拥有游戏的光盘镜像；仓库不含任何游戏代码或数据。README 说明生成的 C++ 和构建出的 WebAssembly 是对游戏可执行文件的转换，归游戏权利人所有，要求使用者只保留在自己的机器上、不得公开发布，并提醒任何能访问本地服务器的人都可以加载该游戏。",
+      "移植需要 Git、CMake 3.20+、Ninja、C++20 编译器（首选 Clang）、Python 3，镜像为 .7z 时还需 7-Zip；首次运行会安装 Emscripten SDK 并下载 wgpu-native，原生窗口还需要 SDL2。全部流程均在 x86-64 Linux 上运行过，脚本也能在 Apple 芯片的 macOS 上构建；每款游戏约需 300 MB 磁盘空间。网页需要 WebGPU，Linux 版 Chrome 须开启实验性开关才能使用（软件渲染回退对 3D 而言过慢），还需要跨源隔离响应头和 HTTP Range 支持。",
+      "项目没有发布版本、标签或 CI 工作流。scripts/test_vu_codegen.py 无需游戏光盘即可测试原生与 WebAssembly 的向量单元代码生成，软件 GS 光栅化器则保留为 GPU 输出的比对基准。帧率数据是作者在一台笔记本上的测量结果。审阅时最后一次提交为 2026-10-19。",
+      "采用 MIT 许可证；MPEG 解码器中改编自 Play! 的 VLC 表保留其 BSD 2-clause 声明，README 将 PCSX2、Play! 和 ps2sdk 头文件列为行为参考。项目声明与 Sony 及各游戏发行商无关联。本目录未构建或运行该工具，也不代表任何游戏兼容性。"
+    ]
   }
 }

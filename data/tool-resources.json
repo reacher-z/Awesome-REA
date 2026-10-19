@@ -8326,5 +8326,36 @@
       "https://github.com/OpenRakis/Spice86/releases/tag/latest",
       "https://www.nuget.org/packages/Spice86/16.1.0"
     ]
+  },
+  {
+    "id": "ps2-web-recomp",
+    "name": "PS2 Web Recomp",
+    "url": "https://github.com/snuri00/ps2-web-recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Statically recompiles PlayStation 2 games for the browser: eerecomp translates the Emotion Engine code of a game's boot executable into C++ that is compiled to WebAssembly, and a runtime emulates the rest of the console, including a high-level EE kernel, an interpreted I/O processor running the disc's IRX modules, the vector units, SPU2 sound and the Graphics Synthesizer on WebGPU compute shaders. Its port script repeats headless runs to find functions reached through pointers and vector-unit microprograms to compile ahead of time, then builds the web page and a native runner.",
+    "description_zh": "将 PlayStation 2 游戏静态重编译后在浏览器中运行：eerecomp 把游戏启动程序中的 Emotion Engine 代码转换为 C++，再编译为 WebAssembly；运行时负责仿真主机的其余部分，包括高层仿真的 EE 内核、以解释器运行光盘 IRX 模块的 I/O 处理器、向量单元、SPU2 音频，以及基于 WebGPU 计算着色器的 Graphics Synthesizer。其移植脚本会反复进行无界面运行，找出经指针调用的函数和需要预先编译的向量单元微程序，最后构建网页和原生运行程序。",
+    "evidence_url": "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README reports two titles brought up so far: the PAL Gran Turismo 4, playable from boot through races at full speed in Chrome, and God of War II from its menus into combat, which needed no game-specific code but exposed a recompiler bug and a vector-unit timing bug. It warns that another game will most likely stop at an unimplemented system call, IOP library function or GS feature, and that vector-unit results can differ from the console's in the last bit.",
+      "Users bring a disc image of a game they own; the repository contains no game code or data. The README states that the generated C++ and the built WebAssembly are translations of the game's executable that belong to its owners, asks users to keep them on their own machine and not publish them, and warns that anyone who can reach the local server can load the game.",
+      "Porting needs Git, CMake 3.20+, Ninja, a C++20 compiler (Clang preferred), Python 3 and 7-Zip for .7z images; the first run installs the Emscripten SDK and downloads wgpu-native, and the native window needs SDL2. Everything has been run on x86-64 Linux, and the scripts also build on Apple-silicon macOS; expect about 300 MB of disk per game. The page needs WebGPU, which Linux Chrome enables only behind flags (the software renderer fallback is too slow for 3D), plus cross-origin isolation headers and HTTP Range support.",
+      "There is no release, tag or CI workflow. scripts/test_vu_codegen.py exercises native and WebAssembly vector-unit code generation without a game disc, and a software GS rasterizer is kept as the reference for the GPU output. Frame rates are the author's measurements on one laptop. Last commit at review: 2026-10-19.",
+      "MIT-licensed; the MPEG decoder's VLC tables adapted from Play! keep its BSD 2-clause notice, and the README names PCSX2, Play! and the ps2sdk headers as behavior references. It states no affiliation with Sony or the games' publishers. This collection did not build or run it, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/scripts/port.sh",
+      "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/scripts/test_vu_codegen.py",
+      "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/CMakeLists.txt",
+      "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/LICENSE",
+      "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/runtime/src/ipu/NOTICE"
+    ]
   }
 ]
