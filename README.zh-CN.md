@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 324](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-324-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 166](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-166-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 325](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 167](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (150) · [应用](#app) (46)
+- [网站](#website) (19) · [游戏](#game) (151) · [应用](#app) (46)
 - [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (166) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (167) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -941,6 +941,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   借助 xboxrecomp 的分支将原版 Xbox《Dead or Alive Xtreme Beach Volleyball》可执行文件提升为 C 代码，并与手写运行时链接，由运行时替代内核导入、音频以及关键的 Direct3D 8 和 DirectSound API。安装程序依据使用者自有的美版光盘镜像在本地构建运行程序，并按经认证配方中的哈希校验生成文件；发布包只含工具和源码。将游戏逻辑改写为可读源码的工作目前只完成了启动线程入口。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/doaxvb-native-port-case/)
+
+- [**TH08 Web：基于重建源码的 WebAssembly 移植**](https://github.com/N0zoM1z0/th08-web)
+
+  使用 Emscripten 将日版 Touhou 8 1.00d 的重建 C++ 源码编译为 WebAssembly，并在游戏原有的 D3D8、DirectSound 与 DirectInput 形态接口之后接入 WebGL 2 渲染、Web Audio、浏览器输入和 IndexedDB 存档。玩家在本地选择自备的正版 DAT 文件。网页构建不主张与原二进制逐字节一致，是独立于已收录 TH08 重建的移植。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th08-web-wasm-port-case/)
 
 #### 工具、项目与集成
 
