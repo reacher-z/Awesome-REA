@@ -3933,5 +3933,14 @@
       "CI 在禁用 Plus DLC 的情况下构建 Windows x86 与 x64、Android 和 Linux 二进制；不运行测试，项目也未公布与原版引擎二进制的对比。FAQ 表示官方版本中已有的漏洞大多不会修复。本合集未构建或运行该项目。",
       "自定义的 RSDKv3/v4 Decompilation Source Code License v2 要求分发的预构建可执行文件默认关闭 DLC，禁止商业使用，禁止分发除独有模组素材以外的游戏素材，要求注明原 RSDK 作者 Christian “Taxman” Whitehead 以及反编译作者 Rubberduckycooly 和 st×tic，并要求分支遵守同样条款。所审来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "miasm": {
+    "name": "Miasm 逆向工程框架",
+    "requirements": [
+      "PyPI 上的最新版本和最新标签均为 0.1.5，发布于 2023-04-18；GitHub Releases 只更新到 2019 年的 v0.1.3。所审阅的 master 提交仍标为 0.1.5，但比该标签多 100 个提交，因此当前代码需从克隆的仓库用 pip 安装，或使用项目的 Docker 镜像。CI 在 Ubuntu 上以 Python 3.10 和 3.13 运行回归测试。",
+      "pyproject.toml 要求 Python 3.10+，依赖 future 和固定为 3.3.2 的 pyparsing。只有在存在 C 编译器时才会构建原生 JIT 扩展；否则安装会继续进行但缺少 JIT 相关功能，除非设置了 MIASM_REQUIRE_JIT=1。可选扩展包括 pycparser C 类型解析、用于求解器支持的依赖图和动态符号执行的 Z3、用于 LLVM 后端的 llvmlite 0.44.0、graphviz 导出，以及用于模拟 Windows 加密 API 的 pycryptodome。README 标明 LLVM 后端在 Windows 上未经测试。",
+      "二进制、shellcode 和内存转储由分析者自行提供。自带的 Windows API 模拟面向 32 位 x86，其他库函数的效果通过 Python 回调来建模。IDA 插件只使用 Miasm 的部分功能，不包含 JIT。",
+      "采用 GPL-2.0-only 许可。提升得到的 IR、化简后的表达式和模拟结果只是分析辅助，不能证明与原始代码等价。本次未分析或模拟任何二进制。"
+    ]
   }
 }

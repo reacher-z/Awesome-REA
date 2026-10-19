@@ -10588,5 +10588,38 @@
       "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/.github/workflows/build.yml",
       "https://github.com/RSDKModding/RSDKv4-Decompilation/releases/tag/1.3.3"
     ]
+  },
+  {
+    "id": "miasm",
+    "name": "Miasm",
+    "url": "https://github.com/cea-sec/miasm",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python reverse-engineering framework for analyzing, modifying and generating binary programs. It reads, modifies and generates 32- and 64-bit PE and ELF files, assembles and disassembles x86, ARM, AArch64, MIPS, PowerPC, SH4, MSP430 and MeP code, and lifts it into its own intermediate language for symbolic execution, SSA and data-flow analysis, dependency graphs and expression simplification aimed at deobfuscation. Its JIT emulator runs shellcode or parts of binaries through LLVM, GCC, Clang or pure-Python backends, with Python callbacks that stand in for library functions, sandboxes with selected Windows API and Linux emulation, and dynamic symbolic execution through Z3.",
+    "description_zh": "用于分析、修改和生成二进制程序的 Python 逆向工程框架。它可读取、修改和生成 32 位与 64 位 PE 和 ELF 文件，汇编和反汇编 x86、ARM、AArch64、MIPS、PowerPC、SH4、MSP430 与 MeP 代码，并将其提升到自有的中间语言，用于符号执行、SSA 与数据流分析、依赖图以及面向反混淆的表达式化简。其 JIT 模拟器可借助 LLVM、GCC、Clang 或纯 Python 后端运行 shellcode 或二进制中的部分代码，用 Python 回调代替库函数，提供模拟部分 Windows API 和 Linux 行为的沙箱，并可通过 Z3 进行动态符号执行。",
+    "evidence_url": "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "PyPI’s latest release and the newest tag are 0.1.5 from 2023-04-18; GitHub releases stop at v0.1.3 from 2019. The reviewed master commit still declares 0.1.5 but is 100 commits ahead of that tag, so current code is installed from a clone with pip or taken from the project’s Docker images. CI runs the regression suite on Ubuntu with Python 3.10 and 3.13.",
+      "pyproject.toml requires Python 3.10+ with future and pyparsing, pinned to 3.3.2. Native jitter extensions are built only when a C compiler is available; otherwise installation continues without the jitter features unless MIASM_REQUIRE_JIT=1 is set. Optional extras add pycparser C-type parsing, Z3 for solver-backed dependency graphs and dynamic symbolic execution, llvmlite 0.44.0 for the LLVM backend, graphviz export and pycryptodome for Windows crypto API emulation. The README marks the LLVM backend untested on Windows.",
+      "Binaries, shellcode and memory dumps come from the analyst. The bundled Windows API emulation targets 32-bit x86, and other library effects are modeled with Python callbacks. The IDA plugins use a subset of Miasm without the jitter.",
+      "GPL-2.0-only. Lifted IR, simplified expressions and emulation results are analysis aids, not proof of equivalence with the original code. No binaries were analyzed or emulated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/README.md#L503-L603",
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/pyproject.toml",
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/CHANGELOG.md",
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/LICENSE",
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/.github/workflows/tests.yml",
+      "https://github.com/cea-sec/miasm/tree/3671fc24d6e625c2d75f3311724eb6b0c97664f8/miasm/arch",
+      "https://github.com/cea-sec/miasm/tree/3671fc24d6e625c2d75f3311724eb6b0c97664f8/miasm/analysis",
+      "https://github.com/cea-sec/miasm/tree/3671fc24d6e625c2d75f3311724eb6b0c97664f8/miasm/os_dep",
+      "https://pypi.org/project/miasm/0.1.5/"
+    ]
   }
 ]
