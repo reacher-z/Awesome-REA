@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 188 | 186 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 246 | 246 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 157 | 157 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 189 | 187 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 240 | 240 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 162 | 162 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-197 occurrences have catalog links. They reference 192 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+198 occurrences have catalog links. They reference 193 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 284 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 290 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -146,10 +146,16 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Minecraft × Plants vs. Zombies: a reported playable REA-assisted mashup | Insufficient evidence | [Source](https://x.com/Relph35432/status/2109912103813599539) |
 | Three Kingdoms XIV: a reported trainer-to-MCP project | Insufficient evidence | [Source](https://x.com/0xMcDonald/status/2109913567428592046) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | Pending | [Source](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
+| Typeless: a reported local voice-input alternative built with REA | Insufficient evidence | [Source](https://x.com/TuyetloanP81840/status/2109971905336037671) |
+| Supermodel: initial Real3D Pro-1000 image-generator emulation | Already curated | [Source](https://x.com/BartronPolygon/status/2110028302215999825) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
+| 48-million-row database: a second-hand REA query-optimization report | Insufficient evidence | [Source](https://x.com/mika_systems/status/2110037357164441796) |
 | GTM tool: a reported REA-assisted lead and email workflow | Insufficient evidence | [Source](https://github.com/tashfeenahmed/kinetic/blob/6ccbff87d190aea8e11be993e25783f099b55a93/README.md) |
 | TCLimate: reconstructing selected TCL Home cloud controls | Already curated | [Source](https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/Docs/Investigation.md) |
 | Tea-export website: reported REA-assisted rebuild | Insufficient evidence | [Source](https://x.com/i/status/2110010062597230838) |
+| iTerm: Arabic text rendering informed by REA | Insufficient evidence | [Source](https://x.com/khaled_cli/status/2110091122517410164) |
+| Bloomberg-style research terminal: a reported REA/Claude build | Insufficient evidence | [Source](https://x.com/ludoonchart/status/2110082824371908790) |
+| Projector IR remote: inferring and testing a missing focus command | Insufficient evidence | [Source](https://x.com/notyroon/status/2110090047579926826) |
 | Ledger Reborn: an independent accounting app informed by QuickBooks study | Already curated | [Source](https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/docs/CASE_STUDY.md) |
 | Visor: an independent Ray-Ban Meta glasses client | Already curated | [Source](https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/README.md) |
 | Profound: a reported REA-assisted SaaS reconstruction | Insufficient evidence | [Source](https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/README.md) |

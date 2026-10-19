@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 188 | 186 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 246 | 246 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 157 | 157 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 189 | 187 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 240 | 240 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 162 | 162 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-197 个出现项含目录链接；共关联 192 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+198 个出现项含目录链接；共关联 193 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 284 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 290 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -146,10 +146,16 @@
 | Minecraft × Plants vs. Zombies: a reported playable REA-assisted mashup | 证据不足 | [来源](https://x.com/Relph35432/status/2109912103813599539) |
 | Three Kingdoms XIV: a reported trainer-to-MCP project | 证据不足 | [来源](https://x.com/0xMcDonald/status/2109913567428592046) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | 待核查 | [来源](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
+| Typeless: a reported local voice-input alternative built with REA | 证据不足 | [来源](https://x.com/TuyetloanP81840/status/2109971905336037671) |
+| Supermodel：Real3D Pro-1000 图像生成器的初步模拟 | 已收录 | [来源](https://x.com/BartronPolygon/status/2110028302215999825) |
 | Eleven | 已收录 | [来源](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
+| 48-million-row database: a second-hand REA query-optimization report | 证据不足 | [来源](https://x.com/mika_systems/status/2110037357164441796) |
 | GTM tool: a reported REA-assisted lead and email workflow | 证据不足 | [来源](https://github.com/tashfeenahmed/kinetic/blob/6ccbff87d190aea8e11be993e25783f099b55a93/README.md) |
 | TCLimate：重建选定的 TCL Home 云端控制 | 已收录 | [来源](https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/Docs/Investigation.md) |
 | Tea-export website: reported REA-assisted rebuild | 证据不足 | [来源](https://x.com/i/status/2110010062597230838) |
+| iTerm: Arabic text rendering informed by REA | 证据不足 | [来源](https://x.com/khaled_cli/status/2110091122517410164) |
+| Bloomberg-style research terminal: a reported REA/Claude build | 证据不足 | [来源](https://x.com/ludoonchart/status/2110082824371908790) |
+| Projector IR remote: inferring and testing a missing focus command | 证据不足 | [来源](https://x.com/notyroon/status/2110090047579926826) |
 | Ledger Reborn：基于 QuickBooks 研究的独立记账实现 | 已收录 | [来源](https://github.com/lxistired/ledger-reborn/blob/d7f6b8a1f4ad6c4ae8b10100d1c93cf15940c21d/docs/CASE_STUDY.md) |
 | Visor：独立的 Ray-Ban Meta 眼镜客户端 | 已收录 | [来源](https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/README.md) |
 | Profound: a reported REA-assisted SaaS reconstruction | 证据不足 | [来源](https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/README.md) |

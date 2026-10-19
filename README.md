@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 338](https://img.shields.io/badge/resources-338-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 176](https://img.shields.io/badge/cases-176-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 339](https://img.shields.io/badge/resources-339-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 177](https://img.shields.io/badge/cases-177-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (159) · [App](#app) (48)
-- [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
+- [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (12)
 
 **Research and workflows**
 
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (176) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (177) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1609,6 +1609,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A Flipper Zero app that bit-bangs Telink’s SWire debug interface to dump and reflash TLSR825x Zigbee devices, with static-analysis notes on the dumps and freshly written firmware for two of them. For Tuya TS0044/TS0046 scene remotes, the notes trace the stock \~500 ms single-click delay to a double-click window; the replacement firmware drops that window while presenting the stock model IDs to Zigbee2MQTT. The latest Zigbee build is marked unverified for pairing, actions and battery reporting.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/flipper-telink-tuya-remote-firmware-case/)
+
+- [**Supermodel: initial Real3D Pro-1000 image-generator emulation**](https://github.com/trzy/Supermodel)
+
+  Adds emulation of Real3D’s Pro-1000, the SCSI-attached image generator from which Sega’s Model 3 graphics hardware derives, to the Supermodel arcade emulator. It boots user-supplied Pro-1000 firmware from the SDK disc, emulates the board’s interrupt, JTAG and UART hardware, and exposes the firmware’s built-in monitor on the console. Nothing renders yet, and SCSI host communication is unimplemented.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/supermodel-real3d-pro1000-emulation-case/)
 
 #### Tools, projects and integrations
 
