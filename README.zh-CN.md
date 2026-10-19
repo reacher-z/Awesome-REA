@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 403](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-403-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 404](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-404-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (39) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (40) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1881,6 +1881,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   命令行二进制差异分析引擎，通过 pyghidra 以无界面方式驱动 Ghidra：导入并分析新旧两个版本的二进制，列出新增、删除和修改的函数，主要用于补丁比对。默认的 VersionTrackingDiff 引擎组合了多个 Ghidra 版本跟踪关联器和 BSim 匹配，另有基于符号名和结构图的较简单引擎，并提供 GhidraDiffEngine 基类供编写自定义比对器。结果以 JSON 和带 Mermaid 图表的 Markdown 输出，附有字符串、被调用与调用函数及二进制元数据的元差异，也可另外生成并排对照的 HTML。
 
   工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidriff/)
+
+- [**Ddisasm Datalog 可重汇编反汇编器**](https://github.com/GrammaTech/ddisasm)
+
+  GrammaTech 开发的 Datalog 反汇编器，可将 x86-32、x86-64、ARM32、ARM64 和 MIPS32 架构的 ELF 与 PE 二进制转换为 GTIRB 中间表示。它先解码所有可能指令的超集，再用 Soufflé Datalog 规则和加权启发式推断代码位置、符号化结果和函数边界；gtirb-pprinter 可将结果输出为可重新汇编的汇编代码或重建的二进制，期间还可借助 GTIRB API 或 gtirb-rewriting 修改程序。推断出错时，用户可通过提示文件添加 Datalog 事实或调整启发式权重。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ddisasm/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

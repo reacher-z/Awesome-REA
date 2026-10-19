@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 403](https://img.shields.io/badge/resources-403-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 404](https://img.shields.io/badge/resources-404-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (39) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (40) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1880,6 +1880,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Command-line binary diffing engine that drives Ghidra headlessly through pyghidra: it imports and analyzes an old and a new binary, then reports added, deleted and modified functions, with patch diffing as its main use. The default VersionTrackingDiff engine combines several Ghidra Version Tracking correlators with BSim matching, alongside simpler symbol-name and structural-graph engines and a GhidraDiffEngine base class for custom differs. Results are written as JSON and Markdown with Mermaid charts and meta diffs of strings, called and calling functions and binary metadata, plus optional side-by-side HTML.
 
   Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/ghidriff/)
+
+- [**Ddisasm**](https://github.com/GrammaTech/ddisasm)
+
+  GrammaTech's Datalog disassembler, which turns ELF and PE binaries for x86-32, x86-64, ARM32, ARM64 and MIPS32 into the GTIRB intermediate representation. It decodes a superset of possible instructions, then applies Soufflé Datalog rules and weighted heuristics to infer code locations, symbolization and function boundaries; gtirb-pprinter turns the result into reassemblable assembly or a rebuilt binary, and the GTIRB APIs or gtirb-rewriting can modify it in between. User hint files add Datalog facts or change heuristic weights where inference goes wrong.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/ddisasm/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
