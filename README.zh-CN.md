@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 302](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-302-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 303](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-303-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (25) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1620,6 +1620,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。
 
   集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
+
+- [**crashlens 崩溃分诊工具**](https://github.com/mingleiw/crashlens)
+
+  崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。
+
+  集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 

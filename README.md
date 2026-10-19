@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 302](https://img.shields.io/badge/resources-302-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 303](https://img.shields.io/badge/resources-303-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (25) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1619,6 +1619,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Nous Research’s Hermes Agent plugin package for REA. One catalog install registers REA’s MCP server, pinned to rea-agents 6.4.0 and launched through npx over stdio, with REA’s workflow skill adapted for Hermes and a separate crash-triage skill. About 170 REA tools stay behind Hermes’ on-demand tool search, and the adapted skill asks before tools that run programs, drive apps or change a connected Android device.
 
   Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/hermes-rea-plugin/)
+
+- [**crashlens**](https://github.com/mingleiw/crashlens)
+
+  A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.
+
+  Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/crashlens-rea-crash-triage/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
