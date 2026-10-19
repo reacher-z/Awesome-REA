@@ -5194,5 +5194,14 @@
       "发现和服务扫描会在所连接的总线或网络上发送诊断请求。其他模块会发送、重放或模糊测试帧，并执行侵入性诊断操作；这些不在本条目范围内，本条目只涵盖流量捕获和诊断服务发现。",
       "采用 GPL-3.0 许可。附带的单元测试在虚拟 CAN 总线上针对模拟 ECU 运行。本次未捕获或发送任何 CAN 流量。"
     ]
+  },
+  "rms-runtime-mobile-security": {
+    "name": "Runtime Mobile Security（RMS）移动应用运行时分析界面",
+    "requirements": [
+      "审阅时的最新版本为 1.5.25，发布于 2026-07-01，与所审阅的 master 提交一致；可通过 npm 安装（包名 rms-runtime-mobile-security），package.json 依赖 Frida 17 的 Node 绑定。README 称它在 macOS 上配合 Android 模拟器、Amazon Fire Stick 4K、iPhone 7 和 Chrome 测试过，在 Windows 和 Linux 上可能需要少量调整。",
+      "需要 Node.js、Frida 命令行工具，并在唯一连接的测试设备上预先运行 frida-server；RMS 无法同时处理多台设备。它还会附加到一个默认系统进程，以列出预先加载的类。仅应在使用者有权分析的应用和设备上使用。",
+      "Web 界面默认使用 5491 端口；rms.js 调用 server.listen 时只传入端口，因此适用 Node 默认的全接口绑定，所审阅的代码也没有登录验证。README 提到复杂方法有时无法加载，且不支持 Safari。",
+      "采用 GPL-3.0 许可。随附的自定义 Frida 脚本未经审阅，本条目也不作介绍。本次未安装或运行该工具。"
+    ]
   }
 }
