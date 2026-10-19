@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 350](https://img.shields.io/badge/resources-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 350](https://img.shields.io/badge/resources-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2215,7 +2215,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2223,7 +2223,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
-- [Protocols](#papers-protocol-analysis) (10)
+- [Protocols](#papers-protocol-analysis) (11)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
 
@@ -3504,6 +3504,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Requires plaintext payloads. Evaluation covers DNS, DHCP and NTP with protocol-tuned parameters. Single-byte fields are not inferred; zero-filled fields, character sequences and pseudo-random values can cause errors. FMS needs known field boundaries for validation. The output is approximate segmentation, not field semantics, a state machine or complete application/device behavior.
 
   **Authors:** Stephan Kleber et al.
+
+  </details>
+
+- [**Prospex: Protocol Specification Extraction**](https://ieeexplore.ieee.org/document/5207640)
+
+  Prospex infers message formats and a protocol state machine from execution traces of a Linux server handling client sessions. Dynamic taint analysis splits each session into messages and recovers their formats; messages are then clustered into types by input-format, execution and server-impact similarity, such as the system calls, outputs and file paths a message triggers. The observed type sequences form an augmented prefix tree acceptor, which prerequisite and end-state heuristics label before Exbar computes a minimal consistent automaton. The resulting specifications are translated for the Peach fuzzer to reach later protocol states. The evaluation covers the Agobot command-and-control protocol, SMTP on Sendmail, SMB on Samba and SIP on Asterisk.
+
+  IEEE S&amp;P 2009 · Conference paper · [PDF](https://sites.cs.ucsb.edu/~chris/research/doc/oakland09_prospex.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-prospex/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Prospex traces one endpoint, the server, and its taint tool runs only on Linux, so only Linux server binaries were analyzed. It cannot handle encrypted traffic: TLS sessions made up the 6.5% of 31,903 Postfix sessions that the inferred SMTP specification could not parse. Training sets are small (for example 16 SMTP and 31 SMB sessions), and the inferred machines cover only behavior exercised during training; two SMB states are artifacts of limited training variety, and SMB recall against the reference automaton is 0.58. Reference state machines were built manually by the authors, and soundness was checked with 50,000 random walks per protocol; the sk-strings and beams baselines are state-machine learners, not full protocol reverse-engineering systems. The fuzzing case studies found previously known issues in an older Samba release and in Asterisk, not new vulnerabilities in the latest Samba or Windows XP SMB versions tested.
+
+  **Authors:** Paolo Milani Comparetti et al.
 
   </details>
 <!-- END GENERATED PAPERS -->

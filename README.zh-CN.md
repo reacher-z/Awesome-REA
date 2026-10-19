@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 350](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 182](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 350](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 182](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2216,7 +2216,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2224,7 +2224,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
-- [协议](#papers-protocol-analysis) (10)
+- [协议](#papers-protocol-analysis) (11)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -3505,6 +3505,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 需要明文载荷。评测覆盖 DNS、DHCP 和 NTP，并针对各协议调节参数。方法无法推断单字节字段；全零字段、字符序列和伪随机值可能导致误差。FMS 验证需要已知字段边界。输出是近似报文分段，不是字段语义、状态机或完整应用／设备行为。
 
   **作者:** Stephan Kleber 等
+
+  </details>
+
+- [**Prospex：协议规范提取**](https://ieeexplore.ieee.org/document/5207640)
+
+  Prospex 从 Linux 服务端处理客户端会话时的执行轨迹推断报文格式与协议状态机。它利用动态污点分析把每个会话切分为报文并恢复其格式；再依据输入格式、执行过程及对服务端影响（如报文触发的系统调用、输出与文件路径）的相似度将报文聚类为不同类型。观察到的类型序列构成增广前缀树接受器，先由前置条件与结束状态启发式标注，再用 Exbar 求出一致的最小自动机。所得规范被转换供 Peach 模糊测试器使用，以到达协议的后续状态。评测覆盖 Agobot 命令与控制协议、Sendmail 上的 SMTP、Samba 上的 SMB 以及 Asterisk 上的 SIP。
+
+  IEEE S&amp;P 2009 · 会议论文 · [PDF](https://sites.cs.ucsb.edu/~chris/research/doc/oakland09_prospex.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-prospex/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** Prospex 只跟踪服务端一侧，其污点工具仅在 Linux 上运行，因此只分析了 Linux 服务端二进制。它无法处理加密流量：在 31,903 个 Postfix 会话中，推断的 SMTP 规范无法解析的 6.5% 均为 TLS 会话。训练集规模较小（例如 16 个 SMTP 会话、31 个 SMB 会话），推断出的状态机只覆盖训练中出现过的行为；两个 SMB 状态是训练数据多样性不足造成的伪状态，SMB 相对参考自动机的召回率为 0.58。参考状态机由作者手工构建，可靠性检验对每种协议进行 50,000 次随机游走；sk-strings 与 beams 基线是状态机学习算法，并非完整的协议逆向系统。模糊测试案例发现的是旧版 Samba 与 Asterisk 中已知的问题，而非所测最新 Samba 或 Windows XP SMB 实现中的新漏洞。
+
+  **作者:** Paolo Milani Comparetti 等
 
   </details>
 <!-- END GENERATED PAPERS -->
