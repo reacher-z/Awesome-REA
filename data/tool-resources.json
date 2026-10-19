@@ -7420,5 +7420,42 @@
       "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/.github/workflows/msvc-ci.yml",
       "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/LICENSE"
     ]
+  },
+  {
+    "id": "aoe-free-software-remake-case",
+    "name": "Age of Empires Free Software Remake: a re-implementation on the original data",
+    "url": "https://github.com/FolkertVanVerseveld/aoe",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements Microsoft’s Age of Empires and its Rise of Rome expansion as a cross-platform C++17 engine on SDL2 and OpenGL that loads the original game’s DRS archives and language.dll resources. README says it mimics the Windows API and the Genie engine for compatibility and reconstructs some code from the disassembly; the repository adds format notes and Python tools for inspecting the original data files. Only very basic gameplay through a multiplayer session exists so far, so it is an early engine case rather than a playable replacement.",
+    "description_zh": "以基于 SDL2 和 OpenGL 的跨平台 C++17 引擎重新实现 Microsoft 的《帝国时代》及其资料片《罗马复兴》，载入原版游戏的 DRS 归档和 language.dll 资源。README 称项目为兼容起见模仿 Windows API 和 Genie 引擎，部分代码依据反汇编重建；仓库另附格式笔记和用于检查原版数据文件的 Python 工具。目前只能通过多人会话进行非常基础的游戏，因此这是一个早期引擎案例，而非可替代原版游玩的实现。",
+    "evidence_url": "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master snapshot (2026-09-20) sets CMake version 0.1, and the repository has no releases or tags; the user guide says no binary builds are provided. README reports only very basic gameplay and only multiplayer mode: single-player means hosting a session and adding computer players, which only gather resources until attacked. doc/reverse_engineering documents the DRS archive contents, the Windows API functions the original imports, the scenario format, civilizations and unit statistics.",
+      "Needs a legitimate copy of Age of Empires or Rise of Rome, on the CD-ROM or installed: the engine loads Border.drs, graphics.drs, Interfac.drs, sounds.drs and Terrain.drs from the data folder plus language.dll, and expects the game fonts COPRGTB.TTF and COPRGTL.TTF that the original installer adds. The repository contains no game data, and community replacement assets are not supported yet.",
+      "README lists Windows 10+, macOS Sequoia 15.7.7, Fedora 44 and Ubuntu 22+ as tested, while INSTALL still warns that Linux builds look for hard-coded legacy TTF font paths. Builds use CMake 3.11+ with C99 and C++17 against SDL2, SDL2_image, SDL2_mixer and OpenGL, plus the imgui, tracy, wepoll and miniz submodules; Windows builds use Visual Studio with vcpkg or MinGW.",
+      "GitHub Actions builds the game with Clang on Ubuntu and Fedora and runs the Google Test suite in headless mode; its tests cover networking, the protocol, the server, SDL and a UI menu rather than equivalence with the original executable. No comparison with the original game is published; this collection built or ran nothing.",
+      "LICENSE applies Apache-2.0; the submodules and the bundled headers in game/src/external keep their own licenses. README states that all copyrighted material and trademarks belong to their respective owners and calls the work an educational non-profit project. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/INSTALL",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/doc/user_guide.md",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/HACKING.md",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/CMakeLists.txt",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/.gitmodules",
+      "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/doc/reverse_engineering",
+      "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/tools",
+      "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/game/src/legacy",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/.github/workflows/unit_test.yml",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/.github/workflows/test_distros.yml",
+      "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/game/tests",
+      "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/LICENSE"
+    ]
   }
 ]
