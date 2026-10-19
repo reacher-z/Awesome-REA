@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 377](https://img.shields.io/badge/resources-377-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 378](https://img.shields.io/badge/resources-378-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (168) · [App](#app) (57)
+- [Website](#website) (20) · [Game](#game) (168) · [App](#app) (58)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1553,6 +1553,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Alpha-stage Node.js CLI that splits a React Native JavaScript bundle (index.android.bundle or main.jsbundle), an unbundled js-modules folder, or Webpack entrypoint and chunk bundles into one readable file per module. Tagger, editor and decompiler plugins working on a Babel AST undo compilation artifacts such as Babel helpers, comma-operator chains and shortened booleans, turn element calls back into JSX and can rewrite modules as ES6 imports and exports, after which ESLint and Prettier tidy the output. Modules recognized as npm packages are skipped unless requested, and one module ID can limit output to that module and its dependencies.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/react-native-decompiler/)
+
+- [**hermes-decomp**](https://github.com/SymbioticSec/hermes-decomp)
+
+  Rust decompiler and analysis toolkit for Hermes bytecode (.hbc), the compiled form React Native apps ship for the Hermes engine; the README lists HBC versions 40 to 99. Its hermes-decomp CLI shows file information, disassembles, decompiles whole bundles or single functions to JavaScript, with a slower deep mode that recovers more names, and provides a terminal UI, cross-references, call graphs, control-flow graphs, Metro module and closure views and bytecode diffing. A separate hermes-mcp server exposes the read and analysis functions as MCP tools, and the hbc-decomp crate offers them as a Rust library.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/hermes-decomp/)
 
 <a id="native-binary"></a>
 ### Native Binary
