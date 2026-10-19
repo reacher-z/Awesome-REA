@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 418](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-418-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 419](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-419-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (50) · [固件与硬件](#firmware) (19) · [协议](#protocol) (15)
+- [原生二进制](#native-binary) (51) · [固件与硬件](#firmware) (19) · [协议](#protocol) (15)
 
 **论文与工作流**
 
@@ -1953,6 +1953,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   轻量级 C11 x86/x86-64 反汇编与代码生成库。解码器可报告每条指令的操作数、所访问的 CPU 与 FPU 标志、ISA 集与扩展以及分支类型；格式化器可输出 Intel、MASM 或 AT&amp;T 语法，编码器则根据编码请求生成指令，请求也可由已解码的指令转换而来。仓库附带 ZydisDisasm 与 ZydisInfo 命令行工具，官方 Rust 与 Python 3 绑定位于独立仓库。
 
   工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/zydis/)
+
+- [**QBDI 动态二进制插桩框架**](https://github.com/QBDI/QBDI)
+
+  Quarkslab 开发的模块化动态二进制插桩（DBI）框架：在目标进程内部按基本块对程序进行 JIT 重编译，使插桩工具可以在指令执行前后、内存读写以及虚拟机事件上注册回调。引擎以库的形式提供，可在进程中任意位置启动插桩执行，并可通过 C、C++、Python（PyQBDI）或 Frida JavaScript 编写脚本。它不绑定特定注入方式：自带基于 LD\_PRELOAD 的 QBDIPreload，用于 Linux 和 macOS 动态可执行文件，并已与 Frida 集成。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/qbdi/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

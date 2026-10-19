@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 418](https://img.shields.io/badge/resources-418-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 419](https://img.shields.io/badge/resources-419-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (50) · [Firmware and Hardware](#firmware) (19) · [Protocol](#protocol) (15)
+- [Native Binary](#native-binary) (51) · [Firmware and Hardware](#firmware) (19) · [Protocol](#protocol) (15)
 
 **Research and workflows**
 
@@ -1952,6 +1952,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Lightweight C11 x86/x86-64 disassembler and code-generation library. Its decoder reports each instruction's operands, accessed CPU and FPU flags, ISA set and extension and branch type; the formatter prints Intel, MASM or AT&amp;T syntax, and the encoder assembles instructions from encoder requests, which can also be derived from decoded instructions. ZydisDisasm and ZydisInfo command-line tools are included, and the official Rust and Python 3 bindings live in separate repositories.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/zydis/)
+
+- [**QBDI**](https://github.com/QBDI/QBDI)
+
+  Quarkslab's modular dynamic binary instrumentation (DBI) framework, which JIT-recompiles a program's basic blocks inside its own process so that an instrumentation tool can register callbacks before or after instructions, on memory reads and writes, and on VM events. The engine is a library that can start an instrumented execution anywhere in a process, scripted from C, C++, Python (PyQBDI) or Frida JavaScript. It has no preferred injection method: it bundles the LD\_PRELOAD-based QBDIPreload for Linux and macOS dynamic executables and is integrated with Frida.
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/qbdi/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
