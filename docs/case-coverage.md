@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 181 | 179 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 264 | 264 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 146 | 146 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 263 | 263 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 147 | 147 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 191 occurrences have catalog links. They reference 185 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 265 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 266 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -287,6 +287,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Driver Recompiled: a psxrecomp setup host that builds the game locally | Already curated | [Source](https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/README.md) |
 | REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer | Already curated | [Source](https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md) |
 | Snowball War: a bounded REA-assisted minigame reconstruction | Already curated | [Source](https://github.com/tuunanet/rea-ski-or-die-reconstruction/blob/0eac0671c90e21a16e663da7772b60710101ef7f/README.md) |
+| 🏡 Animal Crossing — ACreTeam/forest | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
 | Animal Crossing: a native PC port of the GameCube decompilation | Already curated | [Source](https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/README.md) |
 | Animal Crossing: matching GameCube decompilation | Already curated | [Source](https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/README.md) |
 | Animal Crossing: Wild World: matching Korean DS decompilation with differential runtime checks | Already curated | [Source](https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/README.md) |
