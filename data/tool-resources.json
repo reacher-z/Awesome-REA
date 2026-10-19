@@ -16440,5 +16440,37 @@
       "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/make.js",
       "https://github.com/Rob--W/crxviewer/blob/c1a0a7f63983600a960e3d02d8a36c4142c7cca4/LICENSE"
     ]
+  },
+  {
+    "id": "har-to-openapi",
+    "name": "har-to-openapi",
+    "url": "https://github.com/jonluca/har-to-openapi",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "TypeScript library and CLI that infers OpenAPI 3.0 or 3.1 documents from HAR captures of HTTP traffic, loosely based on har2openapi. Requests are grouped into one document per domain, with options to turn IDs in paths into parameters, infer query, form and JSON body schemas from observed values, and merge several captures into the same operations. Optional settings extract reusable component schemas, keep multiple redacted examples, mark fields required only when every sample contains them, attach per-field observation counts as evidence and apply an OpenAPI Overlay so hand-written names and corrections survive regeneration.",
+    "description_zh": "TypeScript 库及命令行工具，可根据 HTTP 流量的 HAR 抓包记录推断 OpenAPI 3.0 或 3.1 文档，大致基于 har2openapi 改写。请求按域名分别生成文档，可选择把路径中的 ID 转为参数，根据观测值推断查询参数、表单和 JSON 请求体的结构，并把多份抓包合并到相同的操作中。可选设置还能提取可复用的组件模式、保留多个经脱敏的示例、仅在所有样本都包含某字段时才将其标为必填、附加逐字段的观测计数作为依据，并应用 OpenAPI Overlay，使手工补充的名称和修正在重新生成后得以保留。",
+    "evidence_url": "https://github.com/jonluca/har-to-openapi/blob/432e096aa1d7814a39dcf772f40dc93cdd9c1620/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 432e096 from 2026-09-07, tagged v3.0.1 and published to npm the same day; v3.0.0, released a day earlier, added capture merging, reusable schemas, overlays, redaction, reports and requiredness evidence. Node.js 22.19.0+ is required; it installs from npm as a library or runs as the har-to-openapi command. CI tests Node 24 and the latest Node on Linux, macOS and Windows.",
+      "Input is one or more HAR files the user records, plus optional JSON or YAML configuration and overlay files. Without --multi-spec the CLI returns only the first domain's document. --validate and --strict check the result locally, and a conversion report lists counts and diagnostics for filtered entries, parse failures and schema fallbacks.",
+      "The README states that observations describe finite captures and that a field present in every capture does not establish an API contract, so requirements should be confirmed with the API owner and recorded in an overlay. Endpoints, parameters and responses absent from the captures do not appear, and the default requiredness setting keeps the earlier legacy behavior.",
+      "Generated documents copy captured values as examples unless examples are turned off or a redact list masks them; the README presents redaction as a step before sharing, and the reviewed commit closed further redaction gaps. Convert only traffic you are authorized to capture and analyze.",
+      "MIT. Nothing was installed and no captures were converted."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jonluca/har-to-openapi/blob/432e096aa1d7814a39dcf772f40dc93cdd9c1620/package.json",
+      "https://github.com/jonluca/har-to-openapi/blob/432e096aa1d7814a39dcf772f40dc93cdd9c1620/src/config.ts",
+      "https://github.com/jonluca/har-to-openapi/blob/432e096aa1d7814a39dcf772f40dc93cdd9c1620/.github/workflows/test.yml",
+      "https://github.com/jonluca/har-to-openapi/blob/432e096aa1d7814a39dcf772f40dc93cdd9c1620/LICENSE",
+      "https://github.com/jonluca/har-to-openapi/releases/tag/v3.0.1",
+      "https://github.com/jonluca/har-to-openapi/releases/tag/v3.0.0",
+      "https://www.npmjs.com/package/har-to-openapi/v/3.0.1"
+    ]
   }
 ]
