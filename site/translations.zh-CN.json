@@ -3340,5 +3340,14 @@
       "游戏光盘和可执行文件由使用者自行提供。README 将需单独构建的 OpenBIOS 作为受版权保护的零售版 BIOS 的替代品，所审阅的源码树中不含零售版 BIOS、Psy-Q 库或游戏文件。文档指出，大多数 CPU 调试功能需要关闭动态重编译并启用调试器；用 Ghidra 调试需要 gdb-multiarch 和 Ghidra 10.3+。Web 服务器启用后默认在所有网络接口的 8080 端口监听，文档提醒这意味着网络中的其他机器也能访问。",
       "PCSX-Redux 采用 GPL-2.0 许可；OpenBIOS 位于采用 MIT 许可的 nugget 子模块中，LICENSES.md 列出了各自保留许可的第三方库，其中部分经过修改后内置。本次未审阅硬件设计和 wiki 研究资料，也未运行模拟器、游戏或调试会话；所审来源未确立与 REA 的关联，也未确立被某个具体反编译项目使用。"
     ]
+  },
+  "obfuscator-io-deobfuscator": {
+    "name": "Obfuscator.io 专用反混淆工具",
+    "requirements": [
+      "审阅时的 npm 版本为 obfuscator-io-deobfuscator 1.0.6，发布于 2025-03-27。所审阅的 main 分支提交合并于 2026-08-09，新增了尚未发布的字符串数组包装函数识别改进，以及从源码运行命令行工具的 README 说明；package.json 中的版本号仍为 1.0.6。仓库未发布 GitHub Release。",
+      "可全局安装 obfuscator-io-deobfuscator 命令行工具，它接受一个输入文件和可选的输出路径；也可以用 npm 和 TypeScript 从源码构建。它会反复执行基于 Babel 的各项转换，最多 50 轮；package.json 未声明 Node.js 版本范围。在线版本位于 obf-io.deobfuscate.io；本次只审阅了仓库。",
+      "输入必须是 Obfuscator.io 或兼容分支版本生成的 JavaScript；其他混淆器不在其适用范围内，通用混淆模式可改用作者的通用工具 javascript-deobfuscator。README 称它不会运行不受信任的代码，也不使用沙箱；还原出的字符串和控制流仍需对照原始脚本核实。",
+      "LICENSE 文件为 Apache-2.0，而 package.json 和 npm 元数据声明的是 ISC。本次未对任何脚本进行反混淆。"
+    ]
   }
 }

@@ -8457,5 +8457,36 @@
       "https://pcsx-redux.consoledev.net/web_server/",
       "https://pcsx-redux.consoledev.net/openbios/"
     ]
+  },
+  {
+    "id": "obfuscator-io-deobfuscator",
+    "name": "Obfuscator.io Deobfuscator",
+    "url": "https://github.com/ben-sb/obfuscator-io-deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Deobfuscator dedicated to JavaScript produced by Obfuscator.io (javascript-obfuscator), which its README says also handles most forks. Working statically on a Babel AST, it reveals strings hidden in rotated, Base64- or RC4-encoded string arrays, inlines proxy functions, simplifies objects, arithmetic and string concatenation, removes dead code and the obfuscator's anti-tamper wrappers, and reverses control-flow flattening. Its configuration is detected automatically, and the author also hosts an online version.",
+    "description_zh": "专门处理 Obfuscator.io（javascript-obfuscator）所生成 JavaScript 的反混淆工具，README 称也能处理其大部分分支版本。它在 Babel AST 上进行静态处理，可还原隐藏在经过轮转、Base64 或 RC4 编码的字符串数组中的字符串，内联代理函数，化简对象、算术表达式和字符串拼接，删除死代码和混淆器的防篡改包装代码，并还原控制流平坦化。配置会自动检测，作者另提供在线版本。",
+    "evidence_url": "https://github.com/ben-sb/obfuscator-io-deobfuscator/blob/42efc019d375f3cc266887ec36e929905836639c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "npm release at review: obfuscator-io-deobfuscator 1.0.6, published 2025-03-27. The reviewed main commit, merged 2026-08-09, adds unreleased improvements to string-array wrapper identification and README notes on running the CLI from source; package.json still reports 1.0.6. No GitHub releases are published.",
+      "Install the global obfuscator-io-deobfuscator CLI, which takes an input file and an optional output path, or build it from source with npm and TypeScript. It applies its Babel-based transformations repeatedly, for at most 50 passes; package.json declares no Node.js version range. An online version runs at obf-io.deobfuscate.io; only the repository was reviewed.",
+      "Input must be JavaScript produced by Obfuscator.io or a compatible fork; other obfuscators are out of scope, and the author's general-purpose javascript-deobfuscator covers generic patterns. The README states that it does not run untrusted code or use a sandbox; recovered strings and control flow still need checking against the original script.",
+      "The LICENSE file is Apache-2.0, while package.json and the npm metadata declare ISC. No scripts were deobfuscated for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/blob/42efc019d375f3cc266887ec36e929905836639c/package.json",
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/blob/42efc019d375f3cc266887ec36e929905836639c/src/deobfuscator/deobfuscator.ts",
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/tree/42efc019d375f3cc266887ec36e929905836639c/src/deobfuscator/helpers/strings/decoders",
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/blob/42efc019d375f3cc266887ec36e929905836639c/src/deobfuscator/transformations/antiTamper/antiTamperRemover.ts",
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/blob/42efc019d375f3cc266887ec36e929905836639c/LICENSE",
+      "https://github.com/ben-sb/obfuscator-io-deobfuscator/pull/52",
+      "https://www.npmjs.com/package/obfuscator-io-deobfuscator/v/1.0.6"
+    ]
   }
 ]
