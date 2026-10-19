@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 330](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-330-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 170](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-170-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 331](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-331-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 171](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-171-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (154) · [应用](#app) (46)
+- [网站](#website) (19) · [游戏](#game) (155) · [应用](#app) (46)
 - [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (170) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (171) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -965,6 +965,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。该移植提供按游戏保存设置的启动器、分辨率补丁与现代超分辨率技术，其状态表报告三部游戏均可游玩，并列出未解决问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)
+
+- [**TH095：东方文花帖 1.02a 的函数级重建**](https://github.com/N0zoM1z0/th095)
+
+  为日版 Touhou 9.5：东方文花帖 1.02a 原可执行文件重建源码；只有使用固定版本 Visual C++ .NET 2003 构建、并与单一经哈希核验的目标进行可复现字节比较后，才认定函数级一致。整个程序也能编译链接为可游玩的 Windows i386 可执行文件，而 README 将可玩性、函数匹配与整个可执行文件一致性列为相互独立的状态。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th095-reconstruction-case/)
 
 #### 工具、项目与集成
 
