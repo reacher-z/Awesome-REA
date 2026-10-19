@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2607,6 +2607,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 输入是 HumanEval-X（164 个中 161 个可编译）与 MBXP（974 个中 773 个）C++ 子集中的简短练习函数，以 Emscripten 3.1.46 按 -Oz 编译为侧模块，通过 --profiling-funcs 保留函数名，再用 wasm2wat 1.0.33 转换；未评估经过压缩、混淆或完整应用规模的 WebAssembly。正确性指输出能够编译并通过基准测试用例的比例；测试判定器会重命名函数、插入测试并补充命名空间指令，按值传参则由人工修改。通过这些测试并不证明与原始模块等价。函数摘要以 BERTScore 和 SBERT 评分；用户研究有 15 名参与者，每个数据集 20 个代码片段。wasm2c 与一种早期神经反编译器因无法生成可编译输出而未纳入比较，结果也依赖特定版本的托管模型。
 
   **作者:** Weike Fang 等
+
+  </details>
+
+- [**STRIDE：反编译可执行文件中的简单类型识别**](https://arxiv.org/abs/2407.02733)
+
+  STRIDE 不使用神经网络模型，而是预测反编译器输出中变量的名称和类型。它基于带已知标签的训练反编译结果构建数据库，将每处变量出现位置紧邻左右两侧的词元序列（N-gram，N 取 2 至 60）映射到出现频率最高的五个名称或类型。变量占位名会被规范化，类似地址的词元和较大的常量会被分桶，以便 N-gram 能够匹配。预测时，它在每处出现位置的两侧查找最长的匹配 N-gram，按匹配的特异程度为返回的标签打分，并在整个函数内累加得分。原型约有 1,000 行 Python 代码，在 CPU 上运行。作者报告，在训练集中未出现的 DIRT 函数上，类型恢复准确率为 66.4%（启用束搜索的 DIRTY 为 52.3%），重命名准确率为 56.2%（VarBERT 的已报告结果为 51.3%）。在 16 个 VarCorpus 划分中，其重命名准确率在 11 个划分上高于 VarBERT，平均高 1.55 个百分点。预测在 CPU 上每个函数耗时 8.2 毫秒，而 VarBERT 在 NVIDIA L4 GPU 上为 43.7 毫秒。
+
+  arXiv 2024 · 预印本 · [PDF](https://arxiv.org/pdf/2407.02733v1) · [代码](https://github.com/hgarrereyn/STRIDE) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-stride/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是一篇未标明发表场所的 arXiv 预印本；本条目不主张其经过同行评审。STRIDE 依据完全一致的 N-gram 匹配进行分类，因此预测取决于训练数据中出现过的词元序列：它无法模糊匹配，也无法预测训练中未出现的名称或类型；基于某一反编译器词元格式训练的模型预计不能迁移到其他反编译器。结果基于 DIRT、DIRE 与 VarCorpus 三个基准数据集中的反编译器输出。DIRT 使用 GitHub 项目经 GCC -O0 编译后的 Hex-Rays 输出，并以 DWARF 信息生成标签，较早的 DIRE 数据集以类似方式构建；VarCorpus 覆盖以 Hex-Rays 和 Ghidra 在 -O0 至 -O3 下反编译的 Gentoo 软件包。类型恢复只在 DIRT 上评测，且仅覆盖 x86 C/C++ 代码。准确率按完全匹配计算，近义名称也算作错误。约 60% 的 DIRT 测试函数同样出现在训练集中，STRIDE 在这部分依靠记忆达到约 99% 的准确率；训练集中未出现的函数上的结果更具代表性。DIRT 保留了函数名与全局变量名，去除这些标识符后重命名准确率会下降几个百分点。部分基线数据摘自既有论文，并未重新运行。作者在 README 中预计，对包含训练中未出现结构体的自定义闭源二进制文件效果不佳。所审阅的仓库是研究原型，不含反编译器插件或训练好的数据库。
+
+  **作者:** Harrison Green 等
 
   </details>
 

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2197,13 +2197,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2606,6 +2606,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Inputs are short exercise functions from the C++ splits of HumanEval-X (161 of 164 compiled) and MBXP (773 of 974), built as Emscripten 3.1.46 side modules at -Oz with function names kept by --profiling-funcs and converted with wasm2wat 1.0.33; minified, obfuscated or whole-application WebAssembly is not evaluated. Correctness is the share of outputs that compile and pass the benchmarks' test cases after a test oracle renames functions, inserts tests and adds namespace directives, with manual pass-by-value edits. Passing these tests is not proof of equivalence with the original module. Summaries are scored by BERTScore and SBERT; the user study had 15 participants on 20 snippets per dataset. wasm2c and an earlier neural decompiler were excluded for producing no compilable output, and results depend on specific hosted model versions.
 
   **Authors:** Weike Fang et al.
+
+  </details>
+
+- [**STRIDE: Simple Type Recognition In Decompiled Executables**](https://arxiv.org/abs/2407.02733)
+
+  STRIDE predicts the names and types of variables in decompiler output without a neural model. From training decompilation with known labels, it builds a database mapping the token sequences (N-grams, with N from 2 to 60) immediately left and right of each variable occurrence to the five most frequent names or types. Variable placeholders are canonicalized, and address-like tokens and large constants are bucketed so that N-grams can match. At prediction time it looks up the longest matching N-gram on each side of every occurrence, scores the returned labels by how specific the match is, and sums the scores across the function. The prototype is about 1,000 lines of Python and runs on a CPU. On DIRT functions not seen in training, the authors report 66.4% retyping accuracy, against 52.3% for DIRTY with beam search, and 56.2% renaming accuracy, against 51.3% reported for VarBERT. Across 16 VarCorpus splits, renaming accuracy is higher than VarBERT on 11 and 1.55 points higher on average. Prediction takes 8.2 ms per function on a CPU, against 43.7 ms for VarBERT on an NVIDIA L4 GPU.
+
+  arXiv 2024 · Preprint · [PDF](https://arxiv.org/pdf/2407.02733v1) · [Code](https://github.com/hgarrereyn/STRIDE) · [Full entry & citation](https://awesomerea.org/papers/paper-stride/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** An arXiv preprint with no stated venue; this record makes no claim of peer review. STRIDE classifies by exact N-gram matches, so its predictions depend on token sequences seen in the training data: it cannot fuzzy-match or predict a name or type absent from training, and a model trained on one decompiler's token format is not expected to transfer to another. Results are reported on decompiler output from the DIRT, DIRE and VarCorpus benchmark datasets. DIRT pairs Hex-Rays output for GCC -O0 builds of GitHub projects with DWARF-derived labels, the older DIRE dataset was prepared similarly, and VarCorpus covers Gentoo packages decompiled with Hex-Rays and Ghidra at -O0 to -O3. Retyping is evaluated only on DIRT, and only x86 C/C++ code is covered. Accuracy is exact match, so near-synonyms count as errors. About 60% of DIRT test functions also appear in training, where STRIDE reaches about 99% by memorization; the not-in-train figures are the more representative ones. DIRT keeps function and global names, and removing them lowers renaming accuracy by a few points. Several baseline numbers are copied from earlier publications rather than rerun. The authors' README expects poor results on custom closed-source binaries with structures absent from training. The reviewed repository is a research prototype with no decompiler plugin or trained databases.
+
+  **Authors:** Harrison Green et al.
 
   </details>
 
