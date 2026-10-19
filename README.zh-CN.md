@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 290](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-290-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 148](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 57](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 291](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-291-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 148](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 57](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (57) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (57) · [智能体与 MCP](#agents-and-mcp) (22) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1662,6 +1662,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。
 
   集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
+
+- [**ReVa 面向大模型工具设计的 Ghidra MCP 扩展**](https://github.com/cyberkaida/reverse-engineering-assistant)
+
+  在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，为智能体提供附带命名空间与交叉引用上下文的反编译、符号、字符串、数据类型、结构体与调用图工具，以及程序比对、重命名和 PyGhidra 脚本执行。其 README 将项目的特点归于面向大模型使用的工具设计：提供许多小工具，其模式在给定结构之外也能容忍其他输入，把可纠正的错误反馈给模型，并返回附带相关信息链接的简短片段。助手模式可让多个客户端同时连接已打开的 Ghidra 项目；无界面模式则由 ReVa 自行启动 Ghidra，项目仅在会话期间存在。
+
+  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/reva-ghidra-mcp/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集

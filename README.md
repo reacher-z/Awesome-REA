@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 290](https://img.shields.io/badge/resources-290-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 148](https://img.shields.io/badge/cases-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 291](https://img.shields.io/badge/resources-291-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 148](https://img.shields.io/badge/cases-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (57) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (57) · [Agents and MCP](#agents-and-mcp) (22) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1661,6 +1661,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Packages agent skills, three role briefs, a Python CLI and preconfigured fal MCP settings for modding PC games the user owns. Its reverse-engineering guidance sends managed, native and data-format work to external decompilers and debuggers, and requires a round-trip check before a reverse-engineered file format is used; one worked example ships an Age of Empires II sprite writer built this way. It is a modding toolkit with agent-written field notes, not a game decompilation, and its example results remain project-reported.
 
   Integration · Independent agent · [Requirements & evidence](https://awesomerea.org/resources/universal-modder-agent-toolkit/)
+
+- [**ReVa (Reverse Engineering Assistant)**](https://github.com/cyberkaida/reverse-engineering-assistant)
+
+  Ghidra extension that runs an MCP server inside Ghidra, giving agents decompilation with namespace and cross-reference context, symbol, string, data-type, structure and call-graph tools, program diffing, renaming and PyGhidra scripting. Its README attributes the project's distinction to tool design for LLM use: many small tools whose schemas tolerate other input, redirect correctable mistakes and return short fragments linked to related information. Assistant mode serves an open Ghidra project to several clients at once; headless mode starts Ghidra itself with session-scoped projects.
+
+  Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/reva-ghidra-mcp/)
 
 <a id="related-collections"></a>
 ### Related Collections
