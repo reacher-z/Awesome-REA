@@ -16,7 +16,7 @@ Scan date: **2026-10-16 UTC**.
 | [Apps · Managed code](managed-code.md) | 126 | 3 |
 | [Native binaries](native-analysis.md) | 680 | 62 |
 | [Runtime and debugging](dynamic-analysis.md) | 102 | 16 |
-| [Firmware](firmware.md) | 211 | 15 |
+| [Firmware](firmware.md) | 211 | 16 |
 | [Protocols](protocol-analysis.md) | 106 | 7 |
 | [General tools and collections](reverse-engineering.md) | 607 | 36 |
 
