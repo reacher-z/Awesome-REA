@@ -7606,5 +7606,35 @@
       "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
       "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
     ]
+  },
+  {
+    "id": "flare-vm",
+    "name": "FLARE-VM",
+    "url": "https://github.com/mandiant/flare-vm",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mandiant FLARE installer that sets up and maintains a Windows virtual machine for reverse engineering and malware analysis. Its PowerShell script uses Boxstarter and Chocolatey to install packages from the separate VM-Packages feed and the Chocolatey community feed, chosen in a GUI or a custom config.xml that also sets environment paths, the taskbar layout and post-install registry, service and path settings. The reviewed default configuration lists 137 packages, among them Ghidra, IDA Free, x64dbg, dnSpyEx, capa, FLOSS, PE-sieve, FakeNet-NG and Wireshark; scripts in its virtualbox folder build, snapshot and export FLARE-VM and REMnux VMs in VirtualBox.",
+    "description_zh": "Mandiant FLARE 团队的安装脚本，用于搭建并维护一台面向逆向工程和恶意软件分析的 Windows 虚拟机。其 PowerShell 脚本借助 Boxstarter 和 Chocolatey，从独立的 VM-Packages 软件源和 Chocolatey 社区源安装软件包；软件包可在图形界面中选择，也可通过自定义 config.xml 指定，该文件还可设置环境变量路径、任务栏布局以及安装后的注册表、服务和路径设置。所审阅的默认配置列出 137 个软件包，包括 Ghidra、IDA Free、x64dbg、dnSpyEx、capa、FLOSS、PE-sieve、FakeNet-NG 和 Wireshark；virtualbox 目录中的脚本可在 VirtualBox 中构建 FLARE-VM 和 REMnux 虚拟机，并管理和导出其快照。",
+    "evidence_url": "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs a Windows 10 or later virtual machine with PowerShell 5+, at least 60 GB of disk and 2 GB of memory, a username without spaces or special characters and internet access. The README says FLARE-VM should only be installed on a VM and that Windows Updates, Tamper Protection and anti-malware must be disabled on it first; it recommends a snapshot before installation and host-only networking afterward. The installer checks that it is running in a VM and warns on Windows builds other than the tested 19045, 20348 and 26100.",
+      "FLARE-VM itself has no releases because its packages download tools from external URLs outside the project's control; the only release, vbox-1.0.0 (2025-08-13), holds Linux executables for some VirtualBox helper scripts, which were tested on Debian 12 with GNOME. Package updates are best effort and untested, failures of individual packages are reported to VM-Packages, and the README suggests a fresh install when updates break. The idapro.vm package needs the user's own IDA Pro installer, and optionally a license file, on the Desktop.",
+      "The scripts are Apache-2.0. Per the README's legal notice, every downloaded or installed package keeps its own license terms, which the user must review and accept; installing accepts those terms. Nothing was installed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/README.md#L8-L18",
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/README.md#L172-L173",
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/install.ps1",
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/config.xml",
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/virtualbox/README.md",
+      "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/LICENSE.txt",
+      "https://github.com/mandiant/flare-vm/releases/tag/vbox-1.0.0"
+    ]
   }
 ]
