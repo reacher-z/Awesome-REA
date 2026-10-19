@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**608 repositories** · 2026-10-16 UTC
+**607 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -48,7 +48,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — An AI-agent-first MCP server for JavaScript reverse engineering: headed Chrome debugging, breakpoints, network/WebSocket analysis, Patchright anti-detection, and optional CloakBrowser. **[2,961 stars]**
 - [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — A completely free, open source and online course about Reverse Engineering iOS Applications. **[2,917 stars]**
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — A reverse engineering of Linear's sync engine. **[2,865 stars]**
-- [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter Reverse Engineering Framework **[2,775 stars]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — A list of Reverse Engineering articles, books, and papers **[2,750 stars]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — A curated list of awesome Android Reverse Engineering training, resources, and tools. **[2,739 stars]**
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift Obfuscator that protects iOS apps against reverse engineering attacks. **[2,548 stars]**

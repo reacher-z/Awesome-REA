@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 433](https://img.shields.io/badge/resources-433-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 434](https://img.shields.io/badge/resources-434-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (62)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (63)
 - [Native Binary](#native-binary) (55) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1667,6 +1667,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A set of Frida scripts from HTTP Toolkit for inspecting a mobile app's HTTPS traffic while analysing apps you own or are authorized to test. Injected into a running Android or iOS app, they redirect its connections to an interception proxy, add a user-supplied CA certificate to the trust stores, and disable certificate pinning and transparency checks so the proxy can read the traffic. Individual scripts can also be used on their own to hook specific behaviour.
 
   Tool · Android · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/frida-interception-and-unpinning/)
+
+- [**reFlutter**](https://github.com/Impact-I/reFlutter)
+
+  Flutter reverse-engineering framework for apps the analyst is authorized to inspect. It repacks an app with a prebuilt patched Dart engine, or instruments the app's own engine at runtime, to emit a JSONL dump of every function's name, class, library and code offset into the Dart instructions image for Frida or IDA/Ghidra work. It can also route the app's HTTPS traffic through an inspection proxy with Flutter certificate pinning disabled.
+
+  Tool · Android · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/reflutter/)
 
 <a id="native-binary"></a>
 ### Native Binary
