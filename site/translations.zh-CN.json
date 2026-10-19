@@ -4756,5 +4756,15 @@
       "CI 检查仓库边界，运行发布工具测试与宿主测试，构建各启动器并交叉构建 Android 运行时，全程不使用游戏。脚本化渲染测试路线、黄金帧回放以及 README 中的性能数据（如在 RTX 4080 上 1x 分辨率中位数 119 fps）均来自项目的本地运行；本合集未进行任何构建或运行。",
       "BSD-3-Clause 仅适用于独立编写的内容。docs/LEGAL.md 称该许可不授予对 Forza Horizon、Xbox 软件、ReXGlue 或使用者自备内容的任何权利，并禁止提交生成的转换代码、依据反汇编或反编译器输出手工翻译的代码，以及从可执行文件复制的数据。README 声明与 Microsoft、Xbox、Turn 10 Studios 或 Playground Games 均无关联。CLAUDE.md 与 AGENTS.md 中的智能体说明禁止在提交中注明 AI 署名；所审来源未说明其他 AI 使用情况，也未记录 REA 的使用。"
     ]
+  },
+  "th07-decomp-case": {
+    "name": "Touhou 7：重建东方妖妖梦 1.00b 版源码",
+    "requirements": [
+      "README 称这是 th07.exe 1.00b 与 custom.exe 的进行中匹配反编译；仓库内可变的徽章报告 th07.exe 的 694 个函数已全部实现、准确率 99.78%，custom.exe 两项均为 100%。行为力求与原版一致，但可能存在差异。portable 和 reallyportable 分支（桌面、移动端和网页移植）是独立分支，本条目不涵盖。README 致谢 GensokyoClub 的 th06 与 th08 反编译项目，借用了共享的类型、命名和代码。",
+      "需自备 th07.exe 1.00b（README 给出 MD5，reccmp-project.yml 给出 SHA-256）并复制到 resources/，用于提取图标并作为 reccmp 的比较基准；custom.exe 仅在构建设置工具时需要，使用 --no-icon 可在两者都缺失时构建。仓库未提交游戏可执行文件或游戏数据文件；resources/csv 存放 reccmp 使用的函数、全局变量、字符串和浮点数表。",
+      "此分支只能以 MSVC 2002 工具链构建 32 位 Windows 程序，Linux 上通过 Wine 运行，并需要 uv 和 ninja。scripts/download_deps.py 从 archive.org 获取 Visual Studio .NET 2002 和 DirectX 8 SDK，并从 gist 获取 EstexNT 的 var_order 编译器补丁；scripts/build.py 生成并运行 ninja 构建。",
+      "贡献者使用 reccmp 比较差异，它以 HTML 页面或针对单个地址给出相对原程序的逐函数准确率。由于 th07.exe 尚未逐字节一致，README 称匹配构建无法通过游戏的完整性检查，并会在 3,999 个 Supervisor 周期后崩溃；--no-matching 会禁用该检查。仓库没有 CI；徽章数字由项目生成，本合集未构建或运行任何内容。",
+      "仓库以 CC0 1.0 释出；游戏及下载的 Microsoft 工具链和 SDK 各有条款。嵌入进度徽章的 resources/svgicon.png 是游戏封面图，标有 © 2003 上海爱丽丝幻乐团，CC0 声明并不涵盖它。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }

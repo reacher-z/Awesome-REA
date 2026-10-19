@@ -14349,5 +14349,38 @@
       "https://github.com/arcanite24/shiftglue-sdk/tree/79d3e6fae4b79e00def48a595c80f0eaa47fd2b6",
       "https://github.com/arcanite24/pinyon-shift/releases/tag/v0.6.0"
     ]
+  },
+  {
+    "id": "th07-decomp-case",
+    "name": "Touhou 7: reconstructing Perfect Cherry Blossom 1.00b source",
+    "url": "https://github.com/some100/th07",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for the Windows executable of Touhou 7: Perfect Cherry Blossom 1.00b and its custom.exe configuration tool, built with the original Visual Studio .NET 2002 and DirectX 8 toolchain and compared function by function with the user’s originals through reccmp. The committed progress badges report th07.exe fully implemented at 99.78% accuracy and custom.exe fully matched. The README says the game should be fully playable, but a matching build trips the game’s integrity check, and the cross-platform ports live on separate branches.",
+    "description_zh": "为 Touhou 7：东方妖妖梦 1.00b 版的 Windows 可执行文件及其 custom.exe 设置工具重建 C++ 源码，使用原版 Visual Studio .NET 2002 与 DirectX 8 工具链构建，并通过 reccmp 与使用者自备的原程序逐函数比较。仓库内的进度徽章报告 th07.exe 已全部实现、准确率 99.78%，custom.exe 已完全匹配。README 称游戏应可完整游玩，但匹配构建会触发游戏自身的完整性检查；跨平台移植位于其他分支。",
+    "evidence_url": "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a work-in-progress matching decompilation of th07.exe 1.00b and custom.exe; the committed, mutable badges report 694 of 694 th07.exe functions implemented at 99.78% accuracy, and custom.exe at 100% for both. Behaviour is meant to match the original but may differ. The portable and reallyportable branches (desktop, mobile and web ports) are separate and not covered here. README credits the GensokyoClub th06 and th08 decompilations for shared types, names and code.",
+      "Supply your own th07.exe 1.00b (README gives its MD5, reccmp-project.yml its SHA-256), copied to resources/, for icon extraction and as reccmp’s comparison base; custom.exe is needed only for the configuration tool, and --no-icon builds without either. No game executable or game data files are committed; resources/csv holds the function, global, string and float tables reccmp uses.",
+      "This branch builds only for 32-bit Windows with the MSVC 2002 toolchain, run under Wine on Linux, and needs uv and ninja. scripts/download_deps.py fetches Visual Studio .NET 2002 and the DirectX 8 SDK from archive.org and EstexNT’s var_order compiler patch from a gist; scripts/build.py generates and runs the ninja build.",
+      "Contributors diff with reccmp, which reports per-function accuracy against the original as an HTML page or for one address. Because th07.exe is not yet byte-identical, README says a matching build fails the game’s integrity check and crashes after 3,999 Supervisor cycles; --no-matching disables that check. The repository has no CI; badge figures are project-generated, and this collection built or ran nothing.",
+      "CC0 1.0 for the repository; the game and the downloaded Microsoft toolchain and SDK keep their own terms. resources/svgicon.png, embedded in the progress badge, is the game’s cover artwork marked © 2003 Team Shanghai Alice, which the CC0 dedication does not cover. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/CONTRIBUTING.md",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/reccmp-project.yml",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/resources/progress.svg",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/resources/custom/progress.svg",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/scripts/download_deps.py",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/scripts/build.py",
+      "https://github.com/some100/th07/tree/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/resources/csv",
+      "https://github.com/some100/th07/blob/4878bf0e42a9280ef44735eb0517d4fda7cb6e04/LICENSE"
+    ]
   }
 ]
