@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 405](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-405-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 406](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-406-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (41) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (42) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1893,6 +1893,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Linux 的 GNU 调试器（GDB）前端，以游戏为主要对象，也可用于其他逆向工程；名称意为“PINCE is not Cheat Engine”。它借助 libmemscan 扫描进程内存和指针，并将结果放入带类型的地址表；内存视图提供反汇编、即时汇编、对引用的调用、跳转和字符串进行代码剖析、函数/内存区域/指令搜索以及结构体叠加查看，其中结构体可由对原生 Linux 或 Wine/Proton 进程中 Mono/IL2CPP 类的剖析自动生成。调试功能包括可链式关联的断点与观察点、追踪访问某地址的指令、执行跟踪和调用栈查看，并提供 GDB 控制台和可复用的 libpince Python 库。
 
   工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/pince/)
+
+- [**uncompyle6 跨版本 Python 字节码反编译器**](https://github.com/rocky/python-uncompyle6)
+
+  跨版本的 Python 反编译器，可把 Python 字节码还原为等价的 Python 源码，支持 Python 1.0 至 3.8 的字节码，以及部分 PyPy 字节码和 Dropbox 的 Python 2.5 字节码。它借助配套的 xdis 库反汇编代码对象，再把指令流解析成基于语法的树并据此输出源码；它还能只反解析给定字节码偏移附近的代码片段，作者的 trepan 调试器即用此功能精确报告位置。它是早期 decompyle、uncompyle 和 uncompyle2 等分支的后继项目。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/uncompyle6/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
