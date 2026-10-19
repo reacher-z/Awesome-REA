@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "phantom-hourglass-ds-decomp-case": {
+    "name": "《幻影沙漏》：早期阶段的 Nintendo DS 一致性反编译",
+    "requirements": [
+      "README 标明项目仍在进行中，目标为欧版和美版，其他版本日后可能支持；configure.py 接受 eur 或 usa。反编译范围是 ARM9 程序及其 TCM 模块和覆盖层，docs/build_system.md 说明 ARM7 程序不在反编译之列。产物是 Nintendo DS ROM，不是 PC 移植。",
+      "需为每个版本将自己的已解密基础 ROM 以 baserom_ph_eur.nds 或 baserom_ph_usa.nds 放入 extract/，并与 extract/README.md 所列 SHA-1 一致；随后由 dsd 在本地从中提取代码和素材。INSTALL.md 称逐字节一致的 ROM 是可选项，要生成它还需使用者自己的 DS ARM7 BIOS 文件，且须与所列两个 SHA-1 之一相符。README 称仓库不含素材或汇编；不过 config/ 提交了源自游戏的 dsd 拆分、符号与重定位表，每个版本 65 个模块。",
+      "INSTALL.md 列出的平台为 Windows（推荐）或 Linux，需 Python 3.11+ 与 pip、GCC 9+、Ninja 以及 pre-commit 钩子；在 Linux 上默认通过 wibo 运行 Windows 编译器，也可改用 Wine。configure.py 从 GitHub 发行版下载 dsd v0.11.0、objdiff v3.4.0、sjiswrap v1.2.2 和 wibo 0.6.16，并从 decomp.aetias.com 下载 Metrowerks mwccarm 编译器包（使用其中的 2.0/sp1p5 版本）。",
+      "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
