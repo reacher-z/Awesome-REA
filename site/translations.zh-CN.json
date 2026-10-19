@@ -3600,5 +3600,14 @@
       "新的报文定义来自分析者自己的行车记录，并在 openpilot 仓库中的 cabana 工具里分析；README 还提到 commaCarSegments 数据集，其中包含 300 款车型的 CAN 数据。DBC README 建议把不确定的信号解释写成注释，因此这些定义只涵盖贡献者已为各车型记录的内容。",
       "采用 MIT 许可。README 称 panda 安全固件启动时 CAN 总线处于静默状态，部分输出模式在正式版固件中被禁用。本次未实际使用车辆控制接口，未载入任何 CAN 数据，也未连接车辆。"
     ]
+  },
+  "flare-floss": {
+    "name": "FLOSS 混淆字符串提取工具",
+    "requirements": [
+      "审阅时最新版本为 v3.2.0，发布于 2026-10-16，提供 Linux、macOS 和 Windows 独立可执行文件，并在 PyPI 上发布（需要 Python 3.10+）；该版本新增基本的 ELF 支持，并把 Ghidra 导入脚本迁移到 PyGhidra。所审阅的 master 提交中有 857 个提交不在 v3.2.0 中，而 v3.2.0 也有 8 个提交不在 master 上：master 已合并 QUANTUMSTRAND 预览版，因此其 README 中介绍的带文件结构上下文和标签的布局感知静态字符串、HTML 报告和在线查看器，目前只随 quantumstrand 预发布版本提供（最新为 2026-04-22 的 quantumstrand-beta3）。master 要求 Python 3.12+，版本号仍为 3.1.1。",
+      "解码采用静态模拟执行，并借助内置的 FLIRT 签名识别库函数；超过 64 MB 的文件会中止去混淆，除非指定 --large-file。shellcode 可通过 .sc32/.raw32/.sc64/.raw64 扩展名识别，或用 -f 指定。从源码克隆时需要 Git LFS 来获取标签数据库和签名文件；安装指南指出 Python API 在不同版本之间可能变化，稳定的接口是命令行。",
+      "样本由分析人员自行提供。v3.2.0 修复了一个问题：在 v3.1.1 及更早版本和 QUANTUMSTRAND 预发布版本中，精心构造的 .viv vivisect 工作区文件（无论是样本本身还是样本旁的同名文件）可在分析时执行代码；现在只有设置 FLOSS_LOAD_VIV_WORKSPACE=1 时才会加载已保存的工作区。解码出的字符串只来自 FLOSS 识别为解码函数并成功模拟执行的例程。",
+      "采用 Apache-2.0 许可。本次未安装，也未分析任何样本。"
+    ]
   }
 }

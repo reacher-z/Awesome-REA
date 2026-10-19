@@ -9403,5 +9403,40 @@
       "https://github.com/commaai/opendbc/releases/tag/v0.3.1",
       "https://pypi.org/project/opendbc/0.3.1/"
     ]
+  },
+  {
+    "id": "flare-floss",
+    "name": "FLOSS (FLARE Obfuscated String Solver)",
+    "url": "https://github.com/mandiant/flare-floss",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mandiant FLARE string extractor for malware analysis that is used like strings.exe but also recovers obfuscated strings. Besides static ASCII and UTF-16LE strings it extracts stack strings, tight strings and strings decoded by functions: it heuristically identifies decoding routines, recovers their arguments through control-flow analysis, emulates them and diffs memory before and after emulation. It also extracts Go and Rust strings and accepts PE, ELF and raw 32- or 64-bit shellcode; JSON results can be turned into import scripts for IDA Pro, Ghidra, Binary Ninja, radare2 and x64dbg.",
+    "description_zh": "Mandiant FLARE 团队的恶意软件字符串提取工具，用法与 strings.exe 相同，但还能还原混淆字符串。除了静态的 ASCII 和 UTF-16LE 字符串，它还能提取栈字符串、紧凑栈字符串（tight strings）以及由函数解码出的字符串：先用启发式方法识别解码函数，通过控制流分析取得调用参数，再模拟执行这些函数，并比较模拟前后的内存状态。它还能提取 Go 和 Rust 字符串，支持 PE、ELF 以及 32 位或 64 位原始 shellcode；JSON 结果可转换为 IDA Pro、Ghidra、Binary Ninja、radare2 和 x64dbg 的导入脚本。",
+    "evidence_url": "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v3.2.0, published 2026-10-16 as standalone Linux, macOS and Windows executables and on PyPI for Python 3.10+; it adds basic ELF support and moves the Ghidra import script to PyGhidra. The reviewed master commit has 857 commits that are not in v3.2.0, which in turn has 8 not on master: it merges the QUANTUMSTRAND preview, so the layout-aware static strings with file-structure context and tags, the HTML report and the hosted viewer described in its README have so far shipped only in quantumstrand pre-releases (latest quantumstrand-beta3, 2026-04-22). Master requires Python 3.12+ and still reports version 3.1.1.",
+      "Decoding uses static emulation with embedded FLIRT signatures to identify library functions; files above 64 MB abort deobfuscation unless --large-file is given. Shellcode is recognized by .sc32/.raw32/.sc64/.raw64 extensions or selected with -f. Source clones need Git LFS for the tag databases and signature files, and the installation guide calls the Python API unstable between releases, leaving the CLI as the stable interface.",
+      "Samples come from the analyst. v3.2.0 fixed an issue in which crafted .viv vivisect workspace files, either the sample itself or one beside it, could execute code during analysis in v3.1.1 and earlier and in the QUANTUMSTRAND pre-releases; saved workspaces now load only with FLOSS_LOAD_VIV_WORKSPACE=1. Decoded strings come only from routines that FLOSS identifies as decoders and emulates.",
+      "Apache-2.0. Nothing was installed and no samples were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/doc/theory.md",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/doc/usage.md",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/doc/installation.md",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/doc/language_specific_strings.md",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/scripts/README.md",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/pyproject.toml",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/floss/version.py",
+      "https://github.com/mandiant/flare-floss/blob/e10079080ec5b6fb7584c5331842a94eb4a9b301/LICENSE.txt",
+      "https://github.com/mandiant/flare-floss/releases/tag/v3.2.0",
+      "https://github.com/mandiant/flare-floss/releases/tag/quantumstrand-beta3",
+      "https://pypi.org/project/flare-floss/3.2.0/"
+    ]
   }
 ]
