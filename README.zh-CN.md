@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 301](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-301-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 302](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-302-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (24) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (25) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1614,6 +1614,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。
 
   集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
+
+- [**Hermes Agent 的 REA 插件**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea)
+
+  Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。
+
+  集成 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 

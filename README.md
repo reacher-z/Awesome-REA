@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 301](https://img.shields.io/badge/resources-301-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 302](https://img.shields.io/badge/resources-302-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (24) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (25) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1613,6 +1613,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines, not a new decompiler or a reconstruction case.
 
   Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/eleven-agent-re-workbench/)
+
+- [**REA plugin for Hermes Agent**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea)
+
+  Nous Research’s Hermes Agent plugin package for REA. One catalog install registers REA’s MCP server, pinned to rea-agents 6.4.0 and launched through npx over stdio, with REA’s workflow skill adapted for Hermes and a separate crash-triage skill. About 170 REA tools stay behind Hermes’ on-demand tool search, and the adapted skill asks before tools that run programs, drive apps or change a connected Android device.
+
+  Integration · REA · [Requirements & evidence](https://awesomerea.org/resources/hermes-rea-plugin/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
