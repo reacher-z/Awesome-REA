@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 359](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 360](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (52)
-- [原生二进制](#native-binary) (26) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (27) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1671,6 +1671,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Fraunhofer FKIE 开发的静态分析工具，在二进制可执行文件（主要是 Linux 和 Unix 的 ELF 文件）中查找符合通用缺陷枚举（CWE）漏洞类别的代码路径，例如缓冲区溢出、释放后使用与重复释放、空指针解引用、格式化字符串和整数溢出。它先由 Ghidra 把二进制反汇编为统一的中间表示，再在其上运行从简单启发式到基于抽象解释的数据流分析等各类检查，因此适用于 Ghidra 支持的 CPU 架构，包括 x86、ARM、MIPS 和 PowerPC。告警以文本或 JSON 输出，随附的 Ghidra 脚本可把告警标注在反汇编中，便于人工复核。
 
   工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/cwe-checker/)
+
+- [**VulHunt 社区版漏洞挖掘框架**](https://github.com/vulhunt-re/vulhunt)
+
+  Binarly REsearch 团队 VulHunt 引擎的开源社区版，用于在 x86 和 ARM 架构的 POSIX 二进制和 UEFI 固件中挖掘漏洞。Lua 规则运行在 Rust 编写的 BIAS 框架之上（该框架将代码提升为 Ghidra P-code，并内置 Ghidra 的 C++ 反编译器），可结合污点与数据流追踪、基于 Weggli 的反编译代码查询、字节模式、FLIRT 签名和类型库进行检测；结果以 JSON 输出，并附带标注后的反编译代码。命令行可扫描单个二进制、Binarly BA2 归档或 Binary Ninja 数据库，也可作为 MCP 服务器运行，让 AI 助手打开项目、用 Lua 查询、重命名函数并记录注释。
+
+  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/vulhunt/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

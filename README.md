@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 359](https://img.shields.io/badge/resources-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 360](https://img.shields.io/badge/resources-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (166) · [App](#app) (52)
-- [Native Binary](#native-binary) (26) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (27) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1670,6 +1670,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Static analyzer from Fraunhofer FKIE that searches binary executables, mainly Linux and Unix ELF files, for code paths matching Common Weakness Enumeration bug classes such as buffer overflows, use-after-free and double free, NULL pointer dereferences, format strings and integer overflows. Ghidra disassembles the binary into a common intermediate representation on which its checks run, from simple heuristics to abstract-interpretation data-flow analysis, so it covers the CPU architectures Ghidra supports, including x86, ARM, MIPS and PowerPC. Warnings are printed as text or JSON, and a bundled Ghidra script annotates them in the disassembly for manual review.
 
   Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/cwe-checker/)
+
+- [**VulHunt Community Edition**](https://github.com/vulhunt-re/vulhunt)
+
+  Open-source Community Edition of Binarly REsearch's VulHunt engine for hunting vulnerabilities in POSIX binaries and UEFI firmware on x86 and ARM. Lua rules run on the Rust BIAS framework, which lifts code to Ghidra's P-code and bundles Ghidra's C++ decompiler, and combine taint and dataflow tracking, Weggli-based queries over decompiled code, byte patterns, FLIRT signatures and type libraries; findings are written as JSON with annotated decompiled code. The CLI scans single binaries, Binarly BA2 archives or Binary Ninja databases, and can also run as an MCP server that lets AI assistants open a project, query it with Lua, rename functions and keep notes.
+
+  Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/vulhunt/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

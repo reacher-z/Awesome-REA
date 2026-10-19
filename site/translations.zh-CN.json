@@ -3090,5 +3090,14 @@
       "每次运行分析一个由使用者提供的二进制。README 提醒误报和漏报都在所难免，CWE-78 操作系统命令注入检查在标准运行中默认关闭，因此告警只是需要人工复核的代码路径，而不是已确认的漏洞。该工具也以插件形式集成在 FACT 中。",
       "采用 LGPL-3.0 许可；README 中的声明允许使用第 3 版或任何更新版本。本次未构建，也未分析任何二进制。"
     ]
+  },
+  "vulhunt": {
+    "name": "VulHunt 社区版漏洞挖掘框架",
+    "requirements": [
+      "审阅时的版本为 v1.0.0，发布于 2026-03-07，提供 Linux x86_64/aarch64、macOS arm64 和 Windows x86_64 的 ZIP 包；所审阅的 dev 提交比它多 7 个提交，命令行 crate 已标为 1.0.1。文档推荐使用官方安装脚本，或从仓库构建 Docker 镜像；从源码构建需要 Rust、cargo-make、较新的 CMake、Clang 20+ 以及打过补丁的静态 LuaJIT 2.1（由 cargo-make 自动构建）。",
+      "扫描需要独立的 vulhunt-re/data 仓库提供辅助数据（处理器规范和类型库，需用 git-lfs 获取；源码安装时还要用 bias-lutil 和 bias-tutil 构建），以及一个规则目录，例如收录 POSIX 和 UEFI 规则的社区规则仓库；审阅时规则、数据和智能体技能仓库均没有许可证文件。Binary Ninja 加载器需启用 bndb 特性构建，并链接 Binary Ninja 5.2 稳定版 API；btp 系列命令需要 Binarly Transparency Platform 账户。",
+      "二进制和 BA2 归档由使用者自备。component 加载器每次处理一个二进制；本仓库没有针对完整 UEFI 固件镜像的加载器，基于 UEFITool 的加载器另行发布，不在所审阅的工作区内。Binarly 称另有功能更多的商业企业版。规则命中结果只是辅助分析的线索，需要人工复核；所审阅的资料未给出准确率评估。",
+      "VulHunt 采用 GPL-3.0；据 README.BIAS.md，BIAS 框架各 crate 采用 MIT 或 Apache-2.0 双重许可。本次未安装，也未扫描任何二进制。"
+    ]
   }
 }
