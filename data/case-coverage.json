@@ -7889,12 +7889,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111171612149985567"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@JohanSlattavik, 2026-10-16, in Norwegian) answers a question about what he has reconstructed by saying nothing yet: he tested REA on a stripped Linux binary (jq 1.8.2), used Ghidra to identify one function and trace it back to the original source, and has begun examining Fossify Calculator for Android. It links no notes or output, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the author describes early tests, not a completed case.",
+      "reason_zh": "回复（@JohanSlattavik，2026-10-16，挪威语）在被问及已重建了什么时表示尚未重建任何东西：他在一个去除符号的 Linux 二进制文件（jq 1.8.2）上测试了 REA，借助 Ghidra 识别出一个函数并追溯到原始源码，还开始研究 Android 版 Fossify Calculator。回复没有链接笔记或输出，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；作者描述的是初步测试，而非已完成的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111171612149985567"
+      ],
       "catalog_matches": []
     },
     {
@@ -7970,12 +7972,15 @@
         "https://x.com/i/status/2111158379896877249",
         "https://x.com/i/status/2110391893419073881"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@Sp00kyD00kyXRS, 2026-10-16) to antimattr’s 2026-10-14 pre-order post for voice-control earbuds and a smart ring says only that the author is doing this with Claude, REA and hardware he already owns. It names no device or result and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a stated plan, not a documented case.",
+      "reason_zh": "回复（@Sp00kyD00kyXRS，2026-10-16）针对 antimattr 2026-10-14 发布的语音控制耳机与智能戒指预订帖，只说作者正在用 Claude、REA 和自己已有的硬件做这件事。回复未说明任何设备或结果，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这只是一个计划，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111158379896877249",
+        "https://x.com/i/status/2110391893419073881"
+      ],
       "catalog_matches": []
     },
     {
@@ -7991,11 +7996,15 @@
         "https://x.com/i/status/2111185397782880475"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@KeaneMachine101, 2026-10-16) says the author is building a directory of AI-powered, reverse-engineered games; its only attachment is a preview card for FanGamesDB (fangamesdb.com). Reviewed live on 2026-10-19, that site is a link-only, hand-checked directory of recompiled, decompiled and fan-made games reporting 656 projects, with an AI-use filter and a takedown policy. It names no operator, so the link to the post author rests on that card. It is a general fan-game index, not a reconstruction case or an AI reverse-engineering collection; whether to catalog it as a related directory remains a maintainer decision, and the lead stays pending without a catalog mapping.",
+      "reason_zh": "回复（@KeaneMachine101，2026-10-16）称作者正在建立一个收录 AI 驱动、经逆向工程的游戏的目录；唯一的附件是 FanGamesDB（fangamesdb.com）的预览卡片。2026-10-19 查看的在线页面显示，该站是一个只提供链接、经人工核对的目录，收录重编译、反编译和粉丝自制游戏，报告共 656 个项目，设有 AI 使用筛选项和下架政策。网站未写明运营者，因此它与发帖者的关联仅来自该卡片。它是一般性的粉丝游戏索引，而非重建案例或 AI 逆向工程合集；是否作为相关目录收录仍由维护者决定，此线索保持待处理，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111185397782880475",
+        "https://fangamesdb.com/",
+        "https://fangamesdb.com/about.html"
+      ],
       "catalog_matches": []
     },
     {
@@ -8042,12 +8051,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111187899479658673"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@demonica_fgc, 2026-10-16) announces a free, open-source, clean-room Doom reimplementation built over a weekend by 19 autonomous Claude agents for $19k of tokens, claiming 100% feature parity with what it calls the 1994 original, native WAD support and Windows, macOS and Linux builds. Its only attachment is a phone screenshot of the existing DOOM Open Source Release repository page, not of a new project; no repository or build is linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; none of the claims can be reviewed.",
+      "reason_zh": "帖子（@demonica_fgc，2026-10-16）宣称 19 个自主运行的 Claude 智能体用一个周末、花费 1.9 万美元的 token，做出了免费、开源的《毁灭战士》（Doom）净室重新实现，并称其与帖子所说的 1994 年原版功能 100% 一致、原生支持 WAD 文件，且可在 Windows、macOS 和 Linux 上运行。帖子唯一的附件是一张手机截图，显示的是已有的 DOOM Open Source Release 仓库页面，而非新项目；帖子未链接任何仓库或构建，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；其中的说法均无法核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111187899479658673"
+      ],
       "catalog_matches": []
     },
     {
@@ -8125,12 +8136,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111214346428686478"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@khaled_cli, 2026-10-16, in Arabic) says the author used REA on the DaVinci and CapCut apps installed on his Mac to learn how they export video, found that his own export approach was outdated, and applied what he learned to fix a severe export slowdown in his AI video-editing app. It names no technique, versions or measurements and links no code, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the analysis and the fix are undocumented.",
+      "reason_zh": "帖子（@khaled_cli，2026-10-16，阿拉伯语）称作者在自己的 Mac 上用 REA 分析了已安装的 DaVinci 和 CapCut，以了解它们如何导出视频，发现自己原来的导出方式已经过时，并据此解决了其 AI 视频剪辑应用中导出极慢的问题。帖子未说明具体技术、版本或测量数据，也没有链接代码，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；相关分析和修复均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111214346428686478"
+      ],
       "catalog_matches": []
     },
     {
@@ -8165,12 +8178,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111216713245364424"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@hanlei, 2026-10-16) says the author had WorkBuddy pull an APK from a set-top box the day before and reverse it without any problem, and that he did not check whether REA was involved. It names no device or app and links no output, and the author’s GitHub account holds no related repository. Retain the lead without a catalog mapping.",
+      "reason_zh": "回复（@hanlei，2026-10-16）称作者前一天让 WorkBuddy 从一台机顶盒中取出 APK 并进行逆向，过程完全没有问题，但没有留意是否用到了 REA。回复未说明设备或应用，也没有链接任何输出，作者的 GitHub 账号中也没有相关仓库。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111216713245364424"
+      ],
       "catalog_matches": []
     },
     {
@@ -14996,15 +15011,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 158,
-      "insufficient-evidence": 126,
-      "pending": 307
+      "insufficient-evidence": 131,
+      "pending": 302
     },
     "units_by_state": {
       "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 306
+      "insufficient-evidence": 131,
+      "pending": 301
     },
-    "primary_reviewed_units": 223,
+    "primary_reviewed_units": 229,
     "catalog_linked_occurrences": 169,
     "distinct_resource_ids": 163,
     "distinct_paper_ids": 1,
