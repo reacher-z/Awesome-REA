@@ -8536,5 +8536,52 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-revng",
+    "title": "rev.ng: A Unified Binary Analysis Framework to Recover CFGs and Function Boundaries",
+    "title_zh": "rev.ng：用于恢复控制流图与函数边界的统一二进制分析框架",
+    "authors": [
+      "Alessandro Di Federico",
+      "Mathias Payer",
+      "Giovanni Agosta"
+    ],
+    "year": 2017,
+    "publication_date": "2017-02-05",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records both print and online publication on 2017-02-05. This entry uses that date, not the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2017-02-05。本条目采用该日期，而非会议日程。",
+    "venue": "CC 2017",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3033019.3033028",
+    "url": "https://dl.acm.org/doi/10.1145/3033019.3033028",
+    "pdf_url": "https://nebelwelt.net/publications/files/17CC.pdf",
+    "code_url": "https://github.com/revng/revng",
+    "project_url": "https://rev.ng/",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "rev.ng lifts binaries to LLVM IR through QEMU's tiny code generator, so one front end covers every architecture QEMU supports and the output is compilable IR. On that IR the authors build architecture-independent analyses that recover a program's control-flow graph and function boundaries without symbols or debugging information. A value-range analysis (OSRA) bounds indirect jump targets such as switch tables, and further analyses handle predicated instructions, noreturn functions, tail calls and context-dependent control flow. On coreutils built for MIPS, ARM and x86-64 with GCC and clang at -O2, -O3 and -Os, its function-boundary accuracy is close to IDA Pro and better than BAP/ByteWeight and angr.",
+    "description_zh": "rev.ng 借助 QEMU 的微型代码生成器（TCG）将二进制提升为 LLVM 中间表示，因此同一前端可覆盖 QEMU 支持的全部架构，输出的是可编译的中间表示。作者在此基础上构建与架构无关的分析，在没有符号或调试信息的情况下恢复程序的控制流图与函数边界。一种值域分析（OSRA）用于限定 switch 跳转表等间接跳转的目标，其他分析则处理谓词执行指令、noreturn 函数、尾调用以及依赖上下文的控制流。在为 MIPS、ARM 与 x86-64 构建、分别使用 GCC 与 clang 以 -O2、-O3 和 -Os 编译的 coreutils 上，其函数边界恢复的准确度接近 IDA Pro，并优于 BAP/ByteWeight 与 angr。",
+    "scope_limitations_en": "The evaluation measures function boundaries, not the CFG directly: the authors could not collect CFG ground truth from GCC or LLVM, so boundary accuracy (Jaccard index against ELF function symbols) is presented as a lower bound on CFG quality. It covers 105 statically linked, stripped coreutils programs for Linux on three of the architectures QEMU supports; the other architectures and dynamically linked binaries were not evaluated. The prototype misses some nested-switch jump tables on x86-64 and jump-table addresses spilled to the stack on MIPS, needs more memory than the other tools on ARM and MIPS, and does not report dead code that IDA Pro finds through prologue heuristics, which the authors treat as a design choice. Baselines are IDA Pro 6.6, BAP 0.9.9 and angr as of November 2016. The paper does not decompile to C.",
+    "scope_limitations_zh": "评测衡量的是函数边界，而非直接衡量控制流图：作者无法从 GCC 或 LLVM 获取控制流图的真实标签，因此以函数边界准确度（相对 ELF 函数符号的 Jaccard 指数）作为控制流图质量的下界。评测覆盖为 Linux 构建、静态链接并去除调试信息的 105 个 coreutils 程序，只涉及 QEMU 所支持架构中的三种；其他架构及动态链接二进制未经评测。原型会遗漏 x86-64 上部分嵌套 switch 的跳转表，以及 MIPS 上被溢出到栈中的跳转表地址；在 ARM 与 MIPS 上比其他工具占用更多内存；也不会报告 IDA Pro 凭借函数序言启发式找到的死代码，作者将此视为设计取舍。基线为 IDA Pro 6.6、BAP 0.9.9 以及 2016 年 11 月时的 angr。论文本身不涉及反编译为 C。",
+    "why_fits_en": "Adds lifting of machine code to compiler IR with architecture-independent CFG and function-boundary recovery, the analysis layer beneath the collection's curated rev.ng decompiler.",
+    "why_fits_zh": "补充将机器码提升为编译器中间表示，并以与架构无关的方式恢复控制流图与函数边界的研究，这一分析层是合集所收录 rev.ng 反编译器的基础。",
+    "metadata_notes": "Crossref gives the three-author order and pages 131–141; Crossref writes the title in lowercase, and this entry follows the capitalization of the author-hosted 11-page PDF, the same length as the ACM version. The paper reports a C++ prototype of 8,011 lines built on LLVM 3.8 and QEMU 2.5.0, and its acknowledgements give https://rev.ng/ as the Free Software release. The revng/revng repository has since become the full rev.ng decompiler: at the commit the curated revng record pins (57d81a3), the README describes a decompiler developed by rev.ng Labs, licensed GPLv2 as a whole with individual files under MIT. Those behavior and license notes describe the current project, not the evaluated 2017 prototype. Nothing was built or run.",
+    "metadata_notes_zh": "Crossref 给出三位作者的顺序及页码 131–141；Crossref 的标题为小写，本条目采用作者托管的 11 页 PDF 中的大小写，其页数与 ACM 版本相同。论文报告的原型为 8,011 行 C++ 代码，基于 LLVM 3.8 与 QEMU 2.5.0；致谢部分给出 https://rev.ng/ 作为其自由软件发布地址。revng/revng 仓库此后已发展为完整的 rev.ng 反编译器：在已收录的 revng 条目所固定的提交（57d81a3）中，README 将其描述为由 rev.ng Labs 开发的反编译器，整体采用 GPLv2 许可，单个文件采用 MIT 许可。这些功能与许可说明针对当前项目，而非 2017 年接受评测的原型。本次未构建或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3033019.3033028",
+      "https://api.crossref.org/works/10.1145/3033019.3033028",
+      "https://nebelwelt.net/publications/files/17CC.pdf",
+      "https://rev.ng/",
+      "https://github.com/revng/revng/blob/57d81a3b0d946ccaa9fed8a13c9871dc36b94747/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
