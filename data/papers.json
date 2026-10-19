@@ -8336,5 +8336,52 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-prospex",
+    "title": "Prospex: Protocol Specification Extraction",
+    "title_zh": "Prospex：协议规范提取",
+    "authors": [
+      "Paolo Milani Comparetti",
+      "Gilbert Wondracek",
+      "Christopher Kruegel",
+      "Engin Kirda"
+    ],
+    "year": 2009,
+    "publication_date": "2009-05",
+    "date_precision": "month",
+    "date_basis": "IEEE’s Crossref deposit and an archived copy of the IEEE Xplore page give May 2009, represented at month precision. The symposium dates are not substituted for a publication day.",
+    "date_basis_zh": "IEEE 提交的 Crossref 元数据及 IEEE Xplore 页面存档副本均给出 2009 年 5 月，本条目按月精度记录，不以研讨会日期替代具体出版日。",
+    "venue": "IEEE S&P 2009",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1109/SP.2009.14",
+    "url": "https://ieeexplore.ieee.org/document/5207640",
+    "pdf_url": "https://sites.cs.ucsb.edu/~chris/research/doc/oakland09_prospex.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Prospex infers message formats and a protocol state machine from execution traces of a Linux server handling client sessions. Dynamic taint analysis splits each session into messages and recovers their formats; messages are then clustered into types by input-format, execution and server-impact similarity, such as the system calls, outputs and file paths a message triggers. The observed type sequences form an augmented prefix tree acceptor, which prerequisite and end-state heuristics label before Exbar computes a minimal consistent automaton. The resulting specifications are translated for the Peach fuzzer to reach later protocol states. The evaluation covers the Agobot command-and-control protocol, SMTP on Sendmail, SMB on Samba and SIP on Asterisk.",
+    "description_zh": "Prospex 从 Linux 服务端处理客户端会话时的执行轨迹推断报文格式与协议状态机。它利用动态污点分析把每个会话切分为报文并恢复其格式；再依据输入格式、执行过程及对服务端影响（如报文触发的系统调用、输出与文件路径）的相似度将报文聚类为不同类型。观察到的类型序列构成增广前缀树接受器，先由前置条件与结束状态启发式标注，再用 Exbar 求出一致的最小自动机。所得规范被转换供 Peach 模糊测试器使用，以到达协议的后续状态。评测覆盖 Agobot 命令与控制协议、Sendmail 上的 SMTP、Samba 上的 SMB 以及 Asterisk 上的 SIP。",
+    "scope_limitations_en": "Prospex traces one endpoint, the server, and its taint tool runs only on Linux, so only Linux server binaries were analyzed. It cannot handle encrypted traffic: TLS sessions made up the 6.5% of 31,903 Postfix sessions that the inferred SMTP specification could not parse. Training sets are small (for example 16 SMTP and 31 SMB sessions), and the inferred machines cover only behavior exercised during training; two SMB states are artifacts of limited training variety, and SMB recall against the reference automaton is 0.58. Reference state machines were built manually by the authors, and soundness was checked with 50,000 random walks per protocol; the sk-strings and beams baselines are state-machine learners, not full protocol reverse-engineering systems. The fuzzing case studies found previously known issues in an older Samba release and in Asterisk, not new vulnerabilities in the latest Samba or Windows XP SMB versions tested.",
+    "scope_limitations_zh": "Prospex 只跟踪服务端一侧，其污点工具仅在 Linux 上运行，因此只分析了 Linux 服务端二进制。它无法处理加密流量：在 31,903 个 Postfix 会话中，推断的 SMTP 规范无法解析的 6.5% 均为 TLS 会话。训练集规模较小（例如 16 个 SMTP 会话、31 个 SMB 会话），推断出的状态机只覆盖训练中出现过的行为；两个 SMB 状态是训练数据多样性不足造成的伪状态，SMB 相对参考自动机的召回率为 0.58。参考状态机由作者手工构建，可靠性检验对每种协议进行 50,000 次随机游走；sk-strings 与 beams 基线是状态机学习算法，并非完整的协议逆向系统。模糊测试案例发现的是旧版 Samba 与 Asterisk 中已知的问题，而非所测最新 Samba 或 Windows XP SMB 实现中的新漏洞。",
+    "why_fits_en": "Adds an execution-based method that extracts both message formats and protocol state machines from observed sessions, complementing the collection’s active state-machine learning and format-only protocol inference research.",
+    "why_fits_zh": "补充一种基于执行、可从观察到的会话中同时提取报文格式与协议状态机的方法，与合集中的主动状态机学习及仅推断格式的协议研究互补。",
+    "metadata_notes": "Crossref and the archived IEEE Xplore page agree on the four authors, the 2009 30th IEEE Symposium on Security and Privacy proceedings, pages 110–125 and May 2009; Xplore does not mark the paper open access. The PDF is the 16-page copy on Christopher Kruegel’s UCSB site, with the same title and author order; its file metadata shows a September 2008 creation date and a 2009 IEEE PDF eXpress certification, and IEEE Xplore holds the version of record. The paper reports that its Peach statefulness extensions were integrated into Peach release 2.2 but links no Prospex code, traces or reference state machines. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 IEEE Xplore 页面存档在四位作者、2009 年第 30 届 IEEE 安全与隐私研讨会论文集、第 110–125 页及 2009 年 5 月等信息上一致；Xplore 未将该论文标为开放获取。PDF 为 Christopher Kruegel 在 UCSB 网站上提供的 16 页副本，标题与作者顺序相同；其文件元数据显示创建于 2008 年 9 月，并带有 2009 年的 IEEE PDF eXpress 认证信息，版本记录以 IEEE Xplore 为准。论文称其为 Peach 增加的状态支持已并入 Peach 2.2 版，但未链接 Prospex 代码、轨迹或参考状态机。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/5207640",
+      "https://web.archive.org/web/20251007214632/https://ieeexplore.ieee.org/document/5207640/",
+      "https://api.crossref.org/works/10.1109/SP.2009.14",
+      "https://sites.cs.ucsb.edu/~chris/research/doc/oakland09_prospex.pdf"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
