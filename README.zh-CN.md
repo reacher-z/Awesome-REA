@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 323](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-323-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 166](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-166-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 324](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-324-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 166](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-166-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (149) · [应用](#app) (46)
+- [网站](#website) (19) · [游戏](#game) (150) · [应用](#app) (46)
 - [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -1081,6 +1081,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能够检查用户在 Cheat Engine 下运行的进程：读取内存与扫描数值、解析指针链、剖析结构体、识别 RTTI 类名、反汇编、查找交叉引用，以及设置硬件或 DBVM 断点。另有工具组可写入内存、注入 DLL 或代码、自动化输入，并调用 Cheat Engine 的内核模式驱动。README 将其限定于教学和研究用途，并声明不支持多人游戏作弊或违反服务条款的行为。
 
   集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/)
+
+- [**ido-static-recomp IRIX IDO 编译器静态重编译工具**](https://github.com/decompals/ido-static-recomp)
+
+  将 SGI IDO 5.3 与 7.1 C 工具链中的 IRIX MIPS 程序（如 cc、cfe、uopt、ugen 和 as1）静态重编译为原生 Linux、macOS 和 Windows 可执行文件，使匹配式反编译项目能在现代主机上以原始编译器代码进行构建。它重编译的是编译器而非游戏，本身既不反编译也不转换游戏代码。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ido-static-recomp/)
 
 <a id="app"></a>
 ### App · 应用

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 323](https://img.shields.io/badge/resources-323-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 166](https://img.shields.io/badge/cases-166-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 324](https://img.shields.io/badge/resources-324-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 166](https://img.shields.io/badge/cases-166-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (149) · [App](#app) (46)
+- [Website](#website) (19) · [Game](#game) (150) · [App](#app) (46)
 - [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -1080,6 +1080,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Connects MCP clients to Cheat Engine through a Lua bridge script and a Python MCP server, so an agent can inspect a process the user runs under Cheat Engine: memory reads and value scans, pointer-chain resolution, structure dissection, RTTI class names, disassembly, cross-references and hardware or DBVM breakpoints. Further tool groups write memory, inject DLLs or code, automate input and use Cheat Engine's kernel-mode driver. The README limits it to educational and research use and disclaims multiplayer cheating and Terms of Service violations.
 
   Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/cheatengine-mcp-bridge/)
+
+- [**ido-static-recomp**](https://github.com/decompals/ido-static-recomp)
+
+  Statically recompiles the IRIX MIPS programs of SGI's IDO 5.3 and 7.1 C toolchain, such as cc, cfe, uopt, ugen and as1, into native Linux, macOS and Windows executables, so matching decompilation projects can build with the original compiler code on modern hosts. It recompiles compilers, not games: it neither decompiles nor translates game code.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/ido-static-recomp/)
 
 <a id="app"></a>
 ### App
