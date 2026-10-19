@@ -7196,5 +7196,43 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "silent-hill-3-memory-of-alessa-decomp-case",
+    "name": "memory of alessa: an in-progress Silent Hill 3 PS2 matching decompilation",
+    "url": "https://github.com/dreamingmoths/memory-of-alessa",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the PS2 executable and 40 overlays of Silent Hill 3 (NTSC-U v1.02) into C for Metrowerks CodeWarrior, and works alongside on the Silent Hill 2 engine, whose debug symbols from a 2001 prototype supply original names for shared code. Builds link with generated assembly for unmatched functions and are checked by SHA-256 against committed hashes. The README calls the project early-stage; decomp.dev reports about 9% of Silent Hill 3 functions and 58% of Silent Hill 2 functions matched at the reviewed commit.",
+    "description_zh": "将 Silent Hill 3（《寂静岭 3》，NTSC-U v1.02）的 PS2 可执行文件及 40 个覆盖模块反编译为面向 Metrowerks CodeWarrior 的 C，同时反编译 Silent Hill 2 引擎，借助 2001 年原型版的调试符号为共享代码提供原始命名。构建时尚未匹配的函数仍使用生成的汇编，链接结果以 SHA-256 对照仓库中提交的哈希。README 称项目尚处早期；decomp.dev 报告所审提交时 Silent Hill 3 约 9%、Silent Hill 2 约 58% 的函数已匹配。",
+    "evidence_url": "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes an early-stage matching decompilation of Silent Hill 3 v1.02 NTSC-U (SLUS_206.22) and of the Silent Hill 2 engine; docs/development.md says the SLUS_202.28 target is the 0.10 VW047-U1 prototype, whose symbols give original names. The output is a rebuilt PS2 ELF with overlays, not a PC port. decomp.dev reports for the reviewed commit 718 of 8,002 Silent Hill 3 functions (6.80% of code, no units complete) and 2,530 of 4,371 Silent Hill 2 functions (49.97% of code); these are mutable, project-generated figures.",
+      "Supply your own Silent Hill 3 v1.02 NTSC-U files: the SLUS_206.22 executable and the B0.MFA overlay archive; README gives the disc image’s SHA-1. The optional Silent Hill 2 build needs the prototype disc’s SLUS_202.28 executable and overlay files. No game executable or game assets are committed.",
+      "Documented hosts are x86-64 Linux and Apple Silicon macOS, with WSL on Windows; Python 3, wget and common build tools are prerequisites. make downloads Metrowerks CodeWarrior PS2 compilers (3.0.3 for Silent Hill 3, 2.4 for Silent Hill 2) from decomp.me’s compiler releases, the wibo Windows-binary loader, decompals PS2 binutils v0.10 and objdiff, and uses the mwccgap submodule; a prebuilt ee-dvp-as.exe for VU microcode is committed.",
+      "tools/scripts/diff.sh compares the rebuilt executable and each overlay with config/<serial>/checksum.sha (41 SHA-256 entries for Silent Hill 3); outside CI a mismatch does not fail make. CI builds both games in a private container image, generates objdiff reports and uploads progress to silenthillmuseum.org. Hash identity covers the supplied version and is reached partly through assembly; this collection built or ran nothing.",
+      "MIT license for the project; Silent Hill games and assets keep their own rights. Fifteen committed files in include/sce/, vsm/ and silent-hill-2/vsm/ carry Sony “SCE(I) CONFIDENTIAL” PS2 runtime library notices, and the vsm/ trees also hold disassembled VU microcode from the games; the MIT notice does not cover them. docs/llm-policy.md sets a no-LLM contribution policy from 2026-09-26 and says AI-driven derivative projects are unsupported; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/docs/development.md",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/docs/llm-policy.md",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/Makefile",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/silent-hill-3/Makefile",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/silent-hill-2/Makefile",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/tools/scripts/diff.sh",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/silent-hill-3/config/SLUS_206.22/checksum.sha",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/.github/workflows/build.yaml",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/.gitmodules",
+      "https://github.com/dreamingmoths/memory-of-alessa/tree/28cb323c31d94518e475924302e14cd87d6963a8/include/sce",
+      "https://github.com/dreamingmoths/memory-of-alessa/tree/28cb323c31d94518e475924302e14cd87d6963a8/vsm",
+      "https://github.com/dreamingmoths/memory-of-alessa/blob/28cb323c31d94518e475924302e14cd87d6963a8/LICENSE",
+      "https://decomp.dev/dreamingmoths/memory-of-alessa"
+    ]
   }
 ]

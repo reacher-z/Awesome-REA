@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "silent-hill-3-memory-of-alessa-decomp-case": {
+    "name": "memory of alessa：进行中的 Silent Hill 3 PS2 匹配反编译",
+    "requirements": [
+      "README 称这是 Silent Hill 3 v1.02 NTSC-U（SLUS_206.22）及 Silent Hill 2 引擎的早期匹配反编译；docs/development.md 说明 SLUS_202.28 目标是 0.10 VW047-U1 原型版，其符号提供原始命名。产物是重建的 PS2 ELF 及覆盖模块，而非 PC 移植。decomp.dev 报告所审提交时 Silent Hill 3 已匹配 8,002 个函数中的 718 个（代码 6.80%，尚无完整单元），Silent Hill 2 已匹配 4,371 个中的 2,530 个（代码 49.97%）；这些是可变的项目生成数字。",
+      "需自备 Silent Hill 3 v1.02 NTSC-U 的文件：SLUS_206.22 可执行文件和 B0.MFA 覆盖模块归档；README 给出光盘镜像的 SHA-1。可选的 Silent Hill 2 构建需要原型版光盘中的 SLUS_202.28 可执行文件和覆盖模块文件。仓库未提交游戏可执行文件或游戏素材。",
+      "文档列出的主机是 x86-64 Linux 和 Apple Silicon macOS，Windows 需通过 WSL；前置条件为 Python 3、wget 和常用构建工具。make 会从 decomp.me 的编译器发布页下载 Metrowerks CodeWarrior PS2 编译器（Silent Hill 3 用 3.0.3，Silent Hill 2 用 2.4），并下载 wibo Windows 程序加载器、decompals PS2 binutils v0.10 和 objdiff，还使用 mwccgap 子模块；仓库提交了用于 VU 微码的预编译 ee-dvp-as.exe。",
+      "tools/scripts/diff.sh 将重建的可执行文件及各覆盖模块与 config/<serial>/checksum.sha 比较（Silent Hill 3 共 41 条 SHA-256）；在 CI 之外，不一致不会使 make 失败。CI 在私有容器镜像中构建两款游戏，生成 objdiff 报告并将进度上传到 silenthillmuseum.org。哈希一致只针对所提供的版本，且部分依靠汇编达成；本合集未构建或运行任何内容。",
+      "项目采用 MIT 许可；Silent Hill 游戏及素材各有权利归属。include/sce/、vsm/ 和 silent-hill-2/vsm/ 中提交的 15 个文件带有 Sony“SCE(I) CONFIDENTIAL”PS2 运行库声明，vsm/ 目录中还有反汇编自游戏的 VU 微码；MIT 声明并不涵盖这些内容。docs/llm-policy.md 规定自 2026-09-26 起禁止以 LLM 参与贡献，并称不支持由 AI 驱动的衍生项目；所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
