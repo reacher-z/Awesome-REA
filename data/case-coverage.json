@@ -15430,12 +15430,18 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111579690532278697"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "reason_en": "The author's post (@YashasGunderia, 2026-10-17) announces a plan to use REA on coding harnesses and distill them into agent skills, quoting a general REA promotion post and pointing to an earlier skills repository. That repository, pinned at 07441cf and last pushed 2026-04-04 (before REA's GitHub repository was created on 2026-04-14), publishes method-level skill files it says were distilled from reviewed implementations whose provenance stays private; it states that it ships no upstream source and does not mention REA. Retain the lead without a catalog mapping; neither the planned REA analysis nor any reconstruction is documented.",
+      "reason_zh": "作者帖子（@YashasGunderia，2026-10-17）宣布打算用 REA 分析编码智能体框架，再将其提炼为智能体技能；帖子引用了一条泛泛介绍 REA 的帖子，并指向作者此前的一个技能仓库。该仓库固定于提交 07441cf，最后推送于 2026-04-04（早于 REA 的 GitHub 仓库于 2026-04-14 创建），发布的是方法层面的技能文件，自称提炼自经审阅的实现，但出处保持私有；仓库声明不包含上游源码，也未提及 REA。保留此线索而不建立目录映射；计划中的 REA 分析及任何重建均未见记录。",
+      "primary_evidence_urls": [
+        "https://x.com/YashasGunderia/status/2111579690532278697",
+        "https://github.com/ychampion/cskill-agents/blob/07441cf41429225b18385a871023fbe6c73ed78d/README.md",
+        "https://github.com/ychampion/cskill-agents/blob/07441cf41429225b18385a871023fbe6c73ed78d/LEGAL.md",
+        "https://github.com/ychampion/cskill-agents/blob/07441cf41429225b18385a871023fbe6c73ed78d/PROVENANCE.md",
+        "https://github.com/morluto/rea"
+      ],
       "catalog_matches": []
     },
     {
@@ -16283,15 +16289,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 210,
-      "insufficient-evidence": 280,
-      "pending": 101
+      "insufficient-evidence": 281,
+      "pending": 100
     },
     "units_by_state": {
       "already-curated": 208,
-      "insufficient-evidence": 280,
-      "pending": 101
+      "insufficient-evidence": 281,
+      "pending": 100
     },
-    "primary_reviewed_units": 428,
+    "primary_reviewed_units": 429,
     "catalog_linked_occurrences": 224,
     "distinct_resource_ids": 214,
     "distinct_paper_ids": 2,
