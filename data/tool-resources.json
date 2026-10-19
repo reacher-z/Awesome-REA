@@ -15314,5 +15314,42 @@
       "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE",
       "https://github.com/LBALab/lba2remake/tree/db54f5de071354939a8b02e71e47c53343ab6ee5/www/models"
     ]
+  },
+  {
+    "id": "vulhunt",
+    "name": "VulHunt Community Edition",
+    "url": "https://github.com/vulhunt-re/vulhunt",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Open-source Community Edition of Binarly REsearch's VulHunt engine for hunting vulnerabilities in POSIX binaries and UEFI firmware on x86 and ARM. Lua rules run on the Rust BIAS framework, which lifts code to Ghidra's P-code and bundles Ghidra's C++ decompiler, and combine taint and dataflow tracking, Weggli-based queries over decompiled code, byte patterns, FLIRT signatures and type libraries; findings are written as JSON with annotated decompiled code. The CLI scans single binaries, Binarly BA2 archives or Binary Ninja databases, and can also run as an MCP server that lets AI assistants open a project, query it with Lua, rename functions and keep notes.",
+    "description_zh": "Binarly REsearch 团队 VulHunt 引擎的开源社区版，用于在 x86 和 ARM 架构的 POSIX 二进制和 UEFI 固件中挖掘漏洞。Lua 规则运行在 Rust 编写的 BIAS 框架之上（该框架将代码提升为 Ghidra P-code，并内置 Ghidra 的 C++ 反编译器），可结合污点与数据流追踪、基于 Weggli 的反编译代码查询、字节模式、FLIRT 签名和类型库进行检测；结果以 JSON 输出，并附带标注后的反编译代码。命令行可扫描单个二进制、Binarly BA2 归档或 Binary Ninja 数据库，也可作为 MCP 服务器运行，让 AI 助手打开项目、用 Lua 查询、重命名函数并记录注释。",
+    "evidence_url": "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v1.0.0, published 2026-03-07, with Linux x86_64/aarch64, macOS arm64 and Windows x86_64 ZIPs; the reviewed dev commit is 7 commits ahead and its CLI crate declares 1.0.1. The documentation recommends its install scripts or a Docker image built from the repository; source builds need Rust, cargo-make, a recent CMake, Clang 20+ and a patched static LuaJIT 2.1, which cargo-make builds.",
+      "Scans need auxiliary data from the separate vulhunt-re/data repository (processor specifications and type libraries, fetched with git-lfs and, for source installs, built with bias-lutil and bias-tutil) and a rules directory, such as the community rules repository with POSIX and UEFI rules; the rules, data and agent-skills repositories had no license file at review. The Binary Ninja loader needs a build with the bndb feature, which links against the Binary Ninja 5.2 stable API, and the btp commands need a Binarly Transparency Platform account.",
+      "Binaries and BA2 archives are supplied by the user. The component loader takes one binary at a time; this repository has no loader for whole UEFI firmware images, since the UEFITool-based loader is published separately and is not part of the reviewed workspace. Binarly describes a commercial Enterprise Edition with further features. Rule findings are analysis aids for manual review, and the reviewed sources report no accuracy evaluation.",
+      "GPL-3.0 for VulHunt; the BIAS framework crates are dual-licensed MIT OR Apache-2.0 according to README.BIAS.md. Nothing was installed and no binaries were scanned."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.md#L115-L159",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-vulhunt/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-vulhunt-mcp/src/tools.rs",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/bias-loader-bndb/Cargo.toml",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/README.BIAS.md",
+      "https://github.com/vulhunt-re/vulhunt/blob/b2fa617923f47d84a57899137107380391700b64/LICENSE",
+      "https://github.com/vulhunt-re/vulhunt/releases/tag/v1.0.0",
+      "https://github.com/vulhunt-re/data/blob/7015639969be34151c790b3ba8e8e74e0911aa3d/README.md",
+      "https://github.com/vulhunt-re/rules/tree/9da95ac19b0e2a4d9c1b816b9e7dd0b40fe07c7f",
+      "https://vulhunt.re/",
+      "https://vulhunt.re/docs/user-guide/vulhunt-cli/installation/"
+    ]
   }
 ]
