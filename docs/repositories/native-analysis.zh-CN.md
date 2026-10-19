@@ -283,7 +283,7 @@
 - [eset/DelphiHelper](https://github.com/eset/DelphiHelper) — DelphiHelper 是 Python 编写的 IDA Pro 插件，用于辅助分析 Delphi 编写的 x86/x86\_64 二进制文件。 **[174 星标]**
 - [jovibor/libpe](https://github.com/jovibor/libpe) — 用于解析 PE32/PE32+ 二进制文件内部结构的库。 **[174 星标]**
 - [zackelia/ghidra-dark-theme](https://github.com/zackelia/ghidra-dark-theme) — 基于原版 ghidra-dark 的现代深色主题 **[174 星标]**
-- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Panzer Dragoon Saga 逆向工程项目 **[173 星标]**
+- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Panzer Dragoon Saga 逆向工程项目 **[173 星标]** · 精选：[Azel：将 Panzer Dragoon Saga 逆向为原生 C++](https://awesomerea.org/zh/resources/azel-panzer-dragoon-saga-reimplementation-case/)
 - [AlexanderBagel/ProcessMemoryMap](https://github.com/AlexanderBagel/ProcessMemoryMap) — 深入分析 Windows 进程内存，帮助节省数小时调试时间的工具 **[172 星标]**
 - [Lancern/asm2vec](https://github.com/Lancern/asm2vec) — 以独立 Python 包提供的非官方 asm2vec 实现 **[172 星标]**
 - [Fausto-404/ai-mobile-reverse-skills](https://github.com/Fausto-404/ai-mobile-reverse-skills) — 面向移动安全分析的六阶段总控技能，统一调度 APK 静态侦察、流量与代码对齐、SO/JNI 深度分析、加密与漏洞综合分析、验证设计及报告交付，支持 JADX MCP、Burp/Yakit MCP、IDA/Ghidra MCP。 **[171 星标]**

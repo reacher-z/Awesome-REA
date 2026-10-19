@@ -283,7 +283,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [eset/DelphiHelper](https://github.com/eset/DelphiHelper) — DelphiHelper is a python IDA Pro plugin aiming to help the analysis of x86/x86\_64 binaries written in Delphi programming language. **[174 stars]**
 - [jovibor/libpe](https://github.com/jovibor/libpe) — Library for parsing internal structures of PE32/PE32+ binary files. **[174 stars]**
 - [zackelia/ghidra-dark-theme](https://github.com/zackelia/ghidra-dark-theme) — Modern dark theme based on the original ghidra-dark **[174 stars]**
-- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Reverse engineering of Panzer Dragoon Saga **[173 stars]**
+- [yaz0r/Azel](https://github.com/yaz0r/Azel) — Reverse engineering of Panzer Dragoon Saga **[173 stars]** · Curated: [Azel: reverse engineering Panzer Dragoon Saga into native C++](https://awesomerea.org/resources/azel-panzer-dragoon-saga-reimplementation-case/)
 - [AlexanderBagel/ProcessMemoryMap](https://github.com/AlexanderBagel/ProcessMemoryMap) — Deep memory analysis for Windows processes — the tool that saves you hours of debugging **[172 stars]**
 - [Lancern/asm2vec](https://github.com/Lancern/asm2vec) — An unofficial implementation of asm2vec as a standalone python package **[172 stars]**
 - [Fausto-404/ai-mobile-reverse-skills](https://github.com/Fausto-404/ai-mobile-reverse-skills) — A six-stage orchestration skill for mobile security analysis, coordinating APK static reconnaissance, traffic-to-code alignment, in-depth SO/JNI analysis, combined cryptography and vulnerability analysis, validation design, and report delivery. Supports JADX MCP, Burp/Yakit MCP, and IDA/Ghidra MCP. **[171 stars]**

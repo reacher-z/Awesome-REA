@@ -7298,5 +7298,38 @@
       "https://github.com/bethington/ghidra-mcp/releases/tag/v7.0.0-rc.3",
       "https://github.com/bethington/ghidra-mcp/releases/tag/v6.0.0"
     ]
+  },
+  {
+    "id": "azel-panzer-dragoon-saga-reimplementation-case",
+    "name": "Azel: reverse engineering Panzer Dragoon Saga into native C++",
+    "url": "https://github.com/yaz0r/Azel",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs the Sega Saturn RPG Panzer Dragoon Saga as native C++, rewriting the game’s SH-2 routines for its kernel, field, town, battle, menu and audio systems. The rewritten code loads the user’s original disc files and reads their tables by Saturn address, rendering through bgfx and SDL with ImGui debugging views. README calls the project very early: the opening is semi-playable, with bugs, up to the Arachnoth battle, and no byte-matching rebuild is attempted.",
+    "description_zh": "将 Sega Saturn 角色扮演游戏 Panzer Dragoon Saga 重建为原生 C++，重写了游戏内核、野外、城镇、战斗、菜单和音频系统的 SH-2 例程。重写后的代码载入使用者自备的原版光盘文件，并按 Saturn 地址读取其中的数据表，通过 bgfx 和 SDL 渲染，另有 ImGui 调试视图。README 称项目仍处于很早期：游戏开头部分可勉强游玩（有错误），直到 Arachnoth 战斗为止；项目也不尝试逐字节一致的重建。",
+    "evidence_url": "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes reverse engineering Panzer Dragoon Saga and reports it as still very early, with the beginning of the game semi-playable, with bugs, until the Arachnoth battle. AzelLib holds the rewritten code annotated with Saturn addresses; common_generated.cpp holds generated tables (sine/cosine, arctangent and VDP2 string data) mirroring the original program’s data, as is usual for such projects. There are no releases; the last commit is dated 2026-09-07.",
+      "Supply the contents of disc 1 from your own copy in the data folder; the field code, for example, loads the original .MCB/.CGB resource bundles and reads tables from game files by Saturn address. README names no region or version, and no Panzer Dragoon Saga files are committed. The vendored ThirdParty/aosdk/samples directory, however, holds six ripped music files from other commercial games (PSF, PSF2, SPU, SSF and DSF tracks, tagged for games such as Parasite Eve and Shienryu).",
+      "README supports only Windows builds: Visual Studio 2022 with CMake, recursive submodules and the vs2022.bat solution generator (vs2026.bat also exists). Submodules supply SDL, bgfx.cmake, ImGui, ImGuizmo, glm, Tracy, the Emscripten SDK and a SoLoud fork, and Xcode projects for macOS, iOS and tvOS are present but undocumented. CI builds the PDS target on Ubuntu with GCC and Clang and on Windows with MSVC, in Release and Debug.",
+      "CI compiles without game files, and the project’s own CMake files register no tests; apart from README’s playability note, no comparison with the original game is documented. PDS_Tool holds SH-2 disassembly and overlay-inspection sources used for analysis. This collection built or ran nothing.",
+      "LICENSE applies MIT (2024, Azel authors) to the project; submodules keep their own licenses, and the vendored aosdk mixes BSD, zlib, GPL and the old MAME license, which forbids commercial use. Panzer Dragoon Saga and the sample rips keep their rights holders’ terms. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/CMakeLists.txt",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/.gitmodules",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/.github/workflows/cmake-multi-platform.yml",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/AzelLib/field/field_a3/o_fld_a3.cpp",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/AzelLib/common_generated.cpp",
+      "https://github.com/yaz0r/Azel/tree/c52329fb257561abff05531a8335e34137d67098/PDS_Tool",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/ThirdParty/aosdk/license.txt",
+      "https://github.com/yaz0r/Azel/blob/c52329fb257561abff05531a8335e34137d67098/LICENSE"
+    ]
   }
 ]

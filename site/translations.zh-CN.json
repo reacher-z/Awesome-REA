@@ -3010,5 +3010,15 @@
       "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
       "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "azel-panzer-dragoon-saga-reimplementation-case": {
+    "name": "Azel：将 Panzer Dragoon Saga 逆向为原生 C++",
+    "requirements": [
+      "README 介绍项目是对 Panzer Dragoon Saga 的逆向工程，并称仍处于很早期：游戏开头部分可勉强游玩（有错误），直到 Arachnoth 战斗为止。AzelLib 存放以 Saturn 地址标注的重写代码；common_generated.cpp 存放生成的数据表（正弦/余弦、反正切及 VDP2 字符串数据），对应原程序中的数据，这在此类项目中很常见。项目没有发布版；最后一次提交日期为 2026-09-07。",
+      "需将自有副本中第 1 张光盘的内容放入 data 文件夹；例如野外代码会载入原版 .MCB/.CGB 资源包，并按 Saturn 地址从游戏文件中读取数据表。README 未注明区域或版本，仓库也未提交任何 Panzer Dragoon Saga 文件。不过，随附的 ThirdParty/aosdk/samples 目录含有六个从其他商业游戏中提取的音乐文件（PSF、PSF2、SPU、SSF 与 DSF 曲目，标签注明 Parasite Eve、Shienryu 等游戏）。",
+      "README 只支持 Windows 构建：Visual Studio 2022 搭配 CMake，递归克隆子模块，并用 vs2022.bat 生成解决方案（另有 vs2026.bat）。子模块提供 SDL、bgfx.cmake、ImGui、ImGuizmo、glm、Tracy、Emscripten SDK 和一个 SoLoud 分支；仓库中另有 macOS、iOS 和 tvOS 的 Xcode 项目，但未见文档说明。CI 在 Ubuntu 上用 GCC 和 Clang、在 Windows 上用 MSVC 构建 PDS 目标，分 Release 与 Debug 两种配置。",
+      "CI 在没有游戏文件的情况下编译，项目自身的 CMake 文件也未注册任何测试；除 README 中关于可玩程度的说明外，未记录与原版游戏的比较。PDS_Tool 包含用于分析的 SH-2 反汇编与覆盖段检视源码。本合集未构建或运行任何内容。",
+      "LICENSE 对项目采用 MIT（2024，Azel authors）；子模块各有许可证，随附的 aosdk 混合了 BSD、zlib、GPL 以及禁止商业使用的旧版 MAME 许可证。Panzer Dragoon Saga 与这些音乐样本仍受各自权利人的条款约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

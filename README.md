@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 350](https://img.shields.io/badge/resources-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 351](https://img.shields.io/badge/resources-351-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (164) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (165) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (182) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (183) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1014,6 +1014,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements BioWare’s Aurora engine and its later derivatives as a portable C++ engine that runs on the user’s installed game data, targeting nine games from Neverwinter Nights to Dragon Age II. Resource management, many Aurora file formats, graphics and sound are in place, and every target shows partial in-game areas in a free-flying spectator mode. README states that normal gameplay is not implemented yet, so this is an early-stage engine case, not a playable replacement.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/xoreos-aurora-engine-case/)
+
+- [**Azel: reverse engineering Panzer Dragoon Saga into native C++**](https://github.com/yaz0r/Azel)
+
+  Reconstructs the Sega Saturn RPG Panzer Dragoon Saga as native C++, rewriting the game’s SH-2 routines for its kernel, field, town, battle, menu and audio systems. The rewritten code loads the user’s original disc files and reads their tables by Saturn address, rendering through bgfx and SDL with ImGui debugging views. README calls the project very early: the opening is semi-playable, with bugs, up to the Arachnoth battle, and no byte-matching rebuild is attempted.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/azel-panzer-dragoon-saga-reimplementation-case/)
 
 #### Tools, projects and integrations
 
