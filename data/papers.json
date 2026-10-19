@@ -7620,5 +7620,58 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-malsight",
+    "title": "Malsight: Exploring Malicious Source Code and Benign Pseudocode for Iterative Binary Malware Summarization",
+    "title_zh": "Malsight：结合恶意源代码与良性伪代码的二进制恶意软件迭代式摘要生成",
+    "authors": [
+      "Haolang Lu",
+      "Hongrui Peng",
+      "Guoshun Nan",
+      "Jiaoyang Cui",
+      "Cheng Wang",
+      "Weifei Jin",
+      "Songtao Wang",
+      "Shengli Pan",
+      "Xiaofeng Tao"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "IEEE's Crossref deposit gives only the 2025 publication year for volume 20. The 2025-06-26 DOI-registration date and the arXiv dates are not used to assert a month or day.",
+    "date_basis_zh": "IEEE 提交的 Crossref 元数据仅给出第 20 卷的出版年份 2025。本条目不依据 2025-06-26 的 DOI 注册日期或 arXiv 日期推定月份或日期。",
+    "venue": "IEEE Transactions on Information Forensics and Security",
+    "publication_status": "journal-article",
+    "arxiv_id": "2406.18379",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2024-06-26",
+    "doi": "10.1109/TIFS.2025.3583552",
+    "url": "https://doi.org/10.1109/TIFS.2025.3583552",
+    "pdf_url": "https://arxiv.org/pdf/2406.18379v3",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "MALSIGHT writes natural-language summaries of stripped binary malware one function at a time. IDA Pro produces pseudocode and a call graph, and functions are summarized callees first, so each caller receives its callees' summaries as context; a sequence-labeling model also marks key API calls and strings, which drive code-search retrieval and LLM-written annotations. The summarizer, MalT5, is a 0.77B-parameter CodeT5+ model fine-tuned first on MalS, 89,609 malicious C source functions from GitHub with LLM-generated summaries refined by human reviewers, and then on annotated benign pseudocode from the Capybara dataset. The authors also introduce MalP, 500 pseudocode functions for testing, and BLEURT-sum, a fine-tuned BLEURT metric, and report that MalT5 performs comparably to much larger Code Llama models.",
+    "description_zh": "MALSIGHT 以函数为单位，为剥离符号的二进制恶意软件生成自然语言摘要。它先用 IDA Pro 生成伪代码和调用图，再按先被调用者、后调用者的顺序生成摘要，使每个调用者都能获得其被调用函数的摘要作为上下文；另有一个序列标注模型标记关键 API 调用和字符串，据此进行代码检索并由大语言模型生成注释。摘要模型 MalT5 是 0.77B 参数的 CodeT5+，先在 MalS 上微调，即来自 GitHub 的 89,609 个恶意 C 源码函数，其摘要由大语言模型生成并经人工审阅完善，再在 Capybara 数据集带注释的良性伪代码上微调。作者还提出了包含 500 个伪代码函数的测试集 MalP 和微调 BLEURT 得到的评测指标 BLEURT-sum，并报告 MalT5 的表现与规模大得多的 Code Llama 模型相当。",
+    "scope_limitations_en": "Training summaries are LLM-generated and then reviewed and refined by five experts rather than written from scratch. MalP's 500 test functions come from compiling and decompiling 20 of the same GitHub malware repositories, not from wild samples, and the authors note that loose filtering may let training and test data overlap and inflate results. Quality is scored mainly with the authors' own BLEURT-sum metric. On ten real malware samples, with 79 functions also rated by three reverse engineers, BLEURT-sum was about 30% lower than on MalP, which the authors attribute to long functions: 15.8% exceed 1,000 tokens, while most training functions are under 300. The pipeline depends on IDA Pro pseudocode, and static annotation relies on online code search and a general-purpose LLM. MALSIGHT summarizes behavior; it is not a malware detector or classifier.",
+    "scope_limitations_zh": "训练用摘要由大语言模型生成，再经五位专家审阅完善，并非从零开始人工撰写。MalP 的 500 个测试函数来自对同一批 GitHub 恶意代码仓库中 20 个仓库的编译与反编译，而非野外样本；作者也指出，过滤不够严格可能导致训练集与测试集重叠，从而使结果偏高。质量评估主要采用作者自行提出的 BLEURT-sum 指标。在十个真实恶意软件样本上（其中 79 个函数另由三名逆向工程人员评分），BLEURT-sum 比在 MalP 上低约 30%，作者将其归因于函数过长：15.8% 的函数超过 1,000 个词元，而大多数训练函数不足 300 个。该流程依赖 IDA Pro 伪代码，静态注释依赖在线代码搜索和通用大语言模型。MALSIGHT 用于概括行为，既不是恶意软件检测器，也不是分类器。",
+    "why_fits_en": "Adds LLM-based summarization of stripped malware pseudocode that follows the call graph, complementing decompilation, symbol-recovery and benchmark records that include binary code summarization.",
+    "why_fits_zh": "补充沿调用图对剥离符号的恶意软件伪代码进行摘要的大语言模型方法，与反编译、符号恢复以及包含二进制代码摘要任务的基准记录互补。",
+    "metadata_notes": "Crossref records volume 20, pages 6733–6747, and the nine-author order, which matches arXiv; it spells the title 'Malsight', while arXiv and the paper write MALSIGHT, and the record follows the publisher title. IEEE Xplore could not be retrieved, so publication facts follow Crossref and the reviewed text is arXiv v3 (2025-06-17), whose comment states acceptance by IEEE TIFS; v1 is dated 2024-06-26 and v2 2024-11-06. The paper reports extracting close to 30K functions from 2,289 repositories before giving the 89,609-function MalS total, and calls MalT5 0.7B in its contribution list and 0.77B elsewhere. Footnote 1 promises a source-code release but gives no link. The repository lhl7/Malsight, described as 'code for Malsight', is owned by an account whose profile name matches the first author, but neither the paper nor an author page links it, so code_url stays null. At the reviewed 2025-07-24 commit it has no license file and links Apache-2.0 Hugging Face models (sequence labeling, CodeT5+ 770M, BLEURT) and datasets. Nothing was downloaded or run.",
+    "metadata_notes_zh": "Crossref 记录第 20 卷、页码 6733–6747 及九位作者顺序，与 arXiv 一致；其标题写作“Malsight”，arXiv 与论文正文则写作 MALSIGHT，本条目采用出版方标题。IEEE Xplore 无法访问，因此出版信息以 Crossref 为准，所审阅的文本是 arXiv v3（2025-06-17），其注释说明论文已被 IEEE TIFS 接收；v1 发布于 2024-06-26，v2 为 2024-11-06。论文先称从 2,289 个仓库中提取了近 3 万个函数，随后又给出 MalS 共 89,609 个函数；贡献列表称 MalT5 为 0.7B 参数，其他部分则为 0.77B。脚注 1 承诺发布源码，但未给出链接。仓库 lhl7/Malsight 的描述为“code for Malsight”，其所属账号的个人资料名称与第一作者一致，但论文和作者页面均未链接该仓库，因此 code_url 保持为空。在所审阅的 2025-07-24 提交中，该仓库没有许可证文件，并链接采用 Apache-2.0 许可的 Hugging Face 模型（序列标注、CodeT5+ 770M、BLEURT）与数据集。本次未下载或运行任何内容。",
+    "evidence_urls": [
+      "https://doi.org/10.1109/TIFS.2025.3583552",
+      "https://api.crossref.org/works/10.1109/TIFS.2025.3583552",
+      "https://arxiv.org/abs/2406.18379",
+      "https://arxiv.org/pdf/2406.18379v3",
+      "https://github.com/lhl7/Malsight/blob/af49daf6dd1d2dbfaea7760af928c7d356fe5c7d/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
