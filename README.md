@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 335](https://img.shields.io/badge/resources-335-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 336](https://img.shields.io/badge/resources-336-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 174](https://img.shields.io/badge/cases-174-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (156) · [App](#app) (48)
+- [Website](#website) (19) · [Game](#game) (157) · [App](#app) (48)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (173) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (174) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -970,6 +970,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs source for the original Japanese Touhou 9.5: Shoot the Bullet 1.02a executable, accepting function exactness only through reproducible byte comparison of pinned Visual C++ .NET 2003 builds against one hash-attested target. The whole program also compiles and links into a playable Windows i386 executable, while README keeps playability, function matching and whole-executable identity as separate statuses.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/th095-reconstruction-case/)
+
+- [**CorsixTH: an open reimplementation of Theme Hospital**](https://github.com/CorsixTH/CorsixTH)
+
+  Reimplements the engine of Bullfrog’s 1997 Theme Hospital, with game logic in Lua and C++ for graphics, sound, movies and pathfinding, on top of the original game’s data files. The README reports that the full campaign can be completed, lists features that are still missing, and adds extensions such as high resolutions and a map editor. It recreates the game’s behaviour on original content rather than recovering Bullfrog source code.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/corsixth-engine-case/)
 
 #### Tools, projects and integrations
 
