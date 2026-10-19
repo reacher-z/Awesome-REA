@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 457](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-457-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 458](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-458-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (26) · [游戏](#game) (181) · [应用](#app) (70)
-- [原生二进制](#native-binary) (60) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (61) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -2115,6 +2115,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   借助虚拟化技术的 Windows 调试器：利用 Intel VT-x 和扩展页表（EPT）将正在运行的系统虚拟化，从而调试内核态和用户态代码；既可在本机作为跟踪与内省工具运行，也可从宿主机通过串行连接附加到客户虚拟机进行调试。其事件包括基于 EPT 的隐藏断点与钩子、不受硬件调试寄存器限制的内存读写和执行监控，对系统调用、CPUID、MSR、I/O 端口、MMIO、异常和中断的监控，以及 Intel PT 与 LBR 分支跟踪。内核侧脚本引擎、PDB 符号支持和 SDK 可用于自动化分析。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/hyperdbg/)
+
+- [**Kuna 智能体优先反编译器**](https://github.com/Noelo-Lab/kuna)
+
+  以智能体为核心、用 Rust 编写的反编译器，最初移植自 Ghidra 的 C++ 反编译器和 SLEIGH 编译器，此后加入了可按选项开关的功能（部分移植自 angr），已与上游分化。单个自包含的 kuna 程序可反编译单个函数，也可将整个二进制导出为 C、头文件和汇编文件；同一引擎还能通过 WebAssembly 在浏览器中运行，或在 Ghidra 中充当反编译后端。项目自称是让 LLM 智能体持续改进反编译器的实验，大部分代码由智能体编写，并以回归测试和基准结果为导向。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/kuna/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

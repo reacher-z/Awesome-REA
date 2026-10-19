@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 457](https://img.shields.io/badge/resources-457-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 458](https://img.shields.io/badge/resources-458-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (26) · [Game](#game) (181) · [App](#app) (70)
-- [Native Binary](#native-binary) (60) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (61) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2114,6 +2114,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Hypervisor-assisted Windows debugger that virtualizes the running system with Intel VT-x and Extended Page Tables to debug kernel and user mode, either locally as a tracing and introspection tool or from a host attached over a serial connection to a guest virtual machine. Its events include EPT-based hidden breakpoints and hooks, memory read, write and execute monitoring without the limits of hardware debug registers, monitoring of system calls, CPUID, MSRs, I/O ports, MMIO, exceptions and interrupts, and Intel PT and LBR branch tracing. A kernel-side script engine, PDB symbol support and an SDK automate analysis.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/hyperdbg/)
+
+- [**Kuna**](https://github.com/Noelo-Lab/kuna)
+
+  Agent-first decompiler written in Rust that began as a port of Ghidra’s C++ decompiler and SLEIGH compiler, and has since diverged with option-gated features, some ported from angr. A single self-contained kuna binary decompiles one function or exports a whole binary to C, header and assembly files, and the same engine runs in the browser through WebAssembly or as the decompiler backend inside Ghidra. The project calls itself an experiment in having LLM agents refine the decompiler; most code is agent-written and steered by regression and benchmark results.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/kuna/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
