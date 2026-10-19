@@ -10202,13 +10202,25 @@
       "reported_source_urls": [
         "https://github.com/HalmyLyseas/VandalHearts-decomp-SLPM-86007"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The archived repository, pinned at 7501759, documents a byte-exact matching decompilation of the Japanese SLPM-86007 executable: its README reports all 88 translation units in C, checked by MD5 against a user-supplied executable and PsyQ headers, and its NOTICE limits GPL-2.0 to the tooling and documentation. Its description says the work is superseded by the jp/ tree of VandalHearts-PcPort. The collection row describes that native port built on the decompilation, which the existing PC-port record already covers, including the Japanese tree; full mapping avoids a duplicate record. Matching and playthrough results remain project-reported.",
+      "reason_zh": "已归档的仓库（固定于提交 7501759）记录了日版 SLPM-86007 可执行文件的逐字节一致反编译：README 报告全部 88 个翻译单元均为 C 代码，并以使用者自备的可执行文件和 PsyQ 头文件做 MD5 校验；NOTICE 说明 GPL-2.0 仅覆盖工具和文档。仓库简介称该工作已由 VandalHearts-PcPort 的 jp/ 代码树取代。合集条目描述的是基于该反编译的原生移植，现有 PC 移植条目已涵盖它，包括日版代码树；完整映射可避免重复条目。一致性与通关结果仍为项目自述。",
+      "primary_evidence_urls": [
+        "https://github.com/HalmyLyseas/VandalHearts-decomp-SLPM-86007/blob/75017596cc439a7141e405943afdb469b717787c/README.md",
+        "https://github.com/HalmyLyseas/VandalHearts-decomp-SLPM-86007/blob/75017596cc439a7141e405943afdb469b717787c/NOTICE",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/README.md",
+        "https://github.com/HalmyLyseas/VandalHearts-PcPort/tree/14552fffa0e0b47e02b57592e274fc6e7a649923/jp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "vandal-hearts-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:kartpad",
@@ -16142,17 +16154,17 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 204,
+      "already-curated": 205,
       "insufficient-evidence": 265,
-      "pending": 122
+      "pending": 121
     },
     "units_by_state": {
-      "already-curated": 202,
+      "already-curated": 203,
       "insufficient-evidence": 265,
-      "pending": 122
+      "pending": 121
     },
-    "primary_reviewed_units": 408,
-    "catalog_linked_occurrences": 217,
+    "primary_reviewed_units": 409,
+    "catalog_linked_occurrences": 218,
     "distinct_resource_ids": 208,
     "distinct_paper_ids": 2,
     "unique_projects": null
