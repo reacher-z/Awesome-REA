@@ -20,7 +20,7 @@ from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
-from case_coverage import read_case_coverage, validate_case_coverage
+from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
 
 
 RESOURCE_FIELDS = {
@@ -1048,10 +1048,14 @@ def main():
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
     validate_benchmarks(benchmarks, errors)
     try:
-        validate_case_coverage(read_case_coverage(ROOT), records, papers, errors,
-                               url_check=public_https_error)
+        coverage = read_case_coverage(ROOT)
+        validate_case_coverage(coverage, records, papers, errors, url_check=public_https_error)
     except (OSError, ValueError):
         errors.append('Case coverage could not be read as strict JSON.')
+    else:
+        revision_warning = catalog_revision_warning(coverage, ROOT)
+        if revision_warning:
+            print(f'Warning: case coverage {revision_warning}', file=sys.stderr)
     scanned = 0
     index_path = ROOT / 'data/source-index.json'
     if index_path.exists():

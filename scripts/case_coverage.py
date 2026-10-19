@@ -4,6 +4,7 @@ from datetime import date, datetime, timezone
 import json
 from pathlib import Path
 import re
+import subprocess
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +50,32 @@ def coverage_counts(entries):
         'distinct_paper_ids': len({match['id'] for match in matches if match['catalog'] == 'paper'}),
         'unique_projects': None,
     }
+
+
+def catalog_revision_warning(document, root=ROOT):
+    """Advisory: name a catalog_revision that is not on the checked-out history, or None.
+
+    Squash merges discard branch commits, so the revision must be a commit already on main. The check
+    needs full Git history; it is skipped without Git, outside a work tree and in shallow clones.
+    """
+    revision = document.get('catalog_revision') if isinstance(document, dict) else None
+    if not isinstance(revision, str) or not re.fullmatch(r'[a-f0-9]{40}', revision):
+        return None  # validate_case_coverage reports the format.
+
+    def git(*arguments):
+        return subprocess.run(['git', '-C', str(root), *arguments], capture_output=True, encoding='utf-8', check=False)
+
+    try:
+        shallow = git('rev-parse', '--is-shallow-repository')
+        if shallow.returncode or shallow.stdout.strip() != 'false':
+            return None
+        if git('cat-file', '-e', revision + '^{commit}').returncode:
+            return f'catalog_revision {revision} is not a commit in this clone; use a commit on main'
+        if git('merge-base', '--is-ancestor', revision, 'HEAD').returncode:
+            return f'catalog_revision {revision} is not an ancestor of HEAD; use a commit on main'
+    except OSError:
+        return None
+    return None
 
 
 def validate_case_coverage(document, resources, papers, errors, *, url_check):
