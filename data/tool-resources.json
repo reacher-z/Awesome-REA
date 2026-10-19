@@ -7196,5 +7196,32 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "wtsxdev-reverse-engineering-list",
+    "name": "Reverse Engineering resources (wtsxDev)",
+    "url": "https://github.com/wtsxDev/reverse-engineering",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "A single-README awesome list, started in January 2017 and maintained under the KaliTut name, of 139 reverse-engineering links in 16 sections: books, courses, practice targets, hex editors, binary-format tools, disassemblers, binary analysis, bytecode analysis, import reconstruction, dynamic analysis, debugging, Mac decryption, document analysis, scripting, Android and YARA. Entries are mostly a tool or resource name with its link, a few with a one-line usage note, and lean towards Windows and macOS tooling and malware analysis.",
+    "description_zh": "以单个 README 维护的 awesome 清单，2017 年 1 月创建，以 KaliTut 名义维护，共收录 139 个逆向工程链接，分为 16 个部分：书籍、课程、练习目标、十六进制编辑器、二进制格式工具、反汇编器、二进制分析、字节码分析、导入表重建、动态分析、调试、Mac 解密、文档分析、脚本、Android 和 YARA。条目大多只有工具或资源名称及链接，少数附一行用法说明，内容偏重 Windows 与 macOS 工具以及恶意软件分析。",
+    "evidence_url": "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit b254985 (2019-03-07), still the default-branch head; all 26 commits date from 2017–2019, so the list predates most current tools and any LLM-assisted workflow. In an automated check at review, 24 of its 147 unique URLs gave no response, a 404 or a 503, among them every tuts4you download link, the Apple man-page links, Crackmes.de, malwr.com and the CodePlex z3 page.",
+      "Entries state no license, platform, maturity or maintenance status, so each tool must be checked at its own source; several, such as IDA Pro, 010 Editor and Binary Ninja, are commercial. Books mostly use amzn.to short links, and the header image and five closing links point to book lists on kalitut.com.",
+      "The Practice section places crackme and CTF sites next to public malware-sample repositories with only a warning to be careful with malware, and the Mac Decrypt section names tools without describing their use; this record treats the list only as a directory of analysis resources.",
+      "A package.json and .travis.yml set up remark-lint checks for list order, duplicate links and dead links on Node.js 8 under Travis CI. GitHub detects no license, the repository has no license file and the package.json license field is empty, so the list states no reuse terms; linked tools and books keep their own. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
+      "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
+    ]
   }
 ]
