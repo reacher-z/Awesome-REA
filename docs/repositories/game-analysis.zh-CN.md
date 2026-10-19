@@ -16,7 +16,7 @@
 - [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot 逆向工程工具。 **[4,330 星标]** · 精选：[Godot 逆向工程工具](https://awesomerea.org/zh/resources/godot-re-tools/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — 面向 Counter-Strike 2 的跨平台游戏作弊工具，采用基于 Panorama 的 GUI。 **[3,891 星标]**
-- [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]**
+- [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]** · 精选：[PS2Recomp PlayStation 2 静态重编译器](https://awesomerea.org/zh/resources/ps2recomp/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — 视觉小说资源浏览器。 **[3,328 星标]** · 精选：[GARbro](https://awesomerea.org/zh/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine 归档文件浏览器 **[3,258 星标]** · 精选：[FModel 游戏资源浏览器](https://awesomerea.org/zh/resources/fmodel/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Linux 逆向工程工具。 **[3,124 星标]**

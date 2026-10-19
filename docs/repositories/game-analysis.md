@@ -16,7 +16,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot reverse engineering tools **[4,330 stars]** · Curated: [Godot RE Tools](https://awesomerea.org/resources/godot-re-tools/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — Cross-platform game hack for Counter-Strike 2 with Panorama-based GUI. **[3,891 stars]**
-- [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]**
+- [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]** · Curated: [PS2Recomp](https://awesomerea.org/resources/ps2recomp/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — Visual Novels resource browser **[3,328 stars]** · Curated: [GARbro](https://awesomerea.org/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine Archives Explorer **[3,258 stars]** · Curated: [FModel](https://awesomerea.org/resources/fmodel/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Reverse engineering tool for Linux **[3,124 stars]**

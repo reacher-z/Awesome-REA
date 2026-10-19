@@ -11,11 +11,11 @@ Scan date: **2026-10-16 UTC**.
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
 | [Websites](web-analysis.md) | 177 | 11 |
-| [Games](game-analysis.md) | 388 | 35 |
+| [Games](game-analysis.md) | 388 | 36 |
 | [Apps · Android](android.md) | 432 | 13 |
 | [Apps · Managed code](managed-code.md) | 131 | 1 |
 | [Native binaries](native-analysis.md) | 677 | 32 |
-| [Runtime and debugging](dynamic-analysis.md) | 99 | 9 |
+| [Runtime and debugging](dynamic-analysis.md) | 99 | 10 |
 | [Firmware](firmware.md) | 207 | 10 |
 | [Protocols](protocol-analysis.md) | 103 | 2 |
 | [General tools and collections](reverse-engineering.md) | 622 | 34 |
