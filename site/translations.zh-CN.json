@@ -4677,5 +4677,15 @@
       "标为 Matching 的目标文件（configure.py 中有 184 个，另有 20 个仍为 NonMatching）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/RSBE01_02/build.sha1 校验 main.dol 和各 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 RSBE01_02，并上传进度报告。decomp.dev 针对该固定提交的报告显示，15,833,548 个代码字节中有 201,252 个（1.27%）、92,523 个函数中有 2,504 个已匹配，4,415 个单元中有 516 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器不在该声明范围内，BrawlHeaders 子模块在 GitHub 上也未声明许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "re-plants-vs-zombies-decomp-case": {
+    "name": "re-plants-vs-zombies：反编译并现代化改造 Plants vs. Zombies 年度版",
+    "requirements": [
+      "README 介绍项目旨在反编译初代 PvZ 的最新功能，并扩展游戏及其引擎；它建立在 Miya（rspforhp）已删除的 0.9.9 版反编译之上，并感谢 ruslan831 将其存档。路线图将 x64 支持和成就标为部分完成，GLFW 渲染器与跨平台替换标为进行中，Zombatar 和模组 API 尚未完成。项目没有发布版；最后一次提交日期为 2026-07-11。",
+      "游玩需要购买所得副本中的原版游戏文件；README 链接 Steam 年度版，但未注明确切的可执行文件版本。构建出的可执行文件在该游戏目录中运行，音频代码在运行时加载 bass.dll 或 fmod.dll，而不是链接仓库内提交的副本。README 称仓库除开源引擎外不含 PopCap 的任何 IP；Resources.cpp/.h 重建了游戏生成的资源 ID 表，属于从游戏导出的数据，这在此类项目中很常见。",
+      "构建需要 CMake 3.16 及以上和 C++23。README 介绍了 Visual Studio Community（CMakeSettings.json 提供 x86 与 x64 的 MSVC 配置）或 CMake 搭配 Ninja 两种方式；toolchain.cmake 使用 x86_64-w64-mingw32 Clang 和 windres 交叉编译。所审构建产出 Windows 可执行文件，仓库没有 CI 工作流。",
+      "来源未记录测试、CI 或与原版可执行文件的比较；贡献者会为逆向出的函数和类成员标注其 GOTY 版地址。与原游戏的一致程度未经衡量，本合集也未构建或运行任何内容。",
+      "LICENSE 以 CC0 1.0 释出仓库。SexyAppFramework 代码源自 PopCap 公开的引擎，但仓库未附 PopCap 的许可证文本；ogg 代码保留 Xiph.org 的 BSD 式声明，FMOD 3（Firelight，1999–2002）与 BASS 2.4（Un4seen，1999–2022）的 API 头文件仍归各自厂商所有。原版游戏及其文件仍受其权利人的条款约束。README 表示项目不纵容盗版；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

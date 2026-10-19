@@ -14079,5 +14079,41 @@
       "https://github.com/Sammi-Husky/BrawlHeaders/tree/29c4ff16ce06241ea672ffd54e6415fbd02c0743",
       "https://decomp.dev/doldecomp/brawl"
     ]
+  },
+  {
+    "id": "re-plants-vs-zombies-decomp-case",
+    "name": "re-plants-vs-zombies: decompiling and modernizing Plants vs. Zombies GOTY",
+    "url": "https://github.com/Patoke/re-plants-vs-zombies",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for Plants vs. Zombies on PopCap’s open-source SexyAppFramework, starting from an earlier community decompilation of version 0.9.9 and adding functionality reversed from the Game of the Year edition, with functions annotated by GOTY addresses. The project also modernizes the engine with current C++ and is replacing the DirectDraw and Direct3D 7 renderers with GLFW. It builds a fan executable that runs from an original game folder, aiming at a modernized, extensible game rather than an identical binary.",
+    "description_zh": "以 PopCap 开源的 SexyAppFramework 为基础重建 Plants vs. Zombies 的 C++ 源码：起点是社区早先对 0.9.9 版的反编译，再补入从年度版（GOTY）逆向得到的功能，并以 GOTY 版地址标注函数。项目同时以现代 C++ 改造引擎，并正将 DirectDraw 与 Direct3D 7 渲染器替换为 GLFW。它构建出在原版游戏目录中运行的同人可执行文件，目标是现代化、可扩展的游戏，而不是完全一致的二进制。",
+    "evidence_url": "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes decompiling the latest functionality of the first PvZ title and expanding the game and its engine, building on a since-deleted 0.9.9 decompilation by Miya (rspforhp) that it credits ruslan831 with archiving. Its roadmap marks x64 support and achievements as partial, the GLFW renderer and cross-platform replacements as in progress, and Zombatar and a modding API as not done. There are no releases; the last commit is dated 2026-07-11.",
+      "Playing needs the original game files from a purchased copy; README links the Steam Game of the Year Edition but names no exact executable version. The built executable is run from that game folder, and the audio code loads bass.dll or fmod.dll at runtime instead of linking a committed copy. README says the repository includes no PopCap IP beyond the open-source engine; Resources.cpp/.h reconstruct the game’s generated resource-ID tables, data derived from the game as is usual for such projects.",
+      "Builds use CMake 3.16+ and C++23. README documents Visual Studio Community, whose CMakeSettings.json has x86 and x64 MSVC configurations, or CMake with Ninja; toolchain.cmake cross-compiles with x86_64-w64-mingw32 Clang and windres. The reviewed build produces a Windows executable, and the repository has no CI workflow.",
+      "The sources document no tests, CI or comparison with the original executable; contributors annotate reversed functions and class members with their GOTY addresses. Fidelity to the original game is not measured, and this collection built or ran nothing.",
+      "LICENSE dedicates the repository under CC0 1.0. The SexyAppFramework code derives from the engine PopCap made public, but PopCap’s license text is not included; the ogg code keeps Xiph.org’s BSD-style notice, and the FMOD 3 (Firelight, 1999–2002) and BASS 2.4 (Un4seen, 1999–2022) API headers keep their vendors’ copyrights. The original game and its files keep their rights holders’ terms. README says the project does not condone piracy; the reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/CMakeLists.txt",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/CMakeLists.txt",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/CMakeSettings.json",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/toolchain.cmake",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/LawnApp.cpp",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/Resources.cpp",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/sound/BassLoader.cpp",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/sound/fmod.h",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/sound/bass.h",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/ogg/COPYING",
+      "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/LICENSE"
+    ]
   }
 ]
