@@ -8,7 +8,7 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
-from build_entry_pages import entry_path, matching_entries
+from build_entry_pages import entry_path, feedback_urls, matching_entries
 from build_manifest import read_build_manifest
 from build_paper_pages import bibtex_text, paper_entity_id, papers_newest_first
 from validate_papers import read_papers
@@ -1004,6 +1004,7 @@ def validate_entry_outputs(pages, resources, papers):
         detail_links = [link for link in article['links'] if re.fullmatch(r'(?:/zh)?/(?:resources|papers)/[a-z0-9-]+/', link)]
         expected_related = [entry_path(other, row['id'], language) for other, row in related.get((kind, identifier), [])]
         assert detail_links == expected_related, f'Related detail links differ from exact repository or publication matches: {route}'
+        assert set(feedback_urls(kind, record)) <= set(article['links']), f'Detail page lacks its prefilled correction and translation links: {route}'
 
 
 def main():

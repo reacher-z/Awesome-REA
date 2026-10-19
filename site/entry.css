@@ -29,6 +29,8 @@
 .entry-facts dd{margin:0;color:var(--body);overflow-wrap:anywhere}
 .entry-section .entry-reviewed{font-size:14px;color:var(--muted)}
 .entry-section .entry-review-note{font-size:15px;color:var(--body)}
+.entry-section .entry-feedback{display:flex;flex-wrap:wrap;gap:4px 24px;margin:4px 0 0;font-size:15px}
+.entry-feedback a{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .entry-sources{margin:0;padding-left:24px;font-size:15px;line-height:1.8;max-width:80ch}
 .entry-sources li+li{margin-top:10px}
 .entry-sources a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
