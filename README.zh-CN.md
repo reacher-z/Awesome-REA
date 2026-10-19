@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 304](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-304-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 64](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 305](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-305-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 154](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-154-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 64](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (138) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (139) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (153) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (154) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -875,6 +875,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   借助 ReXGlue 将 WWE SmackDown vs. Raw 2011 的 Xbox 360 可执行文件提前转换为 C++，并在源自 Xenia 的 Vulkan 运行时上构建为 Windows 程序。手工维护的清单补充自动分析遗漏的函数入口，项目补丁则处理帧节奏、音乐播放器延迟和渲染管线卡顿。作者仅在一款 AMD GPU 上测试了表演赛等模式；生涯模式与在线功能仍未测试。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/svr2011-recomp-case/)
+
+- [**Snap64 Recomp：Pokémon Snap 的静态重编译移植**](https://github.com/JackandBeans/Snap64Recomp)
+
+  使用 N64Recomp 将 Pokémon Snap 美版 Nintendo 64 发行版静态重编译为原生 Windows、Linux、Steam Deck 和 macOS 移植，由 RT64 负责渲染。重编译器读取从一致性 ethteck/pokemonsnap 反编译项目链接出的可重定位 ELF 及使用者自备的 ROM，游戏侧补丁则是反编译函数的修改副本。作者报告借助 Claude Code 完成移植；各项结果仍为项目报告。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/snap64-recomp-case/)
 
 #### 工具、项目与集成
 
