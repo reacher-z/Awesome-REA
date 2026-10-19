@@ -3151,5 +3151,15 @@
       "仓库测试使用 pytest 和 Hex-Rays 的 idapro 库，并以仓库自带的 manalyze.exe（作者的 PE 分析工具 Manalyze 的构建产物）为测试样本；仓库未提供 CI 工作流。README 中的前后对比截图，以及先请求解释再重命名效果更好的观察，均为作者所述。本合集仅审阅源码与文档，未运行插件、测试或任何模型。",
       "LICENSE 与 ida-plugin.json 标明采用 GPL-3.0；IDA Pro、Hex-Rays 反编译器和模型服务各有其许可与条款。README 感谢 Kaspersky 提供最初资助，并称 HarfangLab 为当前支持方。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "retdec": {
+    "name": "RetDec 可重定向机器码反编译器",
+    "requirements": [
+      "README 警告 RetDec 处于有限维护模式：拉取请求会优先审阅，议题的回应会有延迟，且除基本维护相关问题外不会主动解决，开发工作也极为有限。最新发行版为 v5.0（2022-12-08）；所审阅的 master 提交（2026-05-26）比它多 81 个提交，版本号仍为 5.0。",
+      "发行包覆盖 Linux、macOS 和 Windows；README 列出 Windows 7+、Linux、macOS 以及实验性的 FreeBSD，每次安装约占 5–6 GB。源码构建需要支持 C++17 的编译器（GCC 7+、Visual Studio 2017 15.7+，或 macOS 10.15+ 上的完整 Xcode）、OpenSSL 1.1.1+、Python 3.4+，Windows 以外还需 autotools；CMakeLists.txt 要求 CMake 3.13，而非 README 所写的 3.6。构建时会下载固定版本的 Capstone、Keystone、YARA 和 yaramod 压缩包、Avast 维护的 LLVM 分支以及 2019 年的支持包。",
+      "输入为使用者自有的可执行文件、目标文件、归档或原始机器码。自 v5.0 起，反编译器也以一组 CMake 库的形式供其他项目调用；独立的 retdec-idaplugin 和 retdec-r2plugin 仓库将其嵌入 IDA 和 radare2。",
+      "GitHub Actions 在 Ubuntu 22.04、Windows（MSYS2）和 macOS 上构建 Release 与 Debug 配置，再运行独立的 retdec-regression-tests 测试套件。README 说明每夜构建不作保证、可能出现回归，Docker 支持则由社区维护。",
+      "采用 MIT 许可（Avast Software）。修改过的 PeLib 保留其 zlib/libpng 许可，LICENSE-THIRD-PARTY 列出其他组件，其中 Keystone 依据其针对 GPLv2 的 FOSS 例外条款使用。"
+    ]
   }
 }
