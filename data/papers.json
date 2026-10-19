@@ -4713,5 +4713,58 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-cama",
+    "title": "On Benchmarking Code LLMs for Android Malware Analysis",
+    "title_zh": "面向 Android 恶意软件分析的代码大语言模型基准评测",
+    "authors": [
+      "Yiling He",
+      "Hongyu She",
+      "Xingzhi Qian",
+      "Xinran Zheng",
+      "Zhuo Chen",
+      "Zhan Qin",
+      "Lorenzo Cavallaro"
+    ],
+    "year": 2025,
+    "publication_date": "2025-06-11",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit gives online publication and the issued date as 2025-06-11, with a print date of 2025-06-25, the first day of the June 25–28 conference. This entry uses the publisher's online date; the arXiv dates are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将在线出版日期及发布日期列为 2025-06-11，纸质出版日期为 2025-06-25，即 6 月 25–28 日会议的首日。本条目采用出版方的在线出版日期，不以 arXiv 日期替代。",
+    "venue": "ISSTA Companion 2025 (LLMSC Workshop)",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2504.00694",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2025-04-01",
+    "doi": "10.1145/3713081.3731745",
+    "url": "https://dl.acm.org/doi/10.1145/3713081.3731745",
+    "pdf_url": "https://arxiv.org/pdf/2504.00694v2",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "app"
+    ],
+    "description_en": "CAMA is a framework for benchmarking how code LLMs read decompiled Android malware. Androguard decompiles each APK into Java functions, and each model returns a structured output per function: a summary, a refined function name and a 0–10 maliciousness score. Two analysis tasks build on these outputs. Malicious-function identification is scored by consistency (whether scores and names stay stable when the model is re-prompted with its own summaries) and by fidelity (how much a LightGBM malware-category classifier loses confidence when the top-scored function descriptors are removed). Malware-purpose summarization is scored by semantic relevance (BLEU, METEOR and ROUGE-L against reference app descriptions). The benchmark holds 118 APKs from 6 categories and 13 families, with 7,542,799 decompiled functions. Of the four models evaluated, StarChat-Beta has the highest maliciousness consistency (0.813, against 0.381 for CodeLlama) and narrowly the highest semantic-relevance scores, while fidelity varies widely across models and removal sizes. Renaming functions with model-suggested names raises fidelity for CodeLlama and StarChat but lowers METEOR by about 10%.",
+    "description_zh": "CAMA 是一个评测代码大语言模型理解反编译 Android 恶意软件能力的基准框架。它使用 Androguard 将每个 APK 反编译为 Java 函数，并要求模型为每个函数输出结构化结果：功能摘要、改进后的函数名以及 0–10 分的恶意程度评分。两项分析任务以这些输出为基础。恶意函数识别以一致性（模型依据自身摘要再次作答时评分与命名是否稳定）和保真度（移除评分最高的函数描述后，LightGBM 恶意软件类别分类器的置信度下降多少）衡量；恶意软件用途摘要则以语义相关性（与参考应用描述之间的 BLEU、METEOR 和 ROUGE-L）衡量。基准包含来自 6 个类别、13 个家族的 118 个 APK，共 7,542,799 个反编译函数。在四个受测模型中，StarChat-Beta 的恶意程度一致性最高（0.813，CodeLlama 为 0.381），语义相关性得分也以微弱优势居首；保真度则随模型和移除数量大幅波动。用模型建议的名称重命名函数会提高 CodeLlama 和 StarChat 的保真度，但会使 METEOR 下降约 10%。",
+    "scope_limitations_en": "This is an eight-page workshop paper that evaluates four open-source code LLMs: CodeLlama-7b-Instruct, StarChat-Beta and the base-size CodeT5 and PLBART, not current frontier models. CodeT5 and PLBART were fine-tuned for three epochs to produce the output fields, and their maliciousness scores come from a separate DeepSeek-R1-Distill-Llama-70B model, so score-based results do not measure those two models alone; both are also excluded from the renaming study. No function-level ground truth exists: malicious-function identification is measured indirectly through classifier confidence, and the reference app descriptions are GPT-4-generated summaries from the earlier LAMD dataset; the authors note that these surrogates can add noise and bias. The 118 samples are de-duplicated LAMD malware decompiled only with Androguard, and obfuscation is not studied separately. Fidelity scores have standard deviations close to their means, for example 0.332 ± 0.30 for CodeT5 at k = 2. The Zenodo record holds the structured model outputs (function summaries, refined names and maliciousness scores); neither it nor the LAMD record states that it contains the APK samples. CAMA does not detect malware and is not a decompiler.",
+    "scope_limitations_zh": "这是一篇 8 页的研讨会论文，评测四个开源代码大语言模型：CodeLlama-7b-Instruct、StarChat-Beta 以及基础规模的 CodeT5 和 PLBART，并非当前的前沿模型。CodeT5 与 PLBART 经过三轮微调后才能输出所需字段，其恶意程度评分由另一个 DeepSeek-R1-Distill-Llama-70B 模型给出，因此基于评分的结果并非单独衡量这两个模型；二者也未纳入重命名实验。研究缺少函数级真实标签：恶意函数识别通过分类器置信度间接衡量，参考应用描述则是此前 LAMD 数据集中由 GPT-4 生成的摘要；作者指出这些替代方法可能引入噪声与偏差。118 个样本是经过去重的 LAMD 恶意软件，仅使用 Androguard 反编译，也未单独研究混淆的影响。保真度得分的标准差与均值相近，例如 CodeT5 在 k = 2 时为 0.332 ± 0.30。Zenodo 记录保存的是结构化模型输出（函数摘要、改进名称与恶意程度评分）；该记录与 LAMD 记录均未说明包含 APK 样本。CAMA 不是恶意软件检测系统，也不是反编译器。",
+    "why_fits_en": "Adds a benchmark of code LLMs reading decompiled Android malware, complementing DeGuard's identifier recovery and the single Android case study in the USENIX Security 2024 code-analysis study elsewhere in the bibliography.",
+    "why_fits_zh": "补充一个评测代码大语言模型阅读反编译 Android 恶意软件的基准，与书目中 DeGuard 的标识符恢复研究以及 USENIX Security 2024 代码分析研究中的单个 Android 案例互补。",
+    "metadata_notes": "ACM's Crossref deposit gives the ISSTA Companion '25 proceedings, pages 153–160, a CC BY 4.0 license and the same seven authors in order; the arXiv v2 PDF prints the ACM reference and DOI. The workshop name rests on the arXiv comment and the Zenodo description, which both state acceptance to the LLMSC Workshop 2025 of the 34th ACM SIGSOFT ISSTA Companion; Crossref names only the companion proceedings. arXiv v1 is dated 2025-04-01 and v2 2025-04-23. The paper links no code repository, so code_url is null. Its outputs are the Zenodo dataset 10.5281/zenodo.15155917 (2025-04-05, CC BY 4.0, a 710 MB CAMA.zip that was not downloaded); that dataset DOI is not used as the paper identifier. The samples and reference descriptions come from the LAMD dataset 10.5281/zenodo.14884736, whose 2 MB archive is described as CSV sample information and logs. The ACM landing page refused automated requests, so the review relied on Crossref and the arXiv PDF. No code or experiments were run.",
+    "metadata_notes_zh": "ACM 提交的 Crossref 元数据列出 ISSTA Companion '25 论文集、第 153–160 页、CC BY 4.0 许可，以及顺序相同的七位作者；arXiv v2 PDF 印有 ACM 引用格式与 DOI。研讨会名称依据 arXiv 注释与 Zenodo 说明，二者均称论文被第 34 届 ACM SIGSOFT ISSTA Companion 的 LLMSC Workshop 2025 接收；Crossref 只列出配套论文集名称。arXiv v1 发布于 2025-04-01，v2 为 2025-04-23。论文未链接代码仓库，因此 code_url 为 null。其输出发布为 Zenodo 数据集 10.5281/zenodo.15155917（2025-04-05，CC BY 4.0，710 MB 的 CAMA.zip，未下载）；该数据集 DOI 不用作论文标识符。样本与参考描述来自 LAMD 数据集 10.5281/zenodo.14884736，其 2 MB 压缩包被描述为 CSV 样本信息与日志。ACM 页面拒绝自动请求，因此本次审阅依据 Crossref 与 arXiv PDF。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3713081.3731745",
+      "https://api.crossref.org/works/10.1145/3713081.3731745",
+      "https://arxiv.org/abs/2504.00694",
+      "https://arxiv.org/pdf/2504.00694v2",
+      "https://zenodo.org/records/15155917",
+      "https://zenodo.org/api/records/15155917",
+      "https://zenodo.org/records/14884736"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

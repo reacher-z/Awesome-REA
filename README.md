@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,14 +2193,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (8) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3157,6 +3157,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** People review and correct the inferred navigation graph. Evaluation covers 50 five-page UI sets; transition coverage and compilation do not establish full business-logic or backend recovery. Framework results vary, and visual metrics imperfectly reflect perceived fidelity. Public scripts and data are available, but no project-level license was found at the reviewed commit.
 
   **Authors:** Ting Zhou et al.
+
+  </details>
+
+- [**On Benchmarking Code LLMs for Android Malware Analysis**](https://dl.acm.org/doi/10.1145/3713081.3731745)
+
+  CAMA is a framework for benchmarking how code LLMs read decompiled Android malware. Androguard decompiles each APK into Java functions, and each model returns a structured output per function: a summary, a refined function name and a 0–10 maliciousness score. Two analysis tasks build on these outputs. Malicious-function identification is scored by consistency (whether scores and names stay stable when the model is re-prompted with its own summaries) and by fidelity (how much a LightGBM malware-category classifier loses confidence when the top-scored function descriptors are removed). Malware-purpose summarization is scored by semantic relevance (BLEU, METEOR and ROUGE-L against reference app descriptions). The benchmark holds 118 APKs from 6 categories and 13 families, with 7,542,799 decompiled functions. Of the four models evaluated, StarChat-Beta has the highest maliciousness consistency (0.813, against 0.381 for CodeLlama) and narrowly the highest semantic-relevance scores, while fidelity varies widely across models and removal sizes. Renaming functions with model-suggested names raises fidelity for CodeLlama and StarChat but lowers METEOR by about 10%.
+
+  ISSTA Companion 2025 (LLMSC Workshop) · Conference paper · [PDF](https://arxiv.org/pdf/2504.00694v2) · [Full entry & citation](https://awesomerea.org/papers/paper-cama/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** This is an eight-page workshop paper that evaluates four open-source code LLMs: CodeLlama-7b-Instruct, StarChat-Beta and the base-size CodeT5 and PLBART, not current frontier models. CodeT5 and PLBART were fine-tuned for three epochs to produce the output fields, and their maliciousness scores come from a separate DeepSeek-R1-Distill-Llama-70B model, so score-based results do not measure those two models alone; both are also excluded from the renaming study. No function-level ground truth exists: malicious-function identification is measured indirectly through classifier confidence, and the reference app descriptions are GPT-4-generated summaries from the earlier LAMD dataset; the authors note that these surrogates can add noise and bias. The 118 samples are de-duplicated LAMD malware decompiled only with Androguard, and obfuscation is not studied separately. Fidelity scores have standard deviations close to their means, for example 0.332 ± 0.30 for CodeT5 at k = 2. The Zenodo record holds the structured model outputs (function summaries, refined names and maliciousness scores); neither it nor the LAMD record states that it contains the APK samples. CAMA does not detect malware and is not a decompiler.
+
+  **Authors:** Yiling He et al.
 
   </details>
 

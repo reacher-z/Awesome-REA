@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2194,14 +2194,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (8) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3158,6 +3158,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 人员需审核并修正推断出的导航图。评测覆盖 50 组各含五页的界面；页面跳转覆盖率与编译成功不代表恢复了完整业务逻辑或后端。各框架结果存在差异，视觉指标也不能完全反映人眼感知的保真度。脚本与数据已公开，但核查的提交中未发现项目级许可证。
 
   **作者:** Ting Zhou 等
+
+  </details>
+
+- [**面向 Android 恶意软件分析的代码大语言模型基准评测**](https://dl.acm.org/doi/10.1145/3713081.3731745)
+
+  CAMA 是一个评测代码大语言模型理解反编译 Android 恶意软件能力的基准框架。它使用 Androguard 将每个 APK 反编译为 Java 函数，并要求模型为每个函数输出结构化结果：功能摘要、改进后的函数名以及 0–10 分的恶意程度评分。两项分析任务以这些输出为基础。恶意函数识别以一致性（模型依据自身摘要再次作答时评分与命名是否稳定）和保真度（移除评分最高的函数描述后，LightGBM 恶意软件类别分类器的置信度下降多少）衡量；恶意软件用途摘要则以语义相关性（与参考应用描述之间的 BLEU、METEOR 和 ROUGE-L）衡量。基准包含来自 6 个类别、13 个家族的 118 个 APK，共 7,542,799 个反编译函数。在四个受测模型中，StarChat-Beta 的恶意程度一致性最高（0.813，CodeLlama 为 0.381），语义相关性得分也以微弱优势居首；保真度则随模型和移除数量大幅波动。用模型建议的名称重命名函数会提高 CodeLlama 和 StarChat 的保真度，但会使 METEOR 下降约 10%。
+
+  ISSTA Companion 2025 (LLMSC Workshop) · 会议论文 · [PDF](https://arxiv.org/pdf/2504.00694v2) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-cama/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是一篇 8 页的研讨会论文，评测四个开源代码大语言模型：CodeLlama-7b-Instruct、StarChat-Beta 以及基础规模的 CodeT5 和 PLBART，并非当前的前沿模型。CodeT5 与 PLBART 经过三轮微调后才能输出所需字段，其恶意程度评分由另一个 DeepSeek-R1-Distill-Llama-70B 模型给出，因此基于评分的结果并非单独衡量这两个模型；二者也未纳入重命名实验。研究缺少函数级真实标签：恶意函数识别通过分类器置信度间接衡量，参考应用描述则是此前 LAMD 数据集中由 GPT-4 生成的摘要；作者指出这些替代方法可能引入噪声与偏差。118 个样本是经过去重的 LAMD 恶意软件，仅使用 Androguard 反编译，也未单独研究混淆的影响。保真度得分的标准差与均值相近，例如 CodeT5 在 k = 2 时为 0.332 ± 0.30。Zenodo 记录保存的是结构化模型输出（函数摘要、改进名称与恶意程度评分）；该记录与 LAMD 记录均未说明包含 APK 样本。CAMA 不是恶意软件检测系统，也不是反编译器。
+
+  **作者:** Yiling He 等
 
   </details>
 
