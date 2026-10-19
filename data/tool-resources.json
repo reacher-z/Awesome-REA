@@ -8750,5 +8750,39 @@
       "https://github.com/boricj/ghidra-delinker-extension/releases/tag/v0.9.2",
       "https://boricj.net/tenchu1/2024/05/31/part-11.html"
     ]
+  },
+  {
+    "id": "bepinex",
+    "name": "BepInEx",
+    "url": "https://github.com/BepInEx/BepInEx",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Plugin and patching framework for Unity Mono, Unity IL2CPP and .NET Framework games such as XNA, FNA and MonoGame titles, which loads mods and analysis plugins into a locally installed game. Plugins patch methods at runtime with the bundled HarmonyX and MonoMod.RuntimeDetour, while preloader patchers rewrite managed assemblies with Mono.Cecil before the game loads them; on IL2CPP games it runs Cpp2IL and Il2CppInterop to generate interop assemblies from the game binary and global-metadata.dat. Its guides also cover configuration, logging, and debugging plugins and game assemblies with dnSpy.",
+    "description_zh": "面向 Unity Mono、Unity IL2CPP 以及 XNA、FNA、MonoGame 等 .NET Framework 游戏的插件与修补框架，可将模组和分析插件加载到本地安装的游戏中。插件借助随附的 HarmonyX 和 MonoMod.RuntimeDetour 在运行时修补方法，预加载修补器则在游戏加载托管程序集之前用 Mono.Cecil 改写它们；在 IL2CPP 游戏上，它会调用 Cpp2IL 和 Il2CppInterop，从游戏二进制和 global-metadata.dat 生成互操作程序集。其指南还介绍了配置、日志，以及用 dnSpy 调试插件和游戏程序集。",
+    "evidence_url": "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest stable release at review: v5.4.23.5, published 2026-02-08 from the v5-lts branch, with Windows x86/x64, Linux x86/x64, macOS universal and patcher archives; the README says only Unity Mono has stable releases. The reviewed master commit (2026-10-16) declares the unreleased 6.0.0 and is 75 commits after the latest 6.x prerelease, v6.0.0-pre.2 from 2024-08-27, which ships Unity Mono, Unity IL2CPP and .NET builds; newer bleeding-edge builds are published separately. The guides note that the preloader-patcher contract changed between v5 and v6.",
+      "The README's compatibility chart lists Unity Mono on Windows, macOS and Linux, Unity IL2CPP on Windows and Linux but not macOS or ARM, and .NET/XNA games on Windows or through Mono on macOS and Linux. The master installation guide lists Windows 7–10, Linux distributions with GCC 10+, macOS 10.13+ and Unity 3 or newer. Source builds use the bundled Cake script and need .NET 6.0 or newer.",
+      "BepInEx installs into the user's own game directory: the guide identifies Unity Mono games by a Managed folder and IL2CPP games by il2cpp_data. IL2CPP interop generation reads the game's binary and global-metadata.dat and, by default, downloads managed Unity base libraries for the game's Unity version from unity.bepinex.dev; a configuration option points it to a locally placed archive instead. Some games need the documented troubleshooting steps, and per-game compatibility is not implied.",
+      "LGPL-2.1 (LGPL-2.1-only in the package metadata); the libraries it uses, including UnityDoorstop, HarmonyX, MonoMod, Mono.Cecil, Cpp2IL and Il2CppInterop, keep their own licenses. This entry covers single-player modding and analysis of locally installed games; game license terms are separate from the framework's license. No game was modded or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/LICENSE",
+      "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/Directory.Build.props",
+      "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/docs/BUILDING.md",
+      "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/Runtimes/Unity/BepInEx.Unity.IL2CPP/Il2CppInteropManager.cs#L48-L110",
+      "https://github.com/BepInEx/BepInEx/blob/6cea286d204eb3754d3b8363a5a1fd6640164a49/BepInEx.Preloader.Core/Patching/AssemblyPatcher.cs",
+      "https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5",
+      "https://github.com/BepInEx/BepInEx/releases/tag/v6.0.0-pre.2",
+      "https://docs.bepinex.dev/master/articles/user_guide/installation/index.html",
+      "https://docs.bepinex.dev/master/articles/dev_guide/runtime_patching.html",
+      "https://docs.bepinex.dev/master/articles/dev_guide/preloader_patchers.html"
+    ]
   }
 ]

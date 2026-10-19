@@ -3422,5 +3422,14 @@
       "输入应为已在 Ghidra 中加载并分析的程序。README 提醒，合成的重定位依赖 Ghidra 数据库的准确性，信息错误或缺失可能导致重定位出错或遗漏，并建议每次导出前重新运行该分析器。仅支持表中所列的格式与架构组合。",
       "采用 Apache-2.0 许可。测试用参考文件由仓库中的 C 源码构建。README 的示例链接了作者的博客系列，其中包括反编译 PlayStation 游戏《天诛》（Tenchu: Stealth Assassins）的系列文章；这些项目不在本条目范围内。本次未导出任何程序。"
     ]
+  },
+  "bepinex": {
+    "name": "BepInEx Unity/.NET 游戏插件与修补框架",
+    "requirements": [
+      "审阅时最新稳定版为 v5.4.23.5，于 2026-02-08 从 v5-lts 分支发布，提供 Windows x86/x64、Linux x86/x64、macOS 通用版和修补器压缩包；README 称目前只有 Unity Mono 提供稳定版。所审阅的 master 提交（2026-10-16）声明的版本为尚未发布的 6.0.0，比最新的 6.x 预发布版 v6.0.0-pre.2（2024-08-27，提供 Unity Mono、Unity IL2CPP 和 .NET 构建）多 75 个提交；更新的 bleeding edge 构建另行发布。指南指出，预加载修补器的接口约定在 v5 与 v6 之间有所变化。",
+      "README 的兼容性表列出：Unity Mono 支持 Windows、macOS 和 Linux；Unity IL2CPP 支持 Windows 和 Linux，不支持 macOS 和 ARM；.NET/XNA 游戏支持 Windows，在 macOS 和 Linux 上需通过 Mono 运行。master 分支的安装指南列出 Windows 7–10、带 GCC 10+ 的 Linux 发行版、macOS 10.13+ 以及 Unity 3 或更新版本。从源码构建使用随附的 Cake 脚本，需要 .NET 6.0 或更新版本。",
+      "BepInEx 安装在使用者自己的游戏目录中：指南以 Managed 文件夹识别 Unity Mono 游戏，以 il2cpp_data 识别 IL2CPP 游戏。IL2CPP 互操作程序集的生成会读取游戏二进制和 global-metadata.dat，并默认从 unity.bepinex.dev 下载与游戏 Unity 版本对应的托管 Unity 基础库；也可通过配置项改用本地放置的压缩包。部分游戏需按文档中的故障排除步骤处理，本条目不代表对任何具体游戏的兼容性。",
+      "采用 LGPL-2.1 许可（软件包元数据为 LGPL-2.1-only）；其使用的 UnityDoorstop、HarmonyX、MonoMod、Mono.Cecil、Cpp2IL 和 Il2CppInterop 等库保留各自的许可。本条目只涉及对本地安装游戏的单机模组制作与分析；游戏本身的许可条款与该框架的许可相互独立。本次未修改或运行任何游戏，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
