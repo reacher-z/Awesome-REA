@@ -3123,5 +3123,15 @@
       "反编译只适用于已在 Rizin 中加载并分析的二进制，且其架构须已安装 Sleigh 规范；输出即 Ghidra 反编译器的结果，需要分析者核查。",
       "采用 LGPL-3.0-or-later 许可，README 特别指出它比 Ghidra 自身的许可更严格；反编译器源码来自独立的 rizinorg/ghidra 分支。测试用二进制由仓库中的 C 源码构建。本次未反编译任何二进制。"
     ]
+  },
+  "uefi-firmware-parser": {
+    "name": "UEFI Firmware Parser 固件结构解析工具",
+    "requirements": [
+      "审阅时最新版本为 v1.16，于 2026-06-04 在 GitHub 和 PyPI 发布，提供适用于 Linux、Windows 和 macOS 的 abi3 wheel。所审阅的 master 提交日期为 2026-10-12，领先该版本三个提交：新增 AMI 胶囊支持和用于导出文件路径的安全路径工具，并移除了 future 依赖，这些改动尚未发布。",
+      "需要 Python 3.10+。从源码安装时会编译内置的 efi_compressor C 扩展，README 称这需要 Python 开发头文件和 gcc；该软件包未声明其他运行时依赖。CI 在 Ubuntu 上用 Python 3.12 运行单元测试。",
+      "输入为使用者自备的固件文件，例如厂商 BIOS/UEFI 更新包或闪存转储。README 提醒，并非每个厂商更新包都能解析，有些需要先从更新机制（通常是 PE 可执行文件）中解压或解包；--test 会报告识别出的类型，-b 在数据块中搜索固件卷头，--superbrute 则逐字节检查任何已知对象。README 列出 ASRock、Dell、Gigabyte、Intel、Lenovo、HP、MSI、VMware、Apple 和 Qualcomm 的更新包为已测试来源，但没有按版本给出结果。",
+      "fv_injector.py 的 GUID 注入只能替换已有的节或文件，不能增删；向固件文件注入时会交互式询问要替换哪个节。它负责解析容器结构并提取内容，分析提取出的模块仍需另用反汇编器或反编译器。CI 还会解析一个另行托管的样本仓库，本合集未审阅该仓库。",
+      "LICENSE 文件为 MIT 式授权文本，并提示贡献代码另附内联许可证；而 setup.py 和 PyPI 元数据声明的是 BSD-3-Clause。内置的 Intel Tiano 压缩源码采用 BSD-2-Clause-Patent，LZMA SDK 文件属于公有领域。本次未安装，也未解析任何固件。"
+    ]
   }
 }

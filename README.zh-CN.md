@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 363](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (29) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (29) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1800,6 +1800,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   由 EURECOM S3 小组开发的 Python 框架，可协调模拟器、调试器和物理设备，对嵌入式固件进行动态分析。分析脚本先声明目标（如修改版 QEMU、PANDA、Unicorn、gdbserver，或 OpenOCD、J-Link 调试探针），再定义内存布局（其中的内存区间可把访问从一个目标转发到另一个目标）和执行计划。执行过程以及寄存器、内存状态可在目标之间转移，从而让固件在模拟器中运行，同时把外设访问转发给真实设备。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/avatar2/)
+
+- [**UEFI Firmware Parser 固件结构解析工具**](https://github.com/theopolis/uefi-firmware-parser)
+
+  Python 库及 uefi-firmware-parser 命令行工具，用于识别、解析和提取 PC 固件镜像：UEFI 固件卷、胶囊（capsule）、固件文件系统、文件与节（section），以及 Intel PCH Flash Descriptor、Intel ME 模块和 Dell PFS 更新包。AutoParser 可自动判断格式，暴力扫描模式则在未识别的数据块中查找固件卷及其他已知对象；结果可打印为对象层级或导出为文件，Tiano/EFI 与 LZMA 压缩的节由内置 C 扩展解压。附带的脚本可按 GUID 替换固件卷中的节或文件，根据解析出的固件卷生成 FDF 闪存描述文件，并输出供 IDA 脚本使用的 GUID 标签。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/uefi-firmware-parser/)
 
 <a id="protocol"></a>
 ### Protocol · 协议

@@ -7701,5 +7701,39 @@
       "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
       "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
     ]
+  },
+  {
+    "id": "uefi-firmware-parser",
+    "name": "UEFI Firmware Parser",
+    "url": "https://github.com/theopolis/uefi-firmware-parser",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python library and uefi-firmware-parser command for identifying, parsing and extracting PC firmware images: UEFI firmware volumes, capsules, firmware file systems, files and sections, Intel PCH flash descriptors, Intel ME modules and Dell PFS update packages. An AutoParser picks the format, or a brute-force scan looks for volumes and other known objects inside an unidentified blob; results print as an object hierarchy or dump to files, with Tiano/EFI and LZMA sections decompressed by a bundled C extension. Helper scripts replace a section or file by GUID inside a volume, generate an FDF flash description from parsed volumes and output GUID labels for IDA scripts.",
+    "description_zh": "Python 库及 uefi-firmware-parser 命令行工具，用于识别、解析和提取 PC 固件镜像：UEFI 固件卷、胶囊（capsule）、固件文件系统、文件与节（section），以及 Intel PCH Flash Descriptor、Intel ME 模块和 Dell PFS 更新包。AutoParser 可自动判断格式，暴力扫描模式则在未识别的数据块中查找固件卷及其他已知对象；结果可打印为对象层级或导出为文件，Tiano/EFI 与 LZMA 压缩的节由内置 C 扩展解压。附带的脚本可按 GUID 替换固件卷中的节或文件，根据解析出的固件卷生成 FDF 闪存描述文件，并输出供 IDA 脚本使用的 GUID 标签。",
+    "evidence_url": "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/README.rst",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.16, published 2026-06-04 on GitHub and PyPI with abi3 wheels for Linux, Windows and macOS. The reviewed master commit, from 2026-10-12, is three commits ahead: it adds AMI capsule support and a safe-path utility for dumped files and drops the future dependency, so those changes are not yet released.",
+      "Python 3.10+. A source install compiles the bundled efi_compressor C extension, which the README says needs the Python development headers and gcc; the package declares no other runtime dependencies. CI runs the unit tests on Python 3.12 on Ubuntu.",
+      "Input is a firmware file the user supplies, such as a vendor BIOS/UEFI update or a flash dump. The README warns that not every vendor update parses and that some must first be decompressed or unpacked from the update mechanism, typically a PE executable; --test reports the detected type, -b searches a blob for volume headers and --superbrute checks every byte offset for any known object. It lists ASRock, Dell, Gigabyte, Intel, Lenovo, HP, MSI, VMware, Apple and Qualcomm updates as tested, without per-version results.",
+      "GUID injection with fv_injector.py only replaces existing sections or files, with no addition or removal, and asks interactively which section to replace inside a firmware file. It parses containers and extracts their contents; analyzing the extracted modules needs a separate disassembler or decompiler. CI also parses a separately hosted samples repository, which this collection did not review.",
+      "LICENSE carries MIT-style permission text and points to inline licenses in contributed work, while setup.py and the PyPI metadata declare BSD-3-Clause. The bundled Intel Tiano compression sources are BSD-2-Clause-Patent and the LZMA SDK files are public domain. Nothing was installed and no firmware was parsed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/setup.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/uefi_firmware/__init__.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/bin/uefi-firmware-parser",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/scripts/fv_injector.py",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/.github/workflows/ci.yml",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/LICENSE",
+      "https://github.com/theopolis/uefi-firmware-parser/blob/c4b8c64e7a1ca647b68db99db80ef0410d9afe79/uefi_firmware/compression/Tiano/Decompress.c",
+      "https://github.com/theopolis/uefi-firmware-parser/releases/tag/v1.16",
+      "https://pypi.org/project/uefi_firmware/1.16/"
+    ]
   }
 ]
