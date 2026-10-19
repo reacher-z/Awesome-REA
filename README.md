@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 349](https://img.shields.io/badge/resources-349-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 350](https://img.shields.io/badge/resources-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2001,6 +2001,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A local man-in-the-middle proxy and dashboard that captures HTTP/S traffic from the user’s own computer and devices, stores it in SQLite and hands it to Claude Code through an /intercept skill and CLI. Exports such as API documentation and traffic summaries support investigating request patterns and undocumented endpoints. It is an agent-facing capture tool for authorized testing, not a reconstruction case, and it has no established REA connection.
 
   Integration · Independent agent · Targets: App, Protocol · [Requirements & evidence](https://awesomerea.org/resources/claude-intercept-traffic-capture/)
+
+- [**Ghidra MCP Server (bethington)**](https://github.com/bethington/ghidra-mcp)
+
+  A Ghidra GUI plugin, standalone headless server and Python MCP bridge exposing a 209-tool catalog: decompilation, cross-references, renaming, typing, structures, comments and batch edits, plus P-code emulation, live debugging through Ghidra’s TraceRmi framework, shared Ghidra Server repository and version-control operations, and hash-based transfer of function documentation between binary versions. The bridge loads three tool groups on connect and lets the model search for and load the rest, while naming and type conventions are enforced in the tool layer. Its NOTICE says it began as a derivative of LaurieWired’s GhidraMCP in August 2025 and has since been substantially rewritten and extended.
+
+  Integration · Independent MCP · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/ghidra-mcp-bethington/)
 
 <a id="related-collections"></a>
 ### Related Collections
