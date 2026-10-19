@@ -10046,5 +10046,36 @@
       "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/LICENSE",
       "https://github.com/ejfkdev/ddc/releases/tag/v0.1.30"
     ]
+  },
+  {
+    "id": "me-analyzer",
+    "name": "ME Analyzer",
+    "url": "https://github.com/platomav/MEAnalyzer",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Parse Intel Management Engine (CS)ME, TXE and SPS firmware, Graphics System Controller firmware and their independent PMC, PCHC, PHY and option-ROM images to report family, version, release, SKU, platform, size and health status. Research options print flash partition, BPDT/IFWI and CSE layout tables, validate RSA signatures and checksums, and unpack the supported CSE and GSC code and file systems. A bundled database identifies known images and reports those not yet listed in the community firmware repositories.",
+    "description_zh": "解析 Intel 管理引擎 (CS)ME、TXE 和 SPS 固件、图形系统控制器（GSC）固件，以及与之配套的独立 PMC、PCHC、PHY 和 Option ROM 镜像，报告系列、版本、发布类型、SKU、平台、大小和健康状态。研究用参数可显示 Flash 分区表、BPDT/IFWI 和 CSE 布局表，校验 RSA 签名与校验和，并解包所支持的 CSE、GSC 代码及文件系统。附带的数据库能识别已知镜像，并报告社区固件仓库尚未收录的镜像。",
+    "evidence_url": "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.312.0 with database r378 (tag v1.312.0-r378), published 2026-09-06 at the reviewed commit, with no attached builds. The README describes the tool as the MEA.py script plus its bundled MEA.dat, Huffman.dat and FileTable.dat databases, and says MEA.dat is required to run.",
+      "Requires Python 3.7+, which the script checks at startup, and the third-party colorama, crccheck and pltable modules. The README lists Windows, Linux and macOS hosts; the script also accepts BSD.",
+      "Input is an Intel Engine, Graphics or Independent firmware image the user already has, given as files or scanned from a directory with -mass. The README lists ME 2-15, TXE 0-4, SPS 1-5, GSC 100 (DG1) and selected PMC, PCHC, PHY and OROM generations, and states that any family or version not listed is unsupported, with no plans to add others.",
+      "By default the script contacts GitHub to compare its version and database with the latest ones (-duc disables this) and copies any input that triggers a note, warning or error into a __CHECK__ folder in the output directory (-dcm disables this).",
+      "BSD-2-Clause-Patent. The README describes parsing, validation and unpacking, not rebuilding or modifying images; reported details depend on the bundled database. No firmware was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/README.md#L100-L148",
+      "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/MEA.py#L10-L31",
+      "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/MEA.py#L9927-L9955",
+      "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/MEA.py#L10441-L10470",
+      "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/LICENSE",
+      "https://github.com/platomav/MEAnalyzer/releases/tag/v1.312.0-r378"
+    ]
   }
 ]

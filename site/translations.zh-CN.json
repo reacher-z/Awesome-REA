@@ -3775,5 +3775,15 @@
       "README 称七个基准 APK 生成的全部 909,689 个文件、docs/validation.md 称 39 个应用生成的 408 万个文件都能通过 javac 的解析阶段，但这只是语法检查。已知局限包括泛型类型被擦除、经 d8 脱糖的 lambda 类仍为单独文件、部分超大 R8 方法会超时且输出可能因运行而异，以及模式匹配 switch 以脱糖后的形式呈现；使用完整类路径的 javac 检查在 91 万个文件中仍发现约 7,500 个归因于 ddc 的错误，约为 jadx 在同一组文件上的两倍。",
       "CI 在 Linux、macOS 和 Windows 上构建并运行 cargo test。基准 APK 不在仓库中，测试夹具只有少量 DEX 文件和一个二进制 AndroidManifest。采用 MIT 许可。本次未反编译任何应用，也未运行服务器。"
     ]
+  },
+  "me-analyzer": {
+    "name": "ME Analyzer Intel 引擎与图形固件分析工具",
+    "requirements": [
+      "审阅时最新版本为 v1.312.0，数据库为 r378（标签 v1.312.0-r378），发布于 2026-09-06，正对应所审阅的提交，未附带构建文件。README 说明该工具由 MEA.py 脚本及随附的 MEA.dat、Huffman.dat 和 FileTable.dat 数据库组成，其中 MEA.dat 是运行所必需的。",
+      "需要 Python 3.7+（脚本启动时会检查），以及第三方模块 colorama、crccheck 和 pltable。README 列出的宿主系统为 Windows、Linux 和 macOS；脚本也接受 BSD 系统。",
+      "输入为使用者已有的 Intel 引擎、图形或独立固件镜像，可逐个传入文件，也可用 -mass 扫描整个目录。README 列出的支持范围为 ME 2-15、TXE 0-4、SPS 1-5、GSC 100（DG1），以及部分 PMC、PCHC、PHY 和 OROM 代次，并说明未列出的系列或版本均不受支持，目前也不打算增加。",
+      "默认情况下，脚本会连接 GitHub，将自身版本和数据库与最新版本比较（-duc 可关闭）；凡是触发提示、警告或错误的输入，都会被复制到输出目录下的 __CHECK__ 文件夹（-dcm 可关闭）。",
+      "采用 BSD-2-Clause-Patent 许可。README 描述的是解析、校验和解包，而非重建或修改镜像；报告的信息取决于随附的数据库。本次未分析任何固件。"
+    ]
   }
 }
