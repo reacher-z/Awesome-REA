@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 304](https://img.shields.io/badge/resources-304-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 304](https://img.shields.io/badge/resources-304-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 64](https://img.shields.io/badge/papers-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (64) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1935,7 +1935,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**63 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**64 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -1943,7 +1943,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (16) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
-- [Protocols](#papers-protocol-analysis) (9)
+- [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
 
@@ -2819,6 +2819,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** This is field inference, not recovery of a protocol state machine or complete endpoint behavior. It requires an accessible, instrumentable implementation and runtime message processing; passive captures alone are insufficient. Perfection counts exactly segmented fields against all true fields, not fully recovered protocols. The detector library covers five semantic types and six functions. Byte-level taint cannot accurately resolve bit flags, and unexercised behavior is not established. Ground truth uses Wireshark dissectors and specifications; three binary-analysis baselines were author reimplementations. Reported fuzzing improvements are a downstream evaluation, not proof of implementation equivalence.
 
   **Publication:** 2024 · ACM CCS 2024 · Conference paper · Jiayi Jiang et al.
+
+  </details>
+
+- [**DynPRE: Protocol Reverse Engineering via Dynamic Inference**](https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/)
+
+  DynPRE starts from captured client–server traces and then interacts with a live protocol server to infer message formats and types. It detects session-specific identifiers such as cookies and rewrites them on the fly so that replayed requests stay valid. It then sends byte-level probe requests whose responses serve as semantic feedback for field identification, aligns the responses, and applies a request–response mapping refinement that also recognizes message types. On 12 protocols with 10-, 100- and 1,000-message datasets, the authors report average field perfection of 0.50 and message-type V-measure of 0.94, against 0.15–0.31 perfection for Netzob, NetPlier, FieldHunter, BinaryInferno and NEMESYS.
+
+  2024 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-dynpre/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The method needs captured traces plus a reachable server that it can query repeatedly; it does not work from passive captures alone. Probing changes server state: each probe opens a new session, but protocols with global state, such as IoT device power state, can still degrade feedback. On the 1,000-message datasets an analysis averaged 259 minutes, 50,344 connection attempts and about 3.98 million exchanged messages, so slow or rate-limiting servers reduce efficiency. Encryption and authentication were disabled in the open-source evaluation setups, and encrypted traffic in the IoT case studies was decrypted with device private keys. Checksummed protocols need an added checksum-reversal step, shown only on ICMP. Format ground truth comes from tshark dissectors, and message types from manual reading of protocol documents. The five-device IoT case studies test whether generated messages trigger device behaviors, not whether specifications are complete. State-machine inference reuses existing methods and is not evaluated as a contribution.
+
+  **Publication:** 2024 · NDSS 2024 · Conference paper · Zhengxiong Luo et al.
 
   </details>
 

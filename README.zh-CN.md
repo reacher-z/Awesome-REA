@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 304](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-304-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 304](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-304-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 153](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 64](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (64) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1936,7 +1936,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**63 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**64 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -1944,7 +1944,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (16) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
-- [协议](#papers-protocol-analysis) (9)
+- [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -2820,6 +2820,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 研究对象是字段推断，不是恢复协议状态机或端点的完整行为。方法需要能够访问并插桩的实现及运行时的报文处理；仅有被动捕获数据并不足够。完美分割率统计被精确分割的字段占全部真实字段的比例，而非完整恢复的协议比例。检测器库覆盖五种语义类型与六种功能。字节级污点分析无法准确解析位标志，也不确立未执行行为。真实标签依据 Wireshark 解析器与协议规范构建；三种二进制分析基线由作者重新实现。报告的模糊测试改进属于下游评估，不是实现等价性的证明。
 
   **发表信息:** 2024 · ACM CCS 2024 · 会议论文 · Jiayi Jiang 等
+
+  </details>
+
+- [**DynPRE：基于动态推断的协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/dynpre-protocol-reverse-engineering-via-dynamic-inference/)
+
+  DynPRE 以捕获的客户端—服务端流量为起点，再与在线协议服务端交互，推断报文格式与类型。它检测 Cookie 等会话特定标识符并实时改写，使重放的请求保持有效；随后发送字节级探测请求，以服务端响应作为字段识别的语义反馈，对响应进行对齐分析，并通过请求—响应映射细化格式，同时识别报文类型。作者在 12 种协议、规模分别为 10、100 与 1,000 条报文的数据集上，报告平均字段完美分割率为 0.50、报文类型 V-measure 为 0.94，而 Netzob、NetPlier、FieldHunter、BinaryInferno 与 NEMESYS 的完美分割率为 0.15–0.31。
+
+  2024 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-dynpre/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该方法需要捕获流量以及可被反复查询的可达服务端，无法仅凭被动捕获流量工作。探测会改变服务端状态：每次探测都会新建会话，但具有全局状态的协议（如 IoT 设备的开关状态）仍可能降低反馈质量。在 1,000 条报文的数据集上，单次分析平均耗时 259 分钟，平均发起 50,344 次连接、交换约 398 万条报文，因此低速或限流的服务端会降低效率。在开源评测环境中，加密与认证机制均被关闭；IoT 案例研究中的加密流量则借助设备私钥解密。带校验和的协议需要额外的校验和逆向步骤，且仅在 ICMP 上演示。格式真实标签来自 tshark 解析器，报文类型则来自人工阅读协议文档。针对五台设备的 IoT 案例研究检验生成的报文能否触发设备行为，而非规范是否完整。状态机推断沿用已有方法，并未作为贡献加以评估。
+
+  **发表信息:** 2024 · NDSS 2024 · 会议论文 · Zhengxiong Luo 等
 
   </details>
 
