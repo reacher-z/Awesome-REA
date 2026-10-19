@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 314](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-314-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 159](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-159-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 314](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-314-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 159](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-159-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 72](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-72-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (71) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (72) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1996,13 +1996,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**71 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**72 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (21) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (21) · [网站](#papers-website-reconstruction) (14)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2635,6 +2635,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该工作属于网站视觉重建，不涉及二进制反编译，也不恢复后端行为或交互工作流。主基准含 484 个使用占位图的网页，代码与数据分别采用各自的许可条款。
 
   **发表信息:** 2025 · NAACL 2025 · 会议论文 · Chenglei Si 等
+
+  </details>
+
+- [**面向代码分析的大语言模型：LLM 真的胜任吗？**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang)
+
+  评估 GPT-3.5-turbo、GPT-4、LLaMA-2-13B、Code-LLaMA-2-13B-Instruct 与 StarChat-Beta 解释已去除注释的 JavaScript、Python 和 C 代码功能的能力，再在经 JavaScript Obfuscator（标识符重命名、死代码注入、控制流平坦化与字符串拆分）及 Wobfuscator WebAssembly 变换混淆的 JavaScript 上重复该任务。研究还要求 GPT-3.5 与 GPT-4 将 100 个 IOCCC 获奖程序改写为可读、可编译的代码。案例研究将 GPT 模型用于一个僵尸网络仓库与一个正常浏览器扩展仓库、经 JD-GUI 反编译的 Android 短信窃取程序，以及经 RetDec 反编译的 WannaCry 代码。
+
+  2024 · 会议论文 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-llm-code-analysis/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 真实标签是 GPT-4 自身生成、经四名学生人工核查的解释；其他模型则通过相似度指标与 GPT-4 评判与这些文本比较，作者也指出该评判方法若无人工校准并不可靠。正确性在解释层面判断，并非依据恢复出的行为或可执行等价性。只有 JavaScript 经过工具生成的混淆变换；两个 GPT 模型都未能解读 Wobfuscator 插入的 WebAssembly，较小模型在施加混淆后则无法给出有意义的解释。作者报告 GPT-4 在未混淆代码上的准确率为 97.4%，在混淆 JavaScript 上为 87%；在 IOCCC 去混淆任务中，GPT-3.5 约 20%、GPT-4 19% 的目标得到可编译代码，最终仅分别有 8% 和 4% 产生正确结果。恶意软件分析是针对少量样本的定性案例研究：WannaCry 需人工分块输入，上下文被拆分时会漏掉行为，僵尸网络仓库中还出现误报。模型能认出来自热门仓库的代码，因此记忆效应是混杂因素。被评测的 GPT-3.5／GPT-4 时代模型及 LLaMA-2-13B 级别模型已经过时。研究分析的是源码或已反编译的文本，并不执行二进制反编译。
+
+  **发表信息:** 2024 · USENIX Security 2024 · 会议论文 · Chongzhou Fang 等
 
   </details>
 

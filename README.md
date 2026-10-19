@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 314](https://img.shields.io/badge/resources-314-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 159](https://img.shields.io/badge/cases-159-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 314](https://img.shields.io/badge/resources-314-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 159](https://img.shields.io/badge/cases-159-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 72](https://img.shields.io/badge/papers-72-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (71) · [Agents and MCP](#agents-and-mcp) (27) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (72) · [Agents and MCP](#agents-and-mcp) (27) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1995,13 +1995,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**71 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**72 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (21) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (21) · [Websites](#papers-website-reconstruction) (14)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2634,6 +2634,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** This is visual website reconstruction, not binary decompilation or recovery of backend behavior and interactive workflows. The main benchmark contains 484 webpages with placeholder images; code and data have separate licensing terms.
 
   **Publication:** 2025 · NAACL 2025 · Conference paper · Chenglei Si et al.
+
+  </details>
+
+- [**Large Language Models for Code Analysis: Do LLMs Really Do Their Job?**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang)
+
+  Evaluates GPT-3.5-turbo, GPT-4, LLaMA-2-13B, Code-LLaMA-2-13B-Instruct and StarChat-Beta on explaining what de-commented JavaScript, Python and C code does, then repeats the task on JavaScript obfuscated with JavaScript Obfuscator (identifier renaming, dead-code injection, control-flow flattening and string splitting) and with Wobfuscator’s WebAssembly transformation. GPT-3.5 and GPT-4 are also asked to rewrite 100 IOCCC winning programs as readable, compilable code. Case studies apply GPT models to a botnet and a benign browser-extension repository, an Android SMS stealer decompiled with JD-GUI, and WannaCry code decompiled with RetDec.
+
+  2024 · Conference paper · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-code-analysis/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Ground truth is GPT-4’s own explanations after manual checking by four students; other models are scored against those texts with similarity metrics and a GPT-4 judge, which the authors say is unreliable without manual calibration. Correctness is judged at explanation level, not by recovered behavior or executable equivalence. Only JavaScript is obfuscated with generated transformations; neither GPT model deciphered the WebAssembly that Wobfuscator inserts, and the smaller models produced no meaningful explanations once obfuscation was applied. Author-reported figures include 97.4% GPT-4 accuracy on non-obfuscated code and 87% on obfuscated JavaScript; in IOCCC de-obfuscation, about 20% of GPT-3.5’s targets and 19% of GPT-4’s yielded compilable code, and only 8% and 4% produced correct results. The malware analyses are qualitative case studies on a few samples, with manual chunking for WannaCry, missed behavior when context was split, and a false alarm in the botnet repository. Models recognized code from popular repositories, so memorization is a confound. The evaluated GPT-3.5/GPT-4-era and LLaMA-2-13B-class models are dated. The study analyzes source or already-decompiled text; it does not perform binary decompilation.
+
+  **Publication:** 2024 · USENIX Security 2024 · Conference paper · Chongzhou Fang et al.
 
   </details>
 
