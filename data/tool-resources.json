@@ -7196,5 +7196,38 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "re4-gamecube-debug-decomp-case",
+    "name": "re4: a byte-identical decompilation of the Resident Evil 4 GameCube debug build",
+    "url": "https://github.com/adonis-singh/re4",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C and C++ source for the two-disc Resident Evil 4 GameCube debug prototype (G4BE08) and rebuilds main.dol and all 114 REL overlays with the compilers the README names, checking every output against a SHA-1 list. Function names are Capcom’s own from the debug build’s Bio4.sym files, and most struct and field names are aligned from the PS2 debug build’s debug information. The project’s research log says AI agents did the matching work; byte identity is project-reported.",
+    "description_zh": "为 Resident Evil 4 的双光盘 GameCube 调试原型版（G4BE08）重建 C 与 C++ 源码，并用 README 所列编译器重新构建 main.dol 及全部 114 个 REL 覆盖模块，逐一与 SHA-1 清单比对。函数名沿用调试版 Bio4.sym 符号文件中 Capcom 自己的命名，多数结构体与字段名则依据 PS2 调试版的调试信息对齐得出。项目的研究日志称一致性工作由 AI 智能体完成；字节一致为项目报告的结果。",
+    "evidence_url": "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-02 head, under four weeks after the first commit of 2026-09-07. README calls the decompilation complete: every unit compiles to the original bytes, src/ holds about 570,000 lines of C and C++ with no assembly files, and 526 `// COMPILER-DIFF:` spots coax the compiler’s register or instruction choices without emitting code. Nearly all remaining inline assembly is in routines the vendors also wrote in assembly. The output is the debug prototype’s DOL and RELs, not a retail build or PC port.",
+      "Supply your own images of both debug discs in orig/G4BE08/: disc 1 provides main.dol and most RELs, disc 2 the four island-stage RELs, and configure.py also reads the matching Bio4 symbol files from them. The game code’s compiler is built from SN Systems’ GPL source release of its ProDG 3.9.3 GCC port, which the user also supplies. The repository contains no game assets.",
+      "The documented host is Linux with Python 3 and ninja. tools/sn-gcc/build.sh builds SN’s GCC 2.95.3 (SN BUILD v1.79) natively once with the project’s Linux-host and memory-flag patches; CRI middleware builds with Metrowerks CodeWarrior 2.4.7 and the Nintendo SDK, taken from dolsdk2004, with GC/1.2.5n. The first configure run downloads pinned decomp-toolkit, objdiff, wibo and CodeWarrior compiler releases.",
+      "A successful build should end with ninja reporting 100% matched and linked, and dtk shasum against config/G4BE08/build.sha1 should print OK for all 115 binaries; tools/bytecmp.py compares single units and tools/asmcheck.py --all counts instructions emitted from asm templates, a total changes must not alter. The repository has no CI workflow or release, so these results are project-reported, and this collection built nothing.",
+      "LICENSE applies CC0 only to the project’s build scripts, tools, configuration and documentation. README and LICENSE state that the reconstructed game, SDK and middleware source in src/ and include/ remains the property of Capcom, Nintendo and CRI Middleware and is published for research and preservation only. docs/research/README.md describes its matching notes as written by the AI agents that did the matching work; no REA use is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/LICENSE",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/CONTRIBUTING.md",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/configure.py",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/config/G4BE08/build.sha1",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/tools/sn-gcc/build.sh",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/tools/extract_orig.py",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/docs/naming.md",
+      "https://github.com/adonis-singh/re4/blob/9b76ff003081d6ece8b838453fb8310743a972c7/docs/research/README.md"
+    ]
   }
 ]
