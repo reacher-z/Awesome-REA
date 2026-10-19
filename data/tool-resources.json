@@ -7298,5 +7298,39 @@
       "https://github.com/bethington/ghidra-mcp/releases/tag/v7.0.0-rc.3",
       "https://github.com/bethington/ghidra-mcp/releases/tag/v6.0.0"
     ]
+  },
+  {
+    "id": "mario-kart-wii-decomp-case",
+    "name": "Mario Kart Wii: an in-progress matching decompilation of the PAL release",
+    "url": "https://github.com/snailspeed3/mkw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress matching decompilation of Mario Kart Wii that targets the PAL release (RMCP01), rebuilding main.dol and the StaticR.rel module from C and C++ with Metrowerks compilers and checking both against stored SHA-1 values. The build splits these binaries from a user-supplied disc image, and objdiff compares objects during development. The README’s progress badges point to a decomp.dev page that did not resolve at review, and the default branch was last updated in September 2025.",
+    "description_zh": "《马力欧卡丁车 Wii》的进行中一致性反编译，目标为 PAL 版（RMCP01）：用 Metrowerks 编译器从 C 与 C++ 源码重建 main.dol 和 StaticR.rel 模块，并与仓库保存的 SHA-1 比对。构建从使用者自备的光盘镜像中拆分这些二进制，开发时用 objdiff 比对目标文件。README 的进度徽章指向的 decomp.dev 页面在审阅时无法访问，默认分支最后更新于 2025 年 9 月。",
+    "evidence_url": "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README lists one supported version, RMCP01 (PAL); configure.py defines no other and CI builds only RMCP01. The repository was renamed from riidefi/mkw, which README’s badges and clone command still use, and CONTRIBUTING.md and HACK.md still describe an earlier mkwutil and ppcdis build layout that the pinned tree no longer contains. The output is a Wii main.dol and StaticR.rel, not a PC port.",
+      "Copy your own RMCP01 disc image to orig/RMCP01; ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC images are accepted, and config.yml records the expected SHA-1 of both binaries. README says the repository contains no game assets or assembly; decomp-toolkit splits main.dol and StaticR.rel locally using the committed, game-derived symbol and split tables.",
+      "Builds need Python and ninja on Windows (native tooling recommended), macOS (with wine-crossover) or Linux (an automatically downloaded wibo on x86, Wine elsewhere). configure.py pins decomp-toolkit v1.3.0, objdiff v2.4.0, binutils 2.42-1, sjiswrap v1.2.0, wibo 0.6.16 and the 20240706 compiler bundle, using Metrowerks Wii/0x4201_127 for the game, NW4R, EGG, RFL and MSL code and as the linker, and GC/3.0a5.2 for the Revolution SDK, TRK, DWC and GameSpy libraries.",
+      "Objects marked Matching (106 of the 213 listed in configure.py; 105 NonMatching, 2 Equivalent) are compiled from source and the rest of each binary comes from the split originals; the default ninja target checks main.dol and StaticR.rel against config/RMCP01/build.sha1 before reporting progress. CI builds RMCP01 in a private container holding the original files and uploads a progress report. decomp.dev had no report for the repository under either name at review, so no completion figure is cited; this collection ran no build.",
+      "The repository carries CC0-1.0; lib/gamespy keeps the GameSpy SDK’s own BSD-style license from IGN Entertainment, and Nintendo’s game, disc contents and the downloaded compilers keep their own rights. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/configure.py",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/config/RMCP01/config.yml",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/config/RMCP01/build.sha1",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/tools/project.py",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/CONTRIBUTING.md",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/HACK.md",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/.github/workflows/build.yml",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/LICENSE",
+      "https://github.com/snailspeed3/mkw/blob/78572c95c41dbf6cbb7dd251a567e538560ce1d8/lib/gamespy/license.txt"
+    ]
   }
 ]
