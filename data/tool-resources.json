@@ -13629,5 +13629,32 @@
       "https://github.com/scriptingxss/owasp-fstm/blob/ec666e8f8b9f7618a248a1c354469893abf0edb2/License.md",
       "https://github.com/scriptingxss/owasp-fstm/blob/e32570c52f9d224ef66dbb46dc5df4bad1e48fda/README.md"
     ]
+  },
+  {
+    "id": "awesome-android-reverse-engineering",
+    "name": "Awesome Android Reverse Engineering",
+    "url": "https://github.com/user1342/Awesome-Android-Reverse-Engineering",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "app"
+    ],
+    "description_en": "An awesome list of Android reverse-engineering training, tools and resources started in 2023 by James Stevenson, with 92 one-line entries, 16 of them starred as great and up to date. It covers courses, videos and books; static analysis and deobfuscation, networking and Frida-based instrumentation, decompilers and malware analysis tools; documentation and case studies; CTFs and crackmes; obfuscation and anti-reversing; and a short firmware and kernel section.",
+    "description_zh": "James Stevenson 于 2023 年创建的 awesome 清单，收录 Android 逆向工程的培训、工具和资源，共 92 个单行条目，其中 16 个以星标注为优质且较新的资源。内容涵盖课程、视频和书籍，静态分析与反混淆、网络分析与基于 Frida 的插桩、反编译器和恶意软件分析工具，文档与案例研究，CTF 与 crackme，混淆与反逆向，以及一个简短的固件与内核部分。",
+    "evidence_url": "https://github.com/user1342/Awesome-Android-Reverse-Engineering/blob/0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 0ade43d (2025-07-08). 51 of 58 commits date from 2023; a March 2025 rewrite reorganized the list and added the obfuscation and firmware sections, and the July 2025 commit removed the Cloud API section while its contents-menu entry remains.",
+      "Entries give a link and a one-line summary with no license, version or maintenance notes, and some summaries are loose; AFLSmart, for example, is described as a firmware-image fuzzer, while its own README presents an input-structure-aware greybox fuzzer. In an automated check at review, 8 of 90 unique URLs gave no response, a 404 or a 530: five linked GitHub repositories no longer exist, four of them (the ATDF, Paranoid, libhooker and Android kernel-exploits entries) added in the March 2025 rewrite, and the Houseparty case study, the Flare-On page and AndroidXref did not load.",
+      "Six entries are the maintainer's own tools and one his blog post. Burp Suite, IDA Pro, JEB and DexGuard are commercial, the Documentation section links the APKMirror and APKPure download sites, and tools for bypassing app controls, dumping memory and kernel exploitation appear as listed; this record treats the list only as a directory of analysis resources.",
+      "LICENSE is the MIT License (2023, James Stevenson), although the README points to a LICENSE.md that does not exist; placeholder changelog and to-do files from the repository template remain under .github. Linked tools, books and APKs keep their own terms. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/user1342/Awesome-Android-Reverse-Engineering/blob/0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8/LICENSE",
+      "https://github.com/user1342/Awesome-Android-Reverse-Engineering/commit/0ade43d6b46ff19675ca4d8b8f1cc098e1af73b8",
+      "https://github.com/user1342/Awesome-Android-Reverse-Engineering/commit/efbdc6dda259e4639b345f33c35a44be1c565d90"
+    ]
   }
 ]
