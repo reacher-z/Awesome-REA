@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 289](https://img.shields.io/badge/resources-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 147](https://img.shields.io/badge/cases-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 290](https://img.shields.io/badge/resources-290-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 148](https://img.shields.io/badge/cases-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (129) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (130) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (147) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (148) · [Related Collections](#related-collections) (4) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -838,6 +838,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs the ARM9 game code of Animal Crossing: Wild World’s Korean DS release as one C or C++ source per function, checked against the user’s ROM with the original Metrowerks compiler and linker. Each function also has a readable Clean rewrite, and an included DS interpreter compares the ROM code, natively compiled sources and rewrites on recorded play. Data sections, the ARM7 binary, the linked SDK libraries and regrouping into original source files remain outside the reconstruction.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/animal-crossing-wild-world-decomp-case/)
+
+- [**King Kong Recompiled: an AI-developed Xbox 360 static recompilation**](https://github.com/TekRantGaming/king-kong-recompiled)
+
+  Translates the Xbox 360 release of Peter Jackson's King Kong into native Windows code with the ReXGlue static-recompilation SDK, adding a launcher and display, control and graphics options. Project code completes streamed disc reads the way the console does, which README credits with getting past an opening freeze seen under Xenia. The author discloses that the port was made almost entirely with Claude Code, directed and tested by the repository owner.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/king-kong-recompiled-case/)
 
 #### Tools, projects and integrations
 
