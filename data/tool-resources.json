@@ -10681,5 +10681,41 @@
       "https://github.com/HyperDbg/docs/blob/8bc60c027e741b8c77bba2200423e27cd18d8ed1/getting-started/faq.md",
       "https://github.com/HyperDbg/HyperDbg/releases/tag/v0.24"
     ]
+  },
+  {
+    "id": "jpexs-decompiler",
+    "name": "JPEXS Free Flash Decompiler (FFDec)",
+    "url": "https://github.com/jindrapetrik/jpexs-decompiler",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Java desktop decompiler and editor for Adobe Flash SWF files. It decompiles ActionScript 1/2 and AS3 side by side with the P-code they came from, edits scripts as source (experimental) or through the assembler view, and exports or replaces images, shapes, sounds, video, fonts and texts, with SWF-to-FLA conversion, SWF-to-XML round trips and SVG or HTML5 Canvas output. It also opens SWC and ABC files, Scaleform GFx and 64-bit Iggy files, has an ActionScript debugger and deobfuscation passes for obfuscated AS3, and offers its parser and decompiler as the ffdec_lib Java library and a command line.",
+    "description_zh": "面向 Adobe Flash SWF 文件的 Java 桌面反编译与编辑工具。它可反编译 ActionScript 1/2 和 AS3，并与对应的 P-code 对照显示；既能以源码形式（实验性）编辑脚本，也能通过汇编视图编辑，还可导出或替换图像、形状、声音、视频、字体和文本，支持 SWF 转 FLA、SWF 与 XML 互转，以及输出 SVG 或 HTML5 Canvas。它还能打开 SWC、ABC 文件以及 Scaleform GFx 和 64 位 Iggy 文件，内置 ActionScript 调试器和针对混淆 AS3 的反混淆处理，并以 ffdec_lib Java 库和命令行形式提供其解析与反编译功能。",
+    "evidence_url": "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest stable release at review: 26.3.0, published 2026-09-14, with a Windows MSI, a Debian package, a macOS app and pkg, a cross-platform ZIP and separate ffdec_lib and Javadoc archives; nightly prereleases are built from the dev branch. The reviewed master commit is two commits after the version26.3.0 tag, a Chinese README update and a dependency bump.",
+      "The application needs Java 8 or later on Windows, Linux or macOS; the installation guide asks for Oracle JDK 8+ on macOS. build.properties targets Java 8, and source builds use Apache Ant or the bundled NetBeans project, with Git recommended so the build can embed the revision. The Dockerfile runs the command-line interface on an Eclipse Temurin 21 JRE, and CI runs the Ant checkstyle, build and test targets on Windows.",
+      "SWF, SWC, GFx and Iggy inputs come from the user. Video display and export rely on the vlcj and JNA libraries, debugging needs a debug Flash Player, either the standalone player launched from FFDec or a remote player in listening mode, and AS3 editing through the Flex SDK is marked unstable.",
+      "The application is GPL-3.0-or-later and the ffdec_lib library LGPL-3.0, with bundled third-party libraries under their own licenses. Decompiled scripts and extracted assets keep the rights of the SWF’s owners. The README directs bug reports to the tracker on free-decompiler.com rather than GitHub issues. No SWF files were opened or decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/README.md#L155-L176",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/build.properties",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/Dockerfile",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/.github/workflows/build.yml",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/libsrc/ffdec_lib/README.md",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/libsrc/ffdec_lib/license.txt",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/license.txt",
+      "https://github.com/jindrapetrik/jpexs-decompiler/blob/de7efbf4754865f46c1c5bd36c9db9cc4ef2fa0b/CHANGELOG.md",
+      "https://github.com/jindrapetrik/jpexs-decompiler/wiki/Features",
+      "https://github.com/jindrapetrik/jpexs-decompiler/wiki/Installation",
+      "https://github.com/jindrapetrik/jpexs-decompiler/releases/tag/version26.3.0"
+    ]
   }
 ]

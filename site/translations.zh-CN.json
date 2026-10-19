@@ -3960,5 +3960,14 @@
       "从源码构建需要递归克隆仓库，并安装 Visual Studio 2026 以及最新的 Windows SDK 和 WDK；CI 使用 Visual Studio 2022 和 2026 构建。待调试的驱动、程序或系统由使用者提供；README 推荐通过 OpenSecurityTraining2 的 Reversing with HyperDbg（Dbg3301）课程入门。",
       "HyperDbg 及其子模块除另有声明外均采用 GPL-3.0，依赖项适用各自的许可证。README 还介绍了针对调试器检测的透明化功能；本条目仅涵盖调试与跟踪。所引用的论文未经审阅，本次也未安装或运行任何组件。"
     ]
+  },
+  "jpexs-decompiler": {
+    "name": "JPEXS Flash 反编译器（FFDec）",
+    "requirements": [
+      "审阅时最新稳定版为 26.3.0，发布于 2026-09-14，提供 Windows MSI、Debian 软件包、macOS 应用及 pkg、跨平台 ZIP，以及单独的 ffdec_lib 库和 Javadoc 压缩包；每日构建预发布版由 dev 分支生成。所审阅的 master 提交比 version26.3.0 标签多两个提交，分别是中文 README 更新和一次依赖升级。",
+      "运行该应用需要 Windows、Linux 或 macOS 上的 Java 8 或更高版本；安装指南要求 macOS 使用 Oracle JDK 8+。build.properties 以 Java 8 为目标，从源码构建可使用 Apache Ant 或自带的 NetBeans 项目，并建议安装 Git 以便构建时写入修订号。Dockerfile 在 Eclipse Temurin 21 JRE 上运行命令行界面，CI 在 Windows 上运行 Ant 的 checkstyle、build 和 test 目标。",
+      "SWF、SWC、GFx 和 Iggy 输入文件由使用者提供。视频显示与导出依赖 vlcj 和 JNA 库；调试需要调试版 Flash Player，可以是由 FFDec 启动的独立播放器，也可以是以监听模式连接的远程播放器；通过 Flex SDK 编辑 AS3 被标为不稳定。",
+      "应用本身采用 GPL-3.0-or-later，ffdec_lib 库采用 LGPL-3.0，自带的第三方库各自适用其许可证。反编译得到的脚本和提取出的资源仍归 SWF 的权利人所有。README 要求在 free-decompiler.com 的问题追踪器而非 GitHub Issues 中报告问题。本次未打开或反编译任何 SWF 文件。"
+    ]
   }
 }
