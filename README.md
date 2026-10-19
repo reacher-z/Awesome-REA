@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 311](https://img.shields.io/badge/resources-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 312](https://img.shields.io/badge/resources-312-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (143) · [App](#app) (44)
-- [Native Binary](#native-binary) (21) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
+- [Native Binary](#native-binary) (22) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
 
@@ -1452,6 +1452,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-\* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/rizin/)
+
+- [**Decompiler Explorer**](https://dogbolt.org)
+
+  Web service at dogbolt.org that runs one small uploaded executable through many decompilers and shows their C-like output side by side, described as Compiler Explorer in reverse. The pinned source has runners for angr, Binary Ninja, Boomerang, dewolf, Ghidra, Hex-Rays, Kuna, REC Studio, Reko, Relyze, RetDec, rev.ng and Snowman, which helps compare how different decompilers render the same code.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/decompiler-explorer/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

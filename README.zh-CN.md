@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 311](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 312](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-312-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (143) · [应用](#app) (44)
-- [原生二进制](#native-binary) (21) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
+- [原生二进制](#native-binary) (22) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
 
@@ -1453,6 +1453,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-\* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rizin/)
+
+- [**Decompiler Explorer 反编译器对比服务**](https://dogbolt.org)
+
+  位于 dogbolt.org 的网络服务：将上传的单个小型可执行文件交给多款反编译器处理，并排显示它们输出的类 C 代码，自称“反向的 Compiler Explorer”。所固定版本的源码包含 angr、Binary Ninja、Boomerang、dewolf、Ghidra、Hex-Rays、Kuna、REC Studio、Reko、Relyze、RetDec、rev.ng 和 Snowman 的运行器，便于比较不同反编译器如何呈现同一段代码。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decompiler-explorer/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
