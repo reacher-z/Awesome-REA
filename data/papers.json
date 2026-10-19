@@ -7864,5 +7864,54 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-shieldedcode",
+    "title": "ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code",
+    "title_zh": "ShieldedCode：学习虚拟机保护代码的鲁棒表示",
+    "authors": [
+      "Mingqiao Mo",
+      "Yunlong Tan",
+      "Hao Zhang",
+      "Heng Zhang",
+      "Yangfan He"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year stated by the official ICLR proceedings; no finer publication date is asserted. The proceedings page's citation date of 2026-04-20 is not adopted, and the arXiv date is not substituted.",
+    "date_basis_zh": "采用 ICLR 官方论文集标明的出版年份，不主张更精确的出版日期。本条目不采用论文集页面中 2026-04-20 的引用日期，也不以 arXiv 日期替代。",
+    "venue": "ICLR 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2601.20679",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-01-28",
+    "doi": null,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "ShieldedCode studies software protection from the defender's side: it trains code language models on pairs of C source functions and their virtualization-protected (VMP) x86-64 code so that the models can generate, compare and rank protected variants. Training pairs come from AnghaBench functions compiled at O0–O3, protected at levels L0–L3 by a commercial VMP tool, then disassembled and normalized. The model adds attention masks for dependencies within, between adjacent and across virtual instructions, contrastive objectives for functional equivalence and protection strength, and a protection-effectiveness task that ranks variants of the same source. Continual pre-training starts from CodeLlama 34B and adds The Stack to the corpus, and fine-tuning uses 2.5 million source–VM pairs. On HumanEval-compile, VM code generation reaches 26.95% Pass@1 at level L0 (GPT-4o: 22.58%) and 14.71% at L3. On BinaryCorp-VirtualAssembly similarity detection, Recall@1 for the O0+L1 setting is 0.488, against 0.333 for jTrans with a linear probe. The authors also run a manual reverse-engineering study and pattern-matching and angr attacks on the generated protection.",
+    "description_zh": "ShieldedCode 从防御方角度研究软件保护：它以 C 源代码函数及其经虚拟化保护（VMP）后的 x86-64 代码组成的配对数据训练代码语言模型，使模型能够生成、比较和排序受保护的变体。训练配对取自 AnghaBench 函数，经 O0–O3 编译后由一款商业 VMP 工具按 L0–L3 级别保护，再反汇编并规范化。模型为单条虚拟指令内部、相邻虚拟指令之间以及跨虚拟指令的依赖加入注意力掩码，采用面向功能等价和保护强度的对比学习目标，并设置对同一源代码不同变体排序的保护效果任务。持续预训练从 CodeLlama 34B 起步，语料另加入 The Stack；微调使用 250 万组源代码—虚拟机代码配对。在 HumanEval-compile 上，L0 级虚拟机代码生成的 Pass@1 为 26.95%（GPT-4o 为 22.58%），L3 级为 14.71%。在 BinaryCorp-VirtualAssembly 相似性检测中，O0+L1 设置下的 Recall@1 为 0.488，采用线性探针的 jTrans 为 0.333。作者还对生成的保护代码开展了人工逆向研究，以及模式匹配和 angr 攻击。",
+    "scope_limitations_en": "All data is x86-64, and every training pair is produced with one commercial VMP tool that the paper does not name, so results may not carry over to other architectures, protectors or virtual-instruction designs. Generated VM code is checked with HumanEval-compile test cases, not formal equivalence, and Pass@1 stays between 14.71% and 26.95% across protection levels. The similarity gain over jTrans holds only in the O0+L1 setting: in the other five BinaryCorp-VirtualAssembly settings the linear-probe jTrans has higher Recall@1 (for example 0.715 against 0.309 for O2+L1), and the paper's summaries of the comparison differ (a 10% gain in the abstract, 15.5 points in the introduction, competitive in the results). The ablation table reports scores for ContraBin, CLAP and CEBin that the paper says are estimated from their architectures rather than measured. Protection-strength claims rest on the authors' own attacks and manual study: 12 graduate students and 3 professional reverse engineers analyzing 20 functions for 30–45 minutes each, with 17% success on ShieldedCode output against 67% for VMProtect and 58% for Themida. ShieldedCode is not a devirtualizer or deobfuscator, and the paper links no code, models or generated training data.",
+    "scope_limitations_zh": "全部数据均为 x86-64，所有训练配对都由论文未具名的同一款商业 VMP 工具生成，因此结果未必适用于其他架构、保护工具或虚拟指令设计。生成的虚拟机代码通过 HumanEval-compile 测试用例检验，而非形式化等价验证；各保护级别的 Pass@1 仅在 14.71% 至 26.95% 之间。相对 jTrans 的相似性优势只出现在 O0+L1 设置中：在 BinaryCorp-VirtualAssembly 的其余五种设置中，采用线性探针的 jTrans 的 Recall@1 更高（例如 O2+L1 下为 0.715，ShieldedCode 为 0.309）；论文对这一比较的概括也不一致（摘要称提升 10%，引言称提升 15.5 个百分点，结果部分则称性能相当）。消融表中 ContraBin、CLAP 与 CEBin 的得分据论文说明是依其架构估计而非实测。保护强度的结论依赖作者自行开展的攻击和人工研究：12 名研究生与 3 名专业逆向工程师分析 20 个函数，每个函数限时 30–45 分钟，对 ShieldedCode 输出的成功率为 17%，对 VMProtect 和 Themida 分别为 67% 与 58%。ShieldedCode 不是去虚拟化工具或反混淆工具，论文也未链接代码、模型或生成的训练数据。",
+    "why_fits_en": "Adds protection-side research that uses learned models to generate VM-protected code and to measure how it resists reversing, complementing the BAR 2026 protection study and SRE-Bench, which measure how agents cope with protected binaries.",
+    "why_fits_zh": "补充保护方视角的研究：利用学习模型生成虚拟机保护代码并衡量其抗逆向能力，与 BAR 2026 保护研究和 SRE-Bench 这类衡量智能体如何应对受保护二进制的工作互补。",
+    "metadata_notes": "The ICLR proceedings page lists the five authors in this order, pages 23529–23552 and no DOI; its PDF carries the header \"Published as a conference paper at ICLR 2026\". arXiv has only v1, dated 2026-01-28, with the comment \"Accepted to ICLR 2026\". The OpenReview forum 9F9UFVcDkV returned a browser challenge to automated requests, so its presentation type is not recorded. Neither the paper nor the proceedings page links code, models or data; the reproducibility statement only says the implementation uses PyTorch and open-source libraries, and code_url is null. A same-name GitHub repository, Clon5676/ShieldedCode, is an unrelated Unreal Engine project and is not linked. The commercial tool used to build the training data is unnamed; VMProtect and Themida appear only as comparisons in the resistance study. No code or experiments were run.",
+    "metadata_notes_zh": "ICLR 论文集页面按此顺序列出五位作者，页码为 23529–23552，没有 DOI；其 PDF 页眉为“Published as a conference paper at ICLR 2026”。arXiv 只有 v1，发布于 2026-01-28，注释为“Accepted to ICLR 2026”。OpenReview 论坛 9F9UFVcDkV 对自动请求返回浏览器验证，因此本条目不记录其报告类型。论文与论文集页面均未链接代码、模型或数据；可复现性声明只说明实现基于 PyTorch 与开源库，因此 code_url 为 null。GitHub 上同名仓库 Clon5676/ShieldedCode 是无关的 Unreal Engine 项目，未予链接。用于构建训练数据的商业工具未具名；VMProtect 与 Themida 仅作为抗逆向研究中的对照出现。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf",
+      "https://arxiv.org/abs/2601.20679",
+      "https://arxiv.org/pdf/2601.20679v1",
+      "https://openreview.net/forum?id=9F9UFVcDkV"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
