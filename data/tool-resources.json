@@ -10459,5 +10459,41 @@
       "The repository publishes GNU GPL v3 license text for its code; this does not license the original Microsoft application or branding.",
       "Feature coverage and preservation of the original experience are upstream goals and claims. The application was not installed, built or compared here; no REA integration is established."
     ]
+  },
+  {
+    "id": "primedecomp-metroid-prime-decomp-case",
+    "name": "Metroid Prime: the PrimeDecomp matching GameCube decompilation",
+    "url": "https://github.com/PrimeDecomp/prime",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for Metroid Prime’s GameCube executable and its NES-emulator module so that CodeWarrior builds match the originals, across the USA, Korean, PAL and Japanese releases, with early configurations for demo discs and three Wii releases. Matched units are compiled from source and linked with objects split from the user’s disc, then checked against per-version SHA-1 hashes; the repository contains no game assets or assembly. The separately curated Metaforce and Metroid Prime Port build their native ports on this code.",
+    "description_zh": "为《密特罗德 Prime》GameCube 版的可执行文件及其 NES 模拟器模块重建 C++ 源码，使 CodeWarrior 编译结果与原文件一致，涵盖美版、韩版、PAL 版与日版，另有针对体验版光盘和三个 Wii 版本的早期配置。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含游戏素材或汇编。另行收录的 Metaforce 与 Metroid Prime Port 都在这份代码之上构建原生移植。",
+    "evidence_url": "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main pin of 2026-10-19 updates objdiff to v3.8.2. README describes a work-in-progress decompilation supporting GM8E01_00 (USA v1.088), GM8E01_01 (USA v1.093), GM8E01_48 (Korea v1.097), GM8P01_00 (PAL v1.110), GM8J01_00 (Japan v1.111) and GM8E01_02 (USA v1.111); configure.py and CI also cover the Multi-Game Demo Disc, a Japanese demo and the Wii New Play Control and Trilogy releases. Output is the original main.dol and, for the six retail GameCube versions, the NES emulator REL, not a port; docs/metaforce.md explains how to convert code from Metaforce into matching C++98.",
+      "Building needs the user’s own disc image of the chosen version in its orig/ folder, in ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ or TGC format, which can be deleted after the first build. The repository contains no game assets or assembly; decomp-toolkit splits the original executable and its embedded data locally. CONTRIBUTING lists Metaforce, a shared Ghidra server and a symbol map from an early demo disc as references for contributors.",
+      "Builds run natively on Windows with Python and ninja; macOS needs ninja and Wine Crossover, and Linux uses ninja with the automatically downloaded wibo wrapper on x86 or Wine elsewhere. configure.py pins decomp-toolkit v1.8.4, objdiff v3.8.2, binutils 2.42-1, sjiswrap v1.2.2, wibo 1.0.3 and a 20251118 compiler bundle from files.decomp.dev, compiling game code with CodeWarrior GC/1.3.2, or Wii/1.0a for the Wii releases. The MusyX audio library comes from a submodule.",
+      "The default build links source-built objects only for units marked Matching, uses original extracted objects for the rest and checks main.dol and the NES REL against the version’s build.sha1. decomp.dev’s reports for the pinned commit list 93.89% of GM8E01_00 code (16,478 of 16,685 functions) and 98.47% of its data matched, with 739 of 829 units complete; the other USA and Korean releases report 92.5–93.83% of code, PAL 84.37%, Japan 82.91%, and the demo and Wii builds early figures. CI builds all eleven configurations in a container that supplies the original files; this collection ran no build.",
+      "The repository carries CC0-1.0, which does not cover Nintendo’s game, the disc content or the downloaded compilers; the vendored zlib 1.1.3 keeps its own license and MusyX is a separate repository. Metaforce, rewritten on this decompilation, and Metroid Prime Port, a fork of it compiled natively, are curated separately. The reviewed sources establish no AI or REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/configure.py",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/tools/download_tool.py",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/config/GM8E01_00/config.yml",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/config/GM8E01_00/build.sha1",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/CONTRIBUTING.md",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/docs/metaforce.md",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/docs/nes-emulator.md",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/.gitmodules",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/.github/workflows/build.yml",
+      "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/LICENSE",
+      "https://decomp.dev/PrimeDecomp/prime"
+    ]
   }
 ]

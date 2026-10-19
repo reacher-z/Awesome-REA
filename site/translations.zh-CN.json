@@ -3895,5 +3895,15 @@
       "仓库为其代码提供 GNU GPL 第 3 版许可证正文；这不授予原 Microsoft 应用或品牌的许可。",
       "功能覆盖与保留原有体验均为上游目标和声明。本次未安装、构建或对比应用，未证实 REA 集成。"
     ]
+  },
+  "primedecomp-metroid-prime-decomp-case": {
+    "name": "《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译",
+    "requirements": [
+      "所审阅的 main 分支固定版本日期为 2026 年 10 月 19 日，该提交将 objdiff 更新到 v3.8.2。README 将其描述为进行中的反编译，支持 GM8E01_00（美版 v1.088）、GM8E01_01（美版 v1.093）、GM8E01_48（韩版 v1.097）、GM8P01_00（PAL 版 v1.110）、GM8J01_00（日版 v1.111）和 GM8E01_02（美版 v1.111）；configure.py 与 CI 还涵盖 Multi-Game Demo Disc、一个日本体验版，以及 Wii 上的 New Play Control 版和三部曲合集。产物是原始的 main.dol，以及六个零售 GameCube 版本各自的 NES 模拟器 REL，而非移植；docs/metaforce.md 说明如何把 Metaforce 的代码改写为能一致编译的 C++98。",
+      "构建需要把使用者自备的所选版本光盘镜像放入对应的 orig/ 目录，格式可为 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 或 TGC，首次构建后即可删除。仓库不含游戏素材或汇编；decomp-toolkit 在本地拆分原始可执行文件及其内嵌数据。CONTRIBUTING 为贡献者列出的参考资料包括 Metaforce、一个共享 Ghidra 服务器，以及早期体验版光盘中附带的符号表。",
+      "在 Windows 上可直接用 Python 与 ninja 构建；macOS 需要 ninja 和 Wine Crossover；Linux 需要 ninja，在 x86 上会自动下载 wibo 包装器，其他架构则使用 Wine。configure.py 固定 decomp-toolkit v1.8.4、objdiff v3.8.2、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.3，以及从 files.decomp.dev 下载的 20251118 编译器包；游戏代码用 CodeWarrior GC/1.3.2 编译，Wii 版本则用 Wii/1.0a。MusyX 音频库来自子模块。",
+      "默认构建只对标为 Matching 的单元链接由源码编译的对象，其余单元使用从原文件提取的对象，再按该版本的 build.sha1 校验 main.dol 与 NES REL。decomp.dev 针对该固定提交的报告显示，GM8E01_00 有 93.89% 的代码（16,685 个函数中的 16,478 个）与 98.47% 的数据已匹配，829 个单元中 739 个已完成；其他美版与韩版的代码匹配率为 92.5%–93.83%，PAL 版为 84.37%，日版为 82.91%，体验版与 Wii 版仍处于早期。CI 在提供原始文件的容器中构建全部十一种配置；本合集未运行任何构建。",
+      "仓库采用 CC0-1.0，不涵盖任天堂的游戏、光盘内容或下载的编译器；仓库内附带的 zlib 1.1.3 保留其自身许可，MusyX 则是独立仓库。基于这份反编译重写的 Metaforce，以及分叉此仓库并以原生方式编译的 Metroid Prime Port，均已另行收录。所审来源未确立 AI 或 REA 的参与。"
+    ]
   }
 }
