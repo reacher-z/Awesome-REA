@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 175 | 174 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 276 | 275 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 140 | 140 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 176 | 175 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 270 | 269 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 145 | 145 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-186 occurrences have catalog links. They reference 180 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+187 occurrences have catalog links. They reference 181 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 254 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 260 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -132,6 +132,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | LG TV: a reported native Claude Code terminal | Insufficient evidence | [Source](https://x.com/ceoico/status/2109774258738176000) |
 | WeChat local chats: a reported Codex-assisted decryption task | Insufficient evidence | [Source](https://x.com/trendtranslate1/status/2109779123778490858) |
 | Sixteen note files: a reported REA/no-REA decoder comparison | Insufficient evidence | [Source](https://x.com/operatranscend/status/2109783203892597103) |
+| Android touchscreen photo frame: Codex-assisted device research | Insufficient evidence | [Source](https://x.com/LeonardVolner/status/2109785163475591510) |
+| LightBurn: a reported personal laser-control rebuild | Insufficient evidence | [Source](https://x.com/LIQUID8RPF/status/2109789864891940904) |
+| Echo Show 5 Gen 2: a reported Hermes intercom and camera system | Insufficient evidence | [Source](https://x.com/Kurcide/status/2109791974014496983) |
+| Elgato HDR: a userspace capture path for the Elgato 4K X’s 10-bit mode | Already curated | [Source](https://x.com/talkaboutdesign/status/2109795113807630735) |
+| Gardena mower: reported Codex motor control and firmware work | Insufficient evidence | [Source](https://x.com/BderKhan/status/2109840164004737341) |
+| MarkText: a REA-assisted HTML export rebuild | Insufficient evidence | [Source](https://x.com/KKetemepi/status/2109839329933824026) |
 | Open Claude UI: REA-informed interface reference components | Already curated | [Source](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | Pending | [Source](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
