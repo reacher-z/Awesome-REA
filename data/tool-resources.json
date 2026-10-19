@@ -14938,5 +14938,42 @@
       "https://pypi.org/project/opendrop/0.13.0/",
       "https://www.usenix.org/conference/usenixsecurity19/presentation/stute"
     ]
+  },
+  {
+    "id": "chipsec",
+    "name": "CHIPSEC",
+    "url": "https://github.com/chipsec/chipsec",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Platform security assessment framework, with Intel Corporation copyright notices, for analyzing PC hardware configuration, BIOS/UEFI system firmware and platform components from Windows, Linux or the UEFI shell. chipsec_main runs check modules that report whether expected protections are in place, such as BIOS and SPI flash write protection and locks, SMM and SMRR protection, memory-map locks and Secure Boot variables, as PASSED, FAILED, WARNING or informational results with JSON, XML and Markdown output. chipsec_util gives command-line and Python access to low-level interfaces and firmware data, including dumping the SPI flash to an image, decoding flash images into firmware volumes, files and NVRAM variables, and listing UEFI variables and tables.",
+    "description_zh": "平台安全评估框架（源码带有 Intel Corporation 版权声明），可在 Windows、Linux 或 UEFI Shell 中分析 PC 硬件配置、BIOS/UEFI 系统固件及平台组件。chipsec_main 运行检查模块，报告预期的保护措施是否到位，例如 BIOS 与 SPI 闪存的写保护和锁定、SMM 与 SMRR 保护、内存映射锁定及安全启动变量，结果分为 PASSED、FAILED、WARNING 和信息类，并可输出 JSON、XML 和 Markdown。chipsec_util 通过命令行和 Python 访问底层接口和固件数据，包括将 SPI 闪存转储为镜像、把闪存镜像解析为固件卷、文件和 NVRAM 变量，以及列出 UEFI 变量和表。",
+    "evidence_url": "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 2.0.9, published 2026-09-24 with a source zip; the reviewed chipsec2 commit is five configuration and bug-fix commits ahead. The installation guide says the PyPI package is outdated. The README sends older Intel platforms (clients before 12th-generation Core, servers before 3rd-generation Xeon Scalable) to the chipsec1 branch, and almost all bundled platform configurations are Intel ones.",
+      "Runs as Administrator/root and loads a kernel driver that is distributed as source and built locally. Linux needs Python 3.8+, kernel headers, gcc and nasm; Windows 8 to 11 and Server 2012 to 2025 need Visual Studio with the WDK, and loading the self-built driver requires disabling driver signature enforcement or enabling test signing. The UEFI shell route boots a USB drive with the repository's prebuilt UEFI Python 3.6.8 package and requires Secure Boot to be off; a mkosi recipe builds a live Linux image. The --no-driver option works only for some commands and modules.",
+      "chipsec/WARNING.txt says to use it only on test systems, never production machines: the driver gives user mode access to physical memory and other hardware resources, and incorrect hardware access can hang or crash the OS. Some utility commands write or erase SPI flash or change UEFI variables and can leave a system unbootable; the separate tools modules, which include fuzzers, are outside this entry. A WARNING result requires manual analysis, and the results guide is marked as a draft.",
+      "Flash images and platform data come from the machine under test or the user's own dumps; the repository bundles no vendor firmware images. CI builds the Linux driver across distributions and runs unit tests on recorded platform data plus a QEMU UEFI-shell test. GPL-2.0. Nothing was run on hardware."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/WARNING.txt",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/InstallLinux.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/InstallWindows.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/installation/USBwithUEFIShell.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/usage/Running-Chipsec.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/docs/sphinx/usage/Interpreting-Results.rst",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/utilcmd/decode_cmd.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/utilcmd/uefi_cmd.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/chipsec/modules/common/bios_wp.py",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/live_image/README.md",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/.github/workflows/tests.yml",
+      "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/LICENSE",
+      "https://github.com/chipsec/chipsec/releases/tag/2.0.9"
+    ]
   }
 ]
