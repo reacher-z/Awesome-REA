@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 413](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-413-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 414](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-414-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
+- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
 - [原生二进制](#native-binary) (48) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
 
 **论文与工作流**
@@ -210,6 +210,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   通用的 JavaScript 反混淆工具，针对常见混淆手法，以 js-deobfuscator 之名发布在 npm 上，可作为库或命令行工具使用。它能展开字面量数组并替换对其的引用，移除简单代理函数、数组代理函数和算术代理函数，化简算术表达式和字符串拼接，删除死分支，把计算属性访问转为静态属性，重命名 \_0xca830a 这类十六进制标识符，并美化输出代码。作者另提供在线版本，并单独维护一个针对 Obfuscator.io 输出的反混淆工具。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ben-sb-javascript-deobfuscator/)
+
+- [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger)
+
+  命令行工具，从捕获的流量还原未公开的 REST API。它读取 mitmproxy 流文件或浏览器 DevTools 导出的 HAR，生成描述所观察端点的 OpenAPI 3.0 规范。对更多捕获再次运行时，会将新数据安全合并到已有规范中。
+
+  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/mitmproxy2swagger/)
 
 <a id="game"></a>
 ### Game · 游戏

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 413](https://img.shields.io/badge/resources-413-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 414](https://img.shields.io/badge/resources-414-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (58)
 - [Native Binary](#native-binary) (48) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (14)
 
 **Research and workflows**
@@ -209,6 +209,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   General-purpose JavaScript deobfuscator for common obfuscation patterns, published on npm as js-deobfuscator and usable as a library or CLI. It unpacks arrays of literals and replaces references to them, removes simple, array and arithmetic proxy functions, simplifies arithmetic and string concatenation, removes dead branches, turns computed member access into static properties, renames hexadecimal identifiers such as \_0xca830a and beautifies the result. The author also hosts an online version and maintains a separate deobfuscator for Obfuscator.io output.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/ben-sb-javascript-deobfuscator/)
+
+- [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger)
+
+  Command-line tool that reverse-engineers undocumented REST APIs from captured traffic. It reads a mitmproxy flow file, or a HAR export from the browser DevTools, and generates an OpenAPI 3.0 specification describing the observed endpoints. Running it again over further captures safely merges the new data into an existing schema.
+
+  Tool · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/mitmproxy2swagger/)
 
 <a id="game"></a>
 ### Game

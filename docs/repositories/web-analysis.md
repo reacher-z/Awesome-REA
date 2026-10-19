@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
 
-**181 repositories** · 2026-10-16 UTC
+**182 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -10,6 +10,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) — An interactive TLS-capable intercepting HTTP proxy for penetration testers and software developers. **[45,662 stars]** · Curated: [mitmproxy](https://awesomerea.org/resources/mitmproxy/)
 - [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) — Clone any website with one command using AI coding agents **[36,843 stars]**
 - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys) — Socket-based TS/JavaScript API for WhatsApp Web **[11,345 stars]**
+- [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — Automagically reverse-engineer REST APIs via capturing traffic **[9,652 stars]** · Curated: [mitmproxy2swagger](https://awesomerea.org/resources/mitmproxy2swagger/)
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — The WebAssembly Binary Toolkit **[8,166 stars]** · Curated: [WABT](https://awesomerea.org/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — Reverse engineering WhatsApp Web. **[6,508 stars]** · Curated: [whatsapp-web-reveng: documenting the legacy WhatsApp Web protocol](https://awesomerea.org/resources/whatsapp-web-reveng-legacy-protocol-case/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — The first AI agent that builds permissionless integrations through reverse engineering platforms' internal APIs. **[4,780 stars]**

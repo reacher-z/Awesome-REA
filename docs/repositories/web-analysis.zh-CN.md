@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**181 个仓库** · 2026-10-16 UTC
+**182 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -10,6 +10,7 @@
 - [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) — 支持 TLS 的交互式 HTTP 拦截代理，面向渗透测试人员和软件开发者。 **[45,662 星标]** · 精选：[mitmproxy](https://awesomerea.org/zh/resources/mitmproxy/)
 - [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) — 使用 AI 编程智能体，一条命令即可克隆任意网站。 **[36,843 星标]**
 - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys) — 面向 WhatsApp Web、基于 Socket 的 TS/JavaScript API。 **[11,345 星标]**
+- [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — 通过捕获流量，自动逆向分析 REST API。 **[9,652 星标]** · 精选：[mitmproxy2swagger](https://awesomerea.org/zh/resources/mitmproxy2swagger/)
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — WebAssembly 二进制工具包。 **[8,166 星标]** · 精选：[WABT](https://awesomerea.org/zh/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]** · 精选：[whatsapp-web-reveng：记录旧版 WhatsApp Web 协议](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — 首个通过逆向分析平台内部 API 构建无需许可集成的 AI 智能体。 **[4,780 星标]**
