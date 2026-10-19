@@ -3431,5 +3431,14 @@
       "BepInEx 安装在使用者自己的游戏目录中：指南以 Managed 文件夹识别 Unity Mono 游戏，以 il2cpp_data 识别 IL2CPP 游戏。IL2CPP 互操作程序集的生成会读取游戏二进制和 global-metadata.dat，并默认从 unity.bepinex.dev 下载与游戏 Unity 版本对应的托管 Unity 基础库；也可通过配置项改用本地放置的压缩包。部分游戏需按文档中的故障排除步骤处理，本条目不代表对任何具体游戏的兼容性。",
       "采用 LGPL-2.1 许可（软件包元数据为 LGPL-2.1-only）；其使用的 UnityDoorstop、HarmonyX、MonoMod、Mono.Cecil、Cpp2IL 和 Il2CppInterop 等库保留各自的许可。本条目只涉及对本地安装游戏的单机模组制作与分析；游戏本身的许可条款与该框架的许可相互独立。本次未修改或运行任何游戏，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "binexport": {
+    "name": "BinExport 反汇编导出插件",
+    "requirements": [
+      "审阅时最新版本为 v12-20240417-ghidra_11.0.3，发布于 2024-04-17，提供 Linux、macOS 和 Windows 插件压缩包以及 Ghidra 11.0.3 扩展；发布说明指出这些构件未经代码签名。所审阅的 main 分支提交领先该版本 111 个提交，其 README 要求 IDA Pro 9.4 或更高版本并已停止支持 8.x 系列，因此当前 README 描述的插件尚无对应的发布版本。",
+      "需要另行获得授权的 IDA Pro 或 Binary Ninja，或安装 Ghidra；Binary Ninja 集成仍较简略，Ghidra 扩展被描述为实验性版本。用户需自备二进制文件和分析数据库；BinDiff 本身是另一个独立工具。",
+      "原生插件构建需要 CMake 3.20+、Boost 1.83+（仓库附带部分副本）、在 Linux 和 macOS 上使用 GCC 15 或较新的 Clang、在 Windows 上使用 Visual Studio 2022 与 Windows 11 SDK，并会下载 Abseil、GoogleTest、Protocol Buffers 以及 IDA 和 Binary Ninja SDK；Linux 首选构建环境为 Debian 11。Ghidra 扩展使用 OpenJDK 21+、Gradle 8.7+ 和 Ghidra 11.0.3 构建。",
+      "采用 Apache-2.0 许可。README 声明它不是 Google 官方产品。本条目未导出或比对任何二进制文件。"
+    ]
   }
 }

@@ -8784,5 +8784,35 @@
       "https://docs.bepinex.dev/master/articles/dev_guide/runtime_patching.html",
       "https://docs.bepinex.dev/master/articles/dev_guide/preloader_patchers.html"
     ]
+  },
+  {
+    "id": "binexport",
+    "name": "BinExport",
+    "url": "https://github.com/google/binexport",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "The exporter component of BinDiff: plugins for IDA Pro and Binary Ninja and an extension for Ghidra that write an analyzed disassembly to the Protocol Buffer format BinDiff requires. The BinExport2 schema covers instructions with their operands and expressions, basic blocks, flow graphs, the call graph, sections, strings, comments and data references; the exporter can also write a statistics text file or a text dump for debugging. Exports can be scripted through IDC or IDAPython in IDA and through a BinExport.java script that also runs in Ghidra's headless analyzer.",
+    "description_zh": "BinDiff 的导出组件：为 IDA Pro 和 Binary Ninja 提供插件、为 Ghidra 提供扩展，把已分析的反汇编结果写成 BinDiff 所需的 Protocol Buffer 格式。BinExport2 模式涵盖带操作数和表达式的指令、基本块、流程图、调用图、节区、字符串、注释和数据引用；导出器还可输出统计文本文件或用于调试的文本转储。在 IDA 中可通过 IDC 或 IDAPython 脚本导出，在 Ghidra 中可使用同样能在无界面分析器中运行的 BinExport.java 脚本。",
+    "evidence_url": "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v12-20240417-ghidra_11.0.3, published 2024-04-17, with Linux, macOS and Windows plugin archives and a Ghidra 11.0.3 extension; the release notes say its artifacts are not code-signed. The reviewed main commit is 111 commits ahead of that release, and its README requires IDA Pro 9.4 or later and drops the 8.x series, so the current README describes plugins that no release yet provides.",
+      "Requires a separately licensed IDA Pro or Binary Ninja installation, or Ghidra; Binary Ninja integration is minimal and the Ghidra extension is described as experimental. Users supply their own binaries and analysis databases, and BinDiff itself is a separate tool.",
+      "Native builds need CMake 3.20+, Boost 1.83+ (a partial copy is bundled), GCC 15 or recent Clang on Linux and macOS or Visual Studio 2022 with the Windows 11 SDK, and download Abseil, GoogleTest, Protocol Buffers and the IDA and Binary Ninja SDKs; Debian 11 is the preferred Linux build environment. The Ghidra extension builds with OpenJDK 21+, Gradle 8.7+ and Ghidra 11.0.3.",
+      "Apache-2.0. The README states that it is not an official Google product. No binaries were exported or diffed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/README.md#L26-L60",
+      "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/README.md#L242-L262",
+      "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/binexport2.proto",
+      "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/java/README.md",
+      "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/LICENSE",
+      "https://github.com/google/binexport/releases/tag/v12-20240417-ghidra_11.0.3"
+    ]
   }
 ]
