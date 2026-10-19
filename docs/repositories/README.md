@@ -14,11 +14,11 @@ Scan date: **2026-10-16 UTC**.
 | [Games](game-analysis.md) | 392 | 42 |
 | [Apps · Android](android.md) | 430 | 26 |
 | [Apps · Managed code](managed-code.md) | 126 | 3 |
-| [Native binaries](native-analysis.md) | 679 | 64 |
+| [Native binaries](native-analysis.md) | 680 | 65 |
 | [Runtime and debugging](dynamic-analysis.md) | 103 | 17 |
 | [Firmware](firmware.md) | 211 | 16 |
 | [Protocols](protocol-analysis.md) | 106 | 7 |
-| [General tools and collections](reverse-engineering.md) | 607 | 36 |
+| [General tools and collections](reverse-engineering.md) | 606 | 36 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
