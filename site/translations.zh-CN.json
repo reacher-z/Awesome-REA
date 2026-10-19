@@ -3404,5 +3404,14 @@
       "在 IL2CPP 游戏上，程序集生成器会按游戏名称查询 MelonLoader 的远程 API，获取 Cpp2IL 版本、混淆名正则或反混淆映射等设置；README 列明 Cpp2IL、Unity 运行时库和 .NET 运行时会在运行时下载。可通过配置文件或启动参数强制离线生成、指定转储器版本或重新生成。本条目不代表对任何具体游戏的兼容性。",
       "采用 Apache-2.0 许可；随附的 Dobby、plthook、HarmonyX、MonoMod、Mono.Cecil、AsmResolver 和 Il2CppInterop（LGPL-3.0）等库保留各自的许可，README 还说明下载的 Unity 运行时库受 Unity 服务条款约束。本条目只涉及对本地安装游戏的单机模组制作与分析；游戏本身的许可条款与此相互独立。本次未修改或运行任何游戏，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "rellic": {
+    "name": "Rellic LLVM bitcode 转 C 反编译器",
+    "requirements": [
+      "审阅时最新版本为 v0.2.3，发布于 2023-04-04，提供基于 LLVM 15 的构建：Ubuntu 20.04 的 deb 与 tgz 包，以及 macOS 11 的 tgz 包。所审阅的 master 提交（2025-11-03）比该版本多 13 个提交，内容是注释掉 AnghaBench CI 定时任务；此前的代码提交日期为 2024 年 4 月。本条目固定该提交仅用于引用文档。",
+      "README 称支持 Linux，并在 Ubuntu 22.04 上测试过，另外也说明了 macOS 上的构建方法。构建需要 CMake 3.21+、LLVM 与 Clang 16、Z3 4.7.1+、gflags 和 glog，其中大部分可由 Trail of Bits 预构建的 cxx-common 包提供；scripts/build.sh 会下载其余依赖并生成 deb 包。Docker Hub 和 GitHub Package Registry 上的 Docker 镜像按 Ubuntu 与 LLVM 版本区分。",
+      "输入为与反编译器使用相同 LLVM 版本构建的 LLVM bitcode 模块。C 源码可用 clang -emit-llvm 编译得到，而可执行文件需借助 Remill 或 Anvill 等独立提升器处理。README 示例中输出的控制流和变量类型与原始源码不同；其 AnghaBench 1,000 个程序的测试只检查 bitcode 能否转换为 C，不检查结果的可读性或行为。",
+      "Apache-2.0 许可证。往返测试将 C 编译为 IR 再转回 C，检查结果能否构建且行为与原程序大致相同；这些测试未运行，本次也未反编译任何内容。rellic-xref 默认监听所有地址的 80 端口。"
+    ]
   }
 }

@@ -8685,5 +8685,38 @@
       "https://github.com/LavaGang/MelonLoader/releases/tag/v0.7.3",
       "https://github.com/LavaGang/MelonLoader/compare/v0.7.3...5aff4d9d7c16ae153aad2f1035114dbc2713bf99"
     ]
+  },
+  {
+    "id": "rellic",
+    "name": "Rellic",
+    "url": "https://github.com/lifting-bits/rellic",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Trail of Bits implementation of the pattern-independent structuring algorithm from the No More Gotos paper, turning LLVM bitcode into goto-free C as a small, hackable decompiler back end that interoperates with LLVM and Remill. rellic-decomp translates a bitcode module to C in batch, rellic-xref serves a web interface for choosing refinement passes and linking C AST nodes to the bitcode that produced them, and rellic-headergen emits C layouts of data structures from a module's DWARF metadata. Machine code must first be lifted to bitcode by another tool; a bundled IDA script uses Anvill for that step.",
+    "description_zh": "Trail of Bits 对 No More Gotos 论文中模式无关结构化算法的实现，可把 LLVM bitcode 转换为不含 goto 的 C 代码，定位为小巧、易于修改且能与 LLVM 和 Remill 互操作的反编译器后端。rellic-decomp 批量将 bitcode 模块转换为 C；rellic-xref 提供 Web 界面，可选择要应用的细化遍，并将 C AST 节点与生成它的 bitcode 相互对应；rellic-headergen 根据模块中的 DWARF 元数据生成描述数据结构布局的 C 代码。机器码须先由其他工具提升为 bitcode；仓库附带的 IDA 脚本借助 Anvill 完成这一步。",
+    "evidence_url": "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.2.3, published 2023-04-04, with LLVM 15 builds: deb and tgz packages for Ubuntu 20.04 and a tgz package for macOS 11. The reviewed master commit (2025-11-03) is 13 commits ahead and comments out the AnghaBench CI cron jobs; the code commits before it date from April 2024. This entry pins it for documentation only.",
+      "The README supports Linux, tested on Ubuntu 22.04, and also documents a macOS build. Building needs CMake 3.21+, LLVM and Clang 16, Z3 4.7.1+, gflags and glog, most of which come from Trail of Bits' prebuilt cxx-common packages; scripts/build.sh downloads the rest and produces a deb package. Docker images on Docker Hub and the GitHub Package Registry are parameterized by Ubuntu and LLVM version.",
+      "Input is an LLVM bitcode module built with the same LLVM version as the decompiler. C sources can be compiled with clang -emit-llvm, but executables need a separate lifter such as Remill or Anvill. The README's examples show output whose control flow and variable types differ from the original source, and its AnghaBench 1,000-program test only checks that bitcode translates to C, not the readability or behavior of the result.",
+      "Apache-2.0 license. The roundtrip tests compile C to IR and back and check that the result builds and behaves roughly like the original; they were not run, and nothing was decompiled. By default rellic-xref listens on all addresses, on port 80."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/README.md#L179-L326",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/docs/NoMoreGotos.pdf",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/tools/xref/README.md",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/tools/headergen/README.md",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/tools/plugins/ida-rellic.py",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/CMakeLists.txt",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/LICENSE",
+      "https://github.com/lifting-bits/rellic/releases/tag/v0.2.3",
+      "https://github.com/lifting-bits/rellic/compare/v0.2.3...370abaad86ae5adad82f85b81aff14557462b7f2"
+    ]
   }
 ]
