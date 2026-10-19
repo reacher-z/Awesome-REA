@@ -209,7 +209,7 @@ def build_browse_pages(
 <header class="site-header"><div class="shell header-inner">
   <a class="wordmark" href="{root_link}" aria-label="{('AwesomeREA.org 首页' if zh else 'AwesomeREA.org home')}"><span class="brand-mark" aria-hidden="true">r<span>↗</span></span><span>Awesome<span class="wordmark-rea">REA</span><span class="wordmark-domain">.org</span></span></a>
   <nav class="header-nav" aria-label="{('主导航' if zh else 'Main navigation')}">
-    <a class="browse-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}" aria-label="{('切换为英文' if zh else 'Switch to Simplified Chinese')}">{icon('globe', use_pro)}<span>{('English' if zh else '简体中文')}</span></a>
+    <a class="browse-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{icon('globe', use_pro)}<span>{('English' if zh else '简体中文')}</span></a>
     <a class="github-link" href="{escape(repository_url, quote=True)}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{icon('github', use_pro)}<span>GitHub</span></a>
   </nav>
 </div></header>
