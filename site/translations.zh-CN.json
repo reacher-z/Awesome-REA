@@ -3265,5 +3265,14 @@
       "CI 检查代码格式和 Clippy，在各平台上构建，并在跳过依赖语料库的测试后运行测试套件；仓库保存了少量 jsx_cycle .hbc 测试夹具。本地检查会用脚本下载或构建的 hermesc 工具链编译示例代码片段，在 Node 下分别运行原始代码和反编译代码并比较输出（列出了五个已知失败项），还为每个包设定无法解析模块数的上限，唯一记录的包上限为 211 个，可见反编译输出并不总是合法的 JavaScript。",
       "采用 MIT 许可。本次未反编译或修补任何字节码，也未运行 MCP 服务器。"
     ]
+  },
+  "n64modernruntime": {
+    "name": "N64ModernRuntime N64 重编译运行时",
+    "requirements": [
+      "审阅时没有发布版或标签；README 建议在项目自己的 CMake 构建中通过 add_subdirectory 引入这些库。所审阅的 main 提交（2026-08-30）需要 CMake 3.20+ 和 C++20；README 称其使用 Clang 15 开发，更早的 Clang 版本可能无法使用，较新的 MSVC 和 GCC 应可使用但未经常规测试。N64Recomp、miniz、xxHash 和 o1heap 以固定版本的子模块引入。",
+      "运行时本身不含游戏代码：宿主项目提供重编译代码、渲染器和平台回调，游戏 ROM 由使用者自行提供。所审阅的 librecomp 源码会按各游戏的哈希校验使用者选择的 ROM，还能加载 .nrm 模组包；README 未说明这两项功能。",
+      "本目录中的 Castlevania 64、Conker's Bad Fur Day、Banjo-Kazooie 和 Star Fox 64 重编译案例均记载使用了它；游戏兼容情况见各案例条目，而非本条目。README 只说明库的功能范围，没有兼容性列表。",
+      "采用 GPL-3.0 许可（COPYING）；子模块保留各自的许可。CONTRIBUTING.md 声明不接受由 AI 生成的代码贡献。本次未构建或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

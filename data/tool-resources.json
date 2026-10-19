@@ -8196,5 +8196,35 @@
       "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/LICENSE",
       "https://github.com/SymbioticSec/hermes-decomp/releases/tag/v0.2.4"
     ]
+  },
+  {
+    "id": "n64modernruntime",
+    "name": "N64ModernRuntime",
+    "url": "https://github.com/N64Recomp/N64ModernRuntime",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runtime for N64Recomp static recompilations and traditional source ports of N64 games, made of two libraries. ultramodern reimplements core libultra services (threads, message queues, timers, controllers, audio, RSP task handling and VI timing) and leaves controller input, audio playback and the graphics renderer, with RT64 recommended, to callbacks the host project registers. librecomp bridges N64Recomp-generated code to ultramodern and adds overlay handling, PI DMA ROM reads, and EEPROM, SRAM and Flash RAM saves.",
+    "description_zh": "供 N64Recomp 静态重编译项目和传统源码移植使用的 N64 游戏运行时，由两个库组成。ultramodern 重新实现 libultra 的核心服务（线程、消息队列、计时器、控制器、音频、RSP 任务处理和 VI 时序），并将手柄输入、音频播放和图形渲染器（推荐 RT64）交给宿主项目注册的回调处理。librecomp 负责将 N64Recomp 生成的代码与 ultramodern 衔接，并补充覆盖段处理、PI DMA 读取 ROM，以及 EEPROM、SRAM 和 Flash RAM 存档。",
+    "evidence_url": "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags at review; the README recommends including the libraries in a project's own CMake build with add_subdirectory. The reviewed main commit (2026-08-30) needs CMake 3.20+ and C++20; the README says it was developed with Clang 15, older Clang versions may not work, and recent MSVC and GCC should work but are not regularly tested. N64Recomp, miniz, xxHash and o1heap are pinned submodules.",
+      "The runtime contains no game code: the host project supplies the recompiled code, the renderer and the platform callbacks, and the user supplies the game ROM. The reviewed librecomp source checks a user-selected ROM against a per-game hash and also loads .nrm mod packages; the README does not describe either feature.",
+      "The Castlevania 64, Conker's Bad Fur Day, Banjo-Kazooie and Star Fox 64 recompilation cases in this catalog are documented as using it; game compatibility is reported in those entries, not here. The README covers library scope only and has no compatibility list.",
+      "GPL-3.0 (COPYING); submodules keep their own licenses. CONTRIBUTING.md states that AI-generated code contributions are not accepted. Nothing was built or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/CMakeLists.txt",
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/.gitmodules",
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/COPYING",
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/CONTRIBUTING.md",
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/librecomp/src/recomp.cpp#L360-L410",
+      "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/librecomp/src/mods.cpp"
+    ]
   }
 ]
