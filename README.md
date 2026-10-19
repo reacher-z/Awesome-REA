@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2251,14 +2251,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (7)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3340,6 +3340,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The Cortex-M3/M4 artifact requires memory-map configuration and does not automatically model DMA. Abstracting hardware can produce crashes that are impossible on the physical device. This is an analysis environment, not original-source recovery or faithful full-device reconstruction.
 
   **Authors:** Tobias Scharnowski et al.
+
+  </details>
+
+- [**Jetset: Targeted Firmware Rehosting for Embedded Systems**](https://www.usenix.org/conference/usenixsecurity21/presentation/johnson)
+
+  Jetset rehosts firmware only as far as an analyst-chosen goal address, such as the point where a fuzzer can inject input. Given the architecture, the MMIO address range, an entry point and the goal, it symbolically executes the firmware with angr against a modified QEMU, treating peripheral reads as symbolic, cycling interrupts, and steering toward the goal with CFG distances and Tabu search. Solved constraints become C peripheral models for QEMU that replay the inferred values and interrupts so the firmware boots concretely to the goal. The authors evaluate 13 targets across x86, ARM and Motorola ColdFire, including Linux on a Raspberry Pi 2, a BeagleBoard-xM bootloader, a SEL-751 relay, a Boeing 737 CMU-900 and nine P²IM firmware, and use the CMU model with AFL to find a privilege escalation in its VRTX kernel.
+
+  USENIX Security 2021 · Conference paper · [PDF](https://www.usenix.org/system/files/sec21-johnson.pdf) · [Code](https://github.com/aerosec/jetset) · [Full entry & citation](https://awesomerea.org/papers/paper-jetset/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** This is targeted rehosting, not full device emulation or firmware decompilation. The analyst supplies the MMIO range, entry point and goal address, and the synthesized models replay one satisfying path and then the last satisfying value for each address, so they need not match real hardware and may mishandle stateful or complex peripheral interaction after the goal. DMA is unsupported; the two targets that needed it relied on an existing QEMU device model or a manually symbolic memory region. Incomplete CFGs, for example across virtual calls or x86 task switches, weaken the distance heuristic, and the BeagleBoard-xM emulator crashed when synthesized serial data was executed as code. Fidelity checks compare against hardware or a manually built QEMU model for selected targets. The VRTX privilege escalation is described by the authors as primarily of academic interest.
+
+  **Authors:** Evan Johnson et al.
 
   </details>
 

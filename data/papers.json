@@ -4713,5 +4713,60 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-jetset",
+    "title": "Jetset: Targeted Firmware Rehosting for Embedded Systems",
+    "title_zh": "Jetset：面向嵌入式系统的定向固件重托管",
+    "authors": [
+      "Evan Johnson",
+      "Maxwell Bland",
+      "YiFei Zhu",
+      "Joshua Mason",
+      "Stephen Checkoway",
+      "Stefan Savage",
+      "Kirill Levchenko"
+    ],
+    "year": 2021,
+    "publication_date": "2021-08",
+    "date_precision": "month",
+    "date_basis": "The official USENIX proceedings citation gives August 2021. Month precision is retained; the August 11–13 symposium dates on the proceedings cover are not substituted for a publication day.",
+    "date_basis_zh": "USENIX 官方论文集引用信息给出 2021 年 8 月。本条目保留月精度，不以论文集封面上 8 月 11–13 日的研讨会日期替代具体出版日。",
+    "venue": "USENIX Security 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/johnson",
+    "pdf_url": "https://www.usenix.org/system/files/sec21-johnson.pdf",
+    "code_url": "https://github.com/aerosec/jetset",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Jetset rehosts firmware only as far as an analyst-chosen goal address, such as the point where a fuzzer can inject input. Given the architecture, the MMIO address range, an entry point and the goal, it symbolically executes the firmware with angr against a modified QEMU, treating peripheral reads as symbolic, cycling interrupts, and steering toward the goal with CFG distances and Tabu search. Solved constraints become C peripheral models for QEMU that replay the inferred values and interrupts so the firmware boots concretely to the goal. The authors evaluate 13 targets across x86, ARM and Motorola ColdFire, including Linux on a Raspberry Pi 2, a BeagleBoard-xM bootloader, a SEL-751 relay, a Boeing 737 CMU-900 and nine P²IM firmware, and use the CMU model with AFL to find a privilege escalation in its VRTX kernel.",
+    "description_zh": "Jetset 只将固件重托管到分析人员指定的目标地址，例如模糊测试器可以注入输入的位置。给定体系结构、MMIO 地址范围、入口点与目标地址后，它使用 angr 配合修改过的 QEMU 对固件进行符号执行，将外设读取视为符号值、轮流触发中断，并借助控制流图距离与禁忌搜索向目标推进。求解得到的约束被转换为供 QEMU 使用的 C 语言外设模型，重放推断出的取值与中断，使固件以具体执行方式启动到目标处。作者在 x86、ARM 与 Motorola ColdFire 上评测了 13 个目标，包括 Raspberry Pi 2 上的 Linux、BeagleBoard-xM 引导程序、SEL-751 继电器、波音 737 的 CMU-900 以及九个 P²IM 固件，并利用 CMU 模型结合 AFL 在其 VRTX 内核中发现一个提权漏洞。",
+    "scope_limitations_en": "This is targeted rehosting, not full device emulation or firmware decompilation. The analyst supplies the MMIO range, entry point and goal address, and the synthesized models replay one satisfying path and then the last satisfying value for each address, so they need not match real hardware and may mishandle stateful or complex peripheral interaction after the goal. DMA is unsupported; the two targets that needed it relied on an existing QEMU device model or a manually symbolic memory region. Incomplete CFGs, for example across virtual calls or x86 task switches, weaken the distance heuristic, and the BeagleBoard-xM emulator crashed when synthesized serial data was executed as code. Fidelity checks compare against hardware or a manually built QEMU model for selected targets. The VRTX privilege escalation is described by the authors as primarily of academic interest.",
+    "scope_limitations_zh": "这是定向重托管，并非完整的设备仿真或固件反编译。MMIO 范围、入口点和目标地址需由分析人员提供；合成模型先重放一条满足约束的路径，之后对每个地址返回最后一个满足约束的值，因此不必与真实硬件一致，到达目标后也可能无法正确处理有状态或复杂的外设交互。不支持 DMA；需要 DMA 的两个目标分别依赖已有的 QEMU 设备模型或人工标为符号值的内存区域。控制流图不完整（例如跨越虚函数调用或 x86 任务切换）会削弱距离启发式，BeagleBoard-xM 仿真也因把合成的串口数据当作代码执行而崩溃。保真度检验只在部分目标上与硬件或人工构建的 QEMU 模型对比。作者称 VRTX 提权漏洞主要具有学术意义。",
+    "why_fits_en": "Adds symbolic-execution-based peripheral model synthesis for booting firmware to an analysis point, complementing the section’s HAL replacement, MMIO-modeling fuzzing and Linux user-space rehosting research.",
+    "why_fits_zh": "补充基于符号执行合成外设模型、使固件启动到分析位置的方法，与本节的 HAL 替换、MMIO 建模模糊测试及 Linux 用户态重托管研究互补。",
+    "metadata_notes": "The USENIX presentation page and final proceedings PDF give the seven authors in this order, the 30th USENIX Security Symposium, pages 321–338, ISBN 978-1-939133-24-3 and month August; the 19-page PDF includes a proceedings cover page. The page also links a separate prepublication PDF. No DOI or arXiv identifier was found; the record uses the reviewed USENIX Security presentation-page and final-PDF profile. The paper cites jetset.aerosec.org as its open-source release, but that host did not resolve during this review. The aerosec GitHub organization, whose site lists the paper, hosts aerosec/jetset with commits from the first two authors; its README says it contains the code and data to reproduce the paper’s results, except the proprietary or security-critical CMU-900 and ICS binaries. The reviewed 2024-03-21 commit is GPL-2.0, and its Makefile clones the jetset_engine, jetset_qemu and jetset_public_data repositories over SSH; GitHub does not identify a single license for the modified-QEMU repository jetset_qemu, and jetset_public_data declares none. No code, firmware or experiments were run.",
+    "metadata_notes_zh": "USENIX 报告页面与最终论文集 PDF 按此顺序列出七位作者，记载第 30 届 USENIX 安全研讨会、第 321–338 页、ISBN 978-1-939133-24-3 及 8 月；19 页的 PDF 含一页论文集封面。该页面另链接一份预发表 PDF。未找到 DOI 或 arXiv 标识符；本条目采用经审核的 USENIX Security 报告页面与最终 PDF 规则。论文将 jetset.aerosec.org 列为开源发布地址，但本次审阅时该主机名无法解析。aerosec GitHub 组织的网站列出了该论文，其 aerosec/jetset 仓库含前两位作者的提交；README 称仓库包含复现论文结果所需的代码与数据，但不含属于专有或安全敏感的 CMU-900 与 ICS 二进制。所审阅的 2024-03-21 提交采用 GPL-2.0，其 Makefile 通过 SSH 克隆 jetset_engine、jetset_qemu 与 jetset_public_data 仓库；GitHub 未能为修改版 QEMU 仓库 jetset_qemu 识别出单一许可证，jetset_public_data 则未声明许可证。本次未运行代码、固件或实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity21/presentation/johnson",
+      "https://www.usenix.org/system/files/sec21-johnson.pdf",
+      "https://github.com/aerosec/jetset/blob/a55dc69ef7b8a1d768df192065916fa4936258b1/README.md",
+      "https://github.com/aerosec/jetset/blob/a55dc69ef7b8a1d768df192065916fa4936258b1/LICENSE.GPL",
+      "https://github.com/aerosec/jetset/blob/a55dc69ef7b8a1d768df192065916fa4936258b1/Makefile",
+      "https://github.com/aerosec/jetset_engine/blob/b71990fb002948b221710233e519f3340344c91a/README.md",
+      "https://github.com/aerosec/aerosec.github.io/blob/c831d9d329bb1d0b788a5ce1d31baba1e7ea53ce/_data/publications.yml",
+      "https://github.com/aerosec/jetset_qemu/blob/ea9d17aad5edb030c836bcd7ab911a6cb275fedf/LICENSE",
+      "https://github.com/aerosec/jetset_public_data/tree/c1f387325bd102f248d6f4a02f86d616210fad74"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

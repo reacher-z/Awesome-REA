@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 356](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 356](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2252,14 +2252,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (7)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3341,6 +3341,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 面向 Cortex-M3/M4 的产物需要配置内存映射，且不会自动为 DMA 建模。对硬件的抽象可能产生真实设备上不可能出现的崩溃。该工作构建分析环境，不代表恢复原始源码或忠实重建完整设备。
 
   **作者:** Tobias Scharnowski 等
+
+  </details>
+
+- [**Jetset：面向嵌入式系统的定向固件重托管**](https://www.usenix.org/conference/usenixsecurity21/presentation/johnson)
+
+  Jetset 只将固件重托管到分析人员指定的目标地址，例如模糊测试器可以注入输入的位置。给定体系结构、MMIO 地址范围、入口点与目标地址后，它使用 angr 配合修改过的 QEMU 对固件进行符号执行，将外设读取视为符号值、轮流触发中断，并借助控制流图距离与禁忌搜索向目标推进。求解得到的约束被转换为供 QEMU 使用的 C 语言外设模型，重放推断出的取值与中断，使固件以具体执行方式启动到目标处。作者在 x86、ARM 与 Motorola ColdFire 上评测了 13 个目标，包括 Raspberry Pi 2 上的 Linux、BeagleBoard-xM 引导程序、SEL-751 继电器、波音 737 的 CMU-900 以及九个 P²IM 固件，并利用 CMU 模型结合 AFL 在其 VRTX 内核中发现一个提权漏洞。
+
+  USENIX Security 2021 · 会议论文 · [PDF](https://www.usenix.org/system/files/sec21-johnson.pdf) · [代码](https://github.com/aerosec/jetset) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-jetset/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是定向重托管，并非完整的设备仿真或固件反编译。MMIO 范围、入口点和目标地址需由分析人员提供；合成模型先重放一条满足约束的路径，之后对每个地址返回最后一个满足约束的值，因此不必与真实硬件一致，到达目标后也可能无法正确处理有状态或复杂的外设交互。不支持 DMA；需要 DMA 的两个目标分别依赖已有的 QEMU 设备模型或人工标为符号值的内存区域。控制流图不完整（例如跨越虚函数调用或 x86 任务切换）会削弱距离启发式，BeagleBoard-xM 仿真也因把合成的串口数据当作代码执行而崩溃。保真度检验只在部分目标上与硬件或人工构建的 QEMU 模型对比。作者称 VRTX 提权漏洞主要具有学术意义。
+
+  **作者:** Evan Johnson 等
 
   </details>
 
