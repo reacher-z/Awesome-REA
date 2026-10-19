@@ -37,7 +37,7 @@
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]**
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]** · 精选：[Droid ASC Android 反编译器](https://awesomerea.org/zh/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — 功能强大的 Android APK 编辑器，不依赖 aapt/aapt2。 **[2,363 星标]** · 精选：[APKEditor](https://awesomerea.org/zh/resources/apkeditor/)
-- [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — 移动边缘动态统一安全分析。 **[2,357 星标]**
+- [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — 移动边缘动态统一安全分析。 **[2,357 星标]** · 精选：[MEDUSA](https://awesomerea.org/zh/resources/medusa-framework/)
 - [httptoolkit/frida-interception-and-unpinning](https://github.com/httptoolkit/frida-interception-and-unpinning) — 用于在运行时改写移动应用的 Frida 脚本，可直接对所有 HTTPS 流量进行中间人拦截。 **[2,315 星标]**
 - [Juude/droidReverse](https://github.com/Juude/droidReverse) — Android 逆向工程工具集。 **[2,021 星标]**
 - [chame1eon/jnitrace](https://github.com/chame1eon/jnitrace) — 基于 Frida 的工具，用于跟踪 Android 应用对 JNI API 的使用。 **[1,864 星标]** · 精选：[jnitrace](https://awesomerea.org/zh/resources/jnitrace/)

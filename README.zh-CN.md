@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 419](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-419-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 420](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-420-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
+- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (59)
 - [原生二进制](#native-binary) (51) · [固件与硬件](#firmware) (19) · [协议](#protocol) (15)
 
 **论文与工作流**
@@ -1644,6 +1644,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Hermes 字节码（.hbc）的 Rust 反编译与分析工具包；.hbc 是 React Native 应用为 Hermes 引擎打包的编译格式，README 列出支持 HBC 40 至 99 版本。其 hermes-decomp 命令行可显示文件信息、反汇编，并将整个包或单个函数反编译为 JavaScript，较慢的深度模式还能恢复更多名称；此外提供终端界面、交叉引用、调用图、控制流图、Metro 模块与闭包视图以及字节码差异比较。独立的 hermes-mcp 服务器将读取和分析功能作为 MCP 工具提供，hbc-decomp crate 则以 Rust 库的形式提供这些功能。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-decomp/)
+
+- [**MEDUSA**](https://github.com/Ch0pin/medusa)
+
+  基于 Frida 的模块化框架，用于对分析者有权测试的 Android 与 iOS 应用进行运行时分析。通过单个协调脚本加载插件模块，检查网络与 WebView 活动、跟踪 API 调用、查看内存与加密操作、监控恶意软件行为，并处理 SSL 固定等保护。README 称其内置 90 多个可复用模块。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/medusa-framework/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制

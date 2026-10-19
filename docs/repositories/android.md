@@ -37,7 +37,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — Hand-crafted Frida examples **[2,539 stars]**
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC is a super FAST and lightweight Android decompiler designed for Agents/Mobile Researchers. **[2,410 stars]** · Curated: [Droid ASC](https://awesomerea.org/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — Powerful android apk editor - aapt/aapt2 independent **[2,363 stars]** · Curated: [APKEditor](https://awesomerea.org/resources/apkeditor/)
-- [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — Mobile Edge-Dynamic Unified Security Analysis **[2,357 stars]**
+- [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — Mobile Edge-Dynamic Unified Security Analysis **[2,357 stars]** · Curated: [MEDUSA](https://awesomerea.org/resources/medusa-framework/)
 - [httptoolkit/frida-interception-and-unpinning](https://github.com/httptoolkit/frida-interception-and-unpinning) — Frida scripts to rewrite mobile applications at runtime to directly MitM all HTTPS traffic **[2,315 stars]**
 - [Juude/droidReverse](https://github.com/Juude/droidReverse) — Reverse engineering tools for Android **[2,021 stars]**
 - [chame1eon/jnitrace](https://github.com/chame1eon/jnitrace) — A Frida based tool that traces usage of the JNI API in Android apps. **[1,864 stars]** · Curated: [jnitrace](https://awesomerea.org/resources/jnitrace/)
