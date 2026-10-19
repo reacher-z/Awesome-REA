@@ -15579,5 +15579,37 @@
       "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/LICENSE",
       "https://github.com/quarkslab/binbloom/releases/tag/v2.1"
     ]
+  },
+  {
+    "id": "packetry",
+    "name": "Packetry",
+    "url": "https://github.com/greatscottgadgets/packetry",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Great Scott Gadgets' USB 2.0 protocol analysis application for live capture with the Cynthion analyzer or for exploring previously captured traffic, working from physical-layer packet data at High, Full and Low Speed. Its GTK 4 interface offers a hierarchical view that expands high-level events into their transactions and packets, plus chronological transaction and packet views, while a device pane summarizes each observed device from its decoded descriptors, including HID report descriptors. Captures are opened and saved as pcap files with the LINKTYPE_USB_2_0 link type, and v0.5.0 added pcapng with custom blocks for non-packet events.",
+    "description_zh": "Great Scott Gadgets 推出的 USB 2.0 协议分析应用，可配合 Cynthion 分析仪实时捕获，也可浏览已捕获的流量，处理高速、全速和低速 USB 的物理层数据包。其 GTK 4 界面提供分层视图，可将高层事件逐级展开为事务和数据包，另有按时间顺序排列的事务视图和数据包视图；设备面板则根据解码后的描述符（包括 HID 报告描述符）汇总每个观察到的设备。捕获以 LINKTYPE_USB_2_0 链路类型的 pcap 文件打开和保存，v0.5.0 还加入了带有非数据包事件自定义块的 pcapng 格式。",
+    "evidence_url": "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.5.0, published 2025-09-30 with a Windows installer and a Linux x86_64 AppImage; the quick-start guide installs it on macOS with Homebrew. The reviewed main commit is 47 commits ahead with interface, dependency and minimum-Rust changes, while Cargo.toml still reports 0.5.0.",
+      "Live capture needs a Cynthion analyzer whose host software is installed and updated with cynthion update; the code also probes iCE40-usbtrace devices, which the documentation does not cover. Viewing existing capture files needs no hardware.",
+      "Source builds need Rust 1.93+ according to the README and Cargo.toml (the quick-start guide still says 1.85.1) and GTK 4 headers discoverable through pkg-config. The documentation warns not to build with --all-features, whose optional features are for debugging and testing and degrade normal use.",
+      "Captures come from the user's own USB devices and buses. The documentation notes that the hierarchical view can show packets out of chronological order. BSD-3-Clause. No capture was made or loaded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/what_is_packetry.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/quick_start.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/docs/source/user_interface.rst",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/CHANGELOG.md",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/Cargo.toml",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/src/backend/mod.rs#L32-L40",
+      "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/LICENSE",
+      "https://github.com/greatscottgadgets/packetry/releases/tag/v0.5.0"
+    ]
   }
 ]
