@@ -15382,5 +15382,38 @@
       "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/LICENSE",
       "https://github.com/nccgroup/Sniffle/releases/tag/v1.11.0"
     ]
+  },
+  {
+    "id": "dex2jar",
+    "name": "dex2jar",
+    "url": "https://github.com/pxb1988/dex2jar",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Java toolkit that converts Android DEX bytecode, including DEX inside APKs, into JVM .class files packed as a jar for Java decompilers and bytecode tools. It also reads and writes DEX through an ASM-like API, disassembles and assembles smali with its own implementation, converts jars back to DEX and ships helpers such as d2j-decrypt-string.",
+    "description_zh": "用 Java 编写的工具集，可将 Android DEX 字节码（包括 APK 内的 DEX 文件）转换为打包成 jar 的 JVM .class 文件，供 Java 反编译器和字节码工具使用。它还通过类似 ASM 的 API 读写 DEX，以自有实现进行 smali 反汇编与汇编，可将 jar 转回 DEX，并附带 d2j-decrypt-string 等辅助工具。",
+    "evidence_url": "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The latest release, v2.4 of 2023-10-03 with the note “bugfix”, is the reviewed 2.x head, and no commits have followed it. Its download is dex-tools-v2.4.zip, while the README build steps still name a 2.1-SNAPSHOT archive. The README lists GitHub as the project's home after earlier Google Code, Bitbucket and SourceForge hosting.",
+      "Everything runs on Java: the build targets Java 8 with the Gradle 6.9.1 wrapper, ASM 9.5 and ANTLR 4.9.3, which d2j-smali keeps because newer ANTLR versions need Java 11+. The d2j-* commands are generated as shell and batch launchers. The CI workflow runs gradle check and distZip on JDK 8 for pushes, pull requests and release tags.",
+      "Input is a .dex or .odex file, or an APK or zip containing DEX, from the user's own app; the reader accepts DEX versions 035 to 040 and tries others with a warning. Output is a jar of class files rather than Java source, so reading code still needs a separate Java decompiler. Test resources hold small DEX and zip samples, and dex-translator/libs carries an Android dx 30.0.2 jar.",
+      "Apache-2.0, with copyright notices in LICENSE.txt and NOTICE.txt."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/build.gradle",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/d2j-smali/build.gradle",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/dex-tools/src/main/bin_gen/class.cfg",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/dex-reader/src/main/java/com/googlecode/d2j/reader/DexFileReader.java",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/.github/workflows/gradle.yml",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/gradle/wrapper/gradle-wrapper.properties",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/LICENSE.txt",
+      "https://github.com/pxb1988/dex2jar/blob/b5bda4fb4935ae8b3869b422454ae3b3896c7bc1/NOTICE.txt",
+      "https://github.com/pxb1988/dex2jar/releases/tag/v2.4"
+    ]
   }
 ]

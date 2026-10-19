@@ -5053,5 +5053,14 @@
       "加密连接不会被解密：Sniffle 在没有密钥的情况下跟随其时序并检测参数更新，而要可靠地跟随连接，需要对外设设置 MAC 或 IRK 过滤。后续版本的固件还能主动发送，用于主动扫描、广播、发起连接和链路层中继；本条目只涵盖被动捕获与解码。",
       "采用 GPL-3.0 许可；源码头部注明版权归 NCC Group plc 所有，其中 Wireshark extcap 插件由 Jay Logue 与 NCC Group plc 共同持有版权。本次未烧录任何硬件，也未捕获任何流量。"
     ]
+  },
+  "dex2jar": {
+    "name": "dex2jar Android DEX 转换工具集",
+    "requirements": [
+      "最新发行版 v2.4（2023-10-03，说明为“bugfix”）即所审阅的 2.x 分支最新提交，此后没有新提交。其下载包为 dex-tools-v2.4.zip，而 README 中的构建步骤仍写着 2.1-SNAPSHOT 压缩包。README 将 GitHub 列为项目主页，此前曾托管于 Google Code、Bitbucket 和 SourceForge。",
+      "全部运行在 Java 上：构建以 Java 8 为目标，使用 Gradle 6.9.1 包装器、ASM 9.5 和 ANTLR 4.9.3；d2j-smali 保留该 ANTLR 版本，是因为更新的版本需要 Java 11+。d2j-* 命令以生成的 shell 与批处理启动脚本提供。CI 工作流在推送、拉取请求和发行标签时于 JDK 8 上运行 gradle check 和 distZip。",
+      "输入为来自使用者自有应用的 .dex 或 .odex 文件，或包含 DEX 的 APK、zip 文件；读取器接受 035 至 040 版本的 DEX，其他版本会在警告后尝试处理。输出是由 class 文件组成的 jar，而非 Java 源码，阅读代码仍需另行使用 Java 反编译器。测试资源中有小型 DEX 和 zip 样本，dex-translator/libs 中还附有 Android dx 30.0.2 的 jar。",
+      "采用 Apache-2.0 许可，版权声明见 LICENSE.txt 和 NOTICE.txt。"
+    ]
   }
 }
