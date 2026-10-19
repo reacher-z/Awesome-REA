@@ -39,6 +39,8 @@ FONT_AWESOME_ICONS = {
     "layers": "layer-group", "document": "file-lines", "book": "book-open",
     "terminal": "terminal", "github": "github", "globe": "globe", "gamepad": "gamepad",
 }
+# Brand icons are drawn from the Brands face; every other key comes from Classic Light.
+FONT_AWESOME_BRANDS = {"github"}
 
 
 def fontawesome_markup(html: str, stylesheet_url: str) -> str:
@@ -54,6 +56,34 @@ def fontawesome_markup(html: str, stylesheet_url: str) -> str:
 
     html = re.sub(r'<svg\b([^>]*)>\s*<use href="#i-([a-z-]+)"\s*/>\s*</svg>', replace_icon, html)
     return html
+
+
+def subset_icon_font(source: Path, destination: Path, codepoints: set[int]) -> None:
+    """Write a WOFF2 copy of a licensed face that keeps only the site's icon code points."""
+    try:
+        from fontTools import subset
+        from fontTools.ttLib import TTLibError, woff2
+    except ImportError:
+        woff2 = None
+    if woff2 is None or not woff2.haveBrotli:
+        raise ValueError("Subsetting the licensed icon fonts requires fontTools with Brotli: pip install fonttools brotli")
+    options = subset.Options()
+    options.flavor = "woff2"
+    # Keep every name record, including the copyright and license notices.
+    options.name_IDs = ["*"]
+    options.name_languages = ["*"]
+    try:
+        font = subset.load_font(str(source), options)
+    except (TTLibError, OSError, AssertionError) as error:
+        raise ValueError(f"Font Awesome input is not a readable font: {source.name}") from error
+    with font:
+        subsetter = subset.Subsetter(options)
+        subsetter.populate(unicodes=codepoints)
+        subsetter.subset(font)
+        missing = codepoints - set(font.getBestCmap() or {})
+        if missing:
+            raise ValueError(f"Font Awesome subset of {source.name} is missing icons: " + ", ".join(f"U+{point:04X}" for point in sorted(missing)))
+        subset.save_font(font, str(destination), options)
 
 
 def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: str | None = None, *, output: Path) -> str:
@@ -86,8 +116,11 @@ def configure_fontawesome(html: str, licensed_package: Path | None, assets_url: 
             raise ValueError(f"Required Font Awesome icon is missing: {icon_name}")
         codepoints[key] = match.group(1)
     font_output.mkdir(exist_ok=True)
-    for name in font_names:
-        shutil.copy2(licensed_package / "webfonts" / name, font_output / name)
+    # Ship only the glyphs the site draws instead of the complete faces.
+    light = {int(point, 16) for key, point in codepoints.items() if key not in FONT_AWESOME_BRANDS}
+    brands = {int(codepoints[key], 16) for key in FONT_AWESOME_BRANDS}
+    for name, points in zip(font_names, (light, brands)):
+        subset_icon_font(licensed_package / "webfonts" / name, font_output / name, points)
     copyright_header = "/*! Font Awesome Pro by Fonticons, Inc. https://fontawesome.com — Commercial License: https://fontawesome.com/license. Licensed website assets; do not redistribute in a public source repository. */\n"
     css = copyright_header + """
 @font-face{font-family:'AwesomeREA Icons';font-style:normal;font-weight:300;font-display:block;src:url('fonts/fa-light-300.woff2') format('woff2')}
