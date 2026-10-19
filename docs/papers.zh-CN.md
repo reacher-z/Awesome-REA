@@ -4,14 +4,14 @@
 
 [← 返回 README](../README.zh-CN.md#papers) · [English](papers.md) · **简体中文**
 
-**235 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**236 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](../data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 ## 目录
 
 - [逆向工程智能体评测](#papers-agent-evaluation) (14)
-- [反编译与符号恢复](#papers-decompilation) (110)
+- [反编译与符号恢复](#papers-decompilation) (111)
 - [网站重建](#papers-website-reconstruction) (31)
 - [游戏重建与逆向工程](#papers-game-reconstruction) (15)
 - [应用重建与分析](#papers-app-reconstruction) (16)
@@ -116,6 +116,7 @@
 - [**SLaDe：面向优化汇编的可移植小语言模型反编译器**](https://ieeexplore.ieee.org/document/10444788) - SLaDe 使用 200M 参数的编码器—解码器模型、面向代码的分词及 PsycheC 类型补全，将函数级汇编转换为 C。 <sub>原题：*SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly* · IEEE/ACM CGO 2024 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://arxiv.org/pdf/2305.12520v3) · [代码](https://zenodo.org/records/10205121) · [完整条目](https://awesomerea.org/zh/papers/paper-slade/)</sub>
 - [**CEBin：面向大规模二进制代码相似性检测的低成本框架**](https://arxiv.org/abs/2402.18818) - CEBin结合代码嵌入筛选候选函数，再通过成对比较检测相似的二进制代码，包括含漏洞的函数。 <sub>原题：*CEBin: A Cost-Effective Framework for Large-Scale Binary Code Similarity Detection* · arXiv 2024 · 预印本 · Hao Wang 等 · [PDF](https://arxiv.org/pdf/2402.18818) · [代码](https://github.com/Hustcw/CEBin) · [完整条目](https://awesomerea.org/zh/papers/paper-cebin/)</sub>
 - [**“len、index 或 count，就是别叫 v1”：基于迁移学习预测反编译输出中的变量名**](https://ieeexplore.ieee.org/document/10646727) - VarBERT 使用 BERT 式模型为 IDA Hex-Rays 与 Ghidra 的反编译输出建议变量名：模型先以来自 Debian 的 520 万个人工编写的 C 函数预训练，再以反编译代码微调；它还预测每个变量出自开发者，还是由反编译器引入。 <sub>原题：*“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning* · IEEE S&amp;P 2024 · 会议论文 · Kuntal Kumar Pal 等 · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [代码](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [完整条目](https://awesomerea.org/zh/papers/paper-varbert/)</sub>
+- [**Forklift：可扩展的神经提升器**](https://openreview.net/forum?id=LWfDcI6txJ) - Forklift 使用 153M 参数的词元级编码器—解码器 Transformer，将函数级汇编提升为 LLVM 中间表示（而非 C），以便由 LLVM 重新优化并编译到其他指令集架构。 <sub>原题：*Forklift: An Extensible Neural Lifter* · COLM 2024 · 会议论文 · Jordi Armengol-Estapé 等 · [PDF](https://openreview.net/pdf?id=LWfDcI6txJ) · [代码](https://github.com/jordiae/forklift) · [完整条目](https://awesomerea.org/zh/papers/paper-forklift/)</sub>
 - [**DeGPT：使用大语言模型优化反编译器输出**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/) - 通过三个协同角色选择、提出并检查修改，改进已有的类 C 反编译输出。 <sub>原题：*DeGPT: Optimizing Decompiler Output with LLM* · NDSS 2024 · 会议论文 · Peiwei Hu 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [代码](https://github.com/PeiweiHu/DeGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-degpt/)</sub>
 - [**Assemblage：面向机器学习的二进制数据集自动构建**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6bbefc73a187dd42e0dc065b4e7a0615-Abstract-Datasets_and_Benchmarks_Track.html) - Assemblage 是一个分布式系统，从 GitHub 与 vcpkg 爬取 C/C++ 项目，在多种编译器配置下构建，并记录源码到二进制的映射，包括函数地址、源代码、注释以及 PDB 或 DWARF 调试信息。 <sub>原题：*Assemblage: Automatic Binary Dataset Construction for Machine Learning* · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Chang Liu 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6bbefc73a187dd42e0dc065b4e7a0615-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/Assemblage-Dataset/Assemblage) · [完整条目](https://awesomerea.org/zh/papers/paper-assemblage/)</sub>
 - [**二进制代码摘要：ChatGPT／GPT-4 及其他大语言模型的基准评测**](https://arxiv.org/abs/2312.09601) - BinSum 评测大语言模型以自然语言概括二进制函数的能力。 <sub>原题：*Binary Code Summarization: Benchmarking ChatGPT/GPT-4 and Other Large Language Models* · arXiv 2023 · 预印本 · Xin Jin 等 · [PDF](https://arxiv.org/pdf/2312.09601v1) · [完整条目](https://awesomerea.org/zh/papers/paper-binsum/)</sub>
