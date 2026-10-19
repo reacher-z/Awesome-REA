@@ -2990,5 +2990,15 @@
       "证据来自试玩、问题报告和日志：README 提到在 Nobara／Fedora 44 上的 Linux 测试、玩家在 Windows 上的测试，以及一次在 RTX 2060 上持续七分钟、帧率中位数为 27 FPS 的游玩记录。CI 工作流为拉取请求和经授权的手动发布构建 Linux 与 Windows 安装包，其 Linux 任务运行 C、Python 与 GPU 库单元测试，不涉及游戏内容，也没有自动化游戏流程测试。本合集仅审阅源码，未运行该移植或游戏。",
       "README 声明项目采用 GPL-2.0，并注明代码来自 HayatoG 此前的《最后的守护者》与《重力眩晕 2》移植、gow3_pc、bloodborne_pc、shadPS4 及其一个分支，以及一个《旺达与巨像》移植；各项实验性修复均注明来源提交。游戏及其素材的权利仍归其权利人所有。README 未提及任何 AI 模型或 REA；帖子所称的 AI 使用来自第三方账号，其链接的仓库是一个没有自身提交的分叉，因此未确立任何 AI 工作流。"
     ]
+  },
+  "sonic-advance-1-2-decomp-port-case": {
+    "name": "《索尼克 Advance》1 与 2：一致性 GBA 反编译及宽屏移植",
+    "requirements": [
+      "README 标明项目尚未完成、仍在积极开发。它列出六个附 SHA-1 的 ROM 目标：《索尼克 Advance》（欧版），以及《索尼克 Advance 2》的美版、欧版、日版、日本 Virtual Console 版和 2002-10-25 的美版测试版。README 报告 SA2 已 100% 由 C 构建，约 60 个不一致函数从 asm/non_matching 引入汇编；在所审提交中，该目录有 SA2 文件 64 个、SA1 文件 99 个、共享文件 17 个、引擎文件 8 个，另有 600 多个 SA2 函数尚未命名。Tiny Chao Garden 和 Collect Rings 这两个多重启动子游戏为构建一致 ROM 而一并编译，只完成了部分反编译。",
+      "文档所述的构建不读取原 ROM。仓库提交了 12,000 多个 PNG 精灵帧和图块、474 首 MIDI 乐曲、瓦片地图及其他原始数据，其中包括一个 191 KB、分段并入 Tiny Chao Garden 多重启动 ROM 的数据文件。移植版的 CI 任务仍从私有存储下载一个基础 ROM，但 Makefile 并不引用它。",
+      "INSTALL.md 面向 Linux（Windows 用户使用 WSL）和 macOS：需 ARM GCC 与 binutils、libpng、SDL2 和 MinGW-w64，构建 PS2 版另需 mkisofs 或 cdrtools。一致的 GBA 构建需将 SAT-R 的 agbcc 分支编译并安装到仓库中。移植版分别用 make sdl（Linux／macOS）、sdl_win32（Windows）、sdl_psp（PSPDEV）和 ps2（PS2DEV）构建，分辨率为 426×240 宽屏；README 标注 Win32 OpenGL 目标不可用，GitHub 上也没有发布版。",
+      "在 GBA 平台上，make 会按所列哈希值对构建出的 ROM 做 SHA-1 校验。CI 检查代码格式，构建并校验 SA2 美版、SA1 欧版及另外四个 SA2 版本；还在 Ubuntu 和 macOS 上为两款游戏构建 SDL、Win32、PSP 和 PS2 移植目标，并用无界面的 SDL 构建回放仓库中的一段 any% 速通输入录制。一致性只针对 GBA ROM，不适用于宽屏移植版；本合集未自行构建。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证。提取出的图像、音乐和数据，以及在 libagbsyscall、m4a 和 agb_flash 中重建的 Nintendo SDK 库，仍受其权利人条款约束。README 规定对议题和拉取请求严格禁止使用 LLM／AI；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
