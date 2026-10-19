@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 197 | 195 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 212 | 212 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 182 | 182 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 206 | 206 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 188 | 188 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 208 occurrences have catalog links. They reference 200 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 319 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 325 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -203,6 +203,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Greenlight video API: query fields with AI, then probe actual validation with invalid values | Insufficient evidence | [Source](https://x.com/i/status/2110868326528303367) |
 | decomp.wtf | Already curated | [Source](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
 | Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | Insufficient evidence | [Source](https://x.com/i/status/2110916629244641548) |
+| Excel reconciliation workbooks: infer a procedure from an accepted artifact for agents | Insufficient evidence | [Source](https://x.com/i/status/2110919658748719318) |
+| OpenCodex / Antigravity: REA investigation of missing multi-turn tool-call signatures | Insufficient evidence | [Source](https://x.com/i/status/2110921946418602001) |
+| Minesweeper and Bilibili: a secondary roundup of REA demonstration titles | Insufficient evidence | [Source](https://x.com/i/status/2110936629221450214) |
+| MoonBit: Claude investigates name mangling to improve VSCode debugging | Insufficient evidence | [Source](https://x.com/i/status/2110938121080631767) |
+| Obfuscated old games: a report of Claude guessing structure sizes incorrectly | Insufficient evidence | [Source](https://x.com/i/status/2110942707074183405) |
+| Saturn Sonic 3D Blast: byte-matching decompilation and a native PC port | Insufficient evidence | [Source](https://x.com/i/status/2110939629516186067) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
 | Claude Code background lab: an REA-informed reimplementation of a desktop animation | Already curated | [Source](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | JPCERT/CC: APK analysis and API probing on attack servers | Already curated | [Source](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |

@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 197 | 195 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 212 | 212 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 182 | 182 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 206 | 206 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 188 | 188 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 208 个出现项含目录链接；共关联 200 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 319 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 325 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -203,6 +203,12 @@
 | Greenlight video API: query fields with AI, then probe actual validation with invalid values | 证据不足 | [来源](https://x.com/i/status/2110868326528303367) |
 | decomp.wtf 智能体反编译工具 | 已收录 | [来源](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
 | Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | 证据不足 | [来源](https://x.com/i/status/2110916629244641548) |
+| Excel reconciliation workbooks: infer a procedure from an accepted artifact for agents | 证据不足 | [来源](https://x.com/i/status/2110919658748719318) |
+| OpenCodex / Antigravity: REA investigation of missing multi-turn tool-call signatures | 证据不足 | [来源](https://x.com/i/status/2110921946418602001) |
+| Minesweeper and Bilibili: a secondary roundup of REA demonstration titles | 证据不足 | [来源](https://x.com/i/status/2110936629221450214) |
+| MoonBit: Claude investigates name mangling to improve VSCode debugging | 证据不足 | [来源](https://x.com/i/status/2110938121080631767) |
+| Obfuscated old games: a report of Claude guessing structure sizes incorrectly | 证据不足 | [来源](https://x.com/i/status/2110942707074183405) |
+| Saturn Sonic 3D Blast: byte-matching decompilation and a native PC port | 证据不足 | [来源](https://x.com/i/status/2110939629516186067) |
 | Linux 上的 UU 远程：非官方协议实现 | 已收录 | [来源](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
 | Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现 | 已收录 | [来源](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | JPCERT/CC：攻击服务器上的 APK 解析与 API 探测 | 已收录 | [来源](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
