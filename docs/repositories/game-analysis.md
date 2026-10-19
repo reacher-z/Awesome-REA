@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**387 repositories** · 2026-10-16 UTC
+**388 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 62](https://img.shields.io/badge/papers-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 298](https://img.shields.io/badge/resources-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 62](https://img.shields.io/badge/papers-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (134) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (135) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -984,6 +984,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Binary splitter for decompilation and modding projects: a YAML config says where and how to cut an N64 ROM or PSX, PS2 or PSP binary into code, data and asset segments. A scan phase disassembles code and data, with MIPS handled by spimdisasm; a split phase writes the files and a linker script for rebuilding the input. Custom segment types can extend the pipeline.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/splat/)
+
+- [**m2c**](https://github.com/matt-kempster/m2c)
+
+  Decompiler for matching projects that turns GNU as-format 32-bit MIPS, ARM, PowerPC and SuperH assembly into draft C, with partial C++ support. A target combines platform, compiler (IDO, GCC or MetroWerks CodeWarrior) and language; context files supply types, and it can infer unknown struct fields and emit global initializers. The README places it alongside splat, asm-differ and decomp-permuter, and decomp.me calls it for initial decompilations.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/m2c/)
 
 <a id="app"></a>
 ### App

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 297](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 62](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 298](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 62](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (134) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (135) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -985,6 +985,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向反编译与模组项目的二进制拆分工具：由 YAML 配置指定在何处、以何种方式把 N64 ROM 或 PSX、PS2、PSP 二进制切分为代码、数据和素材段。扫描阶段反汇编代码与数据，MIPS 部分由 spimdisasm 处理；拆分阶段写出文件以及用于重新构建输入文件的链接脚本。可编写自定义段类型扩展该流程。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/splat/)
+
+- [**m2c 匹配反编译器**](https://github.com/matt-kempster/m2c)
+
+  面向匹配反编译项目的反编译器，将 GNU as 格式的 32 位 MIPS、ARM、PowerPC 和 SuperH 汇编转换为 C 代码初稿，并部分支持 C++。目标由平台、编译器（IDO、GCC 或 MetroWerks CodeWarrior）和语言组成；上下文文件提供类型信息，还能推断未知的结构体字段并生成全局变量初始化代码。README 将它与 splat、asm-differ 和 decomp-permuter 并列使用，decomp.me 也调用它生成初步反编译结果。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/m2c/)
 
 <a id="app"></a>
 ### App · 应用

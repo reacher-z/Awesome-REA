@@ -11,10 +11,10 @@
 | 分类 | 仓库数 |
 | --- | ---: |
 | [网站](web-analysis.zh-CN.md) | 177 |
-| [游戏](game-analysis.zh-CN.md) | 387 |
+| [游戏](game-analysis.zh-CN.md) | 388 |
 | [应用 · Android](android.zh-CN.md) | 432 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 131 |
-| [原生二进制](native-analysis.zh-CN.md) | 679 |
+| [原生二进制](native-analysis.zh-CN.md) | 678 |
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 98 |
 | [固件](firmware.zh-CN.md) | 207 |
 | [协议](protocol-analysis.zh-CN.md) | 103 |
