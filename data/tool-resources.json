@@ -9629,5 +9629,42 @@
       "https://0xinfection.github.io/reversing/",
       "https://github.com/mytechnotalent/rea/blob/a2f8a158eb2161899f479018db2630e7e9b93145/README.md"
     ]
+  },
+  {
+    "id": "coop-anything",
+    "name": "Co-op Anything",
+    "url": "https://github.com/cranebeaker/coop-anything",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Agent playbook, skill set and stdio MCP server for adding online or split-screen co-op to single-player games the players already have installed. Agents either revive an existing co-op mod or reverse engineer the game and engine to build one, test it with in-game bots and send their notes back, while the MCP server searches a directory of 223 co-op projects and 32 open gaps, detects a game’s engine from its install folder and records the executable’s identity. Its README and reverse-engineering skill pair it with REA for native code, and two game write-ups report observations made through REA’s Ghidra lane.",
+    "description_zh": "为玩家已安装的单人游戏加入联机或分屏合作模式的智能体操作手册、技能集与 stdio MCP 服务器。智能体或修复已有的合作模组，或逆向分析游戏及其引擎从头实现，再用游戏内机器人测试并把笔记回馈给仓库；MCP 服务器则可检索收录 223 个合作项目和 32 处空缺的目录，根据安装目录识别游戏引擎，并记录可执行文件的身份信息。其 README 和逆向分析技能建议原生代码部分搭配 REA 使用，另有两份游戏笔记报告了借助 REA 的 Ghidra 通道得到的观察结果。",
+    "evidence_url": "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository was created on 2026-10-16, the reviewed commit is from 2026-10-18, and there are no releases, so the playbook, directory and reported results are changing quickly. The MCP server is a Python 3.9+ script without an SDK that needs PyYAML for its directory tools; Claude Code picks it up from .mcp.json, and the playbook gives Codex, Gemini CLI and Cursor settings. The same skills ship under .agents/skills and .claude/skills.",
+      "Every player needs the game installed, and the hub holds no game files or assets. AGENTS.md tells agents to work on a copied install, ask the owner before installing software or using their accounts, and pin downloads by SHA-256. Its rules allow building on existing decompilations or decompiling a game, with that code kept in the game’s own repository under the licence of what it builds on. Analysis tools such as REA, Ghidra, IDA MCP servers, Frida, Cheat Engine, BepInEx and UE4SS are installed separately, and the playbook leaves REA’s npx rea-agents setup for the owner to run before restarting the agent.",
+      "Networking guidance uses Steam relay through Valve’s free Spacewar test app, and split-screen guidance builds on Nucleus Co-op and PartyDeck. The project rules restrict it to co-op and forbid anti-cheat bypass for online services and cheating in other people’s multiplayer games.",
+      "Results are reported by the author and contributors. The README lists Deus Ex as released and Ocarina of Time as fully synced, with other games in progress; each directory entry carries a QA level, from none through player reports and automated bot tests to a verified playthrough, and the Deus Ex write-up reports automated tests with real game clients. CI only checks that DIRECTORY.md matches data/directory.yaml. This collection reviewed documentation and the MCP source without running agents, mods or games.",
+      "MIT for the hub; MinHook source vendored in one game experiment keeps its own licence, and linked mods, decompilations, tools and games keep their own terms. The REA connection is a documented pairing for native analysis plus reported use in game notes; the MCP server itself does not call REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/AGENTS.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/playbook/mcp.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/playbook/reverse-engineering.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/.agents/skills/coop-reverse-engineer/SKILL.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/tools/mcp/coop_mcp.py",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/data/SCHEMA.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/DIRECTORY.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/games/command-and-conquer-3/NOTES.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/games/world-in-conflict/NOTES.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/games/deus-ex/README.md",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/.github/workflows/directory.yml",
+      "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/LICENSE"
+    ]
   }
 ]
