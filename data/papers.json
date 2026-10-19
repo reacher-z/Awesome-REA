@@ -7749,5 +7749,61 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-hermessim",
+    "title": "Code is not Natural Language: Unlock the Power of Semantics-Oriented Graph Representation for Binary Code Similarity Detection",
+    "title_zh": "代码并非自然语言：释放面向语义的图表示在二进制代码相似性检测中的潜力",
+    "authors": [
+      "Haojie He",
+      "Xingwei Lin",
+      "Ziang Weng",
+      "Ruijie Zhao",
+      "Shuitao Gan",
+      "Libo Chen",
+      "Yuede Ji",
+      "Jiashui Wang",
+      "Zhi Xue"
+    ],
+    "year": 2024,
+    "publication_date": "2024-08",
+    "date_precision": "month",
+    "date_basis": "Publication month in the official USENIX proceedings BibTeX; the August 14–16, 2024 symposium dates are not used to assert a publication day.",
+    "date_basis_zh": "采用 USENIX 官方论文集 BibTeX 中的出版月份；不以 2024 年 8 月 14–16 日的会议日期推定具体出版日。",
+    "venue": "USENIX Security 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf",
+    "code_url": "https://github.com/NSSL-SJTU/HermesSim",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HermesSim detects binary code similarity by lifting each function to Ghidra P-code and building a semantics-oriented graph that exposes operand structure inside instructions, def-use, control-flow and effect-order relations, while dropping semantics-independent details such as which register temporarily holds a value. A gated graph neural network with a multi-head softmax aggregator embeds the graph, and functions are compared by embedding similarity. On the Dataset-1 benchmark of Marcelli et al., the authors report 48.1% RECALL@1 for x64 cross-compiler retrieval in pools of 10,000 functions, against 31.4% for a fine-tuned jTrans, with a 388K-parameter model.",
+    "description_zh": "HermesSim 将每个函数提升为 Ghidra P-code，并构建面向语义的图，以显式表示指令内部的操作数结构、定义—使用关系、控制流及副作用顺序，同时舍弃与语义无关的细节，例如由哪个寄存器临时保存某个值。它使用带多头 softmax 聚合器的门控图神经网络对图进行嵌入，再按嵌入相似度比较函数。作者在 Marcelli 等人发布的 Dataset-1 基准上报告：在 10,000 个函数的候选池中进行 x64 跨编译器检索时，RECALL@1 为 48.1%，经微调的 jTrans 为 31.4%；HermesSim 模型参数量为 388K。",
+    "scope_limitations_en": "Laboratory results reuse Dataset-1 from Marcelli et al.: 257K, 13K and 522K training, validation and test functions for x86, ARM and MIPS in 32 and 64 bits, built at O0–O3 and Os by GCC and Clang. HermesSim keeps that dataset's IDA Pro 7.3 control flow and basic-block boundaries and uses Ghidra only to disassemble and lift each block, so the results do not measure function or CFG recovery. Each setting samples 1,000 queries against pools of up to 10,000 functions, and the gains are relative to the paper's own runs of SAFE, Asm2Vec, GMN, Trex and jTrans, which supports x86 only and was compared on the x64 subset. The real-world study searches 62,605 ARM32 and MIPS32 functions from 12 RTOS firmware images of three vendors for 10 functions linked to 5 CVEs; its ground truth comes from manually examining the top 20 results of the compared methods. String, integer and external-symbol references are not encoded, only memory effects are modeled, and unresolved indirect branches leave graphs incomplete. Similarity ranks candidates for review; it does not establish equivalence or vulnerability.",
+    "scope_limitations_zh": "实验室结果沿用 Marcelli 等人的 Dataset-1：训练、验证与测试集分别含 257K、13K 与 522K 个函数，覆盖 x86、ARM 和 MIPS 的 32 位与 64 位代码，由 GCC 和 Clang 以 O0–O3 及 Os 编译。HermesSim 保留该数据集由 IDA Pro 7.3 恢复的控制流和基本块边界，仅用 Ghidra 反汇编并提升各基本块，因此结果并不衡量函数或控制流图的恢复能力。每项设置抽取 1,000 个查询函数，候选池最多为 10,000 个函数；性能提升是相对于论文自行运行的 SAFE、Asm2Vec、GMN、Trex 和 jTrans 而言，其中 jTrans 仅支持 x86，只在 x64 子集上比较。真实场景实验在来自三家厂商 12 个 RTOS 固件映像的 62,605 个 ARM32 与 MIPS32 函数中，检索与 5 个 CVE 相关的 10 个函数；其真实标签来自对各比较方法前 20 个结果的人工检查。方法不编码字符串、整数及外部符号引用，只建模内存副作用，未解析的间接跳转也会使图不完整。相似度用于为人工审查排列候选，并不能证明等价性或存在漏洞。",
+    "why_fits_en": "Adds learned binary code similarity search, which reverse engineers use to match functions across builds, recover library functions in stripped binaries and locate known vulnerable code, complementing decompilation and symbol-recovery research.",
+    "why_fits_zh": "补充基于学习的二进制代码相似性检索；逆向工程中常借此跨版本匹配函数、在剥离符号的二进制中识别库函数并定位已知漏洞代码，与反编译和符号恢复研究互补。",
+    "metadata_notes": "The USENIX page, its BibTeX entry and the final PDF agree on the nine-author order, pages 1759–1776 and ISBN 978-1-939133-44-1; the page also lists a prepublication PDF. USENIX assigns no paper DOI and no arXiv version was found, so the record relies on the reviewed USENIX Security 2024 URL/PDF identity. The paper links github.com/NSSL-SJTU/HermesSim. At the reviewed 2024-12-10 commit its LICENSE file is MIT for the project and reproduces MIT and Apache-2.0 notices for included Cisco Talos and DeepMind code, which is why GitHub reports no single license. The README's paper link uses /presentation/he, which redirects to the he-haojie page. Lifting calls the separate GPL-3.0 GSAT Ghidra toolkit (gsat-1.0.jar). Zenodo record 10.5281/zenodo.10369788 (CC BY 4.0), linked from the README, holds the Dataset-RTOS binaries and archives of about 17 GB, 19 GB and 5 GB with extracted features, model inputs and outputs; that DOI identifies the data, not the paper. Dataset-1 binaries come from the Cisco Talos binary_function_similarity repository. The pinned requirements target Python 3.10, PyTorch 1.13.1 with CUDA 11.6 and PyTorch Geometric 2.3.0. No archives were downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "USENIX 页面、其 BibTeX 条目与最终 PDF 的九位作者顺序、页码 1759–1776 及 ISBN 978-1-939133-44-1 一致；该页面另列有预发表版 PDF。USENIX 不为论文分配 DOI，也未找到 arXiv 版本，因此本条目依据经审阅的 USENIX Security 2024 页面／PDF 出版方标识。论文链接 github.com/NSSL-SJTU/HermesSim。在所审阅的 2024-12-10 提交中，其 LICENSE 文件为项目声明 MIT 许可证，并附有所含 Cisco Talos 与 DeepMind 代码的 MIT 和 Apache-2.0 声明，因此 GitHub 未识别出单一许可证。README 中的论文链接使用 /presentation/he，该地址会重定向至 he-haojie 页面。提升步骤调用独立的 GPL-3.0 GSAT Ghidra 工具包（gsat-1.0.jar）。README 链接的 Zenodo 记录 10.5281/zenodo.10369788（CC BY 4.0）包含 Dataset-RTOS 二进制，以及约 17 GB、19 GB 和 5 GB 的压缩包，内含提取的特征、模型输入与输出；该 DOI 标识的是数据，而非论文。Dataset-1 的二进制来自 Cisco Talos 的 binary_function_similarity 仓库。固定版本的依赖面向 Python 3.10、PyTorch 1.13.1（CUDA 11.6）及 PyTorch Geometric 2.3.0。本次未下载压缩包，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie",
+      "https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf",
+      "https://github.com/NSSL-SJTU/HermesSim/tree/db37ec664fda4ea9d26afe46ec28ff4de0d8ebc3",
+      "https://github.com/NSSL-SJTU/HermesSim/blob/db37ec664fda4ea9d26afe46ec28ff4de0d8ebc3/README.md",
+      "https://github.com/NSSL-SJTU/HermesSim/blob/db37ec664fda4ea9d26afe46ec28ff4de0d8ebc3/LICENSE",
+      "https://github.com/NSSL-SJTU/HermesSim/blob/db37ec664fda4ea9d26afe46ec28ff4de0d8ebc3/requirements.txt",
+      "https://github.com/sgfvamll/gsat/releases/tag/v1.0.0",
+      "https://zenodo.org/records/10369788"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
