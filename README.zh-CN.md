@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2300,14 +2300,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (7) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3229,6 +3229,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 假设环境动态具有确定性、状态完全可观测，并且描述足够详细；并非仅凭像素或二进制进行恢复。准确率使用合成过程中提供的回放转移，并结合规划回报评估，不能证明所有未见状态上的正确性或完整引擎等价。RTFM 在不同回合间固定手册内容，并让怪物保持静止。CWMB 也包含非游戏的控制与物理任务；部分规划回报未给出，复杂连续状态模型仍然困难。
 
   **作者:** Nicola Dainese 等
+
+  </details>
+
+- [**结合函数合成与自动机合成以发现因果反应式程序**](https://dl.acm.org/doi/10.1145/3571249)
+
+  AutumnSynth 根据观察到的画面帧及用户动作（如点击和方向键）构成的轨迹，合成 Autumn 程序；Autumn 是面向 Atari 风格网格世界的函数式反应式语言。基于启发式的感知步骤将每帧解析为带类型的对象，跟踪步骤再将对象跨时间步关联起来。随后，合成器为每个观察到的变化寻找更新函数，并搜索触发该变化的事件。当基于可观察状态的事件都无法解释某次更新时，自动机合成会借助基于 SAT 的 Sketch 编码或更快的启发式方法，引入计数器、模式等潜在状态。作者提出了含 30 个程序的 Causal Inductive Synthesis Corpus（CISC），启发式版本在其中合成出 27 个程序；经少量修改的版本在第三方 EMPA 网格世界语料库的 27 个游戏中合成出 21 个。
+
+  Proceedings of the ACM on Programming Languages (POPL 2023) · 期刊论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3571249) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-autumnsynth/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 目标是可用 Autumn 表达、完全可观察的小型网格世界，而非具有连续物理、复杂图形或已编译代码的游戏。感知与跟踪基于启发式；由于 Autumn 将对象渲染为部分透明，感知步骤不处理遮挡。CISC 的输入轨迹由人工构造，以覆盖各模型的动态；“成功”指合成程序能复现给定轨迹，而非与真实程序语义等价。启发式版本的运行时间从约两分钟到 9–13 小时不等；Sketch 版本在若干基准上 24 小时后超时，部分 EMPA 游戏也在 40 小时后超时。EMPA 需要针对随机事件做领域特定修改；由于多数 EMPA 游戏具有非确定性，其结果通过人工检查确认，且每个游戏只使用第一关。在新的 CISC 测试轨迹上，有四个合成程序因训练轨迹未展示全部动态而偏离真实程序，对其中三个重新测试时，拼接多条轨迹后恢复出了真实程序。对于随机事件，AutumnSynth 只检测非确定性，并不推断其背后的概率分布。该方法属于符号程序合成，并未使用大语言模型。
+
+  **作者:** Ria Das 等
 
   </details>
 

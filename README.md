@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 364](https://img.shields.io/badge/resources-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 364](https://img.shields.io/badge/resources-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2299,14 +2299,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (7) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3228,6 +3228,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.
 
   **Authors:** Nicola Dainese et al.
+
+  </details>
+
+- [**Combining Functional and Automata Synthesis to Discover Causal Reactive Programs**](https://dl.acm.org/doi/10.1145/3571249)
+
+  AutumnSynth synthesizes a program in Autumn, a functional reactive language for Atari-style grid worlds, from a trace of observed frames and user actions such as clicks and arrow keys. Heuristic perception parses each frame into typed objects and tracking links them across time steps. The synthesizer then finds an update function for each observed change and searches for the event that triggers it. When no event over the observed state explains an update, automata synthesis invents latent state, such as counters or modes, using a SAT-based Sketch encoding or a faster heuristic. The authors introduce the 30-program Causal Inductive Synthesis Corpus (CISC), on which the heuristic variant synthesizes 27 programs. A slightly modified version synthesizes 21 of 27 games from the third-party EMPA grid-world corpus.
+
+  Proceedings of the ACM on Programming Languages (POPL 2023) · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3571249) · [Full entry & citation](https://awesomerea.org/papers/paper-autumnsynth/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Targets are small, fully observed grid worlds expressible in Autumn, not games with continuous physics, rich graphics or compiled code. Perception and tracking are heuristic, and because Autumn renders objects partially transparent, perception does not address occlusion. CISC input traces were constructed manually to exercise each model’s dynamics, and success means the synthesized program reproduces the given trace, not semantic equivalence to the ground truth. Heuristic runtimes range from about two minutes to 9–13 hours; the Sketch variants time out after 24 hours on several benchmarks, and EMPA runs time out after 40 hours on some games. EMPA required domain-specific changes for random events. Because most EMPA games are nondeterministic, their results were checked by manual inspection, and only the first level of each game was used. On new CISC test traces, four synthesized programs diverged from the ground truth because their training traces did not show all dynamics, and concatenating several traces recovered the ground-truth program for the three that were retested. For random events AutumnSynth detects nondeterminism but does not infer the underlying probability distributions. The method is symbolic program synthesis and does not use an LLM.
+
+  **Authors:** Ria Das et al.
 
   </details>
 

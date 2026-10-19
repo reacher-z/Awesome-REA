@@ -4713,5 +4713,55 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-autumnsynth",
+    "title": "Combining Functional and Automata Synthesis to Discover Causal Reactive Programs",
+    "title_zh": "结合函数合成与自动机合成以发现因果反应式程序",
+    "authors": [
+      "Ria Das",
+      "Joshua B. Tenenbaum",
+      "Armando Solar-Lezama",
+      "Zenna Tavares"
+    ],
+    "year": 2023,
+    "publication_date": "2023-01-09",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records print publication on 2023-01-09; the online-publication date of 2023-01-11, also shown on the ACM article page, is recorded separately in metadata notes. The POPL meeting dates are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将印刷出版日期记为 2023-01-09；ACM 论文页面同样显示的 2023-01-11 在线出版日期在元数据说明中单独记录。本条目不以 POPL 会议日期替代。",
+    "venue": "Proceedings of the ACM on Programming Languages (POPL 2023)",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3571249",
+    "url": "https://dl.acm.org/doi/10.1145/3571249",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3571249",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "game"
+    ],
+    "description_en": "AutumnSynth synthesizes a program in Autumn, a functional reactive language for Atari-style grid worlds, from a trace of observed frames and user actions such as clicks and arrow keys. Heuristic perception parses each frame into typed objects and tracking links them across time steps. The synthesizer then finds an update function for each observed change and searches for the event that triggers it. When no event over the observed state explains an update, automata synthesis invents latent state, such as counters or modes, using a SAT-based Sketch encoding or a faster heuristic. The authors introduce the 30-program Causal Inductive Synthesis Corpus (CISC), on which the heuristic variant synthesizes 27 programs. A slightly modified version synthesizes 21 of 27 games from the third-party EMPA grid-world corpus.",
+    "description_zh": "AutumnSynth 根据观察到的画面帧及用户动作（如点击和方向键）构成的轨迹，合成 Autumn 程序；Autumn 是面向 Atari 风格网格世界的函数式反应式语言。基于启发式的感知步骤将每帧解析为带类型的对象，跟踪步骤再将对象跨时间步关联起来。随后，合成器为每个观察到的变化寻找更新函数，并搜索触发该变化的事件。当基于可观察状态的事件都无法解释某次更新时，自动机合成会借助基于 SAT 的 Sketch 编码或更快的启发式方法，引入计数器、模式等潜在状态。作者提出了含 30 个程序的 Causal Inductive Synthesis Corpus（CISC），启发式版本在其中合成出 27 个程序；经少量修改的版本在第三方 EMPA 网格世界语料库的 27 个游戏中合成出 21 个。",
+    "scope_limitations_en": "Targets are small, fully observed grid worlds expressible in Autumn, not games with continuous physics, rich graphics or compiled code. Perception and tracking are heuristic, and because Autumn renders objects partially transparent, perception does not address occlusion. CISC input traces were constructed manually to exercise each model’s dynamics, and success means the synthesized program reproduces the given trace, not semantic equivalence to the ground truth. Heuristic runtimes range from about two minutes to 9–13 hours; the Sketch variants time out after 24 hours on several benchmarks, and EMPA runs time out after 40 hours on some games. EMPA required domain-specific changes for random events. Because most EMPA games are nondeterministic, their results were checked by manual inspection, and only the first level of each game was used. On new CISC test traces, four synthesized programs diverged from the ground truth because their training traces did not show all dynamics, and concatenating several traces recovered the ground-truth program for the three that were retested. For random events AutumnSynth detects nondeterminism but does not infer the underlying probability distributions. The method is symbolic program synthesis and does not use an LLM.",
+    "scope_limitations_zh": "目标是可用 Autumn 表达、完全可观察的小型网格世界，而非具有连续物理、复杂图形或已编译代码的游戏。感知与跟踪基于启发式；由于 Autumn 将对象渲染为部分透明，感知步骤不处理遮挡。CISC 的输入轨迹由人工构造，以覆盖各模型的动态；“成功”指合成程序能复现给定轨迹，而非与真实程序语义等价。启发式版本的运行时间从约两分钟到 9–13 小时不等；Sketch 版本在若干基准上 24 小时后超时，部分 EMPA 游戏也在 40 小时后超时。EMPA 需要针对随机事件做领域特定修改；由于多数 EMPA 游戏具有非确定性，其结果通过人工检查确认，且每个游戏只使用第一关。在新的 CISC 测试轨迹上，有四个合成程序因训练轨迹未展示全部动态而偏离真实程序，对其中三个重新测试时，拼接多条轨迹后恢复出了真实程序。对于随机事件，AutumnSynth 只检测非确定性，并不推断其背后的概率分布。该方法属于符号程序合成，并未使用大语言模型。",
+    "why_fits_en": "Adds symbolic synthesis of game programs, including latent state, from observed play, complementing the section’s LLM-based code world-model and game-reconstruction research.",
+    "why_fits_zh": "补充一种从观察到的游玩过程中合成游戏程序（包括潜在状态）的符号方法，与本节基于大语言模型的代码世界模型及游戏重建研究互补。",
+    "metadata_notes": "Crossref, the archived ACM page and the 31-page article give the four authors, Proceedings of the ACM on Programming Languages volume 7, issue POPL, Article 56, pages 1628–1658. Crossref records print publication on 2023-01-09 and online publication on 2023-01-11, and the article footer gives January 2023. The ACM article is open access under CC BY 4.0. The paper says the Autumn language and AutumnSynth were implemented in Julia but links no code or artifact. The author’s publication page links only papers. The riadas/AutumnSynth.jl repository under the first author’s account contained only a one-line README at its single 2023-03-15 commit, so no code link is recorded. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref、ACM 页面存档与 31 页的论文给出四位作者，以及 Proceedings of the ACM on Programming Languages 第 7 卷 POPL 期 Article 56、第 1628–1658 页。Crossref 记载印刷出版于 2023-01-09、在线出版于 2023-01-11，论文页脚标为 2023 年 1 月。ACM 论文以 CC BY 4.0 开放获取。论文称 Autumn 语言与 AutumnSynth 以 Julia 实现，但未链接代码或产物；作者的出版物页面也只链接论文。第一作者账户下的 riadas/AutumnSynth.jl 仓库在其唯一一次 2023-03-15 提交中只有一行 README，因此不记录代码链接。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3571249",
+      "https://web.archive.org/web/20240416064933/https://dl.acm.org/doi/10.1145/3571249",
+      "https://api.crossref.org/works/10.1145/3571249",
+      "https://dl.acm.org/doi/pdf/10.1145/3571249",
+      "https://web.archive.org/web/20240416110317/https://dl.acm.org/doi/pdf/10.1145/3571249",
+      "https://github.com/riadas/AutumnSynth.jl/tree/e62edb9368c95c2271008ecb4e547afa4d2e393b",
+      "https://riadas.github.io/"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
