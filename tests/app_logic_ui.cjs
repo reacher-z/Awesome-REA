@@ -16,6 +16,7 @@ class Element {
     this.classList = {toggle(name, force) { if (force ?? !classes.has(name)) classes.add(name); else classes.delete(name); }, add: name => classes.add(name), remove: name => classes.delete(name)};
   }
   append(...nodes) { for (const node of nodes) this.children.push(...(node.tag === 'fragment' ? node.children : [node])); }
+  prepend(...nodes) { this.children.unshift(...nodes); }
   replaceChildren(...nodes) { this.children = []; this.append(...nodes); }
   setAttribute(key, value) { this.attrs[key] = String(value); }
   getAttribute(key) { return this.attrs[key] ?? null; }
@@ -219,7 +220,9 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(byClass(card, 'resource-kind')[0].textContent, lang === 'zh' ? '案例' : 'Case study');
     assert.equal(byClass(card, 'card-description')[0].textContent, lang === 'zh' ? '精选测试 1' : 'Curated fixture 1');
     assert.equal(byClass(card, 'card-category')[0].textContent, lang === 'zh' ? '重建案例' : 'Reconstruction cases');
-    const evidence = byClass(card, 'card-meta')[0].children[1];
+    assert.equal(byClass(card, 'card-meta')[0].children[0].className, 'card-targets');
+    assert.equal(byClass(card, 'card-targets')[0].textContent, lang === 'zh' ? '应用' : 'App');
+    const evidence = byClass(card, 'card-meta')[0].children[2];
     assert.deepEqual([evidence.textContent, evidence.href], [lang === 'zh' ? '复核来源 ↗' : 'Review source ↗', 'https://github.com/curated/tool-1#readme']);
     assert.equal(byClass(card, 'resource-entry-link')[0].href, `${lang === 'zh' ? '/zh' : ''}/resources/curated-1/`);
     const details = card.querySelector('details');

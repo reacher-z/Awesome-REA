@@ -137,6 +137,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-meta a,.source-card-footer a{color:var(--link);font-weight:600}
 .card-meta a:hover,.source-card-footer a:hover{text-decoration:underline;text-underline-offset:4px}
 .card-meta .card-category{font:inherit}
+.card-meta .card-targets{color:var(--body)}
 .source-card-license{font-size:14px}
 .requirements,.source-record-details{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .requirements summary,.source-record-details summary{color:var(--link);font-size:14px;font-weight:550;line-height:1.7;cursor:pointer;width:fit-content;min-height:44px;padding:9px 0}
@@ -437,6 +438,18 @@ html[data-layout="compact"] .collection-home .detail-label-compact{display:inlin
   html[data-layout="compact"] .collection-home .requirements:not([open]),html[data-layout="compact"] .collection-home .source-record-details:not([open]){align-self:start}
 }
 html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,html[lang="zh-CN"][data-layout="compact"] .collection-home .source-card-description{max-width:38em;line-height:1.85}
+/* Wide compact rows: targets, links and the details toggle sit in a right column beside the title and description.
+   DOM and focus order are unchanged, and an opened details panel still spans the row. */
+@media(min-width:1101px){
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:minmax(0,1fr) minmax(18rem,34%);grid-template-areas:"heading meta" "description meta" "description details";gap:0 40px}
+  html[data-layout="compact"] .collection-home .card-description,html[data-layout="compact"] .collection-home .source-card-description{margin-top:6px}
+  html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{flex-wrap:wrap;align-content:flex-start;gap:0 16px;padding-block:2px 0}
+  /* Labels on the first line, links on the next: a zero-height break item, and links keep their DOM order. */
+  html[data-layout="compact"] .collection-home .card-meta::after{content:"";order:1;flex-basis:100%;height:0}
+  html[data-layout="compact"] .collection-home .card-meta>a{order:2}
+}
+/* The stacked compact rows below that width keep their single metadata line; targets show in the card layout. */
+@media(max-width:1100px){html[data-layout="compact"] .collection-home .card-targets{display:none}}
 
 /* Contrast themes replace backgrounds and shadows, so selected states and primary buttons use system colors.
    Selected controls opt out of the text backplate, which would otherwise hide HighlightText. */

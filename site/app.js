@@ -279,6 +279,8 @@ const t = (key) => UI[state.lang][key] || UI.en[key] || key;
 const COLLATORS = { en: new Intl.Collator("en"), zh: new Intl.Collator("zh-CN") };
 const compareLabels = (a, b) => COLLATORS[state.lang === "zh" ? "zh" : "en"].compare(a, b);
 const compareIDs = COLLATORS.en.compare;
+// Card metadata names the reviewed targets in the target buttons' wording, as /resources/ cards do.
+function targetLabels(record) { return record.targets.map(target => t("target" + target[0].toUpperCase() + target.slice(1))).join(" · "); }
 function targetSearchLabels(target) { const key = "target" + target[0].toUpperCase() + target.slice(1); return [target, UI.en[key] || "", UI.zh[key] || ""]; }
 function dataURL(filename) { const url = new URL("/" + filename, location.origin); const revision = document.documentElement.dataset.catalogRevision; if (revision) url.searchParams.set("v", revision); return url; }
 const label = (map, key) => map[key] ? map[key][state.lang === "zh" ? 1 : 0] : key.replaceAll("-", " ");
@@ -351,6 +353,7 @@ function card(record) {
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   const href=entryHref("curated",record.id);
+  if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
   details.append(context);article.append(details);return article;
 }

@@ -9,6 +9,7 @@ const script = fs.readFileSync(path.join(root, 'site/app.js'), 'utf8');
 class Element {
   constructor(tag = 'div') { this.tag = tag; this.children = []; this.dataset = {}; this.attrs = {}; this.handlers = {}; this.value = ''; this.className = ''; this.open = false; this.classList = {toggle() {}, add() {}, remove() {}}; }
   append(...nodes) { for (const node of nodes) this.children.push(...(node.tag === 'fragment' ? node.children : [node])); }
+  prepend(...nodes) { this.children.unshift(...nodes); }
   replaceChildren(...nodes) { this.children = []; this.append(...nodes); }
   setAttribute(key, value) { this.attrs[key] = value; }
   addEventListener(event, callback) { this.handlers[event] = callback; }
