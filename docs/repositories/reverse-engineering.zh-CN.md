@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**618 个仓库** · 2026-10-16 UTC
+**617 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -106,7 +106,6 @@
 - [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) — 带评分并自动刷新的反编译、重编译和逆向工程游戏列表，涵盖反编译项目、静态重编译项目、源码移植、引擎重制和浏览器移植版。 **[863 星标]**
 - [chenxiancai/STCObfuscator](https://github.com/chenxiancai/STCObfuscator) — iOS 全局自动化代码混淆工具！支持对 CocoaPods 组件代码一并混淆，完美避开硬编码方法、静态库方法和系统库方法！ **[822 星标]**
 - [devploit/awesome-ctf-resources](https://github.com/devploit/awesome-ctf-resources) — 面向新手和资深 CTF 玩家的一份夺旗赛（CTF）框架、库、资源和软件列表 🚩。 **[809 星标]**
-- [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — 用于还原经 Obfuscator.io 混淆的脚本的去混淆工具。 **[807 星标]**
 - [jbro129/android-modding](https://github.com/jbro129/android-modding) — 大量 Android 修改相关的 GitHub 仓库合集。 **[757 星标]**
 - [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — 新一代 PyInstaller 提取工具。 **[741 星标]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — 让你不受订阅限制地使用健康设备的应用。支持运动追踪、营养追踪、健康锻炼、睡眠、恢复、运动负荷等多种功能。 **[722 星标]**

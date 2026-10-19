@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**618 repositories** · 2026-10-16 UTC
+**617 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -106,7 +106,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [SubmitGame/awesome-decomp-games](https://github.com/SubmitGame/awesome-decomp-games) — Rated, auto-refreshed list of decompiled, recompiled &amp; reverse-engineered games: decomps, static recomps, source ports, engine remakes, browser ports. **[863 stars]**
 - [chenxiancai/STCObfuscator](https://github.com/chenxiancai/STCObfuscator) — An automated, project-wide code obfuscation tool for iOS! Supports obfuscating CocoaPods component code too, while perfectly avoiding hardcoded methods, static-library methods, and system-library methods! **[822 stars]**
 - [devploit/awesome-ctf-resources](https://github.com/devploit/awesome-ctf-resources) — A list of Capture The Flag (CTF) frameworks, libraries, resources and software for started/experienced CTF players 🚩 **[809 stars]**
-- [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — A deobfuscator for scripts obfuscated by Obfuscator.io **[807 stars]**
 - [jbro129/android-modding](https://github.com/jbro129/android-modding) — A large collection of github repositories related to android modding. **[757 stars]**
 - [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — PyInstaller Extractor Next Generation **[741 stars]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — App which allows you to use your health devices beyond subscriptions. Supports Workout Tracking, Nutrition Tracking, Wellness Excercise, Sleep, Recovery, Strain, and Many more. **[722 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**180 个仓库** · 2026-10-16 UTC
+**181 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -25,6 +25,7 @@
 - [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — 通用 JavaScript 去混淆工具。 **[1,153 星标]**
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 面向现代前端的 JavaScript 反编译器。 **[1,023 星标]** · 精选：[Wakaru](https://awesomerea.org/zh/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — 用于将 JVM 字节码解释执行或转译为 JavaScript、OpenCL、WebAssembly 的框架。 **[961 星标]**
+- [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — 用于还原经 Obfuscator.io 混淆的脚本的去混淆工具。 **[807 星标]** · 精选：[Obfuscator.io 专用反混淆工具](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)
 - [decompme/decomp.me](https://github.com/decompme/decomp.me) — 协作式反编译与逆向工程网站。 **[632 星标]**
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — 以协议为先的逆向工程技能，将具有对抗性的网页客户端转化为纯协议 Python 采集器。 **[515 星标]**
 - [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — 用于半自动 JavaScript 恶意软件分析、去混淆和载荷提取的沙箱，为 Node.js 编写。 **[480 星标]**

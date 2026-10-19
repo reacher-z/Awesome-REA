@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
 
-**180 repositories** · 2026-10-16 UTC
+**181 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -25,6 +25,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — General purpose JavaScript deobfuscator **[1,153 stars]**
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 Javascript decompiler for modern frontend **[1,023 stars]** · Curated: [Wakaru](https://awesomerea.org/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — Framework to interpret and transpile JVM bytecode to JavaScript, OpenCL or WebAssembly. **[961 stars]**
+- [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — A deobfuscator for scripts obfuscated by Obfuscator.io **[807 stars]** · Curated: [Obfuscator.io Deobfuscator](https://awesomerea.org/resources/obfuscator-io-deobfuscator/)
 - [decompme/decomp.me](https://github.com/decompme/decomp.me) — Collaborative decompilation and reverse engineering website **[632 stars]**
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — Protocol-first reverse engineering skill for turning hostile web clients into pure-protocol Python collectors. **[515 stars]**
 - [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — Sandbox for semi-automatic Javascript malware analysis, deobfuscation and payload extraction. Written for Node.js **[480 stars]**
