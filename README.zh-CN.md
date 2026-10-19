@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 298](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 299](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-299-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 152](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-152-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (135) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (136) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (151) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (152) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -863,6 +863,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   逐字节重建 The Sims: Bustin' Out 的 Game Boy Advance 美欧版，并逐步用 agbcc 编译、结果一致的 C 代码替换 ROM 区域。README 称这是由 AI 驱动的实验，几乎所有代码、分析与工具都由 AI 生成。ROM 的大部分仍从使用者的转储中复制，因此整个 ROM 一致并不代表游戏已完成反编译。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sims-bustin-out-gba-decomp-case/)
+
+- [**Destiny 2 build 86657：Sunrise／Dawn 重建研究报告**](https://github.com/isinternets/d2-research)
+
+  一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。报告把传输、解码、对象创建、呈现与游戏玩法结果分开记录，并连同所引来源保留已被推翻的结论。它记录案例本身，不提供运行时实现，也不是恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/destiny2-build-86657-reconstruction-report-case/)
 
 #### 工具、项目与集成
 
