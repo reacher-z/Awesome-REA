@@ -10331,5 +10331,37 @@
       "https://huggingface.co/syssec-utd/py312-pylingual-v1-statement",
       "https://doi.org/10.1109/SP61157.2025.00052"
     ]
+  },
+  {
+    "id": "sf64-matching-decomp-case",
+    "name": "Star Fox 64: a complete matching Nintendo 64 decompilation",
+    "url": "https://github.com/sonicdcer/sf64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C source for the US 1.1 (Rev A) Nintendo 64 release of Star Fox 64 that, compiled with the IDO compiler through a static recompilation, rebuilds a ROM with the published MD5; the README badge counts all 2,951 functions as matching. Code and assets are split from the user’s own ROM at build time, and the repository contains no assets or assembly. The separately curated Starship PC port compiles this C code, while Starfox 64: Recompiled takes headers and some functions from it for its patches.",
+    "description_zh": "为 Nintendo 64 版《星际火狐 64》美版 1.1（Rev A）重建 C 源码；借助静态重编译运行的 IDO 编译器编译后，可重建出 MD5 与公布值一致的 ROM，README 徽章显示全部 2,951 个函数均已一致。构建时从使用者自备的 ROM 中拆分代码与素材，仓库本身不含素材或汇编。另行收录的 Starship PC 移植直接编译这份 C 代码，Starfox 64: Recompiled 则从中取用头文件和部分函数来编写补丁。",
+    "evidence_url": "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master pin of 2026-09-28 is a clean-up commit after the July 2026 commits announcing 100% completion. README calls this a complete matching decompilation of the US 1.1 (Rev A) ROM, MD5 741a94eee093c4c8684e66b89f8685e8, and says it is not a PC port. Splat configurations and linker scripts also exist for US 1.0, Japanese and European releases, with checksum files for uncompressed Japanese and European 1.0 ROMs, but README does not document building them.",
+      "Building needs the user’s own US 1.1 Rev A ROM, placed in the project root as baserom.us.rev1.z64. README says the repository includes no assets or assembly code; make init decompresses the ROM, splits code, data and assets with splat, then builds. config.yml and assets/yaml also hold the Torch asset definitions that write starship.otr for the Starship port.",
+      "README documents Linux, natively or under WSL or a VM, with make, Git, build-essential, MIPS binutils, Python 3 with pip, libpng and the listed clang tools, or macOS with Homebrew’s coreutils, make, pkg-config and mips64-elf binutils; native Windows builds are unsupported. make toolchain downloads decompals’ ido-static-recomp build of the IDO compiler and builds the mio0 tool and Torch, while submodules add splat, asm-processor, asm-differ, m2c and Torch. A GCC build is available but defines NON_MATCHING.",
+      "With COMPARE=1 by default, the build checks the output against starfox64.us.rev1.md5, and README reads a mismatch as a bad base ROM or non-matching code. CI runs make init on the US ROM, fetched from a private repository through secrets, and a separate workflow checks formatting. These checks establish ROM identity for that release, not gameplay coverage; this collection ran nothing.",
+      "The repository carries CC0-1.0, which does not cover Nintendo’s game, the ROM or extracted assets; the IDO compiler and the submodules keep their own terms. The reviewed sources establish no AI or REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/Makefile",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/tools/Makefile",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/starfox64.us.rev1.md5",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/config.yml",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/.gitmodules",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/.github/workflows/ci.yaml",
+      "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/LICENSE.md"
+    ]
   }
 ]

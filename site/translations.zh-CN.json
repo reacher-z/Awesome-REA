@@ -3858,5 +3858,15 @@
       "检查重建结果需要用目标版本编译：uv 管理的解释器覆盖 3.8–3.15，3.6 和 3.7 则需要 pyenv 或 pyenv-win，可通过 --init-pyenv 安装。可选的 Redis 实例用于缓存模型预测，缓存键包含版本和规范化后的字节码，但不包含模型修订版。pylingual.io 网页服务是托管的替代方案，因此机密的 .pyc 文件应只用本地命令行处理。",
       "采用 GPL-3.0-only 许可。通过控制流检查并不能证明恢复出的源码与原始源码完全一致，恢复出的代码仍归原权利人所有。本次未安装或运行任何模型，论文仅核对了其书目信息。"
     ]
+  },
+  "sf64-matching-decomp-case": {
+    "name": "《星际火狐 64》：完整的 Nintendo 64 版一致性反编译",
+    "requirements": [
+      "所审阅的 master 固定版本是 2026 年 9 月 28 日的一次整理提交，此前于 2026 年 7 月有提交宣布完成度达到 100%。README 称其为美版 1.1（Rev A）ROM 的完整一致性反编译，对应 MD5 为 741a94eee093c4c8684e66b89f8685e8，并说明这不是 PC 移植。仓库中还有美版 1.0、日版和欧版的 splat 配置与链接脚本，以及日版和欧版 1.0 未压缩 ROM 的校验文件，但 README 未说明如何构建这些版本。",
+      "构建需要使用者自备美版 1.1 Rev A ROM，并以 baserom.us.rev1.z64 为名放在项目根目录。README 表示仓库不含任何素材或汇编代码；make init 会解压 ROM，用 splat 拆分代码、数据与素材，然后构建。config.yml 和 assets/yaml 中还有供 Starship 移植使用的 Torch 素材定义，用于生成 starship.otr。",
+      "README 说明的构建环境是 Linux（原生、WSL 或虚拟机），需要 make、Git、build-essential、MIPS binutils、带 pip 的 Python 3、libpng 及列明的 clang 工具；或是 macOS，通过 Homebrew 安装 coreutils、make、pkg-config 与 mips64-elf binutils；不支持在 Windows 上原生构建。make toolchain 会下载 decompals 用 ido-static-recomp 制作的 IDO 编译器，并构建 mio0 工具与 Torch；子模块提供 splat、asm-processor、asm-differ、m2c 和 Torch。也可用 GCC 构建，但会定义 NON_MATCHING。",
+      "默认 COMPARE=1 时，构建会依据 starfox64.us.rev1.md5 校验产物；README 将校验失败解释为基础 ROM 有误或部分代码尚未一致。CI 对通过密钥从私有仓库取得的美版 ROM 运行 make init，另有工作流检查代码格式。这些检查只确认该版本 ROM 的一致性，并不覆盖游戏行为；本合集未运行任何内容。",
+      "仓库采用 CC0-1.0，不涵盖任天堂的游戏、ROM 或提取出的素材；IDO 编译器与各子模块仍受各自条款约束。所审来源未确立 AI 或 REA 的参与。"
+    ]
   }
 }
