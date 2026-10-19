@@ -7228,5 +7228,38 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
     ]
+  },
+  {
+    "id": "starflight-reverse-forth-transpiler-case",
+    "name": "starflight-reverse: decoding Starflight’s Forth bytecode into C",
+    "url": "https://github.com/s-macke/starflight-reverse",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reverse engineers the DOS game Starflight, which was written in Forth: a disassembler decodes the indirect-threaded bytecode, code overlays and encrypted word names of Starflight 1 and 2 and transpiles them into C-style code. The repository adds an emulator that executes the original Starflight 1 code behind an interactive Forth prompt, extractors for planets, vessels and the game’s instance database, and a README that doubles as a write-up of the executable’s structure. The transpiled output documents the code; it is not presented as a playable rebuild.",
+    "description_zh": "对以 Forth 编写的 DOS 游戏 Starflight 进行逆向：反汇编器解码 Starflight 1 和 2 的间接线索字节码、代码覆盖段（overlay）与加密的词名，并转译为 C 风格代码。仓库还提供一个在交互式 Forth 提示符下执行原版 Starflight 1 代码的模拟器、行星、舰船及游戏实例数据库的提取工具，README 本身也是对可执行文件结构的详细解析。转译输出用于记录代码，并不作为可游玩的重建版本。",
+    "evidence_url": "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README analyses STARFLT.COM and the STARA.COM/STARB.COM containers: it reports 6,256 identified words, notes that about 2,000 of roughly 6,000 original word names survive there in encrypted form, and lists the overlay directory. It says most of the transpiled C-style code compiles; no rebuilt game is produced. Starflight 2 is handled by parallel STARFLT2 builds of the tools, and the last commit is dated 2026-03-09.",
+      "The tools read each game’s original STARFLT.COM, STARA.COM and STARB.COM from starflt1-in and starflt2-in, which ship empty; README links the GOG Starflight 1+2 release. Unlike most decompilations, README says the generated output is part of the repository: about 10.8 MB of transpiled C for 52 Starflight 1 and 65 Starflight 2 overlays plus dictionary, string, star-system and instance tables, so the repository itself carries code and data translated from the commercial games.",
+      "The Makefile builds the disassemblers, the Starflight 1 emulator and the extractors with gcc; the SDL front end also needs SDL2. CI builds only the two disassemblers on Ubuntu, without game files.",
+      "No automated comparison of the transpiled code or the emulator with the original game is documented; the analysis figures and the statement that most output compiles are the author’s. The webarchive folder mirrors vanished technical pages, including design documents and partial 1985 source listings that its README attributes to original developer Tim Lee’s website. This collection ran nothing.",
+      "The repository has no license file and GitHub detects none, so reuse terms are not stated; Starflight 1 and 2 and the archived developer material keep their rights holders’ terms. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/Makefile",
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/.github/workflows/c-cpp.yml",
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/src/disasOV/transpile2C.c",
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/src/emul/emul.c",
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/src/extract/data.h",
+      "https://github.com/s-macke/starflight-reverse/tree/07a3392933214419d935961675c65ffa36fe57f4/starflt1-out",
+      "https://github.com/s-macke/starflight-reverse/tree/07a3392933214419d935961675c65ffa36fe57f4/starflt2-out",
+      "https://github.com/s-macke/starflight-reverse/blob/07a3392933214419d935961675c65ffa36fe57f4/webarchive/README.md"
+    ]
   }
 ]

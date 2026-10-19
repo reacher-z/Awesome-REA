@@ -2990,5 +2990,15 @@
       "证据来自试玩、问题报告和日志：README 提到在 Nobara／Fedora 44 上的 Linux 测试、玩家在 Windows 上的测试，以及一次在 RTX 2060 上持续七分钟、帧率中位数为 27 FPS 的游玩记录。CI 工作流为拉取请求和经授权的手动发布构建 Linux 与 Windows 安装包，其 Linux 任务运行 C、Python 与 GPU 库单元测试，不涉及游戏内容，也没有自动化游戏流程测试。本合集仅审阅源码，未运行该移植或游戏。",
       "README 声明项目采用 GPL-2.0，并注明代码来自 HayatoG 此前的《最后的守护者》与《重力眩晕 2》移植、gow3_pc、bloodborne_pc、shadPS4 及其一个分支，以及一个《旺达与巨像》移植；各项实验性修复均注明来源提交。游戏及其素材的权利仍归其权利人所有。README 未提及任何 AI 模型或 REA；帖子所称的 AI 使用来自第三方账号，其链接的仓库是一个没有自身提交的分叉，因此未确立任何 AI 工作流。"
     ]
+  },
+  "starflight-reverse-forth-transpiler-case": {
+    "name": "starflight-reverse：将 Starflight 的 Forth 字节码解码为 C",
+    "requirements": [
+      "README 分析了 STARFLT.COM 以及 STARA.COM/STARB.COM 容器文件：报告共识别出 6,256 个词，指出约 6,000 个原始词名中约有 2,000 个以加密形式保留在代码中，并列出覆盖段目录。README 称大部分转译出的 C 风格代码可以编译；项目不产出重建的游戏。Starflight 2 由这些工具的 STARFLT2 并行构建处理，最后一次提交日期为 2026-03-09。",
+      "工具从 starflt1-in 和 starflt2-in 读取每款游戏的原版 STARFLT.COM、STARA.COM 和 STARB.COM，这两个目录在仓库中为空；README 链接 GOG 的 Starflight 1+2 版本。与多数反编译项目不同，README 说明生成的输出也在仓库中：约 10.8 MB 的转译 C 代码，涵盖 Starflight 1 的 52 个和 Starflight 2 的 65 个覆盖段，另有词典、字符串、星系和实例数据表，因此仓库本身就包含从这两款商业游戏转译而来的代码与数据。",
+      "Makefile 用 gcc 构建反汇编器、Starflight 1 模拟器和各提取工具；SDL 前端还需要 SDL2。CI 仅在 Ubuntu 上构建两个反汇编器，且不使用游戏文件。",
+      "来源未记录转译代码或模拟器与原版游戏的自动化比较；分析数字及“大部分输出可编译”的说法均出自作者本人。webarchive 文件夹镜像了已消失的技术页面，其中包括设计文档，以及其 README 归于原开发者 Tim Lee 网站的部分 1985 年源代码清单。本合集未运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此再利用条款未作说明；Starflight 1、2 以及存档的开发者资料仍受各自权利人的条款约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
