@@ -79,7 +79,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) — Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux **[1,009 stars]** · Curated: [LASRecomp: Link’s Awakening static recompilation](https://awesomerea.org/resources/lasrecomp/)
 - [vivisect/vivisect](https://github.com/vivisect/vivisect) — No description supplied by the upstream repository. **[1,003 stars]**
 - [ioncodes/idacode](https://github.com/ioncodes/idacode) — An integration for IDA and VS Code which connects both to easily execute and debug IDAPython scripts. **[994 stars]**
-- [rizinorg/rz-ghidra](https://github.com/rizinorg/rz-ghidra) — Deep ghidra decompiler and sleigh disassembler integration for rizin **[993 stars]**
+- [rizinorg/rz-ghidra](https://github.com/rizinorg/rz-ghidra) — Deep ghidra decompiler and sleigh disassembler integration for rizin **[993 stars]** · Curated: [rz-ghidra](https://awesomerea.org/resources/rz-ghidra/)
 - [x86byte/RE-MA-Roadmap](https://github.com/x86byte/RE-MA-Roadmap) — Reverse Engineering and Malware Analysis Roadmap **[951 stars]**
 - [radareorg/radare2-book](https://github.com/radareorg/radare2-book) — The Official Radare2 Book **[921 stars]**
 - [CheckPointSW/Karta](https://github.com/CheckPointSW/Karta) — Karta - source code assisted fast binary matching plugin for IDA **[912 stars]**
