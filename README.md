@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 295](https://img.shields.io/badge/resources-295-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 296](https://img.shields.io/badge/resources-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (58) · [Agents and MCP](#agents-and-mcp) (22) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (58) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1685,6 +1685,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Ghidra extension that runs an MCP server inside Ghidra, giving agents decompilation with namespace and cross-reference context, symbol, string, data-type, structure and call-graph tools, program diffing, renaming and PyGhidra scripting. Its README attributes the project's distinction to tool design for LLM use: many small tools whose schemas tolerate other input, redirect correctable mistakes and return short fragments linked to related information. Assistant mode serves an open Ghidra project to several clients at once; headless mode starts Ghidra itself with session-scoped projects.
 
   Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/reva-ghidra-mcp/)
+
+- [**x64dbg-MCP Server**](https://github.com/duty1g/x64dbg-mcp-server)
+
+  Native x64dbg plugin, written in Zig for both x32dbg and x64dbg, that serves an MCP endpoint over streamable HTTP and SSE from inside the debugger. Agents can load or attach to a process, set software, hardware, memory and conditional breakpoints, step and trace, read registers, call stacks, threads, memory maps, imports, strings and cross-references, and run arbitrary x64dbg commands. A bundled SKILL.md guide tells agents to confirm the debugger state before every action.
+
+  Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/x64dbg-mcp-server/)
 
 <a id="related-collections"></a>
 ### Related Collections
