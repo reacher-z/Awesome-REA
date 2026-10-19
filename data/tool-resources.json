@@ -6952,5 +6952,43 @@
       "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/LICENSE.txt",
       "https://github.com/CorsixTH/CorsixTH/releases/tag/v0.70.1"
     ]
+  },
+  {
+    "id": "librepods-airpods-protocol-case",
+    "name": "LibrePods: AirPods features on Android and Linux through a reverse-engineered protocol",
+    "url": "https://github.com/librepods-org/librepods",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Implements the proprietary protocol that AirPods use with Apple devices, which the author reports reverse-engineering, so that Android and Linux apps can switch noise-control modes, read ear detection and accurate battery levels, and use conversational awareness, head gestures and hearing-aid settings. The repository documents captured packet formats, opcodes and control commands alongside the Android app and the Linux app. Several features need root on Android or remain experimental.",
+    "description_zh": "实现 AirPods 与苹果设备之间使用的专有协议（作者称由其本人逆向得出），使 Android 和 Linux 应用能够切换降噪模式、读取入耳检测和准确电量，并使用对话感知、头部手势和助听设置。仓库除 Android 应用和 Linux 应用外，还记录了抓包得到的数据包格式、操作码和控制命令。部分功能在 Android 上需要 root，或仍处于实验阶段。",
+    "evidence_url": "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-16 main head, the commit of Android release v1.0.4; a v2.0.0 Android rewrite is in alpha, and main still holds the older Qt 6 Linux app while a Rust rewrite lives on the linux/rust branch. README’s feature table marks listening modes, ear detection, battery, renaming, conversational awareness and auto-connect as working on both platforms, head gestures and accessibility settings as Android-only, and Find My, head-tracked spatial audio and high-quality two-way audio as unknown, planned or experimental.",
+      "Running the apps needs only the user’s own AirPods and a supported Android or Linux device. The docs/ notes record the AirPods protocol, which runs over Bluetooth L2CAP, as observed on AirPods Pro 2 (USB-C) firmware 7A305, partly from Apple’s PacketLogger on a Mac; other models and firmware may differ. The repository also commits Apple-branded assets with no stated licence: AirPods product images and the SF Pro font, which the Android build includes in every flavour, and an SF Symbols 6 font for the Linux app.",
+      "On Android, root with an Xposed framework is needed to work around a Bluetooth-stack bug, except on ColorOS/OxygenOS 16, realme UI 7.0 and Pixel devices on Android 16 QPR3, and features behind the vendor-ID hook always need root; README marks those features use-at-your-own-risk. The Android app builds with Gradle and an NDK CMake component; the main-branch Linux app needs CMake 3.16+, Qt 6 (Quick, Widgets, Bluetooth, DBus), OpenSSL and libpulse.",
+      "Android CI builds FOSS-flavour APKs on every Android change, and a separate workflow builds the Rust Linux binary on the linux/rust branch; no protocol test suite or conformance check against Apple devices is published. README credits earlier community protocol documentation and a separate Wireshark dissector for later features; this collection did not run the apps or check the packet notes against hardware.",
+      "README and LICENSE apply GPL-3.0-or-later, some UI components come from an Apache-2.0 demo app, and Apple’s fonts, product images and AirPods firmware keep their own rights. README discloses AI-generated parts: on Android the head-gesture feature, the offset setup for the Xposed hook and the troubleshooter and log collector, and on Linux the AI-translated aacp.rs and att.rs and parts of the PulseAudio integration. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/docs/AAP%20Definitions.md",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/docs/control_commands.md",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/docs/opcodes.md",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/android/README.md",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/android/app/build.gradle.kts",
+      "https://github.com/librepods-org/librepods/tree/89356c08cea3db0b6b54792d9329d09a87cc85fa/android/app/src/main/res-apple",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/linux/README.md",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/linux/CMakeLists.txt",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/.github/workflows/ci-android.yml",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/.github/workflows/ci-linux-rust.yml",
+      "https://github.com/librepods-org/librepods/blob/89356c08cea3db0b6b54792d9329d09a87cc85fa/LICENSE",
+      "https://github.com/librepods-org/librepods/releases/tag/v1.0.4"
+    ]
   }
 ]

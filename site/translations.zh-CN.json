@@ -2871,5 +2871,15 @@
       "CI 在 Linux 上运行 luacheck 与 busted Lua 单元测试，并在 Windows 上执行 CMake 构建和 CTest。这些检查覆盖 CorsixTH 自身代码，不证明与原可执行文件等价；本次审阅均未运行。",
       "LICENSE.txt 以 MIT 条款授权 CorsixTH，并附有 Lua 5.5、LPeg、LuaFileSystem 等随附组件的声明，因此 GitHub 未将其识别为单一许可证。原 Theme Hospital 数据保留各自权利。AGENTS.md 为 AI 编程智能体提供说明，但所审来源并未将实现归因于 AI 或 REA。"
     ]
+  },
+  "librepods-airpods-protocol-case": {
+    "name": "LibrePods：借助逆向得出的协议在 Android 和 Linux 上使用 AirPods 功能",
+    "requirements": [
+      "审阅对象为 2026-10-16 的 main 分支最新提交，即 Android 发行版 v1.0.4 所在提交；v2.0.0 Android 重写版处于 alpha 阶段，main 分支仍保留较早的 Qt 6 Linux 应用，Rust 重写版位于 linux/rust 分支。README 的功能表将聆听模式、入耳检测、电量、重命名、对话感知和自动连接标为两个平台均可用，头部手势和辅助功能设置仅限 Android，“查找”、头部追踪空间音频和高质量双向音频则标为未知、计划中或实验性。",
+      "运行这些应用只需使用者自己的 AirPods 以及受支持的 Android 或 Linux 设备。docs/ 中的笔记记录了在蓝牙 L2CAP 上运行的 AirPods 协议，依据的是 AirPods Pro 2（USB-C）固件 7A305 上的观察，部分来自 Mac 上苹果的 PacketLogger；其他型号和固件可能不同。仓库还提交了未声明许可的苹果品牌素材：AirPods 产品图片和 SF Pro 字体（Android 构建在所有变体中都会包含），以及 Linux 应用使用的 SF Symbols 6 字体。",
+      "在 Android 上，除 ColorOS/OxygenOS 16、realme UI 7.0 以及 Android 16 QPR3 的 Pixel 设备外，需要 root 并安装 Xposed 框架来绕开蓝牙协议栈的一个缺陷；依赖厂商 ID 钩子的功能始终需要 root，README 将这些功能标为风险自负。Android 应用使用 Gradle 和 NDK CMake 组件构建；main 分支上的 Linux 应用需要 CMake 3.16+、Qt 6（Quick、Widgets、Bluetooth、DBus）、OpenSSL 和 libpulse。",
+      "Android CI 在每次 Android 代码变更时构建 FOSS 变体 APK，另有工作流在 linux/rust 分支上构建 Rust 版 Linux 程序；项目未公布协议测试套件，也没有与苹果设备的一致性检查。README 致谢了更早的社区协议文档，以及后续功能所依赖的一个独立 Wireshark 解析插件；本合集未运行这些应用，也未在硬件上核对数据包笔记。",
+      "README 与 LICENSE 采用 GPL-3.0-or-later，部分界面组件取自一个 Apache-2.0 演示应用，苹果的字体、产品图片和 AirPods 固件保留其自身权利。README 披露了 AI 生成的部分：Android 上的头部手势功能、Xposed 钩子的偏移设置以及故障排查器和日志收集器，Linux 上由 AI 翻译的 aacp.rs 与 att.rs，以及部分 PulseAudio 集成代码。所审来源未确立 REA 使用。"
+    ]
   }
 }
