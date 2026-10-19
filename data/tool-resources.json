@@ -7734,5 +7734,37 @@
       "https://github.com/Washi1337/AsmResolver/releases/tag/v6.0.1",
       "https://www.nuget.org/packages/AsmResolver/6.0.1"
     ]
+  },
+  {
+    "id": "protodump",
+    "name": "protodump",
+    "url": "https://github.com/arkadiyt/protodump",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "binary"
+    ],
+    "description_en": "Go command-line utility that recovers Protocol Buffers schemas from a compiled binary or any other file: it scans the raw bytes for serialized FileDescriptorProto records embedded by generated code, locating them through their .proto file names, and writes each one back out as a .proto source file under its original descriptor path. The regenerated files use proto2, proto3 or editions syntax and include the package, imports, common file options, messages with reserved ranges, nested enums, oneofs, maps and default values, and services with their RPC methods, giving analysts message and API definitions to work with when decoding Protobuf traffic.",
+    "description_zh": "Go 编写的命令行工具，可从已编译的二进制或其他任意文件中恢复 Protocol Buffers 模式：它在原始字节中搜索生成代码嵌入的序列化 FileDescriptorProto 记录（借助其中的 .proto 文件名定位），并按原描述符路径将每条记录重新写成 .proto 源文件。重新生成的文件采用 proto2、proto3 或 editions 语法，包含包名、导入、常用文件选项，带保留范围的消息、嵌套枚举、oneof、map 与默认值，以及服务及其 RPC 方法，为分析者解码 Protobuf 流量提供消息和接口定义。",
+    "evidence_url": "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No tagged releases at review; the README installs it with go install from the latest module version, and go.mod declares Go 1.26.8. The reviewed main commit of 2026-09-27 confines output writes to the chosen directory and refuses to overwrite existing files. CI tests and builds it on Linux, macOS and Windows.",
+      "Input is a user-supplied binary or other file that embeds complete descriptors. The scan is a byte search rather than executable-format parsing, so descriptors that are absent or not stored as plain serialized records are not found, and records that fail to parse are skipped silently unless -v is given.",
+      "Field, message, enum, oneof, service and method options are not emitted yet (TODOs in the generator), and extension definitions are not written, so regenerated files can differ from the originals and need analyst review.",
+      "No license file or license statement was found at the reviewed commit, and GitHub detects no license, so the project states no reuse terms. No binaries were scanned."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/pkg/protodump/scan.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/pkg/protodump/proto.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/cmd/protodump/main.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/cmd/protodump/output.go",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/go.mod",
+      "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/.github/workflows/build.yml",
+      "https://github.com/arkadiyt/protodump/tree/d398fada3452b87e6f0879d9cdf3dad31bb74d6e"
+    ]
   }
 ]
