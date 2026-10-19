@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 321](https://img.shields.io/badge/resources-321-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 164](https://img.shields.io/badge/cases-164-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 322](https://img.shields.io/badge/resources-322-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 165](https://img.shields.io/badge/cases-165-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (148) · [App](#app) (45)
+- [Website](#website) (19) · [Game](#game) (149) · [App](#app) (45)
 - [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (164) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (165) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -934,6 +934,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Fatal Frame’s PS2 executable as C for the US, EU and Japanese releases, built with the original EE-GCC 2.9 toolchain and checked by SHA-1 against the user’s own executables. Committed objdiff reports list the US and EU code as fully matched and the Japanese code as partial, and a few routines still rely on assembly or byte patches. Porting to modern hardware is a stated later goal, not part of this repository.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/himuro-fatal-frame-decomp-case/)
+
+- [**DOAXVB Native PC Port: statically recompiling Dead or Alive Xtreme Beach Volleyball**](https://github.com/NoRain211/doaxvb-re)
+
+  Lifts the original Xbox executable of Dead or Alive Xtreme Beach Volleyball to C with a fork of xboxrecomp and links it with a hand-written runtime that replaces kernel imports, audio and key Direct3D 8 and DirectSound APIs. Setup builds the runner locally from the user’s USA disc image and checks generated files against hashes in an authenticated recipe; releases carry only tools and source. Rewriting game logic as readable source has so far reached only the startup thread entry.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/doaxvb-native-port-case/)
 
 #### Tools, projects and integrations
 
