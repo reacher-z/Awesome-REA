@@ -4084,5 +4084,14 @@
       "docs/PROTOCOL.md 将密钥交换、每次连接的验证、按键注册、手机界面请求和按键事件标为已在一台实际 PCX125 2025 上确认，仪表绘制则标为未验证。一项在 Mac 上运行的 Swift 自测检查 CRC 值、模拟的密钥交换、验证应答解析以及注册与界面的字节布局；本次核查既未运行测试，也未运行应用。README 报告，实验性的颜色槽位和自绘界面曾使仪表在重新配对前拒绝进入手机模式，因此相关代码保持关闭，并警告切勿写入固件更新服务。",
       "项目代码采用 MIT 许可。README 称项目独立于 Honda，不含任何 Honda 代码或文件，只有原创代码以及为互操作编写的蓝牙消息说明；Honda、PCX 与 RoadSync 仍为其权利人的商标。作者帖子称逆向工作由 Claude 完成，但仓库并未记录这一过程，也未确立任何 REA 使用。"
     ]
+  },
+  "frontkick-rikugan-crebench-comparison": {
+    "name": "Frontkick 与 Rikugan：基于 CREBench 的智能体对比",
+    "requirements": [
+      "这篇发表于 Synacktiv 出版物页面的文章标注日期为 2026-10-13。文章介绍 Frontkick 是一个 CodeAct 智能体，针对 Binary Ninja 的 API 执行生成的 Python 代码，配有脚本示例检索语料、单层子智能体以及对较早轮次的截断机制；文中没有给出 Frontkick 的下载、仓库或许可证。Rikugan 是采用 MIT 许可、面向 IDA Pro 与 Binary Ninja 的社区智能体插件，基于经过模式校验的工具；Vector 35 的闭源 Sidekick 因无法了解其内部机制而未纳入对比。",
+      "对比使用 Claude Sonnet 5.5，选取 CREBench 中 hardcode_plain/O0 设置下的 AES-128-CBC 与 ChaCha20 两个用例，以去除符号的二进制文件形式提供；每个智能体每个用例运行四次，token 预算为 100 万。每次运行都需识别算法和密钥，并重新实现解密流程以取得 flag。文章未说明 Binary Ninja、Rikugan 或 Frontkick 的版本，也未公开其查看过的运行记录。",
+      "按文中公布的逐次运行表，Frontkick 在八次运行中有六次完全解出，Rikugan 一次也没有；两者平均得分约为 86 对 31（满分 100），平均 token 用量约为 60 万对 95 万，文章将其概括为 token 约减半、成功得分接近三倍。在 AES-128-CBC 上，Rikugan 反复尝试调用未安装的 Python 密码库，失败后改为手工实现算法，而 Frontkick 的提示词列出了已安装的库。作者因此认为结果是由提示词设计造成的平局，并不能证明 CodeAct 更优，并提议在对齐提示词后重新测试。",
+      "两个任务、一个模型、每个智能体八次运行，不足以得出关于任一智能体、关于工具调用与代码执行两类设计，或关于 CREBench 其他设置的普遍结论。CREBench 基准本身由另一条论文条目收录；文章未报告使用 REA，也不涉及重建。本合集阅读了该文章、Rikugan 的 README 与 CREBench 的 README，未运行任一智能体或该基准。"
+    ]
   }
 }

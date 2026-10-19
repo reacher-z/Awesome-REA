@@ -15582,13 +15582,32 @@
         "https://x.com/i/status/2111491684156752278",
         "https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The Synacktiv article documents a dated comparison of the Frontkick and Rikugan Binary Ninja agents on two CREBench tasks, with the setup, a per-run table and the author’s own finding that a prompt difference, rather than the agent design, explains most of the gap. The full mapping covers it as a learning resource, and the related mapping links the CREBench paper it uses. Frontkick has no public release, transcripts are unpublished, and nothing was rerun here.",
+      "reason_zh": "Synacktiv 的文章记录了一次注明日期的对比：在 CREBench 的两个任务上比较 Binary Ninja 智能体 Frontkick 与 Rikugan，给出实验设置和逐次运行结果表，作者也指出差距主要源于提示词差异而非智能体设计。完整映射将其作为学习资源收录，相关映射指向其所用的 CREBench 论文。Frontkick 没有公开发布，运行记录未公开，本次也未重新运行。",
+      "primary_evidence_urls": [
+        "https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan",
+        "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/README.md",
+        "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/LICENSE",
+        "https://github.com/wangyu-ovo/CREBench/blob/9fc4016538a0bab8c230732a9f788a61ed43addf/README.md",
+        "https://github.com/wangyu-ovo/CREBench"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "frontkick-rikugan-crebench-comparison",
+          "kind": "learning-resource",
+          "scope": "full"
+        },
+        {
+          "catalog": "paper",
+          "id": "paper-crebench",
+          "kind": "research",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:ableton-live12-agent-96h",
@@ -15964,19 +15983,19 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 199,
+      "already-curated": 200,
       "insufficient-evidence": 226,
-      "pending": 166
+      "pending": 165
     },
     "units_by_state": {
-      "already-curated": 197,
+      "already-curated": 198,
       "insufficient-evidence": 226,
-      "pending": 166
+      "pending": 165
     },
-    "primary_reviewed_units": 365,
-    "catalog_linked_occurrences": 211,
-    "distinct_resource_ids": 204,
-    "distinct_paper_ids": 1,
+    "primary_reviewed_units": 366,
+    "catalog_linked_occurrences": 212,
+    "distinct_resource_ids": 205,
+    "distinct_paper_ids": 2,
     "unique_projects": null
   }
 }

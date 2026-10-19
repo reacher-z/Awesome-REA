@@ -11131,5 +11131,32 @@
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/App/project.yml",
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/LICENSE"
     ]
+  },
+  {
+    "id": "frontkick-rikugan-crebench-comparison",
+    "name": "Frontkick vs Rikugan: a CREBench agent comparison",
+    "url": "https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Matthieu Breuil’s Synacktiv article explains tool-calling and code-executing agent designs and describes Frontkick, a CodeAct agent that runs generated Python inside Binary Ninja. It compares Frontkick with the open-source Rikugan plugin on two CREBench cryptographic binary tasks, then attributes most of Frontkick’s advantage to a prompt that listed installed Python libraries rather than to its architecture. It is a small evaluation write-up with per-run results, not a released tool or a general benchmark finding.",
+    "description_zh": "Matthieu Breuil 在 Synacktiv 发表的文章讲解了调用预定义工具与执行生成代码两类智能体设计，并介绍在 Binary Ninja 内运行生成的 Python 代码的 CodeAct 智能体 Frontkick。文章在 CREBench 的两个密码二进制任务上将 Frontkick 与开源插件 Rikugan 对比，随后指出 Frontkick 的优势主要来自提示词中列出已安装 Python 库的做法，而非其架构本身。这是一篇附逐次运行结果的小规模评估文章，不是已发布的工具，也不是普遍性的基准结论。",
+    "evidence_url": "https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The article on Synacktiv’s publications site is dated 13/10/2026. It describes Frontkick as a CodeAct agent that executes generated Python against Binary Ninja’s API, with a recipe-retrieval corpus, a single-level subagent and truncation of older turns; no download, repository or license for Frontkick is linked. Rikugan is an MIT-licensed community agent plugin for IDA Pro and Binary Ninja built on schema-validated tools, while Vector 35’s closed-source Sidekick was excluded because its internals are not accessible.",
+      "The comparison used Claude Sonnet 5.5 with CREBench’s AES-128-CBC and ChaCha20 cases in the hardcode_plain/O0 setting, supplied as stripped binaries, with four runs per case for each agent and a 1M-token budget. Each run had to identify the algorithm and key and reimplement decryption to recover the flag. The article does not state the Binary Ninja, Rikugan or Frontkick versions or publish the run transcripts it inspected.",
+      "In the published run table Frontkick fully solves six of eight runs and Rikugan none; the means are about 86 versus 31 out of 100 and about 0.60M versus 0.95M tokens, which the article summarizes as roughly half the tokens and nearly three times the score. On AES-128-CBC, Rikugan repeatedly tried a Python crypto package that was not installed and fell back to a manual implementation, whereas Frontkick’s prompt listed the installed libraries. The author therefore calls the outcome a draw driven by prompt design rather than evidence for CodeAct, and proposes a rerun with aligned prompts.",
+      "Two tasks, one model and eight runs per agent cannot support general conclusions about either agent, about tool-calling versus code-executing designs, or about other CREBench settings. The separate CREBench paper record covers the benchmark itself; the article reports no REA use and no reconstruction. This collection read the article, Rikugan’s README and the CREBench README without running either agent or the benchmark."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/README.md",
+      "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/LICENSE",
+      "https://github.com/wangyu-ovo/CREBench/blob/9fc4016538a0bab8c230732a9f788a61ed43addf/README.md"
+    ]
   }
 ]
