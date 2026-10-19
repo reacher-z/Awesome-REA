@@ -64,7 +64,6 @@ class PaperOrderTests(unittest.TestCase):
 
     def test_bilingual_dom_itemlist_and_search_projection_share_deterministic_order(self):
         original = deepcopy(PAPERS)
-        by_id = {row['id']: row for row in PAPERS}
         with TemporaryDirectory() as first, TemporaryDirectory() as second:
             outputs = [Path(first), Path(second)]
             for output, input_rows in zip(outputs, (PAPERS, list(reversed(PAPERS)))):
@@ -83,9 +82,9 @@ class PaperOrderTests(unittest.TestCase):
                     self.assertEqual([item['position'] for item in listing['itemListElement']], list(range(1, len(PAPERS) + 1)))
                     prefix = '/zh' if language == 'zh' else ''
                     self.assertEqual([item['url'] for item in listing['itemListElement']],
-                                     ['https://awesomerea.org' + prefix + '/papers/#' + identifier for identifier in DOM_ORDER])
+                                     ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/' for identifier in DOM_ORDER])
                     self.assertEqual([row['@id'] for row in graph if row['@type'] == 'ScholarlyArticle'],
-                                     [by_id[identifier]['url'] for identifier in DOM_ORDER])
+                                     ['https://awesomerea.org' + prefix + '/papers/' + identifier + '/#paper' for identifier in DOM_ORDER])
                     self.assertIn('各分区按年份从新到旧排列' if language == 'zh' else 'newest year first within each section', html)
                 for row in input_rows:
                     self.assertEqual((output / 'papers/citations' / (row['id'] + '.bib')).read_text(), bibtex_text(row))

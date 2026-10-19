@@ -117,9 +117,21 @@ def bibtex_text(paper: dict) -> str:
     return '@' + kind + '{' + paper['id'] + ',\n' + ',\n'.join(lines) + '\n}\n'
 
 
-def scholarly_article(paper: dict, language: str) -> dict:
+def paper_entity_id(paper: dict, language: str, site_url: str = 'https://awesomerea.org') -> str:
+    """Name one ScholarlyArticle per language, shared by /papers/ and the paper's detail page."""
+    return f"{site_url.rstrip('/')}{'/zh' if language == 'zh' else ''}/papers/{paper['id']}/#paper"
+
+
+def paper_same_as(paper: dict) -> list[str]:
+    """Resolvable links built only from recorded DOI and arXiv fields, never inferred ones."""
+    links = [base + paper[field] for field, base in (('doi', 'https://doi.org/'), ('arxiv_id', 'https://arxiv.org/abs/'))
+             if paper.get(field)]
+    return [link for link in links if link != paper['url']]
+
+
+def scholarly_article(paper: dict, language: str, site_url: str = 'https://awesomerea.org') -> dict:
     article = {
-        '@type': 'ScholarlyArticle', '@id': paper['url'], 'url': paper['url'],
+        '@type': 'ScholarlyArticle', '@id': paper_entity_id(paper, language, site_url), 'url': paper['url'],
         'name': paper['title'], 'headline': paper['title'],
         'alternateName': paper['title_zh'],
         'author': [{'@type': 'Person', 'name': name} for name in paper['authors']],
@@ -138,6 +150,8 @@ def scholarly_article(paper: dict, language: str) -> dict:
         identifiers.append({'@type': 'PropertyValue', 'propertyID': 'arXiv', 'value': paper['arxiv_id']})
     if identifiers:
         article['identifier'] = identifiers
+    if paper_same_as(paper):
+        article['sameAs'] = paper_same_as(paper)
     return article
 
 
@@ -278,8 +292,8 @@ def build_paper_pages(
             '@context': 'https://schema.org',
             '@graph': [
                 {'@type': 'CollectionPage', '@id': canonical, 'url': canonical, 'name': title, 'description': description, 'inLanguage': locale, 'mainEntity': {'@id': canonical + '#paper-list'}},
-                {'@type': 'ItemList', '@id': canonical + '#paper-list', 'numberOfItems': len(ordered), 'itemListElement': [{'@type': 'ListItem', 'position': index + 1, 'url': canonical + '#' + paper['id'], 'item': {'@id': paper['url']}} for index, paper in enumerate(ordered)]},
-                *(scholarly_article(paper, language) for paper in ordered),
+                {'@type': 'ItemList', '@id': canonical + '#paper-list', 'numberOfItems': len(ordered), 'itemListElement': [{'@type': 'ListItem', 'position': index + 1, 'url': canonical + paper['id'] + '/', 'item': {'@id': paper_entity_id(paper, language, site_url)}} for index, paper in enumerate(ordered)]},
+                *(scholarly_article(paper, language, site_url) for paper in ordered),
             ],
         }
         # The directory belongs to the site that only the homepages define.

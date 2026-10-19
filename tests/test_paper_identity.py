@@ -246,7 +246,8 @@ class PaperIdentityTests(unittest.TestCase):
         for language in ('en', 'zh'):
             article = scholarly_article(record, language)
             self.assertNotIn('identifier', article)
-            self.assertEqual(article['@id'], record['url'])
+            self.assertNotIn('sameAs', article)
+            self.assertEqual(article['@id'], f"https://awesomerea.org{'/zh' if language == 'zh' else ''}/papers/{record['id']}/#paper")
 
     def test_unpublished_and_unreviewed_publication_profiles_are_rejected(self):
         for status in ('preprint', 'conference-accepted', 'journal-article'):

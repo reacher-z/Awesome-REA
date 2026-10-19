@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 from build_entry_pages import entry_path, matching_entries
 from build_manifest import read_build_manifest
-from build_paper_pages import TARGET_LABELS, bibtex_text, papers_newest_first
+from build_paper_pages import TARGET_LABELS, bibtex_text, paper_entity_id, papers_newest_first
 from validate_papers import read_papers
 from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
@@ -524,7 +524,7 @@ def expected_paper_schema(paper, language):
         "preprint": ("Preprint", "预印本"),
     }
     article = {
-        '@type': 'ScholarlyArticle', '@id': paper['url'], 'url': paper['url'],
+        '@type': 'ScholarlyArticle', '@id': paper_entity_id(paper, language, ORIGIN), 'url': paper['url'],
         'name': paper['title'], 'headline': paper['title'], 'alternateName': paper['title_zh'],
         'author': [{'@type': 'Person', 'name': name} for name in paper['authors']],
         'description': paper[f'description_{language}'],
@@ -540,6 +540,10 @@ def expected_paper_schema(paper, language):
     ]
     if identifiers:
         article['identifier'] = identifiers
+    same_as = [base + paper[field] for field, base in (('doi', 'https://doi.org/'), ('arxiv_id', 'https://arxiv.org/abs/'))
+               if paper.get(field) and base + paper[field] != paper['url']]
+    if same_as:
+        article['sameAs'] = same_as
     return article
 
 
@@ -567,18 +571,19 @@ def validate_paper_outputs(output, pages, source_papers=None):
         assert len(listings) == 1, f'Expected one paper ItemList: {route}'
         items = listings[0]['itemListElement']
         assert listings[0]['numberOfItems'] == len(expected), f'Paper ItemList source count mismatch: {route}'
+        # Each item names the paper's detail page and the entity that page also defines.
         assert items == [
-            {'@type': 'ListItem', 'position': position, 'url': ORIGIN + route + '#' + identifier,
-             'item': {'@id': expected[identifier]['url']}}
+            {'@type': 'ListItem', 'position': position, 'url': ORIGIN + route + identifier + '/',
+             'item': {'@id': paper_entity_id(expected[identifier], language, ORIGIN)}}
             for position, identifier in enumerate(page.paper_ids, 1)
         ], f'Paper ItemList differs from visible paper order or identities: {route}'
         articles = list(schema_entities(page.schemas, 'ScholarlyArticle'))
-        by_url = {article.get('@id'): article for article in articles}
-        assert len(articles) == len(by_url) == len(expected) and set(by_url) == {p['url'] for p in built}, f'ScholarlyArticle coverage mismatch: {route}'
+        by_id = {article.get('@id'): article for article in articles}
+        assert len(articles) == len(by_id) == len(expected) and set(by_id) == {paper_entity_id(p, language, ORIGIN) for p in built}, f'ScholarlyArticle coverage mismatch: {route}'
         for identifier in page.paper_ids:
             paper = expected[identifier]
             article = expected_paper_schema(paper, language)
-            assert by_url[paper['url']] == article, f'ScholarlyArticle fields differ from source: {identifier} ({language})'
+            assert by_id[article['@id']] == article, f'ScholarlyArticle fields differ from source: {identifier} ({language})'
             text = normalize(' '.join(page.paper_texts[identifier]))
             phrases = [paper['title_zh'] if language == 'zh' else paper['title'],
                        '; '.join(paper['authors']), paper['venue'], statuses[paper['publication_status']][language == 'zh'],
