@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 178 | 177 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 267 | 266 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 179 | 178 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 266 | 265 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 146 | 146 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-188 occurrences have catalog links. They reference 183 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+189 occurrences have catalog links. They reference 184 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 263 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 264 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -276,6 +276,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | MarioKart 64: Recompiled — a native port through N64Recomp static recompilation | Already curated | [Source](https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/README.md) |
 | SpaghettiKart: a native Mario Kart 64 port built on decompiled source | Already curated | [Source](https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/README.md) |
 | SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360 | Already curated | [Source](https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/README.md) |
+| Skate 3 Recomp: a native Xbox 360 recompilation through ReXGlue | Already curated | [Source](https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/README.md) |
 | DOAXVB Native PC Port: statically recompiling Dead or Alive Xtreme Beach Volleyball | Already curated | [Source](https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/README.md) |
 | CTR Turbocharged: a PC sourceport built on the Crash Team Racing decompilation | Already curated | [Source](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/README.md) |
 | TonyWasAProSkater: a THPS1 native port forked from a matching decompilation | Already curated | [Source](https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/README.md) |

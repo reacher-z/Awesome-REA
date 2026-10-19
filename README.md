@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 327](https://img.shields.io/badge/resources-327-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 168](https://img.shields.io/badge/cases-168-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 328](https://img.shields.io/badge/resources-328-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 169](https://img.shields.io/badge/cases-169-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (152) · [App](#app) (46)
+- [Website](#website) (19) · [Game](#game) (153) · [App](#app) (46)
 - [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (168) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (169) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -952,6 +952,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements MicroProse’s UFO: Enemy Unknown (X-COM: UFO Defense) and X-COM: Terror from the Deep as a C++/SDL engine that runs on the user’s original game resources. Game data such as items, craft, research and missions is expressed in YAML rulesets, which also carry its standard mods and a wider modding ecosystem. It is a clone that reuses original content, not recovered MicroProse code.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openxcom-engine-case/)
+
+- [**Skate 3 Recomp: a native Xbox 360 recompilation through ReXGlue**](https://github.com/mchughalex/skate3recomp)
+
+  Recompiles the Xbox 360 version of Skate 3 into native Windows, Linux and macOS builds with a Skate-specific fork of the ReXGlue SDK. Since v2.0.0 a native Direct3D 12 and Vulkan renderer with ports of the game’s own material shading replaces emulation of the Xbox 360 GPU, which remains as a fallback. Game files come from the user’s disc image; the author calls the native renderer early and has not tested the game end to end.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/skate3-recomp-case/)
 
 #### Tools, projects and integrations
 
