@@ -8029,5 +8029,39 @@
       "https://github.com/2akouwu/reverify/releases/tag/v0.11.0",
       "https://pypi.org/project/reverify/0.10.0/"
     ]
+  },
+  {
+    "id": "ico-matching-decomp-case",
+    "name": "ICO decompilation: byte-identical PAL and Japanese PlayStation 2 boot ELFs",
+    "url": "https://github.com/nathanialf/ico",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the boot ELFs of ICO’s PAL (SCES-50760) and Japanese (SCPS-11003) PlayStation 2 discs from one source tree with the game’s original compiler versions, and checks that every loaded byte and the whole ELF file match the disc’s SHA-1. The 73 data-only archive members are generated at build time from the user’s own ELF, so most read-only data still comes from the disc rather than from source. Separate branches target the USA, Korean and August 2001 prototype builds, and the catalog’s ICO PC port is a fork of this tree.",
+    "description_zh": "以同一套源码和游戏原用的编译器版本，重建《ICO》PAL 版（SCES-50760）与日版（SCPS-11003）PlayStation 2 光盘的启动 ELF，并检查载入的每个字节以及整个 ELF 文件都与光盘的 SHA-1 一致。73 个只含数据的归档成员在构建时由使用者自己的 ELF 生成，因此大部分只读数据仍取自光盘而非源码。另有独立分支面向美版、韩版和 2001 年 8 月原型版，本目录收录的 ICO PC 移植即是这套源码的分叉。",
+    "evidence_url": "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports every section of both targets identical to its base ELF; .rodata is about 9.5% from source and 90.5% generated from the disc, and .data about 73% from source. The Japanese build is an earlier link of the same program, kept as VERSION_JPN blocks in the shared PAL-based tree, while kor, ntsc and aug6 are separate single-target branches not yet merged into main. The output is a PS2 boot ELF and ROM image, not a PC port.",
+      "Each target needs the user’s own disc image, the PAL .iso or the Japanese .bin/.cue, from which the build extracts the boot ELF and checks it against config/sha1sums. docs/LEGAL.md excludes disc images, boot ELFs, assets, data tables and bulk symbol or map tables from the repository, and forbids leaked SDKs and leaked source as inputs. It says the Sony runtime libraries reconstructed under sce/ were written from the shipped instructions using the SDK’s public naming, and the newlib and libgcc members follow their published source.",
+      "Builds on 64-bit Linux with 32-bit libraries and multilib gcc, Python 3, mips-linux-gnu-objcopy and network access on the first run. tools/setup.sh fetches ee-gcc 2.9-991111-01 and the SCE ee-as from decomp.me’s compiler releases, builds GNU ld 2.10 with two patches and builds a patched ps2dev dvp-as for the five VU1 microprograms; README says nothing comes from a Sony SDK.",
+      "./build.sh ends with tools/check_elf.py --gate, which compares every allocated section with the base ELF by address and requires the whole-file SHA-1 to match; progress badges and the dashboard are regenerated from the built ELF and link map. The only CI workflow publishes that dashboard, and building needs a disc that CI does not have. Matching establishes the identity of the two boot ELFs, not of other disc files or of runtime behaviour, and this collection built nothing.",
+      "MIT covers the project’s own code, scripts and documentation and grants no rights in the game, its data or Sony and Team Ico property; the toolchain components keep their GPL licences. README states the project is unaffiliated with Sony Interactive Entertainment or Team Ico, and the reviewed sources establish no AI or REA attribution."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/docs/LEGAL.md",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/docs/BUILDING.md",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/docs/TARGETS.md",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/docs/PORT.md",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/docs/pal/PROGRESS.md",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/config/sha1sums.pal.txt",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/.github/workflows/pages.yml",
+      "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/LICENSE",
+      "https://nathanialf.github.io/ico/"
+    ]
   }
 ]

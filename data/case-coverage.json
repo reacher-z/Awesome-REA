@@ -11925,9 +11925,9 @@
       ],
       "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "Pinned README, legal notes, build and architecture guides, and the game-code, testing and divergence documents support the reported native port of the ICO decompilation, its PAL disc requirement and its platform list. The full mapping covers this port, not the separate byte-matched decompilation or PS2-equivalence testing, which the port's own documents say no test performs. The collection post's archive link is outside this mapping, and no runtime reproduction is claimed.",
-      "reason_zh": "固定版本的 README、法律说明、构建与架构指南，以及游戏代码、测试和差异文档，支持该报告所述基于《ICO》反编译源码的原生移植、PAL 版光盘要求及平台列表。完整映射覆盖此移植项目，不涵盖另一个逐字节匹配的反编译项目，也不涵盖与 PS2 的等价性测试；该移植自己的文档说明没有任何测试进行此类比较。合集帖子中的存档链接不在此映射范围内，也未主张运行复现。",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Pinned README, legal notes, build and architecture guides, and the game-code, testing and divergence documents support the reported native port of the ICO decompilation, its PAL disc requirement and its platform list. The full mapping covers this port, not PS2-equivalence testing, which the port's own documents say no test performs. The separate byte-matched decompilation the port forks is mapped as related through its own pinned README. The collection post's archive link is outside these mappings, and no runtime reproduction is claimed.",
+      "reason_zh": "固定版本的 README、法律说明、构建与架构指南，以及游戏代码、测试和差异文档，支持该报告所述基于《ICO》反编译源码的原生移植、PAL 版光盘要求及平台列表。完整映射覆盖此移植项目，不涵盖与 PS2 的等价性测试；该移植自己的文档说明没有任何测试进行此类比较。该移植所分叉的、逐字节匹配的独立反编译项目依据其自身固定版本的 README 按相关条目映射。合集帖子中的存档链接不在这些映射范围内，也未主张运行复现。",
       "primary_evidence_urls": [
         "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/README.md",
         "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/BUILDING.md",
@@ -11935,7 +11935,8 @@
         "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/TESTING.md",
         "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/port/DIVERGENCES.md",
         "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/LEGAL.md",
-        "https://github.com/nathanialf/ico/blob/3496140f784fdf2d0b10e30b3b3024046c586ce1/README.md"
+        "https://github.com/nathanialf/ico/blob/3496140f784fdf2d0b10e30b3b3024046c586ce1/README.md",
+        "https://github.com/nathanialf/ico/blob/73f7365df143bc1ff48771af479fd68c66550d19/README.md"
       ],
       "catalog_matches": [
         {
@@ -11943,6 +11944,12 @@
           "id": "ico-pc-port-case",
           "kind": "case-study",
           "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "ico-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
         }
       ]
     },
@@ -15871,7 +15878,7 @@
     },
     "primary_reviewed_units": 337,
     "catalog_linked_occurrences": 210,
-    "distinct_resource_ids": 201,
+    "distinct_resource_ids": 202,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

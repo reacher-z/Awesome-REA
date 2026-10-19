@@ -3217,5 +3217,15 @@
       "主要基准测试把固定的教科书式 push rbp; mov rbp, rsp 序言猜测（而非实时模型）应用于系统二进制文件的入口点。BENCHMARK.md 报告该猜测在 71 个 Windows 11 文件中有 69 个被驳斥，且从未被误判为 VERIFIED；在 50 个 Windows 二进制文件上的 475 条已知错误断言中误判为 VERIFIED 的为 0。CI 在 Linux、Windows 和 macOS 上重复这两项检查，只要出现一次误判 VERIFIED 即失败。作者指出“N 次中 0 次”只给出错误率的上界，并不证明其为零。这些均为项目报告的结果，本合集未运行其中任何一项。",
       "采用 MIT 许可。SECURITY.md 将用途限定于获授权的工作，如恶意软件分析、CTF、互操作研究以及使用者拥有或获准分析的软件，并禁止规避使用者未拥有或未获许可软件的授权或复制保护。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "ico-matching-decomp-case": {
+    "name": "《ICO》反编译：逐字节一致的 PAL 与日版 PlayStation 2 启动 ELF",
+    "requirements": [
+      "README 报告两个目标的每个段都与其基准 ELF 一致；其中 .rodata 约 9.5% 来自源码、90.5% 由光盘生成，.data 约 73% 来自源码。日版是同一程序较早的一次链接，以 VERSION_JPN 代码块保存在共享的、以 PAL 版为基础的源码树中；kor、ntsc 和 aug6 则是尚未并入 main 的独立单目标分支。产物是 PS2 启动 ELF 和 ROM 镜像，而非 PC 移植。",
+      "每个目标都需要使用者自己的光盘镜像，即 PAL 版 .iso 或日版 .bin/.cue；构建会从中提取启动 ELF，并对照 config/sha1sums 校验。docs/LEGAL.md 规定仓库不得包含光盘镜像、启动 ELF、素材、数据表以及成批的符号表或映射表，并禁止以泄露的 SDK 或源码作为输入。该文档称 sce/ 下重建的索尼运行库是依据发售版中的指令编写的，命名沿用 SDK 的公开名称，newlib 与 libgcc 成员则依照其公开源码。",
+      "在 64 位 Linux 上构建，需要 32 位库和 multilib gcc、Python 3、mips-linux-gnu-objcopy，首次运行还需联网。tools/setup.sh 从 decomp.me 的编译器发布中获取 ee-gcc 2.9-991111-01 和 SCE ee-as，构建打了两个补丁的 GNU ld 2.10，并为五个 VU1 微程序构建打过补丁的 ps2dev dvp-as；README 称这些工具均不来自索尼 SDK。",
+      "./build.sh 最后运行 tools/check_elf.py --gate，按地址比较每个已分配的段与基准 ELF，并要求整个文件的 SHA-1 一致；进度徽章和进度面板依据构建出的 ELF 与链接映射重新生成。唯一的 CI 工作流只发布该面板，构建所需的光盘 CI 并不具备。一致只说明两个启动 ELF 相同，不涉及光盘上的其他文件或运行时行为，本合集也未进行任何构建。",
+      "MIT 适用于项目自身的代码、脚本和文档，不授予对游戏、其数据或索尼与 Team Ico 财产的任何权利；工具链组件保留各自的 GPL 许可。README 声明项目与索尼互动娱乐或 Team Ico 无关，所审来源未确立 AI 或 REA 的参与。"
+    ]
   }
 }
