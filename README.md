@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 329](https://img.shields.io/badge/resources-329-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 169](https://img.shields.io/badge/cases-169-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 330](https://img.shields.io/badge/resources-330-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 170](https://img.shields.io/badge/cases-170-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (153) · [App](#app) (46)
+- [Website](#website) (19) · [Game](#game) (154) · [App](#app) (46)
 - [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (169) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (170) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -958,6 +958,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Recompiles the Xbox 360 version of Skate 3 into native Windows, Linux and macOS builds with a Skate-specific fork of the ReXGlue SDK. Since v2.0.0 a native Direct3D 12 and Vulkan renderer with ports of the game’s own material shading replaces emulation of the Xbox 360 GPU, which remains as a fallback. Game files come from the user’s disc image; the author calls the native renderer early and has not tested the game end to end.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/skate3-recomp-case/)
+
+- [**Uncharted: The Nathan Drake Collection native Windows port**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port)
+
+  Runs the PS4 Uncharted: The Nathan Drake Collection’s own x86-64 executables natively on Windows: a runtime supplies the PS4 system libraries and a shadPS4-derived Vulkan renderer executes the GPU work. The port adds a per-game launcher, resolution patches and modern upscaling, and its status table reports all three games playable with listed open issues. It is a compatibility-runtime port rather than a decompilation, and its results remain project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/uncharted-collection-pc-port-case/)
 
 #### Tools, projects and integrations
 
