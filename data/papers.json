@@ -8638,5 +8638,62 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-binrec",
+    "title": "BinRec: Dynamic Binary Lifting and Recompilation",
+    "title_zh": "BinRec：动态二进制提升与重编译",
+    "authors": [
+      "Anil Altinay",
+      "Joseph Nash",
+      "Taddeus Kroes",
+      "Prabhu Rajasekaran",
+      "Dixin Zhou",
+      "Adrian Dabrowski",
+      "David Gens",
+      "Yeoul Na",
+      "Stijn Volckaert",
+      "Cristiano Giuffrida",
+      "Herbert Bos",
+      "Michael Franz"
+    ],
+    "year": 2020,
+    "publication_date": "2020-04-15",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref print-publication date; the online-publication date is recorded separately in metadata notes. The April 27–30 conference dates are not used.",
+    "date_basis_zh": "采用 ACM 在 Crossref 登记的印刷出版日期；在线出版日期在元数据说明中单独记录。本条目不采用 4 月 27—30 日的会议日期。",
+    "venue": "EuroSys 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3342195.3387550",
+    "url": "https://dl.acm.org/doi/10.1145/3342195.3387550",
+    "pdf_url": "https://download.vusec.net/papers/binrec_eurosys20.pdf",
+    "code_url": "https://github.com/trailofbits/binrec-tob",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BinRec lifts an executable to LLVM IR from dynamic traces instead of static disassembly, then lowers the IR back to a recovered binary, so compiler passes can optimize, harden or otherwise transform it. Tracing runs the binary under S²E, which translates the executed code through QEMU into LLVM IR; BinRec removes the emulation instrumentation, merges traces from several inputs into one program, and adds optimizations such as register de-aliasing and promotion of emulated state to locals. When the recovered binary reaches a path that was not traced, a configurable handler stops it, falls back to the original code, or lifts the new path incrementally. The authors report recovering all SPEC CINT2006 benchmarks, including C++ programs, and apply it to reoptimization, control-flow integrity, AddressSanitizer and SafeStack hardening, and partial deobfuscation of virtualization-obfuscated code.",
+    "description_zh": "BinRec 依据动态执行轨迹而非静态反汇编，将可执行文件提升为 LLVM 中间表示，再将其降级为恢复出的二进制，从而可用编译器优化遍对其进行优化、加固或其他变换。追踪阶段在 S²E 中运行二进制，由 S²E 经 QEMU 将执行到的代码翻译为 LLVM 中间表示；BinRec 去除仿真插桩，将多个输入的轨迹合并为一个程序，并加入寄存器去别名、将仿真状态提升为局部变量等优化。恢复出的二进制若进入未被追踪的路径，可配置的处理程序会停止执行、回退到原始代码，或增量提升新路径。作者报告恢复了全部 SPEC CINT2006 基准程序（包括 C++ 程序），并将其用于重新优化、控制流完整性、AddressSanitizer 与 SafeStack 加固，以及对虚拟化混淆代码的部分去混淆。",
+    "scope_limitations_en": "The prototype handles only single-threaded 32-bit x86 Linux ELF binaries and does not support self-modifying code. A recovered binary supports only control-flow paths observed during lifting, so behavior on untraced inputs depends on the chosen miss handler and on input coverage. Lifting through S²E is slow, and floating-point instructions are emulated in lifted code; across the SPEC benchmarks, recovered binaries ran at a geometric-mean 0.98x the time of unoptimized inputs and 1.29x that of optimized inputs. BinRec does not map stack slots to variables. The deobfuscation case uses two small programs obfuscated with the authors' own virtualizer, not commercial obfuscators. The McSema and rev.ng comparisons reflect 2020 versions.",
+    "scope_limitations_zh": "原型只支持单线程的 32 位 x86 Linux ELF 二进制，也不支持自修改代码。恢复出的二进制只支持提升时观察到的控制流路径，因此在未被追踪的输入上的行为取决于所选的缺失处理程序及输入覆盖率。经由 S²E 的提升速度较慢，浮点指令在提升后的代码中以仿真方式执行；在 SPEC 基准上，恢复出的二进制运行时间的几何平均值为未优化输入的 0.98 倍、已优化输入的 1.29 倍。BinRec 不建立栈槽与变量之间的映射。去混淆案例使用的是由作者自己的虚拟化器混淆的两个小程序，而非商业混淆器。与 McSema 和 rev.ng 的比较反映的是 2020 年的版本。",
+    "why_fits_en": "Adds dynamic lifting of executables to compiler IR and recompilation back to working binaries, complementing the collection's decompilation research, which recovers source-level code rather than a rebuildable IR.",
+    "why_fits_zh": "补充将可执行文件动态提升为编译器中间表示、再重编译为可运行二进制的研究，与合集中恢复源码级代码而非可重建中间表示的反编译研究互补。",
+    "metadata_notes": "ACM metadata records print publication on 2020-04-15 and online publication on 2020-04-17, pages 1–16; Crossref lists the title as “BinRec” with the subtitle “dynamic binary lifting and recompilation”, and the twelve-author order shown here, the first three marked as equal-contribution joint first authors. The VUSec-hosted PDF is the 16-page ACM-formatted version created on 2020-03-30. The paper gives github.com/securesystemslab/BinRec, whose README (2022-11-29) now says the source is available at trailofbits/binrec-tob. The reviewed Trail of Bits commit (2022-11-22; the repository was last pushed 2023-09-18) carries an MIT license with an ONR DFARS acknowledgment and documents Ubuntu 20.04.03 or Debian 11.3, LLVM 14, Python 3.9 and s2e-env at 4bd6a45, with x86 Linux as the only supported environment. This later release is not shown to reproduce the paper’s SPEC results. Nothing was built or run.",
+    "metadata_notes_zh": "ACM 元数据记载印刷出版于 2020-04-15，在线出版于 2020-04-17，页码为 1–16；Crossref 将标题记为“BinRec”，副标题为“dynamic binary lifting and recompilation”，十二位作者顺序如本条目所列，前三位被标注为同等贡献的共同第一作者。VUSec 托管的 PDF 是 2020-03-30 生成的 16 页 ACM 排版版本。论文给出的地址是 github.com/securesystemslab/BinRec，其 README（2022-11-29）现说明源码发布于 trailofbits/binrec-tob。所审阅的 Trail of Bits 提交（2022-11-22；仓库最后推送于 2023-09-18）采用 MIT 许可，并附 ONR DFARS 资助声明；文档列出 Ubuntu 20.04.03 或 Debian 11.3、LLVM 14、Python 3.9 及 4bd6a45 版本的 s2e-env，且 x86 Linux 是唯一受支持的环境。没有证据表明这一较晚的发布能复现论文中的 SPEC 结果。本次未构建或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3342195.3387550",
+      "https://api.crossref.org/works/10.1145/3342195.3387550",
+      "https://download.vusec.net/papers/binrec_eurosys20.pdf",
+      "https://github.com/securesystemslab/BinRec/blob/96b9315c60f3ea0ddf0021cbed9ffab3e5607629/README.md",
+      "https://github.com/trailofbits/binrec-tob/blob/e1ceeaaf4094609eb7a8e8bdf71417a5b8d7f155/README.md",
+      "https://github.com/trailofbits/binrec-tob/blob/e1ceeaaf4094609eb7a8e8bdf71417a5b8d7f155/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
