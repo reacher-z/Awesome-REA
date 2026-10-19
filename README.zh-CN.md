@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 363](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (29) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1695,6 +1695,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Rizin 插件，内嵌 Ghidra 的 C++ 反编译器和 Sleigh 反汇编器，因此无需安装 Java 版 Ghidra。其 pdg 系列命令可反编译当前函数，也可与偏移量并排显示或以 XML、JSON 格式输出，还能把结果作为注释写回 Rizin，并列出已加载的 Sleigh 语言；配置变量可调整输出格式，也可覆盖自动检测到的 Sleigh 语言。反编译器使用 Rizin 已加载的二进制、类型和注释；另有可选插件将其接入 Cutter 图形界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rz-ghidra/)
+
+- [**Runtime Mobile Security（RMS）移动应用运行时分析界面**](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security)
+
+  基于 Frida 的 Web 界面，用于在测试设备上观察运行中的 Android 与 iOS 应用。它可列出内存中已加载的类和方法，跟踪方法参数与返回值，为选定的类生成 Hook 模板，在堆上查找类实例；在 Android 上还能按类别监控框架 API 以及少数 libc 文件函数。另有处于测试阶段的文件浏览器，可查看应用的私有目录。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rms-runtime-mobile-security/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**432 repositories** · 2026-10-16 UTC
+**431 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -30,7 +30,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [ax/apk.sh](https://github.com/ax/apk.sh) — Makes reverse engineering Android apps easier, automating repetitive tasks like pulling, decoding, rebuilding and patching an APK. **[3,842 stars]**
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 ReVanced Patcher used to patch Android applications **[3,525 stars]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**
-- [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]**
 - [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — Plugin for JADX to integrate MCP server **[2,906 stars]** · Curated: [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]** · Curated: [Blutter](https://awesomerea.org/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — Advanced Fuzzing Library - Slot your Fuzzer together in Rust! Scales across cores and machines. For Windows, Android, MacOS, Linux, no\_std, ... **[2,660 stars]**

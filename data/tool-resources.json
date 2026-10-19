@@ -7701,5 +7701,35 @@
       "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
       "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
     ]
+  },
+  {
+    "id": "rms-runtime-mobile-security",
+    "name": "Runtime Mobile Security (RMS)",
+    "url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Frida-based web interface for observing Android and iOS apps at run time on a test device. It lists the classes and methods loaded in memory, traces method arguments and return values, generates hook templates for a selected class, finds class instances on the heap, and on Android monitors categorized framework APIs and a few libc file functions; a beta file browser covers the app's private folders.",
+    "description_zh": "基于 Frida 的 Web 界面，用于在测试设备上观察运行中的 Android 与 iOS 应用。它可列出内存中已加载的类和方法，跟踪方法参数与返回值，为选定的类生成 Hook 模板，在堆上查找类实例；在 Android 上还能按类别监控框架 API 以及少数 libc 文件函数。另有处于测试阶段的文件浏览器，可查看应用的私有目录。",
+    "evidence_url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.5.25, published 2026-07-01, matching the reviewed master commit; it installs from npm as rms-runtime-mobile-security and its package.json depends on Frida 17 node bindings. The README says it was tested on macOS with Android emulators, an Amazon Fire Stick 4K, an iPhone 7 and Chrome, and may need minor adjustments on Windows and Linux.",
+      "Requires Node.js, Frida's CLI tools and a frida-server already running on a single connected test device; RMS cannot handle several devices at once. It also attaches to a default system process to list preloaded classes. Use it only on apps and devices the user is authorized to analyze.",
+      "The web interface defaults to port 5491; rms.js passes only a port to server.listen, so Node's default all-interface binding applies, and the reviewed code adds no login. The README notes that complex methods sometimes fail to load and that Safari is unsupported.",
+      "GPL-3.0. The bundled custom Frida scripts were not reviewed and are not described here. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md#L36-L60",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/README.md#L99-L118",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/package.json",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/rms.js#L101-L112",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/blob/d07212e7edec20b14e3108860bebb4f0e8fffe40/LICENSE",
+      "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security/releases/tag/1.5.25"
+    ]
   }
 ]
