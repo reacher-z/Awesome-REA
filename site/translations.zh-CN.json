@@ -3998,5 +3998,14 @@
       "输入由使用者提供：class、JAR、ZIP、WAR、APK、DEX、XAPK 或 APKM 文件。反编译得到的 Java 代码是从字节码重建的，并非恢复出的原始源码，各内置反编译器的结果也可能不同；并排视图正是为了对比这些结果。",
       "LICENSE 文件为 GPL-3.0；内置的反编译器和转换工具沿用各自的许可证。仓库发布的 Zip Slip 安全公告（CVE-2022-21675）影响 v2.10.x，自 v2.11.0 起修复。本次未反编译任何文件。"
     ]
+  },
+  "binary-ninja-api": {
+    "name": "Binary Ninja 公开 API",
+    "requirements": [
+      "dev 分支跟踪 Binary Ninja 的开发版构建。审阅时本仓库最新的发布为 stable/6.0.10601，发布于 2026-09-03，其附件是 Binary Ninja Free 安装包；所审阅的 dev 提交比它多 165 个提交，插件注册 MCP 工具的指南等仅在 dev 上的内容并未包含在该版本中。README 称 master 分支跟踪稳定版，但 master 最后一次更新是在 2024 年 8 月。",
+      "该 API 无法单独运行：插件和脚本需加载已安装的 Binary Ninja 中的闭源核心。C++ 插件必须基于安装目录中 api_REVISION.txt 所指定的 API 版本构建；安装包附带的 install_api.py 脚本可将 Python 模块添加到其他解释器。独立示例及其他无界面脚本需要支持无界面 API 访问的许可证；插件指南指出非商业许可证不提供无界面自动化，并说明 Commercial 和 Ultimate 版本可用。",
+      "CMakeLists.txt 要求 CMake 3.28+、64 位 C++20 工具链以及 Python 3.12+ 解释器。UI 插件需要 Qt 6.8.2，README 建议使用官方安装程序或 Vector 35 的 Qt 构建，而不要使用 Homebrew 版本；-DHEADLESS=ON 可跳过 UI 插件。Rust crate 声明 rust-version 为 1.98.1。",
+      "大部分 API 和文档采用 MIT 许可，Rust API 采用 Apache-2.0；部分组件附有各自的许可证文件，贡献代码需签署 Vector 35 的 CLA。这些许可证仅覆盖 API 层，并不意味着 Binary Ninja 是开源软件。该仓库的问题追踪器同时服务于整个产品。本次未构建任何插件，也未分析任何二进制。"
+    ]
   }
 }

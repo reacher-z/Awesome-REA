@@ -10814,5 +10814,40 @@
       "https://github.com/Konloch/bytecode-viewer/releases/tag/v2.13.2",
       "https://github.com/Konloch/bytecode-viewer/security/advisories/GHSA-3wq9-j4fc-4wmc"
     ]
+  },
+  {
+    "id": "binary-ninja-api",
+    "name": "Binary Ninja API",
+    "url": "https://github.com/Vector35/binaryninja-api",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Vector 35’s public C++, Python and Rust APIs for Binary Ninja, with their documentation, examples and the open-source plugins built on them. Binary Ninja itself is a closed-source commercial application, and this repository does not contain its analysis core. The open plugins cover the x86/x86_64, ARM64, ARMv7, PowerPC, MIPS, RISC-V and MSP430 architectures, ELF, PE/COFF, Mach-O and Apple shared-cache and kernel-cache loaders, DWARF, PDB and IDB import, and Objective-C, RTTI and SVD analysis, while the examples walk the low- and medium-level intermediate languages and extend the analysis pipeline through workflows.",
+    "description_zh": "Vector 35 为 Binary Ninja 公开的 C++、Python 和 Rust API，附带文档、示例以及基于这些 API 的开源插件。Binary Ninja 本身是闭源商业软件，本仓库不包含其分析核心。开源插件涵盖 x86/x86_64、ARM64、ARMv7、PowerPC、MIPS、RISC-V 和 MSP430 架构，ELF、PE/COFF、Mach-O 以及 Apple 共享缓存和内核缓存加载器，DWARF、PDB 与 IDB 导入，以及 Objective-C、RTTI 和 SVD 分析；示例则演示如何遍历低级与中级中间语言，并通过工作流扩展分析流程。",
+    "evidence_url": "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The dev branch tracks Binary Ninja development builds. The newest release in this repository at review is stable/6.0.10601, published 2026-09-03, whose assets are Binary Ninja Free installers; the reviewed dev commit is 165 commits ahead of it, and dev-only material such as the guide to plugin-registered MCP tools is not in that release. The README says master tracks the stable build, but master was last updated in August 2024.",
+      "The API does not run on its own: plugins and scripts load the closed-source core from an installed copy of Binary Ninja. C++ plugins must be built from the API revision named in the installation’s api_REVISION.txt, and the install_api.py script shipped with the installation adds the Python module to another interpreter. The standalone examples and other headless scripts need a license with headless API access; the plugin guide says non-commercial licenses lack headless automation and names the Commercial and Ultimate editions for it.",
+      "CMakeLists.txt requires CMake 3.28+, a 64-bit C++20 toolchain and a Python 3.12+ interpreter. UI plugins need Qt 6.8.2, which the README recommends taking from the official installer or Vector 35’s Qt build rather than Homebrew, and -DHEADLESS=ON skips them. The Rust crate declares rust-version 1.98.1.",
+      "Most of the API and documentation is MIT-licensed and the Rust API is Apache-2.0; some components carry their own license files, and contributions go through Vector 35’s CLA. These licenses cover the API layer only and do not make Binary Ninja open source. The repository’s issue tracker also serves the wider product. No plugin was built and no binary was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/README.md#L17-L45",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/README.md#L74-L78",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/README.md#L140-L146",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/CMakeLists.txt",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/rust/Cargo.toml",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/LICENSE.txt",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/rust/LICENSE",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/docs/dev/plugins.md#L57-L75",
+      "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/docs/dev/mcp-tools.md",
+      "https://github.com/Vector35/binaryninja-api/releases/tag/stable/6.0.10601"
+    ]
   }
 ]
