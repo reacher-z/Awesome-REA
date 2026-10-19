@@ -4444,5 +4444,14 @@
       "大多数条目要求玩家自备 ROM、光盘镜像、ISO、游戏转储或 XBLA 包。Ratchet & Clank: Clone Home 条目还链接了第三方在 archive.org 上存放的已寻回的原版 J2ME 构建；本目录不链接该文件，被清单收录也不代表对任何游戏文件拥有权利。",
       "README 推广 Quiver Launcher，这是一个独立的目录网站和启动器；README 还说明清单由维护者利用业余时间维护，更新可能相隔数月。仓库只有 README.md 和 MIT 许可证（版权 2023 Sebastrion）；所链接的移植项目、原游戏及其素材各自保留权利。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "re-ios-apps-course": {
+    "name": "iOS 应用逆向工程课程",
+    "requirements": [
+      "审阅提交为 183873a（2024-04-17）。课程主要写于 2019 年，2020 年年中以后只有少量措辞和命令方面的小修正。设备相关说明覆盖 iOS 10 至 12，许多环境配置工具也出自那一时期，在当前设备上未必可用。导言明确不涉及越狱、iOS 系统漏洞利用、插件（tweak）开发、后端 API 测试以及深入的 ARM 汇编。",
+      "前置知识页没有列出必备条件，但建议使用 Mac（Xcode 没有 Windows 替代品），具备 Objective-C、Swift、JavaScript、HTML、SSH/SCP 和中间人攻击概念的基础，并准备 Ghidra、IDA 或 Hopper 试用版等 ARM 反汇编工具。只有解密模块以及 Cycript 和 Frida 练习需要运行 iOS 10 或更高版本的越狱 iPhone/iPad/iPod。",
+      "练习无需任何第三方应用：作者在配套仓库 RE-iOS-Apps-Extras-Github 中提供已解密的 CoinZa IPA 以及课程的 EPUB 版本。README 称这些漏洞源自正式上架的应用，但只在 CoinZa 中重现，而不针对原应用公开；结语也请读者以负责任的方式报告漏洞。",
+      "仓库没有单独的许可证文件；README 附有 MIT 式许可声明（Copyright 2019 Ivan Rodriguez）和风险自负的免责声明；结语请复用材料的人注明作者。本合集阅读了所审阅提交中的课程页面，没有安装 CoinZa 或按设备步骤操作；课程未提及 AI 或 REA 的使用。"
+    ]
   }
 }
