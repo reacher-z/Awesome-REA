@@ -8654,5 +8654,36 @@
       "https://github.com/GJDuck/e9patch/releases/tag/v1.0.1",
       "https://github.com/GJDuck/e9patch/compare/v1.0.1...682ab1f7f0480aa45edf1fd94457e5ee2dd01043"
     ]
+  },
+  {
+    "id": "melonloader",
+    "name": "MelonLoader",
+    "url": "https://github.com/LavaGang/MelonLoader",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Mod loader for Unity games on both the Mono and IL2CPP runtimes, which loads plugins and mods from folders in a locally installed game; on Windows a proxy DLL, version.dll by default, starts it with the game. For IL2CPP games its assembly generator runs Cpp2IL and Il2CppInterop to produce managed interop assemblies, and HarmonyX and MonoMod are bundled for runtime patching. Its logs can capture Unity player output and Harmony messages, and debug options provide a Mono debug server for Mono games and a wait-for-debugger option for IL2CPP games.",
+    "description_zh": "面向 Mono 和 IL2CPP 两种运行时 Unity 游戏的模组加载器，从本地安装游戏目录中的文件夹加载插件和模组；在 Windows 上通过代理 DLL（默认为 version.dll）随游戏一同启动。对于 IL2CPP 游戏，其程序集生成器会调用 Cpp2IL 和 Il2CppInterop 生成托管互操作程序集，并随附 HarmonyX 与 MonoMod 用于运行时修补。其日志可捕获 Unity 播放器输出与 Harmony 消息，调试选项还为 Mono 游戏提供 Mono 调试服务器，为 IL2CPP 游戏提供等待调试器附加的选项。",
+    "evidence_url": "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.7.3, published 2026-05-14, with Windows x64/x86, Linux x64 and macOS x64 archives plus Windows, Linux and macOS installers; the README also links nightly builds. The reviewed master commit (2026-10-01) declares the unreleased 0.7.4, 69 commits after v0.7.3, and its pending release notes add macOS arm64 support. The README links Linux instructions for Wine, Proton and native games, and marks Android and Oculus Quest support as work in progress.",
+      "The README lists the .NET 6.0 Desktop Runtime as a requirement for IL2CPP games, installed automatically on Windows. The installer or a manual install places MelonLoader and its proxy DLL in the user's own game folder, where the Plugins, Mods, logs and UserData/Loader.cfg configuration are created; some games need one of the alternative proxy file names. Source builds use the dotnet SDK, and the projects target Mono, Mono bleeding-edge and .NET frameworks.",
+      "On IL2CPP games the assembly generator queries MelonLoader's remote API by game name for settings such as a Cpp2IL version, obfuscation regex or deobfuscation mapping, and the README lists Cpp2IL, Unity runtime libraries and the .NET runtime as downloaded at run time. Configuration and launch options can force offline generation, a dumper version or regeneration. Per-game compatibility is not implied.",
+      "Apache-2.0; bundled libraries such as Dobby, plthook, HarmonyX, MonoMod, Mono.Cecil, AsmResolver and Il2CppInterop (LGPL-3.0) keep their own licenses, and the README says the downloaded Unity runtime libraries are subject to Unity's terms of service. This entry covers single-player modding and analysis of locally installed games; game license terms are separate. No game was modded or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/LICENSE.md",
+      "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/Directory.Build.props",
+      "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/RELEASE-NOTES.md",
+      "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/Dependencies/Il2CppAssemblyGenerator/RemoteAPI.cs",
+      "https://github.com/LavaGang/MelonLoader/blob/5aff4d9d7c16ae153aad2f1035114dbc2713bf99/Dependencies/Il2CppAssemblyGenerator/Packages/Cpp2IL.cs",
+      "https://github.com/LavaGang/MelonLoader/releases/tag/v0.7.3",
+      "https://github.com/LavaGang/MelonLoader/compare/v0.7.3...5aff4d9d7c16ae153aad2f1035114dbc2713bf99"
+    ]
   }
 ]

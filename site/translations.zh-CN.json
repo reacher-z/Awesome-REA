@@ -3395,5 +3395,14 @@
       "输入为用户自己的 ELF 可执行文件或共享库，默认输出到 a.out 或 a.so。指南指出内置的线性反汇编器可能错误处理代码与数据混杂的二进制，因此支持通过 --use-disasm 和 --use-targets 读入其他分析工具生成的 CSV 文件。CFR 模式基于启发式，稳健性较低；在 -100 模式下，被重写的程序自行安装 SIGILL 处理函数时会以 ENOSYS 失败。",
       "GPL-3.0 许可证，examples/stdlib.c 等个别文件按其文件头声明采用 MIT。README 中关于可扩展性、速度和开销的说法（包括重写超过 100 MB 的网页浏览器）未经测试，其列出的下游项目也未审阅。本次未重写任何二进制。"
     ]
+  },
+  "melonloader": {
+    "name": "MelonLoader Unity 游戏模组加载器",
+    "requirements": [
+      "审阅时最新发布版为 v0.7.3，于 2026-05-14 发布，提供 Windows x64/x86、Linux x64 和 macOS x64 压缩包，以及 Windows、Linux 和 macOS 安装程序；README 还提供了每夜构建的链接。所审阅的 master 提交（2026-10-01）声明的版本为尚未发布的 0.7.4，比 v0.7.3 多 69 个提交，其待发布说明中新增了 macOS arm64 支持。README 链接了适用于 Wine、Proton 和原生 Linux 游戏的说明，并将 Android 和 Oculus Quest 支持标为开发中。",
+      "README 将 .NET 6.0 桌面运行时列为 IL2CPP 游戏的必要条件，在 Windows 上会自动安装。通过安装程序或手动安装，MelonLoader 及其代理 DLL 会放入使用者自己的游戏目录，并在其中创建 Plugins、Mods、日志目录和 UserData/Loader.cfg 配置文件；部分游戏需改用其他可选的代理文件名。从源码构建需使用 dotnet SDK，各项目面向 Mono、Mono bleeding-edge 和 .NET 框架。",
+      "在 IL2CPP 游戏上，程序集生成器会按游戏名称查询 MelonLoader 的远程 API，获取 Cpp2IL 版本、混淆名正则或反混淆映射等设置；README 列明 Cpp2IL、Unity 运行时库和 .NET 运行时会在运行时下载。可通过配置文件或启动参数强制离线生成、指定转储器版本或重新生成。本条目不代表对任何具体游戏的兼容性。",
+      "采用 Apache-2.0 许可；随附的 Dobby、plthook、HarmonyX、MonoMod、Mono.Cecil、AsmResolver 和 Il2CppInterop（LGPL-3.0）等库保留各自的许可，README 还说明下载的 Unity 运行时库受 Unity 服务条款约束。本条目只涉及对本地安装游戏的单机模组制作与分析；游戏本身的许可条款与此相互独立。本次未修改或运行任何游戏，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
