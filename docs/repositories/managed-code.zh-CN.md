@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](managed-code.md)
 
-**128 个仓库** · 2026-10-16 UTC
+**127 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -11,7 +11,6 @@
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — YouTube 内部 API 的抽象层。 **[3,741 星标]**
 - [icedland/iced](https://github.com/icedland/iced) — 极速且准确的 x86/x64 反汇编器、汇编器、解码器和编码器，支持 Rust、.NET、Java、Python 和 Lua。 **[3,592 星标]**
 - [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 是与 Valve 的 Steam 网络互操作的 .NET 库，旨在提供简单且可扩展的接口，以执行网络上的各种操作。 **[3,210 星标]**
-- [uxmal/reko](https://github.com/uxmal/reko) — Reko 是一款二进制反编译器。 **[2,617 星标]**
 - [ErikEJ/EFCorePowerTools](https://github.com/ErikEJ/EFCorePowerTools) — Entity Framework Core Power Tools：在 Visual Studio 与命令行中提供逆向工程、迁移和模型可视化功能。 **[2,514 星标]**
 - [ValveResourceFormat/ValveResourceFormat](https://github.com/ValveResourceFormat/ValveResourceFormat) — Source 2 Viewer 是一体化工具，可浏览 VPK 归档，查看、提取和反编译 Source 2 资源，包括地图、模型、材质、纹理、声音等。 **[2,507 星标]**
 - [tuyoogame/huatuo](https://github.com/tuyoogame/huatuo) — huatuo 是一个特性完整、零成本、高性能、低内存、近乎完美的 Unity 全平台原生 C# 热更新方案。 **[2,338 星标]**

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**678 repositories** · 2026-10-16 UTC
+**679 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -42,6 +42,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [horsicq/DIE-engine](https://github.com/horsicq/DIE-engine) — DIE engine **[3,314 stars]**
 - [google/bindiff](https://github.com/google/bindiff) — Quickly find differences and similarities in disassembled code **[3,207 stars]** · Curated: [BinDiff](https://awesomerea.org/resources/bindiff/)
 - [plasma-disassembler/plasma](https://github.com/plasma-disassembler/plasma) — Plasma is an interactive disassembler for x86/ARM/MIPS. It can generates indented pseudo-code with colored syntax. **[3,071 stars]**
+- [uxmal/reko](https://github.com/uxmal/reko) — Reko is a binary decompiler. **[2,617 stars]** · Curated: [Reko](https://awesomerea.org/resources/reko/)
 - [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — Binary Analysis Platform **[2,262 stars]** · Curated: [Binary Analysis Platform (BAP)](https://awesomerea.org/resources/bap/)
 - [Dryxio/reagent](https://github.com/Dryxio/reagent) — Reconstruct and validate C/C++ code from compiled programs with AI. **[2,100 stars]**
 - [KasperskyLab/hrtng](https://github.com/KasperskyLab/hrtng) — IDA Pro plugin with a rich set of features: decryption, deobfuscation, patching, lib code recognition and various pseudocode transformations **[1,949 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**678 个仓库** · 2026-10-16 UTC
+**679 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -42,6 +42,7 @@
 - [horsicq/DIE-engine](https://github.com/horsicq/DIE-engine) — DIE 引擎。 **[3,314 星标]**
 - [google/bindiff](https://github.com/google/bindiff) — 快速找出反汇编代码中的异同。 **[3,207 星标]** · 精选：[BinDiff](https://awesomerea.org/zh/resources/bindiff/)
 - [plasma-disassembler/plasma](https://github.com/plasma-disassembler/plasma) — Plasma 是面向 x86/ARM/MIPS 的交互式反汇编器，可生成带缩进和语法着色的伪代码。 **[3,071 星标]**
+- [uxmal/reko](https://github.com/uxmal/reko) — Reko 是一款二进制反编译器。 **[2,617 星标]** · 精选：[Reko 通用反编译器](https://awesomerea.org/zh/resources/reko/)
 - [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — 二进制分析平台。 **[2,262 星标]** · 精选：[BAP 二进制分析平台](https://awesomerea.org/zh/resources/bap/)
 - [Dryxio/reagent](https://github.com/Dryxio/reagent) — 利用 AI 从已编译程序中重建并验证 C/C++ 代码。 **[2,100 星标]**
 - [KasperskyLab/hrtng](https://github.com/KasperskyLab/hrtng) — 功能丰富的 IDA Pro 插件，支持解密、去混淆、打补丁、库代码识别及各种伪代码转换。 **[1,949 星标]**

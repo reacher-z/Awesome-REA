@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 410](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-410-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 411](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-411-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (45) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
+- [原生二进制](#native-binary) (46) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
 
 **论文与工作流**
 
@@ -1917,6 +1917,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   卡内基梅隆大学开发的 OCaml 二进制分析平台。其 bap 命令可加载程序、进行反汇编、将指令提升为与架构无关的中间表示、构建控制流图并运行分析遍；objdump、raw 加载器和 mc 模式分别用于线性反汇编、原始代码块和单条指令编码。README 列出对 x86、x86-64、ARM、MIPS 和 PowerPC 的支持，以及解释器、微执行解释器、符号执行器和 Primus Lisp 语言，后者可用于编写分析、为函数编写桩模型和调用 SMT 求解器；分析以 OCaml 插件形式编写，或将 BAP 作为库嵌入应用，C 绑定和最基本的 Python 支持位于独立仓库。
 
   工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/bap/)
+
+- [**Reko 通用反编译器**](https://github.com/uxmal/reko)
+
+  通用反编译器：加载可执行文件或原始镜像，把机器码扫描转换为与机器无关的寄存器传输语言，再归并为过程并反编译为高级 C 代码。所审阅的源码包含 64 个架构目录，从 6502、Z80、PDP-11 到 ARM、MIPS、PowerPC、RISC-V 和 x86，并提供 ELF、PE/MZ、Mach-O、COFF、Amiga Hunk、VMS、WebAssembly、Xbox XBE 及 Xbox 360 XEX 等格式的加载器。可作为 Windows Forms 图形界面、命令行客户端或 .NET 库使用，用户还可通过项目文件和脚本补充名称、类型和注释。
+
+  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/reko/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
