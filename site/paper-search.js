@@ -58,6 +58,44 @@
     return url;
   }
 
+  const readLayout = params => params.get("layout") === "compact" ? "compact" : "cards";
+
+  // Compact list (?layout=compact, cards by default): one row per paper, with the authors and the scope box moved
+  // into that paper's details disclosure and back again, so nothing is duplicated and scope stays one click away.
+  function initializeLayout(document, browser, cards, afterChange) {
+    const control = document.getElementById("paper-layout");
+    if (!control) return null;
+    const moves = [];
+    for (const card of cards) {
+      const summary = card.querySelector(".paper-details > summary");
+      if (!summary) return null;
+      for (const node of card.querySelectorAll(".paper-authors, .paper-scope")) moves.push({node, parent: node.parentNode, next: node.nextSibling, summary});
+    }
+    function apply(layout) {
+      document.documentElement.dataset.paperLayout = layout;
+      control.value = layout;
+      let anchor = null;
+      for (const move of moves) {
+        if (layout === "compact") {
+          if (!anchor || anchor.summary !== move.summary) anchor = {summary: move.summary, node: move.summary};
+          anchor.node.after(move.node);
+          anchor.node = move.node;
+        } else {
+          move.parent.insertBefore(move.node, move.next);
+        }
+      }
+    }
+    control.addEventListener("change", () => {
+      const url = new URL(browser.location.href);
+      if (control.value === "compact") url.searchParams.set("layout", "compact"); else url.searchParams.delete("layout");
+      if (url.href !== browser.location.href) browser.history.replaceState(null, "", url);
+      apply(readLayout(url.searchParams));
+      afterChange();
+    });
+    apply(readLayout(new URL(browser.location.href).searchParams));
+    return apply;
+  }
+
   function initialize(document, browser) {
     const form = document.getElementById("paper-search");
     const data = document.getElementById("paper-search-data");
@@ -150,10 +188,12 @@
     clear.addEventListener("click", reset);
     emptyReset.addEventListener("click", reset);
     if (languageLink) languageLink.addEventListener("click", updateLanguageLink);
+    const applyLayout = initializeLayout(document, browser, cards, updateLanguageLink);
     browser.addEventListener("popstate", () => {
       composing = false;
       state = readState(new URL(browser.location.href).searchParams, allowed);
       showState(); render();
+      if (applyLayout) applyLayout(readLayout(new URL(browser.location.href).searchParams));
     });
     showState();
     const canonicalState = stateURL(browser.location.href, state);
@@ -163,6 +203,6 @@
     return true;
   }
 
-  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize};
+  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout};
   if (typeof document !== "undefined") initialize(document, window);
 }());

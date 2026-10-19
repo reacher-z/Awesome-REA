@@ -87,7 +87,7 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 .papers-topic-nav a{min-height:44px}
 
 /* Search controls are revealed only after the static paper index is validated. */
-.paper-search{display:grid;grid-template-columns:minmax(240px,2fr) repeat(3,minmax(130px,1fr)) auto;gap:12px;align-items:end;margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--soft)}
+.paper-search{display:grid;grid-template-columns:minmax(240px,2fr) repeat(4,minmax(120px,1fr)) auto;gap:12px;align-items:end;margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--soft)}
 .paper-search-field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .paper-search-field label{font-size:14px;font-weight:600}
 .paper-search-field input,.paper-search-field select{width:100%;min-width:0;min-height:44px;padding:9px 11px;border:1px solid var(--control);border-radius:6px;background:var(--surface);font-size:16px}
@@ -100,3 +100,27 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 @media(max-width:1100px){.paper-search{grid-template-columns:repeat(3,minmax(0,1fr))}.paper-search-query{grid-column:1/-1}.paper-search .button{justify-self:start}}
 @media(max-width:600px){.paper-search{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px;gap:10px}.paper-search-query,.paper-search-field:nth-of-type(2),.paper-search-field:nth-of-type(3),.paper-search-help,.paper-search-results{grid-column:1/-1}.paper-search .button{justify-self:stretch}}
 @media(max-width:360px){.paper-search{grid-template-columns:1fr}.paper-search-field{grid-column:1/-1}}
+
+/* Compact list (?layout=compact): ruled rows like the homepage list. paper-search.js moves the authors and the scope
+   box into each paper's details, so the row keeps title, year · venue · status, description and links. */
+html[data-paper-layout="compact"] .paper-grid{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
+html[data-paper-layout="compact"] .paper-card{padding:16px 8px 4px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none}
+html[data-paper-layout="compact"] .paper-card h3{font-size:18px;text-wrap:pretty}
+/* Year · venue · status follow the title on its last line when they fit. */
+html[data-paper-layout="compact"] .paper-card>header{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:14px}
+html[data-paper-layout="compact"] .paper-card>header>:not(h3,.paper-meta){flex-basis:100%}
+html[data-paper-layout="compact"] .paper-meta{margin-top:4px}
+html[data-paper-layout="compact"] .paper-description{margin:6px 0 4px;font-size:15px;line-height:1.75}
+html[data-paper-layout="compact"] .paper-links{margin:8px 0 4px}
+html[data-paper-layout="compact"] .paper-details{padding-top:0;border-top:0}
+html[data-paper-layout="compact"] .paper-details[open]{margin-bottom:12px}
+html[data-paper-layout="compact"] .paper-details .paper-authors{margin:0 0 12px}
+html[data-paper-layout="compact"] .paper-details .paper-scope{margin:0 0 14px}
+@media(min-width:1101px){
+  html[data-paper-layout="compact"] .paper-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(17rem,30%);grid-template-rows:auto auto 1fr;grid-template-areas:"header links" "description links" "description details";column-gap:32px;align-items:start}
+  html[data-paper-layout="compact"] .paper-card>header{grid-area:header}
+  html[data-paper-layout="compact"] .paper-card>.paper-description{grid-area:description;max-width:90ch}
+  html[data-paper-layout="compact"] .paper-card>.paper-links{grid-area:links;margin-top:0}
+  html[data-paper-layout="compact"] .paper-card>.paper-details{grid-area:details}
+  html[data-paper-layout="compact"] .paper-card>.paper-details[open]{grid-area:auto;grid-column:1/-1}
+}

@@ -26,6 +26,7 @@ class PaperSearchTests(unittest.TestCase):
                 html = (output / path).read_text()
                 self.assertEqual(len(re.findall(r'<article class="paper-card"', html)), len(papers))
                 self.assertRegex(html, r'<form id="paper-search"[^>]* hidden>')
+                self.assertRegex(html, r'<select id="paper-layout"><option value="cards">[^<]+</option><option value="compact">[^<]+</option></select>')
                 self.assertNotRegex(html, r'<article[^>]*\bhidden\b')
                 self.assertIn('/paper-search.js?v=' + hashlib.sha256(script).hexdigest()[:16], html)
                 projection = json.loads(re.search(r'<script id="paper-search-data" type="application/json">(.*?)</script>', html, re.S)[1])

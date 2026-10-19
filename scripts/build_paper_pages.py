@@ -321,6 +321,7 @@ def build_paper_pages(
     <div class="paper-search-field"><label for="paper-target">{label('Target', '目标')}</label><select id="paper-target" name="target"><option value="all">{label('All targets', '全部目标')}</option>{target_options}</select></div>
     <div class="paper-search-field"><label for="paper-status">{label('Publication status', '发表状态')}</label><select id="paper-status" name="status"><option value="all">{label('All statuses', '全部状态')}</option>{status_options}</select></div>
     <div class="paper-search-field"><label for="paper-year">{label('Year', '年份')}</label><select id="paper-year" name="year"><option value="all">{label('All years', '全部年份')}</option>{year_options}</select></div>
+    <div class="paper-search-field paper-layout-field"><label for="paper-layout">{label('Layout', '布局')}</label><select id="paper-layout"><option value="cards">{label('Cards', '卡片')}</option><option value="compact">{label('Compact list', '紧凑列表')}</option></select></div>
     <button id="paper-clear" class="button button-outline" type="button">{label('Clear filters', '清除筛选')}</button>
     <p id="paper-search-help" class="paper-search-help">{label('Search in English or Chinese. Filters match every listed target; papers stay in their main section.', '支持中英文搜索。筛选匹配全部目标，论文仍按主要目标分组。')}</p>
     <p id="paper-results" class="paper-search-results" role="status" aria-live="polite" aria-atomic="true"></p>
