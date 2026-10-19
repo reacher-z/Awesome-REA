@@ -4875,5 +4875,14 @@
       "CI 校验函数映射与重编译器配置，将全部补丁应用到 PS2Recomp 并对照已知失败清单运行其 ps2x_tests 运行时测试套件，还运行与游戏无关的 GS、VU1、手柄和镜头测试，另有一项 Windows 任务在无 GPU 的情况下链接独立的 PCSX2 GS 模块。游戏流程与性能数据来自作者在一台 Ryzen 7 5800XT 加 RX 5700 XT 机器上的运行，记录于 docs/ESTADO.md；本合集未构建或运行任何内容。",
       "仓库采用 GPL-3.0，与 PS2Recomp 一致；所应用的运行时来自 Waffle565 的 God-Of-War-Native-Port，该仓库根目录没有许可文件，并带入源自 PCSX2 的代码（GPL-3.0+）。Sony Interactive Entertainment 与 Santa Monica Studio 仍保有游戏权利。AGENTS.md 称多个智能体同时在 main 上工作，CLAUDE.md 让 Claude 遵循这些约定，状态日志也将部分修复归于 Claude；未确立 REA 的使用。"
     ]
+  },
+  "redasm": {
+    "name": "REDasm 反汇编器",
+    "requirements": [
+      "审阅时最新版本为 v4.0.0-beta3，发布于 2026-09-02，提供 Linux x86_64 AppImage 和免安装的 Windows x86_64 ZIP，并附 GPG 签名的校验和；所审阅的 master 提交比该标签多 43 个提交。基于 master 的每夜构建另含 macOS DMG，README 提醒其可能不稳定。第 4 版是仍处于测试阶段的完全重写；README 称第 3 版已停止维护，其最后一个版本 3.0 beta 5 发布于 2021 年。",
+      "README 将 Windows 10+（Visual Studio 2022）和 Linux（GCC 12+，以 Ubuntu 24.04/Debian 13 为参考）列为持续测试并提供官方二进制的平台；FreeBSD 和 macOS 仅通过 CI 编译和测试，Haiku 仅能编译。从源码构建需借助独立的 workspace 仓库，它会拉取核心、图形界面、插件和知识库各仓库，要求 CMake 3.20、C17/C++17 编译器和 Qt 6.8 LTS。",
+      "可执行文件和主机程序文件由使用者自备。README 的成熟度表将 PE、ELF 和 x86/x86-64 支持评为可用于生产，Visual Basic 5/6 事件恢复评为高度稳定，而 DOS MZ、PS1 BIOS、Xbox、ZX Spectrum 和 NES（仅 NROM）加载器以及 Z80、6502 处理器仅为可用级别，MSVC RTTI 和异常处理恢复仍在开发中。目前尚无反编译器，扩展须用 C 编写；Python 插件 API 已列入路线图。",
+      "图形界面、核心和所有内置插件均采用 GPL-3.0；独立的知识库仓库收录 TOML 格式的签名和类型定义，采用 CC0-1.0。本次未构建，也未分析任何二进制。"
+    ]
   }
 }

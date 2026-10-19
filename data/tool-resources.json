@@ -14773,5 +14773,37 @@
       "https://github.com/ran-j/PS2Recomp/tree/c5a9d02573410a2085a4b4b831b0b68ba3515440",
       "https://github.com/Waffle565/God-Of-War-Native-Port/blob/514f89186f1926edaf4807696a59557679c7d517/README.md"
     ]
+  },
+  {
+    "id": "redasm",
+    "name": "REDasm",
+    "url": "https://github.com/redasm-dev/redasm",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Cross-platform interactive disassembler whose version 4 is a plain-C rewrite: a C17 engine library, the Qt6 GUI kept in this repository, and loader, processor and analyzer plugins loaded as shared libraries. The listing supports renaming, comments and typed data, with a synchronized control-flow graph, cross-references, string detection, a hex view, patching and saved projects. Besides PE and ELF, loaders cover retro and console formats such as DOS MZ, Win16 NE, OS/2 LE/LX, PlayStation 1, original Xbox and ZX Spectrum, with x86/x86-64, MIPS32, ARM/Thumb, ARM64, Z80 and 6502 processors.",
+    "description_zh": "跨平台交互式反汇编器，第 4 版以纯 C 重写：由 C17 引擎库、保留在本仓库中的 Qt6 图形界面，以及以共享库形式加载的加载器、处理器和分析器插件组成。反汇编列表支持重命名、注释和类型化数据，并提供同步的控制流图、交叉引用、字符串检测、十六进制视图、补丁和项目保存。除 PE 和 ELF 外，加载器还支持 DOS MZ、Win16 NE、OS/2 LE/LX、PlayStation 1、初代 Xbox 和 ZX Spectrum 等复古及主机格式，处理器涵盖 x86/x86-64、MIPS32、ARM/Thumb、ARM64、Z80 和 6502。",
+    "evidence_url": "https://github.com/redasm-dev/redasm/blob/509b76548a741aac569161df666b6c13f927d6f5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v4.0.0-beta3, published 2026-09-02, with a Linux x86_64 AppImage and a portable Windows x86_64 ZIP plus GPG-signed checksums; the reviewed master commit is 43 commits ahead of that tag. Nightly builds from master, which the README warns may be unstable, also include macOS DMGs. Version 4 is a complete rewrite still in beta; the README says version 3 was retired, and its last release, 3.0 beta 5, dates from 2021.",
+      "The README rates Windows 10+ with Visual Studio 2022 and Linux with GCC 12+ (Ubuntu 24.04/Debian 13 reference) as actively tested platforms with official binaries; FreeBSD and macOS only pass CI builds and tests, and Haiku only compiles. Source builds go through the separate workspace repository, which fetches the core, GUI, plugin and knowledge-base repositories and needs CMake 3.20, C17/C++17 compilers and Qt 6.8 LTS.",
+      "Executables and console program files are supplied by the user. The README's maturity tables rate PE, ELF and x86/x86-64 support production ready and Visual Basic 5/6 event recovery highly stable, but the DOS MZ, PS1 BIOS, Xbox, ZX Spectrum and NES (NROM only) loaders and the Z80 and 6502 processors only functional, and MSVC RTTI and exception-handling recovery work in progress. There is no decompiler yet, and extensions are written in C; a Python plugin API is on the roadmap.",
+      "GPL-3.0 for the GUI, the core and every bundled plugin; the separate knowledge-base repository of TOML signatures and type definitions is CC0-1.0. Nothing was built and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/redasm-dev/redasm/blob/509b76548a741aac569161df666b6c13f927d6f5/README.md#L72-L128",
+      "https://github.com/redasm-dev/redasm/blob/509b76548a741aac569161df666b6c13f927d6f5/README.md#L155-L181",
+      "https://github.com/redasm-dev/redasm/blob/509b76548a741aac569161df666b6c13f927d6f5/CHANGELOG.md",
+      "https://github.com/redasm-dev/redasm/blob/509b76548a741aac569161df666b6c13f927d6f5/LICENSE",
+      "https://github.com/redasm-dev/workspace/blob/4495c56cbf580c467cd18a87268b97900760c521/README.md",
+      "https://github.com/redasm-dev/kb/blob/5452426b6bb12b41f6bcbe72451e541cbe021ec7/LICENSE",
+      "https://github.com/redasm-dev/redasm/releases/tag/v4.0.0-beta3"
+    ]
   }
 ]
