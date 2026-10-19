@@ -26,7 +26,7 @@
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — 全平台 QQ 聊天数据库解密。 **[1,103 星标]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — 以 C 编写的跨平台插桩与内省库。 **[1,032 星标]**
 - [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — 用 AI 一把梭完成逆向工程。 **[965 星标]**
-- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]**
+- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]** · 精选：[Dyninst 二进制插桩与分析库](https://awesomerea.org/zh/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — 记录我在学习 Android 逆向过程中遇到的一些有趣内容。 **[809 星标]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida 核心库。 **[782 星标]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — 非官方的 VSCode Frida 扩展 **[592 星标]** · 精选：[Frida Workbench VS Code 扩展](https://awesomerea.org/zh/resources/vscode-frida/)

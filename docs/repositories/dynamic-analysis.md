@@ -26,7 +26,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — Cross-platform decryption of QQ chat databases **[1,103 stars]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — Cross-platform instrumentation and introspection library written in C **[1,032 stars]**
 - [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — Go all-in on AI-powered reverse engineering. **[965 stars]**
-- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI: Tools for binary instrumentation, analysis, and modification. **[838 stars]**
+- [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI: Tools for binary instrumentation, analysis, and modification. **[838 stars]** · Curated: [Dyninst](https://awesomerea.org/resources/dyninst/)
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — Notes on interesting things I encounter while learning Android reverse engineering. **[809 stars]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida core library **[782 stars]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]** · Curated: [Frida Workbench for VSCode](https://awesomerea.org/resources/vscode-frida/)

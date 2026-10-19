@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 411](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-411-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 412](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-412-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (46) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
+- [原生二进制](#native-binary) (47) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
 
 **论文与工作流**
 
@@ -1923,6 +1923,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   通用反编译器：加载可执行文件或原始镜像，把机器码扫描转换为与机器无关的寄存器传输语言，再归并为过程并反编译为高级 C 代码。所审阅的源码包含 64 个架构目录，从 6502、Z80、PDP-11 到 ARM、MIPS、PowerPC、RISC-V 和 x86，并提供 ELF、PE/MZ、Mach-O、COFF、Amiga Hunk、VMS、WebAssembly、Xbox XBE 及 Xbox 360 XEX 等格式的加载器。可作为 Windows Forms 图形界面、命令行客户端或 .NET 库使用，用户还可通过项目文件和脚本补充名称、类型和注释。
 
   工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/reko/)
+
+- [**Dyninst 二进制插桩与分析库**](https://github.com/dyninst/dyninst)
+
+  源自 Paradyn 项目的二进制插桩、分析与修改库。DyninstAPI 可在运行中的程序里插入和修改插桩代码，也可改写磁盘上的可执行文件或库并写回修改后的副本；同一套与机器无关的接口还支持静态和动态分析。各组件有独立手册，分别负责符号表、行号与类型（SymtabAPI）、指令解码与反汇编（InstructionAPI）、解析为基本块、函数和循环（ParseAPI）、切片等数据流分析（DataFlowAPI），以及进程控制、栈回溯和代码修补。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dyninst/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

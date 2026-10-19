@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 411](https://img.shields.io/badge/resources-411-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 412](https://img.shields.io/badge/resources-412-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (46) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (14)
+- [Native Binary](#native-binary) (47) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (14)
 
 **Research and workflows**
 
@@ -1922,6 +1922,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   General-purpose decompiler that loads executables or raw images, scans their machine code into a machine-independent register transfer language, groups it into procedures and decompiles them into high-level C code. The reviewed source has 64 architecture directories, from 6502, Z80 and PDP-11 to ARM, MIPS, PowerPC, RISC-V and x86, and loaders for formats including ELF, PE/MZ, Mach-O, COFF, Amiga Hunk, VMS, WebAssembly, Xbox XBE and Xbox 360 XEX. It runs as a Windows Forms GUI, a command-line client or a .NET library, and project files and scripts let users add names, types and comments.
 
   Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/reko/)
+
+- [**Dyninst**](https://github.com/dyninst/dyninst)
+
+  Binary instrumentation, analysis and modification libraries from the Paradyn project. DyninstAPI inserts and changes instrumentation in a running program, or rewrites an executable or library on disk and writes the patched copy back, through one machine-independent interface that also supports static and dynamic analysis. Separately documented components handle symbol tables, line numbers and types (SymtabAPI), instruction decoding and disassembly (InstructionAPI), parsing into blocks, functions and loops (ParseAPI), dataflow analyses such as slicing (DataFlowAPI), process control, stack walking and patching.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/dyninst/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
