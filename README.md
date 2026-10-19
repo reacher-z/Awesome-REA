@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 367](https://img.shields.io/badge/resources-367-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 368](https://img.shields.io/badge/resources-368-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (166) · [App](#app) (54)
-- [Native Binary](#native-binary) (29) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1700,6 +1700,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Rizin plugin that embeds Ghidra's C++ decompiler and Sleigh disassembler, so no Java Ghidra installation is needed. Its pdg commands decompile the current function, optionally side by side with offsets or as XML or JSON, can return the output to Rizin as comments, and list the loaded Sleigh languages; config variables control formatting and can override the auto-detected Sleigh language. The decompiler draws on Rizin's loaded binary, types and comments, and an optional plugin brings it into the Cutter GUI.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/rz-ghidra/)
+
+- [**dewolf**](https://github.com/fkie-cad/dewolf)
+
+  Research decompiler from Fraunhofer FKIE, developed with Singapore's DSO National Laboratories between 2019 and 2021, that runs as a Binary Ninja plugin and starts from Binary Ninja's Medium Level IL. A pipeline of preprocessing, SSA, data-flow and control-flow stages restructures code following the DREAM/DREAM++ approach and emits C-like output. Results appear in a Binary Ninja dock widget, or decompile.py prints or writes them for a whole binary or one named function in batch use.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/dewolf/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

@@ -237,7 +237,7 @@
 - [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — 让 AI 智能体像安全分析师一样使用 IDA Pro 自动分析恶意样本的技能。 **[237 星标]**
 - [Nalen98/eBPF-for-Ghidra](https://github.com/Nalen98/eBPF-for-Ghidra) — Ghidra 的 eBPF 处理器模块 **[237 星标]**
 - [ReversecLabs/z3\_and\_angr\_binary\_analysis\_workshop](https://github.com/ReversecLabs/z3_and_angr_binary_analysis_workshop) — z3 与 angr 工作坊的代码及练习 **[237 星标]**
-- [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — 以 Binary Ninja 插件形式实现的研究型反编译器。 **[236 星标]**
+- [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — 以 Binary Ninja 插件形式实现的研究型反编译器。 **[236 星标]** · 精选：[dewolf 研究型反编译器](https://awesomerea.org/zh/resources/dewolf/)
 - [aengelke/fadec](https://github.com/aengelke/fadec) — 快速轻量的 x86 与 x86-64 解码器，以及 x86-64 编码器。 **[235 星标]**
 - [DearVa/ida\_copilot](https://github.com/DearVa/ida_copilot) — 使用 ChatGPT 智能体分析 IDA 伪代码 **[234 星标]**
 - [schlafwandler/ghidra\_SavePatch](https://github.com/schlafwandler/ghidra_SavePatch) — 将小型补丁保存回可执行文件的 Ghidra 脚本 **[233 星标]**

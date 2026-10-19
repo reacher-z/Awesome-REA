@@ -237,7 +237,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [miunasu/IDA-Skill](https://github.com/miunasu/IDA-Skill) — An AI agent skill for automated malware analysis with IDA Pro, enabling agents to analyze malicious samples like a security analyst. **[237 stars]**
 - [Nalen98/eBPF-for-Ghidra](https://github.com/Nalen98/eBPF-for-Ghidra) — eBPF Processor for Ghidra **[237 stars]**
 - [ReversecLabs/z3\_and\_angr\_binary\_analysis\_workshop](https://github.com/ReversecLabs/z3_and_angr_binary_analysis_workshop) — Code and exercises for a workshop on z3 and angr **[237 stars]**
-- [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — A research decompiler implemented as a Binary Ninja plugin. **[236 stars]**
+- [fkie-cad/dewolf](https://github.com/fkie-cad/dewolf) — A research decompiler implemented as a Binary Ninja plugin. **[236 stars]** · Curated: [dewolf](https://awesomerea.org/resources/dewolf/)
 - [aengelke/fadec](https://github.com/aengelke/fadec) — A fast and lightweight decoder for x86 and x86-64 and encoder for x86-64. **[235 stars]**
 - [DearVa/ida\_copilot](https://github.com/DearVa/ida_copilot) — ChatGPT Agent analyses your IDA pseudocode **[234 stars]**
 - [schlafwandler/ghidra\_SavePatch](https://github.com/schlafwandler/ghidra_SavePatch) — A Ghidra script to save small patches back to the executable file **[233 stars]**
