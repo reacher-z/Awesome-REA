@@ -12036,5 +12036,39 @@
       "https://github.com/SteamRE/SteamKit/releases/tag/3.5.0",
       "https://www.nuget.org/packages/SteamKit2/3.4.0"
     ]
+  },
+  {
+    "id": "nintendo-switch-joycon-re-notes",
+    "name": "Nintendo Switch Reverse Engineering",
+    "url": "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "protocol",
+      "firmware"
+    ],
+    "description_en": "Notes begun by dekuNukem in 2017 and extended by contributors on how the Joy-Con, Pro Controller and parts of the Switch console and dock work, worked out from teardowns, logic-analyzer captures and packet logs. Markdown files cover the Joy-Con board test points and rail-connector pinout, the wired serial handshake with its CRC-8 checksum, Bluetooth HID input and output reports with 32 documented subcommands, the USB HID commands of the Pro Controller and charging grip, the SPI flash memory map with stick and 6-axis calibration, IMU conversion formulas and rumble encoding tables. The repository also keeps STM32 test firmware that plays the console or a Joy-Con on the rail, a Wireshark dissector for the Bluetooth traffic, and the captures behind the notes.",
+    "description_zh": "由 dekuNukem 于 2017 年发起、众多贡献者陆续补充的笔记，记录 Joy-Con、Pro 手柄以及 Switch 主机与底座部分硬件的工作方式，依据来自拆机、逻辑分析仪抓取和数据包记录。各 Markdown 文件涵盖 Joy-Con 电路板测试点与滑轨接口引脚定义、带 CRC-8 校验的有线串口握手、蓝牙 HID 输入与输出报告及其中记录的 32 个子命令、Pro 手柄与充电握把的 USB HID 命令、含摇杆与六轴校准数据的 SPI 闪存布局、IMU 换算公式以及振动编码表。仓库还保存了在滑轨接口上扮演主机或 Joy-Con 的 STM32 测试固件、用于解析蓝牙流量的 Wireshark 解析器，以及笔记所依据的抓取数据。",
+    "evidence_url": "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit b354f21 (2026-08-21). Of 277 commits, 228 date from 2017 and most others from 2018–2021; the 2026 changes document the console's sanity checks on stick calibration. The notes describe the original Joy-Con and Pro Controller, listing controller firmware 3.89 as the latest, and several fields remain marked unknown, so newer firmware and controllers need separate checking.",
+      "Following the notes needs one's own controller. The wired-protocol work involves opening a Joy-Con and connecting its rail connector, which uses 1.8 V logic, to a logic analyzer or microcontroller; the Bluetooth and USB notes assume a host that can exchange raw HID reports, and their sample C code uses hidapi-style calls. No controller or dock firmware is included: the README says a dock firmware dump was made but is not posted.",
+      "The joycon_reader and joycon_spoofer projects target an STM32F072 and were generated with STM32CubeMX for Keil MDK-ARM; their build outputs are committed alongside the sources. The nxbt dissector has to be compiled as a plugin within a Wireshark source build, a Lua script dissects Bluetooth traffic captured over USB, and small Python scripts parse captures and compute the serial checksum. The .logicdata captures need logic-analyzer software that reads that format.",
+      "The Bluetooth notes also document SPI flash write and sector-erase and firmware-update commands, with warnings about erasing whole sectors; the field meanings come from the contributors' own captures and tests, which this collection did not repeat.",
+      "GitHub detects no license and the repository has no license file, so the notes state no reuse terms; a datasheets folder holds copies of third-party chip datasheets, and the Lua dissector says it is provided with no license. The README credits the many contributors. Nothing in the reviewed files mentions AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/bluetooth_hid_notes.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/bluetooth_hid_subcommands_notes.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/spi_flash_notes.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/USB-HID-Notes.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/imu_sensor_notes.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/rumble_data_table.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/joycon_reader/README.md",
+      "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/packet_parse/nxbt/README.md"
+    ]
   }
 ]
