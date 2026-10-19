@@ -346,7 +346,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Upstream case: Aegis 3.4.3, REA 6.1.0, jadx-headless-mcp 0.7.1 and OpenJDK 21 on Linux x64.",
-      "Use the matching official APK for reproduction; this listing did not rerun the case."
+      "Use the matching official APK for reproduction."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -844,8 +844,8 @@
       "Requires the user’s cartridge dump, the pinned mwccarm matching compiler, its separate linker/setup and Python tooling such as ndspy, Capstone and pyelftools.",
       "The pinned README reports 11,389/11,389 matched functions, including 108 byte-exact assembly primitives, but only 10,957 linked into the PC port. These counters describe different gates.",
       "The same README retains older near-finished prose, and port/README.md describes a historical smoke-build stage. Treat matching and port-playability statements as source-specific reports, not a verified complete playable port.",
-      "Agent-assisted matching is documented, together with source review and relocation checks. This review did not obtain a ROM, run the compiler or reproduce any counter.",
-      "The repository has an MIT license; original game data and external compiler rights remain separate. No REA affiliation is established."
+      "Agent-assisted matching is documented, together with source review and relocation checks.",
+      "The repository has an MIT license; original game data and external compiler rights remain separate."
     ],
     "requirement_facets": [
       "prerequisites",
@@ -949,7 +949,7 @@
       "Requires user-supplied supported PAL RMCP01 revision 0 game data. Retro Rewind 6.13.3 needs matching separately obtained content and a compatible compiled profile in the reviewed 0.8.3 build.",
       "Android targets ARM64/Vulkan on Android 9+; iPhone/iPad require iOS/iPadOS 16+. The README documents a PadMint/source route for Apple Silicon macOS 14+, while the pinned status table still labels Mac experimental. tvOS 17+ is also an experimental preview.",
       "Physical-device and emulator checks cover specific builds and devices. Missing graphics, freezes, controller and performance problems remain on some hardware; a successful Pixel or iPad test is not universal compatibility.",
-      "Substantial AI assistance is disclosed without an audited generated-code percentage. This catalog did not compile the project, obtain game data or reproduce tests.",
+      "Substantial AI assistance is disclosed without an audited generated-code percentage.",
       "KartPad-owned work is GPL-3.0-only, with upstream component terms retained. RIGHTS_AND_LICENSES separates software obligations from game-derived logic and assets; GPL does not relicense Mario Kart Wii."
     ],
     "requirement_facets": [
@@ -984,9 +984,9 @@
     "requirements": [
       "Requires the user’s own Super Smash Bros. N64 dump matching a documented hash: US NTSC-U v1.0 (NALE) or Japanese v1.0 (NALJ). Each region is a separate build; Torch extracts assets locally during a source build or on a packaged build’s first run.",
       "The README lists native Windows, Linux, Apple Silicon macOS and Android builds; native C mods and the GameCube adapter driver are desktop-only. BUILDING.md covers desktop source builds with Git/submodules, CMake and Python 3, plus Ninja on Linux/macOS or Visual Studio 2022 and the Windows SDK on Windows.",
-      "The author reports developing the port alone with Claude until v0.3-beta and says it is no longer a pure AI project, crediting community testing, fixes and features. These statements are self-reported; ROM identity checks and described rendering/audio comparisons do not prove complete behavioral equivalence.",
+      "The author reports developing the port alone with Claude until v0.3-beta and says it is no longer a pure AI project, crediting community testing, fixes and features; these statements are self-reported.",
       "The LICENSE grants MIT only to port-specific code, build scripts, tools and docs. The decomp submodule and decomp-derived files defer to the upstream decompilation, which publishes no explicit license; libultraship/Torch, bundled fonts and controller mappings keep their own terms; game rights are separate.",
-      "This review read documentation and license scope only, without a game dump, build, emulator session or independent runtime reproduction. REA use is not established."
+      "ROM identity checks and the described rendering/audio comparisons do not prove complete behavioral equivalence."
     ],
     "requirement_facets": [
       "prerequisites",
