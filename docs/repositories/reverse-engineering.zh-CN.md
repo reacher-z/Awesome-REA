@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**622 个仓库** · 2026-10-16 UTC
+**623 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -115,6 +115,7 @@
 - [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — 新一代 PyInstaller 提取工具。 **[741 星标]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — 让你不受订阅限制地使用健康设备的应用。支持运动追踪、营养追踪、健康锻炼、睡眠、恢复、运动负荷等多种功能。 **[722 星标]**
 - [SpecterOps/skills](https://github.com/SpecterOps/skills) — 大语言模型技能市场。 **[716 星标]**
+- [CharlotteCross1998/awesome-game-decompilations](https://github.com/CharlotteCross1998/awesome-game-decompilations) — 精选游戏反编译、重编译和反汇编项目列表。 **[711 星标]** · 精选：[awesome-game-decompilations 游戏反编译项目清单](https://awesomerea.org/zh/resources/awesome-game-decompilations/)
 - [mahaloz/DAILA](https://github.com/mahaloz/DAILA) — 不依赖特定反编译器的插件，可在反编译器中与 AI 交互，支持 GPT-4、Claude 和本地模型！ **[711 星标]** · 精选：[DAILA](https://awesomerea.org/zh/resources/daila/)
 - [cristianzsh/forensictools](https://github.com/cristianzsh/forensictools) — 取证工具合集。 **[706 星标]**
 - [bahattinkoc/ipaverse](https://github.com/bahattinkoc/ipaverse) — 无需 Xcode 或终端即可下载、重新签名并侧载 iOS、iPadOS、macOS、tvOS 和 visionOS 应用，并提供用于授权安全测试的工具集，包括 ATS 绕过、Frida 注入、静态扫描和 FairPlay 转储。 **[679 星标]**

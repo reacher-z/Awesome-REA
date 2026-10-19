@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**622 repositories** · 2026-10-16 UTC
+**623 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -115,6 +115,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — PyInstaller Extractor Next Generation **[741 stars]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — App which allows you to use your health devices beyond subscriptions. Supports Workout Tracking, Nutrition Tracking, Wellness Excercise, Sleep, Recovery, Strain, and Many more. **[722 stars]**
 - [SpecterOps/skills](https://github.com/SpecterOps/skills) — A marketplace for LLM skills **[716 stars]**
+- [CharlotteCross1998/awesome-game-decompilations](https://github.com/CharlotteCross1998/awesome-game-decompilations) — A curated list of awesome game decompilations, recompilations and disassemblies. **[711 stars]** · Curated: [awesome-game-decompilations](https://awesomerea.org/resources/awesome-game-decompilations/)
 - [mahaloz/DAILA](https://github.com/mahaloz/DAILA) — A decompiler-agnostic plugin for interacting with AI in your decompiler. GPT-4, Claude, and local models supported! **[711 stars]** · Curated: [DAILA](https://awesomerea.org/resources/daila/)
 - [cristianzsh/forensictools](https://github.com/cristianzsh/forensictools) — Collection of forensic tools **[706 stars]**
 - [bahattinkoc/ipaverse](https://github.com/bahattinkoc/ipaverse) — Download, re-sign, and sideload iOS, iPadOS, macOS, tvOS &amp; visionOS apps without Xcode or Terminal — plus an authorized security-testing toolkit (ATS bypass, Frida injection, static scan, FairPlay dump). **[679 stars]**
