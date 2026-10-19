@@ -7264,5 +7264,39 @@
       "https://github.com/xoreos/xoreos/tree/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/tests",
       "https://github.com/xoreos/xoreos/releases/tag/v0.0.6"
     ]
+  },
+  {
+    "id": "ghidra-mcp-bethington",
+    "name": "Ghidra MCP Server (bethington)",
+    "url": "https://github.com/bethington/ghidra-mcp",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Ghidra GUI plugin, standalone headless server and Python MCP bridge exposing a 209-tool catalog: decompilation, cross-references, renaming, typing, structures, comments and batch edits, plus P-code emulation, live debugging through Ghidra’s TraceRmi framework, shared Ghidra Server repository and version-control operations, and hash-based transfer of function documentation between binary versions. The bridge loads three tool groups on connect and lets the model search for and load the rest, while naming and type conventions are enforced in the tool layer. Its NOTICE says it began as a derivative of LaurieWired’s GhidraMCP in August 2025 and has since been substantially rewritten and extended.",
+    "description_zh": "由 Ghidra 图形界面插件、独立无界面服务器和 Python MCP 桥接组成，提供含 209 个工具的目录：反编译、交叉引用、重命名、类型设定、结构体、注释与批量编辑，另有 P-code 模拟执行、经 Ghidra TraceRmi 框架的实时调试、共享 Ghidra Server 仓库与版本控制操作，以及基于哈希在不同版本二进制之间迁移函数文档。桥接在连接时只加载三组工具，其余由模型按需搜索并加载；命名与类型规范在工具层强制执行。其 NOTICE 说明，项目于 2025 年 8 月由 LaurieWired 的 GhidraMCP 衍生而来，此后已大幅重写和扩展。",
+    "evidence_url": "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is the default dev branch at bridge version 7.0.0 plus unreleased changes; the README calls tagged releases stable, release candidates and main beta, and dev experimental, with tools renamed and merged freely. At review the newest published build was the 7.0.0-rc.3 pre-release of 2026-10-14, which ships the extension zip and bridge wheel, and the newest stable release was v6.0.0 of 2026-07-25. The README says the GUI plugin serves 205 of the 209 tools and the headless server 190, with the debugger tools GUI-only.",
+      "The extension loads only in the exact Ghidra version it was built for, Ghidra 12.1.4 at this pin, and needs Java 21; the bridge needs Python 3.10+, with uv recommended. Source builds use Maven 3.9+ or the committed Gradle wrapper, with install guides for Windows, Ubuntu/Debian, macOS and Arch Linux; Python Ghidra scripts need Ghidra’s optional Jython extension, and shared-server work needs a Ghidra Server version compatible with the 12.1 client. Clients connect over stdio or streamable HTTP, and a Docker Compose stack runs the headless server and bridge as two containers.",
+      "Users analyse programs imported into their own Ghidra project; the repository ships only two generated PE test fixtures for its regression tiers. Write tools change the project, and script execution, which runs arbitrary Java inside Ghidra, stays off unless GHIDRA_MCP_ALLOW_SCRIPTS is set. The HTTP server binds 127.0.0.1 without authentication by default and refuses a non-loopback bind without GHIDRA_MCP_AUTH_TOKEN, which the Docker stack always requires; GHIDRA_MCP_FILE_ROOT confines file-path endpoints to one directory.",
+      "CI builds the extension with Maven against a downloaded Ghidra, runs offline and real-Ghidra Java tests and Python unit and fake-server tests on Linux, and runs Python unit tests on Windows. docs/TESTING.md describes opt-in live tiers that import the fixtures into a running Ghidra and exercise endpoints and a debugger launch, and says the debugger tier is only partly restored. Sub-second responses, 93% fewer API calls through batching and workflows refined across hundreds of functions are the author’s claims; this collection ran no extension, server or client.",
+      "Apache-2.0; NOTICE credits the original LaurieWired GhidraMCP code, whose copyright remains for any surviving portions. Ghidra, MCP clients, model services and analysed programs keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/NOTICE",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/LICENSE",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/CHANGELOG.md",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/pyproject.toml",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/docs/TESTING.md",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/docker/README.md",
+      "https://github.com/bethington/ghidra-mcp/blob/cf8b12db27eb139b28b90eaa3488306da910d759/.github/workflows/tests.yml",
+      "https://github.com/bethington/ghidra-mcp/releases/tag/v7.0.0-rc.3",
+      "https://github.com/bethington/ghidra-mcp/releases/tag/v6.0.0"
+    ]
   }
 ]

@@ -3000,5 +3000,15 @@
       "CI 在 Linux（GCC 与 Clang）、macOS 和 Windows（MSVC）上分别用 autotools 和 CMake 构建，并运行 Google Test 单元测试，覆盖 Aurora 文件格式和通用引擎代码。项目未公布与原版可执行文件的对比，各游戏进度记录在项目 wiki 上；本合集未构建或运行 xoreos。",
       "README 与 COPYING 采用 GPL-3.0-or-later；doc/ 另附 GPLv2、LGPL-2.1 及字体许可文本，适用于引入的组件，各游戏的权利仍归其发行商所有。CONTRIBUTING.md 禁止提交 AI 生成的代码、注释和提交信息；所审来源未确立 REA 使用。"
     ]
+  },
+  "ghidra-mcp-bethington": {
+    "name": "Ghidra MCP Server（bethington）",
+    "requirements": [
+      "所审阅的固定版本位于默认的 dev 分支，对应桥接包版本 7.0.0 及其后未发布的改动；README 将带标签的发布版视为稳定版，候选版与 main 分支视为测试版，dev 分支则属实验性质，工具会被随意改名与合并。审阅时最新发布的构建是 2026 年 10 月 14 日的 7.0.0-rc.3 预发布版，附带扩展压缩包和桥接 wheel；最新稳定版是 2026 年 7 月 25 日的 v6.0.0。README 称 209 个工具中，图形界面插件提供 205 个，无界面服务器提供 190 个，调试器工具仅限图形界面。",
+      "扩展只能在构建时对应的那个 Ghidra 版本中加载，此固定版本对应 Ghidra 12.1.4，并需要 Java 21；桥接需要 Python 3.10+，建议使用 uv。从源码构建需 Maven 3.9+ 或仓库自带的 Gradle wrapper，并提供 Windows、Ubuntu／Debian、macOS 和 Arch Linux 的安装说明；Python 编写的 Ghidra 脚本需安装 Ghidra 可选的 Jython 扩展，使用共享服务器时需要与 12.1 客户端兼容的 Ghidra Server 版本。客户端可通过 stdio 或 streamable HTTP 连接，另有 Docker Compose 配置把无界面服务器与桥接分别运行在两个容器中。",
+      "分析对象是使用者导入自己 Ghidra 项目中的程序；仓库只附带两个为回归测试生成的 PE 测试样本。写入类工具会修改项目，而脚本执行会在 Ghidra 内运行任意 Java 代码，除非设置 GHIDRA_MCP_ALLOW_SCRIPTS，否则默认关闭。HTTP 服务默认绑定 127.0.0.1 且不做认证；未设置 GHIDRA_MCP_AUTH_TOKEN 时拒绝绑定非回环地址，Docker 部署则始终要求该令牌；GHIDRA_MCP_FILE_ROOT 可把涉及文件路径的接口限制在一个目录内。",
+      "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
+      "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
