@@ -15115,5 +15115,36 @@
       "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/windows.yml",
       "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
     ]
+  },
+  {
+    "id": "binabsinspector",
+    "name": "BinAbsInspector",
+    "url": "https://github.com/KeenSecurityLab/BinAbsInspector",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static vulnerability scanner from Tencent Keen Lab that runs as a Ghidra extension or headless script and applies abstract interpretation to Ghidra's P-code rather than to assembly, covering x86, x64, ARMv7 and AArch64 binaries. Its flow- and context-sensitive interprocedural analysis, with configurable value-set size and call-string depth, optional Z3 constraint solving and models of external functions, feeds checkers for 13 CWE classes, including command injection, buffer overflows and out-of-bounds access, format strings, integer overflow, double free, use-after-free and NULL dereference. Warnings list the instruction address and its call context, in the Ghidra console or as JSON.",
+    "description_zh": "腾讯科恩实验室开发的二进制静态漏洞扫描工具，以 Ghidra 扩展或无界面脚本方式运行，在 Ghidra 的 P-code 而非汇编上进行抽象解释，支持 x86、x64、ARMv7 和 AArch64 二进制。它执行流敏感、上下文敏感的过程间分析，可配置值集合大小和调用串深度，可选用 Z3 约束求解，并对外部函数建模，在此基础上运行 13 类 CWE 检查，涵盖命令注入、缓冲区溢出与越界访问、格式化字符串、整数溢出、重复释放、释放后使用和空指针解引用等。告警会列出指令地址及其调用上下文，显示在 Ghidra 控制台中或以 JSON 输出。",
+    "evidence_url": "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The only release, v0.1 from 2022-04-20, is an extension ZIP built for Ghidra 10.1.2. The reviewed main commit is 20 commits ahead; its Dockerfile and CI workflows use Ghidra 10.4 with JDK 17, and the last commit dates from 2024-05-14, so compatibility with current Ghidra releases is not documented. Source builds use Gradle 7.x (tested with 7.4) against a local Ghidra installation.",
+      "Z3 is required (tested version 4.8.15): the README suggests replacing the Java bindings bundled in lib/ with a matching package and installing the native library separately, not from Linux distribution packages. Runs use Ghidra's headless analyzer, the Script Manager after default auto-analysis in the GUI, or the provided Dockerfile, which builds Z3 from source and defaults to an Ubuntu mirror in China that the UBUNTU_MIRROR argument overrides.",
+      "Binaries are supplied by the user. Warnings are leads for manual review, not confirmed vulnerabilities; Keen Lab's release article reports its own Juliet test-suite comparison with cwe_checker on x86, x64 and ARMv7 for four CWE classes, scored by true and false positives and negatives.",
+      "GPL-3.0. Nothing was built and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md#L5-L23",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/README.md#L25-L81",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/Dockerfile",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/.github/workflows/integration_test.yml",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/blob/658b41389b2fc16c2fcd4bfc5610f6c26d31ca6f/LICENSE",
+      "https://github.com/KeenSecurityLab/BinAbsInspector/releases/tag/v0.1",
+      "https://keenlab.tencent.com/zh/2022/04/20/2022-BinAbsInspector-public-release/"
+    ]
   }
 ]

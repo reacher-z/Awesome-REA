@@ -4969,5 +4969,14 @@
       "Linux 和 Windows 工作流只构建和打包，不运行测试套件。可选的物理探针（WITH_PHYSICS_PROBE）在本引擎和装有 JJ2+ 的原版游戏中执行相同的脚本化场景，并按 tick 逐一记录位置与速度；仓库提交的轨迹和对比脚本可在没有原版游戏的情况下检查改动。对于 144 FPS 的引擎采集，Results/README.md 报告速度分布误差中位数为 0.1 px/s，406 个场景中有 376 个在 25 px/s 以内，397 个场景中有 70 个的动画片段数相差超过 25%。这些是项目报告的数据，本合集未运行任何内容。",
       "LICENSE 为 GPL-3.0；Docs/ThirdParty.dox 列出了各第三方组件及其许可证，其中包括部分 nCine 代码（MIT）。Jazz Jackrabbit 2 及其数据仍归权利人所有。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "binabsinspector": {
+    "name": "BinAbsInspector 二进制漏洞静态扫描工具",
+    "requirements": [
+      "唯一的发布版本 v0.1 发布于 2022-04-20，是针对 Ghidra 10.1.2 构建的扩展 ZIP。所审阅的 main 提交比它多 20 个提交；其中的 Dockerfile 和 CI 工作流使用 Ghidra 10.4 和 JDK 17，最后一次提交在 2024-05-14，因此与当前 Ghidra 版本的兼容性没有文档说明。从源码构建需使用 Gradle 7.x（测试版本 7.4），并依赖本地安装的 Ghidra。",
+      "需要 Z3（测试版本 4.8.15）：README 建议用版本匹配的软件包替换 lib/ 中自带的 Java 绑定，并另行安装原生库，Linux 上不要使用发行版软件包。可通过 Ghidra 无界面分析器运行，也可在图形界面完成默认自动分析后从 Script Manager 启动，或使用项目提供的 Dockerfile；该 Dockerfile 从源码编译 Z3，默认使用国内 Ubuntu 镜像源，可通过 UBUNTU_MIRROR 参数更改。",
+      "待分析的二进制由使用者自备。告警只是需要人工复核的线索，并非已确认的漏洞；科恩实验室的发布文章给出了项目自行完成的 Juliet 测试集评测，在 x86、x64 和 ARMv7 上就四类 CWE 与 cwe_checker 对比，按真／假阳性和真／假阴性计分。",
+      "采用 GPL-3.0 许可。本次未构建，也未分析任何二进制。"
+    ]
   }
 }
