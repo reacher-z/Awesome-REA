@@ -14209,5 +14209,38 @@
       "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/LICENSE",
       "https://github.com/Yharnam-Hunters/bbport/blob/accdce33b89d45fa3c7f5066e69362a5ec215c1a/README.md"
     ]
+  },
+  {
+    "id": "pikmin-2-matching-decomp-case",
+    "name": "Pikmin 2: a fully matched GameCube decompilation across five releases",
+    "url": "https://github.com/projectPiki/pikmin2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A fan decompilation of Pikmin 2 that rebuilds main.dol for five GameCube releases (USA retail, two USA demos, PAL and Japan) with the original Metrowerks compilers, checking each against a stored SHA-1. The build reads main.dol from the user’s own copy of each release. decomp.dev reported all code matched and fully linked for every version at the reviewed commit, and a non-matching mode builds the US DOL entirely from C++ for modding.",
+    "description_zh": "由爱好者进行的《皮克敏2》反编译项目：用原版 Metrowerks 编译器为五个 GameCube 版本（美版零售版、两个美版体验版、PAL 版和日版）重建 main.dol，并逐一与仓库保存的 SHA-1 比对。构建读取使用者自有各版本中的 main.dol。decomp.dev 报告所审提交中各版本的代码均已全部匹配并完全链接；另有非一致性模式，可完全由 C++ 源码构建美版 DOL 以供模组制作。",
+    "evidence_url": "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/README.MD",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README still calls this a work-in-progress decompilation and lists five supported versions: GPVE01 (USA retail, the default), GPVE01_D17 and GPVE01_D18 (USA demos 17 and 18), GPVP01 (PAL) and GPVJ01 (Japan). Each has its own configuration and SHA-1 file, and CI builds all five. Outputs are GameCube DOLs, not a PC executable or port.",
+      "Each version needs main.dol from the user’s own copy of that release at orig/<version>/sys/main.dol, and decomp-toolkit checks it against the hash in that version’s config.yml before splitting. The repository commits game-derived symbol and split tables for every version; config comments say the GPVE01 symbols were generated from a pikmin2UP.MAP linker map and the Japanese and PAL tables were recovered from those DOLs using the US symbols. No disc images or extracted game files are included.",
+      "Builds need Python and ninja on Windows (native tooling recommended), macOS (with wine-crossover) or Linux (an automatically downloaded wibo on x86, Wine elsewhere). configure.py pins decomp-toolkit v1.7.5, objdiff v3.4.1, binutils 2.42-1, sjiswrap v1.2.2, wibo 1.0.0-beta.5 and the 20250812 compiler bundle, using Metrowerks GC/2.6 for game, JSystem and runtime code and GC/1.2.5n for the Dolphin SDK libraries.",
+      "configure.py marks 1,154 objects Matching for every supported version and one more for Japan only; none is NonMatching. The default ninja target checks the linked DOL against config/<version>/build.sha1 before reporting progress, and CI builds all five versions in a container that supplies the original files and compilers. decomp.dev’s reports for the pinned commit list 100.00% of code matched and fully linked for each version (24,957 functions and 1,153 units for GPVE01); this collection ran no build.",
+      "With --non-matching, README says the final hash check is disabled and the US DOL builds completely from C++ source that is, to the team’s knowledge, functionally equivalent, so every file can be edited for modding. The repository carries CC0-1.0 in LICENSE.MD; Nintendo’s game, its files and the downloaded compilers fall outside that dedication. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/configure.py",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/config/GPVE01/config.yml",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/config/GPVE01/build.sha1",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/config/GPVJ01/config.yml",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/tools/project.py",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/.github/workflows/build.yml",
+      "https://github.com/projectPiki/pikmin2/blob/ffbd853726427f2e90cd201aaca90dc82b34f990/LICENSE.MD",
+      "https://decomp.dev/projectPiki/pikmin2"
+    ]
   }
 ]

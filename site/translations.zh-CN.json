@@ -4716,5 +4716,15 @@
       "README 称 tools/verify.py 会并排运行原始代码与替换函数，比较返回值、寄存器、每个写入的字节和每次库调用，且故意写错的版本必须无法通过；替代社区补丁的选项则与打过该补丁的原版对照验证。CI 使用 GCC 与 Clang 构建，并在没有游戏数据的情况下运行单元、测试框架和规则检查，因此针对游戏本身的验证由贡献者运行、属项目报告；本合集未运行任何内容。",
       "依 LICENSE 采用 GPL-2.0-or-later；bbport 脚手架另有 GPL-2.0-or-later 声明，README 称该声明不授予游戏或其代码的任何权利。README 称 Paleblood 是与 Sony Interactive Entertainment 和 FromSoftware 无关的粉丝项目，并称运行时以净室方式编写。CONTRIBUTING.md 允许经披露并验证的 AI 辅助工作，近期提交带有署名 Claude Opus 5.5 与 Codex 的 Co-Authored-By 尾注；未记录 REA 的使用。"
     ]
+  },
+  "pikmin-2-matching-decomp-case": {
+    "name": "《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译",
+    "requirements": [
+      "README 仍称其为进行中的反编译项目，并列出五个支持版本：GPVE01（美版零售版，默认）、GPVE01_D17 与 GPVE01_D18（美版体验版 17 和 18）、GPVP01（PAL 版）以及 GPVJ01（日版）。每个版本都有各自的配置和 SHA-1 文件，CI 会构建全部五个版本。产物是 GameCube DOL，不是 PC 可执行文件或移植。",
+      "每个版本都需要使用者自有该版本中的 main.dol，放在 orig/<version>/sys/main.dol；decomp-toolkit 在拆分前会按该版本 config.yml 中的哈希进行校验。仓库为每个版本提交了源自游戏的符号表和拆分表；配置注释称 GPVE01 的符号由 pikmin2UP.MAP 链接映射生成，日版和 PAL 版的表则以美版符号为基础从各自 DOL 中恢复。仓库不含光盘镜像或提取出的游戏文件。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.1、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.0-beta.5 及 20250812 编译器包；游戏、JSystem 和运行时代码使用 Metrowerks GC/2.6，Dolphin SDK 库使用 GC/1.2.5n。",
+      "configure.py 将 1,154 个目标文件标为对所有支持版本均一致，另有一个仅对日版一致；没有标为 NonMatching 的项。默认 ninja 目标会先按 config/<version>/build.sha1 校验链接出的 DOL，再报告进度；CI 在提供原始文件和编译器的容器中构建全部五个版本。decomp.dev 针对该固定提交的各版本报告均显示代码 100.00% 已匹配并完全链接（GPVE01 为 24,957 个函数、1,153 个单元）；本合集未运行构建。",
+      "README 称使用 --non-matching 时会关闭最终哈希校验，美版 DOL 将完全由 C++ 源码构建，据团队所知在功能上等价，因此每个文件都可修改用于模组制作。仓库在 LICENSE.MD 中采用 CC0-1.0；任天堂的游戏及其文件、下载的编译器不在该声明范围内。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
