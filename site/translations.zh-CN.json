@@ -3170,5 +3170,14 @@
       "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
       "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
     ]
+  },
+  "pe-bear": {
+    "name": "PE-bear PE 文件分析工具",
+    "requirements": [
+      "最新发行版为 v0.7.2（2026-06-05），提供 Windows 的 Qt6 与 Qt5 版本、面向 XP 等旧版 Windows 的 Qt4 x86 旧版构建、Linux 的 tar.xz 与 AppImage 版本以及 macOS 的 Qt6 应用；Chocolatey、Scoop 和 WinGet 也提供安装包。所审阅的 main 提交（2026-10-14）比它多 16 个提交，包括 Capstone 更新和尚未发布的更新检查功能；据其 README，该功能每天最多查询一次 GitHub 发行版 API，且只发送 PE-bear 的 User-Agent。",
+      "Linux 版本需要安装对应版本的 Qt；用 Visual Studio 2017 或更高版本构建的 Windows 版本需要 Visual C++ 2015–2022 运行库。源码构建需要 Git、CMake 3.12+、Qt6（或 Qt5/Qt4）以及 bearparser、Capstone 和 sig_finder 子模块，并提供 Linux 与 macOS 的构建脚本。AppVeyor 会为 main 分支的每个提交构建测试包，README 提醒这些构建可能不稳定。",
+      "输入为分析者选定的 PE 文件，也包括从进程中转储的映像，PE-bear 会提示将其还原为原始格式。Wiki 页面介绍了添加导入项、移除附加数据、填充内容以及搜索字符串或带掩码的字节签名。加壳识别使用 SIG.txt，它由第三方脚本从 PEiD 的 UserDB 转换而来，最后更新于 2022-10-17。",
+      "采用 GPL-2.0 许可；作者页面称 PE-bear 自 2022-09-18 起开源，此前其开发曾于 2014 年停止，后又重新启动。bearparser 和 sig_finder 子模块采用 BSD-2-Clause 许可，Capstone 保留其自身许可。"
+    ]
   }
 }

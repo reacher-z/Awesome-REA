@@ -7865,5 +7865,39 @@
       "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
       "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
     ]
+  },
+  {
+    "id": "pe-bear",
+    "name": "PE-bear",
+    "url": "https://github.com/hasherezade/pe-bear",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Qt GUI to view and edit Windows Portable Executable files, meant as a fast first look for malware analysts and robust against malformed PE32 and PE64 files. It shows headers and section layout, follows raw, RVA and VA addresses, disassembles from any offset with Capstone, matches packer signatures, compares two files and unmaps dumped images.",
+    "description_zh": "用于查看和编辑 Windows 可移植可执行（PE）文件的 Qt 图形工具，旨在为恶意软件分析人员提供快速的初步查看，并能稳定处理畸形的 PE32 与 PE64 文件。它可显示文件头和节区布局，跟随原始偏移、RVA 和 VA 地址，借助 Capstone 从任意偏移开始反汇编，按签名识别加壳工具，对比两个文件，并能还原从内存转储的映像。",
+    "evidence_url": "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release: v0.7.2 (2026-06-05), with Windows Qt6 and Qt5 builds, a legacy Qt4 x86 build for old Windows such as XP, Linux tar.xz and AppImage builds and a macOS Qt6 app; Chocolatey, Scoop and WinGet also package it. The reviewed main commit of 2026-10-14 is 16 commits ahead, with a Capstone update and an unreleased update check that, per its README, queries GitHub's releases API at most once a day and sends only a PE-bear User-Agent.",
+      "Linux builds need a matching Qt installation, and Windows builds made with Visual Studio 2017 or later need the Visual C++ 2015–2022 redistributable. Source builds need Git, CMake 3.12+, Qt6 (or Qt5/Qt4) and the bearparser, Capstone and sig_finder submodules, with build scripts for Linux and macOS. AppVeyor builds test packages from each main commit, which README warns may be unstable.",
+      "Input is a PE file chosen by the analyst, including images dumped from a process, which PE-bear offers to unmap. Wiki pages cover adding imports, removing overlays, filling content and searching strings or masked byte signatures. Packer detection uses SIG.txt, converted from PEiD's UserDB by a third-party script and last updated on 2022-10-17.",
+      "GPL-2.0; the author's page says PE-bear has been open source since 2022-09-18, after development was discontinued in 2014 and later reopened. The bearparser and sig_finder submodules are BSD-2-Clause, and Capstone keeps its own license."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/CMakeLists.txt",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/.gitmodules",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/pe-bear/updater/README.md",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/.appveyor.yml",
+      "https://github.com/hasherezade/pe-bear/blob/b90f1d7d96635e7a029f424a0d1d11a104821685/LICENSE",
+      "https://github.com/hasherezade/pe-bear/wiki/Home/54c92bf64d101f3f51a8388f0d83455ce12055bf",
+      "https://github.com/hasherezade/pe-bear/wiki/PE-Unmapping/88701f9546cb03b2e5666958e0e889feaea99ba9",
+      "https://github.com/hasherezade/pe-bear/wiki/Searching-patterns/fd89b1add6e3af972d64b455a6316b74491d9284",
+      "https://hshrzd.wordpress.com/pe-bear/",
+      "https://github.com/hasherezade/pe-bear/releases/tag/v0.7.2"
+    ]
   }
 ]
