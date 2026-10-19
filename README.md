@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 350](https://img.shields.io/badge/resources-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 351](https://img.shields.io/badge/resources-351-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (164) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (165) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (182) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (183) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1014,6 +1014,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements BioWare’s Aurora engine and its later derivatives as a portable C++ engine that runs on the user’s installed game data, targeting nine games from Neverwinter Nights to Dragon Age II. Resource management, many Aurora file formats, graphics and sound are in place, and every target shows partial in-game areas in a free-flying spectator mode. README states that normal gameplay is not implemented yet, so this is an early-stage engine case, not a playable replacement.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/xoreos-aurora-engine-case/)
+
+- [**Pinyon Shift: a ShiftGlue static recompilation of Forza Horizon for PC**](https://github.com/arcanite24/pinyon-shift)
+
+  Builds a native port of the Xbox 360 release of Forza Horizon by translating its PowerPC executable ahead of time into C++ with ShiftGlue, the author’s fork of ReXGlue, and compiling it on the player’s machine from their own disc. A renderer written for this game runs its GPU commands on Vulkan, and some translated library code, such as FMOD Ex DSP units, is replaced by independently written native code checked against the translated original. README presents it as a playable preview with rendering bugs and slowdowns.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pinyon-shift-forza-horizon-recomp-case/)
 
 #### Tools, projects and integrations
 

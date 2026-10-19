@@ -3010,5 +3010,15 @@
       "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
       "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "pinyon-shift-forza-horizon-recomp-case": {
+    "name": "Pinyon Shift：以 ShiftGlue 将 Forza Horizon 静态重编译到 PC",
+    "requirements": [
+      "审阅的是 2026-10-17 的最新提交，即 v0.6.0 标签；仓库创建于 2026-08-25。仓库包含启动器、构建工具、宿主代码和配置，README 称其中不含游戏、素材、生成的转换代码或预构建可执行文件；v0.6.0 的 Windows 启动器压缩包也只有启动器和一份源码压缩包。这是带原生替换的静态重编译，并非恢复原作者编写的源码。",
+      "需从使用者自己的美版零售光盘（序列号 MS-2505，标题 ID 4D5309C9）转储的 ISO，或从中解出且未经修改的文件夹；安装程序会依据 config/supported-dumps.json 核对其确切大小和 SHA-256，并拒绝未知转储。自有的 DLC 包须经验证后才能导入，Rally 与 1000 Club 扩展需要可选的第 4 版游戏更新构建。",
+      "玩家需使用 Windows 10／11 x64、包括 SteamOS 在内的 x86-64 Linux，或 Apple 芯片上的 macOS 13+，并配备支持 Vulkan 1.3 的 GPU；NVIDIA 已测试，AMD 与 Intel 尚未通过验证。启动器会安装固定版本的构建工具并在本机构建游戏，首次需 20–60 分钟和约 30 GB 空间；Windows 源码构建路径需 Visual Studio 2022 C++ Build Tools 17.1+。Android 13+ arm64 版为开发者预览，在 PC 上交叉编译。",
+      "CI 检查仓库边界，运行发布工具测试与宿主测试，构建各启动器并交叉构建 Android 运行时，全程不使用游戏。脚本化渲染测试路线、黄金帧回放以及 README 中的性能数据（如在 RTX 4080 上 1x 分辨率中位数 119 fps）均来自项目的本地运行；本合集未进行任何构建或运行。",
+      "BSD-3-Clause 仅适用于独立编写的内容。docs/LEGAL.md 称该许可不授予对 Forza Horizon、Xbox 软件、ReXGlue 或使用者自备内容的任何权利，并禁止提交生成的转换代码、依据反汇编或反编译器输出手工翻译的代码，以及从可执行文件复制的数据。README 声明与 Microsoft、Xbox、Turn 10 Studios 或 Playground Games 均无关联。CLAUDE.md 与 AGENTS.md 中的智能体说明禁止在提交中注明 AI 署名；所审来源未说明其他 AI 使用情况，也未记录 REA 的使用。"
+    ]
   }
 }
