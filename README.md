@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2251,13 +2251,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2810,6 +2810,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.
 
   **Authors:** Yaniv David et al.
+
+  </details>
+
+- [**BinRec: Dynamic Binary Lifting and Recompilation**](https://dl.acm.org/doi/10.1145/3342195.3387550)
+
+  BinRec lifts an executable to LLVM IR from dynamic traces instead of static disassembly, then lowers the IR back to a recovered binary, so compiler passes can optimize, harden or otherwise transform it. Tracing runs the binary under S²E, which translates the executed code through QEMU into LLVM IR; BinRec removes the emulation instrumentation, merges traces from several inputs into one program, and adds optimizations such as register de-aliasing and promotion of emulated state to locals. When the recovered binary reaches a path that was not traced, a configurable handler stops it, falls back to the original code, or lifts the new path incrementally. The authors report recovering all SPEC CINT2006 benchmarks, including C++ programs, and apply it to reoptimization, control-flow integrity, AddressSanitizer and SafeStack hardening, and partial deobfuscation of virtualization-obfuscated code.
+
+  EuroSys 2020 · Conference paper · [PDF](https://download.vusec.net/papers/binrec_eurosys20.pdf) · [Code](https://github.com/trailofbits/binrec-tob) · [Full entry & citation](https://awesomerea.org/papers/paper-binrec/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The prototype handles only single-threaded 32-bit x86 Linux ELF binaries and does not support self-modifying code. A recovered binary supports only control-flow paths observed during lifting, so behavior on untraced inputs depends on the chosen miss handler and on input coverage. Lifting through S²E is slow, and floating-point instructions are emulated in lifted code; across the SPEC benchmarks, recovered binaries ran at a geometric-mean 0.98x the time of unoptimized inputs and 1.29x that of optimized inputs. BinRec does not map stack slots to variables. The deobfuscation case uses two small programs obfuscated with the authors' own virtualizer, not commercial obfuscators. The McSema and rev.ng comparisons reflect 2020 versions.
+
+  **Authors:** Anil Altinay et al.
 
   </details>
 
