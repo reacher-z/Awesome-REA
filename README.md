@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 429](https://img.shields.io/badge/resources-429-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 430](https://img.shields.io/badge/resources-430-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (61)
-- [Native Binary](#native-binary) (53) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (17)
+- [Native Binary](#native-binary) (54) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (17)
 
 **Research and workflows**
 
@@ -1988,6 +1988,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   x86 instruction library for 16-, 32- and 64-bit code that decodes, formats, assembles and encodes instructions, with masm, nasm, GNU AT&amp;T and Intel XED output syntaxes. Its instruction-info API reports the registers, memory operands and RFLAGS bits an instruction reads or writes, its CPUID feature flags and control-flow type, and the encoder can re-encode decoded instructions at any address. Rust, C# (.NET) and Java implementations live in one repository, with Python, JavaScript (WebAssembly) and Lua bindings built on the Rust crate.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/iced/)
+
+- [**hrtng**](https://github.com/KasperskyLab/hrtng)
+
+  IDA plugin published by Kaspersky that extends the Hex-Rays decompiler with tools its author collected for reverse-engineering work, including malware analysis. It decrypts strings, data and constants with built-in ciphers or in bulk through IDA's Appcall debugger feature, resolves API-name hashes, unflattens control flow and forces decompilation of obfuscated code, and recognizes library code through microcode signatures, inlined-function detection and PAT files built from an IDA database. Pseudocode helpers cover automatic renaming, retyping and enum substitution, structure creation, virtual and indirect call navigation, and patching.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/hrtng/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
