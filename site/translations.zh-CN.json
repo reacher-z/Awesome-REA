@@ -3989,5 +3989,14 @@
       "CI 运行从 Ghidra 引入的 XML 回归语料（675 条断言）并与仓库内的基线比对，同时运行 Kuna 自有的阶段测试用例、cargo 工作区测试、规格文档检查、CLI 测试和浏览器页面模块测试。docs/history.md 称 Rust 移植版在移除 C++ 代码树之前，已在全部 675 条断言上与未改动的 C++ 反编译器一致。README 中的 DecBench 领先名次和速度数据为项目自述；本次审阅未反编译任何文件。",
       "采用 Apache-2.0 许可。NOTICE 说明引擎、SLEIGH 编译器、处理器规格和回归语料源自同为 Apache-2.0 的 Ghidra，部分结构化与区域恢复代码按 BSD-2-Clause 移植自 angr。其输出按设计可能与原版 Ghidra 不同，只是阅读辅助，并非经过验证的原始源码。"
     ]
+  },
+  "bytecode-viewer": {
+    "name": "Bytecode Viewer Java/Android 逆向工程套件",
+    "requirements": [
+      "审阅时的版本为 v2.13.2，发布于 2026-01-01，并于 2026-01-06 重新发布以修复 Windows 上的 APK 问题，以单个可运行 JAR 形式提供，用 java -jar 启动。其发布说明称这是开发中版本，命令行界面正在重写、目前无法使用，需要命令行的用户请改用 v2.12；所审阅的 master 分支提交比该标签多十个修复提交，声明的版本仍为 2.13.2。",
+      "pom.xml 以 Java 8 为目标，并因新版需要 Java 11+ 而将内置 JADX 固定在 1.4.7；从源码构建使用 mvn package。部分工具会调用外部运行环境：Krakatau 反编译器需要配置 Python 2 命令和 JRE 的 rt.jar 库，Enjarify 需要 Python 3。README 建议在出现 OutOfMemoryError 时用 -Xmx 增大堆内存。",
+      "输入由使用者提供：class、JAR、ZIP、WAR、APK、DEX、XAPK 或 APKM 文件。反编译得到的 Java 代码是从字节码重建的，并非恢复出的原始源码，各内置反编译器的结果也可能不同；并排视图正是为了对比这些结果。",
+      "LICENSE 文件为 GPL-3.0；内置的反编译器和转换工具沿用各自的许可证。仓库发布的 Zip Slip 安全公告（CVE-2022-21675）影响 v2.10.x，自 v2.11.0 起修复。本次未反编译任何文件。"
+    ]
   }
 }

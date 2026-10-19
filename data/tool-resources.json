@@ -10783,5 +10783,36 @@
       "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/.github/workflows/release.yml",
       "https://github.com/Noelo-Lab/kuna/releases/tag/v1.906"
     ]
+  },
+  {
+    "id": "bytecode-viewer",
+    "name": "Bytecode Viewer",
+    "url": "https://github.com/Konloch/bytecode-viewer",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Desktop suite for inspecting compiled Java and Android programs: drop in a class, JAR, WAR, APK, DEX, XAPK or APKM file to browse its classes and resources, with up to three decompiler or disassembler views side by side. The README lists six bundled Java decompilers (Krakatau, CFR, Procyon, FernFlower, JADX and JD-GUI), Krakatau and Smali/baksmali disassemblers and assemblers plus javap, Dex2Jar and Enjarify for APK/DEX conversion, a built-in Java compiler for editing, and static search. Java and JavaScript plugins receive every loaded class as an ASM ClassNode for jobs such as string deobfuscation or malicious-code searches.",
+    "description_zh": "用于检查已编译 Java 与 Android 程序的桌面套件：拖入 class、JAR、WAR、APK、DEX、XAPK 或 APKM 文件即可浏览其中的类和资源，并可并排显示最多三个反编译器或反汇编器视图。README 列出六个内置 Java 反编译器（Krakatau、CFR、Procyon、FernFlower、JADX 和 JD-GUI）、Krakatau 与 Smali/baksmali 反汇编器和汇编器以及 javap，还有用于 APK/DEX 转换的 Dex2Jar 和 Enjarify、用于编辑的内置 Java 编译器和静态搜索。Java 和 JavaScript 插件会收到全部已加载类的 ASM ClassNode，可用于字符串去混淆或恶意代码搜索等任务。",
+    "evidence_url": "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v2.13.2, published 2026-01-01 and re-released on 2026-01-06 with Windows APK fixes, as a single runnable JAR started with java -jar. Its notes call it an in-development version whose CLI is being rewritten and is not functional, pointing CLI users to v2.12; the reviewed master commit is ten fix commits ahead of that tag and still declares 2.13.2.",
+      "pom.xml targets Java 8 and holds the bundled JADX at 1.4.7 because newer versions need Java 11+; source builds use mvn package. Some tools call external runtimes: the Krakatau decompiler needs a configured Python 2 command and a JRE rt.jar library, and Enjarify needs Python 3. The README suggests a larger -Xmx heap for OutOfMemoryError.",
+      "Inputs are user-supplied class, JAR, ZIP, WAR, APK, DEX, XAPK or APKM files. Decompiled Java is reconstructed from bytecode rather than recovered source, and the bundled decompilers can disagree; the side-by-side views are for comparing them.",
+      "GPL-3.0 per the LICENSE file; bundled decompilers and converters keep their own licenses. The repository's Zip Slip advisory (CVE-2022-21675) affects v2.10.x and is fixed from v2.11.0. No files were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/README.md#L33-L46",
+      "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/pom.xml#L1-L55",
+      "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/src/main/java/the/bytecode/club/bytecodeviewer/decompilers/impl/KrakatauDecompiler.java",
+      "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/src/main/java/the/bytecode/club/bytecodeviewer/util/apk2Jar/Enjarify.java",
+      "https://github.com/Konloch/bytecode-viewer/blob/31430e0033fa220db566b5ef461256727ff6793b/LICENSE",
+      "https://github.com/Konloch/bytecode-viewer/releases/tag/v2.13.2",
+      "https://github.com/Konloch/bytecode-viewer/security/advisories/GHSA-3wq9-j4fc-4wmc"
+    ]
   }
 ]
