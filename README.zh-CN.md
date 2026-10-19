@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 311](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 70](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 311](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (70) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (71) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1978,13 +1978,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**70 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**71 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (20) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (21) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2147,6 +2147,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 这是局部、函数级的神经反编译：每次预测只覆盖一个目标函数及其类型定义，而非可编译的完整程序。评测使用来自 GitHub 开源项目的 x86-64 Linux gcc 二进制及 ExeBench 的“real”子集；O1–O3 构建禁用内联，且只保留在所有优化级别均能反编译的函数，使 Hex-Rays 与 Ghidra 测试集分别减少 21% 和 76%。ExeBench 单元测试是偏乐观的代理指标；Realtype 没有测试，因此以依赖图等价性及名称、类型的完全匹配作为偏保守的代理指标，且 Realtype 的用户自定义类型须所有字段（递归计算平均 17.6 个）均匹配才算正确。主要模型使用专有 Hex-Rays 的输出，上下文窗口为 2,048 或 4,096 个词元。预测的名称与类型属于统计推断，并非恢复的原始信息。仍可能存在来自 GitHub 的预训练数据泄漏，且未评估混淆代码和恶意软件。
 
   **发表信息:** 2026 · NDSS 2026 · 会议论文 · Luke Dramko 等
+
+  </details>
+
+- [**FidelityGPT：利用检索增强生成纠正反编译失真**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/)
+
+  FidelityGPT 对现有反编译器输出进行后处理：由大语言模型为代码行标注六类失真（如非常规解引用、冗余变量和令人困惑的控制流），再改写被标注的行。其提示词定义各失真类型，并从人工标注的 IDA Pro 与 Ghidra 失真代码行数据库中检索增强上下文。语义强度算法负责选择用于查询的代码行，变量依赖分析则在 50 行分块之间传递冗余变量上下文。作者在 620 对函数上报告检测准确率 89%、精确率 83%，纠正的修复率（FR）为 94%、正确修复率（CFR）为 64%，而他们运行的 DeGPT 分别为 83% 和 37%。
+
+  2026 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [代码](https://github.com/ZhouZhiping045/FidelityGPT) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-fidelitygpt/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 620 对函数大多取自二进制相似性数据集中 Coreutils、curl、ImageMagick、OpenSSL、PuTTY 与 SQLite 的构建产物，经 IDA Pro 7.5 在 -O0 下反编译，覆盖 ARM-32、MIPS-32 与 x86-32，另含 x86-64 的 TheAlgorithms/C 代码；另有 -O1–-O3 与 Ghidra 数据集用于检验泛化能力。真实标签与 FR／CFR 均由作者团队依照论文标准人工评估。修复率统计的是被标为已修复的行，并非语义等价证明：作者指出修复后的代码往往无法重新编译或执行。纠正阶段以整个函数为单位，函数较长时效果可能下降；失真数据库由 150 行 IDA Pro 与 91 行 Ghidra 代码构建，可能遗漏较少见的异常。主要结果使用温度为 0.5 的 GPT-4o，仍具随机性；DeepSeek-chat 与温度为 0 的结果另行报告。无法排除这些开源项目出现在训练数据中的可能。
+
+  **发表信息:** 2026 · NDSS 2026 · 会议论文 · Zhiping Zhou 等
 
   </details>
 

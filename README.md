@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 311](https://img.shields.io/badge/resources-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 311](https://img.shields.io/badge/resources-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (70) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (71) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1977,13 +1977,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**70 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**71 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (20) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (21) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2146,6 +2146,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** This is local, function-level neural decompilation: each prediction covers one target function and its type definitions, not a compilable whole program. Evaluation uses x86-64 Linux gcc binaries from open-source GitHub projects and ExeBench’s “real” subset; O1–O3 builds disable inlining, and keeping only functions that decompiled at every level removes 21% of the Hex-Rays and 76% of the Ghidra test sets. ExeBench unit tests are an optimistic proxy; Realtype has no tests, so dependency-graph equivalence and exact name and type matches serve as conservative proxies, and a Realtype user-defined type counts as correct only if all of its fields, 17.6 on average when counted recursively, match. The main models use proprietary Hex-Rays output and context windows of 2,048 or 4,096 tokens. Predicted names and types are statistical, not recovered originals. Pretraining leakage from GitHub remains possible, and obfuscated code and malware were not evaluated.
 
   **Publication:** 2026 · NDSS 2026 · Conference paper · Luke Dramko et al.
+
+  </details>
+
+- [**FidelityGPT: Correcting Decompilation Distortions with Retrieval Augmented Generation**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/)
+
+  FidelityGPT post-processes existing decompiler output: an LLM labels lines with six distortion types, such as non-conventional dereferencing, redundant variables and confusing control flow, and then rewrites the labeled lines. Its prompts define the distortion types and add retrieval-augmented context from a manually annotated database of distorted IDA Pro and Ghidra lines. A semantic-intensity algorithm chooses which lines to query, and a variable-dependency analysis carries redundant-variable context across 50-line chunks. On 620 function pairs, the authors report 89% detection accuracy and 83% precision, and correction fix rates of 94% (FR) and 64% (CFR) against 83% and 37% for their DeGPT runs.
+
+  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [Code](https://github.com/ZhouZhiping045/FidelityGPT) · [Full entry & citation](https://awesomerea.org/papers/paper-fidelitygpt/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The 620 pairs are mostly -O0 IDA Pro 7.5 functions sampled from Coreutils, curl, ImageMagick, OpenSSL, PuTTY and SQLite builds in a binary-similarity dataset, across ARM-32, MIPS-32 and x86-32, plus x86-64 TheAlgorithms/C code; separate -O1–-O3 and Ghidra sets test generalization. Ground-truth labels and FR/CFR were assessed manually by the author team against the paper’s criteria. Fix rates count lines marked as fixed and are not semantic-equivalence proofs: the authors note that repaired code often cannot be recompiled or executed. Correction runs on whole functions and may degrade on long ones, and the distortion database, built from 150 IDA Pro and 91 Ghidra lines, may miss rarer anomalies. Main results use GPT-4o at temperature 0.5 and remain stochastic; DeepSeek-chat and temperature-0 runs are reported separately. Training-data exposure of the open-source projects cannot be ruled out.
+
+  **Publication:** 2026 · NDSS 2026 · Conference paper · Zhiping Zhou et al.
 
   </details>
 
