@@ -5148,12 +5148,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110648710606557644"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Capslock404, 2026-10-15) says REA and Opus 5.5 recovered six movement constants from the 1991 Sonic the Hedgehog binary and that, 40 minutes later, a Sonic controller with rings and spin dash ran inside Elden Ring; it shows a video, gives generic REA setup steps and quotes another author’s REA course article. It names no game build, offsets or mod, publishes no source, tests or download, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the mod and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Capslock404，2026-10-15）称借助 REA 与 Opus 5.5 从 1991 年《刺猬索尼克》的二进制中找出六个移动物理常数，40 分钟后索尼克便能在《艾尔登法环》中旋转冲刺、收集圆环；帖子附视频，给出通用的 REA 安装步骤，并引用了另一位作者的 REA 教程长文。帖子未指明游戏版本、偏移或模组，也未公开源码、测试或下载，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该模组及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Capslock404/status/2110648710606557644"
+      ],
       "catalog_matches": []
     },
     {
@@ -5168,12 +5170,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110651009181851731"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@MikeS190477, 2026-10-15) says the author reverse-engineered an iriver E30 player that the vendor no longer supports in order to change its main screen, and that the work is still in progress; it shows one photo. It names no method, firmware version or tool and links no artifact, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the modification is unestablished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@MikeS190477，2026-10-15）称，由于 iriver 已不再支持作者的旧款 E30 播放器，作者对其进行逆向以更换主屏幕，目前仍在进行中；帖子附一张照片。帖子未说明方法、固件版本或所用工具，也未链接任何成果；未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该修改未确立，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/MikeS190477/status/2110651009181851731"
+      ],
       "catalog_matches": []
     },
     {
@@ -5188,12 +5192,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110651982323310818"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Madsoulswe, 2026-10-15) says AI reverse-engineered the app that controls the household radiator so that it works in Home Assistant, in 10 minutes and at no cost; it shows one image. It names no radiator, app or protocol and links no integration. The author’s GitHub account (madsoulswe), which names this X handle, has no Home Assistant or radiator repository. Retain the lead without a catalog mapping; the integration is unpublished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@Madsoulswe，2026-10-15）称 AI 逆向了家中控制暖气片的应用，使其可在 Home Assistant 中使用，用时 10 分钟且没有花钱；帖子附一张图片。帖子未说明暖气设备、应用或协议，也未链接相应集成。作者的 GitHub 账号（madsoulswe，其资料注明了此 X 账号）下没有 Home Assistant 或暖气相关的仓库。保留此线索而不建立目录映射；该集成未公开，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/Madsoulswe/status/2110651982323310818"
+      ],
       "catalog_matches": []
     },
     {
@@ -5208,13 +5214,25 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110658894360097141"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@OLD9Gaming, 2026-10-15) names no project, but its description of a community effort running the Switch release of Diablo II natively on iPhone, iPad and Apple silicon Macs matches D2R Mobile, whose pinned README makes the same platform claims for the Switch release of Diablo II: Resurrected with its expansion; the post’s touch-control screenshot is consistent with it. This mapping covers that rehosting compatibility layer. The post’s attribution to AI-assisted reverse engineering is not established by the reviewed project sources, and no independent runtime reproduction is claimed.",
+      "reason_zh": "所引帖子（@OLD9Gaming，2026-10-15）未指明项目名称，但其描述（民间项目让 Switch 版《暗黑破坏神 II》在 iPhone、iPad 和 Apple 芯片 Mac 上原生运行）与 D2R Mobile 相符：其固定版本 README 对带资料片的 Switch 版《暗黑破坏神 II：狱火重生》提出了相同的平台主张，帖子中带触控按键的截图也与之一致。映射覆盖这一重新托管的兼容层。帖子所称的 AI 辅助逆向未由所审阅的项目来源确立，此映射也不代表独立运行复现。",
+      "primary_evidence_urls": [
+        "https://x.com/OLD9Gaming/status/2110658894360097141",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/README.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/README.md",
+        "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/verify/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "d2r-mobile-switch-rehost-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:whoop-noop-zhoop-ios",
@@ -5228,12 +5246,17 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110659108076769728"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@0xLogicrw, 2026-10-15) relays @hackyguru’s post that Zhoop, his fork of the community NOOP app, keeps his WHOOP strap working locally after he dropped the subscription, and adds that he feeds the data to a health AI agent. The pinned Zhoop repository is a single-commit weight-loss rebuild of NOOP for iPhone; its README says the Bluetooth, strap protocol, storage, sleep staging and calorie model are NOOP’s, unchanged, and mentions no AI agent. Zhoop documents no reverse-engineering work of its own. Retain the lead without a catalog mapping; NOOP is a separate project not yet catalogued, and this is not a finding about either app.",
+      "reason_zh": "所引帖子（@0xLogicrw，2026-10-15）转述 @hackyguru 的帖子：他停止 WHOOP 订阅后保留了手环，改用自己基于社区项目 NOOP 分叉的 Zhoop 在本地使用，并补充称他把这些数据接入了自己的健康 AI 智能体。固定版本的 Zhoop 仓库是在 NOOP 基础上仅一次提交、面向减重的 iPhone 改版；其 README 称蓝牙、手环协议、存储、睡眠分期和热量模型均沿用 NOOP、未作改动，也未提及 AI 智能体。Zhoop 未记录任何自己的逆向工作。保留此线索而不建立目录映射；NOOP 是另一个尚未收录的项目，这也不是对两款应用的评判。",
+      "primary_evidence_urls": [
+        "https://x.com/0xLogicrw/status/2110659108076769728",
+        "https://x.com/hackyguru/status/2104611154559742444",
+        "https://github.com/hackyguru/zhoop/blob/4eb04683c65428e1226a286622e489db3f5acaf6/README.md",
+        "https://github.com/hackyguru/zhoop/blob/4eb04683c65428e1226a286622e489db3f5acaf6/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -5268,12 +5291,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110670751087137197"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@xiyue0803, 2026-10-15) explains REA in general terms and describes an unattributed test in which an agent, given a short prompt, rebuilt macOS Notes as a native three-column SwiftUI app, plus a comparison in which the REA-guided version was more faithful than one built without REA. It names no tester, prompt, model or source and links no code, comparison data or write-up; REA’s showcase pages list no such case, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the rebuild and the comparison are unestablished.",
+      "reason_zh": "作者帖子（@xiyue0803，2026-10-15）概括介绍了 REA，并描述了一次未注明出处的测试：智能体在极短指令下把 macOS 备忘录复刻为原生 SwiftUI 三栏应用；另有对比测试显示，按 REA 流程交付的版本在细节还原度上胜过不挂载 REA 的版本。帖子未指明测试者、提示词、模型或来源，也未链接代码、对比数据或说明文档；REA 的案例展示页没有此类案例，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该复刻及对比结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/xiyue0803/status/2110670751087137197",
+        "https://rea.tools/showcase/"
+      ],
       "catalog_matches": []
     },
     {
@@ -15755,17 +15781,17 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 196,
-      "insufficient-evidence": 176,
-      "pending": 219
+      "already-curated": 197,
+      "insufficient-evidence": 181,
+      "pending": 213
     },
     "units_by_state": {
-      "already-curated": 194,
-      "insufficient-evidence": 176,
-      "pending": 219
+      "already-curated": 195,
+      "insufficient-evidence": 181,
+      "pending": 213
     },
-    "primary_reviewed_units": 312,
-    "catalog_linked_occurrences": 206,
+    "primary_reviewed_units": 318,
+    "catalog_linked_occurrences": 207,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
     "unique_projects": null
