@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**617 repositories** · 2026-10-16 UTC
+**616 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -119,7 +119,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [yincongcyincong/wechat\_chatter](https://github.com/yincongcyincong/wechat_chatter) — Reverse engineering and hooking message sending and receiving in WeChat for macOS. **[655 stars]**
 - [pret/pokeheartgold](https://github.com/pret/pokeheartgold) — Decompilation of Pokemon HeartGold/SoulSilver **[649 stars]** · Curated: [Pokémon HeartGold and SoulSilver: a work-in-progress, checksum-matched DS disassembly](https://awesomerea.org/resources/pokemon-heartgold-soulsilver-disassembly-case/)
 - [ThomasThelen/Anti-Debugging](https://github.com/ThomasThelen/Anti-Debugging) — A collection of c++ programs that demonstrate common ways to detect the presence of an attached debugger. **[630 stars]**
-- [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic produces goto-free C output from LLVM bitcode **[621 stars]**
 - [GRAnimated/MinecraftLCE](https://github.com/GRAnimated/MinecraftLCE) — 11.217% - Decompilation of Minecraft: Legacy Console Edition **[620 stars]**
 - [NoviScl/Design2Code](https://github.com/NoviScl/Design2Code) — No description supplied by the upstream repository. **[603 stars]** · Paper: [Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering](https://awesomerea.org/papers/paper-design2code/)
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — Combines chrome-devtools-mcp capabilities with Skill specifications to automate frontend JavaScript reverse-engineering analysis using JSRPC, Flask, and autoDecoder, improving reverse-engineering efficiency. **[598 stars]**
