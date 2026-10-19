@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2339,6 +2339,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 ### 反编译与符号恢复
 
 [↑ 论文主题](#papers) · [目录](#目录)
+
+- [**基于结构感知检索与迭代验证将优化二进制提升为规范编译器 IR**](https://aclanthology.org/2026.acl-long.527/)
+
+  BRIDGE 将以 llvm-objdump 反汇编形式给出的、已剥离符号并经过优化的 x86-64 与 ARM64 函数提升为 LLVM IR，目标是固定 clang -O0 配置为原始源码生成的未优化 IR。离线阶段，它将 69,253 个 ExeBench 函数分别以 -O0 至 -O3 编译并构建检索数据库，借助 LLVM 伪探针插桩将汇编片段与对应的 -O0 IR 区域对齐。推理时，它把 angr 恢复的函数控制流图划分为循环、if–else 等控制流片段，从基于 Nova-1.3B 嵌入的 FAISS 索引中为每个片段检索三个最相近的已对齐汇编—IR 对，再提示托管的通用大语言模型（DeepSeek-chat）生成 IR。随后最多进行五轮修正，把 LLVM 校验器与编译器诊断信息以及单元测试失败结果反馈给模型。在以 Clang 19 按 -O0 至 -O3 编译的 HumanEval-Decompile 与 MBPP 上，其平均可重新执行率在 x86-64 上为 65.2% 和 65.4%，在 ARM64 上为 45.6% 和 42.1%。基于规则的 MCTOLL 在 x86-64 上为 62.1% 和 64.9%，五个直接提示的 API 大语言模型最高为 21.5%。
+
+  ACL 2026 · 会议论文 · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [代码](https://github.com/Azhu-c/BRIDGE-rag) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-bridge-lifting/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评测在函数级别、针对短小的基准程序进行：HumanEval-Decompile 与 MBPP 子集，输入为 2 至 628 条汇编指令，由作者在 Linux 上使用单一 LLVM/Clang 19 工具链构建。“规范”指与一个固定的 clang -O0 配置输出一致，而非恢复原始源码。修正过程与可重新执行率指标都使用这些基准自带的单元测试；作者指出，实际逆向工程中很少有这类测试预言。在 x86-64 HumanEval-Decompile 上，改用大语言模型生成的测试时可重新执行率从 65.2% 降至 60.8%，不使用测试时降至 53.5%。输出在结构上仍与参考结果存在差异：平均编辑相似度低于 50%，该基准上控制流图完全匹配率为 25.9%。流水线调用托管的大语言模型 API，大语言模型基线同样如此；结果为五次运行的几何平均值，可能随托管模型变化而改变。作者认为 Forklift 与 LLM Compiler FTD 处理的是编译器生成的汇编文本，因此未将其列为基线；MCTOLL 仅在 x86-64 上参与比较。支持其他指令集需要重建检索数据库。BRIDGE 输出的是 LLVM IR 而非 C 源码，因此不是面向 C 的反编译器。代码仓库没有许可证。
+
+  **作者:** Xiaoao Zhu 等
+
+  </details>
 
 - [**SoK：人工智能增强的二进制逆向工程**](https://arxiv.org/abs/2606.17398)
 

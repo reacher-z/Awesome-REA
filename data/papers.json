@@ -4713,5 +4713,61 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-bridge-lifting",
+    "title": "Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification",
+    "title_zh": "基于结构感知检索与迭代验证将优化二进制提升为规范编译器 IR",
+    "authors": [
+      "Xiaoao Zhu",
+      "Jie Ren",
+      "Zhiqiang Li",
+      "Jie Zheng",
+      "Zhanyong Tang",
+      "Zheng Wang"
+    ],
+    "year": 2026,
+    "publication_date": "2026-07",
+    "date_precision": "month",
+    "date_basis": "The official ACL Anthology citation and BibTeX give July 2026. Crossref records only the year; the July 2–7 conference dates printed in the PDF are not treated as a publication day.",
+    "date_basis_zh": "ACL Anthology 官方引文与 BibTeX 给出 2026 年 7 月。Crossref 仅记录年份；PDF 中印有的 7 月 2–7 日会议日期不作为具体出版日。",
+    "venue": "ACL 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.18653/v1/2026.acl-long.527",
+    "url": "https://aclanthology.org/2026.acl-long.527/",
+    "pdf_url": "https://aclanthology.org/2026.acl-long.527.pdf",
+    "code_url": "https://github.com/Azhu-c/BRIDGE-rag",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BRIDGE lifts stripped, optimized x86-64 and ARM64 functions, given as llvm-objdump disassembly, to LLVM IR. Its target is the unoptimized IR that a fixed clang -O0 configuration emits for the original source. Offline, it builds a retrieval database from 69,253 ExeBench functions compiled at -O0 to -O3, using LLVM pseudo-probe instrumentation to align assembly fragments with the matching -O0 IR regions. At inference it splits each function's angr-recovered control-flow graph into control-flow segments such as loops and if–else regions, retrieves the three nearest aligned assembly–IR pairs per segment from a FAISS index of Nova-1.3B embeddings, and prompts a hosted general-purpose LLM (DeepSeek-chat) to write the IR. Up to five refinement rounds then feed LLVM verifier and compiler diagnostics and unit-test failures back to the model. On HumanEval-Decompile and MBPP compiled with Clang 19 at -O0 to -O3, average re-executability is 65.2% and 65.4% on x86-64 and 45.6% and 42.1% on ARM64. The rule-based MCTOLL reaches 62.1% and 64.9% on x86-64, and the five directly prompted API LLMs reach at most 21.5%.",
+    "description_zh": "BRIDGE 将以 llvm-objdump 反汇编形式给出的、已剥离符号并经过优化的 x86-64 与 ARM64 函数提升为 LLVM IR，目标是固定 clang -O0 配置为原始源码生成的未优化 IR。离线阶段，它将 69,253 个 ExeBench 函数分别以 -O0 至 -O3 编译并构建检索数据库，借助 LLVM 伪探针插桩将汇编片段与对应的 -O0 IR 区域对齐。推理时，它把 angr 恢复的函数控制流图划分为循环、if–else 等控制流片段，从基于 Nova-1.3B 嵌入的 FAISS 索引中为每个片段检索三个最相近的已对齐汇编—IR 对，再提示托管的通用大语言模型（DeepSeek-chat）生成 IR。随后最多进行五轮修正，把 LLVM 校验器与编译器诊断信息以及单元测试失败结果反馈给模型。在以 Clang 19 按 -O0 至 -O3 编译的 HumanEval-Decompile 与 MBPP 上，其平均可重新执行率在 x86-64 上为 65.2% 和 65.4%，在 ARM64 上为 45.6% 和 42.1%。基于规则的 MCTOLL 在 x86-64 上为 62.1% 和 64.9%，五个直接提示的 API 大语言模型最高为 21.5%。",
+    "scope_limitations_en": "Evaluation is function-level on short benchmark programs: HumanEval-Decompile and an MBPP subset, with inputs of 2 to 628 assembly instructions, built by the authors with one LLVM/Clang 19 toolchain on Linux. Canonical means matching one fixed clang -O0 configuration, not recovering the original source. Refinement and the re-executability metric both use the unit tests these benchmarks supply; the authors note that such test oracles are rarely available in practical reverse engineering. On x86-64 HumanEval-Decompile, re-executability falls from 65.2% to 60.8% with LLM-generated tests and to 53.5% with no tests. Output still diverges structurally from the reference: average edit similarity stays below 50%, and exact control-flow-graph matches reach 25.9% on that benchmark. The pipeline calls a hosted LLM API, as do the LLM baselines; results are geometric means of five runs and can shift as hosted models change. Forklift and LLM Compiler FTD are excluded from the baselines because the authors treat them as lifting compiler-emitted assembly text, and MCTOLL is compared only on x86-64. Other instruction sets need a rebuilt retrieval database. BRIDGE produces LLVM IR, not C source, so it is not a decompiler to C. The code repository has no license.",
+    "scope_limitations_zh": "评测在函数级别、针对短小的基准程序进行：HumanEval-Decompile 与 MBPP 子集，输入为 2 至 628 条汇编指令，由作者在 Linux 上使用单一 LLVM/Clang 19 工具链构建。“规范”指与一个固定的 clang -O0 配置输出一致，而非恢复原始源码。修正过程与可重新执行率指标都使用这些基准自带的单元测试；作者指出，实际逆向工程中很少有这类测试预言。在 x86-64 HumanEval-Decompile 上，改用大语言模型生成的测试时可重新执行率从 65.2% 降至 60.8%，不使用测试时降至 53.5%。输出在结构上仍与参考结果存在差异：平均编辑相似度低于 50%，该基准上控制流图完全匹配率为 25.9%。流水线调用托管的大语言模型 API，大语言模型基线同样如此；结果为五次运行的几何平均值，可能随托管模型变化而改变。作者认为 Forklift 与 LLM Compiler FTD 处理的是编译器生成的汇编文本，因此未将其列为基线；MCTOLL 仅在 x86-64 上参与比较。支持其他指令集需要重建检索数据库。BRIDGE 输出的是 LLVM IR 而非 C 源码，因此不是面向 C 的反编译器。代码仓库没有许可证。",
+    "why_fits_en": "Adds retrieval-guided LLM lifting of optimized machine code to compiler IR with verifier and test feedback, complementing rule-based lifters such as rev.ng and the assembly-to-C neural decompilation papers in this section.",
+    "why_fits_zh": "补充借助检索引导、并以校验器与测试反馈修正的大语言模型方法，将优化后的机器码提升为编译器 IR，与 rev.ng 等基于规则的提升工具及本节中从汇编生成 C 的神经反编译论文互补。",
+    "metadata_notes": "The ACL Anthology page and BibTeX give the Proceedings of the 64th Annual Meeting of the ACL (Volume 1: Long Papers), pages 11498–11516, San Diego, published by the ACL, and the same six authors in order; the Crossref DOI record matches the title, authors and pages and gives only the year. No arXiv version was found by arXiv title and keyword searches, so arxiv_id is null. In §6.1 the text gives 42.1% average re-executability for ARM64 HumanEval-Decompile, while Table 1 lists 45.6% for that benchmark and 42.1% for ARM64 MBPP; this record follows the table. The PDF's online-materials note links Azhu-c/BRIDGE-rag. At the reviewed 2026-07-06 commit the repository has no LICENSE file and GitHub reports no license. Its README recommends Python 3.10 and requires a DeepSeek API key, and the LLM wrapper defaults to the deepseek-chat model through an OpenAI-compatible client. requirements.txt pins openai 1.57.0, angr 9.2.162, torch 2.5.1 and faiss-gpu 1.7.2. The knowledge-base configuration expects ExeBench samples under ./data/exebench_samples and a local Nova-1.3b model path; neither is in the repository. Evaluation_datasets holds HumanEval-Decompile and MBPP-subset inputs for both instruction sets with BRIDGE and baseline outputs, and docs/ holds a copy of the paper. Nothing was downloaded beyond the paper, and no code or experiments were run.",
+    "metadata_notes_zh": "ACL Anthology 页面与 BibTeX 列出第 64 届 ACL 年会论文集（第 1 卷：长文）、第 11498–11516 页、圣迭戈、由 ACL 出版，作者为顺序相同的六人；Crossref DOI 记录的标题、作者与页码一致，但只给出年份。arXiv 标题与关键词检索均未找到该论文，因此 arxiv_id 为 null。§6.1 正文称 ARM64 HumanEval-Decompile 的平均可重新执行率为 42.1%，而表 1 列出该基准为 45.6%、ARM64 MBPP 为 42.1%；本条目以表格为准。PDF 的在线材料说明链接 Azhu-c/BRIDGE-rag。在所审阅的 2026-07-06 提交中，仓库没有 LICENSE 文件，GitHub 也未识别出许可证。README 推荐 Python 3.10 并要求 DeepSeek API 密钥，大语言模型封装代码默认通过 OpenAI 兼容客户端调用 deepseek-chat 模型。requirements.txt 固定 openai 1.57.0、angr 9.2.162、torch 2.5.1 与 faiss-gpu 1.7.2。知识库配置要求在 ./data/exebench_samples 下提供 ExeBench 样本，并指定本地 Nova-1.3b 模型路径；二者都不在仓库中。Evaluation_datasets 包含两种指令集的 HumanEval-Decompile 与 MBPP 子集输入，以及 BRIDGE 和基线的输出；docs/ 中存有论文副本。除论文外未下载任何内容，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://aclanthology.org/2026.acl-long.527/",
+      "https://aclanthology.org/2026.acl-long.527.bib",
+      "https://aclanthology.org/2026.acl-long.527.pdf",
+      "https://api.crossref.org/works/10.18653/v1/2026.acl-long.527",
+      "https://github.com/Azhu-c/BRIDGE-rag/tree/9add8abe0f15748cfae36395b07c6fc4e4ecc386",
+      "https://github.com/Azhu-c/BRIDGE-rag/blob/9add8abe0f15748cfae36395b07c6fc4e4ecc386/README.md",
+      "https://github.com/Azhu-c/BRIDGE-rag/blob/9add8abe0f15748cfae36395b07c6fc4e4ecc386/requirements.txt",
+      "https://github.com/Azhu-c/BRIDGE-rag/blob/9add8abe0f15748cfae36395b07c6fc4e4ecc386/default.env.example",
+      "https://github.com/Azhu-c/BRIDGE-rag/blob/9add8abe0f15748cfae36395b07c6fc4e4ecc386/configs/knowledge_base.yaml",
+      "https://github.com/Azhu-c/BRIDGE-rag/blob/9add8abe0f15748cfae36395b07c6fc4e4ecc386/src/llm/llm_api.py",
+      "https://github.com/Azhu-c/BRIDGE-rag/tree/9add8abe0f15748cfae36395b07c6fc4e4ecc386/Evaluation_datasets"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

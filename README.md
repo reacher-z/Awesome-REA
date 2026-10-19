@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2197,13 +2197,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2338,6 +2338,21 @@ Open “Scope and publication details” for each study’s full limitations. So
 ### Decompilation and symbol recovery
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**Lifting Optimized Binaries to Canonical Compiler IR via Structure-Aware Retrieval and Iterative Verification**](https://aclanthology.org/2026.acl-long.527/)
+
+  BRIDGE lifts stripped, optimized x86-64 and ARM64 functions, given as llvm-objdump disassembly, to LLVM IR. Its target is the unoptimized IR that a fixed clang -O0 configuration emits for the original source. Offline, it builds a retrieval database from 69,253 ExeBench functions compiled at -O0 to -O3, using LLVM pseudo-probe instrumentation to align assembly fragments with the matching -O0 IR regions. At inference it splits each function's angr-recovered control-flow graph into control-flow segments such as loops and if–else regions, retrieves the three nearest aligned assembly–IR pairs per segment from a FAISS index of Nova-1.3B embeddings, and prompts a hosted general-purpose LLM (DeepSeek-chat) to write the IR. Up to five refinement rounds then feed LLVM verifier and compiler diagnostics and unit-test failures back to the model. On HumanEval-Decompile and MBPP compiled with Clang 19 at -O0 to -O3, average re-executability is 65.2% and 65.4% on x86-64 and 45.6% and 42.1% on ARM64. The rule-based MCTOLL reaches 62.1% and 64.9% on x86-64, and the five directly prompted API LLMs reach at most 21.5%.
+
+  ACL 2026 · Conference paper · [PDF](https://aclanthology.org/2026.acl-long.527.pdf) · [Code](https://github.com/Azhu-c/BRIDGE-rag) · [Full entry & citation](https://awesomerea.org/papers/paper-bridge-lifting/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Evaluation is function-level on short benchmark programs: HumanEval-Decompile and an MBPP subset, with inputs of 2 to 628 assembly instructions, built by the authors with one LLVM/Clang 19 toolchain on Linux. Canonical means matching one fixed clang -O0 configuration, not recovering the original source. Refinement and the re-executability metric both use the unit tests these benchmarks supply; the authors note that such test oracles are rarely available in practical reverse engineering. On x86-64 HumanEval-Decompile, re-executability falls from 65.2% to 60.8% with LLM-generated tests and to 53.5% with no tests. Output still diverges structurally from the reference: average edit similarity stays below 50%, and exact control-flow-graph matches reach 25.9% on that benchmark. The pipeline calls a hosted LLM API, as do the LLM baselines; results are geometric means of five runs and can shift as hosted models change. Forklift and LLM Compiler FTD are excluded from the baselines because the authors treat them as lifting compiler-emitted assembly text, and MCTOLL is compared only on x86-64. Other instruction sets need a rebuilt retrieval database. BRIDGE produces LLVM IR, not C source, so it is not a decompiler to C. The code repository has no license.
+
+  **Authors:** Xiaoao Zhu et al.
+
+  </details>
 
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398)
 
