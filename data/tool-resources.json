@@ -14490,5 +14490,41 @@
       "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/test-compile.yml",
       "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/update-progress.yml"
     ]
+  },
+  {
+    "id": "ff7-ps1-matching-decomp-case",
+    "name": "Final Fantasy VII: a matching PlayStation decompilation",
+    "url": "https://github.com/Xeeynamo/ff7-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C source for the US PlayStation release of Final Fantasy VII, aiming for code that compiles back to the original main executable and its game overlays. The build splits the user’s disc files with splat, compiles with period cc1-psx compilers and checks every rebuilt file against its SHA-1. A native build against the PsyZ PlayStation-library replacement is compiled in CI but is not documented as a playable port.",
+    "description_zh": "为 Final Fantasy VII 美版 PlayStation 发行版重建 C 源码，目标是让代码重新编译出原版主可执行文件及各游戏覆盖段（overlay）。构建流程用 splat 拆分使用者自备的光盘文件，以当年的 cc1-psx 编译器编译，并用 SHA-1 校验每个重建文件。基于 PsyZ（PlayStation 库替代实现）的原生构建会在 CI 中编译，但未作为可游玩的移植版加以说明。",
+    "evidence_url": "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project describes itself as a matching decompilation of the PS1 game; config/us.yaml defines the single us version, covering SCUS_941.63 and battle, field, menu, world, minigame, magic and other overlays with 29 SHA-1 entries. Source tables such as the chocobo minigame’s arccosine table are data taken from the game, as is usual for such projects. README states no completion figure; CI uploads a progress report as a build artifact, and this collection recorded none.",
+      "Supply disc 1 of Final Fantasy VII (USA) as BIN/CUE under disks/; README lists the USA Interactive Sampler CD as optional, though the reviewed config builds only us. CONTRIBUTING says the repository includes no original game data and is not a playable or standalone version. CI fetches its disc images from a private dependency repository through a secret token.",
+      "README documents Debian/Ubuntu and Arch Linux with Go, Python 3 (a venv with splat64, spimdisasm and others), ninja, 7zip, bchunk and mipsel-linux-gnu binutils and GCC; CI notes that Ubuntu 24.04’s binutils 2.42 linker does not match the game. Make downloads the cc1-psx-26 and cc1-psx-272 compiler builds from the project’s init release and checks them against committed SHA-256 files; maspsx, m2c, asm-differ and PsyZ come in as submodules, and a Dockerfile is provided.",
+      "make build ends with a ninja rule running sha1sum -c over the expected hashes of every overlay. CI on the upstream repository checks formatting, runs that build, lints for overlapping symbols and compiles the PsyZ build. These checks compare file identity for the US release, not gameplay coverage, and this collection did not rerun them.",
+      "LICENSE is AGPL-3.0; the game discs, extracted data and downloaded compilers keep separate rights. README says the decompiled code is written by humans and rejects LLM-accelerated decompilation, while allowing LLMs for tooling, permuting hard functions or hunting runtime bugs; CONTRIBUTING forbids autonomously generated pull requests and commit messages. No REA use is documented and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/CONTRIBUTING.md",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/Makefile",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/config/us.yaml",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/tools/ninja/gen.py",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/tools/builder/builder/build.go",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/.github/workflows/build.yaml",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/CMakeLists.txt",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/.gitmodules",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/bin/cc1-psx-26.gz.sha256",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/Dockerfile",
+      "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/LICENSE"
+    ]
   }
 ]
