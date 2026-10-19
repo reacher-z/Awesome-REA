@@ -4074,5 +4074,15 @@
       "发布压缩包需要 .NET 6.0 Desktop Runtime，各项目的目标框架为 net6.0。仓库唯一的 GitHub 工作流在 Windows 上用 MSBuild 编译解决方案并把构建结果上传为制品，导出工具的生成后步骤使用 Windows 的 robocopy 命令；未说明支持其他平台。仓库中没有测试项目。",
       "仓库没有许可证文件，GitHub 也未检测到许可证，因此未说明复用条款。README 致谢 Kostya 开发了图像库。所审阅资料未提及使用 REA，本目录未运行该工具，也未分析任何游戏。"
     ]
+  },
+  "scooterlink-honda-roadsync-case": {
+    "name": "ScooterLink：重建 Honda RoadSync 车把按键协议",
+    "requirements": [
+      "所审阅的提交位于 v1.2 发布之后，只改动了 README 中的一个链接。项目面向配备 TFT 仪表并支持 RoadSync 的 Honda PCX 2025；README 报告在一台 PCX125 2025 上测试，其他支持 RoadSync 的车型被标为未测试。Select 与 Back 键对应播放／暂停，Next／Previous 对应切换曲目，应用会在点火时自动重连并把仪表切换到手机模式。无法显示正在播放的曲目、车速或调节音量，也没有 Android 版本。",
+      "运行时无需任何 Honda 软件，但须先在仪表上删除 RoadSync 的手机配对，因为仪表只保存一部手机的密钥。据称协议是依据官方 RoadSync Android 应用及通信日志推断得出；源码注释提到反编译的 Android 应用 26.8.10 版本及一份调查记录文件，但该应用、反编译代码、抓包记录和这份文件均未收录在仓库中。",
+      "构建需要一台装有 Xcode 16+ 与 XcodeGen 的 Mac，以及使用者自己的签名团队和 Bundle ID；应用面向 iOS 17，预构建的 v1.2 IPA 须借助个人或开发者 Apple ID 侧载安装。控制其他应用的播放依赖 Apple 的私有 MediaRemote 框架，README 称因此无法上架 App Store。",
+      "docs/PROTOCOL.md 将密钥交换、每次连接的验证、按键注册、手机界面请求和按键事件标为已在一台实际 PCX125 2025 上确认，仪表绘制则标为未验证。一项在 Mac 上运行的 Swift 自测检查 CRC 值、模拟的密钥交换、验证应答解析以及注册与界面的字节布局；本次核查既未运行测试，也未运行应用。README 报告，实验性的颜色槽位和自绘界面曾使仪表在重新配对前拒绝进入手机模式，因此相关代码保持关闭，并警告切勿写入固件更新服务。",
+      "项目代码采用 MIT 许可。README 称项目独立于 Honda，不含任何 Honda 代码或文件，只有原创代码以及为互操作编写的蓝牙消息说明；Honda、PCX 与 RoadSync 仍为其权利人的商标。作者帖子称逆向工作由 Claude 完成，但仓库并未记录这一过程，也未确立任何 REA 使用。"
+    ]
   }
 }
