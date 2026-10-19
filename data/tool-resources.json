@@ -7196,5 +7196,42 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "usque-warp-masque-client-case",
+    "name": "usque: an open reimplementation of Cloudflare WARP’s MASQUE mode",
+    "url": "https://github.com/Diniboy1123/usque",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Reimplements the MASQUE mode of Cloudflare’s WARP client in Go, tunnelling IP traffic over QUIC/HTTP/3 with Connect-IP (RFC 9484) and exposing it as a native TUN device, SOCKS5 or HTTP proxies, TCP-only L4 proxies or port forwarding. RESEARCH.md describes how the author worked out device enrollment, TLS client authentication and Cloudflare’s non-standard cf-connect-ip variant by analyzing the official Android client with Frida, mitmproxy, JADX, IDA Free and Wireshark. It registers with and connects to Cloudflare’s service outside the official client.",
+    "description_zh": "用 Go 重新实现 Cloudflare WARP 客户端的 MASQUE 模式：通过基于 QUIC/HTTP/3 的 Connect-IP（RFC 9484）隧道传输 IP 流量，并以原生 TUN 设备、SOCKS5 或 HTTP 代理、仅 TCP 的 L4 代理或端口转发等形式提供。RESEARCH.md 记录了作者如何借助 Frida、mitmproxy、JADX、IDA Free 和 Wireshark 分析官方 Android 客户端，弄清设备注册、TLS 客户端认证以及 Cloudflare 非标准的 cf-connect-ip 变体。它在官方客户端之外向 Cloudflare 服务注册并建立连接。",
+    "evidence_url": "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-07-20 main head, identical to release v4.2.1. The README calls the project early-stage, says its Go API is unstable if used as a library, and states that only the Linux amd64 release binary was tested, although builds are published for Android, Linux, Windows and macOS on several architectures. RESEARCH.md is a narrative research log; the concise protocol document the README plans has not been written.",
+      "Requires access to Cloudflare’s WARP service: the register command creates a new WARP account and enrolls a device key, and the generated config holds that registration’s keys and tokens. The tool uses Cloudflare’s service outside the official client; the README says it is not affiliated with, endorsed by or reviewed by Cloudflare, asks users not to abuse the service and notes that the tool is detectable. ZeroTrust login needs SSO the tool cannot perform; this record gives no token, account or configuration details.",
+      "Building needs Go 1.26.3+ with CGO disabled. The project depends on the author’s fork of connect-ip-go because, the README says, Cloudflare’s implementation is not fully RFC 9484-compliant; quic-go carries the connection, and gVisor and wireguard-go netstacks let the proxy modes run in user space without root. Native TUN mode is limited to Linux and Windows, while the README’s Known Issues list still says Linux only. A Dockerfile is provided.",
+      "CI verifies modules and runs go build, go vet, go test and golangci-lint, but the reviewed tree contains no Go test files, so correctness evidence is the author’s own use. The README reports one SOCKS5 speed test of about 834/773 Mbps on a 1 Gbps link and lists missing features such as happy eyeballs, WireGuard and DNS-over-HTTPS. These results are author-reported, and this source review ran nothing.",
+      "MIT (LICENSE.md). Cloudflare’s service terms and trademarks apply separately, and the README describes usque as an independent research project. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/RESEARCH.md",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/go.mod",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/api/masque.go",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/api/tunnel.go",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/cmd/nativetun_windows.go",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/.github/workflows/ci.yml",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/goreleaser.yml",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/Dockerfile",
+      "https://github.com/Diniboy1123/usque/blob/6aa03fc97d12848dce34eedbd187fb1077b5d1ea/LICENSE.md",
+      "https://github.com/Diniboy1123/usque/releases/tag/v4.2.1",
+      "https://datatracker.ietf.org/doc/rfc9484/"
+    ]
   }
 ]

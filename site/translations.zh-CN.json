@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "usque-warp-masque-client-case": {
+    "name": "usque：Cloudflare WARP MASQUE 模式的开源再实现",
+    "requirements": [
+      "审阅对象为 2026-07-20 的 main 最新提交，与 v4.2.1 版一致。README 称项目仍处于早期阶段，作为库使用时 Go API 不稳定，并说明只有 Linux amd64 发布版经过测试，尽管发布内容包括多种架构的 Android、Linux、Windows 和 macOS 构建。RESEARCH.md 是叙述式研究记录；README 计划撰写的简明协议文档尚未完成。",
+      "需要访问 Cloudflare WARP 服务：register 命令会新建 WARP 账号并注册设备密钥，生成的配置文件保存该注册的密钥和令牌。该工具在官方客户端之外使用 Cloudflare 的服务；README 声明它与 Cloudflare 无关，未获其认可或审查，要求用户不要滥用服务，并指出该工具可被识别。ZeroTrust 登录需要该工具无法完成的 SSO；本条目不提供任何令牌、账号或配置细节。",
+      "构建需要 Go 1.26.3+ 并关闭 CGO。README 称 Cloudflare 的实现并不完全符合 RFC 9484，因此项目依赖作者 fork 的 connect-ip-go；连接由 quic-go 承载，gVisor 和 wireguard-go 的网络栈使各代理模式无需 root 即可在用户态运行。原生 TUN 模式仅支持 Linux 和 Windows，但 README 的已知问题列表仍写着仅支持 Linux。仓库提供 Dockerfile。",
+      "CI 会校验模块并运行 go build、go vet、go test 和 golangci-lint，但所审阅的文件树中没有 Go 测试文件，因此正确性证据来自作者自己的使用。README 报告一次 SOCKS5 测速结果，在 1 Gbps 链路上约为 834/773 Mbps，并列出 happy eyeballs、WireGuard 和 DNS-over-HTTPS 等缺失功能。这些结果均为作者报告，本次来源核查未运行任何内容。",
+      "采用 MIT 许可（LICENSE.md）。Cloudflare 的服务条款和商标另行适用，README 将 usque 描述为独立研究项目。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
