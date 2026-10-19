@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 431](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-431-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 432](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-432-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (62)
-- [原生二进制](#native-binary) (54) · [固件与硬件](#firmware) (20) · [协议](#protocol) (17)
+- [原生二进制](#native-binary) (55) · [固件与硬件](#firmware) (20) · [协议](#protocol) (17)
 
 **论文与工作流**
 
@@ -2001,6 +2001,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Kaspersky 发布的 IDA 插件，为 Hex-Rays 反编译器加入了作者在包括恶意软件分析在内的逆向工作中积累的各类工具。它可用内置密码算法解密字符串、数据和常量，或借助 IDA 的 Appcall 调试器功能批量解密；还能识别 API 名称哈希、消除控制流平坦化并强制反编译混淆代码，并通过微码签名、内联函数检测和从 IDA 数据库生成的 PAT 文件识别库代码。伪代码辅助功能包括自动重命名、类型修改和枚举替换、结构体创建、虚函数与间接调用导航以及补丁。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/hrtng/)
+
+- [**BinCAT 二进制静态分析工具包**](https://github.com/airbus-seclab/bincat)
+
+  面向逆向工程人员的二进制代码静态分析工具包。它从选定的地址和初始状态出发，计算寄存器与内存的值、污点和重建出的类型，支持前向与后向分析，并能检测堆上的释放后使用和重复释放；无法确定的位会标为未知。分析可在 IDA 插件中进行，分析人员可覆盖值或污点、跳过函数或把指令替换为 NOP 后重新运行；也可通过 Python 和 .ini 配置文件实现自动化。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/bincat/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
