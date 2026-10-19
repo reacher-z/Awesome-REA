@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 354](https://img.shields.io/badge/resources-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 354](https://img.shields.io/badge/resources-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2239,13 +2239,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2798,6 +2798,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.
 
   **Authors:** Yaniv David et al.
+
+  </details>
+
+- [**Binary Rewriting without Control Flow Recovery**](https://dl.acm.org/doi/10.1145/3385412.3385972)
+
+  E9Patch statically rewrites x86-64 binaries by inserting jumps to trampolines without moving any other instruction, so the original set of jump targets is preserved and control-flow recovery, symbolization and debug information are not needed. Where a five-byte jump does not fit, instruction punning, padding and successor or neighbor eviction overlap the jump with existing bytes or relocate neighboring instructions into their own trampolines; physical page grouping reduces the memory and file-size cost of scattered trampolines. Instruction locations come from a separate frontend, a basic linear disassembler in the evaluation. The authors evaluate SPEC2006, Ubuntu 16.04 system binaries, and Chrome and Firefox builds over 100 MB, and demonstrate binary repair and heap-write hardening with low fat pointers.
+
+  PLDI 2020 · Conference paper · [PDF](https://comp.nus.edu.sg/~gregory/papers/e9patch.pdf) · [Code](https://github.com/GJDuck/e9patch) · [Full entry & citation](https://awesomerea.org/papers/paper-e9patch/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** This is static binary rewriting and instrumentation, not decompilation or source recovery. It relies on the frontend’s instruction locations and sizes being correct, assumes patched code is not read as data or self-modified, and assumes the input does not already use overlapping instructions. Each tactic can fail: 1,098 of about 10.5 million patch locations were not patched, baseline coverage alone was 72.79% for jumps and 81.63% for heap writes, and non-PIE binaries are harder than PIE ones. Chrome’s mixed code and data required starting disassembly after ChromeMain, and Firefox’s code was patched in libxul.so. Reported overheads, such as about 113% for Chrome and 46% for Firefox on Dromaeo DOM benchmarks with heap-write instrumentation, were measured with the PLDI prototype, with SPEC2006 compiled by GCC in non-PIE mode; they do not describe the current release.
+
+  **Authors:** Gregory J. Duck et al.
 
   </details>
 

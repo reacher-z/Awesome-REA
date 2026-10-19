@@ -71,7 +71,7 @@
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools：可移植可执行文件（PE）操作工具包。 **[1,201 星标]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 IDA MCP 服务器。 **[1,196 星标]** · 精选：[Hex-Rays IDA MCP](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
 - [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — 适用于 Ghidra 软件逆向工程套件的脚本。 **[1,177 星标]**
-- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]**
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — 功能强大的静态二进制重写工具。 **[1,156 星标]** · 论文：[无需控制流恢复的二进制重写](https://awesomerea.org/zh/papers/paper-e9patch/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — 用于自动化 UEFI 固件分析与逆向工程的 IDA 插件和加载器。 **[1,138 星标]**
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm 是快速、轻量的 x86/x64 指令解码器。项目还提供快速、基础的 x86/x64 指令模拟器，专门用于检测类似 shellcode 的行为。 **[1,089 星标]**
 - [wisk/medusa](https://github.com/wisk/medusa) — 开源交互式反汇编器。 **[1,089 星标]**

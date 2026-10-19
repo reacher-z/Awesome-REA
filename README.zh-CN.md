@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 354](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 354](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2240,13 +2240,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2799,6 +2799,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 评测使用来自纯 C 语言 GNU 软件包、构建为 x86-64 Linux 可执行文件的 67,246 个过程；在剔除 C++ 可执行文件、测试程序、静态链接软件包及同一软件包的重复版本后，按软件包划分为 60,403／2,034／4,809 个样本。标签取自剥离前的名称，F1 按名称子词计算，因此输出是模型学到的建议，而非恢复出的原始符号。模拟 API 名称混淆（将 .dynstr 节清零）会使 Nero-GNN 的 F1 降至 38.83；论文未处理加壳和更强的混淆。每个过程至少需要一个可静态检测的调用点，内联过程无法命名。数据生成依赖已授权的 IDA Pro（测试版本 6.95）识别过程边界并导出，另需 angr 与 LLVM 10；模型代码使用 TensorFlow 1.13.1。本条不对与当前工具版本的兼容性作任何判断。
 
   **作者:** Yaniv David 等
+
+  </details>
+
+- [**无需控制流恢复的二进制重写**](https://dl.acm.org/doi/10.1145/3385412.3385972)
+
+  E9Patch 对 x86-64 二进制进行静态重写：插入跳转到跳板代码的指令，而不移动其他任何指令，从而保留原有跳转目标集合，无需控制流恢复、符号化或调试信息。当五字节跳转放不下时，它通过指令双关、填充以及后继或邻近指令驱逐，使跳转与已有字节重叠，或把邻近指令移入各自的跳板；物理页分组则降低分散跳板带来的内存与文件体积开销。指令位置由独立的前端提供，评测中使用的是基础线性反汇编器。作者评测了 SPEC2006、Ubuntu 16.04 系统二进制以及超过 100 MB 的 Chrome 与 Firefox，并演示了二进制修复和基于低胖指针的堆写加固。
+
+  PLDI 2020 · 会议论文 · [PDF](https://comp.nus.edu.sg/~gregory/papers/e9patch.pdf) · [代码](https://github.com/GJDuck/e9patch) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-e9patch/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是静态二进制重写与插桩，而非反编译或源码恢复。它依赖前端提供正确的指令位置与长度，假定被修补的代码不会被当作数据读取或自修改，并假定输入本身未使用重叠指令。各项策略都可能失败：约 1,050 万个修补位置中有 1,098 个未能修补；仅用基线方法时，跳转指令覆盖率为 72.79%，堆写指令为 81.63%；非 PIE 二进制比 PIE 更难处理。由于 Chrome 的代码段混有数据，需从 ChromeMain 之后开始反汇编；Firefox 的代码则在 libxul.so 中修补。报告的开销（例如对堆写指令插桩后，在 Dromaeo DOM 基准上 Chrome 约 113%、Firefox 约 46%）是用 PLDI 原型测得的，SPEC2006 以 GCC 非 PIE 模式编译；这些数据不代表当前版本。
+
+  **作者:** Gregory J. Duck 等
 
   </details>
 

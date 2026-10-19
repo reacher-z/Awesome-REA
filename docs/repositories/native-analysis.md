@@ -71,7 +71,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools - Portable executable (PE) manipulation toolkit **[1,201 stars]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Official Hex-Rays IDA MCP Server. **[1,196 stars]** · Curated: [Hex-Rays IDA MCP](https://awesomerea.org/resources/hex-rays-ida-mcp/)
 - [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — Scripts for the Ghidra software reverse engineering suite. **[1,177 stars]**
-- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]**
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]** · Paper: [Binary Rewriting without Control Flow Recovery](https://awesomerea.org/papers/paper-e9patch/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — IDA plugin and loader for UEFI firmware analysis and reverse engineering automation **[1,138 stars]**
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm is a fast, lightweight, x86/x64 instruction decoder. The project also features a fast, basic, x86/x64 instruction emulator, designed specifically to detect shellcode-like behavior. **[1,089 stars]**
 - [wisk/medusa](https://github.com/wisk/medusa) — An open source interactive disassembler **[1,089 stars]**
