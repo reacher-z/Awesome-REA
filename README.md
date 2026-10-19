@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 375](https://img.shields.io/badge/resources-375-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 376](https://img.shields.io/badge/resources-376-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (36) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (37) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2151,6 +2151,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Python CLI and stdio MCP server that checks a model’s structured claims about a binary, such as bytes or typed values at an offset, strings, imports and exports, instruction mnemonics, emulation results and tested or Z3-proved equivalence, and returns VERIFIED, REFUTED or INCONCLUSIVE with the evidence the tools observed. Grounded and refuted results are kept in a per-binary ledger on disk, so a reset or later session resumes from them instead of from a summary, and a reconstruct loop has a model propose claims until an informative set verifies. A separate rollover command replaces context compaction in Claude Code, Codex, Gemini CLI or OpenCode with file hand-offs and fresh sessions.
 
   Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/reverify-claim-verifier/)
+
+- [**DecompAI**](https://github.com/louisgthier/decompai)
+
+  Gradio chat application whose LangGraph ReAct agent analyses an uploaded x86 Linux ELF binary: it lists and disassembles functions, decompiles them with Ghidra, drives radare2 and gdb, and runs shell commands and Python scripts in a privileged Kali Linux runner container. Workspaces are keyed by the binary’s SHA-256, so uploading the same file again restores the session. It came out of a school research project, and its CTF results are the authors’ own report.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/decompai/)
 
 <a id="related-collections"></a>
 ### Related Collections
