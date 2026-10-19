@@ -15611,5 +15611,35 @@
       "https://github.com/greatscottgadgets/packetry/blob/5a7f98b77aa00519ecf7e811c9f26c6534966d05/LICENSE",
       "https://github.com/greatscottgadgets/packetry/releases/tag/v0.5.0"
     ]
+  },
+  {
+    "id": "lucid-microcode-explorer",
+    "name": "Lucid",
+    "url": "https://github.com/gaasedelen/lucid",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin by Markus Gaasedelen for studying how the Hex-Rays decompiler transforms its microcode intermediate language. Opened from a Pseudocode window with View microcode, its explorer stays synchronized with the pseudocode and lets the user scroll a selected microinstruction through each microcode maturity level, tracing sub-operands back to their origins and changing the cursor color when the traced code has been optimized away. Nested sub-instructions can be shown as tree graphs; the author labels it a developer-oriented prototype and code resource, not a general-purpose reverse-engineering tool.",
+    "description_zh": "Markus Gaasedelen 开发的 IDA Pro 插件，用于研究 Hex-Rays 反编译器如何逐步变换其微码（microcode）中间语言。在伪代码窗口中选择 View microcode 即可打开浏览器，它与伪代码保持同步，用户可让选中的微指令依次滚动经过各个微码成熟度层级，把子操作数追溯到来源；若追踪的代码已被优化掉，光标会变色提示。嵌套的子指令可显示为树状图；作者将其定位为面向开发者的原型和代码参考，而不是通用逆向工程工具。",
+    "evidence_url": "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Unmaintained since its initial release: v0.1.1, tagged 2020-09-15, is the last release and the reviewed master commit, with no commits since, and a community pull request adding further features has been open and unmerged since 2024. The README's list of known bugs from that release, including a possible IDA crash when double-clicking some address comments and little testing on macOS and Linux, has not been revised.",
+      "Needs IDA Pro 7.5 or newer with a Hex-Rays decompiler for the analyzed architecture. It is a Python 2/3 plugin without third-party dependencies, installed by copying the plugins folder into IDA's user plugin directory; its UI imports IDA's bundled PyQt5, and compatibility with current IDA releases is not documented.",
+      "Works on binaries the user has opened and decompiled in IDA. It is a viewer for decompiler internals; the README lists microcode-optimizer workflows only as possible future work.",
+      "MIT license. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md#L19-L33",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/README.md#L71-L98",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/plugins/lucid/ui/explorer.py#L1-L10",
+      "https://github.com/gaasedelen/lucid/blob/9f2480dc8e6bbb9421b5711533b0a98d2e9fb5af/LICENSE",
+      "https://github.com/gaasedelen/lucid/releases/tag/v0.1.1",
+      "https://github.com/gaasedelen/lucid/pull/5"
+    ]
   }
 ]
