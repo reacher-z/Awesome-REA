@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 79](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 80](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (79) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (80) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2134,13 +2134,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**79 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**80 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (27) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (28) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2483,6 +2483,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 论文实验限定于 x86 平台的 C 代码和函数级基准。通过抽样测试重新执行，不代表整程序等价或恢复了原始源码。仓库后续版本应与 2024 年论文区分。
 
   **发表信息:** 2024 · EMNLP 2024 · 会议论文 · Hanzhuo Tan 等
+
+  </details>
+
+- [**WaDec：基于大语言模型的 WebAssembly 反编译**](https://dl.acm.org/doi/10.1145/3691620.3695020)
+
+  WaDec 使用循环级 wat–C 代码片段对，以 LoRA 微调 CodeLlama-7b，将 WebAssembly 文本格式（wat）反编译为 C。它按依赖关系排列函数并进行切片，使每个输入至多包含一个循环，嵌套循环以标记替代。提示中补充被调用函数的声明、此前已定义的局部变量以及偏移到字符串的映射；随后重组输出，恢复字符串常量并重命名变量。训练数据来自经 Emscripten 编译的 51,768 个 the-stack-dedup 程序和 377 个 TheAlgorithms/C 程序。作者在 3,977 个 C 文件上报告，代码膨胀率为 3.34%，可重新编译率为 52.11%，可重新执行率为 43.55%，输出一致率为 27.15%，并与 Wasm2c 及 Ghidra 进行比较。
+
+  2024 · 会议论文 · [PDF](https://arxiv.org/pdf/2406.11346v3) · [代码](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-wadec/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 所报告的比率是作者在经 Emscripten 编译为 Wasm 的 C 程序上取得的结果。约一半输出可重新编译，不到一半可重新执行，约四分之一能复现原始输出，因此反编译代码总体上并不语义等价。含 3,977 个文件的基准与训练程序来自相同的两个来源。未评估优化构建：作者既未针对 O1/O2 代码调整方法，也未用其训练模型。模型处理数据结构的能力也较弱，常将其拆成独立变量或数组。研究仅涉及 C 源码，未评估由其他语言或工具链生成的 Wasm。基线为 Wasm2c 与 Ghidra 的 Wasm 插件；由于没有大语言模型能在未经微调时反编译 Wasm 函数，此类基线被排除。切片意味着一个函数可能需多次反编译，每个提示约需 0.1 至 2 秒。
+
+  **发表信息:** 2024 · ASE 2024 · 会议论文 · Xinyu She 等
 
   </details>
 

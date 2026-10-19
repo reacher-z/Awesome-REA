@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 79](https://img.shields.io/badge/papers-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (79) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (80) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2133,13 +2133,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**79 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**80 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (27) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (28) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2482,6 +2482,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The paper limits its experiments to C on x86 and function-level benchmarks. Re-executability on sampled tests does not establish whole-program equivalence or recovery of the original source. Later repository releases are separate from the 2024 paper.
 
   **Publication:** 2024 · EMNLP 2024 · Conference paper · Hanzhuo Tan et al.
+
+  </details>
+
+- [**WaDec: Decompiling WebAssembly Using Large Language Model**](https://dl.acm.org/doi/10.1145/3691620.3695020)
+
+  WaDec decompiles WebAssembly text (wat) into C by fine-tuning CodeLlama-7b with LoRA on loop-level wat–C snippet pairs. Functions are ordered by dependency and sliced so that each input holds at most one loop, with nested loops replaced by markers. Prompts add declarations of called functions, previously defined local variables and offset-to-string mappings; the outputs are then reassembled, with string constants restored and variables renamed. Training data come from 51,768 the-stack-dedup and 377 TheAlgorithms/C programs compiled with Emscripten. On 3,977 C files, the authors report 3.34% code inflation, 52.11% recompilability, 43.55% re-execution and 27.15% output consistency, compared with Wasm2c and Ghidra.
+
+  2024 · Conference paper · [PDF](https://arxiv.org/pdf/2406.11346v3) · [Code](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [Full entry & citation](https://awesomerea.org/papers/paper-wadec/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The reported rates are author results on C programs compiled to Wasm with Emscripten. About half of the outputs recompile, fewer than half re-execute and roughly a quarter reproduce the original output, so decompiled code is generally not semantically equivalent. The 3,977-file benchmark comes from the same two sources as the training programs. Optimized builds are not evaluated: the authors neither adapted the method to nor trained it on O1/O2 code. The model also handles data structures poorly, often flattening them into separate variables or arrays. Only C sources are studied; Wasm produced from other languages or toolchains is not evaluated. Baselines are Wasm2c and Ghidra's Wasm plugin, and LLM baselines were excluded because none could decompile Wasm functions without fine-tuning. Slicing means one function may be decompiled several times, at about 0.1 to 2 seconds per prompt.
+
+  **Publication:** 2024 · ASE 2024 · Conference paper · Xinyu She et al.
 
   </details>
 
