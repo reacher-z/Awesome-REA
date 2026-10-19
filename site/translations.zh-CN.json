@@ -3494,5 +3494,14 @@
       "输入为分析者已有的内核镜像；未启用 CONFIG_KALLSYMS 编译的内核不受支持。README 称截至 2023 年 8 月支持 Linux 2.6.10 至 6.4，可为原始内核检测 MIPS、ARM、ARM64、PowerPC、SPARC、x86、x86-64、SuperH 和 ARC 架构，支持 XZ、LZMA、GZip、BZ2、LZ4、LZO 和 Zstd 解压，并能处理 OpenWrt 的未压缩 kallsyms 变体。自动检测失败时，可手动指定指令集、位宽、文件偏移和基址。",
       "采用 GPL-3.0-or-later。恢复出的符号只包含 kallsyms 中存储的名称、地址和 nm 风格的类型；基址为启发式推断，即第一个代码段符号地址清除低 12 位后的值。本次未转换任何内核镜像。"
     ]
+  },
+  "ddisasm": {
+    "name": "Ddisasm Datalog 可重汇编反汇编器",
+    "requirements": [
+      "审阅时 GitHub 上最新的发布为 v1.8.0，发布于 2023-12-14，未附带文件。之后的版本通过其他渠道分发：PyPI 列出的 ddisasm 1.9.5 于 2026-07-06 上传，仅有一个 manylinux x86_64 wheel。所审阅的 main 分支提交（2026-10-13）声明版本为 1.9.6，更新日志将其标为尚未发布。",
+      "预构建版本有 grammatech/ddisasm Docker 镜像（stable 或 unstable 标签）、Ubuntu 20（focal）apt 软件包，以及 GrammaTech 服务器上的 Windows .zip 构建；文档提醒不要混用 stable 与 unstable 版本的工具。从源码构建需要支持 C++17 的编译器、GTIRB 1.12.1+、gtirb-pprinter 2.0.0+、Capstone 5.0.1+（GrammaTech 使用其分支测试）、启用 64 位数值编译的 Soufflé 2.4、libehp 1.0.0+ 以及 LIEF 0.13.2+。",
+      "输入为 ELF 或 PE 二进制；通过 gtirb-pprinter 重建二进制时会调用 gcc 等编译器或汇编器。代码推断和符号化属于启发式：--self-diagnose 只能对链接时保留完整重定位信息的二进制检查符号化结果；文档称用 .eh_frame 符号表达式代替 CFI 指令的选项仍属实验性，结果不可靠。",
+      "采用 AGPL-3.0 许可；贡献代码需签署 GrammaTech 的贡献者许可协议。GTIRB、gtirb-pprinter 和 gtirb-rewriting 是独立项目，本次未审阅。README 引用了 USENIX Security 2020 和 IEEE S&P 2025 的两篇方法论文，此处不转述其结果。本次未反汇编任何二进制。"
+    ]
   }
 }

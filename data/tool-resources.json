@@ -9015,5 +9015,40 @@
       "https://github.com/marin-m/vmlinux-to-elf/releases/tag/1.3.6",
       "https://pypi.org/project/vmlinux-to-elf/1.3.6/"
     ]
+  },
+  {
+    "id": "ddisasm",
+    "name": "Ddisasm",
+    "url": "https://github.com/GrammaTech/ddisasm",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "GrammaTech's Datalog disassembler, which turns ELF and PE binaries for x86-32, x86-64, ARM32, ARM64 and MIPS32 into the GTIRB intermediate representation. It decodes a superset of possible instructions, then applies Soufflé Datalog rules and weighted heuristics to infer code locations, symbolization and function boundaries; gtirb-pprinter turns the result into reassemblable assembly or a rebuilt binary, and the GTIRB APIs or gtirb-rewriting can modify it in between. User hint files add Datalog facts or change heuristic weights where inference goes wrong.",
+    "description_zh": "GrammaTech 开发的 Datalog 反汇编器，可将 x86-32、x86-64、ARM32、ARM64 和 MIPS32 架构的 ELF 与 PE 二进制转换为 GTIRB 中间表示。它先解码所有可能指令的超集，再用 Soufflé Datalog 规则和加权启发式推断代码位置、符号化结果和函数边界；gtirb-pprinter 可将结果输出为可重新汇编的汇编代码或重建的二进制，期间还可借助 GTIRB API 或 gtirb-rewriting 修改程序。推断出错时，用户可通过提示文件添加 Datalog 事实或调整启发式权重。",
+    "evidence_url": "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: v1.8.0, published 2023-12-14 without attached files. Later versions are distributed elsewhere: PyPI lists ddisasm 1.9.5, uploaded 2026-07-06 as a single manylinux x86_64 wheel. The reviewed main commit, from 2026-10-13, declares version 1.9.6, which its changelog marks unreleased.",
+      "Prebuilt options are the grammatech/ddisasm Docker image (stable or unstable tags), Ubuntu 20 (focal) apt packages and Windows .zip builds on GrammaTech's servers; the docs warn against mixing stable and unstable tools. Source builds need a C++17 compiler, GTIRB 1.12.1+, gtirb-pprinter 2.0.0+, Capstone 5.0.1+ (GrammaTech tests with its fork), Soufflé 2.4 built with 64-bit numbers, libehp 1.0.0+ and LIEF 0.13.2+.",
+      "Input is an ELF or PE binary; rebuilding through gtirb-pprinter invokes a compiler or assembler such as gcc. Code inference and symbolization are heuristic: --self-diagnose checks symbolization only for binaries linked with complete relocation information, and the docs call the option that replaces CFI directives with .eh_frame symbolic expressions experimental and unreliable.",
+      "AGPL-3.0; contributions require GrammaTech's contributor license agreement. GTIRB, gtirb-pprinter and gtirb-rewriting are separate projects that were not reviewed. The README cites a USENIX Security 2020 paper and an IEEE S&P 2025 paper on the approach; their results are not restated here. No binaries were disassembled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/doc/source/GENERAL/1-Installation.md",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/doc/source/GENERAL/2-Building-Ddisasm.md",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/doc/source/GENERAL/3-Command-line-options.md#L38-L53",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/doc/source/GENERAL/5-AdvancedUsage.md",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/CHANGELOG.md",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/version.txt",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/CONTRIBUTING.md",
+      "https://github.com/GrammaTech/ddisasm/blob/1d17f292e3672078eeb753473847306ca3f0f1ff/LICENSE.txt",
+      "https://github.com/GrammaTech/ddisasm/releases/tag/v1.8.0",
+      "https://pypi.org/project/ddisasm/1.9.5/",
+      "https://www.usenix.org/conference/usenixsecurity20/presentation/flores-montoya"
+    ]
   }
 ]
