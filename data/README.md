@@ -51,7 +51,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `date_precision` | `year`, `month` or `day` | Finest verified precision of the publication date |
 | `publication_date` | `null`, `YYYY-MM` or `YYYY-MM-DD` | `null` for `year` precision, otherwise a month or day matching `date_precision`; within `year` and not in the future |
 | `date_basis` / `date_basis_zh` | Text | Source that establishes the recorded date |
-| `venue` | Text | Conference, workshop, journal or preprint server; journal articles use the journal title |
+| `venue` | Text | Conference, workshop, journal or preprint server; journal articles use the journal title. A Proceedings of the ACM (PACM) journal adds its conference issue and year in parentheses, as in `Proceedings of the ACM on Software Engineering (FSE 2025)`; BibTeX `journal` omits the parenthesized issue |
 | `publication_status` | `conference-paper`, `conference-accepted`, `journal-article` or `preprint` | Published conference or workshop paper; accepted but proceedings not verified; journal article, exported as BibTeX `@article`; preprint |
 | `arxiv_id` | arXiv identifier such as `2403.05286`, or `null` | arXiv paper identifier without a version suffix |
 | `arxiv_version_reviewed` | `v1`, `v2`, … or `null` | arXiv version checked; `null` when there is no `arxiv_id` |

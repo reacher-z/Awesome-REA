@@ -3023,7 +3023,7 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Recursively divides a webpage screenshot along visual separation lines, has a multimodal model generate HTML/CSS for each leaf segment, and assembles child code upward into the full page; evaluated with GPT-4o, Gemini and Claude models and a small developer study.
 
-  Proceedings of the ACM on Software Engineering 2025 · Journal article · [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen) · [Full entry & citation](https://awesomerea.org/papers/paper-dcgen/)
+  Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen) · [Full entry & citation](https://awesomerea.org/papers/paper-dcgen/)
 
   <details>
   <summary>Scope and publication details</summary>
@@ -3213,7 +3213,7 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Combines visual component extraction, multimodal models, page-transition graphs and iterative checks to reconstruct multi-page mobile UI code from designs or screenshots, evaluated with React Native, Flutter and ArkUI.
 
-  Proceedings of the ACM on Software Engineering 2025 · Journal article · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [Code](https://github.com/security-pride/DeclarUI) · [Full entry & citation](https://awesomerea.org/papers/paper-declarui/)
+  Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [Code](https://github.com/security-pride/DeclarUI) · [Full entry & citation](https://awesomerea.org/papers/paper-declarui/)
 
   <details>
   <summary>Scope and publication details</summary>

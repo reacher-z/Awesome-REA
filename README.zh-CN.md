@@ -3024,7 +3024,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   沿视觉分隔线递归切分网页截图，由多模态模型为每个叶子片段生成 HTML/CSS，再将子片段代码逐级向上组装为完整页面；评估涵盖 GPT-4o、Gemini 与 Claude 系列模型以及一项小规模开发者研究。
 
-  Proceedings of the ACM on Software Engineering 2025 · 期刊论文 · [PDF](https://arxiv.org/pdf/2406.16386v3) · [代码](https://github.com/WebPAI/DCGen) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-dcgen/)
+  Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · [PDF](https://arxiv.org/pdf/2406.16386v3) · [代码](https://github.com/WebPAI/DCGen) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-dcgen/)
 
   <details>
   <summary>范围与发表信息</summary>
@@ -3214,7 +3214,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   结合视觉组件提取、多模态模型、页面跳转图与迭代检查，从设计稿或截图重建多页面移动界面代码，并在 React Native、Flutter 和 ArkUI 上评测。
 
-  Proceedings of the ACM on Software Engineering 2025 · 期刊论文 · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [代码](https://github.com/security-pride/DeclarUI) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-declarui/)
+  Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [代码](https://github.com/security-pride/DeclarUI) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-declarui/)
 
   <details>
   <summary>范围与发表信息</summary>

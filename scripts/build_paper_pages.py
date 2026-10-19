@@ -75,6 +75,12 @@ def formatted_date(value: str | None, language: str, year: int | None = None) ->
     return f'{MONTHS[month - 1]} ' + (f'{int(parts[2])}, ' if len(parts) == 3 else '') + parts[0]
 
 
+def journal_title(venue: str) -> str:
+    """A PACM venue names its conference issue in parentheses; the journal is the title before it."""
+    match = re.fullmatch(r'(.+?) \([A-Z][A-Za-z0-9]* \d{4}\)', venue)
+    return match[1] if match else venue
+
+
 def bibtex_text(paper: dict) -> str:
     def literal(value):
         replacements = {'\\': r'\textbackslash{}', '{': r'\{', '}': r'\}', '&': r'\&', '%': r'\%', '$': r'\$', '#': r'\#', '_': r'\_', '~': r'\textasciitilde{}', '^': r'\textasciicircum{}'}
@@ -89,10 +95,11 @@ def bibtex_text(paper: dict) -> str:
         ('url', paper['url']),
     ]
     # Container fields come only from the publisher metadata cited in `citation`;
-    # without it, published entries keep the short venue label.
+    # without it, published entries keep the short venue label, minus a journal's conference issue.
     container = paper.get('citation') or {}
     if kind in {'inproceedings', 'article'}:
-        fields.append(('booktitle' if kind == 'inproceedings' else 'journal', literal(container.get('container_title') or paper['venue'])))
+        label = paper['venue'] if kind == 'inproceedings' else journal_title(paper['venue'])
+        fields.append(('booktitle' if kind == 'inproceedings' else 'journal', literal(container.get('container_title') or label)))
         for key, field in (('volume', 'volume'), ('issue', 'number'), ('series', 'series'), ('pages', 'pages'),
                            ('article_number', 'eid'), ('publisher', 'publisher')):
             if container.get(key):
