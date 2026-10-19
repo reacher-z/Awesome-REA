@@ -4237,12 +4237,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110382256829386935"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@fantexi997, 2026-10-14) describes using WorkBuddy, DeepSeek and REA, rather than Codex or Claude, to analyze an unnamed Mac desktop app: its tech stack, a cross-app interaction flow, an AI-written window-capture tool and a UI and interaction manual. It says the work produced two documents and one capture tool, de-identified and archived, with confirmed and unverified conclusions marked; it shows one image. It names no app and publishes none of these outputs. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; the analysis outputs are not public, so neither the findings nor REA’s contribution can be reviewed.",
+      "reason_zh": "作者帖子（@fantexi997，2026-10-14）介绍了用 WorkBuddy、DeepSeek 和 REA（而非 Codex 或 Claude）分析一款未具名 Mac 桌面软件的过程：技术栈、一项跨应用交互流程、由 AI 编写的窗口采集工具，以及 UI 与交互参考手册。帖中称最终产出两份文档和一套采集工具，已脱敏并归档，已确认的结论与待验证的判断也分别标明；帖子附一张图片。帖子未指明软件，也未公开上述任何产出。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；分析产出未公开，因此其结论和 REA 的作用都无法审阅。",
+      "primary_evidence_urls": [
+        "https://x.com/fantexi997/status/2110382256829386935"
+      ],
       "catalog_matches": []
     },
     {
@@ -4257,12 +4259,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110459951365980334"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited reply (@jasonjias, 2026-10-14) says the author tried REA a few days earlier and made Apple’s Weather app, and that the REA version scored 95% against 90% for a clone Claude made without it. It does not say what was scored or how, and links no code or results. The GitHub account linked to the handle has only an unrelated 2023 weather-app repository and nothing recent for this rebuild. Retain the lead without a catalog mapping; the rebuild and the comparison are unestablished.",
+      "reason_zh": "所引回复（@jasonjias，2026-10-14）称作者几天前试用 REA 做出了苹果的天气应用，且 REA 版本得分 95%，而让 Claude 直接克隆的版本得分 90%。回复没有说明评分对象或方式，也未链接代码或结果。与该账号关联的 GitHub 账号只有一个 2023 年的无关天气应用仓库，没有这次重建的近期内容。保留此线索而不建立目录映射；该重建及对比结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/jasonjias/status/2110459951365980334"
+      ],
       "catalog_matches": []
     },
     {
@@ -4303,12 +4307,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110453427209916612"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@fahdmirza, 2026-10-14) summarizes a hands-on YouTube demo: OpenCode, Ghidra and REA on Ubuntu answered one question about a stripped cal binary and found the hard-coded 1752-09-02 calendar switch in about 1.5 minutes, flagging untraced parts, after which the author checked that other country settings or the Julian calendar restore the missing days. The video, published the same day, is the only artifact; its description links only the REA repository. No written steps, prompts, transcript or output are published, and the author’s GitHub account, blog and newsletter have none. Retain the lead without a catalog mapping; this review did not assess the video itself.",
+      "reason_zh": "作者帖子（@fahdmirza，2026-10-14）概述了一段 YouTube 实操演示：在 Ubuntu 上用 OpenCode、Ghidra 和 REA，针对一个去除符号的 cal 二进制提出一个问题，约 1.5 分钟就找到写死的 1752-09-02 历法切换日期，并标出尚未追踪的部分；作者随后验证，换用其他国家设置或儒略历后，缺失的日期会重新出现。当天发布的这段视频是唯一的成果，其简介仅链接 REA 仓库。没有公开文字步骤、提示词、文字稿或输出，作者的 GitHub 账号、博客和通讯也都没有相关内容。保留此线索而不建立目录映射；本次核查未评估视频本身。",
+      "primary_evidence_urls": [
+        "https://x.com/fahdmirza/status/2110453427209916612",
+        "https://www.youtube.com/watch?v=xm92KJ7ipqc"
+      ],
       "catalog_matches": []
     },
     {
@@ -4364,12 +4371,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110539823572463953"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@bitfish, 2026-10-15) says the author’s “smart” home devices came with nothing but remote controls; devices with APIs are used through them, while for the rest REA decompiled their apps to extract the protocols, and everything is now scheduled by a local LLM. It shows one image and quotes an unrelated earlier post. It names no device, app or protocol and publishes no code. The GitHub account with the same handle has no public repositories. Retain the lead without a catalog mapping; the recovered protocols and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@bitfish，2026-10-15）称买回来的“智能”家居全靠遥控器；有 API 的设备走 API，没有 API 的就用 REA 反编译其 App、扒出协议，再统一接给本地大模型调度。帖子附一张图片，并引用作者一则无关的旧帖。帖子未指明设备、App 或协议，也未公开代码。同名 GitHub 账号没有公开仓库。保留此线索而不建立目录映射；所扒出的协议及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/bitfish/status/2110539823572463953"
+      ],
       "catalog_matches": []
     },
     {
@@ -4437,12 +4446,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110553648787013950"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@oh_Roach, 2026-10-15) says a reverse-engineering effort on Kirby is half done, then warns others off REA unless they use a relay service, out of concern for the author’s five-year-old account and its data; it shows one image. It names no Kirby title or platform and gives no method, output or artifact. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is an unfinished attempt with nothing published.",
+      "reason_zh": "作者帖子（@oh_Roach，2026-10-15）称《星之卡比》逆向到一半，随后劝大家别再折腾 REA，要用也用中转站，因为担心作者那个用了五年、存有大量数据的账号；帖子附一张图片。帖子未指明是哪一款卡比游戏或平台，也没有方法、输出或成果。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是一项未完成的尝试，没有任何公开内容。",
+      "primary_evidence_urls": [
+        "https://x.com/oh_Roach/status/2110553648787013950"
+      ],
       "catalog_matches": []
     },
     {
@@ -4557,12 +4568,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110566660113625486"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s text-only post (@nkeilar, 2026-10-15) says Claude Code is managing Astra to optimize CPU kernels using REA that day, and wonders what frontier AI can unlock at assembly level. It reports no target, result or artifact. The GitHub account linked to the handle has a model-inference fork, created that day, whose README describes an AVX2 CPU tier but mentions neither REA nor Astra, so it is not tied to this post. Retain the lead without a catalog mapping; the work is an announced attempt, and REA’s role is unestablished.",
+      "reason_zh": "作者的纯文字帖子（@nkeilar，2026-10-15）称当天正让 Claude Code 调度 Astra、借助 REA 优化 CPU 内核，并期待前沿 AI 在汇编层面能带来什么突破。帖子未报告目标、结果或成果。与该账号关联的 GitHub 账号当天创建了一个模型推理分叉仓库，其 README 介绍了 AVX2 CPU 层，但既未提及 REA 也未提及 Astra，因此无法与该帖对应。保留此线索而不建立目录映射；这项工作只是宣布的尝试，REA 的作用未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/nkeilar/status/2110566660113625486",
+        "https://github.com/nkeilar/glm-flash-lite/blob/bb9abb72985c4443cd6bcb0a030ca58e6b0e6e00/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -16101,15 +16115,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 203,
-      "insufficient-evidence": 253,
-      "pending": 135
+      "insufficient-evidence": 259,
+      "pending": 129
     },
     "units_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 253,
-      "pending": 135
+      "insufficient-evidence": 259,
+      "pending": 129
     },
-    "primary_reviewed_units": 395,
+    "primary_reviewed_units": 401,
     "catalog_linked_occurrences": 216,
     "distinct_resource_ids": 207,
     "distinct_paper_ids": 2,
