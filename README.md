@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 372](https://img.shields.io/badge/resources-372-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 373](https://img.shields.io/badge/resources-373-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (35) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (36) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2133,6 +2133,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Claude Code plugin and agent skill that drives jadx and Fernflower/Vineflower to decompile Android APK, XAPK, JAR and AAR files and document their HTTP APIs. A fingerprint pass first identifies the app's framework, HTTP stack, obfuscation level and native libraries, then shell scripts extract endpoints and authentication patterns across Retrofit, OkHttp, Volley, Ktor and Apollo/GraphQL, trace call flows from UI down to the network layer, and rebuild original Kotlin class names from the metadata R8 leaves behind. It installs through the bundled Claude Code marketplace, and its scripts also run standalone with a /decompile slash command.
 
   Integration · Independent agent · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/android-reverse-engineering-skill/)
+
+- [**Reverify**](https://github.com/2akouwu/reverify)
+
+  Python CLI and stdio MCP server that checks a model’s structured claims about a binary, such as bytes or typed values at an offset, strings, imports and exports, instruction mnemonics, emulation results and tested or Z3-proved equivalence, and returns VERIFIED, REFUTED or INCONCLUSIVE with the evidence the tools observed. Grounded and refuted results are kept in a per-binary ledger on disk, so a reset or later session resumes from them instead of from a summary, and a reconstruct loop has a model propose claims until an informative set verifies. A separate rollover command replaces context compaction in Claude Code, Codex, Gemini CLI or OpenCode with file hand-offs and fresh sessions.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/reverify-claim-verifier/)
 
 <a id="related-collections"></a>
 ### Related Collections
