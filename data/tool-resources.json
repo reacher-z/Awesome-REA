@@ -16010,5 +16010,41 @@
       "https://github.com/theopolis/uefi-firmware-parser/releases/tag/v1.16",
       "https://pypi.org/project/uefi_firmware/1.16/"
     ]
+  },
+  {
+    "id": "noop-whoop-ble-client-case",
+    "name": "NOOP: an offline WHOOP strap client built from Bluetooth protocol research",
+    "url": "https://github.com/ryanbr/noop",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Replaces the WHOOP companion app with offline macOS, Android and iOS clients that pair with WHOOP 4.0 and 5.0/MG straps over Bluetooth, decode their vendor GATT frames, offload the strap’s history into local SQLite and compute recovery, strain, HRV and sleep on the device. A versioned protocol reference documents framing, checksums, commands and sensor records per strap family, building on the community my-whoop and goose projects. WHOOP 4.0 is the supported path; deeper WHOOP 5.0/MG metrics and Oura ring support remain experimental.",
+    "description_zh": "以离线的 macOS、Android 和 iOS 客户端取代 WHOOP 官方配套应用：通过蓝牙与 WHOOP 4.0 及 5.0/MG 手环配对，解析其厂商自定义 GATT 帧，将手环中的历史数据转存到本地 SQLite，并在设备上计算恢复度、负荷、HRV 和睡眠。按手环型号分版本编写的协议参考记录了帧格式、校验、命令和传感器记录，建立在社区项目 my-whoop 与 goose 的成果之上。WHOOP 4.0 是受支持的路径；WHOOP 5.0/MG 的深层指标和 Oura 戒指支持仍属实验性。",
+    "evidence_url": "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls NOOP an independent, experimental interoperability project; the reviewed main snapshot follows release v12.0.0 (2026-10-04). WHOOP 4.0 is the tested path; on WHOOP 5.0/MG live heart rate is confirmed while recovery, strain and sleep inputs are still being mapped, and README lists SpO₂ and several overnight inputs as unavailable or incomplete. Scores come from published methods and are approximations, not reproductions of WHOOP’s models; the project says it is not a medical device.",
+      "Live use needs the user’s own WHOOP strap; a 5.0/MG strap holds one encrypted bond at a time, so pairing can take it from the official app. Without a strap, the app can import a WHOOP CSV export or an Apple Health export.xml. README states that NOOP contains no WHOOP proprietary code, firmware, logos or assets; ATTRIBUTION.md says some protocol facts were re-derived from decompiles or static analysis of the vendor’s apps and ship as unvalidated candidates, while implementation and strings are not copied.",
+      "docs/BUILD.md lists macOS 13+, Xcode 26.x (Swift 6.3) and XcodeGen 2.45+ for the macOS reference app; the Swift packages build with swift build alone, and BUILD.md documents Linux test runs for four of them outside CI. The Android app (Jetpack Compose, Android 8+) builds with Gradle and JDK 17 in CI, and iOS builds from source or installs as a sideloaded, unsigned .ipa. The release check is on by default and sends no health data; optional AI Coach and export features send data only when the user configures them.",
+      "CI builds and tests each Swift package, including the WhoopProtocol framing and decoder tests, and builds the Android debug APK with its unit tests. Protocol contracts name the firmware they were observed on (WHOOP 4 41.17.6.0, WHOOP 5/MG baseline 50.42.1.0), and PROTOCOL.md says its constructed parsing examples are not device tests. docs/VALIDATION_PROTOCOL.md sets rules for claiming scoring improvements; this collection did not build the apps or run them against a strap.",
+      "LICENSE applies PolyForm Noncommercial 1.0.0 to NOOP’s own code and documentation, which GitHub reports as NOASSERTION; bundled GRDB.swift and ZIPFoundation are MIT. README names github.com/ryanbr/noop as the canonical home, although GitHub lists it as a fork of muftiarfan/noop. NOOP states it is unaffiliated with WHOOP or Oura; AGENTS.md addresses human and AI-agent contributors and the optional coach uses a user-supplied model, but the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/PROTOCOL.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/BLE_REVERSE_ENGINEERING.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/ATTRIBUTION.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/BUILD.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/docs/VALIDATION_PROTOCOL.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/.github/workflows/swift-packages.yml",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/.github/workflows/android.yml",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/AGENTS.md",
+      "https://github.com/ryanbr/noop/blob/8e4b0c16e7640607600fa6bde5424095eba6034e/LICENSE",
+      "https://github.com/ryanbr/noop/releases/tag/v12.0.0"
+    ]
   }
 ]

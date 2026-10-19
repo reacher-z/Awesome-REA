@@ -5232,5 +5232,15 @@
       "fv_injector.py 的 GUID 注入只能替换已有的节或文件，不能增删；向固件文件注入时会交互式询问要替换哪个节。它负责解析容器结构并提取内容，分析提取出的模块仍需另用反汇编器或反编译器。CI 还会解析一个另行托管的样本仓库，本合集未审阅该仓库。",
       "LICENSE 文件为 MIT 式授权文本，并提示贡献代码另附内联许可证；而 setup.py 和 PyPI 元数据声明的是 BSD-3-Clause。内置的 Intel Tiano 压缩源码采用 BSD-2-Clause-Patent，LZMA SDK 文件属于公有领域。本次未安装，也未解析任何固件。"
     ]
+  },
+  "noop-whoop-ble-client-case": {
+    "name": "NOOP：基于蓝牙协议研究构建的离线 WHOOP 手环客户端",
+    "requirements": [
+      "README 称 NOOP 是独立的实验性互操作项目；所审 main 快照晚于 2026-10-04 发布的 v12.0.0。WHOOP 4.0 是经过测试的路径；在 WHOOP 5.0/MG 上，实时心率已确认可用，恢复度、负荷和睡眠所需的输入仍在解析中，README 还列出 SpO₂ 及多项夜间输入尚不可用或不完整。各项评分依据已发表的方法计算，属于近似值，并非复现 WHOOP 的模型；项目说明自己不是医疗设备。",
+      "实时使用需要使用者自己的 WHOOP 手环；5.0/MG 手环同一时间只与一台设备保持加密绑定，因此配对可能使其脱离官方应用。没有手环时，也可导入 WHOOP 的 CSV 导出或 Apple 健康的 export.xml。README 声明 NOOP 不含 WHOOP 的专有代码、固件、标志或素材；ATTRIBUTION.md 说明部分协议事实是从对厂商应用的反编译或静态分析中重新推导的，并作为未经验证的候选值提供，实现代码和字符串均未复制。",
+      "docs/BUILD.md 列出 macOS 参考应用所需的 macOS 13+、Xcode 26.x（Swift 6.3）和 XcodeGen 2.45+；各 Swift 包仅用 swift build 即可构建，BUILD.md 还说明了其中四个包在 CI 之外于 Linux 上运行测试的方法。Android 应用（Jetpack Compose，Android 8+）在 CI 中以 Gradle 和 JDK 17 构建；iOS 版可从源码构建，或以未签名 .ipa 侧载安装。更新检查默认开启，不发送健康数据；可选的 AI 教练和导出功能只有在使用者配置后才会发送数据。",
+      "CI 构建并测试每个 Swift 包，其中包括 WhoopProtocol 的帧格式和解码器测试，并构建 Android 调试版 APK、运行其单元测试。协议约定注明了观察所依据的固件版本（WHOOP 4 为 41.17.6.0，WHOOP 5/MG 以 50.42.1.0 为基准），PROTOCOL.md 说明其构造的解析示例并非设备测试。docs/VALIDATION_PROTOCOL.md 规定了声称评分改进时须遵守的规则；本合集未构建这些应用，也未连接手环运行。",
+      "LICENSE 对 NOOP 自身的代码和文档适用 PolyForm Noncommercial 1.0.0，GitHub 将其识别为 NOASSERTION；随附的 GRDB.swift 和 ZIPFoundation 采用 MIT。README 称 github.com/ryanbr/noop 是正式主页，但 GitHub 将其列为 muftiarfan/noop 的分叉。NOOP 声明与 WHOOP 或 Oura 无关联；AGENTS.md 面向人类与 AI 智能体贡献者，可选的教练功能使用使用者自备的模型，但所审来源未确立 REA 的使用。"
+    ]
   }
 }
