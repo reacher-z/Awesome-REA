@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,13 +2193,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2587,6 +2587,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The reported rates are author results on C programs compiled to Wasm with Emscripten. About half of the outputs recompile, fewer than half re-execute and roughly a quarter reproduce the original output, so decompiled code is generally not semantically equivalent. The 3,977-file benchmark comes from the same two sources as the training programs. Optimized builds are not evaluated: the authors neither adapted the method to nor trained it on O1/O2 code. The model also handles data structures poorly, often flattening them into separate variables or arrays. Only C sources are studied; Wasm produced from other languages or toolchains is not evaluated. Baselines are Wasm2c and Ghidra's Wasm plugin, and LLM baselines were excluded because none could decompile Wasm functions without fine-tuning. Slicing means one function may be decompiled several times, at about 0.1 to 2 seconds per prompt.
 
   **Authors:** Xinyu She et al.
+
+  </details>
+
+- [**CLAP: Learning Transferable Binary Code Representations with Natural Language Supervision**](https://dl.acm.org/doi/10.1145/3650212.3652145)
+
+  CLAP (Contrastive Language-Assembly Pre-training) learns assembly-function embeddings aligned with natural-language explanations. A dataset engine compiles Ubuntu C/C++ packages with GCC and Clang at O0–O3 and Os, has GPT-3.5 explain about 2.6 million matching source functions, and fine-tunes a Vicuna-13B “shadow model” on half of those explanations to label more code, yielding 195 million assembly–explanation pairs. A 110M-parameter assembly encoder, using address rebasing, a WordPiece tokenizer and jump-aware embeddings, is first pre-trained on assembly and then contrastively aligned with a text encoder. The embeddings support zero-shot classification by matching code against text prompts. On BinaryCorp-3M similarity search in pools of 10,000 functions, zero-shot CLAP reports 0.836 average recall<span>@</span>1 against 0.571 for fine-tuned jTrans.
+
+  ACM ISSTA 2024 · Conference paper · [PDF](https://arxiv.org/pdf/2402.16928v1) · [Code](https://github.com/Hustcw/CLAP) · [Full entry & citation](https://awesomerea.org/papers/paper-clap/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Training explanations are generated by GPT-3.5 and a fine-tuned Vicuna model from source code, not written by humans; five experts scored 50 explanations per model, mostly as acceptable. The authors name the Ubuntu-only build environment and the GPT-3.5 explanations as possible sources of bias. Functions are disassembled with IDA Pro 7.6, and functions with fewer than three basic blocks are excluded. Similarity results use BinaryCorp-3M optimization-level pairs, where baselines get a linear probe and jTrans is also fully fine-tuned while CLAP is not; crypto identification (17 algorithms, about 70K functions labeled by name and package metadata) and protocol categorization (18 types) use datasets the authors built from Ubuntu packages, where fine-tuned CLAP beats the baselines while zero-shot CLAP trails the best baseline on crypto. The malware and sorting results are single case studies. Training used 32 A100 GPUs. CLAP produces embeddings and label scores; it is not a decompiler or a malware detector.
+
+  **Authors:** Hao Wang et al.
 
   </details>
 

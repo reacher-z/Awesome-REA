@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2194,13 +2194,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2588,6 +2588,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 所报告的比率是作者在经 Emscripten 编译为 Wasm 的 C 程序上取得的结果。约一半输出可重新编译，不到一半可重新执行，约四分之一能复现原始输出，因此反编译代码总体上并不语义等价。含 3,977 个文件的基准与训练程序来自相同的两个来源。未评估优化构建：作者既未针对 O1/O2 代码调整方法，也未用其训练模型。模型处理数据结构的能力也较弱，常将其拆成独立变量或数组。研究仅涉及 C 源码，未评估由其他语言或工具链生成的 Wasm。基线为 Wasm2c 与 Ghidra 的 Wasm 插件；由于没有大语言模型能在未经微调时反编译 Wasm 函数，此类基线被排除。切片意味着一个函数可能需多次反编译，每个提示约需 0.1 至 2 秒。
 
   **作者:** Xinyu She 等
+
+  </details>
+
+- [**CLAP：借助自然语言监督学习可迁移的二进制代码表示**](https://dl.acm.org/doi/10.1145/3650212.3652145)
+
+  CLAP（对比式语言—汇编预训练）学习与自然语言解释对齐的汇编函数嵌入。其数据引擎以 GCC 和 Clang 在 O0–O3 与 Os 下编译 Ubuntu 的 C/C++ 软件包，由 GPT-3.5 为约 260 万个对应的源码函数生成解释，再用其中一半解释微调 Vicuna-13B“影子模型”为更多代码生成说明，最终得到 1.95 亿对汇编—解释数据。采用地址重定基、WordPiece 分词与跳转感知嵌入的 1.1 亿参数汇编编码器先在汇编上预训练，再与文本编码器进行对比对齐。所得嵌入可通过将代码与文本提示匹配来实现零样本分类。在候选池为 10,000 个函数的 BinaryCorp-3M 相似性检索中，零样本 CLAP 的平均 recall<span>@</span>1 为 0.836，经微调的 jTrans 为 0.571。
+
+  ACM ISSTA 2024 · 会议论文 · [PDF](https://arxiv.org/pdf/2402.16928v1) · [代码](https://github.com/Hustcw/CLAP) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-clap/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练用的解释由 GPT-3.5 和经微调的 Vicuna 模型依据源码生成，并非人工撰写；五位专家为每个模型的 50 条解释打分，多数被评为可接受。作者指出，仅使用 Ubuntu 构建环境以及采用 GPT-3.5 生成解释都可能带来偏差。函数由 IDA Pro 7.6 反汇编，少于三个基本块的函数被排除。相似性结果使用 BinaryCorp-3M 中不同优化级别的函数对，各基线采用线性探测，jTrans 另做了完整微调，CLAP 则未经微调；密码算法识别（17 种算法，约 7 万个依据函数名与软件包元数据标注的函数）和协议分类（18 种类型）使用作者从 Ubuntu 软件包构建的数据集，其中微调后的 CLAP 超过基线，零样本 CLAP 在密码算法识别上则略逊于最佳基线。恶意软件与排序算法结果仅为个案研究。训练使用 32 块 A100 GPU。CLAP 输出的是嵌入和标签分数，既不是反编译器，也不是恶意软件检测器。
+
+  **作者:** Hao Wang 等
 
   </details>
 
