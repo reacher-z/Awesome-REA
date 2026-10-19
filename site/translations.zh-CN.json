@@ -4845,5 +4845,15 @@
       "GitHub Actions 工作流只构建和打包，不运行测试。仓库中有针对 relive_api 关卡数据工具的 googletest 单元测试和集成测试，集成测试从硬编码的 GOG 安装路径读取 .lvl 文件；较早的 AppVeyor 和 Azure Pipelines 配置仍会调用 ctest。FAQ 介绍了自动回放：用稳定版录制完整通关过程，再在开发版中检测不同步（录制器保存输入、随机数、时钟和同步点），但没有公布回放结果，本合集也未运行任何内容。",
       "仓库没有许可证文件，GitHub 也未检测到许可证；README 只说贡献的代码将来会以兼容 GPL 的许可证（很可能是 MIT）发布，因此目前没有明确的复用条款。3rdParty/DxOld 收录了三个 DirectX 7 时期的 Direct3D 头文件，其中一个带有 Microsoft 保留所有权利的声明，各子模块保留各自的许可证。FAQ 声明与 Oddworld Inhabitants 无关，其游戏仍保留各自权利；所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "retdec": {
+    "name": "RetDec 可重定向机器码反编译器",
+    "requirements": [
+      "README 警告 RetDec 处于有限维护模式：拉取请求会优先审阅，议题的回应会有延迟，且除基本维护相关问题外不会主动解决，开发工作也极为有限。最新发行版为 v5.0（2022-12-08）；所审阅的 master 提交（2026-05-26）比它多 81 个提交，版本号仍为 5.0。",
+      "发行包覆盖 Linux、macOS 和 Windows；README 列出 Windows 7+、Linux、macOS 以及实验性的 FreeBSD，每次安装约占 5–6 GB。源码构建需要支持 C++17 的编译器（GCC 7+、Visual Studio 2017 15.7+，或 macOS 10.15+ 上的完整 Xcode）、OpenSSL 1.1.1+、Python 3.4+，Windows 以外还需 autotools；CMakeLists.txt 要求 CMake 3.13，而非 README 所写的 3.6。构建时会下载固定版本的 Capstone、Keystone、YARA 和 yaramod 压缩包、Avast 维护的 LLVM 分支以及 2019 年的支持包。",
+      "输入为使用者自有的可执行文件、目标文件、归档或原始机器码。自 v5.0 起，反编译器也以一组 CMake 库的形式供其他项目调用；独立的 retdec-idaplugin 和 retdec-r2plugin 仓库将其嵌入 IDA 和 radare2。",
+      "GitHub Actions 在 Ubuntu 22.04、Windows（MSYS2）和 macOS 上构建 Release 与 Debug 配置，再运行独立的 retdec-regression-tests 测试套件。README 说明每夜构建不作保证、可能出现回归，Docker 支持则由社区维护。",
+      "采用 MIT 许可（Avast Software）。修改过的 PeLib 保留其 zlib/libpng 许可，LICENSE-THIRD-PARTY 列出其他组件，其中 Keystone 依据其针对 GPLv2 的 FOSS 例外条款使用。"
+    ]
   }
 }

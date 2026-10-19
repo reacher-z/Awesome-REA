@@ -14666,5 +14666,39 @@
       "https://github.com/AliveTeam/aliveteam.github.io/blob/f1ff2177147135677f9c060b02135f7d5f67ef8e/install.html",
       "https://github.com/AliveTeam/alive_reversing/releases/tag/github-v1.0.9"
     ]
+  },
+  {
+    "id": "retdec",
+    "name": "RetDec",
+    "url": "https://github.com/avast/retdec",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Avast's retargetable machine-code decompiler built on LLVM. It takes ELF, PE, Mach-O, COFF, AR, Intel HEX or raw code for 32-bit x86, ARM, MIPS, PIC32 and PowerPC or 64-bit x86-64 and ARM64, recovers functions, types and C++ class hierarchies, and emits C or a Python-like language with call and control-flow graphs.",
+    "description_zh": "Avast 推出的基于 LLVM 的可重定向机器码反编译器。可处理 ELF、PE、Mach-O、COFF、AR、Intel HEX 或原始机器码，覆盖 32 位 x86、ARM、MIPS、PIC32、PowerPC 以及 64 位 x86-64 和 ARM64，能恢复函数、类型和 C++ 类层次结构，输出 C 或类 Python 语言代码，并生成调用图和控制流图。",
+    "evidence_url": "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README warns that RetDec is in limited maintenance mode: pull requests are reviewed with priority, issues get delayed reactions and are not actively solved unless they concern basic maintenance, and only very limited development continues. The latest release is v5.0 (2022-12-08); the reviewed master commit of 2026-05-26 is 81 commits ahead of it and still declares version 5.0.",
+      "Release packages cover Linux, macOS and Windows; README lists Windows 7+, Linux, macOS and experimental FreeBSD, with about 5–6 GB per installation. Source builds need a C++17 compiler (GCC 7+, Visual Studio 2017 15.7+ or full Xcode on macOS 10.15+), OpenSSL 1.1.1+, Python 3.4+ and, outside Windows, autotools; CMakeLists.txt requires CMake 3.13, not README's 3.6. The build downloads pinned Capstone, Keystone, YARA and yaramod, an Avast LLVM fork and a 2019 support package.",
+      "Input is the user's own executable, object file, archive or raw machine code. Since v5.0 the decompiler is also a set of CMake libraries for other projects, and separate retdec-idaplugin and retdec-r2plugin repositories embed it in IDA and radare2.",
+      "GitHub Actions builds Release and Debug builds on Ubuntu 22.04, Windows (MSYS2) and macOS, then runs the separate retdec-regression-tests suite. README calls nightly builds unguaranteed, with possible regressions, and Docker support community-maintained.",
+      "MIT (Avast Software). The modified PeLib keeps its zlib/libpng license, and LICENSE-THIRD-PARTY lists the other components, including Keystone used under its FOSS exception to GPLv2."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/CHANGELOG.md",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/CMakeLists.txt",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/cmake/deps.cmake",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/.github/workflows/retdec-ci.yml",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/.github/workflows/common/prepare-retdec-tests.sh",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/LICENSE",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/LICENSE-PELIB",
+      "https://github.com/avast/retdec/blob/9450585772e6f1c18e5f0b2ad5518a18d6bce71e/LICENSE-THIRD-PARTY",
+      "https://github.com/avast/retdec/releases/tag/v5.0"
+    ]
   }
 ]
