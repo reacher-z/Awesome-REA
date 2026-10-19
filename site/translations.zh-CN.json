@@ -3179,5 +3179,15 @@
       "输入是在线 URL，默认以 1920x1080 视口渲染，使用 --mobile 时为 390x844；多页抓取会合并从导航链接或 sitemap.xml（先检查 robots.txt）发现的多个页面。README 列出的限制包括：深色模式需加 --dark-mode，无法分析以 canvas/WebGL 渲染的网站，部分动态加载内容以及悬停或焦点状态可能遗漏，JavaScript 较重的网站需要等待水合完成。需要登录的页面可借助使用者自己的 Cookie 或交互式登录访问。",
       "采用 MIT 许可。README 将预期用途限定为分析自己拥有或获准分析的设计系统，且网站条款须允许自动化访问，并要求不得用提取结果复制第三方品牌形象、标志或商标。可选的 --key 参数会把每次运行的快照上传到厂商托管、仍处于测试阶段的 Dembrandt App。本次未分析任何网站。"
     ]
+  },
+  "wiremcp": {
+    "name": "WireMCP 基于 tshark 的流量分析 MCP 服务器",
+    "requirements": [
+      "审阅对象为 main 分支 2025-07-09 的提交 7f45f8b，是自 2025-03-28 以来九个提交中的最后一个；仓库没有发布版本或标签，package.json 标注为 1.0.0，其测试脚本只是占位。执行 npm install 后用 Node.js 运行（README 建议 v16+），程序会在 PATH 或常见安装位置查找 tshark，并由 MCP 客户端通过 stdio 以 node index.js 启动；README 列出 macOS、Windows 和 Linux。每个工具另有对应的提示词模板。",
+      "实时抓包工具默认在 en0 接口上抓取 5 秒，需要主机上的抓包权限；它们会在工作目录写入 temp_capture.pcap，用后删除，数据包 JSON 会被截断到约 720,000 个字符。服务器在构造 tshark shell 命令时直接插入接口名和文件路径参数而不做转义，因此只应向可信客户端开放。",
+      "字段集合在代码中固定：不支持任意字段提取、显示过滤器、decode-as 或协议首选项设置，服务器也不会推断未知报文格式。另行收录的 Wireshark MCP 提供了这些解析器控制功能。",
+      "check_threats 和 check_ip_threats 会从 abuse.ch 下载 URLhaus 文本黑名单，并在本地比对 IP；尽管 README 提到多个威胁情报源，所审阅的代码只查询 URLhaus。凭据扫描和威胁检查属于安全启发式检测，而非协议逆向，其结果需要分析者复核。",
+      "采用 MIT 许可；Wireshark 与 tshark 保留各自的 GPL 条款。所审来源未确立与 REA 的关联。本次未运行服务器，也未进行抓包或分析。"
+    ]
   }
 }

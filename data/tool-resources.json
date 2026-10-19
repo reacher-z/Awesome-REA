@@ -7897,5 +7897,36 @@
       "https://github.com/dembrandt/dembrandt/releases/tag/v0.39.2",
       "https://www.npmjs.com/package/dembrandt/v/0.39.2"
     ]
+  },
+  {
+    "id": "wiremcp",
+    "name": "WireMCP",
+    "url": "https://github.com/0xKoda/WireMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Node.js MCP server that runs Wireshark's tshark for LLM clients, aimed in its README at threat hunting, network diagnostics and anomaly detection. Three tools capture a few seconds of live traffic and return either a fixed set of IP, port, TCP-flag and HTTP fields, tshark's protocol-hierarchy statistics or TCP conversation statistics; analyze_pcap returns IPs, ports, HTTP URLs and protocol stacks from a saved capture. The remaining tools match captured IPs against the URLhaus blocklist and scan a capture for HTTP Basic, FTP, Telnet and Kerberos credentials, beside the dissection output.",
+    "description_zh": "基于 Node.js 的 MCP 服务器，为 LLM 客户端调用 Wireshark 的 tshark；其 README 将用途定位于威胁狩猎、网络诊断和异常检测。三个工具会实时抓取数秒流量，分别返回一组固定的 IP、端口、TCP 标志和 HTTP 字段，tshark 的协议层级统计，或 TCP 会话统计；analyze_pcap 则从已保存的抓包文件中返回 IP、端口、HTTP URL 和协议栈。解析输出之外，其余工具会把抓到的 IP 与 URLhaus 黑名单比对，或在抓包文件中扫描 HTTP Basic、FTP、Telnet 和 Kerberos 凭据。",
+    "evidence_url": "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit 7f45f8b from 2025-07-09, the last of nine commits since 2025-03-28; there are no releases or tags, package.json says 1.0.0 and its test script is a placeholder. It runs with Node.js (the README recommends v16+) after npm install, finds tshark on PATH or in common install locations, and is started by the MCP client as node index.js over stdio; the README lists macOS, Windows and Linux. Each tool also has a matching prompt template.",
+      "The live-capture tools default to interface en0 for 5 seconds and need capture permissions on the host; they write temp_capture.pcap in the working directory and delete it afterwards, and packet JSON is trimmed to about 720,000 characters. The server builds tshark shell commands by inserting the interface and file-path arguments without escaping, so it should be exposed only to trusted clients.",
+      "Field sets are fixed in the code: there is no arbitrary field extraction, display filter, decode-as or protocol-preference control, and the server does not infer unknown message formats. The separately listed Wireshark MCP exposes those dissector controls.",
+      "check_threats and check_ip_threats download the URLhaus text blocklist from abuse.ch and match IPs locally; although the README mentions multiple threat feeds, the reviewed code queries only URLhaus. The credential scan and threat checks are security heuristics rather than protocol reverse engineering, and their findings need analyst review.",
+      "MIT; Wireshark and tshark keep their own GPL terms. The reviewed sources establish no REA connection. No server, capture or analysis was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L48-L180",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L182-L300",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/index.js#L301-L364",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/package.json",
+      "https://github.com/0xKoda/WireMCP/blob/7f45f8b2b4adeb76be8c6227eefb38533fdd6b1e/LICENSE"
+    ]
   }
 ]

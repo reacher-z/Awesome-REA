@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 369](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-369-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 370](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-370-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (34) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (35) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2116,6 +2116,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，通过 streamable HTTP 和旧版 SSE 提供 100 个名称明确的工具（默认启用 93 个），涵盖伪代码、反汇编、P-code、控制流图与调用图、交叉引用、字符串、导入表和导出表，以及重命名、修改类型、注释和结构体推断。自 3.0.0 版起，服务器随项目管理器一同启动，智能体在 CodeBrowser 尚未打开时即可创建、打开、保存和关闭项目并打开程序；同一个共享服务器会跟踪当前获得焦点的 CodeBrowser 窗口。扩展另附六个程序资源模板、七个分析提示词，以及在 analyzeHeadless 下运行服务器的脚本。
 
   集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidrassistmcp/)
+
+- [**WireMCP 基于 tshark 的流量分析 MCP 服务器**](https://github.com/0xKoda/WireMCP)
+
+  基于 Node.js 的 MCP 服务器，为 LLM 客户端调用 Wireshark 的 tshark；其 README 将用途定位于威胁狩猎、网络诊断和异常检测。三个工具会实时抓取数秒流量，分别返回一组固定的 IP、端口、TCP 标志和 HTTP 字段，tshark 的协议层级统计，或 TCP 会话统计；analyze\_pcap 则从已保存的抓包文件中返回 IP、端口、HTTP URL 和协议栈。解析输出之外，其余工具会把抓到的 IP 与 URLhaus 黑名单比对，或在抓包文件中扫描 HTTP Basic、FTP、Telnet 和 Kerberos 凭据。
+
+  集成 · 独立 MCP · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/wiremcp/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
