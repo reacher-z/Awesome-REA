@@ -10402,5 +10402,38 @@
       "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/LICENSE",
       "https://github.com/timschneeb/GalaxyBudsClient/releases/tag/5.2.1"
     ]
+  },
+  {
+    "id": "owasp-mastg",
+    "name": "OWASP Mobile Application Security Testing Guide (MASTG)",
+    "url": "https://mas.owasp.org/MASTG/",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app"
+    ],
+    "description_en": "OWASP’s open manual for Android and iOS app security testing and reverse engineering, published at mas.owasp.org. Chapters on platform internals, test setup and app tampering and reverse engineering sit beside modular, individually referenced tests, techniques, tool pages, knowledge articles, best practices and runnable demos, all mapped to MASVS controls and MASWE weaknesses. OWASP’s UnCrackable crackme apps serve as practice targets and examples.",
+    "description_zh": "OWASP 维护的开放手册，讲解 Android 和 iOS 应用的安全测试与逆向工程，发布于 mas.owasp.org。除平台原理、测试环境搭建以及应用篡改与逆向工程等章节外，还收录可单独引用的测试、技术、工具页面、知识条目、最佳实践和可运行的演示，均与 MASVS 控制项和 MASWE 弱点对应。OWASP 自己的 UnCrackable 破解练习应用用作练习目标和示例。",
+    "evidence_url": "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-09-30 master commit. The latest release, v2.0.0 of 2026-06-30, is described as completing the refactor into modular, machine-readable components and as the first stable release of that framework, while CITATION.cff still names version 1.5.0 of 2022. The pin holds 92 v1 tests and 200 atomic tests, 167 techniques, 135 tool pages, 157 demos, 141 knowledge articles and 74 best practices.",
+      "Reading needs only a browser; OWASP’s separate mas-website workflow builds the site. Following the techniques needs a Windows, Linux or macOS host with the tools each page names, such as the Android SDK platform tools, plus test devices or emulators. The guide recommends a rooted Android test device or jailbroken iOS device for dynamic analysis, warns against using a personal device, and describes fallbacks for testers without one.",
+      "The UnCrackable apps for Android and iOS are OWASP’s own reverse-engineering challenges, used as examples throughout the guide. Sample-app pages describe third-party apps, and tool pages describe external software; both keep their own terms. Demo results are written up from the guide’s sample code, not from tests of production apps.",
+      "The repository is licensed CC BY-SA 4.0, so adapted text needs attribution and the same license. The guide establishes no REA connection; this entry records it as a testing and reverse-engineering reference, and this review ran none of its demos."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/Document/0x04c-Tampering-and-Reverse-Engineering.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/Document/0x05b-Android-Security-Testing.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/Document/0x06b-iOS-Security-Testing.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests-beta/index.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/demos/index.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/Crackmes/README.md",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/CITATION.cff",
+      "https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/License.md",
+      "https://github.com/OWASP/mastg/releases/tag/v2.0.0"
+    ]
   }
 ]
