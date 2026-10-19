@@ -129,7 +129,6 @@
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — 用于动态二进制分析的 Pintool 示例与概念验证。 **[593 星标]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 展示 Go 二进制文件大小的 SVG 矩形树图。 **[587 星标]**
 - [quarkslab/binbloom](https://github.com/quarkslab/binbloom) — 原始二进制固件分析软件。 **[586 星标]**
-- [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — avatar² 的 Python 核心。 **[579 星标]**
 - [d3v1l401/FindCrypt-Ghidra](https://github.com/d3v1l401/FindCrypt-Ghidra) — 将 IDA Pro 的 FindCrypt 移植到 Ghidra，附带更新且可自定义的特征库。 **[550 星标]**
 - [BeaEngine/beaengine](https://github.com/BeaEngine/beaengine) — BeaEngine 反汇编项目。 **[549 星标]**
 - [ex0dus-0x/fuzzable](https://github.com/ex0dus-0x/fuzzable) — 利用静态分析自动发现可模糊测试目标的框架。 **[548 星标]**

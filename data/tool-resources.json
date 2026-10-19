@@ -7511,5 +7511,41 @@
       "Runs as a single executable JAR on a Java runtime; the Gradle build targets Java 8 source and target compatibility, and the README notes large inputs may need an increased -Xmx heap to avoid an OutOfMemoryError.",
       "Operates on APK files the user supplies; the README documents decoding to XML source for un-obfuscated packages only, and rebuilding a package is distinct from recovering original Java source. Apache-2.0 licensed."
     ]
+  },
+  {
+    "id": "avatar2",
+    "name": "avatar²",
+    "url": "https://github.com/avatartwo/avatar2",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python framework from EURECOM's S3 group that orchestrates emulators, debuggers and physical devices for dynamic analysis of embedded firmware. An analysis script declares targets, such as a modified QEMU, PANDA, Unicorn, a gdbserver or an OpenOCD or J-Link debug probe, then a memory layout whose ranges can forward accesses from one target to another, and an execution plan. Execution and register or memory state can move between targets, so firmware can run in an emulator while its peripheral accesses go to the real device.",
+    "description_zh": "由 EURECOM S3 小组开发的 Python 框架，可协调模拟器、调试器和物理设备，对嵌入式固件进行动态分析。分析脚本先声明目标（如修改版 QEMU、PANDA、Unicorn、gdbserver，或 OpenOCD、J-Link 调试探针），再定义内存布局（其中的内存区间可把访问从一个目标转发到另一个目标）和执行计划。执行过程以及寄存器、内存状态可在目标之间转移，从而让固件在模拟器中运行，同时把外设访问转发给真实设备。",
+    "evidence_url": "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.4.7, uploaded to PyPI on 2022-02-10 and tagged v1.4.7; GitHub lists no release pages. The reviewed main commit, from 2024-10-23, is nine commits ahead of that tag, adding ARMv7-M interrupt forwarding and hardware-runner plugins and pinning Unicorn 2.0.1.post1.",
+      "The core installs with pip; CI tests Python 3.7-3.9 on Ubuntu 20.04. Target endpoints are separate: python -m avatar2.installer or the targets/build_*.sh scripts build the avatar-qemu fork and PANDA, with build scripts provided for Ubuntu 20.04 only, and the scripts add a restricted deb-src repository to /etc/apt/sources.list, so the README suggests a VM or container. A Dockerfile generator builds images with selected endpoints.",
+      "An analysis needs the user's own firmware image and, for hybrid setups, the physical device reachable through a gdbserver, an OpenOCD script or a Segger J-Link probe. Architecture definitions cover ARM, including Cortex-M3 and big-endian variants, MIPS and x86/x86-64. The analyst writes the memory layout, forwarding rules and execution plan in Python.",
+      "Apache-2.0; avatar-qemu and PANDA come from separate repositories with their own licenses. The README lists research publications that describe, use or extend the framework; their results are not properties of this release. No endpoints were built and no firmware was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/handbook/0x01_intro.md",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/handbook/0x02_targets.md#L67-L155",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/handbook/0x03_memory.md#L31-L45",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/handbook/0x04_execution.md#L113-L165",
+      "https://github.com/avatartwo/avatar2/tree/56a90cfe738886236dcbc3653756bdbdec6aaf92/avatar2/targets",
+      "https://github.com/avatartwo/avatar2/tree/56a90cfe738886236dcbc3653756bdbdec6aaf92/avatar2/archs",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/setup.py",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/.github/workflows/continuous_integration.yml",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/targets/build_qemu.sh",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/CHANGELOG.md",
+      "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/LICENSE",
+      "https://pypi.org/project/avatar2/1.4.7/"
+    ]
   }
 ]

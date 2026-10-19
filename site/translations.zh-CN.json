@@ -3072,5 +3072,14 @@
       "以单个可执行 JAR 的形式在 Java 运行时上运行；Gradle 构建以 Java 8 的源码与目标兼容性为目标，README 指出处理大型输入时可能需要调大 -Xmx 堆以避免 OutOfMemoryError。",
       "对使用者提供的 APK 文件进行操作；README 说明仅对未混淆的包支持解码为 XML 源码，且重建安装包不同于恢复原始 Java 源码。采用 Apache-2.0 许可证。"
     ]
+  },
+  "avatar2": {
+    "name": "avatar² 多目标固件动态分析编排框架",
+    "requirements": [
+      "审阅时最新版本为 1.4.7，于 2022-02-10 上传到 PyPI，对应标签 v1.4.7；GitHub 上没有发布页面。所审阅的 main 分支提交（2024-10-23）比该标签多九个提交，新增了 ARMv7-M 中断转发和硬件运行器插件，并将 Unicorn 固定为 2.0.1.post1。",
+      "核心部分可用 pip 安装；CI 在 Ubuntu 20.04 上测试 Python 3.7-3.9。目标端点需单独构建：python -m avatar2.installer 或 targets/build_*.sh 脚本会构建 avatar-qemu 分支和 PANDA，构建脚本只为 Ubuntu 20.04 提供；这些脚本会把 restricted 软件源的 deb-src 条目写入 /etc/apt/sources.list，因此 README 建议在虚拟机或容器中构建。另有 Dockerfile 生成脚本，可按所选端点构建镜像。",
+      "分析需要使用者自有的固件镜像；混合部署还需要可通过 gdbserver、OpenOCD 脚本或 Segger J-Link 探针访问的物理设备。架构定义涵盖 ARM（包括 Cortex-M3 和大端变体）、MIPS 以及 x86/x86-64。内存布局、转发规则和执行计划都由分析者用 Python 编写。",
+      "采用 Apache-2.0 许可；avatar-qemu 和 PANDA 位于独立仓库，各有其许可。README 列出了介绍、使用或扩展该框架的研究论文，其中的结果不代表当前版本的特性。本次未构建任何端点，也未运行任何固件。"
+    ]
   }
 }
