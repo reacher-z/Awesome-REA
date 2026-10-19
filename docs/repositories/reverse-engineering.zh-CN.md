@@ -134,7 +134,6 @@
 - [Diobf/Deobfuscator](https://github.com/Diobf/Deobfuscator) — 一个 Java 去混淆工具，哈哈。 **[540 星标]**
 - [pret/pokediamond](https://github.com/pret/pokediamond) — 《宝可梦 钻石/珍珠》的反编译代码。 **[540 星标]**
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) — 每夜反编译 Claude Code CLI：逆向分析并重新构建。 **[533 星标]**
-- [jac3km4/redscript](https://github.com/jac3km4/redscript) — redscript 编译器与反编译器工具包。 **[520 星标]**
 - [MaxPixelStudios/MinecraftDecompiler](https://github.com/MaxPixelStudios/MinecraftDecompiler) — Minecraft 反编译器。实用的工具和库，可通过常用映射与多种反编译器，对 Minecraft（或任意 JAR 文件）去混淆和反编译。也可作为库处理混淆映射，例如将映射转换为另一种格式。 **[493 星标]**
 - [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]**
 - [aozhimin/iOS-APM-Secrets](https://github.com/aozhimin/iOS-APM-Secrets) — <span>:</span>secret: 开发中：深度揭秘各大 APM 厂商 iOS SDK 背后的核心技术和实现细节，持续更新中…… **[474 星标]**

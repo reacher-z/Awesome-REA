@@ -8226,5 +8226,36 @@
       "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/librecomp/src/recomp.cpp#L360-L410",
       "https://github.com/N64Recomp/N64ModernRuntime/blob/cdf5abbd5026fef5c364c676e4667c45e42b6863/librecomp/src/mods.cpp"
     ]
+  },
+  {
+    "id": "redscript",
+    "name": "REDscript",
+    "url": "https://github.com/jac3km4/redscript",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Compiler and decompiler toolkit for REDscript, a statically typed, object-oriented language for writing scripts for REDengine, CD Projekt's engine used in Cyberpunk 2077. Its Rust crates parse and analyze source, generate bytecode with monomorphization of generics, decompile .redscripts bytecode bundles back into REDscript source, read and write REDengine's native binary format, and provide a drop-in replacement for CD Projekt's scc script compiler plus a C API with source mapping. The CLI exposes decompile, compile, lint and format commands; the language server and debugger live in a separate redscript-ide repository.",
+    "description_zh": "REDscript 的编译器与反编译器工具集。REDscript 是一种静态类型、面向对象的语言，用于为 CD Projekt 在《赛博朋克 2077》中使用的 REDengine 引擎编写脚本。其 Rust crate 负责解析和分析源码、生成字节码并对泛型做单态化、将 .redscripts 字节码包反编译回 REDscript 源码、读写 REDengine 原生二进制格式，并提供可直接替代 CD Projekt scc 脚本编译器的实现，以及带源码映射的 C API。命令行提供 decompile、compile、lint 和 format 命令；语言服务器和调试器位于单独的 redscript-ide 仓库。",
+    "evidence_url": "https://github.com/jac3km4/redscript/blob/3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "GitHub's latest stable release is v0.5.31 (2025-08-28), with Windows and macOS archives and standalone CLI binaries for Windows and macOS arm64. The default 1.0.x branch declares 1.0.0-preview.22, the newest prerelease (2025-09-07); the reviewed commit (2026-05-27) is 26 commits after that tag, and older lines live on the 0.5.x and 0.6.x branches. Source builds use Cargo with a Rust toolchain that supports the 2024 edition.",
+      "Installation targets the user's own Cyberpunk 2077 installation: the Windows archive is extracted into the game directory so scripts compile at game startup, with logs under r6/logs. On native macOS the game does not compile scripts at startup, so the README uses a bundled launch_modded.sh, and downloaded binaries must first be removed from quarantine. The decompiler reads a .redscripts bundle from the user's game, compilation uses one as its base, and the reviewed tree contains no game scripts or bundles.",
+      "Language documentation is on the REDmodding community wiki, and editor support for VS Code, neovim, IntelliJ IDEA, Zed and Helix is in the separate redscript-ide repository; neither was reviewed. The README states no supported game patch range, and compatibility with a particular game version is not implied.",
+      "MIT. This entry covers single-player script modding and analysis of the user's own game installation; the game's license terms are separate. No scripts were compiled or decompiled, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jac3km4/redscript/blob/3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86/Cargo.toml",
+      "https://github.com/jac3km4/redscript/blob/3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86/LICENSE",
+      "https://github.com/jac3km4/redscript/blob/3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86/crates/cli/src/main.rs#L31-L120",
+      "https://github.com/jac3km4/redscript/blob/3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86/assets/macos/archive/launch_modded.sh",
+      "https://github.com/jac3km4/redscript/releases/tag/v0.5.31",
+      "https://github.com/jac3km4/redscript/releases/tag/v1.0.0-preview.22",
+      "https://github.com/jac3km4/redscript/compare/v1.0.0-preview.22...3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86"
+    ]
   }
 ]
