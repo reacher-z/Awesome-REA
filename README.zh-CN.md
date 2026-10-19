@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 356](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 357](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-357-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (51)
+- [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (52)
 - [原生二进制](#native-binary) (25) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1500,6 +1500,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用 Python 编写的 Android 反编译器，直接对 APK 执行查询，而不必先解包并建立索引。它在压缩的 DEX 条目中就地探测数据，利用 R8 编译器的常量重定位和指令去重所留下的布局，跨 DEX 文件搜索字符串、类型、方法和字段引用；对指定的类，则在内存中重建一个最小且自洽的 DEX，再由内置的 Androguard 反编译器副本转换为 Java 代码。droidasc 命令行和 Tk 图形界面可列出类、反编译单个类、解码 AndroidManifest.xml，并查找子类或接口实现；README 将其定位为供智能体批量分析 APK 的轻量后端。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/droid-asc/)
+
+- [**APK Studio Android 逆向 IDE**](https://github.com/vaibhavpandeyvpz/apkstudio)
+
+  基于 Qt6 的桌面前端，在 IDE 式工作区中调用 Apktool、JADX、uber-apk-signer 和 ADB 处理 Android 安装包。它将 APK 解码为 smali 和资源文件，可选附加 JADX 生成的 Java 代码，随后重新打包、签名（可生成密钥库并执行 zipalign）并安装到所选设备；还可指定厂商框架文件和额外的 Apktool 参数。解码后的项目以文件树形式打开，提供 smali、Java、XML 和 YAML 的语法高亮编辑、图片查看器、十六进制编辑器和跨文件搜索。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apk-studio/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制

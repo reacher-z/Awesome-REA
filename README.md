@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 357](https://img.shields.io/badge/resources-357-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (51)
+- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (52)
 - [Native Binary](#native-binary) (25) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1499,6 +1499,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Python Android decompiler that answers queries directly against an APK instead of first unpacking and indexing it. It probes compressed DEX entries in place, uses the layout that the R8 compiler’s constant relocation and instruction deduplication leave behind to search string, type, method and field references across DEX files, and for a requested class rebuilds a minimal, self-consistent DEX in memory that a bundled copy of Androguard’s decompiler turns into Java. The droidasc CLI and Tk GUI list classes, decompile single classes, decode AndroidManifest.xml and find subclasses or interface implementations; the README presents it as a lightweight back end for agents analyzing many APKs.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/droid-asc/)
+
+- [**APK Studio**](https://github.com/vaibhavpandeyvpz/apkstudio)
+
+  Qt6 desktop front end that drives Apktool, JADX, uber-apk-signer and ADB from an IDE-style workspace for Android packages. It decodes an APK into smali and resources, optionally adds JADX Java output, then rebuilds, signs (with optional keystore generation and zipalign) and installs the result on a selected device; manufacturer framework files and extra Apktool arguments can be supplied. Decoded projects open in a file tree with syntax-highlighted smali, Java, XML and YAML editing, an image viewer, a hex editor and search across files.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/apk-studio/)
 
 <a id="native-binary"></a>
 ### Native Binary

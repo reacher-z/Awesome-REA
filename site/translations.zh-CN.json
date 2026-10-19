@@ -3066,5 +3066,14 @@
       "速度和内存数据均为作者自报：README 称在 Telegram X、WhatsApp、Grab 和 Lark 四个 59–352 MB 的 APK 上以 10 个线程运行时，字符串引用搜索比 JADX 快 62–302 倍，单类反编译快 38–304 倍，内存占用为 36–141 MB，并称 JADX 在最大的目标上内存不足。Java 输出由内置的 Androguard 反编译器生成，每次处理一个类。README 面向智能体工作流，但未介绍 MCP 服务器；智能体需调用命令行或 Python 包。",
       "采用 Apache-2.0 许可；内置的 dadguard 包含 Androguard 代码，后者同样采用 Apache-2.0。反编译得到的代码仍归应用权利人所有。本次未安装或运行任何组件，也未分析任何 APK。"
     ]
+  },
+  "apk-studio": {
+    "name": "APK Studio Android 逆向 IDE",
+    "requirements": [
+      "审阅时的版本为 v6.3.0，于 2026-01-05 基于所审阅的 master 提交发布，提供 Linux x86_64 AppImage、Windows x64 ZIP 和 macOS DMG。6.x 系列始于 2025-12-03 发布的 v6.0.0，此前的 5.2.4 发布于 2020 年；2026-01-05 之后仓库再无新提交。从源码构建需要 CMake 3.16+、Qt 6.10.1+（Core、Gui、Network、Widgets 组件）、C++17 编译器、Git 以及 QHexView 子模块。",
+      "解码、反编译、签名和安装均由外部工具完成。首次启动时，APK Studio 可自动下载 Microsoft OpenJDK 11.0.29、Apktool、JADX 和 uber-apk-signer 在 GitHub 上的最新版本以及 Google 最新的 platform-tools，也可在设置中改用已有安装；只有 JDK 版本是固定的，且在 macOS 上自动下载的是 Apple 芯片版 JDK。其控制台会显示实际执行的命令，README 请用户区分 Apktool 本身的问题与 APK Studio 的问题。",
+      "APK 及所需的厂商框架文件由使用者自备；安装到设备需要可通过 ADB 连接的设备。解码得到的 smali 和 JADX 生成的 Java 代码属于重建结果，需要核对，并非原始源码。README 称其在 Windows、Linux 和 macOS 上运行 CI 构建，免责声明表示该工具不用于盗版或其他非法用途。",
+      "采用 LGPL-3.0 许可。本次未安装，也未解码任何 APK。"
+    ]
   }
 }
