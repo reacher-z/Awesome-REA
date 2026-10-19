@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "rec98-touhou-pc98-restoration-case",
+    "name": "ReC98: the Touhou PC-98 Restoration Project",
+    "url": "https://github.com/nmlgc/ReC98",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ and assembly source for the first five Touhou games, released by ZUN for the NEC PC-9801 in 1997–1998, under a rule that no master commit may change the decompressed program image or relocations of any original executable as compared by the project’s mzdiff tool. TH01 was fully decompiled in August 2022; code not yet decompiled stays in the tree as IDA-generated disassembly, and the project’s blog documents what each part of ZUN’s code does. Separate debloated and anniversary branches restructure the code and fix bugs as bases for ports and mods.",
+    "description_zh": "为 ZUN 于 1997–1998 年在 NEC PC-9801 上发布的前五部东方 Project 游戏重建 C++ 与汇编源码，并规定 master 分支的任何提交都不得改变任一原始可执行文件经解压后的程序映像或重定位，以项目自己的 mzdiff 工具比对。TH01 已于 2022 年 8 月完成全部反编译；尚未反编译的代码以 IDA 生成的反汇编形式保留在仓库中，项目博客则逐一记录 ZUN 代码各部分的作用。另有 debloated 与 anniversary 分支重组代码并修复缺陷，供移植与模组作为基础。",
+    "evidence_url": "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master pin is dated 2026-03-16. README defines a perfect reconstruction as compiled binaries indistinguishable from ZUN’s builds, keeps master free of mods and bug fixes, and directs ports to the debloated branch and bug fixes to the anniversary branch or single-fix branches. The crowdfunded homepage, a mutable page, reported 64.35% of all code reverse-engineered and 61.09% finalized as of 2026-01-19, with TH01 at 100% and TH02–TH05 between 42% and 59% reverse-engineered.",
+      "The repository includes no asset data from the original PC-98 releases, and running the built executables, which build.bat writes to bin\\th0? under the original names, needs each game’s original files in the same directory. The README lists the original executables and resident .com programs for each game; the master tree holds IDA-generated disassembly of them for code not yet decompiled, small hard-coded sprite bitmaps, and the PMD driver’s ONGCHK.COM kept for bit-perfect ZUN.COM rebuilds.",
+      "Building needs Borland Turbo C++ 4.0J, ZUN’s original compiler and the only one README says compiles the code bit-perfectly, and Borland Turbo Assembler 5.0 or later as TASM32.EXE; neither is bundled. On 64-bit Windows build.bat uses the bundled Tup build system and MS-DOS Player to emulate the 16-bit DOS tools, while 32-bit Windows falls back to a sequential native build; Windows 11 x64 and Windows XP 32-bit are tier-1 build platforms and Wine on 64-bit x86 Unix is tier 2. The outputs are PC-98 DOS programs, and README names DOSBox-X and the project’s Neko Project II debug fork as emulators that run the games.",
+      "CONTRIBUTING’s first rule allows only different encodings of identical x86 instructions in code segments and trailing zero padding as differences from the originals under mzdiff. The pinned tree has no CI workflow; contributors enable local Git hooks, and the progress and matching statements are the project’s own. This collection built and ran nothing.",
+      "GitHub detects no license and the pinned root has no license file; bin/README.md licenses the bundled MS-DOS Player and Tup builds under GPLv2 with links to the forked sources, while master.lib, the Pi loader, SPRITE16 and KAJA’s PMD files are third-party components. README argues the games are abandoned, which is the project’s position rather than a grant of rights, and game rights stay with their owner. The reviewed sources establish no AI or REA involvement; the catalog’s REA Touhou essay mentions ReC98 only as credited by a separate TH04 project."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/CONTRIBUTING.md",
+      "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/bin/README.md",
+      "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/build.bat",
+      "https://github.com/nmlgc/ReC98/blob/b6ba5b0a529edbb31efdf8c0e939263804f8ee47/Tupfile.lua",
+      "https://github.com/nmlgc/ReC98/tree/28d59d31331e27fcbe61d1b65bd8c0cd618757d8",
+      "https://github.com/nmlgc/ReC98/tree/c7019963ac643333114ccba9ef10adb3728f2384",
+      "https://github.com/nmlgc/mzdiff",
+      "https://rec98.nmlgc.net/"
+    ]
   }
 ]

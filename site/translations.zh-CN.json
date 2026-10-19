@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "rec98-touhou-pc98-restoration-case": {
+    "name": "ReC98：东方 Project PC-98 作品源码复原项目",
+    "requirements": [
+      "所审阅的 master 固定版本日期为 2026 年 3 月 16 日。README 将“完美”重建定义为编译所得二进制与 ZUN 的原始构建无从区分，master 分支不含模组或缺陷修复；移植应从 debloated 分支开始，缺陷修复则放在 anniversary 分支或各个单项修复分支。由众筹支持的项目主页（内容会变动）报告，截至 2026 年 1 月 19 日，全部代码中 64.35% 已完成逆向、61.09% 已定稿，其中 TH01 为 100%，TH02–TH05 的逆向进度在 42% 至 59% 之间。",
+      "仓库不含原版 PC-98 发行版的任何素材数据。build.bat 会把构建出的可执行文件以原始文件名写入 bin\\th0?，运行时需要把各游戏的原始文件放在同一目录。README 列出了各游戏的原始可执行文件与常驻 .com 程序；master 分支中保存着尚未反编译部分的 IDA 生成反汇编、少量硬编码的精灵位图，以及为逐位重建 ZUN.COM 而保留的 PMD 音源驱动 ONGCHK.COM。",
+      "构建需要 ZUN 当年使用的 Borland Turbo C++ 4.0J（README 称这是唯一能把代码逐位一致编译出来的编译器），以及 5.0 或更高版本的 Borland Turbo Assembler（TASM32.EXE）；两者均不随仓库提供。在 64 位 Windows 上，build.bat 借助仓库附带的 Tup 构建系统和 MS-DOS Player 模拟运行 16 位 DOS 工具；在 32 位 Windows 上则退回为原生的顺序构建。Windows 11 x64 与 Windows XP 32 位是一级支持的构建平台，64 位 x86 Unix 上的 Wine 为二级。产物是 PC-98 DOS 程序，README 指出 DOSBox-X 和项目自己的 Neko Project II 调试分支可以运行这些游戏。",
+      "CONTRIBUTING 的第一条规则规定，经 mzdiff 比对，与原始文件之间只允许存在两类差异：代码段内相同 x86 指令的不同编码，以及文件末尾的零字节填充。固定版本中没有 CI 工作流；贡献者需自行启用本地 Git 钩子，进度与一致性说法均来自项目本身。本合集未构建或运行任何内容。",
+      "GitHub 未识别出许可证，固定版本根目录也没有许可证文件；bin/README.md 说明随附的 MS-DOS Player 与 Tup 构建采用 GPLv2，并链接到各自的分叉源码，而 master.lib、Pi 加载库、SPRITE16 与 KAJA 的 PMD 文件属于第三方组件。README 认为这些游戏已遭弃置，这只是项目的立场，并不构成授权，游戏权利仍归权利人所有。所审来源未确立 AI 或 REA 的参与；本合集收录的 REA 东方 Project 文章提及 ReC98，只是因为另一个 TH04 项目注明了对它的借鉴。"
+    ]
   }
 }
