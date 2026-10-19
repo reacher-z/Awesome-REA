@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 327](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-327-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 168](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-168-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 327](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-327-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 168](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-168-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 77](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (76) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (77) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2074,13 +2074,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**76 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**77 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (24) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (25) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2468,6 +2468,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 预测名称是模型学到的建议，以开发者原名称评分，并非恢复出的原始符号。在 O2 的按二进制划分上，Top-1 准确率降至 42.40%（IDA）与 40.49%（Ghidra）；在 IDA-O0 的按二进制划分上，其领先 DIRTY 的幅度为 4.52 个百分点。与 DIRE、DIRTY 的比较仅覆盖 O0 下的 IDA，并因 DIRE 训练耗时过长而只使用约 40 万个函数（约占 VarCorpus 的 15%）。方法只能为反编译器恢复出的变量命名，标注则依赖 IDA 与 Ghidra 在匹配调试符号时保留变量。语料来自 Linux 发行版软件包，以 x86-64 为主，另有规模较小的 AArch64 O2 实验，可能不代表 Windows 或 macOS 可执行文件；去重仅删除完全重复项。用户研究由 27 名完成全部 13 组函数的学生参与。类型、数据结构与可重新编译的代码不在其范围内。
 
   **发表信息:** 2024 · IEEE S&amp;P 2024 · 会议论文 · Kuntal Kumar Pal 等
+
+  </details>
+
+- [**Forklift：可扩展的神经提升器**](https://openreview.net/forum?id=LWfDcI6txJ)
+
+  Forklift 使用 153M 参数的词元级编码器—解码器 Transformer，将函数级汇编提升为 LLVM 中间表示（而非 C），以便由 LLVM 重新优化并编译到其他指令集架构。模型在约 270 万对源自 ExeBench 的并行函数上训练，先训练 x86 编码器；增加 ARM 与 RISC-V 支持时，复制编码器进行微调，同时冻结 LLVM IR 解码器。在 512 个 ExeBench 函数的 Clang -O3 x86 汇编上，作者报告输入／输出准确率为 75.57%，手写提升器 Lasagne 为 30.26%，GPT-4 为 17.07%。
+
+  2024 · 会议论文 · [PDF](https://openreview.net/pdf?id=LWfDcI6txJ) · [代码](https://github.com/jordiae/forklift) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-forklift/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 输入为单个函数的文本汇编，长度不超过 2,048 个词元，并假定已有正确的反汇编器；完整程序与原始二进制不在范围内。正确性依据参考测试上的输入／输出评测框架，同时检查对数组、结构体指针和全局变量的副作用，并评估束搜索的前五个候选。通过这些测试并不证明语义等价，作者也说明 Forklift 不保证这一点。基准为 ExeBench 测试集的前 512 个函数和 Synth 程序合成基准；原函数无法在主机上编译时会被剔除，比例为 3–23%。Synth 中的向量化代码仍然更难，在 x86 上尤为明显。Lasagne 对 ARM 支持有限（在 32 位 ARM 上评测），且不支持 RISC-V；GPT-4 基线为 2024 年 3 月的快照。由 GCC 生成的输入需要另行微调编码器。
+
+  **发表信息:** 2024 · COLM 2024 · 会议论文 · Jordi Armengol-Estapé 等
 
   </details>
 

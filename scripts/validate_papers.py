@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 import sys
-from urllib.parse import urlsplit
+from urllib.parse import parse_qsl, urlsplit
 
 from review_dates import review_date_is_future
 
@@ -63,6 +63,9 @@ def canonical_paper_url(value):
             host, path = 'arxiv.org', '/abs/' + match[1]
     elif host == 'aclanthology.org':
         path = path.removesuffix('.pdf')
+    elif host in {'openreview.net', 'www.openreview.net'}:
+        # OpenReview identifies a paper by its id query parameter rather than its path.
+        host, path = 'openreview.net', f"{path}?id={dict(parse_qsl(parsed.query)).get('id', '')}"
     return parsed.scheme.casefold(), host, path
 
 

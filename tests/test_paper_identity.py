@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_paper_pages import bibtex_text, scholarly_article
 from validate import public_https_error
-from validate_papers import validate_papers
+from validate_papers import canonical_paper_url, validate_papers
 
 
 def publisher_paper():
@@ -229,6 +229,11 @@ class PaperIdentityTests(unittest.TestCase):
                             for error in errors_for([first, second])))
         existing = json.loads((ROOT / 'data/papers.json').read_text())
         self.assertEqual(errors_for(existing), [])
+
+    def test_openreview_papers_are_keyed_by_their_forum_id(self):
+        forum = canonical_paper_url('https://openreview.net/forum?id=LWfDcI6txJ')
+        self.assertNotEqual(forum, canonical_paper_url('https://openreview.net/forum?id=tLYdf8hWJB'))
+        self.assertEqual(forum, canonical_paper_url('https://www.openreview.net/forum/?id=LWfDcI6txJ&noteId=x'))
 
 
 if __name__ == '__main__':

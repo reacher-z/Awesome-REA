@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 327](https://img.shields.io/badge/resources-327-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 168](https://img.shields.io/badge/cases-168-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 327](https://img.shields.io/badge/resources-327-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 168](https://img.shields.io/badge/cases-168-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (76) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (77) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2073,13 +2073,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**76 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**77 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (24) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (25) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2467,6 +2467,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Predicted names are learned suggestions scored against developer names, not recovered originals. Top-1 accuracy drops to 42.40% (IDA) and 40.49% (Ghidra) on per-binary O2 splits, and the per-binary IDA-O0 lead over DIRTY is 4.52 points. The DIRE and DIRTY comparison covers IDA at O0 only, on about 400K functions (roughly 15% of VarCorpus), because DIRE's training time was prohibitive. The method can name only variables the decompiler recovers, and labeling relies on IDA and Ghidra preserving variables when matching debug symbols. Corpora come from Linux distribution packages, mainly x86-64 with a smaller AArch64 O2 experiment, and may not represent Windows or macOS executables; deduplication removes exact duplicates only. The user study had 27 students who completed 13 function pairs. Types, structures and recompilable code are outside its scope.
 
   **Publication:** 2024 · IEEE S&amp;P 2024 · Conference paper · Kuntal Kumar Pal et al.
+
+  </details>
+
+- [**Forklift: An Extensible Neural Lifter**](https://openreview.net/forum?id=LWfDcI6txJ)
+
+  Forklift lifts function-level assembly to LLVM IR, not C, with a 153M-parameter token-level encoder–decoder Transformer, so that LLVM can re-optimize and recompile the result for another ISA. It is trained on about 2.7 million parallel functions derived from ExeBench, starting with an x86 encoder; ARM and RISC-V support is added by fine-tuning a copied encoder while the LLVM IR decoder stays frozen. On Clang -O3 x86 assembly from 512 ExeBench functions, the authors report 75.57% input/output accuracy, against 30.26% for the hand-written Lasagne lifter and 17.07% for GPT-4.
+
+  2024 · Conference paper · [PDF](https://openreview.net/pdf?id=LWfDcI6txJ) · [Code](https://github.com/jordiae/forklift) · [Full entry & citation](https://awesomerea.org/papers/paper-forklift/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Inputs are single functions of at most 2,048 tokens in textual assembly, assuming a correct disassembler; whole programs and raw binaries are out of scope. Correctness comes from an input/output harness on reference tests that also checks side effects on arrays, struct pointers and globals, with the top five beam hypotheses evaluated. Passing these tests is not proof of semantic equivalence, which the authors state Forklift does not guarantee. Benchmarks are the first 512 ExeBench test functions and the Synth program-synthesis suite; 3–23% of functions were discarded when the original did not compile on the host. Vectorized Synth code remains harder, especially on x86. Lasagne has limited ARM support, evaluated on 32-bit ARM, and none for RISC-V, and the GPT-4 baseline is a March 2024 snapshot. GCC-generated input needed separate encoder fine-tuning.
+
+  **Publication:** 2024 · COLM 2024 · Conference paper · Jordi Armengol-Estapé et al.
 
   </details>
 

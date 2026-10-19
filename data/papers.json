@@ -4315,5 +4315,58 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-forklift",
+    "title": "Forklift: An Extensible Neural Lifter",
+    "title_zh": "Forklift：可扩展的神经提升器",
+    "authors": [
+      "Jordi Armengol-Estapé",
+      "Rodrigo C. O. Rocha",
+      "Jackson Woodruff",
+      "Pasquale Minervini",
+      "Michael F. P. O'Boyle"
+    ],
+    "year": 2024,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year from the official COLM 2024 OpenReview record and its BibTeX; no finer publication date is asserted.",
+    "date_basis_zh": "采用 COLM 2024 官方 OpenReview 记录及其 BibTeX 标明的出版年份，不推定更精确的出版日期。",
+    "venue": "COLM 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2404.16041",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-04-01",
+    "doi": null,
+    "url": "https://openreview.net/forum?id=LWfDcI6txJ",
+    "pdf_url": "https://openreview.net/pdf?id=LWfDcI6txJ",
+    "code_url": "https://github.com/jordiae/forklift",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Forklift lifts function-level assembly to LLVM IR, not C, with a 153M-parameter token-level encoder–decoder Transformer, so that LLVM can re-optimize and recompile the result for another ISA. It is trained on about 2.7 million parallel functions derived from ExeBench, starting with an x86 encoder; ARM and RISC-V support is added by fine-tuning a copied encoder while the LLVM IR decoder stays frozen. On Clang -O3 x86 assembly from 512 ExeBench functions, the authors report 75.57% input/output accuracy, against 30.26% for the hand-written Lasagne lifter and 17.07% for GPT-4.",
+    "description_zh": "Forklift 使用 153M 参数的词元级编码器—解码器 Transformer，将函数级汇编提升为 LLVM 中间表示（而非 C），以便由 LLVM 重新优化并编译到其他指令集架构。模型在约 270 万对源自 ExeBench 的并行函数上训练，先训练 x86 编码器；增加 ARM 与 RISC-V 支持时，复制编码器进行微调，同时冻结 LLVM IR 解码器。在 512 个 ExeBench 函数的 Clang -O3 x86 汇编上，作者报告输入／输出准确率为 75.57%，手写提升器 Lasagne 为 30.26%，GPT-4 为 17.07%。",
+    "scope_limitations_en": "Inputs are single functions of at most 2,048 tokens in textual assembly, assuming a correct disassembler; whole programs and raw binaries are out of scope. Correctness comes from an input/output harness on reference tests that also checks side effects on arrays, struct pointers and globals, with the top five beam hypotheses evaluated. Passing these tests is not proof of semantic equivalence, which the authors state Forklift does not guarantee. Benchmarks are the first 512 ExeBench test functions and the Synth program-synthesis suite; 3–23% of functions were discarded when the original did not compile on the host. Vectorized Synth code remains harder, especially on x86. Lasagne has limited ARM support, evaluated on 32-bit ARM, and none for RISC-V, and the GPT-4 baseline is a March 2024 snapshot. GCC-generated input needed separate encoder fine-tuning.",
+    "scope_limitations_zh": "输入为单个函数的文本汇编，长度不超过 2,048 个词元，并假定已有正确的反汇编器；完整程序与原始二进制不在范围内。正确性依据参考测试上的输入／输出评测框架，同时检查对数组、结构体指针和全局变量的副作用，并评估束搜索的前五个候选。通过这些测试并不证明语义等价，作者也说明 Forklift 不保证这一点。基准为 ExeBench 测试集的前 512 个函数和 Synth 程序合成基准；原函数无法在主机上编译时会被剔除，比例为 3–23%。Synth 中的向量化代码仍然更难，在 x86 上尤为明显。Lasagne 对 ARM 支持有限（在 32 位 ARM 上评测），且不支持 RISC-V；GPT-4 基线为 2024 年 3 月的快照。由 GCC 生成的输入需要另行微调编码器。",
+    "why_fits_en": "Adds learned lifting from machine assembly to compiler IR, complementing rule-based lifters such as rev.ng and neural assembly-to-C decompilers such as SLaDe.",
+    "why_fits_zh": "补充从机器汇编到编译器中间表示的学习式提升方法，与 rev.ng 等基于规则的提升器及 SLaDe 等汇编到 C 的神经反编译器互补。",
+    "metadata_notes": "OpenReview lists the paper as published at COLM 2024 (First Conference on Language Modeling) under CC BY 4.0, and its camera-ready PDF reads ‘Published as a conference paper at COLM 2024’. arXiv v1 (2024-04-01), the only arXiv version, is the earlier copy headed ‘Preprint’; its headline results match the camera-ready, which adds Rodrigo C. O. Rocha’s Huawei Research affiliation and a code footnote. Author names follow the PDFs and arXiv; OpenReview’s metadata shortens the last author to Michael O'Boyle. OpenReview’s 2024-07-10 publication timestamp is not used as a publication date, and no paper DOI was found in Crossref. The camera-ready footnote names github.com/jordiae/forklift. At the reviewed 2024-10-03 commit, that MIT-licensed repository is a stripped-down inference demo without preprocessing or training code. It loads one Hugging Face checkpoint, for Clang -O3 x86 to LLVM IR at Oz, whose card carries no license metadata; no ARM or RISC-V checkpoint was found. Data comes from the clang revision of the ExeBench dataset on the Hub, and the requirements pin torch 1.12.1 and datasets 2.15. No weights or datasets were downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "OpenReview 将论文列为 COLM 2024（First Conference on Language Modeling）已发表论文，采用 CC BY 4.0 许可；终稿 PDF 标注“Published as a conference paper at COLM 2024”。arXiv v1（2024-04-01）是唯一的 arXiv 版本，属于较早的“Preprint”稿；其主要结果与终稿一致，终稿另补充了 Rodrigo C. O. Rocha 的华为研究院单位及代码脚注。作者姓名以 PDF 与 arXiv 为准；OpenReview 元数据将最后一位作者简写为 Michael O'Boyle。OpenReview 的 2024-07-10 发布时间戳不作为出版日期，Crossref 中也未找到论文 DOI。终稿脚注给出 github.com/jordiae/forklift。在所审阅的 2024-10-03 提交中，这个采用 MIT 许可证的仓库是精简的推理演示，不含预处理与训练代码。它加载 Hugging Face 上的一个检查点（Clang -O3 x86 到 Oz 级 LLVM IR），其模型卡未标注许可证；未找到 ARM 或 RISC-V 检查点。数据来自 Hub 上 ExeBench 数据集的 clang 修订版，依赖固定 torch 1.12.1 与 datasets 2.15。本次未下载权重或数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://openreview.net/forum?id=LWfDcI6txJ",
+      "https://openreview.net/pdf?id=LWfDcI6txJ",
+      "https://arxiv.org/abs/2404.16041",
+      "https://arxiv.org/pdf/2404.16041v1",
+      "https://github.com/jordiae/forklift/blob/928a9193fef8944fe73bb351942e22bd04620ae9/README.md",
+      "https://github.com/jordiae/forklift/blob/928a9193fef8944fe73bb351942e22bd04620ae9/LICENSE",
+      "https://github.com/jordiae/forklift/blob/928a9193fef8944fe73bb351942e22bd04620ae9/interactive.py",
+      "https://github.com/jordiae/forklift/blob/928a9193fef8944fe73bb351942e22bd04620ae9/requirements.txt",
+      "https://huggingface.co/jordiae/clang_opt3_ir_optz-ir_optz-2024-01-15-0959-e1bf-bc2b"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
