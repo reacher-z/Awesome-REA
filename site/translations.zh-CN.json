@@ -2980,5 +2980,14 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "webamp-winamp-reimplementation-case": {
+    "name": "Webamp：在浏览器中重新实现 Winamp 2",
+    "requirements": [
+      "审阅时的最新版本为 npm 上的 webamp 2.3.1，于 2026-06-16 发布；所审阅的 master 分支提交（2026-10-17）另含更新日志中列出、尚未发布的无障碍和 API 改动。README 称它可在新版 Edge、Firefox、Safari 和 Chrome 中运行。它重新实现的是 Winamp 的行为和皮肤渲染，并非恢复 Winamp 的代码；webamp-modern 仍是原型，尚有一份未完成的 MAKI 与皮肤功能清单。",
+      "无需原版 Winamp：Webamp 自带默认皮肤和示例音轨，用户也可载入自己的 Winamp 2 .wsz 皮肤、音频文件、Milkdrop 预设和 .eqf 均衡器预设。从其他域名获取的皮肤和音频须允许 CORS 访问，因为 Webamp 需要读取其内容。",
+      "开发使用 pnpm 和 Turborepo；.nvmrc 指定 Node.js 22，CI 则用 Node.js 20 构建所有包、执行代码检查和类型检查并运行 Jest 测试。这些测试检验的是 Webamp 自身的解析和渲染，而非与 Winamp 的等价性。编译 webamp-modern 的 MAKI 测试脚本时会调用仓库自带的 Winamp 5.66 mc.exe：在 Windows 上直接运行，在其他系统上通过 Wine 运行。",
+      "代码采用 MIT 许可，README 称 Winamp 的名称、界面和示例音频文件属于 Nullsoft。以下随附文件没有自己的许可声明：packages/webamp-modern/resources/maki_compiler 下的 Nullsoft MAKI 编译器（从 Winamp 3 alpha 8r 到 Winamp 5.66 的五个 mc.exe 版本、nscrt.dll 以及 MAKI .mi 库头文件），以 Winamp 默认皮肤命名的皮肤（base-2.91、Winamp 3 build 499、Winamp Modern 5.66）和用于演示与测试的第三方社区皮肤，llama 示例 MP3，以及 Winamp Modern Skins 教程 PDF。随附的 Perl 版 MAKI 反编译器采用 GPL-2.0 许可。所审阅的资料未表明使用了 REA 或 AI；本次未构建或运行任何内容。"
+    ]
   }
 }

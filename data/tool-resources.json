@@ -7196,5 +7196,45 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "webamp-winamp-reimplementation-case",
+    "name": "Webamp: a browser reimplementation of Winamp 2",
+    "url": "https://github.com/captbaritone/webamp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Reimplements Winamp 2's main, equalizer and playlist windows in HTML5 and JavaScript, with Web Audio playback, volume, balance and equalizer, and renders original classic .wsz skins, which its documentation says match Winamp 2.9 pixel for pixel; Milkdrop presets run through the Butterchurn WebGL port. It ships as the webamp npm module for embedding in web pages, and the same monorepo runs webamp.org and the skins.webamp.org skin museum. Its webamp-modern prototype targets Winamp 3/5 modern skins with an interpreter for MAKI skin scripts, whose undocumented bytecode format the author reverse engineered and documents in the repository.",
+    "description_zh": "用 HTML5 和 JavaScript 重新实现 Winamp 2 的主窗口、均衡器和播放列表窗口，借助 Web Audio 实现播放、音量、声道平衡和均衡器，并渲染原有的经典 .wsz 皮肤，其文档称渲染效果与 Winamp 2.9 逐像素一致；Milkdrop 预设通过 Butterchurn 的 WebGL 移植版运行。它以 webamp npm 模块的形式发布，可嵌入网页，同一 monorepo 还运行着 webamp.org 和 skins.webamp.org 皮肤博物馆。其中的 webamp-modern 原型面向 Winamp 3/5 的现代皮肤，内含 MAKI 皮肤脚本解释器；MAKI 字节码格式原本没有公开文档，作者对其进行了逆向分析，并在仓库中写成文档。",
+    "evidence_url": "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: webamp 2.3.1 on npm, published 2026-06-16; the reviewed master commit (2026-10-17) adds unreleased accessibility and API changes listed in the changelog. The README says it works in modern Edge, Firefox, Safari and Chrome. It reimplements Winamp's behavior and skin rendering rather than recovering Winamp's code, and webamp-modern remains a prototype with an open list of unimplemented MAKI and skin features.",
+      "No original Winamp installation is needed: Webamp bundles a default skin and sample track, and users can load their own Winamp 2 .wsz skins, audio files, Milkdrop presets and .eqf equalizer presets. Skins and audio fetched from another domain must be served with CORS permission, because Webamp reads their contents.",
+      "Development uses pnpm and Turborepo; .nvmrc names Node.js 22 and CI uses Node.js 20 to build every package, lint, type-check and run the Jest tests. These test Webamp's own parsing and rendering, not equivalence with Winamp. Compiling webamp-modern's MAKI test scripts calls the bundled Winamp 5.66 mc.exe, directly on Windows or through Wine elsewhere.",
+      "The code is MIT-licensed, and the README says the Winamp name, interface and sample audio file are Nullsoft's property. Bundled files that carry no license of their own: the Nullsoft MAKI compiler builds under packages/webamp-modern/resources/maki_compiler (five mc.exe versions from Winamp 3 alpha 8r to Winamp 5.66, nscrt.dll and the MAKI .mi library headers), the skins named after Winamp defaults (base-2.91, Winamp 3 build 499, Winamp Modern 5.66) and the third-party community skins used for demos and tests, the llama sample MP3 and the Winamp Modern Skins tutorial PDF. The bundled Perl MAKI decompiler is GPL-2.0. The reviewed sources establish no REA or AI use; nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/README.md#L62-L67",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-docs/docs/05_features/05_skins.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-docs/docs/05_features/03_equalizer.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-docs/docs/05_features/02_mikdrop.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-docs/docs/07_guides/01_cors.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-docs/docs/12_changelog.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp/docs/architecture.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-modern/README.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-modern/src/maki/maki-bytecode.md",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-modern/snowpack-maki-plugin.js",
+      "https://github.com/captbaritone/webamp/tree/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-modern/resources/maki_compiler",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/packages/webamp-modern/resources/maki_decompiler_1.1/COPYING",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/.github/workflows/ci.yml",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/.nvmrc",
+      "https://github.com/captbaritone/webamp/blob/f01369fc2d7aaa9366a3ba9ab0ad1db4b6417a40/LICENSE.txt",
+      "https://registry.npmjs.org/webamp/2.3.1"
+    ]
   }
 ]
