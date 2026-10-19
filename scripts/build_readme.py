@@ -258,6 +258,8 @@ def render_catalog(records, language, paper_urls=frozenset()):
             continue
         contents = '[↑ Contents](#contents)' if language == 'en' else '[↑ 返回目录](#目录)'
         lines.extend([f'<a id="{section}"></a>', f'### {section_heading(section, language)}', '', contents, ''])
+        if section == 'agents-and-mcp':
+            lines.extend(agent_cross_reference(groups, language, translations))
         cases = [record for record in groups[section] if record['kind'] == 'case-study']
         tools = [record for record in groups[section] if record['kind'] != 'case-study']
         subgroups = [(None, groups[section])]
@@ -281,6 +283,25 @@ def render_catalog(records, language, paper_urls=frozenset()):
                     f"  {metadata} · [{detail_label}]({detail_url})", '',
                 ])
     return '\n'.join(lines).rstrip() + '\n'
+
+
+def agent_cross_reference(groups, language, translations):
+    """Point from Agents and MCP to agent integrations filed under a target section, via their entry pages."""
+    index = 0 if language == 'en' else 1
+    parts = []
+    for section in TARGET_SECTIONS:
+        names = []
+        # Same order as the section renders: case studies first, then tools.
+        for record in sorted(groups[section], key=lambda record: record['kind'] != 'case-study'):
+            if record['category'] == 'agent-mcp' or record['relationship'] == 'independent-agent-integration':
+                name = (record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if index else record['name']
+                names.append(f"[{plain_text(name)}](https://awesomerea.org/{'zh/' if index else ''}resources/{record['id']}/)")
+        if names:
+            parts.append(f'[{COLLECTION_SECTIONS[section][index]}](#{section}){"：" if index else ": "}'
+                         + ('、' if index else ', ').join(names))
+    if not parts:
+        return []
+    return [('**其他分区中的智能体集成：** ' if index else '**Also in target sections:** ') + ' · '.join(parts), '']
 
 
 def browsable_index_count():

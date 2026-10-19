@@ -1809,6 +1809,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 返回目录](#目录)
 
+**其他分区中的智能体集成：** [网站](#website)：[Chrome DevTools MCP](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)、[Playwright MCP](https://awesomerea.org/zh/resources/playwright-mcp/)、[Burp Suite MCP Server 扩展](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)、[Spectral](https://awesomerea.org/zh/resources/spectral-mcp/) · [游戏](#game)：[RenderDoc MCP](https://awesomerea.org/zh/resources/renderdoc-mcp/) · [应用](#app)：[JADX-AI-MCP](https://awesomerea.org/zh/resources/jadx-ai-mcp/)、[apktool-mcp-server Apktool MCP 服务](https://awesomerea.org/zh/resources/apktool-mcp-server/)、[frida-mcp (yfe404)](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)、[Super Trouper](https://awesomerea.org/zh/resources/super-trouper/)
+
 - [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea)
 
   REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。
