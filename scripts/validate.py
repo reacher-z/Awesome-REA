@@ -219,8 +219,8 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f"{where}: category 'reconstruction-cases' requires relationship 'independent-reconstruction'")
         if record['verification'] != 'source-reviewed':
             errors.append(f'{where}.verification: use source-reviewed; runtime and reproduction results are out of scope (see CONTRIBUTING.md)')
-        if not (nonempty_string(record['requirements']) or string_list(record['requirements'])):
-            errors.append(f'{where}.requirements: use a nonempty string or list of nonempty strings')
+        if not string_list(record['requirements']):
+            errors.append(f'{where}.requirements: use a nonempty list of nonempty strings')
         try:
             reviewed = parse_iso(record['verified_at'])
             future = (review_date_is_future(reviewed.date(), now)

@@ -107,13 +107,6 @@ def plain_text(value):
     return text
 
 
-def requirements_text(value):
-    """Both supported source formats render as ordinary prose."""
-    if isinstance(value, str):
-        return plain_text(value)
-    return plain_text(' '.join(value))
-
-
 # A period after these words does not end an English sentence ("Super Smash Bros. Melee", "SmackDown vs. Raw").
 ABBREVIATIONS = {'al', 'approx', 'bros', 'cf', 'dr', 'e.g', 'etc', 'fig', 'i.e', 'jr', 'mr', 'mrs', 'ms', 'no', 'sr',
                  'st', 'u.s', 'vol', 'vs'}
