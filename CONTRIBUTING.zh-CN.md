@@ -79,6 +79,8 @@ python3 -m unittest discover -s tests -v
 
 Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。
 
+快照版本在 `main` 上打 `vMAJOR.MINOR.PATCH` 标签，并在 GitHub Release 中附带数据快照。打标签前，维护者在发布提交中把 [CITATION.cff](CITATION.cff) 的 `version` 改为去掉 `v` 的标签号，`date-released` 改为发布当天的 UTC 日期；`validate.py` 会检查这两个字段同时出现、版本号符合语义化版本且日期不晚于当前。在正式取得 DOI 之前，不添加 DOI 或其他标识符。
+
 ## 术语对照
 
 界面文字、生成器标签和 README 中手写的说明统一使用下列译法，精选条目的中文描述也尽量沿用。自动扫描仓库的中文简介按上游原文翻译，不据此批量改写。

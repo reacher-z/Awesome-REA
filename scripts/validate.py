@@ -907,6 +907,29 @@ def validate_markdown(root, errors):
     return len(documents)
 
 
+def validate_citation(text, errors, *, now=None):
+    """Keep CITATION.cff's release fields paired, semantic and not ahead of the calendar.
+
+    Whether they match a real tag and release date is a maintainer release step.
+    """
+    now = dt.datetime.now(dt.timezone.utc) if now is None else now
+    fields = dict(re.findall(r'^(version|date-released):[ \t]*(.*?)[ \t]*$', text, re.MULTILINE))
+    if not fields:
+        return
+    if set(fields) != {'version', 'date-released'}:
+        errors.append('CITATION.cff: set version and date-released together, from the same release tag')
+        return
+    if not re.fullmatch(r'(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)', fields['version']):
+        errors.append('CITATION.cff.version: use the release tag as MAJOR.MINOR.PATCH without a leading v')
+    try:
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', fields['date-released']):
+            raise ValueError
+        if review_date_is_future(dt.date.fromisoformat(fields['date-released']), now):
+            errors.append('CITATION.cff.date-released: release date is in the future')
+    except ValueError:
+        errors.append('CITATION.cff.date-released: use the unquoted YYYY-MM-DD release date')
+
+
 def read_array(path, errors):
     try:
         value = json.loads(path.read_text(encoding='utf-8'))
@@ -953,6 +976,7 @@ def main():
                     validate_scope(source_records, read_scope(ROOT), errors)
                 except (OSError, ValueError):
                     errors.append('Source-scope data could not be read as valid JSON.')
+    validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
     for script in ('build_readme.py', 'build_repository_index.py', 'build_case_coverage.py'):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'],

@@ -1,5 +1,6 @@
 """Keep contributor-facing references aligned with the vocabularies the validators accept."""
 from copy import deepcopy
+import datetime as dt
 import json
 from pathlib import Path
 import re
@@ -10,7 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_readme import KIND_LABELS, RELATIONSHIPS
-from validate import validate_resources
+from validate import validate_citation, validate_resources
 from validate_papers import FIELDS as PAPER_FIELDS, OPTIONAL_FIELDS as OPTIONAL_PAPER_FIELDS, STATUSES as PAPER_STATUSES
 
 # Issue-form labels and the record values a maintainer records for them.
@@ -105,11 +106,36 @@ class ContributorReferenceTests(unittest.TestCase):
         keys = set(re.findall(r'^([a-z-]+):', text, re.MULTILINE))
         self.assertTrue({'cff-version', 'message', 'title', 'type', 'authors', 'license',
                          'url', 'repository-code'} <= keys)
-        self.assertFalse(keys & {'doi', 'identifiers', 'version', 'date-released', 'preferred-citation'})
+        # No identifier until one is minted; the release fields come from a published tag.
+        self.assertFalse(keys & {'doi', 'identifiers', 'preferred-citation'})
+        self.assertRegex(text, r'(?m)^version: \d+\.\d+\.\d+\ndate-released: \d{4}-\d{2}-\d{2}$')
+        errors = []
+        validate_citation(text, errors)
+        self.assertEqual(errors, [])
         self.assertIn('license: MIT\n', text)
         self.assertIn('repository-code: https://github.com/reacher-z/Awesome-REA\n', text)
         self.assertIn('name: Awesome REA contributors\n', text)
         self.assertIn('primary sources', text)
+
+    def test_citation_release_fields_are_paired_semantic_and_not_future(self):
+        now = dt.datetime(2026, 10, 18, 12, tzinfo=dt.timezone.utc)
+        base = 'title: Awesome Reverse Engineering Anything\n'
+        for fields, problem in (('', None), ('version: 0.12.0\ndate-released: 2026-10-17\n', None),
+                                ('version: 1.0.0\ndate-released: 2026-10-19\n', None),
+                                ('version: 0.12.0\n', 'together'), ('date-released: 2026-10-17\n', 'together'),
+                                ('version: v0.12.0\ndate-released: 2026-10-17\n', 'MAJOR.MINOR.PATCH'),
+                                ('version: 0.12\ndate-released: 2026-10-17\n', 'MAJOR.MINOR.PATCH'),
+                                ('version: 0.12.0\ndate-released: 2026-10-20\n', 'future'),
+                                ('version: 0.12.0\ndate-released: "2026-10-17"\n', 'unquoted'),
+                                ('version: 0.12.0\ndate-released: 2026-02-30\n', 'unquoted')):
+            errors = []
+            validate_citation(base + fields, errors, now=now)
+            with self.subTest(fields=fields):
+                if problem is None:
+                    self.assertEqual(errors, [])
+                else:
+                    self.assertEqual(len(errors), 1, errors)
+                    self.assertIn(problem, errors[0])
 
 
 if __name__ == '__main__':
