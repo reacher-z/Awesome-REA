@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "animal-forest-n64-decomp-case": {
+    "name": "《动物之森》：进行中的 N64 一致性反编译",
+    "requirements": [
+      "README 称其为进行中的反编译项目，代码库可能大幅变动，并提醒 ROM 的部分内容可能尚不能移动。Makefile 与 CI 中唯一配置的版本是 jp，即日版 N64。产物为 N64 ROM；README 声明项目不是移植，明确不以充当移植基础或任何商业用途为目标。其链接的 GameCube 版 Animal Crossing 反编译是另一个项目。",
+      "需将自己的日版《动物之森》ROM 作为基础 ROM 放入 baseroms/jp，可接受 .z64、.n64 和 .v64 文件。make setup 会将其解压并按 baseroms/jp/checksum.md5 校验，随后 make extract 借助 splat 在本地得到汇编和素材。所审代码树不含 ROM、图像或二进制素材文件；源自游戏的内容仅限于 DMA 文件表头文件、src/objects 下的小型地址表等数据表。",
+      "README 记载的环境为 Linux（推荐 Debian 或 Ubuntu），需 make、Git、build-essential、clang、MIPS binutils 以及带 pip 和 venv 的 Python 3；make venv 会安装固定版本的 splat64 0.24.0 以及 spimdisasm 和 mapfile-parser。tools 目录的 Makefile 从 decompals/ido-static-recomp v1.2 下载 IDO 5.3 与 7.1 的静态重编译版本，并下载 pigment64 0.6.3；构建还会用随附的 ultralib 子仓库编译 libultra。NON_MATCHING 构建会关闭校验比较。",
+      "COMPARE 保持默认时，make rom 和 make compress 会按仓库保存的 MD5 值检查两个 ROM。尚未反编译的函数仍以提取出的汇编通过 GLOBAL_ASM 引入，因此校验通过并不代表反编译完成。CI 在提供基础 ROM 和编译器归档的私有容器中构建 jp 版本，比较警告数量并上传 objdiff 格式的报告。decomp.dev 针对该固定提交的报告显示，2,515,744 个代码字节中有 465,796 个（18.52%）、14,415 个函数中有 2,998 个已匹配，尚无完整单元；本合集未运行构建。",
+      "README 规定 src 和 include 在可能范围内、以及未声明其他许可的文件采用 CC0-1.0，asm-differ、asm-processor、fado、ultralib 等子仓库不在此列。任天堂的游戏、ROM 内容和下载的编译器各自保留权利。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

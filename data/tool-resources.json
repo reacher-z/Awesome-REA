@@ -7196,5 +7196,39 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "animal-forest-n64-decomp-case",
+    "name": "Animal Forest: an in-progress matching N64 decompilation",
+    "url": "https://github.com/zeldaret/af",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds the Japanese Nintendo 64 release of Animal Forest (Dōbutsu no Mori) from C code reverse-engineered from the ROM, combined with assets and assembly extracted from a user-supplied ROM. Default builds compare the uncompressed and recompressed ROMs with stored MD5 checksums. The README rules out use as a port base or for commercial purposes, and decomp.dev reported 18.52% of code matched at the reviewed commit.",
+    "description_zh": "将从 ROM 逆向得到的 C 代码与从使用者自备 ROM 中提取的素材和汇编结合，重建日版 Nintendo 64《动物之森》（どうぶつの森）。默认构建会用仓库保存的 MD5 校验未压缩与重新压缩的 ROM。README 明确该项目不作为移植基础，也不用于商业目的；decomp.dev 报告所审提交有 18.52% 的代码已匹配。",
+    "evidence_url": "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a work-in-progress decompilation whose codebase could change drastically and warns that some parts of the ROM may not yet be shiftable. The only configured version is jp, the Japanese N64 release, in both the Makefile and CI. The output is an N64 ROM; README states that the project is not a port and that serving as a port base or any commercial use is explicitly a non-goal. The GameCube Animal Crossing decompilation it links to is a separate project.",
+      "Supply your own Japanese Animal Forest ROM as the base ROM in baseroms/jp; .z64, .n64 and .v64 files are accepted. make setup decompresses it and checks the result against baseroms/jp/checksum.md5, then make extract uses splat to derive assembly and assets locally. The reviewed tree holds no ROM, graphics or binary asset files; game-derived content is limited to tables such as the DMA file table header and small address tables under src/objects.",
+      "README documents Linux, preferably Debian or Ubuntu, with make, Git, build-essential, clang, MIPS binutils and Python 3 with pip and venv; make venv installs pinned splat64 0.24.0 plus spimdisasm and mapfile-parser. The tools Makefile downloads static recompilations of IDO 5.3 and 7.1 from decompals/ido-static-recomp v1.2 and pigment64 0.6.3, and the build compiles libultra from the bundled ultralib subrepo. NON_MATCHING builds turn the checksum comparison off.",
+      "With COMPARE at its default, make rom and make compress check both ROMs against the stored MD5 values. Functions not yet decompiled remain extracted assembly included through GLOBAL_ASM, so a passing check does not mean complete decompilation. CI builds jp in a private container that supplies the base ROM and compiler archives, compares warning counts and uploads an objdiff-format report. decomp.dev's report for the pinned commit lists 465,796 of 2,515,744 code bytes (18.52%) and 2,998 of 14,415 functions matched, with no unit complete; this collection ran no build.",
+      "README licenses src and include, as far as possible, and other files that state no other license under CC0-1.0, excluding subrepos such as asm-differ, asm-processor, fado and ultralib. Nintendo's game, ROM contents and the downloaded compilers keep their own rights. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/Makefile",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/tools/Makefile",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/tools/decompress_baserom.py",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/baseroms/jp/checksum.md5",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/requirements.txt",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/CONTRIBUTING.md",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/.github/workflows/ci.yml",
+      "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
+      "https://decomp.dev/zeldaret/af"
+    ]
   }
 ]
