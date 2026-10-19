@@ -4713,5 +4713,51 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-gui-ripping",
+    "title": "GUI ripping: reverse engineering of graphical user interfaces for testing",
+    "title_zh": "GUI 抓取：面向测试的图形用户界面逆向工程",
+    "authors": [
+      "Atif Memon",
+      "Ishan Banerjee",
+      "Adithya Nagarajan"
+    ],
+    "year": 2003,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "IEEE Xplore gives the publication date as 2003 and the proceedings title as WCRE 2003; the Crossref deposit has no publication date. Year precision is retained, and the conference dates and the 2004 Xplore insertion date are not substituted.",
+    "date_basis_zh": "IEEE Xplore 给出的出版日期为 2003 年，论文集名称为 WCRE 2003；Crossref 元数据未记载出版日期。本条目保留年精度，不以会议日期或 2004 年的 Xplore 收录日期替代。",
+    "venue": "WCRE 2003",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1109/WCRE.2003.1287256",
+    "url": "https://ieeexplore.ieee.org/document/1287256",
+    "pdf_url": "https://www.cs.umd.edu/~atif/papers/MemonWCRE2003.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "app"
+    ],
+    "description_en": "GUI ripping reverse engineers a test model from a running desktop application rather than from its source code or specifications. Starting from the top-level windows, a ripper opens each child window by programmatically clicking executable widgets, records every window’s widgets, properties and values, and builds a GUI forest of windows. From that forest it derives event-flow graphs, which record which events can follow one another within a component, and an integration tree of component invocations. The paper describes rippers for Microsoft Windows applications, using window handles and the Windows API, and for Java Swing applications, using Java’s AWT and Swing APIs. It applies them to WordPad, Notepad, Yahoo Messenger and four applications of the TerpOffice student office suite, with the models feeding automated test generation in the authors’ GUITAR and DART systems.",
+    "description_zh": "GUI 抓取从运行中的桌面应用程序逆向工程出测试模型，而不依赖其源码或规格说明。抓取器从顶层窗口开始，以编程方式点击可执行控件逐一打开子窗口，记录每个窗口的控件、属性与取值，并构建由窗口组成的 GUI 森林。它再从森林推导出事件流图（记录组件内哪些事件可以相继发生）以及表示组件调用关系的集成树。论文介绍了两种抓取器：面向 Microsoft Windows 应用、基于窗口句柄与 Windows API 的实现，以及面向 Java Swing 应用、基于 Java AWT 与 Swing API 的实现。作者将其应用于 WordPad、Notepad、Yahoo Messenger 及学生开发的 TerpOffice 办公套件中的四个应用，所得模型用于作者 GUITAR 与 DART 系统中的自动化测试生成。",
+    "scope_limitations_en": "The targets are 2003-era desktop GUIs on Microsoft Windows and Java Swing, not mobile apps or web interfaces; the model assumes deterministic events on widgets with discrete property values and excludes timing-dependent, continuous-media or nondeterministic GUIs. The recovered model is a window, widget and event structure for test generation, not UI code or application logic, and the paper does not establish complete behavioral coverage. Ripping can miss windows and widgets: the Windows ripper misses widgets that bypass the Windows API and cannot distinguish modal from modeless windows, while the Java ripper cannot extract the Print dialog structure. In the case studies, testers added missed windows manually, taking 5 to 10 minutes per application, and identified top-level windows by hand for Windows applications. Results come from seven applications and the authors’ own test pipeline.",
+    "scope_limitations_zh": "目标是 2003 年前后 Microsoft Windows 与 Java Swing 上的桌面 GUI，而非移动应用或网页界面；模型假定控件上的事件结果确定且属性取值离散，不涵盖依赖时序、连续媒体或非确定性的 GUI。恢复出的模型是供测试生成使用的窗口、控件与事件结构，并非 UI 代码或应用逻辑，论文也未证明覆盖了全部行为。抓取可能遗漏窗口与控件：Windows 抓取器会遗漏绕过 Windows API 的控件，且无法区分模态与非模态窗口；Java 抓取器则无法提取打印对话框的结构。在案例研究中，测试人员需手动补充遗漏的窗口，每个应用耗时 5 至 10 分钟，并需为 Windows 应用手动指定顶层窗口。结果来自七个应用以及作者自己的测试流程。",
+    "why_fits_en": "Adds a classic execution-based method for recovering an application’s GUI structure and event model, complementing the section’s screenshot-to-code and app-analysis research.",
+    "why_fits_zh": "补充一种经典的基于执行恢复应用 GUI 结构与事件模型的方法，与本节的截图转代码及应用分析研究互补。",
+    "metadata_notes": "IEEE Xplore and Crossref list the authors only as A. Memon, I. Banerjee and A. Nagarajan, with pages 260–269 in the 10th Working Conference on Reverse Engineering proceedings (Victoria, BC); the record uses the full names printed in the paper. The title follows IEEE’s sentence case; the paper capitalizes it as “GUI Ripping: Reverse Engineering of Graphical User Interfaces for Testing”. The PDF is the 10-page copy on Atif Memon’s University of Maryland page; IEEE Xplore holds the version of record and does not mark it open access. The paper says the GUI Ripper was made available as a downloadable tool and cites guitar.cs.umd.edu, but that host did not resolve during this review; no code link is recorded, and the later GUITAR project is not treated as this paper’s artifact. No code or experiments were run.",
+    "metadata_notes_zh": "IEEE Xplore 与 Crossref 仅以 A. Memon、I. Banerjee 和 A. Nagarajan 列出作者，页码为第 10 届逆向工程工作会议（Victoria, BC）论文集第 260–269 页；本条目采用论文中印出的作者全名。标题沿用 IEEE 的句首大写形式；论文中的写法为“GUI Ripping: Reverse Engineering of Graphical User Interfaces for Testing”。PDF 为 Atif Memon 在马里兰大学页面上提供的 10 页副本；版本记录以 IEEE Xplore 为准，后者未将其标为开放获取。论文称 GUI Ripper 已作为可下载工具提供，并引用 guitar.cs.umd.edu，但本次审阅时该主机名无法解析；本条目不记录代码链接，也不将后来的 GUITAR 项目视为本论文的产物。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/1287256",
+      "https://web.archive.org/web/20251228032001/https://ieeexplore.ieee.org/document/1287256/",
+      "https://api.crossref.org/works/10.1109/WCRE.2003.1287256",
+      "https://www.cs.umd.edu/~atif/papers/MemonWCRE2003.pdf"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

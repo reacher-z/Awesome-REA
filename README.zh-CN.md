@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 358](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-358-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 358](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-358-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2264,14 +2264,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (8) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3303,6 +3303,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 输出为 Android 界面代码；iOS 截图属于输入，不代表生成原生 iOS 代码。方法不恢复原始逻辑和后端行为，多屏切换当时仍属后续工作。OCR／布局启发式规则可能误识别内容。所链接的 REMAUI v2 仓库采用较旧依赖，并非已核实的 2015 年原始产物。
 
   **作者:** Tuan Anh Nguyen 等
+
+  </details>
+
+- [**GUI 抓取：面向测试的图形用户界面逆向工程**](https://ieeexplore.ieee.org/document/1287256)
+
+  GUI 抓取从运行中的桌面应用程序逆向工程出测试模型，而不依赖其源码或规格说明。抓取器从顶层窗口开始，以编程方式点击可执行控件逐一打开子窗口，记录每个窗口的控件、属性与取值，并构建由窗口组成的 GUI 森林。它再从森林推导出事件流图（记录组件内哪些事件可以相继发生）以及表示组件调用关系的集成树。论文介绍了两种抓取器：面向 Microsoft Windows 应用、基于窗口句柄与 Windows API 的实现，以及面向 Java Swing 应用、基于 Java AWT 与 Swing API 的实现。作者将其应用于 WordPad、Notepad、Yahoo Messenger 及学生开发的 TerpOffice 办公套件中的四个应用，所得模型用于作者 GUITAR 与 DART 系统中的自动化测试生成。
+
+  WCRE 2003 · 会议论文 · [PDF](https://www.cs.umd.edu/~atif/papers/MemonWCRE2003.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-gui-ripping/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 目标是 2003 年前后 Microsoft Windows 与 Java Swing 上的桌面 GUI，而非移动应用或网页界面；模型假定控件上的事件结果确定且属性取值离散，不涵盖依赖时序、连续媒体或非确定性的 GUI。恢复出的模型是供测试生成使用的窗口、控件与事件结构，并非 UI 代码或应用逻辑，论文也未证明覆盖了全部行为。抓取可能遗漏窗口与控件：Windows 抓取器会遗漏绕过 Windows API 的控件，且无法区分模态与非模态窗口；Java 抓取器则无法提取打印对话框的结构。在案例研究中，测试人员需手动补充遗漏的窗口，每个应用耗时 5 至 10 分钟，并需为 Windows 应用手动指定顶层窗口。结果来自七个应用以及作者自己的测试流程。
+
+  **作者:** Atif Memon 等
 
   </details>
 

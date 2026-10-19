@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 358](https://img.shields.io/badge/resources-358-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 358](https://img.shields.io/badge/resources-358-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2263,14 +2263,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (8) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3302,6 +3302,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The output is Android UI code; iOS screenshots are inputs, not evidence of native iOS output. Original logic and backend behavior are not recovered, and multi-screen transitions were future work. OCR/layout heuristics can misidentify content. The linked REMAUI v2 repository has older dependencies and is not the exact verified 2015 artifact.
 
   **Authors:** Tuan Anh Nguyen et al.
+
+  </details>
+
+- [**GUI ripping: reverse engineering of graphical user interfaces for testing**](https://ieeexplore.ieee.org/document/1287256)
+
+  GUI ripping reverse engineers a test model from a running desktop application rather than from its source code or specifications. Starting from the top-level windows, a ripper opens each child window by programmatically clicking executable widgets, records every window’s widgets, properties and values, and builds a GUI forest of windows. From that forest it derives event-flow graphs, which record which events can follow one another within a component, and an integration tree of component invocations. The paper describes rippers for Microsoft Windows applications, using window handles and the Windows API, and for Java Swing applications, using Java’s AWT and Swing APIs. It applies them to WordPad, Notepad, Yahoo Messenger and four applications of the TerpOffice student office suite, with the models feeding automated test generation in the authors’ GUITAR and DART systems.
+
+  WCRE 2003 · Conference paper · [PDF](https://www.cs.umd.edu/~atif/papers/MemonWCRE2003.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-gui-ripping/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The targets are 2003-era desktop GUIs on Microsoft Windows and Java Swing, not mobile apps or web interfaces; the model assumes deterministic events on widgets with discrete property values and excludes timing-dependent, continuous-media or nondeterministic GUIs. The recovered model is a window, widget and event structure for test generation, not UI code or application logic, and the paper does not establish complete behavioral coverage. Ripping can miss windows and widgets: the Windows ripper misses widgets that bypass the Windows API and cannot distinguish modal from modeless windows, while the Java ripper cannot extract the Print dialog structure. In the case studies, testers added missed windows manually, taking 5 to 10 minutes per application, and identified top-level windows by hand for Windows applications. Results come from seven applications and the authors’ own test pipeline.
+
+  **Authors:** Atif Memon et al.
 
   </details>
 
