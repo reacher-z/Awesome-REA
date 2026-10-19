@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 306](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 155](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 64](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 306](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 155](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 65](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-65-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (64) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (65) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1948,13 +1948,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**64 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**65 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (16) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (17) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2087,6 +2087,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 训练和主要评测均使用函数级 C 代码，以 GCC 和 Clang 在 -O0 至 -O3 下编译为 x86-64 Linux 二进制，并以 IDA Pro 伪代码作为模型输入。可重新执行率仅在 HumanEval 和 MBPP 上测量；ExeBench 与 GitHub2025 采用 R2I 可读性指标和 GPT-5-mini 评审。附录实验扩展到 BringUpBench 项目、macOS arm64 与 Windows MSVC 构建以及 Obfuscator-LLVM，但模型仅以 C 代码训练，论文预计遇到 C++ 模板等没有 C 对应物的语言特性时效果会下降。
 
   **发表信息:** 2026 · ICLR 2026 · 会议论文 · Hanzhuo Tan 等
+
+  </details>
+
+- [**BinMetric：面向大语言模型的综合二进制代码分析基准**](https://www.ijcai.org/proceedings/2025/858)
+
+  BinMetric 提供六类二进制分析任务共 1,000 道题目：调用点重建、反编译、函数签名恢复、二进制代码摘要、算法分类与汇编指令生成。题目取自 20 个开源 C 项目：项目针对 x86-64 编译、剥离符号并经 IDA Pro 处理，再借助 DWARF 信息与源码对齐。作者使用单样例提示评测来自五个模型家族的 12 个大语言模型，并在适用任务上与 IDA Pro 反编译器、LLM4Decompile、BinT5 和 HexT5 对比。
+
+  2025 · 会议论文 · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-binmetric/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 得分是针对孤立代码片段的题目级指标，并不代表端到端逆向工程流程或智能体工具使用能力。预处理需要 IDA Pro，所有二进制均是在 Ubuntu 22.04 上以各项目默认编译设置构建的 x86-64 程序；未研究其他架构、优化级别变化或混淆。多数任务以 Rouge-L、BLEU、METEOR 或 CodeBLEU 衡量文本重合度，因而并不检验语义等价；只有汇编生成任务检查能否编译及测试用例执行结果，其平均执行通过率低于 1%。摘要标签由 ChatGPT 生成后经人工审核；算法分类使用取自单一算法项目的 80 个片段。数据泄露筛查依赖网页精确匹配搜索。被评测模型均早于 2025 年（包括 gpt-3.5-turbo-16k-0613 与 gpt-4-0613），最大长度设为 8,192 个词元，因此排名只反映当时情况。
+
+  **发表信息:** 2025 · IJCAI 2025 · 会议论文 · Xiuwei Shang 等
 
   </details>
 

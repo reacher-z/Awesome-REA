@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 306](https://img.shields.io/badge/resources-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 155](https://img.shields.io/badge/cases-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 64](https://img.shields.io/badge/papers-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 306](https://img.shields.io/badge/resources-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 155](https://img.shields.io/badge/cases-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 65](https://img.shields.io/badge/papers-65-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (64) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (65) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1947,13 +1947,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**64 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**65 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (16) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (17) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2086,6 +2086,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Training and main evaluation use function-level C compiled for x86-64 Linux with GCC and Clang at -O0 to -O3, with IDA Pro pseudocode as model input. Re-executability is measured only on HumanEval and MBPP; ExeBench and GitHub2025 use R2I readability and a GPT-5-mini judge. Appendix experiments extend to BringUpBench projects, macOS arm64 and Windows MSVC builds, and Obfuscator-LLVM, but the models are trained on C only and the paper expects them to degrade on features without C equivalents, such as C++ templates.
 
   **Publication:** 2026 · ICLR 2026 · Conference paper · Hanzhuo Tan et al.
+
+  </details>
+
+- [**BinMetric: A Comprehensive Binary Code Analysis Benchmark for Large Language Models**](https://www.ijcai.org/proceedings/2025/858)
+
+  BinMetric poses 1,000 questions across six binary-analysis tasks: call-site reconstruction, decompilation, signature recovery, binary code summarization, algorithm classification and assembly instruction generation. The questions come from 20 open-source C projects compiled for x86-64, stripped and processed with IDA Pro, and aligned with source code through DWARF information. The authors evaluate 12 LLMs from five model families with one-shot prompts, alongside IDA Pro’s decompiler, LLM4Decompile, BinT5 and HexT5 where those apply.
+
+  2025 · Conference paper · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-binmetric/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Scores are question-level metrics on isolated snippets, not end-to-end reverse-engineering workflows or agentic tool use. Preprocessing requires IDA Pro, and all binaries are x86-64 builds with each project’s default compiler settings on Ubuntu 22.04; other architectures, optimization sweeps and obfuscation are not studied. Most tasks score text overlap with Rouge-L, BLEU, METEOR or CodeBLEU, so they do not test semantic equivalence; only assembly generation checks compilation and test-case execution, where the average execution pass rate is below 1%. Summary labels were generated by ChatGPT and then manually reviewed, and algorithm classification uses 80 snippets from a single algorithms project. Leakage screening relied on exact-match web searches. The evaluated models predate 2025 (including gpt-3.5-turbo-16k-0613 and gpt-4-0613) and ran with a maximum length of 8,192 tokens, so the rankings are historical.
+
+  **Publication:** 2025 · IJCAI 2025 · Conference paper · Xiuwei Shang et al.
 
   </details>
 
