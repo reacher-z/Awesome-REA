@@ -8094,5 +8094,39 @@
       "https://registry.npmjs.org/react-native-decompiler/0.2.4",
       "https://github.com/richardfuca/react-native-decompiler"
     ]
+  },
+  {
+    "id": "decompai",
+    "name": "DecompAI",
+    "url": "https://github.com/louisgthier/decompai",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Gradio chat application whose LangGraph ReAct agent analyses an uploaded x86 Linux ELF binary: it lists and disassembles functions, decompiles them with Ghidra, drives radare2 and gdb, and runs shell commands and Python scripts in a privileged Kali Linux runner container. Workspaces are keyed by the binary’s SHA-256, so uploading the same file again restores the session. It came out of a school research project, and its CTF results are the authors’ own report.",
+    "description_zh": "Gradio 对话应用，其 LangGraph ReAct 智能体分析使用者上传的 x86 Linux ELF 二进制文件：列出并反汇编函数，用 Ghidra 反编译，调用 radare2 和 gdb，并在特权模式的 Kali Linux 运行容器中执行 shell 命令和 Python 脚本。工作区以二进制文件的 SHA-256 为键，再次上传同一文件即可恢复会话。该项目源自一项学校研究计划，其 CTF 成绩为作者自述。",
+    "evidence_url": "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2025-11-10 containerised the app. The repository has no tagged releases; the README points to app and runner images tagged 1.0.0 on Docker Hub. Only x86 Linux ELF binaries are supported, and QEMU-based ARM, MIPS and Windows PE support is listed as future work.",
+      "The app needs Python with the pinned requirements.txt (Gradio 5.25, LangGraph and LangChain) and Docker. docker compose builds or pulls a Kali runner image with kali-linux-headless, Ghidra 11.3.1, OpenJDK 21 and radare2 plugins, and the app controls the host Docker daemon through a mounted /var/run/docker.sock. Runner containers start with --privileged on Docker’s default network, and the Gradio interface listens on 0.0.0.0:7860 by default; the README asks maintainers to audit any added dependencies.",
+      "An OpenAI or Gemini API key and an LLM_MODEL setting go in .env. The README suggests gemini-2.5-pro or gemini-2.5-flash, while the code defaults to gpt-4o-mini; disassembly, decompiled code and tool output are sent to that provider. Users upload their own binaries. None are committed, and tests/test_disassemble.py expects a binaries/ch2.bin that the repository does not include.",
+      "The README reports validation on Root-Me CTF challenges, consistently solving difficulty-3-of-5 exercises automatically or semi-automatically, with no published runs or logs. This collection ran neither the app nor its tests. Session data under /tmp/decompai_analysis_sessions by default is lost on reboot.",
+      "LICENSE is MIT text with an added clause requiring any use, modification or distribution to display a “Based on DecompAI” attribution, so GitHub does not recognise it as a standard licence; Ghidra, the Kali packages and model services keep their own terms. The README limits use to lawful reverse engineering, education and security research. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/LICENSE",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/compose.yaml",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/Dockerfile.runner",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/requirements.txt",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/src/main.py",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/src/config.py",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/src/tools/tools.py",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/src/tools/sandboxed_shell/dockerized_bash.py",
+      "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/tests/test_disassemble.py"
+    ]
   }
 ]

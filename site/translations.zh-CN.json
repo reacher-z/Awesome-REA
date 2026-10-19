@@ -3235,5 +3235,15 @@
       "README 将该工具标为 Alpha 阶段，仓库没有自动化测试，CI 只进行构建和代码检查。README 中关闭 Prettier 的选项写作 --prettier，而源码实际读取的是 --noPrettier。输出是便于阅读的整理后模块代码，并非原始项目源码。",
       "采用 AGPL-3.0-or-later 许可。本次未反编译任何包。"
     ]
+  },
+  "decompai": {
+    "name": "DecompAI：在 Kali 容器中分析二进制的对话智能体",
+    "requirements": [
+      "所审阅的 main 提交（2025-11-10）将应用容器化。仓库没有打标签的发布版本，README 指向 Docker Hub 上标记为 1.0.0 的应用镜像与运行器镜像。目前只支持 x86 Linux ELF 二进制文件，基于 QEMU 的 ARM、MIPS 与 Windows PE 支持列为未来计划。",
+      "应用需要 Python 及 requirements.txt 中固定版本的依赖（Gradio 5.25、LangGraph 和 LangChain），以及 Docker。docker compose 会构建或拉取 Kali 运行器镜像，其中包含 kali-linux-headless、Ghidra 11.3.1、OpenJDK 21 和 radare2 插件；应用通过挂载的 /var/run/docker.sock 控制宿主机的 Docker 守护进程。运行器容器以 --privileged 模式在 Docker 默认网络上启动，Gradio 界面默认监听 0.0.0.0:7860；README 要求维护者审查新增的任何依赖。",
+      "需要在 .env 中填写 OpenAI 或 Gemini API 密钥及 LLM_MODEL 设置。README 建议使用 gemini-2.5-pro 或 gemini-2.5-flash，而代码默认使用 gpt-4o-mini；反汇编、反编译代码和工具输出都会发送给该服务商。二进制文件由使用者自行上传，仓库未提交任何二进制文件，而 tests/test_disassemble.py 需要仓库中并不存在的 binaries/ch2.bin。",
+      "README 称已在 Root-Me CTF 题目上验证，能自动或半自动地稳定解出难度为 3/5 的题目，但未公开运行记录或日志。本合集未运行应用或其测试。会话数据默认保存在 /tmp/decompai_analysis_sessions，重启后会丢失。",
+      "LICENSE 为 MIT 文本另加一条款，要求任何使用、修改或分发都须显著标注“Based on DecompAI”署名，因此 GitHub 不将其识别为标准许可证；Ghidra、Kali 软件包和模型服务各有其条款。README 将用途限定于合法的逆向工程、教学和安全研究。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
