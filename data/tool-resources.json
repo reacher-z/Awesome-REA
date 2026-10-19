@@ -36528,5 +36528,43 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "pymobiledevice3",
+    "name": "pymobiledevice3",
+    "url": "https://github.com/doronz88/pymobiledevice3",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Pure Python 3 library and command-line tool for communicating with iPhones, iPads and other iOS devices from Windows, Linux or macOS, implementing usbmux, lockdown and its services, DTX-based developer (DVT) services and the RemoteXPC tunnels that iOS 17+ uses for developer access. Commands cover device discovery and port forwarding, syslog and crash-report collection, AFC file access, app and profile management, PCAP capture of device traffic, Bluetooth HCI logging, WebInspector automation with a Chrome DevTools Protocol bridge for Safari and WebViews, and DVT tooling such as process monitoring and screenshots; firmware update, recovery/DFU and backups are also handled. Its protocol-internals documentation walks through the usbmux, lockdown, DTX and RemoteXPC layers, and helper scripts in misc/ sniff plist and RemoteXPC traffic.",
+    "description_zh": "纯 Python 3 实现的库和命令行工具，可在 Windows、Linux 或 macOS 上与 iPhone、iPad 等 iOS 设备通信，实现了 usbmux、lockdown 及其服务、基于 DTX 的开发者（DVT）服务，以及 iOS 17+ 开发者访问所用的 RemoteXPC 隧道。命令涵盖设备发现与端口转发、syslog 和崩溃报告收集、AFC 文件访问、应用与描述文件管理、设备流量 PCAP 抓包、蓝牙 HCI 日志、借助 Chrome DevTools 协议桥调试 Safari 和 WebView 的 WebInspector 自动化，以及进程监控、截图等 DVT 工具；也支持固件更新、恢复／DFU 模式和备份。其协议内部文档逐层讲解 usbmux、lockdown、DTX 和 RemoteXPC，misc/ 中的辅助脚本可嗅探 plist 和 RemoteXPC 流量。",
+    "evidence_url": "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v11.38.0, published to GitHub and PyPI on 2026-10-19; the reviewed master commit is that tag. The README names PyPI as the only official distribution channel and says third-party packages such as the AUR's may be outdated. Requires Python 3.9+.",
+      "Needs a connected or networked iOS device the user controls. Windows needs iTunes for the Apple Mobile Device Service and Linux needs usbmuxd; macOS uses the system usbmuxd. OpenSSL is required for iOS versions before 13 and libusb for recovery/DFU. The tunnels guide says iOS 17.4+ developer commands open an in-process tunnel without root, while iOS 17.0-17.3.1 on Linux or Windows needs a root tunneld.",
+      "Developer services also need Developer Mode and Apple's Developer Disk Image on the device. The mounter's auto-mount uses the required developer_disk_image dependency, which downloads the images at run time from a separate GitHub repository that rehosts Apple's DeveloperDiskImage and personalized image files; this entry neither links nor reviews that repository, and Apple's files keep Apple's rights.",
+      "GPL-3.0-or-later. The repository also ships a device-operator agent skill as a Claude Code plugin and Codex skill for driving devices through the CLI; it was not reviewed beyond its guide. No device was connected and nothing was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/docs/installation.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/docs/guides/cli-recipes.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/docs/guides/ios17-tunnels.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/misc/understanding_idevice_protocol_layers.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/misc/RemoteXPC.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/pymobiledevice3/dtx/README.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/misc/remotexpc_sniffer.py",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/pymobiledevice3/services/mobile_image_mounter.py",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/pyproject.toml",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/docs/guides/codex-device-operator-skill.md",
+      "https://github.com/doronz88/pymobiledevice3/blob/9ea94919e4740256ddd4fa13e3e5872d43851ff0/LICENSE",
+      "https://github.com/doronz88/pymobiledevice3/releases/tag/v11.38.0",
+      "https://pypi.org/project/pymobiledevice3/11.38.0/"
+    ]
   }
 ]
