@@ -8357,5 +8357,36 @@
       "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/LICENSE",
       "https://github.com/snuri00/ps2-web-recomp/blob/6526f4803d98e10de50bea3af104a4d26e9df033/runtime/src/ipu/NOTICE"
     ]
+  },
+  {
+    "id": "shuji",
+    "name": "shuji",
+    "url": "https://github.com/paazmaya/shuji",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Command-line tool that writes the original JavaScript and CSS sources embedded in source maps back out as files. It reads .map files, or JavaScript and CSS files whose sourceMappingURL holds an inline Base64 or URL-encoded map or points to a map in the same folder, and can walk directories with a regular-expression filter. Output is flattened to file names by default, or keeps the map's folder structure with --preserve.",
+    "description_zh": "命令行工具，可把源映射（source map）中内嵌的原始 JavaScript 和 CSS 源码重新写出为文件。它能读取 .map 文件，也能读取 sourceMappingURL 中内联了 Base64 或 URL 编码映射、或指向同一目录下映射文件的 JavaScript 和 CSS 文件，并可按正则表达式筛选、递归遍历目录。默认只按文件名平铺输出，使用 --preserve 则保留映射中的目录结构。",
+    "evidence_url": "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "npm release at review: shuji 0.8.0, published 2023-12-04, which requires Node.js 14.15.0+; the repository publishes tags but no GitHub releases. The reviewed main commit is 139 commits ahead and unreleased: it raises the minimum to Node.js 24.12.0, which the README already states, moves linting to Oxlint and, since 2026-10-11, rejects output paths that would escape the output directory.",
+      "Install the CLI globally with npm and run it on a file or directory with -o for the output directory; the default filter only picks .map files, so -M is needed to scan .js or .css files for inline maps. Maps are read from local files only: a referenced map must sit relative to the code file, and remote maps are not fetched.",
+      "Only sources whose content is embedded in the map's sourcesContent are written; entries that list a path without content are skipped, so maps built without included sources yield nothing for them. Existing files are never overwritten, so flattened sources with the same file name are skipped unless --preserve is used.",
+      "MIT. Recovered files remain the original authors' code under their own terms, so analyze only source maps you may inspect. No source maps were processed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/package.json",
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/CHANGELOG.md",
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/lib/find-map.js",
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/lib/read-sources.js",
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/lib/write-sources.js",
+      "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/LICENSE",
+      "https://www.npmjs.com/package/shuji/v/0.8.0"
+    ]
   }
 ]
