@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 360](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (26) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (27) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1677,6 +1677,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Fraunhofer FKIE 开发的静态分析工具，在二进制可执行文件（主要是 Linux 和 Unix 的 ELF 文件）中查找符合通用缺陷枚举（CWE）漏洞类别的代码路径，例如缓冲区溢出、释放后使用与重复释放、空指针解引用、格式化字符串和整数溢出。它先由 Ghidra 把二进制反汇编为统一的中间表示，再在其上运行从简单启发式到基于抽象解释的数据流分析等各类检查，因此适用于 Ghidra 支持的 CPU 架构，包括 x86、ARM、MIPS 和 PowerPC。告警以文本或 JSON 输出，随附的 Ghidra 脚本可把告警标注在反汇编中，便于人工复核。
 
   工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/cwe-checker/)
+
+- [**class-dump Objective-C 头文件生成工具**](https://github.com/nygard/class-dump)
+
+  一款命令行工具，读取 Mach-O 可执行文件、框架和 bundle 中的 Objective-C 运行时元数据，并将其中的类、类别和协议输出为常规的 Objective-C 声明；信息与 otool -ov 所显示的相同，但形式更紧凑。它可以为每个类生成一个头文件，递归展开二进制所用的框架，从通用二进制中选择单一架构，对输出进行筛选或排序，并标注实例变量偏移和方法实现地址。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/class-dump/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

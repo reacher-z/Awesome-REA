@@ -7606,5 +7606,36 @@
       "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
       "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
     ]
+  },
+  {
+    "id": "class-dump",
+    "name": "class-dump",
+    "url": "https://github.com/nygard/class-dump",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Command-line utility that reads the Objective-C runtime metadata in Mach-O executables, frameworks and bundles and prints it as ordinary Objective-C declarations for the classes, categories and protocols it finds, the same information otool -ov shows in a more compact form. It can write one header file per class, recurse into the frameworks a binary uses, choose one architecture from a universal binary, filter or sort the output, and annotate it with instance-variable offsets and implementation addresses.",
+    "description_zh": "一款命令行工具，读取 Mach-O 可执行文件、框架和 bundle 中的 Objective-C 运行时元数据，并将其中的类、类别和协议输出为常规的 Objective-C 声明；信息与 otool -ov 所显示的相同，但形式更紧凑。它可以为每个类生成一个头文件，递归展开二进制所用的框架，从通用二进制中选择单一架构，对输出进行筛选或排序，并标注实例变量偏移和方法实现地址。",
+    "evidence_url": "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant: the newest tag, 3.5, is dated 2013-11-16, GitHub release entries stop at 3.4, and the README points to the author's website for the latest version. The reviewed master commit, from 2019-03-15, is 75 commits past 3.5 and carries unreleased changes such as building with the macOS 10.14 SDK.",
+      "Builds use Xcode on macOS with the bundled class-dump.xcodeproj, whose targets set macOS 10.8 and 10.9 deployment targets. The README's usage text lists ppc, ppc64, i386 and x86_64, and the 3.5 changelog adds arm64; support for later Apple architectures or metadata formats is not documented.",
+      "Input is a Mach-O file, framework or bundle the user already has, and only Objective-C metadata is decoded; files with an encryption load command are flagged in the output header. The unreleased changelog says Swift types have a blank encoding and are now written as MISSING_TYPE, so Swift types are not recovered. Output is declarations without method bodies.",
+      "Tests/doTests.py is a Python 2 script that diffs an older and a newer build's output over the installed system frameworks; the repository has no CI. The README notice applies GPL-2.0-or-later, copyright 1997-2019 Steve Nygard, and there is no separate license file; ThirdParty/blowfish.c is LGPL-2.1-or-later. Headers generated from closed-source binaries remain subject to their owners' rights. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/CHANGELOG.md#L1-L15",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/class-dump.xcodeproj/project.pbxproj",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/Source/CDClassDumpVisitor.m#L104-L112",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/Tests/doTests.py",
+      "https://github.com/nygard/class-dump/blob/2c82b4ff12b2ea5d1ac23e49281d496997370841/ThirdParty/blowfish.c",
+      "https://github.com/nygard/class-dump/releases/tag/3.4"
+    ]
   }
 ]
