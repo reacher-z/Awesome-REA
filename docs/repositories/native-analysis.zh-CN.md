@@ -123,7 +123,7 @@
 - [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — Kam1n0 汇编分析平台。 **[627 星标]**
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — 在 Ghidra 中使用 angr。 **[623 星标]**
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — 以智能体为核心、可由其他智能体持续改进的反编译器。Kuna 使用 Rust 编写，最初从 Ghidra 移植而来。 **[614 星标]**
-- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js 是基于 JavaScript 的反编译器，可将汇编代码转换为伪 C 代码。它通过可读的高层解释帮助用户理解汇编，降低底层编程门槛，并辅助在不同硬件平台上调试。 **[611 星标]**
+- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js 是基于 JavaScript 的反编译器，可将汇编代码转换为伪 C 代码。它通过可读的高层解释帮助用户理解汇编，降低底层编程门槛，并辅助在不同硬件平台上调试。 **[611 星标]** · 精选：[r2dec radare2 反编译插件](https://awesomerea.org/zh/resources/r2dec/)
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — 用于导出可重定位目标文件的 Ghidra 扩展。 **[608 星标]**
 - [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — 二进制遗传特征词法分析框架。 **[604 星标]**
 - [falconre/falcon](https://github.com/falconre/falcon) — 使用 Rust 编写的二进制分析框架。 **[593 星标]**

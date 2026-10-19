@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 362](https://img.shields.io/badge/resources-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 363](https://img.shields.io/badge/resources-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (166) · [App](#app) (53)
-- [Native Binary](#native-binary) (28) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (29) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1688,6 +1688,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Binary analysis framework written in F# for .NET by KAIST's SoftSec Lab. It parses ELF, PE, Mach-O and WebAssembly files, parses, disassembles and lifts instructions into its own IR, recovers control-flow graphs and assembles code; the README's feature table covers x86/x86-64, ARMv7/AArch64, MIPS, PowerPC, RISC-V, SPARC, S390 and other ISAs as well as CIL, EVM, eBPF, WebAssembly and Python bytecode. Its b2r2 launcher starts a readelf-like format scanner, a linear-sweep disassembler, a recursive-descent explorer with a web GUI, an IR and assembly REPL and an assembler.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/b2r2/)
+
+- [**r2dec**](https://github.com/wargio/r2dec-js)
+
+  Decompiler plugin for radare2 that turns the disassembly of an analyzed function into pseudo-C through the pdd command. Its decompiler is written in JavaScript, with one module per architecture, compiled to QuickJS bytecode and embedded in a native radare2 core plugin; output can sit beside the assembly or offsets, show only scope blocks, casts or cross-references, render as HTML, or be written back into radare2 as comments. The README lists x86/x64, 16/32/64-bit ARM, MIPS, PowerPC (including VLE), SPARC, AVR, V850 and Dalvik, plus experimental 6502, 8051, BPF, m68k, SuperH, WebAssembly and RISC-V support.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/r2dec/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

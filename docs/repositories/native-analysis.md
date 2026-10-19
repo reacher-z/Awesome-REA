@@ -123,7 +123,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — The Kam1n0 Assembly Analysis Platform **[627 stars]**
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — Use angr in Ghidra **[623 stars]**
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — An agent-first decompiler designed to be refined by other agents. Kuna is written in Rust and was originally ported from Ghidra. **[614 stars]**
-- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]**
+- [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]** · Curated: [r2dec](https://awesomerea.org/resources/r2dec/)
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — Ghidra extension for exporting relocatable object files **[608 stars]**
 - [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — A Binary Genetic Traits Lexer Framework **[604 stars]**
 - [falconre/falcon](https://github.com/falconre/falcon) — Binary Analysis Framework in Rust **[593 stars]**

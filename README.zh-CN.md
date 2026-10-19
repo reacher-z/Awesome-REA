@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 362](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 363](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (28) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (29) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1689,6 +1689,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   KAIST SoftSec 实验室开发的二进制分析框架，以 F# 编写、运行于 .NET。它可解析 ELF、PE、Mach-O 和 WebAssembly 文件，对指令进行解析、反汇编并提升为自有中间表示，还能恢复控制流图和汇编代码；README 的功能表涵盖 x86/x86-64、ARMv7/AArch64、MIPS、PowerPC、RISC-V、SPARC、S390 等指令集，以及 CIL、EVM、eBPF、WebAssembly 和 Python 字节码。其 b2r2 启动器可调用类似 readelf 的格式扫描器、线性扫描反汇编器、带 Web 图形界面的递归下降式探索工具、面向 IR 与汇编的 REPL 以及汇编器。
 
   工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/b2r2/)
+
+- [**r2dec radare2 反编译插件**](https://github.com/wargio/r2dec-js)
+
+  radare2 的反编译插件，通过 pdd 命令把已分析函数的反汇编转换为伪 C 代码。反编译器用 JavaScript 编写，每种架构对应一个模块，编译为 QuickJS 字节码后嵌入原生的 radare2 核心插件；输出可与汇编或偏移并排显示，可只显示作用域块，可显示类型转换或交叉引用，也可输出 HTML 或作为注释写回 radare2。README 列出的架构包括 x86/x64、16/32/64 位 ARM、MIPS、PowerPC（含 VLE）、SPARC、AVR、V850 和 Dalvik，另有实验性的 6502、8051、BPF、m68k、SuperH、WebAssembly 和 RISC-V 支持。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/r2dec/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

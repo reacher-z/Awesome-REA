@@ -7668,5 +7668,36 @@
       "https://github.com/B2R2-org/B2R2/compare/v0.10.1...37de7a7274b61f7ec679153740955e7f9a94221e",
       "https://www.nuget.org/packages/B2R2.RearEnd.Launcher/0.10.1"
     ]
+  },
+  {
+    "id": "r2dec",
+    "name": "r2dec",
+    "url": "https://github.com/wargio/r2dec-js",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler plugin for radare2 that turns the disassembly of an analyzed function into pseudo-C through the pdd command. Its decompiler is written in JavaScript, with one module per architecture, compiled to QuickJS bytecode and embedded in a native radare2 core plugin; output can sit beside the assembly or offsets, show only scope blocks, casts or cross-references, render as HTML, or be written back into radare2 as comments. The README lists x86/x64, 16/32/64-bit ARM, MIPS, PowerPC (including VLE), SPARC, AVR, V850 and Dalvik, plus experimental 6502, 8051, BPF, m68k, SuperH, WebAssembly and RISC-V support.",
+    "description_zh": "radare2 的反编译插件，通过 pdd 命令把已分析函数的反汇编转换为伪 C 代码。反编译器用 JavaScript 编写，每种架构对应一个模块，编译为 QuickJS 字节码后嵌入原生的 radare2 核心插件；输出可与汇编或偏移并排显示，可只显示作用域块，可显示类型转换或交叉引用，也可输出 HTML 或作为注释写回 radare2。README 列出的架构包括 x86/x64、16/32/64 位 ARM、MIPS、PowerPC（含 VLE）、SPARC、AVR、V850 和 Dalvik，另有实验性的 6502、8051、BPF、m68k、SuperH、WebAssembly 和 RISC-V 支持。",
+    "evidence_url": "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 6.2.0, published 2026-08-16 from the reviewed master commit, with a Linux amd64 plugin, Windows 32- and 64-bit builds and a source archive that includes dependencies. Release numbers follow radare2's: CI builds against radare2 6.2.0 on Linux and Windows, and the macOS job is commented out. Install through r2pm, or build with meson 0.55.0+ and ninja against the radare2 development files; QuickJS is fetched as a meson subproject.",
+      "Binaries are supplied by the user and the target function must first be analyzed in radare2 (af). Output is readable pseudo-C rather than recovered source; as the README example shows, it can keep register assignments such as eax and generic local names. Regression tests live in the separate r2dec-regression repository, and issue reports use the JSON produced by pddi.",
+      "This repository builds only a radare2 plugin; Rizin's jsdec decompiler is a separate project. Source files carry SPDX headers: BSD-3-Clause for most of the code and MIT for the bundled base64 helper, so GitHub detects no single license. No binaries were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/README.md#L37-L114",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/meson.build",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/subprojects/libquickjs.wrap",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/.github/workflows/ci.yml",
+      "https://github.com/wargio/r2dec-js/blob/32ada0dc8bffd1e3ec55d6134531eaae244502ed/.ci-scripts/ci-tests.sh",
+      "https://github.com/wargio/r2dec-js/tree/32ada0dc8bffd1e3ec55d6134531eaae244502ed/LICENSES",
+      "https://github.com/wargio/r2dec-js/releases/tag/6.2.0",
+      "https://github.com/rizinorg/jsdec/blob/9fc60988ddfe4231971f2cbf5f1064460072c2b3/README.md"
+    ]
   }
 ]
