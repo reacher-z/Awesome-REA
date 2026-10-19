@@ -7115,12 +7115,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110919658748719318"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@burkov, 2026-10-16) summarizes a research paper in which an agent learns an enterprise procedure by reverse-engineering a validated artifact, such as a signed-off Excel reconciliation workbook, and distills the inferred logic into reusable knowledge. The paper, Replication as Learning (Zhang et al., listed by Amazon Science for an ICML 2026 workshop), evaluates this in 120 simulated environments and mentions no released code or data. It reconstructs business procedures rather than software, so it is not a reconstruction case. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@burkov，2026-10-16）概述一篇研究论文：智能体通过逆向分析已验证的产物（例如已签核的 Excel 对账工作簿）学习企业流程，并把推断出的逻辑提炼为可复用的知识。该论文《Replication as Learning》（Zhang 等，Amazon Science 将其列为 ICML 2026 研讨会论文）在 120 个模拟环境中评估这一方法，未提及公开代码或数据。它重建的是业务流程而非软件，因此不属于重建案例。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110919658748719318",
+        "https://www.amazon.science/publications/replication-as-learning-scalable-knowledge-distillation-for-multimodal-enterprise-agents"
+      ],
       "catalog_matches": []
     },
     {
@@ -7135,12 +7138,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110921946418602001"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ablenavy, 2026-10-16) reports that OpenCodex sessions proxying Gemini through Antigravity kept failing with a missing tool-call signature error, and that inspecting the local Antigravity tool and language-server binaries with REA showed how the official client handles calls with no cached signature, after which OpenCodex’s request pipeline was aligned with it. The post links no analysis notes, commit or pull request, and no GitHub account matching the handle was found, so the change cannot be tied to OpenCodex’s public history. Retain the lead without a catalog mapping; the mechanism is not recorded here.",
+      "reason_zh": "作者帖子（@ablenavy，2026-10-16）称，用 OpenCodex 经由 Antigravity 代理 Gemini 运行多轮智能体时，频繁因缺少工具调用签名而报错；借助 REA 分析本地 Antigravity 工具与语言服务器二进制后，弄清了官方客户端在找不到缓存签名时的处理方式，随后据此调整了 OpenCodex 的请求管线。帖子未链接分析记录、提交或拉取请求，也未找到与该账号名对应的 GitHub 账号，因此无法将该改动与 OpenCodex 的公开历史对应。保留此线索而不建立目录映射；此处不记录具体机制。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110921946418602001"
+      ],
       "catalog_matches": []
     },
     {
@@ -7155,12 +7160,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110936629221450214"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@LinearUncle, 2026-10-16) contrasts people who dismiss REA as MCP glue around Ghidra and Hopper with those using it, and lists four Bilibili video titles to search for, including restoring Minesweeper’s source, reverse engineering Bilibili and recreating a phone app. It links none of the videos and names no authors, so it is a secondhand list of titles; the author’s GitHub account linearuncle holds no related repository. Retain the lead without a catalog mapping; each video would need its own primary review.",
+      "reason_zh": "帖子（@LinearUncle，2026-10-16）对比了把 REA 视为 Ghidra、Hopper 外层 MCP 胶水的人和实际使用它的人，并列出四个可供搜索的 B 站视频标题，包括还原扫雷源码、逆向 B 站和复刻手机 App 等。帖子未链接任何视频，也未注明作者，只是二手的标题列表；作者的 GitHub 账号 linearuncle 中也没有相关仓库。保留此线索而不建立目录映射；每个视频都需要各自的一手核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110936629221450214"
+      ],
       "catalog_matches": []
     },
     {
@@ -7176,12 +7183,15 @@
         "https://x.com/i/status/2110938121080631767",
         "https://x.com/i/status/2110458286290133115"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts by @jonathoda (Jonathan Edwards, 2026-10-14 and 2026-10-16) say Claude recommended MoonBit for a programming-language research project and, when debugging showed only mangled symbols, wrote a VS Code debugger customDescriptionGenerator based on reverse engineering MoonBit’s name-mangling scheme. Neither post links the generator, notes or tests, and the author’s GitHub account (JonathanMEdwards, whose profile lists the same alarmingdevelopment.org site) holds no related repository. Retain the lead without a catalog mapping; the demangling work is not published for review.",
+      "reason_zh": "@jonathoda（Jonathan Edwards）的两条帖子（2026-10-14 和 2026-10-16）称，Claude 为一个编程语言研究项目推荐了 MoonBit；调试时只看到经过修饰的符号名，Claude 便通过逆向 MoonBit 的名称修饰算法，为 VS Code 调试器写了一个 customDescriptionGenerator。两帖均未链接该生成器、说明或测试，作者的 GitHub 账号（JonathanMEdwards，资料中列出同一 alarmingdevelopment.org 网站）中也没有相关仓库。保留此线索而不建立目录映射；这项反修饰工作未公开供核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110938121080631767",
+        "https://x.com/i/status/2110458286290133115"
+      ],
       "catalog_matches": []
     },
     {
@@ -7196,12 +7206,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110942707074183405"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@godsonde, 2026-10-16, in Chinese) says they have used Claude to reverse engineer several old games: conversion to pseudo-C is fast, but with any obfuscation it starts guessing structure sizes wrongly, leaving the work to be done slowly in IDA. It names no game and links no examples or outputs, and the GitHub account named godsonde holds no game reverse-engineering repository. Retain the lead without a catalog mapping; this is an unverified practitioner remark, not a documented case.",
+      "reason_zh": "作者回复（@godsonde，2026-10-16）称曾用 Claude 逆向过几款老游戏：转成伪 C 很快，但一遇到混淆就开始乱猜结构体大小，仍得自己用 IDA 慢慢梳理。回复未说明是哪些游戏，也没有链接示例或输出，名为 godsonde 的 GitHub 账号中也没有游戏逆向仓库。保留此线索而不建立目录映射；这是一则未经核实的实践评论，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110942707074183405"
+      ],
       "catalog_matches": []
     },
     {
@@ -7221,12 +7233,19 @@
         "https://x.com/i/status/2077571522248732787",
         "https://x.com/i/status/2110950579254264278"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Six posts by @TheOneMrMatt (2026-07-16 to 2026-10-16) describe a byte-exact decompilation of the US Saturn release of Sonic 3D Blast, with recreated Hitachi and GCC compiler environments, 100% progress reported on 2026-09-26, Opus used to speed it up, and a native C/SDL PC port that loads assets from user-supplied disc files. The author says source for the decompilation and port will be released on GitHub when finished, with the port aimed at 2026-11-20; no repository, build or matching evidence is public yet. Retain the lead without a catalog mapping; a published repository can support another review.",
+      "reason_zh": "@TheOneMrMatt 的六条帖子（2026-07-16 至 2026-10-16）介绍了对世嘉土星美版《Sonic 3D Blast》的逐字节匹配反编译：重建了 Hitachi 与 GCC 编译环境，2026-09-26 报告进度达 100%，借助 Opus 加快进度，并在此基础上制作从用户自备光盘文件读取素材的原生 C/SDL PC 移植版。作者称反编译与移植的源码将在完成后发布到 GitHub，移植版计划于 2026-11-20 发布；目前尚无公开的仓库、构建或匹配证据。保留此线索而不建立目录映射；公开仓库发布后可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110939629516186067",
+        "https://x.com/i/status/2084352916253762001",
+        "https://x.com/i/status/2103692693037826484",
+        "https://x.com/i/status/2110854238989582709",
+        "https://x.com/i/status/2077571522248732787",
+        "https://x.com/i/status/2110950579254264278"
+      ],
       "catalog_matches": []
     },
     {
@@ -15792,15 +15811,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 182,
-      "pending": 212
+      "insufficient-evidence": 188,
+      "pending": 206
     },
     "units_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 182,
-      "pending": 212
+      "insufficient-evidence": 188,
+      "pending": 206
     },
-    "primary_reviewed_units": 319,
+    "primary_reviewed_units": 325,
     "catalog_linked_occurrences": 208,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
