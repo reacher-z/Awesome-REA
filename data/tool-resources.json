@@ -9794,5 +9794,31 @@
       "https://github.com/icedland/iced/compare/v1.21.0...8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31",
       "https://pypi.org/project/iced-x86/1.21.0/"
     ]
+  },
+  {
+    "id": "apk-mitm",
+    "name": "apk-mitm",
+    "url": "https://github.com/niklashigi/apk-mitm",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Command-line tool that prepares an Android APK you own or are authorized to test for HTTPS traffic inspection. It decodes the package with Apktool, adjusts the network security configuration to trust user-added certificates, disables certificate pinning, then re-encodes and signs the patched APK, so a proxy can read the app's traffic without a rooted device. App bundles supplied as .xapk or .apks are also supported.",
+    "description_zh": "命令行工具，为使用者拥有或有权测试的 Android APK 准备 HTTPS 流量检查。它用 Apktool 解码安装包、调整网络安全配置以信任用户添加的证书、关闭证书固定，再重新编码并签名修补后的 APK，使代理无需 root 设备即可读取应用流量。也支持以 .xapk 或 .apks 形式提供的应用捆绑包。",
+    "evidence_url": "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/LICENSE",
+      "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/package.json"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installed from npm as a global CLI and requires Node.js 14+ and Java 8+ per the README; patching app bundles on Linux also needs zip and unzip available.",
+      "Operates on an APK or app bundle the analyst supplies and is intended only for apps you own or are authorized to test; rooting the device is not required because the changes are applied statically before install.",
+      "The README notes the static Apktool-based approach can fail on large or complex apps and cannot address certificate pinning enforced inside native binaries such as Flutter. MIT licensed; the repository ships the tool only, no application packages."
+    ]
   }
 ]

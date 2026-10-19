@@ -3708,5 +3708,12 @@
       "调用方需提供原始代码字节、位数和指令指针。所审阅的文档未描述可执行文件格式解析或函数发现功能，因此需先用加载器或格式解析库定位代码。Knights Corner 的 MVEX 指令需要启用 mvex 特性并传入 KNC 解码选项。",
       "MIT 许可证。README 称所有指令均经过测试，iced 已与 xed、gas、objdump、masm、dumpbin、nasm 和 ndisasm 对照测试并经过模糊测试，其 disas-bench 结果中 Rust 版解码速度超过 250 MB/s，解码加格式化超过 130 MB/s。以上均未复现；本次未解码或汇编任何代码。"
     ]
+  },
+  "apk-mitm": {
+    "requirements": [
+      "通过 npm 以全局命令行工具安装，README 要求 Node.js 14+ 与 Java 8+；在 Linux 上修补应用捆绑包还需具备 zip 与 unzip。",
+      "对使用者提供的 APK 或应用捆绑包进行操作，仅适用于使用者拥有或有权测试的应用；因修改在安装前静态完成，无需 root 设备。",
+      "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。"
+    ]
   }
 }
