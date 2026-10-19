@@ -18,6 +18,8 @@
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
 | `requirements` | Platform, engine, release, license, or input prerequisites |
 
+`requirements` items describe the project: prerequisites first, then project-specific limits such as author-reported results, unpublished artifacts, platform gaps or missing licenses. Do not add sentences about this catalog's own review, such as "this collection did not run it" or "no REA use is established": every entry page already states that source review does not establish runtime testing, and `relationship` records the REA connection. When a record's sources invite the opposite reading, for example by reporting runtime results a reader could take as checked here, end the relevant item with the one phrase "Not run or reproduced for this catalog." and its Chinese item with "本目录未运行或复现。". `python3 scripts/review_disclaimers.py` lists requirement sentences that still refer to the catalog's review, so a reviewer can keep only those specific to their record.
+
 The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
 
 - `official-core` (Official REA project): the upstream REA project itself.

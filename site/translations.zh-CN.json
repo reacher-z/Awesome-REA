@@ -370,7 +370,7 @@
     "name": "Aegis：追踪登录验证码计算",
     "requirements": [
       "上游案例环境：Aegis 3.4.3、REA 6.1.0、jadx-headless-mcp 0.7.1、OpenJDK 21，Linux x64。",
-      "复现时使用匹配的官方 APK；本目录未重新运行该案例。"
+      "复现时使用匹配的官方 APK。"
     ]
   },
   "rea-ctf-case": {
@@ -923,8 +923,8 @@
       "需要用户自己的卡带转储、固定版本的 mwccarm 匹配编译器、单独的链接器及安装环境，以及 ndspy、Capstone、pyelftools 等 Python 工具。",
       "固定提交 README 报告 11,389/11,389 个函数已匹配，其中包括 108 个字节一致的汇编原语；接入 PC 移植的函数为 10,957 个。这些计数代表不同检查。",
       "同一 README 仍保留接近完成的旧表述，port/README.md 则描述历史冒烟构建阶段。匹配与移植可玩性应按各来源分别理解，不能视为已验证的完整可玩移植。",
-      "文档说明使用智能体辅助匹配，并配合源码审阅和重定位核对。本目录未获取 ROM、运行编译器或复现任何计数。",
-      "仓库有 MIT 许可证；原始游戏数据和外部编译器的权利另行处理。未建立 REA 隶属关系。"
+      "文档说明使用智能体辅助匹配，并配合源码审阅和重定位核对。",
+      "仓库有 MIT 许可证；原始游戏数据和外部编译器的权利另行处理。"
     ]
   },
   "goldeneye-pc-port-case": {
@@ -953,7 +953,7 @@
       "需要用户提供受支持的欧版 PAL RMCP01 revision 0 游戏数据。所审阅 0.8.3 构建的 Retro Rewind 6.13.3 支持需要另行获取匹配内容，并使用兼容的已编译配置。",
       "Android 面向 Android 9+ 的 ARM64/Vulkan 设备；iPhone/iPad 需要 iOS/iPadOS 16+。README 给出了 Apple Silicon macOS 14+ 的 PadMint／源码路线，但固定版本状态表仍将 Mac 标为实验性。tvOS 17+ 也仍为实验性预览。",
       "实体设备和模拟器检查只覆盖特定构建与设备。部分硬件仍有图形缺失、卡死、手柄和性能问题；Pixel 或 iPad 上成功不等于普遍兼容。",
-      "项目披露大量使用 AI 辅助，但没有经审计的代码生成比例。本目录未编译项目、获取游戏数据或复现测试。",
+      "项目披露大量使用 AI 辅助，但没有经审计的代码生成比例。",
       "KartPad 自有成果采用 GPL-3.0-only，保留上游组件条款。RIGHTS_AND_LICENSES 区分软件义务与游戏派生逻辑、资产；GPL 不会重新授权 Mario Kart Wii。"
     ]
   },
@@ -962,9 +962,9 @@
     "requirements": [
       "需要用户自己的 Super Smash Bros. N64 转储，并匹配文档中的哈希：美版 NTSC-U v1.0（NALE）或日版 v1.0（NALJ）。两个地区版本需分别构建；Torch 在源码构建时或打包版首次运行时于本地提取资产。",
       "README 列出 Windows、Linux、Apple Silicon macOS 和 Android 原生版本；原生 C 模组和 GameCube 适配器驱动仅限桌面平台。BUILDING.md 说明桌面源码构建，需要 Git/子模块、CMake 和 Python 3，Linux/macOS 另需 Ninja，Windows 需要 Visual Studio 2022 和 Windows SDK。",
-      "作者自述在 v0.3-beta 之前独自借助 Claude 开发，并表示项目现已不再是纯 AI 项目，感谢社区提供的测试、修复和功能。这些说法属于自述；ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。",
+      "作者自述在 v0.3-beta 之前独自借助 Claude 开发，并表示项目现已不再是纯 AI 项目，感谢社区提供的测试、修复和功能；这些说法属于自述。",
       "LICENSE 仅对移植专用代码、构建脚本、工具和文档授予 MIT。反编译子模块及由其派生的文件遵从上游反编译项目，该项目未发布明确许可证；libultraship/Torch、随附字体和手柄映射保留各自条款；游戏权利另行处理。",
-      "本次仅审阅文档和许可范围，没有获取游戏转储、构建、运行模拟器或独立复现。未证实使用 REA。"
+      "ROM 身份检查和所描述的渲染、音频对比不能证明完整行为等价。"
     ]
   },
   "agent-decompilation-oracle-case": {
