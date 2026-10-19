@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 307](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 67](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-67-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 307](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 68](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-68-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (67) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (68) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1954,13 +1954,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**67 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**68 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (19) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (20) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2093,6 +2093,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 训练和主要评测均使用函数级 C 代码，以 GCC 和 Clang 在 -O0 至 -O3 下编译为 x86-64 Linux 二进制，并以 IDA Pro 伪代码作为模型输入。可重新执行率仅在 HumanEval 和 MBPP 上测量；ExeBench 与 GitHub2025 采用 R2I 可读性指标和 GPT-5-mini 评审。附录实验扩展到 BringUpBench 项目、macOS arm64 与 Windows MSVC 构建以及 Obfuscator-LLVM，但模型仅以 C 代码训练，论文预计遇到 C++ 模板等没有 C 对应物的语言特性时效果会下降。
 
   **发表信息:** 2026 · ICLR 2026 · 会议论文 · Hanzhuo Tan 等
+
+  </details>
+
+- [**Idioms：以明确定义的类型显著增强局部神经反编译的简单有效框架**](https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/)
+
+  Idioms 微调代码语言模型，把单个目标函数的 Hex-Rays 输出转换为预测的原始 C 代码，并同时给出其中使用的用户自定义结构体、联合体和类型别名定义。输入可按调用图广度优先顺序附带相邻的反编译函数，使分散在调用者与被调用者中的类型线索能够提供给模型。作者还构建了 Realtype 数据集，包含来自已编译开源 C 仓库的 157,163 个函数及完整类型定义。其基于 CodeGemma-7b 的模型在 ExeBench 上有 54.4% 的函数通过单元测试，LLM4Decompile 为 46.3%，Nova 为 37.5%；在 Realtype 上的得分至少高出 95%。
+
+  2026 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [代码](https://github.com/squaresLab/idioms) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-idioms/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是局部、函数级的神经反编译：每次预测只覆盖一个目标函数及其类型定义，而非可编译的完整程序。评测使用来自 GitHub 开源项目的 x86-64 Linux gcc 二进制及 ExeBench 的“real”子集；O1–O3 构建禁用内联，且只保留在所有优化级别均能反编译的函数，使 Hex-Rays 与 Ghidra 测试集分别减少 21% 和 76%。ExeBench 单元测试是偏乐观的代理指标；Realtype 没有测试，因此以依赖图等价性及名称、类型的完全匹配作为偏保守的代理指标，且 Realtype 的用户自定义类型须所有字段（递归计算平均 17.6 个）均匹配才算正确。主要模型使用专有 Hex-Rays 的输出，上下文窗口为 2,048 或 4,096 个词元。预测的名称与类型属于统计推断，并非恢复的原始信息。仍可能存在来自 GitHub 的预训练数据泄漏，且未评估混淆代码和恶意软件。
+
+  **发表信息:** 2026 · NDSS 2026 · 会议论文 · Luke Dramko 等
 
   </details>
 
