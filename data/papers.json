@@ -8988,5 +8988,57 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-gamegan",
+    "title": "Learning to Simulate Dynamic Environments with GameGAN",
+    "title_zh": "使用 GameGAN 学习模拟动态环境",
+    "authors": [
+      "Seung Wook Kim",
+      "Yuhao Zhou",
+      "Jonah Philion",
+      "Antonio Torralba",
+      "Sanja Fidler"
+    ],
+    "year": 2020,
+    "publication_date": "2020-06",
+    "date_precision": "month",
+    "date_basis": "IEEE’s Crossref deposit and an archived copy of the IEEE Xplore page give June 2020, represented at month precision. The May 2020 arXiv submission and the conference dates are not substituted.",
+    "date_basis_zh": "IEEE 提交的 Crossref 元数据及 IEEE Xplore 页面存档副本均给出 2020 年 6 月，本条目按月精度记录，不以 2020 年 5 月的 arXiv 提交日期或会议日期替代。",
+    "venue": "CVPR 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2005.12126",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2020-05-25",
+    "doi": "10.1109/CVPR42600.2020.00131",
+    "url": "https://ieeexplore.ieee.org/document/9156900",
+    "pdf_url": "https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf",
+    "code_url": "https://github.com/nv-tlabs/GameGAN_code",
+    "project_url": null,
+    "targets": [
+      "game"
+    ],
+    "description_en": "GameGAN learns an action-conditioned neural simulator of a game from recorded frames and the actions taken, without access to the game’s logic or engine. An action-conditioned LSTM dynamics engine with a stochastic latent variable predicts the next state, an optional external memory module builds an internal map so that revisited locations stay consistent, and a rendering engine decodes frames while separating static from dynamic components. Training is end-to-end with adversarial losses, including an action-conditioned discriminator, and a temporal cycle loss for memory consistency. The authors evaluate on a modified Pac-Man, a ghost-free Pac-Man-Maze and VizDoom “take cover”, training RL agents inside the learned simulators and testing them in the real games, and measure long-term consistency with a come-back-home task; a human-playable model of the official Pac-Man is shown qualitatively.",
+    "description_zh": "GameGAN 从录制的画面帧及对应动作中学习游戏的动作条件神经模拟器，无需访问游戏逻辑或引擎。带随机潜变量的动作条件 LSTM 动力学引擎预测下一状态；可选的外部记忆模块构建内部地图，使重新访问的位置保持一致；渲染引擎在解码画面时区分静态与动态成分。模型以端到端方式训练，采用包括动作条件判别器在内的对抗损失，并用时间循环损失保持记忆一致性。作者在修改版 Pac-Man、无幽灵的 Pac-Man-Maze 及 VizDoom “take cover” 上进行评测：在学得的模拟器中训练强化学习智能体并在真实游戏中测试，并用“返回原点”任务衡量长期一致性；论文还定性展示了可由人类游玩的官方 Pac-Man 模型。",
+    "scope_limitations_en": "GameGAN imitates a game’s pixels and dynamics; it does not recover game code, symbolic rules, assets or an executable. Training needs large logged datasets with actions: 40K Pac-Man episodes from a high-entropy DQN agent that sees the full environment, and 10K random-policy VizDoom episodes, at 84×84 and 64×64 resolution. Quantitative results cover small grid-based Pac-Man variants and one VizDoom scenario, with an external classifier supplying game outcomes. Agents trained in the simulators can exploit modeling errors: the full model sometimes let Pac-Man pass through walls, and its Pac-Man agents scored below those of the memoryless variant, while on VizDoom the World Model baseline scored higher than GameGAN. The released code supports VizDoom training only, relies on a deprecated WorldModels data setup, and is under the non-commercial NVIDIA Source Code License; Pac-Man data and the official Pac-Man model are not included.",
+    "scope_limitations_zh": "GameGAN 模仿的是游戏的画面与动态，并不恢复游戏代码、符号规则、素材或可执行程序。训练需要带动作的大量日志数据：Pac-Man 使用 4 万个由能观察完整环境、高熵策略的 DQN 智能体生成的回合，VizDoom 使用 1 万个随机策略回合，分辨率分别为 84×84 与 64×64。定量结果只覆盖小型网格化的 Pac-Man 变体与一个 VizDoom 场景，并借助外部分类器给出游戏结果。在模拟器中训练的智能体可能利用建模误差：完整模型有时让 Pac-Man 穿过墙壁，其 Pac-Man 智能体得分低于无记忆版本；在 VizDoom 上，World Model 基线的得分高于 GameGAN。发布的代码只支持 VizDoom 训练，依赖已弃用的 WorldModels 数据准备流程，并采用仅限非商业用途的 NVIDIA Source Code License；其中不含 Pac-Man 数据及官方 Pac-Man 模型。",
+    "why_fits_en": "Adds a neural approach to reconstructing a playable game simulator from observed frames and actions, complementing the section’s program-synthesis and black-box game-replication research.",
+    "why_fits_zh": "补充一种从观察到的画面与动作中重建可游玩游戏模拟器的神经网络方法，与本节的程序合成及黑盒游戏复刻研究互补。",
+    "metadata_notes": "Crossref and the archived IEEE Xplore page give the five authors, CVPR 2020 and pages 1228–1237; IEEE metadata capitalizes the title as “Learning to Simulate Dynamic Environments With GameGAN”, while the CVF open-access paper and arXiv print “with”. The 10-page CVF PDF is the Computer Vision Foundation’s open-access version; IEEE Xplore holds the version of record. arXiv has only v1, submitted 2020-05-25 with the comment “CVPR 2020”. The repository README at the reviewed 2021-11-11 commit gives BibTeX pages 1231–1240, which differ from IEEE, and its Project Page link points to an unrelated lift-splat-shoot page, so no project URL is recorded. The README lists Ubuntu 18.04 and Python 3.8.3, and requirements pin torch 1.4.0 and torchvision 0.5.0. LICENSE section 3.3 limits use to non-commercial research or evaluation. No code, data or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 IEEE Xplore 页面存档给出五位作者、CVPR 2020 及第 1228–1237 页；IEEE 元数据将标题写作“Learning to Simulate Dynamic Environments With GameGAN”，而 CVF 开放获取论文与 arXiv 中为小写“with”。10 页的 CVF PDF 是计算机视觉基金会提供的开放获取版本，版本记录以 IEEE Xplore 为准。arXiv 只有 2020-05-25 提交的 v1，备注为“CVPR 2020”。所审阅的 2021-11-11 提交中，仓库 README 的 BibTeX 页码为 1231–1240，与 IEEE 不同；其 Project Page 链接指向无关的 lift-splat-shoot 页面，因此不记录项目页面。README 列出 Ubuntu 18.04 与 Python 3.8.3，requirements 固定 torch 1.4.0 与 torchvision 0.5.0。LICENSE 第 3.3 条将使用限定为非商业的研究或评估用途。本次未运行代码、数据或实验。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/9156900",
+      "https://web.archive.org/web/20240914161135/https://ieeexplore.ieee.org/document/9156900/",
+      "https://api.crossref.org/works/10.1109/CVPR42600.2020.00131",
+      "https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf",
+      "https://arxiv.org/abs/2005.12126",
+      "https://github.com/nv-tlabs/GameGAN_code/blob/1195c398e8ada865497a7f8c8a369de6e34cbd3f/readme.md",
+      "https://github.com/nv-tlabs/GameGAN_code/blob/1195c398e8ada865497a7f8c8a369de6e34cbd3f/LICENSE",
+      "https://github.com/nv-tlabs/GameGAN_code/blob/1195c398e8ada865497a7f8c8a369de6e34cbd3f/requirements.txt"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
