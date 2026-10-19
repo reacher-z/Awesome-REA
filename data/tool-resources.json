@@ -7196,5 +7196,38 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "decomp-academy",
+    "name": "Decomp Academy",
+    "url": "https://decomp-academy.dev/",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "A free, English, in-browser course in matching decompilation maintained by Jack Price-Burns: learners read a function's target assembly, write C, and the original console compiler grades the result byte for byte. Lessons build from reading registers and arithmetic through control flow, structs, floating point, the ABI, globals, optimizer behaviour and 64-bit integers, then finish with functions adapted from open-source decompilation projects. The curriculum now spans GameCube PowerPC, Game Boy Advance Thumb and Nintendo 64 MIPS courses, and the frontend source is on GitHub.",
+    "description_zh": "由 Jack Price-Burns 维护的免费英文在线课程，在浏览器中教授一致性反编译：学习者阅读函数的目标汇编，编写 C 代码，再由原版主机编译器逐字节评判结果。课程从读寄存器和算术运算讲起，依次覆盖控制流、结构体、浮点、ABI、全局变量、优化器行为和 64 位整数，最后以改编自开源反编译项目的函数收尾。课程目前包括 GameCube PowerPC、Game Boy Advance Thumb 和 Nintendo 64 MIPS 三门，前端源码公开在 GitHub 上。",
+    "evidence_url": "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at frontend commit a21f9d0 (2026-09-23); the repository was first published in June 2026 and has had commits most months since. The README still describes a single GameCube course of 258 lessons, but the reviewed curriculum and the live site list 755 lessons in three courses: GameCube (263), Game Boy Advance (251) and Nintendo 64 (241), each in four tiers from warm-up to real functions.",
+      "Lessons run in the browser at decomp-academy.dev and the README says no signup is needed to start; an account stores progress. Grading compiles the learner's C with the original compilers and diffs it using objdiff: Metrowerks CodeWarrior GC/2.0 for GameCube and SGI IDO 5.3 for Nintendo 64 on the hosted backend, a separate AGPL-3.0 repository that the README says runs the CodeWarrior compilers under wibo, and agbcc built to WebAssembly in the browser for Game Boy Advance.",
+      "No game files are needed: the later lessons adapt functions from open-source decompilation projects the README credits (Star Fox Adventures, Pikmin 2, Metroid Prime, Mario Party 4), and targets are generated server-side from each lesson's reference C. This repository contains no compiler, and the backend README says it commits only wibo, not MWCC; for local development the README expects Node 18+ and a sibling Star Fox Adventures decompilation checkout that supplies MWCC and binutils, while .env.example says a fresh clone uses the hosted compile API by default.",
+      "The frontend is AGPL-3.0, which also covers modified versions run as a network service. This collection read the README, curriculum metadata, one real-function lesson and the live home page; it did not solve lessons or check grading. A CLAUDE.md lesson-authoring guide for Claude Code is committed, but the README does not say how lessons were written, and REA is not mentioned."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/src/curriculum/01-gamecube-c/_course.md",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/src/curriculum/02-gba/_course.md",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/src/curriculum/03-n64-c/_course.md",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/src/curriculum/01-gamecube-c/04-proving-ground/01-mastery/001-spellstone-setstate.md",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/.env.example",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/CLAUDE.md",
+      "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/LICENSE",
+      "https://github.com/JackPriceBurns/decomp-academy-be/blob/d80447dad332e9c15ac4549d8d42a28a0a9daedd/README.md"
+    ]
   }
 ]
