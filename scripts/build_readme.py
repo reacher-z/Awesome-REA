@@ -162,6 +162,18 @@ def collection_section(record):
     return 'native-binary'
 
 
+def other_targets(record, section, language):
+    """Targets the section heading does not imply; sections without a target of their own list every target."""
+    index = 0 if language == 'en' else 1
+    implied = {'native-binary': 'binary'}.get(section, section) if section in TARGET_SECTIONS else None
+    labels = [names[index] for target, names in TARGETS.items()
+              if target in record.get('targets', []) and target != implied]
+    if not labels:
+        return ''
+    prefix = (('Also: ', '也适用：') if implied else ('Targets: ', '目标：'))[index]
+    return ' · ' + prefix + ('、' if index else ', ').join(labels)
+
+
 def entry_type(record, language):
     index = 0 if language == 'en' else 1
     kind = record.get('kind', 'tool')
@@ -221,7 +233,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
             for record in entries:
                 name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
                 description = plain_text(record[f'description_{language}'])
-                metadata = plain_text(entry_type(record, language))
+                metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
                 detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
                 detail_label = '使用条件与证据' if language == 'zh' else 'Requirements & evidence'
                 lines.extend([
