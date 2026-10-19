@@ -22,7 +22,6 @@
 - [KumoKyaku/kcp](https://github.com/KumoKyaku/kcp) — KCP 的 C# 版本，线程安全，运行时无内存分配，对 GC 无压力。 **[1,005 星标]**
 - [abbaye/WpfHexEditorIDE](https://github.com/abbaye/WpfHexEditorIDE) — WpfHexEditor Studio 是基于 WPF 与 .NET 8 的 IDE，面向高级二进制分析和逆向工程，将强大的十六进制编辑器、深入检查工具以及对 .NET 项目和 Visual Studio 解决方案的原生支持整合到一个高性能平台中。 **[938 星标]**
 - [EgorBo/Disasmo](https://github.com/EgorBo/Disasmo) — VS2022 插件。点击任意方法或类，即可查看 .NET Core 的 JIT 为其生成的汇编代码。 **[706 星标]**
-- [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — 逆向分析并重写实模式 DOS 程序！ **[662 星标]**
 - [anydream/il2cpp](https://github.com/anydream/il2cpp) — 将 MSIL/C# 转换为 C++ 的工具，速度快于 CoreCLR，内存开销低。（已停止维护。C# 是一门好语言，但 .NET 不是一个干净的平台。） **[606 星标]**
 - [bitmono-project/BitMono](https://github.com/bitmono-project/BitMono) — 适用于 .NET 和 Mono 的混淆器，提供可定制引擎，用于构建自己的混淆器。 **[569 星标]**
 - [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — 首个适用于 Mac、Linux 和 Windows 的独立 .NET 反编译器。 **[401 星标]** · 精选：[CodemerxDecompile .NET 反编译器](https://awesomerea.org/zh/resources/codemerxdecompile/)

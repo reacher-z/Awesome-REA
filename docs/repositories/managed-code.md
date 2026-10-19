@@ -22,7 +22,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [KumoKyaku/kcp](https://github.com/KumoKyaku/kcp) — KCP in C#: thread-safe, with no runtime allocations and no GC pressure. **[1,005 stars]**
 - [abbaye/WpfHexEditorIDE](https://github.com/abbaye/WpfHexEditorIDE) — WpfHexEditor Studio is a IDE built on WPF and .NET 8, designed for advanced binary analysis and reverse engineering—combining a powerful hex editor, deep inspection tools, and native support for .NET projects and Visual Studio solutions in a single high-performance platform. **[938 stars]**
 - [EgorBo/Disasmo](https://github.com/EgorBo/Disasmo) — VS2022 Add-in. Click on any method or class to see what .NET Core's JIT generates for them (ASM). **[706 stars]**
-- [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — Reverse engineer and rewrite real mode DOS programs! **[662 stars]**
 - [anydream/il2cpp](https://github.com/anydream/il2cpp) — An MSIL/C# to C++ converter. Faster than CoreCLR with low memory overhead. (Abandoned. C# is a good language, but .NET is not a clean platform.) **[606 stars]**
 - [bitmono-project/BitMono](https://github.com/bitmono-project/BitMono) — Obfuscator for .NET and Mono, with a customizable engine for building your own obfuscators. **[569 stars]**
 - [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — The first standalone .NET decompiler for Mac, Linux and Windows **[401 stars]** · Curated: [CodemerxDecompile](https://awesomerea.org/resources/codemerxdecompile/)

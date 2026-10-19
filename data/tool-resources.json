@@ -8293,5 +8293,38 @@
       "https://pypi.org/project/kong-re/0.2.2/",
       "https://github.com/amruth-sn/kong/compare/v0.2.2...8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2"
     ]
+  },
+  {
+    "id": "spice86",
+    "name": "Spice86",
+    "url": "https://github.com/OpenRakis/Spice86",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "PC emulator for executing, reverse engineering and rewriting real-mode DOS programs whose source code is unavailable. While a program runs it builds a control-flow graph, and on exit it dumps memory, execution flow, Ghidra-compatible symbols and a self-contained, runnable C# project whose generated functions override the original assembly, so analysts can rewrite them function by function into readable code while the program keeps working. It also provides a GDB remote server with custom analysis commands, a built-in debugger with a C-header structure viewer, an optional HTTP memory API and an MCP server whose tools cover CPU, memory, breakpoints, CFG and device state; an optional Ghidra plugin imports the dumps.",
+    "description_zh": "用于执行、逆向分析并重写无源码实模式 DOS 程序的 PC 模拟器。程序运行时它会构建控制流图，退出时转储内存、执行流、Ghidra 兼容的符号，以及一个可独立运行的 C# 项目，其中生成的函数会覆盖原有汇编代码，分析者可以在程序始终可运行的前提下逐个函数将其改写为可读代码。它还提供带自定义分析命令的 GDB 远程服务器、配有 C 头文件结构查看器的内置调试器、可选的 HTTP 内存 API，以及工具覆盖 CPU、内存、断点、控制流图和设备状态的 MCP 服务器；可选的 Ghidra 插件可导入这些转储。",
+    "evidence_url": "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Releases are published on NuGet (16.1.0 at review, published 2026-08-05); the GitHub release tagged latest is a rolling development prerelease built from master with debug and release archives. The reviewed master commit (2026-10-13) declares 16.1.0. The project is a C# port and continuation of the original Java Spice86. Running and building need .NET 10 on Windows, macOS or Linux; source builds use dotnet build.",
+      "The README lists 8086/8088 as fully implemented, with partial 80186, 80286 and 80386 support (no protected mode or paging, and no FPU beyond detection); 1 MB segmented memory with EMS, XMS and HMA; text, CGA, EGA, VGA and VESA VBE 1.2 graphics, with CGA and EGA best effort; a largely complete DOS 5.0 INT 21h; and Sound Blaster, OPL and Adlib Gold audio ported from DOSBox Staging, with MT-32 partial and unavailable on macOS. COMPATIBILITY.md says many programs do not run and lists tested games individually.",
+      "The analyst supplies the DOS program and its files; the emulated C: drive defaults to the program folder. Dumps go to a subfolder named by the program's SHA-256 hash, and the generated project passes the expected checksum so overrides cannot run against a different binary. The GDB server starts by default on port 10000, and the MCP HTTP server is documented as enabled by default on port 8081. The Ghidra plugin is a separate repository that needs Java 17. The README suggests LLM assistance for rewriting generated functions and points to the project's Cryogenic rewrite of Cryo's Dune as a worked example.",
+      "Apache-2.0; NOTICE credits the Aeon project, the README credits DOSBox Staging for ported sound code and as the model for CD and floppy emulation, and a prebuilt FastExpressionCompiler DLL is vendored in 3rdparty. Test resources are small DOS test programs, most with assembly sources in the repository. No program was emulated or rewritten here, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/README.md#L266-L290",
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/COMPATIBILITY.md",
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/doc/mcp.md",
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/src/Directory.Build.props",
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/LICENSE",
+      "https://github.com/OpenRakis/Spice86/blob/28a877fc64888f070e2dad95ddb739f3e1fe84a2/NOTICE",
+      "https://github.com/OpenRakis/Spice86/releases/tag/latest",
+      "https://www.nuget.org/packages/Spice86/16.1.0"
+    ]
   }
 ]

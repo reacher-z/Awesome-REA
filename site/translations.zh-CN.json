@@ -3293,5 +3293,14 @@
       "kong eval 命令以真实源码为基准为 analysis.json 打分，名称采用基于词的 Jaccard 匹配，类型按签名组成部分评分；仓库未公开评测结果。CI 在拉取请求上以 Python 3.11 至 3.14 运行 pytest 测试套件。本合集仅审阅源码与文档，未运行 Kong、Ghidra 或任何模型。",
       "LICENSE 与 pyproject.toml 标明采用 Apache-2.0；Ghidra、模型服务及被分析的二进制文件各有其条款。README 称其灵感来自 KeygraphHQ 的 Shannon 网页渗透测试流水线。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "spice86": {
+    "name": "Spice86 实模式 DOS 逆向与重写模拟器",
+    "requirements": [
+      "正式版本发布在 NuGet 上（审阅时为 16.1.0，发布于 2026-08-05）；GitHub 上标签为 latest 的发布是从 master 持续构建的开发预发布版，提供调试版和发布版压缩包。所审阅的 master 提交（2026-10-13）声明的版本为 16.1.0。该项目是原 Java 版 Spice86 的 C# 移植与延续。运行和构建都需要 .NET 10，支持 Windows、macOS 和 Linux；从源码构建使用 dotnet build。",
+      "README 列出：8086/8088 已完整实现，80186、80286 和 80386 仅部分支持（未实现保护模式和分页，FPU 仅支持检测指令）；1 MB 分段内存，支持 EMS、XMS 和 HMA；支持文本模式、CGA、EGA、VGA 和 VESA VBE 1.2 图形，其中 CGA 与 EGA 为尽力实现；DOS 5.0 的 INT 21h 已大体完整；Sound Blaster、OPL 和 Adlib Gold 音频移植自 DOSBox Staging，MT-32 仅部分支持且在 macOS 上不可用。COMPATIBILITY.md 说明许多程序无法运行，并逐一列出了测试过的游戏。",
+      "DOS 程序及其文件由分析者自行提供；模拟的 C: 盘默认指向程序所在文件夹。转储文件存放在以程序 SHA-256 哈希命名的子文件夹中，生成的项目会传入预期校验和，因此覆盖代码不会作用于其他二进制。GDB 服务器默认在 10000 端口启动，文档说明 MCP HTTP 服务器默认启用，端口为 8081。Ghidra 插件位于单独的仓库，需要 Java 17。README 建议借助大语言模型改写生成的函数，并以该项目对 Cryo《沙丘》的 Cryogenic 重写作为实际示例。",
+      "采用 Apache-2.0 许可；NOTICE 致谢 Aeon 项目，README 说明声音代码移植自 DOSBox Staging，CD 与软盘模拟也以其为参照，3rdparty 目录内置了预编译的 FastExpressionCompiler DLL。测试资源是小型 DOS 测试程序，大多在仓库中附有汇编源码。本次未模拟或重写任何程序，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
