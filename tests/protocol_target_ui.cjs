@@ -226,10 +226,11 @@ if (require.main === module) (async () => {
       sorted.api.sourceState.sort = sort; orders[sort] = Array.from(sorted.api.sourceFiltered(), record => record.full_name);
     }
   }
-  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool']);
-  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究']);
-  assert.deepEqual(orders.en.categories, ['JVM bytecode', 'MCP servers', 'REA essentials']);
-  assert.deepEqual(orders.zh.categories, ['JVM 字节码', 'MCP 服务', 'REA 核心']);
+  // Options sort by label; each also shows its live result count.
+  assert.deepEqual(orders.en.kinds, ['Case study', 'Collection', 'Documentation', 'Integration', 'Learning resource', 'Project', 'Research', 'Tool'].map(kind => kind + ' (1)'));
+  assert.deepEqual(orders.zh.kinds, ['案例', '工具', '合集', '集成', '文档', '项目', '学习资源', '研究'].map(kind => kind + '（1）'));
+  assert.deepEqual(orders.en.categories, ['JVM bytecode (3)', 'MCP servers (2)', 'REA essentials (3)']);
+  assert.deepEqual(orders.zh.categories, ['JVM 字节码（3）', 'MCP 服务（2）', 'REA 核心（3）']);
   assert.deepEqual(orders.topics, ['aadog', 'zeta', 'reverse-engineering']);
   assert.deepEqual(orders.name, ['aadog/fd-back', 'Beta/viewer', 'delta/list', 'echo/docs', 'fox/course', 'gamma/paper', 'mid/reverse-engineering', 'zeta/project']);
   assert.deepEqual(orders.stars, ['mid/reverse-engineering', 'aadog/fd-back', 'zeta/project', 'Beta/viewer', 'delta/list', 'echo/docs', 'gamma/paper', 'fox/course']);

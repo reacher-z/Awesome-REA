@@ -306,6 +306,48 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     }
   }
 
+  // Target buttons and Type/Category options count what they would show given the other filters and the query.
+  for (const lang of ['en', 'zh']) {
+    const rows = [
+      curatedRecord(1, {kind: 'case-study', category: 'reconstruction-cases', targets: ['game', 'website']}),
+      curatedRecord(2, {kind: 'case-study', category: 'reconstruction-cases', targets: ['app']}),
+      curatedRecord(3, {kind: 'tool', category: 'dotnet', targets: ['app'], name: 'Decompiler fixture'}),
+      curatedRecord(4, {kind: 'tool', category: 'dynamic-analysis', targets: ['binary'], name: 'Decompiler tracer'}),
+      curatedRecord(5, {kind: 'integration', category: 'agent-mcp', targets: ['binary', 'protocol']}),
+    ];
+    const app = await loaded(`?lang=${lang}&kind=case-study&category=dotnet`, {catalog: catalogOf(rows)});
+    const counts = () => Object.fromEntries(app.marked.filter(node => 'targetCount' in node.dataset).map(node => [node.dataset.targetCount, node.textContent]));
+    const disabledTargets = () => app.marked.filter(node => 'target' in node.dataset && node.disabled).map(node => node.dataset.target);
+    const options = id => app.element(id).children.map(option => [option.value, option.textContent, Boolean(option.disabled)]);
+    const n = (text, count) => lang === 'zh' ? `${text}（${count}）` : `${text} (${count})`;
+    // A shared URL with no results keeps both of its selected values enabled.
+    assert.equal(app.api.filtered().length, 0);
+    assert.deepEqual(counts(), {all: '0', website: '0', game: '0', app: '0', binary: '0', firmware: '0', protocol: '0'});
+    assert.deepEqual(disabledTargets(), ['website', 'game', 'app', 'binary', 'firmware', 'protocol']);
+    const category = Object.fromEntries(options('category-select').map(([value, text, disabled]) => [value, [text, disabled]]));
+    assert.deepEqual(category.dotnet, [n('.NET', 0), false]);
+    assert.equal(category['reconstruction-cases'][1], false);
+    assert.equal(category['agent-mcp'][1], true, 'no case study is an MCP server');
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'tool'), ['tool', n(lang === 'zh' ? '工具' : 'Tool', 1), false]);
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study'), ['case-study', n(lang === 'zh' ? '案例' : 'Case study', 0), false]);
+    // Clearing the category recounts targets and types; the Type menu ignores its own selection.
+    app.element('category-select').emit('change', 'all');
+    assert.deepEqual(counts(), {all: '2', website: '1', game: '1', app: '1', binary: '0', firmware: '0', protocol: '0'});
+    assert.deepEqual(disabledTargets(), ['binary', 'firmware', 'protocol']);
+    assert.deepEqual(options('kind-select').map(([, text]) => text)[0], n(lang === 'zh' ? '所有类型' : 'All types', 5));
+    assert.deepEqual(options('category-select')[0].slice(1), [n(lang === 'zh' ? '所有类别' : 'All categories', 2), false]);
+    // Typing recounts without moving focus; the results status stays the only live region.
+    app.element('kind-select').emit('change', 'all');
+    const search = app.element('search-input'); search.focus();
+    search.emit('input', 'decompiler');
+    assert.equal(app.document.activeElement, search);
+    assert.deepEqual(counts(), {all: '2', website: '0', game: '0', app: '1', binary: '1', firmware: '0', protocol: '0'});
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'tool').slice(1), [n(lang === 'zh' ? '工具' : 'Tool', 2), false]);
+    assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study').slice(1), [n(lang === 'zh' ? '案例' : 'Case study', 0), true]);
+    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['results-status', 'source-status']);
+    assert(app.element('kind-select').children.every(option => !option.attrs['aria-live']));
+  }
+
   // Show More adds 15 curated or 24 repository records and hides its row when none remain.
   for (const lang of ['en', 'zh']) {
     const app = await loaded(`?lang=${lang}`, {catalog: catalogOf(Array.from({length: 40}, (_, index) => curatedRecord(index))),

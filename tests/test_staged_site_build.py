@@ -2,6 +2,7 @@
 from contextlib import ExitStack
 import json
 from pathlib import Path
+import re
 import shutil
 import sys
 from tempfile import TemporaryDirectory
@@ -205,6 +206,18 @@ class StagedSiteBuildTests(unittest.TestCase):
         self.assertFalse((self.output / 'fonts').exists())
         self.assertEqual(file_bytes(package), input_before)
         self.assertEqual(file_bytes(self.source), source_before)
+
+    def test_homepages_carry_unfiltered_target_counts(self):
+        # app.js recounts after loading; the build writes the same unfiltered numbers so nothing shifts.
+        self.build()
+        record = json.loads((self.root / 'data/rea-resources.json').read_text())[0]
+        for route in ('index.html', 'zh/index.html'):
+            html = (self.output / route).read_text()
+            counts = dict(re.findall(r'data-target-count="([a-z]+)">([^<]*)<', html))
+            self.assertEqual(counts, {'all': '1', **{target: str(int(target in record['targets']))
+                                                     for target in ('website', 'game', 'app', 'binary', 'firmware', 'protocol')}})
+            protocol = re.search(r'<button[^>]*data-target="protocol"[^>]*>', html)[0]
+            self.assertEqual(' hidden' in protocol, 'protocol' not in record['targets'])
 
     def test_invalid_font_input_preserves_prior_output(self):
         self.build()

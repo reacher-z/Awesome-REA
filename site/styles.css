@@ -90,11 +90,15 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .search-box kbd{border:1px solid var(--line);background:var(--soft);color:var(--muted);border-radius:5px;padding:1px 8px;font-size:12px}
 .source-controls,.filter-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:22px 0 20px}
 .source-target-filters,.group-filters{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.target-filter{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 13px;min-height:42px;border:1px solid var(--control);border-radius:8px;background:var(--surface);color:var(--muted);font-size:13px;font-weight:550;white-space:nowrap}
+.target-filter{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 11px;min-height:42px;border:1px solid var(--control);border-radius:8px;background:var(--surface);color:var(--muted);font-size:13px;font-weight:550;white-space:nowrap}
 .target-filter>.icon{width:16px;height:16px;font-size:16px;color:var(--steel)}
 .target-filter:hover{border-color:var(--strong);background:var(--soft);color:var(--ink)}
 .target-filter.active{background:var(--ink);border-color:var(--ink);color:var(--surface);font-weight:600;box-shadow:0 2px 4px #1c335313}
 .target-filter.active>.icon{color:#dbeafa}
+/* Live result counts; the build writes the unfiltered counts so the first paint already has them. */
+.target-filter>.filter-count{margin-left:-2px;color:var(--muted);font:500 12px/1.5 var(--sans);font-variant-numeric:tabular-nums}
+.target-filter.active>.filter-count{color:#dbeafa}
+.target-filter:disabled,.target-filter:disabled:hover{opacity:.5;cursor:not-allowed;background:var(--surface);border-color:var(--control);color:var(--muted)}
 .source-selectors,.curated-selectors{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
 .source-field{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
 .source-field>label{font-size:12px;line-height:1.4;font-weight:600;color:var(--muted)}
