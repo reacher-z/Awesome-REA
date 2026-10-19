@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**678 repositories** · 2026-10-16 UTC
+**677 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -14,7 +14,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) — AI-powered reverse engineering assistant that bridges IDA Pro with language models through MCP. **[12,922 stars]**
 - [horsicq/Detect-It-Easy](https://github.com/horsicq/Detect-It-Easy) — Program for determining types of files for Windows, Linux and MacOS. **[11,732 stars]**
 - [LaurieWired/GhidraMCP](https://github.com/LaurieWired/GhidraMCP) — MCP Server for Ghidra **[11,297 stars]**
-- [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — Exploit Development and Reverse Engineering with GDB &amp; LLDB Made Easy **[11,064 stars]**
 - [unicorn-engine/unicorn](https://github.com/unicorn-engine/unicorn) — Unicorn CPU emulator framework (ARM, AArch64, M68K, Mips, Sparc, PowerPC, RiscV, S390x, TriCore, X86) **[9,451 stars]**
 - [angr/angr](https://github.com/angr/angr) — A powerful and user-friendly binary analysis platform! **[9,189 stars]**
 - [capstone-engine/capstone](https://github.com/capstone-engine/capstone) — Capstone disassembly/disassembler framework for ARM, ARM64 (ARMv8), Alpha, BPF, Ethereum VM, HPPA, LoongArch, M68K, M680X, Mips, MOS65XX, PPC, RISC-V(rv32G/rv64G), SH, Sparc, SystemZ, TMS320C64X, TriCore, Webassembly, XCore and X86. **[9,107 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**678 个仓库** · 2026-10-16 UTC
+**677 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -14,7 +14,6 @@
 - [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) — 通过 MCP 将 IDA Pro 与语言模型连接起来的 AI 逆向工程助手。 **[12,922 星标]**
 - [horsicq/Detect-It-Easy](https://github.com/horsicq/Detect-It-Easy) — 用于识别文件类型的程序，支持 Windows、Linux 和 macOS。 **[11,732 星标]**
 - [LaurieWired/GhidraMCP](https://github.com/LaurieWired/GhidraMCP) — Ghidra 的 MCP 服务器。 **[11,297 星标]**
-- [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — 让使用 GDB 和 LLDB 进行漏洞利用开发与逆向工程变得简单。 **[11,064 星标]**
 - [unicorn-engine/unicorn](https://github.com/unicorn-engine/unicorn) — Unicorn CPU 模拟器框架，支持 ARM、AArch64、M68K、Mips、Sparc、PowerPC、RiscV、S390x、TriCore 和 X86。 **[9,451 星标]**
 - [angr/angr](https://github.com/angr/angr) — 功能强大且易于使用的二进制分析平台！ **[9,189 星标]**
 - [capstone-engine/capstone](https://github.com/capstone-engine/capstone) — Capstone 反汇编框架，支持 ARM、ARM64（ARMv8）、Alpha、BPF、Ethereum VM、HPPA、LoongArch、M68K、M680X、Mips、MOS65XX、PPC、RISC-V（rv32G/rv64G）、SH、Sparc、SystemZ、TMS320C64X、TriCore、WebAssembly、XCore 和 X86。 **[9,107 星标]**

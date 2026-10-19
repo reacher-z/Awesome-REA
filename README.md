@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 318](https://img.shields.io/badge/resources-318-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 162](https://img.shields.io/badge/cases-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 319](https://img.shields.io/badge/resources-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 162](https://img.shields.io/badge/cases-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (146) · [App](#app) (45)
-- [Native Binary](#native-binary) (22) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
+- [Native Binary](#native-binary) (23) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
 
@@ -1482,6 +1482,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Web service at dogbolt.org that runs one small uploaded executable through many decompilers and shows their C-like output side by side, described as Compiler Explorer in reverse. The pinned source has runners for angr, Binary Ninja, Boomerang, dewolf, Ghidra, Hex-Rays, Kuna, REC Studio, Reko, Relyze, RetDec, rev.ng and Snowman, which helps compare how different decompilers render the same code.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/decompiler-explorer/)
+
+- [**pwndbg**](https://github.com/pwndbg/pwndbg)
+
+  Python plug-in that loads into GDB, or runs as a REPL around LLDB, to make live program state easier to inspect. Each stop prints a context of registers, stack, call frames and annotated disassembly with recursively dereferenced pointers; commands cover memory maps, search, telescoping, heap allocators and Go values, with Capstone/Unicorn emulation and decompiler integration for IDA, Binary Ninja, Ghidra and angr-management. The README lists Linux ELF, macOS Mach-O, QEMU user/system and embedded Cortex-M or RISC-V/32 debugging.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/pwndbg/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

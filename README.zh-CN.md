@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 318](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-318-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 162](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 319](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 162](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (146) · [应用](#app) (45)
-- [原生二进制](#native-binary) (22) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
+- [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
 
@@ -1483,6 +1483,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   位于 dogbolt.org 的网络服务：将上传的单个小型可执行文件交给多款反编译器处理，并排显示它们输出的类 C 代码，自称“反向的 Compiler Explorer”。所固定版本的源码包含 angr、Binary Ninja、Boomerang、dewolf、Ghidra、Hex-Rays、Kuna、REC Studio、Reko、Relyze、RetDec、rev.ng 和 Snowman 的运行器，便于比较不同反编译器如何呈现同一段代码。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decompiler-explorer/)
+
+- [**pwndbg GDB/LLDB 调试增强插件**](https://github.com/pwndbg/pwndbg)
+
+  可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/pwndbg/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
