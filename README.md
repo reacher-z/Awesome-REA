@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 307](https://img.shields.io/badge/resources-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 66](https://img.shields.io/badge/papers-66-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 307](https://img.shields.io/badge/resources-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 67](https://img.shields.io/badge/papers-67-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (66) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (67) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1953,13 +1953,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**66 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**67 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (18) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (19) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2227,6 +2227,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The paper limits its experiments to C on x86 and function-level benchmarks. Re-executability on sampled tests does not establish whole-program equivalence or recovery of the original source. Later repository releases are separate from the 2024 paper.
 
   **Publication:** 2024 · EMNLP 2024 · Conference paper · Hanzhuo Tan et al.
+
+  </details>
+
+- [**StackSight: Unveiling WebAssembly through Large Language Models and Neurosymbolic Chain-of-Thought Decompilation**](https://proceedings.mlr.press/v235/fang24e.html)
+
+  StackSight decompiles WebAssembly text-format functions into C++ with LLM prompting. A static analysis annotates each WAT instruction with the virtual-stack state, using symbolic notation where branches diverge; a one-shot chain-of-thought prompt then asks the model to recover variable meanings, summarize the function and write C++. With GPT-4 the share of outputs passing all benchmark tests rises from 19.7% to 36.5% on HumanEval-X and from 42.4% to 59.6% on MBXP relative to one-shot prompting; GPT-3.5 and Code Llama-7B-Instruct are also evaluated.
+
+  2024 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-stacksight/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Inputs are short exercise functions from the C++ splits of HumanEval-X (161 of 164 compiled) and MBXP (773 of 974), built as Emscripten 3.1.46 side modules at -Oz with function names kept by --profiling-funcs and converted with wasm2wat 1.0.33; minified, obfuscated or whole-application WebAssembly is not evaluated. Correctness is the share of outputs that compile and pass the benchmarks' test cases after a test oracle renames functions, inserts tests and adds namespace directives, with manual pass-by-value edits. Passing these tests is not proof of equivalence with the original module. Summaries are scored by BERTScore and SBERT; the user study had 15 participants on 20 snippets per dataset. wasm2c and an earlier neural decompiler were excluded for producing no compilable output, and results depend on specific hosted model versions.
+
+  **Publication:** 2024 · ICML 2024 · Conference paper · Weike Fang et al.
 
   </details>
 
