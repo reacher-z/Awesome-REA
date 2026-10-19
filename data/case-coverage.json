@@ -9578,12 +9578,14 @@
       "reported_source_urls": [
         "https://x.com/arpit_bhayani/status/2109505311904309621"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s explainer thread (@arpit_bhayani, 2026-10-12) describes in general terms how agents split a game’s functions into tickets, query a disassembler through an MCP server and guess types and structures, and why matching decompilation, recompiling with the original compiler and flags and comparing bytes with the shipped executable, gives a PASS/FAIL check that catches plausible but wrong code. It draws the wider lesson of defining machine-checkable correctness. It names no project and reports no reconstruction of its own. Retain the lead without a catalog mapping; it is methodology commentary, and matching-decompilation cases are catalogued from their own sources.",
+      "reason_zh": "作者的讲解帖（@arpit_bhayani，2026-10-12）概括介绍了智能体如何把游戏函数拆分为工单、通过 MCP 服务器查询反汇编器并推测类型和结构，以及为何“匹配反编译”——用原始编译器和参数重新编译，再与发行版可执行文件逐字节比对——能提供识别“看似正确实则错误”代码的通过／失败检查，并由此引出“定义机器可判定的正确性”这一更普遍的经验。帖子没有提及具体项目，也未报告作者自己的重建工作。保留此线索而不建立目录映射；它属于方法论评述，匹配反编译案例依据各自来源另行收录。",
+      "primary_evidence_urls": [
+        "https://x.com/arpit_bhayani/status/2109505311904309621"
+      ],
       "catalog_matches": []
     },
     {
@@ -9597,12 +9599,14 @@
       "reported_source_urls": [
         "https://x.com/wangdou/status/2109404200513708307"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@wangdou, 2026-10-11) summarizes and critiques a video by Matthew Berman arguing that verifiable outcomes let AI rebuild games and software. It adds caveats: the Snowboard Kids timeline and human help reported in Chris Lewis’s blog, that matching decompilation means byte-identical code rather than similar play, that PhotoCraft is an early alpha, and that legal questions are not covered; it also relays that Berman’s Super Mario World rebuild was unfinished when filmed. It reports no reconstruction of its own and links no project artifact. Retain the lead without a catalog mapping; it is commentary, and the cases it cites are tracked through their own sources.",
+      "reason_zh": "作者帖子（@wangdou，2026-10-11）概述并评析了 Matthew Berman 的一段视频，该视频认为只要结果可验证，AI 就能重建游戏和软件。帖子补充了若干保留意见：Chris Lewis 博客所述的 Snowboard Kids 实际时间线与人工协助、匹配反编译指逐字节一致而非玩法相近、PhotoCraft 仍是早期 alpha 版本，以及视频未涉及法律问题；帖子还转述称，Berman 的 Super Mario World 重建在拍摄时尚未完成。帖子没有报告作者自己的重建工作，也未链接任何项目产物。保留此线索而不建立目录映射；它属于评论，所引案例依据各自来源另行跟踪。",
+      "primary_evidence_urls": [
+        "https://x.com/wangdou/status/2109404200513708307"
+      ],
       "catalog_matches": []
     },
     {
@@ -9616,12 +9620,14 @@
       "reported_source_urls": [
         "https://x.com/AIWarper/status/2109060856466264566"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@AIWarper, 2026-10-10) says the author tried REA on a Steam game bought earlier and that, with Opus 5.5 at medium reasoning, it decompiled the game fully to C# and launched it in Unity in under 30 minutes. It names no game and links no decompiled output, project or comparison; the GitHub account of the same name holds only ComfyUI node projects. Retain the lead without a catalog mapping; the target, the completeness of the decompilation and the Unity result are unestablished.",
+      "reason_zh": "作者的纯文字帖子（@AIWarper，2026-10-10）称在一款此前购买的 Steam 游戏上试用了 REA，借助中等推理强度的 Opus 5.5，在 30 分钟内把游戏完整反编译为 C#，并在 Unity 中运行起来。帖子没有说明是哪款游戏，也未链接反编译产物、项目或对照结果；同名 GitHub 账号中只有 ComfyUI 节点项目。保留此线索而不建立目录映射；目标、反编译的完整程度及 Unity 中的运行结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/AIWarper/status/2109060856466264566"
+      ],
       "catalog_matches": []
     },
     {
@@ -9712,13 +9718,23 @@
       "reported_source_urls": [
         "https://x.com/rehan_shei/status/2106548006350942533"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s X article (@rehan_shei, 2026-10-04) is an essay on what AI decompilation and modding mean for the games industry. It says that Opus 5.5, run overnight, produced a working reverse-engineered Terraria to which the author added weapons and mobs, surveys other people’s reported mods and decompilations, and says the author open-sourced what Claude learned as universal-modder. The Terraria rebuild has no public artifact; the related mapping points to that separately catalogued Universal Modder toolkit, which the article names. Retain the lead without a full mapping; the essay is commentary, and its figures and third-party examples are not verified here.",
+      "reason_zh": "作者的 X 长文（@rehan_shei，2026-10-04）是一篇探讨 AI 反编译与模组对游戏产业影响的随笔。文中称让 Opus 5.5 运行一夜后得到了一个可运行的逆向版 Terraria，作者又在其中加入了武器和怪物；文章还罗列了他人报告的模组与反编译案例，并称作者已把 Claude 在此过程中积累的经验开源为 universal-modder。Terraria 重建本身没有公开产物；相关映射指向文章提及、另行收录的 Universal Modder 工具包。保留此线索而不建立完整映射；该文属于评论，其中的数字与第三方案例未在此核实。",
+      "primary_evidence_urls": [
+        "https://x.com/rehan_shei/status/2106548006350942533",
+        "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "universal-modder-agent-toolkit",
+          "kind": "integration",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "yibie:development-journey-on-game-decompilation-using-ai",
@@ -15845,16 +15861,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 198,
-      "insufficient-evidence": 195,
-      "pending": 198
+      "insufficient-evidence": 199,
+      "pending": 194
     },
     "units_by_state": {
       "already-curated": 196,
-      "insufficient-evidence": 195,
-      "pending": 198
+      "insufficient-evidence": 199,
+      "pending": 194
     },
-    "primary_reviewed_units": 333,
-    "catalog_linked_occurrences": 209,
+    "primary_reviewed_units": 337,
+    "catalog_linked_occurrences": 210,
     "distinct_resource_ids": 201,
     "distinct_paper_ids": 1,
     "unique_projects": null
