@@ -15,6 +15,7 @@
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]**
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]** · 精选：[固件分析与比较工具（FACT）](https://awesomerea.org/zh/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine 与图形固件分析工具 **[1,335 星标]**
+- [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — 用于自动化 UEFI 固件分析与逆向工程的 IDA 插件和加载器。 **[1,138 星标]**
 - [Anime4000/RTL960x](https://github.com/Anime4000/RTL960x) — 破解和逆向分析基于 RTL960x 的 xPON ONT，使其适配你的 OLT。 **[1,053 星标]**
 - [gcarmix/HexWalk](https://github.com/gcarmix/HexWalk) — 兼容 Linux、Windows 和 macOS 的十六进制查看器、编辑器与分析器。 **[1,027 星标]**
 - [pr0v3rbs/FirmAE](https://github.com/pr0v3rbs/FirmAE) — 面向动态分析的物联网固件大规模模拟执行研究。 **[949 星标]** · 论文：[FirmAE：面向动态分析的物联网固件大规模仿真](https://awesomerea.org/zh/papers/paper-firmae/) · 精选：[FirmAE](https://awesomerea.org/zh/resources/firmae/)

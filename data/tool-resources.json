@@ -8885,5 +8885,38 @@
       "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/LICENSE.md",
       "https://github.com/keystone-engine/keystone/blob/dc7932ef2b2c4a793836caec6ecab485005139d6/EXCEPTIONS-CLIENT"
     ]
+  },
+  {
+    "id": "efixplorer",
+    "name": "efiXplorer",
+    "url": "https://github.com/REhints/efiXplorer",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "IDA Pro plugin and loader that automate static analysis of UEFI firmware. The plugin annotates Boot, Runtime, SMM and PEI service calls, lists the EFI protocols and known GUIDs a module installs or consumes, applies protocol interface types in the Hex-Rays decompiler, flags suspected SMM callout and GetVariable out-of-bounds write patterns for review and saves a JSON report. The efiXloader module opens a whole firmware image in one IDA database, with driver entry points, navigation between drivers and a DXE driver dependency graph.",
+    "description_zh": "用于自动化 UEFI 固件静态分析的 IDA Pro 插件与加载器。插件可标注 Boot、Runtime、SMM 和 PEI 服务调用，列出模块安装或使用的 EFI 协议与已知 GUID，在 Hex-Rays 反编译器中应用协议接口类型，标记疑似 SMM callout 及 GetVariable 越界写入模式供人工复核，并保存 JSON 报告。efiXloader 加载模块可在单个 IDA 数据库中打开整个固件镜像，提供各驱动入口点、驱动间导航和 DXE 驱动依赖关系图。",
+    "evidence_url": "https://github.com/REhints/efiXplorer/blob/9e3b40a2ac0524e04dc69540ab4ff911fda13d27/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v6.3.0, published 2026-08-20 as a zip of prebuilt binaries; the reviewed master commit is two GUID-database submodule updates ahead. ida-plugin.json declares IDA 8.3 or newer on Windows x86_64, Linux x86_64 and macOS x86_64/aarch64; the plugin is listed in Hex-Rays' plugin repository and can be installed with ida-hcli.",
+      "Needs a licensed IDA Pro. Applying protocol interface types also needs the Hex-Rays decompiler, and the build instructions cover building without it. Source builds use CMake or build.py against the IDA SDK, UEFITool and GUID database submodules; a manual install copies the plugin and the guids directory into IDA's plugins folder and the loader into its loaders folder.",
+      "Input is a UEFI firmware image or individual UEFI driver the analyst already has. The wiki's feature table lists SMM services and the dependency graph for 64-bit modules only and PEI services for 32-bit only. Its loader page still says only 64-bit drivers are supported, while the v6.3.0 notes add 32-bit modules in the loader, and the wiki pages still link the earlier binarly-io repository.",
+      "GPL-3.0; ida-plugin.json declares GPL-3.0-only. Vulnerability-scanner hits are suspected findings presented for analyst review, not confirmed bugs; the authors' Black Hat Europe 2020 and EKO 2020 publications describe the approach. No firmware was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/REhints/efiXplorer/blob/9e3b40a2ac0524e04dc69540ab4ff911fda13d27/ida-plugin.json",
+      "https://github.com/REhints/efiXplorer/blob/9e3b40a2ac0524e04dc69540ab4ff911fda13d27/.gitmodules",
+      "https://github.com/REhints/efiXplorer/blob/9e3b40a2ac0524e04dc69540ab4ff911fda13d27/LICENSE",
+      "https://github.com/REhints/efiXplorer/wiki/efiXplorer-features/7ce26a454a0585c3c17785b61c28633123eae6f6",
+      "https://github.com/REhints/efiXplorer/wiki/efiXloader/7ce26a454a0585c3c17785b61c28633123eae6f6",
+      "https://github.com/REhints/efiXplorer/wiki/Build-instruction-and-installation/7ce26a454a0585c3c17785b61c28633123eae6f6",
+      "https://github.com/REhints/efiXplorer/releases/tag/v6.3.0",
+      "https://plugins.hex-rays.com/binarly-io/efixplorer",
+      "https://i.blackhat.com/eu-20/Wednesday/eu-20-Labunets-efiXplorer-Hunting-For-UEFI-Firmware-Vulnerabilities-At-Scale-With-Automated-Static-Analysis.pdf"
+    ]
   }
 ]

@@ -15,6 +15,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — A tool to recover a fully analyzable .ELF from a raw kernel, through extracting the kernel symbol table (kallsyms) **[1,832 stars]**
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — Firmware Analysis and Comparison Tool **[1,468 stars]** · Curated: [Firmware Analysis and Comparison Tool (FACT)](https://awesomerea.org/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine &amp; Graphics Firmware Analysis Tool **[1,335 stars]**
+- [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — IDA plugin and loader for UEFI firmware analysis and reverse engineering automation **[1,138 stars]**
 - [Anime4000/RTL960x](https://github.com/Anime4000/RTL960x) — Hacking &amp; Reverse Engineering RTL960x-based xPON ONTs to suit your OLT **[1,053 stars]**
 - [gcarmix/HexWalk](https://github.com/gcarmix/HexWalk) — Hex Viewer/Editor/Analyzer compatible with Linux/Windows/MacOS **[1,027 stars]**
 - [pr0v3rbs/FirmAE](https://github.com/pr0v3rbs/FirmAE) — Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis **[949 stars]** · Paper: [FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis](https://awesomerea.org/papers/paper-firmae/) · Curated: [FirmAE](https://awesomerea.org/resources/firmae/)
