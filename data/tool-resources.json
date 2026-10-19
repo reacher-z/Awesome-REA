@@ -7196,5 +7196,27 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "nforest-awesome-decompilation",
+    "name": "awesome-decompilation",
+    "url": "https://github.com/nforest/awesome-decompilation",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A short, link-only reading list on decompiling machine code, last updated in 2023. Its 45 links cover foundational theses, compiler and program-analysis books, decompiler products and projects, pipeline topics from intermediate representations to type, control-flow and identifier recovery, early neural-decompilation papers and binary-to-source matching.",
+    "description_zh": "篇幅不长、只列链接的机器码反编译阅读清单，最近一次更新在 2023 年。45 个链接涵盖奠基性学位论文、编译器与程序分析书籍、反编译器产品和项目，从中间表示到类型、控制流和标识符恢复的反编译流程主题，早期神经网络反编译论文，以及二进制与源码匹配。",
+    "evidence_url": "https://github.com/nforest/awesome-decompilation/blob/8731870b99d1816ed6979ab5745ae42b4bf73018/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Not maintained as a current index: the reviewed master commit of 2023-03-05 is the newest in the repository and added the December 2022 preprint Beyond the C (arXiv 2212.08950). The AI-based section therefore stops at six neural-decompilation papers and projects, and later work, including LLM-based decompilation, is absent.",
+      "Entries are bare links under 13 headings, with no annotations, dates, status or license notes. They point to paper and thesis PDFs, vendor product pages, GitHub repositories and online-store book pages, and some PDFs are third-party mirrors; this review did not check whether every link still resolves.",
+      "The scope is native-code decompilation theory and tooling. Its six projects are Hex-Rays, Ghidra’s decompiler, JEB, RetDec, rev.ng-c and jsdec, and its eight intermediate representations include LLVM IR, VEX, BAP, REIL, ESIL, Binary Ninja’s LLIL and VTIL. It is a reading list, not an index of game decompilations or reconstruction projects.",
+      "The repository holds only README.md, with no license file or contribution guide, and GitHub detects no license, so the list states no reuse terms. Linked papers, books and tools keep their own rights, and some listed decompilers are commercial products. An independent reading list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
