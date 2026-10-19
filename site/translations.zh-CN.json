@@ -3557,5 +3557,14 @@
       "捕获广播需要 BLE 嗅探硬件：HARDWARE.md 推荐刷入 Nordic 嗅探固件的 Nordic nRF51 加密狗，或配合仓库内 btleshark.sh 抓包脚本使用的 Ubertooth One。分析对象是分析者自己捕获的广播，仓库中没有附带样本抓包。",
       "采用 GPL-2.0。README 指出，许多报文类型和字段含义最早由 Celosia 与 Cunche 在 PETS 2020 论文中发现。本次未捕获任何广播，也未编译 Wireshark。"
     ]
+  },
+  "reko": {
+    "name": "Reko 通用反编译器",
+    "requirements": [
+      "审阅时最新版本为 0.12.5，发布于 2026-09-29，提供 x86 与 x64 的 Windows MSI 安装包，以及命令行和图形界面的 zip 构建；Reko.Decompiler.Runtime NuGet 包同为 0.12.5。所审阅的 master 分支提交（2026-10-14）比该版本多十个提交。",
+      "需要 .NET 9.0。从源码构建需要 .NET 9.0 SDK（IDE 用户可用 Visual Studio 2026），NativeProxy 项目还需要 CMake；WiX 工具集仅在制作 MSI 安装包时需要。CI 在 Ubuntu、Windows 和 macOS 上构建。跨平台的 Avalonia 图形界面仍在开发中；用户指南中针对非 Windows 系统的说明仍提到 AppVeyor 构建和 Mono。",
+      "输入应为使用者有权反编译的二进制文件；README 提醒，许多软件许可禁止反编译。原始镜像需明确指定加载器、架构、基址和入口地址。用户指南指出，有用的反编译结果通常需要用户补充类型、名称和注释；当间接跳转或调用使代码难以发现时，可能还需要启发式扫描。",
+      "采用 GPL-2.0 许可（见 COPYING）。完整的架构与格式列表位于项目 wiki，本次未审阅；架构和加载器目录只做了计数，未实际验证。仓库的 subjects 目录存放从其他来源收集的回归测试样本及 Reko 对它们的输出，属于测试数据，不是工具本身的一部分。本次未反编译任何二进制。"
+    ]
   }
 }

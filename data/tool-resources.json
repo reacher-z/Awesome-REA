@@ -9239,5 +9239,39 @@
       "https://github.com/furiousMAC/continuity/commit/c125a620598bc132ac356202fcced6a481775909",
       "https://petsymposium.org/2019/files/papers/issue4/popets-2019-0057.pdf"
     ]
+  },
+  {
+    "id": "reko",
+    "name": "Reko",
+    "url": "https://github.com/uxmal/reko",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "General-purpose decompiler that loads executables or raw images, scans their machine code into a machine-independent register transfer language, groups it into procedures and decompiles them into high-level C code. The reviewed source has 64 architecture directories, from 6502, Z80 and PDP-11 to ARM, MIPS, PowerPC, RISC-V and x86, and loaders for formats including ELF, PE/MZ, Mach-O, COFF, Amiga Hunk, VMS, WebAssembly, Xbox XBE and Xbox 360 XEX. It runs as a Windows Forms GUI, a command-line client or a .NET library, and project files and scripts let users add names, types and comments.",
+    "description_zh": "通用反编译器：加载可执行文件或原始镜像，把机器码扫描转换为与机器无关的寄存器传输语言，再归并为过程并反编译为高级 C 代码。所审阅的源码包含 64 个架构目录，从 6502、Z80、PDP-11 到 ARM、MIPS、PowerPC、RISC-V 和 x86，并提供 ELF、PE/MZ、Mach-O、COFF、Amiga Hunk、VMS、WebAssembly、Xbox XBE 及 Xbox 360 XEX 等格式的加载器。可作为 Windows Forms 图形界面、命令行客户端或 .NET 库使用，用户还可通过项目文件和脚本补充名称、类型和注释。",
+    "evidence_url": "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 0.12.5, published 2026-09-29, with x86 and x64 Windows MSI installers and command-line and GUI zip builds; the Reko.Decompiler.Runtime NuGet package is also at 0.12.5. The reviewed master commit, from 2026-10-14, is ten commits ahead of that release.",
+      "Requires .NET 9.0. Source builds use the .NET 9.0 SDK, or Visual Studio 2026 for IDE users, plus CMake for the NativeProxy project; the WiX toolset is needed only for MSI installers. CI builds on Ubuntu, Windows and macOS. The cross-platform Avalonia GUI is still under development, and the user guide's non-Windows instructions still mention AppVeyor builds and Mono.",
+      "Input is a binary the user has the right to decompile; the README warns that many software licenses prohibit decompilation. Raw images need the loader, architecture, base and entry addresses given explicitly. The user guide says useful decompilation usually needs the user to supply types, names and comments, and that a heuristic scan may be needed when indirect jumps or calls hide code.",
+      "GPL-2.0 (COPYING). The complete architecture and format list is on the project wiki, which was not reviewed; the architecture and loader directories were counted, not exercised. The repository's subjects directory holds regression samples collected from other sources together with Reko's output for them; it is test data, not part of the tool. No binaries were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/doc/guide/reko.md",
+      "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/doc/guide/cli.md",
+      "https://github.com/uxmal/reko/tree/63c497aef0f3ea23340b1ed560e51b72fd0d4281/src/Arch",
+      "https://github.com/uxmal/reko/tree/63c497aef0f3ea23340b1ed560e51b72fd0d4281/src/ImageLoaders",
+      "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/.github/workflows/reko.yml",
+      "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/subjects/README.md",
+      "https://github.com/uxmal/reko/blob/63c497aef0f3ea23340b1ed560e51b72fd0d4281/COPYING",
+      "https://github.com/uxmal/reko/releases/tag/version-0.12.5",
+      "https://www.nuget.org/packages/Reko.Decompiler.Runtime/0.12.5"
+    ]
   }
 ]
