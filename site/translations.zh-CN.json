@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "3sx-third-strike-native-port-case": {
+    "name": "3SX：延续 PS2 反编译的《街头霸王 III：3rd Strike》原生移植",
+    "requirements": [
+      "README 称 3SX 是原生移植、是 3s-decomp 的延续，并明确表示它既不是重编译也不是模拟。在所审提交中，src/sf33rd 下的游戏代码已没有残留的 INCLUDE_ASM 占位，src/port 提供基于 SDL3 的平台、输入和声音层，包括自行实现的 ADX 解码器。这是经过修改的移植版：其目标包括修复 PS2 版引入的平衡性退化，而街机平衡选项仍标注为进行中。唯一的发布是随 main 分支重建的滚动预发布版；稳定的 PC 体验、以街机 ROM 作为唯一依赖等目标仍列在 1.0 里程碑中。",
+      "游玩需要合法取得的 PS2 版《街头霸王 III：3rd Strike》或 Street Fighter Anniversary Collection：启动向导读取使用者的光盘镜像，或将其中的 SF33RD.AFS 放入 resources 文件夹；发布版构建会将该文件与 resources.c 中的 SHA-256 比对。街机平衡选项还需要使用者自备的 sfiii3nr1.zip CPS3 ROM。仓库不含游戏归档文件，但 src/bin2obj 中有来自反编译项目的大型 C 数据表。",
+      "滚动预发布版提供 Windows、macOS 以及 x86_64 和 arm64 Linux 的预编译程序。源码构建使用 CMake 3.24+ 与 Clang：Windows 需先安装 MSYS2 MinGW64 软件包，Linux 需列出的 Ubuntu 软件包，macOS 需 Xcode 命令行工具；build-deps.sh 会下载并构建 SDL3、SDL_net、GekkoNet、libcdio、minizip-ng 和 TF-PSA-Crypto。CMake 和 CI 还包含借助 Docker 工具构建的 PSP 分支。",
+      "拉取请求的 CI 只构建 Windows、macOS、Linux 和 PSP 目标。与街机版的一致性由可选的 Statcheck 构建检查：tools/fcade-replays（自述为分析 Fightcade 录像数据流的逆向辅助工具）下载录像，定制的 FBNeo 分支记录逐帧的 CPS3 内存转储，Statcheck 在体力、位置、晕眩值、超必杀槽、计时器或回合阶段首次不一致时停止。所审代码树未公布 Statcheck 结果；本合集未构建或运行任何内容。",
+      "仓库包含一个附带 Codex 界面文件的智能体技能，指示编程智能体通过只读的 Ghidra MCP 服务器，将本地函数与 CPS3 程序对比，标注每个函数的一致程度，并在街机平衡开关下加入 CPS3 行为；所审文件未说明有多少代码以这种方式编写，也未确立 REA 使用。LICENSE 为 AGPL-3.0。THIRD_PARTY_NOTICES 列出 GPLv3+ 的 libcdio，以及 zlib、BSD-2-Clause、MIT 和 Apache-2.0 许可的组件；游戏及其素材各自保留权利，README 表示项目不纵容盗版。"
+    ]
   }
 }
