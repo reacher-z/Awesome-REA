@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 196 | 194 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 219 | 219 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 176 | 176 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 197 | 195 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 213 | 213 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 181 | 181 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-206 个出现项含目录链接；共关联 200 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+207 个出现项含目录链接；共关联 200 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 312 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 318 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -178,6 +178,12 @@
 | Roko Input: Apple on-device dictation after Typeless research | 证据不足 | [来源](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | 证据不足 | [来源](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
 | REA and archify: interactive architecture diagrams | 证据不足 | [来源](https://x.com/i/status/2110570919169286424) |
+| Sonic physics in Elden Ring: an unverified REA mod report | 证据不足 | [来源](https://x.com/Capslock404/status/2110648710606557644) |
+| iriver E30: personalizing an unsupported player's main screen | 证据不足 | [来源](https://x.com/MikeS190477/status/2110651009181851731) |
+| A radiator-control app bridged to Home Assistant with AI | 证据不足 | [来源](https://x.com/Madsoulswe/status/2110651982323310818) |
+| D2R Mobile：在 Apple 设备上重新托管 Diablo II: Resurrected 的 Switch 程序 | 已收录 | [来源](https://x.com/OLD9Gaming/status/2110658894360097141) |
+| WHOOP and Zhoop: an iPhone data path for a health agent | 证据不足 | [来源](https://x.com/0xLogicrw/status/2110659108076769728) |
+| macOS Notes: a reported REA-assisted SwiftUI rebuild | 证据不足 | [来源](https://x.com/xiyue0803/status/2110670751087137197) |
 | reverse-skill: investigation workflows for coding agents | 待核查 | [来源](https://x.com/i/status/2110680583634366777) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | 证据不足 | [来源](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | 证据不足 | [来源](https://x.com/i/status/2110726263392387158) |

@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 196 | 194 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 219 | 219 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 176 | 176 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 197 | 195 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 213 | 213 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 181 | 181 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-206 occurrences have catalog links. They reference 200 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+207 occurrences have catalog links. They reference 200 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 312 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 318 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -178,6 +178,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Roko Input: Apple on-device dictation after Typeless research | Insufficient evidence | [Source](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | Insufficient evidence | [Source](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
 | REA and archify: interactive architecture diagrams | Insufficient evidence | [Source](https://x.com/i/status/2110570919169286424) |
+| Sonic physics in Elden Ring: an unverified REA mod report | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110648710606557644) |
+| iriver E30: personalizing an unsupported player's main screen | Insufficient evidence | [Source](https://x.com/MikeS190477/status/2110651009181851731) |
+| A radiator-control app bridged to Home Assistant with AI | Insufficient evidence | [Source](https://x.com/Madsoulswe/status/2110651982323310818) |
+| D2R Mobile: rehosting Diablo II: Resurrected’s Switch program on Apple devices | Already curated | [Source](https://x.com/OLD9Gaming/status/2110658894360097141) |
+| WHOOP and Zhoop: an iPhone data path for a health agent | Insufficient evidence | [Source](https://x.com/0xLogicrw/status/2110659108076769728) |
+| macOS Notes: a reported REA-assisted SwiftUI rebuild | Insufficient evidence | [Source](https://x.com/xiyue0803/status/2110670751087137197) |
 | reverse-skill: investigation workflows for coding agents | Pending | [Source](https://x.com/i/status/2110680583634366777) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | Insufficient evidence | [Source](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | Insufficient evidence | [Source](https://x.com/i/status/2110726263392387158) |
