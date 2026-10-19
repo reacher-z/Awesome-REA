@@ -7973,5 +7973,63 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-llm-code-deobfuscation",
+    "title": "Exploring the Potential of LLMs for Code Deobfuscation",
+    "title_zh": "探索大语言模型在代码去混淆中的潜力",
+    "authors": [
+      "David Beste",
+      "Grégoire Menguy",
+      "Hossein Hajipour",
+      "Mario Fritz",
+      "Antonio Emanuele Cinà",
+      "Sébastien Bardin",
+      "Thorsten Holz",
+      "Thorsten Eisenhofer",
+      "Lea Schönherr"
+    ],
+    "year": 2025,
+    "publication_date": "2025-07-10",
+    "date_precision": "day",
+    "date_basis": "Springer's Crossref deposit gives first online publication on 2025-07-10, during the July 9–11 conference; its print and issued dates give only the year. This entry uses the publisher's online date, not the conference schedule or the later CISPA repository date.",
+    "date_basis_zh": "Springer 提交的 Crossref 元数据将首次在线出版日期列为 2025-07-10，处于 7 月 9–11 日会议期间；其纸质出版与发布日期只给出年份。本条目采用出版方的在线出版日期，不依据会议日程或之后的 CISPA 存储库日期。",
+    "venue": "DIMVA 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1007/978-3-031-97620-9_15",
+    "url": "https://doi.org/10.1007/978-3-031-97620-9_15",
+    "pdf_url": "https://ndownloader.figshare.com/files/65792754",
+    "code_url": "https://github.com/DavidBeste/llm-code-deobfuscation",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Studies LLMs as source-to-source deobfuscators for C functions protected with the Tigress obfuscator. Functions from ExeBench, with identifiers randomized, are obfuscated with five transformations: MBA arithmetic encoding, branch encoding, control-flow flattening, opaque predicates and argument randomization. Each model receives a whole obfuscated function and returns simplified C. DeepSeek Coder 6.7B and Code Llama 7B are fine-tuned on obfuscated–original pairs, GPT-4 is prompted, and Clang optimization at -O0 to -O3 serves as a compiler baseline. Simplification is scored with Halstead program length relative to the original and obfuscated code, syntactic correctness by compiling ExeBench wrappers and semantic correctness by ExeBench input/output samples. The fine-tuned models reduce complexity more than GPT-4 on every transformation and more than Clang except on arithmetic encoding and argument randomization, where Clang is on par. Trained on chains of up to five transformations, they keep stable scores on chains of six and seven, and the best model cuts Halstead program length by 89.21% on average in the hardest scenario. A test with randomized constants found one sample that reproduced memorized code.",
+    "description_zh": "研究将大语言模型用作源码到源码的去混淆器，处理经 Tigress 混淆器保护的 C 函数。研究从 ExeBench 选取函数并随机化标识符，再施加五种变换：MBA 算术编码、分支编码、控制流平坦化、不透明谓词和参数随机化。模型每次读入一个完整的混淆函数并输出简化后的 C 代码。DeepSeek Coder 6.7B 与 Code Llama 7B 在“混淆—原始”代码对上微调，GPT-4 通过提示使用，Clang 的 -O0 至 -O3 优化则作为编译器基线。简化效果以 Halstead 程序长度相对于原始代码与混淆代码的变化衡量，语法正确性通过编译 ExeBench 包装程序检查，语义正确性则用 ExeBench 输入／输出样例检查。微调模型在每种变换上降低复杂度的幅度都大于 GPT-4，除算术编码和参数随机化（Clang 与之相当）外也大于 Clang。模型在最多五个变换组成的链上训练，在六个和七个变换的链上得分仍保持稳定；最佳模型在最困难场景中平均将 Halstead 程序长度缩减 89.21%。随机化常量的记忆测试只发现一个样本复现了记忆中的代码。",
+    "scope_limitations_en": "The obfuscation is Tigress (version 3.3.3 in the released scripts) applied source-to-source to single C functions. Compiled binaries, decompiler output, commercial protectors, inter-procedural obfuscation, VM-based packing and self-modifying code are not evaluated; the authors only note that decompilation can approximate C from binaries. This is source-level simplification, not binary deobfuscation or VM devirtualization. Semantic correctness is the main weakness: for single transformations the fine-tuned models preserve behavior in 50% to 94.5% of samples, mostly below GPT-4 and, except for branch encoding, below Clang, and it falls as transformation chains grow longer. Complexity scores count only samples that are both syntactically and semantically correct. Behavior is checked with ExeBench input/output samples rather than equivalence proofs, inputs are limited to a 6,144-token context, and models were fine-tuned with 8-bit quantization. Only one obfuscator is used, so generalization to other obfuscators, versions, machine code or bytecode is left open, and baselines are GPT-4 and Clang rather than dedicated deobfuscation tools.",
+    "scope_limitations_zh": "混淆使用 Tigress（发布脚本中为 3.3.3 版），以源码到源码的方式作用于单个 C 函数。研究未评估已编译二进制、反编译器输出、商业保护器、跨过程混淆、基于虚拟机的加壳或自修改代码；作者仅指出可通过反编译从二进制得到近似的 C 代码。这是源码级简化，并非二进制去混淆或虚拟机去虚拟化。语义正确性是主要短板：在单一变换场景中，微调模型保持行为的样本比例为 50% 至 94.5%，大多低于 GPT-4，除分支编码外也低于 Clang，并且随着变换链变长而下降。复杂度得分只统计语法与语义均正确的样本。行为通过 ExeBench 输入／输出样例检查，而非等价性证明；输入受 6,144 个词元的上下文限制，模型微调时还使用了 8 位量化。研究只使用一种混淆器，因此对其他混淆器、版本、机器码或字节码的泛化仍待验证；基线是 GPT-4 与 Clang，而非专用去混淆工具。",
+    "why_fits_en": "Adds source-level deobfuscation of protected C code with fine-tuned code LLMs, complementing the JavaScript (JsDeObsBench, CASCADE) and Android (DeGuard) deobfuscation papers and the LLM decompilation research in this section.",
+    "why_fits_zh": "补充利用微调代码大语言模型对受保护 C 代码进行源码级去混淆的研究，与书目中的 JavaScript（JsDeObsBench、CASCADE）和 Android（DeGuard）去混淆论文以及本节的大语言模型反编译研究互补。",
+    "metadata_notes": "Springer's Crossref deposit gives the Lecture Notes in Computer Science proceedings of the 22nd DIMVA (Graz, 9–11 July 2025), pages 267–286, and the nine authors in the order of the PDF byline. The Springer landing page returned a browser challenge to automated requests, so the review used Crossref and the open-access PDF from the CISPA repository record 10.60882/cispa.32771220.v1 (CC BY 4.0, deposited 2026-06-23). That record and the CISPA publication page list \"Antonio Emanuele\" and \"Sébastian Bardin\"; the authors here follow Crossref and the PDF. An arXiv API search for Beste with deobfuscation in the title returned no record, so arxiv_id is null. The PDF links DavidBeste/llm-code-deobfuscation, reviewed at commit 00c9c45 (2026-02-27), which added the MIT LICENSE after publication. Its README links the dataset 10.5281/zenodo.15831457 (2025-07-10, CC BY 4.0, a 17 MB deobfuscation_dataset.zip that was not downloaded); that dataset DOI is not used as the paper identifier. The scripts call a separately installed Tigress 3.3.3, load ExeBench from Hugging Face and query the OpenAI API for GPT-4 (gpt-4-32k-0314 in the README examples); requirements.txt pins clang 14.0 and torch 2.4.1 but lists two conflicting versions each of peft and transformers. No code or experiments were run.",
+    "metadata_notes_zh": "Springer 提交的 Crossref 元数据列出第 22 届 DIMVA（格拉茨，2025 年 7 月 9–11 日）的 Lecture Notes in Computer Science 论文集、第 267–286 页，以及与 PDF 署名顺序一致的九位作者。Springer 页面对自动请求返回浏览器验证，因此本次审阅依据 Crossref，以及 CISPA 存储库记录 10.60882/cispa.32771220.v1 中的开放获取 PDF（CC BY 4.0，2026-06-23 存入）。该记录与 CISPA 出版物页面将作者写作“Antonio Emanuele”和“Sébastian Bardin”；本条目的作者姓名以 Crossref 和 PDF 为准。以 Beste 为作者、标题含 deobfuscation 的 arXiv API 检索没有结果，因此 arxiv_id 为 null。PDF 链接 DavidBeste/llm-code-deobfuscation，审阅的提交为 00c9c45（2026-02-27），该提交在论文发表后才加入 MIT LICENSE。其 README 链接数据集 10.5281/zenodo.15831457（2025-07-10，CC BY 4.0，17 MB 的 deobfuscation_dataset.zip，未下载）；该数据集 DOI 不用作论文标识符。脚本调用另行安装的 Tigress 3.3.3，从 Hugging Face 加载 ExeBench，并通过 OpenAI API 调用 GPT-4（README 示例中为 gpt-4-32k-0314）；requirements.txt 固定了 clang 14.0 与 torch 2.4.1，但 peft 和 transformers 各列出两个相互冲突的版本。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1007/978-3-031-97620-9_15",
+      "https://api.crossref.org/works/10.1007/978-3-031-97620-9_15",
+      "https://ndownloader.figshare.com/files/65792754",
+      "https://publications.cispa.de/articles/conference_contribution/Exploring_the_Potential_of_LLMs_for_Code_Deobfuscation/32771220",
+      "https://cispa.de/en/research/publications/84747-exploring-the-potential-of-llms-for-code-deobfuscation",
+      "https://github.com/DavidBeste/llm-code-deobfuscation/blob/00c9c4581403187e964ffec42d315114bccf5125/README.md",
+      "https://github.com/DavidBeste/llm-code-deobfuscation/blob/00c9c4581403187e964ffec42d315114bccf5125/LICENSE",
+      "https://github.com/DavidBeste/llm-code-deobfuscation/blob/00c9c4581403187e964ffec42d315114bccf5125/requirements.txt",
+      "https://github.com/DavidBeste/llm-code-deobfuscation/blob/00c9c4581403187e964ffec42d315114bccf5125/single_transformations/eval/create_eval_data_single.py",
+      "https://zenodo.org/records/15831457"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
