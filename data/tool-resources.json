@@ -12581,5 +12581,40 @@
       "https://github.com/JackPriceBurns/decomp-academy-fe/blob/a21f9d00dcdcb00936c3f0369f396b555e893d93/LICENSE",
       "https://github.com/JackPriceBurns/decomp-academy-be/blob/d80447dad332e9c15ac4549d8d42a28a0a9daedd/README.md"
     ]
+  },
+  {
+    "id": "phantom-hourglass-ds-decomp-case",
+    "name": "Phantom Hourglass: an early-stage matching Nintendo DS decompilation",
+    "url": "https://github.com/zeldaret/ph",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recreates C++ source for The Legend of Zelda: Phantom Hourglass by hand-decompiling its European and US Nintendo DS releases, using the dsd toolkit to delink code from a user-supplied ROM and rebuild the ROM. objdiff tracks matches function by function, and the default build compares the output ROM with a stored SHA-1. The work is at an early stage: decomp.dev reported 2.82% of code matched at the reviewed commit.",
+    "description_zh": "通过手工反编译，为《塞尔达传说 幻影沙漏》的欧版与美版 Nintendo DS 重建 C++ 源码：借助 dsd 工具集从使用者自备的 ROM 中拆分代码，再重新构建 ROM。objdiff 逐个函数跟踪匹配情况，默认构建会将输出 ROM 与仓库保存的 SHA-1 比对。项目仍处于早期阶段：decomp.dev 报告所审提交有 2.82% 的代码已匹配。",
+    "evidence_url": "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README marks the project as a work in progress that targets the European and American versions, with other versions possibly supported later; configure.py takes eur or usa. Decompilation covers the ARM9 program, its TCM modules and overlays, while docs/build_system.md says the ARM7 program is not decompiled. The output is a Nintendo DS ROM, not a PC port.",
+      "Supply your own decrypted base ROM for each version in extract/ as baserom_ph_eur.nds or baserom_ph_usa.nds, matching the SHA-1 values in extract/README.md; dsd then extracts code and assets from it locally. INSTALL.md calls a byte-matching ROM optional and requires the user’s own DS ARM7 BIOS file, matching one of two listed SHA-1 values, to produce one. README says the repository contains no assets or assembly; config/ does commit game-derived dsd delink, symbol and relocation tables for 65 modules per version.",
+      "INSTALL.md lists Windows (recommended) or Linux with Python 3.11+ and pip, GCC 9+, Ninja and pre-commit hooks; on Linux the Windows compiler runs through wibo by default, or Wine on request. configure.py downloads dsd v0.11.0, objdiff v3.4.0, sjiswrap v1.2.2 and wibo 0.6.16 from GitHub releases, and a Metrowerks mwccarm bundle (version 2.0/sp1p5 is used) from decomp.aetias.com.",
+      "The default ninja targets generate objdiff data, run dsd’s module and symbol checks and compare the built ROM with ph_eur.sha1 or ph_usa.sha1. CI builds both versions in a build container that supplies extracted files and the compiler, running the ARM9 link, objdiff report and checks but not the ROM hash. decomp.dev’s default usa report for the pinned commit lists 102,202 of 3,622,306 code bytes (2.82%) and 1,351 of 24,610 functions matched, with 28 of 190 units complete; this collection ran no build.",
+      "The repository carries CC0-1.0; that dedication does not cover Nintendo’s game, its extracted files, the BIOS or the downloaded Metrowerks compiler. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/INSTALL.md",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/extract/README.md",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/docs/build_system.md",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/tools/configure.py",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/tools/download_tool.py",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/ph_usa.sha1",
+      "https://github.com/zeldaret/ph/tree/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/config",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/.github/workflows/build.yml",
+      "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
+      "https://decomp.dev/zeldaret/ph"
+    ]
   }
 ]
