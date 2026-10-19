@@ -7387,5 +7387,38 @@
       "https://vineflower.org/usage/",
       "https://repo1.maven.org/maven2/org/vineflower/vineflower/maven-metadata.xml"
     ]
+  },
+  {
+    "id": "pycdc",
+    "name": "Decompyle++ (pycdc)",
+    "url": "https://github.com/zrax/pycdc",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "C++ disassembler and decompiler for compiled Python bytecode that aims to support bytecode from any Python version. pycdas prints the disassembly of a .pyc file, and pycdc prints reconstructed Python source to stdout with errors on stderr; both also accept raw marshalled code objects when the Python version is given on the command line. The source carries opcode tables for Python 1.0 through 3.13.",
+    "description_zh": "用 C++ 编写的 Python 字节码反汇编器与反编译器，目标是支持任意 Python 版本的字节码。pycdas 输出 .pyc 文件的反汇编结果，pycdc 则把重建出的 Python 源码输出到标准输出，错误信息输出到标准错误；在命令行中指定 Python 版本后，两者也能处理原始的 marshal 代码对象。源码中包含 Python 1.0 至 3.13 的操作码表。",
+    "evidence_url": "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/README.markdown",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project publishes no releases or tags, so it is built from source; the reviewed master commit dates from 2026-04-07. The README makes no per-version completeness claim. The .pyc loader recognizes bytecode up to Python 3.13 but not 3.14, and the regression suite’s compiled samples stop at 3.12: 20 of its 191 samples are for 3.10–3.12, and 39 more are kept as expected failures.",
+      "CMakeLists.txt requires CMake 3.12+ and a C++11 compiler, and GCC and Clang builds treat warnings as errors. make check runs the tests on Unix-like systems or MSYS; CI builds and tests on Ubuntu and as 32-bit Visual Studio 2022 builds on Windows, where the executables are kept only as workflow artifacts.",
+      "Input .pyc files or marshalled code objects come from the user; recovering them from packaged applications is outside the tool. The README describes no verification of decompiled output, so uncertain regions should be compared with the pycdas disassembly.",
+      "GPL-3.0. Recovered source remains subject to the rights of the original program’s owner. Nothing was built or decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/CMakeLists.txt",
+      "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/pyc_module.h",
+      "https://github.com/zrax/pycdc/tree/b4289760970dbc399684f1e155ec6d1ea1cc787e/bytes",
+      "https://github.com/zrax/pycdc/tree/b4289760970dbc399684f1e155ec6d1ea1cc787e/tests/compiled",
+      "https://github.com/zrax/pycdc/tree/b4289760970dbc399684f1e155ec6d1ea1cc787e/tests/xfail",
+      "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/.github/workflows/linux-ci.yml",
+      "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/.github/workflows/msvc-ci.yml",
+      "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/LICENSE"
+    ]
   }
 ]

@@ -3038,5 +3038,14 @@
       "输入由使用者提供：JAR、ZIP、文件夹或 class 文件，并可通过 -e/--add-external 添加库作为类路径上下文。项目网站上的输出对比由项目自行提供；反编译代码是重建结果，并非原始源码。",
       "采用 Apache-2.0 许可。README 称它是 JetBrains Fernflower、MinecraftForge ForgeFlower 和 FabricMC Fernflower 分支的派生，并延续了 Quiltflower；其控制台入口仍沿用 Fernflower 的 org.jetbrains.java.decompiler 包。本次未反编译任何类。"
     ]
+  },
+  "pycdc": {
+    "name": "Decompyle++（pycdc）Python 字节码反编译器",
+    "requirements": [
+      "该项目不发布任何版本或标签，需从源码构建；所审阅的 master 提交日期为 2026-04-07。README 未说明各 Python 版本的支持完整程度。.pyc 加载器可识别到 Python 3.13 的字节码，但不识别 3.14；回归测试中的编译样本只到 3.12：191 个样本中有 20 个针对 3.10–3.12，另有 39 个作为预期失败用例保留。",
+      "CMakeLists.txt 要求 CMake 3.12+ 和 C++11 编译器，GCC 和 Clang 构建会把警告视为错误。make check 可在类 Unix 系统或 MSYS 上运行测试；CI 在 Ubuntu 上构建并测试，在 Windows 上则以 32 位 Visual Studio 2022 构建并测试，生成的可执行文件仅作为工作流产物保留。",
+      "输入的 .pyc 文件或 marshal 代码对象由使用者提供；从打包应用中取得这些文件不在本工具范围内。README 未说明对反编译结果的任何验证，存疑之处应与 pycdas 的反汇编输出对照。",
+      "采用 GPL-3.0 许可。恢复出的源码仍受原程序权利人的权利约束。本次未构建或反编译任何内容。"
+    ]
   }
 }
