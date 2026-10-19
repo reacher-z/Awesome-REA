@@ -7539,12 +7539,19 @@
         "https://x.com/i/status/2111221283929436658",
         "https://x.com/i/status/2111368604331749618"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Five posts are cited. @trader2xia (2026-10-16) speculates that iOS, if reverse engineered onto Android phones, would run more smoothly than on iPhones; @ChrisFell7 says AI developers built HACKIOS to port iOS to any phone; @passluo and @AndyL5cc share a video claiming iOS runs on a Redmi through AI reverse engineering; @prathamgau73465 replies that he will not believe it without credible third-party confirmation. None links a project, and an unofficial HackiOS news site says no source or installable build is public. A separate public iOS-on-Redmi port exists, but no post links it and its README does not mention AI. Retain the lead without a catalog mapping.",
+      "reason_zh": "所引五条帖子中：@trader2xia（2026-10-16）设想 iOS 若被逆向移植到安卓手机上，会比在 iPhone 上更流畅；@ChrisFell7 称一群 AI 开发者做出了能把 iOS 移植到任何手机的 HACKIOS；@passluo 和 @AndyL5cc 分享视频，称有人借助 AI 逆向让 iOS 在红米手机上运行；@prathamgau73465 回复说，在可信第三方证实之前不会相信。各帖均未链接任何项目，一个非官方 HackiOS 资讯站也称尚无公开源码或可安装版本。另有一个公开的红米 iOS 移植项目，但没有帖子链接它，其 README 也未提及 AI。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111100973238329497",
+        "https://x.com/i/status/2111109883210907945",
+        "https://x.com/i/status/2111110778854252986",
+        "https://x.com/i/status/2111221283929436658",
+        "https://x.com/i/status/2111368604331749618",
+        "https://hackios.net/"
+      ],
       "catalog_matches": []
     },
     {
@@ -7559,12 +7566,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111101746001113381"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@LinearUncle, 2026-10-16) says a Bilibili video named in his earlier post includes a challenge in which DeepSeek failed against a sample packed with VMP virtualization. The video is neither linked nor attributed, and the reply gives no sample, prompts or output; the author’s GitHub account linearuncle holds no related repository. Retain the lead without a catalog mapping; this secondhand note about a failed attempt documents no analysis, and no protection details are recorded here.",
+      "reason_zh": "作者回复（@LinearUncle，2026-10-16）称，他此前帖子中提到的一个 B 站视频里有一项挑战：让 DeepSeek 分析经 VMP 虚拟机加壳的样本，结果 DeepSeek 失败了。回复既未链接该视频，也未注明作者，且没有给出样本、提示词或输出；作者的 GitHub 账号 linearuncle 中也没有相关仓库。保留此线索而不建立目录映射；这则关于失败尝试的二手说明没有记录任何分析，此处也不记录任何保护细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111101746001113381"
+      ],
       "catalog_matches": []
     },
     {
@@ -7579,12 +7588,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111103450448572730"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@YaBoyWaseem, 2026-10-16) says only that people were complaining about someone using AI to decompile and mod a Mega Man Battle Network game, and calls their anger ironic; it carries a GIF. It names neither the game, the modder nor the project and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the underlying project would need its own primary review.",
+      "reason_zh": "帖子（@YaBoyWaseem，2026-10-16）只说看到有人抱怨某人用 AI 反编译并改造一款《洛克人 EXE》游戏，并认为这种对 AI 的愤怒很讽刺；帖子附一张 GIF。帖子既未说明是哪款游戏、改造者或项目，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；其背后的项目需要单独进行一手核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111103450448572730"
+      ],
       "catalog_matches": []
     },
     {
@@ -7599,12 +7610,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111106257431961740"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@gregfromboston, 2026-10-16) says they are surprised Claude will do a one-shot decompile when they hit safety blocks just trying to jailbreak their twelve-year-old Kindle. It names no model, firmware or method and links no output, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a remark about model refusals, not a documented case, and no jailbreak details are recorded here.",
+      "reason_zh": "作者回复（@gregfromboston，2026-10-16）称，自己只是想越狱一台用了十二年的 Kindle 就碰到安全拦截，因此对 Claude 愿意一次性完成反编译感到意外。回复未说明设备型号、固件或方法，也没有链接任何输出，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是对模型拒绝行为的评论，而非有记录的案例，此处也不记录任何越狱细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111106257431961740"
+      ],
       "catalog_matches": []
     },
     {
@@ -7619,12 +7632,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111115615628824723"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@LuisGFuture, 2026-10-16, in Spanish) says they are reviving a 1997 audio program they need to continue work on Windows 11, and advises asking Claude to install headless Ghidra and draw up a plan, then switching to a cheaper model such as GLM 5.3. It names neither the software nor any result and links no code, and the GitHub account named LuisGFuture holds only an unrelated prompts repository. Retain the lead without a catalog mapping; the revival was in progress and is undocumented.",
+      "reason_zh": "作者回复（@LuisGFuture，2026-10-16，西班牙语）称正在“复活”一款 1997 年的音频软件，以便在 Windows 11 上继续一项工作，并建议先让 Claude 安装无界面 Ghidra 并制定计划，之后改用 GLM 5.3 等更便宜的模型。回复既未说明是哪款软件，也未给出任何结果或链接代码，名为 LuisGFuture 的 GitHub 账号只有一个无关的提示词仓库。保留此线索而不建立目录映射；这项工作尚在进行中且无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111115615628824723"
+      ],
       "catalog_matches": []
     },
     {
@@ -7706,12 +7721,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111134289970765964"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@hooxingzhao, 2026-10-16) says they used REA on the Claude client and found that its risk-control upload includes environment attributes that can indicate a VPS, shown in a screenshot. It names no client version and links no analysis output or notes, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the finding is unverified, and no detection details are recorded here.",
+      "reason_zh": "作者帖子（@hooxingzhao，2026-10-16）称用 REA 逆向了 Claude 客户端，发现其风控上传的参数包含可用来判断是否为 VPS 的环境属性，并附一张截图。帖子未说明客户端版本，也没有链接分析输出或笔记，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该发现未经核实，此处也不记录任何检测细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111134289970765964"
+      ],
       "catalog_matches": []
     },
     {
@@ -14961,15 +14978,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 156,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 132,
+      "pending": 303
     },
     "units_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 308
+      "insufficient-evidence": 132,
+      "pending": 302
     },
-    "primary_reviewed_units": 221,
+    "primary_reviewed_units": 227,
     "catalog_linked_occurrences": 167,
     "distinct_resource_ids": 161,
     "distinct_paper_ids": 1,
