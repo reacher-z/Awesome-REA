@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 366](https://img.shields.io/badge/resources-366-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 367](https://img.shields.io/badge/resources-367-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (33) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (33) · [References and Learning](#references-and-learning) (28)
 
 **More ways to browse**
 
@@ -2305,6 +2305,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   JPCERT/CC’s 15 October 2026 blog post on the infrastructure behind a series of unauthorized-access incidents in Japan. It reports that the attackers used AI for known-vulnerability scanning and API attacks, and that attack servers held APKs, jadx- and Blutter-related files, APK-extraction directories and an SSRF test script used to probe app APIs. It is a defender’s account of observed attacker tooling with mitigation advice, not a published AI-assisted analysis method or reproducible workflow.
 
   Learning resource · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/jpcert-apk-api-attack-infrastructure-report/)
+
+- [**Emproof workshop: Firmware Reverse Engineering**](https://github.com/emproof-com/workshop_firmware_reverse_engineering)
+
+  Slides and 14 self-contained exercises from Emproof's firmware reverse-engineering workshop at ScapyCon Automotive 2025, designed by Tim Blazytko for a technical audience with little security experience. The firmware and binary tasks move from reading ELF metadata with binutils and first steps in Ghidra or Binary Ninja, through unpacking two embedded-Linux CTF images with binwalk, to bare-metal analysis: identifying the microcontroller, toolchain and memory map of a model car's firmware ELF, and rebasing a raw STM32F103 flash dump with segments taken from the datasheet. Other tasks decrypt strings statically in a Mirai sample and trace a hardcoded AES key back to its data section.
+
+  Learning resource · Targets: Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/emproof-firmware-re-workshop/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

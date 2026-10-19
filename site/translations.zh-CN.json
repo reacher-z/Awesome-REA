@@ -3151,5 +3151,15 @@
       "仓库测试使用 pytest 和 Hex-Rays 的 idapro 库，并以仓库自带的 manalyze.exe（作者的 PE 分析工具 Manalyze 的构建产物）为测试样本；仓库未提供 CI 工作流。README 中的前后对比截图，以及先请求解释再重命名效果更好的观察，均为作者所述。本合集仅审阅源码与文档，未运行插件、测试或任何模型。",
       "LICENSE 与 ida-plugin.json 标明采用 GPL-3.0；IDA Pro、Hex-Rays 反编译器和模型服务各有其许可与条款。README 感谢 Kaspersky 提供最初资助，并称 HarfangLab 为当前支持方。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "emproof-firmware-re-workshop": {
+    "name": "Emproof 固件逆向工程研讨会",
+    "requirements": [
+      "所审阅的 main 提交日期为 2025-09-25，是自 2025-09-21 起共 14 个提交中的最后一个。仓库包含 slides.pdf 和 14 个练习，每个练习由附带分步问题的 task.md 和一个 samples 文件夹组成；未提供参考答案，两个嵌入式 Linux 练习链接了外部解题文章。",
+      "README 称大多数样本面向 ARMv7（Thumb/ARM32）或 AArch64，其中不少附有 C 源码。基于 Kali Linux 的 Docker 镜像固定为 linux/arm64，在 x86_64 主机上以模拟方式运行，内含 binutils、binwalk、John the Ripper 和 armhf 运行库；首次使用时，docker_run.sh 会通过特权容器在主机上安装 QEMU binfmt 处理程序。Ghidra 和 Binary Ninja Free 需安装在主机上；由于 Binary Ninja Free 不支持 AArch64，许多练习另附 .armv7 构建。",
+      "裸机练习要求分析者查阅微控制器的数据手册或参考手册；STM32F103 练习给出了重新分析前需定义的闪存、SRAM、外设和系统控制空间地址范围。另有若干练习是针对研讨会自带程序的 crackme 式许可证、注册机和反补丁练习；本条目只介绍固件与二进制分析练习。",
+      "研讨会材料采用 GPL-2.0，但 README 将三个样本文件夹排除在该许可之外，仅供分析和教学使用，不得再分发：其中两个嵌入式 Linux 镜像据练习说明来自 WORMCON CTF 2021，另一个是 Mirai 僵尸网络程序，其练习说明称其为活跃恶意软件、不得执行，并存放在带密码的压缩包中。",
+      "材料未提及 AI 或 REA 的使用。本合集阅读了 README、练习文件和容器配置，未打开幻灯片，未构建容器，也未处理任何样本。"
+    ]
   }
 }

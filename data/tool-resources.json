@@ -7801,5 +7801,39 @@
       "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/LICENSE",
       "https://github.com/JusticeRage/Gepetto/releases/tag/v1.5.1"
     ]
+  },
+  {
+    "id": "emproof-firmware-re-workshop",
+    "name": "Emproof workshop: Firmware Reverse Engineering",
+    "url": "https://github.com/emproof-com/workshop_firmware_reverse_engineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Slides and 14 self-contained exercises from Emproof's firmware reverse-engineering workshop at ScapyCon Automotive 2025, designed by Tim Blazytko for a technical audience with little security experience. The firmware and binary tasks move from reading ELF metadata with binutils and first steps in Ghidra or Binary Ninja, through unpacking two embedded-Linux CTF images with binwalk, to bare-metal analysis: identifying the microcontroller, toolchain and memory map of a model car's firmware ELF, and rebasing a raw STM32F103 flash dump with segments taken from the datasheet. Other tasks decrypt strings statically in a Mirai sample and trace a hardcoded AES key back to its data section.",
+    "description_zh": "Emproof 在 ScapyCon Automotive 2025 上举办的固件逆向工程研讨会的幻灯片和 14 个独立练习，由 Tim Blazytko 设计，面向安全经验不多的技术人员。固件与二进制相关练习由浅入深：先用 binutils 读取 ELF 元数据并初步上手 Ghidra 或 Binary Ninja，再用 binwalk 解包两个嵌入式 Linux CTF 镜像，最后进行裸机分析，包括识别一辆模型车固件 ELF 的微控制器、工具链和内存映射，以及依据数据手册定义内存段，为一份原始 STM32F103 闪存转储重设基址。另有练习在 Mirai 样本中静态解密字符串，并把硬编码的 AES 密钥回溯到其所在数据段。",
+    "evidence_url": "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit, from 2025-09-25, ends a 14-commit history that began on 2025-09-21. It holds slides.pdf and 14 tasks, each a task.md with step-by-step questions next to a samples folder; no model solutions are included, and the two embedded-Linux tasks link an external write-up.",
+      "The README says most samples target ARMv7 (Thumb/ARM32) or AArch64, and many come with C source. A Kali Linux-based Docker image fixed to linux/arm64, emulated on x86_64 hosts, supplies binutils, binwalk, John the Ripper and armhf runtime libraries; on first use docker_run.sh installs QEMU binfmt handlers on the host through a privileged container. Ghidra and Binary Ninja Free are installed on the host, and because Binary Ninja Free lacks AArch64 support, many tasks also ship an .armv7 build.",
+      "Bare-metal tasks expect the analyst to consult the microcontroller's datasheet or reference manual; the STM32F103 task names the flash, SRAM, peripheral and system-control-space ranges to define before re-analysis. Several further tasks are crackme-style license, keygen and anti-patching exercises on the workshop's own binaries; this entry covers the firmware and binary-analysis tasks.",
+      "The workshop materials are GPL-2.0, but the README excludes three sample folders from that license and provides them for analysis and education only, without redistribution: the two embedded-Linux images, which the tasks attribute to WORMCON CTF 2021, and a Mirai botnet binary that its task describes as active malware not to be executed, stored in a password-protected archive.",
+      "The materials mention no AI or REA use. This collection read the README, task files and container setup; it did not open the slides, build the container or handle any sample."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/hello_world/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/embedded_linux_2/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/car_demo/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/iot_diag/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/tasks/crypto_detection/task.md",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/Dockerfile",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/docker_run.sh",
+      "https://github.com/emproof-com/workshop_firmware_reverse_engineering/blob/10dc72a199f2a70c2274b08ff5773412df6d035b/LICENSE"
+    ]
   }
 ]
