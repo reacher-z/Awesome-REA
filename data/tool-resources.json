@@ -7228,5 +7228,39 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
     ]
+  },
+  {
+    "id": "smash-bros-brawl-decomp-case",
+    "name": "Super Smash Bros. Brawl: an early matching Wii decompilation",
+    "url": "https://github.com/doldecomp/brawl",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress matching decompilation of Super Smash Bros. Brawl that targets the USA Rev 2 Wii release (RSBE01_02), splitting main.dol and 126 REL modules from a user-supplied disc image and checking the rebuilt binaries against stored SHA-1 values. objdiff compares objects during development, and six other regional revisions are listed but commented out of the supported set. decomp.dev reported 1.27% of code matched at the reviewed commit.",
+    "description_zh": "《任天堂明星大乱斗X》（Super Smash Bros. Brawl）的进行中一致性反编译，目标为美版 Rev 2 Wii 版本（RSBE01_02）：从使用者自备的光盘镜像中拆分 main.dol 和 126 个 REL 模块，并按仓库保存的 SHA-1 校验重建出的二进制。开发时用 objdiff 比对目标文件；另外六个地区修订版虽已列出，但在支持列表中被注释掉。decomp.dev 报告所审提交有 1.27% 的代码已匹配。",
+    "evidence_url": "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README lists one supported version, RSBE01_02 (USA Rev 2), with the Japan, USA Rev 1, PAL and Korea revisions commented out; configure.py names all seven, but only RSBE01_02 has a configuration and CI builds only it. The output is a Wii main.dol and REL set, not a PC port.",
+      "Copy your own disc image to orig/RSBE01_02; ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC images are accepted. README says the repository contains no game assets or assembly: decomp-toolkit splits the DOL and RELs using committed per-module symbol and split tables, and extracts one embedded binary (HomeBtnIcon) from the DOL locally. Game headers come from the BrawlHeaders submodule (Sammi-Husky/BrawlHeaders), which README says to initialize before building.",
+      "Builds need Python and ninja on Windows (native tooling recommended), macOS (with wine-crossover) or Linux (an automatically downloaded wibo on x86, Wine elsewhere). configure.py pins decomp-toolkit v1.7.5, objdiff v3.4.4, binutils 2.42-1, sjiswrap v1.2.2, wibo 1.0.0 and the 20250812 compiler bundle, compiling and linking with Metrowerks GC/3.0a5.2.",
+      "Objects marked Matching (184 in configure.py; 20 remain NonMatching) are compiled from source and the rest come from the split originals; the default ninja target checks main.dol and the RELs against config/RSBE01_02/build.sha1 before reporting progress. CI builds RSBE01_02 in a container that supplies the disc files and compilers and uploads a progress report. decomp.dev’s report for the pinned commit lists 201,252 of 15,833,548 code bytes (1.27%) and 2,504 of 92,523 functions matched, with 516 of 4,415 units complete; this collection ran no build.",
+      "The repository carries CC0-1.0; Nintendo’s game, disc contents and the downloaded compilers fall outside that dedication, and the BrawlHeaders submodule declares no license on GitHub. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/configure.py",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/config/RSBE01_02/config.yml",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/config/RSBE01_02/build.sha1",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/tools/project.py",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/.gitmodules",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/.github/workflows/build.yml",
+      "https://github.com/doldecomp/brawl/blob/b96b501ff127b29e8946ee9a352a7bdc2ef5f38a/LICENSE",
+      "https://github.com/Sammi-Husky/BrawlHeaders/tree/29c4ff16ce06241ea672ffd54e6415fbd02c0743",
+      "https://decomp.dev/doldecomp/brawl"
+    ]
   }
 ]
