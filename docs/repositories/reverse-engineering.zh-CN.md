@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**622 个仓库** · 2026-10-16 UTC
+**621 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -137,7 +137,6 @@
 - [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code) — 每夜反编译 Claude Code CLI：逆向分析并重新构建。 **[533 星标]**
 - [jac3km4/redscript](https://github.com/jac3km4/redscript) — redscript 编译器与反编译器工具包。 **[520 星标]**
 - [MaxPixelStudios/MinecraftDecompiler](https://github.com/MaxPixelStudios/MinecraftDecompiler) — Minecraft 反编译器。实用的工具和库，可通过常用映射与多种反编译器，对 Minecraft（或任意 JAR 文件）去混淆和反编译。也可作为库处理混淆映射，例如将映射转换为另一种格式。 **[493 星标]**
-- [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]**
 - [aozhimin/iOS-APM-Secrets](https://github.com/aozhimin/iOS-APM-Secrets) — <span>:</span>secret: 开发中：深度揭秘各大 APM 厂商 iOS SDK 背后的核心技术和实现细节，持续更新中…… **[474 星标]**
 - [holly-hacker/EazFixer](https://github.com/holly-hacker/EazFixer) — 用于 Eazfuscator 的去混淆工具。 **[456 星标]**
 - [CTR-tools/CTR-ModSDK](https://github.com/CTR-tools/CTR-ModSDK) — ModSDK：使用 C 为《古惑狼赛车》制作模组的工具包。本仓库也包含使用 C 对 CTR 进行完整反编译与逆向工程的项目。 **[453 星标]**

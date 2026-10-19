@@ -7165,5 +7165,35 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "luajit-decompiler-v2",
+    "name": "LuaJIT Decompiler v2",
+    "url": "https://github.com/marsinator358/luajit-decompiler-v2",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Decompiles LuaJIT bytecode files back into Lua source, written as a replacement for the older Python LuaJIT decompiler. The README reports full support for gotos and for stripped bytecode, including reconstructed locals and upvalues, and its boolean-expression recovery follows a published decompilation algorithm. It processes single files or whole folders and writes .lua output.",
+    "description_zh": "将 LuaJIT 字节码文件反编译回 Lua 源码，作为旧版 Python LuaJIT 反编译器的替代品编写。README 称它完整支持 goto 和去除调试信息的字节码，包括还原局部变量和上值；其布尔表达式恢复基于一篇已发表的反编译算法论文。它可处理单个文件或整个文件夹，输出 .lua 文件。",
+    "evidence_url": "https://github.com/marsinator358/luajit-decompiler-v2/blob/6a8a0cec48fdf175dddaca5d3fbfe3aa59b5550a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Users supply LuaJIT bytecode files or a folder containing them, by drag and drop or on the command line; decompiled .lua files go to an output folder beside the executable unless overridden. Options filter by extension, ignore debug info, skip files that fail instead of showing an assertion pop-up, and format output to minimize diffs.",
+      "The reader accepts bytecode format versions 1 and 2 and rejects big-endian bytecode, which the README lists as future work along with better decompilation of conditional assignments. The repository has no tests, CI or published accuracy results; the program reports how many files failed to decompile.",
+      "Windows only: the README directs users to a release executable (the Mar_24_2024 release, whose notes say it was rebuilt on 2026-05-14), and main.h lists Visual Studio, C++20, the Windows API and an unsigned default char as build requirements, with no project or build files included. A Call-of-Duty branch, four commits ahead of master, has its own release executable. Last commit at review: 2026-05-14.",
+      "MIT license text that also carries the LuaJIT and Lua copyright notices; GitHub does not classify it. Reviewed sources state no REA use, and this collection did not run the decompiler."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/marsinator358/luajit-decompiler-v2/blob/6a8a0cec48fdf175dddaca5d3fbfe3aa59b5550a/LICENSE",
+      "https://github.com/marsinator358/luajit-decompiler-v2/blob/6a8a0cec48fdf175dddaca5d3fbfe3aa59b5550a/main.h",
+      "https://github.com/marsinator358/luajit-decompiler-v2/blob/6a8a0cec48fdf175dddaca5d3fbfe3aa59b5550a/main.cpp",
+      "https://github.com/marsinator358/luajit-decompiler-v2/blob/6a8a0cec48fdf175dddaca5d3fbfe3aa59b5550a/bytecode/bytecode.cpp",
+      "https://github.com/marsinator358/luajit-decompiler-v2/releases/tag/Mar_24_2024"
+    ]
   }
 ]

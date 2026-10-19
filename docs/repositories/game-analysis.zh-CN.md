@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**388 个仓库** · 2026-10-16 UTC
+**389 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -40,6 +40,7 @@
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — 《东方红魔乡 ～ the Embodiment of Scarlet Devil》（1.02h）的反编译代码。 **[616 星标]**
 - [encounter/objdiff](https://github.com/encounter/objdiff) — 面向反编译项目的本地差异比较工具。 **[586 星标]**
 - [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Unreal 软件包文件（.upk、.u、.uasset 等）的反编译器，支持 Unreal Engine 1、2 和 3。 **[490 星标]**
+- [marsinator358/luajit-decompiler-v2](https://github.com/marsinator358/luajit-decompiler-v2) — LuaJIT 字节码反编译器。 **[487 星标]**
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
 - [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]**
