@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2412,6 +2412,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 得分是针对孤立代码片段的题目级指标，并不代表端到端逆向工程流程或智能体工具使用能力。预处理需要 IDA Pro，所有二进制均是在 Ubuntu 22.04 上以各项目默认编译设置构建的 x86-64 程序；未研究其他架构、优化级别变化或混淆。多数任务以 Rouge-L、BLEU、METEOR 或 CodeBLEU 衡量文本重合度，因而并不检验语义等价；只有汇编生成任务检查能否编译及测试用例执行结果，其平均执行通过率低于 1%。摘要标签由 ChatGPT 生成后经人工审核；算法分类使用取自单一算法项目的 80 个片段。数据泄露筛查依赖网页精确匹配搜索。被评测模型均早于 2025 年（包括 gpt-3.5-turbo-16k-0613 与 gpt-4-0613），最大长度设为 8,192 个词元，因此排名只反映当时情况。
 
   **作者:** Xiuwei Shang 等
+
+  </details>
+
+- [**探索大语言模型在代码去混淆中的潜力**](https://doi.org/10.1007/978-3-031-97620-9_15)
+
+  研究将大语言模型用作源码到源码的去混淆器，处理经 Tigress 混淆器保护的 C 函数。研究从 ExeBench 选取函数并随机化标识符，再施加五种变换：MBA 算术编码、分支编码、控制流平坦化、不透明谓词和参数随机化。模型每次读入一个完整的混淆函数并输出简化后的 C 代码。DeepSeek Coder 6.7B 与 Code Llama 7B 在“混淆—原始”代码对上微调，GPT-4 通过提示使用，Clang 的 -O0 至 -O3 优化则作为编译器基线。简化效果以 Halstead 程序长度相对于原始代码与混淆代码的变化衡量，语法正确性通过编译 ExeBench 包装程序检查，语义正确性则用 ExeBench 输入／输出样例检查。微调模型在每种变换上降低复杂度的幅度都大于 GPT-4，除算术编码和参数随机化（Clang 与之相当）外也大于 Clang。模型在最多五个变换组成的链上训练，在六个和七个变换的链上得分仍保持稳定；最佳模型在最困难场景中平均将 Halstead 程序长度缩减 89.21%。随机化常量的记忆测试只发现一个样本复现了记忆中的代码。
+
+  DIMVA 2025 · 会议论文 · [PDF](https://ndownloader.figshare.com/files/65792754) · [代码](https://github.com/DavidBeste/llm-code-deobfuscation) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-llm-code-deobfuscation/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 混淆使用 Tigress（发布脚本中为 3.3.3 版），以源码到源码的方式作用于单个 C 函数。研究未评估已编译二进制、反编译器输出、商业保护器、跨过程混淆、基于虚拟机的加壳或自修改代码；作者仅指出可通过反编译从二进制得到近似的 C 代码。这是源码级简化，并非二进制去混淆或虚拟机去虚拟化。语义正确性是主要短板：在单一变换场景中，微调模型保持行为的样本比例为 50% 至 94.5%，大多低于 GPT-4，除分支编码外也低于 Clang，并且随着变换链变长而下降。复杂度得分只统计语法与语义均正确的样本。行为通过 ExeBench 输入／输出样例检查，而非等价性证明；输入受 6,144 个词元的上下文限制，模型微调时还使用了 8 位量化。研究只使用一种混淆器，因此对其他混淆器、版本、机器码或字节码的泛化仍待验证；基线是 GPT-4 与 Clang，而非专用去混淆工具。
+
+  **作者:** David Beste 等
 
   </details>
 
