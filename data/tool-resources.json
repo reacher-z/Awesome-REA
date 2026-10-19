@@ -15641,5 +15641,39 @@
       "https://github.com/gaasedelen/lucid/releases/tag/v0.1.1",
       "https://github.com/gaasedelen/lucid/pull/5"
     ]
+  },
+  {
+    "id": "bluefluff-furby-connect-ble-case",
+    "name": "bluefluff: reverse engineering Furby Connect's Bluetooth LE protocol",
+    "url": "https://github.com/Jeija/bluefluff",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the Bluetooth Low Energy interface of Hasbro's Furby Connect toy, worked out, according to its notes, from the companion app's native library, sniffed BLE traffic and trial and error. It maps the GATT services and the command and response bytes of the toy's Nordic radio and GeneralPlus controller, covering action sequences, antenna colour, mood values, sensor reports and a hidden debug screen. fluffd, a Node.js daemon built on the noble BLE library, exposes these commands through an HTTP API and a browser control page.",
+    "description_zh": "记录 Hasbro 玩具 Furby Connect 的蓝牙低功耗（BLE）接口；据其说明，这些内容来自对配套应用原生库的分析、BLE 流量嗅探和反复试验。文档梳理了 GATT 服务，以及玩具中 Nordic 无线芯片和 GeneralPlus 控制器的命令与响应字节，涵盖动作序列、天线颜色、情绪数值、传感器报告和一个隐藏的调试界面。fluffd 是基于 noble BLE 库的 Node.js 守护进程，通过 HTTP API 和浏览器控制页面提供这些命令。",
+    "evidence_url": "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Most research commits date from 2017 and 2018, with a few later fixes and a Docker setup added in March 2026. The README reports that large parts of the BLE protocol are understood, while the action list is incomplete, the update (DLC) format is only partly explored, and code execution, custom LCD animations and the sleep-mask connector remain untried.",
+      "Requires a Furby Connect and a host with Bluetooth LE, built in or through a USB Bluetooth 4.0+ adapter. The repository contains no Hasbro update files or app code, and this record covers neither obtaining nor modifying them. The README warns that interfacing in unwarranted ways can brick the toy and will almost certainly void its warranty.",
+      "fluffd needs Node.js 7.0 or later according to the README and pins @abandonware/noble 1.9.2-23. The README covers Linux, which needs libudev development files and a running BlueZ, and macOS, which needs xpc-connection, and also names FreeBSD and Windows. The Docker image uses node:16-bullseye, needs host networking for raw HCI access and supports Linux hosts only.",
+      "The findings are the author's documented observations, made without opening the toy. The repository has no tests or CI, and no commands were sent in this review.",
+      "MIT (2017, Florian Euchner); the README's disclaimer says the information is for educational purposes only. Furby Connect, its companion app and Hasbro's content keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/bluetooth.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/generalplus.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/nordic.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/actions.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/fluffd/fluffd.js",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/fluffd/package.json",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/Dockerfile",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/docker.md",
+      "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/LICENSE.md"
+    ]
   }
 ]

@@ -5128,5 +5128,15 @@
       "作用于使用者已在 IDA 中打开并反编译的二进制。它只是查看反编译器内部状态的工具；README 仅把微码优化器相关工作流列为未来可能的工作。",
       "采用 MIT 许可。本次未安装或运行。"
     ]
+  },
+  "bluefluff-furby-connect-ble-case": {
+    "name": "bluefluff：逆向分析 Furby Connect 的蓝牙低功耗协议",
+    "requirements": [
+      "大部分研究提交集中在 2017 和 2018 年，此后只有少量修复，并于 2026 年 3 月加入了 Docker 配置。README 报告已弄清 BLE 协议的大部分内容，但动作列表尚不完整，更新包（DLC）格式只做了部分探索，代码执行、自定义 LCD 动画和睡眠面罩接口均未尝试。",
+      "需要一台 Furby Connect，以及内置蓝牙低功耗或配有 USB 蓝牙 4.0+ 适配器的主机。仓库不含 Hasbro 的更新文件或应用代码，本条目也不涉及如何获取或修改这些文件。README 警告，以不当方式操作可能使玩具变砖，而且几乎必然导致失去保修。",
+      "README 指出 fluffd 需要 Node.js 7.0 或更高版本，并固定使用 @abandonware/noble 1.9.2-23。README 说明了 Linux（需要 libudev 开发文件和运行中的 BlueZ）和 macOS（需要 xpc-connection）的安装方法，也提到 FreeBSD 和 Windows。Docker 镜像基于 node:16-bullseye，需要使用主机网络以访问原始 HCI，仅支持 Linux 主机。",
+      "这些发现是作者在未拆开玩具的情况下所记录的观察结果。仓库没有测试或 CI，本次审阅也未发送任何命令。",
+      "采用 MIT 许可（2017 年，Florian Euchner）；README 的免责声明称这些信息仅供教育用途。Furby Connect、其配套应用以及 Hasbro 的内容各自保留其权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }

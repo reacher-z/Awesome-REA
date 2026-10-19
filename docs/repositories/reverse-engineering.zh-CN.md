@@ -126,7 +126,7 @@
 - [Fausto-404/js-reverse-automation--skill](https://github.com/Fausto-404/js-reverse-automation--skill) — 结合 chrome-devtools-mcp 的能力与 Skill 规范，基于 JSRPC、Flask 和 autoDecoder 方案，实现前端 JavaScript 逆向的自动化分析，提升逆向效率。 **[598 星标]**
 - [uttambodara/TryHackMeRoadmap](https://github.com/uttambodara/TryHackMeRoadmap) — 350+ 个免费的 TryHackMe 房间💻列表，帮助开始网络安全学习，按主题组织，便于探索和培养实践技能！💀💥 **[597 星标]**
 - [nbcraft-org/nbcraft](https://github.com/nbcraft-org/nbcraft) — 全面的跨平台挖矿体验。 **[596 星标]**
-- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — 对 Furby Connect 的蓝牙协议和更新格式进行逆向工程 **[576 星标]**
+- [Jeija/bluefluff](https://github.com/Jeija/bluefluff) — 对 Furby Connect 的蓝牙协议和更新格式进行逆向工程 **[576 星标]** · 精选：[bluefluff：逆向分析 Furby Connect 的蓝牙低功耗协议](https://awesomerea.org/zh/resources/bluefluff-furby-connect-ble-case/)
 - [pret/pokeplatinum](https://github.com/pret/pokeplatinum) — 《宝可梦 白金》的反编译代码。 **[567 星标]** · 精选：[《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
 - [morluto/awesome-reverse-engineering](https://github.com/morluto/awesome-reverse-engineering) — 精选逆向工程工具与学习资源，涵盖二进制文件、应用、固件、格式和协议。 **[565 星标]** · 精选：[Awesome Reverse Engineering](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 - [SamidyFR/Game-Decompilations](https://github.com/SamidyFR/Game-Decompilations) — 从互联网上收集的游戏反编译项目列表。 **[559 星标]**
