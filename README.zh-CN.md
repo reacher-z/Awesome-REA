@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 445](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-445-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 186](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-186-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 446](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-446-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 187](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-187-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (178) · [应用](#app) (67)
+- [网站](#website) (25) · [游戏](#game) (178) · [应用](#app) (68)
 - [原生二进制](#native-binary) (58) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (186) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (187) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1474,6 +1474,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   一款原生 macOS 菜单栏应用，通过 LG webOS 电视在局域网内的加密 WebSocket 接口完成配对，可启动应用、切换输入源、调节音量和画面设置、发送指针输入并投放所选媒体。项目称 webOS 协议行为参考了公开的 Connect SDK，并沿用 PyWebOSTV 的注册清单。测试仅覆盖一台 webOS 5.0 电视。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lgwebos-menubar-remote-case/)
+
+- [**Galaxy Buds Client：基于三星耳机协议的非官方管理器**](https://github.com/timschneeb/GalaxyBudsClient)
+
+  在跨平台桌面与 Android 管理器中，通过三星 Galaxy Buds 专有的 RFCOMM 串口协议重新实现耳机控制。作者称通过分析耳机发出的二进制数据流并反汇编三星官方 Android 应用来恢复报文格式，并公开了 2019 款 Buds 和 Buds+ 的部分数据包笔记。除官方应用的设置外，它还提供电池统计、诊断、出厂自检、隐藏调试信息，以及适用型号的固件刷写。
+
+  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
 
 #### 工具、项目与集成
 

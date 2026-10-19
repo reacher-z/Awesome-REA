@@ -19,7 +19,7 @@
 - [androguard/androguard](https://github.com/androguard/androguard) — Android 应用逆向工程与渗透测试。 **[6,355 星标]** · 精选：[Androguard](https://awesomerea.org/zh/resources/androguard/)
 - [dwisiswant0/apkleaks](https://github.com/dwisiswant0/apkleaks) — 扫描 APK 文件中的 URI、端点与秘密信息。 **[6,353 星标]**
 - [CreditTone/hooker](https://github.com/CreditTone/hooker) — 🔥🔥 hooker 是基于 Frida 的 Android 逆向工程工具包，提供易用的命令行界面、通用脚本、自动生成 hook、通过内存漫游检测 Activity/Service、一键 SOCKS5 代理、Frida JustTrustMe，以及面向所有应用的 BoringSSL 证书锁定绕过功能。 **[5,328 星标]**
-- [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — 适用于 Windows、macOS、Linux 和 Android 的非官方 Galaxy Buds 管理工具。 **[5,294 星标]**
+- [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — 适用于 Windows、macOS、Linux 和 Android 的非官方 Galaxy Buds 管理工具。 **[5,294 星标]** · 精选：[Galaxy Buds Client：基于三星耳机协议的非官方管理器](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 自动处理 Android APK 文件，使其便于进行 HTTPS 检查的命令行应用。 **[5,128 星标]** · 精选：[apk-mitm](https://awesomerea.org/zh/resources/apk-mitm/)
 - [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — 面向 APK、DEX、ODEX、OAT、JAR、AAR 和 CLASS 文件的高速强大 Android 反编译器，无需 Java 虚拟机即可运行的原生工具。支持恶意行为检测、隐私泄露检测、漏洞检测、路径求解、加壳识别、变量追踪、去混淆、Python/Java 脚本、设备内存提取、数据解密与加密等。 **[4,859 星标]** · 精选：[GDA Android 反编译器](https://awesomerea.org/zh/resources/gda-android-decompiler/)
