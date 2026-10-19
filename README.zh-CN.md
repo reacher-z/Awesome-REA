@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 438](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-438-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 439](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-439-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (65)
+- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (66)
 - [原生二进制](#native-binary) (55) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1686,6 +1686,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   基于 smalivm 的通用 Android 反混淆工具。smalivm 是一个沙箱化的 Dalvik 虚拟机，会逐个执行方法并记录所有执行路径上可能的寄存器与类取值；遇到文件或网络输入等未知值时，两个分支都会执行。Simplify 随后对 APK 或 DEX 反复进行常量传播、死代码删除、反射还原和窥孔优化，可在保持行为不变的前提下解密字符串、去除反射；它不会重命名类或方法。smalivm 也可作为库使用，最新发布版还附带基于它的单步 Smali 调试器 sdbg。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
+
+- [**GDA Android 反编译器**](https://github.com/charles2gan/GDA-android-reversing-Tool)
+
+  以 C++ 编写、原生运行于 Windows 的 Dalvik 反编译器与 Android 分析工作台，无需安装即可打开 APK、DEX、ODEX、OAT、JAR、AAR 和 class 文件。除带交叉引用、重命名和注释的 Java 与 Smali 视图外，它还能识别加固壳、反混淆并解密字符串、追踪数据流与污点、求解路径，运行基于规则的恶意行为、漏洞和隐私泄露扫描，并可转储设备内存或用 Frida 钩挂方法。Shell 与服务器两种命令行模式、Python 和 Java 脚本以及一个恶意软件分诊智能体技能示例，让脚本和智能体也能调用这些分析功能。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/gda-android-decompiler/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
