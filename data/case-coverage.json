@@ -7726,12 +7726,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111142820207837308"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@Ananth7e, 2026-10-16) says Opus 5.5 recreated the Codex computer-use cursor as a Windows cursor: after Ghidra crashed on a full disk, it used Python with pefile and Capstone to disassemble the drawing function, extracted the geometry, curves and colors, then installed the cursor and backed up the old settings. The post carries one image and links no code, extracted geometry or cursor file, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@Ananth7e，2026-10-16）称，Opus 5.5 把 Codex 计算机操作功能中的光标重制成了 Windows 光标：Ghidra 因磁盘已满而崩溃后，改用 Python 的 pefile 和 Capstone 反汇编绘制函数，提取出几何形状、曲线和颜色，随后安装该光标并备份原有设置。帖子附一张图片，但没有链接代码、提取的几何数据或光标文件，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111142820207837308"
+      ],
       "catalog_matches": []
     },
     {
@@ -7748,12 +7750,16 @@
         "https://x.com/i/status/2111165298531270905",
         "https://x.com/i/status/2111175047033528355"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Three posts by @GloriousEggroll (2026-10-16) describe a work-in-progress Gears of War 3 static recompilation for Linux: the ReXGlue SDK translates PowerPC code from default.xex on the user’s disc image into C++, XenosRecomp converts shaders, and a custom renderer extended from a Sonic Unleashed decompilation’s GPU backend replaces Xenia’s graphics translation. He says he uses AI assistance and attaches a WIP video. The posts link no repository, and none of the author’s 56 public GitHub repositories contains the project. Retain the lead without a catalog mapping; a published source tree would allow review.",
+      "reason_zh": "@GloriousEggroll 的三条帖子（2026-10-16）介绍了一个仍在开发中的《战争机器 3》Linux 静态重编译项目：ReXGlue SDK 将用户光盘镜像中 default.xex 的 PowerPC 代码翻译为 C++，XenosRecomp 转换着色器，并以 Sonic Unleashed 反编译项目的 GPU 后端为基础扩展出自定义渲染器，取代 Xenia 的图形转译。作者称借助了 AI，并附上一段开发中的视频。帖子未链接任何仓库，作者的 56 个公开 GitHub 仓库中也没有该项目。保留此线索而不建立目录映射；公开源码树可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111146922522402943",
+        "https://x.com/i/status/2111165298531270905",
+        "https://x.com/i/status/2111175047033528355"
+      ],
       "catalog_matches": []
     },
     {
@@ -7768,13 +7774,28 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111155441077977138"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@women5200, 2026-10-16) names no project, but its attached image shows the WristBeam (腕映) dashboard, and the pinned WristBeam repository matches the report: a Mac menu-bar companion for Garmin watches over Bluetooth with opt-in local MCP access. Its source comments document an independent GFDI implementation based on a supplied Garmin Android package and community references. The mapping covers that implementation; device verification is limited to one model, and no runtime reproduction is claimed.",
+      "reason_zh": "帖子（@women5200，2026-10-16）未写明项目名称，但所附图片显示的是腕映（WristBeam）看板，而固定版本的 WristBeam 仓库与报告内容一致：一款通过蓝牙连接佳明手表的 Mac 菜单栏配套应用，并可选择启用本地 MCP 访问。其源码注释记录了依据自备佳明 Android 安装包及社区参考资料独立实现的 GFDI 协议。映射覆盖该实现；设备验证仅涵盖一款型号，也不代表独立运行复现。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111155441077977138",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/README.md",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDISession.swift",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDICodec.swift",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/docs/DEVICES.md",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/VERIFICATION.md",
+        "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/docs/developer/API.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "wristbeam-garmin-watch-protocol-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-three-open-tool-apps-report",
@@ -7788,12 +7809,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111156533002227870"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@automatedmarktr, 2026-10-16) says the account used REA to build three apps from three free open-source tools: a screen recorder and editor, a screenshot markup tool, and dictation with meeting notes, with install steps to follow. Its only attachment is an image, the public post API exposes no follow-up, it names neither the source tools nor the resulting apps, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@automatedmarktr，2026-10-16）称该账号用 REA 基于三款免费开源工具做出了三个应用：录屏与剪辑工具、截图标注工具，以及语音听写与会议记录工具，并称随后附上安装步骤。帖子唯一的附件是一张图片，公开帖子接口也未显示任何后续帖子；帖子既未说明所用的源工具，也未说明做出的应用，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111156533002227870"
+      ],
       "catalog_matches": []
     },
     {
@@ -7849,12 +7872,15 @@
         "https://x.com/i/status/2111169026160480290",
         "https://x.com/i/status/2111169367451054216"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two replies (@midmachiavelli, 2026-10-16) say the author got a decompiled version of the firmware for his LmDrum working, that Claude was getting along with Ghidra on its own, and that it then stopped and declined to continue. They name no firmware version and link no decompiled output, build or notes, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a brief account of an interrupted effort, not a documented reconstruction.",
+      "reason_zh": "两条回复（@midmachiavelli，2026-10-16）称，作者已让自己 LmDrum 的反编译固件运行起来，Claude 能独立配合 Ghidra 工作，但随后在某一阶段停下并拒绝继续。回复未说明固件版本，也没有链接反编译输出、构建或笔记，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是对一次中断工作的简短自述，而非有记录的重建。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111169026160480290",
+        "https://x.com/i/status/2111169367451054216"
+      ],
       "catalog_matches": []
     },
     {
@@ -7869,12 +7895,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111170587792208361"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@sweis, 2026-10-16) says Claude also reverse engineered the NBS’s 1977 DES S-box test vectors and determined that they were generated on a PDP-11 running Unix V6 using rand(). It quotes his post linking Anthropic’s 2026-10-16 article on ECDSA curve origins, which does not mention DES, and neither his homepage repository nor his other public GitHub repositories hold a DES write-up. Retain the lead without a catalog mapping; the DES finding has no published method or data to review.",
+      "reason_zh": "帖子（@sweis，2026-10-16）称，Claude 还逆向分析了美国国家标准局（NBS）1977 年的 DES S 盒测试向量，并判断它们是在运行 Unix V6 的 PDP-11 上用 rand() 生成的。帖子引用了作者另一条链接 Anthropic 2026-10-16 发布的 ECDSA 曲线来源文章的帖子，但该文章未提及 DES；作者的个人主页仓库及其他公开 GitHub 仓库中也没有关于 DES 的文章。保留此线索而不建立目录映射；这一 DES 发现没有公开的方法或数据可供核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111170587792208361",
+        "https://www.anthropic.com/research/ecdsa-curve-origins"
+      ],
       "catalog_matches": []
     },
     {
@@ -14979,18 +15008,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 308
+      "already-curated": 158,
+      "insufficient-evidence": 131,
+      "pending": 302
     },
     "units_by_state": {
-      "already-curated": 156,
-      "insufficient-evidence": 126,
-      "pending": 307
+      "already-curated": 157,
+      "insufficient-evidence": 131,
+      "pending": 301
     },
-    "primary_reviewed_units": 222,
-    "catalog_linked_occurrences": 168,
-    "distinct_resource_ids": 162,
+    "primary_reviewed_units": 228,
+    "catalog_linked_occurrences": 169,
+    "distinct_resource_ids": 163,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

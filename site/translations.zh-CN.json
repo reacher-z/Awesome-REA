@@ -2489,5 +2489,15 @@
       "许多工具会改变目标进程或调试器状态：写入和修补内存、汇编指令、写寄存器、分配内存、挂起线程、设置断点命令以及执行任意调试器命令。DumpMemory 和 DumpModule 会把文件写入磁盘，OEP 检测和模块转储面向加壳的可执行文件。",
       "采用 MIT 许可。README 将用途限定于经授权的逆向工程、恶意软件分析、安全研究和教学。本次未运行插件、调试会话或任何目标程序，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "wristbeam-garmin-watch-protocol-case": {
+    "name": "WristBeam：为 Mac 配套应用重建佳明手表协议",
+    "requirements": [
+      "审阅版本为 VERSION 0.3.7 及未发布的改动。需要 macOS 13+、已关闭心率广播的佳明手表；使用云端功能时，还需通过佳明官方页面登录佳明中国或国际账号。本地模式会暂停所有佳明云端访问。不支持应用层加密、原生 MLR／CoreTransfer 和桌面小组件，Mac 休眠时无法同步。",
+      "协议源码注释称，GFDI 分帧（COBS、CRC-16）、多链路注册、设备信息、文件目录与传输、电池状态及账号身份字段均以 Swift 独立实现，并逐项对应自备佳明 Android 安装包中的具名类。Gadgetbridge、garmin-bridge 和 garmin-ble 被列为相互印证的线上协议观察资料，仅作参考而未移植。所审阅文件树不含 APK 或反编译清单；云端历史数据使用 Connect 客户端接口，开发者指南说明这些接口并非佳明公开的 API 约定。",
+      "构建需要 macOS 13+、Swift 5.9+ 和 Command Line Tools；原生 swift test 及 CodeQL 分析需要完整 Xcode，由 CI 提供。CONTRIBUTING 列出了代码检查、本地化、密钥扫描、发布流水线及核心回归脚本。发布包为临时（ad hoc）签名，未经 Apple 公证。",
+      "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
+      "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
+    ]
   }
 }

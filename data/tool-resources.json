@@ -5786,5 +5786,45 @@
       "https://github.com/duty1g/x64dbg-mcp-server/blob/18be30ab417a371fd441de68d7252d2bc1830f11/LICENSE",
       "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.6"
     ]
+  },
+  {
+    "id": "wristbeam-garmin-watch-protocol-case",
+    "name": "WristBeam: reconstructing Garmin’s watch protocol for a Mac companion",
+    "url": "https://github.com/kongdayan/wristbeam",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Implements a Garmin watch companion as a native macOS menu-bar app that pairs over Bluetooth, receives live health notifications and original FIT files, and can upload them to Garmin Connect. Source comments attribute its GFDI framing, handshake, file-transfer and status fields to analysis of a supplied Garmin Android package, cross-checked against community implementations such as Gadgetbridge. Device verification covers one watch model, and the opt-in MCP and HTTP interfaces expose only locally cached data.",
+    "description_zh": "以原生 macOS 菜单栏应用实现佳明手表的配套客户端：通过蓝牙配对，接收实时健康通知和原始 FIT 文件，并可上传至 Garmin Connect。源码注释称，GFDI 分帧、握手、文件传输和状态字段依据对一个自备佳明 Android 安装包的分析实现，并与 Gadgetbridge 等社区实现相互核对。设备验证仅涵盖一款手表；可选启用的 MCP 与 HTTP 接口只提供本地缓存的数据。",
+    "evidence_url": "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at VERSION 0.3.7 plus unreleased changes. It needs macOS 13+, a Garmin watch prepared with heart-rate broadcast off, and, for cloud features, a Garmin China or Global account signed in through Garmin’s own page; a local mode pauses all Garmin cloud access. Application-level encryption, native MLR/CoreTransfer and desktop widgets are unsupported, and a sleeping Mac cannot sync.",
+      "Protocol source comments describe an independent Swift implementation of GFDI framing (COBS, CRC-16), multilink registration, device information, file directories and transfers, battery status and account-identity fields, each tied to named classes of a supplied Garmin Android package. Gadgetbridge, garmin-bridge and garmin-ble are cited as corroborating wire observations that were consulted, not ported. The reviewed tree contains no APK or decompiled listing; cloud history uses Connect client endpoints that the developer guide says are not a published Garmin API contract.",
+      "Building needs macOS 13+, Swift 5.9+ and Command Line Tools; native swift test and CodeQL analysis need full Xcode, which CI supplies. CONTRIBUTING lists lint, localization, secret-scan, release-pipeline and core regression scripts. Release packages are ad hoc signed and not Apple notarized.",
+      "The device matrix marks pairing, fresh notifications, original FIT download, China upload and daily charts verified only for an Instinct 2 Solar on 2026-10-13, with firmware unrecorded. Other Instinct, fēnix, epix, Forerunner, Venu and vívoactive models and real Global uploads remain unverified. VERIFICATION.md records regression counts run through Command Line Tools rather than full XCTest; this review read the sources and did not run the app or a watch.",
+      "MIT covers the project, which says it is not affiliated with Garmin; Garmin services, the Android package, watch firmware and health data keep their own terms. MCP, the HTTP/HTTPS API and webhooks are off until enabled. The reviewed sources establish no AI or REA attribution for building the app."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDISession.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDICodec.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDIFiles.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDIBattery.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Sources/GarminBar/Protocol/GFDICoreIdentity.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/docs/DEVICES.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/VERIFICATION.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/docs/developer/API.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/docs/developer/WATCH-REQUESTS.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CONTRIBUTING.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/Package.swift",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/VERSION",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
+      "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
+    ]
   }
 ]
