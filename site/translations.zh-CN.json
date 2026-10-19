@@ -3521,5 +3521,14 @@
       "输入的 .pyc 或 .pyo 文件由使用者提供；它不能直接反编译 Py2EXE 生成的可执行文件，这类打包程序中的字节码需先行提取。--syntax-verify 选项只检查输出是否为合法的 Python 语法，因此 README 建议用其他版本的 uncompyle6 或 pycdc 等其他反编译器交叉核对。恢复出的源码仍受原程序权利人的权利约束。",
       "pyproject.toml 声明采用 GPL-3.0-or-later，COPYING 收录 GPL-3.0 全文。本次未安装或反编译任何内容。"
     ]
+  },
+  "ret-sync": {
+    "name": "ret-sync 调试器与反汇编器同步插件",
+    "requirements": [
+      "没有任何发布版本对应所审阅的 master 分支提交（2026-02-15）：GitHub 上唯一的发布是 2022 年的 Binary Ninja 社区版构建；WinDbg、OllyDbg、OllyDbg2 和 x64dbg 的预编译插件由 Azure DevOps 流水线产出；ext_ghidra/dist 存放按 Ghidra 版本区分的扩展压缩包，最新一个对应 Ghidra 11.4.2。每个 Ghidra 压缩包只支持文件名中标明的 Ghidra 版本，其他版本需针对本地安装用 Gradle 构建。",
+      "IDA 插件需要 IDA 9.2+，更早的 IDA 版本需使用 ida9.2 标签之前的历史版本；Binary Ninja 插件需要 Binary Ninja 2.2+ 和 Python 3，并被标为实验性；WinDbg 扩展通过 Visual Studio 解决方案构建，README 报告 Visual Studio 2017 和 2026 均可成功构建；IDA 和 GDB 插件需要 Python 2.7+ 或 Python 3。IDA、Binary Ninja 和 WinDbg 需另行获取，用户需自备二进制文件和调试目标。",
+      "README 说明调试器与反汇编器之间没有任何认证或加密，自修改代码不在支持范围内；其列出的测试版本较旧（Python 2.7/3.7、IDA 7.7、Ghidra 10.1.1、Binary Ninja 3.0、GDB 8.1、LLDB 310.2.37），并提到 GDB 调试多线程程序时存在信号问题、WinDbg 可能存在竞态条件。远程调试和模块名不一致等场景通过可选的 .sync INI 文件配置。",
+      "采用 GPL-3.0-or-later 许可，Binary Ninja 插件采用 MIT 许可。ret-sync 是 Quarkslab qb-sync 的分支。本条目未实际同步任何调试会话。"
+    ]
   }
 }

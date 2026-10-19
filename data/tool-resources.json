@@ -9115,5 +9115,35 @@
       "https://github.com/rocky/python-uncompyle6/releases/tag/3.9.3",
       "https://pypi.org/project/uncompyle6/3.9.3/"
     ]
+  },
+  {
+    "id": "ret-sync",
+    "name": "ret-sync",
+    "url": "https://github.com/bootleg/ret-sync",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Reverse-Engineering Tools SYNChronization: plugins that keep IDA, Ghidra or Binary Ninja graph and decompiler views following a live WinDbg, GDB, LLDB, OllyDbg 1.10/2 or x64dbg session, rebasing addresses on the fly so ASLR does not break the mapping. Debugger commands push comments, labels, rebased addresses and command output into the disassembler database and resolve symbols from it, while disassembler hotkeys set breakpoints and step the debugger; several databases can be synced at once and the two sides may run on different hosts. A standalone Python library offers the same position syncing to custom tracing tools.",
+    "description_zh": "ret-sync 即“逆向工程工具同步”：一组插件，让 IDA、Ghidra 或 Binary Ninja 的图形与反编译视图跟随运行中的 WinDbg、GDB、LLDB、OllyDbg 1.10/2 或 x64dbg 调试会话，并实时重定基址，使 ASLR 不影响地址对应。调试器命令可将注释、标签、重定基后的地址和命令输出写入反汇编数据库，并从中解析符号；反汇编器中的快捷键则可设置断点、单步执行调试器。可同时同步多个数据库，两端也可运行在不同主机上。独立的 Python 库可为自定义跟踪工具提供同样的位置同步。",
+    "evidence_url": "https://github.com/bootleg/ret-sync/blob/60e7b0fd1bea7bad44da7688801b2bd12fb02040/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No release tracks the reviewed master commit (2026-02-15): the only GitHub release is a 2022 Binary Ninja community build, prebuilt WinDbg, OllyDbg, OllyDbg2 and x64dbg plugins come from an Azure DevOps pipeline, and ext_ghidra/dist holds per-version Ghidra extension archives, the newest for Ghidra 11.4.2. Each Ghidra archive supports only the Ghidra version in its file name; other versions are built with Gradle against a local installation.",
+      "The IDA plugin requires IDA 9.2+, with older IDA versions served by history before the ida9.2 tag; the Binary Ninja plugin needs Binary Ninja 2.2+ with Python 3 and is marked experimental; the WinDbg extension is built from a Visual Studio solution, reported working with Visual Studio 2017 and 2026; the IDA and GDB plugins need Python 2.7+ or Python 3. IDA, Binary Ninja and WinDbg are obtained separately, and users supply their own binaries and debugging targets.",
+      "The README states there is no authentication or encryption between debugger and disassembler and that self-modifying code is out of scope; its tested-versions list is older (Python 2.7/3.7, IDA 7.7, Ghidra 10.1.1, Binary Ninja 3.0, GDB 8.1, LLDB 310.2.37), and it notes GDB signal issues with multi-threaded debugging and a possible WinDbg race condition. Remote and renamed-module setups are configured through an optional .sync INI file.",
+      "GPL-3.0-or-later; the Binary Ninja plugin is MIT-licensed. ret-sync is a fork of Quarkslab's qb-sync. No debugging session was synchronized for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bootleg/ret-sync/blob/60e7b0fd1bea7bad44da7688801b2bd12fb02040/README.md#L102-L113",
+      "https://github.com/bootleg/ret-sync/blob/60e7b0fd1bea7bad44da7688801b2bd12fb02040/README.md#L519-L571",
+      "https://github.com/bootleg/ret-sync/blob/60e7b0fd1bea7bad44da7688801b2bd12fb02040/README.md#L1060-L1115",
+      "https://github.com/bootleg/ret-sync/tree/60e7b0fd1bea7bad44da7688801b2bd12fb02040/ext_ghidra/dist",
+      "https://github.com/bootleg/ret-sync/blob/60e7b0fd1bea7bad44da7688801b2bd12fb02040/COPYING",
+      "https://github.com/bootleg/ret-sync/releases/tag/ext_bn_community_release_v0.1.0"
+    ]
   }
 ]
