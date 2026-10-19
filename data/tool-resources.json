@@ -15512,5 +15512,41 @@
       "https://github.com/OpenAWE-Project/OpenAWE/tree/cce15d3bc289df31522d778fb8e99180e6752b58/tools",
       "https://github.com/OpenAWE-Project/OpenAWE/blob/cce15d3bc289df31522d778fb8e99180e6752b58/data/male_player_class.xml"
     ]
+  },
+  {
+    "id": "cps2recomp-arcade-static-recomp-case",
+    "name": "CPS-2 Recomp: static recompilation of Capcom CPS-2 and CPS-1 arcade games",
+    "url": "https://github.com/tmcleroy/cps2recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the 68000 game programs and Z80 sound programs of Capcom arcade boards ahead of time into C++ and runs them on a machine model written for the project, with an interpreter for code that has not been translated. One launcher covers Street Fighter Alpha and Alpha 2, Super Puzzle Fighter II Turbo, Vampire Savior and its variants, Vampire Hunter 2, Alien vs. Predator and the CPS-1 Cadillacs and Dinosaurs, adding training modes, widescreen and three-player options. Translated code is generated from the user’s own ROM sets, and a check build compares it block by block with the interpreter.",
+    "description_zh": "将 Capcom 街机基板上的 68000 游戏程序与 Z80 声音程序预先转译为 C++，并在为本项目编写的机器模型上运行，尚未转译的代码则交给解释器执行。一个启动器涵盖《街头霸王 Alpha》及《Alpha 2》、《超级益智战士 II Turbo》、《恶魔战士：救世主》及其变体、《恶魔猎人 2》、《异形大战铁血战士》以及 CPS-1 平台的《恐龙新世纪》，并加入训练模式、宽屏和三人游戏选项。转译代码由使用者自有的 ROM 套装生成，专门的检查构建会逐个代码块将其与解释器对比。",
+    "evidence_url": "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main (2026-10-19), eight commits after release v0.4.0-beta.3, published the same day for macOS 13+, Linux x86_64 including Steam Deck, and 64-bit Windows 10/11. README labels the collection beta: the fighting games play from start to ending, the beat-’em-ups have been run through their first stages under automated play, and few machines and controllers have been tried; Street Fighter Alpha has no training mode or widescreen yet.",
+      "Each game needs the user’s own copy of one specific MAME-style ROM set, such as sfa2u (USA 960430) or vsavj (Japan 970519), with its key file for CPS-2 titles; each game.cfg lists the expected files and checksums. THIRD_PARTY_NOTICES states that nothing from any game or board is in the repository and that translated code is made on the machine of someone who has the ROM set; RELEASING.md adds that each released game program contains that game’s translated and compiled 68000 and Z80 code, a risk the maintainer accepted on 2026-10-12.",
+      "Source builds use make with CMake, Ninja, Python 3 and SDL 3.4.16 or later: Apple clang on macOS, GCC 13+ or Clang 16+ with CMake 3.28+ on Linux, and MinGW-w64 cross-compilation or an MSYS2 UCRT64 shell for Windows. The first build writes the deciphered program, and an explore step of about ten minutes finds code through automated play before translating it; code it does not find keeps running on the interpreter.",
+      "docs/VERIFYING.md documents a check build that runs each translated block beside the interpreter and stops at the first difference in registers, flags, cycles, control flow or memory writes, plus per-frame state-hash comparisons between run modes; the optional arcade timing was compared with a simulated jtcps2 model of the board. CI runs an audit for committed game files, keys and unlisted third-party code, and builds and starts each platform’s package with a stand-in game and no game code. This collection ran none of these checks.",
+      "The project is GPL-3.0; machine/cps2crypt.cpp is MAME’s BSD-3-Clause CPS-2 cipher code, the launcher descends from wiiparty-recomp (GPL-3.0-or-later) through the author’s recomp-common, and sound/driver.cpp is a hand rewrite of Capcom’s QSound sound program that reads its tables and samples from the user’s ROMs. Capcom and the other rights holders keep their game rights. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/THIRD_PARTY_NOTICES.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/RELEASING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/BUILDING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/VERIFYING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/docs/TIMING.md",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/games/sfa2/game.cfg",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/tools/audit.sh",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/.github/workflows/ci.yml",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/.gitignore",
+      "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/LICENSE",
+      "https://github.com/tmcleroy/cps2recomp/releases/tag/v0.4.0-beta.3"
+    ]
   }
 ]

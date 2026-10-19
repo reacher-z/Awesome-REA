@@ -5090,5 +5090,15 @@
       "每个 CI 任务都会用 ctest 运行 GoogleTest 单元测试，覆盖归档读取器、数据流、压缩、XML 与 TOML 解析以及几何工具，然后用 cpack 打包。没有测试读取游戏数据或与原版可执行文件对比行为；README 中的截图展示的是《美国梦魇》的一个场景。本合集未构建或运行 OpenAWE。",
       "README 规定代码采用 GPL-3.0-or-later，3rdparty 中的库除外，这些库保留各自的许可证。Alan Wake 系列及其数据仍归权利人所有。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "cps2recomp-arcade-static-recomp-case": {
+    "name": "CPS-2 Recomp：Capcom CPS-2 与 CPS-1 街机游戏的静态重编译",
+    "requirements": [
+      "审阅版本为 main（2026-10-19），比同日发布的 v0.4.0-beta.3 多八个提交；该版面向 macOS 13+、含 Steam Deck 在内的 Linux x86_64 以及 64 位 Windows 10／11。README 将合集标为测试版：格斗游戏可从开场打到结局，清版动作游戏在自动游玩下运行过前几关，测试过的机器和手柄仍很少；《街头霸王 Alpha》尚无训练模式和宽屏。",
+      "每款游戏都需要使用者自有的一套指定 MAME 式 ROM 套装，例如 sfa2u（美版 960430）或 vsavj（日版 970519），CPS-2 游戏还需相应的密钥文件；各游戏的 game.cfg 列出了预期文件及校验和。THIRD_PARTY_NOTICES 声明仓库中不含任何来自游戏或基板的内容，转译代码只在持有 ROM 套装者的机器上生成；RELEASING.md 另说明，每个发布的游戏程序都包含该游戏经转译并编译的 68000 与 Z80 代码，维护者已于 2026-10-12 接受这一风险。",
+      "从源码构建使用 make，并需 CMake、Ninja、Python 3 和 SDL 3.4.16 或更新版本：macOS 上用 Apple clang，Linux 上用 GCC 13+ 或 Clang 16+ 及 CMake 3.28+，Windows 则通过 MinGW-w64 交叉编译或 MSYS2 UCRT64 环境构建。首次构建会写出解密后的程序，随后约十分钟的探索步骤通过自动游玩找出代码再进行转译；未找到的代码仍由解释器执行。",
+      "docs/VERIFYING.md 记录了一种检查构建：每个转译代码块都与解释器并行执行，一旦寄存器、标志位、周期数、控制流或内存写入出现差异即停止；此外还在不同运行模式之间逐帧比较状态哈希。可选的街机时序曾与模拟的 jtcps2 基板模型对比。CI 会审计仓库中是否提交了游戏文件、密钥或未列明的第三方代码，并以不含游戏代码的替身游戏构建和启动各平台安装包。本合集未运行其中任何检查。",
+      "项目采用 GPL-3.0；machine/cps2crypt.cpp 是 MAME 中采用 BSD-3-Clause 的 CPS-2 加密算法代码，启动器经由作者的 recomp-common 源自 wiiparty-recomp（GPL-3.0-or-later），sound/driver.cpp 则是对 Capcom QSound 声音程序的手工重写，其数据表与采样均从使用者的 ROM 中读取。Capcom 及其他权利人仍保有游戏权利。所审阅的资料未确立任何 AI 或 REA 的使用，也不声称复现了运行结果。"
+    ]
   }
 }
