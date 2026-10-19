@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 409](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-409-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 410](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-410-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (45) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (45) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
 
 **论文与工作流**
 
@@ -2121,6 +2121,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   NCC Group 推出的工具集，可在没有对应 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器返回报文数据，以及根据线路类型尽力推测生成、可编辑的类型定义；分析者可以为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode\_raw 做不到的。它提供 Python 库及 bbpb 命令行工具、基于 Jython 的 Burp Suite 扩展和 mitmproxy 插件，README 说明它最初用于在移动应用渗透测试中修改报文。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/blackbox-protobuf/)
+
+- [**furiousMAC Apple Continuity 协议逆向与解析器**](https://github.com/furiousMAC/continuity)
+
+  针对 Apple 专有 Continuity 蓝牙低功耗广播的逆向工程笔记与 Wireshark 解析器，是作者 PETS 2019 隐私研究的延续。各报文页面记录了 AirDrop、Handoff、Proximity Pairing、Nearby Info、Find My 等 14 种报文类型的字段布局和观测到的取值；解析器替换 Wireshark 的 packet-bthci\_cmd.c，使捕获到的广播能解码为具名的 btcommon.apple 字段。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/furiousmac-continuity/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP · 智能体与 MCP
