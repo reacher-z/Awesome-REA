@@ -3376,5 +3376,15 @@
       "IL2CPP 二进制及与之匹配的 global-metadata.dat 由分析者自行提供；IPA 中的可执行文件须事先解密，README 也说明加壳、加密或混淆的 IL2CPP 文件不是其预期输入。README 警告，加载加壳的 PE 文件会执行该 DLL 的入口点和初始化代码，因此不应加载不可信的 DLL，也绝不要以管理员身份运行本工具。",
       "从递归克隆的源码用 dotnet publish 构建，目标框架为 .NET Core 3.1；命令行版本可为 Windows、macOS 和 Linux 构建，基于 WPF 的图形界面仅限 Windows，插件需通过 get-plugins 脚本另行获取。采用 AGPL-3.0 许可；Bin2Object 子模块以及 dnlib、CxxDemangler 等库保留各自的许可。针对特定混淆的加载插件和 DLL 注入项目输出不在本条目的分析范围内。本次未分析任何二进制文件，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "whatsapp-web-reveng-legacy-protocol-case": {
+    "name": "whatsapp-web-reveng：记录旧版 WhatsApp Web 协议",
+    "requirements": [
+      "审阅对象为 2024-04-22 的 master 最新提交，该提交只修改了 README；后端和 Node 中继最后修改于 2021 年 8 月，protobuf 结构定义最后修改于 2020 年 3 月，没有发布版本或标签。README 描述的配对流程由手机提供电量等会话信息，也就是 WhatsApp 2021 年 7 月工程博客所说被多设备架构取代的手机镜像式配套设备模式。2022 年的一个 issue 报告扫描二维码后服务器返回 upgrade_md_prod 命令；本次未测试该流程目前能否连接。",
+      "使用时需要用户自己的 WhatsApp 账号和手机来扫描配对码，后端会连接 WhatsApp 服务器。protobuf 定义由一个辅助脚本解析公开的 WhatsApp Web JavaScript 包生成。README 的任务清单仍把二进制解码错误增多、二进制报文写入以及更易用的界面列为待完成工作。",
+      "直接安装需要 Node.js 8+ 和 Python 2.7，以及 websocket-client、simple-websocket-server、curve25519-donna、pycrypto（requirements.txt 中为 pycryptodome）、pyqrcode 和 protobuf；Windows 还需要 Visual C++ for Python 9.0 和仓库提供的头文件。项目提供 shell.nix（Python 2.7、Node.js 13）和 Dockerfile，npm start 会同时启动后端、Node API 和前端。README 说明 Docker 版本还不够稳定，不适合生产部署。",
+      "项目没有测试套件：package.json 的 test 脚本只是启动各组件。文档给出的正确性检查是对服务器密钥数据和每条二进制报文做 HMAC 校验，另有浏览器内 JavaScript 演示在扫描二维码后输出解密后的报文。本次来源核查没有建立会话，也没有解码任何流量。",
+      "采用 MIT 许可（LICENSE、package.json）。README 声明项目与 WhatsApp 无关、未获其认可，使用风险自负，并附有加密软件出口声明；WhatsApp 的服务和条款另行适用。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }

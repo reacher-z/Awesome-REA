@@ -8583,5 +8583,42 @@
       "https://github.com/djkaty/Il2CppInspector/releases/tag/2021.1",
       "https://github.com/djkaty/Il2CppInspector/compare/2021.1...116c6355e7ee3656eab85ca753f913d428abc7a3"
     ]
+  },
+  {
+    "id": "whatsapp-web-reveng-legacy-protocol-case",
+    "name": "whatsapp-web-reveng: documenting the legacy WhatsApp Web protocol",
+    "url": "https://github.com/sigalor/whatsapp-web-reveng",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "website"
+    ],
+    "description_en": "Documents and reimplements the WebSocket protocol WhatsApp Web used while browser sessions mirrored a paired phone: QR pairing, Curve25519/HKDF key setup, AES/HMAC-protected binary messages, the token-based node encoding and end-to-end media encryption. A Python backend, Node.js relay and browser front end decode a logged-in session’s messages into inspectable JSON, and the README lists independent reimplementations such as Baileys and go-whatsapp. This is an older protocol generation from before WhatsApp’s 2021 multi-device architecture, not a description of current WhatsApp Web.",
+    "description_zh": "记录并重新实现 WhatsApp Web 在浏览器会话镜像已配对手机时期使用的 WebSocket 协议：二维码配对、Curve25519/HKDF 密钥建立、经 AES/HMAC 保护的二进制报文、基于字符串令牌表的节点编码，以及端到端媒体加密。Python 后端、Node.js 中继和浏览器前端把已登录会话的报文解码成可查看的 JSON，README 还列出了 Baileys、go-whatsapp 等独立再实现。这是 WhatsApp 2021 年多设备架构之前的旧一代协议，不能当作对当前 WhatsApp Web 的描述。",
+    "evidence_url": "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2024-04-22 master head, a README-only change; the backend and Node relay last changed in August 2021, the protobuf schema in March 2020, and there are no releases or tags. The README’s pairing flow has the phone supply session details such as its battery level, the phone-mirroring companion model that WhatsApp’s July 2021 engineering post says multi-device replaces. A 2022 issue reports the server answering a QR scan with an upgrade_md_prod command; whether the flow still connects was not tested.",
+      "Use needs the user’s own WhatsApp account and phone to scan the pairing code, and the backend connects to WhatsApp’s servers. The protobuf definitions come from a helper script that parses the public WhatsApp Web JavaScript bundle. The README’s task list still names growing binary-decoding errors, writing binary messages and a less technical interface as open work.",
+      "Bare-metal setup needs Node.js 8+ and Python 2.7 with websocket-client, simple-websocket-server, curve25519-donna, pycrypto (pycryptodome in requirements.txt), pyqrcode and protobuf; Windows also needs Visual C++ for Python 9.0 and a supplied header. A shell.nix (Python 2.7, Node.js 13) and a Dockerfile are provided, and npm start runs the backend, Node API and front end together. The README says the Docker version is not stable enough for production.",
+      "There is no test suite: the package.json test script only starts the components. The documented correctness checks are HMAC validation of the server’s key data and of each binary message, and an in-browser JavaScript demo prints decrypted messages after a QR scan. This source review opened no session and decoded no traffic.",
+      "MIT (LICENSE, package.json). The README states the project is unaffiliated with and not endorsed by WhatsApp, that use is at the user’s own risk, and adds a cryptography export notice; WhatsApp’s services and terms apply separately. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/backend/whatsapp.py",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/backend/whatsapp_binary_reader.py",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/doc/spec/def.proto",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/doc/spec/protobuf-extractor/index.js",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/package.json",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/requirements.txt",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/shell.nix",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/Dockerfile",
+      "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/LICENSE",
+      "https://github.com/sigalor/whatsapp-web-reveng/issues/372",
+      "https://engineering.fb.com/2021/07/14/security/whatsapp-multi-device/"
+    ]
   }
 ]
