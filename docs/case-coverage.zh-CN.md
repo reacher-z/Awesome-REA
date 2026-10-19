@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 160 | 159 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 305 | 304 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 126 | 126 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 299 | 298 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 132 | 132 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 171 个出现项含目录链接；共关联 165 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 225 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 231 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -113,10 +113,16 @@
 | ClearSpace: a CleanMyMac-inspired native cleanup app | 证据不足 | [来源](https://x.com/iceman_shen/status/2109665812017746132) |
 | Home devices: a reported desktop controller | 证据不足 | [来源](https://x.com/Jumpan1111/status/2109664718499762606) |
 | Discontinued accounting app: blocked by encryption | 证据不足 | [来源](https://x.com/liguozzz/status/2109671680977367085) |
+| REA analysis: a binary prompt-injection test idea | 证据不足 | [来源](https://x.com/riyoway/status/2109670989319868863) |
 | Classic shooters: reported AI-assisted browser ports | 证据不足 | [来源](https://x.com/i/status/2109639780577190171) |
+| Obsidian: a GPT-selected reconstruction attempt | 证据不足 | [来源](https://x.com/tokyo10086/status/2109676911500951649) |
+| Web Flow: a REA-assisted REST specification report | 证据不足 | [来源](https://x.com/GeekCatX/status/2109689282336346575) |
 | Nanolathe：附研究文档的 Total Annihilation 引擎重实现 | 已收录 | [来源](https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md) |
+| Android priv-app: GPT-assisted permission inspection | 证据不足 | [来源](https://x.com/sisiisthinking/status/2109711257779765741) |
 | cooler-lcd：Thermalright 显示屏协议实现 | 已收录 | [来源](https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md) |
+| Camera firmware: a Codex-driven VM boot investigation | 证据不足 | [来源](https://x.com/elliehuxtable/status/2109715839117316150) |
 | Helm Chart API v2: an AI-assisted specification draft | 待核查 | [来源](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
+| Mobile game interactions: Codex and REA evidence mapping | 证据不足 | [来源](https://x.com/Steven_Soto/status/2109721540245782843) |
 | Star Fox and Sonic CD: reported AI-assisted native ports | 待核查 | [来源](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
 | AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | 证据不足 | [来源](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer：在 Linux 上重建平台适配层 | 已收录 | [来源](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |

@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 160 | 159 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 305 | 304 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 126 | 126 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 299 | 298 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 132 | 132 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 171 occurrences have catalog links. They reference 165 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 225 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 231 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -113,10 +113,16 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | ClearSpace: a CleanMyMac-inspired native cleanup app | Insufficient evidence | [Source](https://x.com/iceman_shen/status/2109665812017746132) |
 | Home devices: a reported desktop controller | Insufficient evidence | [Source](https://x.com/Jumpan1111/status/2109664718499762606) |
 | Discontinued accounting app: blocked by encryption | Insufficient evidence | [Source](https://x.com/liguozzz/status/2109671680977367085) |
+| REA analysis: a binary prompt-injection test idea | Insufficient evidence | [Source](https://x.com/riyoway/status/2109670989319868863) |
 | Classic shooters: reported AI-assisted browser ports | Insufficient evidence | [Source](https://x.com/i/status/2109639780577190171) |
+| Obsidian: a GPT-selected reconstruction attempt | Insufficient evidence | [Source](https://x.com/tokyo10086/status/2109676911500951649) |
+| Web Flow: a REA-assisted REST specification report | Insufficient evidence | [Source](https://x.com/GeekCatX/status/2109689282336346575) |
 | Nanolathe: a documented Total Annihilation engine reimplementation | Already curated | [Source](https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md) |
+| Android priv-app: GPT-assisted permission inspection | Insufficient evidence | [Source](https://x.com/sisiisthinking/status/2109711257779765741) |
 | cooler-lcd: a Thermalright display protocol implementation | Already curated | [Source](https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md) |
+| Camera firmware: a Codex-driven VM boot investigation | Insufficient evidence | [Source](https://x.com/elliehuxtable/status/2109715839117316150) |
 | Helm Chart API v2: an AI-assisted specification draft | Pending | [Source](https://github.com/mattfarina/specs/blob/7d0395726d712e654a9aaf167603e82007811517/charts/v2.md) |
+| Mobile game interactions: Codex and REA evidence mapping | Insufficient evidence | [Source](https://x.com/Steven_Soto/status/2109721540245782843) |
 | Star Fox and Sonic CD: reported AI-assisted native ports | Pending | [Source](https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md) |
 | AYN Odin 2 Portal: Codex-assisted native Omarchy bring-up | Insufficient evidence | [Source](https://github.com/TechLuddite/omarchy-mobile-odin2/blob/00d11efc018971f6bab711e7952ff184cad333c2/README.md) |
 | Virtual Desktop Streamer: rehosting the platform layer on Linux | Already curated | [Source](https://github.com/cudanexus/vd-streamer-linux/blob/e65c302f13639f044742bdc4951ab1a424c1c929/README.md) |
