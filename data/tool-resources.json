@@ -8029,5 +8029,37 @@
       "https://github.com/2akouwu/reverify/releases/tag/v0.11.0",
       "https://pypi.org/project/reverify/0.10.0/"
     ]
+  },
+  {
+    "id": "rsdkv3-sonic-cd-decomp-case",
+    "name": "RSDKv3 Decompilation: Sonic CD (2011) on a reconstructed Retro Engine v3",
+    "url": "https://github.com/RSDKModding/RSDKv3-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Retro Engine v3, the engine behind the 2011 Sonic CD remaster, as a native C++ source port for Windows, Linux, macOS and Android. The engine runs the game's own scripts and assets from an official release, which the repository does not ship, and adds a mod loader, a settings file with remappable controls, support for the mobile versions' updated scripts and extra developer-menu debug keys. Its license describes the code as mostly functionally the same as the original rather than byte-matching; the same team's RSDKv5 decompilation is listed as a separate case.",
+    "description_zh": "重建 Retro Engine v3，即 2011 年 Sonic CD 重制版所用的引擎，作为可在 Windows、Linux、macOS 和 Android 上运行的原生 C++ 源码移植。引擎运行官方发行版中的游戏脚本和素材，仓库本身不附带这些内容；项目还加入了模组加载器、可重映射按键的设置文件、对移动版更新脚本的支持，以及更多开发者菜单调试快捷键。其许可证称代码大多在功能上与原作相同，而不是逐字节一致；同一团队的 RSDKv5 反编译另作独立案例收录。",
+    "evidence_url": "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls it a complete decompilation of Retro Engine v3; its license says the repository also contains original code and that most code is meant to be functionally the same as the specified RSDK version, so no byte-matching build is claimed. The RETRO_ORIGINAL_CODE option strips the custom code but, per the README and CMake file, cannot build a playable game. The reviewed commit is 19 commits after release 1.3.3 (2025-11-02), which attaches prebuilt Windows x86 and x64, Linux, macOS and Android builds of the engine.",
+      "It does not run without assets from an official Sonic CD release: the original Steam release, Sonic Origins on Steam, Epic or Switch, or the delisted iOS and Android versions. The engine loads the game's Data.rsdk datapack, and full-motion video works only with the original Steam release's video files. The FAQ notes that the Sonic Origins datafile uses the RSDKv5 datapack format and contains no music or sound effects, and that the Origins-only playable characters are blocked in release builds. The repository commits no game data or game scripts; the separate script decompilation is its own repository.",
+      "Clone recursively, because GitHub's source ZIPs omit the tinyxml2 and flatpak shared-modules submodules. CMake builds use Visual Studio with vcpkg (GLEW, SDL2, libogg, libtheora, libvorbis) on Windows, distribution packages on Linux and separate guides for macOS and Android; the tree also carries iOS, UWP and PS Vita project files that the README does not document, and the Switch and New 3DS ports are unofficial forks the project does not support.",
+      "CI builds Windows x86 and x64, Linux, macOS and Android binaries with RETRO_DISABLE_PLUS on. The project publishes no comparison with the original engine binaries; the FAQ says bugs present in official releases will mostly not be fixed and that menu buttons such as leaderboards and achievements stay unimplemented. This collection did not build or run it.",
+      "The custom RSDKv3/v4 Decompilation Source Code License v2 requires every prebuilt executable given to anyone to have DLC disabled by default, forbids commercial use and distributing game assets other than unique modded ones, requires crediting the original and decompilation developers, and binds forks to the same terms. It names Christian Whitehead as the original RSDK author and Rubberduckycooly and st×tic as the decompilation authors. Sega's game and assets keep their own rights; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/LICENSE.md",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/FAQ.md",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/CMakeLists.txt#L7-L17",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/.gitmodules",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/blob/c01fc0c360e8e35e791630407ea5c7a426718e54/.github/workflows/build.yml",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/tree/c01fc0c360e8e35e791630407ea5c7a426718e54/RSDKv3",
+      "https://github.com/RSDKModding/RSDKv3-Decompilation/releases/tag/1.3.3"
+    ]
   }
 ]

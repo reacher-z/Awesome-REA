@@ -3217,5 +3217,15 @@
       "主要基准测试把固定的教科书式 push rbp; mov rbp, rsp 序言猜测（而非实时模型）应用于系统二进制文件的入口点。BENCHMARK.md 报告该猜测在 71 个 Windows 11 文件中有 69 个被驳斥，且从未被误判为 VERIFIED；在 50 个 Windows 二进制文件上的 475 条已知错误断言中误判为 VERIFIED 的为 0。CI 在 Linux、Windows 和 macOS 上重复这两项检查，只要出现一次误判 VERIFIED 即失败。作者指出“N 次中 0 次”只给出错误率的上界，并不证明其为零。这些均为项目报告的结果，本合集未运行其中任何一项。",
       "采用 MIT 许可。SECURITY.md 将用途限定于获授权的工作，如恶意软件分析、CTF、互操作研究以及使用者拥有或获准分析的软件，并禁止规避使用者未拥有或未获许可软件的授权或复制保护。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "rsdkv3-sonic-cd-decomp-case": {
+    "name": "RSDKv3 Decompilation：在重建的 Retro Engine v3 上运行 Sonic CD（2011）",
+    "requirements": [
+      "README 称其为 Retro Engine v3 的完整反编译；其许可证说明仓库中也有原创代码，且大部分代码旨在与所指定 RSDK 版本在功能上相同，因此并不主张能构建逐字节一致的产物。RETRO_ORIGINAL_CODE 选项会移除自定义代码，但据 README 和 CMake 文件，这样无法构建出可玩的游戏。所审阅提交位于 1.3.3 版（2025-11-02）之后 19 个提交，该版本附带引擎的 Windows x86、x64、Linux、macOS 和 Android 预构建程序。",
+      "缺少官方发行版 Sonic CD 的素材便无法运行，素材可来自原版 Steam 版、Steam、Epic 或 Switch 上的 Sonic Origins，或已下架的 iOS 和 Android 版本。引擎读取游戏的 Data.rsdk 数据包，全动态影像只支持原版 Steam 版的视频文件。常见问题指出，Sonic Origins 的数据文件采用 RSDKv5 数据包格式，且不含音乐和音效；Origins 新增的可玩角色在发布版构建中会被屏蔽。仓库不含任何游戏数据或游戏脚本；脚本反编译另有独立仓库。",
+      "须递归克隆仓库，因为 GitHub 的源码 ZIP 不含 tinyxml2 和 flatpak shared-modules 子模块。CMake 构建在 Windows 上使用 Visual Studio 与 vcpkg（GLEW、SDL2、libogg、libtheora、libvorbis），在 Linux 上使用发行版软件包，macOS 和 Android 另有构建指南；源码树中还有 README 未说明的 iOS、UWP 和 PS Vita 工程文件，Switch 和 New 3DS 移植则是项目不提供支持的非官方分支。",
+      "CI 在开启 RETRO_DISABLE_PLUS 的情况下构建 Windows x86、x64、Linux、macOS 和 Android 版本。项目未公开与原版引擎二进制文件的对照结果；常见问题说明官方版本中已有的缺陷大多不会修复，排行榜和成就等菜单按钮也仍未实现。本合集未构建或运行该项目。",
+      "自定义的《RSDKv3/v4 反编译源码许可证 v2》要求提供给任何人的预构建可执行文件都必须默认关闭 DLC，禁止商业用途及分发独特模组素材以外的游戏素材，要求注明原作与反编译的开发者，并要求所有派生版本遵守同一许可。许可证注明原 RSDK 作者为 Christian Whitehead，反编译作者为 Rubberduckycooly 和 st×tic。Sega 的游戏和素材保留各自权利；所审阅来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
