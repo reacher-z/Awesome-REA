@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 331](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-331-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 171](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-171-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 332](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-332-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 171](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-171-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (155) · [应用](#app) (46)
-- [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
+- [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
 
@@ -1549,6 +1549,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/pwndbg/)
+
+- [**DynamoRIO 动态二进制插桩框架**](https://github.com/DynamoRIO/dynamorio)
+
+  运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dynamorio/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
