@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from open_graph import open_graph_meta
+from open_graph import open_graph_meta, website_reference
 
 STATUS_LABELS = {
     'conference-paper': ('Conference paper', '会议论文'),
@@ -284,6 +284,8 @@ def build_paper_pages(
                 *(scholarly_article(paper, language) for paper in ordered),
             ],
         }
+        # The directory belongs to the site that only the homepages define.
+        graph['@graph'][0]['isPartOf'] = website_reference(site_url)
         structured = json.dumps(graph, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
         icon_css = f'<link rel="stylesheet" href="{escape(icon_stylesheet_href, quote=True)}">' if use_pro else ''
         document = f'''<!doctype html>

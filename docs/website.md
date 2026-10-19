@@ -1,11 +1,11 @@
 # Website maintenance
 
-**Canonical address:** [https://awesomerea.org](https://awesomerea.org). The display name is **AwesomeREA.org**.
+**Canonical address:** [https://awesomerea.org](https://awesomerea.org). The display name is **AwesomeREA.org**. Search metadata uses one site name, **Awesome Reverse Engineering Anything**, with `AwesomeREA.org` and `Awesome REA` as alternate names in that order.
 
 ## Source and generated files
 
 - [site/](../site/) contains the dependency-free HTML, CSS, JavaScript, favicon and social image. Update the SVG and PNG together when the illustration changes.
-- [open_graph.py](../scripts/open_graph.py) writes the Open Graph and Twitter card tags for the homepage and every generated page, with the image type and size read from `social-card.png` and a localized description of the card as its alt text. The 404 page has no `og:url`.
+- [open_graph.py](../scripts/open_graph.py) writes the Open Graph and Twitter card tags for the homepage and every generated page, with `og:site_name` set to its `SITE_NAME`, with the image type and size read from `social-card.png` and a localized description of the card as its alt text. The 404 page has no `og:url`. The same module defines the WebSite node (`#website`): only the two homepages include it, and every other page's JSON-LD refers to it by `@id`. `validate_site.py` checks both against these constants.
 - [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json) are the resource sources. Keep bilingual descriptions, evidence links, prerequisites, review dates and target labels accurate.
 - [translations.zh-CN.json](../site/translations.zh-CN.json) supplies Chinese resource names and prerequisites. New records also need translations here.
 - [topics.i18n.json](../site/topics.i18n.json) supplies bilingual display labels for common repository topics. Canonical upstream topic IDs remain intact for links and exact filtering.

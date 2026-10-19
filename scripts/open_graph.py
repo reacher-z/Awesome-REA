@@ -5,6 +5,11 @@ from html import escape
 from pathlib import Path
 
 SOCIAL_CARD = Path(__file__).resolve().parents[1] / 'site' / 'social-card.png'
+# One site name for og:site_name and the homepage WebSite node, which every other page
+# references by @id; alternates follow in order of preference
+# (https://developers.google.com/search/docs/appearance/site-names).
+SITE_NAME = 'Awesome Reverse Engineering Anything'
+SITE_ALTERNATE_NAMES = ['AwesomeREA.org', 'Awesome REA']
 OG_LOCALES = {'en': 'en_US', 'zh': 'zh_CN'}
 # og:image:alt describes the shared card itself (https://ogp.me/), never the page title.
 SOCIAL_IMAGE_ALT = {
@@ -21,6 +26,16 @@ def png_size(path: Path) -> tuple[int, int]:
     return int.from_bytes(header[16:20], 'big'), int.from_bytes(header[20:24], 'big')
 
 
+def website_node(site_url: str, repository_url: str) -> dict:
+    """The WebSite entity, defined only on the two homepages."""
+    return {'@type': 'WebSite', '@id': site_url + '/#website', 'url': site_url + '/', 'name': SITE_NAME,
+            'alternateName': SITE_ALTERNATE_NAMES, 'inLanguage': ['en', 'zh-CN'], 'sameAs': repository_url}
+
+
+def website_reference(site_url: str) -> dict:
+    return {'@id': site_url + '/#website'}
+
+
 def open_graph_meta(*, language: str, title: str, description: str, image_url: str,
                     url: str | None, paired: bool = True, card: Path = SOCIAL_CARD) -> str:
     """Emit the Open Graph and Twitter card block shared by every generated page.
@@ -29,7 +44,7 @@ def open_graph_meta(*, language: str, title: str, description: str, image_url: s
     pages also name their counterpart's locale. Image facts are read from the card.
     """
     width, height = png_size(card)
-    tags = [('property', 'og:type', 'website'), ('property', 'og:site_name', 'AwesomeREA.org'),
+    tags = [('property', 'og:type', 'website'), ('property', 'og:site_name', SITE_NAME),
             ('property', 'og:locale', OG_LOCALES[language])]
     if paired:
         tags.append(('property', 'og:locale:alternate', OG_LOCALES['en' if language == 'zh' else 'zh']))

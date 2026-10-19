@@ -12,7 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
-from open_graph import open_graph_meta
+from open_graph import open_graph_meta, website_reference
 from source_scope import exclusion_counts, unavailable_clause
 
 
@@ -51,7 +51,7 @@ def collection_page_schema(canonical: str, name: str, description: str,
         'name': name,
         'description': description,
         'inLanguage': language,
-        'isPartOf': {'@type': 'WebSite', 'name': 'AwesomeREA.org', 'url': site_url + '/'},
+        'isPartOf': website_reference(site_url),
         'mainEntity': {
             '@type': 'ItemList',
             'numberOfItems': len(items),
@@ -385,7 +385,7 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         ]
         link_html = ''.join(f'<a href="{(_url(url) if url.startswith("http") else escape(url, quote=True))}">{escape(label)}</a>' for url, label in links)
         content = f'<div class="source-results">{fact_cards}</div><section><div class="browse-topline"><h2>{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div><nav class="browse-category-nav" aria-label="{("来源与下载" if zh else "Sources and downloads")}">{link_html}</nav></section>'
-        schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': {'@type': 'WebSite', 'name': 'AwesomeREA.org', 'url': site_url + '/', 'sameAs': repository_url}}
+        schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': website_reference(site_url)}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href)
         paths.append(path)
 

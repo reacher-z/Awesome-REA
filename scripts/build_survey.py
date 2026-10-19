@@ -11,7 +11,7 @@ import re
 
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, bibtex_text, icon
-from open_graph import open_graph_meta
+from open_graph import open_graph_meta, website_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ('Reverse Engineering Anything: An Evidence-Centered Survey',
@@ -293,7 +293,7 @@ def build_survey(site_dir, papers, resources, *, document=None, site_url='https:
         snapshot['domains'] = len({s['id'] for s in document['sections']} & {'website', 'game', 'app', 'binary', 'firmware', 'protocol'})
         schema = {'@context': 'https://schema.org', '@graph': [
             {'@type': 'WebPage', '@id': canonical + '#webpage', 'url': canonical, 'name': title,
-             'inLanguage': 'zh-CN' if zh else 'en', 'mainEntity': {'@id': canonical + '#article'}},
+             'inLanguage': 'zh-CN' if zh else 'en', 'isPartOf': website_reference(site_url), 'mainEntity': {'@id': canonical + '#article'}},
             {'@type': 'Article', '@id': canonical + '#article', 'url': canonical, 'headline': title,
              'description': text(document['description']), 'genre': 'Editorial survey', 'version': document['version'],
              'inLanguage': 'zh-CN' if zh else 'en', 'datePublished': document['date'], 'dateModified': document['date'],
