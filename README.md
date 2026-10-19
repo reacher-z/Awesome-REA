@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 325](https://img.shields.io/badge/resources-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 167](https://img.shields.io/badge/cases-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 325](https://img.shields.io/badge/resources-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 167](https://img.shields.io/badge/cases-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (75) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (76) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2061,13 +2061,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**75 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**76 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (23) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (24) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2202,6 +2202,21 @@ Open “Scope and publication details” for each study’s full limitations. So
 ### Decompilation and symbol recovery
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398)
+
+  A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. Version 2 collects 246 papers published since 2015, found through keyword searches of 11 security, software-engineering and AI venues plus citation snowballing, and organizes them into 22 domains by inference task: from code-boundary detection and recovery of function names, types and struct layouts to code similarity, malware and vulnerability analysis, and decompilation. Its taxonomy links conventional triage, static, dynamic and security-testing analyses to AI pipelines through the binary-derived artifacts they exchange, and it derives 12 insights and open directions such as binary-aligned ground truth and goal-driven agentic reversing.
+
+  2026 · Preprint · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry & citation](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** A literature systematization with no new experiments, benchmark or tool; it classifies and summarizes reported results without reproducing them. The corpus covers papers available up to July 31, 2026, applies citation thresholds that fall from 12 for 2015–2016 papers to 2 for 2025–2026 papers, excludes methods that need source code at inference time, and leaves out Android and interpreted-language bytecode. Detailed per-stage tables draw on 88 top-venue studies rather than the full corpus. It is an arXiv preprint with no stated venue, and this record makes no claim of peer review. Papers it cites are not thereby part of this collection; each needs its own review.
+
+  **Publication:** 2026 · arXiv · Preprint · Yujeong Kwon et al.
+
+  </details>
 
 - [**SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html)
 

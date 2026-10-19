@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 325](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 167](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 325](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 167](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (75) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (76) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2062,13 +2062,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**75 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**76 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (23) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (24) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2203,6 +2203,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 ### 反编译与符号恢复
 
 [↑ 论文主题](#papers) · [目录](#目录)
+
+- [**SoK：人工智能增强的二进制逆向工程**](https://arxiv.org/abs/2606.17398)
+
+  一篇系统化知识综述，梳理机器学习、大语言模型与智能体方法在二进制逆向中的应用。第二版通过关键词检索 11 个安全、软件工程与人工智能会议并辅以引文滚雪球，收集 2015 年以来的 246 篇论文，按推断任务归入 22 个领域：从代码边界检测，到函数名、类型与结构体布局恢复，再到代码相似性、恶意软件与漏洞分析以及反编译。其分类体系通过二进制派生的分析产物，把传统的初筛、静态分析、动态分析与安全测试同人工智能流程联系起来，并总结出 12 条洞见及若干开放方向，例如与二进制对齐的语义真值和目标驱动的智能体逆向。
+
+  2026 · 预印本 · [PDF](https://arxiv.org/pdf/2606.17398v2) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-sok-ai-binary-reversing/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是一篇文献系统化综述，不包含新的实验、基准或工具；它对已报告的结果进行分类和总结，并未复现。语料涵盖截至 2026 年 7 月 31 日可获得的论文，引用量门槛从 2015—2016 年论文的 12 次逐步降至 2025—2026 年论文的 2 次，排除推断时需要源码的方法，也不包括 Android 与解释型语言字节码。各阶段的详细表格基于 88 项顶级会议研究，而非完整语料。它是未注明发表场所的 arXiv 预印本，本条目不声称其经过同行评审。其引用的论文并不因此纳入本合集，每篇都需要单独审阅。
+
+  **发表信息:** 2026 · arXiv · 预印本 · Yujeong Kwon 等
+
+  </details>
 
 - [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html)
 
