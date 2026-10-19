@@ -10890,5 +10890,40 @@
       "https://github.com/rwengine/openrw/wiki/Getting-Started",
       "https://github.com/rwengine/openrw/wiki/Configuration"
     ]
+  },
+  {
+    "id": "rexglue-sdk",
+    "name": "ReXGlue SDK",
+    "url": "https://github.com/rexglue/rexglue-sdk",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Experimental SDK for statically recompiling Xbox 360 executables into portable C++23 that runs natively on Windows, Linux and macOS. Its rexglue CLI scaffolds a per-game CMake project and, from a TOML config, analyzes a XEX binary (import resolution, PDATA, block discovery, gap filling, jump resolution and call-target validation) before translating each PowerPC instruction into C++; a runtime derived from Xenia's emulator core, with D3D12 or Vulkan graphics, hosts the generated code. Generated functions are weak aliases that native C++ overrides or mid-function hooks can replace, so a port can be refined one function at a time.",
+    "description_zh": "实验性 SDK，可将 Xbox 360 可执行文件静态重编译为可移植的 C++23 代码，在 Windows、Linux 和 macOS 上原生运行。其 rexglue 命令行工具为单个游戏搭建 CMake 项目，并根据 TOML 配置分析 XEX 二进制（导入解析、PDATA、基本块发现、空隙填充、跳转解析和调用目标校验），再将每条 PowerPC 指令翻译为 C++；生成的代码由派生自 Xenia 模拟器核心的运行时承载，图形后端为 D3D12 或 Vulkan。生成的函数均为弱别名，可用原生 C++ 覆盖或在函数内插入钩子来替换，从而逐个函数完善移植。",
+    "evidence_url": "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README cautions that the project is in early development with breaking API changes, and the wiki calls it experimental and pre-1.0, not a turnkey way to play Xbox 360 games or an alternative to Xenia. Users must specify function boundaries, implement missing kernel imports and iterate on the codegen output; unresolved calls stop generation as validation errors unless --force is passed.",
+      "Release at review: v0.10.0, published 2026-08-21, with SDK archives for Windows amd64, Linux amd64/arm64 and macOS amd64/arm64; the default main branch holds that release, while nightly prereleases are built from the development branch, 24 commits ahead. Building needs a recursive clone, CMake 3.25+, Ninja and Clang 18+ or AppleClang 16+ on a 64-bit x86_64 or ARM64 host, and other compilers are rejected; the wiki's Windows setup uses Visual Studio 2022 with its Clang toolset and its Linux setup Clang 20+ with GTK3 headers.",
+      "Each project's TOML config points at the user's own Xbox 360 XEX; the SDK ships no game code. Documentation is the GitHub wiki, last edited 2026-06-04, whose status section still describes v0.3.x and calls the graphics, audio and input backends in flux.",
+      "LICENSE is a BSD-3-Clause text that credits Xenia-derived portions (GitHub reports NOASSERTION); submodules and the bundled PowerPC binutils executables keep their own licenses. The README disclaims affiliation with Microsoft and prohibits use for piracy. Ports built on it, such as the catalog's Skate 3 Recomp case, are reviewed separately; no XEX was recompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/CMakeLists.txt#L1-L104",
+      "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/CMakePresets.json",
+      "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/LICENSE",
+      "https://github.com/rexglue/rexglue-sdk/blob/c94f5ebdcb3c9d1a460ca48e04f9758448f8d518/.gitmodules",
+      "https://github.com/rexglue/rexglue-sdk/releases/tag/v0.10.0",
+      "https://github.com/rexglue/rexglue-sdk/wiki",
+      "https://github.com/rexglue/rexglue-sdk/wiki/Getting-Started",
+      "https://github.com/rexglue/rexglue-sdk/wiki/Codegen-Pipeline-Overview",
+      "https://github.com/rexglue/rexglue-sdk/wiki/Function-Overrides",
+      "https://github.com/rexglue/rexglue-sdk/wiki/Mid-ASM-Hooks"
+    ]
   }
 ]

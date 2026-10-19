@@ -4017,5 +4017,14 @@
       "Arch Linux、Fedora、Ubuntu 上的 GitHub Actions 任务和一个 AppVeyor Visual Studio 2017 任务运行 CTest 脚本，构建代码及其 Boost.Test 单元测试套件；需要游戏数据的测试受 TEST_DATA 选项控制，而该脚本并未启用。项目未公布与原版可执行文件的对比，本合集也未构建或运行 OpenRW。",
       "README 声明采用 GPL-3.0-or-later，并列出 FFmpeg（LGPL-2.1 或更高版本）、Bullet 和 SDL 2.0（zlib）等第三方许可；microprofile 与 imgui 子模块是独立项目，游戏本身的素材保留各自权利。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "rexglue-sdk": {
+    "name": "ReXGlue Xbox 360 静态重编译 SDK",
+    "requirements": [
+      "README 提醒该项目处于早期开发阶段，公共 API 会有破坏性变更；wiki 称其为实验性的 1.0 前版本，既不是开箱即用的 Xbox 360 游戏运行方案，也不能替代 Xenia。使用者需要手动指定函数边界、实现缺失的内核导入，并反复修正代码生成结果；未解析的调用会作为校验错误阻止生成，除非传入 --force。",
+      "审阅时的版本为 v0.10.0，发布于 2026-08-21，提供 Windows amd64、Linux amd64/arm64 和 macOS amd64/arm64 的 SDK 压缩包；默认的 main 分支即该版本，夜间预发布版则由领先 24 个提交的 development 分支构建。构建需要递归克隆、CMake 3.25+、Ninja，以及 Clang 18+ 或 AppleClang 16+，宿主须为 64 位 x86_64 或 ARM64，其他编译器会被拒绝；wiki 中的 Windows 环境使用 Visual Studio 2022 及其 Clang 工具集，Linux 环境使用 Clang 20+ 和 GTK3 开发头文件。",
+      "每个项目的 TOML 配置都指向使用者自己的 Xbox 360 XEX 文件；SDK 本身不含任何游戏代码。文档位于 GitHub wiki，最后编辑于 2026-06-04，其状态部分仍描述 v0.3.x，并称图形、音频和输入后端仍在变动。",
+      "LICENSE 为 BSD-3-Clause 文本，并注明部分代码源自 Xenia（GitHub 显示为 NOASSERTION）；子模块和随附的 PowerPC binutils 可执行文件沿用各自的许可证。README 声明与 Microsoft 无关，并禁止用于盗版。基于它的移植（如本目录中的 Skate 3 Recomp 案例）需另行审阅；本次未重编译任何 XEX。"
+    ]
   }
 }
