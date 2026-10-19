@@ -9788,13 +9788,23 @@
       "reported_source_urls": [
         "https://www.reddit.com/r/recomps/comments/1wyle7y/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The source is a discussion: an r/recomps question from 2026-10-05 asking how people use AI to make recompilations and whether a tutorial exists. Replies offer general advice and opinions, such as subscription choices, prompting agents against existing recompilation tools and maintaining recompilation engines, without code, results or comparisons; one reply points to the docs of freefrank/LostOdysseyRecomp, which is already cataloged as its own case and is recorded here only as a related match. Retain the lead without a reconstruction mapping of its own.",
+      "reason_zh": "该来源是一场讨论：r/recomps 上 2026-10-05 的提问，询问大家如何用 AI 制作重编译移植、是否有教程。回复多为一般性建议和观点，例如订阅方案的选择、让智能体参照现有重编译工具工作以及维护重编译引擎，但都没有代码、结果或对照；其中一条回复指向 freefrank/LostOdysseyRecomp 的文档，该项目已作为独立案例收录，此处仅记为相关匹配。保留此线索，不为其单独建立重建映射。",
+      "primary_evidence_urls": [
+        "https://www.reddit.com/r/recomps/comments/1wyle7y/how_are_yall_using_ai_to_make_recompilations/",
+        "https://github.com/freefrank/LostOdysseyRecomp"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "lost-odyssey-recomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "yibie:zelda-and-banjo-recompiled-dev-slams-the-slew-of-poor-quality-slopcomps",
@@ -15782,16 +15792,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 181,
-      "pending": 213
+      "insufficient-evidence": 182,
+      "pending": 212
     },
     "units_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 181,
-      "pending": 213
+      "insufficient-evidence": 182,
+      "pending": 212
     },
-    "primary_reviewed_units": 318,
-    "catalog_linked_occurrences": 207,
+    "primary_reviewed_units": 319,
+    "catalog_linked_occurrences": 208,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
     "unique_projects": null
