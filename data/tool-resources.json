@@ -36528,5 +36528,35 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "xenosaga-ep1-matching-decomp-case",
+    "name": "Xenosaga Episode I: an AI-assisted matching PS2 decompilation",
+    "url": "https://github.com/OpokXeno/xsg-i-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Xenosaga Episode I’s PS2 game code as C that rebuilds the NTSC-U executable and five overlays byte for byte from files on a user-supplied disc. The README states AI assistance and reports 5,852 of 7,645 in-scope functions recovered, checked by a whole-file SHA-256 gate and a progress report built on a private runner that holds the originals. The repository also tracks about 600 Java scene scripts that the author describes as decompiled, outside that gate.",
+    "description_zh": "将 Xenosaga Episode I 的 PS2 游戏代码重建为 C 源码，可用使用者自备光盘中的文件逐字节重新构建 NTSC-U 版主程序及五个覆盖模块。README 声明项目借助 AI 开发，报告已恢复 7,645 个范围内函数中的 5,852 个，并由整文件 SHA-256 校验及在持有原始文件的私有运行器上生成的进度报告把关。仓库另收录约 600 个作者称为反编译所得的 Java 场景脚本，不在该校验范围内。",
+    "evidence_url": "https://github.com/OpokXeno/xsg-i-decomp/blob/d34e8072f8e05429bb800e209a467a7ca3b5645d/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit targets the NTSC-U release: SLUS_204.69 plus the OV01, OV02, OV10, OV11 and OV12 overlays, with the SSD.IRX and RSSD.IRX IOP modules listed at 0%. README reports 5,852 of 7,645 in-scope game functions (76.547%); the 2026-09-24 forum announcement reported 3,669 (47.992%) after a little over a week. Sony SDK and public libraries are outside recovery scope and are built from assembly. A native PC port is the author’s stated later goal, not part of this repository.",
+      "Requires the user’s own NTSC-U disc for SLUS_204.69, the five .OVL overlays and the IOP/ directory. config/originals.json records the six files’ sizes and SHA-256 hashes, and the build refuses other releases. The repository states that it distributes no original game binaries or copyrighted game assets.",
+      "Building needs 32-bit Linux compiler support (libc6-i386 on 64-bit Ubuntu, or WSL with the checkout on a Linux filesystem), a Python 3 virtual environment for splat-based disassembly, and ninja. The toolchains are not included: config/toolchain-identity.json records versions, hashes and provenance for ee-gcc 2.96 with fifteen documented cc1 patches, Sony’s ee-gcc 2.9-991111 for SDK code, two GNU as 2.9-ee builds (one patched) and ps2dev binutils 2.45.1, and tools/tu/toolchain.py --check refuses mismatches.",
+      "ninja compares all six rebuilt files with the originals, and ninja gate writes build/gate.json, whose pass result means every file came out byte-identical; a function counts only when its unit’s source defines it in C and the whole-file gate passes. The decomp.dev report comes from a workflow that builds on the author’s self-hosted runner holding the originals and toolchains and publishes only hashes and counts; for the reviewed commit, decomp.dev shows 53.10% of code decompiled and 19.44% fully linked, measures that differ from the README’s function count. This catalog did not build or compare anything.",
+      "No license file is present at the reviewed commit. Besides the matching C, the repository tracks 599 Java scene and cutscene scripts (about 24 MB) that the author’s forum reply describes as the game’s decompiled scripting code; they are not covered by the byte gate, and their redistribution rights are unclear. README states AI assistance without quantifying it, and no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpokXeno/xsg-i-decomp/blob/d34e8072f8e05429bb800e209a467a7ca3b5645d/.gitignore",
+      "https://github.com/OpokXeno/xsg-i-decomp/blob/d34e8072f8e05429bb800e209a467a7ca3b5645d/config/originals.json",
+      "https://github.com/OpokXeno/xsg-i-decomp/blob/d34e8072f8e05429bb800e209a467a7ca3b5645d/.github/workflows/report.yml",
+      "https://scientia.godsibb.net/t/xenosaga-ep-i-decompilation-project/1496",
+      "https://decomp.dev/OpokXeno/xsg-i-decomp"
+    ]
   }
 ]
