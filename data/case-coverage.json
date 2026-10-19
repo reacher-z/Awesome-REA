@@ -5932,12 +5932,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110759012266332509"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@omercoskun_tech, 2026-10-15, in Turkish) relays @marifdev’s post that a wireless CarPlay adapter did not reconnect automatically when the car started, that the author tried to change its firmware with REA, that Claude declined and Grok produced an updated binary in half an hour, and that the adapter works after uploading it. Neither post names the adapter or firmware version or publishes the change, a diff or tests, and a GitHub account matching that handle (marifdev) has no related repository. Retain the lead without a catalog mapping; the firmware change and REA’s contribution are unestablished.",
+      "reason_zh": "所引帖子（@omercoskun_tech，2026-10-15，土耳其语）转述 @marifdev 的帖子：其无线 CarPlay 适配器在车辆启动后无法自动连接，作者尝试借助 REA 修改适配器固件，Claude 表示做不到，Grok 半小时内生成了更新后的二进制，上传到设备后问题解决。两条帖子均未说明适配器型号或固件版本，也未公开所做修改、差异或测试；与该账号名对应的 GitHub 账号（marifdev）下也没有相关仓库。保留此线索而不建立目录映射；该固件修改及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/omercoskun_tech/status/2110759012266332509",
+        "https://x.com/marifdev/status/2110665261120475373"
+      ],
       "catalog_matches": []
     },
     {
@@ -5952,12 +5955,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110759506003304641"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@pirrer, 2026-10-15, in Chinese) is mainly commentary on REA’s capabilities, limits and legal context; in passing it says the author used AI to study a daily voice-input app, understood its architecture in about a minute and spent five more hours building a personal version, finding that recognition and text polishing run on the vendor’s servers. It names no app and links no code or findings, and a GitHub account matching the handle (pirrer) has no related repository. Retain the lead without a catalog mapping; the rebuild is unestablished, and the post does not say REA was used for it.",
+      "reason_zh": "作者帖子（@pirrer，2026-10-15，中文）主要评论 REA 的能力、局限与法律背景；其中顺带提到作者用 AI 研究了一款每天在用的语音输入应用，约 1 分钟看懂架构，之后又花了 5 个多小时做出自己的版本，并发现语音识别和句子润色都在对方服务器上完成。帖子未指明应用，也未链接代码或调查结果；与该账号名对应的 GitHub 账号（pirrer）下也没有相关仓库。保留此线索而不建立目录映射；该重做成果未确立，帖子也未说明此事用到了 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/pirrer/status/2110759506003304641"
+      ],
       "catalog_matches": []
     },
     {
@@ -5992,12 +5997,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110760621113548854"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@FuSheng_0306, 2026-10-15) says a marketing colleague with a humanities background used AI to build a browser version of Counter-Strike with online play in 20 minutes, and argues that closed-source software will lose its moat; it shows a video. It names no tools or method, links no code or playable build, and does not show that any original game code or data was analyzed; no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the build and any reverse engineering are unestablished.",
+      "reason_zh": "作者帖子（@FuSheng_0306，2026-10-15）称其市场部一位文科背景的同事用 AI 在 20 分钟内做出了可联机的网页版 CS，并认为闭源软件的壁垒将会消失；帖子附视频。帖子未说明所用工具或方法，也未链接代码或可玩版本，更未表明分析过任何原版游戏代码或数据；未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该作品及任何逆向工作均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/FuSheng_0306/status/2110760621113548854"
+      ],
       "catalog_matches": []
     },
     {
@@ -6032,12 +6039,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110761684411572247"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@0xAlhimik, 2026-10-15) shows an edited walkthrough in which REA’s JavaScript analyzer traces a stale-price guard in the authors’ own small demo module, followed by inputs run around its 400 ms boundary; it quotes another author’s REA course article. The demo module is not published and nothing is reconstructed; the post itself notes that a static trace does not establish runtime behavior. No GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a usage demonstration, not a reconstruction case.",
+      "reason_zh": "作者帖子（@0xAlhimik，2026-10-15）附一段剪辑过的演示：用 REA 的 JavaScript 分析器追踪作者团队自己编写的小型演示模块中的过期价格检查，再围绕 400 毫秒边界运行输入；帖子引用了另一位作者的 REA 教程长文。演示模块未公开，也没有重建任何东西；帖子本身也说明静态追踪不能确立运行时行为。未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是使用演示，而非重建案例。",
+      "primary_evidence_urls": [
+        "https://x.com/0xAlhimik/status/2110761684411572247"
+      ],
       "catalog_matches": []
     },
     {
@@ -6053,11 +6062,16 @@
         "https://x.com/i/status/2110763621768716353"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@ToniCipriani007, 2026-10-15) announces Galaxy-Android by OpenPort Labs, which it calls an AI-assisted native ARM64 Android port of Super Mario Galaxy built on the Petari decompilation and needing the user’s own disc image. At the pinned commit the GPL-3.0 repository carries Petari’s sources, credits GalaxyQuest, another Petari-based port that is not catalogued, for its mobile port architecture, and states that no game assets are included. The project’s own 2026-10-16 source audit reports a committed release-signing key and a debuggable release APK. Curation needs a dedicated review of the GalaxyQuest relationship and of those findings; Petari is curated separately as petari-smg-decomp-case.",
+      "reason_zh": "所引帖子（@ToniCipriani007，2026-10-15）介绍了 OpenPort Labs 的 Galaxy-Android，称其为基于 Petari 反编译、由 AI 辅助完成的《超级马力欧银河》原生 ARM64 安卓移植，需要用户自备光盘镜像。在固定提交中，这个 GPL-3.0 仓库收录了 Petari 的源码，将移动端移植架构归功于另一个尚未收录、同样基于 Petari 的移植项目 GalaxyQuest，并声明不含任何游戏素材。项目自己 2026-10-16 的源码审计报告称，发布签名密钥被提交到了仓库，且发布版 APK 处于可调试状态。收录前需专门审阅其与 GalaxyQuest 的关系及上述问题；Petari 已另行收录为 petari-smg-decomp-case。",
+      "primary_evidence_urls": [
+        "https://x.com/ToniCipriani007/status/2110763621768716353",
+        "https://github.com/OpenPort-Labs/Galaxy-Android/blob/fcdfb512eed75e94ddefd05e4e8ed8595a4ea17a/README.md",
+        "https://github.com/OpenPort-Labs/Galaxy-Android/blob/fcdfb512eed75e94ddefd05e4e8ed8595a4ea17a/THIRD_PARTY_NOTICES.md",
+        "https://github.com/OpenPort-Labs/Galaxy-Android/blob/fcdfb512eed75e94ddefd05e4e8ed8595a4ea17a/docs/AUDIT.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -6072,12 +6086,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110765881768747173"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@ShishirTandale, 2026-10-15) says Claude got the OEM firmware of the author’s childhood phone running in WebAssembly, including 3D Java games, music and texting, and links the author’s earlier post about adding SMS and Wasm emulation to an “SE firmware project”. Neither post names the phone or firmware or links the project, and the GitHub account matching the handle has no related repository. Retain the lead without a catalog mapping; the emulation and its fidelity are unestablished, and no REA use is stated.",
+      "reason_zh": "所引回复（@ShishirTandale，2026-10-15）称 Claude 让作者儿时旧手机的 OEM 固件在 WebAssembly 中运行起来，包括 3D Java 游戏、音乐和短信，并链接了作者更早的一条帖子，其中提到为一个“SE 固件项目”加入短信和 Wasm 模拟。两条帖子均未说明手机型号或固件，也未链接该项目；与该账号名对应的 GitHub 账号下也没有相关仓库。保留此线索而不建立目录映射；该模拟及其还原度均未确立，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/ShishirTandale/status/2110765881768747173",
+        "https://x.com/ShishirTandale/status/2110187645963751625"
+      ],
       "catalog_matches": []
     },
     {
@@ -14942,15 +14959,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "insufficient-evidence": 131,
+      "pending": 305
     },
     "units_by_state": {
       "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 131,
+      "pending": 304
     },
-    "primary_reviewed_units": 220,
+    "primary_reviewed_units": 226,
     "catalog_linked_occurrences": 166,
     "distinct_resource_ids": 160,
     "distinct_paper_ids": 1,

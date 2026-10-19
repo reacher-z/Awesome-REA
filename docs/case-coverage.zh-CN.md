@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 155 | 154 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 310 | 309 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 126 | 126 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 305 | 304 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 131 | 131 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 166 个出现项含目录链接；共关联 160 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 220 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 226 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -146,6 +146,12 @@
 | From a Little Prince game to Dragon Ball-themed HTML 3D | 证据不足 | [来源](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | 证据不足 | [来源](https://x.com/i/status/2110726263392387158) |
 | Reversed with AI：AI 辅助逆向项目目录 | 已收录 | [来源](https://reversedwithai.com/about) |
+| A wireless CarPlay adapter: a reported REA/Grok firmware change | 证据不足 | [来源](https://x.com/omercoskun_tech/status/2110759012266332509) |
+| A daily voice-input app: quick client inspection, hours of rebuilding | 证据不足 | [来源](https://x.com/pirrer/status/2110759506003304641) |
+| Browser Counter-Strike: a colleague's AI-build claim | 证据不足 | [来源](https://x.com/FuSheng_0306/status/2110760621113548854) |
+| REA JavaScript demo: a stale-price check at 400 ms | 证据不足 | [来源](https://x.com/0xAlhimik/status/2110761684411572247) |
+| Galaxy-Android: a reported AI-assisted native Super Mario Galaxy port | 待核查 | [来源](https://x.com/ToniCipriani007/status/2110763621768716353) |
+| An old phone: an author reports running OEM firmware in Wasm with Claude | 证据不足 | [来源](https://x.com/ShishirTandale/status/2110765881768747173) |
 | Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | 待核查 | [来源](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | Linux 上的 UU 远程：非官方协议实现 | 已收录 | [来源](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
 | REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | 待核查 | [来源](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
