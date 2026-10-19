@@ -132,6 +132,35 @@ async function preloadedCatalog(page, label) {
 }
 const requests = (requested, file) => requested.filter(pathname => pathname === '/' + file).length;
 
+// Drive Chromium's composition path, rather than only dispatching synthetic DOM events.
+async function composedSearch(page, selector, parameter, grid, reset) {
+  await page.focus(selector);
+  const before = await query(page);
+  await page.evaluate(grid => {
+    window.imeCheck = {mutations: 0};
+    window.imeCheck.observer = new MutationObserver(records => { window.imeCheck.mutations += records.length; });
+    window.imeCheck.observer.observe(document.querySelector(grid), {childList: true});
+  }, grid);
+  const session = await page.createCDPSession();
+  try {
+    for (const value of ['ni', '逆向']) {
+      await session.send('Input.imeSetComposition', {text: value, selectionStart: value.length, selectionEnd: value.length});
+      assert.equal(await page.$eval(selector, input => input.value), value);
+      assert.equal(await query(page), before, `${selector}: composing text stays out of the URL`);
+      assert.equal(await page.evaluate(() => window.imeCheck.mutations), 0, `${selector}: no results rebuilt during composition`);
+    }
+    await session.send('Input.insertText', {text: '逆向'});
+    assert.equal(new URLSearchParams(await query(page)).get(parameter), '逆向');
+    assert.equal(await page.evaluate(() => window.imeCheck.mutations), 1, `${selector}: one render on commit`);
+    await page.$eval(selector, input => input.dispatchEvent(new InputEvent('input', {bubbles: true, isComposing: false})));
+    assert.equal(await page.evaluate(() => window.imeCheck.mutations), 1, `${selector}: final input does not render twice`);
+  } finally {
+    await session.detach();
+    await page.evaluate(() => { window.imeCheck.observer.disconnect(); delete window.imeCheck; });
+  }
+  await press(page, reset);
+}
+
 async function homepage(page, language, viewport, data, requested) {
   const label = `${language} homepage ${viewport.name}`;
   const total = data.catalog.resources.length;
@@ -144,6 +173,8 @@ async function homepage(page, language, viewport, data, requested) {
   assert(numbers(await text(page, '#results-status')).includes(total), `${label}: status names all ${total} curated resources`);
   assert(await page.$$eval('#resource-grid .card-title-link', links => links.every(link => link.textContent.trim() && link.href.startsWith('http'))));
   await noOverflow(page, label);
+
+  await composedSearch(page, '#search-input', 'q', '#resource-grid', '#clear-filters');
 
   // Search, then clear: a record's own displayed name finds it among a narrower result set.
   const title = (await text(page, '#resource-grid .card-title-link')).trim();
@@ -183,6 +214,9 @@ async function homepage(page, language, viewport, data, requested) {
   await press(page, '#source-results .source-card details.source-record-details summary');
   await noOverflow(page, label + ' repositories');
   await shot(page, `${language} homepage ${viewport.name} repositories`);
+
+  await composedSearch(page, '#source-search', 'sourceq', '#source-results', '#source-clear');
+  await composedSearch(page, '#source-topic', 'topic', '#source-results', '#source-clear');
 
   // A target filter survives the language switch, an ordinary link to the other homepage.
   await press(page, '#mode-curated');

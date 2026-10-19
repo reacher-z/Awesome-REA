@@ -111,6 +111,86 @@ const shownNames = app => app.element('source-results').children.map(card => byC
 const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
 
 (async () => {
+  // Home-page searches must keep composing text out of filters and the URL.
+  for (const lang of ['en', 'zh']) {
+    for (const [id, mode, key, parameter, grid] of [
+      ['search-input', 'curated', 'q', 'q', 'resource-grid'],
+      ['source-search', 'source-index', 'q', 'sourceq', 'source-results'],
+      ['source-topic', 'source-index', 'topic', 'topic', 'source-results'],
+    ]) {
+      const app = await loaded(`?lang=${lang}&view=${mode}`, {
+        catalog: catalogOf([curatedRecord(1, {description_zh: '逆向工具'})], {
+          topic_labels: {reverse: {en: 'Reverse engineering', zh: '逆向'}}
+        }),
+        browser: browserOf([repository('example/reverse', {description_zh: '逆向工具', topics: ['reverse']})])
+      });
+      const input = app.element(id);
+      const current = mode === 'curated' ? app.api.state : app.api.sourceState;
+      const results = app.element(grid);
+      let renders = 0;
+      const replace = results.replaceChildren.bind(results);
+      results.replaceChildren = (...nodes) => { renders++; replace(...nodes); };
+      const emit = (type, value, isComposing = false) => {
+        input.value = value;
+        input.handlers[type]?.({target: input, isComposing});
+      };
+      const initialURL = app.location.href;
+      emit('compositionstart', '');
+      emit('input', 'ni', true);
+      emit('input', '逆', true);
+      // Some event sequences expose a final input before compositionend.
+      emit('input', '逆向', false);
+      assert.equal(current[key], '', `${lang}/${id}: do not commit composition`);
+      assert.equal(app.location.href, initialURL);
+      assert.equal(renders, 0);
+      assert.equal(input.value, '逆向', 'Keep visible composing text intact');
+      emit('compositionend', '逆向');
+      const committed = '逆向';
+      assert.equal(current[key], committed);
+      assert.equal(urlParam(app, parameter), committed);
+      assert.equal(renders, 1);
+      const committedURL = app.location.href;
+      emit('input', '逆向');
+      assert.equal(renders, 1, 'The final input after compositionend must not render twice');
+      assert.equal(app.location.href, committedURL);
+
+      // A second composition and cancellation must not reuse stale pending text.
+      emit('compositionstart', '逆向');
+      emit('input', '工具', true);
+      emit('compositionend', '工具');
+      emit('input', '工具');
+      assert.equal(current[key], '工具');
+      assert.equal(renders, 2);
+      emit('compositionstart', '工具');
+      emit('input', 'gong', true);
+      emit('compositionend', '工具');
+      assert.equal(renders, 2, 'Canceled composition preserves the committed result');
+      emit('input', 'uncommitted', true);
+      assert.equal(current[key], '工具', 'Respect isComposing even without compositionstart');
+      assert.equal(renders, 2);
+
+      for (const value of ['r', 'reverse', 'pasted text', '']) {
+        emit('input', value);
+        assert.equal(current[key], value);
+        assert.equal(urlParam(app, parameter), value || null);
+      }
+      assert.equal(renders, 6, 'Typing, paste and clear remain immediate');
+      emit('compositionstart', '');
+      emit('compositionend', '工具');
+      app.element(mode === 'curated' ? 'clear-filters' : 'source-reset').emit('click');
+      emit('input', '工具');
+      assert.equal(current[key], '工具', 'A reset must not suppress the next committed query');
+      assert.equal(urlParam(app, parameter), '工具');
+      if (key === 'topic') {
+        const selected = lang === 'zh' ? '逆向 · reverse' : 'Reverse engineering · reverse';
+        emit('input', selected);
+        assert.equal(current.topic, 'reverse');
+        assert.equal(urlParam(app, 'topic'), 'reverse');
+        assert.deepEqual(names(app.api.sourceFiltered()), ['example/reverse']);
+      }
+    }
+  }
+
   // The integrity guard rejects every malformed payload, and loadSources then shows the error state.
   const valid = browserOf([repository('valid/one'), repository('valid/two')], 1);
   const curated = catalogOf([curatedRecord(1)]);
