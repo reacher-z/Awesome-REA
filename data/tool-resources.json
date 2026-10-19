@@ -9917,5 +9917,39 @@
       "The analyst supplies their own interception proxy and CA certificate and edits config.js before use; the scripts are intended only for mobile apps you own or are authorized to test, not for circumventing protections on third-party software.",
       "AGPL-3.0 licensed and funded by NLnet as part of the HTTP Toolkit project; the repository ships scripts only and no application packages."
     ]
+  },
+  {
+    "id": "bincat",
+    "name": "BinCAT",
+    "url": "https://github.com/airbus-seclab/bincat",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static binary code analysis toolkit designed for reverse engineers. Starting from a chosen address and initial state, it computes register and memory values, taint and reconstructed types, with forward and backward analysis and heap use-after-free and double-free detection; bits it cannot determine are shown as unknown. It is driven from an IDA plugin, where analysts can override values or taint, skip functions or replace instructions with NOPs before re-running, or from Python and an .ini configuration for automation.",
+    "description_zh": "面向逆向工程人员的二进制代码静态分析工具包。它从选定的地址和初始状态出发，计算寄存器与内存的值、污点和重建出的类型，支持前向与后向分析，并能检测堆上的释放后使用和重复释放；无法确定的位会标为未知。分析可在 IDA 插件中进行，分析人员可覆盖值或污点、跳过函数或把指令替换为 NOP 后重新运行；也可通过 Python 和 .ini 配置文件实现自动化。",
+    "evidence_url": "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.5, published 2025-02-25; its tag is the reviewed master commit, and the repository has had no commits since. The Linux and Windows release archives bundle the analyzer and the IDA plugin, which is installed by running install_plugin.py from IDA. The plugin requires IDA 7.4 or later with Python 3; the changelog adds IDA 8.3 support in v1.3 and IDA 9.0 support in v1.4.",
+      "The README lists x86-32, x86-64, ARMv7, ARMv8 and PowerPC as analysis targets; the changelog also records initial RISC-V and initial, incomplete ARMv7 Thumb support. The analyzer runs locally on Linux or Windows (macOS only “maybe”, per the README) or as a Flask web service in the airbusseclab/bincat Docker image that the plugin reaches through its remote URL option. Source builds need OCaml with dune, menhir, ocamlgraph, ppxlib and zarith plus Python 3; Windows builds use Cygwin and an opam mingw64 OCaml switch.",
+      "Each analysis is described by a versioned .ini file covering the program, its sections and imports, the initial register and memory state and overrides; the IDA plugin generates it from the open database, ELF core dumps can supply the initial state, and the format documentation is partial, with the parser source as its reference. Binaries to analyze come from the user; the tutorial uses the project’s own keygen-me sample.",
+      "AGPL-3.0 per the README and doc/COPYING; GitHub detects no license because there is no root license file. The OCaml code includes LGPLv2 OCaml runtime code, the plugin includes Apache-2.0 code from python-pyqt5-hexview, and a modified copy of c2newspeak is bundled. Results depend on the configured initial state, skipped functions and overrides; nothing was installed or analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/README.md#L25-L37",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/README.md#L119-L132",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/CHANGELOG",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/manual.md",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/ini_format.md",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/install_manual.md",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/install_docker.md",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/windows_build.md",
+      "https://github.com/airbus-seclab/bincat/blob/5d0ee3b56867059427eb0f4123c4d9de0b8059dd/doc/COPYING",
+      "https://github.com/airbus-seclab/bincat/releases/tag/v1.5"
+    ]
   }
 ]

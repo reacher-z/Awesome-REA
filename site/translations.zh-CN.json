@@ -3741,5 +3741,14 @@
       "使用者需自行提供检查代理与 CA 证书，并在使用前编辑 config.js；这些脚本仅适用于使用者拥有或有权测试的移动应用，不得用于绕过第三方软件的保护。",
       "采用 AGPL-3.0 许可证，由 NLnet 资助，是 HTTP Toolkit 项目的一部分；仓库仅包含脚本，不含任何应用安装包。"
     ]
+  },
+  "bincat": {
+    "name": "BinCAT 二进制静态分析工具包",
+    "requirements": [
+      "审阅时最新版本为 v1.5，发布于 2025-02-25；其标签即所审阅的 master 提交，此后仓库没有新的提交。Linux 和 Windows 发布包同时包含分析器和 IDA 插件，插件通过在 IDA 中运行 install_plugin.py 安装。插件要求 IDA 7.4 或更高版本并使用 Python 3；更新日志记载 v1.3 起支持 IDA 8.3，v1.4 起支持 IDA 9.0。",
+      "README 列出的分析目标架构为 x86-32、x86-64、ARMv7、ARMv8 和 PowerPC；更新日志另记有初步的 RISC-V 支持，以及初步且不完整的 ARMv7 Thumb 支持。分析器可在 Linux 或 Windows 本地运行（README 称 macOS“也许”可用），也可作为 airbusseclab/bincat Docker 镜像中的 Flask 网络服务运行，插件通过远程 URL 选项连接。从源码构建需要 OCaml 及 dune、menhir、ocamlgraph、ppxlib 和 zarith，以及 Python 3；Windows 构建使用 Cygwin 和 opam 的 mingw64 OCaml 环境。",
+      "每次分析由一个带版本号的 .ini 文件描述，内容包括程序及其节区和导入、寄存器与内存的初始状态以及覆盖设置；IDA 插件会根据当前打开的数据库生成该文件，也可用 ELF 核心转储提供初始状态。该格式的文档并不完整，以解析器源码为准。待分析的二进制由使用者自行提供；教程使用的是项目自带的 keygen-me 示例程序。",
+      "README 和 doc/COPYING 表明采用 AGPL-3.0；由于仓库根目录没有许可证文件，GitHub 未识别出许可证。OCaml 代码包含采用 LGPLv2 的 OCaml 运行时代码，插件包含采用 Apache-2.0 的 python-pyqt5-hexview 代码，并附带一份修改过的 c2newspeak。分析结果取决于所配置的初始状态、跳过的函数和覆盖设置；本次未安装或分析任何内容。"
+    ]
   }
 }
