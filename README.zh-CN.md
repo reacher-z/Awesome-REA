@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 294](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-294-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 149](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-149-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 295](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-295-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 150](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (132) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (133) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (149) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (150) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -851,6 +851,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Mario Party 4 的 GameCube 主程序和 REL 模块重建为 C 源码，可重新构建两个美版发行版本。构建会分析使用者自备的光盘镜像，并按各版本的 SHA-1 清单检查每个链接产物。欧版和日版工作已停滞，也尚无 PC 移植；此处的一致性结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/mario-party-4-decomp-case/)
+
+- [**SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译**](https://github.com/SpeedBreakerProject/speedbreaker)
+
+  使用打过补丁的 XenonRecomp 将 Xbox 360 版《极品飞车：最高通缉》（2005）的可执行文件转换为原生 C++，并在项目自建的运行时上执行，由运行时代替主机的内核、Xenos GPU、XMA 音频和控制器。发布版面向 SteamOS、Linux 和 Apple 芯片 Mac，另有实验性的 iPhone 与 iPad 版本，所有游戏数据均来自玩家自有的美版光盘。渲染与帧节奏方面的改进均为项目自述。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
 
 #### 工具、项目与集成
 

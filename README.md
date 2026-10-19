@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 294](https://img.shields.io/badge/resources-294-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 149](https://img.shields.io/badge/cases-149-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 295](https://img.shields.io/badge/resources-295-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (132) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (133) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (149) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (150) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -850,6 +850,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs Mario Party 4’s GameCube main executable and REL modules as C source that rebuilds both USA releases. The build analyzes the user’s own disc image and checks every linked output against version-specific SHA-1 lists. PAL and Japanese work is stale and no PC port exists yet; matching results remain project-reported here.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/mario-party-4-decomp-case/)
+
+- [**SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360**](https://github.com/SpeedBreakerProject/speedbreaker)
+
+  Translates the Xbox 360 executable of Need for Speed: Most Wanted (2005) into native C++ with a patched XenonRecomp and runs it on a project runtime that stands in for the console’s kernel, Xenos GPU, XMA audio and controllers. Releases target SteamOS, Linux and Apple silicon Macs, with an experimental iPhone and iPad build, while all game data comes from the player’s own US disc. Rendering and frame-pacing improvements are project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)
 
 #### Tools, projects and integrations
 
