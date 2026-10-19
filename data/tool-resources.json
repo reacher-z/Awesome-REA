@@ -2622,8 +2622,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "Packages agent skills, three role briefs, a Python CLI and preconfigured fal MCP settings for modding PC games the user owns. Its reverse-engineering guidance sends managed, native and data-format work to external decompilers and debuggers, and requires a round-trip check before a reverse-engineered file format is used; one worked example ships an Age of Empires II sprite writer built this way. It is a modding toolkit with agent-written field notes, not a game decompilation, and its example results remain project-reported.",
-    "description_zh": "为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。",
+    "description_en": "Packages agent skills, three role briefs, a Python CLI and fal MCP settings for modding PC games the user owns. It leaves decompiling and debugging to external tools and requires a round-trip check before a reverse-engineered file format is used. A modding toolkit, not a game decompilation; results are project-reported.",
+    "description_zh": "为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及 fal MCP 设置。它把反编译与调试交给外部工具，并要求逆向得到的文件格式先通过往返检查再投入使用。它是模组工具包，不是游戏反编译重建，结果仍为项目报告。",
     "evidence_url": "https://github.com/rehan-remade/universal-modder/blob/6a8865ae171b406f50892c7f46fc5f45655269eb/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -2798,8 +2798,8 @@
     "targets": [
       "app"
     ],
-    "description_en": "Extends Wine 11.17 so that signed MSIX Store apps, with Shapr3D as the main target, install and run on Linux without their source or symbols. About 49,000 changed lines add a DirectComposition implementation, composition swap chains and an app-model host, while Microsoft’s own XAML and app-model DLLs, harvested from a Windows 11 image on the user’s machine, run unmodified. The author says Claude did most of the reverse engineering and code; app support is uneven and checked by a project regression suite.",
-    "description_zh": "扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要目标为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。约 49,000 行改动新增了 DirectComposition 实现、合成交换链和应用模型宿主；微软自己的 XAML 与应用模型 DLL 则在使用者机器上从 Windows 11 镜像中提取后原样运行。作者称大部分逆向工程和代码由 Claude 完成；各应用支持程度不一，由项目回归测试检查。",
+    "description_en": "Extends Wine 11.17 so signed MSIX Store apps, chiefly Shapr3D, install and run on Linux without source or symbols. It adds DirectComposition, composition swap chains and an app-model host, while Microsoft's XAML and app-model DLLs from the user's Windows 11 image run unmodified. The author says Claude did most of the work; app support is uneven.",
+    "description_zh": "扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。它新增 DirectComposition、合成交换链和应用模型宿主，而微软的 XAML 与应用模型 DLL 从使用者的 Windows 11 镜像中提取后原样运行。作者称大部分工作由 Claude 完成；各应用支持程度不一。",
     "evidence_url": "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -3067,8 +3067,8 @@
       "website",
       "app"
     ],
-    "description_en": "Documents BaoCut’s design-canvas and design-system editors, which the project says it ported 1:1 from TypeScript reconstructions of Claude Design’s editors and hosts in agent sessions with annotation and export. Its runtime notes record identifier fixes checked against the original scripts and a structural comparison matching 19,111 of 20,463 canvas main-page functions. Unreviewed differences, the unpublished reconstruction record and reuse rights remain open; no hosted-backend recovery is claimed.",
-    "description_zh": "记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建，并在智能体会话中提供标注与导出。运行时说明记录了对照原脚本修正的标识符，以及画布主页面 20463 个函数中有 19111 个结构完全一致的比对结果。未审阅的差异、未公开的重建记录及复用权利仍待确认；不主张恢复任何托管后端。",
+    "description_en": "Documents BaoCut's design-canvas and design-system editors, which it says were ported 1:1 from TypeScript reconstructions of Claude Design's editors. Notes report 19,111 of 20,463 canvas main-page functions matching structurally after identifier fixes. Remaining differences and reuse rights stay open; no backend recovery is claimed.",
+    "description_zh": "记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建。说明报告修正标识符后，画布主页面 20,463 个函数中有 19,111 个结构一致。其余差异与复用权利仍待确认；不主张恢复任何后端。",
     "evidence_url": "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -3107,8 +3107,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "Disassembles Star Fox’s 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux. Code never reached in recorded sessions, and RAM code that no longer matches the ROM, falls back to an interpreter; the README reports identical per-frame hashes for both paths. The generated C is a mechanical translation rather than hand-decompiled source, and results remain project-reported.",
-    "description_zh": "依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。录制会话中未执行到的代码，以及与 ROM 不再一致的 RAM 代码，回退到解释器执行；README 报告两条路径的逐帧哈希一致。生成的 C 是机械翻译而非手工反编译的源码，结果仍为项目报告。",
+    "description_en": "Disassembles Star Fox's 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux; unreached or modified code falls back to an interpreter. The C is mechanical translation; results are project-reported.",
+    "description_zh": "依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写、支持 Windows、macOS 和 Linux 的 SNES 运行时；未执行到或已改变的代码回退到解释器。生成的 C 是机械翻译；结果仍为项目报告。",
     "evidence_url": "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -3163,8 +3163,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "Disassembles every executable file on the Sonic CD disc from runtime coverage and recursive descent, reassembles them byte-identically, and translates the code statically to C on a from-scratch Mega-CD runtime that replaces the BIOS with a high-level implementation. Recompiled blocks run only where memory still holds the code they came from, and a script compares 96 stage runs frame by frame against the interpreter. The project also patches in widescreen and per-zone saves; results remain project-reported.",
-    "description_zh": "依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再将代码静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行，并有脚本以 96 段关卡运行逐帧对照解释器。项目还以补丁加入宽屏和逐区存档；结果仍为项目报告。",
+    "description_en": "Disassembles each Sonic CD disc executable from runtime coverage and recursive descent, reassembles them byte-identically and translates them statically to C on a from-scratch Mega-CD runtime with a high-level BIOS. Recompiled blocks run only while memory holds their code; widescreen and per-zone saves are patches; results are project-reported.",
+    "description_zh": "依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行；宽屏和逐区存档为补丁功能。结果仍为项目报告。",
     "evidence_url": "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -5635,8 +5635,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Ghidra extension that runs an MCP server inside Ghidra, giving agents decompilation with namespace and cross-reference context, symbol, string, data-type, structure and call-graph tools, program diffing, renaming and PyGhidra scripting. Its README attributes the project's distinction to tool design for LLM use: many small tools whose schemas tolerate other input, redirect correctable mistakes and return short fragments linked to related information. Assistant mode serves an open Ghidra project to several clients at once; headless mode starts Ghidra itself with session-scoped projects.",
-    "description_zh": "在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，为智能体提供附带命名空间与交叉引用上下文的反编译、符号、字符串、数据类型、结构体与调用图工具，以及程序比对、重命名和 PyGhidra 脚本执行。其 README 将项目的特点归于面向大模型使用的工具设计：提供许多小工具，其模式在给定结构之外也能容忍其他输入，把可纠正的错误反馈给模型，并返回附带相关信息链接的简短片段。助手模式可让多个客户端同时连接已打开的 Ghidra 项目；无界面模式则由 ReVa 自行启动 Ghidra，项目仅在会话期间存在。",
+    "description_en": "Ghidra extension that runs an MCP server in Ghidra and gives agents many small LLM-oriented tools: decompilation with namespace and cross-reference context, symbols, types, call graphs, diffing, renaming and PyGhidra scripting. Assistant mode shares an open project with several clients; headless mode starts Ghidra with session-scoped projects.",
+    "description_zh": "在 Ghidra 内运行 MCP 服务器的扩展，为智能体提供许多面向大模型设计的小工具：附带命名空间与交叉引用上下文的反编译、符号、类型、调用图、比对、重命名和 PyGhidra 脚本。助手模式让多个客户端共享已打开的项目；无界面模式自行启动 Ghidra，项目仅在会话期间存在。",
     "evidence_url": "https://github.com/cyberkaida/reverse-engineering-assistant/blob/a05a6b0a18649efd6d74ec8447bdadf8d468c365/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -5859,8 +5859,8 @@
       "game",
       "protocol"
     ],
-    "description_en": "A dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie service contracts locally and adds reconstructed mission host policy. It records transport, decoding, object creation, presentation and gameplay results separately, and keeps superseded conclusions with their cited sources. It documents the case rather than shipping the runtime implementation or a recovered Bungie backend; playthroughs and native results remain project-reported.",
-    "description_zh": "一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。报告把传输、解码、对象创建、呈现与游戏玩法结果分开记录，并连同所引来源保留已被推翻的结论。它记录案例本身，不提供运行时实现，也不是恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。",
+    "description_en": "Dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie services locally. Results are recorded per layer, with superseded conclusions kept. It ships no runtime or recovered Bungie backend; playthroughs and native results are project-reported.",
+    "description_zh": "注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务。结果按层分别记录，并保留已被推翻的结论。它不提供运行时实现或恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。",
     "evidence_url": "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -5928,8 +5928,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Independent, community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can open and triage user-mode and kernel crash dumps, attach to cdb remote debug servers and KD kernel targets, and run arbitrary debugger commands in separately addressed sessions. Its README points users who want AI inside WinDbg to Microsoft's official WinDbg MCP and positions this project as an alternative for other MCP clients, remote HTTP use and batch dump triage; it calls itself a wrapper that runs real debugger commands, not an automatic fix.",
-    "description_zh": "由社区独立开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能够打开并初步分析用户态与内核崩溃转储，连接 cdb 远程调试服务器和 KD 内核目标，并在可分别寻址的会话中执行任意调试器命令。其 README 建议希望在 WinDbg 内使用 AI 的用户选择微软官方的 WinDbg MCP，并把本项目定位为面向其他 MCP 客户端、远程 HTTP 使用和批量转储分析的替代方案；项目自称只是执行真实调试器命令的封装，而非自动修复工具。",
+    "description_en": "Community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can triage user-mode and kernel crash dumps, attach to remote cdb servers and KD targets, and run arbitrary debugger commands per session. It wraps real debugger commands rather than fixing anything, as an alternative to Microsoft's WinDbg MCP for other clients.",
+    "description_zh": "由社区开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能初步分析用户态与内核崩溃转储、连接远程 cdb 服务器和 KD 目标，并按会话执行任意调试器命令。它只是执行真实调试器命令的封装，而非自动修复，可作为微软官方 WinDbg MCP 之外面向其他客户端的替代方案。",
     "evidence_url": "https://github.com/svnscha/mcp-windbg/blob/48e4350d57c44a38068be4f64e89a0fe60fe5c04/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -5959,8 +5959,8 @@
       "game",
       "binary"
     ],
-    "description_en": "GameCube/Wii matching-decompilation toolkit that analyzes DOL and REL executables and, from a project configuration, splits them into relocatable objects plus an ldscript.lcf for CodeWarrior's linker, so decompiled objects can replace original ones while the relinked binary is checked against the original. Analysis covers function boundaries, a Metrowerks/SDK signature database, relocations, sections and data objects, and objects are written without an assembler. Its CLI also handles disc images, archives, compression formats, CodeWarrior demangling and DWARF dumps.",
-    "description_zh": "面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置将其拆分为可重定位目标文件，并为 CodeWarrior 链接器生成 ldscript.lcf，使反编译出的目标文件可逐个替换原有部分，同时将重新链接的二进制与原版核对。分析涵盖函数边界、Metrowerks/SDK 签名库、重定位、节区和数据对象，且无需汇编器即可直接写出目标文件。其命令行还可处理光盘镜像、归档、压缩格式、CodeWarrior 符号还原和 DWARF 转储。",
+    "description_en": "GameCube/Wii matching-decompilation toolkit: it analyzes DOL and REL executables and, per project configuration, splits them into relocatable objects and a CodeWarrior linker script, so decompiled objects can replace originals while the relinked binary is checked against the original. Its CLI also reads disc images, archives and DWARF.",
+    "description_zh": "面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置拆分为可重定位目标文件并生成 CodeWarrior 链接脚本，使反编译出的目标文件可替换原有部分，同时将重新链接的二进制与原版核对。其命令行还可读取光盘镜像、归档和 DWARF。",
     "evidence_url": "https://github.com/encounter/decomp-toolkit/blob/0645e16511814920ffb05b25615dd71f1af73e4c/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6091,8 +6091,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.",
-    "description_zh": "源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。",
+    "description_en": "Command-line reverse-engineering framework forked from radare2. Its shell analyzes, disassembles and debugs binaries and works as a scriptable hex editor; rz-* tools add format info, assembly, diffing, hashing, search and FLIRT signatures for dozens of architectures and formats. rzpipe scripts it from other languages; Cutter is a separate GUI.",
+    "description_zh": "源自 radare2 分支的命令行逆向工程框架。其交互环境可分析、反汇编和调试二进制，并可用作可脚本化的十六进制编辑器；rz-* 系列工具为数十种架构与格式提供格式信息、汇编、差异比较、哈希、搜索和 FLIRT 签名。可通过 rzpipe 用其他语言编写脚本；Cutter 是独立的图形界面。",
     "evidence_url": "https://github.com/rizinorg/rizin/blob/db112e55614b8635b42d7515a2790ca9fb4e5d05/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6121,8 +6121,8 @@
       "game",
       "binary"
     ],
-    "description_en": "Connects MCP clients to Cheat Engine through a Lua bridge script and a Python MCP server, so an agent can inspect a process the user runs under Cheat Engine: memory reads and value scans, pointer-chain resolution, structure dissection, RTTI class names, disassembly, cross-references and hardware or DBVM breakpoints. Further tool groups write memory, inject DLLs or code, automate input and use Cheat Engine's kernel-mode driver. The README limits it to educational and research use and disclaims multiplayer cheating and Terms of Service violations.",
-    "description_zh": "通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能够检查用户在 Cheat Engine 下运行的进程：读取内存与扫描数值、解析指针链、剖析结构体、识别 RTTI 类名、反汇编、查找交叉引用，以及设置硬件或 DBVM 断点。另有工具组可写入内存、注入 DLL 或代码、自动化输入，并调用 Cheat Engine 的内核模式驱动。README 将其限定于教学和研究用途，并声明不支持多人游戏作弊或违反服务条款的行为。",
+    "description_en": "Connects MCP clients to Cheat Engine via a Lua bridge and Python MCP server, so an agent can inspect a process run under Cheat Engine: memory scans, pointer chains, structures, RTTI names, disassembly, cross-references and breakpoints. Further tools write memory, inject code and use the kernel driver; the README limits it to education and research.",
+    "description_zh": "通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能检查在 Cheat Engine 下运行的进程：内存扫描、指针链、结构体、RTTI 类名、反汇编、交叉引用和断点。另有工具可写入内存、注入代码并调用内核驱动；README 将其限定于教学和研究。",
     "evidence_url": "https://github.com/miscusi-peek/cheatengine-mcp-bridge/blob/6bd7ce90479250a9b4b75e7944df9c105ecb2572/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6210,8 +6210,8 @@
     "targets": [
       "protocol"
     ],
-    "description_en": "MCP server that wraps tshark, and optionally other Wireshark command-line tools, so agents can query saved captures through Wireshark's dissectors: packet lists and details, stream following, arbitrary field extraction, protocol hierarchies and conversations, decode-as rules for non-standard ports, protocol preferences, TLS and WPA decryption with user-supplied keys, and one tool that applies preset fields and filters for 25 protocols such as Modbus, S7comm, MQTT, Zigbee and BLE. Separate security-heuristic, live-capture and capture-editing tools sit beside the dissection tools.",
-    "description_zh": "封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。",
+    "description_en": "MCP server wrapping tshark and optional Wireshark tools so agents can query saved captures with Wireshark's dissectors: packet details, streams, field extraction, decode-as rules, TLS and WPA decryption with user keys, and preset filters for 25 protocols such as Modbus and BLE. Live capture, editing and security heuristics are separate tools.",
+    "description_zh": "封装 tshark 及可选 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 解析器查询已保存的抓包：数据包详情、流、字段提取、decode-as 规则、使用用户密钥的 TLS 与 WPA 解密，以及 Modbus、BLE 等 25 种协议的预设过滤器。实时抓包、编辑和安全启发式检测为独立工具。",
     "evidence_url": "https://github.com/bx33661/Wireshark-MCP/blob/0e1b6595a2dcfe097133deb1c0c3128fb7a110d4/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6375,8 +6375,8 @@
     "targets": [
       "app"
     ],
-    "description_en": "Documents the proprietary .rkd telemetry format written by Race-Keeper “Instant Video” recorders, whose bundled player runs only on Windows, and implements matching Python and Go parsers that export GPS and IMU channels as Telemetry Overlay CSV and GPX. The author credits Claude Code with the hex-dump analysis and hypothesis testing, anchored by known car IDs, circuit location and speeds. Field meanings rest on physical cross-checks from the author’s own recordings, and several record types remain partly unknown.",
-    "description_zh": "记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析和假设检验由 Claude Code 协助完成，并以已知车辆编号、赛道位置和车速作为锚点。字段含义依据作者自有录制数据的物理交叉核对得出，若干记录类型仍未完全解读。",
+    "description_en": "Documents the proprietary .rkd format of Race-Keeper “Instant Video” recorders, whose player is Windows-only, and adds matching Python and Go parsers exporting GPS and IMU data as Telemetry Overlay CSV and GPX. The author credits Claude Code with the hex analysis; field meanings rest on the author's recordings, and some records stay partly unknown.",
+    "description_zh": "记录 Race-Keeper “Instant Video” 记录仪的专有 .rkd 格式（播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 数据导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析由 Claude Code 协助完成；字段含义依据作者的录制数据，若干记录类型仍未完全解读。",
     "evidence_url": "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6408,8 +6408,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Python plug-in that loads into GDB, or runs as a REPL around LLDB, to make live program state easier to inspect. Each stop prints a context of registers, stack, call frames and annotated disassembly with recursively dereferenced pointers; commands cover memory maps, search, telescoping, heap allocators and Go values, with Capstone/Unicorn emulation and decompiler integration for IDA, Binary Ninja, Ghidra and angr-management. The README lists Linux ELF, macOS Mach-O, QEMU user/system and embedded Cortex-M or RISC-V/32 debugging.",
-    "description_zh": "可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。",
+    "description_en": "Python plug-in for GDB, or a REPL around LLDB, that makes live program state easier to inspect: each stop shows registers, stack, frames and annotated disassembly with dereferenced pointers. Commands cover memory maps, search, heap allocators and Go values, plus emulation and decompiler integration, for Linux, macOS, QEMU and embedded targets.",
+    "description_zh": "可加载到 GDB、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查：每次停下都显示寄存器、栈、调用帧和带注释的反汇编，并解引用指针。命令涵盖内存映射、搜索、堆分配器和 Go 值，并支持模拟执行与反编译器集成，适用于 Linux、macOS、QEMU 和嵌入式目标。",
     "evidence_url": "https://github.com/pwndbg/pwndbg/blob/3044ccdf938221e04241e85fe02961ef174ef975/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6742,8 +6742,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "A discontinued local app and MCP server that hands AI coding agents one function of a user-owned console game at a time, compiles each C attempt with the game’s period compiler and accepts it only when the linked result matches the original bytes. It can start a project from a ROM or disc image, or work inside forks of public decompilation projects listed on decomp.dev, where objdiff judges the result. Its final commit, dated 15 October 2026, marks it discontinued in response to opposition in the decompilation community; the code stays under MIT without further fixes or releases.",
-    "description_zh": "一款已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体，用该游戏当年的编译器编译每次提交的 C 代码，只有链接后的结果与原始字节一致才算通过。它可从 ROM 或光盘镜像新建项目，也可在 decomp.dev 所列公开反编译项目的分叉中工作，由 objdiff 判定结果。其 2026 年 10 月 15 日的最后一次提交宣布停止开发，理由是反编译社区的反对；代码仍以 MIT 许可保留，但不再修复或发布新版本。",
+    "description_en": "Discontinued local app and MCP server giving AI coding agents one function of a user-owned console game at a time, accepting a C attempt only when the period compiler's linked output matches the original bytes. It starts from a ROM, a disc image or a decomp.dev project fork. Its 15 October 2026 final commit ended development; the code stays MIT.",
+    "description_zh": "已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体；只有用当年编译器编译并链接后与原始字节一致的 C 代码才算通过。可从 ROM 或光盘镜像，或 decomp.dev 所列项目的分叉开始。2026 年 10 月 15 日的最后一次提交终止了开发；代码仍以 MIT 许可保留。",
     "evidence_url": "https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6839,8 +6839,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "Runtime code manipulation system for building dynamic tools that observe or transform any part of an unmodified program while it runs. Its API and IA-32/AMD64/ARM/AArch64 instruction manipulation library allow arbitrary changes to application instructions, not only inserted callouts. The release package bundles tools including drcov for code coverage, drltrace for library-call tracing, drstrace for Windows system calls, drmemtrace instruction and memory traces and the drdisas disassembler. It is a framework for building instrumentation tools, distinct from Frida's scripting of live processes.",
-    "description_zh": "运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。",
+    "description_en": "Runtime code manipulation framework for building dynamic tools that observe or transform any part of an unmodified program as it runs; its IA-32/AMD64/ARM/AArch64 API allows arbitrary instruction changes, not only callouts. Releases bundle drcov, drltrace, drmemtrace and other tools. It builds instrumentation, unlike Frida's live-process scripting.",
+    "description_zh": "运行时代码操作框架，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具；其 IA-32/AMD64/ARM/AArch64 API 允许任意修改指令，而不仅限于插入回调。发布包附带 drcov、drltrace、drmemtrace 等工具。它用于构建插桩工具，与 Frida 对运行中进程编写脚本的方式不同。",
     "evidence_url": "https://github.com/DynamoRIO/dynamorio/blob/6d2165aa485ca91bf10faa64440cfadce850b0bc/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6900,8 +6900,8 @@
       "game",
       "binary"
     ],
-    "description_en": "Experimental static recompiler that translates MIPS R5900 code from PlayStation 2 ELF executables into C++ and links it with a bundled runtime. ps2xAnalyzer or a Ghidra export script produces a per-game TOML of functions, stubs, skips and instruction patches; ps2xRecomp emits a literal instruction-by-instruction translation; ps2xRuntime and ps2xIOP supply guest memory, syscall dispatch, IOP module execution with HLE fallbacks and partial, largely stubbed GS/VU hardware. Output is not decompiled source, and getting a game to run remains per-game porting work.",
-    "description_zh": "实验性的静态重编译器，将 PlayStation 2 ELF 可执行文件中的 MIPS R5900 代码转换为 C++，并与随附的运行时链接。ps2xAnalyzer 或 Ghidra 导出脚本为每款游戏生成包含函数、存根、跳过项和指令补丁的 TOML 配置；ps2xRecomp 输出逐条指令的直译代码；ps2xRuntime 与 ps2xIOP 提供客户机内存、系统调用分发、带 HLE 回退的 IOP 模块执行，以及仅部分实现、大多为存根的 GS/VU 硬件。输出不是反编译源码，让游戏真正运行仍需针对每款游戏进行移植。",
+    "description_en": "Experimental static recompiler that translates PlayStation 2 MIPS R5900 ELF code into literal instruction-by-instruction C++, guided by a per-game TOML from its analyzer or a Ghidra export, linked with a runtime whose GS/VU hardware is partial and largely stubbed. Output is not decompiled source, and running a game remains per-game porting work.",
+    "description_zh": "实验性的静态重编译器，依据其分析器或 Ghidra 导出脚本生成的每款游戏 TOML 配置，把 PlayStation 2 ELF 中的 MIPS R5900 代码逐条直译为 C++，并与 GS/VU 硬件仅部分实现、大多为存根的运行时链接。输出不是反编译源码；让游戏运行仍需针对每款游戏进行移植。",
     "evidence_url": "https://github.com/ran-j/PS2Recomp/blob/eb8688b2fd191129f103a39543002c005b33409c/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -6963,8 +6963,8 @@
     "targets": [
       "game"
     ],
-    "description_en": "Reimplements the Rise of Nations: Extended Edition engine as a native macOS app with a Metal renderer, a deterministic simulation, a computer opponent and a compatible BigHugeScript compiler and virtual machine, loading art, maps, rules and scripts from the user’s own Windows installation. Subsystem specifications written from Ghidra study of the symbol-bearing executable, together with JavaScript reference tools, guided a C++17 implementation built with heavy Claude Code assistance. The alpha plays tutorials and scenarios, and its bit-exactness checks remain project-reported.",
-    "description_zh": "以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。项目依据对带调试符号的可执行文件进行 Ghidra 研究后撰写的子系统规范及 JavaScript 参考工具，在大量使用 Claude Code 的情况下编写 C++17 实现。该早期版本可游玩教程与场景，其逐位一致性检查仍为项目报告。",
+    "description_en": "Reimplements the Rise of Nations: Extended Edition engine natively on macOS with a Metal renderer, deterministic simulation, computer opponent and BigHugeScript compiler/VM, using assets from the user's Windows installation. Specs from Ghidra study guided the C++17 code, built with heavy Claude Code help; bit-exactness checks are project-reported.",
+    "description_zh": "在 macOS 上原生重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手以及 BigHugeScript 编译器与虚拟机，素材取自使用者的 Windows 版安装目录。依据 Ghidra 研究撰写的规范，在大量使用 Claude Code 的情况下编写 C++17 代码；逐位一致性检查仍为项目报告。",
     "evidence_url": "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -7063,8 +7063,8 @@
       "protocol",
       "app"
     ],
-    "description_en": "NCC Group's tools for decoding and re-encoding Protocol Buffers messages without the matching .proto definition. The decoder returns the message data with an editable type definition built from best-effort guesses based on wire types; analysts can name fields, correct types and re-encode edited messages, which protoc --decode_raw cannot do. It ships as a Python library with a bbpb CLI, a Jython Burp Suite extension and a mitmproxy addon, and its README traces it to modifying messages during mobile penetration tests.",
-    "description_zh": "NCC Group 推出的工具集，可在没有对应 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器返回报文数据，以及根据线路类型尽力推测生成、可编辑的类型定义；分析者可以为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode_raw 做不到的。它提供 Python 库及 bbpb 命令行工具、基于 Jython 的 Burp Suite 扩展和 mitmproxy 插件，README 说明它最初用于在移动应用渗透测试中修改报文。",
+    "description_en": "NCC Group tools for decoding and re-encoding Protocol Buffers messages without the .proto definition. The decoder guesses an editable type definition from wire types, so analysts can name fields, fix types and re-encode edited messages, unlike protoc --decode_raw. It ships as a Python library and bbpb CLI, a Burp extension and a mitmproxy addon.",
+    "description_zh": "NCC Group 推出的工具集，可在没有 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器根据线路类型推测可编辑的类型定义，分析者可为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode_raw 做不到的。它提供 Python 库与 bbpb 命令行工具、Burp 扩展和 mitmproxy 插件。",
     "evidence_url": "https://github.com/nccgroup/blackboxprotobuf/blob/b98861e0f732e902923abc36cc08c40917f34127/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",

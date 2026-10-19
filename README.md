@@ -96,7 +96,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**BaoCut Design: porting reconstructed canvas and design-system editors**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 
-  Documents BaoCut’s design-canvas and design-system editors, which the project says it ported 1:1 from TypeScript reconstructions of Claude Design’s editors and hosts in agent sessions with annotation and export. Its runtime notes record identifier fixes checked against the original scripts and a structural comparison matching 19,111 of 20,463 canvas main-page functions. Unreviewed differences, the unpublished reconstruction record and reuse rights remain open; no hosted-backend recovery is claimed.
+  Documents BaoCut's design-canvas and design-system editors, which it says were ported 1:1 from TypeScript reconstructions of Claude Design's editors. Notes report 19,111 of 20,463 canvas main-page functions matching structurally after identifier fixes. Remaining differences and reuse rights stay open; no backend recovery is claimed.
 
   Case study · Independent reconstruction · Also: App · [Requirements & evidence](https://awesomerea.org/resources/baocut-design-canvas-case/)
 
@@ -333,7 +333,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction**](https://github.com/tylergraydev/UltraSunnyMoon)
 
-  The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. Both replacements are behavior-tested but nonmatching and every other byte stays original; one recorded input movie drives the original and hybrid builds to the same bedroom movement in the Azahar emulator. Retail compiler identity, exact matching, module loading and broader gameplay remain open.
+  The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects and swap in two nonmatching C routines; one input movie brings both builds to the same bedroom movement in Azahar. Compiler identity, exact matching, module loading and broader gameplay stay open.
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/ultrasunnymoon-rea-case/)
 
@@ -423,7 +423,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Project Arwing: Star Fox recompiled from a matching disassembly**](https://github.com/carlosrmz009/arwing)
 
-  Disassembles Star Fox’s 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux. Code never reached in recorded sessions, and RAM code that no longer matches the ROM, falls back to an interpreter; the README reports identical per-frame hashes for both paths. The generated C is a mechanical translation rather than hand-decompiled source, and results remain project-reported.
+  Disassembles Star Fox's 65816 and SuperFX code from runtime coverage and recursive descent, reassembles it into the original ROM, then translates it statically to C on a from-scratch SNES runtime for Windows, macOS and Linux; unreached or modified code falls back to an interpreter. The C is mechanical translation; results are project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/project-arwing-star-fox-recomp-case/)
 
@@ -435,7 +435,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Little Planet: Sonic CD recompiled from a matching disassembly**](https://github.com/carlosrmz009/littleplanet)
 
-  Disassembles every executable file on the Sonic CD disc from runtime coverage and recursive descent, reassembles them byte-identically, and translates the code statically to C on a from-scratch Mega-CD runtime that replaces the BIOS with a high-level implementation. Recompiled blocks run only where memory still holds the code they came from, and a script compares 96 stage runs frame by frame against the interpreter. The project also patches in widescreen and per-zone saves; results remain project-reported.
+  Disassembles each Sonic CD disc executable from runtime coverage and recursive descent, reassembles them byte-identically and translates them statically to C on a from-scratch Mega-CD runtime with a high-level BIOS. Recompiled blocks run only while memory holds their code; widescreen and per-zone saves are patches; results are project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/little-planet-sonic-cd-recomp-case/)
 
@@ -885,7 +885,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Destiny 2 build 86657: Sunrise/Dawn reconstruction research report**](https://github.com/isinternets/d2-research)
 
-  A dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie service contracts locally and adds reconstructed mission host policy. It records transport, decoding, object creation, presentation and gameplay results separately, and keeps superseded conclusions with their cited sources. It documents the case rather than shipping the runtime implementation or a recovered Bungie backend; playthroughs and native results remain project-reported.
+  Dated research report on the Sunrise/Dawn reconstruction of the archived Destiny 2 build 86657 client, which emulates platform sign-on and the examined Bungie services locally. Results are recorded per layer, with superseded conclusions kept. It ships no runtime or recovered Bungie backend; playthroughs and native results are project-reported.
 
   Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/destiny2-build-86657-reconstruction-report-case/)
 
@@ -993,7 +993,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**OpenRiseOfNations: a native macOS engine reimplementation**](https://github.com/ben-wright-1/OpenRiseOfNations)
 
-  Reimplements the Rise of Nations: Extended Edition engine as a native macOS app with a Metal renderer, a deterministic simulation, a computer opponent and a compatible BigHugeScript compiler and virtual machine, loading art, maps, rules and scripts from the user’s own Windows installation. Subsystem specifications written from Ghidra study of the symbol-bearing executable, together with JavaScript reference tools, guided a C++17 implementation built with heavy Claude Code assistance. The alpha plays tutorials and scenarios, and its bit-exactness checks remain project-reported.
+  Reimplements the Rise of Nations: Extended Edition engine natively on macOS with a Metal renderer, deterministic simulation, computer opponent and BigHugeScript compiler/VM, using assets from the user's Windows installation. Specs from Ghidra study guided the C++17 code, built with heavy Claude Code help; bit-exactness checks are project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openriseofnations-engine-case/)
 
@@ -1139,13 +1139,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**decomp-toolkit**](https://github.com/encounter/decomp-toolkit)
 
-  GameCube/Wii matching-decompilation toolkit that analyzes DOL and REL executables and, from a project configuration, splits them into relocatable objects plus an ldscript.lcf for CodeWarrior's linker, so decompiled objects can replace original ones while the relinked binary is checked against the original. Analysis covers function boundaries, a Metrowerks/SDK signature database, relocations, sections and data objects, and objects are written without an assembler. Its CLI also handles disc images, archives, compression formats, CodeWarrior demangling and DWARF dumps.
+  GameCube/Wii matching-decompilation toolkit: it analyzes DOL and REL executables and, per project configuration, splits them into relocatable objects and a CodeWarrior linker script, so decompiled objects can replace originals while the relinked binary is checked against the original. Its CLI also reads disc images, archives and DWARF.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/decomp-toolkit/)
 
 - [**Cheat Engine MCP Bridge**](https://github.com/miscusi-peek/cheatengine-mcp-bridge)
 
-  Connects MCP clients to Cheat Engine through a Lua bridge script and a Python MCP server, so an agent can inspect a process the user runs under Cheat Engine: memory reads and value scans, pointer-chain resolution, structure dissection, RTTI class names, disassembly, cross-references and hardware or DBVM breakpoints. Further tool groups write memory, inject DLLs or code, automate input and use Cheat Engine's kernel-mode driver. The README limits it to educational and research use and disclaims multiplayer cheating and Terms of Service violations.
+  Connects MCP clients to Cheat Engine via a Lua bridge and Python MCP server, so an agent can inspect a process run under Cheat Engine: memory scans, pointer chains, structures, RTTI names, disassembly, cross-references and breakpoints. Further tools write memory, inject code and use the kernel driver; the README limits it to education and research.
 
   Integration · Independent MCP · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/cheatengine-mcp-bridge/)
 
@@ -1157,7 +1157,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**PS2Recomp**](https://github.com/ran-j/PS2Recomp)
 
-  Experimental static recompiler that translates MIPS R5900 code from PlayStation 2 ELF executables into C++ and links it with a bundled runtime. ps2xAnalyzer or a Ghidra export script produces a per-game TOML of functions, stubs, skips and instruction patches; ps2xRecomp emits a literal instruction-by-instruction translation; ps2xRuntime and ps2xIOP supply guest memory, syscall dispatch, IOP module execution with HLE fallbacks and partial, largely stubbed GS/VU hardware. Output is not decompiled source, and getting a game to run remains per-game porting work.
+  Experimental static recompiler that translates PlayStation 2 MIPS R5900 ELF code into literal instruction-by-instruction C++, guided by a per-game TOML from its analyzer or a Ghidra export, linked with a runtime whose GS/VU hardware is partial and largely stubbed. Output is not decompiled source, and running a game remains per-game porting work.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/ps2recomp/)
 
@@ -1326,13 +1326,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**wine-uwp: running packaged Windows Store apps on a patched Wine**](https://github.com/designgears/wine-uwp)
 
-  Extends Wine 11.17 so that signed MSIX Store apps, with Shapr3D as the main target, install and run on Linux without their source or symbols. About 49,000 changed lines add a DirectComposition implementation, composition swap chains and an app-model host, while Microsoft’s own XAML and app-model DLLs, harvested from a Windows 11 image on the user’s machine, run unmodified. The author says Claude did most of the reverse engineering and code; app support is uneven and checked by a project regression suite.
+  Extends Wine 11.17 so signed MSIX Store apps, chiefly Shapr3D, install and run on Linux without source or symbols. It adds DirectComposition, composition swap chains and an app-model host, while Microsoft's XAML and app-model DLLs from the user's Windows 11 image run unmodified. The author says Claude did most of the work; app support is uneven.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/wine-uwp-store-apps-case/)
 
 - [**RKD Telemetry Extractor: decoding Race-Keeper track-day recordings**](https://github.com/sam-dumont/rkd-telemetry-extractor)
 
-  Documents the proprietary .rkd telemetry format written by Race-Keeper “Instant Video” recorders, whose bundled player runs only on Windows, and implements matching Python and Go parsers that export GPS and IMU channels as Telemetry Overlay CSV and GPX. The author credits Claude Code with the hex-dump analysis and hypothesis testing, anchored by known car IDs, circuit location and speeds. Field meanings rest on physical cross-checks from the author’s own recordings, and several record types remain partly unknown.
+  Documents the proprietary .rkd format of Race-Keeper “Instant Video” recorders, whose player is Windows-only, and adds matching Python and Go parsers exporting GPS and IMU data as Telemetry Overlay CSV and GPX. The author credits Claude Code with the hex analysis; field meanings rest on the author's recordings, and some records stay partly unknown.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/rkd-telemetry-extractor-case/)
 
@@ -1601,7 +1601,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Rizin**](https://github.com/rizinorg/rizin)
 
-  Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-\* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.
+  Command-line reverse-engineering framework forked from radare2. Its shell analyzes, disassembles and debugs binaries and works as a scriptable hex editor; rz-\* tools add format info, assembly, diffing, hashing, search and FLIRT signatures for dozens of architectures and formats. rzpipe scripts it from other languages; Cutter is a separate GUI.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/rizin/)
 
@@ -1613,13 +1613,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**pwndbg**](https://github.com/pwndbg/pwndbg)
 
-  Python plug-in that loads into GDB, or runs as a REPL around LLDB, to make live program state easier to inspect. Each stop prints a context of registers, stack, call frames and annotated disassembly with recursively dereferenced pointers; commands cover memory maps, search, telescoping, heap allocators and Go values, with Capstone/Unicorn emulation and decompiler integration for IDA, Binary Ninja, Ghidra and angr-management. The README lists Linux ELF, macOS Mach-O, QEMU user/system and embedded Cortex-M or RISC-V/32 debugging.
+  Python plug-in for GDB, or a REPL around LLDB, that makes live program state easier to inspect: each stop shows registers, stack, frames and annotated disassembly with dereferenced pointers. Commands cover memory maps, search, heap allocators and Go values, plus emulation and decompiler integration, for Linux, macOS, QEMU and embedded targets.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/pwndbg/)
 
 - [**DynamoRIO**](https://github.com/DynamoRIO/dynamorio)
 
-  Runtime code manipulation system for building dynamic tools that observe or transform any part of an unmodified program while it runs. Its API and IA-32/AMD64/ARM/AArch64 instruction manipulation library allow arbitrary changes to application instructions, not only inserted callouts. The release package bundles tools including drcov for code coverage, drltrace for library-call tracing, drstrace for Windows system calls, drmemtrace instruction and memory traces and the drdisas disassembler. It is a framework for building instrumentation tools, distinct from Frida's scripting of live processes.
+  Runtime code manipulation framework for building dynamic tools that observe or transform any part of an unmodified program as it runs; its IA-32/AMD64/ARM/AArch64 API allows arbitrary instruction changes, not only callouts. Releases bundle drcov, drltrace, drmemtrace and other tools. It builds instrumentation, unlike Frida's live-process scripting.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/dynamorio/)
 
@@ -1805,7 +1805,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Blackbox Protobuf**](https://github.com/nccgroup/blackboxprotobuf)
 
-  NCC Group's tools for decoding and re-encoding Protocol Buffers messages without the matching .proto definition. The decoder returns the message data with an editable type definition built from best-effort guesses based on wire types; analysts can name fields, correct types and re-encode edited messages, which protoc --decode\_raw cannot do. It ships as a Python library with a bbpb CLI, a Jython Burp Suite extension and a mitmproxy addon, and its README traces it to modifying messages during mobile penetration tests.
+  NCC Group tools for decoding and re-encoding Protocol Buffers messages without the .proto definition. The decoder guesses an editable type definition from wire types, so analysts can name fields, fix types and re-encode edited messages, unlike protoc --decode\_raw. It ships as a Python library and bbpb CLI, a Burp extension and a mitmproxy addon.
 
   Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/blackbox-protobuf/)
 
@@ -1860,7 +1860,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**crashlens**](https://github.com/mingleiw/crashlens)
 
-  A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.
+  Crash-triage tool that turns Linux core dumps, panics, exception traces and sanitizer reports into Markdown bug reports with crash type, first user-code frame and stable signature. Core dumps go through the REA CLI, with REA's Ghidra provider for stripped functions. A debugging integration, not a reconstruction case; accuracy is author-reported.
 
   Integration · Community REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/crashlens-rea-crash-triage/)
 
@@ -1950,13 +1950,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**Universal Modder**](https://github.com/rehan-remade/universal-modder)
 
-  Packages agent skills, three role briefs, a Python CLI and preconfigured fal MCP settings for modding PC games the user owns. Its reverse-engineering guidance sends managed, native and data-format work to external decompilers and debuggers, and requires a round-trip check before a reverse-engineered file format is used; one worked example ships an Age of Empires II sprite writer built this way. It is a modding toolkit with agent-written field notes, not a game decompilation, and its example results remain project-reported.
+  Packages agent skills, three role briefs, a Python CLI and fal MCP settings for modding PC games the user owns. It leaves decompiling and debugging to external tools and requires a round-trip check before a reverse-engineered file format is used. A modding toolkit, not a game decompilation; results are project-reported.
 
   Integration · Independent agent · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/universal-modder-agent-toolkit/)
 
 - [**ReVa (Reverse Engineering Assistant)**](https://github.com/cyberkaida/reverse-engineering-assistant)
 
-  Ghidra extension that runs an MCP server inside Ghidra, giving agents decompilation with namespace and cross-reference context, symbol, string, data-type, structure and call-graph tools, program diffing, renaming and PyGhidra scripting. Its README attributes the project's distinction to tool design for LLM use: many small tools whose schemas tolerate other input, redirect correctable mistakes and return short fragments linked to related information. Assistant mode serves an open Ghidra project to several clients at once; headless mode starts Ghidra itself with session-scoped projects.
+  Ghidra extension that runs an MCP server in Ghidra and gives agents many small LLM-oriented tools: decompilation with namespace and cross-reference context, symbols, types, call graphs, diffing, renaming and PyGhidra scripting. Assistant mode shares an open project with several clients; headless mode starts Ghidra with session-scoped projects.
 
   Integration · Independent MCP · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/reva-ghidra-mcp/)
 
@@ -1968,13 +1968,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**mcp-windbg**](https://github.com/svnscha/mcp-windbg)
 
-  Independent, community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can open and triage user-mode and kernel crash dumps, attach to cdb remote debug servers and KD kernel targets, and run arbitrary debugger commands in separately addressed sessions. Its README points users who want AI inside WinDbg to Microsoft's official WinDbg MCP and positions this project as an alternative for other MCP clients, remote HTTP use and batch dump triage; it calls itself a wrapper that runs real debugger commands, not an automatic fix.
+  Community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can triage user-mode and kernel crash dumps, attach to remote cdb servers and KD targets, and run arbitrary debugger commands per session. It wraps real debugger commands rather than fixing anything, as an alternative to Microsoft's WinDbg MCP for other clients.
 
   Integration · Independent MCP · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/mcp-windbg/)
 
 - [**Wireshark MCP**](https://github.com/bx33661/Wireshark-MCP)
 
-  MCP server that wraps tshark, and optionally other Wireshark command-line tools, so agents can query saved captures through Wireshark's dissectors: packet lists and details, stream following, arbitrary field extraction, protocol hierarchies and conversations, decode-as rules for non-standard ports, protocol preferences, TLS and WPA decryption with user-supplied keys, and one tool that applies preset fields and filters for 25 protocols such as Modbus, S7comm, MQTT, Zigbee and BLE. Separate security-heuristic, live-capture and capture-editing tools sit beside the dissection tools.
+  MCP server wrapping tshark and optional Wireshark tools so agents can query saved captures with Wireshark's dissectors: packet details, streams, field extraction, decode-as rules, TLS and WPA decryption with user keys, and preset filters for 25 protocols such as Modbus and BLE. Live capture, editing and security heuristics are separate tools.
 
   Integration · Independent MCP · Targets: Protocol · [Requirements & evidence](https://awesomerea.org/resources/wireshark-mcp/)
 
@@ -1986,7 +1986,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [**decomp.wtf**](https://github.com/i12bp8/decomp.wtf)
 
-  A discontinued local app and MCP server that hands AI coding agents one function of a user-owned console game at a time, compiles each C attempt with the game’s period compiler and accepts it only when the linked result matches the original bytes. It can start a project from a ROM or disc image, or work inside forks of public decompilation projects listed on decomp.dev, where objdiff judges the result. Its final commit, dated 15 October 2026, marks it discontinued in response to opposition in the decompilation community; the code stays under MIT without further fixes or releases.
+  Discontinued local app and MCP server giving AI coding agents one function of a user-owned console game at a time, accepting a C attempt only when the period compiler's linked output matches the original bytes. It starts from a ROM, a disc image or a decomp.dev project fork. Its 15 October 2026 final commit ended development; the code stays MIT.
 
   Integration · Independent agent · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/decomp-wtf-agent-decompilation/)
 

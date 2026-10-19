@@ -97,7 +97,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**BaoCut Design：移植重建的设计稿与设计系统编辑器**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 
-  记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建，并在智能体会话中提供标注与导出。运行时说明记录了对照原脚本修正的标识符，以及画布主页面 20463 个函数中有 19111 个结构完全一致的比对结果。未审阅的差异、未公开的重建记录及复用权利仍待确认；不主张恢复任何托管后端。
+  记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建。说明报告修正标识符后，画布主页面 20,463 个函数中有 19,111 个结构一致。其余差异与复用权利仍待确认；不主张恢复任何后端。
 
   案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-design-canvas-case/)
 
@@ -334,7 +334,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon)
 
-  作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。
+  作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建，并替换进两个与原字节不一致的 C 例程；同一段录制输入在 Azahar 中让两种构建到达相同的卧室移动场景。编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)
 
@@ -424,7 +424,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Project Arwing：由一致性反汇编重编译的 Star Fox**](https://github.com/carlosrmz009/arwing)
 
-  依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。录制会话中未执行到的代码，以及与 ROM 不再一致的 RAM 代码，回退到解释器执行；README 报告两条路径的逐帧哈希一致。生成的 C 是机械翻译而非手工反编译的源码，结果仍为项目报告。
+  依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写、支持 Windows、macOS 和 Linux 的 SNES 运行时；未执行到或已改变的代码回退到解释器。生成的 C 是机械翻译；结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)
 
@@ -436,7 +436,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Little Planet：由一致性反汇编重编译的 Sonic CD**](https://github.com/carlosrmz009/littleplanet)
 
-  依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再将代码静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行，并有脚本以 96 段关卡运行逐帧对照解释器。项目还以补丁加入宽屏和逐区存档；结果仍为项目报告。
+  依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行；宽屏和逐区存档为补丁功能。结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/little-planet-sonic-cd-recomp-case/)
 
@@ -886,7 +886,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Destiny 2 build 86657：Sunrise／Dawn 重建研究报告**](https://github.com/isinternets/d2-research)
 
-  一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。报告把传输、解码、对象创建、呈现与游戏玩法结果分开记录，并连同所引来源保留已被推翻的结论。它记录案例本身，不提供运行时实现，也不是恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。
+  注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务。结果按层分别记录，并保留已被推翻的结论。它不提供运行时实现或恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。
 
   案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/destiny2-build-86657-reconstruction-report-case/)
 
@@ -994,7 +994,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**OpenRiseOfNations：原生 macOS 引擎重新实现**](https://github.com/ben-wright-1/OpenRiseOfNations)
 
-  以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。项目依据对带调试符号的可执行文件进行 Ghidra 研究后撰写的子系统规范及 JavaScript 参考工具，在大量使用 Claude Code 的情况下编写 C++17 实现。该早期版本可游玩教程与场景，其逐位一致性检查仍为项目报告。
+  在 macOS 上原生重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手以及 BigHugeScript 编译器与虚拟机，素材取自使用者的 Windows 版安装目录。依据 Ghidra 研究撰写的规范，在大量使用 Claude Code 的情况下编写 C++17 代码；逐位一致性检查仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)
 
@@ -1140,13 +1140,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**decomp-toolkit GameCube/Wii 反编译工具包**](https://github.com/encounter/decomp-toolkit)
 
-  面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置将其拆分为可重定位目标文件，并为 CodeWarrior 链接器生成 ldscript.lcf，使反编译出的目标文件可逐个替换原有部分，同时将重新链接的二进制与原版核对。分析涵盖函数边界、Metrowerks/SDK 签名库、重定位、节区和数据对象，且无需汇编器即可直接写出目标文件。其命令行还可处理光盘镜像、归档、压缩格式、CodeWarrior 符号还原和 DWARF 转储。
+  面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置拆分为可重定位目标文件并生成 CodeWarrior 链接脚本，使反编译出的目标文件可替换原有部分，同时将重新链接的二进制与原版核对。其命令行还可读取光盘镜像、归档和 DWARF。
 
   工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-toolkit/)
 
 - [**Cheat Engine MCP Bridge 进程内存分析桥接**](https://github.com/miscusi-peek/cheatengine-mcp-bridge)
 
-  通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能够检查用户在 Cheat Engine 下运行的进程：读取内存与扫描数值、解析指针链、剖析结构体、识别 RTTI 类名、反汇编、查找交叉引用，以及设置硬件或 DBVM 断点。另有工具组可写入内存、注入 DLL 或代码、自动化输入，并调用 Cheat Engine 的内核模式驱动。README 将其限定于教学和研究用途，并声明不支持多人游戏作弊或违反服务条款的行为。
+  通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能检查在 Cheat Engine 下运行的进程：内存扫描、指针链、结构体、RTTI 类名、反汇编、交叉引用和断点。另有工具可写入内存、注入代码并调用内核驱动；README 将其限定于教学和研究。
 
   集成 · 独立 MCP · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/)
 
@@ -1158,7 +1158,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**PS2Recomp PlayStation 2 静态重编译器**](https://github.com/ran-j/PS2Recomp)
 
-  实验性的静态重编译器，将 PlayStation 2 ELF 可执行文件中的 MIPS R5900 代码转换为 C++，并与随附的运行时链接。ps2xAnalyzer 或 Ghidra 导出脚本为每款游戏生成包含函数、存根、跳过项和指令补丁的 TOML 配置；ps2xRecomp 输出逐条指令的直译代码；ps2xRuntime 与 ps2xIOP 提供客户机内存、系统调用分发、带 HLE 回退的 IOP 模块执行，以及仅部分实现、大多为存根的 GS/VU 硬件。输出不是反编译源码，让游戏真正运行仍需针对每款游戏进行移植。
+  实验性的静态重编译器，依据其分析器或 Ghidra 导出脚本生成的每款游戏 TOML 配置，把 PlayStation 2 ELF 中的 MIPS R5900 代码逐条直译为 C++，并与 GS/VU 硬件仅部分实现、大多为存根的运行时链接。输出不是反编译源码；让游戏运行仍需针对每款游戏进行移植。
 
   工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ps2recomp/)
 
@@ -1327,13 +1327,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**wine-uwp：在修改版 Wine 上运行打包的 Windows 商店应用**](https://github.com/designgears/wine-uwp)
 
-  扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要目标为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。约 49,000 行改动新增了 DirectComposition 实现、合成交换链和应用模型宿主；微软自己的 XAML 与应用模型 DLL 则在使用者机器上从 Windows 11 镜像中提取后原样运行。作者称大部分逆向工程和代码由 Claude 完成；各应用支持程度不一，由项目回归测试检查。
+  扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。它新增 DirectComposition、合成交换链和应用模型宿主，而微软的 XAML 与应用模型 DLL 从使用者的 Windows 11 镜像中提取后原样运行。作者称大部分工作由 Claude 完成；各应用支持程度不一。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wine-uwp-store-apps-case/)
 
 - [**RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据**](https://github.com/sam-dumont/rkd-telemetry-extractor)
 
-  记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析和假设检验由 Claude Code 协助完成，并以已知车辆编号、赛道位置和车速作为锚点。字段含义依据作者自有录制数据的物理交叉核对得出，若干记录类型仍未完全解读。
+  记录 Race-Keeper “Instant Video” 记录仪的专有 .rkd 格式（播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 数据导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析由 Claude Code 协助完成；字段含义依据作者的录制数据，若干记录类型仍未完全解读。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rkd-telemetry-extractor-case/)
 
@@ -1602,7 +1602,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Rizin 逆向工程框架**](https://github.com/rizinorg/rizin)
 
-  源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-\* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。
+  源自 radare2 分支的命令行逆向工程框架。其交互环境可分析、反汇编和调试二进制，并可用作可脚本化的十六进制编辑器；rz-\* 系列工具为数十种架构与格式提供格式信息、汇编、差异比较、哈希、搜索和 FLIRT 签名。可通过 rzpipe 用其他语言编写脚本；Cutter 是独立的图形界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rizin/)
 
@@ -1614,13 +1614,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**pwndbg GDB/LLDB 调试增强插件**](https://github.com/pwndbg/pwndbg)
 
-  可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。
+  可加载到 GDB、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查：每次停下都显示寄存器、栈、调用帧和带注释的反汇编，并解引用指针。命令涵盖内存映射、搜索、堆分配器和 Go 值，并支持模拟执行与反编译器集成，适用于 Linux、macOS、QEMU 和嵌入式目标。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/pwndbg/)
 
 - [**DynamoRIO 动态二进制插桩框架**](https://github.com/DynamoRIO/dynamorio)
 
-  运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。
+  运行时代码操作框架，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具；其 IA-32/AMD64/ARM/AArch64 API 允许任意修改指令，而不仅限于插入回调。发布包附带 drcov、drltrace、drmemtrace 等工具。它用于构建插桩工具，与 Frida 对运行中进程编写脚本的方式不同。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dynamorio/)
 
@@ -1806,7 +1806,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Blackbox Protobuf 无定义 Protobuf 解码与重编码工具**](https://github.com/nccgroup/blackboxprotobuf)
 
-  NCC Group 推出的工具集，可在没有对应 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器返回报文数据，以及根据线路类型尽力推测生成、可编辑的类型定义；分析者可以为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode\_raw 做不到的。它提供 Python 库及 bbpb 命令行工具、基于 Jython 的 Burp Suite 扩展和 mitmproxy 插件，README 说明它最初用于在移动应用渗透测试中修改报文。
+  NCC Group 推出的工具集，可在没有 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器根据线路类型推测可编辑的类型定义，分析者可为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode\_raw 做不到的。它提供 Python 库与 bbpb 命令行工具、Burp 扩展和 mitmproxy 插件。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/blackbox-protobuf/)
 
@@ -1861,7 +1861,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**crashlens 崩溃分诊工具**](https://github.com/mingleiw/crashlens)
 
-  崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。
+  崩溃分诊工具，将 Linux 核心转储、panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储经 REA 命令行分析，无符号函数交由 REA 的 Ghidra 引擎处理。它是调试集成而非重建案例，准确性为作者报告。
 
   集成 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
 
@@ -1951,13 +1951,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**Universal Modder 游戏模组智能体工具包**](https://github.com/rehan-remade/universal-modder)
 
-  为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。
+  为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及 fal MCP 设置。它把反编译与调试交给外部工具，并要求逆向得到的文件格式先通过往返检查再投入使用。它是模组工具包，不是游戏反编译重建，结果仍为项目报告。
 
   集成 · 独立智能体 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
 
 - [**ReVa 面向大模型工具设计的 Ghidra MCP 扩展**](https://github.com/cyberkaida/reverse-engineering-assistant)
 
-  在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，为智能体提供附带命名空间与交叉引用上下文的反编译、符号、字符串、数据类型、结构体与调用图工具，以及程序比对、重命名和 PyGhidra 脚本执行。其 README 将项目的特点归于面向大模型使用的工具设计：提供许多小工具，其模式在给定结构之外也能容忍其他输入，把可纠正的错误反馈给模型，并返回附带相关信息链接的简短片段。助手模式可让多个客户端同时连接已打开的 Ghidra 项目；无界面模式则由 ReVa 自行启动 Ghidra，项目仅在会话期间存在。
+  在 Ghidra 内运行 MCP 服务器的扩展，为智能体提供许多面向大模型设计的小工具：附带命名空间与交叉引用上下文的反编译、符号、类型、调用图、比对、重命名和 PyGhidra 脚本。助手模式让多个客户端共享已打开的项目；无界面模式自行启动 Ghidra，项目仅在会话期间存在。
 
   集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reva-ghidra-mcp/)
 
@@ -1969,13 +1969,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**mcp-windbg WinDbg 调试 MCP 服务器**](https://github.com/svnscha/mcp-windbg)
 
-  由社区独立开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能够打开并初步分析用户态与内核崩溃转储，连接 cdb 远程调试服务器和 KD 内核目标，并在可分别寻址的会话中执行任意调试器命令。其 README 建议希望在 WinDbg 内使用 AI 的用户选择微软官方的 WinDbg MCP，并把本项目定位为面向其他 MCP 客户端、远程 HTTP 使用和批量转储分析的替代方案；项目自称只是执行真实调试器命令的封装，而非自动修复工具。
+  由社区开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能初步分析用户态与内核崩溃转储、连接远程 cdb 服务器和 KD 目标，并按会话执行任意调试器命令。它只是执行真实调试器命令的封装，而非自动修复，可作为微软官方 WinDbg MCP 之外面向其他客户端的替代方案。
 
   集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/mcp-windbg/)
 
 - [**Wireshark MCP 基于 tshark 的协议解析服务器**](https://github.com/bx33661/Wireshark-MCP)
 
-  封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。
+  封装 tshark 及可选 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 解析器查询已保存的抓包：数据包详情、流、字段提取、decode-as 规则、使用用户密钥的 TLS 与 WPA 解密，以及 Modbus、BLE 等 25 种协议的预设过滤器。实时抓包、编辑和安全启发式检测为独立工具。
 
   集成 · 独立 MCP · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark-mcp/)
 
@@ -1987,7 +1987,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [**decomp.wtf 智能体反编译工具**](https://github.com/i12bp8/decomp.wtf)
 
-  一款已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体，用该游戏当年的编译器编译每次提交的 C 代码，只有链接后的结果与原始字节一致才算通过。它可从 ROM 或光盘镜像新建项目，也可在 decomp.dev 所列公开反编译项目的分叉中工作，由 objdiff 判定结果。其 2026 年 10 月 15 日的最后一次提交宣布停止开发，理由是反编译社区的反对；代码仍以 MIT 许可保留，但不再修复或发布新版本。
+  已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体；只有用当年编译器编译并链接后与原始字节一致的 C 代码才算通过。可从 ROM 或光盘镜像，或 decomp.dev 所列项目的分叉开始。2026 年 10 月 15 日的最后一次提交终止了开发；代码仍以 MIT 许可保留。
 
   集成 · 独立智能体 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-wtf-agent-decompilation/)
 

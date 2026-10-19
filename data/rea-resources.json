@@ -2275,8 +2275,8 @@
     "url": "https://github.com/tylergraydev/UltraSunnyMoon",
     "category": "community-case-studies",
     "relationship": "community-reported-mixed-workflow",
-    "description_en": "The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. Both replacements are behavior-tested but nonmatching and every other byte stays original; one recorded input movie drives the original and hybrid builds to the same bedroom movement in the Azahar emulator. Retail compiler identity, exact matching, module loading and broader gameplay remain open.",
-    "description_zh": "作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。",
+    "description_en": "The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects and swap in two nonmatching C routines; one input movie brings both builds to the same bedroom movement in Azahar. Compiler identity, exact matching, module loading and broader gameplay stay open.",
+    "description_zh": "作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建，并替换进两个与原字节不一致的 C 例程；同一段录制输入在 Azahar 中让两种构建到达相同的卧室移动场景。编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。",
     "evidence_url": "https://github.com/tylergraydev/UltraSunnyMoon/blob/913eed4969163ea15e354dacb8e2bfe0a2439de5/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
@@ -2382,8 +2382,8 @@
     "targets": [
       "binary"
     ],
-    "description_en": "A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.",
-    "description_zh": "崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。",
+    "description_en": "Crash-triage tool that turns Linux core dumps, panics, exception traces and sanitizer reports into Markdown bug reports with crash type, first user-code frame and stable signature. Core dumps go through the REA CLI, with REA's Ghidra provider for stripped functions. A debugging integration, not a reconstruction case; accuracy is author-reported.",
+    "description_zh": "崩溃分诊工具，将 Linux 核心转储、panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储经 REA 命令行分析，无符号函数交由 REA 的 Ghidra 引擎处理。它是调试集成而非重建案例，准确性为作者报告。",
     "evidence_url": "https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md",
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",

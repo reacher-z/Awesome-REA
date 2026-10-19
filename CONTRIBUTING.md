@@ -11,7 +11,7 @@ Use the resource issue template or submit a pull request with:
 - **Name and original URL** — prefer the project maintainer's repository or website.
 - **Resource type** — project, tool, integration, case study, collection, documentation, learning resource, or research.
 - **Target area** — Website, Game, App, Binary, Firmware, or Protocol; multiple areas are allowed.
-- **Short description** — explain what the resource provides in your own words.
+- **Short description** — explain what the resource provides in your own words, in about 300 characters: what it is and what it analyzes, recovers or reconstructs. Put prerequisites and limits under relevant conditions.
 - **Relevant conditions** — include platform, license, release, or external-tool requirements when they affect the description.
 
 Check the existing collection before adding a duplicate. A resource does not need a minimum number of Stars. Prefer original, maintained projects over copied forks. Claims about REA integration should be supported by the project's own documentation.
