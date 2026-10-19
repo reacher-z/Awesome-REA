@@ -8159,5 +8159,42 @@
       "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/tools/download_tool.py",
       "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/LICENSE"
     ]
+  },
+  {
+    "id": "hermes-decomp",
+    "name": "hermes-decomp",
+    "url": "https://github.com/SymbioticSec/hermes-decomp",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Rust decompiler and analysis toolkit for Hermes bytecode (.hbc), the compiled form React Native apps ship for the Hermes engine; the README lists HBC versions 40 to 99. Its hermes-decomp CLI shows file information, disassembles, decompiles whole bundles or single functions to JavaScript, with a slower deep mode that recovers more names, and provides a terminal UI, cross-references, call graphs, control-flow graphs, Metro module and closure views and bytecode diffing. A separate hermes-mcp server exposes the read and analysis functions as MCP tools, and the hbc-decomp crate offers them as a Rust library.",
+    "description_zh": "面向 Hermes 字节码（.hbc）的 Rust 反编译与分析工具包；.hbc 是 React Native 应用为 Hermes 引擎打包的编译格式，README 列出支持 HBC 40 至 99 版本。其 hermes-decomp 命令行可显示文件信息、反汇编，并将整个包或单个函数反编译为 JavaScript，较慢的深度模式还能恢复更多名称；此外提供终端界面、交叉引用、调用图、控制流图、Metro 模块与闭包视图以及字节码差异比较。独立的 hermes-mcp 服务器将读取和分析功能作为 MCP 工具提供，hbc-decomp crate 则以 Rust 库的形式提供这些功能。",
+    "evidence_url": "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.2.4, published 2026-10-01, which is the reviewed main commit. Its archives contain hermes-decomp and hermes-mcp for Linux x86_64 and ARM64, macOS ARM64 and Windows x86_64, with SHA256SUMS; the README also lists a macOS x86_64 build, which this release lacks. Source builds need Rust 1.70+, and an update command checks for or installs newer releases.",
+      "Input is a Hermes bytecode file from the user's own React Native app, not a plain-JavaScript bundle. Full-bundle decompilation writes an .hdcache file next to the input unless --no-cache is passed. hermes-mcp uses stdio by default; its HTTP transport listens on 127.0.0.1:8744 unless another host is given, and docs/MCP.md lists only read and analysis tools.",
+      "Separate CLI write commands assemble or patch bytecode and HASM; they never recompile decompiled JavaScript. USAGE.md reports full write support for HBC 96 and below, verified against the Hermes VM, while HBC 97+ files support only same-length string patches and can be checked only with a macOS helper.",
+      "CI checks formatting and Clippy, builds on each platform and runs the test suite with corpus-dependent tests skipped; the repository keeps small jsx_cycle .hbc test fixtures. Local gates compile sample snippets with hermesc toolchains that the scripts fetch or build, run the original and decompiled code under Node and compare output, with five known failures listed, and cap unparsable modules per bundle, at 211 for the one recorded bundle, so decompiled output is not always valid JavaScript.",
+      "MIT license. No bytecode was decompiled or patched, and the MCP server was not run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/docs/USAGE.md",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/docs/USAGE.md#L99-L152",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/docs/MCP.md",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/docs/LIBRARY.md",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/Cargo.toml",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/.github/workflows/build.yml",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/scripts/build/roundtrip.sh",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/scripts/build/roundtrip_known_failures.tsv",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/scripts/build/gates.sh",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/scripts/build/syntax_baseline.tsv",
+      "https://github.com/SymbioticSec/hermes-decomp/blob/ad4c924720848a26136a56688b70339fe9ea7aba/LICENSE",
+      "https://github.com/SymbioticSec/hermes-decomp/releases/tag/v0.2.4"
+    ]
   }
 ]

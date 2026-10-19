@@ -3255,5 +3255,15 @@
       "验证由各项目自行完成：构建会将重新生成的 DOL 和 REL 文件与 build.sha1 中的哈希比对，objdiff 和 decomp.dev 则报告逐目标文件的匹配进度。模板本身不附带任何游戏配置，也不作任何匹配声明。",
       "以 CC0-1.0 发布，README 建议各项目换成自己的许可证；下载的工具保留各自的许可，CodeWarrior 编译器属于专有软件。所审阅资料未提及使用 REA，本目录也未运行该模板。"
     ]
+  },
+  "hermes-decomp": {
+    "name": "hermes-decomp Hermes 字节码反编译器",
+    "requirements": [
+      "审阅时的最新版本为 v0.2.4，于 2026-10-01 发布，即所审阅的 main 分支提交。其压缩包包含 hermes-decomp 和 hermes-mcp，覆盖 Linux x86_64 与 ARM64、macOS ARM64 和 Windows x86_64，并附 SHA256SUMS；README 还列出 macOS x86_64 构建，但该版本并未提供。从源码构建需要 Rust 1.70+，update 命令可检查或安装新版本。",
+      "输入为取自用户自己 React Native 应用的 Hermes 字节码文件，而非纯 JavaScript 包。反编译整个包时会在输入文件旁写入 .hdcache 缓存文件，传入 --no-cache 则不使用缓存。hermes-mcp 默认使用 stdio；其 HTTP 传输方式默认监听 127.0.0.1:8744，除非另行指定主机。docs/MCP.md 只列出读取和分析类工具。",
+      "命令行另有写入命令，可汇编或修补字节码和 HASM，但不会把反编译出的 JavaScript 重新编译。USAGE.md 称 HBC 96 及以下版本的写入功能完整，并已在 Hermes 虚拟机上验证；HBC 97 及以上的文件只支持等长字符串修补，且只能借助 macOS 上的辅助程序进行验证。",
+      "CI 检查代码格式和 Clippy，在各平台上构建，并在跳过依赖语料库的测试后运行测试套件；仓库保存了少量 jsx_cycle .hbc 测试夹具。本地检查会用脚本下载或构建的 hermesc 工具链编译示例代码片段，在 Node 下分别运行原始代码和反编译代码并比较输出（列出了五个已知失败项），还为每个包设定无法解析模块数的上限，唯一记录的包上限为 211 个，可见反编译输出并不总是合法的 JavaScript。",
+      "采用 MIT 许可。本次未反编译或修补任何字节码，也未运行 MCP 服务器。"
+    ]
   }
 }
