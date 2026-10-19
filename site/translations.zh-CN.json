@@ -4776,5 +4776,15 @@
       "验证依靠确定性工具而非一致性构建：带输入回放的无界面宿主、可重放的飞行记录包、存档状态连续性检查、路线脚本与回归约定，以及 C 和 Python 模型测试，其中许多需要私有 ROM。所审阅的代码树没有 CI 工作流；初步运行日志报告，v0.0.10 版 Windows 宿主通过了九次私有启动回放，并检查了实际运行窗口。本合集未构建或运行任何内容。",
       "项目的宿主与工具代码采用 MIT；固定版本的 snesrecomp 分支采用 PolyForm Noncommercial License 1.0.0，cfg 元数据保留其 GPL-3 来源，Windows 安装包另含 SDL 2.30.9（zlib）和 miniz 3.0.2（MIT），Nintendo 与 Rare 仍保有游戏权利。AGENTS.md 为在仓库中工作的 Codex 及其他编程智能体规定了操作规则；未确立 REA 的使用，也不声称复现了运行结果。"
     ]
+  },
+  "san-andreas-unity-engine-case": {
+    "name": "San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎",
+    "requirements": [
+      "审阅版本为默认 dev 分支的最新提交，提交于 2022-09-30；没有任何分支有更晚的提交，GitHub 记录的最后一次推送为 2023-06-16，最新发布版为 v4.0（2022-05-24），项目看来已不再活跃。README 表示这不会是完整的重新实现，重点在于游戏玩法、多人模式和可改装的框架；Docs/TODO.md 仍列有异步加载几何体、卸载远处世界区域等待办工作。所审文件没有说明原引擎是如何分析的。",
+      "游玩需要使用者自有的《侠盗猎车手：圣安地列斯》PC 版安装：首次启动时游戏会询问其路径，config.json 让加载器读取 gta.dat、载具、行人与默认 .ide 文件、handling.cfg、water.dat、carcols.dat 和 weapon.dat 等数据文件。Android 版需将这些 PC 文件复制到设备上，wiki 称约 5 GB，audio 文件夹可省略。仓库不附带游戏数据；NavMeshes 子模块提供预先计算的导航网格，wiki 说明它由导入的游戏世界生成，因为原版游戏没有导航网格。",
+      "开发使用 Unity 2020.3.26 或更新版本（项目文件注明 2020.3.26f1），需递归克隆 MirrorLite、UnityStandardAssets、NavMeshes、NetworkDiscoveryUnity 和 UGameCoreUtilities 子模块，并打开 Startup 场景。README 称已在 Linux、Windows、macOS 和 Android 上测试，支持 Mono 与 IL2CPP 两种脚本后端；v4.0 提供 Windows 和 Linux 压缩包以及 Android APK。多人模式可作为专用服务器、主机或客户端运行，游戏模式以 C# DLL 插件形式加载。",
+      "仓库没有针对加载器或游戏玩法的 CI 工作流或自动化测试，也没有发布与原版可执行文件的对比。现有证据为 README 关于多人模式完全可用的说法、v4.0 发布说明、截图和视频；Docs/Performance.md 记录了拉斯云祖华一处视角的顶点数与绘制调用数。本合集未构建或运行该项目。",
+      "LICENSE 为 MIT，版权行为 2015 年 James King；随附的 NVorbis 与 Newtonsoft.Json DLL 以及各子模块是独立项目，遵循各自条款，Rockstar 的游戏文件仍保留其权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
