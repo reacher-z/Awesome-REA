@@ -9985,5 +9985,32 @@
       "https://github.com/marin-m/pbtk/releases/tag/1.1.3",
       "https://pypi.org/project/pbtk/1.1.3/"
     ]
+  },
+  {
+    "id": "reflutter",
+    "name": "reFlutter",
+    "url": "https://github.com/Impact-I/reFlutter",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Flutter reverse-engineering framework for apps the analyst is authorized to inspect. It repacks an app with a prebuilt patched Dart engine, or instruments the app's own engine at runtime, to emit a JSONL dump of every function's name, class, library and code offset into the Dart instructions image for Frida or IDA/Ghidra work. It can also route the app's HTTPS traffic through an inspection proxy with Flutter certificate pinning disabled.",
+    "description_zh": "面向分析者有权检查的应用的 Flutter 逆向框架。它通过替换为预编译的已打补丁 Dart 引擎（repack 模式）或在运行时插桩应用自带引擎（attach 模式），导出包含每个函数名称、类、库以及其在 Dart 指令镜像中代码偏移的 JSONL 清单，供 Frida 或 IDA/Ghidra 使用。它还能在关闭 Flutter 证书固定的情况下，将应用的 HTTPS 流量路由到检查代理。",
+    "evidence_url": "https://github.com/Impact-I/reFlutter/blob/846a00033ef39a53502eed8b775b6699fe0fc684/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/Impact-I/reFlutter/blob/846a00033ef39a53502eed8b775b6699fe0fc684/setup.py",
+      "https://github.com/Impact-I/reFlutter/blob/846a00033ef39a53502eed8b775b6699fe0fc684/LICENSE",
+      "https://github.com/Impact-I/reFlutter/blob/846a00033ef39a53502eed8b775b6699fe0fc684/enginehash.csv"
+    ],
+    "verified_at": "2026-10-19",
+    "requirements": [
+      "Installed from PyPI as reflutter (setup.py marks version 0.9.8 and requires Python 3.10+) and runs on Linux, Windows or macOS; the README notes a repacked APK must be re-signed and zip-aligned with an external signer before install.",
+      "The README lists support for Android arm64, arm32 and x64 and iOS arm64 across release and profile builds on the stable and beta channels, with engine coverage keyed by snapshot hash in enginehash.csv; pre-monorepo engines (<= 3.27) are built from the archived flutter/engine repository. Frida hooking and dump collection need a matching frida-server on the target device or emulator.",
+      "Intended for Flutter applications the analyst owns or is authorized to inspect. GPL-3.0 licensed; the project ships tooling and prebuilt engine assets but no application packages."
+    ],
+    "verification": "source-reviewed"
   }
 ]

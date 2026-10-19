@@ -3759,5 +3759,12 @@
       "分析者需自行提供要分析的 APK、JAR、DEX 或原生库，并可选提供自己用 mitmproxy、Wireshark 等工具抓取的十六进制请求样本。重放功能会把修改后的消息发送到分析者配置的在线端点。提取出的 .proto 和端点定义保存在用户主目录的 .pbtk 文件夹中（Windows 上为 APPDATA 下的 pbtk 文件夹）。",
       "pyproject.toml 声明 GPL-3.0-or-later。软件包内附带第三方可执行文件：protoc 构建、附 Apache-2.0 声明的 dex2jar 2.4 jar 包，以及仓库中没有任何许可证文本的 JAD 反编译器二进制。从混淆代码中恢复出的定义会保留混淆名称，需由分析者自行重命名；本次未分析任何应用，也未发送任何请求。"
     ]
+  },
+  "reflutter": {
+    "requirements": [
+      "通过 PyPI 以 reflutter 安装（setup.py 标注版本 0.9.8，要求 Python 3.10+），可在 Linux、Windows 或 macOS 上运行；README 指出 repack 后的 APK 需用外部签名工具重新签名并进行 zip 对齐后再安装。",
+      "README 列出支持 Android 的 arm64、arm32 与 x64 以及 iOS 的 arm64，覆盖 stable 与 beta 渠道的 release 和 profile 构建，引擎覆盖范围按快照哈希记录在 enginehash.csv；monorepo 合并前（<= 3.27）的引擎需从归档的 flutter/engine 仓库构建。Frida 挂钩与转储收集需要目标设备或模拟器上具备匹配的 frida-server。",
+      "仅用于分析者拥有或有权检查的 Flutter 应用。采用 GPL-3.0 许可证；项目提供工具与预编译引擎资源，但不含任何应用安装包。"
+    ]
   }
 }
