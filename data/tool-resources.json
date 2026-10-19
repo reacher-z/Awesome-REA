@@ -7196,5 +7196,38 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "hack-different-apple-knowledge",
+    "name": "Apple Data Formats and Knowledge",
+    "url": "https://github.com/hack-different/apple-knowledge",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "firmware",
+      "protocol",
+      "binary"
+    ],
+    "description_en": "The Hack Different community's knowledge base on Apple hardware, firmware and operating-system internals, set up and largely maintained by Rick Mark, which pairs a long categorized link list with original pages and machine-readable YAML data. The README groups references from Mach-O, the dyld shared cache, img4 and boot policy to the Secure Enclave, basebands, USB and Lightning, wireless protocols and diagnostic formats, while the data folder holds 56 topic files plus per-device, certificate and firmware-key records on devices, chips, IPSW builds, Mach-O constants, NVRAM, boot arguments, lockdownd services and entitlements. Rake tasks regenerate parts of the data from Apple's update feeds, The iPhone Wiki and local Apple binaries, and the data is also published as apple-data packages for Ruby, Python and Node.js.",
+    "description_zh": "Hack Different 社区维护的 Apple 硬件、固件与操作系统内部机制知识库，由 Rick Mark 搭建并主要维护，将一份篇幅很长的分类链接列表与原创页面和机器可读的 YAML 数据结合在一起。README 按领域整理参考资料，从 Mach-O、dyld 共享缓存、img4 和启动策略，到安全隔区（Secure Enclave）、基带、USB 与 Lightning、无线协议以及诊断数据格式；数据目录则有 56 个主题文件，另有按设备、证书和固件密钥分列的记录，涵盖设备、芯片、IPSW 版本、Mach-O 常量、NVRAM、启动参数、lockdownd 服务和权限（entitlements）。仓库中的 Rake 任务会从 Apple 的更新源、The iPhone Wiki 和本机 Apple 二进制文件重新生成部分数据，这些数据也以 apple-data 软件包形式发布到 Ruby、Python 和 Node.js 生态。",
+    "evidence_url": "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 7e30ba5 (2026-10-13). Of 660 commits, about 455 are by Rick Mark and 346 date from 2022; work resumed in 2026 on certificate, img4, cryptography and symbol data, CI and package publishing. The data-format guide calls everything v0 and subject to change, several README topics are headings with no links yet, and many references are older posts. The docs.hackdiffe.rent site named in the configuration could not be reached over HTTPS at review, so this record links the repository.",
+      "Reading needs only a browser. Building the Jekyll site and running the Rake tasks needs Ruby (4.0.5 in .ruby-version) with Bundler; BUILD.md covers macOS and Debian or Ubuntu setup with hunspell and overcommit hooks. Tasks that derive data from Mach-O binaries or kernel collections read Apple software already on the user's Mac, which the repository does not supply.",
+      "The apple-data packages, version 1.0.660 on RubyGems, PyPI and npm at review, bundle the data files; the Python and Node.js READMEs show a single call that loads one data file by name, and all three say the packages update automatically from the repository.",
+      "The keybags data lists bootloader firmware decryption keys and IVs credited to The iPhone Wiki, the symbols folder holds symbol listings dumped from Apple frameworks, and the README also links jailbreaks, exploit write-ups and third-party copies of Apple boot ROMs. This record covers the repository as reference material on formats, firmware and protocols and links only the repository.",
+      "The README states that code and data are MIT-licensed, matching the LICENSE file, and that documents are also offered under CC BY-SA 4.0. It refuses contributions based on AppleInternal or other DMCA-protected material and leaves responsibility for violations with submitters; linked projects and Apple's software keep their own terms. Nothing in the reviewed files mentions AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/_docs/Data_Formats.md",
+      "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/BUILD.md",
+      "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/LICENSE",
+      "https://github.com/hack-different/apple-knowledge/tree/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/_data",
+      "https://github.com/hack-different/apple-knowledge/blob/7e30ba57ac24c6da9e123a3b2732b5d9810d4114/_packages/python/README.md",
+      "https://pypi.org/project/apple-data/"
+    ]
   }
 ]

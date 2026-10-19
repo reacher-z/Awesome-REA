@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "hack-different-apple-knowledge": {
+    "name": "Apple 数据格式与知识库（Hack Different）",
+    "requirements": [
+      "审阅提交为 7e30ba5（2026-10-13）。全部 660 个提交中约 455 个出自 Rick Mark，346 个来自 2022 年；2026 年恢复更新，涉及证书、img4、密码学和符号数据，以及 CI 和软件包发布。数据格式指南称所有内容仍为 v0、可能变动；README 中有若干主题只有标题、尚无链接，许多参考资料是较早的文章。配置中写明的 docs.hackdiffe.rent 网站在审阅时无法通过 HTTPS 访问，因此本记录链接到仓库。",
+      "阅读只需浏览器。构建 Jekyll 网站和运行 Rake 任务需要 Ruby（.ruby-version 指定 4.0.5）及 Bundler；BUILD.md 介绍了在 macOS 与 Debian/Ubuntu 上配合 hunspell 和 overcommit 钩子的环境搭建。从 Mach-O 二进制文件或内核集合（kernel collection）提取数据的任务，读取的是用户 Mac 上已有的 Apple 软件，仓库并不提供这些文件。",
+      "apple-data 软件包在审阅时于 RubyGems、PyPI 和 npm 上的版本为 1.0.660，内含这些数据文件；Python 与 Node.js 包的 README 展示了按名称加载单个数据文件的调用方式，三者均称软件包会随仓库自动更新。",
+      "keybags 数据列出了注明来自 The iPhone Wiki 的引导程序固件解密密钥和 IV，symbols 文件夹存放从 Apple 框架导出的符号列表，README 还链接了越狱工具、漏洞利用文章以及第三方存放的 Apple 引导 ROM 副本。本记录只把该仓库视为格式、固件与协议方面的参考资料，并且只链接仓库本身。",
+      "README 声明代码和数据采用 MIT 许可（与 LICENSE 文件一致），文档另以 CC BY-SA 4.0 提供。仓库拒绝基于 AppleInternal 或其他受 DMCA 保护材料的贡献，并声明违规责任由提交者承担；所链接的项目和 Apple 软件保留各自条款。所审文件均未提及 AI 或 REA。"
+    ]
   }
 }
