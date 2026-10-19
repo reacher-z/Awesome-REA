@@ -12,6 +12,7 @@ from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script,
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta
+from requirement_facets import item_html, ordered_items
 
 MARKER = '<!-- Generated curated entry page. -->'
 REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
@@ -232,7 +233,7 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
              (label('Category', '类别'), CATEGORIES[record['category']][int(zh)]),
              (label('Relationship', '关联'), RELATIONSHIPS[record['relationship']][int(zh)]),
              (label('Targets', '目标'), ' · '.join(TARGETS[t][int(zh)] for t in record['targets']))]
-    requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
+    requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
         links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))

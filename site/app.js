@@ -130,6 +130,12 @@ const UI = {
     "requirements": "Details & requirements",
     "reviewed": "Reviewed",
     "sourceReviewed": "Source-reviewed",
+    "facetPrerequisites": "Prerequisites",
+    "facetScope": "Scope",
+    "facetLimits": "Limits",
+    "facetTesting": "Testing evidence",
+    "facetLicense": "License",
+    "facetAttribution": "Attribution",
     "sourceNotRecorded": "Not recorded",
     "sourceStars": "stars",
     "sourceStarsTitle": "GitHub stars at metadata collection time; not a live count.",
@@ -283,6 +289,12 @@ const UI = {
     "requirements": "详情与使用条件",
     "reviewed": "复核于",
     "sourceReviewed": "来源已复核",
+    "facetPrerequisites": "前提条件",
+    "facetScope": "范围",
+    "facetLimits": "局限",
+    "facetTesting": "测试证据",
+    "facetLicense": "许可",
+    "facetAttribution": "署名",
     "sourceNotRecorded": "未记录",
     "sourceStars": "星标",
     "sourceStarsTitle": "元数据采集时的 GitHub 星标快照，不是实时数量。",
@@ -394,12 +406,21 @@ function renderCategories() {
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
+// Faceted requirements (scripts/requirement_facets.py): prerequisites first, each item led by its facet in bold.
+function requirementItems(record) {
+  const items = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements;
+  const pairs = (Array.isArray(items) ? items : [items]).map((text, index) => [record.requirement_facets[index], text]);
+  return [...pairs.filter(([facet]) => facet === "prerequisites"), ...pairs.filter(([facet]) => facet !== "prerequisites")].map(([facet, text]) => {
+    const item = node("li"); item.append(node("strong", "requirement-facet", t("facet" + facet[0].toUpperCase() + facet.slice(1)) + (state.lang === "zh" ? "：" : ": ")), node("span", "", text)); return item;
+  });
+}
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
+  if(Array.isArray(record.requirement_facets))list.replaceChildren(...requirementItems(record));
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}

@@ -1587,6 +1587,11 @@
       "Users must supply their own legally obtained v1.0.0 game files; the repository and release builds omit Nintendo game code, assets and fonts.",
       "Release requirements include macOS 15+ on Apple Silicon or Windows 10+/Linux on x86-64; the x86-64 paths need AVX2 and Vulkan 1.3. Linux ARM remains experimental and untested on hardware.",
       "Beta status includes documented crashes and rendering defects. AI involvement is author-reported, not independently quantified; no REA integration or complete behavioral equivalence is established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits"
     ]
   },
   {
@@ -2098,6 +2103,11 @@
       "Requires an LSX II connected by USB and on the same LAN, macOS 14+, Xcode Command Line Tools and administrator installation. The author reports testing on macOS 27; only LSX II is tested.",
       "Builds from source with ad-hoc signing; Windows support is only proposed. MIT source is available.",
       "The volume curve, latency and audio claims are author-reported, not reproduced here. REA use is unconfirmed; agent-assisted setup instructions do not establish who performed the investigation."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing"
     ]
   },
   {
@@ -2123,6 +2133,11 @@
       "Requires owned Steam copies of both games, Spider-Man 4.0630 specifically, Windows 10 x64, an Xbox-style controller and hardware able to run both games simultaneously.",
       "Build prerequisites include Visual Studio 2019 C++ tools, Windows 10 SDK and Python 3.12 dependencies. Collision gaps, clipping, lighting and combat-pose limitations remain.",
       "End-to-end operation is project-reported, not reproduced here. AI setup/documentation collaboration is visible; REA use and AI authorship of all reverse engineering are unconfirmed. Public source has no repository-wide license found in the reviewed tree; game files are not supplied."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "attribution"
     ]
   },
   {
@@ -2153,6 +2168,13 @@
       "The generic harness was published after the original bespoke investigation. Its separate MIPI camera example inspects configuration, ACPI and calibration data rather than using the scanner’s USB capture path.",
       "Hardware outcomes and Claude involvement are author-reported; this collection did not run the harness or reproduce the scanner results. REA use is unconfirmed, and no complete device or original-source recovery is claimed.",
       "The pinned harness code is MIT-licensed. Vendor software and driver dependencies remain separate inputs."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
     ]
   },
   {
@@ -2515,6 +2537,14 @@
       "The README reports real-machine GNOME/X11 use and selected GNOME Wayland checks; other desktop coverage is largely virtual-machine based. Its viewer acceptance matrix is explicitly partial, with different official-host coverage for clipboard, audio, codecs and keyboards. These remain author-reported observations, not generally applicable compatibility results.",
       "Wayland remains experimental, with single-screen and resolution/recovery limits. Multi-monitor switching is under development; HDR, privacy-screen mode, microphone forwarding and the Linux pre-login screen are unsupported. Restrictive-network relay behavior is not thoroughly tested. Cloud behavior and supported versions may change independently of this snapshot."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "testing",
+      "limits"
+    ],
     "targets": [
       "protocol",
       "app"
@@ -2572,6 +2602,13 @@
       "https://github.com/Emill/ido-static-recomp/blob/421e546956ceae984927e609b083195e9e81659e/ido/5.3/LICENSE.md",
       "https://ryandwyer.gitlab.io/pdstatus/",
       "https://gitlab.com/ryandwyer/perfect-dark/-/tree/46d3393bed1a3d5fbefbdba6df7237579b5c66e0"
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ]
   },
   {
@@ -2597,6 +2634,14 @@
       "Author validation covers a Pakistan account and two Split AC-1 units: authentication, discovery, reported state, power, temperature and daily electricity. Modes, fan, airflow and other optional controls lack physical validation; other regions/models remain unverified. Cloud confirmation does not independently establish airflow or compressor operation.",
       "Energy parsing preserves genuine zeros, excludes invalid readings and leaves missing days as gaps; a seven-day total requires all seven readings. No persistent energy history or cost estimate is implemented. Offline tests are reported but absent from the reviewed tree/package targets. This source review did not run tests or devices.",
       "MIT covers project code, with attribution retained for the earlier integration. Official services and third-party material retain separate terms. This is an unofficial cloud-dependent client, not recovered TCL source or firmware; APIs may change independently of the app."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "scope",
+      "testing",
+      "scope",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/umarz317/TCLimate/blob/2a33c2013dbf3f297238131ca9eb6e287b2beb67/README.md",
@@ -2669,6 +2714,13 @@
       "The protocol account comes from the author’s X thread, not Anthropic documentation, and no captures or comparisons against the real extension are published. package.json declares Node test scripts, but the reviewed tree has no tests directory. This collection did not run the plugin, a cloud session or the extension; the undocumented local interface may change with Claude Code or extension updates.",
       "README states MIT, but the reviewed tree has no LICENSE file and GitHub detects no license. Claude Code, the Claude in Chrome extension and Browserbase services keep their own terms, and browsed pages are processed on Browserbase infrastructure. The reviewed sources establish no REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/README.md",
       "https://github.com/browserbase/claude-code-plugin/blob/b399af34a1b1cc365d1e1c0089823c4fa5e10ea5/browserbase-client.js",
@@ -2704,6 +2756,13 @@
       "Building needs JDK 21 and the Android SDK with platform 37. CI builds a debug APK with Gradle, and tagged releases publish a signed APK with a SHA-256 file; README lists the release certificate fingerprint. Modules separate wire format and ciphers, transport, session, identity, media, settings and the assistant, which stands in for Meta’s server with Claude or an OpenAI-compatible model.",
       "There are no test suites: CONTRIBUTING asks for hardware trials and wire.log excerpts for protocol changes, and CLAUDE.md says the app works on real glasses as of 2026-10-05. The wiki marks unconfirmed facts and lists open questions, including unread payloads and model-specific values; CLAUDE.md also refers to a desktop Python client snapshot that the repository does not contain. This collection read source and documentation without running the app or glasses.",
       "Visor is AGPL-3.0 and states it is unaffiliated with Meta or EssilorLuxottica; Meta’s services, app tokens, firmware and trademarks keep their own terms. CONTRIBUTING forbids getting unsigned software past the glasses’ signature checks. Claude is one selectable assistant backend, the repository’s CLAUDE.md is a contributor guide, and the reviewed sources establish no REA use."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/macedonga/visor/blob/8caaa12df919c014c249efb71fdfa32b263f6c3e/CLAUDE.md",
@@ -2744,6 +2803,13 @@
       "At that pin, the fork’s PROGRESS.md reports, as of 2026-09-27, 99.57% fuzzy, 72.94% byte-perfect and 33.18% source-linked code, with 12,002 of 12,904 functions matching and a byte-identical rebuilt DOL that still links extracted objects for unfinished code; its README gives slightly higher 2026-09-29 figures. The port compiles the decomp’s 588 game, JSystem and THPPlayer units, so non-matching functions can still diverge from retail. It reports scripted headless runs hashed against a baseline and compared between 32- and 64-bit builds, lockstep tracing against retail Dolphin captures and qemu-ppc checks of math routines; this collection ran none of them.",
       "The port is MIT-licensed (SoftwareAura LLC) and the decomp fork is CC0-1.0; the game and the user’s disc contents keep separate rights. AI involvement is stated by the fork’s README and agent guides, which describe Claude and Codex orchestrators, without measuring it; the reported X post adds no separate technical evidence. REA use is not established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/BUILD.md",
       "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/docs/DEVELOPMENT.md",
@@ -2779,6 +2845,13 @@
       "A default build checks both ROMs against stored MD5 values and prints OK or FAILED; FAILED means a bad base ROM or non-matching code. CI builds the US version in matching mode and Japan 1.1 as non-matching, using base ROMs from the project’s build container. The project’s mutable progress badge read 100% at review while the README still says WIP; this collection did not rerun the build.",
       "The reviewed tree has no top-level license file and GitHub detects no license, so source reuse terms are unstated; ROM contents and derived assets keep their own rights. The README forbids contributions from anyone who has ever accessed leaked Nintendo 64 SDK, libultra or Zelda 64 source. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/Makefile",
       "https://github.com/zeldaret/mm/blob/bf6bd9d0d3a90fe2f8960e034fbfd328e8bdef22/tools/Makefile",
@@ -2809,6 +2882,13 @@
       "Building copies the vendored wine/ files over the Wine 11.17 source, then runs autoreconf, configure with --enable-archs=x86_64 and make; the WinRT stand-in shims build with clang-cl and lld-link against Windows SDK headers fetched by xwin. Shapr3D for Linux needs 64-bit Linux with glibc 2.38+, working Vulkan drivers and about 11 GB free during setup, and its releases build with flatpak-builder on the freedesktop 25.08 SDK.",
       "regress.sh requires Calculator to stay pixel-identical to a committed baseline and other apps to come up on a private Xvfb display; release.sh smoke-tests that an empty setup reaches Shapr3D’s first screen. The Findings logs record failed approaches as well as fixes. These checks are project-reported; this collection did not build Wine or run any app.",
       "Neither repository has a top-level license file, and GitHub detects none. The vendored Wine files carry LGPL-2.1-or-later headers and the setup app’s Cargo manifest declares the same; the shims and investigation tools state no license. Harvested Microsoft components and Store apps keep their own terms, and the plan notes that a distributable product would need clean-room replacements for them. The author’s X posts disclose heavy Claude assistance; REA use is not established."
+    ],
+    "requirement_facets": [
+      "testing",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/designgears/wine-uwp/blob/1cf79d025e0c18167de803820345a1c5f82fd17d/AGENTS.md",
@@ -2849,6 +2929,13 @@
       "For the 310.9.16 model, the verification notes report single-frame PSNR of 49.15–50.59 dB and SSIM of about 0.997 against NVIDIA’s unmodified DLL on an RTX 5090, plus short moving sequences, from one Tomb Raider (2013) frame and its downscales; the 310.8.0 comparison reports 45.56–49.06 dB. These are project measurements on one AMD card; this collection ran neither side.",
       "MIT covers the repository’s code; third-party components keep their own licenses, including GPL-3.0 OptiScaler-NR shipped as released. NVIDIA’s DLL and weights remain NVIDIA’s, and the project states it is not affiliated with NVIDIA or AMD. The repository does not describe how the network structure was recovered; its CLAUDE.md addresses coding assistants but does not establish AI authorship. REA use is not established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ARCHITECTURE.md",
       "https://github.com/mochizuki0323/DLSSNR-AMD/blob/ab00d2b23584de0f42ac91eca4d7d2d2fad11465/docs/ngx-verification/310.9.16/NGX-VERIFICATION.md",
@@ -2879,6 +2966,13 @@
       "The installation guide assumes Linux (native or WSL) or macOS and lists Python 3, Ninja, CMake, ccache, xdelta3, Clang and a Rust toolchain; the pinned CMakeLists requires CMake 3.30. Setup fetches Clang 4.0.1 for game code and installs tools/check. Submodules supply sead, agl, EventFlow, NintendoSDK headers and the shared nx-decomp-tools; the decompiling guide works from Hex-Rays or Ghidra output.",
       "tools/check diffs each listed function against the original executable, and data/uking_functions.csv records its status. At the pinned commit that list marks 32,079 of 113,490 functions matching, 514 non-matching, 7,601 work in progress, 6,270 library and 67,026 not decompiled; the mutable botw.link badges showed 17.493% by size and 30.398% by function on review. This collection did not run the checker.",
       "The pinned tree has no root license file and GitHub detects none, so no reuse license is stated; submodules and Nintendo content keep their own terms, and the About page calls the work a legal gray zone. AGENTS.md sets disclosure and human-review rules for AI-assisted contributions, but the reviewed files neither attribute the reconstruction to REA nor quantify AI use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/tools/setup.py",
@@ -2916,6 +3010,13 @@
       "The default ninja target links source-built objects only for units marked Matching (493 in configure.py; 536 remain NonMatching) and uses the original extracted object for the rest, then checks main.dol and 636 RELs against build.sha1. A passing check shows output identity, not complete decompilation. decomp.dev’s report for the pinned commit lists 27.89% of code bytes and 33,940 of 76,968 functions matched; CI uses a private container holding game files, and this collection ran neither.",
       "The repository carries CC0-1.0; that dedication does not cover Nintendo’s game, its files or the downloaded compilers. The reviewed sources establish no REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/configure.py",
       "https://github.com/zeldaret/ss/blob/d3d8e3cbf3d353b2231f06690965cac5366e28a1/tools/project.py",
@@ -2947,6 +3048,13 @@
       "Source builds need the libultraship, OTRExporter and ZAPDTR submodules plus CMake. Windows uses Visual Studio 2022 with the v143 toolset, Python 3 and at least 8 GB of RAM; the Linux lists include GCC or Clang, Ninja, SDL2, libzip, spdlog, tinyxml2 and Opus/Vorbis libraries; macOS needs Xcode tools with SDL2, libpng, GLEW, Ninja, CMake, nlohmann-json and libzip.",
       "The reviewed README and build guide report no matching, checksum or fidelity checks for the port; the release notes list tweaks and bug fixes. Enhancement and randomizer code changes behavior relative to the original game. This collection did not build or run it.",
       "The repository is CC0 1.0, and the libultraship submodule is MIT; game content from the user’s copy keeps its own rights, and the README says the project does not condone piracy. The reviewed sources establish no AI or REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/2ship2harkinian/2ship2harkinian/blob/f1dda4c28cb9ed7cc80d8c78337ee31a8d2c7d0e/docs/BUILDING.md",
@@ -2981,6 +3089,13 @@
       "The reviewed CI workflow builds Windows, macOS and Linux packages and generates soh.o2r; it runs no gameplay or fidelity comparison against the original game. Behavior and enhancements are project-documented, and this collection built or ran nothing.",
       "The pinned tree has no root license file and GitHub detects none; the randomizer’s 3drando component carries its own license, the submodules are separate repositories and Nintendo content keeps its own rights. README says the project does not condone piracy; the reviewed sources establish no REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/BUILDING.md",
       "https://github.com/HarbourMasters/Shipwright/blob/dd702b0679f2240209763d00277e7343ee1424b9/docs/supportedHashes.json",
@@ -3014,6 +3129,13 @@
       "COMPARE runs the SHA-1 check for normal builds and is off for CUSTOM builds, which INSTALL.md requires after modifying the game. The Jenkins pipeline builds all five versions with ROMs held on its build agent and publishes progress from the USA map file. For the reviewed commit, the matching log counts all 647,908 USA code bytes as source by the script’s own rules, which also count asm/src, asm/lib and libc objects, but only 238,628 of 13,933,140 data bytes; this collection did not rebuild it.",
       "The reviewed tree has no license file and GitHub detects no license, so reuse terms for the source are unstated; original ROMs, derived assets and agbcc keep their own terms. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/INSTALL.md",
       "https://github.com/zeldaret/tmc/blob/6fb6dfb4a7efbe24d0fd1dda5097af6131faacde/Makefile",
@@ -3045,6 +3167,13 @@
       "README documents Linux or WSL builds, with separate macOS and Docker guides, needing Git, build-essential, curl, Python 3.10+ with pip and venv, libxml2 and a MIPS binutils toolchain. N64 and GameCube code builds with IDO 7.1 and 5.3 through ido-static-recomp; iQue builds also use EGCS for some files, and an optional GCC build is non-matching.",
       "With the default COMPARE=1, make checks the built ROM’s MD5 against the version’s checksum file and prints OK or FAILED; NON_MATCHING=1 or COMPILER=gcc turns the check off. GitHub Actions, using a private container holding the base ROMs, reported all 16 version builds successful for the pinned commit, and the mutable progress badge read 100% on review. This collection ran no build.",
       "The pinned tree has no license file and GitHub detects none, so no reuse license is stated; Nintendo content and compiler components keep their own terms. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/oot/blob/8a3634ca774a9b58d822cbc2cc09309f31eac6a4/Makefile",
@@ -3078,6 +3207,13 @@
       "Building the editors needs Node.js >=22.12.0, npm workspace dependencies and the apps/design-editor and apps/design-system-editor builds. The canvas runtime keeps React 18.3.1 for artboards beside the workspace’s React 19, with Babel standalone 7.29.0, happy-dom, jQuery and dom-to-svg; full BaoCut source builds also need Rust, CMake and platform build tools. Agent-made designs use BaoCut’s built-in design and design-system skills through a configured local agent CLI such as Codex, under its own account and service terms.",
       "The design-runtime README reports identifier fixes checked against the original scripts, then Babel-based structural fingerprints matching 19,111 of the original canvas main page’s 20,463 functions exactly; remaining binding-only differences fall in dependencies, while 1,019 structurally different innermost functions and renamed property-scrubber internals remain unreviewed residual risk. Published tests cover canvas checks, file routes and grants, downloads and annotation targets, and acceptance cases UI-11–UI-13 describe manual Web/desktop flows. None is a behavioral oracle against the original service; this collection did not run them.",
       "The root BaoCut Community License 1.0 is source-available: personal, internal and content-creation uses are permitted, while commercializing BaoCut or its code needs a separate license. Third-party notices cover bundled npm packages but do not establish reuse rights in the reconstructed Claude Design code or the icon font. The author’s post does not name REA for this port, and a later third-party post’s REA claim is not confirmed by the author or the repository. This review read pinned sources without running the editors, agents or tests."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/JimLiu/baocut/blob/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-system-runtime/README.md",
@@ -3119,6 +3255,13 @@
       "tools/build.py compares the reassembled ROM’s SHA-1 but only warns on a mismatch. The documented contributor check diffs --hashlog output from recompiled and --interp runs. CI assembles and recompiles without a ROM, zero-filling data, so it confirms neither matching nor gameplay; this collection did not rerun any check.",
       "MIT covers tools/, src/, installer/, res/ and the build scripts; LICENSE excludes asm/, a disassembly of Nintendo's Star Fox code, and anything extracted from a ROM. This is an unofficial fan project unaffiliated with Nintendo. The reviewed repository makes no AI or REA attribution, so a circulating post's account of Opus 5.5 and a single prompt is unconfirmed here."
     ],
+    "requirement_facets": [
+      "testing",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/LICENSE",
       "https://github.com/carlosrmz009/arwing/blob/d8fe7aaf67e0f4ba77c9814852d2ffaccd7d63c7/tools/build.py",
@@ -3148,6 +3291,13 @@
       "tools/build.py compares the reassembled ROM’s SHA-1 but only warns on a mismatch, and the documented contributor check diffs --hashlog output from recompiled and --interp runs. HD 3D hooks one of several projection routines and recovers sub-pixel positions for about 66–90% of vertices. This collection did not rerun these checks.",
       "MIT covers tools/, src/, installer/, res/ and the build scripts; LICENSE excludes asm/, a disassembly of Nintendo's Star Fox 2 code, and anything extracted from a ROM. This is an unofficial fan project unaffiliated with Nintendo. The reviewed repository makes no AI or REA attribution, so a circulating post's account of Opus 5.5 and a single prompt is unconfirmed here."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/LICENSE",
       "https://github.com/carlosrmz009/arwing2/blob/15af0bfd85d00a79e8913094f7242e1b938f093f/tools/build.py"
@@ -3174,6 +3324,13 @@
       "Releases target Windows x64 (installer or portable zip), macOS 11+ (not notarized) and Linux x86_64/ARM64 AppImages. Source builds need Python (3.10+ on Windows) and SDL3, with Visual Studio 2022 Build Tools, Xcode command-line tools or gcc/g++. The optional remastered opening also needs a separately built FFmpeg and a fetched video.",
       "README documents tools/decomp.sh for extracting the disc, reassembling asm/ and comparing each file; tests/rc_check.sh compares per-frame RAM and CPU-PC hashes of recompiled and --interp runs across 96 scripted stages. README also reports SingleStepTests results: all 1.6M Z80 cases, and all 1M 68000 cases apart from some undocumented DIVS/ASR and address-error cases. CI tests only a homebrew test disc; this collection ran nothing.",
       "MIT covers the runtime, tools and installer. third_party/ code, the bundled LGPL 2.1 FFmpeg and LuanUP’s remastered opening, included with permission, keep their own terms, and nothing extracted from a disc is covered. The reviewed LICENSE’s exclusion note names Star Fox 2 rather than Sonic CD. The project is unofficial, unaffiliated with Sega, and makes no AI or REA attribution."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/carlosrmz009/littleplanet/blob/658d834d53d90baf6a899fa1e5d81a6fee187bbb/LICENSE",
@@ -3203,6 +3360,13 @@
       "Builds use CMake with a C17 compiler and warnings treated as errors, plus an optional sanitizer configuration. STATUS lists GCC/Clang CI, and README names native Windows MSVC as the canonical agent workflow. Setting VF2_ROM_DIR enables the ROM-backed CTest targets; otherwise only ROM-independent tests run.",
       "The vf2i960 native-dispatch commands run the recorded differential milestones, and vf2cycles advances recovered C and the reference executor from a shared snapshot, stopping in strict mode at the first unsupported block, reference failure or state mismatch. STATUS reports MATCH for the third through sixth dispatches. CI runs only ROM-independent tests, so the ROM-backed results remain project-reported and were not rerun for this collection.",
       "BSD-3-Clause covers the project’s code; MAME and public Intel i960 documentation serve as cross-references, not included source. docs/LEGAL.md discloses 301 original Sega symbol names, taken from a later Model 2 port DLL, as non-clean-room naming, and an untracked Sonic The Fighters disassembly is used only as a navigation aid. AGENTS.md addresses coding agents, but the reviewed sources establish no REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/LICENSE",
@@ -3235,6 +3399,13 @@
       "Source builds need stable Rust; the browser build adds the wasm32-unknown-unknown target and wasm-pack, Android adds the SDK, NDK and cargo-ndk, and the default desktop netplay feature needs a C compiler. Release archives are not code-signed. Online co-op uses a public signalling server by default, and the desktop build shows Discord presence unless it is turned off.",
       "z2-verify runs the ROM in tetanes-core 0.15 beside z2rs with identical input and compares RAM, battery WRAM, sprite OAM, palette and framebuffer after every frame, with two documented edge allowances for that emulator. Long tests replay TASVideos movies downloaded separately, and ROM-dependent tests skip without their inputs. The reviewed workflow only packages releases; no published verification results were found, and this collection ran no checks.",
       "The sole maintainer releases the code under MIT; vendored matchbox_socket is MIT OR Apache-2.0, and the game itself is not covered. Routine layout comes from the CC0 FiendsOfTheElements/z2disassembly submodule and Data Crystal notes; the project describes one maintainer working from that material, not a two-team clean room, and publishes only a snapshot of earlier private history. PROVENANCE.md does not describe the tools used to write code, so no AI or REA use is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/troyedwardsjr/z2rs/blob/4fe7a35f8ccfdccdf32421badf97b48b02d0127f/PROVENANCE.md",
@@ -3270,6 +3441,13 @@
       "The Jenkinsfile builds us, eu and jp and rebuilds us after each enhancement patch, all with comparison disabled; this checks that builds succeed, not output identity or gameplay equivalence. Options such as disabled draw distance, analog camera, texture fixes and cheats intentionally change behavior, and the wiki notes the draw-distance option may affect gameplay. This collection did not build or run the port.",
       "GitHub detects no repository license and the reviewed tree has no root license file; bundled tools carry their own licenses, and the src/pc notice reproduces an n64-fast3d-engine license that forbids binary redistribution. Original Nintendo content is not supplied, and the README forbids uploading copyrighted assets. The reviewed sources establish no REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/Makefile",
       "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/extract_assets.py",
@@ -3304,6 +3482,13 @@
       "GitHub Actions workflows build Windows, macOS, Linux, Switch and web packages. The README calls CI builds playtest-only and warns of bugs and crashes. No matching, regression or original-hardware comparison result is published, and this collection did not build or run the port.",
       "The root LICENSE.md is MIT (2026, Lywx) for the project’s own code. Submodules keep their own terms, and Nintendo’s code-derived content and ROM assets are not licensed by it; the README says it does not condone piracy. The reviewed sources establish no REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "attribution",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/docs/building.md",
       "https://github.com/HarbourMasters/Ghostship/blob/40eef13823a954a466574dc78e73187a17a2dd42/CMakeLists.txt",
@@ -3335,6 +3520,13 @@
       "Builds need Python and Ninja on Windows, macOS or Linux; the build fetches decomp-toolkit, binutils and retro Metrowerks compilers (GC 1.2.5 for most code), and runs them through the wibo wrapper on macOS and Linux. objdiff compares rebuilt objects with those extracted from the original DOL, and each version’s build.sha1 records the target DOL hash.",
       "AGENTS.md requires ninja baseline and changes_all regression reports for all five versions, each still reporting its DOL as OK. CI builds every version in a build container that supplies the original files and checks symbol order for changed units. These are project-reported checks and progress figures, not evidence of a complete or playable rebuilt game; no build was run here.",
       "AGENTS.md, symlinked as CLAUDE.md and GEMINI.md, sets workflows for AI agents. It bars unsupervised agents from MSL, MetroTRK, THPPlayer, Dolphin SDK and JSystem code and defers hard judgment calls to humans, but it does not quantify agent-written code. The repository declares CC0-1.0; Nintendo’s game, disc contents and the downloaded compilers keep separate rights. No REA use is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/AGENTS.md",
@@ -3369,6 +3561,13 @@
       "The reviewed CI workflow builds packages but runs no comparison against the original game. Accuracy and enhancement claims are project-reported, and this collection built or ran nothing.",
       "LICENSE.md is CC0-1.0; it does not cover Nintendo’s game or disc content, and submodules such as Aurora and the randomizer mod are separate repositories. README says the project does not accept primarily AI-generated contributions and warns of unaffiliated sites spreading AI-generated misinformation; the reviewed sources establish no REA involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/docs/building.md",
       "https://github.com/TwilitRealm/dusklight/blob/34a144a493b7f57adeb4034d382317c826eb5c8d/LICENSE.md",
@@ -3400,6 +3599,13 @@
       "Building needs CMake 3.25+, Python 3 and a recursive clone with the aurora, borealis and musyx submodules; Windows uses Visual Studio 2019 with the Clang and clang-cl components, macOS needs Xcode 11.5+, and Linux needs the listed Ubuntu, Arch or Fedora packages. README platforms are Windows 10+ (D3D12, Vulkan or D3D11), macOS 10.15+ (Metal), Linux (Vulkan), Android (Vulkan or OpenGL ES) and iOS (Metal); Android also needs SDK Platform 37, the NDK and JDK 17+.",
       "configure.py still records per-object matching status across ten disc versions for the separate GameCube build, but CI ignores those files and builds only native packages. The reviewed sources publish no fidelity or gameplay checks for the native app, and this collection did not build or run it.",
       "Metaforce contributors’ code is MIT, and a separate LICENSE.decomp carries CC0 1.0; the reviewed files do not say which directories each covers. Disc content keeps its own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/AxioDL/metaforce/blob/de8fc69bd7f345d6cf5f0c8fc2798295e22522d3/CMakeLists.txt",
@@ -3435,6 +3641,13 @@
       "The README (2026-09-29) reports 99.60% fuzzy, 73.65% byte-perfect and 34.79% source-linked code, with 12,052 of 12,904 functions exact and 542 of 732 objects linked; PROGRESS.md (2026-09-27) gives slightly lower figures. A byte-identical DOL therefore does not mean complete source. The fork’s CI matrix builds only GMSJ01, so GMSE01 results are locally reported, and none were rerun here.",
       "AGENTS.md, symlinked as CLAUDE.md and GEMINI.md, lifts upstream’s ban on autonomous library work. It requires agents to work only from the binary, the linker map and the repository, and forbids fakematches and leaked SDK sources. It does not measure how much code agents wrote. The repository keeps CC0-1.0, while Nintendo content and the compilers keep separate rights. No REA use is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
+    ],
     "additional_evidence_urls": [
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/PROGRESS.md",
       "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/config/GMSE01/README.md",
@@ -3467,6 +3680,13 @@
       "The README reports high-frame-rate, widescreen and input-lag improvements alongside cutscene edge quirks at very wide aspect ratios. It publishes no equivalence or gameplay test; pinned-commit CI only builds the port, with extra inputs from a secret-configured checkout. These claims were not rerun here.",
       "GPLv3 project license; the original game, the decompilation submodule and other dependencies keep separate terms. CONTRIBUTING.md forbids AI-generated code contributions, and no REA or coding-agent involvement is established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/BUILDING.md",
       "https://github.com/Rainchus/Donkey-Kong-64-Recompiled/blob/3b0c36d3fbfeb0b5d2c47923f35cf84b31edcbf7/us.toml",
@@ -3498,6 +3718,13 @@
       "Builds run natively on Windows with Python and ninja, or on Linux/macOS with ninja and the automatically downloaded wibo wrapper. configure.py pins decomp-toolkit v1.8.0, objdiff v3.6.1, binutils 2.42-1 and a 20251118 compiler bundle, selecting Metrowerks compiler versions per target and library; objdiff provides per-object diffing.",
       "The default build links source-built objects for units marked complete and original extracted objects for the rest, then checks the output against each version’s build.sha1 (758 entries for GZ2E01). decomp.dev’s reports for the pinned commit list 100% of code matched for all three GameCube versions, with 2,583 of 2,608 units complete, against 54.47% for ShieldD and 47.06% for Wii RZDE01_00. CI runs in a private container holding game files; this collection ran no build.",
       "LICENSE.md is CC0-1.0; it does not cover Nintendo’s game, disc content or the downloaded compilers. The reviewed sources establish no REA or coding-agent involvement."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/tp/blob/c8fa8c9e2aab72cf4e5db0e5d1c84a9ea6ee6eb0/configure.py",
@@ -3547,6 +3774,13 @@
       "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.saturn.sha",
       "https://github.com/Xeeynamo/sotn-decomp/wiki/Build/720bcf3b1212d130b28bb6ccbeda2b887ea96457",
       "https://github.com/Xeeynamo/sotn-decomp/wiki/PC-Port/ebe1b37979d1a1966abb68d388b753e4407cfd3c"
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ]
   },
   {
@@ -3570,6 +3804,13 @@
       "Builds use CMake 3.25+ with a C++17 compiler; by default CMake fetches SDL3 and iniparser, and libsmacker and miniaudio are submodules. README points to the CI workflow instead of a separate build guide; that workflow uses MSVC, MinGW, macOS/Linux toolchains and platform SDKs such as Emscripten, devkitPro, VitaSDK, DJGPP and Android, and the desktop settings tool needs Qt 6. Release downloads are continuous builds of master, which README warns may regress.",
       "The reviewed CI checks formatting and configures, builds and packages each platform target; it does not run the game or compare its behavior with the original. The per-platform status entries are CI badges, not gameplay-parity results. Kaitai Struct descriptions document save, animation, world-database and texture formats. This collection did not build or run the port.",
       "The repository carries LGPL-3.0; bundled and fetched third-party libraries keep their own terms, and the original game data, LEGO trademarks and the bitmaps the installer takes from the original setup program retain separate rights. The reviewed sources establish no AI or REA attribution."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/isledecomp/isle-portable/blob/d0bf04fe605d7ec2a291e65df08bf26712452379/CONTRIBUTING.md",
@@ -3603,6 +3844,12 @@
       "Only 32-bit x86 executables are supported, built with GNU Make and a 32-bit GNU toolchain (multilib GCC/G++ on 64-bit hosts) against OpenGL 2.0+, SDL2 and FluidSynth (cimgui is bundled). Compilation has been tested only on Ubuntu/Debian; there are no releases, and the last commit at review is 2024-01-22.",
       "No byte-matching, equivalence or automated gameplay check is published, and the project status figures were not reproduced here. The repository has no license file, so reuse rights are unspecified, and the original game retains its own rights; no REA or AI involvement is documented."
     ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "prerequisites",
+      "testing"
+    ],
     "additional_evidence_urls": [
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/issues.md",
       "https://github.com/wurlyfox/c1/blob/256fdcef59f15a190290cc19db3fa9a707843b69/doc/coding.md",
@@ -3634,6 +3881,13 @@
       "CI builds and runs the disc-free CTest port suite on Linux with GCC 14 and Clang 18 for pushes and pull requests; Windows and macOS workflows run weekly or by hand, and the Windows job also checks that the package reaches main and reports the missing disc. Opt-in real-disc smoke drivers cover lifecycle, mouse, area-reload and world-jump scenarios, with results reported by the author. The 1.00 sequence-break option restores named script locks, not missing 1.00 geometry; this collection did not build or run the port.",
       "MIT covers only the project’s platform layer, scripts, tests, tools and docs. NOTICE says the game code in src/ and include/, the decompiled Dolphin SDK and the config/ symbol data derive from the retail executable, remain with their owners and are outside that grant, and that no game assets may be packaged; vendored and fetched components keep their own licenses. AI coding assistance is author-disclosed, and no REA use is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/NOTICE",
       "https://github.com/Odrannnn/MetroidPrimePort/blob/26febe4e09685ab68e7e0a9822934c0daa306a22/LICENSE",
@@ -3663,6 +3917,13 @@
       "Builds run natively on Windows with Python and ninja, or on Linux/macOS with ninja and the automatically downloaded wibo wrapper. configure.py pins decomp-toolkit v1.8.3, objdiff v3.7.3, binutils 2.42-1 and a 20251118 compiler bundle; README also describes a shared Ghidra project as an aid whose output is not accurate enough to copy directly.",
       "The default build links source-built objects only for units marked complete, uses original extracted objects for the rest and checks the result against the version’s build.sha1 (415–417 entries per version). decomp.dev’s reports for the pinned commit list 79.58% of GZLE01 code (32,968 of 39,324 functions) matched, 78.38–78.65% for the other retail versions and 74.08% for the demo. CI runs in a private container holding game files; this collection ran no build.",
       "The repository carries CC0-1.0, which does not cover Nintendo’s game, disc content or the downloaded compilers. CONTRIBUTING.md rejects primarily AI-generated pull requests; the reviewed sources establish no REA involvement."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/zeldaret/tww/blob/8b93b372dc8e841f12ddfb7e0215626f62b05417/configure.py",
@@ -3697,6 +3958,13 @@
       "CI builds Windows x86 and x64 and Linux binaries against both the RSDKv5 and RSDKv5U configurations. The project publishes no comparison with the original binaries, and its FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
       "The custom Sonic Mania Decompilation Source Code License v1 allows copying, modification and distribution only for non-commercial use, requires stating that the code is not the distributor’s, forbids distributing game assets other than unique modded ones, and binds forks to the same terms. Sega’s game and assets keep their own rights. The reviewed sources establish no AI or REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/LICENSE.md",
       "https://github.com/RSDKModding/Sonic-Mania-Decompilation/blob/9dc699428420d752af9767bdb13f585ee0881bc0/.gitmodules",
@@ -3725,6 +3993,13 @@
       "Building needs Git with the pinned RecompOne and ShaderMod submodules and the .NET 10 SDK. Windows batch scripts or a manual RecompOne run against config/MediEvil.json generate the game code, which is then compiled as a .NET 10 application. Running needs the .NET 10 runtime, OpenAL and an OpenGL 2.1 GPU; v0.2b release packages cover Windows x64/arm64, macOS x64/arm64 and Linux x64.",
       "The build workflow recompiles and compiles the project using disc inputs from a separate access-restricted repository, then uploads the build; it does not run the game or compare behavior with the original. README credits references from an unnamed decompilation for function names and patches. This collection did not build or run the project.",
       "MediEvilRecomp has no license file in the reviewed tree, so its reuse terms are unstated; the RecompOne submodule declares MIT. Original game content, including the executable code the recompiler translates, retains separate rights. Both READMEs state that no AI was used to write the code and that AI-generated contributions are rejected; this is not an REA-assisted case."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/BlackLabelHQ/MediEvilRecomp/blob/b9e46db34db40d6e5c8e19b538e4d517299a4012/disc/README.md",
@@ -3760,6 +4035,13 @@
       "Published checks are launcher settings and UI smoke tests, scenario scripts and a harness comparing its own Direct3D 12 and OpenGL renderers; none claims equivalence with original hardware, and no result was rerun here.",
       "There is no top-level license file. The README lists PolyForm Noncommercial 1.0.0 for PSXRecomp, MIT for OpenBIOS, zlib for SDL3 and LGPLv3 for Qt/PySide6; the game and its trademarks belong to their owners. No REA or coding-agent involvement is documented."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/tuning/NOTES.md",
       "https://github.com/Zumbo06/Crash2Recomp/blob/48036cf3b49dfe4343e5c093d1df8a7b12617f81/_build/Crash2Recomp/README.md",
@@ -3791,6 +4073,13 @@
       "Builds need Python and Ninja on Windows, macOS or Linux; wibo runs the Windows tools on macOS and Linux. configure.py pins Metrowerks compiler packages from the GC 2.7–3.0a5.2 and Wii 1.0 families. The GitHub Actions workflow builds all four versions in a build container its comments call private. This collection did not build or diff the project.",
       "CONTRIBUTING.md requires 1:1 matching for objects marked as decompiled, objdiff checks and a successful link. Every non-matching function in a pull request must link a decomp.me scratch, and decompiler output must not be copied directly. The README credits doldecomp bte, zeldaret tp (JSystem) and ogws as sources of code and headers.",
       "The README states that AI or LLMs played no role in the decompilation and limits permitted AI use to cleanup, formatting, documentation and naming. That is a project statement, not something this review can verify. The repository declares CC0-1.0, while Nintendo content, extracted files and toolchains keep separate rights. No REA use is established, and the separate AstroCore PC port mentioned in the README has no public source here."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/SMGCommunity/Petari/blob/86ae7a3d3241adf07d5d3f9949e0462cccc583c1/configure.py",
@@ -3824,6 +4113,13 @@
       "Reported checks are side-by-side rendering comparison with Cemu, players completing the game and, for the decompiled path, tools/verify’s function-by-function comparison of hand-written C++ with the recompiled original on generated and recorded inputs. The experimental decomp build (macOS, USA game only) runs 22,705 verified functions in 862 units at the pinned submodule. All results are project-reported; this collection ran nothing.",
       "Project code is MPL-2.0; vendored Cemu code is MPL-2.0, while metal-cpp, {fmt}, Dear ImGui, zstd and the AppImage runtime components keep their own licenses, and the game remains Nintendo’s property. README calls it an unofficial fan project; the reviewed sources establish no REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/how-it-works.md",
       "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/decomp-build.md",
@@ -3853,6 +4149,13 @@
       "The CMake project needs CMake 3.20+, C++20 and the N64Recomp and RSPRecomp tools; the workflow pins an N64Recomp commit and builds Linux x64 and ARM64 AppImages, an x64 Flatpak, Windows and macOS targets. Patches compile as MIPS code with clang and ld.lld against headers from the k64ret/cv64 decompilation submodule, with symbol dumps from CV64Syms and submodules for N64ModernRuntime, RecompFrontend and RT64. Several sources and functions still carry Banjo names.",
       "GitHub check runs recorded for the reviewed commit report successful builds on those platforms. That shows the private inputs compile, not gameplay fidelity; no matching, test or performance results are documented. This collection did not download the release binaries or rerun any build.",
       "COPYING is GPLv3 and the metadata declares GPL-3.0+; the original ROM and the dependencies keep their own terms. This is a static recompilation, not recovered authored source or a complete decompilation. The reviewed sources establish no REA or coding-agent involvement, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/RevoSucks/CV64Recomp/blob/141b35d8902a6c74e247988df26d394822f8026c/README.md",
@@ -3890,6 +4193,13 @@
       "CI builds Windows x86 and x64, Linux and Android binaries. The project publishes no comparison with the original engine binaries, and the FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
       "The custom RSDKv5(U) Decompilation Source Code License v2.1 requires any distributed prebuilt executable to have DLC disabled by default, forbids commercial use and distributing game assets other than unique modded ones, requires crediting Evening Star and the decompilation authors Rubberduckycooly and chuliRMG, and binds forks to the same terms. The README says Evening Star owns the Retro Engine; the reviewed sources establish no AI or REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/FAQ.md",
       "https://github.com/RSDKModding/RSDKv5-Decompilation/blob/191d7aea6c262d891244172a8609ac69fbfd7571/LICENSE.md",
@@ -3920,6 +4230,12 @@
       "The README warns that the software is not intended for regular use and reports no playability status. Its translator does little decompiling and does not resolve indirect branches or jump tables, so code regions must be listed by hand; docs/FUNCTIONS.md names 18 of 818 listed function entry points.",
       "No matching or equivalence check is published, and nothing was built or run here. The repository has no license file; the PCSX-R-derived emulator sources carry GPL-2.0-or-later headers, and the original game retains its own rights. No REA or AI involvement is documented."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/docs/FUNCTIONS.md",
       "https://github.com/ughman/c2c/blob/2e9535fb0c59e37bf42316cb768be80c5e8073d4/srcdisasm/Main.cs",
@@ -3949,6 +4265,13 @@
       "The build expects a Linux-style host: GNU make, mipsel-linux-gnu binutils, Python 3 with the listed packages such as spimdisasm and rabbitizer, and the splat, m2c, maspsx and asm-differ submodules. C files go through a bundled PlayStation GCC 2.8.1 cc1 binary and maspsx. README points contributors to wiki pages for setup, the rebase workflow and the decompilation process.",
       "make all builds every binary and runs sha1sum against config/medievil.check.sha; CI runs extraction and that check using disc files from an access-restricted repository. A passing check shows that the assembled outputs match those checksums, not how much code has been decompiled to C or that gameplay was exercised. This collection did not build or run the project.",
       "The repository declares MIT; original game content, the bundled compiler binaries and the PSY-Q headers and data in the tree retain their own terms. The reviewed sources establish no AI or REA attribution, and the project is separate from the MediEvil Recomp static recompilation."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/MediEvilDecompilation/medievil-decomp/blob/6afe6fe35d5ddf0ce1bebdb2e72f8215b5b5b407/Makefile",
@@ -3983,6 +4306,13 @@
       "The README reports the game played through to the end, with a widescreen pause-background issue; a macOS play-through is not yet confirmed and Intel Macs are untried. Decompiled C must rebuild the ROM’s code byte for byte, and the port is checked by play and by comparison with the original in an emulator; names are marked as guesses, and nothing was rerun here.",
       "The author reports heavy Claude Code use for the recompilation setup, tool patches, host application, mods and decompiled functions; no REA use is documented. Own code is MIT, but builds including GPLv3 N64ModernRuntime are distributed under GPLv3, an RT64 patch is GPL-2.0-or-later, and the game is not covered."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/recomp/README.md",
       "https://github.com/sciaschi/CBFD-Recompiled/blob/ed1b8bb7f3f036334124ec27eb28efa64e400178/.gitmodules",
@@ -4013,6 +4343,13 @@
       "Windows builds use Visual Studio 2022 with the C++ desktop workload, plus the .NET 9 SDK for the Avalonia-based extractor, or CMake presets. Linux builds need CMake 3.22+, Ninja, a C++20 compiler, pkg-config and FFmpeg development libraries; CMake fetches GLFW 3.4 and SDL2, and graphics use OpenGL through glad with Dear ImGui. Portable AppImages are built in Docker against an Ubuntu 22.04 / glibc 2.35 baseline.",
       "No automated tests, matching checks or side-by-side comparisons are documented, so playability and fidelity remain project claims. This collection did not download releases or extract any disc.",
       "No license file is present, so reuse terms for the source are unstated; Sly Cooper names and assets belong to their owners, and the README disclaims affiliation with Sony Interactive Entertainment and Sucker Punch Productions. The README also asks for Sly 2 or Sly 3 debug builds with symbols to support future ports. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/theclub654/ProjectCane/blob/d8e34caf5edd2a0e2d4ec292b69145425ec6201c/CMakeLists.txt",
@@ -4045,6 +4382,13 @@
       "Verification is limited to make check (cargo check and clippy) and a few unit tests for option parsing, the display test pattern and maximum-score consistency. No comparison with the original program is published; unchanged gameplay logic is the author’s claim, and this review ran nothing.",
       "COPYING is BSD-2-Clause, and source headers name Raymond and Sprinsock as joint copyright holders; the README says the port is released with the original author’s permission. The shareware original keeps its own rights. The reviewed sources credit ChatGPT and establish no REA connection."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "attribution",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/README.adoc",
       "https://gitlab.com/esr/firefighter/-/blob/84861db110928202571af2042cb9762720dc2c3e/NEWS.adoc",
@@ -4076,6 +4420,13 @@
       "The TS0044/TS0046 notes derive GPIO roles from the factory JSON config and trace a single click through a 300 ms double-click window plus event-queue, debounce and wake overhead, citing code addresses in the dump. Disassembly uses an included TC32 disassembler built from a third-party opcode table; the TS0046 application image is reported byte-identical to the TS0044 one apart from factory data.",
       "Replacement firmware v00.14 sends short presses on release and holds after 1 s, identifies as the stock TS0044/TS0046 to Zigbee2MQTT and keeps a BLE service mode for OTA. The progress table records hardware checks for earlier versions; v00.14 was flashed to a TS0046, but pairing, actions and battery reporting in Zigbee2MQTT are marked unverified. The separate ZG-226Z alarm firmware is documented as built but not yet run on hardware. This review ran nothing.",
       "The repository has no top-level license. Firmware directories carry a permissive notice for build files taken from pvvx/BZdevice and the Telink SDK’s Apache-2.0 license, and the notes credit pvvx’s SWire work. The README calls the project highly vibe-coded; the author’s post credits a pi agent running GLM-5.3, while the reviewed files name no model and establish no REA connection."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/ngxson/flipper-telink/blob/d58aef2e65b30f33f560474ce460127c6f18ca30/README.md",
@@ -4111,6 +4462,13 @@
       "Reported checks are ctest suites (MSVC static analysis, short libFuzzer runs, GPU renders compared with the port’s software DS engines, a DeSmuME savestate comparison) and scripted regression walks through Mission Mode, Story Mode, saving and multiplayer. Tests needing player data are skipped without it, and CI builds only the format library on Windows and Linux. Internet play is reported tried through the maintainer’s server, local-network play between two PCs not yet; this collection ran none of these checks.",
       "The port declares MIT; its third-party notices record the decompilation as CC0 1.0 and list SDL3 (zlib), Lua, Dear ImGui and other components under their own terms. No repository license applies to the original game or material extracted from it. README states that AI-assisted coding tools were used; no REA connection is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/docs/BUILD.md",
       "https://github.com/Yokimitsuro/khdays-port/blob/8e0ad0b04d97d869c53f301bc40987f0ab929799/THIRD_PARTY_NOTICES.md",
@@ -4143,6 +4501,13 @@
       "Builds use CMake presets with Ninja. The Linux quickstart targets Debian 13 or Ubuntu 24.04 with gcc 14 (gcc 13 also builds), Python 3 and a fetch script that downloads about 1.6 GB of pinned toolchains and dependencies, among them llvm-mingw, mingw-w64 gcc, SDL3, Vulkan components and DXC. Rendering uses Vulkan, Direct3D 12 on Windows, or MoltenVK on Apple platforms.",
       "CI runs hygiene and audit checks, builds and runs ctest on x86-64 and arm64 Linux, cross-builds Windows and packages Android, iPhone and macOS; disc-dependent tests skip without the player's image. The divergence list documents known differences from the PS2 and states that no test compares a run with the PS2. The upstream decompilation separately reports byte-identical PAL and Japanese boot ELFs, with most read-only data still taken from the disc; this collection did not build or run either project.",
       "README and LICENSE apply MIT only to the project's own code, scripts and documentation, granting no rights in the game, its data or Sony and Team Ico trademarks; third-party code is listed separately. The LICENSE notice says building requires a disc image, unlike the build guide. The reviewed sources establish no AI or REA attribution."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/nathanialf/ico-pc/blob/4c29ac4c121a357092dea6ee12f6d715ce6cf1f9/docs/BUILDING.md",
@@ -4178,6 +4543,13 @@
       "By default the build checks out/SCUS_971.98 against config/checksum.sha1; --skip-checksum is documented for intentional code changes, whose output may not boot. CI downloads the original ELF through a repository secret and runs this check on main, and the check run recorded for the reviewed commit succeeded. This verifies byte identity of one executable, not complete decompilation, and this collection did not rerun it.",
       "The repository is dedicated under CC0 1.0; the original game, extracted assembly and data, and the ProDG compiler and SCE runtime library keep separate rights. CONTRIBUTING takes mangled function names from the May 2002 prototype's debug symbols. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/configure.py",
       "https://github.com/TheOnlyZac/sly1/blob/ea5e2d77ac2a083df1efeafcee178f895943b13d/config/checksum.sha1",
@@ -4212,6 +4584,13 @@
       "make compare runs a SHA-1 check of the built ROM against rom.sha1 and reports pokeemerald.gba: OK on a match; the Makefile notes that comparison only makes sense for non-modern builds. CI builds with COMPARE=1 and also builds the modern target. These checks establish byte identity for this one release, not gameplay coverage; this collection did not build the ROM.",
       "The repository has no top-level license file and GitHub detects none; license files cover only some bundled tools, and agbcc’s GCC sources carry GPL v2. The original game’s code, graphics and audio remain subject to their rights holders. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/INSTALL.md",
       "https://github.com/pret/pokeemerald/blob/731ad5bfd6e6f265508d0efcca0ba42f9dcf5881/Makefile",
@@ -4242,6 +4621,13 @@
       "SETUP.md supports Linux, macOS, WSL 2 and Nix. The build uses a Python configure script with ninja, pigment64 from cargo, host MIPS binutils/GCC/cpp, and downloaded compiler builds: project GCC/binutils, GCC 2.7.2, EGCS and statically recompiled IDO 5.3. configure refuses a matching iQue build on macOS because EGCS is unavailable there.",
       "A matching build ends with sha1sum checks against each version’s checksum.sha1, reporting “papermario.z64: OK”. --non-matching, --modern-gcc and --shift builds skip that check, so they are not matching results. Jenkins builds all four versions plus a shiftable US build and publishes the progress reports; this collection ran none of these checks.",
       "The reviewed tree has no top-level license file and GitHub detects none, so no reuse grant is established for the source. Original ROMs and extracted assets retain separate rights, and downloaded compilers carry their own terms. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/pmret/papermario/blob/1104f1f71b824042a5fa1f958f2d861b603320fd/SETUP.md",
@@ -4284,6 +4670,13 @@
       "The BT3-Decompiled README reports 99.92% of the main program's game code and 99.97% of the menu program in matching C, with both rebuilt binaries byte-identical; Sony SDK and CRI libraries are out of scope. The port log reports a replay recorded in PCSX2 matching console health values at sampled ticks and the final clock, while an early entry still noted differing fighter state words; macOS is reported to match the Linux state on every demo frame. These remain project-reported, and this collection ran nothing.",
       "The port's own code is AGPL-3.0-only after commit 06e4671 and MIT up to and including it; bundled libraries keep their own terms. README states that the game code in src/ and include/ belongs to the game's rights holders, and BT3-Decompiled's CC0 1.0 dedication covers only its own reconstruction work. README says the project was made with AI help, and the docs carry working rules for parallel decompilation agents; no REA use is documented and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/docs/port/README.md",
       "https://github.com/z3xox/Tenkaichi3Decomp/blob/ec3c85a98cffd9cd22c22ac14cd62fb584d23664/install.py",
@@ -4318,6 +4711,13 @@
       "dm/verify documents structural checks and Unicorn-based equivalence tests for every rewrite site, which need only the user’s files, plus unit tests. Save, tick-state and screenshot gates compare against ground-truth recordings from a patched Ryujinx; those recordings and driver scripts are not shipped, so these gates cannot be rerun from the repository. README reports a 44-device closed beta and dated iPhone 17 Pro Max measurements; this collection ran none of these checks.",
       "The project declares MIT; bundled third-party code keeps its own license (the Ryujinx translator MIT, deko3d-derived code zlib, FLIP BSD 3-Clause). Seven offline-play rewrites come from a community patch whose authorship and license are unknown. Blizzard and Nintendo retain their rights in the game; the reviewed sources establish no AI or REA attribution."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/README.md",
       "https://github.com/jhaizhou-ops/d2r-mobile/blob/9393b00ea9aca52d9254214da93738f26582562f/dm/verify/README.md",
@@ -4348,6 +4748,13 @@
       "Linux and macOS builds run in a prebuilt Wine container under Docker or Podman; Windows builds use Git Bash and Python 3.10+ natively, with a short repository path. Both clone community mirrors of SN Systems ProDG for PS2 3.01 and the SCE PS2 SDK 2.4. Game code compiles with ProDG GCC 2.95.3 and Sony SDK objects with EE-GCC 2.9-ee-991111; GNU as is used together with listed tools that model the original ps2eeas assembler and linker behaviour.",
       "tools/build_sn.sh rebuilds from scratch, audits each decompiled function's bytes and address against retail, and compares every loaded section, allowing differences only inside known near-miss C functions; level code is checked per function. The image therefore matches retail outside in-progress functions rather than as a whole. CI enforces the build-fidelity list, and this collection did not rerun any check.",
       "AGENT_WORKFLOW.md describes a lead model directing tiers of worker models whose candidates a strict match tool accepts or rejects; a Claude Code worker definition is committed, and a Ghidra MCP container serves decompilation to agents. The reviewed sources establish no REA use. Project code is GPLv3; reconstructed libraries and third-party components keep their own licenses, and the game and toolchains keep separate rights. CONTRIBUTING bans Sony SDK source and leaked material, and LEGAL.md reports that movie code derived from an SDK sample was reverted to assembly on 2026-09-30. No runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
     ],
     "additional_evidence_urls": [
       "https://github.com/OpenRAC/rac1-decomp/blob/7f5d3ff56701b611ac0e2c2589ef1f49cf8ac8fe/LEGAL.md",
@@ -4386,6 +4793,13 @@
       "The README reports faithful audio, intact N64 effects, widescreen, high frame rates, note saving and fixed duplicate Mumbo token IDs, and lists overlay software as a known problem. It publishes no equivalence or gameplay test; pinned-commit CI only builds the port, and none of these claims was rerun here.",
       "GPLv3 project license; the original game, the decompilation and other dependencies keep separate terms. The team states that it does not use generative AI and bans GenAI-assisted contributions; this is not an REA-assisted case."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/BUILDING.md",
       "https://github.com/BanjoRecomp/BanjoRecomp/blob/dbd52154bc1e00e56867b1fac94a8f907052f41b/banjo.us.rev0.toml",
@@ -4417,6 +4831,13 @@
       "INSTALL.md covers Windows (WSL1 recommended; msys2 or Cygwin), macOS and Linux. On Debian/Ubuntu it lists build-essential, binutils-arm-none-eabi, git and libpng-dev; the matching builds also need pret/agbcc built and installed into the tree. make modern and the matching *_modern targets use devkitARM’s arm-none-eabi-gcc, and a TOOLCHAIN variable selects another ARM toolchain.",
       "make compare and the compare_* targets check each built image against its .sha1 manifest; config.mk notes that comparison only makes sense for non-modern builds. CI compares all six images and also builds the modern target. docs/bugs_and_glitches.md lists original-game bugs that the optional BUGFIX and UBFIX defines change, so those builds intentionally diverge. These checks establish byte identity for the listed images, not gameplay coverage; this collection did not build the ROMs.",
       "The repository has no top-level license file and GitHub detects none; license files cover only some bundled tools, and agbcc’s GCC sources carry GPL v2. The original games’ code, graphics and audio remain subject to their rights holders. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokefirered/blob/037335f4c725d7c9aecdac87066f2002b4bd7e14/INSTALL.md",
@@ -4457,6 +4878,13 @@
       "The CI workflow builds Linux, Windows, macOS, iOS, Android and web artifacts and checks package contents; the platform guide states CI never touches a ROM, and its named desktop check script is absent from the reviewed tree. Nightly builds are labeled playtest-only with expected bugs and crashes. No gameplay-equivalence or performance results are reported, and this collection ran nothing.",
       "The repository carries CC0-1.0 text, but GitHub detects no license for the credited pmret and Paper Mario DX repositories, and submodules have separate terms; the CC0 file is not treated as a grant over inherited code or game content. The README says AI-assisted pull requests are accepted under a HarbourMasters policy; that establishes no REA use or measured AI contribution."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/docs/BUILDING.md",
       "https://github.com/HarbourMasters/PaperBoat/blob/d98b4b630f0674548067f59019fffef6885766e8/docs/android-ios-web.md",
@@ -4489,6 +4917,13 @@
       "The tools are Python (requirements-dev.txt, with capstone for the checker). tools/build.py builds the whole game as one LTCG image with each source file's flags; tools/check.py compares every marked function with the retail bytes apart from relocated address fields, writes matched/near/todo status to config/functions.csv and exits nonzero while any function differs. Public CI runs the Python tests, whose retail and SDK tests skip without those local inputs, and exports the decomp.dev report from the committed CSV.",
       "Match counts come from the project's checker; tools/masked.py lists differences the address masking can hide, such as nearby float constants and strings. PROVENANCE.md reports that earlier names drew on sources its policy forbids (third-party names derived from unreleased 2003 linker maps, and an internal 2007 debug build); those were removed or renamed with match status unchanged, while the derivation of names that follow the Halo CE decompilation is still under review. This collection ran no checks.",
       "Contributors' own work is CC0 1.0; LEGAL.md states this places no Halo 2 code, content or trademarks in the public domain, and the project is unaffiliated with Microsoft, Bungie or 343 Industries. README says much of the maintainer's decompilation runs in automated lanes driven by Claude and Codex, with each batch reviewed and checked before it lands, and it offers contributors a prompt for AI coding agents. No REA use is documented and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "testing",
+      "attribution",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/kirklandsig/halo2-decompiled/blob/e25e96f9236a74b15ab0f0acaa7af53918ca1233/LEGAL.md",
@@ -4523,6 +4958,13 @@
       "Neither README reports tests, matching results or comparisons with the original executable, and the reviewed front-end tree has no test files. Reported playability rests on the hosted deployment; this collection ran nothing.",
       "diabloweb has no license file. The fork ships Unlicense text, yet its README limits the source to non-commercial use; current upstream Devilution uses the Sustainable Use License 1.0, and Blizzard retains its rights in Diablo and its data. The reviewed sources establish no AI or REA attribution."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/package.json",
       "https://github.com/d07RiV/diabloweb/blob/c61ef19c54ea646aed328bd8cc82c8a5f1ebd81d/src/App.js",
@@ -4556,6 +4998,13 @@
       "make compare builds every target and runs sha1sum against roms.sha1. pret's CI does this on Linux and macOS with rgbds 1.0.4 and fails when the build leaves uncommitted changes, while forks only build. Matching hashes show identical output bytes, not that labels and documentation are complete or that modified builds behave correctly. This collection did not build the ROMs.",
       "The repository has no license file, so reuse terms for the disassembly are unstated, and the original game's content remains its rights holders'. rgbds is a separate project with its own terms. The reviewed sources establish no AI or REA attribution."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/INSTALL.md",
       "https://github.com/pret/pokered/blob/af519899719f0754965776faac0e836a3b906e6d/Makefile",
@@ -4587,6 +5036,13 @@
       "Source builds need the libultraship and Torch submodules and CMake, plus Visual Studio 2022 (MSVC v143), Python 3 and at least 8 GB RAM on Windows, GCC or Clang with Ninja and the listed SDL2, libzip, tinyxml2, spdlog, Boost and Vorbis packages on Linux, or Xcode and the listed packages on macOS. Build targets extract bk.o2r from the ROM and package port assets as lighthouse.o2r.",
       "The README publishes no matching or fidelity checks. Most supported romhacks are not fully tested, and CI nightly builds are for playtesting and may crash; nothing was built or run here.",
       "The repository is dedicated under CC0 1.0; submodules keep their own licenses, and the game is not covered. The README discloses AI assistance for information gathering and accepts AI-assisted pull requests under the HarbourMasters policy; no REA use is documented."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/Lighthouse/blob/4e8dfd23c64b143eb93ae9ee9fbae832cae2a2ef/docs/BUILDING.md",
@@ -4620,6 +5076,13 @@
       "Builds need submodules including XenonRecomp, XenosRecomp, plume and SDL 3, with project patches applied, plus Python 3.11+, CMake 3.28+, Ninja and Clang: clang-cl with Visual Studio 2022 Build Tools on Windows 10 1803+, or Clang/LLD with a Vulkan driver on Linux. tools/ppc_codegen.py regenerates the guest sources locally before the runtime build.",
       "STATUS.md separates implementation, validation, acceptance and release; for example, v1.0.4’s save fix passed a logic review, a CPU fixture and a Release link but was not run in-game. Upscaler and rendering checks name bounded fixtures and GPUs. The workflow guide states that a release does not mean the game was completed start to finish; this collection ran nothing.",
       "GPL-3.0 covers project code; Lost Odyssey and its assets belong to their owners, and dependencies such as the Xenia FFmpeg fork, DXC, optional DLSS/FSR/XeSS SDKs and Android GPU drivers keep their own terms. docs/AI_WORKFLOW.md says one maintainer used Claude Code as the main session with Codex CLI and subagents; Ghidra scripts and a third-party reverse-engineering skill are referenced, but no REA use is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/freefrank/LostOdysseyRecomp/blob/32fb6f73efef0e34ac05913b8521bad026b4ff65/docs/BUILDING.md",
@@ -4656,6 +5119,13 @@
       "Matching rests on the linked DOL's SHA-1 and objdiff's per-unit report; CI's check_complete.py warns when a unit matches fully but is not yet marked complete. The 100% figures are decomp.dev's report for this commit; this collection did not build the DOL or rerun any comparison.",
       "No repository-wide licence file is present at the reviewed commit and GitHub detects none; bundled tools under tools/ carry their own licences, and the game, its DOL and assets keep their rights holders' terms. CONTRIBUTING.md says using AI to match functions is acceptable and frequently practiced, while asking contributors not to let AI name struct fields or global identifiers or attempt data-section matches. No REA use is documented and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/config/GALE01/build.sha1",
       "https://github.com/doldecomp/melee/blob/f0cdbb0a7046aea44c7177fd72abf33c3d2af4d4/configure.py",
@@ -4687,6 +5157,13 @@
       "INSTALL.md covers Linux distributions, macOS with Homebrew, Windows through WSL (or Cygwin on older Windows) and Termux. The build needs make, gcc or clang, git and rgbds 1.0.4, which the repository pins; FAQ.md notes that rgbds releases before 1.0.0 fail.",
       "make compare builds every target and runs sha1sum against roms.sha1. pret's CI does this on Linux and macOS with rgbds 1.0.4 and fails when the build leaves uncommitted changes, while forks only build. Bug and design-flaw notes describe fixes as optional diffs, since the matching build keeps the original behavior. This collection did not build the ROMs.",
       "The repository has no license file, so reuse terms for the disassembly are unstated, and the original game's content remains its rights holders'. rgbds is a separate project with its own terms. The reviewed sources establish no AI or REA attribution."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokecrystal/blob/3bc8daa4173e96a7f4011dad3922eb6fa5dad5c6/INSTALL.md",
@@ -4720,6 +5197,13 @@
       "INSTALL.md covers WSL2 (recommended), WSL1, MSYS2, macOS and Debian, Arch and Fedora Linux; packages include an ARM GCC toolchain, bison, flex, Ninja, Python 3, libpng and 32-bit libc, and macOS also needs Wine. The Makefile clones Meson 1.12.0 and downloads the metroskrew 0.1.3 release, which its repository describes as a relinked Linux port of the proprietary Windows Metrowerks ARM compiler; Meson fetches pinned NitroSDK, NitroSystem, NitroDWC, NitroWiFi and libvct subprojects. make builds HeartGold and make soulsilver builds SoulSilver.",
       "make runs Meson tests after building that check the ARM9 main binary, ARM7 binary, filesystem and complete ROM against SHA-1 manifests; the Makefile tells modders they may drop that check after their first build. CI builds and checks both games and runs a progress calculation on pushes. Matching hashes establish identity for these two US images, not decompilation completeness or gameplay coverage; this collection did not build them.",
       "The repository has no top-level license file and GitHub detects none; some bundled tools carry their own licenses, and the metroskrew and ntrtwl SDK repositories declare no license on GitHub. SDK libraries and original game content remain subject to their rights holders. CONTRIBUTING.md prohibits LLM-generated contributions apart from narrow, disclosed exceptions; the reviewed sources establish no AI or REA use in the project, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/INSTALL.md",
@@ -4757,6 +5241,13 @@
       "A dated release audit (2026-10-12) reports clean source-upload scans, 26 passing input-configuration and menu tests and successful Windows and Linux release builds, and leaves physical-controller behavior unmeasured. README cites no hardware or emulator comparison results; this collection ran nothing.",
       "FFTARecomp changes are MIT and retain upstream gba-recomp notices (MIT OR Apache-2.0); gamedb.sqlite function metadata is CC0 1.0, and w64devkit tools keep their GPL-family licenses. The project’s audit does not establish logo and icon provenance, and Square Enix and Nintendo retain their game rights. Upstream gba-recomp describes itself as AI-assisted; no REA connection is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/.recomp.json",
       "https://github.com/Jorge262007/FFTARecomp/blob/7af625665d40ef3d39b3730a3c591ff66f7b2929/BUILDING.md",
@@ -4787,6 +5278,12 @@
       "Release v0.5.1b (2026-08-19) ships Windows x64/ARM64, macOS ARM64/x64 and Linux x64 builds; Linux ARM64 was dropped in 0.5b. Source-build prerequisites list an OpenGL 2.1+ GPU, .NET 10, OpenAL and Git, and the changelog calls the OpenGL 2.1 path experimental with bitmasking problems. Game code is generated by running the RecompOne submodule against config/sotn.json.",
       "The README calls this an open beta that may contain game-breaking bugs, and 1.0 has not been released. No equivalence or automated gameplay test is published, and none of the changelog’s fixes or features was rerun here.",
       "SymphonyRecomp has no license file, so reuse terms are unspecified; the pinned RecompOne recompiler and runtime are MIT-licensed, and the game retains its own rights. Both projects state that no AI was used to write their code and reject AI-generated pull requests; no REA use is established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/BlackLabelHQ/SymphonyRecomp/blob/c94a9096bab25bf513cceea50d6838a4c8d7bf5b/config/sotn.json",
@@ -4820,6 +5317,13 @@
       "Testing reported for 1.9.2 covers menus, level loading and fonts in several languages under Wine and on Linux with OpenGL, and states that the Windows, Linux and macOS builds compile. No automated tests or CI runs are recorded for the reviewed commit, and this collection did not download releases or rerun anything.",
       "LICENSE.txt applies MIT to the port's own code (twotowers/ and generate.py); the vendored xboxrecomp keeps MIT plus LGPL-2.1-or-later for parts taken from xemu. The license adds that the release's game program contains code mechanically translated from the original executable, which it does not cover and which remains the rights holders' property. Reviewed sources establish no REA involvement, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/generate.py",
       "https://github.com/Gumpolas/TooTawersRecomp/blob/6fce430797ec0573634fa6be18a08f73957efa63/twotowers/CMakeLists.txt",
@@ -4852,6 +5356,13 @@
       "Windows 10/11 only. The Static Recomp build uses Python, CMake and the Visual Studio 2022 Build Tools (play.bat can install them with winget). The Source Port additionally needs MinGW-w64 GCC 14 or newer with Ninja for the game DLL, an MSVC-built host, and the same guest-translation step; it pins the doldecomp/melee and encounter/aurora submodules and applies its patch with a checking script.",
       "README lists CTest unit tests, a validator requiring 2,400 simulation checkpoints to match across headless, hidden, threaded and authored rendering, and a two-instance Slippi match that must log no DESYNC. docs/replay-validation.md compares replays frame by frame in eight Slippi post-frame fields and says this does not establish equality of the complete game state; PORT_COMPLETION.md makes resolving a differing replay byte a precondition for claiming deterministic online compatibility. These are project-reported; nothing was run here.",
       "GPL-3.0-or-later from 0.8.5 (GPL-2.0-or-later through 0.8.1); NOTICE lists code ported from Dolphin, Slippi Ishiiruka and Slippi, bundled components with their own licences, and a GPL section 7 permission for NVIDIA and Intel SDKs. Melee belongs to Nintendo and HAL Laboratory, and the project is unaffiliated with the Slippi team. README says it was developed with Fable 5.1 and GPT 6 Astra, and PORT_COMPLETION.md names Fable and Codex working branches; no REA use is documented and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/Hero88go/melee-unlocked/blob/589415b70123e699226f1925ad7a59ef8203a71c/docs/build-source-port.md",
@@ -4887,6 +5398,13 @@
       "With COMPARE=1 the Makefile checks the selected build against its SHA-1 file. The GitHub Actions workflow compares the English 1.0/1.1/1.2 Ruby and Sapphire builds and German first-edition variants, then compiles the NONMATCHING sources and the modern target without comparison; README's build badge still points to Travis CI. Matching hashes show identical ROM bytes, not that NONMATCHING C or modern builds behave identically. This collection did not build the ROMs.",
       "No license file is present, so reuse terms are unstated; the original game's content remains its rights holders', and agbcc and devkitPro components keep their own terms. The reviewed sources establish no AI or REA attribution."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/INSTALL.md",
       "https://github.com/pret/pokeruby/blob/5784633ce4ef7ade1a7f2d2d0c288e3d5e6cdd7f/CONTRIBUTING.md",
@@ -4920,6 +5438,13 @@
       "Project-reported checks include make check for both regions, AddressSanitizer and UBSan sweeps that fixed seven latent out-of-bounds bugs, audio/visual fidelity validated against BizHawk, and a software rasterizer reported 99.84–99.99% pixel-exact against DuckStation VRAM captures. The known-issues list places remaining defects in the port’s rendering and backend layer; this collection ran none of these checks.",
       "GPL-2.0 covers only the project’s original port code, tooling and documentation. The decompiled game code, derived from shao113’s unlicensed decompilation, and the reconstructed data tables are Konami’s and are not licensed by the project; pre-built releases embed part of the game-derived data segment and a BIOS-derived font. The repository keeps its setup recipe in Claude Code skill files; no REA connection is established."
     ],
+    "requirement_facets": [
+      "testing",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/NOTICE",
       "https://github.com/HalmyLyseas/VandalHearts-PcPort/blob/14552fffa0e0b47e02b57592e274fc6e7a649923/CLAUDE.md",
@@ -4951,6 +5476,13 @@
       "INSTALL.md covers WSL2 (recommended), WSL1, MSYS2, macOS and Debian, Arch and Fedora Linux; packages include an ARM GCC toolchain, bison, flex, Ninja, Python 3, libpng and 32-bit libc, and macOS also needs Wine. The Makefile clones Meson 1.12.0 and downloads the metroskrew 0.1.3 release, which its repository describes as a relinked Linux port of the proprietary Windows Metrowerks ARM compiler; Meson fetches pinned NitroSDK, NitroSystem, NitroDWC, NitroWiFi and libvct subprojects. make debug builds a GDB-enabled ROM, for which INSTALL.md points to an overlay-aware binutils-gdb fork.",
       "make runs Meson tests that check shared, revision-specific and ARM7 binaries, the filesystem and the complete ROM against SHA-1 manifests; make rom skips the checksum when code is modified. CI installs metroskrew and runs make check for the default revision. Matching hashes establish identity for the listed US images, not gameplay coverage; this collection did not build them.",
       "The repository has no top-level license file and GitHub detects none; some bundled tools carry their own licenses, and the metroskrew and ntrtwl SDK repositories declare no license on GitHub. SDK libraries and original game content remain subject to their rights holders. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/pret/pokeplatinum/blob/1dc13dcea40c04ab53f1f607de46023dc409ef20/INSTALL.md",
@@ -4988,6 +5520,13 @@
       "Playability and the known-issue list are the author's reports. The only CI workflow builds the setup application; the repository's tests cover co-op, modding and map tools, and no automated comparison of recompiled behaviour against the console is documented. This collection did not build or run the port.",
       "Project code is Apache-2.0 with a NOTICE that redistributors must keep, crediting Saints Reborn by Whompay. The SDK patch keeps the ReXGlue SDK's BSD-style licence, the SDK derives in part from Xenia, and libraries downloaded at build time keep their own terms. Saints Row remains its owners' property, and the NOTICE covers no file extracted or generated from the game. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/BUILDING.md",
       "https://github.com/whompay/SaintsReborn/blob/cb09c54cf9ff5c19a9c1cb8e080f465a322bd0eb/docs/HOW_IT_WORKS.md",
@@ -5021,6 +5560,13 @@
       "Linux builds are recommended through the Docker wrapper drun.sh; a non-container build on Arch Linux lists nasm, enet, arm-none-eabi-gcc, Ninja, flex and bison. Windows uses PowerShell scripts that create a portable MSYS2 environment before make win64, and the NX target needs devkitA64. The ARM and Linux CI jobs install the inherited metroskrew Metrowerks compiler, and the libntr subprojects track their main branches rather than pinned revisions.",
       "CI builds the ARM ROM, Linux and Windows targets on pc_port pushes and packages Linux and Windows artifacts; the latest release, v0.1.12 (2026-10-10), ships Linux and Windows zip archives from a commit earlier than the reviewed one. The fork’s default make target drops pret’s checksum dependency and CI does not run make check, so the reviewed sources do not show that its DS ROM still matches retail or that the PC build behaves identically. This collection ran neither build.",
       "The fork has no top-level license file and GitHub detects none; libntr declares MIT, which README says release publishers must honor, while pret’s decompilation declares no license and original game content remains subject to its rights holders. README states that generative AI/LLM shortcuts were not used and that AI-made pull requests are rejected, and AGENTS.md repeats that refusal. No REA use is established, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/cybervisi0n/pokeplatinum/blob/35067868f64f23d25d17ac3e536cfdd9a7f40523/Makefile",
@@ -5058,6 +5604,13 @@
       "CI builds Windows, Linux and macOS targets on pushes and pull requests and publishes nightly prerelease archives. The reviewed tree has no test suite, matching check or gameplay-comparison result, so behavioral parity with the PS2 game remains unverified; this collection did not build or run the port.",
       "MikuPan declares AGPL-3.0 and Himuro declares MIT; bundled third-party binaries and libraries keep their own terms, and Fatal Frame data retains separate rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakeLists.txt",
       "https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/CMakePresets.json",
@@ -5089,6 +5642,13 @@
       "Runs on Windows, Linux (x64, ARM64, Flatpak, Steam Deck) and macOS 13 or newer, with a GPU supporting Direct3D 12 (Shader Model 6), Vulkan 1.2 or Metal Argument Buffers Tier 2, and SSE4.1 on x86-64. Building needs CMake, Ninja and clang (on Windows Visual Studio 2022 with its Clang and CMake components plus make; on Ubuntu SDL2, GTK 3, LLVM and lld), with N64Recomp and RSPRecomp built separately; CI pins N64Recomp at commit 98bf104.",
       "The reviewed sources document features and nightly CI builds for Windows, macOS and Linux, not tests or comparisons of recompiled behaviour against the original. DOCS/fox_lore.md recounts the sf64 decompilation's matching history, which belongs to that separate project. This collection did not download builds or run anything.",
       "COPYING is GPLv3; the original ROM and the bundled libraries keep their own terms. This is a static recompilation, not recovered authored source, and README credits the decompilation team's reverse engineering for the port's enhancements. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/sonicdcer/Starfox64Recomp/blob/f2996555d73ca480f3dc3639f375c50818847bfc/BUILDING.md",
@@ -5123,6 +5683,13 @@
       "Verification is a whole-image SHA-256 comparison: ninja fails unless the rebuilt executable matches the retail hash, and the project claims a function match only with that check and objdiff identity. CI cannot build without the executable and only uploads the locally generated report for decomp.dev. The project treats build 38 compatibility as code-generation evidence, not proof of the original compiler; this collection did not rerun any build.",
       "No license file is present at the reviewed commit, so reuse terms for the project’s code are unstated; the game, its executable and the proprietary Metrowerks compilers retain separate rights. The handoff note addresses a person or AI agent and the progress log plans parallel agent work, without attributing specific matches; no REA connection is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/PROGRESS.md",
       "https://github.com/zm2283145/syphon-filter-omega-strain-decomp/blob/d41eacc6dd89befed75fec21a02faaa2b5a4750c/docs/HANDOFF.md",
@@ -5156,6 +5723,13 @@
       "Windows is the primary target: the documented build uses an MSYS2 MINGW32 shell with 32-bit MinGW GCC, CMake 3.16+ and SDL2, plus vendored GLAD for an OpenGL 3.3 Core context. Builds must be 32-bit, unoptimized (-O0) and define NDEBUG, because the decompiled code casts pointers to 32-bit values and contains optimization-sensitive undefined behavior. Linux i686 is described as compiling and linking but is not officially supported.",
       "About 100 decompilation files carry TARGET_PC changes, and optional PC_ENHANCEMENTS add settings, MSAA and texture-pack loading. The project describes Windows as fully tested and records an unresolved bass-distortion audio issue, but publishes no automated tests or byte-matching checks for the port. Equivalence with the GameCube original is not established, and this review did not build or run it.",
       "LICENSE keeps the decompilation code under CC0 1.0 from ac-decomp and licenses the pc/ layer and TARGET_PC additions under MIT, with a separate MIT notice for FixNES; GitHub classifies no single license. Game content rights are separate. The README discloses that AI tools such as Claude were used for port code only; no REA use is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/flyngmt/ACGC-PC-Port/blob/4099d246c927e75b4fd342ca13f4ac4395c55af5/pc/DOCUMENTATION.md",
@@ -5200,6 +5774,13 @@
       "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/tools/ido5.3_recomp/README.md",
       "https://kholdfuzion.github.io/goldeneyestatus/",
       "https://gitlab.com/kholdfuzion/goldeneye_src/-/tree/c4356466796c697dfd298010b9bed261f9ed8c6a"
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ]
   },
   {
@@ -5223,6 +5804,13 @@
       "Releases target Windows, Linux (AppImage), macOS and Nintendo Switch, with DirectX 11, OpenGL and Metal back ends. Building needs CMake, Python 3 and Git with Visual Studio 2022 (v143 tools; at least 8 GB of RAM) on Windows, or gcc or clang with Ninja and libraries including SDL2, libzip, spdlog, tinyxml2, Boost and Ogg/Vorbis on Linux. Submodules are libultraship, Torch and asm-differ; CI generates only the port's own starship.o2r and packages builds without a ROM.",
       "Neither README nor BUILDING.md documents automated gameplay tests or comparisons with the original game, and the decompilation's matching status belongs to the separate sf64 project. This collection did not download builds or run anything.",
       "LICENSE.md is CC0 1.0 Universal; the ROM, extracted assets and the game remain their owners' property, and the submodules keep their own terms. README says the project does not condone piracy. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/Starship/blob/3322643f0bbf80d2f8f7e1c0d2c4c578515f6c90/docs/BUILDING.md",
@@ -5257,6 +5845,13 @@
       "README reports 31 CTest tests with renderer tests enabled: 25 display-independent and 6 needing an OpenGL context. CI runs the display-independent subset on Linux and Windows and the GPU subset under Xvfb with software GL, which may skip without a context. The tested-devices table confirms one Linux setup and no Windows machine, and known issues include Wayland problems with 32-bit libraries. These are project reports, not byte-matching or gameplay-equivalence results; this collection did not run them.",
       "The repository is GPLv3. Its third-party notices record PsyCross-derived platform code (MIT), PSn00bSDK headers (MPL 2.0), SDL and other vendored components under their own licenses, and the bundled fonts keep Apache 2.0 and OFL terms. Contributing rules keep retail disc data and extracted assets out of commits; the original game remains its owners’ property. The reviewed sources state no AI or REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/CONTRIBUTING.md",
       "https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged/blob/07d0c49f01d62dcb9887b455be27ce65728ee893/THIRD_PARTY_NOTICES.md",
@@ -5289,6 +5884,13 @@
       "The README reports full gameplay with mouse/controller input, XMA audio, saves, local achievements and added video and remapping menus; Xbox Live synchronization is unavailable. Under Proton in WSL2, the opening level rendered with audio, but camera movement and tutorial completion were not confirmed; Steam Deck remains unverified and there is no native Linux build.",
       "The build runs a CTest suite of native and contract tests, and the updater re-tests builds and checks packaged files with SHA-256. These are project checks of the port, not proof of behavioral equivalence with the console release; this collection did not build or run it.",
       "GPLv3 per COPYING, matching UnleashedRecomp/XenonRecomp; the generator patches are GPLv3, SMAA and the CC0 Xelu prompt icons keep their own terms, and the game retains separate rights. This is static recompilation, not recovered authored source. The README states that development includes OpenAI Codex assistance; no REA connection is established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/START_HERE.txt",
@@ -5324,6 +5926,13 @@
       "CI recompiles and builds Linux, Windows and macOS targets with a ROM held in a private repository behind CI secrets; it publishes no matching, fidelity or gameplay comparison. Release v0.9.2 (February 2026) offers Windows, Linux, Flatpak and macOS archives. Rendering-accuracy, framerate and input-lag statements are project claims; this collection did not build or run the port.",
       "COPYING is GPL-3.0; original game content, decompilation-derived headers and libraries such as RT64 and RmlUi retain their own terms. Static recompilation translates machine code rather than recovering authored source; the reviewed files establish no AI or REA involvement, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/BUILDING.md",
       "https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/us.toml",
@@ -5357,6 +5966,13 @@
       "The default ninja target runs decomp-toolkit’s SHA-1 check of static.dol and foresta.rel against build.sha1. configure.py lists 4,005 objects as matching and none as non-matching, and CI builds with a private container that supplies the original files. The mutable decomp.dev page reports 100.00% decompiled and fully linked at this commit; this review did not rerun the build or checks.",
       "The repository is dedicated under CC0 1.0. Original game content and the downloaded toolchain binaries are outside that dedication and keep their own rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/configure.py",
       "https://github.com/ACreTeam/ac-decomp/blob/09ca8e8b5b24e6ab44047ee980cf0088ad7ecb4c/config/GAFE01_00/build.sha1",
@@ -5389,6 +6005,13 @@
       "CONTRIBUTING.md lists Python 3 with capstone, pyelftools and ndspy, the dsd extraction and delinking tool, the proprietary CodeWarrior mwccarm 3.0 build 139 compiler (not supplied), arm-none-eabi-as and a Ninja-driven mwccarm/mwldarm build; its commands call tools/dsd.exe alongside Bash scripts. A few precompiled-middleware units use an older mwccarm through per-file compiler overrides.",
       "dsd check modules compares each built module with the base ROM, verify_idx.py checks single functions including relocations, and the ROM round-trip script is expected to differ from the reference dump only in four non-functional CRC bytes. CONTRIBUTING notes that functions listed as known mismatches are kept out of the link and filled with original bytes. CI does not build the game; it rejects forbidden files and regenerates progress reports. decomp.dev reports YKGP 100.00% decompiled and fully linked at the reviewed commit, counting verified SDK assembly; this collection did not rerun these checks.",
       "Contributors’ decompilation and tooling are dedicated to the public domain under CC0 1.0; the original game and its assets remain their owners’ property, and the CodeWarrior compiler is not distributed. DS Protect sources are reconstructed after taxicat1/dsprot, and the SDK identification harness compiles NitroSDK sources from pret/pokediamond. The reviewed sources disclose no REA or AI use, and no runtime reproduction is claimed; the separate khdays-port PC runtime is not covered."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/Yokimitsuro/khdays-decomp/blob/261a89eaa8f65dd566ae0828b0b57c85c847a6ee/CONTRIBUTING.md",
@@ -5485,6 +6108,13 @@
       "decomp/tools/check_all.mjs recompiles every function in matched.tsv and compares it with the retail bytes; C that replaces hand-written assembly and Sony libraries is checked by replaying recorded game states against the original MIPS code. Port changes are checked with deterministic runs whose frames and saves are compared with an earlier build. README reports all nine career levels playable and an approximate rather than exact PS1 reverb; this collection did not rerun these checks.",
       "README and the port README describe the project’s own code as MIT under a repository LICENSE, but the reviewed tree has no LICENSE file and GitHub detects none. The port README states that decompiled game code, data and all assets remain © Activision/Neversoft; linked libraries such as SDL 2, PL_MPEG and glad keep their own terms. The tree includes CLAUDE.md project notes and a GhidraMCP configuration, but the README states no AI or REA use, so none is recorded."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/platform/pc/README.md",
       "https://github.com/LANCommander/TonyWasAProSkater/blob/23968e91391ccdeb35f45e1fe987a8a40085aa5f/decomp/README.md",
@@ -5517,6 +6147,13 @@
       "Verification is author-run: CMake unit-test targets, a windowless walkthrough script that plays scripted routes and checks the log, and frame comparisons against shadPS4. This collection did not build or run the port, and those checks do not establish equivalence with the PS4 release.",
       "MIT covers the port’s own code; the bundled Noto fonts (OFL), the LGPL LibOrbisPkg installer helper and other dependencies keep their own licenses, and P.T. content belongs to Konami. The README discloses AI coding tools in development and debugging; no REA connection is established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/LICENSE",
       "https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/docs/formats/README.md",
@@ -5546,6 +6183,13 @@
       "Source builds need submodules (libultraship, Torch, fast64 and others), CMake 3.16+ and Python 3. Windows uses Visual Studio 2022 with the v143 toolset and at least 8 GB of RAM; Linux needs GCC or Clang with SDL2, libzip, tinyxml2, spdlog, Boost and Ogg/Vorbis packages. Rendering backends are DirectX 11 on Windows, OpenGL on all platforms and Metal on macOS.",
       "CI compiles Windows, Linux and macOS packages and packs the project’s own spaghetti.o2r; no ROM-based test, matching check or gameplay comparison is published. The FAQ records limits such as eight racers and eight selectable characters, limited HD texture support and no online play. This collection did not build or run the port.",
       "The reviewed tree has no top-level license file, so reuse terms for the project’s code are unstated; libultraship and Torch declare MIT, and Nintendo content retains separate rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/HarbourMasters/SpaghettiKart/blob/5073d2e3636cdb2794f4c845ee3bdec5ac4718c4/docs/BUILDING.md",
@@ -5581,6 +6225,13 @@
       "CI runs in a private container that holds the ROM and compiler. runtime.md reports Reference, Native and Clean runs agreeing on a 1,300-frame title recording, a 13,760-frame new-game recording and eight scenes from a save that is not in the repository, while three scenes still differ. The GitHub Actions build for the reviewed commit passed verification, linking and the Native checks but failed its Clean-function differential check. This review ran none of these checks.",
       "The repository is dedicated under CC0 1.0 and states that it is not affiliated with Nintendo. The ROM, compiler, SDK libraries and test save keep their own rights. The reviewed sources state no AI or REA involvement, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/verification.md",
       "https://github.com/banatic/acww-decomp/blob/c7e3256743367fe04ed1a47f9a0f57e2ab57a24f/docs/runtime.md",
@@ -5613,6 +6264,13 @@
       "Playing needs 64-bit Windows 10 or 11, a DirectX 12 graphics card and about 7 GB of space. Source builds need Visual Studio 2022 Build Tools with Clang, CMake and Ninja; setup.ps1 downloads ReXGlue SDK 0.10.0 and generates the recompiled sources from the player's disc image before kk/build.bat compiles them.",
       "Reported checks are the owner's testing and developer autoplay builds that also collect shader packs; the reviewed tree has no CI workflow. Known issues include wrong character animations above 30 fps and periodic pauses in pre-rendered videos. The launcher's anonymous online-player check-in is on by default. This collection did not build or run the port.",
       "No license file is present, so reuse terms for the port's code are unstated; the bundled upscaler notices are MIT, and ReXGlue and other dependencies keep their own terms. Game code, assets and trademarks remain their owners', and the project disclaims affiliation with Ubisoft, Universal, Microsoft and others. The AI disclosure names Claude Code, not REA, so this is not an REA case."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/TekRantGaming/king-kong-recompiled/blob/c852d9f467201e9a02c1aaf099b65522535b3473/.recomp.json",
@@ -5710,6 +6368,13 @@
       "The default build’s check step runs decomp-toolkit SHA-1 verification over main.dol and 99 REL modules listed for the selected version; objdiff supports per-object comparison. The mutable decomp.dev page reports GMPE01_00 as 100.00% decompiled and fully linked at the reviewed commit. This collection did not rerun these checks or play the game.",
       "The repository is dedicated under CC0 1.0; the pinned MusyX submodule carries its own MIT license, and downloaded compilers and tools keep their own terms. The disc image and game content retain separate rights. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/configure.py",
       "https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/config/GMPE01_00/config.yml",
@@ -5744,6 +6409,13 @@
       "Running needs a Vulkan 1.2 GPU and an AVX2 x86-64 CPU on SteamOS or Linux, macOS 15+ on Apple silicon (Metal through MoltenVK), or iOS/iPadOS 17+ on an A15-class chip. Builds use Clang 18+ with lld, CMake and Ninja (on SteamOS inside an Arch distrobox), plus setup scripts for XenonRecomp with eight project patches, extract-xiso and a decoder-only FFmpeg for XMA; SDL3 and Dear ImGui provide the platform layer and UI.",
       "Optional unit tests and instruction tests for the XenonRecomp patches need no game files, although one test needs the generated code; the instruction tests have so far run only on a Mac. Download tables list author- and player-reported devices, and several behaviors, including the IPA install and real 120 Hz displays, are marked untested. This collection did not build or run the port.",
       "GPL-3.0-or-later with a NOTICE file; adapted Unleashed Recompiled runtime code, XenonRecomp, Xenia-derived headers, FFmpeg and other components keep the licenses listed in THIRD_PARTY_NOTICES. The project disclaims affiliation with EA and Valve. CONTRIBUTING accepts AI-assisted changes only when the contributor has read, understood and tested them; no REA use is established."
+    ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/SpeedBreakerProject/speedbreaker/blob/31849f5f1d275bf21987440cdc27d94071013656/CONTRIBUTING.md",
@@ -5809,6 +6481,13 @@
       "make build fails if any byte differs, and each verified build includes changed-source negative controls that must be rejected; make test runs tests without a ROM. mGBA is listed only for optional bounded runtime observations, and no gameplay equivalence is claimed. This review did not build or run the project.",
       "MIT covers the project’s own source, tools and documentation, not original game code, assets, trademarks or Nintendo’s header logo. Adapted Krawall routines (LGPL-2.1), selected GCC runtime sources (GPL-2.0 with exceptions) and Newlib string functions keep their own notices. The project accepts no contributions; the agents or models used are not named, and no REA use is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/assets/progress.json",
       "https://github.com/DaBrown95/tsbodp/blob/0beb04fdc3142a9860059600d1037725f1bc6c77/config/targets/us-eu.json",
@@ -5871,6 +6550,13 @@
       "The bundled validation record reports passing checks of report assembly, 1,191 local links, citations, evidence hashes, 37 claim references and selected publication exclusions, with no game or native runtime tests. Its acceptance table records a complete Omega run, accepted sections of other missions and an Eater of Worlds slice that excludes the barrier and Argos fights; Spark live testing, coherent native-world resume and detached camera behavior remain unverified or unimplemented. This collection read the report and evidence metadata without running its scripts, the game or the implementation.",
       "No repository-wide license is declared. ATTRIBUTION.md retains Dawn’s GPL-3.0 text for the included source excerpts, credits Sunrise and Sundial contributors, asserts no Bungie endorsement and does not relicense third-party material. The report concerns local reconstruction of an archived build, and states that its security findings are not vulnerability claims against the current online game. It does not document Claude or other AI-assisted decompilation or recreated in-engine assets, and the reviewed sources establish no REA connection."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/REPORT.md",
       "https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/chapters/01-scope-and-conclusions.md",
@@ -5907,6 +6593,13 @@
       "Play needs 64-bit Windows 10 or 11 (only Windows 11 was tested), a Vulkan GPU with a current driver and about 6 GB of space. Source builds need about 25 GB, PowerShell 7, Python 3, Git, 7-Zip and Visual Studio 2026 Build Tools with CMake, Ninja and the Windows SDK; bootstrap.ps1 downloads SHA-256-pinned ReXGlue 0.10.0 and LLVM 21.1.8. The Vulkan renderer must be selected, because the default D3D12 path hangs on the tested GPU.",
       "Testing is reported on Windows 11 with an AMD Radeon RX 7900 XT; other GPUs and Windows 10 have not been tried. Python and PowerShell tests cover disc inspection, shader-cache merging, the launcher and portable setup with a synthetic image, and dated notes record the boot and frame-time investigations. These are author reports, not equivalence checks; this collection did not run them.",
       "The project’s own code is BSD 3-Clause; ReXGlue is used under its own license, and the project scaffold and generated/rexglue.cmake come from ReXGlue templates. The game remains with its rights holders, and README asks users not to share gamedata, assets or disc images. README states no AI or REA use; a docs/agents work-tracking note exists, but no attribution is inferred from it."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/shaneomac1337/SVR2011-Recomp/blob/6a12d52d0e32adfca092b6474d584b97d459b148/LICENSE",
@@ -6001,6 +6694,13 @@
       "VERIFICATION.md reports a full Windows play-through, partial Steam Deck and GitHub-hosted virtual Mac runs, and 33 of 33 headless-suite checks plus 5 of 5 Snap Station checks on the author’s 1.1.5 executable from recorded replays. These test the port’s behavior, not byte-level equivalence with the cartridge; no physical Mac or Linux desktop report is recorded. This collection did not build or run it.",
       "Port code is GPLv3, with third-party components listed in NOTICE.md. NOTICE.md says no tracked file carries ROM bytes, but the distributed executable is compiled from C that N64Recomp translates from the game’s instructions, and patches are modified decompiled functions; the game remains its owners’. The author reports writing the port with Claude Code under their direction; no REA use is documented."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/BUILDING.md",
       "https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/docs/VERIFICATION.md",
@@ -6036,6 +6736,13 @@
       "CI builds the host runtime on Linux and Windows and smoke-tests it against a stub image; that run succeeded for the reviewed commit but cannot run the game, so playthroughs are maintainer reports. The patch notes say both exported patch sets reproduce the recompiler checkouts used for v1.1.3. This collection did not build or run the port.",
       "Project code is under PolyForm Noncommercial 1.0.0, which permits noncommercial use, modification and forks but not sale; XenonRecomp and XenosRecomp are MIT, and Capcom retains the game’s rights. THIRD_PARTY.md says UnleashedRecomp served only as a structural reference, with no GPL code copied. The development journal is committed as CLAUDE.md, but the README states no AI-use policy; no REA connection is established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/THIRD_PARTY.md",
       "https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/LICENSE",
@@ -6069,6 +6776,13 @@
       "Building needs the .NET 10 SDK: make on Linux and macOS, or make.ps1 and dotnet on Windows. On x86_64 Linux the build fetches prebuilt native libraries through NuGet by default; other systems use system SDL 2, FreeType, OpenAL and Lua 5.1.",
       "CI on Linux and Windows runs code checks, the OpenRA.Test unit tests, Lua script checks and MiniYAML validation for every mod. These checks cover the engine and mod data, not equivalence with the original games, and this review ran none of them.",
       "COPYING applies GPL-3.0-or-later to OpenRA, and AUTHORS lists bundled libraries under their own terms, such as zlib for SDL2-CS and OpenAL-CS and MIT for Eluant. The README states that EA has not endorsed and does not support the project. Original game content keeps its own rights; no REA or AI use is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/INSTALL.md",
@@ -6160,6 +6874,13 @@
       "The README declares v1.1.2 (October 2026) the final build: single-player is completable start to finish, and two-player online co-op works only when started from the XenonLive launcher. It reports 58,345 recompiled PowerPC functions, 60 fps, an in-game graphics menu and ultrawide and 16:10 support. Shading differences and an AMD-only black square remain known issues, and the Steam Deck build has not been tested on Deck hardware.",
       "CI is meant to build the host runtime on Linux and Windows against a stub ppc/ tree, but its run for the reviewed commit skipped both build jobs because the XenonLive deploy key was unavailable, and CI cannot run the game in any case. Playthroughs and fixes imported from Case Zero are the maintainer’s reports; this collection did not build or run the port.",
       "Project code is under PolyForm Noncommercial 1.0.0, which permits noncommercial use, modification and forks but not sale; XenonRecomp and XenosRecomp are MIT, and Capcom retains the game’s rights. THIRD_PARTY.md was copied from the Case Zero port and says no UnleashedRecomp GPL code is used. The development journal is committed as CLAUDE.md, but the README states no AI-use policy; no REA connection is established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/THIRD_PARTY.md",
@@ -6253,6 +6974,13 @@
       "TECHNICAL.md reports attract-demo matches in two arenas at 1.00x speed and a steady 60 FPS on one Ryzen 7 7800X3D/RTX 4070 Ti PC, plus jump-height and walking-distance comparisons with stock timing. Linux was checked only under WSL2; the AppImage is untested on native Linux and Steam Deck. These are author measurements, not equivalence checks; this collection did not run them.",
       "GitHub detects no license and the reviewed tree has no LICENSE file, so reuse terms for the project’s own code are not stated; the pinned psxrecomp fork carries the PolyForm Noncommercial 1.0.0 license. The game and its trademarks remain with Fox Interactive, Activision and the other named owners. README discloses that the port was made almost entirely with Claude Code under the owner’s direction; no REA use is stated."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/docs/TECHNICAL.md",
       "https://github.com/TekRantGaming/simpsons-wrestling-recompiled/blob/1aaee1a999f4dcc60dbf965a9ed9944373528469/game.toml",
@@ -6284,6 +7012,13 @@
       "Source builds use CMake 3.24+ and a C++20 compiler, with wiki guides for Linux, macOS, Windows, WSL and MSYS2 MinGW and an option to force 32-bit builds. Portable builds, installers, a launcher and several Linux and BSD packages are listed for players.",
       "CI checks formatting, builds on several platforms and runs the GoogleTest suite, including replay, RCT2 save import/export, ride-rating, pathfinding and scenario-decryption tests on project test data. These guard OpenRCT2’s own behaviour and file compatibility, not equivalence with the RCT2 executable; this review ran none of them.",
       "licence.txt applies GPL-3.0-or-later to OpenRCT2; original game data and purchased editions keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/OpenRCT2/OpenRCT2/blob/53bbc400e28be44d3c2e56fa514d5f65b61a64d4/CMakeLists.txt",
@@ -6317,6 +7052,13 @@
       "Builds need Python 3.4+, plus msiextract and Wine outside Windows (CrossOver is suggested on macOS); aria2c is optional. scripts/create_devenv.py downloads Visual Studio .NET 2002 and the DirectX 8.0 SDK from web archives, along with ninja, objdiff, Ghidra and helper tools, and scripts/build.py generates and runs a ninja build.",
       "Contributors diff with reccmp, which reports per-function accuracy of the rebuilt executable against the original as an HTML report. CI builds on Windows and compares an objdiff build with objects delinked from the original through Ghidra; a small munit suite reads the user’s game archive. Badge figures are project-generated, and this collection did not build or compare anything.",
       "The repository is dedicated under CC0 1.0; the original game, the downloaded Microsoft toolchain and third-party tools keep their own terms. The reviewed sources establish no AI or REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/GensokyoClub/th06/blob/e840ab447f38579c2ea877e16a5d91a49adf016e/reccmp-project.yml",
@@ -6387,6 +7129,13 @@
       "Reported validation compares recorded speed with haversine-derived speed (under 1% error), checks mean vertical acceleration against 1 g, fits a gyroscope divisor of about 28 against GPS heading changes and matches altitude to circuit topography. The CRC polynomial, periodic and timer fields, two terminator fields and the exact gyroscope calibration remain unknown or empirical. CI runs Python 3.9, 3.11 and 3.13 tests with a 100% branch-coverage gate, and Go tests on Ubuntu and macOS that compare Go output with the committed Python reference CSV and GPX; this collection ran neither suite.",
       "The project declares MIT and states that it is independent of and not endorsed by Race-Keeper or Trivinci Systems LLC. Decoding is limited to the hardware revision and recordings the author examined, and other devices or firmware versions may differ. The reviewed sources establish no REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "attribution",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/README.md",
       "https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RKD_FORMAT_SPEC.md",
@@ -6449,6 +7198,13 @@
       "Reported checks are setup executable-name and source-parity tests and YAML and release-workflow audits. The README also describes boot gates and A/B comparisons against Beetle and DuckStation across the author’s ports, but the reviewed tree publishes no comparison results for this title. These are project reports; this collection ran nothing.",
       "Project-owned files are GPL-3.0-only; psxrecomp keeps PolyForm Noncommercial 1.0.0 and recomp-ui MIT, and the GPL does not cover retail content or generated retail code. The README says the ports are developed with substantial AI assistance, with AI writing most of the code; no REA use is stated."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/LICENSE",
       "https://github.com/alexbeavs-ps1-ports/driver-recomp/blob/11e9a4a8c8fcf931e4ef70121d231a5a3cb5c42b/docs/FEASIBILITY.md",
@@ -6481,6 +7237,13 @@
       "Linux is required: Python 3.8+ in a virtual environment, make, i386 libc/libstdc++ for the committed 32-bit EE-GCC 2.9-991111-01 compiler, and the decompals PS2 binutils v0.10 installed separately; objdiff-cli is also committed. Each region is extracted, configured and built separately.",
       "The ninja build runs sha1sum against config/<region>/checksum.sha1, so a successful build reproduces the supplied executable. To reach that hash, the build rewrites selected compiler output from asm_patches.json and copies listed byte ranges from the original executable into the built file (PhotoScoreCount in US and EU, DspSpData in EU). CI only uploads the committed reports and cannot build without the executables; this collection did not rerun anything.",
       "MIT license for the project; Fatal Frame and its executables retain separate rights, and the committed compiler binaries keep their own terms. The reviewed sources establish no AI or REA attribution, and the archive link in the reported X post was not used as evidence."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/Mikompilation/Himuro/blob/595b082aef19c329a25dc6926e4ac638d13ed75d/LICENSE",
@@ -6520,6 +7283,13 @@
       "Public CI checks the recipe, setup and ISO-extraction scripts with synthetic inputs and builds and runs the runtime tests on Windows without game files. The status page states that these tests do not show the game boots or plays; playability rests on owner and contributor sessions, and PlayStation pads are unconfirmed on hardware. This collection did not build or run the port.",
       "Original code is GPL-3.0-or-later, and NOTICE grants no rights to the game; xboxrecomp is MIT and other components keep their own licenses. The README and NOTICE state substantial use of LLMs and AI coding agents for code, reverse-engineering analysis, debugging, tests and documentation, with changes reviewed and tested; no REA use is stated."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/public-status.md",
       "https://github.com/NoRain211/doaxvb-re/blob/e282a3fc15c793e621098fc0a5d9e70aa6a6e9c2/docs/building.md",
@@ -6556,6 +7326,13 @@
       "The repository keeps the USB descriptor-dump tools used while reverse-engineering the card and a script that sweeps every capture mode; it contains no vendor firmware or driver binaries. Recordings carry fixed HDR10 mastering metadata because, per the README, the card does not pass the source’s HDMI HDR metadata over USB.",
       "The README and the Game-mode pull request report display delays of about 48, 22 and 5 ms for the Smooth, Game and Lowest Latency modes at 1440p60 on a 120 Hz MacBook Pro, measured from USB transfer completion to display as reported by macOS; the card’s own processing comes on top, and the PR notes that the test card sent silent audio. These are author measurements and were not reproduced here.",
       "MIT covers the project code; the bundled libusb library and captured content keep their own terms, and the project states it is not affiliated with Elgato or Corsair. An X post under the same handle credits REA with helping this latency work, but the repository does not mention REA, so REA use is unconfirmed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/talkaboutdesign/elgato-hdr/blob/7799d3c53520bcc3dd049211244bfaf49b905cb0/tools/uvc_capture.c",
@@ -6621,6 +7398,13 @@
       "Local builds need Docker, Python 3 and a desktop browser: scripts/build-web-game.sh uses a digest-pinned Emscripten 6.0.8 image, and scripts/serve-web.py supplies the COOP, COEP and CORP headers a generic static server lacks. The public site is a Cloudflare Pages deployment from main, and self-hosting the release archive needs the same isolation headers.",
       "WEB_ARCHITECTURE.md records author-run checks with user-selected retail files: a complete Lunatic Final-B route in Chromium and on an earlier Firefox bridge, a Stage 6B practice run, persistence tests showing no DAT in IndexedDB, and replay-driven pacing samples near 60 Hz under the SwiftShader and llvmpipe software renderers. These are bounded correctness observations, not hardware benchmarks or binary comparisons; this collection ran nothing.",
       "MIT covers repository code and documentation, not the original game, DAT files, music or graphics; the pinned Detours submodule keeps its own terms. README describes this repository as the web-focused fork of N0zoM1z0/th08 with its history retained. The reviewed web-port sources establish no REA attribution, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/docs/WEB_ARCHITECTURE.md",
@@ -6689,6 +7473,13 @@
       "CI only compiles the code, and the repository has no automated behaviour tests, so fidelity to the original games is not demonstrated by published checks. This review did not build or run the project.",
       "Source headers apply GPL-3.0-or-later, and the README notes modified SDL_gfx code (LGPL) used with its author’s permission. Original game resources keep their own rights. The reviewed sources establish no REA or AI use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/bin/UFO/README.txt",
       "https://github.com/OpenXcom/OpenXcom/blob/4a4bae5fa2e5a09282928e84943fc84b093e34ff/bin/TFTD/README.txt",
@@ -6721,6 +7512,13 @@
       "Builds need CMake 3.25+, Ninja and Clang 18 or newer (Clang 20 is recommended on Ubuntu 24.04); MSVC and Apple Clang are unsupported. The pinned rexglue-sdk submodule is the author’s fork on the rexglue 0.8.0 line, holding the runtime, codegen, input, timing and both graphics backends. Vulkan SPIR-V shader binaries are committed, and macOS uses Homebrew LLVM with MoltenVK.",
       "The reviewed tree contains no CI workflow, test suite or fidelity comparison, and the README says the game has not been played through on the native renderer. Visual-parity statements are project claims; this collection did not build or run the port.",
       "Neither the repository nor its GitHub metadata declares a license for the project’s code; the rexglue fork carries a Xenia-derived BSD-3-Clause notice, and Skate 3 content retains Electronic Arts’ rights. The reviewed sources establish no AI or REA involvement, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/mchughalex/skate3recomp/blob/f6e0ae87fdfecbadb5c1e36c55d66a744187a3cd/CMakeLists.txt",
@@ -6784,6 +7582,13 @@
       "Evidence is play-testing and diagnostics: STATUS.md records native runtime tests for fibers, services, video decoding, buffered input and clock timing, with the cause and user confirmation of individual fixes. README frame rates come from the author’s RTX 5080 and integrated Radeon tests plus one player report. The CI workflow builds and publishes packages without automated game tests. This collection read the sources without running the port or any game.",
       "README declares GPL v2 or later. The runtime started from FelipePrado0’s GPL-2.0 gow3_pc and the shadPS4 video core, and the TAA camera approach credits SuperMedo’s GPL v2 Uncharted port. Packages bundle third-party libraries; NVIDIA’s DLSS DLL, fetched by a build script from NVIDIA’s DLSS repository, stays under NVIDIA’s license. STATUS.md mentions REA only as unable to decompile the prepared ELF on Windows and names no AI model; the post’s Claude attribution comes from a third-party account, so no AI or REA workflow is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/analysis/STATUS.md",
       "https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/analysis/PLAN.md",
@@ -6817,6 +7622,13 @@
       "scripts/bootstrap-tools.sh needs curl, git, sha256sum, tar, unzip, uv and Wine, then fetches checksum-pinned Ghidra 12.1.3, Temurin JDK 21, objdiff 3.8.0 and Microsoft Visual C++ .NET 2003 (13.10.3077) binaries from a third-party archive repository; reccmp 0.1.6 is also pinned. scripts/build-whole.py cold-compiles and links the production graph and refuses stubbed or force-linked images.",
       "Exact credit requires a zero-difference COFF function comparison recorded in the match ledgers; Ghidra, IDA MCP and runtime observation count only as supporting evidence. README cites a full-game runtime video using a test-only no-death launcher plus separate normal-build tests, and RUNTIME_ISSUES.md notes those checks used 2026-09-10 source, with later semantic changes only compile- and link-validated. This collection ran nothing.",
       "MIT covers repository code and documentation, not the game or its assets; the downloaded compiler and tools keep their own terms. The repository carries coding-agent rules and skills and a GPT web Ghidra bridge but does not itself document REA use; REA’s separately published Touhou essay discusses this project. No runtime reproduction is claimed here."
+    ],
+    "requirement_facets": [
+      "testing",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/docs/PROGRESS.md",
@@ -6878,6 +7690,13 @@
       "The offline --self-check runs preference, certificate, pointer, Home, usage, resource and loopback media tests without a TV. These are implementation checks, not conformance tests against LG’s interface, and this review ran neither them nor a TV.",
       "The README narrows the author’s post: screen time is counted locally only while the app is connected, AirPlay support is limited to guidance for macOS Screen Mirroring, picture-setting changes depend on TV permissions, and casting depends on the TV’s codecs and DLNA service.",
       "MIT covers the project code; the PyWebOSTV manifest keeps its MIT notice, and LG, app and console icons keep their owners’ rights. Commits credit Claude as co-author, and an X post by the same account credits REA, but the repository does not mention REA, so REA use is unconfirmed. This is an unofficial client, not recovered LG software."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "limits",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md",
@@ -6941,6 +7760,13 @@
       "Source builds use CMake 3.16+ with a C++17 compiler, SDL3, SDL3_mixer, Lua (or optionally LuaJIT) and zlib; FFmpeg enables in-game movies, and vcpkg manages dependencies for preset builds. The README lists builds for Windows and macOS, a Linux AppImage, Flatpak and Snap, and distribution packages for Linux and BSD.",
       "CI runs luacheck and busted Lua unit tests on Linux, plus CMake builds with CTest on Windows. These cover CorsixTH’s own code, not equivalence with the original executable, and this review ran none of them.",
       "LICENSE.txt grants MIT terms for CorsixTH and includes notices for bundled components such as Lua 5.5, LPeg and LuaFileSystem, so GitHub does not classify it as one licence. Original Theme Hospital data keeps its own rights. AGENTS.md gives instructions for AI coding agents, but the reviewed sources do not attribute the implementation to AI or REA."
+    ],
+    "requirement_facets": [
+      "limits",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/CorsixTH/CorsixTH/blob/e5138ed8de906ccbf6692299b4375f9312df147e/README.txt",

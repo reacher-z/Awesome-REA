@@ -43,7 +43,7 @@
 
 使用[重建案例推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml)，可用英文或简体中文填写。分别说明原始输入、重建输出与证据；部分重建或未测试的案例也可推荐。
 
-案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
+案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写 `requirement_facets`；页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
 
 ## 来源已复核不等于运行验证
 
@@ -96,6 +96,7 @@ Pull request 会收到由基础分支可信代码执行的[规则审核（英文
 | agent | 智能体 | 项目名、产品名和引用的原文保持原样。 |
 | integration | 集成 | 如“独立智能体集成”“REA 社区集成”；这个词本身不表示 REA 官方集成。 |
 | case study | 案例 | 对应 `kind: case-study`。 |
+| requirement facets | 使用条件分面 | `requirement_facets` 的取值：Prerequisites 前提条件、Scope 范围、Limits 局限、Testing evidence 测试证据、License 许可、Attribution 署名。 |
 | learning resource | 学习资源 | `kind: learning-resource` 与 `relationship: learning` 使用同一译法。 |
 | curated | 精选 | 经来源复核的目录条目，即 `rea-resources.json` 与 `tool-resources.json` 中的记录。 |
 | repository index (scan index) | 仓库索引 | 自动读取 README 建立的 `source-index.json`；与精选资源分开计数，条目未逐项复核。 |

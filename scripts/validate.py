@@ -15,6 +15,7 @@ from urllib.parse import unquote, urlsplit
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warnings
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
+from requirement_facets import facet_errors
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
@@ -1015,6 +1016,14 @@ def validate_citation(text, errors, *, now=None):
         errors.append('CITATION.cff.date-released: use the unquoted YYYY-MM-DD release date')
 
 
+def validate_requirement_facets(records, translations, errors):
+    """Every facet comes from the vocabulary and labels the same item in English and Chinese."""
+    for record in records:
+        if isinstance(record, dict) and 'requirements' in record:
+            chinese = record.get('requirements_zh') or translations.get(record.get('id'), {}).get('requirements')
+            errors.extend(f"resource {record.get('id')!r}.{message}" for message in facet_errors(record, chinese))
+
+
 def read_array(path, errors):
     try:
         value = json.loads(path.read_text(encoding='utf-8'))
@@ -1036,6 +1045,7 @@ def main():
     validate_resources(records, errors)
     for warning in evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
+    validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
     validate_benchmarks(benchmarks, errors)
     try:
         validate_case_coverage(read_case_coverage(ROOT), records, papers, errors,

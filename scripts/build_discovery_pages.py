@@ -13,6 +13,7 @@ from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta, website_reference
+from requirement_facets import item_html, ordered_items
 from source_scope import exclusion_counts, unavailable_clause
 
 
@@ -147,7 +148,7 @@ def _resource_card(record: dict, language: str) -> str:
     description = record[f'description_{language}']
     kind = KIND_LABELS[record['kind']][1 if zh else 0]
     targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
-    requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
+    requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
     additional = ''.join(
         f'<li><a href="{_url(url)}" target="_blank" rel="noopener">'
         f'{("补充来源" if zh else "Additional source")} {index} ↗</a></li>'
@@ -171,7 +172,7 @@ def _case_row(record: dict, language: str, section: str) -> str:
     detail_label = ('完整条目：' if zh else 'Full entry: ') + name
     relationship = RELATIONSHIPS[record['relationship']][int(zh)]
     targets = ' · '.join(TARGETS[target][int(zh)] for target in record['targets'])
-    requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
+    requirements = ''.join(item_html(facet, item, language) for facet, item in ordered_items(record, _requirements(record, language)))
     evidence = [(url, f'补充来源 {index}' if zh else f'Additional source {index}')
                 for index, url in enumerate(record.get('additional_evidence_urls', []), 1)]
     evidence_links = ''.join(f'<li><a href="{_url(url)}" target="_blank" rel="noopener">{escape(label)} <span aria-hidden="true">↗</span></a></li>'
