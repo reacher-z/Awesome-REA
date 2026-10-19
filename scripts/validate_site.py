@@ -20,6 +20,7 @@ from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import collection_section
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SOCIAL_IMAGE_ALT, png_size
+from build_entry_pages import entry_path, section_siblings
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'dist'
@@ -34,6 +35,7 @@ class Page(HTMLParser):
         super().__init__()
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
         self.anchor_names = []
+        self.section_links, self._in_related = None, False
         self.noindex, self.lang, self.json_script = False, None, None
         self.paper_ids, self.paper_texts, self.paper_links = [], {}, {}
         self.current_paper = None
@@ -57,6 +59,8 @@ class Page(HTMLParser):
         values = dict(attrs)
         assert len(values) == len(attrs), f'Duplicate HTML attributes on {tag}'
         classes = values.get('class', '').split()
+        if tag == 'section' and 'entry-related' in classes:
+            self.section_links, self._in_related = [], True
         if tag == 'section':
             self._case_sections.append({'section': values.get('data-case-section'), 'anchor': values.get('id')}
                                        if 'case-section' in classes else None)
@@ -132,6 +136,8 @@ class Page(HTMLParser):
             self.detail_links.append(self.current_detail_link)
         if tag in ('a', 'link') and values.get('href'):
             self.links.append(values['href'])
+            if self._in_related and tag == 'a':
+                self.section_links.append(values['href'])
             if self.current_case is not None:
                 self.current_case['links'].append(values['href'])
             if self.current_paper:
@@ -227,6 +233,8 @@ class Page(HTMLParser):
             if self._group_summary is not None and self._group_summary['depth'] == self._div_depth:
                 self._group_summary = None
             self._div_depth -= 1
+        if tag == 'section':
+            self._in_related = False
         if tag == 'section' and self._section_stack:
             self._section_stack.pop()
         if tag == 'section' and self._case_sections:
@@ -701,9 +709,21 @@ def validate_entry_outputs(pages, resources, papers):
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 
+    siblings = section_siblings(resources)
     for route, (kind, identifier, language) in routes.items():
         assert route in pages, f'Missing detail page: {route}'
         page, record = pages[route], catalogs[kind][identifier]
+        related = siblings.get(identifier) if kind == 'resource' else None
+        if related and related['siblings']:
+            prefix = '/zh' if language == 'zh' else ''
+            expected = [entry_path('resource', sibling['id'], language) for sibling in related['siblings']]
+            expected.append(f"{prefix}/resources/#heading-{related['section']}")
+            if record['kind'] == 'case-study':
+                expected.append(f"{prefix}/cases/#cases-{related['section']}")
+            assert 1 <= len(related['siblings']) <= 6 and identifier not in {sibling['id'] for sibling in related['siblings']}, f'Detail page needs one to six other section entries: {route}'
+            assert page.section_links == expected, f'Section siblings differ from README order: {route}'
+        else:
+            assert page.section_links is None, f'Only resources in shared sections list section siblings: {route}'
         canonical = ORIGIN + route
         locale = 'zh-CN' if language == 'zh' else 'en'
         assert page.entry_markers == [(kind, identifier)], f'Detail page identity mismatch: {route}'
