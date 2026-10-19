@@ -6635,13 +6635,24 @@
         "https://x.com/i/status/2110869440762196138",
         "https://x.com/i/status/2110869444922610114"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "A two-post thread (@ofmyslippers, 2026-10-15) reports three runs of REA’s static Electron analysis on a small notes app with a known answer key: 4 of 4 IPC channels, handler pairs and preload API members, correctly no sender checks, 2.5–3 s a run, and 1.0 MB of JSON from 2.3 KB of source. The test app, answer key and outputs are not published (the thread links only the REA repository), and the work evaluates REA rather than reconstructing software. Retain the lead without a curated case; the related mapping points to REA’s JavaScript guide, whose own Notes Electron fixture has one IPC channel and so is not the app tested.",
+      "reason_zh": "两条帖子组成的串文（@ofmyslippers，2026-10-15）报告用一个带已知答案的小型笔记应用对 REA 的 Electron 静态分析测试三次：IPC 通道、处理器配对和 preload API 成员均为 4/4，且正确地未发现发送方检查，每次 2.5–3 秒，2.3 KB 源码生成 1.0 MB JSON。测试应用、答案和输出均未公开（串文只链接 REA 仓库），这项工作是在评估 REA，而非重建软件。保留此线索而不建立整理案例；相关映射指向 REA 的 JavaScript 指南，其自带的 Notes Electron 示例只有一个 IPC 通道，因此并非所测应用。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110869440762196138",
+        "https://x.com/i/status/2110869444922610114",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/guide-examples.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-electron-guide",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:fu-sheng-video-homepage-character-demo",
@@ -6655,12 +6666,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110873715810660594"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@Edward913413, 2026-10-15) relays that Fu Sheng deployed REA himself and, with a single sentence, had a game character rampaging across his video homepage within minutes, then comments on how REA lowers the bar for mashups. It is a secondhand account with no media from the demonstration and no link to Fu Sheng’s own post, code or output, and the GitHub account named edward913413 holds only two unrelated repositories. Retain the lead without a catalog mapping; neither the demonstration nor REA’s part in it can be checked.",
+      "reason_zh": "帖子（@Edward913413，2026-10-15）转述：傅盛自行部署 REA 后，只用一句话就在几分钟内让一个游戏角色在他的视频主页上一通乱砸，帖子随后就 REA 降低混搭二创门槛发表评论。这是二手转述，没有演示素材，也没有链接傅盛本人的帖子、代码或输出；名为 edward913413 的 GitHub 账号只有两个无关仓库。保留此线索而不建立目录映射；该演示及 REA 在其中的作用均无法核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110873715810660594"
+      ],
       "catalog_matches": []
     },
     {
@@ -6697,12 +6710,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110878456611319835"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@riteshkv_, 2026-10-15) says they used REA to make a non-doomscrolling version of YouTube that surfaces outlier videos in their niche and sorts new AI videos into automations, agents, news and other groups; it shows only a video. It does not say what REA analyzed and links no code or app, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the tool nor REA’s contribution is documented.",
+      "reason_zh": "作者帖子（@riteshkv_，2026-10-15）称借助 REA 做了一个“不让人无限刷”的 YouTube 版本，能找出其细分领域中表现突出的异常视频，并把新的 AI 视频按自动化、智能体、新闻等类别归类；帖子只附视频。帖子未说明 REA 分析了什么，也没有链接代码或应用，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该工具及 REA 的作用均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110878456611319835"
+      ],
       "catalog_matches": []
     },
     {
@@ -6741,12 +6756,15 @@
         "https://x.com/i/status/2110904597900673267",
         "https://x.com/i/status/2110941073434701893"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts by @ModengSir (2026-10-16) describe a local desktop workbench that wraps REA in a GUI, built by asking Codex, and propose adding a topic radar, workflows, notes, planning and image or video generation to it; a reply says the author uploads whatever they want to reverse engineer through its REA screen. The quoted 2026-10-15 post credits two tutorials and shows a screenshot. No workbench code, analyses or results are linked, and the author’s GitHub account modengsir has no workbench repository. Retain the lead without a catalog mapping; this is a GUI wrapper idea, not a reconstruction case.",
+      "reason_zh": "@ModengSir 的两条帖子（2026-10-16）介绍了一个让 Codex 搭建、为 REA 套上图形界面的本地桌面工作台，并提议加入内容选题雷达、工作流、灵感记录、计划安排及生图生视频等功能；一条回复称作者想逆向什么，就通过其中的 REA 界面上传。所引 2026-10-15 的帖子感谢了两份教程并附截图。帖子未链接工作台代码、分析或结果，作者的 GitHub 账号 modengsir 中也没有工作台仓库。保留此线索而不建立目录映射；这是图形界面封装的构想，而非重建案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110904597900673267",
+        "https://x.com/i/status/2110941073434701893"
+      ],
       "catalog_matches": []
     },
     {
@@ -6801,12 +6819,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110918344886927696"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Tre1in, 2026-10-16) says they used AI to make the Immersive Portals mod compatible with Minecraft Java Edition 26.2, nearly perfectly on the first try, and that it works with shaders, the latest Fabric and many other mods; it shows only a video. It names no model or method and links no build or source, and the GitHub account named Tre1in has no public repositories. A separate Immersive Portals update by another account exists on GitHub but is not linked from the post. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者帖子（@Tre1in，2026-10-16）称借助 AI 让 Immersive Portals 模组兼容 Minecraft Java 版 26.2，第一次尝试就近乎完美，并且兼容光影、最新版 Fabric 及许多其他模组；帖子只附视频。帖子未说明模型或方法，也没有链接构建或源码，名为 Tre1in 的 GitHub 账号没有公开仓库。GitHub 上另有其他账号对 Immersive Portals 的升级项目，但帖子未链接。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110918344886927696"
+      ],
       "catalog_matches": []
     },
     {
@@ -6825,12 +6845,18 @@
         "https://x.com/i/status/2110902155783885210",
         "https://x.com/i/status/2111247870565167560"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Five posts are cited. @DCinvestor (2026-10-16) asks whether AI could make TV firmware that does not spy on him; @j_larrieux suggests decompiling, editing and reflashing it with AI-run testing. @xLexemeX says Claude dug into their TV firmware to disable tracking and ads, with AdGuard blocking outgoing data, and later says Claude raised no objection; @meta_syntactic says Codex reverse engineered a firmware but the project stopped there. None names the TV or firmware or links notes, code or results, and the GitHub accounts found have no related repository. Retain the lead without a catalog mapping.",
+      "reason_zh": "所引五条帖子中：@DCinvestor（2026-10-16）问能否用 AI 制作不会监视他的电视固件；@j_larrieux 建议借助 AI 反编译、修改并重新刷入固件，再让 AI 充分测试；@xLexemeX 称用 Claude 深入分析自家电视固件并关闭追踪和广告，再用 AdGuard 阻止外发数据，后来又补充说 Claude 对此没有异议；@meta_syntactic 称曾让 Codex 逆向某款固件，但项目止步于逆向阶段。各帖均未说明电视或固件型号，也没有链接笔记、代码或结果，所找到的 GitHub 账号中也没有相关仓库。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110919403961192504",
+        "https://x.com/i/status/2111098983997186126",
+        "https://x.com/i/status/2111108975454281750",
+        "https://x.com/i/status/2110902155783885210",
+        "https://x.com/i/status/2111247870565167560"
+      ],
       "catalog_matches": []
     },
     {
@@ -14942,17 +14968,17 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "insufficient-evidence": 132,
+      "pending": 304
     },
     "units_by_state": {
       "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 132,
+      "pending": 303
     },
-    "primary_reviewed_units": 220,
-    "catalog_linked_occurrences": 166,
-    "distinct_resource_ids": 160,
+    "primary_reviewed_units": 226,
+    "catalog_linked_occurrences": 167,
+    "distinct_resource_ids": 161,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
