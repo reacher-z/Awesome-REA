@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 351](https://img.shields.io/badge/resources-351-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 352](https://img.shields.io/badge/resources-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (165) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (183) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (184) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1020,6 +1020,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Re-implements a large part of the RenderWare Graphics middleware API as a portable C++ library that reads and writes its DFF model and TXD texture files for PS2, D3D8, D3D9 and Xbox and is meant to convert them between platforms. Direct3D 9 and OpenGL backends render the scenes, while PS2 rendering works only as a test. README names rendering GTA as its use; BSP world files are not supported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/librw-renderware-reimplementation-case/)
+
+- [**MinecraftLCE: an early-stage Minecraft: Nintendo Switch Edition decompilation**](https://github.com/GRAnimated/MinecraftLCE)
+
+  Decompiles Minecraft: Nintendo Switch Edition v1.0.17, a Legacy Console Edition release, into C++ that is compared function by function with the original executable using a patched Clang 4.0.1 and the open-ead Switch decompilation tools. The README explains the choice of the Switch build for its matchable Clang toolchain and type information, with names ported from the symbol-bearing Wii U Edition. At the reviewed commit the function list marks about 11% of functions decompiled, most of them matching; the result cannot run the game.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/minecraft-lce-switch-decomp-case/)
 
 #### Tools, projects and integrations
 
