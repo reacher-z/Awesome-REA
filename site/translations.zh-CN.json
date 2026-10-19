@@ -3090,5 +3090,15 @@
       "每次运行分析一个由使用者提供的二进制。README 提醒误报和漏报都在所难免，CWE-78 操作系统命令注入检查在标准运行中默认关闭，因此告警只是需要人工复核的代码路径，而不是已确认的漏洞。该工具也以插件形式集成在 FACT 中。",
       "采用 LGPL-3.0 许可；README 中的声明允许使用第 3 版或任何更新版本。本次未构建，也未分析任何二进制。"
     ]
+  },
+  "lba2remake-little-big-adventure-case": {
+    "name": "LBA2 Remake：以 TypeScript 和 Three.js 重新实现 Little Big Adventure 1 与 2",
+    "requirements": [
+      "审阅版本为 2026-04-17 的 master 提交，即 v0.6.8 标签的次日；最近的更新日志主要是缺陷修复、VR 手柄映射和新增的 3D 替换模型。README 称原版的所有岛屿和建筑都可以进入，大部分图形和部分玩法已经实现，但游戏无法通关。它对方法的描述仅限于完全重新设计实现而非反汇编，没有说明如何研究原版引擎。",
+      "本地游玩需要使用者自有的 Little Big Adventure 2（GOG、Steam 或 itch.io 版）：npm run import（Windows 上为 import:win）会解包安装目录，并把其中的音乐、音效、语音和视频转换到被 git 忽略的 www/data 文件夹；其他版本或 Linux 需走手动导入流程。仓库不含原版游戏文件；www/models 和 assetsSource 目录存放的是替换用的 3D 模型、纹理和生成的场景网格，美术工作流程文档称这些都是新制作的。FAQ 表示，在线演示经 Frederick Raynal 同意在游戏开发期间公开分享，游戏完全可玩后将要求使用正版；其 Netlify 构建从仓库之外的位置下载游戏素材。",
+      "项目在支持 WebGL 的浏览器中运行。开发需要 Node.js（README 要求 9 或更高版本，Netlify 构建使用 18）、npm、webpack 和 TypeScript，通过 npm run dev 在 localhost:8080 提供服务。apps 文件夹中有 Android、iOS 和 Windows 10 应用原型，VR 手柄通过 WebXR 支持。",
+      "CircleCI 运行代码检查、类型检查和生产包构建，另有 CodeQL 工作流扫描代码；没有引擎或玩法测试，也没有与原版可执行文件的对比。在线演示、编辑器和游玩视频都是项目自己的展示，本合集未构建或运行该项目。",
+      "LICENSE 规定项目代码采用 MIT 许可（版权归 Adrien Grandemange 与 Alexandre Fontoura，2018）。README 声明原版游戏的可执行文件、素材和知识产权归 [2.21] 所有，并请使用者购买原版游戏。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
