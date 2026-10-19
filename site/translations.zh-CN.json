@@ -3207,5 +3207,15 @@
       "发布版构建会把启动、打开文件、切换语言、搜索和创建项目等使用事件，连同经哈希处理的设备标识、应用版本和操作系统信息发送到 Matomo 云服务器，并通过 GitHub API 查询新版本；在所审阅的源码中未发现关闭这些功能的设置。",
       "应用本身和 JustDecompile 引擎采用 AGPL-3.0 许可；据 README 和 THIRD-PARTY-NOTICES.md，Mono.Cecil 与 AvaloniaEdit 采用 MIT 许可。输入为用户自己的 .NET 程序集。本次未反编译任何程序集，也未构建生成的项目。"
     ]
+  },
+  "reverify-claim-verifier": {
+    "name": "Reverify：用确定性工具核验模型二进制分析断言",
+    "requirements": [
+      "所审阅的 main 提交位于 2026-09-04 发布的 GitHub v0.11.0 之后 25 个提交；PyPI 上最新版本为 0.10.0，README 的状态部分仍在介绍 v0.9.0。核心为纯 Python 实现、无依赖，pyproject.toml 声明支持 Python 3.8+。full 附加组件加入 capstone、unicorn、lief 和 z3-solver，angr 附加组件提供函数、调用和交叉引用类断言，未安装相应引擎时这些断言返回 INCONCLUSIVE。工具包还能解析 PE、ELF 和 Mach-O 文件，扫描字节模式，解码 Protobuf 与 TLV 数据，并生成 Frida 钩子脚本。",
+      "验证器与基准测试无需模型。reconstruct 调用由 OPENAI_API_KEY、OPENAI_BASE_URL 和 OPENAI_MODEL 配置的 OpenAI 兼容端点，orchestrate 可借助 Claude Agent SDK 使用 Claude Code 登录驱动 Claude，MCP 服务器则向任意 MCP 客户端提供解析、反汇编、模式扫描、语义分析、断言核验、台账与检查点工具。台账与检查点写入工作目录下的 .reverify。待分析的二进制文件由使用者自备；仓库包含基准测试源码与结果记录，不含目标二进制文件。",
+      "reverify rollover install 会修改所找到的每个受支持命令行工具的用户设置，加入钩子并关闭其原生压缩功能，同时保留备份并提供卸载命令。README 提醒，未通过其启动器启动的 Claude Code 或 Codex 会话随后可能无限增长，并报告有一个会话达到 909k token。",
+      "主要基准测试把固定的教科书式 push rbp; mov rbp, rsp 序言猜测（而非实时模型）应用于系统二进制文件的入口点。BENCHMARK.md 报告该猜测在 71 个 Windows 11 文件中有 69 个被驳斥，且从未被误判为 VERIFIED；在 50 个 Windows 二进制文件上的 475 条已知错误断言中误判为 VERIFIED 的为 0。CI 在 Linux、Windows 和 macOS 上重复这两项检查，只要出现一次误判 VERIFIED 即失败。作者指出“N 次中 0 次”只给出错误率的上界，并不证明其为零。这些均为项目报告的结果，本合集未运行其中任何一项。",
+      "采用 MIT 许可。SECURITY.md 将用途限定于获授权的工作，如恶意软件分析、CTF、互操作研究以及使用者拥有或获准分析的软件，并禁止规避使用者未拥有或未获许可软件的授权或复制保护。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

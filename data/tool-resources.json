@@ -7993,5 +7993,41 @@
       "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/THIRD-PARTY-NOTICES.md",
       "https://github.com/codemerx/CodemerxDecompile/releases/tag/1.5.0"
     ]
+  },
+  {
+    "id": "reverify-claim-verifier",
+    "name": "Reverify",
+    "url": "https://github.com/2akouwu/reverify",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python CLI and stdio MCP server that checks a model’s structured claims about a binary, such as bytes or typed values at an offset, strings, imports and exports, instruction mnemonics, emulation results and tested or Z3-proved equivalence, and returns VERIFIED, REFUTED or INCONCLUSIVE with the evidence the tools observed. Grounded and refuted results are kept in a per-binary ledger on disk, so a reset or later session resumes from them instead of from a summary, and a reconstruct loop has a model propose claims until an informative set verifies. A separate rollover command replaces context compaction in Claude Code, Codex, Gemini CLI or OpenCode with file hand-offs and fresh sessions.",
+    "description_zh": "Python 命令行工具和 stdio MCP 服务器，用于检查模型对二进制文件提出的结构化断言，例如某偏移处的字节或类型化数值、字符串、导入与导出、指令助记符、模拟执行结果，以及经测试或经 Z3 证明的等价性，并连同工具实际观察到的证据返回 VERIFIED、REFUTED 或 INCONCLUSIVE。已确证和已驳斥的结果保存在磁盘上按二进制文件划分的台账中，重置后或之后的会话可据此继续，而不依赖摘要；reconstruct 循环则让模型不断提出断言，直至一组有信息量的断言通过验证。另有 rollover 命令，用文件交接和新会话取代 Claude Code、Codex、Gemini CLI 或 OpenCode 的上下文压缩。",
+    "evidence_url": "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is 25 commits after the v0.11.0 GitHub release of 2026-09-04; PyPI’s newest version is 0.10.0, and the README’s status section still describes v0.9.0. The core is pure Python with no dependencies, and pyproject.toml declares Python 3.8+. The full extra adds capstone, unicorn, lief and z3-solver, and the angr extra adds the function, call and cross-reference claims, which return INCONCLUSIVE without an engine. The toolkit also parses PE, ELF and Mach-O files, scans byte patterns, decodes Protobuf and TLV data and generates Frida hook scripts.",
+      "The verifier and benchmarks need no model. reconstruct calls an OpenAI-compatible endpoint configured by OPENAI_API_KEY, OPENAI_BASE_URL and OPENAI_MODEL, orchestrate can drive Claude through the Claude Agent SDK on a Claude Code login, and the MCP server gives any MCP client parsing, disassembly, pattern-scan, semantic, claim, ledger and checkpoint tools. Ledgers and checkpoints are written under .reverify in the working directory. Users supply the binaries to analyse; the repository holds benchmark sources and result records, not target binaries.",
+      "reverify rollover install edits the user settings of each supported CLI it finds to add hooks and switch off native compaction, keeping backups and offering uninstall. The README warns that a Claude Code or Codex session not started through its launcher can then grow without limit, and reports one session that reached 909k tokens.",
+      "The headline benchmark applies a fixed textbook push rbp; mov rbp, rsp prologue guess, not a live model, to the entry points of system binaries. BENCHMARK.md reports that guess refuted on 69 of 71 Windows 11 files and never falsely verified, and 0 false VERIFIED among 475 known-false claims on 50 Windows binaries; CI repeats both checks on Linux, Windows and macOS and fails on any false VERIFIED. The author notes that 0 of N bounds the error rate rather than proving it zero. These are project-reported results; this collection ran none of them.",
+      "MIT. SECURITY.md limits use to authorised work such as malware analysis, CTF, interoperability research and software the user owns or may analyse, and excludes circumventing licensing or copy protection on software the user does not own or license. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/BENCHMARK.md",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/EXAMPLE.md",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/pyproject.toml",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/reverify/mcp_server.py",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/reverify/agent.py",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/reverify/ledger.py",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/.github/workflows/ci.yml",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/SECURITY.md",
+      "https://github.com/2akouwu/reverify/blob/f32ea84ccd6bb2aff90eca711ccfdbf04e6b8923/LICENSE",
+      "https://github.com/2akouwu/reverify/releases/tag/v0.11.0",
+      "https://pypi.org/project/reverify/0.10.0/"
+    ]
   }
 ]
