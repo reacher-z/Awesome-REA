@@ -10140,5 +10140,34 @@
       "https://github.com/CalebFenton/simplify/blob/29fb25d624aecf0b075dea5c6029b2541474ddfe/smalivm/build.gradle",
       "https://github.com/CalebFenton/simplify/releases/tag/v1.3.0"
     ]
+  },
+  {
+    "id": "gda-android-decompiler",
+    "name": "GDA (GJoy Dex Analyzer)",
+    "url": "https://github.com/charles2gan/GDA-android-reversing-Tool",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Windows-native Dalvik decompiler and Android analysis workbench written in C++ that opens APK, DEX, ODEX, OAT, JAR, AAR and class files without installation. Besides Java and Smali views with cross-references, renaming and comments, it identifies packers, deobfuscates and decrypts strings, tracks data flow and taint, solves paths, runs rule-based malicious-behaviour, vulnerability and privacy-leak scans, and can dump device memory or hook methods with Frida. Shell and server CLI modes, Python and Java scripting and a sample malware-triage agent skill expose the same analysis to scripts and agents.",
+    "description_zh": "以 C++ 编写、原生运行于 Windows 的 Dalvik 反编译器与 Android 分析工作台，无需安装即可打开 APK、DEX、ODEX、OAT、JAR、AAR 和 class 文件。除带交叉引用、重命名和注释的 Java 与 Smali 视图外，它还能识别加固壳、反混淆并解密字符串、追踪数据流与污点、求解路径，运行基于规则的恶意行为、漏洞和隐私泄露扫描，并可转储设备内存或用 Frida 钩挂方法。Shell 与服务器两种命令行模式、Python 和 Java 脚本以及一个恶意软件分诊智能体技能示例，让脚本和智能体也能调用这些分析功能。",
+    "evidence_url": "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Releases are Windows-only zip archives; the latest, GDA 4.12 of 2026-04-07, adds shell and server CLI modes among fixes. The repository holds no decompiler source: the README says GDA is not an open-source project, at least in the short term, and the repository publishes the free binaries with open scripts, plugin examples, rule samples and colour themes.",
+      "The executable runs without setup. Dex-family inputs need no Java, while JAR, AAR and class files need a working Java runtime for the bundled dx tool. The README says GDA is protected with VMProtect and unpacks embedded adb, a gdump memory-dump helper and rule files into the user’s application-data folder, which some antivirus products flag; the author states it has no malicious behaviour.",
+      "The skills folder holds a gda-analyze skill in Claude Code’s format that drives a bundled GDA.exe through a Python wrapper to trace code, extract indicators and draft malware reports, plus a server-mode client and test script. Its output, like the built-in rule-based scans, needs manual confirmation; this review ran no part of GDA.",
+      "LICENSE is Apache-2.0, and NOTICE says most of GDA is released under it, with adb and dex libraries taken from the Android SDK and AOSP; this conflicts with the README’s closed-source statement, so the binaries’ terms are unclear. Users supply the apps they analyze. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/LICENSE",
+      "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/NOTICE",
+      "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/skills/mal_skill/SKILL.md",
+      "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/update_history",
+      "https://github.com/charles2gan/GDA-android-reversing-Tool/releases/tag/GDA4.12"
+    ]
   }
 ]
