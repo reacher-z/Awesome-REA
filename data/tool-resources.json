@@ -7196,5 +7196,37 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "re-ios-apps-course",
+    "name": "Reverse Engineering iOS Applications",
+    "url": "https://github.com/ivRodriguezCA/RE-iOS-Apps",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Ivan Rodriguez's free English course (version 1.1) on reverse engineering iOS applications, aimed at beginners in iOS app security. Five Markdown modules cover setting up a jailbroken test device, decrypting App Store apps for analysis, static analysis of an IPA's files, frameworks, Objective-C classes and ARM binary in Hopper or Ghidra, runtime analysis with Cycript and Frida, and binary patching in Hopper. Exercises use CoinZa, a deliberately insecure Objective-C app the author built from vulnerability classes he reports finding in production App Store apps.",
+    "description_zh": "Ivan Rodriguez 编写的免费英文课程（1.1 版），讲解 iOS 应用逆向工程，面向 iOS 应用安全初学者。五个 Markdown 模块依次介绍越狱测试设备的环境配置、为分析而解密 App Store 应用、对 IPA 中的文件、框架、Objective-C 类和 ARM 二进制进行静态分析（使用 Hopper 或 Ghidra）、用 Cycript 和 Frida 做运行时分析，以及在 Hopper 中修补二进制。练习使用 CoinZa：作者根据其所述在 App Store 正式应用中发现的漏洞类型，专门编写的一个故意不安全的 Objective-C 应用。",
+    "evidence_url": "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 183873a (2024-04-17). The course was written mainly in 2019; commits since mid-2020 are a few small wording and command fixes. Device instructions cover iOS 10 through 12, and many setup tools are from that period, so they may not work on current devices. The introduction excludes jailbreaking, iOS exploitation, tweak development, backend API testing and in-depth ARM assembly.",
+      "The prerequisites page lists no mandatory knowledge but recommends a Mac (Xcode has no Windows alternative), basic Objective-C, Swift, JavaScript, HTML, SSH/SCP and man-in-the-middle concepts, and an ARM disassembler such as Ghidra, IDA or Hopper's trial. A jailbroken iPhone/iPad/iPod on iOS 10 or later is needed only for the decryption module and the Cycript and Frida exercises.",
+      "No third-party app is needed for the exercises: the author ships CoinZa as an already-decrypted IPA, plus an EPUB of the course, in the companion repository RE-iOS-Apps-Extras-Github. The README says its vulnerabilities come from production apps but are reproduced in CoinZa instead of being published against those apps, and the closing page asks readers to report vulnerabilities responsibly.",
+      "There is no separate license file; the README carries an MIT-style permission notice (Copyright 2019 Ivan Rodriguez) and an at-your-own-risk disclaimer; the closing page asks people who reuse the material to credit the author. This collection read the course pages at the reviewed commit and did not install CoinZa or follow the device steps; the course mentions no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Prerequisites.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Introduction.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Module-1/README.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Module-3/README.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Module-4/README.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps/blob/183873adea6b07f951e1b49565000e2c83448429/Final-Thoughts.md",
+      "https://github.com/ivRodriguezCA/RE-iOS-Apps-Extras-Github/tree/19ec1d21019caafb7b84b03496769445d01055be/Files"
+    ]
   }
 ]
