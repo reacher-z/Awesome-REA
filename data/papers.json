@@ -4713,5 +4713,57 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-binaryai",
+    "title": "BinaryAI: Binary Software Composition Analysis via Intelligent Binary Source Code Matching",
+    "title_zh": "BinaryAI：基于智能二进制—源代码匹配的二进制软件成分分析",
+    "authors": [
+      "Ling Jiang",
+      "Junwen An",
+      "Huihui Huang",
+      "Qiyi Tang",
+      "Sen Nie",
+      "Shi Wu",
+      "Yuqun Zhang"
+    ],
+    "year": 2024,
+    "publication_date": "2024-04-12",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit records print and online publication on 2024-04-12, two days before the April 14–20 ICSE 2024 conference; the conference dates and arXiv dates are not substituted for it.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2024-04-12，早于 4 月 14–20 日举行的 ICSE 2024 两天；本条目不以会议日期或 arXiv 日期替代该日期。",
+    "venue": "ICSE 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2401.11161",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2024-01-20",
+    "doi": "10.1145/3597503.3639100",
+    "url": "https://dl.acm.org/doi/10.1145/3597503.3639100",
+    "pdf_url": "https://arxiv.org/pdf/2401.11161v3",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "BinaryAI identifies which open-source C/C++ libraries a stripped binary reuses by matching its functions to source code. Ghidra decompiles each binary function to pseudo-C, and a Pythia-410M model, trained with a CLIP-style contrastive loss on about 10 million binary–source function pairs, embeds pseudo-code and source functions in one space. Candidates retrieved from a corpus of 56,342,179 source functions from 12,013 libraries are refined with link-time locality and the call graph, and a library is reported when the share of its matched functions exceeds a threshold. The authors report 22.54% recall@1 against 10.75% for CodeCMR, and library-detection precision and recall of 85.84% and 64.98% against 73.36% and 59.81% for an unnamed commercial tool.",
+    "description_zh": "BinaryAI 通过将剥离符号的二进制中的函数与源代码匹配，识别其复用了哪些开源 C/C++ 库。它先用 Ghidra 将每个二进制函数反编译为类 C 伪代码，再用以 CLIP 式对比损失、在约 1,000 万对二进制—源码函数上训练的 Pythia-410M 模型，把伪代码与源码函数嵌入同一向量空间。从包含 12,013 个库、56,342,179 个源码函数的语料中检索出候选后，方法借助链接时的位置局部性和调用图加以精炼；当某个库中被匹配函数的比例超过阈值时，即判定二进制包含该库。作者报告其 recall@1 为 22.54%，CodeCMR 为 10.75%；库识别的精确率与召回率分别为 85.84% 和 64.98%，一款未具名商业工具为 73.36% 和 59.81%。",
+    "scope_limitations_en": "Training pairs come from ArchLinux and AUR packages compiled automatically with DWARF debug information, and the corpus and test set cover C/C++ projects only. The SCA test set is 150 stripped binaries the authors compiled from 85 GitHub projects, with 1,045 reused libraries labeled manually from build files, headers and license metadata; function-level ground truth covers 15 of those binaries (23,529 pairs). The recall@1 figures combine the model's validation set with those 15 binaries. The two commercial baselines are anonymized under confidentiality agreements, and every baseline was rebuilt on the authors' 12,013-library dataset. The 112 false positives the authors examined all trace to incomplete library-dependency data. The model, training pairs, source-function corpus and labeled test set are not public, and the hosted service the paper links may run a different model and corpus from the evaluated 2024 system. Matches identify reused source; they are not a decompilation or proof that the binary is unmodified.",
+    "scope_limitations_zh": "训练函数对来自自动编译并保留 DWARF 调试信息的 ArchLinux 与 AUR 软件包，语料和测试集均只涵盖 C/C++ 项目。软件成分分析测试集是作者由 85 个 GitHub 项目编译出的 150 个剥离符号的二进制，其中 1,045 个被复用库依据构建文件、头文件和许可证元数据人工标注；函数级真实标签仅覆盖其中 15 个二进制（23,529 对）。recall@1 数据合并了模型验证集与这 15 个二进制。两款商业基线依保密协议匿名，所有基线均在作者的 12,013 个库数据集上重建。作者检查的 112 个误报都可追溯到不完整的库依赖数据。模型、训练函数对、源码函数语料和带标注的测试集均未公开；论文链接的在线服务所用模型与语料可能不同于 2024 年评测的系统。匹配结果说明复用了哪些源码，并不是反编译结果，也不能证明二进制未被修改。",
+    "why_fits_en": "Adds binary-to-source function matching and binary software composition analysis, which identify reused open-source code inside stripped binaries, complementing binary-to-binary similarity and decompilation research.",
+    "why_fits_zh": "补充二进制到源代码的函数匹配和二进制软件成分分析，用于识别剥离符号的二进制中复用的开源代码，与二进制间相似性及反编译研究互补。",
+    "metadata_notes": "Crossref records the ICSE 2024 proceedings article, pages 1–13, and its seven-author order matches arXiv. arXiv v1 is dated 2024-01-20, v2 2024-01-23 and v3 2024-08-26; the reviewed v3 carries the ICSE '24 ACM reference format and DOI. The ACM landing page refused automated access, so publication facts follow Crossref and the arXiv v3 copy. The abstract links binaryai.net, which now redirects to the binaryai.cn web service, and the GPL-3.0 binaryai/sdk repository is a client for that service that needs a service credential. Neither releases the model, training pairs, corpus or labeled test set, so code_url and project_url stay null. A footnote says the module is deployed in industry with a growing corpus; another says the base model went through earlier OPT and BLOOM iterations before Pythia. Nothing was run.",
+    "metadata_notes_zh": "Crossref 记录该文为 ICSE 2024 论文集文章，页码 1–13，七位作者顺序与 arXiv 一致。arXiv v1 发布于 2024-01-20，v2 为 2024-01-23，v3 为 2024-08-26；所审阅的 v3 带有 ICSE '24 的 ACM 引用格式与 DOI。ACM 文章页面拒绝自动访问，因此出版信息以 Crossref 和 arXiv v3 为准。摘要链接 binaryai.net，该地址现重定向至 binaryai.cn 在线服务；采用 GPL-3.0 许可的 binaryai/sdk 仓库是该服务的客户端，使用时需要服务凭据。两者都未发布模型、训练函数对、语料或带标注的测试集，因此 code_url 与 project_url 均为空。论文脚注说明该模块已在工业界部署且语料持续扩充；另一脚注说明基础模型此前曾采用 OPT 与 BLOOM，后改用 Pythia。本次未运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3597503.3639100",
+      "https://api.crossref.org/works/10.1145/3597503.3639100",
+      "https://arxiv.org/abs/2401.11161",
+      "https://arxiv.org/pdf/2401.11161v3",
+      "https://www.binaryai.cn/",
+      "https://github.com/binaryai/sdk/blob/095d4add957bde2e6b07008a271fd86822923155/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
