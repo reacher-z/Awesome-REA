@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 305](https://img.shields.io/badge/resources-305-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 154](https://img.shields.io/badge/cases-154-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 64](https://img.shields.io/badge/papers-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 306](https://img.shields.io/badge/resources-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 155](https://img.shields.io/badge/cases-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 64](https://img.shields.io/badge/papers-64-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (139) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (140) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (154) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (155) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -880,6 +880,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Uses N64Recomp to statically recompile the US Nintendo 64 release of Pokémon Snap into a native Windows, Linux, Steam Deck and macOS port rendered with RT64. The recompiler reads a relocatable ELF linked from the matching ethteck/pokemonsnap decompilation together with the user’s ROM, and game-side patches are modified copies of decompiled functions. The author reports building the port with Claude Code; results remain project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/snap64-recomp-case/)
+
+- [**Dead Rising 2: Case Zero — an Xbox 360 XBLA static recompilation port**](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp)
+
+  Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA game Dead Rising 2: Case Zero by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. A purpose-built runtime supplies a Vulkan renderer, XMA audio, keyboard/mouse input and online co-op through the author’s XenonLive service. Completion and platform results are project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/dead-rising-2-case-zero-recomp-case/)
 
 #### Tools, projects and integrations
 
