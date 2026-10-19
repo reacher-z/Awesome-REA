@@ -14386,12 +14386,17 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111544615669014664"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post links only pingdotgg/t3code, the first-party T3 Code repository: T3 Tools Inc. publishes it under MIT, Theo Browne’s commits start on 2026-02-08, and the pinned README describes ordinary development with no reverse engineering or multi-agent rebuild. No separate reconstruction repository, original inputs, comparisons or agent logs are public, so the reported reconstruction is unsupported. Retain the lead without a catalog mapping; new primary evidence can support another review.",
+      "reason_zh": "该帖子只链接了 pingdotgg/t3code，即 T3 Code 的官方仓库：T3 Tools Inc. 以 MIT 许可发布，Theo Browne 的提交始于 2026-02-08，固定版本的 README 描述的是常规开发，并未提到逆向分析或多智能体重建。目前没有公开的独立重建仓库、原始输入、对照结果或智能体记录，因此所称的重建缺乏支撑。保留此线索而不建立目录映射；新的一手证据可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/axmed_bl/status/2111544615669014664",
+        "https://github.com/pingdotgg/t3code/blob/1451e7cb23034d29774338608368a15d8845df36/README.md",
+        "https://github.com/pingdotgg/t3code/blob/1451e7cb23034d29774338608368a15d8845df36/LICENSE",
+        "https://github.com/pingdotgg/t3code/commit/f194c9661c2eec85f17e972da77772a915d483cd"
+      ],
       "catalog_matches": []
     },
     {
@@ -14980,15 +14985,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 308
+      "insufficient-evidence": 127,
+      "pending": 307
     },
     "units_by_state": {
       "already-curated": 156,
-      "insufficient-evidence": 126,
-      "pending": 307
+      "insufficient-evidence": 127,
+      "pending": 306
     },
-    "primary_reviewed_units": 222,
+    "primary_reviewed_units": 223,
     "catalog_linked_occurrences": 168,
     "distinct_resource_ids": 162,
     "distinct_paper_ids": 1,
