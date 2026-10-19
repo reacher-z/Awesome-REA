@@ -9916,13 +9916,25 @@
       "reported_source_urls": [
         "https://gambiconf.substack.com/p/development-journey-on-game-decompilation"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's post, dated 20 May 2025, documents a bounded AI-assisted matching decompilation of one Sonic Advance 3 enemy module, with decomp.me match results, the merged SAT-R/sa3 pull request and stated limits; the pinned SA3 README now sets a strict no-LLM contribution policy. The full mapping covers this post as a case study, not the whole SA3 decompilation. The post links a separate talk but does not mention the Kappa VS Code agent named in the collection entry, and its match figures remain author-reported.",
+      "reason_zh": "作者于 2025 年 5 月 20 日发布的文章，记录了对 Sonic Advance 3 中一个敌人模块进行的有限范围 AI 辅助匹配反编译，包括 decomp.me 匹配结果、已合并的 SAT-R/sa3 拉取请求及作者说明的局限；固定版本的 SA3 README 现已规定严格禁止大模型参与贡献。完整映射以案例研究覆盖这篇文章，不代表整个 SA3 反编译项目。文章链接了另一场演讲，但未提及合集条目所说的 Kappa VS Code 智能体，其中的匹配数字仍为作者报告。",
+      "primary_evidence_urls": [
+        "https://gambiconf.substack.com/p/development-journey-on-game-decompilation",
+        "https://github.com/SAT-R/sa3/pull/4",
+        "https://github.com/decompme/decomp.me/pull/1474",
+        "https://github.com/SAT-R/sa3/blob/f28834dd4c92ad1ed761a978210355ad63d70b88/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "sa3-marun-ai-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:claims-that-genai-speeds-up-pc-ports-of-classic-games-are-either-false-or-missing-the-point",
@@ -16219,18 +16231,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 207,
+      "already-curated": 208,
       "insufficient-evidence": 272,
-      "pending": 112
+      "pending": 111
     },
     "units_by_state": {
-      "already-curated": 205,
+      "already-curated": 206,
       "insufficient-evidence": 272,
-      "pending": 112
+      "pending": 111
     },
-    "primary_reviewed_units": 417,
-    "catalog_linked_occurrences": 221,
-    "distinct_resource_ids": 211,
+    "primary_reviewed_units": 418,
+    "catalog_linked_occurrences": 222,
+    "distinct_resource_ids": 212,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

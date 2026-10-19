@@ -11663,5 +11663,33 @@
       "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/8080/LICENSE-m8080",
       "https://news.ycombinator.com/item?id=50111576"
     ]
+  },
+  {
+    "id": "sa3-marun-ai-decomp-case",
+    "name": "Sonic Advance 3: an AI-assisted match of one enemy module",
+    "url": "https://gambiconf.substack.com/p/development-journey-on-game-decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Macabeus’s dated study describes prompting Claude Sonnet 3.5 and DeepSeek R1 with assembly, similar decompiled functions and structs to write matching C for Marun, one enemy module of the community Sonic Advance 3 GBA decompilation. The resulting pull request replaced that module’s assembly and was merged; the author calls the setting unusually AI-friendly, and the project now bars LLM-origin contributions.",
+    "description_zh": "Macabeus 在注明日期的研究文章中，介绍了如何把汇编、相似的已反编译函数和结构体放进提示词，让 Claude Sonnet 3.5 与 DeepSeek R1 为社区 Sonic Advance 3 GBA 反编译项目中的敌人模块 Marun 编写匹配的 C 代码。由此产生的拉取请求替换了该模块的汇编并已合并；作者认为这一场景对 AI 格外友好，而该项目现已不接受源自大模型的贡献。",
+    "evidence_url": "https://gambiconf.substack.com/p/development-journey-on-game-decompilation",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The post, dated 20 May 2025 and subtitled an ongoing study, covers a single module: Marun, an enemy in the community Sonic Advance 3 GBA matching decompilation. Work began on 6 January 2025, and pull request #4, which replaced the module’s 1,154-line assembly file with 494 lines of C, was merged on 31 January; the post equates it to 0.3% of the project’s total progress. It is a bounded contribution study, not a whole-game decompilation.",
+      "Building the SA3 decompilation requires the user’s own European Sonic Advance 3 ROM, named baserom_sa3.gba and matching the release the README identifies by SHA1, plus a sufficiently recent agbcc compiler fork. The study itself worked in decomp.me scratches, putting assembly, similar decompiled functions and relevant structs into prompts for Claude Sonnet 3.5 and DeepSeek R1.",
+      "Match percentages come from decomp.me: the post reports a 96% first Sonnet 3.5 attempt that later prompts could not reproduce, a 74% DeepSeek R1 result raised to 100% by replacing memset with CpuFill16, and R1 output that usually matched at least about 60%. The merged pull request is the project-level outcome; the post reports no separate build or test, and this catalog ran nothing.",
+      "The author calls the setting very AI-friendly because similar modules were already decompiled for use as examples and the GBA compiler is simpler and more predictable; generated C lacked project-specific macros and needed readability work. The author’s decomp.me AI-panel pull request was closed unmerged; the post says user benefit was unclear and it required a paid API key.",
+      "At the reviewed SA3 commit, the README states a strict no-LLM/no-AI policy for issues and pull requests, so that project no longer accepts this workflow. The SA3 repository has no license file at that commit, the ROM and its assets retain their own rights, and no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SAT-R/sa3/pull/4",
+      "https://github.com/decompme/decomp.me/pull/1474",
+      "https://github.com/SAT-R/sa3/blob/f28834dd4c92ad1ed761a978210355ad63d70b88/README.md"
+    ]
   }
 ]
