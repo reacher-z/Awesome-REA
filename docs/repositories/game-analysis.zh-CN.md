@@ -105,7 +105,7 @@
 - [Taiga74164/UnityModTemplate](https://github.com/Taiga74164/UnityModTemplate) — 收到 NEXON 的停止侵权通知后，项目已停止开发 **[89 星标]**
 - [trumank/patternsleuth](https://github.com/trumank/patternsleuth) — Unreal Engine 地址扫描器与测试套件。 **[89 星标]**
 - [Toxocious/Aetherim](https://github.com/Toxocious/Aetherim) — 在运行时访问 Unity IL2CPP 类、方法和字段的 C++ 库。 **[88 星标]**
-- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]**
+- [KIexster/god-of-war-recomp](https://github.com/KIexster/god-of-war-recomp) — 通过 PS2Recomp 静态重编译实现 God of War（PS2）的原生 PC 移植。 **[85 星标]** · 精选：[《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植](https://awesomerea.org/zh/resources/god-of-war-ps2-recomp-case/)
 - [wivi514/Dead\_Rising\_2\_Case\_Zero\_Xenon\_Recomp](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp) — 通过静态重编译将 Xbox 360 XBLA 游戏《Dead Rising 2: Case Zero》原生移植至 PC。支持 Windows、Linux、Vulkan、键盘鼠标和手柄，需自行提供游戏副本。 **[85 星标]** · 精选：[Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)
 - [faligame/lost-odyssey-hd-remaster](https://github.com/faligame/lost-odyssey-hd-remaster) — Lost Odyssey HD Remaster：通过静态重编译得到 Xbox 360 版《Lost Odyssey》的原生 PC 版本。支持 720p 至 4K、精确还原的界面、60 fps、Direct3D 12、Vulkan 和纹理替换。不是模拟器，仍在开发中。 **[78 星标]**
 - [kirklandsig/halo2-decompiled](https://github.com/kirklandsig/halo2-decompiled) — 初代 Xbox《光环 2》的反编译项目：将零售版游戏匹配反编译为 C/C++ 源码，逐字节重建，目标是原生 PC、Linux 及掌机移植版。欢迎贡献。仅提供源码，需自备光盘。 **[73 星标]** · 精选：[Halo 2：智能体辅助的 LTCG Xbox 版一致性反编译](https://awesomerea.org/zh/resources/halo2-matching-decomp-case/)
