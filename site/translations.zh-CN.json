@@ -3699,5 +3699,14 @@
       "结果属于启发式判断：README 提醒，一个文件可能包含多种架构，小数据块可能被误判，熵值高于 0.9 的数据所得结果大概没有意义。78k 和 TriCore 因许可问题未收入默认语料库，只能由使用者用自有二进制补充。",
       "cpu_rec.py 采用 Apache-2.0 许可。README 说明默认语料库是由各自带有许可的代码块组成的复合作品，主要来自 Debian、BusyBox、C-Kermit 和作者自行交叉编译的开源程序，另有少数许可不明的代码块，其中包括 Dell 分发的一个 H8S 二进制；build_default_corpus 记录了每一块的来源。本次未分析任何文件。"
     ]
+  },
+  "iced": {
+    "name": "iced x86 指令解码与汇编库",
+    "requirements": [
+      "审阅时最新版本为 v1.21.0，发布于 2024-01-20，在 crates.io、PyPI、npm 和 Maven Central（group 为 io.github.icedland.iced）上以 iced-x86 发布，在 NuGet 上名为 iced。所审阅的 master 分支提交（2026-07-14）比该标签多 340 个提交，此后没有新版本，版本号仍为 1.21.0；本条目固定该提交仅用于引用文档。",
+      "Rust crate 需要 rustc 1.64.0+，支持 no_std 和 WebAssembly，并通过 Cargo 特性选择解码器、编码器、块编码器、指令信息、各格式化器以及可选的代码汇编器。.NET 库面向 .NET Standard 2.0/2.1 和 .NET Framework 4.5，Java 库需要 Java 8+。PyPI 提供 Windows、macOS 和 Linux 的 wheel，从源码构建需要 Rust 和 Python 3.8+；JavaScript 包用 wasm-pack 构建，Lua 绑定则需用 Rust、luarocks 和 Lua 5.1+ 从源码构建。",
+      "调用方需提供原始代码字节、位数和指令指针。所审阅的文档未描述可执行文件格式解析或函数发现功能，因此需先用加载器或格式解析库定位代码。Knights Corner 的 MVEX 指令需要启用 mvex 特性并传入 KNC 解码选项。",
+      "MIT 许可证。README 称所有指令均经过测试，iced 已与 xed、gas、objdump、masm、dumpbin、nasm 和 ndisasm 对照测试并经过模糊测试，其 disas-bench 结果中 Rust 版解码速度超过 250 MB/s，解码加格式化超过 130 MB/s。以上均未复现；本次未解码或汇编任何代码。"
+    ]
   }
 }

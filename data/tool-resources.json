@@ -9758,5 +9758,41 @@
       "https://github.com/airbus-seclab/cpu_rec/releases/tag/v1.1",
       "https://www.sstic.org/2017/presentation/cpu_rec/"
     ]
+  },
+  {
+    "id": "iced",
+    "name": "iced",
+    "url": "https://github.com/icedland/iced",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "x86 instruction library for 16-, 32- and 64-bit code that decodes, formats, assembles and encodes instructions, with masm, nasm, GNU AT&T and Intel XED output syntaxes. Its instruction-info API reports the registers, memory operands and RFLAGS bits an instruction reads or writes, its CPUID feature flags and control-flow type, and the encoder can re-encode decoded instructions at any address. Rust, C# (.NET) and Java implementations live in one repository, with Python, JavaScript (WebAssembly) and Lua bindings built on the Rust crate.",
+    "description_zh": "面向 16、32 和 64 位 x86 代码的指令库，可解码、格式化、汇编和编码指令，输出支持 masm、nasm、GNU AT&T 和 Intel XED 语法。其指令信息 API 可报告指令读写的寄存器、内存操作数和 RFLAGS 标志位，以及所需的 CPUID 特性标志和控制流类型；编码器还能把已解码的指令重新编码到任意地址。同一仓库维护 Rust、C#（.NET）和 Java 三套实现，另有基于 Rust crate 的 Python、JavaScript（WebAssembly）和 Lua 绑定。",
+    "evidence_url": "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.21.0, published 2024-01-20, distributed as iced-x86 on crates.io, PyPI, npm and Maven Central (group io.github.icedland.iced) and as iced on NuGet. The reviewed master commit (2026-07-14) is 340 commits ahead of that tag, with no newer release, and still declares version 1.21.0; this entry pins it for documentation only.",
+      "The Rust crate needs rustc 1.64.0+, supports no_std and WebAssembly, and uses Cargo features to select the decoder, encoder, block encoder, instruction info, each formatter and the optional code assembler. The .NET library targets .NET Standard 2.0/2.1 and .NET Framework 4.5, and the Java library needs Java 8+. PyPI ships Windows, macOS and Linux wheels, and source builds need Rust and Python 3.8+; the JavaScript package is built with wasm-pack, and the Lua binding is built from source with Rust, luarocks and Lua 5.1+.",
+      "The caller supplies raw code bytes, the bitness and the instruction pointer. The reviewed documentation describes no executable-format parsing or function discovery, so a loader or format library has to locate code first. Knights Corner MVEX instructions need the mvex feature and the KNC decoder option.",
+      "MIT license. The README reports that all instructions are tested, that iced was tested against xed, gas, objdump, masm, dumpbin, nasm and ndisasm and fuzzed, and Rust throughput above 250 MB/s for decoding and 130 MB/s for decoding plus formatting in its disas-bench results. None of this was reproduced; no code was decoded or assembled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/rust/iced-x86/README.md#L1-L62",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/rust/iced-x86/Cargo.toml",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/csharp/Intel/README.md",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/csharp/Intel/Iced/Iced.csproj",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/java/iced-x86/README.md",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/rust/iced-x86-py/README.md",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/rust/iced-x86-js/README.md",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/src/rust/iced-x86-lua/README.md",
+      "https://github.com/icedland/iced/blob/8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31/LICENSE.txt",
+      "https://github.com/icedland/iced/releases/tag/v1.21.0",
+      "https://github.com/icedland/iced/compare/v1.21.0...8cfc5f57c08fd2e80a4cec9d3d9d36f642b2de31",
+      "https://pypi.org/project/iced-x86/1.21.0/"
+    ]
   }
 ]
