@@ -9214,12 +9214,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111366415639064608"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@cwh_tw, 2026-10-17, in Chinese) says the author earlier had AI study the JavaScript of LINE’s Chrome version, which needed little real reverse engineering, to build a TUI and API that AI now uses to analyze and send customer messages, and expects to need real reverse engineering if the Chrome version is shut down. It names no code or repository and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "回复（@cwh_tw，2026-10-17）称，作者此前让 AI 参考 Chrome 版 LINE 的 JS 代码（较易理解，几乎不需要认真逆向），做了一个 TUI 加 API，如今 AI 用它分析并发送客户消息；作者还称听说 LINE 要关闭 Chrome 版，届时就得认真让 AI 逆向了。回复没有给出代码或仓库，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111366415639064608"
+      ],
       "catalog_matches": []
     },
     {
@@ -9260,12 +9262,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111165651599663599"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@0xDeniAi, 2026-10-16) describes an REA clean-room workflow: REA traces a feature and saves only its behavior to SPEC.md, a fresh Opus 5.5 session rebuilds it from that file with tests written first, and four deliberately broken versions must fail. It claims a run of 731 functions over nine days with 729 exact matches and no copied lines, but names no target program and links no code, specification, tests or logs, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the match counts are unverified.",
+      "reason_zh": "帖子（@0xDeniAi，2026-10-16）介绍了一套借助 REA 的净室流程：由 REA 追踪某项功能，只把行为写入 SPEC.md；再开一个全新的 Opus 5.5 会话，仅凭该文件先写测试、后实现功能，并故意植入四个错误版本，要求它们全部无法通过测试。帖子声称一次运行在九天内处理了 731 个函数，其中 729 个完全匹配且没有复制任何代码，但既未说明目标程序，也没有链接代码、规格、测试或日志，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；其中的匹配数字未经核实。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111165651599663599"
+      ],
       "catalog_matches": []
     },
     {
@@ -9281,12 +9285,15 @@
         "https://x.com/i/status/2111358914520600998",
         "https://x.com/i/status/2111358376642801706"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@Its_Vivaann, 2026-10-17) asks Grok whether the reverse-engineer-anything project could be used on Zenith, a collaborative code-editor project that Grok’s preceding reply describes as an open MERN build. It reports no attempt and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a question, not a case.",
+      "reason_zh": "回复（@Its_Vivaann，2026-10-17）向 Grok 询问能否用 reverse engineer anything 项目分析 Zenith；Zenith 是一个协作代码编辑器项目，Grok 在上一条回复中称其为开放的 MERN 项目。回复没有报告任何尝试，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是一个提问，而非案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111358914520600998",
+        "https://x.com/i/status/2111358376642801706"
+      ],
       "catalog_matches": []
     },
     {
@@ -9302,12 +9309,15 @@
         "https://x.com/i/status/2111385823270625370",
         "https://x.com/i/article/2111383990749773824"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@kudela_maxim, 2026-10-17) links his X article on controlling Philips Hue lights from a Mac over Bluetooth without a Hue Bridge: Claude Opus 5.5 compared connection methods, used the MacBook’s ambient-light sensor to measure response, and found a private macOS connection-latency setting that cut screen-to-light latency to a reported 19 ms. The article relies on the Hue Bluetooth protocol already mapped by libhueble and states that the code is not published and runs only on the author’s machine; its cut timings come from synthetic frames. Retain the lead without a catalog mapping; there is no source or log to review.",
+      "reason_zh": "帖子（@kudela_maxim，2026-10-17）链接了作者的 X 长文，介绍无需 Hue Bridge、由 Mac 通过蓝牙直接控制飞利浦 Hue 灯：Claude Opus 5.5 比较了多种连接方式，借助 MacBook 的环境光传感器测量响应，并找到一个 macOS 私有的连接延迟设置，据称把画面到灯光的延迟降到 19 毫秒。文章使用的 Hue 蓝牙协议此前已由 libhueble 梳理，文中也说明代码没有公开、只在作者自己的电脑上运行；画面切换的计时数据来自合成帧。保留此线索而不建立目录映射；没有可供核查的源码或日志。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111385823270625370",
+        "https://x.com/i/article/2111383990749773824"
+      ],
       "catalog_matches": []
     },
     {
@@ -9322,12 +9332,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111386823763411016"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@jurlycat, 2026-10-17) summarizes Robert Vähhi’s “divergence” demo, in which bugs in JavaScript processors make formatted code behave differently from the original, reportedly 186 techniques across 37+ processors, and suggests using it as a decoy against human or AI reverse engineering in anti-bot and anti-cheat systems. It links no paper, repository or demo, searches found no public write-up by the researcher, and no GitHub account matching the poster’s handle was found. Retain the lead without a catalog mapping; this concerns anti-analysis techniques, and none are recorded here.",
+      "reason_zh": "帖子（@jurlycat，2026-10-17）概述了 Robert Vähhi 的“divergence”演示：利用 JavaScript 处理工具的缺陷，使格式化后的代码与原代码行为不同，据称涉及 37 个以上处理工具中的 186 种技巧；帖子还设想在反机器人和反作弊系统中把它用作诱饵，拖慢人类或 AI 的逆向分析。帖子没有链接论文、仓库或演示，检索也未找到该研究者的公开文章，且未找到与发帖者账号名对应的 GitHub 账号。保留此线索而不建立目录映射；此事涉及反分析技术，此处不记录任何具体技巧。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111386823763411016"
+      ],
       "catalog_matches": []
     },
     {
@@ -9342,12 +9354,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111389348339827041"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post could not be read on 2026-10-19 because the public post API returns not found. The collection entry summarizes it as a proposed division of work among three models for investigating a small self-compiled sample, with every claim tagged as observed, inferred or unknown, and notes that no complete fixture source, artifacts, logs, measured cost or success rate were supplied. Retain the lead without a catalog mapping; it describes a workflow idea, not an executed case.",
+      "reason_zh": "所引帖子在 2026-10-19 无法读取：公开帖子接口返回未找到。合集条目将其概括为一个分工设想：由三个模型分担对一个自行编译的小样本的调查，每项结论都标注为已观察、推断或未知；条目同时注明帖子未提供完整的样本源码、产物、日志、实测费用或成功率。保留此线索而不建立目录映射；这是一个工作流程设想，而非已执行的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111389348339827041"
+      ],
       "catalog_matches": []
     },
     {
@@ -15951,15 +15965,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 220,
-      "pending": 172
+      "insufficient-evidence": 226,
+      "pending": 166
     },
     "units_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 220,
-      "pending": 172
+      "insufficient-evidence": 226,
+      "pending": 166
     },
-    "primary_reviewed_units": 359,
+    "primary_reviewed_units": 365,
     "catalog_linked_occurrences": 211,
     "distinct_resource_ids": 204,
     "distinct_paper_ids": 1,
