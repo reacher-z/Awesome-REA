@@ -372,9 +372,10 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
   $("#empty-repositories-note").hidden = !showRepositories;
   if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
-function render() {
-  const expanded = expandedRecords(".resource-card");
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
+// Show More passes the number of cards already shown and appends only the next batch; every other change rebuilds the list.
+function render(shown = 0) {
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r)));
+  if (shown) grid.append(fragment); else { const expanded = expandedRecords(".resource-card"); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); } grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   renderEmptySearchActions(found.length);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
@@ -406,7 +407,7 @@ $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.tar
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
 window.addEventListener("hashchange", syncLanguageLinks);
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
-$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
+$("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(previous); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
 
 const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set(), topicCounts: [] };
@@ -545,8 +546,10 @@ function sourceCard(record) {
   const compactTopics = sourceTopicButtons(record, Infinity); if (compactTopics) { compactContext.append(node("p", "source-compact-topics", t("sourceTopicsLabel")), compactTopics); }
   details.append(compactContext, dl); article.append(details); return article;
 }
-function renderSources() {
-  if (!sourceState.loaded) return; const expanded = expandedRecords(".source-card"); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); restoreExpanded(".source-card", expanded); $("#source-results").setAttribute("aria-busy","false");
+// Like render(): Show More appends the next batch after the cards already shown.
+function renderSources(shown = 0) {
+  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
+  if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded); } results.setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库` : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
   const completed = sourceState.meta.completed_at || sourceState.meta.finished_at || "";
   const scanned = Number(sourceState.meta.scope?.scanned_count || 0), excluded = Number(sourceState.meta.scope?.excluded_count || 0);
@@ -595,7 +598,7 @@ if (!["relevance","stars","pushed","name"].includes(sourceState.sort)) sourceSta
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
 for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
-$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
+$("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(previous); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");
 $("#download-curated-catalog").href = dataURL("catalog.json");

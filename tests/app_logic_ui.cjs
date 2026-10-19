@@ -330,6 +330,27 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(sourceShown(), [24, false, '+24', lang === 'zh' ? '已显示 24 / 60 个仓库' : '24 of 60 repositories shown']);
   }
 
+  // Show More appends the next batch to the cards already shown; the result equals a full rebuild at the same depth.
+  {
+    const kinds = ['documentation', 'tool', 'case-study', 'integration', 'project'];
+    const app = await loaded('', {catalog: catalogOf(Array.from({length: 50}, (_, index) => curatedRecord(index, {kind: kinds[index % kinds.length]}))),
+      browser: browserOf(Array.from({length: 90}, (_, index) => repository(`order/repo-${index}`, {stars: (index * 37) % 11})))});
+    const ids = container => app.element(container).children.map(card => card.dataset.recordId);
+    for (const [container, more, page, total] of [['resource-grid', 'load-more', 15, 50], ['source-results', 'source-more', 24, 90]]) {
+      if (container === 'source-results') app.api.setIndexMode('source-index');
+      const kept = app.element(container).children.slice();
+      for (let shown = page; shown < total; shown += page) {
+        app.element(more).handlers.click();
+        assert.deepEqual(app.element(container).children.slice(0, kept.length), kept, `${more} keeps the cards already shown`);
+        kept.splice(0, kept.length, ...app.element(container).children);
+      }
+      const appended = ids(container);
+      assert.equal(appended.length, total);
+      app.api.applyLanguage();
+      assert.deepEqual(ids(container), appended, `${more} shows the same records in the same order as a full render`);
+    }
+  }
+
   {
     // With exactly one more page left, the row hides as soon as the last record is shown.
     const app = await loaded('', {catalog: catalogOf(Array.from({length: 30}, (_, index) => curatedRecord(index))),
