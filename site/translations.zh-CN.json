@@ -4251,5 +4251,15 @@
       "CI 在 Windows、macOS 和 Linux 上以 Node 20、22、24 运行安装程序、包完整性与评估框架测试，然后构建并校验发布归档。评估套件提供 Pocket Tasks、一个由所附源码构建的 5,120 字节 .NET Parcel.exe、一个浏览器应用及若干文件格式等测试对象，配有字面预期值和人工审阅评分标准。其示例明确说明已接触源码且由同一智能体完成；未记录真实模型试验、独立评估或跨宿主认证，本合集也未运行任何内容。",
       "原创代码、指令、测试和文档采用 MIT，一小部分 Wycheproof 测试数据采用 Apache-2.0。仓库不包含 REA 代码；REA、目标应用和模型宿主仍受各自条款约束。Pocket Tasks 重建示例在本合集中另有条目。"
     ]
+  },
+  "reflecticon-224-lexicon-emulation-case": {
+    "name": "reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件",
+    "requirements": [
+      "所审阅的固定版本提交于 2026-10-13，仓库创建于 2026-09-28。README 称项目仍在开发，文档稍后补充，因此 Makefile 是主要导览：它串联原理图、门级／板级／指令集级模型、C++ 模拟器、模拟电路模型、WebAssembly 页面与插件。可识别的固件组合包括多个 224 版本、224X v8.1 以及 224XL v8.1A 与 v8.21。",
+      "使用者需自备 Lexicon ROM 芯片文件，README 说明这些文件只留在本机。页面与插件通过 SHA-256 识别已知组合，仓库只列出这些哈希，不含 ROM 字节。固件检查读取 LEXICON_FIRMWARE 文件夹（每个组合一个子文件夹），缺少时跳过。网页演示确实附带按特定固件组合整理的程序名称与推子取值目录。",
+      "make check 运行无需固件的检查；缺少所需工具（如 Verilator 5 或 KiCad 命令行工具）的目标会报告为已跳过。页面用 Emscripten 5.0.1 构建并发布到 GitHub Pages。插件用 CMake 与 JUCE 8.0.14 构建为 macOS AU、VST3 与独立程序，CI 用 auval 验证 AU；带标签的 v0.1.0-alpha.1 预发布版是临时签名的 macOS 11+ 构建，不含任何固件。",
+      "make check-firmware 用使用者的 ROM 逐层运行检查，其中包括门级的维修手册特征值表。资格检查把模拟器的 CPU 状态、控制存储写入与 DAC 采集结果同板级运行结果比较，qualified.json 保存两个场景的预期哈希。逐字节一致性检查把 WebAssembly 构建与原生参考实现逐位比较。这些项目检查都需要 ROM；本合集未运行其中任何一项。",
+      "GitHub 未检测到仓库许可证，因此除浏览外未授予其他使用权；所含 8080 核心带有 zlib 与 MIT 声明。README 声明与 Lexicon 及其权利人无关，原厂固件仍归其所有。在一份相关报告的 Hacker News 讨论中，一位自称该仓库作者的评论者提到付费请人描绘原理图，并让 LLM 智能体把原理图转为 Verilog；未提及使用 REA。"
+    ]
   }
 }

@@ -11627,5 +11627,41 @@
       "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitmodules",
       "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/snowboardkids.sha1"
     ]
+  },
+  {
+    "id": "reflecticon-224-lexicon-emulation-case",
+    "name": "reflecticon-224: running Lexicon 224 reverb firmware on emulated hardware",
+    "url": "https://github.com/joelanders/reflecticon-224",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Emulates the Lexicon 224, 224X and 224XL digital reverbs so that their own firmware runs in a browser page or a JUCE plugin. The repository layers KiCad schematics, gate-level and board-level Verilog models, an 8080-hosted C++ emulator and analog input/output models, and checks faster layers against slower ones using user-supplied ROMs. It is a work-in-progress hardware-and-firmware emulation whose documentation is still pending, not recovered algorithm source.",
+    "description_zh": "模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。仓库分层包含 KiCad 原理图、门级与板级 Verilog 模型、以 8080 为主机的 C++ 模拟器及模拟输入／输出模型，并用使用者自备的 ROM 以较慢层级校验较快层级。这是仍在开发、文档尚未完成的硬件与固件模拟，并非恢复出的算法源码。",
+    "evidence_url": "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/Makefile",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is from 2026-10-13; the repository was created on 2026-09-28. README calls it a work in progress whose documentation will follow, so the Makefile is the main map: it links the schematics, gate-, board- and ISA-level models, the C++ emulator, analog models, the WebAssembly page and the plugin. Recognized firmware sets include several 224 versions, 224X v8.1 and 224XL v8.1A and v8.21.",
+      "Users supply their own Lexicon ROM chip files, which README says stay on their computer. The page and plugin recognize known sets by SHA-256, and the repository lists those hashes, not ROM bytes. Firmware checks read a LEXICON_FIRMWARE folder with one subfolder per set and skip when it is absent. The web demo does ship program-name and slider-value catalogs keyed to specific firmware sets.",
+      "make check runs the firmware-free checks, and any target whose tool is missing, such as Verilator 5 or KiCad’s command-line tool, reports itself as skipped. The page builds with Emscripten 5.0.1 for GitHub Pages. The plugin builds with CMake and JUCE 8.0.14 as macOS AU, VST3 and standalone targets, and CI validates the AU with auval; the tagged v0.1.0-alpha.1 prerelease is an ad-hoc signed macOS 11+ build that contains no firmware.",
+      "make check-firmware runs the user’s ROMs through several layers, including service-manual signature tables at gate level. Qualification compares the emulator’s CPU state, control-store writes and DAC captures with board-level runs, and qualified.json stores expected hashes for two scenarios. A byte-exact gate compares the WebAssembly build bit for bit with the native reference. These project checks need the ROMs; this collection ran none of them.",
+      "GitHub detects no repository license, so no reuse terms beyond viewing are granted; the included 8080 cores carry zlib and MIT notices. README disclaims affiliation with Lexicon or its owners, and the original firmware remains theirs. In the Hacker News thread for a related report, a commenter who identifies the repository as theirs describes paid schematic tracing and LLM agents turning schematics into Verilog; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/README.md",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/emulator/tests/qualify_firmware.py",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/emulator/tests/qualified.json",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/juce-plugin/tests/byte_exact/compare_wasm.mjs",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/web-demo/page/firmware.js",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/web-demo/page/firmware_sets.json",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/.github/workflows/plugin.yml",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/.github/workflows/pages.yml",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/8080/LICENSE-floooh-chips",
+      "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/8080/LICENSE-m8080",
+      "https://news.ycombinator.com/item?id=50111576"
+    ]
   }
 ]

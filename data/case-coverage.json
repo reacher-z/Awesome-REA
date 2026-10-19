@@ -9219,13 +9219,26 @@
         "https://x.com/i/status/2111329818914791727",
         "https://news.ycombinator.com/item?id=50104955"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "valdiorn’s Hacker News comment (2026-10-15), summarized by @RealYDT, reports using Opus 5.5 to run three competitors’ effects firmware in an emulator, convert it to standalone C++ libraries and compare the results, plus Lexicon 224 and Ursa Major work. No code, emulator, library, comparison data or product versions are published, and the comment names no Lexicon repository. A reply by the author of the public reflecticon-224 emulation guesses that it was the one found; that project is recorded separately and mapped as related, not as this report’s work. Retain the lead as insufficient evidence; the reported decompilations and comparisons are unestablished.",
+      "reason_zh": "valdiorn 在 Hacker News 的评论（2026-10-15，经 @RealYDT 转述）称，借助 Opus 5.5 在模拟器中运行三家竞争对手的效果器固件，再转换成独立 C++ 库并比较结果，另外还处理了 Lexicon 224 与 Ursa Major 产品。评论没有公开代码、模拟器、库、比较数据或产品版本，也未指明所说的 Lexicon 仓库。公开的 reflecticon-224 模拟项目作者在回复中猜测被找到的就是该项目；该项目另立条目并以相关映射关联，并不视为本报告的成果。保留此线索并标为证据不足；所报告的反编译与比较均未确立。",
+      "primary_evidence_urls": [
+        "https://news.ycombinator.com/item?id=50104955",
+        "https://x.com/RealYDT/status/2111329818914791727",
+        "https://news.ycombinator.com/item?id=50111576",
+        "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/README.md",
+        "https://github.com/joelanders/reflecticon-224/blob/37fde47f6cf94d4f4f96f3c233382e2c43a70354/Makefile"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "reflecticon-224-lexicon-emulation-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:retroscope-local-llm-rom-assist",
@@ -16207,17 +16220,17 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 207,
-      "insufficient-evidence": 271,
-      "pending": 113
+      "insufficient-evidence": 272,
+      "pending": 112
     },
     "units_by_state": {
       "already-curated": 205,
-      "insufficient-evidence": 271,
-      "pending": 113
+      "insufficient-evidence": 272,
+      "pending": 112
     },
-    "primary_reviewed_units": 416,
-    "catalog_linked_occurrences": 220,
-    "distinct_resource_ids": 210,
+    "primary_reviewed_units": 417,
+    "catalog_linked_occurrences": 221,
+    "distinct_resource_ids": 211,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }
