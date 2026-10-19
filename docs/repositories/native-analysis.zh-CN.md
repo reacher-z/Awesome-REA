@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**680 个仓库** · 2026-10-16 UTC
+**679 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -105,7 +105,6 @@
 - [danigargu/heap-viewer](https://github.com/danigargu/heap-viewer) — 用于检查 glibc 堆的 IDA Pro 插件，专注于漏洞利用开发。 **[773 星标]**
 - [fay59/fcd](https://github.com/fay59/fcd) — 支持优化的反编译器。 **[773 星标]**
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — 为 Ghidra 提供 AI 逆向工程辅助的 LLM 扩展。 **[760 星标]**
-- [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — 识别任意二进制文件中的 CPU 指令。 **[757 星标]**
 - [binsync/binsync](https://github.com/binsync/binsync) — 基于 Git 的逆向工程插件，支持跨反编译器协作。 **[752 星标]**
 - [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite：通过二进制重写将编译器处理流程应用于现有程序。 **[751 星标]**
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — 精选基于 Radare2 的优质项目、文章及其他资料列表。 **[739 星标]**
