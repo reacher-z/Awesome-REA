@@ -2854,6 +2854,13 @@
       "CI runs six Node tests of deterministic helpers, rebuilds the offline page, checks that it is current and runs a release check for offline output, syntax, local links and excluded extracted assets and local paths. VALIDATION.md reports manual Chrome-on-macOS checks of rendering and controls, but not a browser-verified settings import, runtime testing of Claude or a pixel comparison with the original. The reference recording’s remote build, seed, theme and font are unknown, and this collection did not run the page or tests.",
       "MIT covers the original code and documentation. The repository states that it distributes no recovered Anthropic source, shaders, fonts, ASAR files, screenshots of the original, recordings or account data, and that its license grants no rights in Anthropic’s software, fonts or trademarks. It is unofficial and unaffiliated with Anthropic; REA is credited as the investigation tool rather than bundled, and the author also credits AI-assisted development."
     ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -2886,6 +2893,13 @@
       "The documented host is Linux x86-64 with Git, Python 3.11+, Node.js 22.19.0, 32-bit Wine, Xvfb, CMake, Ninja and GCC or Clang, plus i686 MinGW for Windows cross-builds. Bootstrap scripts fetch a hash-pinned JDK, Ghidra and a Visual C++ 4.0 compiler from a third-party archive repository. The REA lock file pins rea-agents 6.5.0 with Ghidra 12.1.4, while docs/REA.md still names 6.4.0; the Codex goal workflow needs Codex 0.128.0 or newer.",
       "An exact unit has zero differences across the whole function after COFF relocations are mapped to original functions, imports and data, with literal data also checked; match-units.toml records the inputs needed to replay each unit. Differential tests run original x86 routines under Unicorn emulation against the compiled maintained C, and public CI builds the portable source, validates recorded evidence and compiles the Windows adapter without game resources. All results are project-reported; this collection ran nothing.",
       "MIT covers repository code; the original game, credited to Michael P. Welch with 3D graphics by Seumas McNally, is supplied separately and keeps its own rights, as do the downloaded compiler and tools. REA use is documented through saved responses and a worked projectile-list example, but agent effectiveness is not independently measured, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game",
@@ -2923,6 +2937,13 @@
       "Building uses devkitARM and libnds (devkitPro nds-dev), Python 3, FFmpeg with its development libraries, a C compiler and pkg-config. Windows builds run in WSL Ubuntu, and make falls back to devkitPro’s Docker image when no local devkitARM is found. The README plays the ROM in melonDS, needs DLDI SD-card setup for saves and shows a photo captioned as running on a Nintendo DSi XL.",
       "Host tests compile the platform-independent script, enemy and cutscene code for a PC and run it against the user’s converted data; the script test reports unknown opcodes, and scd_disasm.py --check validates jump targets across rooms. Analysis notes cite PS1 addresses and mark observed versus assumed behavior. psxexe_to_elf.py wraps the executable and symbol lists as a MIPS ELF accepted by REA’s Ghidra lane; Claude Code use is stated only in the Reddit post and is not quantified. This catalog did not build or run the engine.",
       "No license file is present at the reviewed commit. The README credits the MIT-licensed OpenBiohazard2 reimplementation’s file-format work and script opcode table as the starting point for several converters. Capcom’s game data, movies and audio stay outside the repository and retain their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"

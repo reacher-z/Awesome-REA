@@ -7840,6 +7840,13 @@
       "README reports original-versus-reconstructed DOS replays agreeing on consumed input, score, RNG, nine actor pools, 22 state blocks and configured video regions across the four bundled demos and longer Stage 1–3 routes, while raw GDC timing and some post-reset input samples still differ. A 2026-10-16 audit found frozen native programs and candidate MAIN files missing from local storage, so historical replay first needs recovery. Public CI runs target-independent checks only; this collection ran nothing.",
       "MIT covers repository-authored code and documentation, not the game, its assets or third-party work; ReC98, credited as a migration input, has no license file at the pinned revision, and the Borland tools stay proprietary. The repository is organized around coding-agent handoffs but does not itself document REA use; REA’s TH04 helper showcase and Touhou essay cover parts of it. No runtime reproduction is claimed."
     ],
+    "requirement_facets": [
+      "testing",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/PROGRESS.md",
       "https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/docs/DOS_BUILD.md",
@@ -7873,6 +7880,13 @@
       "Supermodel documents builds with GCC and Make on Windows (MSYS2, with SDL2 and SDL2_net), Linux and macOS, and a Visual Studio project; the PR adds its sources to the shared Makefile rules and that project. No Pro-1000 test or rendering comparison accompanies the change, and this review did not build or run it.",
       "Source comments describe the hardware findings as reverse-engineered working hypotheses drawn from firmware disassembly, logs of unmapped accesses and UART output, embedded SCCS module strings, address cross-references, part datasheets and the SDK manuals. Some registers and the JTAG scan chain remain unknown.",
       "Supermodel’s source headers declare GPL-3.0-or-later; the firmware, SDK material and demo databases keep their own rights. The author’s X post credits Claude with doing the reverse engineering and writing the emulation, and credits co-author Ian Curtis with the earlier SCSI-interception demos; the PR does not mention AI tools, and REA use is not established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/trzy/Supermodel/pull/343",
@@ -8052,6 +8066,13 @@
       "Evidence is play-testing, issue reports and logs: README cites Linux tests on Nobara/Fedora 44, player tests on Windows and a seven-minute RTX 2060 session with a median of 27 FPS. The CI workflow builds Linux and Windows packages for pull requests and authorized manual releases, and its Linux job runs C, Python and GPU-library unit tests without game content or automated gameplay tests. This collection read the sources without running the port or the game.",
       "README declares GPL-2.0 for the project and credits code from HayatoG’s earlier The Last Guardian and Gravity Rush 2 ports, gow3_pc, bloodborne_pc, shadPS4 and a fork of it, and a Shadow of the Colossus port; experimental fixes are traced to their source commits. The game and its assets keep their owners’ rights. README names no AI model or REA use; the post’s AI attribution comes from a third-party account whose linked repository is a fork with no commits of its own, so no AI workflow is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.recomp.json",
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/docs/ARQUIVOS_NECESSARIOS.md",
@@ -8083,6 +8104,13 @@
       "Builds use CMake 3.1+ with C++17, or autotools, against the libraries in BUILDDEP.md, including Boost 1.53+, SDL2 2.0.4+, OpenGL 2.1+, FreeType 2, OpenAL Soft and the MAD, Vorbis, FAAD, Xvid and libvpx codecs. README points to release binaries for Windows, Mac OS X and GNU/Linux on 32- and 64-bit x86; the FAQ says mobile devices lack an OpenGL ES renderer and console ports are highly unlikely.",
       "CI builds with autotools and CMake on Linux (GCC and Clang), macOS and Windows (MSVC) and runs the Google Test unit tests, which cover Aurora file formats and shared engine code. No comparison with the original executables is published, and per-game progress is tracked on the project wiki; this collection did not build or run xoreos.",
       "README and COPYING apply GPL-3.0-or-later; doc/ adds GPLv2, LGPL-2.1 and font licence texts for incorporated components, and the games keep their publishers’ rights. CONTRIBUTING.md forbids AI-generated code, comments and commit messages; the reviewed sources establish no REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/NEWS.md",
@@ -8153,6 +8181,13 @@
       "Builds use premake5 (a premake5.exe is committed) or CMake 3.8+, selecting a NULL, GL3 or D3D9 platform and, for GL3 (OpenGL 2.1+ or ES 2.0+), GLFW, SDL2 or SDL3 for windowing. premake targets Windows x86/amd64, Linux x86/amd64/ARM and PS2, and the CMake files add PS2 and Nintendo Switch toolchains; a skeleton application framework with bundled Dear ImGui accompanies the demo tools.",
       "The GitHub Actions workflow builds and packages 14 configurations: Windows D3D9, GL3 and null, macOS and Ubuntu GL3 and null, PS2 in a ps2dev container and Switch in a devkitPro container. It runs no tests, and the repository has no test suite or comparison with original RenderWare output; this collection built or ran nothing.",
       "LICENSE applies MIT to librw; the bundled Dear ImGui and ImGuizmo code carries its own licence files, and RenderWare itself and any game assets keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/ARCHITECTURE.MD",
@@ -8275,6 +8310,13 @@
       "The documented setup is Linux, WSL or macOS, with a VS Code dev container and a Nix flake as alternatives; it needs Python 3.6+, Ninja, CMake 3.13+, ccache, llvm-objdump, a Rust toolchain and the listed Python modules. setup.py downloads prebuilt clang, ld.lld and the viking checker from the project’s tools-cache release v1.2.6, or builds them from source, and fetches LLVM 3.9.1 libc++ headers. Submodules supply open-ead’s sead, agl, eui, NintendoSDK and NEX headers, a musl build and nx-decomp-tools.",
       "tools/check compares every function marked in data/file_list.yml with the original executable. At the pin the list marks 18,996 functions matching, 47 with minor and 252 with major differences and 54,876 not decompiled, and decomp.dev’s report for the commit gives the same 25.61% of functions, or 15.77% of code bytes. CI fetches the executable through a repository secret, builds and requires the check to pass, and separately checks that every header compiles on its own; this collection ran neither.",
       "GitHub detects no license and the pinned root has no license file, so no reuse terms are stated; submodules and Nintendo content keep their own terms. A workflow adds an ai label to new pull requests from authors who, in its own words, usually use AI, but the reviewed files neither quantify AI use nor attribute the reconstruction to REA."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/Contributing.md",
