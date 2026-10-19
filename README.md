@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 300](https://img.shields.io/badge/resources-300-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 301](https://img.shields.io/badge/resources-301-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 153](https://img.shields.io/badge/cases-153-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (24) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1715,6 +1715,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Native x64dbg plugin, written in Zig for both x32dbg and x64dbg, that serves an MCP endpoint over streamable HTTP and SSE from inside the debugger. Agents can load or attach to a process, set software, hardware, memory and conditional breakpoints, step and trace, read registers, call stacks, threads, memory maps, imports, strings and cross-references, and run arbitrary x64dbg commands. A bundled SKILL.md guide tells agents to confirm the debugger state before every action.
 
   Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/x64dbg-mcp-server/)
+
+- [**mcp-windbg**](https://github.com/svnscha/mcp-windbg)
+
+  Independent, community-built MCP server that runs Microsoft's cdb.exe and kd.exe headless, so agents can open and triage user-mode and kernel crash dumps, attach to cdb remote debug servers and KD kernel targets, and run arbitrary debugger commands in separately addressed sessions. Its README points users who want AI inside WinDbg to Microsoft's official WinDbg MCP and positions this project as an alternative for other MCP clients, remote HTTP use and batch dump triage; it calls itself a wrapper that runs real debugger commands, not an automatic fix.
+
+  Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/mcp-windbg/)
 
 <a id="related-collections"></a>
 ### Related Collections
