@@ -14470,13 +14470,27 @@
         "https://x.com/i/status/2111459038823157986",
         "https://x.com/i/status/2111459359867699273"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The pinned repository documents an author-reported, agent-built Rust port of the Eidolon 64k intro, original-binary chapters, a controlled-clock frame and PCM comparison, and disclosed use of Ghidra through the REA MCP server. The full mapping covers this community case study, including its size build; exactness is project-reported and GPU-specific, and nothing was rerun here. The repository embeds the intro’s original data and third-party instrument samples outside its license, so redistribution remains a rights question.",
+      "reason_zh": "固定版本仓库记录了作者报告的、由智能体完成的 Eidolon 64k intro Rust 移植、说明原二进制的章节、受控时钟下的帧与 PCM 对照，并披露通过 REA MCP 服务使用 Ghidra。完整映射将其作为社区案例收录，包括体积优化版本；一致性为项目报告且依赖特定 GPU，本次未重新运行。仓库嵌入了 intro 的原始数据和第三方乐器采样，这些不在其许可范围内，再分发仍是权利问题。",
+      "primary_evidence_urls": [
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/README.md",
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/README.md",
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/verification.md",
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/en/README.md",
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/README.md",
+        "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-MIT"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "eidolon-64k-rust-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:cursor-custom-relay-foxsnowing-report",
@@ -14979,18 +14993,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 308
-    },
-    "units_by_state": {
-      "already-curated": 156,
+      "already-curated": 158,
       "insufficient-evidence": 126,
       "pending": 307
     },
-    "primary_reviewed_units": 222,
-    "catalog_linked_occurrences": 168,
-    "distinct_resource_ids": 162,
+    "units_by_state": {
+      "already-curated": 157,
+      "insufficient-evidence": 126,
+      "pending": 306
+    },
+    "primary_reviewed_units": 223,
+    "catalog_linked_occurrences": 169,
+    "distinct_resource_ids": 163,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

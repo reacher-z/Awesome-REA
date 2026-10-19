@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 296](https://img.shields.io/badge/resources-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 59](https://img.shields.io/badge/papers-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 59](https://img.shields.io/badge/papers-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (18) · [Game](#game) (133) · [App](#app) (44)
-- [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
+- [Native Binary](#native-binary) (21) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
 
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (150) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (151) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1264,6 +1264,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   An official educational challenge investigation connects binary checks to equations and records an original-program validation.
 
   Case study · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-ctf-case/)
+
+- [**Eidolon: an agent-built byte-exact Rust port of a 64k intro**](https://github.com/RovshanMuradov/eidolon-64k-rs)
+
+  Ports Eidolon, Poo-Brain’s winning PC 64k intro from Revision 2017, from its packed 60,928-byte Windows executable to Rust, with chapters on how the original binary works and a separate size-optimized build. The author reports that coordinated OpenCode and Claude Code agents, using Ghidra through the REA MCP server among other tools, captured a controlled-clock reference of the original and matched all 27,000 frame hashes and the full PCM. Exactness rests on the project’s own GPU-specific captures, and the port embeds the original’s data rather than recreating it.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/eidolon-64k-rust-port-case/)
 
 #### Tools, projects and integrations
 

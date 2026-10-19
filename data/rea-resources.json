@@ -2335,5 +2335,37 @@
       "https://reversedwithai.com/policy",
       "https://reversedwithai.com/learn/getting-started-with-rea"
     ]
+  },
+  {
+    "id": "eidolon-64k-rust-port-case",
+    "name": "Eidolon: an agent-built byte-exact Rust port of a 64k intro",
+    "url": "https://github.com/RovshanMuradov/eidolon-64k-rs",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ports Eidolon, Poo-Brain’s winning PC 64k intro from Revision 2017, from its packed 60,928-byte Windows executable to Rust, with chapters on how the original binary works and a separate size-optimized build. The author reports that coordinated OpenCode and Claude Code agents, using Ghidra through the REA MCP server among other tools, captured a controlled-clock reference of the original and matched all 27,000 frame hashes and the full PCM. Exactness rests on the project’s own GPU-specific captures, and the port embeds the original’s data rather than recreating it.",
+    "description_zh": "把 Poo-Brain 在 Revision 2017 夺得 PC 64k 组冠军的 Eidolon，从经过压缩的 60,928 字节 Windows 可执行文件移植到 Rust，并附有说明原二进制工作原理的章节和单独的体积优化版本。作者报告由 OpenCode 与 Claude Code 协同的多个智能体完成工作，所用工具包括经 REA MCP 服务调用的 Ghidra：先在受控时钟下为原作建立参考捕获，再使全部 27,000 帧的哈希与完整 PCM 一致。一致性依据项目自己在特定 GPU 上的捕获，移植版直接嵌入原作数据，而非重新创作这些数据。",
+    "evidence_url": "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin (2026-10-18) holds the regular Rust port for i686-pc-windows-gnu, English and Russian chapters on the original binary, and a size build reported at 44,139 bytes against the original’s 60,928; the 32 KiB target was not reached. README dates the initial agent work to 15–17 October 2026 (about 40 hours and 270 commits), with a human setting goals and override decisions, and lists token use for GPT-6 Astra, GPT-6.1 Sol and Claude Opus 5.5; recovery and integration continued on 18 October. The post’s 48,128-byte figure is the previous size build.",
+      "The port embeds the original’s tables, curves, shader sources and music data, described as taken unchanged from the unpacked executable, plus 15 instrument samples from the Roland GM/GS Sound Set (gm.dls). Capturing a new reference needs the original release archive from scene.org and gm.dls from a Microsoft DirectX redistributable, both checked against pinned SHA-256; the size build reads the system gm.dls instead of embedding it.",
+      "README reports testing on Arch Linux with an NVIDIA GPU, using Rust 1.97 with no external crates, MinGW-w64, Clang, Python, Wine and headless gamescope, with NASM fetched for the size build. Native Windows playback and frame checks are untested, macOS cannot run the intro, and reference capture and the size build are Linux-only. The tool table names Ghidra 12.1.4 through the REA MCP server, objdump, memory dumps after kkrunchy unpacking, Frida, OpenGL/WinMM proxy DLLs and the public 64klang2 source.",
+      "Under a controlled clock the project compares SHA-256 hashes of 27,000 frames and of 159,716,352 bytes of float32 PCM with captures of the original. Shipped frame hashes fit only the recorded RTX 3070 Ti, driver and Wine setup, so other GPUs first need a local reference capture; most of the fault-injection suite needs 5.8 GB of unpublished raw reference data, and 57 tests run without it. Playback was measured once per build, and native Windows and formal acceptance remain open. This collection did not build, run or capture anything.",
+      "Rust code, tools and documentation are dual-licensed MIT or Apache-2.0, and the bundled kkrunchy packer source was placed in the public domain by its original author. README states that the shaders, music, animation data and instrument samples belong to their authors and are not covered by those licenses. The repository commits this original and third-party data, and the reviewed sources document no permission from the rights holders, so redistribution remains a separate rights question."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/rust/verification.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/docs/en/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/README.md",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-MIT",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/LICENSE-APACHE",
+      "https://github.com/RovshanMuradov/eidolon-64k-rs/blob/5850c270f0f600c15c4cdfd2ac679a0e2b1f6984/size/packer/LICENSE"
+    ]
   }
 ]
