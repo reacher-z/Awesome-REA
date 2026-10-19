@@ -7165,5 +7165,40 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "slicer",
+    "name": "slicer",
+    "url": "https://github.com/katana-project/slicer",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Browser-based Java reverse-engineering tool that loads class files and JAR/ZIP archives and disassembles or decompiles them with Vineflower (the default), CFR, Procyon or JASM, compiled to run in the browser, next to its own bytecode disassembler. It draws inheritance and interface graphs and per-method control-flow graphs, searches constant-pool entries, instructions and member declarations or usages, applies Tiny, SRG/TSRG/CSRG or ProGuard mappings, and offers generic transformers that strip or normalize bytecode attributes so decompilers cope better with obfuscation. A JavaScript scripting API can add disassemblers and manipulate the workspace; the README itself recommends Recaf for serious reverse engineering.",
+    "description_zh": "基于浏览器的 Java 逆向工程工具：可加载 class 文件和 JAR/ZIP 归档，使用编译为可在浏览器中运行的 Vineflower（默认）、CFR、Procyon 或 JASM 进行反汇编或反编译，另有自带的字节码反汇编器。它能绘制继承与接口实现关系图以及单个方法的控制流图，搜索常量池条目、指令以及成员声明或使用位置，可应用 Tiny、SRG/TSRG/CSRG 或 ProGuard 映射，还提供剥离或规范化字节码属性的通用转换器，帮助反编译器更好地应对混淆。JavaScript 脚本 API 可添加反汇编器并操作工作区；README 自己也建议，若要进行严肃的逆向工程，应使用 Recaf。",
+    "evidence_url": "https://github.com/katana-project/slicer/blob/1881aae26eed58d12885a21305554aae2cb4ccc5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs as the hosted web app at slicer.run and can be installed as a PWA. The repository has no releases or tags, so this entry pins the reviewed main commit (2026-09-19); local builds are a Vite and Svelte app built with pnpm, and the repository has no CI workflow. The documentation says slicer is in active development and that features may be missing.",
+      "The documentation states that no data is sent to any server and that decompilers run locally in the browser; JDK library classes are fetched on demand from data.slicer.run, and URL parameters can load a JAR, mapping file or script from another site. Input is class files or JAR/ZIP archives from software the user may analyze; HPROF heap dumps and Android binary XML can also be viewed.",
+      "The documentation warns that decompiled output is a best-effort approximation that may not be valid Java, especially for code from non-javac compilers or obfuscators. slicer has no obfuscator-specific deobfuscation, and its remapper does not propagate names through inheritance.",
+      "MIT license for slicer; bundled components such as the Vineflower and Procyon decompilers are Apache-2.0. No classes were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/katana-project/slicer/blob/1881aae26eed58d12885a21305554aae2cb4ccc5/package.json",
+      "https://github.com/katana-project/slicer/tree/1881aae26eed58d12885a21305554aae2cb4ccc5/src/lib/disasm/worker",
+      "https://github.com/katana-project/slicer/blob/1881aae26eed58d12885a21305554aae2cb4ccc5/src/lib/workspace/jdk.ts",
+      "https://github.com/katana-project/slicer/blob/1881aae26eed58d12885a21305554aae2cb4ccc5/LICENSE",
+      "https://docs.katana-project.org/slicer/",
+      "https://docs.katana-project.org/slicer/reference/disasm/",
+      "https://docs.katana-project.org/slicer/reference/deobf/",
+      "https://docs.katana-project.org/slicer/reference/analysis/mapping/",
+      "https://docs.katana-project.org/slicer/reference/analysis/transformers/",
+      "https://docs.katana-project.org/slicer/reference/share/",
+      "https://slicer.run/"
+    ]
   }
 ]
