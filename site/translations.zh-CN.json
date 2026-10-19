@@ -3038,5 +3038,15 @@
       "输入由使用者提供：JAR、ZIP、文件夹或 class 文件，并可通过 -e/--add-external 添加库作为类路径上下文。项目网站上的输出对比由项目自行提供；反编译代码是重建结果，并非原始源码。",
       "采用 Apache-2.0 许可。README 称它是 JetBrains Fernflower、MinecraftForge ForgeFlower 和 FabricMC Fernflower 分支的派生，并延续了 Quiltflower；其控制台入口仍沿用 Fernflower 的 org.jetbrains.java.decompiler 包。本次未反编译任何类。"
     ]
+  },
+  "opensc4-simcity-4-reimplementation-case": {
+    "name": "OpenSC4：SimCity 4 的早期开源重新实现",
+    "requirements": [
+      "所审阅的 main 快照（2024-03-29）只新增了 README 和 Discord 邀请；最后一次代码改动在 2023-02-17，仓库没有发行版或标签。README 称项目是一个开源“克隆”，旨在利用现代硬件并在其他平台上运行。代码涵盖 DBPF 解析、写死为 Timbuktu 区域的区域视图、城市地形视图和 DAT 浏览器，没有分区、预算或发展模拟；所审文件未说明如何分析 SimCity 4。",
+      "需要使用者自有的 SimCity 4 安装：启动画面会询问其目录，并检查 SimCity 4.ini、Sound.dat、Intro.dat、SimCity_1.dat 至 SimCity_5.dat 以及 EP1.dat，随后从该目录读取 .sc4 城市存档、config.bmp 和区域音乐。.gitignore 排除了 SimCity 4 数据，但仓库中仍有一个“Graphics Rules.sgr.backup”文本文件，其文件头称由 SC4Launcher 生成。",
+      "在 Godot 编辑器中从源码运行：README 的步骤是安装 Godot、导入克隆的项目并运行，未指明版本。project.godot 使用 config_version 4，脚本调用 yield、Directory 等 Godot 3 API；仓库不提供导出预设或打包版本。",
+      "仓库没有测试或 CI 工作流，也未公布与 SimCity 4 行为或输出的对比；本合集未运行该项目。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件；九个 GDScript 文件带有署名“The OpenSC4 contributors”（2023）的 AGPL-3.0-or-later 文件头，utils/logger.gd 则是 KOBUGE Games 的 godot-logger 中采用 MIT 许可的代码。SimCity 4 及其数据的权利仍归其所有者。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }
