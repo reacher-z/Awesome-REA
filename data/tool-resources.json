@@ -10556,5 +10556,37 @@
       "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/.github/workflows/publish.yml",
       "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/LICENSE"
     ]
+  },
+  {
+    "id": "rsdkv4-sonic-1-2-decomp-case",
+    "name": "RSDKv4 Decompilation: Retro Engine v4 and the Sonic 1 & 2 (2013) menus",
+    "url": "https://github.com/RSDKModding/RSDKv4-Decompilation",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles Retro Engine (RSDK) v4, the engine behind Sonic the Hedgehog and Sonic the Hedgehog 2 (2013), together with the games’ natively coded menus, and builds it for Windows, Linux and Android. The engine runs the game scripts contained in the official releases’ data files, which users must supply. The project adds a script compiler, a mod loader and an experimental online mode for Sonic 2’s 2P VS; it is the predecessor of the same group’s RSDKv5 decompilation.",
+    "description_zh": "反编译 Retro Engine（RSDK）v4——《索尼克》与《索尼克 2》（2013）所用的引擎——以及两款游戏中以原生代码实现的菜单，可构建 Windows、Linux 与 Android 版本。引擎运行官方发行版数据文件中的游戏脚本，这些文件需由使用者自备。项目增加了脚本编译器、模组加载器，以及《索尼克 2》双人对战的实验性联网模式；它是同一团队 RSDKv5 反编译项目的前身。",
+    "evidence_url": "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-09-06 main head, 13 commits after release 1.3.3 (2025-11-02). README calls it a complete decompilation of Retro Engine v4 and the menus from Sonic 1 and 2 (2013); the licence says most code is meant to be functionally the same as the specified RSDK version, so no byte-matching build is claimed. RETRO_REVISION defaults to 3 (Origins), and RETRO_ORIGINAL_CODE removes the project’s changes but, per CMake, cannot build a playable game.",
+      "It will not run without assets from an official release of Sonic 1 or Sonic 2: README names Sonic Origins on Steam, the Epic Games Store and Switch, and the now-delisted iOS and Android releases. The FAQ notes that Origins data files are packed as RSDKv5 datapacks and lack the games’ music and sound effects, and that release builds and autobuilds disable the DLC and block Origins’ Amy; the repository ships no game data.",
+      "Clone recursively, because GitHub’s source ZIPs omit the stb, tinyxml2, asio and Flatpak submodules. CMake 3.10+ builds use Visual Studio with vcpkg (GLEW, SDL2, libogg, libvorbis) on Windows, the listed GLEW, SDL2 and Ogg/Vorbis packages on Linux, and a separate Android guide; Xcode, UWP and Flatpak projects are included, while Vita, Switch, 3DS and WebAssembly ports are unofficial forks. Sonic 2’s online 2P VS needs a Python 3.8+ server that README calls a very unstable proof of concept.",
+      "CI builds Windows x86 and x64, Android and Linux binaries with the Plus DLC disabled; it runs no tests, and the project publishes no comparison with the original engine binaries. The FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
+      "The custom RSDKv3/v4 Decompilation Source Code License v2 requires distributed prebuilt executables to default to DLC off, forbids commercial use and distributing game assets other than unique modded ones, requires crediting the original RSDK author Christian “Taxman” Whitehead and the decompilation authors Rubberduckycooly and st×tic, and binds forks to the same terms. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/FAQ.md",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/LICENSE.md",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/CMakeLists.txt",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/.gitmodules",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/tree/a7f5195e21fdad7b75e4587e249013feeea9e6f3/RSDKv4/NativeObjects",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/.github/workflows/build.yml",
+      "https://github.com/RSDKModding/RSDKv4-Decompilation/releases/tag/1.3.3"
+    ]
   }
 ]
