@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 352](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 353](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-353-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (165) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (165) · [应用](#app) (50)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1482,6 +1482,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   通过 HASM 文件反汇编和重新汇编受支持的 React Native Hermes 字节码包，为明确支持的旧版 HBC 提供字节码检查与修改能力。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hbctool/)
+
+- [**Vineflower Java 反编译器**](https://github.com/Vineflower/vineflower)
+
+  源自 Fernflower 的 Java 及其他 JVM 语言反编译器，延续了 ForgeFlower、Fabric 和 Quiltflower 等分支的工作，注重输出质量和对现代 Java 的支持，包括 Java 21+ 的记录、密封类、switch 表达式和模式匹配。其命令行接受 JAR、ZIP、文件夹或 class 文件，可输出到文件夹、归档或控制台，支持多线程反编译和自动格式化。它也可作为 Maven Central 上的库嵌入使用，或通过替换 Fernflower 的插件在 IntelliJ IDEA 中使用；常规发布 JAR 内置三个插件，包括 Kotlin 支持和变量重命名。
+
+  工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/vineflower/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制

@@ -59,7 +59,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — A list of Reverse Engineering articles, books, and papers **[2,750 stars]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — A curated list of awesome Android Reverse Engineering training, resources, and tools. **[2,739 stars]**
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift Obfuscator that protects iOS apps against reverse engineering attacks. **[2,548 stars]**
-- [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — Modern Java decompiler aiming to be as accurate as possible, with an emphasis on output quality. Fork of the Fernflower decompiler. **[2,409 stars]**
+- [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — Modern Java decompiler aiming to be as accurate as possible, with an emphasis on output quality. Fork of the Fernflower decompiler. **[2,409 stars]** · Curated: [Vineflower](https://awesomerea.org/resources/vineflower/)
 - [P4nda0s/reverse-skills](https://github.com/P4nda0s/reverse-skills) — Reverse engineering skills plugin for Claude Code **[2,285 stars]**
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — Xiaomi Smart Home Device Reverse Engineering and Hacking **[2,282 stars]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — Decompilation of The Legend of Zelda: Breath of the Wild (Switch 1.5.0) **[2,236 stars]** · Curated: [Breath of the Wild: per-function matching decompilation of the Switch executable](https://awesomerea.org/resources/botw-decomp-case/)

@@ -59,7 +59,7 @@
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — 逆向工程文章、书籍和论文列表。 **[2,750 星标]**
 - [user1342/Awesome-Android-Reverse-Engineering](https://github.com/user1342/Awesome-Android-Reverse-Engineering) — 精选 Android 逆向工程培训、资源和工具列表。 **[2,739 星标]**
 - [rockbruno/swiftshield](https://github.com/rockbruno/swiftshield) — 🔒 Swift 混淆工具，保护 iOS 应用免受逆向工程攻击。 **[2,548 星标]**
-- [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — 现代化 Java 反编译器，追求尽可能准确的结果，注重输出质量。基于 Fernflower 反编译器分支开发。 **[2,409 星标]**
+- [Vineflower/vineflower](https://github.com/Vineflower/vineflower) — 现代化 Java 反编译器，追求尽可能准确的结果，注重输出质量。基于 Fernflower 反编译器分支开发。 **[2,409 星标]** · 精选：[Vineflower Java 反编译器](https://awesomerea.org/zh/resources/vineflower/)
 - [P4nda0s/reverse-skills](https://github.com/P4nda0s/reverse-skills) — 面向 Claude Code 的逆向工程技能插件。 **[2,285 星标]**
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — 小米智能家居设备逆向工程与破解研究。 **[2,282 星标]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — 《塞尔达传说：旷野之息》（Switch 1.5.0）的反编译代码。 **[2,236 星标]** · 精选：[《旷野之息》：Switch 主程序的逐函数一致性反编译](https://awesomerea.org/zh/resources/botw-decomp-case/)

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 352](https://img.shields.io/badge/resources-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 353](https://img.shields.io/badge/resources-353-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (165) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (165) · [App](#app) (50)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1481,6 +1481,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Disassemble and reassemble supported React Native Hermes bytecode bundles through HASM files, enabling bytecode inspection and editing for the explicitly supported legacy HBC versions.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/hbctool/)
+
+- [**Vineflower**](https://github.com/Vineflower/vineflower)
+
+  Fernflower-derived decompiler for Java and other JVM languages that continues the ForgeFlower, Fabric and Quiltflower forks, focused on output quality and modern Java, including records, sealed classes, switch expressions and pattern matching through Java 21+. Its command line takes a JAR, ZIP, folder or class file and writes a folder, an archive or console output, with multithreaded decompilation and automatic formatting. It can also be embedded as a library from Maven Central or used in IntelliJ IDEA through a plugin that replaces Fernflower, and the regular release JAR bundles three plugins, including Kotlin support and variable renaming.
+
+  Tool · JVM · [Requirements & evidence](https://awesomerea.org/resources/vineflower/)
 
 <a id="native-binary"></a>
 ### Native Binary
