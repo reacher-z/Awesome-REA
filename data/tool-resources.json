@@ -7831,5 +7831,38 @@
       "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/LICENSE",
       "https://github.com/symgraph/GhidrAssistMCP/releases/tag/3.0.0"
     ]
+  },
+  {
+    "id": "libimobiledevice",
+    "name": "libimobiledevice",
+    "url": "https://github.com/libimobiledevice/libimobiledevice",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "C library and command-line tools that speak iOS devices' native service protocols without Apple's proprietary libraries or a jailbreak. Over usbmuxd or Wi-Fi sync it implements lockdownd pairing and services such as AFC file access, backup, app installation, crash reports, syslog, debugserver and WebKit inspection, plus Cython bindings.",
+    "description_zh": "用 C 编写的库及命令行工具，无需 Apple 的专有库或越狱即可使用 iOS 设备的原生服务协议通信。它经 usbmuxd 或 Wi-Fi 同步连接，实现 lockdownd 配对，以及 AFC 文件访问、备份、应用安装、崩溃报告、系统日志、debugserver 和 WebKit 检查等服务，并提供 Cython 绑定。",
+    "evidence_url": "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release: 1.4.0 (2025-10-10), which NEWS calls a development release; it added MbedTLS support, Apple TV wireless pairing and iOS 17+ personalized developer disk image mounting, among other changes. The reviewed master commit of 2026-06-10 is nine commits ahead, mostly AFC and afcclient fixes.",
+      "Source builds use autotools and pkg-config with libplist 2.3.0+, libusbmuxd 2.0.2+, libimobiledevice-glue 1.3.0+ and libtatsu 1.0.3+ from the same organization (README says libtatsu must be built from source), plus OpenSSL by default, GnuTLS or MbedTLS; Doxygen and Cython are optional. The README dependency list includes the usbmuxd daemon and says the library is tested on Linux, macOS, Windows and Android.",
+      "Work starts from an iOS device the user controls and pairs with the host (idevicepair); the repository contains no Apple software. Screenshots and location simulation need a mounted Apple developer disk image, which is not included. README says library documentation is not yet available and points to the bundled utilities' source; each utility has a manual page.",
+      "GitHub Actions builds and installs the library on Ubuntu, macOS and Windows (MSYS2 MINGW64 and MINGW32) against the latest builds of its sibling libraries, on pushes, pull requests and a monthly schedule. The repository has no test suite, and no workflow exercises a device.",
+      "LGPL-2.1 for the library and utilities. The bundled ed25519 (zlib-style license) and Stanford SRP-based libsrp6a-sha512 (BSD-style) keep their own licenses. README states that the project is independent and not authorized, sponsored or approved by Apple."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/NEWS",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/configure.ac",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/.github/workflows/build.yml",
+      "https://github.com/libimobiledevice/libimobiledevice/tree/fa0f79190142bc309307967c058f89c1b36eb6b8/src",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/3rd_party/README.md",
+      "https://github.com/libimobiledevice/libimobiledevice/blob/fa0f79190142bc309307967c058f89c1b36eb6b8/COPYING",
+      "https://github.com/libimobiledevice/libimobiledevice/releases/tag/1.4.0"
+    ]
   }
 ]

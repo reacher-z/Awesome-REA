@@ -3160,5 +3160,15 @@
       "写入类工具会修改程序或项目，包括名称、类型、注释、结构体、反汇编、分析选项和保存操作；读写两类工具分别带有对应的 MCP 标注。import_file、export_program 和五个 Ghidra 脚本工具默认禁用；无界面模式下的 agent_lab 配置会开放沙箱内的程序导出，任意路径导入和脚本仍保持禁用。README 未说明任何客户端认证机制；服务器会拒绝 Origin 请求头不在允许范围内的浏览器请求。",
       "项目的现代化评审文档称，在 Ghidra 12.0 和 12.1 上运行 buildExtension test 均通过 90 项测试，并记录了 2026-10-09 在 Ghidra 12.1 上的一次实机冒烟测试，而四个项目控制工具是在该测试之后加入的；以上均为项目自报结果。采用 MIT 许可。仓库已从 jtang613/GhidrAssistMCP 迁移，README 推荐作者自己的 GhidrAssist 客户端。本次未运行扩展、服务器或任何分析，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "libimobiledevice": {
+    "name": "libimobiledevice iOS 设备协议库",
+    "requirements": [
+      "最新发行版为 1.4.0（2025-10-10），NEWS 称其为开发版；该版本新增了 MbedTLS 支持、Apple TV 无线配对以及 iOS 17+ 个性化开发者磁盘映像挂载等改动。所审阅的 master 提交（2026-06-10）比它多 9 个提交，主要是 AFC 与 afcclient 的修复。",
+      "源码构建使用 autotools 和 pkg-config，依赖同一组织维护的 libplist 2.3.0+、libusbmuxd 2.0.2+、libimobiledevice-glue 1.3.0+ 和 libtatsu 1.0.3+（README 称 libtatsu 需从源码构建），TLS 默认用 OpenSSL，也可选 GnuTLS 或 MbedTLS；Doxygen 与 Cython 为可选项。README 的依赖列表包含 usbmuxd 守护进程，并称该库已在 Linux、macOS、Windows 和 Android 上测试。",
+      "使用前提是一台由使用者掌控、并与主机完成配对（idevicepair）的 iOS 设备；仓库不含任何 Apple 软件。截屏和模拟定位需要挂载 Apple 开发者磁盘映像，仓库不提供该映像。README 称库的使用文档尚未提供，建议参考随附实用工具的源码；每个实用工具都有手册页。",
+      "GitHub Actions 在推送、拉取请求及每月定时任务中，针对其同系列库的最新构建，在 Ubuntu、macOS 和 Windows（MSYS2 MINGW64 与 MINGW32）上构建并安装该库。仓库没有测试套件，也没有工作流连接实际设备运行。",
+      "库与实用工具采用 LGPL-2.1 许可。随附的 ed25519（zlib 风格许可）和基于 Stanford SRP 的 libsrp6a-sha512（BSD 风格许可）保留各自许可。README 声明本项目为独立软件，未经 Apple 授权、赞助或认可。"
+    ]
   }
 }
