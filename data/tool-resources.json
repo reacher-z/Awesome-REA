@@ -9509,5 +9509,37 @@
       "https://github.com/ma1co/Sony-PMCA-RE/releases/tag/v0.18",
       "https://openmemories.readthedocs.io/devices.html"
     ]
+  },
+  {
+    "id": "qbdi",
+    "name": "QBDI",
+    "url": "https://github.com/QBDI/QBDI",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Quarkslab's modular dynamic binary instrumentation (DBI) framework, which JIT-recompiles a program's basic blocks inside its own process so that an instrumentation tool can register callbacks before or after instructions, on memory reads and writes, and on VM events. The engine is a library that can start an instrumented execution anywhere in a process, scripted from C, C++, Python (PyQBDI) or Frida JavaScript. It has no preferred injection method: it bundles the LD_PRELOAD-based QBDIPreload for Linux and macOS dynamic executables and is integrated with Frida.",
+    "description_zh": "Quarkslab 开发的模块化动态二进制插桩（DBI）框架：在目标进程内部按基本块对程序进行 JIT 重编译，使插桩工具可以在指令执行前后、内存读写以及虚拟机事件上注册回调。引擎以库的形式提供，可在进程中任意位置启动插桩执行，并可通过 C、C++、Python（PyQBDI）或 Frida JavaScript 编写脚本。它不绑定特定注入方式：自带基于 LD_PRELOAD 的 QBDIPreload，用于 Linux 和 macOS 动态可执行文件，并已与 Frida 集成。",
+    "evidence_url": "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/README.rst",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README status table supports execution and memory-access information for x86-64 and x86 on Android, Linux, macOS and Windows, ARM on Android and Linux, and AArch64 on Android, Linux, macOS and iOS; iOS support is described as unstable and needs a jailbroken device. Latest release at review: v0.12.1, published 2026-01-07, with Android, iOS, macOS and Windows packages; Linux packages last appear in v0.12.0 (2025-10-14). PyQBDI 0.12.1 on PyPI requires Python 3.8+.",
+      "The reviewed dev-next commit is 12 commits ahead of v0.12.1; the README says all new work merges there and there is no scheduled release plan. Source builds need CMake 3.12+, Ninja or Make and a C++17 toolchain, and build a bundled LLVM statically because QBDI uses private LLVM APIs of one specific version; per-platform configuration scripts cover Linux, macOS, Windows (with a native Python 3 and Visual Studio) and Android NDK cross-compilation.",
+      "The README states that QBDI does not handle signals, new-thread creation or C++ exceptions. Its documentation adds that the instrumentation tool shares the target's heap and libraries, so non-reentrant code such as the heap allocator should be left to the execution broker outside the instrumentation range, and the OS loader itself cannot be instrumented. Users supply their own target programs and an injection route.",
+      "LICENSE.txt places QBDI under Apache-2.0 and lists statically linked components: LLVM (Apache-2.0 with LLVM exceptions), spdlog, fmtlib, Catch2, pybind11 and a GPLv3/Apache-2.0 SHA-256 implementation; GitHub could not classify the combined file. No programs were instrumented for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/README.rst#L18-L52",
+      "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/docs/source/intro.rst",
+      "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/docs/source/api_description.rst",
+      "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/docs/source/changelog.rst",
+      "https://github.com/QBDI/QBDI/blob/3318580550215a0c7a64e9c2476e02eb5fc55f14/LICENSE.txt",
+      "https://github.com/QBDI/QBDI/releases/tag/v0.12.1",
+      "https://pypi.org/project/PyQBDI/0.12.1/"
+    ]
   }
 ]

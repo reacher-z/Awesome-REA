@@ -3627,5 +3627,14 @@
       "README 称该项目是基于逆向工程的早期实验，并警告可能损坏相机，开发者不承担任何责任。固件文件的解包由独立的 fwtool 项目负责，本次未审阅；其推荐的 OpenMemories 应用和框架也未审阅。",
       "采用 MIT 许可。仓库中没有 Sony 固件或应用；updatershell/fdat 下预先构建的更新程序载荷由 pack.py 用项目自身的源码打包生成。本次未连接相机，也未运行任何程序。"
     ]
+  },
+  "qbdi": {
+    "name": "QBDI 动态二进制插桩框架",
+    "requirements": [
+      "README 的状态表显示，x86-64 和 x86 在 Android、Linux、macOS 和 Windows 上，ARM 在 Android 和 Linux 上，AArch64 在 Android、Linux、macOS 和 iOS 上均支持执行与内存访问信息；iOS 支持被描述为不稳定，且需要越狱设备。审阅时最新版本为 v0.12.1，发布于 2026-01-07，提供 Android、iOS、macOS 和 Windows 软件包；Linux 软件包最后见于 v0.12.0（2025-10-14）。PyPI 上的 PyQBDI 0.12.1 需要 Python 3.8+。",
+      "所审阅的 dev-next 提交领先 v0.12.1 共 12 个提交；README 说明所有新功能都合并到该分支，且没有固定的发布计划。从源码构建需要 CMake 3.12+、Ninja 或 Make 以及 C++17 工具链，并会静态构建自带的 LLVM，因为 QBDI 使用特定版本 LLVM 的私有 API；各平台的配置脚本涵盖 Linux、macOS、Windows（需原生 Python 3 和 Visual Studio）以及基于 Android NDK 的交叉编译。",
+      "README 说明 QBDI 不处理信号、新线程创建和 C++ 异常。其文档还指出，插桩工具与目标程序共用堆和库，因此堆分配器等不可重入代码应交给插桩范围之外的执行代理处理，且操作系统加载器本身无法插桩。用户需自备目标程序和注入途径。",
+      "LICENSE.txt 说明 QBDI 采用 Apache-2.0 许可，并列出静态链接的组件：LLVM（Apache-2.0 附 LLVM 例外）、spdlog、fmtlib、Catch2、pybind11，以及采用 GPLv3/Apache-2.0 的 SHA-256 实现；GitHub 无法识别这份合并许可文件。本条目未对任何程序进行插桩。"
+    ]
   }
 }
