@@ -8814,5 +8814,42 @@
       "https://github.com/google/binexport/blob/1fc1d734db5924c9bc9067ae244cb9b94c94efcb/LICENSE",
       "https://github.com/google/binexport/releases/tag/v12-20240417-ghidra_11.0.3"
     ]
+  },
+  {
+    "id": "karta",
+    "name": "Karta",
+    "url": "https://github.com/CheckPointSW/Karta",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Source-code-assisted IDA Python plugin from Check Point Research that finds and matches open-source libraries compiled into large binaries and firmware. Its identifier script reports which supported libraries, such as OpenSSL, zlib, libpng and net-snmp, are present and fingerprints their versions; the matcher then uses a JSON configuration built from that library version to locate its compiled files by their original function order, match their functions and the external libc functions they call, and export selected matches as IDA names. The bundled Thumbs Up scripts improve IDA's function analysis beforehand, including ARM/Thumb separation in firmware.",
+    "description_zh": "Check Point Research 开发的源码辅助 IDA Python 插件，用于在大型二进制和固件中查找并匹配编译进去的开源库。识别脚本会列出二进制中存在哪些受支持的库（如 OpenSSL、zlib、libpng 和 net-snmp），并识别其版本；匹配脚本再借助由该库版本生成的 JSON 配置，按原始函数顺序定位各个编译单元，匹配其中的函数及其调用的外部 libc 函数，并可把选定的匹配结果作为名称导入 IDA。附带的 Thumbs Up 脚本可预先改进 IDA 的函数分析，包括区分固件中的 ARM 与 Thumb 代码。",
+    "evidence_url": "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.1.0, published 2021-05-18; the reviewed master commit, from 2022-03-15, adds only README and CI workflow changes. The README says the original author can no longer maintain the repository after leaving Check Point Research, citing the IDA Pro versions and regression-test requirements involved.",
+      "Requires IDA Pro 7.4 or newer with Python 3; v1.2.0 is the last release for Python 2 and older IDA versions. setup.py installs dependencies including elementals, sark, click and scikit-learn, while requirements.txt still names the old sklearn package. The scripts are loaded through IDA's script-file menu rather than installed as plugins. IDA is the only implemented disassembler backend, although the docs describe an interface for adding others; compatibility with current IDA releases was not checked.",
+      "Run the scripts on a binary that IDA has already analyzed well, and select the Windows option for Windows-compiled binaries. Matching needs a configuration for the exact library version: the repository ships configurations for OpenSSL 1.0.1j, libpng 1.2.29, libtiff 4.0.8 and zlib 1.2.3 and 1.2.11, and others are generated with karta_analyze_src.py, which also drives IDA, from the static library and object files of a library you compile yourself, following the notes in compilations/. Upstream advises backing up the binary before Thumbs Up, which makes major changes to its analysis.",
+      "MIT license. The identifier covers 15 library modules, including the closed-source Treck library, which is detected only. Matches are heuristic proposals whose matching rules differ in accuracy and are shown in different colors, so they need analyst review. No binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/Installation.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/Open%20Source%20Fingerprinting.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/Matching%20supported%20libraries.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/Compiling%20a%20configuration.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/Thumbs%20Up.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/docs/disassembler.md",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/setup.py",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/requirements.txt",
+      "https://github.com/CheckPointSW/Karta/blob/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/LICENSE",
+      "https://github.com/CheckPointSW/Karta/tree/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/src/libs",
+      "https://github.com/CheckPointSW/Karta/tree/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/configs",
+      "https://github.com/CheckPointSW/Karta/releases/tag/v2.1.0"
+    ]
   }
 ]

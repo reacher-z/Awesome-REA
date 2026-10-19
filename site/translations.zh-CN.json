@@ -3440,5 +3440,14 @@
       "原生插件构建需要 CMake 3.20+、Boost 1.83+（仓库附带部分副本）、在 Linux 和 macOS 上使用 GCC 15 或较新的 Clang、在 Windows 上使用 Visual Studio 2022 与 Windows 11 SDK，并会下载 Abseil、GoogleTest、Protocol Buffers 以及 IDA 和 Binary Ninja SDK；Linux 首选构建环境为 Debian 11。Ghidra 扩展使用 OpenJDK 21+、Gradle 8.7+ 和 Ghidra 11.0.3 构建。",
       "采用 Apache-2.0 许可。README 声明它不是 Google 官方产品。本条目未导出或比对任何二进制文件。"
     ]
+  },
+  "karta": {
+    "name": "Karta 开源库匹配插件",
+    "requirements": [
+      "审阅时最新版本为 v2.1.0，发布于 2021-05-18；所审阅的 master 分支提交日期为 2022-03-15，此后只增加了 README 和 CI 工作流的改动。README 称原作者离开 Check Point Research 后已无法继续维护该仓库，原因是运行全部回归测试的要求繁多，且涉及多个 IDA Pro 版本。",
+      "需要 IDA Pro 7.4 或更高版本及 Python 3；v1.2.0 是支持 Python 2 和旧版 IDA 的最后一个版本。setup.py 会安装 elementals、sark、click 和 scikit-learn 等依赖，而 requirements.txt 仍写着已弃用的 sklearn 包名。这些脚本通过 IDA 的脚本文件菜单加载，无需安装为插件。目前只实现了 IDA 这一种反汇编器后端，文档虽介绍了接入其他反汇编器的接口；未检查与当前 IDA 版本的兼容性。",
+      "应在 IDA 已充分分析的二进制上运行这些脚本；Windows 编译的二进制需勾选 Windows 选项。匹配需要对应库确切版本的配置：仓库自带 OpenSSL 1.0.1j、libpng 1.2.29、libtiff 4.0.8 以及 zlib 1.2.3 和 1.2.11 的配置，其他版本需按照 compilations/ 中的说明自行编译该库，再用 karta_analyze_src.py（同样需要调用 IDA）从静态库和目标文件生成配置。上游建议在运行 Thumbs Up 前备份二进制，因为它会大幅修改分析结果。",
+      "采用 MIT 许可。识别脚本包含 15 个库模块，其中闭源的 Treck 库只能检测是否存在。匹配结果是启发式的候选，不同匹配规则的准确度不同并以不同颜色标示，需要分析人员复核。本次未分析任何二进制。"
+    ]
   }
 }
