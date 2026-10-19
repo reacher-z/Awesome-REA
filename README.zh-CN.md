@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 312](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-312-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 313](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-313-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 158](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 71](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (71) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (71) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1788,6 +1788,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   由社区独立开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能够打开并初步分析用户态与内核崩溃转储，连接 cdb 远程调试服务器和 KD 内核目标，并在可分别寻址的会话中执行任意调试器命令。其 README 建议希望在 WinDbg 内使用 AI 的用户选择微软官方的 WinDbg MCP，并把本项目定位为面向其他 MCP 客户端、远程 HTTP 使用和批量转储分析的替代方案；项目自称只是执行真实调试器命令的封装，而非自动修复工具。
 
   集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/mcp-windbg/)
+
+- [**Wireshark MCP 基于 tshark 的协议解析服务器**](https://github.com/bx33661/Wireshark-MCP)
+
+  封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。
+
+  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark-mcp/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
