@@ -1868,13 +1868,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior.
 
-  Project · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-upstream/)
+  Project · Official REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-upstream/)
 
 - [**Official reverse-engineer-anything skill**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything)
 
   Target routing, connection recovery and evidence practices for agents using REA.
 
-  Integration · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-official-skill/)
+  Integration · Official REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-official-skill/)
 
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea)
 
@@ -2059,13 +2059,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   A task-oriented reverse-engineering resource list by REA's maintainer, useful for broader tools and foundations.
 
-  Collection · REA maintainer · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/morluto-awesome-re/)
+  Collection · REA maintainer · Targets: Website, Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/morluto-awesome-re/)
 
 - [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases)
 
   A bilingual collection of REA and other AI-assisted reverse engineering cases, with source links and explicit distinctions between reported and reproduced outcomes.
 
-  Collection · Community REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/awesome-rea-cases/)
+  Collection · Community REA · Targets: Website, Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/awesome-rea-cases/)
 
 - [**awesome-rea (yibie): verification-focused projects and practice reports**](https://github.com/yibie/awesome-rea)
 

@@ -1869,13 +1869,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。
 
-  项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
+  项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
 
 - [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything)
 
   官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。
 
-  集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
+  集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
 
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea)
 
@@ -2060,13 +2060,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。
 
-  合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
+  合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 
 - [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases)
 
   中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。
 
-  合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
+  合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
 
 - [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea)
 

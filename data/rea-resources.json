@@ -19,7 +19,8 @@
       "game",
       "app",
       "binary",
-      "firmware"
+      "firmware",
+      "protocol"
     ],
     "kind": "project"
   },
@@ -43,7 +44,8 @@
       "game",
       "app",
       "binary",
-      "firmware"
+      "firmware",
+      "protocol"
     ],
     "kind": "integration"
   },
@@ -606,7 +608,8 @@
       "game",
       "app",
       "binary",
-      "firmware"
+      "firmware",
+      "protocol"
     ],
     "kind": "collection"
   },
@@ -630,7 +633,8 @@
       "game",
       "app",
       "binary",
-      "firmware"
+      "firmware",
+      "protocol"
     ],
     "kind": "collection"
   },
