@@ -15779,12 +15779,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111528528374353931"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@TheAvinashSingh, 2026-10-17) asks whether anyone has tried using REA to reverse engineer LG TVs to make them smoother. It is a question: no model, attempt, tool output or result is described or linked, and the GitHub account of the same name holds no LG-related repository. Retain the lead as an idea without a catalog mapping.",
+      "reason_zh": "作者的纯文字帖子（@TheAvinashSingh，2026-10-17）询问是否有人尝试过用 REA 逆向 LG 电视，让其运行更流畅。这只是提问：帖子没有描述或链接任何机型、尝试、工具输出或结果，同名 GitHub 账号中也没有与 LG 相关的仓库。保留此线索作为设想，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111528528374353931"
+      ],
       "catalog_matches": []
     },
     {
@@ -15834,12 +15836,15 @@
         "https://x.com/i/status/2111530936441446417",
         "https://x.com/i/status/2111401821793144983"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two posts present the same video demonstration. In it, Opus 5.5 plans, REA turns an unnamed legacy billing module of 212 files into a spec with 14 endpoints, 37 rules and 9 edge cases, twelve Sonnet 5.5 agents each build one module from a slice of that spec, and an REA verify step reports 148 of 148 behaviours matching, in 7 min 05 s for $0.88. @Primee32 (2026-10-17) says the video marks this comparison as illustrative; @noisyb0y1 (2026-10-17) presents it as an expensive Anthropic system. No codebase, spec, rebuild or replay log is linked, and the GitHub account in @Primee32’s profile has no public repositories. Retain the lead without a catalog mapping; the figures are illustrative by the post’s own account, and no Anthropic origin is established.",
+      "reason_zh": "两条帖子展示的是同一段视频演示：由 Opus 5.5 制定计划，REA 把一个包含 212 个文件、未具名的遗留计费模块转化为含 14 个端点、37 条规则和 9 个边界情况的规格，十二个 Sonnet 5.5 智能体各依据规格的一部分构建一个模块，最后 REA 的验证步骤报告 148 项行为全部一致，耗时 7 分 05 秒，花费 0.88 美元。@Primee32（2026-10-17）称视频已将这一对比标注为示意性质；@noisyb0y1（2026-10-17）则把它说成是 Anthropic 的一套昂贵系统。两帖均未链接代码库、规格、重建结果或回放日志，@Primee32 主页中的 GitHub 账号也没有公开仓库。保留此线索而不建立目录映射；按帖子自己的说法这些数字只是示意，也未确立其出自 Anthropic。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111530936441446417",
+        "https://x.com/i/status/2111401821793144983"
+      ],
       "catalog_matches": []
     },
     {
@@ -15854,12 +15859,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111546180207317426"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@LaSpookyEXE, 2026-10-17) argues that, rather than using AI to reverse engineer Windows itself, a better use would be finding workarounds that add unsupported hardware or software to Windows XP or 7. It is an opinion: no target, attempt, tool or result is described or linked, and the GitHub account of the same name has no public repositories. Retain the lead as an idea without a catalog mapping.",
+      "reason_zh": "作者的纯文字帖子（@LaSpookyEXE，2026-10-17）认为，与其用 AI 逆向 Windows 本身，不如设法为 Windows XP 或 7 加入对原本不支持的硬件或软件的兼容。这只是观点：帖子没有描述或链接任何目标、尝试、工具或结果，同名 GitHub 账号也没有公开仓库。保留此线索作为设想，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111546180207317426"
+      ],
       "catalog_matches": []
     },
     {
@@ -15874,12 +15881,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111454921589710905"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@paomiange1, 2026-10-17, in Chinese) relays someone else’s project: within days, AI alone reportedly ported the Switch version of Diablo II natively to Android at a steady 60 fps through decompilation, symbol recovery and cross-platform refactoring, with the developer writing no code by hand and open-sourcing the whole project. The post names and links no project or developer. The catalog’s D2R Mobile record covers a different method, rehosting the Switch program on Apple devices, and several Android forks of it exist on GitHub, but the post identifies none. Retain the lead without a catalog mapping; the port, its performance claim and the AI-only account are unestablished.",
+      "reason_zh": "所引帖子（@paomiange1，2026-10-17，中文）转述了他人的项目：据称仅靠 AI，在几天内通过反编译、符号还原和跨平台重构，把 Switch 版暗黑破坏神 2 原生移植到安卓，并稳定运行在 60 帧；开发者本人一行代码都没有手写，并开源了整个项目。帖子没有给出项目或开发者的名称和链接。目录中的 D2R Mobile 条目采用的是另一种方法，即在 Apple 设备上重新托管 Switch 程序，GitHub 上也有多个基于它的安卓分支，但帖子没有指明其中任何一个。保留此线索而不建立目录映射；移植本身、性能说法及“纯靠 AI”的说法均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111454921589710905"
+      ],
       "catalog_matches": []
     }
   ],
@@ -15889,15 +15898,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 198,
-      "insufficient-evidence": 199,
-      "pending": 194
+      "insufficient-evidence": 203,
+      "pending": 190
     },
     "units_by_state": {
       "already-curated": 196,
-      "insufficient-evidence": 199,
-      "pending": 194
+      "insufficient-evidence": 203,
+      "pending": 190
     },
-    "primary_reviewed_units": 337,
+    "primary_reviewed_units": 341,
     "catalog_linked_occurrences": 210,
     "distinct_resource_ids": 203,
     "distinct_paper_ids": 1,
