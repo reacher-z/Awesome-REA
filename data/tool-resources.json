@@ -14805,5 +14805,35 @@
       "https://github.com/redasm-dev/kb/blob/5452426b6bb12b41f6bcbe72451e541cbe021ec7/LICENSE",
       "https://github.com/redasm-dev/redasm/releases/tag/v4.0.0-beta3"
     ]
+  },
+  {
+    "id": "protobuf-inspector",
+    "name": "protobuf-inspector",
+    "url": "https://github.com/mildsunrise/protobuf-inspector",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Parses Protocol Buffers blobs (proto2 or proto3) without their .proto definition and prints a colored view of the fields in wire order, trying each length-delimited chunk as a nested message, then a packed array, a string and finally a hexdump. Analysts record what they work out in a protobuf_config.py file, with field types and names, message and enum types and custom native types, until the parser no longer has to guess. Field names, zig-zag encoding, signedness and integer-versus-float choices cannot be read from the wire, and the README says guesses can be wrong, especially for small chunks.",
+    "description_zh": "无需对应的 .proto 定义即可解析 Protocol Buffers 数据块（proto2 或 proto3），按线路编码顺序以彩色输出字段；对每个长度限定的数据块，依次尝试解析为嵌套消息、打包数组、字符串，最后退回十六进制转储。分析者把推断出的内容写入 protobuf_config.py，包括字段类型与名称、消息和枚举类型以及自定义原生类型，直到解析器不再需要猜测。字段名、zig-zag 编码、有无符号以及整数还是浮点数，都无法从线路数据中读出；README 也说明猜测可能出错，小数据块尤甚。",
+    "evidence_url": "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Development is dormant: the only release, 0.2 on PyPI and tagged v0.2.0, and the reviewed master commit both date from 2020-11-24, with no later commits. This records activity only, not a verdict on correctness or on compatibility with current Python versions.",
+      "Install with pip (setup.py declares Python >=3.3) and pipe one raw protobuf blob to protobuf_inspector on standard input, optionally naming the root message type. The README documents no capture, gRPC or HTTP handling, so blobs must first be extracted from traffic or files the analyst is entitled to inspect.",
+      "The CLI searches the working directory and each parent up to the filesystem mount point for protobuf_config.py and runs it with runpy, so a config file executes as Python code. A dump type writes matching chunks to dump.N files in the working directory, and parse errors stop inside the affected field and make the command exit non-zero.",
+      "ISC license. The README says the Python API was not designed as a library and may change. The repository has no tests or CI configuration; nothing was parsed in this review, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/CONFIG.md",
+      "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/protobuf_inspector/__main__.py",
+      "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/protobuf_inspector/types.py",
+      "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/setup.py",
+      "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/LICENSE",
+      "https://pypi.org/project/protobuf-inspector/0.2/"
+    ]
   }
 ]

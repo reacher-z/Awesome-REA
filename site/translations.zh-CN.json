@@ -4884,5 +4884,14 @@
       "可执行文件和主机程序文件由使用者自备。README 的成熟度表将 PE、ELF 和 x86/x86-64 支持评为可用于生产，Visual Basic 5/6 事件恢复评为高度稳定，而 DOS MZ、PS1 BIOS、Xbox、ZX Spectrum 和 NES（仅 NROM）加载器以及 Z80、6502 处理器仅为可用级别，MSVC RTTI 和异常处理恢复仍在开发中。目前尚无反编译器，扩展须用 C 编写；Python 插件 API 已列入路线图。",
       "图形界面、核心和所有内置插件均采用 GPL-3.0；独立的知识库仓库收录 TOML 格式的签名和类型定义，采用 CC0-1.0。本次未构建，也未分析任何二进制。"
     ]
+  },
+  "protobuf-inspector": {
+    "name": "protobuf-inspector 未知定义 Protobuf 解析工具",
+    "requirements": [
+      "项目已不再活跃：唯一的发布版本（PyPI 上的 0.2，标签 v0.2.0）与所审阅的 master 提交均为 2020-11-24，此后再无提交。这只记录活跃情况，不代表对正确性或与当前 Python 版本兼容性的判断。",
+      "用 pip 安装（setup.py 声明 Python >=3.3），通过标准输入向 protobuf_inspector 传入单个原始 protobuf 数据块，并可指定根消息类型。README 未说明对抓包、gRPC 或 HTTP 的处理，因此需要先从分析者有权检查的流量或文件中提取数据块。",
+      "命令行工具会在工作目录及其各级父目录（直到文件系统挂载点）中查找 protobuf_config.py，并用 runpy 运行，因此配置文件会作为 Python 代码执行。dump 类型会把匹配的数据块写入工作目录下的 dump.N 文件；解析错误只中止出错字段的解析，并使命令以非零状态退出。",
+      "采用 ISC 许可。README 说明其 Python API 并非为库用途设计，将来可能变化。仓库没有测试或 CI 配置；本次审阅未解析任何数据，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
