@@ -32,7 +32,6 @@ class RequirementFacetTests(unittest.TestCase):
     def test_vocabulary_and_parity_are_validated(self):
         self.assertEqual(facet_errors(faceted(), faceted()['requirements_zh']), [])
         cases = {
-            'missing on a case study': ({'requirement_facets': None}, None),
             'unknown facet': ({'requirement_facets': ['testing', 'setup']}, 'unknown facet'),
             'too few facets': ({'requirement_facets': ['testing']}, '1 facets for 2 English'),
             'Chinese items differ': ({'requirements_zh': ['结果来自作者报告。']}, '1 Chinese requirements items for 2 English'),
@@ -41,13 +40,13 @@ class RequirementFacetTests(unittest.TestCase):
         for name, (changes, message) in cases.items():
             with self.subTest(case=name):
                 record = faceted(**changes)
-                if record['requirement_facets'] is None:
-                    del record['requirement_facets']
-                    message = 'label every requirements item'
                 errors = facet_errors(record, record['requirements_zh'])
                 self.assertTrue(errors and message in errors[0], errors)
-        tool = resource('facet-tool', kind='tool')
-        self.assertEqual(facet_errors(tool, tool['requirements_zh']), [])
+        # The field is optional: unlabelled case studies and other records pass and render as plain lists.
+        for kind in ('case-study', 'tool'):
+            plain = resource('facet-' + kind, kind=kind)
+            self.assertEqual(facet_errors(plain, plain['requirements_zh']), [])
+            self.assertEqual(ordered_items(plain, plain['requirements']), [(None, item) for item in plain['requirements']])
 
     def test_validator_reads_chinese_items_from_translations(self):
         record = faceted()
@@ -59,10 +58,10 @@ class RequirementFacetTests(unittest.TestCase):
         validate_requirement_facets([record], {record['id']: {'requirements': ['一。', '二。']}}, errors)
         self.assertEqual(errors, [])
 
-    def test_every_case_study_is_labelled_without_changing_its_text(self):
-        cases = [record for record in load_resources() if record['kind'] == 'case-study']
-        self.assertTrue(cases)
-        for record in cases:
+    def test_labelled_records_validate_without_changing_their_text(self):
+        labelled = [record for record in load_resources() if 'requirement_facets' in record]
+        self.assertTrue(labelled)
+        for record in labelled:
             with self.subTest(record=record['id']):
                 chinese = record.get('requirements_zh') or TRANSLATIONS[record['id']]['requirements']
                 self.assertEqual(facet_errors(record, chinese), [])

@@ -7801,6 +7801,13 @@
       "Verification is project-reported. C++ checkers compare damage on all 169,312 attacker/target pairs, prices, income and interface layouts with the reference tools, rules tables with a recorded game’s memory image and world grids across 156 stock scenarios, and a headless harness checks determinism. The simulation targets bit-identical lockstep behavior but has not yet been compared with recorded games, and rendering was checked by reading snapshots. This collection ran none of these tools.",
       "The engine is GPL-3.0; the menu logo is excluded, and its rights stay with the original owners. The project states that it is unaffiliated with Microsoft, Big Huge Games and SkyBox Labs. .gitignore keeps decompiler output, symbol dumps and extracted data out of the repository, although two small instruction-search outputs listing original addresses are committed under re/jobs. The reviewed sources establish no REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "attribution",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/docs/STATUS.md",
       "https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/build-mac.sh",

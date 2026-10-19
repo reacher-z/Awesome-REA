@@ -2,7 +2,8 @@
 
 `requirement_facets` is a list of facet IDs parallel to `requirements`; the Chinese items in
 translations.zh-CN.json (or `requirements_zh`) share it, so both languages carry the same facet.
-Renderers show the facet as a lead-in and list prerequisites first; item text is never changed.
+The field is optional; when present it is validated strictly. Renderers show the facet as a lead-in and list
+prerequisites first, and records without it render as a plain list. Item text is never changed.
 """
 from __future__ import annotations
 
@@ -17,8 +18,6 @@ FACETS = {
     'license': ('License', '许可'),
     'attribution': ('Attribution', '署名'),
 }
-# Kinds whose every requirements item must carry a facet; other records may add them.
-REQUIRED_KINDS = {'case-study'}
 
 
 def _items(value) -> list:
@@ -26,10 +25,10 @@ def _items(value) -> list:
 
 
 def facet_errors(record: dict, chinese_items) -> list[str]:
-    """Return validation messages for one record's facets against its English and Chinese items."""
-    facets = record.get('requirement_facets')
-    if facets is None:
-        return ['requirement_facets: label every requirements item (see data/README.md)'] if record.get('kind') in REQUIRED_KINDS else []
+    """Return validation messages for one record's optional facets against its English and Chinese items."""
+    if 'requirement_facets' not in record:
+        return []
+    facets = record['requirement_facets']
     if not isinstance(facets, list) or not facets or not all(isinstance(facet, str) for facet in facets):
         return ['requirement_facets: use a nonempty list of facet IDs']
     errors = [f'requirement_facets: unknown facet {facet!r}; use one of ' + ', '.join(FACETS)
