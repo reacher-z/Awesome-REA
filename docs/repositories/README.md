@@ -15,7 +15,7 @@ Scan date: **2026-10-16 UTC**.
 | [Apps · Android](android.md) | 430 | 17 |
 | [Apps · Managed code](managed-code.md) | 128 | 3 |
 | [Native binaries](native-analysis.md) | 677 | 51 |
-| [Runtime and debugging](dynamic-analysis.md) | 102 | 13 |
+| [Runtime and debugging](dynamic-analysis.md) | 102 | 14 |
 | [Firmware](firmware.md) | 209 | 13 |
 | [Protocols](protocol-analysis.md) | 103 | 2 |
 | [General tools and collections](reverse-engineering.md) | 614 | 36 |

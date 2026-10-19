@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 406](https://img.shields.io/badge/resources-406-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 407](https://img.shields.io/badge/resources-407-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (42) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (43) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1898,6 +1898,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Cross-version decompiler that translates Python bytecode back into equivalent Python source, accepting bytecode from Python 1.0 through 3.8 as well as some PyPy bytecode and Dropbox's Python 2.5. It disassembles code objects with the companion xdis library and parses the instruction stream into a grammar-based tree from which source is printed; it can also deparse just the fragment around a given bytecode offset, which the author's trepan debuggers use for exact location reporting. It succeeds the older decompyle, uncompyle and uncompyle2 forks.
 
   Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/uncompyle6/)
+
+- [**ret-sync**](https://github.com/bootleg/ret-sync)
+
+  Reverse-Engineering Tools SYNChronization: plugins that keep IDA, Ghidra or Binary Ninja graph and decompiler views following a live WinDbg, GDB, LLDB, OllyDbg 1.10/2 or x64dbg session, rebasing addresses on the fly so ASLR does not break the mapping. Debugger commands push comments, labels, rebased addresses and command output into the disassembler database and resolve symbols from it, while disassembler hotkeys set breakpoints and step the debugger; several databases can be synced at once and the two sides may run on different hosts. A standalone Python library offers the same position syncing to custom tracing tools.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/ret-sync/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
