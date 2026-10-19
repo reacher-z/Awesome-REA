@@ -10023,12 +10023,14 @@
       "reported_source_urls": [
         "https://news.ycombinator.com/item?id=49646640"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The source is a discussion: a 2026-09-10 Ask HN question about why no AI decompiler yet turns arbitrary machine code into readable source, with six replies. Most replies argue that names, comments and design context are lost in compilation; one commenter describes an unnamed PlayStation decompilation pipeline that produces function-matching C and agent annotations, but names no game and links no code, results or comparisons. Retain the lead without a catalog mapping; the thread can still serve as context for the question it asks.",
+      "reason_zh": "该来源是一场讨论：2026-09-10 的一则 Ask HN 提问，询问为何还没有能把任意机器码转成可读源码的 AI 反编译器，共有六条回复。多数回复认为名称、注释和设计背景已在编译中丢失；一位评论者介绍了一个未具名的 PlayStation 反编译流程，可生成逐函数匹配的 C 代码并由智能体加注释，但未说明是哪款游戏，也未链接任何代码、结果或对照。保留此线索而不建立目录映射；该讨论串仍可作为其所提问题的背景参考。",
+      "primary_evidence_urls": [
+        "https://news.ycombinator.com/item?id=49646640"
+      ],
       "catalog_matches": []
     },
     {
@@ -16281,15 +16283,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 210,
-      "insufficient-evidence": 279,
-      "pending": 102
+      "insufficient-evidence": 280,
+      "pending": 101
     },
     "units_by_state": {
       "already-curated": 208,
-      "insufficient-evidence": 279,
-      "pending": 102
+      "insufficient-evidence": 280,
+      "pending": 101
     },
-    "primary_reviewed_units": 427,
+    "primary_reviewed_units": 428,
     "catalog_linked_occurrences": 224,
     "distinct_resource_ids": 214,
     "distinct_paper_ids": 2,
