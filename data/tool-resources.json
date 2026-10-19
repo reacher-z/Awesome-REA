@@ -7333,5 +7333,41 @@
       "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/skeleton/imgui",
       "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/LICENSE"
     ]
+  },
+  {
+    "id": "san-andreas-unity-engine-case",
+    "name": "San Andreas Unity: a GTA San Andreas engine reimplementation in Unity",
+    "url": "https://github.com/in0finite/SanAndreasUnity",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the Grand Theft Auto: San Andreas engine in Unity (C#), loading the archives, RenderWare models and textures, collision, animations, audio, text and item definitions from the user’s own PC installation. README says it will not be a complete reimplementation; it focuses on gameplay features, multiplayer and a framework for extending and modding the game through C# plugins. Development has stalled: the newest commit on any branch dates from 2022-09-30.",
+    "description_zh": "在 Unity（C#）中重新实现《侠盗猎车手：圣安地列斯》的引擎，从使用者自有的 PC 版安装中读取归档、RenderWare 模型与纹理、碰撞、动画、音频、文本和物品定义。README 表示这不会是完整的重新实现，重点在于游戏玩法、多人模式，以及可通过 C# 插件扩展和改装游戏的框架。项目开发已停滞：所有分支中最新的提交日期为 2022-09-30。",
+    "evidence_url": "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the head of the default dev branch, committed 2022-09-30; no branch has a later commit, GitHub records the last push on 2023-06-16 and the latest release is v4.0 (2022-05-24), so the project appears inactive. README says it will not be a complete reimplementation and focuses on gameplay, multiplayer and a moddable framework; Docs/TODO.md still lists work such as asynchronous geometry loading and unloading distant parts of the world. The reviewed files do not describe how the original engine was analysed.",
+      "Play requires a PC installation of GTA San Andreas that the user owns: on first start the game asks for its path, and config.json points the loaders at data files such as gta.dat, the vehicle, ped and default .ide files, handling.cfg, water.dat, carcols.dat and weapon.dat. The Android build needs those PC files copied to the device, about 5 GB according to the wiki, with the audio folder optional. The repository ships no game data; the NavMeshes submodule holds a precomputed navigation mesh, which the wiki says is generated from the imported game world because the original game has none.",
+      "Development uses Unity 2020.3.26 or newer (the project file names 2020.3.26f1), a recursive clone of the MirrorLite, UnityStandardAssets, NavMeshes, NetworkDiscoveryUnity and UGameCoreUtilities submodules and the Startup scene. README reports testing on Linux, Windows, macOS and Android with both Mono and IL2CPP backends; v4.0 provides Windows and Linux archives and an Android APK. Multiplayer runs as a dedicated server, host or client, and game modes load as C# DLL plugins.",
+      "There is no CI workflow or automated test suite for the importers or gameplay, and no comparison with the original executable is published. Evidence consists of README claims that multiplayer fully works, the v4.0 release notes, screenshots and videos; Docs/Performance.md records vertex and draw-call counts for one Las Venturas view. This collection did not build or run the project.",
+      "LICENSE is MIT with a 2015 copyright line for James King; the bundled NVorbis and Newtonsoft.Json DLLs and the submodules are separate projects under their own terms, and Rockstar’s game files keep their own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/LICENSE",
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/.gitmodules",
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/ProjectSettings/ProjectVersion.txt",
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/Assets/Resources/config.json",
+      "https://github.com/in0finite/SanAndreasUnity/tree/f685c437f48721afc0787f27d22c85d96e8684c7/Assets/Scripts/Importing",
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/Docs/TODO.md",
+      "https://github.com/in0finite/SanAndreasUnity/blob/f685c437f48721afc0787f27d22c85d96e8684c7/Docs/Performance.md",
+      "https://github.com/GTA-ASM/NavMeshes/blob/5d677c959befb9789e5610451a61eea52542f142/README.md",
+      "https://github.com/in0finite/SanAndreasUnity/releases/tag/v4.0",
+      "https://github.com/in0finite/SanAndreasUnity/wiki/Running-on-Android",
+      "https://github.com/in0finite/SanAndreasUnity/wiki/Generating-navigation-mesh"
+    ]
   }
 ]

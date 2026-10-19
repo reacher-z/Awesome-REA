@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 351](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-351-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 352](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (165) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (49)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (183) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (184) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1021,6 +1021,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以可移植的 C++ 库重新实现 RenderWare Graphics 中间件 API 的大部分内容，可读写其 PS2、D3D8、D3D9 和 Xbox 平台的 DFF 模型与 TXD 纹理文件，并旨在于各平台格式之间转换。场景由 Direct3D 9 和 OpenGL 后端渲染，PS2 渲染仅作为测试可用。README 称其用途是渲染 GTA 游戏；BSP 世界文件尚不支持。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/librw-renderware-reimplementation-case/)
+
+- [**San Andreas Unity：在 Unity 中重新实现的《侠盗猎车手：圣安地列斯》引擎**](https://github.com/in0finite/SanAndreasUnity)
+
+  在 Unity（C#）中重新实现《侠盗猎车手：圣安地列斯》的引擎，从使用者自有的 PC 版安装中读取归档、RenderWare 模型与纹理、碰撞、动画、音频、文本和物品定义。README 表示这不会是完整的重新实现，重点在于游戏玩法、多人模式，以及可通过 C# 插件扩展和改装游戏的框架。项目开发已停滞：所有分支中最新的提交日期为 2022-09-30。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/san-andreas-unity-engine-case/)
 
 #### 工具、项目与集成
 
