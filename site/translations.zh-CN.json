@@ -3969,5 +3969,15 @@
       "SWF、SWC、GFx 和 Iggy 输入文件由使用者提供。视频显示与导出依赖 vlcj 和 JNA 库；调试需要调试版 Flash Player，可以是由 FFDec 启动的独立播放器，也可以是以监听模式连接的远程播放器；通过 Flex SDK 编辑 AS3 被标为不稳定。",
       "应用本身采用 GPL-3.0-or-later，ffdec_lib 库采用 LGPL-3.0，自带的第三方库各自适用其许可证。反编译得到的脚本和提取出的资源仍归 SWF 的权利人所有。README 要求在 free-decompiler.com 的问题追踪器而非 GitHub Issues 中报告问题。本次未打开或反编译任何 SWF 文件。"
     ]
+  },
+  "mizuchi-matching-decompilation-pipeline": {
+    "name": "Mizuchi 匹配反编译流水线",
+    "requirements": [
+      "所审阅的 main 分支提交日期为 2026-08-17，声明软件包版本 0.1.0；仓库没有发布版或标签，需在 Node.js 22+ 环境下用 npm 从源码安装。m2c 和 decomp-permuter 是可选的 git 子模块，附有安装脚本。代码向量需要 Python 3.10+，并会下载约 2–3 GB 的 torch、transformers 和向量模型，使用 Apple Silicon 的 MPS 或 CPU 运行；加 --skip-embeddings 可跳过。",
+      "Claude 阶段通过 Claude Agent SDK 运行，需要 ANTHROPIC_API_KEY 或已缓存的 Claude Code 登录凭据；响应按提示词哈希缓存在本地。示例配置为每个提示词允许重试 25 次，向模型提供只读的代码库工具和 compile_and_view_assembly，只有指令差异为零时才接受代码。",
+      "Mizuchi 在使用者已有的反编译项目中工作，需要配置映射文件、未匹配汇编目录、编译器脚本和该项目使用的当年编译器。它不提供 ROM、游戏素材或反编译出的游戏代码；原始文件来自该项目和使用者自有的副本。所列目标设置包括 GBA、DS、3DS、N64、GameCube、Wii、PlayStation 1/2、PSP、Switch、Saturn、Dreamcast、Win32、Android x86 和 IRIX。",
+      "Ubuntu 上的 CI 运行类型检查、代码规范检查、格式检查和 Vitest 测试并构建 CLI，测试使用仓库内的 agbcc 与 KMC GCC 编译器样本；这些检查针对工具本身，不代表在任何游戏上的反编译成效。README 链接了作者关于基准测试的文章，仓库本身未发布匹配结果；本目录未运行任何内容。集成插件可用 gh 推送分支并发起 PR，其可选的 AI 构建修复会让 Claude 在工作树中编辑文件并执行 shell 命令，因此结果进入共享项目前应先审查。",
+      "采用 MIT 许可。m2c、decomp-permuter、objdiff、向量模型和各编译器保留各自条款，反编译出的代码受目标项目的权利和贡献规则约束。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

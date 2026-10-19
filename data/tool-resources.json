@@ -10717,5 +10717,37 @@
       "https://github.com/jindrapetrik/jpexs-decompiler/wiki/Installation",
       "https://github.com/jindrapetrik/jpexs-decompiler/releases/tag/version26.3.0"
     ]
+  },
+  {
+    "id": "mizuchi-matching-decompilation-pipeline",
+    "name": "Mizuchi",
+    "url": "https://github.com/macabeus/mizuchi",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Plugin pipeline for matching decompilation that loops over functions in an existing decomp project: m2c drafts C, decomp-permuter mutates it, Claude rewrites it through a compile-and-diff tool, and objdiff accepts a result only when the compiled object matches the target assembly. A local Decomp Atlas web app indexes matched and unmatched functions with call graphs and code embeddings, helps pick the next function and builds prompts, while HTML reports summarise each run. An optional integrator places matched C into a git worktree, checks the build and can commit, push or open a PR.",
+    "description_zh": "面向匹配反编译的插件式流水线，在现有反编译项目中逐个处理函数：m2c 生成 C 初稿，decomp-permuter 对其做变异，Claude 借助编译并比对的工具改写代码，只有编译出的目标文件与目标汇编一致时才由 objdiff 判定通过。本地 Decomp Atlas 网页应用为已匹配和未匹配函数建立索引，附调用图和代码向量，帮助挑选下一个函数并生成提示词；HTML 报告汇总每次运行结果。可选的集成插件会把匹配成功的 C 代码放入 git 工作树，检查构建，并可提交、推送或发起 PR。",
+    "evidence_url": "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2026-08-17 declares package version 0.1.0; the repository has no releases or tags and is installed from source with npm on Node.js 22+. m2c and decomp-permuter are optional git submodules with setup scripts. Code embeddings need Python 3.10+ and download torch, transformers and an embedding model of about 2–3 GB, using Apple-Silicon MPS or the CPU; --skip-embeddings avoids them.",
+      "The Claude phase runs through the Claude Agent SDK and needs ANTHROPIC_API_KEY or cached Claude Code credentials; responses are cached locally by prompt hash. The example configuration allows 25 retries per prompt, gives the model read-only codebase tools plus compile_and_view_assembly, and accepts code only at zero instruction differences.",
+      "Mizuchi works inside a decompilation project the user already has, configured with a map file, non-matching assembly folders, a compiler shell script and the project’s period compiler. It supplies no ROMs, game assets or decompiled game code; the original files come from that project and the user’s own copies. Listed target settings include GBA, DS, 3DS, N64, GameCube, Wii, PlayStation 1/2, PSP, Switch, Saturn, Dreamcast, Win32, Android x86 and IRIX.",
+      "CI on Ubuntu runs type checks, lint, formatting and the Vitest suite and builds the CLI, using bundled agbcc and KMC GCC compiler fixtures; it covers the tool, not decompilation success on any game. The README links an author post on benchmarks, and the repository publishes no match results; this collection ran nothing. The integrator can push branches and open PRs with gh, and its optional AI build fix lets Claude edit files and run shell commands in the worktree, so review its output before it reaches a shared project.",
+      "MIT-licensed. m2c, decomp-permuter, objdiff, the embedding model and the compilers keep their own terms, and decompiled code inherits the target project’s rights and contribution rules. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/mizuchi.example.yaml",
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/docs/integrator-plugin.md",
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/package.json",
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/.gitmodules",
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/.github/workflows/ci.yml",
+      "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/LICENSE"
+    ]
   }
 ]
