@@ -14562,5 +14562,39 @@
       "https://github.com/RetroPortingToolKit/snesrecomp/blob/0f5708d108bf4acfb21dd7ff75a0cdb2376eb238/LICENSE",
       "https://github.com/mstan/MegaManXSNESRecomp/releases/tag/v2.2.9-alpha"
     ]
+  },
+  {
+    "id": "opensc4-simcity-4-reimplementation-case",
+    "name": "OpenSC4: an early open-source reimplementation of SimCity 4",
+    "url": "https://github.com/OpenSC4-org/OpenSC4",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements SimCity 4 as a Godot project in GDScript that reads DBPF archives, region folders and city saves from the user’s own SimCity 4 installation. The code draws a region view with city thumbnails and interface elements built from the game’s UI definitions, opens a saved city’s terrain and water in 3D, and includes a DAT explorer for previewing archive subfiles. It is an early, inactive engine case without simulation gameplay, not a playable replacement.",
+    "description_zh": "以 Godot 项目和 GDScript 重新实现 SimCity 4，从使用者自有的 SimCity 4 安装目录读取 DBPF 归档、区域文件夹和城市存档。代码可绘制带城市缩略图的区域视图，并依据游戏的 UI 定义生成界面元素，可在 3D 中打开已存城市的地形与水面，还附带用于预览归档子文件的 DAT 浏览器。这是一个早期且已停滞的引擎案例，尚无模拟玩法，并非可替代原版的实现。",
+    "evidence_url": "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main snapshot (2024-03-29) only added a README and a Discord invite; the last code change dates from 2023-02-17, and the repository has no releases or tags. README describes an open source “clone” meant to use modern hardware and run on other platforms. The code covers DBPF parsing, a region view for the hard-coded Timbuktu region, a city terrain view and the DAT explorer, with no zoning, budget or growth simulation; the reviewed files do not describe how SimCity 4 was analysed.",
+      "Needs the user’s own SimCity 4 installation: the boot screen asks for its folder and checks for SimCity 4.ini, Sound.dat, Intro.dat, SimCity_1.dat to SimCity_5.dat and EP1.dat, then reads .sc4 city saves, config.bmp and region music from that folder. .gitignore excludes SimCity 4 data, although the tree contains a “Graphics Rules.sgr.backup” text file whose header says SC4Launcher generated it.",
+      "Runs from source in the Godot editor: README’s setup is to install Godot, import the cloned project and run it, without naming a version. project.godot uses config_version 4 and the scripts call Godot 3 APIs such as yield and Directory; no export presets or packaged builds are provided.",
+      "The repository has no tests or CI workflows and publishes no comparison with SimCity 4’s behaviour or output; this collection did not run the project.",
+      "GitHub detects no license and the tree has no license file; nine GDScript files carry AGPL-3.0-or-later headers for “The OpenSC4 contributors” (2023), and utils/logger.gd is MIT-licensed code from KOBUGE Games’ godot-logger. SimCity 4 and its data keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/BootScreen.gd",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/Region.gd",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/CityView/CityScene/City.gd",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/DATExplorer/SubfilePreview.gd",
+      "https://github.com/OpenSC4-org/OpenSC4/tree/fdc90c33e6e012b8c825f20ee10c51f55796df39/addons/dbpf",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/project.godot",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/.gitignore",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/Core.gd",
+      "https://github.com/OpenSC4-org/OpenSC4/blob/fdc90c33e6e012b8c825f20ee10c51f55796df39/utils/logger.gd"
+    ]
   }
 ]

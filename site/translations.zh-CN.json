@@ -4816,5 +4816,15 @@
       "CI 编译不含 ROM 衍生内容的设置宿主，并运行无需 ROM 的 CTest 回归测试；依赖 ROM 的状态测试，以及在首个 WRAM、合作、镜头或 VRAM 不一致处停止的回放测试，都需要使用者的 ROM。一份注明日期的覆盖率检查点报告称，两条 12,000 帧路线与对照构建的 CPU、WRAM 轨迹及最终快照一致，但未比较音频；v2.2.9 发布说明报告在 Windows 和 Linux 上检查了 Boss Rush 的全部 28 组头目组合。本合集未运行其中任何一项。",
       "项目及固定版本的 snesrecomp 框架均采用 PolyForm Noncommercial License 1.0.0；解释器源自 LakeSnes（MIT），随附依赖保留各自许可，Capcom 仍保有游戏权利。README 称项目属于 R.A.I.D.（Retro AI Development），这是一个面向 AI 辅助复古逆向工程的 Discord 社区，但未说明本仓库使用了哪种模型或工作流；未确立 REA 的使用。"
     ]
+  },
+  "opensc4-simcity-4-reimplementation-case": {
+    "name": "OpenSC4：SimCity 4 的早期开源重新实现",
+    "requirements": [
+      "所审阅的 main 快照（2024-03-29）只新增了 README 和 Discord 邀请；最后一次代码改动在 2023-02-17，仓库没有发行版或标签。README 称项目是一个开源“克隆”，旨在利用现代硬件并在其他平台上运行。代码涵盖 DBPF 解析、写死为 Timbuktu 区域的区域视图、城市地形视图和 DAT 浏览器，没有分区、预算或发展模拟；所审文件未说明如何分析 SimCity 4。",
+      "需要使用者自有的 SimCity 4 安装：启动画面会询问其目录，并检查 SimCity 4.ini、Sound.dat、Intro.dat、SimCity_1.dat 至 SimCity_5.dat 以及 EP1.dat，随后从该目录读取 .sc4 城市存档、config.bmp 和区域音乐。.gitignore 排除了 SimCity 4 数据，但仓库中仍有一个“Graphics Rules.sgr.backup”文本文件，其文件头称由 SC4Launcher 生成。",
+      "在 Godot 编辑器中从源码运行：README 的步骤是安装 Godot、导入克隆的项目并运行，未指明版本。project.godot 使用 config_version 4，脚本调用 yield、Directory 等 Godot 3 API；仓库不提供导出预设或打包版本。",
+      "仓库没有测试或 CI 工作流，也未公布与 SimCity 4 行为或输出的对比；本合集未运行该项目。",
+      "GitHub 未检测到许可证，仓库也没有许可证文件；九个 GDScript 文件带有署名“The OpenSC4 contributors”（2023）的 AGPL-3.0-or-later 文件头，utils/logger.gd 则是 KOBUGE Games 的 godot-logger 中采用 MIT 许可的代码。SimCity 4 及其数据的权利仍归其所有者。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }
