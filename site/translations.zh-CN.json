@@ -3653,5 +3653,14 @@
       "输入为使用者选择的 ELF 文件。动态分析会在宿主机上以基于 ptrace 的跟踪方式执行该二进制，因此不可信样本只应在隔离环境中跟踪；其他视图只读取文件，不会运行它。",
       "采用 MIT 或 Apache-2.0 双许可。本次未安装或运行任何内容。"
     ]
+  },
+  "mytechnotalent-reverse-engineering": {
+    "name": "逆向工程教程（mytechnotalent）",
+    "requirements": [
+      "在所审阅的提交 8ae661a（推送于 2026-10-18）中，README 列出 26 门课程共 490 节编号课程，并在开头标注带日期的“今日教程”（第 329 课，2026 年 10 月 18 日）；默认分支近期几乎每天都有提交。第 1 课称 x86 课程从恶意软件逆向工程的基本概念讲起，逐步过渡到入门级的汇编语言讲解，后续课程则默认读者已具备这些基础。Reverse Engineering Data 课程（第 461–490 课）是统计与机器学习笔记本，并非二进制分析内容。",
+      "无需任何第三方目标文件：多数课程按“编写、调试、再打补丁”的模式，处理学习者依照课程自行构建的程序。嵌入式课程需要实体开发板（Raspberry Pi Pico 与 Pico 2/RP2350、STM32F401CCU6、ESP32-C3、ATmega328P、micro:bit），RISC-V 课程称会列出需要购买的全部物品。仓库根目录还保存了 Fritzing 原理图，以及几个附带 Debug 构建产物的 Windows MASM/Visual Studio 示例项目。",
+      "工具链在链接的材料中说明，README 本身只提到 x86 课程中的 GDB、一节安装 Linux 的课程，以及用于 ESP32-C3 的 PlatformIO。第 1–203 课大多指向 @mytechnotalent 编写、@0xInfection 制作的 GitBook《Reverse Engineering For Everyone!》；之后的课程指向作者其他仓库中的 PDF 书和课程文件，这些内容独立更新，本条目未固定其版本。",
+      "本合集只审阅了 README 索引和仓库文件树，没有实际学习各课程，也没有审阅链接的书籍、仓库、CTF 及其许可证。README 中的“Reverse Engineering Assistant”（REA）链接指向作者自己的 mytechnotalent/rea 工具，并非上游 REA 项目，因此不构成与 REA 的关联。本仓库采用 Apache-2.0 许可证；链接的书籍和仓库适用各自的条款。"
+    ]
   }
 }

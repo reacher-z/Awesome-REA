@@ -9599,5 +9599,35 @@
       "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/LICENSE-APACHE",
       "https://github.com/orhun/binsider/releases/tag/v0.3.2"
     ]
+  },
+  {
+    "id": "mytechnotalent-reverse-engineering",
+    "name": "Reverse Engineering (mytechnotalent)",
+    "url": "https://github.com/mytechnotalent/Reverse-Engineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "A free, English lesson index by mytechnotalent that grows almost daily: 490 numbered lessons, most of which have learners write small programs and then debug and patch (\"hack\") them, across x86, x64, 32/64-bit ARM, RISC-V and AVR. Early courses start from number systems, registers, memory and the stack; later ones cover microcontroller firmware on Raspberry Pi Pico/Pico 2, STM32F401, ESP32-C3, ATmega328P and micro:bit boards, plus Windows, Go, Rust and WebAssembly programs. The README is a table of links; the lesson text lives in a GitBook and in the author's other repositories and PDF books.",
+    "description_zh": "mytechnotalent 维护的免费英文课程索引，几乎每天更新：共 490 节编号课程，多数课程让学习者先编写小程序，再对其调试和打补丁（文中称 \"hack\"），覆盖 x86、x64、32/64 位 ARM、RISC-V 和 AVR。前期课程从数制、寄存器、内存和栈讲起；后期转向 Raspberry Pi Pico/Pico 2、STM32F401、ESP32-C3、ATmega328P 和 micro:bit 等开发板上的微控制器固件，以及 Windows、Go、Rust 和 WebAssembly 程序。README 本身只是链接目录，课程正文位于一个 GitBook 以及作者其他仓库中的课程文件和 PDF 书。",
+    "evidence_url": "https://github.com/mytechnotalent/Reverse-Engineering/blob/8ae661a1cf37fb17afc29981d424f1656dc7741b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "At reviewed commit 8ae661a (pushed 2026-10-18) the README lists 490 numbered lessons in 26 courses and headlines a dated \"Today's Tutorial\" (Lesson 329, 18 October 2026); the default branch has received commits on most recent days. Lesson 1 describes the x86 course as starting from the basic concepts of malware reverse engineering and working up to an entry-level look at assembly, while later courses assume that grounding. The Reverse Engineering Data course (lessons 461–490) is statistics and machine-learning notebooks, not binary analysis.",
+      "No third-party target files are needed: most courses follow a write, debug, then patch pattern on programs the learner builds from the lessons. The embedded courses need physical boards (Raspberry Pi Pico and Pico 2/RP2350, STM32F401CCU6, ESP32-C3, ATmega328P, micro:bit), and the RISC-V course says it lists everything to purchase. The repository root also keeps Fritzing schematics and a few Windows MASM/Visual Studio example projects with their Debug builds.",
+      "Toolchains are set out in the linked material rather than the README, which mentions GDB in the x86 course, a Linux install lesson and PlatformIO for the ESP32-C3. Most of lessons 1–203 point to the \"Reverse Engineering For Everyone!\" GitBook by @mytechnotalent (built by @0xInfection); later lessons point to PDF books and lesson files in the author's separate repositories, which move independently and are not pinned by this record.",
+      "This collection reviewed the README index and repository tree only; it did not work through lessons or review the linked books, repositories, CTFs or their licenses. The README's \"Reverse Engineering Assistant\" (REA) link is the author's own mytechnotalent/rea tool, not the upstream REA project, so no REA connection is established. The repository is Apache-2.0; linked books and repositories carry their own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mytechnotalent/Reverse-Engineering/blob/8ae661a1cf37fb17afc29981d424f1656dc7741b/README.md#L136-L178",
+      "https://github.com/mytechnotalent/Reverse-Engineering/tree/8ae661a1cf37fb17afc29981d424f1656dc7741b",
+      "https://github.com/mytechnotalent/Reverse-Engineering/blob/8ae661a1cf37fb17afc29981d424f1656dc7741b/LICENSE",
+      "https://0xinfection.github.io/reversing/",
+      "https://github.com/mytechnotalent/rea/blob/a2f8a158eb2161899f479018db2630e7e9b93145/README.md"
+    ]
   }
 ]
