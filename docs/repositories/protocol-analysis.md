@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](protocol-analysis.zh-CN.md)
 
-**104 repositories** · 2026-10-16 UTC
+**105 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -12,6 +12,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — Resources about network security, including: Proxy/GFW/ReverseProxy/Tunnel/VPN/Tor/I2P, and MiTM/PortKnocking/NetworkSniff/NetworkAnalysis/etc。More than 1700 open source tools for now. Post incoming. **[926 stars]**
 - [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]** · Curated: [Netzob](https://awesomerea.org/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity Protocol Reverse Engineering and Dissector **[688 stars]** · Curated: [furiousMAC Continuity](https://awesomerea.org/resources/furiousmac-continuity/)
+- [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — Simplifying encrypted traffic analysis for researchers by making protocol decryption effortless. **[556 stars]** · Curated: [friTap](https://awesomerea.org/resources/fritap/)
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — Automated Payload Reverse Engineering Pipeline for the Controller Area Network (CAN) protocol **[456 stars]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili is a Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing. **[219 stars]**

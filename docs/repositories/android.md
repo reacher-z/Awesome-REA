@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**430 repositories** · 2026-10-16 UTC
+**429 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -69,7 +69,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — A lightweight emulation framework for emulating cryptographic algorithms in iOS executables and libraries. **[631 stars]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Demo of a complete hot-update solution for Unity Android IL2CPP apps. Update the Unity path in build\_demo\_apk, then run it to rebuild the patch and APK in one step. The libunity file is not hot-updated, so this solution does not apply if the Unity version changes. **[578 stars]**
 - [MJx0/KittyMemory](https://github.com/MJx0/KittyMemory) — C++ library for runtime memory patching, scanning, dumping, and module (ELF / Mach-O) introspection, targeting Android and iOS. **[562 stars]**
-- [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — Simplifying encrypted traffic analysis for researchers by making protocol decryption effortless. **[556 stars]**
 - [ImKKingshuk/LockKnife](https://github.com/ImKKingshuk/LockKnife) — LockKnife: The Ultimate Android Security Research Tool. A unified TUI workspace and headless CLI for deep Android security research, built for researchers and hackers. Powered by Python orchestration and a Rust-accelerated core, enabling AI agent–driven hacking, credential recovery/cracking, APK analysis, intelligence gathering, runtime inspection. **[549 stars]**
 - [CreditTone/android-reverse-engineering-skill](https://github.com/CreditTone/android-reverse-engineering-skill) — An Android reverse engineering skill tailored for Codex. It supports decompiling APK, XAPK, JAR, and AAR files within Codex sessions and uses jadx and Fernflower/Vineflower to map out the Manifest, package structure, network layer, and call chains. It helps extract interfaces, URLs, authorization headers, tokens, and signing logic, and provides static reconnaissance methods before Frida, traffic capture, and JNI/SO analysis. Suitable for interface analysis, security research, and authorized testing. **[547 stars]**
 - [damaiqiangpiao/damai](https://github.com/damaiqiangpiao/damai) — Damai Maoyan Piaoxingqiu ticket grabbing tech community | Android reverse engineering Frida hook ticket monitor | QQ 955767910 **[538 stars]**
