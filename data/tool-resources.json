@@ -7196,5 +7196,30 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-unofficial-pc-ports",
+    "name": "awesome-unofficial-pc-ports",
+    "url": "https://github.com/Sebastrion/awesome-unofficial-pc-ports",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A single-README guide to unofficial PC ports of console games built from decompilations or recompilations and chosen for easy installation by players. Its 76 game entries, grouped under Nintendo, PlayStation, Xbox, SEGA, Indie and J2ME, each recommend a port with short setup notes and often link the underlying decompilation and alternative ports; a Utilities section adds two recompilation launchers.",
+    "description_zh": "以单个 README 维护的非官方 PC 移植指南，收录基于反编译或重编译、且便于玩家安装的主机游戏移植。76 个游戏条目按 Nintendo、PlayStation、Xbox、SEGA、独立游戏和 J2ME 分组，每项推荐一个移植版并附简短安装说明，常同时链接所依据的反编译项目和其他移植版；“实用工具”部分另列两个重编译启动器。",
+    "evidence_url": "https://github.com/Sebastrion/awesome-unofficial-pc-ports/blob/faef1ab57fa50446ca156bcbf085466dce9a9229/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, committed 2026-10-15, has 78 collapsible entries: 43 Nintendo, 12 PlayStation, 14 Xbox, 5 SEGA, 1 indie and 1 J2ME game, plus 2 launcher utilities. Its stated criteria are console games ported to PC through decompilation or recompilation that offer an easy install path, such as a launcher or drag-and-drop; a star marks the most user-friendly option for each game.",
+      "Entries are written for players: a recommended port, a line or two of setup notes and, for some games, the underlying decompilation, alternative ports or tutorial videos. They state no matching, completion or license status, and the list also carries projects outside its stated criteria, such as Severed Chains, which it calls a reverse-engineered native recreation, and a port of the PC game Cave Story+, so each project must be checked at its own source.",
+      "Most entries tell players to supply their own ROM, disc image, ISO, game dump or XBLA package. The Ratchet & Clank: Clone Home entry also links a third-party archive.org copy of the recovered original J2ME build; this catalog does not link it, and a listing does not establish rights to any game files.",
+      "The README promotes Quiver Launcher, a separate catalog website and launcher, and says the list is kept up in spare time with updates that can take months. The repository holds only README.md and an MIT license (copyright 2023 Sebastrion); linked ports, original games and their assets keep their own rights. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Sebastrion/awesome-unofficial-pc-ports/blob/faef1ab57fa50446ca156bcbf085466dce9a9229/LICENSE"
+    ]
   }
 ]
