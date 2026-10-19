@@ -5007,5 +5007,14 @@
       "从源码构建需要 Node.js 和 yarn（CI 使用 Node 12）、Angular CLI 11，以及由 electron-builder 打包的 Electron 11.1.0。CI 工作流在 macOS、Ubuntu 和 Windows 上运行一项 Spectron 端到端测试，打开应用并解析一个小型 Angular 11 示例项目；该测试并不检验真实应用中图形的准确性。",
       "README 声明采用 MIT 许可；LICENSE.md 是沿用自 angular-electron 模板的 MIT 文本，保留了模板作者 2020 年的版权行。图形展示的是 ngast 从源码中解析出的结构，而非运行时行为。本次未安装或运行该工具。"
     ]
+  },
+  "apkid": {
+    "name": "APKiD Android 加壳与混淆识别工具",
+    "requirements": [
+      "审阅时最新版本为 3.1.0，于 2026-04-09 打标签并上传到 PyPI；所审阅的 master 提交（2026-10-07）还加入了此后的新规则。pip install apkid 会安装 yara-python-dex>=1.0.1。setup.py 未声明 python_requires，分类信息只列出 Python 3.6 和 3.7，而 Travis CI 使用 3.9，Dockerfile 使用 Python 3.11；在 Windows 上，README 要求固定 Yara 3.11.0 并另行构建 yara-python-dex wheel。",
+      "输入为分析者有权检查的 APK、DEX 文件或目录。命令行工具默认按文件魔数选择要扫描的条目，嵌套 ZIP 最多深入两层，只扫描不超过 100 MB 的条目，每次 YARA 扫描 30 秒超时；追踪器规则单独编译，仅在使用 --scan-trackers 时启用。README 中的用法说明仍是 v2.1.2 的版本，没有列出 --scan-trackers 和 --include-types。",
+      "检测基于特征规则，未收录或经过修改的加壳与保护工具不会被报告；README 请用户提交未知样本的文件哈希，以便编写新规则。测试会编译并检查规则，并扫描临时生成的 ZIP 文件；仓库不含样本集，本次审阅也未扫描任何文件。",
+      "采用双重许可：GPL-3.0，或永久商业许可；后者允许在商业产品中分发 APKiD 二进制及规则，但禁止再分发源码，因此 GitHub 显示为 NOASSERTION。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

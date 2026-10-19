@@ -15210,5 +15210,42 @@
       "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/LICENSE.md",
       "https://github.com/mgechev/ngrev/releases/tag/v0.0.35"
     ]
+  },
+  {
+    "id": "apkid",
+    "name": "APKiD",
+    "url": "https://github.com/rednaga/APKiD",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "PEiD-style identifier for Android packages from RedNaga. It scans APK and DEX files, nested ZIP entries and the native ELF libraries, PE DLLs and resources inside them with YARA rules, using the yara-python-dex DEX module, and reports the compilers, packers, protectors, obfuscators and anti-VM or anti-disassembly tricks it recognizes, per file or as JSON. Optional tracker rules attributed to the Exodus API flag embedded tracking SDKs; APKiD only identifies, and does not unpack or deobfuscate anything.",
+    "description_zh": "RedNaga 推出的 Android 安装包识别工具，类似 PEiD。它借助 yara-python-dex 的 DEX 模块，用 YARA 规则扫描 APK、DEX 文件、嵌套的 ZIP 条目及其中的原生 ELF 库、PE 格式 DLL 和资源，报告识别出的编译器、加壳工具、保护工具、混淆工具以及反虚拟机或反反汇编手法，可按文件输出或输出 JSON。可选的追踪器规则注明来自 Exodus API，用于标出内嵌的追踪 SDK；APKiD 只做识别，不会脱壳或反混淆。",
+    "evidence_url": "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 3.1.0, tagged and uploaded to PyPI on 2026-04-09; the reviewed master commit of 2026-10-07 adds later rules. pip install apkid pulls in yara-python-dex>=1.0.1. setup.py declares no python_requires and its classifiers name Python 3.6 and 3.7, while Travis CI uses 3.9 and the Dockerfile uses Python 3.11; on Windows the README pins Yara 3.11.0 and a separately built yara-python-dex wheel.",
+      "Provide APK, DEX or directory inputs you are entitled to examine. By default the CLI picks entries by file magic, searches nested ZIPs two levels deep, scans entries up to 100 MB and stops each YARA scan after 30 seconds; tracker rules are compiled separately and apply only with --scan-trackers. The README's usage block still shows v2.1.2 and omits --scan-trackers and --include-types.",
+      "Detection is signature-based, so unrecognized or modified packers and protectors go unreported; the README asks for unknown samples by file hash to write new rules. Tests compile and lint the rules and scan generated ZIP files; the repository has no sample corpus, and nothing was scanned in this review.",
+      "Dual-licensed: GPL-3.0, or a perpetual commercial license that allows distributing APKiD binaries and rules in commercial products but no source redistribution, which is why GitHub reports NOASSERTION. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/main.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/apkid.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/rules.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/rules/apk/trackers.yara",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/setup.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/apkid/__init__.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/Dockerfile",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/.travis.yml",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/tests/test_scanner.py",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/LICENSE.GPL",
+      "https://github.com/rednaga/APKiD/blob/5cb6b2572a2fe1580d7dd2fd807ada5fb6377a12/LICENSE.COMMERCIAL",
+      "https://github.com/rednaga/APKiD/releases/tag/v3.1.0",
+      "https://pypi.org/project/apkid/3.1.0/"
+    ]
   }
 ]
