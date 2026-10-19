@@ -3609,5 +3609,14 @@
       "样本由分析人员自行提供。v3.2.0 修复了一个问题：在 v3.1.1 及更早版本和 QUANTUMSTRAND 预发布版本中，精心构造的 .viv vivisect 工作区文件（无论是样本本身还是样本旁的同名文件）可在分析时执行代码；现在只有设置 FLOSS_LOAD_VIV_WORKSPACE=1 时才会加载已保存的工作区。解码出的字符串只来自 FLOSS 识别为解码函数并成功模拟执行的例程。",
       "采用 Apache-2.0 许可。本次未安装，也未分析任何样本。"
     ]
+  },
+  "zydis": {
+    "name": "Zydis x86 反汇编与代码生成库",
+    "requirements": [
+      "审阅时最新版本为 v4.1.1，发布于 2025-02-16，未附带文件；README 所述的 zydis-amalgamated 单头文件加单源文件压缩包见于 v4.1.0（2024-02-04）。README 说明 master 分支存放尚未发布的下一版本，不保证 API 稳定；所审阅的 master 提交（2026-07-27）声明版本 5.0.0，比 v4.1.1 标签多 121 个提交、少 59 个提交，因此本条目固定该提交仅用于引用文档。",
+      "可使用 CMake 3.10+（README 列出 Windows、macOS、Linux 和各 BSD）、Meson 1.3+ 构建文件、官方维护的 Visual Studio 2022 项目，或在任意 C11 编译器上使用合并版文件进行构建。递归克隆会从 zycore-c 子模块获取 Zycore 支持库，除非强制使用系统已安装的版本。README 列出 Arch、Debian、Ubuntu、Homebrew、NixOS 和 vcpkg 软件包；CMake 选项可关闭解码器、编码器、格式化器、AVX-512 或 KNC 支持，或强制使用最小解码模式。",
+      "调用方需提供代码字节，并选择 16、32 或 64 位机器模式；ZydisDisasm 读取原始字节文件。文档未描述可执行文件格式加载器，因此要在 PE、ELF 或固件镜像中定位代码需借助其他工具。",
+      "MIT 许可证；Zycore 是 zyantific 的独立仓库，同样采用 MIT 许可证。README 中关于性能、无第三方依赖与无动态内存分配、线程安全、在 Windows、macOS、FreeBSD、Linux 和 UEFI 上测试以及被 x64dbg、Firefox 和 WebKit 采用的说法均未经测试；本次未解码或编码任何指令。"
+    ]
   }
 }

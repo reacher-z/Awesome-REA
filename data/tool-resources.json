@@ -9438,5 +9438,42 @@
       "https://github.com/mandiant/flare-floss/releases/tag/quantumstrand-beta3",
       "https://pypi.org/project/flare-floss/3.2.0/"
     ]
+  },
+  {
+    "id": "zydis",
+    "name": "Zydis",
+    "url": "https://github.com/zyantific/zydis",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Lightweight C11 x86/x86-64 disassembler and code-generation library. Its decoder reports each instruction's operands, accessed CPU and FPU flags, ISA set and extension and branch type; the formatter prints Intel, MASM or AT&T syntax, and the encoder assembles instructions from encoder requests, which can also be derived from decoded instructions. ZydisDisasm and ZydisInfo command-line tools are included, and the official Rust and Python 3 bindings live in separate repositories.",
+    "description_zh": "轻量级 C11 x86/x86-64 反汇编与代码生成库。解码器可报告每条指令的操作数、所访问的 CPU 与 FPU 标志、ISA 集与扩展以及分支类型；格式化器可输出 Intel、MASM 或 AT&T 语法，编码器则根据编码请求生成指令，请求也可由已解码的指令转换而来。仓库附带 ZydisDisasm 与 ZydisInfo 命令行工具，官方 Rust 与 Python 3 绑定位于独立仓库。",
+    "evidence_url": "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v4.1.1, published 2025-02-16 with no attached files; v4.1.0 (2024-02-04) carries the zydis-amalgamated single-header and single-source archives the README describes. The README says master holds the next, unreleased version without API stability guarantees; the reviewed master commit (2026-07-27) declares 5.0.0 and is 121 commits ahead of and 59 behind the v4.1.1 tag, so this entry pins it for documentation only.",
+      "Build with CMake 3.10+ (the README lists Windows, macOS, Linux and the BSDs), the Meson 1.3+ build file, the maintained Visual Studio 2022 project, or the amalgamated files with any C11 compiler. A recursive clone fetches the Zycore support library from its zycore-c submodule unless a system copy is forced. The README lists Arch, Debian, Ubuntu, Homebrew, NixOS and vcpkg packages, and CMake options can disable the decoder, encoder, formatter, AVX-512 or KNC support or force minimal decoding mode.",
+      "The caller supplies code bytes and selects a 16-, 32- or 64-bit machine mode; ZydisDisasm reads a raw byte file. No executable-format loader is documented, so locating code in PE, ELF or firmware images needs another tool.",
+      "MIT license; Zycore is a separate MIT-licensed zyantific repository. The README's statements about performance, dependency-free and allocation-free operation, thread safety, testing on Windows, macOS, FreeBSD, Linux and UEFI, and use in x64dbg, Firefox and WebKit were not tested; no code was decoded or encoded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/README.md#L73-L135",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/README.md#L159-L175",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/CMakeLists.txt#L1-L80",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/meson.build",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/include/Zydis/DecoderTypes.h",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/include/Zydis/Encoder.h",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/include/Zydis/Formatter.h",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/tools/ZydisDisasm.c",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/.gitmodules",
+      "https://github.com/zyantific/zydis/blob/a95bb71013436547f689fc0b380f48edf663066e/LICENSE",
+      "https://github.com/zyantific/zydis/releases/tag/v4.1.1",
+      "https://github.com/zyantific/zydis/releases/tag/v4.1.0",
+      "https://github.com/zyantific/zydis/compare/v4.1.1...a95bb71013436547f689fc0b380f48edf663066e"
+    ]
   }
 ]
