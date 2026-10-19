@@ -14918,12 +14918,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111623879487795255"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@307_33m15, 2026-10-18) is a reply speculating that the makers of Burrow used Claude to decompile Animal Jam and drew on the result in their client, perhaps also a server. The author adds that this should be taken with a grain of salt and that they cannot confirm anything. The post names no repository, decompiled output or statement from the project, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the decompilation nor any use of Claude is established, and this is not a finding about Burrow.",
+      "reason_zh": "所引帖子（@307_33m15，2026-10-18）是一条回复，推测 Burrow 的开发者借助 Claude 反编译了 Animal Jam，并在其客户端（或许也包括服务端）中用到了结果。作者随即提醒对此持保留态度，并说明自己无法证实任何内容。帖子没有给出仓库、反编译产物或项目方的说法，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；反编译及 Claude 的使用均未确立，这也不是对 Burrow 的任何判断。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111623879487795255"
+      ],
       "catalog_matches": []
     },
     {
@@ -14938,12 +14940,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111627155449004086"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@Jhaddix, 2026-10-18) says he used REA on an unnamed modern kernel-level anticheat to learn what it sends to its provider about his machine, out of interest in the privacy implications, and praises REA’s first run. It names neither the product nor any finding and links no notes, captures or code; the author’s public GitHub repositories (jhaddix) hold no related analysis. Retain the lead without a catalog mapping; the target, the observed data and REA’s contribution are unestablished, and no anticheat internals are recorded here.",
+      "reason_zh": "作者的纯文字帖子（@Jhaddix，2026-10-18）称，出于对隐私影响的关注，他用 REA 分析了一款未具名的现代内核级反作弊程序，以了解它向服务商发送了哪些本机信息，并称赞 REA 首次运行的效果。帖子既未说明是哪款产品，也未给出任何发现，没有链接笔记、抓包或代码；作者公开的 GitHub 仓库（jhaddix）中也没有相关分析。保留此线索而不建立目录映射；分析目标、所观察到的数据及 REA 的作用均未确立，此处不记录任何反作弊内部细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111627155449004086"
+      ],
       "catalog_matches": []
     },
     {
@@ -14959,12 +14963,15 @@
         "https://x.com/i/status/2111639768270594300",
         "https://x.com/i/status/2111659540790010306"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two replies are cited. @duggsby (2026-10-18) is surprised that nobody has made an AI decompilation of LittleBigPlanet for a native PC port, preferably not vibe-coded; @cyberiaaaaaaa answers that an AI “decompile” of LittleBigPlanet 1 has been seen, without naming or linking it. Neither post identifies a project. A 2025 LittleBigPlanet decompilation repository found by search holds only a placeholder README, and neither post links it. Retain the lead as an idea without a catalog mapping; no decompilation or port is established.",
+      "reason_zh": "所引两条回复中：@duggsby（2026-10-18）对至今无人用 AI 反编译 LittleBigPlanet 来制作原生 PC 移植版表示意外，并希望不是“氛围编程”的产物；@cyberiaaaaaaa 回应称见过一个 LittleBigPlanet 1 的 AI“反编译”，但未给出名称或链接。两帖均未指明具体项目。检索到的一个 2025 年 LittleBigPlanet 反编译仓库只有占位 README，两帖也都没有链接它。保留此线索作为设想，不建立目录映射；反编译或移植均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111639768270594300",
+        "https://x.com/i/status/2111659540790010306"
+      ],
       "catalog_matches": []
     },
     {
@@ -14979,12 +14986,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111668130489549026"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post, which the collection snapshot attributes to @bricar_dev as the announcement of REDOC, returned not found through the public post API on 2026-10-19, so its text could not be reviewed. No GitHub account matching the handle exists, and repository searches for REDOC with reverse-engineering or on-chain terms found no matching project. Retain the lead without a catalog mapping; the platform, its open-source status, its on-chain operation and any capability-reconstruction result are all unestablished.",
+      "reason_zh": "合集快照将所引帖子记为 @bricar_dev 发布 REDOC 的公告，但该帖在 2026-10-19 通过公开帖子接口查询时返回“未找到”，因此无法核查其正文。不存在与该账号名对应的 GitHub 账号，以 REDOC 结合逆向工程或链上等关键词检索仓库，也未找到对应项目。保留此线索而不建立目录映射；该平台本身、其开源状态、链上运行方式以及任何能力重建结果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111668130489549026"
+      ],
       "catalog_matches": []
     },
     {
@@ -14999,12 +15008,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111563711005745602"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Capslock404, 2026-10-17) describes Opus 5.5 with REA driving Ghidra, Frida, x64dbg and mitmproxy as one studio, following a binary-to-analysis-to-spec-to-rebuild-to-oracle loop, and reports 231 functions mapped on an unnamed target; it offers to send the setup to anyone who replies. It carries only a video and quotes a general REA guide article. No target is named and no setup, spec, rebuild or oracle result is linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the demonstration’s target, results and REA’s role are unestablished.",
+      "reason_zh": "作者帖子（@Capslock404，2026-10-17）称 Opus 5.5 配合 REA 把 Ghidra、Frida、x64dbg 与 mitmproxy 组合成一个逆向工作台，按“二进制→分析→规格→重建→对照”的流程处理一个未具名目标，并映射了 231 个函数；帖子还表示回复即可获取配置。帖子仅附视频，引用的是一篇泛泛介绍 REA 的文章。帖子未说明目标，也未链接配置、规格、重建结果或对照记录，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；演示目标、结果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111563711005745602"
+      ],
       "catalog_matches": []
     },
     {
@@ -15019,12 +15030,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111479225890865430"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@Squilliam_Speed, 2026-10-17) quotes an announcement about advertising standards on X and says the author had already reverse engineered “the app” and rebuilt it with all advertising removed in 20 minutes with Codex, half of that spent diagnosing wireless ADB problems. It does not name the app and links no code, build or notes, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the target, the rebuild and Codex’s role are unestablished, and no ad-removal method is recorded.",
+      "reason_zh": "作者的纯文字帖子（@Squilliam_Speed，2026-10-17）引用了一条关于 X 广告标准的公告，称自己已用 Codex 逆向了“这个应用”，并在 20 分钟内重建出去除全部广告的版本，其中一半时间用于排查无线 ADB 问题。帖子没有说明是哪个应用，也未链接代码、构建产物或说明，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；目标、重建结果及 Codex 的作用均未确立，此处也不记录任何去广告方法。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111479225890865430"
+      ],
       "catalog_matches": []
     },
     {
@@ -16029,15 +16042,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 238,
-      "pending": 152
+      "insufficient-evidence": 244,
+      "pending": 146
     },
     "units_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 238,
-      "pending": 152
+      "insufficient-evidence": 244,
+      "pending": 146
     },
-    "primary_reviewed_units": 379,
+    "primary_reviewed_units": 385,
     "catalog_linked_occurrences": 213,
     "distinct_resource_ids": 206,
     "distinct_paper_ids": 2,
