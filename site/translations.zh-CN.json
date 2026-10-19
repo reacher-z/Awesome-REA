@@ -3539,5 +3539,14 @@
       "PyInstaller 可执行文件由使用者自行提供；要把恢复出的字节码还原为源码，还需另用反编译器。恢复出的代码仍受原程序权利人的权利约束。",
       "采用 GPL-3.0 许可。本次未运行任何内容。"
     ]
+  },
+  "bap": {
+    "name": "BAP 二进制分析平台",
+    "requirements": [
+      "审阅时最新稳定版为 v2.5.0，发布于 2022-07-11，提供 x86_64 的 Debian 与 RPM 软件包、tgz 压缩包以及 sigs.zip/sigs.tar.gz 签名包；另有一个 v2.6.0-alpha 开发构建，日期为 2023-01-07。所审阅的 master 提交（2026-05-07）比 v2.5.0 多 60 个提交，其 opam 包版本标为 dev，上一个提交则是 2025 年 4 月。本条目固定该提交仅用于引用文档。",
+      "二进制软件包不含 OCaml 开发环境，编写分析需从源码安装。README 推荐使用 opam 和 OCaml 4.14.1（opam install bap），也提供跟随 master 分支滚动更新的 testing opam 仓库，并说明了从克隆仓库用 dune 构建的方法；opam 依赖将 core_kernel 和 base 限制在 v0.16 以下。LLVM 后端需要 llvm-config（conf-bap-llvm 1.8+）。README 称为实验性的 Ghidra 与 radare2 集成以及基于 Z3 的符号执行器包含在 bap-extra 元包中；IDA Pro 集成则是单独的软件包。",
+      "输入为用户提供的可执行文件，或通过 --loader=raw 并指定基址打开的原始代码块。仓库中还有 README 架构列表之外的 RISC-V、SystemZ 和 Thumb 软件包。提升结果取决于各架构语义的覆盖程度；2.5.0 更新日志新增了 --print-missing 选项，用于列出未能提升的指令。",
+      "MIT 许可证；提交到该仓库的贡献须采用 MIT，而独立托管的插件可使用任意许可证，包括专有许可证。README 列出 ForAllSecure Mayhem、Draper 的 CBAT 工具和 Fraunhofer FKIE 的 CWE Checker 等基于 BAP 构建的项目。本次未安装任何软件包，也未分析任何二进制。"
+    ]
   }
 }
