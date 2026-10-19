@@ -7298,5 +7298,40 @@
       "https://github.com/bethington/ghidra-mcp/releases/tag/v7.0.0-rc.3",
       "https://github.com/bethington/ghidra-mcp/releases/tag/v6.0.0"
     ]
+  },
+  {
+    "id": "librw-renderware-reimplementation-case",
+    "name": "librw: a re-implementation of the RenderWare Graphics engine",
+    "url": "https://github.com/aap/librw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements a large part of the RenderWare Graphics middleware API as a portable C++ library that reads and writes its DFF model and TXD texture files for PS2, D3D8, D3D9 and Xbox and is meant to convert them between platforms. Direct3D 9 and OpenGL backends render the scenes, while PS2 rendering works only as a test. README names rendering GTA as its use; BSP world files are not supported.",
+    "description_zh": "以可移植的 C++ 库重新实现 RenderWare Graphics 中间件 API 的大部分内容，可读写其 PS2、D3D8、D3D9 和 Xbox 平台的 DFF 模型与 TXD 纹理文件，并旨在于各平台格式之间转换。场景由 Direct3D 9 和 OpenGL 后端渲染，PS2 渲染仅作为测试可用。README 称其用途是渲染 GTA 游戏；BSP 世界文件尚不支持。",
+    "evidence_url": "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master snapshot dates from 2026-08-26; CMake reports version 0.0.1 and the repository has no tagged releases. README calls librw a re-implementation of RenderWare graphics, “or a good part of it”: not all pre-instanced PS2 DFFs load and BSP is unsupported, and TODO lists morphing, several pipelines and PS2 rendering as open. ARCHITECTURE.MD says some design decisions follow the original RW and others are the author’s own; the reviewed files do not describe how RenderWare was analysed.",
+      "As a library, librw needs no particular original files: applications hand it RenderWare DFF models and TXD texture dictionaries, such as those of the games they render. The repository ships no game data, but its demo tools include four small DFF sample models whose provenance it does not state.",
+      "Builds use premake5 (a premake5.exe is committed) or CMake 3.8+, selecting a NULL, GL3 or D3D9 platform and, for GL3 (OpenGL 2.1+ or ES 2.0+), GLFW, SDL2 or SDL3 for windowing. premake targets Windows x86/amd64, Linux x86/amd64/ARM and PS2, and the CMake files add PS2 and Nintendo Switch toolchains; a skeleton application framework with bundled Dear ImGui accompanies the demo tools.",
+      "The GitHub Actions workflow builds and packages 14 configurations: Windows D3D9, GL3 and null, macOS and Ubuntu GL3 and null, PS2 in a ps2dev container and Switch in a devkitPro container. It runs no tests, and the repository has no test suite or comparison with original RenderWare output; this collection built or ran nothing.",
+      "LICENSE applies MIT to librw; the bundled Dear ImGui and ImGuizmo code carries its own licence files, and RenderWare itself and any game assets keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/ARCHITECTURE.MD",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/TODO",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/CMakeLists.txt",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/README.cmake",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/premake5.lua",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/.github/workflows/build.yml",
+      "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/src",
+      "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/tools",
+      "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/skeleton/imgui",
+      "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/LICENSE"
+    ]
   }
 ]

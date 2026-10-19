@@ -3010,5 +3010,15 @@
       "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
       "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "librw-renderware-reimplementation-case": {
+    "name": "librw：RenderWare Graphics 引擎的重新实现",
+    "requirements": [
+      "所审阅的 master 快照日期为 2026-08-26；CMake 标注版本为 0.0.1，仓库没有带标签的发行版。README 称 librw 是 RenderWare graphics 的重新实现，“或至少是其中很大一部分”：并非所有预实例化的 PS2 DFF 都能载入，BSP 完全不支持，TODO 中仍列着变形动画、若干渲染管线和 PS2 渲染等待办项。ARCHITECTURE.MD 说明部分设计沿用原版 RW，部分出自作者本人；所审文件未说明如何分析 RenderWare。",
+      "librw 作为库，本身不需要特定的原版文件：应用程序向它提供 RenderWare 的 DFF 模型和 TXD 纹理字典，例如所渲染游戏中的这些文件。仓库不附带游戏数据，但其演示工具中包含四个小型 DFF 示例模型，仓库未说明其来源。",
+      "可用 premake5（仓库内提交了 premake5.exe）或 CMake 3.8+ 构建，选择 NULL、GL3 或 D3D9 平台；GL3（OpenGL 2.1+ 或 ES 2.0+）可选用 GLFW、SDL2 或 SDL3 处理窗口。premake 面向 Windows x86/amd64、Linux x86/amd64/ARM 以及 PS2，CMake 文件另提供 PS2 与 Nintendo Switch 工具链；演示工具附带一个内置 Dear ImGui 的 skeleton 应用框架。",
+      "GitHub Actions 工作流构建并打包 14 种配置：Windows 的 D3D9、GL3 与 null，macOS 和 Ubuntu 的 GL3 与 null，在 ps2dev 容器中构建的 PS2，以及在 devkitPro 容器中构建的 Switch。工作流不运行测试，仓库也没有测试套件或与原版 RenderWare 输出的对比；本合集未构建或运行任何内容。",
+      "LICENSE 对 librw 采用 MIT 许可；内置的 Dear ImGui 与 ImGuizmo 代码附有各自的许可文件，RenderWare 本身及任何游戏素材的权利归其所有者。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
