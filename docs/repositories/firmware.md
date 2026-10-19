@@ -2,13 +2,14 @@
 
 [All categories](README.md) · [简体中文](firmware.zh-CN.md)
 
-**209 repositories** · 2026-10-16 UTC
+**210 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [ReFirmLabs/binwalk](https://github.com/ReFirmLabs/binwalk) — Firmware Analysis Tool **[14,491 stars]** · Curated: [Binwalk](https://awesomerea.org/resources/binwalk/)
 - [LongSoft/UEFITool](https://github.com/LongSoft/UEFITool) — UEFI firmware image viewer and editor **[5,752 stars]** · Curated: [UEFITool](https://awesomerea.org/resources/uefitool/)
 - [e-m-b-a/emba](https://github.com/e-m-b-a/emba) — EMBA - The firmware security analyzer **[3,712 stars]** · Curated: [EMBA](https://awesomerea.org/resources/emba/)
+- [ma1co/Sony-PMCA-RE](https://github.com/ma1co/Sony-PMCA-RE) — Reverse Engineering Sony Digital Cameras **[2,916 stars]** · Curated: [Sony-PMCA-RE](https://awesomerea.org/resources/sony-pmca-re/)
 - [onekey-sec/unblob](https://github.com/onekey-sec/unblob) — Extract files from any kind of container formats **[2,577 stars]** · Curated: [unblob](https://awesomerea.org/resources/unblob/)
 - [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — Platform for emulation and dynamic analysis of Linux-based firmware **[2,114 stars]** · Paper: [Towards Automated Dynamic Analysis for Linux-based Embedded Firmware](https://awesomerea.org/papers/paper-firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK: unpack, modify, and repack binaries. **[2,080 stars]** · Curated: [OFRAK](https://awesomerea.org/resources/ofrak/)

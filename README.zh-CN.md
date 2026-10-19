@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 417](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-417-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 418](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-418-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (50) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
+- [原生二进制](#native-binary) (50) · [固件与硬件](#firmware) (19) · [协议](#protocol) (15)
 
 **论文与工作流**
 
@@ -2070,6 +2070,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   通过定位并解码内嵌的 kallsyms 符号表，从 Linux 内核镜像重建带函数与变量符号、可供分析的 ELF 文件；输入可以是原始或压缩的 vmlinux、vmlinuz、zImage、bzImage 数据块，部分 Android boot.img 文件，或已去除符号的内核 ELF。工具会检测压缩格式、指令集、字节序、位宽、入口点和近似基址，并生成可在 IDA Pro 或 Ghidra 中分析的 ELF；另附列出符号的 kallsyms-finder、独立解压工具和 GTK 图形界面。
 
   工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
+
+- [**Sony-PMCA-RE Sony 数码相机逆向工具**](https://github.com/ma1co/Sony-PMCA-RE)
+
+  基于逆向 Sony 数码相机而开发的 USB 工具。在受支持的机型上，它可读取相机信息，并借助 PlayMemories Camera Apps 机制安装 Android 应用；其固件更新模式和服务模式下的 shell 可转储固件、执行 Linux 命令并调整设置。仓库中的说明文档记录了 Sony 应用商店、浏览器插件与相机之间的应用安装交互过程。
+
+  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/sony-pmca-re/)
 
 <a id="protocol"></a>
 ### Protocol · 协议

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**611 repositories** · 2026-10-16 UTC
+**610 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -47,7 +47,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [hookmaster/frida-all-in-one](https://github.com/hookmaster/frida-all-in-one) — FRIDA Operation Manual by <span>@</span>hluwa and <span>@</span>r0ysue **[3,153 stars]**
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — An AI-agent-first MCP server for JavaScript reverse engineering: headed Chrome debugging, breakpoints, network/WebSocket analysis, Patchright anti-detection, and optional CloakBrowser. **[2,961 stars]**
 - [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — A completely free, open source and online course about Reverse Engineering iOS Applications. **[2,917 stars]**
-- [ma1co/Sony-PMCA-RE](https://github.com/ma1co/Sony-PMCA-RE) — Reverse Engineering Sony Digital Cameras **[2,916 stars]**
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — A reverse engineering of Linear's sync engine. **[2,865 stars]**
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter Reverse Engineering Framework **[2,775 stars]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — A list of Reverse Engineering articles, books, and papers **[2,750 stars]**

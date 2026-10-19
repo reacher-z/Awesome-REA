@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 417](https://img.shields.io/badge/resources-417-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 418](https://img.shields.io/badge/resources-418-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (50) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (15)
+- [Native Binary](#native-binary) (50) · [Firmware and Hardware](#firmware) (19) · [Protocol](#protocol) (15)
 
 **Research and workflows**
 
@@ -2069,6 +2069,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Rebuild an analyzable ELF with function and variable symbols from a Linux kernel image, whether a raw or compressed vmlinux, vmlinuz, zImage or bzImage blob, certain Android boot.img files or a stripped kernel ELF, by locating and decoding the embedded kallsyms symbol table. It detects the compression format, instruction set, endianness, word size, entry point and an approximate base address and writes an ELF for IDA Pro or Ghidra; a kallsyms-finder listing, a standalone decompressor and a GTK GUI are included.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/vmlinux-to-elf/)
+
+- [**Sony-PMCA-RE**](https://github.com/ma1co/Sony-PMCA-RE)
+
+  USB tool built from reverse engineering Sony digital cameras. On supported models it reads camera information and installs Android apps through the PlayMemories Camera Apps mechanism, while its firmware-updater and service-mode shells can dump firmware, run Linux commands and change settings. The repository's notes describe the app-installation exchange between the Sony app store, the browser plugin and the camera.
+
+  Tool · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/sony-pmca-re/)
 
 <a id="protocol"></a>
 ### Protocol

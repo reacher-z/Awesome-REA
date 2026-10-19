@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**611 个仓库** · 2026-10-16 UTC
+**610 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -47,7 +47,6 @@
 - [hookmaster/frida-all-in-one](https://github.com/hookmaster/frida-all-in-one) — 《FRIDA 操作手册》，作者：<span>@</span>hluwa、<span>@</span>r0ysue。 **[3,153 星标]**
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — 面向 AI 智能体设计的 JavaScript 逆向 MCP 服务器：支持有界面的 Chrome 调试、断点、网络与 WebSocket 分析、Patchright 反检测，并可选用 CloakBrowser。 **[2,961 星标]**
 - [ivRodriguezCA/RE-iOS-Apps](https://github.com/ivRodriguezCA/RE-iOS-Apps) — 完全免费、开源的 iOS 应用逆向工程在线课程。 **[2,917 星标]**
-- [ma1co/Sony-PMCA-RE](https://github.com/ma1co/Sony-PMCA-RE) — Sony 数码相机逆向工程。 **[2,916 星标]**
 - [wzhudev/reverse-linear-sync-engine](https://github.com/wzhudev/reverse-linear-sync-engine) — 对 Linear 同步引擎的逆向工程。 **[2,865 星标]**
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter 逆向工程框架。 **[2,775 星标]**
 - [onethawt/reverseengineering-reading-list](https://github.com/onethawt/reverseengineering-reading-list) — 逆向工程文章、书籍和论文列表。 **[2,750 星标]**
