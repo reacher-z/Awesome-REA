@@ -7454,5 +7454,38 @@
       "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.github/workflows/pr-label-ai.yml",
       "https://decomp.dev/MonsterDruide1/OdysseyDecomp"
     ]
+  },
+  {
+    "id": "droid-asc",
+    "name": "Droid ASC",
+    "url": "https://github.com/MG1937/ASC",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Python Android decompiler that answers queries directly against an APK instead of first unpacking and indexing it. It probes compressed DEX entries in place, uses the layout that the R8 compiler’s constant relocation and instruction deduplication leave behind to search string, type, method and field references across DEX files, and for a requested class rebuilds a minimal, self-consistent DEX in memory that a bundled copy of Androguard’s decompiler turns into Java. The droidasc CLI and Tk GUI list classes, decompile single classes, decode AndroidManifest.xml and find subclasses or interface implementations; the README presents it as a lightweight back end for agents analyzing many APKs.",
+    "description_zh": "用 Python 编写的 Android 反编译器，直接对 APK 执行查询，而不必先解包并建立索引。它在压缩的 DEX 条目中就地探测数据，利用 R8 编译器的常量重定位和指令去重所留下的布局，跨 DEX 文件搜索字符串、类型、方法和字段引用；对指定的类，则在内存中重建一个最小且自洽的 DEX，再由内置的 Androguard 反编译器副本转换为 Java 代码。droidasc 命令行和 Tk 图形界面可列出类、反编译单个类、解码 AndroidManifest.xml，并查找子类或接口实现；README 将其定位为供智能体批量分析 APK 的轻量后端。",
+    "evidence_url": "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: dev-0.1.2-post2, published 2026-10-14 without binary assets and matching PyPI’s droidasc 0.1.2.post2; the reviewed main commit adds only two README notes. The project began in June 2026. The README now says it has been rewritten 1:1 in Rust as the separate rust_ASC repository, which adds full-APK decompilation and is to be updated in sync; rust_ASC and the linked Black Hat Europe Arsenal listing were not reviewed.",
+      "Install with pip install droidasc or from source. pyproject.toml requires Python 3.10+ with axml and mutf8, and CI runs the unit, integration and GUI suites and gates performance regressions on Ubuntu with Python 3.11 and 3.12. APK and DEX inputs come from the user; the README’s benchmark APKs are not in the repository, and the DEX inside the test fixture holds only AndroidX, Kotlin and Material Components library classes.",
+      "Speed and memory figures are author-reported: on Telegram X, WhatsApp, Grab and Lark APKs of 59–352 MB with 10 threads, the README reports string-reference searches 62–302× and single-class decompilation 38–304× faster than JADX while using 36–141 MB, and says JADX ran out of memory on the largest. Java output comes from the bundled Androguard decompiler, one class at a time. The README targets agent workflows but describes no MCP server; agents call the CLI or Python package.",
+      "Apache-2.0; the bundled dadguard package carries Androguard code, which is also Apache-2.0. Decompiled code keeps the rights of the app’s owner. Nothing was installed or run, and no APK was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/README.md#L1-L13",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/README.md#L15-L66",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/pyproject.toml",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/tests/TESTING.md",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/.github/workflows/tests.yml",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/dadguard/__init__.py",
+      "https://github.com/MG1937/ASC/blob/60033d1c76bc5904588f24955cae4e83a2ba4f5d/LICENSE",
+      "https://github.com/MG1937/ASC/releases/tag/dev-0.1.2-post2",
+      "https://pypi.org/project/droidasc/0.1.2.post2/"
+    ]
   }
 ]

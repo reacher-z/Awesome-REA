@@ -3057,5 +3057,14 @@
       "tools/check 会把 data/file_list.yml 中登记的每个函数与原始可执行文件比对。在固定版本中，该清单标记 18,996 个函数一致、47 个有细微差异、252 个有较大差异、54,876 个尚未反编译；decomp.dev 针对该提交的报告同样给出 25.61% 的函数一致率，按代码字节计为 15.77%。CI 通过仓库密钥获取可执行文件，构建后要求检查通过，另行检查每个头文件都能单独编译；本合集均未运行。",
       "GitHub 未识别出许可证，固定版本根目录也没有许可证文件，因此未声明任何复用条款；子模块与任天堂的内容仍受各自条款约束。有一个工作流会给按其说法“通常使用 AI”的作者新开的拉取请求加上 ai 标签，但所审文件既未量化 AI 的使用程度，也未将重建归功于 REA。"
     ]
+  },
+  "droid-asc": {
+    "name": "Droid ASC Android 反编译器",
+    "requirements": [
+      "审阅时最新版本为 dev-0.1.2-post2，发布于 2026-10-14，未附二进制文件，与 PyPI 上的 droidasc 0.1.2.post2 一致；所审阅的 main 提交只多了两条 README 说明。项目始于 2026 年 6 月。README 现称它已按 1:1 方式用 Rust 重写为独立的 rust_ASC 仓库，后者增加了整 APK 反编译，今后两者将同步更新；本次未审阅 rust_ASC 以及所链接的 Black Hat Europe Arsenal 页面。",
+      "可通过 pip install droidasc 或从源码安装。pyproject.toml 要求 Python 3.10+，依赖 axml 和 mutf8；CI 在 Ubuntu 上以 Python 3.11 和 3.12 运行单元、集成和图形界面测试，并拦截性能回退。APK 和 DEX 输入由使用者提供；README 基准测试所用的 APK 不在仓库中，测试夹具中的 DEX 只包含 AndroidX、Kotlin 和 Material Components 库的类。",
+      "速度和内存数据均为作者自报：README 称在 Telegram X、WhatsApp、Grab 和 Lark 四个 59–352 MB 的 APK 上以 10 个线程运行时，字符串引用搜索比 JADX 快 62–302 倍，单类反编译快 38–304 倍，内存占用为 36–141 MB，并称 JADX 在最大的目标上内存不足。Java 输出由内置的 Androguard 反编译器生成，每次处理一个类。README 面向智能体工作流，但未介绍 MCP 服务器；智能体需调用命令行或 Python 包。",
+      "采用 Apache-2.0 许可；内置的 dadguard 包含 Androguard 代码，后者同样采用 Apache-2.0。反编译得到的代码仍归应用权利人所有。本次未安装或运行任何组件，也未分析任何 APK。"
+    ]
   }
 }
