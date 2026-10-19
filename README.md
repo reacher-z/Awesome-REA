@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 341](https://img.shields.io/badge/resources-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 178](https://img.shields.io/badge/cases-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 81](https://img.shields.io/badge/papers-81-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 341](https://img.shields.io/badge/resources-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 178](https://img.shields.io/badge/cases-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 82](https://img.shields.io/badge/papers-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (81) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (82) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2157,13 +2157,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**81 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**82 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (29) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (30) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2431,6 +2431,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Recovers member offsets, sizes and relationships, not original type or member names; relationship correctness is judged by matching layouts because names are unavailable. The main evaluation uses OSPREY’s dataset of GNU coreutils and larger Howard-dataset programs, over 10,000 functions and 11,000 composite-typed variables at O0–O3, with ground truth from debug information; the paper does not report results per architecture. In the baseline comparison, OSPREY results were supplied by its authors and its runtime is an estimate, and ReSym figures are its published results, so not every baseline was rerun. Conservative removal of conflicting edges can drop valid members, and compiler optimizations that merge or flatten members lower accuracy at higher levels. About 75% of runtime is the LLM selection stage; the default model was GPT-4o mini, with each comparison run three times. Downstream readability and vulnerability examples are case studies, not proof of semantic equivalence.
 
   **Authors:** Yanzhong Wang et al.
+
+  </details>
+
+- [**Nova: Generative Language Models for Assembly Code with Hierarchical Attention and Contrastive Learning**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ef283d62b4bce30854a8d4827f331229-Abstract-Conference.html)
+
+  Nova is a generative LLM for x86-64 assembly, trained from DeepSeek-Coder checkpoints on stripped, normalized gcc -O0 to -O3 assembly built from AnghaBench and The Stack. It adds hierarchical attention that builds per-instruction summaries, and contrastive objectives that keep a function's source and O0–O3 assembly close while ordering them by optimization level. Fine-tuned for decompilation, Nova-1.3B and Nova-6.7B reach 25.17% and 34.36% average Pass<span>@</span>1 on HumanEval-Decompile, 14.84 and 12.41 points above same-size LLM4Decompile; separately fine-tuned models report the highest average Recall<span>@</span>1 for O0-to-O3 binary code similarity on six real-world projects.
+
+  ICLR 2025 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/ef283d62b4bce30854a8d4827f331229-Paper-Conference.pdf) · [Code](https://github.com/lt-asset/nova/tree/6dfaf438fb23a8f024d0297653571615631ad8f4) · [Full entry & citation](https://awesomerea.org/papers/paper-nova/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Decompilation is evaluated function by function on the 164 HumanEval-Decompile C problems, each compiled for x86-64 at O0–O3, by running 20 samples per function against the problems' test cases; Pass<span>@</span>k on these tests is neither whole-program nor equivalence evidence. Baselines other than LLM4Decompile and Nova were prompted with three-shot examples rather than fine-tuned. Similarity results cover O0 queries against O3 candidates in pools of 50–500 functions from Binutils, Curl, ImageMagick, SQLite, OpenSSL and PuTTY, after fine-tuning on BinaryCorp-3M. Decompilation fine-tuning used a 2.16M-pair sample, the README says only 50K files came from The Stack, and the paper limits Nova to x86-64 assembly and 1.3B and 6.7B models. Inputs require the paper's assembly normalization.
+
+  **Authors:** Nan Jiang et al.
 
   </details>
 

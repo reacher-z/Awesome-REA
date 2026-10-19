@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 341](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 178](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 81](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-81-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 341](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 178](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (81) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (82) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2158,13 +2158,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**81 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**82 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (29) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (30) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2432,6 +2432,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 恢复的是成员偏移、大小和类型间关系，而非原始类型名或成员名；由于名称不可得，关系是否正确以布局匹配判定。主要评测使用 OSPREY 的数据集，包括 GNU coreutils 与 Howard 数据集中较大的程序，涵盖超过 10,000 个函数和 11,000 个复合类型变量，优化级别为 O0–O3，真实标签取自调试信息；论文未按架构分别报告结果。基线比较中，OSPREY 的结果由其作者提供，运行时间为估算值，ReSym 的数据取自其已发表结果，因此并非所有基线均经重新运行。保守地删除冲突边可能遗漏有效成员；合并或展平成员的编译器优化会降低较高优化级别下的准确率。约 75% 的运行时间用于大语言模型选择阶段；默认模型为 GPT-4o mini，每轮比较执行三次。下游可读性与漏洞检测示例属于案例研究，不能证明语义等价。
 
   **作者:** Yanzhong Wang 等
+
+  </details>
+
+- [**Nova：结合层次注意力与对比学习的汇编代码生成式语言模型**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/ef283d62b4bce30854a8d4827f331229-Abstract-Conference.html)
+
+  Nova 是面向 x86-64 汇编的生成式大语言模型，从 DeepSeek-Coder 检查点出发，以 AnghaBench 与 The Stack 代码经 gcc -O0 至 -O3 编译、剥离符号并规范化后的汇编训练。它加入为每条指令构建摘要的层次注意力，以及对比学习目标：使同一函数的源码与 O0–O3 汇编表示彼此接近，并按优化级别排序。针对反编译微调后，Nova-1.3B 与 Nova-6.7B 在 HumanEval-Decompile 上的平均 Pass<span>@</span>1 分别为 25.17% 和 34.36%，比同规模 LLM4Decompile 高 14.84 和 12.41 个百分点；另行微调的模型在六个真实项目上的 O0 对 O3 二进制代码相似性检测中取得最高的平均 Recall<span>@</span>1。
+
+  ICLR 2025 · 会议论文 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/ef283d62b4bce30854a8d4827f331229-Paper-Conference.pdf) · [代码](https://github.com/lt-asset/nova/tree/6dfaf438fb23a8f024d0297653571615631ad8f4) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-nova/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 反编译以函数为单位，在 HumanEval-Decompile 的 164 个 C 问题上评测；每个问题在 O0–O3 下编译为 x86-64，每个函数采样 20 次并以题目测试用例运行。基于这些测试的 Pass<span>@</span>k 既不能证明整程序反编译能力，也不能证明等价性。除 LLM4Decompile 与 Nova 外，其他基线采用三样例提示而非微调。相似性结果针对 O0 查询与 O3 候选，候选池为来自 Binutils、Curl、ImageMagick、SQLite、OpenSSL 与 PuTTY 的 50–500 个函数，模型先在 BinaryCorp-3M 上微调。反编译微调使用抽样的 216 万对数据，README 称仅从 The Stack 获取 5 万个文件；论文也说明 Nova 仅支持 x86-64 汇编，模型规模限于 1.3B 和 6.7B。输入需要按论文方式规范化汇编。
+
+  **作者:** Nan Jiang 等
 
   </details>
 
