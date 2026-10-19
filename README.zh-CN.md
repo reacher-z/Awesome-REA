@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 316](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-316-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 161](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 317](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-317-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 161](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (73) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (73) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1812,6 +1812,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。
 
   集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark-mcp/)
+
+- [**BINNY 逆向分析智能体框架**](https://github.com/openbin-ai/binny)
+
+  OpenBin 推出的开源终端智能体框架，让使用者自选的托管或本地模型处理二进制分析数据。它从 OpenBin 或 OpenAPK 项目、或本地 Ghidra 容器的分析结果中读取反编译函数、字符串、导入表和数据，按分诊、调查与起草流程工作，并保存恶意软件分析或漏洞研究报告草稿供人工审阅。它是输出草稿的分析框架，而非重建项目。
+
+  集成 · 独立智能体 · [使用条件与证据](https://awesomerea.org/zh/resources/binny-agent-harness/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集

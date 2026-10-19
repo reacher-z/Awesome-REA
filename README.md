@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 316](https://img.shields.io/badge/resources-316-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 161](https://img.shields.io/badge/cases-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 317](https://img.shields.io/badge/resources-317-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 161](https://img.shields.io/badge/cases-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (73) · [Agents and MCP](#agents-and-mcp) (27) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (73) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1811,6 +1811,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   MCP server that wraps tshark, and optionally other Wireshark command-line tools, so agents can query saved captures through Wireshark's dissectors: packet lists and details, stream following, arbitrary field extraction, protocol hierarchies and conversations, decode-as rules for non-standard ports, protocol preferences, TLS and WPA decryption with user-supplied keys, and one tool that applies preset fields and filters for 25 protocols such as Modbus, S7comm, MQTT, Zigbee and BLE. Separate security-heuristic, live-capture and capture-editing tools sit beside the dissection tools.
 
   Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/wireshark-mcp/)
+
+- [**BINNY**](https://github.com/openbin-ai/binny)
+
+  An open-source terminal agent harness from OpenBin that runs a user-chosen hosted or local model over binary-analysis data. It reads decompiled functions, strings, imports and data from an OpenBin or OpenAPK project or a local Ghidra container run, follows triage, investigation and drafting playbooks, and saves a draft malware-analysis or vulnerability-research report for human review. It is an analysis harness with draft outputs, not a reconstruction project.
+
+  Integration · Independent agent · [Requirements & evidence](https://awesomerea.org/resources/binny-agent-harness/)
 
 <a id="related-collections"></a>
 ### Related Collections
