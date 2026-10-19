@@ -7142,5 +7142,38 @@
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/README.md",
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/symbol_addrs.txt"
     ]
+  },
+  {
+    "id": "psyz",
+    "name": "PsyZ",
+    "url": "https://github.com/Xeeynamo/psyz",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "C porting library that replaces the API of PSY-Q, Sony's PlayStation runtime library, with native implementations, so decompiled or original PlayStation source can be compiled for Linux, macOS, iOS, Windows, WebAssembly and PSP while still building for the console. It is neither an emulator nor a static recompiler: it aims at PSY-Q API compatibility rather than hardware accuracy, offers an optional GPU and SPU emulation layer behind emulated MMIO endpoints, and carries a matching decompilation of the PSY-Q 4.0 libraries.",
+    "description_zh": "用 C 编写的移植库，以原生实现替换 Sony PlayStation 运行时库 PSY-Q 的 API，使反编译得到的或原有的 PlayStation 源码能够在 Linux、macOS、iOS、Windows、WebAssembly 和 PSP 上编译，同时仍可为主机本身构建。它既不是模拟器，也不是静态重编译器：目标是与 PSY-Q API 兼容而非硬件精确，另提供经由仿真 MMIO 端点访问的可选 GPU 与 SPU 仿真层，并包含对 PSY-Q 4.0 库的匹配反编译。",
+    "evidence_url": "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README lists decompilation ports of Castlevania: Symphony of the Night, Rayman 1, Final Fantasy VII, Mega Man X4 and Rage Racer among its users, and states that PsyZ does not aim for output identical to real hardware or reproduce game bugs that rely on hardware misuse. A port needs the game's reconstructed C source plus the changes in the porting guide, such as ordered-table and primitive-tag types and 64-bit pointer fixes. The PSY-Q decompilation under decomp/ is ongoing.",
+      "PsyZ itself takes no game binaries. Its optional SDK setup, needed to cross-compile for the PlayStation and to check the decompiled libraries, downloads PSY-Q 4.0 and 4.7 SDK archives that the project hosts as assets of its own GitHub release, then converts their libraries and headers. Those archives contain Sony's proprietary SDK, and no reviewed source states permission to redistribute them.",
+      "Builds with CMake 3.21+ and a C11 compiler (MSVC, Clang or MinGW on Windows) against SDL3, using an SDL3 GPU or OpenGL renderer, from a recursive clone that pulls the SDL, cimgui and nugget submodules; Emscripten produces the WebAssembly build and a separate backend targets the PSP. The only GitHub release holds the SDK archives and a conversion tool rather than a PsyZ build. Last commit at review: 2026-10-18.",
+      "GitHub workflows run the PsyZ test suite on 64-bit and 32-bit Linux, Windows with MSVC and clang-cl, and macOS, run the ztest self-test on PSP under a headless PPSSPP, build the samples, and check that the decompiled PSY-Q code matches the converted SDK libraries. The README's comparison with PCSX-Redux and SymphonyRecomp is a single author measurement on Symphony of the Night's prologue stage.",
+      "Licensing is mixed per LICENSE: MIT for nugget, psyq2elf, samples and ztest, MPL-2.0 for psyz/src/platform and psyz/src/psyz, and psyz/include and psyz/src/psyq listed as unlicensed; decomp/ carries its own MIT license. Reviewed sources state no REA use, and this collection did not build or run it."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/LICENSE",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/PORTING_GUIDE.md",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/decomp/README.md",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/decomp/LICENSE",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/decomp/sdk/Makefile",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/Makefile",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/psyz/CMakeLists.txt",
+      "https://github.com/Xeeynamo/psyz/blob/559adc76843bcca4945e9b3252d64889d58fc9e0/.github/workflows/build.yaml"
+    ]
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 344](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-344-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 179](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 345](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 179](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (160) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (161) · [应用](#app) (49)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1147,6 +1147,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   实验性的静态重编译器，将 PlayStation 2 ELF 可执行文件中的 MIPS R5900 代码转换为 C++，并与随附的运行时链接。ps2xAnalyzer 或 Ghidra 导出脚本为每款游戏生成包含函数、存根、跳过项和指令补丁的 TOML 配置；ps2xRecomp 输出逐条指令的直译代码；ps2xRuntime 与 ps2xIOP 提供客户机内存、系统调用分发、带 HLE 回退的 IOP 模块执行，以及仅部分实现、大多为存根的 GS/VU 硬件。输出不是反编译源码，让游戏真正运行仍需针对每款游戏进行移植。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ps2recomp/)
+
+- [**PsyZ PlayStation 移植库**](https://github.com/Xeeynamo/psyz)
+
+  用 C 编写的移植库，以原生实现替换 Sony PlayStation 运行时库 PSY-Q 的 API，使反编译得到的或原有的 PlayStation 源码能够在 Linux、macOS、iOS、Windows、WebAssembly 和 PSP 上编译，同时仍可为主机本身构建。它既不是模拟器，也不是静态重编译器：目标是与 PSY-Q API 兼容而非硬件精确，另提供经由仿真 MMIO 端点访问的可选 GPU 与 SPU 仿真层，并包含对 PSY-Q 4.0 库的匹配反编译。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/psyz/)
 
 <a id="app"></a>
 ### App · 应用

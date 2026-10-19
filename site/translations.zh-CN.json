@@ -2950,5 +2950,15 @@
       "结果是作者在一次调试过程中的观察，本合集未重做。文章称该流程非常依赖手工操作，并说明 gdbgui 未能在该环境下正常使用。文中自动生成的名称后来已更改：在所审阅的提交 7600c79 中，symbol_addrs.txt 将 0x8003D560 命名为 initRace，将 0x800AFE8C 命名为 gGameSessionContext，脚注链接的 src/3E160.c 也已不在源码树中。",
       "文章记录的是手动调试，未提及 AI 或 REA 的使用；借助 LLM 的匹配工作另见 Snowboard Kids 2 案例条目。所审阅提交中的反编译仓库没有许可证文件，游戏 ROM 及其内容仍受各自权利约束。"
     ]
+  },
+  "psyz": {
+    "name": "PsyZ PlayStation 移植库",
+    "requirements": [
+      "README 列出的使用者包括 Castlevania: Symphony of the Night、Rayman 1、Final Fantasy VII、Mega Man X4 和 Rage Racer 的反编译移植，并说明 PsyZ 不追求与真实硬件完全一致的输出，也不重现依赖硬件误用的游戏错误。移植需要游戏重建后的 C 源码，并按移植指南修改代码，例如排序表和图元标签的类型以及 64 位指针问题。decomp/ 下的 PSY-Q 反编译仍在进行中。",
+      "PsyZ 本身不读取游戏二进制文件。其可选的 SDK 配置步骤用于交叉编译到 PlayStation 并检查反编译的库，会下载项目以自身 GitHub 发布附件形式托管的 PSY-Q 4.0 和 4.7 SDK 压缩包，再转换其中的库和头文件。这些压缩包包含 Sony 的专有 SDK，所审阅的资料均未说明有权再分发它们。",
+      "使用 CMake 3.21+ 和 C11 编译器（Windows 上为 MSVC、Clang 或 MinGW）基于 SDL3 构建，渲染器可选 SDL3 GPU 或 OpenGL，需递归克隆以拉取 SDL、cimgui 和 nugget 子模块；WebAssembly 版本由 Emscripten 构建，另有单独的后端面向 PSP。唯一的 GitHub 发布只包含 SDK 压缩包和一个转换工具，而非 PsyZ 构建。审阅时最后一次提交为 2026-10-18。",
+      "GitHub 工作流在 64 位和 32 位 Linux、使用 MSVC 和 clang-cl 的 Windows 以及 macOS 上运行 PsyZ 测试套件，在无界面 PPSSPP 中运行 PSP 版 ztest 自检，构建示例程序，并检查反编译的 PSY-Q 代码与转换后的 SDK 库是否一致。README 中与 PCSX-Redux 和 SymphonyRecomp 的对比，只是作者在 Symphony of the Night 序章关卡上的一次测量。",
+      "依据 LICENSE，许可是混合的：nugget、psyq2elf、samples 和 ztest 采用 MIT，psyz/src/platform 和 psyz/src/psyz 采用 MPL-2.0，psyz/include 和 psyz/src/psyq 标注为无许可；decomp/ 另有自己的 MIT 许可证。所审阅资料未提及使用 REA，本目录也未构建或运行该库。"
+    ]
   }
 }

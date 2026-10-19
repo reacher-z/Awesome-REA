@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 344](https://img.shields.io/badge/resources-344-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 179](https://img.shields.io/badge/cases-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 82](https://img.shields.io/badge/papers-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 345](https://img.shields.io/badge/resources-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 179](https://img.shields.io/badge/cases-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 82](https://img.shields.io/badge/papers-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (160) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (161) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1146,6 +1146,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Experimental static recompiler that translates MIPS R5900 code from PlayStation 2 ELF executables into C++ and links it with a bundled runtime. ps2xAnalyzer or a Ghidra export script produces a per-game TOML of functions, stubs, skips and instruction patches; ps2xRecomp emits a literal instruction-by-instruction translation; ps2xRuntime and ps2xIOP supply guest memory, syscall dispatch, IOP module execution with HLE fallbacks and partial, largely stubbed GS/VU hardware. Output is not decompiled source, and getting a game to run remains per-game porting work.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/ps2recomp/)
+
+- [**PsyZ**](https://github.com/Xeeynamo/psyz)
+
+  C porting library that replaces the API of PSY-Q, Sony's PlayStation runtime library, with native implementations, so decompiled or original PlayStation source can be compiled for Linux, macOS, iOS, Windows, WebAssembly and PSP while still building for the console. It is neither an emulator nor a static recompiler: it aims at PSY-Q API compatibility rather than hardware accuracy, offers an optional GPU and SPU emulation layer behind emulated MMIO endpoints, and carries a matching decompilation of the PSY-Q 4.0 libraries.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/psyz/)
 
 <a id="app"></a>
 ### App
