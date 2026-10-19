@@ -36528,5 +36528,41 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "crimsonland-rebuilt-case",
+    "name": "Crimsonland, rebuilt: a matching decompilation and a tick-accurate Python port",
+    "url": "https://github.com/banteg/crimson",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rebuilds Crimsonland (2003), as its 1.9.93 GOG Crimsonland Classic release, twice: as a matching decompilation whose C/C++ source Visual C++ 6 compiles back into the original crimsonland.exe and grim.dll, also built to WebAssembly so the original game runs in a browser, and as a Python and raylib reimplementation that matches the original’s timings, random rolls and float32 rounding tick by tick. CI requires the recovered source to replay every recorded run exactly as the Python port does. Game files come from the project’s own host, which states that it distributes them with permission from the developer, 10tons.",
+    "description_zh": "以 1.9.93 版 GOG《Crimsonland Classic》为准，把《Crimsonland》（2003）重建了两次：一是一致性反编译，其 C/C++ 源码经 Visual C++ 6 编译后可还原出原始的 crimsonland.exe 与 grim.dll，并编译为 WebAssembly，让原版游戏在浏览器中运行；二是用 Python 与 raylib 编写的重新实现，逐帧复现原版的时序、随机数与 float32 舍入。CI 要求恢复出的源码重放每段录像，结果须与 Python 移植完全一致。游戏文件由项目自己的服务器提供，项目称已获开发商 10tons 许可分发。",
+    "evidence_url": "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/readme.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master pin, committed 2026-10-19, carries Python package version 0.19.2. The canonical target is the 2011 GOG release of version 1.9.93; the same source tree also builds the 1.9.8 shareware release and is being measured against three 2002 freeware builds. The clients fix the original’s documented bugs, with --preserve-bugs restoring them in the Python port, and add online co-op, replays, custom quests and a leaderboard at crimson.land.",
+      "Players need no original files: every client downloads crimson.paq, sfx.paq and music.paq from the project’s asset host, which README and PORT.md say distributes them with 10tons’ permission, with uncompressed art the studio supplied. Analysis uses local copies of the original releases in the gitignored game_bins/ folder. The repository holds Ghidra, IDA and Binary Ninja name maps and structured snapshots, plus data-definition tables carrying initializer bytes from the reference images, but no executables; the decompilation CI fetches the pinned reference images from the same host.",
+      "Development needs Python 3.13+ with uv, just, ast-grep and prek. The recovered core also needs clang++, a pinned wasi-sdk and Node.js, and the clients need wabt’s wasm2c, SDL3, libcurl and, for the browser build, Emscripten. The Python port installs with uvx, the desktop client runs on macOS and Linux, and matching compiles each function with its build’s Visual C++ profile from decomp/builds.json; D3DX8, the MSVC runtime and the image and audio codecs link from pinned upstream archives and are not counted as recovered code.",
+      "README calls the 1.9.93 decompilation complete, with every game and engine function from recovered source and every reference checked; decomp.dev’s game-category reports for the pinned commit list 100% of code (860 of 860 functions) for 1.9.93, 99.6% for 1.9.8 and 8.7–11.7% for the freeware builds. CI requires the recovered source to play every bot run and supported replay fixture exactly as the Python port does, under the original and the fixed rules, and the leaderboard server replays each submitted run on the recovered code. The Python port settles open questions against the original code under a Unicorn oracle; this collection ran none of these checks.",
+      "GitHub detects no license and the pinned root has no license file; README calls the game code and reimplementation independent work for preservation, research and compatibility, while the assets keep 10tons’ rights. The author’s write-up of 1 February 2026 reports using Codex with GPT-5.2 exclusively and rewriting the game in two weeks and 1,666 commits; the repository carries Codex skill files but does not quantify AI use in the later matching decompilation. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/decomp/README.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/CONTRIBUTING.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/crimson-core/PORT.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/docs/contributor/setup.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/docs/contributor/project-tracking/third-party-libs.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/analysis/README.md",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/.github/workflows/decomp.yml",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/.github/workflows/core.yml",
+      "https://github.com/banteg/crimson/blob/c996e70594a1b9144c5dc32bcf750d6eb0a81ebb/pyproject.toml",
+      "https://decomp.dev/banteg/crimson",
+      "https://banteg.xyz/posts/crimsonland/"
+    ]
   }
 ]
