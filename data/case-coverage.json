@@ -5205,12 +5205,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110684985900355622"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@iamsupersocks, 2026-10-15, in French) says Opus 5.5 has run around the clock since Monday reverse-engineering two projects with T3 Code and REA, an Age of Empires-like RTS and an equation solver for thermodynamics, fluid mechanics and mechanics; it calls both nearly finished and says the solver cuts a five-hour simulation to five minutes. It names no original software and links no artifact, benchmark or method write-up, and the author’s GitHub account (iamsupersocks), which names this X handle, has no repository for either project. Retain the lead without a catalog mapping; the solver, its results and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@iamsupersocks，2026-10-15，法语）称自周一起 Opus 5.5 借助 T3 Code 和 REA 全天候对两个项目做逆向：一款类《帝国时代》的 RTS，以及一个面向热力学、流体力学和力学的方程求解器；作者称两者都已接近完成，求解器把 5 小时的模拟缩短到 5 分钟。帖子未指明原软件，也未链接任何成果、基准或方法说明；作者的 GitHub 账号（iamsupersocks，其资料注明了此 X 账号）下也没有这两个项目的仓库。保留此线索而不建立目录映射；该求解器、其结果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/iamsupersocks/status/2110684985900355622"
+      ],
       "catalog_matches": []
     },
     {
@@ -5245,12 +5247,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110686215846699236"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@JulianGoldieSEO, 2026-10-15) says Claude, given the REA repository and a link to the author’s own booking funnel, inferred its slot settings, calendar type, team members and API from the front end and rebuilt a personal calendar app with a shareable booking link in ten minutes; it shows a video and offers the procedure by direct message. It names no booking service and publishes no code, API notes or comparison, and no repository for the app was found under a GitHub account matching the handle. Retain the lead without a catalog mapping; the rebuild and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@JulianGoldieSEO，2026-10-15）称，把 REA 仓库和作者自己的预约漏斗链接交给 Claude 后，它仅凭前端推断出时段设置、日历类型、销售团队成员和 API，并在十分钟内重建了一个带可分享预约链接的个人日历应用；帖子附视频，并称操作流程可私信索取。帖子未指明所用预约服务，也未公开代码、API 说明或对照结果；在与该账号名对应的 GitHub 账号下也未找到该应用的仓库。保留此线索而不建立目录映射；该重建及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/JulianGoldieSEO/status/2110686215846699236"
+      ],
       "catalog_matches": []
     },
     {
@@ -5285,12 +5289,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110693137773392155"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@Sp00kyD00kyXRS, 2026-10-15) says Claude used REA on the author’s Watch5 Pro and added its own app that tracks health through the sensors Samsung Health uses. It names no sensors, interfaces or app and links no artifact, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the app and REA’s contribution are unestablished.",
+      "reason_zh": "所引回复（@Sp00kyD00kyXRS，2026-10-15）称让 Claude 用 REA 分析作者的 Watch5 Pro，并加装了一个自制应用，借助 Samsung Health 所用的传感器追踪健康数据。回复未说明涉及哪些传感器、接口或应用，也未链接任何成果；未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该应用及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Sp00kyD00kyXRS/status/2110693137773392155"
+      ],
       "catalog_matches": []
     },
     {
@@ -5305,12 +5311,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110696564335214807"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@deluxebear, 2026-10-15) says REA, a self-hosted Qwen model and pi were used over two days on several commercial Java and C++ developer libraries, a disassembler’s demo registration, a video platform’s API request encryption and a slider CAPTCHA, mostly without human intervention, and credits REA’s skills with encoding reverse-engineering practice. It names no versions and links no artifact or write-up, and the author’s GitHub account (deluxebear), which names this X handle, has no repository for this work. Several targets are licensing or anti-automation protections; no method is recorded here. Retain the lead without a catalog mapping; no result or REA contribution is established.",
+      "reason_zh": "作者帖子（@deluxebear，2026-10-15）称这两天用 REA、自部署的 Qwen 模型和 pi 做逆向测试，对象包括若干商业 Java 与 C++ 开发库、一款反汇编工具演示版的注册机制、某视频平台的接口加密以及滑块验证码，基本无需人工介入，并认为 REA 的作用是把逆向最佳实践做成了 skills。帖子未指明版本，也未链接任何成果或说明文档；作者的 GitHub 账号（deluxebear，其资料注明了此 X 账号）下也没有相关仓库。其中多个目标属于授权或反自动化保护机制，此处不记录任何方法。保留此线索而不建立目录映射；任何结果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/deluxebear/status/2110696564335214807"
+      ],
       "catalog_matches": []
     },
     {
@@ -5345,12 +5353,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110699093333000322"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@ManMetrologyLTD, 2026-10-15), from a metrology reseller, announces that QUICKSURFACE AI will launch on 17 November 2026 with QUICKSURFACE Pro 2027 and turn 3D scan data into editable parametric CAD models in one click; it shows a video and gives a sales contact. This is a forthcoming commercial feature for physical-part reverse engineering, not software reconstruction, and no evaluation, sample output or documentation is linked. Retain the lead without a catalog mapping; the feature’s results are unestablished.",
+      "reason_zh": "所引帖子（@ManMetrologyLTD，2026-10-15）来自一家计量设备经销商，宣布 QUICKSURFACE AI 将于 2026 年 11 月 17 日随 QUICKSURFACE Pro 2027 推出，可一键把 3D 扫描数据转为可编辑的参数化 CAD 模型；帖子附视频并给出销售联系方式。这是面向实物零件逆向工程、尚未推出的商业功能，并非软件重建，帖子也未链接任何评估、示例输出或文档。保留此线索而不建立目录映射；该功能的效果未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/ManMetrologyLTD/status/2110699093333000322"
+      ],
       "catalog_matches": []
     },
     {
@@ -5365,12 +5375,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110699414792642732"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@vmrmax, 2026-10-15) says REA and Opus 5.5 found the swing mechanics in a Spider-Man PC game within 60 minutes and that Spider-Man then web-swung through GTA V’s Los Santos; it shows a video and quotes the author’s own course article. Its own playbook, however, ends with Claude rebuilding the mechanic as Godot code with the user’s own assets, which does not explain the GTA V result. It names no game builds, publishes no SPEC.md, code, mod or tests, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the result and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@vmrmax，2026-10-15）称借助 REA 与 Opus 5.5，60 分钟内找到了 PC 版蜘蛛侠游戏的摆荡机制，随后蜘蛛侠便在《GTA V》的洛圣都摩天楼间荡蛛丝；帖子附视频，并引用了作者自己的教程长文。然而帖子给出的流程最后是让 Claude 用用户自己的素材把机制重写为 Godot 代码，这无法解释所称的《GTA V》效果。帖子未指明游戏版本，也未公开 SPEC.md、代码、模组或测试，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该成果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/vmrmax/status/2110699414792642732"
+      ],
       "catalog_matches": []
     },
     {
@@ -14942,15 +14954,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "insufficient-evidence": 132,
+      "pending": 304
     },
     "units_by_state": {
       "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 132,
+      "pending": 303
     },
-    "primary_reviewed_units": 220,
+    "primary_reviewed_units": 226,
     "catalog_linked_occurrences": 166,
     "distinct_resource_ids": 160,
     "distinct_paper_ids": 1,

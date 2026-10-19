@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 155 | 154 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 310 | 309 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 126 | 126 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 304 | 303 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 132 | 132 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 166 个出现项含目录链接；共关联 160 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 220 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 226 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -143,6 +143,12 @@
 | Mi Health: timestamp repair and a cloud-data exporter | 证据不足 | [来源](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
 | REA and archify: interactive architecture diagrams | 证据不足 | [来源](https://x.com/i/status/2110570919169286424) |
 | reverse-skill: investigation workflows for coding agents | 待核查 | [来源](https://x.com/i/status/2110680583634366777) |
+| A thermofluid equation solver: ongoing REA/Opus work | 证据不足 | [来源](https://x.com/iamsupersocks/status/2110684985900355622) |
+| A booking funnel investigated and rebuilt as a personal calendar | 证据不足 | [来源](https://x.com/JulianGoldieSEO/status/2110686215846699236) |
+| Watch5 Pro: a reported Claude/REA health-sensor app | 证据不足 | [来源](https://x.com/Sp00kyD00kyXRS/status/2110693137773392155) |
+| REA with local Qwen and pi: multi-target commercial-software tests | 证据不足 | [来源](https://x.com/deluxebear/status/2110696564335214807) |
+| QUICKSURFACE AI: announced scan-to-parametric-CAD automation | 证据不足 | [来源](https://x.com/ManMetrologyLTD/status/2110699093333000322) |
+| Spider-Man swinging in GTA V: an internally inconsistent REA claim | 证据不足 | [来源](https://x.com/vmrmax/status/2110699414792642732) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | 证据不足 | [来源](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | 证据不足 | [来源](https://x.com/i/status/2110726263392387158) |
 | Reversed with AI：AI 辅助逆向项目目录 | 已收录 | [来源](https://reversedwithai.com/about) |
