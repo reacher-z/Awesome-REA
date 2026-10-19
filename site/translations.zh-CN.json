@@ -3235,5 +3235,15 @@
       "README 将该工具标为 Alpha 阶段，仓库没有自动化测试，CI 只进行构建和代码检查。README 中关闭 Prettier 的选项写作 --prettier，而源码实际读取的是 --noPrettier。输出是便于阅读的整理后模块代码，并非原始项目源码。",
       "采用 AGPL-3.0-or-later 许可。本次未反编译任何包。"
     ]
+  },
+  "pokeheartgold-llm-agent-decomp-case": {
+    "name": "《宝可梦 心金／魂银》：报告借助大语言模型智能体完成反编译的分叉",
+    "requirements": [
+      "README 称其为 pret/pokeheartgold 的分叉，原有工具均出自 pret，并声明已借助大语言模型智能体完全反编译；GitHub 并未将其列为分叉，其默认分支在本次审阅期间仍有新提交。仓库中的心金进度快照是在较早的提交、且工作区有改动的状态下生成的，将已映射代码段字节的 97.9% 计为 C、1.4% 计为 C++、0.6% 计为原始手写汇编。INSTALL.md 说明该指标衡量的是源码语言，而非反编译是否完整或能否移植；产物为 pokeheartgold.us.nds 和 pokesoulsilver.us.nds。",
+      "与 pret 仓库相同，INSTALL.md 不要求原 ROM：DS 文件系统中的图像、声音、文本和数据文件提交在 files/ 下，反编译出的 NitroSDK、NitroSystem、NitroDWC、NitroWiFi、MSL_C 等库的源码位于 lib/ 下。构建需要使用者自己合法取得的 Metrowerks mwccarm 2.0/sp2p2 编译器及其许可证文件，以及 Nitro SDK 归档中的 tools/bin 文件夹和链接模板；INSTALL.md 称两者均为专有软件，不予分发。ROM、下载的工具和编译器许可证都被 git 忽略。",
+      "INSTALL.md 涵盖 Linux、在 Cygwin 或 MSYS2 下使用 devkitARM 的 Windows，以及 macOS 10.15+（Apple 芯片需 Rosetta 2），均以 Wine 运行 Metrowerks 工具。macOS 设置脚本会校验使用者自备的编译器和 SDK 归档的 SHA-256，并把 Wine 11.16 安装在检出目录内。Linux 需要 binutils-arm-none-eabi、Wine、Python 3、libpng、pkg-config 和 pugixml；make 构建心金，make soulsilver 构建魂银。",
+      "每次构建最后都会校验 ARM9 与 ARM7 二进制、文件系统及 ROM（心金 4fcded0e2713dc03929845de631d0932ea2b5a37，魂银 f8dc38ea20c17541a43b58c5e6d18c1732c7e582），make progress 会在核对 ROM 哈希后重新生成树状图和 JSON 报告。INSTALL.md 说明该分叉的 GitHub 构建工作流已停用，因此所审提交没有 CI 结果佐证；它还指出校验通过只说明二进制等价，不代表反编译已完整。本合集未构建任何 ROM。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；pret 条目中关于 SDK、工具链和游戏内容权利的说明同样适用。README 称这项工作借助大语言模型智能体完成，docs/DECOMP-NOTES.md 也记录了由主智能体与并行工作者匹配的各个批次，但两者都没有说明所用模型，也未报告 token 用量或费用。pret 自己的 CONTRIBUTING.md 禁止由大语言模型生成的贡献，本 README 也要求不要把分叉中的任何内容提交到上游；所审来源未确立 REA 的使用。"
+    ]
   }
 }

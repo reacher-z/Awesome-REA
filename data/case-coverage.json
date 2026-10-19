@@ -6499,13 +6499,32 @@
         "https://x.com/i/status/2110989368454189268",
         "https://x.com/i/status/2110995475222466925"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Three posts are cited. @autoaiadvantage (2026-10-15) says someone decompiled Pokémon HeartGold and SoulSilver in a month with several AI agents, using about 71 billion Claude/OpenAI API tokens at an estimated $56k; the cited @Pirat_Nation post is no longer available, and @Alex_Vainshtein replies that the work builds on pret’s existing decompilation and tooling. None names or links the project. The ctrl-cheeb-del/pokeheartgold fork, now the pokeheartgold-llm-agent-decomp-case record, reports a complete LLM-agent decompilation with byte-for-byte ROMs but no token use or cost, and no post identifies it as the work described. It is therefore mapped as related, as is the pret baseline the reply names, and the lead keeps no full mapping.",
+      "reason_zh": "所引三条帖子中：@autoaiadvantage（2026-10-15）称有人用多个 AI 智能体在一个月内反编译了《宝可梦 心金／魂银》，消耗约 710 亿个 Claude/OpenAI API token，估算费用约 5.6 万美元；所引 @Pirat_Nation 的帖子已无法访问；@Alex_Vainshtein 回复指出，这项工作建立在 pret 现有的反编译和工具之上。三帖均未点名或链接该项目。分叉仓库 ctrl-cheeb-del/pokeheartgold 现为 pokeheartgold-llm-agent-decomp-case 条目，报告借助大语言模型智能体完成了反编译、ROM 可逐字节重建，但未报告 token 用量或费用，也没有帖子确认它就是所述工作。因此它按相关条目映射，回复中提到的 pret 基础工作也同样按相关条目映射，此线索不建立完整映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110816115718824296",
+        "https://x.com/i/status/2110989368454189268",
+        "https://x.com/i/status/2110995475222466925",
+        "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/README.md",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokeheartgold-llm-agent-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        },
+        {
+          "catalog": "resource",
+          "id": "pokemon-heartgold-soulsilver-disassembly-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:resend-agentic-email-rebuild",
@@ -15861,17 +15880,17 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 198,
-      "insufficient-evidence": 199,
-      "pending": 194
+      "insufficient-evidence": 200,
+      "pending": 193
     },
     "units_by_state": {
       "already-curated": 196,
-      "insufficient-evidence": 199,
-      "pending": 194
+      "insufficient-evidence": 200,
+      "pending": 193
     },
-    "primary_reviewed_units": 337,
-    "catalog_linked_occurrences": 210,
-    "distinct_resource_ids": 201,
+    "primary_reviewed_units": 338,
+    "catalog_linked_occurrences": 211,
+    "distinct_resource_ids": 202,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

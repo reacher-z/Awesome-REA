@@ -8094,5 +8094,38 @@
       "https://registry.npmjs.org/react-native-decompiler/0.2.4",
       "https://github.com/richardfuca/react-native-decompiler"
     ]
+  },
+  {
+    "id": "pokeheartgold-llm-agent-decomp-case",
+    "name": "Pokémon HeartGold and SoulSilver: a fork reporting a complete LLM-agent decompilation",
+    "url": "https://github.com/ctrl-cheeb-del/pokeheartgold",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Continues pret’s HeartGold/SoulSilver disassembly in a separate fork that reports the US Nintendo DS releases fully decompiled to C and C++ with LLM agents, while both ROMs still rebuild byte-for-byte against their retail SHA-1s. A checked-in progress report counts about 99% of mapped code bytes as C or C++, and a batch-by-batch work log records each replaced assembly range and the hash checks that followed. README says pret does not accept AI-generated code and does not want to be associated with the fork.",
+    "description_zh": "在另一个分叉中延续 pret 的《宝可梦 心金／魂银》反汇编项目，报告已借助大语言模型智能体将美版 Nintendo DS 游戏完全反编译为 C 和 C++，两个 ROM 仍可按零售版 SHA-1 逐字节重建。仓库中的进度报告将约 99% 的已映射代码字节计为 C 或 C++，逐批次的工作日志记录了每段被替换的汇编范围及其后的哈希校验。README 说明 pret 不接受 AI 生成的代码，也不希望与该分叉产生关联。",
+    "evidence_url": "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a fork of pret/pokeheartgold whose original tooling is pret’s and states that it is fully decompiled with LLM agents; GitHub does not list it as a fork, and its default branch moved again during this review. The checked-in HeartGold progress snapshot, generated at an earlier commit from a modified worktree, counts 97.9% of mapped code-section bytes as C, 1.4% as C++ and 0.6% as original hand-written assembly. INSTALL.md says this measures source language, not complete decompilation or portability; the outputs are pokeheartgold.us.nds and pokesoulsilver.us.nds.",
+      "As in the pret repository, INSTALL.md asks for no original ROM: the DS filesystem’s graphics, sound, text and data files are committed under files/, and decompiled NitroSDK, NitroSystem, NitroDWC, NitroWiFi, MSL_C and other library sources sit under lib/. Building requires the user’s own legally obtained Metrowerks mwccarm 2.0/sp2p2 compiler with its license file, plus the tools/bin folder and linker templates from a Nitro SDK archive; INSTALL.md calls both proprietary and does not distribute them. ROMs, downloaded tools and compiler licenses are git-ignored.",
+      "INSTALL.md covers Linux, Windows with devkitARM under Cygwin or MSYS2, and macOS 10.15+ (Rosetta 2 on Apple silicon), with Wine running the Metrowerks tools. A macOS setup script checks SHA-256 hashes of the locally supplied compiler and SDK archives and installs Wine 11.16 inside the checkout. Linux needs binutils-arm-none-eabi, Wine, Python 3, libpng, pkg-config and pugixml; make builds HeartGold and make soulsilver builds SoulSilver.",
+      "Each build ends with checksum steps for the ARM9 and ARM7 binaries, the filesystem and the ROM (HeartGold 4fcded0e2713dc03929845de631d0932ea2b5a37, SoulSilver f8dc38ea20c17541a43b58c5e6d18c1732c7e582), and make progress regenerates the treemap and JSON report after checking the ROM hash. INSTALL.md says the GitHub build workflow is disabled on this fork, so no CI result backs the reviewed commit, and that a passing checksum establishes binary equivalence, not complete decompilation. This collection did not build either ROM.",
+      "No license file is present and GitHub detects none; the pret record’s caveats on SDK, toolchain and game-content rights apply equally here. README says the work was built with LLM agents, and docs/DECOMP-NOTES.md logs batches matched by a primary agent with parallel workers, but neither names models or reports token use or cost. pret’s own CONTRIBUTING.md prohibits LLM-generated contributions, and this README asks that nothing from the fork be sent upstream; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/INSTALL.md",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/docs/DECOMP-NOTES.md",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/docs/progress/progress.json",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/heartgold.us/rom.sha1",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/2fc93ea893b6976c0006c9a77a34c99b7995471b/CONTRIBUTING.md",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/tree/2fc93ea893b6976c0006c9a77a34c99b7995471b/files",
+      "https://github.com/ctrl-cheeb-del/pokeheartgold/tree/2fc93ea893b6976c0006c9a77a34c99b7995471b/lib",
+      "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/CONTRIBUTING.md"
+    ]
   }
 ]

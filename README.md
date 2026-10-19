@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 375](https://img.shields.io/badge/resources-375-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 376](https://img.shields.io/badge/resources-376-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (167) · [App](#app) (57)
+- [Website](#website) (20) · [Game](#game) (168) · [App](#app) (57)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (184) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (185) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1032,6 +1032,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs C++ source for Super Mario Odyssey’s Switch 1.0 main executable and checks each function against the original AArch64 machine code with the shared nx-decomp-tools checker. At the pinned commit its function list marks 18,996 of 74,171 functions matching. The README warns that the build is not a playable game, the repository ships no game assets, and Nintendo libraries such as sead and agl come from open-ead’s separate reconstructions.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/odyssey-decomp-case/)
+
+- [**Pokémon HeartGold and SoulSilver: a fork reporting a complete LLM-agent decompilation**](https://github.com/ctrl-cheeb-del/pokeheartgold)
+
+  Continues pret’s HeartGold/SoulSilver disassembly in a separate fork that reports the US Nintendo DS releases fully decompiled to C and C++ with LLM agents, while both ROMs still rebuild byte-for-byte against their retail SHA-1s. A checked-in progress report counts about 99% of mapped code bytes as C or C++, and a batch-by-batch work log records each replaced assembly range and the hash checks that followed. README says pret does not accept AI-generated code and does not want to be associated with the fork.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pokeheartgold-llm-agent-decomp-case/)
 
 #### Tools, projects and integrations
 

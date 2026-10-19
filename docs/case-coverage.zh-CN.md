@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 198 | 196 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 194 | 194 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 199 | 199 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 193 | 193 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 200 | 200 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-210 个出现项含目录链接；共关联 201 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+211 个出现项含目录链接；共关联 202 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 337 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 338 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -192,6 +192,7 @@
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | 证据不足 | [来源](https://x.com/i/status/2110759663822352852) |
 | BINNY 逆向分析智能体框架 | 已收录 | [来源](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | 《神秘海域：内森·德雷克合集》原生 Windows 移植 | 已收录 | [来源](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port/blob/dfc9fb6e70794bc81ae62836e3e5fb993ff50b3e/README.md) |
+| Pokémon HeartGold/SoulSilver: a secondhand multi-agent decompilation and cost report | 证据不足 | [来源](https://x.com/i/status/2110816115718824296) |
 | A Resend alternative: reported email APIs and inboxes for agents | 证据不足 | [来源](https://x.com/i/status/2110817677778489400) |
 | Two games' RNG: a Codex/ILSpy prediction-tracking report | 证据不足 | [来源](https://x.com/i/status/2110817897706582486) |
 | Destiny 2 build 86657：Sunrise／Dawn 重建研究报告 | 已收录 | [来源](https://github.com/isinternets/d2-research/blob/9a5b58f1f8408ed48b01705e0138ee25050669f2/README.md) |
@@ -385,6 +386,7 @@
 - `song:virtua-fighter-ai-decompilation` — 帖文中的两个链接指向 celsowm 的两个仓库。固定版本的 vf2-decomp 记录了 Virtua Fighter 2 Version 2.1 的 BSD-3-Clause、非一致性 C17 恢复，只有与参考 i960 执行器一致的路径才被接受；该项目现已收录，但映射仅为部分覆盖。固定版本的 vf3-decomp 是进行中的 Dreamcast 版 Virtua Fighter 3tb C 移植，有代理说明和覆盖率日志，但没有 README 或许可证文件，因此暂不收录，合并报告仍为待定。REA 的使用未确立；结果均为项目报告。
 - `song:dragon-ball-budokai-browser` — 所引帖子（@0x0SojalSec，2026-10-14）称 AI 逆向了《Dragon Ball Budokai》，使其能在任意浏览器中以 60 fps 运行，支持手机和联机；帖子附一张图片，并链接一个第三方游玩网站。帖子未指明作者、方法或源码。该网站称其引擎来自某个 Tenkaichi3Decomp 仓库，而已收录的 Tenkaichi3Decomp 的 README（此处固定到具体提交）称该项目从不分发游戏本体，需要玩家自备光盘，并且与浏览器游玩网站无关。本记录不将该网站作为证据引用。保留此线索，仅与已收录的 PC 移植建立相关映射；所报告的浏览器移植并非可审阅的项目。
 - `song:rea-640-windows-managed-electron-test` — 一组两条帖子的讨论串报告了在 Windows + Node 24 上实测 npm 版 rea-agents 6.4.0：约 200 个 .NET Framework 程序集在托管解码预算下的表现、一个由 AI 构造的 Electron 风格样例、一个 Trap.dll 副作用检查，以及仅差一个常量的程序集比对。样本、原始命令输出和完整环境均未公开，且帖子评估的是 REA 的静态分析能力，而非重建任何软件。保留此线索而不收录为案例；相关映射指向目录中 REA 托管代码与 JavaScript 工作流文档，这些文档描述了帖子所测试的表示预算、--type 选择及应用图分析。
+- `song:pokemon-hgss-multi-agent-decompile-report` — 所引三条帖子中：@autoaiadvantage（2026-10-15）称有人用多个 AI 智能体在一个月内反编译了《宝可梦 心金／魂银》，消耗约 710 亿个 Claude/OpenAI API token，估算费用约 5.6 万美元；所引 @Pirat_Nation 的帖子已无法访问；@Alex_Vainshtein 回复指出，这项工作建立在 pret 现有的反编译和工具之上。三帖均未点名或链接该项目。分叉仓库 ctrl-cheeb-del/pokeheartgold 现为 pokeheartgold-llm-agent-decomp-case 条目，报告借助大语言模型智能体完成了反编译、ROM 可逐字节重建，但未报告 token 用量或费用，也没有帖子确认它就是所述工作。因此它按相关条目映射，回复中提到的 pret 基础工作也同样按相关条目映射，此线索不建立完整映射。
 - `song:ringfall-th04-bullet-hell-report` — 帖子（@0xMoryo，2026-10-15）称有人用 REA 的 Ghidra 提供程序分析 1997 年 PC-98 游戏 TH04 的可执行文件，把两条弹幕环公式整理成洁净室笔记，再由 Claude Code 在一次会话中做出浏览器弹幕 Boss 战 RINGFALL；帖子只附视频。帖子说 REA 和“TH04 研究”的链接在回复中，但帖子 API 不提供回复内容；其引用的帖子是一篇 REA 通用教程文章，也未找到 RINGFALL 的源码或构建。保留此线索而不建立整理案例；相关映射指向另行整理的 REA TH04 弹幕环证据，而非 RINGFALL。
 - `song:schaller-opticfilm-thinkpad-linux` — 既有扫描仪调查和独立的 ThinkPad IMX471 调校／驱动案例，覆盖此报告中的两个有限范围组成部分。映射仍为部分覆盖：均不确立完整扫描仪／相机行为、全设备兼容性或独立运行复现。
 - `song:rea-reconstruction-companion` — Pocket Tasks 映射只覆盖一个作者已接触源码、公开候选及有限比较证据的命令行重建案例；不覆盖更广的 Companion 工作流、其他示例或模型／宿主效果。既有源码接触、人工复核待完成及历史指令包哈希均明确保留；不确立独立运行复现。
