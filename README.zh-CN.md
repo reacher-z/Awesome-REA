@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 343](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-343-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 179](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 344](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-344-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 179](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-179-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (82) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (82) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (26)
 
 **更多浏览方式**
 
@@ -2164,6 +2164,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。
 
   学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2-book/)
+
+- [**寻找 Jingle Town：在没有调试符号时调试 N64 游戏**](https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/)
+
+  Snowboard Kids 2 反编译项目的一篇操作说明：在一致性构建仍无法加入调试信息时，把 gdb-multiarch 接到 Ares 模拟器上。文中按 ELF 符号名在函数处设断点，再手动读取结构体中的一个字节，检验它是否决定加载哪个关卡 overlay。这是在运行时检验反编译假设的简短方法记录，而非重建成果。
+
+  学习资源 · [使用条件与证据](https://awesomerea.org/zh/resources/finding-jingle-town-n64-debugging/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->
