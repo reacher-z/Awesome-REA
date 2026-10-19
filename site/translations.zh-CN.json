@@ -3066,5 +3066,11 @@
       "速度和内存数据均为作者自报：README 称在 Telegram X、WhatsApp、Grab 和 Lark 四个 59–352 MB 的 APK 上以 10 个线程运行时，字符串引用搜索比 JADX 快 62–302 倍，单类反编译快 38–304 倍，内存占用为 36–141 MB，并称 JADX 在最大的目标上内存不足。Java 输出由内置的 Androguard 反编译器生成，每次处理一个类。README 面向智能体工作流，但未介绍 MCP 服务器；智能体需调用命令行或 Python 包。",
       "采用 Apache-2.0 许可；内置的 dadguard 包含 Androguard 代码，后者同样采用 Apache-2.0。反编译得到的代码仍归应用权利人所有。本次未安装或运行任何组件，也未分析任何 APK。"
     ]
+  },
+  "apkeditor": {
+    "requirements": [
+      "以单个可执行 JAR 的形式在 Java 运行时上运行；Gradle 构建以 Java 8 的源码与目标兼容性为目标，README 指出处理大型输入时可能需要调大 -Xmx 堆以避免 OutOfMemoryError。",
+      "对使用者提供的 APK 文件进行操作；README 说明仅对未混淆的包支持解码为 XML 源码，且重建安装包不同于恢复原始 Java 源码。采用 Apache-2.0 许可证。"
+    ]
   }
 }

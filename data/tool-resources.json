@@ -7487,5 +7487,29 @@
       "https://github.com/MG1937/ASC/releases/tag/dev-0.1.2-post2",
       "https://pypi.org/project/droidasc/0.1.2.post2/"
     ]
+  },
+  {
+    "id": "apkeditor",
+    "name": "APKEditor",
+    "url": "https://github.com/REAndroid/APKEditor",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Command-line APK editor built on ARSCLib that decodes an APK's binary resources and DEX into editable JSON, XML or smali and rebuilds a package from them, independent of aapt and aapt2. It also merges split bundles such as XAPK, APKM and APKS, refactors obfuscated resource names, and prints package information.",
+    "description_zh": "基于 ARSCLib 的命令行 APK 编辑器，不依赖 aapt 与 aapt2，可将 APK 的二进制资源与 DEX 解码为可编辑的 JSON、XML 或 smali 并重新构建安装包。还能合并 XAPK、APKM、APKS 等分包，还原被混淆的资源名称，并打印包信息。",
+    "evidence_url": "https://github.com/REAndroid/APKEditor/blob/5621fe6750b828ce0bfd99ec7f42ee8b5fe75497/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/REAndroid/APKEditor/blob/5621fe6750b828ce0bfd99ec7f42ee8b5fe75497/LICENSE",
+      "https://github.com/REAndroid/APKEditor/blob/5621fe6750b828ce0bfd99ec7f42ee8b5fe75497/build.gradle"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Runs as a single executable JAR on a Java runtime; the Gradle build targets Java 8 source and target compatibility, and the README notes large inputs may need an increased -Xmx heap to avoid an OutOfMemoryError.",
+      "Operates on APK files the user supplies; the README documents decoding to XML source for un-obfuscated packages only, and rebuilding a package is distinct from recovering original Java source. Apache-2.0 licensed."
+    ]
   }
 ]
