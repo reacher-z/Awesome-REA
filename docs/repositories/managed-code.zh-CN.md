@@ -25,7 +25,7 @@
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — 逆向分析并重写实模式 DOS 程序！ **[662 星标]**
 - [anydream/il2cpp](https://github.com/anydream/il2cpp) — 将 MSIL/C# 转换为 C++ 的工具，速度快于 CoreCLR，内存开销低。（已停止维护。C# 是一门好语言，但 .NET 不是一个干净的平台。） **[606 星标]**
 - [bitmono-project/BitMono](https://github.com/bitmono-project/BitMono) — 适用于 .NET 和 Mono 的混淆器，提供可定制引擎，用于构建自己的混淆器。 **[569 星标]**
-- [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — 首个适用于 Mac、Linux 和 Windows 的独立 .NET 反编译器。 **[401 星标]**
+- [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — 首个适用于 Mac、Linux 和 Windows 的独立 .NET 反编译器。 **[401 星标]** · 精选：[CodemerxDecompile .NET 反编译器](https://awesomerea.org/zh/resources/codemerxdecompile/)
 - [BepInEx/Il2CppInterop](https://github.com/BepInEx/Il2CppInterop) — 使 CoreCLR 与 Il2Cpp 在运行时互操作的工具。 **[399 星标]**
 - [ioncodes/dnpatch](https://github.com/ioncodes/dnpatch) — 使用 dnlib 的 .NET 补丁库。 **[329 星标]**
 - [Cysharp/RuntimeUnitTestToolkit](https://github.com/Cysharp/RuntimeUnitTestToolkit) — Unity Test Runner 的命令行/图形界面前端，可在任意平台运行测试。 **[326 星标]**

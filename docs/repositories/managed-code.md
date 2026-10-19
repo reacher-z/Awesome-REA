@@ -25,7 +25,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — Reverse engineer and rewrite real mode DOS programs! **[662 stars]**
 - [anydream/il2cpp](https://github.com/anydream/il2cpp) — An MSIL/C# to C++ converter. Faster than CoreCLR with low memory overhead. (Abandoned. C# is a good language, but .NET is not a clean platform.) **[606 stars]**
 - [bitmono-project/BitMono](https://github.com/bitmono-project/BitMono) — Obfuscator for .NET and Mono, with a customizable engine for building your own obfuscators. **[569 stars]**
-- [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — The first standalone .NET decompiler for Mac, Linux and Windows **[401 stars]**
+- [codemerx/CodemerxDecompile](https://github.com/codemerx/CodemerxDecompile) — The first standalone .NET decompiler for Mac, Linux and Windows **[401 stars]** · Curated: [CodemerxDecompile](https://awesomerea.org/resources/codemerxdecompile/)
 - [BepInEx/Il2CppInterop](https://github.com/BepInEx/Il2CppInterop) — A tool interoperate between CoreCLR and Il2Cpp at runtime **[399 stars]**
 - [ioncodes/dnpatch](https://github.com/ioncodes/dnpatch) — .NET Patcher library using dnlib **[329 stars]**
 - [Cysharp/RuntimeUnitTestToolkit](https://github.com/Cysharp/RuntimeUnitTestToolkit) — CLI/GUI Frontend of Unity Test Runner to test on any platform. **[326 stars]**

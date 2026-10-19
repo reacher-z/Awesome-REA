@@ -13,7 +13,7 @@ Scan date: **2026-10-16 UTC**.
 | [Websites](web-analysis.md) | 177 | 12 |
 | [Games](game-analysis.md) | 388 | 36 |
 | [Apps · Android](android.md) | 432 | 17 |
-| [Apps · Managed code](managed-code.md) | 130 | 2 |
+| [Apps · Managed code](managed-code.md) | 130 | 3 |
 | [Native binaries](native-analysis.md) | 677 | 41 |
 | [Runtime and debugging](dynamic-analysis.md) | 99 | 10 |
 | [Firmware](firmware.md) | 208 | 11 |
