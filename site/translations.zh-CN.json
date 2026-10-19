@@ -4855,5 +4855,15 @@
       "GitHub Actions 在 Ubuntu 22.04、Windows（MSYS2）和 macOS 上构建 Release 与 Debug 配置，再运行独立的 retdec-regression-tests 测试套件。README 说明每夜构建不作保证、可能出现回归，Docker 支持则由社区维护。",
       "采用 MIT 许可（Avast Software）。修改过的 PeLib 保留其 zlib/libpng 许可，LICENSE-THIRD-PARTY 列出其他组件，其中 Keystone 依据其针对 GPLv2 的 FOSS 例外条款使用。"
     ]
+  },
+  "aoe-free-software-remake-case": {
+    "name": "Age of Empires Free Software Remake：基于原版数据的重新实现",
+    "requirements": [
+      "所审阅的 master 快照（2026-09-20）在 CMake 中标为 0.1 版，仓库没有发行版或标签；用户指南说明不提供二进制构建。README 称目前只有非常基础的玩法，且只有多人模式：单人游戏需要先主持一个会话再加入电脑玩家，而电脑只会采集资源，直到受到攻击。doc/reverse_engineering 记录了 DRS 归档内容、原版导入的 Windows API 函数、场景格式、文明和单位数据。",
+      "需要正版《帝国时代》或《罗马复兴》，可放在 CD-ROM 上或已安装：引擎从 data 文件夹载入 Border.drs、graphics.drs、Interfac.drs、sounds.drs 和 Terrain.drs，并读取 language.dll，还需要原版安装程序添加的游戏字体 COPRGTB.TTF 和 COPRGTL.TTF。仓库不含游戏数据，目前也不支持社区制作的替代素材。",
+      "README 列出经测试的平台为 Windows 10 及以上、macOS Sequoia 15.7.7、Fedora 44 和 Ubuntu 22 及以上，而 INSTALL 仍提醒 Linux 构建会查找写死路径的旧版 TTF 字体。构建使用 CMake 3.11+、C99 与 C++17，依赖 SDL2、SDL2_image、SDL2_mixer 和 OpenGL，以及 imgui、tracy、wepoll 和 miniz 子模块；Windows 上通过 Visual Studio 配合 vcpkg 或 MinGW 构建。",
+      "GitHub Actions 在 Ubuntu 和 Fedora 上用 Clang 构建游戏，并以无界面模式运行 Google Test 测试套件；这些测试覆盖网络、协议、服务器、SDL 和一个 UI 菜单，并不检验与原版可执行文件的一致性。项目未公布与原版游戏的对比；本合集未构建或运行任何内容。",
+      "LICENSE 采用 Apache-2.0；子模块和 game/src/external 中附带的头文件各自保留其许可证。README 声明所有受版权保护的内容和商标归各自所有者，并称这是一个教育性质的非营利项目。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }
