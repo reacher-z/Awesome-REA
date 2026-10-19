@@ -12,7 +12,7 @@
 | --- | ---: | ---: |
 | [网站](web-analysis.zh-CN.md) | 177 | 11 |
 | [游戏](game-analysis.zh-CN.md) | 388 | 36 |
-| [应用 · Android](android.zh-CN.md) | 432 | 16 |
+| [应用 · Android](android.zh-CN.md) | 432 | 17 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 130 | 1 |
 | [原生二进制](native-analysis.zh-CN.md) | 677 | 37 |
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 99 | 10 |

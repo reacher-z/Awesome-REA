@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 362](https://img.shields.io/badge/resources-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 363](https://img.shields.io/badge/resources-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (53)
+- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (54)
 - [Native Binary](#native-binary) (28) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1511,6 +1511,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Frida-based dynamic-analysis tool that traces an Android app's use of the JNI API, similar to frida-trace or strace but for the Java Native Interface. It logs the JNI calls that native libraries make through the JNIEnv and JavaVM structures, with include and exclude filters, backtraces and optional JSON output for later post-processing. The tracing engine is also published as a separate jnitrace-engine library.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/jnitrace/)
+
+- [**apk.sh**](https://github.com/ax/apk.sh)
+
+  Bash script that automates repetitive Android app analysis chores around apktool: pulling an installed package from a device or emulator, decoding resources and disassembling dex code, and rebuilding the decoded directory into an APK. Split APKs from app bundles are combined into a single APK when pulled, and the script can also prepare a copy for Frida instrumentation.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/apk-sh/)
 
 <a id="native-binary"></a>
 ### Native Binary
