@@ -3750,5 +3750,14 @@
       "每次分析由一个带版本号的 .ini 文件描述，内容包括程序及其节区和导入、寄存器与内存的初始状态以及覆盖设置；IDA 插件会根据当前打开的数据库生成该文件，也可用 ELF 核心转储提供初始状态。该格式的文档并不完整，以解析器源码为准。待分析的二进制由使用者自行提供；教程使用的是项目自带的 keygen-me 示例程序。",
       "README 和 doc/COPYING 表明采用 AGPL-3.0；由于仓库根目录没有许可证文件，GitHub 未识别出许可证。OCaml 代码包含采用 LGPLv2 的 OCaml 运行时代码，插件包含采用 Apache-2.0 的 python-pyqt5-hexview 代码，并附带一份修改过的 c2newspeak。分析结果取决于所配置的初始状态、跳过的函数和覆盖设置；本次未安装或分析任何内容。"
     ]
+  },
+  "pbtk": {
+    "name": "pbtk Protobuf 逆向工具集",
+    "requirements": [
+      "审阅时最新版本为 1.1.3，于 2026-08-21 发布在 GitHub 和 PyPI；所审阅的 master 提交比它多四个提交，加入了版本显示、一次依赖升级和新的品牌配色，并带有一个既无 GitHub 发布也未上传 PyPI 的 1.1.3.1 标签。README 中 2026 年的说明指出，Java 提取目前主要适用于较旧的 APK，基于 Chrome 的 Protobuf-URL Web 提取器有待更新；完成自动模糊测试部分仍列为后续计划。",
+      "需要 Python 3.10+、PySide6 和 Python protobuf 运行时。README 介绍了 Ubuntu 的 snap 包、AUR 的 pbtk-git 包以及 uv 或 pipx 安装方式，并称支持 Windows。Java 提取需要 Java 运行时（Debian 安装说明中使用 OpenJDK 8），Web 提取则通过 websocket-client 驱动 Chrome 或 Chromium 实例。",
+      "分析者需自行提供要分析的 APK、JAR、DEX 或原生库，并可选提供自己用 mitmproxy、Wireshark 等工具抓取的十六进制请求样本。重放功能会把修改后的消息发送到分析者配置的在线端点。提取出的 .proto 和端点定义保存在用户主目录的 .pbtk 文件夹中（Windows 上为 APPDATA 下的 pbtk 文件夹）。",
+      "pyproject.toml 声明 GPL-3.0-or-later。软件包内附带第三方可执行文件：protoc 构建、附 Apache-2.0 声明的 dex2jar 2.4 jar 包，以及仓库中没有任何许可证文本的 JAD 反编译器二进制。从混淆代码中恢复出的定义会保留混淆名称，需由分析者自行重命名；本次未分析任何应用，也未发送任何请求。"
+    ]
   }
 }
