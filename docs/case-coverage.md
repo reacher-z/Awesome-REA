@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 166 | 165 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 285 | 284 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 167 | 166 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 284 | 283 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 140 | 140 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-177 occurrences have catalog links. They reference 171 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+178 occurrences have catalog links. They reference 172 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 245 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 246 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -260,6 +260,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | The Darkness Recomp: an Xbox 360 static recompilation with a native D3D11 renderer | Already curated | [Source](https://github.com/portingpete/The-Darkness-Recomp/blob/98f0bcd49dfee90dfee968a3b75fd40e892c91e7/README.md) |
 | P.T. for PC: a behavior-based engine reimplementation that reads the PS4 data | Already curated | [Source](https://github.com/LoreanXavier/pt-pc/blob/d0a9b8f8969588a9ab2b1db03a35854d3af63f2e/README.md) |
 | Dead Rising 2: Case Zero — an Xbox 360 XBLA static recompilation port | Already curated | [Source](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp/blob/a1feb9dd7a61e23b4bcbb1afab8edf3439ee86ac/README.md) |
+| Dead Rising 2: Case West — a sibling Xbox 360 XBLA static recompilation port | Already curated | [Source](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp/blob/cb7dc0f46cfc71961e37f8a20b07ad143a3e161a/README.md) |
 | MikuPan: a native Fatal Frame PC port built on the Himuro decompilation | Already curated | [Source](https://github.com/Mikompilation/MikuPan/blob/ec204d75441e98d8bd43ddd95cae744eb683f00c/README.md) |
 | 🏎️ Mario Kart 64 — n64decomp/mk64 | Insufficient evidence | [Source](https://github.com/HaozheH3/awesome-rea-games/blob/4316a4ce86fdd851f0180ffee87dc336851bf5b6/README.md) |
 | MarioKart 64: Recompiled — a native port through N64Recomp static recompilation | Already curated | [Source](https://github.com/sonicdcer/MarioKart64Recomp/blob/3f72d2385cc995fea79e8fca81d886cb2bdce1de/README.md) |

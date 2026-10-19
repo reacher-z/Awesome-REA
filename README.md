@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 310](https://img.shields.io/badge/resources-310-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 157](https://img.shields.io/badge/cases-157-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 311](https://img.shields.io/badge/resources-311-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (142) · [App](#app) (44)
+- [Website](#website) (19) · [Game](#game) (143) · [App](#app) (44)
 - [Native Binary](#native-binary) (21) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (157) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (158) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -898,6 +898,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Provides a C# engine for early Westwood real-time strategy games, with mods that reimagine Command &amp; Conquer: Red Alert, Tiberian Dawn and Dune 2000. It loads the original games’ content through its own file-system, MiniYAML rules and Lua mission layers rather than running or recovering Westwood code. Gameplay and interface deliberately follow OpenRA’s own design, so it is not a faithful recreation of the original executables.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openra-engine-case/)
+
+- [**Dead Rising 2: Case West — a sibling Xbox 360 XBLA static recompilation port**](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp)
+
+  Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA epilogue Dead Rising 2: Case West by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. It shares most of its runtime with the author’s separate Case Zero port, executing the console GPU command stream on Vulkan with XMA audio and keyboard/mouse input. Completion and platform results are project-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/dead-rising-2-case-west-recomp-case/)
 
 #### Tools, projects and integrations
 
