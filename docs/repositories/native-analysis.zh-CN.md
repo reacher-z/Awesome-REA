@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**680 个仓库** · 2026-10-16 UTC
+**679 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -18,7 +18,6 @@
 - [angr/angr](https://github.com/angr/angr) — 功能强大且易于使用的二进制分析平台！ **[9,189 星标]** · 精选：[angr](https://awesomerea.org/zh/resources/angr/)
 - [mandiant/flare-vm](https://github.com/mandiant/flare-vm) — 面向 Windows 系统的软件安装脚本合集，便于在虚拟机上搭建和维护逆向工程环境。 **[9,147 星标]** · 精选：[FLARE-VM 恶意软件分析虚拟机安装工具](https://awesomerea.org/zh/resources/flare-vm/)
 - [capstone-engine/capstone](https://github.com/capstone-engine/capstone) — Capstone 反汇编框架，支持 ARM、ARM64（ARMv8）、Alpha、BPF、Ethereum VM、HPPA、LoongArch、M68K、M680X、Mips、MOS65XX、PPC、RISC-V（rv32G/rv64G）、SH、Sparc、SystemZ、TMS320C64X、TriCore、WebAssembly、XCore 和 X86。 **[9,107 星标]** · 精选：[Capstone](https://awesomerea.org/zh/resources/capstone/)
-- [hugsy/gef](https://github.com/hugsy/gef) — GEF（GDB Enhanced Features）：为 Linux 上的漏洞利用开发人员和逆向工程师提供现代化 GDB 体验及高级调试功能。 **[8,399 星标]**
 - [albertan017/LLM4Decompile](https://github.com/albertan017/LLM4Decompile) — 逆向工程：利用大语言模型反编译二进制代码。 **[7,134 星标]** · 论文：[Decompile-Bench：面向真实二进制反编译的百万级二进制与源码函数对](https://awesomerea.org/zh/papers/paper-decompile-bench/), [LLM4Decompile：使用大语言模型反编译二进制代码](https://awesomerea.org/zh/papers/paper-llm4decompile/), [SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译](https://awesomerea.org/zh/papers/paper-sk2decompile/)
 - [mandiant/capa](https://github.com/mandiant/capa) — FLARE 团队的开源工具，用于识别可执行文件的能力。 **[6,247 星标]**
 - [0xZ0F/Z0FCourse\_ReverseEngineering](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering) — 专注于 x64 Windows 的逆向工程。 **[5,962 星标]**

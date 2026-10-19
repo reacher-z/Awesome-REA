@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**680 repositories** · 2026-10-16 UTC
+**679 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -18,7 +18,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [angr/angr](https://github.com/angr/angr) — A powerful and user-friendly binary analysis platform! **[9,189 stars]** · Curated: [angr](https://awesomerea.org/resources/angr/)
 - [mandiant/flare-vm](https://github.com/mandiant/flare-vm) — A collection of software installations scripts for Windows systems that allows you to easily setup and maintain a reverse engineering environment on a VM. **[9,147 stars]** · Curated: [FLARE-VM](https://awesomerea.org/resources/flare-vm/)
 - [capstone-engine/capstone](https://github.com/capstone-engine/capstone) — Capstone disassembly/disassembler framework for ARM, ARM64 (ARMv8), Alpha, BPF, Ethereum VM, HPPA, LoongArch, M68K, M680X, Mips, MOS65XX, PPC, RISC-V(rv32G/rv64G), SH, Sparc, SystemZ, TMS320C64X, TriCore, Webassembly, XCore and X86. **[9,107 stars]** · Curated: [Capstone](https://awesomerea.org/resources/capstone/)
-- [hugsy/gef](https://github.com/hugsy/gef) — GEF (GDB Enhanced Features) - a modern experience for GDB with advanced debugging capabilities for exploit devs &amp; reverse engineers on Linux **[8,399 stars]**
 - [albertan017/LLM4Decompile](https://github.com/albertan017/LLM4Decompile) — Reverse Engineering: Decompiling Binary Code with Large Language Models **[7,134 stars]** · Paper: [Decompile-Bench: Million-Scale Binary-Source Function Pairs for Real-World Binary Decompilation](https://awesomerea.org/papers/paper-decompile-bench/), [LLM4Decompile: Decompiling Binary Code with Large Language Models](https://awesomerea.org/papers/paper-llm4decompile/), [SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin](https://awesomerea.org/papers/paper-sk2decompile/)
 - [mandiant/capa](https://github.com/mandiant/capa) — The FLARE team's open-source tool to identify capabilities in executable files. **[6,247 stars]**
 - [0xZ0F/Z0FCourse\_ReverseEngineering](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering) — Reverse engineering focusing on x64 Windows. **[5,962 stars]**

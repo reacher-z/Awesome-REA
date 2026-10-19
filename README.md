@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 439](https://img.shields.io/badge/resources-439-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 440](https://img.shields.io/badge/resources-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (66)
-- [Native Binary](#native-binary) (55) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (56) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2030,6 +2030,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Static binary code analysis toolkit designed for reverse engineers. Starting from a chosen address and initial state, it computes register and memory values, taint and reconstructed types, with forward and backward analysis and heap use-after-free and double-free detection; bits it cannot determine are shown as unknown. It is driven from an IDA plugin, where analysts can override values or taint, skip functions or replace instructions with NOPs before re-running, or from Python and an .ini configuration for automation.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/bincat/)
+
+- [**GEF (GDB Enhanced Features)**](https://github.com/hugsy/gef)
+
+  Single-file Python extension, gef.py, that adds dynamic-analysis commands to GDB. Each stop shows a context view of registers, stack, code, threads and call trace, and commands cover memory maps, pointer dereferencing, searching process memory for patterns, ELF and security-property information, process status and glibc heap inspection. An architecture abstraction layer covers x86-32/64, ARMv5–v7, AArch64, SPARC, MIPS and PowerPC, and gef-remote enriches remote sessions through gdbserver or the GDB stubs of qemu-user and qemu-system.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/gef/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
