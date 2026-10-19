@@ -10,7 +10,7 @@ from urllib.parse import quote, urlencode, urlsplit
 from artifact_links import github_repository
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
-from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
+from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
 from open_graph import open_graph_meta
 from requirement_facets import item_html, ordered_items
 
@@ -240,7 +240,7 @@ def _resource_content(record: dict, language: str, discussion: str = '', feedbac
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
   <p class="entry-description">{escape(description)}</p></header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>
-<section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{label('Requirements and limitations', '使用条件与局限')}</h2><ul class="entry-requirements">{requirements}</ul></section>
+<section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{escape(REQUIREMENTS_LABEL[zh])}</h2><ul class="entry-requirements">{requirements}</ul></section>
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>{_definitions(facts)}
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
 <p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p>{feedback}</section>

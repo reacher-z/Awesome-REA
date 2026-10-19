@@ -20,7 +20,7 @@ from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_sour
 from public_source_supplements import (PUBLISHED_FILENAME, compose_published, json_bytes,
                                       load_supplements, owned_file, bounded_bytes, project_additions)
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import CATEGORIES, PAPER_SECTIONS, collection_section, paper_section
+from build_readme import CATEGORIES, PAPER_SECTIONS, REQUIREMENTS_LABEL, collection_section, paper_section
 from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
@@ -283,6 +283,14 @@ def validate_homepage_destinations(pages, app_source=None):
             assert not ARROWS.search(name), f'Homepage ItemList name contains an arrow: {name!r} ({route})'
             assert name not in strings[language].values(), f'Homepage ItemList name reuses interface link text: {name!r} ({route})'
             assert destination in pages and pages[destination].h1_texts == [name], f'Homepage ItemList name differs from the H1 of {destination}: {name!r}'
+
+
+def validate_requirements_label(app_source=None):
+    """Homepage cards name the requirements disclosure exactly as the generated pages and README do."""
+    strings = _ui_strings(app_source if app_source is not None else (ROOT / 'site/app.js').read_text(encoding='utf-8'))
+    for language, expected in zip(('en', 'zh'), REQUIREMENTS_LABEL):
+        for key in ('requirements', 'requirementsShort'):
+            assert strings[language][key] == expected, f'app.js {language}.{key} must read {expected!r}'
 
 
 def validate_open_graph(route, page, card_size):
@@ -1067,6 +1075,7 @@ def main():
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)
+    validate_requirements_label()
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)

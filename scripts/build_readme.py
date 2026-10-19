@@ -69,6 +69,10 @@ FULL_ENTRY = ('Full entry', '完整条目')
 # reduction can be planned; the warning never fails a build, so open pull requests keep passing.
 GITHUB_README_LIMIT = 512_000
 README_SIZE_WARNING = 420_000
+# One name for each entry's requirements disclosure: homepage cards, /resources/, /cases/ and entry pages.
+# README lines link the entry page as "Full entry" instead. site/app.js repeats the label in its UI
+# strings; validate_site.py checks that copy.
+REQUIREMENTS_LABEL = ('Requirements & limits', '使用条件与局限')
 TARGETS = {
     'website': ('Website', '网站'),
     'game': ('Game', '游戏'),
