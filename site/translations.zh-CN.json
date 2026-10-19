@@ -4657,5 +4657,15 @@
       "拉取请求的 CI 只构建 Windows、macOS、Linux 和 PSP 目标。与街机版的一致性由可选的 Statcheck 构建检查：tools/fcade-replays（自述为分析 Fightcade 录像数据流的逆向辅助工具）下载录像，定制的 FBNeo 分支记录逐帧的 CPS3 内存转储，Statcheck 在体力、位置、晕眩值、超必杀槽、计时器或回合阶段首次不一致时停止。所审代码树未公布 Statcheck 结果；本合集未构建或运行任何内容。",
       "仓库包含一个附带 Codex 界面文件的智能体技能，指示编程智能体通过只读的 Ghidra MCP 服务器，将本地函数与 CPS3 程序对比，标注每个函数的一致程度，并在街机平衡开关下加入 CPS3 行为；所审文件未说明有多少代码以这种方式编写，也未确立 REA 使用。LICENSE 为 AGPL-3.0。THIRD_PARTY_NOTICES 列出 GPLv3+ 的 libcdio，以及 zlib、BSD-2-Clause、MIT 和 Apache-2.0 许可的组件；游戏及其素材各自保留权利，README 表示项目不纵容盗版。"
     ]
+  },
+  "re4-gamecube-debug-decomp-case": {
+    "name": "re4：Resident Evil 4 GameCube 调试版的字节一致反编译",
+    "requirements": [
+      "审阅的是 2026-10-02 的最新提交，距 2026-09-07 的首次提交不到四周。README 称反编译已完成：每个单元都编译为原始字节，src/ 中约有 57 万行 C 与 C++ 代码且没有汇编文件；另有 526 处 `// COMPILER-DIFF:` 标记，在不生成额外指令的前提下引导编译器选择相同的寄存器或指令顺序。其余内联汇编几乎都位于原厂同样以汇编编写的例程中。产物是调试原型版的 DOL 与 REL，不是零售版构建，也不是 PC 移植。",
+      "需将自备的两张调试版光盘镜像放入 orig/G4BE08/：光盘 1 提供 main.dol 和大部分 REL，光盘 2 提供岛屿关卡的四个 REL，configure.py 还会从中读取对应的 Bio4 符号文件。游戏代码所用编译器需从 SN Systems 公开的 ProDG 3.9.3 GCC 移植版 GPL 源码构建，该源码同样由使用者自备。仓库不含游戏素材。",
+      "文档说明的构建宿主为 Linux，需 Python 3 与 ninja。tools/sn-gcc/build.sh 会结合项目的 Linux 宿主补丁和内存标志补丁，一次性在本机构建 SN 的 GCC 2.95.3（SN BUILD v1.79）；CRI 中间件使用 Metrowerks CodeWarrior 2.4.7 构建，取自 dolsdk2004 的 Nintendo SDK 则使用 GC/1.2.5n。首次运行 configure 会下载固定版本的 decomp-toolkit、objdiff、wibo 和 CodeWarrior 编译器包。",
+      "构建成功时，ninja 应在最后报告 100% 匹配并完成链接，按 config/G4BE08/build.sha1 运行 dtk shasum 应对全部 115 个二进制文件输出 OK；tools/bytecmp.py 用于比较单个单元，tools/asmcheck.py --all 统计由 asm 模板生成的指令数，任何修改都不得改变该总数。仓库没有 CI 工作流或发布版本，因此这些结果均为项目报告，本合集未进行任何构建。",
+      "LICENSE 仅将 CC0 用于项目自行编写的构建脚本、工具、配置与文档。README 与 LICENSE 声明，src/ 与 include/ 中重建的游戏、SDK 及中间件源码仍归 Capcom、Nintendo 与 CRI Middleware 所有，仅为研究与保存目的发布。docs/research/README.md 称其中的匹配笔记由完成匹配工作的 AI 智能体撰写；未记录 REA 的使用。"
+    ]
   }
 }
