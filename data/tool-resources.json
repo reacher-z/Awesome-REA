@@ -15277,5 +15277,42 @@
       "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/cmd/jsluice/main.go",
       "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/LICENSE"
     ]
+  },
+  {
+    "id": "lba2remake-little-big-adventure-case",
+    "name": "LBA2 Remake: a Little Big Adventure 1 and 2 reimplementation in TypeScript and Three.js",
+    "url": "https://github.com/LBALab/lba2remake",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the engine of Little Big Adventure 2, and now also Little Big Adventure 1, in TypeScript, Three.js and React so that it runs in a browser on resources imported from the user’s copy of the game. README calls it a full re-engineering rather than a disassembly-based approach: every island and building can be explored and most graphics and part of the gameplay work, but the game cannot yet be completed. It adds an editor with an actor-script debugger, VR support and fan-made 3D replacement models for the isometric scenes.",
+    "description_zh": "用 TypeScript、Three.js 和 React 重新实现 Little Big Adventure 2 的引擎，现在也涵盖 Little Big Adventure 1，在浏览器中运行，资源从使用者自有的游戏中导入。README 称这是完全重新设计实现，而非基于反汇编的方法：所有岛屿和建筑都可以探索，大部分图形和部分玩法已经可用，但游戏目前还无法通关。项目另外提供带角色脚本调试器的编辑器、VR 支持，以及由爱好者为等距场景制作的 3D 替换模型。",
+    "evidence_url": "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-04-17, the day after tag v0.6.8; recent changelog entries are mostly bug fixes, VR controller mappings and added replacement 3D models. README says every island and building of the original can be visited and most graphics and part of the gameplay are implemented, but the game is not completable. It describes the method only as full re-engineering instead of disassembly and does not document how the original engine was studied.",
+      "Local play requires the user’s own Little Big Adventure 2 from GOG, Steam or itch.io: npm run import (import:win on Windows) unpacks the installation and converts its music, samples, voices and video into the git-ignored www/data folder, and other versions or Linux need the manual import route. The repository holds no original game files; its www/models and assetsSource trees contain replacement 3D models, textures and generated scene meshes, which the art workflow describes as newly made. The FAQ says the hosted live demo is shared publicly with Frederick Raynal’s agreement while the game is a work in progress and will require a legal copy once it is fully playable; its Netlify build downloads game assets from a location outside the repository.",
+      "It runs in a browser with WebGL. Development uses Node.js (README asks for 9 or newer and the Netlify build sets 18), npm, webpack and TypeScript, served by npm run dev on localhost:8080. The apps folder holds Android, iOS and Windows 10 app prototypes, and VR controllers work through WebXR.",
+      "CircleCI runs lint, type-checking and a production bundle build, and a CodeQL workflow scans the code; there are no engine or gameplay tests and no comparison with the original executable. The live demo, editor and gameplay videos are the project’s own demonstrations, and this collection did not build or run it.",
+      "LICENSE is MIT for the project’s code (copyright 2018 Adrien Grandemange and Alexandre Fontoura). README states that the original game executable, assets and intellectual property belong to [2.21] and asks users to buy the original games. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/FAQ.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/getting_started.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/architecture.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/doc/art_workflow.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/CHANGELOG.md",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/package.json",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/utils/convert/import.sh",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/netlify.toml",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/.circleci/config.yml",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/.gitignore",
+      "https://github.com/LBALab/lba2remake/blob/db54f5de071354939a8b02e71e47c53343ab6ee5/LICENSE",
+      "https://github.com/LBALab/lba2remake/tree/db54f5de071354939a8b02e71e47c53343ab6ee5/www/models"
+    ]
   }
 ]
