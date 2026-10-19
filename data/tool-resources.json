@@ -8488,5 +8488,38 @@
       "https://github.com/ben-sb/obfuscator-io-deobfuscator/pull/52",
       "https://www.npmjs.com/package/obfuscator-io-deobfuscator/v/1.0.6"
     ]
+  },
+  {
+    "id": "decomp2dbg",
+    "name": "decomp2dbg",
+    "url": "https://github.com/mahaloz/decomp2dbg",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler-to-debugger bridge that serves function names, global variables, stack and register variable names and decompiled code from IDA Pro, Binary Ninja, Ghidra or angr-management to GDB over an XML-RPC connection. Synced functions and globals become ordinary GDB symbols for breakpoints and memory examination, local variables appear as convenience variables, and each breakpoint stop prints the decompiled line for the current address. It works with vanilla GDB, GEF and pwndbg, and can map a shared library's symbols once its load range is supplied.",
+    "description_zh": "连通反编译器与调试器的桥接工具：通过 XML-RPC 连接，把 IDA Pro、Binary Ninja、Ghidra 或 angr-management 中的函数名、全局变量、栈变量与寄存器变量名以及反编译代码提供给 GDB。同步过来的函数和全局变量成为普通的 GDB 符号，可直接下断点和查看内存；局部变量以便利变量的形式出现，每次在断点处停下时还会打印当前地址对应的反编译代码行。它支持原生 GDB、GEF 和 pwndbg；提供共享库的加载地址范围后，也能为该库映射符号。",
+    "evidence_url": "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v4.0.3, published 2026-07-14 on GitHub and PyPI; the reviewed main commit is that version bump. Package metadata requires Python 3.10+, and the README says decomp2dbg must be installed in the same Python environment as the decompiler and the debugger. The bundled installer places the decompiler plugin and sources the GDB client from the user's .gdbinit, after GEF or pwndbg are loaded; a Windows decompiler outside WSL needs the README's manual steps.",
+      "The README lists IDA Pro 9.0+, Binary Ninja 2.4+, Ghidra 12+ (started in PyGhidra mode with the plugin enabled) and angr-management 9.0+, each installed separately; decompiler access goes through the declib library. Only GDB-based debuggers are supported: LLDB and WinDbg support, struct syncing, function-type syncing and online DWARF creation are listed as unfinished.",
+      "The decompiler side starts an XML-RPC server on localhost:3662 by default; debugging from another machine or VM needs the host and port at connect time and the port reachable. One decompiler can be connected at a time, and a shared library's symbols need its base and end addresses supplied manually.",
+      "tests.py holds integration tests that drive headless Ghidra, or IDA through idalib, with GDB; CI runs only the Ghidra suites against Ghidra 12.0. The testing/binaries directory keeps sample executables, including an Ubuntu objdump build, as test fixtures. BSD-2-Clause license. No debugging sessions were run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/README.md#L20-L46",
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/README.md#L147-L168",
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/pyproject.toml",
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/LICENSE",
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/tests.py",
+      "https://github.com/mahaloz/decomp2dbg/blob/416dce4986f90c74876ddb00af18583f8de6e4fe/.github/workflows/ci-tests.yml",
+      "https://github.com/mahaloz/decomp2dbg/tree/416dce4986f90c74876ddb00af18583f8de6e4fe/testing/binaries",
+      "https://github.com/mahaloz/decomp2dbg/releases/tag/v4.0.3",
+      "https://pypi.org/project/decomp2dbg/4.0.3/"
+    ]
   }
 ]
