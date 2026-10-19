@@ -8,7 +8,7 @@ import re
 from urllib.parse import urlsplit
 
 from artifact_links import github_repository
-from build_discovery_pages import jsonld_script, publication_keys
+from build_discovery_pages import PRIMARY_SOURCE_LABEL, jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
 from open_graph import open_graph_meta
@@ -164,7 +164,7 @@ def _resource_content(record: dict, language: str, discussion: str = '') -> tupl
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
     links = [_link(record['url'], label('Visit original resource', '访问原始资源'), primary=True)]
     if record['evidence_url'] != record['url']:
-        links.append(_link(record['evidence_url'], label('Primary source', '一手来源')))
+        links.append(_link(record['evidence_url'], label(*PRIMARY_SOURCE_LABEL)))
     content = f'''<header class="entry-heading"><p class="entry-eyebrow">{escape(kind)}</p><h1>{escape(title)}</h1>
   <p class="entry-description">{escape(description)}</p></header>
 <nav class="entry-actions" aria-label="{label('Resource links', '资源链接')}">{''.join(links)}</nav>

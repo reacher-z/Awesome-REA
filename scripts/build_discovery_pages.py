@@ -18,6 +18,9 @@ from source_scope import exclusion_counts, unavailable_clause
 
 # The upstream project that the collection's name echoes.
 REA_REPOSITORY_URL = 'https://github.com/morluto/rea'
+# Collection pages share one link pattern: the title opens the original resource, “Full entry” the detail page,
+# and this label marks the link to a record's evidence_url (homepage strings in site/app.js repeat it).
+PRIMARY_SOURCE_LABEL = ('Primary source', '一手来源')
 SECTIONS = {
     'website': ('Websites', '网站'),
     'game': ('Games', '游戏'),
@@ -141,13 +144,13 @@ def _resource_card(record: dict, language: str) -> str:
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
   <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
-  <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{('原始来源 ↗' if zh else 'Primary source ↗')}</a></div>
+  <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{PRIMARY_SOURCE_LABEL[zh]} ↗</a></div>
   <details class="requirements"><summary>{('详情与使用条件' if zh else 'Details and requirements')}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time></div></details>
 </article>'''
 
 
 def _case_row(record: dict, language: str, section: str) -> str:
-    """Keep reported scope visible, with original evidence one native disclosure away."""
+    """Keep reported scope visible; link the original, the full entry and its primary source as /resources/ does."""
     zh = language == 'zh'
     name = (record.get('name_zh') or record['name']) if zh else record['name']
     identifier = escape(record['id'], quote=True)
@@ -156,17 +159,16 @@ def _case_row(record: dict, language: str, section: str) -> str:
     relationship = RELATIONSHIPS[record['relationship']][int(zh)]
     targets = ' · '.join(TARGETS[target][int(zh)] for target in record['targets'])
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
-    evidence = [(record['evidence_url'], '原始证据' if zh else 'Primary evidence')]
-    evidence += [(url, f'补充来源 {index}' if zh else f'Additional source {index}')
-                 for index, url in enumerate(record.get('additional_evidence_urls', []), 1)]
+    evidence = [(url, f'补充来源 {index}' if zh else f'Additional source {index}')
+                for index, url in enumerate(record.get('additional_evidence_urls', []), 1)]
     evidence_links = ''.join(f'<li><a href="{_url(url)}" target="_blank" rel="noopener noreferrer">{escape(label)} <span aria-hidden="true">↗</span></a></li>'
                              for url, label in evidence)
     reviewed = str(record['verified_at'])
     return f'''<article class="case-row" id="{identifier}" data-case-id="{identifier}" data-resource-id="{identifier}" data-case-section="{escape(section, quote=True)}">
-  <div class="case-heading"><h3><a href="{detail_path}">{escape(name)}</a></h3><span class="case-relationship">{escape(relationship)}</span></div>
+  <div class="case-heading"><h3><a href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="case-relationship">{escape(relationship)}</span></div>
   <p class="case-description">{escape(record[f'description_{language}'])}</p>
-  <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{('案例来源' if zh else 'Case source')} <span aria-hidden="true">↗</span></a></div>
-  <details class="case-evidence"><summary>{('使用条件与证据' if zh else 'Requirements and evidence')}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul><ul class="case-evidence-links">{evidence_links}</ul><p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
+  <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{PRIMARY_SOURCE_LABEL[zh]} <span aria-hidden="true">↗</span></a></div>
+  <details class="case-evidence"><summary>{('使用条件与证据' if zh else 'Requirements and evidence')}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul>{('<ul class="case-evidence-links">' + evidence_links + '</ul>' if evidence_links else '')}<p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
   </div>
 </article>'''
 

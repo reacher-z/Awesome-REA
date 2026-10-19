@@ -222,7 +222,7 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.equal(byClass(card, 'card-meta')[0].children[0].className, 'card-targets');
     assert.equal(byClass(card, 'card-targets')[0].textContent, lang === 'zh' ? '应用' : 'App');
     const evidence = byClass(card, 'card-meta')[0].children[2];
-    assert.deepEqual([evidence.textContent, evidence.href], [lang === 'zh' ? '复核来源 ↗' : 'Review source ↗', 'https://github.com/curated/tool-1#readme']);
+    assert.deepEqual([evidence.textContent, evidence.href], [lang === 'zh' ? '一手来源 ↗' : 'Primary source ↗', 'https://github.com/curated/tool-1#readme']);
     assert.equal(byClass(card, 'resource-entry-link')[0].href, `${lang === 'zh' ? '/zh' : ''}/resources/curated-1/`);
     const details = card.querySelector('details');
     assert.deepEqual(descendants(details).filter(node => node.tag === 'li').map(node => node.textContent), [lang === 'zh' ? '条件 1' : 'Requirement 1']);
