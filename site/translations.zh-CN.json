@@ -5071,5 +5071,14 @@
       "协作者共享一个 Git 仓库，并分析同一个由各自提供的二进制。可选的 extras 组件增加辅助服务器和一个 AI 用户，后者把 DAILA 提示的结果写入项目，需要 OpenAI API 密钥；其改动属于模型输出，需要人工复核。",
       "采用 BSD-2-Clause 许可。README 中的 REAs 指逆向工程产物（reverse-engineering artifacts），与 REA 项目无关。本次未安装，也未同步任何项目。"
     ]
+  },
+  "class-dump": {
+    "name": "class-dump Objective-C 头文件生成工具",
+    "requirements": [
+      "项目已基本停滞：最新标签 3.5 的日期为 2013-11-16，GitHub 上的发布条目止于 3.4，README 让用户到作者网站获取最新版本。所审阅的 master 提交日期为 2019-03-15，比 3.5 多出 75 个提交，其中包含尚未发布的改动，例如改用 macOS 10.14 SDK 构建。",
+      "需在 macOS 上用 Xcode 打开仓库自带的 class-dump.xcodeproj 构建，各目标的部署目标为 macOS 10.8 和 10.9。README 的用法说明列出 ppc、ppc64、i386 和 x86_64，3.5 版更新日志又加入 arm64；文档未说明是否支持更新的 Apple 架构或元数据格式。",
+      "输入为使用者已有的 Mach-O 文件、框架或 bundle，且只解析 Objective-C 元数据；带有加密加载命令的文件会在输出头部被标出。未发布部分的更新日志称 Swift 类型的类型编码为空，现以 MISSING_TYPE 写出，因此无法还原 Swift 类型。输出只有声明，不含方法实现。",
+      "Tests/doTests.py 是一个 Python 2 脚本，用于在已安装的系统框架上比较新旧两个构建的输出差异；仓库没有 CI。README 中的声明采用 GPL-2.0-or-later 许可，版权归 Steve Nygard（1997–2019），仓库中没有单独的许可证文件；ThirdParty/blowfish.c 采用 LGPL-2.1-or-later。根据闭源二进制生成的头文件仍受其权利人的权利约束。本次未构建或运行该工具。"
+    ]
   }
 }
