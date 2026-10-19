@@ -13,7 +13,7 @@
 | `targets` | One or more browsing domains: `website`, `game`, `app`, `binary`, `firmware`, `protocol`; these describe task fit, not verified REA integration. `protocol` is the record's Protocol tag |
 | `relationship` | Connection to REA, or the independent role the evidence establishes; one of the values listed below |
 | `reconstruction_method` | Game case studies only, recommended: how the project reconstructs its game, one of the methods listed below |
-| `description_en` / `description_zh` | Original practical descriptions |
+| `description_en` / `description_zh` | Original practical descriptions: what the resource is and what it analyzes, recovers or reconstructs, in about 300 English characters; `validate.py` warns, without failing, above 350. Prerequisites and limits belong in `requirements` |
 | `evidence_url` | Primary source supporting the description |
 | `additional_evidence_urls` | Optional supporting documentation, release, or package-metadata URLs; these are validated and included in link checks |
 | `verified_at` | ISO date or timestamp of source review |
