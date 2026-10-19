@@ -79,7 +79,7 @@ function setup(query = '', {catalog, browser, extraMarkup = ''} = {}) {
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
     fetch: async url => {
-      const body = responses[new URL(url).pathname === '/catalog.json' ? 'catalog' : 'browser'];
+      const body = responses[/^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? 'catalog' : 'browser'];
       return body === undefined ? {ok: false, status: 503} : {ok: true, json: async () => structuredClone(body)};
     }};
   vm.createContext(context);

@@ -137,7 +137,7 @@ class SecurityHeaderTests(unittest.TestCase):
         bibtex = {'content-type': 'application/x-bibtex; charset=utf-8'}
         self.assertEqual(rules, {
             '/fonts/*': {'access-control-allow-origin': '*'}, '/fontawesome.css': {'access-control-allow-origin': '*'},
-            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/source-index.json',
+            **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/catalog-index.json', '/source-index.json',
                                              '/source-browser.json', '/source-published.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
             **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml')},
@@ -160,7 +160,7 @@ class SecurityHeaderTests(unittest.TestCase):
     def test_policy_covers_what_pages_load_and_rejects_new_inline_code(self):
         valid = ('<head><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/styles.css?v=1">'
                  '<link rel="stylesheet" href="https://awesome-rea.pages.dev/fontawesome.css">'
-                 '<link rel="preload" href="/catalog.json?v=1" as="fetch" crossorigin>'
+                 '<link rel="preload" href="/catalog-index.json?v=1" as="fetch" crossorigin>'
                  '<script type="application/ld+json">{}</script><script src="/app.js?v=1" defer></script></head>'
                  '<body><script id="data" type="application/json">{}</script></body>')
         self.check(valid)
@@ -173,7 +173,7 @@ class SecurityHeaderTests(unittest.TestCase):
             'third-party script': valid + '<script src="https://cdn.example.org/widget.js"></script>',
             'unlisted icon origin': valid.replace('awesome-rea.pages.dev', 'icons.example.org'),
             'frame': valid + '<iframe src="/"></iframe>',
-            'third-party preload': valid.replace('href="/catalog.json?v=1"', 'href="https://cdn.example.org/catalog.json"'),
+            'third-party preload': valid.replace('href="/catalog-index.json?v=1"', 'href="https://cdn.example.org/catalog-index.json"'),
             'untyped preload': valid.replace(' as="fetch"', ''),
             'suppressed referrer': valid + '<a href="https://example.org/" target="_blank" rel="noopener noreferrer">x</a>',
             'new tab without noopener': valid + '<a href="https://example.org/" target="_blank">x</a>',
@@ -210,7 +210,7 @@ class CatalogPreloadTests(unittest.TestCase):
             validate_catalog_preload(output)
 
     def test_preload_must_be_the_revision_stamped_catalog_fetch(self):
-        valid = f'<link rel="preload" href="/catalog.json?v={self.REVISION}" as="fetch" crossorigin>'
+        valid = f'<link rel="preload" href="/catalog-index.json?v={self.REVISION}" as="fetch" crossorigin>'
         self.check(valid)
         self.check(valid.replace('crossorigin', 'crossorigin="anonymous"'))
         failures = {
@@ -219,7 +219,8 @@ class CatalogPreloadTests(unittest.TestCase):
             'no CORS mode': valid.replace(' crossorigin', ''),
             'credentialed': valid.replace('crossorigin', 'crossorigin="use-credentials"'),
             'wrong destination': valid.replace('as="fetch"', 'as="script"'),
-            'repository payload': valid + valid.replace('catalog.json', 'source-browser.json'),
+            'repository payload': valid + valid.replace('catalog-index.json', 'source-browser.json'),
+            'complete catalog instead of the index': valid.replace('catalog-index.json', 'catalog.json'),
             'duplicate': valid + valid,
         }
         for name, head in failures.items():

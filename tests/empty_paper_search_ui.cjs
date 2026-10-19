@@ -10,6 +10,9 @@ const allowed = paperSearch.allowedValues(papers);
 const html = fs.readFileSync(path.resolve(__dirname, '../site/index.html'), 'utf8');
 const element = (app, selector) => app.elements.get(selector);
 const settle = () => new Promise(resolve => setImmediate(resolve));
+// The lean index renders first; the complete catalog follows for requirement text.
+const CATALOG_REQUESTS = ['/catalog-index.json', '/catalog.json'];
+const paths = app => app.requests.map(url => new URL(url).pathname);
 const destination = app => new URL(element(app, '#empty-search-papers').href, app.context.location.href);
 const targetState = app => paperSearch.readState(destination(app).searchParams, allowed);
 
@@ -18,7 +21,7 @@ function application(query = '', {pathname = '/', sourceMeta = 'available', fail
   const fetch = app.context.fetch;
   app.context.fetch = async (...args) => {
     const response = await fetch(...args);
-    if (new URL(args[0]).pathname !== '/catalog.json') return response;
+    if (!/^\/catalog(-index)?\.json$/.test(new URL(args[0]).pathname)) return response;
     if (failure) return {ok: false, status: 503};
     const data = await response.json();
     if (sourceMeta === 'missing') delete data.meta.source_index;
@@ -68,7 +71,7 @@ const tests = {
       link.emit('click');
       assert.deepEqual({url: app.context.location.href, q: app.api.state.q, sourceq: app.api.sourceState.q,
         target: app.api.state.target, sourceTarget: app.api.sourceState.target, layout: app.api.state.layout}, before);
-      assert.equal(app.requests.length, 1, 'offering and following a plain link needs no homepage papers/source payload fetch');
+      assert.deepEqual(paths(app), CATALOG_REQUESTS, 'offering and following a plain link needs no homepage papers/source payload fetch');
       app.api.state.lang = lang === 'zh' ? 'en' : 'zh'; app.api.applyLanguage();
       assert.equal(destination(app).pathname, lang === 'zh' ? '/papers/' : '/zh/papers/');
       assert.equal(destination(app).searchParams.get('q'), 'DeGPT');
@@ -93,7 +96,7 @@ const tests = {
       assert.equal(link.textContent, '搜索研究论文', 'no interpolated query or invented match count');
       assert.equal(link.children.length, 0);
       assert.equal(app.api.state.q, query, 'normalizing the destination must not edit homepage input');
-      assert.equal(app.requests.length, 1);
+      assert.deepEqual(paths(app), CATALOG_REQUESTS);
     }
     const absent = application('?q=not-a-real-paper-unknown');
     await absent.api.load();
@@ -108,7 +111,7 @@ const tests = {
       const paper = element(app, '#empty-search-papers');
       assert.equal(paper.hidden, false, 'the paper directory does not depend on source-index metadata');
       assert.equal(element(app, '#empty-search-repositories').hidden, sourceMeta !== 'available');
-      assert.equal(app.requests.length, 1);
+      assert.deepEqual(paths(app), CATALOG_REQUESTS);
       if (sourceMeta === 'available') {
         element(app, '#empty-search-repositories').emit('click'); await settle();
         assert.equal(app.api.sourceState.q, 'DeGPT');
@@ -129,7 +132,7 @@ const tests = {
     for (const query of ['', '  ', 'Fixture']) {
       const app = application('?q=' + encodeURIComponent(query)); await app.api.load();
       assert.equal(element(app, '#empty-search-papers').hidden, true);
-      assert.equal(app.requests.length, 1);
+      assert.deepEqual(paths(app), CATALOG_REQUESTS);
     }
     const failure = application('?q=DeGPT', {failure: true}); await failure.api.load();
     assert.equal(failure.api.state.error, true);

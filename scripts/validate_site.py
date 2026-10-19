@@ -9,6 +9,7 @@ from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 from build_entry_pages import entry_path, feedback_urls, matching_entries, section_siblings
+from build_site import catalog_index
 from build_manifest import read_build_manifest
 from build_paper_pages import bibtex_text, paper_entity_id, papers_newest_first
 from validate_papers import read_papers
@@ -472,13 +473,20 @@ def validate_security_headers(output):
 
 
 def validate_catalog_preload(output):
-    """Each homepage preloads exactly the catalog URL app.js fetches for its data revision, and nothing else."""
+    """Each homepage preloads exactly the catalog index URL app.js fetches for its data revision, and nothing else."""
     for route in ('index.html', 'zh/index.html'):
         page = PageResources((Path(output) / route).read_text(encoding='utf-8'))
         revision = page.catalog_revision
         assert revision and re.fullmatch(r'[0-9a-f]{16}', revision), f'Homepage needs a data-catalog-revision: /{route}'
-        expected = [{'as': 'fetch', 'href': '/catalog.json?v=' + revision, 'cors': True}]
-        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog.json?v={revision}: /{route} has {page.preloads}'
+        expected = [{'as': 'fetch', 'href': '/catalog-index.json?v=' + revision, 'cors': True}]
+        assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog-index.json?v={revision}: /{route} has {page.preloads}'
+
+
+def validate_catalog_index(output):
+    """The first-render index is the complete catalog's projection: same records, order, metadata and topic labels."""
+    catalog = json.loads((Path(output) / 'catalog.json').read_text(encoding='utf-8'))
+    index = json.loads((Path(output) / 'catalog-index.json').read_text(encoding='utf-8'))
+    assert index == catalog_index(catalog), 'catalog-index.json must project catalog.json record for record'
 
 
 def validate_category_labels(output):
@@ -1091,12 +1099,13 @@ def main():
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
     validate_security_headers(OUTPUT)
     validate_catalog_preload(OUTPUT)
+    validate_catalog_index(OUTPUT)
     validate_website_identity(pages)
     validate_category_labels(OUTPUT)
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog preload and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog index and its preload, and the deployment manifest.')
 
 
 if __name__ == '__main__':
