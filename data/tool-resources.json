@@ -36528,5 +36528,38 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "switchwakerhd-switch-port-case",
+    "name": "SwitchWakerHD: a Nintendo Switch port of the Wind Waker HD recompilation",
+    "url": "https://github.com/centollOS/SwitchWakerHD",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Ports the ZeldaWWHDRecomp static recompilation of The Wind Waker HD to the Nintendo Switch as homebrew, adding a libnx platform layer and a renderer that draws the game’s GX2 graphics with deko3d, with translated shaders compiled on the console by uam. Game code is recompiled locally from the user’s own Wii U dump, so no Switch binaries are released. README reports the game playable handheld and docked at stock clocks, at 26–30 fps in its own measurements, and states that nearly all of the Switch work was written by Claude Code under human direction and hardware testing.",
+    "description_zh": "将 ZeldaWWHDRecomp 对《塞尔达传说 风之杖 HD》的静态重编译以自制软件形式移植到 Nintendo Switch，新增 libnx 平台层和以 deko3d 绘制游戏 GX2 图形的渲染器，转换后的着色器在主机上由 uam 编译。游戏代码由使用者自己的 Wii U 转储在本地重编译生成，因此不发布 Switch 版二进制。README 报告游戏在默认频率下于掌机和底座模式均可游玩，其自测帧率为 26–30 fps，并说明几乎全部 Switch 移植工作由 Claude Code 在人工指导和实机测试下编写。",
+    "evidence_url": "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a fork of ZeldaWWHDRecomp that keeps its desktop and Android targets and adds the Switch layer; the recompiler and the Cafe OS and GX2 runtime come from upstream. It reports the game booting and playing handheld and docked with sound, saves, save states and mods, played mostly on the opening island, Dragon Roost and the surrounding sea, with known issues tracked in docs/switch-port.md. Source tags such as v0.4.7 (2026-10-14) preceded the reviewed commit.",
+      "Needs the user’s own Wii U dump of the USA or European release, version 0 without the update; extracting a disc image needs its disc key and the Wii U common key, and the runtime checks code/cking.rpx at startup. README states that the repository contains no game code, assets, keys or data, and that the NRO and shader caches built from a dump contain the game and must not be shared. The decomp submodule points at the separate ZeldaWWHDDecomp/wwhd decompilation.",
+      "Builds need Python 3 with pycryptodome and the devkitpro/devkita64 toolchain in Docker or Podman, or a native devkitPro on Windows, where an unsigned installer automates the build; the generated code needs a lot of memory per compiled file. The result runs as homebrew on a Switch with Atmosphère custom firmware and the Homebrew Menu, started in title mode for enough memory. The desktop and Android targets build as in the upstream README kept in docs/.",
+      "README says changes are checked by building the NRO and the desktop targets they touch, playing on hardware at stock and official clock profiles, comparing on-console frame captures with the game’s own textures and reading session logs. CI builds and unit-tests the desktop and Android runtimes against placeholder guest code, and a guard fails releases that contain game code, game files or key-like strings; no workflow builds the Switch NRO. Frame rates and playability are project-reported, and this collection ran nothing.",
+      "Code is MPL-2.0, as upstream licenses it; vendored Cemu, uam, {fmt}, Dear ImGui, xxHash and metal-cpp keep their own licenses, and the game remains its owner’s. README states that an AI coding agent, Anthropic’s Claude through Claude Code, wrote nearly all of the Switch work, its documentation and commit messages, while the human authors chose the work and tested every build on a Switch; it notes that upstream credits its Vulkan renderer to OpenAI Codex. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/INSTALL.md",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/docs/switch-port.md",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/THIRD_PARTY.md",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/.gitmodules",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/.github/workflows/release.yml",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/.github/workflows/linux.yml",
+      "https://github.com/centollOS/SwitchWakerHD/blob/093c96cf590d23b07472e3cf2aa66f9a7a32cd4e/LICENSE",
+      "https://github.com/centollOS/SwitchWakerHD/releases/tag/v0.4.7"
+    ]
   }
 ]
