@@ -1808,7 +1808,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 [↑ Contents](#contents)
 
-**Also in target sections:** [Website](#website): [Chrome DevTools MCP](https://awesomerea.org/resources/chrome-devtools-mcp/), [Playwright MCP](https://awesomerea.org/resources/playwright-mcp/), [Burp Suite MCP Server](https://awesomerea.org/resources/burp-suite-mcp-server/), [Spectral](https://awesomerea.org/resources/spectral-mcp/) · [Game](#game): [RenderDoc MCP](https://awesomerea.org/resources/renderdoc-mcp/) · [App](#app): [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/), [apktool-mcp-server](https://awesomerea.org/resources/apktool-mcp-server/), [frida-mcp (yfe404)](https://awesomerea.org/resources/frida-mcp-yfe404/), [Super Trouper](https://awesomerea.org/resources/super-trouper/)
+**Also in target sections:** [Website](#website): [Chrome DevTools MCP](https://awesomerea.org/resources/chrome-devtools-mcp/), [Playwright MCP](https://awesomerea.org/resources/playwright-mcp/), [Burp Suite MCP Server](https://awesomerea.org/resources/burp-suite-mcp-server/), [Spectral](https://awesomerea.org/resources/spectral-mcp/) · [Game](#game): [RenderDoc MCP](https://awesomerea.org/resources/renderdoc-mcp/), [Cheat Engine MCP Bridge](https://awesomerea.org/resources/cheatengine-mcp-bridge/) · [App](#app): [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/), [apktool-mcp-server](https://awesomerea.org/resources/apktool-mcp-server/), [frida-mcp (yfe404)](https://awesomerea.org/resources/frida-mcp-yfe404/), [Super Trouper](https://awesomerea.org/resources/super-trouper/)
 
 - [**REA — Reverse Engineer Anything**](https://github.com/morluto/rea)
 
