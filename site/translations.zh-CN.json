@@ -3733,5 +3733,13 @@
       "样本和 IDA 数据库由分析人员自行提供。批量解密的 Appcall 引擎会在所选 IDA 调试器中运行被分析程序自身的解密函数，其文档称仅用 imul 模拟器和 IDA 的 Remote Windows 调试器测试过。混淆代码反编译和内联检测被标为实验性功能。",
       "采用 GPL-3.0 许可。NOTICE.txt 列出了随附的第三方代码及其许可证，其中包括采用 Boost Software License 1.0 的 Crypto++ 8.9.0（用于 RC4、AES、ChaCha20 等密码算法），以及采用 MIT 许可的 GraphSlick 和 microavx 代码。本次未构建、安装或运行任何内容。"
     ]
+  },
+  "frida-interception-and-unpinning": {
+    "name": "Frida 移动端拦截脚本",
+    "requirements": [
+      "以 Frida 脚本形式通过 Frida 命令行注入目标应用；README 的 Android 流程要求已 root 的设备或模拟器，并以 root 身份运行 frida-server，iOS 流程要求已越狱并安装 Frida 的设备。",
+      "使用者需自行提供检查代理与 CA 证书，并在使用前编辑 config.js；这些脚本仅适用于使用者拥有或有权测试的移动应用，不得用于绕过第三方软件的保护。",
+      "采用 AGPL-3.0 许可证，由 NLnet 资助，是 HTTP Toolkit 项目的一部分；仓库仅包含脚本，不含任何应用安装包。"
+    ]
   }
 }

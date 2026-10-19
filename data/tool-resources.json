@@ -9892,5 +9892,30 @@
       "https://github.com/KasperskyLab/hrtng/releases/tag/v3.9.114",
       "https://securelist.com/hrtng-ida-pro-plugin/114780/"
     ]
+  },
+  {
+    "id": "frida-interception-and-unpinning",
+    "name": "Frida Mobile Interception Scripts",
+    "url": "https://github.com/httptoolkit/frida-interception-and-unpinning",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "A set of Frida scripts from HTTP Toolkit for inspecting a mobile app's HTTPS traffic while analysing apps you own or are authorized to test. Injected into a running Android or iOS app, they redirect its connections to an interception proxy, add a user-supplied CA certificate to the trust stores, and disable certificate pinning and transparency checks so the proxy can read the traffic. Individual scripts can also be used on their own to hook specific behaviour.",
+    "description_zh": "来自 HTTP Toolkit 的一组 Frida 脚本，用于在分析自有或经授权测试的应用时检查移动应用的 HTTPS 流量。将其注入运行中的 Android 或 iOS 应用后，可把连接重定向到检查代理、将用户提供的 CA 证书加入信任库，并关闭证书固定与证书透明度检查，使代理能够读取流量。各脚本也可单独使用以挂钩特定行为。",
+    "evidence_url": "https://github.com/httptoolkit/frida-interception-and-unpinning/blob/560dd29d410fe785f9f390e3c7f86ca8359c8d67/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/httptoolkit/frida-interception-and-unpinning/blob/560dd29d410fe785f9f390e3c7f86ca8359c8d67/LICENSE"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Delivered as Frida scripts injected into a target app with the Frida CLI; the README's Android workflow requires a rooted device or emulator running frida-server as root, and the iOS workflow requires a jailbroken device with Frida installed.",
+      "The analyst supplies their own interception proxy and CA certificate and edits config.js before use; the scripts are intended only for mobile apps you own or are authorized to test, not for circumventing protections on third-party software.",
+      "AGPL-3.0 licensed and funded by NLnet as part of the HTTP Toolkit project; the repository ships scripts only and no application packages."
+    ]
   }
 ]
