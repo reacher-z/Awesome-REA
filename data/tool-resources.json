@@ -8620,5 +8620,39 @@
       "https://github.com/sigalor/whatsapp-web-reveng/issues/372",
       "https://engineering.fb.com/2021/07/14/security/whatsapp-multi-device/"
     ]
+  },
+  {
+    "id": "e9patch",
+    "name": "E9Patch",
+    "url": "https://github.com/GJDuck/e9patch",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Static binary rewriter for x86-64 Linux ELF executables and shared objects that inserts instrumentation without control-flow recovery and writes a drop-in replacement binary, following the PLDI 2020 paper Binary Rewriting without Control Flow Recovery. The e9tool front end selects instructions with a matching language over disassembly attributes and patches them with built-in trampolines, calls into C or C++ functions compiled with e9compile.sh, or hand-written plugin trampolines; the e9patch back end accepts JSON-RPC commands so other tools can drive it. Optional modes add heuristic control-flow recovery for faster rewritten binaries or SIGILL-based fallbacks for full patch coverage.",
+    "description_zh": "面向 x86-64 Linux ELF 可执行文件和共享库的静态二进制重写工具，无需恢复控制流即可插入插桩代码，并生成可直接替换原文件的二进制，方法源自 PLDI 2020 论文 Binary Rewriting without Control Flow Recovery。前端 e9tool 用一套基于反汇编属性的匹配语言选择指令，再通过内置跳板、调用以 e9compile.sh 编译的 C/C++ 函数或手写的插件跳板进行修补；后端 e9patch 接收 JSON-RPC 命令，便于其他工具调用。可选模式包括借助启发式控制流恢复获得更快的重写结果，或借助 SIGILL 回退实现完全的修补覆盖。",
+    "evidence_url": "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.1, published 2026-06-22, with an amd64 Debian package; earlier 1.0.0 release candidates ran through rc10 (2025-04-16) before v1.0.0 on 2026-03-01. The reviewed master commit (2026-06-28) is one commit ahead of v1.0.1, fixing undefined behavior on empty trampoline template entries, and its VERSION file reads 1.0.1.",
+      "build.sh builds e9patch and e9tool after checking for gcc, g++, make, binutils, xxd, markdown and zlib headers, and suggests Debian/Ubuntu package names; Zydis and libdw are vendored under contrib. Patch functions are compiled with e9compile.sh using gcc and freestanding flags. The README targets x86_64 Linux; the source also contains PE handling and a Windows example that calls itself a proof of concept, which the guides do not document.",
+      "Input is the user's own ELF executable or shared object, and output is written to a.out or a.so by default. The guide notes that the built-in linear disassembler can mishandle binaries that mix code and data and accepts --use-disasm and --use-targets CSV files from other analyzers. The CFR mode is heuristic and less robust, and in the -100 mode a rewritten program's own attempts to install a SIGILL handler fail with ENOSYS.",
+      "GPL-3.0, with specific files such as examples/stdlib.c under MIT as stated in their preambles. The README's scalability, speed and overhead claims, including rewriting web browsers over 100 MB, were not tested, and the downstream projects it lists were not reviewed. No binaries were rewritten."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/doc/e9tool-user-guide.md",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/doc/e9patch-programming-guide.md",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/build.sh",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/e9compile.sh",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/examples/win64_demo.c",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/examples/stdlib.c",
+      "https://github.com/GJDuck/e9patch/tree/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/contrib",
+      "https://github.com/GJDuck/e9patch/blob/682ab1f7f0480aa45edf1fd94457e5ee2dd01043/LICENSE",
+      "https://github.com/GJDuck/e9patch/releases/tag/v1.0.1",
+      "https://github.com/GJDuck/e9patch/compare/v1.0.1...682ab1f7f0480aa45edf1fd94457e5ee2dd01043"
+    ]
   }
 ]

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**99 repositories** · 2026-10-16 UTC
+**100 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -21,6 +21,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — Open-source AI reverse-engineering agent platform and MCP server for Ghidra, Frida, x64dbg and Rizin — automated PE/APK/binary analysis, CTF and malware research, with 100+ MCP tools and a 194-article runnable knowledge base. **[1,265 stars]**
 - [yazgx97/frida-ios-hook](https://github.com/yazgx97/frida-ios-hook) — A tool that helps you easy trace classes, functions, and modify the return values of methods on iOS platform **[1,191 stars]**
 - [reversenseorg/dexcalibur](https://github.com/reversenseorg/dexcalibur) — Reversense (Dexcalibur2) is a fully rewriting and rethinking of Dexcalibur. Reversense is a binary intelligence platform that automates the reverse engineering of mobile and embedded applications. **[1,180 stars]**
+- [GJDuck/e9patch](https://github.com/GJDuck/e9patch) — A powerful static binary rewriting tool **[1,156 stars]**
 - [QQBackup/qq-win-db-key](https://github.com/QQBackup/qq-win-db-key) — Cross-platform decryption of QQ chat databases **[1,103 stars]**
 - [frida/frida-gum](https://github.com/frida/frida-gum) — Cross-platform instrumentation and introspection library written in C **[1,032 stars]**
 - [darbra/awesome-ai-reverse](https://github.com/darbra/awesome-ai-reverse) — Go all-in on AI-powered reverse engineering. **[965 stars]**

@@ -3386,5 +3386,14 @@
       "项目没有测试套件：package.json 的 test 脚本只是启动各组件。文档给出的正确性检查是对服务器密钥数据和每条二进制报文做 HMAC 校验，另有浏览器内 JavaScript 演示在扫描二维码后输出解密后的报文。本次来源核查没有建立会话，也没有解码任何流量。",
       "采用 MIT 许可（LICENSE、package.json）。README 声明项目与 WhatsApp 无关、未获其认可，使用风险自负，并附有加密软件出口声明；WhatsApp 的服务和条款另行适用。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "e9patch": {
+    "name": "E9Patch 静态二进制重写工具",
+    "requirements": [
+      "审阅时最新版本为 v1.0.1，发布于 2026-06-22，提供 amd64 Debian 软件包；此前 1.0.0 的候选版本一直发布到 rc10（2025-04-16），v1.0.0 于 2026-03-01 发布。所审阅的 master 提交（2026-06-28）比 v1.0.1 多一个提交，修复了跳板模板条目为空时的未定义行为，其 VERSION 文件为 1.0.1。",
+      "build.sh 在检查 gcc、g++、make、binutils、xxd、markdown 和 zlib 头文件后构建 e9patch 与 e9tool，并提示对应的 Debian/Ubuntu 软件包名；Zydis 与 libdw 以源码形式随附在 contrib 目录下。修补函数需用 e9compile.sh 以 gcc 和独立环境（freestanding）编译选项编译。README 面向 x86_64 Linux；源码中另有 PE 处理代码和一个自称概念验证的 Windows 示例，但使用指南未作说明。",
+      "输入为用户自己的 ELF 可执行文件或共享库，默认输出到 a.out 或 a.so。指南指出内置的线性反汇编器可能错误处理代码与数据混杂的二进制，因此支持通过 --use-disasm 和 --use-targets 读入其他分析工具生成的 CSV 文件。CFR 模式基于启发式，稳健性较低；在 -100 模式下，被重写的程序自行安装 SIGILL 处理函数时会以 ENOSYS 失败。",
+      "GPL-3.0 许可证，examples/stdlib.c 等个别文件按其文件头声明采用 MIT。README 中关于可扩展性、速度和开销的说法（包括重写超过 100 MB 的网页浏览器）未经测试，其列出的下游项目也未审阅。本次未重写任何二进制。"
+    ]
   }
 }
