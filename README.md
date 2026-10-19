@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 392](https://img.shields.io/badge/resources-392-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 393](https://img.shields.io/badge/resources-393-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (24) · [Game](#game) (175) · [App](#app) (58)
+- [Website](#website) (24) · [Game](#game) (176) · [App](#app) (58)
 - [Native Binary](#native-binary) (32) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1268,6 +1268,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Static analysis tool for Unity IL2CPP applications that reads an IL2CPP binary with its global-metadata.dat and outputs the application's type structure and method addresses as C# stub code, .NET assembly shim DLLs for decompilers such as ILSpy and dnSpy, IDA and Ghidra Python scripts that apply symbols and types, C++ type scaffolding and JSON address maps. Three APIs, also published as a NuGet package, and a plugin SDK expose the binary metadata, .NET type model and C++ model for custom analysis. The README states that it is not a decompiler and does not recover method source code.
 
   Tool · Also: App, Binary · [Requirements & evidence](https://awesomerea.org/resources/il2cppinspector/)
+
+- [**MelonLoader**](https://github.com/LavaGang/MelonLoader)
+
+  Mod loader for Unity games on both the Mono and IL2CPP runtimes, which loads plugins and mods from folders in a locally installed game; on Windows a proxy DLL, version.dll by default, starts it with the game. For IL2CPP games its assembly generator runs Cpp2IL and Il2CppInterop to produce managed interop assemblies, and HarmonyX and MonoMod are bundled for runtime patching. Its logs can capture Unity player output and Harmony messages, and debug options provide a Mono debug server for Mono games and a wait-for-debugger option for IL2CPP games.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/melonloader/)
 
 <a id="app"></a>
 ### App

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**392 repositories** · 2026-10-16 UTC
+**393 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -14,6 +14,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [rehan-remade/universal-modder](https://github.com/rehan-remade/universal-modder) — Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. **[7,939 stars]** · Curated: [Universal Modder](https://awesomerea.org/resources/universal-modder-agent-toolkit/)
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — Tutorials, tools, and more as related to reverse engineering video games. **[5,609 stars]**
 - [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot reverse engineering tools **[4,330 stars]** · Curated: [Godot RE Tools](https://awesomerea.org/resources/godot-re-tools/)
+- [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — The World's First Universal Mod Loader for Unity Games compatible with both Il2Cpp and Mono **[4,258 stars]** · Curated: [MelonLoader](https://awesomerea.org/resources/melonloader/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — Cross-platform game hack for Counter-Strike 2 with Panorama-based GUI. **[3,891 stars]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]** · Curated: [PS2Recomp](https://awesomerea.org/resources/ps2recomp/)

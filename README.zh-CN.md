@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 392](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-392-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 393](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-393-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (24) · [游戏](#game) (175) · [应用](#app) (58)
+- [网站](#website) (24) · [游戏](#game) (176) · [应用](#app) (58)
 - [原生二进制](#native-binary) (32) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1269,6 +1269,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Unity IL2CPP 应用的静态分析工具：读取 IL2CPP 二进制及其 global-metadata.dat，将应用的类型结构和方法地址输出为 C# 存根代码、供 ILSpy 和 dnSpy 等反编译器使用的 .NET 程序集垫片 DLL、为 IDA 和 Ghidra 套用符号与类型的 Python 脚本、C++ 类型脚手架以及 JSON 地址映射。三套 API（另以 NuGet 包发布）和插件 SDK 开放二进制元数据、.NET 类型模型和 C++ 模型，供自定义分析使用。README 说明它不是反编译器，不会还原方法源码。
 
   工具 · 也适用：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/il2cppinspector/)
+
+- [**MelonLoader Unity 游戏模组加载器**](https://github.com/LavaGang/MelonLoader)
+
+  面向 Mono 和 IL2CPP 两种运行时 Unity 游戏的模组加载器，从本地安装游戏目录中的文件夹加载插件和模组；在 Windows 上通过代理 DLL（默认为 version.dll）随游戏一同启动。对于 IL2CPP 游戏，其程序集生成器会调用 Cpp2IL 和 Il2CppInterop 生成托管互操作程序集，并随附 HarmonyX 与 MonoMod 用于运行时修补。其日志可捕获 Unity 播放器输出与 Harmony 消息，调试选项还为 Mono 游戏提供 Mono 调试服务器，为 IL2CPP 游戏提供等待调试器附加的选项。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/melonloader/)
 
 <a id="app"></a>
 ### App · 应用

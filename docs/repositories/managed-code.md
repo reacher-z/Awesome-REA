@@ -2,13 +2,12 @@
 
 [All categories](README.md) · [简体中文](managed-code.zh-CN.md)
 
-**129 repositories** · 2026-10-16 UTC
+**128 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET Decompiler with support for PDB generation, ReadyToRun, Metadata (&amp;more) - cross-platform! **[26,662 stars]** · Curated: [ILSpy](https://awesomerea.org/resources/ilspy/)
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR is a fully featured, zero-cost, high-performance, low-memory solution for Unity's all-platform native C# hot updates. **[7,993 stars]**
-- [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — The World's First Universal Mod Loader for Unity Games compatible with both Il2Cpp and Mono **[4,258 stars]**
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — Abstraction layer over YouTube's internal API **[3,741 stars]**
 - [icedland/iced](https://github.com/icedland/iced) — Blazing fast and correct x86/x64 disassembler, assembler, decoder, encoder for Rust, .NET, Java, Python, Lua **[3,592 stars]**
 - [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 is a .NET library designed to interoperate with Valve's Steam network. It aims to provide a simple, yet extensible, interface to perform various actions on the network. **[3,210 stars]**

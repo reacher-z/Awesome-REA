@@ -2,13 +2,12 @@
 
 [全部分类](README.zh-CN.md) · [English](managed-code.md)
 
-**129 个仓库** · 2026-10-16 UTC
+**128 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET 反编译器，支持生成 PDB、ReadyToRun、元数据等功能，而且跨平台！ **[26,662 星标]** · 精选：[ILSpy](https://awesomerea.org/zh/resources/ilspy/)
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR 是一个特性完整、零成本、高性能、低内存的 Unity 全平台原生 C# 热更新解决方案。 **[7,993 星标]**
-- [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — 全球首个兼容 Il2Cpp 与 Mono 的 Unity 游戏通用模组加载器。 **[4,258 星标]**
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — YouTube 内部 API 的抽象层。 **[3,741 星标]**
 - [icedland/iced](https://github.com/icedland/iced) — 极速且准确的 x86/x64 反汇编器、汇编器、解码器和编码器，支持 Rust、.NET、Java、Python 和 Lua。 **[3,592 星标]**
 - [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 是与 Valve 的 Steam 网络互操作的 .NET 库，旨在提供简单且可扩展的接口，以执行网络上的各种操作。 **[3,210 星标]**
