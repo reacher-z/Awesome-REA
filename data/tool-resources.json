@@ -7701,5 +7701,38 @@
       "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
       "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
     ]
+  },
+  {
+    "id": "asmresolver",
+    "name": "AsmResolver",
+    "url": "https://github.com/Washi1337/AsmResolver",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "C# library for reading, modifying and rebuilding Portable Executable files, covering both native Windows images and images with .NET metadata. It offers three levels of abstraction: raw headers and sections (PEFile); interpreted data directories such as imports, exports, TLS, exceptions, debug data and Win32 resources (PEImage); and a System.Reflection-like model of .NET assemblies and modules with managed, native and dynamic method bodies. It also extracts files from AppHost/single-file bundles, supports ReadyToRun images and reads PDB and Portable PDB symbols without DIA, and upstream designs it to stay robust against malformed or obfuscated binaries.",
+    "description_zh": "用于读取、修改和重建 PE（可移植可执行）文件的 C# 库，既支持 Windows 原生映像，也支持带 .NET 元数据的映像。它提供三个抽象层次：原始文件头和节区（PEFile）；导入、导出、TLS、异常、调试信息和 Win32 资源等数据目录的解析结果（PEImage）；以及类似 System.Reflection 的 .NET 程序集和模块模型，涵盖托管、原生和动态方法体。它还能从 AppHost／单文件捆绑包中提取文件，支持 ReadyToRun 映像，无需 DIA 即可读取 PDB 和 Portable PDB 符号；上游的设计目标是在面对格式异常或经过混淆的二进制时保持稳健。",
+    "evidence_url": "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v6.0.1, published 2026-07-25 on GitHub and NuGet; the reviewed master commit is one contributing-guide commit ahead. Nightly builds come from a separate NuGet feed. Version 6.0 changed the API, and upstream publishes a guide for migrating from v5.x.",
+      "Distributed as layered NuGet packages: AsmResolver, AsmResolver.PE.File, AsmResolver.PE, AsmResolver.PE.Win32Resources, AsmResolver.DotNet, AsmResolver.DotNet.Dynamic and AsmResolver.Symbols.Pdb. The libraries target .NET Framework 3.5, 4.6.2 and 4.7.2, .NET Standard 2.0 and 2.1, .NET Core 3.1 and .NET 6, 8, 9 and 10, and the README lists Windows, Unix-like systems, Mono and NixOS. Building uses the .NET SDK; the full test suite needs additional .NET runtimes, plus Mono and Wine on macOS and Linux.",
+      "It is a library without a GUI or a C# decompiler: users write .NET code against its API and supply their own PE files or .NET assemblies. Modified or rebuilt images still have to be checked by running them.",
+      "MIT license. The test resources are purpose-built sample binaries. Robustness against malformed or obfuscated binaries is an upstream design goal, not a guarantee for any particular protector. No binaries were processed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/docs/guides/overview.md",
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/docs/guides/dotnet/bundles.md",
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/docs/guides/migration-v5-v6.md",
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/src/Directory.Build.props",
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/Directory.Build.props",
+      "https://github.com/Washi1337/AsmResolver/blob/0715000c1b3a5104531d5ff189a14ebef0a9d5ac/LICENSE.md",
+      "https://github.com/Washi1337/AsmResolver/releases/tag/v6.0.1",
+      "https://www.nuget.org/packages/AsmResolver/6.0.1"
+    ]
   }
 ]
