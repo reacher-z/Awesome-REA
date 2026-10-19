@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 355](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 355](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2246,13 +2246,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2850,6 +2850,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 数据集为每种架构 3,000 个未去符号的可执行文件与共享库，来自 830 个 Linux 调试符号软件包，源码为 C 语言并按各包默认设置编译，按 2,700／300 划分训练与测试。准确率评估假定函数边界已知；对于完全去符号的输入，由 BAP 的 ByteWeight 推断函数边界，论文引用其准确率约为 93%。Debin 预测 17 种类型，struct 与 union 的内部内容、行号以及 PE 等其他格式不在评测范围内。只有与原始调试信息完全相同的预测才计为正确。基于编译器生成的良性代码学习的模型，在混淆二进制、手写汇编或恶意软件上可能准确率较低。针对 35 个恶意样本的研究是对反编译输出的人工检查，由于样本缺少调试信息真实标签，未报告准确率。
 
   **作者:** Jingxuan He 等
+
+  </details>
+
+- [**rev.ng：用于恢复控制流图与函数边界的统一二进制分析框架**](https://dl.acm.org/doi/10.1145/3033019.3033028)
+
+  rev.ng 借助 QEMU 的微型代码生成器（TCG）将二进制提升为 LLVM 中间表示，因此同一前端可覆盖 QEMU 支持的全部架构，输出的是可编译的中间表示。作者在此基础上构建与架构无关的分析，在没有符号或调试信息的情况下恢复程序的控制流图与函数边界。一种值域分析（OSRA）用于限定 switch 跳转表等间接跳转的目标，其他分析则处理谓词执行指令、noreturn 函数、尾调用以及依赖上下文的控制流。在为 MIPS、ARM 与 x86-64 构建、分别使用 GCC 与 clang 以 -O2、-O3 和 -Os 编译的 coreutils 上，其函数边界恢复的准确度接近 IDA Pro，并优于 BAP/ByteWeight 与 angr。
+
+  CC 2017 · 会议论文 · [PDF](https://nebelwelt.net/publications/files/17CC.pdf) · [代码](https://github.com/revng/revng) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-revng/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评测衡量的是函数边界，而非直接衡量控制流图：作者无法从 GCC 或 LLVM 获取控制流图的真实标签，因此以函数边界准确度（相对 ELF 函数符号的 Jaccard 指数）作为控制流图质量的下界。评测覆盖为 Linux 构建、静态链接并去除调试信息的 105 个 coreutils 程序，只涉及 QEMU 所支持架构中的三种；其他架构及动态链接二进制未经评测。原型会遗漏 x86-64 上部分嵌套 switch 的跳转表，以及 MIPS 上被溢出到栈中的跳转表地址；在 ARM 与 MIPS 上比其他工具占用更多内存；也不会报告 IDA Pro 凭借函数序言启发式找到的死代码，作者将此视为设计取舍。基线为 IDA Pro 6.6、BAP 0.9.9 以及 2016 年 11 月时的 angr。论文本身不涉及反编译为 C。
+
+  **作者:** Alessandro Di Federico 等
 
   </details>
 

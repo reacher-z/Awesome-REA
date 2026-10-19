@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 355](https://img.shields.io/badge/resources-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 355](https://img.shields.io/badge/resources-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2245,13 +2245,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2849,6 +2849,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.
 
   **Authors:** Jingxuan He et al.
+
+  </details>
+
+- [**rev.ng: A Unified Binary Analysis Framework to Recover CFGs and Function Boundaries**](https://dl.acm.org/doi/10.1145/3033019.3033028)
+
+  rev.ng lifts binaries to LLVM IR through QEMU's tiny code generator, so one front end covers every architecture QEMU supports and the output is compilable IR. On that IR the authors build architecture-independent analyses that recover a program's control-flow graph and function boundaries without symbols or debugging information. A value-range analysis (OSRA) bounds indirect jump targets such as switch tables, and further analyses handle predicated instructions, noreturn functions, tail calls and context-dependent control flow. On coreutils built for MIPS, ARM and x86-64 with GCC and clang at -O2, -O3 and -Os, its function-boundary accuracy is close to IDA Pro and better than BAP/ByteWeight and angr.
+
+  CC 2017 · Conference paper · [PDF](https://nebelwelt.net/publications/files/17CC.pdf) · [Code](https://github.com/revng/revng) · [Full entry & citation](https://awesomerea.org/papers/paper-revng/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The evaluation measures function boundaries, not the CFG directly: the authors could not collect CFG ground truth from GCC or LLVM, so boundary accuracy (Jaccard index against ELF function symbols) is presented as a lower bound on CFG quality. It covers 105 statically linked, stripped coreutils programs for Linux on three of the architectures QEMU supports; the other architectures and dynamically linked binaries were not evaluated. The prototype misses some nested-switch jump tables on x86-64 and jump-table addresses spilled to the stack on MIPS, needs more memory than the other tools on ARM and MIPS, and does not report dead code that IDA Pro finds through prologue heuristics, which the authors treat as a design choice. Baselines are IDA Pro 6.6, BAP 0.9.9 and angr as of November 2016. The paper does not decompile to C.
+
+  **Authors:** Alessandro Di Federico et al.
 
   </details>
 
