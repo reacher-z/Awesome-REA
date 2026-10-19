@@ -14,7 +14,7 @@ An independent collection of tools, case studies and research for websites, game
 [![resources: 294](https://img.shields.io/badge/resources-294-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 149](https://img.shields.io/badge/cases-149-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
-**[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
+**[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)** · **[Suggest a resource](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[Contributing](#contributing)**
 
 **Source review does not imply runtime verification.** [Review method](https://awesomerea.org/about/)
 
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (149) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (149) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836) · [Contributing](#contributing)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task

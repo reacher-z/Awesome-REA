@@ -260,6 +260,7 @@ def render_contents(records, papers, index_count, language):
     if counts['related-collections']:
         more.append(section_item('related-collections'))
     more.append(item(INDEX_HEADINGS[int(zh)], '#完整仓库索引' if zh else '#full-repository-index', index_count))
+    more.append('[参与贡献](#参与贡献)' if zh else '[Contributing](#contributing)')
     lines = [f"**{'按目标找工具与案例' if zh else 'Tools and cases by target'}**", '']
     lines += ['- ' + ' · '.join(targets[start:start + 3]) for start in range(0, len(targets), 3)]
     lines += ['', f"**{'论文与工作流' if zh else 'Research and workflows'}**", '', '- ' + ' · '.join(reading)]
