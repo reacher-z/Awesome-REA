@@ -9030,12 +9030,20 @@
         "https://x.com/i/status/2111273763799191896",
         "https://github.com/ShadowSwaps/REA-Reconstruction-Companion"
       ],
-      "state": "pending",
+      "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "The Pocket Tasks mapping covers one maintainer-informed command-line reconstruction with published candidate and bounded comparison evidence. It does not cover the broader Companion workflow, other examples or model/host effectiveness. Prior source exposure, pending human review and the historical instruction-packet hash remain explicit; no independent runtime reproduction is established.",
-      "reason_zh": "Pocket Tasks 映射只覆盖一个作者已接触源码、公开候选及有限比较证据的命令行重建案例；不覆盖更广的 Companion 工作流、其他示例或模型／宿主效果。既有源码接触、人工复核待完成及历史指令包哈希均明确保留；不确立独立运行复现。",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned repository establishes the named Companion: an MIT Agent Skill that works with REA to turn evidence into scoped requirements, design, staged implementation and validation, with an optional installer-managed routing block in REA’s skill and a source-exposed evaluation kit. The full mapping covers it as a community REA integration; the existing partial mapping covers the separate Pocket Tasks worked reconstruction. Example and checker results remain maintainer-reported teaching material, and no model trial, independent evaluation or runtime reproduction is established.",
+      "reason_zh": "固定版本仓库确立了具名的 Companion：一个采用 MIT 的 Agent Skill，与 REA 配合把证据整理成限定范围的需求、设计、分阶段实现与验证，并提供由安装程序管理、可选写入 REA 技能的路由段落，以及已接触源码的评估套件。完整映射以社区 REA 集成覆盖该技能；原有的部分映射覆盖另立条目的 Pocket Tasks 重建示例。示例与检查结果仍是维护者报告的教学材料，未确立模型试验、独立评估或运行复现。",
       "primary_evidence_urls": [
+        "https://x.com/xiyue0803/status/2111273763799191896",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/README.md",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/skills/rea-reconstruction-companion/SKILL.md",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/INSTALL.md",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/integration/rea-companion.md",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/evals/README.md",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/.github/workflows/test.yml",
+        "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/LICENSE",
         "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md",
         "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/WALKTHROUGH.md",
         "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/validation-report.json",
@@ -9043,6 +9051,12 @@
         "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/ad6dccd7760fae50f5e45fe74f1f2ef92a452239/evals/reference/TASK.md"
       ],
       "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-reconstruction-companion",
+          "kind": "integration",
+          "scope": "full"
+        },
         {
           "catalog": "resource",
           "id": "pocket-tasks-reconstruction-case",
@@ -16192,18 +16206,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 206,
+      "already-curated": 207,
       "insufficient-evidence": 271,
-      "pending": 114
+      "pending": 113
     },
     "units_by_state": {
-      "already-curated": 204,
+      "already-curated": 205,
       "insufficient-evidence": 271,
-      "pending": 114
+      "pending": 113
     },
     "primary_reviewed_units": 416,
     "catalog_linked_occurrences": 220,
-    "distinct_resource_ids": 209,
+    "distinct_resource_ids": 210,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

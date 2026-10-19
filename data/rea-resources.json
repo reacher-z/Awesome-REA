@@ -2604,5 +2604,40 @@
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
     ]
+  },
+  {
+    "id": "rea-reconstruction-companion",
+    "name": "REA Reconstruction Companion",
+    "url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "A third-party Agent Skill that works alongside REA’s own skill to turn reverse-engineering evidence into scoped requirements, design, staged implementation and validation, from one feature or format to a whole app. An optional installer can add a marked routing block to the user’s REA SKILL.md so that relevant reconstruction requests load both skills. Its bundled evaluation kit consists of source-exposed, maintainer-authored examples with literal oracles, not a model benchmark.",
+    "description_zh": "第三方 Agent Skill，与 REA 自身的技能配合使用，把逆向分析证据整理成限定范围的需求、设计、分阶段实现与验证，范围可从单个功能或格式扩展到整个应用。可选安装程序能在用户的 REA SKILL.md 中加入带标记的路由段落，使相关重建请求同时加载两个技能。附带的评估套件由维护者编写、已接触源码的示例及字面预期值组成，并非模型基准。",
+    "evidence_url": "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is package version 1.3.27; the repository was created on 2026-10-15, and a v1.3.27 release followed on 2026-10-18. The core is plain-Markdown Agent Skills instructions with reference guides. It supplies no analysis engine and expects REA tools or supplied REA evidence for actual investigation. README documents Codex and Claude Code installation; other agents can use an explicit skills directory.",
+      "The installer and the optional weekly update helper need Node.js 20+ and only its standard library; release building needs Python 3.10+. With --integration on, the installer edits the selected REA SKILL.md between marked comments and keeps backups, while off leaves REA untouched. README warns that REA 6.5.0’s doctor reports the edited skill as stale, and that rea setup or rea update can remove the block.",
+      "The instructions forbid actions that could add charges, treat recovered target material as untrusted evidence, and require observations, inferences, unknowns and design choices to stay separate. These are instructions to the host agent, not enforcement: README says they do not override client policies, grant tool permissions or guarantee model compliance.",
+      "CI runs the installer, package-integrity and evaluation-harness tests on Windows, macOS and Linux with Node 20, 22 and 24, then builds and verifies a release archive. The evaluation kit supplies fixtures such as Pocket Tasks, a 5,120-byte .NET Parcel.exe built from included source, a browser app and file formats, with literal oracles and human-review rubrics. Its examples are disclosed as source-exposed and same-agent; no live model trial, independent evaluation or cross-host certification is recorded, and this collection ran nothing.",
+      "Original code, instructions, tests and documentation are MIT, and a small Wycheproof test-data subset is Apache-2.0. No REA code is bundled; REA, target applications and model hosts keep their own terms. The Pocket Tasks worked reconstruction is recorded separately in this collection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/skills/rea-reconstruction-companion/SKILL.md",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/INSTALL.md",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/integration/rea-companion.md",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/evals/README.md",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/evals/artifact/README.md",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/.github/workflows/test.yml",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/package.json",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/LICENSE",
+      "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/evals/fixtures/wycheproof-LICENSE.txt"
+    ]
   }
 ]
