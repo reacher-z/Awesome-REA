@@ -10363,5 +10363,44 @@
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/.github/workflows/ci.yaml",
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/LICENSE.md"
     ]
+  },
+  {
+    "id": "galaxy-buds-client-protocol-case",
+    "name": "Galaxy Buds Client: an unofficial manager built on Samsung’s earbud protocol",
+    "url": "https://github.com/timschneeb/GalaxyBudsClient",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Reimplements control of Samsung Galaxy Buds over their proprietary RFCOMM serial protocol in a cross-platform desktop and Android manager. The author reports recovering the message format by analyzing the earbuds’ binary stream and disassembling Samsung’s official Android apps, and publishes partial packet notes for the 2019 Buds and the Buds+. Beyond the official app’s settings, it exposes battery statistics, diagnostics, factory self-tests, hidden debug information and firmware flashing for supported models.",
+    "description_zh": "在跨平台桌面与 Android 管理器中，通过三星 Galaxy Buds 专有的 RFCOMM 串口协议重新实现耳机控制。作者称通过分析耳机发出的二进制数据流并反汇编三星官方 Android 应用来恢复报文格式，并公开了 2019 款 Buds 和 Buds+ 的部分数据包笔记。除官方应用的设置外，它还提供电池统计、诊断、出厂自检、隐藏调试信息，以及适用型号的固件刷写。",
+    "evidence_url": "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-01 master head, 72 commits after release 5.2.1 (2026-06-07). Device specifications in source cover Galaxy Buds models from the original 2019 Buds through the Buds4 series. The protocol notes say they are incomplete and point to the source for details; this is an independent client, not recovered Samsung source, and features vary by model.",
+      "Requires the user’s own Galaxy Buds paired over Bluetooth; earbud firmware and Samsung’s official apps are not part of the repository. Firmware flashing and downgrades download builds from the author’s firmware service, behind an in-app disclaimer and a model-compatibility check meant to avoid bricking. Release notes say the app can share protocol data through an on-demand crowdsourcing feature to support models the author does not own, and sends crash dumps to Sentry; both can be disabled in settings.",
+      "Builds from one solution with the .NET 10 SDK (global.json pins 10.0.300) and Avalonia, targeting Windows 10 build 19041+, macOS 12+, Linux and Android 7.0+ (API 24); Linux Bluetooth uses a bundled BlueZ D-Bus library. Release 5.2.1 attaches unsigned Windows and macOS installers and Linux x64/ARM portable binaries; the README also lists Flatpak, AUR and winget packages, and the Android version is sold on Google Play.",
+      "An NUnit test project decodes captured extended-status packets from seven models and checks message and spatial-audio parsing; the reviewed CI workflows build and publish binaries without running those tests. Protocol and feature behavior on real earbuds remains author-reported here, and this source review ran neither the tests nor the app.",
+      "GPLv3 (LICENSE); the README states the project is not affiliated with or supervised by Samsung. Samsung firmware, apps and trademarks keep their own rights, and the separate firmware archive the README points to is deliberately not linked from this record. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsRFCommProtocol.md",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/Galaxy%20Buds%20Plus%20RFComm%20Protocol%20Notes.md",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient/GalaxyBudsClient.csproj",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient.Android/GalaxyBudsClient.Android.csproj",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/global.json",
+      "https://github.com/timschneeb/GalaxyBudsClient/tree/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient/Model/Specifications",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient/Model/Firmware/FirmwareRemoteClient.cs",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient/Interface/ViewModels/Pages/FirmwarePageViewModel.cs",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient.Tests/GalaxyBudsClient.Tests.csproj",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsClient.Tests/Buds2Pro/ExtendedStatusUpdateTests.cs",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/.github/workflows/compile-linux.yml",
+      "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/LICENSE",
+      "https://github.com/timschneeb/GalaxyBudsClient/releases/tag/5.2.1"
+    ]
   }
 ]
