@@ -147,8 +147,6 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     for filename in ("rea-resources.json", "tool-resources.json"):
         for original in json.loads((ROOT / "data" / filename).read_text(encoding="utf-8")):
             record = dict(original)
-            if isinstance(record["requirements"], str):
-                record["requirements"] = [record["requirements"]]
             translation = translations.get(record["id"], {})
             record["requirements_zh"] = record.get("requirements_zh") or translation.get("requirements", record["requirements"])
             record["name_zh"] = record.get("name_zh") or translation.get("name", record["name"])

@@ -10,7 +10,9 @@
     "evidence_url": "https://github.com/HexRaysSA/ida-mcp/blob/a03842843d6972eb8780f5b3d2f4e8b6d0c9589e/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "IDA 9.4+ with idalib, Python 3.11+, Git and uv; the GUI plugin is optional for headless use.",
+    "requirements": [
+      "IDA 9.4+ with idalib, Python 3.11+, Git and uv; the GUI plugin is optional for headless use."
+    ],
     "targets": [
       "binary"
     ],
@@ -27,7 +29,9 @@
     "evidence_url": "https://github.com/LaurieWired/GhidraMCP/blob/1e980252087b2479a21b9ca6d82d5829538651a7/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "Match the extension to the documented Ghidra release; Python 3.10+ for the bridge, with additional PyGhidra requirements for headless mode.",
+    "requirements": [
+      "Match the extension to the documented Ghidra release; Python 3.10+ for the bridge, with additional PyGhidra requirements for headless mode."
+    ],
     "targets": [
       "binary"
     ],
@@ -47,7 +51,9 @@
     ],
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "First shipped in stable Binary Ninja 6.0 (2026-09-03). The GUI server uses HTTP and is included in every edition, Free included; headless stdio binaryninja_mcp requires Commercial or Ultimate on macOS/Linux and is not yet in native Windows packages, where upstream suggests the Linux build under WSL.",
+    "requirements": [
+      "First shipped in stable Binary Ninja 6.0 (2026-09-03). The GUI server uses HTTP and is included in every edition, Free included; headless stdio binaryninja_mcp requires Commercial or Ultimate on macOS/Linux and is not yet in native Windows packages, where upstream suggests the Linux build under WSL."
+    ],
     "targets": [
       "binary"
     ],
@@ -64,7 +70,9 @@
     "evidence_url": "https://github.com/fosdickio/binary_ninja_mcp/blob/eaf8a980050bee123f1be30334e74b15d21c009c/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Binary Ninja, Python 3.12+ and an MCP client; install the plugin separately from the client bridge.",
+    "requirements": [
+      "Binary Ninja, Python 3.12+ and an MCP client; install the plugin separately from the client bridge."
+    ],
     "targets": [
       "binary"
     ],
@@ -81,7 +89,9 @@
     "evidence_url": "https://github.com/mrexodia/ida-pro-mcp/blob/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "IDA Pro rather than IDA Free, Python 3.11+ and an MCP client; consult the upstream migration notice before choosing a new setup.",
+    "requirements": [
+      "IDA Pro rather than IDA Free, Python 3.11+ and an MCP client; consult the upstream migration notice before choosing a new setup."
+    ],
     "targets": [
       "binary"
     ],
@@ -98,7 +108,9 @@
     "evidence_url": "https://github.com/radareorg/radare2-mcp/blob/562c0cf23c42b65b3052f0b294d8778c20facbde/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "A compatible radare2 build and r2pm, plus an MCP client; advanced HTTP session features depend on the radare2 ABI.",
+    "requirements": [
+      "A compatible radare2 build and r2pm, plus an MCP client; advanced HTTP session features depend on the radare2 ABI."
+    ],
     "targets": [
       "binary"
     ],
@@ -115,7 +127,9 @@
     "evidence_url": "https://github.com/radareorg/r2ai/blob/312921c2a1a39cc6934160f416baecf1330d679e/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "radare2 with the matching r2ai/decai plugins; configure a local model or the credentials required by the selected remote provider.",
+    "requirements": [
+      "radare2 with the matching r2ai/decai plugins; configure a local model or the credentials required by the selected remote provider."
+    ],
     "targets": [
       "binary"
     ],
@@ -132,7 +146,9 @@
     "evidence_url": "https://github.com/mahaloz/DAILA/blob/af4d6491a327af85f9e0aae0ffa7b7a5acbbbfb8/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "A supported decompiler and dailalib; configure a model backend. Ghidra requires the documented PyGhidra setup.",
+    "requirements": [
+      "A supported decompiler and dailalib; configure a model backend. Ghidra requires the documented PyGhidra setup."
+    ],
     "targets": [
       "binary"
     ],
@@ -149,7 +165,9 @@
     "evidence_url": "https://github.com/RevEngAI/plugin-ghidra/blob/7d386f772530905222c8aa9276de06995b289930/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "A compatible Ghidra/Java build and a RevEng.AI API key; creating service-side analysis uploads the selected binary.",
+    "requirements": [
+      "A compatible Ghidra/Java build and a RevEng.AI API key; creating service-side analysis uploads the selected binary."
+    ],
     "targets": [
       "binary"
     ],
@@ -166,7 +184,9 @@
     "evidence_url": "https://github.com/zinja-coder/jadx-ai-mcp/blob/ce64f2261b1d17083210ec87bf52f738c50dc48d/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "JADX with the plugin and the separate JADX MCP Server component; upstream lists Java 11+ and Python 3.10+.",
+    "requirements": [
+      "JADX with the plugin and the separate JADX MCP Server component; upstream lists Java 11+ and Python 3.10+."
+    ],
     "targets": [
       "app"
     ],
@@ -235,7 +255,9 @@
     "evidence_url": "https://github.com/crissyfield/super-trouper/blob/b3d31adbdb4be2f1a456dc9108ef25655ea206fe/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "Published host binaries target macOS/Linux; target connectivity must support Frida. Source builds need Go, CGO and a matching Frida Core DevKit.",
+    "requirements": [
+      "Published host binaries target macOS/Linux; target connectivity must support Frida. Source builds need Go, CGO and a matching Frida Core DevKit."
+    ],
     "targets": [
       "app",
       "game"
@@ -256,7 +278,9 @@
     ],
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "An LLDB distribution/build containing lldb-mcp and a compatible stdio MCP client; debug-target access follows the host platform's requirements.",
+    "requirements": [
+      "An LLDB distribution/build containing lldb-mcp and a compatible stdio MCP client; debug-target access follows the host platform's requirements."
+    ],
     "targets": [
       "binary",
       "app"
@@ -274,7 +298,9 @@
     "evidence_url": "https://github.com/EncidXVII/claude-reverse-engineering-skill/blob/bf4605e92b06511d9d0e2e958ecd00e1f6856c3a/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "An Agent Skills-compatible client and Python 3.8+ for bundled scripts; analysis engines and MCP servers are configured separately.",
+    "requirements": [
+      "An Agent Skills-compatible client and Python 3.8+ for bundled scripts; analysis engines and MCP servers are configured separately."
+    ],
     "targets": [
       "app",
       "binary"
@@ -292,7 +318,9 @@
     "evidence_url": "https://github.com/SpecterOps/skills/blob/a78853eaeaed9fb40aba52a0e52ab43785515318/plugins/reverse-engineering/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Configure the chosen Binary Ninja or Ghidra MCP integration separately; the skill package does not install or wrap those servers.",
+    "requirements": [
+      "Configure the chosen Binary Ninja or Ghidra MCP integration separately; the skill package does not install or wrap those servers."
+    ],
     "targets": [
       "binary"
     ],
@@ -309,7 +337,9 @@
     "evidence_url": "https://github.com/NationalSecurityAgency/ghidra/blob/864999d7ca67cd3f533be600860f102e54370661/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "An official Ghidra release and its required JDK; extension and script compatibility must match the installed release.",
+    "requirements": [
+      "An official Ghidra release and its required JDK; extension and script compatibility must match the installed release."
+    ],
     "targets": [
       "binary",
       "game",
@@ -328,7 +358,9 @@
     "evidence_url": "https://github.com/radareorg/radare2/blob/6ac96f50eafef46c1ac75a478a1460819968c66f/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Use the release/build for your host; decompilers and other optional functionality may require separate plugins.",
+    "requirements": [
+      "Use the release/build for your host; decompilers and other optional functionality may require separate plugins."
+    ],
     "targets": [
       "binary",
       "game"
@@ -346,7 +378,9 @@
     "evidence_url": "https://github.com/rizinorg/cutter/blob/734acd17061a4527d9a89668537e3bc64a475e54/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Desktop builds are available for Linux, macOS and Windows; use plugins compatible with the selected Cutter release.",
+    "requirements": [
+      "Desktop builds are available for Linux, macOS and Windows; use plugins compatible with the selected Cutter release."
+    ],
     "targets": [
       "binary",
       "game"
@@ -364,7 +398,9 @@
     "evidence_url": "https://github.com/frida/frida/blob/e598d053f4154fa78a26bb60d4f6cbc407ea387c/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Host bindings or CLI tools and a supported target setup; mobile/server/Gadget and signing requirements vary by platform.",
+    "requirements": [
+      "Host bindings or CLI tools and a supported target setup; mobile/server/Gadget and signing requirements vary by platform."
+    ],
     "targets": [
       "app",
       "game"
@@ -382,7 +418,9 @@
     "evidence_url": "https://github.com/skylot/jadx/blob/c4c45fde27b4f3386dc2ff016ff187229a60a716/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "64-bit Java 11+ unless using a bundled runtime; decompilation can be incomplete and should be checked against bytecode.",
+    "requirements": [
+      "64-bit Java 11+ unless using a bundled runtime; decompilation can be incomplete and should be checked against bytecode."
+    ],
     "targets": [
       "app"
     ],
@@ -399,7 +437,9 @@
     "evidence_url": "https://github.com/iBotPeaches/Apktool/blob/0312d212c713c9ebc568b7d9295eec0f47858bfa/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "A supported Java runtime and the release-specific launcher; rebuilding is distinct from recovering original Java source.",
+    "requirements": [
+      "A supported Java runtime and the release-specific launcher; rebuilding is distinct from recovering original Java source."
+    ],
     "targets": [
       "app"
     ],
@@ -416,7 +456,9 @@
     "evidence_url": "https://github.com/androguard/androguard/blob/90e7b42940a8f73228368e761bb20227d3d9249a/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Version-sensitive: the reviewed README distinguishes the v5 source tree from PyPI 4.1.4; v5 extras require additional Rust/Python components.",
+    "requirements": [
+      "Version-sensitive: the reviewed README distinguishes the v5 source tree from PyPI 4.1.4; v5 extras require additional Rust/Python components."
+    ],
     "targets": [
       "app"
     ],
@@ -433,7 +475,9 @@
     "evidence_url": "https://github.com/icsharpcode/ILSpy/blob/729b5dc4d12b8bc08c2a0b1294bbb161098a6211/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Choose a desktop or ILSpyCmd release and its matching .NET runtime; frontend and operating-system support are release-dependent.",
+    "requirements": [
+      "Choose a desktop or ILSpyCmd release and its matching .NET runtime; frontend and operating-system support are release-dependent."
+    ],
     "targets": [
       "app"
     ],
@@ -450,7 +494,9 @@
     "evidence_url": "https://github.com/dnSpyEx/dnSpy/blob/de5a83051161e0becc70f32834c2596db6239fbd/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Windows desktop workflow; Unity debugging requires the companion runtime setup documented by the project.",
+    "requirements": [
+      "Windows desktop workflow; Unity debugging requires the companion runtime setup documented by the project."
+    ],
     "targets": [
       "app"
     ],
@@ -467,7 +513,9 @@
     "evidence_url": "https://github.com/electron/asar/blob/01bc908255640c544ac68ea2fe14926a7b80da37/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "The reviewed release requires Node.js 22.12+; extraction reveals archive contents, not missing source maps or original source names.",
+    "requirements": [
+      "The reviewed release requires Node.js 22.12+; extraction reveals archive contents, not missing source maps or original source names."
+    ],
     "targets": [
       "app",
       "website"
@@ -485,7 +533,9 @@
     "evidence_url": "https://github.com/j4k0xb/webcrack/blob/0d83a6f2b04e86fa2e87ee4cb6853848cc719308/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "The reviewed README specifies Node.js 22 or 24; results depend on the obfuscator/bundler patterns present in the input.",
+    "requirements": [
+      "The reviewed README specifies Node.js 22 or 24; results depend on the obfuscator/bundler patterns present in the input."
+    ],
     "targets": [
       "app",
       "website"
@@ -529,7 +579,9 @@
     "evidence_url": "https://github.com/WebAssembly/wabt/blob/806787e92904571c4628065277344f42c55ece05/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Select a release supporting the module's WebAssembly features; optional proposals may require explicit flags.",
+    "requirements": [
+      "Select a release supporting the module's WebAssembly features; optional proposals may require explicit flags."
+    ],
     "targets": [
       "website",
       "binary"
@@ -547,7 +599,9 @@
     "evidence_url": "https://github.com/bytecodealliance/wasm-tools/blob/a56e8d3d2a0b754e0465c668f8e4b68bad97590f/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Use prebuilt release artifacts or a Rust toolchain; proposal/component support depends on the selected release.",
+    "requirements": [
+      "Use prebuilt release artifacts or a Rust toolchain; proposal/component support depends on the selected release."
+    ],
     "targets": [
       "website",
       "binary"
@@ -565,7 +619,9 @@
     "evidence_url": "https://github.com/ReFirmLabs/binwalk/blob/e0a4434159f22ff926c1baa3872d93a5f8dbf87e/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "The current v3 implementation is Rust-based; extraction needs the appropriate external tools or the documented container environment.",
+    "requirements": [
+      "The current v3 implementation is Rust-based; extraction needs the appropriate external tools or the documented container environment."
+    ],
     "targets": [
       "firmware"
     ],
@@ -582,7 +638,9 @@
     "evidence_url": "https://github.com/onekey-sec/unblob/blob/3b470cd1c33e10a3ae977a6caaab5dbcbf2d5ce8/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Python package plus external extractors, or the bundled Docker image; check the project's dependency inventory for the formats needed.",
+    "requirements": [
+      "Python package plus external extractors, or the bundled Docker image; check the project's dependency inventory for the formats needed."
+    ],
     "targets": [
       "firmware"
     ],
@@ -599,7 +657,9 @@
     "evidence_url": "https://github.com/al3xtjames/ghidra-firmware-utils/blob/f54438b90a0effc0a89ef7c0ea3053e5086f422f/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "The reviewed build instructions require Ghidra 12.0+ and JDK 21+; build against the same Ghidra/JRE environment used for analysis.",
+    "requirements": [
+      "The reviewed build instructions require Ghidra 12.0+ and JDK 21+; build against the same Ghidra/JRE environment used for analysis."
+    ],
     "targets": [
       "firmware"
     ],
@@ -616,7 +676,9 @@
     "evidence_url": "https://github.com/qilingframework/qiling/blob/206b90fd891cee4bc0056d2198ddf85678b55f96/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "A supported Python environment and the target's required root filesystem/libraries; emulation coverage varies by platform.",
+    "requirements": [
+      "A supported Python environment and the target's required root filesystem/libraries; emulation coverage varies by platform."
+    ],
     "targets": [
       "binary",
       "firmware"
@@ -634,7 +696,9 @@
     "evidence_url": "https://github.com/unicorn-engine/unicorn/blob/c24c9ebe773ce6fbecb0e39f68ffb23b7326b17f/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Use a supported binding and explicitly supply the CPU state and memory model; it is a CPU emulator rather than a complete OS environment.",
+    "requirements": [
+      "Use a supported binding and explicitly supply the CPU state and memory model; it is a CPU emulator rather than a complete OS environment."
+    ],
     "targets": [
       "binary",
       "game",
@@ -653,7 +717,9 @@
     "evidence_url": "https://github.com/angr/angr/blob/ae9f5786fd94410ca400063bf21719aa8b564d3e/README.md",
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
-    "requirements": "A compatible Python 3 environment; useful results require an appropriate model of program inputs, state and external functions.",
+    "requirements": [
+      "A compatible Python 3 environment; useful results require an appropriate model of program inputs, state and external functions."
+    ],
     "targets": [
       "binary"
     ],
@@ -670,7 +736,9 @@
     "evidence_url": "https://github.com/lief-project/LIEF/blob/b68429c52d5f704e34445e92890fd801937f10e3/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "C++, Python or Rust integration; check the distinction between core and extended features for the selected distribution.",
+    "requirements": [
+      "C++, Python or Rust integration; check the distinction between core and extended features for the selected distribution."
+    ],
     "targets": [
       "binary"
     ],
@@ -687,7 +755,9 @@
     "evidence_url": "https://github.com/capstone-engine/capstone/blob/d7ef910bc6e76561e705511db4db964ffde015e2/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Select a library/binding release supporting the target ISA and mode; the next branch can differ from stable releases.",
+    "requirements": [
+      "Select a library/binding release supporting the target ISA and mode; the next branch can differ from stable releases."
+    ],
     "targets": [
       "binary"
     ],
@@ -704,7 +774,9 @@
     "evidence_url": "https://github.com/WerWolv/ImHex/blob/fddad83966128b96dc1a8c9d55ba0ccd0721e276/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Desktop build or web edition; some data sources and features depend on the platform and selected build.",
+    "requirements": [
+      "Desktop build or web edition; some data sources and features depend on the platform and selected build."
+    ],
     "targets": [
       "binary",
       "game",
@@ -723,7 +795,9 @@
     "evidence_url": "https://github.com/x64dbg/x64dbg/blob/ac4db12e133a3b2a91756fd2fbe864aa8dd1c453/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Windows; choose x32dbg or x64dbg according to the executable's architecture.",
+    "requirements": [
+      "Windows; choose x32dbg or x64dbg according to the executable's architecture."
+    ],
     "targets": [
       "binary"
     ],
@@ -740,7 +814,9 @@
     "evidence_url": "https://www.sourceware.org/gdb/",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "A GDB build supporting the target architecture and a permitted local process, core dump, simulator or remote debug endpoint.",
+    "requirements": [
+      "A GDB build supporting the target architecture and a permitted local process, core dump, simulator or remote debug endpoint."
+    ],
     "targets": [
       "binary",
       "game"
@@ -758,7 +834,9 @@
     "evidence_url": "https://github.com/rr-debugger/rr/blob/7ff9786535d6b6bfab78a22bd7bb2570287b44a1/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Linux with supported CPU performance counters; VM use depends on counter virtualization and the project's hardware requirements.",
+    "requirements": [
+      "Linux with supported CPU performance counters; VM use depends on counter virtualization and the project's hardware requirements."
+    ],
     "targets": [
       "binary"
     ],
@@ -775,7 +853,9 @@
     "evidence_url": "https://github.com/joxeankoret/diaphora/blob/a7e15949942e13e3343615c3959e3326e78aa325/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "IDA with Python 3 support; richer pseudocode and microcode comparisons depend on the corresponding decompiler capabilities.",
+    "requirements": [
+      "IDA with Python 3 support; richer pseudocode and microcode comparisons depend on the corresponding decompiler capabilities."
+    ],
     "targets": [
       "binary",
       "game"
@@ -793,7 +873,9 @@
     "evidence_url": "https://github.com/google/bindiff/blob/882333b463b9d98e1e5ddf221921f5622b3936e9/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Requires a separate supported disassembler/export pipeline; upstream documents IDA Pro, Binary Ninja and Ghidra configurations.",
+    "requirements": [
+      "Requires a separate supported disassembler/export pipeline; upstream documents IDA Pro, Binary Ninja and Ghidra configurations."
+    ],
     "targets": [
       "binary",
       "game"
@@ -811,7 +893,9 @@
     "evidence_url": "https://github.com/horsicq/Detect-It-Easy/blob/bd693a6c31f4e2748ca14ed01da05e055eb2b0c7/README.md",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Use the project-linked DIE-engine releases for the host platform; identification results require analyst interpretation.",
+    "requirements": [
+      "Use the project-linked DIE-engine releases for the host platform; identification results require analyst interpretation."
+    ],
     "targets": [
       "binary",
       "game"
@@ -829,7 +913,9 @@
     "evidence_url": "https://ost2.fyi/Learning-Paths.html",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Browser access; choose classes according to their published prerequisites and lab requirements.",
+    "requirements": [
+      "Browser access; choose classes according to their published prerequisites and lab requirements."
+    ],
     "targets": [
       "binary"
     ],
@@ -846,7 +932,9 @@
     "evidence_url": "https://pwn.college/program-security/reverse-engineering/",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Browser access and the platform's account/environment setup for interactive challenges.",
+    "requirements": [
+      "Browser access and the platform's account/environment setup for interactive challenges."
+    ],
     "targets": [
       "binary"
     ],
@@ -863,7 +951,9 @@
     "evidence_url": "https://beginners.re/",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "A browser or PDF reader; use the toolchains relevant to the exercises being followed.",
+    "requirements": [
+      "A browser or PDF reader; use the toolchains relevant to the exercises being followed."
+    ],
     "targets": [
       "binary"
     ],
@@ -880,7 +970,9 @@
     "evidence_url": "https://book.rada.re/",
     "verified_at": "2026-10-15",
     "verification": "source-reviewed",
-    "requirements": "Upstream lists radare2 5.8.x as the minimum and recommends a current release for following the examples.",
+    "requirements": [
+      "Upstream lists radare2 5.8.x as the minimum and recommends a current release for following the examples."
+    ],
     "targets": [
       "binary"
     ],
@@ -897,7 +989,9 @@
     "evidence_url": "https://github.com/baldurk/renderdoc/blob/5ce2e4ae6dd54f0c8455103a2c984540614020bf/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Supported graphics API and replay platform; upstream supports captures of your own, open-source, or free projects. Metal is not supported.",
+    "requirements": [
+      "Supported graphics API and replay platform; upstream supports captures of your own, open-source, or free projects. Metal is not supported."
+    ],
     "targets": [
       "game",
       "app"
@@ -915,7 +1009,9 @@
     "evidence_url": "https://github.com/AssetRipper/AssetRipper/blob/62ec21e916b7dec29b10c2020ecead186773438b/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Unity 3.5.0–6000.4.X coverage varies by version; GPL-3.0 open-source edition, with separate premium features.",
+    "requirements": [
+      "Unity 3.5.0–6000.4.X coverage varies by version; GPL-3.0 open-source edition, with separate premium features."
+    ],
     "targets": [
       "game"
     ],
@@ -932,7 +1028,9 @@
     "evidence_url": "https://github.com/SamboyCoding/Cpp2IL/blob/7fd44cac62d39914d81e10c07600ffd4110d29a9/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Compatible Unity build and metadata; current development branch is a major rewrite and primarily targets .NET 9.0.",
+    "requirements": [
+      "Compatible Unity build and metadata; current development branch is a major rewrite and primarily targets .NET 9.0."
+    ],
     "targets": [
       "game",
       "app",
@@ -951,7 +1049,9 @@
     "evidence_url": "https://github.com/Perfare/Il2CppDumper/blob/101f3c62ef3dd3183aad4ab0b547ead63ffb45d0/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Matching IL2CPP executable and global-metadata.dat; documented Unity support is 5.3–2022.2.",
+    "requirements": [
+      "Matching IL2CPP executable and global-metadata.dat; documented Unity support is 5.3–2022.2."
+    ],
     "targets": [
       "game",
       "app",
@@ -970,7 +1070,9 @@
     "evidence_url": "https://github.com/scarletfantasy/renderdoc-mcp/blob/ea360049b2add5e5f783bee2c084dfccf8337051/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Windows and replayable .rdc capture; maintainer baseline is RenderDoc 1.43. Optional native Python backend needs a source-built binding.",
+    "requirements": [
+      "Windows and replayable .rdc capture; maintainer baseline is RenderDoc 1.43. Optional native Python backend needs a source-built binding."
+    ],
     "targets": [
       "game",
       "app"
@@ -988,7 +1090,9 @@
     "evidence_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/5463101120f94fc7c79d43c44c01a4ab57835279/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Supported Node.js LTS, Chrome, and an MCP client; selected browser profile and target must be available locally.",
+    "requirements": [
+      "Supported Node.js LTS, Chrome, and an MCP client; selected browser profile and target must be available locally."
+    ],
     "targets": [
       "website"
     ],
@@ -1005,7 +1109,9 @@
     "evidence_url": "https://github.com/mitmproxy/mitmproxy/blob/7458ea26ccec7d06ffdc434f878e8d92973aec7e/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Configure the client proxy; HTTPS inspection requires the appropriate local trust configuration. Saved captures and live interception are distinct workflows.",
+    "requirements": [
+      "Configure the client proxy; HTTPS inspection requires the appropriate local trust configuration. Saved captures and live interception are distinct workflows."
+    ],
     "targets": [
       "website",
       "app",
@@ -1024,7 +1130,9 @@
     "evidence_url": "https://github.com/microsoft/playwright-mcp/blob/ea00e62b711700733a9eff05b149b48cd3eb1b48/README.md",
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
-    "requirements": "Node.js 18+ and an MCP client; the upstream also offers a separate CLI-and-skills approach for coding agents.",
+    "requirements": [
+      "Node.js 18+ and an MCP client; the upstream also offers a separate CLI-and-skills approach for coding agents."
+    ],
     "targets": [
       "website"
     ],

@@ -624,7 +624,9 @@
     ],
     "verified_at": "2026-10-17T12:48:42Z",
     "verification": "source-reviewed",
-    "requirements": "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it.",
+    "requirements": [
+      "A discovery index; review each case's original source, redistribution rights, and evidence status before reproducing it."
+    ],
     "targets": [
       "website",
       "game",

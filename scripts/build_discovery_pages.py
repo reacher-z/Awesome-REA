@@ -116,8 +116,6 @@ class _IconStylesheet(HTMLParser):
 def _requirements(record: dict, language: str) -> list[str]:
     key = 'requirements_zh' if language == 'zh' else 'requirements'
     value = record.get(key)
-    if isinstance(value, str):
-        value = [value]
     if not isinstance(value, list) or not value or not all(isinstance(item, str) and item.strip() for item in value):
         raise ValueError(f"{record.get('id')}: missing {key} for the static curated page")
     return value

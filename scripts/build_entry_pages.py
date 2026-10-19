@@ -35,8 +35,6 @@ def _text(record: dict, key: str) -> str:
 
 def _requirements(record: dict, language: str) -> list[str]:
     value = record.get('requirements_zh' if language == 'zh' else 'requirements')
-    if isinstance(value, str):
-        value = [value]
     if not isinstance(value, list) or not value or not all(isinstance(v, str) and v.strip() for v in value):
         raise ValueError(f'{record.get("id")}: missing localized requirements')
     return value

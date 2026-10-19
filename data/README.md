@@ -16,7 +16,7 @@
 | `additional_evidence_urls` | Optional supporting documentation, release, or package-metadata URLs; these are validated and included in link checks |
 | `verified_at` | ISO date or timestamp of source review |
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
-| `requirements` | Platform, engine, release, license, or input prerequisites |
+| `requirements` | Nonempty list of platform, engine, release, license, or input prerequisites, one nonempty string per item; the Chinese list in `site/translations.zh-CN.json` translates the same items |
 
 The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
 

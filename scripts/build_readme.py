@@ -97,13 +97,6 @@ def plain_text(value):
     return text
 
 
-def requirements_text(value):
-    """Both supported source formats render as ordinary prose."""
-    if isinstance(value, str):
-        return plain_text(value)
-    return plain_text(' '.join(value))
-
-
 # English and Chinese section names. Headings and Contents both use these labels so they cannot drift;
 # Chinese headings keep the English name as a prefix. Chinese terms follow the glossary in CONTRIBUTING.zh-CN.md.
 COLLECTION_SECTIONS = {
