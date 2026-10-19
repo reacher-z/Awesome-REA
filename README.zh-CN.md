@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 341](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 178](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 80](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 341](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 178](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 81](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-81-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (80) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (81) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2158,13 +2158,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**80 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**81 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (28) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (29) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2597,6 +2597,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 预测结果是固定词表中的词元标签，经排序后可选地组合成名称；它们并非恢复的源码名称，评分也按词元而非完整名称匹配。评测使用来自 Debian 软件包、以多种编译器与优化设置构建的 x86-64 ELF C 二进制，以及规模较小的 Nero 数据集；训练所得模型仅适用于 x86-64 GNU/Linux 二进制。测试时所有工具均从符号表获取函数边界，因此不计入边界检测错误。许多测试函数名也出现在训练集中；仅考察训练中从未出现的名称时，F1 降至 0.242。混淆和对抗性二进制不在研究范围内。Nero 数据集上 Debin 与 Dire 的数据取自 Nero 论文，并未重新运行。
 
   **作者:** James Patrick-Evans 等
+
+  </details>
+
+- [**SymLM：基于上下文敏感、执行感知代码嵌入的去符号二进制函数名预测**](https://dl.acm.org/doi/10.1145/3548606.3560612)
+
+  SymLM 将去符号二进制的函数名预测为一组名称单词。它使用在微执行轨迹上预训练的 Trex 模型编码每个函数的指令，将其与取自 Ghidra 过程间控制流图的调用者、内部被调用函数及外部库调用的嵌入融合，再由 MLP 解码器对固定词表中的单词打分；名称预处理和词嵌入模块 CodeWordNet 用于处理缩写与同义词。在 27 个项目的 16,027 个二进制、共 1,431,169 个函数上（涵盖 x86、x64、ARM 与 MIPS，O0–O3 优化级别及四种 Hikari 混淆），作者报告加权平均精确率 0.634、召回率 0.677、F1 0.655，并给出固件案例研究。
+
+  ACM CCS 2022 · 会议论文 · [PDF](https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf) · [代码](https://github.com/OSUSecLab/SymLM) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-symlm/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 函数名被预测为来自固定训练词表的无序单词集合，并按单词级精确率、召回率和 F1 评分，CodeWordNet 会将语义相近的单词计为匹配。这并非精确恢复源码名称，且无法生成词表外的单词。二进制由 GCC 7.5 为 Linux 构建，并在同样的 27 个项目内按二进制划分数据集。在来自 12 个未见项目的 540 个二进制上，整体表现仍然较低，作者将部分原因归于词表不匹配；后来一项 NDSS 2025 研究在去重数据上比较时，报告 SymLM 的平均 F1 为 0.105。与 NFRE 的比较仅针对 x64，与 NERO 的比较使用 NERO 的数据集。混淆实验覆盖四种 Hikari 混淆，不包括加壳或加密。固件案例中，八个 32 位 ARM 固件映像的 1,061 个函数里有 172 个得到部分正确的名称。
+
+  **作者:** Xin Jin 等
 
   </details>
 

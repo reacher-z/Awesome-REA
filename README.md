@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 341](https://img.shields.io/badge/resources-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 178](https://img.shields.io/badge/cases-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 341](https://img.shields.io/badge/resources-341-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 178](https://img.shields.io/badge/cases-178-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 81](https://img.shields.io/badge/papers-81-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (80) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (81) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2157,13 +2157,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**80 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**81 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (28) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (29) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2596,6 +2596,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Predictions are token labels from a fixed vocabulary, ranked and optionally assembled into names; they are not recovered source names, and scoring matches tokens rather than exact names. Evaluation uses x86-64 ELF C binaries from Debian packages, built with mixed compilers and optimization settings, plus Nero’s smaller dataset; the trained model is specific to x86-64 GNU/Linux binaries. All tools receive function boundaries from symbol tables at test time, so boundary-detection errors are excluded. Many test names also occur in training; restricted to names never seen in training, F1 falls to 0.242. Obfuscated and adversarial binaries are out of scope. Debin and Dire figures on the Nero dataset are copied from the Nero paper rather than rerun.
 
   **Authors:** James Patrick-Evans et al.
+
+  </details>
+
+- [**SymLM: Predicting Function Names in Stripped Binaries via Context-Sensitive Execution-Aware Code Embeddings**](https://dl.acm.org/doi/10.1145/3548606.3560612)
+
+  SymLM predicts function names for stripped binaries as sets of name words. It encodes each function’s instructions with a Trex model pretrained on micro-execution traces, fuses them with embeddings of callers, internal callees and external library calls taken from Ghidra’s interprocedural CFG, and scores words from a fixed vocabulary with an MLP decoder; name preprocessing and a word-embedding module, CodeWordNet, handle abbreviations and synonyms. On 1,431,169 functions from 16,027 binaries of 27 projects across x86, x64, ARM and MIPS, O0–O3 and four Hikari obfuscations, the authors report weighted average precision 0.634, recall 0.677 and F1 0.655, plus a firmware case study.
+
+  ACM CCS 2022 · Conference paper · [PDF](https://xinjin95.github.io/assets/pdf/SymLM_ccs2022_paper.pdf) · [Code](https://github.com/OSUSecLab/SymLM) · [Full entry & citation](https://awesomerea.org/papers/paper-symlm/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Names are predicted as unordered word sets from a fixed training vocabulary and scored with word-level precision, recall and F1, with CodeWordNet counting semantically similar words as matches. This is not exact source-name recovery, and out-of-vocabulary words cannot be produced. Binaries were built with GCC 7.5 for Linux and split by binary within the same 27 projects. On 540 binaries from 12 unseen projects, overall performance remains lower, which the authors partly attribute to vocabulary mismatch; a later NDSS 2025 comparison on deduplicated data reports SymLM’s average F1 at 0.105. NFRE comparisons are x64-only, and NERO comparisons use NERO’s dataset. Obfuscation covers four Hikari passes, not packing or encryption. In the firmware case study, 172 of 1,061 functions in eight 32-bit ARM firmware images received partially correct names.
+
+  **Authors:** Xin Jin et al.
 
   </details>
 
