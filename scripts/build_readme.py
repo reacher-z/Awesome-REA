@@ -493,7 +493,7 @@ def render_papers(papers, language):
     index = int(zh)
     directory = 'https://awesomerea.org/zh/papers/' if zh else 'https://awesomerea.org/papers/'
     lines = ['<a id="papers"></a>', '## 论文' if zh else '## Papers', '',
-             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。'
+             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。'
               if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.'), '',
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
     groups = defaultdict(list)
@@ -526,7 +526,7 @@ def render_papers(papers, language):
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
             links.append(f'[{FULL_ENTRY[index]}]({detail_url})')
             description = plain_text(lead_sentence(paper[f'description_{language}'], language))
-            lines.append(f"- [**{title}**]({paper['url']}) - {description} <sub>{metadata} · " + ' · '.join(links) + '</sub>')
+            lines.append(f"- [**{title}**]({paper['url']}) - {description} <sub>{original_title(paper) if zh else ''}{metadata} · " + ' · '.join(links) + '</sub>')
         lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
@@ -571,6 +571,11 @@ def readme_size_warnings(root=ROOT):
     """Size notes for both READMEs on disk; validate.py prints them without failing."""
     notes = (size_warning(name, (root / name).stat().st_size) for name in ('README.md', 'README.zh-CN.md'))
     return [note for note in notes if note]
+
+
+def original_title(paper):
+    """Chinese lines open their metadata with the published title, so readers can search for and cite it."""
+    return f"原题：*{plain_text(paper['title'])}* · "
 
 
 def main():

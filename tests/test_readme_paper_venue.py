@@ -21,7 +21,8 @@ def paper(**changes):
 def visible_line(rendered, record):
     """The metadata that follows the opening sentence on the paper's one README line."""
     line = next(line for line in rendered.splitlines() if line.startswith('- ') and f']({record["url"]}) - ' in line)
-    return line.split(' <sub>', 1)[1].removesuffix('</sub>')
+    # Chinese lines open their metadata with the published title; see test_readme_original_titles.py.
+    return line.split(' <sub>', 1)[1].removesuffix('</sub>').removeprefix(f'原题：*{plain_text(record["title"])}* · ')
 
 
 class ReadmePaperVenueTest(unittest.TestCase):
