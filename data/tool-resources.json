@@ -5687,5 +5687,37 @@
       "https://github.com/ethteck/splat/blob/7548b9771e6f8418507b23434187fb07741af6d4/LICENSE",
       "https://pypi.org/project/splat64/0.50.1/"
     ]
+  },
+  {
+    "id": "roborock-local-server-cloud-case",
+    "name": "Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud",
+    "url": "https://github.com/Python-roborock/local_roborock_server",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Runs a local HTTPS and MQTT stack in place of Roborock’s cloud, so supported vacuums keep live maps and controls on an isolated network without rooting or hardware changes. The maintainer’s technical write-up recounts earlier app and traffic analysis and a later investigation in which Claude Code and Codex worked against an emulated firmware environment. Compatibility is reported per model by the project and its users.",
+    "description_zh": "运行一套本地 HTTPS 与 MQTT 服务来替代 Roborock 云端，使受支持的扫地机在隔离网络中无需 root 或改装硬件即可保留实时地图与控制。维护者的技术说明回顾了早期的应用与流量分析，以及后来借助 Claude Code 和 Codex、在模拟固件环境中开展的调查。兼容性由项目及其用户按型号报告。",
+    "evidence_url": "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/technical_writeup.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed version 1.2.1 (commit c3b3284) targets most Roborock vacuums on the v2 protocol; README excludes the entry-level Q series, and the tested-models page lists confirmed models, unresolved failures and certificate-chain notes. Documented limitations include firmware updates and schedules; camera streaming is verified on two models, and China-market devices reject commands outside China.",
+      "Setup needs a domain the user controls with local DNS rewriting, a valid TLS certificate, a LAN host for Docker Compose or the Home Assistant add-on, and a second Wi-Fi computer for one-time onboarding. The official Roborock app works only after an interception login step and, on Android, a patched APK; Home Assistant and the open-source LocalRock app are alternatives.",
+      "Python 3.11–3.13 with FastAPI, aiohttp, cryptography and python-roborock 4.20.0; a container image is published, and CI runs the pytest suite before building it. Tests cover onboarding, protocol authentication, MQTT proxying, certificates and scenes; this review ran neither the tests nor a vacuum.",
+      "The write-up says long-running Claude Code (Opus 4.6) and Codex sessions, given the maintainer’s own rooted S7, its firmware, python-roborock and the decompiled app, helped find the remaining onboarding step after earlier manual attempts stalled. It credits Dennis Giese’s firmware research, Valetudo and other community work; no REA use is stated.",
+      "MIT license with an as-is disclaimer; the project is not affiliated with Roborock. It is a compatible server, not recovered Roborock server code, and vendor firmware or app changes may break it."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/README.md",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/known_limitations.md",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/tested_vacuums.md",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/roborock_app.md",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/pyproject.toml",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
+      "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
+    ]
   }
 ]

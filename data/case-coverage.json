@@ -5385,12 +5385,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110700189912912155"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@real_kai42, 2026-10-15) says that measuring humidity showed the author’s humidifier only helps with both nozzles running, and that the app used was written by an agent that reverse-engineered the device’s Bluetooth protocol; it shows one image. It names no device or protocol and links no app or source, and the author’s GitHub account (RealKai42), which names this X handle, lists no repository pushed after 2026-09-10. Retain the lead without a catalog mapping; the app and the recovered protocol are unestablished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@real_kai42，2026-10-15）称，通过量化湿度数据发现加湿器只有两个喷嘴同时工作才有效果，并称所用的 app 是纯由智能体逆向蓝牙协议写出来的；帖子附一张图片。帖子未说明设备或协议，也未链接应用或源码；作者的 GitHub 账号（RealKai42，其资料注明了此 X 账号）没有在 2026-09-10 之后推送过的仓库。保留此线索而不建立目录映射；该应用及所恢复的协议均未确立，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/real_kai42/status/2110700189912912155"
+      ],
       "catalog_matches": []
     },
     {
@@ -5426,12 +5428,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110702662270460232"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@leaf_sanren, 2026-10-15) says that after a Grok Bot update its local-Mac worker ignored the author’s network routing rules, that Gemini suggested decompiling the Grok Bot app to change this, and that the author instead fixed it with a network setting and advises others not to follow the AI’s suggestion. No reverse engineering was carried out, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this records a suggestion that was not pursued.",
+      "reason_zh": "作者帖子（@leaf_sanren，2026-10-15）称，Grok Bot 自动更新后，负责连接本地 Mac 的 worker 进程不遵循作者设置的网络出口规则；Gemini 建议反编译 Grok Bot 应用来改变这一行为，而作者改用一项网络设置解决了问题，并提醒他人不要听从 AI 的建议。实际并未进行任何逆向，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这记录的是一个未被采纳的建议。",
+      "primary_evidence_urls": [
+        "https://x.com/leaf_sanren/status/2110702662270460232"
+      ],
       "catalog_matches": []
     },
     {
@@ -5535,12 +5539,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110726879665660172"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@andywalters, 2026-10-15), from the founder of an automation company, says his team is building a back-office system to move a construction firm off ProCore and Salesforce early next year, and is developing tools that interview employees and watch computer use so that agents can reverse-engineer each SaaS screen and workflow. It describes planned and in-progress commercial work, names no client and links no artifact or results. Retain the lead without a catalog mapping; no reconstruction is established.",
+      "reason_zh": "作者帖子（@andywalters，2026-10-15）来自一家自动化公司的创始人，称其团队正在开发一套后台系统，计划明年初让一家建筑公司彻底摆脱 ProCore 和 Salesforce，并在开发访谈员工、记录电脑使用情况的工具，以便让智能体逆向现有 SaaS 的每个界面和流程。帖子描述的是计划中或进行中的商业工作，未指明客户，也未链接任何成果或结果。保留此线索而不建立目录映射；任何重建成果均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/andywalters/status/2110726879665660172"
+      ],
       "catalog_matches": []
     },
     {
@@ -5608,12 +5614,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110735780842999962"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@swordBluesy, 2026-10-15) is a secondary write-up of a @Wiggin_Han post saying that Claude, left running overnight, produced a native macOS version of Super Mario Odyssey after studying another developer’s approach. The write-up itself says it found no project page, could not verify the claim and only guesses which approach was meant. No repository or release by the original author was found. Retain the lead without a catalog mapping; the port and any AI contribution are unestablished, and game rights are not addressed here.",
+      "reason_zh": "所引帖子（@swordBluesy，2026-10-15）是对 @Wiggin_Han 一条帖子的二手解读：原帖称让 Claude 学习另一位开发者的思路、挂机一晚上做出了《超级马力欧：奥德赛》的 macOS 本地版。该解读本身说明未找到项目页、无法核实，所谓“思路”也只是其推测。未找到原作者的仓库或发布版本。保留此线索而不建立目录映射；该移植及任何 AI 作用均未确立，此处也不涉及游戏权利问题。",
+      "primary_evidence_urls": [
+        "https://x.com/swordBluesy/status/2110735780842999962"
+      ],
       "catalog_matches": []
     },
     {
@@ -5669,12 +5677,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110741739732435179"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Capslock404, 2026-10-15) says REA and Opus 5.5 took six jump parameters from the Super Mario 64 ROM and put Mario’s jump into Halo; it shows a video, gives generic REA setup steps, offers the prompt by reply and quotes another author’s REA course article. It names no game builds, values or mod and publishes no source, tests or download, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the mod and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Capslock404，2026-10-15）称借助 REA 与 Opus 5.5 从《超级马力欧 64》ROM 中取出六个跳跃参数，把马力欧的跳跃放进了《光环》；帖子附视频，给出通用的 REA 安装步骤，称回复即可获取提示词，并引用了另一位作者的 REA 教程长文。帖子未指明游戏版本、参数值或模组，也未公开源码、测试或下载，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该模组及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Capslock404/status/2110741739732435179"
+      ],
       "catalog_matches": []
     },
     {
@@ -5689,13 +5699,27 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110741945874350429"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@whyamas, 2026-10-15), listing entries from the author’s Reversed with AI directory, says agents dug through Roborock’s firmware and app to rebuild its cloud at home; the directory entry links Python-roborock/local_roborock_server. At the pinned commit the project documents a local HTTPS and MQTT stand-in for Roborock’s cloud, a technical write-up crediting Claude Code and Codex in the investigation, per-model compatibility reports and a CI-run test suite. This mapping covers that server, not every model or independent runtime reproduction.",
+      "reason_zh": "所引回复（@whyamas，2026-10-15）列举了作者 Reversed with AI 目录中的条目，称智能体深入研究 Roborock 的固件和应用，在家中重建了其云端；目录条目链接到 Python-roborock/local_roborock_server。在固定提交中，项目记录了替代 Roborock 云端的本地 HTTPS 与 MQTT 服务、将调查归功于 Claude Code 与 Codex 协助的技术说明、按型号的兼容性报告，以及由 CI 运行的测试套件。映射覆盖该服务器，不代表所有型号或独立运行复现。",
+      "primary_evidence_urls": [
+        "https://x.com/whyamas/status/2110741945874350429",
+        "https://reversedwithai.com/p/roborock-local-cloud-server",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/technical_writeup.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/README.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/known_limitations.md",
+        "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/docs/tested_vacuums.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "roborock-local-server-cloud-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:arkham-grok-rea-research-workbench",
@@ -14941,18 +14965,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "already-curated": 156,
+      "insufficient-evidence": 131,
+      "pending": 304
     },
     "units_by_state": {
-      "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "already-curated": 155,
+      "insufficient-evidence": 131,
+      "pending": 303
     },
-    "primary_reviewed_units": 220,
-    "catalog_linked_occurrences": 166,
-    "distinct_resource_ids": 160,
+    "primary_reviewed_units": 226,
+    "catalog_linked_occurrences": 167,
+    "distinct_resource_ids": 161,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
