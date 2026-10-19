@@ -7196,5 +7196,37 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "mario-kart-double-dash-decomp-case",
+    "name": "Mario Kart: Double Dash!!: a matching GameCube decompilation of the debug build",
+    "url": "https://github.com/doldecomp/mkdd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress 1:1 decompilation of Mario Kart: Double Dash!! that rebuilds the GameCube main.dol of the US debug build (MarioClub_us) from C and C++ with the original Metrowerks compilers, checking it against a stored SHA-1. The build splits the binary from a user-supplied disc image, and objdiff compares objects during development. decomp.dev reported 47.09% of code matched at the reviewed commit; a European retail target is configured but marked as not working yet.",
+    "description_zh": "《马力欧赛车：双重冲刺!!》的进行中 1:1 反编译：用原版 Metrowerks 编译器从 C 与 C++ 源码重建美版调试构建（MarioClub_us）的 GameCube main.dol，并与仓库保存的 SHA-1 比对。构建从使用者自备的光盘镜像中拆分二进制，开发时用 objdiff 比对目标文件。decomp.dev 报告所审提交有 47.09% 的代码已匹配；欧版零售目标虽已配置，但标注为尚不可用。",
+    "evidence_url": "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this a WIP 1:1 decompilation and says only the debug version is supported: the default MarioClub_us (USA) target, whose main.dol SHA-1 config/MarioClub_us/build.sha1 records. configure.py also lists Release_eu, but its config.yml is marked as not working yet, and CI builds only MarioClub_us. The output is a GameCube DOL, not a PC executable or port.",
+      "Copy your own disc image of that build to orig/MarioClub_us; ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC images are accepted. README says the repository contains no game assets or assembly: decomp-toolkit splits the user’s DOL using the committed symbol and split tables, and during the build extracts a font, system.arc and build-time data from that DOL locally.",
+      "Builds need Python and ninja on Windows (native tooling recommended), macOS (with wine-crossover) or Linux (an automatically downloaded wibo on x86, Wine elsewhere). configure.py pins decomp-toolkit v1.6.2, objdiff v3.3.1, binutils 2.42-1, sjiswrap v1.2.1, wibo 0.7.0 and the 20250812 compiler bundle, using Metrowerks GC/2.6 for game, JSystem, MSL and TRK code and GC/1.2.5n for the Dolphin SDK libraries.",
+      "Objects marked Matching (518 in configure.py; 277 remain NonMatching and 13 Equivalent) are compiled from source, the rest are taken from the split DOL, and the build checks main.dol against build.sha1. CI builds MarioClub_us in a container that supplies the disc files and compilers, uploads a progress report and validates symbol order for changed C++ files. decomp.dev’s report for the pinned commit lists 1,517,644 of 3,222,748 code bytes (47.09%) and 8,695 of 15,357 functions matched, with 518 of 807 units complete; this collection ran no build.",
+      "The repository carries CC0-1.0; Nintendo’s game, disc contents and the downloaded compilers keep their own rights. README credits JSystem and SDK code reused from other decompilations, including Metroid Prime, Pikmin 2, Super Mario Galaxy, Super Mario Sunshine and Twilight Princess. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/configure.py",
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/config/MarioClub_us/config.yml",
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/config/MarioClub_us/build.sha1",
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/config/Release_eu/config.yml",
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/.github/workflows/build.yml",
+      "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/LICENSE",
+      "https://decomp.dev/doldecomp/mkdd"
+    ]
   }
 ]

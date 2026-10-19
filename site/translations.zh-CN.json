@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "mario-kart-double-dash-decomp-case": {
+    "name": "《马力欧赛车：双重冲刺!!》：调试版 GameCube 一致性反编译",
+    "requirements": [
+      "README 称其为进行中的 1:1 反编译，目前只支持调试版，即默认的 MarioClub_us（美版）目标，其 main.dol 的 SHA-1 记录在 config/MarioClub_us/build.sha1 中。configure.py 还列出 Release_eu，但其 config.yml 标注尚不可用，CI 也只构建 MarioClub_us。产物是 GameCube DOL，不是 PC 可执行文件或移植。",
+      "需将自己的该版本光盘镜像复制到 orig/MarioClub_us，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的符号表和拆分表拆分使用者的 DOL，并在构建时于本地从该 DOL 中提取字体、system.arc 和构建时间数据。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.6.2、objdiff v3.3.1、binutils 2.42-1、sjiswrap v1.2.1、wibo 0.7.0 及 20250812 编译器包；游戏、JSystem、MSL 和 TRK 代码使用 Metrowerks GC/2.6，Dolphin SDK 库使用 GC/1.2.5n。",
+      "标为 Matching 的目标文件（configure.py 中有 518 个，另有 277 个仍为 NonMatching、13 个为 Equivalent）由源码编译，其余取自拆分出的 DOL，构建会按 build.sha1 校验 main.dol。CI 在提供光盘文件和编译器的容器中构建 MarioClub_us，上传进度报告，并对改动的 C++ 文件校验符号顺序。decomp.dev 针对该固定提交的报告显示，3,222,748 个代码字节中有 1,517,644 个（47.09%）、15,357 个函数中有 8,695 个已匹配，807 个单元中有 518 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器各自保留权利。README 致谢从其他反编译项目复用的 JSystem 和 SDK 代码，包括 Metroid Prime、Pikmin 2、Super Mario Galaxy、Super Mario Sunshine 和 Twilight Princess。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
