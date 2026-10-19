@@ -9947,12 +9947,15 @@
       "reported_source_urls": [
         "https://www.reddit.com/r/SBCGaming/comments/1wyhd5s/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The source is a discussion: an r/SBCGaming link post from 2026-10-05 to a Rock Paper Shotgun news article reporting DarioSamo's Bluesky argument, as a member of the Banjo: Recompiled team, that genAI does not speed up the polish that recompilation ports need and that decompilation is about understanding code; the comments trade opinions. Neither the article nor the thread documents a reconstruction, code, measurements or comparison results; DK64 Rekongpiled is cited only as a non-AI example, and the AI-assisted project it raced is unnamed. Retain the lead without a catalog mapping; this does not evaluate the argument itself.",
+      "reason_zh": "该来源是一场讨论：r/SBCGaming 上 2026-10-05 的链接帖，指向 Rock Paper Shotgun 的一篇新闻报道，内容是 Banjo: Recompiled 团队成员 DarioSamo 在 Bluesky 上的观点：生成式 AI 并未加快重编译移植所需的打磨工作，反编译的意义在于理解代码；评论区多为观点交流。文章和讨论串都未记录任何重建、代码、测量或对照结果；DK64 Rekongpiled 仅作为未使用 AI 的例子被提及，与之竞争的 AI 辅助项目也未具名。保留此线索而不建立目录映射；这不是对该观点本身的评价。",
+      "primary_evidence_urls": [
+        "https://www.reddit.com/r/SBCGaming/comments/1wyhd5s/claims_that_genai_speeds_up_pc_ports_of_classic/",
+        "https://www.rockpapershotgun.com/claims-that-genai-speeds-up-pc-ports-of-classic-games-are-either-false-or-missing-the-point-says-banjo-kazooie-recompiled-developer"
+      ],
       "catalog_matches": []
     },
     {
@@ -16232,15 +16235,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 208,
-      "insufficient-evidence": 272,
-      "pending": 111
+      "insufficient-evidence": 273,
+      "pending": 110
     },
     "units_by_state": {
       "already-curated": 206,
-      "insufficient-evidence": 272,
-      "pending": 111
+      "insufficient-evidence": 273,
+      "pending": 110
     },
-    "primary_reviewed_units": 418,
+    "primary_reviewed_units": 419,
     "catalog_linked_occurrences": 222,
     "distinct_resource_ids": 212,
     "distinct_paper_ids": 2,
