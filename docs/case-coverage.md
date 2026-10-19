@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 187 | 185 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 249 | 249 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 155 | 155 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 248 | 248 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 156 | 156 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 197 occurrences have catalog links. They reference 191 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 281 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 282 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -193,6 +193,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Super Mario 64 DS: matching decompilation with relocation checks | Already curated | [Source](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
+| Zelda and Banjo Recompiled dev slams the slew of poor-quality "slopcomps" | Insufficient evidence | [Source](https://www.reddit.com/r/technology/comments/1ww1twg/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | GoldenEye 007: an agent-assisted native port from a decompilation | Already curated | [Source](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip: an AI-assisted Super Smash Bros. native port | Already curated | [Source](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |

@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 187 | 185 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 249 | 249 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 155 | 155 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 248 | 248 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 156 | 156 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 197 个出现项含目录链接；共关联 191 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 281 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 282 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -193,6 +193,7 @@
 | Super Mario 64 DS：带重定位核对的匹配反编译 | 已收录 | [来源](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
 | Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
 | Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
+| Zelda and Banjo Recompiled dev slams the slew of poor-quality "slopcomps" | 证据不足 | [来源](https://www.reddit.com/r/technology/comments/1ww1twg/) |
 | Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | GoldenEye 007：基于反编译成果的智能体辅助原生移植 | 已收录 | [来源](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip：AI 辅助的 Super Smash Bros. 原生移植 | 已收录 | [来源](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |
