@@ -5533,5 +5533,15 @@
       "CI 在开启 RETRO_DISABLE_PLUS 的情况下构建 Windows x86、x64、Linux、macOS 和 Android 版本。项目未公开与原版引擎二进制文件的对照结果；常见问题说明官方版本中已有的缺陷大多不会修复，排行榜和成就等菜单按钮也仍未实现。本合集未构建或运行该项目。",
       "自定义的《RSDKv3/v4 反编译源码许可证 v2》要求提供给任何人的预构建可执行文件都必须默认关闭 DLC，禁止商业用途及分发独特模组素材以外的游戏素材，要求注明原作与反编译的开发者，并要求所有派生版本遵守同一许可。许可证注明原 RSDK 作者为 Christian Whitehead，反编译作者为 Rubberduckycooly 和 st×tic。Sega 的游戏和素材保留各自权利；所审阅来源未确立 AI 或 REA 使用。"
     ]
+  },
+  "ico-matching-decomp-case": {
+    "name": "《ICO》反编译：逐字节一致的 PAL 与日版 PlayStation 2 启动 ELF",
+    "requirements": [
+      "README 报告两个目标的每个段都与其基准 ELF 一致；其中 .rodata 约 9.5% 来自源码、90.5% 由光盘生成，.data 约 73% 来自源码。日版是同一程序较早的一次链接，以 VERSION_JPN 代码块保存在共享的、以 PAL 版为基础的源码树中；kor、ntsc 和 aug6 则是尚未并入 main 的独立单目标分支。产物是 PS2 启动 ELF 和 ROM 镜像，而非 PC 移植。",
+      "每个目标都需要使用者自己的光盘镜像，即 PAL 版 .iso 或日版 .bin/.cue；构建会从中提取启动 ELF，并对照 config/sha1sums 校验。docs/LEGAL.md 规定仓库不得包含光盘镜像、启动 ELF、素材、数据表以及成批的符号表或映射表，并禁止以泄露的 SDK 或源码作为输入。该文档称 sce/ 下重建的索尼运行库是依据发售版中的指令编写的，命名沿用 SDK 的公开名称，newlib 与 libgcc 成员则依照其公开源码。",
+      "在 64 位 Linux 上构建，需要 32 位库和 multilib gcc、Python 3、mips-linux-gnu-objcopy，首次运行还需联网。tools/setup.sh 从 decomp.me 的编译器发布中获取 ee-gcc 2.9-991111-01 和 SCE ee-as，构建打了两个补丁的 GNU ld 2.10，并为五个 VU1 微程序构建打过补丁的 ps2dev dvp-as；README 称这些工具均不来自索尼 SDK。",
+      "./build.sh 最后运行 tools/check_elf.py --gate，按地址比较每个已分配的段与基准 ELF，并要求整个文件的 SHA-1 一致；进度徽章和进度面板依据构建出的 ELF 与链接映射重新生成。唯一的 CI 工作流只发布该面板，构建所需的光盘 CI 并不具备。一致只说明两个启动 ELF 相同，不涉及光盘上的其他文件或运行时行为，本合集也未进行任何构建。",
+      "MIT 适用于项目自身的代码、脚本和文档，不授予对游戏、其数据或索尼与 Team Ico 财产的任何权利；工具链组件保留各自的 GPL 许可。README 声明项目与索尼互动娱乐或 Team Ico 无关，所审来源未确立 AI 或 REA 的参与。"
+    ]
   }
 }
