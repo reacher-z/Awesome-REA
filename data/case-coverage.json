@@ -10002,12 +10002,14 @@
       "reported_source_urls": [
         "https://www.reddit.com/r/decomps/comments/1v6b9gw/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The source is a discussion: an r/decomps text post from 2026-07-25 asserting that AI-generated decompilations are poor, based on the poster's impressions of a Silent Hill PC project and of ports built with RexGlue, followed by comments arguing both ways. It links no repository, code, build, measurements or comparison results, and its quality claims are anecdotal play experience. Retain the lead without a catalog mapping; this does not evaluate the projects it mentions.",
+      "reason_zh": "该来源是一场讨论：r/decomps 上 2026-07-25 的文字帖，依据发帖者对一个 Silent Hill PC 项目及若干基于 RexGlue 的移植的个人印象，断言 AI 生成的反编译质量很差，随后的评论正反意见都有。帖子未链接任何仓库、代码、构建、测量或对照结果，其质量判断只是个人游玩体验。保留此线索而不建立目录映射；这不是对帖中所提项目的评价。",
+      "primary_evidence_urls": [
+        "https://www.reddit.com/r/decomps/comments/1v6b9gw/aigenerated_decompilations_are_garbage/"
+      ],
       "catalog_matches": []
     },
     {
@@ -16268,15 +16270,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 209,
-      "insufficient-evidence": 278,
-      "pending": 104
+      "insufficient-evidence": 279,
+      "pending": 103
     },
     "units_by_state": {
       "already-curated": 207,
-      "insufficient-evidence": 278,
-      "pending": 104
+      "insufficient-evidence": 279,
+      "pending": 103
     },
-    "primary_reviewed_units": 425,
+    "primary_reviewed_units": 426,
     "catalog_linked_occurrences": 223,
     "distinct_resource_ids": 213,
     "distinct_paper_ids": 2,
