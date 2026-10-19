@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**393 repositories** · 2026-10-16 UTC
+**392 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -20,7 +20,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — Playstation 2 Static Recompiler &amp; Runtime Tool to make native PC ports **[3,516 stars]** · Curated: [PS2Recomp](https://awesomerea.org/resources/ps2recomp/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — Visual Novels resource browser **[3,328 stars]** · Curated: [GARbro](https://awesomerea.org/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine Archives Explorer **[3,258 stars]** · Curated: [FModel](https://awesomerea.org/resources/fmodel/)
-- [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Reverse engineering tool for Linux **[3,124 stars]**
 - [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — Powerful automated tool for reverse engineering Unity IL2CPP binaries **[3,056 stars]** · Curated: [Il2CppInspector](https://awesomerea.org/resources/il2cppinspector/)
 - [SamboyCoding/Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) — Work-in-progress tool to reverse unity's IL2CPP toolchain. **[3,026 stars]** · Curated: [Cpp2IL](https://awesomerea.org/resources/cpp2il/)
 - [UE4SS-RE/RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS) — Injectable LUA scripting system, SDK generator, live property editor and other dumping utilities for UE4/5 games **[3,011 stars]** · Curated: [UE4SS](https://awesomerea.org/resources/ue4ss/)

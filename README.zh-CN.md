@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 404](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-404-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 405](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-405-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (40) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (41) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1887,6 +1887,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   GrammaTech 开发的 Datalog 反汇编器，可将 x86-32、x86-64、ARM32、ARM64 和 MIPS32 架构的 ELF 与 PE 二进制转换为 GTIRB 中间表示。它先解码所有可能指令的超集，再用 Soufflé Datalog 规则和加权启发式推断代码位置、符号化结果和函数边界；gtirb-pprinter 可将结果输出为可重新汇编的汇编代码或重建的二进制，期间还可借助 GTIRB API 或 gtirb-rewriting 修改程序。推断出错时，用户可通过提示文件添加 Datalog 事实或调整启发式权重。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ddisasm/)
+
+- [**PINCE GDB 前端与内存分析工具**](https://github.com/korcankaraokcu/PINCE)
+
+  面向 Linux 的 GNU 调试器（GDB）前端，以游戏为主要对象，也可用于其他逆向工程；名称意为“PINCE is not Cheat Engine”。它借助 libmemscan 扫描进程内存和指针，并将结果放入带类型的地址表；内存视图提供反汇编、即时汇编、对引用的调用、跳转和字符串进行代码剖析、函数/内存区域/指令搜索以及结构体叠加查看，其中结构体可由对原生 Linux 或 Wine/Proton 进程中 Mono/IL2CPP 类的剖析自动生成。调试功能包括可链式关联的断点与观察点、追踪访问某地址的指令、执行跟踪和调用栈查看，并提供 GDB 控制台和可复用的 libpince Python 库。
+
+  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/pince/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
