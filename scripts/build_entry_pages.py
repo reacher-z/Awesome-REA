@@ -8,9 +8,9 @@ import re
 from urllib.parse import quote, urlencode, urlsplit
 
 from artifact_links import github_repository
-from build_discovery_pages import PRIMARY_SOURCE_LABEL, jsonld_script, publication_keys
+from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
-from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
+from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from open_graph import open_graph_meta
 
 MARKER = '<!-- Generated curated entry page. -->'
@@ -163,6 +163,56 @@ def _related_entries(entries: list[tuple[str, dict]], language: str) -> str:
             f'<p>{note}</p><ul class="entry-sources">{"".join(links)}</ul></section>')
 
 
+SIBLING_LIMIT = 6
+
+
+def section_siblings(resources: list[dict], limit: int = SIBLING_LIMIT) -> dict[str, dict]:
+    """Map each resource ID to its README section and up to ``limit`` following entries there.
+
+    Sections list case studies first, then the other entries, each in catalog order, as the
+    READMEs do. The selection continues from each entry and wraps to the section start, so it
+    is deterministic and every entry is linked from its neighbours.
+    """
+    groups = defaultdict(list)
+    for record in resources:
+        groups[collection_section(record)].append(record)
+    related = {}
+    for section, records in groups.items():
+        ordered = sorted(records, key=lambda record: record['kind'] != 'case-study')
+        cases = sum(record['kind'] == 'case-study' for record in ordered)
+        for index, record in enumerate(ordered):
+            following = ordered[index + 1:] + ordered[:index]
+            related[record['id']] = {'section': section, 'siblings': following[:limit],
+                                     'count': len(ordered), 'cases': cases}
+    return related
+
+
+def _section_links(record: dict, language: str, related: dict) -> str:
+    """Link sibling detail pages and the section on the listing pages; nothing for single-entry sections."""
+    if not related or not related['siblings']:
+        return ''
+    zh = language == 'zh'
+    prefix = '/zh' if zh else ''
+    section = related['section']
+    if section not in SECTIONS:
+        raise ValueError(f'Unknown curated collection section: {section}')
+    name = SECTIONS[section][int(zh)]
+    items = ''.join(f'<li><a href="{entry_path("resource", sibling["id"], language)}">'
+                    f'{escape((sibling.get("name_zh") or sibling["name"]) if zh else sibling["name"])}</a> '
+                    f'<span class="entry-siblings-kind">· {escape(KIND_LABELS[sibling["kind"]][int(zh)])}</span></li>'
+                    for sibling in related['siblings'])
+    count = related['count']
+    links = [f'<a href="{prefix}/resources/#heading-{section}">'
+             + (f'{name}分区全部 {count} 项资源' if zh else f'All {count} entries in {name}') + '</a>']
+    if record['kind'] == 'case-study':
+        links.append(f'<a href="{prefix}/cases/#cases-{section}">'
+                     + (f'{name}案例（{related["cases"]}）' if zh else f'{name} case studies ({related["cases"]})') + '</a>')
+    heading = f'同分区更多条目：{name}' if zh else f'More in {name}'
+    # Distinct from the "Related entries" section, which pairs the same work across directories.
+    return (f'<section class="entry-section entry-siblings" aria-labelledby="entry-siblings"><h2 id="entry-siblings">{escape(heading)}</h2>'
+            f'<ul class="entry-sources">{items}</ul><p class="entry-siblings-all">{"".join(links)}</p></section>')
+
+
 def _output_path(root: Path, relative: str) -> Path:
     current = root
     for part in ('', *Path(relative).parts):
@@ -231,7 +281,7 @@ def _paper_content(paper: dict, language: str, discussion: str = '', feedback: s
 
 
 def _document(record, kind, language, *, site_url, repository_url, styles_href, entry_styles_href,
-              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries):
+              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries, siblings=None):
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     locale, prefix = ('zh-CN', '/zh') if zh else ('en', '')
@@ -280,7 +330,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <nav class="header-nav" aria-label="{label('Main navigation', '主导航')}"><a class="entry-language" href="{counterpart}" lang="{('en' if zh else 'zh-CN')}" hreflang="{('en' if zh else 'zh-CN')}">{label('简体中文', 'English')}</a><a class="github-link" href="{_public_url(repository_url)}" target="_blank" rel="noopener" aria-label="GitHub">{github_icon}<span>GitHub</span></a></nav></div></header>
 <main class="shell entry-main" id="entry-content"><nav class="entry-breadcrumbs" aria-label="{label('Breadcrumb', '当前位置')}"><a href="{prefix}/">{label('Home', '首页')}</a><span aria-hidden="true">/</span><a href="{listing}">{list_name}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(title)}</span></nav>
 <article class="entry-article" data-entry-kind="{kind}" data-entry-id="{record['id']}">{content}</article>
-<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
+{_section_links(record, language, siblings) if kind == 'resource' else ''}<nav class="entry-return" aria-label="{label('Collection navigation', '合集导航')}"><a href="{listing}#{record['id']}">← {label('View in the directory', '在目录中查看')}</a><a href="{listing}">{list_name}</a><a href="{prefix}/">{label('Search the collection', '搜索合集')}</a></nav></main>
 <footer class="site-footer"><div class="shell footer-top"><p>{label('An independent, source-reviewed collection.', '依据一手来源整理的独立合集。')}</p><nav class="footer-links" aria-label="{label('More from the collection', '更多合集内容')}"><a href="{prefix}/resources/">{label('Curated resources', '精选资源')}</a><a href="{prefix}/papers/">{label('Research papers', '研究论文')}</a><a href="{prefix}/about/">{label('About and sources', '关于与来源')}</a></nav></div><div class="shell footer-bottom">{label('Original editorial content: MIT. Linked projects, papers and assets retain their own rights and licenses.', '原创说明采用 MIT 许可；外部项目、论文与素材保留各自的权利和许可。')}</div></footer>
 </body></html>
 '''
@@ -305,6 +355,7 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                    survey_discussions=survey_discussions or {},
                    related_entries=matching_entries(resources, papers))
     rendered = {}
+    siblings = section_siblings(resources)
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()
         for record in records:
@@ -319,7 +370,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
                 raise ValueError('Paper pages describe source review, not runtime reproduction')
             for language in ('en', 'zh'):
                 path = entry_path(kind, identifier, language)
-                rendered[path] = _document(record, kind, language, **options)
+                rendered[path] = _document(record, kind, language, **options,
+                                           siblings=siblings.get(identifier) if kind == 'resource' else None)
     # Remove only obsolete pages carrying this builder's marker, never listing pages or citations.
     destinations = {path: _output_path(site_dir, path.lstrip('/') + 'index.html') for path in rendered}
     for prefix in ('resources', 'zh/resources', 'papers', 'zh/papers'):
