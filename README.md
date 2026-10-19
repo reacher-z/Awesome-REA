@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 385](https://img.shields.io/badge/resources-385-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 386](https://img.shields.io/badge/resources-386-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (21) · [Game](#game) (173) · [App](#app) (58)
+- [Website](#website) (21) · [Game](#game) (174) · [App](#app) (58)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1238,6 +1238,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Static-recompilation toolkit for original Xbox games: a Python pipeline parses a retail XBE, disassembles it, classifies library functions, recovers calling conventions and lifts every x86 function to C. The generated code is compiled in a separate game project that links the toolkit's runtime libraries, which stand in for the Xbox kernel and translate Direct3D 8, NV2A, audio and input to Direct3D 11 and Win32 APIs, or to SDL2 and OpenGL on Linux and macOS.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/xboxrecomp/)
+
+- [**PCSX-Redux**](https://github.com/grumpycoders/pcsx-redux)
+
+  PlayStation 1 emulator forked from PCSX and built around development and reverse engineering, with an interpreter and dynamic recompiler, software and OpenGL renderers, a MIPS debugger, VRAM viewer, SPU and GPU debugging tools, and a built-in GDB server that its documentation connects to gdb, IDA Pro and Ghidra's debugger. A LuaJIT API exposes breakpoints, memory and registers, an assembler and an ISO builder, and an optional REST web server can dump RAM and VRAM. The repository also holds the OpenBIOS replacement BIOS, PS-EXE conversion and packing tools, a Psy-Q object-file converter, Ghidra scripts for exchanging symbols and overlays with the emulator, and PS1 hardware designs.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/pcsx-redux/)
 
 <a id="app"></a>
 ### App

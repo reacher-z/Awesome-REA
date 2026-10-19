@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**390 repositories** · 2026-10-16 UTC
+**391 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -31,6 +31,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Xeeynamo/sotn-decomp](https://github.com/Xeeynamo/sotn-decomp) — Decompilation of Castlevania: Symphony of the Night (PSX, PSP, Saturn) **[1,144 stars]** · Curated: [Castlevania: Symphony of the Night: matching decompilation across PlayStation, PSP and Saturn builds](https://awesomerea.org/resources/sotn-matching-decomp-case/)
 - [gorisanson/pikachu-volleyball](https://github.com/gorisanson/pikachu-volleyball) — Pikachu Volleyball reimplemented in JavaScript by reverse engineering the original game **[1,089 stars]**
 - [focus-creative-games/hybridclr\_unity](https://github.com/focus-creative-games/hybridclr_unity) — Unity package for HybridCLR **[1,019 stars]**
+- [grumpycoders/pcsx-redux](https://github.com/grumpycoders/pcsx-redux) — The PCSX-Redux project is a collection of tools, research, hardware design, and libraries aiming at development and reverse engineering on the PlayStation 1. The core product itself, PCSX-Redux, is yet another fork of the Playstation emulator, PCSX. **[1,014 stars]** · Curated: [PCSX-Redux](https://awesomerea.org/resources/pcsx-redux/)
 - [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — An in-progress decompilation of the 1.1 US release of Silent Hill on the PlayStation 1. **[902 stars]**
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — The Touhou PC-98 Restoration Project **[875 stars]**
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]**
