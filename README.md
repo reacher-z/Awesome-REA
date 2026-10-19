@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 289](https://img.shields.io/badge/resources-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 147](https://img.shields.io/badge/cases-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 289](https://img.shields.io/badge/resources-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 147](https://img.shields.io/badge/cases-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (57) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (58) · [Agents and MCP](#agents-and-mcp) (21) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1845,13 +1845,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**57 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**58 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (12) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (12) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -1949,6 +1949,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The corpus combines 48 algorithms, three insecure key-use scenarios, and three difficulty levels. It excludes professional-grade obfuscators such as Tigress and O-LLVM; results should not be generalized to heavily protected arbitrary binaries.
 
   **Publication:** 2026 · COLM 2026 · Conference paper · Baicheng Chen et al.
+
+  </details>
+
+- [**NYU CTF Bench: A Scalable Open-Source Benchmark Dataset for Evaluating LLMs in Offensive Security**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html)
+
+  NYU CTF Bench packages 200 manually validated challenges from CSAW CTF qualifying and final rounds held between 2017 and 2023, spanning cryptography, forensics, pwn, reverse engineering, web and miscellaneous tasks, with challenge.json metadata and Docker images for server-side challenges. The paper also presents an automated framework that gives LLMs function-calling tools for shell commands, file creation, Ghidra disassembly and decompilation, flag checking and giving up. It evaluates five LLMs and compares their scores with human teams at CSAW 2022 and 2023.
+
+  2024 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/NYU-LLM-CTF/NYU_CTF_Bench) · [Full entry & citation](https://awesomerea.org/papers/paper-nyu-ctf-bench/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Only 51 of the 200 challenges are reverse engineering (31 qualifying and 20 final), so overall solve rates are not reverse-engineering accuracy. All challenges come from one competition series, categories are imbalanced, and the remaining 367 of the initial 567 challenges, including incident-response tasks, are excluded pending validation. The baseline counts a challenge as solved if any of five attempts succeeds, within a 48-hour limit per model; no statistical tests were run. Among GPT-3.5, GPT-4, Claude 3, Mixtral and LLaMA, the best reverse-engineering rate was 9.80% (GPT-4), and the open models solved nothing. The human comparison uses competition scores from four CSAW events, and the public repository has continued to change after publication, so later runs may not match the paper’s challenge set or framework.
+
+  **Publication:** 2024 · NeurIPS 2024 Datasets and Benchmarks · Conference paper · Minghao Shao et al.
 
   </details>
 

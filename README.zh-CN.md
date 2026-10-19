@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 289](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 147](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 57](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 289](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-289-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 147](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-147-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (57) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (58) · [智能体与 MCP](#agents-and-mcp) (21) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1846,13 +1846,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**57 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**58 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (12) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (12) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -1950,6 +1950,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 语料组合 48 种算法、三类不安全密钥使用场景和三个难度等级。它不覆盖 Tigress、O-LLVM 等专业混淆器，结果不应推广到任意重度保护的二进制文件。
 
   **发表信息:** 2026 · COLM 2026 · 会议论文 · Baicheng Chen 等
+
+  </details>
+
+- [**NYU CTF Bench：用于评估大语言模型攻击性安全能力的可扩展开源基准数据集**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html)
+
+  NYU CTF Bench 收录 2017–2023 年 CSAW CTF 资格赛与决赛中经人工验证的 200 道题目，涵盖密码学、取证、二进制漏洞利用、逆向工程、Web 与杂项任务，并为题目提供 challenge.json 元数据，为需要服务端的题目提供 Docker 镜像。论文还提出一个自动化框架，通过函数调用为大语言模型提供执行 Shell 命令、创建文件、使用 Ghidra 反汇编与反编译、检查 flag 和放弃求解等工具。论文评测了五种大语言模型，并将其得分与 CSAW 2022 和 2023 的人类参赛队伍比较。
+
+  2024 · 会议论文 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/NYU-LLM-CTF/NYU_CTF_Bench) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-nyu-ctf-bench/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 200 道题中只有 51 道为逆向工程题（资格赛 31 道、决赛 20 道），因此总体解题率并不等于逆向工程准确率。所有题目均来自同一系列赛事，各类别数量不均衡；最初 567 道题中其余 367 道（包括事件响应类任务）因尚未完成验证而未收录。基线评测中，五次尝试中任意一次成功即算解出，每个模型限时 48 小时，且未进行统计检验。在 GPT-3.5、GPT-4、Claude 3、Mixtral 与 LLaMA 中，逆向工程类最佳解题率为 9.80%（GPT-4），两个开源模型未解出任何题目。与人类的比较基于四场 CSAW 赛事的比赛得分；公开仓库在论文发表后仍持续变化，后续运行未必与论文中的题目集或框架一致。
+
+  **发表信息:** 2024 · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Minghao Shao 等
 
   </details>
 
