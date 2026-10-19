@@ -3170,5 +3170,14 @@
       "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
       "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
     ]
+  },
+  "dembrandt": {
+    "name": "Dembrandt 网站设计系统提取工具",
+    "requirements": [
+      "审阅时的版本为 v0.39.2，于 2026-10-11 发布到 GitHub 和 npm；所审阅的 main 分支提交比该版本多十个 README、MCP 注册信息和 Action 元数据方面的提交。SECURITY.md 称项目仍处于 1.0 之前阶段，只为最新的 0.x 版本提供修复。",
+      "需要 Node.js 18+，并须执行一次 dembrandt install-browser，因为 playwright-core 不附带浏览器；Linux 和 CI 主机还需安装 Playwright 所需的系统库，Docker 或 CI 容器中可能需要 --no-sandbox。实验性的 --ai 品牌主色模型需要可选的 onnxruntime-node 包。MCP 服务器通过 npx dembrandt mcp 启动，另有独立的 GitHub Action 封装漂移门禁。",
+      "输入是在线 URL，默认以 1920x1080 视口渲染，使用 --mobile 时为 390x844；多页抓取会合并从导航链接或 sitemap.xml（先检查 robots.txt）发现的多个页面。README 列出的限制包括：深色模式需加 --dark-mode，无法分析以 canvas/WebGL 渲染的网站，部分动态加载内容以及悬停或焦点状态可能遗漏，JavaScript 较重的网站需要等待水合完成。需要登录的页面可借助使用者自己的 Cookie 或交互式登录访问。",
+      "采用 MIT 许可。README 将预期用途限定为分析自己拥有或获准分析的设计系统，且网站条款须允许自动化访问，并要求不得用提取结果复制第三方品牌形象、标志或商标。可选的 --key 参数会把每次运行的快照上传到厂商托管、仍处于测试阶段的 Dembrandt App。本次未分析任何网站。"
+    ]
   }
 }

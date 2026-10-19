@@ -7865,5 +7865,37 @@
       "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
       "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
     ]
+  },
+  {
+    "id": "dembrandt",
+    "name": "Dembrandt",
+    "url": "https://github.com/dembrandt/dembrandt",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Node.js CLI that renders a website in Playwright-driven Chromium or Firefox and reads computed styles from the DOM to extract its design system: logo, color roles with the evidence behind each pick, typography, spacing, borders, shadows, motion, breakpoints and component styles such as buttons and inputs. Results export as W3C design tokens (DTCG), Tailwind v4 or shadcn/ui themes, DESIGN.md, an HTML report or a brand-guide PDF, alongside WCAG contrast checks on real DOM pairs and a CI drift gate against a committed baseline. It also runs as an MCP server for agent clients.",
+    "description_zh": "Node.js 命令行工具，通过 Playwright 驱动 Chromium 或 Firefox 渲染网站，并从 DOM 读取计算样式来提取其设计系统：标志、附带判定依据的颜色角色、字体排版、间距、边框、阴影、动效、断点，以及按钮、输入框等组件样式。结果可导出为 W3C 设计令牌（DTCG）、Tailwind v4 或 shadcn/ui 主题、DESIGN.md、HTML 报告或品牌指南 PDF，还能对页面中实际的前景与背景组合做 WCAG 对比度检查，并在 CI 中与已提交的基线比较、拦截设计漂移。它也能作为 MCP 服务器供智能体客户端调用。",
+    "evidence_url": "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.39.2, published 2026-10-11 on GitHub and npm; the reviewed main commit is ten README, MCP-registry and Action-metadata commits ahead. SECURITY.md describes the project as pre-1.0, with fixes only for the latest 0.x release.",
+      "Requires Node.js 18+ and a one-time dembrandt install-browser step, because playwright-core ships no browser; Linux and CI hosts also need Playwright's system libraries, and Docker or CI containers may need --no-sandbox. The experimental --ai brand-color model needs the optional onnxruntime-node package. The MCP server starts with npx dembrandt mcp, and a separate GitHub Action wraps the drift gate.",
+      "Input is a live URL, rendered at 1920x1080 by default or 390x844 with --mobile; crawls merge several pages found from navigation links or from sitemap.xml after a robots.txt check. The README's limitations: dark mode needs --dark-mode, canvas/WebGL sites cannot be analyzed, some dynamically loaded content and hover or focus states can be missed, and JavaScript-heavy sites need hydration time. Pages behind a sign-in can be reached with the user's own cookies or an interactive login.",
+      "MIT. The README limits intended use to design systems you own or may analyze, on sites whose terms permit automated access, and asks users not to reproduce third-party brand identities, logos or trademarks. The optional --key flag uploads each run's snapshot to the vendor's hosted Dembrandt App, which is in beta. No sites were analyzed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/README.md#L199-L214",
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/docs/usage.md",
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/docs/mcp.md",
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/package.json",
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/SECURITY.md",
+      "https://github.com/dembrandt/dembrandt/blob/4deb8350b134669dc0251af56e028a7250d86914/LICENSE",
+      "https://github.com/dembrandt/dembrandt/releases/tag/v0.39.2",
+      "https://www.npmjs.com/package/dembrandt/v/0.39.2"
+    ]
   }
 ]
