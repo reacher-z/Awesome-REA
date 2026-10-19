@@ -4713,5 +4713,54 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-netzob",
+    "title": "Towards Automated Protocol Reverse Engineering Using Semantic Information",
+    "title_zh": "利用语义信息实现自动化协议逆向工程",
+    "authors": [
+      "Georges Bossert",
+      "Frédéric Guihéry",
+      "Guillaume Hiet"
+    ],
+    "year": 2014,
+    "publication_date": "2014-06-04",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records print and online publication on 2014-06-04. The HAL record gives the same date as the first day of the June 4–6 conference; the conference dates alone are not used as the basis.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将印刷与在线出版日期均记为 2014-06-04。HAL 记录给出相同日期，即 6 月 4–6 日会议的首日；本条目并非仅依据会议日期。",
+    "venue": "ACM ASIA CCS 2014",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/2590296.2590346",
+    "url": "https://dl.acm.org/doi/10.1145/2590296.2590346",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/2590296.2590346",
+    "code_url": "https://github.com/netzob/netzob",
+    "project_url": null,
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Infers the vocabulary of an undocumented protocol, its message types and formats, from communication traces. The approach uses contextual information embedded in the messages to improve message clustering and the identification of field boundaries; the HAL record lists contextual clustering and semantic sequence alignment as keywords. The authors motivate the work with parsers and traffic generators for network security products, and compare it with their own reimplementations of ASAP, Discoverer and ScriptGen. The first two authors are the authors of Netzob, the open-source protocol reverse-engineering framework.",
+    "description_zh": "从通信流量记录中推断未公开协议的词汇，即报文类型与格式。该方法利用报文中嵌入的上下文信息改进报文聚类和字段边界识别；HAL 记录列出的关键词为上下文聚类与语义序列比对。作者以为网络安全产品构建解析器与流量生成器作为研究动机，并与自行重新实现的 ASAP、Discoverer 和 ScriptGen 进行比较。前两位作者也是开源协议逆向框架 Netzob 的作者。",
+    "scope_limitations_en": "The method starts from captured traces and addresses the protocol’s vocabulary, not its grammar or state machine; contextual hints help only where such information appears in the observed messages. Baseline results come from the authors’ reimplementations of ASAP, Discoverer and ScriptGen rather than the original tools. The comparative study and its results are the authors’ 2014 evaluation and are not summarized here. Netzob has changed substantially since 2014: the curated Netzob record describes the later 2.x Python library, and this record does not attribute the paper’s results to that release.",
+    "scope_limitations_zh": "该方法以捕获的流量记录为起点，处理的是协议词汇，而非其语法或状态机；只有当观察到的报文中出现上下文信息时，这些线索才有帮助。基线结果来自作者对 ASAP、Discoverer 和 ScriptGen 的重新实现，而非原始工具。比较研究及其结果属于作者 2014 年的评测，本条目不作概括。Netzob 自 2014 年以来变化很大：合集中的 Netzob 工具条目描述的是后来的 2.x Python 库，本条目不将论文结果归于该版本。",
+    "why_fits_en": "Documents the trace-based inference approach from the authors of Netzob, already curated as a protocol-analysis tool, and complements the collection’s other traffic-based and executable-assisted format inference research.",
+    "why_fits_zh": "记录 Netzob 作者提出的基于流量记录的推断方法（Netzob 已作为协议分析工具收录），并与合集中其他基于流量及借助可执行程序的格式推断研究互补。",
+    "metadata_notes": "Crossref, the archived ACM page and the HAL record agree on the three authors, the ASIA CCS ’14 proceedings and pages 51–62; the ACM metadata uses sentence case, and the record follows the capitalization in the HAL record. Crossref lists this paper under DOI 10.1145/2590296.2590346; the neighboring 10.1145/2590296.2590338 is a different paper. The HAL record has no attached file. This review used the ACM abstract, Crossref and HAL metadata and the Netzob repository; evaluation details beyond the abstract are not recorded. The code link is the authors’ Netzob repository, whose AUTHORS.txt names Georges Bossert and Frédéric Guihéry; its reviewed 2023 head ships the GPL-3.0 license text and is not identified as the 2014 implementation. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref、ACM 页面存档与 HAL 记录在三位作者、ASIA CCS ’14 论文集及第 51–62 页上一致；ACM 元数据采用句首大写，本条目沿用 HAL 记录中的大小写。Crossref 将本论文登记为 DOI 10.1145/2590296.2590346；相邻的 10.1145/2590296.2590338 是另一篇论文。HAL 记录未附文件。本次审阅依据 ACM 摘要、Crossref 与 HAL 元数据以及 Netzob 仓库；摘要以外的评测细节未予记录。代码链接指向作者的 Netzob 仓库，其 AUTHORS.txt 列出 Georges Bossert 与 Frédéric Guihéry；所审阅的 2023 年最新提交附有 GPL-3.0 许可文本，并未标明为 2014 年的实现。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/2590296.2590346",
+      "https://web.archive.org/web/20240405105101/https://dl.acm.org/doi/10.1145/2590296.2590346",
+      "https://api.crossref.org/works/10.1145/2590296.2590346",
+      "https://centralesupelec.hal.science/hal-01009283v1",
+      "https://github.com/netzob/netzob/blob/088fe769e98e0bfbd3ed99e66b3982446bf8d197/README.rst",
+      "https://github.com/netzob/netzob/blob/088fe769e98e0bfbd3ed99e66b3982446bf8d197/AUTHORS.txt",
+      "https://github.com/netzob/netzob/blob/088fe769e98e0bfbd3ed99e66b3982446bf8d197/COPYING.txt"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 352](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 352](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-352-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2228,7 +2228,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2236,7 +2236,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
-- [协议](#papers-protocol-analysis) (10)
+- [协议](#papers-protocol-analysis) (11)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -3517,6 +3517,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 需要明文载荷。评测覆盖 DNS、DHCP 和 NTP，并针对各协议调节参数。方法无法推断单字节字段；全零字段、字符序列和伪随机值可能导致误差。FMS 验证需要已知字段边界。输出是近似报文分段，不是字段语义、状态机或完整应用／设备行为。
 
   **作者:** Stephan Kleber 等
+
+  </details>
+
+- [**利用语义信息实现自动化协议逆向工程**](https://dl.acm.org/doi/10.1145/2590296.2590346)
+
+  从通信流量记录中推断未公开协议的词汇，即报文类型与格式。该方法利用报文中嵌入的上下文信息改进报文聚类和字段边界识别；HAL 记录列出的关键词为上下文聚类与语义序列比对。作者以为网络安全产品构建解析器与流量生成器作为研究动机，并与自行重新实现的 ASAP、Discoverer 和 ScriptGen 进行比较。前两位作者也是开源协议逆向框架 Netzob 的作者。
+
+  ACM ASIA CCS 2014 · 会议论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/2590296.2590346) · [代码](https://github.com/netzob/netzob) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-netzob/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该方法以捕获的流量记录为起点，处理的是协议词汇，而非其语法或状态机；只有当观察到的报文中出现上下文信息时，这些线索才有帮助。基线结果来自作者对 ASAP、Discoverer 和 ScriptGen 的重新实现，而非原始工具。比较研究及其结果属于作者 2014 年的评测，本条目不作概括。Netzob 自 2014 年以来变化很大：合集中的 Netzob 工具条目描述的是后来的 2.x Python 库，本条目不将论文结果归于该版本。
+
+  **作者:** Georges Bossert 等
 
   </details>
 <!-- END GENERATED PAPERS -->

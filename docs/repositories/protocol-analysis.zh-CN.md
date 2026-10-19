@@ -9,7 +9,7 @@
 - [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — 通过捕获流量，自动逆向分析 REST API。 **[9,652 星标]**
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — 全能协议分析工具：内置浏览器抓包、MITM 代理、JS hook、指纹伪装、AI 分析及 MCP Server，可无缝对接 AI 智能体与 IDE。 **[3,776 星标]**
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — 网络安全资源，涵盖代理/GFW/反向代理/隧道/VPN/Tor/I2P，以及中间人攻击、端口敲门、网络嗅探、网络分析等。目前收录 1700 多个开源工具，后续将补充文章。 **[926 星标]**
-- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
+- [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 论文：[利用语义信息实现自动化协议逆向工程](https://awesomerea.org/zh/papers/paper-netzob/) · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]**
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — 面向控制器局域网（CAN）协议的自动化载荷逆向工程流程 **[456 星标]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s 热敏标签打印机的 BLE 协议逆向工程与 Python 命令行工具 **[302 星标]**
