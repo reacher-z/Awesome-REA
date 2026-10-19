@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 360](https://img.shields.io/badge/resources-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 361](https://img.shields.io/badge/resources-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (166) · [App](#app) (53)
-- [Native Binary](#native-binary) (26) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (27) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1676,6 +1676,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Static analyzer from Fraunhofer FKIE that searches binary executables, mainly Linux and Unix ELF files, for code paths matching Common Weakness Enumeration bug classes such as buffer overflows, use-after-free and double free, NULL pointer dereferences, format strings and integer overflows. Ghidra disassembles the binary into a common intermediate representation on which its checks run, from simple heuristics to abstract-interpretation data-flow analysis, so it covers the CPU architectures Ghidra supports, including x86, ARM, MIPS and PowerPC. Warnings are printed as text or JSON, and a bundled Ghidra script annotates them in the disassembly for manual review.
 
   Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/cwe-checker/)
+
+- [**FLARE-VM**](https://github.com/mandiant/flare-vm)
+
+  Mandiant FLARE installer that sets up and maintains a Windows virtual machine for reverse engineering and malware analysis. Its PowerShell script uses Boxstarter and Chocolatey to install packages from the separate VM-Packages feed and the Chocolatey community feed, chosen in a GUI or a custom config.xml that also sets environment paths, the taskbar layout and post-install registry, service and path settings. The reviewed default configuration lists 137 packages, among them Ghidra, IDA Free, x64dbg, dnSpyEx, capa, FLOSS, PE-sieve, FakeNet-NG and Wireshark; scripts in its virtualbox folder build, snapshot and export FLARE-VM and REMnux VMs in VirtualBox.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/flare-vm/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

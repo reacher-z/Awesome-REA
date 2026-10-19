@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**675 repositories** · 2026-10-16 UTC
+**676 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -16,6 +16,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [LaurieWired/GhidraMCP](https://github.com/LaurieWired/GhidraMCP) — MCP Server for Ghidra **[11,297 stars]** · Curated: [GhidraMCP](https://awesomerea.org/resources/ghidramcp/)
 - [unicorn-engine/unicorn](https://github.com/unicorn-engine/unicorn) — Unicorn CPU emulator framework (ARM, AArch64, M68K, Mips, Sparc, PowerPC, RiscV, S390x, TriCore, X86) **[9,451 stars]** · Curated: [Unicorn Engine](https://awesomerea.org/resources/unicorn/)
 - [angr/angr](https://github.com/angr/angr) — A powerful and user-friendly binary analysis platform! **[9,189 stars]** · Curated: [angr](https://awesomerea.org/resources/angr/)
+- [mandiant/flare-vm](https://github.com/mandiant/flare-vm) — A collection of software installations scripts for Windows systems that allows you to easily setup and maintain a reverse engineering environment on a VM. **[9,147 stars]** · Curated: [FLARE-VM](https://awesomerea.org/resources/flare-vm/)
 - [capstone-engine/capstone](https://github.com/capstone-engine/capstone) — Capstone disassembly/disassembler framework for ARM, ARM64 (ARMv8), Alpha, BPF, Ethereum VM, HPPA, LoongArch, M68K, M680X, Mips, MOS65XX, PPC, RISC-V(rv32G/rv64G), SH, Sparc, SystemZ, TMS320C64X, TriCore, Webassembly, XCore and X86. **[9,107 stars]** · Curated: [Capstone](https://awesomerea.org/resources/capstone/)
 - [hugsy/gef](https://github.com/hugsy/gef) — GEF (GDB Enhanced Features) - a modern experience for GDB with advanced debugging capabilities for exploit devs &amp; reverse engineers on Linux **[8,399 stars]**
 - [albertan017/LLM4Decompile](https://github.com/albertan017/LLM4Decompile) — Reverse Engineering: Decompiling Binary Code with Large Language Models **[7,134 stars]** · Paper: [Decompile-Bench: Million-Scale Binary-Source Function Pairs for Real-World Binary Decompilation](https://awesomerea.org/papers/paper-decompile-bench/), [LLM4Decompile: Decompiling Binary Code with Large Language Models](https://awesomerea.org/papers/paper-llm4decompile/), [SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin](https://awesomerea.org/papers/paper-sk2decompile/)
