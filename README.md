@@ -55,6 +55,8 @@ Each resource appears once under its main purpose. Cases reuse these entries; [p
 REA labels refer to the separate [upstream CLI and MCP project](https://github.com/morluto/rea). Listing does not imply REA integration. [About this independent collection](#about).
 
 <!-- BEGIN GENERATED CATALOG -->
+**Tags:** Official REA: published by the REA project · Community REA: third-party REA work · REA maintainer: an REA maintainer's list · Independent MCP, Independent agent, Independent reconstruction: no established REA connection · Mixed workflow: REA plus other tools, per the author · Android, .NET, JVM, WebAssembly: platform · Library: code library · type only: foundation tool or learning resource.
+
 <a id="website"></a>
 ### Website
 
@@ -66,7 +68,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   REA’s documented teaching case inspects the HTTP t-rex-runner edition and reconstructs its speed-update rule. A separate controlled original-game check and a new demonstration compare update counts, including the floating-point step that crosses the nominal speed threshold.
 
-  Case study · REA · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/rea-dinosaur-speed-case/)
+  Case study · Official REA · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/rea-dinosaur-speed-case/)
 
 - [**rauchg.com: rebuilding an RSC blog from captured Flight output**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
 
@@ -189,13 +191,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Recover one sound-pan function from instructions and constants; upstream cites 3,205 cases and a 63-byte match.
 
-  Case study · REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-dxball-case/)
+  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-dxball-case/)
 
 - [**TH04: recover a DOS bullet-ring helper**](https://rea.tools/showcase/th04/)
 
   Inspect a 16-bit PC-98 DOS helper and relate its angle calculation to a pinned reconstruction and historical compiler checks.
 
-  Case study · REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-th04-case/)
+  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-th04-case/)
 
 - [**Super Mario 64 DS: matching decompilation with relocation checks**](https://github.com/tangosdev/sm64ds-decomp)
 
@@ -321,7 +323,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. It dates milestones from public commits and progress ledgers, separates exact-comparison and playable-build oracles, and documents a TH08 check that missed wrong floating-literal data. Project results remain author-reported, and REA is credited with supplying analysis evidence, not the reconstructions themselves.
 
-  Case study · REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)
+  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)
 
 - [**TicTacToe-AI: a bounded REA-fork reconstruction of one game method**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
 
@@ -1170,13 +1172,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   An official APK investigation follows TOTP methods in Aegis and publishes artifact identities and selected Evidence.
 
-  Case study · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-aegis-case/)
+  Case study · Official REA · [Requirements & evidence](https://awesomerea.org/resources/rea-aegis-case/)
 
 - [**Notion: trace the clipboard bridge**](https://rea.tools/showcase/notion/)
 
   Trace a packaged Electron clipboard path using REA findings and separate source inspection; the dynamic wrapper remains a stated limit.
 
-  Case study · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-notion-case/)
+  Case study · Official REA · [Requirements & evidence](https://awesomerea.org/resources/rea-notion-case/)
 
 - [**PicoPrint: LX-D02 printer investigation**](https://github.com/bigtower17/picoprint)
 
@@ -1224,7 +1226,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   REA’s case traces the installed Windows Calculator model DLL to explain different percentage behavior for multiplication/division and other operations. An analyst-selected function is interpreted against public Microsoft source and demonstrated with fixed browser examples.
 
-  Case study · REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-calculator-percent-case/)
+  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-calculator-percent-case/)
 
 - [**Feishu: an author-reported isolated second app instance**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/)
 
@@ -1473,7 +1475,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   An official educational challenge investigation connects binary checks to equations and records an original-program validation.
 
-  Case study · REA · [Requirements & evidence](https://awesomerea.org/resources/rea-ctf-case/)
+  Case study · Official REA · [Requirements & evidence](https://awesomerea.org/resources/rea-ctf-case/)
 
 #### Tools, projects and integrations
 
@@ -1810,49 +1812,49 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   The upstream CLI and MCP server for evidence-based investigations of shipped software and runtime behavior.
 
-  Project · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-upstream/)
+  Project · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-upstream/)
 
 - [**Official reverse-engineer-anything skill**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything)
 
   Target routing, connection recovery and evidence practices for agents using REA.
 
-  Integration · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-official-skill/)
+  Integration · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-official-skill/)
 
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea)
 
   A community MCP bridge presents a smaller selected tool surface and forwards explicit commands to the REA CLI.
 
-  Integration · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/dsh-mcp-rea/)
+  Integration · Community REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/dsh-mcp-rea/)
 
 - [**rea-jev**](https://github.com/juan-viox/rea-jev)
 
   A Claude Code plugin adds Jev-based routing and evidence checks around a pinned REA MCP integration.
 
-  Integration · REA · Targets: Website, App · [Requirements & evidence](https://awesomerea.org/resources/rea-jev/)
+  Integration · Community REA · Targets: Website, App · [Requirements & evidence](https://awesomerea.org/resources/rea-jev/)
 
 - [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook)
 
   A Claude Code mod collects received REA Evidence, tracks unknowns and records findings that cite delivered evidence IDs.
 
-  Integration · REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-casebook/)
+  Integration · Community REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-casebook/)
 
 - [**Eleven**](https://github.com/Zfinix/eleven)
 
   An agent-first desktop reverse-engineering app that opens Mach-O, ELF and PE binaries, Android packages and GPU kernels, and lets any Agent Client Protocol agent read code, rename functions, add notes and propose patches in a shared window. Native code is decompiled by Ghidra through a bundled REA build, with Rizin and jadx as alternative engines. It is a workbench around existing engines, not a new decompiler or a reconstruction case.
 
-  Integration · REA · Targets: App, Binary · [Requirements & evidence](https://awesomerea.org/resources/eleven-agent-re-workbench/)
+  Integration · Community REA · Targets: App, Binary · [Requirements & evidence](https://awesomerea.org/resources/eleven-agent-re-workbench/)
 
 - [**REA plugin for Hermes Agent**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea)
 
   Nous Research’s Hermes Agent plugin package for REA. One catalog install registers REA’s MCP server, pinned to rea-agents 6.4.0 and launched through npx over stdio, with REA’s workflow skill adapted for Hermes and a separate crash-triage skill. About 170 REA tools stay behind Hermes’ on-demand tool search, and the adapted skill asks before tools that run programs, drive apps or change a connected Android device.
 
-  Integration · REA · Targets: Website, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/hermes-rea-plugin/)
+  Integration · Community REA · Targets: Website, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/hermes-rea-plugin/)
 
 - [**crashlens**](https://github.com/mingleiw/crashlens)
 
   A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.
 
-  Integration · REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/crashlens-rea-crash-triage/)
+  Integration · Community REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/crashlens-rea-crash-triage/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
@@ -1995,31 +1997,31 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   A task-oriented reverse-engineering resource list by REA's maintainer, useful for broader tools and foundations.
 
-  Collection · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/morluto-awesome-re/)
+  Collection · REA maintainer · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/morluto-awesome-re/)
 
 - [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases)
 
   A bilingual collection of REA and other AI-assisted reverse engineering cases, with source links and explicit distinctions between reported and reproduced outcomes.
 
-  Collection · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/awesome-rea-cases/)
+  Collection · Community REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/awesome-rea-cases/)
 
 - [**awesome-rea (yibie): verification-focused projects and practice reports**](https://github.com/yibie/awesome-rea)
 
   Organizes AI-assisted game decompilation, native ports, static recompilation and tooling around stated acceptance checks, alongside a separate track of practitioner write-ups and discussions. Useful for finding primary reports and comparing how projects define correctness.
 
-  Collection · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/yibie-awesome-rea/)
+  Collection · Community REA · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/yibie-awesome-rea/)
 
 - [**Awesome REA/Decompiled Games**](https://github.com/HaozheH3/awesome-rea-games)
 
   Groups game decompilations, source reconstructions, recompilations, native ports and demos by original game, with comparison rows linking related projects. It distinguishes launchers, engine work and creator-shared showcases from source-reconstruction efforts.
 
-  Collection · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/haozhe-awesome-rea-games/)
+  Collection · Community REA · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/haozhe-awesome-rea-games/)
 
 - [**Reversed with AI**](https://reversedwithai.com/)
 
   A moderated website directory of AI-assisted reverse-engineering projects across games, firmware, file formats, APIs and protocols, apps and legacy software. Each entry links to its primary source and records the author-reported model, tools, time, cost and outcome, with four checks for public source, reproduction steps, real-hardware testing and third-party confirmation.
 
-  Collection · Targets: Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/reversed-with-ai-directory/)
+  Collection · Community REA · Targets: Game, App, Binary, Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/reversed-with-ai-directory/)
 
 <a id="references-and-learning"></a>
 ### References and Learning
@@ -2030,127 +2032,127 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Reviewed setup plans, client registration, provider prerequisites and scoped readiness checks.
 
-  Documentation · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-installation/)
+  Documentation · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-installation/)
 
 - [**CLI and Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md)
 
   CLI workflows for saving Evidence and projecting smaller views from completed analysis.
 
-  Documentation · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-cli-evidence/)
+  Documentation · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-cli-evidence/)
 
 - [**MCP contracts and generated catalog**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog)
 
   Canonical tool contracts, provider discovery and Evidence semantics for integration authors.
 
-  Documentation · REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-mcp-contracts/)
+  Documentation · Official REA · Targets: Website, Game, App, Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-mcp-contracts/)
 
 - [**Native binary investigation**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md)
 
   Locate a function, inspect instructions and pseudocode, and follow references with a selected native provider.
 
-  Documentation · REA · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-native-workflow/)
+  Documentation · Official REA · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-native-workflow/)
 
 - [**Cross-layer JavaScript application workflows**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md)
 
   Trace features and compare authenticated JavaScript application graphs while preserving static-analysis limits.
 
-  Documentation · REA · Targets: Website, App · [Requirements & evidence](https://awesomerea.org/resources/rea-js-workflows/)
+  Documentation · Official REA · Targets: Website, App · [Requirements & evidence](https://awesomerea.org/resources/rea-js-workflows/)
 
 - [**Static Android APK analysis**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md)
 
   Inspect Android package identity, classes, methods and references through REA's JADX integration.
 
-  Documentation · REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-android-guide/)
+  Documentation · Official REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-android-guide/)
 
 - [**Managed-code analysis**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md)
 
   Read PE/CLI metadata and CIL, compare managed members and inspect declared native boundaries without loading the assembly.
 
-  Documentation · REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-managed-guide/)
+  Documentation · Official REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-managed-guide/)
 
 - [**Historical web network captures**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md)
 
   Inspect saved web captures offline; recorded URLs are not fetched and no proxy is started.
 
-  Documentation · REA · Targets: Website, App, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-web-captures/)
+  Documentation · Official REA · Targets: Website, App, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-web-captures/)
 
 - [**Firmware analysis**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md)
 
   Inspect firmware regions with Binwalk and explicitly extract with Unblob, retaining tool and artifact identity.
 
-  Documentation · REA · Targets: Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-firmware-guide/)
+  Documentation · Official REA · Targets: Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-firmware-guide/)
 
 - [**Recorded packet capture inspection**](https://github.com/morluto/rea/blob/main/docs/packet-captures.md)
 
   Select TShark fields, display filters and decode-as rules over an existing network, USB or Bluetooth capture, and look up installed field names. It does not capture traffic, open an interface or control a device.
 
-  Documentation · REA · Targets: Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-packet-captures/)
+  Documentation · Official REA · Targets: Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-packet-captures/)
 
 - [**Packet capture summaries**](https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md)
 
   Summarize a saved pcap or pcapng file’s endpoints, DNS questions and addresses, TLS SNI, protocol stacks and HTTP URIs into paged Evidence views. It does not capture traffic or fetch recorded targets.
 
-  Documentation · REA · Targets: Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-pcap-summaries/)
+  Documentation · Official REA · Targets: Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-pcap-summaries/)
 
 - [**Recorded signal decoding**](https://github.com/morluto/rea/blob/main/docs/signal-recordings.md)
 
   Run caller-chosen sigrok protocol decoders, such as UART or I2C, over an existing logic-signal recording and keep annotation text with sample ranges. It does not acquire samples or communicate with hardware.
 
-  Documentation · REA · Targets: Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-signal-recordings/)
+  Documentation · Official REA · Targets: Firmware, Protocol · [Requirements & evidence](https://awesomerea.org/resources/rea-signal-recordings/)
 
 - [**Browser observation guide**](https://rea.tools/guides/browser/)
 
   Follow a user-triggered export request in the supplied Notes browser example and connect it to the downloaded result.
 
-  Documentation · REA · Targets: Website · [Requirements & evidence](https://awesomerea.org/resources/rea-browser-guide/)
+  Documentation · Official REA · Targets: Website · [Requirements & evidence](https://awesomerea.org/resources/rea-browser-guide/)
 
 - [**JavaScript and Electron: follow a CSV export**](https://rea.tools/guides/javascript/)
 
   A source-owned Notes fixture teaches the renderer, preload, IPC and CSV path with linked analysis evidence.
 
-  Documentation · REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-electron-guide/)
+  Documentation · Official REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-electron-guide/)
 
 - [**rea-playbook**](https://github.com/jinshi666888/rea-playbook)
 
   An Electron practice target, Evidence extractor and MCP probe; offline fixture mode is distinguished from real REA analysis.
 
-  Learning resource · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-playbook/)
+  Learning resource · Community REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-playbook/)
 
 - [**rea-lab**](https://github.com/pablodiazjorge/rea-lab)
 
   A Windows REA/Ghidra lab with seeded challenges, published studies, upstream contributions and recorded limitations.
 
-  Research · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-lab/)
+  Research · Community REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-lab/)
 
 - [**Flutter build identification**](https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md)
 
   Identifies a Flutter APK’s Dart snapshot hash, per-ABI library digests and engine build provenance, then inspects one ABI’s AOT snapshot sections, through REA’s pure-parsing CLI and MCP tools. The string-pool output is a bounded byte-pattern projection of package and SDK URIs, not deserialized Dart classes or recovered source.
 
-  Documentation · REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-flutter-guide/)
+  Documentation · Official REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-flutter-guide/)
 
 - [**Static HarmonyOS package inventory**](https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md)
 
   Inventories HarmonyOS HAP, HSP and App Pack files through REA’s hardened ZIP reader and projects an execution-free application graph: component paths, IDs and hashes, Stage/FA packaging hints, runtime-family hints and path-based native-bridge hypotheses. Every claim rests on path presence; manifests, Ark bytecode, resources and signatures are not decoded or verified.
 
-  Documentation · REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-harmony-guide/)
+  Documentation · Official REA · Targets: App · [Requirements & evidence](https://awesomerea.org/resources/rea-harmony-guide/)
 
 - [**MIPS ELF analysis through Ghidra**](https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md)
 
   Documents REA’s Ghidra lane for MIPS ELF executables, relocatable objects and MIPS16 shared images, including a pinned 32-bit language for recordless legacy firmware executables that Ghidra would otherwise import as 64-bit. Admission is bounded by declared header and ABI-record facts, and verification compares source-owned fixtures with independent readelf output rather than executing or rehosting firmware.
 
-  Documentation · REA · Targets: Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-mips-guide/)
+  Documentation · Official REA · Targets: Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-mips-guide/)
 
 - [**PSP static ELF analysis through Ghidra**](https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md)
 
   Documents REA’s bounded Ghidra profile for static PSP ELF executables, which leaves Allegrex instructions, PSP loading and calling conventions to a caller-installed ghidra-allegrex extension while reusing REA’s CLI, MCP, Evidence and snapshot workflows. It admits one PSPSDK header and ABI declaration on Linux x64 and verifies selected static facts on a self-built fixture, not commercial games or PRX modules.
 
-  Documentation · REA · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-psp-guide/)
+  Documentation · Official REA · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-psp-guide/)
 
 - [**NativeAOT metadata recovery with Ghidra**](https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md)
 
   Recovers .NET 8 NativeAOT metadata from x64 PE executables during REA’s Ghidra analysis: MethodTable relationships, virtual slots and frozen strings from RTR 9.1 data, through a built-in read-only parser or an optional headless adapter that annotates the Ghidra database. Generated names, inferred prototypes and recovered native pseudocode stay separate from the unknown original C# names, fields and source.
 
-  Documentation · REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-nativeaot-guide/)
+  Documentation · Official REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-ghidra-nativeaot-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 

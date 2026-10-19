@@ -56,6 +56,8 @@
 REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/morluto/rea)，收录不代表已接入 REA。[关于本独立合集](#关于)。
 
 <!-- BEGIN GENERATED CATALOG -->
+**标签：** REA 官方：由 REA 项目发布 · REA 社区：基于 REA 的第三方工作 · REA 维护者：REA 维护者整理的目录 · 独立 MCP、独立智能体、独立重建：未确认与 REA 有关联 · 混合工具流程：作者报告 REA 与其他工具并用 · Android、.NET、JVM、WebAssembly：平台 · 程序库：供编程调用的库 · 仅有类型：基础工具或学习资源。
+
 <a id="website"></a>
 ### Website · 网站
 
@@ -67,7 +69,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。
 
-  案例 · REA · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
+  案例 · REA 官方 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
 
 - [**rauchg.com：根据捕获的 Flight 输出重建 RSC 博客**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
 
@@ -190,13 +192,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。
 
-  案例 · REA · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dxball-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dxball-case/)
 
 - [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/)
 
   检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。
 
-  案例 · REA · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
 
 - [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp)
 
@@ -322,7 +324,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。
 
-  案例 · REA · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
 
 - [**TicTacToe-AI：REA 分叉对单个游戏方法的有限重建**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
 
@@ -1171,13 +1173,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。
 
-  案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-aegis-case/)
+  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-aegis-case/)
 
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/)
 
   结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。
 
-  案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-notion-case/)
+  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-notion-case/)
 
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint)
 
@@ -1225,7 +1227,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。
 
-  案例 · REA · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
 
 - [**飞书：作者报告的隔离第二应用实例**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/)
 
@@ -1474,7 +1476,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。
 
-  案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
+  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
 
 #### 工具、项目与集成
 
@@ -1811,49 +1813,49 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。
 
-  项目 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
+  项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
 
 - [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything)
 
   官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。
 
-  集成 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
+  集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
 
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea)
 
   社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。
 
-  集成 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
+  集成 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
 
 - [**rea-jev**](https://github.com/juan-viox/rea-jev)
 
   Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。
 
-  集成 · REA · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-jev/)
+  集成 · REA 社区 · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-jev/)
 
 - [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook)
 
   Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。
 
-  集成 · REA · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
+  集成 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
 
 - [**Eleven**](https://github.com/Zfinix/eleven)
 
   以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。
 
-  集成 · REA · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
+  集成 · REA 社区 · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
 
 - [**Hermes Agent 的 REA 插件**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea)
 
   Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。
 
-  集成 · REA · 目标：网站、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
+  集成 · REA 社区 · 目标：网站、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
 
 - [**crashlens 崩溃分诊工具**](https://github.com/mingleiw/crashlens)
 
   崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。
 
-  集成 · REA · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
+  集成 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
@@ -1996,31 +1998,31 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。
 
-  合集 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
+  合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 
 - [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases)
 
   中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。
 
-  合集 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
+  合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
 
 - [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea)
 
   围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。
 
-  合集 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
+  合集 · REA 社区 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
 
 - [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games)
 
   按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。
 
-  合集 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
+  合集 · REA 社区 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
 
 - [**Reversed with AI：AI 辅助逆向项目目录**](https://reversedwithai.com/)
 
   经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。每个条目链接一手来源，记录作者报告的模型、工具、耗时、费用与结果，并标注源码公开、复现步骤、真实硬件测试和第三方确认四项检查。
 
-  合集 · 目标：游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)
+  合集 · REA 社区 · 目标：游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)
 
 <a id="references-and-learning"></a>
 ### References and Learning · 文档与学习资源
@@ -2031,127 +2033,127 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。
 
-  文档 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-installation/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-installation/)
 
 - [**CLI 与 Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md)
 
   保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。
 
-  文档 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-cli-evidence/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-cli-evidence/)
 
 - [**MCP 接口约定与生成目录**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog)
 
   官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。
 
-  文档 · REA · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
 
 - [**原生二进制调查**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md)
 
   从函数清单到指令、伪代码和引用链的原生二进制调查流程。
 
-  文档 · REA · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-native-workflow/)
+  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-native-workflow/)
 
 - [**跨层 JavaScript 应用工作流**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md)
 
   从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。
 
-  文档 · REA · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-js-workflows/)
+  文档 · REA 官方 · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-js-workflows/)
 
 - [**Android APK 静态分析**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md)
 
   经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。
 
-  文档 · REA · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-android-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-android-guide/)
 
 - [**托管代码分析**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md)
 
   静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。
 
-  文档 · REA · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-managed-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-managed-guide/)
 
 - [**历史网站网络记录**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md)
 
   离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。
 
-  文档 · REA · 目标：网站、应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-web-captures/)
+  文档 · REA 官方 · 目标：网站、应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-web-captures/)
 
 - [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md)
 
   用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。
 
-  文档 · REA · 目标：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
+  文档 · REA 官方 · 目标：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
 
 - [**抓包记录检查**](https://github.com/morluto/rea/blob/main/docs/packet-captures.md)
 
   用 TShark 字段、显示过滤器和 decode-as 规则检查已有的网络、USB 或蓝牙抓包，并可查询已安装的字段名；不抓取流量、不打开网络接口，也不控制设备。
 
-  文档 · REA · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-packet-captures/)
+  文档 · REA 官方 · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-packet-captures/)
 
 - [**抓包摘要**](https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md)
 
   把已保存 pcap/pcapng 文件中的端点、DNS 查询与地址、TLS SNI、协议栈和 HTTP URI 汇总为可分页的 Evidence 视图；不抓取流量，也不访问记录中的目标。
 
-  文档 · REA · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-pcap-summaries/)
+  文档 · REA 官方 · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-pcap-summaries/)
 
 - [**信号记录解码**](https://github.com/morluto/rea/blob/main/docs/signal-recordings.md)
 
   用调用方指定的 sigrok 协议解码器（如 UART、I2C）解码已有的逻辑信号记录，并保留带采样区间的注释文本；不采集样本，也不与硬件通信。
 
-  文档 · REA · 目标：固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-signal-recordings/)
+  文档 · REA 官方 · 目标：固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-signal-recordings/)
 
 - [**浏览器观察指南**](https://rea.tools/guides/browser/)
 
   通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。
 
-  文档 · REA · 目标：网站 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
+  文档 · REA 官方 · 目标：网站 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
 
 - [**JavaScript 与 Electron：追踪 CSV 导出**](https://rea.tools/guides/javascript/)
 
   官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。
 
-  文档 · REA · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-electron-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-electron-guide/)
 
 - [**rea-playbook**](https://github.com/jinshi666888/rea-playbook)
 
   提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。
 
-  学习资源 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-playbook/)
+  学习资源 · REA 社区 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-playbook/)
 
 - [**rea-lab**](https://github.com/pablodiazjorge/rea-lab)
 
   Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。
 
-  研究 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
+  研究 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
 
 - [**Flutter 构建识别**](https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md)
 
   通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。
 
-  文档 · REA · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-flutter-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-flutter-guide/)
 
 - [**HarmonyOS 应用包静态清点**](https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md)
 
   通过 REA 加固的 ZIP 读取器清点 HarmonyOS 的 HAP、HSP 与 App Pack 文件，并投影出无需执行的应用图：组件路径、ID 与哈希、Stage／FA 打包模型提示、运行时类别提示，以及基于路径的原生桥接假设。所有结论仅基于路径存在；清单、Ark 字节码、资源和签名均未被解码或验证。
 
-  文档 · REA · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-harmony-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-harmony-guide/)
 
 - [**通过 Ghidra 分析 MIPS ELF**](https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md)
 
   说明 REA 通过 Ghidra 分析 MIPS ELF 可执行文件、可重定位目标文件与 MIPS16 共享镜像的流程，包括为缺少 ABI 记录的旧式固件可执行文件固定 32 位语言，以免 Ghidra 将其按 64 位导入。准入以文件头声明和 ABI 记录为界；验证将项目自有的测试样本与独立的 readelf 输出对照，而不执行或重新托管固件。
 
-  文档 · REA · 目标：二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-mips-guide/)
+  文档 · REA 官方 · 目标：二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-mips-guide/)
 
 - [**通过 Ghidra 静态分析 PSP ELF**](https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md)
 
   说明 REA 针对静态 PSP ELF 可执行文件的受限 Ghidra 配置：Allegrex 指令、PSP 加载与调用约定交由使用者安装的 ghidra-allegrex 扩展处理，同时沿用 REA 的命令行、MCP、证据与快照流程。它仅在 Linux x64 上接受一种 PSPSDK 文件头与 ABI 声明，并在自行构建的测试样本上验证选定的静态事实，不涉及商业游戏或 PRX 模块。
 
-  文档 · REA · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-psp-guide/)
+  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-psp-guide/)
 
 - [**借助 Ghidra 恢复 NativeAOT 元数据**](https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md)
 
   在 REA 的 Ghidra 分析中，从 x64 PE 可执行文件恢复 .NET 8 NativeAOT 元数据：通过内置只读解析器或可选的无界面适配器（会为 Ghidra 数据库添加注释），从 RTR 9.1 数据中取得 MethodTable 关系、虚表槽位与冻结字符串。生成的名称、推断的原型和恢复的原生伪代码，与未知的原始 C# 名称、字段和源码明确区分。
 
-  文档 · REA · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-nativeaot-guide/)
+  文档 · REA 官方 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-nativeaot-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 
