@@ -8701,13 +8701,39 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111241506006700380"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@xmyttle, 2026-10-16) retells REA’s Calculator demo and the REA blog essay “Does reverse engineering need a bigger model?” (N0zoM1z0, 2026-10-13): a relay of GPT-6-series models closing stubborn Touhou function matches, and an audit that found accepted functions with wrong constants, including 1.0f where the original added 32.0f. The essay, its pinned evidence notes and TH08 commit a393f400 cover that account, so the full mapping is to the essay’s record; the Touhou reconstruction-method essay, which also documents the audit, stays a partial match, and the Calculator case is related. The essay calls the reward-learning risk an inference, not an observed exploit, and nothing was rerun here.",
+      "reason_zh": "帖子（@xmyttle，2026-10-16）转述了 REA 的计算器演示，以及 REA 博客文章《Does reverse engineering need a bigger model?》（N0zoM1z0，2026-10-13）：多个 GPT-6 系列模型接力完成《东方》系列中难以匹配的函数，另有一次审计发现部分已被接受的函数常量有误，例如原程序加 32.0f 的地方重建源码写成了 1.0f。该文、其固定版本的证据说明及 TH08 提交 a393f400 覆盖了这段叙述，因此完整映射指向该文的目录条目；同样记录了这次审计的《东方》重建方法一文仍为部分匹配，计算器案例则为相关条目。文章说明对奖励学习的风险只是推断，并非实际观察到的利用，本次也未重新运行任何内容。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111241506006700380",
+        "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/evidence/reverse-engineering-models.md",
+        "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
+        "https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md",
+        "https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-bigger-model-essay-case",
+          "kind": "case-study",
+          "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-touhou-reconstruction-method-case",
+          "kind": "case-study",
+          "scope": "partial"
+        },
+        {
+          "catalog": "resource",
+          "id": "rea-calculator-percent-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:epaper-vocabulary-llm-firmware-idea",
@@ -15860,18 +15886,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 198,
+      "already-curated": 199,
       "insufficient-evidence": 199,
-      "pending": 194
+      "pending": 193
     },
     "units_by_state": {
-      "already-curated": 196,
+      "already-curated": 197,
       "insufficient-evidence": 199,
-      "pending": 194
+      "pending": 193
     },
-    "primary_reviewed_units": 337,
-    "catalog_linked_occurrences": 210,
-    "distinct_resource_ids": 201,
+    "primary_reviewed_units": 338,
+    "catalog_linked_occurrences": 211,
+    "distinct_resource_ids": 202,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
