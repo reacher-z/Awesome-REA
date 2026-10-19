@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 298](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 62](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 298](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 63](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (62) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (63) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1900,13 +1900,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**62 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**63 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (16) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (16) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -1989,6 +1989,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 推理阶段禁止检查二进制内容、反编译和访问互联网。通过有限测试不能证明完整行为等价或恢复了原始源码。实时榜单中的后续运行结果应与所审阅 arXiv 版本的结果区分。
 
   **发表信息:** 2026 · NeurIPS 2026 · 已接收 · John Yang 等
+
+  </details>
+
+- [**解构协同：软件逆向工程中人类与 LLM 协作的实证研究**](https://www.ndss-symposium.org/ndss-paper/decompiling-the-synergy-an-empirical-study-of-human-llm-teaming-in-software-reverse-engineering/)
+
+  研究人类分析人员在静态软件逆向工程中如何借助 LLM 辅助开展工作。作者依据对 153 名从业者的问卷，在带插桩的 IDA Pro 插件中实现六项 LLM 功能；随后 48 名参与者（自报新手与专家各 24 名）分析两个 CTF 风格的二进制程序，其中一道随机指定的题目启用这些功能。基于评分后的解题报告、交互日志和问卷，作者报告 18 项发现：新手的理解程度提升约 98%，达到专家水平，而专家收益甚微；已知算法函数的分诊速度最高提升 2.4 倍，产物恢复量至少增加 66%；同时也出现了有害的幻觉。
+
+  2026 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf) · [代码](https://github.com/mahaloz/dec-synergy-study) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-decompiling-synergy/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是一项关于 LLM 辅助分析的人类研究，并非对自主智能体或 LLM 反编译准确率的评测。研究使用两个未经混淆、各含 26 个函数的 C 语言题目，仅允许在 IDA Pro 中进行静态分析（不能使用调试器或符号执行），提示词由研究团队编写，模型可在 GPT-4o、GPT-4o-Mini、GPT-4-Turbo、Claude-3-5-Sonnet 与 Gemini-Pro 中选择。2024–2025 年的实验在 51 名参与者中保留 48 名；专业水平为自报，理解程度是由两名研究人员按评分细则给解题报告打出的分数。LLM 直接生成的产物与理解程度提升无相关性；三名 LLM 用户报告了一个由 LLM 提示、实际并不存在的缓冲区溢出，而“查找漏洞”功能与理解得分呈负相关。个人观察记录、解题报告和问卷回答均不公开，也不接受申请；汇总数据仅可申请获取。
+
+  **发表信息:** 2026 · NDSS 2026 · 会议论文 · Zion Leonahenahe Basque 等
 
   </details>
 

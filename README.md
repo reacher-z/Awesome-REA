@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 298](https://img.shields.io/badge/resources-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 62](https://img.shields.io/badge/papers-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 298](https://img.shields.io/badge/resources-298-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 63](https://img.shields.io/badge/papers-63-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (62) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (63) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1899,13 +1899,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**62 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**63 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (16) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (16) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -1988,6 +1988,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Binary inspection, decompilation, and internet access are forbidden during inference. Passing finite tests does not prove complete behavioral equivalence or recovery of the original source. Later live-leaderboard runs are separate from the reviewed arXiv results.
 
   **Publication:** 2026 · NeurIPS 2026 · Accepted · John Yang et al.
+
+  </details>
+
+- [**Decompiling the Synergy: An Empirical Study of Human–LLM Teaming in Software Reverse Engineering**](https://www.ndss-symposium.org/ndss-paper/decompiling-the-synergy-an-empirical-study-of-human-llm-teaming-in-software-reverse-engineering/)
+
+  Studies how human analysts work with LLM assistance during static software reverse engineering. A survey of 153 practitioners informed six LLM features built into an instrumented IDA Pro plugin. Then 48 participants (24 self-reported novices and 24 experts) analyzed two CTF-style binaries, with the features enabled on one randomly assigned challenge. From graded writeups, interaction logs and surveys, the authors report 18 findings: novice understanding rose by about 98% to expert levels while experts gained little, known-algorithm functions were triaged up to 2.4× faster, and artifact recovery rose by at least 66%, alongside harmful hallucinations.
+
+  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf) · [Code](https://github.com/mahaloz/dec-synergy-study) · [Full entry & citation](https://awesomerea.org/papers/paper-decompiling-synergy/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** A human study of LLM-assisted analysis, not an evaluation of autonomous agents or of LLM decompilation accuracy. It uses two unobfuscated C challenges of 26 functions each, static analysis in IDA Pro only (no debuggers or symbolic execution), researcher-written prompts, and a choice of GPT-4o, GPT-4o-Mini, GPT-4-Turbo, Claude-3-5-Sonnet or Gemini-Pro. The 2024–2025 sessions retain 48 of 51 participants; expertise is self-reported, and understanding is a rubric score of writeups graded by two researchers. LLM-created artifacts were not correlated with better understanding, and three LLM users reported a nonexistent buffer overflow that an LLM had suggested; the vulnerability-finding feature was negatively correlated with understanding. Individual observations, writeups and survey responses are not released, even on request; aggregated data is available only on request.
+
+  **Publication:** 2026 · NDSS 2026 · Conference paper · Zion Leonahenahe Basque et al.
 
   </details>
 
