@@ -7165,5 +7165,36 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "flare-learning-hub",
+    "name": "FLARE Learning Hub",
+    "url": "https://github.com/mandiant/flare-learning-hub",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Free English reverse-engineering and malware-analysis modules from Mandiant's FLARE team, published as Google Docs, with lab binaries, IDA databases and scripts kept in this repository. The Malware Analysis Crash Course builds from x86 basics to reading Windows API use through assembly-patching exercises and labs with worked solutions; the other modules introduce WinDbg Time Travel Debugging for malware triage and provide a reference to how Go 1.24 programs look in Windows executables.",
+    "description_zh": "Mandiant FLARE 团队发布的免费英文逆向工程与恶意软件分析课程模块，正文以 Google Docs 形式发布，实验用二进制文件、IDA 数据库和脚本存放在本仓库中。其中的恶意软件分析速成课从 x86 基础讲到解读 Windows API 调用，穿插汇编修改练习和附详细解答的实验；其余模块介绍如何用 WinDbg 时间旅行调试（Time Travel Debugging）分诊恶意软件，并提供一份说明 Go 1.24 程序在 Windows 可执行文件中呈现方式的参考手册。",
+    "evidence_url": "https://github.com/mandiant/flare-learning-hub/blob/ebd4e3a7dd71c0082db2748aba13e300447cd2e0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "At reviewed commit ebd4e3a (2026-03-31), the repository, first committed on 2026-03-19, holds three modules: Malware Analysis Crash Course (nine chapters, five labs, hacking exercises and flash quizzes), An Introduction to Time Travel Debugging (a demo, one triage lab and a JavaScript automation reference) and The Go Reverse Engineering Reference. Module text lives in web-published Google Docs that change outside the repository. The README promises refinements and new modules, but no commits followed 31 March by the review date.",
+      "The crash course is the entry point: it assumes Windows command-line use, Boolean logic, two's complement, basic programming and networking. The TTD module assumes basic x86 Windows reversing and WinDbg. The Go reference assumes x86 reversing and Go, and is restricted to Windows AMD64 executables built with Go 1.24.0.",
+      "The README says all modules support only Intel x86-64 environments and strongly recommends an isolated, snapshot-capable FLARE-VM virtual machine. The crash course uses IDA and FakeNet, and its exercises ship with IDA database files; the TTD module uses WinDbg, which includes TTD, and ttd.exe. Lab and demo binaries, databases and scripts are FLARE-made and come as password-protected archives. The README warns that some behave like malware and may be flagged, so they belong only in that VM; one TTD demo trace is a separate Google Drive download.",
+      "The repository is Apache-2.0; the Google Docs reviewed carry no separate license statement. The project does not accept contributions and takes errata by email. This collection read the README, module directory notes and the three published documents; it did not run the labs, and nothing in the material mentions AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-learning-hub/blob/ebd4e3a7dd71c0082db2748aba13e300447cd2e0/macc/README.md",
+      "https://github.com/mandiant/flare-learning-hub/blob/ebd4e3a7dd71c0082db2748aba13e300447cd2e0/ttd/README.md",
+      "https://github.com/mandiant/flare-learning-hub/blob/ebd4e3a7dd71c0082db2748aba13e300447cd2e0/LICENSE",
+      "https://github.com/mandiant/flare-learning-hub/blob/ebd4e3a7dd71c0082db2748aba13e300447cd2e0/CONTRIBUTING.md",
+      "https://docs.google.com/document/d/1I83PHeEImWacuQut02VBlkJ2-CJcuTYmt6mxa_xGqlA",
+      "https://docs.google.com/document/d/15gbXsTtWyxlUr5bxWO0wvWNHDZqxqh_LEqLanyZpdyw",
+      "https://docs.google.com/document/d/1AG76FBur7aagm36o-hNbny1X1Q3_IGHEjbP-JDsrJH4"
+    ]
   }
 ]
