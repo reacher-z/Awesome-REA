@@ -66,6 +66,19 @@ def collection_page_schema(canonical: str, name: str, description: str,
     }
 
 
+def breadcrumb_schema(canonical: str, trail: list[tuple[str, str]]) -> dict:
+    """Mirror a visible breadcrumb as (name, absolute URL) pairs ending with the page itself."""
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        '@id': canonical + '#breadcrumb',
+        'itemListElement': [
+            {'@type': 'ListItem', 'position': position, 'name': name, 'item': url}
+            for position, (name, url) in enumerate(trail, 1)
+        ],
+    }
+
+
 def _url(value: str) -> str:
     parsed = urlsplit(value)
     if parsed.scheme not in {'http', 'https'} or not parsed.netloc or parsed.username or parsed.password:
@@ -255,6 +268,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
   <link rel="stylesheet" href="{assets['browse']}">{extra_css}
   {('<link rel="stylesheet" href="' + escape(icon_stylesheet, quote=True) + '">' if icon_stylesheet else '')}
   {jsonld_script(schema) if schema else ''}
+  {'' if noindex else jsonld_script(breadcrumb_schema(canonical, [('首页' if zh else 'Home', site_url + root), (title, canonical)]))}
 </head>
 <body>
 <a class="skip-link" href="#discovery-content">{('跳到内容' if zh else 'Skip to content')}</a>

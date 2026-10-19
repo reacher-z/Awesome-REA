@@ -153,7 +153,9 @@ class CasePageTests(unittest.TestCase):
             self.assertEqual(page.images[0]['class'], 'brand-mark')
             self.assertRegex(page.images[0]['src'], r'^/favicon\.svg(?:\?v=[a-f0-9]{16})?$')
             self.assertNotIn('onerror', page.images[0])
-            self.assertEqual(page.tags.count('script'), 1)  # JSON-LD only, never contributed markup.
+            # Collection and breadcrumb JSON-LD only, never contributed markup.
+            self.assertEqual(content.count('<script'), content.count('<script type="application/ld+json">'))
+            self.assertEqual(page.tags.count('script'), 2)
             text = ''.join(page.cases[0]['text'])
             self.assertIn(record['name' if language == 'en' else 'name_zh'], text)
             self.assertIn(record['description_' + language], text)

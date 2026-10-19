@@ -253,6 +253,8 @@ def build_paper_pages(
         {key: paper.get(key) for key in search_fields} for paper in ordered
     ]}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
 
+    # The visible breadcrumb gets the same BreadcrumbList as the discovery and browse pages.
+    from build_discovery_pages import breadcrumb_schema, jsonld_script
     canonical_urls = []
     use_pro = icon_stylesheet_href is not None
     for language in ('en', 'zh'):
@@ -318,6 +320,7 @@ def build_paper_pages(
   <link rel="stylesheet" href="{escape(papers_styles_href, quote=True)}">
   {icon_css}
   <script type="application/ld+json">{structured}</script>
+  {jsonld_script(breadcrumb_schema(canonical, [(label('Home', '首页'), site_url + home), (label('Reverse engineering papers & benchmarks', '逆向工程论文与评测基准'), canonical)]))}
   <script src="{search_href}" defer></script>
 </head>
 <body>
