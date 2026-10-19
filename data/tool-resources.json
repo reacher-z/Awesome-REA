@@ -10264,5 +10264,37 @@
       "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/LICENSE",
       "https://github.com/APKLab/website/blob/f8afc6deac69b4ef77f741f891e4d836bf3720f9/static/apklab_update_config.json"
     ]
+  },
+  {
+    "id": "triton",
+    "name": "Triton",
+    "url": "https://github.com/JonathanSalwan/Triton",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "C++ library with Python bindings for dynamic binary analysis of x86, x86-64, ARM32, AArch64 and RISC-V 32/64 code. Callers process instructions one at a time, optionally with concrete register and memory values; Triton builds symbolic expressions from each instruction's semantics, tracks taint and solves path constraints through Z3 or Bitwuzla. It also synthesizes and simplifies expressions and lifts them to LLVM IR or Z3 and back, for building analysis tools, automating reverse engineering, software verification or emulating code.",
+    "description_zh": "面向 x86、x86-64、ARM32、AArch64 和 RISC-V 32/64 代码动态二进制分析的 C++ 库，提供 Python 绑定。调用方逐条处理指令，并可设置具体的寄存器和内存值；Triton 依据每条指令的语义构建符号表达式、进行污点跟踪，并通过 Z3 或 Bitwuzla 求解路径约束。它还能合成与化简表达式，并将其提升为 LLVM IR 或 Z3 表达式后再转换回来，可用于构建分析工具、自动化逆向工程、软件验证或模拟执行代码。",
+    "evidence_url": "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls Triton a part-time project that may not be fully reliable. The newest GitHub release is v0.9 from 2022-02-09, with Windows builds only; PyPI's triton-library 1.0.0rc4, first uploaded 2024-05-22 with wheels added through 2026-02-23, provides CPython 3.8–3.14 wheels for x86_64 Linux (manylinux 2.31/2.34), macOS 12 and Windows. The reviewed master commit declares version 1.0, and the dev-v1.0 branch was 22 commits ahead.",
+      "Source builds use CMake 3.20+ and need Capstone 5+. Z3 4.6+ is the default solver; Bitwuzla 0.4+, LLVM 12+ for lifting, Boost 1.68+ and libpython 3.6+ for the Python bindings are optional, and LLVM and Bitwuzla are off by default. The README also covers Windows builds and a vcpkg port maintained outside the project.",
+      "The README example processes raw instruction bytes against caller-set registers; some bundled examples load executables with LIEF and hook libc functions themselves, and the examples include CTF write-ups with their challenge binaries. CTest runs Python unit tests and per-architecture scripts that compare Triton's semantics with the Unicorn emulator; the x86 script notes that Unicorn 2.1.1 lacks some tested instructions.",
+      "Apache-2.0; Capstone, Z3, Bitwuzla, LLVM and Boost keep their own licenses. Symbolic results describe only the executed instructions and modeled state. No binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/README.md#L102-L130",
+      "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/CMakeLists.txt#L9-L38",
+      "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/src/testers/CMakeLists.txt",
+      "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/src/testers/x86/unicorn_test_x86.py#L19-L21",
+      "https://github.com/JonathanSalwan/Triton/tree/bc84cf745e99768e07d51dcd734eba35c59f1b3e/src/examples/python",
+      "https://github.com/JonathanSalwan/Triton/blob/bc84cf745e99768e07d51dcd734eba35c59f1b3e/LICENSE.txt",
+      "https://github.com/JonathanSalwan/Triton/releases/tag/v0.9",
+      "https://pypi.org/project/triton-library/1.0.0rc4/"
+    ]
   }
 ]

@@ -3840,5 +3840,14 @@
       "CI 在 Ubuntu、macOS 和 Windows 上运行代码检查、打包扩展并执行测试套件，测试使用独立 testdata 仓库中的一个开源示例 APK；这只检查集成本身，不代表所整合工具在真实应用上的效果。Jadx 的输出可能不完整；重新构建的 APK 由 uber-apk-signer 重新签名，设置了密钥库时使用该密钥库。",
       "采用 AGPL-3.0 许可；Apktool、Jadx、smali-lsp、uber-apk-signer、apk-mitm、Frida 和 Quark-Engine 保留各自许可证。HTTPS 检查补丁和 gadget 注入会修改被分析的应用，本工具不授予分析、修补或再分发第三方应用的任何权利。本次审阅未安装任何内容，也未修改任何应用。"
     ]
+  },
+  "triton": {
+    "name": "Triton 动态二进制分析库",
+    "requirements": [
+      "README 称 Triton 是业余维护的项目，未必完全可靠。GitHub 上最新的发布版本是 2022-02-09 的 v0.9，且仅提供 Windows 构建；PyPI 上的 triton-library 1.0.0rc4 首次上传于 2024-05-22，此后陆续补充 wheel 至 2026-02-23，提供面向 x86_64 Linux（manylinux 2.31/2.34）、macOS 12 和 Windows 的 CPython 3.8–3.14 wheel。所审阅的 master 分支提交声明版本为 1.0，dev-v1.0 分支领先 22 个提交。",
+      "从源码构建使用 CMake 3.20+，并需要 Capstone 5+。Z3 4.6+ 是默认求解器；Bitwuzla 0.4+、用于提升的 LLVM 12+、Boost 1.68+ 以及用于 Python 绑定的 libpython 3.6+ 均为可选，其中 LLVM 和 Bitwuzla 默认不启用。README 还介绍了 Windows 构建以及由项目外部维护的 vcpkg 移植。",
+      "README 示例针对调用方设置的寄存器处理原始指令字节；部分随附示例自行用 LIEF 加载可执行文件并钩住 libc 函数，示例中还包括附带题目二进制的 CTF 解题记录。CTest 运行 Python 单元测试，以及按架构将 Triton 语义与 Unicorn 模拟器对照的脚本；x86 脚本注明 Unicorn 2.1.1 不支持部分被测指令。",
+      "采用 Apache-2.0 许可；Capstone、Z3、Bitwuzla、LLVM 和 Boost 沿用各自的许可证。符号分析结果只描述已执行的指令和已建模的状态。本次未分析任何二进制。"
+    ]
   }
 }
