@@ -3114,5 +3114,15 @@
       "输入为用户提供的 ELF、PE、Mach-O 或 WebAssembly 文件，或按指定 ISA 加载的原始字节镜像。README 功能表中，只有 x86、x86-64 和 EVM 的控制流图恢复标为满月，其他指令集为半月；TMS320C6000 未列出提升、控制流图恢复和汇编支持，README 也说明部分功能仍在开发中。",
       "MIT 许可证。README 引用了介绍 B2R2 的 2019 年 NDSS Binary Analysis Research 研讨会论文，并列出使用或基于它的研究论文。其速度与并行性的说法未经测量；本次未运行任何工具，也未分析任何二进制。"
     ]
+  },
+  "impacto-mages-engine-case": {
+    "name": "impacto：MAGES. 视觉小说引擎的重新实现",
+    "requirements": [
+      "审阅版本为 2026-10-17 的 master 提交，CI 已将其发布为预发布版 0.10.8.887；所有已发布版本都是自动生成的预发布版。README 称 impacto 仍在积极开发：至少在 Memories Off 6 T-Wave 中可以达成全部结局，但仍缺少部分功能和架构设计，还没有任何游戏完全实现。支持情况跟踪议题（#1，最后更新于 2026-02-20）列出了各作品的进度，从 Love Chu Chu 系列作品已能推进剧情和存档，到其他作品仅能显示图形和播放声音，并列出部分 2D 特效等缺失功能。",
+      "每款游戏都需要受支持版本的资源文件，主要是主机版本，例如 PS3 版 Memories Off 6 T-Wave、PS4 版 Chaos;Child Love Chu Chu 或日版 Switch 的 Robotics;Notes DaSH，并按该配置的 vfs.lua 所列放入 gamedata/<profile> 目录。仓库不含游戏资源文件；其 resources 目录包括用项目字体工具生成的字体图集、Noto CJK 字体，以及各游戏的应用图标和光标，其中图标使用了官方角色插画。所审的 Windows 预发布包含有可执行文件、库、配置、着色器和上述资源，但不含游戏数据。",
+      "README 以 64 位 Windows 10 和桌面 Linux 为目标平台，并在 macOS、Android、Switch（自制软件和 Linux）及 WebAssembly 上做过试验性运行；OpenGL 为主要渲染器，另有实验性的 Vulkan 和 DirectX 9 选项。构建使用 CMake 3.28+ 预设、C++20 和 vcpkg 清单，Windows 上使用 Visual Studio 2019 或更新版本，另有 Ubuntu 和 devkitPro Switch 构建文档。CI 生成 Windows、Linux、macOS（arm64 和 x64）、Android 和 Switch 软件包。",
+      "CI 运行 clang-format 代码检查并构建软件包；所审工作流没有自动化测试套件，也没有发布与原版引擎的对比。README 欢迎贡献者通过黑盒观察原版行为和白盒检查其内部实现来进行逆向工程，但没有说明具体方法或工具。本合集未构建或运行 impacto。",
+      "LICENSE 规定源码整体采用 ISC 许可；THIRDPARTY.md 列出了基于 vgmstream、Ryujinx、OpenImageIO、FFplay 等项目的代码以及外部库，并提醒二进制发行版可能适用更严格的条款。各游戏、其数据以及图标中使用的官方插画均归权利人所有。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
