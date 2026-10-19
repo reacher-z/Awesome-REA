@@ -4435,5 +4435,14 @@
       "CI 会校验模块并运行 go build、go vet、go test 和 golangci-lint，但所审阅的文件树中没有 Go 测试文件，因此正确性证据来自作者自己的使用。README 报告一次 SOCKS5 测速结果，在 1 Gbps 链路上约为 834/773 Mbps，并列出 happy eyeballs、WireGuard 和 DNS-over-HTTPS 等缺失功能。这些结果均为作者报告，本次来源核查未运行任何内容。",
       "采用 MIT 许可（LICENSE.md）。Cloudflare 的服务条款和商标另行适用，README 将 usque 描述为独立研究项目。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "awesome-unofficial-pc-ports": {
+    "name": "awesome-unofficial-pc-ports 非官方 PC 移植清单",
+    "requirements": [
+      "所审阅的 README 提交于 2026-10-15，共有 78 个可折叠条目：Nintendo 43 个、PlayStation 12 个、Xbox 14 个、SEGA 5 个、独立游戏和 J2ME 各 1 个，另有 2 个启动器类实用工具。其收录标准是通过反编译或重编译移植到 PC、且有简便安装方式（如启动器或拖放即用）的主机游戏；星标表示每款游戏中最易上手的版本。",
+      "条目面向玩家撰写：给出推荐的移植版和一两行安装说明，部分游戏还列出所依据的反编译项目、其他移植版或教程视频。条目未注明匹配、完成度或许可状态；清单还收录了超出其所述标准的项目，例如被其称为“逆向工程原生重制”的 Severed Chains，以及 PC 游戏 Cave Story+ 的移植，因此每个项目都需在其自身来源中核实。",
+      "大多数条目要求玩家自备 ROM、光盘镜像、ISO、游戏转储或 XBLA 包。Ratchet & Clank: Clone Home 条目还链接了第三方在 archive.org 上存放的已寻回的原版 J2ME 构建；本目录不链接该文件，被清单收录也不代表对任何游戏文件拥有权利。",
+      "README 推广 Quiver Launcher，这是一个独立的目录网站和启动器；README 还说明清单由维护者利用业余时间维护，更新可能相隔数月。仓库只有 README.md 和 MIT 许可证（版权 2023 Sebastrion）；所链接的移植项目、原游戏及其素材各自保留权利。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
