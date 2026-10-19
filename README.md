@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 334](https://img.shields.io/badge/resources-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 335](https://img.shields.io/badge/resources-335-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (155) · [App](#app) (48)
+- [Website](#website) (19) · [Game](#game) (156) · [App](#app) (48)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -1116,6 +1116,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Statically recompiles the IRIX MIPS programs of SGI's IDO 5.3 and 7.1 C toolchain, such as cc, cfe, uopt, ugen and as1, into native Linux, macOS and Windows executables, so matching decompilation projects can build with the original compiler code on modern hosts. It recompiles compilers, not games: it neither decompiles nor translates game code.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/ido-static-recomp/)
+
+- [**PS2Recomp**](https://github.com/ran-j/PS2Recomp)
+
+  Experimental static recompiler that translates MIPS R5900 code from PlayStation 2 ELF executables into C++ and links it with a bundled runtime. ps2xAnalyzer or a Ghidra export script produces a per-game TOML of functions, stubs, skips and instruction patches; ps2xRecomp emits a literal instruction-by-instruction translation; ps2xRuntime and ps2xIOP supply guest memory, syscall dispatch, IOP module execution with HLE fallbacks and partial, largely stubbed GS/VU hardware. Output is not decompiled source, and getting a game to run remains per-game porting work.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/ps2recomp/)
 
 <a id="app"></a>
 ### App
