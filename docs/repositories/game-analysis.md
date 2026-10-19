@@ -42,7 +42,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Decompiler for Unreal package files (.upk, .u, .uasset; etc), with support for Unreal Engine 1, 2, and 3 **[490 stars]**
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — A run-time API resolver for IL2CPP Unity. **[475 stars]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
-- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]**
+- [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]** · Curated: [R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation](https://awesomerea.org/resources/relive-oddworld-abe-engine-case/)
 - [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — Open source re-implementation of The Sims 2 in Unity **[432 stars]**
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**

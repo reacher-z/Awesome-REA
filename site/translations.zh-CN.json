@@ -3038,5 +3038,15 @@
       "输入由使用者提供：JAR、ZIP、文件夹或 class 文件，并可通过 -e/--add-external 添加库作为类路径上下文。项目网站上的输出对比由项目自行提供；反编译代码是重建结果，并非原始源码。",
       "采用 Apache-2.0 许可。README 称它是 JetBrains Fernflower、MinecraftForge ForgeFlower 和 FabricMC Fernflower 分支的派生，并延续了 Quiltflower；其控制台入口仍沿用 Fernflower 的 org.jetbrains.java.decompiler 包。本次未反编译任何类。"
     ]
+  },
+  "relive-oddworld-abe-engine-case": {
+    "name": "R.E.L.I.V.E.：Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 引擎的重新实现",
+    "requirements": [
+      "审阅版本为 2026-09-01 合并 SDL3 移植的 master 提交；最新发布版为 github-v1.0.9，标注为“relive stable v1.0.9”（2025-03-21），而 CMake 中的项目版本仍为 0.1。项目网站的 FAQ 称两款游戏都能完整通关，修复了一百多个原版缺陷，与零售版相比不应有明显的玩法差异；PSX 品质的音乐、更深入的改装支持和游戏内关卡编辑器列为未来工作。FAQ 将方法描述为先反编译零售版可执行文件，再用数年时间把输出改写成可读代码。",
+      "游玩需要使用者自有的 Abe’s Oddysee 或 Abe’s Exoddus 安装；FAQ 提到 Steam、GOG 和早期光盘版。可执行文件在存放 .lvl 文件的游戏目录中运行，Linux 启动脚本会查找默认的 Steam 目录，否则请使用者指定该目录。仓库不含游戏数据文件，但源码内嵌了重新实现的代码所用的数据表，例如字体和视频解压表；FAQ 表示团队不会提供游戏文件。",
+      "构建需递归克隆 Detours、googletest、magic_enum、jsonxx、stb、lodepng 和 nlohmann/json 子模块，并使用 CMake 3.10+、C++17 与 SDL3；README 介绍了 Windows 上的 Visual Studio 2022 和 Linux 上的 Ubuntu 软件包，cpack 可生成 Debian 软件包。MSVC 构建还会生成 AliveDllAE 与 AliveDllAO 挂钩 DLL，在 32 位 Windows 上链接 Detours。GitHub Actions 构建 Windows 32 位、Windows 64 位和 Linux 软件包；其 macOS 任务已被注释掉，尽管 FAQ 称游戏可在 macOS 上运行。",
+      "GitHub Actions 工作流只构建和打包，不运行测试。仓库中有针对 relive_api 关卡数据工具的 googletest 单元测试和集成测试，集成测试从硬编码的 GOG 安装路径读取 .lvl 文件；较早的 AppVeyor 和 Azure Pipelines 配置仍会调用 ctest。FAQ 介绍了自动回放：用稳定版录制完整通关过程，再在开发版中检测不同步（录制器保存输入、随机数、时钟和同步点），但没有公布回放结果，本合集也未运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证；README 只说贡献的代码将来会以兼容 GPL 的许可证（很可能是 MIT）发布，因此目前没有明确的复用条款。3rdParty/DxOld 收录了三个 DirectX 7 时期的 Direct3D 头文件，其中一个带有 Microsoft 保留所有权利的声明，各子模块保留各自的许可证。FAQ 声明与 Oddworld Inhabitants 无关，其游戏仍保留各自权利；所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
