@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 442](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-442-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 443](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-443-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (67)
-- [原生二进制](#native-binary) (56) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (57) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -2043,6 +2043,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   单文件 Python 扩展 gef.py，为 GDB 增加动态分析命令。每次程序停下时都会显示寄存器、栈、代码、线程和调用轨迹等上下文视图，命令涵盖内存映射、指针解引用、在进程内存中搜索模式、ELF 与安全属性信息、进程状态以及 glibc 堆检查。其架构抽象层覆盖 x86-32/64、ARMv5–v7、AArch64、SPARC、MIPS 和 PowerPC；gef-remote 命令可通过 gdbserver 或 qemu-user、qemu-system 的 GDB stub 增强远程调试会话。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/gef/)
+
+- [**Triton 动态二进制分析库**](https://github.com/JonathanSalwan/Triton)
+
+  面向 x86、x86-64、ARM32、AArch64 和 RISC-V 32/64 代码动态二进制分析的 C++ 库，提供 Python 绑定。调用方逐条处理指令，并可设置具体的寄存器和内存值；Triton 依据每条指令的语义构建符号表达式、进行污点跟踪，并通过 Z3 或 Bitwuzla 求解路径约束。它还能合成与化简表达式，并将其提升为 LLVM IR 或 Z3 表达式后再转换回来，可用于构建分析工具、自动化逆向工程、软件验证或模拟执行代码。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/triton/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

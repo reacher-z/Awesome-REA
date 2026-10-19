@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 442](https://img.shields.io/badge/resources-442-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 443](https://img.shields.io/badge/resources-443-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (67)
-- [Native Binary](#native-binary) (56) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (57) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2042,6 +2042,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Single-file Python extension, gef.py, that adds dynamic-analysis commands to GDB. Each stop shows a context view of registers, stack, code, threads and call trace, and commands cover memory maps, pointer dereferencing, searching process memory for patterns, ELF and security-property information, process status and glibc heap inspection. An architecture abstraction layer covers x86-32/64, ARMv5–v7, AArch64, SPARC, MIPS and PowerPC, and gef-remote enriches remote sessions through gdbserver or the GDB stubs of qemu-user and qemu-system.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/gef/)
+
+- [**Triton**](https://github.com/JonathanSalwan/Triton)
+
+  C++ library with Python bindings for dynamic binary analysis of x86, x86-64, ARM32, AArch64 and RISC-V 32/64 code. Callers process instructions one at a time, optionally with concrete register and memory values; Triton builds symbolic expressions from each instruction's semantics, tracks taint and solves path constraints through Z3 or Bitwuzla. It also synthesizes and simplifies expressions and lifts them to LLVM IR or Z3 and back, for building analysis tools, automating reverse engineering, software verification or emulating code.
+
+  Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/triton/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
