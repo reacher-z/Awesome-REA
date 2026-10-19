@@ -7668,5 +7668,38 @@
       "https://github.com/B2R2-org/B2R2/compare/v0.10.1...37de7a7274b61f7ec679153740955e7f9a94221e",
       "https://www.nuget.org/packages/B2R2.RearEnd.Launcher/0.10.1"
     ]
+  },
+  {
+    "id": "rz-ghidra",
+    "name": "rz-ghidra",
+    "url": "https://github.com/rizinorg/rz-ghidra",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Rizin plugin that embeds Ghidra's C++ decompiler and Sleigh disassembler, so no Java Ghidra installation is needed. Its pdg commands decompile the current function, optionally side by side with offsets or as XML or JSON, can return the output to Rizin as comments, and list the loaded Sleigh languages; config variables control formatting and can override the auto-detected Sleigh language. The decompiler draws on Rizin's loaded binary, types and comments, and an optional plugin brings it into the Cutter GUI.",
+    "description_zh": "Rizin 插件，内嵌 Ghidra 的 C++ 反编译器和 Sleigh 反汇编器，因此无需安装 Java 版 Ghidra。其 pdg 系列命令可反编译当前函数，也可与偏移量并排显示或以 XML、JSON 格式输出，还能把结果作为注释写回 Rizin，并列出已加载的 Sleigh 语言；配置变量可调整输出格式，也可覆盖自动检测到的 Sleigh 语言。反编译器使用 Rizin 已加载的二进制、类型和注释；另有可选插件将其接入 Cutter 图形界面。",
+    "evidence_url": "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.9.0, published 2026-06-21 as a source tarball, which its notes declare compatible with the Rizin v0.9.x series and which updates the Ghidra code it uses to 12.1. The reviewed dev commit, from 2026-10-12, tracks Rizin's dev branch and is 3 commits ahead of and 5 behind that release tag. The README says version numbers do not guarantee Rizin compatibility and points distributors to rz-* tags instead.",
+      "Builds with CMake against an installed Rizin after fetching the rizinorg/ghidra and pugixml submodules. The install step is required because it installs the Sleigh files; the rz-pm package sets them up automatically. The Cutter plugin needs Cutter installed from source and -DBUILD_CUTTER_PLUGIN=ON. CI builds on Debian Bullseye, Arch Linux and Windows.",
+      "Decompilation works on binaries loaded and analyzed in Rizin, for architectures whose Sleigh specifications are installed; output is Ghidra decompiler output and needs analyst review.",
+      "LGPL-3.0-or-later, which the README notes is stricter than Ghidra's own license; the decompiler sources come from the separate rizinorg/ghidra fork. Its test binaries are built from C sources in the repository. No binaries were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/README.md#L12-L40",
+      "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/README.md#L75-L93",
+      "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/.gitmodules",
+      "https://github.com/rizinorg/rz-ghidra/tree/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/src",
+      "https://github.com/rizinorg/rz-ghidra/tree/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/cutter-plugin",
+      "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/.github/workflows/ci.yml",
+      "https://github.com/rizinorg/rz-ghidra/tree/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/test/bins",
+      "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
+      "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
+    ]
   }
 ]
