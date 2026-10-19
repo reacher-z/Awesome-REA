@@ -5044,5 +5044,14 @@
       "二进制和 BA2 归档由使用者自备。component 加载器每次处理一个二进制；本仓库没有针对完整 UEFI 固件镜像的加载器，基于 UEFITool 的加载器另行发布，不在所审阅的工作区内。Binarly 称另有功能更多的商业企业版。规则命中结果只是辅助分析的线索，需要人工复核；所审阅的资料未给出准确率评估。",
       "VulHunt 采用 GPL-3.0；据 README.BIAS.md，BIAS 框架各 crate 采用 MIT 或 Apache-2.0 双重许可。本次未安装，也未扫描任何二进制。"
     ]
+  },
+  "sniffle": {
+    "name": "Sniffle 蓝牙低功耗嗅探器",
+    "requirements": [
+      "审阅时的版本为 v1.11.0，于 2025-07-12 发布，附有各受支持板卡的预编译固件 hex 文件；所审阅的 master 分支提交另含两个中继脚本修复。README 要求使用预编译固件时运行对应发布标签中的 Python 代码，而不是 master 分支。发布说明称基于 SDR 的嗅探仍是未完成的开发中功能。",
+      "需要所列 TI Launchpad 开发板之一（CC26x2R、CC2652RB、CC1352R、CC1352P、CC2652R7、CC1352P7、CC2651P3 或 CC1354P10）、SONOFF CC2652P USB Dongle Plus 或 CatSniffer V3。固件通过 TI UniFlash／DSLite 烧录，SONOFF 加密狗使用 cc2538-bsl 引导加载工具，CatSniffer 使用 Electronic Cats 的上传工具；README 警告，为 SONOFF 加密狗烧录错误的构建变体可能使其变砖。自行编译固件需要 ARM GNU 工具链和 TI SimpleLink Low Power F2 SDK 8.30.01.01，README 给出了为适配新版 GCC 而修改该 SDK 的补丁。主机工具需要 Python 3.9+ 和 PySerial。",
+      "加密连接不会被解密：Sniffle 在没有密钥的情况下跟随其时序并检测参数更新，而要可靠地跟随连接，需要对外设设置 MAC 或 IRK 过滤。后续版本的固件还能主动发送，用于主动扫描、广播、发起连接和链路层中继；本条目只涵盖被动捕获与解码。",
+      "采用 GPL-3.0 许可；源码头部注明版权归 NCC Group plc 所有，其中 Wireshark extcap 插件由 Jay Logue 与 NCC Group plc 共同持有版权。本次未烧录任何硬件，也未捕获任何流量。"
+    ]
   }
 }

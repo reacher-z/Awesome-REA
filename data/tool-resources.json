@@ -15351,5 +15351,36 @@
       "https://vulhunt.re/",
       "https://vulhunt.re/docs/user-guide/vulhunt-cli/installation/"
     ]
+  },
+  {
+    "id": "sniffle",
+    "name": "Sniffle",
+    "url": "https://github.com/nccgroup/Sniffle",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "NCC Group's sniffer for Bluetooth 5 and 4.x Low Energy, made of firmware for TI CC1352/CC26x2 radio boards and Python host tools. It captures advertising and connection traffic on the 1M, 2M and coded PHYs, follows connections through channel-map, connection-parameter and PHY changes, captures BT5 extended advertising, and filters by MAC address, IRK, RSSI or advertisement content; for a filtered target it hops all three primary advertising channels, which the README says makes connection detection nearly three times more reliable than single-channel sniffers. Captures are saved as Ubertooth-compatible PCAP, a Wireshark extcap plugin starts captures from the Wireshark GUI, and command-line decoders print advertising data, including Apple and Microsoft manufacturer-specific fields.",
+    "description_zh": "NCC Group 推出的蓝牙 5 与 4.x 低功耗（BLE）嗅探器，由运行在 TI CC1352/CC26x2 射频板上的固件和 Python 主机工具组成。它可在 1M、2M 和编码 PHY 上捕获广播与连接流量，跟随连接经历的信道映射、连接参数和 PHY 变更，捕获 BT5 扩展广播，并按 MAC 地址、IRK、RSSI 或广播内容过滤；对已过滤的目标会在全部三个主广播信道间跳频，README 称这使连接检测的可靠性比只监听单一信道的嗅探器高出近三倍。捕获结果保存为与 Ubertooth 兼容的 PCAP；Wireshark extcap 插件可直接从 Wireshark 界面启动捕获，命令行解码器可打印广播数据，包括 Apple 和 Microsoft 的厂商自定义字段。",
+    "evidence_url": "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v1.11.0, published 2025-07-12 with prebuilt firmware hex files for each supported board; the reviewed master commit adds two relay-script fixes. The README asks users of prebuilt firmware to run the Python code from the matching release tag rather than master. The release notes describe SDR-based sniffing as an incomplete work in progress.",
+      "Needs one of the listed TI Launchpad boards (CC26x2R, CC2652RB, CC1352R, CC1352P, CC2652R7, CC1352P7, CC2651P3 or CC1354P10), a SONOFF CC2652P USB Dongle Plus or a CatSniffer V3. Firmware is flashed with TI UniFlash/DSLite, the cc2538-bsl bootloader utility for the SONOFF dongle or Electronic Cats' uploader; the README warns that flashing the wrong SONOFF build variant can brick the dongle. Building firmware needs the ARM GNU toolchain and TI SimpleLink Low Power F2 SDK 8.30.01.01, which the README patches for recent GCC. Host tools need Python 3.9+ with PySerial.",
+      "Encrypted connections are not decrypted: Sniffle follows their timing and detects parameter updates without the key, and reliable connection following needs a MAC or IRK filter on the peripheral. Later firmware can also transmit for active scanning, advertising, initiating connections and link-layer relaying; this entry covers passive capture and decoding only.",
+      "GPL-3.0; source headers name NCC Group plc as the copyright holder, jointly with Jay Logue for the Wireshark extcap plugin. No hardware was flashed and no traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md#L22-L45",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/README.md#L494-L537",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/fw/makefile",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/python_cli/sniffle/pcap.py",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/python_cli/pcap_decoder.py",
+      "https://github.com/nccgroup/Sniffle/blob/3a53f5ab21df7599ad0c46475d322603c1a54bb7/LICENSE",
+      "https://github.com/nccgroup/Sniffle/releases/tag/v1.11.0"
+    ]
   }
 ]
