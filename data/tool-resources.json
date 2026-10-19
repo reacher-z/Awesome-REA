@@ -7196,5 +7196,43 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "teddycloud-toniebox-server-case",
+    "name": "TeddyCloud: a self-hosted replacement for the Toniebox cloud",
+    "url": "https://github.com/toniebox-reverse-engineering/teddycloud",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "firmware"
+    ],
+    "description_en": "Reimplements the Boxine cloud services a Toniebox talks to as a self-hosted C server, so the box can fetch audio, settings and over-the-air content locally while the owner controls what reaches the manufacturer. It serves and caches tonie audio, converts other audio into the box’s TAF format, can pass requests through to the original cloud, and adds a web interface, MQTT and Home Assistant integration. Protobuf definitions in the repository describe the box’s freshness-check, RTNL log and TAF header messages.",
+    "description_zh": "以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。它可提供并缓存 tonie 音频，把其他音频转换为盒子使用的 TAF 格式，可将请求透传到原云端，并提供网页界面、MQTT 及 Home Assistant 集成。仓库中的 protobuf 定义描述了盒子的 freshness-check、RTNL 日志和 TAF 头部报文。",
+    "evidence_url": "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the stable master head of 2026-08-25, the v0.7.0 merge; release tc_v0.7.0 was tagged the same day, and active development continues on the develop branch. The project’s setup guide covers Toniebox 1 boxes with CC3200, CC3235 or ESP32 chips, and the README lists Toniebox 2 support as planned.",
+      "Setup is invasive and specific to each box: the project guide has owners dump their own box’s client certificates, flash a replacement CA into the box and redirect its DNS, and the server can extract or inject certificates in an ESP32 firmware dump. The repository ships no box certificates, firmware or tonie audio (those directories are empty placeholders), and this record gives no extraction or flashing steps. The dev-sandbox’s pre-generated certificates are self-signed and meant only for local testing.",
+      "Builds with a hand-written Makefile, protoc-c and a C toolchain, plus submodules for CycloneTCP/SSL/Crypto, cJSON, Opus, Ogg, the teddycloud_web frontend and emsdk; Linux debug builds enable AddressSanitizer and UBSan, and Docker is the recommended path on macOS. Release tc_v0.7.0 attaches an amd64 zip from the Windows/Linux release workflow, and Debian, Ubuntu and Alpine Docker images are published for several platforms. Stream conversion uses ffmpeg.",
+      "Python API tests for the custom-tonie JSON endpoints and a WASM TAF-encoder test run through Makefile targets; the reviewed workflows build and publish without running them. A dev-sandbox serves mock tonies, box and TAF data. Behavior with real boxes and the Boxine cloud remains project-reported, and this source review ran nothing.",
+      "GPL-2.0 (LICENSE); the vendored Cyclone stack, Opus, Ogg, cJSON and FatFs keep their own terms. Tonie audio, box firmware and Boxine’s services keep their own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/CONTRIBUTING.md",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/.gitmodules",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/Makefile",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/tree/78c3b38e36f665d3a5fffe907f73a02725176377/proto",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/tree/78c3b38e36f665d3a5fffe907f73a02725176377/contrib/certs",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/dev-sandbox/README.md",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/tests/test_tonies_custom_json_api.py",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/.github/workflows/build_release.yml",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/.github/workflows/publish_docker_matrix_base.yml",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/blob/78c3b38e36f665d3a5fffe907f73a02725176377/LICENSE",
+      "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
+      "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
+    ]
   }
 ]

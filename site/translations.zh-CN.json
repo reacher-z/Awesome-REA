@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "teddycloud-toniebox-server-case": {
+    "name": "TeddyCloud：可自托管的 Toniebox 云端替代服务器",
+    "requirements": [
+      "审阅对象为 2026-08-25 的稳定版 master 最新提交，即 v0.7.0 合并提交；tc_v0.7.0 发布于同日打标签，日常开发在 develop 分支进行。项目的安装指南覆盖使用 CC3200、CC3235 或 ESP32 芯片的 Toniebox 1，README 将 Toniebox 2 支持列为计划中。",
+      "安装过程具有侵入性，且每台盒子各不相同：项目指南要求用户导出自己盒子的客户端证书、向盒子刷入替代 CA 并重定向其 DNS；服务器还可以在 ESP32 固件转储中提取或注入证书。仓库不提供任何盒子证书、固件或 tonie 音频（相应目录只是空占位），本条目也不提供提取或刷写步骤。dev-sandbox 中预先生成的证书为自签名证书，仅用于本地测试。",
+      "构建使用手写的 Makefile、protoc-c 和 C 工具链，并需要 CycloneTCP/SSL/Crypto、cJSON、Opus、Ogg、teddycloud_web 前端及 emsdk 等子模块；Linux 调试构建默认启用 AddressSanitizer 和 UBSan，在 macOS 上推荐使用 Docker 构建。tc_v0.7.0 版附带由 Windows/Linux 发布工作流生成的 amd64 压缩包，并为多个平台发布 Debian、Ubuntu 和 Alpine Docker 镜像。音频流转换使用 ffmpeg。",
+      "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
+      "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
