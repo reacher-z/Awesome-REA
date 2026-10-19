@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 183 | 181 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 260 | 260 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 148 | 148 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 185 | 183 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 254 | 254 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 152 | 152 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-193 个出现项含目录链接；共关联 187 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+195 个出现项含目录链接；共关联 189 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 269 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 275 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -138,7 +138,13 @@
 | Elgato HDR：为 Elgato 4K X 的 10 位模式提供用户态采集通路 | 已收录 | [来源](https://x.com/talkaboutdesign/status/2109795113807630735) |
 | Gardena mower: reported Codex motor control and firmware work | 证据不足 | [来源](https://x.com/BderKhan/status/2109840164004737341) |
 | MarkText: a REA-assisted HTML export rebuild | 证据不足 | [来源](https://x.com/KKetemepi/status/2109839329933824026) |
+| LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器 | 已收录 | [来源](https://x.com/greco_dev/status/2109842197654692349) |
+| Screen Studio：作者报告的 REA 自动缩放规则研究 | 已收录 | [来源](https://x.com/HanZhang415188/status/2109843188341207283) |
+| Armed and Dangerous: exploring remastering approaches with Ghidra and AI | 证据不足 | [来源](https://x.com/NikhilVerma/status/2109911827203358998) |
 | Open Claude UI：基于 REA 调查的界面参考组件 | 已收录 | [来源](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
+| Fort Apocalypse: a reported Codex/Ghidra Android port | 证据不足 | [来源](https://x.com/JesperAdolf/status/2109865837477716324) |
+| Minecraft × Plants vs. Zombies: a reported playable REA-assisted mashup | 证据不足 | [来源](https://x.com/Relph35432/status/2109912103813599539) |
+| Three Kingdoms XIV: a reported trainer-to-MCP project | 证据不足 | [来源](https://x.com/0xMcDonald/status/2109913567428592046) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | 待核查 | [来源](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
 | Eleven | 已收录 | [来源](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
 | GTM tool: a reported REA-assisted lead and email workflow | 证据不足 | [来源](https://github.com/tashfeenahmed/kinetic/blob/6ccbff87d190aea8e11be993e25783f099b55a93/README.md) |

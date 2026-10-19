@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 332](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-332-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 171](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-171-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 334](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 173](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (155) · [应用](#app) (46)
+- [网站](#website) (19) · [游戏](#game) (155) · [应用](#app) (48)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (171) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (173) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1233,6 +1233,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-scrantic-screensaver-case/)
 
+- [**Screen Studio：作者报告的 REA 自动缩放规则研究**](https://x.com/i/article/2109834677343432704)
+
+  作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。文章介绍了所用命令、证据、光标对齐检查以及复刻版的不足；复刻版和解出的代码均未公开。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/screen-studio-auto-zoom-case/)
+
 - [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume)
 
   根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。项目报告音量步进更均匀，同时转发 USB 音频；扬声器固件未修改。
@@ -1280,6 +1286,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   一款原生 macOS 应用，用于获取 Elgato 4K X 采集卡的 10 位 P010 视频模式；项目称苹果内置的摄像头驱动不会向应用开放该模式。一个 root 权限辅助程序卸下该驱动，通过 libusb 直接执行采集卡的 USB 视频类（UVC）串流，为 Metal HDR 预览、HDR10 录制和编辑器提供画面。延迟数据和设备覆盖范围仍为作者报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/elgato-hdr-uvc-capture-case/)
+
+- [**LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器**](https://github.com/gabrielgreco1/LGwebOS-menubar)
+
+  一款原生 macOS 菜单栏应用，通过 LG webOS 电视在局域网内的加密 WebSocket 接口完成配对，可启动应用、切换输入源、调节音量和画面设置、发送指针输入并投放所选媒体。项目称 webOS 协议行为参考了公开的 Connect SDK，并沿用 PyWebOSTV 的注册清单。测试仅覆盖一台 webOS 5.0 电视。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lgwebos-menubar-remote-case/)
 
 #### 工具、项目与集成
 

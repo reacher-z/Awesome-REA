@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 183 | 181 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 260 | 260 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 148 | 148 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 185 | 183 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 254 | 254 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 152 | 152 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-193 occurrences have catalog links. They reference 187 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+195 occurrences have catalog links. They reference 189 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 269 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 275 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -138,7 +138,13 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Elgato HDR: a userspace capture path for the Elgato 4K X’s 10-bit mode | Already curated | [Source](https://x.com/talkaboutdesign/status/2109795113807630735) |
 | Gardena mower: reported Codex motor control and firmware work | Insufficient evidence | [Source](https://x.com/BderKhan/status/2109840164004737341) |
 | MarkText: a REA-assisted HTML export rebuild | Insufficient evidence | [Source](https://x.com/KKetemepi/status/2109839329933824026) |
+| LGwebOS-menubar: a native macOS remote for LG webOS TVs | Already curated | [Source](https://x.com/greco_dev/status/2109842197654692349) |
+| Screen Studio: an author-reported REA study of auto-zoom rules | Already curated | [Source](https://x.com/HanZhang415188/status/2109843188341207283) |
+| Armed and Dangerous: exploring remastering approaches with Ghidra and AI | Insufficient evidence | [Source](https://x.com/NikhilVerma/status/2109911827203358998) |
 | Open Claude UI: REA-informed interface reference components | Already curated | [Source](https://github.com/Caho1/open-claude-ui/blob/ddf3aea1711db62fd6d24343bbab500a5ae69f64/README.md) |
+| Fort Apocalypse: a reported Codex/Ghidra Android port | Insufficient evidence | [Source](https://x.com/JesperAdolf/status/2109865837477716324) |
+| Minecraft × Plants vs. Zombies: a reported playable REA-assisted mashup | Insufficient evidence | [Source](https://x.com/Relph35432/status/2109912103813599539) |
+| Three Kingdoms XIV: a reported trainer-to-MCP project | Insufficient evidence | [Source](https://x.com/0xMcDonald/status/2109913567428592046) |
 | Virtua Fighter 2.1 / 3 TB: AI-assisted decompilation in progress | Pending | [Source](https://github.com/celsowm/vf2-decomp/blob/9a9f7270f090cfa0f38b0ec6a22c3e53dae4bd18/README.md) |
 | Eleven | Already curated | [Source](https://github.com/Zfinix/eleven/blob/94760718dfd741ba93fcc9b591eb39a96c034103/README.md) |
 | GTM tool: a reported REA-assisted lead and email workflow | Insufficient evidence | [Source](https://github.com/tashfeenahmed/kinetic/blob/6ccbff87d190aea8e11be993e25783f099b55a93/README.md) |

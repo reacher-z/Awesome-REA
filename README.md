@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 332](https://img.shields.io/badge/resources-332-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 171](https://img.shields.io/badge/cases-171-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 334](https://img.shields.io/badge/resources-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (155) · [App](#app) (46)
+- [Website](#website) (19) · [Game](#game) (155) · [App](#app) (48)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (171) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (173) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1232,6 +1232,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/open-scrantic-screensaver-case/)
 
+- [**Screen Studio: an author-reported REA study of auto-zoom rules**](https://x.com/i/article/2109834677343432704)
+
+  The author reports using REA to map Screen Studio’s Electron package, reading six auto-zoom and cursor rules from its obfuscated code with Claude Code’s help, and having Claude Code write an independent recorder and renderer from those rules. The article describes the commands, evidence, a cursor-alignment check and the clone’s gaps; neither the clone nor the decoded code is published.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/screen-studio-auto-zoom-case/)
+
 - [**LSX II Volume Fixer: reconstructing volume behavior**](https://github.com/roberdorfer/kef-lsx-volume)
 
   Uses measured USB-volume behavior and a macOS audio proxy to map volume keys to a KEF LSX II’s LAN control. The project reports more even steps while forwarding USB audio; the speaker firmware is unchanged.
@@ -1279,6 +1285,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A native macOS app that reaches the Elgato 4K X capture card’s 10-bit P010 video mode, which the project says Apple’s built-in webcam driver does not expose to apps. A root helper detaches that driver and runs the card’s USB Video Class streaming directly through libusb, feeding a Metal HDR viewer, an HDR10 recorder and an editor. Latency figures and device coverage remain author-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/elgato-hdr-uvc-capture-case/)
+
+- [**LGwebOS-menubar: a native macOS remote for LG webOS TVs**](https://github.com/gabrielgreco1/LGwebOS-menubar)
+
+  A native macOS menu-bar app that pairs with an LG webOS TV over its local encrypted WebSocket interface to launch apps, switch inputs, adjust volume and picture settings, send pointer input and cast selected media. The project credits the public Connect SDK for webOS protocol behavior and reuses PyWebOSTV’s registration manifest. Testing covers one TV on webOS 5.0.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lgwebos-menubar-remote-case/)
 
 #### Tools, projects and integrations
 
