@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 334](https://img.shields.io/badge/resources-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 76](https://img.shields.io/badge/papers-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 334](https://img.shields.io/badge/resources-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 173](https://img.shields.io/badge/cases-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (76) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (77) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2115,13 +2115,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**76 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**77 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (24) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (25) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2554,6 +2554,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The model is trained on a single architecture (x86, per the paper’s discussion); cross-architecture search is not evaluated. Only direct jumps are encoded, and indirect-jump targets are left out of scope. Disassembly and function extraction rely on IDA Pro 7.5, so boundary errors upstream are not measured. BinaryCorp pairs gcc/g++ builds across O0–O3 and Os, with train and test split by project; it does not cover obfuscation or other compilers, and only the vulnerability study adds clang variants. Author-reported Recall<span>@</span>1 at pool size 10,000 on BinaryCorp-26M averages 62.5% against 32.0% for the best baseline, and accuracy still falls as pools grow, which the authors note for larger real-world pools. The vulnerability search uses eight CVEs with ten variants each. Baselines date from 2022, and Asm2Vec and OrderMatters were reimplemented, so the comparison does not establish current rankings. Similarity ranking identifies candidate matches; it does not recover source code, names or types.
 
   **Publication:** 2022 · ACM ISSTA 2022 · Conference paper · Hao Wang et al.
+
+  </details>
+
+- [**Beyond the C: Retargetable Decompilation using Neural Machine Translation**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/)
+
+  BTC (Beyond The C) treats decompilation as plain-text translation from compiler-emitted x86-64 assembly to source code. It uses byte-pair-encoding tokenizers trained separately on assembly and source, and a standard fairseq transformer. Function pairs are matched through the compiler's CFI and line directives rather than language-specific parsers, compiler plugins or lifters, so the same pipeline is retrained for Go, Fortran, OCaml and C. Training sets range from about 10,000 functions for small C, Go and Fortran corpora to 2 million C functions built from Debian packages. The best model, trained on the large C set, reaches a normalized average edit distance of 0.46 on held-out functions.
+
+  2022 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [Code](https://figshare.com/s/2c68b9c181e80f4e3b06) · [Full entry & citation](https://awesomerea.org/papers/paper-beyond-the-c/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Evaluation covers four languages at function level and scores outputs only by normalized edit distance to the original source. No compilation, test-based or semantic-equivalence check is reported, and whole-program decompilation is not evaluated. The authors state that the method cannot guarantee semantic correctness and is not yet ready for practical use on real code: even the best score means changes to roughly half of a function's tokens. Input is compiler-produced x86-64 assembly with labels and CFI directives intact, so disassembly of stripped binaries, other architectures and compilers without such directives are outside the evaluation. Sequence-length limits exclude long functions, and the small corpora are mostly competitive-programming and small utility code. The comparison with Katz et al. cites that work's reported score on shorter snippets rather than rerunning it on the same data.
+
+  **Publication:** 2022 · Workshop on Binary Analysis Research (BAR) 2022 · Conference paper · Iman Hosseini et al.
 
   </details>
 

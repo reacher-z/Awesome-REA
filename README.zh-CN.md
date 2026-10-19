@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 334](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 173](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 334](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-334-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 173](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 77](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (76) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (77) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2116,13 +2116,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**76 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**77 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (24) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (25) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2555,6 +2555,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 模型仅在单一架构上训练（据论文讨论部分为 x86），未评估跨架构检索。方法只编码直接跳转，间接跳转目标不在研究范围内。反汇编与函数提取依赖 IDA Pro 7.5，上游的边界识别错误未被衡量。BinaryCorp 在 O0–O3 与 Os 之间配对 gcc／g++ 构建结果，并按项目划分训练集与测试集；它不涵盖混淆或其他编译器，只有漏洞检索实验额外加入 clang 变体。作者报告在 BinaryCorp-26M、候选池规模为 10,000 时，平均 Recall<span>@</span>1 为 62.5%，最佳基线为 32.0%；随着候选池增大，准确率仍会下降，作者也指出真实场景的候选池更大。漏洞检索实验使用八个 CVE，每个有十个变体。基线来自 2022 年，其中 Asm2Vec 与 OrderMatters 为重新实现，因此该比较不能确立当前排名。相似性排序只给出候选匹配，并不恢复源码、名称或类型。
 
   **发表信息:** 2022 · ACM ISSTA 2022 · 会议论文 · Hao Wang 等
+
+  </details>
+
+- [**超越 C：基于神经机器翻译的可重定向反编译**](https://www.ndss-symposium.org/ndss-paper/auto-draft-298/)
+
+  BTC（Beyond The C）将反编译视为从编译器输出的 x86-64 汇编到源码的纯文本翻译，分别在汇编与源码上训练字节对编码分词器，并使用标准 fairseq Transformer。它借助编译器输出的 CFI 与行号指令配对函数，而非依赖特定语言的解析器、编译器插件或提升器，因此同一流程可针对 Go、Fortran、OCaml 与 C 重新训练。训练集规模从小型 C、Go 与 Fortran 语料的约 10,000 个函数，到基于 Debian 软件包构建的 200 万个 C 函数不等。在大型 C 数据集上训练的最佳模型，在留出函数上的归一化平均编辑距离为 0.46。
+
+  2022 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [代码](https://figshare.com/s/2c68b9c181e80f4e3b06) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-beyond-the-c/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评测在函数层面覆盖四种语言，仅以与原始源码的归一化编辑距离评分；未报告编译、测试或语义等价检查，也未评估完整程序的反编译。作者指出该方法无法保证语义正确，尚不能用于真实代码：即便最佳分数也意味着大约一半的函数词元需要修改。输入是保留标签与 CFI 指令的编译器生成 x86-64 汇编，因此对去符号二进制的反汇编、其他架构以及不输出此类指令的编译器均不在评测范围内。序列长度限制排除了较长函数，小型语料主要来自编程竞赛题和小型工具代码。与 Katz 等人的比较引用的是该工作在更短代码片段上报告的分数，而非在相同数据上重新运行。
+
+  **发表信息:** 2022 · Workshop on Binary Analysis Research (BAR) 2022 · 会议论文 · Iman Hosseini 等
 
   </details>
 
