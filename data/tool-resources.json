@@ -7165,5 +7165,37 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "abc-decompiler",
+    "name": "abc-decompiler",
+    "url": "https://github.com/ohos-decompiler/abc-decompiler",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Decompiler for HarmonyOS Ark bytecode (.abc), the format HarmonyOS app packages carry in modules.abc, built by adapting the jadx decompiler and reading files through a patched copy of the abcde library. Because much of Ark bytecode is semantically close to DEX, it reuses jadx's GUI, IR and passes: an .abc file dropped into the jadx-based window is shown as decompiled code. The README reports that all 227 usable instructions of the 282 Ark opcodes are implemented, most special instructions as pseudo-functions.",
+    "description_zh": "面向鸿蒙方舟字节码（.abc）的反编译工具；HarmonyOS 应用包中的 modules.abc 即为此格式。它通过改造 jadx 反编译器实现，并借助打过补丁的 abcde 库读取文件。由于方舟字节码有很大一部分与 DEX 字节码语义相近，它沿用了 jadx 的图形界面、中间表示和处理流程：把 .abc 文件拖入基于 jadx 的窗口即可查看反编译代码。README 称 282 条方舟字节码中可用的 227 条指令均已实现，其中大部分特殊指令以伪函数形式实现。",
+    "evidence_url": "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README describes the project as still in development: decompilation passes for more readable output, a custom IR and data-flow analysis are listed as unfinished. The only release, h1, published 2024-12-20, ships a single jadx-dev-all.jar built from the reviewed master commit, and the repository has had no pushes since.",
+      "Building needs JDK 17+; the patched abcde fork must first be published to the local Maven repository and its version substituted into the Gradle files before ./gradlew dist. Input is the modules.abc file from the user's own HarmonyOS HAP package.",
+      "The repository is a modified jadx code base: jadx's DEX input, test samples and inherited CI files remain, and it has no GitHub Actions workflow of its own, so no tests of Ark bytecode output are reported.",
+      "Apache-2.0, as inherited from jadx; the abcde fork is also Apache-2.0. No files were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/README.md#L16-L28",
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/README.md#L38-L70",
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/jadx-core/src/main/java/jadx/core/dex/instructions/InsnDecoder.java",
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/jadx-core/build.gradle.kts",
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/LICENSE",
+      "https://github.com/ohos-decompiler/abc-decompiler/releases/tag/h1",
+      "https://github.com/ohos-decompiler/abcde",
+      "https://github.com/ohos-decompiler/abc-decompiler/issues/6"
+    ]
   }
 ]
