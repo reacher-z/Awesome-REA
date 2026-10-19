@@ -8695,5 +8695,57 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-egalito",
+    "title": "Egalito: Layout-Agnostic Binary Recompilation",
+    "title_zh": "Egalito：与布局无关的二进制重编译",
+    "authors": [
+      "David Williams-King",
+      "Hidenori Kobayashi",
+      "Kent Williams-King",
+      "Graham Patterson",
+      "Frank Spano",
+      "Yu Jian Wu",
+      "Junfeng Yang",
+      "Vasileios P. Kemerlis"
+    ],
+    "year": 2020,
+    "publication_date": "2020-03-09",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref print-publication date; the online-publication date is recorded separately in metadata notes. The March 16–20 conference dates are not used.",
+    "date_basis_zh": "采用 ACM 在 Crossref 登记的印刷出版日期；在线出版日期在元数据说明中单独记录。本条目不采用 3 月 16—20 日的会议日期。",
+    "venue": "ASPLOS 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3373376.3378470",
+    "url": "https://dl.acm.org/doi/10.1145/3373376.3378470",
+    "pdf_url": "https://www.cs.columbia.edu/~junfeng/papers/egalito-asplos20.pdf",
+    "code_url": "https://github.com/columbia/egalito",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Egalito statically recompiles stripped x86-64 and ARM64 binaries, using the metadata that position-independent executables and libraries carry to recover a complete disassembly in which every code and data cross-reference becomes an explicit link. Its layout-agnostic intermediate representation, EIR, stays close to machine code, so regenerated output is predictable, while a higher-level view supports analysis; data-flow analyses infer jump tables, which have no metadata. Because the original layout imposes no constraints, tools can move or rewrite code freely; the authors build nine, including continuous code randomization in which Egalito transforms itself, a retpoline defense, and software emulation of Intel CET. They report recovering the compiler's jump tables in 866 of 867 executables and libraries from 172 Debian packages, all tests passing in 90 of 149 transformed packages, and a 1.7% speedup on SPEC CPU 2006.",
+    "description_zh": "Egalito 对去除符号的 x86-64 与 ARM64 二进制进行静态重编译，借助位置无关的可执行文件和库所携带的元数据，恢复完整的反汇编，使每一处代码与数据交叉引用都成为显式链接。其与布局无关的中间表示 EIR 贴近机器码，因此重新生成的输出可预测，同时提供更高层的视图用于分析；对于没有元数据的跳转表，则借助数据流分析推断。由于不受原始布局约束，工具可以自由移动或改写代码；作者构建了九种工具，包括由 Egalito 变换自身的持续代码随机化、retpoline 防御以及 Intel CET 的软件模拟。作者报告，在来自 172 个 Debian 软件包的 867 个可执行文件与库中，有 866 个的跳转表与编译器给出的真实结果一致；变换后的 149 个软件包中有 90 个通过全部测试；在 SPEC CPU 2006 上性能提升 1.7%。",
+    "scope_limitations_en": "Egalito requires position-independent code for sufficient metadata; non-PIC inputs are outside the method except where full relocations are supplied, as in the authors' Fuchsia kernel experiment. Jump-table recovery uses data-flow analysis and an adjacency heuristic, so disassembly is not guaranteed to be complete; the one failure in the Debian study was heavily nested jump tables. The authors list obfuscated code, inline assembly that embeds data in code symbols, C++ exceptions, symbol versioning, and Go or V8 binaries among unsupported cases. Package test failures are partly attributed to these features. RISC-V support was incomplete at publication. The columbia/egalito main branch has had no commits since June 2020, so no current maintenance is implied.",
+    "scope_limitations_zh": "Egalito 依赖位置无关代码提供足够的元数据；除非像作者对 Fuchsia 内核的实验那样提供完整重定位信息，非位置无关的输入不在该方法范围内。跳转表恢复依靠数据流分析和相邻性启发式，因此不能保证反汇编完整；Debian 研究中唯一的失败案例是深度嵌套的跳转表。作者列出的不支持情形包括混淆代码、将数据嵌入代码符号的内联汇编、C++ 异常、符号版本控制，以及 Go 或 V8 二进制。部分软件包测试失败即归因于这些特性。论文发表时 RISC-V 支持尚未完成。columbia/egalito 的主分支自 2020 年 6 月以来没有新提交，因此不代表项目仍在维护。",
+    "why_fits_en": "Adds static whole-binary recompilation, which regenerates a working program from a recovered low-level IR without the original layout, complementing the collection's decompilation and lifting research.",
+    "why_fits_zh": "补充静态整体二进制重编译研究：在不保留原始布局的前提下，从恢复出的低层中间表示重新生成可运行程序，与合集中的反编译及提升研究互补。",
+    "metadata_notes": "ACM metadata records print publication on 2020-03-09 and online publication on 2020-03-13, pages 133–147, with the eight-author order shown here; Crossref splits the title into “Egalito” and the subtitle “Layout-Agnostic Binary Recompilation”. The Columbia-hosted PDF is the 15-page ACM-formatted version with the DOI. The paper says Egalito is released under GPL v3 at egalito.org, which did not respond over HTTP or HTTPS on 2026-10-19, so project_url stays null. The reviewed columbia/egalito commit (2020-06-01; the repository was last pushed 2023-08-01) is GPL-3.0; its README describes x86_64 and aarch64 support with experimental RISC-V and builds with make and g++ on Debian-style systems. Nothing was built or run.",
+    "metadata_notes_zh": "ACM 元数据记载印刷出版于 2020-03-09，在线出版于 2020-03-13，页码为 133–147，八位作者顺序如本条目所列；Crossref 将标题拆分为“Egalito”与副标题“Layout-Agnostic Binary Recompilation”。哥伦比亚大学托管的 PDF 是带 DOI 的 15 页 ACM 排版版本。论文称 Egalito 以 GPL v3 发布于 egalito.org，该网站在 2026-10-19 无法通过 HTTP 或 HTTPS 访问，因此 project_url 为 null。所审阅的 columbia/egalito 提交（2020-06-01；仓库最后推送于 2023-08-01）采用 GPL-3.0 许可；其 README 说明支持 x86_64 与 aarch64、RISC-V 支持仍属实验性，并在 Debian 类系统上以 make 与 g++ 构建。本次未构建或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3373376.3378470",
+      "https://api.crossref.org/works/10.1145/3373376.3378470",
+      "https://www.cs.columbia.edu/~junfeng/papers/egalito-asplos20.pdf",
+      "https://github.com/columbia/egalito/blob/c5bccb4a13dc0dea7beb5751dd4f334280b36b91/README",
+      "https://github.com/columbia/egalito/blob/c5bccb4a13dc0dea7beb5751dd4f334280b36b91/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
