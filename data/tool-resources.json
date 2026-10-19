@@ -6919,5 +6919,42 @@
       "https://github.com/ran-j/PS2Recomp/releases/tag/v0.4",
       "https://github.com/ran-j/PS2Recomp/compare/v0.4...eb8688b2fd191129f103a39543002c005b33409c"
     ]
+  },
+  {
+    "id": "marathon-recompiled-sonic-06-case",
+    "name": "Marathon Recompiled: a static recompilation of Sonic the Hedgehog (2006)",
+    "url": "https://github.com/sonicnext-dev/MarathonRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the Xbox 360 version of Sonic the Hedgehog (2006) into a native port for Windows, Linux and macOS: XenonRecomp converts the game’s PowerPC code to C++, and XenosRecomp converts its Xenos shaders to HLSL. Game files come from the user’s own copy through a built-in installer, and bugs of the original game are intentionally preserved. README warns that the project is still in active development and not meant for public use.",
+    "description_zh": "将 Xbox 360 版《索尼克》（2006）静态重编译为 Windows、Linux 和 macOS 原生移植版：XenonRecomp 把游戏的 PowerPC 代码转换为 C++，XenosRecomp 把其 Xenos 着色器转换为 HLSL。游戏文件通过内置安装程序取自使用者自有的副本，原版游戏中的漏洞被有意保留。README 提醒该项目仍在积极开发中，并不面向公众使用。",
+    "evidence_url": "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-19 main head; no releases have been published and version.txt reads 1.0.0. README cautions that the recompilation is under active development, is NOT meant for public use and gets no support until an official release. Bugs present on original hardware are kept apart from a few listed exceptions; the FAQ says PlayStation 3 files cannot be used and that significant PS3-version differences are offered as options.",
+      "The repository includes no game assets. The installer takes original, unmodified files from the user’s own Xbox 360 copy, with disc content, Title Update and DLC packages from one region, and checks them against stored hashes. Source builds instead need the game’s default.xex, shader.arc and shader_lt.arc in a git-ignored folder, from which code and shaders are recompiled during the build.",
+      "Builds need CMake 3.20+ presets, Ninja, Clang with C++20 and vcpkg: Visual Studio 2022 with its Clang and CMake components on Windows, the listed clang, lld, llvm and GTK 3 packages on Linux, and Xcode on macOS. Clone recursively for XenonRecomp, XenosRecomp, SDL, SDL_mixer, Dear ImGui, the plume graphics layer and other submodules; a Flatpak manifest is included, and the FAQ rules out further platforms.",
+      "CI builds debug, release and RelWithDebInfo presets for Linux x86_64 and arm64, Windows x64 and macOS plus a Flatpak, checking out the game files from a private asset repository via secrets. It runs no tests or fidelity comparisons; README asks for footage from original Xbox 360 hardware to back port-specific bug reports. This collection did not build or run the port.",
+      "COPYING carries GPL-3.0; the MarathonRecompResources submodule, holding the installer’s images, font atlas, UI sounds and installer music, declares no licence, and the game’s content keeps its owner’s rights. CONTRIBUTING.md sets a clean-room policy (no internal Microsoft software, documentation or SDKs, and no uploaded copyrighted material) and forbids AI-generated contributions; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/docs/BUILDING.md",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/CONTRIBUTING.md",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/CMakeLists.txt",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/CMakePresets.json",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/.gitmodules",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/MarathonRecomp/res/version.txt",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/MarathonRecomp/install/installer.cpp",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/MarathonRecompLib/private/.gitignore",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/.github/workflows/validate.yml",
+      "https://github.com/sonicnext-dev/MarathonRecomp/blob/2992c6aace932d465322ae9956c35879f34acab8/COPYING",
+      "https://github.com/sonicnext-dev/XenonRecomp",
+      "https://github.com/sonicnext-dev/XenosRecomp"
+    ]
   }
 ]

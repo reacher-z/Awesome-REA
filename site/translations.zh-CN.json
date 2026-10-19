@@ -2861,5 +2861,15 @@
       "README 列出的局限包括 VU 与 GS 性能很差、硬件仿真只完成一部分且多处为存根。本条目不代表任何游戏兼容性或已完成的移植；基于它的下游移植项目需另行审阅。仓库中还有 Android 与 PS Vita 构建目录以及 ps2xStudio 前端，本次未审阅。",
       "采用 GPL-3.0；拉取的依赖保留各自的许可，README 将 PCSX2 列为运行时参考。本次未进行重编译、构建或运行任何游戏。"
     ]
+  },
+  "marathon-recompiled-sonic-06-case": {
+    "name": "Marathon Recompiled：《索尼克》（2006）的静态重编译",
+    "requirements": [
+      "审阅对象为 2026-10-19 的 main 分支最新提交；项目尚未发布任何发行版，version.txt 标为 1.0.0。README 提醒该重编译仍在积极开发中，“不面向公众使用”，在正式发布前不提供支持。原版硬件上存在的漏洞除少数列出的例外外均予保留；FAQ 说明不能使用 PlayStation 3 版文件，PS3 版的重要差异已作为选项加入。",
+      "仓库不含任何游戏素材。安装程序接收使用者自有 Xbox 360 副本中未经修改的原始文件，光盘内容、Title Update 与 DLC 内容包须来自同一地区，并依据内置哈希值进行校验。源码构建则需要将游戏的 default.xex、shader.arc 和 shader_lt.arc 放入一个被 git 忽略的文件夹，构建过程会据此重编译代码和着色器。",
+      "构建需要 CMake 3.20+ 预设、Ninja、支持 C++20 的 Clang 以及 vcpkg：Windows 上使用安装了 Clang 与 CMake 组件的 Visual Studio 2022，Linux 上安装所列的 clang、lld、llvm 和 GTK 3 软件包，macOS 上使用 Xcode。需递归克隆以获取 XenonRecomp、XenosRecomp、SDL、SDL_mixer、Dear ImGui、plume 图形抽象层等子模块；仓库附有 Flatpak 清单，FAQ 表示不计划支持其他平台。",
+      "CI 为 Linux x86_64 与 arm64、Windows x64 和 macOS 构建 debug、release 与 RelWithDebInfo 预设，并构建 Flatpak，构建时通过 secrets 从私有素材仓库检出游戏文件。CI 不运行测试或还原度对比；README 要求移植版特有的漏洞报告附上原版 Xbox 360 硬件的录像作为佐证。本合集未构建或运行该移植。",
+      "COPYING 为 GPL-3.0；存放安装程序图像、字体图集、界面音效和安装程序音乐的 MarathonRecompResources 子模块未声明许可证，游戏内容的权利归其所有者。CONTRIBUTING.md 规定了净室政策（不得参考内部 Microsoft 软件、文档或 SDK，不得上传受版权保护的材料），并禁止 AI 生成的贡献；所审来源未确立 REA 使用。"
+    ]
   }
 }

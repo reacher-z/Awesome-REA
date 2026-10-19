@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 335](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-335-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 173](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-173-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 77](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 336](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-336-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 174](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-174-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 77](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (156) · [应用](#app) (48)
+- [网站](#website) (19) · [游戏](#game) (157) · [应用](#app) (48)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (173) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (174) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -971,6 +971,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   为日版 Touhou 9.5：东方文花帖 1.02a 原可执行文件重建源码；只有使用固定版本 Visual C++ .NET 2003 构建、并与单一经哈希核验的目标进行可复现字节比较后，才认定函数级一致。整个程序也能编译链接为可游玩的 Windows i386 可执行文件，而 README 将可玩性、函数匹配与整个可执行文件一致性列为相互独立的状态。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th095-reconstruction-case/)
+
+- [**Marathon Recompiled：《索尼克》（2006）的静态重编译**](https://github.com/sonicnext-dev/MarathonRecomp)
+
+  将 Xbox 360 版《索尼克》（2006）静态重编译为 Windows、Linux 和 macOS 原生移植版：XenonRecomp 把游戏的 PowerPC 代码转换为 C++，XenosRecomp 把其 Xenos 着色器转换为 HLSL。游戏文件通过内置安装程序取自使用者自有的副本，原版游戏中的漏洞被有意保留。README 提醒该项目仍在积极开发中，并不面向公众使用。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/marathon-recompiled-sonic-06-case/)
 
 #### 工具、项目与集成
 
