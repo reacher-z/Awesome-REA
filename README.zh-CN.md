@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 398](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-398-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 399](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-399-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (36) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (37) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1863,6 +1863,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Check Point Research 开发的源码辅助 IDA Python 插件，用于在大型二进制和固件中查找并匹配编译进去的开源库。识别脚本会列出二进制中存在哪些受支持的库（如 OpenSSL、zlib、libpng 和 net-snmp），并识别其版本；匹配脚本再借助由该库版本生成的 JSON 配置，按原始函数顺序定位各个编译单元，匹配其中的函数及其调用的外部 libc 函数，并可把选定的匹配结果作为名称导入 IDA。附带的 Thumbs Up 脚本可预先改进 IDA 的函数分析，包括区分固件中的 ARM 与 Thumb 代码。
 
   工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/karta/)
+
+- [**VTIL-Core 虚拟机翻译中间语言核心库**](https://github.com/vtil-project/VTIL-Core)
+
+  VTIL（Virtual-machine Translation Intermediate Language，虚拟机翻译中间语言）项目的 C++20 核心库。VTIL 是一种中间语言及优化编译器，README 称其专为二进制去混淆与去虚拟化分析而设计。与 LLVM IR 不同，VTIL 保留原生栈、物理寄存器和非 SSA 形式，因此寄存器机或栈机代码都能提升到其中，原生指令可直接嵌入 IL 流，代码也能重新输出到任意虚拟地址。该库提供包含例程、基本块和序列化的 IL、符号表达式引擎与化简器、死代码消除、传播和栈固定等优化遍，以及基于 Capstone/Keystone 的 AMD64 与 ARM64 反汇编和汇编辅助功能。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/vtil-core/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
