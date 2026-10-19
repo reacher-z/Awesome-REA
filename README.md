@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 389](https://img.shields.io/badge/resources-389-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 390](https://img.shields.io/badge/resources-390-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (23) · [Game](#game) (174) · [App](#app) (58)
+- [Website](#website) (23) · [Game](#game) (175) · [App](#app) (58)
 - [Native Binary](#native-binary) (31) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1256,6 +1256,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   PlayStation 1 emulator forked from PCSX and built around development and reverse engineering, with an interpreter and dynamic recompiler, software and OpenGL renderers, a MIPS debugger, VRAM viewer, SPU and GPU debugging tools, and a built-in GDB server that its documentation connects to gdb, IDA Pro and Ghidra's debugger. A LuaJIT API exposes breakpoints, memory and registers, an assembler and an ISO builder, and an optional REST web server can dump RAM and VRAM. The repository also holds the OpenBIOS replacement BIOS, PS-EXE conversion and packing tools, a Psy-Q object-file converter, Ghidra scripts for exchanging symbols and overlays with the emulator, and PS1 hardware designs.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/pcsx-redux/)
+
+- [**Il2CppInspector**](https://github.com/djkaty/Il2CppInspector)
+
+  Static analysis tool for Unity IL2CPP applications that reads an IL2CPP binary with its global-metadata.dat and outputs the application's type structure and method addresses as C# stub code, .NET assembly shim DLLs for decompilers such as ILSpy and dnSpy, IDA and Ghidra Python scripts that apply symbols and types, C++ type scaffolding and JSON address maps. Three APIs, also published as a NuGet package, and a plugin SDK expose the binary metadata, .NET type model and C++ model for custom analysis. The README states that it is not a decompiler and does not recover method source code.
+
+  Tool · Also: App, Binary · [Requirements & evidence](https://awesomerea.org/resources/il2cppinspector/)
 
 <a id="app"></a>
 ### App

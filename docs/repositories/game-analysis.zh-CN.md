@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**391 个仓库** · 2026-10-16 UTC
+**392 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -20,6 +20,7 @@
 - [morkt/GARbro](https://github.com/morkt/GARbro) — 视觉小说资源浏览器。 **[3,328 星标]** · 精选：[GARbro](https://awesomerea.org/zh/resources/garbro/)
 - [4sval/FModel](https://github.com/4sval/FModel) — Unreal Engine 归档文件浏览器 **[3,258 星标]** · 精选：[FModel 游戏资源浏览器](https://awesomerea.org/zh/resources/fmodel/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Linux 逆向工程工具。 **[3,124 星标]**
+- [djkaty/Il2CppInspector](https://github.com/djkaty/Il2CppInspector) — 用于逆向工程 Unity IL2CPP 二进制文件的强大自动化工具。 **[3,056 星标]** · 精选：[Il2CppInspector Unity IL2CPP 静态分析工具](https://awesomerea.org/zh/resources/il2cppinspector/)
 - [SamboyCoding/Cpp2IL](https://github.com/SamboyCoding/Cpp2IL) — 用于逆向分析 Unity IL2CPP 工具链的工具，仍在开发中。 **[3,026 星标]** · 精选：[Cpp2IL](https://awesomerea.org/zh/resources/cpp2il/)
 - [UE4SS-RE/RE-UE4SS](https://github.com/UE4SS-RE/RE-UE4SS) — 面向 UE4/5 游戏的可注入 LUA 脚本系统、SDK 生成器、实时属性编辑器及其他转储工具 **[3,011 星标]** · 精选：[UE4SS（虚幻引擎脚本系统）](https://awesomerea.org/zh/resources/ue4ss/)
 - [UnderminersTeam/UndertaleModTool](https://github.com/UnderminersTeam/UndertaleModTool) — 用于为《传说之下》（以及其他 GameMaker 游戏！）制作模组、反编译和解包的全面工具。 **[2,081 星标]** · 精选：[UndertaleModTool](https://awesomerea.org/zh/resources/undertalemodtool/)
