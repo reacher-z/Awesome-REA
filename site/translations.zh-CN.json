@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "kinoko-mkwii-physics-reimplementation-case": {
+    "name": "Kinoko：为精确回放幽灵记录而重新实现 Mario Kart Wii 物理引擎",
+    "requirements": [
+      "README 介绍项目是 Mario Kart Wii 物理引擎的 C++ 重新实现，目标是完全准确地回放幽灵记录。所审提交中，STATUS.md 列出 55 个计时赛幽灵测试用例，全部标为逐帧同步；最新 GitHub 发布版 0.6（2025-09-04）附有模拟器的 x86-64 Linux、macOS 和 Windows 二进制文件。源码注释标明了原版游戏中的地址，但项目不会重新构建游戏可执行文件；README 将这一方向指向独立的 riidefi/mkw 一致性反编译项目。",
+      "运行时需要使用者自备 Mario Kart Wii 光盘中的 Race 文件夹（Common 与赛道归档），并按相对可执行文件的路径放置；仓库不附带任何游戏文件，README 也要求贡献的前端不得分发游戏内素材。仓库中的样例是计时赛幽灵文件（.rkg）及逐帧 .krkg 参照轨迹；README 称后者由运行 PAL 版游戏的定制 vabold/mkw-sp 构建生成。这类轨迹是从游戏中采集的验证数据，在重建项目中很常见。",
+      "README 列出 g++ 13.1（C++23）、ninja 1.3 和 Python 3.6；configure.py 生成 ninja 构建，并把 testCases.json 编译为二进制测试套件文件。CMakeLists.txt 还提供 libkinoko 库目标，可将引擎嵌入其他 C++23 项目。CI 在 Ubuntu 上使用 GCC 14 构建；程序是带测试与回放模式的命令行宿主，README 表示暂无 GUI 计划。",
+      "kinoko test 以精确相等的方式，将位置、旋转、内部与外部速度、速率、加速度、软速度上限、比赛完成度和检查点数值与每一帧 .krkg 数据比较，并报告第一个失去同步的帧；kinoko replay 检查幽灵记录完赛时间是否与 .rkg 文件头中的时间一致。CI 使用从机密配置 URL 获取的运行文件执行测试套件，并检查 STATUS.md 是否为最新。这些都是项目报告的结果，本合集未构建或运行任何内容。",
+      "LICENSE 对项目采用 MIT（版权归 vabold，2022–2026）；Mario Kart Wii 及其游戏数据仍归 Nintendo 所有，随附的 doxygen-awesome-css 主题另有许可证文件。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

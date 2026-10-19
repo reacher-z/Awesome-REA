@@ -7196,5 +7196,41 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "kinoko-mkwii-physics-reimplementation-case",
+    "name": "Kinoko: reimplementing Mario Kart Wii’s physics engine for exact ghost replay",
+    "url": "https://github.com/vabold/Kinoko",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements Mario Kart Wii’s physics engine in C++ as a command-line simulator, continuing stblr/Hanachan’s goal of perfectly accurate time-trial ghost replay. Each test case replays a recorded ghost through the engine and compares kart position, rotation, velocities, speed and checkpoint state frame by frame with a trace captured from the original game. It is a behavioural reimplementation of the physics only, not a matching decompilation, and has no graphical frontend.",
+    "description_zh": "以 C++ 将 Mario Kart Wii 的物理引擎重新实现为命令行模拟器，延续 stblr/Hanachan 的目标：完全准确地回放计时赛幽灵记录。每个测试用例让引擎重放一条幽灵记录，并逐帧将赛车的位置、旋转、速度向量、速率和检查点状态与从原版游戏采集的轨迹比较。它只在行为层面重新实现物理部分，并非一致性反编译，也没有图形前端。",
+    "evidence_url": "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a C++ reimplementation of Mario Kart Wii’s physics engine aiming at perfectly accurate ghost replay. At the reviewed commit STATUS.md lists 55 time-trial ghost test cases, each marked synchronized for every frame; the latest GitHub release, 0.6 (2025-09-04), adds x86-64 Linux, macOS and Windows binaries of the simulator. Source comments name addresses in the original game, but nothing rebuilds its executable; README points to the separate riidefi/mkw matching decompilation for that.",
+      "Running needs the Race folder (the Common and course archives) from your own Mario Kart Wii disc, placed relative to the executable; the repository ships no game files, and README requires any contributed frontend not to distribute in-game assets. The committed samples are time-trial ghost files (.rkg) with per-frame .krkg reference traces that README says come from a custom vabold/mkw-sp build running the PAL release; such traces are verification data captured from the game, as is common for reconstruction projects.",
+      "README lists g++ 13.1 with C++23, ninja 1.3 and Python 3.6; configure.py generates the ninja build and compiles testCases.json into the binary suite file. CMakeLists.txt also exposes a libkinoko library target for embedding the engine in other C++23 projects. CI builds with GCC 14 on Ubuntu; the program is a command-line host with test and replay modes, and README says no GUI is planned.",
+      "kinoko test compares position, rotation, internal and external velocity, speed, acceleration, soft speed limit, race completion and checkpoint values with every .krkg frame by exact equality and reports the first desynchronized frame; kinoko replay checks whether a ghost finishes with the time in its .rkg header. CI runs the suite with runtime files fetched from a secret-configured URL and checks that STATUS.md is current. These are project-reported results; this collection built and ran nothing.",
+      "LICENSE applies MIT (copyright vabold, 2022–2026) to the project; Mario Kart Wii and its game data keep Nintendo’s rights, and the bundled doxygen-awesome-css theme has its own license file. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/STATUS.md",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/docs/KRKG.md",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/docs/TestCase.md",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/source/host/KTestSystem.cc",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/source/game/system/ResourceManager.cc",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/configure.py",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/CMakeLists.txt",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/.github/workflows/build.yml",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/tools/status_check.py",
+      "https://github.com/vabold/Kinoko/blob/550c97a299c4de4a9f7cb90bc79cf8c7c768557c/LICENSE",
+      "https://github.com/vabold/Kinoko/releases/tag/0.6"
+    ]
   }
 ]
