@@ -15548,5 +15548,36 @@
       "https://github.com/tmcleroy/cps2recomp/blob/74e26fb10e166fbfacfb1e6520fbc05e400642b1/LICENSE",
       "https://github.com/tmcleroy/cps2recomp/releases/tag/v0.4.0-beta.3"
     ]
+  },
+  {
+    "id": "binbloom",
+    "name": "binbloom",
+    "url": "https://github.com/quarkslab/binbloom",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Quarkslab command-line tool that infers basic properties of a headerless raw firmware image from simple statistics on its content, which is why the README says it works with any architecture. It guesses endianness from how the high bytes of pointer-sized values cluster under each byte order, and ranks candidate loading (base) addresses by how many values would then point at indexed text strings and pointer arrays. Given a base address, it also searches automotive ECU firmware for a table of Unified Diagnostic Services (UDS) command IDs and prints the inferred structure layout for use in a disassembler.",
+    "description_zh": "Quarkslab 开发的命令行工具，通过对内容做简单统计来推断无文件头原始固件镜像的基本属性，因此 README 称其适用于所有架构。它根据指针宽度数值的高位字节在两种字节序下的聚集程度推测端序，并按候选加载地址（基址）下有多少数值会指向已索引的文本字符串和指针数组，对候选地址排序。给定基址后，它还能在汽车 ECU 固件中查找统一诊断服务（UDS）命令 ID 表，并输出推断出的结构体布局，供反汇编器使用。",
+    "evidence_url": "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.1, published 2024-06-06 and tagged at the master head, commit 95cfaac from 2022-11-07, whose source reports version 2.1.0. The release adds a -m option for base-address alignment and fixes a crash on very small files and null-pointer and floating-point errors; configure.ac and the man page still say 2.0, and master has no later commits.",
+      "The README documents a Linux-only source build with autoreconf, configure, make and make install; configure.ac needs a C compiler, libm and pthreads. The release attaches no prebuilt binaries.",
+      "Each run takes one raw firmware dump supplied by the user and assumes a 32-bit target unless -a 64 is given. The README warns that endianness detection may be unreliable below about 10 KB and offers -e to force it; -t adds threads, -f takes a file of known function addresses, and the experimental -d deep search is slower. Output is a ranked list of candidate base addresses, sometimes marked not sure, and the UDS search runs only when -b supplies the base address.",
+      "The README calls the UDS search heuristic and prone to false positives, so each candidate table has to be checked by hand. The repository contains no tests or sample firmware and publishes no accuracy results.",
+      "Apache-2.0. Nothing was built and no firmware was analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/man/binbloom.1",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/configure.ac",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/src/binbloom.c#L1197-L1259",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/src/binbloom.c#L1422-L1443",
+      "https://github.com/quarkslab/binbloom/blob/95cfaacf2dfcbeba51c7d09132f188331449ec24/LICENSE",
+      "https://github.com/quarkslab/binbloom/releases/tag/v2.1"
+    ]
   }
 ]
