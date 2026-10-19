@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 436](https://img.shields.io/badge/resources-436-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 437](https://img.shields.io/badge/resources-437-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (39) · [References and Learning](#references-and-learning) (28)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (28)
 
 **More ways to browse**
 
@@ -2511,6 +2511,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Agent playbook, skill set and stdio MCP server for adding online or split-screen co-op to single-player games the players already have installed. Agents either revive an existing co-op mod or reverse engineer the game and engine to build one, test it with in-game bots and send their notes back, while the MCP server searches a directory of 223 co-op projects and 32 open gaps, detects a game’s engine from its install folder and records the executable’s identity. Its README and reverse-engineering skill pair it with REA for native code, and two game write-ups report observations made through REA’s Ghidra lane.
 
   Integration · Community REA · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/coop-anything/)
+
+- [**DeepExtract (DeepExtractIDA)**](https://github.com/marcosd4h/DeepExtractIDA)
+
+  IDA Pro 9.x plugin and PowerShell batch extractor that turn Windows PE files into material AI coding agents can read: a per-binary SQLite database of PE metadata, signatures, disassembly, Hex-Rays pseudocode, cross-references, strings, stack frames, loops and dangerous API calls, plus optional grouped C++ and assembly files with per-function caller, callee and string headers and JSON indexes. It runs headless over directories, file lists or the modules of a running process, or interactively on the open IDA database, keeping the analyst’s renames and comments. The agent commands that work on this output come from the separate DeepExtractRuntime project.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/deepextract-ida/)
 
 <a id="related-collections"></a>
 ### Related Collections
