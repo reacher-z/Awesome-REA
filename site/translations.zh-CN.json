@@ -3813,5 +3813,14 @@
       "skills 目录包含一个采用 Claude Code 格式的 gda-analyze 技能，通过 Python 封装调用随附的 GDA.exe，用于追踪代码、提取威胁指标并起草恶意软件报告；另有服务器模式客户端和测试脚本。其输出与内置的基于规则的扫描结果一样，需要人工确认；本次审阅未运行 GDA 的任何部分。",
       "LICENSE 为 Apache-2.0，NOTICE 也称 GDA 大部分内容以该许可证发布，其中 adb 和 dex 库取自 Android SDK 与 AOSP；这与 README 中的闭源说法相互矛盾，因此二进制程序的使用条款并不明确。待分析的应用由使用者自备。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "gef": {
+    "name": "GEF GDB 增强扩展",
+    "requirements": [
+      "需要以 Python 3.10+ 构建的 GDB 10.0+（兼容性表显示自 GEF 2025.01 起即为此基线），宿主机上还需有 file、readelf、nm、ps 和 python3；仍需 Python 2 的用户请改用独立的 gef-legacy。README 介绍的安装方式是通过安装脚本或手动下载 gef.py，并在用户的 .gdbinit 文件中加载它。",
+      "审阅时的版本为 2026.01，发布于 2026-02-02，不含二进制资源；所审阅的 main 分支提交比该版本多 12 个提交，增加了对 glibc 2.42/2.43 堆的支持并移除了无人维护的命令。更多命令位于独立的 GEF-Extras 仓库，本次未审阅。",
+      "GEF 依赖 GDB API 以及 /proc/<pid> 等 Linux 特有的信息来源，因此部分功能在定制或加固的系统上可能无法使用，堆命令也只支持 glibc 分配器。qemu 模式需要本地保存一份被调试的二进制，因为 QEMU 的 GDB stub 无法传输文件。README 将其定位为面向漏洞利用开发者和逆向工程人员的工具；本条目只涉及其调试与检查用途。",
+      "采用 MIT 许可。测试使用 pytest，并须在 GDB 编译时所用的 Python 版本下运行。本次未运行任何调试会话。"
+    ]
   }
 }

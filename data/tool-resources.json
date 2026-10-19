@@ -10169,5 +10169,39 @@
       "https://github.com/charles2gan/GDA-android-reversing-Tool/blob/20f8ce8d51b0dc032c08e009e28ea76995d71889/update_history",
       "https://github.com/charles2gan/GDA-android-reversing-Tool/releases/tag/GDA4.12"
     ]
+  },
+  {
+    "id": "gef",
+    "name": "GEF (GDB Enhanced Features)",
+    "url": "https://github.com/hugsy/gef",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Single-file Python extension, gef.py, that adds dynamic-analysis commands to GDB. Each stop shows a context view of registers, stack, code, threads and call trace, and commands cover memory maps, pointer dereferencing, searching process memory for patterns, ELF and security-property information, process status and glibc heap inspection. An architecture abstraction layer covers x86-32/64, ARMv5–v7, AArch64, SPARC, MIPS and PowerPC, and gef-remote enriches remote sessions through gdbserver or the GDB stubs of qemu-user and qemu-system.",
+    "description_zh": "单文件 Python 扩展 gef.py，为 GDB 增加动态分析命令。每次程序停下时都会显示寄存器、栈、代码、线程和调用轨迹等上下文视图，命令涵盖内存映射、指针解引用、在进程内存中搜索模式、ELF 与安全属性信息、进程状态以及 glibc 堆检查。其架构抽象层覆盖 x86-32/64、ARMv5–v7、AArch64、SPARC、MIPS 和 PowerPC；gef-remote 命令可通过 gdbserver 或 qemu-user、qemu-system 的 GDB stub 增强远程调试会话。",
+    "evidence_url": "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Needs GDB 10.0+ built with Python 3.10+, the baseline since GEF 2025.01 in the compatibility table, plus file, readelf, nm, ps and python3 on the host; Python 2 users are pointed to the separate gef-legacy. The README installs it by downloading gef.py, through an install script or manually, and sourcing it from the user's .gdbinit file.",
+      "Release at review: 2026.01, published 2026-02-02 without binary assets; the reviewed main commit is 12 commits ahead, adding glibc 2.42/2.43 heap support and removing unmaintained commands. More commands live in the separate GEF-Extras repository, which was not reviewed.",
+      "GEF relies on the GDB API and Linux-specific sources such as /proc/<pid>, so some features may not work on custom or hardened systems, and heap commands support only the glibc allocator. qemu mode needs a local copy of the debugged binary because QEMU's GDB stub cannot transfer files. The README aims it at exploit developers and reverse engineers; this entry covers its debugging and inspection use.",
+      "MIT license. Tests run with pytest under the Python version GDB was built against. No debugging sessions were run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/gef.py#L8-L28",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/gef.py#L130-L131",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/install.md",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/compat.md",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/commands/gef-remote.md",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/commands/heap.md",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/index.md#L83-L85",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/docs/testing.md",
+      "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/LICENSE",
+      "https://github.com/hugsy/gef/releases/tag/2026.01"
+    ]
   }
 ]
