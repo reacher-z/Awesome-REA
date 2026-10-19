@@ -7606,5 +7606,37 @@
       "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
       "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
     ]
+  },
+  {
+    "id": "binsync",
+    "name": "BinSync",
+    "url": "https://github.com/binsync/binsync",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Decompiler plugin for collaborative reverse engineering that records each analyst's work in a shared Git repository, one branch per user, so teammates can pull, push or auto-push changes across IDA Pro, Binary Ninja, Ghidra and angr-management. Synced artifacts are function headers (names, arguments and types), stack and global variables, structs, enums and comments, including user-defined types. It is built by mahaloz, the angr team and the SEFCOM research lab and is used by the Shellphish hacking team; scripting goes through the separate DecLib library.",
+    "description_zh": "用于协同逆向工程的反编译器插件，把每位分析者的工作记录在共享 Git 仓库中（每位用户一个分支），队友可在 IDA Pro、Binary Ninja、Ghidra 和 angr-management 之间拉取、推送或自动推送更改。可同步的内容包括函数头（名称、参数和类型）、栈变量和全局变量、结构体、枚举和注释，并支持用户自定义类型。它由 mahaloz、angr 团队和 SEFCOM 研究实验室开发，并被 Shellphish 黑客团队使用；脚本操作需借助独立的 DecLib 库。",
+    "evidence_url": "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 5.15.4, published 2026-08-21 on PyPI and GitHub (with an IDA plugin ZIP); the reviewed main commit is one commit ahead, adding Ghidra comment sync and auto-push without a version bump. Install with pip and then binsync --install, which places the plugin in each decompiler; Binary Ninja also offers it in its plugin manager. Every setup needs Python 3.10+ and Git.",
+      "Supported hosts per the README: IDA Pro 8.4+ (older IDA versions need BinSync 4.10.1), Binary Ninja 2.4+, angr-management 9.0+ and Ghidra 12.0+ launched in PyGhidra mode. Support differs by decompiler: angr-management does not sync global variables, structs or enums, and although the Ghidra table marks every artifact as supported, the README text still calls Ghidra support early-stage and says to expect only minimal features such as name and comment syncing.",
+      "Collaborators share a Git repository and analyze the same binary, which each of them supplies. The optional extras add an auxiliary server and an AI user that applies DAILA prompt results to a project and requires an OpenAI API key; its changes are model output to be reviewed.",
+      "BSD-2-Clause. The README's term REAs means reverse-engineering artifacts and does not refer to the REA project. Nothing was installed and no projects were synced."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md#L31-L51",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/README.md#L101-L112",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/pyproject.toml",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/binsync/__main__.py#L60-L80",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/binsync/core/client.py#L26-L27",
+      "https://github.com/binsync/binsync/blob/07a2ce87638b25728564cbc5198e1bd945d4d70c/LICENSE",
+      "https://github.com/binsync/binsync/releases/tag/v5.15.4",
+      "https://pypi.org/project/binsync/5.15.4/"
+    ]
   }
 ]

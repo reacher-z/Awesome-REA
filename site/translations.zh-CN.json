@@ -3097,5 +3097,14 @@
       "跟踪目标需要一台 arm、arm64、x86 或 x64 的 Android 设备，并运行 Frida server，README 要求其 Frida 支持版本大于 14，且目标应用包已安装在设备上。",
       "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。"
     ]
+  },
+  "binsync": {
+    "name": "BinSync 协同逆向插件",
+    "requirements": [
+      "审阅时的版本为 5.15.4，于 2026-08-21 发布在 PyPI 和 GitHub 上（附 IDA 插件 ZIP）；所审阅的 main 提交比它多一个提交，新增 Ghidra 注释同步和自动推送，但未提升版本号。先用 pip 安装，再运行 binsync --install 将插件装入各反编译器；Binary Ninja 的插件管理器中也可直接获取。所有安装方式都需要 Python 3.10+ 和 Git。",
+      "README 列出的宿主版本为：IDA Pro 8.4+（更早的 IDA 需使用 BinSync 4.10.1）、Binary Ninja 2.4+、angr-management 9.0+，以及以 PyGhidra 模式启动的 Ghidra 12.0+。各反编译器的支持程度不同：angr-management 不同步全局变量、结构体和枚举；Ghidra 的表格虽标注所有内容均已支持，README 正文仍称其处于早期阶段，只能期待名称和注释同步等最基本的功能。",
+      "协作者共享一个 Git 仓库，并分析同一个由各自提供的二进制。可选的 extras 组件增加辅助服务器和一个 AI 用户，后者把 DAILA 提示的结果写入项目，需要 OpenAI API 密钥；其改动属于模型输出，需要人工复核。",
+      "采用 BSD-2-Clause 许可。README 中的 REAs 指逆向工程产物（reverse-engineering artifacts），与 REA 项目无关。本次未安装，也未同步任何项目。"
+    ]
   }
 }

@@ -103,7 +103,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [fay59/fcd](https://github.com/fay59/fcd) — An optimizing decompiler **[773 stars]**
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — An LLM extension for Ghidra to enable AI assistance in RE. **[760 stars]**
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — Recognize cpu instructions in an arbitrary binary file **[757 stars]**
-- [binsync/binsync](https://github.com/binsync/binsync) — A reversing plugin for cross-decompiler collaboration, built on git. **[752 stars]**
+- [binsync/binsync](https://github.com/binsync/binsync) — A reversing plugin for cross-decompiler collaboration, built on git. **[752 stars]** · Curated: [BinSync](https://awesomerea.org/resources/binsync/)
 - [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]**
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — A curated list of awesome projects, articles and the other materials powered by Radare2 **[739 stars]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — RISC-V simulator for x86-64 **[727 stars]**
