@@ -4,7 +4,7 @@ from __future__ import annotations
 from html import escape
 from pathlib import Path
 import re
-from urllib.parse import urlsplit
+from urllib.parse import quote, urlencode, urlsplit
 
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
@@ -12,6 +12,10 @@ from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
 from open_graph import open_graph_meta
 
 MARKER = '<!-- Generated curated entry page. -->'
+REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
+# Issue forms whose `resource` input ("Resource URL or catalog ID") accepts a URL prefill.
+FEEDBACK_FORMS = (('broken-resource.yml', 'Correction', 'Report an outdated entry', '报告条目过时'),
+                  ('translation.yml', 'Translation', 'Suggest a translation fix', '建议修正翻译'))
 
 
 def entry_path(kind: str, identifier: str, language: str = 'en') -> str:
@@ -80,6 +84,23 @@ def _sources(urls: list[str], language: str) -> str:
     return f'<section class="entry-section" aria-labelledby="entry-sources"><h2 id="entry-sources">{("一手来源" if language == "zh" else "Primary sources")}</h2><ol class="entry-sources">{"".join(links)}</ol></section>'
 
 
+def feedback_urls(kind: str, record: dict, repository_url: str = REPOSITORY_URL) -> list[str]:
+    """Prefilled correction and translation forms; values come only from the record's ID and English name."""
+    identifier = record['id']
+    entry_path(kind, identifier)
+    name = _text(record, 'name' if kind == 'resource' else 'title')
+    return [f'{repository_url}/issues/new?' + urlencode({'template': template, 'title': f'{prefix}: {name}', 'resource': identifier}, quote_via=quote)
+            for template, prefix, _, _ in FEEDBACK_FORMS]
+
+
+def _feedback(kind: str, record: dict, language: str, repository_url: str) -> str:
+    labels = [form[3 if language == 'zh' else 2] for form in FEEDBACK_FORMS]
+    # The collection's own issue forms may receive the site's origin as referrer; noopener isolates the tab.
+    links = ''.join(f'<a href="{_public_url(url)}" target="_blank" rel="noopener">{escape(label)} <span aria-hidden="true">↗</span></a>'
+                    for url, label in zip(feedback_urls(kind, record, repository_url), labels))
+    return f'<p class="entry-feedback">{links}</p>'
+
+
 def _definitions(items: list[tuple[str, str]]) -> str:
     return '<dl class="entry-facts">' + ''.join(f'<dt>{escape(label)}</dt><dd>{escape(value)}</dd>' for label, value in items) + '</dl>'
 
@@ -111,7 +132,7 @@ def _output_path(root: Path, relative: str) -> Path:
     return current
 
 
-def _resource_content(record: dict, language: str, discussion: str = '') -> tuple[str, str, str]:
+def _resource_content(record: dict, language: str, discussion: str = '', feedback: str = '') -> tuple[str, str, str]:
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     title = _text(record, 'name_zh' if zh else 'name')
@@ -131,12 +152,12 @@ def _resource_content(record: dict, language: str, discussion: str = '') -> tupl
 <section class="entry-section" aria-labelledby="entry-requirements"><h2 id="entry-requirements">{label('Requirements and limitations', '使用条件与局限')}</h2><ul class="entry-requirements">{requirements}</ul></section>
 <section class="entry-section" aria-labelledby="entry-review"><h2 id="entry-review">{label('About this entry', '关于此条目')}</h2>{_definitions(facts)}
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(record['verified_at'], quote=True)}">{escape(record['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p></section>
+<p class="entry-review-note">{label('The description was reviewed against primary sources. This does not establish runtime testing, security auditing or verified compatibility.', '说明已依据一手来源复核；这不代表已运行验证、经过安全审计或确认兼容。')}</p>{feedback}</section>
 {discussion}{_sources([record['evidence_url'], *record.get('additional_evidence_urls', [])], language)}'''
     return title, description, content
 
 
-def _paper_content(paper: dict, language: str, discussion: str = '') -> tuple[str, str, str]:
+def _paper_content(paper: dict, language: str, discussion: str = '', feedback: str = '') -> tuple[str, str, str]:
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     title = _text(paper, 'title_zh' if zh else 'title')
@@ -164,7 +185,7 @@ def _paper_content(paper: dict, language: str, discussion: str = '') -> tuple[st
 <section class="entry-section" aria-labelledby="entry-citation"><h2 id="entry-citation">{label('Publication and review details', '发表与复核详情')}</h2>{_definitions(facts)}
 <p>{escape(paper['metadata_notes_zh' if zh else 'metadata_notes'])}</p>
 <p class="entry-reviewed">{label('Sources reviewed', '来源复核于')} <time datetime="{escape(paper['verified_at'], quote=True)}">{escape(paper['verified_at'][:10])}</time></p>
-<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p></section>
+<p class="entry-review-note">{label('Source review only; experiments were not rerun for this collection. Cite the original authors using the linked paper or BibTeX.', '本合集仅做来源复核，未重新运行论文实验。请通过原始论文或 BibTeX 引用原作者。')}</p>{feedback}</section>
 {discussion}{_sources(paper['evidence_urls'], language)}'''
     return title, description, content
 
@@ -181,7 +202,8 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     listing = f'{prefix}/{kind}s/'
     list_name = label('Curated resources', '精选资源') if kind == 'resource' else label('Research papers', '研究论文')
     discussion = _survey_discussion(survey_discussions.get(record['id'], []), language)
-    title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion)
+    feedback = _feedback(kind, record, language, repository_url)
+    title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion, feedback)
     entity_id = canonical + ('#resource' if kind == 'resource' else '#paper')
     entity = ({'@type': 'CreativeWork', '@id': entity_id, 'url': record['url'], 'name': title, 'description': description}
               if kind == 'resource' else {**scholarly_article(record, language), '@id': entity_id})

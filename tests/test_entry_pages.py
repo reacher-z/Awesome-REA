@@ -3,6 +3,7 @@ from copy import deepcopy
 from html import unescape
 from html.parser import HTMLParser
 import json
+from urllib.parse import parse_qs, urlsplit
 from pathlib import Path
 import sys
 from tempfile import TemporaryDirectory
@@ -10,7 +11,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_entry_pages import MARKER, build_entry_pages, entry_path
+from build_entry_pages import MARKER, build_entry_pages, entry_path, feedback_urls
 from build_survey import build_survey, discussion_sections
 
 
@@ -102,6 +103,29 @@ class EntryPageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'safe section IDs'):
                 build_entry_pages(root, [], [p], survey_discussions=sections)
             self.assertEqual(list(root.iterdir()), [])
+
+    def test_correction_and_translation_forms_are_prefilled_from_id_and_name(self):
+        r = resource(name='R&D "tool" #1 / 100%')
+        p = paper()
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            build_entry_pages(root, [r], [p])
+            for language, labels in (('en', ['Report an outdated entry', 'Suggest a translation fix']),
+                                     ('zh', ['报告条目过时', '建议修正翻译'])):
+                for kind, record, name in (('resource', r, r['name']), ('paper', p, p['title'])):
+                    text = (root / entry_path(kind, record['id'], language).lstrip('/') / 'index.html').read_text()
+                    links = [link for link in Page(text).links if '/issues/new?' in link.get('href', '')]
+                    self.assertEqual([link['href'] for link in links], feedback_urls(kind, record))
+                    self.assertTrue(all(link['target'] == '_blank' and 'noopener' in link['rel'] for link in links))
+                    for link, template, prefix, label in zip(links, ('broken-resource.yml', 'translation.yml'), ('Correction', 'Translation'), labels):
+                        url = urlsplit(link['href'])
+                        self.assertEqual((url.scheme, url.netloc, url.path), ('https', 'github.com', '/reacher-z/Awesome-REA/issues/new'))
+                        self.assertNotIn(' ', url.query)
+                        self.assertEqual(parse_qs(url.query), {'template': [template], 'title': [f'{prefix}: {name}'], 'resource': [record['id']]})
+                        self.assertIn(label + ' <span aria-hidden="true">↗</span></a>', text)
+                    # Both links sit in the entry's review section, before the source list.
+                    self.assertLess(text.index('class="entry-feedback"'), text.index('id="entry-sources"'))
+                    self.assertGreater(text.index('class="entry-feedback"'), text.index('id="entry-review"' if kind == 'resource' else 'id="entry-citation"'))
 
     def test_full_bilingual_evidence_and_canonical_identity(self):
         r, p = resource(), paper()

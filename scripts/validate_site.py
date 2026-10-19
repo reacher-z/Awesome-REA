@@ -8,6 +8,7 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
+from build_entry_pages import feedback_urls
 from build_manifest import read_build_manifest
 from build_paper_pages import TARGET_LABELS, bibtex_text, papers_newest_first
 from validate_papers import read_papers
@@ -766,6 +767,7 @@ def validate_entry_outputs(pages, resources, papers):
         phrases.append(record['verified_at'][:10])
         assert all(normalize(phrase) in text for phrase in phrases), f'Detail page lost localized source content: {route}'
         assert links <= set(article['links']), f'Detail article lost upstream evidence or citation links: {route}'
+        assert set(feedback_urls(kind, record)) <= set(article['links']), f'Detail page lacks its prefilled correction and translation links: {route}'
 
 
 def main():
