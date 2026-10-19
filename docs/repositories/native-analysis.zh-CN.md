@@ -10,7 +10,7 @@
 - [WerWolv/ImHex](https://github.com/WerWolv/ImHex) — 🔍 面向逆向工程师、程序员，以及凌晨 3 点工作时仍爱护视力的人士的十六进制编辑器。 **[55,252 星标]** · 精选：[ImHex](https://awesomerea.org/zh/resources/imhex/)
 - [radareorg/radare2](https://github.com/radareorg/radare2) — 类 UNIX 的逆向工程框架和命令行工具集。 **[25,054 星标]** · 精选：[radare2](https://awesomerea.org/zh/resources/radare2/)
 - [rizinorg/cutter](https://github.com/rizinorg/cutter) — 由 rizin 驱动的自由开源逆向工程平台。 **[20,030 星标]** · 精选：[Cutter](https://awesomerea.org/zh/resources/cutter/)
-- [mytechnotalent/Reverse-Engineering](https://github.com/mytechnotalent/Reverse-Engineering) — 免费的全面逆向工程教程，涵盖 x86、x64、32 位/64 位 ARM、8 位 AVR 和 32 位 RISC-V 架构。 **[14,719 星标]**
+- [mytechnotalent/Reverse-Engineering](https://github.com/mytechnotalent/Reverse-Engineering) — 免费的全面逆向工程教程，涵盖 x86、x64、32 位/64 位 ARM、8 位 AVR 和 32 位 RISC-V 架构。 **[14,719 星标]** · 精选：[逆向工程教程（mytechnotalent）](https://awesomerea.org/zh/resources/mytechnotalent-reverse-engineering/)
 - [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp) — 通过 MCP 将 IDA Pro 与语言模型连接起来的 AI 逆向工程助手。 **[12,922 星标]** · 精选：[IDA Pro MCP（mrexodia）](https://awesomerea.org/zh/resources/ida-pro-mcp-community/)
 - [horsicq/Detect-It-Easy](https://github.com/horsicq/Detect-It-Easy) — 用于识别文件类型的程序，支持 Windows、Linux 和 macOS。 **[11,732 星标]** · 精选：[Detect It Easy](https://awesomerea.org/zh/resources/detect-it-easy/)
 - [LaurieWired/GhidraMCP](https://github.com/LaurieWired/GhidraMCP) — Ghidra 的 MCP 服务器。 **[11,297 星标]** · 精选：[GhidraMCP](https://awesomerea.org/zh/resources/ghidramcp/)
