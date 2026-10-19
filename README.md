@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 296](https://img.shields.io/badge/resources-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 296](https://img.shields.io/badge/resources-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 59](https://img.shields.io/badge/papers-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (58) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (59) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1887,13 +1887,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**58 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**59 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (12) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (13) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -2071,6 +2071,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The method depends on underlying decompilation and learned predictions over C/C++ data. Cross-checking reduces conflicting predictions but does not prove that recovered names or layouts match the unavailable source. The public artifact includes models, processed data, and evaluation code.
 
   **Publication:** 2024 · ACM CCS 2024 · Conference paper · Danning Xie et al.
+
+  </details>
+
+- [**Self-Constructed Context Decompilation with Fined-grained Alignment Enhancement**](https://aclanthology.org/2024.findings-emnlp.385/)
+
+  Adds two techniques to LLM decompilation of function-level x86-64 GCC assembly into C. Self-Constructed Context Decompilation (sc²dec) recompiles a model’s first compilable output and uses the resulting assembly–source pair as an in-context example for a second attempt, without fine-tuning. Fine-grained Alignment Enhancement (FAE) fine-tunes llm4decompile-6.7b with LoRA on statement-level assembly–C alignments derived from DWARF debug information. Combining both, the authors report 52.41% average re-executability on Decompile-Eval, against 48.60% for the base model.
+
+  2024 · Conference paper · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [Code](https://github.com/AlongWY/sccdec) · [Full entry & citation](https://awesomerea.org/papers/paper-sc2dec/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Results are function-level re-executability on Decompile-Eval: 164 HumanEval-derived C problems compiled at O0–O3 and checked by recompilation and HumanEval test cases. Passing these tests is not whole-program or all-input equivalence, and the paper does not evaluate real-world binaries, other architectures or readability. sc²dec helps only when the first output recompiles, so low re-compilability limits its gains; the authors report 1–2% lower results when context is built at a mismatched optimization level, and clang-built contexts scored slightly below GCC. FAE used 10,000 ExeBench functions limited to the standard C library, one training epoch and a single 6.7B base model; the authors did not validate it on larger datasets or models, and it slightly lowered the 1-shot result. GPT-4 and DeepSeek baselines are API snapshots that may not be reproducible.
+
+  **Publication:** 2024 · Findings of EMNLP 2024 · Conference paper · Yunlong Feng et al.
 
   </details>
 

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 296](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 150](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 296](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 150](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 59](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (58) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (59) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1888,13 +1888,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**58 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**59 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (12) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (13) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -2072,6 +2072,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该方法依赖底层反编译结果及针对 C/C++ 数据学习的预测。交叉检查可减少预测冲突，但不能证明恢复的名称或布局与缺失源码完全一致。公开研究产物包含模型、处理后的数据与评估代码。
 
   **发表信息:** 2024 · ACM CCS 2024 · 会议论文 · Danning Xie 等
+
+  </details>
+
+- [**自构造上下文反编译与细粒度对齐增强**](https://aclanthology.org/2024.findings-emnlp.385/)
+
+  为大语言模型将函数级 x86-64 GCC 汇编反编译为 C 的流程增加两项技术。自构造上下文反编译（sc²dec）无需微调：把模型首次生成且可编译的结果重新编译，以得到的汇编—源码对作为上下文示例再次反编译。细粒度对齐增强（FAE）利用 DWARF 调试信息构造语句级汇编—C 对齐数据，以 LoRA 微调 llm4decompile-6.7b。两者结合后，作者报告在 Decompile-Eval 上的平均可重执行率为 52.41%，基础模型为 48.60%。
+
+  2024 · 会议论文 · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [代码](https://github.com/AlongWY/sccdec) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-sc2dec/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 结果为 Decompile-Eval 上的函数级可重执行率：164 道源自 HumanEval 的 C 题目，分别以 O0–O3 编译，并通过重新编译和 HumanEval 测试用例检查。通过这些测试不代表完整程序或全部输入上的等价性；论文也未评估真实二进制、其他架构或可读性。只有首次输出能够重新编译时 sc²dec 才有帮助，因此可重编译率低会限制其收益；作者报告以不匹配的优化级别构造上下文会使结果降低 1–2%，用 clang 构造的上下文得分也略低于 GCC。FAE 仅使用 10,000 个只依赖 C 标准库的 ExeBench 函数，训练一个轮次，且只基于一个 6.7B 基础模型；作者未在更大数据集或模型上验证，它还使 1-shot 结果略有下降。GPT-4 与 DeepSeek 基线是 API 快照，未必可复现。
+
+  **发表信息:** 2024 · Findings of EMNLP 2024 · 会议论文 · Yunlong Feng 等
 
   </details>
 
