@@ -3979,5 +3979,15 @@
       "Ubuntu 上的 CI 运行类型检查、代码规范检查、格式检查和 Vitest 测试并构建 CLI，测试使用仓库内的 agbcc 与 KMC GCC 编译器样本；这些检查针对工具本身，不代表在任何游戏上的反编译成效。README 链接了作者关于基准测试的文章，仓库本身未发布匹配结果；本目录未运行任何内容。集成插件可用 gh 推送分支并发起 PR，其可选的 AI 构建修复会让 Claude 在工作树中编辑文件并执行 shell 命令，因此结果进入共享项目前应先审查。",
       "采用 MIT 许可。m2c、decomp-permuter、objdiff、向量模型和各编译器保留各自条款，反编译出的代码受目标项目的权利和贡献规则约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "kuna": {
+    "name": "Kuna 智能体优先反编译器",
+    "requirements": [
+      "README 称 Kuna 是一项实验。项目由定时工作流每天发布版本；审阅时最新为 2026-10-18 的 v1.906，提供 Linux x86_64（glibc 与 musl）和 arm64、macOS arm64 与 x86_64、Windows x86_64 的 kuna 压缩包，以及规格文件包和适配 Ghidra 12.1.2 的扩展 zip。所审阅的 main 分支提交比该版本多 40 个提交，而 README 的 Ghidra 安装步骤仍链接较旧的 v1.157 扩展包。",
+      "发布版二进制已内置编译好的 SLEIGH 规格。从源码构建只需 Rust 工具链，工作区声明 Rust 1.90+；构建与发布版一致的 kuna 之前，需先用 make specs 编译随仓库附带的 Ghidra 处理器规格。待分析的二进制由使用者自备；README 称浏览器版在使用者本机完成反编译，文件不会离开本地。",
+      "Ghidra 扩展与文件名中的 Ghidra 版本绑定，内含 Linux、macOS 和 Windows 后端；其他 12.x 版本被标为未经验证，README 也说明尚不支持 Ghidra 原生的全部功能。无界面 Ghidra 不加载该插件，因此 README 改为替换原有的 decompile 程序或使用 PyGhidra 开关，并称已在 Ghidra 12.1.2 和 REA 3.1.0 上测试过这种替换。这是项目自己的兼容性说明，并非 REA 维护的集成；本目录未实际尝试。",
+      "CI 运行从 Ghidra 引入的 XML 回归语料（675 条断言）并与仓库内的基线比对，同时运行 Kuna 自有的阶段测试用例、cargo 工作区测试、规格文档检查、CLI 测试和浏览器页面模块测试。docs/history.md 称 Rust 移植版在移除 C++ 代码树之前，已在全部 675 条断言上与未改动的 C++ 反编译器一致。README 中的 DecBench 领先名次和速度数据为项目自述；本次审阅未反编译任何文件。",
+      "采用 Apache-2.0 许可。NOTICE 说明引擎、SLEIGH 编译器、处理器规格和回归语料源自同为 Apache-2.0 的 Ghidra，部分结构化与区域恢复代码按 BSD-2-Clause 移植自 angr。其输出按设计可能与原版 Ghidra 不同，只是阅读辅助，并非经过验证的原始源码。"
+    ]
   }
 }

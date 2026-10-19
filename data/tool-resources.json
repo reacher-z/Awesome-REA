@@ -10749,5 +10749,39 @@
       "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/.github/workflows/ci.yml",
       "https://github.com/macabeus/mizuchi/blob/25eaef4214574cc20f376878dbc1b8099e97164e/LICENSE"
     ]
+  },
+  {
+    "id": "kuna",
+    "name": "Kuna",
+    "url": "https://github.com/Noelo-Lab/kuna",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Agent-first decompiler written in Rust that began as a port of Ghidra’s C++ decompiler and SLEIGH compiler, and has since diverged with option-gated features, some ported from angr. A single self-contained kuna binary decompiles one function or exports a whole binary to C, header and assembly files, and the same engine runs in the browser through WebAssembly or as the decompiler backend inside Ghidra. The project calls itself an experiment in having LLM agents refine the decompiler; most code is agent-written and steered by regression and benchmark results.",
+    "description_zh": "以智能体为核心、用 Rust 编写的反编译器，最初移植自 Ghidra 的 C++ 反编译器和 SLEIGH 编译器，此后加入了可按选项开关的功能（部分移植自 angr），已与上游分化。单个自包含的 kuna 程序可反编译单个函数，也可将整个二进制导出为 C、头文件和汇编文件；同一引擎还能通过 WebAssembly 在浏览器中运行，或在 Ghidra 中充当反编译后端。项目自称是让 LLM 智能体持续改进反编译器的实验，大部分代码由智能体编写，并以回归测试和基准结果为导向。",
+    "evidence_url": "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls Kuna an experiment. A scheduled workflow publishes releases daily; the latest at review, v1.906 of 2026-10-18, has kuna archives for Linux x86_64 (glibc and musl) and arm64, macOS arm64 and x86_64 and Windows x86_64, a specs archive and a Ghidra 12.1.2 extension zip. The reviewed main commit is 40 commits ahead of it, and the README’s Ghidra install step still links the older v1.157 zip.",
+      "Release binaries embed the compiled SLEIGH specs. Source builds need only a Rust toolchain, with the workspace declaring Rust 1.90+; make specs compiles the vendored Ghidra processor specs before a release-style kuna build. Users supply the binaries to analyze; the README says the browser version decompiles on the user’s machine, so the file stays local.",
+      "The Ghidra extension is version-locked to the Ghidra release in its file name and bundles Linux, macOS and Windows backends; other 12.x releases are marked unverified, and the README says not all native Ghidra features are supported yet. Headless Ghidra never loads the plugin, so the README swaps the stock decompile binary or uses a PyGhidra toggle, and reports testing that swap with Ghidra 12.1.2 and REA 3.1.0. That is the project’s own compatibility note, not an REA-maintained integration; this collection did not try it.",
+      "CI runs the 675-assertion XML regression corpus vendored from Ghidra against a checked-in baseline, Kuna’s own stage testcases, the cargo workspace suite, a spec-documentation check, CLI tests and the browser page’s modules. docs/history.md reports that the Rust port matched all 675 assertions against the untouched C++ decompiler before the C++ tree was removed. The README’s top DecBench standing and speed figures are project-reported; this review decompiled nothing.",
+      "Apache-2.0. NOTICE says the engine, SLEIGH compiler, processor specs and regression corpus derive from Ghidra, also Apache-2.0, and that some structuring and region-recovery code is ported from angr under BSD-2-Clause. Output can differ from stock Ghidra by design and is a reading aid, not verified original source."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/NOTICE",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/LICENSE",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/decompiler/Cargo.toml",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/docs/history.md",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/integrations/ghidra/KunaDecompiler/README.md",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/skills/kuna/SKILL.md",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/.github/workflows/tests.yml",
+      "https://github.com/Noelo-Lab/kuna/blob/d1f98e52e054bc7684fd5bb13fca5088f3e09a2d/.github/workflows/release.yml",
+      "https://github.com/Noelo-Lab/kuna/releases/tag/v1.906"
+    ]
   }
 ]
