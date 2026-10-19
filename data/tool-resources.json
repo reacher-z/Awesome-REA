@@ -14137,5 +14137,42 @@
       "Five entries are the maintaining organization's own scripts and tools. The Materials section includes a Japanese-language practical guide, the NSA's GhidraClass course material in the Ghidra repository, conference talks and The Ghidra Book.",
       "GitHub detects no license and the repository has no license file or contribution guide, so the list states no reuse terms; linked projects keep their own licenses. An independent discovery list; the reviewed source establishes no REA connection."
     ]
+  },
+  {
+    "id": "sonic-advance-1-2-decomp-port-case",
+    "name": "Sonic Advance 1 & 2: a matching GBA decompilation with widescreen ports",
+    "url": "https://github.com/SAT-R/sa2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs Sonic Advance and Sonic Advance 2 for the Game Boy Advance as C that rebuilds six hash-listed ROMs with SAT-R’s agbcc fork, and compiles the same code into widescreen SDL ports for Linux, macOS and Windows plus PSP and PS2 builds. README reports Sonic Advance 2 built entirely from C with about 60 functions still non-matching. Extracted graphics, music and data are committed, so the builds read no original ROM.",
+    "description_zh": "将 Game Boy Advance 版《索尼克 Advance》和《索尼克 Advance 2》重建为 C 源码，借助 SAT-R 的 agbcc 分支重新构建六个列有哈希值的 ROM，同一套代码还可编译为面向 Linux、macOS 和 Windows 的宽屏 SDL 移植版，以及 PSP 和 PS2 版本。README 报告《索尼克 Advance 2》已全部由 C 构建，仍有约 60 个函数不一致。提取出的图像、音乐和数据都提交在仓库中，因此构建时不读取原 ROM。",
+    "evidence_url": "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README marks the project unfinished and under active development. It lists six ROM targets with SHA-1 values: Sonic Advance (Europe) and Sonic Advance 2 (USA, Europe, Japan, Japanese Virtual Console and a 2002-10-25 USA beta). README reports that SA2 builds 100% from C with about 60 non-matching functions pulled in from asm/non_matching, which at the reviewed commit holds 64 SA2, 99 SA1, 17 shared and 8 engine files, and that over 600 SA2 functions are unnamed. The Tiny Chao Garden and Collect Rings multiboot sub-games are built for matching and only partly decompiled.",
+      "The documented builds read no original ROM. The tree commits over 12,000 PNG sprite frames and tiles, 474 MIDI songs, tilemaps and other raw data, including a 191 KB data file included piecewise into the Tiny Chao Garden multiboot ROM. Port CI jobs still download a base ROM from private storage, which the Makefile does not reference.",
+      "INSTALL.md targets Linux (with WSL for Windows users) and macOS: ARM GCC and binutils, libpng, SDL2 and MinGW-w64, plus mkisofs or cdrtools for PS2. Matching GBA builds need SAT-R’s agbcc fork built and installed into the tree. Ports build with make sdl (Linux/macOS), sdl_win32 (Windows), sdl_psp (PSPDEV) and ps2 (PS2DEV) at a 426×240 widescreen resolution; README marks the Win32 OpenGL target not functional, and no GitHub release is published.",
+      "On the GBA platform, make runs a SHA-1 check of the built ROM against its listed hash. CI checks formatting, then builds and hash-checks SA2 USA, SA1 Europe and the four other SA2 variants; it also builds SDL, Win32, PSP and PS2 port targets for both games on Ubuntu and macOS, and replays a committed any% speedrun input recording through a headless SDL build. Matching applies to the GBA ROMs, not to the widescreen ports, and this collection built nothing.",
+      "The repository has no license file and GitHub detects none. The extracted graphics, music and data, and the Nintendo SDK libraries rebuilt in libagbsyscall, m4a and agb_flash, keep their rights holders’ terms. README sets a strict no-LLM/no-AI policy for issues and pull requests; the reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/INSTALL.md",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/Makefile",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/config.mk",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/sa2.sha1",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/sa1.sha1",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/.github/workflows/build.yml",
+      "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/asm/non_matching",
+      "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/graphics",
+      "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/sound",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/chao_garden/data/data.s",
+      "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/src/data/sa2/recordings.c",
+      "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/libagbsyscall"
+    ]
   }
 ]
