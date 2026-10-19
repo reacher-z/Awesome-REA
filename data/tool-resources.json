@@ -15675,5 +15675,33 @@
       "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/doc/docker.md",
       "https://github.com/Jeija/bluefluff/blob/9e865c47326167c2d4e6f47d96321e8e5cfc0e32/LICENSE.md"
     ]
+  },
+  {
+    "id": "apk-sh",
+    "name": "apk.sh",
+    "url": "https://github.com/ax/apk.sh",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Bash script that automates repetitive Android app analysis chores around apktool: pulling an installed package from a device or emulator, decoding resources and disassembling dex code, and rebuilding the decoded directory into an APK. Split APKs from app bundles are combined into a single APK when pulled, and the script can also prepare a copy for Frida instrumentation.",
+    "description_zh": "一个 Bash 脚本，围绕 apktool 自动完成 Android 应用分析中的重复性工作：从设备或模拟器拉取已安装的应用包、解码资源并反汇编 dex 代码，以及将解码后的目录重新构建为 APK。拉取 app bundle 的拆分 APK 时会将其合并为单个 APK，脚本还可以准备一份用于 Frida 插桩的副本。",
+    "evidence_url": "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.1.3, published 2026-01-26, which matches the reviewed main commit. It is a single Bash script; the README lists apktool, apksigner, unxz, zipalign, aapt and adb as requirements.",
+      "On first use the script creates a hidden apk.sh folder in the home directory and downloads the tools it needs there, including the latest apktool release and Android build tools, so a network connection and a Java runtime are needed.",
+      "Input is an APK or an installed package the user is authorized to analyze; pulling requires adb access to the device or emulator. Rebuilt APKs are modified copies, not the original package.",
+      "GPL-3.0. This entry describes the documented pull, decode and rebuild workflow only. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/README.md#L121-L130",
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/apk.sh",
+      "https://github.com/ax/apk.sh/blob/2a1ed25e861dacfb4fec1aef7b099813abff24ed/LICENSE",
+      "https://github.com/ax/apk.sh/releases/tag/v1.1.3"
+    ]
   }
 ]
