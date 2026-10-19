@@ -4462,5 +4462,14 @@
       "开发使用 pnpm 和 Turborepo；.nvmrc 指定 Node.js 22，CI 则用 Node.js 20 构建所有包、执行代码检查和类型检查并运行 Jest 测试。这些测试检验的是 Webamp 自身的解析和渲染，而非与 Winamp 的等价性。编译 webamp-modern 的 MAKI 测试脚本时会调用仓库自带的 Winamp 5.66 mc.exe：在 Windows 上直接运行，在其他系统上通过 Wine 运行。",
       "代码采用 MIT 许可，README 称 Winamp 的名称、界面和示例音频文件属于 Nullsoft。以下随附文件没有自己的许可声明：packages/webamp-modern/resources/maki_compiler 下的 Nullsoft MAKI 编译器（从 Winamp 3 alpha 8r 到 Winamp 5.66 的五个 mc.exe 版本、nscrt.dll 以及 MAKI .mi 库头文件），以 Winamp 默认皮肤命名的皮肤（base-2.91、Winamp 3 build 499、Winamp Modern 5.66）和用于演示与测试的第三方社区皮肤，llama 示例 MP3，以及 Winamp Modern Skins 教程 PDF。随附的 Perl 版 MAKI 反编译器采用 GPL-2.0 许可。所审阅的资料未表明使用了 REA 或 AI；本次未构建或运行任何内容。"
     ]
+  },
+  "nforest-awesome-decompilation": {
+    "name": "awesome-decompilation 反编译阅读清单",
+    "requirements": [
+      "这并不是持续维护的索引：所审阅的 master 提交日期为 2023-03-05，是仓库最新的提交，加入了 2022 年 12 月的预印本 Beyond the C（arXiv 2212.08950）。因此“AI 反编译”部分只有六篇神经网络反编译论文和项目，之后的研究（包括基于大语言模型的反编译）均未收录。",
+      "条目只有链接，分布在 13 个标题下，没有注释、日期、状态或许可说明。链接指向论文和学位论文 PDF、厂商产品页、GitHub 仓库以及网店的图书页面，部分 PDF 是第三方镜像；本次审阅未逐一检查链接是否仍然有效。",
+      "范围是本机代码反编译的理论与工具。所列六个项目是 Hex-Rays、Ghidra 反编译器、JEB、RetDec、rev.ng-c 和 jsdec，八种中间表示包括 LLVM IR、VEX、BAP、REIL、ESIL、Binary Ninja 的 LLIL 和 VTIL。这是阅读清单，不是游戏反编译或重建项目索引。",
+      "仓库只有 README.md，没有许可证文件或贡献指南，GitHub 也未识别出许可证，因此清单未声明复用条款。所链接的论文、书籍和工具各自保留权利，其中部分反编译器是商业产品。这是独立的阅读清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
