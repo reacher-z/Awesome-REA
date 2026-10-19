@@ -3476,5 +3476,14 @@
       "语言服务器会附加到 .vscode/frida.json 指定的运行中目标，该文件需包含 device 字段，并且 app、pid、process 三者恰好填写一个。Copilot 辅助的 Hook 生成依赖 GitHub Copilot，Objection 为可选的外部工具。用户需自备设备、应用和进程。",
       "社区项目，与 Frida 官方团队无关联；采用 MIT 许可。本条目未附加任何设备或进程。"
     ]
+  },
+  "ghidriff": {
+    "name": "ghidriff Ghidra 二进制差异分析引擎",
+    "requirements": [
+      "审阅时最新版本为 v1.0.0，于 2025-07-04 发布到 GitHub 和 PyPI，要求 Python 3.9+ 和 pyghidra 2.0+。所审阅的 main 分支提交合并于 2026-05-11，比该版本多六个提交，版本号仍为 1.0.0：它要求 Python 3.10+ 和 pyghidra 3.x，以 Ghidra 12.0.4 为目标版本，运行其他版本的 Ghidra 或 pyghidra 时会记录警告。setup.cfg 将该软件包标为 Alpha 阶段。",
+      "需安装 Ghidra 及该版本支持的 JDK，设置 GHIDRA_INSTALL_DIR，再用 pip 或 uvx 安装；README 介绍了 Windows、Linux 和 macOS 上的配置，其 x64/arm64 Docker 镜像内置 PyPI 发布版，无需在主机上安装 Ghidra 和 Java。分析大型二进制时可能需要调高 JVM 内存占比。",
+      "需提供同一二进制的两个或更多版本，按从旧到新的顺序排列，多个新版本时可附加汇总；凡是 Ghidra 能导入和分析的文件都可比较，并可为固件或引导程序镜像指定基址、自定义分析器选项和 GDT 类型库。支持平台页面指出原生代码效果最好，托管 .NET 代码结果不一，APK 中的原生库需先取出。预检若发现两个程序的处理器语言不同，或符号数量相差 4,000 个及以上，就会中止比对，除非指定 --force-diff。默认会配置 Ghidra 内置的知名 PDB 符号服务器和本地符号库，可用 --no-symbols 关闭。",
+      "采用 GPL-3.0 许可。匹配质量取决于 Ghidra 的分析和反编译结果。README 的用例和文档站的示例差异报告针对另行获取的 Windows 和 macOS 系统二进制；仓库本身不附带任何目标二进制。本条目未对任何二进制进行比对。"
+    ]
   }
 }

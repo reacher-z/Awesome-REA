@@ -8948,5 +8948,40 @@
       "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/LICENSE",
       "https://github.com/ChiChou/vscode-frida/releases/tag/v0.12.11"
     ]
+  },
+  {
+    "id": "ghidriff",
+    "name": "ghidriff",
+    "url": "https://github.com/clearbluejar/ghidriff",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Command-line binary diffing engine that drives Ghidra headlessly through pyghidra: it imports and analyzes an old and a new binary, then reports added, deleted and modified functions, with patch diffing as its main use. The default VersionTrackingDiff engine combines several Ghidra Version Tracking correlators with BSim matching, alongside simpler symbol-name and structural-graph engines and a GhidraDiffEngine base class for custom differs. Results are written as JSON and Markdown with Mermaid charts and meta diffs of strings, called and calling functions and binary metadata, plus optional side-by-side HTML.",
+    "description_zh": "命令行二进制差异分析引擎，通过 pyghidra 以无界面方式驱动 Ghidra：导入并分析新旧两个版本的二进制，列出新增、删除和修改的函数，主要用于补丁比对。默认的 VersionTrackingDiff 引擎组合了多个 Ghidra 版本跟踪关联器和 BSim 匹配，另有基于符号名和结构图的较简单引擎，并提供 GhidraDiffEngine 基类供编写自定义比对器。结果以 JSON 和带 Mermaid 图表的 Markdown 输出，附有字符串、被调用与调用函数及二进制元数据的元差异，也可另外生成并排对照的 HTML。",
+    "evidence_url": "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.0, published 2025-07-04 on GitHub and PyPI, which requires Python 3.9+ and pyghidra 2.0+. The reviewed main commit, merged 2026-05-11, is six commits ahead and still reports version 1.0.0: it requires Python 3.10+ and pyghidra 3.x, targets Ghidra 12.0.4 and logs a warning when another Ghidra or pyghidra version is running. setup.cfg classifies the package as Alpha.",
+      "Install Ghidra with a JDK supported by that release, set GHIDRA_INSTALL_DIR and install the package with pip or uvx; the README covers Windows, Linux and macOS, and its x64/arm64 Docker image ships the PyPI release so Ghidra and Java need not be installed on the host. Large binaries may need a larger JVM memory share.",
+      "Supply two or more versions of the same binary, ordered oldest to newest, with an optional summary across several new versions; anything Ghidra can import and analyze can be compared, with a custom base address for firmware or bootloader images, analyzer options and GDT type archives. The supported-platforms page says native code works best, managed .NET results are mixed and native libraries must be taken out of an APK first. A preflight check stops the diff when the two programs' processor languages differ or their symbol counts differ by 4,000 or more, unless --force-diff is given. By default Ghidra's well-known PDB symbol servers are configured with a local symbol store unless --no-symbols is set.",
+      "GPL-3.0. Matching quality depends on Ghidra's analysis and decompilation. The README's use cases and the documentation site's sample diffs cover Windows and macOS system binaries obtained separately; the repository ships no target binaries. No binaries were diffed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/README.md#L282-L315",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/setup.cfg",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/ghidriff/ghidra_diff_engine.py#L205-L226",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/ghidriff/ghidra_diff_engine.py#L845-L876",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/ghidriff/ghidra_diff_engine.py#L1453-L1474",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/www/docs/README/Supported%20Platforms.md",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/docs/progress-log.md",
+      "https://github.com/clearbluejar/ghidriff/blob/4f5d895fcbb1eacd65efd81145922c15bb7e741d/LICENSE",
+      "https://github.com/clearbluejar/ghidriff/releases/tag/v1.0.0",
+      "https://pypi.org/project/ghidriff/1.0.0/"
+    ]
   }
 ]
