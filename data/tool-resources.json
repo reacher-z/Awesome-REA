@@ -14115,5 +14115,27 @@
       "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/SexyAppFramework/ogg/COPYING",
       "https://github.com/Patoke/re-plants-vs-zombies/blob/c4692036c5e11d227c8fb7c593b734dac96da028/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-ghidra",
+    "name": "Awesome Ghidra",
+    "url": "https://github.com/AllsafeCyberSecurity/awesome-ghidra",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An awesome list of Ghidra scripts, plugins, extensions, learning materials and related services, kept by the Allsafe GitHub organization since December 2019. Its 49 entries comprise 36 scripts and extensions, from malware-analysis and crypto-constant finders to Go, JNI, EVM and EFI helpers, Python and Jupyter bridges, P-code emulation and patch-diff correlators; 10 books, talks and courses; and three related projects such as r2ghidra-dec and Ghidraaas, each with a one-line summary.",
+    "description_zh": "由 GitHub 组织 Allsafe 自 2019 年 12 月起维护的 awesome 清单，收录 Ghidra 脚本、插件、扩展、学习资料和相关服务。全部 49 个条目包括 36 个脚本与扩展，从恶意软件分析和加密常量查找工具，到 Go、JNI、EVM 和 EFI 辅助工具、Python 与 Jupyter 桥接、P-code 模拟以及补丁对比关联器；10 份书籍、演讲和课程资料；以及 r2ghidra-dec、Ghidraaas 等 3 个相关项目，每项附一行简介。",
+    "evidence_url": "https://github.com/AllsafeCyberSecurity/awesome-ghidra/blob/9265b2f730a10f6261945ac22cb295c8f6038f87/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 9265b2f (2026-06-18). 42 of 53 commits date from 2019–2021; after that gap the maintainers merged four contributor pull requests in June 2026, adding entries such as the printf-inliner plugin, 0xdea's scripts, IDAObjcTypes and GhidrAI. Entries name no Ghidra versions, GhidrAI is the only AI-assisted entry, and no MCP server is listed.",
+      "Entries give a link and a one-line summary with no license or maintenance information. Of the 42 GitHub repositories linked, 1 is archived and 17 have not been pushed to since 2021, so each project's Ghidra compatibility must be checked at its source; in an automated check at review only the OOAnalyzer plugin path returned a 404.",
+      "Five entries are the maintaining organization's own scripts and tools. The Materials section includes a Japanese-language practical guide, the NSA's GhidraClass course material in the Ghidra repository, conference talks and The Ghidra Book.",
+      "GitHub detects no license and the repository has no license file or contribution guide, so the list states no reuse terms; linked projects keep their own licenses. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
