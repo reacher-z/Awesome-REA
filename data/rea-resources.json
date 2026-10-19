@@ -2567,5 +2567,40 @@
       "https://www.reddit.com/r/ReverseEngineering/comments/1x85dp5/a_port_of_resident_evil_2_for_the_nintendo_ds/",
       "https://github.com/OpenBiohazard2/OpenBiohazard2/blob/173f900d174a41af56bd478692892254a2e31aae/LICENSE.md"
     ]
+  },
+  {
+    "id": "horizon-minecraft-rust-rewrite-case",
+    "name": "Horizon: a Rust rewrite of Minecraft: Java Edition 26.3 with REA bytecode queries",
+    "url": "https://github.com/ludovic111/horizon",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "description_en": "Rewrites Minecraft: Java Edition 26.3 as a native Rust client, dedicated server and launcher that prepare their resources from the user’s own copy of the game. Contributors are told to read the vanilla code first, and tools/rea_vanilla.py runs a pinned REA release with a headless JADX engine over the shipped client and server jars to inspect classes, methods and callers. Differential harnesses run Java oracles against the real game and Rust probes against Horizon; README reports all 281 passing, which covers only what they compare.",
+    "description_zh": "以原生 Rust 客户端、专用服务器和启动器重写 Minecraft: Java Edition 26.3，资源均由使用者自有的游戏副本生成。项目要求贡献者先阅读原版代码，tools/rea_vanilla.py 会调用固定版本的 REA，配合无界面 JADX 引擎分析官方发布的客户端与服务器 jar，查询类、方法及调用方。差分测试工具分别对真实游戏运行 Java 对照程序、对 Horizon 运行 Rust 探针；README 称全部 281 个测试通过，但这只涵盖它们所比较的内容。",
+    "evidence_url": "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository was created on 2026-10-03, and the reviewed main snapshot (2026-10-19) follows the date-tagged release v2026.10.19.12. README reports a playable client on Linux, macOS (Apple Silicon) and Windows with vanilla world generation, mobs and their AI, villagers, raids, redstone, every command, Anvil saves and joining vanilla servers, and its own audit of 2026-10-13 scores every subsystem complete. Listed known issues include unsupported online-mode servers, skin and pack-icon gaps, unwired creative hotbar keys and missing attribute lines in tooltips.",
+      "Needs Minecraft: Java Edition installed with the official launcher and 26.3 played once, plus the 26.3 server jar for the first preparation; research-lock.json pins the client and server jar SHA-1 checksums. horizon-prepare (Python 3.10+ and JDK 25) builds resources from that copy into the gitignored .local/ directory. README says Horizon never downloads game files and never publishes decompiled source or prepared resources, and tools/check_public_tree.py rejects them in commits.",
+      "Players install through the Horizon launcher for Linux x86-64, macOS Apple Silicon or Windows x64, which also starts a dedicated server that needs no Java; rendering needs Vulkan on Linux and Windows. Source builds need Rust 1.90+, Python 3.10+, JDK 25 and, on Linux, the ALSA and udev headers; development and the vanilla harnesses run on Linux. tools/rea_vanilla.py needs Node.js 22.19+ and Java 17+, runs rea-agents 6.4.0 through npx unless that version is installed, and downloads jadx-headless-mcp 0.7.1 checked by SHA-256.",
+      "Each tools/test_*_parity.py harness drives the same inputs through a Java oracle under mods/horizon running the vanilla code and through a Rust probe, then compares the outputs; README says 100% means 100% of what the harnesses compare, not proof that nothing else differs. CI runs the Python and cargo tests on GitHub-hosted Linux runners and the vanilla harnesses on a self-hosted runner holding the maintainer’s copy of the game; this collection ran nothing.",
+      "LICENSE applies MIT to the project’s original work; dependencies, including the wgpu-hal copy under third_party/, keep their own licences, and README says Minecraft code and assets belong to Mojang and Microsoft under the Minecraft EULA and that the project is not affiliated with them. docs/parity-workflow.md describes agents working in parallel worktrees behind a shared gate, and horizon-ctl exposes the game to AI agents as a CLI and MCP server. REA’s documented role is limited to the bytecode queries in CONTRIBUTING.md and tools/rea_vanilla.py."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/tools/rea_vanilla.py",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/CONTRIBUTING.md",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/research-lock.json",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/docs/parity-workflow.md",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/.github/workflows/ci.yml",
+      "https://github.com/ludovic111/horizon/tree/d500f28ee4939d83d9796931b7079632b72dc948/mods/horizon",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/THIRD_PARTY_NOTICES.md",
+      "https://github.com/ludovic111/horizon/blob/d500f28ee4939d83d9796931b7079632b72dc948/LICENSE",
+      "https://github.com/ludovic111/horizon/releases/tag/v2026.10.19.12",
+      "https://www.npmjs.com/package/rea-agents/v/6.4.0"
+    ]
   }
 ]

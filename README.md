@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 358](https://img.shields.io/badge/resources-358-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 359](https://img.shields.io/badge/resources-359-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (52)
+- [Website](#website) (19) · [Game](#game) (167) · [App](#app) (52)
 - [Native Binary](#native-binary) (25) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (184) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (185) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -348,6 +348,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. A helper wraps the PS1 executable as an ELF for REA’s Ghidra lane, analysis notes name the PS1 functions and tables each part follows, and the Reddit post linking it credits REA and Claude Code. Leon’s disc 1 is reported playable, while Claire’s disc, most enemy types and some menus remain unfinished.
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/re2ds-nds-engine-case/)
+
+- [**Horizon: a Rust rewrite of Minecraft: Java Edition 26.3 with REA bytecode queries**](https://github.com/ludovic111/horizon)
+
+  Rewrites Minecraft: Java Edition 26.3 as a native Rust client, dedicated server and launcher that prepare their resources from the user’s own copy of the game. Contributors are told to read the vanilla code first, and tools/rea\_vanilla.py runs a pinned REA release with a headless JADX engine over the shipped client and server jars to inspect classes, methods and callers. Differential harnesses run Java oracles against the real game and Rust probes against Horizon; README reports all 281 passing, which covers only what they compare.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/horizon-minecraft-rust-rewrite-case/)
 
 - [**LASRecomp: Link’s Awakening static recompilation**](https://github.com/peiikai/LASRecomp)
 

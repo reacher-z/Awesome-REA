@@ -3081,5 +3081,15 @@
       "分析需要使用者自有的固件镜像；混合部署还需要可通过 gdbserver、OpenOCD 脚本或 Segger J-Link 探针访问的物理设备。架构定义涵盖 ARM（包括 Cortex-M3 和大端变体）、MIPS 以及 x86/x86-64。内存布局、转发规则和执行计划都由分析者用 Python 编写。",
       "采用 Apache-2.0 许可；avatar-qemu 和 PANDA 位于独立仓库，各有其许可。README 列出了介绍、使用或扩展该框架的研究论文，其中的结果不代表当前版本的特性。本次未构建任何端点，也未运行任何固件。"
     ]
+  },
+  "horizon-minecraft-rust-rewrite-case": {
+    "name": "Horizon：借助 REA 字节码查询的 Minecraft: Java Edition 26.3 Rust 重写",
+    "requirements": [
+      "该仓库创建于 2026-10-03，所审阅的 main 快照（2026-10-19）晚于按日期标记的发行版 v2026.10.19.12。README 称客户端可在 Linux、macOS（Apple Silicon）和 Windows 上游玩，具备原版世界生成、生物及其 AI、村民、袭击、红石、全部命令、Anvil 存档以及加入原版服务器等功能；项目自己在 2026-10-13 的审核中将所有子系统评为完成。列出的已知问题包括不支持正版验证模式的服务器、皮肤和资源包图标的缺陷、创造模式快捷栏按键未接通，以及物品提示缺少属性行。",
+      "需要用官方启动器安装 Minecraft: Java Edition 并至少运行一次 26.3 版，首次准备时还需要 26.3 的服务器 jar；research-lock.json 固定了客户端和服务器 jar 的 SHA-1 校验值。horizon-prepare（需要 Python 3.10+ 和 JDK 25）从该副本生成资源，放入被 Git 忽略的 .local/ 目录。README 称 Horizon 从不下载游戏文件，也从不发布反编译源码或生成的资源，tools/check_public_tree.py 会在提交时拒绝这些内容。",
+      "玩家通过 Horizon 启动器安装，支持 Linux x86-64、macOS Apple Silicon 和 Windows x64，启动器也可启动无需 Java 的专用服务器；在 Linux 和 Windows 上渲染需要 Vulkan。从源码构建需要 Rust 1.90+、Python 3.10+、JDK 25，在 Linux 上还需要 ALSA 和 udev 开发头文件；开发和原版对照测试都在 Linux 上进行。tools/rea_vanilla.py 需要 Node.js 22.19+ 和 Java 17+，在未安装该版本时通过 npx 运行 rea-agents 6.4.0，并下载经 SHA-256 校验的 jadx-headless-mcp 0.7.1。",
+      "每个 tools/test_*_parity.py 测试都把相同输入分别交给 mods/horizon 下运行原版代码的 Java 对照程序和 Rust 探针，再比较输出；README 说明 100% 指的是测试所比较内容的 100%，并不证明其他方面没有差异。CI 在 GitHub 托管的 Linux 运行器上执行 Python 和 cargo 测试，原版对照测试则在存有维护者自有游戏副本的自托管运行器上执行；本合集未运行任何内容。",
+      "LICENSE 对项目原创部分采用 MIT；依赖项（包括 third_party/ 下的 wgpu-hal 副本）各自保留许可证，README 声明 Minecraft 的代码和素材属于 Mojang 和 Microsoft，受 Minecraft EULA 约束，项目与二者无关。docs/parity-workflow.md 描述了多个智能体在并行工作树中经共享检查关卡提交改动，horizon-ctl 则以命令行和 MCP 服务器的形式向 AI 智能体开放游戏操作。文档中 REA 的作用仅限于 CONTRIBUTING.md 和 tools/rea_vanilla.py 所述的字节码查询。"
+    ]
   }
 }
