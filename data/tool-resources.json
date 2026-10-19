@@ -10925,5 +10925,42 @@
       "https://github.com/rexglue/rexglue-sdk/wiki/Function-Overrides",
       "https://github.com/rexglue/rexglue-sdk/wiki/Mid-ASM-Hooks"
     ]
+  },
+  {
+    "id": "reagent-cpp-reconstruction-agent",
+    "name": "ReAgent",
+    "url": "https://github.com/Dryxio/reagent",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "An open-source Python agent, published on PyPI as auto-re-agent, that drafts C/C++ implementations of functions in a compiled program from Ghidra evidence and has a separately configurable checker model review each draft in a bounded fix loop. A candidate is accepted only after a structural comparison with the decompile, assembly, control-flow and P-code evidence, the project’s own build, test and optional differential commands, and 11 heuristic parity signals. The README calls these gates conservative evidence, not proof of equivalence, and the tool writes candidates to an overlay rather than patching the source tree.",
+    "description_zh": "开源 Python 智能体，以 auto-re-agent 之名发布于 PyPI。它依据 Ghidra 提供的证据为已编译程序中的函数起草 C/C++ 实现，再由可单独配置的检查模型在有轮数上限的修复循环中审阅每份草稿。候选代码须先与反编译、汇编、控制流和 P-code 证据做结构比对，再通过项目自己的构建、测试及可选的差分命令和 11 项启发式一致性信号，才会被接受。README 称这些关卡只是保守的证据，并非等价性证明；工具把候选代码写入覆盖层，而不直接修改源码树。",
+    "evidence_url": "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin follows the v0.4.0 release of 2026-09-09 by one documentation commit; pyproject.toml classifies the package as alpha. The re-agent CLI covers init, plan, reverse, parity, status, estimate and evidence commands, with generic-cpp, windows-x64, gta-reversed and openrct2 profiles, the last two carrying hook and stub patterns for those existing reimplementation projects. Outputs are per-function candidate code, per-call prompt and response logs, checkpoints and a knowledge graph; the README says it never commits, pushes or overwrites the original tree.",
+      "Users supply the target program, a local Ghidra project in which it is imported, and a C/C++ project whose matching function bodies candidates replace in a temporary copy; the FAQ says useful results depend on that project’s source context, types, symbols and validation commands. Evidence comes from Ghidra exports read through the author’s separate ghidra-ai-bridge, whose headless export needs PyGhidra and a local Ghidra installation; without Ghidra only source-only parity checks run. No target binary or Ghidra export is bundled, and the GTA example needs the user’s own San Andreas executable.",
+      "It needs Python 3.10 or later; CI runs the tests on Linux with Python 3.10–3.13, on Windows with 3.12 and on macOS with 3.13. At least one model provider is required: a Claude or OpenAI-compatible API key, or an authenticated local Claude Code or Codex CLI, with reverser and checker free to use different providers at the user’s cost. Build, test and runtime commands are project-owned; argument arrays run directly on Windows and POSIX, legacy string commands need /bin/sh, and their results count as acceptance evidence only after trust_configured_commands is set explicitly.",
+      "docs/validation-0.3.md reports 131 tests passing locally on Python 3.13 with Ruff and strict mypy, and CI skips tests that need a model or Ghidra. Its one reference experiment, dated 2026-09-04, generated three GTA San Andreas timer functions with Claude CLI; each is reported to have passed review in one round, compiled through the example adapter and matched the original x86 code under Unicorn on seven inputs, with all three wrong-output controls detected. The author calls these 21 matching observations rather than exhaustive verification; this collection ran nothing.",
+      "The repository and ghidra-ai-bridge are MIT-licensed; Ghidra, model services and the analysed programs keep their own terms. The README warns that configured commands are arbitrary project-owned commands to be trusted only when the project owner controls them, and that the Ghidra integration has to be tested in the user’s own environment. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/docs/validation-0.3.md",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/docs/benchmark-0.3.json",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/docs/architecture.md",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/docs/configuration.md",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/examples/gta_timer/README.md",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/CHANGELOG.md",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/pyproject.toml",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/.github/workflows/ci.yml",
+      "https://github.com/Dryxio/reagent/blob/d12cea338c61898b06a86fe8adb25275fa9d5615/LICENSE",
+      "https://github.com/Dryxio/reagent/releases/tag/v0.4.0",
+      "https://github.com/Dryxio/ghidra-bridge/blob/faaf05363796cbc43eac7924f3b6981cd5e40619/README.md"
+    ]
   }
 ]

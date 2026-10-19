@@ -4026,5 +4026,15 @@
       "每个项目的 TOML 配置都指向使用者自己的 Xbox 360 XEX 文件；SDK 本身不含任何游戏代码。文档位于 GitHub wiki，最后编辑于 2026-06-04，其状态部分仍描述 v0.3.x，并称图形、音频和输入后端仍在变动。",
       "LICENSE 为 BSD-3-Clause 文本，并注明部分代码源自 Xenia（GitHub 显示为 NOASSERTION）；子模块和随附的 PowerPC binutils 可执行文件沿用各自的许可证。README 声明与 Microsoft 无关，并禁止用于盗版。基于它的移植（如本目录中的 Skate 3 Recomp 案例）需另行审阅；本次未重编译任何 XEX。"
     ]
+  },
+  "reagent-cpp-reconstruction-agent": {
+    "name": "ReAgent C/C++ 函数重建智能体",
+    "requirements": [
+      "所审阅的固定版本是 2026 年 9 月 9 日 v0.4.0 发布之后的一次文档提交；pyproject.toml 将该包标为 Alpha 阶段。re-agent 命令行提供 init、plan、reverse、parity、status、estimate 与 evidence 等命令，并附带 generic-cpp、windows-x64、gta-reversed 和 openrct2 四种配置模板，后两种带有针对这两个现有重新实现项目的钩子与桩函数模式。输出包括每个函数的候选代码、每次调用的提示与回复日志、检查点和知识图谱；README 称它从不提交、推送或覆盖原始源码树。",
+      "使用者需自备目标程序、已导入该程序的本地 Ghidra 项目，以及一个 C/C++ 项目，候选代码会在其临时副本中替换对应的函数体；常见问题说明，结果是否有用取决于该项目的源码上下文、类型、符号和验证命令。证据来自 Ghidra 导出数据，经作者另行发布的 ghidra-ai-bridge 读取，其无界面导出需要 PyGhidra 和本地安装的 Ghidra；没有 Ghidra 时只能运行仅基于源码的一致性检查。仓库不附带任何目标二进制或 Ghidra 导出，GTA 示例需要使用者自己的 San Andreas 可执行文件。",
+      "需要 Python 3.10 或更高版本；CI 在 Linux 上用 Python 3.10–3.13、在 Windows 上用 3.12、在 macOS 上用 3.13 运行测试。至少需要一种模型来源：Claude 或 OpenAI 兼容 API 密钥，或已登录的本地 Claude Code 或 Codex 命令行；起草模型与检查模型可使用不同来源，费用由使用者承担。构建、测试和运行命令由项目自行提供：参数数组形式可在 Windows 和 POSIX 上直接执行，旧式字符串命令需要 /bin/sh，且只有显式设置 trust_configured_commands 后，其结果才算作验收证据。",
+      "docs/validation-0.3.md 报告 131 项测试在本地 Python 3.13 上全部通过，Ruff 与严格模式 mypy 检查亦通过；CI 会跳过需要模型或 Ghidra 的测试。其中唯一的参考实验日期为 2026 年 9 月 4 日，用 Claude CLI 生成了 GTA San Andreas 的三个计时器函数；据报告，每个函数都在一轮审阅内通过，经示例适配器编译，并在 Unicorn 中以七组输入与原始 x86 代码结果一致，三个故意出错的对照也全部被检出。作者称这只是 21 次一致的观测，而非穷尽验证；本合集未运行任何内容。",
+      "仓库与 ghidra-ai-bridge 均采用 MIT 许可；Ghidra、模型服务及被分析的程序仍受各自条款约束。README 提醒，所配置的命令是由项目自行提供的任意命令，只有在项目所有者掌控时才应信任，而 Ghidra 集成需要在使用者自己的环境中测试。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
