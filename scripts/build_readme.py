@@ -378,6 +378,26 @@ def render_contents(records, papers, index_count, language):
     return '\n'.join(lines) + '\n'
 
 
+def render_totals(records, papers, index_count, language):
+    """One line of collection totals and the newest review date, above the Contents sections."""
+    zh = language == 'zh'
+    paper_urls = {paper['url'] for paper in papers}
+    cases = sum(record.get('kind') == 'case-study' for record in records)
+    listed = sum(record['url'] not in paper_urls for record in records)
+    reviewed = max(entry['verified_at'][:10] for entry in [*records, *papers])
+    if zh:
+        line = (f'{len(records):,} 项精选资源（{cases:,} 个案例）· {len(papers):,} 篇论文 · '
+                f'{index_count:,} 个已索引仓库 · 最近来源复核 {reviewed}。')
+        if listed != len(records):
+            line += f'其中 {len(records) - listed:,} 项仅列于论文部分，因此各分区计数合计 {listed:,}。'
+    else:
+        line = (f'{len(records):,} curated resources ({cases:,} cases) · {len(papers):,} papers · '
+                f'{index_count:,} indexed repositories · latest source review {reviewed}.')
+        if listed != len(records):
+            line += f' Section counts add up to {listed:,} because {len(records) - listed:,} of these appear only under Papers.'
+    return line + '\n\n'
+
+
 def render_badges(records, papers, language):
     """Report catalog populations, not execution verification or additive totals."""
     zh = language == 'zh'
@@ -567,7 +587,8 @@ def main():
             current = path.read_text(encoding='utf-8')
             expected = replace_catalog(current, render_catalog(records, language, {paper['url'] for paper in papers}))
             expected = replace_papers(expected, render_papers(papers, language), language)
-            expected = replace_contents(expected, render_contents(records, papers, index_count, language))
+            expected = replace_contents(expected, render_totals(records, papers, index_count, language)
+                                        + render_contents(records, papers, index_count, language))
             expected = replace_badges(expected, render_badges(records, papers, language))
             size = len(expected.encode('utf-8'))
             sizes.append(f'{name} {size:,} bytes')
