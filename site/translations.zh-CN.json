@@ -4667,5 +4667,15 @@
       "构建成功时，ninja 应在最后报告 100% 匹配并完成链接，按 config/G4BE08/build.sha1 运行 dtk shasum 应对全部 115 个二进制文件输出 OK；tools/bytecmp.py 用于比较单个单元，tools/asmcheck.py --all 统计由 asm 模板生成的指令数，任何修改都不得改变该总数。仓库没有 CI 工作流或发布版本，因此这些结果均为项目报告，本合集未进行任何构建。",
       "LICENSE 仅将 CC0 用于项目自行编写的构建脚本、工具、配置与文档。README 与 LICENSE 声明，src/ 与 include/ 中重建的游戏、SDK 及中间件源码仍归 Capcom、Nintendo 与 CRI Middleware 所有，仅为研究与保存目的发布。docs/research/README.md 称其中的匹配笔记由完成匹配工作的 AI 智能体撰写；未记录 REA 的使用。"
     ]
+  },
+  "smash-bros-brawl-decomp-case": {
+    "name": "《任天堂明星大乱斗X》：早期阶段的 Wii 一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 RSBE01_02（美版 Rev 2），日版、美版 Rev 1、PAL 版和韩版修订版均被注释掉；configure.py 列出全部七个版本，但只有 RSBE01_02 有配置，CI 也只构建该版本。产物是 Wii 的 main.dol 和 REL 组，不是 PC 移植。",
+      "需将自己的光盘镜像复制到 orig/RSBE01_02，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的各模块符号表和拆分表拆分 DOL 与 REL，并在本地从 DOL 中提取一个内嵌二进制（HomeBtnIcon）。游戏头文件来自 BrawlHeaders 子模块（Sammi-Husky/BrawlHeaders），README 要求构建前先初始化子模块。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.4、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.0 及 20250812 编译器包，编译和链接均使用 Metrowerks GC/3.0a5.2。",
+      "标为 Matching 的目标文件（configure.py 中有 184 个，另有 20 个仍为 NonMatching）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/RSBE01_02/build.sha1 校验 main.dol 和各 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 RSBE01_02，并上传进度报告。decomp.dev 针对该固定提交的报告显示，15,833,548 个代码字节中有 201,252 个（1.27%）、92,523 个函数中有 2,504 个已匹配，4,415 个单元中有 516 个已完成；本合集未运行构建。",
+      "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器不在该声明范围内，BrawlHeaders 子模块在 GitHub 上也未声明许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
