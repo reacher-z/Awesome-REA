@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 317](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-317-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 161](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 318](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-318-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 162](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (146) · [应用](#app) (44)
+- [网站](#website) (19) · [游戏](#game) (146) · [应用](#app) (45)
 - [原生二进制](#native-binary) (22) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (161) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (162) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1214,6 +1214,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要目标为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。约 49,000 行改动新增了 DirectComposition 实现、合成交换链和应用模型宿主；微软自己的 XAML 与应用模型 DLL 则在使用者机器上从 Windows 11 镜像中提取后原样运行。作者称大部分逆向工程和代码由 Claude 完成；各应用支持程度不一，由项目回归测试检查。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wine-uwp-store-apps-case/)
+
+- [**RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据**](https://github.com/sam-dumont/rkd-telemetry-extractor)
+
+  记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析和假设检验由 Claude Code 协助完成，并以已知车辆编号、赛道位置和车速作为锚点。字段含义依据作者自有录制数据的物理交叉核对得出，若干记录类型仍未完全解读。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rkd-telemetry-extractor-case/)
 
 #### 工具、项目与集成
 
