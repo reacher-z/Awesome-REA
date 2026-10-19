@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2367,6 +2367,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 训练和主要评测均使用函数级 C 代码，以 GCC 和 Clang 在 -O0 至 -O3 下编译为 x86-64 Linux 二进制，并以 IDA Pro 伪代码作为模型输入。可重新执行率仅在 HumanEval 和 MBPP 上测量；ExeBench 与 GitHub2025 采用 R2I 可读性指标和 GPT-5-mini 评审。附录实验扩展到 BringUpBench 项目、macOS arm64 与 Windows MSVC 构建以及 Obfuscator-LLVM，但模型仅以 C 代码训练，论文预计遇到 C++ 模板等没有 C 对应物的语言特性时效果会下降。
 
   **作者:** Hanzhuo Tan 等
+
+  </details>
+
+- [**ShieldedCode：学习虚拟机保护代码的鲁棒表示**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html)
+
+  ShieldedCode 从防御方角度研究软件保护：它以 C 源代码函数及其经虚拟化保护（VMP）后的 x86-64 代码组成的配对数据训练代码语言模型，使模型能够生成、比较和排序受保护的变体。训练配对取自 AnghaBench 函数，经 O0–O3 编译后由一款商业 VMP 工具按 L0–L3 级别保护，再反汇编并规范化。模型为单条虚拟指令内部、相邻虚拟指令之间以及跨虚拟指令的依赖加入注意力掩码，采用面向功能等价和保护强度的对比学习目标，并设置对同一源代码不同变体排序的保护效果任务。持续预训练从 CodeLlama 34B 起步，语料另加入 The Stack；微调使用 250 万组源代码—虚拟机代码配对。在 HumanEval-compile 上，L0 级虚拟机代码生成的 Pass<span>@</span>1 为 26.95%（GPT-4o 为 22.58%），L3 级为 14.71%。在 BinaryCorp-VirtualAssembly 相似性检测中，O0+L1 设置下的 Recall<span>@</span>1 为 0.488，采用线性探针的 jTrans 为 0.333。作者还对生成的保护代码开展了人工逆向研究，以及模式匹配和 angr 攻击。
+
+  ICLR 2026 · 会议论文 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-shieldedcode/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 全部数据均为 x86-64，所有训练配对都由论文未具名的同一款商业 VMP 工具生成，因此结果未必适用于其他架构、保护工具或虚拟指令设计。生成的虚拟机代码通过 HumanEval-compile 测试用例检验，而非形式化等价验证；各保护级别的 Pass<span>@</span>1 仅在 14.71% 至 26.95% 之间。相对 jTrans 的相似性优势只出现在 O0+L1 设置中：在 BinaryCorp-VirtualAssembly 的其余五种设置中，采用线性探针的 jTrans 的 Recall<span>@</span>1 更高（例如 O2+L1 下为 0.715，ShieldedCode 为 0.309）；论文对这一比较的概括也不一致（摘要称提升 10%，引言称提升 15.5 个百分点，结果部分则称性能相当）。消融表中 ContraBin、CLAP 与 CEBin 的得分据论文说明是依其架构估计而非实测。保护强度的结论依赖作者自行开展的攻击和人工研究：12 名研究生与 3 名专业逆向工程师分析 20 个函数，每个函数限时 30–45 分钟，对 ShieldedCode 输出的成功率为 17%，对 VMProtect 和 Themida 分别为 67% 与 58%。ShieldedCode 不是去虚拟化工具或反混淆工具，论文也未链接代码、模型或生成的训练数据。
+
+  **作者:** Mingqiao Mo 等
 
   </details>
 

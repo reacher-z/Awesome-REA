@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2197,13 +2197,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2366,6 +2366,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Training and main evaluation use function-level C compiled for x86-64 Linux with GCC and Clang at -O0 to -O3, with IDA Pro pseudocode as model input. Re-executability is measured only on HumanEval and MBPP; ExeBench and GitHub2025 use R2I readability and a GPT-5-mini judge. Appendix experiments extend to BringUpBench projects, macOS arm64 and Windows MSVC builds, and Obfuscator-LLVM, but the models are trained on C only and the paper expects them to degrade on features without C equivalents, such as C++ templates.
 
   **Authors:** Hanzhuo Tan et al.
+
+  </details>
+
+- [**ShieldedCode: Learning Robust Representations for Virtual Machine Protected Code**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/286976486c9bbfa2c2069b01b259b19d-Abstract-Conference.html)
+
+  ShieldedCode studies software protection from the defender's side: it trains code language models on pairs of C source functions and their virtualization-protected (VMP) x86-64 code so that the models can generate, compare and rank protected variants. Training pairs come from AnghaBench functions compiled at O0–O3, protected at levels L0–L3 by a commercial VMP tool, then disassembled and normalized. The model adds attention masks for dependencies within, between adjacent and across virtual instructions, contrastive objectives for functional equivalence and protection strength, and a protection-effectiveness task that ranks variants of the same source. Continual pre-training starts from CodeLlama 34B and adds The Stack to the corpus, and fine-tuning uses 2.5 million source–VM pairs. On HumanEval-compile, VM code generation reaches 26.95% Pass<span>@</span>1 at level L0 (GPT-4o: 22.58%) and 14.71% at L3. On BinaryCorp-VirtualAssembly similarity detection, Recall<span>@</span>1 for the O0+L1 setting is 0.488, against 0.333 for jTrans with a linear probe. The authors also run a manual reverse-engineering study and pattern-matching and angr attacks on the generated protection.
+
+  ICLR 2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/286976486c9bbfa2c2069b01b259b19d-Paper-Conference.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-shieldedcode/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** All data is x86-64, and every training pair is produced with one commercial VMP tool that the paper does not name, so results may not carry over to other architectures, protectors or virtual-instruction designs. Generated VM code is checked with HumanEval-compile test cases, not formal equivalence, and Pass<span>@</span>1 stays between 14.71% and 26.95% across protection levels. The similarity gain over jTrans holds only in the O0+L1 setting: in the other five BinaryCorp-VirtualAssembly settings the linear-probe jTrans has higher Recall<span>@</span>1 (for example 0.715 against 0.309 for O2+L1), and the paper's summaries of the comparison differ (a 10% gain in the abstract, 15.5 points in the introduction, competitive in the results). The ablation table reports scores for ContraBin, CLAP and CEBin that the paper says are estimated from their architectures rather than measured. Protection-strength claims rest on the authors' own attacks and manual study: 12 graduate students and 3 professional reverse engineers analyzing 20 functions for 30–45 minutes each, with 17% success on ShieldedCode output against 67% for VMProtect and 58% for Themida. ShieldedCode is not a devirtualizer or deobfuscator, and the paper links no code, models or generated training data.
+
+  **Authors:** Mingqiao Mo et al.
 
   </details>
 
