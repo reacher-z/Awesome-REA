@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 348](https://img.shields.io/badge/resources-348-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (180) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (180) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -2020,6 +2020,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A moderated website directory of AI-assisted reverse-engineering projects across games, firmware, file formats, APIs and protocols, apps and legacy software. Each entry links to its primary source and records the author-reported model, tools, time, cost and outcome, with four checks for public source, reproduction steps, real-hardware testing and third-party confirmation.
 
   Collection · [Requirements & evidence](https://awesomerea.org/resources/reversed-with-ai-directory/)
+
+- [**Remade**](https://github.com/replicraft/remade)
+
+  The source repository of remade.wiki, a community-curated directory of open-source reimplementations of closed-source software, mostly creative, productivity and engineering applications. Each listing is a YAML record naming the original software, languages, platforms, license and self-reported status, compatibility and limitations, and the directory also tracks requests for software nobody has reimplemented yet.
+
+  Collection · [Requirements & evidence](https://awesomerea.org/resources/remade-reimplementation-directory/)
 
 <a id="references-and-learning"></a>
 ### References and Learning

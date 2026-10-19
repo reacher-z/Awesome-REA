@@ -7196,5 +7196,36 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "remade-reimplementation-directory",
+    "name": "Remade",
+    "url": "https://github.com/replicraft/remade",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "app"
+    ],
+    "description_en": "The source repository of remade.wiki, a community-curated directory of open-source reimplementations of closed-source software, mostly creative, productivity and engineering applications. Each listing is a YAML record naming the original software, languages, platforms, license and self-reported status, compatibility and limitations, and the directory also tracks requests for software nobody has reimplemented yet.",
+    "description_zh": "remade.wiki 的源码仓库。remade.wiki 是由社区整理的目录，收录闭源软件的开源重新实现，以创意、办公和工程类应用为主。每个条目是一份 YAML 记录，注明被重现的原软件、编程语言、平台、许可证，以及自报的开发状态、兼容程度和局限；目录还收集尚无人重新实现的软件请求。",
+    "evidence_url": "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A young directory: the repository was created on 2026-10-09, and its history reached 308 commits by the reviewed commit of 2026-10-19. Its catalog files hold 123 project records, 13 supporting tools, 2 suites and 379 Project Requests for software with no listed reimplementation yet; remade.wiki is built from these files.",
+      "Listings target closed-source originals, mostly desktop and web applications, with Adobe, Autodesk and Microsoft products frequent among them. By category there are 53 creative, 37 productivity and 22 engineering records, plus 5 operating-systems, 3 developer-tools, 2 other and 1 games record. Status and compatibility are self-reported: 78 records are experimental, 26 alpha, 13 beta, 5 stable and 1 planned, and 107 claim partial compatibility.",
+      "POLICY.md requires independently authored code without leaked or unauthorized source, binaries or assets, excludes forks, ports, launchers and mods of the original, and leaves clean-room claims to each project’s authors; Remade states it does not audit provenance or legality. Only one record mentions a clean-room process, so whether a listing relied on clean-room work, reverse engineering or public documentation must be checked at its own source.",
+      "The repository’s MIT license covers the directory’s code and data; listed projects keep their own licenses, from MIT and Apache-2.0 to GPL and AGPL, with one recorded as Unlicensed. The project’s own 2026-10-17 documentary audit of 119 entries left unreachable repositories and license conflicts unresolved and disclaims software, legal or compatibility certification. An independent directory; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/POLICY.md",
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/CONTRIBUTING.md",
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/CATALOG.md",
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/apps/frontend/remade-wiki/src/content/DISCLAIMER.md",
+      "https://github.com/replicraft/remade/tree/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/apps/frontend/remade-wiki/src/content/catalog",
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
+      "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
+    ]
   }
 ]
