@@ -1875,7 +1875,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**人类与机器：AI 智能体在软件逆向工程中的对比研究**](https://arxiv.org/abs/2610.14960)
+- [**人类与机器：AI 智能体在软件逆向工程中的对比研究**](https://arxiv.org/abs/2610.14960)\
+  原题：*Humans vs. Machines: A Comparison With AI Agents in Software Reverse Engineering*
 
   比较人类与 LLM 智能体在相同静态逆向挑战中的理解和导航方式，并研究二进制表示如何占用上下文窗口。
 
@@ -1890,7 +1891,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**智能体网络安全的下一项挑战：真实场景且无训练数据污染的逆向工程基准**](https://arxiv.org/abs/2608.11469)
+- [**智能体网络安全的下一项挑战：真实场景且无训练数据污染的逆向工程基准**](https://arxiv.org/abs/2608.11469)\
+  原题：*The Next Challenge for Agentic Cybersecurity: A Realistic, Contamination-Free Reverse Engineering Benchmark*
 
   提出 SRE-Bench，使用私有编写的程序及带保护机制的二进制变体，研究智能体恢复程序语义的能力，并减少训练数据污染。
 
@@ -1905,7 +1907,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**CrackMeBench：面向智能体的二进制逆向工程基准**](https://arxiv.org/abs/2605.10597)
+- [**CrackMeBench：面向智能体的二进制逆向工程基准**](https://arxiv.org/abs/2605.10597)\
+  原题：*CrackMeBench: Binary Reverse Engineering for Agents*
 
   用可执行程序判定结果的 CrackMe 任务评估智能体：从二进制推断验证逻辑，提交可被接受的输入或产物，并记录工具使用、耗时与评分尝试。
 
@@ -1920,7 +1923,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**迈向抗 LLM 的软件保护：CTF 逆向工程中的智能体失败模式**](https://www.ndss-symposium.org/ndss-paper/auto-draft-657/)
+- [**迈向抗 LLM 的软件保护：CTF 逆向工程中的智能体失败模式**](https://www.ndss-symposium.org/ndss-paper/auto-draft-657/)\
+  原题：*Towards LLM-Resistant Software Protection: Agent Failure Patterns in CTF Reverse Engineering*
 
   让 Claude Code、Codex CLI 与 ChatGPT-5.2 Pro 求解从 2025 年 15 场国际 CTF 赛事中选出的 24 道 crackme 类题目，并将失败归因到“观察—理解—计划”循环的各阶段，以及隐藏、复杂化与误导三类保护效果。作者从失败日志中归纳出四类反复出现的弱点：训练偏差、过度信任观察结果、上下文限制和计划固守。他们还在移除反编译器后重新运行两个命令行智能体，并将结果与赛时解题率对比。
 
@@ -1935,7 +1939,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**ProgramBench：语言模型能否从零重建程序？**](https://arxiv.org/abs/2605.03546)
+- [**ProgramBench：语言模型能否从零重建程序？**](https://arxiv.org/abs/2605.03546)\
+  原题：*ProgramBench: Can Language Models Rebuild Programs From Scratch?*
 
   通过 200 项任务评估黑盒程序重建：智能体运行可执行文件进行探测并阅读文档，再独立实现代码库，由生成的测试检查其行为。
 
@@ -1950,7 +1955,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**CREBench：评估大语言模型的密码二进制逆向工程能力**](https://openreview.net/forum?id=tLYdf8hWJB)
+- [**CREBench：评估大语言模型的密码二进制逆向工程能力**](https://openreview.net/forum?id=tLYdf8hWJB)\
+  原题：*CREBench: Evaluating Large Language Models in Cryptographic Binary Reverse Engineering*
 
   通过 432 个受控挑战，评估密码二进制逆向中的算法识别、密钥或 IV 提取、包装层重建及标志恢复。
 
@@ -1970,7 +1976,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html)
+- [**SK2Decompile：从骨架到皮肤的大语言模型两阶段二进制反编译**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/9132583dd869acb0cafeb0ed25eb031a-Abstract-Conference.html)\
+  原题：*SK2Decompile: LLM-based Two-Phase Binary Decompilation from Skeleton to Skin*
 
   将 LLM 反编译分为两个阶段：结构恢复模型把反编译器伪代码转换为保留控制流和数据结构、但不含标识符的中间表示，并以编译器反馈作为强化学习奖励；标识符命名模型再以语义相似度为奖励恢复名称。作者报告，其在 HumanEval 上的平均可重新执行率比 GPT-5-mini 高 21.6%，在 GitHub2025 上的平均 R2I 比 Idioms 提升 29.4%。
 
@@ -1985,7 +1992,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**DecompileBench：面向真实场景的反编译器综合评测基准**](https://aclanthology.org/2025.findings-acl.1194/)
+- [**DecompileBench：面向真实场景的反编译器综合评测基准**](https://aclanthology.org/2025.findings-acl.1194/)\
+  原题：*DecompileBench: A Comprehensive Benchmark for Evaluating Decompilers in Real-World Scenarios*
 
   利用真实程序中的函数、运行时行为检查，以及 LLM 辅助的代码可理解性评估，比较传统反编译器与基于 LLM 的方法。
 
@@ -2000,7 +2008,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**TypeForge：为去符号二进制合成并选择最适配的复合数据类型**](https://ieeexplore.ieee.org/document/11023499)
+- [**TypeForge：为去符号二进制合成并选择最适配的复合数据类型**](https://ieeexplore.ieee.org/document/11023499)\
+  原题：*TypeForge: Synthesizing and Selecting Best-Fit Composite Data Types for Stripped Binaries*
 
   TypeForge 从去符号二进制中恢复复合数据类型，包括结构体布局、联合体以及指针引用和嵌套关系。它在 Ghidra 反编译器推断出的变量之上构建全程序类型流图，传播成员偏移与大小，切断由类型转换和联合体引起的冲突边，并合成候选类型声明。大语言模型只在这些静态合成的候选中进行选择：每个候选通过反编译器的重定类型接口应用，再以双败淘汰赛比较所得伪代码的可读性。作者在 OSPREY 的 coreutils 数据集上报告复合类型识别 F1 为 81.7%、布局恢复 F1 为 88.2%、关系恢复 F1 为 72.1%。
 
@@ -2015,7 +2024,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Decompile-Bench：面向真实二进制反编译的百万级二进制与源码函数对**](https://papers.nips.cc/paper_files/paper/2025/hash/079cf13ae174c31f148207d94d213bdc-Abstract-Datasets_and_Benchmarks_Track.html)
+- [**Decompile-Bench：面向真实二进制反编译的百万级二进制与源码函数对**](https://papers.nips.cc/paper_files/paper/2025/hash/079cf13ae174c31f148207d94d213bdc-Abstract-Datasets_and_Benchmarks_Track.html)\
+  原题：*Decompile-Bench: Million-Scale Binary-Source Function Pairs for Real-World Binary Decompilation*
 
   通过 Compile-Trace-Filter 流程构建 200 万组 C/C++ 二进制与源码函数对，并提供涵盖转写为 C/C++ 的 HumanEval、MBPP 任务及近期 GitHub 函数的评测集。
 
@@ -2030,7 +2040,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**ReSym：利用大语言模型恢复去符号二进制中的变量与数据结构符号**](https://doi.org/10.1145/3658644.3670340)
+- [**ReSym：利用大语言模型恢复去符号二进制中的变量与数据结构符号**](https://doi.org/10.1145/3658644.3670340)\
+  原题：*ReSym: Harnessing LLMs to Recover Variable and Data Structure Symbols from Stripped Binaries*
 
   结合两个微调语言模型与基于 Prolog 的跨函数推理，从去符号二进制的反编译结果中推断局部变量符号及用户自定义数据结构。
 
@@ -2045,7 +2056,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**LLM4Decompile：使用大语言模型反编译二进制代码**](https://aclanthology.org/2024.emnlp-main.203/)
+- [**LLM4Decompile：使用大语言模型反编译二进制代码**](https://aclanthology.org/2024.emnlp-main.203/)\
+  原题：*LLM4Decompile: Decompiling Binary Code with Large Language Models*
 
   训练语言模型将汇编反编译为 C，并改进 Ghidra 伪代码，以恢复函数能否重新编译并正确执行为评估目标。
 
@@ -2060,7 +2072,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**SLaDe：面向优化汇编的可移植小语言模型反编译器**](https://ieeexplore.ieee.org/document/10444788)
+- [**SLaDe：面向优化汇编的可移植小语言模型反编译器**](https://ieeexplore.ieee.org/document/10444788)\
+  原题：*SLaDe: A Portable Small Language Model Decompiler for Optimized Assembly*
 
   SLaDe 使用 200M 参数的编码器—解码器模型、面向代码的分词及 PsycheC 类型补全，将函数级汇编转换为 C。研究覆盖 x86 与 ARM 的 -O0、-O3 设置，并结合生成候选与输入／输出检查。输入是汇编文本而非原始机器字节，反汇编不属于该方法。
 
@@ -2075,7 +2088,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**DeGPT：使用大语言模型优化反编译器输出**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/)
+- [**DeGPT：使用大语言模型优化反编译器输出**](https://www.ndss-symposium.org/ndss-paper/degpt-optimizing-decompiler-output-with-llm/)\
+  原题：*DeGPT: Optimizing Decompiler Output with LLM*
 
   通过三个协同角色选择、提出并检查修改，改进已有的类 C 反编译输出。其流程简化代码结构、添加注释并重命名变量，在接受结构修改前，使用微代码片段语义计算比较模拟的符号值与调用。作者以四个代码库中的 620 个函数评估可读性与命名效果，并分别测试保留与剥离符号的版本。
 
@@ -2090,7 +2104,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin)
+- [**利用学习得到的变量名称与类型增强反编译输出**](https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin)\
+  原题：*Augmenting Decompiler Output with Learned Variable Names and Types*
 
   提出 Transformer 模型 DIRTY，根据反编译代码和布局信息推荐变量名与类型，并提供用于训练和评估的 DIRT 语料。
 
@@ -2105,7 +2120,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**DIRE：基于神经网络的反编译标识符命名方法**](https://doi.org/10.1109/ASE.2019.00064)
+- [**DIRE：基于神经网络的反编译标识符命名方法**](https://doi.org/10.1109/ASE.2019.00064)\
+  原题：*DIRE: A Neural Approach to Decompiled Identifier Naming*
 
   结合反编译输出中的词法与结构信息预测有意义的变量名，并使用编译 C 项目构建训练和评估语料。
 
@@ -2120,7 +2136,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Coda：端到端神经程序反编译器**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html)
+- [**Coda：端到端神经程序反编译器**](https://proceedings.neurips.cc/paper_files/paper/2019/hash/093b60fd0557804c8ba0cbf1453da22f-Abstract.html)\
+  原题：*Coda: An End-to-End Neural Program Decompiler*
 
   Coda 分两个阶段将短函数的汇编反编译为 C。首先由区分指令类型的 N 叉 Tree-LSTM 编码器与带注意力输入的 AST 解码器生成代码草图；随后由多个神经错误预测器的集成提出词元修正，只有当候选代码重新编译后与输入汇编的编辑距离不增加时，才保留该修正。在合成基准上，作者报告修正后的平均程序准确率为 82%，而带注意力的序列到序列基线为 12%。
 
@@ -2135,7 +2152,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Debin：预测去符号二进制中的调试信息**](https://dl.acm.org/doi/10.1145/3243734.3243866)
+- [**Debin：预测去符号二进制中的调试信息**](https://dl.acm.org/doi/10.1145/3243734.3243866)\
+  原题：*Debin: Predicting Debug Information in Stripped Binaries*
 
   Debin 为 x86、x64 与 ARM 上去符号的 ELF 二进制预测调试信息。它先将代码提升为 BAP-IR，用极端随机树分类器判断哪些寄存器和内存偏移对应源码级变量；再借助 Nice2Predict 求解条件随机场，联合预测变量与函数的名称和类型，并将结果以 DWARF 节写回二进制。作者在每种架构 300 个留出二进制上报告，x64 名称与类型预测的精确率为 68.8%、召回率为 68.3%。
 
@@ -2155,7 +2173,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**Vision2Web：采用智能体验证的分层视觉网站开发基准**](https://proceedings.mlr.press/v306/he26n.html)
+- [**Vision2Web：采用智能体验证的分层视觉网站开发基准**](https://proceedings.mlr.press/v306/he26n.html)\
+  原题：*Vision2Web: A Hierarchical Benchmark for Visual Website Development with Agent Verification*
 
   基于视觉原型和文字需求评测网站开发，包含 100 项静态页面、66 项交互前端与 27 项全栈任务，将基于工作流的功能检查与模型进行的视觉比较结合。
 
@@ -2170,7 +2189,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**ProgramDistill：将交互式 Web 应用转化为可验证的参考驱动软件工程任务**](https://arxiv.org/abs/2609.18805)
+- [**ProgramDistill：将交互式 Web 应用转化为可验证的参考驱动软件工程任务**](https://arxiv.org/abs/2609.18805)\
+  原题：*ProgramDistill: From Interactive Web Apps to Verifiable Reference-Guided SWE Tasks*
 
   评测智能体从源码不可见的运行参考中恢复 Web 应用行为的能力，提供覆盖 26 个应用的 4,063 项功能恢复任务，以及独立的 12 应用重建设置，通过重放具有依赖关系的浏览器工作流评分。
 
@@ -2185,7 +2205,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**UI2App：评测可执行 Web 应用生成中的视觉交互推断**](https://arxiv.org/abs/2607.06306)
+- [**UI2App：评测可执行 Web 应用生成中的视觉交互推断**](https://arxiv.org/abs/2607.06306)\
+  原题：*UI2App: Benchmarking Visual Interaction Inference in Executable Web Application Generation*
 
   UI2App 使用来自 95 个 Web 应用的 600 张截图，评测生成的可运行 React/TypeScript 应用。它通过参考交互分类体系和公开评测流水线，分别衡量构建可执行性、视觉保真度，以及包括跨路由状态在内的截图隐含交互行为。
 
@@ -2200,7 +2221,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Dashboard2Code：评估多模态模型重建交互式仪表盘的能力**](https://aclanthology.org/2026.acl-long.1750/)
+- [**Dashboard2Code：评估多模态模型重建交互式仪表盘的能力**](https://aclanthology.org/2026.acl-long.1750/)\
+  原题：*Dashboard2Code: Evaluating Multimodal Models on Reconstructing Interactive Dashboards*
 
   评估智能体主动探索运行中的仪表盘后，重建其外观与交互逻辑的能力。DashboardMimic 提供 180 个 Plotly+Dash 示例，并以代码语义分析和动态交互测试评估生成的实现。
 
@@ -2215,7 +2237,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**CASCADE：谷歌基于大语言模型的 JavaScript 反混淆器**](https://doi.org/10.1145/3786583.3786873)
+- [**CASCADE：谷歌基于大语言模型的 JavaScript 反混淆器**](https://doi.org/10.1145/3786583.3786873)\
+  原题：*CASCADE: LLM-powered JavaScript Deobfuscator at Google*
 
   利用 Gemini 定位 Obfuscator.IO 为字符串混淆插入的前置（prelude）函数，再在 JSIR 编译器中间表示上执行常量传播与内联，以确定性方式还原字符串字面量和 API 名称。
 
@@ -2230,7 +2253,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**ScreenCoder：以模块化多模态智能体推进面向前端自动化的视觉到代码生成**](https://arxiv.org/abs/2507.22827)
+- [**ScreenCoder：以模块化多模态智能体推进面向前端自动化的视觉到代码生成**](https://arxiv.org/abs/2507.22827)\
+  原题：*ScreenCoder: Advancing Visual-to-Code Generation for Front-End Automation via Modular Multimodal Agents*
 
   将截图到代码的生成分配给定位、规划和生成三个智能体，分别标注界面区域、构建层级布局树并编写 HTML/CSS。该流程还生成了用于监督微调和强化学习的 Screen-10K 训练数据；论文另提出包含 1,000 个网页的 ScreenBench。
 
@@ -2245,7 +2269,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**IWR-Bench：大型视觉语言模型能否根据用户交互视频重建可交互网页？**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/55bfedfd31489e5ae83c9ce8eec7b0e1-Abstract-Conference.html)
+- [**IWR-Bench：大型视觉语言模型能否根据用户交互视频重建可交互网页？**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/55bfedfd31489e5ae83c9ce8eec7b0e1-Abstract-Conference.html)\
+  原题：*IWR-Bench: Can LVLMs reconstruct interactive webpage from a user interaction video?*
 
   测试模型利用用户交互视频和提供的静态资源重建可交互网页的能力。其 113 项任务通过重放标注的操作序列，评估已观察页面状态的视觉保真度与功能行为。
 
@@ -2260,7 +2285,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**JsDeObsBench：衡量与评测大语言模型的 JavaScript 反混淆能力**](https://doi.org/10.1145/3719027.3744871)
+- [**JsDeObsBench：衡量与评测大语言模型的 JavaScript 反混淆能力**](https://doi.org/10.1145/3719027.3744871)\
+  原题：*JsDeObsBench: Measuring and Benchmarking LLMs for JavaScript Deobfuscation*
 
   对附带测试用例的 Project CodeNet 程序施加 JavaScript-Obfuscator 的七种混淆变换，构建可通过执行验证的 JavaScript 反混淆基准，并从语法、执行结果、代码简化程度及与原始代码的相似度评估 LLM 和现有工具的输出。
 
@@ -2275,7 +2301,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Interaction2Code：从交互原型生成网页代码的多模态大语言模型评测基准**](https://doi.org/10.1109/ASE63991.2025.00028)
+- [**Interaction2Code：从交互原型生成网页代码的多模态大语言模型评测基准**](https://doi.org/10.1109/ASE63991.2025.00028)\
+  原题：*Interaction2Code: Benchmarking MLLM-based Interactive Webpage Code Generation from Interactive Prototyping*
 
   评测模型根据交互前后的截图重建可交互网页的能力。最终研究涵盖 127 个网页、374 项交互，并比较渲染外观、自动交互检查与人工可用性判断。
 
@@ -2290,7 +2317,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**WebUIBench：评估多模态大语言模型从网页界面生成代码能力的综合基准**](https://aclanthology.org/2025.findings-acl.815/)
+- [**WebUIBench：评估多模态大语言模型从网页界面生成代码能力的综合基准**](https://aclanthology.org/2025.findings-acl.815/)\
+  原题：*WebUIBench: A Comprehensive Benchmark for Evaluating Multimodal Large Language Models in WebUI-to-Code*
 
   通过视觉感知、HTML 编程、图像与 HTML 对应理解，以及截图重建任务，诊断从网页界面生成代码的能力；利用来自真实网站的问答对，分别考察各项基础技能。
 
@@ -2305,7 +2333,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**分而治之：从截图生成界面代码**](https://doi.org/10.1145/3729364)
+- [**分而治之：从截图生成界面代码**](https://doi.org/10.1145/3729364)\
+  原题：*Divide-and-Conquer: Generating UI Code from Screenshots*
 
   沿视觉分隔线递归切分网页截图，由多模态模型为每个叶子片段生成 HTML/CSS，再将子片段代码逐级向上组装为完整页面；评估涵盖 GPT-4o、Gemini 与 Claude 系列模型以及一项小规模开发者研究。
 
@@ -2320,7 +2349,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Design2Code：面向自动化前端工程的多模态代码生成评测**](https://aclanthology.org/2025.naacl-long.199/)
+- [**Design2Code：面向自动化前端工程的多模态代码生成评测**](https://aclanthology.org/2025.naacl-long.199/)\
+  原题：*Design2Code: Benchmarking Multimodal Code Generation for Automated Front-End Engineering*
 
   使用真实网页参考、视觉元素和布局指标及人工评估，测试从网页截图重建前端代码的能力。
 
@@ -2335,7 +2365,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Web2Code：面向多模态大语言模型的大规模网页转代码数据集与评估框架**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html)
+- [**Web2Code：面向多模态大语言模型的大规模网页转代码数据集与评估框架**](https://proceedings.nips.cc/paper_files/paper/2024/hash/cb66be286795d71f89367d596bf78ea7-Abstract-Datasets_and_Benchmarks_Track.html)\
+  原题：*Web2Code: A Large-scale Webpage-to-Code Dataset and Evaluation Framework for Multimodal LLMs*
 
   通过指令微调和两个评测基准研究从截图重建 HTML。Web2Code 结合生成网页、经改进的 WebSight 与 pix2code 图像／代码对，以及来自 WebSRC 的问答。模型根据网页图像与指令生成 HTML，渲染输出接受视觉比较，另一个基准则测量截图理解能力。
 
@@ -2355,7 +2386,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**GameReplica：视觉语言智能体的黑盒视觉游戏复刻基准**](https://arxiv.org/abs/2609.22308)
+- [**GameReplica：视觉语言智能体的黑盒视觉游戏复刻基准**](https://arxiv.org/abs/2609.22308)\
+  原题：*GameReplica: A Benchmark for Black-Box Visual Game Replication by Vision-Language Agents*
 
   通过来自 25 款网页游戏、各设五个难度级别的 125 个任务，评估视觉语言智能体能否通过截图和主动交互推断隐藏规则，并构建可运行的单文件 HTML 游戏复刻。
 
@@ -2370,7 +2402,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Tycho：面向 ARC-AGI-3 的程序化世界模型主动抽象**](https://arxiv.org/abs/2607.28287)
+- [**Tycho：面向 ARC-AGI-3 的程序化世界模型主动抽象**](https://arxiv.org/abs/2607.28287)\
+  原题：*Tycho: Active Abstraction with Programmatic World Models for ARC-AGI-3*
 
   Tycho 根据陌生 ARC-AGI-3 游戏中的动作与观察历史，构建可编辑的 Python 模型，描述游戏状态、状态转移、渲染与结果。它将模型预测与已记录的转移进行核对，并在规划时选择使用、修复或绕过这些模型。
 
@@ -2385,7 +2418,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**RevengeBench：通过行为实验逆向恢复代码形式的策略**](https://arxiv.org/abs/2606.26094)
+- [**RevengeBench：通过行为实验逆向恢复代码形式的策略**](https://arxiv.org/abs/2606.26094)\
+  原题：*RevengeBench: Reverse Engineering Code-Space Policies from Behavioral Experiments*
 
   使用五种游戏环境中的 75 个合成策略，测试智能体能否通过行为轨迹和自行设计的对手探测恢复可执行决策策略，并衡量留出状态上的动作一致性及后续对抗价值。
 
@@ -2400,7 +2434,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**SPRITE：从静态设计稿重建可用于游戏引擎的界面**](https://doi.org/10.1145/3772363.3798742)
+- [**SPRITE：从静态设计稿重建可用于游戏引擎的界面**](https://doi.org/10.1145/3772363.3798742)\
+  原题：*SPRITE: From Static Mockups to Engine-Ready Game UI*
 
   通过层级化 YAML、视觉定位、素材提取和 Unity UXML／USS 生成，将游戏界面截图转化为可编辑的引擎资源，并在精选游戏界面基准上评估，由三位资深 UI／UX 设计师进行审阅。
 
@@ -2415,7 +2450,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**WorldCoder：通过编写代码并与环境交互构建世界模型的基于模型的语言智能体**](https://papers.nips.cc/paper_files/paper/2024/hash/820c61a0cd419163ccbd2c33b268816e-Abstract-Conference.html)
+- [**WorldCoder：通过编写代码并与环境交互构建世界模型的基于模型的语言智能体**](https://papers.nips.cc/paper_files/paper/2024/hash/820c61a0cd419163ccbd2c33b268816e-Abstract-Conference.html)\
+  原题：*WorldCoder, a Model-Based LLM Agent: Building World Models by Writing Code and Interacting with the Environment*
 
   WorldCoder 根据环境交互和自然语言目标学习可执行的 Python 状态转移与奖励模型，利用已记录经验和乐观规划约束修正代码，并在 Sokoban、MiniGrid 与 ALFWorld 中研究迁移和任务求解。
 
@@ -2430,7 +2466,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**通过蒙特卡洛树搜索引导大语言模型生成代码世界模型**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html)
+- [**通过蒙特卡洛树搜索引导大语言模型生成代码世界模型**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html)\
+  原题：*Generating Code World Models with Large Language Models Guided by Monte Carlo Tree Search*
 
   GIF-MCTS 根据环境的自然语言描述与离线状态转移轨迹生成可执行的 Python 状态转移和奖励模型，并利用预测反馈生成、改进和修复代码。CWMB 评估 18 个强化学习环境及后续规划；另一个实验使用简化的 Read to Fight Monsters 网格世界。
 
@@ -2450,7 +2487,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**UIOrchestra：通过多智能体系统将 UI 设计转换为高保真代码**](https://aclanthology.org/2025.findings-emnlp.150/)
+- [**UIOrchestra：通过多智能体系统将 UI 设计转换为高保真代码**](https://aclanthology.org/2025.findings-emnlp.150/)\
+  原题：*UIOrchestra: Generating High-Fidelity Code from UI Designs with a Multi-agent System*
 
   UIOrchestra 通过布局描述、代码生成及渲染图像比较三个智能体，将静态移动 UI 设计转换为 React/CSS。其 APPUI 基准包含 1,101 组经人工修订的代码与渲染图像，依据 12 类中的 165 款应用截图构建。参考代码为评测而重建，并非恢复出的原始应用源码。
 
@@ -2465,7 +2503,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**DeclarUI：以自动生成声明式界面代码连接设计与开发**](https://doi.org/10.1145/3715726)
+- [**DeclarUI：以自动生成声明式界面代码连接设计与开发**](https://doi.org/10.1145/3715726)\
+  原题：*DeclarUI: Bridging Design and Development with Automated Declarative UI Code Generation*
 
   结合视觉组件提取、多模态模型、页面跳转图与迭代检查，从设计稿或截图重建多页面移动界面代码，并在 React Native、Flutter 和 ArkUI 上评测。
 
@@ -2480,7 +2519,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**基于机器学习的移动应用图形用户界面原型生成**](https://doi.org/10.1109/TSE.2018.2844788)
+- [**基于机器学习的移动应用图形用户界面原型生成**](https://doi.org/10.1109/TSE.2018.2844788)\
+  原题：*Machine Learning-Based Prototyping of Graphical User Interfaces for Mobile Apps*
 
   ReDraw 通过组件检测、CNN 控件类型分类及数据驱动的近邻层级组装，将截图或设计稿转换为原生 Android 图形界面原型。
 
@@ -2495,7 +2535,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**pix2code：从图形用户界面截图生成代码**](https://doi.org/10.1145/3220134.3220135)
+- [**pix2code：从图形用户界面截图生成代码**](https://doi.org/10.1145/3220134.3220135)\
+  原题：*pix2code: Generating Code from a Graphical User Interface Screenshot*
 
   学习从界面截图生成领域专用语言（DSL），再编译为原生 Android XML、iOS Storyboard 或网页 HTML/CSS 界面代码。
 
@@ -2510,7 +2551,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**从 UI 设计图到 GUI 骨架：辅助启动移动界面实现的神经机器翻译器**](https://doi.org/10.1145/3180155.3180240)
+- [**从 UI 设计图到 GUI 骨架：辅助启动移动界面实现的神经机器翻译器**](https://doi.org/10.1145/3180155.3180240)\
+  原题：*From UI Design Image to GUI Skeleton: A Neural Machine Translator to Bootstrap Mobile GUI Implementation*
 
   UI2code 使用神经编码器—解码器，将移动 UI 图像转换为 Android 组件层级与布局骨架。论文评估了结构预测，并通过小规模开发者实验研究如何基于生成的骨架实现布局。
 
@@ -2525,7 +2567,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**使用 REMAUI 逆向重建移动应用用户界面**](https://ieeexplore.ieee.org/abstract/document/7372013)
+- [**使用 REMAUI 逆向重建移动应用用户界面**](https://ieeexplore.ieee.org/abstract/document/7372013)\
+  原题：*Reverse Engineering Mobile Application User Interfaces with REMAUI (T)*
 
   利用 OCR、计算机视觉和布局启发式规则，从截图或设计位图重建原生 Android 界面代码，并使用来自 100 多款 Android 与 iOS 应用的 488 张截图评估视觉相似性和视图层级。
 
@@ -2545,7 +2588,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**面向 Linux 固件二进制的用户空间依赖感知重托管**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/)
+- [**面向 Linux 固件二进制的用户空间依赖感知重托管**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/)\
+  原题：*User-Space Dependency-Aware Rehosting for Linux-Based Firmware Binaries*
 
   FIRMWELL 通过运行初始化进程、定位阻塞依赖并修补缺失的系统层行为，重建 Linux 固件服务的执行环境。它结合容器化 QEMU-user 仿真与 QEMU-system 回退，并利用进程轨迹和二进制分析恢复目标服务所需的资源。
 
@@ -2560,7 +2604,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**使用 Penguin 进行以目标为中心的固件重托管**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/)
+- [**使用 Penguin 进行以目标为中心的固件重托管**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/)\
+  原题：*Target-Centric Firmware Rehosting with Penguin*
 
   Penguin 以提取出的固件文件系统为输入，通过静态分析生成可编辑的仿真变换配置（如文件修改、伪文件、NVRAM 值和网络接口），用于重托管嵌入式 Linux 固件。动态分析插件揭示运行失败，便于针对具体目标完善配置；配置最小化工具则找出可用的重托管所必需的变换。
 
@@ -2575,7 +2620,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**Fuzzware：利用精确的 MMIO 建模提升固件模糊测试效果**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski)
+- [**Fuzzware：利用精确的 MMIO 建模提升固件模糊测试效果**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski)\
+  原题：*Fuzzware: Using Precise MMIO Modeling for Effective Firmware Fuzzing*
 
   重托管单体 ARM Cortex-M 固件以开展模糊测试，利用局部符号执行为内存映射 I/O 访问建模，使输入变异集中于影响固件逻辑的值。
 
@@ -2590,7 +2636,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**FirmAE：面向动态分析的物联网固件大规模仿真**](https://doi.org/10.1145/3427228.3427294)
+- [**FirmAE：面向动态分析的物联网固件大规模仿真**](https://doi.org/10.1145/3427228.3427294)\
+  原题：*FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis*
 
   在 Firmadyne 基础上，针对启动、网络、NVRAM、内核行为及其他运行失败加入经验性干预，使 Linux 路由器与 IP 摄像机固件的 Web 服务能够运行并接受动态分析。
 
@@ -2605,7 +2652,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**HALucinator：通过抽象层仿真实现固件重托管**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements)
+- [**HALucinator：通过抽象层仿真实现固件重托管**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements)\
+  原题：*HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation*
 
   HALucinator 识别单体 ARM Cortex-M 固件中的硬件抽象库函数，并用人工编写的 Python 处理函数和外设模型替换它们，从而重托管固件。LibMatch 定位库接口；QEMU/Avatar2 实现支持交互式输入输出，与论文关联的 HAL-fuzz 变体则使用 AFL-Unicorn 进行模糊测试。
 
@@ -2625,7 +2673,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 [↑ 论文主题](#papers) · [目录](#目录)
 
-- [**ICEPRE：基于数据驱动混合符号执行的工控协议逆向工程**](https://dl.acm.org/doi/10.1145/3728982)
+- [**ICEPRE：基于数据驱动混合符号执行的工控协议逆向工程**](https://dl.acm.org/doi/10.1145/3728982)\
+  原题：*ICEPRE: ICS Protocol Reverse Engineering via Data-Driven Concolic Execution*
 
   在二进制协议解析器中沿具体报文引导的路径分析，再进行符号化重放，提取字节级数据流以推断报文字段边界。它依据保持原值的运算和相似处理轨迹合并字节。作者在四种公开工控协议、每组 1,000 条报文的数据集上，报告平均边界 F1 分数为 0.76、字段完美分割率为 0.67。
 
@@ -2640,7 +2689,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**BinPRE：增强基于二进制分析的协议逆向工程中的字段推断**](https://dl.acm.org/doi/10.1145/3658644.3690299)
+- [**BinPRE：增强基于二进制分析的协议逆向工程中的字段推断**](https://dl.acm.org/doi/10.1145/3658644.3690299)\
+  原题：*BinPRE: Enhancing Field Inference in Binary Analysis Based Protocol Reverse Engineering*
 
   根据受插桩监测的服务端二进制及输入报文，推断协议报文的字段边界与语义。BinPRE 按处理字节的指令操作符进行分组，使用检测器识别字段类型和功能，再借助相似报文细化结果。作者在八种协议、每种 50 条报文上报告平均字段完美分割率为 0.73，类型／功能推断的 F1 分数为 0.74／0.81。
 
@@ -2655,7 +2705,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**从网络协议实现提取精确格式规范及其安全应用**](https://dl.acm.org/doi/10.1145/3576915.3616614)
+- [**从网络协议实现提取精确格式规范及其安全应用**](https://dl.acm.org/doi/10.1145/3576915.3616614)\
+  原题：*Lifting Network Protocol Implementation to Precise Format Specification with Security Applications*
 
   NetLifter 将可获取源码的 C 协议解析器静态转换为 BNF 风格的报文文法及报文字段之间的一阶逻辑约束。它分析经过标注的 LLVM 位码，结合抽象格式图、局部路径敏感分析、展开与重排序。所得字段边界、约束与名称可用于报文生成及解析器构建。
 
@@ -2670,7 +2721,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**BinaryInferno：面向二进制报文格式字段推断的语义驱动方法**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/)
+- [**BinaryInferno：面向二进制报文格式字段推断的语义驱动方法**](https://www.ndss-symposium.org/ndss-paper/binaryinferno-a-semantic-driven-approach-to-field-inference-for-binary-message-formats/)\
+  原题：*BinaryInferno: A Semantic-Driven Approach to Field Inference for Binary Message Formats*
 
   无需对可执行程序插桩，即可从静态报文样本推断部分二进制报文格式。专用检测器识别浮点数、时间戳、长度、熵边界和序列化模式，再通过基于图的集成步骤协调各自的描述。作者对十种协议的样本开展评估，在每组 1,000 条报文且不使用分析者先验的设置下，报告顶层字段边界的精确率为 0.69、召回率为 0.73、假阳性率为 0.04。
 
@@ -2685,7 +2737,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**越仔细观察，学到的越多：用于协议状态机学习的灰盒方法**](https://doi.org/10.1145/3548606.3559365)
+- [**越仔细观察，学到的越多：用于协议状态机学习的灰盒方法**](https://doi.org/10.1145/3548606.3559365)\
+  原题：*The Closer You Look, The More You Learn: A Grey-box Approach to Protocol State Machine Learning*
 
   StateInspector 将主动消息查询与运行时内存快照结合起来，学习协议的 Mealy 状态机，无需目标实现的源代码。它识别可能决定状态的堆内存位置，并通过污点分析与混合执行合并状态；作者在 TLS 1.2 和 WPA/2 实现上进行了评估。
 
@@ -2700,7 +2753,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**基于自动机学习的蓝牙设备指纹识别与分析**](https://doi.org/10.1007/s10703-023-00425-y)
+- [**基于自动机学习的蓝牙设备指纹识别与分析**](https://doi.org/10.1007/s10703-023-00425-y)\
+  原题：*Fingerprinting and analysis of Bluetooth devices with automata learning*
 
   通过主动自动机学习，为实体外设上的低功耗蓝牙（BLE）协议实现推断 Mealy 状态机模型。运行 SweynTooth 衍生固件的 nRF52840 中心设备发送抽象 BLE 输入，并以错误处理、重复查询和缓存应对丢包与不确定的响应。作者学习了六款设备的连接过程模型和其中三款的传统配对（legacy pairing）模型，并利用模型差异识别各设备的 SoC。
 
@@ -2715,7 +2769,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**NetPlier：基于报文记录的概率网络协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/)
+- [**NetPlier：基于报文记录的概率网络协议逆向工程**](https://www.ndss-symposium.org/ndss-paper/netplier-probabilistic-network-protocol-reverse-engineering-from-message-traces/)\
+  原题：*NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces*
 
   通过多序列比对与概率式关键字段推断，按类型对网络报文聚类，并在十种协议上评测及开展后续格式与状态机分析。
 
@@ -2730,7 +2785,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**无线协议自动逆向工程**](https://www.usenix.org/conference/woot19/presentation/pohl)
+- [**无线协议自动逆向工程**](https://www.usenix.org/conference/woot19/presentation/pohl)\
+  原题：*Automatic Wireless Protocol Reverse Engineering*
 
   从解调后的物理层捕获数据推断专有无线协议的报文格式：先依据前导码和同步字对齐报文，再结合 RSSI 与专用引擎标注长度、地址、序列号和校验和字段，并可利用已知地址或字段位置等先验信息。
 
@@ -2745,7 +2801,8 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   </details>
 
-- [**NEMESYS：通过分析单条报文的内在结构逆向推断网络报文语法**](https://www.usenix.org/conference/woot18/presentation/kleber)
+- [**NEMESYS：通过分析单条报文的内在结构逆向推断网络报文语法**](https://www.usenix.org/conference/woot18/presentation/kleber)\
+  原题：*NEMESYS: Network Message Syntax Reverse Engineering by Analysis of the Intrinsic Structure of Individual Messages*
 
   根据单条二进制协议报文内比特一致性的变化，推断近似字段边界，并提出格式匹配分数，将推断的分段结果与已知协议解析器进行比较。
 

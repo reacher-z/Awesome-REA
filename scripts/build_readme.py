@@ -391,7 +391,7 @@ def render_papers(papers, language):
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
             links.append(f"[{'完整条目与引用' if zh else 'Full entry & citation'}]({detail_url})")
             lines.extend([
-                f"- [**{title}**]({paper['url']})", '',
+                f"- [**{title}**]({paper['url']})" + (original_title(paper) if zh else ''), '',
                 '  ' + plain_text(paper[f'description_{language}']), '',
                 f"  {paper['year']} · {status} · " + ' · '.join(links), '',
                 '  <details>',
@@ -420,6 +420,11 @@ def replace_papers(content, rendered, language):
         _, after = rest.split(PAPERS_END, 1)
         content = before + PAPERS_BEGIN + '\n' + rendered + PAPERS_END + after
     return content
+
+
+def original_title(paper):
+    """Chinese entries keep the published title under the translation, joined by a Markdown hard break."""
+    return f"\\\n  原题：*{plain_text(paper['title'])}*"
 
 
 def main():
