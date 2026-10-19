@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 293](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-293-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 148](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 57](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 293](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-293-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 148](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (57) · [智能体与 MCP](#agents-and-mcp) (22) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (58) · [智能体与 MCP](#agents-and-mcp) (22) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1870,14 +1870,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**57 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**58 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (12) · [网站](#papers-website-reconstruction) (13)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (5)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -2629,6 +2629,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** LibMatch 需要可获取的硬件抽象层或库，以及足够相似的编译环境；编译器差异与内联会限制匹配效果。重托管还需要 QEMU 支持的架构、固件内存布局、拦截地址及人工编写的处理函数和模型。未建模的直接硬件访问可能在读取时返回零、在写入时被忽略；简化的时序与外设行为不能证明硬件等价。作者的重托管与模糊测试演示不代表普遍覆盖所有固件、完整重建设备或恢复原始源代码。
 
   **发表信息:** 2020 · USENIX Security 2020 · 会议论文 · Abraham A Clements 等
+
+  </details>
+
+- [**面向基于 Linux 的嵌入式固件的自动化动态分析**](https://doi.org/10.14722/ndss.2016.23415)
+
+  Firmadyne 对路由器、IP 摄像头等联网商用设备中基于 Linux 的固件进行爬取、提取与仿真。它以预先构建并插桩的小端 ARM 及小端、大端 MIPS 内核替换厂商内核，在 QEMU 全系统仿真中配合用户态 NVRAM 库启动提取出的文件系统，推断网络配置，再运行自动化分析，包括 60 个已知漏洞利用和 14 个新发现的漏洞利用。作者从 42 家厂商的 23,035 个固件映像中提取出 9,486 个，并报告在 1,971 个网络可达映像中有 887 个至少受一个所选漏洞利用影响。
+
+  2016 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [代码](https://github.com/firmadyne/firmadyne) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-firmadyne/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该工作面向小端 ARM 及小端、大端 MIPS 上基于 Linux 的固件，这些平台占数据集的 90.8%；x86、VxWorks 及其他实时操作系统不在系统支持范围内。其预构建内核不加载厂商的树外内核模块，因此无法检查厂商内核及模块，插桩仿真也不等同于设备原有行为。仿真流程逐级大幅收窄：在初始仿真成功的 8,591 个映像中，2,797 个推断出网络配置，1,971 个能响应 ping。论文列出的原因包括 NVRAM 语义、网络接口命名，以及 ARM 平台仅仿真一个以太网设备等。系统不区分 WAN 与 LAN 端口，因此不能确认可否远程利用；结果按固件映像而非独立产品计数，并受厂商构成偏差影响。本收录中已有的 FirmAE 扩展了 Firmadyne 以解决此类仿真失败；这些 2016 年的比率并非当前的仿真数据。
+
+  **发表信息:** 2016 · NDSS 2016 · 会议论文 · Daming D. Chen 等
 
   </details>
 

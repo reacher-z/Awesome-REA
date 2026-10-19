@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 293](https://img.shields.io/badge/resources-293-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 148](https://img.shields.io/badge/cases-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 57](https://img.shields.io/badge/papers-57-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 293](https://img.shields.io/badge/resources-293-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 148](https://img.shields.io/badge/cases-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 58](https://img.shields.io/badge/papers-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (57) · [Agents and MCP](#agents-and-mcp) (22) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (58) · [Agents and MCP](#agents-and-mcp) (22) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1869,14 +1869,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**57 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**58 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (12) · [Websites](#papers-website-reconstruction) (13)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (5)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -2628,6 +2628,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** LibMatch requires an available HAL/library and a sufficiently similar compilation environment; compiler variation and inlining limit matching. Rehosting also needs a QEMU-supported architecture, firmware memory layout, interception addresses and authored handlers/models. Unmodeled direct hardware accesses may return zero or ignore writes, and simplified timing and peripheral behavior do not establish hardware equivalence. The authors’ rehosting and fuzzing demonstrations are not universal firmware coverage, complete device reconstruction or original-source recovery.
 
   **Publication:** 2020 · USENIX Security 2020 · Conference paper · Abraham A Clements et al.
+
+  </details>
+
+- [**Towards Automated Dynamic Analysis for Linux-based Embedded Firmware**](https://doi.org/10.14722/ndss.2016.23415)
+
+  Firmadyne crawls, extracts and emulates Linux-based firmware for network-connected commercial devices such as routers and IP cameras. It replaces the vendor kernel with pre-built, instrumented kernels for little-endian ARM and little- and big-endian MIPS, boots the extracted filesystem under QEMU full-system emulation with a userspace NVRAM library, infers the network configuration, then runs automated analyses including 60 known and 14 newly found exploits. From 23,035 images across 42 vendors, the authors extracted 9,486 and report 887 of the 1,971 network-reachable images vulnerable to at least one sampled exploit.
+
+  2016 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [Code](https://github.com/firmadyne/firmadyne) · [Full entry & citation](https://awesomerea.org/papers/paper-firmadyne/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The work targets Linux-based firmware on little-endian ARM and little- and big-endian MIPS, which made up 90.8% of the dataset; x86, VxWorks and other real-time operating systems are outside the system. Its pre-built kernels do not load vendor out-of-tree kernel modules, so vendor kernels and modules cannot be checked, and instrumented emulation is not identical device behavior. The emulation funnel narrows sharply: of 8,591 images that initially emulated, 2,797 had a network configuration inferred and 1,971 answered ping. NVRAM semantics, interface naming and a single emulated Ethernet device on ARM are among the reported causes. WAN and LAN ports are not distinguished, so remote exploitability is not established, and results count firmware images rather than unique products and are skewed by vendor composition. FirmAE, already in this bibliography, extends Firmadyne to address such emulation failures; these 2016 rates are not current emulation figures.
+
+  **Publication:** 2016 · NDSS 2016 · Conference paper · Daming D. Chen et al.
 
   </details>
 
