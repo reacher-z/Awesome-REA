@@ -14227,12 +14227,17 @@
         "https://x.com/i/status/2111585716195004425",
         "https://github.com/ntthanh2603/gemini-web-to-api/blob/3633170/README.md"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "reason_en": "Argusic's post (2026-10-17) reports that its agent built and launched gemini-web-to-api at commit 3633170 on a clean machine, passed the test suites and saw authentication fail with dummy cookies; it says the run used stand-in services only and attaches a video. The repository, reviewed at 3633170 and 1f1577d, implements a local server that uses a user's Gemini web-session cookies to expose OpenAI-, Claude- and Gemini-compatible endpoints; its live end-to-end tests are opt-in and need a real account. It publishes no protocol investigation or comparison evidence, and its README warns that the approach may not comply with Google's terms. Retain the lead without a catalog mapping; neither a documented reconstruction nor a real-service result is established, and no REA use is stated.",
+      "reason_zh": "Argusic 的帖子（2026-10-17）称其智能体在全新机器上构建并启动了 gemini-web-to-api 的提交 3633170，测试套件全部通过，使用占位 cookie 时认证按预期失败；帖子说明整个运行只针对替身服务，并附有视频。所审阅的仓库（提交 3633170 与 1f1577d）实现了一个本地服务器，借助使用者的 Gemini 网页会话 cookie 提供兼容 OpenAI、Claude 和 Gemini 的接口；其真实端到端测试需手动开启并使用真实账号。仓库未公开协议调查过程或对照证据，README 也提醒这种做法可能不符合 Google 的服务条款。保留此线索而不建立目录映射；既未确立有记录的重建，也没有针对真实服务的结果，且未说明使用了 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/argusiccom/status/2111585716195004425",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/363317054e02068f7f3e72a7a97a83f9597457e3/README.md",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/1f1577dbd479d5b61a1c5f03de742ffcdeb51f6d/README.md",
+        "https://github.com/ntthanh2603/gemini-web-to-api/blob/1f1577dbd479d5b61a1c5f03de742ffcdeb51f6d/tests/e2e/e2e_test.go"
+      ],
       "catalog_matches": []
     },
     {
@@ -14942,15 +14947,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "insufficient-evidence": 127,
+      "pending": 309
     },
     "units_by_state": {
       "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 127,
+      "pending": 308
     },
-    "primary_reviewed_units": 220,
+    "primary_reviewed_units": 221,
     "catalog_linked_occurrences": 166,
     "distinct_resource_ids": 160,
     "distinct_paper_ids": 1,
