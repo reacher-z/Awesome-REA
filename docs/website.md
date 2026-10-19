@@ -4,7 +4,7 @@
 
 ## Source and generated files
 
-- [site/](../site/) contains the dependency-free HTML, CSS, JavaScript, favicon and social image. Update the SVG and PNG together when the illustration changes.
+- [site/](../site/) contains the dependency-free HTML, CSS, JavaScript, favicon and social image. Update the SVG and PNG together when the illustration changes. The pages follow the reader's system color scheme: styles.css declares `color-scheme: light dark`, defines every palette color as a `:root` token and restates each token under `@media (prefers-color-scheme: dark)` (papers.css and survey.css do the same for their own few colors). Use a token rather than a literal color in new rules, and use `--on-ink` for text on ink-filled controls, which turn light in the dark theme. Every page carries a light and a dark `theme-color` from `THEME_COLOR_META` in open_graph.py.
 - [open_graph.py](../scripts/open_graph.py) writes the Open Graph and Twitter card tags for the homepage and every generated page, with `og:site_name` set to its `SITE_NAME`, with the image type and size read from `social-card.png` and a localized description of the card as its alt text. The 404 page has no `og:url`. The same module defines the WebSite node (`#website`): only the two homepages include it, and every other page's JSON-LD refers to it by `@id`. `validate_site.py` checks both against these constants.
 - [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json) are the resource sources. Keep bilingual descriptions, evidence links, prerequisites, review dates and target labels accurate.
 - [translations.zh-CN.json](../site/translations.zh-CN.json) supplies Chinese resource names and prerequisites. New records also need translations here.

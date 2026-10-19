@@ -11,7 +11,7 @@ import re
 
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, bibtex_text, icon
-from open_graph import open_graph_meta, website_reference
+from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 
 ROOT = Path(__file__).resolve().parents[1]
 TITLES = ('Reverse Engineering Anything: An Evidence-Centered Survey',
@@ -313,7 +313,7 @@ def build_survey(site_dir, papers, resources, *, document=None, site_url='https:
         quick_links = ''.join(quick_links)
         stats = ''.join(f'<div><strong>{snapshot[key]}</strong><span>{label}</span></div>' for key, label in [('papers', choose('papers in the snapshot', '快照中的论文')), ('domains', choose('domains of reconstruction', '重建领域')), ('selected_cases', choose('cases compared here', '本综述对比案例'))])
         html = f'''<!doctype html>
-<html lang="{('zh-CN' if zh else 'en')}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff">
+<html lang="{('zh-CN' if zh else 'en')}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">{THEME_COLOR_META}
 <title>{escape(title)} | AwesomeREA.org</title><meta name="description" content="{escape(text(document['description']), quote=True)}">
 <link rel="canonical" href="{canonical}"><link rel="alternate" hreflang="en" href="{site_url}/survey/"><link rel="alternate" hreflang="zh-CN" href="{site_url}/zh/survey/"><link rel="alternate" hreflang="x-default" href="{site_url}/survey/">
 {open_graph_meta(language=language, title=title, description=text(document['description']), image_url=social_image_href, url=canonical)}

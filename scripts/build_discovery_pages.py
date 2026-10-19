@@ -12,7 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
-from open_graph import open_graph_meta, website_reference
+from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 from source_scope import exclusion_counts, unavailable_clause
 
 
@@ -233,7 +233,7 @@ def _document(*, site_url: str, repository_url: str, path: str, language: str,
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  {THEME_COLOR_META}
   <title>{escape(title)} · AwesomeREA.org</title>
   <meta name="description" content="{escape(description, quote=True)}">
   {metadata}

@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from open_graph import open_graph_meta, website_reference
+from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
 
 STATUS_LABELS = {
     'conference-paper': ('Conference paper', '会议论文'),
@@ -293,7 +293,7 @@ def build_paper_pages(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  {THEME_COLOR_META}
   <title>{title}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{canonical}">
