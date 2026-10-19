@@ -4330,5 +4330,14 @@
       "设备矩阵仅将 Instinct 2 Solar 于 2026-10-13 的配对、实时通知、原始 FIT 下载、中国区上传和每日图表标为已验证，且未记录固件版本。其他 Instinct、fēnix、epix、Forerunner、Venu 和 vívoactive 型号以及国际区的实际上传仍未验证。VERIFICATION.md 记录的回归数量通过 Command Line Tools 运行，而非完整 XCTest；本次核查只阅读源码，未运行应用或连接手表。",
       "MIT 覆盖项目本身，项目声明与佳明无关联；佳明服务、Android 安装包、手表固件和健康数据保留各自条款。MCP、HTTP／HTTPS API 和 Webhook 在启用前均为关闭状态。所审阅来源未确立该应用的开发与 AI 或 REA 有关。"
     ]
+  },
+  "abc-decompiler": {
+    "name": "abc-decompiler 鸿蒙方舟字节码反编译器",
+    "requirements": [
+      "README 称项目仍在开发中：用于改善代码可读性的反编译优化模块、定制中间表示以及数据流分析均列为尚未完成。唯一的发布版本 h1 于 2024-12-20 发布，只提供一个由所审阅 master 分支提交构建的 jadx-dev-all.jar，此后仓库再无推送。",
+      "构建需要 JDK 17+；须先将打过补丁的 abcde 分支发布到本地 Maven 仓库，并在 Gradle 文件中替换为实际版本号，再执行 ./gradlew dist。输入为用户自己 HarmonyOS HAP 包中的 modules.abc 文件。",
+      "该仓库是改造过的 jadx 代码库：jadx 原有的 DEX 输入、测试样本和继承来的 CI 文件仍保留，自身没有 GitHub Actions 工作流，因此未报告针对方舟字节码输出的测试。",
+      "沿用 jadx 的 Apache-2.0 许可；abcde 分支同样采用 Apache-2.0。本次未反编译任何文件。"
+    ]
   }
 }
