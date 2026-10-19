@@ -7196,5 +7196,40 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "halo-ce-xbox-reimplementation-case",
+    "name": "Halo: Combat Evolved: an incremental re-implementation patched into the original Xbox executable",
+    "url": "https://github.com/halo-re/halo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A research project re-implementing the original Xbox Halo: Combat Evolved in C, one function at a time. Rewritten functions are compiled into a separate image and patched into the user’s original executable with redirects from the original implementations, so the hybrid game can be run and debugged in xemu or on an Xbox as work progresses. The project reports an early stage, and its sources document no byte-for-byte comparison with the original code.",
+    "description_zh": "一个以 C 语言逐个函数重新实现初代 Xbox 版 Halo: Combat Evolved 的研究项目。重写的函数编译为独立映像，再修补进使用者自备的原版可执行文件，并从原有实现重定向过去，使这一混合版本能在开发过程中于 xemu 或 Xbox 上运行和调试。项目自述仍处于早期阶段，其来源也未记录与原代码的逐字节比较。",
+    "evidence_url": "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes studying and creating a free, open-source re-implementation of the Xbox launch title; its current-state list reports that the patched game runs, the main loop and several more functions are re-implemented, and there is a long way to go. The linked progress page, whose data file was last modified in November 2022, reports 0.37% of the .text section’s game code across 40 functions. The last default-branch commit is dated 2023-07-07.",
+      "Supply the retail disc’s game files and the original executable version 01.10.12.2276, identified by MD5 in README and kb.json and placed as cachebeta.xbe in a halo-patched directory; tools/patch.py checks that hash. The repository includes no game executable or assets, and README says they must come from your own copy. The build writes a patched default.xbe beside them as the user’s local modified copy; the project distributes no game build.",
+      "Builds use CMake 3.16+, Python 3 with libclang, pefile and pyxbe, and either 32-bit MSVC on Windows or Clang and LLD targeting i386-pc-win32 on Linux and macOS; a Dockerfile provides an Ubuntu 22.04 build image. The result targets the original Xbox and runs in the xemu emulator or on console hardware, and the build generates a .gdbinit for debugging with GDB through xemu’s GDB server.",
+      "kb.json declares 323 original functions and 71 data items with addresses, grouped by original object file; tools/knowledge.py generates headers, thunks and an import library from it, and gen-struct-checks.py emits static size checks for types.h. CI builds only the re-implementation image (Debug and Release on Ubuntu, Windows and macOS) without original files, so it checks compilation, not behaviour. The sources document no byte-for-byte or automated gameplay comparison, and this collection ran nothing.",
+      "The repository has no license file and GitHub detects none, so reuse terms for the project’s code are not stated; src/xboxkrnl.exe.def carries a CC0-1.0 notice (2017, Stefan Schmidt). README presents the work as educational research, the progress page says it is not affiliated with Microsoft or Bungie, and the game keeps its rights holders’ terms. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/kb.json",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/CMakeLists.txt",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/tools/patch.py",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/tools/knowledge.py",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/tools/gen-struct-checks.py",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/.github/workflows/main.yml",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/Dockerfile",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/requirements.txt",
+      "https://github.com/halo-re/halo/blob/21bc641df6b8bdd730c23885ff643545423dcc82/src/xboxkrnl.exe.def",
+      "https://blam.info/progress/"
+    ]
   }
 ]
