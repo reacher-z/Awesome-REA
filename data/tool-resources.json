@@ -6984,5 +6984,43 @@
       "https://x.com/benw_____/status/2111116976168779845",
       "https://x.com/benw_____/status/2111260204884967933"
     ]
+  },
+  {
+    "id": "impostor-among-us-server-case",
+    "name": "Impostor: an open-source reimplementation of the Among Us game server",
+    "url": "https://github.com/Impostor/Impostor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "Reimplements the server side of Innersloth’s Among Us in C# on .NET 8, serving the game’s UDP traffic through the Hazel networking library and its HTTP matchmaking service, so that PC and mobile clients can play on a privately hosted server. The FAQ calls it a reverse-engineered server that the studio has not endorsed. README says all Among Us features are implemented, with plugins and server-side anticheat added; console versions cannot connect.",
+    "description_zh": "以运行于 .NET 8 的 C# 重新实现 Innersloth《Among Us》的服务器端，通过 Hazel 网络库处理游戏的 UDP 通信，并提供其 HTTP 匹配服务，使 PC 与移动端客户端可以在私人架设的服务器上游戏。FAQ 称其为逆向工程得到的服务器，未获开发商认可。README 表示已实现《Among Us》的全部功能，并增加了插件和服务器端反作弊；主机版无法连接。",
+    "evidence_url": "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the v1.10.9 tag, the 2026-10-05 master head (released 2026-10-06), whose compatibility list groups Among Us PC and mobile builds from 2024.6.18 to 19.0 (2026-09-29). README calls Impostor a full replacement for the official server, recommends master builds for the newest game version and says older releases are less supported; the FAQ says console versions cannot add custom servers and that Among Us 3D/VR uses a different network stack.",
+      "The server needs no game files, but each player needs their own Among Us client set up with a region file from the project’s website, and the host must expose port 22023 over TCP for HTTP, normally behind an HTTPS reverse proxy, and over UDP for game traffic. The repository commits JSON tables that its Dumpostor tool exported from Among Us 2026.9.29 (itch build): enums, cosmetics, map spawn and door data, and a 3.4 MB file of the game’s localized UI strings.",
+      "Builds need the .NET 8 SDK (C# 11) and run on the .NET 8 or ASP.NET Core runtime; the Cake script publishes single-file servers for Windows x64, macOS x64 and Linux x64, ARM and ARM64, and Docker images are offered. The solution also holds a plugin API with example and debugger plugins, a client library, a WinPcap-based packet-capture tool and a session-replay tool.",
+      "CI runs the Cake script on Ubuntu, building the solution and running Impostor.Tests, unit tests for version compatibility, game codes and event handling. No protocol-conformance suite or comparison with Innersloth’s servers is published, and this collection did not build or run the server.",
+      "README and LICENSE apply GPL-3.0; the Hazel networking code comes as the Impostor.Hazel package, credited to willardf/Hazel-Networking, and Among Us and its data, including the dumped tables, remain Innersloth’s. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/docs/FAQ.md",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/docs/Running-the-server.md",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/docs/Building-from-source.md",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/src/Impostor.Server/Net/Manager/CompatibilityManager.cs",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/src/Impostor.Api/Innersloth/Data/info.json",
+      "https://github.com/Impostor/Impostor/tree/703915f06fcfd17bc8804d36dd67655671a66cf2/src/Impostor.Api/Innersloth/Data",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/src/Directory.Build.props",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/build.cake",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/.github/workflows/ci.yml",
+      "https://github.com/Impostor/Impostor/tree/703915f06fcfd17bc8804d36dd67655671a66cf2/src/Impostor.Tests",
+      "https://github.com/Impostor/Impostor/blob/703915f06fcfd17bc8804d36dd67655671a66cf2/LICENSE",
+      "https://github.com/Impostor/Impostor/releases/tag/v1.10.9"
+    ]
   }
 ]
