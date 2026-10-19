@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 190 | 188 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 239 | 239 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 191 | 189 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 238 | 238 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 162 | 162 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-199 occurrences have catalog links. They reference 194 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+199 occurrences have catalog links. They reference 195 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 292 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 293 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -327,6 +327,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | TH08 Web: a WebAssembly port built from reconstructed source | Already curated | [Source](https://github.com/N0zoM1z0/th08-web/blob/e3485ab9a9af3b5a90ce51841667bbdf5a867e5c/README.md) |
 | TH095: function-level reconstruction of Shoot the Bullet 1.02a | Already curated | [Source](https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md) |
 | TH04: rebuilding Lotus Land Story’s four PC-98 programs from source | Already curated | [Source](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
+| DX-Ball: an REA-guided function-level reconstruction with Codex | Already curated | [Source](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
 | Open Scrantic: reconstructing the Johnny Castaway screensaver engine | Already curated | [Source](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
 
 ## Partial coverage and aliases
@@ -349,7 +350,7 @@ Partial or related catalog mappings:
 - `hao-games:row-134` — Pinned README, web-porting and architecture documents, build, provenance and deployment scripts, license and the v0.1.0 release support this repository as a separate WebAssembly port built from the TH08 reconstruction source. Full mapping covers the browser port and its author-run checks, not binary identity, hardware performance or independently reproduced play; the curated TH08 reconstruction stays linked as related. Local retail-data requirements and browser limits remain explicit.
 - `hao-games:row-135` — Pinned README, generated progress, oracle and runtime-issue notes, tool lock, bootstrap script, CI and license support the named TH095 1.02a reconstruction report. Full mapping covers this repository’s function-level reconstruction and playable Windows i386 build, not whole-executable identity, planned ports or independently reproduced play; REA’s Touhou method essay is linked as related. Original-executable requirements and project-reported counts remain explicit.
 - `hao-games:row-136` — Pinned README, generated progress, DOS build, toolchain, oracle, runtime and reference notes, CI and license support the named TH04 reconstruction report. Full mapping covers this repository’s four-program DOS reconstruction and its author-reported differential replays, not byte identity, complete campaigns, the native x64 branch or independent reproduction. REA’s one-helper showcase remains a partial match and its Touhou essay a related one.
-- `hao-games:row-137` — Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.
+- `hao-games:row-137` — Pinned README, REA worked example, matching, build and progress notes, target and tool locks, a differential test, CI and license support the named DX-Ball reconstruction with author-documented REA and Codex use. Full mapping covers this in-progress function-level reconstruction, not byte identity, a finished playable VC4 build or independent reproduction; REA’s one-function sound-pan showcase remains a partial match. The original-archive requirement and its unverified download source remain explicit.
 
 Alias decisions:
 
