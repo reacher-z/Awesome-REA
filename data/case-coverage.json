@@ -15228,12 +15228,15 @@
         "https://x.com/i/status/2111588450969231812",
         "https://x.com/i/status/2111634258649608673"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two posts by the same author (@JohanSlattavik, 2026-10-17 and 2026-10-18, in Norwegian) describe a setup still being built: Codex would use REA, Ghidra and JADX inside an isolated Linux virtual machine with no network or access to private files, steered through AI in VS Code on a Linux host. Neither post links a repository, configuration or write-up, reports a finished build or names an analysis target, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the isolation design is a stated plan, not a documented or tested workspace.",
+      "reason_zh": "同一作者的两条帖子（@JohanSlattavik，2026-10-17 与 2026-10-18，挪威语）介绍的是一个仍在搭建中的方案：让 Codex 在无网络、无法访问私人文件的隔离 Linux 虚拟机中使用 REA、Ghidra 和 JADX，并在 Linux 主机上通过 VS Code 中的 AI 进行操控。两帖均未链接仓库、配置或说明文章，未报告已完成的搭建，也未提及任何分析目标，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该隔离设计只是所述计划，并非已记录或经过测试的工作环境。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111588450969231812",
+        "https://x.com/i/status/2111634258649608673"
+      ],
       "catalog_matches": []
     },
     {
@@ -15248,12 +15251,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111591082119106953"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@FM_Chile, 2026-10-17) is a reply asking another account how data already exported from Championship Manager 01/02 could be imported into Football Manager 26, and whether REA might help with the reverse engineering. It is a question: no attempt, tool, format analysis or result is described or linked, and no GitHub account matching the handle was found. Retain the lead as an idea without a catalog mapping.",
+      "reason_zh": "所引帖子（@FM_Chile，2026-10-17）是一条回复，询问对方如何把已从 Championship Manager 01/02 导出的数据导入 Football Manager 26，以及 REA 能否在逆向上提供帮助。这只是提问：帖子没有描述或链接任何尝试、工具、格式分析或结果，也未找到与该账号名对应的 GitHub 账号。保留此线索作为设想，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111591082119106953"
+      ],
       "catalog_matches": []
     },
     {
@@ -15268,12 +15273,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111591362449592514"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@JohatsuExe, 2026-10-17) reports nine nights of REA 6.5.0 with Opus 5.5 on six unnamed apps: one room logged 299 claims tagged observed, derived or inferred and wrote six behavior-only SPEC.md files, and a second room rebuilt from those specs alone, judged by a rule that a planted broken build must fail all 412 tests. It also reports token costs and cancelled subscriptions, and says DRM and license checks were not touched. It carries only a video; the spec template, judge rule and prompt are said to be in a reply that is not linked, the author’s Substack profile has no publication and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the apps, specs, rebuilds and test results are unpublished.",
+      "reason_zh": "作者帖子（@JohatsuExe，2026-10-17）称用 REA 6.5.0 配合 Opus 5.5 连续九晚处理六个未具名应用：第一个隔离环境记录了 299 条标注为观察、推导或推断的结论，并写出六份只描述行为的 SPEC.md；第二个环境仅依据这些规格重建应用，评判规则要求预置的错误构建必须在全部 412 项测试中失败。帖子还报告了 token 花费和取消的订阅，并称未触碰 DRM 或许可证校验。帖子只附视频；所说放在回复中的规格模板、评判规则和提示词并未链接，作者的 Substack 主页没有任何出版物，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；所涉应用、规格、重建结果和测试结果均未公开。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111591362449592514"
+      ],
       "catalog_matches": []
     },
     {
@@ -15328,12 +15335,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111446154713964643"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@deezzex, 2026-10-17) quotes a general REA guide article and presents an animation that takes apart an unnamed viral AI desktop app in five steps: observing it run, an entropy scan, unpacking an archive of 1,842 files, making the code readable and rebuilding to compare network calls. It reports that the app is a thin shell whose model choice, limits and persona are set by the server or a hidden system prompt. No app is named and no notes, code or comparison are linked; the author’s public GitHub repositories (deezzex) hold nothing related. Retain the lead without a catalog mapping; the target and findings are unestablished.",
+      "reason_zh": "作者帖子（@deezzex，2026-10-17）引用了一篇泛泛介绍 REA 的文章，并展示一段动画，分五步拆解一款未具名的热门 AI 桌面应用：先观察运行、做熵扫描、解开含 1,842 个文件的包、还原代码可读性，再重建并对照网络调用。帖子称该应用只是一层薄壳，所用模型、使用限额与人设均由服务器或一段隐藏的系统提示词决定。帖子未说明是哪款应用，也未链接笔记、代码或对照记录；作者公开的 GitHub 仓库（deezzex）中也没有相关内容。保留此线索而不建立目录映射；目标与结论均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111446154713964643"
+      ],
       "catalog_matches": []
     },
     {
@@ -15350,12 +15359,16 @@
         "https://x.com/i/status/2111137241674522772",
         "https://x.com/i/status/2111478486678548735"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Three posts by the same author (@0xsvsv, 2026-10-16 to 2026-10-17) are cited: one says the author and Claude ported Mario Kart 8 Deluxe to PC and carries only a video, and two replies say Claude Code, an IDA Pro MCP server used through REA and the game’s ROM are all that is needed, with Claude asked to write a plan in claude.md and then port the game. None links source, a build, a progress record or test results, and no GitHub account matching the handle or public repository attributed to the author was found. Retain the lead without a catalog mapping; the port, its scope and REA’s role are unestablished.",
+      "reason_zh": "所引为同一作者的三条帖子（@0xsvsv，2026-10-16 至 2026-10-17）：其中一条称作者与 Claude 把 Mario Kart 8 Deluxe 移植到了 PC，只附视频；另两条回复称只需 Claude Code、通过 REA 使用的 IDA Pro MCP 以及游戏 ROM，并让 Claude 先在 claude.md 中写计划再进行移植。各帖均未链接源码、构建、进度记录或测试结果，也未找到与该账号名对应的 GitHub 账号或归属于作者的公开仓库。保留此线索而不建立目录映射；移植本身、其范围及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111431983691862272",
+        "https://x.com/i/status/2111137241674522772",
+        "https://x.com/i/status/2111478486678548735"
+      ],
       "catalog_matches": []
     },
     {
@@ -15371,12 +15384,15 @@
         "https://x.com/i/status/2111434708575805636",
         "https://x.com/i/status/2111376025519292484"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two posts are cited. @Blobifie (2026-10-17) remarks, with a video, that people are still modding and playing Kerbal Space Program 2 two years after it was abandoned in early access; @IHateMyXHandle replies that the owners should release the source for community development, or that someone could use AI to decompile it. This is a suggestion: no decompilation attempt, repository or result is described or linked. Retain the lead as an idea without a catalog mapping.",
+      "reason_zh": "所引两条帖子中：@Blobifie（2026-10-17）附视频感叹 Kerbal Space Program 2 在抢先体验阶段被放弃两年后仍有人制作模组并游玩；@IHateMyXHandle 回复称版权方应公开源码交由社区开发，或者有人可以用 AI 反编译它。这只是建议：帖子没有描述或链接任何反编译尝试、仓库或结果。保留此线索作为设想，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111434708575805636",
+        "https://x.com/i/status/2111376025519292484"
+      ],
       "catalog_matches": []
     },
     {
@@ -15984,15 +16000,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 200,
-      "insufficient-evidence": 226,
-      "pending": 165
+      "insufficient-evidence": 232,
+      "pending": 159
     },
     "units_by_state": {
       "already-curated": 198,
-      "insufficient-evidence": 226,
-      "pending": 165
+      "insufficient-evidence": 232,
+      "pending": 159
     },
-    "primary_reviewed_units": 366,
+    "primary_reviewed_units": 372,
     "catalog_linked_occurrences": 212,
     "distinct_resource_ids": 205,
     "distinct_paper_ids": 2,
