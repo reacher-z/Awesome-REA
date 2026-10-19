@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 400](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-400-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 401](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-401-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (37) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (38) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1869,6 +1869,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   VTIL（Virtual-machine Translation Intermediate Language，虚拟机翻译中间语言）项目的 C++20 核心库。VTIL 是一种中间语言及优化编译器，README 称其专为二进制去混淆与去虚拟化分析而设计。与 LLVM IR 不同，VTIL 保留原生栈、物理寄存器和非 SSA 形式，因此寄存器机或栈机代码都能提升到其中，原生指令可直接嵌入 IL 流，代码也能重新输出到任意虚拟地址。该库提供包含例程、基本块和序列化的 IL、符号表达式引擎与化简器、死代码消除、传播和栈固定等优化遍，以及基于 Capstone/Keystone 的 AMD64 与 ARM64 反汇编和汇编辅助功能。
 
   工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/vtil-core/)
+
+- [**Frida Workbench VS Code 扩展**](https://github.com/ChiChou/vscode-frida)
+
+  非官方的 Visual Studio Code 扩展，用于 Frida 相关工作。侧边栏列出本地、Apple 模拟器、USB 和远程设备上的应用与进程，可附加、启动或结束它们；运行时面板可浏览已附加进程的原生模块与导出函数，以及 Java 和 Objective-C 的类、方法与协议，并根据所选项目生成 Interceptor、Objective-C 或 Java 的 Hook 代码框架（可选用 GitHub Copilot 推断原生函数签名），还能导出 Objective-C 头文件或 Java 类存根。语言服务器根据运行中的目标补全类名、选择器和模块名；扩展还提供 Frida agent 与 C 模块项目脚手架、脚本调试配置、系统日志流以及 Android frida-server 部署。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/vscode-frida/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

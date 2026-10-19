@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**431 repositories** · 2026-10-16 UTC
+**430 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -67,7 +67,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — A tool that helps you work with frida easily for Android platform **[654 stars]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]** · Curated: [hbctool](https://awesomerea.org/resources/hbctool/)
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — A lightweight emulation framework for emulating cryptographic algorithms in iOS executables and libraries. **[631 stars]**
-- [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Demo of a complete hot-update solution for Unity Android IL2CPP apps. Update the Unity path in build\_demo\_apk, then run it to rebuild the patch and APK in one step. The libunity file is not hot-updated, so this solution does not apply if the Unity version changes. **[578 stars]**
 - [MJx0/KittyMemory](https://github.com/MJx0/KittyMemory) — C++ library for runtime memory patching, scanning, dumping, and module (ELF / Mach-O) introspection, targeting Android and iOS. **[562 stars]**
 - [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — Simplifying encrypted traffic analysis for researchers by making protocol decryption effortless. **[556 stars]**

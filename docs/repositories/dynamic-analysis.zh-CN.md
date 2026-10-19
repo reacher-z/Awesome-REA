@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
 
-**100 个仓库** · 2026-10-16 UTC
+**101 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -28,6 +28,7 @@
 - [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI：二进制插桩、分析与修改工具。 **[838 星标]**
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — 记录我在学习 Android 逆向过程中遇到的一些有趣内容。 **[809 星标]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida 核心库。 **[782 星标]**
+- [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — 非官方的 VSCode Frida 扩展 **[592 星标]** · 精选：[Frida Workbench VS Code 扩展](https://awesomerea.org/zh/resources/vscode-frida/)
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless 是多用途 IDA Pro 插件系统，可与调试器后端同步标签和注释，并具备复杂内存转储和交互式 Python 脚本能力。 **[587 星标]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet 微信 Windows 协议。 **[551 星标]**
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — 使用 Frida 从 TeamViewer 内存中提取密码的工具。 **[465 星标]**

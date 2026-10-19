@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**100 repositories** · 2026-10-16 UTC
+**101 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -28,6 +28,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [dyninst/dyninst](https://github.com/dyninst/dyninst) — DyninstAPI: Tools for binary instrumentation, analysis, and modification. **[838 stars]**
 - [Simp1er/MobileSec](https://github.com/Simp1er/MobileSec) — Notes on interesting things I encounter while learning Android reverse engineering. **[809 stars]**
 - [frida/frida-core](https://github.com/frida/frida-core) — Frida core library **[782 stars]**
+- [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]** · Curated: [Frida Workbench for VSCode](https://awesomerea.org/resources/vscode-frida/)
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless is a multipurpose IDA Pro plugin system for labels/comments synchronization with a debugger backend, with complex memory dumping and interactive Python scripting capabilities. **[587 stars]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet WeChat Windows Protocol **[551 stars]**
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — tool to extract passwords from TeamViewer memory using Frida **[465 stars]**

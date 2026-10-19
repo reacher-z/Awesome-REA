@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 400](https://img.shields.io/badge/resources-400-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 401](https://img.shields.io/badge/resources-401-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (37) · [Firmware and Hardware](#firmware) (17) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (38) · [Firmware and Hardware](#firmware) (17) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1868,6 +1868,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   C++20 core of the VTIL (Virtual-machine Translation Intermediate Language) project, an intermediate language and optimizing compiler that the README describes as built for binary de-obfuscation and de-virtualization. Unlike LLVM IR, VTIL keeps the native stack, physical registers and non-SSA form, so code from register or stack machines can be lifted into it, native instructions can stay inline, and code can be emitted back at any virtual address. The library provides the IL with routines, basic blocks and serialization, a symbolic expression engine and simplifier, optimizer passes such as dead-code elimination, propagation and stack pinning, and Capstone/Keystone-based AMD64 and ARM64 disassembly and assembly helpers.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/vtil-core/)
+
+- [**Frida Workbench for VSCode**](https://github.com/ChiChou/vscode-frida)
+
+  Unofficial Visual Studio Code extension for Frida work. A sidebar lists apps and processes on local, Apple Simulator, USB and remote devices to attach, spawn or kill, and runtime panels browse an attached process's native modules and exports and its Java and Objective-C classes, methods and protocols; selected items generate Interceptor, Objective-C or Java hook scaffolds, optionally with GitHub Copilot-inferred native signatures, and Objective-C headers or Java class stubs can be dumped. A language server completes class, selector and module names from a live target, and the extension also scaffolds Frida agent and C-module projects, script-debugging configurations, syslog streaming and Android frida-server setup.
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/vscode-frida/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

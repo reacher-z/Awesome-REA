@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**431 个仓库** · 2026-10-16 UTC
+**430 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -67,7 +67,6 @@
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — 帮助你在 Android 平台上轻松使用 Frida 的工具。 **[654 星标]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes 字节码逆向工程工具，可汇编与反汇编 Hermes 字节码。 **[642 星标]** · 精选：[hbctool Hermes 字节码汇编与反汇编工具](https://awesomerea.org/zh/resources/hbctool/)
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — 轻量级仿真框架，用于仿真 iOS 可执行文件和库中的加密算法。 **[631 星标]**
-- [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — 非官方的 VSCode Frida 扩展 **[592 星标]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Unity Android 应用 il2cpp 热更新完整解决方案的演示。更新 build\_demo\_apk 中的 Unity 路径后，执行即可一键重新构建补丁和 APK。由于 libunity 文件不会热更新，Unity 版本发生变化时此热更新方案不适用。 **[578 星标]**
 - [MJx0/KittyMemory](https://github.com/MJx0/KittyMemory) — 面向 Android 和 iOS 的 C++ 库，用于运行时内存修补、扫描、转储，以及模块（ELF / Mach-O）内省。 **[562 星标]**
 - [fkie-cad/friTap](https://github.com/fkie-cad/friTap) — 让协议解密更轻松，简化研究人员的加密流量分析工作。 **[556 星标]**

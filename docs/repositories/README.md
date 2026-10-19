@@ -12,10 +12,10 @@ Scan date: **2026-10-16 UTC**.
 | --- | ---: | ---: |
 | [Websites](web-analysis.md) | 181 | 18 |
 | [Games](game-analysis.md) | 393 | 42 |
-| [Apps · Android](android.md) | 431 | 17 |
+| [Apps · Android](android.md) | 430 | 17 |
 | [Apps · Managed code](managed-code.md) | 128 | 3 |
 | [Native binaries](native-analysis.md) | 676 | 48 |
-| [Runtime and debugging](dynamic-analysis.md) | 100 | 11 |
+| [Runtime and debugging](dynamic-analysis.md) | 101 | 12 |
 | [Firmware](firmware.md) | 209 | 12 |
 | [Protocols](protocol-analysis.md) | 103 | 2 |
 | [General tools and collections](reverse-engineering.md) | 615 | 36 |
