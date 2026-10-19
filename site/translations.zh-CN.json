@@ -3179,5 +3179,14 @@
       "输入是在线 URL，默认以 1920x1080 视口渲染，使用 --mobile 时为 390x844；多页抓取会合并从导航链接或 sitemap.xml（先检查 robots.txt）发现的多个页面。README 列出的限制包括：深色模式需加 --dark-mode，无法分析以 canvas/WebGL 渲染的网站，部分动态加载内容以及悬停或焦点状态可能遗漏，JavaScript 较重的网站需要等待水合完成。需要登录的页面可借助使用者自己的 Cookie 或交互式登录访问。",
       "采用 MIT 许可。README 将预期用途限定为分析自己拥有或获准分析的设计系统，且网站条款须允许自动化访问，并要求不得用提取结果复制第三方品牌形象、标志或商标。可选的 --key 参数会把每次运行的快照上传到厂商托管、仍处于测试阶段的 Dembrandt App。本次未分析任何网站。"
     ]
+  },
+  "android-reverse-engineering-skill": {
+    "name": "Android Reverse Engineering Skill 安卓反编译智能体技能",
+    "requirements": [
+      "需要支持插件/技能的 Claude Code 客户端；安装方式为将 SimoneAvogadro/android-reverse-engineering-skill 添加为 marketplace 并安装 android-reverse-engineering 插件，或从本地克隆安装。所审阅的插件清单在 master 提交上为 1.5.0 版，高于最新的 GitHub 发布版本 v1.1.0（2026-04-27）。",
+      "该技能调用的外部工具均不随附：必须安装 Java JDK 17+ 和 jadx 命令行；Vineflower 或 Fernflower 以及 dex2jar 为可选项，可改善 Java 反编译质量。技能提供依赖检查脚本和可识别操作系统的安装辅助脚本。Bash 脚本为主要方式，Windows 另有处于实验阶段的 PowerShell 等价脚本。",
+      "待分析的 Android 安装包由用户自行提供，仓库不含任何应用文件。工作内容为静态反编译、接口文档整理、调用链追踪和 Kotlin 类名还原；作者称在典型应用上可还原几乎全部 Repository/ViewModel/UseCase 类，此为项目自报数据。",
+      "技能本身采用 Apache-2.0；被驱动的各反编译器和其他工具保留各自许可。README 将用途限定于合法目的，例如经授权的安全研究、互操作性分析和恶意软件分析，并将责任归于使用者。本次未运行任何反编译器或应用，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

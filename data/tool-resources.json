@@ -7897,5 +7897,33 @@
       "https://github.com/dembrandt/dembrandt/releases/tag/v0.39.2",
       "https://www.npmjs.com/package/dembrandt/v/0.39.2"
     ]
+  },
+  {
+    "id": "android-reverse-engineering-skill",
+    "name": "Android Reverse Engineering Skill",
+    "url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Claude Code plugin and agent skill that drives jadx and Fernflower/Vineflower to decompile Android APK, XAPK, JAR and AAR files and document their HTTP APIs. A fingerprint pass first identifies the app's framework, HTTP stack, obfuscation level and native libraries, then shell scripts extract endpoints and authentication patterns across Retrofit, OkHttp, Volley, Ktor and Apollo/GraphQL, trace call flows from UI down to the network layer, and rebuild original Kotlin class names from the metadata R8 leaves behind. It installs through the bundled Claude Code marketplace, and its scripts also run standalone with a /decompile slash command.",
+    "description_zh": "Claude Code 插件及智能体技能，驱动 jadx 与 Fernflower/Vineflower 反编译 Android 的 APK、XAPK、JAR 和 AAR 文件并记录其 HTTP 接口。它先用指纹步骤识别应用的框架、HTTP 栈、混淆程度和原生库，再通过 shell 脚本在 Retrofit、OkHttp、Volley、Ktor 和 Apollo/GraphQL 等栈中提取接口与鉴权特征，追踪从界面到网络层的调用链，并利用 R8 无法剥除的元数据还原原始的 Kotlin 类名。技能通过自带的 Claude Code marketplace 安装，其脚本也可独立运行，并提供 /decompile 斜杠命令。",
+    "evidence_url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A Claude Code client with plugin/skill support; install by adding SimoneAvogadro/android-reverse-engineering-skill as a marketplace and installing the android-reverse-engineering plugin, or from a local clone. The reviewed plugin manifest is version 1.5.0 on the master commit, ahead of the latest GitHub release v1.1.0 (2026-04-27).",
+      "The skill runs external tools it does not bundle: Java JDK 17+ and the jadx CLI are required, and Vineflower or Fernflower plus dex2jar are optional for better Java output; a dependency checker and an OS-detecting install helper are provided. Bash scripts are the primary path, with experimental PowerShell equivalents for Windows.",
+      "Users supply the Android packages to analyze; the repository ships no app files. Work is static decompilation, API documentation, call-flow tracing and Kotlin name recovery; the author reports roughly complete recovery of the Repository/ViewModel/UseCase classes on a typical app, which is a project-reported figure.",
+      "Apache-2.0 for the skill; the decompilers and other driven tools keep their own licenses. The README limits use to lawful purposes such as authorized security research, interoperability analysis, and malware analysis, and places responsibility on the user. No decompiler or app was run here, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/plugins/android-reverse-engineering/skills/android-reverse-engineering/SKILL.md",
+      "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/plugins/android-reverse-engineering/.claude-plugin/plugin.json",
+      "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/.claude-plugin/marketplace.json",
+      "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/LICENSE"
+    ]
   }
 ]
