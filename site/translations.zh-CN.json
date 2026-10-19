@@ -4608,5 +4608,15 @@
       "标为 Matching 的目标文件（configure.py 中有 518 个，另有 277 个仍为 NonMatching、13 个为 Equivalent）由源码编译，其余取自拆分出的 DOL，构建会按 build.sha1 校验 main.dol。CI 在提供光盘文件和编译器的容器中构建 MarioClub_us，上传进度报告，并对改动的 C++ 文件校验符号顺序。decomp.dev 针对该固定提交的报告显示，3,222,748 个代码字节中有 1,517,644 个（47.09%）、15,357 个函数中有 8,695 个已匹配，807 个单元中有 518 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；任天堂的游戏、光盘内容和下载的编译器各自保留权利。README 致谢从其他反编译项目复用的 JSystem 和 SDK 代码，包括 Metroid Prime、Pikmin 2、Super Mario Galaxy、Super Mario Sunshine 和 Twilight Princess。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "sfiii-3rd-strike-ps2-decomp-case": {
+    "name": "3S Decomp：逐字比对的《街头霸王 III：3rd Strike》PS2 反编译重建",
+    "requirements": [
+      "README 报告游戏代码已全部反编译，CRI 中间件部分反编译，游戏所用的大部分文件系统和声音函数已一致；cri-progress.md 所列 503 个 CRI 函数中已勾选 497 个。在所审提交中，PS2 构建仍有两个游戏函数（sea_write 和 mlt_obj_trans_rgb_ext）及 52 个 CRI C 文件中的 39 个包含汇编；PS2 SDK 和 GCC 库代码不在范围内。产物是 PS2 可执行文件，不是 PC 移植。",
+      "构建需要使用者从自己的游戏副本中取得 THIRD_U.BIN；拆分配置记录其 SHA-1 为 cf58495054c31ad852175c66e9ca04d5094f000e，make split 据此生成汇编和链接脚本。反编译指南还借助该可执行文件中的 DWARF 调试数据（用 decomp-toolkit 导出）获取函数签名和局部变量。另有面向 CPS3 街机版的 split_cps3 目标，需要使用者自备街机 ROM，目前只有代码段配置。",
+      "构建指南涵盖 Linux（需启用 i386 支持的 Debian 软件包、MIPS binutils，以及装有 splat64 0.29.0 和 spimdisasm 1.35.0 的 Python 虚拟环境），macOS 则使用所提供的 Dockerfile。make setup_tools 从 decomp.me 的编译器发布中下载 Metrowerks mwccps2 3.0b38 和 EE GCC 2.96，并下载用于运行 Windows 工具的 wibo；m2c、asm-differ、mwccgap 和 saturn-splitter 是 git 子模块。",
+      "构建成功后，compare_bytes.py 将重建的可执行文件与原文件在偏移 0x80 至 0x478A00 范围内比对，并输出 “Files match ✅”。该检查容许约 20 个游戏与 CRI 函数中列明的 163 个字存在差异，原因注明为寄存器与操作数互换、断言行号、字符串编码、一处错位的 nop 和一处调用错位，因此按项目自身的检查，一致性接近字节级，而非整个文件的哈希一致。最新提交移除了 GitHub Actions 工作流；本合集未自行构建。",
+      "LICENSE 为 AGPL-3.0，适用于项目代码。原可执行文件和游戏内容仍有各自权利约束；include/cri 中有标注 “CRI Middleware SDK” 及 “Copyright (c) … CRI-MW” 的头文件，内置的 zlib 也保留其自身许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
