@@ -4641,12 +4641,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110593537872175256"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Muma102kMichael, 2026-10-15) says that after watching REA the author avoided Codex for fear of an account ban and instead used WorkBuddy International to reverse-engineer a long-saved website, which worked perfectly. It names no website, method or output and links no artifact, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the result and REA’s contribution are unestablished.",
+      "reason_zh": "作者帖子（@Muma102kMichael，2026-10-15）称，看了 REA 之后因担心封号而没有用 Codex，改用 WorkBuddy 国际版逆向了一个收藏已久的网站，效果很好。帖子未说明是哪个网站、所用方法或产出，也未链接任何成果；未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该成果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Muma102kMichael/status/2110593537872175256"
+      ],
       "catalog_matches": []
     },
     {
@@ -4689,12 +4691,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110600631144919232"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@TheCogArchitect, 2026-10-15), answering a @thsottiaux post that something would land within two hours, says the author will start a website run, a Hailo reverse-engineering run and a Raspberry Pi agent-environment run. It announces planned work rather than a result, names no Hailo target and links no artifact; no GitHub account matching the handle was found, and the profile’s linked site did not resolve during review. Retain the lead without a catalog mapping; no reconstruction or REA use is established.",
+      "reason_zh": "所引回复（@TheCogArchitect，2026-10-15）是对 @thsottiaux 一条称某项内容将在两小时内上线的帖子的回复，称作者准备启动一次网站任务、一次 Hailo 逆向任务和一次树莓派智能体环境开发任务。它宣布的是计划中的工作而非结果，未指明具体的 Hailo 目标，也未链接任何成果；未找到与该账号名对应的 GitHub 账号，资料页所链接的网站在核查时也无法解析。保留此线索而不建立目录映射；任何重建成果或 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/TheCogArchitect/status/2110600631144919232",
+        "https://x.com/thsottiaux/status/2110595554036400151"
+      ],
       "catalog_matches": []
     },
     {
@@ -4709,12 +4714,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110604057287217339"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@Boards86, 2026-10-15) says Claude reverse-engineered the author’s Wyze scale so that weight data reaches the phone without the Wyze app, through a custom iOS app with reminders and graphs. It names no scale model or protocol and publishes no source, captures or app; no GitHub account matching the handle was found, and the post links none of the public Wyze-scale projects by other developers. Retain the lead without a catalog mapping; the app and the recovered scale interface are unestablished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@Boards86，2026-10-15）称 Claude 逆向了作者的 Wyze 体重秤，使体重数据无需 Wyze 应用即可同步到手机，并改用一款带提醒和图表的自制 iOS 应用。帖子未说明体重秤型号或协议，也未公开源码、抓包记录或应用；未找到与该账号名对应的 GitHub 账号，帖子也未链接其他开发者公开的任何 Wyze 体重秤项目。保留此线索而不建立目录映射；该应用及所恢复的体重秤接口均未确立，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/Boards86/status/2110604057287217339"
+      ],
       "catalog_matches": []
     },
     {
@@ -4752,12 +4759,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110616441611542781"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@LinearUncle, 2026-10-15), answering a question about why so many people are doing reverse engineering, says the author customized Codex the day before and used REA to write a library, adding that such skills once required top reverse engineers. It names no target or library and links no artifact; the GitHub account matching the handle (linearuncle) lists no repository pushed after 2026-08-29. Retain the lead without a catalog mapping; the library and REA’s contribution are unestablished.",
+      "reason_zh": "所引回复（@LinearUncle，2026-10-15）是对“为什么这么多人在搞逆向”这一提问的回复，称作者前一天 DIY 了一下 Codex，用 REA 写了个库，并说这类技能过去只有顶尖逆向人才才能掌握。回复未指明目标或库，也未链接任何成果；与该账号名对应的 GitHub 账号（linearuncle）没有在 2026-08-29 之后推送过的仓库。保留此线索而不建立目录映射；该库及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/LinearUncle/status/2110616441611542781",
+        "https://x.com/Ding2048/status/2110611481557676490"
+      ],
       "catalog_matches": []
     },
     {
@@ -4772,12 +4782,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110618564608880843"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@iam678, 2026-10-15) says the author spent a day studying Richman 4 (大富翁4) with REA, then a day having Claude rebuild it in Flutter, and found the result fairly complete when compiled to an iPhone; it shows a video but links no source or write-up. A public repository that may belong to the same author describes a Vite/TypeScript/Capacitor remake rather than a Flutter one, and its README says the full assets, including ones extracted from the original game, are distributed through its releases, so it is not cited here. Retain the lead without a catalog mapping; the reported rebuild and REA’s role are unestablished.",
+      "reason_zh": "作者帖子（@iam678，2026-10-15）称，先用 REA 研究了一天，把经典的《大富翁4》逆向了，又花一天让 Claude 用 Flutter 重新做了一个全新版本，编译到 iPhone 上后完成度较高；帖子附视频，但未链接源码或说明文档。一个可能属于同一作者的公开仓库描述的是基于 Vite/TypeScript/Capacitor 而非 Flutter 的重制版，其 README 称完整素材（包括从原版游戏提取的素材）通过 Releases 分发，因此此处不予引用。保留此线索而不建立目录映射；所述重制成果及 REA 的作用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/iam678/status/2110618564608880843"
+      ],
       "catalog_matches": []
     },
     {
@@ -4792,12 +4804,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110620776915411243"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@sarequl_basar, 2026-10-15) says the author reverse-engineered a Tuya-based air conditioner, obtained its local key, built a Mac menu-bar app that controls it over Wi-Fi without the cloud, and gave Claude an MCP server for it; it shows a video and credits another developer’s version for the UI. The author’s GitHub account (sarequl), which names this X handle, has no repository for the app or the MCP server. Retain the lead without a catalog mapping; both remain unpublished, and no REA use is stated.",
+      "reason_zh": "作者帖子（@sarequl_basar，2026-10-15）称，作者逆向了一台内置 Tuya 模块的空调，取得其本地密钥，做出一个通过 Wi-Fi 直接控制、不经云端的 Mac 菜单栏应用，并为 Claude 提供了相应的 MCP 服务器；帖子附视频，并注明界面参考了另一位开发者的版本。作者的 GitHub 账号（sarequl，其资料注明了此 X 账号）下没有该应用或 MCP 服务器的仓库。保留此线索而不建立目录映射；两者均未公开，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/sarequl_basar/status/2110620776915411243"
+      ],
       "catalog_matches": []
     },
     {
@@ -16129,15 +16143,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 204,
-      "insufficient-evidence": 259,
-      "pending": 128
+      "insufficient-evidence": 265,
+      "pending": 122
     },
     "units_by_state": {
       "already-curated": 202,
-      "insufficient-evidence": 259,
-      "pending": 128
+      "insufficient-evidence": 265,
+      "pending": 122
     },
-    "primary_reviewed_units": 402,
+    "primary_reviewed_units": 408,
     "catalog_linked_occurrences": 217,
     "distinct_resource_ids": 208,
     "distinct_paper_ids": 2,
