@@ -183,13 +183,18 @@ def entry_type(record, language):
     relation, category = record['relationship'], record['category']
     if relation == 'independent-agent-integration':
         tags.append(('Independent MCP' if category == 'agent-mcp' else 'Independent agent') if language == 'en' else ('独立 MCP' if category == 'agent-mcp' else '独立智能体'))
-    elif relation.startswith('official-') or relation == 'community-integration':
-        tags.append('REA')
+    elif relation.startswith('official-'):
+        tags.append('Official REA' if language == 'en' else 'REA 官方')
+    elif relation in {'community-integration', 'community-learning-resource'}:
+        tags.append('Community REA' if language == 'en' else 'REA 社区')
+    elif relation == 'upstream-maintainer-companion-list':
+        tags.append('REA maintainer' if language == 'en' else 'REA 维护者')
     elif relation == 'community-reported-mixed-workflow':
         tags.append('Mixed workflow' if language == 'en' else '混合工具流程')
     elif relation == 'independent-reconstruction':
         tags.append('Independent reconstruction' if language == 'en' else '独立重建')
-    elif category == 'android':
+    # Platform hints come after the relationship tag, never in its place.
+    if category == 'android':
         tags.append('Android')
     elif category == 'dotnet':
         tags.append('.NET')
@@ -200,6 +205,40 @@ def entry_type(record, language):
     elif category == 'binary-libraries':
         tags.append('Library' if language == 'en' else '程序库')
     return ' · '.join(tags)
+
+
+# Every tag entry_type can render after the type, in legend order: (Chinese tag, English and Chinese definition).
+# Tags that share a definition are listed together.
+TAG_DEFINITIONS = {
+    'Official REA': ('REA 官方', 'published by the REA project', '由 REA 项目发布'),
+    'Community REA': ('REA 社区', 'third-party REA work', '基于 REA 的第三方工作'),
+    'REA maintainer': ('REA 维护者', "an REA maintainer's list", 'REA 维护者整理的目录'),
+    'Independent MCP': ('独立 MCP', 'no established REA connection', '未确认与 REA 有关联'),
+    'Independent agent': ('独立智能体', 'no established REA connection', '未确认与 REA 有关联'),
+    'Mixed workflow': ('混合工具流程', 'REA plus other tools, per the author', '作者报告 REA 与其他工具并用'),
+    'Independent reconstruction': ('独立重建', 'no established REA connection', '未确认与 REA 有关联'),
+    'Android': ('Android', 'platform', '平台'),
+    '.NET': ('.NET', 'platform', '平台'),
+    'JVM': ('JVM', 'platform', '平台'),
+    'WebAssembly': ('WebAssembly', 'platform', '平台'),
+    'Library': ('程序库', 'code library', '供编程调用的库'),
+}
+
+
+def tag_legend(records, language):
+    """Define each relationship and platform tag the listed entries show, and what an untagged entry is."""
+    zh = language == 'zh'
+    shown = {tag for record in records for tag in entry_type(record, 'en').split(' · ')[1:]}
+    if shown - set(TAG_DEFINITIONS):
+        raise ValueError(f'Undefined README tags: {sorted(shown - set(TAG_DEFINITIONS))}')
+    groups = defaultdict(list)
+    for tag, (chinese, english_definition, chinese_definition) in TAG_DEFINITIONS.items():
+        if tag in shown:
+            groups[chinese_definition if zh else english_definition].append(chinese if zh else tag)
+    parts = [('、' if zh else ', ').join(tags) + ('：' if zh else ': ') + definition for definition, tags in groups.items()]
+    if any(' · ' not in entry_type(record, 'en') for record in records):
+        parts.append('仅有类型：基础工具或学习资源' if zh else 'type only: foundation tool or learning resource')
+    return ('**标签：** ' if zh else '**Tags:** ') + plain_text(' · '.join(parts)) + ('。' if zh else '.')
 
 
 def render_catalog(records, language, paper_urls=frozenset()):
@@ -213,7 +252,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
         if record['url'] in paper_urls:
             continue
         groups[collection_section(record)].append(record)
-    lines = []
+    lines = [tag_legend([record for entries in groups.values() for record in entries], language), '']
     for section in COLLECTION_SECTIONS:
         if not groups[section]:
             continue
