@@ -7165,5 +7165,39 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "pokewalker-matching-decomp-case",
+    "name": "pw: a matching decompilation of the Pokéwalker firmware",
+    "url": "https://github.com/lumirth/pw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "game"
+    ],
+    "description_en": "Reconstructs as C the firmware of the Pokéwalker, the pedometer accessory for Pokémon HeartGold and SoulSilver, for its Renesas H8/38606 microcontroller. With artwork from the user’s retail firmware image and a supported Renesas compiler suite, the README reports a byte-identical rebuild of the 48 KiB image; without that image, original placeholder art gives a non-matching reference build. The author describes disassembling and decompiling the retail binary, the HeartGold/SoulSilver ROMs and the candidate compilers, alongside published hardware research.",
+    "description_zh": "以 C 语言重建 Pokéwalker 的固件。Pokéwalker 是《宝可梦 心金／魂银》配套的计步器配件，采用 Renesas H8/38606 微控制器。README 报告，使用从使用者自备的零售固件镜像中取得的美术素材及受支持的 Renesas 编译器套件，可重新构建出逐字节相同的 48 KiB 镜像；没有该镜像时，项目原创的占位美术只能生成不一致的参考构建。作者称其结合已公开的硬件研究，对零售二进制文件、心金／魂银 ROM 及候选编译器进行了反汇编和反编译。",
+    "evidence_url": "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main branch is a single initial-release commit of 2026-09-14 with no tags or releases. The README calls the matching reconstruction complete for one image, 49,152 bytes with SHA-256 f9e210a3…d15607, and assumes it is the only Pokéwalker firmware. The source keeps 40 C90 modules whose file names encode the observed link order, and changes must preserve matching.",
+      "Users supply a lawfully obtained Pokéwalker firmware image, used only for artwork, and the Renesas H8, H8S, H8SX family C compiler package; neither is distributed, and the README withholds acquisition instructions. Only suites 6.02.01 and 6.02.02 are reported to reproduce the image. Missing artwork falls back to the bundled placeholders, which normally changes the output hash.",
+      "Builds are reported on macOS Arm64, where the 32-bit Windows compiler runs through Wibo and Rosetta, and natively on Windows x86_64; other hosts are unverified. uv supplies Python 3.11+ (3.12 by default), Ninja and Pillow from uv.lock, configure.py generates build.ninja, and macOS configuration downloads and validates the recorded Wibo release.",
+      "ninja verify requires the retail size and SHA-256 and writes verified.json; the build guide asks for that check under both compiler suites and records per-module input and output hashes to catch stale objects. Host unit tests cover the build utilities, a development check adds clang-format, Ruff and Cppcheck, and there is no CI workflow. Matching is author-reported; this review built or ran nothing.",
+      "Original project material is dedicated to the public domain under CC0 1.0, and the placeholder artwork carries its own CC0 notice; retail firmware and extracted artwork keep their rights. include/startup/iodefine.h is a retained Renesas HEW device header outside the CC0 dedication with no license grant, and the compiler-archive reader credits MIT-licensed ISx and Unshield. The project states no affiliation with Nintendo, The Pokémon Company, GAME FREAK or Renesas; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/docs/build.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/docs/source.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/docs/references.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/docs/third-party.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/assets/README.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/assets/placeholders/LICENSE.md",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/config/toolchains.json",
+      "https://github.com/lumirth/pw/blob/6dc7bc09950078fa3fe0dffa4dae34e9549a99da/LICENSE"
+    ]
   }
 ]

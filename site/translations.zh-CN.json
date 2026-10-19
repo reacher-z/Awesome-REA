@@ -2970,5 +2970,15 @@
       "文章建议的缓解措施包括：不在应用中嵌入 API 签名密钥和长期有效的凭据；在服务器端对用户进行认证和授权，而不是依赖应用内签名或混淆；对 API 使用进行速率限制与监控；限制易受 SSRF 影响的外部 URL 获取，并重新校验重定向目标。文章还列出了三个攻击者 IP 指标。",
       "文章提到 jadx 与 Blutter，未提及其他分析工具，也未记录 REA 的使用。本合集只阅读了该文章，未另行审阅其引用的预警、第三方文章及指标。"
     ]
+  },
+  "pokewalker-matching-decomp-case": {
+    "name": "pw：Pokéwalker 固件的一致性反编译重建",
+    "requirements": [
+      "所审阅的 main 分支只有 2026-09-14 的一次初始发布提交，没有标签或发行版。README 称针对单一镜像的一致性重建已经完成；该镜像大小为 49,152 字节，SHA-256 为 f9e210a3…d15607，项目假定它是唯一的 Pokéwalker 固件。源码保留为 40 个 C90 模块，文件名体现观察到的链接顺序，任何修改都必须保持一致。",
+      "使用者需自备合法取得的 Pokéwalker 固件镜像（只用于美术素材），以及 Renesas H8、H8S、H8SX 系列 C 编译器套件；仓库不分发两者，README 也不提供获取方法。据报告只有 6.02.01 和 6.02.02 两个套件能重现该镜像。缺少美术素材时会改用随附的占位素材，通常会使输出哈希不同。",
+      "据报告已在 macOS Arm64（32 位 Windows 编译器经 Wibo 和 Rosetta 运行）及 Windows x86_64（原生运行）上构建成功，其他宿主未经验证。uv 依 uv.lock 提供 Python 3.11 及以上版本（默认 3.12）、Ninja 和 Pillow，configure.py 生成 build.ninja；在 macOS 上，配置步骤会下载并校验记录在案的 Wibo 版本。",
+      "ninja verify 要求与零售镜像的大小及 SHA-256 一致，并写出 verified.json；构建指南要求在两个编译器套件下都完成这项检查，并记录每个模块的输入和输出哈希以发现过期的目标文件。宿主单元测试覆盖构建工具，开发检查另加 clang-format、Ruff 和 Cppcheck，项目没有 CI 工作流。一致性结果为作者报告；本次审阅未构建或运行任何程序。",
+      "项目原创内容以 CC0 1.0 贡献至公有领域，占位美术另附 CC0 声明；零售固件及提取的美术素材仍受各自权利约束。include/startup/iodefine.h 是保留的 Renesas HEW 器件头文件，不在 CC0 贡献范围内，也没有许可授权；编译器归档读取器注明借鉴采用 MIT 许可的 ISx 和 Unshield。项目声明与 Nintendo、The Pokémon Company、GAME FREAK 及 Renesas 均无关联；所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
