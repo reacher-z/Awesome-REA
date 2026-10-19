@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 378](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-378-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 379](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-379-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (20) · [游戏](#game) (168) · [应用](#app) (58)
+- [网站](#website) (20) · [游戏](#game) (169) · [应用](#app) (58)
 - [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1203,6 +1203,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于围绕 decomp-toolkit 创建 GameCube 和 Wii 匹配反编译仓库的项目模板。其 configure.py 生成 ninja 构建：依据各版本的 config.yml、symbols.txt 和 splits.txt 分析并拆分游戏的 DOL 和 REL 文件，用当年的 Metrowerks 编译器编译反编译出的 C/C++ 代码，重新链接后与记录的 SHA-1 哈希核对。模板还集成了用于逐目标文件比对的 objdiff、面向 decomp.dev 的进度报告，以及一个 GitHub Actions 工作流示例。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dtk-template/)
+
+- [**N64ModernRuntime N64 重编译运行时**](https://github.com/N64Recomp/N64ModernRuntime)
+
+  供 N64Recomp 静态重编译项目和传统源码移植使用的 N64 游戏运行时，由两个库组成。ultramodern 重新实现 libultra 的核心服务（线程、消息队列、计时器、控制器、音频、RSP 任务处理和 VI 时序），并将手柄输入、音频播放和图形渲染器（推荐 RT64）交给宿主项目注册的回调处理。librecomp 负责将 N64Recomp 生成的代码与 ultramodern 衔接，并补充覆盖段处理、PI DMA 读取 ROM，以及 EEPROM、SRAM 和 Flash RAM 存档。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/n64modernruntime/)
 
 <a id="app"></a>
 ### App · 应用
