@@ -9369,5 +9369,39 @@
       "Takes a mitmproxy flow file or a browser HAR export as input; the analyst captures that traffic separately, for example with mitmproxy, and supplies the API base-URL prefix. The two-pass workflow lets several captures be merged into an existing schema.",
       "Intended for APIs and traffic the analyst is authorized to capture and analyze. The project metadata in pyproject.toml declares the MIT license; no standalone LICENSE file is present for GitHub to detect."
     ]
+  },
+  {
+    "id": "opendbc",
+    "name": "opendbc",
+    "url": "https://github.com/commaai/opendbc",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "comma.ai's repository of DBC files describing the CAN messages and signals of many car makes, with a Python library that parses and builds CAN messages from those definitions; its porting guide has contributors reverse engineer new messages from recorded drives in the cabana tool. Per-brand car ports built on it parse vehicle state, identify models from ECU firmware versions and generate openpilot's steering, gas and brake messages, while safety code for comma's panda interface restricts which messages can be sent.",
+    "description_zh": "comma.ai 维护的 DBC 文件库，描述多个汽车品牌的 CAN 报文与信号，并附带一个依据这些定义解析和构造 CAN 报文的 Python 库；其车型移植指南要求贡献者在 cabana 工具中利用行车记录逆向分析新的报文。基于它的各品牌车型移植代码可解析车辆状态、根据 ECU 固件版本识别车型，并生成 openpilot 的转向、油门和制动报文；面向 comma panda 接口的安全代码则限制哪些报文可以发出。",
+    "evidence_url": "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.3.1, published 2026-04-22 on GitHub and PyPI; the reviewed master commit is 296 commits ahead of it. docs/CARS.md lists 406 known cars: 341 with upstream support, 14 community, 32 dashcam-only, 16 not compatible and 3 in a custom category. The README says it and that list are the project's only documentation.",
+      "The package requires Python 3.11 or 3.12 because pycapnp does not work with 3.13. From a clone, test.sh installs dependencies, builds with SCons, runs the tests and lints; the README roadmap still lists pip install opendbc as open even though PyPI carries the 0.3.x releases. For a live car, the porting guide starts with a comma four and a car-specific harness, and the DBC README connects through a panda.",
+      "New definitions come from the analyst's own recorded drives loaded in cabana, which lives in the openpilot repository; the README also points to the commaCarSegments dataset of CAN data from 300 car models. The DBC README recommends recording uncertain signal interpretations as comments, so definitions cover only what contributors have documented for each car.",
+      "MIT. The README says panda safety firmware starts with silent CAN buses and that some output modes are disabled in release firmware. The car-control interfaces were not exercised; no CAN data was loaded and no vehicle was connected."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/README.md#L69-L105",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/README.md#L137-L141",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/opendbc/dbc/README.md",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/docs/CARS.md",
+      "https://github.com/commaai/opendbc/tree/48c7f06c6f27c41e7169242acb03ef9775658deb/opendbc/can",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/pyproject.toml",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/RELEASES.md",
+      "https://github.com/commaai/opendbc/blob/48c7f06c6f27c41e7169242acb03ef9775658deb/LICENSE",
+      "https://github.com/commaai/opendbc/releases/tag/v0.3.1",
+      "https://pypi.org/project/opendbc/0.3.1/"
+    ]
   }
 ]

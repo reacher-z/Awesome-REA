@@ -3591,5 +3591,14 @@
       "以 mitmproxy 流文件或浏览器 HAR 导出作为输入；使用者需另行捕获这些流量（例如通过 mitmproxy），并提供 API 的基础 URL 前缀。两阶段流程可将多次捕获合并到已有规范中。",
       "仅用于分析者有权捕获与分析的 API 和流量。pyproject.toml 中的项目元数据声明采用 MIT 许可证；仓库没有可供 GitHub 识别的独立 LICENSE 文件。"
     ]
+  },
+  "opendbc": {
+    "name": "opendbc 汽车 CAN 报文定义库",
+    "requirements": [
+      "审阅时最新版本为 v0.3.1，于 2026-04-22 发布在 GitHub 和 PyPI；所审阅的 master 提交比它多 296 个提交。docs/CARS.md 列出 406 款已知车型：341 款为上游支持，14 款为社区支持，32 款仅支持行车记录仪模式，16 款不兼容，另有 3 款属于自定义类别。README 称它与这份车型列表就是项目的全部文档。",
+      "软件包要求 Python 3.11 或 3.12，因为 pycapnp 无法在 3.13 上运行。克隆仓库后，test.sh 会安装依赖、用 SCons 构建、运行测试并执行代码检查；尽管 PyPI 上已有 0.3.x 版本，README 路线图仍将 pip install opendbc 列为未完成事项。连接实车时，移植指南以 comma four 和适配具体车型的线束为起点，DBC README 则通过 panda 连接。",
+      "新的报文定义来自分析者自己的行车记录，并在 openpilot 仓库中的 cabana 工具里分析；README 还提到 commaCarSegments 数据集，其中包含 300 款车型的 CAN 数据。DBC README 建议把不确定的信号解释写成注释，因此这些定义只涵盖贡献者已为各车型记录的内容。",
+      "采用 MIT 许可。README 称 panda 安全固件启动时 CAN 总线处于静默状态，部分输出模式在正式版固件中被禁用。本次未实际使用车辆控制接口，未载入任何 CAN 数据，也未连接车辆。"
+    ]
   }
 }
