@@ -3367,5 +3367,14 @@
       "需自行提供要分析的 JavaScript。它处理 README 所列的通用混淆模式；对于 Obfuscator.io 的输出，README 建议改用作者专门的反混淆工具。十六进制标识符会被替换为从内置词表中选取的名称，并非恢复原名，因此输出仍需分析人员复核。",
       "LICENSE 文件为 Apache-2.0，而 package.json 和 npm 元数据声明的是 ISC。本次未对任何脚本进行反混淆。"
     ]
+  },
+  "il2cppinspector": {
+    "name": "Il2CppInspector Unity IL2CPP 静态分析工具",
+    "requirements": [
+      "README 宣布开发在可预见的未来暂停，作者也不会再回复 issue 或拉取请求。所审阅的 master 提交即添加该声明的提交，日期为 2021-11-23，比最后一个发布版 2021.1（2021-01-31）多 16 个提交。README 改为推荐 Cpp2IL；Cpp2IL 与 Il2CppDumper（其条目记载支持到 Unity 2022.2）在本目录中各有独立条目。收录 Il2CppInspector 是因为其已有文档的输出和 API，并不代表它仍在维护。",
+      "其版本表将 Unity 5.3.0 至 2020.3.x（IL2CPP 16 至 27.1）标为可用，将 2021.1（27.2）标为部分支持；更新的 Unity 版本不在其列。文档列出的输入包括 ELF、PE、Mach-O、Universal Binary 和 PS4 FSELF 映像（32 位与 64 位，ARMv7、Thumb-2、ARMv8、x86 和 x64 架构），以及 APK、AAB、XAPK、Zip 和已解密的 IPA 包。",
+      "IL2CPP 二进制及与之匹配的 global-metadata.dat 由分析者自行提供；IPA 中的可执行文件须事先解密，README 也说明加壳、加密或混淆的 IL2CPP 文件不是其预期输入。README 警告，加载加壳的 PE 文件会执行该 DLL 的入口点和初始化代码，因此不应加载不可信的 DLL，也绝不要以管理员身份运行本工具。",
+      "从递归克隆的源码用 dotnet publish 构建，目标框架为 .NET Core 3.1；命令行版本可为 Windows、macOS 和 Linux 构建，基于 WPF 的图形界面仅限 Windows，插件需通过 get-plugins 脚本另行获取。采用 AGPL-3.0 许可；Bin2Object 子模块以及 dnlib、CxxDemangler 等库保留各自的许可。针对特定混淆的加载插件和 DLL 注入项目输出不在本条目的分析范围内。本次未分析任何二进制文件，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

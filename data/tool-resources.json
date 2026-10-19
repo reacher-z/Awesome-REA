@@ -8550,5 +8550,38 @@
       "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/LICENSE",
       "https://www.npmjs.com/package/js-deobfuscator/v/1.1.7"
     ]
+  },
+  {
+    "id": "il2cppinspector",
+    "name": "Il2CppInspector",
+    "url": "https://github.com/djkaty/Il2CppInspector",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "app",
+      "binary"
+    ],
+    "description_en": "Static analysis tool for Unity IL2CPP applications that reads an IL2CPP binary with its global-metadata.dat and outputs the application's type structure and method addresses as C# stub code, .NET assembly shim DLLs for decompilers such as ILSpy and dnSpy, IDA and Ghidra Python scripts that apply symbols and types, C++ type scaffolding and JSON address maps. Three APIs, also published as a NuGet package, and a plugin SDK expose the binary metadata, .NET type model and C++ model for custom analysis. The README states that it is not a decompiler and does not recover method source code.",
+    "description_zh": "面向 Unity IL2CPP 应用的静态分析工具：读取 IL2CPP 二进制及其 global-metadata.dat，将应用的类型结构和方法地址输出为 C# 存根代码、供 ILSpy 和 dnSpy 等反编译器使用的 .NET 程序集垫片 DLL、为 IDA 和 Ghidra 套用符号与类型的 Python 脚本、C++ 类型脚手架以及 JSON 地址映射。三套 API（另以 NuGet 包发布）和插件 SDK 开放二进制元数据、.NET 类型模型和 C++ 模型，供自定义分析使用。README 说明它不是反编译器，不会还原方法源码。",
+    "evidence_url": "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README announces that development is suspended for the foreseeable future and that the author will not respond to issues or pull requests. The reviewed master commit, which added that notice, dates from 2021-11-23, 16 commits after the last release, 2021.1 (2021-01-31). The README recommends Cpp2IL instead; Cpp2IL and Il2CppDumper, whose entry documents Unity support up to 2022.2, are separate catalog entries. This entry lists Il2CppInspector for its documented outputs and APIs, not as a maintained tool.",
+      "Its version table marks Unity 5.3.0 through 2020.3.x (IL2CPP 16 to 27.1) as working and 2021.1 (27.2) as partial; later Unity versions are not covered. Documented inputs are ELF, PE, Mach-O, Universal Binary and PS4 FSELF images, 32- and 64-bit, for ARMv7, Thumb-2, ARMv8, x86 and x64, plus APK, AAB, XAPK, Zip and decrypted IPA packages.",
+      "The analyst supplies the IL2CPP binary and its matching global-metadata.dat; IPA executables must already be decrypted, and the README says packed, encrypted or obfuscated IL2CPP files are not its intended input. It warns that loading a packed PE file runs the DLL's entry point and initialization code, so untrusted DLLs should not be loaded and the tool should never run as administrator.",
+      "Builds use dotnet publish from a recursive clone and target .NET Core 3.1; the CLI builds for Windows, macOS and Linux, while the WPF GUI is Windows-only, and plugins are fetched separately with the get-plugins scripts. AGPL-3.0; the Bin2Object submodule and libraries such as dnlib and CxxDemangler keep their own licenses. Obfuscation-specific loader plugins and DLL-injection project output are outside this entry's analysis scope. No binary was analyzed, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/README.md#L713-L737",
+      "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/LICENSE",
+      "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/Il2CppInspector.Common/Il2CppInspector.csproj",
+      "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/Il2CppInspector.GUI/Il2CppInspector.GUI.csproj",
+      "https://github.com/djkaty/Il2CppInspector/blob/116c6355e7ee3656eab85ca753f913d428abc7a3/.gitmodules",
+      "https://github.com/djkaty/Il2CppInspector/releases/tag/2021.1",
+      "https://github.com/djkaty/Il2CppInspector/compare/2021.1...116c6355e7ee3656eab85ca753f913d428abc7a3"
+    ]
   }
 ]
