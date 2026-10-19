@@ -8600,12 +8600,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111220274226217276"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@0xMoryo, 2026-10-16) claims REA decompiled an unverified trading-bot contract on Base and Opus 5.5 explained its cross-pool arbitrage strategy and rewrote it as 41 lines of Solidity, alongside profit figures; it says the contract address is in the replies, which the public post API does not expose. It links no decompiled output, bytecode offsets or rewritten code, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the strategy and profit claims are unverified.",
+      "reason_zh": "帖子（@0xMoryo，2026-10-16）称 REA 反编译了 Base 链上一个未验证源码的交易机器人合约，Opus 5.5 解释了其跨池套利策略并将其改写为 41 行 Solidity，同时给出收益数字；帖子称合约地址在回复中，但公开帖子接口未提供这些回复。帖子没有链接反编译输出、字节码偏移或改写后的代码，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；其中的策略与收益说法均未经核实。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111220274226217276"
+      ],
       "catalog_matches": []
     },
     {
@@ -8620,12 +8622,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111222217849946308"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@pondorasti, 2026-10-16) says that when asked to recreate some system UIs from a video, Claude measured elements pixel by pixel, analyzed the video frame by frame and tried to interpolate the original animation parameters; it attaches two images. It names neither the interfaces nor a result and links no code, and the author’s recently updated public GitHub repositories include no matching project. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@pondorasti，2026-10-16）称，作者让 Claude 根据一段视频重制几个系统界面，Claude 便逐像素测量界面元素、逐帧分析视频，并尝试推算原始动画参数；帖子附两张图片。帖子既未说明是哪些界面，也未给出结果或链接代码，作者近期更新的公开 GitHub 仓库中也没有相应项目。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111222217849946308"
+      ],
       "catalog_matches": []
     },
     {
@@ -8640,12 +8644,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111224894297870413"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@doc_hex1337, 2026-10-16) lists converting a Godot game to VR and reverse-engineering a mouse driver for Linux among the author’s AI-assisted projects of the past week. It names no mouse, driver or code and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a passing mention, not a documented case.",
+      "reason_zh": "回复（@doc_hex1337，2026-10-16）在列举作者过去一周借助 AI 完成的项目时，提到把一款 Godot 游戏改成 VR 版，以及为 Linux 逆向了一个鼠标驱动。回复未说明鼠标型号、驱动或代码，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这只是顺带一提，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111224894297870413"
+      ],
       "catalog_matches": []
     },
     {
@@ -8661,12 +8667,15 @@
         "https://x.com/i/status/2111225325531074716",
         "https://x.com/i/status/2111578088270377306"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Two posts use frames from Tesla’s flying-Roadster reveal video: @Flinzu (2026-10-16) says Claude Code rebuilt the car as a labeled three.js teardown, leaving the 6 of 14 parts that never appeared on screen marked unknown, and @razeden0 (2026-10-17) says Opus 5.5 read on-screen HUD values from 50 frames into a flight description for $0.94. Both infer physical behavior from public video rather than analyzing software, firmware or a protocol, and neither links code, frames or outputs; no GitHub accounts matching the handles were found. Retain the lead without a catalog mapping.",
+      "reason_zh": "两条帖子均使用了特斯拉飞行版 Roadster 发布视频的画面：@Flinzu（2026-10-16）称 Claude Code 用 three.js 把这辆车重建为带标注的拆解动画，14 个部件中有 6 个从未在画面中出现，因而标为未知；@razeden0（2026-10-17）称 Opus 5.5 从 50 帧画面读取屏幕 HUD 数值，以 0.94 美元整理出飞行过程描述。两者都是根据公开视频推断实物行为，而非分析软件、固件或协议，且都没有链接代码、帧图或输出；也未找到与这两个账号名对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111225325531074716",
+        "https://x.com/i/status/2111578088270377306"
+      ],
       "catalog_matches": []
     },
     {
@@ -8681,12 +8690,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111234225022067029"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@rickydata42, 2026-10-16) says Claude helped trace an ENS v2-themed email to a wallet-draining site, and that the site’s code tied back to a banned GitHub account and two still-active accounts carrying forks of agent repositories with dangerous files, which the author reported to GitHub. It names no domain, accounts or repositories and links no write-up, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a security-incident report, and no indicators or malicious-code details are recorded here.",
+      "reason_zh": "帖子（@rickydata42，2026-10-16）称，作者借助 Claude 将一封以 ENS v2 为名义的邮件追踪到一个盗取钱包资产的网站，并发现该网站代码与一个已被封禁的 GitHub 账号以及两个仍活跃的账号有关，这些账号持有带危险文件的智能体仓库分叉；作者已向 GitHub 举报。帖子未说明域名、账号或仓库，也没有链接任何分析文章，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是一则安全事件报告，此处不记录任何威胁指标或恶意代码细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111234225022067029"
+      ],
       "catalog_matches": []
     },
     {
@@ -8702,12 +8713,25 @@
         "https://x.com/i/status/2111241506006700380"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@xmyttle, 2026-10-16) retells REA’s Calculator demo and the REA blog essay “Does reverse engineering need a bigger model?” (N0zoM1z0, 2026-10-13): a relay of GPT-6 models closing stubborn Touhou function matches, and an audit that found accepted functions with wrong constants, including 1.0f where the original added 32.0f. The essay’s pinned evidence notes and TH08 commit a393f400 document that floating-literal audit, and the essay calls the reward-learning risk an inference, not an observed exploit. The catalog already covers the audit through the Touhou reconstruction-method essay, so this is a partial mapping; the model-relay essay itself is not catalogued, and the lead stays pending.",
+      "reason_zh": "帖子（@xmyttle，2026-10-16）转述了 REA 的计算器演示，以及 REA 博客文章《Does reverse engineering need a bigger model?》（N0zoM1z0，2026-10-13）：多个 GPT-6 系列模型接力完成《东方》系列中难以匹配的函数，另有一次审计发现部分已被接受的函数常量有误，例如原程序加 32.0f 的地方重建源码写成了 1.0f。该文固定版本的证据说明和 TH08 提交 a393f400 记录了这次浮点字面量审计，文章也说明对奖励学习的风险只是推断，并非实际观察到的利用。目录已通过《东方》重建方法一文覆盖该审计，因此此处为部分映射；关于模型接力的这篇文章本身尚未收录，此线索保持待处理。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111241506006700380",
+        "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/evidence/reverse-engineering-models.md",
+        "https://github.com/morluto/rea/blob/e8da7e1edd075feec0e6beedec93d5645fed8125/website/public/blog/reverse-engineering-models/index.html",
+        "https://github.com/N0zoM1z0/th08/commit/a393f400786e4cc6cbb1000af0dad3276da12c78",
+        "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/evidence/touhou-reconstruction-method.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-touhou-reconstruction-method-case",
+          "kind": "case-study",
+          "scope": "partial"
+        }
+      ]
     },
     {
       "id": "song:epaper-vocabulary-llm-firmware-idea",
@@ -16042,16 +16066,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 244,
-      "pending": 146
+      "insufficient-evidence": 249,
+      "pending": 141
     },
     "units_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 244,
-      "pending": 146
+      "insufficient-evidence": 249,
+      "pending": 141
     },
-    "primary_reviewed_units": 385,
-    "catalog_linked_occurrences": 213,
+    "primary_reviewed_units": 391,
+    "catalog_linked_occurrences": 214,
     "distinct_resource_ids": 206,
     "distinct_paper_ids": 2,
     "unique_projects": null
