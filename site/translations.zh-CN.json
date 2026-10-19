@@ -1350,45 +1350,45 @@
   "njfe-ear-camera-bridge-case": {
     "name": "NJFE：用于电脑检查的 Soulear 相机协议桥接",
     "requirements": [
-      "输入是相机的 Wi-Fi i4season／Soulear UDP 流量。ESP32-C3 SuperMini 配合文档所列的 0.42 英寸、72×40 SSD1306 OLED，重组 JPEG 帧，并通过自定义 USB CDC 串口将图像与加速度计元数据送入项目提供的 Python 查看器。输出不是 UVC 摄像头接口；文档将相机自身的 USB 口描述为仅供充电。项目没有恢复厂商相机固件或完整配套应用源码。",
-      "文档中的构建使用 PlatformIO espressif32 6.11.0、Arduino core 2.0.17 和 U8g2 ^2.35.30。电脑工具需要带 Tkinter 的 Python，以及 pyserial >=3.5、opencv-python >=4.8、NumPy >=1.24、Pillow >=12.3.0。项目报告在 Windows 上测试；这并不确立对所有桌面系统或外观相似耳镜相机的支持。",
-      "README 与 NOTICE 将数据包格式、命令、帧组装及加速度计／旋转逻辑归功于 rubec 的 rbeilvert/otoscope；该项目说明其逆向了 Soulear 的 libWifiCamera.so。NJFE 报告使用 Claude Code 辅助研究、实现、工具和文档，人类提供硬件、作出决策并进行真机测试。这不代表 Claude 首次发现协议，也不确立 REA 参与；NJFE 未固定其借用的 otoscope 具体修订版本。",
-      "作者报告仅测试一台固件为 HKV41B 的 Hopefox Find T，获得 480×480 JPEG、约 17 fps，并支持拍照、MJPG AVI 录像、旋转和 LED 控制。公开查看器的 --test N 模式接收并解码 N 个实时帧，保存最后一张图像并输出帧率，需连接硬件。所审阅源码树没有单独的离线一致性测试样例集。这些报告与源码中的帧检查不确立完整协议兼容性；本合集未运行工具或复现硬件结果。",
-      "相机网络仍然开放且未经认证。SECURITY.md 说明桥接器接收 UDP 流量时不验证来源，可能收到注入的图像或回复；串口访问被视为可信，录像以未加密形式保存。本地 USB 桥接没有消除这些相机网络限制。项目将其定位为检查工具，而非用于诊断或治疗的医疗器械。",
-      "NJFE 在 README、NOTICE 和 REUSE 元数据中声明 GPL-3.0-or-later，并标明协议代码及姿态角计算派生自 GPL otoscope。第三方构建／运行时库保留各自许可证。公开源码审阅不授予厂商软件或图像的使用权；本次未使用专有应用、固件二进制、图像采集数据、设备或上游运行环境。"
+      "输入是相机的 Wi-Fi i4season／Soulear UDP 流量。ESP32-C3 SuperMini 配合 0.42 英寸、72×40 SSD1306 OLED 重组 JPEG 帧，并通过自定义 USB CDC 串口将图像与加速度计数据送入查看器。输出不是 UVC 摄像头，相机自身的 USB 口仅供充电，项目也未恢复厂商固件或完整应用源码。",
+      "构建使用 PlatformIO espressif32 6.11.0、Arduino core 2.0.17 和 U8g2 ^2.35.30；电脑工具需要带 Tkinter 的 Python，以及 pyserial >=3.5、opencv-python >=4.8、NumPy >=1.24 和 Pillow >=12.3.0。项目只报告了 Windows 测试。",
+      "数据包格式、命令、帧组装与旋转逻辑归功于 rbeilvert/otoscope，该项目逆向了 Soulear 的 libWifiCamera.so；NJFE 未固定所借用的修订版本。借助 Claude Code 不代表 Claude 首次发现该协议，也未显示 REA 参与。",
+      "结果仅来自一台固件为 HKV41B 的 Hopefox Find T（480×480 JPEG，约 17 fps）。--test N 模式需要连接硬件，且没有离线一致性测试集，因此不能确立完整协议兼容性。",
+      "相机网络是开放的：桥接器接收未经认证、可能被注入图像或回复的 UDP 流量，串口访问被视为可信，录像未加密保存。项目定位为检查工具，而非医疗器械。",
+      "采用 GPL-3.0-or-later，协议代码与姿态角计算派生自 GPL otoscope；第三方库保留各自许可证，也不授予厂商软件或图像的使用权。"
     ]
   },
   "leanrea-skill": {
     "name": "LeanREA 命令行逆向分析技能",
     "requirements": [
-      "LeanREA 是供具备终端访问能力的智能体使用的纯文本技能，不安装分析引擎、不实现反编译器，也不要求 REA MCP 服务。手动安装需要兼容的技能客户端；可选的 npx 安装方式需要 Node.js/npm。不同目标的命令依赖各自工具，例如 ripgrep、jq、Go、Electron asar 工具或 Xcode 命令行工具。部分示例需要调整或另行提供文件，包括仓库未附带的 DecompileAll.java。",
-      "作者报告的基准使用 Claude Code 2.1.301、Sonnet 5.5 与 macOS arm64：围绕三个输入产物提出四项问题，三个实验组各重复三次，共 36 次运行。输入为 Notion 7.35.1 的 app.asar、mac_utils.node，以及使用 Go 1.27.1 构建的 gh 二进制；对照组通过 MCP 使用 rea-agents 6.5.0 及其官方技能。复现需要自行获取本地目标、Python 3、Node/npm、相关 macOS 工具及已认证的模型服务；仓库不提供目标二进制。",
-      "公开指标按每组 12 次运行汇总。LeanREA 得到 74/75 项检查，对照 REA 为 75/75；耗时约为 388 对 627 秒，费用为 2.17 对 3.36 美元，交互轮数为 55 对 124。这些是作者提供的记录，并非独立测量，也不是相同准确率。无技能组的原始记录合计为 66/75，正文因一处作者报告的正则误判将其修正为 67/75；对应回答未公开，本合集无法独立确认该修正。",
-      "答案依据是针对部分事实手工编写的正则表达式，不是可执行的行为等价测试或完整功能重建验收。公开文件包含指标与未命中键名，没有回答转录或目标哈希。运行器默认使用可变的 sonnet 别名，并允许通过 BENCH_MODEL 覆盖；公开指标未记录最终解析的模型标识。计时范围是准备工作目录之后的模型子进程，三个实验组并发运行。这些边界限制了复现能力和对耗时差异的归因。",
-      "400.7k token 来自关闭工具检索、一次加载全部工具的独立上下文探针，并非 36 次主对照使用的配置；主对照中的 REA 组采用按需工具检索。实验未安装原生分析引擎，也未评估 Android 任务；其他目标的命令示例不等于经过测试的覆盖能力。REA 本身同时提供 CLI 与 MCP 接口，因此该基准不能证明 LeanREA 替代所有 REA 工作流。",
-      "固定版本的项目为技能和基准代码声明 MIT，并将许多工作流细节归功于 REA 的代码与文档，同时明确声明双方没有隶属关系。外部分析工具、模型服务与目标应用仍有各自要求及条款。基准文档自标日期为 2026-10-16，初始公开提交日期为 2026-10-17；此后至审阅版本只修改了 README。本合集仅审阅源码并重新汇总公开指标，未运行技能、模型、工具或目标。"
+      "供具备终端访问能力的智能体使用的纯文本技能；不安装分析引擎或反编译器，也不需要 REA MCP 服务。手动安装需要兼容的技能客户端，可选的 npx 安装方式需要 Node.js/npm。各类示例依赖各自工具，例如 ripgrep、jq、Go、Electron asar 工具或 Xcode 命令行工具；仓库未附带 DecompileAll.java。",
+      "作者的基准使用 Claude Code 2.1.301、Sonnet 5.5 与 macOS arm64，目标为 Notion 7.35.1 的 app.asar、mac_utils.node 以及用 Go 1.27.1 构建的 gh 二进制，对照组通过 MCP 使用 rea-agents 6.5.0。复现需要自行获取这些本地目标，以及 Python 3、Node/npm、macOS 工具和模型服务。",
+      "每组 12 次运行中，LeanREA 得到 74/75 项检查，REA 为 75/75，耗时、费用和轮数更少；这些是作者记录，并非独立测量。无技能组由 66/75 修正为 67/75，所依据的回答未公开。",
+      "答案依据是手工编写的正则表达式，不是行为等价测试。回答转录、目标哈希及最终解析的模型标识（默认为可变的 sonnet 别名）均未公开，三个实验组并发运行。",
+      "400.7k token 来自一次加载全部工具的独立上下文探针，并非对照实验配置。未测试原生分析引擎与 Android；REA 也提供 CLI，因此不能证明 LeanREA 可替代 REA 工作流。",
+      "技能与基准代码采用 MIT，并将工作流细节归功于 REA 的代码与文档，同时声明没有隶属关系；外部工具、模型服务与目标仍有各自条款。"
     ]
   },
   "baocut-slides-editor-case": {
     "name": "BaoCut Slides：交互式网页编辑器改编",
     "requirements": [
-      "本条目仅覆盖固定版本的 Slides 组件；作者称其实现借鉴自 Claude Slides，并非整个 BaoCut 产品。组件包含编辑器运行时、支持有限 HTML/CSS 子集的幻灯片编译器，以及新建的 BaoCut 宿主。文稿使用 v4 deck.json 索引、逐页 HTML 与本地素材。所审阅的设计／运行时说明未标明 Claude Slides 的确切版本或提取记录，也未确立净室重建过程或对 Anthropic 原有云端后端的恢复。",
-      "构建编辑器需要 Node.js >=22.12.0、npm 工作区依赖及 apps/slides-editor 构建产物；文件、标注和下载能力由 BaoCut Runtime／宿主提供。运行时声明 React ^19.3.0，以及带项目补丁的 PptxGenJS 3.12.0。完整 BaoCut 源码构建另需 Rust/Cargo、CMake 和对应平台的 C++ 工具；Apple Silicon 原生推理需要完整 Xcode／Metal。由智能体创建文稿还需要已配置的 Codex CLI 或 Claude Code 等引擎，并遵守其账号与服务条款。",
-      "文档中的实现采用单用户、本地文件存储，提供带版本／冲突检查的本地保存、素材路由与外部改动通知。冲突检查在写入前完成；逐文件写入不代表具备整批事务回滚能力。明确不包含共享房间／在线状态、分享链接、持久化评论线程，以及发送到 Google Drive／Google Slides。外部更新可能重载编辑器，丢失选中内容与滚动位置。虽然已有导出代码，设计仍把 PPTX/PDF 下载列入 P1；这些文档未确立完整的导出兼容性。",
-      "设计说明报告了 Web 标注流程的端到端验证，同时明确表示该流程未在 Electron 中实测。公开测试覆盖本地文件发布／冲突、HTTP 读写边界及标注转交；部分宿主测试使用模拟 fetch，智能体运行器测试使用模拟驱动。若构建后的编译器不可用，HTML/CSS 编译与往返检查会被跳过。这些是实现自身的测试，并非与原版 Claude 对照的测试基准，也不能证明完整的视觉／行为一致性；本合集未运行这些测试。",
-      "根目录的 BaoCut Community License 1.0 是源码可见许可：允许其规定的个人／内部使用及内容创作，将软件／代码商业化或进行商业托管则需另行许可。第三方组件保留各自条款，包括已列明的 PptxGenJS MIT 与内嵌 mediabunny MPL-2.0 声明。这些依赖声明不能确立所复用的 Claude 相关材料或随包图标字体的复用权；运行时说明指出该字体需要更换。本次来源审阅不授予这些权利，也不将整个组件视为宽松许可的开源项目。",
-      "BaoCut 记录了智能体参与文稿创建与标注的工作流，但所审阅案例来源未确立改编代码所用的具体模型或 REA 参与。支持 Claude Code／Codex 引擎，不等于证明重建方法。请使用已获独立授权的幻灯片内容，并遵守外部素材／字体条款。本次仅审阅固定版本的源码与测试定义，未运行应用、模型或测试，也未获取随包字体、媒体或应用安装包。"
+      "仅覆盖固定版本的 Slides 组件，不涵盖整个 BaoCut：包括编辑器运行时、支持有限 HTML/CSS 子集的幻灯片编译器和新建的 BaoCut 宿主；文稿由 v4 deck.json 索引、逐页 HTML 与本地素材组成。说明未标明 Claude Slides 的版本或提取记录，也未确立净室重建过程。",
+      "需要 Node.js >=22.12.0、npm 工作区依赖、apps/slides-editor 构建产物及 BaoCut Runtime／宿主；运行时声明 React ^19.3.0 与带项目补丁的 PptxGenJS 3.12.0。完整 BaoCut 构建另需 Rust/Cargo、CMake 和 C++ 工具，Apple Silicon 推理需要完整 Xcode／Metal。由智能体创建文稿需要 Codex CLI、Claude Code 或其他已配置引擎，并遵守其条款。",
+      "单用户、本地文件存储，逐文件冲突检查不代表整批回滚。共享房间／在线状态、分享链接、持久化评论线程及发送到 Google Drive／Slides 均不在范围内；PPTX/PDF 下载仍列于 P1。",
+      "端到端验证只覆盖 Web 标注流程，不含 Electron；公开测试使用模拟组件，也未与原版对照。",
+      "BaoCut Community License 1.0 是源码可见许可：允许个人／内部使用及内容创作，将代码商业化或进行商业托管需另行许可。PptxGenJS（MIT）与 mediabunny（MPL-2.0）保留各自条款；来源未确立 Claude 相关材料或随包图标字体的复用权，该字体计划替换。",
+      "来源既未确立所用模型，也未确立 REA 参与；请使用已获独立授权的幻灯片内容。"
     ]
   },
   "pocket-tasks-reconstruction-case": {
     "name": "Pocket Tasks：重建任务状态与持久保存行为",
     "requirements": [
-      "Pocket Tasks 1.0.0 是作者自编的本地命令行应用，不是商业应用或原生二进制评测基准。另行编写的 Node.js 20+ 候选实现支持九条命令与 schema-1 JSON 存储，包括已保存／草稿分离、显式保存、取消、重启及原有按行位置选择的特殊行为。它只需 Node 标准库与一次性本地数据文件；没有图形界面或网络后端。",
-      "历史调查结合了 REA 对 JavaScript 源码的分析、普通源码阅读和记录下来的进程／文件观察。经脱敏的 REA 摘录标识了相同目标字节，但保留语义覆盖未知及 230 项语义未知。这不是规范 Evidence 包或独立证明，解析覆盖也不等于行为等价。后续 Node 验证器不重跑该次 REA 会话。",
-      "实现前，作者已看过目标源码、评审场景、测试及先前答案。候选只导入 Node 的文件系统／路径模块；公开测试定义会单独复制候选文件，再检查保存行为。运行时不依赖参考实现，不代表独立发现、盲测、净室来源或智能体／模型性能结果。",
-      "保存的报告记录了 12 个场景中的 16/16 次检查器进程会话，以及七个场景中捕获观察的 10/10 次回放。两组存在重叠，不能合计为 26 次独立观察。检查器使用固定、人工编写的期望值；响应与保存的 JSON 按语义比较，需保护的畸形数据文件与外来临时文件则检查字节保留。报告仍标注 humanReview=pending、reaTrial=unverified 和 independentEvaluation=false；这些是作者报告的结果，本合集未重新运行。",
-      "报告中的目标／候选／观察／验证器／检查器／证据包工具六项哈希及预期场景摘要，与所审阅源码一致。但证据包中 TASK.md 的哈希对应较早的指令版本：后续修改只调整了审阅／授权措辞，未改变行为约定。应将该证据包记录视为历史证据，而非对当前包中每个文件的新验证。失败历史还保留了受限 Windows 环境下五项通过、四项失败的首次尝试，以及在允许执行的本地环境中、候选代码未变时九项通过的后续尝试。",
-      "约定限制每次调用最多 64 条命令、65,536 个 UTF-8 字节，最多保存 32 个任务，标题最多 80 个 UTF-16 码元。覆盖仅限列明的行为和测试；并发写入、崩溃持久性、恶意文件系统竞态、界面行为、隐藏后端和生产性能均不在一致性主张内。MIT 覆盖作者自编示例；上游 REA 及其他链接材料另行处理。本次未执行目标、候选、检查器、安装器、模型或上游测试。"
+      "Pocket Tasks 1.0.0 是作者自编的本地命令行应用，不是商业应用或原生二进制评测基准。Node.js 20+ 候选实现支持九条命令与 schema-1 JSON 存储，只需标准库和一次性本地数据文件；没有图形界面或网络后端。",
+      "REA 摘录标识了相同目标字节，但语义覆盖仍属未知，保留 230 项语义未知；它不是规范 Evidence 包，后续 Node 验证器也不重跑该次 REA 会话。",
+      "实现前作者已看过目标源码、场景、测试及先前答案，因此运行时独立不代表独立发现、盲测、净室来源或模型结果。",
+      "报告中 12 个场景的 16/16 次检查器会话与七个场景的 10/10 次回放互有重叠，不能合计为 26 次独立观察；期望值为人工编写，报告仍标注 humanReview=pending、reaTrial=unverified 和 independentEvaluation=false。",
+      "六项记录哈希与预期场景摘要和所审阅源码一致，但 TASK.md 证据包哈希对应仅措辞不同的较早版本，因此该证据包属历史证据。受限 Windows 环境下的首次尝试五项通过、四项失败，之后代码未变时九项通过。",
+      "限制：每次调用最多 64 条命令和 65,536 个 UTF-8 字节，最多 32 个任务，标题最多 80 个 UTF-16 码元。并发写入、崩溃持久性、文件系统竞态、界面、隐藏后端和生产性能不在一致性主张内。MIT 仅覆盖作者自编示例。"
     ]
   },
   "open-scrantic-screensaver-case": {
@@ -1437,11 +1437,11 @@
   "universal-modder-agent-toolkit": {
     "name": "Universal Modder 游戏模组智能体工具包",
     "requirements": [
-      "所审阅的固定版本对应 Python 包 0.2.0。它提供十二个 Agent Skills 格式的技能、三份子智能体角色文件、um 命令行工具，以及各客户端连接托管 fal MCP 服务的配置，并说明 Claude Code、Codex、Gemini CLI、VS Code／Copilot、Cursor 与 OpenCode 的安装方式。宿主需 Git、Python 3.10+ 与 ffmpeg，建议使用 uv；只有 3D 转精灵渲染需要 Blender。Windows 截图、输入与启动命令可在本机或通过 WSL 运行。",
-      "工作对象是用户自有的游戏安装。工具包不提供游戏文件、ROM 或反编译代码，并要求智能体把反编译结果与提取的素材放在仓库之外。生成素材需要 fal API 密钥或 fal 的浏览器登录；本地 ComfyUI 服务可替代图像生成，Sprixen 则是另行付费的 API。技能中提到的反编译器、调试器、加载器和 MCP 服务，例如 ILSpy、Cpp2IL、Ghidra、IDA、Cheat Engine、Frida 与 RenderDoc，均需另行安装。",
-      "逆向分析技能要求智能体阅读反编译代码、数据或实时内存，以动态方式确认推测，并在写入新文件前用“解码—编码—解码”往返检查证明逆向得到的文件格式。它报告 Age of Empires II DE 的 .sld 写入器在一个原版精灵上以 0.9/255 的平均误差通过验收，另有一条移植的 Terraria Boss 移动规则与记录的速度数据吻合 99.9%。AoE2 示例报告于 2026 年 9 月在游戏中测试；这些均为作者结果，本合集未复现。",
-      "仓库 CI 运行 Python 测试、全部命令行帮助页面、知识库索引检查，以及阻止发布游戏文件、反编译代码和密钥的发布检查。这些检查覆盖工具包本身，不代表某个模组能在特定游戏中运行。知识库实践笔记由智能体撰写并经 PR 审阅，状态与验证部分为自行声明，并非经独立核实的兼容性记录。本合集仅审阅源码与文档，未运行命令行工具、技能、游戏或示例。",
-      "项目规则将工作限定于用户自有的游戏，且只在离线或用户自建服务器上进行；拒绝注入受反作弊保护的在线客户端、拒绝编写针对其他玩家的作弊程序，也拒绝绕过 DRM、反作弊或所有权检查。仓库为其代码声明 MIT，并附带 SIL OFL 授权的字体；生成素材遵循 fal 及所用模型的条款，游戏、加载器与外部工具仍有各自条款。其安全说明援引了未分发素材的项目仍遭下架的事例。所审来源未确立与 REA 的关联。"
+      "Python 包 0.2.0 提供十二个技能、三份子智能体角色文件、um 命令行工具，以及 Claude Code、Codex、Gemini CLI、VS Code／Copilot、Cursor 与 OpenCode 连接 fal MCP 的配置。宿主需要 Git、Python 3.10+ 与 ffmpeg（建议使用 uv；仅 3D 转精灵渲染需要 Blender）；Windows 截图、输入与启动命令可在本机或通过 WSL 运行。",
+      "工作从用户自有的游戏安装开始；不提供游戏文件、ROM 或反编译代码，反编译结果与提取的素材应放在仓库之外。生成素材需要 fal API 密钥或浏览器登录；本地 ComfyUI 可替代图像生成，Sprixen 是另行付费的 API。技能中提到的 ILSpy、Cpp2IL、Ghidra、IDA、Cheat Engine、Frida 与 RenderDoc 等工具需另行安装。",
+      "AoE2 DE .sld 写入器在原版精灵上 0.9/255 的平均误差、2026 年 9 月的游戏内测试，以及 Terraria 移动规则移植 99.9% 的速度吻合度，均为作者结果。",
+      "CI 检查的是工具包本身（测试、命令行帮助、索引，以及阻止发布游戏文件、反编译代码和密钥的检查），不代表模组能在特定游戏中运行。实践笔记由智能体撰写、验证情况自行声明，并非独立的兼容性记录。",
+      "项目规则将工作限定于自有游戏，且只在离线或自建服务器上进行；拒绝注入受反作弊保护的在线客户端、针对其他玩家的作弊，以及绕过 DRM、反作弊或所有权检查。代码采用 MIT，字体采用 SIL OFL；生成素材遵循 fal 及模型条款，游戏与工具适用各自条款。所审来源未确立与 REA 的关联。"
     ]
   },
   "browserbase-claude-chrome-bridge-case": {
@@ -1624,11 +1624,11 @@
   "baocut-design-canvas-case": {
     "name": "BaoCut Design：移植重建的设计稿与设计系统编辑器",
     "requirements": [
-      "本条目覆盖固定版本提交中加入的设计稿（画布）与设计系统编辑器，不涵盖整个 BaoCut 产品，也不涵盖另行收录的 Slides 编辑器。运行时 README 称二者分别按 1:1 移植自原编辑器类型的 TypeScript 重建（src/design-type、src/design-system-type），保留文件格式、界面、行为与模块结构，BaoCut 托管所需的改动以 BaoCut: 注释标出。这些重建工程及其笔记与证据不在本仓库中，来源也未写明对应的原版确切版本。",
-      "托管改动将原有的 globalThis.claude 宿主接口换成 BaoCut 的 shim，清空父窗口 origin 白名单，关闭使用分析，并去掉多人房间、sample 及从托管地址安装设计系统等能力。移植版不内置 Anthropic Sans 而改用系统字体，但仍内联原有的 Anthropicons 图标字体；README 称其分发许可待确认，且计划替换。请使用已获独立授权的设计内容与素材。",
-      "构建编辑器需要 Node.js >=22.12.0、npm 工作区依赖，以及 apps/design-editor 与 apps/design-system-editor 的构建。画布运行时在工作区的 React 19 之外为画板保留 React 18.3.1，并使用 Babel standalone 7.29.0、happy-dom、jQuery 与 dom-to-svg；完整 BaoCut 源码构建另需 Rust、CMake 及平台构建工具。由智能体制作设计稿时，经已配置的本机智能体 CLI（如 Codex）使用 BaoCut 内置的 design 与 design-system skill，并遵守其账号与服务条款。",
-      "design-runtime 的 README 报告：先对照原脚本修正标识符，再用 Babel 做结构指纹比对，原画布主页面 20463 个函数中有 19111 个完全一致；其余仅绑定不同的函数都在依赖中，而 1019 个结构有差异的最内层函数以及被改名的 property-scrubber 内部属性仍未审阅，属残余风险。公开测试覆盖设计稿检查、文件路由与授权、下载及标注目标，验收用例 UI-11–UI-13 描述了 Web／桌面端的手动流程。这些都不是与原服务对照的行为测试基准；本合集未运行它们。",
-      "根目录的 BaoCut Community License 1.0 是源码可见许可：允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化则需另行许可。第三方声明涵盖随包的 npm 依赖，但不能确立所重建的 Claude Design 代码或图标字体的复用权。作者帖子未说明此次移植使用了 REA；后来的第三方帖子所称的 REA 使用未获作者或仓库证实。本次仅审阅固定版本的来源，未运行编辑器、智能体或测试。"
+      "覆盖固定版本提交中加入的设计稿（画布）与设计系统编辑器，不涵盖整个 BaoCut，也不涵盖另行收录的 Slides 编辑器。作为来源的重建工程（src/design-type、src/design-system-type）及其证据未公开，也未写明对应的原版版本。",
+      "BaoCut shim 取代 globalThis.claude 宿主接口，父窗口 origin 白名单为空，使用分析关闭，多人房间、sample 及托管设计系统安装均被去除。系统字体取代 Anthropic Sans，但仍内联 Anthropicons 图标字体，其许可待确认且计划替换；请使用已获独立授权的内容。",
+      "需要 Node.js >=22.12.0、npm 工作区依赖以及 apps/design-editor 与 apps/design-system-editor 的构建；画布在 React 19 之外为画板保留 React 18.3.1，并使用 Babel standalone 7.29.0。完整构建另需 Rust、CMake 及平台工具；智能体制作设计稿使用已配置的本机智能体 CLI（如 Codex）。",
+      "除函数比对结果外，1,019 个结构有差异的最内层函数及被改名的 property-scrubber 内部属性仍未审阅。公开测试与手动验收用例 UI-11–UI-13 都不是行为测试基准。",
+      "BaoCut Community License 1.0 是源码可见许可：仅允许个人、内部使用及内容创作，将 BaoCut 或其代码商业化需另行许可。第三方声明不能确立所重建的 Claude Design 代码或图标字体的复用权。作者未说明此次移植使用 REA，第三方关于 REA 的说法未获证实。"
     ]
   },
   "project-arwing-star-fox-recomp-case": {
@@ -2511,11 +2511,11 @@
   "destiny2-build-86657-reconstruction-report-case": {
     "name": "Destiny 2 build 86657：Sunrise／Dawn 重建研究报告",
     "requirements": [
-      "所审阅版本日期为 2026 年 9 月 21 日，共 20 章、289 条来源记录（280 份 Markdown 笔记、两份 PDF 文本摘录与七份源码摘录），并以哈希清点 2,832 个实现文件和 336 个 lanes 归档文件。内容涵盖 build 86657.20.08.23.1800.d2_rc 的 BAP 安全服务、匹配与对等通道、活动复制、包结构、任务重建、持久化及原生钩子。报告说明其资料不能证明已恢复 Bungie 完整后端，也不构成适用于全部原版任务的通用解释器。",
-      "原生实验依赖另行获得的已归档 Destiny 2 build 86657 客户端及其游戏包；报告既不提供这些文件，也不说明获取方式。游戏二进制、包内容、美术素材、清单数据库、凭据、个人存档、原始运行捕获以及两份所提供的 PDF 均未公开。部分被引用的二进制夹具与跟踪记录同样缺失，报告将此列为无法仅凭本仓库独立复现的限制。",
-      "所描述的重建以代理 DLL 形式运行在游戏进程内，结合 Steam 平台接口与登录模拟、嵌入式服务层、C++ 原生契约，以及 Lua 或 C++ 任务定义。ATTRIBUTION.md 指明独立的 Dawn 项目承担重建与集成工作，并以 Sunrise 与 Sundial 的研究为基础。其源码采集自基于提交 e801e23e、带有修改的工作区，因此以文件哈希而非该提交标识所采集的文件；检查报告本身只需 Python 及仓库自带的两个脚本。",
-      "随附的验证记录报告：报告组装、1,191 个本地链接、引用、证据哈希、37 条论断引用及部分发布排除项均通过检查，但不含游戏或原生运行测试。其验收表记录了一次完整的 Omega 通关、其他任务的若干已验收段落，以及不含屏障战与 Argos 战的 Eater of Worlds 可玩片段；Spark 实机测试、原生世界的一致恢复和分离式镜头行为仍未验证或未实现。本合集只阅读报告与证据元数据，未运行其脚本、游戏或实现。",
-      "仓库未声明整体许可证。ATTRIBUTION.md 为所含源码摘录保留 Dawn 的 GPL-3.0 文本，署名 Sunrise 与 Sundial 贡献者，不声称获得 Bungie 认可，也不对第三方材料重新授权。报告针对已归档版本的本地重建，并说明其安全发现并非针对当前在线游戏的漏洞主张。报告未记录借助 Claude 或其他 AI 反编译，也未记录在引擎内重建素材；所审来源未确立与 REA 的关联。"
+      "所审阅版本日期为 2026 年 9 月 21 日，共 20 章、289 条来源记录，并以哈希清点 build 86657.20.08.23.1800.d2_rc 的 2,832 个实现文件和 336 个 lanes 归档文件。报告不能证明已恢复 Bungie 完整后端，也不构成适用于原版任务的通用解释器。",
+      "原生实验需要自备已归档的 86657 客户端及其游戏包；报告既不提供这些文件，也不说明获取方式。游戏二进制、包内容、美术素材、清单数据库、凭据、存档、原始运行捕获、两份所提供的 PDF 以及部分被引用的夹具与跟踪记录均未公开。",
+      "重建以代理 DLL 形式运行在游戏进程内；ATTRIBUTION.md 指明由独立的 Dawn 项目完成，并以 Sunrise 与 Sundial 的研究为基础。采集自 e801e23e 修改工作区的文件以哈希标识；检查报告本身只需 Python 及其自带的两个脚本。",
+      "随附检查覆盖报告组装、1,191 个本地链接、引用、证据哈希和 37 条论断引用，不含游戏或原生运行测试。Spark 实机测试、原生世界恢复和分离式镜头仍未验证或未实现，Eater of Worlds 片段不含屏障战与 Argos 战。",
+      "仓库未声明整体许可证；ATTRIBUTION.md 为所含摘录保留 Dawn 的 GPL-3.0 文本，不声称获得 Bungie 认可，也不对第三方材料重新授权。安全发现并非针对当前在线游戏的漏洞主张；报告未记录 AI 辅助反编译、在引擎内重建的素材或与 REA 的关联。"
     ]
   },
   "svr2011-recomp-case": {
@@ -2540,22 +2540,22 @@
   "hermes-rea-plugin": {
     "name": "Hermes Agent 的 REA 插件",
     "requirements": [
-      "所审阅的固定版本是 Hermes 插件目录实际安装的 hermes-official-plugins 提交；plugin.json 声明版本 0.1.0，采用 MIT。插件目录将其列为 Nous Research 官方插件，要求 Hermes 0.22.0 或更高版本，通过 hermes plugins install rea 与 hermes plugins enable rea 安装。它是 Hermes 的官方插件，并非 REA 发布的集成。需要 Node.js 22.19+、24.11+ 或 26+ 及 npx，不支持 23 与 25；首次启动会下载固定版本的软件包。若再为 Hermes 运行 rea-agents setup，会写入冲突的服务配置并替换固定版本的服务。",
-      "静态 JavaScript／Electron／ASAR 分析、软件包清点、Go／Rust 元数据、PE 资源、.NET 元数据与 HAR 分析无需其他组件。核心转储与离线 ELF 布局工具需要装有 pwntools 4.15.0、pyelftools 0.33 和 Unicorn 2.1.2 的 Python，并在 Hermes 的 .env 文件中指定。原生反编译需要使用者自备 Ghidra 及 JDK、Hopper 或 IDA；Android 代码需要 JADX 与 Java，固件或抓包格式需要 Binwalk／Unblob、TShark、sigrok 或 WABT。REA 与插件均不会安装这些工具。",
-      "部分 REA 工具会在 PTY 中运行命令、启动或操控应用窗口、改动已连接的 Android 设备，或覆盖指定文件，而 Hermes 在调用前不会提示。改编技能要求智能体先说明具体操作并征得同意，在无人值守运行中跳过此类调用。README 说明 REA 不发送遥测数据，仅访问使用者指定的目标；不受信任的程序应在专门准备的环境中分析。",
-      "README 报告在一台 Linux 主机上以二进制优先方式测试 WinSCP 6.7：控制台启动器约 30 秒完成导入；GUI 可执行文件在需要 Hermes v0.23.0 的 1000 秒调用预算下耗时 663 秒，随后一次真实对话的首个查询耗时 580 秒。两次运行均恢复 28,701 个过程，且未启动该 Windows 可执行文件。这些是作者的观察结果，并非耗时保证；反编译输出也不是重建的原始源码。插件将 Ghidra 启动时限提高到 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
-      "2026-10-15 的一次提交删除了 Hermes v0.22.2 拒绝的按服务 timeout 键，使插件包可在该版本上安装；按服务的调用预算须等待 Hermes v0.23.0。约 170 个工具和约 460 KB 工具定义的数字是 README 对 REA 6.4.0 的说明。插件包与改编技能采用 MIT，附有 REA 的 MIT 声明，崩溃分诊流程注明改编自 crashlens（MIT）；外部引擎与被分析目标仍有各自条款。本合集仅审阅源码，未安装 Hermes、插件或 REA。"
+      "plugin.json 声明版本 0.1.0，采用 MIT。Hermes 插件目录将其列为 Nous Research 官方插件，要求 Hermes 0.22.0 或更高版本，通过 hermes plugins install rea 与 hermes plugins enable rea 安装；它并非由 REA 发布。需要 Node.js 22.19+、24.11+ 或 26+ 及 npx，不支持 23 与 25。之后若为 Hermes 运行 rea-agents setup，会替换固定版本的服务配置。",
+      "静态 JavaScript／ASAR、软件包、Go／Rust、PE、.NET 与 HAR 分析无需其他组件。核心转储与 ELF 布局工具需要装有 pwntools 4.15.0、pyelftools 0.33 和 Unicorn 2.1.2 的 Python，并在 Hermes 的 .env 中指定。原生反编译需要 Ghidra 及 JDK、Hopper 或 IDA；Android 需要 JADX 与 Java；固件和抓包格式需要 Binwalk／Unblob、TShark、sigrok 或 WABT。这些工具都需自行安装。",
+      "只有改编技能会先询问：对于在 PTY 中运行命令、操控应用、改动 Android 设备或覆盖文件的 REA 工具，Hermes 本身调用前不会提示；无人值守运行时应跳过。不受信任的程序应在专门准备的环境中分析。",
+      "README 的 WinSCP 6.7 测试中，GUI 程序导入耗时 663 秒，使用 1000 秒调用预算；这是作者的观察结果，并非耗时保证。Ghidra 启动时限为 900 秒，每次调用仍使用 Hermes 默认的 300 秒 MCP 时限。",
+      "Hermes v0.22.2 可安装该插件包；按服务的调用预算需要 v0.23.0。约 170 个工具和约 460 KB 工具定义的数字针对 REA 6.4.0。附有 REA 的 MIT 声明，崩溃分诊流程注明来自 crashlens（MIT）；外部引擎与目标适用各自条款。"
     ]
   },
   "crashlens-rea-crash-triage": {
     "name": "crashlens 崩溃分诊工具",
     "requirements": [
-      "所审阅的固定版本声明软件包版本为 0.1.0、插件版本为 0.2.0，README 称项目处于早期原型阶段。文本输入，即 Go／Rust panic、Python、Java 与 Node.js 堆栈以及 ASan／LSan／UBSan 报告，只需 Node.js 22.19+ 或 24.11+。分析核心转储需要 Linux x86-64、Python 3、rea-agents 包，以及通过 REA_PWNTOOLS_PYTHON 指定的独立 pwntools 环境；gdb、objdump 以及 Ghidra 12.1.x 与 JDK 21 为可选项。Windows minidump 与 macOS 崩溃报告仍在路线图中。",
-      "使用者需提供核心转储及发生崩溃的同一版本二进制。源码调用 rea inspect-recorded-crash 与 inspect-binary-layout，并对无符号函数调用使用 Ghidra 引擎的 rea decompile；加载偏移计算、GNU build ID 比对及不一致警告由 crashlens 自身完成。package.json 将 rea-agents 6.4.0 及以上版本声明为可选对等依赖，作者帖子称其可配合固定的 rea-agents 6.4.0 使用；本合集未检查其他 REA 版本。",
-      "插件包含一个技能和一个 MCP 服务。README 称提供三个只读工具，却列出四个名称；服务源码定义了 analyze_failure、analyze_core_dump、decompile_function 与 analyze_crash_folder，均带只读标记。另有一份可直接粘贴的提示词，供连接 REA 自身 MCP 服务的智能体执行同样的核心转储流程。伪代码标注为反编译器输出，崩溃类型属于启发式判断并附置信度。",
-      "项目称不会运行被分析的程序，gdb 打开核心文件时关闭脚本自动加载与 debuginfod。可选的 --ai 参数会把 Markdown 报告（包括代码片段和日志行）发送至 Anthropic API；本地网页应用只监听 127.0.0.1，并要求会话令牌。核心转储可能含有机密信息，报告也会包含本地路径、日志行和寄存器值。",
-      "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有端到端任务安装 gdb、pwntools 与最新版 rea-agents，并检查一个编译后发生空指针解引用的程序所生成的报告。README 称使用 crashlens 的智能体在七类无符号二进制崩溃中找出了六类的根因，这是作者报告，未公开对话记录。本合集审阅了源码与文档，未运行该工具、REA 或智能体。",
-      "项目声明采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序仍适用各自条款。作者帖子提议在 reverse-engineer-anything 技能旁增加崩溃分诊技能，并表示愿向 Hermes 插件仓库提交拉取请求；所审阅来源未确立该请求已提交、合并或被采纳。"
+      "软件包 0.1.0 与插件 0.2.0 仍是早期原型。panic、堆栈及 ASan／LSan／UBSan 文本输入只需 Node.js 22.19+ 或 24.11+。核心转储需要 Linux x86-64、Python 3、rea-agents，以及通过 REA_PWNTOOLS_PYTHON 指定的 pwntools 环境；gdb、objdump 以及 Ghidra 12.1.x 与 JDK 21 为可选项。Windows minidump 与 macOS 崩溃报告仍在路线图中。",
+      "需提供核心转储及发生崩溃的同一二进制；crashlens 比对 GNU build ID，不一致时发出警告。rea-agents 6.4.0 及以上为可选对等依赖，作者只说明可配合固定的 6.4.0 使用。",
+      "插件的 MCP 服务定义了四个只读工具：analyze_failure、analyze_core_dump、decompile_function 与 analyze_crash_folder。伪代码属于反编译器输出，崩溃类型是附带置信度的启发式判断。",
+      "不会运行被分析的程序；gdb 打开核心文件时关闭脚本自动加载与 debuginfod。可选的 --ai 参数会把报告（包括代码片段和日志行）发送至 Anthropic API；本地网页应用只监听 127.0.0.1 并要求会话令牌。核心转储可能含有机密信息，报告也会包含本地路径和寄存器值。",
+      "CI 在 Node 22 与 24 上运行类型检查和单元测试，另有一项使用最新版 rea-agents 的空指针解引用端到端检查；“七类中找出六类根因”的说法未公开对话记录。",
+      "采用 MIT，并通过公开命令行使用同为 MIT 许可的 REA；Ghidra、Anthropic API 及被分析程序适用各自条款。"
     ]
   },
   "decomp-toolkit": {

@@ -48,6 +48,28 @@ def string_list(value):
     return isinstance(value, list) and bool(value) and all(nonempty_string(item) for item in value)
 
 
+# Soft budget for the English requirement items of one record; data/README.md explains what to keep.
+REQUIREMENTS_BUDGET = 1500
+
+
+def requirement_budget_warning(records):
+    """Advisory only: one line naming records whose English requirements exceed the budget, longest first."""
+    over = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        value = record.get('requirements')
+        items = [value] if isinstance(value, str) else value if isinstance(value, list) else []
+        length = sum(len(item) for item in items if isinstance(item, str))
+        if length > REQUIREMENTS_BUDGET:
+            over.append((-length, str(record.get('id'))))
+    if not over:
+        return None
+    listed = ', '.join(f'{identifier} ({-length:,})' for length, identifier in sorted(over))
+    return (f'{len(over)} curated records exceed the {REQUIREMENTS_BUDGET:,}-character requirements budget '
+            f'in data/README.md: {listed}')
+
+
 def public_https_error(value):
     """Offline URL-shape check; public reachability is checked separately."""
     if not isinstance(value, str) or any(character.isspace() for character in value):
@@ -978,6 +1000,9 @@ def main():
                     errors.append('Source-scope data could not be read as valid JSON.')
     validate_citation((ROOT / 'CITATION.cff').read_text(encoding='utf-8'), errors)
     count = validate_markdown(ROOT, errors)
+    budget_warning = requirement_budget_warning(records)
+    if budget_warning:
+        print(f'Warning: {budget_warning}', file=sys.stderr)
     for script in ('build_readme.py', 'build_repository_index.py', 'build_case_coverage.py'):
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / script), '--check'],
                                 cwd=ROOT, encoding='utf-8', capture_output=True, check=False,
