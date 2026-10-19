@@ -9820,5 +9820,40 @@
       "Operates on an APK or app bundle the analyst supplies and is intended only for apps you own or are authorized to test; rooting the device is not required because the changes are applied statically before install.",
       "The README notes the static Apktool-based approach can fail on large or complex apps and cannot address certificate pinning enforced inside native binaries such as Flutter. MIT licensed; the repository ships the tool only, no application packages."
     ]
+  },
+  {
+    "id": "fritap",
+    "name": "friTap",
+    "url": "https://github.com/fkie-cad/friTap",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "description_en": "Frida-based tool that hooks TLS libraries such as OpenSSL, BoringSSL, NSS and GnuTLS inside a running process and writes NSS key logs and decrypted payloads as PCAP, so analysts can inspect an application's encrypted traffic in Wireshark. For stripped or statically linked libraries it accepts byte patterns or offsets and can scan for renamed libraries, or it can recover TLS secrets by scanning heap memory instead of hooking. A terminal UI, a Python API and a Wireshark extcap integration wrap the same capture.",
+    "description_zh": "基于 Frida 的工具，在运行中的进程内挂钩 OpenSSL、BoringSSL、NSS、GnuTLS 等 TLS 库，输出 NSS 格式的密钥日志和解密后的 PCAP 明文，便于分析者在 Wireshark 中检查应用的加密流量。对于去除符号或静态链接的库，可通过字节模式或偏移量定位函数、扫描被重命名的库，也可不挂钩而改为扫描堆内存来恢复 TLS 密钥。终端界面、Python API 和 Wireshark extcap 集成都基于同一套捕获功能。",
+    "evidence_url": "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.5.2, uploaded to PyPI on 2026-09-29 and published on GitHub on 2026-10-04; the reviewed main commit is identical to that tag. The README describes Linux, Windows and Android as supported and macOS and iOS as partial and still under development, and says the Windows implementations were verified only on Windows 10.",
+      "Installed with pip as fritap on Python 3.10+. friTap 2.x requires frida 17.x and frida-tools 14.x; devices with an older frida-server need a legacy friTap line installed through the documented constraints files. Mobile apps need a frida-server running on the device, and the Android walkthrough uses a rooted phone or emulator with adb in PATH; the desktop example attaches with sudo. libpcap or Npcap is needed only for full packet capture, and live Wireshark piping works only on Linux and macOS.",
+      "Analysts name the process or app package to attach to or spawn. Coverage differs by library and platform: the README's support table marks many combinations as read/write hooks only, keys only or not yet implemented, so plaintext captures can be incomplete. Byte patterns for statically linked BoringSSL can come from the authors' separate BoringSecretHunter tool, which analyzes the user's own copy of the library.",
+      "GPL-3.0; setup.py declares GPL-3.0-only while its inline comment says GPLv3 or later. The README presents the tool for malware analysis and application privacy research and asks users to cite the authors' 2024 Forensic Science International: Digital Investigation paper on TLS key material extraction. No process was hooked and no traffic was captured."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/README.md#L175-L198",
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/README.md#L200-L216",
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/USAGE.md",
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/EXAMPLE.md",
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/setup.py#L35-L40",
+      "https://github.com/fkie-cad/friTap/blob/d7398a153755c136005e932414592885348cf83d/LICENSE",
+      "https://github.com/fkie-cad/friTap/tree/d7398a153755c136005e932414592885348cf83d/integrations/wireshark",
+      "https://github.com/fkie-cad/friTap/releases/tag/v2.5.2",
+      "https://pypi.org/project/friTap/2.5.2/",
+      "https://doi.org/10.1016/j.fsidi.2024.301766"
+    ]
   }
 ]

@@ -3715,5 +3715,14 @@
       "对使用者提供的 APK 或应用捆绑包进行操作，仅适用于使用者拥有或有权测试的应用；因修改在安装前静态完成，无需 root 设备。",
       "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。"
     ]
+  },
+  "fritap": {
+    "name": "friTap TLS 密钥提取与流量解密工具",
+    "requirements": [
+      "审阅时最新版本为 v2.5.2，于 2026-09-29 上传至 PyPI，2026-10-04 在 GitHub 发布；所审阅的 main 提交与该标签完全一致。README 称已支持 Linux、Windows 和 Android，对 macOS 与 iOS 的支持仍不完整且在开发中，Windows 实现仅在 Windows 10 上验证过。",
+      "在 Python 3.10+ 上通过 pip 安装 fritap。friTap 2.x 需要 frida 17.x 和 frida-tools 14.x；设备上的 frida-server 较旧时，需借助文档提供的约束文件安装旧版 friTap。分析移动应用需在设备上运行 frida-server，Android 演示使用已 root 的手机或模拟器，并要求 adb 位于 PATH 中；桌面示例使用 sudo 附加进程。只有完整抓包才需要 libpcap 或 Npcap，实时管道输出到 Wireshark 仅支持 Linux 和 macOS。",
+      "分析者需指定要附加或启动的进程或应用包名。不同库和平台的覆盖程度不同：README 的支持表将许多组合标为仅读写挂钩、仅密钥或尚未实现，因此明文捕获可能不完整。静态链接 BoringSSL 所需的字节模式可由作者另行提供的 BoringSecretHunter 工具生成，该工具分析的是使用者自有的库文件副本。",
+      "采用 GPL-3.0；setup.py 声明 GPL-3.0-only，但其行内注释写的是 GPLv3 或更高版本。README 将该工具定位于恶意软件分析和应用隐私研究，并请使用者引用作者 2024 年发表于 Forensic Science International: Digital Investigation 的 TLS 密钥材料提取论文。本次未挂钩任何进程，也未捕获任何流量。"
+    ]
   }
 }
