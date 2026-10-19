@@ -4713,5 +4713,61 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-lares",
+    "title": "Lares: LLM-driven Code Slice Semantic Search for Patch Presence Testing",
+    "title_zh": "Lares：面向补丁存在性测试的大语言模型驱动代码切片语义搜索",
+    "authors": [
+      "Siyuan Li",
+      "Yaowen Zheng",
+      "Hong Li",
+      "Jingdong Guo",
+      "Chaopeng Dong",
+      "Chunpeng Yan",
+      "Weijie Wang",
+      "Yimo Ren",
+      "Limin Sun",
+      "Hongsong Zhu"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year from IEEE's Crossref deposit for the 2025 ASE proceedings. Its only date, 2025-11-16, is the first day of the November 16–20 conference, so no publication month or day is asserted; the arXiv date is not substituted.",
+    "date_basis_zh": "出版年份依据 IEEE 为 2025 年 ASE 论文集提交的 Crossref 元数据。其中唯一的日期 2025-11-16 是 11 月 16–20 日会议的首日，因此本条目不主张出版月份或日期，也不以 arXiv 日期替代。",
+    "venue": "ASE 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2511.01252",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-11-03",
+    "doi": "10.1109/ASE63991.2025.00081",
+    "url": "https://ieeexplore.ieee.org/document/11334274",
+    "pdf_url": "https://arxiv.org/pdf/2511.01252v1",
+    "code_url": "https://github.com/Siyuan-Li201/Lares",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Lares tests whether a known 1-day vulnerability fix is present in a target binary function without recompiling the project. Its inputs are the target binary, the project source and the patch commit diff. A patch-enhancement step adds data- and control-flow context from the source (via Tree-sitter and Joern) to patches with few changed statements. An LLM then locates the pseudocode slice in the IDA Pro decompilation of the target function that corresponds to each patch slice. Finally, matched slices are normalized into equations and checked for equivalence with the Z3 SMT solver, and the LLM judges the cases Z3 cannot model, deciding whether the function matches the pre-patch or the patched version. On 4,480 test cases from 73 CVEs in OpenSSL, FreeType, tcpdump and libxml2, compiled with GCC 9.4.0 and Clang 6 at O0–O3 for x86, x64 and ARM, the authors report an average F1 of 0.77 on x86 with Claude 3.5 Sonnet, against 0.67 for Robin and 0.68 for PS3, and F1 from 0.71 to 0.77 across five compiler–architecture settings.",
+    "description_zh": "Lares 在不重新编译项目的情况下，测试目标二进制函数中是否已包含某个已知 1-day 漏洞的修复。其输入为目标二进制、项目源码和补丁提交差异。补丁增强步骤借助 Tree-sitter 与 Joern 从源码中为改动语句较少的补丁补充数据流和控制流上下文。随后由大语言模型在目标函数的 IDA Pro 反编译伪代码中定位与每个补丁切片对应的伪代码切片。最后，匹配的切片被规范化为等式并交由 Z3 SMT 求解器检验等价性，Z3 无法建模的情况由大语言模型判断，从而确定该函数对应修复前版本还是已修复版本。在来自 OpenSSL、FreeType、tcpdump 和 libxml2 中 73 个 CVE 的 4,480 个测试用例上（使用 GCC 9.4.0 和 Clang 6 以 O0–O3 为 x86、x64 与 ARM 编译），作者报告使用 Claude 3.5 Sonnet 时 x86 上的平均 F1 为 0.77，Robin 与 PS3 分别为 0.67 和 0.68；在五种编译器—架构组合下 F1 为 0.71 至 0.77。",
+    "scope_limitations_en": "Lares answers a narrow question: given a specific CVE patch diff, the project source with its history and a candidate function, is that function pre-patch or patched? It needs both the patch diff and the project source, and assumes a separate binary code similarity tool (the paper names BinaryAI as an example) has already located the candidate function. It does not find vulnerable functions, discover new vulnerabilities or diff arbitrary binaries. Its judgments rest on an LLM plus SMT reasoning over decompiler pseudocode: Z3 handles only about 21% of test cases (Z3-only verification has recall 0.221), so most decisions come from the LLM, and the authors list hallucinated comparisons, stealthy edit-type patches and repeated patch statements as failure modes. Results use IDA Pro 7.5 and a commercial model at about $0.20 per case; GPT-3.5-Turbo and DeepSeek-Coder score lower. The evaluation covers four C projects, 73 CVEs and binaries the authors compiled themselves, plus 20 vulnerabilities disclosed after October 2024 (400 cases) to check training-data contamination; firmware, other languages and real vendor builds are not evaluated. The repository has no license file, so no reuse terms are granted.",
+    "scope_limitations_zh": "Lares 回答的问题范围很窄：给定某个 CVE 的补丁差异、带有版本历史的项目源码以及候选函数，判断该函数属于修复前版本还是已修复版本。它同时需要补丁差异与项目源码，并假定已由另外的二进制代码相似性工具（论文以 BinaryAI 为例）定位候选函数。它不负责发现漏洞函数、挖掘新漏洞或比较任意二进制。其判断依赖大语言模型与基于反编译伪代码的 SMT 推理：Z3 只能处理约 21% 的测试用例（仅用 Z3 验证时召回率为 0.221），多数判断来自大语言模型；作者列出的失败原因包括大语言模型在比较时产生幻觉、隐蔽的修改型补丁以及重复出现的补丁语句。结果使用 IDA Pro 7.5 与商用模型，每个用例约花费 0.20 美元；GPT-3.5-Turbo 与 DeepSeek-Coder 的得分更低。评测覆盖四个 C 项目、73 个 CVE 及作者自行编译的二进制，另以 2024 年 10 月之后披露的 20 个漏洞（400 个用例）检验训练数据污染；未评测固件、其他语言或真实厂商构建。仓库没有许可证文件，因此未授予任何复用条款。",
+    "why_fits_en": "Adds binary patch presence testing, using LLM-located slices of decompiled pseudocode, to the decompilation and binary-analysis research; it complements the curated BinDiff diffing tool rather than replacing it.",
+    "why_fits_zh": "为反编译与二进制分析研究补充二进制补丁存在性测试方向，利用大语言模型在反编译伪代码中定位切片；它与精选目录中的 BinDiff 差异比较工具互补，而非替代。",
+    "metadata_notes": "IEEE's Crossref deposit gives the 2025 40th IEEE/ACM ASE proceedings, pages 919–931, and the same ten authors in order; the DOI resolves to IEEE Xplore document 11334274, which refused automated requests, so the review relied on Crossref and the arXiv PDF. arXiv v1 (2025-11-03) is the only version and carries no venue comment, so it may differ from the IEEE version. The abstract links Siyuan-Li201/Lares; at the reviewed 2025-09-16 commit the repository has no license file, and its README gives the inputs as the binary, the project source path and the patch diff file. The repository commits IDA databases for stripped OpenSSL test builds, zipped tcpdump, FreeType and libxml2 sources and patch files, links the evaluation binaries on Google Drive, and requires an IDA Pro 7.5 path and an LLM API key in settings.py; settings.py preconfigures a third-party API relay with an author-supplied test key, which this record does not reproduce. No code or experiments were run.",
+    "metadata_notes_zh": "IEEE 提交的 Crossref 元数据列出 2025 年第 40 届 IEEE/ACM ASE 论文集、第 919–931 页，以及顺序相同的十位作者；该 DOI 解析至 IEEE Xplore 文档 11334274，但该页面拒绝自动请求，因此本次审阅依据 Crossref 与 arXiv PDF。arXiv v1（2025-11-03）是唯一版本，且没有发表场所注释，可能与 IEEE 版本存在差异。摘要链接了 Siyuan-Li201/Lares；在所审阅的 2025-09-16 提交中，仓库没有许可证文件，其 README 将输入列为二进制、项目源码路径和补丁差异文件。仓库提交了已剥离符号的 OpenSSL 测试构建的 IDA 数据库、tcpdump、FreeType 与 libxml2 的源码压缩包及补丁文件，并通过 Google Drive 链接评测用二进制；运行时需要在 settings.py 中设置 IDA Pro 7.5 路径与大语言模型 API 密钥。settings.py 预置了第三方 API 中转服务及作者提供的测试密钥，本条目不予转载。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/11334274",
+      "https://api.crossref.org/works/10.1109/ASE63991.2025.00081",
+      "https://arxiv.org/abs/2511.01252",
+      "https://arxiv.org/pdf/2511.01252v1",
+      "https://github.com/Siyuan-Li201/Lares/blob/b6ca6316f65c706cd21f0febfae87cabc668ef79/README.md",
+      "https://github.com/Siyuan-Li201/Lares/tree/b6ca6316f65c706cd21f0febfae87cabc668ef79/code",
+      "https://github.com/Siyuan-Li201/Lares/tree/b6ca6316f65c706cd21f0febfae87cabc668ef79/patch"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

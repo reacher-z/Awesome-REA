@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2502,6 +2502,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 反编译以函数为单位，在 HumanEval-Decompile 的 164 个 C 问题上评测；每个问题在 O0–O3 下编译为 x86-64，每个函数采样 20 次并以题目测试用例运行。基于这些测试的 Pass<span>@</span>k 既不能证明整程序反编译能力，也不能证明等价性。除 LLM4Decompile 与 Nova 外，其他基线采用三样例提示而非微调。相似性结果针对 O0 查询与 O3 候选，候选池为来自 Binutils、Curl、ImageMagick、SQLite、OpenSSL 与 PuTTY 的 50–500 个函数，模型先在 BinaryCorp-3M 上微调。反编译微调使用抽样的 216 万对数据，README 称仅从 The Stack 获取 5 万个文件；论文也说明 Nova 仅支持 x86-64 汇编，模型规模限于 1.3B 和 6.7B。输入需要按论文方式规范化汇编。
 
   **作者:** Nan Jiang 等
+
+  </details>
+
+- [**Lares：面向补丁存在性测试的大语言模型驱动代码切片语义搜索**](https://ieeexplore.ieee.org/document/11334274)
+
+  Lares 在不重新编译项目的情况下，测试目标二进制函数中是否已包含某个已知 1-day 漏洞的修复。其输入为目标二进制、项目源码和补丁提交差异。补丁增强步骤借助 Tree-sitter 与 Joern 从源码中为改动语句较少的补丁补充数据流和控制流上下文。随后由大语言模型在目标函数的 IDA Pro 反编译伪代码中定位与每个补丁切片对应的伪代码切片。最后，匹配的切片被规范化为等式并交由 Z3 SMT 求解器检验等价性，Z3 无法建模的情况由大语言模型判断，从而确定该函数对应修复前版本还是已修复版本。在来自 OpenSSL、FreeType、tcpdump 和 libxml2 中 73 个 CVE 的 4,480 个测试用例上（使用 GCC 9.4.0 和 Clang 6 以 O0–O3 为 x86、x64 与 ARM 编译），作者报告使用 Claude 3.5 Sonnet 时 x86 上的平均 F1 为 0.77，Robin 与 PS3 分别为 0.67 和 0.68；在五种编译器—架构组合下 F1 为 0.71 至 0.77。
+
+  ASE 2025 · 会议论文 · [PDF](https://arxiv.org/pdf/2511.01252v1) · [代码](https://github.com/Siyuan-Li201/Lares) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-lares/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** Lares 回答的问题范围很窄：给定某个 CVE 的补丁差异、带有版本历史的项目源码以及候选函数，判断该函数属于修复前版本还是已修复版本。它同时需要补丁差异与项目源码，并假定已由另外的二进制代码相似性工具（论文以 BinaryAI 为例）定位候选函数。它不负责发现漏洞函数、挖掘新漏洞或比较任意二进制。其判断依赖大语言模型与基于反编译伪代码的 SMT 推理：Z3 只能处理约 21% 的测试用例（仅用 Z3 验证时召回率为 0.221），多数判断来自大语言模型；作者列出的失败原因包括大语言模型在比较时产生幻觉、隐蔽的修改型补丁以及重复出现的补丁语句。结果使用 IDA Pro 7.5 与商用模型，每个用例约花费 0.20 美元；GPT-3.5-Turbo 与 DeepSeek-Coder 的得分更低。评测覆盖四个 C 项目、73 个 CVE 及作者自行编译的二进制，另以 2024 年 10 月之后披露的 20 个漏洞（400 个用例）检验训练数据污染；未评测固件、其他语言或真实厂商构建。仓库没有许可证文件，因此未授予任何复用条款。
+
+  **作者:** Siyuan Li 等
 
   </details>
 
