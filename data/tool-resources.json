@@ -14526,5 +14526,41 @@
       "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/Dockerfile",
       "https://github.com/Xeeynamo/ff7-decomp/blob/37f35a536ba80f0575e79e243a273b28702d494d/LICENSE"
     ]
+  },
+  {
+    "id": "megaman-x-snes-recomp-case",
+    "name": "Mega Man X Recompiled: a snesrecomp static recompilation",
+    "url": "https://github.com/mstan/MegaManXSNESRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically translates the 65816 CPU code of the SNES Mega Man X (USA Rev 1) to C with the snesrecomp framework; the PPU, audio, DMA and other hardware run in the framework’s runtime, and a LakeSnes-derived interpreter executes whatever the static pass cannot prove. The C is generated locally from the user’s ROM, with function names imported from community DiztinGUIsh annotations. Playable Zero, co-op and rollback netplay, X2/X3 boss weapons and adaptive widescreen are layered on top, using assets extracted locally from the user’s own sequel ROMs.",
+    "description_zh": "借助 snesrecomp 框架，将 SNES 版《洛克人 X》（美版 Rev 1）的 65816 CPU 代码静态转译为 C；PPU、音频、DMA 等硬件由框架运行时处理，静态分析无法证明的部分则交给源自 LakeSnes 的解释器执行。C 代码在本地由使用者的 ROM 生成，函数名取自社区的 DiztinGUIsh 注解。项目在此基础上加入可操作的 Zero、合作与回滚联机、X2／X3 的头目武器以及自适应宽屏，所用素材在本地从使用者自有的续作 ROM 中提取。",
+    "evidence_url": "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the main commit of release v2.2.9-alpha (2026-10-18), which offers a Windows ZIP and a Linux AppImage. The snesrecomp README lists the game as fully playable, and this README says the adaptive widescreen renderer was playtested through the ending on Windows. Execution is interpreter-first: compiled bodies replace only code the analysis proves, the rest stays interpreted, and Rockman X (Japan v1.1) is a separate variant that keeps its original view.",
+      "Supply your own Mega Man X (USA) Rev 1 ROM as .sfc or .smc, headered or not. Zero, co-op and the X3 weapons also need the user’s Mega Man X3 USA ROM, and the X2 weapons the Mega Man X2 USA ROM; their assets are extracted on the user’s machine. README states that ROMs, extracted assets and the generated src/gen C are neither committed nor in the downloads; the Saber Zero sprites and sounds from the Zashiko Mod are included with permission for non-commercial use.",
+      "Source builds clone the snesrecomp, recomp-ui and dizProjects submodules, stage the ROM and run tools/regen.sh, which emits per-bank C from recomp/bank*.cfg. CMake with Ninja and SDL3, or SDL2 as a fallback, is the maintained build: Windows 10+ through MSYS2 mingw64 with Python 3.9+ and rustup, Linux with gcc or clang, and macOS on Apple Silicon or Intel.",
+      "CI compiles ROM-free setup hosts and runs the ROM-free CTest regressions; ROM-backed state tests and a replay suite that stops at the first WRAM, co-op, camera or VRAM mismatch need the user’s ROMs. A dated coverage checkpoint reports two 12,000-frame routes matching the control build’s CPU and WRAM traces and final snapshots, without comparing audio, and the v2.2.9 release notes report Windows and Linux checks of all 28 Boss Rush pairs. This collection ran none of them.",
+      "The project and the pinned snesrecomp framework are under the PolyForm Noncommercial License 1.0.0; the interpreter is LakeSnes-derived (MIT), vendored dependencies keep their own licenses, and Capcom keeps its game rights. README presents the project as part of R.A.I.D. (Retro AI Development), a Discord community for AI-assisted retro reverse engineering, but names no model or workflow for this repository; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/symbols/README.md",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/docs/mod-source-roms.md",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/docs/validation/coverage-2026-09-28.md",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/assets/saber-zero/CREDITS.md",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/.github/workflows/build.yml",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/.gitmodules",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/.gitignore",
+      "https://github.com/mstan/MegaManXSNESRecomp/blob/adc1fea7baf90614a4272a90336cfcea563c504c/LICENSE",
+      "https://github.com/RetroPortingToolKit/snesrecomp/blob/0f5708d108bf4acfb21dd7ff75a0cdb2376eb238/README.md",
+      "https://github.com/RetroPortingToolKit/snesrecomp/blob/0f5708d108bf4acfb21dd7ff75a0cdb2376eb238/LICENSE",
+      "https://github.com/mstan/MegaManXSNESRecomp/releases/tag/v2.2.9-alpha"
+    ]
   }
 ]
