@@ -7196,5 +7196,44 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "sfiii-3rd-strike-ps2-decomp-case",
+    "name": "3S Decomp: a byte-compared PS2 decompilation of Street Fighter III: 3rd Strike",
+    "url": "https://github.com/crowded-street/3s-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the PlayStation 2 executable of Street Fighter III: 3rd Strike from Street Fighter Anniversary Collection into C that period Metrowerks and EE GCC compilers rebuild, then compares the rebuilt executable word by word with the user’s original. README reports the game code fully decompiled and the CRI middleware partly so. The separate 3SX native port describes itself as this project’s continuation.",
+    "description_zh": "将 Street Fighter Anniversary Collection 中《街头霸王 III：3rd Strike》的 PlayStation 2 可执行文件反编译为 C 源码，用当年的 Metrowerks 与 EE GCC 编译器重新构建，再将重建出的可执行文件与使用者自备的原文件逐字比较。README 报告游戏代码已全部反编译，CRI 中间件部分完成。另有独立的 3SX 原生移植，自称是本项目的延续。",
+    "evidence_url": "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README reports the game code fully decompiled and the CRI middleware partly decompiled, with most file-system and sound functions the game uses matching; cri-progress.md checks off 497 of the 503 CRI functions it lists. At the reviewed commit, two game functions (sea_write and mlt_obj_trans_rgb_ext) and 39 of 52 CRI C files still include assembly in the PS2 build, and PS2 SDK and GCC library code is out of scope. The output is the PS2 executable, not a PC port.",
+      "Building needs THIRD_U.BIN from the user’s own copy of the game; the split configuration records its SHA-1 as cf58495054c31ad852175c66e9ca04d5094f000e, and make split derives the assembly and linker script from it. The decompiling guide also relies on the executable’s DWARF debug data, dumped with decomp-toolkit, for signatures and local variables. A separate split_cps3 target for the CPS3 arcade version needs a user-supplied arcade ROM set and has only a code-segment configuration.",
+      "The build guide covers Linux (Debian packages with i386 support, MIPS binutils, and a Python venv with splat64 0.29.0 and spimdisasm 1.35.0) and macOS through the provided Dockerfile. make setup_tools downloads Metrowerks mwccps2 3.0b38 and EE GCC 2.96 from decomp.me’s compiler releases plus the wibo loader for Windows tools; m2c, asm-differ, mwccgap and saturn-splitter are git submodules.",
+      "A successful build ends with compare_bytes.py checking the rebuilt executable against the original from offset 0x80 to 0x478A00 and printing “Files match ✅”. That check tolerates 163 listed words in about 20 game and CRI functions, attributed to register and operand swaps, assert line numbers, string encoding, a misplaced nop and a call misalignment, so equivalence is near-byte-level by the project’s own check rather than a whole-file hash. The latest commit removed the GitHub Actions workflows, and this collection built nothing.",
+      "LICENSE is AGPL-3.0 for the project’s code. The original executable and game content keep their own rights; include/cri carries headers marked “CRI Middleware SDK” and “Copyright (c) … CRI-MW”, and the vendored zlib keeps its own license. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/docs/builde-guide.md",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/docs/decompiling.md",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/Makefile",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/config/anniversary/sfiii.anniversary.yaml",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/tools/compare_bytes.py",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/cri-progress.md",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/src/anniversary/sf33rd/Source/Game/end_20.c#L321-L322",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/src/anniversary/sf33rd/Source/Game/MTRANS.c#L1145-L1146",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/config/cps3/sfiii3n.yaml",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/tools/requirements-python.txt",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/.gitmodules",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/include/cri/cri_xpts.h",
+      "https://github.com/crowded-street/3s-decomp/blob/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835/LICENSE",
+      "https://github.com/crowded-street/3s-decomp/commit/be9b9bc69dc19822a8eca9ce3e72ba560d5a3835"
+    ]
   }
 ]
