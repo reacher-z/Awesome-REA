@@ -4713,5 +4713,57 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-jsimplifier",
+    "title": "From Obfuscated to Obvious: A Comprehensive JavaScript Deobfuscation Tool for Security Analysis",
+    "title_zh": "从混淆到清晰：面向安全分析的综合性 JavaScript 反混淆工具",
+    "authors": [
+      "Dongchao Zhou",
+      "Lingyun Ying",
+      "Huajun Chai",
+      "Dongbin Wang"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "The Internet Society's Crossref deposit and the official NDSS paper identify publication year 2026. The PDF footer names the 23–27 February 2026 symposium; no finer publication date is asserted from the event dates.",
+    "date_basis_zh": "Internet Society 提交的 Crossref 元数据与 NDSS 官方论文标明出版年份为 2026。PDF 页脚标注研讨会于 2026 年 2 月 23–27 日举行；不根据会议举办日期推定更精确的出版日期。",
+    "venue": "NDSS 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2512.14070",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-12-16",
+    "doi": "10.14722/ndss.2026.242198",
+    "url": "https://www.ndss-symposium.org/ndss-paper/from-obfuscated-to-obvious-a-comprehensive-javascript-deobfuscation-tool-for-security-analysis/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2026-f2198-paper.pdf",
+    "code_url": "https://github.com/XingTuLab/JSIMPLIFIER",
+    "project_url": null,
+    "targets": [
+      "website"
+    ],
+    "description_en": "JSimplifier recovers readable JavaScript from obfuscated scripts in three stages. A preprocessor normalizes malformed or mixed-encoding input; a deobfuscator combines AST-based static simplification with selective execution of obfuscated call sites in a Node.js vm context, feeding the results back into the AST; and an optional humanizer renames identifiers with an LLM, adapting HumanifyJS, then formats the output with Prettier. The authors catalog 20 obfuscation techniques in four categories and assemble MalJS (23,212 malicious scripts) and BenignJS (21,209 scripts). They report that JSimplifier processes all 44,421 samples and reduces Halstead length by 88.2% on 1,296 multi-technique JsDeObsBench samples.",
+    "description_zh": "JSimplifier 分三个阶段从混淆脚本中恢复可读的 JavaScript：预处理器规范化格式错误或混合编码的输入；反混淆器将基于 AST 的静态简化与在 Node.js vm 上下文中有选择地执行混淆调用点相结合，并把执行结果写回 AST；可选的人性化模块借鉴 HumanifyJS，利用大语言模型重命名标识符，再用 Prettier 格式化输出。作者将混淆技术归纳为四大类共 20 种，并构建了 MalJS（23,212 个恶意脚本）与 BenignJS（21,209 个脚本）数据集。作者报告 JSimplifier 能处理全部 44,421 个样本，并在 JsDeObsBench 中 1,296 个组合多种技术的样本上将 Halstead 长度降低 88.2%。",
+    "scope_limitations_en": "The headline “100% correctness” is syntactic validity on 400 samples (100 BenignJS, 300 MalJS) checked by parser and by hand; behavioral consistency, judged with Joern CFG/DDG comparison and manual review, holds for 83 of 100 samples. The 20-technique capability test applies each technique to one representative snippet, and the static and dynamic stages alone handle 19; identifier renaming needs the LLM stage. Readability gains come from four LLMs (Claude 3.7 Sonnet, Gemini 2.5 Pro, DeepSeek-R1 and GPT-o3) scoring 60 MalJS pairs on a 0–10 scale; a separate check of GPT-4o-mini renaming on 100 samples found 12% hallucinated names, and the user study had 9 participants. The entropy comparison excludes the LLM stage. MalJS was collected with a security company and BenignJS mixes Tranco top-site scripts with 2,000 clean samples obfuscated by the authors. The authors exclude cryptographic packing, custom interpreters and time-dependent decryption, and note that ES6+ syntax may be downgraded and that vm-based execution carries escape risk. The output is readable JavaScript, not a reconstructed website.",
+    "scope_limitations_zh": "论文标题性的“100% 正确”指 400 个样本（100 个 BenignJS、300 个 MalJS）经解析器与人工检查后的语法有效性；借助 Joern 控制流图／数据依赖图比较和人工复核判断的行为一致性，在 100 个样本中有 83 个成立。20 种技术的能力测试是把每种技术分别施加在同一段代表性代码上；仅靠静态与动态阶段可处理其中 19 种，标识符重命名需要大语言模型阶段。可读性提升来自四个大语言模型（Claude 3.7 Sonnet、Gemini 2.5 Pro、DeepSeek-R1 与 GPT-o3）对 60 组 MalJS 样本按 0–10 分打分；另对 100 个样本的 GPT-4o-mini 重命名进行检查，发现 12% 的名称属于幻觉，用户研究仅有 9 名参与者。熵比较未包含大语言模型阶段。MalJS 是与一家安全公司合作收集的，BenignJS 则混合了 Tranco 热门网站脚本和作者自行混淆的 2,000 个干净样本。作者说明该工具不处理加密打包、自定义解释器和依赖时间的解密，ES6+ 语法可能被降级，基于 vm 的执行也存在逃逸风险。输出是可读的 JavaScript，而非重建的网站。",
+    "why_fits_en": "Adds an open-source end-to-end JavaScript deobfuscator with a large real-world evaluation set, complementing the JsDeObsBench benchmark and LLM-based deobfuscation work in recovering readable client-side code.",
+    "why_fits_zh": "补充一款开源的端到端 JavaScript 反混淆工具及大规模真实评测数据，与 JsDeObsBench 基准和基于大语言模型的反混淆研究共同服务于恢复可读的客户端代码。",
+    "metadata_notes": "The four-author order follows the PDF, the NDSS paper page and Crossref. The PDF footer gives ISBN 979-8-9919276-8-0 and the DOI; Crossref lists no pages, and no page range was verified. arXiv v1 (2025-12-16) carries the same DOI in its metadata and no venue comment; the reviewed text is the NDSS final PDF. The paper links XingTuLab/JSIMPLIFIER and Zenodo artifact 10.5281/zenodo.17531662, whose DOI identifies the artifact, not the paper. At the reviewed 2025-12-17 commit the repository's LICENSE is GPL-3.0, while package.json still declares MIT; the Zenodo record states GPL-3.0-or-later. The CLI needs Node.js 20 or later, and LLM renaming needs the user's OpenAI or Gemini API key; --model=none runs the AST stages only. Per the artifact appendix, the roughly 3 GB Zenodo archive includes the MalJS malicious samples; it was not downloaded. The paper credits HumanifyJS for its renaming approach. No code was run.",
+    "metadata_notes_zh": "四位作者的顺序以 PDF、NDSS 论文页面与 Crossref 为准。PDF 页脚给出 ISBN 979-8-9919276-8-0 及 DOI；Crossref 未列出页码，本条目未核实页码范围。arXiv v1（2025-12-16）的元数据带有同一 DOI，但没有发表场所注释；本次审阅的是 NDSS 最终版 PDF。论文链接 XingTuLab/JSIMPLIFIER 与 Zenodo 产物 10.5281/zenodo.17531662，后者 DOI 标识的是产物而非论文。在所审阅的 2025-12-17 提交中，仓库 LICENSE 为 GPL-3.0，package.json 却仍声明 MIT；Zenodo 记录标注 GPL-3.0-or-later。命令行工具需要 Node.js 20 或更高版本，大语言模型重命名需要用户自备 OpenAI 或 Gemini API 密钥；--model=none 仅运行 AST 阶段。据产物附录，约 3 GB 的 Zenodo 压缩包包含 MalJS 恶意样本，本次未下载。论文说明其重命名方法借鉴 HumanifyJS。本次未运行任何代码。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss-paper/from-obfuscated-to-obvious-a-comprehensive-javascript-deobfuscation-tool-for-security-analysis/",
+      "https://www.ndss-symposium.org/wp-content/uploads/2026-f2198-paper.pdf",
+      "https://doi.org/10.14722/ndss.2026.242198",
+      "https://api.crossref.org/works/10.14722/ndss.2026.242198",
+      "https://arxiv.org/abs/2512.14070",
+      "https://github.com/XingTuLab/JSIMPLIFIER/blob/eaa72ae63758957ac95b2f5e3391fefb96827987/README.md",
+      "https://github.com/XingTuLab/JSIMPLIFIER/blob/eaa72ae63758957ac95b2f5e3391fefb96827987/LICENSE",
+      "https://github.com/XingTuLab/JSIMPLIFIER/blob/eaa72ae63758957ac95b2f5e3391fefb96827987/package.json",
+      "https://zenodo.org/records/17531662"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 346](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-346-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 346](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-346-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2188,13 +2188,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (16)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2902,6 +2902,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 要求输出单个 HTML 文件；论文明确要求用 JavaScript 静态数据模拟隐含的后端逻辑。轨迹覆盖和模型评审均不能证明完整网站或后端等价。
 
   **作者:** Yang Chen 等
+
+  </details>
+
+- [**从混淆到清晰：面向安全分析的综合性 JavaScript 反混淆工具**](https://www.ndss-symposium.org/ndss-paper/from-obfuscated-to-obvious-a-comprehensive-javascript-deobfuscation-tool-for-security-analysis/)
+
+  JSimplifier 分三个阶段从混淆脚本中恢复可读的 JavaScript：预处理器规范化格式错误或混合编码的输入；反混淆器将基于 AST 的静态简化与在 Node.js vm 上下文中有选择地执行混淆调用点相结合，并把执行结果写回 AST；可选的人性化模块借鉴 HumanifyJS，利用大语言模型重命名标识符，再用 Prettier 格式化输出。作者将混淆技术归纳为四大类共 20 种，并构建了 MalJS（23,212 个恶意脚本）与 BenignJS（21,209 个脚本）数据集。作者报告 JSimplifier 能处理全部 44,421 个样本，并在 JsDeObsBench 中 1,296 个组合多种技术的样本上将 Halstead 长度降低 88.2%。
+
+  NDSS 2026 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f2198-paper.pdf) · [代码](https://github.com/XingTuLab/JSIMPLIFIER) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-jsimplifier/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 论文标题性的“100% 正确”指 400 个样本（100 个 BenignJS、300 个 MalJS）经解析器与人工检查后的语法有效性；借助 Joern 控制流图／数据依赖图比较和人工复核判断的行为一致性，在 100 个样本中有 83 个成立。20 种技术的能力测试是把每种技术分别施加在同一段代表性代码上；仅靠静态与动态阶段可处理其中 19 种，标识符重命名需要大语言模型阶段。可读性提升来自四个大语言模型（Claude 3.7 Sonnet、Gemini 2.5 Pro、DeepSeek-R1 与 GPT-o3）对 60 组 MalJS 样本按 0–10 分打分；另对 100 个样本的 GPT-4o-mini 重命名进行检查，发现 12% 的名称属于幻觉，用户研究仅有 9 名参与者。熵比较未包含大语言模型阶段。MalJS 是与一家安全公司合作收集的，BenignJS 则混合了 Tranco 热门网站脚本和作者自行混淆的 2,000 个干净样本。作者说明该工具不处理加密打包、自定义解释器和依赖时间的解密，ES6+ 语法可能被降级，基于 vm 的执行也存在逃逸风险。输出是可读的 JavaScript，而非重建的网站。
+
+  **作者:** Dongchao Zhou 等
 
   </details>
 

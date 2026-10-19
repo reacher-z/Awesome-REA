@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 346](https://img.shields.io/badge/resources-346-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 346](https://img.shields.io/badge/resources-346-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2187,13 +2187,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (16)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2901,6 +2901,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The required output is one HTML file; the paper explicitly instructs models to mock implied backend logic with static JavaScript data. Trajectory coverage and model-based judgments do not prove complete website or backend equivalence.
 
   **Authors:** Yang Chen et al.
+
+  </details>
+
+- [**From Obfuscated to Obvious: A Comprehensive JavaScript Deobfuscation Tool for Security Analysis**](https://www.ndss-symposium.org/ndss-paper/from-obfuscated-to-obvious-a-comprehensive-javascript-deobfuscation-tool-for-security-analysis/)
+
+  JSimplifier recovers readable JavaScript from obfuscated scripts in three stages. A preprocessor normalizes malformed or mixed-encoding input; a deobfuscator combines AST-based static simplification with selective execution of obfuscated call sites in a Node.js vm context, feeding the results back into the AST; and an optional humanizer renames identifiers with an LLM, adapting HumanifyJS, then formats the output with Prettier. The authors catalog 20 obfuscation techniques in four categories and assemble MalJS (23,212 malicious scripts) and BenignJS (21,209 scripts). They report that JSimplifier processes all 44,421 samples and reduces Halstead length by 88.2% on 1,296 multi-technique JsDeObsBench samples.
+
+  NDSS 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f2198-paper.pdf) · [Code](https://github.com/XingTuLab/JSIMPLIFIER) · [Full entry & citation](https://awesomerea.org/papers/paper-jsimplifier/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The headline “100% correctness” is syntactic validity on 400 samples (100 BenignJS, 300 MalJS) checked by parser and by hand; behavioral consistency, judged with Joern CFG/DDG comparison and manual review, holds for 83 of 100 samples. The 20-technique capability test applies each technique to one representative snippet, and the static and dynamic stages alone handle 19; identifier renaming needs the LLM stage. Readability gains come from four LLMs (Claude 3.7 Sonnet, Gemini 2.5 Pro, DeepSeek-R1 and GPT-o3) scoring 60 MalJS pairs on a 0–10 scale; a separate check of GPT-4o-mini renaming on 100 samples found 12% hallucinated names, and the user study had 9 participants. The entropy comparison excludes the LLM stage. MalJS was collected with a security company and BenignJS mixes Tranco top-site scripts with 2,000 clean samples obfuscated by the authors. The authors exclude cryptographic packing, custom interpreters and time-dependent decryption, and note that ES6+ syntax may be downgraded and that vm-based execution carries escape risk. The output is readable JavaScript, not a reconstructed website.
+
+  **Authors:** Dongchao Zhou et al.
 
   </details>
 
