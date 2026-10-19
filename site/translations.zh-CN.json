@@ -2881,5 +2881,15 @@
       "验证结果均为项目报告。C++ 检查工具将全部 169,312 组攻击方／目标的伤害、价格、收入与界面布局同参考工具比较，将规则表同录制对局的内存镜像比较，并在 156 个内置场景上比较世界网格；无界面运行框架检查确定性。模拟以逐位一致的锁步行为为目标，但尚未与真实录制对局比较，渲染则通过查看快照检查。本合集未运行这些工具。",
       "引擎采用 GPL-3.0；菜单标志不在此范围内，其权利仍归原所有者。项目声明与 Microsoft、Big Huge Games 及 SkyBox Labs 无关联。.gitignore 将反编译输出、符号转储和提取数据排除在仓库之外，但 re/jobs 下提交了两份列有原地址的小型指令搜索输出。所审阅来源未确立 REA 使用。"
     ]
+  },
+  "fallout2-reference-edition-case": {
+    "name": "Fallout 2 Reference Edition：逆向还原的原版引擎 C 源码",
+    "requirements": [
+      "所审阅的 main 固定版本是 2023 年 1 月 20 日的一次 README 更新，也是最新提交；唯一的发布是 2022 年 5 月 3 日的 nightly 压缩包，内含项目自行构建的 fallout2-re.exe。README 建议玩家改用 Fallout 2 Community Edition，并说明该项目以本仓库为基础。README 认为还原原始源码的目标已基本实现，仍有部分 Fallout 1 遗留函数和未充分使用的 API 尚未反编译。把代码改写为 C89 以便用 Watcom 编译器构建、从而可能得到逐字节一致的结果，被列为低优先级，且大概永远不会完成。",
+      "游玩需要使用者自己的《辐射 2》安装；README 列出 GOG 与 Steam 版本，构建出的 fallout2-re.exe 复制到该目录后替代 fallout2.exe 运行。仓库只含还原的源码和两个第三方库，不含游戏数据或原始可执行文件。作者另有 Fallout Reference Edition 仓库，可看到该引擎早先在《辐射》一代中的形态。",
+      "使用 CMake 3.13+ 构建 32 位 Windows 图形界面程序。CI 在 windows-2019 运行器上以 Visual Studio 2019 配置 Win32 构建，并把生成的程序作为构件上传。代码保留了原有的 Win32 与 DirectX 接口（DirectDraw、DirectSound 和 DirectInput），链接 winmm，并附带 zlib 与 fpattern；本仓库只能为 Windows 构建。",
+      "CI 只负责编译可执行文件：仓库没有测试、一致性检查，也没有公布与原始二进制的比对结果，因此还原的忠实程度仅凭作者陈述。本合集未构建或运行任何内容。",
+      "代码以 Sustainable Use License 1.0 提供，只允许内部、个人或非商业使用，并只能免费、非商业地分发；GitHub 将其识别为 NOASSERTION，zlib 与 fpattern 保留各自的许可。README 称源码是通过逆向原始二进制得到的，援引 DMCA 中关于互操作性和合理使用的例外，认为向广大受众发布存疑，并表示是否下架由 Bethesda 与微软决定；在仍未关闭的第 29 号议题中，作者表示自己并不清楚其法律地位。所审来源未确立 AI 或 REA 的参与。"
+    ]
   }
 }

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 79](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 338](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-338-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 176](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-176-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 79](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (158) · [应用](#app) (48)
+- [网站](#website) (19) · [游戏](#game) (159) · [应用](#app) (48)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (175) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (176) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -983,6 +983,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。项目依据对带调试符号的可执行文件进行 Ghidra 研究后撰写的子系统规范及 JavaScript 参考工具，在大量使用 Claude Code 的情况下编写 C++17 实现。该早期版本可游玩教程与场景，其逐位一致性检查仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)
+
+- [**Fallout 2 Reference Edition：逆向还原的原版引擎 C 源码**](https://github.com/alexbatalov/fallout2-re)
+
+  依据原始二进制文件还原《辐射 2》Windows 引擎的 C 源码，力求连同原有缺陷在内尽量贴近原版。构建出的 fallout2-re.exe 可直接替换 fallout2.exe，运行使用者自己的 GOG 或 Steam 版游戏。README 称仍有少数非关键函数尚未反编译，也不主张与原文件逐字节一致；这份代码后来成为独立的 Fallout 2 Community Edition 的基础，作者本人则认为向公众广泛发布在法律上存疑。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/fallout2-reference-edition-case/)
 
 #### 工具、项目与集成
 

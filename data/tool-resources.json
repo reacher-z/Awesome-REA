@@ -6984,5 +6984,36 @@
       "https://x.com/benw_____/status/2111116976168779845",
       "https://x.com/benw_____/status/2111260204884967933"
     ]
+  },
+  {
+    "id": "fallout2-reference-edition-case",
+    "name": "Fallout 2 Reference Edition: reverse-engineered C source of the original engine",
+    "url": "https://github.com/alexbatalov/fallout2-re",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Restores C source for Fallout 2’s Windows engine from the original binary, keeping as close to the original as possible with all its imperfections. The resulting fallout2-re.exe is a drop-in replacement for fallout2.exe that runs on the user’s own GOG or Steam copy. README says a few non-essential functions remain undecompiled and makes no binary-identity claim; the code became the basis of the separate Fallout 2 Community Edition, and its author calls wide publication legally questionable.",
+    "description_zh": "依据原始二进制文件还原《辐射 2》Windows 引擎的 C 源码，力求连同原有缺陷在内尽量贴近原版。构建出的 fallout2-re.exe 可直接替换 fallout2.exe，运行使用者自己的 GOG 或 Steam 版游戏。README 称仍有少数非关键函数尚未反编译，也不主张与原文件逐字节一致；这份代码后来成为独立的 Fallout 2 Community Edition 的基础，作者本人则认为向公众广泛发布在法律上存疑。",
+    "evidence_url": "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main pin, a README update of 2023-01-20, is the latest commit; the only release is a 2022-05-03 nightly zip of the project’s own fallout2-re.exe, and README sends players to Fallout 2 Community Edition, which it says is based on this project. README calls the goal of restoring the original source largely achieved, with some Fallout 1 leftovers and partly used APIs not yet decompiled. Converting the code to C89 for the Watcom compiler, which might allow binary-identical builds, is described as low priority and probably never to be completed.",
+      "Playing requires the user’s own Fallout 2 installation; README names the GOG and Steam editions, and the built fallout2-re.exe is copied into that directory in place of fallout2.exe. The repository holds the reconstructed source and two third-party libraries only, with no game data or original executable. The author’s separate Fallout Reference Edition repository shows the engine’s earlier Fallout 1 form.",
+      "CMake 3.13+ builds a 32-bit Windows GUI executable. CI configures Visual Studio 2019 for Win32 on a windows-2019 runner and uploads the binary as an artifact. The code keeps the original Win32 and DirectX interfaces (DirectDraw, DirectSound and DirectInput), links winmm and bundles zlib and fpattern; this repository builds for Windows only.",
+      "CI only compiles the executable: the repository has no tests, matching checks or published comparison with the original binary, so fidelity rests on the author’s statements. This collection built and ran nothing.",
+      "The code is offered under the Sustainable Use License 1.0, which allows only internal, personal or non-commercial use and free non-commercial distribution; GitHub reports it as NOASSERTION, and zlib and fpattern keep their own licenses. README says the source was produced by reverse engineering the original binary, cites DMCA exceptions for interoperability and fair use, calls publishing it to a wide audience questionable and leaves any takedown to Bethesda and Microsoft; in the still-open issue #29 the author says its legal status is unknown. The reviewed sources establish no AI or REA involvement."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/LICENSE.md",
+      "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/CMakeLists.txt",
+      "https://github.com/alexbatalov/fallout2-re/blob/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/.github/workflows/ci-build.yml",
+      "https://github.com/alexbatalov/fallout2-re/tree/b135fc46ef40c4aecd156f3cebcf88ec531bb8ac/third_party",
+      "https://github.com/alexbatalov/fallout2-re/releases/tag/nightly",
+      "https://github.com/alexbatalov/fallout2-re/issues/29"
+    ]
   }
 ]
