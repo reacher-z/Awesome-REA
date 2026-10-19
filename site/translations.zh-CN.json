@@ -4618,5 +4618,15 @@
       "构建成功后，compare_bytes.py 将重建的可执行文件与原文件在偏移 0x80 至 0x478A00 范围内比对，并输出 “Files match ✅”。该检查容许约 20 个游戏与 CRI 函数中列明的 163 个字存在差异，原因注明为寄存器与操作数互换、断言行号、字符串编码、一处错位的 nop 和一处调用错位，因此按项目自身的检查，一致性接近字节级，而非整个文件的哈希一致。最新提交移除了 GitHub Actions 工作流；本合集未自行构建。",
       "LICENSE 为 AGPL-3.0，适用于项目代码。原可执行文件和游戏内容仍有各自权利约束；include/cri 中有标注 “CRI Middleware SDK” 及 “Copyright (c) … CRI-MW” 的头文件，内置的 zlib 也保留其自身许可证。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "halo-ce-xbox-reimplementation-case": {
+    "name": "Halo: Combat Evolved：逐步重新实现并修补进原版 Xbox 可执行文件",
+    "requirements": [
+      "README 介绍项目旨在研究并为这款 Xbox 首发游戏打造自由、开源的重新实现；其“当前状态”列表报告修补后的游戏可以运行，主循环和另外若干函数已重新实现，但仍有很长的路要走。README 链接的进度页面（其数据文件最后修改于 2022 年 11 月）报告 .text 段游戏代码已重新实现 0.37%，共 40 个函数。默认分支最后一次提交日期为 2023-07-07。",
+      "需自备零售光盘的游戏文件，以及版本为 01.10.12.2276 的原版可执行文件（README 和 kb.json 以 MD5 标识），并以 cachebeta.xbe 为名放入 halo-patched 目录；tools/patch.py 会校验该哈希。仓库不含游戏可执行文件或素材，README 说明须来自使用者自己的副本。构建会在同一目录写出修补后的 default.xbe，作为使用者本地的修改副本；项目不分发任何游戏构建。",
+      "构建需要 CMake 3.16 及以上、带 libclang、pefile 与 pyxbe 的 Python 3，以及 Windows 上的 32 位 MSVC，或 Linux 和 macOS 上以 i386-pc-win32 为目标的 Clang 与 LLD；Dockerfile 提供 Ubuntu 22.04 构建镜像。产物面向初代 Xbox，可在 xemu 模拟器或主机硬件上运行；构建过程会生成 .gdbinit，便于通过 xemu 的 GDB 服务器用 GDB 调试。",
+      "kb.json 按原始目标文件分组，声明了 323 个原有函数和 71 个数据项及其地址；tools/knowledge.py 据此生成头文件、跳转桩和导入库，gen-struct-checks.py 为 types.h 生成静态大小检查。CI 只构建重新实现的映像（在 Ubuntu、Windows 和 macOS 上分别构建 Debug 与 Release），不使用原版文件，因此只检验能否编译，不检验行为。来源未记录逐字节比较或自动化的游戏行为比较，本合集也未运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此项目代码的再利用条款未作说明；src/xboxkrnl.exe.def 带有 CC0-1.0 声明（2017，Stefan Schmidt）。README 将该工作定位为教育研究，进度页面说明项目与 Microsoft 或 Bungie 无关，游戏本身仍受其权利人的条款约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
