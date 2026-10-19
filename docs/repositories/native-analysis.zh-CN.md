@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**677 个仓库** · 2026-10-16 UTC
+**678 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -27,6 +27,7 @@
 - [pret/pokered](https://github.com/pret/pokered) — 《宝可梦 红/蓝》的反汇编代码。 **[4,993 星标]** · 精选：[pokered：一致构建的《精灵宝可梦 红／蓝》反汇编](https://awesomerea.org/zh/resources/pokered-disassembly-case/)
 - [kaitai-io/kaitai\_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct：用于生成二进制数据解析器的声明式语言，支持 C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust。 **[4,712 星标]** · 精选：[Kaitai Struct 二进制格式描述与解析工具](https://awesomerea.org/zh/resources/kaitai-struct/)
 - [zrax/pycdc](https://github.com/zrax/pycdc) — 以 C++ 编写的 Python 字节码反汇编器与反编译器。 **[4,651 星标]** · 精选：[Decompyle++（pycdc）Python 字节码反编译器](https://awesomerea.org/zh/resources/pycdc/)
+- [extremecoders-re/pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) — PyInstaller 提取工具。 **[4,505 星标]** · 精选：[PyInstaller Extractor（pyinstxtractor）PyInstaller 程序提取工具](https://awesomerea.org/zh/resources/pyinstxtractor/)
 - [JonathanSalwan/ROPgadget](https://github.com/JonathanSalwan/ROPgadget) — 在二进制文件中搜索 gadget，方便进行 ROP 漏洞利用。ROPgadget 支持 x86、x64、ARM、ARM64、PowerPC、SPARC、MIPS、RISC-V 64 和 RISC-V Compressed 架构上的 ELF、PE 与 Mach-O 格式。 **[4,498 星标]**
 - [orhun/binsider](https://github.com/orhun/binsider) — 像高手一样分析 ELF 二进制文件 😼🕵️‍♂️。 **[4,481 星标]**
 - [joxeankoret/diaphora](https://github.com/joxeankoret/diaphora) — Diaphora：最先进的自由开源程序差异比较工具。 **[4,428 星标]** · 精选：[Diaphora](https://awesomerea.org/zh/resources/diaphora/)

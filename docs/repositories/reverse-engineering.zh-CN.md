@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**614 个仓库** · 2026-10-16 UTC
+**613 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -27,7 +27,6 @@
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — 逆向分析 Gemini 的 SynthID 检测机制。 **[4,991 星标]**
 - [johnno1962/InjectionIII](https://github.com/johnno1962/InjectionIII) — 主要使用 Swift 重写的 Xcode Injection。 **[4,654 星标]**
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — CTF 竞赛权威指南。 **[4,511 星标]**
-- [extremecoders-re/pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) — PyInstaller 提取工具。 **[4,505 星标]**
 - [SteamClientHomebrew/Millennium](https://github.com/SteamClientHomebrew/Millennium) — 面向 Steam 客户端主题和插件的开源框架。 **[4,456 星标]**
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — 全球首本详尽介绍 iOS 应用逆向工程技巧的书籍 :)。 **[4,440 星标]**
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — 将 Java 字节码反编译为 Java 的工具，IntelliJ IDEA 使用了它。 **[4,422 星标]**

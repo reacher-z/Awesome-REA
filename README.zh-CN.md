@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 407](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-407-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 408](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-408-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (43) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (44) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1905,6 +1905,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   ret-sync 即“逆向工程工具同步”：一组插件，让 IDA、Ghidra 或 Binary Ninja 的图形与反编译视图跟随运行中的 WinDbg、GDB、LLDB、OllyDbg 1.10/2 或 x64dbg 调试会话，并实时重定基址，使 ASLR 不影响地址对应。调试器命令可将注释、标签、重定基后的地址和命令输出写入反汇编数据库，并从中解析符号；反汇编器中的快捷键则可设置断点、单步执行调试器。可同时同步多个数据库，两端也可运行在不同主机上。独立的 Python 库可为自定义跟踪工具提供同样的位置同步。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ret-sync/)
+
+- [**PyInstaller Extractor（pyinstxtractor）PyInstaller 程序提取工具**](https://github.com/extremecoders-re/pyinstxtractor)
+
+  单文件 Python 脚本，用于提取由 PyInstaller 构建的可执行文件的内容，Linux ELF 构建也无需借助其他工具即可提取。它在可执行文件中定位 PyInstaller 归档，报告 PyInstaller 和 Python 版本以及可能的入口脚本，并导出打包在 CArchive 中的文件和 PYZ 归档中的模块。它还会修复导出的 .pyc 文件头，使 uncompyle6、Decompyle++（pycdc）等 Python 字节码反编译器能够识别。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pyinstxtractor/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

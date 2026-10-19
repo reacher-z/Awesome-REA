@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**614 repositories** · 2026-10-16 UTC
+**613 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -27,7 +27,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — reverse engineering Gemini's SynthID detection **[4,991 stars]**
 - [johnno1962/InjectionIII](https://github.com/johnno1962/InjectionIII) — Re-write of Injection for Xcode in (mostly) Swift **[4,654 stars]**
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — The definitive guide to CTF competitions **[4,511 stars]**
-- [extremecoders-re/pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) — PyInstaller Extractor **[4,505 stars]**
 - [SteamClientHomebrew/Millennium](https://github.com/SteamClientHomebrew/Millennium) — An open-source framework for Steam Client themes and plugins **[4,456 stars]**
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — The world’s 1st book of very detailed iOS App reverse engineering skills :) **[4,440 stars]**
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — Decompiler from Java bytecode to Java, used in IntelliJ IDEA. **[4,422 stars]**

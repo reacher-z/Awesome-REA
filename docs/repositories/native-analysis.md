@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**677 repositories** · 2026-10-16 UTC
+**678 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -27,6 +27,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pret/pokered](https://github.com/pret/pokered) — Disassembly of Pokémon Red/Blue **[4,993 stars]** · Curated: [pokered: a matching Pokémon Red and Blue disassembly](https://awesomerea.org/resources/pokered-disassembly-case/)
 - [kaitai-io/kaitai\_struct](https://github.com/kaitai-io/kaitai_struct) — Kaitai Struct: declarative language to generate binary data parsers in C++ / C# / Go / Java / JavaScript / Lua / Nim / Perl / PHP / Python / Ruby / Rust **[4,712 stars]** · Curated: [Kaitai Struct](https://awesomerea.org/resources/kaitai-struct/)
 - [zrax/pycdc](https://github.com/zrax/pycdc) — C++ python bytecode disassembler and decompiler **[4,651 stars]** · Curated: [Decompyle++ (pycdc)](https://awesomerea.org/resources/pycdc/)
+- [extremecoders-re/pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) — PyInstaller Extractor **[4,505 stars]** · Curated: [PyInstaller Extractor (pyinstxtractor)](https://awesomerea.org/resources/pyinstxtractor/)
 - [JonathanSalwan/ROPgadget](https://github.com/JonathanSalwan/ROPgadget) — This tool lets you search your gadgets on your binaries to facilitate your ROP exploitation. ROPgadget supports ELF, PE and Mach-O format on x86, x64, ARM, ARM64, PowerPC, SPARC, MIPS, RISC-V 64, and RISC-V Compressed architectures. **[4,498 stars]**
 - [orhun/binsider](https://github.com/orhun/binsider) — Analyze ELF binaries like a boss 😼🕵️‍♂️ **[4,481 stars]**
 - [joxeankoret/diaphora](https://github.com/joxeankoret/diaphora) — Diaphora, the most advanced Free and Open Source program diffing tool. **[4,428 stars]** · Curated: [Diaphora](https://awesomerea.org/resources/diaphora/)
