@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2282,14 +2282,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (7)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3416,6 +3416,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该工作面向小端 ARM 及小端、大端 MIPS 上基于 Linux 的固件，这些平台占数据集的 90.8%；x86、VxWorks 及其他实时操作系统不在系统支持范围内。其预构建内核不加载厂商的树外内核模块，因此无法检查厂商内核及模块，插桩仿真也不等同于设备原有行为。仿真流程逐级大幅收窄：在初始仿真成功的 8,591 个映像中，2,797 个推断出网络配置，1,971 个能响应 ping。论文列出的原因包括 NVRAM 语义、网络接口命名，以及 ARM 平台仅仿真一个以太网设备等。系统不区分 WAN 与 LAN 端口，因此不能确认可否远程利用；结果按固件映像而非独立产品计数，并受厂商构成偏差影响。本收录中已有的 FirmAE 扩展了 Firmadyne 以解决此类仿真失败；这些 2016 年的比率并非当前的仿真数据。
 
   **作者:** Daming D. Chen 等
+
+  </details>
+
+- [**Avatar：支持嵌入式系统固件动态安全分析的框架**](https://www.ndss-symposium.org/ndss2014/ndss-2014-programme/avatar-framework-support-dynamic-security-analysis-embedded-systems-firmwares/)
+
+  Avatar 在插桩模拟器（基于 QEMU 的 S²E）中运行嵌入式固件，同时把内存映射 I/O 转发给真实设备，并将设备产生的中断注入回模拟器，使依赖无文档外设的固件仍可接受动态分析。框架经由 OpenOCD 通过 JTAG 访问设备，或通过串口上的小型调试桩访问。由于经 38400 波特串口转发每次访问非常缓慢（作者的一次测量中约为每秒五条指令），Avatar 还会把从不表现为 I/O 的内存保留在模拟器本地，将选定代码迁移到设备上原生运行，并在两者之间切换状态。结合 S²E 的选择性符号执行，作者检查了硬盘掩膜 ROM 引导程序中的隐藏命令、一个 IEEE 802.15.4 传感器节点中人为注入的溢出，以及一部 GSM 功能手机的短信解码例程。
+
+  NDSS 2014 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/02_3_1.pdf) · [代码](https://github.com/avatarone/avatar-python) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-avatar/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** Avatar 需要实体设备以及可用的调试通道或可注入的调试桩；它不对外设建模，因此不是独立的固件重托管。三个案例均为 ARM 设备（采用 ARM966 内核的硬盘、Redwire Econotag 与 Motorola C118 手机），每个案例都需人工选择挂钩点与代码区域。完全分离模式过慢，无法处理 DRAM 初始化等时间敏感代码；作者也指出，由 DMA 或迁移到设备上运行的代码修改的内存，难以与模拟器保持同步。传感器节点中的漏洞是人为插入演示程序的，引导程序研究确认的是已有文档的命令，而非发现后门；手机的 GSM 协议栈对符号执行而言过于复杂，在状态爆炸前探索了 42 个子程序，未发现可利用条件。这些是 2014 年的结果，所用 S²E 由作者扩展了 ARM 支持。
+
+  **作者:** Jonas Zaddach 等
 
   </details>
 

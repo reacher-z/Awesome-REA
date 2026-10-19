@@ -258,7 +258,7 @@
 - [Biswa96/WslReverse](https://github.com/Biswa96/WslReverse) — 对 WSL 中隐藏 COM 接口和 LxBus IPC 机制的实验 **[88 星标]**
 - [ByteV0rtex/CVE-2026-65343](https://github.com/ByteV0rtex/CVE-2026-65343) — CVE-2026-65343 概念验证：通过 AppleKeyStore 越界读取绕过 KASLR（iOS 26.6 / 23G71） **[86 星标]**
 - [therealFoxster/DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent) — 防止刘海或灵动岛遮挡 YouTube 中宽高比为 2:1 的视频内容 **[85 星标]**
-- [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — 嵌入式系统固件的动态安全分析 **[84 星标]**
+- [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — 嵌入式系统固件的动态安全分析 **[84 星标]** · 论文：[Avatar：支持嵌入式系统固件动态安全分析的框架](https://awesomerea.org/zh/papers/paper-avatar/)
 - [Biswa96/PDBDownloader](https://github.com/Biswa96/PDBDownloader) — 无需 WDK 即可下载调试所需 PDB 符号文件的独立程序 **[84 星标]**
 - [president-xd/revula](https://github.com/president-xd/revula) — 功能完备、达到生产级别的逆向工程 MCP 服务器 **[84 星标]**
 - [SeanPesce/JSRETK](https://github.com/SeanPesce/JSRETK) — JavaScript 逆向工程工具包（JSRETK），提供分析压缩或混淆 JavaScript 的实验性工具 **[80 星标]**

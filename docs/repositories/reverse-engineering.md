@@ -258,7 +258,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Biswa96/WslReverse](https://github.com/Biswa96/WslReverse) — Experiments with hidden COM interface and LxBus IPC mechanism in WSL **[88 stars]**
 - [ByteV0rtex/CVE-2026-65343](https://github.com/ByteV0rtex/CVE-2026-65343) — CVE-2026-65343 PoC — AppleKeyStore OOB read → KASLR defeat (iOS 26.6 / 23G71) **[86 stars]**
 - [therealFoxster/DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent) — Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube **[85 stars]**
-- [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — Dynamic security analysis of embedded systems’ firmwares **[84 stars]**
+- [avatarone/avatar-python](https://github.com/avatarone/avatar-python) — Dynamic security analysis of embedded systems’ firmwares **[84 stars]** · Paper: [Avatar: A Framework to Support Dynamic Security Analysis of Embedded Systems’ Firmwares](https://awesomerea.org/papers/paper-avatar/)
 - [Biswa96/PDBDownloader](https://github.com/Biswa96/PDBDownloader) — Standalone program to download PDB Symbol files for debugging without WDK **[84 stars]**
 - [president-xd/revula](https://github.com/president-xd/revula) — A fully functional and production-grade reverse engineering MCP Server **[84 stars]**
 - [SeanPesce/JSRETK](https://github.com/SeanPesce/JSRETK) — JavaScript Reverse Engineering Toolkit (JSRETK) - Experimental tools for analyzing (minified/obfuscated) JavaScript **[80 stars]**

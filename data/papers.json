@@ -4713,5 +4713,54 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-avatar",
+    "title": "Avatar: A Framework to Support Dynamic Security Analysis of Embedded Systems’ Firmwares",
+    "title_zh": "Avatar：支持嵌入式系统固件动态安全分析的框架",
+    "authors": [
+      "Jonas Zaddach",
+      "Luca Bruno",
+      "Aurélien Francillon",
+      "Davide Balzarotti"
+    ],
+    "year": 2014,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2014; the publisher PDF separately identifies the 23–26 February 2014 symposium, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2014；出版方 PDF 另列研讨会日期为 2014 年 2 月 23—26 日，本条目不据此推定出版月份或日期。",
+    "venue": "NDSS 2014",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2014.23229",
+    "url": "https://www.ndss-symposium.org/ndss2014/ndss-2014-programme/avatar-framework-support-dynamic-security-analysis-embedded-systems-firmwares/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/02_3_1.pdf",
+    "code_url": "https://github.com/avatarone/avatar-python",
+    "project_url": "https://s3.eurecom.fr/tools/avatar/",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Avatar runs embedded firmware in an instrumented emulator, S²E on QEMU, while forwarding memory-mapped I/O to the real device and injecting the device's interrupts back into the emulator, so firmware that depends on undocumented peripherals can still be analyzed dynamically. The device is reached through JTAG via OpenOCD or through a small debugging stub over a serial line. Because forwarding every access over a 38400-baud serial link is very slow, about five instructions per second in one of the authors' measurements, Avatar also keeps memory that never behaves like I/O local to the emulator, migrates selected code to run natively on the device, and switches state between the two. With S²E's selective symbolic execution, the authors probe a hard-disk mask-ROM bootloader for hidden commands, an IEEE 802.15.4 sensor node for an injected overflow, and the SMS decoding routines of a GSM feature phone.",
+    "description_zh": "Avatar 在插桩模拟器（基于 QEMU 的 S²E）中运行嵌入式固件，同时把内存映射 I/O 转发给真实设备，并将设备产生的中断注入回模拟器，使依赖无文档外设的固件仍可接受动态分析。框架经由 OpenOCD 通过 JTAG 访问设备，或通过串口上的小型调试桩访问。由于经 38400 波特串口转发每次访问非常缓慢（作者的一次测量中约为每秒五条指令），Avatar 还会把从不表现为 I/O 的内存保留在模拟器本地，将选定代码迁移到设备上原生运行，并在两者之间切换状态。结合 S²E 的选择性符号执行，作者检查了硬盘掩膜 ROM 引导程序中的隐藏命令、一个 IEEE 802.15.4 传感器节点中人为注入的溢出，以及一部 GSM 功能手机的短信解码例程。",
+    "scope_limitations_en": "Avatar needs the physical device and a working debug channel or an injectable stub; it does not model peripherals, so it is not standalone rehosting. The three case studies are all ARM devices (a hard disk with an ARM966 core, a Redwire Econotag and a Motorola C118 phone), and each needed manual work to choose hook points and code regions. Full-separation mode is too slow for time-critical code such as DRAM initialization, and the authors report that memory changed by DMA, or by code migrated to the device, is hard to keep synchronized with the emulator. The sensor-node vulnerability was artificially inserted into a demonstration program, the bootloader study confirmed documented commands rather than finding a backdoor, and the phone's GSM stack was too complex for symbolic execution: 42 subroutines were explored without an exploitable condition before state explosion. These are 2014 results on an S²E port the authors extended for ARM.",
+    "scope_limitations_zh": "Avatar 需要实体设备以及可用的调试通道或可注入的调试桩；它不对外设建模，因此不是独立的固件重托管。三个案例均为 ARM 设备（采用 ARM966 内核的硬盘、Redwire Econotag 与 Motorola C118 手机），每个案例都需人工选择挂钩点与代码区域。完全分离模式过慢，无法处理 DRAM 初始化等时间敏感代码；作者也指出，由 DMA 或迁移到设备上运行的代码修改的内存，难以与模拟器保持同步。传感器节点中的漏洞是人为插入演示程序的，引导程序研究确认的是已有文档的命令，而非发现后门；手机的 GSM 协议栈对符号执行而言过于复杂，在状态爆炸前探索了 42 个子程序，未发现可利用条件。这些是 2014 年的结果，所用 S²E 由作者扩展了 ARM 支持。",
+    "why_fits_en": "Adds hardware-in-the-loop firmware analysis, which forwards emulator I/O to the real device, alongside the collection's emulation-based firmware rehosting research.",
+    "why_fits_zh": "补充将模拟器 I/O 转发至真实设备的硬件在环固件分析方法，与合集中基于仿真的固件重托管研究互为补充。",
+    "metadata_notes": "Crossref gives the title, the four-author order and year 2014 with no pages. The DOI’s registered target, a /ndss2014/programme/ URL ending in an encoded apostrophe, returned HTTP 404 on 2026-10-19, so this record uses the working NDSS programme page, which links the 16-page PDF and slides. The PDF footer identifies NDSS ’14, 23–26 February 2014, San Diego, with ISBN 1-891562-35-5, but its DOI line is the placeholder “http://dx.doi.org/OETT”; the Crossref DOI is recorded here. The paper gives the framework’s location as the EURECOM project page, which now carries a deprecation notice pointing to the successor Avatar² (avatartwo/avatar2), a later, separate project not covered by this record. That page links the Python core, whose eurecom-s3 URL redirects to avatarone/avatar-python; the reviewed 2016-10-18 commit is Apache-2.0 (Copyright 2013–2014 Institut Eurecom) and points to separate repositories for the NDSS’14 samples, the patched S²E and OpenOCD. No code was installed or run, and no devices were used.",
+    "metadata_notes_zh": "Crossref 给出标题、四位作者顺序及年份 2014，未列页码。DOI 登记的目标地址是一个以编码撇号结尾的 /ndss2014/programme/ 链接，2026-10-19 访问时返回 HTTP 404，因此本条目使用可访问的 NDSS 会议议程页面，该页面链接 16 页 PDF 与幻灯片。PDF 页脚标明 NDSS ’14 于 2014 年 2 月 23—26 日在圣迭戈举行，载有 ISBN 1-891562-35-5，但 DOI 一行为占位符“http://dx.doi.org/OETT”；本条目记录的是 Crossref DOI。论文指明框架位于 EURECOM 项目页面，该页面现已注明项目停止维护，并指向后续项目 Avatar²（avatartwo/avatar2）；后者是较晚的独立项目，不在本条目范围内。该页面链接 Python 核心库，其 eurecom-s3 地址重定向至 avatarone/avatar-python；所审阅的 2016-10-18 提交采用 Apache-2.0 许可（版权归 Institut Eurecom 2013–2014），并指向另行存放的 NDSS’14 示例、修改版 S²E 与 OpenOCD 仓库。本次未安装或运行代码，也未使用任何设备。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss2014/ndss-2014-programme/avatar-framework-support-dynamic-security-analysis-embedded-systems-firmwares/",
+      "https://api.crossref.org/works/10.14722/ndss.2014.23229",
+      "https://www.ndss-symposium.org/wp-content/uploads/2017/09/02_3_1.pdf",
+      "https://s3.eurecom.fr/tools/avatar/",
+      "https://github.com/avatarone/avatar-python/blob/c6d74f85f63333e3031e1f5e208d3f90e316a9e4/README.rst",
+      "https://github.com/avatarone/avatar-python/blob/c6d74f85f63333e3031e1f5e208d3f90e316a9e4/COPYRIGHT"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

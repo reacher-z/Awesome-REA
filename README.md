@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 361](https://img.shields.io/badge/resources-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 361](https://img.shields.io/badge/resources-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2281,14 +2281,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (7)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3415,6 +3415,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The work targets Linux-based firmware on little-endian ARM and little- and big-endian MIPS, which made up 90.8% of the dataset; x86, VxWorks and other real-time operating systems are outside the system. Its pre-built kernels do not load vendor out-of-tree kernel modules, so vendor kernels and modules cannot be checked, and instrumented emulation is not identical device behavior. The emulation funnel narrows sharply: of 8,591 images that initially emulated, 2,797 had a network configuration inferred and 1,971 answered ping. NVRAM semantics, interface naming and a single emulated Ethernet device on ARM are among the reported causes. WAN and LAN ports are not distinguished, so remote exploitability is not established, and results count firmware images rather than unique products and are skewed by vendor composition. FirmAE, already in this bibliography, extends Firmadyne to address such emulation failures; these 2016 rates are not current emulation figures.
 
   **Authors:** Daming D. Chen et al.
+
+  </details>
+
+- [**Avatar: A Framework to Support Dynamic Security Analysis of Embedded Systems’ Firmwares**](https://www.ndss-symposium.org/ndss2014/ndss-2014-programme/avatar-framework-support-dynamic-security-analysis-embedded-systems-firmwares/)
+
+  Avatar runs embedded firmware in an instrumented emulator, S²E on QEMU, while forwarding memory-mapped I/O to the real device and injecting the device's interrupts back into the emulator, so firmware that depends on undocumented peripherals can still be analyzed dynamically. The device is reached through JTAG via OpenOCD or through a small debugging stub over a serial line. Because forwarding every access over a 38400-baud serial link is very slow, about five instructions per second in one of the authors' measurements, Avatar also keeps memory that never behaves like I/O local to the emulator, migrates selected code to run natively on the device, and switches state between the two. With S²E's selective symbolic execution, the authors probe a hard-disk mask-ROM bootloader for hidden commands, an IEEE 802.15.4 sensor node for an injected overflow, and the SMS decoding routines of a GSM feature phone.
+
+  NDSS 2014 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/02_3_1.pdf) · [Code](https://github.com/avatarone/avatar-python) · [Full entry & citation](https://awesomerea.org/papers/paper-avatar/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Avatar needs the physical device and a working debug channel or an injectable stub; it does not model peripherals, so it is not standalone rehosting. The three case studies are all ARM devices (a hard disk with an ARM966 core, a Redwire Econotag and a Motorola C118 phone), and each needed manual work to choose hook points and code regions. Full-separation mode is too slow for time-critical code such as DRAM initialization, and the authors report that memory changed by DMA, or by code migrated to the device, is hard to keep synchronized with the emulator. The sensor-node vulnerability was artificially inserted into a demonstration program, the bootloader study confirmed documented commands rather than finding a backdoor, and the phone's GSM stack was too complex for symbolic execution: 42 subroutines were explored without an exploitable condition before state explosion. These are 2014 results on an S²E port the authors extended for ARM.
+
+  **Authors:** Jonas Zaddach et al.
 
   </details>
 
