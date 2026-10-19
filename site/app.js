@@ -259,10 +259,6 @@ const UI = {
   }
 };
 
-const CATEGORY = {
-  "protocol-analysis": ["Protocol analysis", "协议分析"],
-  "jvm": ["JVM bytecode", "JVM 字节码"], "reconstruction-cases": ["Reconstruction cases", "重建案例"], "core": ["REA essentials", "REA 核心"], "workflow-guides": ["Workflow guides", "工作流指南"], "official-case-studies": ["Upstream case studies", "官方案例"], "community-case-studies": ["Community case studies", "社区案例"], "community-integrations": ["REA community integrations", "REA 社区集成"], "community-labs": ["Community labs", "社区实验"], "related-lists": ["Companion collections", "相关目录"], "agent-mcp": ["MCP servers", "MCP 服务"], "agent-workflows": ["Agent workflows", "智能体工作流"], "native-analysis": ["Native analysis", "原生二进制分析"], "dynamic-analysis": ["Runtime & debugging", "运行时与调试"], "android": ["Android", "Android"], "dotnet": [".NET", ".NET"], "javascript-electron": ["JavaScript & Electron", "JavaScript 与 Electron"], "webassembly": ["WebAssembly", "WebAssembly"], "firmware": ["Firmware", "固件"], "binary-libraries": ["Binary analysis libraries", "二进制分析库"], "binary-diffing": ["Binary diffing", "二进制差异分析"], "learning": ["Learning", "学习资源"], "game-analysis": ["Game analysis", "游戏分析"], "games": ["Games", "游戏"], "game-tools": ["Game tools", "游戏工具"], "web-analysis": ["Website & browser analysis", "网站与浏览器分析"]
-};
 const RELATION = {
   "independent-reconstruction": ["INDEPENDENT · RECONSTRUCTION", "独立 · 重建项目"], "official-core": ["REA · OFFICIAL", "REA · 官方核心"], "official-skill": ["REA · OFFICIAL SKILL", "REA · 官方技能"], "official-documentation": ["REA · DOCUMENTATION", "REA · 官方文档"], "official-guide": ["REA · GUIDE", "REA · 官方指南"], "official-case-study": ["REA · CASE STUDY", "REA · 官方案例"], "community-integration": ["REA · COMMUNITY", "REA · 社区集成"], "community-reported-mixed-workflow": ["COMMUNITY · MIXED WORKFLOW", "社区 · 混合工作流"], "community-learning-resource": ["COMMUNITY · LEARNING", "社区 · 学习资源"], "upstream-maintainer-companion-list": ["COMPANION COLLECTION", "相关资源目录"], "independent-agent-integration": ["INDEPENDENT · AGENT", "独立 · 智能体集成"], "foundation": ["FOUNDATION TOOL", "基础工具"], "learning": ["LEARNING RESOURCE", "学习资源"]
 };
@@ -271,7 +267,7 @@ const ZH_REPOSITORY_PATHS = {"blob/main/CONTRIBUTING.md": "blob/main/CONTRIBUTIN
 const params = new URLSearchParams(location.search);
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, records: [], loaded: false, error: false };
+const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -340,7 +336,7 @@ function applyLanguage() {
 }
 function renderCategories() {
   const select = $("#category-select"); select.replaceChildren(); const first = node("option", "", t("allCategories")); first.value = "all"; select.append(first);
-  [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(CATEGORY,a), label(CATEGORY,b))).forEach(category => { const option = node("option", "", label(CATEGORY, category)); option.value = category; select.append(option); });
+  [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
@@ -349,7 +345,7 @@ function renderKinds() { const select=$("#kind-select"); select.replaceChildren(
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
-  const meta=node("div","card-meta");meta.append(node("span","card-category",label(CATEGORY,record.category)),external(record.evidence_url,"",t("readSource")+" ↗"));article.append(meta);
+  const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)),external(record.evidence_url,"",t("readSource")+" ↗"));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   const href=entryHref("curated",record.id);
@@ -402,7 +398,9 @@ async function load() {
   try {
     const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
     state.topicLabels = data.topic_labels || {};
-    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(CATEGORY[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
+    // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
+    state.categoryLabels = data.category_labels || {};
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";

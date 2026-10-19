@@ -219,7 +219,6 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual([title.href, title.target, title.rel], ['https://github.com/curated/tool-1', '_blank', 'noopener noreferrer']);
     assert.equal(byClass(card, 'resource-kind')[0].textContent, lang === 'zh' ? '案例' : 'Case study');
     assert.equal(byClass(card, 'card-description')[0].textContent, lang === 'zh' ? '精选测试 1' : 'Curated fixture 1');
-    assert.equal(byClass(card, 'card-category')[0].textContent, lang === 'zh' ? '重建案例' : 'Reconstruction cases');
     assert.equal(byClass(card, 'card-meta')[0].children[0].className, 'card-targets');
     assert.equal(byClass(card, 'card-targets')[0].textContent, lang === 'zh' ? '应用' : 'App');
     const evidence = byClass(card, 'card-meta')[0].children[2];

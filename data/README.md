@@ -18,7 +18,7 @@
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
 | `requirements` | Platform, engine, release, license, or input prerequisites |
 
-The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
+The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). Their English and Chinese labels are the only category wording on the site: the build copies them into `catalog.json` for the homepage filter and cards, and entry pages read the same map. It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
 
 - `official-core` (Official REA project): the upstream REA project itself.
 - `official-skill` (Official REA skill): an agent skill published in the REA repository.

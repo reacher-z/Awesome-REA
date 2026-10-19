@@ -18,7 +18,7 @@ from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import collection_section
+from build_readme import CATEGORIES, collection_section
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 
@@ -450,6 +450,15 @@ def validate_catalog_preload(output):
         assert page.preloads == expected, f'Homepage preloads must be one CORS fetch of /catalog.json?v={revision}: /{route} has {page.preloads}'
 
 
+def validate_category_labels(output):
+    """Homepage filters and cards take category labels from catalog.json; entry pages use the same build_readme map."""
+    catalog = json.loads((Path(output) / 'catalog.json').read_text(encoding='utf-8'))
+    expected = {category: list(labels) for category, labels in CATEGORIES.items()}
+    assert catalog.get('category_labels') == expected, 'catalog.json category_labels must equal build_readme.CATEGORIES'
+    missing = sorted({record['category'] for record in catalog['resources']} - set(expected))
+    assert not missing, f'Curated categories without labels: {missing}'
+
+
 def validate_language_links(route, page):
     """Link Chinese navigation to /zh/ routes, never to English routes with ?lang=zh."""
     for link in page.links:
@@ -869,6 +878,7 @@ def main():
     validate_security_headers(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_website_identity(pages)
+    validate_category_labels(OUTPUT)
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
