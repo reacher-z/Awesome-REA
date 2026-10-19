@@ -10077,5 +10077,38 @@
       "https://github.com/platomav/MEAnalyzer/blob/d27ccdba0aadbad490f47b5b631c369b682a7ef5/LICENSE",
       "https://github.com/platomav/MEAnalyzer/releases/tag/v1.312.0-r378"
     ]
+  },
+  {
+    "id": "deepextract-ida",
+    "name": "DeepExtract (DeepExtractIDA)",
+    "url": "https://github.com/marcosd4h/DeepExtractIDA",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro 9.x plugin and PowerShell batch extractor that turn Windows PE files into material AI coding agents can read: a per-binary SQLite database of PE metadata, signatures, disassembly, Hex-Rays pseudocode, cross-references, strings, stack frames, loops and dangerous API calls, plus optional grouped C++ and assembly files with per-function caller, callee and string headers and JSON indexes. It runs headless over directories, file lists or the modules of a running process, or interactively on the open IDA database, keeping the analyst’s renames and comments. The agent commands that work on this output come from the separate DeepExtractRuntime project.",
+    "description_zh": "IDA Pro 9.x 插件与 PowerShell 批量提取脚本，可把 Windows PE 文件转换为 AI 编程智能体能够读取的材料：每个二进制文件对应一个 SQLite 数据库，内含 PE 元数据、函数签名、反汇编、Hex-Rays 伪代码、交叉引用、字符串、栈帧、循环与危险 API 调用；还可选择输出分组的 C++ 与汇编文件，每个函数附带调用者、被调者与字符串信息头，并生成 JSON 索引。它可以无界面地处理目录、文件列表或正在运行进程加载的模块，也可以在已打开的 IDA 数据库上交互运行，并保留分析者所做的重命名和注释。处理这些输出的智能体命令来自独立的 DeepExtractRuntime 项目。",
+    "evidence_url": "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is the v0.9.14 release of 2026-09-12; ida-plugin.json lists IDA 9.0 to 9.3 on Windows x86-64, and the plugin installs with Hex-Rays’ hcli or runs from a clone. The README requires Windows 10 or 11 and IDA Pro 9.x, with the Pro edition for headless mode. The Hex-Rays decompiler is needed only for pseudocode and C++ output, while assembly output works from disassembly alone. pefile is vendored; the batch script also checks for Python on PATH and needs symchk.exe from the Windows SDK Debugging Tools for its default PDB download from Microsoft’s public symbol server.",
+      "Users supply the PE files, from single binaries to whole directories such as System32 or the modules loaded by a running process. The README warns that large batches can run for days and produce tens to hundreds of gigabytes. Outputs contain disassembly and decompiled code of the analysed binaries, whose own licences still apply.",
+      "The extractor calls no model. With -EnableAI, the batch extractor writes a CLAUDE.md that tells the agent, without asking the user, to clone the DeepExtractRuntime repository’s default branch into .claude and install Cursor rules and hooks; that runtime and its agents are not part of this repository.",
+      "Vtable and indirect-call resolution are labelled experimental, with stated limits such as a single vtable at object offset 0 and a short intra-procedural instruction window. Tests load IDA-independent modules such as the schema, configuration and code formatters outside IDA, and the release workflow only packages the plugin. This collection reviewed source and documentation without running IDA or the extractor.",
+      "MIT, with the vendored pefile under its own MIT licence; IDA Pro, the Hex-Rays decompiler and the Windows SDK tools are licensed separately. The README presents the output for AI-assisted vulnerability research, reverse engineering, threat hunting and code review. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/ida-plugin.json",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/headless_batch_extractor.ps1",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/docs/data_format_reference.md",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/tests/conftest.py",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/.github/workflows/release.yml",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/deep_extract/deps/pefile-2024.8.26.dist-info/LICENSE",
+      "https://github.com/marcosd4h/DeepExtractIDA/blob/af6b01df3ce5774016f6e3cf336ed0ca2f47b512/LICENSE",
+      "https://github.com/marcosd4h/DeepExtractIDA/releases/tag/v0.9.14"
+    ]
   }
 ]
