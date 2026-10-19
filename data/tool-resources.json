@@ -11564,5 +11564,35 @@
       "https://github.com/alexandrmotologa/wasmlens/blob/2351cccea90f812053b30d1ad14816d3c664a4f7/tests/test_decompiler.py",
       "https://github.com/alexandrmotologa/wasmlens/blob/2351cccea90f812053b30d1ad14816d3c664a4f7/tests/test_parser.py"
     ]
+  },
+  {
+    "id": "submitgame-awesome-decomp-games",
+    "name": "Awesome Decomp Games",
+    "url": "https://github.com/SubmitGame/awesome-decomp-games",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A generated, rated index of public game reconstruction projects: decompilations, disassemblies, static recompilations, source ports, engine remakes and browser ports. A daily job merges several upstream lists and registries with GitHub and decomp.dev metadata, drops dead links and rebuilds the README and website from data files. Useful for discovery; its scores are automated heuristics, not reviews.",
+    "description_zh": "自动生成并附评分的公开游戏重建项目索引，涵盖反编译、反汇编、静态重编译、源码移植、引擎重制及浏览器移植。每日任务合并多个上游目录与登记站点，结合 GitHub 和 decomp.dev 元数据，剔除失效链接，再由数据文件重建 README 和网站。适合用来发现项目；其评分是自动启发式结果，并非人工审阅。",
+    "evidence_url": "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, generated 2026-10-16, reports 2,118 projects covering 1,829 games, with sections for 646 decompilations, 520 static recompilations, 230 source ports, 206 engine remakes, 107 disassemblies, 53 browser ports, tools, mods and 347 inactive entries. These are the list's own counts, not verified projects.",
+      "Each entry's 1–5 playability, completeness, activity and popularity sub-scores are computed by scripts/build.py from GitHub metadata, decomp.dev progress and description keywords. Projects their source list flags as AI-generated are marked ⚠️ and lose 0.2. A score or section is not a matching, completeness or runtime check; follow each project's own sources.",
+      "Entries are seeded from the listed upstream collections and registries plus data/additions.json and data/overrides.json. A scheduled GitHub Actions job runs daily at 03:17 UTC to refresh metadata, check links and browser-play URLs, and commit the regenerated files, so summaries can still lag the linked projects.",
+      "The list states that it hosts no ROMs, ISOs, BIOS files or game assets, and its contribution rules refuse links to them and repositories that ship game data; most listed projects need files from the user's own copy. Some browser entries are labeled as playing instantly without the user's files. The list does not document each site's rights basis, and this catalog did not review those sites.",
+      "The list and data are released under CC0 1.0 and the scripts and website code under MIT; linked projects and game screenshots keep their own rights. Two REA showcase repositories appear among the entries, but the list establishes no REA affiliation."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/CONTRIBUTING.md",
+      "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/scripts/build.py",
+      "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/.github/workflows/refresh.yml",
+      "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE",
+      "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE-CODE"
+    ]
   }
 ]

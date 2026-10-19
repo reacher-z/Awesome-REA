@@ -10063,13 +10063,27 @@
       "reported_source_urls": [
         "https://github.com/SubmitGame/awesome-decomp-games"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned generated README, contribution rules, scoring script, refresh workflow and both license files support this collection lead. Full mapping covers the list as a discovery index; its counts, sections and scores are automated or list-reported, not reviewed reconstruction results. No REA affiliation is established.",
+      "reason_zh": "固定版本的生成 README、贡献规则、评分脚本、刷新工作流及两份许可文件支持此合集线索。完整映射将该目录作为发现索引收录；其计数、分类和评分由自动流程生成或由目录自行报告，并非经审阅的重建结果。未确立与 REA 的隶属关系。",
+      "primary_evidence_urls": [
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/README.md",
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/CONTRIBUTING.md",
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/scripts/build.py",
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/.github/workflows/refresh.yml",
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE",
+        "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE-CODE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "submitgame-awesome-decomp-games",
+          "kind": "collection",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:goldeneye-pc-port",
@@ -16114,18 +16128,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 203,
+      "already-curated": 204,
       "insufficient-evidence": 259,
-      "pending": 129
+      "pending": 128
     },
     "units_by_state": {
-      "already-curated": 201,
+      "already-curated": 202,
       "insufficient-evidence": 259,
-      "pending": 129
+      "pending": 128
     },
-    "primary_reviewed_units": 401,
-    "catalog_linked_occurrences": 216,
-    "distinct_resource_ids": 207,
+    "primary_reviewed_units": 402,
+    "catalog_linked_occurrences": 217,
+    "distinct_resource_ids": 208,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }
