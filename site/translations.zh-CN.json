@@ -4826,5 +4826,14 @@
       "仓库没有测试或 CI 工作流，也未公布与 SimCity 4 行为或输出的对比；本合集未运行该项目。",
       "GitHub 未检测到许可证，仓库也没有许可证文件；九个 GDScript 文件带有署名“The OpenSC4 contributors”（2023）的 AGPL-3.0-or-later 文件头，utils/logger.gd 则是 KOBUGE Games 的 godot-logger 中采用 MIT 许可的代码。SimCity 4 及其数据的权利仍归其所有者。所审来源未确立 REA 或 AI 的使用。"
     ]
+  },
+  "synchrony": {
+    "name": "synchrony JavaScript 反混淆工具",
+    "requirements": [
+      "审阅时最新版本为 2.4.6，于 2026-07-07 发布到 GitHub 并以 deobfuscator 之名发布到 npm，与所审阅的 master 提交同日；上一版本 2.4.5 发布于 2023-11-09。README 还指向 deobfuscate.relative.im 上的托管网页版，本次未审阅该部署。",
+      "可用 npm、yarn 或 pnpm 安装，也可直接从 Git 仓库安装；package.json 未声明 Node.js 版本。命令行工具读取单个文件，未指定 --output 时写出 <文件名>.cleaned.<扩展名>，并提供 --rename、--loose 宽松解析、--ecma-version 和 --sourceType 选项。--config 配置文件通过 Node 的 require 加载，因此会作为代码执行；自定义转换器列表会取代默认流程，两个 jsconfuser 转换器只能以这种方式启用，README 也未说明它们。",
+      "README 提醒，旧版 javascript-obfuscator 生成的代码很可能无法正确反混淆，自动字符串解码器也没有可供用户调整的配置。仓库没有测试套件，最新一次提交删除了 GitHub CI 配置。",
+      "package.json 和 LICENSE.md 声明 GPL-3.0-only。本次审阅未对任何脚本进行反混淆，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
