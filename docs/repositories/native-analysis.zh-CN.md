@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**677 个仓库** · 2026-10-16 UTC
+**676 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。
 
@@ -58,7 +58,6 @@
 - [hteso/iaito](https://github.com/hteso/iaito) — 本项目已迁移至： **[1,461 星标]**
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF：跨平台开源二进制分析与逆向工程框架。 **[1,455 星标]**
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — 让你的 IDA 更省事！ **[1,447 星标]**
-- [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — 精选 Ghidra 优质资料列表。 **[1,442 星标]**
 - [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — 由 OpenAI、DeepSeek 等 AI 模型驱动的 IDA 二进制文件分析插件。 **[1,425 星标]**
 - [fkie-cad/cwe\_checker](https://github.com/fkie-cad/cwe_checker) — cwe\_checker 可在二进制可执行文件中查找易受攻击的模式。 **[1,362 星标]**
 - [gdabah/distorm](https://github.com/gdabah/distorm) — 功能强大的 x86/AMD64 反汇编库。 **[1,340 星标]**

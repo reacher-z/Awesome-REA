@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**677 repositories** · 2026-10-16 UTC
+**676 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -58,7 +58,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [hteso/iaito](https://github.com/hteso/iaito) — This project has been moved to: **[1,461 stars]**
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework **[1,455 stars]**
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — Make your IDA Lazy! **[1,447 stars]**
-- [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]**
 - [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — An IDA plugin for binary file analysis, powered by AI models such as OpenAI and DeepSeek. **[1,425 stars]**
 - [fkie-cad/cwe\_checker](https://github.com/fkie-cad/cwe_checker) — cwe\_checker finds vulnerable patterns in binary executables **[1,362 stars]**
 - [gdabah/distorm](https://github.com/gdabah/distorm) — Powerful Disassembler Library For x86/AMD64 **[1,340 stars]**

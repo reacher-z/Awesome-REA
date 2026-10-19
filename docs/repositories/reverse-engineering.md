@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**622 repositories** · 2026-10-16 UTC
+**623 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
 
@@ -82,6 +82,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
+- [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]**
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — Python decompiler for modern Python versions. **[1,420 stars]**
 - [hack-different/apple-knowledge](https://github.com/hack-different/apple-knowledge) — A collection of reverse engineered Apple things, as well as a machine-readable database of Apple hardware **[1,415 stars]**
 - [Cur10s1tyByt3/GenP](https://github.com/Cur10s1tyByt3/GenP) — This repository preserves source materials and related documentation about GenP. For archival and research purposes only. **[1,340 stars]**
