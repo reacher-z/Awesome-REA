@@ -4547,5 +4547,14 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "decomp-academy": {
+    "name": "Decomp Academy 一致性反编译课程",
+    "requirements": [
+      "审阅的前端提交为 a21f9d0（2026-09-23）；仓库于 2026 年 6 月首次发布，此后大多数月份都有提交。README 仍只描述一门 258 课的 GameCube 课程，但所审阅的课程目录和在线站点列出了三门课程共 755 课：GameCube（263 课）、Game Boy Advance（251 课）和 Nintendo 64（241 课），每门分为从热身到真实函数的四个层级。",
+      "课程在浏览器中进行（decomp-academy.dev），README 称无需注册即可开始，账户用于保存进度。评分时用原版编译器编译学习者的 C 代码，再用 objdiff 比对：GameCube 使用 Metrowerks CodeWarrior GC/2.0，Nintendo 64 使用 SGI IDO 5.3，二者在托管后端运行。后端是另一个 AGPL-3.0 仓库，README 称它在 wibo 下运行 CodeWarrior 编译器；Game Boy Advance 则在浏览器中使用编译为 WebAssembly 的 agbcc。",
+      "无需任何游戏文件：后期课程改编自 README 致谢的开源反编译项目（Star Fox Adventures、Pikmin 2、Metroid Prime、Mario Party 4）中的函数，目标汇编由服务器根据每课的参考 C 代码生成。本仓库不含任何编译器，后端 README 也称其只提交了 wibo，未提交 MWCC；README 说明本地开发需要 Node 18+，以及一个同级目录下提供 MWCC 和 binutils 的 Star Fox Adventures 反编译项目检出，而 .env.example 称全新克隆默认使用托管的编译 API。",
+      "前端采用 AGPL-3.0 许可证，修改后作为网络服务运行的版本同样受其约束。本合集阅读了 README、课程元数据、一节真实函数课程和在线首页，没有解答课程或检验评分。仓库中提交了一份供 Claude Code 使用的课程编写指南 CLAUDE.md，但 README 未说明课程是如何编写的，也未提及 REA。"
+    ]
   }
 }
