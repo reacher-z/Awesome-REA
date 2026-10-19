@@ -7196,5 +7196,30 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "onethawt-re-reading-list",
+    "name": "Reverse Engineering Reading List",
+    "url": "https://github.com/onethawt/reverseengineering-reading-list",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A short reading list, compiled by One Thawt mostly in 2015–2016, of about 58 links to reverse-engineering tools, books, papers, talks and blog posts, kept in a README and a separate malware-analysis page. Sections run from disassemblers and debuggers, beginner talks and classic books through data-structure recovery papers, instruction-set references, iOS, Android and Windows material, unpacking, deobfuscation and protocol inference from network traces.",
+    "description_zh": "由 One Thawt 编写的简短阅读清单，主要成形于 2015–2016 年，在一个 README 和单独的恶意软件分析页面中收录约 58 个链接，涵盖逆向工程工具、书籍、论文、演讲和博客文章。各部分从反汇编器与调试器、入门讲座和经典书籍，到数据结构恢复论文、指令集参考资料、iOS、Android 与 Windows 相关资料、脱壳、反混淆，以及基于网络流量的协议推断。",
+    "evidence_url": "https://github.com/onethawt/reverseengineering-reading-list/blob/a1ee767b5cf8504c398763b2b6304c20507ef1e3/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit a1ee767 (2023-05-02). 46 of 53 commits date from 2015–2016; the last added entries are x64dbg (2017), Binary Ninja (2018) and Ghidra (2019), and the 2023 commit merged a 2018 pull request that removed a dead link. The list therefore predates most current tools and research, including any machine-learning or LLM-assisted reverse engineering.",
+      "Most entries are a bare link, some followed by a quoted publisher or project description, and there are no notes on difficulty, platform or currency. Many point to 2010–2016 posts and PDFs on personal or project sites, and the README suggests archive.org for links that are down. In an automated check at review, six of the 59 unique URLs in the two files gave no response, a 404 or a sign-in page, and the TIE and HyperV entries link to unrelated documents (an iOS 6 security talk and an IR-synthesis slide deck).",
+      "Books link to Amazon store pages, and IDA Pro, Binary Ninja and Hopper are commercial products. The Windows section also links older write-ups on kernel-protection bypasses, which this record does not describe further.",
+      "GitHub detects no license and the repository has no license file, so the list states no reuse terms; linked works keep their own rights. The author offers copies of unavailable documents on request through a personal contact page. Nothing in the list mentions AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/onethawt/reverseengineering-reading-list/blob/a1ee767b5cf8504c398763b2b6304c20507ef1e3/malwareanalysis.md"
+    ]
   }
 ]
