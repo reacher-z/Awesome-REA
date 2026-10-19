@@ -1,6 +1,6 @@
 # Firmware
 
-[All categories](README.md) · [简体中文](firmware.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/firmware/) · [简体中文](firmware.zh-CN.md)
 
 **221 repositories** · 2026-10-20 UTC
 

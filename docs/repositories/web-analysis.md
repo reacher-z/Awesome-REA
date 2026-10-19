@@ -1,6 +1,6 @@
 # Websites
 
-[All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/web-analysis/) · [简体中文](web-analysis.zh-CN.md)
 
 **214 repositories** · 2026-10-20 UTC
 

@@ -33,6 +33,16 @@ class RepositoryIndexTests(unittest.TestCase):
             code = build_repository_index.main()
         return code, stderr.getvalue()
 
+    def test_category_pages_link_their_website_category_page(self):
+        from build_browse_pages import browse_path
+        files, _ = self.rendered
+        for category, labels in CATEGORIES.items():
+            for language, suffix, label in (('en', '', 'On the website'), ('zh', '.zh-CN', '在网站浏览')):
+                with self.subTest(category=category, language=language):
+                    navigation = files[f'{category}{suffix}.md'].splitlines()[2]
+                    self.assertIn(f'[{label}](https://awesomerea.org{browse_path(language, category)})', navigation)
+                    self.assertEqual(navigation.count('https://awesomerea.org/'), 1)
+
     def test_obsolete_pages_fail_check_and_only_generated_ones_are_removed(self):
         tracked = ROOT / 'docs/repositories'
         before = snapshot(tracked)

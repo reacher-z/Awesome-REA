@@ -1,6 +1,6 @@
 # 应用 · Android
 
-[全部分类](README.zh-CN.md) · [English](android.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/android/) · [English](android.md)
 
 **479 个仓库** · 2026-10-20 UTC
 

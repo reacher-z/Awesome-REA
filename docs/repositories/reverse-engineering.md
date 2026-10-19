@@ -1,6 +1,6 @@
 # General tools and collections
 
-[All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
 **670 repositories** · 2026-10-20 UTC
 
