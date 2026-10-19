@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 319](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 162](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 319](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 162](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 74](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (73) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (74) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2026,13 +2026,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**73 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**74 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (22) · [网站](#papers-website-reconstruction) (14)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (23) · [网站](#papers-website-reconstruction) (14)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2390,6 +2390,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 评测覆盖约 4,000 个 ExeBench 函数及含 112 个程序的合成基准。束宽为 5，并选择首个通过有限输入／输出测试的候选；生成函数被放回原始调用上下文。通过这些测试不代表完整程序或全部输入上的等价性。编辑相似度只是可读性的代理指标。较长函数、外部调用及错误的类型／运算符预测仍会导致失败；模型的输入和输出窗口均为 1,024 个位置。历史基线比较的覆盖范围不同，不能据此确立当前排名。
 
   **发表信息:** 2024 · IEEE/ACM CGO 2024 · 会议论文 · Jordi Armengol-Estapé 等
+
+  </details>
+
+- [**“len、index 或 count，就是别叫 v1”：基于迁移学习预测反编译输出中的变量名**](https://ieeexplore.ieee.org/document/10646727)
+
+  VarBERT 使用 BERT 式模型为 IDA Hex-Rays 与 Ghidra 的反编译输出建议变量名：模型先以来自 Debian 的 520 万个人工编写的 C 函数预训练，再以反编译代码微调；它还预测每个变量出自开发者，还是由反编译器引入。作者从 Gentoo 的 C 与 C++ 软件包构建 VarCorpus，在 O0 至 O3 下编译为 x86-64，并借助调试符号为反编译变量标注名称。在 O2 二进制的按函数划分上，IDA 与 Ghidra 的 Top-1 准确率分别为 54.43% 和 54.49%；在 IDA-O0 子集上为 50.70%，DIRE 与 DIRTY 分别为 35.94% 和 38.00%。
+
+  2024 · 会议论文 · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [代码](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-varbert/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 预测名称是模型学到的建议，以开发者原名称评分，并非恢复出的原始符号。在 O2 的按二进制划分上，Top-1 准确率降至 42.40%（IDA）与 40.49%（Ghidra）；在 IDA-O0 的按二进制划分上，其领先 DIRTY 的幅度为 4.52 个百分点。与 DIRE、DIRTY 的比较仅覆盖 O0 下的 IDA，并因 DIRE 训练耗时过长而只使用约 40 万个函数（约占 VarCorpus 的 15%）。方法只能为反编译器恢复出的变量命名，标注则依赖 IDA 与 Ghidra 在匹配调试符号时保留变量。语料来自 Linux 发行版软件包，以 x86-64 为主，另有规模较小的 AArch64 O2 实验，可能不代表 Windows 或 macOS 可执行文件；去重仅删除完全重复项。用户研究由 27 名完成全部 13 组函数的学生参与。类型、数据结构与可重新编译的代码不在其范围内。
+
+  **发表信息:** 2024 · IEEE S&amp;P 2024 · 会议论文 · Kuntal Kumar Pal 等
 
   </details>
 

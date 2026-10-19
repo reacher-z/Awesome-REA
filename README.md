@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 319](https://img.shields.io/badge/resources-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 162](https://img.shields.io/badge/cases-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 319](https://img.shields.io/badge/resources-319-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 162](https://img.shields.io/badge/cases-162-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 74](https://img.shields.io/badge/papers-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (73) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (74) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2025,13 +2025,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**73 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**74 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (22) · [Websites](#papers-website-reconstruction) (14)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (23) · [Websites](#papers-website-reconstruction) (14)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2389,6 +2389,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Evaluation covers about 4,000 ExeBench functions and a 112-program synthesis suite. Beam size 5 selects the first candidate passing finite I/O tests; generated functions are inserted into the original calling context. Passing these tests is not whole-program or all-input equivalence. Edit similarity is a readability proxy. Longer functions, external calls and incorrect type/operator predictions remain failure modes; the model has 1,024-position source and target windows. Historical baseline comparisons have different coverage and do not establish current rankings.
 
   **Publication:** 2024 · IEEE/ACM CGO 2024 · Conference paper · Jordi Armengol-Estapé et al.
+
+  </details>
+
+- [**“Len or index or count, anything but v1”: Predicting Variable Names in Decompilation Output with Transfer Learning**](https://ieeexplore.ieee.org/document/10646727)
+
+  VarBERT suggests variable names for IDA Hex-Rays and Ghidra decompiler output with a BERT-style model pre-trained on 5.2M human-written C functions from Debian and fine-tuned on decompiled code; it also predicts whether each variable came from the developer or was introduced by the decompiler. The authors build VarCorpus from Gentoo C and C++ packages compiled for x86-64 at O0–O3, labeling decompiled variables from debug symbols. On per-function splits of O2 binaries, top-1 accuracy is 54.43% for IDA and 54.49% for Ghidra; on an IDA-O0 subset it reaches 50.70%, against 35.94% for DIRE and 38.00% for DIRTY.
+
+  2024 · Conference paper · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [Code](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [Full entry & citation](https://awesomerea.org/papers/paper-varbert/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Predicted names are learned suggestions scored against developer names, not recovered originals. Top-1 accuracy drops to 42.40% (IDA) and 40.49% (Ghidra) on per-binary O2 splits, and the per-binary IDA-O0 lead over DIRTY is 4.52 points. The DIRE and DIRTY comparison covers IDA at O0 only, on about 400K functions (roughly 15% of VarCorpus), because DIRE's training time was prohibitive. The method can name only variables the decompiler recovers, and labeling relies on IDA and Ghidra preserving variables when matching debug symbols. Corpora come from Linux distribution packages, mainly x86-64 with a smaller AArch64 O2 experiment, and may not represent Windows or macOS executables; deduplication removes exact duplicates only. The user study had 27 students who completed 13 function pairs. Types, structures and recompilable code are outside its scope.
+
+  **Publication:** 2024 · IEEE S&amp;P 2024 · Conference paper · Kuntal Kumar Pal et al.
 
   </details>
 
