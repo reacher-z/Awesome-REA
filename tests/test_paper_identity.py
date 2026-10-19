@@ -49,7 +49,67 @@ def woot19_paper():
     return record
 
 
+def security24_paper():
+    record = publisher_paper()
+    record.update(year=2024, publication_date=None, date_precision='year',
+                  venue='USENIX Security 2024',
+                  url='https://www.usenix.org/conference/usenixsecurity24/presentation/he-haojie',
+                  pdf_url='https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf')
+    record['evidence_urls'] = [record['url'], record['pdf_url']]
+    return record
+
+
 class PaperIdentityTests(unittest.TestCase):
+    def test_security24_accepts_only_its_exact_final_pdf(self):
+        record = security24_paper()
+        self.assertEqual(errors_for([record]), [])
+        self.assertTrue(bibtex_text(record).startswith('@inproceedings{'))
+        self.assertNotIn('identifier', scholarly_article(record, 'en'))
+        for pdf in (
+            'https://www.usenix.org/system/files/sec24-he-haojie.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity23-he-haojie.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-zhu-chang.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-he.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24_slides-he-haojie.pdf',
+            'https://www.usenix.org/system/files/sec24summer-prepub-346-he.pdf',
+            'https://www.usenix.org/system/files/usenixsecurity24-he-haojie_0.pdf',
+            'https://www.usenix.org/system/files/conference/usenixsecurity24/usenixsecurity24-he-haojie.pdf',
+        ):
+            with self.subTest(pdf=pdf):
+                altered = deepcopy(record)
+                altered['pdf_url'] = pdf
+                altered['evidence_urls'][1] = pdf
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([altered])))
+
+    def test_security24_prefix_needs_matching_series_year_and_evidence(self):
+        cases = []
+        for year, landing, pdf in (
+            (2023, 'https://www.usenix.org/conference/usenixsecurity23/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity23-he-haojie.pdf'),
+            (2023, 'https://www.usenix.org/conference/usenixsecurity23/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf'),
+            (2025, 'https://www.usenix.org/conference/usenixsecurity25/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity25-he-haojie.pdf'),
+            (2024, 'https://www.usenix.org/conference/woot24/presentation/he-haojie',
+             'https://www.usenix.org/system/files/usenixsecurity24-he-haojie.pdf'),
+        ):
+            record = security24_paper()
+            record.update(year=year, url=landing, pdf_url=pdf)
+            record['evidence_urls'] = [landing, pdf]
+            cases.append(record)
+        record = security24_paper()
+        record['year'] = 2023
+        cases.append(record)
+        for evidence in ([security24_paper()['url']], [security24_paper()['pdf_url']],
+                         [security24_paper()['url'], security24_paper()['pdf_url'] + '?download=1']):
+            record = security24_paper()
+            record['evidence_urls'] = evidence
+            cases.append(record)
+        for record in cases:
+            with self.subTest(url=record['url'], pdf=record['pdf_url'], year=record['year'],
+                              evidence=record['evidence_urls']):
+                self.assertTrue(any('URL/PDF identity' in error for error in errors_for([record])))
+
     def test_woot19_accepts_only_its_exact_underscore_final_pdf(self):
         record = woot19_paper()
         self.assertEqual(errors_for([record]), [])

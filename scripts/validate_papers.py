@@ -73,6 +73,8 @@ def has_reviewed_publisher_identity(record, evidence):
     publisher profiles require review; a software-artifact DOI is not a paper ID.
     WOOT 19 final PDFs use a reviewed underscore form outside conference/woot19/;
     suffixed copies such as woot19-paper_oflynn_0.pdf need their own exact review.
+    USENIX Security 2024 final PDFs use a reviewed usenixsecurity24- prefix; other
+    years keep the secYY- form until their naming is reviewed separately.
     """
     if record.get('publication_status') != 'conference-paper':
         return False
@@ -85,7 +87,9 @@ def has_reviewed_publisher_identity(record, evidence):
     if not match or type(record.get('year')) is not int:
         return False
     series, year, presenter = match.groups()
-    if series == 'usenixsecurity':
+    if series == 'usenixsecurity' and year == '24':
+        expected_pdf = f'https://www.usenix.org/system/files/usenixsecurity24-{presenter}.pdf'
+    elif series == 'usenixsecurity':
         expected_pdf = f'https://www.usenix.org/system/files/sec{year}-{presenter}.pdf'
     elif year == '19':
         expected_pdf = f'https://www.usenix.org/system/files/woot19-paper_{presenter}.pdf'
