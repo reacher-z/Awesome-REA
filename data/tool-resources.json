@@ -7957,5 +7957,41 @@
       "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/LICENSE",
       "https://github.com/arcanite24/gb-recompiled/releases/tag/v0.1.0"
     ]
+  },
+  {
+    "id": "codemerxdecompile",
+    "name": "CodemerxDecompile",
+    "url": "https://github.com/codemerx/CodemerxDecompile",
+    "category": "dotnet",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Cross-platform desktop .NET decompiler maintained by the original JustDecompile creators as a continuation of their JustDecompile Engine, built with Mono.Cecil and an Avalonia UI. It loads assemblies into a tree of namespaces, types, members and resolved references, shows decompiled C#, VB.NET or IL with go-to-definition and back/forward navigation, and searches names, types, string literals and instructions. A create-project command exports an assembly as a Visual Studio 2015, 2017 or 2019 project.",
+    "description_zh": "由 JustDecompile 原班开发者维护的跨平台桌面 .NET 反编译器，是其 JustDecompile 引擎的延续，基于 Mono.Cecil 并采用 Avalonia 界面。它把程序集加载为由命名空间、类型、成员和已解析引用组成的树，以 C#、VB.NET 或 IL 显示反编译结果，支持转到定义和前进／后退导航，并可搜索名称、类型、字符串字面量和指令。“创建项目”命令可将程序集导出为 Visual Studio 2015、2017 或 2019 项目。",
+    "evidence_url": "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 1.5.0, published 2024-11-18, with portable archives for Windows x64 and ARM64, Linux x64 and macOS ARM64 and x64; the reviewed master commit is from the same day and was still the latest at review. The README says the macOS app is unsigned, so macOS reports it as damaged until its quarantine attribute is removed.",
+      "Source builds need the JustDecompileEngine and AvaloniaEdit Git submodules and the .NET 7 SDK: the app targets net7.0, and the release workflow publishes one build per runtime with dotnet publish. The main view uses the engine's C# 7 and Visual Basic 10 language modes.",
+      "Release builds send usage events, such as start-up, opening files, changing language, searching and creating projects, to a Matomo cloud server together with a hashed device identifier, the app version and OS details, and they query the GitHub API for newer releases; no setting to turn this off was found in the reviewed source.",
+      "AGPL-3.0 for the app and the JustDecompile Engine; Mono.Cecil and AvaloniaEdit are MIT-licensed, per the README and THIRD-PARTY-NOTICES.md. Input is the user's own .NET assemblies. No assemblies were decompiled and no generated projects were built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/ViewModels/MainWindowViewModel.cs",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/Services/ProjectGenerationService.cs",
+      "https://github.com/codemerx/CodemerxDecompile/tree/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/SearchResults",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/CodemerxDecompile.csproj",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/.gitmodules",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/.github/workflows/package.yml",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/Services/MatomoAnalyticsService.cs",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/Extensions/ServiceCollectionExtensions.cs",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/src/CodemerxDecompile/EnvironmentProvider.cs",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/COPYING",
+      "https://github.com/codemerx/CodemerxDecompile/blob/9ada3065e65112895445745aef888b9fb6fb46a7/THIRD-PARTY-NOTICES.md",
+      "https://github.com/codemerx/CodemerxDecompile/releases/tag/1.5.0"
+    ]
   }
 ]

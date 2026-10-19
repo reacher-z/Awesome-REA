@@ -3198,5 +3198,14 @@
       "CTest 测试套件覆盖相互独立的不变量。README 指出差分模式与解释器共用运行时设备，因而不是独立的硬件参照，SameBoy 对比以及画面、音频和状态捕获则作为另外的证据。仓库唯一的 GitHub 工作流负责构建发布包，并用生成的测试 ROM 做冒烟测试；另有一个可选的手动任务以私下持有的 ROM 检查 Crystal 移植，不会发布任何内容。",
       "采用 MIT 许可证；内置的 Dear ImGui 保留其自身许可。README 声明与 Nintendo 无关联，Crystal 移植也声明与 Nintendo、The Pokémon Company、Game Freak 和 Creatures 无关联。README 要求贡献者和编程代理阅读 AGENTS.md，但未提及使用 REA。本目录未构建或运行该工具，也不代表任何游戏兼容性。"
     ]
+  },
+  "codemerxdecompile": {
+    "name": "CodemerxDecompile .NET 反编译器",
+    "requirements": [
+      "审阅时的最新版本为 1.5.0，于 2024-11-18 发布，提供 Windows x64 和 ARM64、Linux x64 以及 macOS ARM64 和 x64 的免安装压缩包；所审阅的 master 分支提交与其同日，审阅时仍是最新提交。README 指出 macOS 版应用未签名，在移除隔离属性之前，macOS 会提示该应用已损坏。",
+      "从源码构建需要 JustDecompileEngine 和 AvaloniaEdit 两个 Git 子模块以及 .NET 7 SDK：应用的目标框架为 net7.0，发布工作流用 dotnet publish 为每个运行时分别生成构建。主界面使用引擎的 C# 7 和 Visual Basic 10 语言模式。",
+      "发布版构建会把启动、打开文件、切换语言、搜索和创建项目等使用事件，连同经哈希处理的设备标识、应用版本和操作系统信息发送到 Matomo 云服务器，并通过 GitHub API 查询新版本；在所审阅的源码中未发现关闭这些功能的设置。",
+      "应用本身和 JustDecompile 引擎采用 AGPL-3.0 许可；据 README 和 THIRD-PARTY-NOTICES.md，Mono.Cecil 与 AvaloniaEdit 采用 MIT 许可。输入为用户自己的 .NET 程序集。本次未反编译任何程序集，也未构建生成的项目。"
+    ]
   }
 }
