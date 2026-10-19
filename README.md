@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 362](https://img.shields.io/badge/resources-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 362](https://img.shields.io/badge/resources-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2287,14 +2287,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (7) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3216,6 +3216,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.
 
   **Authors:** Nicola Dainese et al.
+
+  </details>
+
+- [**Learning to Simulate Dynamic Environments with GameGAN**](https://ieeexplore.ieee.org/document/9156900)
+
+  GameGAN learns an action-conditioned neural simulator of a game from recorded frames and the actions taken, without access to the game’s logic or engine. An action-conditioned LSTM dynamics engine with a stochastic latent variable predicts the next state, an optional external memory module builds an internal map so that revisited locations stay consistent, and a rendering engine decodes frames while separating static from dynamic components. Training is end-to-end with adversarial losses, including an action-conditioned discriminator, and a temporal cycle loss for memory consistency. The authors evaluate on a modified Pac-Man, a ghost-free Pac-Man-Maze and VizDoom “take cover”, training RL agents inside the learned simulators and testing them in the real games, and measure long-term consistency with a come-back-home task; a human-playable model of the official Pac-Man is shown qualitatively.
+
+  CVPR 2020 · Conference paper · [PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf) · [Code](https://github.com/nv-tlabs/GameGAN_code) · [Full entry & citation](https://awesomerea.org/papers/paper-gamegan/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** GameGAN imitates a game’s pixels and dynamics; it does not recover game code, symbolic rules, assets or an executable. Training needs large logged datasets with actions: 40K Pac-Man episodes from a high-entropy DQN agent that sees the full environment, and 10K random-policy VizDoom episodes, at 84×84 and 64×64 resolution. Quantitative results cover small grid-based Pac-Man variants and one VizDoom scenario, with an external classifier supplying game outcomes. Agents trained in the simulators can exploit modeling errors: the full model sometimes let Pac-Man pass through walls, and its Pac-Man agents scored below those of the memoryless variant, while on VizDoom the World Model baseline scored higher than GameGAN. The released code supports VizDoom training only, relies on a deprecated WorldModels data setup, and is under the non-commercial NVIDIA Source Code License; Pac-Man data and the official Pac-Man model are not included.
+
+  **Authors:** Seung Wook Kim et al.
 
   </details>
 

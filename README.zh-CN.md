@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 362](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 362](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2288,14 +2288,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (7) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3217,6 +3217,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 假设环境动态具有确定性、状态完全可观测，并且描述足够详细；并非仅凭像素或二进制进行恢复。准确率使用合成过程中提供的回放转移，并结合规划回报评估，不能证明所有未见状态上的正确性或完整引擎等价。RTFM 在不同回合间固定手册内容，并让怪物保持静止。CWMB 也包含非游戏的控制与物理任务；部分规划回报未给出，复杂连续状态模型仍然困难。
 
   **作者:** Nicola Dainese 等
+
+  </details>
+
+- [**使用 GameGAN 学习模拟动态环境**](https://ieeexplore.ieee.org/document/9156900)
+
+  GameGAN 从录制的画面帧及对应动作中学习游戏的动作条件神经模拟器，无需访问游戏逻辑或引擎。带随机潜变量的动作条件 LSTM 动力学引擎预测下一状态；可选的外部记忆模块构建内部地图，使重新访问的位置保持一致；渲染引擎在解码画面时区分静态与动态成分。模型以端到端方式训练，采用包括动作条件判别器在内的对抗损失，并用时间循环损失保持记忆一致性。作者在修改版 Pac-Man、无幽灵的 Pac-Man-Maze 及 VizDoom “take cover” 上进行评测：在学得的模拟器中训练强化学习智能体并在真实游戏中测试，并用“返回原点”任务衡量长期一致性；论文还定性展示了可由人类游玩的官方 Pac-Man 模型。
+
+  CVPR 2020 · 会议论文 · [PDF](https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Learning_to_Simulate_Dynamic_Environments_With_GameGAN_CVPR_2020_paper.pdf) · [代码](https://github.com/nv-tlabs/GameGAN_code) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-gamegan/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** GameGAN 模仿的是游戏的画面与动态，并不恢复游戏代码、符号规则、素材或可执行程序。训练需要带动作的大量日志数据：Pac-Man 使用 4 万个由能观察完整环境、高熵策略的 DQN 智能体生成的回合，VizDoom 使用 1 万个随机策略回合，分辨率分别为 84×84 与 64×64。定量结果只覆盖小型网格化的 Pac-Man 变体与一个 VizDoom 场景，并借助外部分类器给出游戏结果。在模拟器中训练的智能体可能利用建模误差：完整模型有时让 Pac-Man 穿过墙壁，其 Pac-Man 智能体得分低于无记忆版本；在 VizDoom 上，World Model 基线的得分高于 GameGAN。发布的代码只支持 VizDoom 训练，依赖已弃用的 WorldModels 数据准备流程，并采用仅限非商业用途的 NVIDIA Source Code License；其中不含 Pac-Man 数据及官方 Pac-Man 模型。
+
+  **作者:** Seung Wook Kim 等
 
   </details>
 
