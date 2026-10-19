@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 308](https://img.shields.io/badge/resources-308-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 69](https://img.shields.io/badge/papers-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 309](https://img.shields.io/badge/resources-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 69](https://img.shields.io/badge/papers-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (141) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (142) · [App](#app) (44)
 - [Native Binary](#native-binary) (21) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -1026,6 +1026,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   GameCube/Wii matching-decompilation toolkit that analyzes DOL and REL executables and, from a project configuration, splits them into relocatable objects plus an ldscript.lcf for CodeWarrior's linker, so decompiled objects can replace original ones while the relinked binary is checked against the original. Analysis covers function boundaries, a Metrowerks/SDK signature database, relocations, sections and data objects, and objects are written without an assembler. Its CLI also handles disc images, archives, compression formats, CodeWarrior demangling and DWARF dumps.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/decomp-toolkit/)
+
+- [**Cheat Engine MCP Bridge**](https://github.com/miscusi-peek/cheatengine-mcp-bridge)
+
+  Connects MCP clients to Cheat Engine through a Lua bridge script and a Python MCP server, so an agent can inspect a process the user runs under Cheat Engine: memory reads and value scans, pointer-chain resolution, structure dissection, RTTI class names, disassembly, cross-references and hardware or DBVM breakpoints. Further tool groups write memory, inject DLLs or code, automate input and use Cheat Engine's kernel-mode driver. The README limits it to educational and research use and disclaims multiplayer cheating and Terms of Service violations.
+
+  Integration · Independent MCP · [Requirements & evidence](https://awesomerea.org/resources/cheatengine-mcp-bridge/)
 
 <a id="app"></a>
 ### App
