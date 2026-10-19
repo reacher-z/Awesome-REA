@@ -7636,5 +7636,37 @@
       "https://github.com/mandiant/flare-vm/blob/5dc321d336f2d1b0c77343bdfd8cd3ac01ba1b37/LICENSE.txt",
       "https://github.com/mandiant/flare-vm/releases/tag/vbox-1.0.0"
     ]
+  },
+  {
+    "id": "b2r2",
+    "name": "B2R2",
+    "url": "https://github.com/B2R2-org/B2R2",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary analysis framework written in F# for .NET by KAIST's SoftSec Lab. It parses ELF, PE, Mach-O and WebAssembly files, parses, disassembles and lifts instructions into its own IR, recovers control-flow graphs and assembles code; the README's feature table covers x86/x86-64, ARMv7/AArch64, MIPS, PowerPC, RISC-V, SPARC, S390 and other ISAs as well as CIL, EVM, eBPF, WebAssembly and Python bytecode. Its b2r2 launcher starts a readelf-like format scanner, a linear-sweep disassembler, a recursive-descent explorer with a web GUI, an IR and assembly REPL and an assembler.",
+    "description_zh": "KAIST SoftSec 实验室开发的二进制分析框架，以 F# 编写、运行于 .NET。它可解析 ELF、PE、Mach-O 和 WebAssembly 文件，对指令进行解析、反汇编并提升为自有中间表示，还能恢复控制流图和汇编代码；README 的功能表涵盖 x86/x86-64、ARMv7/AArch64、MIPS、PowerPC、RISC-V、SPARC、S390 等指令集，以及 CIL、EVM、eBPF、WebAssembly 和 Python 字节码。其 b2r2 启动器可调用类似 readelf 的格式扫描器、线性扫描反汇编器、带 Web 图形界面的递归下降式探索工具、面向 IR 与汇编的 REPL 以及汇编器。",
+    "evidence_url": "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.10.1, published 2026-06-17, with BinExplore archives for Linux, macOS and Windows on x64 and arm64; libraries such as B2R2.FrontEnd.API and the B2R2.RearEnd.Launcher .NET tool are on NuGet at 0.10.1. The reviewed main commit (2026-10-17) is 1,231 commits ahead of that tag and still declares 0.10.1; this entry pins it for documentation only.",
+      "Building needs the .NET 10 SDK or later, and the projects target net10.0. The README states that the core library has no external dependencies, while System.IO.Hashing, FSharp.Compiler.Service, FParsec, BenchmarkDotNet and Avalonia.FuncUI serve specific components; it presents the APIs as usable from F# and, in principle, other CLI languages, on Linux, macOS, Windows and other .NET platforms.",
+      "Input is a user-supplied ELF, PE, Mach-O or WebAssembly file, or a raw byte image loaded with an explicit ISA. The README's feature table gives CFG recovery a full mark only for x86, x86-64 and EVM and a half mark for the other ISAs, lists no lifting, CFG recovery or assembly for TMS320C6000, and notes that some areas are still in progress.",
+      "MIT license. The README cites the 2019 NDSS Binary Analysis Research workshop paper describing B2R2 and lists research papers that use or build on it. Its speed and parallelism claims were not measured; no tools were run and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/README.md#L49-L297",
+      "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/src/RearEnd/Launcher/Program.fs",
+      "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/Directory.Build.props",
+      "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/CHANGELOG.md",
+      "https://github.com/B2R2-org/B2R2/blob/37de7a7274b61f7ec679153740955e7f9a94221e/LICENSE.md",
+      "https://github.com/B2R2-org/B2R2/releases/tag/v0.10.1",
+      "https://github.com/B2R2-org/B2R2/compare/v0.10.1...37de7a7274b61f7ec679153740955e7f9a94221e",
+      "https://www.nuget.org/packages/B2R2.RearEnd.Launcher/0.10.1"
+    ]
   }
 ]

@@ -3105,5 +3105,14 @@
       "FLARE-VM 本身不发布版本，因为其软件包从项目无法控制的外部 URL 下载工具；唯一的发布 vbox-1.0.0（2025-08-13）只包含部分 VirtualBox 辅助脚本的 Linux 可执行文件，这些脚本在 Debian 12 和 GNOME 上测试过。软件包更新属于尽力而为且未经测试，单个软件包的安装失败应向 VM-Packages 报告；更新出问题时，README 建议重新全新安装。idapro.vm 软件包需要使用者自备的 IDA Pro 安装程序（以及可选的许可证文件）放在桌面上。",
       "脚本采用 Apache-2.0 许可。根据 README 的法律声明，每个下载或安装的软件包都保留各自的许可条款，使用者须自行查阅并接受，进行安装即表示接受这些条款。本次未进行任何安装。"
     ]
+  },
+  "b2r2": {
+    "name": "B2R2 二进制分析框架",
+    "requirements": [
+      "审阅时最新版本为 v0.10.1，发布于 2026-06-17，提供 Linux、macOS 和 Windows 的 x64 与 arm64 版 BinExplore 压缩包；B2R2.FrontEnd.API 等库以及 B2R2.RearEnd.Launcher .NET 工具在 NuGet 上的版本为 0.10.1。所审阅的 main 分支提交（2026-10-17）比该标签多 1,231 个提交，版本号仍为 0.10.1；本条目固定该提交仅用于引用文档。",
+      "构建需要 .NET 10 SDK 或更高版本，各项目以 net10.0 为目标框架。README 称核心库没有外部依赖，System.IO.Hashing、FSharp.Compiler.Service、FParsec、BenchmarkDotNet 和 Avalonia.FuncUI 仅用于特定组件；README 还表示其 API 可在 F# 中使用，原则上也可供其他 CLI 语言调用，并可运行于 Linux、macOS、Windows 及其他 .NET 支持的平台。",
+      "输入为用户提供的 ELF、PE、Mach-O 或 WebAssembly 文件，或按指定 ISA 加载的原始字节镜像。README 功能表中，只有 x86、x86-64 和 EVM 的控制流图恢复标为满月，其他指令集为半月；TMS320C6000 未列出提升、控制流图恢复和汇编支持，README 也说明部分功能仍在开发中。",
+      "MIT 许可证。README 引用了介绍 B2R2 的 2019 年 NDSS Binary Analysis Research 研讨会论文，并列出使用或基于它的研究论文。其速度与并行性的说法未经测量；本次未运行任何工具，也未分析任何二进制。"
+    ]
   }
 }
