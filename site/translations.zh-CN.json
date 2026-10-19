@@ -3160,5 +3160,15 @@
       "写入类工具会修改程序或项目，包括名称、类型、注释、结构体、反汇编、分析选项和保存操作；读写两类工具分别带有对应的 MCP 标注。import_file、export_program 和五个 Ghidra 脚本工具默认禁用；无界面模式下的 agent_lab 配置会开放沙箱内的程序导出，任意路径导入和脚本仍保持禁用。README 未说明任何客户端认证机制；服务器会拒绝 Origin 请求头不在允许范围内的浏览器请求。",
       "项目的现代化评审文档称，在 Ghidra 12.0 和 12.1 上运行 buildExtension test 均通过 90 项测试，并记录了 2026-10-09 在 Ghidra 12.1 上的一次实机冒烟测试，而四个项目控制工具是在该测试之后加入的；以上均为项目自报结果。采用 MIT 许可。仓库已从 jtang613/GhidrAssistMCP 迁移，README 推荐作者自己的 GhidrAssist 客户端。本次未运行扩展、服务器或任何分析，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "dewolf": {
+    "name": "dewolf 研究型反编译器",
+    "requirements": [
+      "审阅时的最新版本为 v2026.7.11，由项目的自动发布工作流于 2026-07-11 发布；所审阅的 main 分支提交即为该版本，plugin.json 声明的版本与之一致，并列出 Windows、Linux 和 macOS 平台。",
+      "需要 Python 3.10+、另行授权的 Binary Ninja（README 要求最新稳定版且不低于 3.4；plugin.json 规定最低构建号为 4271），并将其 Python API 安装到同一环境中，还需要用于代码缩进的 astyle；libgraph-easy-perl 仅在输出 ASCII 图时需要。安装方式是将仓库克隆到 Binary Ninja 的插件目录并安装 requirements.txt，其中会从 Git 拉取项目自己的 dewolf-logic 和 dewolf-idioms 包。",
+      "在 Binary Ninja 图形界面中所做的设置对 decompile.py 无效，命令行运行时改为读取插件目录中的 config.json；decompiler/util/default.json 列出了全部选项。",
+      "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
+      "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
+    ]
   }
 }

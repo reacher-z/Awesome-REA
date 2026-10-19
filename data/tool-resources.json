@@ -7831,5 +7831,39 @@
       "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/LICENSE",
       "https://github.com/symgraph/GhidrAssistMCP/releases/tag/3.0.0"
     ]
+  },
+  {
+    "id": "dewolf",
+    "name": "dewolf",
+    "url": "https://github.com/fkie-cad/dewolf",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Research decompiler from Fraunhofer FKIE, developed with Singapore's DSO National Laboratories between 2019 and 2021, that runs as a Binary Ninja plugin and starts from Binary Ninja's Medium Level IL. A pipeline of preprocessing, SSA, data-flow and control-flow stages restructures code following the DREAM/DREAM++ approach and emits C-like output. Results appear in a Binary Ninja dock widget, or decompile.py prints or writes them for a whole binary or one named function in batch use.",
+    "description_zh": "由 Fraunhofer FKIE 与新加坡 DSO 国家实验室在 2019 至 2021 年合作研发的研究型反编译器，以 Binary Ninja 插件形式运行，并以 Binary Ninja 的中级中间语言（Medium Level IL）为起点。它通过预处理、SSA、数据流和控制流等阶段组成的流水线，按照 DREAM/DREAM++ 方法重建控制结构，输出类 C 代码。结果可在 Binary Ninja 的停靠窗口中查看，也可在批量场景下用 decompile.py 对整个二进制或指定函数进行反编译，并输出到终端或文件。",
+    "evidence_url": "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v2026.7.11, published 2026-07-11 by the project's automatic release workflow; the reviewed main commit is that release, and plugin.json declares the same version and lists Windows, Linux and macOS.",
+      "Needs Python 3.10+, a separately licensed Binary Ninja (the README asks for the latest stable release, at least 3.4; plugin.json sets minimum build 4271) with its Python API installed in the same environment, and astyle for indentation; libgraph-easy-perl is needed only for ASCII graph output. The plugin is installed by cloning it into Binary Ninja's plugin folder and installing requirements.txt, which pulls the project's dewolf-logic and dewolf-idioms packages from Git.",
+      "Settings made in the Binary Ninja GUI do not apply to decompile.py, which reads a config.json in the plugin folder instead; decompiler/util/default.json lists every option.",
+      "The README calls dewolf a research prototype that is not optimized for production use and warns of bugs or decompilation failures on real-world binaries. Its tests compile C sample sources and keep GNU coreutils executables under tests/coreutils/binaries as fixtures; CI builds a Docker image around a Binary Ninja archive and license supplied from repository secrets.",
+      "LGPL-2.1 (the plugin.json notice allows any later version). No binaries were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/README.md#L25-L72",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/README.md#L106-L126",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/plugin.json",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/requirements.txt",
+      "https://github.com/fkie-cad/dewolf/tree/3c389e18f03cd922f4b424a62d3717dac6fe3eee/decompiler/pipeline",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/Makefile",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/.github/workflows/pipeline.yml",
+      "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
+      "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
+    ]
   }
 ]
