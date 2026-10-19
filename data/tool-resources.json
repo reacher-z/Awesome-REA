@@ -7668,5 +7668,35 @@
       "https://github.com/B2R2-org/B2R2/compare/v0.10.1...37de7a7274b61f7ec679153740955e7f9a94221e",
       "https://www.nuget.org/packages/B2R2.RearEnd.Launcher/0.10.1"
     ]
+  },
+  {
+    "id": "svd-loader-ghidra",
+    "name": "SVD-Loader for Ghidra",
+    "url": "https://github.com/leveldown-security/SVD-Loader-Ghidra",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Ghidra script from leveldown security that reads a CMSIS-SVD file, the XML format describing a microcontroller's memory-mapped peripherals and their registers, and applies it to firmware already loaded in Ghidra. It creates memory blocks for the peripheral address ranges, a structure type for each peripheral with its registers as fields, and a label at each peripheral base address, so register accesses can be read by peripheral and register name. It targets little-endian Arm Cortex-M devices and bundles a fork of the cmsis-svd parser ported to Ghidra's Jython.",
+    "description_zh": "leveldown security 发布的 Ghidra 脚本，读取 CMSIS-SVD 文件（描述微控制器内存映射外设及其寄存器的 XML 格式），并将其应用到已载入 Ghidra 的固件上。它为外设地址范围创建内存块，为每个外设生成以寄存器为字段的结构体类型，并在各外设基址处添加标签，从而可按外设和寄存器名称阅读寄存器访问。它面向小端 Arm Cortex-M 设备，并附带一份移植到 Ghidra Jython 环境的 cmsis-svd 解析器分支。",
+    "evidence_url": "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has no releases or tags. The reviewed master head is a 2024-02-01 merge that expanded the installation instructions; the last code changes, merged on 2023-03-04, added error handling to the script and fixed derivedFrom handling for peripherals in the bundled parser. The README names no supported Ghidra release, a 2019 commit fixed compatibility with Ghidra 9.1, and the repository has no tests.",
+      "It runs inside Ghidra's CodeBrowser: add the cloned repository as a script directory in the Script Manager, then run SVD-Loader.py on the open program. The script is written for Ghidra's Jython environment, and it imports the bundled cmsis_svd package (version 0.4) from the same directory.",
+      "Supply the CMSIS-SVD file for the target chip, which the README suggests taking from the cmsis-svd collection or a Keil software pack, and the firmware image already imported into Ghidra. The script stops on an SVD that declares a big-endian CPU and warns but continues when the CPU is not a Cortex-M. Peripheral ranges that conflict with existing memory blocks are reported and skipped.",
+      "Only peripherals and registers are applied: the generated memory blocks are uninitialized, volatile and read/write, and register bit fields, enumerated values and interrupts from the SVD are not added. Results depend on the supplied SVD file; when a block or structure cannot be created, the script prints the failure and moves on.",
+      "SVD-Loader.py is GPL-3.0; the forked cmsis_svd/ code keeps upstream cmsis-svd's Apache-2.0 license. The blog post the README links for usage details returned HTTP 404 at review. The script was not run in Ghidra."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py#L84-L105",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/SVD-Loader.py#L131-L201",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/cmsis_svd/__init__.py",
+      "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/LICENSE"
+    ]
   }
 ]

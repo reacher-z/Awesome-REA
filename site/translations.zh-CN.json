@@ -3114,5 +3114,15 @@
       "输入为用户提供的 ELF、PE、Mach-O 或 WebAssembly 文件，或按指定 ISA 加载的原始字节镜像。README 功能表中，只有 x86、x86-64 和 EVM 的控制流图恢复标为满月，其他指令集为半月；TMS320C6000 未列出提升、控制流图恢复和汇编支持，README 也说明部分功能仍在开发中。",
       "MIT 许可证。README 引用了介绍 B2R2 的 2019 年 NDSS Binary Analysis Research 研讨会论文，并列出使用或基于它的研究论文。其速度与并行性的说法未经测量；本次未运行任何工具，也未分析任何二进制。"
     ]
+  },
+  "svd-loader-ghidra": {
+    "name": "SVD-Loader：Ghidra CMSIS-SVD 外设映射脚本",
+    "requirements": [
+      "仓库没有发布版本或标签。所审阅的 master 最新提交是 2024-02-01 的一次合并，扩充了安装说明；最近的代码改动于 2023-03-04 合并，为脚本加入了错误处理，并修复了内置解析器对外设 derivedFrom 的处理。README 未说明支持的 Ghidra 版本，2019 年的一次提交修复了与 Ghidra 9.1 的兼容性，仓库也没有测试。",
+      "脚本在 Ghidra 的 CodeBrowser 中运行：在脚本管理器中把克隆下来的仓库添加为脚本目录，再对当前打开的程序运行 SVD-Loader.py。脚本面向 Ghidra 的 Jython 环境编写，并从同一目录导入内置的 cmsis_svd 包（版本 0.4）。",
+      "需要提供目标芯片的 CMSIS-SVD 文件（README 建议从 cmsis-svd 合集或 Keil 软件包获取），并已把固件镜像导入 Ghidra。若 SVD 声明为大端 CPU，脚本会停止运行；若 CPU 不是 Cortex-M，脚本会提示警告但继续执行。与已有内存块冲突的外设地址范围会被报告并跳过。",
+      "脚本只应用外设和寄存器：生成的内存块为未初始化、易失、可读写，不会添加 SVD 中的寄存器位字段、枚举值和中断。结果取决于所提供的 SVD 文件；无法创建内存块或结构体时，脚本只打印失败信息并继续执行。",
+      "SVD-Loader.py 采用 GPL-3.0；分支而来的 cmsis_svd/ 代码沿用上游 cmsis-svd 的 Apache-2.0 许可。README 中提供使用说明的博客链接在审阅时返回 HTTP 404。本次未在 Ghidra 中运行该脚本。"
+    ]
   }
 }

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 362](https://img.shields.io/badge/resources-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 363](https://img.shields.io/badge/resources-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (166) · [App](#app) (53)
-- [Native Binary](#native-binary) (28) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (28) · [Firmware and Hardware](#firmware) (17) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1793,6 +1793,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Python framework from EURECOM's S3 group that orchestrates emulators, debuggers and physical devices for dynamic analysis of embedded firmware. An analysis script declares targets, such as a modified QEMU, PANDA, Unicorn, a gdbserver or an OpenOCD or J-Link debug probe, then a memory layout whose ranges can forward accesses from one target to another, and an execution plan. Execution and register or memory state can move between targets, so firmware can run in an emulator while its peripheral accesses go to the real device.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/avatar2/)
+
+- [**SVD-Loader for Ghidra**](https://github.com/leveldown-security/SVD-Loader-Ghidra)
+
+  Ghidra script from leveldown security that reads a CMSIS-SVD file, the XML format describing a microcontroller's memory-mapped peripherals and their registers, and applies it to firmware already loaded in Ghidra. It creates memory blocks for the peripheral address ranges, a structure type for each peripheral with its registers as fields, and a label at each peripheral base address, so register accesses can be read by peripheral and register name. It targets little-endian Arm Cortex-M devices and bundles a fork of the cmsis-svd parser ported to Ghidra's Jython.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/svd-loader-ghidra/)
 
 <a id="protocol"></a>
 ### Protocol
