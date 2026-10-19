@@ -8844,5 +8844,54 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-crawljax",
+    "title": "Crawling Ajax-Based Web Applications through Dynamic Analysis of User Interface State Changes",
+    "title_zh": "通过动态分析用户界面状态变化爬取基于 Ajax 的 Web 应用",
+    "authors": [
+      "Ali Mesbah",
+      "Arie van Deursen",
+      "Stefan Lenselink"
+    ],
+    "year": 2012,
+    "publication_date": "2012-03",
+    "date_precision": "month",
+    "date_basis": "ACM’s Crossref deposit gives March 2012 for print and online publication, matching the article footer’s “Publication date: March 2012”. The archived ACM page’s 01 March 2012 is read as the issue month, so month precision is retained.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将印刷与在线出版日期均记为 2012 年 3 月，与文章页脚的“Publication date: March 2012”一致。ACM 页面存档中的 2012 年 3 月 1 日被视为期号月份，因此保留月精度。",
+    "venue": "ACM Transactions on the Web",
+    "publication_status": "journal-article",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/2109205.2109208",
+    "url": "https://dl.acm.org/doi/10.1145/2109205.2109208",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/2109205.2109208",
+    "code_url": "https://github.com/crawljax/crawljax",
+    "project_url": null,
+    "targets": [
+      "website"
+    ],
+    "description_en": "Crawljax infers a state-flow graph of an Ajax web application by driving it in a real browser. It scans the DOM for candidate clickable elements, fires events on them, compares the resulting DOM against known states with configurable comparison and similarity thresholds, and records new states and the event transitions between them, backtracking by reloading and replaying paths. A concurrent variant partitions the crawl across browser instances. The Java tool uses Selenium WebDriver and plugins; one plugin writes a static mirror of the crawled states. The authors evaluate six open-source and industrial sites and measure how the number of concurrent browsers affects crawling runtime on Google AdSense.",
+    "description_zh": "Crawljax 在真实浏览器中驱动 Ajax Web 应用，以推断其状态流图。它扫描 DOM 中候选的可点击元素并触发事件，再用可配置的比较方法与相似度阈值将得到的 DOM 与已知状态比对，记录新状态及状态间的事件转换，并通过重新加载与重放路径进行回溯。并发版本将爬取任务划分给多个浏览器实例。该 Java 工具基于 Selenium WebDriver 与插件机制，其中一个插件可为已爬取的状态生成静态镜像。作者评测了六个开源与工业网站，并在 Google AdSense 上测量并发浏览器数量对爬取耗时的影响。",
+    "scope_limitations_en": "Crawljax recovers client-side UI states and navigation transitions, not application source code, server-side logic or a complete behavioral model. The inferred graph is one snapshot instance: click order, server-side factors and state-explosion limits such as depth, time and state caps affect what is found. With default settings it clicks each element once and missed elements that only appear after repeated clicks: 33 of 36 annotated elements were found in Pet Store, and 38 of 40 sampled clickables across four external sites. No gold standard or comparable Ajax crawler was available, so accuracy was assessed by injected elements, a manual reference model and spot checks. External sites change over time, and the concurrent study ran at Google on AdSense. The reviewed 2023 repository is a later Java 11 and Selenium 4 codebase, not the 2012 evaluation build.",
+    "scope_limitations_zh": "Crawljax 恢复的是客户端 UI 状态与导航转换，而非应用源码、服务端逻辑或完整的行为模型。推断出的图只是某一时刻的快照实例：点击顺序、服务端因素以及深度、时间与状态数上限等状态爆炸控制都会影响结果。默认设置下每个元素只点击一次，因而遗漏了需要多次点击才出现的元素：在 Pet Store 中找到 36 个标注元素中的 33 个，在四个外部网站抽样的 40 个可点击元素中找到 38 个。由于缺少黄金标准与可比较的 Ajax 爬虫，准确性通过注入元素、人工参考模型及抽查评估。外部网站会随时间变化，并发实验则在 Google 内部基于 AdSense 进行。所审阅的 2023 年仓库是后来基于 Java 11 与 Selenium 4 的代码，并非 2012 年评测所用版本。",
+    "why_fits_en": "Adds a classic dynamic-analysis method for recovering a running web application’s UI state machine, complementing the section’s screenshot-, video- and code-based reconstruction research.",
+    "why_fits_zh": "补充一种经典的动态分析方法，可恢复运行中 Web 应用的 UI 状态机，与本节基于截图、视频及代码的重建研究互补。",
+    "metadata_notes": "Crossref and the archived ACM page give the three authors, ACM Transactions on the Web volume 6, issue 1, pages 1–30; the article’s reference format gives Article 3 (March 2012), 30 pages. The text was reviewed in the 30-page author copy on Ali Mesbah’s UBC site; the ACM page holds the version of record. The article is a revised and expanded version of the authors’ ICWE 2008 paper. It describes Crawljax as Apache-licensed and available from crawljax.com. The code link is the crawljax/crawljax repository, whose largest contributor is the first author; the reviewed 2023-06-19 commit carries an Apache-2.0 LICENSE, version 5.2.4-SNAPSHOT, Java 11 and Selenium 4.9.0. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 ACM 页面存档给出三位作者，以及 ACM Transactions on the Web 第 6 卷第 1 期第 1–30 页；文章的引用格式标为 Article 3（2012 年 3 月），共 30 页。正文审阅依据 Ali Mesbah 在 UBC 网站上提供的 30 页作者版本；版本记录以 ACM 页面为准。本文是作者 ICWE 2008 论文的修订扩展版。文中称 Crawljax 采用 Apache 许可，可从 crawljax.com 获取。代码链接指向 crawljax/crawljax 仓库，其最大贡献者为第一作者；所审阅的 2023-06-19 提交附有 Apache-2.0 LICENSE，版本为 5.2.4-SNAPSHOT，使用 Java 11 与 Selenium 4.9.0。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/2109205.2109208",
+      "https://web.archive.org/web/20250216232237/https://dl.acm.org/doi/10.1145/2109205.2109208",
+      "https://api.crossref.org/works/10.1145/2109205.2109208",
+      "https://people.ece.ubc.ca/amesbah/resources/papers/tweb-final.pdf",
+      "https://github.com/crawljax/crawljax/blob/5771f6161c645c75f710a8cdc14e3c6898727e06/README.md",
+      "https://github.com/crawljax/crawljax/blob/5771f6161c645c75f710a8cdc14e3c6898727e06/LICENSE",
+      "https://github.com/crawljax/crawljax/blob/5771f6161c645c75f710a8cdc14e3c6898727e06/pom.xml"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
