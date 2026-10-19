@@ -3951,5 +3951,14 @@
       "输入由使用者提供：class、JAR 或 ZIP 文件；通过 -e 传入的库文件用于分析类与方法之间的关系，但不会被反编译。README 称多数选项面向专业逆向工程人员。输出是重建的 Java 代码，并非原始源码。",
       "采用 Apache-2.0 许可，附 JetBrains 的 NOTICE。README 称 Stiver 为原作者，JetBrains 自 2014 年起负责维护，并合并了部分 ForgeFlower 补丁；Vineflower 是另行维护的分支。本次未反编译任何类。"
     ]
+  },
+  "hyperdbg": {
+    "name": "HyperDbg 虚拟化辅助调试器",
+    "requirements": [
+      "审阅时最新版本为 v0.24，发布于 2026-09-22，以单个编译好的 ZIP 提供；所审阅的 master 提交即该版本。README 和 FAQ 均称 Windows 是唯一受支持的操作系统。v0.24 的更新日志称内核模块现已可在 Linux 上编译，但 Linux 支持仍在开发中。",
+      "需要支持 VT-x 和 EPT 的 Intel x64 处理器；不支持 AMD 和 ARM 处理器，FAQ 指出大部分功能需要第 4 代或更新的 Intel 处理器。其驱动没有数字签名，因此文档中的配置步骤要求在固件中启用 VT-x，并在被调试的机器上关闭驱动签名强制和基于虚拟化的安全（VBS）。文档建议在 VMware Workstation、ESXi 或 KVM 下的客户虚拟机中以调试器模式使用，因为本机的 VMI 模式无法暂停或单步执行。",
+      "从源码构建需要递归克隆仓库，并安装 Visual Studio 2026 以及最新的 Windows SDK 和 WDK；CI 使用 Visual Studio 2022 和 2026 构建。待调试的驱动、程序或系统由使用者提供；README 推荐通过 OpenSecurityTraining2 的 Reversing with HyperDbg（Dbg3301）课程入门。",
+      "HyperDbg 及其子模块除另有声明外均采用 GPL-3.0，依赖项适用各自的许可证。README 还介绍了针对调试器检测的透明化功能；本条目仅涵盖调试与跟踪。所引用的论文未经审阅，本次也未安装或运行任何组件。"
+    ]
   }
 }

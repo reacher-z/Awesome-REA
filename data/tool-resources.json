@@ -10650,5 +10650,36 @@
       "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/NOTICE.txt",
       "https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/java/java-decompiler-engine/maven-metadata.xml"
     ]
+  },
+  {
+    "id": "hyperdbg",
+    "name": "HyperDbg",
+    "url": "https://github.com/HyperDbg/HyperDbg",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Hypervisor-assisted Windows debugger that virtualizes the running system with Intel VT-x and Extended Page Tables to debug kernel and user mode, either locally as a tracing and introspection tool or from a host attached over a serial connection to a guest virtual machine. Its events include EPT-based hidden breakpoints and hooks, memory read, write and execute monitoring without the limits of hardware debug registers, monitoring of system calls, CPUID, MSRs, I/O ports, MMIO, exceptions and interrupts, and Intel PT and LBR branch tracing. A kernel-side script engine, PDB symbol support and an SDK automate analysis.",
+    "description_zh": "借助虚拟化技术的 Windows 调试器：利用 Intel VT-x 和扩展页表（EPT）将正在运行的系统虚拟化，从而调试内核态和用户态代码；既可在本机作为跟踪与内省工具运行，也可从宿主机通过串行连接附加到客户虚拟机进行调试。其事件包括基于 EPT 的隐藏断点与钩子、不受硬件调试寄存器限制的内存读写和执行监控，对系统调用、CPUID、MSR、I/O 端口、MMIO、异常和中断的监控，以及 Intel PT 与 LBR 分支跟踪。内核侧脚本引擎、PDB 符号支持和 SDK 可用于自动化分析。",
+    "evidence_url": "https://github.com/HyperDbg/HyperDbg/blob/ff3ba351a1059ce558967aa45a2c70ed25620aa4/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.24, published 2026-09-22 as a single compiled ZIP; the reviewed master commit is that release. The README and FAQ name Windows as the only supported OS. The v0.24 changelog reports that the kernel modules now compile on Linux, but Linux support is still under development.",
+      "Requires an Intel x64 processor with VT-x and EPT; AMD and ARM processors are not supported, and the FAQ says most features need a 4th-generation or later Intel processor. The driver is not digitally signed, so the documented setup enables VT-x in firmware and turns off driver signature enforcement and virtualization-based security on the debugged machine. The documentation recommends a guest VM under VMware Workstation, ESXi or KVM in Debugger Mode, because local VMI Mode cannot pause or step.",
+      "Building from source needs a recursive clone, Visual Studio 2026 and current Windows SDK and WDK releases; CI builds with Visual Studio 2022 and 2026. The user supplies the drivers, programs or systems to debug, and the README recommends OpenSecurityTraining2’s Reversing with HyperDbg (Dbg3301) course for getting started.",
+      "GPL-3.0 for HyperDbg and its submodules unless a file states otherwise; dependencies keep their own licenses. The README also describes transparency features aimed at debugger detection; this entry covers debugging and tracing only. The cited papers were not reviewed, and nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HyperDbg/HyperDbg/blob/ff3ba351a1059ce558967aa45a2c70ed25620aa4/README.md#L136-L187",
+      "https://github.com/HyperDbg/HyperDbg/blob/ff3ba351a1059ce558967aa45a2c70ed25620aa4/CHANGELOG.md",
+      "https://github.com/HyperDbg/HyperDbg/blob/ff3ba351a1059ce558967aa45a2c70ed25620aa4/LICENSE",
+      "https://github.com/HyperDbg/HyperDbg/tree/ff3ba351a1059ce558967aa45a2c70ed25620aa4/.github/workflows",
+      "https://github.com/HyperDbg/docs/blob/8bc60c027e741b8c77bba2200423e27cd18d8ed1/getting-started/build-and-install.md",
+      "https://github.com/HyperDbg/docs/blob/8bc60c027e741b8c77bba2200423e27cd18d8ed1/getting-started/faq.md",
+      "https://github.com/HyperDbg/HyperDbg/releases/tag/v0.24"
+    ]
   }
 ]
