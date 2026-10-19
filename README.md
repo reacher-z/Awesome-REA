@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 456](https://img.shields.io/badge/resources-456-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 457](https://img.shields.io/badge/resources-457-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (31)
+- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (41) · [References and Learning](#references-and-learning) (31)
 
 **More ways to browse**
 
@@ -2613,6 +2613,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   IDA Pro 9.x plugin and PowerShell batch extractor that turn Windows PE files into material AI coding agents can read: a per-binary SQLite database of PE metadata, signatures, disassembly, Hex-Rays pseudocode, cross-references, strings, stack frames, loops and dangerous API calls, plus optional grouped C++ and assembly files with per-function caller, callee and string headers and JSON indexes. It runs headless over directories, file lists or the modules of a running process, or interactively on the open IDA database, keeping the analyst’s renames and comments. The agent commands that work on this output come from the separate DeepExtractRuntime project.
 
   Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/deepextract-ida/)
+
+- [**Mizuchi**](https://github.com/macabeus/mizuchi)
+
+  Plugin pipeline for matching decompilation that loops over functions in an existing decomp project: m2c drafts C, decomp-permuter mutates it, Claude rewrites it through a compile-and-diff tool, and objdiff accepts a result only when the compiled object matches the target assembly. A local Decomp Atlas web app indexes matched and unmatched functions with call graphs and code embeddings, helps pick the next function and builds prompts, while HTML reports summarise each run. An optional integrator places matched C into a git worktree, checks the build and can commit, push or open a PR.
+
+  Integration · Independent agent · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/mizuchi-matching-decompilation-pipeline/)
 
 <a id="related-collections"></a>
 ### Related Collections
