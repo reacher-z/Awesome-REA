@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 155 | 154 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 310 | 309 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 126 | 126 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 305 | 304 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 131 | 131 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 166 occurrences have catalog links. They reference 160 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 220 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 226 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -146,6 +146,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | From a Little Prince game to Dragon Ball-themed HTML 3D | Insufficient evidence | [Source](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | Insufficient evidence | [Source](https://x.com/i/status/2110726263392387158) |
 | Reversed with AI | Already curated | [Source](https://reversedwithai.com/about) |
+| Arkham: a Grok Bot/REA research-workbench rebuild | Insufficient evidence | [Source](https://x.com/monokern/status/2110743454959509801) |
+| A plate reader's filter-wheel fault: a Claude-assisted repair report | Insufficient evidence | [Source](https://x.com/r_gross_/status/2110745676875227179) |
+| Grok Build: exploratory code study with REA and Claude Code | Insufficient evidence | [Source](https://x.com/omerfrkdemiral/status/2110749141710028914) |
+| Codex CLI: inspecting model-identity prompts and routing fields | Insufficient evidence | [Source](https://x.com/jiangkoumo_/status/2110751118343164066) |
+| Rust Duty: reconstructing gameplay from video, not decompilation | Insufficient evidence | [Source](https://x.com/reidhslaughter/status/2110752844328419587) |
+| 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | Pending | [Source](https://x.com/thenuntheia/status/2110757135009112576) |
 | Plustek 8200i / ThinkPad MIPI: improve Linux drivers using Windows reference behavior | Pending | [Source](https://github.com/cschalle/hw-harness/blob/093afc5c576c200f29b771d01624a327d0ff1806/examples/plustek-film-scanner/README.md) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
 | REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |

@@ -5709,12 +5709,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110743454959509801"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@monokern, 2026-10-15) pitches using Grok Bot with REA to study how the Arkham on-chain analytics interface behaves and to build a personal research tool with custom watchlists, transfer filters and alerts; it shows a video of agents drafting the reconstruction and says testing against real data is the next step. It links no code, findings or results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; by the author’s own account the rebuild is unfinished, and it is unestablished.",
+      "reason_zh": "作者帖子（@monokern，2026-10-15）推介借助 Grok Bot 与 REA 研究 Arkham 链上分析界面的行为，并据此打造带自定义关注地址、转账筛选和提醒的个人研究工具；帖子附一段智能体起草重建方案的视频，并称下一步是用真实数据测试。帖子未链接代码、调查结果或成果，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；按作者自己的说法重建尚未完成，相关成果未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/monokern/status/2110743454959509801"
+      ],
       "catalog_matches": []
     },
     {
@@ -5751,12 +5753,15 @@
         "https://x.com/i/status/2110745676875227179",
         "https://x.com/i/status/2110744888543510712"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@r_gross_, 2026-10-15) follows the author’s post that Claude, given the reader software and a webcam view of the screen, fixed a plate reader that had been written off for months. The reply says the fault was a filter-wheel alignment error failing start-up QC, and that Claude worked out how to communicate with the reader, reset its firmware, ran tests and set up a monitoring script. Neither post names the instrument model or protocol or links scripts or logs, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the repair method is undocumented, and no REA use is stated.",
+      "reason_zh": "所引回复（@r_gross_，2026-10-15）承接作者的另一条帖子：作者让 Claude 借助读板仪软件和对准屏幕的摄像头，修好了一台已坏数月、被技术人员判定报废的酶标仪。回复称故障为滤光轮对位错误导致开机自检失败，而 Claude 弄清了与仪器的通信方式、重置了固件、运行了测试并设置了监控脚本。两条帖子均未说明仪器型号或协议，也未链接脚本或日志，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；维修方法无记录，帖子也未提及使用 REA。",
+      "primary_evidence_urls": [
+        "https://x.com/r_gross_/status/2110745676875227179",
+        "https://x.com/r_gross_/status/2110744888543510712"
+      ],
       "catalog_matches": []
     },
     {
@@ -5772,12 +5777,14 @@
         "https://x.com/i/status/2110749141710028914",
         "https://x.com/i/status/2110835777248862262"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@omerfrkdemiral, 2026-10-15, in Turkish) says the author likes studying how others solved a problem, now opens open-source projects with REA through Claude Code, and is currently exploring the open-source Grok Build repository out of curiosity, with no particular goal. This describes reading publicly available source code rather than a reconstruction; it links no findings, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; no result is reported.",
+      "reason_zh": "作者帖子（@omerfrkdemiral，2026-10-15，土耳其语）称作者喜欢研究别人如何解决问题，如今借助接入 Claude Code 的 REA 打开开源项目阅读，目前正出于好奇、没有特定目标地研究开源的 Grok Build 仓库。这描述的是阅读公开源码，而非重建；帖子未链接任何调查结果，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；帖子未报告任何结果。",
+      "primary_evidence_urls": [
+        "https://x.com/omerfrkdemiral/status/2110749141710028914"
+      ],
       "catalog_matches": []
     },
     {
@@ -5812,12 +5819,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110751118343164066"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@jiangkoumo_, 2026-10-15) relays a public exchange about Codex not stating the concrete model in its system prompt, and adds that the author’s local codex-cli 0.162.1 install gives four GPT-6 model entries the same prompt opening and contains model-reroute fields. This is a brief inspection supporting a product critique, not a reconstruction; it shows two images but publishes no method, extracted files or analysis. Retain the lead without a catalog mapping; no reconstruction or REA use is established.",
+      "reason_zh": "作者帖子（@jiangkoumo_，2026-10-15）转述了一场关于 Codex 为何不在系统提示词中写明具体模型的公开争论，并补充称作者本地安装的 codex-cli 0.162.1 中，四个 GPT-6 模型条目的提示词开头完全相同，且包含模型改路由相关字段。这是为产品批评提供佐证的简短检查，而非重建；帖子附两张图片，但未公开方法、提取文件或分析。保留此线索而不建立目录映射；任何重建成果或 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/jiangkoumo_/status/2110751118343164066"
+      ],
       "catalog_matches": []
     },
     {
@@ -5832,12 +5841,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110752844328419587"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@reidhslaughter, 2026-10-15) gives a progress update on Rust Duty, which asks whether LLMs can distill gameplay from Modern Warfare videos alone rather than decompilation, and lists renderer, telemetry, lighting and UI work by several agents. The author’s MIT-licensed rust_duty repository, pinned here, has a short README posing that question and describing an original city level; it documents no footage inputs, comparison method or results. The project builds new gameplay rather than recovering original software. Retain the lead without a catalog mapping; this is not a finding about the project.",
+      "reason_zh": "作者帖子（@reidhslaughter，2026-10-15）是 Rust Duty 的进展更新：该项目探讨大模型能否仅凭《使命召唤：现代战争》的视频（而非反编译）提炼出玩法，并列出多个智能体完成的渲染器、遥测、光照与界面工作。作者以 MIT 许可公开的 rust_duty 仓库（此处固定版本）只有一份简短 README，提出了这一问题并介绍了一个原创城市关卡，未记录所用视频素材、对照方法或结果。该项目是在构建新的玩法，而非恢复原软件。保留此线索而不建立目录映射；这不是对该项目的评判。",
+      "primary_evidence_urls": [
+        "https://x.com/reidhslaughter/status/2110752844328419587",
+        "https://github.com/RHS059/rust_duty/blob/c04706de2e559a08532be78e4bd37c989f62938e/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -5893,11 +5905,16 @@
         "https://x.com/i/status/2110757135009112576"
       ],
       "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited post (@thenuntheia, 2026-10-15) relays the 2010 Rust Rewrite Mashup, which its pinned README describes as MW2 multiplayer, a Skate 3 mode and a Minecraft world map on IW4L, a separate from-scratch Rust MW2 runtime, requiring the user’s own MW2 and extracted Xbox 360 Skate 3 files. The skate mode vendors crates from a separate Skate 3 Rust engine project, and the world map uses MinecraftOSS. Whether the mashup adds reconstruction work of its own beyond integrating those projects, and how its Skate 3 physics were derived, needs a dedicated review; IW4L and the Skate 3 engine are not yet catalogued.",
+      "reason_zh": "所引帖子（@thenuntheia，2026-10-15）介绍了 2010 Rust Rewrite Mashup：其固定版本 README 称项目在 IW4L（另一个从零编写的 Rust 版 MW2 运行时）之上整合了 MW2 多人模式、Skate 3 模式和 Minecraft 世界地图，需要用户自备 MW2 以及从 Xbox 360 版 Skate 3 提取的文件。滑板模式内置了另一个 Skate 3 Rust 引擎项目的 crate，世界地图使用 MinecraftOSS。该项目在整合这些项目之外是否有自身的重建工作、其 Skate 3 物理如何得出，需要专门审阅；IW4L 与该 Skate 3 引擎尚未收录。",
+      "primary_evidence_urls": [
+        "https://x.com/thenuntheia/status/2110757135009112576",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/README.md",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/docs/SKATE.md",
+        "https://github.com/chasmlol/2010-rust-rewrite-mashup/blob/f608f85e407ff1b7689d54a9aafdd16e95711ac4/skate/Cargo.toml"
+      ],
       "catalog_matches": []
     },
     {
@@ -14942,15 +14959,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "insufficient-evidence": 131,
+      "pending": 305
     },
     "units_by_state": {
       "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "insufficient-evidence": 131,
+      "pending": 304
     },
-    "primary_reviewed_units": 220,
+    "primary_reviewed_units": 226,
     "catalog_linked_occurrences": 166,
     "distinct_resource_ids": 160,
     "distinct_paper_ids": 1,
