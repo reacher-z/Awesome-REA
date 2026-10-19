@@ -3097,5 +3097,15 @@
       "跟踪目标需要一台 arm、arm64、x86 或 x64 的 Android 设备，并运行 Frida server，README 要求其 Frida 支持版本大于 14，且目标应用包已安装在设备上。",
       "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。"
     ]
+  },
+  "librespot-spotify-client-case": {
+    "name": "librespot：Spotify 客户端与 Connect 接收端的开源重新实现",
+    "requirements": [
+      "审阅基于 dev 分支 2026-10-16 的提交，晚于 2025-11-10 发布到 crates.io 的 0.8.0 版本；GitHub 发布页不提供二进制文件。该组织接手了 plietar 已停止维护的原始项目。docs/ 中的简要说明涵盖连接建立、认证、dealer WebSocket 和设备授权；README 称文档仍在完善中，其余内容需阅读代码。",
+      "需要 Spotify Premium 账户。README 表示这一点不会改变，也不会支持面向免费账户的功能，例如限制跳过次数和广告。其免责声明指出，Spotify 很可能禁止用这些代码连接其 API，使用风险由用户自负。",
+      "使用 Cargo 构建，需要 Rust 1.85 或更新版本（edition 2024）。默认启用 native-tls、Rodio 音频后端和 libmdns 发现；也可选用 rustls 以及 ALSA、GStreamer、PortAudio、PulseAudio、JACK、SDL、管道和子进程输出等后端，Linux 构建需要 ALSA 开发头文件。多个 Linux 和 BSD 发行版提供了软件包。",
+      "CI 在 Ubuntu 和 Windows 上分别用 Rust 1.85 和稳定版构建整个工作区并运行 cargo test，用 cargo-hack 检查各项功能组合，并交叉编译 armv7、aarch64 和 riscv64 Linux 版本。这些检查只覆盖 librespot 自身代码，不涉及与 Spotify 线上服务的兼容性；本次审阅未运行任何内容。",
+      "README 声明仓库中的全部内容采用 MIT 许可。提取出的协议定义描述的是 Spotify 的接口；Spotify 的服务、曲库和官方客户端各自保留其条款。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }

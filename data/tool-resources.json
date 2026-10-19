@@ -7606,5 +7606,42 @@
       "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
       "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
     ]
+  },
+  {
+    "id": "librespot-spotify-client-case",
+    "name": "librespot: open reimplementation of a Spotify client and Connect receiver",
+    "url": "https://github.com/librespot-org/librespot",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Open-source Rust client library for Spotify and a headless Spotify Connect receiver, written as an alternative to Spotify's deprecated closed-source libspotify. It reimplements the client side of Spotify's protocols, including the access-point connection, login, metadata, the dealer websocket and Zeroconf discovery, and its protocol crate carries 478 .proto files, 449 of them marked as extracted from specific official Spotify desktop clients. librespot uses Spotify's service outside the official clients, and its README disclaims that connecting this way is probably forbidden by Spotify.",
+    "description_zh": "开源的 Rust 版 Spotify 客户端库，并附带无界面的 Spotify Connect 接收端，用来替代 Spotify 已弃用的闭源 libspotify。它重新实现了 Spotify 协议的客户端部分，包括接入点连接、登录、元数据、dealer WebSocket 和 Zeroconf 发现；其协议 crate 包含 478 个 .proto 文件，其中 449 个注明提取自特定版本的 Spotify 官方桌面客户端。librespot 在官方客户端之外使用 Spotify 的服务，README 的免责声明也指出，Spotify 很可能禁止以这种方式连接。",
+    "evidence_url": "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at a dev-branch commit of 2026-10-16 that follows release 0.8.0 of 2025-11-10, published on crates.io; GitHub releases carry no binaries. The organisation continues plietar's original, which is no longer maintained. Brief notes in docs/ cover connection setup, authentication, the dealer websocket and device authorization; the README calls the documentation a work in progress and points to the code for the rest.",
+      "Requires a Spotify Premium account. The README says this will remain the case and that features for free accounts, such as limited skips and adverts, will not be supported. Its disclaimer says using the code to connect to Spotify's API is probably forbidden by Spotify, so use is at the user's own risk.",
+      "Build with Cargo on Rust 1.85 or newer (edition 2024). The defaults are native-tls, the Rodio audio backend and libmdns discovery; rustls and other backends, including ALSA, GStreamer, PortAudio, PulseAudio, JACK, SDL, pipe and subprocess output, can be selected, and Linux builds need ALSA development headers. Distribution packages exist for several Linux and BSD systems.",
+      "CI builds the workspace and runs cargo test on Ubuntu and Windows with Rust 1.85 and stable, checks feature combinations with cargo-hack and cross-builds for armv7, aarch64 and riscv64 Linux. These checks cover librespot's own code, not compatibility with Spotify's live service, and this review ran nothing.",
+      "The README places everything in the repository under MIT. The extracted protocol definitions describe Spotify's interfaces; Spotify's service, catalogue and official clients keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/librespot-org/librespot/tree/19959512c212cbc48a3ff64382fe204f52c659a7/docs",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/docs/connection.md",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/docs/dealer.md",
+      "https://github.com/librespot-org/librespot/tree/19959512c212cbc48a3ff64382fe204f52c659a7/protocol/proto",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/protocol/build.rs",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/Cargo.toml",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/COMPILING.md",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/CHANGELOG.md",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/.github/workflows/build.yml",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/.github/workflows/cross-compile.yml",
+      "https://github.com/librespot-org/librespot/blob/19959512c212cbc48a3ff64382fe204f52c659a7/LICENSE",
+      "https://github.com/librespot-org/librespot/releases/tag/v0.8.0"
+    ]
   }
 ]
