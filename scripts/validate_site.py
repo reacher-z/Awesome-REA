@@ -747,6 +747,14 @@ def validate_source_browser_output(output):
         assert re.search(r'(?m)^/source-published\.json\n[ \t]+Cache-Control: no-cache, must-revalidate[ \t]*$', headers), 'Published selection requires no-cache headers'
 
 
+def validate_suggestion_links(pages, repository_url='https://github.com/reacher-z/Awesome-REA'):
+    """Listing pages lead visitors to the existing issue form for what they list."""
+    for listing, template in (('/resources/', 'resource.yml'), ('/cases/', 'case-study.yml'), ('/papers/', 'paper.yml')):
+        assert (ROOT / '.github/ISSUE_TEMPLATE' / template).is_file(), f'Missing issue form: {template}'
+        for route in (listing, '/zh' + listing):
+            assert pages[route].links.count(f'{repository_url}/issues/new?template={template}') == 1, f'Listing needs one link to its suggestion form: {route}'
+
+
 def validate_case_outputs(pages, resources):
     """Bind the script-free case subset, its full evidence, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
@@ -930,6 +938,7 @@ def main():
     validate_case_outputs(pages, resources)
     validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
+    validate_suggestion_links(pages)
     validate_source_browser_output(OUTPUT)
     validate_stylesheet_references(OUTPUT)
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
