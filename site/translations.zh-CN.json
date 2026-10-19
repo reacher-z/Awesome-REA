@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "openrealm-warcraft-3-engine-case": {
+    "name": "OpenRealm：带《魔兽世界》与《星际争霸 II》目标的《魔兽争霸 III》引擎重新实现",
+    "requirements": [
+      "所审阅的 main 快照（2026-10-18）晚于 2026-10-04 发布的 v0.0.11-alpha。README 将 openwarcraft3 列为主要的可玩目标，openwow 与 opensc2 为探索性目标。docs/games/warcraft-3/audio-retail-analysis.md 以 SHA-256 锁定零售版 game.dll 1.27.1.7085，并列出 Ghidra、为 Codex 配置的 bethington ghidra-mcp、radare2 和 r2ghidra，tools/ 下另有 Ghidra 脚本和 Frida 探针；该文档称反编译出的零售函数体和提取的 SLK 保留在本地工作区。",
+      "需要使用者自有、包含 MPQ 归档的《魔兽争霸 III》安装，通过 -data 或 WC3DATA 指定；iPad 版需要 War3.mpq 和 War3Local.mpq，《冰封王座》另需 War3x.mpq 和 War3xLocal.mpq。README 称仓库、发行版和 CI 产物都不含零售数据。仓库提交了一些开发参考资料，包括仿照零售版格式的 JASS common.txt 声明列表，以及从《魔兽争霸 III》1.29.2 可执行文件中提取的技能类表。",
+      "原生构建使用 make、C 编译器、SDL2 以及 OpenGL 或 GLES3，可选 FFmpeg 以支持过场动画和音乐；Windows 上使用 MSYS2/MinGW 或 Visual Studio。发行版提供 Linux、macOS 和 Windows x64 安装包以及 Flatpak；iPad 版需要装有 Xcode 和 CMake 的 macOS，实验性的浏览器版需要 Emscripten。",
+      "make test 将 tests/resources-src 目录中的夹具打包成归档，在不使用零售数据的情况下运行引擎、解析器、持久化和格式测试；CI 在 Linux 上运行这些测试，并检查可选的 SC2API 和启用 EOS 的构建，后者使用私有的 EOS SDK 归档。tools/parity 可在 Wine 下将零售版《魔兽争霸 III》与 OpenRealm 并排启动，并保存五张零售模型的基准渲染图用于渲染器回归检查；这些只是对照工具，并非已公布的等价性结果，本合集也未运行任何内容。",
+      "LICENSE 采用 MIT；内置的第三方组件各自保留其条款，README 声明项目与 Blizzard 无关。仓库还提交了用作 iPad 图标的《魔兽争霸 III》兽人封面图、一个来源未说明并会嵌入构建产物的控制台字符集 PCX，以及其 README 称从 AzerothCore 提取的《魔兽世界》任务和生物 CSV，并引用了 AzerothCore 的 GPL 许可；Blizzard 的内容仍归其权利人所有。AGENTS.md 和 CLAUDE.md 为编码智能体提供指示；所审来源未确立 REA 的使用。"
+    ]
   }
 }
