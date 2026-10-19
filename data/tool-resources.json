@@ -9310,5 +9310,39 @@
       "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/COPYRIGHT",
       "https://github.com/dyninst/dyninst/releases/tag/v13.0.0"
     ]
+  },
+  {
+    "id": "goblin",
+    "name": "goblin",
+    "url": "https://github.com/m4b/goblin",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Rust crate for zero-copy, endian-aware parsing of ELF32/64, 32/64-bit Mach-O and multi-architecture fat containers, PE32/PE32+, COFF objects, Terse Executable (TE) images and Unix/BSD archives; Object::parse picks the format from its magic bytes. Parsed structures cover ELF headers, sections, symbols, dynamic entries, relocations and notes, Mach-O load commands, imports and exports, and PE imports, exports, relocations, TLS, resources, exception and unwind data, Authenticode certificates and the .NET CLR header. Feature flags can reduce it to std-free #[repr(C)] struct definitions for kernels and other no_std code.",
+    "description_zh": "以零拷贝、感知字节序的方式解析二进制格式的 Rust crate，支持 ELF32/64、32/64 位 Mach-O 及多架构 fat 容器、PE32/PE32+、COFF 目标文件、Terse Executable（TE）镜像以及 Unix/BSD 归档；Object::parse 根据魔数自动识别格式。解析结果涵盖 ELF 的文件头、节区、符号、动态段条目、重定位和 note，Mach-O 的加载命令及导入导出，以及 PE 的导入导出、重定位、TLS、资源、异常与展开信息、Authenticode 证书和 .NET CLR 头。借助特性开关，它还可精简为不依赖 std 的 #[repr(C)] 结构体定义，供内核等 no_std 代码使用。",
+    "evidence_url": "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest tag at review: 0.10.6 (also tagged v0.10.6) on the 2026-05-25 version-bump commit; the project publishes no GitHub releases. crates.io also lists 0.10.7, published 2026-05-28, which has no matching tag or changelog entry. The reviewed master commit (2026-08-30) still declares 0.10.6, and this entry pins it for documentation only.",
+      "Used as a Cargo dependency; it needs rustc 1.85.0+ (Rust 2024 edition) and depends on plain, scroll and an optional log. Default features enable every format with std; elf32/elf64, mach32/mach64, pe32/pe64, te and archive select backends, endian_fd parses by the binary's own byte order, and Mach-O, PE and TE parsing requires alloc and endian_fd.",
+      "Input is a byte slice holding an executable, object file or archive the user supplies. goblin parses format metadata only and includes no disassembler, so code needs a separate instruction decoder. PE parse options can skip RVA resolution, attribute certificates, TLS data, resources or imports, and the changelog describes an ELF and PE permissive mode for packed, broken or malware samples.",
+      "MIT license. The README quotes a report of 100 million fuzzing runs, and the repository holds cargo-fuzz and AFL harnesses; neither was rerun, and no binaries were parsed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/Cargo.toml",
+      "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/CHANGELOG.md",
+      "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/src/lib.rs#L286-L323",
+      "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/src/pe/options.rs",
+      "https://github.com/m4b/goblin/tree/24a62600a4a75c145c08ec9dd82964acf1bb833b/src/pe",
+      "https://github.com/m4b/goblin/tree/24a62600a4a75c145c08ec9dd82964acf1bb833b/src/mach",
+      "https://github.com/m4b/goblin/tree/24a62600a4a75c145c08ec9dd82964acf1bb833b/src/elf",
+      "https://github.com/m4b/goblin/blob/24a62600a4a75c145c08ec9dd82964acf1bb833b/LICENSE",
+      "https://github.com/m4b/goblin/tree/0.10.6",
+      "https://docs.rs/crate/goblin/0.10.7"
+    ]
   }
 ]
