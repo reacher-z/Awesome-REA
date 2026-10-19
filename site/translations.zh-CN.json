@@ -4865,5 +4865,15 @@
       "GitHub Actions 在 Ubuntu 和 Fedora 上用 Clang 构建游戏，并以无界面模式运行 Google Test 测试套件；这些测试覆盖网络、协议、服务器、SDL 和一个 UI 菜单，并不检验与原版可执行文件的一致性。项目未公布与原版游戏的对比；本合集未构建或运行任何内容。",
       "LICENSE 采用 Apache-2.0；子模块和 game/src/external 中附带的头文件各自保留其许可证。README 声明所有受版权保护的内容和商标归各自所有者，并称这是一个教育性质的非营利项目。所审来源未确立 REA 或 AI 的使用。"
     ]
+  },
+  "god-of-war-ps2-recomp-case": {
+    "name": "《战神》PS2 静态重编译：基于 PS2Recomp 的 Windows 原生移植",
+    "requirements": [
+      "审阅版本为 main（2026-10-18）；项目尚未发布任何版本。README 将移植标为实验性，并报告已能启动、进入菜单、开始新游戏并完成带 HUD 的船上战斗，VU1 与 IOP 已原生化，游戏速度准确。稳定 60 fps、存档及带声音的过场影片（目前仅在 Waffle565 的移植中验证过）、完整通关和 PAL 语言版本仍未完成，窗口线程偶发卡死的问题也在调查中。.recomp.json 元数据仍描述早先尚不可游玩的状态，多数技术文档以西班牙语撰写。",
+      "需使用者自有的《战神》美版光盘（SCUS-97399）：构建时读取其中的 SCUS_973.99 可执行文件，游玩时从保持原始扇区位置的光盘文件中读取 IRX 模块与 PAK 数据。README 声明仓库不含任何游戏文件、IRX 模块或生成的 C++ 代码，.gitignore 也排除了光盘镜像、可执行文件、IRX 与 PAK 文件以及生成目录。",
+      "仅能在 Windows 10／11 x64 上构建，需 Visual Studio 2022 Build Tools（C++ 工作负载，含 CMake 与 Ninja）、Git 和 Python 3，建议预留约 20 GB 空间并配备 16 GB 内存。scripts/2_compilar.cmd 会克隆 PS2Recomp 并固定到提交 c5a9d02，按顺序应用补丁，从使用者的可执行文件生成约 6,400 个 C++ 文件，再构建 ps2EntryRunner.exe；首次构建需 20–40 分钟。",
+      "CI 校验函数映射与重编译器配置，将全部补丁应用到 PS2Recomp 并对照已知失败清单运行其 ps2x_tests 运行时测试套件，还运行与游戏无关的 GS、VU1、手柄和镜头测试，另有一项 Windows 任务在无 GPU 的情况下链接独立的 PCSX2 GS 模块。游戏流程与性能数据来自作者在一台 Ryzen 7 5800XT 加 RX 5700 XT 机器上的运行，记录于 docs/ESTADO.md；本合集未构建或运行任何内容。",
+      "仓库采用 GPL-3.0，与 PS2Recomp 一致；所应用的运行时来自 Waffle565 的 God-Of-War-Native-Port，该仓库根目录没有许可文件，并带入源自 PCSX2 的代码（GPL-3.0+）。Sony Interactive Entertainment 与 Santa Monica Studio 仍保有游戏权利。AGENTS.md 称多个智能体同时在 main 上工作，CLAUDE.md 让 Claude 遵循这些约定，状态日志也将部分修复归于 Claude；未确立 REA 的使用。"
+    ]
   }
 }

@@ -14737,5 +14737,41 @@
       "https://github.com/FolkertVanVerseveld/aoe/tree/3234eac7098124e7fac11272697cacb3aed5e608/game/tests",
       "https://github.com/FolkertVanVerseveld/aoe/blob/3234eac7098124e7fac11272697cacb3aed5e608/LICENSE"
     ]
+  },
+  {
+    "id": "god-of-war-ps2-recomp-case",
+    "name": "God of War PS2 static recompilation: a native Windows port via PS2Recomp",
+    "url": "https://github.com/KIexster/god-of-war-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the MIPS R5900 code of the NTSC-U PlayStation 2 God of War executable (SCUS-97399) to C++ with PS2Recomp and builds it as a native Windows program. Since October 2026 the port builds on Waffle565’s runtime, which replaces the PS2 hardware with native code: VU1 microprograms and, optionally, the game’s IRX modules are compiled ahead of time, and an OpenGL renderer stands in for the GS. The repository holds only the game-specific function map, recompiler configuration, overrides and runtime patches; the README reports gameplay on the opening ship level, with sustained 60 fps and a full playthrough still pending.",
+    "description_zh": "使用 PS2Recomp 将 PlayStation 2 版《战神》美版（SCUS-97399）可执行文件中的 MIPS R5900 代码静态重编译为 C++，并构建为 Windows 原生程序。自 2026 年 10 月起，移植以 Waffle565 的运行时为基础，用原生代码取代 PS2 硬件：VU1 微程序以及可选的游戏 IRX 模块会预先编译，OpenGL 渲染器则代替 GS。仓库只包含本作专用的函数映射、重编译器配置、覆盖实现与运行时补丁；README 报告已能在开场的船上关卡中游玩，而稳定 60 fps 与完整通关仍待完成。",
+    "evidence_url": "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main (2026-10-18); the project has published no release. README marks the port experimental and reports boot, menus, a new game and the ship fight with HUD, native VU1 and IOP, and exact game speed. Sustained 60 fps, saves and movies with sound (so far verified only in Waffle565’s port), a full playthrough and PAL languages remain open, and an intermittent hang of the window thread is under investigation. The .recomp.json metadata still describes an earlier, not-yet-playable state, and most technical documents are in Spanish.",
+      "Requires the user’s own NTSC-U God of War disc (SCUS-97399): the build reads its SCUS_973.99 executable, and play reads the IRX modules and PAK data from the user’s disc files kept at their original sectors. README states that the repository contains no game files, IRX modules or generated C++, and .gitignore excludes disc images, the executable, IRX and PAK files and the generated directories.",
+      "Builds only on Windows 10/11 x64 with Visual Studio 2022 Build Tools (C++ workload, including CMake and Ninja), Git and Python 3, with about 20 GB free and 16 GB of RAM recommended. scripts/2_compilar.cmd clones PS2Recomp at commit c5a9d02, applies the patches in order, generates about 6,400 C++ files from the user’s executable and builds ps2EntryRunner.exe; the first build takes 20–40 minutes.",
+      "CI validates the function map and recompiler configuration, applies every patch to PS2Recomp and runs its ps2x_tests runtime suite against a known-failures list, and runs game-independent GS, VU1, pad and camera tests, plus a Windows job that links an isolated PCSX2 GS module without a GPU. Gameplay and performance figures come from the author’s runs on one Ryzen 7 5800XT and RX 5700 XT machine, recorded in docs/ESTADO.md; this collection built and ran nothing.",
+      "The repository is GPL-3.0, matching PS2Recomp; the applied runtime comes from Waffle565’s God-Of-War-Native-Port, whose repository root has no license file, and brings PCSX2-derived code (GPL-3.0+). Sony Interactive Entertainment and Santa Monica Studio keep their game rights. AGENTS.md says several agents work on main at once, CLAUDE.md points Claude to those conventions and the status log credits fixes to Claude; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/.recomp.json",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/AGENTS.md",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/CLAUDE.md",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/docs/ESTADO.md",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/docs/ARQUITECTURA.md",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/.gitignore",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/scripts/common.ps1",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/.github/workflows/pruebas.yml",
+      "https://github.com/KIexster/god-of-war-recomp/blob/92ece581c673842c282a9c23819545de5ab92d3c/LICENSE",
+      "https://github.com/ran-j/PS2Recomp/tree/c5a9d02573410a2085a4b4b831b0b68ba3515440",
+      "https://github.com/Waffle565/God-Of-War-Native-Port/blob/514f89186f1926edaf4807696a59557679c7d517/README.md"
+    ]
   }
 ]
