@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 394](https://img.shields.io/badge/resources-394-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 395](https://img.shields.io/badge/resources-395-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (176) · [App](#app) (58)
-- [Native Binary](#native-binary) (33) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (34) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1838,6 +1838,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Trail of Bits implementation of the pattern-independent structuring algorithm from the No More Gotos paper, turning LLVM bitcode into goto-free C as a small, hackable decompiler back end that interoperates with LLVM and Remill. rellic-decomp translates a bitcode module to C in batch, rellic-xref serves a web interface for choosing refinement passes and linking C AST nodes to the bitcode that produced them, and rellic-headergen emits C layouts of data structures from a module's DWARF metadata. Machine code must first be lifted to bitcode by another tool; a bundled IDA script uses Anvill for that step.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/rellic/)
+
+- [**ghidra-delinker-extension**](https://github.com/boricj/ghidra-delinker-extension)
+
+  Ghidra extension that delinks a selected part of a program back into a relocatable object file. Its relocation table synthesizer analyzer reconstructs, from the Ghidra database, the relocations a linker normally discards, and its exporters write COFF (x86, x86-64), ELF (x86, x86-64, MIPS) or OMF (x86) objects with symbols and relocation tables that a toolchain can link again. The README lists binary patching through the linker, software ports, format conversion, library extraction and decompilation projects that reimplement a program one object file at a time among its uses.
+
+  Tool · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/ghidra-delinker-extension/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
