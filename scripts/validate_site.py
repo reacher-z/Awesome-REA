@@ -18,6 +18,7 @@ from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from validate_discovery import expected_entry_routes, validate_route_inventory
 from build_readme import collection_section
+from build_feed import FEED_PAGES, FEED_PATHS, FEED_SIZE, feed_entries
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SOCIAL_IMAGE_ALT, png_size
 
@@ -33,6 +34,7 @@ class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()
         self.links, self.canonicals, self.ids, self.schemas, self.alternates = [], [], [], [], []
+        self.feeds = []
         self.anchor_names = []
         self.noindex, self.lang, self.json_script = False, None, None
         self.paper_ids, self.paper_texts, self.paper_links = [], {}, {}
@@ -147,6 +149,8 @@ class Page(HTMLParser):
             self.canonicals.append(values.get('href'))
         if tag == 'link' and values.get('rel') == 'alternate' and values.get('hreflang'):
             self.alternates.append((values['hreflang'], values['href']))
+        if tag == 'link' and values.get('rel') == 'alternate' and values.get('type') == 'application/atom+xml':
+            self.feeds.append(values.get('href'))
         if tag == 'meta' and values.get('name') == 'robots' and 'noindex' in values.get('content', ''):
             self.noindex = True
         if tag == 'meta':
@@ -672,6 +676,40 @@ def validate_case_outputs(pages, resources):
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
 
 
+def validate_feeds(output, pages, resources, papers):
+    """Bind both Atom feeds to dated catalog records and their localized detail pages."""
+    output = Path(output)
+    expected = feed_entries(resources, papers)
+    linked = {route: page.feeds for route, page in pages.items() if page.feeds}
+    if not expected:
+        assert not linked and not any((output / path.lstrip('/')).exists() for path in FEED_PATHS.values()), 'Feeds and feed links need dated records'
+        return
+    assert 0 < len(expected) <= FEED_SIZE
+    atom = '{http://www.w3.org/2005/Atom}'
+    headers = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    for language, path in FEED_PATHS.items():
+        prefix = '/zh' if language == 'zh' else ''
+        assert linked.pop(prefix + '/', None) == [path] and all(linked.pop(prefix + page, None) == [path] for page in FEED_PAGES[1:]), f'Listing pages must link their language feed once: {path}'
+        assert headers.get(path, {}).get('content-type') == 'application/atom+xml; charset=utf-8', f'Feed needs an Atom content type: {path}'
+        root = ET.parse(output / path.lstrip('/')).getroot()
+        assert root.tag == atom + 'feed' and root.get('{http://www.w3.org/XML/1998/namespace}lang') == ('zh-CN' if language == 'zh' else 'en'), f'Feed root or language mismatch: {path}'
+        assert root.findtext(atom + 'id') == ORIGIN + path, f'Feed ID must be its own URL: {path}'
+        assert [(link.get('rel'), link.get('href')) for link in root.findall(atom + 'link')] == [('self', ORIGIN + path), ('alternate', ORIGIN + prefix + '/')], f'Feed self/alternate links mismatch: {path}'
+        entries = root.findall(atom + 'entry')
+        assert len(entries) == len(expected), f'Feed entry count mismatch: {path}'
+        for entry, (kind, record) in zip(entries, expected):
+            route = f"{prefix}/{kind}s/{record['id']}/"
+            assert route in pages, f'Feed entry must link a detail page: {route}'
+            title = ((record.get('name_zh') or record['name']) if language == 'zh' else record['name']) if kind == 'resource' else record['title_zh' if language == 'zh' else 'title']
+            stamp = record['added_at'] + 'T00:00:00Z'
+            assert (entry.findtext(atom + 'id') == ORIGIN + route and entry.findtext(atom + 'title') == title
+                    and [link.get('href') for link in entry.findall(atom + 'link')] == [ORIGIN + route]
+                    and entry.findtext(atom + 'published') == stamp == entry.findtext(atom + 'updated')
+                    and entry.findtext(atom + 'summary') == record[f'description_{language}']), f'Feed entry differs from its record: {route}'
+        assert root.findtext(atom + 'updated') == expected[0][1]['added_at'] + 'T00:00:00Z', f'Feed date must be the newest inclusion date: {path}'
+    assert not linked, 'Only the homepages and curated, case and paper listings advertise feeds: ' + ', '.join(sorted(linked))
+
+
 def validate_entry_outputs(pages, resources, papers):
     """Bind individual pages and their ordinary listing links to reviewed records."""
     routes = expected_entry_routes(resources, papers)
@@ -810,6 +848,7 @@ def main():
     validate_homepage_destinations(pages)
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
+    validate_feeds(OUTPUT, pages, resources, papers)
     validate_case_outputs(pages, resources)
     validate_artifact_links(OUTPUT, pages)
     validate_source_browser_output(OUTPUT)
@@ -822,7 +861,7 @@ def main():
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, the homepage catalog preload and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, Atom feeds, the homepage catalog preload and the deployment manifest.')
 
 
 if __name__ == '__main__':

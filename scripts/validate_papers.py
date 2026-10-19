@@ -8,7 +8,7 @@ import re
 import sys
 from urllib.parse import urlsplit
 
-from review_dates import review_date_is_future
+from review_dates import inclusion_date_error, review_date_is_future
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,8 +26,9 @@ FIELDS = TEXT_FIELDS | {
     'first_arxiv_date', 'doi', 'code_url', 'project_url', 'targets',
     'evidence_urls', 'runtime_tested',
 }
-# Optional publisher container metadata for published papers; omitted when unverified.
-OPTIONAL_FIELDS = {'citation'}
+# Optional publisher container metadata for published papers, omitted when unverified,
+# and the UTC date the record first reached main (feeds only; not a review date).
+OPTIONAL_FIELDS = {'citation', 'added_at'}
 CITATION_PATTERNS = {
     'container_title': None, 'publisher': None, 'series': None,
     'volume': re.compile(r'[1-9]\d*'), 'issue': re.compile(r'[A-Za-z0-9]+'),
@@ -187,6 +188,11 @@ def validate_papers(records, errors, *, url_check, now=None):
                 expectation = ('an ISO calendar date no more than one day ahead of UTC'
                                if field == 'verified_at' else 'a non-future ISO calendar date')
                 errors.append(f'{where}.{field}: use {expectation}')
+
+        if 'added_at' in record:
+            problem = inclusion_date_error(record['added_at'], now)
+            if problem:
+                errors.append(f'{where}.added_at: {problem}')
 
         arxiv, doi, version = record.get('arxiv_id'), record.get('doi'), record.get('arxiv_version_reviewed')
         for field, value, pattern in (('arxiv_id', arxiv, ARXIV_ID), ('doi', doi, re.compile(r'10\.\d{4,9}/\S+'))):

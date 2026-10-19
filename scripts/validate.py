@@ -17,7 +17,7 @@ from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
-from review_dates import review_date_is_future
+from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
 from case_coverage import read_case_coverage, validate_case_coverage
 
@@ -175,6 +175,10 @@ def validate_resources(records, errors, *, now=None):
                 errors.append(f'{where}.verified_at: review date is in the future')
         except (ValueError, TypeError):
             errors.append(f'{where}.verified_at: invalid ISO date or timezone-aware timestamp')
+        if 'added_at' in record:
+            problem = inclusion_date_error(record['added_at'], now)
+            if problem:
+                errors.append(f'{where}.added_at: {problem}')
 
 
 def validate_benchmarks(records, errors):

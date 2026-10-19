@@ -138,6 +138,7 @@ class SecurityHeaderTests(unittest.TestCase):
             '/fonts/*': {'access-control-allow-origin': '*'}, '/fontawesome.css': {'access-control-allow-origin': '*'},
             **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/source-index.json',
                                              '/source-browser.json', '/papers.json', '/build-manifest.json')},
+            **{route: {'content-type': 'application/atom+xml; charset=utf-8'} for route in ('/feed.xml', '/zh/feed.xml')},
             '/papers/references.bib': bibtex, '/papers/citations/*.bib': bibtex,
         })
 

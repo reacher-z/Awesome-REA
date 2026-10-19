@@ -17,6 +17,7 @@ from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
+from build_feed import build_feeds
 from build_manifest import write_build_manifest
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
 from artifact_links import with_artifact_links, with_curated_labels
@@ -278,6 +279,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
     )
+    # Feeds list inclusion dates; they link from pages written above and are not sitemap pages.
+    build_feeds(output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL)
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")

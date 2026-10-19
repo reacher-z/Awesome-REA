@@ -23,6 +23,10 @@
   Cache-Control: no-cache, must-revalidate
 /build-manifest.json
   Cache-Control: no-cache, must-revalidate
+/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
+/zh/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8
 /papers/references.bib
   Content-Type: application/x-bibtex; charset=utf-8
 /papers/citations/*.bib
