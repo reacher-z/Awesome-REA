@@ -7355,5 +7355,37 @@
       "The README’s AI disclosure allows projects with AI involvement and marks them with ⚠️; 10 entries carried the mark at review. An unmarked entry should not be read as confirmation that no AI was involved.",
       "The repository holds only README.md, with no license file or contribution guide, so the list states no reuse terms; linked projects and the games they reconstruct keep their own rights. An independent discovery list; the reviewed source establishes no REA connection."
     ]
+  },
+  {
+    "id": "vineflower",
+    "name": "Vineflower",
+    "url": "https://github.com/Vineflower/vineflower",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Fernflower-derived decompiler for Java and other JVM languages that continues the ForgeFlower, Fabric and Quiltflower forks, focused on output quality and modern Java, including records, sealed classes, switch expressions and pattern matching through Java 21+. Its command line takes a JAR, ZIP, folder or class file and writes a folder, an archive or console output, with multithreaded decompilation and automatic formatting. It can also be embedded as a library from Maven Central or used in IntelliJ IDEA through a plugin that replaces Fernflower, and the regular release JAR bundles three plugins, including Kotlin support and variable renaming.",
+    "description_zh": "源自 Fernflower 的 Java 及其他 JVM 语言反编译器，延续了 ForgeFlower、Fabric 和 Quiltflower 等分支的工作，注重输出质量和对现代 Java 的支持，包括 Java 21+ 的记录、密封类、switch 表达式和模式匹配。其命令行接受 JAR、ZIP、文件夹或 class 文件，可输出到文件夹、归档或控制台，支持多线程反编译和自动格式化。它也可作为 Maven Central 上的库嵌入使用，或通过替换 Fernflower 的插件在 IntelliJ IDEA 中使用；常规发布 JAR 内置三个插件，包括 Kotlin 支持和变量重命名。",
+    "evidence_url": "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 1.12.0, published 2026-04-29 on GitHub and Maven Central (org.vineflower:vineflower). The regular JAR includes the three bundled plugins and the -slim JAR only the decompiler. The reviewed master commit is identical to that tag; pull requests target the develop branches, and develop/1.13.0 was 28 commits ahead.",
+      "The README says Vineflower 1.9+ needs Java 11 or newer and 1.11+ needs Java 17 or newer to run; the build uses a Java 17 toolchain with ./gradlew build. The IntelliJ IDEA plugin is a separate Marketplace download and was not reviewed.",
+      "Inputs are user-supplied JAR, ZIP, folder or class files, with libraries added through -e/--add-external as classpath context. The output comparison on the project website is the project's own; decompiled code is reconstructed and is not the original source.",
+      "Apache-2.0. The README calls it a fork of JetBrains' Fernflower, MinecraftForge's ForgeFlower and FabricMC's Fernflower fork and a continuation of Quiltflower; its console entry point keeps Fernflower's org.jetbrains.java.decompiler package. No classes were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/build.gradle#L25-L35",
+      "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/build.gradle#L223-L256",
+      "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/settings.gradle",
+      "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/ARCHITECTURE.md",
+      "https://github.com/Vineflower/vineflower/blob/b8273988af850e8cfb234ca08d129058502b032f/LICENSE.md",
+      "https://github.com/Vineflower/vineflower/releases/tag/1.12.0",
+      "https://vineflower.org/usage/",
+      "https://repo1.maven.org/maven2/org/vineflower/vineflower/maven-metadata.xml"
+    ]
   }
 ]
