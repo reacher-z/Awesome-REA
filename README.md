@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,13 +2193,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2497,6 +2497,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Decompilation is evaluated function by function on the 164 HumanEval-Decompile C problems, each compiled for x86-64 at O0–O3, by running 20 samples per function against the problems' test cases; Pass<span>@</span>k on these tests is neither whole-program nor equivalence evidence. Baselines other than LLM4Decompile and Nova were prompted with three-shot examples rather than fine-tuned. Similarity results cover O0 queries against O3 candidates in pools of 50–500 functions from Binutils, Curl, ImageMagick, SQLite, OpenSSL and PuTTY, after fine-tuning on BinaryCorp-3M. Decompilation fine-tuning used a 2.16M-pair sample, the README says only 50K files came from The Stack, and the paper limits Nova to x86-64 assembly and 1.3B and 6.7B models. Inputs require the paper's assembly normalization.
 
   **Authors:** Nan Jiang et al.
+
+  </details>
+
+- [**Malsight: Exploring Malicious Source Code and Benign Pseudocode for Iterative Binary Malware Summarization**](https://doi.org/10.1109/TIFS.2025.3583552)
+
+  MALSIGHT writes natural-language summaries of stripped binary malware one function at a time. IDA Pro produces pseudocode and a call graph, and functions are summarized callees first, so each caller receives its callees' summaries as context; a sequence-labeling model also marks key API calls and strings, which drive code-search retrieval and LLM-written annotations. The summarizer, MalT5, is a 0.77B-parameter CodeT5+ model fine-tuned first on MalS, 89,609 malicious C source functions from GitHub with LLM-generated summaries refined by human reviewers, and then on annotated benign pseudocode from the Capybara dataset. The authors also introduce MalP, 500 pseudocode functions for testing, and BLEURT-sum, a fine-tuned BLEURT metric, and report that MalT5 performs comparably to much larger Code Llama models.
+
+  IEEE Transactions on Information Forensics and Security 2025 · Journal article · [PDF](https://arxiv.org/pdf/2406.18379v3) · [Full entry & citation](https://awesomerea.org/papers/paper-malsight/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Training summaries are LLM-generated and then reviewed and refined by five experts rather than written from scratch. MalP's 500 test functions come from compiling and decompiling 20 of the same GitHub malware repositories, not from wild samples, and the authors note that loose filtering may let training and test data overlap and inflate results. Quality is scored mainly with the authors' own BLEURT-sum metric. On ten real malware samples, with 79 functions also rated by three reverse engineers, BLEURT-sum was about 30% lower than on MalP, which the authors attribute to long functions: 15.8% exceed 1,000 tokens, while most training functions are under 300. The pipeline depends on IDA Pro pseudocode, and static annotation relies on online code search and a general-purpose LLM. MALSIGHT summarizes behavior; it is not a malware detector or classifier.
+
+  **Authors:** Haolang Lu et al.
 
   </details>
 

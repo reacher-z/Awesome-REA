@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2194,13 +2194,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2498,6 +2498,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 反编译以函数为单位，在 HumanEval-Decompile 的 164 个 C 问题上评测；每个问题在 O0–O3 下编译为 x86-64，每个函数采样 20 次并以题目测试用例运行。基于这些测试的 Pass<span>@</span>k 既不能证明整程序反编译能力，也不能证明等价性。除 LLM4Decompile 与 Nova 外，其他基线采用三样例提示而非微调。相似性结果针对 O0 查询与 O3 候选，候选池为来自 Binutils、Curl、ImageMagick、SQLite、OpenSSL 与 PuTTY 的 50–500 个函数，模型先在 BinaryCorp-3M 上微调。反编译微调使用抽样的 216 万对数据，README 称仅从 The Stack 获取 5 万个文件；论文也说明 Nova 仅支持 x86-64 汇编，模型规模限于 1.3B 和 6.7B。输入需要按论文方式规范化汇编。
 
   **作者:** Nan Jiang 等
+
+  </details>
+
+- [**Malsight：结合恶意源代码与良性伪代码的二进制恶意软件迭代式摘要生成**](https://doi.org/10.1109/TIFS.2025.3583552)
+
+  MALSIGHT 以函数为单位，为剥离符号的二进制恶意软件生成自然语言摘要。它先用 IDA Pro 生成伪代码和调用图，再按先被调用者、后调用者的顺序生成摘要，使每个调用者都能获得其被调用函数的摘要作为上下文；另有一个序列标注模型标记关键 API 调用和字符串，据此进行代码检索并由大语言模型生成注释。摘要模型 MalT5 是 0.77B 参数的 CodeT5+，先在 MalS 上微调，即来自 GitHub 的 89,609 个恶意 C 源码函数，其摘要由大语言模型生成并经人工审阅完善，再在 Capybara 数据集带注释的良性伪代码上微调。作者还提出了包含 500 个伪代码函数的测试集 MalP 和微调 BLEURT 得到的评测指标 BLEURT-sum，并报告 MalT5 的表现与规模大得多的 Code Llama 模型相当。
+
+  IEEE Transactions on Information Forensics and Security 2025 · 期刊论文 · [PDF](https://arxiv.org/pdf/2406.18379v3) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-malsight/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练用摘要由大语言模型生成，再经五位专家审阅完善，并非从零开始人工撰写。MalP 的 500 个测试函数来自对同一批 GitHub 恶意代码仓库中 20 个仓库的编译与反编译，而非野外样本；作者也指出，过滤不够严格可能导致训练集与测试集重叠，从而使结果偏高。质量评估主要采用作者自行提出的 BLEURT-sum 指标。在十个真实恶意软件样本上（其中 79 个函数另由三名逆向工程人员评分），BLEURT-sum 比在 MalP 上低约 30%，作者将其归因于函数过长：15.8% 的函数超过 1,000 个词元，而大多数训练函数不足 300 个。该流程依赖 IDA Pro 伪代码，静态注释依赖在线代码搜索和通用大语言模型。MALSIGHT 用于概括行为，既不是恶意软件检测器，也不是分类器。
+
+  **作者:** Haolang Lu 等
 
   </details>
 
