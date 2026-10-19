@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 384](https://img.shields.io/badge/resources-384-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 385](https://img.shields.io/badge/resources-385-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (21) · [Game](#game) (172) · [App](#app) (58)
+- [Website](#website) (21) · [Game](#game) (173) · [App](#app) (58)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1232,6 +1232,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Statically recompiles PlayStation 2 games for the browser: eerecomp translates the Emotion Engine code of a game's boot executable into C++ that is compiled to WebAssembly, and a runtime emulates the rest of the console, including a high-level EE kernel, an interpreted I/O processor running the disc's IRX modules, the vector units, SPU2 sound and the Graphics Synthesizer on WebGPU compute shaders. Its port script repeats headless runs to find functions reached through pointers and vector-unit microprograms to compile ahead of time, then builds the web page and a native runner.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/ps2-web-recomp/)
+
+- [**xboxrecomp**](https://github.com/sp00nznet/xboxrecomp)
+
+  Static-recompilation toolkit for original Xbox games: a Python pipeline parses a retail XBE, disassembles it, classifies library functions, recovers calling conventions and lifts every x86 function to C. The generated code is compiled in a separate game project that links the toolkit's runtime libraries, which stand in for the Xbox kernel and translate Direct3D 8, NV2A, audio and input to Direct3D 11 and Win32 APIs, or to SDL2 and OpenGL on Linux and macOS.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/xboxrecomp/)
 
 <a id="app"></a>
 ### App
