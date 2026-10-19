@@ -4065,5 +4065,14 @@
       "CI 在 Windows、macOS arm64 和 Linux 上构建运行时并运行提升器测试套件与 C 单元测试，另在 lavapipe 上测试 Vulkan 后端；README 说明检查通过并不代表游戏能够运行。提升器一致性测试将单条指令生成的 C 代码与依据 PowerISA 推导的预期结果比对，回归门禁则在共享运行时变更合入前，将五个移植项目与记录下来的里程碑日志进行比较。",
       "采用 MIT 许可证；内置的 ATRAC3/ATRAC3plus 解码器取自 PPSSPP，保留 LGPL-2.1-or-later 许可。README 声明项目不含任何 Sony 代码、固件、密钥或受版权保护的材料，系统库模块依据公开记录的行为编写，RPCS3 仅作为行为参考而非代码来源。本目录未构建或运行该工具，也不代表任何游戏兼容性。"
     ]
+  },
+  "nebulafd": {
+    "name": "Nebula（NebulaFD）Clickteam Fusion 反编译器",
+    "requirements": [
+      "README 只是一个占位页面，自称仍在编写中，没有说明用法、构建步骤或支持的格式，因此本条目依据源码和发布说明撰写。最新发布版本 september_2026_update（2026-09-28，即所审阅的提交）列出了针对 Multimedia Fusion 1.5 文件和 Fusion 2.5 build 296 事件的修复以及实验性的 Android 支持，并说明主机导出器的检测在自定义导出器上会失效。",
+      "使用者需提供已编译的 Fusion 游戏：控制台会询问文件路径，再根据扩展名（EXE、APK、IPA、MFA、ZIP、ANM、TMP 或 GAM，其他文件按 CCN 数据读取）或使用者的选择确定读取器。MFA Parser 和 Asset Dumper 以 DLL 形式从程序的 Tools 文件夹加载，输出写入 Dumps 文件夹。",
+      "发布压缩包需要 .NET 6.0 Desktop Runtime，各项目的目标框架为 net6.0。仓库唯一的 GitHub 工作流在 Windows 上用 MSBuild 编译解决方案并把构建结果上传为制品，导出工具的生成后步骤使用 Windows 的 robocopy 命令；未说明支持其他平台。仓库中没有测试项目。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此未说明复用条款。README 致谢 Kostya 开发了图像库。所审阅资料未提及使用 REA，本目录未运行该工具，也未分析任何游戏。"
+    ]
   }
 }

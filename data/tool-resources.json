@@ -11066,5 +11066,36 @@
       "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/third_party/at3_standalone/README.txt",
       "https://github.com/sp00nznet/ps3recomp/releases/tag/v0.15.0"
     ]
+  },
+  {
+    "id": "nebulafd",
+    "name": "Nebula (NebulaFD)",
+    "url": "https://github.com/AITYunivers/NebulaFD",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Work-in-progress decompiler for games made with Clickteam Fusion 2.5, with fixes for older Multimedia Fusion 1.5 files. Its .NET console app reads Windows executables, Android APKs, iOS IPAs, CCN data files and existing MFA projects, then runs plug-in tools: an MFA Parser that writes the game back out as an editable Fusion project, and an Asset Dumper for images, sounds, music, fonts, icons, shaders and packed files.",
+    "description_zh": "面向 Clickteam Fusion 2.5 游戏的反编译器，仍在开发中，也针对更早的 Multimedia Fusion 1.5 文件做了修复。其 .NET 控制台程序可读取 Windows 可执行文件、Android APK、iOS IPA、CCN 数据文件以及现有的 MFA 项目，再运行插件式工具：MFA Parser 将游戏重新写成可编辑的 Fusion 项目，Asset Dumper 则导出图像、音效、音乐、字体、图标、着色器和打包文件。",
+    "evidence_url": "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/Nebula.CLI/Program.cs",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README is a placeholder that calls itself a work in progress and documents no usage, build steps or supported formats, so this record relies on the source code and release notes. The latest release, september_2026_update (2026-09-28, the reviewed commit), lists fixes for Multimedia Fusion 1.5 files and Fusion 2.5 build 296 events plus experimental Android support, and notes that console-exporter detection breaks with custom exporters.",
+      "Users supply a compiled Fusion game: the console asks for a file path and picks a reader from the extension (EXE, APK, IPA, MFA, ZIP, ANM, TMP or GAM, with other files read as CCN data) or from the user's choice. The MFA Parser and Asset Dumper load as DLLs from the program's Tools folder and write to a Dumps folder.",
+      "Release archives require the .NET 6.0 Desktop Runtime, and the projects target net6.0. The only GitHub workflow compiles the solution with MSBuild on Windows and uploads the build as an artifact, and the dumper's post-build step uses the Windows robocopy command; no other platform is documented. The repository contains no test project.",
+      "There is no license file and GitHub detects none, so reuse terms are not stated. The README credits Kostya for the image bank. Reviewed sources state no REA use, and this collection did not run the tool or analyze any game."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/README.md",
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/Nebula.Tools/GameDumper/MFAParser.cs",
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/Nebula.Tools/GameDumper/AssetDump.cs",
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/Nebula.Tools/GameDumper/GameDumper.csproj",
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/Nebula.CLI/Nebula.CLI.csproj",
+      "https://github.com/AITYunivers/NebulaFD/blob/a24d4d1da78c35412413faac750e07ff7d603a8a/.github/workflows/main.yml",
+      "https://github.com/AITYunivers/NebulaFD/releases/tag/september_2026_update"
+    ]
   }
 ]
