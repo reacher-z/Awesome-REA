@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 370](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-370-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 371](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-371-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (20) · [游戏](#game) (166) · [应用](#app) (54)
+- [网站](#website) (20) · [游戏](#game) (167) · [应用](#app) (54)
 - [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1191,6 +1191,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在匹配反编译项目自身的构建之外进行检查：用未打补丁的原版 ee-gcc 2.96 及汇编器重新编译其 C 代码，再逐函数与原程序逐字节比较，并按可能的工具链原因对每处差异分类。配套脚本可将 ELF 符号表导出为 CSV，并转换为 splat 符号文件。默认配置针对 Xenosaga Episode I；README 称方法可推广，默认配置则不能。
 
   工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-compat-kit/)
+
+- [**GB Recompiled Game Boy 静态重编译器**](https://github.com/arcanite24/gb-recompiled)
+
+  将 Game Boy 和 Game Boy Color ROM 转换为可移植 C 项目的静态重编译器：它解码并分析分 bank 的 LR35902 代码，生成 C 代码及机器可读的元数据，再与共享的 SDL2 运行时链接，由运行时处理视频、音频、输入、存档和硬件时序。静态分析未覆盖的跳转目标会回退到解释器执行。仓库还提供差分对比、回放以及画面和音频捕获工具，并附有一个 Pokémon Crystal 移植，借助对特定 ROM 的挂钩实现原生功能。
+
+  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/gb-recompiled/)
 
 <a id="app"></a>
 ### App · 应用

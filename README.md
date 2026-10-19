@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 370](https://img.shields.io/badge/resources-370-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 371](https://img.shields.io/badge/resources-371-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (166) · [App](#app) (54)
+- [Website](#website) (20) · [Game](#game) (167) · [App](#app) (54)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1190,6 +1190,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Checks a PS2 matching decompilation from outside its own build: the C is recompiled with a stock, unpatched ee-gcc 2.96 and assembler, then each function is byte-compared against the original and every difference is classified by its likely toolchain cause. Companion scripts export ELF symbol tables to CSV and convert them to splat symbol files. Defaults target Xenosaga Episode I; the README says the method generalises but the defaults do not.
 
   Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/decomp-compat-kit/)
+
+- [**GB Recompiled**](https://github.com/arcanite24/gb-recompiled)
+
+  Static recompiler that turns Game Boy and Game Boy Color ROMs into portable C projects: it decodes and analyzes banked LR35902 code, emits C with machine-readable metadata, and links it with a shared SDL2 runtime for video, audio, input, saves and hardware timing. Jump targets that static analysis missed fall back to an interpreter. The repository also carries differential, replay and frame and audio capture tooling, plus a Pokémon Crystal port that builds native features on hooks into the exact ROM.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/gb-recompiled/)
 
 <a id="app"></a>
 ### App
