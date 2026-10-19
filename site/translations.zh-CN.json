@@ -3467,5 +3467,14 @@
       "输入为分析者已有的 UEFI 固件镜像或单个 UEFI 驱动。wiki 的功能表将 SMM 服务和依赖关系图列为仅支持 64 位模块，PEI 服务仅支持 32 位。其加载器页面仍称只支持 64 位驱动，而 v6.3.0 的发布说明已为加载器加入 32 位模块支持；wiki 页面也仍链接到早先的 binarly-io 仓库。",
       "采用 GPL-3.0；ida-plugin.json 声明为 GPL-3.0-only。漏洞扫描结果只是供分析者复核的疑似问题，并非已确认的缺陷；作者在 Black Hat Europe 2020 和 EKO 2020 的发表材料介绍了相关方法。本次未分析任何固件。"
     ]
+  },
+  "vscode-frida": {
+    "name": "Frida Workbench VS Code 扩展",
+    "requirements": [
+      "审阅时最新版本为 v0.12.11，于 2026-09-29 以 .vsix 包发布，其标签即所审阅的 main 分支提交；package.json 要求 VS Code 1.94+。该扩展也以 CodeColorist 发布者名义上架 Visual Studio Marketplace。CHANGELOG.md 最新条目为 v0.12.8，此后的版本未在其中说明。",
+      "需要 Python 3.7+ 和 frida-tools 包；由于 PEP 668，README 建议使用工作区当前激活的虚拟环境，或通过 pipx、uv 安装。目标端需可用的 Frida 环境：在 Android 上扩展可下载并启动 frida-server；在 Windows 上通过 USB 访问 iOS 设备需保持 iTunes 打开；libimobiledevice 为打开 SSH Shell 的可选依赖，iOS Shell 需要越狱设备。",
+      "语言服务器会附加到 .vscode/frida.json 指定的运行中目标，该文件需包含 device 字段，并且 app、pid、process 三者恰好填写一个。Copilot 辅助的 Hook 生成依赖 GitHub Copilot，Objection 为可选的外部工具。用户需自备设备、应用和进程。",
+      "社区项目，与 Frida 官方团队无关联；采用 MIT 许可。本条目未附加任何设备或进程。"
+    ]
   }
 }

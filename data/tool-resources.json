@@ -8918,5 +8918,35 @@
       "https://plugins.hex-rays.com/binarly-io/efixplorer",
       "https://i.blackhat.com/eu-20/Wednesday/eu-20-Labunets-efiXplorer-Hunting-For-UEFI-Firmware-Vulnerabilities-At-Scale-With-Automated-Static-Analysis.pdf"
     ]
+  },
+  {
+    "id": "vscode-frida",
+    "name": "Frida Workbench for VSCode",
+    "url": "https://github.com/ChiChou/vscode-frida",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Unofficial Visual Studio Code extension for Frida work. A sidebar lists apps and processes on local, Apple Simulator, USB and remote devices to attach, spawn or kill, and runtime panels browse an attached process's native modules and exports and its Java and Objective-C classes, methods and protocols; selected items generate Interceptor, Objective-C or Java hook scaffolds, optionally with GitHub Copilot-inferred native signatures, and Objective-C headers or Java class stubs can be dumped. A language server completes class, selector and module names from a live target, and the extension also scaffolds Frida agent and C-module projects, script-debugging configurations, syslog streaming and Android frida-server setup.",
+    "description_zh": "非官方的 Visual Studio Code 扩展，用于 Frida 相关工作。侧边栏列出本地、Apple 模拟器、USB 和远程设备上的应用与进程，可附加、启动或结束它们；运行时面板可浏览已附加进程的原生模块与导出函数，以及 Java 和 Objective-C 的类、方法与协议，并根据所选项目生成 Interceptor、Objective-C 或 Java 的 Hook 代码框架（可选用 GitHub Copilot 推断原生函数签名），还能导出 Objective-C 头文件或 Java 类存根。语言服务器根据运行中的目标补全类名、选择器和模块名；扩展还提供 Frida agent 与 C 模块项目脚手架、脚本调试配置、系统日志流以及 Android frida-server 部署。",
+    "evidence_url": "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.12.11, published 2026-09-29 as a .vsix package, whose tag is the reviewed main commit; package.json requires VS Code 1.94+. The extension is also listed on the Visual Studio Marketplace under the CodeColorist publisher. CHANGELOG.md's newest entry is v0.12.8, so later releases are not described there.",
+      "Needs Python 3.7+ with the frida-tools package; because of PEP 668 the README recommends the workspace's active virtual environment, or pipx or uv. Targets need a working Frida setup: on Android the extension can download and start frida-server, iOS USB access from Windows needs iTunes kept open, libimobiledevice is optional for SSH shells, and iOS shells require a jailbroken device.",
+      "The language server attaches to the live target named in .vscode/frida.json, which needs a device and exactly one of app, pid or process. Copilot-assisted hook generation depends on GitHub Copilot, and Objection is an optional external tool. Users supply their own devices, apps and processes.",
+      "A community project, not affiliated with the Frida team; MIT-licensed. No device or process was attached for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/README.md#L13-L31",
+      "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/README.md#L76-L111",
+      "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/package.json",
+      "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/CHANGELOG.md",
+      "https://github.com/ChiChou/vscode-frida/blob/271aa369fbf8331047184766775a1f1b9332e13b/LICENSE",
+      "https://github.com/ChiChou/vscode-frida/releases/tag/v0.12.11"
+    ]
   }
 ]
