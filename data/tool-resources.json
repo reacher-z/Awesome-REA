@@ -10524,5 +10524,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "decompilation-wiki",
+    "name": "The Decompilation Wiki",
+    "url": "https://decompilation.wiki/",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Community wiki explaining how decompilers work, from disassembly, lifting and control-flow recovery to type recovery, control-flow structuring, quality evaluation and neural decompilation, citing the research behind each technique. It also keeps directories of decompilers, plugins, blogs and talks, pages on applied research such as symbol recovery, code similarity and vulnerability discovery, and a table of about 240 game reconstruction projects by original platform.",
+    "description_zh": "社区维护的维基，讲解反编译器如何工作，从反汇编、提升和控制流恢复，到类型恢复、控制流结构化、质量评估和神经反编译，并为各项技术注明研究出处。它还整理了反编译器、插件、博客和演讲目录，设有符号恢复、代码相似性和漏洞发现等应用研究页面，以及按原平台列出的约 240 个游戏重建项目表。",
+    "evidence_url": "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-15 main commit, from which a workflow builds the site with MkDocs Material and publishes it to GitHub Pages; reading needs only a browser. The README calls the wiki early in development: it has about 30 pages, several of them short, and the neural-decompilation page was last changed in September 2024, so newer LLM decompilation work needs separate checking.",
+      "Listings are compiled from contributions, not tested. The decompiler directory’s 23 rows note open-source, inactive, plugin and educational status, and the program-reconstruction table lists 241 games, 39 marked completed; project status, original-file requirements and rights must be checked at each linked source. Cited papers are gathered in a linked Google Sheets list kept outside the repository.",
+      "Changes arrive as GitHub pull requests: listing additions should give a description link, tags and a source link, while content changes to research areas need a citation or a reasoned argument. Local previews use Python and MkDocs.",
+      "The repository is BSD-2-Clause; linked papers, tools and projects keep their own terms. The wiki was started by Zion Leonahenahe Basque and is maintained with community contributions; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/mkdocs.yml",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/docs/contributing.md",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/docs/decompilers/directory.md",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/docs/applications/program-reconstruction.md",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/docs/fundamentals/neural-decompilation.md",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/.github/workflows/publish.yml",
+      "https://github.com/mahaloz/decompilation-wiki/blob/0133d7124ea65d0eb717ff9a01c01b28923d2ca2/LICENSE"
+    ]
   }
 ]
