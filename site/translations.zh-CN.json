@@ -3618,5 +3618,14 @@
       "调用方需提供代码字节，并选择 16、32 或 64 位机器模式；ZydisDisasm 读取原始字节文件。文档未描述可执行文件格式加载器，因此要在 PE、ELF 或固件镜像中定位代码需借助其他工具。",
       "MIT 许可证；Zycore 是 zyantific 的独立仓库，同样采用 MIT 许可证。README 中关于性能、无第三方依赖与无动态内存分配、线程安全、在 Windows、macOS、FreeBSD、Linux 和 UEFI 上测试以及被 x64dbg、Firefox 和 WebKit 采用的说法均未经测试；本次未解码或编码任何指令。"
     ]
+  },
+  "sony-pmca-re": {
+    "name": "Sony-PMCA-RE Sony 数码相机逆向工具",
+    "requirements": [
+      "审阅时最新版本为 v0.18，发布于 2022-04-08，提供 pmca-console 命令行工具和功能较少的 pmca-gui 的 Windows 与 macOS 版本。所审阅的 master 分支提交（2022-08-18）比该版本多 22 个提交。在 Linux 上需按所列依赖和 libusb 运行 Python 3 源码；CI 构建使用 Python 3.6 和 PyInstaller。",
+      "需要通过 USB 连接受支持的 Sony 相机；README 链接了外部的 OpenMemories 兼容机型列表。安装应用要求相机支持 PlayMemories Camera Apps。固件更新模式使用操作系统自带的大容量存储驱动，不适用于固件经过加密签名的 CXD90045 和 CXD90057 机型。服务模式仅限命令行使用，在 Windows 上需安装 libusb 驱动；macOS 上以大容量存储模式访问相机需安装 Sony 的相机驱动。",
+      "README 称该项目是基于逆向工程的早期实验，并警告可能损坏相机，开发者不承担任何责任。固件文件的解包由独立的 fwtool 项目负责，本次未审阅；其推荐的 OpenMemories 应用和框架也未审阅。",
+      "采用 MIT 许可。仓库中没有 Sony 固件或应用；updatershell/fdat 下预先构建的更新程序载荷由 pack.py 用项目自身的源码打包生成。本次未连接相机，也未运行任何程序。"
+    ]
   }
 }
