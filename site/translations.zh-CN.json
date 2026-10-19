@@ -3029,5 +3029,15 @@
       "README 的 AI 披露说明允许有 AI 参与的项目，并以 ⚠️ 标出；审阅时有 10 个条目带此标记。未带标记的条目不能视为确认没有 AI 参与。",
       "仓库只有 README.md，没有许可证文件或贡献指南，因此清单本身未声明复用条款；所链接的项目及其重建的游戏各自保留权利。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "fable-2-recomp-case": {
+    "name": "Fable 2 Recomp：以 ReXGlue 将 Fable II 静态重编译到 Windows",
+    "requirements": [
+      "审阅的是 2026-10-18 的最新提交；仓库创建于 2026-08-30，最新发布版为 v1.5.0（2026-10-11）。由早期 XenonRecomp 配置迁移而来的 fable_2_manifest.toml 驱动 rexglue codegen；README 称一次完整的干净构建会编译约 291 个生成的翻译单元，涵盖 60,462 个客体函数。README 的功能清单标明游戏可以通关，但作者尚未达成 100% 完成度，Vulkan、Linux 构建和更高分辨率支持仍未实现。",
+      "需提供来自自有 Fable II 年度版光盘的 default.xex 与 data 文件夹。默认的 goty-compatible 配置接受美版／欧版（README 列出其 ISO 的 SHA-256）和德版年度版，并按哈希拒绝其他 XEX 版本。README 称代码生成需要游戏内容，但这些内容从不随仓库发布。",
+      "仅支持 Windows。构建需 CMake 3.25+、LLVM clang 与 lld、Ninja、Python、Git，以及带 Windows SDK 的 Visual Studio Build Tools；build.cmd 会下载预构建的 ReXGlue SDK v0.10.0，并构建一份固定版本、打过补丁的 SDK 源码，该源码以指向作者 rexglue-sdk 分支的子模块形式跟踪。README 指出普通 MSVC 无法编译生成的代码。",
+      "仓库没有 CI 工作流。原生测试覆盖键盘到手柄的映射、帧率限制器和 XEX 校验，启动器另有配置测试；这些测试都不将移植版与主机版游戏比较。可玩性为作者报告，本合集未进行任何构建或运行。",
+      "MIT 适用于项目自有代码，ReXGlue SDK 分支带有 BSD 风格声明并包含源自 Xenia 的部分，游戏本身仍归其权利人所有。仓库提交了 17 个复制自重编译器输出的热点函数覆盖实现，其中多数经人工重构但保持客体语句顺序不变；发布版附带内含重编译游戏代码的预构建 Windows 可执行文件，v1.0.1 还包含生成源码的目标文件和 PDB。README 称最初的移植由 Qwen3.8 27b 完成；未记录 REA 的使用。"
+    ]
   }
 }

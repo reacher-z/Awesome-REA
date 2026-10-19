@@ -7355,5 +7355,40 @@
       "The README’s AI disclosure allows projects with AI involvement and marks them with ⚠️; 10 entries carried the mark at review. An unmarked entry should not be read as confirmation that no AI was involved.",
       "The repository holds only README.md, with no license file or contribution guide, so the list states no reuse terms; linked projects and the games they reconstruct keep their own rights. An independent discovery list; the reviewed source establishes no REA connection."
     ]
+  },
+  {
+    "id": "fable-2-recomp-case",
+    "name": "Fable 2 Recomp: a ReXGlue static recompilation of Fable II for Windows",
+    "url": "https://github.com/himdo/Fable-2-Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Translates the Xbox 360 executable of Fable II (title ID 4D5307F1) to C++ at build time with ReXGlue SDK v0.10.0 and builds a Windows port that runs on the user’s own disc files, adding a launcher with an ISO extractor, keyboard and mouse input, higher frame-rate limits and a Lua debug hook. README says the project began as a test of a local open model, Qwen3.8 27b, which got the game running in about an hour, before manual function mapping made it completable. Completion is the author’s report, and the author does not yet consider the port finished.",
+    "description_zh": "使用 ReXGlue SDK v0.10.0 在构建时将 Fable II（标题 ID 4D5307F1）的 Xbox 360 可执行文件转换为 C++，并构建一个使用玩家自有光盘文件运行的 Windows 移植版，另加入带 ISO 提取功能的启动器、键鼠输入、更高的帧率上限和 Lua 调试入口。README 称项目起初用于测试本地开源模型 Qwen3.8 27b，该模型约一小时便让游戏运行起来，之后经人工映射函数才使游戏可以通关。通关为作者报告的结果，作者也尚不认为移植已经完成。",
+    "evidence_url": "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-18 head; the repository was created on 2026-08-30, and v1.5.0 (2026-10-11) is the latest release. fable_2_manifest.toml, migrated from an earlier XenonRecomp configuration, drives rexglue codegen, and README says a clean build compiles about 291 generated translation units covering 60,462 guest functions. The README checklist marks the game beatable, but the author has not completed it 100%, and Vulkan, Linux builds and higher-resolution support remain open.",
+      "Supply default.xex and the data folder from your own Fable II Game of the Year disc. The default goty-compatible profile accepts the USA/Europe release, whose ISO SHA-256 README lists, and the German GOTY, and rejects other XEX revisions by hash. README says game content is required for code generation and is never published with the repository.",
+      "Windows only. Builds need CMake 3.25+, LLVM clang and lld, Ninja, Python, Git and Visual Studio Build Tools with the Windows SDK; build.cmd downloads the prebuilt ReXGlue SDK v0.10.0 and builds a pinned, patched SDK source, tracked as a submodule pointing to the author’s rexglue-sdk fork. README notes that plain MSVC cannot compile the generated code.",
+      "There is no CI workflow. Native tests cover keyboard-to-gamepad mapping, the frame limiter and XEX verification, and the launcher has configuration tests; none compares the port with the console game. Playability is the author’s report, and this collection built or ran nothing.",
+      "MIT covers the project’s own code, the ReXGlue SDK fork carries its BSD-style notice with Xenia-derived portions, and the game keeps its owners’ rights. The repository commits 17 hot-function overrides copied from recompiler output, most restructured by hand with guest statements kept in order, and releases ship prebuilt Windows executables that contain the recompiled game code; v1.0.1 also included generated-source object files and a PDB. README credits Qwen3.8 27b for the initial port; no REA use is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/docs/hotfunc_overrides.md",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/src/core/hotfunc/frame/ProcessGameFrame_82276C30.cpp",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/docs/GERMAN_GOTY_SUPPORT.md",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/fable_2_manifest.toml",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/.gitmodules",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/.gitignore",
+      "https://github.com/himdo/Fable-2-Recomp/blob/7b667e2eb05e522560c962ebb2df6678af9c60ed/LICENSE",
+      "https://github.com/himdo/rexglue-sdk/blob/92ddff153f98b9bdd385bbf72cf0dca9a7cda4b3/LICENSE",
+      "https://github.com/himdo/Fable-2-Recomp/releases/tag/1.5.0",
+      "https://github.com/himdo/Fable-2-Recomp/releases/tag/1.0.1"
+    ]
   }
 ]
