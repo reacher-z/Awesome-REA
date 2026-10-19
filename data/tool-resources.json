@@ -7547,5 +7547,39 @@
       "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/LICENSE",
       "https://pypi.org/project/avatar2/1.4.7/"
     ]
+  },
+  {
+    "id": "cwe-checker",
+    "name": "cwe_checker",
+    "url": "https://github.com/fkie-cad/cwe_checker",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Static analyzer from Fraunhofer FKIE that searches binary executables, mainly Linux and Unix ELF files, for code paths matching Common Weakness Enumeration bug classes such as buffer overflows, use-after-free and double free, NULL pointer dereferences, format strings and integer overflows. Ghidra disassembles the binary into a common intermediate representation on which its checks run, from simple heuristics to abstract-interpretation data-flow analysis, so it covers the CPU architectures Ghidra supports, including x86, ARM, MIPS and PowerPC. Warnings are printed as text or JSON, and a bundled Ghidra script annotates them in the disassembly for manual review.",
+    "description_zh": "Fraunhofer FKIE 开发的静态分析工具，在二进制可执行文件（主要是 Linux 和 Unix 的 ELF 文件）中查找符合通用缺陷枚举（CWE）漏洞类别的代码路径，例如缓冲区溢出、释放后使用与重复释放、空指针解引用、格式化字符串和整数溢出。它先由 Ghidra 把二进制反汇编为统一的中间表示，再在其上运行从简单启发式到基于抽象解释的数据流分析等各类检查，因此适用于 Ghidra 支持的 CPU 架构，包括 x86、ARM、MIPS 和 PowerPC。告警以文本或 JSON 输出，随附的 Ghidra 脚本可把告警标注在反汇编中，便于人工复核。",
+    "evidence_url": "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest stable release at review: v0.9, published 2024-08-20 as a source release. Prebuilt Docker images on the GitHub container registry are tagged latest (master), stable and v0.9 and are x86 only, although the image can be built natively on ARM. The reviewed master commit is 97 commits after v0.9; CHANGES.md labels it 0.10-dev, with a rewritten P-Code extractor and support for more architectures through a Ghidra update, while the crate manifests still say 0.9.0 and the online documentation covers the stable version.",
+      "Local builds need Rust 1.82+ and a Ghidra 10.2+ installation, which make all locates when GHIDRA_PATH is omitted; the Docker image builds on a Ghidra 11.2.1 headless base, and a Nix flake is also provided. Checks are tuned through src/config.json. Analysis of Linux loadable kernel modules, which runs a subset of the checks with its own configuration, and of bare-metal binaries, which needs a per-device configuration such as the bundled STM32F407VG example, is experimental.",
+      "Each run takes one binary supplied by the user. The README warns that both false positives and false negatives are to be expected and keeps the CWE-78 OS command injection check disabled on standard runs, so warnings mark code paths for manual review rather than confirmed vulnerabilities. It is also integrated as a plugin in FACT.",
+      "LGPL-3.0; the README notice allows version 3 or later. Nothing was built and no binaries were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/README.md#L35-L97",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/README.md#L105-L140",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/CHANGES.md",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/Dockerfile",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/src/caller/Cargo.toml",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/bare_metal/stm32f407vg.json",
+      "https://github.com/fkie-cad/cwe_checker/blob/7288311bbf9d2d1111434f8c07617ce580b9c8c0/LICENSE",
+      "https://github.com/fkie-cad/cwe_checker/releases/tag/v0.9",
+      "https://docs.cwe-checker.io/index.html"
+    ]
   }
 ]
