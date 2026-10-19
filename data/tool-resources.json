@@ -10849,5 +10849,46 @@
       "https://github.com/Vector35/binaryninja-api/blob/14d46ea2a46330b0b6abbea8dcb620f84494fc8b/docs/dev/mcp-tools.md",
       "https://github.com/Vector35/binaryninja-api/releases/tag/stable/6.0.10601"
     ]
+  },
+  {
+    "id": "openrw-gta3-engine-case",
+    "name": "OpenRW: an open re-implementation of the Grand Theft Auto III engine",
+    "url": "https://github.com/rwengine/openrw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements Rockstar Games’ Grand Theft Auto III (2001) as a cross-platform C++ engine that runs on the data of a legitimate PC copy. It has its own loaders for the game’s RenderWare models, textures and archives, a script machine for the original mission scripts, and an optional Qt data viewer. Playability is partial: the project’s mission tracker marks six early Portland story missions as completable.",
+    "description_zh": "以跨平台 C++ 引擎重新实现 Rockstar Games 的《侠盗猎车手 III》（2001），在正版 PC 游戏的数据上运行。项目自行实现了游戏 RenderWare 模型、纹理和归档的加载器，提供执行原版任务脚本的脚本机，并附带可选的 Qt 数据查看器。可玩程度有限：项目的任务追踪清单只将波特兰的六个早期剧情任务标为可完成。",
+    "evidence_url": "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main snapshot dates from 2025-06-18; the repository has no tagged releases and the wiki says there are no official builds, so OpenRW is built from source. The playable-missions tracker (issue #52, last updated 2024-07-24) checks six story missions, all in Portland, and notes missing AI, broken cutscenes or unimplemented opcodes for many others; the FAQ says Vice City and San Andreas are not supported yet. The reviewed sources do not describe how the original executable was analysed.",
+      "README requires a legitimate copy of the original PC game, and the FAQ says the original assets cannot be distributed; the repository contains no game data. rwgame reads the game directory set in its openrw.ini configuration file, and the optional rwviewer opens objects and models from the same data.",
+      "Builds use CMake 3.8+ and a C++17 compiler against Boost (program_options and system, plus unit_test_framework for tests), OpenAL, Bullet, GLM, FFmpeg, SDL2 and OpenGL, with FreeType for the tools and Qt 5 for the viewer; Conan is an optional package manager. The FAQ names C++17 and OpenGL 3.3 Core as hard requirements, and README reports ports to Linux, macOS, Windows and several BSDs.",
+      "GitHub Actions jobs on Arch Linux, Fedora and Ubuntu and an AppVeyor Visual Studio 2017 job run a CTest script that builds the code and its Boost.Test unit suite; tests that need game data sit behind the TEST_DATA option, which that script does not enable. No comparison with the original executable is published, and this collection did not build or run OpenRW.",
+      "README applies GPL-3.0-or-later and lists FFmpeg (LGPL-2.1 or later), Bullet and SDL 2.0 (zlib) as third-party licences; the microprofile and imgui submodules are separate projects, and the game’s own assets keep their rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/CMakeLists.txt",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/cmake_options.cmake",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/cmake_configure.cmake",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/conanfile.py",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/.gitmodules",
+      "https://github.com/rwengine/openrw/tree/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/rwcore/loaders",
+      "https://github.com/rwengine/openrw/tree/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/rwengine/src/script",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/tests/CMakeLists.txt",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/.github/workflows/build-and-test.yml",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/.appveyor.yml",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/cmake/ctest/build.ctest",
+      "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/COPYING",
+      "https://github.com/rwengine/openrw/issues/52",
+      "https://github.com/rwengine/openrw/wiki/FAQ",
+      "https://github.com/rwengine/openrw/wiki/Getting-Started",
+      "https://github.com/rwengine/openrw/wiki/Configuration"
+    ]
   }
 ]

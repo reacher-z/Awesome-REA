@@ -4007,5 +4007,15 @@
       "CMakeLists.txt 要求 CMake 3.28+、64 位 C++20 工具链以及 Python 3.12+ 解释器。UI 插件需要 Qt 6.8.2，README 建议使用官方安装程序或 Vector 35 的 Qt 构建，而不要使用 Homebrew 版本；-DHEADLESS=ON 可跳过 UI 插件。Rust crate 声明 rust-version 为 1.98.1。",
       "大部分 API 和文档采用 MIT 许可，Rust API 采用 Apache-2.0；部分组件附有各自的许可证文件，贡献代码需签署 Vector 35 的 CLA。这些许可证仅覆盖 API 层，并不意味着 Binary Ninja 是开源软件。该仓库的问题追踪器同时服务于整个产品。本次未构建任何插件，也未分析任何二进制。"
     ]
+  },
+  "openrw-gta3-engine-case": {
+    "name": "OpenRW：《侠盗猎车手 III》引擎的开源重新实现",
+    "requirements": [
+      "所审阅的 main 快照日期为 2025-06-18；仓库没有带标签的发行版，wiki 也说明没有官方构建，因此需从源码构建 OpenRW。可玩任务追踪清单（issue #52，最后更新于 2024-07-24）勾选了六个剧情任务，全部位于波特兰，其余许多任务标注了缺少 AI、过场动画异常或操作码未实现等问题；FAQ 说明尚不支持《罪恶都市》和《圣安地列斯》。所审来源未说明如何分析原版可执行文件。",
+      "README 要求使用原版 PC 游戏的正版副本，FAQ 说明项目不能分发原版素材；仓库不含任何游戏数据。rwgame 读取其 openrw.ini 配置文件中设定的游戏目录，可选的 rwviewer 也从同一份数据中打开物体和模型。",
+      "需使用 CMake 3.8+ 与 C++17 编译器构建，依赖 Boost（program_options 与 system，测试另需 unit_test_framework）、OpenAL、Bullet、GLM、FFmpeg、SDL2 和 OpenGL；工具需要 FreeType，查看器需要 Qt 5，Conan 为可选的包管理器。FAQ 将 C++17 和 OpenGL 3.3 Core 列为硬性要求，README 称已移植到 Linux、macOS、Windows 及多种 BSD。",
+      "Arch Linux、Fedora、Ubuntu 上的 GitHub Actions 任务和一个 AppVeyor Visual Studio 2017 任务运行 CTest 脚本，构建代码及其 Boost.Test 单元测试套件；需要游戏数据的测试受 TEST_DATA 选项控制，而该脚本并未启用。项目未公布与原版可执行文件的对比，本合集也未构建或运行 OpenRW。",
+      "README 声明采用 GPL-3.0-or-later，并列出 FFmpeg（LGPL-2.1 或更高版本）、Bullet 和 SDL 2.0（zlib）等第三方许可；microprofile 与 imgui 子模块是独立项目，游戏本身的素材保留各自权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
