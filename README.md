@@ -2151,7 +2151,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**80 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**80 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2172,14 +2172,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Compares human and LLM-agent understanding and navigation on the same static reverse-engineering challenges, then studies how binary representations consume context windows.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2610.14960) · [Full entry & citation](https://awesomerea.org/papers/paper-humans-machines-sre/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2610.14960) · [Full entry & citation](https://awesomerea.org/papers/paper-humans-machines-sre/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Understanding is graded on two compact challenges; the separate 4,000-binary study measures context capacity, not task-solving accuracy. The interface is static IDA/MCP without dynamic execution, and prior exposure to challenge source remains an acknowledged validity threat.
 
-  **Publication:** 2026 · arXiv · Preprint · Samuele Doria et al.
+  **Authors:** Samuele Doria et al.
 
   </details>
 
@@ -2187,14 +2187,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Introduces SRE-Bench, with privately authored programs and protected binary variants, to study agent recovery of program semantics while reducing training-data contamination.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2608.11469) · [Full entry & citation](https://awesomerea.org/papers/paper-sre-bench/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2608.11469) · [Full entry & citation](https://awesomerea.org/papers/paper-sre-bench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The revised study reports 19 programs, 262 binary instances, and 1,572 graded tasks. Binaries and task instances are not publicly released; access is through an evaluation service. Its contamination-control claim is the authors' methodology, not an independent guarantee.
 
-  **Publication:** 2026 · arXiv · Preprint · Jeremy Spence et al.
+  **Authors:** Jeremy Spence et al.
 
   </details>
 
@@ -2202,14 +2202,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates agents on executable-checked CrackMe tasks: infer validation logic from binaries and submit an accepted input or artifact, while recording tool use, time, and scoring attempts.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2605.10597) · [Full entry & citation](https://awesomerea.org/papers/paper-crackmebench/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2605.10597) · [Full entry & citation](https://awesomerea.org/papers/paper-crackmebench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The v0 study uses 12 generated tasks and eight public calibration tasks, Linux x86-64 ELF binaries, a shell interface, and a five-minute budget. Its compact educational tasks do not establish performance on large applications. No paper-linked public artifact URL was verified.
 
-  **Publication:** 2026 · arXiv · Preprint · Isaac David et al.
+  **Authors:** Isaac David et al.
 
   </details>
 
@@ -2217,14 +2217,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Runs Claude Code, Codex CLI and ChatGPT-5.2 Pro on 24 crackme-style challenges selected from 15 international CTF events held in 2025, and attributes their failures to stages of an Observe–Comprehend–Plan loop and to three protection effects: concealment, complication and misdirection. From the failure logs, the authors derive four recurring weaknesses (training bias, over-trust in observations, context limitation and plan persistence). They rerun both CLI agents without a decompiler and compare outcomes with in-competition solve rates.
 
-  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-resistant-protection/)
+  Workshop on Binary Analysis Research (BAR) 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2026-58.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-resistant-protection/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The study covers 24 locally solvable Linux x86-64 ELF crackmes and three commercial agents (Claude Opus 4.5 and GPT-5.1-Codex-Max in the CLI tools, and an undisclosed ChatGPT model), evaluated in December 2025 with network access; runs that consulted public write-ups were excluded. The binaries are small relative to real-world software, and malware analysis and vulnerability discovery are out of scope. Each configuration had at most three attempts with early stopping, which the authors call noisy; success means printing the correct flag or finding an accepted input. Weakness labels come from qualitative log analysis by two evaluators and describe these runs, not general properties of LLM agents. ChatGPT-5.2 Pro ran in an uncontrolled web sandbox and is excluded from the decompiler comparison. Solve rates are among teams that solved at least one challenge, unavailable for six tasks, and may include LLM-assisted teams. Training-data exposure remains a validity threat, and the paper does not publish its assembled challenge set, run logs or code.
 
-  **Publication:** 2026 · Workshop on Binary Analysis Research (BAR) 2026 · Conference paper · Ryutaro Nishizaka et al.
+  **Authors:** Ryutaro Nishizaka et al.
 
   </details>
 
@@ -2232,14 +2232,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates black-box program reconstruction across 200 tasks: agents query an executable and read its documentation, then independently implement a codebase whose behavior is checked by generated tests.
 
-  2026 · Accepted · [PDF](https://arxiv.org/pdf/2605.03546v1) · [Code](https://github.com/facebookresearch/ProgramBench) · [Full entry & citation](https://awesomerea.org/papers/paper-programbench/)
+  NeurIPS 2026 · Accepted · [PDF](https://arxiv.org/pdf/2605.03546v1) · [Code](https://github.com/facebookresearch/ProgramBench) · [Full entry & citation](https://awesomerea.org/papers/paper-programbench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Binary inspection, decompilation, and internet access are forbidden during inference. Passing finite tests does not prove complete behavioral equivalence or recovery of the original source. Later live-leaderboard runs are separate from the reviewed arXiv results.
 
-  **Publication:** 2026 · NeurIPS 2026 · Accepted · John Yang et al.
+  **Authors:** John Yang et al.
 
   </details>
 
@@ -2247,14 +2247,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Studies how human analysts work with LLM assistance during static software reverse engineering. A survey of 153 practitioners informed six LLM features built into an instrumented IDA Pro plugin. Then 48 participants (24 self-reported novices and 24 experts) analyzed two CTF-style binaries, with the features enabled on one randomly assigned challenge. From graded writeups, interaction logs and surveys, the authors report 18 findings: novice understanding rose by about 98% to expert levels while experts gained little, known-algorithm functions were triaged up to 2.4× faster, and artifact recovery rose by at least 66%, alongside harmful hallucinations.
 
-  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf) · [Code](https://github.com/mahaloz/dec-synergy-study) · [Full entry & citation](https://awesomerea.org/papers/paper-decompiling-synergy/)
+  NDSS 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf) · [Code](https://github.com/mahaloz/dec-synergy-study) · [Full entry & citation](https://awesomerea.org/papers/paper-decompiling-synergy/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** A human study of LLM-assisted analysis, not an evaluation of autonomous agents or of LLM decompilation accuracy. It uses two unobfuscated C challenges of 26 functions each, static analysis in IDA Pro only (no debuggers or symbolic execution), researcher-written prompts, and a choice of GPT-4o, GPT-4o-Mini, GPT-4-Turbo, Claude-3-5-Sonnet or Gemini-Pro. The 2024–2025 sessions retain 48 of 51 participants; expertise is self-reported, and understanding is a rubric score of writeups graded by two researchers. LLM-created artifacts were not correlated with better understanding, and three LLM users reported a nonexistent buffer overflow that an LLM had suggested; the vulnerability-finding feature was negatively correlated with understanding. Individual observations, writeups and survey responses are not released, even on request; aggregated data is available only on request.
 
-  **Publication:** 2026 · NDSS 2026 · Conference paper · Zion Leonahenahe Basque et al.
+  **Authors:** Zion Leonahenahe Basque et al.
 
   </details>
 
@@ -2262,14 +2262,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Benchmarks cryptographic binary reverse engineering across algorithm recognition, key or IV extraction, wrapper reconstruction, and flag recovery using 432 controlled challenges.
 
-  2026 · Conference paper · [PDF](https://arxiv.org/pdf/2604.03750v2) · [Code](https://github.com/wangyu-ovo/CREBench) · [Full entry & citation](https://awesomerea.org/papers/paper-crebench/)
+  COLM 2026 · Conference paper · [PDF](https://arxiv.org/pdf/2604.03750v2) · [Code](https://github.com/wangyu-ovo/CREBench) · [Full entry & citation](https://awesomerea.org/papers/paper-crebench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The corpus combines 48 algorithms, three insecure key-use scenarios, and three difficulty levels. It excludes professional-grade obfuscators such as Tigress and O-LLVM; results should not be generalized to heavily protected arbitrary binaries.
 
-  **Publication:** 2026 · COLM 2026 · Conference paper · Baicheng Chen et al.
+  **Authors:** Baicheng Chen et al.
 
   </details>
 
@@ -2277,14 +2277,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   EnIGMA extends SWE-agent for capture-the-flag challenges with interactive agent tools that keep a gdb debugging session or a pwntools server connection open across turns, alongside decompile and disassemble commands, an LM summarizer for long outputs, and category-specific demonstrations and guidelines. It is evaluated with four LMs on 390 challenges from NYU CTF, InterCode-CTF, Cybench and a HackTheBox set the authors collected. The paper ablates tools, summarizers and demonstrations, and analyzes solution leakage and “soliloquizing”, where the model writes its own observations instead of acting in the environment.
 
-  2025 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v267/main/assets/abramovich25a/abramovich25a.pdf) · [Code](https://github.com/SWE-agent/SWE-agent/tree/v0.7) · [Full entry & citation](https://awesomerea.org/papers/paper-enigma/)
+  ICML 2025 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v267/main/assets/abramovich25a/abramovich25a.pdf) · [Code](https://github.com/SWE-agent/SWE-agent/tree/v0.7) · [Full entry & citation](https://awesomerea.org/papers/paper-enigma/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The benchmarks mix cryptography, forensics, pwn, reverse engineering, web and miscellaneous tasks (104 of the 390 are reverse engineering), so aggregate solve rates such as 13.5% on NYU CTF are not reverse-engineering accuracy. The per-category table reports 17.65% on NYU CTF’s 51 reverse-engineering challenges with Claude 3.5 Sonnet. Results are pass<span>@</span>1 with a <span>$</span>3 per-instance cost cap and 2024 models (GPT-4 Turbo, GPT-4o, Claude 3.5 Sonnet and LLaMA 3.1 405B Instruct); the NYU CTF baseline comparison uses pass<span>@</span>5. Many challenges have public write-ups, and the authors’ leakage and soliloquy measures are heuristics; on 21 later CSAW 2024 challenges the best configurations solved 2. Solving a CTF shows a captured flag, not recovered program structure or source.
 
-  **Publication:** 2025 · ICML 2025 · Conference paper · Talor Abramovich et al.
+  **Authors:** Talor Abramovich et al.
 
   </details>
 
@@ -2297,14 +2297,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   A systematization-of-knowledge survey of machine-learning, LLM and agentic approaches to binary reversing. Version 2 collects 246 papers published since 2015, found through keyword searches of 11 security, software-engineering and AI venues plus citation snowballing, and organizes them into 22 domains by inference task: from code-boundary detection and recovery of function names, types and struct layouts to code similarity, malware and vulnerability analysis, and decompilation. Its taxonomy links conventional triage, static, dynamic and security-testing analyses to AI pipelines through the binary-derived artifacts they exchange, and it derives 12 insights and open directions such as binary-aligned ground truth and goal-driven agentic reversing.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry & citation](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2606.17398v2) · [Full entry & citation](https://awesomerea.org/papers/paper-sok-ai-binary-reversing/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** A literature systematization with no new experiments, benchmark or tool; it classifies and summarizes reported results without reproducing them. The corpus covers papers available up to July 31, 2026, applies citation thresholds that fall from 12 for 2015–2016 papers to 2 for 2025–2026 papers, excludes methods that need source code at inference time, and leaves out Android and interpreted-language bytecode. Detailed per-stage tables draw on 88 top-venue studies rather than the full corpus. It is an arXiv preprint with no stated venue, and this record makes no claim of peer review. Papers it cites are not thereby part of this collection; each needs its own review.
 
-  **Publication:** 2026 · arXiv · Preprint · Yujeong Kwon et al.
+  **Authors:** Yujeong Kwon et al.
 
   </details>
 
@@ -2312,14 +2312,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Splits LLM decompilation into two phases: a Structure Recovery model turns decompiler pseudocode into an identifier-free IR that keeps control flow and data structures, trained with compiler-based RL rewards, and an Identifier Naming model then restores names under a semantic-similarity reward. The authors report a 21.6% average re-executability gain over GPT-5-mini on HumanEval and a 29.4% average R2I improvement over Idioms on GitHub2025.
 
-  2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [Code](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-sk2decompile/)
+  ICLR 2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/9132583dd869acb0cafeb0ed25eb031a-Paper-Conference.pdf) · [Code](https://github.com/albertan017/LLM4Decompile/tree/85b364bf093eb2ee4f3687cfe38a203fca89f23e/sk2decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-sk2decompile/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Training and main evaluation use function-level C compiled for x86-64 Linux with GCC and Clang at -O0 to -O3, with IDA Pro pseudocode as model input. Re-executability is measured only on HumanEval and MBPP; ExeBench and GitHub2025 use R2I readability and a GPT-5-mini judge. Appendix experiments extend to BringUpBench projects, macOS arm64 and Windows MSVC builds, and Obfuscator-LLVM, but the models are trained on C only and the paper expects them to degrade on features without C equivalents, such as C++ templates.
 
-  **Publication:** 2026 · ICLR 2026 · Conference paper · Hanzhuo Tan et al.
+  **Authors:** Hanzhuo Tan et al.
 
   </details>
 
@@ -2327,14 +2327,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Idioms fine-tunes code language models to turn Hex-Rays output for one target function into predicted original C together with definitions of the user-defined structs, unions and typedefs it uses. Input can include neighboring decompiled functions in breadth-first call-graph order, so evidence about a type scattered across callers and callees reaches the model. The authors also build Realtype, 157,163 functions from compiled open-source C repositories with full type definitions. Their CodeGemma-7b-based model passes ExeBench unit tests for 54.4% of functions versus 46.3% for LLM4Decompile and 37.5% for Nova, and scores at least 95% higher on Realtype.
 
-  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [Code](https://github.com/squaresLab/idioms) · [Full entry & citation](https://awesomerea.org/papers/paper-idioms/)
+  NDSS 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [Code](https://github.com/squaresLab/idioms) · [Full entry & citation](https://awesomerea.org/papers/paper-idioms/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** This is local, function-level neural decompilation: each prediction covers one target function and its type definitions, not a compilable whole program. Evaluation uses x86-64 Linux gcc binaries from open-source GitHub projects and ExeBench’s “real” subset; O1–O3 builds disable inlining, and keeping only functions that decompiled at every level removes 21% of the Hex-Rays and 76% of the Ghidra test sets. ExeBench unit tests are an optimistic proxy; Realtype has no tests, so dependency-graph equivalence and exact name and type matches serve as conservative proxies, and a Realtype user-defined type counts as correct only if all of its fields, 17.6 on average when counted recursively, match. The main models use proprietary Hex-Rays output and context windows of 2,048 or 4,096 tokens. Predicted names and types are statistical, not recovered originals. Pretraining leakage from GitHub remains possible, and obfuscated code and malware were not evaluated.
 
-  **Publication:** 2026 · NDSS 2026 · Conference paper · Luke Dramko et al.
+  **Authors:** Luke Dramko et al.
 
   </details>
 
@@ -2342,14 +2342,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   FidelityGPT post-processes existing decompiler output: an LLM labels lines with six distortion types, such as non-conventional dereferencing, redundant variables and confusing control flow, and then rewrites the labeled lines. Its prompts define the distortion types and add retrieval-augmented context from a manually annotated database of distorted IDA Pro and Ghidra lines. A semantic-intensity algorithm chooses which lines to query, and a variable-dependency analysis carries redundant-variable context across 50-line chunks. On 620 function pairs, the authors report 89% detection accuracy and 83% precision, and correction fix rates of 94% (FR) and 64% (CFR) against 83% and 37% for their DeGPT runs.
 
-  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [Code](https://github.com/ZhouZhiping045/FidelityGPT) · [Full entry & citation](https://awesomerea.org/papers/paper-fidelitygpt/)
+  NDSS 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [Code](https://github.com/ZhouZhiping045/FidelityGPT) · [Full entry & citation](https://awesomerea.org/papers/paper-fidelitygpt/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The 620 pairs are mostly -O0 IDA Pro 7.5 functions sampled from Coreutils, curl, ImageMagick, OpenSSL, PuTTY and SQLite builds in a binary-similarity dataset, across ARM-32, MIPS-32 and x86-32, plus x86-64 TheAlgorithms/C code; separate -O1–-O3 and Ghidra sets test generalization. Ground-truth labels and FR/CFR were assessed manually by the author team against the paper’s criteria. Fix rates count lines marked as fixed and are not semantic-equivalence proofs: the authors note that repaired code often cannot be recompiled or executed. Correction runs on whole functions and may degrade on long ones, and the distortion database, built from 150 IDA Pro and 91 Ghidra lines, may miss rarer anomalies. Main results use GPT-4o at temperature 0.5 and remain stochastic; DeepSeek-chat and temperature-0 runs are reported separately. Training-data exposure of the open-source projects cannot be ruled out.
 
-  **Publication:** 2026 · NDSS 2026 · Conference paper · Zhiping Zhou et al.
+  **Authors:** Zhiping Zhou et al.
 
   </details>
 
@@ -2357,14 +2357,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   BinMetric poses 1,000 questions across six binary-analysis tasks: call-site reconstruction, decompilation, signature recovery, binary code summarization, algorithm classification and assembly instruction generation. The questions come from 20 open-source C projects compiled for x86-64, stripped and processed with IDA Pro, and aligned with source code through DWARF information. The authors evaluate 12 LLMs from five model families with one-shot prompts, alongside IDA Pro’s decompiler, LLM4Decompile, BinT5 and HexT5 where those apply.
 
-  2025 · Conference paper · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-binmetric/)
+  IJCAI 2025 · Conference paper · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-binmetric/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Scores are question-level metrics on isolated snippets, not end-to-end reverse-engineering workflows or agentic tool use. Preprocessing requires IDA Pro, and all binaries are x86-64 builds with each project’s default compiler settings on Ubuntu 22.04; other architectures, optimization sweeps and obfuscation are not studied. Most tasks score text overlap with Rouge-L, BLEU, METEOR or CodeBLEU, so they do not test semantic equivalence; only assembly generation checks compilation and test-case execution, where the average execution pass rate is below 1%. Summary labels were generated by ChatGPT and then manually reviewed, and algorithm classification uses 80 snippets from a single algorithms project. Leakage screening relied on exact-match web searches. The evaluated models predate 2025 (including gpt-3.5-turbo-16k-0613 and gpt-4-0613) and ran with a maximum length of 8,192 tokens, so the rankings are historical.
 
-  **Publication:** 2025 · IJCAI 2025 · Conference paper · Xiuwei Shang et al.
+  **Authors:** Xiuwei Shang et al.
 
   </details>
 
@@ -2372,14 +2372,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates traditional and LLM-based decompilers using functions from real programs, runtime behavioral checks, and an LLM-assisted assessment of analyst-facing code understandability.
 
-  2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-acl.1194.pdf) · [Code](https://github.com/vul337/DecompileBench) · [Full entry & citation](https://awesomerea.org/papers/paper-decompilebench/)
+  Findings of ACL 2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-acl.1194.pdf) · [Code](https://github.com/vul337/DecompileBench) · [Full entry & citation](https://awesomerea.org/papers/paper-decompilebench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The evaluated corpus has 23,400 functions from 130 programs. Fuzzing-based checks have finite coverage, and understandability scores depend partly on an LLM judge. The artifact warns that rebuilt OSS-Fuzz projects can differ from the paper's versions.
 
-  **Publication:** 2025 · Findings of ACL 2025 · Conference paper · Zeyu Gao et al.
+  **Authors:** Zeyu Gao et al.
 
   </details>
 
@@ -2387,14 +2387,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   DecLLM repairs decompiler pseudocode that does not recompile into C that compiles and runs, so source-level tools such as CodeQL can be applied to binaries. An iterative loop feeds compiler errors to an off-the-shelf LLM, reverting illegal outputs and large deletions, then uses mismatched test outputs and AddressSanitizer reports from the rebuilt program to repair behavior, and finally fuzzes the original and rebuilt executables for divergences. With GPT-3.5 and GPT-4 the authors report 74% and 78.3% success on 300 Code Contest programs; on Coreutils and CGC binaries, 61.9–70.9% recompile and 48.1–59.0% are fully functional.
 
-  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [Full entry & citation](https://awesomerea.org/papers/paper-decllm/)
+  Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [Full entry & citation](https://awesomerea.org/papers/paper-decllm/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** On Code Contest, success means the repaired code compiles and the rebuilt executable passes the supplied test cases, with AFL++ fuzzing as an extra check; the Coreutils and CGC overall rates also count rebuilt binaries that malfunction or crash. This establishes compilability and test-based agreement, not semantic equivalence, which the authors note is undecidable. Results depend on IDA Pro 8.3 output, with one Ghidra 10.4 repetition, and on the API-served gpt-3.5-turbo-0613 and gpt-4-0314 snapshots with a 4,096-token limit, so programs were chosen to fit within half of it. The 300 Code Contest programs average 112.9 lines; Coreutils 9.5 and CGC binaries were compiled without stripping symbols and repaired function by function, which cannot infer undefined globals. Around 30% of hard cases still fail, mainly from decompiler address/data confusion, ill-inferred buffer sizes, long outputs that include STL code and LLM type-cast shortcuts; deviations not exercised by tests remain undetected. CodeQL analysis of Juliet samples needed manual query adaptation.
 
-  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Wai Kin Wong et al.
+  **Authors:** Wai Kin Wong et al.
 
   </details>
 
@@ -2402,14 +2402,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   DiSCo lifts Ethereum contract creation bytecode to Solidity source by prompting a frozen LLM, instead of emitting decompiler pseudocode. It abstracts control-flow paths into logic-invariant semantic units, recovers constructor logic by simulating creation bytecode captured from block execution, and infers stripped names with signature databases and a type-aware graph model. These units become natural-language descriptions plus coding specifications in the prompt. GPT-4 is the primary model; Llama 3 is also tested.
 
-  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [Full entry & citation](https://awesomerea.org/papers/paper-disco/)
+  Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [Full entry & citation](https://awesomerea.org/papers/paper-disco/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Ground truth comes from Etherscan source files: 200 highest-balance contracts for all baselines and 1,000 for automated tests; separate studies add 50 Vyper, 50 newly deployed and 149 closed-source attack contracts. Compilability (about 75% with best-of-five sampling, 46% for a single run), differential-fuzzing pass rates and embedding similarity do not establish equivalence to deployed source. Nearly half of the imitation-learning fuzzer’s transactions revert, and manual review judged about 28.5% of generated contracts semantically consistent, and 12% for Vyper inputs. The authors report timeouts or unsound analysis on contracts with many paths, and name inference remains weak. Baselines give the same LLM output from Panoramix, Ethervm and Elipmoc, mostly taken from their websites or decompiled manually; this is not a comparison of standalone decompilers. Results depend on a GPT-4 preview snapshot. Attack reproduction covers ten January 2025 incidents, four of which were reproduced.
 
-  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · Xing Su et al.
+  **Authors:** Xing Su et al.
 
   </details>
 
@@ -2417,14 +2417,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   TypeForge recovers composite data types, including struct layouts, unions and pointer or nesting relationships, from stripped binaries. A whole-program Type Flow Graph over Ghidra’s decompiler-inferred variables propagates member offsets and sizes, cuts conflicting edges caused by casts and unions, and synthesizes candidate type declarations. An LLM only selects among these statically synthesized candidates: each is applied through the decompiler’s retype interface, and a double-elimination tournament compares the resulting pseudocode for readability. On OSPREY’s coreutils dataset the authors report F1 of 81.7% for composite-type identification, 88.2% for layout recovery and 72.1% for relationship recovery.
 
-  2025 · Conference paper · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [Code](https://github.com/noobone123/TypeForge) · [Full entry & citation](https://awesomerea.org/papers/paper-typeforge/)
+  IEEE S&amp;P 2025 · Conference paper · [PDF](https://noobone123.github.io/papers/typeforge-sp25.pdf) · [Code](https://github.com/noobone123/TypeForge) · [Full entry & citation](https://awesomerea.org/papers/paper-typeforge/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Recovers member offsets, sizes and relationships, not original type or member names; relationship correctness is judged by matching layouts because names are unavailable. The main evaluation uses OSPREY’s dataset of GNU coreutils and larger Howard-dataset programs, over 10,000 functions and 11,000 composite-typed variables at O0–O3, with ground truth from debug information; the paper does not report results per architecture. In the baseline comparison, OSPREY results were supplied by its authors and its runtime is an estimate, and ReSym figures are its published results, so not every baseline was rerun. Conservative removal of conflicting edges can drop valid members, and compiler optimizations that merge or flatten members lower accuracy at higher levels. About 75% of runtime is the LLM selection stage; the default model was GPT-4o mini, with each comparison run three times. Downstream readability and vulnerability examples are case studies, not proof of semantic equivalence.
 
-  **Publication:** 2025 · IEEE S&amp;P 2025 · Conference paper · Yanzhong Wang et al.
+  **Authors:** Yanzhong Wang et al.
 
   </details>
 
@@ -2432,14 +2432,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Introduces two million C/C++ binary-source function pairs using a Compile-Trace-Filter pipeline, with an evaluation suite spanning translated HumanEval/MBPP tasks and recent GitHub functions.
 
-  2025 · Conference paper · [PDF](https://papers.nips.cc/paper_files/paper/2025/file/079cf13ae174c31f148207d94d213bdc-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-decompile-bench/)
+  NeurIPS 2025 Datasets and Benchmarks · Conference paper · [PDF](https://papers.nips.cc/paper_files/paper/2025/file/079cf13ae174c31f148207d94d213bdc-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-decompile-bench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** This is function-level decompilation. Re-execution tests cover HumanEval/MBPP; GitHub2025 provides no unit tests. Inlining can prevent one-to-one source correspondence, and the fine-tuning study uses 10% of the corpus. These results do not establish whole-program recovery.
 
-  **Publication:** 2025 · NeurIPS 2025 Datasets and Benchmarks · Conference paper · Hanzhuo Tan et al.
+  **Authors:** Hanzhuo Tan et al.
 
   </details>
 
@@ -2447,14 +2447,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   SymGen infers function names for stripped binaries by generating them with a LoRA-fine-tuned Code Llama model instead of classifying over a fixed name vocabulary. Ghidra decompiles each stripped function, its own name is masked, and callee names are normalized for deduplication. Before fine-tuning, the model is domain-adapted on decompiled code paired with LLM-generated summaries of the matching source functions. On functions from 33 C projects built for x86-64, x86-32, ARM and MIPS at O0–O3, deduplicated from 2,237,915 to 495,494, the authors report average word-level F1 of 0.277 (0.380 on x86-64), plus case studies on obfuscated binaries and Linux malware.
 
-  2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [Code](https://github.com/OSUSecLab/SymGen) · [Full entry & citation](https://awesomerea.org/papers/paper-symgen/)
+  NDSS 2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [Code](https://github.com/OSUSecLab/SymGen) · [Full entry & citation](https://awesomerea.org/papers/paper-symgen/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Names are split into words and scored with precision, recall and F1, with SymLM’s CodeWordNet grouping similar words; predictions are descriptive guesses, not recovered original symbols. Average F1 is 0.277 and lower on MIPS (0.137) and ARM (0.262). The gains of up to 409.3%, 553.5% and 489.4% in the abstract are author-reported relative improvements over AsmDepictor; the baselines were retrained on the authors’ deduplicated dataset, where they score far below their own papers, and XFL was compared on x86-64 only. A separate model is trained for each architecture and optimization level. All binaries were built with GCC 9.4.0, inputs depend on Ghidra output, and Code Llama’s closed pretraining data leaves leakage possible. Obfuscation tests apply three default Hikari passes to 363 binaries from six projects (F1 0.271–0.303); the malware study covers 812 functions in 16 x86-64 builds (F1 0.348).
 
-  **Publication:** 2025 · NDSS 2025 · Conference paper · Linxi Jiang et al.
+  **Authors:** Linxi Jiang et al.
 
   </details>
 
@@ -2462,14 +2462,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Combines two fine-tuned language models with Prolog-based cross-function reasoning to infer local-variable symbols and user-defined data structures from stripped-binary decompilation.
 
-  2024 · Conference paper · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [Code](https://github.com/lt-asset/resym) · [Full entry & citation](https://awesomerea.org/papers/paper-resym/)
+  ACM CCS 2024 · Conference paper · [PDF](https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf) · [Code](https://github.com/lt-asset/resym) · [Full entry & citation](https://awesomerea.org/papers/paper-resym/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The method depends on underlying decompilation and learned predictions over C/C++ data. Cross-checking reduces conflicting predictions but does not prove that recovered names or layouts match the unavailable source. The public artifact includes models, processed data, and evaluation code.
 
-  **Publication:** 2024 · ACM CCS 2024 · Conference paper · Danning Xie et al.
+  **Authors:** Danning Xie et al.
 
   </details>
 
@@ -2477,14 +2477,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Adds two techniques to LLM decompilation of function-level x86-64 GCC assembly into C. Self-Constructed Context Decompilation (sc²dec) recompiles a model’s first compilable output and uses the resulting assembly–source pair as an in-context example for a second attempt, without fine-tuning. Fine-grained Alignment Enhancement (FAE) fine-tunes llm4decompile-6.7b with LoRA on statement-level assembly–C alignments derived from DWARF debug information. Combining both, the authors report 52.41% average re-executability on Decompile-Eval, against 48.60% for the base model.
 
-  2024 · Conference paper · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [Code](https://github.com/AlongWY/sccdec) · [Full entry & citation](https://awesomerea.org/papers/paper-sc2dec/)
+  Findings of EMNLP 2024 · Conference paper · [PDF](https://aclanthology.org/2024.findings-emnlp.385.pdf) · [Code](https://github.com/AlongWY/sccdec) · [Full entry & citation](https://awesomerea.org/papers/paper-sc2dec/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Results are function-level re-executability on Decompile-Eval: 164 HumanEval-derived C problems compiled at O0–O3 and checked by recompilation and HumanEval test cases. Passing these tests is not whole-program or all-input equivalence, and the paper does not evaluate real-world binaries, other architectures or readability. sc²dec helps only when the first output recompiles, so low re-compilability limits its gains; the authors report 1–2% lower results when context is built at a mismatched optimization level, and clang-built contexts scored slightly below GCC. FAE used 10,000 ExeBench functions limited to the standard C library, one training epoch and a single 6.7B base model; the authors did not validate it on larger datasets or models, and it slightly lowered the 1-shot result. GPT-4 and DeepSeek baselines are API snapshots that may not be reproducible.
 
-  **Publication:** 2024 · Findings of EMNLP 2024 · Conference paper · Yunlong Feng et al.
+  **Authors:** Yunlong Feng et al.
 
   </details>
 
@@ -2492,14 +2492,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Trains language models for assembly-to-C decompilation and for refining Ghidra pseudocode, evaluating whether recovered functions can be recompiled and executed correctly.
 
-  2024 · Conference paper · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-llm4decompile/)
+  EMNLP 2024 · Conference paper · [PDF](https://aclanthology.org/2024.emnlp-main.203.pdf) · [Code](https://github.com/albertan017/LLM4Decompile) · [Full entry & citation](https://awesomerea.org/papers/paper-llm4decompile/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The paper limits its experiments to C on x86 and function-level benchmarks. Re-executability on sampled tests does not establish whole-program equivalence or recovery of the original source. Later repository releases are separate from the 2024 paper.
 
-  **Publication:** 2024 · EMNLP 2024 · Conference paper · Hanzhuo Tan et al.
+  **Authors:** Hanzhuo Tan et al.
 
   </details>
 
@@ -2507,14 +2507,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   WaDec decompiles WebAssembly text (wat) into C by fine-tuning CodeLlama-7b with LoRA on loop-level wat–C snippet pairs. Functions are ordered by dependency and sliced so that each input holds at most one loop, with nested loops replaced by markers. Prompts add declarations of called functions, previously defined local variables and offset-to-string mappings; the outputs are then reassembled, with string constants restored and variables renamed. Training data come from 51,768 the-stack-dedup and 377 TheAlgorithms/C programs compiled with Emscripten. On 3,977 C files, the authors report 3.34% code inflation, 52.11% recompilability, 43.55% re-execution and 27.15% output consistency, compared with Wasm2c and Ghidra.
 
-  2024 · Conference paper · [PDF](https://arxiv.org/pdf/2406.11346v3) · [Code](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [Full entry & citation](https://awesomerea.org/papers/paper-wadec/)
+  ASE 2024 · Conference paper · [PDF](https://arxiv.org/pdf/2406.11346v3) · [Code](https://github.com/XinyuShe/WaDec/tree/e244f7172539478a5b64bbb86e1fd03e527cb6be) · [Full entry & citation](https://awesomerea.org/papers/paper-wadec/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The reported rates are author results on C programs compiled to Wasm with Emscripten. About half of the outputs recompile, fewer than half re-execute and roughly a quarter reproduce the original output, so decompiled code is generally not semantically equivalent. The 3,977-file benchmark comes from the same two sources as the training programs. Optimized builds are not evaluated: the authors neither adapted the method to nor trained it on O1/O2 code. The model also handles data structures poorly, often flattening them into separate variables or arrays. Only C sources are studied; Wasm produced from other languages or toolchains is not evaluated. Baselines are Wasm2c and Ghidra's Wasm plugin, and LLM baselines were excluded because none could decompile Wasm functions without fine-tuning. Slicing means one function may be decompiled several times, at about 0.1 to 2 seconds per prompt.
 
-  **Publication:** 2024 · ASE 2024 · Conference paper · Xinyu She et al.
+  **Authors:** Xinyu She et al.
 
   </details>
 
@@ -2522,14 +2522,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   StackSight decompiles WebAssembly text-format functions into C++ with LLM prompting. A static analysis annotates each WAT instruction with the virtual-stack state, using symbolic notation where branches diverge; a one-shot chain-of-thought prompt then asks the model to recover variable meanings, summarize the function and write C++. With GPT-4 the share of outputs passing all benchmark tests rises from 19.7% to 36.5% on HumanEval-X and from 42.4% to 59.6% on MBXP relative to one-shot prompting; GPT-3.5 and Code Llama-7B-Instruct are also evaluated.
 
-  2024 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-stacksight/)
+  ICML 2024 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v235/main/assets/fang24e/fang24e.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-stacksight/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Inputs are short exercise functions from the C++ splits of HumanEval-X (161 of 164 compiled) and MBXP (773 of 974), built as Emscripten 3.1.46 side modules at -Oz with function names kept by --profiling-funcs and converted with wasm2wat 1.0.33; minified, obfuscated or whole-application WebAssembly is not evaluated. Correctness is the share of outputs that compile and pass the benchmarks' test cases after a test oracle renames functions, inserts tests and adds namespace directives, with manual pass-by-value edits. Passing these tests is not proof of equivalence with the original module. Summaries are scored by BERTScore and SBERT; the user study had 15 participants on 20 snippets per dataset. wasm2c and an earlier neural decompiler were excluded for producing no compilable output, and results depend on specific hosted model versions.
 
-  **Publication:** 2024 · ICML 2024 · Conference paper · Weike Fang et al.
+  **Authors:** Weike Fang et al.
 
   </details>
 
@@ -2537,14 +2537,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   SLaDe translates function-level assembly into C with a 200M-parameter encoder–decoder model, code-specific tokenization and PsycheC type completion. It studies x86 and ARM at -O0 and -O3, combining generated candidates with input/output checks. The input is assembly text, not raw machine bytes; disassembly is outside the method.
 
-  2024 · Conference paper · [PDF](https://arxiv.org/pdf/2305.12520v3) · [Code](https://zenodo.org/records/10205121) · [Full entry & citation](https://awesomerea.org/papers/paper-slade/)
+  IEEE/ACM CGO 2024 · Conference paper · [PDF](https://arxiv.org/pdf/2305.12520v3) · [Code](https://zenodo.org/records/10205121) · [Full entry & citation](https://awesomerea.org/papers/paper-slade/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation covers about 4,000 ExeBench functions and a 112-program synthesis suite. Beam size 5 selects the first candidate passing finite I/O tests; generated functions are inserted into the original calling context. Passing these tests is not whole-program or all-input equivalence. Edit similarity is a readability proxy. Longer functions, external calls and incorrect type/operator predictions remain failure modes; the model has 1,024-position source and target windows. Historical baseline comparisons have different coverage and do not establish current rankings.
 
-  **Publication:** 2024 · IEEE/ACM CGO 2024 · Conference paper · Jordi Armengol-Estapé et al.
+  **Authors:** Jordi Armengol-Estapé et al.
 
   </details>
 
@@ -2552,14 +2552,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   VarBERT suggests variable names for IDA Hex-Rays and Ghidra decompiler output with a BERT-style model pre-trained on 5.2M human-written C functions from Debian and fine-tuned on decompiled code; it also predicts whether each variable came from the developer or was introduced by the decompiler. The authors build VarCorpus from Gentoo C and C++ packages compiled for x86-64 at O0–O3, labeling decompiled variables from debug symbols. On per-function splits of O2 binaries, top-1 accuracy is 54.43% for IDA and 54.49% for Ghidra; on an IDA-O0 subset it reaches 50.70%, against 35.94% for DIRE and 38.00% for DIRTY.
 
-  2024 · Conference paper · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [Code](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [Full entry & citation](https://awesomerea.org/papers/paper-varbert/)
+  IEEE S&amp;P 2024 · Conference paper · [PDF](https://www.atipriya.com/files/papers/varbert_oakland24.pdf) · [Code](https://github.com/sefcom/VarBERT/tree/76f221a5e0af43a36169818cbbfd6e8dd3c98cdc) · [Full entry & citation](https://awesomerea.org/papers/paper-varbert/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Predicted names are learned suggestions scored against developer names, not recovered originals. Top-1 accuracy drops to 42.40% (IDA) and 40.49% (Ghidra) on per-binary O2 splits, and the per-binary IDA-O0 lead over DIRTY is 4.52 points. The DIRE and DIRTY comparison covers IDA at O0 only, on about 400K functions (roughly 15% of VarCorpus), because DIRE's training time was prohibitive. The method can name only variables the decompiler recovers, and labeling relies on IDA and Ghidra preserving variables when matching debug symbols. Corpora come from Linux distribution packages, mainly x86-64 with a smaller AArch64 O2 experiment, and may not represent Windows or macOS executables; deduplication removes exact duplicates only. The user study had 27 students who completed 13 function pairs. Types, structures and recompilable code are outside its scope.
 
-  **Publication:** 2024 · IEEE S&amp;P 2024 · Conference paper · Kuntal Kumar Pal et al.
+  **Authors:** Kuntal Kumar Pal et al.
 
   </details>
 
@@ -2567,14 +2567,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Refines existing C-like decompiler output through three coordinated roles that select, propose and check changes. It simplifies structures, adds comments and renames variables; Micro Snippet Semantic Calculation compares simulated symbol values and calls before accepting structural changes. The authors evaluate readability and naming on 620 functions from four codebases, with separate stripped and non-stripped variants.
 
-  2024 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [Code](https://github.com/PeiweiHu/DeGPT) · [Full entry & citation](https://awesomerea.org/papers/paper-degpt/)
+  NDSS 2024 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-401-paper.pdf) · [Code](https://github.com/PeiweiHu/DeGPT) · [Full entry & citation](https://awesomerea.org/papers/paper-degpt/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The reported 24.4% reduction is a Halstead-effort proxy on non-stripped output, not a measured reduction in human effort. The 62.9% comment result is the average non-trivial share among manually judged correct comments. MSSC is an intraprocedural heuristic: calls are abstracted and loops become branches; parsing, aliasing and path growth remain limitations. Its 80-case manual audit reports 84% accuracy and 85% recall, including three harmful changes missed. This supports assisted pseudocode comprehension, not guaranteed binary equivalence, recompilable whole programs or original-source recovery.
 
-  **Publication:** 2024 · NDSS 2024 · Conference paper · Peiwei Hu et al.
+  **Authors:** Peiwei Hu et al.
 
   </details>
 
@@ -2582,14 +2582,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   XFL treats function naming in stripped binaries as extreme multi-label classification: names are split into tokens, and PfastreXML ranks which tokens from a vocabulary of frequent labels fit each function. Its DEXTER embedding combines static-analysis features built on angr’s VEX IR with call-graph and whole-binary context, and a separate language model orders predicted tokens into a name string. On 741,724 functions from 10,047 x86-64 C binaries in Debian packages, with a 1,024-label vocabulary, the authors report precision 0.835, recall 0.575 and F1 0.681, ahead of Punstrip, Debin and Nero in precision and F1.
 
-  2023 · Conference paper · [PDF](https://arxiv.org/pdf/2107.13404v4) · [Code](https://github.com/lmu-plai/xfl) · [Full entry & citation](https://awesomerea.org/papers/paper-xfl/)
+  IEEE S&amp;P 2023 · Conference paper · [PDF](https://arxiv.org/pdf/2107.13404v4) · [Code](https://github.com/lmu-plai/xfl) · [Full entry & citation](https://awesomerea.org/papers/paper-xfl/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Predictions are token labels from a fixed vocabulary, ranked and optionally assembled into names; they are not recovered source names, and scoring matches tokens rather than exact names. Evaluation uses x86-64 ELF C binaries from Debian packages, built with mixed compilers and optimization settings, plus Nero’s smaller dataset; the trained model is specific to x86-64 GNU/Linux binaries. All tools receive function boundaries from symbol tables at test time, so boundary-detection errors are excluded. Many test names also occur in training; restricted to names never seen in training, F1 falls to 0.242. Obfuscated and adversarial binaries are out of scope. Debin and Dire figures on the Nero dataset are copied from the Nero paper rather than rerun.
 
-  **Publication:** 2023 · IEEE S&amp;P 2023 · Conference paper · James Patrick-Evans et al.
+  **Authors:** James Patrick-Evans et al.
 
   </details>
 
@@ -2597,14 +2597,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Introduces DIRTY, a Transformer model that recommends variable names and types from decompiled code and layout information, together with the DIRT corpus for training and evaluation.
 
-  2022 · Conference paper · [PDF](https://arxiv.org/pdf/2108.06363) · [Code](https://github.com/CMUSTRUDEL/DIRTY) · [Full entry & citation](https://awesomerea.org/papers/paper-dirty/)
+  USENIX Security 2022 · Conference paper · [PDF](https://arxiv.org/pdf/2108.06363) · [Code](https://github.com/CMUSTRUDEL/DIRTY) · [Full entry & citation](https://awesomerea.org/papers/paper-dirty/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The original pipeline is built around C programs and Hex-Rays output. Predicted names and types are learned hypotheses, not guaranteed original symbols. The published paper is from 2022, although its arXiv preprint first appeared in 2021.
 
-  **Publication:** 2022 · USENIX Security 2022 · Conference paper · Qibin Chen et al.
+  **Authors:** Qibin Chen et al.
 
   </details>
 
@@ -2612,14 +2612,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   jTrans embeds binary functions for similarity search with a BERT-style Transformer. Its jump-aware representation shares parameters between a direct jump’s operand token and the positional embedding of the jump target, so control flow enters the instruction sequence without a separate graph network. The model is pre-trained with masked language modeling and jump-target prediction, then fine-tuned with a cosine triplet objective on functions compiled from the same source at different optimization levels. The paper also introduces BinaryCorp, built by compiling C/C++ packages from Arch Linux’s official repositories and the AUR with gcc and g++.
 
-  2022 · Conference paper · [PDF](https://arxiv.org/pdf/2205.12713v1) · [Code](https://github.com/vul337/jTrans) · [Full entry & citation](https://awesomerea.org/papers/paper-jtrans/)
+  ACM ISSTA 2022 · Conference paper · [PDF](https://arxiv.org/pdf/2205.12713v1) · [Code](https://github.com/vul337/jTrans) · [Full entry & citation](https://awesomerea.org/papers/paper-jtrans/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The model is trained on a single architecture (x86, per the paper’s discussion); cross-architecture search is not evaluated. Only direct jumps are encoded, and indirect-jump targets are left out of scope. Disassembly and function extraction rely on IDA Pro 7.5, so boundary errors upstream are not measured. BinaryCorp pairs gcc/g++ builds across O0–O3 and Os, with train and test split by project; it does not cover obfuscation or other compilers, and only the vulnerability study adds clang variants. Author-reported Recall<span>@</span>1 at pool size 10,000 on BinaryCorp-26M averages 62.5% against 32.0% for the best baseline, and accuracy still falls as pools grow, which the authors note for larger real-world pools. The vulnerability search uses eight CVEs with ten variants each. Baselines date from 2022, and Asm2Vec and OrderMatters were reimplemented, so the comparison does not establish current rankings. Similarity ranking identifies candidate matches; it does not recover source code, names or types.
 
-  **Publication:** 2022 · ACM ISSTA 2022 · Conference paper · Hao Wang et al.
+  **Authors:** Hao Wang et al.
 
   </details>
 
@@ -2627,14 +2627,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   ExeBench is a dataset, not a decompiler. It extracts C functions from GitHub and AnghaBench, makes them compilable by locating real headers and definitions or injecting synthetic ones, and generates input/output examples from function signatures with a C++ wrapper that runs each function. After exact deduplication the authors report 4,485,817 compilable and 687,843 executable functions, of which 124,612 have rich IO that a constant or identity implementation cannot pass; the paper also describes x86 and ARM assembly at O0, Os and Ofast for each row. Decompilation studies such as SLaDe and LLM4Decompile later used it to test whether decompiled functions re-execute correctly.
 
-  2022 · Conference paper · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [Code](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [Full entry & citation](https://awesomerea.org/papers/paper-exebench/)
+  ACM SIGPLAN MAPS 2022 · Conference paper · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [Code](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [Full entry & citation](https://awesomerea.org/papers/paper-exebench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** IO is generated from signatures without program context: 10 pairs per function (30 across three seeds of synthetic definitions), arrays default to 32 elements, and success falls below 5% for functions with pointer–integer conversions and stays low for goto, labels and complex control flow, so executable functions skew simpler than the compilable population. Synthetic IO is produced with injected stand-in definitions rather than the functions’ real dependencies; only 4,464 functions have rich IO with real definitions. Finite IO pairs test behavior on sampled inputs, not semantic equivalence, and deduplication removes exact matches after tokenization only. Running functions with real dependencies executes untrusted code; the authors used restricted containers. The paper’s exact v1.00 data is available only on request, while the public v1.01 release has revised splits (for example 2,134 instead of 2,232 real test functions). Each function keeps its source repository’s license; ExeBench additions are MIT.
 
-  **Publication:** 2022 · ACM SIGPLAN MAPS 2022 · Conference paper · Jordi Armengol-Estapé et al.
+  **Authors:** Jordi Armengol-Estapé et al.
 
   </details>
 
@@ -2642,14 +2642,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   BTC (Beyond The C) treats decompilation as plain-text translation from compiler-emitted x86-64 assembly to source code. It uses byte-pair-encoding tokenizers trained separately on assembly and source, and a standard fairseq transformer. Function pairs are matched through the compiler's CFI and line directives rather than language-specific parsers, compiler plugins or lifters, so the same pipeline is retrained for Go, Fortran, OCaml and C. Training sets range from about 10,000 functions for small C, Go and Fortran corpora to 2 million C functions built from Debian packages. The best model, trained on the large C set, reaches a normalized average edit distance of 0.46 on held-out functions.
 
-  2022 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [Code](https://figshare.com/s/2c68b9c181e80f4e3b06) · [Full entry & citation](https://awesomerea.org/papers/paper-beyond-the-c/)
+  Workshop on Binary Analysis Research (BAR) 2022 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2022_23009_paper.pdf) · [Code](https://figshare.com/s/2c68b9c181e80f4e3b06) · [Full entry & citation](https://awesomerea.org/papers/paper-beyond-the-c/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation covers four languages at function level and scores outputs only by normalized edit distance to the original source. No compilation, test-based or semantic-equivalence check is reported, and whole-program decompilation is not evaluated. The authors state that the method cannot guarantee semantic correctness and is not yet ready for practical use on real code: even the best score means changes to roughly half of a function's tokens. Input is compiler-produced x86-64 assembly with labels and CFI directives intact, so disassembly of stripped binaries, other architectures and compilers without such directives are outside the evaluation. Sequence-length limits exclude long functions, and the small corpora are mostly competitive-programming and small utility code. The comparison with Katz et al. cites that work's reported score on shorter snippets rather than rerunning it on the same data.
 
-  **Publication:** 2022 · Workshop on Binary Analysis Research (BAR) 2022 · Conference paper · Iman Hosseini et al.
+  **Authors:** Iman Hosseini et al.
 
   </details>
 
@@ -2657,14 +2657,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Nero predicts names for procedures in stripped x86-64 Linux executables; it does not produce decompiled code. Static analysis reconstructs call sites, including imported API names, and augments their arguments with concrete and abstract values along control-flow paths. LSTM, Transformer and graph neural network encoders over the resulting augmented call-site graph feed a decoder that generates the name as subtokens. On a GNU-package test set the authors report 45.53 F1 for Nero-GNN, against 35.52 for an adapted DIRE and 33.66 for Debin.
 
-  2020 · Journal article · [PDF](https://arxiv.org/pdf/1902.09122v4) · [Code](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [Full entry & citation](https://awesomerea.org/papers/paper-nero/)
+  Proceedings of the ACM on Programming Languages (OOPSLA 2020) · Journal article · [PDF](https://arxiv.org/pdf/1902.09122v4) · [Code](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [Full entry & citation](https://awesomerea.org/papers/paper-nero/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.
 
-  **Publication:** 2020 · Proceedings of the ACM on Programming Languages (OOPSLA 2020) · Journal article · Yaniv David et al.
+  **Authors:** Yaniv David et al.
 
   </details>
 
@@ -2672,14 +2672,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Combines lexical and structural information from decompiler output to predict meaningful variable names, with a training and evaluation corpus derived from compiled C projects.
 
-  2019 · Conference paper · [PDF](https://arxiv.org/pdf/1909.09029) · [Code](https://github.com/pcyin/dire) · [Full entry & citation](https://awesomerea.org/papers/paper-dire/)
+  ASE 2019 · Conference paper · [PDF](https://arxiv.org/pdf/1909.09029) · [Code](https://github.com/pcyin/dire) · [Full entry & citation](https://awesomerea.org/papers/paper-dire/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** This is learned identifier naming, not complete source reconstruction or an autonomous agent. Its reported results concern an x86-64 C corpus and depend on decompiler output. The original author repository is deprecated and points to a successor.
 
-  **Publication:** 2019 · ASE 2019 · Conference paper · Jeremy Lacomis et al.
+  **Authors:** Jeremy Lacomis et al.
 
   </details>
 
@@ -2687,14 +2687,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Coda decompiles the assembly of short functions into C in two phases. An instruction-type-aware N-ary Tree-LSTM encoder and an attention-fed AST decoder first generate a code sketch; an ensemble of neural error predictors then proposes token corrections, each kept only if recompiling the candidate does not increase its edit distance to the input assembly. On synthetic benchmarks the authors report 82% average program accuracy after correction, against 12% for a sequence-to-sequence baseline with attention.
 
-  2019 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-coda/)
+  NeurIPS 2019 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2019/file/093b60fd0557804c8ba0cbf1453da22f-Paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-coda/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Training and test programs are randomly generated from Karel commands, math.h calls and arithmetic or logical expressions, in short and long variants (average length 15 and 30), 50,000 pairs per task, compiled without optimization: clang -O0 for the main MIPS results and gcc -O0 for an x86-64 appendix that reports sketch token accuracy only, about 6% lower on average. Real-world checks are small PyTorch C++ API model-construction and Hacker's Delight loop-free programs. Program accuracy requires an exact token match with the ground-truth source, the metric under which the paper reports 0% for conventional decompilers. Error correction assumes the compiler configuration is known, and token accuracy drops for longer programs. The results show neither optimized, whole-program nor binary-equivalent decompilation, and the paper names no author implementation.
 
-  **Publication:** 2019 · NeurIPS 2019 · Conference paper · Cheng Fu et al.
+  **Authors:** Cheng Fu et al.
 
   </details>
 
@@ -2702,14 +2702,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Debin predicts debug information for stripped ELF binaries on x86, x64 and ARM. After lifting code to BAP-IR, an Extremely randomized Trees classifier decides which registers and memory offsets hold source-level variables. A conditional random field, solved with Nice2Predict, then jointly predicts names and types for variables and functions, and the result is written back as DWARF sections. On 300 held-out binaries per architecture, the authors report 68.8% precision and 68.3% recall for x64 names and types.
 
-  2018 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [Code](https://github.com/eth-sri/debin) · [Full entry & citation](https://awesomerea.org/papers/paper-debin/)
+  ACM CCS 2018 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/ccs18-debin.pdf) · [Code](https://github.com/eth-sri/debin) · [Full entry & citation](https://awesomerea.org/papers/paper-debin/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.
 
-  **Publication:** 2018 · ACM CCS 2018 · Conference paper · Jingxuan He et al.
+  **Authors:** Jingxuan He et al.
 
   </details>
 
@@ -2722,14 +2722,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Benchmarks website development from visual prototypes and written requirements across 100 static-page, 66 interactive-frontend and 27 full-stack tasks, combining workflow-based functional checks with model-judged visual comparison.
 
-  2026 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26n/he26n.pdf) · [Code](https://github.com/zai-org/Vision2Web) · [Full entry & citation](https://awesomerea.org/papers/paper-vision2web/)
+  ICML 2026 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/he26n/he26n.pdf) · [Code](https://github.com/zai-org/Vision2Web) · [Full entry & citation](https://awesomerea.org/papers/paper-vision2web/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The full-stack tier is specification-driven, not reconstruction solely by exploring a live website. Workflows test state management and CRUD outcomes, but finite agent judgments do not establish exact backend or durable-database equivalence. The current public evaluator maintains a browser session within each workflow and permits local business-API checks; this is not a universal persistence proof.
 
-  **Publication:** 2026 · ICML 2026 · Conference paper · Zehai He et al.
+  **Authors:** Zehai He et al.
 
   </details>
 
@@ -2737,14 +2737,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates recovery of web-app behavior from a live reference with hidden source. It provides 4,063 feature-restoration tasks across 26 applications and a separate 12-application reconstruction setting, scored by replaying dependent browser workflows.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2609.18805v1) · [Code](https://huggingface.co/datasets/microsoft/ProgramDistill) · [Full entry & citation](https://awesomerea.org/papers/paper-programdistill/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2609.18805v1) · [Code](https://huggingface.co/datasets/microsoft/ProgramDistill) · [Full entry & citation](https://awesomerea.org/papers/paper-programdistill/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Tests cover finite, model-mined behaviors in self-contained apps, including SaaS clones. Persistence failures can be detected through replayed workflows, but passing does not establish all backend or database invariants. Evaluated agents receive structured browser observations without screenshots; visual fidelity is not measured. Public verifiers and reference solutions are not a contamination-resistant test set.
 
-  **Publication:** 2026 · arXiv · Preprint · Jeonghye Kim et al.
+  **Authors:** Jeonghye Kim et al.
 
   </details>
 
@@ -2752,14 +2752,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   UI2App evaluates runnable React/TypeScript applications generated from 600 screenshots across 95 web applications. It separates build executability, visual fidelity and screenshot-implied interaction behavior, including cross-route state, using a reference interaction taxonomy and public evaluation pipeline.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2607.06306v2) · [Code](https://github.com/chenmancm169/UI2App) · [Full entry & citation](https://awesomerea.org/papers/paper-ui2app/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2607.06306v2) · [Code](https://github.com/chenmancm169/UI2App) · [Full entry & citation](https://awesomerea.org/papers/paper-ui2app/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Static screenshots underdetermine behavior; the rubric accepts multiple valid implementations rather than proving equivalence to the original application or backend. Auto IIS judges generated source and screenshots without tool execution; human runtime validation covers a 45-application subset. Cross-route state is not necessarily durable persistence across reloads or sessions. Main results use one generation per application-model pair, with repeated runs on a subset.
 
-  **Publication:** 2026 · arXiv · Preprint · Grace Man Chen et al.
+  **Authors:** Grace Man Chen et al.
 
   </details>
 
@@ -2767,14 +2767,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates agents that actively explore a running dashboard and reconstruct its appearance and interaction logic. DashboardMimic provides 180 Plotly+Dash examples, with code-semantic analysis and dynamic interaction tests for the generated implementations.
 
-  2026 · Conference paper · [PDF](https://aclanthology.org/2026.acl-long.1750.pdf) · [Code](https://github.com/nth2000/Dashboard2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-dashboard2code/)
+  ACL 2026 · Conference paper · [PDF](https://aclanthology.org/2026.acl-long.1750.pdf) · [Code](https://github.com/nth2000/Dashboard2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-dashboard2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Limited to Plotly+Dash dashboards, including model-augmented examples. Some settings expose DOM information and evaluation uses model judges. This is not a general backend-recovery benchmark. The linked dataset requires accepting access conditions and sharing contact information.
 
-  **Publication:** 2026 · ACL 2026 · Conference paper · Tianhao Niu et al.
+  **Authors:** Tianhao Niu et al.
 
   </details>
 
@@ -2782,14 +2782,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Uses Gemini to locate the prelude functions that Obfuscator.IO inserts for string obfuscation, then applies constant-propagation and inlining passes in the JSIR compiler IR to restore string literals and API names deterministically.
 
-  2026 · Conference paper · [PDF](https://arxiv.org/pdf/2507.17691v2) · [Code](https://github.com/google/jsir) · [Full entry & citation](https://awesomerea.org/papers/paper-cascade/)
+  ICSE-SEIP 2026 · Conference paper · [PDF](https://arxiv.org/pdf/2507.17691v2) · [Code](https://github.com/google/jsir) · [Full entry & citation](https://awesomerea.org/papers/paper-cascade/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The method addresses Obfuscator.IO string obfuscation; control-flow flattening, other obfuscators and an agent-based design are future work. Evaluation obfuscates 3,000 programs from the ETH 150k JavaScript dataset with four Obfuscator.IO presets and measures prelude detection, recovered literals and run time, not functional equivalence. Production deployment and scan volume are author-reported, and production pre-filtering uses a proprietary YARA rule.
 
-  **Publication:** 2026 · ICSE-SEIP 2026 · Conference paper · Shan Jiang et al.
+  **Authors:** Shan Jiang et al.
 
   </details>
 
@@ -2797,14 +2797,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Splits screenshot-to-code generation among grounding, planning and generation agents that label UI regions, build a hierarchical layout tree and write HTML/CSS. The pipeline also produces the Screen-10K training pairs used for supervised and reinforcement fine-tuning, and the paper introduces the 1,000-page ScreenBench.
 
-  2026 · Accepted · [PDF](https://arxiv.org/pdf/2507.22827v2) · [Code](https://github.com/leigest519/ScreenCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-screencoder/)
+  EMNLP 2026 · Accepted · [PDF](https://arxiv.org/pdf/2507.22827v2) · [Code](https://github.com/leigest519/ScreenCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-screencoder/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Output is static HTML/CSS layout; interaction, JavaScript behavior and backend logic are not reconstructed. Results are visual-similarity scores (CLIP and OCR-matched text blocks) on ScreenBench and Design2Code, which do not establish code-level or functional equivalence. The released pipeline calls a hosted model API, Doubao by default. The reviewed text is arXiv v2; the accepted EMNLP version may differ.
 
-  **Publication:** 2026 · EMNLP 2026 · Accepted · Yilei Jiang et al.
+  **Authors:** Yilei Jiang et al.
 
   </details>
 
@@ -2812,14 +2812,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Tests reconstruction of interactive webpages from user-interaction videos and supplied static assets. Its 113 tasks replay annotated action sequences to assess visual fidelity and functional behavior across observed page states.
 
-  2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/55bfedfd31489e5ae83c9ce8eec7b0e1-Paper-Conference.pdf) · [Code](https://github.com/SIGMME/IWR-Bench) · [Full entry & citation](https://awesomerea.org/papers/paper-iwr-bench/)
+  ICLR 2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/55bfedfd31489e5ae83c9ce8eec7b0e1-Paper-Conference.pdf) · [Code](https://github.com/SIGMME/IWR-Bench) · [Full entry & citation](https://awesomerea.org/papers/paper-iwr-bench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The required output is one HTML file; the paper explicitly instructs models to mock implied backend logic with static JavaScript data. Trajectory coverage and model-based judgments do not prove complete website or backend equivalence.
 
-  **Publication:** 2026 · ICLR 2026 · Conference paper · Yang Chen et al.
+  **Authors:** Yang Chen et al.
 
   </details>
 
@@ -2827,14 +2827,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Builds an execution-verifiable JavaScript deobfuscation benchmark by applying seven JavaScript-Obfuscator transformations to Project CodeNet programs with test cases, then scores LLM and tool outputs for syntax, execution, code simplification and similarity to the original code.
 
-  2025 · Conference paper · [PDF](https://arxiv.org/pdf/2506.20170v1) · [Code](https://github.com/Ch3nYe/JsDeObsBench) · [Full entry & citation](https://awesomerea.org/papers/paper-jsdeobsbench/)
+  ACM CCS 2025 · Conference paper · [PDF](https://arxiv.org/pdf/2506.20170v1) · [Code](https://github.com/Ch3nYe/JsDeObsBench) · [Full entry & citation](https://awesomerea.org/papers/paper-jsdeobsbench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** On average, LLM outputs passed execution checks 60.93% of the time, against 83% for the two existing deobfuscator baselines. All samples come from a single obfuscator applied to moderate-length competitive-programming solutions. The 4,515 obfuscated malware samples have no test cases and are compared only through behavior traces.
 
-  **Publication:** 2025 · ACM CCS 2025 · Conference paper · Guoqiang Chen et al.
+  **Authors:** Guoqiang Chen et al.
 
   </details>
 
@@ -2842,14 +2842,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Benchmarks reconstruction of interactive webpages from screenshots before and after an interaction. The final study covers 127 webpages and 374 interactions, comparing rendered appearance, automated interaction checks, and human usability judgments.
 
-  2025 · Conference paper · [PDF](https://arxiv.org/pdf/2411.03292v3) · [Code](https://github.com/WebPAI/Interaction2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-interaction2code/)
+  ASE 2025 · Conference paper · [PDF](https://arxiv.org/pdf/2411.03292v3) · [Code](https://github.com/WebPAI/Interaction2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-interaction2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The inputs specify individual interaction transitions, not autonomous exploration of a complete site. Its tests do not establish long-workflow, server-side, or original-source equivalence; a detectable interaction is not necessarily usable.
 
-  **Publication:** 2025 · ASE 2025 · Conference paper · Jingyu Xiao et al.
+  **Authors:** Jingyu Xiao et al.
 
   </details>
 
@@ -2857,14 +2857,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Diagnoses webpage-to-code capability through visual perception, HTML programming, image-to-HTML understanding, and screenshot reconstruction tasks. It separates underlying skills using question-answer pairs derived from real websites.
 
-  2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-acl.815.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-webuibench/)
+  Findings of ACL 2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-acl.815.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-webuibench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Primarily evaluates visual and HTML reconstruction skills. The paper includes a preliminary interaction study, not a full workflow or backend-equivalence benchmark. The official repository currently exposes README and images but not the evaluation scripts described in its instructions.
 
-  **Publication:** 2025 · Findings of ACL 2025 · Conference paper · Zhiyu Lin et al.
+  **Authors:** Zhiyu Lin et al.
 
   </details>
 
@@ -2872,14 +2872,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Recursively divides a webpage screenshot along visual separation lines, has a multimodal model generate HTML/CSS for each leaf segment, and assembles child code upward into the full page; evaluated with GPT-4o, Gemini and Claude models and a small developer study.
 
-  2025 · Journal article · [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen) · [Full entry & citation](https://awesomerea.org/papers/paper-dcgen/)
+  Proceedings of the ACM on Software Engineering 2025 · Journal article · [PDF](https://arxiv.org/pdf/2406.16386v3) · [Code](https://github.com/WebPAI/DCGen) · [Full entry & citation](https://awesomerea.org/papers/paper-dcgen/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** It reconstructs static visual layout as HTML/CSS, not interaction, JavaScript behavior or backend logic. Test pages are self-contained snapshots with images replaced by placeholders; the main evaluation samples 111 of 348 top-ranked sites, adds 80 harder GitHub Pages pages, and the usefulness study has four participants. Segmentation uses manually set thresholds, and assembly can still misarrange elements.
 
-  **Publication:** 2025 · Proceedings of the ACM on Software Engineering · Journal article · Yuxuan Wan et al.
+  **Authors:** Yuxuan Wan et al.
 
   </details>
 
@@ -2887,14 +2887,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   WebCode2M pairs about 2.56 million real-world webpage screenshots with purified HTML/CSS code and element bounding-box layout trees. Pages sampled from a Common Crawl snapshot are cleaned (scripts, metadata and hidden elements removed, styles merged into one block), rendered with Playwright, and filtered by a neural scorer trained on 10,000 annotated samples. The paper fine-tunes Pix2Struct-1.3B as the WebCoder baseline, introduces TreeBLEU to measure DOM-structure recall, and benchmarks specialized, open and commercial multimodal models on short, medium and long test subsets of 256 pages each.
 
-  2025 · Conference paper · [PDF](https://arxiv.org/pdf/2404.06369v2) · [Code](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [Full entry & citation](https://awesomerea.org/papers/paper-webcode2m/)
+  WWW 2025 · Conference paper · [PDF](https://arxiv.org/pdf/2404.06369v2) · [Code](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [Full entry & citation](https://awesomerea.org/papers/paper-webcode2m/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The task is static HTML/CSS generation from a design image. Scripts are stripped during purification, so interaction, client-side behavior and backend logic are not reconstructed, and outputs are judged by visual score, CLIP similarity and TreeBLEU rather than functional equivalence. The paper reports that no evaluated model reproduces image elements accurately, and scores fall as target code grows longer. The 768 test pages were drawn from high-scoring candidates and manually inspected; the scorer is about 90% accurate, so low-quality training samples remain, and the authors warn that crawled content may still include inappropriate material. Commercial models are named only by family, and about one-third of Gemini test cases failed with recitation errors, so those comparisons are snapshots. The dataset card's CC BY 4.0 license does not clear rights in the crawled pages' code, text or images.
 
-  **Publication:** 2025 · WWW 2025 · Conference paper · Yi Gui et al.
+  **Authors:** Yi Gui et al.
 
   </details>
 
@@ -2902,14 +2902,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates reconstruction of frontend code from webpage screenshots using real-world reference pages, visual-element and layout metrics, and human assessment.
 
-  2025 · Conference paper · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [Code](https://github.com/NoviScl/Design2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-design2code/)
+  NAACL 2025 · Conference paper · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [Code](https://github.com/NoviScl/Design2Code) · [Full entry & citation](https://awesomerea.org/papers/paper-design2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** This is visual website reconstruction, not binary decompilation or recovery of backend behavior and interactive workflows. The main benchmark contains 484 webpages with placeholder images; code and data have separate licensing terms.
 
-  **Publication:** 2025 · NAACL 2025 · Conference paper · Chenglei Si et al.
+  **Authors:** Chenglei Si et al.
 
   </details>
 
@@ -2917,14 +2917,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates GPT-3.5-turbo, GPT-4, LLaMA-2-13B, Code-LLaMA-2-13B-Instruct and StarChat-Beta on explaining what de-commented JavaScript, Python and C code does, then repeats the task on JavaScript obfuscated with JavaScript Obfuscator (identifier renaming, dead-code injection, control-flow flattening and string splitting) and with Wobfuscator’s WebAssembly transformation. GPT-3.5 and GPT-4 are also asked to rewrite 100 IOCCC winning programs as readable, compilable code. Case studies apply GPT models to a botnet and a benign browser-extension repository, an Android SMS stealer decompiled with JD-GUI, and WannaCry code decompiled with RetDec.
 
-  2024 · Conference paper · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-code-analysis/)
+  USENIX Security 2024 · Conference paper · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-llm-code-analysis/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Ground truth is GPT-4’s own explanations after manual checking by four students; other models are scored against those texts with similarity metrics and a GPT-4 judge, which the authors say is unreliable without manual calibration. Correctness is judged at explanation level, not by recovered behavior or executable equivalence. Only JavaScript is obfuscated with generated transformations; neither GPT model deciphered the WebAssembly that Wobfuscator inserts, and the smaller models produced no meaningful explanations once obfuscation was applied. Author-reported figures include 97.4% GPT-4 accuracy on non-obfuscated code and 87% on obfuscated JavaScript; in IOCCC de-obfuscation, about 20% of GPT-3.5’s targets and 19% of GPT-4’s yielded compilable code, and only 8% and 4% produced correct results. The malware analyses are qualitative case studies on a few samples, with manual chunking for WannaCry, missed behavior when context was split, and a false alarm in the botnet repository. Models recognized code from popular repositories, so memorization is a confound. The evaluated GPT-3.5/GPT-4-era and LLaMA-2-13B-class models are dated. The study analyzes source or already-decompiled text; it does not perform binary decompilation.
 
-  **Publication:** 2024 · USENIX Security 2024 · Conference paper · Chongzhou Fang et al.
+  **Authors:** Chongzhou Fang et al.
 
   </details>
 
@@ -2932,14 +2932,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Studies screenshot-to-HTML reconstruction through instruction tuning and two evaluation benchmarks. Web2Code combines generated webpages, refined WebSight and pix2code image/code pairs, and WebSRC-derived question answering. Models produce HTML from a webpage image and instruction; rendered output is compared visually, while a separate benchmark measures screenshot understanding.
 
-  2024 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/MBZUAI-LLM/web2code) · [Full entry & citation](https://awesomerea.org/papers/paper-web2code/)
+  NeurIPS 2024 Datasets and Benchmarks · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/cb66be286795d71f89367d596bf78ea7-Paper-Datasets_and_Benchmarks_Track.pdf) · [Code](https://github.com/MBZUAI-LLM/web2code) · [Full entry & citation](https://awesomerea.org/papers/paper-web2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation uses 1,198 screenshots and 5,990 yes/no questions. WCGB grades rendered images with GPT-4V; its User Interface and Interactivity category measures element appearance, not executed click paths, persistent state or backend behavior. Synthetic and refined examples do not establish coverage of arbitrary real web applications, original-source equivalence or code quality. The paper reports contact-information issues in 2.7% of a 1,000-item privacy sample, so a blanket claim that the data is free of such information is unsupported.
 
-  **Publication:** 2024 · NeurIPS 2024 Datasets and Benchmarks · Conference paper · Sukmin Yun et al.
+  **Authors:** Sukmin Yun et al.
 
   </details>
 
@@ -2952,14 +2952,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates whether vision-language agents can infer hidden game rules through screenshots and active interaction, then build runnable single-file HTML replicas across 125 tasks from 25 web games, each with five difficulty levels.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2609.22308v1) · [Full entry & citation](https://awesomerea.org/papers/paper-gamereplica/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2609.22308v1) · [Full entry & citation](https://awesomerea.org/papers/paper-gamereplica/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The tasks cover rule-driven web puzzles and board games, not native or commercial game reconstruction. Rule, implementation, and visual scores use LLM judges and do not prove behavioral equivalence. The official site provides demos; a benchmark-code repository was not verified.
 
-  **Publication:** 2026 · arXiv · Preprint · Boyu Qiao et al.
+  **Authors:** Boyu Qiao et al.
 
   </details>
 
@@ -2967,14 +2967,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Tycho constructs editable Python models of game state, transitions, rendering and outcomes from action/observation histories in unfamiliar ARC-AGI-3 games. It checks model predictions against recorded transitions and can use, repair or bypass these models during planning.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2607.28287v1) · [Code](https://github.com/NIMI-research/Tycho) · [Full entry & citation](https://awesomerea.org/papers/paper-tycho/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2607.28287v1) · [Code](https://github.com/NIMI-research/Tycho) · [Full entry & citation](https://awesomerea.org/papers/paper-tycho/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation uses one stochastic run per configuration on 25 public games and 183 levels; five games informed harness development. Models may abstain on cells or accept bounded rendering variants. Transition replay and game scores do not establish complete engine reconstruction, correct objectives, unseen-state fidelity, unseen-game generalization or run-to-run reliability; the agent can bypass modeling.
 
-  **Publication:** 2026 · arXiv · Preprint · Jens Lehmann et al.
+  **Authors:** Jens Lehmann et al.
 
   </details>
 
@@ -2982,14 +2982,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Tests whether agents can recover executable decision policies from behavioral traces and self-designed opponent probes, using 75 synthetic policies across five game arenas and measuring held-out action agreement and downstream competitive value.
 
-  2026 · Preprint · [PDF](https://arxiv.org/pdf/2606.26094v1) · [Code](https://github.com/bethgelab/revenge-bench) · [Full entry & citation](https://awesomerea.org/papers/paper-revengebench/)
+  arXiv 2026 · Preprint · [PDF](https://arxiv.org/pdf/2606.26094v1) · [Code](https://github.com/bethgelab/revenge-bench) · [Full entry & citation](https://awesomerea.org/papers/paper-revengebench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The targets are fixed synthetic policies, not full games or adaptive adversaries. Agreement on finitely evaluated states does not uniquely identify source code, and some arenas have substantial variance. The public package omits some paper-only plotting and ablation suites; reproduction also needs CodeClash, a container runtime, and model access.
 
-  **Publication:** 2026 · arXiv · Preprint · Babak Rahmani et al.
+  **Authors:** Babak Rahmani et al.
 
   </details>
 
@@ -2997,14 +2997,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Transforms game-interface screenshots into editable engine assets through hierarchical YAML, visual grounding, asset extraction, and Unity UXML/USS synthesis, with evaluation on a curated game-UI benchmark and review by three senior UI/UX designers.
 
-  2026 · Conference paper · [PDF](https://baiyunshu.github.io/sprite.github.io/Source/chiea26-516.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-sprite-game-ui/)
+  CHI EA 2026 (poster/extended abstract) · Conference paper · [PDF](https://baiyunshu.github.io/sprite.github.io/Source/chiea26-516.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-sprite-game-ui/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The generated interactions cover basic hover, toggle, and click behavior. Complex temporal and drag-and-drop logic remain outside scope, and translucent overlap or ambiguous diegetic layouts can fail. This is game-UI prototyping, not complete gameplay reconstruction; the official page still labels code as coming soon.
 
-  **Publication:** 2026 · CHI EA 2026 (poster/extended abstract) · Conference paper · Yunshu Bai et al.
+  **Authors:** Yunshu Bai et al.
 
   </details>
 
@@ -3012,14 +3012,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   WorldCoder learns executable Python transition and reward models from environment interactions and natural-language goals. It refines code against recorded experiences and an optimistic planning constraint, studying transfer and task solving in Sokoban, MiniGrid and ALFWorld.
 
-  2024 · Conference paper · [PDF](https://papers.neurips.cc/paper_files/paper/2024/file/820c61a0cd419163ccbd2c33b268816e-Paper-Conference.pdf) · [Code](https://github.com/haotang1995/WorldCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-worldcoder/)
+  NeurIPS 2024 · Conference paper · [PDF](https://papers.neurips.cc/paper_files/paper/2024/file/820c61a0cd419163ccbd2c33b268816e-Paper-Conference.pdf) · [Code](https://github.com/haotang1995/WorldCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-worldcoder/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Assumes deterministic dynamics and symbolic, discrete states rather than recovering a game from arbitrary pixels or binaries. Consistency with observed transitions and successful planning do not establish complete engine equivalence or correctness on every unseen state. Evaluation concerns bounded environment models and planning, not original source or asset recovery.
 
-  **Publication:** 2024 · NeurIPS 2024 · Conference paper · Hao Tang et al.
+  **Authors:** Hao Tang et al.
 
   </details>
 
@@ -3027,14 +3027,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   GIF-MCTS generates executable Python transition and reward models from natural-language environment descriptions and offline state-transition trajectories, using prediction feedback to generate, improve and repair code. CWMB evaluates 18 reinforcement-learning environments and downstream planning; a separate experiment uses a simplified Read to Fight Monsters grid world.
 
-  2024 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [Code](https://github.com/nicoladainese96/code-world-models) · [Full entry & citation](https://awesomerea.org/papers/paper-code-world-models/)
+  NeurIPS 2024 · Conference paper · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [Code](https://github.com/nicoladainese96/code-world-models) · [Full entry & citation](https://awesomerea.org/papers/paper-code-world-models/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.
 
-  **Publication:** 2024 · NeurIPS 2024 · Conference paper · Nicola Dainese et al.
+  **Authors:** Nicola Dainese et al.
 
   </details>
 
@@ -3047,14 +3047,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   UIOrchestra converts static mobile UI designs into React/CSS through layout-description, code-generation and rendered-image comparison agents. Its APPUI benchmark contains 1,101 human-refined code/rendering pairs based on screenshots from 165 apps across 12 categories. The reference code is reconstructed for evaluation, rather than recovered original application source.
 
-  2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-uiorchestra/)
+  Findings of EMNLP 2025 · Conference paper · [PDF](https://aclanthology.org/2025.findings-emnlp.150.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-uiorchestra/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Tests visual, component and code similarity, not native-package execution, interaction, backend behavior or application equivalence. APPUI references are rendered reconstructions of iOS screenshots; unavailable images/icons use placeholders. A human study covers 200 samples with four annotators. The difference-analysis prompt ignores font-size/typeface differences and placeholder image content. Model snapshots, rendering dependencies and a reproducible runtime setup were not verified; experiments were not rerun.
 
-  **Publication:** 2025 · Findings of EMNLP 2025 · Conference paper · Chuhuai Yue et al.
+  **Authors:** Chuhuai Yue et al.
 
   </details>
 
@@ -3062,14 +3062,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Combines visual component extraction, multimodal models, page-transition graphs and iterative checks to reconstruct multi-page mobile UI code from designs or screenshots, evaluated with React Native, Flutter and ArkUI.
 
-  2025 · Journal article · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [Code](https://github.com/security-pride/DeclarUI) · [Full entry & citation](https://awesomerea.org/papers/paper-declarui/)
+  Proceedings of the ACM on Software Engineering 2025 · Journal article · [PDF](https://xinyi-hou.github.io/files/zhou2024bridging.pdf) · [Code](https://github.com/security-pride/DeclarUI) · [Full entry & citation](https://awesomerea.org/papers/paper-declarui/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** People review and correct the inferred navigation graph. Evaluation covers 50 five-page UI sets; transition coverage and compilation do not establish full business-logic or backend recovery. Framework results vary, and visual metrics imperfectly reflect perceived fidelity. Public scripts and data are available, but no project-level license was found at the reviewed commit.
 
-  **Publication:** 2025 · Proceedings of the ACM on Software Engineering · Journal article · Ting Zhou et al.
+  **Authors:** Ting Zhou et al.
 
   </details>
 
@@ -3077,14 +3077,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   ReDraw turns screenshots or design mock-ups into native Android GUI prototypes by detecting components, classifying widget types with a CNN, and assembling a plausible view hierarchy with a data-driven nearest-neighbor method.
 
-  2020 · Journal article · [PDF](https://arxiv.org/pdf/1802.02312v2) · [Full entry & citation](https://awesomerea.org/papers/paper-redraw/)
+  IEEE Transactions on Software Engineering 2020 · Journal article · [PDF](https://arxiv.org/pdf/1802.02312v2) · [Full entry & citation](https://awesomerea.org/papers/paper-redraw/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The implementation covers 15 Android component classes and one screen at a time; multiple screens require manual combination, and hierarchy construction is tied to the mined screen size. Evaluation concerns appearance and view hierarchy, not recovery of original app logic or backends. Screenshots and reconstructed mock-ups served as proxies for real design artifacts; results were not independently reproduced here.
 
-  **Publication:** 2020 · IEEE Transactions on Software Engineering · Journal article · Kevin Moran et al.
+  **Authors:** Kevin Moran et al.
 
   </details>
 
@@ -3092,14 +3092,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Learns screenshot-to-DSL generation for native Android XML, iOS Storyboards and web HTML/CSS interfaces, then compiles the DSL into platform UI code.
 
-  2018 · Conference paper · [PDF](https://arxiv.org/pdf/1705.07962v2) · [Code](https://github.com/tonybeltramelli/pix2code) · [Full entry & citation](https://awesomerea.org/papers/paper-pix2code/)
+  EICS 2018 · Conference paper · [PDF](https://arxiv.org/pdf/1705.07962v2) · [Code](https://github.com/tonybeltramelli/pix2code) · [Full entry & citation](https://awesomerea.org/papers/paper-pix2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Evaluation uses synthetic screenshot/code pairs: 1,500 training and 250 test instances per platform. Reported accuracy concerns DSL tokens, not complete apps or behavior. Text labels are ignored; platform datasets train separate models using the same architecture. The task covers layout, components and relationships, not application logic or backend recovery. The repository describes an educational research prototype; its older dependencies were not runtime-tested.
 
-  **Publication:** 2018 · EICS 2018 · Conference paper · Tony Beltramelli
+  **Authors:** Tony Beltramelli
 
   </details>
 
@@ -3107,14 +3107,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   UI2code translates a mobile UI image into an Android component hierarchy and layout skeleton using a neural encoder-decoder. The paper evaluates structural prediction and a small developer study of implementing layouts from generated skeletons.
 
-  2018 · Conference paper · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [Code](https://github.com/ccywch/UI2code) · [Full entry & citation](https://awesomerea.org/papers/paper-ui2code/)
+  ICSE 2018 · Conference paper · [PDF](https://chunyang-chen.github.io/publication/ui2code.pdf) · [Code](https://github.com/ccywch/UI2code) · [Full entry & citation](https://awesomerea.org/papers/paper-ui2code/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The output covers component types and hierarchy from a single image; detailed styling and text require developer work. Structural token accuracy and an eight-participant study on five screenshots do not establish complete visual fidelity, navigation, app logic or backend recovery. The main split is screenshot-based; a separate evaluation on 1,208 images from 20 unseen apps provides limited generalization evidence.
 
-  **Publication:** 2018 · ICSE 2018 · Conference paper · Chunyang Chen et al.
+  **Authors:** Chunyang Chen et al.
 
   </details>
 
@@ -3122,14 +3122,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   DeGuard reverses layout obfuscation in Android APKs, predicting original names for the fields, methods, classes and packages that ProGuard renames. Built on Soot, it represents an app as a dependency graph over program elements and keeps Android API and other unobfuscated names fixed. It then runs MAP inference with Nice2Predict on a conditional random field learned from 1,684 F-Droid apps, under constraints that keep the renamed APK semantically equivalent. On 100 held-out F-Droid apps obfuscated with ProGuard, names identical to the originals rise from 13.3% to 79.1%, and third-party library prediction reaches 91.3% precision and 91.0% recall.
 
-  2016 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-deguard/)
+  ACM CCS 2016 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-deguard/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Only layout (identifier) obfuscation is addressed. Data, control-flow and cryptographic obfuscation, custom string encryption, reflection and goto-based code reordering are not reversed, and the paper notes that most malware samples it inspected also used such techniques. The benchmark is 100 benign, open-source F-Droid apps, obfuscated by enabling ProGuard without changing its rules and scored by exact match to the original names, so semantically close names count as errors; elements that ProGuard removed are not scored. Accuracy on other obfuscators or on malware may be lower. Libraries are identified by a package-name heuristic covering 133 libraries, and the training apps may import the same libraries. The 49-family malware study gives manual examples, such as Base64 decoders and location handling, without precision figures.
 
-  **Publication:** 2016 · ACM CCS 2016 · Conference paper · Benjamin Bichsel et al.
+  **Authors:** Benjamin Bichsel et al.
 
   </details>
 
@@ -3137,14 +3137,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Reconstructs native Android UI code from screenshots or design bitmaps using OCR, computer vision, and layout heuristics; evaluates visual similarity and view hierarchies on 488 screenshots from over 100 Android and iOS applications.
 
-  2015 · Conference paper · [PDF](https://c.csallner.org/papers/nguyen15reverse.pdf) · [Code](https://github.com/soumikmohianuta/pixtoapp) · [Full entry & citation](https://awesomerea.org/papers/paper-remaui/)
+  ASE 2015 · Conference paper · [PDF](https://c.csallner.org/papers/nguyen15reverse.pdf) · [Code](https://github.com/soumikmohianuta/pixtoapp) · [Full entry & citation](https://awesomerea.org/papers/paper-remaui/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The output is Android UI code; iOS screenshots are inputs, not evidence of native iOS output. Original logic and backend behavior are not recovered, and multi-screen transitions were future work. OCR/layout heuristics can misidentify content. The linked REMAUI v2 repository has older dependencies and is not the exact verified 2015 artifact.
 
-  **Publication:** 2015 · ASE 2015 · Conference paper · Tuan Anh Nguyen et al.
+  **Authors:** Tuan Anh Nguyen et al.
 
   </details>
 
@@ -3157,14 +3157,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   FIRMWELL reconstructs the execution environment of Linux firmware services by running their initialization processes, locating blocking dependencies and repairing missing system-level behavior. It combines containerized QEMU-user emulation with a QEMU-system fallback, using process traces and binary analysis to recover resources needed by the target service.
 
-  2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [Code](https://github.com/qc9c/Firmwell) · [Full entry & citation](https://awesomerea.org/papers/paper-firmwell/)
+  NDSS 2026 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [Code](https://github.com/qc9c/Firmwell) · [Full entry & citation](https://awesomerea.org/papers/paper-firmwell/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The evaluation concerns selected network services, not complete device or hardware equivalence. HTTP acceptance uses configured response-status and error-content checks; other services need their own criteria. Coverage depends on unpacking, supported architectures, initialization heuristics and peripheral models. Symbolic path explosion, solver timeouts and complex peripheral checks remain failure modes. The paper’s recovery strategy avoids patching target binaries; successful service interaction does not establish recovery of original source code or every device function.
 
-  **Publication:** 2026 · NDSS 2026 · Conference paper · Chuan Qin et al.
+  **Authors:** Chuan Qin et al.
 
   </details>
 
@@ -3172,14 +3172,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Penguin rehosts embedded Linux firmware from an extracted filesystem by deriving an editable configuration of emulation transformations, such as file changes, pseudofiles, NVRAM values and network interfaces, from static analysis. Dynamic-analysis plugins expose failures so the configuration can be refined for each target, and a minimizer identifies which transformations a working rehosting needs.
 
-  2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [Code](https://github.com/rehosting/penguin) · [Full entry & citation](https://awesomerea.org/papers/paper-penguin/)
+  Workshop on Binary Analysis Research (BAR) 2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [Code](https://github.com/rehosting/penguin) · [Full entry & citation](https://awesomerea.org/papers/paper-penguin/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Targets embedded Linux firmware through whole-system emulation with kernel replacement, as in Firmadyne and FirmAE; the implementation covers x86, ARM and MIPS and relies on the Linux syscall ABI. In the FirmAE comparison, success means a process binds port 80 or 443; a non-empty HTTP response is a stricter check, and the authors note neither shows full functionality. The 75% gain over FirmAE is author-reported on their own corpus of 13,649 images from vendor websites. Refinement still needs an analyst, and nondeterministic runs were repeated up to ten times. It builds an analysis environment, not a faithful device reproduction or source recovery.
 
-  **Publication:** 2025 · Workshop on Binary Analysis Research (BAR) 2025 · Conference paper · Andrew Fasano et al.
+  **Authors:** Andrew Fasano et al.
 
   </details>
 
@@ -3187,14 +3187,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Rehosts monolithic ARM Cortex-M firmware for fuzzing, using locally scoped symbolic execution to model memory-mapped I/O accesses and focus input mutations on values relevant to firmware logic.
 
-  2022 · Conference paper · [PDF](https://www.usenix.org/system/files/sec22-scharnowski.pdf) · [Code](https://github.com/fuzzware-fuzzer/fuzzware) · [Full entry & citation](https://awesomerea.org/papers/paper-fuzzware/)
+  USENIX Security 2022 · Conference paper · [PDF](https://www.usenix.org/system/files/sec22-scharnowski.pdf) · [Code](https://github.com/fuzzware-fuzzer/fuzzware) · [Full entry & citation](https://awesomerea.org/papers/paper-fuzzware/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The Cortex-M3/M4 artifact requires memory-map configuration and does not automatically model DMA. Abstracting hardware can produce crashes that are impossible on the physical device. This is an analysis environment, not original-source recovery or faithful full-device reconstruction.
 
-  **Publication:** 2022 · USENIX Security 2022 · Conference paper · Tobias Scharnowski et al.
+  **Authors:** Tobias Scharnowski et al.
 
   </details>
 
@@ -3202,14 +3202,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Extends Firmadyne with empirically derived interventions for boot, networking, NVRAM, kernel behavior, and other runtime failures, enabling Linux router and IP-camera firmware web services to run for dynamic analysis.
 
-  2020 · Conference paper · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [Code](https://github.com/pr0v3rbs/FirmAE) · [Full entry & citation](https://awesomerea.org/papers/paper-firmae/)
+  ACSAC 2020 · Conference paper · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [Code](https://github.com/pr0v3rbs/FirmAE) · [Full entry & citation](https://awesomerea.org/papers/paper-firmae/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Arbitration deliberately changes execution and targets functioning web interfaces, not identical physical-device behavior. The evaluation covers ARM little-endian and MIPS little-/big-endian firmware from routers and IP cameras; heuristics may fail on unseen devices or configurations. It reuses firmware binaries rather than recovering their source.
 
-  **Publication:** 2020 · ACSAC 2020 · Conference paper · Mingeun Kim et al.
+  **Authors:** Mingeun Kim et al.
 
   </details>
 
@@ -3217,14 +3217,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   HALucinator rehosts monolithic ARM Cortex-M firmware by identifying hardware-abstraction-library functions and replacing them with authored Python handlers and peripheral models. LibMatch locates library interfaces; the QEMU/Avatar2 implementation supports interactive I/O, while the paper-associated HAL-fuzz variant uses AFL-Unicorn for fuzzing.
 
-  2020 · Conference paper · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [Code](https://github.com/embedded-sec/halucinator) · [Full entry & citation](https://awesomerea.org/papers/paper-halucinator/)
+  USENIX Security 2020 · Conference paper · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [Code](https://github.com/embedded-sec/halucinator) · [Full entry & citation](https://awesomerea.org/papers/paper-halucinator/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** LibMatch requires an available HAL/library and a sufficiently similar compilation environment; compiler variation and inlining limit matching. Rehosting also needs a QEMU-supported architecture, firmware memory layout, interception addresses and authored handlers/models. Unmodeled direct hardware accesses may return zero or ignore writes, and simplified timing and peripheral behavior do not establish hardware equivalence. The authors’ rehosting and fuzzing demonstrations are not universal firmware coverage, complete device reconstruction or original-source recovery.
 
-  **Publication:** 2020 · USENIX Security 2020 · Conference paper · Abraham A Clements et al.
+  **Authors:** Abraham A Clements et al.
 
   </details>
 
@@ -3232,14 +3232,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Firmadyne crawls, extracts and emulates Linux-based firmware for network-connected commercial devices such as routers and IP cameras. It replaces the vendor kernel with pre-built, instrumented kernels for little-endian ARM and little- and big-endian MIPS, boots the extracted filesystem under QEMU full-system emulation with a userspace NVRAM library, infers the network configuration, then runs automated analyses including 60 known and 14 newly found exploits. From 23,035 images across 42 vendors, the authors extracted 9,486 and report 887 of the 1,971 network-reachable images vulnerable to at least one sampled exploit.
 
-  2016 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [Code](https://github.com/firmadyne/firmadyne) · [Full entry & citation](https://awesomerea.org/papers/paper-firmadyne/)
+  NDSS 2016 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [Code](https://github.com/firmadyne/firmadyne) · [Full entry & citation](https://awesomerea.org/papers/paper-firmadyne/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The work targets Linux-based firmware on little-endian ARM and little- and big-endian MIPS, which made up 90.8% of the dataset; x86, VxWorks and other real-time operating systems are outside the system. Its pre-built kernels do not load vendor out-of-tree kernel modules, so vendor kernels and modules cannot be checked, and instrumented emulation is not identical device behavior. The emulation funnel narrows sharply: of 8,591 images that initially emulated, 2,797 had a network configuration inferred and 1,971 answered ping. NVRAM semantics, interface naming and a single emulated Ethernet device on ARM are among the reported causes. WAN and LAN ports are not distinguished, so remote exploitability is not established, and results count firmware images rather than unique products and are skewed by vendor composition. FirmAE, already in this bibliography, extends Firmadyne to address such emulation failures; these 2016 rates are not current emulation figures.
 
-  **Publication:** 2016 · NDSS 2016 · Conference paper · Daming D. Chen et al.
+  **Authors:** Daming D. Chen et al.
 
   </details>
 
@@ -3252,14 +3252,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Infers message-field boundaries by following concrete message-guided paths through binary protocol parsers, then symbolically replaying them to extract byte-level data flow. It merges bytes using value-preserving operations and similar processing traces. For the 1,000-message datasets of four public ICS protocols, the authors report average boundary F1 of 0.76 and field perfection of 0.67.
 
-  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [Code](https://github.com/QYbPtqyb/ICEPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-icepre/)
+  Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728982) · [Code](https://github.com/QYbPtqyb/ICEPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-icepre/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Recovers message syntax, not field semantics, protocol state machines or endpoint equivalence. It needs the binary, loader configuration and correctly identified initialization, input and parsing functions; manual filtering remains necessary, especially without symbols. Encrypted protocols and bit-level fields are unsupported, and ignored or only copied bytes can be merged incorrectly. Perfection measures fields with both boundaries correct. Quantitative tests use four public protocols with 50- and 1,000-message sets; separate proprietary studies cover three protocols in five firmware targets, with interaction checks on three devices and manually established ground truth. Those checks do not demonstrate complete device behavior.
 
-  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Yibo Qu et al.
+  **Authors:** Yibo Qu et al.
 
   </details>
 
@@ -3267,14 +3267,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Infers protocol-message field boundaries and semantics from instrumented server binaries and input messages. BinPRE groups bytes by the instruction operators that process them, applies detectors for field types and functions, then refines results across similar messages. On eight protocols with 50 messages each, the authors report average field perfection of 0.73 and type/function F1 scores of 0.74/0.81.
 
-  2024 · Conference paper · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-binpre/)
+  ACM CCS 2024 · Conference paper · [PDF](https://tingsu.github.io/files/ccs24-BinPRE.pdf) · [Code](https://github.com/ecnusse/BinPRE) · [Full entry & citation](https://awesomerea.org/papers/paper-binpre/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** This is field inference, not recovery of a protocol state machine or complete endpoint behavior. It requires an accessible, instrumentable implementation and runtime message processing; passive captures alone are insufficient. Perfection counts exactly segmented fields against all true fields, not fully recovered protocols. The detector library covers five semantic types and six functions. Byte-level taint cannot accurately resolve bit flags, and unexercised behavior is not established. Ground truth uses Wireshark dissectors and specifications; three binary-analysis baselines were author reimplementations. Reported fuzzing improvements are a downstream evaluation, not proof of implementation equivalence.
 
-  **Publication:** 2024 · ACM CCS 2024 · Conference paper · Jiayi Jiang et al.
+  **Authors:** Jiayi Jiang et al.
 
   </details>
 
@@ -3282,14 +3282,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   DynPRE starts from captured client–server traces and then interacts with a live protocol server to infer message formats and types. It detects session-specific identifiers such as cookies and rewrites them on the fly so that replayed requests stay valid. It then sends byte-level probe requests whose responses serve as semantic feedback for field identification, aligns the responses, and applies a request–response mapping refinement that also recognizes message types. On 12 protocols with 10-, 100- and 1,000-message datasets, the authors report average field perfection of 0.50 and message-type V-measure of 0.94, against 0.15–0.31 perfection for Netzob, NetPlier, FieldHunter, BinaryInferno and NEMESYS.
 
-  2024 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-dynpre/)
+  NDSS 2024 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2024-83-paper.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-dynpre/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** The method needs captured traces plus a reachable server that it can query repeatedly; it does not work from passive captures alone. Probing changes server state: each probe opens a new session, but protocols with global state, such as IoT device power state, can still degrade feedback. On the 1,000-message datasets an analysis averaged 259 minutes, 50,344 connection attempts and about 3.98 million exchanged messages, so slow or rate-limiting servers reduce efficiency. Encryption and authentication were disabled in the open-source evaluation setups, and encrypted traffic in the IoT case studies was decrypted with device private keys. Checksummed protocols need an added checksum-reversal step, shown only on ICMP. Format ground truth comes from tshark dissectors, and message types from manual reading of protocol documents. The five-device IoT case studies test whether generated messages trigger device behaviors, not whether specifications are complete. State-machine inference reuses existing methods and is not evaluated as a contribution.
 
-  **Publication:** 2024 · NDSS 2024 · Conference paper · Zhengxiong Luo et al.
+  **Authors:** Zhengxiong Luo et al.
 
   </details>
 
@@ -3297,14 +3297,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   NetLifter statically lifts source-available C protocol parsers into BNF-style message grammars and first-order constraints between packet fields. It analyzes annotated LLVM bitcode using abstract format graphs, localized path-sensitive analysis, unfolding and reordering. The resulting field boundaries, constraints and names can support packet generation and parser construction.
 
-  2023 · Conference paper · [PDF](https://qingkaishi.github.io/public_pdfs/CCS23.pdf) · [Code](https://github.com/qingkaishi/netlifter) · [Full entry & citation](https://awesomerea.org/papers/paper-netlifter/)
+  ACM CCS 2023 · Conference paper · [PDF](https://qingkaishi.github.io/public_pdfs/CCS23.pdf) · [Code](https://github.com/qingkaishi/netlifter) · [Full entry & citation](https://awesomerea.org/papers/paper-netlifter/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Requires source/LLVM IR and packet-buffer/length annotations; it is not closed-binary or traffic-only recovery. The paper targets common top-down C parsers and does not support C++, inline assembly or libraries without available code. Pointer/loop analysis remains approximate; checksum fields can be identified while some checksum constraints are omitted, and fields ignored by an implementation may be missed. Precision/recall was manually checked on ten selected protocols. The reported fuzzing evaluation used three-hour runs repeated twenty times and bypassed checksum checks. It infers formats, not protocol state machines or proof of implementation equivalence.
 
-  **Publication:** 2023 · ACM CCS 2023 · Conference paper · Qingkai Shi et al.
+  **Authors:** Qingkai Shi et al.
 
   </details>
 
@@ -3312,14 +3312,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Infers partial binary-message formats from static message samples without instrumenting an executable. Specialized detectors recognize floats, timestamps, lengths, entropy boundaries and serialization patterns; a graph-based integration step reconciles their descriptions. Across samples from ten protocols, the authors report top-level field-boundary precision of 0.69, recall of 0.73 and false-positive rate of 0.04 for the 1,000-message setting without analyst priors.
 
-  2023 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [Code](https://github.com/binaryinferno/binaryinferno) · [Full entry & citation](https://awesomerea.org/papers/paper-binaryinferno/)
+  NDSS 2023 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_s131_paper.pdf) · [Code](https://github.com/binaryinferno/binaryinferno) · [Full entry & citation](https://awesomerea.org/papers/paper-binaryinferno/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Assumes error-free, uncompressed, unencrypted, byte-aligned data and infers common fields or payload regions beginning at consistent offsets. It leaves optional/union fields and unsupported serialization patterns unresolved; sample diversity matters. The 26 encapsulated-payload test sets were pre-grouped using ground-truth message types, not discovered automatically. Ground truth merges adjacent fields that are constant across the sample; empty inference results are excluded from reported averages where stated. BI+ additionally uses supplied endianness and capture-time ranges. These are field-boundary results, not complete semantic recovery, protocol-state inference or behavioral equivalence.
 
-  **Publication:** 2023 · NDSS 2023 · Conference paper · Jared Chandler et al.
+  **Authors:** Jared Chandler et al.
 
   </details>
 
@@ -3327,14 +3327,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   StateInspector learns protocol Mealy machines by combining active message queries with snapshots of runtime memory, without requiring the target’s source code. It identifies candidate state-defining heap locations and uses taint and concolic analysis to merge states, evaluated by the authors on TLS 1.2 and WPA/2 implementations.
 
-  2022 · Conference paper · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [Code](https://github.com/ChrisMcMStone/state-inspector) · [Full entry & citation](https://awesomerea.org/papers/paper-stateinspector/)
+  ACM CCS 2022 · Conference paper · [PDF](https://tomchothia.gitlab.io/Papers/greyboxstatelearning_ccs2022.pdf) · [Code](https://github.com/ChrisMcMStone/state-inspector) · [Full entry & citation](https://awesomerea.org/papers/paper-stateinspector/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Assumes a finite Mealy-machine abstraction, a known input alphabet that can reach the relevant states, and state-defining memory on the heap exercised by bootstrap queries. State merging depends on configured search-depth and symbolic look-ahead bounds. Missing inputs or state stored elsewhere can leave behavior unmodeled; malformed harness messages, response abstraction and timeouts can create misleading transitions. Learned models and bounded checks do not establish full implementation equivalence, recover unknown message formats or reconstruct an application’s source code.
 
-  **Publication:** 2022 · ACM CCS 2022 · Conference paper · Chris McMahon Stone et al.
+  **Authors:** Chris McMahon Stone et al.
 
   </details>
 
@@ -3342,14 +3342,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Learns Mealy-machine models of Bluetooth Low Energy implementations on physical peripherals by active automata learning. An nRF52840 central running SweynTooth-derived firmware sends abstract BLE inputs, with error handling, repeated queries and caching for lost packets and non-deterministic replies. The authors learn connection-procedure models of six devices and legacy-pairing models of three, and use model differences to fingerprint their SoCs.
 
-  2022 · Journal article · [PDF](https://arxiv.org/pdf/2211.16074v2) · [Code](https://github.com/apferscher/ble-learning) · [Full entry & citation](https://awesomerea.org/papers/paper-ble-automata-learning/)
+  Formal Methods in System Design 2022 · Journal article · [PDF](https://arxiv.org/pdf/2211.16074v2) · [Code](https://github.com/apferscher/ble-learning) · [Full entry & citation](https://awesomerea.org/papers/paper-ble-automata-learning/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Models are bounded by the chosen abstract alphabet and cover only connection and legacy pairing; message formats are not inferred, and secure pairing is left to future work. Equivalence was approximated with a small number of conformance tests per state, so models are hypotheses, not proofs. One SoC was learnable only with reduced alphabets, two were learned from an already-connected state, and some pairing runs needed manual hard resets. The fingerprinting sequence holds only for the tested SoCs. Apart from one crashing input sequence, the authors report no security vulnerabilities in the learned models.
 
-  **Publication:** 2022 · Formal Methods in System Design · Journal article · Andrea Pferscher et al.
+  **Authors:** Andrea Pferscher et al.
 
   </details>
 
@@ -3357,14 +3357,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Uses multiple sequence alignment and probabilistic keyword-field inference to cluster network messages by type, evaluated across ten protocols with downstream format and state-machine analysis.
 
-  2021 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-5_24531_paper.pdf) · [Code](https://github.com/yapengye/NetPlier) · [Full entry & citation](https://awesomerea.org/papers/paper-netplier/)
+  NDSS 2021 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/ndss2021_4A-5_24531_paper.pdf) · [Code](https://github.com/yapengye/NetPlier) · [Full entry & citation](https://awesomerea.org/papers/paper-netplier/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Requires unencrypted traces and cannot recover unseen message types. Larger alignments, sub-byte keywords and one-way traffic can reduce accuracy. Format/FSM inference is downstream evaluation rather than the main contribution; state semantics in a case study were manually annotated. These models do not establish complete application/device reconstruction.
 
-  **Publication:** 2021 · NDSS 2021 · Conference paper · Yapeng Ye et al.
+  **Authors:** Yapeng Ye et al.
 
   </details>
 
@@ -3372,14 +3372,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Infers message formats of proprietary wireless protocols from demodulated physical-layer captures: it aligns messages by preamble and sync word, then uses RSSI and dedicated engines to label length, address, sequence-number and checksum fields, optionally using known addresses or field positions.
 
-  2019 · Conference paper · [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [Code](https://github.com/jopohl/urh) · [Full entry & citation](https://awesomerea.org/papers/paper-wireless-protocol-re/)
+  13th USENIX Workshop on Offensive Technologies (WOOT 19) 2019 · Conference paper · [PDF](https://www.usenix.org/system/files/woot19-paper_pohl.pdf) · [Code](https://github.com/jopohl/urh) · [Full entry & citation](https://awesomerea.org/papers/paper-wireless-protocol-re/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Only message formats are inferred: preamble, sync, length, address, sequence number and checksum. State-machine inference and payload fields, such as an on/off bit, are out of scope. The method assumes length-efficient binary messages with one preamble and sync word each. Accuracy is measured on 8 generated protocols; 3 real smart-home captures (EnOcean, Homematic BidCoS and an eQ-3 protocol used by RWE Smarthome) serve for performance tests, which the authors call a limited test set.
 
-  **Publication:** 2019 · 13th USENIX Workshop on Offensive Technologies (WOOT 19) · Conference paper · Johannes Pohl et al.
+  **Authors:** Johannes Pohl et al.
 
   </details>
 
@@ -3387,14 +3387,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Infers approximate field boundaries within individual binary-protocol messages from changes in bit congruence, and introduces Format Match Score to compare inferred segmentation with known protocol dissectors.
 
-  2018 · Conference paper · [PDF](https://www.usenix.org/system/files/conference/woot18/woot18-paper-kleber.pdf) · [Code](https://github.com/vs-uulm/nemesys) · [Full entry & citation](https://awesomerea.org/papers/paper-nemesys/)
+  12th USENIX Workshop on Offensive Technologies (WOOT 18) 2018 · Conference paper · [PDF](https://www.usenix.org/system/files/conference/woot18/woot18-paper-kleber.pdf) · [Code](https://github.com/vs-uulm/nemesys) · [Full entry & citation](https://awesomerea.org/papers/paper-nemesys/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Requires plaintext payloads. Evaluation covers DNS, DHCP and NTP with protocol-tuned parameters. Single-byte fields are not inferred; zero-filled fields, character sequences and pseudo-random values can cause errors. FMS needs known field boundaries for validation. The output is approximate segmentation, not field semantics, a state machine or complete application/device behavior.
 
-  **Publication:** 2018 · 12th USENIX Workshop on Offensive Technologies (WOOT 18) · Conference paper · Stephan Kleber et al.
+  **Authors:** Stephan Kleber et al.
 
   </details>
 <!-- END GENERATED PAPERS -->
