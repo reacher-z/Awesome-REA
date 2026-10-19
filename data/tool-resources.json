@@ -7196,5 +7196,37 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "infamous-second-son-pc-port-case",
+    "name": "inFAMOUS Second Son native PC port",
+    "url": "https://github.com/HayatoG/iss_pc",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Runs the PS4 inFAMOUS Second Son’s own x86-64 code natively on Windows and Linux: a runtime reimplements the PS4 system libraries the game uses, and a shadPS4-derived core translates its GPU commands and shaders to Vulkan. The project reports a playable, in-development port that reaches gameplay and the first chapters, with unstable performance and remaining graphics glitches. It is a compatibility-runtime port rather than a decompilation, and its results remain project-reported.",
+    "description_zh": "在 Windows 与 Linux 上原生运行 PS4 版《声名狼藉：次子》自身的 x86-64 代码：由运行时重新实现游戏所用的 PS4 系统库，并以源自 shadPS4 的核心将其 GPU 命令与着色器转换为 Vulkan。项目报告该移植可以游玩但仍在开发中，能进入游戏并通过最初几章，性能仍不稳定，也有尚未解决的图形问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。",
+    "evidence_url": "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the commit of release v2026.10.19-d3995fe (2026-10-19); the repository was created on 2026-10-13 and changes quickly. README marks the port playable and in development: boot, intro, gameplay up to a named early mission, saves, audio, controllers and motion-sensor substitutes work, while performance is typically 20–30 FPS on an RTX 2060, first-time shader compilation stutters and some fog, water and fire effects flicker. Full-game completion is not confirmed, and a crash on AMD Polaris GPUs under Windows remains open.",
+      "Supply your own copy of the US PS4 release CUSA00223, base game 1.00 merged with update 1.07 (about 33 GB), including the 1.07 eboot.bin and the game’s own libc and Fios2 modules; README reports that CUSA00004 also boots but is not tested in depth. No PS4 firmware modules are needed, and README states that no game code, files or art are distributed. The project disclaims affiliation with Sony Interactive Entertainment and Sucker Punch Productions.",
+      "Play needs 64-bit Windows 10 (1903+) or 11, or x86-64 Linux with glibc 2.39+, and a Vulkan 1.3 GPU, with 6 GB of VRAM recommended; CPUs lacking F16C or SSE4A get instruction emulation at start-up. Building uses a recursive clone with the listed submodules and port/build.sh, with SDL3, Vulkan, FFmpeg, FreeType, Boost, fmt, Zydis and glslang on Linux and an MSYS2 CLANG64 toolchain on Windows; the Qt launcher needs PySide6.",
+      "Evidence is play-testing, issue reports and logs: README cites Linux tests on Nobara/Fedora 44, player tests on Windows and a seven-minute RTX 2060 session with a median of 27 FPS. The CI workflow builds Linux and Windows packages for pull requests and authorized manual releases, and its Linux job runs C, Python and GPU-library unit tests without game content or automated gameplay tests. This collection read the sources without running the port or the game.",
+      "README declares GPL-2.0 for the project and credits code from HayatoG’s earlier The Last Guardian and Gravity Rush 2 ports, gow3_pc, bloodborne_pc, shadPS4 and a fork of it, and a Shadow of the Colossus port; experimental fixes are traced to their source commits. The game and its assets keep their owners’ rights. README names no AI model or REA use; the post’s AI attribution comes from a third-party account whose linked repository is a fork with no commits of its own, so no AI workflow is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.recomp.json",
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/docs/ARQUIVOS_NECESSARIOS.md",
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/docs/EXPERIMENTAL_FIXES.md",
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.github/workflows/build.yml",
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.gitmodules",
+      "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
+      "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
+    ]
   }
 ]

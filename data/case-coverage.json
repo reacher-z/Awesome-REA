@@ -15755,13 +15755,27 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111529015068762529"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post links a fork with no commits of its own; its original repository, HayatoG/iss_pc, documents a playable, in-development native PC port in which the game’s own PS4 code runs on a reimplemented system runtime with a shadPS4-derived Vulkan renderer, with required game files, build steps, status and known problems. The full mapping covers this compatibility-runtime port, not a decompilation. Results remain project-reported, and the reviewed sources do not establish the post’s AI attribution.",
+      "reason_zh": "帖子链接的是一个没有自身提交的分叉；其原始仓库 HayatoG/iss_pc 记录了一个可以游玩、仍在开发中的原生 PC 移植：游戏自身的 PS4 代码运行在重新实现的系统运行时之上，并由源自 shadPS4 的 Vulkan 渲染器绘制画面，仓库还说明了所需游戏文件、构建步骤、状态与已知问题。完整映射覆盖这一兼容运行时移植，而非反编译重建。结果仍为项目报告，所审来源也未确立帖子所称的 AI 使用。",
+      "primary_evidence_urls": [
+        "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md",
+        "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.recomp.json",
+        "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/docs/ARQUIVOS_NECESSARIOS.md",
+        "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/.github/workflows/build.yml",
+        "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
+        "https://x.com/0x0SojalSec/status/2111529015068762529"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "infamous-second-son-pc-port-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-legacy-billing-illustrative-demo",
@@ -15830,18 +15844,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 197,
+      "already-curated": 198,
       "insufficient-evidence": 195,
-      "pending": 199
+      "pending": 198
     },
     "units_by_state": {
-      "already-curated": 195,
+      "already-curated": 196,
       "insufficient-evidence": 195,
-      "pending": 199
+      "pending": 198
     },
-    "primary_reviewed_units": 332,
-    "catalog_linked_occurrences": 208,
-    "distinct_resource_ids": 200,
+    "primary_reviewed_units": 333,
+    "catalog_linked_occurrences": 209,
+    "distinct_resource_ids": 201,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
