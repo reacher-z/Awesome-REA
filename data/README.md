@@ -65,7 +65,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `description_en` / `description_zh` | Text | Original summary |
 | `scope_limitations_en` / `scope_limitations_zh` | Text | Evaluation scope, unavailable artifacts and other limits |
 | `why_fits_en` / `why_fits_zh` | Text | Why the paper belongs in the collection |
-| `evidence_urls` | Nonempty list of HTTPS URLs | Primary sources checked for the record |
+| `evidence_urls` | Nonempty list of HTTPS URLs | Primary sources checked for the record. Files in a code repository name the reviewed commit (`/blob/<commit>/…`), as for resource evidence; a paper with a GitHub `code_url` cites at least its README at that commit, while `code_url` stays the moving repository link |
 | `metadata_notes` / `metadata_notes_zh` | Text | Notes on identifiers, dates, acceptance or artifacts |
 | `kind` | `research` | Fixed value |
 | `verified_at` | ISO date | Date of the bibliography review; at most one calendar day ahead of UTC for timezone differences |

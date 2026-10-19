@@ -35,7 +35,8 @@
       "https://aclanthology.org/2024.emnlp-main.203/",
       "https://aclanthology.org/2024.emnlp-main.203.pdf",
       "https://arxiv.org/abs/2403.05286",
-      "https://github.com/albertan017/LLM4Decompile"
+      "https://github.com/albertan017/LLM4Decompile",
+      "https://github.com/albertan017/LLM4Decompile/blob/85b364bf093eb2ee4f3687cfe38a203fca89f23e/README.md"
     ],
     "metadata_notes": "Publication date is the conference month; first_arxiv_date is recorded separately.",
     "kind": "research",
@@ -85,7 +86,8 @@
       "https://aclanthology.org/2025.findings-acl.1194/",
       "https://aclanthology.org/2025.findings-acl.1194.pdf",
       "https://arxiv.org/abs/2505.11340",
-      "https://github.com/vul337/DecompileBench"
+      "https://github.com/vul337/DecompileBench",
+      "https://github.com/vul337/DecompileBench/blob/761c6513b10344f502474f3e5e78c74fd89ab839/README.md"
     ],
     "metadata_notes": "The published ACL record and PDF use 'Zhang Bolun'; the arXiv record uses 'Bolun Zhang'. The paper's Jennieett/DecompileBench link now redirects to vul337/DecompileBench. This is distinct from Tan et al.'s Decompile-Bench (arXiv:2505.12668).",
     "kind": "research",
@@ -145,6 +147,7 @@
       "https://arxiv.org/abs/1909.09029",
       "https://2019.ase-conferences.org/details/ase-2019-papers/49/DIRE-A-Neural-Approach-to-Decompiled-Identifier-Renaming",
       "https://github.com/pcyin/dire",
+      "https://github.com/pcyin/dire/blob/e58c2eed4a1c72056d8ff8a7a9fc2c39a42e2a13/README.md",
       "https://github.com/CMUSTRUDEL/DIRTY"
     ],
     "metadata_notes": "IEEE/ACM ASE 2019 proceedings, pages 628–639; the DOI resolves to IEEE Xplore document 8952404. The publisher-deposited and arXiv titles use 'Naming'; the ASE program and original code repository use the variant 'Renaming'. Both refer to this paper. Crossref lists 'Edward Schwartz'; the paper's own 'Edward J. Schwartz' is retained. Code URL is the verified original author artifact, explicitly deprecated, rather than a claim of current package support.",
@@ -194,6 +197,7 @@
       "https://www.usenix.org/conference/usenixsecurity22/presentation/chen-qibin",
       "https://arxiv.org/abs/2108.06363",
       "https://github.com/CMUSTRUDEL/DIRTY",
+      "https://github.com/CMUSTRUDEL/DIRTY/blob/5f8e9494d52ef8788f0834342097f36462eeb2eb/README.md",
       "https://edmcman.github.io/papers/usenix22.pdf"
     ],
     "metadata_notes": "Year and publication month come from the final USENIX conference record; the arXiv date is not substituted for publication.",
@@ -252,6 +256,7 @@
       "https://api.crossref.org/works/10.1145/3658644.3670340",
       "https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf",
       "https://github.com/lt-asset/resym",
+      "https://github.com/lt-asset/resym/blob/437b4acac21a5a60edecf0c4423f7172f991271f/README.md",
       "https://dnxie.github.io/",
       "https://zenodo.org/records/13917253"
     ],
@@ -350,6 +355,7 @@
       "https://arxiv.org/html/2604.03750v2",
       "https://arxiv.org/pdf/2604.03750v2",
       "https://github.com/wangyu-ovo/CREBench",
+      "https://github.com/wangyu-ovo/CREBench/blob/9fc4016538a0bab8c230732a9f788a61ed43addf/README.md",
       "https://jams-zhou-james.github.io/CREBench/"
     ],
     "metadata_notes": "The COLM 2026 OpenReview record has the same title, seven authors and abstract as arXiv v2 (2026-08-06), whose header reads 'Published as a conference paper at COLM 2026' and which the official project calls its camera-ready version. OpenReview’s 2026-07-08 publication timestamp coincides with the project’s acceptance announcement and is not used as a publication date; the October 6–9, 2026 conference and its Poster Session 5 listing are event details. The repository BibTeX still cites arXiv. This is unrelated to the creativity-evaluation paper also named CreBench.",
@@ -501,7 +507,8 @@
       "https://arxiv.org/abs/2403.03163",
       "https://arxiv.org/abs/2403.03163v1",
       "https://salt-nlp.github.io/Design2Code/",
-      "https://github.com/NoviScl/Design2Code"
+      "https://github.com/NoviScl/Design2Code",
+      "https://github.com/NoviScl/Design2Code/blob/7a575e4c33f417c4be5c64072b8f5798de0d0f99/README.md"
     ],
     "metadata_notes": "Use the final NAACL 2025 title and six-author list. arXiv v1 (2024-03-05) and the project page’s BibTeX use the earlier title “Design2Code: How Far Are We From Automating Front-End Engineering?” and list five authors without Ryan Li; v2 and the reviewed v3 match the final title and authors. SALT-NLP/Design2Code hosts the project website, whereas NoviScl/Design2Code is the verified research-code repository.",
     "kind": "research",
@@ -561,6 +568,7 @@
       "https://arxiv.org/abs/2411.03292",
       "https://arxiv.org/pdf/2411.03292v3",
       "https://github.com/WebPAI/Interaction2Code",
+      "https://github.com/WebPAI/Interaction2Code/blob/29d8af1572888d33b028ef001dc8452f9e88497b/README.md",
       "https://webpai.github.io/Interaction2Code/"
     ],
     "metadata_notes": "Uses the final nine-author title and author list. The 2026 arXiv v3 revision is separate from the 2025 conference publication; the earlier preprint used a different title, five authors, and a smaller benchmark.",
@@ -625,6 +633,7 @@
       "https://proceedings.iclr.cc/paper_files/paper/2026/file/55bfedfd31489e5ae83c9ce8eec7b0e1-Paper-Conference.pdf",
       "https://arxiv.org/abs/2509.24709",
       "https://github.com/SIGMME/IWR-Bench",
+      "https://github.com/SIGMME/IWR-Bench/blob/891ca67cbd940961245d3eea883f211637e03490/README.md",
       "https://sigmme.github.io/IWR-Bench/",
       "https://huggingface.co/datasets/IWR-Bench/IWR-Bench"
     ],
@@ -679,6 +688,7 @@
       "https://arxiv.org/abs/2607.04727",
       "https://arxiv.org/html/2607.04727v1",
       "https://github.com/nth2000/Dashboard2Code",
+      "https://github.com/nth2000/Dashboard2Code/blob/284e154f775af798b843ca4eae26057d7fcf3d21/README.md",
       "https://huggingface.co/datasets/nth2000/Dashboard2Code"
     ],
     "metadata_notes": "The paper links the public code repository directly. Only the public dataset access notice was inspected; gated files were not accessed. Publication metadata follows the final ACL record.",
@@ -825,7 +835,8 @@
       "https://api.crossref.org/works/10.1109/ASE.2015.32",
       "https://c.csallner.org/papers/nguyen15reverse.pdf",
       "https://pixeltoapp.com/",
-      "https://github.com/soumikmohianuta/pixtoapp"
+      "https://github.com/soumikmohianuta/pixtoapp",
+      "https://github.com/soumikmohianuta/pixtoapp/blob/f103a580e015ef7779998f14c9533a238a4bf1d1/README.md"
     ]
   },
   {
@@ -922,6 +933,7 @@
       "https://arxiv.org/abs/2606.26094",
       "https://arxiv.org/html/2606.26094v1",
       "https://github.com/bethgelab/revenge-bench",
+      "https://github.com/bethgelab/revenge-bench/blob/090048696b4c7287e4cd05a728d4bba10fc8d421/README.md",
       "https://joschkastrueber.github.io/publications/",
       "https://openreview.net/forum?id=KTnZYPgaQz",
       "https://icml.cc/virtual/2026/workshop/54082",
