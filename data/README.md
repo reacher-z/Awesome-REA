@@ -5,7 +5,7 @@
 | Field | Meaning |
 | --- | --- |
 | `id` | Stable lowercase slug, unique across both files |
-| `name` | Upstream project or resource name |
+| `name` | Upstream project or resource name as published. A `case-study` name is a title instead, `<lead>: <what was reconstructed or found>`, of at most 100 characters. The lead is the project name as its README or page presents it, or the game, app or device when the work has no separate project name (a report, a post, or a repository titled after its game, such as `n64decomp/sm64`). Name the game, app or device in the summary when the lead does not. When the lead itself contains a colon, separate the summary with an em dash, as in `Zelda 64: Recompiled — a native Majora’s Mask port …`. The Chinese name in `site/translations.zh-CN.json` keeps the lead and puts a full-width colon（：）before the translated summary |
 | `url` | Canonical public destination |
 | `category` | Task or tool family; `python3 scripts/catalog.py --list-categories` prints the values in use |
 | `kind` | Resource type: project, tool, integration, case-study, collection, documentation, learning-resource, or research |

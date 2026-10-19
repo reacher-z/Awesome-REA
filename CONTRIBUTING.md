@@ -84,7 +84,7 @@ Use a verified paper DOI or arXiv identifier whenever available. Never substitut
 
 ## Reconstruction cases
 
-Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml) in English or Simplified Chinese. Separate the original inputs, reconstructed output and evidence; partial or untested cases can be suggested.
+Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml) in English or Simplified Chinese. Separate the original inputs, reconstructed output and evidence; partial or untested cases can be suggested. Title a case `<lead>: <what was reconstructed or found>`, leading with the project name as published and naming the game, app or device in the summary, as in `SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360`; the `name` row of the [catalog format guide](data/README.md) covers leads that contain a colon and works without a project name.
 
 Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category; validation rejects either value without the other. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets, and optionally label each `requirements` item with `requirement_facets` from the [catalog format guide](data/README.md); pages then list prerequisites first. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
 
