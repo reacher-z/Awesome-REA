@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 448](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-448-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 188](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-188-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 86](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-86-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 449](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-449-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 189](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-189-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 86](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-86-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (178) · [应用](#app) (69)
+- [网站](#website) (25) · [游戏](#game) (179) · [应用](#app) (69)
 - [原生二进制](#native-binary) (58) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (188) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (189) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1069,6 +1069,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   为 Nintendo 64 版《星际火狐 64》美版 1.1（Rev A）重建 C 源码；借助静态重编译运行的 IDO 编译器编译后，可重建出 MD5 与公布值一致的 ROM，README 徽章显示全部 2,951 个函数均已一致。构建时从使用者自备的 ROM 中拆分代码与素材，仓库本身不含素材或汇编。另行收录的 Starship PC 移植直接编译这份 C 代码，Starfox 64: Recompiled 则从中取用头文件和部分函数来编写补丁。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sf64-matching-decomp-case/)
+
+- [**《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译**](https://github.com/PrimeDecomp/prime)
+
+  为《密特罗德 Prime》GameCube 版的可执行文件及其 NES 模拟器模块重建 C++ 源码，使 CodeWarrior 编译结果与原文件一致，涵盖美版、韩版、PAL 版与日版，另有针对体验版光盘和三个 Wii 版本的早期配置。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含游戏素材或汇编。另行收录的 Metaforce 与 Metroid Prime Port 都在这份代码之上构建原生移植。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
 
 #### 工具、项目与集成
 

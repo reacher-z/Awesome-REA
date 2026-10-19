@@ -52,7 +52,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — Decompiler and package explorer for Unreal Engine (.upk, .u) files. **[371 stars]** · Curated: [UE Explorer](https://awesomerea.org/resources/ue-explorer/)
 - [ethteck/splat](https://github.com/ethteck/splat) — A binary splitting tool to assist with decompilation and modding projects **[368 stars]** · Curated: [splat](https://awesomerea.org/resources/splat/)
-- [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — A matching decompilation of Metroid Prime **[367 stars]**
+- [PrimeDecomp/prime](https://github.com/PrimeDecomp/prime) — A matching decompilation of Metroid Prime **[367 stars]** · Curated: [Metroid Prime: the PrimeDecomp matching GameCube decompilation](https://awesomerea.org/resources/primedecomp-metroid-prime-decomp-case/)
 - [0xDC00/agent](https://github.com/0xDC00/agent) — Universal script based text hooker (powered by FRIDA). **[357 stars]**
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]**
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — A utility to compile &amp; decompile IW engine game scripts. **[335 stars]**
