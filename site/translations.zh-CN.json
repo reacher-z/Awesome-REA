@@ -3321,5 +3321,15 @@
       "只有源码内容嵌入在映射 sourcesContent 中的源文件才会被写出；只列出路径而无内容的条目会被跳过，因此未包含源码的映射无法恢复这些文件。已存在的文件不会被覆盖，所以平铺输出时同名源文件会被跳过，除非使用 --preserve。",
       "采用 MIT 许可。恢复出的文件仍是原作者的代码，适用其自身条款，因此只应分析有权查看的源映射。本次未处理任何源映射。"
     ]
+  },
+  "xboxrecomp": {
+    "name": "xboxrecomp 初代 Xbox 静态重编译工具包",
+    "requirements": [
+      "v0.14.0（2026-10-16，即所审阅的提交）的 README 称工具包与具体游戏无关，但开发时以 Burnout 3: Takedown 为参考；重编译后的游戏首次运行必定崩溃，每款游戏都需要反复添加桩函数、修复间接调用并补充运行时。作者自己的移植仍处于早期：README 撤回了 Burnout 3 此前“可游玩”的说法，其重编译路径目前只到引擎初始化，Wreckless 和 Blood Wake 分别处于可启动和刚搭好框架的阶段。本目录收录的 The Two Towers Recompiled 与 DOAXVB 案例使用的是它的内置副本或分支。",
+      "使用者需从自己的初代 Xbox 光盘镜像中提供 default.xbe 和游戏数据文件。仓库不含任何游戏代码或资产，只构建库，不会产出游戏可执行文件；生成的 C 代码往往多达数百万行，写入使用者依据随附模板创建的游戏项目中。",
+      "流水线需要 Python 3.10+ 和 Capstone（测试另需 pytest）；Ghidra 或 IDA 为可选项，仅用于恢复符号名。运行时使用 CMake 3.20+ 构建：Windows 上用 Visual Studio 2022 或 MinGW-w64（D3D11、XInput、XAudio2、Media Foundation），x86-64 与 arm64 的 Linux 和 macOS 上用 Clang/GCC 加 SDL2、libepoxy 和 pkg-config，但这两个平台没有 FMV 解码。v0.14.0 发布版本不含二进制文件。",
+      "单元测试不需要游戏文件，其中若干项会编译提升器自身的输出并对照 x86 定义检查，同时配有反向对照；README 给出的完整通过结果为 812 项通过、0 项跳过。一致性测试在真实的 32 位 x86 CPU 上，用相同输入分别运行提升后的 C 代码和原始指令；在 Linux 和 macOS 上由 Docker 镜像提供 GCC 以及在 Wine 下运行的 MSVC。README 称提升器覆盖率良好但未量化，仓库中也没有 CI 工作流。",
+      "采用 MIT 许可证，但取自 xemu 的 MCPX APU 源码和 NV2A 寄存器定义保留 LGPL-2.1-or-later 许可，具体文件列于 NOTICE。README 致谢 Claude Code 参与了 AI 辅助开发，未提及使用 REA。本目录未构建或运行该工具包，也不代表任何游戏兼容性。"
+    ]
   }
 }

@@ -8388,5 +8388,37 @@
       "https://github.com/paazmaya/shuji/blob/a97c6df48e2016fde7b072d3e8475dea3d7b872c/LICENSE",
       "https://www.npmjs.com/package/shuji/v/0.8.0"
     ]
+  },
+  {
+    "id": "xboxrecomp",
+    "name": "xboxrecomp",
+    "url": "https://github.com/sp00nznet/xboxrecomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Static-recompilation toolkit for original Xbox games: a Python pipeline parses a retail XBE, disassembles it, classifies library functions, recovers calling conventions and lifts every x86 function to C. The generated code is compiled in a separate game project that links the toolkit's runtime libraries, which stand in for the Xbox kernel and translate Direct3D 8, NV2A, audio and input to Direct3D 11 and Win32 APIs, or to SDL2 and OpenGL on Linux and macOS.",
+    "description_zh": "面向初代 Xbox 游戏的静态重编译工具包：Python 流水线解析零售版 XBE，进行反汇编、识别库函数、恢复调用约定，并将每个 x86 函数提升为 C 代码。生成的代码在独立的游戏项目中编译，并链接工具包的运行时库；这些库替代 Xbox 内核，并将 Direct3D 8、NV2A、音频和输入转换到 Direct3D 11 与 Win32 API，在 Linux 和 macOS 上则转换到 SDL2 与 OpenGL。",
+    "evidence_url": "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README for v0.14.0 (2026-10-16, the reviewed commit) calls the toolkit title-agnostic but built against Burnout 3: Takedown, and says a first run of a recompiled game will crash and needs iterative stubbing, indirect-call fixes and runtime work for each title. The author's own ports are early: the README retires an earlier playable claim for Burnout 3, whose recompiled path reaches engine initialization, and lists Wreckless and Blood Wake as booting or scaffolded. The curated The Two Towers Recompiled and DOAXVB cases build on vendored or forked copies.",
+      "Users supply default.xbe and the game's data files from their own original Xbox disc image. The repository contains no game code or assets and builds only libraries, never a game executable; the generated C, often millions of lines, is written into the user's own game project created from the bundled template.",
+      "The pipeline needs Python 3.10+ with Capstone (pytest for tests); Ghidra or IDA are optional and only recover symbol names. The runtime builds with CMake 3.20+ and Visual Studio 2022 or MinGW-w64 on Windows (D3D11, XInput, XAudio2, Media Foundation), or Clang/GCC with SDL2, libepoxy and pkg-config on x86-64 and arm64 Linux and macOS, where FMV decoding is not available. The v0.14.0 release has no binary assets.",
+      "Unit tests need no game files, and several compile the lifter's output and check it against x86 definitions with paired negative controls; the README gives 812 passed and 0 skipped as a clean run. A conformance suite runs lifted C and the original instructions on a real 32-bit x86 CPU over the same inputs, with Docker images supplying GCC and MSVC under Wine on Linux and macOS. The README calls lifter coverage good but unquantified, and the repository has no CI workflow.",
+      "MIT-licensed, except the MCPX APU sources and NV2A register definitions extracted from xemu, which stay LGPL-2.1-or-later as listed in NOTICE. The README credits Claude Code for AI-assisted development and states no REA use. This collection did not build or run the toolkit, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/docs/GETTING_STARTED.md",
+      "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/templates/new-game/CMakeLists.txt",
+      "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/tools/conformance/mkxbe.py",
+      "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/LICENSE",
+      "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/NOTICE",
+      "https://github.com/sp00nznet/xboxrecomp/releases/tag/v0.14.0"
+    ]
   }
 ]
