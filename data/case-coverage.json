@@ -9398,12 +9398,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111395824991097074"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@TvSelmo, 2026-10-17) to a post by @FedorovMykhailo wonders whether Ukraine could use REA on Starshield signal frequencies. It reports no attempt or result and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a speculative remark about military communications, and no technical details are recorded here.",
+      "reason_zh": "回复（@TvSelmo，2026-10-17）在回应 @FedorovMykhailo 的帖子时设想，乌克兰能否用 REA 分析 Starshield 的信号频率。回复没有报告任何尝试或结果，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是关于军事通信的推测性评论，此处不记录任何技术细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111395824991097074"
+      ],
       "catalog_matches": []
     },
     {
@@ -9418,12 +9420,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111405429486211272"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@weliuatx, 2026-10-17, in Chinese) asks who wants to join in using REA to reverse engineer the Windows kernel, obtain its source code and build a free operating system; it quotes a Spanish post (@devruso, 2026-10-16) making the same proposal about the Linux kernel, whose source is already public. It reports no work and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a call for collaborators, not a case.",
+      "reason_zh": "帖子（@weliuatx，2026-10-17）招募同伴一起用 REA 逆向 Windows 内核、获取源码，再做一个免费操作系统；它引用了一条西班牙语帖子（@devruso，2026-10-16），后者对源码早已公开的 Linux 内核提出了同样的设想。帖子没有报告任何工作，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是招募合作者的帖子，而非案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111405429486211272"
+      ],
       "catalog_matches": []
     },
     {
@@ -9438,12 +9442,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111424789827228006"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@im_xiaoxiao, 2026-10-17, in Chinese) says the author used “RAE” with Ghidra on Amazon Prime’s tvOS IPA and found the universal-link format it supports, so the author’s own app can jump to a show’s playback page, and that one of the two tools consumed about 10 GB of disk a minute until Codex could no longer run. It shows no link format or analysis output and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@im_xiaoxiao，2026-10-17）称，作者用“RAE”加 Ghidra 逆向 Amazon Prime 的 tvOS IPA，终于找到它支持的通用链接（universal link）格式，可以从自己的应用直接跳转到对应动画节目的播放页；代价是两款工具中的某一个每分钟占用约 10 GB 磁盘，直到硬盘被写满、Codex 无法运行。帖子没有给出链接格式或分析输出，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111424789827228006"
+      ],
       "catalog_matches": []
     },
     {
@@ -9458,12 +9464,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111426952162947310"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@Dhananjay_Tech, 2026-10-17) credits REA for a top-bar display of the author’s live Claude and Codex usage limits and current agent activity, attaching three screenshots. It does not say what was analyzed or how the limits are read and links no code, and no GitHub account with a related repository was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@Dhananjay_Tech，2026-10-17）称借助 REA 把自己 Claude 与 Codex 的实时用量额度，以及 AI 智能体当前的工作内容放到了顶部状态栏，并附三张截图。帖子没有说明分析了什么、额度如何读取，也没有链接代码，且未找到带有相关仓库的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111426952162947310"
+      ],
       "catalog_matches": []
     },
     {
@@ -9480,12 +9488,17 @@
         "https://x.com/i/status/2111395850471592274",
         "https://x.com/i/status/2111396216508383268"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Three replies by @TheGingerBill (2026-10-17) criticize LLVM: its ABI calling-convention handling is missing and undocumented, he had to reverse engineer much of it, and people point to Odin’s ABI code as a reference; he adds that LLMs have helped with this reverse engineering but still struggle even with extensive context. The public Odin compiler repository contains that LLVM ABI source, but the posts link no specific code, notes or LLM-assisted output. Retain the lead without a catalog mapping; this is commentary, not a documented case.",
+      "reason_zh": "@TheGingerBill 的三条回复（2026-10-17）批评 LLVM：其 ABI 调用约定处理缺失且没有文档，他不得不自己逆向其中很多部分，很多人也把 Odin 的 ABI 代码当作参考；他补充说，大模型如今对这类逆向工作有所帮助，但即使提供大量上下文，它们仍会吃力。公开的 Odin 编译器仓库中包含这份 LLVM ABI 源码，但这些帖子没有链接具体代码、笔记或借助大模型得到的输出。保留此线索而不建立目录映射；这是评论，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111396413066363009",
+        "https://x.com/i/status/2111395850471592274",
+        "https://x.com/i/status/2111396216508383268",
+        "https://github.com/odin-lang/Odin/blob/c6e2f0ba9f77fbfb3bda37347eaa4a256425748a/src/llvm_abi.cpp"
+      ],
       "catalog_matches": []
     },
     {
@@ -14855,12 +14868,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111615624678088837"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@Hammerstone911, 2026-10-18) to a post about AI-assisted decompile-and-port activity and publishers’ reactions says programmers spent years reverse engineering pre-CU Star Wars Galaxies emulators and wonders how long AI would take. It reports no attempt and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is a speculative remark, not a case.",
+      "reason_zh": "回复（@Hammerstone911，2026-10-18）回应一条关于 AI 辅助反编译与移植热潮及发行商反应的帖子，称程序员花了数年时间逆向开发《星球大战：星系》CU 更新之前版本的模拟器，并好奇 AI 需要多久。回复没有报告任何尝试，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这是推测性的评论，而非案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111615624678088837"
+      ],
       "catalog_matches": []
     },
     {
@@ -15936,15 +15951,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 214,
-      "pending": 178
+      "insufficient-evidence": 220,
+      "pending": 172
     },
     "units_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 214,
-      "pending": 178
+      "insufficient-evidence": 220,
+      "pending": 172
     },
-    "primary_reviewed_units": 353,
+    "primary_reviewed_units": 359,
     "catalog_linked_occurrences": 211,
     "distinct_resource_ids": 204,
     "distinct_paper_ids": 1,
