@@ -15007,5 +15007,46 @@
       "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/LICENSE",
       "https://github.com/vaibhavpandeyvpz/apkstudio/releases/tag/v6.3.0"
     ]
+  },
+  {
+    "id": "valetudo-robot-cloud-replacement-case",
+    "name": "Valetudo: local replacement for robot-vacuum vendor clouds",
+    "url": "https://github.com/Hypfer/Valetudo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol",
+      "firmware"
+    ],
+    "description_en": "Replaces the vendor cloud of supported robot vacuums with a local service that runs on the rooted robot beside the vendor firmware and emulates the cloud endpoints that firmware expects, including a miio dummycloud and a counterpart for Midea's MSmart protocol. Its FAQ says each new vendor backend meant reverse engineering data formats, authentication and communication without vendor documentation; Valetudo converts the proprietary map formats into one ValetudoMap format and keeps Kaitai Struct descriptions of Dreame, Roborock and Viomi map files and a Midea protobuf schema as references. It adds a web interface, a REST API with Swagger UI and MQTT/Home Assistant integration, while feature parity with the vendor apps is an explicit non-goal.",
+    "description_zh": "用运行在已 root 机器人上、与厂商固件并存的本地服务取代受支持扫地机器人的厂商云，并模拟固件所期待的云端接口，包括 miio 模拟云（dummycloud）以及对应 Midea MSmart 协议的实现。其 FAQ 说明，每支持一个新厂商，都需要在没有厂商文档的情况下逆向分析数据格式、认证和通信；Valetudo 将各家专有地图格式转换为统一的 ValetudoMap 格式，并保留 Dreame、Roborock、Viomi 地图文件的 Kaitai Struct 描述和一份 Midea protobuf 模式作为参考。它提供网页界面、带 Swagger UI 的 REST API 以及 MQTT／Home Assistant 集成，但明确不以与厂商应用功能对等为目标。",
+    "evidence_url": "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026.10.0 release commit of 2026-10-18. The README says Valetudo is not a custom firmware but a 'brain parasite' for the vendor firmware, whose own functions it relies on. The backend has Dreame, Roborock, Viomi, 3irobotix and Midea implementations, and the supported-robots page lists 50 model entries under 10 brand headings and calls the list exhaustive.",
+      "Requires a supported robot that its owner has already rooted. The docs describe rooting as model-specific and permanent ('Reverting to stock is impossible'), and say the vendor app stops working because cloud connectivity is cut; this record covers no rooting procedure. The repository and its releases ship no vendor firmware: release assets are Valetudo's own armv7, armv7-lowmem and aarch64 binaries with UPX-compressed variants, an OpenAPI schema and a release manifest, while the repository also commits pkg Node.js base binaries for packaging and small captured map files as test fixtures.",
+      "Valetudo runs on the robot's Linux system as a static Node.js 22 binary built with pkg; development needs Node.js >=20 according to the root package.json. The docs require Linux and computer skills, and sometimes hardware work, for installation, and offer peer support only.",
+      "CI on Node.js 22 runs type checks, lint, the frontend and backend builds and the backend node:test suite, including Dreame, Roborock and 3irobotix map-parser tests on captured maps and miio and MSmart packet tests. The supported-robots page says each listed robot was tested by the author personally unless noted. These are project-reported checks; this review ran nothing and compared no behaviour with vendor clouds.",
+      "Apache-2.0, although the README describes its governance as 'Freeware with source available'. The Kaitai structs declare CC-BY-SA-4.0, and a bundled robot model and tracker song are credited under CC-BY-NC-SA. Vendor firmware, apps and clouds keep their own terms. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/faq.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/newcomer-guide.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/getting-started.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/why-not-valetudo.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/docs/pages/general/supported-robots.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/lib/miio/Dummycloud.js",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/lib/msmart/MSmartDummycloud.js",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/assets/kaitai_structs/readme.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/assets/protobuf/midea.proto",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/package.json",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/backend/package.json",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/.github/workflows/nodejs.yml",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/frontend/src/assets/raw/credits.md",
+      "https://github.com/Hypfer/Valetudo/blob/78267517d3036258322b6760ba8a9979d197e249/LICENSE",
+      "https://github.com/Hypfer/Valetudo/releases/tag/2026.10.0"
+    ]
   }
 ]

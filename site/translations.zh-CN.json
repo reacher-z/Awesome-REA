@@ -4940,5 +4940,15 @@
       "APK 及所需的厂商框架文件由使用者自备；安装到设备需要可通过 ADB 连接的设备。解码得到的 smali 和 JADX 生成的 Java 代码属于重建结果，需要核对，并非原始源码。README 称其在 Windows、Linux 和 macOS 上运行 CI 构建，免责声明表示该工具不用于盗版或其他非法用途。",
       "采用 LGPL-3.0 许可。本次未安装，也未解码任何 APK。"
     ]
+  },
+  "valetudo-robot-cloud-replacement-case": {
+    "name": "Valetudo：扫地机器人厂商云的本地替代",
+    "requirements": [
+      "审阅基于 2026-10-18 的 2026.10.0 发布提交。README 称 Valetudo 不是定制固件，而是厂商固件的“脑寄生虫”，依赖固件自身的功能运行。后端实现了 Dreame、Roborock、Viomi、3irobotix 和 Midea 的支持；受支持机器人页面在 10 个品牌标题下列出 50 个型号条目，并声明该列表是完整的。",
+      "需要一台机主已自行 root 的受支持机器人。文档说明 root 因型号而异且不可逆（“无法恢复原厂状态”），并指出由于与厂商云的连接被切断，厂商应用将无法使用；本条目不涉及任何 root 步骤。仓库及其发布版本均不包含厂商固件：发布资源是 Valetudo 自己的 armv7、armv7-lowmem 和 aarch64 程序及其 UPX 压缩版本、OpenAPI 模式文件和发布清单；仓库另外提交了用于打包的 pkg Node.js 基础二进制，以及作为测试样本的小型地图采集文件。",
+      "Valetudo 以 pkg 构建的静态 Node.js 22 程序运行在机器人的 Linux 系统上；根目录 package.json 规定开发需要 Node.js >=20。文档指出，安装需要 Linux 和计算机知识，有时还需要硬件操作，且只提供同伴式互助支持。",
+      "CI 在 Node.js 22 上运行类型检查、代码风格检查、前后端构建以及后端 node:test 测试套件，包括基于采集地图的 Dreame、Roborock、3irobotix 地图解析测试，以及 miio 和 MSmart 报文测试。受支持机器人页面称，除另有说明外，所列机器人均由作者亲自测试。这些都是项目报告的检查；本次审阅未运行任何内容，也未与厂商云的行为进行比较。",
+      "采用 Apache-2.0 许可，但 README 将其治理方式描述为“源码可见的免费软件”。Kaitai 结构描述声明 CC-BY-SA-4.0，内置的机器人模型和 tracker 音乐注明采用 CC-BY-NC-SA。厂商固件、应用和云服务各自保留其条款。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
