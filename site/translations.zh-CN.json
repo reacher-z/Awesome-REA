@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "paper-mario-ttyd-decomp-case": {
+    "name": "《纸片马力欧 RPG》：早期阶段的 GameCube 一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 G8MJ01（Rev 0，日版）；configure.py 未定义其他版本，CI 也只构建 G8MJ01。README 仍留有模板残余：徽章指向另一个项目，克隆命令写的是 NWPlayer123/G8MJ01-dtk，另有一行把 G8MJ01 称为美版。产物是 GameCube DOL 和 REL 组，不是 PC 移植。",
+      "需将自己的 G8MJ01 光盘镜像复制到 orig/G8MJ01，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的符号表和拆分表拆分 main.dol 与各 REL，并从 DOL 中把记忆卡图标和横幅纹理提取为本地头文件。src/pmario_sound.c 等反编译源文件中也包含以 C 重建的游戏数据表。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.8.3、objdiff v3.7.1、binutils 2.42-2、sjiswrap v1.2.2、wibo 1.1.0 及 20260305 编译器包；游戏和 REL 代码使用 Metrowerks GC/2.6，Dolphin SDK 使用 GC/1.2.5n。tools/ttydasm 是一个 Rust 辅助工具，可从 build/G8MJ01 中链接好的 DOL 或 REL 产物里解码指定的事件脚本。",
+      "标为 Matching 的目标文件（configure.py 中 547 个里有 100 个）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/G8MJ01/build.sha1 校验 DOL 和全部 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 G8MJ01，并上传进度报告。decomp.dev 针对该固定提交的报告显示，3,784,980 个代码字节中有 457,800 个（12.10%）、9,770 个函数中有 2,029 个已匹配，1,239 个单元中有 100 个已完成；本合集未运行构建。",
+      "仓库采用 MIT 许可证（版权归 NWPlayer123），libs/musyx 另有其 MIT 许可证；两者都不涵盖任天堂的游戏、光盘内容或下载的编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

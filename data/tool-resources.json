@@ -7196,5 +7196,39 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "paper-mario-ttyd-decomp-case",
+    "name": "Paper Mario: The Thousand-Year Door: an early matching GameCube decompilation",
+    "url": "https://github.com/doldecomp/ttyd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A work-in-progress matching decompilation of Paper Mario: The Thousand-Year Door that targets the Japanese Rev 0 GameCube release (G8MJ01), rebuilding MarioSt.dol and 31 REL modules with the original Metrowerks compilers and checking each against a stored SHA-1. The build splits these binaries from a user-supplied disc image, and objdiff compares objects during development. decomp.dev reported 12.10% of code matched at the reviewed commit.",
+    "description_zh": "《纸片马力欧 RPG》（Paper Mario: The Thousand-Year Door）的进行中一致性反编译，目标为日版 Rev 0 GameCube 版本（G8MJ01）：用原版 Metrowerks 编译器重建 MarioSt.dol 和 31 个 REL 模块，并逐一与仓库保存的 SHA-1 比对。构建从使用者自备的光盘镜像中拆分这些二进制，开发时用 objdiff 比对目标文件。decomp.dev 报告所审提交有 12.10% 的代码已匹配。",
+    "evidence_url": "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README lists one supported version, G8MJ01 (Rev 0, JP); configure.py defines no other version and CI builds only G8MJ01. README still carries template leftovers: its badges point at another project, its clone command names NWPlayer123/G8MJ01-dtk and one line calls G8MJ01 the USA version. The output is a GameCube DOL and REL set, not a PC port.",
+      "Copy your own G8MJ01 disc image to orig/G8MJ01; ISO (GCM), RVZ, WIA, WBFS, CISO, NFS, GCZ and TGC images are accepted. README says the repository contains no game assets or assembly: decomp-toolkit splits main.dol and the RELs using committed symbol and split tables, and extracts the memory-card icon and banner textures from the DOL into local headers. Decompiled sources such as src/pmario_sound.c also carry game data tables reconstructed as C.",
+      "Builds need Python and ninja on Windows (native tooling recommended), macOS (with wine-crossover) or Linux (an automatically downloaded wibo on x86, Wine elsewhere). configure.py pins decomp-toolkit v1.8.3, objdiff v3.7.1, binutils 2.42-2, sjiswrap v1.2.2, wibo 1.1.0 and the 20260305 compiler bundle, using Metrowerks GC/2.6 for game and REL code and GC/1.2.5n for the Dolphin SDK. tools/ttydasm is a Rust helper that decodes a named event script from the linked DOL or REL outputs in build/G8MJ01.",
+      "Objects marked Matching (100 of 547 in configure.py) are compiled from source and the rest come from the split originals; the default ninja target checks the DOL and all RELs against config/G8MJ01/build.sha1 before reporting progress. CI builds G8MJ01 in a container that supplies the disc files and compilers and uploads a progress report. decomp.dev’s report for the pinned commit lists 457,800 of 3,784,980 code bytes (12.10%) and 2,029 of 9,770 functions matched, with 100 of 1,239 units complete; this collection ran no build.",
+      "The repository carries the MIT License (copyright NWPlayer123), and libs/musyx has its own MIT license; neither covers Nintendo’s game, disc contents or the downloaded compilers. The reviewed sources establish no AI or REA use, and no runtime reproduction is claimed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/configure.py",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/config/G8MJ01/config.yml",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/config/G8MJ01/build.sha1",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/tools/project.py",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/src/pmario_sound.c",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/tools/ttydasm/src/cli.rs",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/.github/workflows/build.yml",
+      "https://github.com/doldecomp/ttyd/blob/62131fc31866f85a12e4817a8dc37f0c25eb5f8c/LICENSE",
+      "https://decomp.dev/doldecomp/ttyd"
+    ]
   }
 ]
