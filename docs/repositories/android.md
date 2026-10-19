@@ -26,7 +26,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — Open-source, cross platform Qt6 based IDE for reverse-engineering Android application packages. It features a friendly IDE-like layout including code editor with syntax highlighting support for \*.smali code files. **[4,683 stars]**
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android virtual machine and deobfuscator **[4,671 stars]** · Curated: [Simplify](https://awesomerea.org/resources/simplify-android-deobfuscator/)
 - [ReVanced/revanced-patches-template](https://github.com/ReVanced/revanced-patches-template) — 👋🧩Template repository for ReVanced Patches **[4,613 stars]**
-- [APKLab/APKLab](https://github.com/APKLab/APKLab) — Android Reverse-Engineering Workbench for VS Code **[4,011 stars]**
+- [APKLab/APKLab](https://github.com/APKLab/APKLab) — Android Reverse-Engineering Workbench for VS Code **[4,011 stars]** · Curated: [APKLab](https://awesomerea.org/resources/apklab/)
 - [ax/apk.sh](https://github.com/ax/apk.sh) — Makes reverse engineering Android apps easier, automating repetitive tasks like pulling, decoding, rebuilding and patching an APK. **[3,842 stars]**
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 ReVanced Patcher used to patch Android applications **[3,525 stars]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**

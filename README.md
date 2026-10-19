@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 441](https://img.shields.io/badge/resources-441-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 442](https://img.shields.io/badge/resources-442-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (66)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (67)
 - [Native Binary](#native-binary) (56) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1691,6 +1691,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Windows-native Dalvik decompiler and Android analysis workbench written in C++ that opens APK, DEX, ODEX, OAT, JAR, AAR and class files without installation. Besides Java and Smali views with cross-references, renaming and comments, it identifies packers, deobfuscates and decrypts strings, tracks data flow and taint, solves paths, runs rule-based malicious-behaviour, vulnerability and privacy-leak scans, and can dump device memory or hook methods with Frida. Shell and server CLI modes, Python and Java scripting and a sample malware-triage agent skill expose the same analysis to scripts and agents.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/gda-android-decompiler/)
+
+- [**APKLab**](https://github.com/APKLab/APKLab)
+
+  VS Code extension that turns the editor into an Android reverse-engineering workbench around Apktool, Jadx, smali-lsp and uber-apk-signer. It decodes an APK into resources and Smali, decompiles it to Java, gives Smali go-to-definition, references and diagnostics through a language server, and rebuilds, signs and installs the modified app. It can also generate Frida hooks for Smali methods, add a Frida gadget, prepare an app for HTTPS traffic inspection with apk-mitm and produce a Quark-Engine malware-analysis report.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/apklab/)
 
 <a id="native-binary"></a>
 ### Native Binary
