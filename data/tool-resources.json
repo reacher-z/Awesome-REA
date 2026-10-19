@@ -11032,5 +11032,39 @@
       "https://github.com/ruffle-rs/ruffle/releases/tag/v0.7.1",
       "https://ruffle.rs/compatibility"
     ]
+  },
+  {
+    "id": "ps3recomp",
+    "name": "ps3recomp",
+    "url": "https://github.com/sp00nznet/ps3recomp",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Toolkit and runtime for statically recompiling PlayStation 3 games into native executables. Python tools parse PS3 ELF and PRX files, find functions and firmware imports, and lift PPU and SPU code to C/C++; a project template links that code with a C/C++ runtime providing LV2 system calls, high-level emulation of the system libraries and RSX graphics translation to Direct3D 12, Metal or Vulkan.",
+    "description_zh": "用于将 PlayStation 3 游戏静态重编译为原生可执行文件的工具包与运行时。Python 工具解析 PS3 ELF 和 PRX 文件，识别函数与固件导入，并将 PPU 和 SPU 代码提升为 C/C++；项目模板再将这些代码与 C/C++ 运行时链接，由运行时提供 LV2 系统调用、系统库的高层仿真，以及转换到 Direct3D 12、Metal 或 Vulkan 的 RSX 图形层。",
+    "evidence_url": "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README for v0.15.0 (released 2026-10-16; the reviewed master commit is two commits ahead) reports about 93 complete and 5 partial high-level-emulated system-library modules, with media decoding and SPURS still partial. Only Windows with Direct3D 12 runs a recompiled game from this tree; macOS and Linux build the runtime and pass its tests, but no title has yet booted to gameplay there.",
+      "Users supply a decrypted ELF of the game executable (EBOOT.BIN) from their own legally obtained copy; the repository ships no keys, firmware or game files and does not decrypt retail executables. The optional firmware low-level-emulation path also needs decrypted firmware modules that the user provides. Each game is ported in its own project: the README lists The Simpsons Arcade Game and Tornado Outbreak as in game in separate repositories, which this record does not cover.",
+      "Building from source needs Python (3.10+ in the README, 3.9+ in the build guides), CMake 3.20+ and a C17/C++20 compiler (MSVC or clang-cl, GCC 12+ or Clang 15+). SDL2 is required off Windows, and FFmpeg is optional and loaded at run time for video and ATRAC3plus decoding. Releases ship prebuilt SDK bundles with the runtime library, headers and Python pipeline for Windows x64, macOS arm64 and Linux x64. Last commit at review: 2026-10-16.",
+      "CI builds the runtime and runs the lifter test suites and C unit tests on Windows, macOS arm64 and Linux, plus the Vulkan backend on lavapipe; the README states that a passing check does not mean a game ran. A lifter conformance suite checks the C emitted for single instructions against expectations derived from the PowerISA, and a regression gate compares five ports with recorded milestone logs before shared-runtime changes land.",
+      "MIT-licensed; the vendored ATRAC3/ATRAC3plus decoder taken from PPSSPP stays LGPL-2.1-or-later. The README states that the project contains no Sony code, firmware, keys or copyrighted material and that its system-library modules are written from documented behavior, with RPCS3 used as a behavioral reference rather than a code source. This collection did not build or run it, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/docs/GETTING_STARTED.md",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/docs/BUILDING.md",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/docs/REGRESSION_GATE.md",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/docs/FIRMWARE_LLE.md",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/tools/test_ppu_lift.py",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/LICENSE",
+      "https://github.com/sp00nznet/ps3recomp/blob/39a36296511c445707adabcd312f0b740cfbd694/third_party/at3_standalone/README.txt",
+      "https://github.com/sp00nznet/ps3recomp/releases/tag/v0.15.0"
+    ]
   }
 ]

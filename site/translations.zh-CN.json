@@ -4055,5 +4055,15 @@
       "贡献者被要求将每个测试 SWF 与其源文件一同提交，预期的 trace 输出和截图来自运行调试版 Flash Player 的结果；已知失败可在测试的 test.toml 中标注。这些测试检验 Ruffle 在自制测试文件上的行为，并不证明它在所有内容上都与 Flash Player 等价；本次审阅未运行任何测试。",
       "采用 MIT 或 Apache-2.0 双许可（GitHub 显示为 NOASSERTION）；LICENSE.md 列出第三方依赖的许可证，仓库还附带来自 Flex SDK 的 asc.jar，用于编译其 ActionScript 类。SWF 内容保留各自权利。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "ps3recomp": {
+    "name": "ps3recomp PS3 静态重编译工具包",
+    "requirements": [
+      "v0.15.0（发布于 2026-10-16；所审阅的 master 提交比它多两个提交）的 README 报告，系统库的高层仿真模块约 93 个已完成、5 个部分完成，其中媒体解码和 SPURS 仍不完整。目前只有 Windows 上的 Direct3D 12 能在本仓库中运行重编译后的游戏；macOS 和 Linux 能构建运行时并通过测试，但尚无游戏在这两个平台上从本仓库启动到可游玩状态。",
+      "使用者需从自己合法取得的游戏副本中提供已解密的游戏可执行文件（EBOOT.BIN）ELF；仓库不附带任何密钥、固件或游戏文件，也不解密零售版可执行文件。可选的固件低层仿真路径还需要使用者自行提供已解密的固件模块。每款游戏都在独立项目中移植：README 列出 The Simpsons Arcade Game 和 Tornado Outbreak 已进入游戏画面，它们位于单独的仓库，不在本条目范围内。",
+      "从源码构建需要 Python（README 写 3.10+，构建指南写 3.9+）、CMake 3.20+，以及支持 C17/C++20 的编译器（MSVC 或 clang-cl、GCC 12+ 或 Clang 15+）。非 Windows 平台必须安装 SDL2；FFmpeg 为可选项，运行时加载，用于视频和 ATRAC3plus 解码。发布版本为 Windows x64、macOS arm64 和 Linux x64 提供预构建的 SDK 包，内含运行时库、头文件和 Python 流水线。审阅时最后一次提交为 2026-10-16。",
+      "CI 在 Windows、macOS arm64 和 Linux 上构建运行时并运行提升器测试套件与 C 单元测试，另在 lavapipe 上测试 Vulkan 后端；README 说明检查通过并不代表游戏能够运行。提升器一致性测试将单条指令生成的 C 代码与依据 PowerISA 推导的预期结果比对，回归门禁则在共享运行时变更合入前，将五个移植项目与记录下来的里程碑日志进行比较。",
+      "采用 MIT 许可证；内置的 ATRAC3/ATRAC3plus 解码器取自 PPSSPP，保留 LGPL-2.1-or-later 许可。README 声明项目不含任何 Sony 代码、固件、密钥或受版权保护的材料，系统库模块依据公开记录的行为编写，RPCS3 仅作为行为参考而非代码来源。本目录未构建或运行该工具，也不代表任何游戏兼容性。"
+    ]
   }
 }
