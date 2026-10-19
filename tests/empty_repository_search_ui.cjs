@@ -24,7 +24,7 @@ function application(query, options = {}) {
   const fetch = app.context.fetch;
   app.context.fetch = async (url, ...args) => {
     const response = await fetch(url, ...args);
-    if (new URL(url).pathname === '/catalog.json') {
+    if (/^\/catalog(-index)?\.json$/.test(new URL(url).pathname)) {
       if (options.catalogFailure) return {ok: false, status: 503};
       const json = await response.json();
       if (options.unavailable) json.meta.source_index.resource_count = 0;

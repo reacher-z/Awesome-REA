@@ -105,6 +105,8 @@ const UI = {
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Review source",
     "requirements": "Details & requirements",
+    "requirementsLoading": "Loading requirements…",
+    "requirementsError": "Requirements couldn’t load. Close and reopen these details to try again.",
     "reviewed": "Reviewed",
     "sourceReviewed": "Source-reviewed",
     "sourceNotRecorded": "Not recorded",
@@ -232,6 +234,8 @@ const UI = {
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "复核来源",
     "requirements": "详情与使用条件",
+    "requirementsLoading": "正在加载使用条件…",
+    "requirementsError": "使用条件未能加载。请收起后重新展开以重试。",
     "reviewed": "复核于",
     "sourceReviewed": "来源已复核",
     "sourceNotRecorded": "未记录",
@@ -269,7 +273,7 @@ const ZH_REPOSITORY_PATHS = {"blob/main/CONTRIBUTING.md": "blob/main/CONTRIBUTIN
 const params = new URLSearchParams(location.search);
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, records: [], loaded: false, error: false };
+const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -346,11 +350,32 @@ function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(CATEGORY,record.category)),external(record.evidence_url,"",t("readSource")+" ↗"));article.append(meta);
-  const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
+  const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
   const href=entryHref("curated",record.id);
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
   details.append(context);article.append(details);return article;
+}
+// The lean catalog-index.json has no requirement lists; a card shows a placeholder until catalog.json supplies them.
+function fillRequirements(list, record) {
+  const requirements = state.lang === "zh" ? (record.requirements_zh || record.requirements) : record.requirements;
+  if (!requirements) { list.replaceChildren(node("li", "requirements-pending", t(state.detailsError ? "requirementsError" : "requirementsLoading"))); return false; }
+  list.replaceChildren(...(Array.isArray(requirements) ? requirements : [requirements]).map(item => node("li", "", item)));
+  return true;
+}
+function searchText(r) { return [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(CATEGORY[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase(); }
+// The complete catalog.json follows the first render, so searches cover requirement text and open details fill in place.
+// Typing a query or opening details retries it after a failure.
+function loadDetails() {
+  if (!state.loaded || state.details) return state.details;
+  if (state.detailsError) { state.detailsError = false; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); }
+  state.details = fetch(dataURL("catalog.json"), {cache: "no-cache"}).then(response => { if (!response.ok) throw new Error("Catalog HTTP " + response.status); return response.json(); }).then(data => {
+    const complete = new Map(data.resources.map(r => [r.id, r]));
+    for (const record of state.records) { const full = complete.get(record.id); if (full) { record.requirements = full.requirements; record.requirements_zh = full.requirements_zh; record.search = searchText(record); } }
+    const pending = state.pendingRequirements; state.pendingRequirements = [];
+    if (state.q.trim()) render(); else pending.forEach(([list, record]) => fillRequirements(list, record));
+  }).catch(() => { state.details = null; state.detailsError = true; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); });
+  return state.details;
 }
 function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
@@ -373,7 +398,7 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
   if (showRepositories) button.textContent = t("emptySearchRepositoriesFor").replace("{query}", () => state.q.trim());
 }
 function render() {
-  const expanded = expandedRecords(".resource-card");
+  const expanded = expandedRecords(".resource-card"); state.pendingRequirements = [];
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   renderEmptySearchActions(found.length);
@@ -386,19 +411,19 @@ function reset() { state.q = ""; state.group = "all"; state.category = "all"; st
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
-    const response = await fetch(dataURL("catalog.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
+    const response = await fetch(dataURL("catalog-index.json"), {cache: "no-cache"}); if (!response.ok) throw new Error("Catalog HTTP " + response.status); const data = await response.json();
     state.topicLabels = data.topic_labels || {};
-    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(CATEGORY[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
+    state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: searchText(r)}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
     if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
-    state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
+    state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index); loadDetails();
   } catch (error) { state.error = true; state.loaded = false; renderEmptySearchActions(); $("#resource-grid").replaceChildren(); $("#resource-grid").setAttribute("aria-busy", "false"); $("#results-status").textContent = t("errorTitle"); $("#error-state").hidden = false; $("#empty-state").hidden = true; $("#load-more-row").hidden = true; }
 }
 $("#search-input").value = state.q;
-$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+$("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));

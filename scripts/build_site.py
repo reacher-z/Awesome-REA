@@ -31,6 +31,9 @@ OUTPUT = ROOT / "dist"
 SITE_URL = "https://awesomerea.org"
 REPOSITORY_URL = "https://github.com/reacher-z/Awesome-REA"
 TARGETS = {"website", "game", "app", "binary", "firmware", "protocol"}
+# Record fields the homepage needs for its first render; catalog.json keeps every field.
+CATALOG_INDEX_FIELDS = ("id", "name", "name_zh", "url", "evidence_url", "description_en", "description_zh", "kind",
+                        "category", "group", "relationship", "targets", "verified_at")
 FONT_AWESOME_ICONS = {
     "arrow": "arrow-right", "external": "arrow-up-right-from-square",
     "search": "magnifying-glass", "copy": "copy", "check": "check",
@@ -39,6 +42,12 @@ FONT_AWESOME_ICONS = {
     "layers": "layer-group", "document": "file-lines", "book": "book-open",
     "terminal": "terminal", "github": "github", "globe": "globe", "gamepad": "gamepad",
 }
+
+
+def catalog_index(catalog: dict) -> dict:
+    """Project the complete catalog onto the lean index the homepage renders first."""
+    return {"meta": catalog["meta"], "topic_labels": catalog["topic_labels"],
+            "resources": [{key: record[key] for key in CATALOG_INDEX_FIELDS if key in record} for record in catalog["resources"]]}
 
 
 def fontawesome_markup(html: str, stylesheet_url: str) -> str:
@@ -212,6 +221,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     metadata["paper_count"] = len(papers)
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
+    (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for key, value in {"BROWSE_COUNT": metadata["source_index"]["resource_count"], "SCANNED_COUNT": metadata["source_index"].get("scanned_count", 0), "PAPER_COUNT": len(papers)}.items():
         html = html.replace("{{" + key + "}}", f"{value:,}")
@@ -235,12 +246,12 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
             data_digest.update(filename.encode("utf-8") + b"\0" + path.read_bytes())
     data_revision = data_digest.hexdigest()[:16]
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
-    # Start the catalog request while the page parses. The URL and CORS mode match app.js's
-    # fetch(dataURL("catalog.json")), so that fetch reuses this response; source-browser.json stays on demand.
+    # Start the catalog index request while the page parses. The URL and CORS mode match app.js's
+    # fetch(dataURL("catalog-index.json")), so that fetch reuses this response; source-browser.json stays on demand.
     script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
     if html.count(script_tag) != 1:
         raise ValueError("Homepage needs exactly one deferred app.js script")
-    html = html.replace(script_tag, f'<link rel="preload" href="/catalog.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
+    html = html.replace(script_tag, f'<link rel="preload" href="/catalog-index.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
     # Both entry pages contain their own language before JavaScript runs.
     app_source = (SOURCE / "app.js").read_text(encoding="utf-8")
     (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")

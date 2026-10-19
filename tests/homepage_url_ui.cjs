@@ -2,6 +2,9 @@
 const assert = require('node:assert/strict');
 const {setup} = require('./protocol_target_ui.cjs');
 const settle = () => new Promise(resolve => setImmediate(resolve));
+// The lean index renders first; the complete catalog follows for requirement text.
+const CATALOG_REQUESTS = ['/catalog-index.json', '/catalog.json'];
+const paths = app => app.requests.map(url => new URL(url).pathname);
 const element = (app, selector) => app.elements.get(selector);
 const value = (app, key) => app.context.location.searchParams.get(key);
 const languageLink = (app, language) => app.languageLinks.find(link => link.dataset.languageLink === language);
@@ -16,7 +19,7 @@ function application(query = '', {pathname = '/', unavailable = false, catalogFa
   const fetch = app.context.fetch;
   app.context.fetch = async (...args) => {
     const response = await fetch(...args);
-    if (new URL(args[0]).pathname !== '/catalog.json') return response;
+    if (!/^\/catalog(-index)?\.json$/.test(new URL(args[0]).pathname)) return response;
     if (catalogFailure) return {ok: false, status: 503};
     const data = await response.json();
     if (unavailable) data.meta.source_index.resource_count = 0;
@@ -39,7 +42,7 @@ const tests = {
       assert.equal(app.api.state.lang, pathname === '/zh/' ? 'zh' : 'en');
       assert.equal(app.api.sourceState.mode, 'curated');
       assert.equal(app.api.state.layout, 'compact');
-      assert.equal(app.requests.length, 1, 'normalization must not fetch repository data');
+      assert.deepEqual(paths(app), CATALOG_REQUESTS, 'normalization must not fetch repository data');
       for (const query of ['应用 & UI', 'all', 'relevance', '  literal  ']) {
         input(app, '#search-input', query);
         assert.equal(value(app, 'q'), query, 'query values are not enum defaults');
@@ -129,7 +132,7 @@ const tests = {
     assert.equal(value(unavailable, 'source-target'), 'protocol');
     assert.equal(value(unavailable, 'topic'), 'fixtures');
     assert.equal(value(unavailable, 'sort'), 'stars');
-    assert.equal(unavailable.requests.length, 1);
+    assert.deepEqual(paths(unavailable), CATALOG_REQUESTS);
   },
   async inactive() {
     const filters = '?q=Fixture&group=tools&category=dynamic-analysis&kind=tool&target=app'

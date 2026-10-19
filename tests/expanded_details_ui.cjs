@@ -52,7 +52,7 @@ function setup({brokenDetails = false} = {}) {
   location.assign = () => {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => ({ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: rows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser})};
+    fetch: async url => ({ok: true, json: async () => /^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? {resources: rows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser})};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,applyLanguage,setIndexMode};', context);
   return {api: context.audit, element};

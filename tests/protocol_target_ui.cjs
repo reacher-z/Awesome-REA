@@ -62,7 +62,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   const windowListeners = {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener(event, callback) { windowListeners[event] = callback; }},
     history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
-    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
+    fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => /^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);
   return {api: context.audit, context, elements, buttons, protocolLabels, repositoryLinks, languageLinks, windowListeners, requests};
