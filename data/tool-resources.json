@@ -7865,5 +7865,42 @@
       "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
       "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
     ]
+  },
+  {
+    "id": "m1n1",
+    "name": "m1n1",
+    "url": "https://github.com/AsahiLinux/m1n1",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Asahi Linux's bootloader and hardware-research environment for Apple Silicon Macs. It bridges Apple's boot chain to Linux by loading appended device trees, initramfs and kernels; in proxy mode a USB link lets a Python client probe hardware live and run macOS or Linux under m1n1's hypervisor while tracing its hardware accesses.",
+    "description_zh": "Asahi Linux 面向 Apple Silicon Mac 的引导程序与硬件研究环境。它将 Apple 的启动链衔接到 Linux，加载附加在其后的设备树、initramfs 和内核；在代理模式下，Python 客户端可通过 USB 连接实时探查硬件，并在 m1n1 的虚拟机监控器中运行 macOS 或 Linux，同时追踪其硬件访问。",
+    "evidence_url": "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Under active development: the reviewed main commit (2026-10-19) is 53 commits past the v2.0.0 tag (2026-10-02), whose message calls it the first GPL release, otherwise identical to v1.9.9. The latest GitHub release, v1.9.9, ships a stage-2 m1n1.bin and a UEFI-only package holding just an m1n1 boot.bin.",
+      "Runs only on Apple Silicon Macs. Builds need an aarch64-linux-gnu-gcc cross toolchain (or a native ARM64 one), LLVM and lld on macOS, or the bundled compose setup, plus Rust's aarch64-unknown-none-softfloat target for chainloading builds. The Python proxy client (pyserial, construct, asn1) talks to m1n1 over USB from another host.",
+      "Apple's kmutil installs m1n1 as a custom boot object from macOS recovery, normally via the Asahi Linux installer. run_guest.py takes a Mach-O guest such as an XNU kernelcache from the user's own macOS install; the repository ships no Apple firmware, kernels or macOS components. proxyclient/hv holds 27 tracers for blocks such as AGX, DCP, NVMe and SMC.",
+      "CI builds main, checks C and Rust formatting and runs the proxy client's pytest suite on Ubuntu and macOS 14 and 15; those tests cover its assembler, object loading and toolchain handling, not behavior on Mac hardware.",
+      "Code through v1.9.9 stays MIT; from v2.0.0 m1n1 is GPL-2.0-or-later, and embedded third-party code such as libfdt, Arm Trusted Firmware portions and dlmalloc, and vendored Rust crates keep their own licenses. Asahi Linux's LLM policy broadly forbids generative AI for material contributions, citing its clean-room reverse-engineering rules; AGENTS.md, CLAUDE.md and GEMINI.md say the maintainers forbid any AI or LLM use for legal reasons."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AsahiLinux/docs/blob/0d1f8917fa88745d62a4c05d802c4a7298c8616b/docs/sw/m1n1-user-guide.md",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/proxyclient/tools/run_guest.py",
+      "https://github.com/AsahiLinux/m1n1/tree/7cde7d1a784d851ebfee5579fa363c38b14150c0/proxyclient/hv",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/requirements.txt",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/.github/workflows/test.yml",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/.github/workflows/build.yml",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/LICENSE",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/LICENSE.MIT",
+      "https://github.com/AsahiLinux/m1n1/blob/7cde7d1a784d851ebfee5579fa363c38b14150c0/AGENTS.md",
+      "https://asahilinux.org/llm-policy/",
+      "https://github.com/AsahiLinux/m1n1/releases/tag/v1.9.9",
+      "https://github.com/AsahiLinux/m1n1/releases/tag/v2.0.0"
+    ]
   }
 ]

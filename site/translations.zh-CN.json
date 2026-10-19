@@ -3170,5 +3170,15 @@
       "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
       "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
     ]
+  },
+  "m1n1": {
+    "name": "m1n1 Apple Silicon 引导与硬件研究工具",
+    "requirements": [
+      "处于活跃开发中：所审阅的 main 提交（2026-10-19）比 v2.0.0 标签（2026-10-02）多 53 个提交；该标签说明称其为首个 GPL 版本，其余与 v1.9.9 相同。GitHub 上最新的发行版 v1.9.9 提供第二阶段 m1n1.bin，以及只含 m1n1 boot.bin 的纯 UEFI 软件包。",
+      "只能在 Apple Silicon Mac 上运行。构建需要 aarch64-linux-gnu-gcc 交叉工具链（或 ARM64 原生工具链）、macOS 上的 LLVM 与 lld，或仓库附带的 compose 环境；支持链式加载的构建还需 Rust 的 aarch64-unknown-none-softfloat 目标。Python 代理客户端（依赖 pyserial、construct、asn1）在另一台主机上通过 USB 与 m1n1 通信。",
+      "m1n1 由 Apple 的 kmutil 在 macOS 恢复环境中安装为自定义启动对象，通常由 Asahi Linux 安装器完成。run_guest.py 接受 Mach-O 格式的客体，例如来自使用者自有 macOS 安装的 XNU kernelcache；仓库不附带任何 Apple 固件、内核或 macOS 组件。proxyclient/hv 收有 27 个追踪脚本，覆盖 AGX、DCP、NVMe 和 SMC 等硬件模块。",
+      "CI 会构建 main 分支、检查 C 与 Rust 代码格式，并在 Ubuntu 及 macOS 14、15 上运行代理客户端的 pytest 测试套件；这些测试覆盖其汇编器、目标文件加载和工具链处理，不涉及在 Mac 硬件上的行为。",
+      "v1.9.9 及以前的代码仍采用 MIT 许可；自 v2.0.0 起 m1n1 采用 GPL-2.0-or-later，内嵌的 libfdt、部分 Arm Trusted Firmware 代码、dlmalloc 等第三方代码及随附的 Rust crate 保留各自许可。Asahi Linux 的 LLM 政策以其净室逆向工程规则为由，广泛禁止在实质性贡献中使用生成式 AI；AGENTS.md、CLAUDE.md 和 GEMINI.md 则称维护者出于法律原因禁止任何 AI 或 LLM 的使用。"
+    ]
   }
 }
