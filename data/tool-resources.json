@@ -11594,5 +11594,38 @@
       "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE",
       "https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/LICENSE-CODE"
     ]
+  },
+  {
+    "id": "snowboardkids-matching-decomp-case",
+    "name": "Snowboard Kids: an agent-assisted N64 matching decompilation",
+    "url": "https://github.com/cdlewis/snowboardkids-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A matching decompilation of the original Nintendo 64 Snowboard Kids that rebuilds SHA1-identical North American and Japanese ROMs from a user-supplied ROM. The author’s 84-day post-mortem describes coding agents run through his Nigel harness alongside m2c, the permuter and a shared file of compiler learnings, and declines to credit LLMs alone for the speed-up. It is a separate project from the Snowboard Kids 2 decompilation.",
+    "description_zh": "原版 Nintendo 64 游戏 Snowboard Kids 的匹配反编译，利用使用者自备的 ROM 重新构建 SHA1 一致的北美版与日版 ROM。作者在 84 天复盘文章中介绍了通过自建的 Nigel 工具调度编程智能体，并结合 m2c、permuter 与共享编译器经验文件的流程，同时表示不应把提速完全归功于大模型。它与 Snowboard Kids 2 反编译是不同的项目。",
+    "evidence_url": "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The 2026-08-26 post reports the game 100% decompiled: every function has C that compiles to identical machine code, apart from a small amount of handwritten system-library assembly that was original source. It dates the repository from 28 May 2026 to the final matching function on 19 August 2026 and counts 2,145 functions, against 596 days and 2,995 functions for Snowboard Kids 2. The README says the Japanese version currently builds from extracted assembly; reports/jp-exact-functions.md lists 120 JP functions compiled from C.",
+      "Building requires the user’s own North American or Japanese ROM, named snowboardkids.z64 or snowboardkids.jp.z64 with the SHA1 listed in the README; the build extracts assembly and assets from it into git-ignored directories. The README says the repository contains no game assets or assembly, although the reviewed tree tracks libultra .s files and a box-art image. CI builds both regions from a baserom checked out of a separate private repository.",
+      "The verified host is x86-64 Linux with make, git, Python 3, clang, wget, tar and binutils-mips-linux-gnu; a macOS setup is documented but still needs validation. make -C tools sets up the recompiled IDO 5.3 toolchain (IDO_DIR can point to another), submodules supply asm-processor, asm-differ and decomp-permuter, and optional matching helpers need requirements.txt.",
+      "tools/build-and-verify.sh cleans, extracts, builds and checks the output ROM’s SHA1 against the original for the selected region, and reports/region-functions.md aligns 1,293 of 2,110 US functions with the JP ROM by exact or address-normalized matches. The post describes agents writing C function by function, a script running m2c on every unmatched function, permuter runs with deadlines and four parallel worktrees; it calls its comparison of GPT-5.5/5.6, Claude 4.5, Fable and GLM 5.2 unscientific. This catalog did not build or verify any ROM.",
+      "The author estimates that roughly 4.8% of matching commits involved expert intervention, says the figure does not measure effort, credits contributors for many difficult IDO matches and calls attributing the whole speed-up to LLMs a gross oversimplification. A 100% match still leaves generated names, unknown structure fields and data to document. No license file is present at the reviewed commit, the README states commercial use is a non-goal, and no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/docs/versions.md",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/reports/jp-exact-functions.md",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/reports/region-functions.md",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.github/workflows/build.yaml",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitignore",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitmodules",
+      "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/snowboardkids.sha1"
+    ]
   }
 ]

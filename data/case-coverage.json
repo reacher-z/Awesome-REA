@@ -9745,13 +9745,28 @@
       "reported_source_urls": [
         "https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author's dated post-mortem and the pinned cdlewis/snowboardkids-decomp README, version notes, region reports and CI workflow document a matching N64 decompilation of the original Snowboard Kids that rebuilds SHA1-identical ROMs from the user's own ROM. The full mapping covers this agent-assisted reconstruction and the post's method account, separate from the existing Snowboard Kids 2 record. Completion, timing, expert-share and model-comparison figures remain author-reported; nothing was built, and no REA use or license is established.",
+      "reason_zh": "作者注明日期的复盘文章，以及 cdlewis/snowboardkids-decomp 固定版本的 README、多版本说明、区域报告和 CI 工作流，记录了原版 Snowboard Kids 的 N64 匹配反编译项目，可利用使用者自有 ROM 重新构建 SHA1 一致的 ROM。完整映射覆盖这一智能体辅助的重建项目及文章所述方法，与已有的 Snowboard Kids 2 条目相互独立。完成度、耗时、专家参与比例及模型比较数字仍为作者报告；未进行构建，也未确立 REA 使用或许可证。",
+      "primary_evidence_urls": [
+        "https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/README.md",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/docs/versions.md",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/reports/jp-exact-functions.md",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/reports/region-functions.md",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.github/workflows/build.yaml",
+        "https://github.com/cdlewis/snowboardkids-decomp/blob/0a398d907aae32ae45e6ba0ca688049e5c60dab8/.gitignore"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "snowboardkids-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "yibie:the-long-tail-of-llm-assisted-decompilation",
@@ -16154,18 +16169,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 205,
+      "already-curated": 206,
       "insufficient-evidence": 265,
-      "pending": 121
+      "pending": 120
     },
     "units_by_state": {
-      "already-curated": 203,
+      "already-curated": 204,
       "insufficient-evidence": 265,
-      "pending": 121
+      "pending": 120
     },
-    "primary_reviewed_units": 409,
-    "catalog_linked_occurrences": 218,
-    "distinct_resource_ids": 208,
+    "primary_reviewed_units": 410,
+    "catalog_linked_occurrences": 219,
+    "distinct_resource_ids": 209,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }
