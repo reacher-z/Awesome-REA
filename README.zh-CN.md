@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 77](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 78](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (77) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (78) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2134,13 +2134,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**77 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**78 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (25) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (26) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2573,6 +2573,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 模型仅在单一架构上训练（据论文讨论部分为 x86），未评估跨架构检索。方法只编码直接跳转，间接跳转目标不在研究范围内。反汇编与函数提取依赖 IDA Pro 7.5，上游的边界识别错误未被衡量。BinaryCorp 在 O0–O3 与 Os 之间配对 gcc／g++ 构建结果，并按项目划分训练集与测试集；它不涵盖混淆或其他编译器，只有漏洞检索实验额外加入 clang 变体。作者报告在 BinaryCorp-26M、候选池规模为 10,000 时，平均 Recall<span>@</span>1 为 62.5%，最佳基线为 32.0%；随着候选池增大，准确率仍会下降，作者也指出真实场景的候选池更大。漏洞检索实验使用八个 CVE，每个有十个变体。基线来自 2022 年，其中 Asm2Vec 与 OrderMatters 为重新实现，因此该比较不能确立当前排名。相似性排序只给出候选匹配，并不恢复源码、名称或类型。
 
   **发表信息:** 2022 · ACM ISSTA 2022 · 会议论文 · Hao Wang 等
+
+  </details>
+
+- [**ExeBench：机器学习规模的可执行 C 函数数据集**](https://dl.acm.org/doi/10.1145/3520312.3534867)
+
+  ExeBench 是数据集，而非反编译器。它从 GitHub 与 AnghaBench 中提取 C 函数，通过查找真实的头文件与定义或注入合成定义使其可编译，再依据函数签名生成输入／输出样例，并以 C++ 包装器运行每个函数。精确去重后，作者报告共有 4,485,817 个可编译函数和 687,843 个可执行函数，其中 124,612 个带有常量或恒等实现无法通过的丰富 IO；论文还说明每行数据附有 O0、Os 与 Ofast 下的 x86 和 ARM 汇编。SLaDe、LLM4Decompile 等反编译研究随后用它检验反编译函数能否正确重新执行。
+
+  2022 · 会议论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [代码](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-exebench/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** IO 依据函数签名生成，不考虑程序上下文：每个函数 10 对（合成定义使用三个随机种子，共 30 对），数组默认长度为 32；含指针与整数互转的函数生成成功率低于 5%，含 goto、标签及复杂控制流的函数成功率也较低，因此可执行函数整体比可编译函数更简单。合成 IO 基于注入的替代定义，而非函数的真实依赖生成；带有真实定义且具备丰富 IO 的函数仅有 4,464 个。有限的 IO 对只检验采样输入上的行为，并不证明语义等价；去重也只删除分词后完全相同的函数。运行带真实依赖的函数意味着执行不受信任的代码，作者使用了权限受限的容器。论文所用的 v1.00 原始数据仅可申请获取，公开的 v1.01 版本调整了数据划分（例如真实测试函数为 2,134 个，而非 2,232 个）。每个函数保留其来源仓库的许可证，ExeBench 新增内容采用 MIT 许可。
+
+  **发表信息:** 2022 · ACM SIGPLAN MAPS 2022 · 会议论文 · Jordi Armengol-Estapé 等
 
   </details>
 

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 77](https://img.shields.io/badge/papers-77-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 78](https://img.shields.io/badge/papers-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (77) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (78) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2133,13 +2133,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**77 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**78 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (25) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (26) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2572,6 +2572,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The model is trained on a single architecture (x86, per the paper’s discussion); cross-architecture search is not evaluated. Only direct jumps are encoded, and indirect-jump targets are left out of scope. Disassembly and function extraction rely on IDA Pro 7.5, so boundary errors upstream are not measured. BinaryCorp pairs gcc/g++ builds across O0–O3 and Os, with train and test split by project; it does not cover obfuscation or other compilers, and only the vulnerability study adds clang variants. Author-reported Recall<span>@</span>1 at pool size 10,000 on BinaryCorp-26M averages 62.5% against 32.0% for the best baseline, and accuracy still falls as pools grow, which the authors note for larger real-world pools. The vulnerability search uses eight CVEs with ten variants each. Baselines date from 2022, and Asm2Vec and OrderMatters were reimplemented, so the comparison does not establish current rankings. Similarity ranking identifies candidate matches; it does not recover source code, names or types.
 
   **Publication:** 2022 · ACM ISSTA 2022 · Conference paper · Hao Wang et al.
+
+  </details>
+
+- [**ExeBench: an ML-scale dataset of executable C functions**](https://dl.acm.org/doi/10.1145/3520312.3534867)
+
+  ExeBench is a dataset, not a decompiler. It extracts C functions from GitHub and AnghaBench, makes them compilable by locating real headers and definitions or injecting synthetic ones, and generates input/output examples from function signatures with a C++ wrapper that runs each function. After exact deduplication the authors report 4,485,817 compilable and 687,843 executable functions, of which 124,612 have rich IO that a constant or identity implementation cannot pass; the paper also describes x86 and ARM assembly at O0, Os and Ofast for each row. Decompilation studies such as SLaDe and LLM4Decompile later used it to test whether decompiled functions re-execute correctly.
+
+  2022 · Conference paper · [PDF](https://dl.acm.org/doi/pdf/10.1145/3520312.3534867) · [Code](https://github.com/jordiae/exebench/tree/8b47d483c2e39ea40a304fbaac46e41a1a14272f) · [Full entry & citation](https://awesomerea.org/papers/paper-exebench/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** IO is generated from signatures without program context: 10 pairs per function (30 across three seeds of synthetic definitions), arrays default to 32 elements, and success falls below 5% for functions with pointer–integer conversions and stays low for goto, labels and complex control flow, so executable functions skew simpler than the compilable population. Synthetic IO is produced with injected stand-in definitions rather than the functions’ real dependencies; only 4,464 functions have rich IO with real definitions. Finite IO pairs test behavior on sampled inputs, not semantic equivalence, and deduplication removes exact matches after tokenization only. Running functions with real dependencies executes untrusted code; the authors used restricted containers. The paper’s exact v1.00 data is available only on request, while the public v1.01 release has revised splits (for example 2,134 instead of 2,232 real test functions). Each function keeps its source repository’s license; ExeBench additions are MIT.
+
+  **Publication:** 2022 · ACM SIGPLAN MAPS 2022 · Conference paper · Jordi Armengol-Estapé et al.
 
   </details>
 
