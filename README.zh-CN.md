@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 379](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-379-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 380](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-380-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (20) · [游戏](#game) (169) · [应用](#app) (58)
+- [网站](#website) (20) · [游戏](#game) (170) · [应用](#app) (58)
 - [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1209,6 +1209,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   供 N64Recomp 静态重编译项目和传统源码移植使用的 N64 游戏运行时，由两个库组成。ultramodern 重新实现 libultra 的核心服务（线程、消息队列、计时器、控制器、音频、RSP 任务处理和 VI 时序），并将手柄输入、音频播放和图形渲染器（推荐 RT64）交给宿主项目注册的回调处理。librecomp 负责将 N64Recomp 生成的代码与 ultramodern 衔接，并补充覆盖段处理、PI DMA 读取 ROM，以及 EEPROM、SRAM 和 Flash RAM 存档。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/n64modernruntime/)
+
+- [**REDscript《赛博朋克 2077》脚本编译与反编译工具集**](https://github.com/jac3km4/redscript)
+
+  REDscript 的编译器与反编译器工具集。REDscript 是一种静态类型、面向对象的语言，用于为 CD Projekt 在《赛博朋克 2077》中使用的 REDengine 引擎编写脚本。其 Rust crate 负责解析和分析源码、生成字节码并对泛型做单态化、将 .redscripts 字节码包反编译回 REDscript 源码、读写 REDengine 原生二进制格式，并提供可直接替代 CD Projekt scc 脚本编译器的实现，以及带源码映射的 C API。命令行提供 decompile、compile、lint 和 format 命令；语言服务器和调试器位于单独的 redscript-ide 仓库。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/redscript/)
 
 <a id="app"></a>
 ### App · 应用

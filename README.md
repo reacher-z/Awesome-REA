@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 379](https://img.shields.io/badge/resources-379-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 380](https://img.shields.io/badge/resources-380-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (169) · [App](#app) (58)
+- [Website](#website) (20) · [Game](#game) (170) · [App](#app) (58)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1208,6 +1208,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runtime for N64Recomp static recompilations and traditional source ports of N64 games, made of two libraries. ultramodern reimplements core libultra services (threads, message queues, timers, controllers, audio, RSP task handling and VI timing) and leaves controller input, audio playback and the graphics renderer, with RT64 recommended, to callbacks the host project registers. librecomp bridges N64Recomp-generated code to ultramodern and adds overlay handling, PI DMA ROM reads, and EEPROM, SRAM and Flash RAM saves.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/n64modernruntime/)
+
+- [**REDscript**](https://github.com/jac3km4/redscript)
+
+  Compiler and decompiler toolkit for REDscript, a statically typed, object-oriented language for writing scripts for REDengine, CD Projekt's engine used in Cyberpunk 2077. Its Rust crates parse and analyze source, generate bytecode with monomorphization of generics, decompile .redscripts bytecode bundles back into REDscript source, read and write REDengine's native binary format, and provide a drop-in replacement for CD Projekt's scc script compiler plus a C API with source mapping. The CLI exposes decompile, compile, lint and format commands; the language server and debugger live in a separate redscript-ide repository.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/redscript/)
 
 <a id="app"></a>
 ### App

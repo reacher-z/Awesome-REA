@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**388 repositories** · 2026-10-16 UTC
+**389 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -39,6 +39,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [xenia-canary/game-patches](https://github.com/xenia-canary/game-patches) — Game patches for the Xenia emulator **[619 stars]**
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — Decompilation of 東方紅魔郷 ～ the Embodiment of Scarlet Devil (1.02h) **[616 stars]** · Curated: [Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source](https://awesomerea.org/resources/th06-decomp-case/)
 - [encounter/objdiff](https://github.com/encounter/objdiff) — A local diffing tool for decompilation projects **[586 stars]** · Curated: [objdiff](https://awesomerea.org/resources/objdiff/)
+- [jac3km4/redscript](https://github.com/jac3km4/redscript) — Compiler/decompiler toolkit for redscript **[520 stars]** · Curated: [REDscript](https://awesomerea.org/resources/redscript/)
 - [EliotVU/Unreal-Library](https://github.com/EliotVU/Unreal-Library) — Decompiler for Unreal package files (.upk, .u, .uasset; etc), with support for Unreal Engine 1, 2, and 3 **[490 stars]**
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — A run-time API resolver for IL2CPP Unity. **[475 stars]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
