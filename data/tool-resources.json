@@ -7865,5 +7865,37 @@
       "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
       "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
     ]
+  },
+  {
+    "id": "lisa-lldb-mcp",
+    "name": "lisa.py",
+    "url": "https://github.com/ant4g0nist/lisa.py",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "LLDB extension that adds an MCP bridge to a debugging session, adapted from ida-pro-mcp: the plugin's mcp start command serves 18 debugger functions over local JSON-RPC, and a FastMCP stdio server generated from those functions exposes them to MCP clients such as Claude Desktop. The tools create, launch or attach to targets, step, manage breakpoints, read backtraces, variables, disassembly and memory, evaluate expressions and run arbitrary LLDB commands. The same script keeps lisa.py's earlier exploit-development helpers, including checksec, a register and stack context view, Mach-O header and load-command display, Capstone disassembly and an exploitable crash-triage command.",
+    "description_zh": "为 LLDB 调试会话加入 MCP 桥接的扩展，改编自 ida-pro-mcp：插件的 mcp start 命令通过本地 JSON-RPC 提供 18 个调试器函数，再由依据这些函数生成的 FastMCP stdio 服务器把它们开放给 Claude Desktop 等 MCP 客户端。这些工具可创建、启动或附加调试目标，单步执行，管理断点，读取调用栈、变量、反汇编和内存，计算表达式，并可执行任意 LLDB 命令。同一脚本还保留了 lisa.py 早先的漏洞利用开发辅助命令，包括 checksec、寄存器与栈上下文视图、Mach-O 文件头与加载命令显示、Capstone 反汇编，以及用于崩溃分级的 exploitable 命令。",
+    "evidence_url": "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The default dev branch was reviewed at commit 9dd61e9 from 2025-03-29, the last of three commits that day adding the MCP integration to a 2021 rewrite of lisa.py. There are no releases or tags, the master branch still holds the 2017 version without MCP support, and the README's TODO list asks for updated manuals and more test cases.",
+      "Python 3.10+ and LLDB with Python bindings; the LLDB Python environment must also import capstone, pinned to 4.0.2 in requirements.txt, and the MCP server needs fastmcp and httpx. The README is partly out of step with the code: it names server.py, lldb_plugin.py and an lldb-mcp clone path, while the repository ships lisa.py and lldb_mcp.py, and the pyproject lldb-mcp entry point names a module that does not exist.",
+      "Load lisa.py into LLDB with command script import, run mcp start, and point the MCP client at lldb_mcp.py; the README shows a Claude Desktop configuration that runs it through uv. The plugin listens on localhost port 13338 without authentication, and the MCP server always connects to that port even if mcp start was given another. run_lldb_command passes any LLDB command through, so a connected client has full control of the debugger and the debugged process.",
+      "The helper commands parse Mach-O headers and load commands and handle x86_64 and arm64/arm64e registers; the README states no supported operating system or LLDB version. The tests directory holds small crash programs, including Objective-C and libdispatch cases, that make rtests runs through LLDB; no CI is configured.",
+      "LICENSE is Apache-2.0, but pyproject.toml declares MIT and lldb_mcp.py carries ida-pro-mcp's MIT notice. The reviewed sources establish no REA connection. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lldb_mcp.py",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lisa.py#L5380-L6322",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/lisa.py#L6408-L6534",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/pyproject.toml",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/requirements.txt",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/Makefile",
+      "https://github.com/ant4g0nist/lisa.py/blob/9dd61e9dfc52668616634a024bf46ee2dc056852/LICENSE"
+    ]
   }
 ]

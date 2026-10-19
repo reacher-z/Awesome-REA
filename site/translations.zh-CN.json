@@ -3170,5 +3170,15 @@
       "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
       "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
     ]
+  },
+  "lisa-lldb-mcp": {
+    "name": "lisa.py：LLDB 的 MCP 集成与调试辅助命令",
+    "requirements": [
+      "所审阅的是默认 dev 分支上 2025-03-29 的提交 9dd61e9，即当天为 2021 年重写版 lisa.py 加入 MCP 集成的三个提交中的最后一个。仓库没有发布版本或标签，master 分支仍是不含 MCP 支持的 2017 年版本，README 的待办事项还列出更新使用手册和补充测试用例。",
+      "需要 Python 3.10+ 和带 Python 绑定的 LLDB；LLDB 的 Python 环境还需能导入 capstone（requirements.txt 固定为 4.0.2），MCP 服务器则需要 fastmcp 和 httpx。README 与代码部分脱节：README 提到 server.py、lldb_plugin.py 和 lldb-mcp 克隆路径，而仓库实际提供的是 lisa.py 和 lldb_mcp.py；pyproject 中 lldb-mcp 入口指向的模块并不存在。",
+      "用 command script import 把 lisa.py 载入 LLDB，执行 mcp start，再让 MCP 客户端运行 lldb_mcp.py；README 给出了通过 uv 启动它的 Claude Desktop 配置。插件在 localhost 的 13338 端口监听且没有认证，即使 mcp start 指定了其他端口，MCP 服务器也总是连接 13338。run_lldb_command 会原样执行任意 LLDB 命令，因此已连接的客户端可完全控制调试器及被调试进程。",
+      "辅助命令可解析 Mach-O 文件头和加载命令，并支持 x86_64 与 arm64/arm64e 寄存器；README 未说明支持的操作系统或 LLDB 版本。tests 目录收录了若干小型崩溃程序（包括 Objective-C 和 libdispatch 用例），可通过 make rtests 在 LLDB 中运行；仓库未配置 CI。",
+      "LICENSE 为 Apache-2.0，但 pyproject.toml 声明 MIT，lldb_mcp.py 也保留了 ida-pro-mcp 的 MIT 声明。所审来源未确立与 REA 的关联。本次未安装或运行。"
+    ]
   }
 }
