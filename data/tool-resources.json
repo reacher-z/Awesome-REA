@@ -7454,5 +7454,41 @@
       "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.github/workflows/pr-label-ai.yml",
       "https://decomp.dev/MonsterDruide1/OdysseyDecomp"
     ]
+  },
+  {
+    "id": "opents2-sims2-engine-case",
+    "name": "OpenTS2: an open-source reimplementation of The Sims 2 in Unity",
+    "url": "https://github.com/LazyDuchess/OpenTS2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements The Sims 2 in the Unity engine, reading the user’s Ultimate Collection installation through its own C# code for the game’s DBPF packages and asset formats, which the project also aims to offer as modular libraries. README reports an early stage: a basic main menu with a neighborhood chooser, neighborhood previews and a basic neighborhood view, while the tree also holds lot, build-mode, Sim and SimAntics code. README credits FreeSO for much of its code and structure and does not describe decompiling the game’s executable.",
+    "description_zh": "在 Unity 引擎中重新实现《模拟人生 2》，以自行编写的 C# 代码读取使用者终极典藏版安装中的 DBPF 包和各类素材格式，项目也希望把这些代码提供为模块化的库。README 称项目尚处早期：已实现带社区选择器的基础主菜单、社区信息预览和基础社区视图，而仓库中另有地块、建造模式、模拟市民和 SimAntics 相关代码。README 致谢 FreeSO 提供了大量代码和结构，并未提到反编译游戏的可执行文件。",
+    "evidence_url": "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-07-25; the repository has no releases or tags, so OpenTS2 runs from the Unity editor. README’s progress section lists only the main menu, neighborhood chooser, neighborhood previews and a basic neighborhood view; the source tree and test scenes also cover lot loading, walls and roofs, build mode, Sim characters, effects and a SimAntics virtual machine with Lua, whose completeness README does not document. Beyond its credits, README does not say how the game’s formats and behaviour were analysed; the Notes folder documents a few resource formats.",
+      "README requires a copy of The Sims 2 Ultimate Collection; a root config.json, copied from config.example.json, sets the game and user-data directories and lists the expansion and stuff-pack folders to load. The game installation is not part of the repository, but TestAssets/README.md says its packages were made for unit testing, and several appear to be excerpts of game data instead: the effects package is expected to hold 1,792 particle effects, and other packages carry catalogue object names, a pinball animation and an object material.",
+      "Development uses Unity 2020.3.32f1, which the project settings also name, and README recommends Visual Studio 2019. The code lives in Assets/Scripts/OpenTS2, which also includes copies of MoonSharp, NSpeex and DBPFSharp code, with NAudio as a bundled DLL. README names no target platforms for play, and the example configuration uses Windows paths.",
+      "CI runs the Unity Test Runner through game-ci on every push and on pull requests labelled safe to test; the NUnit tests in Assets/Tests decode the TestAssets packages and check counts and fields, and README describes integration-level test scenes. No comparison with the original game’s behaviour is published, and this collection did not build or run OpenTS2.",
+      "LICENSE.md is MPL-2.0; README credits InvertedTomato.CRC, a .NET Targa reader, a hardware-cursor plugin, MoonSharp, FreeSO, DBPFSharp, NAudio and NSpeex, whose own terms apply to their parts. The Sims 2 and its data, including any game data in the test packages, belong to Electronic Arts. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/LICENSE.md",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/config.example.json",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/ProjectSettings/ProjectVersion.txt",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/.github/workflows/ci.yml",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/TestAssets/README.md",
+      "https://github.com/LazyDuchess/OpenTS2/tree/bdabb07f4689ed91803a3d86dcbc8870b8832878/TestAssets",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/Assets/Tests/OpenTS2/Files/Formats/DBPF/EffectsCodecTest.cs",
+      "https://github.com/LazyDuchess/OpenTS2/blob/bdabb07f4689ed91803a3d86dcbc8870b8832878/Assets/Tests/OpenTS2/Files/Formats/DBPF/Scenegraph/Codecs/ScenegraphAnimationCodecTest.cs",
+      "https://github.com/LazyDuchess/OpenTS2/tree/bdabb07f4689ed91803a3d86dcbc8870b8832878/Assets/Scripts/OpenTS2/SimAntics",
+      "https://github.com/LazyDuchess/OpenTS2/tree/bdabb07f4689ed91803a3d86dcbc8870b8832878/Assets/Scenes/Tests",
+      "https://github.com/LazyDuchess/OpenTS2/tree/bdabb07f4689ed91803a3d86dcbc8870b8832878/Notes"
+    ]
   }
 ]

@@ -43,7 +43,7 @@
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — 面向 Unity IL2CPP 的运行时 API 解析器。 **[475 星标]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — 将一款 PSP 游戏静态重编译为原生可执行文件，使用 Vulkan 和 SDL3。需自备游戏副本。 **[447 星标]**
 - [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — 《Oddworld: Abe’s Exoddus》与《Oddworld: Abe’s Oddysee》的重新实现。 **[441 星标]**
-- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]**
+- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — 使用 Unity 开源重新实现《模拟人生 2》。 **[432 星标]** · 精选：[OpenTS2：在 Unity 中开源重新实现《模拟人生 2》](https://awesomerea.org/zh/resources/opents2-sims2-engine-case/)
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — 通过逆向工程重建的《辐射 2》。 **[411 星标]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — 《古惑狼赛车》反编译项目。 **[405 星标]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — 面向 Unreal Engine（.upk、.u）文件的反编译器与软件包浏览器。 **[371 星标]** · 精选：[UE Explorer](https://awesomerea.org/zh/resources/ue-explorer/)

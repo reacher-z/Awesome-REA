@@ -43,7 +43,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [sneakyevil/IL2CPP\_Resolver](https://github.com/sneakyevil/IL2CPP_Resolver) — A run-time API resolver for IL2CPP Unity. **[475 stars]**
 - [TeamGDB/Yakumo](https://github.com/TeamGDB/Yakumo) — Static recompilation of a PSP game into a native executable. Vulkan and SDL3. Bring your own copy of the game. **[447 stars]**
 - [AliveTeam/alive\_reversing](https://github.com/AliveTeam/alive_reversing) — Re-implementation of Oddworld: Abe's Exoddus and Oddworld: Abe's Oddysee **[441 stars]**
-- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — Open source re-implementation of The Sims 2 in Unity **[432 stars]**
+- [LazyDuchess/OpenTS2](https://github.com/LazyDuchess/OpenTS2) — Open source re-implementation of The Sims 2 in Unity **[432 stars]** · Curated: [OpenTS2: an open-source reimplementation of The Sims 2 in Unity](https://awesomerea.org/resources/opents2-sims2-engine-case/)
 - [alexbatalov/fallout2-re](https://github.com/alexbatalov/fallout2-re) — Reverse engineered Fallout 2 **[411 stars]**
 - [CTR-tools/ctr-native](https://github.com/CTR-tools/ctr-native) — A Crash Team Racing Decompilation Project **[405 stars]**
 - [UE-Explorer/UE-Explorer](https://github.com/UE-Explorer/UE-Explorer) — Decompiler and package explorer for Unreal Engine (.upk, .u) files. **[371 stars]** · Curated: [UE Explorer](https://awesomerea.org/resources/ue-explorer/)

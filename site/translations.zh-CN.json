@@ -3057,5 +3057,15 @@
       "tools/check 会把 data/file_list.yml 中登记的每个函数与原始可执行文件比对。在固定版本中，该清单标记 18,996 个函数一致、47 个有细微差异、252 个有较大差异、54,876 个尚未反编译；decomp.dev 针对该提交的报告同样给出 25.61% 的函数一致率，按代码字节计为 15.77%。CI 通过仓库密钥获取可执行文件，构建后要求检查通过，另行检查每个头文件都能单独编译；本合集均未运行。",
       "GitHub 未识别出许可证，固定版本根目录也没有许可证文件，因此未声明任何复用条款；子模块与任天堂的内容仍受各自条款约束。有一个工作流会给按其说法“通常使用 AI”的作者新开的拉取请求加上 ai 标签，但所审文件既未量化 AI 的使用程度，也未将重建归功于 REA。"
     ]
+  },
+  "opents2-sims2-engine-case": {
+    "name": "OpenTS2：在 Unity 中开源重新实现《模拟人生 2》",
+    "requirements": [
+      "审阅版本为 2026-07-25 的 master 提交；仓库没有发布版或标签，因此 OpenTS2 需在 Unity 编辑器中运行。README 的进度部分只列出主菜单、社区选择器、社区信息预览和基础社区视图；源码与测试场景还涉及地块加载、墙壁与屋顶、建造模式、模拟市民角色、特效以及支持 Lua 的 SimAntics 虚拟机，但 README 未说明这些部分的完成程度。除致谢外，README 没有说明如何分析游戏的格式与行为；Notes 文件夹记录了少数几种资源格式。",
+      "README 要求拥有《模拟人生 2》终极典藏版；需在根目录放置由 config.example.json 复制而来的 config.json，设置游戏目录和用户数据目录，并列出要加载的资料片与组件包文件夹。游戏安装本身不在仓库中，但 TestAssets/README.md 称其中的包是为单元测试制作的，而其中几个看起来却是游戏数据的片段：测试预期特效包中含有 1,792 个粒子特效，其他包则带有物品目录名称、一段弹球机动画和一个物品材质。",
+      "开发使用 Unity 2020.3.32f1，项目设置中也注明了这一版本，README 推荐使用 Visual Studio 2019。代码位于 Assets/Scripts/OpenTS2，其中也收录了 MoonSharp、NSpeex 和 DBPFSharp 的代码副本，NAudio 则以 DLL 形式随附。README 没有列出可游玩的目标平台，示例配置使用的是 Windows 路径。",
+      "CI 在每次推送以及带有 safe to test 标签的拉取请求上，通过 game-ci 运行 Unity Test Runner；Assets/Tests 中的 NUnit 测试解码 TestAssets 中的包并检查数量和字段，README 还介绍了集成层面的测试场景。项目没有发布与原版游戏行为的对比，本合集也未构建或运行 OpenTS2。",
+      "LICENSE.md 为 MPL-2.0；README 致谢 InvertedTomato.CRC、一个 .NET Targa 读取器、一个硬件光标插件、MoonSharp、FreeSO、DBPFSharp、NAudio 和 NSpeex，这些部分适用各自的条款。《模拟人生 2》及其数据（包括测试包中的任何游戏数据）归 Electronic Arts 所有。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }

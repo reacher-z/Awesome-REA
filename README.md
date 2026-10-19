@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 355](https://img.shields.io/badge/resources-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 356](https://img.shields.io/badge/resources-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (166) · [App](#app) (50)
+- [Website](#website) (19) · [Game](#game) (167) · [App](#app) (50)
 - [Native Binary](#native-binary) (25) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (184) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (185) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1026,6 +1026,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs C++ source for Super Mario Odyssey’s Switch 1.0 main executable and checks each function against the original AArch64 machine code with the shared nx-decomp-tools checker. At the pinned commit its function list marks 18,996 of 74,171 functions matching. The README warns that the build is not a playable game, the repository ships no game assets, and Nintendo libraries such as sead and agl come from open-ead’s separate reconstructions.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/odyssey-decomp-case/)
+
+- [**OpenTS2: an open-source reimplementation of The Sims 2 in Unity**](https://github.com/LazyDuchess/OpenTS2)
+
+  Reimplements The Sims 2 in the Unity engine, reading the user’s Ultimate Collection installation through its own C# code for the game’s DBPF packages and asset formats, which the project also aims to offer as modular libraries. README reports an early stage: a basic main menu with a neighborhood chooser, neighborhood previews and a basic neighborhood view, while the tree also holds lot, build-mode, Sim and SimAntics code. README credits FreeSO for much of its code and structure and does not describe decompiling the game’s executable.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/opents2-sims2-engine-case/)
 
 #### Tools, projects and integrations
 
