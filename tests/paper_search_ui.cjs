@@ -43,7 +43,6 @@ class Element {
 }
 function setup(lang = "en", query = "", invalidData = false) {
   const ids = new Map(["paper-search", "paper-search-data", "paper-query", "paper-target", "paper-status", "paper-year", "paper-results", "paper-empty", "paper-clear", "paper-empty-reset"].map(id => [id, new Element()]));
-  ids.get("paper-search").hidden = true;
   ids.get("paper-search-data").textContent = JSON.stringify({schema_version: invalidData ? 2 : 1, papers});
   const cards = papers.map(paper => new Element({paperId: paper.id}));
   const sections = papers.map((paper, i) => { const section = new Element({paperSection: paper.targets[0]}); section.children = [cards[i]]; section.label = new Element(); return section; });
@@ -88,6 +87,7 @@ for (const lang of ["en", "zh"]) {
 const invalid = setup("en", "?status=bad&year=0&target=bad");
 assert.equal(invalid.browser.location.search, ""); assert.equal(invalid.visible().length, 3);
 const broken = setup("en", "?q=no-match", true);
+// The form is visible in the HTML; a failed index check hides it so no inert controls remain.
 assert.equal(broken.initialized, false); assert.equal(broken.ids.get("paper-search").hidden, true); assert.equal(broken.visible().length, 3);
 const canonical = search.readRecords({schema_version: 1, papers: JSON.parse(fs.readFileSync(path.join(__dirname, "../data/papers.json"), "utf8"))});
 const canonicalAllowed = search.allowedValues(canonical);

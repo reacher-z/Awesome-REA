@@ -86,7 +86,7 @@ html[lang="zh-CN"] .paper-description,html[lang="zh-CN"] .paper-scope p,html[lan
 
 .papers-topic-nav a{min-height:44px}
 
-/* Search controls are revealed only after the static paper index is validated. */
+/* Search controls keep their space from first paint; scripting:none and a failed index check hide them. */
 .paper-search{display:grid;grid-template-columns:minmax(240px,2fr) repeat(3,minmax(130px,1fr)) auto;gap:12px;align-items:end;margin:20px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--soft)}
 .paper-search-field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .paper-search-field label{font-size:14px;font-weight:600}
