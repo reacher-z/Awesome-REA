@@ -35,7 +35,7 @@
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]** · 精选：[Blutter](https://awesomerea.org/zh/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — 高级模糊测试库：使用 Rust 组合构建你的模糊测试器！可扩展到多核心和多机器，支持 Windows、Android、macOS、Linux、no\_std 等。 **[2,660 星标]**
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]**
-- [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]**
+- [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]** · 精选：[Droid ASC Android 反编译器](https://awesomerea.org/zh/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — 功能强大的 Android APK 编辑器，不依赖 aapt/aapt2。 **[2,363 星标]**
 - [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — 移动边缘动态统一安全分析。 **[2,357 星标]**
 - [httptoolkit/frida-interception-and-unpinning](https://github.com/httptoolkit/frida-interception-and-unpinning) — 用于在运行时改写移动应用的 Frida 脚本，可直接对所有 HTTPS 流量进行中间人拦截。 **[2,315 星标]**

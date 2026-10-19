@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 355](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-355-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 356](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-356-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (50)
+- [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (51)
 - [原生二进制](#native-binary) (25) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1494,6 +1494,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   源自 Fernflower 的 Java 及其他 JVM 语言反编译器，延续了 ForgeFlower、Fabric 和 Quiltflower 等分支的工作，注重输出质量和对现代 Java 的支持，包括 Java 21+ 的记录、密封类、switch 表达式和模式匹配。其命令行接受 JAR、ZIP、文件夹或 class 文件，可输出到文件夹、归档或控制台，支持多线程反编译和自动格式化。它也可作为 Maven Central 上的库嵌入使用，或通过替换 Fernflower 的插件在 IntelliJ IDEA 中使用；常规发布 JAR 内置三个插件，包括 Kotlin 支持和变量重命名。
 
   工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/vineflower/)
+
+- [**Droid ASC Android 反编译器**](https://github.com/MG1937/ASC)
+
+  用 Python 编写的 Android 反编译器，直接对 APK 执行查询，而不必先解包并建立索引。它在压缩的 DEX 条目中就地探测数据，利用 R8 编译器的常量重定位和指令去重所留下的布局，跨 DEX 文件搜索字符串、类型、方法和字段引用；对指定的类，则在内存中重建一个最小且自洽的 DEX，再由内置的 Androguard 反编译器副本转换为 Java 代码。droidasc 命令行和 Tk 图形界面可列出类、反编译单个类、解码 AndroidManifest.xml，并查找子类或接口实现；README 将其定位为供智能体批量分析 APK 的轻量后端。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/droid-asc/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
