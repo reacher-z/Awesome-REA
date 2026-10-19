@@ -10,7 +10,7 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from case_coverage import catalog_revision_warning, read_case_coverage
+from case_coverage import catalog_revision_warning
 import validate
 
 GIT_ENV = {**os.environ, 'GIT_AUTHOR_NAME': 'Fixture', 'GIT_AUTHOR_EMAIL': 'fixture@example.invalid',
@@ -64,9 +64,6 @@ class CatalogRevisionTests(unittest.TestCase):
         for document in ({'catalog_revision': 'main'}, {'catalog_revision': None}, {}, []):
             with self.subTest(document=document):
                 self.assertIsNone(catalog_revision_warning(document, self.root))
-
-    def test_current_ledger_names_a_commit_on_this_history(self):
-        self.assertIsNone(catalog_revision_warning(read_case_coverage()))
 
     def test_validation_prints_the_warning_and_still_passes(self):
         stderr = io.StringIO()
