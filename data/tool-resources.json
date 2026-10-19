@@ -7420,5 +7420,39 @@
       "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/.github/workflows/msvc-ci.yml",
       "https://github.com/zrax/pycdc/blob/b4289760970dbc399684f1e155ec6d1ea1cc787e/LICENSE"
     ]
+  },
+  {
+    "id": "odyssey-decomp-case",
+    "name": "Super Mario Odyssey: per-function matching decompilation of the Switch executable",
+    "url": "https://github.com/MonsterDruide1/OdysseyDecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reconstructs C++ source for Super Mario Odyssey’s Switch 1.0 main executable and checks each function against the original AArch64 machine code with the shared nx-decomp-tools checker. At the pinned commit its function list marks 18,996 of 74,171 functions matching. The README warns that the build is not a playable game, the repository ships no game assets, and Nintendo libraries such as sead and agl come from open-ead’s separate reconstructions.",
+    "description_zh": "为《超级马力欧 奥德赛》Switch 1.0 版主程序重建 C++ 源码，并用共享的 nx-decomp-tools 检查器逐个函数与原始 AArch64 机器码比对。在所审固定提交中，其函数清单将 74,171 个函数中的 18,996 个标为一致。README 提醒构建结果不是可游玩的游戏；仓库不含游戏素材，sead、agl 等任天堂库则来自 open-ead 另行维护的重建项目。",
+    "evidence_url": "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master pin is dated 2026-09-29. README describes a work-in-progress decompilation of Super Mario Odyssey 1.0.0 that recreates a source base from scratch and warns that it will not produce a playable game. The GitHub description says all versions, but setup.py builds only 1.0 and skips 1.0.1, 1.1, 1.2 and 1.3 as a to-do, and README lists cross-version comparison and 1.3.0’s different optimisation as open work. Functions are matched individually, not as a whole matching executable or a port.",
+      "Setup needs the user’s own original 1.0 main NSO executable, compressed or not; setup.py accepts only two SHA-256 hashes, converts it to an ELF and checks that result’s hash too. Only the ExeFS is needed, though README notes that RomFS files help cross-reference names. The repository holds no game assets, while data/ carries the function list and address, symbol and string-literal tables for the 1.0 executable; contributors work from Hex-Rays or Ghidra output.",
+      "The documented setup is Linux, WSL or macOS, with a VS Code dev container and a Nix flake as alternatives; it needs Python 3.6+, Ninja, CMake 3.13+, ccache, llvm-objdump, a Rust toolchain and the listed Python modules. setup.py downloads prebuilt clang, ld.lld and the viking checker from the project’s tools-cache release v1.2.6, or builds them from source, and fetches LLVM 3.9.1 libc++ headers. Submodules supply open-ead’s sead, agl, eui, NintendoSDK and NEX headers, a musl build and nx-decomp-tools.",
+      "tools/check compares every function marked in data/file_list.yml with the original executable. At the pin the list marks 18,996 functions matching, 47 with minor and 252 with major differences and 54,876 not decompiled, and decomp.dev’s report for the commit gives the same 25.61% of functions, or 15.77% of code bytes. CI fetches the executable through a repository secret, builds and requires the check to pass, and separately checks that every header compiles on its own; this collection ran neither.",
+      "GitHub detects no license and the pinned root has no license file, so no reuse terms are stated; submodules and Nintendo content keep their own terms. A workflow adds an ai label to new pull requests from authors who, in its own words, usually use AI, but the reviewed files neither quantify AI use nor attribute the reconstruction to REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/Contributing.md",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/tools/setup.py",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/tools/cache-version.json",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/CMakeLists.txt",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.gitmodules",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.github/workflows/compile-check.yml",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.github/workflows/test-compile.yml",
+      "https://github.com/MonsterDruide1/OdysseyDecomp/blob/696db2ff5ed558b053c753de420504b8682f24b0/.github/workflows/pr-label-ai.yml",
+      "https://decomp.dev/MonsterDruide1/OdysseyDecomp"
+    ]
   }
 ]
