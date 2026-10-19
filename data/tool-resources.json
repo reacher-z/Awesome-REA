@@ -10234,5 +10234,35 @@
       "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/FAQ.md",
       "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/License.md"
     ]
+  },
+  {
+    "id": "apklab",
+    "name": "APKLab",
+    "url": "https://github.com/APKLab/APKLab",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "VS Code extension that turns the editor into an Android reverse-engineering workbench around Apktool, Jadx, smali-lsp and uber-apk-signer. It decodes an APK into resources and Smali, decompiles it to Java, gives Smali go-to-definition, references and diagnostics through a language server, and rebuilds, signs and installs the modified app. It can also generate Frida hooks for Smali methods, add a Frida gadget, prepare an app for HTTPS traffic inspection with apk-mitm and produce a Quark-Engine malware-analysis report.",
+    "description_zh": "把 VS Code 变成 Android 逆向工作台的扩展，整合 Apktool、Jadx、smali-lsp 和 uber-apk-signer。它可将 APK 解码为资源文件和 Smali 并反编译为 Java，借助语言服务器为 Smali 提供定义跳转、引用查找和诊断，还能重新构建、签名并安装修改后的应用。此外，它可为 Smali 方法生成 Frida 钩子、加入 Frida gadget、借助 apk-mitm 为 HTTPS 流量检查做准备，并生成 Quark-Engine 恶意软件分析报告。",
+    "evidence_url": "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The latest tag, v2.0.0, dated 2026-04-06 in the changelog, added smali-lsp, Frida hook generation and gadget injection and Apktool 3.0+ compatibility; the reviewed master commit of 2026-07-16 is five commits ahead of it. The extension is published on the VS Code Marketplace and Open VSX, and package.json requires VS Code 1.91+. The README lists Linux, macOS and WSL2, and CI also builds and tests it on Windows.",
+      "JDK 17+ is required. On first use the extension downloads the tools named in the project’s update configuration into a .apklab folder in the user’s home directory, at review Apktool 3.0.2, smali-lsp 1.5.0, uber-apk-signer 1.3.0 and Jadx 1.5.6, unless the user sets their paths. adb is optional for installing to a device, and Quark-Engine 21.01.6+ is optional for malware reports. Users supply the APKs.",
+      "CI lints and packages the extension and runs its test suite on Ubuntu, macOS and Windows against a sample open-source APK from the separate testdata repository; this checks the integration, not the bundled tools’ results on real apps. Jadx output can be incomplete, and rebuilt APKs are re-signed with uber-apk-signer, using the configured keystore when one is set.",
+      "AGPL-3.0; Apktool, Jadx, smali-lsp, uber-apk-signer, apk-mitm, Frida and Quark-Engine keep their own licenses. HTTPS-inspection patching and gadget injection modify the app under analysis, and the tool grants no rights to analyze, patch or redistribute third-party apps. This review installed nothing and modified no apps."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/CHANGELOG.md",
+      "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/package.json",
+      "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/src/data/constants.ts",
+      "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/.github/workflows/apklab.yml",
+      "https://github.com/APKLab/APKLab/blob/6ae69b1ba03d65cb78388f7e2fa6a3b8f0081c74/LICENSE",
+      "https://github.com/APKLab/website/blob/f8afc6deac69b4ef77f741f891e4d836bf3720f9/static/apklab_update_config.json"
+    ]
   }
 ]

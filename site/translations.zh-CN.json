@@ -3831,5 +3831,14 @@
       "课程中的目标程序均由作者编写，并连同源码放在 FilesNeeded 中：第 6 章的 DLL、两个调用它的宿主程序及调试符号，另有一个恶意软件样本程序及其投放器，对应尚未撰写的章节，FilesNeeded 注明使用风险自负。第 8 章则分析 Windows 自带的 ntdll.dll，仓库并未包含该文件。仓库还提交了各章的 PDF 副本，README 提醒这些 PDF 可能落后于 Markdown 课程。",
       "仓库中的 License.md 为 AGPL-3.0 全文；FAQ 另称仅允许为个人使用而下载，再分发和教学使用则以许可证为准。本合集在所审阅提交中阅读了 README、环境配置页、目录、FilesNeeded 说明、FAQ 和许可证，没有实际学习课程或运行示例程序；课程中也未提及 AI 或 REA。"
     ]
+  },
+  "apklab": {
+    "name": "APKLab Android 逆向工作台",
+    "requirements": [
+      "最新标签 v2.0.0 在更新日志中的日期为 2026-04-06，新增 smali-lsp、Frida 钩子生成与 gadget 注入，并兼容 Apktool 3.0+；所审阅的 master 分支提交日期为 2026-07-16，比该标签多 5 个提交。扩展发布在 VS Code 应用市场和 Open VSX，package.json 要求 VS Code 1.91+。README 列出 Linux、macOS 和 WSL2，CI 还在 Windows 上构建和测试。",
+      "需要 JDK 17+。首次使用时，扩展会把项目更新配置中列出的工具下载到用户主目录下的 .apklab 文件夹，审阅时为 Apktool 3.0.2、smali-lsp 1.5.0、uber-apk-signer 1.3.0 和 Jadx 1.5.6；使用者也可自行指定路径。adb 为可选项，用于安装到设备；Quark-Engine 21.01.6+ 为可选项，用于生成恶意软件报告。APK 由使用者自备。",
+      "CI 在 Ubuntu、macOS 和 Windows 上运行代码检查、打包扩展并执行测试套件，测试使用独立 testdata 仓库中的一个开源示例 APK；这只检查集成本身，不代表所整合工具在真实应用上的效果。Jadx 的输出可能不完整；重新构建的 APK 由 uber-apk-signer 重新签名，设置了密钥库时使用该密钥库。",
+      "采用 AGPL-3.0 许可；Apktool、Jadx、smali-lsp、uber-apk-signer、apk-mitm、Frida 和 Quark-Engine 保留各自许可证。HTTPS 检查补丁和 gadget 注入会修改被分析的应用，本工具不授予分析、修补或再分发第三方应用的任何权利。本次审阅未安装任何内容，也未修改任何应用。"
+    ]
   }
 }
