@@ -1,12 +1,14 @@
 """Render bilingual detail pages for reviewed catalog records, never scan records."""
 from __future__ import annotations
 
+from collections import defaultdict
 from html import escape
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
-from build_discovery_pages import jsonld_script
+from artifact_links import github_repository
+from build_discovery_pages import jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, TARGETS
 from open_graph import open_graph_meta
@@ -102,6 +104,44 @@ def _survey_discussion(sections: list[dict], language: str) -> str:
             f'<ul class="entry-sources">{"".join(links)}</ul></section>')
 
 
+def matching_entries(resources: list[dict], papers: list[dict]) -> dict[tuple[str, str], list[tuple[str, dict]]]:
+    """Pair a resource and a paper only when both describe the same work.
+
+    A match is the resource URL's exact GitHub repository root equalling a paper's code or
+    project repository, or a shared DOI, arXiv ID or URL key. Names and evidence URLs that
+    merely cite a paper never match.
+    """
+    matches = defaultdict(list)
+    for paper in sorted(papers, key=lambda row: row['id']):
+        repositories = {github_repository(paper.get(field), artifact=True) for field in ('code_url', 'project_url')} - {None}
+        keys = publication_keys(paper)
+        for resource in sorted(resources, key=lambda row: row['id']):
+            repository = github_repository(resource.get('url'))
+            if (repository and repository in repositories) or keys & publication_keys(resource):
+                matches[('resource', resource['id'])].append(('paper', paper))
+                matches[('paper', paper['id'])].append(('resource', resource))
+    return dict(matches)
+
+
+def _related_entries(entries: list[tuple[str, dict]], language: str) -> str:
+    """Link the same work's detail page in the other directory, in the page language."""
+    if not entries:
+        return ''
+    zh = language == 'zh'
+    links = []
+    for kind, record in entries:
+        if kind == 'paper':
+            title, context = record['title_zh' if zh else 'title'], ('研究论文' if zh else 'Research paper')
+        else:
+            title, context = (record.get('name_zh') or record['name']) if zh else record['name'], ('精选资源' if zh else 'Curated resource')
+        links.append(f'<li><a href="{entry_path(kind, record["id"], language)}">{escape(title)}</a>'
+                     f' <span class="entry-source-context">{context}</span></li>')
+    heading = '相关条目' if zh else 'Related entries'
+    note = '依据相同的代码仓库或论文标识关联。' if zh else 'Matched by the same code repository or publication identifier.'
+    return (f'<section class="entry-section" aria-labelledby="entry-related"><h2 id="entry-related">{heading}</h2>'
+            f'<p>{note}</p><ul class="entry-sources">{"".join(links)}</ul></section>')
+
+
 def _output_path(root: Path, relative: str) -> Path:
     current = root
     for part in ('', *Path(relative).parts):
@@ -170,7 +210,7 @@ def _paper_content(paper: dict, language: str, discussion: str = '') -> tuple[st
 
 
 def _document(record, kind, language, *, site_url, repository_url, styles_href, entry_styles_href,
-              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions):
+              favicon_href, social_image_href, icon_stylesheet_href, survey_discussions, related_entries):
     zh = language == 'zh'
     label = lambda en, cn: cn if zh else en
     locale, prefix = ('zh-CN', '/zh') if zh else ('en', '')
@@ -180,7 +220,8 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     counterpart = entry_path(kind, record['id'], 'en' if zh else 'zh')
     listing = f'{prefix}/{kind}s/'
     list_name = label('Curated resources', '精选资源') if kind == 'resource' else label('Research papers', '研究论文')
-    discussion = _survey_discussion(survey_discussions.get(record['id'], []), language)
+    discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
+                  + _survey_discussion(survey_discussions.get(record['id'], []), language))
     title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion)
     entity_id = canonical + ('#resource' if kind == 'resource' else '#paper')
     entity = ({'@type': 'CreativeWork', '@id': entity_id, 'url': record['url'], 'name': title, 'description': description}
@@ -236,7 +277,8 @@ def build_entry_pages(site_dir: Path, resources: list[dict], papers: list[dict],
     options = dict(site_url=site_url, repository_url=repository_url, styles_href=styles_href,
                    entry_styles_href=entry_styles_href, favicon_href=favicon_href,
                    social_image_href=social_image_href, icon_stylesheet_href=icon_stylesheet_href,
-                   survey_discussions=survey_discussions or {})
+                   survey_discussions=survey_discussions or {},
+                   related_entries=matching_entries(resources, papers))
     rendered = {}
     for kind, records in (('resource', resources), ('paper', papers)):
         identifiers = set()

@@ -8,6 +8,7 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
+from build_entry_pages import entry_path, matching_entries
 from build_manifest import read_build_manifest
 from build_paper_pages import TARGET_LABELS, bibtex_text, papers_newest_first
 from validate_papers import read_papers
@@ -689,6 +690,7 @@ def validate_case_outputs(pages, resources):
 def validate_entry_outputs(pages, resources, papers):
     """Bind individual pages and their ordinary listing links to reviewed records."""
     routes = expected_entry_routes(resources, papers)
+    related = matching_entries(resources, papers)
     catalogs = {'resource': {row['id']: row for row in resources},
                 'paper': {row['id']: row for row in papers}}
     normalize = lambda value: ' '.join(value.split())
@@ -780,6 +782,10 @@ def validate_entry_outputs(pages, resources, papers):
         phrases.append(record['verified_at'][:10])
         assert all(normalize(phrase) in text for phrase in phrases), f'Detail page lost localized source content: {route}'
         assert links <= set(article['links']), f'Detail article lost upstream evidence or citation links: {route}'
+        # Detail pages link each other only for exact repository or publication matches, in the page language.
+        detail_links = [link for link in article['links'] if re.fullmatch(r'(?:/zh)?/(?:resources|papers)/[a-z0-9-]+/', link)]
+        expected_related = [entry_path(other, row['id'], language) for other, row in related.get((kind, identifier), [])]
+        assert detail_links == expected_related, f'Related detail links differ from exact repository or publication matches: {route}'
 
 
 def main():
