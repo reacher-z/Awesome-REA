@@ -4036,5 +4036,14 @@
       "docs/validation-0.3.md 报告 131 项测试在本地 Python 3.13 上全部通过，Ruff 与严格模式 mypy 检查亦通过；CI 会跳过需要模型或 Ghidra 的测试。其中唯一的参考实验日期为 2026 年 9 月 4 日，用 Claude CLI 生成了 GTA San Andreas 的三个计时器函数；据报告，每个函数都在一轮审阅内通过，经示例适配器编译，并在 Unicorn 中以七组输入与原始 x86 代码结果一致，三个故意出错的对照也全部被检出。作者称这只是 21 次一致的观测，而非穷尽验证；本合集未运行任何内容。",
       "仓库与 ghidra-ai-bridge 均采用 MIT 许可；Ghidra、模型服务及被分析的程序仍受各自条款约束。README 提醒，所配置的命令是由项目自行提供的任意命令，只有在项目所有者掌控时才应信任，而 Ghidra 集成需要在使用者自己的环境中测试。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "capa": {
+    "name": "capa 可执行文件功能识别工具",
+    "requirements": [
+      "审阅时的版本为 v10.0.0，发布于 2026-10-16，提供用 PyInstaller 打包、无需安装即可运行的独立构建，涵盖 Linux（x86_64、arm64 及 Python 3.13 版本）、macOS（x86_64 和 arm64）和 Windows；所审阅的 master 分支提交在该标签之后仅同步了规则子模块。安装指南指出 Linux 构建需要 GLIBC 2.26+，macOS 首次运行时须在 Gatekeeper 中批准该程序。flare-capa PyPI 软件包（10.0.0，需 Python 3.10+）不含默认规则和库识别签名，需通过 -r 和 -s 参数指定。",
+      "输入由使用者提供：PE、ELF 或 .NET 模块、原始 shellcode、CAPE、DRAKVUF 或 VMRay 报告、BinExport2 文件或已保存的 capa 特征文件。IDA Pro explorer 插件需要 IDA 7.4+ 和 Python 3.10+（已测试至 IDA 9.0）；Ghidra 后端和 explorer 脚本需要通过 PyGhidra 启动的 Ghidra 12.0+；Binary Ninja 后端需使用另行安装的 Binary Ninja。",
+      "局限性文档指出，加壳或混淆的程序、安装程序以及 AutoIt 等打包程序会导致结果有误或不完整，分散在包装函数或子函数中的功能也无法匹配；当规则检测到加壳或安装程序时，capa 会发出警告。匹配结果是基于规则的功能迹象，并非已确认的行为。",
+      "采用 Apache-2.0 许可，独立的 capa-rules 仓库同样如此。v10.0.0 修复了通过特制 vivisect .viv 工作区文件执行代码的问题，该问题影响 v9.4.0 及更早版本；现在仅在设置 CAPA_LOAD_VIV_WORKSPACE=1 时才会加载已有工作区。递归克隆源码还会拉取测试文件子模块，安装指南警告其中包含大量恶意软件样本。本次未分析任何样本。"
+    ]
   }
 }

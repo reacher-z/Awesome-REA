@@ -10962,5 +10962,40 @@
       "https://github.com/Dryxio/reagent/releases/tag/v0.4.0",
       "https://github.com/Dryxio/ghidra-bridge/blob/faaf05363796cbc43eac7924f3b6981cd5e40619/README.md"
     ]
+  },
+  {
+    "id": "capa",
+    "name": "capa",
+    "url": "https://github.com/mandiant/capa",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. Matches are grouped into capability namespaces with ATT&CK and MBC tags, and verbose output shows the function or basic-block addresses and features behind each match, pointing analysts to code worth studying. It also reads CAPE, DRAKVUF and VMRay sandbox reports for dynamic features and can use vivisect, IDA Pro, Ghidra or Binary Ninja for analysis, with explorer plugins for IDA and Ghidra and a browser viewer for its JSON results.",
+    "description_zh": "Mandiant FLARE 团队的工具，将 YAML 规则集与从 PE、ELF、.NET 文件或 32/64 位 shellcode 中提取的 API 调用、导入、字符串和常量等特征进行匹配，报告可执行文件具备哪些功能。匹配结果按功能命名空间归类并标注 ATT&CK 和 MBC，详细输出会列出每项匹配所依据的函数或基本块地址及特征，为分析人员指出值得深入研究的代码。它还能读取 CAPE、DRAKVUF 和 VMRay 沙箱报告以利用动态特征，可选用 vivisect、IDA Pro、Ghidra 或 Binary Ninja 进行分析，并提供 IDA 和 Ghidra 的 explorer 插件以及查看 JSON 结果的浏览器界面。",
+    "evidence_url": "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v10.0.0, published 2026-10-16, with standalone PyInstaller builds for Linux (x86_64, arm64 and a Python 3.13 variant), macOS (x86_64 and arm64) and Windows that run without installation; the reviewed master commit only syncs the rules submodule after that tag. The installation guide says the Linux build needs GLIBC 2.26+ and that macOS Gatekeeper must approve the binary on first run. The flare-capa PyPI package (10.0.0, Python 3.10+) does not include the default rules or library-identification signatures, which are passed with -r and -s.",
+      "Inputs are user-supplied PE, ELF or .NET modules, raw shellcode, CAPE, DRAKVUF or VMRay reports, BinExport2 files or saved capa feature files. The IDA Pro explorer needs IDA 7.4+ with Python 3.10+ (tested through IDA 9.0); the Ghidra backend and explorer script need Ghidra 12.0+ started through PyGhidra; the Binary Ninja backend uses a separately installed Binary Ninja.",
+      "The limitations guide states that packed or obfuscated programs, installers and packaged programs such as AutoIt give misleading or incomplete results, and that capabilities split across wrapper or child functions are not matched; capa warns when its rules detect packing or installers. Matches are rule-based indications of capability, not confirmed behavior.",
+      "Apache-2.0, as is the separate capa-rules repository. v10.0.0 fixes code execution through crafted vivisect .viv workspace files, which affected v9.4.0 and earlier; existing workspaces now load only with CAPA_LOAD_VIV_WORKSPACE=1. A recursive source clone also fetches the test-file submodule, which the installation guide warns contains many malware samples. No samples were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/README.md#L153-L160",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/doc/installation.md",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/doc/usage.md",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/doc/limitations.md",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/capa/loader.py#L65-L75",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/capa/ida/plugin/README.md#L97-L110",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/capa/ghidra/README.md",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/pyproject.toml",
+      "https://github.com/mandiant/capa/blob/7a235c46965ea0965c65be3b9ee1e21dca686f3d/LICENSE.txt",
+      "https://github.com/mandiant/capa/releases/tag/v10.0.0",
+      "https://pypi.org/project/flare-capa/10.0.0/"
+    ]
   }
 ]
