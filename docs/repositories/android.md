@@ -40,7 +40,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — Mobile Edge-Dynamic Unified Security Analysis **[2,357 stars]**
 - [httptoolkit/frida-interception-and-unpinning](https://github.com/httptoolkit/frida-interception-and-unpinning) — Frida scripts to rewrite mobile applications at runtime to directly MitM all HTTPS traffic **[2,315 stars]**
 - [Juude/droidReverse](https://github.com/Juude/droidReverse) — Reverse engineering tools for Android **[2,021 stars]**
-- [chame1eon/jnitrace](https://github.com/chame1eon/jnitrace) — A Frida based tool that traces usage of the JNI API in Android apps. **[1,864 stars]**
+- [chame1eon/jnitrace](https://github.com/chame1eon/jnitrace) — A Frida based tool that traces usage of the JNI API in Android apps. **[1,864 stars]** · Curated: [jnitrace](https://awesomerea.org/resources/jnitrace/)
 - [maddiestone/AndroidAppRE](https://github.com/maddiestone/AndroidAppRE) — Android App Reverse Engineering Workshop **[1,568 stars]**
 - [deathmemory/FridaContainer](https://github.com/deathmemory/FridaContainer) — FridaContainer brings together popular online and custom-written Frida scripts to improve reverse engineering efficiency, with modular Frida scripts and Java/JNI tracing. **[1,520 stars]**
 - [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 Run frida-server on boot with Magisk, always up-to-date **[1,473 stars]**
