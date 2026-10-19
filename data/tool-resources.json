@@ -7511,5 +7511,42 @@
       "Runs as a single executable JAR on a Java runtime; the Gradle build targets Java 8 source and target compatibility, and the README notes large inputs may need an increased -Xmx heap to avoid an OutOfMemoryError.",
       "Operates on APK files the user supplies; the README documents decoding to XML source for un-obfuscated packages only, and rebuilding a package is distinct from recovering original Java source. Apache-2.0 licensed."
     ]
+  },
+  {
+    "id": "jazz2-resurrection-engine-case",
+    "name": "Jazz² Resurrection: a native C++ reimplementation of Jazz Jackrabbit 2",
+    "url": "https://github.com/deathkiller/jazz2-native",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements Jazz Jackrabbit 2 (1998) as a native C++ game on an extensively modified nCine engine, converting the user’s original game files into its own cache on first start. It runs on desktop, mobile, web and many homebrew console targets, with multiplayer, an enhanced Reforged mode and partial JJ2+ and MLLE support. A two-sided trajectory probe checks its non-Reforged movement against the original game, and the project reports 376 of 406 scenarios within 25 px/s.",
+    "description_zh": "以原生 C++ 在深度修改的 nCine 引擎上重新实现《爵士兔 2》（Jazz Jackrabbit 2，1998），首次启动时把使用者的原版游戏文件转换为自己的缓存。它可在桌面、移动设备、网页和众多自制软件主机平台上运行，支持多人游戏、增强的 Reforged 模式，并部分支持 JJ2+ 与 MLLE。项目用一个双向轨迹探针把非 Reforged 模式的移动与原版游戏对照，报告 406 个场景中有 376 个误差在 25 px/s 以内。",
+    "evidence_url": "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-17, just after release 3.9.0 of the same day, which reworked physics; release packages are published in the older deathkiller/jazz2 repository. README lists the Shareware Demo, Holiday Hare ’98, The Secret Files and Christmas Chronicles as supported, with partial JJ2+ and MLLE features, and marks the Nintendo 64, Dreamcast, Wii, GameCube and PlayStation 3 ports as not yet tested on real hardware. README calls the game fully rewritten in C++ and does not describe decompiling the original executable; the non-Reforged movement constants come from measurements of the original game.",
+      "Every build needs the contents of the user’s original Jazz Jackrabbit 2 directory, a retail version or the Shareware Demo, placed in a Source folder and converted into a cache on first start. On Nintendo 64, Dreamcast, PlayStation 2, GameCube and 3DS the content must first be converted with the project’s AssetPacker, and README says the resulting images can’t be distributed. The repository’s Content directory holds the game’s own fonts, extra animations, metadata and translations; the Windows 3.9.0 package contains it with an empty Source placeholder, and README says the Docker server image never contains original files.",
+      "README documents Windows, Linux, macOS, iOS, Android, Nintendo Switch, Web (Emscripten), a libretro core, Xbox (UWP), AmigaOS 3.x, AmigaOS 4.1 and MorphOS, Nintendo 64, Dreamcast, Wii, GameCube, 3DS, PSP, PS2, PS3 and Vita, plus a Docker dedicated server; desktop builds need an OpenGL 3.3 or OpenGL ES 3.0 GPU. Builds use CMake 3.15+, which downloads the prebuilt dependency set by default unless system libraries are used. Console builds use their own homebrew SDKs and toolchain files, and several console targets need custom firmware.",
+      "The Linux and Windows workflows build and package without running a test suite. An optional physics probe (WITH_PHYSICS_PROBE) drives the same scripted scenarios in this engine and in the original game with JJ2+ and logs every tick; the committed traces and comparison scripts let changes be checked without the original. For the 144 FPS engine capture, Results/README.md reports a median speed-distribution error of 0.1 px/s, 376 of 406 scenarios within 25 px/s and 70 of 397 scenarios whose animation-segment counts differ by over 25%. These are project-reported figures; this collection ran nothing.",
+      "LICENSE is GPL-3.0; Docs/ThirdParty.dox lists the third-party components, including parts of nCine (MIT), with their own licenses. Jazz Jackrabbit 2 and its data keep their owners’ rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/LICENSE",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/CMakeLists.txt",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/ThirdParty.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/AssetPacker.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/Consoles.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Docs/MovementAccuracyReference.dox",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Sources/Jazz2/Tests/README.md",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/Sources/Jazz2/Tests/Results/README.md",
+      "https://github.com/deathkiller/jazz2-native/tree/c18381c246271d76c70af723a8ab5615028e3c6c/Content",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/linux.yml",
+      "https://github.com/deathkiller/jazz2-native/blob/c18381c246271d76c70af723a8ab5615028e3c6c/.github/workflows/windows.yml",
+      "https://github.com/deathkiller/jazz2/releases/tag/3.9.0"
+    ]
   }
 ]
