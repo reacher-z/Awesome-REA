@@ -18,7 +18,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [tuyoogame/huatuo](https://github.com/tuyoogame/huatuo) — Huatuo is a nearly perfect, fully featured, zero-cost, high-performance, low-memory solution for Unity's all-platform native C# hot updates. **[2,338 stars]**
 - [ergrelet/unlicense](https://github.com/ergrelet/unlicense) — Dynamic unpacker and import fixer for Themida/WinLicense 2.x and 3.x. **[1,502 stars]**
 - [jacksondunstan/UnityNativeScripting](https://github.com/jacksondunstan/UnityNativeScripting) — Unity Scripting in C++ **[1,374 stars]**
-- [Washi1337/AsmResolver](https://github.com/Washi1337/AsmResolver) — A library for creating, reading and editing PE files and .NET modules. **[1,129 stars]**
+- [Washi1337/AsmResolver](https://github.com/Washi1337/AsmResolver) — A library for creating, reading and editing PE files and .NET modules. **[1,129 stars]** · Curated: [AsmResolver](https://awesomerea.org/resources/asmresolver/)
 - [KumoKyaku/kcp](https://github.com/KumoKyaku/kcp) — KCP in C#: thread-safe, with no runtime allocations and no GC pressure. **[1,005 stars]**
 - [abbaye/WpfHexEditorIDE](https://github.com/abbaye/WpfHexEditorIDE) — WpfHexEditor Studio is a IDE built on WPF and .NET 8, designed for advanced binary analysis and reverse engineering—combining a powerful hex editor, deep inspection tools, and native support for .NET projects and Visual Studio solutions in a single high-performance platform. **[938 stars]**
 - [EgorBo/Disasmo](https://github.com/EgorBo/Disasmo) — VS2022 Add-in. Click on any method or class to see what .NET Core's JIT generates for them (ASM). **[706 stars]**

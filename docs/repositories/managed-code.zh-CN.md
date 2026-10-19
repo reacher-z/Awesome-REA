@@ -18,7 +18,7 @@
 - [tuyoogame/huatuo](https://github.com/tuyoogame/huatuo) — huatuo 是一个特性完整、零成本、高性能、低内存、近乎完美的 Unity 全平台原生 C# 热更新方案。 **[2,338 星标]**
 - [ergrelet/unlicense](https://github.com/ergrelet/unlicense) — 面向 Themida/WinLicense 2.x 和 3.x 的动态脱壳与导入修复工具。 **[1,502 星标]**
 - [jacksondunstan/UnityNativeScripting](https://github.com/jacksondunstan/UnityNativeScripting) — 使用 C++ 编写 Unity 脚本。 **[1,374 星标]**
-- [Washi1337/AsmResolver](https://github.com/Washi1337/AsmResolver) — 用于创建、读取和编辑 PE 文件与 .NET 模块的库。 **[1,129 星标]**
+- [Washi1337/AsmResolver](https://github.com/Washi1337/AsmResolver) — 用于创建、读取和编辑 PE 文件与 .NET 模块的库。 **[1,129 星标]** · 精选：[AsmResolver PE 与 .NET 模块编辑库](https://awesomerea.org/zh/resources/asmresolver/)
 - [KumoKyaku/kcp](https://github.com/KumoKyaku/kcp) — KCP 的 C# 版本，线程安全，运行时无内存分配，对 GC 无压力。 **[1,005 星标]**
 - [abbaye/WpfHexEditorIDE](https://github.com/abbaye/WpfHexEditorIDE) — WpfHexEditor Studio 是基于 WPF 与 .NET 8 的 IDE，面向高级二进制分析和逆向工程，将强大的十六进制编辑器、深入检查工具以及对 .NET 项目和 Visual Studio 解决方案的原生支持整合到一个高性能平台中。 **[938 星标]**
 - [EgorBo/Disasmo](https://github.com/EgorBo/Disasmo) — VS2022 插件。点击任意方法或类，即可查看 .NET Core 的 JIT 为其生成的汇编代码。 **[706 星标]**
