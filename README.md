@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 432](https://img.shields.io/badge/resources-432-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 433](https://img.shields.io/badge/resources-433-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (62)
-- [Native Binary](#native-binary) (55) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (17)
+- [Native Binary](#native-binary) (55) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2246,6 +2246,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Frida-based tool that hooks TLS libraries such as OpenSSL, BoringSSL, NSS and GnuTLS inside a running process and writes NSS key logs and decrypted payloads as PCAP, so analysts can inspect an application's encrypted traffic in Wireshark. For stripped or statically linked libraries it accepts byte patterns or offsets and can scan for renamed libraries, or it can recover TLS secrets by scanning heap memory instead of hooking. A terminal UI, a Python API and a Wireshark extcap integration wrap the same capture.
 
   Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/fritap/)
+
+- [**pbtk**](https://github.com/marin-m/pbtk)
+
+  Recover Protobuf message definitions from compiled programs as readable .proto files. Extractors cover the Java runtimes in JAR, DEX and APK files (including ProGuard-obfuscated code), binaries that embed Protobuf reflection metadata, and web apps using the Protobuf-URL format. A GUI then binds a recovered message type to an HTTP endpoint, decodes hex-encoded captured samples into an editable field tree and resends edited messages, so analysts can relate each field to the response.
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/pbtk/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
