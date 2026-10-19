@@ -3010,5 +3010,15 @@
       "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
       "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "th07-decomp-case": {
+    "name": "Touhou 7：重建东方妖妖梦 1.00b 版源码",
+    "requirements": [
+      "README 称这是 th07.exe 1.00b 与 custom.exe 的进行中匹配反编译；仓库内可变的徽章报告 th07.exe 的 694 个函数已全部实现、准确率 99.78%，custom.exe 两项均为 100%。行为力求与原版一致，但可能存在差异。portable 和 reallyportable 分支（桌面、移动端和网页移植）是独立分支，本条目不涵盖。README 致谢 GensokyoClub 的 th06 与 th08 反编译项目，借用了共享的类型、命名和代码。",
+      "需自备 th07.exe 1.00b（README 给出 MD5，reccmp-project.yml 给出 SHA-256）并复制到 resources/，用于提取图标并作为 reccmp 的比较基准；custom.exe 仅在构建设置工具时需要，使用 --no-icon 可在两者都缺失时构建。仓库未提交游戏可执行文件或游戏数据文件；resources/csv 存放 reccmp 使用的函数、全局变量、字符串和浮点数表。",
+      "此分支只能以 MSVC 2002 工具链构建 32 位 Windows 程序，Linux 上通过 Wine 运行，并需要 uv 和 ninja。scripts/download_deps.py 从 archive.org 获取 Visual Studio .NET 2002 和 DirectX 8 SDK，并从 gist 获取 EstexNT 的 var_order 编译器补丁；scripts/build.py 生成并运行 ninja 构建。",
+      "贡献者使用 reccmp 比较差异，它以 HTML 页面或针对单个地址给出相对原程序的逐函数准确率。由于 th07.exe 尚未逐字节一致，README 称匹配构建无法通过游戏的完整性检查，并会在 3,999 个 Supervisor 周期后崩溃；--no-matching 会禁用该检查。仓库没有 CI；徽章数字由项目生成，本合集未构建或运行任何内容。",
+      "仓库以 CC0 1.0 释出；游戏及下载的 Microsoft 工具链和 SDK 各有条款。嵌入进度徽章的 resources/svgicon.png 是游戏封面图，标有 © 2003 上海爱丽丝幻乐团，CC0 声明并不涵盖它。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
