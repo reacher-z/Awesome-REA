@@ -693,6 +693,38 @@ def validate_stylesheet_references(output):
     assert not unlinked, 'Stylesheets not linked by any generated page: ' + ', '.join(unlinked)
 
 
+class DocumentTitle(HTMLParser):
+    def __init__(self, text):
+        super().__init__()
+        self.titles, self._parts = [], None
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'title':
+            self._parts = []
+
+    def handle_data(self, data):
+        if self._parts is not None:
+            self._parts.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == 'title' and self._parts is not None:
+            self.titles.append(' '.join(''.join(self._parts).split()))
+            self._parts = None
+
+
+def validate_unique_titles(output, routes):
+    """Give every sitemap page its own <title>; Chinese resource pages need Chinese context."""
+    seen = {}
+    for route in routes:
+        titles = DocumentTitle((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).titles
+        assert len(titles) == 1 and titles[0], f'Page needs exactly one non-empty <title>: {route}'
+        assert titles[0] not in seen, f'Duplicate <title> on {seen.get(titles[0])} and {route}: {titles[0]}'
+        seen[titles[0]] = route
+        if re.fullmatch(r'/zh/resources/[a-z0-9-]+/', route):
+            assert re.search(r'[\u3400-\u9fff]', titles[0]), f'Chinese resource title has no Chinese text: {route}'
+
+
 def validate_source_browser_output(output):
     """Keep the interactive payload exact, bounded in scope, and freshly served."""
     output = Path(output)
@@ -891,6 +923,7 @@ def main():
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_case_outputs(pages, resources)
+    validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
     validate_source_browser_output(OUTPUT)
     validate_stylesheet_references(OUTPUT)

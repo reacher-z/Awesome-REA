@@ -223,6 +223,9 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
     discussion = (_related_entries(related_entries.get((kind, record['id']), []), language)
                   + _survey_discussion(survey_discussions.get(record['id'], []), language))
     title, description, content = (_resource_content if kind == 'resource' else _paper_content)(record, language, discussion)
+    # Resource names such as rr or GDB are often identical in both languages; the localized
+    # category gives each <title> topic and language context. H1, og:title and JSON-LD keep the name.
+    document_title = f'{title} · {CATEGORIES[record["category"]][int(zh)]}' if kind == 'resource' else title
     entity_id = canonical + ('#resource' if kind == 'resource' else '#paper')
     entity = ({'@type': 'CreativeWork', '@id': entity_id, 'url': record['url'], 'name': title, 'description': description}
               if kind == 'resource' else {**scholarly_article(record, language), '@id': entity_id})
@@ -243,7 +246,7 @@ def _document(record, kind, language, *, site_url, repository_url, styles_href, 
 <html lang="{locale}"{(' data-icon-set="fontawesome"' if icon_stylesheet_href else '')}>
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#ffffff">
-  <title>{escape(title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
+  <title>{escape(document_title)} · AwesomeREA.org</title><meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{_public_url(canonical)}">
   <link rel="alternate" hreflang="en" href="{_public_url(english)}"><link rel="alternate" hreflang="zh-CN" href="{_public_url(chinese)}"><link rel="alternate" hreflang="x-default" href="{_public_url(english)}">
   {open_graph_meta(language=language, title=title, description=description, image_url=social_image_href, url=canonical)}
