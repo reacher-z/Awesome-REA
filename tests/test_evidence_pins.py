@@ -14,6 +14,8 @@ import validate
 from validate import evidence_pin_warnings
 
 REVISION = 'f' * 40
+PINNED = ('emba', 'fmodel', 'universal-radio-hacker', 'sotn-matching-decomp-case', 'resym-paper',
+          'perfect-dark-matching-decomp-case', 'goldeneye-007-matching-decomp-case')
 
 
 def record(evidence, *additional):
@@ -52,8 +54,11 @@ class EvidencePinTests(unittest.TestCase):
                 self.assertEqual(evidence_pin_warnings([record(evidence)]), [])
         self.assertEqual(evidence_pin_warnings(['not a record', {'id': 'missing-links'}]), [])
 
-    def test_current_catalog_names_a_revision_for_every_wiki_and_repository_link(self):
-        records = [item for path in RESOURCE_FILES for item in json.loads(path.read_text(encoding='utf-8'))]
+    def test_pinned_records_name_a_revision_for_every_wiki_and_repository_link(self):
+        # Only the records pinned here: open pull requests may still add unpinned links, which stay warnings.
+        records = [item for path in RESOURCE_FILES for item in json.loads(path.read_text(encoding='utf-8'))
+                   if item['id'] in PINNED]
+        self.assertEqual(sorted(record['id'] for record in records), sorted(PINNED))
         self.assertEqual(evidence_pin_warnings(records), [])
 
     def test_validation_prints_the_warning_and_still_passes(self):
