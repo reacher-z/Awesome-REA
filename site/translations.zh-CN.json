@@ -4959,5 +4959,15 @@
       "输入应为使用者有权查看的源映射。工具只读取映射中的 version、sources 和 sourcesContent 字段，因此未内嵌 sourcesContent 的映射会被拒绝，没有映射的压缩代码也不在其处理范围内；它不使用 mappings 字段，输出的是打包工具当时记录的源码文本，并未与线上部署的打包产物核对。",
       "采用 BSD-3-Clause 许可。还原出的前端代码仍受网站所有者的权利约束。README 链接了 Pulse Security 2018 年的一篇文章，介绍在渗透测试中借助它审查前端源码的用法。本次未构建该工具，也未对任何网站运行。"
     ]
+  },
+  "jazz2-resurrection-engine-case": {
+    "name": "Jazz² Resurrection：《爵士兔 2》的原生 C++ 重新实现",
+    "requirements": [
+      "审阅版本为 2026-10-17 的 master 提交，紧随同日发布、重做了物理系统的 3.9.0 版；发布包放在较早的 deathkiller/jazz2 仓库中。README 列出支持的版本为 Shareware Demo、Holiday Hare ’98、The Secret Files 和 Christmas Chronicles，并部分支持 JJ2+ 与 MLLE 功能；Nintendo 64、Dreamcast、Wii、GameCube 和 PlayStation 3 移植版标注为尚未在实机上测试。README 称游戏以 C++ 完全重写，没有提到反编译原版可执行文件；非 Reforged 模式的移动常量来自对原版游戏的测量。",
+      "所有版本都需要把使用者原版 Jazz Jackrabbit 2 目录的内容（零售版或 Shareware Demo）放入 Source 文件夹，首次启动时转换为缓存。在 Nintendo 64、Dreamcast、PlayStation 2、GameCube 和 3DS 上，内容必须先用项目的 AssetPacker 转换，README 说明由此生成的镜像不能分发。仓库的 Content 目录存放游戏自有的字体、额外动画、元数据和翻译；Windows 3.9.0 发布包包含该目录和一个空的 Source 占位文件夹，README 称 Docker 服务器镜像从不包含原版文件。",
+      "README 介绍了 Windows、Linux、macOS、iOS、Android、Nintendo Switch、网页（Emscripten）、libretro 核心、Xbox（UWP）、AmigaOS 3.x、AmigaOS 4.1 与 MorphOS，以及 Nintendo 64、Dreamcast、Wii、GameCube、3DS、PSP、PS2、PS3 和 Vita 版本，另有 Docker 专用服务器；桌面版需要支持 OpenGL 3.3 或 OpenGL ES 3.0 的显卡。构建使用 CMake 3.15+，默认下载预编译的依赖库，也可改用系统库。主机版使用各自的自制软件 SDK 与工具链文件，其中几个主机平台需要自定义固件。",
+      "Linux 和 Windows 工作流只构建和打包，不运行测试套件。可选的物理探针（WITH_PHYSICS_PROBE）在本引擎和装有 JJ2+ 的原版游戏中执行相同的脚本化场景，并按 tick 逐一记录位置与速度；仓库提交的轨迹和对比脚本可在没有原版游戏的情况下检查改动。对于 144 FPS 的引擎采集，Results/README.md 报告速度分布误差中位数为 0.1 px/s，406 个场景中有 376 个在 25 px/s 以内，397 个场景中有 70 个的动画片段数相差超过 25%。这些是项目报告的数据，本合集未运行任何内容。",
+      "LICENSE 为 GPL-3.0；Docs/ThirdParty.dox 列出了各第三方组件及其许可证，其中包括部分 nCine 代码（MIT）。Jazz Jackrabbit 2 及其数据仍归权利人所有。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }
