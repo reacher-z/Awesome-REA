@@ -8893,5 +8893,55 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-retrowrite",
+    "title": "RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization",
+    "title_zh": "RetroWrite：为模糊测试与内存检测静态插桩商用现成二进制",
+    "authors": [
+      "Sushant Dinesh",
+      "Nathan Burow",
+      "Dongyan Xu",
+      "Mathias Payer"
+    ],
+    "year": 2020,
+    "publication_date": "2020-05",
+    "date_precision": "month",
+    "date_basis": "IEEE’s Crossref deposit and the IEEE Xplore record give only May 2020 as the publication date. Xplore separately records insertion on 30 July 2020, and the May 18–21 symposium dates are not used to assert a day.",
+    "date_basis_zh": "IEEE 提交的 Crossref 元数据及 IEEE Xplore 记录只给出出版日期 2020 年 5 月。Xplore 另记载该文于 2020 年 7 月 30 日收录，本条目不据 5 月 18—21 日的研讨会日期推定具体日期。",
+    "venue": "IEEE S&P 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1109/SP40000.2020.00009",
+    "url": "https://ieeexplore.ieee.org/document/9152762",
+    "pdf_url": "https://hexhive.epfl.ch/publications/files/20Oakland.pdf",
+    "code_url": "https://github.com/HexHive/retrowrite",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "RetroWrite statically rewrites 64-bit position-independent Linux binaries by generating reassembleable assembly, so instrumentation can be inserted as if at compile time. Instead of heuristics, it symbolizes references from the binary's own metadata: control-flow operands, PC-relative addressing that position-independent code must use, and data relocations become assembler labels, which separates references from scalars. On this base the authors build AFL coverage instrumentation and a binary-only AddressSanitizer. They report fuzzing throughput matching compiler instrumentation and 4.5x faster than AFL's QEMU mode, with more bugs found on LAVA-M, and binary ASan that runs 3x faster than Valgrind memcheck on SPEC CPU2006 and detects 80% more bugs in their evaluation, whose coverage tests use Juliet memory-corruption cases.",
+    "description_zh": "RetroWrite 通过生成可重汇编的汇编代码，对 64 位位置无关的 Linux 二进制进行静态改写，从而像在编译时一样插入插桩代码。它不依赖启发式规则，而是依据二进制自身的元数据进行符号化：控制流操作数、位置无关代码必须使用的 PC 相对寻址以及数据重定位均被转换为汇编标签，从而区分引用与标量。作者在此基础上实现了 AFL 覆盖率插桩和仅针对二进制的 AddressSanitizer。他们报告其模糊测试吞吐量与编译器插桩相当，比 AFL 的 QEMU 模式快 4.5 倍，并在 LAVA-M 上发现更多缺陷；在 SPEC CPU2006 上，二进制 ASan 比 Valgrind memcheck 快 3 倍，并在作者的评测中多检测出 80% 的缺陷，其检测覆盖率测试采用 Juliet 内存破坏用例。",
+    "scope_limitations_en": "The method depends on position-independent code; the paper's implementation targets Linux x86-64 and uses the symbol table for function starts and sizes, so stripped binaries need function boundaries from another tool. It cannot safely rewrite C++ binaries with exception handling, because the DWARF unwind information is not symbolized, and it does not address obfuscated or adversarial binaries. Binary ASan instruments the stack only at stack-frame granularity and adds no redzones around globals, so it misses some overflows that compiler ASan catches, and it remains slower than compiler ASan. Results are from 2019–2020 tool versions on the authors' benchmarks. The repository's later aarch64 rewriter, described in a separate thesis, uses a different algorithm, and the paper's x86-64 results do not apply to it.",
+    "scope_limitations_zh": "该方法依赖位置无关代码；论文的实现面向 Linux x86-64，并借助符号表确定函数起点与大小，因此去除符号的二进制需要由其他工具提供函数边界。由于未对 DWARF 栈展开信息进行符号化，它无法安全改写含异常处理的 C++ 二进制，也不处理混淆或对抗性二进制。二进制 ASan 对栈只按栈帧粒度插桩，也不在全局变量周围添加红区，因此会遗漏部分编译器 ASan 能发现的溢出，且仍慢于编译器 ASan。这些结果基于 2019—2020 年的工具版本和作者的基准。仓库中后来加入的 aarch64 改写器在另一篇学位论文中描述，采用不同的算法，论文中的 x86-64 结果不适用于它。",
+    "why_fits_en": "Adds static binary rewriting through reassembleable assembly, which reconstructs symbolized assembly so new code can be inserted without source, complementing the collection's decompilation and binary-recovery research.",
+    "why_fits_zh": "补充基于可重汇编汇编代码的静态二进制改写研究：重建符号化的汇编代码，从而在没有源码的情况下插入新代码，与合集中的反编译及二进制恢复研究互补。",
+    "metadata_notes": "Crossref gives the four-author order, pages 1497–1511 and May 2020; IEEE Xplore, read through a Wayback Machine capture because the live page served a bot challenge, gives the same pages and month and a 30 July 2020 insertion date. The 15-page HexHive PDF is byte-identical to the nebelwelt.net copy that the repository README links; it lacks IEEE page numbers and is used as the author-hosted copy. The paper names github.com/HexHive/retrowrite and says its results can be reproduced with the repository’s Docker image. At the reviewed 2025-04-26 commit, the repository has an MIT LICENSE file, though GitHub reports no recognized license, and the README lists Python 3.6 with pyelftools and capstone. Its feature table marks stripped binaries, non-PIE binaries and C++ as unsupported for the x64 rewriter and points to a separate thesis for the aarch64 version. The repository is already in the automated scan index and links to this entry through code_url. Nothing was installed or run.",
+    "metadata_notes_zh": "Crossref 给出四位作者顺序、页码 1497–1511 及 2020 年 5 月；IEEE Xplore 的实时页面返回机器人验证，因此通过 Wayback Machine 存档阅读，其页码与月份相同，并记载 2020 年 7 月 30 日收录。HexHive 托管的 15 页 PDF 与仓库 README 所链接的 nebelwelt.net 副本逐字节相同；该副本没有 IEEE 页码，作为作者托管副本使用。论文给出 github.com/HexHive/retrowrite，并称其结果可借助仓库的 Docker 镜像复现。在所审阅的 2025-04-26 提交中，仓库包含 MIT LICENSE 文件，但 GitHub 未识别出许可证；README 列出 Python 3.6 以及 pyelftools 与 capstone。其功能表将去除符号的二进制、非 PIE 二进制与 C++ 标为 x64 改写器尚不支持，并为 aarch64 版本指向另一篇学位论文。该仓库已收录在自动扫描索引中，并通过 code_url 与本条目关联。本次未安装或运行任何内容。",
+    "evidence_urls": [
+      "https://ieeexplore.ieee.org/document/9152762",
+      "https://api.crossref.org/works/10.1109/SP40000.2020.00009",
+      "https://web.archive.org/web/20220803033228/https://ieeexplore.ieee.org/document/9152762",
+      "https://hexhive.epfl.ch/publications/files/20Oakland.pdf",
+      "https://nebelwelt.net/publications/files/20Oakland.pdf",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/README.md",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/LICENSE"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
