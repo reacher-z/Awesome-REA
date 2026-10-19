@@ -13812,7 +13812,7 @@
       "game"
     ],
     "description_en": "A work-in-progress 1:1 decompilation of Mario Kart: Double Dash!! that rebuilds the GameCube main.dol of the US debug build (MarioClub_us) from C and C++ with the original Metrowerks compilers, checking it against a stored SHA-1. The build splits the binary from a user-supplied disc image, and objdiff compares objects during development. decomp.dev reported 47.09% of code matched at the reviewed commit; a European retail target is configured but marked as not working yet.",
-    "description_zh": "《马力欧赛车：双重冲刺!!》的进行中 1:1 反编译：用原版 Metrowerks 编译器从 C 与 C++ 源码重建美版调试构建（MarioClub_us）的 GameCube main.dol，并与仓库保存的 SHA-1 比对。构建从使用者自备的光盘镜像中拆分二进制，开发时用 objdiff 比对目标文件。decomp.dev 报告所审提交有 47.09% 的代码已匹配；欧版零售目标虽已配置，但标注为尚不可用。",
+    "description_zh": "《马力欧卡丁车：双重冲刺!!》的进行中 1:1 反编译：用原版 Metrowerks 编译器从 C 与 C++ 源码重建美版调试构建（MarioClub_us）的 GameCube main.dol，并与仓库保存的 SHA-1 比对。构建从使用者自备的光盘镜像中拆分二进制，开发时用 objdiff 比对目标文件。decomp.dev 报告所审提交有 47.09% 的代码已匹配；欧版零售目标虽已配置，但标注为尚不可用。",
     "evidence_url": "https://github.com/doldecomp/mkdd/blob/1d2918ca577817ba431baddb78dda24831e0e0bb/README.md",
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
