@@ -99,7 +99,7 @@
 - [clearbluejar/ghidriff](https://github.com/clearbluejar/ghidriff) — 基于 Python 命令行的 Ghidra 二进制差异比较引擎。 **[813 星标]**
 - [mentebinaria/readpe](https://github.com/mentebinaria/readpe) — PE 文件分析工具包。 **[789 星标]**
 - [danigargu/deREferencing](https://github.com/danigargu/deREferencing) — 提供更友好寄存器和栈视图的 IDA Pro 插件。 **[775 星标]**
-- [symgraph/GhidrAssistMCP](https://github.com/symgraph/GhidrAssistMCP) — Ghidra 的原生 MCP 服务器扩展。 **[774 星标]**
+- [symgraph/GhidrAssistMCP](https://github.com/symgraph/GhidrAssistMCP) — Ghidra 的原生 MCP 服务器扩展。 **[774 星标]** · 精选：[GhidrAssistMCP Ghidra 原生 MCP 扩展](https://awesomerea.org/zh/resources/ghidrassistmcp/)
 - [danigargu/heap-viewer](https://github.com/danigargu/heap-viewer) — 用于检查 glibc 堆的 IDA Pro 插件，专注于漏洞利用开发。 **[773 星标]**
 - [fay59/fcd](https://github.com/fay59/fcd) — 支持优化的反编译器。 **[773 星标]**
 - [symgraph/GhidrAssist](https://github.com/symgraph/GhidrAssist) — 为 Ghidra 提供 AI 逆向工程辅助的 LLM 扩展。 **[760 星标]**
