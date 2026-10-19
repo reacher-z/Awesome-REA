@@ -11997,5 +11997,44 @@
       "https://docs.katana-project.org/slicer/reference/share/",
       "https://slicer.run/"
     ]
+  },
+  {
+    "id": "steamkit",
+    "name": "SteamKit",
+    "url": "https://github.com/SteamRE/SteamKit",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol",
+      "game"
+    ],
+    "description_en": ".NET library that implements the client side of Valve’s Steam network protocol: connection-manager sessions, authentication, friends, unified service and Game Coordinator messages, Web API calls and CDN depot downloads. Message classes are generated from Steam protobufs tracked in a submodule and from the project’s own SteamLanguage definitions. Its Resources tree adds protocol-research tools: NetHook2, a Windows DLL that hooks a running Steam client to dump the network messages it exchanges, NetHookAnalyzer2 for viewing those dumps, and ProtobufDumper for recovering protobuf definitions from executables.",
+    "description_zh": "实现 Valve Steam 网络协议客户端的 .NET 库，涵盖连接管理服务器会话、身份验证、好友、统一服务消息与 Game Coordinator 消息、Web API 调用以及 CDN depot 下载。消息类由子模块跟踪的 Steam protobuf 和项目自有的 SteamLanguage 定义生成。其 Resources 目录还提供协议研究工具：NetHook2 是挂钩正在运行的 Steam 客户端、转储其收发网络消息的 Windows DLL，NetHookAnalyzer2 用于查看这些转储，ProtobufDumper 则从可执行文件中恢复 protobuf 定义。",
+    "evidence_url": "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/readme.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master head is identical to GitHub release 3.5.0 of 2026-10-19; at review NuGet still listed 3.4.0 as the newest SteamKit2 package. The README requires the .NET 10 runtime to use the library and the .NET 10 SDK to build it, although the library project multi-targets net8.0 and net10.0. Documentation consists of XML API docs, the wiki and numbered samples covering login, QR authentication, web cookies, friends, Web API and a Dota Game Coordinator request.",
+      "Authenticated features need the user’s own Steam account; this record names none. The library follows Valve’s undocumented, changing protocol: a weekly workflow regenerates message classes from the SteamTracking protobuf submodule and opens a pull request, and the NetHook2 readme notes that releases can lag behind Steam changes.",
+      "NetHook2 is a Windows-only C++ DLL built with Visual Studio 2022 and vcpkg that needs the x86 Visual C++ redistributable. Its readme says it depends on binary signature scans of the Steam client that updates can break, and that Steam may crash while it is attached. NetHookAnalyzer2 is a Windows GUI; CI publishes both as workflow artifacts. They inspect the user’s own client traffic, and this record gives no usage steps.",
+      "CI builds the library, SteamLanguage parser, protobuf tools and samples on Windows, macOS and Linux (x64 and ARM) and runs the xUnit v3 test project, whose fixtures include recorded packets and small depot manifest and chunk samples. The tests check parsing, crypto helpers, async jobs and depot handling, not equivalence with Valve’s client; this source review ran none of them.",
+      "LGPL-2.1 (LICENSE). The tracked Steam protobuf definitions come from a separate submodule, and Valve’s services and terms apply independently of the library license. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/SteamKit2/SteamKit2/SteamKit2.csproj",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/global.json",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/.gitmodules",
+      "https://github.com/SteamRE/SteamKit/tree/49387aec55c24104946af7a7b160148358e538b4/Samples",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/Resources/NetHook2/readme.md",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/Resources/ProtobufDumper/ProtobufDumper/ExecutableScanner.cs",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/Resources/SteamLanguage/emsg.steamd",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/.github/workflows/steamkit2-build.yaml",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/.github/workflows/update-protobufs.yaml",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/SteamKit2/Tests/Tests.csproj",
+      "https://github.com/SteamRE/SteamKit/blob/49387aec55c24104946af7a7b160148358e538b4/LICENSE",
+      "https://github.com/SteamRE/SteamKit/releases/tag/3.5.0",
+      "https://www.nuget.org/packages/SteamKit2/3.4.0"
+    ]
   }
 ]

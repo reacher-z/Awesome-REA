@@ -4386,5 +4386,15 @@
       "文档提醒，反编译输出只是尽力而为的近似结果，未必是合法的 Java 代码，对非 javac 编译器或混淆器生成的代码尤其如此。slicer 没有针对特定混淆器的反混淆功能，其重映射器也不会沿继承关系传播名称。",
       "slicer 本身采用 MIT 许可；其中包含的 Vineflower 和 Procyon 反编译器等组件采用 Apache-2.0 许可。本次未反编译任何类。"
     ]
+  },
+  "steamkit": {
+    "name": "SteamKit Steam 网络协议库",
+    "requirements": [
+      "所审阅的 master 最新提交与 2026-10-19 的 GitHub 3.5.0 版完全一致；审阅时 NuGet 上最新的 SteamKit2 包仍为 3.4.0。README 要求使用该库需 .NET 10 运行时、构建需 .NET 10 SDK，但库项目同时面向 net8.0 和 net10.0。文档包括 XML API 文档、wiki 以及按编号排列的示例，涵盖登录、二维码认证、网页 Cookie、好友、Web API 和 Dota Game Coordinator 请求。",
+      "需要身份验证的功能要用用户自己的 Steam 账号；本条目不记录任何账号。该库所跟随的 Valve 协议没有公开文档且不断变化：每周运行的工作流会根据 SteamTracking protobuf 子模块重新生成消息类并提交拉取请求，NetHook2 的说明也指出版本发布可能落后于 Steam 的变化。",
+      "NetHook2 是仅限 Windows 的 C++ DLL，使用 Visual Studio 2022 和 vcpkg 构建，需要 x86 版 Visual C++ 运行库。其说明称它依赖对 Steam 客户端的二进制特征扫描，客户端更新可能使之失效，挂接期间 Steam 也可能崩溃。NetHookAnalyzer2 是 Windows 图形界面工具；CI 会把两者作为工作流产物发布。它们检查的是用户自己客户端的流量，本条目不提供使用步骤。",
+      "CI 在 Windows、macOS 和 Linux（x64 与 ARM）上构建该库、SteamLanguage 解析器、protobuf 工具和示例，并运行 xUnit v3 测试项目；测试样本包括录制的数据包以及小型 depot 清单和数据块样本。测试检查解析、加密辅助函数、异步任务和 depot 处理，并不检验与 Valve 客户端的等价性；本次来源核查未运行任何测试。",
+      "采用 LGPL-2.1（LICENSE）。所跟踪的 Steam protobuf 定义来自独立的子模块，Valve 的服务与条款独立于该库的许可证适用。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
