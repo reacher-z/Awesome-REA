@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 321](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-321-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 164](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-164-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 74](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 321](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-321-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 164](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-164-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 75](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (74) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (75) · [智能体与 MCP](#agents-and-mcp) (28) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2038,13 +2038,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**74 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**75 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (23) · [网站](#papers-website-reconstruction) (14)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (23) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2692,6 +2692,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该方法以 HTML/CSS 重建静态视觉布局，不重建交互、JavaScript 行为或后端逻辑。测试页面是将图片替换为占位图的自包含快照；主要评测从 348 个热门网站中抽取 111 个，另加 80 个更复杂的 GitHub Pages 页面，可用性研究仅有四名参与者。分割依赖人工设定的阈值，组装阶段仍可能错排元素。
 
   **发表信息:** 2025 · Proceedings of the ACM on Software Engineering · 期刊论文 · Yuxuan Wan 等
+
+  </details>
+
+- [**WebCode2M：面向网页设计稿代码生成的真实世界数据集**](https://dl.acm.org/doi/10.1145/3696410.3714889)
+
+  WebCode2M 将约 256 万张真实网页截图与净化后的 HTML/CSS 代码及元素边界框布局树配对。数据取样自 Common Crawl 快照，经清洗（移除脚本、元数据与隐藏元素，并将样式合并为单一样式块）后用 Playwright 渲染，再由基于 10,000 条人工标注样本训练的神经评分器筛选。论文以 Pix2Struct-1.3B 微调出基线模型 WebCoder，提出衡量 DOM 结构召回率的 TreeBLEU 指标，并在短、中、长三个各含 256 个网页的测试子集上评测专用、开源及商业多模态模型。
+
+  2025 · 会议论文 · [PDF](https://arxiv.org/pdf/2404.06369v2) · [代码](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-webcode2m/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 任务是根据设计图生成静态 HTML/CSS。净化过程会移除脚本，因此不重建交互、客户端行为或后端逻辑；输出以视觉得分、CLIP 相似度和 TreeBLEU 评判，而非功能等价性。论文报告，所有被评测模型都无法准确还原图像元素，且目标代码越长得分越低。768 个测试网页取自高分候选并经人工检查；评分器准确率约为 90%，训练集中仍有低质量样本，作者也提醒爬取内容可能仍含不当材料。商业模型仅以模型家族命名，约三分之一的 Gemini 测试样例因 recitation 错误失败，因此相关比较只反映当时情况。数据集卡片声明的 CC BY 4.0 许可不能清除所爬取网页代码、文本或图片的权利。
+
+  **发表信息:** 2025 · WWW 2025 · 会议论文 · Yi Gui 等
 
   </details>
 

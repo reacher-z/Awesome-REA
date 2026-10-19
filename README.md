@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 321](https://img.shields.io/badge/resources-321-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 164](https://img.shields.io/badge/cases-164-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 74](https://img.shields.io/badge/papers-74-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 321](https://img.shields.io/badge/resources-321-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 164](https://img.shields.io/badge/cases-164-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 75](https://img.shields.io/badge/papers-75-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (74) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (75) · [Agents and MCP](#agents-and-mcp) (28) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2037,13 +2037,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**74 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**75 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (23) · [Websites](#papers-website-reconstruction) (14)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (23) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2691,6 +2691,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** It reconstructs static visual layout as HTML/CSS, not interaction, JavaScript behavior or backend logic. Test pages are self-contained snapshots with images replaced by placeholders; the main evaluation samples 111 of 348 top-ranked sites, adds 80 harder GitHub Pages pages, and the usefulness study has four participants. Segmentation uses manually set thresholds, and assembly can still misarrange elements.
 
   **Publication:** 2025 · Proceedings of the ACM on Software Engineering · Journal article · Yuxuan Wan et al.
+
+  </details>
+
+- [**WebCode2M: A Real-World Dataset for Code Generation from Webpage Designs**](https://dl.acm.org/doi/10.1145/3696410.3714889)
+
+  WebCode2M pairs about 2.56 million real-world webpage screenshots with purified HTML/CSS code and element bounding-box layout trees. Pages sampled from a Common Crawl snapshot are cleaned (scripts, metadata and hidden elements removed, styles merged into one block), rendered with Playwright, and filtered by a neural scorer trained on 10,000 annotated samples. The paper fine-tunes Pix2Struct-1.3B as the WebCoder baseline, introduces TreeBLEU to measure DOM-structure recall, and benchmarks specialized, open and commercial multimodal models on short, medium and long test subsets of 256 pages each.
+
+  2025 · Conference paper · [PDF](https://arxiv.org/pdf/2404.06369v2) · [Code](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [Full entry & citation](https://awesomerea.org/papers/paper-webcode2m/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The task is static HTML/CSS generation from a design image. Scripts are stripped during purification, so interaction, client-side behavior and backend logic are not reconstructed, and outputs are judged by visual score, CLIP similarity and TreeBLEU rather than functional equivalence. The paper reports that no evaluated model reproduces image elements accurately, and scores fall as target code grows longer. The 768 test pages were drawn from high-scoring candidates and manually inspected; the scorer is about 90% accurate, so low-quality training samples remain, and the authors warn that crawled content may still include inappropriate material. Commercial models are named only by family, and about one-third of Gemini test cases failed with recitation errors, so those comparisons are snapshots. The dataset card's CC BY 4.0 license does not clear rights in the crawled pages' code, text or images.
+
+  **Publication:** 2025 · WWW 2025 · Conference paper · Yi Gui et al.
 
   </details>
 
