@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 297](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 60](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-60-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 297](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 61](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-61-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (60) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (61) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1894,13 +1894,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**60 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**61 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (14) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (15) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -2033,6 +2033,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 评估语料包含 130 个程序中的 23,400 个函数。基于模糊测试的检查覆盖有限，可理解性评分部分依赖 LLM 评审器。研究产物说明，重新构建的 OSS-Fuzz 项目可能与论文版本不同。
 
   **发表信息:** 2025 · Findings of ACL 2025 · 会议论文 · Zeyu Gao 等
+
+  </details>
+
+- [**DecLLM：借助大语言模型实现可重新编译的反编译，支持以程序化方式使用反编译代码**](https://dl.acm.org/doi/10.1145/3728958)
+
+  DecLLM 将无法重新编译的反编译伪代码修复为可编译、可运行的 C 代码，使 CodeQL 等源码级工具能够用于二进制分析。其迭代流程把编译器错误反馈给现成的大语言模型，并回退非法输出和大段删除；随后利用重建程序与预期不符的测试输出及 AddressSanitizer 报告修复行为，最后对原始与重建的可执行文件进行模糊测试以发现行为差异。作者报告，使用 GPT-3.5 与 GPT-4 时，在 300 个 Code Contest 程序上的成功率分别为 74% 和 78.3%；在 Coreutils 与 CGC 二进制上，61.9%–70.9% 可重新编译，完全功能正常的占 48.1%–59.0%。
+
+  2025 · 期刊论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-decllm/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 在 Code Contest 上，成功的含义是修复后的代码能够编译，且重建的可执行文件通过所提供的测试用例，并以 AFL++ 模糊测试作额外检查；Coreutils 与 CGC 的总体比率还计入功能异常或崩溃的重建二进制。这确立的是可编译性和基于测试的一致性，而非语义等价性，作者亦指出后者不可判定。结果依赖 IDA Pro 8.3 的输出（另以 Ghidra 10.4 重复一次实验），以及通过 API 提供、上下文上限为 4,096 个词元的 gpt-3.5-turbo-0613 与 gpt-4-0314 快照，因此所选程序须控制在该上限的一半以内。300 个 Code Contest 程序平均 112.9 行；Coreutils 9.5 与 CGC 二进制编译时未剥离符号，并逐函数修复，这种方式无法推断未定义的全局变量。约 30% 的困难案例仍然失败，主要原因包括反编译器混淆地址与数据、缓冲区大小推断错误、包含 STL 代码的过长输出，以及大语言模型以类型强制转换走捷径；测试未覆盖的行为偏差仍无法发现。对 Juliet 样本进行 CodeQL 分析时需要人工调整查询。
+
+  **发表信息:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · 期刊论文 · Wai Kin Wong 等
 
   </details>
 

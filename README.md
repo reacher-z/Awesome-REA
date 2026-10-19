@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 60](https://img.shields.io/badge/papers-60-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 61](https://img.shields.io/badge/papers-61-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (60) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (61) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1893,13 +1893,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**60 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**61 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (14) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (15) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -2032,6 +2032,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The evaluated corpus has 23,400 functions from 130 programs. Fuzzing-based checks have finite coverage, and understandability scores depend partly on an LLM judge. The artifact warns that rebuilt OSS-Fuzz projects can differ from the paper's versions.
 
   **Publication:** 2025 · Findings of ACL 2025 · Conference paper · Zeyu Gao et al.
+
+  </details>
+
+- [**DecLLM: LLM-Augmented Recompilable Decompilation for Enabling Programmatic Use of Decompiled Code**](https://dl.acm.org/doi/10.1145/3728958)
+
+  DecLLM repairs decompiler pseudocode that does not recompile into C that compiles and runs, so source-level tools such as CodeQL can be applied to binaries. An iterative loop feeds compiler errors to an off-the-shelf LLM, reverting illegal outputs and large deletions, then uses mismatched test outputs and AddressSanitizer reports from the rebuilt program to repair behavior, and finally fuzzes the original and rebuilt executables for divergences. With GPT-3.5 and GPT-4 the authors report 74% and 78.3% success on 300 Code Contest programs; on Coreutils and CGC binaries, 61.9–70.9% recompile and 48.1–59.0% are fully functional.
+
+  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [Full entry & citation](https://awesomerea.org/papers/paper-decllm/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** On Code Contest, success means the repaired code compiles and the rebuilt executable passes the supplied test cases, with AFL++ fuzzing as an extra check; the Coreutils and CGC overall rates also count rebuilt binaries that malfunction or crash. This establishes compilability and test-based agreement, not semantic equivalence, which the authors note is undecidable. Results depend on IDA Pro 8.3 output, with one Ghidra 10.4 repetition, and on the API-served gpt-3.5-turbo-0613 and gpt-4-0314 snapshots with a 4,096-token limit, so programs were chosen to fit within half of it. The 300 Code Contest programs average 112.9 lines; Coreutils 9.5 and CGC binaries were compiled without stripping symbols and repaired function by function, which cannot infer undefined globals. Around 30% of hard cases still fail, mainly from decompiler address/data confusion, ill-inferred buffer sizes, long outputs that include STL code and LLM type-cast shortcuts; deviations not exercised by tests remain undetected. CodeQL analysis of Juliet samples needed manual query adaptation.
+
+  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Wai Kin Wong et al.
 
   </details>
 
