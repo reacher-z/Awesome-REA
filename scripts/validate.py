@@ -103,6 +103,38 @@ def normalized_url(value):
     return parsed.scheme.lower(), parsed.netloc.lower(), path, parsed.query, parsed.fragment
 
 
+def evidence_pin_warnings(records):
+    """Advisory only: evidence that cannot show the reviewed revision.
+
+    A GitHub wiki page without its `/<revision>` suffix, or a bare repository root, always shows the
+    current text. These are warnings rather than errors so records already in review keep passing.
+    """
+    warnings = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        where = f"resource {record.get('id')!r}"
+        additional = record.get('additional_evidence_urls')
+        links = [('evidence_url', record.get('evidence_url'))]
+        links += [('additional_evidence_urls', url) for url in additional] if isinstance(additional, list) else []
+        for field, url in links:
+            if not isinstance(url, str):
+                continue
+            try:
+                parsed = urlsplit(url)
+                host = (parsed.hostname or '').lower()
+            except ValueError:
+                continue  # validate_resources reports malformed URLs.
+            parts = [part for part in parsed.path.split('/') if part]
+            if (host == 'github.com' and len(parts) >= 3 and parts[2] == 'wiki'
+                    and not re.fullmatch(r'[0-9a-f]{40}', parts[-1])):
+                warnings.append(f'{where}.{field}: GitHub wiki evidence should end in the reviewed page revision: {url}')
+            elif ((host in {'github.com', 'codeberg.org'} and len(parts) == 2)
+                  or (host == 'gitlab.com' and len(parts) >= 2 and '-' not in parts)):
+                warnings.append(f'{where}.{field}: link the README or tree at the reviewed commit, not the repository root: {url}')
+    return warnings
+
+
 def validate_resources(records, errors, *, now=None):
     now = dt.datetime.now(dt.timezone.utc) if now is None else now.astimezone(dt.timezone.utc)
     ids, urls = set(), set()
@@ -956,6 +988,8 @@ def main():
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
+    for warning in evidence_pin_warnings(records):
+        print(f'Warning: {warning}', file=sys.stderr)
     validate_benchmarks(benchmarks, errors)
     try:
         validate_case_coverage(read_case_coverage(ROOT), records, papers, errors,

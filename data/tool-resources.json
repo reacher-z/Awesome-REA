@@ -1421,7 +1421,7 @@
     ],
     "description_en": "Extract firmware, combine static checks with emulation-based analysis, inventory software components, and generate web reports and SBOMs for further investigation.",
     "description_zh": "提取固件，结合静态检查与仿真分析，整理软件组件清单，并生成 Web 报告和 SBOM，供进一步调查。",
-    "evidence_url": "https://github.com/e-m-b-a/emba/wiki/Installation",
+    "evidence_url": "https://github.com/e-m-b-a/emba/wiki/Installation/35b42245dc59e3545a07dcc209e9ee58f8cf2590",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
@@ -1553,7 +1553,7 @@
     "relationship": "learning",
     "description_en": "Combines language models and program analysis to recover variable and user-defined data-structure symbols from stripped binaries. The authors provide training, inference, evaluation, and posterior-reasoning artifacts.",
     "description_zh": "结合语言模型与程序分析，从去符号二进制中恢复变量和用户定义数据结构的符号信息。作者提供训练、推理、评测与后验推理材料。",
-    "evidence_url": "https://github.com/lt-asset/resym",
+    "evidence_url": "https://github.com/lt-asset/resym/tree/437b4acac21a5a60edecf0c4423f7172f991271f",
     "additional_evidence_urls": [
       "https://www.cs.purdue.edu/homes/lintan/publications/resym-ccs24.pdf"
     ],
@@ -1653,8 +1653,8 @@
     "description_zh": "基于 CUE4Parse 浏览虚幻引擎游戏归档，检查资源包和属性，预览并导出资源；2026 年夏季发行版新增 USD 世界导出，可辅助重建受支持的场景内容。",
     "evidence_url": "https://github.com/4sval/FModel/blob/05cfbdd1648afe2928109b70ab63880a4bc8f7b4/README.md",
     "additional_evidence_urls": [
-      "https://github.com/4sval/FModel/wiki/Installing-FModel",
-      "https://github.com/4sval/FModel/wiki/Getting-Started",
+      "https://github.com/4sval/FModel/wiki/Installing-FModel/0b4b7eab2df210703c96a0159200df51756f9d43",
+      "https://github.com/4sval/FModel/wiki/Getting-Started/d348b55f641767b1ede4933b26b319863632a4dd",
       "https://github.com/4sval/FModel/blob/05cfbdd1648afe2928109b70ab63880a4bc8f7b4/FModel/FModel.csproj",
       "https://github.com/4sval/FModel/releases/tag/aug-2026",
       "https://github.com/4sval/FModel/blob/05cfbdd1648afe2928109b70ab63880a4bc8f7b4/LICENSE"
@@ -2239,8 +2239,8 @@
       "https://github.com/jopohl/urh/blob/1403d92987cc3d01d41aff64250955ce455dabd2/LICENSE",
       "https://github.com/jopohl/urh/releases/tag/v2.10.0",
       "https://pypi.org/project/urh/2.10.0/",
-      "https://github.com/jopohl/urh/wiki/Supported-devices",
-      "https://github.com/jopohl/urh/wiki/SDR-udev-rules"
+      "https://github.com/jopohl/urh/wiki/Supported-devices/32fb197d4a7055f11f7f91fe9cb68450469c6cd4",
+      "https://github.com/jopohl/urh/wiki/SDR-udev-rules/9095b3c39026e8dde89a1a0ae79c023f446817f7"
     ],
     "verified_at": "2026-10-17",
     "verification": "source-reviewed",
@@ -2571,7 +2571,7 @@
       "https://github.com/Emill/ido-static-recomp/blob/421e546956ceae984927e609b083195e9e81659e/README.md",
       "https://github.com/Emill/ido-static-recomp/blob/421e546956ceae984927e609b083195e9e81659e/ido/5.3/LICENSE.md",
       "https://ryandwyer.gitlab.io/pdstatus/",
-      "https://gitlab.com/ryandwyer/perfect-dark"
+      "https://gitlab.com/ryandwyer/perfect-dark/-/tree/46d3393bed1a3d5fbefbdba6df7237579b5c66e0"
     ]
   },
   {
@@ -3545,8 +3545,8 @@
       "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.hd.sha",
       "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.pspeu.sha",
       "https://github.com/Xeeynamo/sotn-decomp/blob/eddaf22fe86f5189b85fd34915afe6564f19df20/config/check.saturn.sha",
-      "https://github.com/Xeeynamo/sotn-decomp/wiki/Build",
-      "https://github.com/Xeeynamo/sotn-decomp/wiki/PC-Port"
+      "https://github.com/Xeeynamo/sotn-decomp/wiki/Build/720bcf3b1212d130b28bb6ccbeda2b887ea96457",
+      "https://github.com/Xeeynamo/sotn-decomp/wiki/PC-Port/ebe1b37979d1a1966abb68d388b753e4407cfd3c"
     ]
   },
   {
@@ -5199,7 +5199,7 @@
       "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/.github/workflows/EU.yml",
       "https://github.com/n64decomp/007/blob/c4356466796c697dfd298010b9bed261f9ed8c6a/tools/ido5.3_recomp/README.md",
       "https://kholdfuzion.github.io/goldeneyestatus/",
-      "https://gitlab.com/kholdfuzion/goldeneye_src"
+      "https://gitlab.com/kholdfuzion/goldeneye_src/-/tree/c4356466796c697dfd298010b9bed261f9ed8c6a"
     ]
   },
   {
