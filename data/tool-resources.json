@@ -9698,5 +9698,30 @@
       "https://github.com/ainfosec/FISSURE/releases/tag/Python3_20260921",
       "https://fissure.readthedocs.io/en/latest/"
     ]
+  },
+  {
+    "id": "android-unpinner",
+    "name": "Android Unpinner",
+    "url": "https://github.com/mitmproxy/android-unpinner",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Tool from the mitmproxy project that removes certificate pinning from an Android APK you own or are authorized to test, without a rooted device. It marks the app debuggable, touching only AndroidManifest.xml, and injects a Frida Gadget over ADB so an interception proxy can read the app's traffic, reusing HTTP Toolkit's unpinning script. It bundles the Android SDK helpers it needs and can also handle split APKs delivered as XAPK.",
+    "description_zh": "来自 mitmproxy 项目的工具，可在无需 root 的情况下移除使用者拥有或有权测试的 Android APK 的证书固定。它将应用标记为可调试（仅改动 AndroidManifest.xml），并通过 ADB 注入 Frida Gadget，复用 HTTP Toolkit 的解固定脚本，使检查代理能够读取应用流量。工具自带所需的 Android SDK 辅助程序，并可处理以 XAPK 形式提供的分包。",
+    "evidence_url": "https://github.com/mitmproxy/android-unpinner/blob/60cbfee4d43cedaff622d72c27d87e418a111413/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/mitmproxy/android-unpinner/blob/60cbfee4d43cedaff622d72c27d87e418a111413/pyproject.toml"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installed with uv or pip and requires Python 3.10+ (pyproject version 1.0); the target device connects to a desktop over USB/ADB, and the tool bundles the adb, apksigner, zipalign and aapt2 helpers for Windows, Linux and macOS.",
+      "Patches the target APK and needs active instrumentation from the desktop each time the app launches, so rooting the device is not required; intended only for apps you own or are authorized to test.",
+      "The README states the project's own code is MIT-licensed, with no separate LICENSE file for GitHub to detect; bundled components keep their own licenses, including HTTP Toolkit's unpinning script (AGPL-3.0), the Frida gadgets (wxWindows Library Licence) and Android build/platform tools. The repository also ships HTTP Toolkit's open-source SSL-pinning demo APK (Apache-2.0) as a test target."
+    ]
   }
 ]

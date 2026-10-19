@@ -3681,5 +3681,13 @@
       "实时采集需要受支持的 SDR，例如 USRP、HackRF、RTL2832U、LimeSDR、bladeRF、PlutoSDR 或 SDRplay 接收机；README 称硬件支持正在迁移到插件架构，并非所有旧集成都能在每种工作流中使用。离线分析使用分析者自己的 IQ 或 SigMF 录制文件。",
       "采用 GPL-3.0；GNU Radio 树外模块来自 git 子模块，各自适用其许可证。该框架还包含发射、数据包构造、模糊测试和攻击工作流，以及面向分布式行动的定位、目标管理和 TAK 共享功能，本条目不涉及这些内容。本次未进行安装、采集或发射。"
     ]
+  },
+  "android-unpinner": {
+    "name": "Android Unpinner",
+    "requirements": [
+      "通过 uv 或 pip 安装，要求 Python 3.10+（pyproject 版本为 1.0）；目标设备经 USB/ADB 连接到桌面计算机，工具自带适用于 Windows、Linux 与 macOS 的 adb、apksigner、zipalign 与 aapt2 辅助程序。",
+      "工具会修补目标 APK，且每次启动应用时都需要来自桌面的主动插桩，因此无需 root 设备；仅适用于使用者拥有或有权测试的应用。",
+      "README 说明项目自身代码采用 MIT 许可证，没有可供 GitHub 识别的独立 LICENSE 文件；随附组件各自保留其许可证，包括 HTTP Toolkit 的解固定脚本（AGPL-3.0）、Frida gadget（wxWindows Library Licence）以及 Android 构建/平台工具。仓库还附带 HTTP Toolkit 的开源 SSL 固定演示 APK（Apache-2.0）作为测试目标。"
+    ]
   }
 }
