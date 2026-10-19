@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 306](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 155](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 65](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-65-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 306](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 155](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 66](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-66-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (65) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (66) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1948,13 +1948,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**65 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**66 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (17) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (18) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2132,6 +2132,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 在 Code Contest 上，成功的含义是修复后的代码能够编译，且重建的可执行文件通过所提供的测试用例，并以 AFL++ 模糊测试作额外检查；Coreutils 与 CGC 的总体比率还计入功能异常或崩溃的重建二进制。这确立的是可编译性和基于测试的一致性，而非语义等价性，作者亦指出后者不可判定。结果依赖 IDA Pro 8.3 的输出（另以 Ghidra 10.4 重复一次实验），以及通过 API 提供、上下文上限为 4,096 个词元的 gpt-3.5-turbo-0613 与 gpt-4-0314 快照，因此所选程序须控制在该上限的一半以内。300 个 Code Contest 程序平均 112.9 行；Coreutils 9.5 与 CGC 二进制编译时未剥离符号，并逐函数修复，这种方式无法推断未定义的全局变量。约 30% 的困难案例仍然失败，主要原因包括反编译器混淆地址与数据、缓冲区大小推断错误、包含 STL 代码的过长输出，以及大语言模型以类型强制转换走捷径；测试未覆盖的行为偏差仍无法发现。对 Juliet 样本进行 CodeQL 分析时需要人工调整查询。
 
   **发表信息:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · 期刊论文 · Wai Kin Wong 等
+
+  </details>
+
+- [**DiSCo：利用大语言模型将 EVM 字节码反编译为源代码**](https://dl.acm.org/doi/10.1145/3729373)
+
+  DiSCo 通过提示冻结参数的大语言模型，把以太坊合约的创建字节码提升为 Solidity 源码，而不是输出反编译伪代码。它将控制流路径抽象为逻辑不变的语义单元，模拟执行从区块执行中捕获的创建字节码以恢复构造函数逻辑，并借助签名数据库与类型感知图模型推断被剥离的名称。这些单元被转写为自然语言描述，并与编码规范一起放入提示词。主要模型为 GPT-4，另测试了 Llama 3。
+
+  2025 · 期刊论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-disco/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 真实标签来自 Etherscan 上的源码文件：200 个余额最高的合约用于全部基线，1,000 个用于自动化测试；另有独立实验使用 50 个 Vyper 合约、50 个新部署合约和 149 个闭源攻击合约。可编译率（五次采样取优约为 75%，单次运行为 46%）、差分模糊测试通过率与嵌入相似度都不能证明与已部署源码等价。模仿学习模糊测试器生成的交易近半数会回滚；人工审查认为约 28.5% 的生成合约语义一致，Vyper 输入仅为 12%。作者报告路径过多的合约会导致超时或分析不可靠，名称推断能力也仍然有限。基线是将 Panoramix、Ethervm 和 Elipmoc 的输出（多取自其网站，部分为人工反编译）交给同一大语言模型，并非独立反编译器之间的比较。结果依赖某个 GPT-4 预览版快照。攻击复现仅覆盖 2025 年 1 月的十起事件，其中四起复现成功。
+
+  **发表信息:** 2025 · Proceedings of the ACM on Software Engineering (FSE 2025) · 期刊论文 · Xing Su 等
 
   </details>
 

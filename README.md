@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 306](https://img.shields.io/badge/resources-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 155](https://img.shields.io/badge/cases-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 65](https://img.shields.io/badge/papers-65-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 306](https://img.shields.io/badge/resources-306-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 155](https://img.shields.io/badge/cases-155-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 66](https://img.shields.io/badge/papers-66-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (65) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (66) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1947,13 +1947,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**65 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**66 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (17) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (18) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2131,6 +2131,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** On Code Contest, success means the repaired code compiles and the rebuilt executable passes the supplied test cases, with AFL++ fuzzing as an extra check; the Coreutils and CGC overall rates also count rebuilt binaries that malfunction or crash. This establishes compilability and test-based agreement, not semantic equivalence, which the authors note is undecidable. Results depend on IDA Pro 8.3 output, with one Ghidra 10.4 repetition, and on the API-served gpt-3.5-turbo-0613 and gpt-4-0314 snapshots with a 4,096-token limit, so programs were chosen to fit within half of it. The 300 Code Contest programs average 112.9 lines; Coreutils 9.5 and CGC binaries were compiled without stripping symbols and repaired function by function, which cannot infer undefined globals. Around 30% of hard cases still fail, mainly from decompiler address/data confusion, ill-inferred buffer sizes, long outputs that include STL code and LLM type-cast shortcuts; deviations not exercised by tests remain undetected. CodeQL analysis of Juliet samples needed manual query adaptation.
 
   **Publication:** 2025 · Proceedings of the ACM on Software Engineering (ISSTA 2025) · Journal article · Wai Kin Wong et al.
+
+  </details>
+
+- [**DiSCo: Towards Decompiling EVM Bytecode to Source Code using Large Language Models**](https://dl.acm.org/doi/10.1145/3729373)
+
+  DiSCo lifts Ethereum contract creation bytecode to Solidity source by prompting a frozen LLM, instead of emitting decompiler pseudocode. It abstracts control-flow paths into logic-invariant semantic units, recovers constructor logic by simulating creation bytecode captured from block execution, and infers stripped names with signature databases and a type-aware graph model. These units become natural-language descriptions plus coding specifications in the prompt. GPT-4 is the primary model; Llama 3 is also tested.
+
+  2025 · Journal article · [PDF](https://dl.acm.org/doi/pdf/10.1145/3729373) · [Full entry & citation](https://awesomerea.org/papers/paper-disco/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Ground truth comes from Etherscan source files: 200 highest-balance contracts for all baselines and 1,000 for automated tests; separate studies add 50 Vyper, 50 newly deployed and 149 closed-source attack contracts. Compilability (about 75% with best-of-five sampling, 46% for a single run), differential-fuzzing pass rates and embedding similarity do not establish equivalence to deployed source. Nearly half of the imitation-learning fuzzer’s transactions revert, and manual review judged about 28.5% of generated contracts semantically consistent, and 12% for Vyper inputs. The authors report timeouts or unsound analysis on contracts with many paths, and name inference remains weak. Baselines give the same LLM output from Panoramix, Ethervm and Elipmoc, mostly taken from their websites or decompiled manually; this is not a comparison of standalone decompilers. Results depend on a GPT-4 preview snapshot. Attack reproduction covers ten January 2025 incidents, four of which were reproduced.
+
+  **Publication:** 2025 · Proceedings of the ACM on Software Engineering (FSE 2025) · Journal article · Xing Su et al.
 
   </details>
 
