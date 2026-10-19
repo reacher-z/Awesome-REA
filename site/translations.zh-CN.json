@@ -3530,5 +3530,14 @@
       "README 说明调试器与反汇编器之间没有任何认证或加密，自修改代码不在支持范围内；其列出的测试版本较旧（Python 2.7/3.7、IDA 7.7、Ghidra 10.1.1、Binary Ninja 3.0、GDB 8.1、LLDB 310.2.37），并提到 GDB 调试多线程程序时存在信号问题、WinDbg 可能存在竞态条件。远程调试和模块名不一致等场景通过可选的 .sync INI 文件配置。",
       "采用 GPL-3.0-or-later 许可，Binary Ninja 插件采用 MIT 许可。ret-sync 是 Quarkslab qb-sync 的分支。本条目未实际同步任何调试会话。"
     ]
+  },
+  "pyinstxtractor": {
+    "name": "PyInstaller Extractor（pyinstxtractor）PyInstaller 程序提取工具",
+    "requirements": [
+      "可在 Python 2.x 或 3.x 下运行，无需安装 PyInstaller。审阅时最新版本为 2026.07，发布于 2026-07-22，未附带任何文件；该标签指向所审阅的 master 提交，而脚本头部仍自称 2.0 版。README 列出 PyInstaller 2.0 至 6.19.0 各版本已用独立的测试样本仓库测试并受支持。",
+      "只有当脚本运行的 Python 主次版本与构建该可执行文件时所用的版本相同时，才会提取 PYZ 归档中的模块；否则会发出警告并跳过，目录表无法反序列化的归档同样会被跳过。无法解压的条目（例如加密 PYZ 归档中的条目）会原样保存并加上 .encrypted 后缀，而不会被解码。",
+      "PyInstaller 可执行文件由使用者自行提供；要把恢复出的字节码还原为源码，还需另用反编译器。恢复出的代码仍受原程序权利人的权利约束。",
+      "采用 GPL-3.0 许可。本次未运行任何内容。"
+    ]
   }
 }
