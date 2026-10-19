@@ -13,10 +13,38 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import build_site
 from build_manifest import read_build_manifest
 
+try:
+    from fontTools.fontBuilder import FontBuilder
+    from fontTools.pens.ttGlyphPen import TTGlyphPen
+    from fontTools.ttLib import TTFont, woff2
+    HAVE_FONT_TOOLS = woff2.haveBrotli
+except ImportError:
+    HAVE_FONT_TOOLS = False
+
 
 def file_bytes(directory):
     return {path.relative_to(directory).as_posix(): path.read_bytes()
             for path in directory.rglob('*') if path.is_file()}
+
+
+def synthetic_font(path, codepoints):
+    """Write a fabricated WOFF2 face with one square glyph per code point."""
+    names = ['.notdef'] + [f'u{point:04x}' for point in codepoints]
+    def square():
+        pen = TTGlyphPen(None)
+        pen.moveTo((0, 0)); pen.lineTo((0, 500)); pen.lineTo((500, 500)); pen.lineTo((500, 0)); pen.closePath()
+        return pen.glyph()
+    builder = FontBuilder(1000, isTTF=True)
+    builder.setupGlyphOrder(names)
+    builder.setupCharacterMap({point: f'u{point:04x}' for point in codepoints})
+    builder.setupGlyf({name: square() for name in names})
+    builder.setupHorizontalMetrics({name: (500, 0) for name in names})
+    builder.setupHorizontalHeader(ascent=800, descent=-200)
+    builder.setupNameTable({'familyName': 'Synthetic Icons', 'styleName': 'Regular', 'copyright': 'Synthetic test font'})
+    builder.setupOS2()
+    builder.setupPost()
+    builder.font.flavor = 'woff2'
+    builder.save(path)
 
 
 class StagedSiteBuildTests(unittest.TestCase):
@@ -172,25 +200,49 @@ class StagedSiteBuildTests(unittest.TestCase):
         self.assertEqual(file_bytes(external), {'keep.txt': b'preserve me'})
         self.assertFalse(self.output.exists())
 
-    def test_synthetic_font_package_stays_separate_across_all_modes(self):
-        # Fabricated fixtures only: no licensed font data enters the test sources.
+    def synthetic_package(self, *, omit=()):
+        """Fabricated fixtures only: no licensed font data enters the test sources."""
         package = self.root / 'synthetic-icons'
         (package / 'css').mkdir(parents=True)
         (package / 'webfonts').mkdir()
-        css = '\n'.join('.fa-' + name + '{--fa:"\\f001";}'
-                        for name in set(build_site.FONT_AWESOME_ICONS.values()))
+        points = {key: 0xf000 + index for index, key in enumerate(build_site.FONT_AWESOME_ICONS)}
+        css = '\n'.join('.fa-' + build_site.FONT_AWESOME_ICONS[key] + '{--fa:"\\' + format(point, 'x') + '";}'
+                        for key, point in points.items())
         for name in ('fontawesome.css', 'brands.css', 'light.css'):
             (package / 'css' / name).write_text(css)
-        fonts = ('fa-light-300.woff2', 'fa-brands-400.woff2')
-        for name in fonts:
-            (package / 'webfonts' / name).write_bytes(b'synthetic test bytes, not a font')
+        # Each face also holds glyphs the site never draws; the build must drop them.
+        unused = list(range(0xe000, 0xe040))
+        light = {point for key, point in points.items() if key not in build_site.FONT_AWESOME_BRANDS and key not in omit}
+        brands = {points[key] for key in build_site.FONT_AWESOME_BRANDS}
+        for name, wanted in (('fa-light-300.woff2', light), ('fa-brands-400.woff2', brands)):
+            if HAVE_FONT_TOOLS:
+                synthetic_font(package / 'webfonts' / name, sorted(wanted) + unused)
+            else:
+                (package / 'webfonts' / name).write_bytes(b'synthetic test bytes, not a font')
+        return package, light, brands
+
+    def test_synthetic_font_package_stays_separate_across_all_modes(self):
+        package, light, brands = self.synthetic_package()
         input_before = file_bytes(package)
         source_before = file_bytes(self.source)
-        manifest = self.build(fontawesome_dir=package)
+        with ExitStack() as stack:
+            if not HAVE_FONT_TOOLS:
+                # Without fontTools a copying stand-in still exercises the switches between icon modes.
+                stack.enter_context(patch.object(build_site, 'subset_icon_font', lambda source, destination, points: shutil.copy2(source, destination)))
+            manifest = self.build(fontawesome_dir=package)
         self.assertIn('fontawesome.css', manifest['files'])
-        for name in fonts:
-            self.assertEqual((self.output / 'fonts' / name).read_bytes(), input_before['webfonts/' + name])
+        fonts = ('fa-light-300.woff2', 'fa-brands-400.woff2')
+        for name, points in zip(fonts, (light, brands)):
             self.assertNotIn('fonts/' + name, manifest['files'])
+            if not HAVE_FONT_TOOLS:
+                continue
+            subset = self.output / 'fonts' / name
+            # Only the site's icon code points ship, as WOFF2 smaller than the input face.
+            with TTFont(subset) as font:
+                self.assertEqual(set(font.getBestCmap()), points)
+                self.assertEqual(font.flavor, 'woff2')
+                self.assertEqual(font['name'].getDebugName(0), 'Synthetic test font')
+            self.assertLess(subset.stat().st_size, len(input_before['webfonts/' + name]))
         self.assertIn('data-icon-set="fontawesome"', (self.output / 'index.html').read_text())
         self.build(fontawesome_assets_url='https://example.org/icons')
         self.assertIn('https://example.org/icons/fontawesome.css', (self.output / 'index.html').read_text())
@@ -205,6 +257,25 @@ class StagedSiteBuildTests(unittest.TestCase):
         self.assertFalse((self.output / 'fonts').exists())
         self.assertEqual(file_bytes(package), input_before)
         self.assertEqual(file_bytes(self.source), source_before)
+
+    @unittest.skipUnless(HAVE_FONT_TOOLS, 'fontTools with Brotli is needed to subset the icon fonts')
+    def test_icon_missing_from_the_font_fails_the_build(self):
+        self.build()
+        expected = file_bytes(self.output)
+        package, _, _ = self.synthetic_package(omit={'globe'})
+        globe = 0xf000 + list(build_site.FONT_AWESOME_ICONS).index('globe')
+        with self.assertRaisesRegex(ValueError, f'missing icons: U\\+{globe:04X}'):
+            build_site.build_staged_site(fontawesome_dir=package)
+        self.assertEqual(file_bytes(self.output), expected)
+
+    def test_licensed_fonts_without_font_tools_fail_clearly(self):
+        self.build()
+        expected = file_bytes(self.output)
+        package, _, _ = self.synthetic_package()
+        with patch.dict(sys.modules, {'fontTools': None, 'fontTools.subset': None, 'fontTools.ttLib': None}):
+            with self.assertRaisesRegex(ValueError, 'requires fontTools with Brotli'):
+                build_site.build_staged_site(fontawesome_dir=package)
+        self.assertEqual(file_bytes(self.output), expected)
 
     def test_invalid_font_input_preserves_prior_output(self):
         self.build()
