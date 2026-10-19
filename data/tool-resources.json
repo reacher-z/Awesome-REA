@@ -7766,5 +7766,40 @@
       "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/LICENSE",
       "https://github.com/pardeike/DecompilerServer/releases/tag/v1.4.0"
     ]
+  },
+  {
+    "id": "gepetto",
+    "name": "Gepetto",
+    "url": "https://github.com/JusticeRage/Gepetto",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin that sends Hex-Rays pseudocode to a hosted or local language model the user selects, to explain a function, comment it or propose new variable and function names, which the user picks from before they are applied. A chat console inside IDA also lets the model call tools that read disassembly, decompilation, cross-references, strings and types, rename and comment the database and run Python. The README warns that these general-purpose models may well be wrong and asks users to treat every result critically.",
+    "description_zh": "IDA Pro 插件，把 Hex-Rays 伪代码发送给使用者选定的托管或本地大模型，用于解释函数、添加注释或提出新的变量名与函数名，由使用者勾选后再应用。IDA 内的对话控制台还允许模型调用工具，读取反汇编、反编译结果、交叉引用、字符串和类型，对数据库进行重命名和注释，并运行 Python。README 提醒这些通用模型很可能出错，要求使用者审慎对待每一个结果。",
+    "evidence_url": "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is 38 commits after the v1.5.1 release of 2025-11-19, while ida-plugin.json and pyproject.toml still declare version 1.5.0. The README requires IDA Pro 7.6 or later with the Hex-Rays decompiler. Installation uses Hex-Rays’ hcli plugin command, or copies gepetto.py and the gepetto folder into the IDA plugins directory and installs requirements.txt into IDA’s Python; pyproject.toml asks for Python 3.10+.",
+      "Each request sends the current function’s pseudocode, and in the chat console whatever the tools return, to the selected provider. Built-in providers include Anthropic, OpenAI, Gemini, Azure OpenAI, Groq, Together, Novita AI, Kluster.ai, DeepSeek and OpenRouter with the user’s own API keys, which the README notes are usually paid, plus local Ollama or LM Studio models. Further providers load as drop-in Python files or entry-point packages, which the README warns execute arbitrary code when IDA starts.",
+      "The chat console, chosen as Gepetto in IDA’s input bar, offers the model 22 tools: reading disassembly, bytes, pseudocode, cross-references, imports, symbols, strings, structures and search results; declaring C types; renaming functions, globals and local variables; setting comments; and run_python, which executes model-supplied Python inside IDA with no confirmation step. Its system prompt tells the model to carry out requested changes without asking. The Explain, Comment and Auto-rename menu actions work on one function, and Auto-rename lists the proposed names so the user selects which to apply; two actions the README does not describe, Generate C Code and Generate Python Code, save a model-written rewrite of the function to a file.",
+      "Repository tests use pytest with Hex-Rays’ idapro library and open a bundled manalyze.exe build, from the author’s Manalyze PE analyser, as a fixture; no CI workflow is published. The README’s before-and-after screenshot and its observation that renaming works better after an explanation are the author’s. This collection reviewed source and documentation without running the plugin, its tests or any model.",
+      "GPL-3.0 per LICENSE and ida-plugin.json; IDA Pro, the Hex-Rays decompiler and model services keep their own licences and terms. The README credits Kaspersky with initial funding and HarfangLab as the current backer. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/ida-plugin.json",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/pyproject.toml",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/gepetto/config.ini",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/gepetto/ida/cli.py",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/gepetto/ida/tools/tools.py",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/gepetto/ida/tools/run_python.py",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/gepetto/ida/handlers.py",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/tests/conftest.py",
+      "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/LICENSE",
+      "https://github.com/JusticeRage/Gepetto/releases/tag/v1.5.1"
+    ]
   }
 ]

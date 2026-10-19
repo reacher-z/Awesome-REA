@@ -3141,5 +3141,15 @@
       "查看类工具带有 MCP 的 readOnlyHint 标注；加载、卸载、切换上下文、反编译设置和缓存类工具会改变服务器状态。补丁、存根和包装器生成工具只返回源代码文本，不会修改已加载的程序集。响应默认采用精简格式，设置 DECOMPILER_RESPONSE_MODE=extended 可恢复旧版响应字段。",
       "v1.4.0 发布说明称 238 项 Release 测试全部通过，发布工作流会先构建并运行测试套件再发布资源；这些均为项目自报结果。采用 MIT 许可。本次未运行服务器、客户端或任何程序集，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "gepetto": {
+    "name": "Gepetto：调用大模型辅助逆向的 IDA 插件",
+    "requirements": [
+      "所审阅的 main 提交位于 2025-11-19 发布的 v1.5.1 之后 38 个提交，而 ida-plugin.json 与 pyproject.toml 仍标注 1.5.0 版。README 要求 IDA Pro 7.6 或更高版本并配备 Hex-Rays 反编译器。可通过 Hex-Rays 的 hcli 插件命令安装，或把 gepetto.py 与 gepetto 文件夹复制到 IDA 插件目录，再把 requirements.txt 安装到 IDA 使用的 Python 中；pyproject.toml 要求 Python 3.10+。",
+      "每次请求都会把当前函数的伪代码发送给所选服务商，在对话控制台中还会发送工具返回的全部内容。内置服务商包括 Anthropic、OpenAI、Gemini、Azure OpenAI、Groq、Together、Novita AI、Kluster.ai、DeepSeek 和 OpenRouter，需使用者自备 API 密钥，README 提示这些调用通常需要付费；也可使用本地 Ollama 或 LM Studio 模型。其他服务商可以作为 Python 文件或入口点软件包加载，README 提醒它们会在 IDA 启动时执行任意代码。",
+      "在 IDA 输入栏选择 Gepetto 即进入对话控制台，模型可调用 22 个工具：读取反汇编、字节、伪代码、交叉引用、导入表、符号、字符串、结构体和搜索结果；声明 C 类型；重命名函数、全局变量和局部变量；设置注释；以及 run_python，它在 IDA 内执行模型给出的 Python 代码，不经确认。其系统提示要求模型直接执行所请求的修改，无需询问。“解释”“注释”和“自动重命名”菜单操作只处理单个函数，自动重命名会列出建议名称供使用者勾选后应用；README 未介绍的“生成 C 代码”和“生成 Python 代码”两项操作会把模型改写的函数代码保存为文件。",
+      "仓库测试使用 pytest 和 Hex-Rays 的 idapro 库，并以仓库自带的 manalyze.exe（作者的 PE 分析工具 Manalyze 的构建产物）为测试样本；仓库未提供 CI 工作流。README 中的前后对比截图，以及先请求解释再重命名效果更好的观察，均为作者所述。本合集仅审阅源码与文档，未运行插件、测试或任何模型。",
+      "LICENSE 与 ida-plugin.json 标明采用 GPL-3.0；IDA Pro、Hex-Rays 反编译器和模型服务各有其许可与条款。README 感谢 Kaspersky 提供最初资助，并称 HarfangLab 为当前支持方。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
