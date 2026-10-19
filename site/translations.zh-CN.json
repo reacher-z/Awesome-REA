@@ -3245,5 +3245,15 @@
       "README 称已在 Root-Me CTF 题目上验证，能自动或半自动地稳定解出难度为 3/5 的题目，但未公开运行记录或日志。本合集未运行应用或其测试。会话数据默认保存在 /tmp/decompai_analysis_sessions，重启后会丢失。",
       "LICENSE 为 MIT 文本另加一条款，要求任何使用、修改或分发都须显著标注“Based on DecompAI”署名，因此 GitHub 不将其识别为标准许可证；Ghidra、Kali 软件包和模型服务各有其条款。README 将用途限定于合法的逆向工程、教学和安全研究。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "dtk-template": {
+    "name": "dtk-template GameCube/Wii 反编译项目模板",
+    "requirements": [
+      "这是脚手架而非成品项目：使用者需替换 GAMEID 占位名称、为每个版本编写配置，并在初步分析后不断修正符号和拆分点。README 称几乎所有活跃的 GameCube 和 Wii 反编译项目都采用这一结构。项目没有发布版本或标签；所审阅的提交（2026-04-26）固定了 decomp-toolkit v1.8.3、objdiff v3.6.1、binutils 2.42-2 以及 20251118 版编译器包。",
+      "使用者需将自己的光盘镜像或已提取的游戏文件放入被忽略的 orig/[GAMEID] 目录，仓库不提交任何游戏资产。CI 指南要求把构建所需的游戏文件存放在单独的构建容器仓库中，并提醒该仓库必须保持私有，以免泄露游戏资产。",
+      "在 Windows、macOS 或 Linux 上需要 Python 和 ninja；在 Windows 以外的平台上，由自动下载的 wibo 包装器或使用者自备的 Wine 运行 32 位 Windows 编译器。configure.py 会下载固定版本的 decomp-toolkit、GameCube/Wii binutils、objdiff、sjiswrap 和 wibo，以及由 decomp.dev 而非本仓库托管的 Metrowerks CodeWarrior 编译器压缩包。",
+      "验证由各项目自行完成：构建会将重新生成的 DOL 和 REL 文件与 build.sha1 中的哈希比对，objdiff 和 decomp.dev 则报告逐目标文件的匹配进度。模板本身不附带任何游戏配置，也不作任何匹配声明。",
+      "以 CC0-1.0 发布，README 建议各项目换成自己的许可证；下载的工具保留各自的许可，CodeWarrior 编译器属于专有软件。所审阅资料未提及使用 REA，本目录也未运行该模板。"
+    ]
   }
 }

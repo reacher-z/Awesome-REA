@@ -8128,5 +8128,36 @@
       "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/src/tools/sandboxed_shell/dockerized_bash.py",
       "https://github.com/louisgthier/decompai/blob/0c2398c09e318be1bb6f6a52d13e572fac7c519b/tests/test_disassemble.py"
     ]
+  },
+  {
+    "id": "dtk-template",
+    "name": "dtk-template",
+    "url": "https://github.com/encounter/dtk-template",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Project template for starting GameCube and Wii matching-decompilation repositories around decomp-toolkit. Its configure.py generates a ninja build that analyzes and splits the game's DOL and REL files from per-version config.yml, symbols.txt and splits.txt files, compiles the decompiled C/C++ with period Metrowerks compilers, relinks the result and checks it against recorded SHA-1 hashes. It also wires in objdiff for per-object diffing, progress reporting for decomp.dev and an example GitHub Actions workflow.",
+    "description_zh": "用于围绕 decomp-toolkit 创建 GameCube 和 Wii 匹配反编译仓库的项目模板。其 configure.py 生成 ninja 构建：依据各版本的 config.yml、symbols.txt 和 splits.txt 分析并拆分游戏的 DOL 和 REL 文件，用当年的 Metrowerks 编译器编译反编译出的 C/C++ 代码，重新链接后与记录的 SHA-1 哈希核对。模板还集成了用于逐目标文件比对的 objdiff、面向 decomp.dev 的进度报告，以及一个 GitHub Actions 工作流示例。",
+    "evidence_url": "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A scaffold rather than a finished project: users rename the GAMEID placeholders, write each version's configuration and refine symbols and splits after the initial analysis. The README says nearly all active GameCube and Wii decompilation projects use this structure. There are no releases or tags; the reviewed commit (2026-04-26) pins decomp-toolkit v1.8.3, objdiff v3.6.1, binutils 2.42-2 and the 20251118 compilers package.",
+      "Users place their own disc image or extracted game files in the ignored orig/[GAMEID] directory, and no game assets are committed. The CI guide has the game files needed for a build stored in a separate build-container repository and warns that it must stay private to avoid exposing the game's assets.",
+      "Needs Python and ninja on Windows, macOS or Linux; outside Windows a downloaded wibo wrapper runs the 32-bit Windows compilers, or a user-supplied Wine. configure.py downloads pinned decomp-toolkit, GameCube/Wii binutils, objdiff, sjiswrap and wibo releases plus a Metrowerks CodeWarrior compiler archive hosted by decomp.dev rather than by this repository.",
+      "Verification happens per project: the build compares the rebuilt DOL and REL files with the hashes in build.sha1, and objdiff and decomp.dev report per-object matching progress. The template ships no game configuration and makes no matching claims of its own.",
+      "Released under CC0-1.0, which the README suggests replacing with the project's own license; downloaded tools keep their own licenses, and the CodeWarrior compilers are proprietary. Reviewed sources state no REA use, and this collection did not run the template."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/docs/getting_started.md",
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/docs/dependencies.md",
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/docs/github_actions.md",
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/configure.py",
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/tools/download_tool.py",
+      "https://github.com/encounter/dtk-template/blob/95a941f755919ebe50c1725a4ce73524470e7a02/LICENSE"
+    ]
   }
 ]
