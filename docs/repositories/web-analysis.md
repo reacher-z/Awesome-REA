@@ -13,7 +13,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — The WebAssembly Binary Toolkit **[8,166 stars]** · Curated: [WABT](https://awesomerea.org/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — Reverse engineering WhatsApp Web. **[6,508 stars]**
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — The first AI agent that builds permissionless integrations through reverse engineering platforms' internal APIs. **[4,780 stars]**
-- [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — Extract any website’s design system into tokens in seconds: logo, colors, typography, borders &amp; more. One command. **[3,647 stars]**
+- [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — Extract any website’s design system into tokens in seconds: logo, colors, typography, borders &amp; more. One command. **[3,647 stars]** · Curated: [Dembrandt](https://awesomerea.org/resources/dembrandt/)
 - [HanaokaYuzu/Gemini-API](https://github.com/HanaokaYuzu/Gemini-API) — ✨ Reverse-engineered Python API for Google Gemini web app **[3,596 stars]**
 - [j4k0xb/webcrack](https://github.com/j4k0xb/webcrack) — Deobfuscate obfuscator.io, unminify and unpack bundled javascript **[2,963 stars]** · Curated: [webcrack](https://awesomerea.org/resources/webcrack/)
 - [electron/asar](https://github.com/electron/asar) — Simple extensive tar-like archive format with indexing **[2,869 stars]** · Curated: [<span>@</span>electron/asar](https://awesomerea.org/resources/electron-asar/)

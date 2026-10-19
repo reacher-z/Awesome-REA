@@ -13,7 +13,7 @@
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — WebAssembly 二进制工具包。 **[8,166 星标]** · 精选：[WABT](https://awesomerea.org/zh/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]**
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — 首个通过逆向分析平台内部 API 构建无需许可集成的 AI 智能体。 **[4,780 星标]**
-- [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — 几秒内将任意网站的设计系统提取为设计令牌，包括标志、颜色、字体、边框等。一条命令即可完成。 **[3,647 星标]**
+- [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — 几秒内将任意网站的设计系统提取为设计令牌，包括标志、颜色、字体、边框等。一条命令即可完成。 **[3,647 星标]** · 精选：[Dembrandt 网站设计系统提取工具](https://awesomerea.org/zh/resources/dembrandt/)
 - [HanaokaYuzu/Gemini-API](https://github.com/HanaokaYuzu/Gemini-API) — ✨ 通过逆向工程实现的 Google Gemini 网页应用 Python API。 **[3,596 星标]**
 - [j4k0xb/webcrack](https://github.com/j4k0xb/webcrack) — 解除 obfuscator.io 混淆，还原 JavaScript 压缩代码并解包打包后的代码。 **[2,963 星标]** · 精选：[webcrack](https://awesomerea.org/zh/resources/webcrack/)
 - [electron/asar](https://github.com/electron/asar) — 简单且功能丰富、支持索引的类 tar 归档格式。 **[2,869 星标]** · 精选：[<span>@</span>electron/asar](https://awesomerea.org/zh/resources/electron-asar/)

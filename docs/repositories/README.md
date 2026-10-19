@@ -10,7 +10,7 @@ Scan date: **2026-10-16 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 177 | 11 |
+| [Websites](web-analysis.md) | 177 | 12 |
 | [Games](game-analysis.md) | 388 | 36 |
 | [Apps · Android](android.md) | 432 | 16 |
 | [Apps · Managed code](managed-code.md) | 130 | 2 |
