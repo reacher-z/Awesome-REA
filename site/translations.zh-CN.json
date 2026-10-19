@@ -4726,5 +4726,15 @@
       "configure.py 将 1,154 个目标文件标为对所有支持版本均一致，另有一个仅对日版一致；没有标为 NonMatching 的项。默认 ninja 目标会先按 config/<version>/build.sha1 校验链接出的 DOL，再报告进度；CI 在提供原始文件和编译器的容器中构建全部五个版本。decomp.dev 针对该固定提交的各版本报告均显示代码 100.00% 已匹配并完全链接（GPVE01 为 24,957 个函数、1,153 个单元）；本合集未运行构建。",
       "README 称使用 --non-matching 时会关闭最终哈希校验，美版 DOL 将完全由 C++ 源码构建，据团队所知在功能上等价，因此每个文件都可修改用于模组制作。仓库在 LICENSE.MD 中采用 CC0-1.0；任天堂的游戏及其文件、下载的编译器不在该声明范围内。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "gran-turismo-4-matching-decomp-case": {
+    "name": "Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译",
+    "requirements": [
+      "README 称这是只针对引擎可执行文件、仍在进行中的匹配反编译：游戏逻辑大多在 Adhoc 脚本中，由独立的 OpenAdhoc 项目重建；另一个独立项目 GT4 Native PC 移植被描述为尚不可玩。progress 分支针对提交 ba5d800（2026-10-19）的报告（decomp.dev 对所审提交显示相同数字）给出 30,962 个函数中 29,551 个、代码 83.55% 已匹配，82.08% 的代码由源码链接，2.13% 的数据由源码放置；202 个原本就是手写汇编的函数不计入。",
+      "需自备 Gran Turismo 4（美版）v1.01 光盘镜像（SCUS-97328）；orig/README.md 列出 SCUS_973.28、CORE.GT4 及其转换所得 ELF 的 SHA-1。仓库未提交任何游戏内容，因此 SHA-1 构建校验和进度报告只能在具备这些文件的机器上运行，CI 中无法运行。",
+      "文档以 Linux 或 WSL（Ubuntu）为准，需要 Python 3.11 及以上和 rabbitizer。tools/setup_linux.sh 安装 MIPS binutils 和 32 位 libc，下载 decomp.me 的 ee-gcc 2.96 构建，克隆 decomp-permuter，并在虚拟环境中安装 splat；project.toml 还列出其他 decomp.me 编译器，其中 ee-gcc 2.9 用于约 270 个 Sony SDK 函数。",
+      "当 tools/match.py（或智能体使用的 tools/swarm.py）输出 MATCH，且 tools/build.py 将每个函数链接到原始地址并比较已加载段的 SHA-1 时，函数才算匹配。CI 运行单元测试、“C 中不得夹带汇编”的策略检查和布局检查，并编译每个源文件，但没有游戏文件就无法链接或比较；匹配数字为作者报告，本合集未构建或运行任何内容。",
+      "项目的工具、文档和源码采用 MIT 许可。THIRD_PARTY.md 列出按各自条款匹配的公开库（Expat、newlib、带例外条款的 GPL 下的 GNU libio 与 GCC 运行库、SGI STL 头文件、MT19937），可用 build.py --without 排除，并说明专有的 SCE-RT/Medius、Logitech 和 Sony SDK 代码仅作识别、未予复制。Gran Turismo 4 归 Sony Interactive Entertainment 所有。智能体说明位于 AGENTS.md、CLAUDE.md 和 .claude/；所审来源未确立 REA 的使用。"
+    ]
   }
 }
