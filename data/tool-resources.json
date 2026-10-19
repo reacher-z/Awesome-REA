@@ -7196,5 +7196,32 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-frida",
+    "name": "Awesome Frida",
+    "url": "https://github.com/dweinstein/awesome-frida",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "An awesome list of libraries, scripts, tools, talks and articles built on or about Frida, the dynamic instrumentation toolkit, started by David Weinstein in May 2016. Its 82 entries fall into libraries (about half of them NowSecure Node.js modules), script collections and projects, talks and papers, tools powered by Frida such as r2frida, objection, friTap and Fridump, videos, blog posts and community links, most with a one-line summary.",
+    "description_zh": "David Weinstein 于 2016 年 5 月创建的 awesome 清单，收录基于或围绕动态插桩工具包 Frida 的程序库、脚本、工具、演讲和文章。全部 82 个条目分为程序库（约一半是 NowSecure 的 Node.js 模块）、脚本合集与项目、演讲与论文、基于 Frida 的工具（如 r2frida、objection、friTap 和 Fridump）、视频、博客文章以及社区链接，大多附有一行简介。",
+    "evidence_url": "https://github.com/dweinstein/awesome-frida/blob/e20da3b2ae3a30cd65ab0e4a0f0345bb909ecb10/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit e20da3b (2026-04-10). 43 of 68 commits date from 2016–2017, most talks, videos and posts are from 2015–2017, and after the April 2023 addition of RoboDroid the only change is the April 2026 addition of rekit. Entries do not say which Frida version they target; frida-load is marked deprecated and the Lobotomy entries are struck through.",
+      "In an automated check at review, 13 of 110 unique URLs gave no response or a 404, including the OSDC, ZeroNights and RMLL event pages and a three-part tutorial series, and three talk PDFs are linked as relative files that are not in the repository. Of the 57 GitHub repositories linked, 4 are archived, 2 no longer exist and 13 have not been pushed to since 2019. The README asks contributors to flag listings that are unmaintained or have had no commits for two to three years.",
+      "Several listed tools dump process memory, decrypt protected apps or log TLS keys, and two posts cover detecting Frida; this record treats the list only as a directory of instrumentation resources.",
+      "The LICENSE file is CC0 1.0. The contribution guide, adapted from the general awesome-list guidelines, refers to a code of conduct and a list-creation guide that are not in the repository. Linked projects keep their own licenses. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dweinstein/awesome-frida/blob/e20da3b2ae3a30cd65ab0e4a0f0345bb909ecb10/CONTRIBUTING.md",
+      "https://github.com/dweinstein/awesome-frida/blob/e20da3b2ae3a30cd65ab0e4a0f0345bb909ecb10/LICENSE"
+    ]
   }
 ]
