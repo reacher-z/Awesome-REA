@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**610 个仓库** · 2026-10-16 UTC
+**609 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -57,7 +57,6 @@
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — 小米智能家居设备逆向工程与破解研究。 **[2,282 星标]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — 《塞尔达传说：旷野之息》（Switch 1.5.0）的反编译代码。 **[2,236 星标]** · 精选：[《旷野之息》：Switch 主程序的逐函数一致性反编译](https://awesomerea.org/zh/resources/botw-decomp-case/)
 - [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — Linux 逆向工程资源合集。 **[2,083 星标]**
-- [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — 面向所有人的射频与逆向工程框架。欢迎关注并点亮 ★ 表示支持！ **[2,069 星标]**
 - [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — 逆向分析 Validity/Synaptics 指纹读取器协议，涵盖 138a:0090、138a:0094、138a:0097、06cb:0081 和 06cb:009a。 **[1,879 星标]**
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — 精选恶意软件开发、逆向工程与防御性安全研究资源。 **[1,855 星标]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — 面向 CS2 的底层直接内存访问（DMA）框架，用于内存采集、实体状态解析、同步以及 PCIe/逆向工程研究。 **[1,851 星标]**

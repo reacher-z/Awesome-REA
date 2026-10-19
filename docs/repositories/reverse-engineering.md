@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**610 repositories** · 2026-10-16 UTC
+**609 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -57,7 +57,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [dgiese/dustcloud](https://github.com/dgiese/dustcloud) — Xiaomi Smart Home Device Reverse Engineering and Hacking **[2,282 stars]**
 - [zeldaret/botw](https://github.com/zeldaret/botw) — Decompilation of The Legend of Zelda: Breath of the Wild (Switch 1.5.0) **[2,236 stars]** · Curated: [Breath of the Wild: per-function matching decompilation of the Switch executable](https://awesomerea.org/resources/botw-decomp-case/)
 - [michalmalik/linux-re-101](https://github.com/michalmalik/linux-re-101) — A collection of resources for linux reverse engineering **[2,083 stars]**
-- [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — The RF and reverse engineering framework for everyone. Follow and ★ to show your support! **[2,069 stars]**
 - [nmikhailov/Validity90](https://github.com/nmikhailov/Validity90) — Reverse engineering of Validity/Synaptics 138a:0090, 138a:0094, 138a:0097, 06cb:0081, 06cb:009a fingerprint readers protocol **[1,879 stars]**
 - [rootkit-io/awesome-malware-development](https://github.com/rootkit-io/awesome-malware-development) — Curated resources for malware dev, reverse engineering, and defensive security research. **[1,855 stars]**
 - [KEV0143/Direct-memory-access-CS2-DMA](https://github.com/KEV0143/Direct-memory-access-CS2-DMA) — Low-level Direct Memory Access (DMA) framework for CS2, designed for memory acquisition, entity-state parsing, synchronization, and PCIe/reverse-engineering research. **[1,851 stars]**

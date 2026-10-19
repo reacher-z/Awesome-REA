@@ -2,12 +2,13 @@
 
 [全部分类](README.zh-CN.md) · [English](protocol-analysis.md)
 
-**103 个仓库** · 2026-10-16 UTC
+**104 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — 全能协议分析工具：内置浏览器抓包、MITM 代理、JS hook、指纹伪装、AI 分析及 MCP Server，可无缝对接 AI 智能体与 IDE。 **[3,776 星标]**
 - [commaai/opendbc](https://github.com/commaai/opendbc) — 适用于你汽车的 Python API。 **[3,493 星标]** · 精选：[opendbc 汽车 CAN 报文定义库](https://awesomerea.org/zh/resources/opendbc/)
+- [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — 面向所有人的射频与逆向工程框架。欢迎关注并点亮 ★ 表示支持！ **[2,069 星标]** · 精选：[FISSURE 射频信号分析与协议发现框架](https://awesomerea.org/zh/resources/fissure/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — 网络安全资源，涵盖代理/GFW/反向代理/隧道/VPN/Tor/I2P，以及中间人攻击、端口敲门、网络嗅探、网络分析等。目前收录 1700 多个开源工具，后续将补充文章。 **[926 星标]**
 - [netzob/netzob](https://github.com/netzob/netzob) — Netzob：协议逆向工程、建模与模糊测试 **[838 星标]** · 精选：[Netzob 协议建模与推断框架](https://awesomerea.org/zh/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity 协议逆向工程与协议解析器 **[688 星标]** · 精选：[furiousMAC Apple Continuity 协议逆向与解析器](https://awesomerea.org/zh/resources/furiousmac-continuity/)
