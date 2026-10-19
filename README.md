@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 381](https://img.shields.io/badge/resources-381-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 382](https://img.shields.io/badge/resources-382-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (170) · [App](#app) (58)
+- [Website](#website) (20) · [Game](#game) (171) · [App](#app) (58)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1214,6 +1214,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Compiler and decompiler toolkit for REDscript, a statically typed, object-oriented language for writing scripts for REDengine, CD Projekt's engine used in Cyberpunk 2077. Its Rust crates parse and analyze source, generate bytecode with monomorphization of generics, decompile .redscripts bytecode bundles back into REDscript source, read and write REDengine's native binary format, and provide a drop-in replacement for CD Projekt's scc script compiler plus a C API with source mapping. The CLI exposes decompile, compile, lint and format commands; the language server and debugger live in a separate redscript-ide repository.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/redscript/)
+
+- [**Spice86**](https://github.com/OpenRakis/Spice86)
+
+  PC emulator for executing, reverse engineering and rewriting real-mode DOS programs whose source code is unavailable. While a program runs it builds a control-flow graph, and on exit it dumps memory, execution flow, Ghidra-compatible symbols and a self-contained, runnable C# project whose generated functions override the original assembly, so analysts can rewrite them function by function into readable code while the program keeps working. It also provides a GDB remote server with custom analysis commands, a built-in debugger with a C-header structure viewer, an optional HTTP memory API and an MCP server whose tools cover CPU, memory, breakpoints, CFG and device state; an optional Ghidra plugin imports the dumps.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/spice86/)
 
 <a id="app"></a>
 ### App

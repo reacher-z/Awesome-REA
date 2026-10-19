@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](game-analysis.zh-CN.md)
 
-**389 repositories** · 2026-10-16 UTC
+**390 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -35,6 +35,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — The Touhou PC-98 Restoration Project **[875 stars]**
 - [SAT-R/sa2](https://github.com/SAT-R/sa2) — A decompilation and port of Sonic Advance 1 &amp; 2 - GameBoy Advance game's written in C **[678 stars]**
 - [axhlzy/Il2CppHookScripts](https://github.com/axhlzy/Il2CppHookScripts) — Frida-based libil2cpp.so runtime parsing script **[664 stars]**
+- [OpenRakis/Spice86](https://github.com/OpenRakis/Spice86) — Reverse engineer and rewrite real mode DOS programs! **[662 stars]** · Curated: [Spice86](https://awesomerea.org/resources/spice86/)
 - [matt-kempster/m2c](https://github.com/matt-kempster/m2c) — A decompiler targeting MIPS, PowerPC, ARM, and SuperH. **[658 stars]** · Curated: [m2c](https://awesomerea.org/resources/m2c/)
 - [xenia-canary/game-patches](https://github.com/xenia-canary/game-patches) — Game patches for the Xenia emulator **[619 stars]**
 - [GensokyoClub/th06](https://github.com/GensokyoClub/th06) — Decompilation of 東方紅魔郷 ～ the Embodiment of Scarlet Devil (1.02h) **[616 stars]** · Curated: [Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source](https://awesomerea.org/resources/th06-decomp-case/)

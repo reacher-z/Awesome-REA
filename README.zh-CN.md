@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 381](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-381-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 382](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-382-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (20) · [游戏](#game) (170) · [应用](#app) (58)
+- [网站](#website) (20) · [游戏](#game) (171) · [应用](#app) (58)
 - [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -1215,6 +1215,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   REDscript 的编译器与反编译器工具集。REDscript 是一种静态类型、面向对象的语言，用于为 CD Projekt 在《赛博朋克 2077》中使用的 REDengine 引擎编写脚本。其 Rust crate 负责解析和分析源码、生成字节码并对泛型做单态化、将 .redscripts 字节码包反编译回 REDscript 源码、读写 REDengine 原生二进制格式，并提供可直接替代 CD Projekt scc 脚本编译器的实现，以及带源码映射的 C API。命令行提供 decompile、compile、lint 和 format 命令；语言服务器和调试器位于单独的 redscript-ide 仓库。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/redscript/)
+
+- [**Spice86 实模式 DOS 逆向与重写模拟器**](https://github.com/OpenRakis/Spice86)
+
+  用于执行、逆向分析并重写无源码实模式 DOS 程序的 PC 模拟器。程序运行时它会构建控制流图，退出时转储内存、执行流、Ghidra 兼容的符号，以及一个可独立运行的 C# 项目，其中生成的函数会覆盖原有汇编代码，分析者可以在程序始终可运行的前提下逐个函数将其改写为可读代码。它还提供带自定义分析命令的 GDB 远程服务器、配有 C 头文件结构查看器的内置调试器、可选的 HTTP 内存 API，以及工具覆盖 CPU、内存、断点、控制流图和设备状态的 MCP 服务器；可选的 Ghidra 插件可导入这些转储。
+
+  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/spice86/)
 
 <a id="app"></a>
 ### App · 应用
