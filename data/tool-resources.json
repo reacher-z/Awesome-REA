@@ -7165,5 +7165,41 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "pypush-apns-protocol-case",
+    "name": "pypush: a Python client for Apple’s push protocol",
+    "url": "https://github.com/JJTech0130/pypush",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reimplements the client side of Apple’s private Apple Push Notification service (APNs) protocol in platform-independent Python: it activates as an Apple device, connects to the APNs courier, mints app-scoped tokens and receives push notifications. The project began as the author’s proof of concept for iMessage reverse engineering, but the current rewrite has removed IDS and iMessage support for now. It uses Apple’s services outside Apple’s official clients.",
+    "description_zh": "以与平台无关的 Python 重新实现 Apple 私有推送通知服务（APNs）协议的客户端：它以 Apple 设备身份完成激活，连接 APNs courier 服务器，生成限定于应用的令牌并接收推送通知。项目最初是作者 iMessage 逆向研究的概念验证，但当前重写版暂时移除了 IDS 和 iMessage 支持。它在 Apple 官方客户端之外使用 Apple 的服务。",
+    "evidence_url": "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-03-15 main head, identical to release v2.0.2 on PyPI. The README warns that the rewrite is unstable, that many features have been temporarily removed and that stability should not be expected before 3.0.0. The IDS, iMessage, GrandSlam and CloudKit packages are empty placeholders, so the earlier iMessage work is not part of this version.",
+      "Activation and connections go to Apple’s live activation and APNs servers through what the project calls Apple’s internal API, outside Apple’s official clients; the README notes that some APIs may need device identifiers. Apple’s terms for these services apply separately. This record names no accounts, identifiers or credentials, and the certificate file in the test assets is deliberately not linked.",
+      "Requires Python 3.9+ with anyio, httpx (HTTP/2) and cryptography; the cli extra adds Frida, Rich and Typer. The CLI listens for notifications on a topic, and its proxy mode, meant for observing a Mac’s own APNs traffic, attaches Frida to the local apsd daemon and requires System Integrity Protection disabled and root.",
+      "Pull-request CI runs Ruff and pytest on Python 3.9–3.12 across Linux, macOS and Windows. The tests activate against Apple’s servers, open an APNs connection and round-trip a sandbox notification through a scoped token, so they depend on live services rather than offline protocol fixtures. This source review ran no tests, activation or connections.",
+      "LICENSE is the Server Side Public License v1, and the package metadata classifies it as Other/Proprietary; the README says Beeper purchased the project and directs licensing questions to Beeper. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/pyproject.toml",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/LICENSE",
+      "https://github.com/JJTech0130/pypush/tree/71aa2e4442061596f75e6b02dfad613330127b5b/pypush",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/pypush/apns/__init__.py",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/pypush/apns/lifecycle.py",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/pypush/apns/protocol.py",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/pypush/cli/__init__.py",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/tests/test_apns.py",
+      "https://github.com/JJTech0130/pypush/blob/71aa2e4442061596f75e6b02dfad613330127b5b/.github/workflows/lint.yml",
+      "https://github.com/JJTech0130/pypush/releases/tag/v2.0.2",
+      "https://pypi.org/project/pypush/2.0.2/"
+    ]
   }
 ]

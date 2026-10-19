@@ -2970,5 +2970,15 @@
       "文章建议的缓解措施包括：不在应用中嵌入 API 签名密钥和长期有效的凭据；在服务器端对用户进行认证和授权，而不是依赖应用内签名或混淆；对 API 使用进行速率限制与监控；限制易受 SSRF 影响的外部 URL 获取，并重新校验重定向目标。文章还列出了三个攻击者 IP 指标。",
       "文章提到 jadx 与 Blutter，未提及其他分析工具，也未记录 REA 的使用。本合集只阅读了该文章，未另行审阅其引用的预警、第三方文章及指标。"
     ]
+  },
+  "pypush-apns-protocol-case": {
+    "name": "pypush：Apple 推送协议的 Python 客户端",
+    "requirements": [
+      "审阅对象为 2026-03-15 的 main 最新提交，与 PyPI 上的 v2.0.2 版本一致。README 警告重写版尚不稳定，许多功能已被暂时移除，3.0.0 之前不应期待稳定。IDS、iMessage、GrandSlam 和 CloudKit 包都是空占位，因此早期的 iMessage 成果不在此版本中。",
+      "激活和连接会通过项目所称的 Apple 内部 API 访问 Apple 线上的激活服务器和 APNs 服务器，处于 Apple 官方客户端之外；README 指出部分 API 可能需要设备标识符。Apple 对这些服务的条款另行适用。本条目不记录任何账号、标识符或凭据，也特意不链接测试资源中的证书文件。",
+      "需要 Python 3.9+ 及 anyio、httpx（HTTP/2）和 cryptography；cli 附加依赖会加入 Frida、Rich 和 Typer。命令行可在指定主题上监听通知；其代理模式用于观察 Mac 自身的 APNs 流量，会用 Frida 附加到本机 apsd 守护进程，需要关闭系统完整性保护（SIP）并以 root 运行。",
+      "拉取请求的 CI 在 Linux、macOS 和 Windows 上以 Python 3.9–3.12 运行 Ruff 和 pytest。测试会向 Apple 服务器激活、建立 APNs 连接，并通过限定令牌往返一条沙盒通知，因此依赖线上服务，而非离线协议样本。本次来源核查未运行测试、激活或连接。",
+      "LICENSE 为 Server Side Public License v1，包元数据将其归类为 Other/Proprietary；README 称项目已被 Beeper 收购，许可问题需联系 Beeper。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
