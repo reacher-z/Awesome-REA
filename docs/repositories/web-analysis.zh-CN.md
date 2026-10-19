@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**177 个仓库** · 2026-10-16 UTC
+**178 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -13,6 +13,7 @@
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — WebAssembly 二进制工具包。 **[8,166 星标]** · 精选：[WABT](https://awesomerea.org/zh/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]**
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — 首个通过逆向分析平台内部 API 构建无需许可集成的 AI 智能体。 **[4,780 星标]**
+- [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — 跨平台微信小程序反编译 GUI 工具，支持 .wxapkg 文件扫描、解密和解包。 **[4,261 星标]** · 精选：[wxapkg 微信小程序解包工具](https://awesomerea.org/zh/resources/wux1an-wxapkg/)
 - [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — 几秒内将任意网站的设计系统提取为设计令牌，包括标志、颜色、字体、边框等。一条命令即可完成。 **[3,647 星标]** · 精选：[Dembrandt 网站设计系统提取工具](https://awesomerea.org/zh/resources/dembrandt/)
 - [HanaokaYuzu/Gemini-API](https://github.com/HanaokaYuzu/Gemini-API) — ✨ 通过逆向工程实现的 Google Gemini 网页应用 Python API。 **[3,596 星标]**
 - [j4k0xb/webcrack](https://github.com/j4k0xb/webcrack) — 解除 obfuscator.io 混淆，还原 JavaScript 压缩代码并解包打包后的代码。 **[2,963 星标]** · 精选：[webcrack](https://awesomerea.org/zh/resources/webcrack/)

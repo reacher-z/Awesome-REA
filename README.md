@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 373](https://img.shields.io/badge/resources-373-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 374](https://img.shields.io/badge/resources-374-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (20) · [Game](#game) (167) · [App](#app) (55)
+- [Website](#website) (20) · [Game](#game) (167) · [App](#app) (56)
 - [Native Binary](#native-binary) (30) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1535,6 +1535,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Cross-platform desktop .NET decompiler maintained by the original JustDecompile creators as a continuation of their JustDecompile Engine, built with Mono.Cecil and an Avalonia UI. It loads assemblies into a tree of namespaces, types, members and resolved references, shows decompiled C#, VB.NET or IL with go-to-definition and back/forward navigation, and searches names, types, string literals and instructions. A create-project command exports an assembly as a Visual Studio 2015, 2017 or 2019 project.
 
   Tool · .NET · [Requirements & evidence](https://awesomerea.org/resources/codemerxdecompile/)
+
+- [**wxapkg**](https://github.com/wux1an/wxapkg)
+
+  Desktop GUI for Windows and macOS, built with Wails, that unpacks WeChat mini-program .wxapkg packages for study. It scans the mini-program package folders of local WeChat 3.x and 4.x installations, including per-user folders, or takes a file or folder the user selects; packages that the PC client stores encrypted are decrypted first. Each packaged file is written to its recorded path, with optional beautification of JSON, HTML and JavaScript.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/wux1an-wxapkg/)
 
 <a id="native-binary"></a>
 ### Native Binary
