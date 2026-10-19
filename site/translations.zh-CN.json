@@ -3188,5 +3188,15 @@
       "待分析的 Android 安装包由用户自行提供，仓库不含任何应用文件。工作内容为静态反编译、接口文档整理、调用链追踪和 Kotlin 类名还原；作者称在典型应用上可还原几乎全部 Repository/ViewModel/UseCase 类，此为项目自报数据。",
       "技能本身采用 Apache-2.0；被驱动的各反编译器和其他工具保留各自许可。README 将用途限定于合法目的，例如经授权的安全研究、互操作性分析和恶意软件分析，并将责任归于使用者。本次未运行任何反编译器或应用，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "gb-recompiled": {
+    "name": "GB Recompiled Game Boy 静态重编译器",
+    "requirements": [
+      "README 称其为实验性重编译器，不声称兼容全部游戏，并说明代码生成成功不代表每个场景都能正确运行。ACCURACY.md（生成于 2026-07-13）报告 Blargg 测试 ROM 通过 8/8、Mooneye 通过 63/67，并说明这并不衡量商业游戏的兼容性。",
+      "使用者需自备 .gb 或 .gbc ROM；仓库不含任何 ROM。随附的 Crystal Recompiled 移植本身不含 ROM：它要求使用者提供特定的美版/欧版 Rev 1 ROM，在写出任何源自 ROM 的内容前先校验哈希，并把生成的项目放在被忽略的本地目录或私有缓存中；其分发政策禁止发布 ROM、生成的 C 代码或提取出的资产。该移植的 alpha 版只在 macOS arm64 上完成了端到端验证。",
+      "v0.1.0 版本（2026-08-03）提供 Linux x64、macOS Intel 与 Apple 芯片以及 Windows x64 的预构建 gbrecomp 压缩包；所审阅的 main 提交比它多 13 个提交，最后一次提交为 2026-09-10。从源码构建需要 CMake 3.20+、Ninja、SDL2 开发文件和支持 C11/C++20 的编译器，生成的项目同样用 CMake 和 Ninja 构建。ANDROID.md 另行说明了单 ROM 生成 APK 的流程，本条目未审阅。",
+      "CTest 测试套件覆盖相互独立的不变量。README 指出差分模式与解释器共用运行时设备，因而不是独立的硬件参照，SameBoy 对比以及画面、音频和状态捕获则作为另外的证据。仓库唯一的 GitHub 工作流负责构建发布包，并用生成的测试 ROM 做冒烟测试；另有一个可选的手动任务以私下持有的 ROM 检查 Crystal 移植，不会发布任何内容。",
+      "采用 MIT 许可证；内置的 Dear ImGui 保留其自身许可。README 声明与 Nintendo 无关联，Crystal 移植也声明与 Nintendo、The Pokémon Company、Game Freak 和 Creatures 无关联。README 要求贡献者和编程代理阅读 AGENTS.md，但未提及使用 REA。本目录未构建或运行该工具，也不代表任何游戏兼容性。"
+    ]
   }
 }

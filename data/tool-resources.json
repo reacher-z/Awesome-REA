@@ -7925,5 +7925,37 @@
       "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/.claude-plugin/marketplace.json",
       "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/LICENSE"
     ]
+  },
+  {
+    "id": "gb-recompiled",
+    "name": "GB Recompiled",
+    "url": "https://github.com/arcanite24/gb-recompiled",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Static recompiler that turns Game Boy and Game Boy Color ROMs into portable C projects: it decodes and analyzes banked LR35902 code, emits C with machine-readable metadata, and links it with a shared SDL2 runtime for video, audio, input, saves and hardware timing. Jump targets that static analysis missed fall back to an interpreter. The repository also carries differential, replay and frame and audio capture tooling, plus a Pokémon Crystal port that builds native features on hooks into the exact ROM.",
+    "description_zh": "将 Game Boy 和 Game Boy Color ROM 转换为可移植 C 项目的静态重编译器：它解码并分析分 bank 的 LR35902 代码，生成 C 代码及机器可读的元数据，再与共享的 SDL2 运行时链接，由运行时处理视频、音频、输入、存档和硬件时序。静态分析未覆盖的跳转目标会回退到解释器执行。仓库还提供差分对比、回放以及画面和音频捕获工具，并附有一个 Pokémon Crystal 移植，借助对特定 ROM 的挂钩实现原生功能。",
+    "evidence_url": "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls it an experimental recompiler with no whole-catalogue compatibility claim and says successful code generation does not guarantee that every scene runs correctly. ACCURACY.md (generated 2026-07-13) reports 8 of 8 Blargg and 63 of 67 Mooneye test ROMs passing and states that this is not a measure of commercial-game compatibility.",
+      "Users supply their own .gb or .gbc ROMs; the repository contains no ROMs. The bundled Crystal Recompiled port is ROM-free: it requires the user's exact US/Europe Rev 1 ROM, checks its hash before writing any ROM-derived output, and keeps generated projects in ignored local or private-cache paths, and its distribution policy forbids releasing ROMs, generated C or extracted assets. That port's alpha is verified end to end only on macOS arm64.",
+      "Release v0.1.0 (2026-08-03) ships prebuilt gbrecomp archives for Linux x64, macOS Intel and Apple silicon, and Windows x64; the reviewed main commit is 13 commits ahead, last committed 2026-09-10. Building from source needs CMake 3.20+, Ninja, SDL2 development files and a C11/C++20 compiler, and generated projects build with CMake and Ninja. ANDROID.md documents a separate single-ROM APK workflow, not reviewed here.",
+      "A CTest suite covers isolated invariants. The README notes that differential mode shares runtime devices with the interpreter and so is not an independent hardware oracle, leaving SameBoy comparisons and frame, audio and state captures as separate evidence. The only GitHub workflow builds release archives and smoke-tests them with a generated fixture ROM; an optional manual job checks the Crystal port against a privately held ROM without publishing.",
+      "MIT-licensed; the vendored Dear ImGui keeps its own license. The README states no affiliation with Nintendo, and the Crystal port none with Nintendo, The Pokémon Company, Game Freak or Creatures. The README points contributors and coding agents to AGENTS.md but states no REA use. This collection did not build or run it, and no game compatibility is implied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/ACCURACY.md",
+      "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/ports/pokemon-crystal/README.md",
+      "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/ports/pokemon-crystal/LEGAL.md",
+      "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/.github/workflows/release.yml",
+      "https://github.com/arcanite24/gb-recompiled/blob/9150f87d82fa98abcb6ea22329170463f9702eb8/LICENSE",
+      "https://github.com/arcanite24/gb-recompiled/releases/tag/v0.1.0"
+    ]
   }
 ]
