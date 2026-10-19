@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 360](https://img.shields.io/badge/resources-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 360](https://img.shields.io/badge/resources-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2275,13 +2275,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2834,6 +2834,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.
 
   **Authors:** Yaniv David et al.
+
+  </details>
+
+- [**RetroWrite: Statically Instrumenting COTS Binaries for Fuzzing and Sanitization**](https://ieeexplore.ieee.org/document/9152762)
+
+  RetroWrite statically rewrites 64-bit position-independent Linux binaries by generating reassembleable assembly, so instrumentation can be inserted as if at compile time. Instead of heuristics, it symbolizes references from the binary's own metadata: control-flow operands, PC-relative addressing that position-independent code must use, and data relocations become assembler labels, which separates references from scalars. On this base the authors build AFL coverage instrumentation and a binary-only AddressSanitizer. They report fuzzing throughput matching compiler instrumentation and 4.5x faster than AFL's QEMU mode, with more bugs found on LAVA-M, and binary ASan that runs 3x faster than Valgrind memcheck on SPEC CPU2006 and detects 80% more bugs in their evaluation, whose coverage tests use Juliet memory-corruption cases.
+
+  IEEE S&amp;P 2020 · Conference paper · [PDF](https://hexhive.epfl.ch/publications/files/20Oakland.pdf) · [Code](https://github.com/HexHive/retrowrite) · [Full entry & citation](https://awesomerea.org/papers/paper-retrowrite/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The method depends on position-independent code; the paper's implementation targets Linux x86-64 and uses the symbol table for function starts and sizes, so stripped binaries need function boundaries from another tool. It cannot safely rewrite C++ binaries with exception handling, because the DWARF unwind information is not symbolized, and it does not address obfuscated or adversarial binaries. Binary ASan instruments the stack only at stack-frame granularity and adds no redzones around globals, so it misses some overflows that compiler ASan catches, and it remains slower than compiler ASan. Results are from 2019–2020 tool versions on the authors' benchmarks. The repository's later aarch64 rewriter, described in a separate thesis, uses a different algorithm, and the paper's x86-64 results do not apply to it.
+
+  **Authors:** Sushant Dinesh et al.
 
   </details>
 

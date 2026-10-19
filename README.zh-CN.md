@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 360](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 360](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-360-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2276,13 +2276,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2835,6 +2835,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 评测使用来自纯 C 语言 GNU 软件包、构建为 x86-64 Linux 可执行文件的 67,246 个过程；在剔除 C++ 可执行文件、测试程序、静态链接软件包及同一软件包的重复版本后，按软件包划分为 60,403／2,034／4,809 个样本。标签取自剥离前的名称，F1 按名称子词计算，因此输出是模型学到的建议，而非恢复出的原始符号。模拟 API 名称混淆（将 .dynstr 节清零）会使 Nero-GNN 的 F1 降至 38.83；论文未处理加壳和更强的混淆。每个过程至少需要一个可静态检测的调用点，内联过程无法命名。数据生成依赖已授权的 IDA Pro（测试版本 6.95）识别过程边界并导出，另需 angr 与 LLVM 10；模型代码使用 TensorFlow 1.13.1。本条不对与当前工具版本的兼容性作任何判断。
 
   **作者:** Yaniv David 等
+
+  </details>
+
+- [**RetroWrite：为模糊测试与内存检测静态插桩商用现成二进制**](https://ieeexplore.ieee.org/document/9152762)
+
+  RetroWrite 通过生成可重汇编的汇编代码，对 64 位位置无关的 Linux 二进制进行静态改写，从而像在编译时一样插入插桩代码。它不依赖启发式规则，而是依据二进制自身的元数据进行符号化：控制流操作数、位置无关代码必须使用的 PC 相对寻址以及数据重定位均被转换为汇编标签，从而区分引用与标量。作者在此基础上实现了 AFL 覆盖率插桩和仅针对二进制的 AddressSanitizer。他们报告其模糊测试吞吐量与编译器插桩相当，比 AFL 的 QEMU 模式快 4.5 倍，并在 LAVA-M 上发现更多缺陷；在 SPEC CPU2006 上，二进制 ASan 比 Valgrind memcheck 快 3 倍，并在作者的评测中多检测出 80% 的缺陷，其检测覆盖率测试采用 Juliet 内存破坏用例。
+
+  IEEE S&amp;P 2020 · 会议论文 · [PDF](https://hexhive.epfl.ch/publications/files/20Oakland.pdf) · [代码](https://github.com/HexHive/retrowrite) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-retrowrite/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 该方法依赖位置无关代码；论文的实现面向 Linux x86-64，并借助符号表确定函数起点与大小，因此去除符号的二进制需要由其他工具提供函数边界。由于未对 DWARF 栈展开信息进行符号化，它无法安全改写含异常处理的 C++ 二进制，也不处理混淆或对抗性二进制。二进制 ASan 对栈只按栈帧粒度插桩，也不在全局变量周围添加红区，因此会遗漏部分编译器 ASan 能发现的溢出，且仍慢于编译器 ASan。这些结果基于 2019—2020 年的工具版本和作者的基准。仓库中后来加入的 aarch64 改写器在另一篇学位论文中描述，采用不同的算法，论文中的 x86-64 结果不适用于它。
+
+  **作者:** Sushant Dinesh 等
 
   </details>
 
