@@ -12070,5 +12070,36 @@
       "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/joycon_reader/README.md",
       "https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering/blob/b354f21ae81f7b0d1d060b2b61e66ad0d9bc1756/packet_parse/nxbt/README.md"
     ]
+  },
+  {
+    "id": "android-app-re-101",
+    "name": "Android App Reverse Engineering 101",
+    "url": "https://www.ragingrock.com/AndroidAppRE/",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Maddie Stone's free English workshop introducing static reverse engineering of Android apps, published as GitHub Pages. Its chapters cover app components and entry points, Dalvik bytecode and smali, decompiling DEX with jadx, finding and reading JNI native libraries in Ghidra, and string deobfuscation. Seven exercises with written solutions apply this to triaging malware samples and spotting command-execution flaws in pre-installed apps.",
+    "description_zh": "Maddie Stone 编写的免费英文工作坊，以 GitHub Pages 发布，入门讲解 Android 应用的静态逆向工程。各章涵盖应用组件与入口点、Dalvik 字节码与 smali、用 jadx 反编译 DEX、在 Ghidra 中定位并阅读 JNI 原生库，以及字符串去混淆。七个附书面解答的练习将这些方法用于分诊恶意软件样本，以及找出预装应用中的命令执行缺陷。",
+    "evidence_url": "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/index.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 17f9eeb, the last default-branch commit (2020-04-29); most pages date from 2019 and the material is not being extended. The introduction says the workshop covers static analysis only and does not teach app development, malware analysis or vulnerability hunting themselves; the conclusion points to Frida and dynamic analysis as next steps.",
+      "Exercises are designed for the author's Ubuntu 18.04 64-bit VM image, offered for VirtualBox and VMware from Google Drive, with jadx and Ghidra installed. The exercise APKs (apps triaged as possible malware and two pre-installed vendor apps, each named with a SHA-256 digest in most exercises) exist only inside that VM; the repository holds Markdown pages and images and no APKs.",
+      "The native-library chapter assumes some ARM assembly, pointing to outside tutorials, and says every exercise library also has an x86 build. The pages were last updated in 2020, so their screenshots may not match current jadx and Ghidra releases.",
+      "The repository has no license file, so reuse terms for the text are not stated; the pages credit the Android robot logo to Google under CC BY 3.0. This collection read the pages at the reviewed commit and did not download the VM or repeat the exercises; the workshop mentions no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/maddiestone/AndroidAppRE/tree/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10",
+      "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/reversing_dex.md",
+      "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/reversing_native_libs.md",
+      "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/obfuscation.md",
+      "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/conclusion.md",
+      "https://github.com/maddiestone/AndroidAppRE/blob/17f9eeb5cb190d31cd90e9b9c7967978ea7a9d10/README.md"
+    ]
   }
 ]
