@@ -9,7 +9,7 @@
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — 视觉小说翻译器。 **[13,757 星标]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc 是独立的图形调试工具。 **[11,193 星标]** · 精选：[RenderDoc](https://awesomerea.org/zh/resources/renderdoc/)
 - [Perfare/Il2CppDumper](https://github.com/Perfare/Il2CppDumper) — Unity il2cpp 逆向工程工具。 **[9,513 星标]** · 精选：[Il2CppDumper](https://awesomerea.org/zh/resources/il2cppdumper/)
-- [BepInEx/BepInEx](https://github.com/BepInEx/BepInEx) — Unity / XNA 游戏补丁工具与插件框架。 **[8,845 星标]**
+- [BepInEx/BepInEx](https://github.com/BepInEx/BepInEx) — Unity / XNA 游戏补丁工具与插件框架。 **[8,845 星标]** · 精选：[BepInEx Unity/.NET 游戏插件与修补框架](https://awesomerea.org/zh/resources/bepinex/)
 - [AssetRipper/AssetRipper](https://github.com/AssetRipper/AssetRipper) — 用于分析游戏文件的图形界面应用。 **[8,643 星标]** · 精选：[AssetRipper](https://awesomerea.org/zh/resources/assetripper/)
 - [rehan-remade/universal-modder](https://github.com/rehan-remade/universal-modder) — 让 Claude 处理任意游戏。通过技能、工具与 fal MCP，Claude Code 可为你拥有的几乎任何 PC 游戏制作模组，涵盖侦察、逆向工程、fal 生成的美术/3D/音频、游戏内测试及展示视频。 **[7,939 星标]** · 精选：[Universal Modder 游戏模组智能体工具包](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — 与电子游戏逆向工程相关的教程、工具及其他资源。 **[5,609 星标]**

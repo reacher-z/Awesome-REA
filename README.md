@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 395](https://img.shields.io/badge/resources-395-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 396](https://img.shields.io/badge/resources-396-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (24) · [Game](#game) (176) · [App](#app) (58)
+- [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
 - [Native Binary](#native-binary) (34) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -1274,6 +1274,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Mod loader for Unity games on both the Mono and IL2CPP runtimes, which loads plugins and mods from folders in a locally installed game; on Windows a proxy DLL, version.dll by default, starts it with the game. For IL2CPP games its assembly generator runs Cpp2IL and Il2CppInterop to produce managed interop assemblies, and HarmonyX and MonoMod are bundled for runtime patching. Its logs can capture Unity player output and Harmony messages, and debug options provide a Mono debug server for Mono games and a wait-for-debugger option for IL2CPP games.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/melonloader/)
+
+- [**BepInEx**](https://github.com/BepInEx/BepInEx)
+
+  Plugin and patching framework for Unity Mono, Unity IL2CPP and .NET Framework games such as XNA, FNA and MonoGame titles, which loads mods and analysis plugins into a locally installed game. Plugins patch methods at runtime with the bundled HarmonyX and MonoMod.RuntimeDetour, while preloader patchers rewrite managed assemblies with Mono.Cecil before the game loads them; on IL2CPP games it runs Cpp2IL and Il2CppInterop to generate interop assemblies from the game binary and global-metadata.dat. Its guides also cover configuration, logging, and debugging plugins and game assemblies with dnSpy.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/bepinex/)
 
 <a id="app"></a>
 ### App

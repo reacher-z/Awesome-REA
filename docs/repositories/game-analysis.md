@@ -9,7 +9,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [HIllya51/LunaTranslator](https://github.com/HIllya51/LunaTranslator) — Visual Novel Translator **[13,757 stars]**
 - [baldurk/renderdoc](https://github.com/baldurk/renderdoc) — RenderDoc is a stand-alone graphics debugging tool. **[11,193 stars]** · Curated: [RenderDoc](https://awesomerea.org/resources/renderdoc/)
 - [Perfare/Il2CppDumper](https://github.com/Perfare/Il2CppDumper) — Unity il2cpp reverse engineer **[9,513 stars]** · Curated: [Il2CppDumper](https://awesomerea.org/resources/il2cppdumper/)
-- [BepInEx/BepInEx](https://github.com/BepInEx/BepInEx) — Unity / XNA game patcher and plugin framework **[8,845 stars]**
+- [BepInEx/BepInEx](https://github.com/BepInEx/BepInEx) — Unity / XNA game patcher and plugin framework **[8,845 stars]** · Curated: [BepInEx](https://awesomerea.org/resources/bepinex/)
 - [AssetRipper/AssetRipper](https://github.com/AssetRipper/AssetRipper) — GUI application to analyze game files **[8,643 stars]** · Curated: [AssetRipper](https://awesomerea.org/resources/assetripper/)
 - [rehan-remade/universal-modder](https://github.com/rehan-remade/universal-modder) — Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos. **[7,939 stars]** · Curated: [Universal Modder](https://awesomerea.org/resources/universal-modder-agent-toolkit/)
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — Tutorials, tools, and more as related to reverse engineering video games. **[5,609 stars]**

@@ -11,7 +11,7 @@
 | 分类 | 仓库数 | 关联精选或论文 |
 | --- | ---: | ---: |
 | [网站](web-analysis.zh-CN.md) | 181 | 18 |
-| [游戏](game-analysis.zh-CN.md) | 393 | 41 |
+| [游戏](game-analysis.zh-CN.md) | 393 | 42 |
 | [应用 · Android](android.zh-CN.md) | 431 | 17 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 128 | 3 |
 | [原生二进制](native-analysis.zh-CN.md) | 676 | 45 |
