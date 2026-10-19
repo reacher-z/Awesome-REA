@@ -52,7 +52,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — hook C# method at runtime without modify dll file (such as UnityEditor.dll), works on Windows, Mac, Android il2cpp(armv7a and armv8a) **[1,065 stars]**
 - [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — An easy-to-use, high-performance dex deobfuscation library. **[1,061 stars]**
-- [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — Remove Certificate Pinning from APKs **[1,053 stars]**
+- [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — Remove Certificate Pinning from APKs **[1,053 stars]** · Curated: [Android Unpinner](https://awesomerea.org/resources/android-unpinner/)
 - [suifei/fridare](https://github.com/suifei/fridare) — Powerful Frida repackaging tool for iOS and Android. Easily modify Frida signatures to enhance stealth and bypass detection. Streamlines reverse engineering and security testing. **[949 stars]**
 - [tp7309/TTDeDroid](https://github.com/tp7309/TTDeDroid) — One-click tool for quickly decompiling APK/AAR/DEX/JAR files, powered by jadx, dex2jar, and enjarify. **[949 stars]**
 - [Margular/frida-skeleton](https://github.com/Margular/frida-skeleton) — A Frida-based Android hooking framework that provides many features Frida does not support itself, making Android hooking simple and accessible to everyone. **[882 stars]**

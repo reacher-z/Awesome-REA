@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 424](https://img.shields.io/badge/resources-424-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 425](https://img.shields.io/badge/resources-425-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (59)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (60)
 - [Native Binary](#native-binary) (52) · [Firmware and Hardware](#firmware) (19) · [Protocol](#protocol) (16)
 
 **Research and workflows**
@@ -1649,6 +1649,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Modular Frida-based framework for runtime analysis of Android and iOS apps the analyst is authorized to test. From a single coordinated script it loads plug-in modules to inspect network and WebView activity, trace API calls, examine memory and cryptographic operations, monitor malware behavior, and handle protections such as SSL pinning. The README reports it ships with over 90 reusable modules.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/medusa-framework/)
+
+- [**Android Unpinner**](https://github.com/mitmproxy/android-unpinner)
+
+  Tool from the mitmproxy project that removes certificate pinning from an Android APK you own or are authorized to test, without a rooted device. It marks the app debuggable, touching only AndroidManifest.xml, and injects a Frida Gadget over ADB so an interception proxy can read the app's traffic, reusing HTTP Toolkit's unpinning script. It bundles the Android SDK helpers it needs and can also handle split APKs delivered as XAPK.
+
+  Tool · Android · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/android-unpinner/)
 
 <a id="native-binary"></a>
 ### Native Binary

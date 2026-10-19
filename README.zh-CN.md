@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 424](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-424-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 425](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-425-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (59)
+- [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (60)
 - [原生二进制](#native-binary) (52) · [固件与硬件](#firmware) (19) · [协议](#protocol) (16)
 
 **论文与工作流**
@@ -1650,6 +1650,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   基于 Frida 的模块化框架，用于对分析者有权测试的 Android 与 iOS 应用进行运行时分析。通过单个协调脚本加载插件模块，检查网络与 WebView 活动、跟踪 API 调用、查看内存与加密操作、监控恶意软件行为，并处理 SSL 固定等保护。README 称其内置 90 多个可复用模块。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/medusa-framework/)
+
+- [**Android Unpinner**](https://github.com/mitmproxy/android-unpinner)
+
+  来自 mitmproxy 项目的工具，可在无需 root 的情况下移除使用者拥有或有权测试的 Android APK 的证书固定。它将应用标记为可调试（仅改动 AndroidManifest.xml），并通过 ADB 注入 Frida Gadget，复用 HTTP Toolkit 的解固定脚本，使检查代理能够读取应用流量。工具自带所需的 Android SDK 辅助程序，并可处理以 XAPK 形式提供的分包。
+
+  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/android-unpinner/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
