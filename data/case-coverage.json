@@ -8739,12 +8739,21 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111250669491392909"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@0xProbabillity, 2026-10-13) says he reverse-engineered his IoT devices and vibe-coded his apartment into a menu-bar 3D model, with only a video; a third-party post adds the REA attribution. The pinned House Control repository (MIT, release 1.0.0 of 2026-10-15) controls lights and air conditioners from a Mac or iPhone through Smart Life/Tuya, Home Assistant, Philips Hue and Apple Home, with private-link and MCP access for AI assistants. Its documents describe the Smart Life sign-in as a Swift port of Tuya’s open-source device-sharing SDK and record no device or protocol investigation, and nothing establishes REA use. Retain the lead without a catalog mapping; this is not a judgment of the app, and a documented investigation can support another review.",
+      "reason_zh": "作者帖子（@0xProbabillity，2026-10-13）称逆向了家中的 IoT 设备，并用 vibe coding 把整个公寓做成菜单栏里的 3D 模型，帖子只附视频；REA 的说法来自一条第三方帖子。固定版本的 House Control 仓库（MIT，1.0.0 版发布于 2026-10-15）可在 Mac 或 iPhone 上通过 Smart Life／Tuya、Home Assistant、Philips Hue 和 Apple Home 控制灯具与空调，并为 AI 助手提供私有链接和 MCP 接入。其文档说明 Smart Life 登录是 Tuya 开源设备共享 SDK 的 Swift 移植，没有记录任何设备或协议调查，也没有来源确立 REA 使用。保留此线索而不建立目录映射；这不是对该应用的评价，有记录的调查过程可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/0xProbabillity/status/2109978137794883621",
+        "https://x.com/Michaelzsguo/status/2111250669491392909",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/README.md",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/docs/smart-life.md",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/docs/connections.md",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/docs/ai-access.md",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/CHANGELOG.md",
+        "https://github.com/0xProbabillity/house-control/blob/88c84cca77fc12f9297dc91ba28ce58bc9f316d7/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -15706,15 +15715,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 168,
-      "pending": 228
+      "insufficient-evidence": 169,
+      "pending": 227
     },
     "units_by_state": {
       "already-curated": 193,
-      "insufficient-evidence": 168,
-      "pending": 228
+      "insufficient-evidence": 169,
+      "pending": 227
     },
-    "primary_reviewed_units": 303,
+    "primary_reviewed_units": 304,
     "catalog_linked_occurrences": 204,
     "distinct_resource_ids": 199,
     "distinct_paper_ids": 1,
