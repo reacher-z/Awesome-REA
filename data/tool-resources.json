@@ -7228,5 +7228,39 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
     ]
+  },
+  {
+    "id": "chrono-cross-matching-decomp-case",
+    "name": "Chrono Cross: an in-progress PlayStation matching decompilation",
+    "url": "https://github.com/jdperos/chrono-cross-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the main executable of Chrono Cross’s Japanese PlayStation release (SLPS 023.64) into C for the PSX GCC 2.8.1 and maspsx toolchain, using the unmodified copy of that release which the README says the 2022 Radical Dreamers Edition remaster runs in an emulator. The build splits the executable with splat, links unmatched functions from generated assembly and checks the result against a committed SHA-256. The decompiled C so far covers the sound system; decomp.dev reports about 29% of functions matched at the reviewed commit.",
+    "description_zh": "将 Chrono Cross（《超时空之轮：交叉》）日版 PlayStation 发行版（SLPS 023.64）的主可执行文件反编译为面向 PSX GCC 2.8.1 与 maspsx 工具链的 C。README 称 2022 年的 Radical Dreamers Edition 重制版在模拟器中运行该版本的未修改副本，项目即以此为输入。构建用 splat 拆分可执行文件，未匹配的函数仍由生成的汇编链接，结果对照仓库中提交的 SHA-256 校验。目前已反编译的 C 集中在音频系统；decomp.dev 报告所审提交时约 29% 的函数已匹配。",
+    "evidence_url": "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README calls this an in-progress matching decompilation; the GitHub description’s “100% matching” is the goal, not the current state. The splat configuration covers only the main executable slps_023.64, and src/ holds eight sound-system files. decomp.dev reports for the reviewed commit 298 of 1,035 functions (12.51% of code) matched in the main category and no units complete; the default branch was last pushed on 2026-04-14.",
+      "Supply cdrom.dat from your own copy of Chrono Cross: The Radical Dreamers Edition; README gives its SHA-1, documents only the Steam release and leaves console versions out of scope. No game executable or assets are committed; the project’s CI reads its inputs from a private dependencies repository.",
+      "Documented on Debian-based Linux or WSL2 with git, make, 7-Zip, MIPS binutils and GCC, Python 3 in a virtual environment and, on ARM hosts, qemu-user-static. The tree commits PSX GCC 2.6.0, 2.7.2 and 2.8.1 compiler binaries, objdiff and mkpsxiso/dumpsxiso; maspsx, m2c and decomp-permuter are submodules. make setup also downloads a psyq_obj.tar.gz archive, which README describes as the Psy-Q libraries, from an r2.dev bucket.",
+      "make check runs sha256sum against config/checksum.sha for the rebuilt executable, and the pull-request validation workflow runs it; the push workflow builds and uploads an objdiff progress report with its check step commented out. A matching hash covers the supplied version and is reached partly through assembly; this collection built or ran nothing.",
+      "No license file is present and GitHub detects none, so reuse terms are unstated; the README states an educational and preservation purpose and that Chrono Cross belongs to Square Enix. include/psyq/ commits Psy-Q SDK headers, 21 with Sony copyright notices, which keep Sony’s rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/Makefile",
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/config/slps_023.64.yaml",
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/config/checksum.sha",
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/.github/workflows/build.yaml",
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/.github/workflows/validate.yaml",
+      "https://github.com/jdperos/chrono-cross-decomp/blob/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/.gitmodules",
+      "https://github.com/jdperos/chrono-cross-decomp/tree/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/include/psyq",
+      "https://github.com/jdperos/chrono-cross-decomp/tree/7dcadfc36421c9b26466f7fdbdbaa1a1102219c6/src/slps_023.64/system",
+      "https://decomp.dev/jdperos/chrono-cross-decomp"
+    ]
   }
 ]
