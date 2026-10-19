@@ -3170,5 +3170,15 @@
       "README 称 dewolf 是研究原型，并未针对生产使用充分优化，在真实二进制上可能出现错误甚至反编译失败。测试会编译 C 示例源码，并在 tests/coreutils/binaries 中保留 GNU coreutils 可执行文件作为测试夹具；CI 使用仓库密钥提供的 Binary Ninja 安装包和许可证构建 Docker 镜像。",
       "采用 LGPL-2.1 许可（plugin.json 中的声明允许选用任何更新版本）。本次未反编译任何二进制。"
     ]
+  },
+  "restringer": {
+    "name": "REstringer JavaScript 反混淆工具",
+    "requirements": [
+      "所审阅的 HumanSecurity main 提交（2025-12-07）即 v2.1.0 加上一处 README 修改，删去了已停用的 REstringer.tech 网页工具。作者现在其个人分支 ctrl-escp/restringer 中继续开发，npm 包也已将该分支列为其仓库：npm 2.2.0（2026-05-09）和 2.3.0（2026-08-30）均出自该分支；在 2.3.0 时，其 README 要求 Node.js 22+，将 isolated-vm 改为可选，并新增 Node、Deno 和 Bun 子进程沙箱，因此通过 npm 安装的代码比所审阅的源码更新。",
+      "所审阅的源码需要 Node.js 20+（推荐 22+），可作为全局命令行工具或模块安装。依赖 flast、obfuscation-detector、commander 以及 isolated-vm 5.0.4；后者是原生模块，CI 借助 Python 和 g++ 构建。结果输出到标准输出或 <input>-deob.js；-m 限制迭代次数，-c 删除无用节点，README 将其标为不安全。",
+      "输入为经过混淆的 JavaScript 文件或字符串。安全模块只变换 AST、不求值代码；不安全模块则在 isolated-vm 沙箱中用 eval() 求值部分输入，以求解表达式和函数调用。",
+      "GitHub Actions 在 Node.js 20 和 22 上运行 npm test。除模块和处理器单元测试外，完整测试套件还会对 11 个随附的混淆样本（包括 obfuscator.io、JSFuck 和 Caesar Plus 脚本）进行反混淆，并与保存的预期输出逐一比对。",
+      "采用 MIT 许可，版权归 HUMAN Security（2025）；该分支另加了 Ben Baryo 的 2026 年版权行。仓库原为 PerimeterX/restringer，现已重定向到 HumanSecurity/restringer。"
+    ]
   }
 }

@@ -7865,5 +7865,41 @@
       "https://github.com/fkie-cad/dewolf/blob/3c389e18f03cd922f4b424a62d3717dac6fe3eee/LICENSE",
       "https://github.com/fkie-cad/dewolf/releases/tag/v2026.7.11"
     ]
+  },
+  {
+    "id": "restringer",
+    "name": "REstringer",
+    "url": "https://github.com/HumanSecurity/restringer",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "HUMAN Security's Node.js JavaScript deobfuscator. It identifies the obfuscation type, runs matching processors for obfuscator.io, Caesar Plus and array-based patterns, then iterates 40+ AST modules that rebuild strings, resolve expressions and calls and simplify control flow; unsafe modules evaluate code in a sandbox. It works as a CLI or library.",
+    "description_zh": "HUMAN Security 推出的 Node.js JavaScript 反混淆工具。它先识别混淆类型，针对 obfuscator.io、Caesar Plus 和基于数组的混淆模式运行相应处理器，再迭代执行 40 多个 AST 模块，重建字符串、求解表达式和函数调用并简化控制流；其中不安全模块会在沙箱中求值代码。可作为命令行工具或库使用。",
+    "evidence_url": "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed HumanSecurity main commit (2025-12-07) is v2.1.0 plus one README edit removing the retired REstringer.tech web tool. The author now continues the project in his fork ctrl-escp/restringer, which the npm package lists as its repository: npm 2.2.0 (2026-05-09) and 2.3.0 (2026-08-30) come from it, and at 2.3.0 its README requires Node.js 22+, makes isolated-vm optional and adds Node, Deno and Bun subprocess sandboxes, so npm installs code newer than the reviewed source.",
+      "The reviewed source needs Node.js 20+ (22+ recommended) and installs as a global CLI or a module. It depends on flast, obfuscation-detector, commander and isolated-vm 5.0.4, a native module that CI builds with Python and g++. Output goes to stdout or <input>-deob.js; -m caps iterations, and -c removes dead nodes, which README marks unsafe.",
+      "Input is an obfuscated JavaScript file or string. Safe modules transform the AST without evaluating code; unsafe modules evaluate parts of the input with eval() inside an isolated-vm sandbox to resolve expressions and calls.",
+      "GitHub Actions runs npm test on Node.js 20 and 22. Besides module and processor unit tests, the full suite deobfuscates 11 bundled obfuscated samples, among them obfuscator.io, JSFuck and Caesar Plus scripts, and compares each result with a stored expected output.",
+      "MIT, copyright 2025 HUMAN Security; the fork adds a 2026 copyright line for Ben Baryo. The repository was formerly PerimeterX/restringer, which now redirects to HumanSecurity/restringer."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/package.json",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/src/processors/README.md",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/.github/workflows/node.js.yml",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/tests/samples.test.js",
+      "https://github.com/HumanSecurity/restringer/tree/d9eae6907e14581b7934940ee0407f505b7a212b/tests/resources",
+      "https://github.com/HumanSecurity/restringer/blob/d9eae6907e14581b7934940ee0407f505b7a212b/LICENSE",
+      "https://github.com/HumanSecurity/restringer/releases/tag/v2.1.0",
+      "https://github.com/ctrl-escp/restringer/blob/5fe8ac8d23723810fba170972c12b4433ffba111/README.md",
+      "https://github.com/ctrl-escp/restringer/blob/5fe8ac8d23723810fba170972c12b4433ffba111/package.json",
+      "https://registry.npmjs.org/restringer/2.2.0",
+      "https://registry.npmjs.org/restringer/2.3.0"
+    ]
   }
 ]
