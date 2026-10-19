@@ -67,7 +67,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [2akouwu/reverify](https://github.com/2akouwu/reverify) — Stop your AI from making things up — it proposes, deterministic tools decide, every claim checked against ground truth with evidence. Grounded facts and context survive resets. Reverse engineering is the proving ground. MCP server + CLI. **[1,297 stars]** · Curated: [Reverify](https://awesomerea.org/resources/reverify-claim-verifier/)
 - [rdbo/libmem](https://github.com/rdbo/libmem) — Advanced Game Hacking Library for C, Modern C++, Rust and Python (Windows/Linux/FreeBSD) (Process/Memory Hacking) (Hooking/Detouring) (Cross Platform) (x86/x64) (DLL/SO Injection) (Internal/External) (Assembler/Disassembler) **[1,263 stars]**
 - [horsicq/XPEViewer](https://github.com/horsicq/XPEViewer) — PE file viewer/editor for Windows, Linux and MacOS. **[1,241 stars]**
-- [amruth-sn/kong](https://github.com/amruth-sn/kong) — The world's first agentic reverse engineer. **[1,227 stars]**
+- [amruth-sn/kong](https://github.com/amruth-sn/kong) — The world's first agentic reverse engineer. **[1,227 stars]** · Curated: [Kong](https://awesomerea.org/resources/kong-agentic-reverse-engineer/)
 - [google/binexport](https://github.com/google/binexport) — Export disassemblies into Protocol Buffers **[1,214 stars]**
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools - Portable executable (PE) manipulation toolkit **[1,201 stars]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Official Hex-Rays IDA MCP Server. **[1,196 stars]** · Curated: [Hex-Rays IDA MCP](https://awesomerea.org/resources/hex-rays-ida-mcp/)

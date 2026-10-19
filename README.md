@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 380](https://img.shields.io/badge/resources-380-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 381](https://img.shields.io/badge/resources-381-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (37) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (38) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2181,6 +2181,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Gradio chat application whose LangGraph ReAct agent analyses an uploaded x86 Linux ELF binary: it lists and disassembles functions, decompiles them with Ghidra, drives radare2 and gdb, and runs shell commands and Python scripts in a privileged Kali Linux runner container. Workspaces are keyed by the binary’s SHA-256, so uploading the same file again restores the session. It came out of a school research project, and its CTF results are the authors’ own report.
 
   Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/decompai/)
+
+- [**Kong**](https://github.com/amruth-sn/kong)
+
+  Command-line pipeline that runs Ghidra in-process through PyGhidra and asks Claude, OpenAI or OpenAI-compatible models to name the functions, types and parameters of a stripped binary, working bottom-up through the call graph so callers see already-named callees. It matches known library and cryptographic signatures first, sends functions whose decompilation looks obfuscated through a tool-using deobfuscation pass with z3-based simplification, applies results to the Ghidra program and exports annotated C and an analysis.json file. Its README calls it the first agentic reverse engineer; that label and its accuracy and cost figures are the author’s claims.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/kong-agentic-reverse-engineer/)
 
 <a id="related-collections"></a>
 ### Related Collections

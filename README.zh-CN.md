@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 380](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-380-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 381](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-381-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (37) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (38) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2182,6 +2182,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Gradio 对话应用，其 LangGraph ReAct 智能体分析使用者上传的 x86 Linux ELF 二进制文件：列出并反汇编函数，用 Ghidra 反编译，调用 radare2 和 gdb，并在特权模式的 Kali Linux 运行容器中执行 shell 命令和 Python 脚本。工作区以二进制文件的 SHA-256 为键，再次上传同一文件即可恢复会话。该项目源自一项学校研究计划，其 CTF 成绩为作者自述。
 
   集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decompai/)
+
+- [**Kong：基于 Ghidra 的大模型去符号二进制分析流水线**](https://github.com/amruth-sn/kong)
+
+  命令行分析流水线，通过 PyGhidra 在进程内运行 Ghidra，请 Claude、OpenAI 或兼容 OpenAI 接口的模型为去符号二进制文件中的函数、类型和参数命名，并沿调用图自底向上处理，使调用者能看到已命名的被调函数。它先匹配已知库函数与密码算法特征，再把反编译结果疑似混淆的函数交给可调用工具、借助 z3 化简的去混淆环节，将结果应用到 Ghidra 程序中，并导出带注释的 C 代码和 analysis.json 文件。README 称其为首个智能体逆向工程师，这一说法以及其中的准确性和成本数据均为作者陈述。
+
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/kong-agentic-reverse-engineer/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集

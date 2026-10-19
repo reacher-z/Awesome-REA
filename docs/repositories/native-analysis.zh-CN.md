@@ -67,7 +67,7 @@
 - [2akouwu/reverify](https://github.com/2akouwu/reverify) — 阻止 AI 凭空编造：由 AI 提出建议，确定性工具作出判定，每项断言均依据真实数据与证据核验。经过验证的事实和上下文可在重置后保留，以逆向工程作为验证场景。提供 MCP 服务器与命令行工具。 **[1,297 星标]** · 精选：[Reverify：用确定性工具核验模型二进制分析断言](https://awesomerea.org/zh/resources/reverify-claim-verifier/)
 - [rdbo/libmem](https://github.com/rdbo/libmem) — 适用于 C、现代 C++、Rust 和 Python 的高级游戏破解库，支持 Windows/Linux/FreeBSD、进程/内存操作、Hook/Detour、跨平台、x86/x64、DLL/SO 注入、内部/外部模式及汇编/反汇编。 **[1,263 星标]**
 - [horsicq/XPEViewer](https://github.com/horsicq/XPEViewer) — 适用于 Windows、Linux 和 macOS 的 PE 文件查看器与编辑器。 **[1,241 星标]**
-- [amruth-sn/kong](https://github.com/amruth-sn/kong) — 全球首个智能体式逆向工程师。 **[1,227 星标]**
+- [amruth-sn/kong](https://github.com/amruth-sn/kong) — 全球首个智能体式逆向工程师。 **[1,227 星标]** · 精选：[Kong：基于 Ghidra 的大模型去符号二进制分析流水线](https://awesomerea.org/zh/resources/kong-agentic-reverse-engineer/)
 - [google/binexport](https://github.com/google/binexport) — 将反汇编结果导出为 Protocol Buffers。 **[1,214 星标]**
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools：可移植可执行文件（PE）操作工具包。 **[1,201 星标]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Hex-Rays 官方 IDA MCP 服务器。 **[1,196 星标]** · 精选：[Hex-Rays IDA MCP](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
