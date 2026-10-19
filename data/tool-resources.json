@@ -9541,5 +9541,29 @@
       "https://github.com/QBDI/QBDI/releases/tag/v0.12.1",
       "https://pypi.org/project/PyQBDI/0.12.1/"
     ]
+  },
+  {
+    "id": "medusa-framework",
+    "name": "MEDUSA",
+    "url": "https://github.com/Ch0pin/medusa",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Modular Frida-based framework for runtime analysis of Android and iOS apps the analyst is authorized to test. From a single coordinated script it loads plug-in modules to inspect network and WebView activity, trace API calls, examine memory and cryptographic operations, monitor malware behavior, and handle protections such as SSL pinning. The README reports it ships with over 90 reusable modules.",
+    "description_zh": "基于 Frida 的模块化框架，用于对分析者有权测试的 Android 与 iOS 应用进行运行时分析。通过单个协调脚本加载插件模块，检查网络与 WebView 活动、跟踪 API 调用、查看内存与加密操作、监控恶意软件行为，并处理 SSL 固定等保护。README 称其内置 90 多个可复用模块。",
+    "evidence_url": "https://github.com/Ch0pin/medusa/blob/a7bd929f297f0725a5e4d2e3952874a757d4e2fc/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/Ch0pin/medusa/blob/a7bd929f297f0725a5e4d2e3952874a757d4e2fc/LICENSE"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires Python 3 and runs on Linux or macOS, with the README noting limited functionality on Windows; a preconfigured Dockerfile is also provided.",
+      "Instrumenting a target needs a rooted device or emulator with adb and a running Frida server; the tool operates only on apps the analyst is authorized to test.",
+      "The README reports 90+ reusable modules and an optional MCP server component; it names capabilities such as SSL-pinning handling, which this record does not restate as a procedure. GPL-3.0 licensed; the repository ships the framework and its modules, no application packages."
+    ]
   }
 ]

@@ -3636,5 +3636,13 @@
       "README 说明 QBDI 不处理信号、新线程创建和 C++ 异常。其文档还指出，插桩工具与目标程序共用堆和库，因此堆分配器等不可重入代码应交给插桩范围之外的执行代理处理，且操作系统加载器本身无法插桩。用户需自备目标程序和注入途径。",
       "LICENSE.txt 说明 QBDI 采用 Apache-2.0 许可，并列出静态链接的组件：LLVM（Apache-2.0 附 LLVM 例外）、spdlog、fmtlib、Catch2、pybind11，以及采用 GPLv3/Apache-2.0 的 SHA-256 实现；GitHub 无法识别这份合并许可文件。本条目未对任何程序进行插桩。"
     ]
+  },
+  "medusa-framework": {
+    "name": "MEDUSA",
+    "requirements": [
+      "需要 Python 3，可在 Linux 或 macOS 上运行，README 指出在 Windows 上功能有限；同时提供预配置的 Dockerfile。",
+      "对目标进行插桩需要已 root 的设备或模拟器，并具备 adb 与运行中的 Frida server；工具仅用于分析者有权测试的应用。",
+      "README 称其提供 90 多个可复用模块以及可选的 MCP 服务组件；它列出了诸如 SSL 固定处理等能力，本记录不复述任何具体步骤。采用 GPL-3.0 许可证；仓库仅包含框架及其模块，不含任何应用安装包。"
+    ]
   }
 }
