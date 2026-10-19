@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
 
-**182 repositories** · 2026-10-16 UTC
+**183 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -13,6 +13,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — Automagically reverse-engineer REST APIs via capturing traffic **[9,652 stars]** · Curated: [mitmproxy2swagger](https://awesomerea.org/resources/mitmproxy2swagger/)
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — The WebAssembly Binary Toolkit **[8,166 stars]** · Curated: [WABT](https://awesomerea.org/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — Reverse engineering WhatsApp Web. **[6,508 stars]** · Curated: [whatsapp-web-reveng: documenting the legacy WhatsApp Web protocol](https://awesomerea.org/resources/whatsapp-web-reveng-legacy-protocol-case/)
+- [jindrapetrik/jpexs-decompiler](https://github.com/jindrapetrik/jpexs-decompiler) — JPEXS Free Flash Decompiler (FFDec) is open-source Flash SWF decompiler and editor. Extract and edit ActionScript, images, sounds, shapes, fonts, and other SWF resources. **[5,941 stars]** · Curated: [JPEXS Free Flash Decompiler (FFDec)](https://awesomerea.org/resources/jpexs-decompiler/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — The first AI agent that builds permissionless integrations through reverse engineering platforms' internal APIs. **[4,780 stars]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — Cross-platform GUI tool for decompiling WeChat mini programs, with .wxapkg file scanning, decryption, and unpacking. **[4,261 stars]** · Curated: [wxapkg](https://awesomerea.org/resources/wux1an-wxapkg/)
 - [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — Extract any website’s design system into tokens in seconds: logo, colors, typography, borders &amp; more. One command. **[3,647 stars]** · Curated: [Dembrandt](https://awesomerea.org/resources/dembrandt/)

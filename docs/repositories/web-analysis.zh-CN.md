@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**182 个仓库** · 2026-10-16 UTC
+**183 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -13,6 +13,7 @@
 - [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — 通过捕获流量，自动逆向分析 REST API。 **[9,652 星标]** · 精选：[mitmproxy2swagger](https://awesomerea.org/zh/resources/mitmproxy2swagger/)
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — WebAssembly 二进制工具包。 **[8,166 星标]** · 精选：[WABT](https://awesomerea.org/zh/resources/wabt/)
 - [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]** · 精选：[whatsapp-web-reveng：记录旧版 WhatsApp Web 协议](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
+- [jindrapetrik/jpexs-decompiler](https://github.com/jindrapetrik/jpexs-decompiler) — JPEXS Free Flash Decompiler（FFDec）是开源 Flash SWF 反编译器与编辑器，可提取和编辑 ActionScript、图像、声音、形状、字体及其他 SWF 资源。 **[5,941 星标]** · 精选：[JPEXS Flash 反编译器（FFDec）](https://awesomerea.org/zh/resources/jpexs-decompiler/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — 首个通过逆向分析平台内部 API 构建无需许可集成的 AI 智能体。 **[4,780 星标]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — 跨平台微信小程序反编译 GUI 工具，支持 .wxapkg 文件扫描、解密和解包。 **[4,261 星标]** · 精选：[wxapkg 微信小程序解包工具](https://awesomerea.org/zh/resources/wux1an-wxapkg/)
 - [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — 几秒内将任意网站的设计系统提取为设计令牌，包括标志、颜色、字体、边框等。一条命令即可完成。 **[3,647 星标]** · 精选：[Dembrandt 网站设计系统提取工具](https://awesomerea.org/zh/resources/dembrandt/)
