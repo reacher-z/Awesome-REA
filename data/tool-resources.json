@@ -8029,5 +8029,36 @@
       "https://github.com/2akouwu/reverify/releases/tag/v0.11.0",
       "https://pypi.org/project/reverify/0.10.0/"
     ]
+  },
+  {
+    "id": "wux1an-wxapkg",
+    "name": "wxapkg",
+    "url": "https://github.com/wux1an/wxapkg",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Desktop GUI for Windows and macOS, built with Wails, that unpacks WeChat mini-program .wxapkg packages for study. It scans the mini-program package folders of local WeChat 3.x and 4.x installations, including per-user folders, or takes a file or folder the user selects; packages that the PC client stores encrypted are decrypted first. Each packaged file is written to its recorded path, with optional beautification of JSON, HTML and JavaScript.",
+    "description_zh": "基于 Wails 构建的 Windows 与 macOS 桌面图形工具，用于解包微信小程序 .wxapkg 包以供研究。它会扫描本机微信 3.x 和 4.x 安装中的小程序包目录（包括各用户目录），也可处理用户选定的文件或目录；PC 客户端以加密形式存储的包会先行解密。包内每个文件都按其记录的路径写出，并可选择美化 JSON、HTML 和 JavaScript 代码。",
+    "evidence_url": "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v2.0.0, published 2026-04-16, with a Windows x64 executable and a macOS universal app; earlier v1.x releases shipped Windows executables only. The reviewed main commit adds only a settings dialog for the default output directory after that release.",
+      "The README names Windows and macOS as the supported platforms. Building from source needs Go 1.25 as declared in go.mod, the Wails v2 CLI and npm for the Vue frontend.",
+      "Input is .wxapkg packages already on the machine, found in WeChat's package folders or selected manually. The output is the files stored in the package: the reviewed code has no WXML or WXSS decompilation step, so compiled view code stays compiled, and reading mini-program information is still an unchecked item in the README's feature list.",
+      "No license file or license declaration was found, so public source availability is not a reuse grant. The README disclaimer limits use to learning and researching the design ideas and principles in software, with users bearing all legal responsibility; analyze only packages you are authorized to inspect. No packages were unpacked for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/wechat/core.go",
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/wechat/core_windows.go",
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/wechat/core_macos.go",
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/wechat/beautify.go",
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/go.mod",
+      "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/.github/workflows/release.yml",
+      "https://github.com/wux1an/wxapkg/releases/tag/v2.0.0"
+    ]
   }
 ]
