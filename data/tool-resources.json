@@ -7196,5 +7196,37 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "tiny-dec",
+    "name": "tiny-dec",
+    "url": "https://github.com/ZhangZhuoSJTU/tiny-dec",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Zhuo Zhang's small educational decompiler for 32-bit RISC-V (RV32I) ELF files, written in Python to teach how decompilation works rather than to compete with production decompilers. Its 19 deliberately separate stages run from ELF loading, decoding and p-code lifting through SSA, stack, type, variable and range recovery to control-flow structuring and C output, and the CLI can stop at any stage to print that stage's intermediate result. The README also offers a Claude Code plugin whose AI tutor walks learners through the stages with quizzes and exercises.",
+    "description_zh": "Zhuo Zhang 用 Python 编写的小型教学用反编译器，面向 32 位 RISC-V（RV32I）ELF 文件，目的是讲清反编译的工作原理，而非与生产级反编译器竞争。它把流程刻意拆成 19 个独立阶段：从 ELF 加载、指令解码和 p-code 提升，经过 SSA、栈、类型、变量和取值范围恢复，再到控制流结构化和 C 代码输出；命令行可在任一阶段停下，打印该阶段的中间结果。README 还提供一个 Claude Code 插件，其中的 AI 导师会结合小测和练习，带学习者逐个阶段学习。",
+    "evidence_url": "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 4f5f1e0 (2026-05-27), the repository's only commit; the package is version 0.1.0, and the repository's test and lint workflows passed on that commit. The README calls it a teaching tool, not a production decompiler: it handles RV32I only, and unresolved expressions stay in the output as raw<...> rather than being guessed. A live demo site at tiny-dec.zzhang.xyz shows the stages.",
+      "Input is an RV32I ELF file. The repository commits 13 C test programs and 39 RV32I builds of them (-O0 and -O2, PIE and non-PIE) under tests/fixtures, so no outside binaries are needed. Rebuilding them or compiling one's own C code needs clang, lld and LLVM with RISC-V support, installed locally or through the included Docker development image.",
+      "Requires Python 3.12+ and Poetry, and the loader leaves ELF parsing to pwntools; the README lists Ubuntu/Debian system packages, and a devcontainer is included. The AI tutor needs Claude Code and installs as a plugin from the repository's marketplace manifest; its skill files hold one lesson guide per pipeline stage.",
+      "MIT license (Copyright 2026 Zhuo Zhang). The 500-test count and the example outputs are the author's. This collection did not install or run the decompiler, try the tutor or judge output quality. The tutor is an AI teaching aid, not an REA integration, and the repository does not mention REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/pyproject.toml",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/LICENSE",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/DEVELOPMENT_NOTES.md",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/.github/workflows/ci.yml",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/blob/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/.claude-plugin/plugin.json",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/tree/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/skills/teach-decompilation",
+      "https://github.com/ZhangZhuoSJTU/tiny-dec/tree/4f5f1e00a147ba1c1471d2e01f9dd4beb5a693d6/tests/fixtures",
+      "https://tiny-dec.zzhang.xyz/"
+    ]
   }
 ]
