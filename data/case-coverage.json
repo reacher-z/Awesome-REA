@@ -15301,13 +15301,24 @@
         "https://x.com/i/status/2111626304097538278",
         "https://x.com/i/status/2111625626893660269"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "The author's two posts (2026-10-18) link a dated article that documents an REA 6.5.0 study: a source reading plus 1,012 recorded calls across 27 artifact classes, with its testbed, coverage, refusal types, latency, size limits and stated threats to validity. Full mapping covers this author-reported evaluation of REA's Evidence model and unknown ledger as a community case study; it reports no reconstruction or vulnerability. The per-call records it describes are not linked, and nothing was rerun here.",
+      "reason_zh": "作者的两条帖子（2026-10-18）链接到一篇注明日期的文章，记录了一项 REA 6.5.0 研究：阅读源码，并在 27 类分析对象上进行 1,012 次有记录的调用，说明了测试环境、覆盖范围、拒绝类型、延迟、大小上限及作者承认的有效性威胁。完整映射将这项作者自述的 REA Evidence 模型与未知项台账评估作为社区案例收录；文章未报告任何重建或漏洞。文中所述的逐次调用记录未提供链接，本合集也未重新运行。",
+      "primary_evidence_urls": [
+        "https://no-flag.com/2026/10/18/REA-paper/",
+        "https://x.com/Noflag404/status/2111625626893660269",
+        "https://x.com/Noflag404/status/2111626304097538278"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "noflag-rea-evidence-architecture-study",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:claude-js-game-ad-behavior-inspection",
@@ -16269,18 +16280,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 209,
+      "already-curated": 210,
       "insufficient-evidence": 279,
-      "pending": 103
+      "pending": 102
     },
     "units_by_state": {
-      "already-curated": 207,
+      "already-curated": 208,
       "insufficient-evidence": 279,
-      "pending": 103
+      "pending": 102
     },
-    "primary_reviewed_units": 426,
-    "catalog_linked_occurrences": 223,
-    "distinct_resource_ids": 213,
+    "primary_reviewed_units": 427,
+    "catalog_linked_occurrences": 224,
+    "distinct_resource_ids": 214,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

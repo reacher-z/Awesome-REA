@@ -2639,5 +2639,32 @@
       "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/LICENSE",
       "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/9daa5c8b3b8871fd643df636413f7d9e74520669/evals/fixtures/wycheproof-LICENSE.txt"
     ]
+  },
+  {
+    "id": "noflag-rea-evidence-architecture-study",
+    "name": "Show Your Work: a measured dissection of REA's evidence architecture",
+    "url": "https://no-flag.com/2026/10/18/REA-paper/",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "An unofficial field study that reads REA's source and then drives the running server through 1,012 recorded calls across 27 artifact classes, measuring its content-addressed Evidence records, revision-chained unknown ledger, typed refusals, cold starts and response limits. The author maps those mechanisms onto vulnerability-research agents as an argument for not overclaiming. It evaluates REA's tool surface; it is not a reconstruction or a vulnerability finding.",
+    "description_zh": "一篇非官方的实测研究：先阅读 REA 源码，再在 27 类分析对象上对运行中的服务器发出 1,012 次有记录的调用，测量其按内容寻址的 Evidence 记录、按修订串联的未知项台账、带类型的拒绝、冷启动及响应上限。作者把这些机制对应到漏洞研究智能体上，论证为何不应过度声称结论。它评估的是 REA 的工具接口，而非重建案例或漏洞发现。",
+    "evidence_url": "https://no-flag.com/2026/10/18/REA-paper/",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Published 2026-10-18 on the author's HackThe4O4 blog under the byline Noflag, who calls it unofficial, not peer-reviewed and unaffiliated with REA's maintainers, and says the official source wins where they disagree. The main study used the published rea-agents 6.5.0 package for 993 of the 1,012 calls; 19 calls comparing two deep providers ran a build of commit fe2a398dd, 286 commits later.",
+      "All runs used one Debian-derived Linux VM (4 vCPU, 7.9 GB RAM) with operator-supplied engines, including a headless Ghidra 12.x decompiler, GDB, Rizin, a packet dissector, firmware tools, headless Chromium and Electron; the Android device was a container sharing the host kernel. The decompiler startup deadline was raised to 1,200 s, and macOS-only tools, a GUI-attached disassembler's cursor tools and an unlicensed commercial Java decompiler could not be exercised.",
+      "The author reports calling all 207 advertised tools, 178 with at least one success, and 454 Evidence-bearing replies. Oversized replies were refused with a retained-Evidence pointer, but a 10.1 MiB request dropped the connection without a reply. Decompiler cold starts ranged from 14 s to 827 s, and two schema switches cut the default 3.09 MB tool catalog to 215 KB.",
+      "Timings come from one lightly loaded VM and are offered as orders of magnitude. The calls came from the author's scripted campaign driver acting as an informed caller, and the article names no analyzed targets. The security-agent mapping is presented as argument, not a built system. Per-call records, campaign files and scripts are described as accompanying the research but are not linked from the page, so this collection could not and did not rerun anything.",
+      "This evaluates REA's evidence model and tool surface; no reconstruction, exploit or vulnerability is reported. The page states no license; REA, the third-party engines and the analyzed artifacts keep their own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://x.com/Noflag404/status/2111625626893660269",
+      "https://x.com/Noflag404/status/2111626304097538278"
+    ]
   }
 ]
