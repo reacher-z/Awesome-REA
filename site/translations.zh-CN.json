@@ -3822,5 +3822,14 @@
       "GEF 依赖 GDB API 以及 /proc/<pid> 等 Linux 特有的信息来源，因此部分功能在定制或加固的系统上可能无法使用，堆命令也只支持 glibc 分配器。qemu 模式需要本地保存一份被调试的二进制，因为 QEMU 的 GDB stub 无法传输文件。README 将其定位为面向漏洞利用开发者和逆向工程人员的工具；本条目只涉及其调试与检查用途。",
       "采用 MIT 许可。测试使用 pytest，并须在 GDB 编译时所用的 Python 版本下运行。本次未运行任何调试会话。"
     ]
+  },
+  "z0f-reverse-engineering-course": {
+    "name": "Z0FCourse 逆向工程课程",
+    "requirements": [
+      "审阅提交为 ee4b070（2026-07-25）。大部分课程写于 2019–2020 年，目录将第 7 章（Windows）和第 8 章（Generic Table）标为未完成；环境配置页和 Before You Begin 页面预告的 .NET 及其他架构内容并不在仓库中。之后的提交多为小修正、格式整理、更新 PDF 副本和添加链接。README 推荐两个 TryHackMe 房间，作为第 1–6 章的交互式版本。",
+      "第 1 章列出的前置要求是熟练掌握 C/C++、面向对象编程和指针，并强烈建议先学过 x86/x64 汇编。课程需要 64 位 Windows 系统，在进入恶意软件内容之前虚拟机并非必需；环境配置页列为必需的有 Microsoft Visual C++ Redistributable、x64dbg（可选 xAnalyzer 插件），以及 dnSpy 或 ILSpy，并强烈推荐 Ghidra 和 Visual Studio。",
+      "课程中的目标程序均由作者编写，并连同源码放在 FilesNeeded 中：第 6 章的 DLL、两个调用它的宿主程序及调试符号，另有一个恶意软件样本程序及其投放器，对应尚未撰写的章节，FilesNeeded 注明使用风险自负。第 8 章则分析 Windows 自带的 ntdll.dll，仓库并未包含该文件。仓库还提交了各章的 PDF 副本，README 提醒这些 PDF 可能落后于 Markdown 课程。",
+      "仓库中的 License.md 为 AGPL-3.0 全文；FAQ 另称仅允许为个人使用而下载，再分发和教学使用则以许可证为准。本合集在所审阅提交中阅读了 README、环境配置页、目录、FilesNeeded 说明、FAQ 和许可证，没有实际学习课程或运行示例程序；课程中也未提及 AI 或 REA。"
+    ]
   }
 }

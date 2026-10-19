@@ -10203,5 +10203,36 @@
       "https://github.com/hugsy/gef/blob/49c07dc60624f264d40b5c6ea39b2bf3a4e9958f/LICENSE",
       "https://github.com/hugsy/gef/releases/tag/2026.01"
     ]
+  },
+  {
+    "id": "z0f-reverse-engineering-course",
+    "name": "Z0FCourse Reverse Engineering",
+    "url": "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A free English course by Z0F on reverse engineering 64-bit Windows programs, which its README pitches as taking learners from beginner to intermediate. Markdown lessons move from number systems, x64 registers, memory layout and calling conventions to x64dbg and Ghidra, then reverse small samples and an author-written DLL, recovering a Player class and calling the DLL's exports from a program of one's own. The unfinished later chapters introduce Windows internals and reverse ntdll's generic-table functions.",
+    "description_zh": "Z0F 编写的免费英文课程，讲解如何逆向 64 位 Windows 程序，README 称目标是帮助学习者从入门进阶到中级。Markdown 课程从数制、x64 寄存器、内存布局和调用约定讲起，过渡到 x64dbg 与 Ghidra，再逆向若干小样本以及作者自己编写的 DLL，还原其中的 Player 类，并在自己编写的程序中调用该 DLL 的导出函数。尚未完成的后续章节介绍 Windows 内部机制，并逆向 ntdll 中的 generic table 系列函数。",
+    "evidence_url": "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit ee4b070 (2026-07-25). Most lessons were written in 2019–2020, and the table of contents marks Chapter 7 (Windows) and Chapter 8 (Generic Table) as work in progress; the .NET and other-architecture material promised by the setup and Before You Begin pages is not in the tree. Later commits are small fixes, formatting, refreshed PDF copies and new links. The README points to two TryHackMe rooms as an interactive version of chapters 1–6.",
+      "Chapter 1 lists a good understanding of C/C++, object-oriented programming and pointers as prerequisites and highly recommends prior x86/x64 assembly. The course needs a 64-bit Windows system, a virtual machine being optional until the malware material; setup names the Microsoft Visual C++ Redistributable, x64dbg (with the optional xAnalyzer plugin) and dnSpy or ILSpy as required, with Ghidra and Visual Studio highly recommended.",
+      "The target programs are the author's own and ship with their source in FilesNeeded: the Chapter 6 DLL with two host programs and debug symbols, plus a sample malware program and dropper for a chapter not yet written, which FilesNeeded marks as use-at-your-own-risk. Chapter 8 instead analyzes Windows's own ntdll.dll, which is not included. PDF copies of the chapters are also committed, and the README warns they may lag the Markdown lessons.",
+      "The repository's License.md is the AGPL-3.0 text; the FAQ adds that downloading is allowed for personal use only and defers redistribution and teaching use to the license. This collection read the README, setup, table of contents, FilesNeeded notes, FAQ and license at the reviewed commit; it did not work through the lessons or run the sample programs, and nothing in the course mentions AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/TableOfContents.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/Chapter%201%20-%20Introduction/1.0%20Introduction.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/Chapter%201%20-%20Introduction/1.2%20Setup.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/FilesNeeded/FilesNeeded.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/Chapter%208%20-%20Generic%20Table/8.00%20GenericTable.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/FAQ.md",
+      "https://github.com/0xZ0F/Z0FCourse_ReverseEngineering/blob/ee4b07095d6f81ba5e5c7e0b70f7cb39e3af83b1/License.md"
+    ]
   }
 ]
