@@ -4045,5 +4045,15 @@
       "局限性文档指出，加壳或混淆的程序、安装程序以及 AutoIt 等打包程序会导致结果有误或不完整，分散在包装函数或子函数中的功能也无法匹配；当规则检测到加壳或安装程序时，capa 会发出警告。匹配结果是基于规则的功能迹象，并非已确认的行为。",
       "采用 Apache-2.0 许可，独立的 capa-rules 仓库同样如此。v10.0.0 修复了通过特制 vivisect .viv 工作区文件执行代码的问题，该问题影响 v9.4.0 及更早版本；现在仅在设置 CAPA_LOAD_VIV_WORKSPACE=1 时才会加载已有工作区。递归克隆源码还会拉取测试文件子模块，安装指南警告其中包含大量恶意软件样本。本次未分析任何样本。"
     ]
+  },
+  "ruffle-flash-player-case": {
+    "name": "Ruffle：用 Rust 重新实现的 Adobe Flash Player",
+    "requirements": [
+      "README 称 Ruffle 对 ActionScript 1、2、3 的支持已相当不错，但远未完成。审阅时，网站的兼容性页面报告 AVM1 语言支持 99%、API 82%，AVM2 语言支持 90%、API 82%，并承认 AVM1 内容存在一些图形不准确之处。审阅时的版本为 v0.7.1，发布于 2026-10-07，说明称除修复扩展发布问题外与 v0.7.0 相同；夜间构建仍在持续，所审阅的 master 分支提交比该版本多 73 个提交。",
+      "使用者需自行提供 SWF 文件或嵌入它们的网页。发布资源包括 Linux（x86_64、i686 和 aarch64）、macOS 通用版和 Windows（x86 与 x86_64）桌面构建、自托管网页包和浏览器扩展包，以及可复现的源码归档；README 还提到 Firefox 和 Chrome 扩展、Flathub、npm，以及独立的 Android 项目。",
+      "构建需要最新稳定版 Rust（工作区使用 2024 edition），并需在 PATH 中提供 Java 以编译 ActionScript 3 内置类；Linux 构建需要 ALSA、udev、fontconfig、FreeType 和 OpenSSL 开发包。网页构建还需要 wasm32-unknown-unknown 目标、Node.js 与 npm 7+、wasm-bindgen-cli 0.2.127 以及 Binaryen。附带的 scanner 和 exporter 工具可批量解析 SWF 并生成 PNG 截图。",
+      "贡献者被要求将每个测试 SWF 与其源文件一同提交，预期的 trace 输出和截图来自运行调试版 Flash Player 的结果；已知失败可在测试的 test.toml 中标注。这些测试检验 Ruffle 在自制测试文件上的行为，并不证明它在所有内容上都与 Flash Player 等价；本次审阅未运行任何测试。",
+      "采用 MIT 或 Apache-2.0 双许可（GitHub 显示为 NOASSERTION）；LICENSE.md 列出第三方依赖的许可证，仓库还附带来自 Flex SDK 的 asc.jar，用于编译其 ActionScript 类。SWF 内容保留各自权利。所审来源未确立 REA 或 AI 使用。"
+    ]
   }
 }

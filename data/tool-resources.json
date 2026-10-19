@@ -10997,5 +10997,40 @@
       "https://github.com/mandiant/capa/releases/tag/v10.0.0",
       "https://pypi.org/project/flare-capa/10.0.0/"
     ]
+  },
+  {
+    "id": "ruffle-flash-player-case",
+    "name": "Ruffle: a Rust reimplementation of Adobe Flash Player",
+    "url": "https://github.com/ruffle-rs/ruffle",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "website",
+      "game"
+    ],
+    "description_en": "Reimplements Adobe Flash Player in Rust so that SWF content, from ActionScript 1/2 (AVM1) to ActionScript 3 (AVM2), runs in a native desktop player or in browsers through WebAssembly, as a self-hosted script or a browser extension. Its contributor guide says behavior comes from observing Flash Player's output or from license-compatible sources such as Adobe's open avmplus code, and forbids decompiling Flash Player, Flash Professional or Animate. Regression tests run contributor-made SWFs and compare their trace output, and optionally rendered images, with captures from the official debug Flash Player.",
+    "description_zh": "用 Rust 重新实现 Adobe Flash Player，使从 ActionScript 1/2（AVM1）到 ActionScript 3（AVM2）的 SWF 内容能在原生桌面播放器中运行，或通过 WebAssembly 以自托管脚本或浏览器扩展的形式在浏览器中运行。其贡献指南称，行为依据对 Flash Player 输出的观察或 Adobe 开源的 avmplus 等许可兼容来源确定，并禁止反编译 Flash Player、Flash Professional 或 Animate。回归测试运行贡献者自制的 SWF，将其 trace 输出（以及可选的渲染图像）与官方调试版 Flash Player 的记录进行比较。",
+    "evidence_url": "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README says Ruffle supports ActionScript 1, 2 and 3 pretty well but is not finished. At review, the website's compatibility page reported 99% of the AVM1 language and 82% of its API, and 90% of the AVM2 language and 82% of its API, and acknowledged graphical inaccuracies in AVM1 content. Release at review: v0.7.1, published 2026-10-07 and described as equivalent to v0.7.0 apart from extension-publishing fixes; nightly builds continue, and the reviewed master commit is 73 commits ahead.",
+      "Users supply the SWF files or the pages that embed them. Release assets cover Linux (x86_64, i686 and aarch64), macOS universal and Windows (x86 and x86_64) desktop builds, self-hosted web and browser-extension packages and a reproducible source archive; the README also points to Firefox and Chrome extensions, Flathub, npm and a separate Android project.",
+      "Building needs the latest stable Rust (the workspace uses the 2024 edition) and Java on PATH to compile the ActionScript 3 built-in classes; Linux builds need ALSA, udev, fontconfig, FreeType and OpenSSL development packages. Web builds also need the wasm32-unknown-unknown target, Node.js with npm 7+, wasm-bindgen-cli 0.2.127 and Binaryen. Bundled scanner and exporter tools bulk-parse SWFs and render PNG screenshots.",
+      "Contributors are asked to commit each test SWF with its source, and expected trace output and screenshots come from running the debug Flash Player; known failures can be marked in a test's test.toml. These tests check Ruffle's behavior on authored test files, not equivalence with Flash Player on all content; this review ran none of them.",
+      "Dual-licensed MIT or Apache-2.0 (GitHub reports NOASSERTION); LICENSE.md lists third-party dependency licenses, and the repository includes asc.jar from the Flex SDK to compile its ActionScript classes. SWF content keeps its own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/CONTRIBUTING.md#L30-L36",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/CONTRIBUTING.md#L167-L196",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/tests/README.md",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/web/README.md#L33-L82",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/core/src/avm2/globals/README.md#L111-L127",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/Cargo.toml",
+      "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/LICENSE.md",
+      "https://github.com/ruffle-rs/ruffle/releases/tag/v0.7.1",
+      "https://ruffle.rs/compatibility"
+    ]
   }
 ]
