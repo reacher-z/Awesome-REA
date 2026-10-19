@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 350](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-350-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 182](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 351](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-351-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (164) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (165) · [应用](#app) (49)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (182) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (183) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1015,6 +1015,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以可移植的 C++ 引擎重新实现 BioWare 的 Aurora 引擎及其后续衍生版本，在使用者已安装的游戏数据上运行，目标涵盖从《无冬之夜》到《龙腾世纪 II》的九款游戏。资源管理、大量 Aurora 文件格式、图形和声音均已实现，所有目标游戏都能在可自由飞行的旁观模式下显示部分游戏内场景。README 说明尚未实现正常的游戏流程，因此这是一个早期阶段的引擎案例，而非可以替代原版游玩的实现。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/xoreos-aurora-engine-case/)
+
+- [**DKC1Recomp：《大金刚国度》的静态重编译**](https://github.com/elliotttate/DKC1Recomp)
+
+  借助固定版本的 snesrecomp 分支，将 SNES 版《大金刚国度》北美 v1.0 静态重编译为 Windows、macOS 与 iOS 原生程序；该框架把 65816 代码转译为 C，并链接到模拟 SNES 硬件的运行时。函数边界、入口标志状态与跳转表目标均取自一份逐字节一致的社区反汇编，而非靠启发式发现；游戏代码在本地由使用者经校验的 ROM 生成。可选的宽屏、CRT 滤镜、MSU-1 音乐和 Dixie Kong Country 变体都是宿主端附加功能，README 称这一移植处于可游玩的初步运行阶段。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dkc1-recomp-case/)
 
 #### 工具、项目与集成
 

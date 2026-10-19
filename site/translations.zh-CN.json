@@ -3010,5 +3010,15 @@
       "CI 在 Linux 上针对下载的 Ghidra 用 Maven 构建扩展，运行离线与真实 Ghidra 的 Java 测试，以及 Python 单元测试和模拟服务器测试，并在 Windows 上运行 Python 单元测试。docs/TESTING.md 介绍了需手动启用的实机测试层级，会把测试样本导入运行中的 Ghidra，检查各接口并启动一次调试会话，同时说明调试器层级只部分恢复。亚秒级响应、批量操作减少 93% 的 API 调用、工作流经数百个函数打磨等均为作者说法；本合集未运行扩展、服务器或客户端。",
       "采用 Apache-2.0 许可；NOTICE 注明原始代码来自 LaurieWired 的 GhidraMCP，其仍保留的部分版权归原作者。Ghidra、MCP 客户端、模型服务及被分析的程序仍受各自条款约束。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "dkc1-recomp-case": {
+    "name": "DKC1Recomp：《大金刚国度》的静态重编译",
+    "requirements": [
+      "审阅版本为 main 上标记 v0.0.14 的提交（2026-09-15）；v0.0.15 至 v0.0.17 版（截至 2026-09-19）标记在不属于 main 的提交上。README 称移植处于可游玩的初步运行阶段，游戏代码已全部静态生成，并提供无界面验证宿主及 Windows、macOS 和 iOS 宿主。桌面宿主默认开启宽屏，在未经验证的场景中会安全回退到原始画面或黑边；自动生成的宽屏覆盖报告显示 256 个关卡入口中有 252 个从未观测过，Dixie 变体也未经全流程验证。",
+      "需自备无文件头的《大金刚国度》美版 v1.0 ROM（4 MiB），并按 README 给出的 SHA-256 校验；其他镜像会被拒绝，除非以哈希固定某一个经审查、只改动数据的修改版。可选的 Baby Kong 模组还会在内存中校验使用者自有的北美版 DKC3 ROM。README 声明仓库未提交任何 ROM 字节、提取的素材或生成的游戏代码；Dixie 变体内嵌了改版作者公开发布的 IPS 补丁，项目将其记录为刻意的例外，且只应用于经校验的原版 ROM。",
+      "从源码构建需初始化 snesrecomp 子模块，并以 ROM 运行 scripts/generate_snesrecomp.py，C 代码写入被 git 忽略的 generated/ 目录；recomp/*.cfg 只含取自 GPL-3 Yoshifanatic1 反汇编的名称、地址与结构元数据。Windows 构建需 Windows 10／11 x64、Visual Studio 2022 C++ 工具、Python 3、Git、CMake、Ninja 和支持 OpenGL 3.3 的显卡；arm64 macOS 应用面向 macOS 26，需 CMake、Ninja 与 SDL2；iOS 侧载 IPA 需 iOS／iPadOS 16 或更新版本，并须为接收者的设备重新签名。",
+      "验证依靠确定性工具而非一致性构建：带输入回放的无界面宿主、可重放的飞行记录包、存档状态连续性检查、路线脚本与回归约定，以及 C 和 Python 模型测试，其中许多需要私有 ROM。所审阅的代码树没有 CI 工作流；初步运行日志报告，v0.0.10 版 Windows 宿主通过了九次私有启动回放，并检查了实际运行窗口。本合集未构建或运行任何内容。",
+      "项目的宿主与工具代码采用 MIT；固定版本的 snesrecomp 分支采用 PolyForm Noncommercial License 1.0.0，cfg 元数据保留其 GPL-3 来源，Windows 安装包另含 SDL 2.30.9（zlib）和 miniz 3.0.2（MIT），Nintendo 与 Rare 仍保有游戏权利。AGENTS.md 为在仓库中工作的 Codex 及其他编程智能体规定了操作规则；未确立 REA 的使用，也不声称复现了运行结果。"
+    ]
   }
 }
