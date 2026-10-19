@@ -2990,5 +2990,15 @@
       "证据来自试玩、问题报告和日志：README 提到在 Nobara／Fedora 44 上的 Linux 测试、玩家在 Windows 上的测试，以及一次在 RTX 2060 上持续七分钟、帧率中位数为 27 FPS 的游玩记录。CI 工作流为拉取请求和经授权的手动发布构建 Linux 与 Windows 安装包，其 Linux 任务运行 C、Python 与 GPU 库单元测试，不涉及游戏内容，也没有自动化游戏流程测试。本合集仅审阅源码，未运行该移植或游戏。",
       "README 声明项目采用 GPL-2.0，并注明代码来自 HayatoG 此前的《最后的守护者》与《重力眩晕 2》移植、gow3_pc、bloodborne_pc、shadPS4 及其一个分支，以及一个《旺达与巨像》移植；各项实验性修复均注明来源提交。游戏及其素材的权利仍归其权利人所有。README 未提及任何 AI 模型或 REA；帖子所称的 AI 使用来自第三方账号，其链接的仓库是一个没有自身提交的分叉，因此未确立任何 AI 工作流。"
     ]
+  },
+  "xoreos-aurora-engine-case": {
+    "name": "xoreos：BioWare Aurora 引擎家族的开源重新实现",
+    "requirements": [
+      "所审阅的 master 快照（2026-09-04）仍标为 0.0.6 版；v0.0.6 发行版发布于 2020-08-03，仓库自称处于 pre-pre-alpha 阶段。README 列出的目标包括《无冬之夜》1 与 2、《星球大战：旧共和国武士》I 与 II、《翡翠帝国》、Sonic Chronicles: The Dark Brotherhood、《巫师》以及《龙腾世纪：起源》与《龙腾世纪 II》；0.0.6 更新说明称 KotOR 的教学关卡已部分可玩，其他游戏有部分菜单。所审文件未说明如何确定引擎行为。",
+      "需要使用者自有的受支持游戏副本，并完整安装或复制到硬盘；xoreos 从该目录读取游戏资源，仓库本身不含任何游戏文件。项目没有启动器界面：需在命令行中传入游戏路径启动，或使用 xoreos 保存在其 xoreos.conf 配置文件中的目标配置段。",
+      "可用 CMake 3.1+（C++17）或 autotools 构建，依赖 BUILDDEP.md 所列的库，包括 Boost 1.53+、SDL2 2.0.4+、OpenGL 2.1+、FreeType 2、OpenAL Soft，以及 MAD、Vorbis、FAAD、Xvid 和 libvpx 编解码库。README 提到提供 Windows、Mac OS X 与 GNU/Linux 的 32 位和 64 位 x86 发行版二进制；FAQ 说明移动设备因缺少 OpenGL ES 渲染器而不受支持，移植到游戏主机的可能性极低。",
+      "CI 在 Linux（GCC 与 Clang）、macOS 和 Windows（MSVC）上分别用 autotools 和 CMake 构建，并运行 Google Test 单元测试，覆盖 Aurora 文件格式和通用引擎代码。项目未公布与原版可执行文件的对比，各游戏进度记录在项目 wiki 上；本合集未构建或运行 xoreos。",
+      "README 与 COPYING 采用 GPL-3.0-or-later；doc/ 另附 GPLv2、LGPL-2.1 及字体许可文本，适用于引入的组件，各游戏的权利仍归其发行商所有。CONTRIBUTING.md 禁止提交 AI 生成的代码、注释和提交信息；所审来源未确立 REA 使用。"
+    ]
   }
 }

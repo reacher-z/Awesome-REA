@@ -7228,5 +7228,41 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
     ]
+  },
+  {
+    "id": "xoreos-aurora-engine-case",
+    "name": "xoreos: an open reimplementation of BioWare’s Aurora engine family",
+    "url": "https://github.com/xoreos/xoreos",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements BioWare’s Aurora engine and its later derivatives as a portable C++ engine that runs on the user’s installed game data, targeting nine games from Neverwinter Nights to Dragon Age II. Resource management, many Aurora file formats, graphics and sound are in place, and every target shows partial in-game areas in a free-flying spectator mode. README states that normal gameplay is not implemented yet, so this is an early-stage engine case, not a playable replacement.",
+    "description_zh": "以可移植的 C++ 引擎重新实现 BioWare 的 Aurora 引擎及其后续衍生版本，在使用者已安装的游戏数据上运行，目标涵盖从《无冬之夜》到《龙腾世纪 II》的九款游戏。资源管理、大量 Aurora 文件格式、图形和声音均已实现，所有目标游戏都能在可自由飞行的旁观模式下显示部分游戏内场景。README 说明尚未实现正常的游戏流程，因此这是一个早期阶段的引擎案例，而非可以替代原版游玩的实现。",
+    "evidence_url": "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master snapshot (2026-09-04) still reports version 0.0.6; release v0.0.6 dates from 2020-08-03, and the repository calls itself pre-pre-alpha. README targets Neverwinter Nights 1 and 2, Knights of the Old Republic I and II, Jade Empire, Sonic Chronicles: The Dark Brotherhood, The Witcher, and Dragon Age: Origins and II; the 0.0.6 notes report a partially playable KotOR tutorial and partial menus in other games. The reviewed files do not describe how engine behaviour was determined.",
+      "Needs the user’s own copy of a supported game, fully installed or copied to disk; xoreos reads its resources from that directory, and the repository contains no game files. There is no launcher GUI: a game starts from the command line with its path, or with a target section that xoreos saves in its xoreos.conf configuration file.",
+      "Builds use CMake 3.1+ with C++17, or autotools, against the libraries in BUILDDEP.md, including Boost 1.53+, SDL2 2.0.4+, OpenGL 2.1+, FreeType 2, OpenAL Soft and the MAD, Vorbis, FAAD, Xvid and libvpx codecs. README points to release binaries for Windows, Mac OS X and GNU/Linux on 32- and 64-bit x86; the FAQ says mobile devices lack an OpenGL ES renderer and console ports are highly unlikely.",
+      "CI builds with autotools and CMake on Linux (GCC and Clang), macOS and Windows (MSVC) and runs the Google Test unit tests, which cover Aurora file formats and shared engine code. No comparison with the original executables is published, and per-game progress is tracked on the project wiki; this collection did not build or run xoreos.",
+      "README and COPYING apply GPL-3.0-or-later; doc/ adds GPLv2, LGPL-2.1 and font licence texts for incorporated components, and the games keep their publishers’ rights. CONTRIBUTING.md forbids AI-generated code, comments and commit messages; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/NEWS.md",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/FAQ.md",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/BUILDDEP.md",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/CMakeLists.txt",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/CONTRIBUTING.md",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/COPYING",
+      "https://github.com/xoreos/xoreos/tree/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/doc",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/.github/workflows/linux_cmake_gcc.yml",
+      "https://github.com/xoreos/xoreos/blob/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/.github/workflows/windows_cmake_msvc.yml",
+      "https://github.com/xoreos/xoreos/tree/6774724d5c05e09ce0d01e00b8b62f956ddcb74b/tests",
+      "https://github.com/xoreos/xoreos/releases/tag/v0.0.6"
+    ]
   }
 ]
