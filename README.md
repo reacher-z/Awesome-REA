@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 313](https://img.shields.io/badge/resources-313-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 158](https://img.shields.io/badge/cases-158-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 314](https://img.shields.io/badge/resources-314-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 159](https://img.shields.io/badge/cases-159-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 71](https://img.shields.io/badge/papers-71-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (143) · [App](#app) (44)
+- [Website](#website) (19) · [Game](#game) (144) · [App](#app) (44)
 - [Native Binary](#native-binary) (22) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (158) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (159) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -904,6 +904,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Builds a native Windows, Linux, Steam Deck and Apple Silicon port of the XBLA epilogue Dead Rising 2: Case West by statically recompiling its Xbox 360 code with patched XenonRecomp and translating its shaders with patched XenosRecomp. It shares most of its runtime with the author’s separate Case Zero port, executing the console GPU command stream on Vulkan with XMA audio and keyboard/mouse input. Completion and platform results are project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/dead-rising-2-case-west-recomp-case/)
+
+- [**The Simpsons Wrestling Recompiled: a psxrecomp PlayStation static recompilation**](https://github.com/TekRantGaming/simpsons-wrestling-recompiled)
+
+  Translates the PlayStation game’s MIPS code to C with a pinned psxrecomp fork and builds Windows and Linux programs on its hardware-modelling runtime, with a launcher and a game-specific plugin. Without patching game code, the plugin adds 16:9 matches, 60 FPS by raising the emulated CPU clock and rescaling movement, intro skipping and unlocks. The user’s own NTSC-U disc image is required, and the measurements are author-reported.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/simpsons-wrestling-recompiled-case/)
 
 #### Tools, projects and integrations
 
