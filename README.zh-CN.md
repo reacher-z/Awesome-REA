@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 293](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-293-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 148](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-148-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 294](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-294-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 149](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-149-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (131) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (131) · [应用](#app) (45)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (148) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (149) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1082,6 +1082,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。它读取原始文件，在现代桌面上运行恢复的动画脚本及按日历推进的故事状态；文档保留实现差异与有限测试范围，未确立完整行为等价。
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-scrantic-screensaver-case/)
+
+- [**Notes CSV 导出：作者报告的 REA 重建验收器检查**](https://x.com/i/article/2110962506604929025)
+
+  一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。作者还通过 MCP 连接 REA 6.5.0，重新运行其 JavaScript 分析，并验证被改动的证据记录在导入时会被拒绝；这是对验收检查的研究，而非新的重建。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-notes-csv-oracle-mutation-case/)
 
 - [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume)
 

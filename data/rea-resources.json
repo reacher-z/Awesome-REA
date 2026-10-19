@@ -2335,5 +2335,30 @@
       "https://reversedwithai.com/policy",
       "https://reversedwithai.com/learn/getting-started-with-rea"
     ]
+  },
+  {
+    "id": "rea-notes-csv-oracle-mutation-case",
+    "name": "Notes CSV export: an author-reported REA check of reconstruction oracles",
+    "url": "https://x.com/i/article/2110962506604929025",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A Chinese article breaks three versions of a Python CSV exporter that reproduces the Notes teaching app shipped with REA. It shows that a simple export-and-read-back test passes all three, while byte comparisons against the official JavaScript formatter on 215 fixed inputs catch each one. The author also connects REA 6.5.0 over MCP, reruns its JavaScript analysis and checks that an edited evidence record is rejected on import; this is a study of acceptance checks, not a new reconstruction.",
+    "description_zh": "一篇中文文章把复刻 REA 自带 Notes 教学应用的 Python CSV 导出器故意改坏三个版本，展示简单的“导出再读回”测试能让三者全部通过，而以官方 JavaScript 格式化函数为参照、在 215 组固定输入上逐字节比较则能逐一识破。作者还通过 MCP 连接 REA 6.5.0，重新运行其 JavaScript 分析，并验证被改动的证据记录在导入时会被拒绝；这是对验收检查的研究，而非新的重建。",
+    "evidence_url": "https://x.com/i/article/2110962506604929025",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The 2026-10-16 article by @superfang119 follows the author’s earlier walkthrough, in which a Python reimplementation of the Notes app’s CSV export reportedly matched the original byte for byte on 215 inputs. It used Windows, Node 22.19.0 and rea-agents 6.5.0 through a temporary stdio client that listed 207 tools; the JavaScript analysis returned 6 files, 32 nodes and 45 edges. The author notes that this static graph locates the export path but does not show the full Electron app running.",
+      "The frozen byte contract quotes every title, doubles inner quotes and ends lines and the file with LF, for safe-integer ids and string titles. Each mutant changes one rule: quoting only when needed, leaving inner quotes unescaped, or dropping the final LF. A one-note read-back test passed all three. Against references from running the official JavaScript formatter on 15 fixed edge cases and 200 seeded inputs, the baseline matched 215/215 and the mutants differed on 26, 166 and 215 inputs.",
+      "Changing one evidence field from 6 to 999 while keeping its evidence_id made the same REA server reject the import with evidence_integrity_mismatch and leave session evidence unchanged; the author adds that this detects tampering but cannot show an interpretation is correct. The article also cites, without rerunning it, a TH08 project fix in which a comparator missed a 128.0 constant written as 0.0.",
+      "Analysis and implementation ran in the same Codex context, so the author states this is not clean-room separation, and the handoff prompts offered are proposals rather than a tested protocol. Scripts, mutants and outputs are not published, so this collection could not rerun them; the three probes do not cover permissions, write failures, concurrency or the full interface. The target is REA’s own teaching sample, not a third-party product."
+    ],
+    "additional_evidence_urls": [
+      "https://x.com/i/status/2110963427791487391"
+    ]
   }
 ]

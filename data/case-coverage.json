@@ -7029,13 +7029,23 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110963427791487391"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@superfang119, 2026-10-16) links an X article that documents REA 6.5.0 over MCP on REA’s own Notes teaching app, an evidence-tampering check, and three deliberately broken Python CSV exporters that pass a read-back test but fail byte comparisons on 215 inputs against the official formatter. Full mapping covers that article. Its scripts and outputs are unpublished, analysis and implementation shared one Codex context, and the earlier walkthrough it builds on is a separate lead.",
+      "reason_zh": "作者帖子（@superfang119，2026-10-16）链接了一篇 X 文章，记录了通过 MCP 在 REA 自带的 Notes 教学应用上使用 REA 6.5.0、一次证据篡改检查，以及三个故意改坏的 Python CSV 导出器：它们能通过读回测试，却在以官方格式化函数为参照的 215 组输入逐字节比较中失败。完整映射覆盖该文章。其脚本和输出未公开，分析与实现共用同一个 Codex 上下文，文章所承接的前一篇实测属于另一条线索。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110963427791487391",
+        "https://x.com/i/article/2110962506604929025"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-notes-csv-oracle-mutation-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:rea-obfuscated-web-request-signature",
@@ -7049,12 +7059,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110968095850561701"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@mtxdev, 2026-10-16) says two days of breakpoints failed to explain a changing request signature hidden in a website’s obfuscated JavaScript, while REA produced an evidence-tagged report on how it was computed in five minutes, after which a few code changes restored data retrieval. The site, the report and the code are neither named nor published, the quoted post is a general REA tutorial, and the GitHub account named mtxdev has no public repositories. Retain the lead without a catalog mapping; the method is not recorded here.",
+      "reason_zh": "作者帖子（@mtxdev，2026-10-16）称，为弄清某网站混淆 JS 中每次请求都会变化的签名，自己打了两天断点仍无结果，而 REA 五分钟就写出了标注证据的计算过程报告，随后改几行代码就恢复了数据获取。帖子既未说明网站，也未公开报告或代码，其引用的帖子是一篇 REA 通用教程，名为 mtxdev 的 GitHub 账号也没有公开仓库。保留此线索而不建立目录映射；此处不记录具体方法。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110968095850561701"
+      ],
       "catalog_matches": []
     },
     {
@@ -7070,12 +7082,15 @@
         "https://x.com/i/status/2110976193671709123",
         "https://x.com/i/status/2110985668969328852"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Two posts by @jmlx2008 (2026-10-16) say they are having Codex reverse engineer an Immersive Translate–style Chrome extension, which they see as a window plus an AI API, so they can use their own tokens instead of paying a subscription; a reply says the Codex CLI run is still in progress. No result, code or notes are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the work was unfinished when posted.",
+      "reason_zh": "@jmlx2008 的两条帖子（2026-10-16）称正在让 Codex 逆向一款类似“沉浸式翻译”的 Chrome 插件，认为它不过是窗口加上 AI API，想直接自购 token 而不付订阅费；一条回复称 Codex CLI 仍在运行。帖子未链接任何结果、代码或笔记，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；发帖时这项工作尚未完成。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110976193671709123",
+        "https://x.com/i/status/2110985668969328852"
+      ],
       "catalog_matches": []
     },
     {
@@ -7090,12 +7105,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110983483271286909"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@buaaxhm, 2026-10-16) says only that they asked Codex to reverse engineer how ChatGPT’s Intelligent UI is implemented, and wonders whether OpenAI will ban them. It reports no findings and links no output, and the GitHub account in the author’s profile, hongmaoxiao, has no repository for this study. Retain the lead without a catalog mapping; neither method nor results are documented.",
+      "reason_zh": "作者帖子（@buaaxhm，2026-10-16）只说让 Codex 去逆向 ChatGPT 的 Intelligent UI 是怎么实现的，并担心 OpenAI 会不会封号。帖子没有报告任何发现，也没有链接输出，作者资料中列出的 GitHub 账号 hongmaoxiao 里也没有与此研究对应的仓库。保留此线索而不建立目录映射；方法和结果均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110983483271286909"
+      ],
       "catalog_matches": []
     },
     {
@@ -7190,12 +7207,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111009945865097386"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@userHandle, 2026-10-16) relays Simon Willison’s analysis of ChatGPT Work Cloud: web access, code execution, headless Chrome, persistent workspace files, sites deployed on Cloudflare Workers, and 44 skills and 223 tools found through introspection prompts. Willison’s 2026-08-30 post documents hands-on testing and a model-generated tool reference that he does not check against the system prompt; it reimplements no software. Retain the lead without a catalog mapping; capability and risk analysis is not a reconstruction case.",
+      "reason_zh": "帖子（@userHandle，2026-10-16）转述 Simon Willison 对 ChatGPT Work Cloud 的分析：可联网、执行代码、操作无头 Chrome、保留工作区文件、在 Cloudflare Workers 上部署网站，并通过自省式提示发现 44 项技能和 223 个工具。Willison 2026-08-30 的文章记录的是上手测试和由模型生成的工具参考，他并未将其与系统提示核对；文章没有重新实现任何软件。保留此线索而不建立目录映射；能力与风险分析不属于重建案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111009945865097386",
+        "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/"
+      ],
       "catalog_matches": []
     },
     {
@@ -7210,12 +7230,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111027056234627119"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@akshitsoni_, 2026-10-16) says that, with reverse engineering bundled into Claude Code, the Indian Kanoon API integrates so well that they open SCC only for citations. It names no tool, method or code and links nothing, and the GitHub account named akshitsoni holds no related repository. Retain the lead without a catalog mapping; neither the integration nor any reverse engineering is documented.",
+      "reason_zh": "作者帖子（@akshitsoni_，2026-10-16）称，借助 Claude Code 中捆绑的逆向工程能力，Indian Kanoon API 集成得非常好，以至于只有查引注时才会打开 SCC。帖子未说明工具、方法或代码，也没有任何链接，名为 akshitsoni 的 GitHub 账号中也没有相关仓库。保留此线索而不建立目录映射；该集成及任何逆向工程均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111027056234627119"
+      ],
       "catalog_matches": []
     },
     {
@@ -14941,18 +14963,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 155,
-      "insufficient-evidence": 126,
-      "pending": 310
+      "already-curated": 156,
+      "insufficient-evidence": 131,
+      "pending": 304
     },
     "units_by_state": {
-      "already-curated": 154,
-      "insufficient-evidence": 126,
-      "pending": 309
+      "already-curated": 155,
+      "insufficient-evidence": 131,
+      "pending": 303
     },
-    "primary_reviewed_units": 220,
-    "catalog_linked_occurrences": 166,
-    "distinct_resource_ids": 160,
+    "primary_reviewed_units": 226,
+    "catalog_linked_occurrences": 167,
+    "distinct_resource_ids": 161,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }
