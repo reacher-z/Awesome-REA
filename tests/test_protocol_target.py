@@ -92,8 +92,8 @@ class ProtocolTargetTests(unittest.TestCase):
                 page = Page((Path(directory) / route / 'index.html').read_text())
                 validate_paper_groups(page, [primary, secondary], language)
                 groups = {group['anchor']: group['paper_ids'] for group in page.paper_groups}
-                self.assertEqual(groups['research-protocol'], [primary['id']])
-                self.assertEqual(groups['research-app'], [secondary['id']])
+                self.assertEqual(groups['research-protocol-analysis'], [primary['id']])
+                self.assertEqual(groups['research-app-reconstruction'], [secondary['id']])
                 self.assertEqual(page.paper_ids.count(primary['id']), 1)
                 heading = TARGET_LABELS['protocol'][language == 'zh']
                 self.assertIn('### ' + heading, render_papers([primary], language))

@@ -72,7 +72,7 @@ Use the current values in the [catalog format guide](data/README.md). These exis
 
 Choose multiple targets when the evidence supports each area. Category describes the task or tool family; targets describe its application areas. Keep existing reviewed targets rather than automatically reclassifying historical records.
 
-Paper ordering is separate from resource classification. In [papers.json](data/papers.json), `paper-pix2code` has `targets: [app, website]`; its first target selects the App reconstruction section. The [README builder](scripts/build_readme.py) uses `targets[0]` for ordinary papers and handles its agent-evaluation papers separately. Do not sort paper targets or apply that ordering rule to resource categories.
+Paper ordering is separate from resource classification. In [papers.json](data/papers.json), `paper-pix2code` has `targets: [app, website]`; its first target selects the App reconstruction section. The [README builder](scripts/build_readme.py) uses `targets[0]` for ordinary papers and handles its agent-evaluation papers separately; the paper directory imports the same topic map. Do not sort paper targets or apply that ordering rule to resource categories.
 
 ## Suggest a research paper
 

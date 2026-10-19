@@ -203,6 +203,8 @@ def build_paper_pages(
     icon_stylesheet_href: str | None = None,
 ) -> list[str]:
     """Write /papers/ and /zh/papers/, shared BibTeX files, and return sitemap URLs."""
+    # The README generator imports this module, so its topic map is read when pages are built.
+    from build_readme import PAPER_SECTIONS, PAPER_TOPIC_LABELS, paper_section
     site_dir = Path(site_dir)
     site_url = site_url.rstrip('/')
     identifiers = set()
@@ -226,10 +228,10 @@ def build_paper_pages(
                 web_url(paper[key])
         for url in paper['evidence_urls']:
             web_url(url)
-        groups[paper['targets'][0]].append(paper)
+        groups[paper_section(paper)].append(paper)
 
-    groups = {target: papers_newest_first(groups[target]) for target in TARGET_LABELS}
-    ordered = [paper for target in TARGET_LABELS for paper in groups[target]]
+    groups = {section: papers_newest_first(groups[section]) for section in PAPER_SECTIONS}
+    ordered = [paper for section in PAPER_SECTIONS for paper in groups[section]]
 
     # Citation downloads preserve the original title and author names in both languages.
     citation_dir = site_dir / 'papers' / 'citations'
@@ -274,14 +276,14 @@ def build_paper_pages(
         intro = label(f'Explore {len(papers)} papers on reverse engineering and software reconstruction, newest year first within each section.', f'浏览 {len(papers)} 篇逆向工程与软件重建论文，各分区按年份从新到旧排列。')
         nav = []
         sections = []
-        for target, target_labels in TARGET_LABELS.items():
-            if not groups[target]:
+        for section, section_labels in PAPER_SECTIONS.items():
+            if not groups[section]:
                 continue
-            target_label = target_labels[1 if zh else 0]
-            nav.append(f'<a href="#research-{target}" data-paper-topic="{target}">{target_label}<span>{len(groups[target])}</span></a>')
-            articles = '\n'.join(paper_card(paper, language, use_pro) for paper in groups[target])
-            count_label = f'{len(groups[target])} ' + ('篇论文' if zh else ('paper' if len(groups[target]) == 1 else 'papers'))
-            sections.append(f'<section class="paper-section" aria-labelledby="research-{target}" data-paper-section="{target}"><div class="paper-section-heading"><h2 id="research-{target}">{target_label}</h2><span data-paper-section-count>{count_label}</span></div><div class="paper-grid">{articles}</div></section>')
+            section_label = section_labels[1 if zh else 0]
+            nav.append(f'<a href="#research-{section}" data-paper-topic="{section}">{PAPER_TOPIC_LABELS[section][1 if zh else 0]}<span>{len(groups[section])}</span></a>')
+            articles = '\n'.join(paper_card(paper, language, use_pro) for paper in groups[section])
+            count_label = f'{len(groups[section])} ' + ('篇论文' if zh else ('paper' if len(groups[section]) == 1 else 'papers'))
+            sections.append(f'<section class="paper-section" aria-labelledby="research-{section}" data-paper-section="{section}"><div class="paper-section-heading"><h2 id="research-{section}">{section_label}</h2><span data-paper-section-count>{count_label}</span></div><div class="paper-grid">{articles}</div></section>')
         status_options = ''.join(f'<option value="{status}">{escape(labels[int(zh)])}</option>'
                                  for status, labels in STATUS_LABELS.items()
                                  if any(paper['publication_status'] == status for paper in papers))

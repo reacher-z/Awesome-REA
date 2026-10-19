@@ -9,7 +9,7 @@ from collections import Counter, defaultdict
 from urllib.parse import quote
 
 from catalog import ROOT, load_resources
-from build_paper_pages import papers_newest_first
+from build_paper_pages import STATUS_LABELS as PAPER_STATUSES, papers_newest_first
 from source_scope import apply_scope, read_scope
 from validate_papers import read_papers
 
@@ -453,6 +453,7 @@ def replace_catalog(content, rendered):
     return before + BEGIN + '\n' + rendered + END + after
 
 
+# Paper topics in display order. The /papers/ directory imports these, so both list the same groups.
 PAPER_SECTIONS = {
     'agent-evaluation': ('Reverse-engineering agent evaluation', '逆向工程智能体评测'),
     'decompilation': ('Decompilation and symbol recovery', '反编译与符号恢复'),
@@ -471,12 +472,6 @@ PAPER_TOPIC_LABELS = {
     'firmware-analysis': ('Firmware', '固件'),
     'protocol-analysis': ('Protocols', '协议'),
 }
-PAPER_STATUSES = {
-    'conference-paper': ('Conference paper', '会议论文'),
-    'conference-accepted': ('Accepted', '已接收'),
-    'journal-article': ('Journal article', '期刊论文'),
-    'preprint': ('Preprint', '预印本'),
-}
 AGENT_EVALUATION_PAPERS = {
     'paper-attacking-re-ai-agents',
     'paper-llm-resistant-protection',
@@ -486,6 +481,15 @@ AGENT_EVALUATION_PAPERS = {
     'paper-enigma',
     'paper-nyu-ctf-bench',
 }
+
+
+def paper_section(paper):
+    """Agent benchmarks form their own topic; other papers follow their first target, binaries under decompilation."""
+    if paper['id'] in AGENT_EVALUATION_PAPERS:
+        return 'agent-evaluation'
+    return {'website': 'website-reconstruction', 'game': 'game-reconstruction',
+            'app': 'app-reconstruction', 'firmware': 'firmware-analysis',
+            'protocol': 'protocol-analysis'}.get(paper['targets'][0], 'decompilation')
 
 
 def render_papers(papers, language):
@@ -498,11 +502,7 @@ def render_papers(papers, language):
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
     groups = defaultdict(list)
     for paper in papers:
-        section = ('agent-evaluation' if paper['id'] in AGENT_EVALUATION_PAPERS else
-                   {'website': 'website-reconstruction', 'game': 'game-reconstruction',
-                    'app': 'app-reconstruction', 'firmware': 'firmware-analysis',
-                    'protocol': 'protocol-analysis'}.get(paper['targets'][0], 'decompilation'))
-        groups[section].append(paper)
+        groups[paper_section(paper)].append(paper)
     topics = [f'[{labels[index]}](#papers-{section}) ({len(groups[section])})'
               for section, labels in PAPER_TOPIC_LABELS.items() if groups[section]]
     lines.extend([f"**{'按主题' if zh else 'By topic'}**", ''])
