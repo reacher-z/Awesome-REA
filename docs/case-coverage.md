@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 189 | 187 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 240 | 240 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 190 | 188 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 239 | 239 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 162 | 162 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-198 occurrences have catalog links. They reference 193 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+199 occurrences have catalog links. They reference 194 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 290 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 291 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -186,6 +186,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | decomp.wtf | Already curated | [Source](https://github.com/i12bp8/decomp.wtf/blob/575b4a30ed481ff5497dfb9ce4f599368a95a04a/README.md) |
 | Ledger Opus: an unverified finance-agent promotion referencing Claude for Finance | Insufficient evidence | [Source](https://x.com/i/status/2110916629244641548) |
 | UU Remote on Linux: an unofficial protocol implementation | Already curated | [Source](https://github.com/VallierDev/uu-remote-linux/blob/696cf10e334b2e7fe1afcb698b354c09ee328447/README.en.md) |
+| Claude Code background lab: an REA-informed reimplementation of a desktop animation | Already curated | [Source](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | crashlens | Already curated | [Source](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
 | RKD Telemetry Extractor: decoding Race-Keeper track-day recordings | Already curated | [Source](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | Insufficient evidence | [Source](https://x.com/aigeeknews/status/2111095142790857087) |
