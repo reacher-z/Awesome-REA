@@ -672,6 +672,26 @@ def validate_case_outputs(pages, resources):
         assert items.get('itemListElement') == expected_items, f'Case structured list differs from rendered entries: {route}'
 
 
+def validate_resource_listing(pages, resources):
+    """The /resources/ ItemList names each visible card's detail page, in card order."""
+    records = {record['id']: record for record in resources}
+    for language, prefix in (('en', ''), ('zh', '/zh')):
+        route = prefix + '/resources/'
+        page = pages[route]
+        assert len(page.record_ids) == len(records) and set(page.record_ids) == set(records), f'Resource cards differ from curated records: {route}'
+        collections = list(schema_entities(page.schemas, 'CollectionPage'))
+        assert len(collections) == 1 and collections[0].get('url') == ORIGIN + route, f'Resource listing needs one CollectionPage: {route}'
+        items = collections[0].get('mainEntity', {})
+        expected = []
+        for position, identifier in enumerate(page.record_ids, 1):
+            record = records[identifier]
+            name = (record.get('name_zh') or record['name']) if language == 'zh' else record['name']
+            expected.append({'@type': 'ListItem', 'position': position, 'name': name,
+                             'url': f'{ORIGIN}{prefix}/resources/{identifier}/', 'description': record[f'description_{language}']})
+        assert items.get('@type') == 'ItemList' and items.get('numberOfItems') == len(expected), f'Resource schema count mismatch: {route}'
+        assert items.get('itemListElement') == expected, f'Resource structured list differs from visible cards or detail pages: {route}'
+
+
 def validate_entry_outputs(pages, resources, papers):
     """Bind individual pages and their ordinary listing links to reviewed records."""
     routes = expected_entry_routes(resources, papers)
@@ -808,6 +828,7 @@ def main():
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
+    validate_resource_listing(pages, resources)
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_case_outputs(pages, resources)
