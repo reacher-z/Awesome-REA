@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 295](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-295-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 150](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 296](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 58](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-58-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (18) · [游戏](#game) (133) · [应用](#app) (44)
-- [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
+- [原生二进制](#native-binary) (21) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
 
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (150) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (151) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1265,6 +1265,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。
 
   案例 · REA · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
+
+- [**Windows 加载器：借助 REA 与 Codex 的静态恶意软件分析**](https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/)
+
+  Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。文章区分了提取出的 JavaScript 代码包能够支持的行为与依赖从未获取的远程组件的推断，并将原本疑为信息窃取程序的样本重新归类为加载器。这是以作者审阅过的智能体报告为基础的防御性分析案例，不是重建，也不是动态引爆分析。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/windows-loader-static-analysis-case/)
 
 #### 工具、项目与集成
 

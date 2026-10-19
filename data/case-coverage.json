@@ -14366,13 +14366,25 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111598581421670782"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
       "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "reason_en": "The linked Code Geeks article, pinned in its blog repository, documents the author’s use of Codex with REA in an offline container to statically analyze one Windows loader sample, with the prompt, lab constraints, verification spot checks and explicit limits. The full mapping covers this author-reported community case study, not a reconstruction, a dynamic analysis or published indicators. The agent’s technical report is not public, and nothing was rerun here.",
+      "reason_zh": "所链接的 Code Geeks 文章（已在其博客仓库中固定版本）记录了作者在离线容器中让 Codex 借助 REA 静态分析一个 Windows 加载器样本的过程，包括提示词、实验环境约束、验证抽查与明确的局限。完整映射将这一作者报告的社区案例收录，而非重建、动态分析或已发布的指标。智能体的技术报告未公开，本次也未重新运行。",
+      "primary_evidence_urls": [
+        "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
+        "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/en/static-malware-analysis-rea-codex.md",
+        "https://codegeeksai.github.io/it/blog/analisi-statica-malware-rea-codex/",
+        "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/it/analisi-statica-malware-rea-codex.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "windows-loader-static-analysis-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:t3-code-hundred-claude-rebuild-report",
@@ -14979,18 +14991,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 157,
-      "insufficient-evidence": 126,
-      "pending": 308
-    },
-    "units_by_state": {
-      "already-curated": 156,
+      "already-curated": 158,
       "insufficient-evidence": 126,
       "pending": 307
     },
-    "primary_reviewed_units": 222,
-    "catalog_linked_occurrences": 168,
-    "distinct_resource_ids": 162,
+    "units_by_state": {
+      "already-curated": 157,
+      "insufficient-evidence": 126,
+      "pending": 306
+    },
+    "primary_reviewed_units": 223,
+    "catalog_linked_occurrences": 169,
+    "distinct_resource_ids": 163,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

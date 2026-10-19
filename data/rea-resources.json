@@ -2335,5 +2335,33 @@
       "https://reversedwithai.com/policy",
       "https://reversedwithai.com/learn/getting-started-with-rea"
     ]
+  },
+  {
+    "id": "windows-loader-static-analysis-case",
+    "name": "Windows loader: static malware analysis with REA and Codex",
+    "url": "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Fedele Mantuano reports using Codex with REA in an offline Docker lab to statically analyze a public Windows malware sample without executing it. The article separates behavior supported by the extracted JavaScript bundle from claims that would depend on remote components that were never obtained, and reclassifies a suspected infostealer as a loader. It is a defensive analysis case built on an author-reviewed agent report, not a reconstruction or a dynamic detonation.",
+    "description_zh": "Fedele Mantuano 报告在离线 Docker 实验环境中让 Codex 借助 REA，对一个公开的 Windows 恶意软件样本做静态分析，全程不执行样本。文章区分了提取出的 JavaScript 代码包能够支持的行为与依赖从未获取的远程组件的推断，并将原本疑为信息窃取程序的样本重新归类为加载器。这是以作者审阅过的智能体报告为基础的防御性分析案例，不是重建，也不是动态引爆分析。",
+    "evidence_url": "https://codegeeksai.github.io/en/blog/static-malware-analysis-rea-codex/",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The Code Geeks article by Fedele Mantuano is dated 2026-10-18, with an Italian version, and reports an analysis performed on 2026-10-17. Codex was asked to use REA on one Windows x64 executable obtained from MalwareBazaar and to write a Markdown report on files, processes, persistence, network destinations, updates, defensive indicators and limits. The agent’s technical report, artifacts and code references are not published; the author offers further details privately.",
+      "Analysis ran in a Linux/amd64 Docker Desktop container with REA 6.5.0 and Node 24.22.0, no network, a read-only root filesystem and sample mount, an unprivileged user and dropped capabilities. Neither the sample nor extracted code was executed, and Wine was not used; the author notes that Codex still communicated with its model service while the container was offline. The appendix separately documents a macOS Apple Silicon setup of REA 6.5.0, Ghidra 12.1.4, Temurin JDK 25.0.4.1 and Node.js 24.21.0 connected to Codex over MCP with the REA skill; it was not repeated on a clean Mac or tested on other hosts.",
+      "After initial PE inspection, work focused on a JavaScript bundle extracted from the executable’s embedded Bun runtime; the roughly 98 MB native executable was not fully decompiled. The author reports analyst-written decoders for the bundle’s layered string obfuscation, run without evaluating the sample’s code, and spot checks of hashes, the extraction range and decoded tables, partly against an independent Python implementation. These checks support specific findings, not complete equivalence of the deobfuscated view.",
+      "The author reclassifies the suspected infostealer as a loader: its code supports host and screenshot collection, encrypted reporting, download and in-memory loading of further components, and server changes through fixed fallbacks and a remote lookup, with no DGA found in the bundle. Those further components were not obtained, so mining, credential theft, persistence and execution on a victim system remain unestablished, and one reported initialization inconsistency is left for dynamic verification. The article’s threat-intelligence pipeline is a proposed use, not an implemented or measured one.",
+      "This collection does not repeat the article’s indicators or link the sample; handling live malware needs an isolated lab and the analyst’s own authorization. The article credits REA, Ghidra and Codex together and relies on an agent-written report reviewed by the author, so results should not be credited to REA alone. The pinned blog repository has no license file; REA, Ghidra, Codex and the model service keep their own terms. This review read the article and its pinned source without running any tools or the sample."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/en/static-malware-analysis-rea-codex.md",
+      "https://codegeeksai.github.io/it/blog/analisi-statica-malware-rea-codex/",
+      "https://github.com/codegeeksai/codegeeksai.github.io/blob/8384782c20b1636362495b9505f1bd597ff5941b/src/content/posts/it/analisi-statica-malware-rea-codex.md"
+    ]
   }
 ]
