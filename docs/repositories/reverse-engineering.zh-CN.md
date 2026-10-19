@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**623 个仓库** · 2026-10-16 UTC
+**622 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -79,7 +79,6 @@
 - [pmret/papermario](https://github.com/pmret/papermario) — 《纸片马里奥》（Nintendo 64）的反编译代码。 **[1,632 星标]** · 精选：[Paper Mario：覆盖四个版本的一致性 Nintendo 64 反编译](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
 - [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — 精选可执行文件加壳相关资源列表。 **[1,631 星标]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — 虚拟机翻译中间语言。 **[1,607 星标]**
-- [mgechev/ngrev](https://github.com/mgechev/ngrev) — 用于逆向工程 Angular 应用的工具。 **[1,573 星标]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — 探索 VMProtect 软件保护，利用符号执行与 LLVM 自动对纯函数去混淆。 **[1,536 星标]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — 从零开始学习逆向工程的资源合集！ **[1,530 星标]**
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — 支持现代 Python 版本的 Python 反编译器。 **[1,420 星标]**

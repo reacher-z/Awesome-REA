@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](web-analysis.zh-CN.md)
 
-**177 repositories** · 2026-10-16 UTC
+**178 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -20,6 +20,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [decompiler-explorer/decompiler-explorer](https://github.com/decompiler-explorer/decompiler-explorer) — Decompiler Explorer! Compare tools on the forefront of static analysis, now in your web browser! **[2,711 stars]**
 - [vmoranv/jshookmcp](https://github.com/vmoranv/jshookmcp) — A search-first, profile-aware reverse-engineering workspace for AI agents — 735 tools across 36 domains in one MCP server. **[2,050 stars]**
 - [bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools) — CLI and Rust libraries for low-level manipulation of WebAssembly modules **[1,801 stars]** · Curated: [wasm-tools](https://awesomerea.org/resources/wasm-tools/)
+- [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]** · Curated: [ngrev](https://awesomerea.org/resources/ngrev/)
 - [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — General purpose JavaScript deobfuscator **[1,153 stars]**
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 Javascript decompiler for modern frontend **[1,023 stars]** · Curated: [Wakaru](https://awesomerea.org/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — Framework to interpret and transpile JVM bytecode to JavaScript, OpenCL or WebAssembly. **[961 stars]**

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**177 个仓库** · 2026-10-16 UTC
+**178 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -20,6 +20,7 @@
 - [decompiler-explorer/decompiler-explorer](https://github.com/decompiler-explorer/decompiler-explorer) — Decompiler Explorer！在网页浏览器中比较处于静态分析前沿的工具！ **[2,711 星标]**
 - [vmoranv/jshookmcp](https://github.com/vmoranv/jshookmcp) — 面向 AI 智能体、以搜索为先且支持配置档案感知的逆向工程工作区：在一个 MCP 服务器中提供覆盖 36 个领域的 735 个工具。 **[2,050 星标]**
 - [bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools) — 用于底层操作 WebAssembly 模块的命令行工具与 Rust 库。 **[1,801 星标]** · 精选：[wasm-tools](https://awesomerea.org/zh/resources/wasm-tools/)
+- [mgechev/ngrev](https://github.com/mgechev/ngrev) — 用于逆向工程 Angular 应用的工具。 **[1,573 星标]** · 精选：[ngrev Angular 应用结构分析工具](https://awesomerea.org/zh/resources/ngrev/)
 - [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — 通用 JavaScript 去混淆工具。 **[1,153 星标]**
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 面向现代前端的 JavaScript 反编译器。 **[1,023 星标]** · 精选：[Wakaru](https://awesomerea.org/zh/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — 用于将 JVM 字节码解释执行或转译为 JavaScript、OpenCL、WebAssembly 的框架。 **[961 星标]**

@@ -3081,5 +3081,14 @@
       "分析需要使用者自有的固件镜像；混合部署还需要可通过 gdbserver、OpenOCD 脚本或 Segger J-Link 探针访问的物理设备。架构定义涵盖 ARM（包括 Cortex-M3 和大端变体）、MIPS 以及 x86/x86-64。内存布局、转发规则和执行计划都由分析者用 Python 编写。",
       "采用 Apache-2.0 许可；avatar-qemu 和 PANDA 位于独立仓库，各有其许可。README 列出了介绍、使用或扩展该框架的研究论文，其中的结果不代表当前版本的特性。本次未构建任何端点，也未运行任何固件。"
     ]
+  },
+  "ngrev": {
+    "name": "ngrev Angular 应用结构分析工具",
+    "requirements": [
+      "项目已基本停滞：最新版本为 2021-01-18 发布的 v0.0.35，提供未签名的 macOS .dmg、Linux AppImage 和 Windows .exe。所审阅的 master 提交日期为 2021-07-26，package.json 中已写有尚未发布的 0.0.36。README 说明它是社区业余项目，并非由 Angular 团队维护。",
+      "输入为 Angular 项目自身的源码树，且需已安装依赖；对于 Angular CLI 应用，README 指定选择 src/tsconfig.app.json。应用须兼容 Ivy 编译器，低于 Angular 11 的版本未经测试。分析器固定使用 @angular/compiler-cli 11.0.3、ngast 0.6.2 和 TypeScript 4.0.5，文档未说明是否支持更新的 Angular 版本。它不分析已部署或压缩后的打包产物。",
+      "从源码构建需要 Node.js 和 yarn（CI 使用 Node 12）、Angular CLI 11，以及由 electron-builder 打包的 Electron 11.1.0。CI 工作流在 macOS、Ubuntu 和 Windows 上运行一项 Spectron 端到端测试，打开应用并解析一个小型 Angular 11 示例项目；该测试并不检验真实应用中图形的准确性。",
+      "README 声明采用 MIT 许可；LICENSE.md 是沿用自 angular-electron 模板的 MIT 文本，保留了模板作者 2020 年的版权行。图形展示的是 ngast 从源码中解析出的结构，而非运行时行为。本次未安装或运行该工具。"
+    ]
   }
 }

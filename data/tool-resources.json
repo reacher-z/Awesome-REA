@@ -7547,5 +7547,36 @@
       "https://github.com/avatartwo/avatar2/blob/56a90cfe738886236dcbc3653756bdbdec6aaf92/LICENSE",
       "https://pypi.org/project/avatar2/1.4.7/"
     ]
+  },
+  {
+    "id": "ngrev",
+    "name": "ngrev",
+    "url": "https://github.com/mgechev/ngrev",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Electron desktop application that statically analyzes an Angular project's TypeScript sources and draws interactive graphs of its NgModules, components, directives, pipes and providers and how they depend on each other, without running the application. A project is loaded through its tsconfig file; views move from the module tree to individual modules, templates and providers, with fuzzy symbol search and PNG export of the current graph.",
+    "description_zh": "一款 Electron 桌面应用，对 Angular 项目的 TypeScript 源码做静态分析，以交互式图形展示其中的 NgModule、组件、指令、管道和服务提供者及其依赖关系，无需运行该应用。通过项目的 tsconfig 文件载入后，可从模块树逐层查看单个模块、模板和提供者，支持符号模糊搜索，并可将当前图形导出为 PNG。",
+    "evidence_url": "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Dormant: the latest release is v0.0.35 of 2021-01-18, with an unsigned macOS .dmg, a Linux AppImage and a Windows .exe. The reviewed master commit dates from 2021-07-26 and package.json already names an unreleased 0.0.36. The README calls it a community side project that the Angular team does not maintain.",
+      "Input is an Angular project's own source tree with its dependencies installed; for Angular CLI apps the README selects src/tsconfig.app.json. Applications must be compatible with the Ivy compiler, and versions older than Angular 11 are untested. The analyzer pins @angular/compiler-cli 11.0.3, ngast 0.6.2 and TypeScript 4.0.5, and support for later Angular releases is not documented. Deployed or minified bundles are not analyzed.",
+      "Source builds use Node.js and yarn (CI uses Node 12), Angular CLI 11 and Electron 11.1.0 packaged by electron-builder. The CI workflow runs a Spectron end-to-end test on macOS, Ubuntu and Windows that opens the app and parses a small Angular 11 fixture project; it does not check graph accuracy on real applications.",
+      "The README states MIT; LICENSE.md is the MIT text carried over from the angular-electron template, with its author's 2020 copyright line. Graphs show what ngast resolves from the sources, not runtime behaviour. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/README.md#L37-L48",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/package.json",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/src/electron/model/project.ts",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/.github/workflows/build.yml",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/e2e/main.e2e.ts",
+      "https://github.com/mgechev/ngrev/blob/edd1ee316a7f2a0d9ddbf94ae91bb0b624997edb/LICENSE.md",
+      "https://github.com/mgechev/ngrev/releases/tag/v0.0.35"
+    ]
   }
 ]

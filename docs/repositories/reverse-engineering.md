@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**623 repositories** · 2026-10-16 UTC
+**622 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -79,7 +79,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [pmret/papermario](https://github.com/pmret/papermario) — Decompilation of Paper Mario (Nintendo 64) **[1,632 stars]** · Curated: [Paper Mario: matching Nintendo 64 decompilation for four releases](https://awesomerea.org/resources/paper-mario-matching-decomp-case/)
 - [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — A curated list of awesome resources related to executable packing **[1,631 stars]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — Virtual-machine Translation Intermediate Language **[1,607 stars]**
-- [mgechev/ngrev](https://github.com/mgechev/ngrev) — Tool for reverse engineering of Angular applications **[1,573 stars]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — Playing with the VMProtect software protection. Automatic deobfuscation of pure functions using symbolic execution and LLVM. **[1,536 stars]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — A collection of resources to learn Reverse Engineering from start! **[1,530 stars]**
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — Python decompiler for modern Python versions. **[1,420 stars]**
