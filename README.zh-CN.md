@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 315](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 160](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 72](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-72-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 315](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 160](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (72) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (73) · [智能体与 MCP](#agents-and-mcp) (27) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2002,13 +2002,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**72 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**73 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (21) · [网站](#papers-website-reconstruction) (14)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (22) · [网站](#papers-website-reconstruction) (14)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2276,6 +2276,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 该工作研究函数级反编译。重新执行测试覆盖 HumanEval、MBPP；GitHub2025 未提供单元测试。内联可能使二进制与源码无法一一对应，微调实验仅使用 10% 的语料。这些结果不能证明整程序恢复能力。
 
   **发表信息:** 2025 · NeurIPS 2025 Datasets and Benchmarks · 会议论文 · Hanzhuo Tan 等
+
+  </details>
+
+- [**超越分类：借助领域适配的大语言模型推断去符号二进制中的函数名**](https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/)
+
+  SymGen 使用经 LoRA 微调的 Code Llama 模型生成去符号二进制的函数名，而不是在固定的名称词表上分类。每个去符号函数先由 Ghidra 反编译，再屏蔽其自身名称，并对被调用函数名进行归一化以便去重。微调之前，模型先以反编译代码及其对应源函数的大语言模型生成摘要进行领域适配。在 33 个 C 项目针对 x86-64、x86-32、ARM 和 MIPS 架构及 O0–O3 优化级别构建的函数上（经去重由 2,237,915 个减至 495,494 个），作者报告词级平均 F1 为 0.277（x86-64 上为 0.380），并给出混淆二进制与 Linux 恶意软件的案例研究。
+
+  2025 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [代码](https://github.com/OSUSecLab/SymGen) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-symgen/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 函数名被拆分为单词，并以精确率、召回率和 F1 评分，同时使用 SymLM 的 CodeWordNet 归并语义相近的词；预测结果是描述性的推测，并非恢复的原始符号。平均 F1 为 0.277，在 MIPS（0.137）和 ARM（0.262）上更低。摘要中最高 409.3%、553.5% 与 489.4% 的提升是作者报告的相对 AsmDepictor 的改进；各基线在作者去重后的数据集上重新训练，得分远低于其原论文结果，XFL 仅在 x86-64 上比较。每种架构和优化级别分别训练一个模型。所有二进制均由 GCC 9.4.0 构建，输入依赖 Ghidra 输出，且 Code Llama 的预训练数据未公开，仍可能存在数据泄漏。混淆测试对来自六个项目的 363 个二进制应用 Hikari 的三种默认混淆（F1 为 0.271–0.303）；恶意软件研究涵盖 16 个 x86-64 构建中的 812 个函数（F1 为 0.348）。
+
+  **发表信息:** 2025 · NDSS 2025 · 会议论文 · Linxi Jiang 等
 
   </details>
 

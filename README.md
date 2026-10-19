@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 315](https://img.shields.io/badge/resources-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 160](https://img.shields.io/badge/cases-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 72](https://img.shields.io/badge/papers-72-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 315](https://img.shields.io/badge/resources-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 160](https://img.shields.io/badge/cases-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (72) · [Agents and MCP](#agents-and-mcp) (27) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (73) · [Agents and MCP](#agents-and-mcp) (27) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2001,13 +2001,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**72 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**73 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (21) · [Websites](#papers-website-reconstruction) (14)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (22) · [Websites](#papers-website-reconstruction) (14)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2275,6 +2275,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** This is function-level decompilation. Re-execution tests cover HumanEval/MBPP; GitHub2025 provides no unit tests. Inlining can prevent one-to-one source correspondence, and the fine-tuning study uses 10% of the corpus. These results do not establish whole-program recovery.
 
   **Publication:** 2025 · NeurIPS 2025 Datasets and Benchmarks · Conference paper · Hanzhuo Tan et al.
+
+  </details>
+
+- [**Beyond Classification: Inferring Function Names in Stripped Binaries via Domain Adapted LLMs**](https://www.ndss-symposium.org/ndss-paper/beyond-classification-inferring-function-names-in-stripped-binaries-via-domain-adapted-llms/)
+
+  SymGen infers function names for stripped binaries by generating them with a LoRA-fine-tuned Code Llama model instead of classifying over a fixed name vocabulary. Ghidra decompiles each stripped function, its own name is masked, and callee names are normalized for deduplication. Before fine-tuning, the model is domain-adapted on decompiled code paired with LLM-generated summaries of the matching source functions. On functions from 33 C projects built for x86-64, x86-32, ARM and MIPS at O0–O3, deduplicated from 2,237,915 to 495,494, the authors report average word-level F1 of 0.277 (0.380 on x86-64), plus case studies on obfuscated binaries and Linux malware.
+
+  2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-797-paper.pdf) · [Code](https://github.com/OSUSecLab/SymGen) · [Full entry & citation](https://awesomerea.org/papers/paper-symgen/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Names are split into words and scored with precision, recall and F1, with SymLM’s CodeWordNet grouping similar words; predictions are descriptive guesses, not recovered original symbols. Average F1 is 0.277 and lower on MIPS (0.137) and ARM (0.262). The gains of up to 409.3%, 553.5% and 489.4% in the abstract are author-reported relative improvements over AsmDepictor; the baselines were retrained on the authors’ deduplicated dataset, where they score far below their own papers, and XFL was compared on x86-64 only. A separate model is trained for each architecture and optimization level. All binaries were built with GCC 9.4.0, inputs depend on Ghidra output, and Code Llama’s closed pretraining data leaves leakage possible. Obfuscation tests apply three default Hikari passes to 363 binaries from six projects (F1 0.271–0.303); the malware study covers 812 functions in 16 x86-64 builds (F1 0.348).
+
+  **Publication:** 2025 · NDSS 2025 · Conference paper · Linxi Jiang et al.
 
   </details>
 
