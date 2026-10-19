@@ -18,7 +18,7 @@ Scan date: **2026-10-16 UTC**.
 | [Runtime and debugging](dynamic-analysis.md) | 103 | 17 |
 | [Firmware](firmware.md) | 211 | 16 |
 | [Protocols](protocol-analysis.md) | 106 | 7 |
-| [General tools and collections](reverse-engineering.md) | 606 | 36 |
+| [General tools and collections](reverse-engineering.md) | 606 | 37 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

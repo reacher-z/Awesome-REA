@@ -29,7 +29,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — The definitive guide to CTF competitions **[4,511 stars]**
 - [SteamClientHomebrew/Millennium](https://github.com/SteamClientHomebrew/Millennium) — An open-source framework for Steam Client themes and plugins **[4,456 stars]**
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — The world’s 1st book of very detailed iOS App reverse engineering skills :) **[4,440 stars]**
-- [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — Decompiler from Java bytecode to Java, used in IntelliJ IDEA. **[4,422 stars]**
+- [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — Decompiler from Java bytecode to Java, used in IntelliJ IDEA. **[4,422 stars]** · Curated: [Fernflower](https://awesomerea.org/resources/fernflower/)
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — Cybersecurity oriented awesome list **[4,220 stars]**
 - [ericc-ch/copilot-api](https://github.com/ericc-ch/copilot-api) — Turn GitHub Copilot into OpenAI/Anthropic API compatible server. Usable with Claude Code! **[4,147 stars]**
 - [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) — pull decrypted ipa from jailbreak device **[3,957 stars]**

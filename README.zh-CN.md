@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 453](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-453-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 454](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-454-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (25) · [游戏](#game) (181) · [应用](#app) (69)
+- [网站](#website) (25) · [游戏](#game) (181) · [应用](#app) (70)
 - [原生二进制](#native-binary) (59) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1734,6 +1734,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   把 VS Code 变成 Android 逆向工作台的扩展，整合 Apktool、Jadx、smali-lsp 和 uber-apk-signer。它可将 APK 解码为资源文件和 Smali 并反编译为 Java，借助语言服务器为 Smali 提供定义跳转、引用查找和诊断，还能重新构建、签名并安装修改后的应用。此外，它可为 Smali 方法生成 Frida 钩子、加入 Frida gadget、借助 apk-mitm 为 HTTPS 流量检查做准备，并生成 Quark-Engine 恶意软件分析报告。
 
   工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apklab/)
+
+- [**Fernflower Java 反编译器**](https://github.com/JetBrains/fernflower)
+
+  JetBrains 的分析型反编译器，可将 Java class 文件还原为 Java 源码；IntelliJ IDEA 内置了它，用于在调试或浏览 class 文件时显示代码。独立的控制台反编译器接受 class 文件、JAR、ZIP 或目录，可通过 -e 加载仅作为分析上下文的库文件，并将 Java 源码写入输出目录。选项涵盖泛型签名、lambda、内部类、记录模式与 switch 模式、单个方法的处理时限，以及对含糊或混淆标识符的重命名，也可由使用者提供的重命名类来实现。
+
+  工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/fernflower/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
