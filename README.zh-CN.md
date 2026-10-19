@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2302,6 +2302,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 这是一项关于 LLM 辅助分析的人类研究，并非对自主智能体或 LLM 反编译准确率的评测。研究使用两个未经混淆、各含 26 个函数的 C 语言题目，仅允许在 IDA Pro 中进行静态分析（不能使用调试器或符号执行），提示词由研究团队编写，模型可在 GPT-4o、GPT-4o-Mini、GPT-4-Turbo、Claude-3-5-Sonnet 与 Gemini-Pro 中选择。2024–2025 年的实验在 51 名参与者中保留 48 名；专业水平为自报，理解程度是由两名研究人员按评分细则给解题报告打出的分数。LLM 直接生成的产物与理解程度提升无相关性；三名 LLM 用户报告了一个由 LLM 提示、实际并不存在的缓冲区溢出，而“查找漏洞”功能与理解得分呈负相关。个人观察记录、解题报告和问卷回答均不公开，也不接受申请；汇总数据仅可申请获取。
 
   **作者:** Zion Leonahenahe Basque 等
+
+  </details>
+
+- [**Cyber-Zero：无需运行环境训练网络安全智能体**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f9f54762cbb4fe4dbffdd4f792c31221-Abstract-Conference.html)
+
+  Cyber-Zero 依据公开的解题报告（writeup）合成夺旗赛（CTF）智能体的训练轨迹，而不实际运行题目。作者经由 CTF Archives 仓库从 CTFtime 收集解题报告，经过清洗与筛选后，再用 DeepSeek-V3-0324 补全缺失的元数据并提取旗标；移除与评测基准重叠的 47 道题目后，语料包含 6,188 篇解题报告，覆盖 543 场竞赛中六个类别的 4,610 道题目，时间跨度为 2017–2025 年。随后由两个 DeepSeek-V3-0324 角色模拟每次解题：CTF 选手只能看到题目内容；Bash 终端则能看到解题报告与旗标，负责编造合理的命令输出，并可插入提示，这些提示在训练前会被删除。轨迹采用 EnIGMA 智能体框架的格式，只有得出完全匹配的旗标、通过格式检查，并经 LLM 过滤器判定与解题报告思路一致的轨迹才会保留。作者用其中 9,464 条轨迹微调 Qwen3、Qwen2.5-Instruct 与 SWE-agent-LM 模型，并以自行开发的并行版 EnIGMA+ 在 InterCode-CTF、NYU CTF Bench 与 Cybench 上评测。微调后的 Qwen3-32B（Cyber-Zero-32B）平均 Pass<span>@</span>1 从 20.3% 提升至 33.4%，即摘要所述的 13.1 个百分点增益。
+
+  ICLR 2026 · 会议论文 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/f9f54762cbb4fe4dbffdd4f792c31221-Paper-Conference.pdf) · [代码](https://github.com/amazon-science/Cyber-Zero) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-cyber-zero/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 训练轨迹均未实际执行：命令输出由一个知晓解题报告与旗标的 LLM 模拟，轨迹通过旗标完全匹配、格式检查和 LLM 评判筛选，而不是通过运行命令验证。作者承认语料可能包含错误的命令记录和编造的旗标，未报告定量错误分析，模拟轨迹也不包含 gdb、Python 交互环境和浏览器等交互式工具。解题报告与评测任务涵盖六个通用 CTF 类别，并非仅限逆向工程；三个测试基准共有 323 道可运行题目，其中 84 道属于逆向工程，总体 Pass<span>@</span>1 不代表逆向工程准确率。结果是在作者的 EnIGMA+ 框架中、以 40 轮为上限的单次贪心解码 Pass<span>@</span>1，所用基准副本经过作者修复；另有 17 道题目无法搭建。污染控制依靠人工比对移除了 47 道重叠题目。夺得旗标并不表明恢复了程序结构。仓库已归档，采用 CC BY-NC 4.0 许可证，其基准说明指出所附基准内容仍归原作者所有。
+
+  **作者:** Terry Yue Zhuo 等
 
   </details>
 

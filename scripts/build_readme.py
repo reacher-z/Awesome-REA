@@ -424,6 +424,7 @@ AGENT_EVALUATION_PAPERS = {
     'paper-decompiling-synergy',
     'paper-programbench',
     'paper-enigma',
+    'paper-cyber-zero',
 }
 
 

@@ -4713,5 +4713,58 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-cyber-zero",
+    "title": "Cyber-Zero: Training Cybersecurity Agents without Runtime",
+    "title_zh": "Cyber-Zero：无需运行环境训练网络安全智能体",
+    "authors": [
+      "Terry Yue Zhuo",
+      "Dingmin Wang",
+      "Hantian Ding",
+      "Varun Kumar",
+      "Zijian Wang"
+    ],
+    "year": 2026,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year stated by the official ICLR proceedings; no finer publication date is asserted. The proceedings page's citation date of 2026-04-20 is not adopted, and the arXiv dates are not substituted.",
+    "date_basis_zh": "采用 ICLR 官方论文集标明的出版年份，不主张更精确的出版日期。本条目不采用论文集页面中 2026-04-20 的引用日期，也不以 arXiv 日期替代。",
+    "venue": "ICLR 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2508.00910",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2025-07-29",
+    "doi": null,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f9f54762cbb4fe4dbffdd4f792c31221-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/f9f54762cbb4fe4dbffdd4f792c31221-Paper-Conference.pdf",
+    "code_url": "https://github.com/amazon-science/Cyber-Zero",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Cyber-Zero synthesizes training trajectories for capture-the-flag (CTF) agents from public writeups instead of running the challenges. Writeups collected from CTFtime through the CTF Archives repository are cleaned, filtered and completed with DeepSeek-V3-0324, which fills in missing metadata and extracts flags; after removing 47 challenges that overlap the evaluation benchmarks, the corpus holds 6,188 writeups for 4,610 challenges from 543 competitions in six categories, 2017–2025. Two DeepSeek-V3-0324 personas then simulate each solve: a CTF player that sees only the challenge content, and a Bash terminal that sees the writeup and flag, invents plausible command output and may inject hints, which are removed before training. Trajectories use the EnIGMA scaffold format and are kept only if they reach the exact flag, pass format checks and are judged by an LLM filter to follow the writeup's approach. Qwen3, Qwen2.5-Instruct and SWE-agent-LM models are fine-tuned on 9,464 of these trajectories and evaluated with EnIGMA+, the authors' parallel version of EnIGMA, on InterCode-CTF, NYU CTF Bench and Cybench. The fine-tuned Qwen3-32B (Cyber-Zero-32B) rises from 20.3% to 33.4% average Pass@1, the 13.1-point gain reported in the abstract.",
+    "description_zh": "Cyber-Zero 依据公开的解题报告（writeup）合成夺旗赛（CTF）智能体的训练轨迹，而不实际运行题目。作者经由 CTF Archives 仓库从 CTFtime 收集解题报告，经过清洗与筛选后，再用 DeepSeek-V3-0324 补全缺失的元数据并提取旗标；移除与评测基准重叠的 47 道题目后，语料包含 6,188 篇解题报告，覆盖 543 场竞赛中六个类别的 4,610 道题目，时间跨度为 2017–2025 年。随后由两个 DeepSeek-V3-0324 角色模拟每次解题：CTF 选手只能看到题目内容；Bash 终端则能看到解题报告与旗标，负责编造合理的命令输出，并可插入提示，这些提示在训练前会被删除。轨迹采用 EnIGMA 智能体框架的格式，只有得出完全匹配的旗标、通过格式检查，并经 LLM 过滤器判定与解题报告思路一致的轨迹才会保留。作者用其中 9,464 条轨迹微调 Qwen3、Qwen2.5-Instruct 与 SWE-agent-LM 模型，并以自行开发的并行版 EnIGMA+ 在 InterCode-CTF、NYU CTF Bench 与 Cybench 上评测。微调后的 Qwen3-32B（Cyber-Zero-32B）平均 Pass@1 从 20.3% 提升至 33.4%，即摘要所述的 13.1 个百分点增益。",
+    "scope_limitations_en": "No training trajectory was executed: command outputs are simulated by an LLM that knows the writeup and flag, and trajectories are filtered by exact flag match, format checks and an LLM judge rather than by running commands. The authors acknowledge that the corpus may contain incorrect command traces and fabricated flags, that they report no quantitative error analysis, and that the simulated traces exclude interactive tools such as gdb, Python shells and browsers. The writeups and the evaluation tasks span six general CTF categories, not reverse engineering alone; the three test benchmarks hold 323 runnable tasks, 84 of them reverse engineering, and aggregate Pass@1 is not reverse-engineering accuracy. Results are single greedy Pass@1 runs in the authors' EnIGMA+ scaffold with a 40-turn cap, on benchmark copies the authors repaired; 17 tasks could not be set up. Contamination control removed 47 overlapping challenges by manual comparison. Capturing a flag does not show recovered program structure. The repository is archived and licensed CC BY-NC 4.0, and its benchmark README states that the bundled benchmark content remains the property of its original creators.",
+    "scope_limitations_zh": "训练轨迹均未实际执行：命令输出由一个知晓解题报告与旗标的 LLM 模拟，轨迹通过旗标完全匹配、格式检查和 LLM 评判筛选，而不是通过运行命令验证。作者承认语料可能包含错误的命令记录和编造的旗标，未报告定量错误分析，模拟轨迹也不包含 gdb、Python 交互环境和浏览器等交互式工具。解题报告与评测任务涵盖六个通用 CTF 类别，并非仅限逆向工程；三个测试基准共有 323 道可运行题目，其中 84 道属于逆向工程，总体 Pass@1 不代表逆向工程准确率。结果是在作者的 EnIGMA+ 框架中、以 40 轮为上限的单次贪心解码 Pass@1，所用基准副本经过作者修复；另有 17 道题目无法搭建。污染控制依靠人工比对移除了 47 道重叠题目。夺得旗标并不表明恢复了程序结构。仓库已归档，采用 CC BY-NC 4.0 许可证，其基准说明指出所附基准内容仍归原作者所有。",
+    "why_fits_en": "Adds runtime-free trajectory synthesis for training open CTF agents whose tasks include reverse engineering; it formats its data for EnIGMA, also in this section, and evaluates on InterCode-CTF, NYU CTF Bench and Cybench.",
+    "why_fits_zh": "补充一种无需运行环境、为训练开放 CTF 智能体合成轨迹的方法，其任务包含逆向工程；它按同样收录于本节的 EnIGMA 框架格式组织数据，并在 InterCode-CTF、NYU CTF Bench 与 Cybench 上评测。",
+    "metadata_notes": "The proceedings page, its PDF and arXiv list the same five authors in order. The proceedings page lists pages 154054–154184 and no DOI. Its 131-page PDF is headed 'Published as a conference paper at ICLR 2026'; compared with arXiv v2 it adds an appendix of limitations, describes the 47-challenge contamination removal and moves Zijian Wang's affiliation to Meta Superintelligence Labs. Its abstract says Cyber-Zero-32B is comparable to frontier open-weight models, while arXiv v2 and the proceedings page abstract claim state-of-the-art results among open-weight models. arXiv v1 is dated 2025-07-29 and v2 2025-08-25; v2's comment links the repository. The OpenReview forum and API could not be retrieved past a browser check, so no presentation type is recorded. At the reviewed 2025-09-02 commit the GitHub repository is archived; its LICENSE is the CC BY-NC 4.0 legal code (GitHub reports NOASSERTION) and its NOTICE gives SPDX CC-BY-NC-4.0. It contains the generation, quality-filter and reformatting scripts (Python 3.8 or later, LiteLLM, with DeepSeek-V3-0324 as the default model, so runs need a model provider), the EnIGMA+ scaffold and repaired copies of the three benchmarks. The README links no released trajectory corpus or model weights. No code or experiments were run.",
+    "metadata_notes_zh": "论文集页面、其 PDF 与 arXiv 列出的五位作者及顺序一致。论文集页面列出页码 154054–154184，没有 DOI。其 131 页的 PDF 页眉为“Published as a conference paper at ICLR 2026”；与 arXiv v2 相比，该版本增加了局限性附录，说明了移除 47 道题目的污染控制，并将 Zijian Wang 的单位改为 Meta Superintelligence Labs。其摘要称 Cyber-Zero-32B 与前沿开放权重模型相当，而 arXiv v2 和论文集页面摘要称其在开放权重模型中达到最先进水平。arXiv v1 发布于 2025-07-29，v2 为 2025-08-25；v2 注释链接了代码仓库。OpenReview 论坛页与 API 因浏览器验证无法获取，因此不记录报告形式。在所审阅的 2025-09-02 提交中，GitHub 仓库已归档；LICENSE 为 CC BY-NC 4.0 法律文本（GitHub 显示为 NOASSERTION），NOTICE 标注 SPDX 标识 CC-BY-NC-4.0。仓库包含轨迹生成、质量过滤与格式转换脚本（需要 Python 3.8 或更高版本及 LiteLLM，默认模型为 DeepSeek-V3-0324，因此运行需要模型服务）、EnIGMA+ 框架，以及三个基准的修复副本。README 未链接已发布的轨迹语料或模型权重。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f9f54762cbb4fe4dbffdd4f792c31221-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2026/file/f9f54762cbb4fe4dbffdd4f792c31221-Paper-Conference.pdf",
+      "https://arxiv.org/abs/2508.00910",
+      "https://arxiv.org/pdf/2508.00910v2",
+      "https://github.com/amazon-science/Cyber-Zero/blob/e0c4493ac27dd3a8c96e524c3966c3927261c625/README.md",
+      "https://github.com/amazon-science/Cyber-Zero/blob/e0c4493ac27dd3a8c96e524c3966c3927261c625/LICENSE",
+      "https://github.com/amazon-science/Cyber-Zero/blob/e0c4493ac27dd3a8c96e524c3966c3927261c625/NOTICE",
+      "https://github.com/amazon-science/Cyber-Zero/blob/e0c4493ac27dd3a8c96e524c3966c3927261c625/requirements.txt",
+      "https://github.com/amazon-science/Cyber-Zero/blob/e0c4493ac27dd3a8c96e524c3966c3927261c625/benchmarks/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2197,13 +2197,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2301,6 +2301,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** A human study of LLM-assisted analysis, not an evaluation of autonomous agents or of LLM decompilation accuracy. It uses two unobfuscated C challenges of 26 functions each, static analysis in IDA Pro only (no debuggers or symbolic execution), researcher-written prompts, and a choice of GPT-4o, GPT-4o-Mini, GPT-4-Turbo, Claude-3-5-Sonnet or Gemini-Pro. The 2024–2025 sessions retain 48 of 51 participants; expertise is self-reported, and understanding is a rubric score of writeups graded by two researchers. LLM-created artifacts were not correlated with better understanding, and three LLM users reported a nonexistent buffer overflow that an LLM had suggested; the vulnerability-finding feature was negatively correlated with understanding. Individual observations, writeups and survey responses are not released, even on request; aggregated data is available only on request.
 
   **Authors:** Zion Leonahenahe Basque et al.
+
+  </details>
+
+- [**Cyber-Zero: Training Cybersecurity Agents without Runtime**](https://proceedings.iclr.cc/paper_files/paper/2026/hash/f9f54762cbb4fe4dbffdd4f792c31221-Abstract-Conference.html)
+
+  Cyber-Zero synthesizes training trajectories for capture-the-flag (CTF) agents from public writeups instead of running the challenges. Writeups collected from CTFtime through the CTF Archives repository are cleaned, filtered and completed with DeepSeek-V3-0324, which fills in missing metadata and extracts flags; after removing 47 challenges that overlap the evaluation benchmarks, the corpus holds 6,188 writeups for 4,610 challenges from 543 competitions in six categories, 2017–2025. Two DeepSeek-V3-0324 personas then simulate each solve: a CTF player that sees only the challenge content, and a Bash terminal that sees the writeup and flag, invents plausible command output and may inject hints, which are removed before training. Trajectories use the EnIGMA scaffold format and are kept only if they reach the exact flag, pass format checks and are judged by an LLM filter to follow the writeup's approach. Qwen3, Qwen2.5-Instruct and SWE-agent-LM models are fine-tuned on 9,464 of these trajectories and evaluated with EnIGMA+, the authors' parallel version of EnIGMA, on InterCode-CTF, NYU CTF Bench and Cybench. The fine-tuned Qwen3-32B (Cyber-Zero-32B) rises from 20.3% to 33.4% average Pass<span>@</span>1, the 13.1-point gain reported in the abstract.
+
+  ICLR 2026 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/f9f54762cbb4fe4dbffdd4f792c31221-Paper-Conference.pdf) · [Code](https://github.com/amazon-science/Cyber-Zero) · [Full entry & citation](https://awesomerea.org/papers/paper-cyber-zero/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** No training trajectory was executed: command outputs are simulated by an LLM that knows the writeup and flag, and trajectories are filtered by exact flag match, format checks and an LLM judge rather than by running commands. The authors acknowledge that the corpus may contain incorrect command traces and fabricated flags, that they report no quantitative error analysis, and that the simulated traces exclude interactive tools such as gdb, Python shells and browsers. The writeups and the evaluation tasks span six general CTF categories, not reverse engineering alone; the three test benchmarks hold 323 runnable tasks, 84 of them reverse engineering, and aggregate Pass<span>@</span>1 is not reverse-engineering accuracy. Results are single greedy Pass<span>@</span>1 runs in the authors' EnIGMA+ scaffold with a 40-turn cap, on benchmark copies the authors repaired; 17 tasks could not be set up. Contamination control removed 47 overlapping challenges by manual comparison. Capturing a flag does not show recovered program structure. The repository is archived and licensed CC BY-NC 4.0, and its benchmark README states that the bundled benchmark content remains the property of its original creators.
+
+  **Authors:** Terry Yue Zhuo et al.
 
   </details>
 
