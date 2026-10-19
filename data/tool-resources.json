@@ -9482,6 +9482,13 @@
       "There is no test suite: the package.json test script only starts the components. The documented correctness checks are HMAC validation of the server’s key data and of each binary message, and an in-browser JavaScript demo prints decrypted messages after a QR scan. This source review opened no session and decoded no traffic.",
       "MIT (LICENSE, package.json). The README states the project is unaffiliated with and not endorsed by WhatsApp, that use is at the user’s own risk, and adds a cryptography export notice; WhatsApp’s services and terms apply separately. The reviewed sources establish no AI or REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/backend/whatsapp.py",
       "https://github.com/sigalor/whatsapp-web-reveng/blob/04caed2b23680d23a3f39cf2b017c064ff1e85ed/backend/whatsapp_binary_reader.py",
@@ -11229,6 +11236,13 @@
       "With COMPARE=1 by default, the build checks the output against starfox64.us.rev1.md5, and README reads a mismatch as a bad base ROM or non-matching code. CI runs make init on the US ROM, fetched from a private repository through secrets, and a separate workflow checks formatting. These checks establish ROM identity for that release, not gameplay coverage; this collection ran nothing.",
       "The repository carries CC0-1.0, which does not cover Nintendo’s game, the ROM or extracted assets; the IDO compiler and the submodules keep their own terms. The reviewed sources establish no AI or REA involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/Makefile",
       "https://github.com/sonicdcer/sf64/blob/4235c59f00b04440e3fd5fec49f0bc80e48cf212/tools/Makefile",
@@ -11261,6 +11275,13 @@
       "Builds from one solution with the .NET 10 SDK (global.json pins 10.0.300) and Avalonia, targeting Windows 10 build 19041+, macOS 12+, Linux and Android 7.0+ (API 24); Linux Bluetooth uses a bundled BlueZ D-Bus library. Release 5.2.1 attaches unsigned Windows and macOS installers and Linux x64/ARM portable binaries; the README also lists Flatpak, AUR and winget packages, and the Android version is sold on Google Play.",
       "An NUnit test project decodes captured extended-status packets from seven models and checks message and spatial-audio parsing; the reviewed CI workflows build and publish binaries without running those tests. Protocol and feature behavior on real earbuds remains author-reported here, and this source review ran neither the tests nor the app.",
       "GPLv3 (LICENSE); the README states the project is not affiliated with or supervised by Samsung. Samsung firmware, apps and trademarks keep their own rights, and the separate firmware archive the README points to is deliberately not linked from this record. The reviewed sources establish no AI or REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/timschneeb/GalaxyBudsClient/blob/754b6fdfb1c151b022cece775c8aaad4eb185afa/GalaxyBudsRFCommProtocol.md",
@@ -11333,6 +11354,11 @@
       "Windows application from bkaankose/Wino-Mail; the reviewed README links Microsoft Store and App Installer distribution.",
       "The repository publishes GNU GPL v3 license text for its code; this does not license the original Microsoft application or branding.",
       "Feature coverage and preservation of the original experience are upstream goals and claims. The application was not installed, built or compared here; no REA integration is established."
+    ],
+    "requirement_facets": [
+      "scope",
+      "license",
+      "testing"
     ]
   },
   {
