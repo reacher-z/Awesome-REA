@@ -3566,5 +3566,14 @@
       "输入应为使用者有权反编译的二进制文件；README 提醒，许多软件许可禁止反编译。原始镜像需明确指定加载器、架构、基址和入口地址。用户指南指出，有用的反编译结果通常需要用户补充类型、名称和注释；当间接跳转或调用使代码难以发现时，可能还需要启发式扫描。",
       "采用 GPL-2.0 许可（见 COPYING）。完整的架构与格式列表位于项目 wiki，本次未审阅；架构和加载器目录只做了计数，未实际验证。仓库的 subjects 目录存放从其他来源收集的回归测试样本及 Reko 对它们的输出，属于测试数据，不是工具本身的一部分。本次未反编译任何二进制。"
     ]
+  },
+  "dyninst": {
+    "name": "Dyninst 二进制插桩与分析库",
+    "requirements": [
+      "CMake 平台检查接受 Linux、FreeBSD 和 Windows 主机，架构为 x86-64、32 位 x86、AArch64、ppc64le 和 riscv64，另有 AMD GPU 代码生成目标；InstructionAPI 文档列出 x86、x86-64、ARMv8-64 以及 32/64 位 PowerPC 指令解码。README 称 AArch64 动态插桩仍属实验性且不完整，已知问题包括不支持 Windows 64 位模式和 Windows 改写模式、重定位代码中的异常无法捕获、Windows 栈回溯不稳定，以及解析不含函数的二进制时会崩溃。",
+      "审阅时最新版本为 v13.0.0，发布于 2024-03-21。所审阅的 master 分支提交仍声明版本 13.0.0，领先该标签 590 个提交；README 说明随附的 v13.0.0 PDF 手册只是快照，了解当前行为需用 pdflatex 从源码构建手册。",
+      "可通过 Spack 安装，或从源码构建：需要 CMake 3.14+（拒绝 3.19.0）、C11/C++11 工具链（GCC 6+）、Boost 1.71+、TBB 2019.9+，在 Unix 上还需 elfutils 0.186+；docker 目录介绍了用于开发的 Docker 容器。用户需自备要分析或插桩的可执行文件、库或运行中的进程。",
+      "采用 LGPL-2.1 许可（LICENSE.md）。COPYRIGHT 将版权归于 Barton P. Miller，并列出 LLNS、Red Hat 和 Bull SAS 的贡献；DataFlowAPI 包含 Rose Compiler Project 的代码，适用其单独的版权声明。本条目未对任何二进制进行插桩或改写。"
+    ]
   }
 }

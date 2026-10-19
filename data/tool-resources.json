@@ -9273,5 +9273,42 @@
       "https://github.com/uxmal/reko/releases/tag/version-0.12.5",
       "https://www.nuget.org/packages/Reko.Decompiler.Runtime/0.12.5"
     ]
+  },
+  {
+    "id": "dyninst",
+    "name": "Dyninst",
+    "url": "https://github.com/dyninst/dyninst",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary instrumentation, analysis and modification libraries from the Paradyn project. DyninstAPI inserts and changes instrumentation in a running program, or rewrites an executable or library on disk and writes the patched copy back, through one machine-independent interface that also supports static and dynamic analysis. Separately documented components handle symbol tables, line numbers and types (SymtabAPI), instruction decoding and disassembly (InstructionAPI), parsing into blocks, functions and loops (ParseAPI), dataflow analyses such as slicing (DataFlowAPI), process control, stack walking and patching.",
+    "description_zh": "源自 Paradyn 项目的二进制插桩、分析与修改库。DyninstAPI 可在运行中的程序里插入和修改插桩代码，也可改写磁盘上的可执行文件或库并写回修改后的副本；同一套与机器无关的接口还支持静态和动态分析。各组件有独立手册，分别负责符号表、行号与类型（SymtabAPI）、指令解码与反汇编（InstructionAPI）、解析为基本块、函数和循环（ParseAPI）、切片等数据流分析（DataFlowAPI），以及进程控制、栈回溯和代码修补。",
+    "evidence_url": "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The CMake platform check accepts Linux, FreeBSD and Windows hosts on x86-64, 32-bit x86, AArch64, ppc64le and riscv64, plus AMD GPU code-generation targets; InstructionAPI documents x86, x86-64, ARMv8-64 and 32/64-bit PowerPC decoding. The README calls AArch64 dynamic instrumentation experimental and incomplete, and its known issues include no Windows 64-bit or Windows rewriter mode, uncaught exceptions in relocated code, a fragile Windows stack walker and a crash when parsing a binary with no functions.",
+      "Latest release at review: v13.0.0, published 2024-03-21. The reviewed master commit still declares version 13.0.0 and is 590 commits ahead of that tag; the README says the bundled v13.0.0 PDF manuals are a snapshot, so current behavior needs manuals built from source with pdflatex.",
+      "Install with Spack or build from source with CMake 3.14+ (3.19.0 is rejected), a C11/C++11 toolchain (GCC 6+), Boost 1.71+, TBB 2019.9+ and, on Unix, elfutils 0.186+; Docker containers for development are described in the docker directory. Users supply their own executables, libraries or running processes to analyze or instrument.",
+      "LGPL-2.1 (LICENSE.md). COPYRIGHT credits Barton P. Miller with contributions from LLNS, Red Hat and Bull SAS, and DataFlowAPI incorporates Rose Compiler Project code under its own copyright notice. No binaries were instrumented or rewritten for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/README.md#L47-L63",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/docs/README.md",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/docs/dyninstAPI/manual-latex/Introduction.tex",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/docs/parseAPI/manual-latex/1-Intro.tex",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/docs/instructionAPI/manual-latex/1-Intro.tex",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/docs/dataflowAPI/manual-latex/Intro.tex",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/cmake/DyninstPlatform.cmake",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/CMakeLists.txt",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/cmake/DyninstLanguageStandards.cmake",
+      "https://github.com/dyninst/dyninst/tree/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/cmake/tpls",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/LICENSE.md",
+      "https://github.com/dyninst/dyninst/blob/0c083894f16d5ea9beb8ad1eea2b60b5c2f95f86/COPYRIGHT",
+      "https://github.com/dyninst/dyninst/releases/tag/v13.0.0"
+    ]
   }
 ]
