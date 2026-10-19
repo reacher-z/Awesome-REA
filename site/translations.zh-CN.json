@@ -4950,5 +4950,14 @@
       "CI 在 Node.js 22 上运行类型检查、代码风格检查、前后端构建以及后端 node:test 测试套件，包括基于采集地图的 Dreame、Roborock、3irobotix 地图解析测试，以及 miio 和 MSmart 报文测试。受支持机器人页面称，除另有说明外，所列机器人均由作者亲自测试。这些都是项目报告的检查；本次审阅未运行任何内容，也未与厂商云的行为进行比较。",
       "采用 Apache-2.0 许可，但 README 将其治理方式描述为“源码可见的免费软件”。Kaitai 结构描述声明 CC-BY-SA-4.0，内置的机器人模型和 tracker 音乐注明采用 CC-BY-NC-SA。厂商固件、应用和云服务各自保留其条款。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "sourcemapper": {
+    "name": "sourcemapper 源映射源码还原工具",
+    "requirements": [
+      "该项目不发布任何版本或标签。README 给出的安装方式为 go install、克隆后自行构建或使用 BlackArch 软件包；go.mod 声明 Go 1.16，且不依赖任何第三方模块。所审阅的 master 提交日期为 2026-07-24，该版本还加入了 -dir 批量模式，并拒绝读取远程 sourceMappingURL 所指向的本地路径。",
+      "每次运行只能指定 -url、-jsurl 或 -dir 之一，且必须给出 -output。远程抓取时可附加请求头、经由代理或跳过 TLS 证书校验。README 提醒，使用 -jsurl 解析的 JavaScript 文件可让 sourcemapper 向其声明为源映射的任意 URL 发出 GET 请求。",
+      "输入应为使用者有权查看的源映射。工具只读取映射中的 version、sources 和 sourcesContent 字段，因此未内嵌 sourcesContent 的映射会被拒绝，没有映射的压缩代码也不在其处理范围内；它不使用 mappings 字段，输出的是打包工具当时记录的源码文本，并未与线上部署的打包产物核对。",
+      "采用 BSD-3-Clause 许可。还原出的前端代码仍受网站所有者的权利约束。README 链接了 Pulse Security 2018 年的一篇文章，介绍在渗透测试中借助它审查前端源码的用法。本次未构建该工具，也未对任何网站运行。"
+    ]
   }
 }
