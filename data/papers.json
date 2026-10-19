@@ -8383,5 +8383,62 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-rehosting-sok",
+    "title": "SoK: Enabling Security Analyses of Embedded Systems via Rehosting",
+    "title_zh": "SoK：通过重托管实现嵌入式系统的安全分析",
+    "authors": [
+      "Andrew Fasano",
+      "Tiemoko Ballo",
+      "Marius Muench",
+      "Tim Leek",
+      "Alexander Bulekov",
+      "Brendan Dolan-Gavitt",
+      "Manuel Egele",
+      "Aurélien Francillon",
+      "Long Lu",
+      "Nick Gregory",
+      "Davide Balzarotti",
+      "William Robertson"
+    ],
+    "year": 2021,
+    "publication_date": "2021-05-24",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref print-publication date; the online-publication date is recorded separately in metadata notes. The June 7–11 conference dates are not used.",
+    "date_basis_zh": "采用 ACM 在 Crossref 登记的印刷出版日期；在线出版日期在元数据说明中单独记录。本条目不采用 6 月 7—11 日的会议日期。",
+    "venue": "ACM ASIA CCS 2021",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3433210.3453093",
+    "url": "https://dl.acm.org/doi/10.1145/3433210.3453093",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3433210.3453093",
+    "code_url": "https://github.com/rehosting/rehosting_sok",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Systematizes rehosting: moving embedded firmware from its physical hardware into a virtual environment that models enough hardware behavior for dynamic analysis such as fuzzing and symbolic execution. The authors measure why whole-system emulation does not scale using 2,574 hardware configurations, 1,956 device tree blobs from Linux 5.11.4 and 618 vendor ARM Cortex SVD files. They compare corpus CPU models with QEMU support, count unique peripherals, use driver source lines as a complexity proxy, and run a Monte Carlo simulation of adding peripheral models SoC by SoC. Supporting a random 10% of the SoCs would need about 3,947 peripherals for the Linux corpus and 1,730 for the ARM Cortex corpus, against 1,083 implemented in QEMU 5.2. The paper then classifies prior systems by how they emulate, replace, symbolically model, pass through to hardware or leave each layer unmodified, describes an iterative rehosting process with fidelity evaluation, and sets out open problems.",
+    "description_zh": "系统化梳理“重托管”：把嵌入式固件从实体硬件迁移到虚拟环境中，该环境对硬件行为的建模足以支持模糊测试、符号执行等动态分析。作者以 2,574 个硬件配置衡量全系统仿真为何难以扩展，包括来自 Linux 5.11.4 的 1,956 个设备树二进制文件（DTB）和 618 个厂商提供的 ARM Cortex SVD 文件。他们将语料中的 CPU 型号与 QEMU 的支持情况对比，统计不同外设的数量，以驱动源码行数作为复杂度的近似指标，并以蒙特卡罗模拟逐个 SoC 添加外设模型。若要支持随机抽取的 10% SoC，Linux 语料约需 3,947 种外设，ARM Cortex 语料约需 1,730 种，而 QEMU 5.2 实现的外设为 1,083 种。论文随后按各系统在每一层采用仿真、替换、符号建模、透传至硬件或保持不变的方式对既有工作分类，描述含保真度评估的迭代式重托管流程，并列出开放问题。",
+    "scope_limitations_en": "This is a systematization with a measurement study, not a new rehosting tool. The measurements use hardware descriptions rather than firmware images: device trees cover Linux-based (Type-1) systems and SVD files cover only ARM Cortex hardware, and only architectures or vendors with ten or more samples are counted. Driver source lines are an explicitly rough proxy for the effort of modeling a peripheral, and closed-source drivers are assigned an architecture average. The conclusion that manually written hardware emulators will not scale rests on these proxies and on QEMU 5.2 and OVPsim as of early 2021. The authors note that rehosting fidelity lacks a formal definition and that no large-scale fidelity evaluations exist, so the taxonomy compares approaches qualitatively; a concurrent survey covers fidelity in more detail.",
+    "scope_limitations_zh": "这是一项结合测量研究的系统化综述，并非新的重托管工具。测量基于硬件描述而非固件镜像：设备树覆盖基于 Linux 的（Type-1）系统，SVD 文件只涵盖 ARM Cortex 硬件，且只统计样本数不少于十个的架构或厂商。驱动源码行数被明确作为外设建模工作量的粗略近似，闭源驱动则按所属架构的平均值计。“手工编写的硬件仿真器难以扩展”这一结论依赖于这些近似指标以及 2021 年初的 QEMU 5.2 与 OVPsim。作者指出，重托管保真度缺乏正式定义，也没有大规模保真度评估，因此分类法只对各方法作定性比较；同期的另一篇综述对保真度有更详细的讨论。",
+    "why_fits_en": "Adds a field-defining survey of firmware rehosting, giving the collection's individual rehosting systems such as Firmadyne, FirmAE and HALucinator a shared vocabulary and taxonomy.",
+    "why_fits_zh": "补充一篇界定固件重托管领域的综述，为合集中的 Firmadyne、FirmAE、HALucinator 等具体重托管系统提供共同的术语与分类框架。",
+    "metadata_notes": "ACM metadata records print publication on 2021-05-24 and online publication on 2021-06-04, pages 687–701, with the twelve-author order shown here. The paper is published under CC BY 4.0. dl.acm.org refused automated requests during this review, so the 15-page ACM PDF was read from a Wayback Machine capture of its own URL. Footnote 3 links igloo-re/rehosting_sok, which now redirects to rehosting/rehosting_sok. The reviewed 2021-06-08 commit is MIT-licensed and builds an Ubuntu 20.04 Docker image with QEMU 5.2.0, generates the 1,956 DTBs and prints the data behind Tables 1–3 and the Monte Carlo results. Its SVD analysis clones the current posborne/cmsis-svd repository, and the README warns that results change slightly as that repository grows. The repository reproduces these measurements; it is not a rehosting tool. Nothing was built or run.",
+    "metadata_notes_zh": "ACM 元数据记载印刷出版于 2021-05-24，在线出版于 2021-06-04，页码为 687–701，十二位作者顺序如本条目所列。论文以 CC BY 4.0 许可发布。审阅期间 dl.acm.org 拒绝自动请求，因此 15 页 ACM PDF 依据 Wayback Machine 对其原地址的存档副本阅读。脚注 3 链接 igloo-re/rehosting_sok，现已重定向至 rehosting/rehosting_sok。所审阅的 2021-06-08 提交采用 MIT 许可，构建基于 Ubuntu 20.04、含 QEMU 5.2.0 的 Docker 镜像，生成 1,956 个 DTB，并输出表 1–3 与蒙特卡罗模拟结果所依据的数据。其 SVD 分析会克隆最新的 posborne/cmsis-svd 仓库，README 提醒结果会随该仓库更新而略有变化。该仓库用于复现上述测量，并非重托管工具。本次未构建或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3433210.3453093",
+      "https://api.crossref.org/works/10.1145/3433210.3453093",
+      "https://web.archive.org/web/20250427221838/https://dl.acm.org/doi/pdf/10.1145/3433210.3453093",
+      "https://github.com/rehosting/rehosting_sok/blob/499b625c8aa60020f311df97a6253820982f20d4/README.md",
+      "https://github.com/rehosting/rehosting_sok/blob/499b625c8aa60020f311df97a6253820982f20d4/LICENSE",
+      "https://github.com/rehosting/rehosting_sok/blob/499b625c8aa60020f311df97a6253820982f20d4/Dockerfile"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
