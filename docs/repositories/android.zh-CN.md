@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**432 个仓库** · 2026-10-16 UTC
+**431 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -95,7 +95,6 @@
 - [z3n70/Frida-Script-Runner](https://github.com/z3n70/Frida-Script-Runner) — 基于 Web 的 Frida 框架与工具包，面向 Android/iOS 渗透测试、移动安全及动态分析，支持 AI 辅助生成 Frida 脚本。 **[381 星标]**
 - [ByNameModding/BNM-Android](https://github.com/ByNameModding/BNM-Android) — 在 Android 上通过类名、方法名和字段名修改 il2cpp 游戏。 **[373 星标]**
 - [MartinStyk/apk-analyzer](https://github.com/MartinStyk/apk-analyzer) — Google Play 下载量最高的 APK 分析应用，为设备上的每个应用生成详细报告。无需 root、无广告，数据不会离开手机。 **[371 星标]**
-- [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]**
 - [Mrack/TInjector](https://github.com/Mrack/TInjector) — 劫持 Zygote，在应用启动前注入 SO。 **[363 星标]**
 - [hackcatml/frida-flutterproxy](https://github.com/hackcatml/frida-flutterproxy) — 通过 Burp 代理 Flutter 应用流量。 **[362 星标]**
 - [hack0z/luject](https://github.com/hack0z/luject) — 🍹 为应用静态注入动态库的工具，支持 Android、iPhoneOS、macOS、Windows 和 Linux。 **[359 星标]**

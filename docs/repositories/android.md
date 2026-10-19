@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**432 repositories** · 2026-10-16 UTC
+**431 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -95,7 +95,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [z3n70/Frida-Script-Runner](https://github.com/z3n70/Frida-Script-Runner) — Web-based Frida framework and toolkit for Android &amp; iOS penetration testing, mobile security, and dynamic analysis, featuring AI-assisted Frida script generation. **[381 stars]**
 - [ByNameModding/BNM-Android](https://github.com/ByNameModding/BNM-Android) — Modding il2cpp games by classes, methods, fields names on Android. **[373 stars]**
 - [MartinStyk/apk-analyzer](https://github.com/MartinStyk/apk-analyzer) — The most downloaded APK analysis app on Google Play. Detailed reports of every app on your device. No root, no ads, nothing leaves the phone. **[371 stars]**
-- [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — Decompile React Native Android/IOS Bundle. **[371 stars]**
 - [Mrack/TInjector](https://github.com/Mrack/TInjector) — Hijack Zygote to inject a shared library before an app starts. **[363 stars]**
 - [hackcatml/frida-flutterproxy](https://github.com/hackcatml/frida-flutterproxy) — Burp proxy flutter apps **[362 stars]**
 - [hack0z/luject](https://github.com/hack0z/luject) — 🍹A static injector of dynamic library for application (android, iphoneos, macOS, windows, linux) **[359 stars]**

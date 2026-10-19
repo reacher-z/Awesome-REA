@@ -8060,5 +8060,39 @@
       "https://github.com/wux1an/wxapkg/blob/bae9b0f4c405ae9dfa0474daa54bb97e2074c571/.github/workflows/release.yml",
       "https://github.com/wux1an/wxapkg/releases/tag/v2.0.0"
     ]
+  },
+  {
+    "id": "react-native-decompiler",
+    "name": "React Native Decompiler",
+    "url": "https://github.com/numandev1/react-native-decompiler",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Alpha-stage Node.js CLI that splits a React Native JavaScript bundle (index.android.bundle or main.jsbundle), an unbundled js-modules folder, or Webpack entrypoint and chunk bundles into one readable file per module. Tagger, editor and decompiler plugins working on a Babel AST undo compilation artifacts such as Babel helpers, comma-operator chains and shortened booleans, turn element calls back into JSX and can rewrite modules as ES6 imports and exports, after which ESLint and Prettier tidy the output. Modules recognized as npm packages are skipped unless requested, and one module ID can limit output to that module and its dependencies.",
+    "description_zh": "处于 Alpha 阶段的 Node.js 命令行工具，可把 React Native 的 JavaScript 包（index.android.bundle 或 main.jsbundle）、未打包应用的 js-modules 目录，或 Webpack 入口包与分块包拆分为每个模块一个、便于阅读的文件。基于 Babel AST 的标注器、编辑器和反编译器插件会消除 Babel 辅助函数、逗号运算符链和缩写布尔值等编译痕迹，把元素创建调用还原为 JSX，并可将模块改写为 ES6 import／export 形式，最后用 ESLint 和 Prettier 整理输出。被识别为 npm 包的模块默认跳过，也可指定一个模块 ID，只输出该模块及其依赖。",
+    "evidence_url": "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest npm release: react-native-decompiler 0.2.4, published 2023-03-31, providing the react-native-decompiler and rnd commands; the reviewed master commit is from the same day and was still the latest at review. The package declares no Node.js engine range, its publish workflow uses Node.js 12, and it pins Babel 7.12, ESLint 7 and Prettier 2. It continues Richard Fu's original repository, which is now archived.",
+      "Input is a plain-JavaScript bundle taken from the user's own React Native app, a js-modules folder, or a Webpack entrypoint bundle or chunk folder. The README states in bold that encrypted or binary bundles are not supported.",
+      "The README labels the tool alpha, and the repository has no automated tests; CI only builds and lints it. The README documents the Prettier switch as --prettier, but the source reads --noPrettier. Output is cleaned-up module code for reading, not the original project sources.",
+      "AGPL-3.0-or-later. No bundles were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/README.md#L48-L70",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/README.md#L115-L121",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/package.json",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/src/main.ts#L46-L60",
+      "https://github.com/numandev1/react-native-decompiler/tree/77c7b94e986c67b95c9dad5e619b118ef17bbe17/src/decompilers",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/.github/workflows/node.js.yml",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/.github/workflows/publishnpm.yml",
+      "https://github.com/numandev1/react-native-decompiler/blob/77c7b94e986c67b95c9dad5e619b118ef17bbe17/LICENSE",
+      "https://registry.npmjs.org/react-native-decompiler/0.2.4",
+      "https://github.com/richardfuca/react-native-decompiler"
+    ]
   }
 ]

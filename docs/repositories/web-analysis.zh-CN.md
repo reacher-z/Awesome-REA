@@ -28,6 +28,7 @@
 - [aoyunyang/spider-king-skill](https://github.com/aoyunyang/spider-king-skill) — 以协议为先的逆向工程技能，将具有对抗性的网页客户端转化为纯协议 Python 采集器。 **[515 星标]**
 - [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — 用于半自动 JavaScript 恶意软件分析、去混淆和载荷提取的沙箱，为 Node.js 编写。 **[480 星标]**
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]**
+- [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]**
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — 符合规范的 WebAssembly 编译器、反编译器及生成器 **[264 星标]**
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
 - [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
