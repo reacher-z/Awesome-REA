@@ -16112,5 +16112,34 @@
       "https://github.com/arkadiyt/protodump/blob/d398fada3452b87e6f0879d9cdf3dad31bb74d6e/.github/workflows/build.yml",
       "https://github.com/arkadiyt/protodump/tree/d398fada3452b87e6f0879d9cdf3dad31bb74d6e"
     ]
+  },
+  {
+    "id": "pre-list",
+    "name": "PRE-list",
+    "url": "https://github.com/techge/PRE-list",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A table-based reading list of 71 research papers on automatic protocol reverse engineering for network protocols, from the Protocol Informatics project (2004) to NetPlier (2021). Built from three surveys and extended since, it compares each method by approach, by input (network traces or execution traces) and output (message formats, state machines or other artifacts), and by the text, binary or hybrid protocols it was evaluated on, with full references and a short table of the few papers that released code.",
+    "description_zh": "以表格形式整理的网络协议自动化逆向工程研究清单，收录 71 篇论文，从 2004 年的 Protocol Informatics 项目到 2021 年的 NetPlier。清单以三篇综述为基础并持续扩充，按所用方法、输入（网络流量记录或执行轨迹）与输出（报文格式、状态机或其他产物），以及评估所用的文本、二进制或混合协议对各方法进行比较，附完整参考文献，另有一张列出少数公开代码论文的简表。",
+    "evidence_url": "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README was last updated on 2024-05-22, when NetPlier and NEMETYL were added; the other changes date from November 2020 to May 2021. Its 71 papers span 2004–2021, so later protocol reverse-engineering work is not covered.",
+      "40 of the 71 overview rows still read “Please review” instead of describing the approach, several input/output rows are empty, and 29 rows of the tested-protocols table name no protocol. The tables summarize what each paper reports; they are not a benchmark or reproduction of the methods.",
+      "The README states that most papers do not provide their code; its source-code table lists eight projects, one only through a Web Archive copy of the Protocol Informatics page. The remaining entries are papers, with PDF links where the maintainer found one.",
+      "CSVtoREADME.py generates the README tables from tools.csv, contributions are requested as additions to tools.ods, and two further spreadsheets keep categorisations from the Duchêne et al. and Sija et al. surveys.",
+      "LICENSE is CC0-1.0, while CSVtoREADME.py carries a GPL-3.0-or-later header; the linked papers keep their publishers' terms. An independent reading list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/README.md#L263-L275",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/tools.csv",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/CSVtoREADME.py",
+      "https://github.com/techge/PRE-list/blob/9c18f7c8f00978ec70ba285a5f13b461ede12e93/LICENSE"
+    ]
   }
 ]
