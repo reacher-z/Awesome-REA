@@ -219,6 +219,15 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     html = (output / "index.html").read_text(encoding="utf-8")
     for key, value in {"RESOURCE_COUNT": len(resources), "INTEGRATION_COUNT": metadata["independent_integration_count"], "REVIEWED_AT": latest_review}.items():
         html = html.replace("{{" + key + "}}", str(value))
+    # Unfiltered target counts and the Protocol button are in the HTML, so the first paint matches app.js's first render.
+    for target in ("all", *sorted(TARGETS)):
+        count = len(resources) if target == "all" else sum(target in record["targets"] for record in resources)
+        html = html.replace("{{TARGET_COUNT_" + target.upper() + "}}", str(count))
+    protocol_button = '<button type="button" class="target-filter" data-target="protocol" aria-pressed="false" hidden>'
+    if html.count(protocol_button) != 1:
+        raise ValueError("Homepage needs exactly one curated Protocol target button")
+    if any("protocol" in record["targets"] for record in resources):
+        html = html.replace(protocol_button, protocol_button.replace(" hidden>", ">"))
     html = configure_fontawesome(html, fontawesome_dir, fontawesome_assets_url, output=output)
     source_index_path = ROOT / "data" / "source-index.json"
     source_index_output = output / "source-index.json"

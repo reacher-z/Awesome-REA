@@ -451,7 +451,24 @@ function loadDetails() {
   }).catch(() => { state.details = null; state.detailsError = true; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); });
   return state.details;
 }
-function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+function queryTerms() { return state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); }
+// skip leaves one facet out, so that facet's choices can be counted against every other active filter.
+function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
+function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+// Each target button and Type/Category option shows how many results it would give with the other filters and the query.
+// Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
+function renderFacets() {
+  const terms = queryTerms();
+  const tally = (facet, values) => { const counts = new Map([["all", 0]]); for (const r of state.records) if (matches(r, terms, facet)) { counts.set("all", counts.get("all") + 1); for (const value of values(r)) counts.set(value, (counts.get(value) || 0) + 1); } return counts; };
+  const counted = (text, count) => state.lang === "zh" ? `${text}（${count}）` : `${text} (${count})`;
+  const targets = tally("target", r => r.targets);
+  $$('[data-target-count]').forEach(el => { el.textContent = String(targets.get(el.dataset.targetCount) || 0); });
+  $$('[data-target]').forEach(button => { button.disabled = !targets.get(button.dataset.target) && button.dataset.target !== state.target; });
+  for (const [selector, facet, map, allKey] of [["#kind-select", "kind", KIND, "allKinds"], ["#category-select", "category", state.categoryLabels, "allCategories"]]) {
+    const counts = tally(facet, r => [r[facet]]);
+    for (const option of $(selector).options) { const count = counts.get(option.value) || 0; option.textContent = counted(option.value === "all" ? t(allKey) : label(map, option.value), count); option.disabled = count === 0 && option.value !== state[facet]; }
+  }
+}
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
     && foundCount === 0 && state.q.trim() !== "";
@@ -484,6 +501,7 @@ function render(shown = 0) {
   renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
+  renderFacets();
 }
 // Phones fold Type and Category behind “More filters” (styles.css); the toggle counts active selects, and a page
 // opened with one active starts expanded. Wider layouts hide the toggle and always show both selects.
