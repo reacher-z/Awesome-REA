@@ -7228,5 +7228,41 @@
       "https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/port/LICENSE",
       "https://github.com/HayatoG/iss_pc/releases/tag/v2026.10.19-d3995fe"
     ]
+  },
+  {
+    "id": "gran-turismo-4-matching-decomp-case",
+    "name": "Gran Turismo 4: an agent-assisted PS2 engine matching decompilation",
+    "url": "https://github.com/gustavocanepa/gt4-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles Gran Turismo 4’s PS2 engine executable (CORE.GT4, NTSC-U v1.01) into one C or C++ source per function for Sony’s ee-gcc 2.96, matching public libraries such as newlib and Expat from their own source. The README credits AI agents (Anthropic’s Claude) driving the project’s tools with most of the matching, each function accepted only on a compiler-and-judge comparison, and reports 95.4% of functions and 83.6% of code bytes matched for an October 2026 commit. A local full build links sources at their original addresses, fills the rest from disassembly and compares SHA-1 with the user’s executable.",
+    "description_zh": "将 Gran Turismo 4（《GT 赛车 4》）的 PS2 引擎可执行文件（CORE.GT4，NTSC-U v1.01）按每个函数一个 C 或 C++ 源文件反编译，面向 Sony 的 ee-gcc 2.96，并用 newlib、Expat 等公开库自身的源码匹配其函数。README 称大部分匹配工作由驱动项目工具的 AI 智能体（Anthropic 的 Claude）完成，每个函数须通过编译器与判定器的比对才算完成，并报告 2026 年 10 月某次提交时 95.4% 的函数和 83.6% 的代码字节已匹配。本地完整构建将源码链接到原始地址，其余部分用反汇编补齐，再与使用者的可执行文件比较 SHA-1。",
+    "evidence_url": "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress matching decompilation of the engine executable only: most game logic lives in Adhoc scripts, which the separate OpenAdhoc project re-creates, and the separate GT4 Native PC port is described as not playable. The progress-branch report for commit ba5d800 (2026-10-19), which decomp.dev also shows for the reviewed commit, gives 29,551 of 30,962 functions and 83.55% of code matched, 82.08% of code linked from source and 2.13% of data placed from source; 202 hand-written assembly functions are not counted.",
+      "Supply your own Gran Turismo 4 (USA) v1.01 disc image (SCUS-97328); orig/README.md lists SHA-1 values for SCUS_973.28, CORE.GT4 and the ELF converted from it. Nothing from the game is committed, so the SHA-1 build check and the progress reports run only where those files are present, not in CI.",
+      "Documented for Linux or WSL (Ubuntu) with Python 3.11+ and rabbitizer. tools/setup_linux.sh installs MIPS binutils and 32-bit libc, downloads decomp.me’s ee-gcc 2.96 build, clones decomp-permuter and installs splat in a virtual environment; project.toml names further decomp.me compilers, including ee-gcc 2.9 for about 270 Sony SDK functions.",
+      "A function counts as matched when tools/match.py (or the agents’ tools/swarm.py) prints MATCH, and tools/build.py links every function at its original address and compares SHA-1 of the loaded segments. CI runs unit tests, an assembly-in-C policy check and layout checks and compiles every source, but cannot link or compare without the game; matching figures are author-reported, and this collection built or ran nothing.",
+      "MIT for the project’s tools, documentation and source. THIRD_PARTY.md lists matched public libraries under their own terms (Expat, newlib, GNU libio and the GCC runtime under GPL with exceptions, SGI STL headers, MT19937), which build.py --without can leave out, and records proprietary SCE-RT/Medius, Logitech and Sony SDK code as identified but not copied. Gran Turismo 4 belongs to Sony Interactive Entertainment. Agent instructions are in AGENTS.md, CLAUDE.md and .claude/; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/orig/README.md",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/THIRD_PARTY.md",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/project.toml",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/tools/setup_linux.sh",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/.github/workflows/check.yml",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/.github/workflows/progress.yml",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/AGENTS.md",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/PILOT.md",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/e35ec1ddb6a5931252489ff7d8ed27520fdabe4e/LICENSE",
+      "https://github.com/gustavocanepa/gt4-decomp/blob/9bcdea300b904cc48bd81886e169ea8925f31d41/report.json",
+      "https://decomp.dev/gustavocanepa/gt4-decomp"
+    ]
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 348](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-348-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 181](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-181-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 349](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-349-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 182](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (163) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (164) · [应用](#app) (49)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (181) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (182) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1009,6 +1009,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Windows 与 Linux 上原生运行 PS4 版《声名狼藉：次子》自身的 x86-64 代码：由运行时重新实现游戏所用的 PS4 系统库，并以源自 shadPS4 的核心将其 GPU 命令与着色器转换为 Vulkan。项目报告该移植可以游玩但仍在开发中，能进入游戏并通过最初几章，性能仍不稳定，也有尚未解决的图形问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/infamous-second-son-pc-port-case/)
+
+- [**Gran Turismo 4：借助智能体的 PS2 引擎匹配反编译**](https://github.com/gustavocanepa/gt4-decomp)
+
+  将 Gran Turismo 4（《GT 赛车 4》）的 PS2 引擎可执行文件（CORE.GT4，NTSC-U v1.01）按每个函数一个 C 或 C++ 源文件反编译，面向 Sony 的 ee-gcc 2.96，并用 newlib、Expat 等公开库自身的源码匹配其函数。README 称大部分匹配工作由驱动项目工具的 AI 智能体（Anthropic 的 Claude）完成，每个函数须通过编译器与判定器的比对才算完成，并报告 2026 年 10 月某次提交时 95.4% 的函数和 83.6% 的代码字节已匹配。本地完整构建将源码链接到原始地址，其余部分用反汇编补齐，再与使用者的可执行文件比较 SHA-1。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gran-turismo-4-matching-decomp-case/)
 
 #### 工具、项目与集成
 
