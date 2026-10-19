@@ -39,7 +39,9 @@
 .paper-scope{padding:13px 15px;border-radius:8px;border-left:2px solid #bfd1e3;background:var(--soft)}
 .paper-scope h4,.paper-details h4{margin:0 0 6px;color:var(--ink);font-size:14px;font-weight:650}
 .paper-scope p{margin:0;color:var(--body);font-size:16px;line-height:1.75}
-.paper-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 10px}
+/* A plain list under the card heading, not a navigation landmark per paper. */
+.paper-links{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0 10px;padding:0;list-style:none}
+.paper-links>li{display:flex}
 .paper-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:5px 10px;border:1px solid var(--line);border-radius:6px;color:var(--link);background:var(--surface);font-size:14px;font-weight:550}
 .paper-link:hover{border-color:var(--strong);background:var(--tint)}
 .paper-link-primary{background:var(--ink);border-color:var(--ink);color:#fff}
