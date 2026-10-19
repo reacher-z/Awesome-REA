@@ -10012,5 +10012,39 @@
       "Intended for Flutter applications the analyst owns or is authorized to inspect. GPL-3.0 licensed; the project ships tooling and prebuilt engine assets but no application packages."
     ],
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ddc",
+    "name": "ddc",
+    "url": "https://github.com/ejfkdev/ddc",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Rust decompiler that turns Android DEX bytecode, versions 035 to 041, from APKs, multi-dex apps and XAPK/APKS/APKM containers into Java, folding lambdas and string concatenation back into Java syntax and giving locals jadx-style names. By default every file also goes through a source-level cleanup pass, described as semantics-preserving, that inlines copy chains, recovers ternaries and for-each loops and drops dead stores; --fast skips it. Alongside full decompilation, 15 query subcommands return app and manifest information, resources, strings, cross-references, class hierarchies, disassembly or single classes and methods on demand, and the same queries are served over REST and MCP.",
+    "description_zh": "用 Rust 编写的反编译器，可将 APK、多 DEX 应用以及 XAPK/APKS/APKM 容器中 035 至 041 版本的 Android DEX 字节码转换为 Java，把 lambda 和字符串拼接还原为 Java 语法，并按 jadx 的风格为局部变量命名。默认情况下，每个文件还会经过一道据称保持语义的源码级整理，内联拷贝链、恢复三元表达式和 for-each 循环并删除无用赋值；--fast 可跳过这一步。除完整反编译外，15 个查询子命令可按需返回应用与清单信息、资源、字符串、交叉引用、类层次结构、反汇编以及单个类或方法，同样的查询也可通过 REST 和 MCP 提供。",
+    "evidence_url": "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.1.30, published 2026-10-18, which is the reviewed main commit. The repository was created in September 2026 and releases come quickly (v0.1.28 to v0.1.30 within eight days). Releases ship raw binaries for Linux, Windows and macOS on x86_64 and ARM64, the non-macOS builds UPX-compressed, and Homebrew, Scoop and cargo-binstall install them; source builds use stable Rust and the author's jdc-core, cure and xyz-rust crates.",
+      "Input is an APK, app container or DEX file from the user's own app; full decompilation writes an <input>-out directory next to the input by default. ddc serve and ddc http default to the listen address :8080, with no host given, and bearer-token authentication is optional; ddc mcp stdio runs as an agent subprocess.",
+      "The README reports that all 909,689 files emitted for seven benchmark APKs, and docs/validation.md that 4.08 million files from 39 apps, pass javac's parse phase; this is a syntax check only. Known limitations include erased generic types, separate d8-desugared lambda classes, timeouts on some very large R8 methods whose output can vary between runs, and desugared pattern switches; a full-classpath javac run still finds about 7,500 ddc-attributable errors across 0.91 million files, roughly twice jadx's count on the same set.",
+      "CI builds and runs cargo test on Linux, macOS and Windows. The benchmark APKs are not in the repository; its fixtures are small DEX files and one binary AndroidManifest. MIT license. No apps were decompiled and the servers were not run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/README.md#L179-L192",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/docs/cli.md",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/docs/subcommands.md",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/docs/validation.md",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/docs/architecture.md",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/crates/ddc-cli/src/mode_help.rs",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/Cargo.toml",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/.github/workflows/ci.yml",
+      "https://github.com/ejfkdev/ddc/blob/e240550669fed51edc8d373654b1883322a60eec/LICENSE",
+      "https://github.com/ejfkdev/ddc/releases/tag/v0.1.30"
+    ]
   }
 ]

@@ -3766,5 +3766,14 @@
       "README 列出支持 Android 的 arm64、arm32 与 x64 以及 iOS 的 arm64，覆盖 stable 与 beta 渠道的 release 和 profile 构建，引擎覆盖范围按快照哈希记录在 enginehash.csv；monorepo 合并前（<= 3.27）的引擎需从归档的 flutter/engine 仓库构建。Frida 挂钩与转储收集需要目标设备或模拟器上具备匹配的 frida-server。",
       "仅用于分析者拥有或有权检查的 Flutter 应用。采用 GPL-3.0 许可证；项目提供工具与预编译引擎资源，但不含任何应用安装包。"
     ]
+  },
+  "ddc": {
+    "name": "ddc Android DEX 反编译器",
+    "requirements": [
+      "审阅时的最新版本为 v0.1.30，于 2026-10-18 发布，即所审阅的 main 分支提交。仓库创建于 2026 年 9 月，版本更新频繁（v0.1.28 至 v0.1.30 相隔仅八天）。每个版本提供 Linux、Windows 和 macOS 的 x86_64 与 ARM64 原始二进制文件，非 macOS 版本经过 UPX 压缩，可通过 Homebrew、Scoop 和 cargo-binstall 安装；从源码构建使用稳定版 Rust，并依赖作者自己的 jdc-core、cure 和 xyz-rust crate。",
+      "输入为取自用户自己应用的 APK、应用容器或 DEX 文件；完整反编译默认在输入文件旁生成 <input>-out 目录。ddc serve 和 ddc http 的默认监听地址为 :8080（未指定主机），Bearer 令牌认证为可选项；ddc mcp stdio 以智能体子进程方式运行。",
+      "README 称七个基准 APK 生成的全部 909,689 个文件、docs/validation.md 称 39 个应用生成的 408 万个文件都能通过 javac 的解析阶段，但这只是语法检查。已知局限包括泛型类型被擦除、经 d8 脱糖的 lambda 类仍为单独文件、部分超大 R8 方法会超时且输出可能因运行而异，以及模式匹配 switch 以脱糖后的形式呈现；使用完整类路径的 javac 检查在 91 万个文件中仍发现约 7,500 个归因于 ddc 的错误，约为 jadx 在同一组文件上的两倍。",
+      "CI 在 Linux、macOS 和 Windows 上构建并运行 cargo test。基准 APK 不在仓库中，测试夹具只有少量 DEX 文件和一个二进制 AndroidManifest。采用 MIT 许可。本次未反编译任何应用，也未运行服务器。"
+    ]
   }
 }
