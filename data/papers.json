@@ -8489,5 +8489,52 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-decfuzzer",
+    "title": "How far we have come: testing decompilation correctness of C decompilers",
+    "title_zh": "我们走了多远：C 反编译器反编译正确性测试",
+    "authors": [
+      "Zhibo Liu",
+      "Shuai Wang"
+    ],
+    "year": 2020,
+    "publication_date": "2020-07-18",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records print and online publication on 2020-07-18, and the ACM article page gives the same publication date. This entry uses that date, not the conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2020-07-18，ACM 论文页面给出的出版日期相同。本条目采用该日期，而非会议日程。",
+    "venue": "ACM ISSTA 2020",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/3395363.3397370",
+    "url": "https://dl.acm.org/doi/10.1145/3395363.3397370",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3395363.3397370",
+    "code_url": "https://github.com/monkbai/DecFuzzer",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Tests whether C decompilers preserve program behavior. The authors' DecFuzzer compiles a Csmith-generated program, decompiles the executable, substitutes the decompiled function for the original in the source, recompiles, and compares the two programs' outputs; equivalence-modulo-inputs (EMI) mutation then derives further test programs from the seeds. Across four popular decompilers the authors report 1,423 inputs that trigger decompilation errors and, after manual analysis, 13 bugs in two open-source decompilers. They argue that modern decompilers are making real progress on functional correctness, while type recovery and optimization still hinder accurate output.",
+    "description_zh": "测试 C 反编译器能否保持程序行为。作者的 DecFuzzer 编译由 Csmith 生成的程序，反编译所得可执行文件，在源码中用反编译出的函数替换原函数后重新编译，并比较两个程序的输出；随后通过模输入等价（EMI）变异，从种子程序派生更多测试程序。作者在四种常用反编译器上报告了 1,423 个触发反编译错误的输入，并经人工分析在两个开源反编译器中确认 13 个缺陷。他们认为现代反编译器在功能正确性上取得了切实进展，但类型恢复与优化仍妨碍其输出准确的代码。",
+    "scope_limitations_en": "The tests use small generated programs, not real-world binaries, and a failed recompilation is recorded separately from a behavioral mismatch. In the authors' artifact, test programs are compiled as 32-bit x86 with GCC at -O0, and Csmith is restricted to a single function without arrays, structs, unions, pointers or long long types, so optimized code and richer data types are outside that configuration. The four decompilers (IDA Pro, JEB3, RetDec and Radare2's r2ghidra plugin) were tested as of 2020; the error counts and bugs describe those releases, not current ones. IDA Pro and JEB3 are commercial and not included in the artifact, which sets up only RetDec and r2ghidra.",
+    "scope_limitations_zh": "测试使用规模较小的生成程序，而非真实二进制；重新编译失败与行为不一致分开记录。在作者的产物中，测试程序以 GCC 在 -O0 下编译为 32 位 x86 代码，Csmith 被限制为生成单个函数，且不含数组、结构体、联合体、指针或 long long 类型，因此优化代码和更丰富的数据类型不在该配置范围内。四种反编译器（IDA Pro、JEB3、RetDec 及 Radare2 的 r2ghidra 插件）均按 2020 年时的版本测试；错误数量与缺陷针对这些版本，而非当前版本。IDA Pro 与 JEB3 属商业软件，未包含在产物中，产物只配置了 RetDec 与 r2ghidra。",
+    "why_fits_en": "Adds differential testing of decompiler correctness through recompilation, complementing the collection's decompiler benchmarks, such as DecompileBench, that evaluate output on real functions.",
+    "why_fits_zh": "补充借助重新编译对反编译器正确性开展差分测试的研究，与 DecompileBench 等在真实函数上评估输出的反编译基准互补。",
+    "metadata_notes": "Crossref and the ACM page give the two-author order, pages 475–487 and the title in the lowercase form used here; the conference programme and the artifact README capitalize it “How Far We Have Come: Testing Decompilation Correctness of C Decompilers”. dl.acm.org refused automated requests during this review and no other copy of the paper text was found, so the method and results above follow the abstract on the ISSTA 2020 programme page, the ACM page captured by the Wayback Machine (abstract, reference list and an Artifacts Evaluated – Functional badge) and the artifact itself; paper-only details, such as per-decompiler results, are not recorded. Reference [9] of the paper links monkbai/DecFuzzer. The reviewed 2020-04-23 commit is the ISSTA’20 artifact-evaluation package: it targets Ubuntu 18.04, needs MySQL for EMI mutation, a prebuilt RetDec v4.0 and Radare2 with r2ghidra, and links seed and result data on Dropbox. The repository has no license file and GitHub reports none, so no license is stated here. Nothing was installed or run.",
+    "metadata_notes_zh": "Crossref 与 ACM 页面给出两位作者的顺序、页码 475–487，以及本条目采用的小写标题；会议日程页与产物 README 将其写作“How Far We Have Come: Testing Decompilation Correctness of C Decompilers”。审阅期间 dl.acm.org 拒绝自动请求，也未找到论文正文的其他副本，因此上述方法与结果依据 ISSTA 2020 日程页上的摘要、Wayback Machine 存档的 ACM 页面（摘要、参考文献列表及“Artifacts Evaluated – Functional”徽章）以及产物本身；仅见于论文正文的细节（如各反编译器的结果）未予记录。论文参考文献 [9] 链接 monkbai/DecFuzzer。所审阅的 2020-04-23 提交是 ISSTA’20 产物评审包：面向 Ubuntu 18.04，EMI 变异需要 MySQL，还需预编译的 RetDec v4.0 以及带 r2ghidra 的 Radare2，并在 Dropbox 上提供种子与结果数据的链接。仓库没有许可证文件，GitHub 也未识别出许可证，因此本条目不注明许可证。本次未安装或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3395363.3397370",
+      "https://api.crossref.org/works/10.1145/3395363.3397370",
+      "https://web.archive.org/web/20251215175843/https://dl.acm.org/doi/abs/10.1145/3395363.3397370",
+      "https://conf.researchr.org/details/issta-2020/issta-2020-papers/26/How-Far-We-Have-Come-Testing-Decompilation-Correctness-of-C-Decompilers",
+      "https://github.com/monkbai/DecFuzzer/blob/8e109c12d499df0223430ae17f71aac3109bd1f6/README.md",
+      "https://github.com/monkbai/DecFuzzer/blob/8e109c12d499df0223430ae17f71aac3109bd1f6/src/Config.py"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
