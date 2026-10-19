@@ -8768,12 +8768,18 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111250941886226471"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The cited post (@InvestingVault, 2026-10-17) summarizes @j3lte’s report of pointing Claude at Wes Bos’s photo-frame repository and returning setup notes for an AMABOO 10.1-inch Frameo frame. That pull request (#136, open at head ba4a8ab) records one unit: ADB through Frameo’s own Beta Program toggle, a verified logical firmware backup, the vendor app and updaters disabled, and the existing Home HQ kiosk set as the Home app, all reversible without flashing; its description says it was generated with Claude Code. It documents a device setup with stock Android tools, not a reconstruction of software, firmware or a protocol. Retain the lead without a catalog mapping; this is not a judgment of the notes.",
+      "reason_zh": "所引帖子（@InvestingVault，2026-10-17）概述了 @j3lte 的经历：让 Claude 参考 Wes Bos 的相框仓库，并为一台 AMABOO 10.1 英寸 Frameo 相框提交了设置记录。该拉取请求（#136，仍开放，head 为 ba4a8ab）记录的是一台设备：通过 Frameo 自带的 Beta Program 开关启用 ADB，完成经过校验的逻辑固件备份，停用厂商应用和更新程序，并把现成的 Home HQ 信息屏应用设为主屏应用；全程可撤销，无需刷写。其说明称内容由 Claude Code 生成。它记录的是使用标准 Android 工具完成的设备设置，而非对软件、固件或协议的重建。保留此线索而不建立目录映射；这不是对这些记录的评价。",
+      "primary_evidence_urls": [
+        "https://x.com/InvestingVault/status/2111250941886226471",
+        "https://x.com/j3lte/status/2110838799110697034",
+        "https://github.com/wesbos/photo-frame-dashboard/pull/136",
+        "https://github.com/j3lte/photo-frame-dashboard/blob/ba4a8ab452c17493bdbdbdba8c8e3cc276c94e10/docs/amaboo-gbzk-y1000.md",
+        "https://github.com/wesbos/photo-frame-dashboard/blob/e97c50ba459c49ea8237259f69b95cd28054b628/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -15715,15 +15721,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 169,
-      "pending": 227
+      "insufficient-evidence": 170,
+      "pending": 226
     },
     "units_by_state": {
       "already-curated": 193,
-      "insufficient-evidence": 169,
-      "pending": 227
+      "insufficient-evidence": 170,
+      "pending": 226
     },
-    "primary_reviewed_units": 304,
+    "primary_reviewed_units": 305,
     "catalog_linked_occurrences": 204,
     "distinct_resource_ids": 199,
     "distinct_paper_ids": 1,
