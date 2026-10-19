@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 165 | 164 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 286 | 285 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 166 | 165 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 285 | 284 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 140 | 140 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-176 个出现项含目录链接；共关联 170 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+177 个出现项含目录链接；共关联 171 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 244 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 245 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -278,6 +278,7 @@
 | OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现 | 已收录 | [来源](https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md) |
 | Mario Party 4：美版 GameCube 一致性反编译重建 | 已收录 | [来源](https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md) |
 | Snap64 Recomp：Pokémon Snap 的静态重编译移植 | 已收录 | [来源](https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md) |
+| 恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则 | 已收录 | [来源](https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md) |
 | SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2 | 已收录 | [来源](https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md) |
 | Open Scrantic：重建 Johnny Castaway 屏幕保护程序引擎 | 已收录 | [来源](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
 
@@ -297,6 +298,7 @@
 - `hao-games:row-003` — 固定版本的 README、构建指南、CMake 文件、子模块、工作流和许可证记录了一个基于 libultraship 的原生移植：它转换使用者自备的美版或日版 ROM，不主张生成一致的输出。完整映射覆盖此移植。与 n64decomp 的相关映射依据共同的源码结构和抽查的两个文件，因为 README 没有指明上游项目。
 - `hao-games:row-004` — 固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录它源自另行收录的反编译重建项目，并非对多人项目本身的评价。
 - `hao-games:row-020` — 固定版本的 README、构建规则、校验文件和 CI 配置支持这份美版 N64《姆吉拉的假面》反编译报告。完整映射只覆盖此仓库，不涵盖帖子所链接的存档；相关映射记录 Zelda 64: Recompiled 注明借用其头文件和函数，但它是独立的静态重编译。进行中状态、原 ROM 依赖、许可证缺失和项目报告的一致性均明确保留。
+- `hao-games:row-130` — 固定版本的 README、逆向报告、测试说明、游戏文件及第三方声明，记录了作者使用 REA MCP 检查开源 T-Rex Runner 页面，并由 Codex 重建其速度规则。完整映射覆盖此仓库范围有限的加速规则案例，不代表玩法等价；REA 另行发布的恐龙教学案例仅作为相关条目关联。作者报告的测试与手动检查未经重跑。
 - `hao-games:row-134` — TH08 重建已收录，但此独立 WebAssembly 配套仓库不能作为同一制品视为已覆盖；其自身实现与部署说法仍待核查。
 - `hao-games:row-136` — 目前只覆盖官方 TH04 弹幕角度辅助函数展示；此合集行指向更广的重建仓库，因此完整仓库／游戏覆盖仍待核查。
 - `hao-games:row-137` — 目前只覆盖官方 DX-Ball 声像函数展示，不能据此认定此更广的游戏重建仓库已被精选收录或已完成。

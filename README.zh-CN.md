@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 309](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 70](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 310](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-310-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 157](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-157-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 70](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (142) · [应用](#app) (44)
+- [网站](#website) (19) · [游戏](#game) (142) · [应用](#app) (44)
 - [原生二进制](#native-binary) (21) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (156) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (157) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -86,6 +86,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-claude-code-isolated-ab-case/)
+
+- [**恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则**](https://github.com/zhxunzh84/rea-dino-reverse-engineering)
+
+  作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)
 
 - [**BaoCut Design：移植重建的设计稿与设计系统编辑器**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 

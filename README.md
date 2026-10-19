@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 309](https://img.shields.io/badge/resources-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 310](https://img.shields.io/badge/resources-310-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 157](https://img.shields.io/badge/cases-157-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (142) · [App](#app) (44)
+- [Website](#website) (19) · [Game](#game) (142) · [App](#app) (44)
 - [Native Binary](#native-binary) (21) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (156) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (157) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -85,6 +85,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. Both arms answered correctly, while the REA arm took up to 2.00× the time and 1.67× the API-equivalent cost. It is an analysis-evaluation and safety-configuration case, not a reconstruction.
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/rea-claude-code-isolated-ab-case/)
+
+- [**Dinosaur runner: an REA-inspected speed rule rebuilt with Codex**](https://github.com/zhxunzh84/rea-dino-reverse-engineering)
+
+  The author uses REA’s MCP browser tools to passively capture the JavaScript loaded by wayou’s open-source T-Rex Runner page, then has Codex rebuild its acceleration rule in one self-contained HTML5 Canvas game. The report identifies the captured script by SHA-256 and separates verified source facts from reconstruction choices; only the speed rule is claimed, not full gameplay equivalence.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/rea-dino-runner-community-case/)
 
 - [**BaoCut Design: porting reconstructed canvas and design-system editors**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 

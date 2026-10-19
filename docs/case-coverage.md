@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 165 | 164 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 286 | 285 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 166 | 165 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 285 | 284 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 140 | 140 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-176 occurrences have catalog links. They reference 170 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+177 occurrences have catalog links. They reference 171 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 244 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 245 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -278,6 +278,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | OpenRA: an engine reimplementation reimagining early Westwood RTS games | Already curated | [Source](https://github.com/OpenRA/OpenRA/blob/e180e3225f3930272dd451917467631618f8976f/README.md) |
 | Mario Party 4: matching GameCube decompilation of the USA releases | Already curated | [Source](https://github.com/mariopartyrd/marioparty4/blob/5b01c79b4910525e3fc5aa312eddd6d014e7f337/README.md) |
 | Snap64 Recomp: a static-recompilation port of Pokémon Snap | Already curated | [Source](https://github.com/JackandBeans/Snap64Recomp/blob/cf53b89272b9db19059dd97eed2690ea1dd94844/README.md) |
+| Dinosaur runner: an REA-inspected speed rule rebuilt with Codex | Already curated | [Source](https://github.com/zhxunzh84/rea-dino-reverse-engineering/blob/1fa0ae9faae97d65754f2abf89d3e8326aea9525/README.md) |
 | SpaceCadetPinball: decompiled game logic adapted to SDL2 | Already curated | [Source](https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md) |
 | Open Scrantic: reconstructing the Johnny Castaway screensaver engine | Already curated | [Source](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
 
@@ -297,6 +298,7 @@ Partial or related catalog mappings:
 - `hao-games:row-003` — The pinned README, building guide, CMake file, submodules, workflows and license document a native libultraship port that converts a user-supplied US or Japanese ROM and claims no matching output. Full mapping covers this port. The related n64decomp mapping rests on the shared source layout and two sampled files, because the README does not name its upstream.
 - `hao-games:row-004` — The pinned README, wiki and build files present an online-multiplayer and Lua-modding project for the Super Mario 64 PC port, continuing sm64ex-coop, itself a fork of sm64ex. Source checks a user-supplied US ROM, and PC builds force non-matching code. No reconstruction work of its own is documented: no decompilation account, comparison or matching evidence. The related mapping records only its descent from the separately curated decompilation. This is not a finding about the multiplayer project itself.
 - `hao-games:row-020` — Pinned README, build rules, checksum and CI configuration support this US N64 Majora’s Mask decompilation report. The full mapping covers this repository, not the post’s linked archive; a related mapping records that Zelda 64: Recompiled credits it for headers and functions but is a separate static recompilation. WIP status, the original-ROM dependency, the absent license and project-reported matching remain explicit.
+- `hao-games:row-130` — The pinned README, reverse-engineering report, testing notes, game file and notices document the author’s REA MCP inspection of the open-source T-Rex Runner page and a Codex-built reconstruction of its speed rule. Full mapping covers this repository’s bounded acceleration case, not gameplay equivalence; REA’s separate dinosaur teaching case is linked only as related. Author-reported tests and manual checks were not rerun.
 - `hao-games:row-134` — The TH08 reconstruction is curated, but this separate WebAssembly companion repository is not covered as the same artifact. Its own implementation and deployment claims remain pending.
 - `hao-games:row-136` — Only the official TH04 bullet-ring helper showcase is covered. This collection row identifies a broader reconstruction repository, so full repository/game coverage remains pending.
 - `hao-games:row-137` — Only the official DX-Ball sound-pan function showcase is covered. That does not establish curation or completion of this broader game-reconstruction repository.
