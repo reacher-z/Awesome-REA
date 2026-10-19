@@ -8257,5 +8257,41 @@
       "https://github.com/jac3km4/redscript/releases/tag/v1.0.0-preview.22",
       "https://github.com/jac3km4/redscript/compare/v1.0.0-preview.22...3ca666c8ec14cfc803ef3888aab6ebc7a1c2bb86"
     ]
+  },
+  {
+    "id": "kong-agentic-reverse-engineer",
+    "name": "Kong",
+    "url": "https://github.com/amruth-sn/kong",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line pipeline that runs Ghidra in-process through PyGhidra and asks Claude, OpenAI or OpenAI-compatible models to name the functions, types and parameters of a stripped binary, working bottom-up through the call graph so callers see already-named callees. It matches known library and cryptographic signatures first, sends functions whose decompilation looks obfuscated through a tool-using deobfuscation pass with z3-based simplification, applies results to the Ghidra program and exports annotated C and an analysis.json file. Its README calls it the first agentic reverse engineer; that label and its accuracy and cost figures are the author’s claims.",
+    "description_zh": "命令行分析流水线，通过 PyGhidra 在进程内运行 Ghidra，请 Claude、OpenAI 或兼容 OpenAI 接口的模型为去符号二进制文件中的函数、类型和参数命名，并沿调用图自底向上处理，使调用者能看到已命名的被调函数。它先匹配已知库函数与密码算法特征，再把反编译结果疑似混淆的函数交给可调用工具、借助 z3 化简的去混淆环节，将结果应用到 Ghidra 程序中，并导出带注释的 C 代码和 analysis.json 文件。README 称其为首个智能体逆向工程师，这一说法以及其中的准确性和成本数据均为作者陈述。",
+    "evidence_url": "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is 25 commits after the v0.2.2 release of 2026-03-18, which matches kong-re 0.2.2 on PyPI; those later commits add an unreleased Rust kong-ml crate and XDA model-training scripts that the README does not describe. Kong needs Python 3.11+ with uv, a local Ghidra installation and JDK 21+, which it detects or reads from GHIDRA_INSTALL_DIR and JAVA_HOME. Its commands are kong setup, analyze, info and eval, with a Textual interface or --headless output.",
+      "Analysis needs an Anthropic or OpenAI API key, or an OpenAI-compatible endpoint passed with --base-url, and sends each function’s decompilation with its cross-references, strings and neighbouring signatures to that service; Kong tracks token use and estimated cost per model. Users supply the binary to analyse, and the repository ships no target binaries.",
+      "The README rates its confidence by architecture and source language: high for C and C++ on x86, x86-64, ARM and AArch64, medium or low for Go, Rust, MIPS and PowerPC, and lower as binaries grow. Obfuscation is detected by patterns in the decompiled text before the deobfuscation pass. BENCHMARKS.md reports a single run with claude-opus-4-6 on a stripped liblzma.so.5.4.1 from the backdoored XZ Utils 5.6.1 (CVE-2024-3094): 355 of 396 queued functions analysed in 15 minutes for $6.63, with the five core implant functions found at model-reported confidence of 90–95%. These are author results, not reproduced here.",
+      "The kong eval command scores analysis.json against ground-truth source, using word-based Jaccard matching for names and signature-component scoring for types; no evaluation results are published. CI runs the pytest suite on Python 3.11 to 3.14 for pull requests. This collection reviewed source and documentation without running Kong, Ghidra or any model.",
+      "Apache-2.0 per LICENSE and pyproject.toml; Ghidra, model services and analysed binaries keep their own terms. The README names KeygraphHQ’s Shannon web-pentesting pipeline as its inspiration. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/BENCHMARKS.md",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/pyproject.toml",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/kong/__main__.py",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/kong/agent/deobfuscator.py",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/kong/llm/tools.py",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/kong/evals/metrics.py",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/.github/workflows/ci.yml",
+      "https://github.com/amruth-sn/kong/blob/8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2/LICENSE",
+      "https://github.com/amruth-sn/kong/releases/tag/v0.2.2",
+      "https://pypi.org/project/kong-re/0.2.2/",
+      "https://github.com/amruth-sn/kong/compare/v0.2.2...8c4ee4bf52e0eb9efc3a0b22ad6da03387543fd2"
+    ]
   }
 ]

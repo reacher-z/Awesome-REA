@@ -3283,5 +3283,15 @@
       "语言文档位于 REDmodding 社区 wiki，适用于 VS Code、neovim、IntelliJ IDEA、Zed 和 Helix 的编辑器支持位于单独的 redscript-ide 仓库；两者本次均未审阅。README 未说明支持的游戏补丁范围，本条目不代表与任何特定游戏版本兼容。",
       "采用 MIT 许可。本条目只涉及对使用者自有游戏安装的单机脚本模组制作与分析；游戏本身的许可条款与此相互独立。本次未编译或反编译任何脚本，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "kong-agentic-reverse-engineer": {
+    "name": "Kong：基于 Ghidra 的大模型去符号二进制分析流水线",
+    "requirements": [
+      "所审阅的 main 提交位于 2026-03-18 发布的 v0.2.2 之后 25 个提交，该版本与 PyPI 上的 kong-re 0.2.2 一致；之后的提交加入了尚未发布的 Rust kong-ml crate 和 XDA 模型训练脚本，README 未作介绍。Kong 需要 Python 3.11+ 与 uv、本地安装的 Ghidra 以及 JDK 21+，它会自动检测，也可从 GHIDRA_INSTALL_DIR 和 JAVA_HOME 读取。命令包括 kong setup、analyze、info 和 eval，可使用 Textual 界面或 --headless 输出。",
+      "分析需要 Anthropic 或 OpenAI API 密钥，或通过 --base-url 指定兼容 OpenAI 接口的端点，并会把每个函数的反编译结果连同其交叉引用、字符串和相邻函数签名发送给该服务；Kong 按模型统计 token 用量和估算费用。待分析的二进制文件由使用者自备，仓库不附带目标二进制文件。",
+      "README 按架构和源语言给出可信度：x86、x86-64、ARM 和 AArch64 上的 C 与 C++ 为高，Go、Rust、MIPS 和 PowerPC 为中或低，且二进制越大可信度越低。混淆是在去混淆环节之前按反编译文本中的模式检测的。BENCHMARKS.md 报告了一次使用 claude-opus-4-6 的运行，对象是来自被植入后门的 XZ Utils 5.6.1、已去符号的 liblzma.so.5.4.1（CVE-2024-3094）：15 分钟内花费 6.63 美元分析了排队的 396 个函数中的 355 个，并以模型自报 90–95% 的置信度找出五个核心植入函数。这些均为作者结果，本次未复现。",
+      "kong eval 命令以真实源码为基准为 analysis.json 打分，名称采用基于词的 Jaccard 匹配，类型按签名组成部分评分；仓库未公开评测结果。CI 在拉取请求上以 Python 3.11 至 3.14 运行 pytest 测试套件。本合集仅审阅源码与文档，未运行 Kong、Ghidra 或任何模型。",
+      "LICENSE 与 pyproject.toml 标明采用 Apache-2.0；Ghidra、模型服务及被分析的二进制文件各有其条款。README 称其灵感来自 KeygraphHQ 的 Shannon 网页渗透测试流水线。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
