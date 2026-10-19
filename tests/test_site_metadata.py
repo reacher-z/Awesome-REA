@@ -128,6 +128,7 @@ class SecurityHeaderTests(unittest.TestCase):
         site = rules.pop('/*')
         self.assertEqual(site['x-frame-options'], 'DENY')
         self.assertEqual(site['strict-transport-security'], 'max-age=2592000')
+        self.assertEqual(site['referrer-policy'], 'strict-origin-when-cross-origin')
         directives = csp_directives(site['content-security-policy'])
         self.assertEqual(directives['script-src'], ["'self'", 'https://static.cloudflareinsights.com'])
         self.assertEqual(directives['connect-src'], ["'self'", 'https://cloudflareinsights.com'])
@@ -163,6 +164,7 @@ class SecurityHeaderTests(unittest.TestCase):
                  '<script type="application/ld+json">{}</script><script src="/app.js?v=1" defer></script></head>'
                  '<body><script id="data" type="application/json">{}</script></body>')
         self.check(valid)
+        self.check(valid + '<a href="https://example.org/" target="_blank" rel="noopener">x</a><a href="/about/">y</a>')
         headers = (ROOT / 'site/_headers').read_text(encoding='utf-8')
         failures = {
             'inline script': valid + '<script>alert(1)</script>',
@@ -173,6 +175,8 @@ class SecurityHeaderTests(unittest.TestCase):
             'frame': valid + '<iframe src="/"></iframe>',
             'third-party preload': valid.replace('href="/catalog.json?v=1"', 'href="https://cdn.example.org/catalog.json"'),
             'untyped preload': valid.replace(' as="fetch"', ''),
+            'suppressed referrer': valid + '<a href="https://example.org/" target="_blank" rel="noopener noreferrer">x</a>',
+            'new tab without noopener': valid + '<a href="https://example.org/" target="_blank">x</a>',
         }
         for name, html in failures.items():
             with self.subTest(case=name), self.assertRaises(AssertionError):
@@ -184,7 +188,9 @@ class SecurityHeaderTests(unittest.TestCase):
                               'no policy': headers.replace('Content-Security-Policy:', 'X-Content-Security-Policy:'),
                               'pages.dev indexable': headers.replace('X-Robots-Tag: noindex', 'X-Robots-Tag: all'),
                               'preview indexable': headers.replace('https://:version.:project.pages.dev/*', '/preview/*'),
-                              'canonical noindex': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: DENY\n  X-Robots-Tag: noindex')}.items():
+                              'canonical noindex': headers.replace('X-Frame-Options: DENY', 'X-Frame-Options: DENY\n  X-Robots-Tag: noindex'),
+                              'full referrer': headers.replace('strict-origin-when-cross-origin', 'unsafe-url'),
+                              'no referrer policy': headers.replace('  Referrer-Policy: strict-origin-when-cross-origin\n', '')}.items():
             with self.subTest(case=name), self.assertRaises(AssertionError):
                 self.check(valid, changed)
         # A staged rollout may use the Report-Only header with the same policy.

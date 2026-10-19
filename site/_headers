@@ -1,10 +1,12 @@
 # Site-wide security headers. The policy allows same-origin scripts, styles, images and JSON
 # fetches, plus the licensed icon stylesheet and fonts served from awesome-rea.pages.dev.
+# Linked sites receive only the origin https://awesomerea.org/ as referrer, never a path or search query.
 /*
   Content-Security-Policy: default-src 'none'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://awesome-rea.pages.dev; font-src 'self' https://awesome-rea.pages.dev; img-src 'self'; connect-src 'self' https://cloudflareinsights.com; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), geolocation=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=2592000
+  Referrer-Policy: strict-origin-when-cross-origin
 /fonts/*
   Access-Control-Allow-Origin: *
 /fontawesome.css
