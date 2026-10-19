@@ -12,6 +12,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
+from evidence_links import evidence_link
 from open_graph import open_graph_meta, website_reference
 from source_scope import exclusion_counts, unavailable_clause
 
@@ -132,11 +133,9 @@ def _resource_card(record: dict, language: str) -> str:
     kind = KIND_LABELS[record['kind']][1 if zh else 0]
     targets = ' · '.join(TARGETS[target][1 if zh else 0] for target in record['targets'])
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
-    additional = ''.join(
-        f'<li><a href="{_url(url)}" target="_blank" rel="noopener noreferrer">'
-        f'{("补充来源" if zh else "Additional source")} {index} ↗</a></li>'
-        for index, url in enumerate(record.get('additional_evidence_urls', []), 1)
-    )
+    # Further evidence is named as on the entry page: a pinned GitHub path with its repository, or the URL.
+    additional = ''.join(f'<li>{evidence_link(url, _url(url), language, arrow=True)}</li>'
+                         for url in record.get('additional_evidence_urls', []))
     reviewed = str(record['verified_at'])
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
   <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
@@ -156,11 +155,8 @@ def _case_row(record: dict, language: str, section: str) -> str:
     relationship = RELATIONSHIPS[record['relationship']][int(zh)]
     targets = ' · '.join(TARGETS[target][int(zh)] for target in record['targets'])
     requirements = ''.join(f'<li>{escape(item)}</li>' for item in _requirements(record, language))
-    evidence = [(record['evidence_url'], '原始证据' if zh else 'Primary evidence')]
-    evidence += [(url, f'补充来源 {index}' if zh else f'Additional source {index}')
-                 for index, url in enumerate(record.get('additional_evidence_urls', []), 1)]
-    evidence_links = ''.join(f'<li><a href="{_url(url)}" target="_blank" rel="noopener noreferrer">{escape(label)} <span aria-hidden="true">↗</span></a></li>'
-                             for url, label in evidence)
+    evidence_links = (f'<li><a href="{_url(record["evidence_url"])}" target="_blank" rel="noopener noreferrer">{("原始证据" if zh else "Primary evidence")} <span aria-hidden="true">↗</span></a></li>'
+                      + ''.join(f'<li>{evidence_link(url, _url(url), language, arrow=True)}</li>' for url in record.get('additional_evidence_urls', [])))
     reviewed = str(record['verified_at'])
     return f'''<article class="case-row" id="{identifier}" data-case-id="{identifier}" data-resource-id="{identifier}" data-case-section="{escape(section, quote=True)}">
   <div class="case-heading"><h3><a href="{detail_path}">{escape(name)}</a></h3><span class="case-relationship">{escape(relationship)}</span></div>

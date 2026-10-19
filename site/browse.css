@@ -42,6 +42,9 @@
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
 .browse-main .requirements ul{max-width:68ch;font-size:15px;line-height:1.8;color:var(--body)}
 .browse-main .requirements li+li{margin-top:12px}
+/* Evidence links carry the entry pages' labels; a pinned GitHub path is followed by its repository and revision. */
+.browse-main .entry-source-context{display:block;margin-top:2px;color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.browse-main .requirements a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
 html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

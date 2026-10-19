@@ -27,8 +27,11 @@
 .case-evidence-body{max-width:76ch;padding:2px 0 8px;color:var(--body);overflow-wrap:anywhere}
 .case-requirements{margin:2px 0 12px;padding-left:24px}
 .case-requirements li+li{margin-top:10px}
-.case-evidence-links{display:flex;flex-wrap:wrap;gap:0 18px;margin:0;padding:0;list-style:none}
-.case-evidence-links a{display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
+/* One evidence link per line: a pinned GitHub path, then its repository and revision. */
+.case-evidence-links{display:grid;gap:2px;margin:0;padding:0;list-style:none}
+.case-evidence-links li{min-width:0}
+.case-evidence-links a{display:inline-block;padding:9px 0;color:var(--link);text-decoration:underline;text-underline-offset:4px}
+.case-evidence-links .entry-source-context{margin:-7px 0 7px}
 .case-review-date{margin:5px 0 0;font-size:14px;color:var(--muted)}
 .cases-empty{padding:24px 0;font-size:16px;color:var(--body)}
 .cases-main a:focus-visible,.cases-main summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
