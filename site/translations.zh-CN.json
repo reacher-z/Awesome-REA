@@ -3548,5 +3548,14 @@
       "输入为用户提供的可执行文件，或通过 --loader=raw 并指定基址打开的原始代码块。仓库中还有 README 架构列表之外的 RISC-V、SystemZ 和 Thumb 软件包。提升结果取决于各架构语义的覆盖程度；2.5.0 更新日志新增了 --print-missing 选项，用于列出未能提升的指令。",
       "MIT 许可证；提交到该仓库的贡献须采用 MIT，而独立托管的插件可使用任意许可证，包括专有许可证。README 列出 ForAllSecure Mayhem、Draper 的 CBAT 工具和 Fraunhofer FKIE 的 CWE Checker 等基于 BAP 构建的项目。本次未安装任何软件包，也未分析任何二进制。"
     ]
+  },
+  "furiousmac-continuity": {
+    "name": "furiousMAC Apple Continuity 协议逆向与解析器",
+    "requirements": [
+      "没有 GitHub 发布版本；所审阅的提交日期为 2025-08-29，合并的是一处拼写修正。解析器 README 称 2021 年 3 月针对 Wireshark 3.4.4 的版本是最新的：2024 年贡献的 4.4.0 文件只是将其移植到 Wireshark 4.4.0 上编译，解析逻辑没有改动，可能无法正确解析最新 iOS 版本的报文。报文表中标为未知或不确定的字段仍未解决。",
+      "在 Linux 和 macOS 上，需下载对应版本的 Wireshark 源码，用项目提供的文件替换 epan/dissectors/packet-bthci_cmd.c，再编译 Wireshark。仓库还提交了 3.0.8 和 3.2.1 版的 64 位 Windows Wireshark 预编译安装程序，解析器 README 称它们基于 ShmooCon 2020 时的初版解析器，不应再使用。",
+      "捕获广播需要 BLE 嗅探硬件：HARDWARE.md 推荐刷入 Nordic 嗅探固件的 Nordic nRF51 加密狗，或配合仓库内 btleshark.sh 抓包脚本使用的 Ubertooth One。分析对象是分析者自己捕获的广播，仓库中没有附带样本抓包。",
+      "采用 GPL-2.0。README 指出，许多报文类型和字段含义最早由 Celosia 与 Cunche 在 PETS 2020 论文中发现。本次未捕获任何广播，也未编译 Wireshark。"
+    ]
   }
 }

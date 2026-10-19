@@ -9206,5 +9206,38 @@
       "https://github.com/BinaryAnalysisPlatform/bap/releases/tag/v2.6.0-alpha",
       "https://github.com/BinaryAnalysisPlatform/bap/compare/v2.5.0...034bbd09646a589d5eb1f10b740177d628da80fd"
     ]
+  },
+  {
+    "id": "furiousmac-continuity",
+    "name": "furiousMAC Continuity",
+    "url": "https://github.com/furiousMAC/continuity",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reverse-engineering notes and a Wireshark dissector for Apple's proprietary Continuity Bluetooth LE advertisements, continuing the authors' PETS 2019 privacy study. Per-message pages document field layouts and observed values for 14 message types, including AirDrop, Handoff, Proximity Pairing, Nearby Info and Find My, and the dissector replaces Wireshark's packet-bthci_cmd.c so captured advertisements decode into named btcommon.apple fields.",
+    "description_zh": "针对 Apple 专有 Continuity 蓝牙低功耗广播的逆向工程笔记与 Wireshark 解析器，是作者 PETS 2019 隐私研究的延续。各报文页面记录了 AirDrop、Handoff、Proximity Pairing、Nearby Info、Find My 等 14 种报文类型的字段布局和观测到的取值；解析器替换 Wireshark 的 packet-bthci_cmd.c，使捕获到的广播能解码为具名的 btcommon.apple 字段。",
+    "evidence_url": "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No GitHub releases; the reviewed commit, from 2025-08-29, merges a typo fix. The dissector README calls the March 2021 version for Wireshark 3.4.4 the most up to date: the 4.4.0 file contributed in 2024 ports it to build on Wireshark 4.4.0 without dissector changes and may not correctly dissect messages from the latest iOS versions. Fields the message tables mark as unknown or uncertain remain open.",
+      "On Linux and macOS, users download the Wireshark source for the matching version, replace epan/dissectors/packet-bthci_cmd.c with the project's file and build Wireshark. The repository also commits prebuilt 64-bit Windows Wireshark installers for 3.0.8 and 3.2.1, which the dissector README says are based on the original ShmooCon 2020 dissector and should not be used.",
+      "Capturing advertisements needs a BLE sniffer: HARDWARE.md recommends a Nordic nRF51 dongle with Nordic's sniffer firmware, or an Ubertooth One with the included btleshark.sh capture script. Analysis uses advertisements the analyst captures; the repository contains no sample captures.",
+      "GPL-2.0. The README credits many message types and field meanings to Celosia and Cunche's PETS 2020 paper. No advertisements were captured and Wireshark was not built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/dissector/README.md",
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/dissector/INSTALL.md",
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/dissector/FIELDS.md",
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/dissector/CHANGELOG.md",
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/HARDWARE.md",
+      "https://github.com/furiousMAC/continuity/tree/d9fa98bddafbfa3baafc84e37a417d78a0598546/messages",
+      "https://github.com/furiousMAC/continuity/blob/d9fa98bddafbfa3baafc84e37a417d78a0598546/LICENSE.md",
+      "https://github.com/furiousMAC/continuity/commit/c125a620598bc132ac356202fcced6a481775909",
+      "https://petsymposium.org/2019/files/papers/issue4/popets-2019-0057.pdf"
+    ]
   }
 ]
