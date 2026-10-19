@@ -382,5 +382,23 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     app.element('mode-curated').handlers.click();
     assert.deepEqual([app.api.sourceState.mode, app.element('mode-curated').attrs['aria-pressed'], urlParam(app, 'view')], ['curated', 'true', null], 'The default curated view stays out of the URL');
   }
+  // Phones fold Type and Category behind “More filters”: the toggle counts active selects and opens when the page starts filtered.
+  {
+    const rows = [curatedRecord(1), curatedRecord(2, {kind: 'case-study', category: 'reconstruction-cases'})];
+    const plain = await loaded('?lang=en', {catalog: catalogOf(rows), browser: valid});
+    const [toggle, panel, count] = ['more-filters', 'curated-selectors', 'more-filters-count'].map(plain.element);
+    assert.deepEqual([toggle.attrs['aria-expanded'], toggle.attrs['aria-controls'], panel.classes.has('is-open'), count.hidden], ['false', 'curated-selectors', false, true]);
+    toggle.handlers.click();
+    assert.deepEqual([toggle.attrs['aria-expanded'], panel.classes.has('is-open')], ['true', true]);
+    plain.element('kind-select').emit('change', 'tool');
+    assert.deepEqual([count.textContent, count.hidden], ['1', false]);
+    toggle.handlers.click();
+    assert.deepEqual([toggle.attrs['aria-expanded'], panel.classes.has('is-open'), count.hidden, urlParam(plain, 'kind')], ['false', false, false, 'tool']);
+    plain.element('clear-filters').handlers.click();
+    assert.deepEqual([count.hidden, toggle.attrs['aria-expanded']], [true, 'false']);
+    const filtered = await loaded('?lang=zh&kind=case-study&category=reconstruction-cases', {catalog: catalogOf(rows), browser: valid});
+    assert.deepEqual(['more-filters', 'curated-selectors', 'more-filters-count'].map(filtered.element).map((node, index) => [node.attrs['aria-expanded'], node.classes.has('is-open'), node.textContent][index]), ['true', true, '2']);
+  }
+
   process.stdout.write('Repository browser logic passed\n');
 })().catch(error => { console.error(error); process.exitCode = 1; });

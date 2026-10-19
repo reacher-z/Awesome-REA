@@ -3,6 +3,7 @@
 const UI = {
   "en": {
     "layoutLabel": "Layout",
+    "moreFilters": "More filters",
     "layoutCompact": "Compact list",
     "layoutCards": "Cards",
     "requirementsShort": "Details & limits",
@@ -130,6 +131,7 @@ const UI = {
   },
   "zh": {
     "layoutLabel": "布局",
+    "moreFilters": "更多筛选",
     "layoutCompact": "紧凑列表",
     "layoutCards": "卡片",
     "requirementsShort": "详情与局限",
@@ -379,8 +381,17 @@ function render() {
   renderEmptySearchActions(found.length);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
+  renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
+}
+// Phones fold Type and Category behind “More filters” (styles.css); the toggle counts active selects, and a page
+// opened with one active starts expanded. Wider layouts hide the toggle and always show both selects.
+let moreFiltersSynced = false;
+function setMoreFilters(open) { $("#more-filters").setAttribute("aria-expanded", String(open)); $("#curated-selectors").classList.toggle("is-open", open); }
+function renderMoreFilters() {
+  const active = (state.kind !== "all") + (state.category !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
+  if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
 function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
 async function load() {
@@ -404,6 +415,7 @@ $("#category-select").addEventListener("change", event => { state.category = eve
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
+$("#more-filters").addEventListener("click", () => setMoreFilters($("#more-filters").getAttribute("aria-expanded") !== "true"));
 window.addEventListener("hashchange", syncLanguageLinks);
 $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventListener("click", () => { reset(); $("#search-input").focus(); }); $("#retry-load").addEventListener("click",load);
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });

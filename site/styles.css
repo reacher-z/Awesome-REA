@@ -348,6 +348,25 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 @media(max-width:520px){.source-record-details dl{grid-template-columns:minmax(0,1fr);gap:3px}.source-record-details dd{margin-bottom:12px}.home-intro .collection-directory a{font-size:12px}.home-intro .collection-directory .directory-about{font-size:13px}.hero-text-link{font-size:13px}.collection-note details[open]{padding:13px}}
 @media(max-width:420px){.target-filter{font-size:14px;padding-inline:7px;gap:5px}.search-box{padding-inline:13px}}
 @media(max-width:360px){.source-target-filters,.group-filters,.subject-directory{grid-template-columns:repeat(2,minmax(0,1fr))}.source-field{flex-basis:100%}}
+/* Phones: the Layout control is hidden (both layouts are one column there), and Type and Category fold behind
+   “More filters”, which joins the target buttons, counts active selects and opens when the page starts filtered. */
+.more-filters{display:none}
+@media(max-width:700px){
+  .index-mode-switch>.layout-control{display:none}
+  .collection-home .index-mode-switch{margin-bottom:12px}
+  .more-filters{display:inline-flex}
+  .more-filters>.icon{width:13px;height:13px;font-size:13px;transition:transform .15s}
+  .more-filters[aria-expanded="true"]>.icon{transform:rotate(180deg)}
+  .more-filters-count{min-width:19px;padding:0 5px;border-radius:999px;background:var(--ink);color:var(--surface);font-size:11px;line-height:19px;text-align:center}
+  #curated-view .curated-selectors:not(.is-open){display:none}
+  #curated-view .filter-row:has(>.curated-selectors:not(.is-open)){padding-bottom:0}
+  #curated-view>.results-topline{min-height:0}
+  /* The review note follows the results on phones; it explains the list rather than filtering it. */
+  #curated-view:not([hidden]){display:flex;flex-direction:column}
+  #curated-view>.collection-note{order:1;margin-top:24px;padding-top:12px;border-top:1px solid var(--line);border-bottom:0}
+}
+/* Target buttons wrap at their own widths and stretch to fill each line, so phones need fewer rows than a fixed grid. */
+@media(min-width:361px) and (max-width:700px){.source-target-filters,.group-filters{display:flex;flex-wrap:wrap}.source-target-filters>.target-filter,.group-filters>.target-filter{flex:1 1 auto}}
 @media(max-width:420px){
   .header-inner{gap:8px}
   .wordmark{font-size:18px;gap:6px;letter-spacing:-.6px}
