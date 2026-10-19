@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 315](https://img.shields.io/badge/resources-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 160](https://img.shields.io/badge/cases-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 316](https://img.shields.io/badge/resources-316-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 161](https://img.shields.io/badge/cases-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 73](https://img.shields.io/badge/papers-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (145) · [App](#app) (44)
+- [Website](#website) (19) · [Game](#game) (146) · [App](#app) (44)
 - [Native Binary](#native-binary) (22) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (160) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (161) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -916,6 +916,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Re-implements RollerCoaster Tycoon 2, originally written in x86 assembly, as a C++ engine that runs on the original game’s data. It loads RCT2 saves and scenarios, and RCT1 scenarios when those files are present, while saving to its own documented park format. Modern-platform support, interface and AI changes, higher limits and multiplayer are deliberate extensions, not reproductions of the original.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openrct2-engine-case/)
+
+- [**Touhou 6: reconstructing Embodiment of Scarlet Devil 1.02h source**](https://github.com/GensokyoClub/th06)
+
+  Reconstructs C++ source for the Windows executable of Touhou 6: Embodiment of Scarlet Devil version 1.02h, aiming at an exact rebuild with the original Visual Studio .NET 2002 and DirectX 8 toolchain. reccmp and objdiff compare the rebuilt binary with the user’s original executable function by function. The committed progress badge reports every function implemented but 98.03% byte accuracy, so whole-binary identity is not claimed.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/th06-decomp-case/)
 
 #### Tools, projects and integrations
 

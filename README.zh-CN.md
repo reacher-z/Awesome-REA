@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 315](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-315-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 160](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-160-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 316](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-316-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 161](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-161-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 73](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-73-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (145) · [应用](#app) (44)
+- [网站](#website) (19) · [游戏](#game) (146) · [应用](#app) (44)
 - [原生二进制](#native-binary) (22) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (160) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (161) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -917,6 +917,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。它可载入 RCT2 存档和场景，具备相应文件时也能载入 RCT1 场景，而保存时使用自己有文档说明的乐园格式。现代平台支持、界面与 AI 改动、更高上限和多人游戏都是有意扩展，并非对原版的复现。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openrct2-engine-case/)
+
+- [**Touhou 6：重建东方红魔乡 1.02h 版源码**](https://github.com/GensokyoClub/th06)
+
+  为 Touhou 6：东方红魔乡 1.02h 版的 Windows 可执行文件重建 C++ 源码，目标是用原版 Visual Studio .NET 2002 与 DirectX 8 工具链精确重新构建。reccmp 和 objdiff 将重建的二进制与使用者自备的原可执行文件逐函数比较。仓库内的进度徽章报告函数已全部实现、字节准确率为 98.03%，因此不主张整个二进制完全一致。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th06-decomp-case/)
 
 #### 工具、项目与集成
 
