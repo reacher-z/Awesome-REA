@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 362](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-362-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (27) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (28) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1683,6 +1683,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Mandiant FLARE 团队的安装脚本，用于搭建并维护一台面向逆向工程和恶意软件分析的 Windows 虚拟机。其 PowerShell 脚本借助 Boxstarter 和 Chocolatey，从独立的 VM-Packages 软件源和 Chocolatey 社区源安装软件包；软件包可在图形界面中选择，也可通过自定义 config.xml 指定，该文件还可设置环境变量路径、任务栏布局以及安装后的注册表、服务和路径设置。所审阅的默认配置列出 137 个软件包，包括 Ghidra、IDA Free、x64dbg、dnSpyEx、capa、FLOSS、PE-sieve、FakeNet-NG 和 Wireshark；virtualbox 目录中的脚本可在 VirtualBox 中构建 FLARE-VM 和 REMnux 虚拟机，并管理和导出其快照。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/flare-vm/)
+
+- [**Lucid Hex-Rays 微码浏览器**](https://github.com/gaasedelen/lucid)
+
+  Markus Gaasedelen 开发的 IDA Pro 插件，用于研究 Hex-Rays 反编译器如何逐步变换其微码（microcode）中间语言。在伪代码窗口中选择 View microcode 即可打开浏览器，它与伪代码保持同步，用户可让选中的微指令依次滚动经过各个微码成熟度层级，把子操作数追溯到来源；若追踪的代码已被优化掉，光标会变色提示。嵌套的子指令可显示为树状图；作者将其定位为面向开发者的原型和代码参考，而不是通用逆向工程工具。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/lucid-microcode-explorer/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
