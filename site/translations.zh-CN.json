@@ -4786,5 +4786,15 @@
       "仓库没有针对加载器或游戏玩法的 CI 工作流或自动化测试，也没有发布与原版可执行文件的对比。现有证据为 README 关于多人模式完全可用的说法、v4.0 发布说明、截图和视频；Docs/Performance.md 记录了拉斯云祖华一处视角的顶点数与绘制调用数。本合集未构建或运行该项目。",
       "LICENSE 为 MIT，版权行为 2015 年 James King；随附的 NVorbis 与 Newtonsoft.Json DLL 以及各子模块是独立项目，遵循各自条款，Rockstar 的游戏文件仍保留其权利。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "minecraft-lce-switch-decomp-case": {
+    "name": "MinecraftLCE：处于早期阶段的 Minecraft: Nintendo Switch Edition 反编译",
+    "requirements": [
+      "README 称这是 Minecraft: Nintendo Switch Edition v1.0.17 的进行中反编译，无法用来游玩游戏。所审提交时 data/mcswitch_functions.csv 列出 57,972 个函数：6,279 个已匹配，224 个未匹配，51,469 个尚未反编译，即工作流写入 GitHub 简介的 11.217%。已匹配的函数逐个核对，不存在整个可执行文件的重建。",
+      "需从自己的 Minecraft: Nintendo Switch Edition v1.0.17 更新中自备 main NSO 可执行文件；Wii U Edition 的 Minecraft.Client.rpx（Patch 35，v560）仅推荐用于移植符号。README 称这些可执行文件永远不会放入仓库，也不包含游戏素材。",
+      "文档以 Linux 或 WSL 为准（也面向 macOS）：需要 Python 3.6 及以上、Ninja、CMake 3.13 及以上、ccache、llvm-objdump、libncurses5、Rust 工具链和所列 Python 模块。tools/setup.py 会转换可执行文件，从 LLVM 发布页下载 Clang 4.0.1 并应用仓库中的 libc++ 补丁；子模块提供 open-ead 的 nx-decomp-tools、nnheaders、musl 以及 stb 图像库，lib/ 内置 libpng 和 zlib。",
+      "tools/check 将编译出的函数与原程序比较，tools/common/progress.py 汇总函数列表。CI 进行代码检查、在没有游戏文件的情况下编译项目，并按仓库中的函数列表统计并发布进度，因此匹配状态为项目报告；本合集未构建或运行任何内容。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证；Minecraft 归 Microsoft 和 Mojang 所有，内置的库各有许可证。README 称不能使用 Microsoft 授权的 Java Edition 官方映射，并提到研究过程不属于净室方式的项目曾被下架。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }

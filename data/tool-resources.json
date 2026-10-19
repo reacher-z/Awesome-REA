@@ -14457,5 +14457,38 @@
       "https://github.com/in0finite/SanAndreasUnity/wiki/Running-on-Android",
       "https://github.com/in0finite/SanAndreasUnity/wiki/Generating-navigation-mesh"
     ]
+  },
+  {
+    "id": "minecraft-lce-switch-decomp-case",
+    "name": "MinecraftLCE: an early-stage Minecraft: Nintendo Switch Edition decompilation",
+    "url": "https://github.com/GRAnimated/MinecraftLCE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles Minecraft: Nintendo Switch Edition v1.0.17, a Legacy Console Edition release, into C++ that is compared function by function with the original executable using a patched Clang 4.0.1 and the open-ead Switch decompilation tools. The README explains the choice of the Switch build for its matchable Clang toolchain and type information, with names ported from the symbol-bearing Wii U Edition. At the reviewed commit the function list marks about 11% of functions decompiled, most of them matching; the result cannot run the game.",
+    "description_zh": "将 Legacy Console Edition 系列中的 Minecraft: Nintendo Switch Edition v1.0.17 反编译为 C++，借助打过补丁的 Clang 4.0.1 和 open-ead 的 Switch 反编译工具，与原可执行文件逐函数比较。README 解释了选用 Switch 版的原因：其 Clang 工具链可以匹配且带有类型信息，函数名则从带符号的 Wii U Edition 移植而来。所审提交时函数列表标记约 11% 的函数已反编译，其中大多已匹配；产物无法运行游戏。",
+    "evidence_url": "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a work-in-progress decompilation of Minecraft: Nintendo Switch Edition v1.0.17 that cannot be used to play the game. At the reviewed commit data/mcswitch_functions.csv lists 57,972 functions: 6,279 matching, 224 non-matching and 51,469 not yet decompiled, the 11.217% that a workflow writes into the GitHub description. Matched functions are checked individually; there is no whole-executable rebuild.",
+      "Supply the main NSO executable from your own Minecraft: Nintendo Switch Edition v1.0.17 update; the Wii U Edition’s Minecraft.Client.rpx (Patch 35, v560) is recommended only for porting symbols. README says these executables will never be provided in the repository and no game assets are included.",
+      "Documented for Linux or WSL (with macOS also intended): Python 3.6+, Ninja, CMake 3.13+, ccache, llvm-objdump, libncurses5, a Rust toolchain and the listed Python modules. tools/setup.py converts the executable, downloads Clang 4.0.1 from the LLVM releases and applies the committed libc++ patches; submodules supply open-ead’s nx-decomp-tools, nnheaders and musl and the stb image library, and lib/ vendors libpng and zlib.",
+      "tools/check compares compiled functions with the original and tools/common/progress.py summarises the function list. CI lints, compiles the project without the game and publishes progress counted from the committed function list, so matching status is project-reported; this collection built or ran nothing.",
+      "No license file is present and GitHub detects none; Minecraft belongs to Microsoft and Mojang, and vendored libraries keep their own licenses. README says Microsoft-licensed Java Edition mappings cannot be used and notes that projects whose research was not clean-room have been taken down. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/docs/BUILDING.md",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/docs/CONTRIBUTING.md",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/data/mcswitch_functions.csv",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/tools/setup.py",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/tools/config.toml",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.gitmodules",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/test-compile.yml",
+      "https://github.com/GRAnimated/MinecraftLCE/blob/959e1503b7b26d6821cfa98b3b05ef9089675195/.github/workflows/update-progress.yml"
+    ]
   }
 ]
