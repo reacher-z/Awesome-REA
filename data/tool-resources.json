@@ -7387,5 +7387,36 @@
       "https://vineflower.org/usage/",
       "https://repo1.maven.org/maven2/org/vineflower/vineflower/maven-metadata.xml"
     ]
+  },
+  {
+    "id": "synchrony",
+    "name": "synchrony",
+    "url": "https://github.com/relative/synchrony",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "JavaScript cleaner and deobfuscator aimed mainly at output from javascript-obfuscator (obfuscator.io). It parses a script with acorn and runs a fixed pipeline of AST transformers that fold expressions, clean member accesses, remove dead branches, split sequence expressions, undo switch-based control-flow flattening and decode string arrays, re-implementing their base64 and RC4 decoders in TypeScript rather than executing the input. It ships on npm as deobfuscator with a synchrony CLI and a library API, and optional renaming replaces identifiers with generated word names rather than recovering the originals.",
+    "description_zh": "主要面向 javascript-obfuscator（obfuscator.io）输出的 JavaScript 清理与反混淆工具。它用 acorn 解析脚本，再运行一组固定的 AST 转换器：折叠表达式、整理成员访问、删除死分支、拆分逗号表达式、还原基于 switch 的控制流平坦化，并解码字符串数组；其中 base64 和 RC4 解码器以 TypeScript 重新实现，而不是执行输入代码。它以 deobfuscator 之名发布在 npm 上，提供 synchrony 命令行工具和库 API；可选的重命名会把标识符换成生成的单词名，并不能恢复原名。",
+    "evidence_url": "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.4.6, published to GitHub and to npm as deobfuscator on 2026-07-07, the same day as the reviewed master commit; the previous release, 2.4.5, dates from 2023-11-09. The README also points to a hosted web version at deobfuscate.relative.im, whose deployment was not reviewed.",
+      "Install with npm, yarn or pnpm, or from the Git repository; package.json declares no Node.js version. The CLI reads one file, writes <name>.cleaned.<ext> unless --output is given, and offers --rename, --loose parsing, --ecma-version and --sourceType. A --config file is loaded with Node's require, so it runs as code, and a custom transformer list replaces the default pipeline; two jsconfuser transformers are available only that way and are not documented in the README.",
+      "The README warns that output from old javascript-obfuscator versions will likely not deobfuscate correctly and that there is no user configuration for the automatic string decoder. The repository has no test suite, and its latest commit removed the GitHub CI configuration.",
+      "GPL-3.0-only according to package.json and LICENSE.md. No scripts were deobfuscated in this review, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/package.json",
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/src/cli.js",
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/src/deobfuscator.ts",
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/src/context.ts",
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/src/transformers/stringdecoder.ts",
+      "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/LICENSE.md",
+      "https://github.com/relative/synchrony/releases/tag/2.4.6"
+    ]
   }
 ]

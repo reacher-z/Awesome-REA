@@ -3038,5 +3038,14 @@
       "输入由使用者提供：JAR、ZIP、文件夹或 class 文件，并可通过 -e/--add-external 添加库作为类路径上下文。项目网站上的输出对比由项目自行提供；反编译代码是重建结果，并非原始源码。",
       "采用 Apache-2.0 许可。README 称它是 JetBrains Fernflower、MinecraftForge ForgeFlower 和 FabricMC Fernflower 分支的派生，并延续了 Quiltflower；其控制台入口仍沿用 Fernflower 的 org.jetbrains.java.decompiler 包。本次未反编译任何类。"
     ]
+  },
+  "synchrony": {
+    "name": "synchrony JavaScript 反混淆工具",
+    "requirements": [
+      "审阅时最新版本为 2.4.6，于 2026-07-07 发布到 GitHub 并以 deobfuscator 之名发布到 npm，与所审阅的 master 提交同日；上一版本 2.4.5 发布于 2023-11-09。README 还指向 deobfuscate.relative.im 上的托管网页版，本次未审阅该部署。",
+      "可用 npm、yarn 或 pnpm 安装，也可直接从 Git 仓库安装；package.json 未声明 Node.js 版本。命令行工具读取单个文件，未指定 --output 时写出 <文件名>.cleaned.<扩展名>，并提供 --rename、--loose 宽松解析、--ecma-version 和 --sourceType 选项。--config 配置文件通过 Node 的 require 加载，因此会作为代码执行；自定义转换器列表会取代默认流程，两个 jsconfuser 转换器只能以这种方式启用，README 也未说明它们。",
+      "README 提醒，旧版 javascript-obfuscator 生成的代码很可能无法正确反混淆，自动字符串解码器也没有可供用户调整的配置。仓库没有测试套件，最新一次提交删除了 GitHub CI 配置。",
+      "package.json 和 LICENSE.md 声明 GPL-3.0-only。本次审阅未对任何脚本进行反混淆，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
