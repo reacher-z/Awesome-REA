@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 416](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-416-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 417](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-417-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (49) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
+- [原生二进制](#native-binary) (50) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
 
 **论文与工作流**
 
@@ -1947,6 +1947,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Mandiant FLARE 团队的恶意软件字符串提取工具，用法与 strings.exe 相同，但还能还原混淆字符串。除了静态的 ASCII 和 UTF-16LE 字符串，它还能提取栈字符串、紧凑栈字符串（tight strings）以及由函数解码出的字符串：先用启发式方法识别解码函数，通过控制流分析取得调用参数，再模拟执行这些函数，并比较模拟前后的内存状态。它还能提取 Go 和 Rust 字符串，支持 PE、ELF 以及 32 位或 64 位原始 shellcode；JSON 结果可转换为 IDA Pro、Ghidra、Binary Ninja、radare2 和 x64dbg 的导入脚本。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/flare-floss/)
+
+- [**Zydis x86 反汇编与代码生成库**](https://github.com/zyantific/zydis)
+
+  轻量级 C11 x86/x86-64 反汇编与代码生成库。解码器可报告每条指令的操作数、所访问的 CPU 与 FPU 标志、ISA 集与扩展以及分支类型；格式化器可输出 Intel、MASM 或 AT&amp;T 语法，编码器则根据编码请求生成指令，请求也可由已解码的指令转换而来。仓库附带 ZydisDisasm 与 ZydisInfo 命令行工具，官方 Rust 与 Python 3 绑定位于独立仓库。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/zydis/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
