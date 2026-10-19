@@ -14870,5 +14870,38 @@
       "https://github.com/gaasedelen/lighthouse/releases/tag/v0.9.3",
       "https://github.com/gaasedelen/lighthouse/compare/master...develop"
     ]
+  },
+  {
+    "id": "racewave46-wave-race-64-recomp-case",
+    "name": "RaceWave46: an AI-assisted Wave Race 64 recompilation for Windows",
+    "url": "https://github.com/DomazinUS/RaceWave46",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Recompiles the USA Rev 1 Nintendo 64 release of Wave Race 64 into a native Windows application with N64Recomp and RSPRecomp, on modified copies of the N64ModernRuntime, RecompFrontend and RT64 stacks. Game and microcode C is generated locally from the user’s ROM, after an included widescreen patch is applied to a temporary copy, and checked against recorded checksums. The port adds higher resolutions, frame interpolation, ultrawide views, rasterized and ray-traced reflections and shadows, split-screen or separate-window two-player play and RetroAchievements; the maintainer calls it an AI-assisted recompilation.",
+    "description_zh": "使用 N64Recomp 与 RSPRecomp，在经修改的 N64ModernRuntime、RecompFrontend 和 RT64 之上，将 Nintendo 64 版《Wave Race 64》美版 Rev 1 重编译为 Windows 原生程序。游戏与微码的 C 代码在本地由使用者的 ROM 生成：先将随附的宽屏补丁应用到临时副本，再按记录的校验和核对生成结果。移植加入了更高分辨率、帧插值、超宽视野、光栅化与光线追踪的反射和阴影、分屏或分窗口的双人游戏以及 RetroAchievements；维护者称其为 AI 辅助的重编译。",
+    "evidence_url": "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the repository’s single public commit, tagged v1.0.0 (release published 2026-09-16) with a Windows x64 build and a source ZIP. README targets 64-bit Windows 10/11 with Direct3D 12 and Vulkan back ends; the added reflections, shadows and separate player windows need Direct3D 12, and ray tracing needs DXR 1.1 / Shader Model 6.5. Controller Pak save and load are not implemented, multiplayer is local only, RetroAchievements lacks hardcore mode and leaderboards, and performance requirements are still being evaluated.",
+      "Building and playing need the user’s own unmodified Wave Race 64 (USA) Rev 1 ROM, in big-endian .z64 form for the build; players import it in the frontend. Generation verifies the ROM, patches a temporary copy with the included widescreen IPS patch, whose authorship the reviewed files do not state, and installs the verified output into git-ignored directories. README states that no ROM, saves, texture packs or account data are included.",
+      "Builds use Visual Studio 2022 C++ Build Tools with the Windows 10/11 SDK and C++ CMake tools (MSVC x64, CMake 3.20+, Ninja), Python 3.11+, and N64Recomp and RSPRecomp built from the bundled, modified source. The first configuration downloads Microsoft DXC 1.8.2502 and 1.9.2607 compilers pinned by SHA-256, and BUILDING.md warns against substituting unmodified upstream dependencies.",
+      "The tree holds 84 CMake regression suites run individually through BUILD-TEST.ps1, some needing the user’s ROM, but no CI workflow; generation checks every generated file against the hashes in config/generated-code.json. README reports repeated hands-on testing of races, menus, course introductions and the championship ending. This collection built and ran nothing.",
+      "The project’s original contributions are GPL-3.0-only; N64ModernRuntime is GPLv3, other vendored components keep their own notices, and Nintendo keeps its game assets and trademarks. README states that AI tools were used for code implementation, debugging, research and documentation, while project direction, review and gameplay testing stay with the maintainer; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/BUILDING.md",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/THIRD-PARTY-NOTICES.md",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/config/generated-code.json",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/BUILD-TEST.ps1",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/.gitignore",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/LICENSE",
+      "https://github.com/DomazinUS/RaceWave46/blob/5c34f3711426978107707a8f06af9c2af4ee5401/COPYING",
+      "https://github.com/DomazinUS/RaceWave46/releases/tag/v1.0.0"
+    ]
   }
 ]

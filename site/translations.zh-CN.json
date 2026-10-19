@@ -4902,5 +4902,15 @@
       "覆盖率需针对使用者自己的目标另行采集：覆盖率 README 介绍了 DynamoRIO drcov、仓库附带的 CodeCoverage pintool（原型；发布版附有针对 Pin 3.30 的 Windows 构建，macOS 和 Linux 用户需基于自行下载的 Intel Pin 编译），以及实验性的 frida-drcov.py，其 README 建议主要用于移动应用。绝对地址轨迹必须与数据库的地址空间一致，无法映射的地址会被丢弃；模块+偏移轨迹中其他模块的命中不会载入。",
       "Lighthouse 及贡献的 pintool 均采用 MIT 许可。打开覆盖率总览时会查询 GitHub 发布 API 以检查新版本。本次未采集或载入任何覆盖率数据。"
     ]
+  },
+  "racewave46-wave-race-64-recomp-case": {
+    "name": "RaceWave46：AI 辅助的《Wave Race 64》Windows 重编译",
+    "requirements": [
+      "审阅版本为仓库唯一的公开提交，标记为 v1.0.0（发布于 2026-09-16），提供 Windows x64 构建和源码 ZIP。README 面向 64 位 Windows 10／11，支持 Direct3D 12 与 Vulkan 后端；新增的反射、阴影和独立玩家窗口需要 Direct3D 12，光线追踪需要 DXR 1.1／Shader Model 6.5。原版 Controller Pak 的存取功能尚未实现，多人游戏仅限本地，RetroAchievements 不含硬核模式和排行榜，性能需求仍在评估中。",
+      "构建与游玩都需要使用者自有、未修改的《Wave Race 64》美版 Rev 1 ROM，构建时需为大端序 .z64 格式；玩家在前端中导入该 ROM。生成过程先校验 ROM，再用随附的宽屏 IPS 补丁修改临时副本（所审阅的文件未说明该补丁的作者），并将校验通过的输出放入被 git 忽略的目录。README 声明不含任何 ROM、存档、材质包或账户数据。",
+      "构建需 Visual Studio 2022 C++ Build Tools，含 Windows 10／11 SDK 与 C++ CMake 工具（MSVC x64、CMake 3.20+、Ninja），以及 Python 3.11+，并从随附的修改版源码构建 N64Recomp 与 RSPRecomp。首次配置会下载以 SHA-256 固定的 Microsoft DXC 1.8.2502 与 1.9.2607 编译器；BUILDING.md 提醒不要换用未经修改的上游依赖。",
+      "代码树包含 84 个 CMake 回归测试套件，可通过 BUILD-TEST.ps1 逐个运行，其中部分需要使用者的 ROM，但没有 CI 工作流；生成过程会按 config/generated-code.json 中的哈希核对每个生成文件。README 报告对比赛、菜单、赛道介绍及锦标赛结局做过反复的实机测试。本合集未构建或运行任何内容。",
+      "项目的原创部分采用 GPL-3.0-only；N64ModernRuntime 采用 GPLv3，其他随附组件保留各自的声明，Nintendo 仍保有游戏素材与商标权利。README 声明 AI 工具用于代码实现、调试、研究和文档编写，项目方向、审查决定与实机测试则由维护者负责；未确立 REA 的使用。"
+    ]
   }
 }
