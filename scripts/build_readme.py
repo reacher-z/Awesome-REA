@@ -481,6 +481,7 @@ AGENT_EVALUATION_PAPERS = {
     'paper-programbench',
     'paper-enigma',
     'paper-nyu-ctf-bench',
+    'paper-cybench',
 }
 
 

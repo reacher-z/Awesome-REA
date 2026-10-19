@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 141](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 142](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-142-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 项精选资源（220 个案例）· 141 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
+519 项精选资源（220 个案例）· 142 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (141) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (39)
+- [论文](#papers) (142) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (39)
 
 **更多浏览方式**
 
@@ -667,13 +667,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**141 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**142 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (61) · [网站](#papers-website-reconstruction) (23)
+- [智能体评测](#papers-agent-evaluation) (11) · [反编译](#papers-decompilation) (61) · [网站](#papers-website-reconstruction) (23)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (13) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -693,6 +693,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**解构协同：软件逆向工程中人类与 LLM 协作的实证研究**](https://www.ndss-symposium.org/ndss-paper/decompiling-the-synergy-an-empirical-study-of-human-llm-teaming-in-software-reverse-engineering/) - 研究人类分析人员在静态软件逆向工程中如何借助 LLM 辅助开展工作。 <sub>原题：*Decompiling the Synergy: An Empirical Study of Human–LLM Teaming in Software Reverse Engineering* · NDSS 2026 · 会议论文 · Zion Leonahenahe Basque 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f380-paper.pdf) · [代码](https://github.com/mahaloz/dec-synergy-study) · [完整条目](https://awesomerea.org/zh/papers/paper-decompiling-synergy/)</sub>
 - [**CREBench：评估大语言模型的密码二进制逆向工程能力**](https://openreview.net/forum?id=tLYdf8hWJB) - 通过 432 个受控挑战，评估密码二进制逆向中的算法识别、密钥或 IV 提取、包装层重建及标志恢复。 <sub>原题：*CREBench: Evaluating Large Language Models in Cryptographic Binary Reverse Engineering* · COLM 2026 · 会议论文 · Baicheng Chen 等 · [PDF](https://arxiv.org/pdf/2604.03750v2) · [代码](https://github.com/wangyu-ovo/CREBench) · [完整条目](https://awesomerea.org/zh/papers/paper-crebench/)</sub>
 - [**EnIGMA：交互式工具显著帮助语言模型智能体发现安全漏洞**](https://proceedings.mlr.press/v267/abramovich25a.html) - EnIGMA 在 SWE-agent 基础上面向 CTF 题目进行扩展：交互式智能体工具可在多轮之间保持 gdb 调试会话或 pwntools 服务器连接，另有反编译与反汇编命令、用于长输出的语言模型摘要器，以及按题目类别编写的示例和指导。 <sub>原题：*EnIGMA: Interactive Tools Substantially Assist LM Agents in Finding Security Vulnerabilities* · ICML 2025 · 会议论文 · Talor Abramovich 等 · [PDF](https://raw.githubusercontent.com/mlresearch/v267/main/assets/abramovich25a/abramovich25a.pdf) · [代码](https://github.com/SWE-agent/SWE-agent/tree/v0.7) · [完整条目](https://awesomerea.org/zh/papers/paper-enigma/)</sub>
+- [**Cybench：评估语言模型网络安全能力与风险的框架**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/3e9412a9c1d93810ef3ef7825115016b-Abstract-Conference.html) - Cybench 将来自四项竞赛（HackTheBox Cyber Apocalypse 2024、SekaiCTF 2022–23、GlacierCTF 与 HKCert）的 40 道专业级夺旗赛题目整理为可运行的智能体任务。 <sub>原题：*Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models* · ICLR 2025 · 会议论文 · Andy K. Zhang 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/3e9412a9c1d93810ef3ef7825115016b-Paper-Conference.pdf) · [代码](https://github.com/andyzorigin/cybench) · [完整条目](https://awesomerea.org/zh/papers/paper-cybench/)</sub>
 - [**NYU CTF Bench：用于评估大语言模型攻击性安全能力的可扩展开源基准数据集**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/69d97a6493fbf016fff0a751f253ad18-Abstract-Datasets_and_Benchmarks_Track.html) - NYU CTF Bench 收录 2017–2023 年 CSAW CTF 资格赛与决赛中经人工验证的 200 道题目，涵盖密码学、取证、二进制漏洞利用、逆向工程、Web 与杂项任务，并为题目提供 challenge.json 元数据，为需要服务端的题目提供 Docker 镜像。 <sub>原题：*NYU CTF Bench: A Scalable Open-Source Benchmark Dataset for Evaluating LLMs in Offensive Security* · NeurIPS 2024 Datasets and Benchmarks · 会议论文 · Minghao Shao 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/69d97a6493fbf016fff0a751f253ad18-Paper-Datasets_and_Benchmarks_Track.pdf) · [代码](https://github.com/NYU-LLM-CTF/NYU_CTF_Bench) · [完整条目](https://awesomerea.org/zh/papers/paper-nyu-ctf-bench/)</sub>
 
 <a id="papers-decompilation"></a>
