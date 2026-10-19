@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 437](https://img.shields.io/badge/resources-437-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 438](https://img.shields.io/badge/resources-438-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (64)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (65)
 - [Native Binary](#native-binary) (55) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1679,6 +1679,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Rust decompiler that turns Android DEX bytecode, versions 035 to 041, from APKs, multi-dex apps and XAPK/APKS/APKM containers into Java, folding lambdas and string concatenation back into Java syntax and giving locals jadx-style names. By default every file also goes through a source-level cleanup pass, described as semantics-preserving, that inlines copy chains, recovers ternaries and for-each loops and drops dead stores; --fast skips it. Alongside full decompilation, 15 query subcommands return app and manifest information, resources, strings, cross-references, class hierarchies, disassembly or single classes and methods on demand, and the same queries are served over REST and MCP.
 
   Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/ddc/)
+
+- [**Simplify**](https://github.com/CalebFenton/simplify)
+
+  Generic Android deobfuscator built on smalivm, a sandboxed Dalvik virtual machine that executes each method and records every possible register and class value along all execution paths, taking both branches when a value such as file or network input is unknown. Simplify then repeatedly applies constant propagation, dead-code removal, unreflection and peephole optimizations to the APK or DEX, which can decrypt strings and remove reflection while keeping behaviour the same; it does not rename classes or methods. smalivm can also be used as a library, and the last release adds sdbg, a step-through Smali debugger built on it.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/simplify-android-deobfuscator/)
 
 <a id="native-binary"></a>
 ### Native Binary
