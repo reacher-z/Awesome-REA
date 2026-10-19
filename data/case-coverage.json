@@ -10098,13 +10098,26 @@
       "reported_source_urls": [
         "https://github.com/LinuxJessi/decomp-compat-kit"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The pinned README, verifier, symbol tools and license support this verification-tooling lead: the kit recompiles a PS2 matching decompilation with a stock toolchain outside the project's own build and classifies per-function differences. Full mapping covers the kit as a tool; its case-study figures stay README-reported, and the repository is a two-commit snapshot from 2026-09-25 with Xenosaga-specific defaults. No AI or REA use is described.",
+      "reason_zh": "固定版本的 README、验证脚本、符号工具及许可文件支持这条验证工具线索：该工具包在项目自身构建之外，用原版工具链重新编译 PS2 匹配反编译代码，并对逐函数差异分类。完整映射将其作为工具收录；案例中的数字仍为 README 自述，仓库是 2026-09-25 的两次提交快照，默认配置专用于 Xenosaga。来源未描述 AI 或 REA 的使用。",
+      "primary_evidence_urls": [
+        "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/README.md",
+        "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/verify_decomp.py",
+        "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/dump_symbols.py",
+        "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/symbols_to_splat.py",
+        "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "decomp-compat-kit",
+          "kind": "tool",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "hao-games:row-001",
@@ -15720,18 +15733,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 195,
+      "already-curated": 196,
       "insufficient-evidence": 170,
-      "pending": 226
+      "pending": 225
     },
     "units_by_state": {
-      "already-curated": 193,
+      "already-curated": 194,
       "insufficient-evidence": 170,
-      "pending": 226
+      "pending": 225
     },
-    "primary_reviewed_units": 305,
-    "catalog_linked_occurrences": 204,
-    "distinct_resource_ids": 199,
+    "primary_reviewed_units": 306,
+    "catalog_linked_occurrences": 205,
+    "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

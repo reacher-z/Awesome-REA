@@ -7165,5 +7165,36 @@
       "app"
     ],
     "kind": "learning-resource"
+  },
+  {
+    "id": "decomp-compat-kit",
+    "name": "Xenosaga I Decomp Compatibility Kit",
+    "url": "https://github.com/LinuxJessi/decomp-compat-kit",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Checks a PS2 matching decompilation from outside its own build: the C is recompiled with a stock, unpatched ee-gcc 2.96 and assembler, then each function is byte-compared against the original and every difference is classified by its likely toolchain cause. Companion scripts export ELF symbol tables to CSV and convert them to splat symbol files. Defaults target Xenosaga Episode I; the README says the method generalises but the defaults do not.",
+    "description_zh": "在匹配反编译项目自身的构建之外进行检查：用未打补丁的原版 ee-gcc 2.96 及汇编器重新编译其 C 代码，再逐函数与原程序逐字节比较，并按可能的工具链原因对每处差异分类。配套脚本可将 ELF 符号表导出为 CSV，并转换为 splat 符号文件。默认配置针对 Xenosaga Episode I；README 称方法可推广，默认配置则不能。",
+    "evidence_url": "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/README.md",
+    "verified_at": "2026-10-18",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit d9bb53d is the second of two commits, both made on 2026-09-25; there are no releases or tests. It holds three Python tools and symbol data for the NTSC-U Xenosaga Episode I executable SLUS_204.69 and its five overlays, built with SCE ee-gcc 2.96. Tool docstrings still refer to out/ paths and a TOOLCHAIN.md that are not in the repository.",
+      "verify_decomp.py needs a checkout of the decompilation under test, your own SLUS_204.69 and extracted originals (located through DECOMP_GAME_DIR), and an i386 root filesystem with stock ee-gcc 2.96 and ee-as run through Docker under linux/386 emulation, plus clang for preprocessing. The README points to decompme/compilers for the compiler, which is not vendored, and documents a colima and binfmt route for Apple-silicon Macs.",
+      "It compiles each C translation unit with -DSKIP_ASM, compares every defined function against the original bytes, labels differences hazard-nop, reorder, mixed, immediate or unexplained, and exits nonzero only for unexplained ones. The README warns that the mixed class masks branch and call targets, so a wrong target there is not flagged; functions whose relocations need the tested project's data layout are reported as unverifiable.",
+      "The README's case study against an anonymised PS2 matching decompilation reports 817 of 857 functions identical, 40 differences all in toolchain classes, 195 unverifiable and one compiler crash. It also reports 5,927 shared names with no address disagreements against another decompilation's symbol file. Neither result is published with its inputs, and this collection ran nothing.",
+      "MIT-licensed. The repository includes a 15,132-entry symbol table that its README says comes from the unstripped retail executables, but no game binaries, extracted assets or decompiled game code; the game remains its rights holders' property. The reviewed sources describe no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/verify_decomp.py",
+      "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/dump_symbols.py",
+      "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/tools/symbols_to_splat.py",
+      "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
+      "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
+    ]
   }
 ]
