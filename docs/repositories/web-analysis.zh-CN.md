@@ -22,7 +22,7 @@
 - [vmoranv/jshookmcp](https://github.com/vmoranv/jshookmcp) — 面向 AI 智能体、以搜索为先且支持配置档案感知的逆向工程工作区：在一个 MCP 服务器中提供覆盖 36 个领域的 735 个工具。 **[2,050 星标]**
 - [bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools) — 用于底层操作 WebAssembly 模块的命令行工具与 Rust 库。 **[1,801 星标]** · 精选：[wasm-tools](https://awesomerea.org/zh/resources/wasm-tools/)
 - [paazmaya/shuji](https://github.com/paazmaya/shuji) — 从 sourcemap 逆向还原 JavaScript 和 CSS 源代码。 **[1,246 星标]** · 精选：[shuji 源映射源码恢复工具](https://awesomerea.org/zh/resources/shuji/)
-- [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — 通用 JavaScript 去混淆工具。 **[1,153 星标]**
+- [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — 通用 JavaScript 去混淆工具。 **[1,153 星标]** · 精选：[javascript-deobfuscator 通用 JavaScript 反混淆工具](https://awesomerea.org/zh/resources/ben-sb-javascript-deobfuscator/)
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 面向现代前端的 JavaScript 反编译器。 **[1,023 星标]** · 精选：[Wakaru](https://awesomerea.org/zh/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — 用于将 JVM 字节码解释执行或转译为 JavaScript、OpenCL、WebAssembly 的框架。 **[961 星标]**
 - [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — 用于还原经 Obfuscator.io 混淆的脚本的去混淆工具。 **[807 星标]** · 精选：[Obfuscator.io 专用反混淆工具](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)

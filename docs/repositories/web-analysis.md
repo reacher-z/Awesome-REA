@@ -22,7 +22,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [vmoranv/jshookmcp](https://github.com/vmoranv/jshookmcp) — A search-first, profile-aware reverse-engineering workspace for AI agents — 735 tools across 36 domains in one MCP server. **[2,050 stars]**
 - [bytecodealliance/wasm-tools](https://github.com/bytecodealliance/wasm-tools) — CLI and Rust libraries for low-level manipulation of WebAssembly modules **[1,801 stars]** · Curated: [wasm-tools](https://awesomerea.org/resources/wasm-tools/)
 - [paazmaya/shuji](https://github.com/paazmaya/shuji) — Reverse engineering JavaScript and CSS sources from sourcemaps **[1,246 stars]** · Curated: [shuji](https://awesomerea.org/resources/shuji/)
-- [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — General purpose JavaScript deobfuscator **[1,153 stars]**
+- [ben-sb/javascript-deobfuscator](https://github.com/ben-sb/javascript-deobfuscator) — General purpose JavaScript deobfuscator **[1,153 stars]** · Curated: [javascript-deobfuscator](https://awesomerea.org/resources/ben-sb-javascript-deobfuscator/)
 - [pionxzh/wakaru](https://github.com/pionxzh/wakaru) — 🔪📦 Javascript decompiler for modern frontend **[1,023 stars]** · Curated: [Wakaru](https://awesomerea.org/resources/wakaru/)
 - [mirkosertic/Bytecoder](https://github.com/mirkosertic/Bytecoder) — Framework to interpret and transpile JVM bytecode to JavaScript, OpenCL or WebAssembly. **[961 stars]**
 - [ben-sb/obfuscator-io-deobfuscator](https://github.com/ben-sb/obfuscator-io-deobfuscator) — A deobfuscator for scripts obfuscated by Obfuscator.io **[807 stars]** · Curated: [Obfuscator.io Deobfuscator](https://awesomerea.org/resources/obfuscator-io-deobfuscator/)
