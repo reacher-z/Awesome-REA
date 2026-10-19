@@ -353,7 +353,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   A native desktop reconstruction of the 2019 Switch version of Link’s Awakening using static recompilation. The author attributes most code, tooling and reverse-engineering work to Claude Code with human direction and review.
 
-  Case study · Independent reconstruction · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/lasrecomp/)
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lasrecomp/)
 
 - [**ArkWeb: a two-game movement and collision experiment**](https://github.com/luki-1/ArkWeb)
 
@@ -1591,7 +1591,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Native and remote debugger for controlling execution and inspecting live or crashed program state.
 
-  Tool · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/gdb/)
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/gdb/)
 
 - [**rr**](https://github.com/rr-debugger/rr)
 
@@ -1645,7 +1645,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-\* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.
 
-  Tool · [Requirements & evidence](https://awesomerea.org/resources/rizin/)
+  Tool · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/rizin/)
 
 - [**Decompiler Explorer**](https://dogbolt.org)
 

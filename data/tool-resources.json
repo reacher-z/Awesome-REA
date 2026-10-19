@@ -742,8 +742,7 @@
     "verification": "source-reviewed",
     "requirements": "A GDB build supporting the target architecture and a permitted local process, core dump, simulator or remote debug endpoint.",
     "targets": [
-      "binary",
-      "game"
+      "binary"
     ],
     "kind": "tool"
   },
@@ -1575,8 +1574,7 @@
     "relationship": "independent-reconstruction",
     "kind": "case-study",
     "targets": [
-      "game",
-      "binary"
+      "game"
     ],
     "description_en": "A native desktop reconstruction of the 2019 Switch version of Link’s Awakening using static recompilation. The author attributes most code, tooling and reverse-engineering work to Claude Code with human direction and review.",
     "description_zh": "通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。",
@@ -6089,7 +6087,8 @@
     "relationship": "foundation",
     "kind": "tool",
     "targets": [
-      "binary"
+      "binary",
+      "game"
     ],
     "description_en": "Command-line reverse-engineering framework that began as a fork of radare2. The rizin shell analyzes and disassembles binaries, debugs programs and works as a scriptable hex editor, while rz-* tools cover binary-format information, assembly, diffing, hashing, pattern search and FLIRT signatures. The README lists dozens of architectures, bytecode formats and file formats from ELF, PE and Mach-O to dyld caches and BIOS/UEFI images; rzpipe scripts it from Python, Rust, Go and other languages. Cutter is the separate GUI built on it.",
     "description_zh": "源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。",

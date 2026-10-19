@@ -354,7 +354,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。
 
-  案例 · 独立重建 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/lasrecomp/)
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lasrecomp/)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb)
 
@@ -1592,7 +1592,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/gdb/)
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/gdb/)
 
 - [**rr**](https://github.com/rr-debugger/rr)
 
@@ -1646,7 +1646,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-\* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rizin/)
+  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rizin/)
 
 - [**Decompiler Explorer 反编译器对比服务**](https://dogbolt.org)
 
