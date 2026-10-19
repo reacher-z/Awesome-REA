@@ -5155,5 +5155,15 @@
       "二进制由使用者自备，且须先在 radare2 中分析目标函数（af）。输出是可读的伪 C 代码，并非恢复出的源码；从 README 示例可见，结果可能保留 eax 等寄存器赋值和通用的局部变量名。回归测试位于独立的 r2dec-regression 仓库，提交问题时需附上 pddi 生成的 JSON。",
       "本仓库只构建 radare2 插件；Rizin 使用的 jsdec 反编译器是另一个独立项目。源文件带有 SPDX 标注：大部分代码为 BSD-3-Clause，随附的 base64 辅助代码为 MIT，因此 GitHub 无法识别出单一许可证。本次未反编译任何二进制。"
     ]
+  },
+  "m1n1": {
+    "name": "m1n1 Apple Silicon 引导与硬件研究工具",
+    "requirements": [
+      "处于活跃开发中：所审阅的 main 提交（2026-10-19）比 v2.0.0 标签（2026-10-02）多 53 个提交；该标签说明称其为首个 GPL 版本，其余与 v1.9.9 相同。GitHub 上最新的发行版 v1.9.9 提供第二阶段 m1n1.bin，以及只含 m1n1 boot.bin 的纯 UEFI 软件包。",
+      "只能在 Apple Silicon Mac 上运行。构建需要 aarch64-linux-gnu-gcc 交叉工具链（或 ARM64 原生工具链）、macOS 上的 LLVM 与 lld，或仓库附带的 compose 环境；支持链式加载的构建还需 Rust 的 aarch64-unknown-none-softfloat 目标。Python 代理客户端（依赖 pyserial、construct、asn1）在另一台主机上通过 USB 与 m1n1 通信。",
+      "m1n1 由 Apple 的 kmutil 在 macOS 恢复环境中安装为自定义启动对象，通常由 Asahi Linux 安装器完成。run_guest.py 接受 Mach-O 格式的客体，例如来自使用者自有 macOS 安装的 XNU kernelcache；仓库不附带任何 Apple 固件、内核或 macOS 组件。proxyclient/hv 收有 27 个追踪脚本，覆盖 AGX、DCP、NVMe 和 SMC 等硬件模块。",
+      "CI 会构建 main 分支、检查 C 与 Rust 代码格式，并在 Ubuntu 及 macOS 14、15 上运行代理客户端的 pytest 测试套件；这些测试覆盖其汇编器、目标文件加载和工具链处理，不涉及在 Mac 硬件上的行为。",
+      "v1.9.9 及以前的代码仍采用 MIT 许可；自 v2.0.0 起 m1n1 采用 GPL-2.0-or-later，内嵌的 libfdt、部分 Arm Trusted Firmware 代码、dlmalloc 等第三方代码及随附的 Rust crate 保留各自许可。Asahi Linux 的 LLM 政策以其净室逆向工程规则为由，广泛禁止在实质性贡献中使用生成式 AI；AGENTS.md、CLAUDE.md 和 GEMINI.md 则称维护者出于法律原因禁止任何 AI 或 LLM 的使用。"
+    ]
   }
 }
