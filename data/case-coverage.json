@@ -6519,12 +6519,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110817897706582486"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@mertingolu13, 2026-10-15, in Turkish) says they worked out the RNG mechanics of two games that day and built prediction tracking, adding that Codex alone is sometimes not enough and they decompile with ILSpy to search. It names neither game and links no code, notes or results; the post it answers is a general remark about AI reverse engineering, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the analysis and its predictions cannot be checked.",
+      "reason_zh": "作者回复（@mertingolu13，2026-10-15，土耳其语）称当天弄清了两款游戏的随机数机制并实现了预测追踪，还说仅靠 Codex 有时不够，需要用 ILSpy 反编译后查找。回复未说明是哪两款游戏，也没有链接代码、笔记或结果；它回应的帖子只是对 AI 逆向工程的泛泛评论，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；相关分析及其预测均无法核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110817897706582486"
+      ],
       "catalog_matches": []
     },
     {
@@ -6600,12 +6602,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110820518983000118"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply to @0xCodila (@per_arneng, 2026-10-15) argues that REA is unnecessary because Opus 5.5 will do the work and name the tools needed, and says they had already reverse engineered an Android app and an old Windows 95 app, both their own, as a test. It names neither app and links no output, and the GitHub account PerArneng (Per Arneng) has no repository for this test. Retain the lead without a catalog mapping; neither the test nor its results are published.",
+      "reason_zh": "作者回复 @0xCodila 的帖子（@per_arneng，2026-10-15）认为并不需要 REA，因为 Opus 5.5 会直接完成工作并说明需要哪些工具，并称自己已作为测试逆向过一个 Android 应用和一个旧的 Windows 95 应用，两者都是自己的作品。回复未说明是哪两个应用，也没有链接任何输出，GitHub 账号 PerArneng（Per Arneng）中也没有与此测试对应的仓库。保留此线索而不建立目录映射；该测试及其结果均未公开。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110820518983000118"
+      ],
       "catalog_matches": []
     },
     {
@@ -6640,13 +6644,23 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110844188178952423"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@0xMoryo, 2026-10-15) says someone used REA’s Ghidra provider on the 1997 PC-98 TH04 executable, recovered two bullet-ring formulas into clean-room notes, and had Claude Code build RINGFALL, a browser bullet-hell boss fight, in one session; it carries only a video. It says REA and “the TH04 study” are linked in replies, which the post API does not expose; the quoted post is a general REA tutorial article, and no RINGFALL source or build was found. Retain the lead without a curated case; the related mapping points to REA’s separately curated TH04 bullet-ring evidence, not to RINGFALL.",
+      "reason_zh": "帖子（@0xMoryo，2026-10-15）称有人用 REA 的 Ghidra 提供程序分析 1997 年 PC-98 游戏 TH04 的可执行文件，把两条弹幕环公式整理成洁净室笔记，再由 Claude Code 在一次会话中做出浏览器弹幕 Boss 战 RINGFALL；帖子只附视频。帖子说 REA 和“TH04 研究”的链接在回复中，但帖子 API 不提供回复内容；其引用的帖子是一篇 REA 通用教程文章，也未找到 RINGFALL 的源码或构建。保留此线索而不建立整理案例；相关映射指向另行整理的 REA TH04 弹幕环证据，而非 RINGFALL。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110844188178952423",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/website/evidence/th04-bullet-ring.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-th04-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:apple-watch-ultra2-android-ai-report",
@@ -6660,12 +6674,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110844478239945061"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@Edenwoodfilm, 2026-10-15) relays, with a video, that an open-source tool now pairs an Apple Watch Ultra 2 with Android and manages parts of the watch, with root required on Android; it calls this AI reverse engineering but names and links no project. Press coverage points to a public Apple Watch Companion repository whose README describes reconstructed pairing and IDS protocols but does not mention AI. That repository commits thousands of watch-face previews rendered from Apple’s frameworks among its assets, so it is not linked or curated here. Retain the lead without a catalog mapping.",
+      "reason_zh": "帖子（@Edenwoodfilm，2026-10-15）附视频转述：一款开源工具现在可以把 Apple Watch Ultra 2 与 Android 配对并管理手表的部分功能，Android 端需要 root；帖子称之为 AI 逆向工程，但未点名或链接任何项目。媒体报道指向一个公开的 Apple Watch Companion 仓库，其 README 描述了重建的配对和 IDS 协议，但没有提到 AI。该仓库在素材中提交了数千张由 Apple 框架渲染的表盘预览图，因此此处不予链接或整理。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110844478239945061",
+        "https://tbreak.com/apple-watch-android-pairing-open-source/"
+      ],
       "catalog_matches": []
     },
     {
@@ -6774,12 +6791,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110857508470604174"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The reply (@jfwfreo, 2026-10-15), answering a post about the decompilation tracker decompdev closing over a flood of “vibe coded” submissions, says Open-BFME, the AI-assisted project to decompile the Battle for Middle-earth RTS series, is not vibe-coded and produces C++ that compiles to byte-for-byte-identical output with the right compiler. The project’s public repositories were found, but their READMEs state that the retail game executables are committed as baselines (and, for BFME 1, the MSVC 7.1 toolchain), so they are not linked or curated here. Retain the lead without a catalog mapping.",
+      "reason_zh": "该回复（@jfwfreo，2026-10-15）针对一则关于反编译追踪网站 decompdev 因“氛围编程”投稿泛滥而关闭的帖子，称借助 AI 反编译《指环王：中土之战》RTS 系列的 Open-BFME 项目并非“氛围编程”，其 C++ 代码用正确的编译器编译后可得到逐字节相同的输出。已找到该项目的公开仓库，但其 README 说明零售版游戏可执行文件作为基准直接提交（BFME 1 还提交了 MSVC 7.1 工具链），因此此处不予链接或整理。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110857508470604174"
+      ],
       "catalog_matches": []
     },
     {
@@ -6814,12 +6833,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110868326528303367"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@ChloeXChaCha, 2026-10-15) recounts Claude failing to guess a preview video model’s parameter names until the platform’s own assistant placed duration and aspect ratio under response_format and task types under video_config; a deliberately invalid 99-second request was then accepted, so the team added its own 3–10 second check. The author’s public Greenlight repository (MIT) describes the screenplay-to-film tool and says duration limits are clamped in code. Neither source reconstructs an undocumented interface, since the fields came from the platform’s assistant. Retain the lead without a catalog mapping.",
+      "reason_zh": "作者帖子（@ChloeXChaCha，2026-10-15）讲述 Claude 猜测一款预览版视频模型的参数名屡屡失败，后由平台自己的助手指出时长和比例位于 response_format、任务类型位于 video_config；团队随后故意提交的 99 秒无效请求竟被接受，于是自行加上 3–10 秒的检查。作者公开的 Greenlight 仓库（MIT）介绍了这款剧本转影片工具，并称时长限制在代码中强制约束。两处来源都没有重建未公开的接口，字段信息来自平台自己的助手。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110868326528303367",
+        "https://github.com/rainingsnow0914tw-ship-it/greenlight/blob/10ce7759660284c9d6b6deb2dead6946cacf75d0/README.md"
+      ],
       "catalog_matches": []
     },
     {
@@ -15734,16 +15756,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 196,
-      "insufficient-evidence": 170,
-      "pending": 225
+      "insufficient-evidence": 176,
+      "pending": 219
     },
     "units_by_state": {
       "already-curated": 194,
-      "insufficient-evidence": 170,
-      "pending": 225
+      "insufficient-evidence": 176,
+      "pending": 219
     },
-    "primary_reviewed_units": 306,
-    "catalog_linked_occurrences": 205,
+    "primary_reviewed_units": 312,
+    "catalog_linked_occurrences": 206,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
     "unique_projects": null
