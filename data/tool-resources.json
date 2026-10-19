@@ -10621,5 +10621,34 @@
       "https://github.com/cea-sec/miasm/tree/3671fc24d6e625c2d75f3311724eb6b0c97664f8/miasm/os_dep",
       "https://pypi.org/project/miasm/0.1.5/"
     ]
+  },
+  {
+    "id": "fernflower",
+    "name": "Fernflower",
+    "url": "https://github.com/JetBrains/fernflower",
+    "category": "jvm",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "JetBrains' analytical decompiler that turns Java class files back into Java source; IntelliJ IDEA bundles it to show code when debugging or browsing class files. The standalone console decompiler takes class files, JARs, ZIPs or directories, can load library files with -e only as analysis context, and writes Java sources to an output directory. Options cover generic signatures, lambdas, inner classes, record and switch patterns, per-method time limits and renaming of ambiguous or obfuscated identifiers, optionally through a user-supplied renamer class.",
+    "description_zh": "JetBrains 的分析型反编译器，可将 Java class 文件还原为 Java 源码；IntelliJ IDEA 内置了它，用于在调试或浏览 class 文件时显示代码。独立的控制台反编译器接受 class 文件、JAR、ZIP 或目录，可通过 -e 加载仅作为分析上下文的库文件，并将 Java 源码写入输出目录。选项涵盖泛型签名、lambda、内部类、记录模式与 switch 模式、单个方法的处理时限，以及对含糊或混淆标识符的重命名，也可由使用者提供的重命名类来实现。",
+    "evidence_url": "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No GitHub releases: the README says releases are published in the IntelliJ repository, whose java-decompiler-engine metadata listed 262.10968.63 as the latest release at review. The README describes Fernflower as part of IntelliJ Community, which takes patches as pull requests, and bugs go to JetBrains' YouTrack (subsystem Java. Decompiler. Engine).",
+      "The reviewed master commit's Gradle build (wrapper 9.1.0) compiles for Java 21 and produces fernflower.jar, or a fernflower start script with ./gradlew installDist; the README documents the java -jar fernflower.jar command line.",
+      "Inputs are user-supplied class, JAR or ZIP files; libraries passed with -e inform analysis of class and method relationships but are not decompiled. The README says most options are aimed at professional reverse engineers. Output is reconstructed Java, not the original source.",
+      "Apache-2.0 with a JetBrains NOTICE. The README credits Stiver as the original author and JetBrains as maintainer since 2014, with some ForgeFlower patches merged; Vineflower is a separately maintained fork. No classes were decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/README.md#L48-L92",
+      "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/build.gradle.kts",
+      "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/LICENSE.txt",
+      "https://github.com/JetBrains/fernflower/blob/924b60f87d93743ab63b59454eec708e8309ef2a/NOTICE.txt",
+      "https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/java/java-decompiler-engine/maven-metadata.xml"
+    ]
   }
 ]

@@ -3942,5 +3942,14 @@
       "二进制、shellcode 和内存转储由分析者自行提供。自带的 Windows API 模拟面向 32 位 x86，其他库函数的效果通过 Python 回调来建模。IDA 插件只使用 Miasm 的部分功能，不包含 JIT。",
       "采用 GPL-2.0-only 许可。提升得到的 IR、化简后的表达式和模拟结果只是分析辅助，不能证明与原始代码等价。本次未分析或模拟任何二进制。"
     ]
+  },
+  "fernflower": {
+    "name": "Fernflower Java 反编译器",
+    "requirements": [
+      "GitHub 上没有发布版本：README 称版本发布在 IntelliJ 仓库中，审阅时其 java-decompiler-engine 元数据列出的最新版本为 262.10968.63。README 称 Fernflower 属于 IntelliJ Community 项目，补丁需以拉取请求提交到该项目，问题则提交到 JetBrains YouTrack（子系统 Java. Decompiler. Engine）。",
+      "所审阅 master 分支提交中的 Gradle 构建（wrapper 9.1.0）以 Java 21 为编译目标，可生成 fernflower.jar，或通过 ./gradlew installDist 生成 fernflower 启动脚本；README 介绍了 java -jar fernflower.jar 命令行用法。",
+      "输入由使用者提供：class、JAR 或 ZIP 文件；通过 -e 传入的库文件用于分析类与方法之间的关系，但不会被反编译。README 称多数选项面向专业逆向工程人员。输出是重建的 Java 代码，并非原始源码。",
+      "采用 Apache-2.0 许可，附 JetBrains 的 NOTICE。README 称 Stiver 为原作者，JetBrains 自 2014 年起负责维护，并合并了部分 ForgeFlower 补丁；Vineflower 是另行维护的分支。本次未反编译任何类。"
+    ]
   }
 }
