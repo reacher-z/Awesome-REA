@@ -11,7 +11,7 @@
 - [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) — 使用 AI 编程智能体，一条命令即可克隆任意网站。 **[36,843 星标]**
 - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys) — 面向 WhatsApp Web、基于 Socket 的 TS/JavaScript API。 **[11,345 星标]**
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — WebAssembly 二进制工具包。 **[8,166 星标]** · 精选：[WABT](https://awesomerea.org/zh/resources/wabt/)
-- [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]**
+- [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — WhatsApp Web 逆向工程。 **[6,508 星标]** · 精选：[whatsapp-web-reveng：记录旧版 WhatsApp Web 协议](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — 首个通过逆向分析平台内部 API 构建无需许可集成的 AI 智能体。 **[4,780 星标]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — 跨平台微信小程序反编译 GUI 工具，支持 .wxapkg 文件扫描、解密和解包。 **[4,261 星标]** · 精选：[wxapkg 微信小程序解包工具](https://awesomerea.org/zh/resources/wux1an-wxapkg/)
 - [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — 几秒内将任意网站的设计系统提取为设计令牌，包括标志、颜色、字体、边框等。一条命令即可完成。 **[3,647 星标]** · 精选：[Dembrandt 网站设计系统提取工具](https://awesomerea.org/zh/resources/dembrandt/)

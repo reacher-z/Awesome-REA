@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 390](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-390-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 391](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-391-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (23) · [游戏](#game) (175) · [应用](#app) (58)
+- [网站](#website) (24) · [游戏](#game) (175) · [应用](#app) (58)
 - [原生二进制](#native-binary) (31) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (184) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (185) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -100,6 +100,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建，并在智能体会话中提供标注与导出。运行时说明记录了对照原脚本修正的标识符，以及画布主页面 20463 个函数中有 19111 个结构完全一致的比对结果。未审阅的差异、未公开的重建记录及复用权利仍待确认；不主张恢复任何托管后端。
 
   案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-design-canvas-case/)
+
+- [**whatsapp-web-reveng：记录旧版 WhatsApp Web 协议**](https://github.com/sigalor/whatsapp-web-reveng)
+
+  记录并重新实现 WhatsApp Web 在浏览器会话镜像已配对手机时期使用的 WebSocket 协议：二维码配对、Curve25519/HKDF 密钥建立、经 AES/HMAC 保护的二进制报文、基于字符串令牌表的节点编码，以及端到端媒体加密。Python 后端、Node.js 中继和浏览器前端把已登录会话的报文解码成可查看的 JSON，README 还列出了 Baileys、go-whatsapp 等独立再实现。这是 WhatsApp 2021 年多设备架构之前的旧一代协议，不能当作对当前 WhatsApp Web 的描述。
+
+  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
 
 #### 工具、项目与集成
 

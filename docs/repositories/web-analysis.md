@@ -11,7 +11,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [JCodesMore/ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) — Clone any website with one command using AI coding agents **[36,843 stars]**
 - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys) — Socket-based TS/JavaScript API for WhatsApp Web **[11,345 stars]**
 - [WebAssembly/wabt](https://github.com/WebAssembly/wabt) — The WebAssembly Binary Toolkit **[8,166 stars]** · Curated: [WABT](https://awesomerea.org/resources/wabt/)
-- [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — Reverse engineering WhatsApp Web. **[6,508 stars]**
+- [sigalor/whatsapp-web-reveng](https://github.com/sigalor/whatsapp-web-reveng) — Reverse engineering WhatsApp Web. **[6,508 stars]** · Curated: [whatsapp-web-reveng: documenting the legacy WhatsApp Web protocol](https://awesomerea.org/resources/whatsapp-web-reveng-legacy-protocol-case/)
 - [Integuru-AI/Integuru](https://github.com/Integuru-AI/Integuru) — The first AI agent that builds permissionless integrations through reverse engineering platforms' internal APIs. **[4,780 stars]**
 - [wux1an/wxapkg](https://github.com/wux1an/wxapkg) — Cross-platform GUI tool for decompiling WeChat mini programs, with .wxapkg file scanning, decryption, and unpacking. **[4,261 stars]** · Curated: [wxapkg](https://awesomerea.org/resources/wux1an-wxapkg/)
 - [dembrandt/dembrandt](https://github.com/dembrandt/dembrandt) — Extract any website’s design system into tokens in seconds: logo, colors, typography, borders &amp; more. One command. **[3,647 stars]** · Curated: [Dembrandt](https://awesomerea.org/resources/dembrandt/)
