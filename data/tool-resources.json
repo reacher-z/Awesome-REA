@@ -9565,5 +9565,39 @@
       "Instrumenting a target needs a rooted device or emulator with adb and a running Frida server; the tool operates only on apps the analyst is authorized to test.",
       "The README reports 90+ reusable modules and an optional MCP server component; it names capabilities such as SSL-pinning handling, which this record does not restate as a procedure. GPL-3.0 licensed; the repository ships the framework and its modules, no application packages."
     ]
+  },
+  {
+    "id": "binsider",
+    "name": "binsider",
+    "url": "https://github.com/orhun/binsider",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Terminal user interface for inspecting ELF binaries. It shows file information and linked shared libraries in the manner of stat and ldd, browses ELF headers, notes, sections, segments, symbols, dynamic symbols and relocations much like readelf, extracts strings with an adjustable minimum length, and offers a searchable hexdump view. Optional dynamic analysis runs the binary and traces its system calls like strace, with a summary of time and call counts per system call; the interface can also be embedded as a Rust library in Ratatui applications.",
+    "description_zh": "用于查看 ELF 二进制的终端用户界面。它可像 stat 和 ldd 那样显示文件信息和所链接的共享库，像 readelf 那样浏览 ELF 头、注释、节区、段、符号、动态符号和重定位，按可调的最小长度提取字符串，并提供可搜索的十六进制视图。可选的动态分析会运行该二进制，像 strace 那样跟踪其系统调用，并按系统调用汇总耗时和调用次数；该界面还能作为 Rust 库嵌入 Ratatui 应用。",
+    "evidence_url": "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.3.2, published 2026-02-01, on crates.io and as prebuilt archives for Linux (x86_64, i686, AArch64, ARM and powerpc64le, with glibc and musl variants), macOS on Intel and Apple silicon, and Windows x86_64. The release workflow enables dynamic analysis only in the x86_64 Linux builds and the AArch64 glibc build. The reviewed main commit is six commits later and adds the --syscall-number, --string-limit and --no-abbrev trace options, which the website documents but no release includes yet.",
+      "Cargo.toml requires Rust 1.88+, although the website's installation pages still give an MSRV of 1.74.1. The dynamic-analysis feature is enabled by default and can be left out with --no-default-features. The website also documents Docker, Nix, Arch Linux and Alpine Linux installation.",
+      "Input is an ELF file chosen by the user. Dynamic analysis executes that binary on the host under ptrace-based tracing, so untrusted samples should only be traced in an isolated environment; the other views read the file without running it.",
+      "Dual-licensed MIT OR Apache-2.0. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/Cargo.toml",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/CHANGELOG.md",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/.github/workflows/cd.yml",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/website/src/content/docs/usage/dynamic-analysis.md",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/website/src/content/docs/usage/static-analysis.md",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/website/src/content/docs/installation/crates-io.md",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/website/src/content/docs/extras/library.md",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/LICENSE-MIT",
+      "https://github.com/orhun/binsider/blob/7f0633d1a69af15cc3be9e0533cb36dbe67eb598/LICENSE-APACHE",
+      "https://github.com/orhun/binsider/releases/tag/v0.3.2"
+    ]
   }
 ]

@@ -3644,5 +3644,14 @@
       "对目标进行插桩需要已 root 的设备或模拟器，并具备 adb 与运行中的 Frida server；工具仅用于分析者有权测试的应用。",
       "README 称其提供 90 多个可复用模块以及可选的 MCP 服务组件；它列出了诸如 SSL 固定处理等能力，本记录不复述任何具体步骤。采用 GPL-3.0 许可证；仓库仅包含框架及其模块，不含任何应用安装包。"
     ]
+  },
+  "binsider": {
+    "name": "binsider ELF 二进制分析终端界面",
+    "requirements": [
+      "审阅时最新版本为 v0.3.2，发布于 2026-02-01，可从 crates.io 安装，也提供预编译压缩包，覆盖 Linux（x86_64、i686、AArch64、ARM 和 powerpc64le，含 glibc 与 musl 版本）、Intel 和 Apple 芯片的 macOS 以及 Windows x86_64。发布工作流只在 x86_64 Linux 构建和 AArch64 glibc 构建中启用动态分析。所审阅的 main 提交比该版本晚六个提交，新增了 --syscall-number、--string-limit 和 --no-abbrev 跟踪选项，网站文档已有说明，但尚未包含在任何发布版本中。",
+      "Cargo.toml 要求 Rust 1.88+，而网站安装页面仍写着最低支持版本为 1.74.1。dynamic-analysis 功能默认启用，可用 --no-default-features 去掉。网站还介绍了 Docker、Nix、Arch Linux 和 Alpine Linux 的安装方式。",
+      "输入为使用者选择的 ELF 文件。动态分析会在宿主机上以基于 ptrace 的跟踪方式执行该二进制，因此不可信样本只应在隔离环境中跟踪；其他视图只读取文件，不会运行它。",
+      "采用 MIT 或 Apache-2.0 双许可。本次未安装或运行任何内容。"
+    ]
   }
 }
