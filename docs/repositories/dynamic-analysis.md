@@ -4,18 +4,18 @@
 
 **99 repositories** · 2026-10-16 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
-- [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — An open-source user mode debugger for Windows. Optimized for reverse engineering and malware analysis. **[49,888 stars]**
-- [frida/frida](https://github.com/frida/frida) — Main repo for hosting release binaries **[22,317 stars]**
-- [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — Exploit Development and Reverse Engineering with GDB &amp; LLDB Made Easy **[11,064 stars]**
-- [rr-debugger/rr](https://github.com/rr-debugger/rr) — Record and Replay Framework **[10,707 stars]**
-- [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]**
+- [x64dbg/x64dbg](https://github.com/x64dbg/x64dbg) — An open-source user mode debugger for Windows. Optimized for reverse engineering and malware analysis. **[49,888 stars]** · Curated: [x64dbg](https://awesomerea.org/resources/x64dbg/)
+- [frida/frida](https://github.com/frida/frida) — Main repo for hosting release binaries **[22,317 stars]** · Curated: [Frida](https://awesomerea.org/resources/frida/)
+- [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — Exploit Development and Reverse Engineering with GDB &amp; LLDB Made Easy **[11,064 stars]** · Curated: [pwndbg](https://awesomerea.org/resources/pwndbg/)
+- [rr-debugger/rr](https://github.com/rr-debugger/rr) — Record and Replay Framework **[10,707 stars]** · Curated: [rr](https://awesomerea.org/resources/rr/)
+- [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]** · Curated: [Qiling](https://awesomerea.org/resources/qiling/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — Dynamic Instrumentation Tool Platform **[3,181 stars]**
-- [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more. Built with Zig — zero dependencies, single-binary output, cros **[2,514 stars]**
+- [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more. Built with Zig — zero dependencies, single-binary output, cros **[2,514 stars]** · Curated: [x64dbg-MCP Server](https://awesomerea.org/resources/x64dbg-mcp-server/)
 - [bootleg/ret-sync](https://github.com/bootleg/ret-sync) — ret-sync is a set of plugins that helps to synchronize a debugging session (WinDbg/GDB/LLDB/OllyDbg2/x64dbg) with IDA/Ghidra/Binary Ninja disassemblers. **[2,401 stars]**
 - [QBDI/QBDI](https://github.com/QBDI/QBDI) — A Dynamic Binary Instrumentation framework based on LLVM. **[1,828 stars]**
-- [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]**
+- [nowsecure/r2frida](https://github.com/nowsecure/r2frida) — Radare2 and Frida better together. **[1,450 stars]** · Curated: [r2frida](https://awesomerea.org/resources/r2frida/)
 - [darbra/sperm](https://github.com/darbra/sperm) — A collection of excellent reverse engineering articles I have read, well worth a look. **[1,422 stars]**
 - [ansjdnakjdnajkd/iOS](https://github.com/ansjdnakjdnajkd/iOS) — Most usable tools for iOS penetration testing **[1,327 stars]**
 - [LING71671/open-reverselab](https://github.com/LING71671/open-reverselab) — Open-source AI reverse-engineering agent platform and MCP server for Ghidra, Frida, x64dbg and Rizin — automated PE/APK/binary analysis, CTF and malware research, with 100+ MCP tools and a 194-article runnable knowledge base. **[1,265 stars]**
@@ -72,13 +72,13 @@ These are automatically discovered projects, not individually curated or tested 
 - [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — Reverse engineering toolkit for Apple's wireless ecosystem **[90 stars]**
 - [wwweeeqqu/honor-of-kings-RE-research](https://github.com/wwweeeqqu/honor-of-kings-RE-research) — Full-stack mobile game-security research (Honor of Kings / sgame): kernel-mode cross-process memory reading (KernelPatch KPM), Tencent ACE anti-cheat &amp; IL2CPP/native engine reverse engineering, and a real-time ESP overlay. Educational / research only; no proprietary binaries. **[73 stars]**
 - [imugee/xdv](https://github.com/imugee/xdv) — XDV is disassembler or debugger that works based on the extension plugin. **[56 stars]**
-- [crissyfield/super-trouper](https://github.com/crissyfield/super-trouper) — MCP server for Frida. **[54 stars]**
+- [crissyfield/super-trouper](https://github.com/crissyfield/super-trouper) — MCP server for Frida. **[54 stars]** · Curated: [Super Trouper](https://awesomerea.org/resources/super-trouper/)
 - [irql/nokd](https://github.com/irql/nokd) — reverse engineering of the windows nt kernel debugger protocol &amp; reimplementation. **[44 stars]**
 - [andreafioraldi/r2angrdbg](https://github.com/andreafioraldi/r2angrdbg) — Use angr inside the radare2 debugger. Create an angr state from the current debugger state. **[34 stars]**
 - [NSEcho/fnoios](https://github.com/NSEcho/fnoios) — Redirect spawned iOS application stdout and stderr to pty **[31 stars]**
 - [AkashaCorporation/HikariSystem-HexCore](https://github.com/AkashaCorporation/HikariSystem-HexCore) — The Native Reverse Engineering IDE. Zero-overhead binary analysis, full CPU emulation (PE/ELF), and headless automation. Powered by Capstone, Unicorn, LLVM &amp; Remill via N-API. **[27 stars]**
 - [riyadmondol2006/ios-ssl-bypass-and-traffic-monitor](https://github.com/riyadmondol2006/ios-ssl-bypass-and-traffic-monitor) — iOS SSL Bypass &amp; Real-Time Traffic Monitor – A Frida-based script for bypassing SSL pinning and monitoring network traffic on iOS apps in real-time. Designed for security researchers and ethical testing. 📡🔓 **[24 stars]**
-- [yfe404/frida-mcp](https://github.com/yfe404/frida-mcp) — MCP server for Frida 17 dynamic instrumentation **[24 stars]**
+- [yfe404/frida-mcp](https://github.com/yfe404/frida-mcp) — MCP server for Frida 17 dynamic instrumentation **[24 stars]** · Curated: [frida-mcp (yfe404)](https://awesomerea.org/resources/frida-mcp-yfe404/)
 - [qtmleap/revkit](https://github.com/qtmleap/revkit) — A reverse-engineering toolkit for iOS and Android applications (Frida, mitmproxy, Ghidra, Theos) **[19 stars]**
 - [2233admin/reverse-skill-evolver](https://github.com/2233admin/reverse-skill-evolver) — Reverse-engineering skills for AI coding agents, with IDA/MCP integration, APK and JavaScript workflows, bounded agent swarms, and routing evaluation. **[17 stars]**
 - [Fi5t/iDump](https://github.com/Fi5t/iDump) — Decrypt and dump iOS app binaries to an IPA file via USB and SSH/SFTP **[17 stars]**

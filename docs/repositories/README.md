@@ -4,21 +4,21 @@
 
 Browse **2,836** repositories from **3,000** successful README scans. **161** clearly out-of-scope entries and **3** whose upstream repository is no longer available remain in the underlying scan record.
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 Scan date: **2026-10-16 UTC**.
 
-| Category | Repositories |
-| --- | ---: |
-| [Websites](web-analysis.md) | 177 |
-| [Games](game-analysis.md) | 388 |
-| [Apps · Android](android.md) | 432 |
-| [Apps · Managed code](managed-code.md) | 131 |
-| [Native binaries](native-analysis.md) | 677 |
-| [Runtime and debugging](dynamic-analysis.md) | 99 |
-| [Firmware](firmware.md) | 207 |
-| [Protocols](protocol-analysis.md) | 103 |
-| [General tools and collections](reverse-engineering.md) | 622 |
+| Category | Repositories | Linked to curated entries or papers |
+| --- | ---: | ---: |
+| [Websites](web-analysis.md) | 177 | 11 |
+| [Games](game-analysis.md) | 388 | 35 |
+| [Apps · Android](android.md) | 432 | 13 |
+| [Apps · Managed code](managed-code.md) | 131 | 1 |
+| [Native binaries](native-analysis.md) | 677 | 32 |
+| [Runtime and debugging](dynamic-analysis.md) | 99 | 9 |
+| [Firmware](firmware.md) | 207 | 10 |
+| [Protocols](protocol-analysis.md) | 103 | 2 |
+| [General tools and collections](reverse-engineering.md) | 622 | 34 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

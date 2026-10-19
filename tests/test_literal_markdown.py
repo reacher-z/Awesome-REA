@@ -145,6 +145,7 @@ class LiteralMarkdownTests(unittest.TestCase):
             root = Path(temporary)
             (root / 'data').mkdir()
             (root / 'data/source-index.json').write_text(json.dumps({'meta':{'completed_at':'2026-10-17T00:00:00Z'}, 'resources':records}))
+            (root / 'data/papers.json').write_text('[]')
             for name in ('README.md', 'README.zh-CN.md'):
                 (root / name).write_text(build_repository_index.SUMMARY_BEGIN + '\n' + build_repository_index.SUMMARY_END)
             stack.enter_context(patch.object(build_repository_index, 'ROOT', root))
@@ -152,7 +153,7 @@ class LiteralMarkdownTests(unittest.TestCase):
             stack.enter_context(patch.object(build_repository_index, 'localized_records', side_effect=lambda values, _: values))
             stack.enter_context(patch.object(build_repository_index, 'read_scope', return_value=[]))
             stack.enter_context(patch.object(build_repository_index, 'apply_scope', side_effect=lambda values, _: values))
-            stack.enter_context(patch.object(build_repository_index, 'load_resources', return_value=[]))
+            stack.enter_context(patch.object(build_repository_index, 'curated_resources', return_value=[]))
             stack.enter_context(patch.object(build_repository_index, 'with_curated_labels', side_effect=lambda values, _: values))
             rendered, count = build_repository_index.rendered_files()
             self.assertEqual(count, len(records))

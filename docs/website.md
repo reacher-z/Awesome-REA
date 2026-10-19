@@ -39,7 +39,7 @@ The test command runs every Python test and the Node tests of the browser script
 
 Open `http://127.0.0.1:8000`. Use HTTP rather than opening `index.html` directly, because the directory fetches `catalog.json` and `source-browser.json`. Stop the preview server with Ctrl+C.
 
-After source, locale, or scope edits, regenerate the [GitHub browsing directory](repositories/README.md) with `python3 scripts/build_repository_index.py` before validation. It also updates the counts and directory links in both root READMEs.
+After source, locale, scope, curated-record or paper edits, regenerate the [GitHub browsing directory](repositories/README.md) with `python3 scripts/build_repository_index.py` before validation. It also updates the counts and directory links in both root READMEs. A repository line whose exact GitHub repository is a curated entry's URL or a paper's code or project URL ends with a “Curated” or “Paper” link to that page, using the same matching as the website's related links; `--check` fails when these markers are stale.
 
 The bare homepage always opens in English. Use `/zh/` or the header language links to open Chinese; old browser preferences do not override the default. Generated pages link to `/zh/` routes, while existing `?lang=zh` links still render Chinese.
 

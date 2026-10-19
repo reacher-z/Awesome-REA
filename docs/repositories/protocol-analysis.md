@@ -4,12 +4,12 @@
 
 **103 repositories** · 2026-10-16 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [alufers/mitmproxy2swagger](https://github.com/alufers/mitmproxy2swagger) — Automagically reverse-engineer REST APIs via capturing traffic **[9,652 stars]**
 - [Mouseww/anything-analyzer](https://github.com/Mouseww/anything-analyzer) — All-in-one protocol analysis toolkit: built-in browser capture, MITM proxy, JS hooks, fingerprint spoofing, AI analysis, and an MCP server for seamless AI agent and IDE integration. **[3,776 stars]**
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — Resources about network security, including: Proxy/GFW/ReverseProxy/Tunnel/VPN/Tor/I2P, and MiTM/PortKnocking/NetworkSniff/NetworkAnalysis/etc。More than 1700 open source tools for now. Post incoming. **[926 stars]**
-- [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]**
+- [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]** · Curated: [Netzob](https://awesomerea.org/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity Protocol Reverse Engineering and Dissector **[688 stars]**
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — Automated Payload Reverse Engineering Pipeline for the Controller Area Network (CAN) protocol **[456 stars]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
@@ -18,7 +18,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — MAPS cloud scanner and response parser for Microsoft Defender research. **[96 stars]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr Inverter serial communication protocol reverse engineering **[96 stars]**
-- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces **[75 stars]**
+- [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces **[75 stars]** · Paper: [NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces](https://awesomerea.org/papers/paper-netplier/)
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch: ICMP Packet Sniffer **[60 stars]**
 - [ringverse/protocol](https://github.com/ringverse/protocol) — Reverse engineering smart ring protocols **[56 stars]**
 - [bitpeach/Protocol-Informatics](https://github.com/bitpeach/Protocol-Informatics) — “Protocol Informatics” is a project to design for automatically network protocol reverse engineering based on frame or packet analysis. "PI" is short for “Protocol Informatics”, which introduces local and global sequence alignment algorithms. The PI project is famous in network protocol reverse engineering based on network trace. I am not the author of PI project. However, the previous website storing PI project disappeared. That makes me to open a github issue to keep the codes of PI poject. **[53 stars]**

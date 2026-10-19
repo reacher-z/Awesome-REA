@@ -4,19 +4,19 @@
 
 **432 repositories** · 2026-10-16 UTC
 
-These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings.
+These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
-- [skylot/jadx](https://github.com/skylot/jadx) — Dex to Java decompiler **[50,988 stars]**
+- [skylot/jadx](https://github.com/skylot/jadx) — Dex to Java decompiler **[50,988 stars]** · Curated: [JADX](https://awesomerea.org/resources/jadx/)
 - [librepods-org/librepods](https://github.com/librepods-org/librepods) — AirPods liberated from Apple's ecosystem. **[30,324 stars]**
-- [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — A tool for reverse engineering Android apk files **[25,935 stars]**
-- [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. **[21,966 stars]**
+- [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) — A tool for reverse engineering Android apk files **[25,935 stars]** · Curated: [Apktool](https://awesomerea.org/resources/apktool/)
+- [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) — Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing, malware analysis and security assessment framework capable of performing static and dynamic analysis. **[21,966 stars]** · Curated: [Mobile Security Framework (MobSF)](https://awesomerea.org/resources/mobsf/)
 - [Konloch/bytecode-viewer](https://github.com/Konloch/bytecode-viewer) — A Java 8+ Jar &amp; Android APK Reverse Engineering Suite (Decompiler, Editor, Debugger &amp; More) **[15,677 stars]**
 - [OWASP/mastg](https://github.com/OWASP/mastg) — The OWASP Mobile Application Security Testing Guide (MASTG) is a comprehensive manual for mobile app security testing and reverse engineering. It describes technical processes for verifying the OWASP Mobile Security Weakness Enumeration (MASWE) weaknesses, which are in alignment with the OWASP MASVS. **[13,258 stars]**
-- [sensepost/objection](https://github.com/sensepost/objection) — 📱 objection - runtime mobile exploration **[9,446 stars]**
+- [sensepost/objection](https://github.com/sensepost/objection) — 📱 objection - runtime mobile exploration **[9,446 stars]** · Curated: [objection](https://awesomerea.org/resources/objection/)
 - [We5ter/Scanners-Box](https://github.com/We5ter/Scanners-Box) — The Ultimate Open-Source Security Arsenal for Hackers, Enterprises, and AI Agents **[9,108 stars]**
 - [firerpa/lamda](https://github.com/firerpa/lamda) — Android Full-Stack Device Control Platform: WebRTC/H.264 remote desktop, UI/OCR/image-matching automation, one-click MITM, built-in Frida, proxy/VPN/frp/P2P networking, MCP/Agent, 160+ APIs, designed for multi-device clusters and engineered deployments. **[8,610 stars]**
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — Claude Code skill to support Android app's reverse engineering **[8,152 stars]**
-- [androguard/androguard](https://github.com/androguard/androguard) — Reverse engineering and pentesting for Android applications **[6,355 stars]**
+- [androguard/androguard](https://github.com/androguard/androguard) — Reverse engineering and pentesting for Android applications **[6,355 stars]** · Curated: [Androguard](https://awesomerea.org/resources/androguard/)
 - [dwisiswant0/apkleaks](https://github.com/dwisiswant0/apkleaks) — Scanning APK file for URIs, endpoints &amp; secrets. **[6,353 stars]**
 - [CreditTone/hooker](https://github.com/CreditTone/hooker) — 🔥🔥 hooker is a Frida-based reverse engineering toolkit for Android. It offers a user-friendly CLI, universal scripts, auto hook generation, memory roaming to detect activities/services, one-click SOCKS5 proxy setup, Frida JustTrustMe, and BoringSSL unpinning for all apps. **[5,328 stars]**
 - [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — Unofficial Galaxy Buds Manager for Windows, macOS, Linux, and Android **[5,294 stars]**
@@ -31,8 +31,8 @@ These are automatically discovered projects, not individually curated or tested 
 - [ReVanced/revanced-patcher](https://github.com/ReVanced/revanced-patcher) — 💉 ReVanced Patcher used to patch Android applications **[3,525 stars]**
 - [Perfare/Zygisk-Il2CppDumper](https://github.com/Perfare/Zygisk-Il2CppDumper) — Using Zygisk to dump il2cpp data at runtime **[3,343 stars]**
 - [m0bilesecurity/RMS-Runtime-Mobile-Security](https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security) — Runtime Mobile Security (RMS) 📱🔥 - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime **[3,111 stars]**
-- [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — Plugin for JADX to integrate MCP server **[2,906 stars]**
-- [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]**
+- [zinja-coder/jadx-ai-mcp](https://github.com/zinja-coder/jadx-ai-mcp) — Plugin for JADX to integrate MCP server **[2,906 stars]** · Curated: [JADX-AI-MCP](https://awesomerea.org/resources/jadx-ai-mcp/)
+- [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]** · Curated: [Blutter](https://awesomerea.org/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — Advanced Fuzzing Library - Slot your Fuzzer together in Rust! Scales across cores and machines. For Windows, Android, MacOS, Linux, no\_std, ... **[2,660 stars]**
 - [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — Hand-crafted Frida examples **[2,539 stars]**
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC is a super FAST and lightweight Android decompiler designed for Agents/Mobile Researchers. **[2,410 stars]**
@@ -47,7 +47,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nccgroup/house](https://github.com/nccgroup/house) — A runtime mobile application analysis toolkit with a Web GUI, powered by Frida, written in Python. **[1,468 stars]**
 - [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]**
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
-- [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]**
+- [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]** · Curated: [hermes-dec](https://awesomerea.org/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — hook C# method at runtime without modify dll file (such as UnityEditor.dll), works on Windows, Mac, Android il2cpp(armv7a and armv8a) **[1,065 stars]**
@@ -65,7 +65,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [darbra/sign](https://github.com/darbra/sign) — Ideas and experiences in reverse engineering app parameters, focused on Android. **[675 stars]**
 - [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — Find JNI function signatures in APK and apply to reverse-engineering tools. **[675 stars]**
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — A tool that helps you work with frida easily for Android platform **[654 stars]**
-- [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]**
+- [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]** · Curated: [hbctool](https://awesomerea.org/resources/hbctool/)
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — A lightweight emulation framework for emulating cryptographic algorithms in iOS executables and libraries. **[631 stars]**
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]**
 - [noodle1983/UnityAndroidIl2cppPatchDemo](https://github.com/noodle1983/UnityAndroidIl2cppPatchDemo) — Demo of a complete hot-update solution for Unity Android IL2CPP apps. Update the Unity path in build\_demo\_apk, then run it to rebuild the patch and APK in one step. The libunity file is not hot-updated, so this solution does not apply if the Unity version changes. **[578 stars]**
@@ -85,7 +85,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ksg97031/frida-gadget](https://github.com/ksg97031/frida-gadget) — Automated tool for patching APKs to enable the use of Frida gadget by downloading the library and injecting code into the main activity. **[464 stars]**
 - [BryanGIG/PADumper](https://github.com/BryanGIG/PADumper) — Process Android Memory Dumper **[463 stars]**
 - [t0thkr1s/allsafe-android](https://github.com/t0thkr1s/allsafe-android) — Intentionally vulnerable Android application. **[441 stars]**
-- [Odrannnn/MetroidPrimePort](https://github.com/Odrannnn/MetroidPrimePort) — Native port of Metroid Prime (GameCube) for Linux, Windows and Android, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image. **[434 stars]**
+- [Odrannnn/MetroidPrimePort](https://github.com/Odrannnn/MetroidPrimePort) — Native port of Metroid Prime (GameCube) for Linux, Windows and Android, built from the PrimeDecomp decompilation. No emulator, no game assets included: bring your own disc image. **[434 stars]** · Curated: [Metroid Prime Port: an AI-assisted native port of the PrimeDecomp decompilation](https://awesomerea.org/resources/metroid-prime-port-case/)
 - [Evil0ctal/AndroidReverse101](https://github.com/Evil0ctal/AndroidReverse101) — 📖 Learn Android reverse engineering systematically from zero to one, with a fun, engaging, beginner-friendly approach! **[427 stars]**
 - [cxapython/mybackup-IT](https://github.com/cxapython/mybackup-IT) — Backup of technical articles on Android, JavaScript, assembly, and related reverse engineering. **[420 stars]**
 - [ucsb-seclab/BootStomp](https://github.com/ucsb-seclab/BootStomp) — BootStomp: a bootloader vulnerability finder **[417 stars]**
@@ -103,7 +103,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [morpheuslord/QuadraInspect](https://github.com/morpheuslord/QuadraInspect) — QuadraInspect is an Android framework that integrates AndroPass, APKUtil, and MobFS, providing a powerful tool for analyzing the security of Android applications. **[354 stars]**
 - [chame1eon/jnitrace-engine](https://github.com/chame1eon/jnitrace-engine) — Engine used by jnitrace to intercept JNI API calls. **[335 stars]**
 - [yazgx97/frida-intercept-encrypted-api](https://github.com/yazgx97/frida-intercept-encrypted-api) — A tool to help you intercept encrypted APIs in iOS or Android apps **[333 stars]**
-- [nathanialf/ico-pc](https://github.com/nathanialf/ico-pc) — PC, Android, iOS and macOS port of the ICO (PS2) decompilation (nathanialf/ico): Windows, Linux, Steam Deck, Android, iPhone via LiveContainer and Apple-silicon Mac (contributed). Contains no game data. **[331 stars]**
+- [nathanialf/ico-pc](https://github.com/nathanialf/ico-pc) — PC, Android, iOS and macOS port of the ICO (PS2) decompilation (nathanialf/ico): Windows, Linux, Steam Deck, Android, iPhone via LiveContainer and Apple-silicon Mac (contributed). Contains no game data. **[331 stars]** · Curated: [ico-pc: a native ICO port compiled from the PS2 decompilation](https://awesomerea.org/resources/ico-pc-port-case/)
 - [f3rb123/kill\_flutter](https://github.com/f3rb123/kill_flutter) — Flutter SSL Pinning Bypass Tool for Android &amp; iOS — works on any Flutter version without pattern databases **[315 stars]**
 - [LucasFaudman/apkscan](https://github.com/LucasFaudman/apkscan) — Scan for secrets, endpoints, and other sensitive data after decompiling and deobfuscating Android files. (.apk, .xapk, .dex, .jar, .class, .smali, .zip, .aar, .arsc, .aab, .jadx.kts). **[312 stars]**
 - [zahidaz/jezail](https://github.com/zahidaz/jezail) — Android pentesting toolkit with REST API, web terminal, screen mirroring, Frida, and full device control from your rooted device **[278 stars]**
@@ -186,7 +186,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [harismuneer/AndroCompare](https://github.com/harismuneer/AndroCompare) — ⚙️ An efficient tool to do in-depth comparison of two android apps. **[38 stars]**
 - [Octowolve/il2cpp-hacking](https://github.com/Octowolve/il2cpp-hacking) — No description supplied by the upstream repository. **[38 stars]**
 - [ZemerTeam/zemer-cipher](https://github.com/ZemerTeam/zemer-cipher) — YouTube cipher deobfuscation, n-transform &amp; PoToken (BotGuard) generation - a standalone Android library (Kotlin) with self-healing remote player configs. **[38 stars]**
-- [BroNils/aotopsy](https://github.com/BroNils/aotopsy) — Static analyzer for Flutter/Dart AOT snapshots — recovers function names, class hierarchies, call graphs, and behavioral signals from libapp.so without embedding or executing the Dart VM. Supports ARM64 and x86\_64, Dart 2.10–3.12. **[37 stars]**
+- [BroNils/aotopsy](https://github.com/BroNils/aotopsy) — Static analyzer for Flutter/Dart AOT snapshots — recovers function names, class hierarchies, call graphs, and behavioral signals from libapp.so without embedding or executing the Dart VM. Supports ARM64 and x86\_64, Dart 2.10–3.12. **[37 stars]** · Curated: [AOTopsy](https://awesomerea.org/resources/aotopsy/)
 - [YuutaTsubasa/ChaotixRecompiled](https://github.com/YuutaTsubasa/ChaotixRecompiled) — Static recompilation of the Sega 32X game Knuckles' Chaotix into native C++ (Windows/Linux/macOS/Android), with true widescreen. Bring your own ROM; no game data included. **[37 stars]**
 - [AyaanB-DotCom/android-tv-supply-chain-malware](https://github.com/AyaanB-DotCom/android-tv-supply-chain-malware) — Hardware-level firmware extraction and malware analysis of a <span>$</span>25 Android TV box **[36 stars]**
 - [FirmwareDroid/FirmwareDroid](https://github.com/FirmwareDroid/FirmwareDroid) — FirmwareDroid is an analysis framework for Android firmware and Apps. **[36 stars]**
@@ -270,7 +270,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Arsylk/jadx-deflatten](https://github.com/Arsylk/jadx-deflatten) — jadx plugin: undo hashCode-switch control-flow flattening (CFF deobfuscator) **[5 stars]**
 - [Darlenepurpleblack444/Zygisk-Il2CppFucker](https://github.com/Darlenepurpleblack444/Zygisk-Il2CppFucker) — Inject code into IL2CPP game processes to enable live metadata dumping, memory editing, method invocation, and Lua scripting via Zygisk. **[5 stars]**
 - [DiwasKhatri07/NepaliStream-CNC-Repo](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo) — Automated CloudStream .cs3 decoder and Kotlin metadata archive maintained by Diwas Khatri **[5 stars]**
-- [EncidXVII/claude-reverse-engineering-skill](https://github.com/EncidXVII/claude-reverse-engineering-skill) — Reverse engineering skill for Claude Code and other AI coding agents. **[5 stars]**
+- [EncidXVII/claude-reverse-engineering-skill](https://github.com/EncidXVII/claude-reverse-engineering-skill) — Reverse engineering skill for Claude Code and other AI coding agents. **[5 stars]** · Curated: [Claude Reverse Engineering Skill](https://awesomerea.org/resources/claude-reverse-engineering-skill/)
 - [Fi5t/jadx\_conf](https://github.com/Fi5t/jadx_conf) — No description supplied by the upstream repository. **[5 stars]**
 - [guanhan01/Yutu-Toolbox](https://github.com/guanhan01/Yutu-Toolbox) — An AI agent on your phone: use natural language to drive 103 built-in tools that operate directly on the device, covering files, apps, packet capture, APK decompilation, Linux environments, and UI automation. Includes a built-in MCP client and MCP server. **[5 stars]**
 - [KareemAksh/android-gki-wifi-injection](https://github.com/KareemAksh/android-gki-wifi-injection) — Monitor mode &amp; 802.11 packet injection on a stock Android 13 GKI kernel — no reflash. Cross-built cfg80211/mac80211/rtl8xxxu loadable modules (Clang 14, LTO/CFI) + RTL8188FU OTG adapter, driven by a Flutter app. Includes an RTL8188F backport and analysis of Qualcomm WiFi injection limits. **[5 stars]**
