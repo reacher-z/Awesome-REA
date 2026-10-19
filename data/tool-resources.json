@@ -14627,5 +14627,44 @@
       "https://github.com/relative/synchrony/blob/710e9f6c21ceea0cddf178eb863ef678f5d9d6ee/LICENSE.md",
       "https://github.com/relative/synchrony/releases/tag/2.4.6"
     ]
+  },
+  {
+    "id": "relive-oddworld-abe-engine-case",
+    "name": "R.E.L.I.V.E.: an Oddworld Abe’s Oddysee and Abe’s Exoddus engine reimplementation",
+    "url": "https://github.com/AliveTeam/alive_reversing",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the engine of Oddworld: Abe’s Oddysee and Abe’s Exoddus as an open-source replacement executable that runs from the user’s own game folder. The team decompiled the original executables and replaced their functions incrementally, using injected DLLs that hook reimplemented code into the patched retail executable, then rewrote the result into a standalone cross-platform engine. The project site says both games are playable in their entirety, with bug fixes and windowed, high-resolution and controller play.",
+    "description_zh": "以开源的替代可执行文件重新实现 Oddworld: Abe’s Oddysee 与 Abe’s Exoddus 的引擎，在使用者自己的游戏目录中运行。团队先反编译原版可执行文件并逐步替换其中的函数，借助注入的 DLL 将重新实现的代码挂接到打过补丁的零售版程序中，之后再把成果改写为独立的跨平台引擎。项目网站称两款游戏均可完整通关，并修复了缺陷，支持窗口模式、高分辨率和手柄游玩。",
+    "evidence_url": "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-09-01 that merged the SDL3 port; the latest release is github-v1.0.9, labelled “relive stable v1.0.9” (2025-03-21), while CMake still declares project version 0.1. The project site’s FAQ says both games can be played through, over a hundred original bugs are fixed and there should be no noticeable gameplay difference from the retail version; PSX-quality music, deeper modding and an in-game level editor are listed as future work. The FAQ describes the method as decompiling the retail executable and then spending years rewriting the output into readable code.",
+      "Play requires the user’s own Abe’s Oddysee or Abe’s Exoddus installation; the FAQ names the Steam, GOG and early disc versions. The executable runs from the game folder that holds the .lvl files, and the Linux launcher scripts look for the default Steam folder or ask for that directory. The repository contains no game data files, though source files embed data tables used by the reimplemented code, such as fonts and video-decompression tables; the FAQ says the team will not provide game files.",
+      "Builds use CMake 3.10+, C++17 and SDL3 after a recursive clone of the Detours, googletest, magic_enum, jsonxx, stb, lodepng and nlohmann/json submodules; README documents Visual Studio 2022 on Windows and Ubuntu packages on Linux, and cpack produces a Debian package. MSVC builds also produce the AliveDllAE and AliveDllAO hooking DLLs, linked with Detours on 32-bit Windows. GitHub Actions builds Windows 32-bit, Windows 64-bit and Linux packages; its macOS job is commented out, although the FAQ says the games run on macOS.",
+      "The GitHub Actions workflow builds and packages without running tests. The tree has googletest unit and integration tests for the relive_api level-data tool, and the integration test reads .lvl files from hard-coded GOG install paths; older AppVeyor and Azure Pipelines configurations still invoke ctest. The FAQ reports automated replays that record a full play-through with a stable build and flag desyncs in development builds (the recorder saves input, RNG, ticks and sync points), but no replay results are published, and this collection ran nothing.",
+      "The repository has no license file and GitHub detects none; README only says contributions will be licensed under a GPL-compatible license, most likely MIT, in the future, so reuse terms are currently unstated. 3rdParty/DxOld carries three DirectX 7-era Direct3D headers, one with a Microsoft all-rights-reserved notice, and the submodules keep their own licenses. The FAQ disclaims affiliation with Oddworld Inhabitants, whose games keep their own rights; the reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/CMakeLists.txt",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/.gitmodules",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/.github/workflows/ci.yml",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/azure-pipelines.yml",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/appveyor.yml",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/Source/AliveDllAE/dllmain.cpp",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/Source/AliveLibAE/Resources.hpp",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/Source/AliveLibCommon/BaseGameAutoPlayer.cpp",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/Source/Tools/relive_api_integration_test/relive_api_integration_test.cpp",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/assets/relive-ae",
+      "https://github.com/AliveTeam/alive_reversing/blob/3be8967b71b29e6e61009d291bd64dce39abf7ac/3rdParty/DxOld/d3dtypes.h",
+      "https://github.com/AliveTeam/aliveteam.github.io/blob/f1ff2177147135677f9c060b02135f7d5f67ef8e/faq.md",
+      "https://github.com/AliveTeam/aliveteam.github.io/blob/f1ff2177147135677f9c060b02135f7d5f67ef8e/install.html",
+      "https://github.com/AliveTeam/alive_reversing/releases/tag/github-v1.0.9"
+    ]
   }
 ]
