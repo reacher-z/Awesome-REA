@@ -3449,5 +3449,14 @@
       "应在 IDA 已充分分析的二进制上运行这些脚本；Windows 编译的二进制需勾选 Windows 选项。匹配需要对应库确切版本的配置：仓库自带 OpenSSL 1.0.1j、libpng 1.2.29、libtiff 4.0.8 以及 zlib 1.2.3 和 1.2.11 的配置，其他版本需按照 compilations/ 中的说明自行编译该库，再用 karta_analyze_src.py（同样需要调用 IDA）从静态库和目标文件生成配置。上游建议在运行 Thumbs Up 前备份二进制，因为它会大幅修改分析结果。",
       "采用 MIT 许可。识别脚本包含 15 个库模块，其中闭源的 Treck 库只能检测是否存在。匹配结果是启发式的候选，不同匹配规则的准确度不同并以不同颜色标示，需要分析人员复核。本次未分析任何二进制。"
     ]
+  },
+  "vtil-core": {
+    "name": "VTIL-Core 虚拟机翻译中间语言核心库",
+    "requirements": [
+      "没有发布版本或标签；README 说明首个版本尚未完成，因此仓库仍不完整，更多文档也有待补充。所审阅的 master 提交（2026-07-27）只修改了 README，此前的代码提交日期为 2026-04-04 和 2026-04-05。本条目固定该提交仅用于引用文档。",
+      "使用 CMake 3.16+ 和 C++20 编译器构建：在 Windows 上生成 Visual Studio 解决方案，在 Linux 和 macOS 上使用 Ninja；Apple Silicon 上构建需加 -DCMAKE_OSX_ARCHITECTURES=x86_64。CMake 会按固定提交获取 Capstone 和 Keystone，CI 在 Windows Server 2022、Ubuntu 24.04 和 macOS 14 上构建。",
+      "这是用于分析虚拟化或混淆代码的库：用户需提供提升器，把待分析代码转换为 VTIL 例程，然后再进行优化、检查或重新输出。所审阅的代码树中没有针对特定虚拟机或保护器的提升器。其 Sample Routines 目录存放 2020 年的 .vtil 测试例程及对应的小型 C 测试函数，提交信息称之为 VMProtect 测试；本条目仅涵盖分析用途。",
+      "BSD-3-Clause 许可证。所获取的依赖保留各自的许可证：Capstone 采用 BSD 风格许可证，Keystone 采用附带 FOSS 许可例外的 GPL-2.0，分发构建产物时需注意。本次未提升或优化任何例程，也未进行构建。"
+    ]
   }
 }

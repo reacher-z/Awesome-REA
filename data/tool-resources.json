@@ -8851,5 +8851,39 @@
       "https://github.com/CheckPointSW/Karta/tree/7a3d0d302f59b2098b1792f1d4ac881e6c5d21b0/configs",
       "https://github.com/CheckPointSW/Karta/releases/tag/v2.1.0"
     ]
+  },
+  {
+    "id": "vtil-core",
+    "name": "VTIL-Core",
+    "url": "https://github.com/vtil-project/VTIL-Core",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "C++20 core of the VTIL (Virtual-machine Translation Intermediate Language) project, an intermediate language and optimizing compiler that the README describes as built for binary de-obfuscation and de-virtualization. Unlike LLVM IR, VTIL keeps the native stack, physical registers and non-SSA form, so code from register or stack machines can be lifted into it, native instructions can stay inline, and code can be emitted back at any virtual address. The library provides the IL with routines, basic blocks and serialization, a symbolic expression engine and simplifier, optimizer passes such as dead-code elimination, propagation and stack pinning, and Capstone/Keystone-based AMD64 and ARM64 disassembly and assembly helpers.",
+    "description_zh": "VTIL（Virtual-machine Translation Intermediate Language，虚拟机翻译中间语言）项目的 C++20 核心库。VTIL 是一种中间语言及优化编译器，README 称其专为二进制去混淆与去虚拟化分析而设计。与 LLVM IR 不同，VTIL 保留原生栈、物理寄存器和非 SSA 形式，因此寄存器机或栈机代码都能提升到其中，原生指令可直接嵌入 IL 流，代码也能重新输出到任意虚拟地址。该库提供包含例程、基本块和序列化的 IL、符号表达式引擎与化简器、死代码消除、传播和栈固定等优化遍，以及基于 Capstone/Keystone 的 AMD64 与 ARM64 反汇编和汇编辅助功能。",
+    "evidence_url": "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the README says the repository is incomplete because the initial release is not done, and further documentation is still to come. The reviewed master commit (2026-07-27) only edits the README; the preceding code commits date from 2026-04-04 and 2026-04-05. This entry pins it for documentation only.",
+      "Build with CMake 3.16+ and a C++20 compiler: generate a Visual Studio solution on Windows, or use Ninja on Linux and macOS, where Apple Silicon builds need -DCMAKE_OSX_ARCHITECTURES=x86_64. CMake fetches Capstone and Keystone at pinned commits, and CI builds on Windows Server 2022, Ubuntu 24.04 and macOS 14.",
+      "This is a library for analyzing virtualized or obfuscated code: the user supplies a lifter that translates the code under analysis into VTIL routines, which can then be optimized, inspected or re-emitted. The reviewed tree contains no lifter for a particular virtual machine or protector. Its Sample Routines folder holds 2020 .vtil test routines next to the small C test functions they correspond to, which commit messages describe as VMProtect tests; this entry covers analysis use only.",
+      "BSD-3-Clause license. The fetched dependencies keep their own licenses: Capstone's BSD-style license, and Keystone's GPL-2.0 with a FOSS license exception, which matters when distributing builds. No routines were lifted or optimized, and nothing was built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/CMakeLists.txt",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/Docs/COMPILE.md",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/VTIL-Common/CMakeLists.txt",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/Dependencies/capstone/CMakeLists.txt",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/Dependencies/keystone/CMakeLists.txt",
+      "https://github.com/vtil-project/VTIL-Core/tree/9ebee8e890a3a8923cc41f07821f740910e7c9b2/VTIL-Compiler/optimizer",
+      "https://github.com/vtil-project/VTIL-Core/tree/9ebee8e890a3a8923cc41f07821f740910e7c9b2/Sample%20Routines",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/.github/workflows/build.yml",
+      "https://github.com/vtil-project/VTIL-Core/blob/9ebee8e890a3a8923cc41f07821f740910e7c9b2/LICENSE.md",
+      "https://github.com/keystone-engine/keystone/blob/dc7932ef2b2c4a793836caec6ecab485005139d6/EXCEPTIONS-CLIENT"
+    ]
   }
 ]
