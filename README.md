@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 458](https://img.shields.io/badge/resources-458-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 459](https://img.shields.io/badge/resources-459-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (26) · [Game](#game) (181) · [App](#app) (70)
+- [Website](#website) (26) · [Game](#game) (181) · [App](#app) (71)
 - [Native Binary](#native-binary) (61) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1745,6 +1745,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   JetBrains' analytical decompiler that turns Java class files back into Java source; IntelliJ IDEA bundles it to show code when debugging or browsing class files. The standalone console decompiler takes class files, JARs, ZIPs or directories, can load library files with -e only as analysis context, and writes Java sources to an output directory. Options cover generic signatures, lambdas, inner classes, record and switch patterns, per-method time limits and renaming of ambiguous or obfuscated identifiers, optionally through a user-supplied renamer class.
 
   Tool · JVM · [Requirements & evidence](https://awesomerea.org/resources/fernflower/)
+
+- [**Bytecode Viewer**](https://github.com/Konloch/bytecode-viewer)
+
+  Desktop suite for inspecting compiled Java and Android programs: drop in a class, JAR, WAR, APK, DEX, XAPK or APKM file to browse its classes and resources, with up to three decompiler or disassembler views side by side. The README lists six bundled Java decompilers (Krakatau, CFR, Procyon, FernFlower, JADX and JD-GUI), Krakatau and Smali/baksmali disassemblers and assemblers plus javap, Dex2Jar and Enjarify for APK/DEX conversion, a built-in Java compiler for editing, and static search. Java and JavaScript plugins receive every loaded class as an ASM ClassNode for jobs such as string deobfuscation or malicious-code searches.
+
+  Tool · JVM · [Requirements & evidence](https://awesomerea.org/resources/bytecode-viewer/)
 
 <a id="native-binary"></a>
 ### Native Binary
