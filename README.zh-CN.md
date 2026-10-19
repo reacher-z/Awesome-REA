@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 396](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-396-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 397](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-397-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (34) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (35) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1851,6 +1851,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Ghidra 扩展，可把程序中选定的部分“反链接”回可重定位目标文件。其重定位表合成分析器根据 Ghidra 数据库重建链接器通常会丢弃的重定位信息，导出器则写出带符号表和重定位表、可由工具链重新链接的 COFF（x86、x86-64）、ELF（x86、x86-64、MIPS）或 OMF（x86）目标文件。README 列出的用途包括借助链接器打二进制补丁、软件移植、格式转换、提取库，以及逐个目标文件重新实现程序的反编译项目。
 
   工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-delinker-extension/)
+
+- [**BinExport 反汇编导出插件**](https://github.com/google/binexport)
+
+  BinDiff 的导出组件：为 IDA Pro 和 Binary Ninja 提供插件、为 Ghidra 提供扩展，把已分析的反汇编结果写成 BinDiff 所需的 Protocol Buffer 格式。BinExport2 模式涵盖带操作数和表达式的指令、基本块、流程图、调用图、节区、字符串、注释和数据引用；导出器还可输出统计文本文件或用于调试的文本转储。在 IDA 中可通过 IDC 或 IDAPython 脚本导出，在 Ghidra 中可使用同样能在无界面分析器中运行的 BinExport.java 脚本。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binexport/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
