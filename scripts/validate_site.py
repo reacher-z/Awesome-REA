@@ -9,7 +9,7 @@ from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 from build_manifest import read_build_manifest
-from build_paper_pages import TARGET_LABELS, bibtex_text, papers_newest_first
+from build_paper_pages import bibtex_text, papers_newest_first
 from validate_papers import read_papers
 from artifact_links import with_artifact_links, with_curated_labels
 from source_descriptions import description_fallback
@@ -17,7 +17,7 @@ from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import collection_section
+from build_readme import PAPER_SECTIONS, collection_section, paper_section
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SOCIAL_IMAGE_ALT, png_size
 
@@ -440,11 +440,11 @@ def validate_link_fragments(output, pages, links):
 
 
 def validate_paper_groups(page, papers, language):
-    """Check visible section membership, newest-first order and primary-target headings."""
+    """Check visible section membership, newest-first order and the README's topic headings."""
     expected = defaultdict(list)
     for paper in papers:
-        expected[paper['targets'][0]].append(paper)
-    assert set(expected) <= set(TARGET_LABELS), 'Unknown primary paper target'
+        expected[paper_section(paper)].append(paper)
+    assert set(expected) <= set(PAPER_SECTIONS), 'Unknown paper topic'
     anchors = [group['anchor'] for group in page.paper_groups]
     assert Counter(anchors) == Counter('research-' + target for target in expected), f'Paper section coverage mismatch ({language})'
     normalize = lambda parts: ' '.join(' '.join(parts).split())
@@ -453,7 +453,7 @@ def validate_paper_groups(page, papers, language):
         identifiers = [paper['id'] for paper in papers_newest_first(expected[target])]
         assert Counter(group['paper_ids']) == Counter(identifiers), f'Paper primary-target grouping mismatch: {target} ({language})'
         assert group['paper_ids'] == identifiers, f'Paper newest-first ordering mismatch: {target} ({language})'
-        label = TARGET_LABELS[target][language == 'zh']
+        label = PAPER_SECTIONS[target][language == 'zh']
         assert len(group['headings']) == 1 and group['headings'][0]['id'] == group['anchor'], f'Paper section heading anchor mismatch: {target} ({language})'
         assert normalize(group['headings'][0]['text']) == label, f'Paper section label mismatch: {target} ({language})'
         count = len(identifiers)

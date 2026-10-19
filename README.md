@@ -1950,14 +1950,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Evaluates black-box program reconstruction across 200 tasks: agents query an executable and read its documentation, then independently implement a codebase whose behavior is checked by generated tests.
 
-  2026 · Accepted · [PDF](https://arxiv.org/pdf/2605.03546v1) · [Code](https://github.com/facebookresearch/ProgramBench) · [Full entry & citation](https://awesomerea.org/papers/paper-programbench/)
+  2026 · Conference accepted · [PDF](https://arxiv.org/pdf/2605.03546v1) · [Code](https://github.com/facebookresearch/ProgramBench) · [Full entry & citation](https://awesomerea.org/papers/paper-programbench/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Binary inspection, decompilation, and internet access are forbidden during inference. Passing finite tests does not prove complete behavioral equivalence or recovery of the original source. Later live-leaderboard runs are separate from the reviewed arXiv results.
 
-  **Publication:** 2026 · NeurIPS 2026 · Accepted · John Yang et al.
+  **Publication:** 2026 · NeurIPS 2026 · Conference accepted · John Yang et al.
 
   </details>
 
@@ -2245,14 +2245,14 @@ Open “Scope and publication details” for each study’s full limitations. So
 
   Splits screenshot-to-code generation among grounding, planning and generation agents that label UI regions, build a hierarchical layout tree and write HTML/CSS. The pipeline also produces the Screen-10K training pairs used for supervised and reinforcement fine-tuning, and the paper introduces the 1,000-page ScreenBench.
 
-  2026 · Accepted · [PDF](https://arxiv.org/pdf/2507.22827v2) · [Code](https://github.com/leigest519/ScreenCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-screencoder/)
+  2026 · Conference accepted · [PDF](https://arxiv.org/pdf/2507.22827v2) · [Code](https://github.com/leigest519/ScreenCoder) · [Full entry & citation](https://awesomerea.org/papers/paper-screencoder/)
 
   <details>
   <summary>Scope and publication details</summary>
 
   **Scope and limits:** Output is static HTML/CSS layout; interaction, JavaScript behavior and backend logic are not reconstructed. Results are visual-similarity scores (CLIP and OCR-matched text blocks) on ScreenBench and Design2Code, which do not establish code-level or functional equivalence. The released pipeline calls a hosted model API, Doubao by default. The reviewed text is arXiv v2; the accepted EMNLP version may differ.
 
-  **Publication:** 2026 · EMNLP 2026 · Accepted · Yilei Jiang et al.
+  **Publication:** 2026 · EMNLP 2026 · Conference accepted · Yilei Jiang et al.
 
   </details>
 

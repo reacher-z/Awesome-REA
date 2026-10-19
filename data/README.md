@@ -72,7 +72,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `verification` | `source-reviewed` | Fixed value; sources were checked, not reproduced |
 | `runtime_tested` | `false` | Fixed value; reproduction results are not recorded |
 
-`date_precision` states how much of the date a source verifies, and `publication_date` holds exactly that much: nothing for `year`, a month for `month`, a day for `day`. `year` is always recorded. `targets[0]` places the paper in one section of the READMEs and the paper directory; the agent-evaluation papers listed in `AGENT_EVALUATION_PAPERS` in [build_readme.py](../scripts/build_readme.py) form their own README section.
+`date_precision` states how much of the date a source verifies, and `publication_date` holds exactly that much: nothing for `year`, a month for `month`, a day for `day`. `year` is always recorded. `targets[0]` places the paper in one section of the READMEs and the paper directory; the agent-evaluation papers listed in `AGENT_EVALUATION_PAPERS` in [build_readme.py](../scripts/build_readme.py) form their own section in both.
 
 Search the bibliography with `python3 scripts/catalog.py --papers --target website`, add a query such as `interaction`, or use `--language zh` for Chinese output. `--json` returns matching source records for tools and agents. Paper search is separate from `--source-index` and the default curated-resource search.
 

@@ -1951,14 +1951,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   通过 200 项任务评估黑盒程序重建：智能体运行可执行文件进行探测并阅读文档，再独立实现代码库，由生成的测试检查其行为。
 
-  2026 · 已接收 · [PDF](https://arxiv.org/pdf/2605.03546v1) · [代码](https://github.com/facebookresearch/ProgramBench) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-programbench/)
+  2026 · 会议已接收 · [PDF](https://arxiv.org/pdf/2605.03546v1) · [代码](https://github.com/facebookresearch/ProgramBench) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-programbench/)
 
   <details>
   <summary>范围与发表信息</summary>
 
   **范围与限制:** 推理阶段禁止检查二进制内容、反编译和访问互联网。通过有限测试不能证明完整行为等价或恢复了原始源码。实时榜单中的后续运行结果应与所审阅 arXiv 版本的结果区分。
 
-  **发表信息:** 2026 · NeurIPS 2026 · 已接收 · John Yang 等
+  **发表信息:** 2026 · NeurIPS 2026 · 会议已接收 · John Yang 等
 
   </details>
 
@@ -2246,14 +2246,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   将截图到代码的生成分配给定位、规划和生成三个智能体，分别标注界面区域、构建层级布局树并编写 HTML/CSS。该流程还生成了用于监督微调和强化学习的 Screen-10K 训练数据；论文另提出包含 1,000 个网页的 ScreenBench。
 
-  2026 · 已接收 · [PDF](https://arxiv.org/pdf/2507.22827v2) · [代码](https://github.com/leigest519/ScreenCoder) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-screencoder/)
+  2026 · 会议已接收 · [PDF](https://arxiv.org/pdf/2507.22827v2) · [代码](https://github.com/leigest519/ScreenCoder) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-screencoder/)
 
   <details>
   <summary>范围与发表信息</summary>
 
   **范围与限制:** 输出为静态 HTML/CSS 布局，不重建交互、JavaScript 行为或后端逻辑。结果是 ScreenBench 与 Design2Code 上的视觉相似度分数（CLIP 及经 OCR 匹配的文本块），不能证明代码层面或功能上的等价。公开流程需调用托管模型 API，默认使用豆包（Doubao）。审阅文本为 arXiv v2，EMNLP 接收版本可能有所不同。
 
-  **发表信息:** 2026 · EMNLP 2026 · 已接收 · Yilei Jiang 等
+  **发表信息:** 2026 · EMNLP 2026 · 会议已接收 · Yilei Jiang 等
 
   </details>
 
