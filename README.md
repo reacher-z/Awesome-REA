@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 353](https://img.shields.io/badge/resources-353-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 354](https://img.shields.io/badge/resources-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 183](https://img.shields.io/badge/cases-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (19) · [Game](#game) (165) · [App](#app) (50)
-- [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (25) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1640,6 +1640,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runtime code manipulation system for building dynamic tools that observe or transform any part of an unmodified program while it runs. Its API and IA-32/AMD64/ARM/AArch64 instruction manipulation library allow arbitrary changes to application instructions, not only inserted callouts. The release package bundles tools including drcov for code coverage, drltrace for library-call tracing, drstrace for Windows system calls, drmemtrace instruction and memory traces and the drdisas disassembler. It is a framework for building instrumentation tools, distinct from Frida's scripting of live processes.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/dynamorio/)
+
+- [**Decompyle++ (pycdc)**](https://github.com/zrax/pycdc)
+
+  C++ disassembler and decompiler for compiled Python bytecode that aims to support bytecode from any Python version. pycdas prints the disassembly of a .pyc file, and pycdc prints reconstructed Python source to stdout with errors on stderr; both also accept raw marshalled code objects when the Python version is given on the command line. The source carries opcode tables for Python 1.0 through 3.13.
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/pycdc/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

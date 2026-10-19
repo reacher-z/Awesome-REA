@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 353](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-353-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 354](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-354-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 183](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-183-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (165) · [应用](#app) (50)
-- [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (25) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1641,6 +1641,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dynamorio/)
+
+- [**Decompyle++（pycdc）Python 字节码反编译器**](https://github.com/zrax/pycdc)
+
+  用 C++ 编写的 Python 字节码反汇编器与反编译器，目标是支持任意 Python 版本的字节码。pycdas 输出 .pyc 文件的反汇编结果，pycdc 则把重建出的 Python 源码输出到标准输出，错误信息输出到标准错误；在命令行中指定 Python 版本后，两者也能处理原始的 marshal 代码对象。源码中包含 Python 1.0 至 3.13 的操作码表。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pycdc/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
