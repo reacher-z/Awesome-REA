@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2194,13 +2194,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2335,6 +2335,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 ### 反编译与符号恢复
 
 [↑ 论文主题](#papers) · [目录](#目录)
+
+- [**有本事就骗过我：二进制代码相似性检测模型对语义保持变换的鲁棒性研究**](https://dl.acm.org/doi/10.1145/3797116)
+
+  论文构建 asmFooler，用于检验基于学习的二进制代码相似性检测（BCSD）模型在语义保持的改动后能否继续匹配函数。它以 620 个基准 x86-64 ELF 二进制（包括 coreutils、binutils、PuTTY、nginx、SPEC2006 等，均由 Clang 以 O0–O3 编译）为起点，通过原地指令改写、基本块重排、Obfuscator-LLVM、语义空操作和垃圾代码插入生成 9,565 个变体，并加入一种贪心搜索，寻找能让不相似函数显得相似的死代码序列。在 Genius、Gemini、Asm2Vec、SAFE、Trex 与 BinShot 上的结果表明，鲁棒性取决于各模型的预处理、架构与特征：基本块重排使 BinShot 的召回率从 0.972 降至 0.036，而基于控制流图的 Genius 与 Gemini 召回率降幅不足 0.05。误报攻击的成功率最高可达 100%，平均只需插入 14.75 条指令。
+
+  Proceedings of the ACM on Software Engineering (FSE 2026) · 期刊论文 · [PDF](https://arxiv.org/pdf/2602.12681v1) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-asmfooler/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 所有样本都是作者由开源软件包和 SPEC2006 编译的 x86-64 ELF 二进制；部分软件包未能成功编译或变换，原地变换具有不确定性，也未经形式化验证。评测的六个模型（Genius、Gemini、Asm2Vec、SAFE、Trex 与 BinShot）不包括 jTrans 及基于大语言模型的相似性模型，因此研究结论未被证明适用于更新的或基于大语言模型的系统。结果取决于作者为适应各模型输入上限而设定的变换预算，语义空操作与垃圾代码也只插入在函数入口处。加壳、加密、字符串混淆以及 VMProtect、Themida 等商业保护工具不在研究范围内，对抗训练留待后续工作。
+
+  **作者:** Jiyong Uhm 等
+
+  </details>
 
 - [**SoK：人工智能增强的二进制逆向工程**](https://arxiv.org/abs/2606.17398)
 

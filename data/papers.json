@@ -4713,5 +4713,53 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-asmfooler",
+    "title": "Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations",
+    "title_zh": "有本事就骗过我：二进制代码相似性检测模型对语义保持变换的鲁棒性研究",
+    "authors": [
+      "Jiyong Uhm",
+      "Minseok Kim",
+      "Michalis Polychronakis",
+      "Hyungjoon Koo"
+    ],
+    "year": 2026,
+    "publication_date": "2026-06-30",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit records print and online publication on 2026-06-30. The PDF footer's July 2026 publication date and the FSE 2026 conference dates are not substituted for it.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2026-06-30；本条目不以 PDF 页脚标注的 2026 年 7 月出版日期或 FSE 2026 会议日期替代该日期。",
+    "venue": "Proceedings of the ACM on Software Engineering (FSE 2026)",
+    "publication_status": "journal-article",
+    "arxiv_id": "2602.12681",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2026-02-13",
+    "doi": "10.1145/3797116",
+    "url": "https://dl.acm.org/doi/10.1145/3797116",
+    "pdf_url": "https://arxiv.org/pdf/2602.12681v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. From 620 baseline x86-64 ELF binaries (coreutils, binutils, PuTTY, nginx, SPEC2006 and others, built with Clang at O0–O3), it generates 9,565 variants using in-place instruction rewriting, basic-block reordering, Obfuscator-LLVM, semantic NOPs and junk code, and it adds a greedy search for dead-code sequences that make dissimilar functions look similar. Across Genius, Gemini, Asm2Vec, SAFE, Trex and BinShot, robustness depends on each model's preprocessing, architecture and features: block reordering drops BinShot's recall from 0.972 to 0.036 but lowers it by under 0.05 for the CFG-based Genius and Gemini. The false-positive attack reaches up to 100% success with 14.75 inserted instructions on average.",
+    "description_zh": "论文构建 asmFooler，用于检验基于学习的二进制代码相似性检测（BCSD）模型在语义保持的改动后能否继续匹配函数。它以 620 个基准 x86-64 ELF 二进制（包括 coreutils、binutils、PuTTY、nginx、SPEC2006 等，均由 Clang 以 O0–O3 编译）为起点，通过原地指令改写、基本块重排、Obfuscator-LLVM、语义空操作和垃圾代码插入生成 9,565 个变体，并加入一种贪心搜索，寻找能让不相似函数显得相似的死代码序列。在 Genius、Gemini、Asm2Vec、SAFE、Trex 与 BinShot 上的结果表明，鲁棒性取决于各模型的预处理、架构与特征：基本块重排使 BinShot 的召回率从 0.972 降至 0.036，而基于控制流图的 Genius 与 Gemini 召回率降幅不足 0.05。误报攻击的成功率最高可达 100%，平均只需插入 14.75 条指令。",
+    "scope_limitations_en": "All samples are x86-64 ELF binaries compiled by the authors from open-source packages and SPEC2006; some packages failed to compile or transform, and the in-place transformation is non-deterministic and not formally verified. The six models evaluated (Genius, Gemini, Asm2Vec, SAFE, Trex and BinShot) exclude jTrans and LLM-based similarity models, so the findings are not shown to transfer to newer or LLM-based systems. Results depend on the transformation budgets the authors set to fit each model's input limits, and semantic NOPs and junk code are inserted only at function entry. Packing, encryption, string obfuscation and commercial protectors such as VMProtect and Themida are out of scope, and adversarial training is left to future work.",
+    "scope_limitations_zh": "所有样本都是作者由开源软件包和 SPEC2006 编译的 x86-64 ELF 二进制；部分软件包未能成功编译或变换，原地变换具有不确定性，也未经形式化验证。评测的六个模型（Genius、Gemini、Asm2Vec、SAFE、Trex 与 BinShot）不包括 jTrans 及基于大语言模型的相似性模型，因此研究结论未被证明适用于更新的或基于大语言模型的系统。结果取决于作者为适应各模型输入上限而设定的变换预算，语义空操作与垃圾代码也只插入在函数入口处。加壳、加密、字符串混淆以及 VMProtect、Themida 等商业保护工具不在研究范围内，对抗训练留待后续工作。",
+    "why_fits_en": "Adds a measured study of how code diversification and obfuscation mislead learned binary similarity models, which matters when reverse engineers rely on such models to match functions in transformed binaries.",
+    "why_fits_zh": "补充一项关于代码多样化与混淆如何误导基于学习的二进制相似性模型的量化研究；当逆向工程依靠此类模型在经过变换的二进制中匹配函数时，这一问题尤为重要。",
+    "metadata_notes": "Crossref records Proceedings of the ACM on Software Engineering volume 3, issue FSE, pages 1957–1980, with a CC BY 4.0 license; the PDF footer gives article FSE088. The ACM title capitalizes 'Semantics-Preserving', while arXiv writes 'Semantics-preserving'; the four-author order matches. The ACM landing page refused automated access, so publication facts follow Crossref and the reviewed text is arXiv v1 (2026-02-13), the only version, whose comment states FSE 2026 acceptance. The Data Availability section links Zenodo record 10.5281/zenodo.17116512, a software record named asmFooler (2025-09-11, CC BY 4.0) whose creator is listed as 'anonymous', with a 159 KB artifact archive and a 5 GB dataset archive. Because no author-identified code repository was found, code_url stays null and the Zenodo DOI is recorded here as an artifact identifier, not a paper identifier. The archives were not downloaded and nothing was run.",
+    "metadata_notes_zh": "Crossref 记录该文刊于 Proceedings of the ACM on Software Engineering 第 3 卷 FSE 期，页码 1957–1980，许可证为 CC BY 4.0；PDF 页脚标注文章编号 FSE088。ACM 标题写作“Semantics-Preserving”，arXiv 则为“Semantics-preserving”；四位作者顺序一致。ACM 文章页面拒绝自动访问，因此出版信息以 Crossref 为准，所审阅的文本是唯一版本 arXiv v1（2026-02-13），其注释说明论文已被 FSE 2026 接收。数据可用性章节链接 Zenodo 记录 10.5281/zenodo.17116512，这是名为 asmFooler 的软件记录（2025-09-11，CC BY 4.0），创建者显示为“anonymous”，包含 159 KB 的产物压缩包和 5 GB 的数据集压缩包。由于未找到署名作者的代码仓库，code_url 保持为空，该 Zenodo DOI 仅作为产物标识记录于此，而非论文标识。本次未下载压缩包，也未运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3797116",
+      "https://api.crossref.org/works/10.1145/3797116",
+      "https://arxiv.org/abs/2602.12681",
+      "https://arxiv.org/pdf/2602.12681v1",
+      "https://zenodo.org/records/17116512"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

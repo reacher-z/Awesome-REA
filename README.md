@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,13 +2193,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2334,6 +2334,21 @@ Open “Scope and publication details” for each study’s full limitations. So
 ### Decompilation and symbol recovery
 
 [↑ Paper topics](#papers) · [Contents](#contents)
+
+- [**Fool Me If You Can: On the Robustness of Binary Code Similarity Detection Models against Semantics-Preserving Transformations**](https://dl.acm.org/doi/10.1145/3797116)
+
+  The paper builds asmFooler to test whether learned binary code similarity detection (BCSD) models keep matching functions after semantics-preserving changes. From 620 baseline x86-64 ELF binaries (coreutils, binutils, PuTTY, nginx, SPEC2006 and others, built with Clang at O0–O3), it generates 9,565 variants using in-place instruction rewriting, basic-block reordering, Obfuscator-LLVM, semantic NOPs and junk code, and it adds a greedy search for dead-code sequences that make dissimilar functions look similar. Across Genius, Gemini, Asm2Vec, SAFE, Trex and BinShot, robustness depends on each model's preprocessing, architecture and features: block reordering drops BinShot's recall from 0.972 to 0.036 but lowers it by under 0.05 for the CFG-based Genius and Gemini. The false-positive attack reaches up to 100% success with 14.75 inserted instructions on average.
+
+  Proceedings of the ACM on Software Engineering (FSE 2026) · Journal article · [PDF](https://arxiv.org/pdf/2602.12681v1) · [Full entry & citation](https://awesomerea.org/papers/paper-asmfooler/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** All samples are x86-64 ELF binaries compiled by the authors from open-source packages and SPEC2006; some packages failed to compile or transform, and the in-place transformation is non-deterministic and not formally verified. The six models evaluated (Genius, Gemini, Asm2Vec, SAFE, Trex and BinShot) exclude jTrans and LLM-based similarity models, so the findings are not shown to transfer to newer or LLM-based systems. Results depend on the transformation budgets the authors set to fit each model's input limits, and semantic NOPs and junk code are inserted only at function entry. Packing, encryption, string obfuscation and commercial protectors such as VMProtect and Themida are out of scope, and adversarial training is left to future work.
+
+  **Authors:** Jiyong Uhm et al.
+
+  </details>
 
 - [**SoK: AI-Augmented Binary Reversing**](https://arxiv.org/abs/2606.17398)
 
