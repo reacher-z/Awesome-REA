@@ -2980,5 +2980,15 @@
       "README 中针对一个匿名 PS2 匹配反编译项目的案例报告：857 个函数中 817 个完全一致，40 处差异均属工具链类别，195 个无法验证，另有一次编译器崩溃。README 还报告与另一反编译项目的符号文件相比，有 5,927 个共同名称且地址无一不符。两项结果均未连同输入一并公开，本合集也未运行任何检查。",
       "采用 MIT 许可。仓库包含一份 15,132 条的符号表，README 称其来自未剥离符号的零售版可执行文件；仓库不含游戏二进制、提取的素材或反编译的游戏代码，游戏本身仍归权利人所有。所审来源未描述 AI 或 REA 的使用。"
     ]
+  },
+  "wii-menu-ipl-decomp-case": {
+    "name": "wii-ipl：Wii Menu（System Menu 4.3）的反编译重建",
+    "requirements": [
+      "所审阅的 main 提交没有发行版或标签。decomp.dev 针对该提交的报告显示，4.3U 的代码匹配率为 58.5%，12,563 个函数中有 8,837 个匹配（70.3%），完全链接的代码占 45.2%，其中菜单自身代码的匹配率为 53.6%；各库的 README 标明 RVL_SDK、NW4R、EGG、RevoEX 及中间件各组件是一致、等价还是尚未一致。构建只生成 main.dol 而非 WAD，README 还警告由于不生成 SEL 文件，代码并非完全可移位。",
+      "使用者需自备所选版本的 Wii Menu 4.3 WAD（默认 4.3U，也可选 4.3E、4.3J 或 4.3K）；README 声明仓库不含任何素材或该可执行文件的汇编。每个版本的配置都固定了目标 main.dol 的 SHA-1。",
+      "构建需要 Python 和 Ninja，可在 Windows、macOS 或 Linux 上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.5、binutils 2.42-1 以及 Metrowerks CodeWarrior 的 20251118 编译器包（链接器版本为 GC/3.0a5.2），在 macOS 和 Linux 上由 wibo 运行 32 位 Windows 工具。CONTRIBUTING 列出 Ghidra（含共享项目）、IDA/Hex-Rays、m2c 和 decomp.me 作为反编译辅助，并用 objdiff 做差异比较。",
+      "CI 在提供原始文件的私有容器中构建全部四个版本，并上传映射文件和进度报告；上述百分比即来自这些报告，并不表明已完整或可移位地重建。本次审阅未构建或运行任何程序。",
+      "LICENSE 为 CC0 1.0。BTE 蓝牙库注明含有取自 Android bluedroid 的代码，采用 Apache-2.0；GameSpy SDK 子集采用 BSD-3-Clause。反编译的第三方中间件（JustSystems ATOK、Zi eZiText、TMC JPEG、eSOL PrFILE2）及 Opera WWW 头文件没有单独授权，Wii Menu 本身的权利仍归 Nintendo。CONTRIBUTING 禁止用 AI 反编译代码，并要求避开仅靠 AI 追求完全一致的分叉；所审来源未确立 REA 的使用。"
+    ]
   }
 }

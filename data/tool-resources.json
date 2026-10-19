@@ -7196,5 +7196,43 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "wii-menu-ipl-decomp-case",
+    "name": "wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)",
+    "url": "https://github.com/koopthekoopa/wii-ipl",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "game"
+    ],
+    "description_en": "A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. It recovers the menu’s own code together with the Revolution SDK, NintendoWare (NW4R), EGG and middleware libraries linked into it, matched unit by unit against the original executable with decomp-toolkit and objdiff. The repository holds no assets or assembly; a build needs the user’s own Wii Menu WAD and yields only main.dol.",
+    "description_zh": "Wii Menu（即主机的 System Menu，IPL）的反编译重建，仍在进行中，针对 4.3 版的美、欧、日、韩四个版本。项目重建菜单自身的代码，以及链接进其中的 Revolution SDK、NintendoWare（NW4R）、EGG 和中间件库，并借助 decomp-toolkit 与 objdiff 逐个编译单元与原可执行文件比对。仓库不含任何素材或汇编；构建需要使用者自己的 Wii Menu WAD，且只生成 main.dol。",
+    "evidence_url": "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit has no releases or tags. decomp.dev’s report for that commit puts 4.3U at 58.5% matched code, 8,837 of 12,563 functions (70.3%) and 45.2% fully linked code, with the menu’s own code at 53.6% matched; library READMEs mark each RVL_SDK, NW4R, EGG, RevoEX and middleware component as matching, equivalent or not yet matching. The build yields main.dol, not a WAD, and the README warns that the code is not fully shiftable because no SEL file is generated.",
+      "Users supply their own Wii Menu 4.3 WAD for the selected version (4.3U by default, or 4.3E, 4.3J or 4.3K); the README states that the repository contains no assets or assembly of the executable. Each version’s configuration pins the SHA-1 of the target main.dol.",
+      "Builds need Python and Ninja on Windows, macOS or Linux. configure.py pins decomp-toolkit v1.7.5, objdiff v3.4.5, binutils 2.42-1 and the 20251118 compiler bundle for Metrowerks CodeWarrior (GC/3.0a5.2 as the linker version), and wibo runs the 32-bit Windows tools on macOS and Linux. CONTRIBUTING lists Ghidra with a shared project, IDA/Hex-Rays, m2c and decomp.me as decompiling aids and objdiff for diffing.",
+      "CI builds all four versions in a private container that supplies the original files, then uploads map files and progress reports; the percentages above come from those reports and do not establish a complete or shiftable rebuild. This review built or ran nothing.",
+      "LICENSE is CC0 1.0. The BTE Bluetooth library notes code taken from Android’s bluedroid under Apache-2.0, and the GameSpy SDK subset is BSD-3-Clause. The decompiled third-party middleware (JustSystems ATOK, Zi eZiText, TMC JPEG, eSOL PrFILE2) and the Opera WWW headers carry no separate grants, and the Wii Menu keeps Nintendo’s rights. CONTRIBUTING forbids using AI to decompile code and asks contributors to avoid AI-only matching forks; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/CONTRIBUTING.md",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/configure.py",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/config/43U/config.yml",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/config/43U/build.sha1",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/.github/workflows/build.yml",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/libs/RVL_SDK/README.md",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/libs/NW4R/README.md",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/libs/RVLMiddleware/README.md",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/libs/RVL_SDK/src/bte/NOTICE",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/src/scene/nakamuraTest/gamespy/README.md",
+      "https://github.com/koopthekoopa/wii-ipl/blob/f4c09f4001c5a0b9af734ad1e3f80a54c5e5723c/LICENSE",
+      "https://decomp.dev/koopthekoopa/wii-ipl/43U"
+    ]
   }
 ]
