@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 307](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 68](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-68-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 307](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 69](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (68) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (69) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1954,13 +1954,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**68 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**69 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (7) · [反编译](#papers-decompilation) (20) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (20) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2073,6 +2073,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 语料组合 48 种算法、三类不安全密钥使用场景和三个难度等级。它不覆盖 Tigress、O-LLVM 等专业混淆器，结果不应推广到任意重度保护的二进制文件。
 
   **发表信息:** 2026 · COLM 2026 · 会议论文 · Baicheng Chen 等
+
+  </details>
+
+- [**EnIGMA：交互式工具显著帮助语言模型智能体发现安全漏洞**](https://proceedings.mlr.press/v267/abramovich25a.html)
+
+  EnIGMA 在 SWE-agent 基础上面向 CTF 题目进行扩展：交互式智能体工具可在多轮之间保持 gdb 调试会话或 pwntools 服务器连接，另有反编译与反汇编命令、用于长输出的语言模型摘要器，以及按题目类别编写的示例和指导。论文使用四种语言模型，在 NYU CTF、InterCode-CTF、Cybench 及作者收集的 HackTheBox 题集共 390 道题目上评测；还对工具、摘要器和示例做消融实验，并分析解答泄露和“自言自语”（soliloquizing）现象，即模型不与环境交互而自行编写观察结果。
+
+  2025 · 会议论文 · [PDF](https://raw.githubusercontent.com/mlresearch/v267/main/assets/abramovich25a/abramovich25a.pdf) · [代码](https://github.com/SWE-agent/SWE-agent/tree/v0.7) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-enigma/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 各基准混合了密码学、取证、二进制漏洞利用、逆向工程、Web 与杂项任务（390 道题中有 104 道为逆向工程），因此 NYU CTF 上 13.5% 等总体解题率并不等于逆向工程准确率。分类别表格报告，使用 Claude 3.5 Sonnet 时，NYU CTF 中 51 道逆向工程题的解题率为 17.65%。结果采用 pass<span>@</span>1，每道题成本上限为 3 美元，使用 2024 年的模型（GPT-4 Turbo、GPT-4o、Claude 3.5 Sonnet 与 LLaMA 3.1 405B Instruct）；NYU CTF 基线对比采用 pass<span>@</span>5。许多题目存在公开题解，作者对泄露和“自言自语”的度量属于启发式方法；在 21 道较晚发布的 CSAW 2024 题目上，最佳配置解出 2 道。解出 CTF 题目表明获得了 flag，而非恢复了程序结构或源码。
+
+  **发表信息:** 2025 · ICML 2025 · 会议论文 · Talor Abramovich 等
 
   </details>
 

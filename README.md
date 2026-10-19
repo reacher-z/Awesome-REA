@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 307](https://img.shields.io/badge/resources-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 68](https://img.shields.io/badge/papers-68-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 307](https://img.shields.io/badge/resources-307-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 69](https://img.shields.io/badge/papers-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (68) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (69) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1953,13 +1953,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**68 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**69 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (7) · [Decompilation](#papers-decompilation) (20) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (20) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2072,6 +2072,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The corpus combines 48 algorithms, three insecure key-use scenarios, and three difficulty levels. It excludes professional-grade obfuscators such as Tigress and O-LLVM; results should not be generalized to heavily protected arbitrary binaries.
 
   **Publication:** 2026 · COLM 2026 · Conference paper · Baicheng Chen et al.
+
+  </details>
+
+- [**EnIGMA: Interactive Tools Substantially Assist LM Agents in Finding Security Vulnerabilities**](https://proceedings.mlr.press/v267/abramovich25a.html)
+
+  EnIGMA extends SWE-agent for capture-the-flag challenges with interactive agent tools that keep a gdb debugging session or a pwntools server connection open across turns, alongside decompile and disassemble commands, an LM summarizer for long outputs, and category-specific demonstrations and guidelines. It is evaluated with four LMs on 390 challenges from NYU CTF, InterCode-CTF, Cybench and a HackTheBox set the authors collected. The paper ablates tools, summarizers and demonstrations, and analyzes solution leakage and “soliloquizing”, where the model writes its own observations instead of acting in the environment.
+
+  2025 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v267/main/assets/abramovich25a/abramovich25a.pdf) · [Code](https://github.com/SWE-agent/SWE-agent/tree/v0.7) · [Full entry & citation](https://awesomerea.org/papers/paper-enigma/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The benchmarks mix cryptography, forensics, pwn, reverse engineering, web and miscellaneous tasks (104 of the 390 are reverse engineering), so aggregate solve rates such as 13.5% on NYU CTF are not reverse-engineering accuracy. The per-category table reports 17.65% on NYU CTF’s 51 reverse-engineering challenges with Claude 3.5 Sonnet. Results are pass<span>@</span>1 with a <span>$</span>3 per-instance cost cap and 2024 models (GPT-4 Turbo, GPT-4o, Claude 3.5 Sonnet and LLaMA 3.1 405B Instruct); the NYU CTF baseline comparison uses pass<span>@</span>5. Many challenges have public write-ups, and the authors’ leakage and soliloquy measures are heuristics; on 21 later CSAW 2024 challenges the best configurations solved 2. Solving a CTF shows a captured flag, not recovered program structure or source.
+
+  **Publication:** 2025 · ICML 2025 · Conference paper · Talor Abramovich et al.
 
   </details>
 
