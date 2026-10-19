@@ -4713,5 +4713,60 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-codeart",
+    "title": "CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking",
+    "title_zh": "CodeArt：在缺少符号时通过注意力正则化改进代码模型",
+    "authors": [
+      "Zian Su",
+      "Xiangzhe Xu",
+      "Ziyang Huang",
+      "Zhuo Zhang",
+      "Yapeng Ye",
+      "Jianjun Huang",
+      "Xiangyu Zhang"
+    ],
+    "year": 2024,
+    "publication_date": "2024-07-12",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit records print and online publication on 2024-07-12. The July 2024 issue date in the reference format and the FSE 2024 conference dates are not substituted for it.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质与在线出版日期均记为 2024-07-12；本条目不以引用格式中的 2024 年 7 月期号日期或 FSE 2024 会议日期替代该日期。",
+    "venue": "Proceedings of the ACM on Software Engineering (FSE 2024)",
+    "publication_status": "journal-article",
+    "arxiv_id": "2402.11842",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-02-19",
+    "doi": "10.1145/3643752",
+    "url": "https://dl.acm.org/doi/10.1145/3643752",
+    "pdf_url": "https://arxiv.org/pdf/2402.11842v1",
+    "code_url": "https://github.com/ziansu/codeart",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "CodeArt pre-trains a BERT-sized encoder from scratch on 26 million stripped x86-64 functions built from jTrans's BinaryCorp. Instead of relying on symbols, it uses IDA Pro control-flow graphs and a binary data-flow analysis to compute control and data dependences, then restricts self-attention with masks so a token attends only to instructions it transitively depends on or that depend on it, to tokens in its own instruction, and to a global [CLS] token; pre-training masks tokens and perturbs the dependence graph. The authors fine-tune it for binary similarity, malware family classification and type inference. They report improvements over prior models from 53% to 64% recall@1 for similarity in pools of 500, from 49% to 60% LRAP for malware families, and from 74% to 94% average F1 for type inference.",
+    "description_zh": "CodeArt 基于 jTrans 的 BinaryCorp 构建的 2,600 万个剥离符号的 x86-64 函数，从零开始预训练一个 BERT 规模的编码器。它不依赖符号，而是利用 IDA Pro 控制流图和面向二进制的数据流分析计算控制依赖与数据依赖，再通过注意力掩码，使每个词元只能关注与其存在传递依赖关系的指令、同一条指令内的词元以及全局 [CLS] 词元；预训练时同时遮蔽词元并扰动依赖图。作者将其微调用于二进制相似性分析、恶意软件家族分类和类型推断，报告相对已有模型的提升为：在 500 个函数的候选池中相似性 recall@1 由 53% 升至 64%，恶意软件家族分类 LRAP 由 49% 升至 60%，类型推断平均 F1 由 74% 升至 94%。",
+    "scope_limitations_en": "The model handles x86-64 only, with functions disassembled by IDA Pro and inputs capped at 512 tokens. Similarity is fine-tuned on BinaryCorp-3M and tested on six projects (Curl, Binutils, ImageMagick, SQLite, OpenSSL and PuTTY), with Coreutils for validation, against GNN, GMN, jTrans and DiEmph baselines; on PuTTY, whose functions are short, CodeArt is only comparable to DiEmph. Type inference uses the x86-64 part of StateFormer's dataset with 35 labels and compares with StateFormer's reported results rather than a rerun. Malware classification uses 5,484 VirusTotal and VirusShare samples from the 100 most frequent families, against jTrans and a re-implemented CNN. All gains are relative to these baselines and settings. CodeArt produces embeddings and task-specific predictions; it is neither a decompiler nor a malware detector.",
+    "scope_limitations_zh": "模型仅处理 x86-64，函数由 IDA Pro 反汇编，输入上限为 512 个词元。相似性任务在 BinaryCorp-3M 上微调，以 Coreutils 作验证集，在 Curl、Binutils、ImageMagick、SQLite、OpenSSL 和 PuTTY 六个项目上测试，基线为 GNN、GMN、jTrans 与 DiEmph；PuTTY 的函数较短，CodeArt 在其上仅与 DiEmph 相当。类型推断使用 StateFormer 数据集中的 x86-64 部分及 35 个标签，并与 StateFormer 已报告的结果比较，而非重新运行。恶意软件分类使用来自 VirusTotal 与 VirusShare、属于最常见 100 个家族的 5,484 个样本，对比 jTrans 和重新实现的 CNN。所有提升都是相对这些基线和设定而言。CodeArt 输出嵌入及特定任务的预测，既不是反编译器，也不是恶意软件检测器。",
+    "why_fits_en": "Adds general-purpose pre-training for stripped binary functions that uses program dependences in place of missing symbols, evaluated on similarity, type inference and malware-family tasks that support reverse engineering.",
+    "why_fits_zh": "补充面向剥离符号二进制函数的通用预训练方法，以程序依赖关系代替缺失的符号，并在支持逆向工程的相似性分析、类型推断和恶意软件家族分类任务上评估。",
+    "metadata_notes": "Crossref records Proceedings of the ACM on Software Engineering volume 1, issue FSE, pages 562–585, and the seven-author order matches arXiv. The ACM landing page refused automated access, so publication facts follow Crossref and the reviewed text is arXiv v1 (2024-02-19), the only version, which carries the PACMSE reference format and DOI. The abstract lists the three gains in the order similarity, type inference, malware; the contribution list and evaluation assign 49%→60% LRAP to malware family classification and 74%→94% F1 to type inference, which this record follows. The paper links ziansu/codeart. At the reviewed 2025-03-10 commit the repository declares MIT and its README points to an artifacts branch; README-docker.md describes a 3.8 GB Docker image with a Gradio demo and links the PurCL CodeArt-Artifacts collection on Hugging Face, whose checkpoints and datasets, including top-100 malware-family data, declare no license. The REQUIREMENTS file asks for Docker, 64 GB RAM, a 24 GB GPU and up to 100 GB of disk. Nothing was downloaded or run.",
+    "metadata_notes_zh": "Crossref 记录该文刊于 Proceedings of the ACM on Software Engineering 第 1 卷 FSE 期，页码 562–585，七位作者顺序与 arXiv 一致。ACM 文章页面拒绝自动访问，因此出版信息以 Crossref 为准，所审阅的文本是唯一版本 arXiv v1（2024-02-19），其中带有 PACMSE 引用格式与 DOI。摘要按相似性分析、类型推断、恶意软件的顺序列出三项提升；贡献列表与评估部分则将 LRAP 49%→60% 归于恶意软件家族分类，将 F1 74%→94% 归于类型推断，本条目以后者为准。论文链接 ziansu/codeart。在所审阅的 2025-03-10 提交中，仓库声明 MIT 许可证，README 指向 artifacts 分支；README-docker.md 介绍了一个 3.8 GB、带 Gradio 演示界面的 Docker 镜像，并链接 Hugging Face 上的 PurCL CodeArt-Artifacts 合集，其中的检查点与数据集（包括最常见 100 个恶意软件家族的数据）均未声明许可证。REQUIREMENTS 文件要求 Docker、64 GB 内存、24 GB 显存 GPU 及最多 100 GB 磁盘空间。本次未下载或运行任何内容。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3643752",
+      "https://api.crossref.org/works/10.1145/3643752",
+      "https://arxiv.org/abs/2402.11842",
+      "https://arxiv.org/pdf/2402.11842v1",
+      "https://github.com/ziansu/codeart/blob/0f787140e51e9c419a9629fe2aac3e7a4477e6c3/README.md",
+      "https://github.com/ziansu/codeart/blob/0f787140e51e9c419a9629fe2aac3e7a4477e6c3/LICENSE",
+      "https://github.com/ziansu/codeart/blob/0f787140e51e9c419a9629fe2aac3e7a4477e6c3/README-docker.md",
+      "https://github.com/ziansu/codeart/blob/0f787140e51e9c419a9629fe2aac3e7a4477e6c3/REQUIREMENTS",
+      "https://huggingface.co/collections/PurCL/codeart-artifacts-662e73dcd9b837e4b970c9be"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

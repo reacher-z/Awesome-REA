@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,13 +2193,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2587,6 +2587,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The reported rates are author results on C programs compiled to Wasm with Emscripten. About half of the outputs recompile, fewer than half re-execute and roughly a quarter reproduce the original output, so decompiled code is generally not semantically equivalent. The 3,977-file benchmark comes from the same two sources as the training programs. Optimized builds are not evaluated: the authors neither adapted the method to nor trained it on O1/O2 code. The model also handles data structures poorly, often flattening them into separate variables or arrays. Only C sources are studied; Wasm produced from other languages or toolchains is not evaluated. Baselines are Wasm2c and Ghidra's Wasm plugin, and LLM baselines were excluded because none could decompile Wasm functions without fine-tuning. Slicing means one function may be decompiled several times, at about 0.1 to 2 seconds per prompt.
 
   **Authors:** Xinyu She et al.
+
+  </details>
+
+- [**CodeArt: Better Code Models by Attention Regularization When Symbols Are Lacking**](https://dl.acm.org/doi/10.1145/3643752)
+
+  CodeArt pre-trains a BERT-sized encoder from scratch on 26 million stripped x86-64 functions built from jTrans's BinaryCorp. Instead of relying on symbols, it uses IDA Pro control-flow graphs and a binary data-flow analysis to compute control and data dependences, then restricts self-attention with masks so a token attends only to instructions it transitively depends on or that depend on it, to tokens in its own instruction, and to a global \[CLS\] token; pre-training masks tokens and perturbs the dependence graph. The authors fine-tune it for binary similarity, malware family classification and type inference. They report improvements over prior models from 53% to 64% recall<span>@</span>1 for similarity in pools of 500, from 49% to 60% LRAP for malware families, and from 74% to 94% average F1 for type inference.
+
+  Proceedings of the ACM on Software Engineering (FSE 2024) · Journal article · [PDF](https://arxiv.org/pdf/2402.11842v1) · [Code](https://github.com/ziansu/codeart) · [Full entry & citation](https://awesomerea.org/papers/paper-codeart/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The model handles x86-64 only, with functions disassembled by IDA Pro and inputs capped at 512 tokens. Similarity is fine-tuned on BinaryCorp-3M and tested on six projects (Curl, Binutils, ImageMagick, SQLite, OpenSSL and PuTTY), with Coreutils for validation, against GNN, GMN, jTrans and DiEmph baselines; on PuTTY, whose functions are short, CodeArt is only comparable to DiEmph. Type inference uses the x86-64 part of StateFormer's dataset with 35 labels and compares with StateFormer's reported results rather than a rerun. Malware classification uses 5,484 VirusTotal and VirusShare samples from the 100 most frequent families, against jTrans and a re-implemented CNN. All gains are relative to these baselines and settings. CodeArt produces embeddings and task-specific predictions; it is neither a decompiler nor a malware detector.
+
+  **Authors:** Zian Su et al.
 
   </details>
 
