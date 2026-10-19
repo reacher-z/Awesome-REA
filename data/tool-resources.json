@@ -11158,5 +11158,38 @@
       "https://github.com/buzzer-re/Rikugan/blob/a2ba6691baa0a7ace3bce9fe834a4f6f7610b77d/LICENSE",
       "https://github.com/wangyu-ovo/CREBench/blob/9fc4016538a0bab8c230732a9f788a61ed43addf/README.md"
     ]
+  },
+  {
+    "id": "opendmcufirm-wii-u-dmcu-firmware-case",
+    "name": "OpenDMCUFirm: a reimplemented Wii U DMCU display firmware",
+    "url": "https://github.com/GaryOderNichts/OpenDMCUFirm",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Reimplements in C the firmware of the Wii U’s DMCU, the M68HC11-compatible display microcontroller in its AMD graphics controller, which in Wii mode reads the Video Interface state and configures display output, deinterlacing, scaling and overscan. The README says the work is based on reverse engineering of the original firmware but is not a byte-for-byte matching decompilation, and calls it a work in progress. The built image replaces the stock firmware in Wii mode when loaded through the evWii plugin.",
+    "description_zh": "用 C 语言重新实现 Wii U 的 DMCU 固件。DMCU 是其 AMD 图形控制器中兼容 M68HC11 的显示微控制器，在 Wii 模式下读取视频接口（VI）状态，并配置显示输出、去隔行、缩放与过扫描。README 称这项工作基于对原固件的逆向工程，但并非逐字节一致的反编译，并说明项目仍在开发中。构建出的镜像经 evWii 插件载入后，在 Wii 模式下替代原厂固件。",
+    "evidence_url": "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit has no releases or tags. The README describes a work-in-progress reimplementation with potential issues expected; recent commits name registers and state fields, and one reports a function fully matched after a missing variable caused problems in 240p titles. link.ld warns that Nintendo’s nn_cmpt writes values into the middle of the DMCU’s ERAM and can overwrite the code.",
+      "The build uses only the project’s C sources and needs no original firmware. Running the result needs a Wii U with the Aroma plugin environment and evWii: dmcu.d.hex goes in the SD card’s wiiu folder and is loaded with evWii’s “Load DMCU Firmware from SD Card” option for Wii mode.",
+      "The compiler is GCC 3.3.6-m68hc1x-20060122 from the GNU 68HC11/12 packages. The Dockerfile sets it up on Ubuntu 24.04 from the checksum-verified Windows installer run under Wine, and a prebuilt garyodernichts/dmcubuilder image is offered; Python 3 runs hexconv.py to turn the S19 output into the DMCU hex format.",
+      "CI only builds dmcu.d.hex in that container and uploads it as an artifact. The reviewed files contain no test suite, hardware test log or comparison with the stock firmware’s behavior, and this review built or ran nothing.",
+      "The repository has no license file and GitHub detects none; project source files state only that they are part of OpenDMCUFirm. The bundled 68HC11 and stdint headers keep their FSF GPL and BSD notices, evWii is GPL-2.0, and the original firmware keeps its own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/Makefile",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/Dockerfile",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/hexconv.py",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/link.ld",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/source/dmcu.c",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/.github/workflows/build.yml",
+      "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
+      "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
+    ]
   }
 ]

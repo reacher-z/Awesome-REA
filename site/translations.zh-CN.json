@@ -4103,5 +4103,15 @@
       "docs/VALIDATION.md（2026-10-17）报告：12 项标准库测试通过，rea mcp doctor 运行健康并列出 170 个工具，并在 Node 24.18.0 与 Python 3.12.7 下用 REA 静态分析了一个合成 JavaScript 应用和一个合成 HAR。文档将客户端重启后的 MCP 接入、真实 APK 与原生目标、真实 HAR 的匿名化以及运行时工作列为未验证，冒烟测试输出也未提交。本合集只阅读了这些文件，未运行脚本、测试或 REA。",
       "README 说明 Claude Code 权限规则、只读文件权限和 SHA-256 基线都不构成隔离边界，需要强隔离时建议使用只读挂载和受控网络。AGENTS.md 默认只做静态分析，仅在任务获得授权时才运行样本、连接设备或访问目标服务。仓库没有许可证文件，复用条款未作说明；REA、分析引擎、客户端与分析目标各有其条款。"
     ]
+  },
+  "opendmcufirm-wii-u-dmcu-firmware-case": {
+    "name": "OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件",
+    "requirements": [
+      "所审阅的 main 提交没有发行版或标签。README 称这是仍在开发中的重新实现，预计会有问题；近期提交为寄存器和状态字段命名，其中一次提交称某个函数已完全一致，此前缺失的一个变量曾在 240p 游戏中引发问题。link.ld 警告 Nintendo 的 nn_cmpt 会直接向 DMCU 的 ERAM 中段写入数值，可能覆盖代码。",
+      "构建只使用项目自己的 C 源码，不需要原始固件。运行需要装有 Aroma 插件环境和 evWii 的 Wii U：将 dmcu.d.hex 放入 SD 卡的 wiiu 文件夹，再用 evWii 的“Load DMCU Firmware from SD Card”选项在 Wii 模式下载入。",
+      "编译器为 GNU 68HC11/12 软件包中的 GCC 3.3.6-m68hc1x-20060122。Dockerfile 在 Ubuntu 24.04 上用经校验和核对的 Windows 安装程序在 Wine 下配置该工具链，也提供预构建的 garyodernichts/dmcubuilder 镜像；再由 Python 3 运行 hexconv.py，将 S19 输出转换为 DMCU 的 hex 格式。",
+      "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
