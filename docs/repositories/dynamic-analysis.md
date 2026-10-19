@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**103 repositories** · 2026-10-16 UTC
+**104 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -12,6 +12,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [rr-debugger/rr](https://github.com/rr-debugger/rr) — Record and Replay Framework **[10,707 stars]** · Curated: [rr](https://awesomerea.org/resources/rr/)
 - [hugsy/gef](https://github.com/hugsy/gef) — GEF (GDB Enhanced Features) - a modern experience for GDB with advanced debugging capabilities for exploit devs &amp; reverse engineers on Linux **[8,399 stars]** · Curated: [GEF (GDB Enhanced Features)](https://awesomerea.org/resources/gef/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]** · Curated: [Qiling](https://awesomerea.org/resources/qiling/)
+- [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]** · Curated: [HyperDbg](https://awesomerea.org/resources/hyperdbg/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — Dynamic Instrumentation Tool Platform **[3,181 stars]** · Curated: [DynamoRIO](https://awesomerea.org/resources/dynamorio/)
 - [korcankaraokcu/PINCE](https://github.com/korcankaraokcu/PINCE) — Reverse engineering tool for Linux **[3,124 stars]** · Curated: [PINCE](https://awesomerea.org/resources/pince/)
 - [duty1g/x64dbg-mcp-server](https://github.com/duty1g/x64dbg-mcp-server) — x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more. Built with Zig — zero dependencies, single-binary output, cros **[2,514 stars]** · Curated: [x64dbg-MCP Server](https://awesomerea.org/resources/x64dbg-mcp-server/)

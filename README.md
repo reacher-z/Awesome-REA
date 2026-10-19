@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 454](https://img.shields.io/badge/resources-454-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 455](https://img.shields.io/badge/resources-455-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (181) · [App](#app) (70)
-- [Native Binary](#native-binary) (59) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (60) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2102,6 +2102,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Python reverse-engineering framework for analyzing, modifying and generating binary programs. It reads, modifies and generates 32- and 64-bit PE and ELF files, assembles and disassembles x86, ARM, AArch64, MIPS, PowerPC, SH4, MSP430 and MeP code, and lifts it into its own intermediate language for symbolic execution, SSA and data-flow analysis, dependency graphs and expression simplification aimed at deobfuscation. Its JIT emulator runs shellcode or parts of binaries through LLVM, GCC, Clang or pure-Python backends, with Python callbacks that stand in for library functions, sandboxes with selected Windows API and Linux emulation, and dynamic symbolic execution through Z3.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/miasm/)
+
+- [**HyperDbg**](https://github.com/HyperDbg/HyperDbg)
+
+  Hypervisor-assisted Windows debugger that virtualizes the running system with Intel VT-x and Extended Page Tables to debug kernel and user mode, either locally as a tracing and introspection tool or from a host attached over a serial connection to a guest virtual machine. Its events include EPT-based hidden breakpoints and hooks, memory read, write and execute monitoring without the limits of hardware debug registers, monitoring of system calls, CPUID, MSRs, I/O ports, MMIO, exceptions and interrupts, and Intel PT and LBR branch tracing. A kernel-side script engine, PDB symbol support and an SDK automate analysis.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/hyperdbg/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

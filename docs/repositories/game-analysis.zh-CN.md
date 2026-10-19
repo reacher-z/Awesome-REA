@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**392 个仓库** · 2026-10-16 UTC
+**391 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -15,7 +15,6 @@
 - [dsasmblr/game-hacking](https://github.com/dsasmblr/game-hacking) — 与电子游戏逆向工程相关的教程、工具及其他资源。 **[5,609 星标]**
 - [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp) — Godot 逆向工程工具。 **[4,330 星标]** · 精选：[Godot 逆向工程工具](https://awesomerea.org/zh/resources/godot-re-tools/)
 - [LavaGang/MelonLoader](https://github.com/LavaGang/MelonLoader) — 全球首个兼容 Il2Cpp 与 Mono 的 Unity 游戏通用模组加载器。 **[4,258 星标]** · 精选：[MelonLoader Unity 游戏模组加载器](https://awesomerea.org/zh/resources/melonloader/)
-- [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]**
 - [danielkrupinski/Osiris](https://github.com/danielkrupinski/Osiris) — 面向 Counter-Strike 2 的跨平台游戏作弊工具，采用基于 Panorama 的 GUI。 **[3,891 星标]**
 - [ran-j/PS2Recomp](https://github.com/ran-j/PS2Recomp) — 用于制作原生 PC 移植版的 PlayStation 2 静态重编译器与运行时工具。 **[3,516 星标]** · 精选：[PS2Recomp PlayStation 2 静态重编译器](https://awesomerea.org/zh/resources/ps2recomp/)
 - [morkt/GARbro](https://github.com/morkt/GARbro) — 视觉小说资源浏览器。 **[3,328 星标]** · 精选：[GARbro](https://awesomerea.org/zh/resources/garbro/)
