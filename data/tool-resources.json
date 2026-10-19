@@ -15801,5 +15801,42 @@
       "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/cmsis_svd/__init__.py",
       "https://github.com/leveldown-security/SVD-Loader-Ghidra/blob/4b21fa54a1f516e25e959939f6e1251263c74725/LICENSE"
     ]
+  },
+  {
+    "id": "impacto-mages-engine-case",
+    "name": "impacto: a reimplementation of the MAGES. visual-novel engine",
+    "url": "https://github.com/CommitteeOfZero/impacto",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Reimplements the MAGES. visual-novel engine, used by the Science Adventure and Memories Off series, in C++ with OpenGL, running supported titles from the user’s original data files through per-game Lua profiles in one binary. README says all endings can be reached in at least one game, Memories Off 6 T-Wave, but no game is fully complete. The project’s tracking issue lists partial support for titles including Chaos;Head Love Chu Chu, Chaos;Child Love Chu Chu, Steins;Gate and Robotics;Notes Elite.",
+    "description_zh": "以 C++ 和 OpenGL 重新实现《科学冒险》系列和《告别回忆》系列所用的 MAGES. 视觉小说引擎，通过按游戏划分的 Lua 配置，在同一个程序中运行使用者原版数据文件里的受支持作品。README 称至少有一款游戏（Memories Off 6 T-Wave）可以达成全部结局，但还没有任何游戏完全实现。项目的跟踪议题列出了对 Chaos;Head Love Chu Chu、Chaos;Child Love Chu Chu、Steins;Gate、Robotics;Notes Elite 等作品的部分支持。",
+    "evidence_url": "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the master commit of 2026-10-17, which CI published as prerelease 0.10.8.887; all published releases are automatic prereleases. README says impacto is in active development: all endings are reachable in at least Memories Off 6 T-Wave, but some functionality and architecture are missing and no game is fully complete. The support-tracking issue (#1, last updated 2026-02-20) lists per-title progress, from story progression and saving in the Love Chu Chu titles to only graphics and sound in others, and names missing features such as some 2D special effects.",
+      "Each game needs the resource files of a supported version, mostly console releases such as the PS3 Memories Off 6 T-Wave, the PS4 Chaos;Child Love Chu Chu or the Japanese Switch Robotics;Notes DaSH, placed under gamedata/<profile> as listed in that profile’s vfs.lua. The repository holds no game resource files; its resources include font atlases generated with the project’s font tool, Noto CJK fonts, and per-game application icons and cursors, with the icons showing official character artwork. The reviewed Windows prerelease package contains the executable, libraries, profiles, shaders and those resources, but no game data.",
+      "README targets 64-bit Windows 10 and desktop Linux, with experimental runs on macOS, Android, Switch (homebrew and Linux) and WebAssembly; OpenGL is the main renderer, with experimental Vulkan and DirectX 9 options. Builds use CMake 3.28+ presets, C++20 and a vcpkg manifest, with Visual Studio 2019 or newer on Windows and documented Ubuntu and devkitPro Switch builds. CI produces Windows, Linux, macOS (arm64 and x64), Android and Switch packages.",
+      "CI runs clang-format linting and builds the packages; the reviewed workflow has no automated test suite, and no comparison with the original engine is published. README invites both black-box observation of the original’s behaviour and white-box inspection of its internals, without documenting specific methods or tools. This collection did not build or run impacto.",
+      "LICENSE is ISC for the source as a whole; THIRDPARTY.md lists code based on vgmstream, Ryujinx, OpenImageIO, FFplay and others, plus external libraries, and warns that binary distributions may fall under more restrictive terms. The games, their data and the official artwork used in the icons belong to their rights holders. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/doc/getting_started.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/doc/font-lb/font-lb.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/profiles/mo6tw/vfs.lua",
+      "https://github.com/CommitteeOfZero/impacto/tree/b30493852424d32c7806307486fd33edfa0bc54a/resources",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/resources/cclcc/icondata/icon.png",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/.github/workflows/impacto.yml",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/CMakeLists.txt",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/vcpkg.json",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/THIRDPARTY.md",
+      "https://github.com/CommitteeOfZero/impacto/blob/b30493852424d32c7806307486fd33edfa0bc54a/LICENSE",
+      "https://github.com/CommitteeOfZero/impacto/issues/1",
+      "https://github.com/CommitteeOfZero/impacto/releases/tag/0.10.8.887"
+    ]
   }
 ]
