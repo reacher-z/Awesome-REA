@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 369](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-369-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 370](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-370-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (34) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (35) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2116,6 +2116,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，通过 streamable HTTP 和旧版 SSE 提供 100 个名称明确的工具（默认启用 93 个），涵盖伪代码、反汇编、P-code、控制流图与调用图、交叉引用、字符串、导入表和导出表，以及重命名、修改类型、注释和结构体推断。自 3.0.0 版起，服务器随项目管理器一同启动，智能体在 CodeBrowser 尚未打开时即可创建、打开、保存和关闭项目并打开程序；同一个共享服务器会跟踪当前获得焦点的 CodeBrowser 窗口。扩展另附六个程序资源模板、七个分析提示词，以及在 analyzeHeadless 下运行服务器的脚本。
 
   集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidrassistmcp/)
+
+- [**Android Reverse Engineering Skill 安卓反编译智能体技能**](https://github.com/SimoneAvogadro/android-reverse-engineering-skill)
+
+  Claude Code 插件及智能体技能，驱动 jadx 与 Fernflower/Vineflower 反编译 Android 的 APK、XAPK、JAR 和 AAR 文件并记录其 HTTP 接口。它先用指纹步骤识别应用的框架、HTTP 栈、混淆程度和原生库，再通过 shell 脚本在 Retrofit、OkHttp、Volley、Ktor 和 Apollo/GraphQL 等栈中提取接口与鉴权特征，追踪从界面到网络层的调用链，并利用 R8 无法剥除的元数据还原原始的 Kotlin 类名。技能通过自带的 Claude Code marketplace 安装，其脚本也可独立运行，并提供 /decompile 斜杠命令。
+
+  集成 · 独立智能体 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/android-reverse-engineering-skill/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
