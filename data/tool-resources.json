@@ -14835,5 +14835,40 @@
       "https://github.com/mildsunrise/protobuf-inspector/blob/3211be9c2fb1d24e788ff492571cd0ba895c519a/LICENSE",
       "https://pypi.org/project/protobuf-inspector/0.2/"
     ]
+  },
+  {
+    "id": "lighthouse",
+    "name": "Lighthouse",
+    "url": "https://github.com/gaasedelen/lighthouse",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Code-coverage explorer plugin for IDA Pro and Binary Ninja that loads execution traces of native programs and paints the executed code across the disassembler's views, without needing symbols or source. Its coverage overview lists per-function coverage, and a composing shell combines loaded coverage sets with logical operators to diff runs, filter functions and jump to addresses, while coverage cross-references show which of many batch-loaded sets executed a block. It reads DynamoRIO drcov logs, module+offset, absolute-address and Tenet traces, writes basic HTML coverage reports, and ships a prototype Intel Pin tool and a Frida script that produce drcov-compatible logs.",
+    "description_zh": "面向 IDA Pro 和 Binary Ninja 的代码覆盖率浏览插件，载入原生程序的执行轨迹，并在反汇编器的各个视图中为已执行代码着色，无需符号或源码。覆盖率总览按函数列出覆盖情况；组合命令行可用逻辑运算符组合已载入的覆盖率集合，用于比较多次运行的差异、筛选函数或跳转到指定地址；覆盖率交叉引用则显示批量载入的众多集合中哪些执行过某个基本块。它可读取 DynamoRIO drcov 日志、模块+偏移、绝对地址和 Tenet 轨迹，能生成简单的 HTML 覆盖率报告，并附带可输出 drcov 兼容日志的原型 Intel Pin 工具和 Frida 脚本。",
+    "evidence_url": "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v0.9.3, published 2024-02-05 as a servicing release that adds full drcov v3 support and Binary Ninja/PySide6 fixes; the reviewed master commit is that tag. The develop branch is nine commits ahead with IDA 9.x, 9.2 and 9.3 compatibility fixes from 2025-2026 and a 0.9.4 development version, none of them released.",
+      "Requires IDA Pro 7 or newer (the IDA layer stops on IDA 6) or Binary Ninja, where the README says plugin-manager installation supports v3.5 and newer; for IDA the README copies the plugins folder into the user plugin directory. The README describes a cross-platform Windows, macOS and Linux Python 2/3 plugin with no third-party dependencies. In Binary Ninja, coverage is painted in linear, graph and IL views but not decompiler output.",
+      "Coverage is collected separately against the user's own target: the coverage README shows DynamoRIO drcov, the bundled CodeCoverage pintool (a prototype; the release attaches Windows builds for Pin 3.30, and macOS and Linux users build it against their own Intel Pin download) and the experimental frida-drcov.py, which its README recommends mainly for mobile applications. Absolute-address traces must match the database's address space; unmapped addresses are discarded, and other modules' hits in module+offset traces are not loaded.",
+      "MIT for Lighthouse and for the contributed pintool. Opening the coverage overview checks the GitHub releases API for a newer version. No coverage was collected or loaded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/coverage/README.md",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/coverage/pin/README.md",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/coverage/frida/README.md",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/plugins/lighthouse/util/disassembler/ida_api.py#L12-L14",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/plugins/lighthouse/reader/parsers/tenet.py",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/plugins/lighthouse/util/update.py",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/binjastub/plugin.json",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/LICENSE",
+      "https://github.com/gaasedelen/lighthouse/blob/562595be9bd99e8a5dfef6017d608467f5706630/coverage/pin/LICENSE",
+      "https://github.com/gaasedelen/lighthouse/releases/tag/v0.9.3",
+      "https://github.com/gaasedelen/lighthouse/compare/master...develop"
+    ]
   }
 ]

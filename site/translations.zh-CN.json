@@ -4893,5 +4893,14 @@
       "命令行工具会在工作目录及其各级父目录（直到文件系统挂载点）中查找 protobuf_config.py，并用 runpy 运行，因此配置文件会作为 Python 代码执行。dump 类型会把匹配的数据块写入工作目录下的 dump.N 文件；解析错误只中止出错字段的解析，并使命令以非零状态退出。",
       "采用 ISC 许可。README 说明其 Python API 并非为库用途设计，将来可能变化。仓库没有测试或 CI 配置；本次审阅未解析任何数据，所审来源也未确立与 REA 的关联。"
     ]
+  },
+  "lighthouse": {
+    "name": "Lighthouse 代码覆盖率浏览插件",
+    "requirements": [
+      "审阅时的版本为 v0.9.3，于 2024-02-05 发布，属于维护性版本，加入了完整的 drcov v3 支持和 Binary Ninja／PySide6 修复；所审阅的 master 分支提交即该标签。develop 分支领先九个提交，包含 2025–2026 年针对 IDA 9.x、9.2 和 9.3 的兼容性修复以及 0.9.4 开发版本号，均未发布。",
+      "需要 IDA Pro 7 或更高版本（IDA 接口层遇到 IDA 6 会停止加载），或 Binary Ninja；README 称通过插件管理器安装支持 v3.5 及以上版本，IDA 则需将 plugins 文件夹复制到用户插件目录。README 称它是跨 Windows、macOS 和 Linux 的 Python 2/3 插件，无第三方依赖。在 Binary Ninja 中只能为线性视图、图视图和 IL 视图着色，不支持反编译输出。",
+      "覆盖率需针对使用者自己的目标另行采集：覆盖率 README 介绍了 DynamoRIO drcov、仓库附带的 CodeCoverage pintool（原型；发布版附有针对 Pin 3.30 的 Windows 构建，macOS 和 Linux 用户需基于自行下载的 Intel Pin 编译），以及实验性的 frida-drcov.py，其 README 建议主要用于移动应用。绝对地址轨迹必须与数据库的地址空间一致，无法映射的地址会被丢弃；模块+偏移轨迹中其他模块的命中不会载入。",
+      "Lighthouse 及贡献的 pintool 均采用 MIT 许可。打开覆盖率总览时会查询 GitHub 发布 API 以检查新版本。本次未采集或载入任何覆盖率数据。"
+    ]
   }
 }
