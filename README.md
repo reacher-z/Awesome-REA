@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 365](https://img.shields.io/badge/resources-365-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 366](https://img.shields.io/badge/resources-366-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (32) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (33) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2091,6 +2091,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Stdio MCP server built on the ICSharpCode.Decompiler engine that lets agents load managed .NET assemblies, including a Unity game's Assembly-CSharp.dll located from its game directory, then search symbols, string literals and attributes, read decompiled C# or IL, and trace callers, callees, usages and inheritance. Several assemblies stay loaded under aliases, so an agent can compare two versions structurally or diff individual method bodies, the README's example being RimWorld mod porting. Modding-oriented tools generate Harmony patch skeletons, detour stubs and transpiler anchor suggestions as text from the inspected members.
 
   Integration · Independent MCP · Targets: Game, App · [Requirements & evidence](https://awesomerea.org/resources/decompilerserver-dotnet-mcp/)
+
+- [**Gepetto**](https://github.com/JusticeRage/Gepetto)
+
+  IDA Pro plugin that sends Hex-Rays pseudocode to a hosted or local language model the user selects, to explain a function, comment it or propose new variable and function names, which the user picks from before they are applied. A chat console inside IDA also lets the model call tools that read disassembly, decompilation, cross-references, strings and types, rename and comment the database and run Python. The README warns that these general-purpose models may well be wrong and asks users to treat every result critically.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/gepetto/)
 
 <a id="related-collections"></a>
 ### Related Collections
