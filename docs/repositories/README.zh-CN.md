@@ -14,8 +14,8 @@
 | [游戏](game-analysis.zh-CN.md) | 392 | 40 |
 | [应用 · Android](android.zh-CN.md) | 431 | 17 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 129 | 3 |
-| [原生二进制](native-analysis.zh-CN.md) | 676 | 43 |
-| [运行时与调试](dynamic-analysis.zh-CN.md) | 99 | 10 |
+| [原生二进制](native-analysis.zh-CN.md) | 675 | 43 |
+| [运行时与调试](dynamic-analysis.zh-CN.md) | 100 | 11 |
 | [固件](firmware.zh-CN.md) | 208 | 11 |
 | [协议](protocol-analysis.zh-CN.md) | 103 | 2 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 617 | 36 |

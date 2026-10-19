@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 391](https://img.shields.io/badge/resources-391-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 392](https://img.shields.io/badge/resources-392-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (175) · [App](#app) (58)
-- [Native Binary](#native-binary) (31) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (32) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1820,6 +1820,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Decompiler-to-debugger bridge that serves function names, global variables, stack and register variable names and decompiled code from IDA Pro, Binary Ninja, Ghidra or angr-management to GDB over an XML-RPC connection. Synced functions and globals become ordinary GDB symbols for breakpoints and memory examination, local variables appear as convenience variables, and each breakpoint stop prints the decompiled line for the current address. It works with vanilla GDB, GEF and pwndbg, and can map a shared library's symbols once its load range is supplied.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/decomp2dbg/)
+
+- [**E9Patch**](https://github.com/GJDuck/e9patch)
+
+  Static binary rewriter for x86-64 Linux ELF executables and shared objects that inserts instrumentation without control-flow recovery and writes a drop-in replacement binary, following the PLDI 2020 paper Binary Rewriting without Control Flow Recovery. The e9tool front end selects instructions with a matching language over disassembly attributes and patches them with built-in trampolines, calls into C or C++ functions compiled with e9compile.sh, or hand-written plugin trampolines; the e9patch back end accepts JSON-RPC commands so other tools can drive it. Optional modes add heuristic control-flow recovery for faster rewritten binaries or SIGILL-based fallbacks for full patch coverage.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/e9patch/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
