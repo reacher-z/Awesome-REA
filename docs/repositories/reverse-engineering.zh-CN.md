@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**613 个仓库** · 2026-10-16 UTC
+**612 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -44,7 +44,6 @@
 - [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — 致力于集中收集所有实用的 Android 与 iOS 安全相关资源。所有引用和工具均归各自所有者所有，我仅负责维护。 **[3,561 星标]**
 - [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — 面向各种联网设备的精选安全资源列表。 **[3,559 星标]**
 - [dweinstein/awesome-frida](https://github.com/dweinstein/awesome-frida) — Awesome Frida：Frida 精选资源列表，http<span>:</span>//www<span>.</span>frida.re/（https<span>:</span>//github.com/frida/frida）。 **[3,548 星标]**
-- [commaai/opendbc](https://github.com/commaai/opendbc) — 适用于你汽车的 Python API。 **[3,493 星标]**
 - [nabla-c0d3/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2) — 用于在 iOS 和 macOS 应用中禁用 SSL 证书校验（包括证书锁定）的黑盒工具。 **[3,322 星标]**
 - [hookmaster/frida-all-in-one](https://github.com/hookmaster/frida-all-in-one) — 《FRIDA 操作手册》，作者：<span>@</span>hluwa、<span>@</span>r0ysue。 **[3,153 星标]**
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — 面向 AI 智能体设计的 JavaScript 逆向 MCP 服务器：支持有界面的 Chrome 调试、断点、网络与 WebSocket 分析、Patchright 反检测，并可选用 CloakBrowser。 **[2,961 星标]**

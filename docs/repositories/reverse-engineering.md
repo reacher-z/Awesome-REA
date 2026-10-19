@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**613 repositories** · 2026-10-16 UTC
+**612 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -44,7 +44,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — An effort to build a single place for all useful android and iOS security related stuff. All references and tools belong to their respective owners. I'm just maintaining it. **[3,561 stars]**
 - [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — A Curated list of Security Resources for all connected things **[3,559 stars]**
 - [dweinstein/awesome-frida](https://github.com/dweinstein/awesome-frida) — Awesome Frida - A curated list of Frida resources http<span>:</span>//www<span>.</span>frida.re/ (https<span>:</span>//github.com/frida/frida) **[3,548 stars]**
-- [commaai/opendbc](https://github.com/commaai/opendbc) — a Python API for your car **[3,493 stars]**
 - [nabla-c0d3/ssl-kill-switch2](https://github.com/nabla-c0d3/ssl-kill-switch2) — Blackbox tool to disable SSL certificate validation - including certificate pinning - within iOS and macOS applications. **[3,322 stars]**
 - [hookmaster/frida-all-in-one](https://github.com/hookmaster/frida-all-in-one) — FRIDA Operation Manual by <span>@</span>hluwa and <span>@</span>r0ysue **[3,153 stars]**
 - [zhizhuodemao/js-reverse-mcp](https://github.com/zhizhuodemao/js-reverse-mcp) — An AI-agent-first MCP server for JavaScript reverse engineering: headed Chrome debugging, breakpoints, network/WebSocket analysis, Patchright anti-detection, and optional CloakBrowser. **[2,961 stars]**

@@ -17,8 +17,8 @@ Scan date: **2026-10-16 UTC**.
 | [Native binaries](native-analysis.md) | 679 | 55 |
 | [Runtime and debugging](dynamic-analysis.md) | 102 | 15 |
 | [Firmware](firmware.md) | 209 | 13 |
-| [Protocols](protocol-analysis.md) | 102 | 3 |
-| [General tools and collections](reverse-engineering.md) | 613 | 36 |
+| [Protocols](protocol-analysis.md) | 103 | 4 |
+| [General tools and collections](reverse-engineering.md) | 612 | 36 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 414](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-414-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 415](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-415-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (48) · [固件与硬件](#firmware) (18) · [协议](#protocol) (14)
+- [原生二进制](#native-binary) (48) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
 
 **论文与工作流**
 
@@ -2151,6 +2151,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   针对 Apple 专有 Continuity 蓝牙低功耗广播的逆向工程笔记与 Wireshark 解析器，是作者 PETS 2019 隐私研究的延续。各报文页面记录了 AirDrop、Handoff、Proximity Pairing、Nearby Info、Find My 等 14 种报文类型的字段布局和观测到的取值；解析器替换 Wireshark 的 packet-bthci\_cmd.c，使捕获到的广播能解码为具名的 btcommon.apple 字段。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/furiousmac-continuity/)
+
+- [**opendbc 汽车 CAN 报文定义库**](https://github.com/commaai/opendbc)
+
+  comma.ai 维护的 DBC 文件库，描述多个汽车品牌的 CAN 报文与信号，并附带一个依据这些定义解析和构造 CAN 报文的 Python 库；其车型移植指南要求贡献者在 cabana 工具中利用行车记录逆向分析新的报文。基于它的各品牌车型移植代码可解析车辆状态、根据 ECU 固件版本识别车型，并生成 openpilot 的转向、油门和制动报文；面向 comma panda 接口的安全代码则限制哪些报文可以发出。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/opendbc/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP · 智能体与 MCP

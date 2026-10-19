@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 414](https://img.shields.io/badge/resources-414-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 415](https://img.shields.io/badge/resources-415-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (48) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (14)
+- [Native Binary](#native-binary) (48) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (15)
 
 **Research and workflows**
 
@@ -2150,6 +2150,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reverse-engineering notes and a Wireshark dissector for Apple's proprietary Continuity Bluetooth LE advertisements, continuing the authors' PETS 2019 privacy study. Per-message pages document field layouts and observed values for 14 message types, including AirDrop, Handoff, Proximity Pairing, Nearby Info and Find My, and the dissector replaces Wireshark's packet-bthci\_cmd.c so captured advertisements decode into named btcommon.apple fields.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/furiousmac-continuity/)
+
+- [**opendbc**](https://github.com/commaai/opendbc)
+
+  comma.ai's repository of DBC files describing the CAN messages and signals of many car makes, with a Python library that parses and builds CAN messages from those definitions; its porting guide has contributors reverse engineer new messages from recorded drives in the cabana tool. Per-brand car ports built on it parse vehicle state, identify models from ECU firmware versions and generate openpilot's steering, gas and brake messages, while safety code for comma's panda interface restricts which messages can be sent.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/opendbc/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
