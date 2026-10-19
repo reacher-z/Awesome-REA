@@ -14952,12 +14952,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111423397095723483"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only reply (@adamdived1, 2026-10-17) mainly argues that any distributed software can now be cloned with REA and predicts that games will move to browser-only delivery. In passing it says that, as an experiment and without prior reverse-engineering experience, the author produced a license-key generator for an unnamed professional application in a couple of hours. It names no software and links no code, notes or results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the claim is unverified, it concerns licensing circumvention rather than reconstruction, and no method is recorded here.",
+      "reason_zh": "作者的纯文字回复（@adamdived1，2026-10-17）主要认为，任何以文件形式分发的软件现在都能借助 REA 被克隆，并预测游戏将转向仅在浏览器中交付。帖子顺带提到，作者出于实验目的、在没有逆向经验的情况下，几小时内就为一款未具名的专业软件做出了许可证密钥生成器。帖子没有说明是哪款软件，也未链接代码、笔记或结果，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该说法未经证实，涉及的是绕过授权而非重建，此处不记录任何方法。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111423397095723483"
+      ],
       "catalog_matches": []
     },
     {
@@ -14995,12 +14997,16 @@
         "https://x.com/i/status/2111482639052116051",
         "https://x.com/i/status/2111506460551389258"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Three posts are cited. @tracewoodgrains (2026-10-17) relays claims from a quoted video post by @TheDonAyo, who says AI was used to reverse engineer the “block blaster” mobile app: that the game identifies heavy ad watchers and stages near-record runs before ending them to offer an ad-funded revive. @Worm asks how an LLM could infer such behavior without playing; @AnechoicMedia_ replies that Claude decompiled the app trivially because most game logic is obfuscated, not compiled, JavaScript. None links decompiled output, analysis notes or a repository, and the quoted post carries only a video. Retain the lead without a catalog mapping; neither the decompilation nor the reported ad behavior is established.",
+      "reason_zh": "所引三条帖子中：@tracewoodgrains（2026-10-17）转述其引用的 @TheDonAyo 视频帖中的说法——后者称借助 AI 逆向了“block blaster”手机应用——即该游戏会识别经常看广告的玩家，让其接近最高分后再结束对局，以诱导观看广告复活；@Worm 质疑 LLM 不实际游玩如何能推断这种行为；@AnechoicMedia_ 回复称已让 Claude 轻松反编译该应用，因为大部分游戏逻辑是经过混淆而非编译的 JavaScript。各帖均未链接反编译产物、分析笔记或仓库，被引用的帖子也只有视频。保留此线索而不建立目录映射；反编译及所称广告行为均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111582817251738031",
+        "https://x.com/i/status/2111482639052116051",
+        "https://x.com/i/status/2111506460551389258"
+      ],
       "catalog_matches": []
     },
     {
@@ -15015,12 +15021,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111556091712581745"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@mxcondor, 2026-10-17, in Spanish) says an LG OLED TV began showing ads during pauses and as a screensaver, that blocking its ad servers stops the apps from working, and that the remaining options are two Apple TVs or having Codex modify the firmware; it carries one photo. This is an idea, not a reported modification: no firmware work, code or result is described or linked, and no GitHub account matching the handle was found. Retain the lead as an idea without a catalog mapping.",
+      "reason_zh": "作者帖子（@mxcondor，2026-10-17，西班牙语）称其 LG OLED 电视开始在暂停时和屏保中显示广告，屏蔽广告服务器后应用便无法使用，剩下的选择是改用两台 Apple TV，或让 Codex 修改固件；帖子附一张图片。这只是设想，而非已完成的修改：帖子未描述或链接任何固件工作、代码或结果，也未找到与该账号名对应的 GitHub 账号。保留此线索作为设想，不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111556091712581745"
+      ],
       "catalog_matches": []
     },
     {
@@ -15035,12 +15043,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111560797855916293"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The vendor’s post (@dhaedalida, 2026-10-17) and a same-day article on its site describe an internal test on a license-checking application the company built itself: an unnamed frontier model reportedly produced a working key generator for the unprotected build in 3 minutes and none within more than four hours once Dhaedalida or two other protectors were applied, while a simpler algorithm fell under all three. The article says the model is not identified and the test is neither a controlled benchmark nor a reproducible comparison; the sample, prompt and transcripts are unpublished. Retain the lead without a catalog mapping; this is a protection vendor’s licensing test, not a reconstruction case, and no technique is recorded here.",
+      "reason_zh": "该厂商的帖子（@dhaedalida，2026-10-17）及其网站同日发布的文章介绍了一项内部测试，对象是公司自制的许可证校验程序：据称一款未具名的前沿模型在 3 分钟内为未加保护的版本生成了可用的密钥生成器，而在使用 Dhaedalida 或另外两款保护工具后，四个多小时内都未能生成；改用更简单的算法时，三款保护工具下均被攻破。文章自述未说明所用模型，测试既非受控基准，也不是可复现的对比；样本、提示词和对话记录均未公开。保留此线索而不建立目录映射；这是保护工具厂商的授权测试，而非重建案例，此处不记录任何技术细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111560797855916293",
+        "https://dhaedalida.com/articles/protecting-your-software-in-the-age-of-llms"
+      ],
       "catalog_matches": []
     },
     {
@@ -15055,12 +15066,17 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111562194660016471"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@atpaawej, 2026-10-17) says he reverse engineered Google Forms and released it as the open-source, agent-native FormEasy. His pinned repository atpaawej/formeasy describes an MIT-licensed Google Forms alternative on Next.js, Neon and Clerk, with seven field types, CSV export and an AgentOnboard-authenticated JSON API; its design record cites Google Forms only as the model for in-place editing. No source documents an investigation of Google Forms’ code, protocol or behavior, or any comparison with it. Retain the lead without a catalog mapping; this is a from-scratch alternative rather than a demonstrated reconstruction, and not a judgment of FormEasy itself.",
+      "reason_zh": "作者帖子（@atpaawej，2026-10-17）称自己逆向了 Google Forms，并将其做成开源、面向智能体的 FormEasy。作者固定版本的仓库 atpaawej/formeasy 描述的是一个基于 Next.js、Neon 与 Clerk、采用 MIT 许可的 Google Forms 替代品，支持七种字段类型、CSV 导出以及通过 AgentOnboard 认证的 JSON API；其设计文档仅在就地编辑方式上以 Google Forms 为参照。没有任何来源记录对 Google Forms 代码、协议或行为的调查，也没有与其进行对照。保留此线索而不建立目录映射；这是从零编写的替代品，而非已证实的重建，也不是对 FormEasy 本身的评价。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111562194660016471",
+        "https://github.com/atpaawej/formeasy/blob/03a12abfb8a7cff6dc08adc101b0f8f9ea28aea2/README.md",
+        "https://github.com/atpaawej/formeasy/blob/03a12abfb8a7cff6dc08adc101b0f8f9ea28aea2/docs/design.md",
+        "https://github.com/atpaawej/formeasy/blob/03a12abfb8a7cff6dc08adc101b0f8f9ea28aea2/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -15116,12 +15132,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111587595750637954"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s text-only post (@kapeka, 2026-10-17) contrasts models: it says Anthropic and OpenAI models, used “with TAC + Yubikey”, returned only a notice that the content cannot be shown, while DeepSeek V4.1 on a free tier produced an exploit chain from a known V8 vulnerability to operating-system code execution through an unnamed Electron application. It names neither the target nor the vulnerability and links no write-up or code; the author’s blog and the GitHub account linked from the author’s site contain no write-up of it. Retain the lead without a catalog mapping; the result is unverified, it concerns exploitation rather than reconstruction, and no exploit details are recorded here.",
+      "reason_zh": "作者的纯文字帖子（@kapeka，2026-10-17）对比了不同模型：称在“TAC + Yubikey”条件下，Anthropic 与 OpenAI 的模型只返回“内容无法显示”的提示，而免费档的 DeepSeek V4.1 则给出了一条从已知 V8 漏洞到借助某个未具名 Electron 应用执行系统代码的利用链。帖子既未说明目标，也未说明具体漏洞，没有链接分析文章或代码；作者的博客及其网站链接的 GitHub 账号中也没有相关记录。保留此线索而不建立目录映射；该结果未经证实，涉及的是漏洞利用而非重建，此处不记录任何利用细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111587595750637954"
+      ],
       "catalog_matches": []
     },
     {
@@ -15813,15 +15831,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 189,
-      "pending": 205
+      "insufficient-evidence": 195,
+      "pending": 199
     },
     "units_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 189,
-      "pending": 205
+      "insufficient-evidence": 195,
+      "pending": 199
     },
-    "primary_reviewed_units": 326,
+    "primary_reviewed_units": 332,
     "catalog_linked_occurrences": 208,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
