@@ -2990,5 +2990,15 @@
       "证据来自试玩、问题报告和日志：README 提到在 Nobara／Fedora 44 上的 Linux 测试、玩家在 Windows 上的测试，以及一次在 RTX 2060 上持续七分钟、帧率中位数为 27 FPS 的游玩记录。CI 工作流为拉取请求和经授权的手动发布构建 Linux 与 Windows 安装包，其 Linux 任务运行 C、Python 与 GPU 库单元测试，不涉及游戏内容，也没有自动化游戏流程测试。本合集仅审阅源码，未运行该移植或游戏。",
       "README 声明项目采用 GPL-2.0，并注明代码来自 HayatoG 此前的《最后的守护者》与《重力眩晕 2》移植、gow3_pc、bloodborne_pc、shadPS4 及其一个分支，以及一个《旺达与巨像》移植；各项实验性修复均注明来源提交。游戏及其素材的权利仍归其权利人所有。README 未提及任何 AI 模型或 REA；帖子所称的 AI 使用来自第三方账号，其链接的仓库是一个没有自身提交的分叉，因此未确立任何 AI 工作流。"
     ]
+  },
+  "re-plants-vs-zombies-decomp-case": {
+    "name": "re-plants-vs-zombies：反编译并现代化改造 Plants vs. Zombies 年度版",
+    "requirements": [
+      "README 介绍项目旨在反编译初代 PvZ 的最新功能，并扩展游戏及其引擎；它建立在 Miya（rspforhp）已删除的 0.9.9 版反编译之上，并感谢 ruslan831 将其存档。路线图将 x64 支持和成就标为部分完成，GLFW 渲染器与跨平台替换标为进行中，Zombatar 和模组 API 尚未完成。项目没有发布版；最后一次提交日期为 2026-07-11。",
+      "游玩需要购买所得副本中的原版游戏文件；README 链接 Steam 年度版，但未注明确切的可执行文件版本。构建出的可执行文件在该游戏目录中运行，音频代码在运行时加载 bass.dll 或 fmod.dll，而不是链接仓库内提交的副本。README 称仓库除开源引擎外不含 PopCap 的任何 IP；Resources.cpp/.h 重建了游戏生成的资源 ID 表，属于从游戏导出的数据，这在此类项目中很常见。",
+      "构建需要 CMake 3.16 及以上和 C++23。README 介绍了 Visual Studio Community（CMakeSettings.json 提供 x86 与 x64 的 MSVC 配置）或 CMake 搭配 Ninja 两种方式；toolchain.cmake 使用 x86_64-w64-mingw32 Clang 和 windres 交叉编译。所审构建产出 Windows 可执行文件，仓库没有 CI 工作流。",
+      "来源未记录测试、CI 或与原版可执行文件的比较；贡献者会为逆向出的函数和类成员标注其 GOTY 版地址。与原游戏的一致程度未经衡量，本合集也未构建或运行任何内容。",
+      "LICENSE 以 CC0 1.0 释出仓库。SexyAppFramework 代码源自 PopCap 公开的引擎，但仓库未附 PopCap 的许可证文本；ogg 代码保留 Xiph.org 的 BSD 式声明，FMOD 3（Firelight，1999–2002）与 BASS 2.4（Un4seen，1999–2022）的 API 头文件仍归各自厂商所有。原版游戏及其文件仍受其权利人的条款约束。README 表示项目不纵容盗版；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
