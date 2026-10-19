@@ -7701,5 +7701,40 @@
       "https://github.com/rizinorg/rz-ghidra/blob/0f4e062aca031f63bd97ffcb49ca289049ec2e9d/COPYING",
       "https://github.com/rizinorg/rz-ghidra/releases/tag/v0.9.0"
     ]
+  },
+  {
+    "id": "heimdall-rs",
+    "name": "heimdall-rs",
+    "url": "https://github.com/Jon-Becker/heimdall-rs",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Rust toolkit by Jonathan Becker for analyzing EVM smart-contract bytecode, particularly of contracts without verified source. Its CLI disassembles bytecode, builds control-flow graphs, decompiles it through per-function symbolic execution and heuristic post-processing passes into an ABI plus beta Solidity or Yul source, decodes raw calldata, dumps the storage slots a contract accesses over a block range, and inspects transactions by decoding their calldata, traces and logs. Targets can be raw bytecode, files, contract addresses or ENS names; function selectors are resolved against the OpenChain signature database unless that step is skipped.",
+    "description_zh": "Jonathan Becker 用 Rust 编写的 EVM 智能合约字节码分析工具包，尤其适用于未公开验证源码的合约。其命令行可反汇编字节码、生成控制流图，借助逐函数的符号执行和启发式后处理把字节码反编译为 ABI 以及测试阶段的 Solidity 或 Yul 源码，还能解码原始 calldata、导出合约在某一区块范围内访问的存储槽，并通过解码 calldata、调用跟踪和日志来检查交易。分析目标可以是原始字节码、文件、合约地址或 ENS 名称；函数选择器默认通过 OpenChain 签名数据库解析，也可跳过这一步。",
+    "evidence_url": "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 0.9.3, published 2026-04-30, with Linux and macOS binaries for amd64 and arm64 and no Windows build; the reviewed main commit is 38 commits ahead, and both that tag and main still declare workspace version 0.9.2. Install through the bifrost installer, which builds from source with Cargo or, with -B, fetches a precompiled binary; the repository pins Rust 1.91.0.",
+      "Contract addresses, ENS names, storage dumps and transaction inspection need an Ethereum JSON-RPC endpoint, given as a URL or a MESC reference; an optional Etherscan API key lets decompilation recover creation bytecode of self-destructed contracts. Optional LLM post-processing sends the decompiled Solidity to OpenRouter (default model openai/gpt-4o-mini) and needs an OpenRouter API key.",
+      "Decompiled Solidity and Yul output is marked beta and is a heuristic reconstruction to be checked, not original source. The README lists more than 20 papers and theses that cite Heimdall; those are citations, not an accuracy evaluation of the tool.",
+      "MIT license. Nothing was installed and no contracts were analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md#L9-L45",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/README.md#L67-L95",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/cli/src/args.rs#L31-L62",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/decompile/src/interfaces/args.rs#L15-L82",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/common/src/resources/openrouter.rs",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/crates/common/src/ether/signatures.rs",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/bifrost/bifrost",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/Cargo.toml",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/rust-toolchain.toml",
+      "https://github.com/Jon-Becker/heimdall-rs/blob/9de15de029ac1128c7c7566672d472f104a9747a/LICENSE",
+      "https://github.com/Jon-Becker/heimdall-rs/releases/tag/0.9.3"
+    ]
   }
 ]

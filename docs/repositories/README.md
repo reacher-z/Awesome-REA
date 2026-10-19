@@ -14,7 +14,7 @@ Scan date: **2026-10-16 UTC**.
 | [Games](game-analysis.md) | 388 | 36 |
 | [Apps · Android](android.md) | 432 | 16 |
 | [Apps · Managed code](managed-code.md) | 130 | 1 |
-| [Native binaries](native-analysis.md) | 677 | 38 |
+| [Native binaries](native-analysis.md) | 677 | 39 |
 | [Runtime and debugging](dynamic-analysis.md) | 99 | 10 |
 | [Firmware](firmware.md) | 208 | 11 |
 | [Protocols](protocol-analysis.md) | 103 | 2 |

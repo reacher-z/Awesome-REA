@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 363](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-363-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 364](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-364-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (166) · [应用](#app) (53)
-- [原生二进制](#native-binary) (29) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1695,6 +1695,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Rizin 插件，内嵌 Ghidra 的 C++ 反编译器和 Sleigh 反汇编器，因此无需安装 Java 版 Ghidra。其 pdg 系列命令可反编译当前函数，也可与偏移量并排显示或以 XML、JSON 格式输出，还能把结果作为注释写回 Rizin，并列出已加载的 Sleigh 语言；配置变量可调整输出格式，也可覆盖自动检测到的 Sleigh 语言。反编译器使用 Rizin 已加载的二进制、类型和注释；另有可选插件将其接入 Cutter 图形界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rz-ghidra/)
+
+- [**heimdall-rs EVM 字节码分析工具包**](https://github.com/Jon-Becker/heimdall-rs)
+
+  Jonathan Becker 用 Rust 编写的 EVM 智能合约字节码分析工具包，尤其适用于未公开验证源码的合约。其命令行可反汇编字节码、生成控制流图，借助逐函数的符号执行和启发式后处理把字节码反编译为 ABI 以及测试阶段的 Solidity 或 Yul 源码，还能解码原始 calldata、导出合约在某一区块范围内访问的存储槽，并通过解码 calldata、调用跟踪和日志来检查交易。分析目标可以是原始字节码、文件、合约地址或 ENS 名称；函数选择器默认通过 OpenChain 签名数据库解析，也可跳过这一步。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/heimdall-rs/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

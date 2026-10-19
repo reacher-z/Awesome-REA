@@ -3123,5 +3123,14 @@
       "反编译只适用于已在 Rizin 中加载并分析的二进制，且其架构须已安装 Sleigh 规范；输出即 Ghidra 反编译器的结果，需要分析者核查。",
       "采用 LGPL-3.0-or-later 许可，README 特别指出它比 Ghidra 自身的许可更严格；反编译器源码来自独立的 rizinorg/ghidra 分支。测试用二进制由仓库中的 C 源码构建。本次未反编译任何二进制。"
     ]
+  },
+  "heimdall-rs": {
+    "name": "heimdall-rs EVM 字节码分析工具包",
+    "requirements": [
+      "审阅时的版本为 0.9.3，发布于 2026-04-30，提供 amd64 和 arm64 的 Linux 与 macOS 二进制，没有 Windows 版本；所审阅的 main 提交比它多 38 个提交，而该标签和 main 的工作区版本号仍为 0.9.2。可通过 bifrost 安装器安装：默认用 Cargo 从源码构建，加 -B 参数则下载预编译二进制；仓库固定使用 Rust 1.91.0。",
+      "分析合约地址或 ENS 名称、导出存储槽和检查交易时，需要以 URL 或 MESC 引用形式提供以太坊 JSON-RPC 端点；可选的 Etherscan API 密钥用于在反编译时取回已自毁合约的创建字节码。可选的 LLM 后处理会把反编译得到的 Solidity 代码发送到 OpenRouter（默认模型为 openai/gpt-4o-mini），需要 OpenRouter API 密钥。",
+      "反编译出的 Solidity 和 Yul 代码标为测试阶段，属于需要核对的启发式重建结果，并非原始源码。README 列出了 20 余篇引用 Heimdall 的论文和学位论文；这些只是引用，并不构成对该工具准确性的评估。",
+      "采用 MIT 许可。本次未安装，也未分析任何合约。"
+    ]
   }
 }
