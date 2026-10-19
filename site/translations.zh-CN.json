@@ -3020,5 +3020,14 @@
       "GitHub Actions 工作流构建并打包 14 种配置：Windows 的 D3D9、GL3 与 null，macOS 和 Ubuntu 的 GL3 与 null，在 ps2dev 容器中构建的 PS2，以及在 devkitPro 容器中构建的 Switch。工作流不运行测试，仓库也没有测试套件或与原版 RenderWare 输出的对比；本合集未构建或运行任何内容。",
       "LICENSE 对 librw 采用 MIT 许可；内置的 Dear ImGui 与 ImGuizmo 代码附有各自的许可文件，RenderWare 本身及任何游戏素材的权利归其所有者。所审来源未确立 REA 或 AI 使用。"
     ]
+  },
+  "awesome-game-decompilations": {
+    "name": "awesome-game-decompilations 游戏反编译项目清单",
+    "requirements": [
+      "所审阅的 README 提交于 2026-10-12，共链接 481 个条目：其中 214 个分布在 19 个主机与平台标题下，267 个位于留给待归类项目的“未分类”部分；目录和主机索引仍标注为建设中。这些是清单行数，并非经过验证的项目数，同一款游戏也可能出现在多个平台下。",
+      "条目只有标题和链接，大多指向 GitHub，少数位于 GitLab、Codeberg 和 SourceHut。条目未注明项目类型、完成度或匹配状态、所需原始文件或许可证；清单混合收录反编译、反汇编、静态重编译以及少量重新实现，因此每个项目都需在其自身来源中核实。",
+      "README 的 AI 披露说明允许有 AI 参与的项目，并以 ⚠️ 标出；审阅时有 10 个条目带此标记。未带标记的条目不能视为确认没有 AI 参与。",
+      "仓库只有 README.md，没有许可证文件或贡献指南，因此清单本身未声明复用条款；所链接的项目及其重建的游戏各自保留权利。这是独立的发现清单；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

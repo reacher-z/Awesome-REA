@@ -7333,5 +7333,27 @@
       "https://github.com/aap/librw/tree/18532c2e13efbc1aa43f0b00b4459831f9414de0/skeleton/imgui",
       "https://github.com/aap/librw/blob/18532c2e13efbc1aa43f0b00b4459831f9414de0/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-game-decompilations",
+    "name": "awesome-game-decompilations",
+    "url": "https://github.com/CharlotteCross1998/awesome-game-decompilations",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "game"
+    ],
+    "description_en": "A single-README list of about 480 game decompilation, recompilation and disassembly projects, grouped by console from the NES and Game Boy to the Xbox 360, PC and mobile, with a large uncategorised section. Each entry is a game title linked to its project, mostly on GitHub, and entries with AI involvement are marked with a warning emoji under the maintainer’s disclosure policy.",
+    "description_zh": "以单个 README 维护的游戏反编译、重编译和反汇编项目清单，约 480 项，按主机平台分组，从 NES、Game Boy 到 Xbox 360、PC 和移动平台，另有规模较大的未分类部分。每个条目是链接到对应项目的游戏名，大多指向 GitHub；按维护者的披露政策，有 AI 参与的条目以警告符号标出。",
+    "evidence_url": "https://github.com/CharlotteCross1998/awesome-game-decompilations/blob/31e56f7894761ab48f05b8a1e71770a91cf2ce67/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, committed 2026-10-12, links 481 entries: 214 under 19 console and platform headings and 267 in an Uncategorised section kept for works in progress, while the table of contents and console index are marked under construction. These are list rows, not verified projects, and one game can appear under several platforms.",
+      "Entries give only a title and a link, mostly to GitHub with a few on GitLab, Codeberg and SourceHut. They state no project type, completion or matching status, original-file requirement or license, and the list mixes decompilations, disassemblies, static recompilations and occasional reimplementations, so each project must be checked at its own source.",
+      "The README’s AI disclosure allows projects with AI involvement and marks them with ⚠️; 10 entries carried the mark at review. An unmarked entry should not be read as confirmation that no AI was involved.",
+      "The repository holds only README.md, with no license file or contribution guide, so the list states no reuse terms; linked projects and the games they reconstruct keep their own rights. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
