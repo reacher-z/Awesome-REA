@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 450](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-450-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 190](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-190-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 451](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-451-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 190](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-190-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (87) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (30)
+- [论文](#papers) (87) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (31)
 
 **更多浏览方式**
 
@@ -2810,6 +2810,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   OWASP 维护的开放手册，讲解 Android 和 iOS 应用的安全测试与逆向工程，发布于 mas.owasp.org。除平台原理、测试环境搭建以及应用篡改与逆向工程等章节外，还收录可单独引用的测试、技术、工具页面、知识条目、最佳实践和可运行的演示，均与 MASVS 控制项和 MASWE 弱点对应。OWASP 自己的 UnCrackable 破解练习应用用作练习目标和示例。
 
   学习资源 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/owasp-mastg/)
+
+- [**Decompilation Wiki 反编译维基**](https://decompilation.wiki/)
+
+  社区维护的维基，讲解反编译器如何工作，从反汇编、提升和控制流恢复，到类型恢复、控制流结构化、质量评估和神经反编译，并为各项技术注明研究出处。它还整理了反编译器、插件、博客和演讲目录，设有符号恢复、代码相似性和漏洞发现等应用研究页面，以及按原平台列出的约 240 个游戏重建项目表。
+
+  学习资源 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decompilation-wiki/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->
