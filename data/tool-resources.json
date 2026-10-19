@@ -19910,5 +19910,40 @@
       "https://github.com/ptx2/gymnasticon/releases/tag/v1.4.0",
       "https://ptx2.net/posts/unbricking-a-bike-with-a-raspberry-pi"
     ]
+  },
+  {
+    "id": "iw4l-mw2-rust-runtime-case",
+    "name": "IW4L: a Rust runtime that plays Modern Warfare 2 from the user’s installed game",
+    "url": "https://github.com/vladtrc/iw4L",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Implements a standalone runtime for Call of Duty: Modern Warfare 2 (2009) in Rust on Bevy and wgpu, loading maps, models, textures and weapons from the user’s installed game through native FastFile readers and translating its Direct3D 9 shaders to WGSL. Bots, demo recording and replay, and multiplayer over custom UDP with a QUIC master are implemented, while README warns that gameplay remains incomplete, with missing behavior, bugs and desyncs. README states that the whole project is written by an LLM; NOTICE names the community projects consulted and says the original binaries were read with Ghidra.",
+    "description_zh": "以 Rust 基于 Bevy 和 wgpu 实现《使命召唤：现代战争 2》（2009）的独立运行时：通过原生 FastFile 读取器从使用者已安装的游戏中载入地图、模型、纹理和武器，并将其 Direct3D 9 着色器转换为 WGSL。已实现机器人、录像录制与回放，以及基于自定义 UDP 和 QUIC 主服务器的多人游戏；但 README 提醒游戏玩法仍不完整，存在缺失行为、错误和不同步。README 声明整个项目由大语言模型编写；NOTICE 列出参考过的社区项目，并说明曾用 Ghidra 阅读原版二进制文件。",
+    "evidence_url": "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes an experimental runtime that loads an owned MW2 installation into its own engine without patching or replacing the game’s files; retail Shader Model 3 bytecode is translated rather than reused, and the asset readers also cover MW3 and Black Ops. APIs, caches and the wire protocol change between commits, so multiplayer peers must run the same build. Releases are tagged demo builds; v0.1.0-demo.23 followed the reviewed commit on 2026-10-16.",
+      "Needs the user’s own MW2 Multiplayer installation, which BUILD.md describes as the Windows depot of a Steam copy; Black Ops and MW3 data are optional. README and NOTICE state that neither the repository nor the release archives contain game data, and CONTRIBUTING.md forbids attaching, committing or linking original game files. AGENT.md keeps retail offsets and decompiler placeholder names out of the code; make publish-check greps the tracked tree for such shapes and, by its own description, proves nothing about origin.",
+      "Builds with stable Rust through rustup and GNU Make. Linux needs a C/C++ toolchain and X11, Wayland, ALSA, udev and xkbcommon development packages; macOS needs only the Xcode command-line tools, with Apple silicon on Metal reported working. Windows players get a password-protected iw4l-windows.zip whose iw4l.exe finds Steam installs and checks a community manifest for SHA-256-verified updates; online play uses a server operator’s .iw4l-server descriptor.",
+      "The repository has no CI workflow and no cargo test suite: make publish-check rejects test modules, and the only permanent checks are two owner-approved end-to-end scenarios in crates/approved_tests that drive real clients on MW2 maps and check entity consistency and teardown. These scenarios and the benchmark targets need the user’s game data. Fidelity to the original game is not measured against it, and this collection ran nothing.",
+      "Source is Apache-2.0 with two bundled OFL fonts, and NOTICE says no third-party source is vendored. It lists OpenAssetTools and its x64 fork, IW4x, KisakCOD, Plutonium’s decompiled Black Ops II scripts, FFmpeg and OxideAV as references read during development. A provenance note records replacing a movement module, after reported similarities to GPL implementations, with an isolated agent’s rewrite, without establishing that copying occurred. README and CONTRIBUTING.md say the whole project is written by an LLM; the reviewed sources establish no REA use, and game assets and trademarks remain their owners’."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/NOTICE",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/CONTRIBUTING.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/AGENT.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/docs/BUILD.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/docs/WINDOWS.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/Makefile",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/crates/approved_tests/README.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/docs/provenance/movement-iw4.md",
+      "https://github.com/vladtrc/iw4L/blob/acc57a5c9dd027db8eb5ef17c792fa69f059daa1/LICENSE",
+      "https://github.com/vladtrc/iw4L/releases/tag/v0.1.0-demo.23"
+    ]
   }
 ]
