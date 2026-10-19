@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 348](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-348-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 181](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-181-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 349](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-349-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 182](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (19) · [游戏](#game) (163) · [应用](#app) (49)
+- [网站](#website) (19) · [游戏](#game) (164) · [应用](#app) (49)
 - [原生二进制](#native-binary) (24) · [固件与硬件](#firmware) (15) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (181) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (182) · [相关合集](#related-collections) (5) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1009,6 +1009,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   在 Windows 与 Linux 上原生运行 PS4 版《声名狼藉：次子》自身的 x86-64 代码：由运行时重新实现游戏所用的 PS4 系统库，并以源自 shadPS4 的核心将其 GPU 命令与着色器转换为 Vulkan。项目报告该移植可以游玩但仍在开发中，能进入游戏并通过最初几章，性能仍不稳定，也有尚未解决的图形问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/infamous-second-son-pc-port-case/)
+
+- [**《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译**](https://github.com/projectPiki/pikmin2)
+
+  由爱好者进行的《皮克敏2》反编译项目：用原版 Metrowerks 编译器为五个 GameCube 版本（美版零售版、两个美版体验版、PAL 版和日版）重建 main.dol，并逐一与仓库保存的 SHA-1 比对。构建读取使用者自有各版本中的 main.dol。decomp.dev 报告所审提交中各版本的代码均已全部匹配并完全链接；另有非一致性模式，可完全由 C++ 源码构建美版 DOL 以供模组制作。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pikmin-2-matching-decomp-case/)
 
 #### 工具、项目与集成
 

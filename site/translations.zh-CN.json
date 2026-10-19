@@ -2990,5 +2990,15 @@
       "证据来自试玩、问题报告和日志：README 提到在 Nobara／Fedora 44 上的 Linux 测试、玩家在 Windows 上的测试，以及一次在 RTX 2060 上持续七分钟、帧率中位数为 27 FPS 的游玩记录。CI 工作流为拉取请求和经授权的手动发布构建 Linux 与 Windows 安装包，其 Linux 任务运行 C、Python 与 GPU 库单元测试，不涉及游戏内容，也没有自动化游戏流程测试。本合集仅审阅源码，未运行该移植或游戏。",
       "README 声明项目采用 GPL-2.0，并注明代码来自 HayatoG 此前的《最后的守护者》与《重力眩晕 2》移植、gow3_pc、bloodborne_pc、shadPS4 及其一个分支，以及一个《旺达与巨像》移植；各项实验性修复均注明来源提交。游戏及其素材的权利仍归其权利人所有。README 未提及任何 AI 模型或 REA；帖子所称的 AI 使用来自第三方账号，其链接的仓库是一个没有自身提交的分叉，因此未确立任何 AI 工作流。"
     ]
+  },
+  "pikmin-2-matching-decomp-case": {
+    "name": "《皮克敏2》：覆盖五个版本、已完全匹配的 GameCube 反编译",
+    "requirements": [
+      "README 仍称其为进行中的反编译项目，并列出五个支持版本：GPVE01（美版零售版，默认）、GPVE01_D17 与 GPVE01_D18（美版体验版 17 和 18）、GPVP01（PAL 版）以及 GPVJ01（日版）。每个版本都有各自的配置和 SHA-1 文件，CI 会构建全部五个版本。产物是 GameCube DOL，不是 PC 可执行文件或移植。",
+      "每个版本都需要使用者自有该版本中的 main.dol，放在 orig/<version>/sys/main.dol；decomp-toolkit 在拆分前会按该版本 config.yml 中的哈希进行校验。仓库为每个版本提交了源自游戏的符号表和拆分表；配置注释称 GPVE01 的符号由 pikmin2UP.MAP 链接映射生成，日版和 PAL 版的表则以美版符号为基础从各自 DOL 中恢复。仓库不含光盘镜像或提取出的游戏文件。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.7.5、objdiff v3.4.1、binutils 2.42-1、sjiswrap v1.2.2、wibo 1.0.0-beta.5 及 20250812 编译器包；游戏、JSystem 和运行时代码使用 Metrowerks GC/2.6，Dolphin SDK 库使用 GC/1.2.5n。",
+      "configure.py 将 1,154 个目标文件标为对所有支持版本均一致，另有一个仅对日版一致；没有标为 NonMatching 的项。默认 ninja 目标会先按 config/<version>/build.sha1 校验链接出的 DOL，再报告进度；CI 在提供原始文件和编译器的容器中构建全部五个版本。decomp.dev 针对该固定提交的各版本报告均显示代码 100.00% 已匹配并完全链接（GPVE01 为 24,957 个函数、1,153 个单元）；本合集未运行构建。",
+      "README 称使用 --non-matching 时会关闭最终哈希校验，美版 DOL 将完全由 C++ 源码构建，据团队所知在功能上等价，因此每个文件都可修改用于模组制作。仓库在 LICENSE.MD 中采用 CC0-1.0；任天堂的游戏及其文件、下载的编译器不在该声明范围内。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }

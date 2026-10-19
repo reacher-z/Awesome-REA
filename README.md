@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 348](https://img.shields.io/badge/resources-348-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 181](https://img.shields.io/badge/cases-181-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 349](https://img.shields.io/badge/resources-349-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 182](https://img.shields.io/badge/cases-182-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (163) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (164) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (181) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (182) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1008,6 +1008,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Runs the PS4 inFAMOUS Second Son’s own x86-64 code natively on Windows and Linux: a runtime reimplements the PS4 system libraries the game uses, and a shadPS4-derived core translates its GPU commands and shaders to Vulkan. The project reports a playable, in-development port that reaches gameplay and the first chapters, with unstable performance and remaining graphics glitches. It is a compatibility-runtime port rather than a decompilation, and its results remain project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/infamous-second-son-pc-port-case/)
+
+- [**Pikmin 2: a fully matched GameCube decompilation across five releases**](https://github.com/projectPiki/pikmin2)
+
+  A fan decompilation of Pikmin 2 that rebuilds main.dol for five GameCube releases (USA retail, two USA demos, PAL and Japan) with the original Metrowerks compilers, checking each against a stored SHA-1. The build reads main.dol from the user’s own copy of each release. decomp.dev reported all code matched and fully linked for every version at the reviewed commit, and a non-matching mode builds the US DOL entirely from C++ for modding.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/pikmin-2-matching-decomp-case/)
 
 #### Tools, projects and integrations
 
