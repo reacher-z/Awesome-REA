@@ -403,6 +403,16 @@ html[data-layout="compact"] .source-compact-context{display:block;margin-top:14p
 .detail-label-compact{display:none}
 html[data-layout="compact"] .collection-home .detail-label-full{display:none}
 html[data-layout="compact"] .collection-home .detail-label-compact{display:inline}
+/* Phone compact rows: the kind or stars badge follows the title and wraps only after a long one, and a closed
+   details toggle joins the links' line when it fits. Opened details still span the row; touch targets keep 44 px. */
+@media(max-width:700px){
+  html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:flex;flex-wrap:wrap;align-items:center;gap:0 16px}
+  html[data-layout="compact"] .collection-home .resource-card>:not(.card-meta,.requirements:not([open])),html[data-layout="compact"] .collection-home .source-card>:not(.source-card-footer,.source-record-details:not([open])){flex-basis:100%}
+  html[data-layout="compact"] .collection-home .resource-card .card-heading h3,html[data-layout="compact"] .collection-home .source-card .source-card-head h3{flex-basis:auto}
+  html[data-layout="compact"] .collection-home .resource-card .resource-kind,html[data-layout="compact"] .collection-home .source-card .source-stars{margin:0}
+  html[data-layout="compact"] .collection-home .requirements:not([open]),html[data-layout="compact"] .collection-home .source-record-details:not([open]){margin-top:0}
+  html[data-layout="compact"] .collection-home .card-meta,html[data-layout="compact"] .collection-home .source-card-footer{padding-block:0}
+}
 
 @media(min-width:701px){
   html[data-layout="compact"] .collection-home .requirements:not([open]),html[data-layout="compact"] .collection-home .source-record-details:not([open]){align-self:start}
