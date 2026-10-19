@@ -4425,5 +4425,15 @@
       "CI 在提供原始文件的私有容器中构建全部四个版本，并上传映射文件和进度报告；上述百分比即来自这些报告，并不表明已完整或可移位地重建。本次审阅未构建或运行任何程序。",
       "LICENSE 为 CC0 1.0。BTE 蓝牙库注明含有取自 Android bluedroid 的代码，采用 Apache-2.0；GameSpy SDK 子集采用 BSD-3-Clause。反编译的第三方中间件（JustSystems ATOK、Zi eZiText、TMC JPEG、eSOL PrFILE2）及 Opera WWW 头文件没有单独授权，Wii Menu 本身的权利仍归 Nintendo。CONTRIBUTING 禁止用 AI 反编译代码，并要求避开仅靠 AI 追求完全一致的分叉；所审来源未确立 REA 的使用。"
     ]
+  },
+  "usque-warp-masque-client-case": {
+    "name": "usque：Cloudflare WARP MASQUE 模式的开源再实现",
+    "requirements": [
+      "审阅对象为 2026-07-20 的 main 最新提交，与 v4.2.1 版一致。README 称项目仍处于早期阶段，作为库使用时 Go API 不稳定，并说明只有 Linux amd64 发布版经过测试，尽管发布内容包括多种架构的 Android、Linux、Windows 和 macOS 构建。RESEARCH.md 是叙述式研究记录；README 计划撰写的简明协议文档尚未完成。",
+      "需要访问 Cloudflare WARP 服务：register 命令会新建 WARP 账号并注册设备密钥，生成的配置文件保存该注册的密钥和令牌。该工具在官方客户端之外使用 Cloudflare 的服务；README 声明它与 Cloudflare 无关，未获其认可或审查，要求用户不要滥用服务，并指出该工具可被识别。ZeroTrust 登录需要该工具无法完成的 SSO；本条目不提供任何令牌、账号或配置细节。",
+      "构建需要 Go 1.26.3+ 并关闭 CGO。README 称 Cloudflare 的实现并不完全符合 RFC 9484，因此项目依赖作者 fork 的 connect-ip-go；连接由 quic-go 承载，gVisor 和 wireguard-go 的网络栈使各代理模式无需 root 即可在用户态运行。原生 TUN 模式仅支持 Linux 和 Windows，但 README 的已知问题列表仍写着仅支持 Linux。仓库提供 Dockerfile。",
+      "CI 会校验模块并运行 go build、go vet、go test 和 golangci-lint，但所审阅的文件树中没有 Go 测试文件，因此正确性证据来自作者自己的使用。README 报告一次 SOCKS5 测速结果，在 1 Gbps 链路上约为 834/773 Mbps，并列出 happy eyeballs、WireGuard 和 DNS-over-HTTPS 等缺失功能。这些结果均为作者报告，本次来源核查未运行任何内容。",
+      "采用 MIT 许可（LICENSE.md）。Cloudflare 的服务条款和商标另行适用，README 将 usque 描述为独立研究项目。所审阅来源未确立任何 AI 或 REA 的使用。"
+    ]
   }
 }
