@@ -15321,12 +15321,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111465121126207605"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post links a release of a repository that describes itself as a runnable reconstruction of the Cursor desktop app, analyzed with REA. By its own README, the repository consists of Cursor’s shipped application bundles reformatted, with the vendor’s native binaries in Git LFS, and the release distributes a rebuilt copy of the app; no vendor permission or license is documented. Because the only primary artifact redistributes proprietary code and binaries, it is not linked and no catalog record is added; this is not a judgment of the author’s changes.",
+      "reason_zh": "该帖子链接到某仓库的发布版本，仓库自称是借助 REA 分析得到的、可运行的 Cursor 桌面应用重建。据其 README，仓库内容是重新格式化的 Cursor 官方发布应用代码包，厂商的原生二进制文件存放在 Git LFS 中，发布版本则分发重新构建的应用副本；未记录厂商许可或授权。由于唯一的一手产物再分发专有代码与二进制文件，本目录不链接该仓库，也不添加目录条目；这并非对作者改动的评价。",
+      "primary_evidence_urls": [
+        "https://x.com/FoxSnowing/status/2111465121126207605"
+      ],
       "catalog_matches": []
     },
     {
@@ -15811,15 +15813,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 197,
-      "insufficient-evidence": 188,
-      "pending": 206
+      "insufficient-evidence": 189,
+      "pending": 205
     },
     "units_by_state": {
       "already-curated": 195,
-      "insufficient-evidence": 188,
-      "pending": 206
+      "insufficient-evidence": 189,
+      "pending": 205
     },
-    "primary_reviewed_units": 325,
+    "primary_reviewed_units": 326,
     "catalog_linked_occurrences": 208,
     "distinct_resource_ids": 200,
     "distinct_paper_ids": 1,
