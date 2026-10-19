@@ -3331,5 +3331,14 @@
       "单元测试不需要游戏文件，其中若干项会编译提升器自身的输出并对照 x86 定义检查，同时配有反向对照；README 给出的完整通过结果为 812 项通过、0 项跳过。一致性测试在真实的 32 位 x86 CPU 上，用相同输入分别运行提升后的 C 代码和原始指令；在 Linux 和 macOS 上由 Docker 镜像提供 GCC 以及在 Wine 下运行的 MSVC。README 称提升器覆盖率良好但未量化，仓库中也没有 CI 工作流。",
       "采用 MIT 许可证，但取自 xemu 的 MCPX APU 源码和 NV2A 寄存器定义保留 LGPL-2.1-or-later 许可，具体文件列于 NOTICE。README 致谢 Claude Code 参与了 AI 辅助开发，未提及使用 REA。本目录未构建或运行该工具包，也不代表任何游戏兼容性。"
     ]
+  },
+  "pcsx-redux": {
+    "name": "PCSX-Redux PlayStation 1 调试模拟器",
+    "requirements": [
+      "审阅时 GitHub 上没有带标签的发布版：README 链接的是持续更新的开发构建，涵盖 Windows x64（图形界面与命令行版）、Linux x64 和 arm64 AppImage 以及 macOS Arm，并说明代码库仍属实验性质，尚未发布首个稳定版。所有构建仅支持 64 位，需要能创建至少 OpenGL 3.0 上下文的 GPU 与驱动；macOS 版未经签名。所审阅的 main 提交日期为 2026-10-19。",
+      "从源码构建需递归克隆：Windows 上使用 Visual Studio 2022 并由 NuGet 获取依赖；Linux 上可用 Docker 生成 AppImage，或安装 clang 以及 Capstone、FFmpeg、libuv、SDL3、curl 等软件包后用 make 构建；macOS 需 Catalina 或更新版本、Xcode 和 Homebrew 软件包。编译 OpenBIOS 及其他 PS1 代码需要 mipsel-none-elf GCC 工具链，仓库提供了相应的安装脚本。",
+      "游戏光盘和可执行文件由使用者自行提供。README 将需单独构建的 OpenBIOS 作为受版权保护的零售版 BIOS 的替代品，所审阅的源码树中不含零售版 BIOS、Psy-Q 库或游戏文件。文档指出，大多数 CPU 调试功能需要关闭动态重编译并启用调试器；用 Ghidra 调试需要 gdb-multiarch 和 Ghidra 10.3+。Web 服务器启用后默认在所有网络接口的 8080 端口监听，文档提醒这意味着网络中的其他机器也能访问。",
+      "PCSX-Redux 采用 GPL-2.0 许可；OpenBIOS 位于采用 MIT 许可的 nugget 子模块中，LICENSES.md 列出了各自保留许可的第三方库，其中部分经过修改后内置。本次未审阅硬件设计和 wiki 研究资料，也未运行模拟器、游戏或调试会话；所审来源未确立与 REA 的关联，也未确立被某个具体反编译项目使用。"
+    ]
   }
 }

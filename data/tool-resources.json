@@ -8420,5 +8420,42 @@
       "https://github.com/sp00nznet/xboxrecomp/blob/eb0aa1d5fcb1ca34cdb6470fcfa471d87f431d73/NOTICE",
       "https://github.com/sp00nznet/xboxrecomp/releases/tag/v0.14.0"
     ]
+  },
+  {
+    "id": "pcsx-redux",
+    "name": "PCSX-Redux",
+    "url": "https://github.com/grumpycoders/pcsx-redux",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "PlayStation 1 emulator forked from PCSX and built around development and reverse engineering, with an interpreter and dynamic recompiler, software and OpenGL renderers, a MIPS debugger, VRAM viewer, SPU and GPU debugging tools, and a built-in GDB server that its documentation connects to gdb, IDA Pro and Ghidra's debugger. A LuaJIT API exposes breakpoints, memory and registers, an assembler and an ISO builder, and an optional REST web server can dump RAM and VRAM. The repository also holds the OpenBIOS replacement BIOS, PS-EXE conversion and packing tools, a Psy-Q object-file converter, Ghidra scripts for exchanging symbols and overlays with the emulator, and PS1 hardware designs.",
+    "description_zh": "基于 PCSX 分支、面向开发与逆向工程的 PlayStation 1 模拟器，提供解释器与动态重编译器、软件和 OpenGL 渲染器、MIPS 调试器、显存查看器、SPU 与 GPU 调试工具，以及内置 GDB 服务器；其文档说明了如何用 gdb、IDA Pro 和 Ghidra 调试器连接它。LuaJIT API 提供断点、内存与寄存器、汇编器和 ISO 构建器等接口，可选的 REST Web 服务器还能转储内存和显存。仓库另含替代 BIOS OpenBIOS、PS-EXE 转换与打包工具、Psy-Q 目标文件转换器、用于与模拟器交换符号和覆盖段的 Ghidra 脚本，以及 PS1 硬件设计。",
+    "evidence_url": "https://github.com/grumpycoders/pcsx-redux/blob/e1693b7f756ebdc4ccae1230ed09992079b51f90/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No tagged GitHub releases at review: the README links rolling development builds for Windows x64 (GUI and CLI), Linux x64 and arm64 AppImages and macOS Arm, and says the codebase is still experimental and has not reached its first stable release. Builds are 64-bit only and need a GPU and driver that can create at least an OpenGL 3.0 context; the macOS build is unsigned. The reviewed main commit is from 2026-10-19.",
+      "Source builds need a recursive clone: Visual Studio 2022 with NuGet on Windows; Docker for the AppImage, or make with clang and packages such as Capstone, FFmpeg, libuv, SDL3 and curl, on Linux; macOS Catalina or later with Xcode and Homebrew packages. OpenBIOS and other PS1 code need a mipsel-none-elf GCC toolchain, for which the repository provides install scripts.",
+      "Game discs and executables come from the user. The README presents OpenBIOS, built separately, as an alternative to the copyrighted retail BIOS, and the reviewed trees contain no retail BIOS, Psy-Q libraries or game files. The docs say most CPU debugging features need the dynarec disabled and the debugger enabled, and Ghidra debugging needs gdb-multiarch and Ghidra 10.3+. When enabled, the web server listens on port 8080 on all network interfaces by default, which the docs note makes it reachable from other machines.",
+      "GPL-2.0 for PCSX-Redux; OpenBIOS lives in the MIT-licensed nugget submodule, and LICENSES.md lists third-party libraries with their own licenses, some vendored with modifications. Hardware designs and wiki research were not reviewed. No emulator, game or debugging session was run, and the reviewed sources establish no REA connection or use by a specific decompilation project."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/grumpycoders/pcsx-redux/blob/e1693b7f756ebdc4ccae1230ed09992079b51f90/README.md#L35-L58",
+      "https://github.com/grumpycoders/pcsx-redux/blob/e1693b7f756ebdc4ccae1230ed09992079b51f90/LICENSE",
+      "https://github.com/grumpycoders/pcsx-redux/blob/e1693b7f756ebdc4ccae1230ed09992079b51f90/LICENSES.md",
+      "https://github.com/grumpycoders/pcsx-redux/blob/e1693b7f756ebdc4ccae1230ed09992079b51f90/tools/README.md",
+      "https://github.com/grumpycoders/pcsx-redux/tree/e1693b7f756ebdc4ccae1230ed09992079b51f90/tools/ghidra_scripts",
+      "https://github.com/pcsx-redux/nugget/blob/bfffd59779268c771c5a6ebfe0d2b07b51706565/LICENSE",
+      "https://pcsx-redux.consoledev.net/Debugging/introduction/",
+      "https://pcsx-redux.consoledev.net/Debugging/gdb-server/",
+      "https://pcsx-redux.consoledev.net/Debugging/ghidra/",
+      "https://pcsx-redux.consoledev.net/Lua/introduction/",
+      "https://pcsx-redux.consoledev.net/web_server/",
+      "https://pcsx-redux.consoledev.net/openbios/"
+    ]
   }
 ]
