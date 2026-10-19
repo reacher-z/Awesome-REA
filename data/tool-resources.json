@@ -8521,5 +8521,34 @@
       "https://github.com/mahaloz/decomp2dbg/releases/tag/v4.0.3",
       "https://pypi.org/project/decomp2dbg/4.0.3/"
     ]
+  },
+  {
+    "id": "ben-sb-javascript-deobfuscator",
+    "name": "javascript-deobfuscator",
+    "url": "https://github.com/ben-sb/javascript-deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "General-purpose JavaScript deobfuscator for common obfuscation patterns, published on npm as js-deobfuscator and usable as a library or CLI. It unpacks arrays of literals and replaces references to them, removes simple, array and arithmetic proxy functions, simplifies arithmetic and string concatenation, removes dead branches, turns computed member access into static properties, renames hexadecimal identifiers such as _0xca830a and beautifies the result. The author also hosts an online version and maintains a separate deobfuscator for Obfuscator.io output.",
+    "description_zh": "通用的 JavaScript 反混淆工具，针对常见混淆手法，以 js-deobfuscator 之名发布在 npm 上，可作为库或命令行工具使用。它能展开字面量数组并替换对其的引用，移除简单代理函数、数组代理函数和算术代理函数，化简算术表达式和字符串拼接，删除死分支，把计算属性访问转为静态属性，重命名 _0xca830a 这类十六进制标识符，并美化输出代码。作者另提供在线版本，并单独维护一个针对 Obfuscator.io 输出的反混淆工具。",
+    "evidence_url": "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "npm release at review: js-deobfuscator 1.1.7, published 2025-07-15; the reviewed main commit is that version bump. No GitHub releases are published. The TypeScript package parses and regenerates code with the Shift parser and the author's shift-codegen fork; package.json declares no Node.js version range.",
+      "Install it locally to import as a module, or globally for the js-deobfuscator CLI, which reads an input file and writes an output file, with -m for ES modules. The library config toggles each transformation. An online version runs at deobfuscate.io; only the repository was reviewed.",
+      "Supply the JavaScript to analyze yourself. It handles the generic patterns listed in the README; for Obfuscator.io output the README points to the author's dedicated deobfuscator. Hexadecimal identifiers are replaced with names drawn from a bundled word list, not recovered originals, so output still needs analyst review.",
+      "The LICENSE file is Apache-2.0, while package.json and the npm metadata declare ISC. No scripts were deobfuscated for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/package.json",
+      "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/src/config.ts",
+      "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/src/modifications/renaming/variableRenamer.ts",
+      "https://github.com/ben-sb/javascript-deobfuscator/blob/4107a8a59d9a2267f921148cb33d3abf0bf6d128/LICENSE",
+      "https://www.npmjs.com/package/js-deobfuscator/v/1.1.7"
+    ]
   }
 ]

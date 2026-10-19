@@ -3358,5 +3358,14 @@
       "反编译器一侧默认在 localhost:3662 启动 XML-RPC 服务；若在另一台机器或虚拟机上调试，需要在连接时指定主机和端口，并确保该端口可达。同一时间只能连接一个反编译器；共享库的符号需要手动提供其起始和结束地址。",
       "tests.py 中的集成测试用 GDB 配合无界面运行的 Ghidra，或通过 idalib 运行的 IDA；CI 只针对 Ghidra 12.0 运行 Ghidra 测试套件。testing/binaries 目录保存了若干示例可执行文件作为测试夹具，其中包括一个 Ubuntu 的 objdump 构建。采用 BSD-2-Clause 许可。本次未运行任何调试会话。"
     ]
+  },
+  "ben-sb-javascript-deobfuscator": {
+    "name": "javascript-deobfuscator 通用 JavaScript 反混淆工具",
+    "requirements": [
+      "审阅时的 npm 版本为 js-deobfuscator 1.1.7，发布于 2025-07-15；所审阅的 main 分支提交即为该版本号更新。仓库未发布 GitHub Release。这个 TypeScript 软件包使用 Shift 解析器和作者维护的 shift-codegen 分支来解析并重新生成代码；package.json 未声明 Node.js 版本范围。",
+      "可在本地安装后作为模块导入，或全局安装后使用 js-deobfuscator 命令行工具：读取输入文件并写出输出文件，-m 用于解析 ES 模块。库的配置项可分别开关每种转换。在线版本位于 deobfuscate.io；本次只审阅了仓库。",
+      "需自行提供要分析的 JavaScript。它处理 README 所列的通用混淆模式；对于 Obfuscator.io 的输出，README 建议改用作者专门的反混淆工具。十六进制标识符会被替换为从内置词表中选取的名称，并非恢复原名，因此输出仍需分析人员复核。",
+      "LICENSE 文件为 Apache-2.0，而 package.json 和 npm 元数据声明的是 ISC。本次未对任何脚本进行反混淆。"
+    ]
   }
 }
