@@ -9050,5 +9050,37 @@
       "https://pypi.org/project/ddisasm/1.9.5/",
       "https://www.usenix.org/conference/usenixsecurity20/presentation/flores-montoya"
     ]
+  },
+  {
+    "id": "pince",
+    "name": "PINCE",
+    "url": "https://github.com/korcankaraokcu/PINCE",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "game"
+    ],
+    "description_en": "Linux front end for the GNU Debugger (GDB), focused on games but usable for other reverse engineering; the name stands for “PINCE is not Cheat Engine”. It scans process memory and pointers through libmemscan into a typed address table, and its memory view adds disassembly, an on-the-fly assembler, code dissection for referenced calls, jumps and strings, function, region and instruction searches, and structure overlays, including structures generated from Mono/IL2CPP class dissection of native Linux or Wine/Proton processes. Debugging covers chained breakpoints and watchpoints, tracking of the instructions that access an address, tracing and stack traces, alongside a GDB console and the reusable libpince Python library.",
+    "description_zh": "面向 Linux 的 GNU 调试器（GDB）前端，以游戏为主要对象，也可用于其他逆向工程；名称意为“PINCE is not Cheat Engine”。它借助 libmemscan 扫描进程内存和指针，并将结果放入带类型的地址表；内存视图提供反汇编、即时汇编、对引用的调用、跳转和字符串进行代码剖析、函数/内存区域/指令搜索以及结构体叠加查看，其中结构体可由对原生 Linux 或 Wine/Proton 进程中 Mono/IL2CPP 类的剖析自动生成。调试功能包括可链式关联的断点与观察点、追踪访问某地址的指令、执行跟踪和调用栈查看，并提供 GDB 控制台和可复用的 libpince Python 库。",
+    "evidence_url": "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Linux only. Latest release at review: v0.10.2, published 2026-09-18, whose tag is the reviewed master commit; it ships an x86_64 AppImage that the README supports on distributions as new as Ubuntu 22.04 or newer.",
+      "Local development installs run install.sh with APT, Pacman or DNF and need Python 3.11+, PyQt 6.11+ and GDB; Kubuntu 22.04+ and Arch Linux are officially supported, while Debian 12+, Fedora 35+ and openSUSE are only partially supported and not actively tested. The PINCE.sh launcher runs PINCE as root, elevating through pkexec or sudo.",
+      "Users select a running process of their own to inspect. This entry describes only the memory-inspection, disassembly and debugging features; the README states that users are responsible for their actions and asks that only this GitHub repository be trusted as a source of PINCE code or packages.",
+      "GPL-3.0-or-later (COPYING); AUTHORS lists the bundled Silk icons in media/icons under CC BY 3.0 (COPYING.CC-BY). No process was attached to or scanned for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/README.md#L25-L67",
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/README.md#L92-L116",
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/PINCE.sh",
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/install.sh",
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/COPYING",
+      "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/AUTHORS",
+      "https://github.com/korcankaraokcu/PINCE/releases/tag/v0.10.2"
+    ]
   }
 ]

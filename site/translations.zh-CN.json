@@ -3503,5 +3503,14 @@
       "输入为 ELF 或 PE 二进制；通过 gtirb-pprinter 重建二进制时会调用 gcc 等编译器或汇编器。代码推断和符号化属于启发式：--self-diagnose 只能对链接时保留完整重定位信息的二进制检查符号化结果；文档称用 .eh_frame 符号表达式代替 CFI 指令的选项仍属实验性，结果不可靠。",
       "采用 AGPL-3.0 许可；贡献代码需签署 GrammaTech 的贡献者许可协议。GTIRB、gtirb-pprinter 和 gtirb-rewriting 是独立项目，本次未审阅。README 引用了 USENIX Security 2020 和 IEEE S&P 2025 的两篇方法论文，此处不转述其结果。本次未反汇编任何二进制。"
     ]
+  },
+  "pince": {
+    "name": "PINCE GDB 前端与内存分析工具",
+    "requirements": [
+      "仅支持 Linux。审阅时最新版本为 v0.10.2，发布于 2026-09-18，其标签即所审阅的 master 分支提交；发布包为 x86_64 AppImage，README 表示支持不早于 Ubuntu 22.04 的发行版。",
+      "本地开发安装通过 install.sh 使用 APT、Pacman 或 DNF 完成，需要 Python 3.11+、PyQt 6.11+ 和 GDB；官方支持 Kubuntu 22.04+ 和 Arch Linux，Debian 12+、Fedora 35+ 和 openSUSE 仅部分支持且未经积极测试。PINCE.sh 启动脚本会通过 pkexec 或 sudo 以 root 身份运行 PINCE。",
+      "用户需自行选择要检查的运行中进程。本条目只描述其内存检查、反汇编和调试功能；README 声明用户须对自身行为负责，并提醒只信任此 GitHub 仓库提供的 PINCE 源码或软件包。",
+      "采用 GPL-3.0-or-later 许可（COPYING）；AUTHORS 说明 media/icons 中随附的 Silk 图标采用 CC BY 3.0 许可（COPYING.CC-BY）。本条目未附加到或扫描任何进程。"
+    ]
   }
 }
