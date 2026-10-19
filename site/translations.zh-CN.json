@@ -5016,5 +5016,14 @@
       "检测基于特征规则，未收录或经过修改的加壳与保护工具不会被报告；README 请用户提交未知样本的文件哈希，以便编写新规则。测试会编译并检查规则，并扫描临时生成的 ZIP 文件；仓库不含样本集，本次审阅也未扫描任何文件。",
       "采用双重许可：GPL-3.0，或永久商业许可；后者允许在商业产品中分发 APKiD 二进制及规则，但禁止再分发源码，因此 GitHub 显示为 NOASSERTION。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "jsluice": {
+    "name": "jsluice JavaScript 静态提取工具",
+    "requirements": [
+      "该项目不发布任何版本或标签：README 通过 go install 安装命令行工具，通过 go get 引入软件包。go.mod 声明 Go 1.18，并固定 go-tree-sitter、goquery、jsbeautifier-go 和一个 WARC 读取库的版本。所审阅的 main 提交日期为 2024-01-10；仓库包含 Go 单元测试和 JavaScript 测试样例，但没有 CI 工作流。",
+      "输入可以是 JavaScript 文件、会从中提取内联脚本的 HTML 页面、WARC 归档、通过标准输入传入的原始源码，或可附带 Cookie 和请求头抓取的 http(s) URL；输出为 JSONL。分析是静态的：拼接进来的运行时值显示为 EXPR 或自定义占位符，README 也承认这种方法并非万无一失，因此提取出的接口只是需要对照应用核实的线索。",
+      "secrets 模式内置的有效匹配器只覆盖 AWS、GCP 和 GitHub 密钥格式以及 Firebase 配置对象，另可加载用户提供的 JSON 模式文件；README 示例表明，未加锚点的自定义模式会匹配到意料之外的值。匹配结果只是模式命中，并非已确认的凭据，本条目也不记录使用该工具得到的任何值。",
+      "采用 MIT 许可，版权归 Bishop Fox（2023）。本次未构建或运行该工具。"
+    ]
   }
 }

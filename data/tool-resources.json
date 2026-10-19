@@ -15247,5 +15247,35 @@
       "https://github.com/rednaga/APKiD/releases/tag/v3.1.0",
       "https://pypi.org/project/apkid/3.1.0/"
     ]
+  },
+  {
+    "id": "jsluice",
+    "name": "jsluice",
+    "url": "https://github.com/BishopFox/jsluice",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Bishop Fox's Go library and command-line tool that parses JavaScript with tree-sitter to recover the endpoints a script calls, judging values by how the code uses them rather than by regular expressions alone. URL extraction follows location assignments, window.open, fetch, XMLHttpRequest and jQuery request calls, keeps the HTTP method, headers and query or body parameters, and stands in a placeholder for values only known at run time. Other modes flag credential-shaped values, print syntax trees, run tree-sitter queries and reformat minified code.",
+    "description_zh": "Bishop Fox 推出的 Go 库与命令行工具，借助 tree-sitter 解析 JavaScript，还原脚本所调用的接口地址；它依据代码如何使用某个值来判断，而不仅仅依靠正则表达式。URL 提取会跟踪 location 赋值、window.open、fetch、XMLHttpRequest 和 jQuery 请求调用，保留 HTTP 方法、请求头以及查询或请求体参数，并以占位符代替只有运行时才能确定的值。其他模式可标记形似凭据的值、打印语法树、运行 tree-sitter 查询以及格式化压缩代码。",
+    "evidence_url": "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/README.mkd",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The project publishes no releases or tags: the README installs the CLI with go install and the package with go get. go.mod declares Go 1.18 and pins go-tree-sitter, goquery, jsbeautifier-go and a WARC reader. The reviewed main commit dates from 2024-01-10; the repository has Go unit tests and JavaScript fixtures but no CI workflow.",
+      "Inputs are JavaScript files, HTML pages whose inline scripts it extracts, WARC archives, raw source on stdin, or http(s) URLs fetched with optional cookies and headers; output is JSONL. The analysis is static: concatenated runtime values appear as EXPR or a chosen placeholder, and the README calls the approach not foolproof, so extracted endpoints are leads to check against the application.",
+      "secrets mode ships active matchers only for AWS, GCP and GitHub key formats and Firebase configuration objects, plus user-supplied JSON pattern files; the README shows that unanchored custom patterns match unintended values. Matches are pattern hits, not confirmed credentials, and this entry records no values found with the tool.",
+      "MIT, copyright 2023 Bishop Fox. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/cmd/jsluice/README.mkd",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/go.mod",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/analyzer.go#L23-L43",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/secret-matchers.go#L91-L98",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/cmd/jsluice/main.go",
+      "https://github.com/BishopFox/jsluice/blob/0ddfab153e060a9eeaded4d8669233f7c071e7e4/LICENSE"
+    ]
   }
 ]
