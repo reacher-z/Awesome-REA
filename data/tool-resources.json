@@ -10296,5 +10296,40 @@
       "https://github.com/JonathanSalwan/Triton/releases/tag/v0.9",
       "https://pypi.org/project/triton-library/1.0.0rc4/"
     ]
+  },
+  {
+    "id": "pylingual",
+    "name": "PyLingual",
+    "url": "https://github.com/syssec-utd/pylingual",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Research decompiler for CPython bytecode from Python 3.6 onward that pairs per-version transformer models with control-flow reconstruction. A segmentation model splits bytecode into statements, a statement model translates each into source, and templates rebuild loops, conditionals, exception handlers, with blocks and match statements. The result is recompiled with the target Python version and its control flow compared with the original bytecode, and failing segments are retried with alternative segmentations; the design is described in the IEEE S&P 2025 paper “PyLingual: Toward Perfect Decompilation of Evolving High-Level Languages”.",
+    "description_zh": "面向 Python 3.6 及以后版本 CPython 字节码的研究型反编译器，将按版本训练的 Transformer 模型与控制流重建相结合。分段模型把字节码切分为语句，语句模型将每段翻译为源码，再由模板重建循环、条件分支、异常处理、with 块和 match 语句。生成结果会用目标 Python 版本重新编译，并与原字节码比较控制流，未通过的片段会改用其他分段方案重试；其设计见 IEEE S&P 2025 论文《PyLingual: Toward Perfect Decompilation of Evolving High-Level Languages》。",
+    "evidence_url": "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "First release at review: v0.0.1, published 2026-09-21, whose notes report decompilation rates of about 82–87% for Python 3.6–3.12 and about 71% for 3.13–3.15 on the separate pylingual_eval_dataset; these are project-reported figures. The reviewed main commit is 67 commits later and declares version 0.1.0. The README warns that this readability-focused codebase may initially regress in control-flow accuracy compared with the hosted service.",
+      "Installed from a clone with uv tool install; pyproject.toml requires Python 3.12+ and pulls in PyTorch, Transformers, Hugging Face Hub and xdis. Per-version segmentation and statement models are downloaded from the syssec-utd Hugging Face organization at their unpinned main revision and run on CUDA when available, otherwise on CPU. Model cards differ in declared licenses: the 3.12 statement model states Apache-2.0, while its segmenter states none.",
+      "Checking a reconstruction compiles it in the target version: uv-managed interpreters cover 3.8–3.15, while 3.6 and 3.7 need pyenv or pyenv-win, which --init-pyenv can install. An optional Redis instance caches model predictions, keyed by version and normalized bytecode but not by model revision. The pylingual.io web service is a hosted alternative, so confidential .pyc files should stay with the local CLI.",
+      "GPL-3.0-only. Passing the control-flow check does not prove that the recovered source is identical to the original, and recovered code keeps the original owner’s rights. Nothing was installed, no models were run and the paper was checked only for its bibliographic record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pyproject.toml",
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pylingual/decompiler_config.yaml",
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pylingual/decompiler.py",
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pylingual/equivalence_check.py",
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pylingual/models.py",
+      "https://github.com/syssec-utd/pylingual/tree/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/pylingual/control_flow_reconstruction/templates",
+      "https://github.com/syssec-utd/pylingual/blob/509ea92e560b2c2c99b0c9901bd33e404fbfb4b8/LICENSE",
+      "https://github.com/syssec-utd/pylingual/releases/tag/v0.0.1",
+      "https://huggingface.co/syssec-utd/py312-pylingual-v1-statement",
+      "https://doi.org/10.1109/SP61157.2025.00052"
+    ]
   }
 ]

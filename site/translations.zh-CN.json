@@ -3849,5 +3849,14 @@
       "README 示例针对调用方设置的寄存器处理原始指令字节；部分随附示例自行用 LIEF 加载可执行文件并钩住 libc 函数，示例中还包括附带题目二进制的 CTF 解题记录。CTest 运行 Python 单元测试，以及按架构将 Triton 语义与 Unicorn 模拟器对照的脚本；x86 脚本注明 Unicorn 2.1.1 不支持部分被测指令。",
       "采用 Apache-2.0 许可；Capstone、Z3、Bitwuzla、LLVM 和 Boost 沿用各自的许可证。符号分析结果只描述已执行的指令和已建模的状态。本次未分析任何二进制。"
     ]
+  },
+  "pylingual": {
+    "name": "PyLingual Python 字节码反编译器",
+    "requirements": [
+      "审阅时的首个版本为 v0.0.1，发布于 2026-09-21，其发布说明称在独立的 pylingual_eval_dataset 上，Python 3.6–3.12 的反编译成功率约为 82–87%，3.13–3.15 约为 71%；这些均为项目自报数据。所审阅的 main 提交比该版本晚 67 个提交，声明的版本为 0.1.0。README 提醒，这份注重可读性的代码在控制流准确度上起初可能不及在线服务。",
+      "需从克隆的仓库用 uv tool install 安装；pyproject.toml 要求 Python 3.12+，并依赖 PyTorch、Transformers、Hugging Face Hub 和 xdis。各版本的分段模型和语句模型从 syssec-utd 的 Hugging Face 组织下载，使用未固定的 main 修订版；有 CUDA 时在 GPU 上运行，否则使用 CPU。各模型卡声明的许可证不一：3.12 语句模型标为 Apache-2.0，其分段模型则未声明。",
+      "检查重建结果需要用目标版本编译：uv 管理的解释器覆盖 3.8–3.15，3.6 和 3.7 则需要 pyenv 或 pyenv-win，可通过 --init-pyenv 安装。可选的 Redis 实例用于缓存模型预测，缓存键包含版本和规范化后的字节码，但不包含模型修订版。pylingual.io 网页服务是托管的替代方案，因此机密的 .pyc 文件应只用本地命令行处理。",
+      "采用 GPL-3.0-only 许可。通过控制流检查并不能证明恢复出的源码与原始源码完全一致，恢复出的代码仍归原权利人所有。本次未安装或运行任何模型，论文仅核对了其书目信息。"
+    ]
   }
 }
