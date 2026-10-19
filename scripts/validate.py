@@ -16,6 +16,7 @@ from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
 from source_scope import read_scope, validate_scope
+from validate_papers import arxiv_doi_warnings
 from validate_papers import validate_papers
 from review_dates import review_date_is_future
 from source_descriptions import validate_description_capture
@@ -984,6 +985,9 @@ def main():
                                 env={**os.environ, 'PYTHONIOENCODING': 'utf-8'})
         if result.returncode:
             errors.append((result.stderr or result.stdout).strip() or f'{script}: generated content check failed.')
+    # Advisory: records that depart from the arXiv DOI rule never fail validation.
+    for warning in arxiv_doi_warnings(papers):
+        print(f'Warning: {warning}', file=sys.stderr)
     if errors:
         print(f'Validation failed with {len(errors)} issue(s):', file=sys.stderr)
         for error in errors:

@@ -22,7 +22,7 @@
 
 使用[论文推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)，写明论文的规范页面或 DOI、发表状态、研究的逆向任务，以及作者提供的代码或数据链接（如有）。论文可以公开访问，不代表其基准或评测服务也已公开。
 
-书目记录保存在 `data/papers.json`，与工具目录和自动扫描索引分开维护。提交 pull request 时，请参照[目录格式（英文）](data/README.md)中的论文字段表和已有记录，保留原始标题和作者全名；只记录已核实的日期精度，不要编造发表日期或会议日期。DOI、arXiv 标识和出版方身份等规则见英文指南的[论文部分](CONTRIBUTING.md#suggest-a-research-paper)。
+书目记录保存在 `data/papers.json`，与工具目录和自动扫描索引分开维护。提交 pull request 时，请参照[目录格式（英文）](data/README.md)中的论文字段表和已有记录，保留原始标题和作者全名；只记录已核实的日期精度，不要编造发表日期或会议日期。DOI、arXiv 标识和出版方身份等规则见英文指南的[论文部分](CONTRIBUTING.md#suggest-a-research-paper)。预印本在 DataCite 显示已注册后同时记录其 arXiv DOI（`10.48550/arXiv.<arxiv_id>`）；已接收或已发表的论文 `doi` 只填出版方 DOI，尚无出版方 DOI 时保持 `null`。
 
 ## kind、relationship、category 与 targets
 

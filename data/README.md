@@ -56,7 +56,7 @@ Each paper record has exactly these fields; the validator rejects missing or ext
 | `arxiv_id` | arXiv identifier such as `2403.05286`, or `null` | arXiv paper identifier without a version suffix |
 | `arxiv_version_reviewed` | `v1`, `v2`, … or `null` | arXiv version checked; `null` when there is no `arxiv_id` |
 | `first_arxiv_date` | ISO date or `null` | First arXiv submission date; `null` when there is no `arxiv_id` |
-| `doi` | DOI such as `10.18653/v1/2024.emnlp-main.203`, or `null` | Paper DOI, never a software or dataset DOI |
+| `doi` | DOI such as `10.18653/v1/2024.emnlp-main.203`, or `null` | Paper DOI, never a software or dataset DOI. A preprint records its registered arXiv DOI, `10.48550/arXiv.<arxiv_id>`; accepted and published papers record only a publisher DOI, or `null` until one exists |
 | `citation` | Optional object; omit when unverified | Published papers only. `container_title` and, where the publisher states them, `volume`, `issue`, `series`, `pages` (`first-last`), `article_number` and `publisher`, copied from the sources listed in `sources` (the paper URL, PDF or `evidence_urls`). BibTeX uses them; cards and READMEs keep `venue` |
 | `url` | HTTPS URL | Canonical paper page, unique in the bibliography |
 | `pdf_url` | HTTPS URL | Public PDF of the paper |

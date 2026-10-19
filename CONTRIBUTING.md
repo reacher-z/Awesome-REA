@@ -80,6 +80,8 @@ Bibliographic records live in `data/papers.json`, separately from the tool catal
 
 Use a verified paper DOI or arXiv identifier whenever available. Never substitute a software or dataset DOI for a paper identifier. A published conference or workshop paper without either may use a reviewed publisher identity. Supported profiles pair a canonical USENIX Security presentation page with `/system/files/secYY-presenter.pdf`, or a WOOT presentation page with `/system/files/conference/wootYY/wootYY-paper-presenter.pdf`. WOOT 19 instead uses `/system/files/woot19-paper_presenter.pdf`; suffixed copies such as `woot19-paper_presenter_0.pdf` are not covered. The series, year and presenter must match, and both exact URLs must appear in `evidence_urls`. Other publisher profiles require a separate validator review. Preprints and accepted-but-unpublished papers still require a paper identifier. URL matching records an auditable source-review contract; reviewers must verify the actual publication, authors, date and PDF.
 
+A preprint also records its arXiv DOI, `10.48550/arXiv.<arxiv_id>`, once DataCite lists it as registered; accepted and published papers keep `doi` for the publisher DOI and leave it `null` until one exists. `validate_papers.py` rejects an arXiv DOI that does not match `arxiv_id` and warns about records that depart from this rule.
+
 ## Reconstruction cases
 
 Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml) in English or Simplified Chinese. Separate the original inputs, reconstructed output and evidence; partial or untested cases can be suggested.

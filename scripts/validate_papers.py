@@ -34,6 +34,11 @@ CITATION_PATTERNS = {
     'pages': re.compile(r'([1-9]\d*)(?:-([1-9]\d*))?'), 'article_number': re.compile(r'[A-Za-z0-9]+'),
 }
 ARXIV_ID = re.compile(r'\d{4}\.\d{4,5}')
+ARXIV_DOI_PREFIX = '10.48550/'
+
+
+def arxiv_doi(arxiv_id):
+    return f'10.48550/arXiv.{arxiv_id}'
 
 
 def read_papers(root=ROOT):
@@ -203,6 +208,10 @@ def validate_papers(records, errors, *, url_check, now=None):
                 paper_month = (2000 + int(value[:2]), int(value[2:4]))
                 if not 1 <= paper_month[1] <= 12 or paper_month > (today.year, today.month):
                     errors.append(f'{where}.arxiv_id: invalid or future submission month')
+        # arXiv mints its DataCite DOI from the arXiv ID, so any other suffix names a different paper.
+        if (isinstance(doi, str) and doi.casefold().startswith(ARXIV_DOI_PREFIX)
+                and (not isinstance(arxiv, str) or doi.casefold() != arxiv_doi(arxiv).casefold())):
+            errors.append(f'{where}.doi: an arXiv DOI must be 10.48550/arXiv.<arxiv_id> for the arxiv_id of this record')
         if version is not None and (not isinstance(version, str) or not re.fullmatch(r'v[1-9]\d*', version)):
             errors.append(f'{where}.arxiv_version_reviewed: use v followed by a positive integer or null')
         if arxiv is None and (version is not None or record.get('first_arxiv_date') is not None):
@@ -233,6 +242,32 @@ def validate_papers(records, errors, *, url_check, now=None):
                 errors.append(f'{where}.evidence_urls: {problem}')
         if 'citation' in record:
             validate_citation(record, evidence, where, errors)
+
+
+def arxiv_doi_warnings(records):
+    """Advisory only: name records that depart from the arXiv DOI rule in data/README.md.
+
+    Preprints record their registered arXiv DOI; accepted and published papers keep `doi`
+    for a publisher DOI. Registration can lag a new posting and is checked against
+    DataCite by reviewers, so these lines never fail validation.
+    """
+    missing, misplaced = [], []
+    for record in records if isinstance(records, list) else []:
+        if not isinstance(record, dict):
+            continue
+        doi, status = record.get('doi'), record.get('publication_status')
+        if status == 'preprint' and isinstance(record.get('arxiv_id'), str) and doi is None:
+            missing.append(str(record.get('id')))
+        elif status != 'preprint' and isinstance(doi, str) and doi.casefold().startswith(ARXIV_DOI_PREFIX):
+            misplaced.append(str(record.get('id')))
+    warnings = []
+    if missing:
+        warnings.append(f'{len(missing)} arXiv preprint(s) leave doi null; record the registered '
+                        f'10.48550/arXiv.<arxiv_id> DOI: {", ".join(missing)}')
+    if misplaced:
+        warnings.append(f'{len(misplaced)} accepted or published paper(s) store an arXiv DOI; keep doi for the '
+                        f'publisher DOI, or null until one exists: {", ".join(misplaced)}')
+    return warnings
 
 
 def validate_citation(record, evidence, where, errors):
@@ -275,6 +310,8 @@ def main():
         print('Paper catalog could not be read as strict JSON.', file=sys.stderr)
         return 1
     validate_papers(records, errors, url_check=public_https_error)
+    for warning in arxiv_doi_warnings(records):
+        print('Warning: ' + warning, file=sys.stderr)
     if errors:
         for error in errors:
             print('- ' + error, file=sys.stderr)

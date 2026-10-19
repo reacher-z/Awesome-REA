@@ -280,7 +280,7 @@
     "arxiv_id": "2605.10597",
     "arxiv_version_reviewed": "v1",
     "first_arxiv_date": "2026-05-11",
-    "doi": null,
+    "doi": "10.48550/arXiv.2605.10597",
     "url": "https://arxiv.org/abs/2605.10597",
     "pdf_url": "https://arxiv.org/pdf/2605.10597",
     "code_url": null,
@@ -296,16 +296,17 @@
     "why_fits_zh": "直接衡量自主逆向工程流程能否产生可验证、被目标程序接受的结果。",
     "evidence_urls": [
       "https://arxiv.org/abs/2605.10597",
-      "https://arxiv.org/html/2605.10597v1"
+      "https://arxiv.org/html/2605.10597v1",
+      "https://api.datacite.org/dois/10.48550/arXiv.2605.10597"
     ],
-    "metadata_notes": "No conference venue is stated in the reviewed arXiv record. Tool repositories cited in its bibliography are not treated as the paper's own code.",
+    "metadata_notes": "No conference venue is stated in the reviewed arXiv record. Tool repositories cited in its bibliography are not treated as the paper's own code. DataCite records the arXiv DOI as registered on 2026-05-12 and findable.",
     "kind": "research",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "CrackMeBench：面向智能体的二进制逆向工程基准",
     "date_basis_zh": "arXiv v1 首次提交日期。",
-    "metadata_notes_zh": "所审阅 arXiv 记录未标明会议发表场所。参考文献中的工具仓库不视为论文自己的代码产物。"
+    "metadata_notes_zh": "所审阅 arXiv 记录未标明会议发表场所。参考文献中的工具仓库不视为论文自己的代码产物。DataCite 记载该 arXiv DOI 已于 2026-05-12 注册，且处于可检索状态。"
   },
   {
     "id": "paper-crebench",
@@ -387,7 +388,7 @@
     "arxiv_id": "2608.11469",
     "arxiv_version_reviewed": "v2",
     "first_arxiv_date": "2026-08-11",
-    "doi": null,
+    "doi": "10.48550/arXiv.2608.11469",
     "url": "https://arxiv.org/abs/2608.11469",
     "pdf_url": "https://arxiv.org/pdf/2608.11469",
     "code_url": null,
@@ -403,16 +404,17 @@
     "why_fits_zh": "为智能体辅助逆向补充真实规模和数据污染控制的评估背景，同时明确私有语料的访问限制。",
     "evidence_urls": [
       "https://arxiv.org/abs/2608.11469",
-      "https://arxiv.org/html/2608.11469v2"
+      "https://arxiv.org/html/2608.11469v2",
+      "https://api.datacite.org/dois/10.48550/arXiv.2608.11469"
     ],
-    "metadata_notes": "Use the 12-author v2 list, revised 2026-10-01, rather than the older eight-author v1 search snippets. No conference venue or own public code repository was verified. AgentRE-Bench GitHub links in the bibliography refer to another benchmark.",
+    "metadata_notes": "Use the 12-author v2 list, revised 2026-10-01, rather than the older eight-author v1 search snippets. No conference venue or own public code repository was verified. AgentRE-Bench GitHub links in the bibliography refer to another benchmark. DataCite records the arXiv DOI as registered on 2026-08-13 and findable.",
     "kind": "research",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "智能体网络安全的下一项挑战：真实场景且无训练数据污染的逆向工程基准",
     "date_basis_zh": "arXiv v1 首次提交日期；摘要与作者名单依据修订版 v2。",
-    "metadata_notes_zh": "使用 2026-10-01 修订的 v2 十二位作者名单，而非旧 v1 搜索摘要中的八位作者。未确认会议发表场所或论文自己的公开代码仓库。参考文献中的 AgentRE-Bench GitHub 链接属于另一项基准。"
+    "metadata_notes_zh": "使用 2026-10-01 修订的 v2 十二位作者名单，而非旧 v1 搜索摘要中的八位作者。未确认会议发表场所或论文自己的公开代码仓库。参考文献中的 AgentRE-Bench GitHub 链接属于另一项基准。DataCite 记载该 arXiv DOI 已于 2026-08-13 注册，且处于可检索状态。"
   },
   {
     "id": "paper-humans-machines-sre",
@@ -434,7 +436,7 @@
     "arxiv_id": "2610.14960",
     "arxiv_version_reviewed": "v1",
     "first_arxiv_date": "2026-10-10",
-    "doi": null,
+    "doi": "10.48550/arXiv.2610.14960",
     "url": "https://arxiv.org/abs/2610.14960",
     "pdf_url": "https://arxiv.org/pdf/2610.14960",
     "code_url": null,
@@ -450,16 +452,17 @@
     "why_fits_zh": "为逆向智能体的工具接口、选择性检索及持久分析状态设计提供依据。",
     "evidence_urls": [
       "https://arxiv.org/abs/2610.14960",
-      "https://arxiv.org/html/2610.14960v1"
+      "https://arxiv.org/html/2610.14960v1",
+      "https://api.datacite.org/dois/10.48550/arXiv.2610.14960"
     ],
-    "metadata_notes": "Recent preprint, with no confirmed conference venue or paper-specific public code link. arXiv marks its generated DOI as pending registration, so the canonical link is the arXiv record.",
+    "metadata_notes": "Recent preprint, with no confirmed conference venue or paper-specific public code link. DataCite records its arXiv DOI as registered on 2026-10-14 and findable; the canonical link remains the arXiv record.",
     "kind": "research",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
     "runtime_tested": false,
     "title_zh": "人类与机器：AI 智能体在软件逆向工程中的对比研究",
     "date_basis_zh": "arXiv v1 首次提交日期。",
-    "metadata_notes_zh": "这是一篇近期预印本，尚未确认会议发表场所或论文专属公开代码链接。arXiv 将其生成的 DOI 标为待注册，因此采用 arXiv 记录作为规范链接。"
+    "metadata_notes_zh": "这是一篇近期预印本，尚未确认会议发表场所或论文专属公开代码链接。DataCite 记载其 arXiv DOI 已于 2026-10-14 注册，且处于可检索状态；规范链接仍为 arXiv 记录。"
   },
   {
     "id": "paper-design2code",
@@ -770,8 +773,8 @@
     "scope_limitations_zh": "任务覆盖以规则为核心的网页解谜和棋盘游戏，不代表原生或商业游戏重建能力。规则、实现和视觉评分使用 LLM 评审，不能证明行为等价。官方网站提供演示，尚未核实基准代码仓库。",
     "why_fits_en": "Directly evaluates active black-box specification recovery and executable game reconstruction, filling the bibliography’s game-replication gap.",
     "why_fits_zh": "直接评估主动黑盒规格恢复与可执行游戏重建，补充书目中的游戏复刻研究。",
-    "metadata_notes": "The official project page marks the work as under review. arXiv reports the v1 submission on 2026-09-15 and displays its arXiv DOI as pending registration. The project link is a showcase with demos, not a verified release of the full evaluation framework.",
-    "metadata_notes_zh": "官方项目页将该工作标注为审稿中。arXiv 记载 v1 于 2026-09-15 提交，并将其 arXiv DOI 标注为待注册。项目链接为含演示的展示页，不代表已核实发布完整评测框架。",
+    "metadata_notes": "The official project page marks the work as under review. arXiv reports the v1 submission on 2026-09-15, and DataCite records the arXiv DOI as registered on 2026-09-22 and findable. The project link is a showcase with demos, not a verified release of the full evaluation framework.",
+    "metadata_notes_zh": "官方项目页将该工作标注为审稿中。arXiv 记载 v1 于 2026-09-15 提交；DataCite 记载其 arXiv DOI 已于 2026-09-22 注册，且处于可检索状态。项目链接为含演示的展示页，不代表已核实发布完整评测框架。",
     "kind": "research",
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
@@ -779,7 +782,8 @@
     "evidence_urls": [
       "https://arxiv.org/abs/2609.22308",
       "https://arxiv.org/html/2609.22308v1",
-      "https://qqqqqqby.github.io/GameReplica/"
+      "https://qqqqqqby.github.io/GameReplica/",
+      "https://api.datacite.org/dois/10.48550/arXiv.2609.22308"
     ]
   },
   {
@@ -1132,7 +1136,7 @@
     "arxiv_id": "2605.03546",
     "arxiv_version_reviewed": "v1",
     "first_arxiv_date": "2026-05-05",
-    "doi": "10.48550/arXiv.2605.03546",
+    "doi": null,
     "url": "https://arxiv.org/abs/2605.03546",
     "pdf_url": "https://arxiv.org/pdf/2605.03546v1",
     "code_url": "https://github.com/facebookresearch/ProgramBench",
@@ -1147,8 +1151,8 @@
     "scope_limitations_zh": "推理阶段禁止检查二进制内容、反编译和访问互联网。通过有限测试不能证明完整行为等价或恢复了原始源码。实时榜单中的后续运行结果应与所审阅 arXiv 版本的结果区分。",
     "why_fits_en": "Provides an executable benchmark for recovering software behavior through experiments, complementing benchmarks that permit static binary analysis.",
     "why_fits_zh": "为通过实验恢复软件行为提供可执行基准，与允许静态二进制分析的评测互为补充。",
-    "metadata_notes": "NeurIPS lists a December 2026 poster; this records acceptance, not proceedings publication. The July 2026 DL4C oral was a separate non-archival workshop appearance. The DOI identifies the arXiv preprint. The pinned harness is version 1.2.5 under MIT; its generated-test dataset preserves per-task attribution and upstream license terms, including copyleft obligations for derivative portions.",
-    "metadata_notes_zh": "NeurIPS 列出 2026 年 12 月的海报报告；本条记录接收状态，不视为论文集已出版。2026 年 7 月的 DL4C 口头报告属于另一次非存档研讨会展示。DOI 指向 arXiv 预印本。固定版本的评测程序为 1.2.5，采用 MIT 许可；生成测试数据集保留逐任务署名与上游许可条款，包括衍生部分的 copyleft 义务。",
+    "metadata_notes": "NeurIPS lists a December 2026 poster; this records acceptance, not proceedings publication. The July 2026 DL4C oral was a separate non-archival workshop appearance. DOI stays null until the proceedings assign a publisher DOI; the preprint’s arXiv DOI follows from its arXiv ID. The pinned harness is version 1.2.5 under MIT; its generated-test dataset preserves per-task attribution and upstream license terms, including copyleft obligations for derivative portions.",
+    "metadata_notes_zh": "NeurIPS 列出 2026 年 12 月的海报报告；本条记录接收状态，不视为论文集已出版。2026 年 7 月的 DL4C 口头报告属于另一次非存档研讨会展示。在论文集分配出版方 DOI 之前，DOI 字段留空；预印本的 arXiv DOI 可由其 arXiv 编号推得。固定版本的评测程序为 1.2.5，采用 MIT 许可；生成测试数据集保留逐任务署名与上游许可条款，包括衍生部分的 copyleft 义务。",
     "evidence_urls": [
       "https://arxiv.org/abs/2605.03546",
       "https://arxiv.org/html/2605.03546v1",
@@ -4288,7 +4292,7 @@
     "arxiv_id": "2606.17398",
     "arxiv_version_reviewed": "v2",
     "first_arxiv_date": "2026-06-16",
-    "doi": null,
+    "doi": "10.48550/arXiv.2606.17398",
     "url": "https://arxiv.org/abs/2606.17398",
     "pdf_url": "https://arxiv.org/pdf/2606.17398v2",
     "code_url": null,
@@ -4302,14 +4306,15 @@
     "scope_limitations_zh": "这是一篇文献系统化综述，不包含新的实验、基准或工具；它对已报告的结果进行分类和总结，并未复现。语料涵盖截至 2026 年 7 月 31 日可获得的论文，引用量门槛从 2015—2016 年论文的 12 次逐步降至 2025—2026 年论文的 2 次，排除推断时需要源码的方法，也不包括 Android 与解释型语言字节码。各阶段的详细表格基于 88 项顶级会议研究，而非完整语料。它是未注明发表场所的 arXiv 预印本，本条目不声称其经过同行评审。其引用的论文并不因此纳入本合集，每篇都需要单独审阅。",
     "why_fits_en": "Provides a structured map of ML, LLM and agent research across binary reversing tasks, helping place the collection’s binary-analysis papers and locate related work that still needs individual review.",
     "why_fits_zh": "为跨二进制逆向任务的机器学习、大语言模型与智能体研究提供结构化地图，有助于定位本合集中的二进制分析论文，并找出仍需逐篇审阅的相关工作。",
-    "metadata_notes": "Reviewed arXiv v2 (2026-09-04; comment “21 pages, 7 tables, 4 figures”), which lists five authors and 246 papers; this record follows the v2 author list. v1 (2026-06-16; “20 pages, 7 tables, 3 figures”) listed six authors, Yujeong Kwon, Yiyue Zhang, Shakhzod Yuldoshkhujaev, Kexin Pei, Dokyung Song and Hyungjoon Koo, and analyzed 144 papers published between 2015 and 2025. Neither version states a venue or journal reference. Footnote 1 in both versions links the companion site, an interactive JavaScript table of the surveyed papers grouped by domain with links to their publications; no source repository is linked, so code_url is null. The site and its paper list may change after this review. No experiments or site code were run.",
-    "metadata_notes_zh": "审阅 arXiv v2（2026-09-04；备注为“21 pages, 7 tables, 4 figures”），该版列出五位作者及 246 篇论文；本条目采用 v2 的作者列表。v1（2026-06-16；“20 pages, 7 tables, 3 figures”）列出六位作者：Yujeong Kwon、Yiyue Zhang、Shakhzod Yuldoshkhujaev、Kexin Pei、Dokyung Song 与 Hyungjoon Koo，并分析了 2015 至 2025 年发表的 144 篇论文。两个版本均未注明发表场所或期刊信息。两版的脚注 1 都链接到配套网站，这是一个按领域分组列出所综述论文并链接其出版页面的交互式 JavaScript 表格；未链接源码仓库，因此 code_url 为空。网站及其论文列表可能在本次审阅后变化。本次未运行任何实验或网站代码。",
+    "metadata_notes": "Reviewed arXiv v2 (2026-09-04; comment “21 pages, 7 tables, 4 figures”), which lists five authors and 246 papers; this record follows the v2 author list. v1 (2026-06-16; “20 pages, 7 tables, 3 figures”) listed six authors, Yujeong Kwon, Yiyue Zhang, Shakhzod Yuldoshkhujaev, Kexin Pei, Dokyung Song and Hyungjoon Koo, and analyzed 144 papers published between 2015 and 2025. Neither version states a venue or journal reference. Footnote 1 in both versions links the companion site, an interactive JavaScript table of the surveyed papers grouped by domain with links to their publications; no source repository is linked, so code_url is null. The site and its paper list may change after this review. No experiments or site code were run. DataCite records the arXiv DOI as registered on 2026-06-17 and findable.",
+    "metadata_notes_zh": "审阅 arXiv v2（2026-09-04；备注为“21 pages, 7 tables, 4 figures”），该版列出五位作者及 246 篇论文；本条目采用 v2 的作者列表。v1（2026-06-16；“20 pages, 7 tables, 3 figures”）列出六位作者：Yujeong Kwon、Yiyue Zhang、Shakhzod Yuldoshkhujaev、Kexin Pei、Dokyung Song 与 Hyungjoon Koo，并分析了 2015 至 2025 年发表的 144 篇论文。两个版本均未注明发表场所或期刊信息。两版的脚注 1 都链接到配套网站，这是一个按领域分组列出所综述论文并链接其出版页面的交互式 JavaScript 表格；未链接源码仓库，因此 code_url 为空。网站及其论文列表可能在本次审阅后变化。本次未运行任何实验或网站代码。DataCite 记载该 arXiv DOI 已于 2026-06-17 注册，且处于可检索状态。",
     "evidence_urls": [
       "https://arxiv.org/abs/2606.17398v2",
       "https://arxiv.org/pdf/2606.17398v2",
       "https://arxiv.org/abs/2606.17398v1",
       "https://arxiv.org/pdf/2606.17398v1",
-      "https://sok-aire.vercel.app"
+      "https://sok-aire.vercel.app",
+      "https://api.datacite.org/dois/10.48550/arXiv.2606.17398"
     ],
     "kind": "research",
     "verified_at": "2026-10-18",
