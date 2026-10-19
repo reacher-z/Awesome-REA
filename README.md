@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 61](https://img.shields.io/badge/papers-61-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 62](https://img.shields.io/badge/papers-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (61) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (62) · [Agents and MCP](#agents-and-mcp) (23) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1893,13 +1893,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**61 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**62 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (15) · [Websites](#papers-website-reconstruction) (13)
+- [Agent evaluation](#papers-agent-evaluation) (6) · [Decompilation](#papers-decompilation) (16) · [Websites](#papers-website-reconstruction) (13)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (9)
 
@@ -2182,6 +2182,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The model is trained on a single architecture (x86, per the paper’s discussion); cross-architecture search is not evaluated. Only direct jumps are encoded, and indirect-jump targets are left out of scope. Disassembly and function extraction rely on IDA Pro 7.5, so boundary errors upstream are not measured. BinaryCorp pairs gcc/g++ builds across O0–O3 and Os, with train and test split by project; it does not cover obfuscation or other compilers, and only the vulnerability study adds clang variants. Author-reported Recall<span>@</span>1 at pool size 10,000 on BinaryCorp-26M averages 62.5% against 32.0% for the best baseline, and accuracy still falls as pools grow, which the authors note for larger real-world pools. The vulnerability search uses eight CVEs with ten variants each. Baselines date from 2022, and Asm2Vec and OrderMatters were reimplemented, so the comparison does not establish current rankings. Similarity ranking identifies candidate matches; it does not recover source code, names or types.
 
   **Publication:** 2022 · ACM ISSTA 2022 · Conference paper · Hao Wang et al.
+
+  </details>
+
+- [**Neural reverse engineering of stripped binaries using augmented control flow graphs**](https://dl.acm.org/doi/10.1145/3428293)
+
+  Nero predicts names for procedures in stripped x86-64 Linux executables; it does not produce decompiled code. Static analysis reconstructs call sites, including imported API names, and augments their arguments with concrete and abstract values along control-flow paths. LSTM, Transformer and graph neural network encoders over the resulting augmented call-site graph feed a decoder that generates the name as subtokens. On a GNU-package test set the authors report 45.53 F1 for Nero-GNN, against 35.52 for an adapted DIRE and 33.66 for Debin.
+
+  2020 · Journal article · [PDF](https://arxiv.org/pdf/1902.09122v4) · [Code](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [Full entry & citation](https://awesomerea.org/papers/paper-nero/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Evaluation uses 67,246 procedures from C-only GNU packages built as x86-64 Linux executables, split by package into 60,403/2,034/4,809 examples after removing C++ executables, tests, statically linked packages and duplicate package versions. Labels come from names present before stripping, and F1 is measured over name subtokens, so outputs are learned suggestions rather than recovered original symbols. Simulated API-name obfuscation, which zeroes the .dynstr section, lowers Nero-GNN to 38.83 F1; packers and heavier obfuscation are not addressed. A procedure needs at least one statically detectable call site, and inlined procedures cannot be named. Data generation relied on a licensed IDA Pro (tested with 6.95) for procedure boundaries and export, plus angr and LLVM 10, and the model code uses TensorFlow 1.13.1; no claim is made about compatibility with current tool versions.
+
+  **Publication:** 2020 · Proceedings of the ACM on Programming Languages (OOPSLA 2020) · Journal article · Yaniv David et al.
 
   </details>
 

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 297](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 61](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-61-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 297](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 151](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 62](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-62-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (61) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (62) · [智能体与 MCP](#agents-and-mcp) (23) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1894,13 +1894,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**61 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**62 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (15) · [网站](#papers-website-reconstruction) (13)
+- [智能体评测](#papers-agent-evaluation) (6) · [反编译](#papers-decompilation) (16) · [网站](#papers-website-reconstruction) (13)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (9)
 
@@ -2183,6 +2183,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 模型仅在单一架构上训练（据论文讨论部分为 x86），未评估跨架构检索。方法只编码直接跳转，间接跳转目标不在研究范围内。反汇编与函数提取依赖 IDA Pro 7.5，上游的边界识别错误未被衡量。BinaryCorp 在 O0–O3 与 Os 之间配对 gcc／g++ 构建结果，并按项目划分训练集与测试集；它不涵盖混淆或其他编译器，只有漏洞检索实验额外加入 clang 变体。作者报告在 BinaryCorp-26M、候选池规模为 10,000 时，平均 Recall<span>@</span>1 为 62.5%，最佳基线为 32.0%；随着候选池增大，准确率仍会下降，作者也指出真实场景的候选池更大。漏洞检索实验使用八个 CVE，每个有十个变体。基线来自 2022 年，其中 Asm2Vec 与 OrderMatters 为重新实现，因此该比较不能确立当前排名。相似性排序只给出候选匹配，并不恢复源码、名称或类型。
 
   **发表信息:** 2022 · ACM ISSTA 2022 · 会议论文 · Hao Wang 等
+
+  </details>
+
+- [**基于增强控制流图的剥离符号二进制神经逆向工程**](https://dl.acm.org/doi/10.1145/3428293)
+
+  Nero 为剥离符号的 x86-64 Linux 可执行文件中的过程预测名称，并不生成反编译代码。它通过静态分析重建调用点（包括导入的 API 名称），并沿控制流路径为参数补充具体值与抽象值。LSTM、Transformer 与图神经网络编码器处理由此得到的增强调用点图，再由解码器以子词序列生成名称。在 GNU 软件包测试集上，作者报告 Nero-GNN 的 F1 为 45.53，改造后的 DIRE 为 35.52，Debin 为 33.66。
+
+  2020 · 期刊论文 · [PDF](https://arxiv.org/pdf/1902.09122v4) · [代码](https://github.com/tech-srl/Nero/tree/7dac9f5748974ea8f39b5f29bb3c7d33f971077e) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-nero/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评测使用来自纯 C 语言 GNU 软件包、构建为 x86-64 Linux 可执行文件的 67,246 个过程；在剔除 C++ 可执行文件、测试程序、静态链接软件包及同一软件包的重复版本后，按软件包划分为 60,403／2,034／4,809 个样本。标签取自剥离前的名称，F1 按名称子词计算，因此输出是模型学到的建议，而非恢复出的原始符号。模拟 API 名称混淆（将 .dynstr 节清零）会使 Nero-GNN 的 F1 降至 38.83；论文未处理加壳和更强的混淆。每个过程至少需要一个可静态检测的调用点，内联过程无法命名。数据生成依赖已授权的 IDA Pro（测试版本 6.95）识别过程边界并导出，另需 angr 与 LLVM 10；模型代码使用 TensorFlow 1.13.1。本条不对与当前工具版本的兼容性作任何判断。
+
+  **发表信息:** 2020 · Proceedings of the ACM on Programming Languages (OOPSLA 2020) · 期刊论文 · Yaniv David 等
 
   </details>
 
