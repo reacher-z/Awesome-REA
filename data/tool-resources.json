@@ -14174,5 +14174,40 @@
       "https://github.com/SAT-R/sa2/blob/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/src/data/sa2/recordings.c",
       "https://github.com/SAT-R/sa2/tree/393357f7c9d46b5c10b6c41a57b80fe3b58f3c8d/libagbsyscall"
     ]
+  },
+  {
+    "id": "paleblood-bloodborne-functional-decomp-case",
+    "name": "Paleblood: a functional decompilation of Bloodborne with its own runtime",
+    "url": "https://github.com/Yharnam-Hunters/Paleblood",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Rewrites code from Bloodborne’s PS4 executable (CUSA03173 with update 1.09) as readable C++, one function at a time, aiming at a native PC source port on a clean-room runtime of its own. It is a functional rather than matching decompilation: each replacement is hooked in, compared with the original machine code on recorded and generated inputs, and independently reviewed. Work is at an early stage: README reports 21 of 157,757 functions verified, and the game does not yet run on Paleblood’s own runtime.",
+    "description_zh": "将 Bloodborne PS4 可执行文件（CUSA03173，含 1.09 更新）的代码逐个函数改写为可读的 C++，目标是在项目以净室方式自行编写的运行时上实现原生 PC 源码移植。它追求功能等价而非字节一致：每个替换函数都以钩子接入，在录制与生成的输入上与原始机器码对照比较，再经独立审核。项目仍处早期：README 报告 157,757 个函数中已验证 21 个，游戏尚不能在 Paleblood 自己的运行时上运行。",
+    "evidence_url": "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-10-19 head, 12 days after the first commit. The generated status reports 31 functions replaced and 21 verified out of a 157,757-function Ghidra export; the project’s loader maps the executable, and its boot stops at the first unimplemented system call with 247 of 686 system imports implemented. Replacements cover parts of the frame loop and the event, kernel, input, AI, character, physics and render layers, and BB_TARGET_FPS reproduces three community frame-rate patches in code.",
+      "Requires Bloodborne CUSA03173 (EU) with the 1.09 update, dumped from the user’s own PS4; the executables converted from it must match target.sha256. README says the repository holds no game code, assets, binaries, decompiler output or extracted data, a check rejects game data in the pre-commit hook and CI, and the project does not provide or point to game files, pkgs, firmware, keys or decryption tools.",
+      "Development is documented on Linux with CMake 3.20+ and CTest, plus Ghidra 12.0.3 with the GhidraOrbis loader for analysis. Full game runs still use an external scaffold: third_party/bbport, the project’s fork of the GPL-2.0-or-later bloodborne_pc port, which runs the original executable natively with shadPS4-derived Vulkan rendering. CI does not fetch that submodule.",
+      "README says tools/verify.py runs the original code and a replacement side by side, comparing return values, registers, every byte written and every library call, and that deliberately wrong versions must fail; options that replace a community patch are checked against the original with that patch applied. CI builds with GCC and Clang and runs unit, harness and policy checks without game data, so verification against the game is contributor-run and project-reported; this collection ran nothing.",
+      "GPL-2.0-or-later per LICENSE; the bbport scaffold has its own GPL-2.0-or-later notice, which README says grants no right in the game or its code. README calls Paleblood a fan project unaffiliated with Sony Interactive Entertainment or FromSoftware and describes the runtime as clean-room. CONTRIBUTING.md allows disclosed, verified AI-assisted work, and recent commits carry Co-Authored-By trailers naming Claude Opus 5.5 and Codex; no REA use is documented."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/STATUS.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/CONTRIBUTING.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/docs/VERIFY.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/docs/ONBOARDING.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/docs/GHIDRA.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/target.sha256",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/third_party/README.md",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/.github/workflows/ci.yml",
+      "https://github.com/Yharnam-Hunters/Paleblood/blob/1d418eba692745d8fc0a7d77a04d1bca56badab8/LICENSE",
+      "https://github.com/Yharnam-Hunters/bbport/blob/accdce33b89d45fa3c7f5066e69362a5ec215c1a/README.md"
+    ]
   }
 ]

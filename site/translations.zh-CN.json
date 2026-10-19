@@ -4706,5 +4706,15 @@
       "在 GBA 平台上，make 会按所列哈希值对构建出的 ROM 做 SHA-1 校验。CI 检查代码格式，构建并校验 SA2 美版、SA1 欧版及另外四个 SA2 版本；还在 Ubuntu 和 macOS 上为两款游戏构建 SDL、Win32、PSP 和 PS2 移植目标，并用无界面的 SDL 构建回放仓库中的一段 any% 速通输入录制。一致性只针对 GBA ROM，不适用于宽屏移植版；本合集未自行构建。",
       "仓库没有许可证文件，GitHub 也未识别出许可证。提取出的图像、音乐和数据，以及在 libagbsyscall、m4a 和 agb_flash 中重建的 Nintendo SDK 库，仍受其权利人条款约束。README 规定对议题和拉取请求严格禁止使用 LLM／AI；所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "paleblood-bloodborne-functional-decomp-case": {
+    "name": "Paleblood：带自有运行时的 Bloodborne 功能等价反编译",
+    "requirements": [
+      "审阅的是 2026-10-19 的最新提交，距首次提交 12 天。自动生成的状态显示，在 157,757 个函数的 Ghidra 导出中已替换 31 个、验证 21 个；项目自己的加载器可映射可执行文件，启动流程停在第一个尚未实现的系统调用处，686 个系统导入中已实现 247 个。替换内容涵盖帧循环的部分代码，以及事件、内核、输入、AI、角色、物理和渲染层中的函数；BB_TARGET_FPS 以代码方式重现了三个社区帧率补丁。",
+      "需要 Bloodborne CUSA03173（欧版）及 1.09 更新，并须从使用者自己的 PS4 上转储；由此转换得到的可执行文件须与 target.sha256 一致。README 称仓库不含任何游戏代码、素材、二进制文件、反编译器输出或提取数据，预提交钩子和 CI 中的检查会拒绝游戏数据，项目也不提供或指向游戏文件、pkg、固件、密钥或解密工具。",
+      "文档说明的开发环境为 Linux，需 CMake 3.20+ 与 CTest，分析时使用 Ghidra 12.0.3 及 GhidraOrbis 加载器。完整运行游戏目前仍依赖外部脚手架 third_party/bbport：这是项目对采用 GPL-2.0-or-later 的 bloodborne_pc 移植所建的分支，以原生方式运行原始可执行文件，并用源自 shadPS4 的 Vulkan 代码渲染。CI 不获取该子模块。",
+      "README 称 tools/verify.py 会并排运行原始代码与替换函数，比较返回值、寄存器、每个写入的字节和每次库调用，且故意写错的版本必须无法通过；替代社区补丁的选项则与打过该补丁的原版对照验证。CI 使用 GCC 与 Clang 构建，并在没有游戏数据的情况下运行单元、测试框架和规则检查，因此针对游戏本身的验证由贡献者运行、属项目报告；本合集未运行任何内容。",
+      "依 LICENSE 采用 GPL-2.0-or-later；bbport 脚手架另有 GPL-2.0-or-later 声明，README 称该声明不授予游戏或其代码的任何权利。README 称 Paleblood 是与 Sony Interactive Entertainment 和 FromSoftware 无关的粉丝项目，并称运行时以净室方式编写。CONTRIBUTING.md 允许经披露并验证的 AI 辅助工作，近期提交带有署名 Claude Opus 5.5 与 Codex 的 Co-Authored-By 尾注；未记录 REA 的使用。"
+    ]
   }
 }
