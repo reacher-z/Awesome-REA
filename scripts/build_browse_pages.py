@@ -8,7 +8,7 @@ from pathlib import Path
 import shutil
 from urllib.parse import urlsplit
 
-from build_discovery_pages import collection_page_schema, jsonld_script
+from build_discovery_pages import breadcrumb_schema, collection_page_schema, jsonld_script
 from open_graph import open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
@@ -181,6 +181,8 @@ def build_browse_pages(
                     schema_items.append({'name': category_labels[language_index], 'url': site_url + browse_path(language, slug), 'description': count_label})
                 content = '<div class="browse-category-grid">\n' + '\n'.join(cards) + '\n</div>'
             structured_data = jsonld_script(collection_page_schema(canonical, label, description, locale, schema_items, site_url))
+            trail = [('首页' if zh else 'Home', site_url + root_link), ('全部分类' if zh else 'All categories', site_url + browse_path(language))]
+            breadcrumb_data = jsonld_script(breadcrumb_schema(canonical, trail + ([(label, canonical)] if category else [])))
             breadcrumbs = (f'<a href="{root_link}">{("首页" if zh else "Home")}</a><span aria-hidden="true">/</span>'
                            + (f'<a href="{browse_path(language)}">{("全部分类" if zh else "All categories")}</a><span aria-hidden="true">/</span><span aria-current="page">{escape(label)}</span>'
                               if category else f'<span aria-current="page">{("全部分类" if zh else "All categories")}</span>'))
@@ -203,6 +205,7 @@ def build_browse_pages(
   <link rel="stylesheet" href="{escape(browse_styles_href, quote=True)}">
   {icon_css}
   {structured_data}
+  {breadcrumb_data}
 </head>
 <body>
 <a class="skip-link" href="#browse-content">{('跳到仓库目录' if zh else 'Skip to the directory')}</a>

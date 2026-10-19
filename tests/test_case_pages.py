@@ -147,7 +147,9 @@ class CasePageTests(unittest.TestCase):
             content = (output / prefix / 'cases/index.html').read_text()
             page = CaseDocument(content)
             self.assertNotIn('img', page.tags)
-            self.assertEqual(page.tags.count('script'), 1)  # JSON-LD only, never contributed markup.
+            # Collection and breadcrumb JSON-LD only, never contributed markup.
+            self.assertEqual(content.count('<script'), content.count('<script type="application/ld+json">'))
+            self.assertEqual(page.tags.count('script'), 2)
             text = ''.join(page.cases[0]['text'])
             self.assertIn(record['name' if language == 'en' else 'name_zh'], text)
             self.assertIn(record['description_' + language], text)

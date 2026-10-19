@@ -417,6 +417,51 @@ def validate_language_links(route, page):
         assert all(value == served for value in requested), f'Link selects a language its route does not serve on {route}: {link}'
 
 
+class VisibleBreadcrumb(HTMLParser):
+    """Read the (text, href) trail of a page's breadcrumb navigation; the current page has no href."""
+    LABELS = {'Breadcrumb', '当前位置'}
+
+    def __init__(self, text):
+        super().__init__()
+        self.trails, self._trail, self._item = [], None, None
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'nav' and values.get('aria-label') in self.LABELS:
+            self._trail = []
+            self.trails.append(self._trail)
+        elif self._trail is not None and (tag == 'a' or values.get('aria-current') == 'page'):
+            self._item = [[], values.get('href') if tag == 'a' else None]
+            self._trail.append(self._item)
+
+    def handle_data(self, data):
+        if self._item is not None:
+            self._item[0].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == 'nav':
+            self._trail = None
+        if tag in ('a', 'span'):
+            self._item = None
+
+
+def validate_breadcrumbs(output, pages):
+    """A visible breadcrumb needs one BreadcrumbList with the same names and destinations."""
+    for route, page in pages.items():
+        trails = VisibleBreadcrumb((Path(output) / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).trails
+        lists = list(schema_entities(page.schemas, 'BreadcrumbList'))
+        if not trails:
+            assert not lists, f'BreadcrumbList without a visible breadcrumb: {route}'
+            continue
+        assert len(trails) == 1 and len(lists) == 1, f'Page needs one visible breadcrumb and one BreadcrumbList: {route}'
+        expected = [(' '.join(''.join(text).split()), urljoin(ORIGIN + route, href) if href else ORIGIN + route) for text, href in trails[0]]
+        items = lists[0].get('itemListElement', [])
+        actual = [(item.get('name'), item['item'].get('@id') if isinstance(item.get('item'), dict) else item.get('item')) for item in items]
+        assert [item.get('position') for item in items] == list(range(1, len(items) + 1)), f'BreadcrumbList positions mismatch: {route}'
+        assert actual == expected, f'BreadcrumbList differs from the visible breadcrumb: {route}'
+
+
 def validate_link_fragments(output, pages, links):
     """Check internal #fragments once every page is parsed, so cross-page targets are known.
 
@@ -813,6 +858,7 @@ def main():
     validate_case_outputs(pages, resources)
     validate_artifact_links(OUTPUT, pages)
     validate_source_browser_output(OUTPUT)
+    validate_breadcrumbs(OUTPUT, pages)
     validate_stylesheet_references(OUTPUT)
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
     assert not_found.noindex, '404 must be noindex'
