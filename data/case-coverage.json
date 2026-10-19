@@ -15567,13 +15567,28 @@
         "https://github.com/dobest1024/rea-workspace-template",
         "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/VALIDATION.md"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The pinned repository establishes the named workspace template: project-level REA MCP settings for Claude Code and Codex, evidence-labeling agent rules, seven task prompts, and scripts for hashed originals, analysis copies and HAR sanitization, with a dated synthetic acceptance record. The full mapping covers this report as a community REA integration, not a reconstruction case. Real-target results remain unverified by the author, and nothing was run here.",
+      "reason_zh": "固定版本仓库确立了具名的工作区模板：面向 Claude Code 与 Codex 的项目级 REA MCP 配置、要求标注证据的智能体规则、七套任务提示词，以及用于原件哈希、分析副本和 HAR 脱敏的脚本，并附有注明日期的合成样本验收记录。完整映射将该报告作为社区 REA 集成收录，而非重建案例。作者尚未验证真实目标上的效果，本次也未运行任何内容。",
+      "primary_evidence_urls": [
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/README.md",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/VALIDATION.md",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/SOURCES.md",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/AGENTS.md",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/.mcp.json",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/scripts/workspace.py",
+        "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/scripts/sanitize_har.py"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-workspace-template",
+          "kind": "integration",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:hitachi-oven-codex-rea-report",
@@ -16013,18 +16028,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 200,
+      "already-curated": 201,
       "insufficient-evidence": 238,
-      "pending": 153
+      "pending": 152
     },
     "units_by_state": {
-      "already-curated": 198,
+      "already-curated": 199,
       "insufficient-evidence": 238,
-      "pending": 153
+      "pending": 152
     },
-    "primary_reviewed_units": 378,
-    "catalog_linked_occurrences": 212,
-    "distinct_resource_ids": 205,
+    "primary_reviewed_units": 379,
+    "catalog_linked_occurrences": 213,
+    "distinct_resource_ids": 206,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

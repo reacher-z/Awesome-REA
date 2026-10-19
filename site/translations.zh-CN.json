@@ -4093,5 +4093,15 @@
       "按文中公布的逐次运行表，Frontkick 在八次运行中有六次完全解出，Rikugan 一次也没有；两者平均得分约为 86 对 31（满分 100），平均 token 用量约为 60 万对 95 万，文章将其概括为 token 约减半、成功得分接近三倍。在 AES-128-CBC 上，Rikugan 反复尝试调用未安装的 Python 密码库，失败后改为手工实现算法，而 Frontkick 的提示词列出了已安装的库。作者因此认为结果是由提示词设计造成的平局，并不能证明 CodeAct 更优，并提议在对齐提示词后重新测试。",
       "两个任务、一个模型、每个智能体八次运行，不足以得出关于任一智能体、关于工具调用与代码执行两类设计，或关于 CREBench 其他设置的普遍结论。CREBench 基准本身由另一条论文条目收录；文章未报告使用 REA，也不涉及重建。本合集阅读了该文章、Rikugan 的 README 与 CREBench 的 README，未运行任一智能体或该基准。"
     ]
+  },
+  "rea-workspace-template": {
+    "name": "REA 工作区模板",
+    "requirements": [
+      "所审阅的固定版本是该仓库唯一的提交，日期为 2026-10-17。使用前需安装 Git、Python 3.11+、Node.js 与 npm，以及 Claude Code 或 Codex；README 安装其验证过的 rea-agents 6.4.0，随附的 .mcp.json 与 .codex/config.toml 均启动本机已安装的 rea --mcp。模板不提供 REA 程序、反编译器或模型配置；它借鉴了一篇第三方帖子的工作思路，但未采用该帖关于模型、成本或耗时的说法。",
+      "分析引擎需另行准备：APK 的 DEX 分析需要 JADX 与完整 JDK，原生目标需要按 REA 安装文档配置 Ghidra、Hopper 或 IDA 等 provider，商业引擎需自备许可证；源码、JS／Electron 与已保存 HAR 的流程无需原生反编译器。提示词涵盖源码地图、从已脱敏 HAR 重建 OpenAPI 3.1 与 TypeScript 客户端、JavaScript、原生二进制（每轮最多深入 30 个函数）、APK、未知文件格式及会话交接；它们是任务模板，不是已完成的分析。",
+      "scripts/workspace.py 将单个目标复制到被 Git 忽略的 target/ 目录且不运行它，记录 SHA-256 基线、把文件设为 0444、拒绝软链接和特殊文件，并创建可写的 work/ 副本；verify 会报告被修改、新增或缺失的文件。sanitize_har.py 重新生成只保留结构的 HAR 副本，去除 header 取值、cookie、URL 凭据与查询参数，并把 JSON 取值替换为占位值。README 提醒主机名、路径和字段名仍可能识别用户，需要人工复查。",
+      "docs/VALIDATION.md（2026-10-17）报告：12 项标准库测试通过，rea mcp doctor 运行健康并列出 170 个工具，并在 Node 24.18.0 与 Python 3.12.7 下用 REA 静态分析了一个合成 JavaScript 应用和一个合成 HAR。文档将客户端重启后的 MCP 接入、真实 APK 与原生目标、真实 HAR 的匿名化以及运行时工作列为未验证，冒烟测试输出也未提交。本合集只阅读了这些文件，未运行脚本、测试或 REA。",
+      "README 说明 Claude Code 权限规则、只读文件权限和 SHA-256 基线都不构成隔离边界，需要强隔离时建议使用只读挂载和受控网络。AGENTS.md 默认只做静态分析，仅在任务获得授权时才运行样本、连接设备或访问目标服务。仓库没有许可证文件，复用条款未作说明；REA、分析引擎、客户端与分析目标各有其条款。"
+    ]
   }
 }

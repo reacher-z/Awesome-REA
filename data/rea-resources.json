@@ -2567,5 +2567,42 @@
       "https://www.reddit.com/r/ReverseEngineering/comments/1x85dp5/a_port_of_resident_evil_2_for_the_nintendo_ds/",
       "https://github.com/OpenBiohazard2/OpenBiohazard2/blob/173f900d174a41af56bd478692892254a2e31aae/LICENSE.md"
     ]
+  },
+  {
+    "id": "rea-workspace-template",
+    "name": "REA Workspace Template",
+    "url": "https://github.com/dobest1024/rea-workspace-template",
+    "category": "community-integrations",
+    "relationship": "community-integration",
+    "kind": "integration",
+    "targets": [
+      "app",
+      "binary",
+      "website"
+    ],
+    "description_en": "A clone-first Chinese workspace template for analyzing one target per workspace with REA from Claude Code or Codex. It ships project-level REA MCP settings, agent rules that require CONFIRMED/GUESS labels with evidence locations, seven task prompts and standard-library scripts that hash imported originals, stage writable copies and strip values from HAR captures. It organizes analysis rather than performing it, and its acceptance run used only synthetic samples.",
+    "description_zh": "一个可直接克隆的中文工作区模板，用于在 Claude Code 或 Codex 中借助 REA，按“一个目标一个工作区”开展分析。它提供项目级 REA MCP 配置、要求结论标注 CONFIRMED／GUESS 并附证据位置的智能体规则、七套任务提示词，以及仅依赖标准库的脚本：为导入的原件生成哈希基线、创建可写分析副本，并去除 HAR 抓包中的取值。它负责组织分析而非完成分析，其验收只使用了合成样本。",
+    "evidence_url": "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed pin is the repository’s only commit, dated 2026-10-17. It needs Git, Python 3.11+, Node.js with npm, and Claude Code or Codex; README installs rea-agents 6.4.0, the version it was validated with, and the bundled .mcp.json and .codex/config.toml both start a locally installed rea --mcp. The template supplies no REA program, decompiler or model configuration, and it adapts workflow ideas from a third-party post without adopting that post’s model, cost or timing claims.",
+      "Engines are separate: APK DEX work needs JADX and a full JDK, native targets need a Ghidra, Hopper or IDA provider configured through REA’s installation guide, and commercial engines need their own licenses; source, JS/Electron and saved-HAR workflows need no native decompiler. The prompts cover source mapping, API reconstruction from a sanitized HAR to OpenAPI 3.1 and a TypeScript client, JavaScript, native binaries (at most 30 functions per round), APKs, unknown file formats and session handoff; they are task templates, not completed analyses.",
+      "scripts/workspace.py copies one target into a Git-ignored target/ directory without running it, records SHA-256 baselines, sets files to 0444, rejects symlinks and special files, and creates a writable work/ copy; verify reports changed, added or missing files. sanitize_har.py rebuilds a structural HAR copy, removing header values, cookies, URL credentials and query strings and replacing JSON values with placeholders. README warns that hosts, paths and field names can still identify users and need manual review.",
+      "docs/VALIDATION.md (2026-10-17) reports 12 passing standard-library tests, a healthy rea mcp doctor run listing 170 tools, and REA static analysis of a synthetic JavaScript app and a synthetic HAR with Node 24.18.0 and Python 3.12.7. It lists client MCP connection after restart, real APK and native targets, real-HAR anonymization and runtime work as unverified, and its smoke-test outputs are not committed. This collection read the files without running the scripts, tests or REA.",
+      "README states that the Claude Code permission rules, read-only file modes and SHA-256 baselines are not an isolation boundary, and recommends read-only mounts and controlled networking where strong isolation is needed. AGENTS.md defaults to static analysis and reserves running samples, connecting devices and contacting target services for authorized tasks. The repository has no license file, so reuse terms are unstated; REA, analysis engines, clients and targets keep their own terms."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/VALIDATION.md",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/docs/SOURCES.md",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/AGENTS.md",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/.mcp.json",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/.codex/config.toml",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/.claude/settings.json",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/scripts/workspace.py",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/scripts/sanitize_har.py",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
+      "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
+    ]
   }
 ]
