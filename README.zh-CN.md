@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 309](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 69](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 309](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 156](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 70](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (69) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (70) · [智能体与 MCP](#agents-and-mcp) (26) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -1966,14 +1966,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**69 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**70 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (20) · [网站](#papers-website-reconstruction) (13)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (6) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -2780,6 +2780,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 输出仅覆盖单张图像中的组件类型与层级；详细样式和文本仍需开发者补充。结构标记准确率以及针对五张截图、由八名参与者开展的实验，不能证明完整视觉保真度，也不代表恢复了导航、应用逻辑或后端。主数据集按截图划分；独立评估使用了 20 个未见应用的 1,208 张图像，提供了有限的泛化证据。
 
   **发表信息:** 2018 · ICSE 2018 · 会议论文 · Chunyang Chen 等
+
+  </details>
+
+- [**Android 应用的统计式反混淆**](https://dl.acm.org/doi/10.1145/2976749.2978422)
+
+  DeGuard 逆转 Android APK 中的布局混淆，为被 ProGuard 重命名的字段、方法、类和包预测原始名称。它基于 Soot 将应用表示为程序元素之间的依赖图，并保持 Android API 及其他未混淆名称不变；随后在从 1,684 个 F-Droid 应用学习的条件随机场上借助 Nice2Predict 进行 MAP 推断，并以约束保证重命名后的 APK 语义等价。在 100 个留出的、经 ProGuard 混淆的 F-Droid 应用上，与原始名称完全相同的比例从 13.3% 提升至 79.1%，第三方库预测的精确率为 91.3%、召回率为 91.0%。
+
+  2016 · 会议论文 · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-deguard/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 仅处理布局（标识符）混淆。数据、控制流与密码学混淆、自定义字符串加密、反射以及基于 goto 的代码重排均不在逆转范围内；论文指出，其检查的大多数恶意样本同时使用了这些技术。基准为 100 个良性开源 F-Droid 应用，通过启用 ProGuard 且不修改其规则进行混淆，并以与原始名称完全一致作为评分标准，因此语义相近的名称也计为错误；被 ProGuard 删除的元素不计分。在其他混淆器或恶意软件上的准确率可能较低。第三方库依据包名启发式规则识别，共涵盖 133 个库，训练应用也可能导入相同的库。针对 49 个恶意软件家族的研究给出 Base64 解码器、位置信息处理等人工检查示例，未报告精确率。
+
+  **发表信息:** 2016 · ACM CCS 2016 · 会议论文 · Benjamin Bichsel 等
 
   </details>
 

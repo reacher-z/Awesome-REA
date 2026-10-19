@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 309](https://img.shields.io/badge/resources-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 69](https://img.shields.io/badge/papers-69-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 309](https://img.shields.io/badge/resources-309-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 156](https://img.shields.io/badge/cases-156-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 70](https://img.shields.io/badge/papers-70-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (69) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (70) · [Agents and MCP](#agents-and-mcp) (26) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -1965,14 +1965,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**69 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**70 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (20) · [Websites](#papers-website-reconstruction) (13)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (6) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -2779,6 +2779,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The output covers component types and hierarchy from a single image; detailed styling and text require developer work. Structural token accuracy and an eight-participant study on five screenshots do not establish complete visual fidelity, navigation, app logic or backend recovery. The main split is screenshot-based; a separate evaluation on 1,208 images from 20 unseen apps provides limited generalization evidence.
 
   **Publication:** 2018 · ICSE 2018 · Conference paper · Chunyang Chen et al.
+
+  </details>
+
+- [**Statistical Deobfuscation of Android Applications**](https://dl.acm.org/doi/10.1145/2976749.2978422)
+
+  DeGuard reverses layout obfuscation in Android APKs, predicting original names for the fields, methods, classes and packages that ProGuard renames. Built on Soot, it represents an app as a dependency graph over program elements and keeps Android API and other unobfuscated names fixed. It then runs MAP inference with Nice2Predict on a conditional random field learned from 1,684 F-Droid apps, under constraints that keep the renamed APK semantically equivalent. On 100 held-out F-Droid apps obfuscated with ProGuard, names identical to the originals rise from 13.3% to 79.1%, and third-party library prediction reaches 91.3% precision and 91.0% recall.
+
+  2016 · Conference paper · [PDF](https://files.sri.inf.ethz.ch/website/papers/deguard.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-deguard/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Only layout (identifier) obfuscation is addressed. Data, control-flow and cryptographic obfuscation, custom string encryption, reflection and goto-based code reordering are not reversed, and the paper notes that most malware samples it inspected also used such techniques. The benchmark is 100 benign, open-source F-Droid apps, obfuscated by enabling ProGuard without changing its rules and scored by exact match to the original names, so semantically close names count as errors; elements that ProGuard removed are not scored. Accuracy on other obfuscators or on malware may be lower. Libraries are identified by a package-name heuristic covering 133 libraries, and the training apps may import the same libraries. The 49-family malware study gives manual examples, such as Base64 decoders and location handling, without precision figures.
+
+  **Publication:** 2016 · ACM CCS 2016 · Conference paper · Benjamin Bichsel et al.
 
   </details>
 
