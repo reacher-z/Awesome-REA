@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 430](https://img.shields.io/badge/resources-430-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 431](https://img.shields.io/badge/resources-431-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (61)
+- [Website](#website) (25) · [Game](#game) (177) · [App](#app) (62)
 - [Native Binary](#native-binary) (54) · [Firmware and Hardware](#firmware) (20) · [Protocol](#protocol) (17)
 
 **Research and workflows**
@@ -1661,6 +1661,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Command-line tool that prepares an Android APK you own or are authorized to test for HTTPS traffic inspection. It decodes the package with Apktool, adjusts the network security configuration to trust user-added certificates, disables certificate pinning, then re-encodes and signs the patched APK, so a proxy can read the app's traffic without a rooted device. App bundles supplied as .xapk or .apks are also supported.
 
   Tool · Android · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/apk-mitm/)
+
+- [**Frida Mobile Interception Scripts**](https://github.com/httptoolkit/frida-interception-and-unpinning)
+
+  A set of Frida scripts from HTTP Toolkit for inspecting a mobile app's HTTPS traffic while analysing apps you own or are authorized to test. Injected into a running Android or iOS app, they redirect its connections to an interception proxy, add a user-supplied CA certificate to the trust stores, and disable certificate pinning and transparency checks so the proxy can read the traffic. Individual scripts can also be used on their own to hook specific behaviour.
+
+  Tool · Android · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/frida-interception-and-unpinning/)
 
 <a id="native-binary"></a>
 ### Native Binary
