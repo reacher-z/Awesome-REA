@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2197,13 +2197,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (32) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2801,6 +2801,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The dataset has 3,000 non-stripped executables and shared libraries per architecture from 830 Linux debug-symbol packages of C code built with default package settings, split 2,700/300 for training and testing. Accuracy evaluation assumes given function boundaries; for fully stripped inputs, BAP's ByteWeight infers them, which the paper cites as about 93% accurate. Debin predicts 17 types, and leaves struct and union contents, line numbers and formats such as PE outside the evaluation. A prediction counts only when it equals the original debug value. Models learned from compiler-generated, benign code may be less accurate on obfuscated binaries, hand-written assembly or malware. The 35-sample malware study is manual inspection of decompiled output with no accuracy figures, because the samples lack ground-truth debug information.
 
   **Authors:** Jingxuan He et al.
+
+  </details>
+
+- [**No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantics-Preserving Transformations**](https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/)
+
+  DREAM is a decompiler whose control-flow structuring recovers loops, conditionals and switch statements from a recovered control-flow graph without matching predefined region patterns. For acyclic regions it computes each node's reaching condition, then refines the resulting conditions into if-then-else and switch constructs; cyclic regions are structured as loops whose type and continuation condition are inferred. Semantics-preserving transformations first rewrite cyclic regions with multiple entries or successors into single-entry, single-successor regions, and a Boolean variable keeps a repeated test equivalent when its operands may change. On GNU coreutils the authors report no goto statements, against thousands from Hex-Rays and Phoenix, and more compact code than Hex-Rays for 72.7% of functions and than Phoenix for 98.8% in one-to-one comparisons.
+
+  NDSS 2015 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-dream/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Correctness was measured on source-level control-flow graphs: the authors extracted CFGs of the preprocessed coreutils 8.22 source with joern, restructured the 1,530 functions joern parsed (208 of 1,738 failed to parse), recompiled and passed the coreutils tests. That experiment checks the structuring algorithm, not end-to-end decompilation of binaries, variable or type recovery. Structuredness and compactness were measured on the coreutils 8.17 binaries from the Phoenix evaluation, using functions decompiled by all three tools, with line counts as the compactness metric. Phoenix was unreleased, so its output came from its authors, and the 2014 Hex-Rays v2.0.0.140605 baseline is long superseded. The malware case studies cover one sample each from ZeusP2P, SpyEye and Cridex and compare against Hex-Rays only. The authors leave open whether more compact code is always easier to understand. The paper links no implementation, and these results do not describe current decompilers.
+
+  **Authors:** Khaled Yakdan et al.
 
   </details>
 

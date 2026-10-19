@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2198,13 +2198,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (32) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2802,6 +2802,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 数据集为每种架构 3,000 个未去符号的可执行文件与共享库，来自 830 个 Linux 调试符号软件包，源码为 C 语言并按各包默认设置编译，按 2,700／300 划分训练与测试。准确率评估假定函数边界已知；对于完全去符号的输入，由 BAP 的 ByteWeight 推断函数边界，论文引用其准确率约为 93%。Debin 预测 17 种类型，struct 与 union 的内部内容、行号以及 PE 等其他格式不在评测范围内。只有与原始调试信息完全相同的预测才计为正确。基于编译器生成的良性代码学习的模型，在混淆二进制、手写汇编或恶意软件上可能准确率较低。针对 35 个恶意样本的研究是对反编译输出的人工检查，由于样本缺少调试信息真实标签，未报告准确率。
 
   **作者:** Jingxuan He 等
+
+  </details>
+
+- [**告别 goto：基于模式无关控制流结构化与语义保持变换的反编译**](https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/)
+
+  DREAM 是一种反编译器，其控制流结构化方法无需匹配预定义的区域模式，即可从恢复出的控制流图中还原循环、条件语句与 switch 语句。对于无环区域，它计算每个节点的可达条件，再将这些条件细化为 if-then-else 与 switch 结构；有环区域被结构化为循环，并推断循环类型及继续条件。语义保持变换先将具有多个入口或多个后继的有环区域改写为单入口、单后继区域；当重复测试的条件中变量可能被修改时，引入布尔变量以保持语义等价。作者在 GNU coreutils 上报告其输出不含 goto 语句，而 Hex-Rays 与 Phoenix 各产生数千个；在一对一比较中，DREAM 有 72.7% 的函数比 Hex-Rays 更紧凑，与 Phoenix 相比该比例为 98.8%。
+
+  NDSS 2015 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-dream/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 正确性在源码级控制流图上评估：作者使用 joern 从经过预处理的 coreutils 8.22 源码中提取控制流图，对 joern 成功解析的 1,530 个函数重新结构化（1,738 个函数中有 208 个解析失败），重新编译后通过 coreutils 测试。该实验检验的是结构化算法，而不是对二进制的端到端反编译，也不涉及变量或类型恢复。结构化程度与紧凑度在 Phoenix 评测所用的 coreutils 8.17 二进制上测量，只统计三种工具都能反编译的函数，并以代码行数衡量紧凑度。Phoenix 当时尚未发布，其输出由其作者提供；2014 年的 Hex-Rays v2.0.0.140605 基线早已过时。恶意软件案例分析分别覆盖 ZeusP2P、SpyEye 与 Cridex 各一个样本，且只与 Hex-Rays 比较。作者也指出，更紧凑的代码是否总是更易理解仍有待研究。论文没有链接实现，这些结果也不代表当前反编译器的表现。
+
+  **作者:** Khaled Yakdan 等
 
   </details>
 
