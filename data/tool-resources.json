@@ -7142,5 +7142,40 @@
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/README.md",
       "https://github.com/cdlewis/snowboardkids2-decomp/blob/7600c79d3909fce344435dcccbb6ad3bc2aad34e/symbol_addrs.txt"
     ]
+  },
+  {
+    "id": "dmusic-directmusic-reimplementation-case",
+    "name": "dmusic: an open re-implementation of Microsoft DirectMusic",
+    "url": "https://github.com/GothicKit/dmusic",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Re-implements DirectMusic, the adaptive-soundtrack API Microsoft shipped with early DirectX, as a portable C11 library that loads a game’s segment, style and DLS instrument files and renders the music to PCM. The README lists only the Gothic and Gothic II (Night of the Raven) soundtracks as tested, and as working “somewhat” correctly; the project calls itself incomplete and under heavy development. Instruments play through a vendored TinySoundFont synthesizer after DLS-to-SoundFont conversion, not through a reproduction of Microsoft’s synthesizer.",
+    "description_zh": "以可移植的 C11 库重新实现 DirectMusic，即 Microsoft 随早期 DirectX 提供的自适应配乐 API；它载入游戏的段落（segment）、风格（style）和 DLS 音色文件，并将音乐渲染为 PCM。README 只列出 Gothic 与 Gothic II（含 Night of the Raven）的配乐经过测试，且只是“大致”正确；项目自称尚不完整、仍在大力开发中。乐器经 DLS 转 SoundFont 后由内置的 TinySoundFont 合成器发声，并非复现 Microsoft 的合成器。",
+    "evidence_url": "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit (CMake project version 0.0.1; no releases or tags) exposes its own C API (DmLoader, DmSegment, DmPerformance) rather than DirectMusic’s COM interfaces. Segments start at instant, grid, beat or measure boundaries, and transitions pick embellishment patterns; the header marks the end-and-intro embellishment as not implemented, and the performance logs unimplemented curve and message types.",
+      "Music data comes from the user’s own game: a resolver callback supplies .sgt segments, .sty styles and .dls collections from the game’s data folders, and the repository ships none of these files. The README asks owners of other games with such files to report results.",
+      "Builds need a C11 compiler and CMake 3.10+. Linux, macOS and Windows are supported, but the author offers help mainly on Linux; options select a static library, sanitizers and the examples. The play-segment example needs <unistd.h> and <sys/stat.h> and plays through the bundled miniaudio header. A C# wrapper is published separately as GothicKit/dmusic-cs.",
+      "Checks are listening-based: the README reports the Gothic soundtracks as working “somewhat” correctly and presents a rendered Gothic II theme. CI only builds the library for Linux x86-64, Android arm64-v8a, macOS and 32- and 64-bit Windows and publishes Doxygen documentation; there is no test suite or comparison with output from Microsoft’s runtime. This review built or ran nothing.",
+      "LICENSE.md is the MIT License (Modern Variant) for the GothicKit contributors, and the vendored TinySoundFont copy carries the same header; miniaudio is public domain or MIT-0. support/KH_DayStd.mp3, a rendering of Gothic II’s “Khorinis Day Standard” theme, is not addressed by the license, and game music keeps its own rights. Code comments cite Microsoft’s DirectX documentation; the reviewed sources describe no analysis of Microsoft’s binaries and establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/include/dmusic.h",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/CMakeLists.txt",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/src/util/Tsf.c",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/src/Performance.c",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/src/_Internal.h",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/examples/play-segment.c",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/.github/workflows/build.yml",
+      "https://github.com/GothicKit/dmusic/blob/b73b270b94714b8ec8d9d0b2a9f3a5c445da52d1/LICENSE.md",
+      "https://dm.gothickit.dev/",
+      "https://github.com/GothicKit/dmusic-cs"
+    ]
   }
 ]

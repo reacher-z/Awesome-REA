@@ -2960,5 +2960,15 @@
       "宿主测试会在 PC 上编译与平台无关的脚本、敌人和过场代码，并以使用者转换出的数据运行；脚本测试会报告未知操作码，scd_disasm.py --check 会校验所有房间的跳转目标。分析笔记引用 PS1 地址，并区分观察所得与推测的行为。psxexe_to_elf.py 把可执行文件和符号列表包装成 REA 的 Ghidra 通道可接受的 MIPS ELF；Claude Code 的使用只见于 Reddit 帖，且未量化。本目录未构建或运行该引擎。",
       "所审阅的提交中没有许可证文件。README 说明，若干转换工具以采用 MIT 许可的 OpenBiohazard2 重新实现项目的文件格式成果和脚本操作码表为起点。Capcom 的游戏数据、动画和音频不在仓库中，仍受其各自权利约束。"
     ]
+  },
+  "dmusic-directmusic-reimplementation-case": {
+    "name": "dmusic：Microsoft DirectMusic 的开源重新实现",
+    "requirements": [
+      "所审阅的 main 提交（CMake 项目版本 0.0.1；无发行版或标签）提供自有的 C API（DmLoader、DmSegment、DmPerformance），而非 DirectMusic 的 COM 接口。段落可在即时、网格、拍或小节边界开始播放，过渡会选择装饰（embellishment）乐句；头文件注明“结尾加前奏”装饰尚未实现，演奏对象也会对未实现的曲线和消息类型记录日志。",
+      "音乐数据来自使用者自己的游戏：由解析回调从游戏数据目录提供 .sgt 段落、.sty 风格和 .dls 音色集，仓库不附带这些文件。README 请拥有其他含此类文件游戏的用户反馈结果。",
+      "构建需要 C11 编译器和 CMake 3.10 及以上版本。支持 Linux、macOS 和 Windows，但作者主要只能协助解决 Linux 上的问题；构建选项可选择静态库、消毒器及示例。play-segment 示例需要 <unistd.h> 和 <sys/stat.h>，并通过随附的 miniaudio 头文件播放。C# 封装另以 GothicKit/dmusic-cs 发布。",
+      "检验方式是试听：README 报告两部 Gothic 配乐“大致”正确，并展示了一段渲染的 Gothic II 主题曲。CI 只为 Linux x86-64、Android arm64-v8a、macOS 及 32 位和 64 位 Windows 构建库，并发布 Doxygen 文档；没有测试套件，也未与 Microsoft 运行时的输出比较。本次审阅未构建或运行任何程序。",
+      "LICENSE.md 为 GothicKit 贡献者的 MIT 许可证（现代变体），内置的 TinySoundFont 副本也带有相同的头部声明；miniaudio 为公有领域或 MIT-0。support/KH_DayStd.mp3 是 Gothic II“Khorinis Day Standard”主题曲的渲染音频，许可证未涉及该文件，游戏音乐仍受其自身权利约束。代码注释引用 Microsoft 的 DirectX 文档；所审来源未说明对 Microsoft 二进制文件的分析，也未确立 AI 或 REA 的使用。"
+    ]
   }
 }

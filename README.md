@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 345](https://img.shields.io/badge/resources-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 346](https://img.shields.io/badge/resources-346-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 181](https://img.shields.io/badge/cases-181-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (161) · [App](#app) (49)
+- [Website](#website) (19) · [Game](#game) (162) · [App](#app) (49)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (15) · [Protocol](#protocol) (13)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (180) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (181) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1000,6 +1000,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reconstructs source for the Japanese PC-98 Touhou 4: Lotus Land Story and rebuilds all four DOS programs, MAIN.EXE, OP.EXE, MAINE.EXE and ZUN.COM, with a pinned Borland toolchain under Wine. Function acceptance against the original binaries is tracked separately from emulator replays that compare inputs, RNG, object pools and video with the original game. Complete-campaign, original-timing and byte-identity goals remain open.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/th04-reconstruction-case/)
+
+- [**dmusic: an open re-implementation of Microsoft DirectMusic**](https://github.com/GothicKit/dmusic)
+
+  Re-implements DirectMusic, the adaptive-soundtrack API Microsoft shipped with early DirectX, as a portable C11 library that loads a game’s segment, style and DLS instrument files and renders the music to PCM. The README lists only the Gothic and Gothic II (Night of the Raven) soundtracks as tested, and as working “somewhat” correctly; the project calls itself incomplete and under heavy development. Instruments play through a vendored TinySoundFont synthesizer after DLS-to-SoundFont conversion, not through a reproduction of Microsoft’s synthesizer.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/dmusic-directmusic-reimplementation-case/)
 
 #### Tools, projects and integrations
 
