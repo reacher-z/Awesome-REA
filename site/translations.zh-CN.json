@@ -3072,5 +3072,14 @@
       "以单个可执行 JAR 的形式在 Java 运行时上运行；Gradle 构建以 Java 8 的源码与目标兼容性为目标，README 指出处理大型输入时可能需要调大 -Xmx 堆以避免 OutOfMemoryError。",
       "对使用者提供的 APK 文件进行操作；README 说明仅对未混淆的包支持解码为 XML 源码，且重建安装包不同于恢复原始 Java 源码。采用 Apache-2.0 许可证。"
     ]
+  },
+  "sourcemapper": {
+    "name": "sourcemapper 源映射源码还原工具",
+    "requirements": [
+      "该项目不发布任何版本或标签。README 给出的安装方式为 go install、克隆后自行构建或使用 BlackArch 软件包；go.mod 声明 Go 1.16，且不依赖任何第三方模块。所审阅的 master 提交日期为 2026-07-24，该版本还加入了 -dir 批量模式，并拒绝读取远程 sourceMappingURL 所指向的本地路径。",
+      "每次运行只能指定 -url、-jsurl 或 -dir 之一，且必须给出 -output。远程抓取时可附加请求头、经由代理或跳过 TLS 证书校验。README 提醒，使用 -jsurl 解析的 JavaScript 文件可让 sourcemapper 向其声明为源映射的任意 URL 发出 GET 请求。",
+      "输入应为使用者有权查看的源映射。工具只读取映射中的 version、sources 和 sourcesContent 字段，因此未内嵌 sourcesContent 的映射会被拒绝，没有映射的压缩代码也不在其处理范围内；它不使用 mappings 字段，输出的是打包工具当时记录的源码文本，并未与线上部署的打包产物核对。",
+      "采用 BSD-3-Clause 许可。还原出的前端代码仍受网站所有者的权利约束。README 链接了 Pulse Security 2018 年的一篇文章，介绍在渗透测试中借助它审查前端源码的用法。本次未构建该工具，也未对任何网站运行。"
+    ]
   }
 }
