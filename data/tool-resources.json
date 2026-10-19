@@ -36528,5 +36528,40 @@
     ],
     "verification": "source-reviewed",
     "added_at": "2026-11-06"
+  },
+  {
+    "id": "nocturnerecomp-sotn-xbla-recomp-case",
+    "name": "NocturneRecomp: a ReXGlue static recompilation of Symphony of the Night’s Xbox Live Arcade release",
+    "url": "https://github.com/birabittoh/NocturneRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Statically recompiles the Xbox Live Arcade release of Castlevania: Symphony of the Night, translating its PowerPC default.xex to native x86-64 code at build time with a fork of the ReXGlue SDK and wrapping it in a host runtime for Windows and Linux. The project adds overlays, a mod system for asset replacement and native plug-ins, title-update builds, randomizer support that interprets patched functions, and a native renderer in progress. It is separate from SymphonyRecomp, which recompiles the PlayStation release.",
+    "description_zh": "对《恶魔城：月下夜想曲》的 Xbox Live Arcade 版进行静态重编译：使用 ReXGlue SDK 的分支在构建时将其 PowerPC default.xex 转换为原生 x86-64 代码，并以宿主运行时封装，在 Windows 和 Linux 上运行。项目加入了叠加层、支持素材替换与原生插件的模组系统、游戏更新版本构建、以解释方式执行补丁函数的随机器支持，以及仍在开发中的原生渲染器。它与重编译 PlayStation 版的 SymphonyRecomp 是不同的项目。",
+    "evidence_url": "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-08-27 head, released as v1.4.5 the same day; the repository was created on 2026-06-06. Codegen driven by nocturnerecomp_manifest.toml writes the translated game code into an ignored generated/ tree. Releases ship the SDK’s Xenos GPU plug-in, and docs/native-rendering.md reports a separate native renderer drawing the KONAMI splash, title screen and main menu, checked in interactive runs and RenderDoc captures.",
+      "You must own the game: place your own dumped XBLA package (the LIVE/STFS file) in game/ and extract it so that assets/default.xex exists before codegen; prebuilt releases prompt for the same extraction. Title-update builds also take the user’s title-update packages. README says the project ships no copyrighted code, data or assets.",
+      "Builds use LLVM/Clang (clang 20 on Linux), CMake, Ninja and Vulkan headers, with Python scripts that download the pinned prebuilt nightly of the author’s ReXGlue SDK fork (sotn-nightly-20260817-7766f971) and drive codegen and packaging. Releases target Windows x64, Linux x64 and Linux arm64, each in vanilla and title-update variants.",
+      "CI builds both variants for all three platforms on every push, fetching default.xex and title-update packages from a private assets repository, and publishes nightly builds as CI artifacts; it runs no gameplay or equivalence test. Behaviour is project-reported, and this collection built or ran nothing.",
+      "MIT covers the host-side source in src/, the build scripts and CI configuration; the SDK fork and the game keep their own terms. The release archives and nightly artifacts are prebuilt executables that contain the recompiled game code, although no game data is bundled. The reviewed sources state no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/.github/workflows/_build.yml",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/.github/workflows/ci.yml",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/.sdk-version",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/nocturnerecomp_manifest.toml",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/.gitignore",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/docs/native-rendering.md",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/docs/making-mods.md",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/src/rando_xex.cpp",
+      "https://github.com/birabittoh/NocturneRecomp/blob/5390d5ec91d4b0d0c87a6db35ea351343d04cd91/LICENSE",
+      "https://github.com/birabittoh/NocturneRecomp/releases/tag/v1.4.5"
+    ]
   }
 ]

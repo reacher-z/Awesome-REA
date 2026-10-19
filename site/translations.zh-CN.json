@@ -11023,5 +11023,15 @@
       "调试 HTTPS 时需在手机上安装证书；在 iOS 15 上，工具无法判断请求是否来自浏览器。",
       "许可证：MIT。"
     ]
+  },
+  "nocturnerecomp-sotn-xbla-recomp-case": {
+    "name": "NocturneRecomp：以 ReXGlue 静态重编译《月下夜想曲》Xbox Live Arcade 版",
+    "requirements": [
+      "审阅的是 2026-08-27 的最新提交，当天即发布为 v1.4.5；仓库创建于 2026-06-06。由 nocturnerecomp_manifest.toml 驱动的 codegen 将转换后的游戏代码写入被 Git 忽略的 generated/ 目录。发布版附带 SDK 的 Xenos GPU 插件；docs/native-rendering.md 另报告一个原生渲染器，可绘制 KONAMI 启动画面、标题画面和主菜单，并经交互运行与 RenderDoc 捕获核对。",
+      "必须自有游戏：将自行转储的 XBLA 包（LIVE／STFS 文件）放入 game/ 并解包，使 codegen 前存在 assets/default.xex；预构建发布版也会提示进行同样的提取。游戏更新版本构建还需使用者自己的游戏更新包。README 称项目不附带任何受版权保护的代码、数据或素材。",
+      "构建需 LLVM／Clang（Linux 上为 clang 20）、CMake、Ninja 与 Vulkan 头文件，并由 Python 脚本下载作者 ReXGlue SDK 分支的固定预构建夜间版（sotn-nightly-20260817-7766f971），再驱动 codegen 与打包。发布版面向 Windows x64、Linux x64 和 Linux arm64，各有原版与游戏更新两种变体。",
+      "CI 在每次推送时为三个平台构建两种变体，所用的 default.xex 和游戏更新包取自一个私有素材仓库，并将夜间构建作为 CI 产物发布；CI 不运行任何游戏流程或等价性测试。运行表现为项目报告，本合集未进行任何构建或运行。",
+      "MIT 适用于 src/ 中的宿主端源码、构建脚本和 CI 配置；SDK 分支和游戏本身另有各自条款。发布压缩包与夜间产物是内含重编译游戏代码的预构建可执行文件，但不附带游戏数据。所审来源未说明任何 AI 或 REA 的使用。"
+    ]
   }
 }
