@@ -7734,5 +7734,37 @@
       "https://github.com/Washi1337/AsmResolver/releases/tag/v6.0.1",
       "https://www.nuget.org/packages/AsmResolver/6.0.1"
     ]
+  },
+  {
+    "id": "decompilerserver-dotnet-mcp",
+    "name": "DecompilerServer",
+    "url": "https://github.com/pardeike/DecompilerServer",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "app",
+      "game"
+    ],
+    "description_en": "Stdio MCP server built on the ICSharpCode.Decompiler engine that lets agents load managed .NET assemblies, including a Unity game's Assembly-CSharp.dll located from its game directory, then search symbols, string literals and attributes, read decompiled C# or IL, and trace callers, callees, usages and inheritance. Several assemblies stay loaded under aliases, so an agent can compare two versions structurally or diff individual method bodies, the README's example being RimWorld mod porting. Modding-oriented tools generate Harmony patch skeletons, detour stubs and transpiler anchor suggestions as text from the inspected members.",
+    "description_zh": "基于 ICSharpCode.Decompiler 引擎的 stdio MCP 服务器，智能体可借此加载托管 .NET 程序集（包括从游戏目录中定位到的 Unity 游戏 Assembly-CSharp.dll），继而搜索符号、字符串字面量和特性，阅读反编译得到的 C# 或 IL，并追踪调用方、被调用方、使用位置和继承关系。多个程序集可以用别名同时保持加载，便于智能体对两个版本做结构比较或逐个比对方法体，README 举的例子是 RimWorld 模组移植。面向模组开发的工具还能根据所查看的成员，以文本形式生成 Harmony 补丁骨架、绕行存根和 Transpiler 锚点建议。",
+    "evidence_url": "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed release: v1.4.0, published 2026-10-01; its tag points at the reviewed main commit. Release assets are framework-dependent single-file executables for Windows x64, macOS arm64 and x64, and Linux x64 and arm64 that need the .NET 10 runtime; building from source needs the .NET 10 SDK. The server speaks MCP over stdio, with README setup for Claude Desktop, Cursor, VS Code/Copilot and Codex, and an optional script installs a locally signed build and the bundled decompiler-mcp skill for Codex on macOS.",
+      "Users supply the managed .NET assemblies to inspect, such as a game's Assembly-CSharp.dll or a third-party library; the repository contains only its own test libraries, and the README notes that native libraries do not load. Loaded aliases are registered in LocalApplicationData/DecompilerServer/contexts.json and restored on demand, and at most four contexts stay resident by default (DECOMPILER_MAX_LOADED_CONTEXTS changes the limit).",
+      "Inspection tools carry the MCP readOnlyHint annotation; loading, unloading, context selection, decompiler settings and cache tools change server state. The patch, stub and wrapper generators return source text and do not modify the loaded assemblies. Responses are compact by default; DECOMPILER_RESPONSE_MODE=extended restores the earlier response fields.",
+      "The v1.4.0 release notes report 238 passing Release tests, and the release workflow builds and runs the test suite before publishing assets; these are project-reported results. MIT. No server, client or assembly was run here, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/ARCHITECTURE.md",
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/skills/decompiler-mcp/SKILL.md",
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/DecompilerServer.csproj",
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/Tools/GenerateHarmonyPatchSkeleton.cs",
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/.github/workflows/release.yml",
+      "https://github.com/pardeike/DecompilerServer/blob/42c3f9106c20e5597cd11bcab70c5937d101f03e/LICENSE",
+      "https://github.com/pardeike/DecompilerServer/releases/tag/v1.4.0"
+    ]
   }
 ]

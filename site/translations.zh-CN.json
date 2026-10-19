@@ -3132,5 +3132,14 @@
       "它是一个程序库，不带图形界面，也不提供 C# 反编译器：使用者需针对其 API 编写 .NET 代码，并自行提供 PE 文件或 .NET 程序集。修改或重建后的映像仍需实际运行加以检验。",
       "采用 MIT 许可。测试资源是专门构建的示例二进制。对格式异常或混淆二进制的稳健性是上游的设计目标，并不保证能处理任何特定的保护工具。本次未处理任何二进制。"
     ]
+  },
+  "decompilerserver-dotnet-mcp": {
+    "name": "DecompilerServer .NET 反编译 MCP 服务器",
+    "requirements": [
+      "所审阅版本为 v1.4.0，发布于 2026-10-01，其标签指向所审阅的 main 提交。发布包是依赖框架的单文件可执行程序，提供 Windows x64、macOS arm64 与 x64、Linux x64 与 arm64 版本，运行需要 .NET 10 运行时；从源码构建需要 .NET 10 SDK。服务器通过 stdio 提供 MCP，README 给出 Claude Desktop、Cursor、VS Code/Copilot 和 Codex 的配置方法；另有可选脚本可在 macOS 上为 Codex 安装本地签名的构建版本及随附的 decompiler-mcp 技能。",
+      "待分析的托管 .NET 程序集由用户自行提供，例如游戏的 Assembly-CSharp.dll 或第三方库；仓库只包含项目自己的测试库，README 也说明原生库无法加载。已加载的别名会登记在 LocalApplicationData/DecompilerServer/contexts.json 中，并在需要时恢复；默认最多同时驻留四个上下文，可通过 DECOMPILER_MAX_LOADED_CONTEXTS 修改上限。",
+      "查看类工具带有 MCP 的 readOnlyHint 标注；加载、卸载、切换上下文、反编译设置和缓存类工具会改变服务器状态。补丁、存根和包装器生成工具只返回源代码文本，不会修改已加载的程序集。响应默认采用精简格式，设置 DECOMPILER_RESPONSE_MODE=extended 可恢复旧版响应字段。",
+      "v1.4.0 发布说明称 238 项 Release 测试全部通过，发布工作流会先构建并运行测试套件再发布资源；这些均为项目自报结果。采用 MIT 许可。本次未运行服务器、客户端或任何程序集，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
