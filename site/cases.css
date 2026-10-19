@@ -1,5 +1,5 @@
 /* Case studies are a readable subset of the existing curated collection. */
-.cases-main{background:#fff}
+.cases-main{background:var(--paper)}
 .cases-main .browse-intro{padding-bottom:18px}
 .cases-main .browse-actions{margin-bottom:14px}
 .cases-note{margin:0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.75;color:var(--body)}

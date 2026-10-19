@@ -9,7 +9,7 @@ import shutil
 from urllib.parse import urlsplit
 
 from build_discovery_pages import breadcrumb_schema, collection_page_schema, jsonld_script
-from open_graph import open_graph_meta
+from open_graph import THEME_COLOR_META, open_graph_meta
 from build_repository_index import CATEGORIES
 from source_descriptions import description_fallback
 from source_scope import exclusion_counts, unavailable_clause
@@ -197,7 +197,7 @@ def build_browse_pages(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
+  {THEME_COLOR_META}
   <title>{escape(title)}</title>
   <meta name="description" content="{escape(description, quote=True)}">
   <link rel="canonical" href="{canonical}">

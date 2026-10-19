@@ -164,7 +164,9 @@ class Page(HTMLParser):
             self.noindex = True
         if tag == 'meta':
             self.meta[values.get('name') or values.get('property')] = values.get('content')
-            self.meta_keys.append(values.get('name') or values.get('property'))
+            # A media-qualified tag (theme-color per color scheme) is distinct from its unqualified name.
+            key = values.get('name') or values.get('property')
+            self.meta_keys.append(key + ' @' + values['media'] if key and values.get('media') else key)
         # Visible H1 text, without decorative aria-hidden descendants such as the title dot.
         if self._h1 is not None and tag not in VOID_TAGS:
             self._h1_stack.append((tag, values.get('aria-hidden') == 'true'))
@@ -310,6 +312,12 @@ def validate_open_graph(route, page, card_size):
     image = urlsplit(meta.get('og:image') or '')
     assert (image.scheme, image.netloc, image.path) == ('https', 'awesomerea.org', '/social-card.png') and meta.get('twitter:image') == meta['og:image'], f'Social image URL mismatch: {route}'
     assert meta['og:image:alt'] not in {meta.get('og:title'), meta.get('twitter:title')}, f'og:image:alt repeats the page title: {route}'
+
+
+def validate_theme_color(route, page):
+    """Each page names its browser chrome color for the light and the dark scheme, in that order."""
+    themes = [key for key in page.meta_keys if key and key.split(' @')[0] == 'theme-color']
+    assert themes == ['theme-color @(prefers-color-scheme: light)', 'theme-color @(prefers-color-scheme: dark)'], f'Expected light and dark theme-color tags: {route}'
 
 
 def validate_website_identity(pages):
@@ -1080,6 +1088,7 @@ def main():
             if target.fragment:
                 fragment_links.append((parsed.path, link, local))
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
+        validate_theme_color(parsed.path, page)
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_resource_listing(pages, resources)
@@ -1097,6 +1106,7 @@ def main():
     not_found = Page((OUTPUT / '404.html').read_text(encoding='utf-8'))
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
+    validate_theme_color('/404.html', not_found)
     validate_security_headers(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_catalog_index(OUTPUT)
