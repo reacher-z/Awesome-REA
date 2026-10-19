@@ -9666,5 +9666,37 @@
       "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/.github/workflows/directory.yml",
       "https://github.com/cranebeaker/coop-anything/blob/bffd56f00bdd6063db13fa59c18a74678b121ca0/LICENSE"
     ]
+  },
+  {
+    "id": "fissure",
+    "name": "FISSURE",
+    "url": "https://github.com/ainfosec/FISSURE",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "GNU Radio-based RF framework that carries a signal from survey and detection through IQ capture, inspection, conditioning, feature extraction and classification into a protocol discovery workflow. Its demodulation workspace estimates symbol rates for OOK/ASK and binary FSK recordings, and the bitstream and framing stage applies Manchester or differential decoding, sync-pattern and CRC evidence and repeated-message detection to propose message boundaries. A Qt dashboard coordinates local or remote SDR sensor nodes, a library keeps protocol and packet definitions, dissectors and archived recordings, and plugins add inspection modules such as radar pulse analysis.",
+    "description_zh": "基于 GNU Radio 的射频框架，可将信号从频谱巡查与检测，经 IQ 采集、检查、调理、特征提取和分类，一路带入协议发现流程。其解调工作区可为 OOK/ASK 和二进制 FSK 录制估计符号速率；比特流与成帧阶段则结合曼彻斯特或差分解码、同步模式与 CRC 证据以及重复报文检测，推断报文边界。Qt 仪表盘负责协调本地或远程的 SDR 传感节点，资料库保存协议与数据包定义、解析器和归档录制，插件还可加入雷达脉冲分析等检查模块。",
+    "evidence_url": "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Development happens on the Python3 branch, reviewed at its 2026-10-17 commit; the README calls GitHub releases periodic snapshots that may lack recent fixes, and the latest, Python3_20260921 (published 2026-09-29), is seven commits behind. The changelog shows protocol discovery being rebuilt in October 2026: Demodulation and Bitstream & Framing are new, Packet Analysis is a placeholder, and the older Bit Slicing, Dissectors and Sniffer tabs are hidden as obsolete, while the Read the Docs operation pages still describe the older tabs.",
+      "Installed by cloning the repository and running its interactive installer as a normal user, not with sudo, preferably on a clean system. The README lists DragonOS, Kali, Raspberry Pi OS and Ubuntu 20.04 to 24.04 with PyQt5 and GNU Radio 3.8 or 3.10 (Ubuntu 18.04 only on the deprecated Python2 branch), beta support for a few other distributions, Windows 11 through WSL2 and Apptainer images on Ubuntu 24.04. Testing is most extensive on Ubuntu, and flow graphs may need recompiling across GNU Radio versions.",
+      "Live capture needs a supported SDR such as a USRP, HackRF, RTL2832U, LimeSDR, bladeRF, PlutoSDR or SDRplay receiver; the README says hardware support is being migrated into the plugin architecture, so not every legacy integration works in every workflow. Offline analysis uses the analyst's own IQ or SigMF recordings.",
+      "GPL-3.0; GNU Radio out-of-tree blocks come from git submodules under their own licenses. The framework also includes transmit, packet-crafting, fuzzing and attack workflows, plus geolocation, targeting and TAK sharing for distributed operations, which this entry does not cover. No installation, capture or transmission was performed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/README.md#L55-L101",
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/README.md#L267-L416",
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/CHANGELOG.md",
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/docs/RTD/pages/operation.rst",
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/.gitmodules",
+      "https://github.com/ainfosec/FISSURE/blob/75abda154a3f0642df00100d847e51d63d186821/LICENSE",
+      "https://github.com/ainfosec/FISSURE/releases/tag/Python3_20260921",
+      "https://fissure.readthedocs.io/en/latest/"
+    ]
   }
 ]
