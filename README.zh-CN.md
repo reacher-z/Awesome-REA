@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (18) · [游戏](#game) (130) · [应用](#app) (44)
+- [网站](#website) (18) · [游戏](#game) (131) · [应用](#app) (44)
 - [原生二进制](#native-binary) (20) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
 
 **论文与工作流**
@@ -961,6 +961,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向匹配反编译的协作网站：其编译服务用选定平台的编译器编译候选源码，汇编目标汇编代码，并用 asm-differ 对比两个目标文件。对其 MIPS、PowerPC、ARM 和 SuperH 平台，m2c 可生成初步反编译代码。18 个平台定义涵盖 N64、PlayStation、PS2、PSP、GameCube/Wii、Wii U、DS、GBA、3DS、Switch、Saturn、Dreamcast 和 Xbox 360，以及 IRIX、Mac OS X、MS-DOS、Win32 和 Android x86。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-me/)
+
+- [**splat 二进制拆分工具**](https://github.com/ethteck/splat)
+
+  面向反编译与模组项目的二进制拆分工具：由 YAML 配置指定在何处、以何种方式把 N64 ROM 或 PSX、PS2、PSP 二进制切分为代码、数据和素材段。扫描阶段反汇编代码与数据，MIPS 部分由 spimdisasm 处理；拆分阶段写出文件以及用于重新构建输入文件的链接脚本。可编写自定义段类型扩展该流程。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/splat/)
 
 <a id="app"></a>
 ### App · 应用

@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (130) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (131) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -960,6 +960,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Collaborative decompilation website for matching work: its compile service builds candidate source with a selected platform compiler, assembles the target assembly and diffs the two objects with asm-differ. m2c drafts initial decompilations for its MIPS, PowerPC, ARM and SuperH platforms. The 18 platform definitions span N64, PlayStation, PS2, PSP, GameCube/Wii, Wii U, DS, GBA, 3DS, Switch, Saturn, Dreamcast and Xbox 360 plus IRIX, Mac OS X, MS-DOS, Win32 and Android x86.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/decomp-me/)
+
+- [**splat**](https://github.com/ethteck/splat)
+
+  Binary splitter for decompilation and modding projects: a YAML config says where and how to cut an N64 ROM or PSX, PS2 or PSP binary into code, data and asset segments. A scan phase disassembles code and data, with MIPS handled by spimdisasm; a split phase writes the files and a linker script for rebuilding the input. Custom segment types can extend the pipeline.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/splat/)
 
 <a id="app"></a>
 ### App
