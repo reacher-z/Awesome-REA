@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 78](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 337](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 175](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 79](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (78) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
+- [论文](#papers) (79) · [智能体与 MCP](#agents-and-mcp) (29) · [文档与学习资源](#references-and-learning) (25)
 
 **更多浏览方式**
 
@@ -2134,13 +2134,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**78 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
+**79 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (26) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (27) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2543,6 +2543,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 报告的 24.4% 降幅来自保留符号版本输出的 Halstead 工作量代理指标，并非直接测得的人力节省。62.9% 的注释结果是人工判定正确的注释中，具有非平凡信息者的平均占比。MSSC 是过程内启发式检查：调用被抽象处理，循环转化为分支；解析、别名与路径增长仍有限制。其 80 个案例的人工审查报告准确率为 84%、召回率为 85%，其中漏过三处有害修改。这支持辅助理解伪代码，不能保证二进制等价、整程序可重新编译或恢复原始源码。
 
   **发表信息:** 2024 · NDSS 2024 · 会议论文 · Peiwei Hu 等
+
+  </details>
+
+- [**XFL：基于极端多标签学习的二进制函数命名**](https://ieeexplore.ieee.org/document/10179439)
+
+  XFL 将去符号二进制中的函数命名视为极端多标签分类：函数名被拆分为词元，再由 PfastreXML 从常见标签词表中为每个函数排序合适的词元。其 DEXTER 嵌入结合基于 angr VEX 中间表示的静态分析特征、调用图上下文和整个二进制的全局上下文，另有一个语言模型把预测的词元排列成函数名字符串。在来自 Debian 软件包、共 10,047 个 x86-64 C 二进制中的 741,724 个函数上，以 1,024 个标签的词表，作者报告精确率 0.835、召回率 0.575、F1 0.681，在精确率和 F1 上领先 Punstrip、Debin 与 Nero。
+
+  2023 · 会议论文 · [PDF](https://arxiv.org/pdf/2107.13404v4) · [代码](https://github.com/lmu-plai/xfl) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-xfl/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 预测结果是固定词表中的词元标签，经排序后可选地组合成名称；它们并非恢复的源码名称，评分也按词元而非完整名称匹配。评测使用来自 Debian 软件包、以多种编译器与优化设置构建的 x86-64 ELF C 二进制，以及规模较小的 Nero 数据集；训练所得模型仅适用于 x86-64 GNU/Linux 二进制。测试时所有工具均从符号表获取函数边界，因此不计入边界检测错误。许多测试函数名也出现在训练集中；仅考察训练中从未出现的名称时，F1 降至 0.242。混淆和对抗性二进制不在研究范围内。Nero 数据集上 Debin 与 Dire 的数据取自 Nero 论文，并未重新运行。
+
+  **发表信息:** 2023 · IEEE S&amp;P 2023 · 会议论文 · James Patrick-Evans 等
 
   </details>
 

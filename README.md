@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 78](https://img.shields.io/badge/papers-78-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 79](https://img.shields.io/badge/papers-79-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (78) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
+- [Papers](#papers) (79) · [Agents and MCP](#agents-and-mcp) (29) · [References and Learning](#references-and-learning) (25)
 
 **More ways to browse**
 
@@ -2133,13 +2133,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**78 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
+**79 papers**, grouped by topic and ordered newest first. Each entry shows its publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (26) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (27) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2542,6 +2542,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The reported 24.4% reduction is a Halstead-effort proxy on non-stripped output, not a measured reduction in human effort. The 62.9% comment result is the average non-trivial share among manually judged correct comments. MSSC is an intraprocedural heuristic: calls are abstracted and loops become branches; parsing, aliasing and path growth remain limitations. Its 80-case manual audit reports 84% accuracy and 85% recall, including three harmful changes missed. This supports assisted pseudocode comprehension, not guaranteed binary equivalence, recompilable whole programs or original-source recovery.
 
   **Publication:** 2024 · NDSS 2024 · Conference paper · Peiwei Hu et al.
+
+  </details>
+
+- [**XFL: Naming Functions in Binaries with Extreme Multi-label Learning**](https://ieeexplore.ieee.org/document/10179439)
+
+  XFL treats function naming in stripped binaries as extreme multi-label classification: names are split into tokens, and PfastreXML ranks which tokens from a vocabulary of frequent labels fit each function. Its DEXTER embedding combines static-analysis features built on angr’s VEX IR with call-graph and whole-binary context, and a separate language model orders predicted tokens into a name string. On 741,724 functions from 10,047 x86-64 C binaries in Debian packages, with a 1,024-label vocabulary, the authors report precision 0.835, recall 0.575 and F1 0.681, ahead of Punstrip, Debin and Nero in precision and F1.
+
+  2023 · Conference paper · [PDF](https://arxiv.org/pdf/2107.13404v4) · [Code](https://github.com/lmu-plai/xfl) · [Full entry & citation](https://awesomerea.org/papers/paper-xfl/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Predictions are token labels from a fixed vocabulary, ranked and optionally assembled into names; they are not recovered source names, and scoring matches tokens rather than exact names. Evaluation uses x86-64 ELF C binaries from Debian packages, built with mixed compilers and optimization settings, plus Nero’s smaller dataset; the trained model is specific to x86-64 GNU/Linux binaries. All tools receive function boundaries from symbol tables at test time, so boundary-detection errors are excluded. Many test names also occur in training; restricted to names never seen in training, F1 falls to 0.242. Obfuscated and adversarial binaries are out of scope. Debin and Dire figures on the Nero dataset are copied from the Nero paper rather than rerun.
+
+  **Publication:** 2023 · IEEE S&amp;P 2023 · Conference paper · James Patrick-Evans et al.
 
   </details>
 
