@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 440](https://img.shields.io/badge/resources-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 441](https://img.shields.io/badge/resources-441-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 85](https://img.shields.io/badge/papers-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (85) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (28)
+- [Papers](#papers) (85) · [Agents and MCP](#agents-and-mcp) (40) · [References and Learning](#references-and-learning) (29)
 
 **More ways to browse**
 
@@ -2749,6 +2749,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A free, English lesson index by mytechnotalent that grows almost daily: 490 numbered lessons, most of which have learners write small programs and then debug and patch ("hack") them, across x86, x64, 32/64-bit ARM, RISC-V and AVR. Early courses start from number systems, registers, memory and the stack; later ones cover microcontroller firmware on Raspberry Pi Pico/Pico 2, STM32F401, ESP32-C3, ATmega328P and micro:bit boards, plus Windows, Go, Rust and WebAssembly programs. The README is a table of links; the lesson text lives in a GitBook and in the author's other repositories and PDF books.
 
   Learning resource · Targets: Binary, Firmware · [Requirements & evidence](https://awesomerea.org/resources/mytechnotalent-reverse-engineering/)
+
+- [**Z0FCourse Reverse Engineering**](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering)
+
+  A free English course by Z0F on reverse engineering 64-bit Windows programs, which its README pitches as taking learners from beginner to intermediate. Markdown lessons move from number systems, x64 registers, memory layout and calling conventions to x64dbg and Ghidra, then reverse small samples and an author-written DLL, recovering a Player class and calling the DLL's exports from a program of one's own. The unfinished later chapters introduce Windows internals and reverse ntdll's generic-table functions.
+
+  Learning resource · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/z0f-reverse-engineering-course/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

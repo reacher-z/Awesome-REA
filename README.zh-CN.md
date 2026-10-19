@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 440](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-440-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 441](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-441-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 85](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-85-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (85) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (28)
+- [论文](#papers) (85) · [智能体与 MCP](#agents-and-mcp) (40) · [文档与学习资源](#references-and-learning) (29)
 
 **更多浏览方式**
 
@@ -2750,6 +2750,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   mytechnotalent 维护的免费英文课程索引，几乎每天更新：共 490 节编号课程，多数课程让学习者先编写小程序，再对其调试和打补丁（文中称 "hack"），覆盖 x86、x64、32/64 位 ARM、RISC-V 和 AVR。前期课程从数制、寄存器、内存和栈讲起；后期转向 Raspberry Pi Pico/Pico 2、STM32F401、ESP32-C3、ATmega328P 和 micro:bit 等开发板上的微控制器固件，以及 Windows、Go、Rust 和 WebAssembly 程序。README 本身只是链接目录，课程正文位于一个 GitBook 以及作者其他仓库中的课程文件和 PDF 书。
 
   学习资源 · 目标：二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/mytechnotalent-reverse-engineering/)
+
+- [**Z0FCourse 逆向工程课程**](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering)
+
+  Z0F 编写的免费英文课程，讲解如何逆向 64 位 Windows 程序，README 称目标是帮助学习者从入门进阶到中级。Markdown 课程从数制、x64 寄存器、内存布局和调用约定讲起，过渡到 x64dbg 与 Ghidra，再逆向若干小样本以及作者自己编写的 DLL，还原其中的 Player 类，并在自己编写的程序中调用该 DLL 的导出函数。尚未完成的后续章节介绍 Windows 内部机制，并逆向 ntdll 中的 generic table 系列函数。
+
+  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/z0f-reverse-engineering-course/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->
