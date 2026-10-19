@@ -3689,5 +3689,15 @@
       "工具会修补目标 APK，且每次启动应用时都需要来自桌面的主动插桩，因此无需 root 设备；仅适用于使用者拥有或有权测试的应用。",
       "README 说明项目自身代码采用 MIT 许可证，没有可供 GitHub 识别的独立 LICENSE 文件；随附组件各自保留其许可证，包括 HTTP Toolkit 的解固定脚本（AGPL-3.0）、Frida gadget（wxWindows Library Licence）以及 Android 构建/平台工具。仓库还附带 HTTP Toolkit 的开源 SSL 固定演示 APK（Apache-2.0）作为测试目标。"
     ]
+  },
+  "cpu-rec": {
+    "name": "cpu_rec CPU 指令集统计识别工具",
+    "requirements": [
+      "审阅时最新版本为 v1.1，发布于 2024-03-19，标签正对应所审阅的提交；该版本新增可选的 pickle 语料缓存以加快启动，并可用 LIEF 代替 elfesteem。没有安装包：只需把 cpu_rec.py 和 cpu_rec_corpus 目录复制到同一目录。",
+      "可在 Python 3 或 Python 2 上运行；可移植性工作流在 Ubuntu 和 macOS 上测试 Python 3.10、PyPy 2.7 与 3.9 以及 GraalPy。若没有 lzma 模块，需先解压 .xz 语料文件。可选的 elfesteem 或 LIEF 能提取 ELF、PE、Mach-O 或 COFF 文件的代码段。README 称在作者的笔记本上，每 MB 约需一分钟分析时间，为 70 种架构建立签名需要 1 GB 内存。",
+      "binwalk 模式需安装到 binwalk 的模块目录，并要求 binwalk 包含 devttys0/binwalk 第 241 号合并请求的补丁；这些说明针对的是早期的 Python 版 binwalk，未核实其与当前基于 Rust 的 v3 是否兼容。",
+      "结果属于启发式判断：README 提醒，一个文件可能包含多种架构，小数据块可能被误判，熵值高于 0.9 的数据所得结果大概没有意义。78k 和 TriCore 因许可问题未收入默认语料库，只能由使用者用自有二进制补充。",
+      "cpu_rec.py 采用 Apache-2.0 许可。README 说明默认语料库是由各自带有许可的代码块组成的复合作品，主要来自 Debian、BusyBox、C-Kermit 和作者自行交叉编译的开源程序，另有少数许可不明的代码块，其中包括 Dell 分发的一个 H8S 二进制；build_default_corpus 记录了每一块的来源。本次未分析任何文件。"
+    ]
   }
 }
