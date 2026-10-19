@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 337](https://img.shields.io/badge/resources-337-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 175](https://img.shields.io/badge/cases-175-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 338](https://img.shields.io/badge/resources-338-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 176](https://img.shields.io/badge/cases-176-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 80](https://img.shields.io/badge/papers-80-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (19) · [Game](#game) (158) · [App](#app) (48)
+- [Website](#website) (19) · [Game](#game) (159) · [App](#app) (48)
 - [Native Binary](#native-binary) (24) · [Firmware and Hardware](#firmware) (14) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (175) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (176) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -982,6 +982,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements the Rise of Nations: Extended Edition engine as a native macOS app with a Metal renderer, a deterministic simulation, a computer opponent and a compatible BigHugeScript compiler and virtual machine, loading art, maps, rules and scripts from the user’s own Windows installation. Subsystem specifications written from Ghidra study of the symbol-bearing executable, together with JavaScript reference tools, guided a C++17 implementation built with heavy Claude Code assistance. The alpha plays tutorials and scenarios, and its bit-exactness checks remain project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openriseofnations-engine-case/)
+
+- [**TH04: rebuilding Lotus Land Story’s four PC-98 programs from source**](https://github.com/N0zoM1z0/th04)
+
+  Reconstructs source for the Japanese PC-98 Touhou 4: Lotus Land Story and rebuilds all four DOS programs, MAIN.EXE, OP.EXE, MAINE.EXE and ZUN.COM, with a pinned Borland toolchain under Wine. Function acceptance against the original binaries is tracked separately from emulator replays that compare inputs, RNG, object pools and video with the original game. Complete-campaign, original-timing and byte-identity goals remain open.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/th04-reconstruction-case/)
 
 #### Tools, projects and integrations
 
