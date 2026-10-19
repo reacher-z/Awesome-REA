@@ -7925,5 +7925,37 @@
       "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/.claude-plugin/marketplace.json",
       "https://github.com/SimoneAvogadro/android-reverse-engineering-skill/blob/0c7cf89830993df7dfc178498f69952262808bea/LICENSE"
     ]
+  },
+  {
+    "id": "wind-waker-hd-decomp-case",
+    "name": "Wind Waker HD decompilation: functions verified against the recompiled Wii U game",
+    "url": "https://github.com/ZeldaWWHDDecomp/wwhd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles the USA Wii U release of The Wind Waker HD function by function into readable C++ in zeldaret/tww’s style, and verifies each function by running it beside the original, statically recompiled from the user’s own copy, comparing return values, memory writes and calls on generated and recorded inputs, with coverage and mutation checks. README reports 28,244 of the game’s 39,713 functions verified, including 22,068 of 22,215 GameCube-derived functions. The code calls undecompiled functions by address, so it runs only inside the ZeldaWWHDRecomp port, not as a standalone game build.",
+    "description_zh": "将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。README 报告游戏 39,713 个函数中已有 28,244 个通过验证，其中来自 GameCube 版的 22,215 个函数里有 22,068 个。代码通过地址调用尚未反编译的函数，因此只能在 ZeldaWWHDRecomp 移植中运行，不能单独构建成游戏。",
+    "evidence_url": "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "README describes a hybrid decompilation of cking.rpx (USA, version 0): decompiled functions call others through their original addresses, so the tree builds no game on its own and runs only with the port’s recompiled code. It reports the HD UI decompiled, while about 11,400 generic-library functions (sead, agl, NW4F, most of JSystem, the Cafe SDK and the C runtime) are not planned. zeldaret/tww is the reference for names and structure, and the docs record HD differences for 838 units compared with the GameCube version.",
+      "Building or verifying needs the user’s own legally obtained game, extracted with the port’s tool from a disc image with its disc key and the Wii U common key. README states that the repository contains no machine code, recompiled code, game assets or keys; small data tables used by the code are included, while model data, the RPX image, recompiled output, game-derived names and recorded inputs are generated locally and git-ignored. The recommended GameCube signature checks also use zeldaret/tww built from the user’s own GameCube disc.",
+      "The harness runs inside a ZeldaWWHDRecomp checkout at the tested commit df2cf51b (v0.2.3), replacing the port’s older tools/verify. It needs Python 3, clang/clang++ with C++20 and the port’s game-extraction requirements; building the port itself is needed only for recording inputs. A full verify_all.py run is long, and some units need tens of GB of memory.",
+      "Each function runs on 10,000 generated inputs on each of two seeds, must reach nearly all basic blocks of the original and is mutation-tested; README reports the whole tree re-verified after the October 2026 readability rewrite. tools/verify/README.md says equivalence is to the recompiled code’s model of the Espresso CPU, not the console, and that timing, threading and the exact stack layout are not checked. The in-game swap-test build is not part of the release, the repository has no CI workflow, and this collection ran nothing.",
+      "CC0 1.0 covers the decompiled source, tools and documentation; the game, Nintendo data and the port runtime keep their own terms. README calls it an unofficial, non-commercial fan project with no donations or paid builds. tools/verify/README.md reports pilot timings for an agent using the tools and two functions written by parallel agents; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/tools/verify/README.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/review-notes.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/hd-vs-gc-summary.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/docs/decomp-notes.md",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/tools/verify/assets.py",
+      "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/LICENSE",
+      "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/tree/df2cf51bd6d02e0b310d46a5da062693bac7314f"
+    ]
   }
 ]

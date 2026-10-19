@@ -10813,16 +10813,17 @@
       ],
       "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "Pinned README, technical overview, decomp-build and verification notes, license and submodule list support a static recompilation of the Wii U Wind Waker HD into native desktop and Android builds. Full mapping covers this port; the separate ZeldaWWHDDecomp/wwhd decompilation and the community Switch port are not covered. The required user dump and keys, known rendering gaps and project-reported playability remain explicit.",
-      "reason_zh": "固定版本的 README、技术概述、反编译构建与验证说明、许可证及子模块列表，支持这是将 Wii U 版《风之杖 HD》静态重编译为桌面与 Android 原生版本的项目。完整映射覆盖该移植；独立的 ZeldaWWHDDecomp/wwhd 反编译和社区 Switch 移植不在范围内。所需的使用者转储与密钥、已知的渲染缺口及项目报告的可玩性均明确保留。",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "Pinned README, technical overview, decomp-build and verification notes, license and submodule list support a static recompilation of the Wii U Wind Waker HD into native desktop and Android builds. Full mapping covers this port. The separate ZeldaWWHDDecomp/wwhd decompilation, whose functions the port’s experimental macOS build can run, is mapped as related through its own pinned README; the community Switch port is not covered. The required user dump and keys, known rendering gaps and project-reported playability remain explicit.",
+      "reason_zh": "固定版本的 README、技术概述、反编译构建与验证说明、许可证及子模块列表，支持这是将 Wii U 版《风之杖 HD》静态重编译为桌面与 Android 原生版本的项目。完整映射覆盖该移植。独立的 ZeldaWWHDDecomp/wwhd 反编译（该移植的实验性 macOS 构建可运行其中的函数）依据其自身固定版本的 README 按相关条目映射；社区 Switch 移植不在范围内。所需的使用者转储与密钥、已知的渲染缺口及项目报告的可玩性均明确保留。",
       "primary_evidence_urls": [
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/README.md",
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/how-it-works.md",
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/docs/decomp-build.md",
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/tools/verify/README.md",
         "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/LICENSE",
-        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules"
+        "https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp/blob/f10b56621ed13e0053e7cf8190e740834377e45a/.gitmodules",
+        "https://github.com/ZeldaWWHDDecomp/wwhd/blob/b2811a3ce838d1f875bc8e68536c1950af5d7ffc/README.md"
       ],
       "catalog_matches": [
         {
@@ -10830,6 +10831,12 @@
           "id": "wind-waker-hd-recomp-case",
           "kind": "case-study",
           "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "wind-waker-hd-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
         }
       ]
     },
@@ -15871,7 +15878,7 @@
     },
     "primary_reviewed_units": 337,
     "catalog_linked_occurrences": 210,
-    "distinct_resource_ids": 201,
+    "distinct_resource_ids": 202,
     "distinct_paper_ids": 1,
     "unique_projects": null
   }

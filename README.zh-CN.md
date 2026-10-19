@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 370](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-370-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 371](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-371-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (20) · [游戏](#game) (166) · [应用](#app) (54)
+- [网站](#website) (20) · [游戏](#game) (167) · [应用](#app) (54)
 - [原生二进制](#native-binary) (30) · [固件与硬件](#firmware) (16) · [协议](#protocol) (13)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (184) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (185) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1033,6 +1033,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   为《超级马力欧 奥德赛》Switch 1.0 版主程序重建 C++ 源码，并用共享的 nx-decomp-tools 检查器逐个函数与原始 AArch64 机器码比对。在所审固定提交中，其函数清单将 74,171 个函数中的 18,996 个标为一致。README 提醒构建结果不是可游玩的游戏；仓库不含游戏素材，sead、agl 等任天堂库则来自 open-ead 另行维护的重建项目。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/odyssey-decomp-case/)
+
+- [**《风之杖 HD》反编译：与重编译的 Wii U 版逐函数比对验证**](https://github.com/ZeldaWWHDDecomp/wwhd)
+
+  将 Wii U 美版《塞尔达传说 风之杖 HD》逐个函数反编译为 zeldaret/tww 风格的可读 C++，并让每个函数与由使用者自有副本静态重编译得到的原版函数并排运行，在生成输入和录制输入上比较返回值、内存写入和函数调用，同时检查覆盖率并进行变异测试。README 报告游戏 39,713 个函数中已有 28,244 个通过验证，其中来自 GameCube 版的 22,215 个函数里有 22,068 个。代码通过地址调用尚未反编译的函数，因此只能在 ZeldaWWHDRecomp 移植中运行，不能单独构建成游戏。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wind-waker-hd-decomp-case/)
 
 #### 工具、项目与集成
 
