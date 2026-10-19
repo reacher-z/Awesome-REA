@@ -4827,12 +4827,18 @@
         "https://x.com/i/status/2110622119419838752",
         "https://x.com/i/status/2110657740364529992"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@binaryify, 2026-10-15) says REA is usually unnecessary and may trigger model downgrades or bans, and that the author’s monitor runs HyperOS with exposed ports and services; the author’s earlier post says a control app was built after reverse-engineering the Xiaomi monitor. The author’s MIT-licensed MonitorBar repository, pinned here, switches inputs and volume through a HyperOS LAN remote API on port 6095 and reports testing only on a REDMI G Pro 27U 2026. It documents the endpoints it calls but not how the interface was identified, and offers no reference comparison. Retain the lead without a catalog mapping; this is not a finding that MonitorBar is broken, and new primary evidence can support another review.",
+      "reason_zh": "所引回复（@binaryify，2026-10-15）称多数情况下不需要 REA，用了反而可能导致模型降级或封号，并称作者的显示器内置澎湃 OS 且暴露了端口和服务；作者更早的帖子称逆向了小米显示器并做了控制软件。作者以 MIT 许可公开的 MonitorBar 仓库（此处固定版本）通过澎湃 OS 在 6095 端口的局域网遥控接口切换输入源和调节音量，并称仅在 REDMI 显示器 G Pro 27U 2026 上测试过。仓库记录了所调用的接口，但未说明该接口是如何识别出来的，也没有参考对照。保留此线索而不建立目录映射；这不表示 MonitorBar 损坏，新的一手证据可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/binaryify/status/2110622119419838752",
+        "https://x.com/binaryify/status/2110557825907011640",
+        "https://github.com/binaryify/MonitorBar/blob/620f398981824bc02406846bee1c68d1366f1c07/README.md",
+        "https://github.com/binaryify/MonitorBar/blob/620f398981824bc02406846bee1c68d1366f1c07/internal/mitv/mitv.go",
+        "https://github.com/binaryify/MonitorBar/blob/620f398981824bc02406846bee1c68d1366f1c07/LICENSE"
+      ],
       "catalog_matches": []
     },
     {
@@ -4848,12 +4854,15 @@
         "https://x.com/i/status/2110623921611432090",
         "https://x.com/i/status/2110762075559444705"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@0xCortexq, 2026-10-15) is a usage tip: it retells REA’s official Notes example, in which the Export notes click is traced from the renderer to the CSV writer, repeats case figures from REA’s own site, and gives a Grok Bot prompt for an investigate, specify and rebuild workflow; it quotes @shmidtqq’s X article with the same walkthrough. Neither publishes a new target, investigation record, SPEC.md, rebuilt exporter or test results. Retain the lead without a catalog mapping; this is a workflow tutorial built on REA’s own example, not a documented reconstruction.",
+      "reason_zh": "作者帖子（@0xCortexq，2026-10-15）是一条使用技巧：复述 REA 官方 Notes 示例中把“Export notes”点击从渲染进程一路追踪到 CSV 写入的过程，重复 REA 官网的案例数字，并给出一段用 Grok Bot 执行“调查、写规格、重建”流程的提示词；帖子引用了 @shmidtqq 内容相同的 X 长文。两者均未公开新的目标、调查记录、SPEC.md、重建的导出器或测试结果。保留此线索而不建立目录映射；这是基于 REA 自带示例的工作流教程，而非有记录的重建。",
+      "primary_evidence_urls": [
+        "https://x.com/0xCortexq/status/2110623921611432090",
+        "https://x.com/shmidtqq/status/2110407546246746564"
+      ],
       "catalog_matches": []
     },
     {
@@ -4901,12 +4910,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110630792049115198"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@harden_369741, 2026-10-15), answering a post about REA, recalls that an agent pointed at a legacy binary’s decompiled output once confidently invented APIs that never existed, and argues that reverse engineering is a stress test for coding agents. It names no binary, agent or output and links no artifact; it reports a failure anecdote rather than a result, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the incident nor any REA use is documented.",
+      "reason_zh": "所引回复（@harden_369741，2026-10-15）是对一条 REA 相关帖子的回复，回忆曾让智能体分析某个遗留二进制的反编译输出，结果它自信地编造了根本不存在的 API，并认为逆向工程是对编程智能体的压力测试。回复未指明二进制、智能体或输出，也未链接任何成果；它讲述的是一次失败经历而非结果，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；该事件及任何 REA 使用均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/harden_369741/status/2110630792049115198",
+        "https://x.com/stretchcloud/status/2110630251781104087"
+      ],
       "catalog_matches": []
     },
     {
@@ -4922,12 +4934,15 @@
         "https://x.com/i/status/2110631522403512760",
         "https://x.com/i/status/2110631530683068722"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@a1chzt, 2026-10-15) says the author reverse-engineered Codex’s new next-message prediction, extracted its prompt and remote config (version 5) and rebuilt it as the open-source Pi extension pi-next-hint. At review the package’s GitHub repository returned 404; the MIT-licensed npm release 0.1.5 remains. Its README and notices say the prompt reproduces Codex App remote config version 5 as retrieved from a signed-in account and the rest is independent code; its benchmark compares against a replay of that prompt, not native Codex output, and says the results do not establish higher accuracy. How the config was located and the reproduced prompt’s terms are not documented. Retain the lead without a catalog mapping; this is not a finding that the extension is broken.",
+      "reason_zh": "作者帖子（@a1chzt，2026-10-15）称逆向了 Codex 新推出的“下一句预测”，扒出了预测所用的提示词和远程配置（版本 5），并在 Pi 中重做为开源扩展 pi-next-hint。核查时，该包的 GitHub 仓库返回 404，MIT 许可的 npm 版本 0.1.5 仍可获取。其 README 与第三方声明称，提示词复现自从已登录账号取得的 Codex App 远程配置版本 5，其余为独立实现；其测评以该提示词的重放而非 Codex App 实际输出为对照，并称结果不能证明更准确。文档未说明如何定位该配置，也未说明复现提示词所适用的条款。保留此线索而不建立目录映射；这不表示该扩展损坏或不可用。",
+      "primary_evidence_urls": [
+        "https://x.com/a1chzt/status/2110631522403512760",
+        "https://www.npmjs.com/package/pi-next-hint/v/0.1.5"
+      ],
       "catalog_matches": []
     },
     {
@@ -5136,12 +5151,15 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110642225361371219"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The cited reply (@Promptmethus, 2026-10-15), in a thread about colony-simulation games, says the author is building an AI game system for generative colony worlds, already has decompilation tools and powerful local GPUs, and expects soon to decompile existing engines to study their code. It names no engine and links no artifact; it states plans rather than results, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; no decompilation or REA use is established.",
+      "reason_zh": "所引回复（@Promptmethus，2026-10-15）出现在一条关于殖民地模拟游戏的讨论中，称作者正在构建一个用于生成式殖民地世界的 AI 游戏系统，已下载反编译工具并拥有高性能本地 GPU，预计不久就会反编译现有引擎、研究其代码。回复未指明引擎，也未链接任何成果；它陈述的是计划而非结果，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；任何反编译成果或 REA 使用均未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/Promptmethus/status/2110642225361371219",
+        "https://x.com/solodoncos/status/2110494019415351305"
+      ],
       "catalog_matches": []
     },
     {
@@ -5156,13 +5174,28 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110647905027604700"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "already-curated",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The author’s post (@jonaswagnr, 2026-10-15) describes a Mac app built with Claude Code to replace ScanSnap Home for an iX500; the same account’s public ix500-scan repository documents it, and its draft social posts contain the post’s text. At the pinned commit the project extends a community reverse-engineered VENS Wi-Fi driver for macOS, records additional handshake and status fields and provides a SwiftUI app with a USB fallback. This mapping covers that scoped client, not other ScanSnap models, ScanSnap Home parity or independent runtime reproduction.",
+      "reason_zh": "作者帖子（@jonaswagnr，2026-10-15）描述了借助 Claude Code 为 iX500 做出的、替代 ScanSnap Home 的 Mac 应用；同名账号的公开仓库 ix500-scan 记录了该项目，其社交媒体草稿包含该帖原文。在固定提交中，项目为 macOS 扩展了社区逆向的 VENS Wi-Fi 驱动，补充记录了握手与状态字段，并提供带 USB 备选路径的 SwiftUI 应用。映射覆盖该范围内的客户端，不代表其他 ScanSnap 型号、与 ScanSnap Home 等价或独立运行复现。",
+      "primary_evidence_urls": [
+        "https://x.com/jonaswagnr/status/2110647905027604700",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/README.md",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/vens/PROTOCOL",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/vens/scansnap.py",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/scansnapd.py",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/social/texte.md",
+        "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "ix500-scan-scansnap-wifi-case",
+          "kind": "case-study",
+          "scope": "full"
+        }
+      ]
     },
     {
       "id": "song:sonic-physics-elden-ring-rea",
@@ -16234,18 +16267,18 @@
     "inventory_units": 589,
     "alias_merges": 2,
     "occurrences_by_state": {
-      "already-curated": 208,
-      "insufficient-evidence": 273,
-      "pending": 110
+      "already-curated": 209,
+      "insufficient-evidence": 278,
+      "pending": 104
     },
     "units_by_state": {
-      "already-curated": 206,
-      "insufficient-evidence": 273,
-      "pending": 110
+      "already-curated": 207,
+      "insufficient-evidence": 278,
+      "pending": 104
     },
-    "primary_reviewed_units": 419,
-    "catalog_linked_occurrences": 222,
-    "distinct_resource_ids": 212,
+    "primary_reviewed_units": 425,
+    "catalog_linked_occurrences": 223,
+    "distinct_resource_ids": 213,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }

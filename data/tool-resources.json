@@ -11691,5 +11691,41 @@
       "https://github.com/decompme/decomp.me/pull/1474",
       "https://github.com/SAT-R/sa3/blob/f28834dd4c92ad1ed761a978210355ad63d70b88/README.md"
     ]
+  },
+  {
+    "id": "ix500-scan-scansnap-wifi-case",
+    "name": "iX500 Scan: a macOS client for the reverse-engineered ScanSnap Wi-Fi protocol",
+    "url": "https://github.com/jonaswagnr/ix500-scan",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Replaces ScanSnap Home for a Fujitsu/PFU ScanSnap iX500 on macOS with a SwiftUI app and Python service that scan over Wi-Fi through the community-reverse-engineered VENS protocol, or over USB through SANE, and produce searchable PDFs. It vendors bramheerink’s GPL-2.0 driver, extends it for macOS, and documents further handshake and hardware-status fields, including the scan-button bit. Results are author-reported; the repository publishes no tests or captures.",
+    "description_zh": "在 macOS 上以 SwiftUI 应用和 Python 后台服务替代 ScanSnap Home，为富士通／PFU ScanSnap iX500 提供扫描：Wi-Fi 经由社区逆向的 VENS 协议，USB 经由 SANE，输出可搜索的 PDF。项目内置 bramheerink 的 GPL-2.0 驱动并为 macOS 做了扩展，还记录了更多握手字段和硬件状态字段，包括扫描键状态位。结果均为作者报告，仓库未公开测试或抓包记录。",
+    "evidence_url": "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed commit 24a5f7c (three commits, all dated 2026-10-15) targets the Fujitsu/PFU ScanSnap iX500. README says ScanSnap Home 3.7 is no longer maintained and hangs on macOS 27; the project offers Wi-Fi scanning started by the device’s scan button, a USB path through SANE, and searchable PDFs with rotation, cropping, blank-page removal and OCR. No release build is published, and other ScanSnap models are not claimed.",
+      "The Wi-Fi path needs the user’s own iX500 and two values that README says only ScanSnap Home knows: the scanner’s 12-character pairing key and the paired computer’s 8-byte HostID. They are obtained once from ScanSnap Home’s own connection to that scanner; the repository includes no vendor software, firmware or captures.",
+      "Building needs macOS 14+, Xcode 15+ (Swift tools 5.10), the system Python 3 with Pillow, and Homebrew sane-backends, ocrmypdf, img2pdf and tesseract-lang. build.sh bundles the Python service and vendored driver into an ad-hoc-signed app that runs the service with /usr/bin/python3.",
+      "The protocol work extends bramheerink/scansnap, whose VENS specification says it was reverse-engineered from captures of ScanSnap Home talking to an iX500. README adds handshake fields for the paired HostID, local time and UTC offset, hardware-status bits for an empty feeder and the scan button, and a session timeout of about 40 s, and notes that Wi-Fi images always arrive as 300 dpi colour, rotated 180° with scanner background. No automated tests, captures or comparisons with ScanSnap Home output are published; this review ran neither the app nor a scanner.",
+      "GPL-2.0, matching the vendored driver at commit 5706688, whose file header records the author’s changes. This is an unofficial client, not recovered vendor source or firmware. The repository’s draft social posts credit an evening with Claude Code for closing the remaining protocol gaps; no REA use is stated."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/vens/PROTOCOL",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/vens/README.md",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/vens/scansnap.py",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/scansnapd.py",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/app/Package.swift",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/app/build.sh",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/app/Sources/IX500Scan/ScannerService.swift",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/social/texte.md",
+      "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE",
+      "https://github.com/bramheerink/scansnap/blob/5706688db58f45a4d3db239de6e2e93bab36bb0f/LICENSE"
+    ]
   }
 ]

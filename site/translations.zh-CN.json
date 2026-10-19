@@ -4271,5 +4271,15 @@
       "作者认为这一场景对 AI 非常友好，因为已有相似的模块完成反编译可作示例，而且 GBA 编译器较简单、较可预测；生成的 C 代码缺少项目特有的宏，还需要改善可读性。作者为 decomp.me 提交的 AI 面板拉取请求未经合并即被关闭；文章称其用户收益尚不明确，而且需要付费 API 密钥。",
       "在所审阅的 SA3 提交中，README 规定了严格的禁止大模型／AI 政策，适用于议题和拉取请求，因此该项目已不再接受这种工作流。该提交中 SA3 仓库没有许可证文件，ROM 及其素材仍受各自权利约束，也未提及使用 REA。"
     ]
+  },
+  "ix500-scan-scansnap-wifi-case": {
+    "name": "iX500 Scan：基于逆向 ScanSnap Wi-Fi 协议的 macOS 客户端",
+    "requirements": [
+      "审阅提交 24a5f7c（共三次提交，均为 2026-10-15）面向富士通／PFU ScanSnap iX500。README 称 ScanSnap Home 3.7 已不再维护，在 macOS 27 上会卡死；项目提供由设备扫描键触发的 Wi-Fi 扫描、经 SANE 的 USB 扫描，以及带旋转、裁边、去空白页和 OCR 的可搜索 PDF。未发布构建好的版本，也未声称支持其他 ScanSnap 型号。",
+      "Wi-Fi 扫描需要用户自己的 iX500，以及 README 所说只有 ScanSnap Home 才知道的两个值：扫描仪的 12 位配对密钥和已配对电脑的 8 字节 HostID。这两个值需从 ScanSnap Home 与该扫描仪的连接中一次性取得；仓库不包含厂商软件、固件或抓包文件。",
+      "构建需要 macOS 14+、Xcode 15+（Swift tools 5.10）、带 Pillow 的系统 Python 3，以及通过 Homebrew 安装的 sane-backends、ocrmypdf、img2pdf 和 tesseract-lang。build.sh 把 Python 服务和内置驱动打包进一个临时（ad-hoc）签名的应用，应用通过 /usr/bin/python3 运行该服务。",
+      "协议部分扩展自 bramheerink/scansnap，其 VENS 规范称是根据 ScanSnap Home 与 iX500 通信的抓包逆向得出。README 补充了握手中已配对 HostID、本地时间与 UTC 偏移的字段，空纸盒与扫描键的硬件状态位，以及约 40 秒的会话超时，并说明 Wi-Fi 图像始终以 300 dpi 彩色、旋转 180° 且带扫描仪背景的形式传回。仓库未公开自动化测试、抓包或与 ScanSnap Home 输出的对比；本次审阅未运行应用，也未连接扫描仪。",
+      "采用 GPL-2.0，与内置驱动所基于的 5706688 提交一致，驱动文件头记录了作者的修改。这是非官方客户端，并非恢复的厂商源码或固件。仓库中的社交媒体草稿称，作者借助 Claude Code 用一个晚上补齐了协议中剩余的空白；未提及使用 REA。"
+    ]
   }
 }
