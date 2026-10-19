@@ -11,6 +11,7 @@ from artifact_links import github_repository
 from build_discovery_pages import PRIMARY_SOURCE_LABEL, SECTIONS, jsonld_script, publication_keys
 from build_paper_pages import STATUS_LABELS, formatted_date, scholarly_article
 from build_readme import CATEGORIES, KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
+from evidence_links import evidence_link
 from open_graph import open_graph_meta
 from requirement_facets import item_html, ordered_items
 
@@ -66,22 +67,8 @@ def _link(url: str, label: str, *, primary: bool = False) -> str:
 
 
 def _sources(urls: list[str], language: str) -> str:
-    links = []
-    for url in dict.fromkeys(urls):
-        href, label, context = _public_url(url), url, ''
-        parsed = urlsplit(url)
-        parts = parsed.path.lstrip('/').split('/', 4)
-        # Only immutable GitHub file/directory links get a compact display label.
-        # The full source URL, revision and any line anchor remain in the link.
-        if (parsed.netloc == 'github.com' and not parsed.query and len(parts) == 5
-                and parts[0] and parts[1] and parts[4]
-                and parts[2] in {'blob', 'tree'} and re.fullmatch(r'[a-f0-9]{40}', parts[3])):
-            owner, repository, _, revision, path = parts
-            label = path + ('#' + parsed.fragment if parsed.fragment else '')
-            revision_label = '修订' if language == 'zh' else 'Revision'
-            context = (f' <span class="entry-source-context">GitHub · {escape(owner + "/" + repository)}'
-                       f' · {revision_label} <span title="{revision}">{revision[:7]}</span></span>')
-        links.append(f'<li><a href="{href}" title="{href}" target="_blank" rel="noopener">{escape(label)}</a>{context}</li>')
+    # Pinned GitHub file/directory links get a compact path label; the full URL stays the target and title.
+    links = [f'<li>{evidence_link(url, _public_url(url), language)}</li>' for url in dict.fromkeys(urls)]
     return f'<section class="entry-section" aria-labelledby="entry-sources"><h2 id="entry-sources">{("一手来源" if language == "zh" else "Primary sources")}</h2><ol class="entry-sources">{"".join(links)}</ol></section>'
 
 
