@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 325](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-325-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 167](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 326](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-326-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 167](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-167-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 76](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-76-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (19) · [游戏](#game) (151) · [应用](#app) (46)
-- [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (13) · [协议](#protocol) (12)
+- [原生二进制](#native-binary) (23) · [固件与硬件](#firmware) (14) · [协议](#protocol) (12)
 
 **论文与工作流**
 
@@ -1612,6 +1612,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以提取出的根文件系统为输入，生成可编辑的仿真变换配置来重托管嵌入式 Linux 固件，再借助客户机 root shell、转发到主机的网络服务和记录下的动态分析输出，逐步完善配置。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/penguin/)
+
+- [**ipsw Apple 固件研究工具包**](https://github.com/blacktop/ipsw)
+
+  面向 Apple 固件研究与逆向工程的命令行工具包。可下载并解包 IPSW、OTA 和 KDK 并比较不同构建；检查 Mach-O 的加载命令、符号、签名和权限，并反汇编 ARM64 代码；在 dyld 共享缓存中查找符号和交叉引用、提取 dylib、导出 Objective-C 头文件并查看 Swift 元数据；提取 KEXT 并比较 kernelcache；还能解析 IMG4、解密 AEA 归档，以及检查 iBoot 和协处理器固件。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ipsw/)
 
 <a id="protocol"></a>
 ### Protocol · 协议
