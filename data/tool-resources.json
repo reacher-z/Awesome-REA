@@ -7196,5 +7196,37 @@
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/symbols/symbols.csv",
       "https://github.com/LinuxJessi/decomp-compat-kit/blob/d9bb53dac364ecfaff4f8b00ea44baec60a27abf/LICENSE"
     ]
+  },
+  {
+    "id": "sead-nintendo-library-decomp-case",
+    "name": "sead: a decompilation of Nintendo’s first-party C++ standard library",
+    "url": "https://github.com/open-ead/sead",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game"
+    ],
+    "description_en": "Decompiles sead, the C++ standard library that Nintendo statically links into its first-party games, covering containers, heaps, strings, math, file devices, threads, the game framework and graphics. Compile-time presets target the recent versions used by Breath of the Wild, Super Mario Odyssey, Splatoon 3, Tears of the Kingdom and Super Mario Bros. Wonder, and game decompilations such as Breath of the Wild pull it in as a submodule. Names come from debugging symbols and assertions in retail titles, and the README warns that many inlined and templated names are guesses.",
+    "description_zh": "反编译 sead，即 Nintendo 静态链接进其第一方游戏的 C++ 标准库，涵盖容器、堆、字符串、数学、文件设备、线程、游戏框架和图形等模块。编译期预设针对《旷野之息》《超级马力欧 奥德赛》《斯普拉遁 3》《王国之泪》和《超级马力欧兄弟 惊奇》所用的较新版本，《旷野之息》等游戏反编译项目以子模块方式引入它。命名来自零售游戏中的调试符号和断言，README 也提醒许多内联与模板函数的名称只是猜测。",
+    "evidence_url": "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit (2026-10-11, no releases) derives from aboood40091/sead but targets newer sead versions. The README says several modules currently fail to build for Switch and points to a GitHub project page for progress; seadVersion.h adds a Super Mario Maker 2 preset and a custom feature set alongside the README’s list.",
+      "Building needs no game files. Checking accuracy needs the original sead, which ships only statically linked in games: the README advises legally owning a recent first-party title with debugging symbols, naming Super Mario Odyssey 1.0.0, Splatoon 2 up to 3.1.0 and the Nintendo Labo pilot build.",
+      "The README asks for a partially C++17-capable compiler such as Clang 3.9 or newer and CMake 3.10+. CMakeLists builds an object library only for the nin (nnSdk, Switch) platform and links NintendoSDK headers supplied by the host project, the old or new open-ead header repository depending on a migration option. The README also describes Wii U (cafe) sources and declares other platforms unsupported.",
+      "The README asks contributors to match non-inlined functions against the original assembly, tolerating only register-allocation or obviously harmless reordering differences marked NOT_MATCHING, and to undo inlining with help from pilot builds and assertions; MATCHING_HACK_NX_CLANG guards codegen hacks. The repository has no checker or progress data of its own, and CI only runs clang-format, so matching is checked in consumer projects. This review ran nothing.",
+      "No license file is present and GitHub detects none; the README says nobody outside Nintendo has sead’s source. res/ holds the decompiled primitive-renderer shader sources plus a 2 KB compiled Wii U shader binary that was updated alongside them. Nintendo’s games keep their own rights, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/CMakeLists.txt",
+      "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/include/seadVersion.h",
+      "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/.github/workflows/lint_pr.yml",
+      "https://github.com/open-ead/sead/tree/f4178a21e21235830357dc27c26a2c29956972ed/res",
+      "https://github.com/open-ead/sead/blob/f4178a21e21235830357dc27c26a2c29956972ed/modules/src/gfx/cafe/seadPrimitiveRendererCafe.cpp",
+      "https://github.com/zeldaret/botw/blob/e78c02499d0f108ae9c00158198289764c5980fe/.gitmodules",
+      "https://github.com/aboood40091/sead"
+    ]
   }
 ]
