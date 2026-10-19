@@ -32,7 +32,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 ## kind、relationship、category 与 targets
 
-精选记录保存在 `data/rea-resources.json` 和 `data/tool-resources.json`。中英文描述都应简洁；网站使用的中文名称和使用条件在 `site/translations.zh-CN.json`。下面四个字段各自独立选择，一个字段不能决定另一个：
+精选记录保存在 `data/rea-resources.json` 和 `data/tool-resources.json`；所有独立重建案例（`relationship: independent-reconstruction`）都放在 `data/tool-resources.json`。中英文描述都应简洁；网站使用的中文名称和使用条件在 `site/translations.zh-CN.json`。下面四个字段各自独立选择，一个字段不能决定另一个：
 
 - `kind`：分享的是什么，例如工具、集成或案例。
 - `relationship`：证据证明了它与 REA 是什么关系，例如 REA 官方或社区资源、独立智能体集成或基础工具。
@@ -59,6 +59,8 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。列在“游戏”下的案例还应按[目录格式说明](data/README.md)中的方法填写 `reconstruction_method`，证据不足以确定方法时用 `other`；未填写时，该案例列在“其他重建方式”下，校验只给出警告。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源，并可按[目录格式说明（英文）](data/README.md)为每条 `requirements` 填写可选的 `requirement_facets`；填写后页面会把前提条件排在最前。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
 
 [案例覆盖记录](data/case-coverage.json)与目录记录分开，记录固定版本上游案例合集中的条目，格式见[目录格式指南（英文）](data/README.md)。修改其中的条目后，运行 `python3 scripts/build_case_coverage.py` 重新生成[覆盖摘要](docs/case-coverage.zh-CN.md)，再运行 `python3 scripts/validate.py`。
+
+独立重建案例添加到 `data/tool-resources.json` 末尾；放在 `data/rea-resources.json` 中会被校验拒绝。README 各分区和网站的案例列表按目录顺序排列：先 `data/rea-resources.json`，再 `data/tool-resources.json`，各自保持文件内顺序。因此每个“案例”列表都先列与 REA 相关的案例，再列独立重建案例。
 
 ## 来源已复核不等于运行验证
 

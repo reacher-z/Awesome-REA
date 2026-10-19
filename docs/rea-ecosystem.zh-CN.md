@@ -6,7 +6,7 @@
 
 2026-10-15 的首轮复查覆盖下文清单中的 25 条记录：18 条官方项目、文档或案例，6 条社区集成、练习或案例，以及 1 条上游维护者的相关目录。文档和案例分别计数，不能宣传成 25 个独立 REA 项目。这些记录的 verification 均为 source-reviewed；本次未安装、执行或独立复现这些外部项目。
 
-机器可读数据见 [rea-resources.json](../data/rea-resources.json)，该文件在首轮复查后继续增补。目录还收录与 REA 没有已确认关联的独立重建案例（`relationship: independent-reconstruction`），这类记录同时存放在 rea-resources.json 和 [tool-resources.json](../data/tool-resources.json) 中。它们不是本文讨论的 REA 生态项目，也不计入上述 25 条；是否把它们集中到一个文件，需要另行评审。
+机器可读数据见 [rea-resources.json](../data/rea-resources.json)，该文件在首轮复查后继续增补。目录还收录与 REA 没有已确认关联的独立重建案例（`relationship: independent-reconstruction`），这类记录统一存放在 [tool-resources.json](../data/tool-resources.json) 中，放在 rea-resources.json 会被校验拒绝。它们不是本文讨论的 REA 生态项目，也不计入上述 25 条。
 
 官方文件证据固定于 [808339f0b1cf3837445f392b5d5f1f362d64a27d](https://github.com/morluto/rea/tree/808339f0b1cf3837445f392b5d5f1f362d64a27d)。目录的访问链接指向当前文档，evidence_url 保留此次复查版本。社区文档使用各自原始仓库链接和复查日期。
 
