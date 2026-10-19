@@ -55,7 +55,7 @@
 - [KeenSecurityLab/BinAbsInspector](https://github.com/KeenSecurityLab/BinAbsInspector) — BinAbsInspector：二进制文件漏洞扫描器。 **[1,681 星标]** · 精选：[BinAbsInspector 二进制漏洞静态扫描工具](https://awesomerea.org/zh/resources/binabsinspector/)
 - [mytechnotalent/Hacking-Windows](https://github.com/mytechnotalent/Hacking-Windows) — 免费的 Windows C 开发课程，在 x86 和 x64 环境中学习 Win32API，并使用 IDA Free 对每一步进行逆向分析。 **[1,637 星标]**
 - [illera88/Ponce](https://github.com/illera88/Ponce) — IDA 2016 插件竞赛获奖作品！一键即可使用符号执行！ **[1,635 星标]**
-- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall 是高级 EVM 智能合约工具包，专注于字节码分析与从未经验证的合约中提取信息。 **[1,626 星标]**
+- [Jon-Becker/heimdall-rs](https://github.com/Jon-Becker/heimdall-rs) — Heimdall 是高级 EVM 智能合约工具包，专注于字节码分析与从未经验证的合约中提取信息。 **[1,626 星标]** · 精选：[heimdall-rs EVM 字节码分析工具包](https://awesomerea.org/zh/resources/heimdall-rs/)
 - [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — 结合二进制分析、污点追踪和模拟执行的固件安全研究平台，覆盖物联网、边缘 AI、移动设备和机器人。 **[1,615 星标]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — 虚拟机翻译中间语言。 **[1,607 星标]** · 精选：[VTIL-Core 虚拟机翻译中间语言核心库](https://awesomerea.org/zh/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — 使用 Rust 编写的轻巧跨平台二进制解析 crate。 **[1,555 星标]** · 精选：[goblin 二进制格式解析库](https://awesomerea.org/zh/resources/goblin/)

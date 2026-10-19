@@ -5213,5 +5213,14 @@
       "Dockerfile 包含一个测试阶段，会针对由 tests/ 中源码编译的测试程序运行 ctest，但 GitHub 工作流只构建发布镜像。本次审阅未构建或运行任何内容。",
       "LICENSE.md 是 SEI 的 BSD 风格许可（版权归卡内基梅隆大学所有，2021 年），并限制使用 CMU 和 SEI 名称，因此 GitHub 显示为 NOASSERTION。ROSE、SWI-Prolog、Z3、Boost、yaml-cpp 和 SQLite 各自适用其许可证。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "heimdall-rs": {
+    "name": "heimdall-rs EVM 字节码分析工具包",
+    "requirements": [
+      "审阅时的版本为 0.9.3，发布于 2026-04-30，提供 amd64 和 arm64 的 Linux 与 macOS 二进制，没有 Windows 版本；所审阅的 main 提交比它多 38 个提交，而该标签和 main 的工作区版本号仍为 0.9.2。可通过 bifrost 安装器安装：默认用 Cargo 从源码构建，加 -B 参数则下载预编译二进制；仓库固定使用 Rust 1.91.0。",
+      "分析合约地址或 ENS 名称、导出存储槽和检查交易时，需要以 URL 或 MESC 引用形式提供以太坊 JSON-RPC 端点；可选的 Etherscan API 密钥用于在反编译时取回已自毁合约的创建字节码。可选的 LLM 后处理会把反编译得到的 Solidity 代码发送到 OpenRouter（默认模型为 openai/gpt-4o-mini），需要 OpenRouter API 密钥。",
+      "反编译出的 Solidity 和 Yul 代码标为测试阶段，属于需要核对的启发式重建结果，并非原始源码。README 列出了 20 余篇引用 Heimdall 的论文和学位论文；这些只是引用，并不构成对该工具准确性的评估。",
+      "采用 MIT 许可。本次未安装，也未分析任何合约。"
+    ]
   }
 }
