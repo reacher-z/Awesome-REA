@@ -18,7 +18,7 @@ The `main` branch requires the GitHub Actions `validate` and `review` checks, an
 
 The localization path was exercised in [PR #2](https://github.com/reacher-z/Awesome-REA/pull/2): valid data passed, an intentionally missing Chinese description failed both jobs, and restored data passed. Rerunning the reviewer updated the same head-specific bot review.
 
-`Source links` runs weekly and on manual request. It distinguishes confirmed missing links from rate limits and inconclusive network responses.
+`Source links` runs weekly and on manual request. It checks the curated catalog, papers, benchmarks and the case ledger's reported and primary evidence links, and distinguishes confirmed missing links from rate limits and inconclusive network responses.
 
 Every workflow action is pinned to a full commit SHA with its exact release version in a comment. Dependabot checks these actions weekly and groups available updates into one pull request, waiting seven days after a release before proposing it. Its pull requests run the same `validate` and `review` checks and, as workflow changes, need maintainer review.
 
@@ -32,15 +32,17 @@ python3 scripts/check_links.py --json ../awesome-rea-link-report.json
 
 The same checker runs in the `Source links` workflow. It saves the JSON report as a run artifact for 14 days and adds a counts summary, including when the checker reports confirmed dead links. Local runs save JSON only when `--json` is supplied. For slower or restricted connections, use `--workers 2 --timeout 30` and retry later rather than treating a timeout as removal.
 
-Inspect `counts`, `complete`, and each result's `url`, `checked_url`, `references`, `status`, `reason`, and `attempts`. References identify the affected records and fields: `resource:<id>:<field>`, `paper:<id>:<field>`, or `benchmark:<full_name>:<field>`. Curated resources are in `data/rea-resources.json` and `data/tool-resources.json`; papers and benchmarks are in `data/papers.json` and `data/benchmarks.json`. One URL can have several references, so review all affected fields.
+Inspect `counts`, `complete`, and each result's `url`, `checked_url`, `references`, `status`, `reason`, and `attempts`. References identify the affected records and fields: `resource:<id>:<field>`, `paper:<id>:<field>`, `benchmark:<full_name>:<field>`, or `ledger:<entry id>:<field>` for a case-ledger entry's `reported_source_urls` or `primary_evidence_urls`. Curated resources are in `data/rea-resources.json` and `data/tool-resources.json`; papers and benchmarks are in `data/papers.json` and `data/benchmarks.json`; ledger entries are in `data/case-coverage.json`. One URL can have several references, so review all affected fields.
 
 | Result | What it establishes | Next step |
 | --- | --- | --- |
 | `ok` | The final HTTP response was 2xx. | Check that the destination still describes the intended resource; an HTTP success alone does not verify its identity or claims. |
 | `dead` | Two consecutive requests returned 404 or 410. | Check the original project's site, repository and release notices for a move, archival notice or removal before proposing a correction. |
+| `recorded-missing` | Two consecutive requests returned 404 or 410, and every citing reference is a case-ledger entry whose `reason_en` already says this X post (by its @handle) or GitHub repository (by owner/name) was not found, in the sentence that names it. | Nothing to fix; the ledger already explains the loss. If the source returns, update the entry's reason. |
+| `reported-source-missing` | Two consecutive requests returned 404 or 410 for a link cited only in ledger `reported_source_urls`, the collection's own links, which the ledger lists without adopting as evidence. | Note the loss when the entry is reviewed; a reviewed entry should not rely on it as primary evidence. |
 | `inconclusive` | Access restrictions, rate limits, network/server failures or another response prevent a conclusion. | Leave the record in place. Inspect the attempts, retry after the restriction clears, or review the public primary source manually. Do not treat authentication walls, 403/429 responses or transient failures as confirmed removals. |
 
-The command exits with status 1 when any link is confirmed dead. Inconclusive results alone still produce exit status 0: inspect `complete` and the counts before claiming all links passed. Do not add credentials to a report or commit raw reports to the repository.
+The command exits with status 1 when any link is confirmed dead. `recorded-missing`, `reported-source-missing` and inconclusive results alone still produce exit status 0: inspect `complete` and the counts before claiming all links passed. Do not add credentials to a report or commit raw reports to the repository.
 
 ### Verify a moved resource
 

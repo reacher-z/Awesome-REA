@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
-"""Check catalog and benchmark sources; report inconclusive network results separately."""
+"""Check catalog, benchmark and case-ledger sources; report inconclusive network results separately."""
 import argparse
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 import datetime as dt
 import json
 from pathlib import Path
+import re
 import sys
 import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import urldefrag, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
+from case_coverage import read_case_coverage
 from catalog import ROOT, load_resources
 from validate import public_https_error
 
 
 USER_AGENT = 'Awesome-REA-source-check/1.0 (+https://github.com/reacher-z/Awesome-REA)'
+LEDGER_FIELDS = ('reported_source_urls', 'primary_evidence_urls')
+# Ledger reasons record a vanished source in prose, e.g. "returned not found" or "return 404".
+RECORDED_MISSING = re.compile(r'\b(?:returned|returns?|reports? as)\s+(?:HTTP\s+)?(?:not found|404|410)\b', re.IGNORECASE)
 
 
 def request_url(original):
@@ -30,7 +35,39 @@ def request_url(original):
     return url
 
 
-def source_urls():
+def records_missing(url, reason):
+    """True when a ledger reason says this X post or GitHub repository was not found.
+
+    The post's @handle or the repository's owner/name must lead into the "not found"
+    phrase within the same sentence, so a new 404 elsewhere in the entry stays dead.
+    """
+    parsed = urlsplit(url)
+    host, parts = (parsed.hostname or '').removeprefix('www.'), [part for part in parsed.path.split('/') if part]
+    if host in {'x.com', 'twitter.com'} and len(parts) >= 3 and parts[1] == 'status' and parts[0] != 'i':
+        token = '@' + parts[0]
+    elif host == 'github.com' and len(parts) >= 2:
+        token = parts[0] + '/' + parts[1]
+    else:
+        return False
+    for match in RECORDED_MISSING.finditer(reason):
+        lead = re.split(r'[.!?]\s', reason[max(0, match.start() - 100):match.start()])[-1]
+        if token.casefold() in lead.casefold():
+            return True
+    return False
+
+
+def ledger_sources(coverage):
+    """Map case-ledger evidence URLs to references, and return those every citing entry records as missing."""
+    references, recorded, unrecorded = defaultdict(list), set(), set()
+    for entry in coverage['entries']:
+        for field in LEDGER_FIELDS:
+            for url in entry[field]:
+                references[url].append(f"ledger:{entry['id']}:{field}")
+                (recorded if records_missing(url, entry['reason_en']) else unrecorded).add(url)
+    return references, recorded - unrecorded
+
+
+def source_urls(coverage=None):
     references = defaultdict(list)
     for record in load_resources():
         for field in ('url', 'evidence_url'):
@@ -48,7 +85,29 @@ def source_urls():
                 references[record[field]].append(f"paper:{record['id']}:{field}")
         for url in record['evidence_urls']:
             references[url].append(f"paper:{record['id']}:evidence_urls")
+    ledger, _ = ledger_sources(read_case_coverage(ROOT) if coverage is None else coverage)
+    for url, ledger_references in ledger.items():
+        references[url].extend(ledger_references)
     return references
+
+
+def classify_ledger_loss(result, known_missing):
+    """Separate confirmed 404s that only the case ledger cites, so they are reported without failing the run.
+
+    A loss every citing entry already records is `recorded-missing`. A link cited only as a
+    collection's `reported_source_urls`, which the ledger lists without adopting as evidence,
+    is `reported-source-missing`. Catalog links and ledger primary evidence stay `dead`.
+    """
+    references = result['references']
+    if result['status'] != 'dead' or not references or not all(reference.startswith('ledger:') for reference in references):
+        return result
+    if result['url'] in known_missing:
+        result['status'] = 'recorded-missing'
+        result['reason'] = 'HTTP 404/410 confirmed; every citing case-ledger entry already records this source as not found'
+    elif all(reference.endswith(':reported_source_urls') for reference in references):
+        result['status'] = 'reported-source-missing'
+        result['reason'] = 'HTTP 404/410 confirmed for a collection-reported link the case ledger does not use as evidence'
+    return result
 
 
 def fetch_once(url, timeout):
@@ -98,7 +157,9 @@ def main():
     if not 1 <= args.workers <= 32 or not 0 < args.timeout <= 60:
         parser.error('workers must be 1..32 and timeout must be greater than 0 and at most 60')
     try:
-        references = source_urls()
+        coverage = read_case_coverage(ROOT)
+        references = source_urls(coverage)
+        _, known_missing = ledger_sources(coverage)
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Cannot load source links: {error}', file=sys.stderr)
         return 1
@@ -108,12 +169,13 @@ def main():
         results = list(pool.map(lambda url: check_url(url, args.timeout), urls))
     for result in results:
         result['references'] = references[result['url']]
+        classify_ledger_loss(result, known_missing)
     counts = Counter(result['status'] for result in results)
     report = {
         'started_at': started_at,
         'finished_at': dt.datetime.now(dt.timezone.utc).isoformat(),
         'checked': len(results),
-        'counts': {key: counts[key] for key in ('ok', 'dead', 'inconclusive')},
+        'counts': {key: counts[key] for key in ('ok', 'dead', 'recorded-missing', 'reported-source-missing', 'inconclusive')},
         'complete': counts['inconclusive'] == 0,
         'all_links_responded': counts['ok'] == len(results),
         'results': results,
@@ -125,12 +187,14 @@ def main():
         if result['status'] != 'ok':
             code = result.get('http_status') or 'network'
             print(f"{result['status'].upper()} [{code}] {result['url']}")
-    print(f"Checked {len(results)} links: {counts['ok']} responded, {counts['dead']} confirmed dead, {counts['inconclusive']} inconclusive.")
+    print(f"Checked {len(results)} links: {counts['ok']} responded, {counts['dead']} confirmed dead, "
+          f"{counts['recorded-missing']} already recorded missing in the case ledger, "
+          f"{counts['reported-source-missing']} missing collection-reported ledger links, {counts['inconclusive']} inconclusive.")
     if counts['inconclusive']:
         print('Inconclusive links require review; this result is not an all-links-passed claim.')
     if args.json_path:
         print(f'Report: {args.json_path}')
-    # Network restrictions are informational; only confirmed 404/410 links fail CI.
+    # Network restrictions and ledger-only losses are informational; only catalog and primary-evidence 404/410 links fail CI.
     return 1 if counts['dead'] else 0
 
 
