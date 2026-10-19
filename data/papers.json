@@ -8087,5 +8087,51 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-dream",
+    "title": "No More Gotos: Decompilation Using Pattern-Independent Control-Flow Structuring and Semantics-Preserving Transformations",
+    "title_zh": "告别 goto：基于模式无关控制流结构化与语义保持变换的反编译",
+    "authors": [
+      "Khaled Yakdan",
+      "Sebastian Eschweiler",
+      "Elmar Gerhards-Padilla",
+      "Matthew Smith"
+    ],
+    "year": 2015,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Internet Society-deposited Crossref metadata supplies only publication year 2015; the publisher PDF separately identifies the 8–11 February 2015 symposium, which is not used to assert a publication month or day.",
+    "date_basis_zh": "Internet Society 向 Crossref 提交的元数据仅给出出版年份 2015；出版方 PDF 另列研讨会日期为 2015 年 2 月 8—11 日，本条目不据此推定出版月份或日期。",
+    "venue": "NDSS 2015",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.14722/ndss.2015.23185",
+    "url": "https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/",
+    "pdf_url": "https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "DREAM is a decompiler whose control-flow structuring recovers loops, conditionals and switch statements from a recovered control-flow graph without matching predefined region patterns. For acyclic regions it computes each node's reaching condition, then refines the resulting conditions into if-then-else and switch constructs; cyclic regions are structured as loops whose type and continuation condition are inferred. Semantics-preserving transformations first rewrite cyclic regions with multiple entries or successors into single-entry, single-successor regions, and a Boolean variable keeps a repeated test equivalent when its operands may change. On GNU coreutils the authors report no goto statements, against thousands from Hex-Rays and Phoenix, and more compact code than Hex-Rays for 72.7% of functions and than Phoenix for 98.8% in one-to-one comparisons.",
+    "description_zh": "DREAM 是一种反编译器，其控制流结构化方法无需匹配预定义的区域模式，即可从恢复出的控制流图中还原循环、条件语句与 switch 语句。对于无环区域，它计算每个节点的可达条件，再将这些条件细化为 if-then-else 与 switch 结构；有环区域被结构化为循环，并推断循环类型及继续条件。语义保持变换先将具有多个入口或多个后继的有环区域改写为单入口、单后继区域；当重复测试的条件中变量可能被修改时，引入布尔变量以保持语义等价。作者在 GNU coreutils 上报告其输出不含 goto 语句，而 Hex-Rays 与 Phoenix 各产生数千个；在一对一比较中，DREAM 有 72.7% 的函数比 Hex-Rays 更紧凑，与 Phoenix 相比该比例为 98.8%。",
+    "scope_limitations_en": "Correctness was measured on source-level control-flow graphs: the authors extracted CFGs of the preprocessed coreutils 8.22 source with joern, restructured the 1,530 functions joern parsed (208 of 1,738 failed to parse), recompiled and passed the coreutils tests. That experiment checks the structuring algorithm, not end-to-end decompilation of binaries, variable or type recovery. Structuredness and compactness were measured on the coreutils 8.17 binaries from the Phoenix evaluation, using functions decompiled by all three tools, with line counts as the compactness metric. Phoenix was unreleased, so its output came from its authors, and the 2014 Hex-Rays v2.0.0.140605 baseline is long superseded. The malware case studies cover one sample each from ZeusP2P, SpyEye and Cridex and compare against Hex-Rays only. The authors leave open whether more compact code is always easier to understand. The paper links no implementation, and these results do not describe current decompilers.",
+    "scope_limitations_zh": "正确性在源码级控制流图上评估：作者使用 joern 从经过预处理的 coreutils 8.22 源码中提取控制流图，对 joern 成功解析的 1,530 个函数重新结构化（1,738 个函数中有 208 个解析失败），重新编译后通过 coreutils 测试。该实验检验的是结构化算法，而不是对二进制的端到端反编译，也不涉及变量或类型恢复。结构化程度与紧凑度在 Phoenix 评测所用的 coreutils 8.17 二进制上测量，只统计三种工具都能反编译的函数，并以代码行数衡量紧凑度。Phoenix 当时尚未发布，其输出由其作者提供；2014 年的 Hex-Rays v2.0.0.140605 基线早已过时。恶意软件案例分析分别覆盖 ZeusP2P、SpyEye 与 Cridex 各一个样本，且只与 Hex-Rays 比较。作者也指出，更紧凑的代码是否总是更易理解仍有待研究。论文没有链接实现，这些结果也不代表当前反编译器的表现。",
+    "why_fits_en": "Adds control-flow structuring, the decompiler stage that turns a recovered control-flow graph into structured high-level code, beneath the collection's neural and LLM-based decompilation research.",
+    "why_fits_zh": "补充控制流结构化这一反编译阶段，即把恢复出的控制流图转换为结构化高级代码，为合集中的神经网络与大语言模型反编译研究提供基础。",
+    "metadata_notes": "Crossref gives the title, the four-author order and year 2015 with no pages; the DOI resolves to the NDSS programme page, which links the 15-page PDF and slides. The PDF footer identifies NDSS ’15, 8–11 February 2015, San Diego, and carries the DOI. Its evaluation section names a supplemental document of decompiled malware listings hosted at the University of Bonn; it was not reviewed. The paper gives no code or project link, so both stay null, and nothing was downloaded or run apart from the paper.",
+    "metadata_notes_zh": "Crossref 给出标题、四位作者顺序及年份 2015，未列页码；DOI 解析至 NDSS 会议议程页面，该页面链接 15 页 PDF 与幻灯片。PDF 页脚标明 NDSS ’15 于 2015 年 2 月 8—11 日在圣迭戈举行，并载有 DOI。评测部分提到一份托管在波恩大学的补充文档，收录反编译后的恶意软件代码清单，本次未审阅。论文未提供代码或项目链接，因此两者均为 null；除论文外未下载或运行任何内容。",
+    "evidence_urls": [
+      "https://www.ndss-symposium.org/ndss2015/ndss-2015-programme/no-more-gotos-decompilation-using-pattern-independent-control-flow-structuring-and-semantics/",
+      "https://api.crossref.org/works/10.14722/ndss.2015.23185",
+      "https://www.ndss-symposium.org/wp-content/uploads/2017/09/11_4_2.pdf"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
