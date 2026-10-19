@@ -42,7 +42,7 @@
 - [horsicq/DIE-engine](https://github.com/horsicq/DIE-engine) — DIE 引擎。 **[3,314 星标]**
 - [google/bindiff](https://github.com/google/bindiff) — 快速找出反汇编代码中的异同。 **[3,207 星标]** · 精选：[BinDiff](https://awesomerea.org/zh/resources/bindiff/)
 - [plasma-disassembler/plasma](https://github.com/plasma-disassembler/plasma) — Plasma 是面向 x86/ARM/MIPS 的交互式反汇编器，可生成带缩进和语法着色的伪代码。 **[3,071 星标]**
-- [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — 二进制分析平台。 **[2,262 星标]**
+- [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — 二进制分析平台。 **[2,262 星标]** · 精选：[BAP 二进制分析平台](https://awesomerea.org/zh/resources/bap/)
 - [Dryxio/reagent](https://github.com/Dryxio/reagent) — 利用 AI 从已编译程序中重建并验证 C/C++ 代码。 **[2,100 星标]**
 - [KasperskyLab/hrtng](https://github.com/KasperskyLab/hrtng) — 功能丰富的 IDA Pro 插件，支持解密、去混淆、打补丁、库代码识别及各种伪代码转换。 **[1,949 星标]**
 - [yetone/native-feel-skill](https://github.com/yetone/native-feel-skill) — 用于设计具有原生体验的跨平台桌面应用的智能体技能，提炼自对 Raycast 2.0 的深入研究与 Raycast Beta.app 的逆向分析。包含八项架构原则、四层架构、WebKit/WebView2 生存指南和 75 项发布审核清单。 **[1,931 星标]**

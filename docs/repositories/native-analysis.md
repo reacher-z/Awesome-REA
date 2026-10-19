@@ -42,7 +42,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [horsicq/DIE-engine](https://github.com/horsicq/DIE-engine) — DIE engine **[3,314 stars]**
 - [google/bindiff](https://github.com/google/bindiff) — Quickly find differences and similarities in disassembled code **[3,207 stars]** · Curated: [BinDiff](https://awesomerea.org/resources/bindiff/)
 - [plasma-disassembler/plasma](https://github.com/plasma-disassembler/plasma) — Plasma is an interactive disassembler for x86/ARM/MIPS. It can generates indented pseudo-code with colored syntax. **[3,071 stars]**
-- [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — Binary Analysis Platform **[2,262 stars]**
+- [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — Binary Analysis Platform **[2,262 stars]** · Curated: [Binary Analysis Platform (BAP)](https://awesomerea.org/resources/bap/)
 - [Dryxio/reagent](https://github.com/Dryxio/reagent) — Reconstruct and validate C/C++ code from compiled programs with AI. **[2,100 stars]**
 - [KasperskyLab/hrtng](https://github.com/KasperskyLab/hrtng) — IDA Pro plugin with a rich set of features: decryption, deobfuscation, patching, lib code recognition and various pseudocode transformations **[1,949 stars]**
 - [yetone/native-feel-skill](https://github.com/yetone/native-feel-skill) — An Agent Skill for designing cross-platform desktop apps that feel native — distilled from Raycast's 2.0 deep-dive and reverse engineering of Raycast Beta.app. Eight architectural tenets, four-layer architecture, WebKit/WebView2 survival guide, 75-item ship audit. **[1,931 stars]**

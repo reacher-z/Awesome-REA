@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 408](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-408-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 409](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-409-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (44) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (45) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1911,6 +1911,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   单文件 Python 脚本，用于提取由 PyInstaller 构建的可执行文件的内容，Linux ELF 构建也无需借助其他工具即可提取。它在可执行文件中定位 PyInstaller 归档，报告 PyInstaller 和 Python 版本以及可能的入口脚本，并导出打包在 CArchive 中的文件和 PYZ 归档中的模块。它还会修复导出的 .pyc 文件头，使 uncompyle6、Decompyle++（pycdc）等 Python 字节码反编译器能够识别。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pyinstxtractor/)
+
+- [**BAP 二进制分析平台**](https://github.com/BinaryAnalysisPlatform/bap)
+
+  卡内基梅隆大学开发的 OCaml 二进制分析平台。其 bap 命令可加载程序、进行反汇编、将指令提升为与架构无关的中间表示、构建控制流图并运行分析遍；objdump、raw 加载器和 mc 模式分别用于线性反汇编、原始代码块和单条指令编码。README 列出对 x86、x86-64、ARM、MIPS 和 PowerPC 的支持，以及解释器、微执行解释器、符号执行器和 Primus Lisp 语言，后者可用于编写分析、为函数编写桩模型和调用 SMT 求解器；分析以 OCaml 插件形式编写，或将 BAP 作为库嵌入应用，C 绑定和最基本的 Python 支持位于独立仓库。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/bap/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
