@@ -4736,5 +4736,15 @@
       "当 tools/match.py（或智能体使用的 tools/swarm.py）输出 MATCH，且 tools/build.py 将每个函数链接到原始地址并比较已加载段的 SHA-1 时，函数才算匹配。CI 运行单元测试、“C 中不得夹带汇编”的策略检查和布局检查，并编译每个源文件，但没有游戏文件就无法链接或比较；匹配数字为作者报告，本合集未构建或运行任何内容。",
       "项目的工具、文档和源码采用 MIT 许可。THIRD_PARTY.md 列出按各自条款匹配的公开库（Expat、newlib、带例外条款的 GPL 下的 GNU libio 与 GCC 运行库、SGI STL 头文件、MT19937），可用 build.py --without 排除，并说明专有的 SCE-RT/Medius、Logitech 和 Sony SDK 代码仅作识别、未予复制。Gran Turismo 4 归 Sony Interactive Entertainment 所有。智能体说明位于 AGENTS.md、CLAUDE.md 和 .claude/；所审来源未确立 REA 的使用。"
     ]
+  },
+  "mario-kart-wii-decomp-case": {
+    "name": "《马力欧卡丁车 Wii》：进行中的 PAL 版一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 RMCP01（PAL 版）；configure.py 未定义其他版本，CI 也只构建 RMCP01。仓库由 riidefi/mkw 更名而来，README 的徽章和克隆命令仍使用旧名；CONTRIBUTING.md 和 HACK.md 仍描述早先基于 mkwutil 与 ppcdis 的构建结构，而固定提交中已不含这些内容。产物是 Wii 的 main.dol 和 StaticR.rel，不是 PC 移植。",
+      "需将自己的 RMCP01 光盘镜像复制到 orig/RMCP01，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式，config.yml 记录了两个二进制的预期 SHA-1。README 称仓库不含任何游戏素材或汇编；decomp-toolkit 依据仓库提交的、源自游戏的符号表和拆分表，在本地拆分 main.dol 与 StaticR.rel。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.3.0、objdiff v2.4.0、binutils 2.42-1、sjiswrap v1.2.0、wibo 0.6.16 及 20240706 编译器包；游戏、NW4R、EGG、RFL 和 MSL 代码及链接器使用 Metrowerks Wii/0x4201_127，Revolution SDK、TRK、DWC 和 GameSpy 库使用 GC/3.0a5.2。",
+      "标为 Matching 的目标文件（configure.py 所列 213 个中有 106 个；105 个为 NonMatching，2 个为 Equivalent）由源码编译，各二进制的其余部分取自拆分出的原始文件；默认 ninja 目标会先按 config/RMCP01/build.sha1 校验 main.dol 和 StaticR.rel，再报告进度。CI 在存放原始文件的私有容器中构建 RMCP01，并上传进度报告。审阅时 decomp.dev 在新旧仓库名下均无报告，因此不引用完成度数字；本合集未运行构建。",
+      "仓库采用 CC0-1.0；lib/gamespy 沿用 IGN Entertainment 为 GameSpy SDK 提供的 BSD 式许可证，任天堂的游戏、光盘内容和下载的编译器各自保留权利。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
