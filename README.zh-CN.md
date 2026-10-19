@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 347](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2194,13 +2194,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2328,6 +2328,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 各基准混合了密码学、取证、二进制漏洞利用、逆向工程、Web 与杂项任务（390 道题中有 104 道为逆向工程），因此 NYU CTF 上 13.5% 等总体解题率并不等于逆向工程准确率。分类别表格报告，使用 Claude 3.5 Sonnet 时，NYU CTF 中 51 道逆向工程题的解题率为 17.65%。结果采用 pass<span>@</span>1，每道题成本上限为 3 美元，使用 2024 年的模型（GPT-4 Turbo、GPT-4o、Claude 3.5 Sonnet 与 LLaMA 3.1 405B Instruct）；NYU CTF 基线对比采用 pass<span>@</span>5。许多题目存在公开题解，作者对泄露和“自言自语”的度量属于启发式方法；在 21 道较晚发布的 CSAW 2024 题目上，最佳配置解出 2 道。解出 CTF 题目表明获得了 flag，而非恢复了程序结构或源码。
 
   **作者:** Talor Abramovich 等
+
+  </details>
+
+- [**Cybench：评估语言模型网络安全能力与风险的框架**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/3e9412a9c1d93810ef3ef7825115016b-Abstract-Conference.html)
+
+  Cybench 将来自四项竞赛（HackTheBox Cyber Apocalypse 2024、SekaiCTF 2022–23、GlacierCTF 与 HKCert）的 40 道专业级夺旗赛题目整理为可运行的智能体任务。每道题目都包含题目描述、初始文件、供智能体使用的 Kali Linux 容器及以 Docker 运行的题目服务器，并记录首个人类队伍的解题用时（2 分钟至 24 小时 54 分钟）。每道题目还被拆分为若干子任务，用于评估中间步骤。作者使用结构化 bash 智能体评测了八个模型，并为 GPT-4o 与 Claude 3.5 Sonnet 比较了四种智能体框架。在没有子任务引导时，表现最好的智能体只解出了人类首解用时不超过 11 分钟的题目；Claude 3.5 Sonnet 的无引导成功率为 17.5%。
+
+  ICLR 2025 · 会议论文 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/3e9412a9c1d93810ef3ef7825115016b-Paper-Conference.pdf) · [代码](https://github.com/andyzorigin/cybench) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-cybench/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 40 道题目中只有 6 道属于逆向工程，其余为密码学（16）、Web（8）、取证（4）、杂项（4）与漏洞利用（2），因此总体成功率并不代表逆向工程准确率，Cybench 也不是专门的逆向工程基准。在无引导的结构化 bash 实验中，八个模型中有六到七个解出了两道最简单的逆向题（人类首解用时分别为 2 分钟和 6 分钟），其余四道均无模型解出。结果仅涵盖 2024 年的模型（GPT-4o、o1-preview、Claude 3 Opus、Claude 3.5 Sonnet、Gemini 1.5 Pro、Llama 3 与 3.1、Mixtral 8x22b）及作者的智能体框架：无引导模式 15 轮、子任务模式每个子任务 5 轮，记忆较短，未提供反编译器工具；主比较只尝试一次，框架比较取三次尝试中的最好结果。首解用时来自各竞赛记录，不同竞赛之间不能直接比较。作者依据模型知识截止日期判断训练—测试重叠，无法排除 Claude 3.5 Sonnet 存在重叠。夺旗赛题目是用时较短、代码规模较小的竞赛问题，夺得旗标并不表明恢复了程序结构。
+
+  **作者:** Andy K. Zhang 等
 
   </details>
 

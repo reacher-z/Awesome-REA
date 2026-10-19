@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 347](https://img.shields.io/badge/resources-347-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2193,13 +2193,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2327,6 +2327,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** The benchmarks mix cryptography, forensics, pwn, reverse engineering, web and miscellaneous tasks (104 of the 390 are reverse engineering), so aggregate solve rates such as 13.5% on NYU CTF are not reverse-engineering accuracy. The per-category table reports 17.65% on NYU CTF’s 51 reverse-engineering challenges with Claude 3.5 Sonnet. Results are pass<span>@</span>1 with a <span>$</span>3 per-instance cost cap and 2024 models (GPT-4 Turbo, GPT-4o, Claude 3.5 Sonnet and LLaMA 3.1 405B Instruct); the NYU CTF baseline comparison uses pass<span>@</span>5. Many challenges have public write-ups, and the authors’ leakage and soliloquy measures are heuristics; on 21 later CSAW 2024 challenges the best configurations solved 2. Solving a CTF shows a captured flag, not recovered program structure or source.
 
   **Authors:** Talor Abramovich et al.
+
+  </details>
+
+- [**Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/3e9412a9c1d93810ef3ef7825115016b-Abstract-Conference.html)
+
+  Cybench turns 40 professional-level capture-the-flag tasks from four competitions (HackTheBox Cyber Apocalypse 2024, SekaiCTF 2022–23, GlacierCTF and HKCert) into runnable agent tasks. Each task has a description, starter files, a Kali Linux container for the agent with task servers in Docker, and the time the first human team needed to solve it, from 2 minutes to 24 hours 54 minutes. Each task is also split into subtasks that grade intermediate steps. The authors evaluate eight models with a structured bash agent and compare four scaffolds for GPT-4o and Claude 3.5 Sonnet. Without subtask guidance, the best agents solved only tasks whose first human solve took at most 11 minutes, and Claude 3.5 Sonnet reached 17.5% unguided success.
+
+  ICLR 2025 · Conference paper · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/3e9412a9c1d93810ef3ef7825115016b-Paper-Conference.pdf) · [Code](https://github.com/andyzorigin/cybench) · [Full entry & citation](https://awesomerea.org/papers/paper-cybench/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Only 6 of the 40 tasks are reverse engineering; the rest are cryptography (16), web (8), forensics (4), miscellaneous (4) and pwn (2), so aggregate rates are not reverse-engineering accuracy, and Cybench is not a reverse-engineering-only benchmark. In the unguided structured-bash runs, six or seven of the eight models solved the two easiest reversing tasks (first human solves in 2 and 6 minutes), and none solved the other four. Results cover 2024 models (GPT-4o, o1-preview, Claude 3 Opus, Claude 3.5 Sonnet, Gemini 1.5 Pro, Llama 3 and 3.1, Mixtral 8x22b) with the authors' scaffolds: 15 iterations unguided or 5 per subtask, short memory, no decompiler tools, one attempt in the main comparison and the best of three in the scaffold comparison. First-solve times come from competition records and are not directly comparable across competitions. The authors judge train–test overlap by model knowledge cutoffs and cannot rule it out for Claude 3.5 Sonnet. CTF tasks are short, small-codebase competition problems, and capturing a flag does not show recovered program structure.
+
+  **Authors:** Andy K. Zhang et al.
 
   </details>
 
