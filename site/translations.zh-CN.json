@@ -3512,5 +3512,14 @@
       "用户需自行选择要检查的运行中进程。本条目只描述其内存检查、反汇编和调试功能；README 声明用户须对自身行为负责，并提醒只信任此 GitHub 仓库提供的 PINCE 源码或软件包。",
       "采用 GPL-3.0-or-later 许可（COPYING）；AUTHORS 说明 media/icons 中随附的 Silk 图标采用 CC BY 3.0 许可（COPYING.CC-BY）。本条目未附加到或扫描任何进程。"
     ]
+  },
+  "uncompyle6": {
+    "name": "uncompyle6 跨版本 Python 字节码反编译器",
+    "requirements": [
+      "审阅时最新版本为 3.9.3，于 2025-09-29 在 GitHub 和 PyPI 发布；所审阅的 master 提交比该版本晚 34 个提交，版本号为 3.9.4.dev0。与 master 分支一样，从 PyPI 安装的版本面向 Python 3.11+ 运行环境；更早的解释器（最早到 Python 2.4）需使用 GitHub Releases 中按版本区分的源码包、egg 或 wheel，它们由各自独立的 git 分支构建。依赖 xdis 6.3+、spark-parser 和 click。",
+      "README 称已用 Python 1.4、2.1–2.7、3.0–3.8 以及较新 PyPy 版本的字节码测试过。对 Python 3 的支持以 3.3–3.4 附近最好，离这两个版本越远越弱；控制流是最大的已知问题，作者也不打算认真投入 3.8 或 3.9 的支持，并建议 3.7 和 3.8 改用独立的 decompyle3。高于 3.8 的字节码不会被反编译；候选发布版本的魔数、部分 Python 3.6 魔数变体、除 Dropbox 旧版 2.5 以外的加密或定制解释器字节码、混淆代码以及 Cython 和 MicroPython 均不受支持。",
+      "输入的 .pyc 或 .pyo 文件由使用者提供；它不能直接反编译 Py2EXE 生成的可执行文件，这类打包程序中的字节码需先行提取。--syntax-verify 选项只检查输出是否为合法的 Python 语法，因此 README 建议用其他版本的 uncompyle6 或 pycdc 等其他反编译器交叉核对。恢复出的源码仍受原程序权利人的权利约束。",
+      "pyproject.toml 声明采用 GPL-3.0-or-later，COPYING 收录 GPL-3.0 全文。本次未安装或反编译任何内容。"
+    ]
   }
 }

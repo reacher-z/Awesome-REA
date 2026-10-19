@@ -9082,5 +9082,38 @@
       "https://github.com/korcankaraokcu/PINCE/blob/9357ba3d8d96477f9bb81e427a97c57f67725c74/AUTHORS",
       "https://github.com/korcankaraokcu/PINCE/releases/tag/v0.10.2"
     ]
+  },
+  {
+    "id": "uncompyle6",
+    "name": "uncompyle6",
+    "url": "https://github.com/rocky/python-uncompyle6",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Cross-version decompiler that translates Python bytecode back into equivalent Python source, accepting bytecode from Python 1.0 through 3.8 as well as some PyPy bytecode and Dropbox's Python 2.5. It disassembles code objects with the companion xdis library and parses the instruction stream into a grammar-based tree from which source is printed; it can also deparse just the fragment around a given bytecode offset, which the author's trepan debuggers use for exact location reporting. It succeeds the older decompyle, uncompyle and uncompyle2 forks.",
+    "description_zh": "跨版本的 Python 反编译器，可把 Python 字节码还原为等价的 Python 源码，支持 Python 1.0 至 3.8 的字节码，以及部分 PyPy 字节码和 Dropbox 的 Python 2.5 字节码。它借助配套的 xdis 库反汇编代码对象，再把指令流解析成基于语法的树并据此输出源码；它还能只反解析给定字节码偏移附近的代码片段，作者的 trepan 调试器即用此功能精确报告位置。它是早期 decompyle、uncompyle 和 uncompyle2 等分支的后继项目。",
+    "evidence_url": "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/README.rst",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 3.9.3, published 2025-09-29 on GitHub and PyPI; the reviewed master commit is 34 commits later and reports 3.9.4.dev0. Installing from PyPI, like the master branch, is meant for running on Python 3.11+; older interpreters back to Python 2.4 use the version-specific tarballs, eggs or wheels on GitHub Releases, built from separate git branches. It depends on xdis 6.3+, spark-parser and click.",
+      "The README reports testing on bytecode from Python 1.4, 2.1–2.7 and 3.0–3.8 and later PyPy versions. Python 3 support is strongest around 3.3–3.4 and weakens further away, control flow is the biggest known problem, and the author does not intend serious work on 3.8 or 3.9, pointing to the separate decompyle3 for 3.7 and 3.8. Bytecode newer than 3.8 is not decompiled, and candidate-release magic numbers, some Python 3.6 magic variants, encrypted or custom-interpreter bytecode other than Dropbox's old 2.5, obfuscated code, Cython and MicroPython are not handled.",
+      "Input .pyc or .pyo files come from the user; it cannot decompile Py2EXE executables directly, and bytecode bundled by such packagers has to be extracted first. The --syntax-verify option checks only that the output is valid Python syntax, so the README suggests cross-checking with other uncompyle6 versions or other decompilers such as pycdc. Recovered source remains subject to the rights of the original program’s owner.",
+      "GPL-3.0-or-later per pyproject.toml, with the GPL-3.0 text in COPYING. Nothing was installed or decompiled."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/README.rst#L77-L126",
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/README.rst#L176-L299",
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/NEWS.md",
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/pyproject.toml",
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/uncompyle6/version.py",
+      "https://github.com/rocky/python-uncompyle6/blob/91298ba80e322cfb8736ab8a697509527297a7a9/COPYING",
+      "https://github.com/rocky/python-uncompyle6/releases/tag/3.9.3",
+      "https://pypi.org/project/uncompyle6/3.9.3/"
+    ]
   }
 ]
