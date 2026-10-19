@@ -4931,5 +4931,14 @@
       "chipsec/WARNING.txt 要求只在测试系统上使用，切勿用于生产机器：驱动会让用户态访问物理内存等硬件资源，错误的硬件访问可能导致操作系统挂起或崩溃。部分实用命令会写入或擦除 SPI 闪存、修改 UEFI 变量，可能使系统无法启动；另行提供的 tools 模块（含模糊测试工具）不在本条目范围内。WARNING 结果需要人工分析，结果说明文档也标注为草稿。",
       "闪存镜像和平台数据来自被测机器或使用者自己的转储；仓库未附带任何厂商固件镜像。CI 会在多个发行版上编译 Linux 驱动，并基于录制的平台数据运行单元测试，另有 QEMU UEFI Shell 测试。采用 GPL-2.0 许可。本次未在任何硬件上运行。"
     ]
+  },
+  "apk-studio": {
+    "name": "APK Studio Android 逆向 IDE",
+    "requirements": [
+      "审阅时的版本为 v6.3.0，于 2026-01-05 基于所审阅的 master 提交发布，提供 Linux x86_64 AppImage、Windows x64 ZIP 和 macOS DMG。6.x 系列始于 2025-12-03 发布的 v6.0.0，此前的 5.2.4 发布于 2020 年；2026-01-05 之后仓库再无新提交。从源码构建需要 CMake 3.16+、Qt 6.10.1+（Core、Gui、Network、Widgets 组件）、C++17 编译器、Git 以及 QHexView 子模块。",
+      "解码、反编译、签名和安装均由外部工具完成。首次启动时，APK Studio 可自动下载 Microsoft OpenJDK 11.0.29、Apktool、JADX 和 uber-apk-signer 在 GitHub 上的最新版本以及 Google 最新的 platform-tools，也可在设置中改用已有安装；只有 JDK 版本是固定的，且在 macOS 上自动下载的是 Apple 芯片版 JDK。其控制台会显示实际执行的命令，README 请用户区分 Apktool 本身的问题与 APK Studio 的问题。",
+      "APK 及所需的厂商框架文件由使用者自备；安装到设备需要可通过 ADB 连接的设备。解码得到的 smali 和 JADX 生成的 Java 代码属于重建结果，需要核对，并非原始源码。README 称其在 Windows、Linux 和 macOS 上运行 CI 构建，免责声明表示该工具不用于盗版或其他非法用途。",
+      "采用 LGPL-3.0 许可。本次未安装，也未解码任何 APK。"
+    ]
   }
 }

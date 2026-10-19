@@ -14975,5 +14975,37 @@
       "https://github.com/chipsec/chipsec/blob/c11756375417cc859e25a98e0788849ebd6eb8cc/LICENSE",
       "https://github.com/chipsec/chipsec/releases/tag/2.0.9"
     ]
+  },
+  {
+    "id": "apk-studio",
+    "name": "APK Studio",
+    "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Qt6 desktop front end that drives Apktool, JADX, uber-apk-signer and ADB from an IDE-style workspace for Android packages. It decodes an APK into smali and resources, optionally adds JADX Java output, then rebuilds, signs (with optional keystore generation and zipalign) and installs the result on a selected device; manufacturer framework files and extra Apktool arguments can be supplied. Decoded projects open in a file tree with syntax-highlighted smali, Java, XML and YAML editing, an image viewer, a hex editor and search across files.",
+    "description_zh": "基于 Qt6 的桌面前端，在 IDE 式工作区中调用 Apktool、JADX、uber-apk-signer 和 ADB 处理 Android 安装包。它将 APK 解码为 smali 和资源文件，可选附加 JADX 生成的 Java 代码，随后重新打包、签名（可生成密钥库并执行 zipalign）并安装到所选设备；还可指定厂商框架文件和额外的 Apktool 参数。解码后的项目以文件树形式打开，提供 smali、Java、XML 和 YAML 的语法高亮编辑、图片查看器、十六进制编辑器和跨文件搜索。",
+    "evidence_url": "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: v6.3.0, published 2026-01-05 from the reviewed master commit, with a Linux x86_64 AppImage, a Windows x64 ZIP and a macOS DMG. The 6.x series began with v6.0.0 on 2025-12-03, following 5.2.4 from 2020, and no commits have landed since 2026-01-05. Source builds need CMake 3.16+, Qt 6.10.1+ (Core, Gui, Network, Widgets), a C++17 compiler, Git and the QHexView submodule.",
+      "The decoding, decompilation, signing and installation are done by the external tools. On first launch APK Studio can download Microsoft OpenJDK 11.0.29, the latest Apktool, JADX and uber-apk-signer GitHub releases and Google's latest platform-tools, or use installations configured in Settings; only the JDK version is pinned, and on macOS the automatic JDK is the Apple-silicon package. Its console shows the commands actually run, and the README asks users to separate Apktool problems from APK Studio issues.",
+      "APKs and any manufacturer framework files are supplied by the user; installation needs a device reachable through ADB. Decoded smali and JADX Java output are reconstructions to be checked, not original source. The README reports CI builds on Windows, Linux and macOS, and its disclaimer says the tool is not intended for piracy or other non-legal uses.",
+      "LGPL-3.0. Nothing was installed and no APKs were decoded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/README.md#L28-L58",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/tooldownloadworker.cpp#L280-L323",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/apkdecompileworker.cpp",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/sources/apksignworker.cpp",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/CMakeLists.txt",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/.github/workflows/build.yml",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/blob/c6e2724786f6e25323d20db1c1ceb2160fbc1ee9/LICENSE",
+      "https://github.com/vaibhavpandeyvpz/apkstudio/releases/tag/v6.3.0"
+    ]
   }
 ]
