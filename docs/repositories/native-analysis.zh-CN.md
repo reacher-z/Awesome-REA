@@ -80,7 +80,7 @@
 - [rizinorg/rz-ghidra](https://github.com/rizinorg/rz-ghidra) — 为 rizin 深度集成 Ghidra 反编译器与 Sleigh 反汇编器。 **[993 星标]** · 精选：[rz-ghidra Rizin 的 Ghidra 反编译器插件](https://awesomerea.org/zh/resources/rz-ghidra/)
 - [x86byte/RE-MA-Roadmap](https://github.com/x86byte/RE-MA-Roadmap) — 逆向工程与恶意软件分析学习路线图。 **[951 星标]**
 - [radareorg/radare2-book](https://github.com/radareorg/radare2-book) — Radare2 官方书籍。 **[921 星标]**
-- [CheckPointSW/Karta](https://github.com/CheckPointSW/Karta) — Karta：借助源代码进行快速二进制匹配的 IDA 插件。 **[912 星标]**
+- [CheckPointSW/Karta](https://github.com/CheckPointSW/Karta) — Karta：借助源代码进行快速二进制匹配的 IDA 插件。 **[912 星标]** · 精选：[Karta 开源库匹配插件](https://awesomerea.org/zh/resources/karta/)
 - [NaC-L/Mergen](https://github.com/NaC-L/Mergen) — 使用 LLVM IR 并解析汇编，通过优化实现去混淆。 **[912 星标]**
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — 适用于 Ghidra Program 和 Decompiler API 的 Python 代码片段。 **[893 星标]**
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Binarly 研究团队开发的漏洞检测框架。 **[893 星标]**

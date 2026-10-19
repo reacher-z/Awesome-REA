@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 397](https://img.shields.io/badge/resources-397-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 398](https://img.shields.io/badge/resources-398-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (35) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (36) · [Firmware and Hardware](#firmware) (16) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1856,6 +1856,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   The exporter component of BinDiff: plugins for IDA Pro and Binary Ninja and an extension for Ghidra that write an analyzed disassembly to the Protocol Buffer format BinDiff requires. The BinExport2 schema covers instructions with their operands and expressions, basic blocks, flow graphs, the call graph, sections, strings, comments and data references; the exporter can also write a statistics text file or a text dump for debugging. Exports can be scripted through IDC or IDAPython in IDA and through a BinExport.java script that also runs in Ghidra's headless analyzer.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/binexport/)
+
+- [**Karta**](https://github.com/CheckPointSW/Karta)
+
+  Source-code-assisted IDA Python plugin from Check Point Research that finds and matches open-source libraries compiled into large binaries and firmware. Its identifier script reports which supported libraries, such as OpenSSL, zlib, libpng and net-snmp, are present and fingerprints their versions; the matcher then uses a JSON configuration built from that library version to locate its compiled files by their original function order, match their functions and the external libc functions they call, and export selected matches as IDA names. The bundled Thumbs Up scripts improve IDA's function analysis beforehand, including ARM/Thumb separation in firmware.
+
+  Tool · Also: Firmware · [Requirements & evidence](https://awesomerea.org/resources/karta/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware
