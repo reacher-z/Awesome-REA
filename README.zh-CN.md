@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 345](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 82](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 345](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 180](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (82) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (26)
+- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (30) · [文档与学习资源](#references-and-learning) (26)
 
 **更多浏览方式**
 
@@ -2182,13 +2182,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**82 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (30) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2441,6 +2441,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 真实标签来自 Etherscan 上的源码文件：200 个余额最高的合约用于全部基线，1,000 个用于自动化测试；另有独立实验使用 50 个 Vyper 合约、50 个新部署合约和 149 个闭源攻击合约。可编译率（五次采样取优约为 75%，单次运行为 46%）、差分模糊测试通过率与嵌入相似度都不能证明与已部署源码等价。模仿学习模糊测试器生成的交易近半数会回滚；人工审查认为约 28.5% 的生成合约语义一致，Vyper 输入仅为 12%。作者报告路径过多的合约会导致超时或分析不可靠，名称推断能力也仍然有限。基线是将 Panoramix、Ethervm 和 Elipmoc 的输出（多取自其网站，部分为人工反编译）交给同一大语言模型，并非独立反编译器之间的比较。结果依赖某个 GPT-4 预览版快照。攻击复现仅覆盖 2025 年 1 月的十起事件，其中四起复现成功。
 
   **作者:** Xing Su 等
+
+  </details>
+
+- [**释放生成式模型在剥离符号二进制变量名恢复中的能力**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/)
+
+  GenNm 通过微调生成式代码模型（默认 CodeGemma-2B，另测试 CodeLlama-7B 及经 LoRA 微调的 CodeLlama-34B），为剥离符号二进制反编译代码中的占位变量建议名称。查询会加入沿调用图传播、已重命名的调用者代码与被调用者签名；类 DPO 的符号偏好优化（SymPO）抑制模型偏向训练集中高频名称，基于数据流的名称验证步骤则在多轮迭代中从候选名称里选择。作者报告，在重建的 DIRTY 与 VarCorpus 数据集上，其精确率比 VarBERT 和 ReSym 高 5.6–11.4 个百分点；对训练中未出现的名称，精确率为 22.8%，最强基线为 17.3%。
+
+  NDSS 2025 · 会议论文 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [代码](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-gennm/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 预测结果依据调试符号中的名称评分：一方面借助 SymLM 的词簇与规则进行词元匹配，另一方面由 GPT-4 评估器判断上下文相关性与语义准确性；两者都不能说明输出就是原始标识符，按二进制划分时整体精确率为 35.8%（DIRTY）和 41.2%（VarCorpus）。对训练中未出现的项目，精确率约为 30%，在 -O2 与 -O3 下的提升也较小。真实标签来自由 GitHub 项目或 Gentoo 软件包重建的 Linux 二进制文件中的调试信息，论文示例使用 IDA Pro 输出。GenNm 需要每个二进制的调用图，这也是重建 DIRTY 数据集的原因；VarCorpus 按函数划分的结果只使用 15% 的二进制样本，与黑盒 GPT-3.5／GPT-4 的比较使用 1,000 个抽样函数。它只恢复变量名，不恢复类型、函数名或完整的反编译代码。
+
+  **作者:** Xiangzhe Xu 等
 
   </details>
 

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 345](https://img.shields.io/badge/resources-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 82](https://img.shields.io/badge/papers-82-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 345](https://img.shields.io/badge/resources-345-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 180](https://img.shields.io/badge/cases-180-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (82) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (26)
+- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (30) · [References and Learning](#references-and-learning) (26)
 
 **More ways to browse**
 
@@ -2181,13 +2181,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**82 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (30) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2440,6 +2440,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Ground truth comes from Etherscan source files: 200 highest-balance contracts for all baselines and 1,000 for automated tests; separate studies add 50 Vyper, 50 newly deployed and 149 closed-source attack contracts. Compilability (about 75% with best-of-five sampling, 46% for a single run), differential-fuzzing pass rates and embedding similarity do not establish equivalence to deployed source. Nearly half of the imitation-learning fuzzer’s transactions revert, and manual review judged about 28.5% of generated contracts semantically consistent, and 12% for Vyper inputs. The authors report timeouts or unsound analysis on contracts with many paths, and name inference remains weak. Baselines give the same LLM output from Panoramix, Ethervm and Elipmoc, mostly taken from their websites or decompiled manually; this is not a comparison of standalone decompilers. Results depend on a GPT-4 preview snapshot. Attack reproduction covers ten January 2025 incidents, four of which were reproduced.
 
   **Authors:** Xing Su et al.
+
+  </details>
+
+- [**Unleashing the Power of Generative Model in Recovering Variable Names from Stripped Binary**](https://www.ndss-symposium.org/ndss-paper/unleashing-the-power-of-generative-model-in-recovering-variable-names-from-stripped-binary/)
+
+  GenNm suggests names for placeholder variables in decompiled code of stripped binaries by fine-tuning generative code models (CodeGemma-2B by default; CodeLlama-7B and a LoRA-tuned CodeLlama-34B are also tested). Queries add renamed caller code and callee signatures propagated along the call graph; a DPO-style symbol-preference optimization (SymPO) counters bias toward frequent training names, and a data-flow name-validation step chooses among candidates over iterative rounds. The authors report 5.6–11.4-point precision gains over VarBERT and ReSym on rebuilt DIRTY and VarCorpus datasets, and 22.8% precision on names unseen in training against 17.3% for the strongest baseline.
+
+  NDSS 2025 · Conference paper · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2025-276-paper.pdf) · [Code](https://github.com/XZ-X/gennm-ndss-ae/tree/9955139b4c8d43144852a674bf317cbfaf32ed17) · [Full entry & citation](https://awesomerea.org/papers/paper-gennm/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Predictions are scored against debug-symbol names by token matching with SymLM's word clusters and rules, plus a GPT-4 evaluator for context relevance and semantic accuracy; neither shows that outputs are the original identifiers, and overall split-by-binary precision is 35.8% (DIRTY) and 41.2% (VarCorpus). Precision is about 30% for projects unseen in training, and gains are smaller at -O2 and -O3. Ground truth comes from debug information in Linux binaries rebuilt from GitHub projects or Gentoo packages, with IDA Pro output in the paper's examples. GenNm needs each binary's call graph, which is why the DIRTY dataset was rebuilt; split-by-function VarCorpus results use a 15% binary sample, and the black-box GPT-3.5/GPT-4 comparison uses 1,000 sampled functions. It recovers variable names only, not types, function names or full decompiled code.
+
+  **Authors:** Xiangzhe Xu et al.
 
   </details>
 
