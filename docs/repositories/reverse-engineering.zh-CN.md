@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**612 个仓库** · 2026-10-16 UTC
+**611 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -31,7 +31,6 @@
 - [iosre/iOSAppReverseEngineering](https://github.com/iosre/iOSAppReverseEngineering) — 全球首本详尽介绍 iOS 应用逆向工程技巧的书籍 :)。 **[4,440 星标]**
 - [JetBrains/fernflower](https://github.com/JetBrains/fernflower) — 将 Java 字节码反编译为 Java 的工具，IntelliJ IDEA 使用了它。 **[4,422 星标]**
 - [0xor0ne/awesome-list](https://github.com/0xor0ne/awesome-list) — 面向网络安全的精选资源列表。 **[4,220 星标]**
-- [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE 混淆字符串求解器：自动提取恶意软件中的混淆字符串。 **[4,189 星标]**
 - [ericc-ch/copilot-api](https://github.com/ericc-ch/copilot-api) — 将 GitHub Copilot 转换为兼容 OpenAI/Anthropic API 的服务器，可用于 Claude Code！ **[4,147 星标]**
 - [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) — 从越狱设备提取已解密的 IPA。 **[3,957 星标]**
 - [dekuNukem/Nintendo\_Switch\_Reverse\_Engineering](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) — 探索 Joy-Con 与 Nintendo Switch 的内部工作原理。 **[3,792 星标]**

@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 415](https://img.shields.io/badge/resources-415-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 416](https://img.shields.io/badge/resources-416-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (25) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (48) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (15)
+- [Native Binary](#native-binary) (49) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (15)
 
 **Research and workflows**
 
@@ -1940,6 +1940,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Rust crate for zero-copy, endian-aware parsing of ELF32/64, 32/64-bit Mach-O and multi-architecture fat containers, PE32/PE32+, COFF objects, Terse Executable (TE) images and Unix/BSD archives; Object::parse picks the format from its magic bytes. Parsed structures cover ELF headers, sections, symbols, dynamic entries, relocations and notes, Mach-O load commands, imports and exports, and PE imports, exports, relocations, TLS, resources, exception and unwind data, Authenticode certificates and the .NET CLR header. Feature flags can reduce it to std-free #\[repr(C)\] struct definitions for kernels and other no\_std code.
 
   Tool · Library · [Requirements & evidence](https://awesomerea.org/resources/goblin/)
+
+- [**FLOSS (FLARE Obfuscated String Solver)**](https://github.com/mandiant/flare-floss)
+
+  Mandiant FLARE string extractor for malware analysis that is used like strings.exe but also recovers obfuscated strings. Besides static ASCII and UTF-16LE strings it extracts stack strings, tight strings and strings decoded by functions: it heuristically identifies decoding routines, recovers their arguments through control-flow analysis, emulates them and diffs memory before and after emulation. It also extracts Go and Rust strings and accepts PE, ELF and raw 32- or 64-bit shellcode; JSON results can be turned into import scripts for IDA Pro, Ghidra, Binary Ninja, radare2 and x64dbg.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/flare-floss/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 415](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-415-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 416](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-416-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (48) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
+- [原生二进制](#native-binary) (49) · [固件与硬件](#firmware) (18) · [协议](#protocol) (15)
 
 **论文与工作流**
 
@@ -1941,6 +1941,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   以零拷贝、感知字节序的方式解析二进制格式的 Rust crate，支持 ELF32/64、32/64 位 Mach-O 及多架构 fat 容器、PE32/PE32+、COFF 目标文件、Terse Executable（TE）镜像以及 Unix/BSD 归档；Object::parse 根据魔数自动识别格式。解析结果涵盖 ELF 的文件头、节区、符号、动态段条目、重定位和 note，Mach-O 的加载命令及导入导出，以及 PE 的导入导出、重定位、TLS、资源、异常与展开信息、Authenticode 证书和 .NET CLR 头。借助特性开关，它还可精简为不依赖 std 的 #\[repr(C)\] 结构体定义，供内核等 no\_std 代码使用。
 
   工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/goblin/)
+
+- [**FLOSS 混淆字符串提取工具**](https://github.com/mandiant/flare-floss)
+
+  Mandiant FLARE 团队的恶意软件字符串提取工具，用法与 strings.exe 相同，但还能还原混淆字符串。除了静态的 ASCII 和 UTF-16LE 字符串，它还能提取栈字符串、紧凑栈字符串（tight strings）以及由函数解码出的字符串：先用启发式方法识别解码函数，通过控制流分析取得调用参数，再模拟执行这些函数，并比较模拟前后的内存状态。它还能提取 Go 和 Rust 字符串，支持 PE、ELF 以及 32 位或 64 位原始 shellcode；JSON 结果可转换为 IDA Pro、Ghidra、Binary Ninja、radare2 和 x64dbg 的导入脚本。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/flare-floss/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

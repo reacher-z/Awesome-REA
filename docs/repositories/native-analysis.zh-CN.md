@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**679 个仓库** · 2026-10-16 UTC
+**680 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -34,6 +34,7 @@
 - [zyantific/zydis](https://github.com/zyantific/zydis) — 快速、轻量的 x86/x86-64 反汇编与代码生成库。 **[4,393 星标]**
 - [JonathanSalwan/Triton](https://github.com/JonathanSalwan/Triton) — Triton 是动态二进制分析库。可用它构建程序分析工具、自动化逆向工程、执行软件验证或模拟代码运行。 **[4,332 星标]**
 - [rocky/python-uncompyle6](https://github.com/rocky/python-uncompyle6) — 跨版本 Python 字节码反编译器。 **[4,331 星标]** · 精选：[uncompyle6 跨版本 Python 字节码反编译器](https://awesomerea.org/zh/resources/uncompyle6/)
+- [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE 混淆字符串求解器：自动提取恶意软件中的混淆字符串。 **[4,189 星标]** · 精选：[FLOSS 混淆字符串提取工具](https://awesomerea.org/zh/resources/flare-floss/)
 - [cea-sec/miasm](https://github.com/cea-sec/miasm) — Python 逆向工程框架。 **[3,992 星标]**
 - [rizinorg/rizin](https://github.com/rizinorg/rizin) — 类 UNIX 的逆向工程框架和命令行工具集。 **[3,972 星标]** · 精选：[Rizin 逆向工程框架](https://awesomerea.org/zh/resources/rizin/)
 - [joernio/joern](https://github.com/joernio/joern) — 基于代码属性图的开源代码分析平台，支持 C/C++/Java/二进制文件/JavaScript/Python/Kotlin。Discord：https<span>:</span>//discord.gg/vv4MH284Hc **[3,576 星标]**
