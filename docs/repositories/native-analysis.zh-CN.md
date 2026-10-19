@@ -34,7 +34,7 @@
 - [JonathanSalwan/Triton](https://github.com/JonathanSalwan/Triton) — Triton 是动态二进制分析库。可用它构建程序分析工具、自动化逆向工程、执行软件验证或模拟代码运行。 **[4,332 星标]** · 精选：[Triton 动态二进制分析库](https://awesomerea.org/zh/resources/triton/)
 - [rocky/python-uncompyle6](https://github.com/rocky/python-uncompyle6) — 跨版本 Python 字节码反编译器。 **[4,331 星标]** · 精选：[uncompyle6 跨版本 Python 字节码反编译器](https://awesomerea.org/zh/resources/uncompyle6/)
 - [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE 混淆字符串求解器：自动提取恶意软件中的混淆字符串。 **[4,189 星标]** · 精选：[FLOSS 混淆字符串提取工具](https://awesomerea.org/zh/resources/flare-floss/)
-- [cea-sec/miasm](https://github.com/cea-sec/miasm) — Python 逆向工程框架。 **[3,992 星标]**
+- [cea-sec/miasm](https://github.com/cea-sec/miasm) — Python 逆向工程框架。 **[3,992 星标]** · 精选：[Miasm 逆向工程框架](https://awesomerea.org/zh/resources/miasm/)
 - [rizinorg/rizin](https://github.com/rizinorg/rizin) — 类 UNIX 的逆向工程框架和命令行工具集。 **[3,972 星标]** · 精选：[Rizin 逆向工程框架](https://awesomerea.org/zh/resources/rizin/)
 - [icedland/iced](https://github.com/icedland/iced) — 极速且准确的 x86/x64 反汇编器、汇编器、解码器和编码器，支持 Rust、.NET、Java、Python 和 Lua。 **[3,592 星标]** · 精选：[iced x86 指令解码与汇编库](https://awesomerea.org/zh/resources/iced/)
 - [joernio/joern](https://github.com/joernio/joern) — 基于代码属性图的开源代码分析平台，支持 C/C++/Java/二进制文件/JavaScript/Python/Kotlin。Discord：https<span>:</span>//discord.gg/vv4MH284Hc **[3,576 星标]**

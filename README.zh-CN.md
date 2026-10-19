@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 452](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-452-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 453](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-453-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (181) · [应用](#app) (69)
-- [原生二进制](#native-binary) (58) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (59) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -2091,6 +2091,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Python 3.6 及以后版本 CPython 字节码的研究型反编译器，将按版本训练的 Transformer 模型与控制流重建相结合。分段模型把字节码切分为语句，语句模型将每段翻译为源码，再由模板重建循环、条件分支、异常处理、with 块和 match 语句。生成结果会用目标 Python 版本重新编译，并与原字节码比较控制流，未通过的片段会改用其他分段方案重试；其设计见 IEEE S&amp;P 2025 论文《PyLingual: Toward Perfect Decompilation of Evolving High-Level Languages》。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pylingual/)
+
+- [**Miasm 逆向工程框架**](https://github.com/cea-sec/miasm)
+
+  用于分析、修改和生成二进制程序的 Python 逆向工程框架。它可读取、修改和生成 32 位与 64 位 PE 和 ELF 文件，汇编和反汇编 x86、ARM、AArch64、MIPS、PowerPC、SH4、MSP430 与 MeP 代码，并将其提升到自有的中间语言，用于符号执行、SSA 与数据流分析、依赖图以及面向反混淆的表达式化简。其 JIT 模拟器可借助 LLVM、GCC、Clang 或纯 Python 后端运行 shellcode 或二进制中的部分代码，用 Python 回调代替库函数，提供模拟部分 Windows API 和 Linux 行为的沙箱，并可通过 Z3 进行动态符号执行。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/miasm/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
