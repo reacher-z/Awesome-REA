@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 296](https://img.shields.io/badge/resources-296-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 150](https://img.shields.io/badge/cases-150-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 59](https://img.shields.io/badge/papers-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 297](https://img.shields.io/badge/resources-297-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 151](https://img.shields.io/badge/cases-151-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 59](https://img.shields.io/badge/papers-59-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (18) · [Game](#game) (133) · [App](#app) (44)
+- [Website](#website) (18) · [Game](#game) (134) · [App](#app) (44)
 - [Native Binary](#native-binary) (20) · [Firmware and Hardware](#firmware) (13) · [Protocol](#protocol) (12)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (150) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (151) · [Related Collections](#related-collections) (5) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -856,6 +856,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Translates the Xbox 360 executable of Need for Speed: Most Wanted (2005) into native C++ with a patched XenonRecomp and runs it on a project runtime that stands in for the console’s kernel, Xenos GPU, XMA audio and controllers. Releases target SteamOS, Linux and Apple silicon Macs, with an experimental iPhone and iPad build, while all game data comes from the player’s own US disc. Rendering and frame-pacing improvements are project-reported.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)
+
+- [**The Sims: Bustin' Out: an AI-driven partial GBA matching decompilation**](https://github.com/DaBrown95/tsbodp)
+
+  Rebuilds the USA/Europe Game Boy Advance release of The Sims: Bustin' Out byte for byte while gradually replacing ROM regions with matching C compiled by agbcc. The README calls it an AI-driven experiment in which almost all code, analysis and tooling are AI-generated. Most of the ROM is still copied from the user’s dump, so whole-ROM equality does not mean the game has been decompiled.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/sims-bustin-out-gba-decomp-case/)
 
 #### Tools, projects and integrations
 
