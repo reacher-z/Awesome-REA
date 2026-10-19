@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 361](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 184](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 84](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (83) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
+- [论文](#papers) (84) · [智能体与 MCP](#agents-and-mcp) (31) · [文档与学习资源](#references-and-learning) (27)
 
 **更多浏览方式**
 
@@ -2282,14 +2282,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**83 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**84 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (8) · [反编译](#papers-decompilation) (31) · [网站](#papers-website-reconstruction) (15)
-- [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
+- [游戏](#papers-game-reconstruction) (7) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -3211,6 +3211,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 假设环境动态具有确定性、状态完全可观测，并且描述足够详细；并非仅凭像素或二进制进行恢复。准确率使用合成过程中提供的回放转移，并结合规划回报评估，不能证明所有未见状态上的正确性或完整引擎等价。RTFM 在不同回合间固定手册内容，并让怪物保持静止。CWMB 也包含非游戏的控制与物理任务；部分规划回报未给出，复杂连续状态模型仍然困难。
 
   **作者:** Nicola Dainese 等
+
+  </details>
+
+- [**从视频中学习游戏引擎**](https://www.ijcai.org/proceedings/2017/518)
+
+  从游戏录像中学习二维游戏的基于规则的前向模拟器。系统借助提供的精灵图集，用 OpenCV 定位每帧中的精灵；匹配后的精灵被转换为人工设计的事实类型，包括动画、位置、相对距离、x 与 y 方向速度及镜头偏移。随后 Game Engine Search 逐帧扫描，每当当前引擎预测的下一帧与真实帧的差异超过阈值时，便对引擎进行贪心搜索：新增或修改“条件—效果”规则，或将规则标记为玩家控制。引擎按像素误差与规则数量排序。在一段《超级马力欧兄弟》1-1 关卡视频上训练后，所学引擎预测另一位玩家视频帧的准确度高于 CNN 帧预测器与沿用上一帧的基线，基于它进行规划的价值迭代智能体，其表现与使用 Infinite Mario 引擎原生前向模拟的智能体无显著差异。
+
+  IJCAI 2017 · 会议论文 · [PDF](https://www.ijcai.org/proceedings/2017/0518.pdf) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-game-engine-learning/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 评测只涵盖一款游戏的一个关卡：训练使用《超级马力欧兄弟》1-1 关卡的一段“速通玩家”视频（1,569 帧），测试使用同一关卡的“探索型玩家”视频。帧解析依赖爱好者制作的精灵图集与人工编写的事实类型，作者也指出这使方法较难应用于真实视频等更复杂的领域。所学引擎是通过搜索得到的、描述屏幕上精灵行为的规则集合，并非恢复的游戏代码或二进制；它不表示玩家死亡与关卡切换，1-1 关卡中未出现的机制也不应期望能够迁移。阈值较低时搜索可能很慢，在 2013 年的 iMac 上单个关卡最长需两周，报告的实验使用零阈值。CNN 比较使用缩小后的灰度帧，游戏表现比较则通过 Infinite Mario 引擎中的智能体间接进行。
+
+  **作者:** Matthew Guzdial 等
 
   </details>
 

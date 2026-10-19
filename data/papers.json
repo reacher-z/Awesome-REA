@@ -4713,5 +4713,50 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-game-engine-learning",
+    "title": "Game Engine Learning from Video",
+    "title_zh": "从视频中学习游戏引擎",
+    "authors": [
+      "Matthew Guzdial",
+      "Boyang Li",
+      "Mark O. Riedl"
+    ],
+    "year": 2017,
+    "publication_date": "2017-08",
+    "date_precision": "month",
+    "date_basis": "The IJCAI-deposited Crossref record gives August 2017 for print publication, represented at month precision. The IJCAI proceedings page gives no publication day, and the conference dates are not substituted.",
+    "date_basis_zh": "IJCAI 提交的 Crossref 记录将印刷出版日期记为 2017 年 8 月，本条目按月精度记录。IJCAI 论文集页面未给出具体出版日，本条目也不以会议日期替代。",
+    "venue": "IJCAI 2017",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.24963/ijcai.2017/518",
+    "url": "https://www.ijcai.org/proceedings/2017/518",
+    "pdf_url": "https://www.ijcai.org/proceedings/2017/0518.pdf",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "game"
+    ],
+    "description_en": "Learns a rule-based forward simulator of a 2D game from gameplay video. Using a supplied sprite palette, OpenCV locates sprites in each frame; matched sprites are converted into hand-designed fact types for animation, position, relative distance, x and y velocity and camera offset. Game Engine Search then scans the frames, and whenever the current engine’s predicted next frame differs from the real one by more than a threshold, it runs a greedy search over engines that add or modify condition–effect rules or mark them as player-controlled. Engines are ranked by pixel error and rule count. Trained on one Super Mario Bros. Level 1-1 video, the learned engine predicts frames of a different player’s video more accurately than a CNN frame predictor and a previous-frame baseline, and a value-iteration agent planning with it shows no significant difference from one using the Infinite Mario engine’s native forward simulation.",
+    "description_zh": "从游戏录像中学习二维游戏的基于规则的前向模拟器。系统借助提供的精灵图集，用 OpenCV 定位每帧中的精灵；匹配后的精灵被转换为人工设计的事实类型，包括动画、位置、相对距离、x 与 y 方向速度及镜头偏移。随后 Game Engine Search 逐帧扫描，每当当前引擎预测的下一帧与真实帧的差异超过阈值时，便对引擎进行贪心搜索：新增或修改“条件—效果”规则，或将规则标记为玩家控制。引擎按像素误差与规则数量排序。在一段《超级马力欧兄弟》1-1 关卡视频上训练后，所学引擎预测另一位玩家视频帧的准确度高于 CNN 帧预测器与沿用上一帧的基线，基于它进行规划的价值迭代智能体，其表现与使用 Infinite Mario 引擎原生前向模拟的智能体无显著差异。",
+    "scope_limitations_en": "The evaluation covers one level of one game: training uses a single “speedrunner” video of Super Mario Bros. Level 1-1 (1,569 frames), and testing uses an “explorer” video of the same level. Frame parsing depends on a fan-authored sprite sheet and hand-authored fact types, which the authors say makes the method less applicable to more complex domains such as real video. The learned engine is a set of search-derived rules for on-screen sprite behavior, not recovered game code or a binary; it does not represent player death or level transitions, and mechanics absent from Level 1-1 are not expected to transfer. Search can be slow at low thresholds, up to two weeks for one level on a 2013 iMac, and the reported run used a zero threshold. The CNN comparison used downscaled grayscale frames, and the gameplay comparison is indirect, through agents in the Infinite Mario engine.",
+    "scope_limitations_zh": "评测只涵盖一款游戏的一个关卡：训练使用《超级马力欧兄弟》1-1 关卡的一段“速通玩家”视频（1,569 帧），测试使用同一关卡的“探索型玩家”视频。帧解析依赖爱好者制作的精灵图集与人工编写的事实类型，作者也指出这使方法较难应用于真实视频等更复杂的领域。所学引擎是通过搜索得到的、描述屏幕上精灵行为的规则集合，并非恢复的游戏代码或二进制；它不表示玩家死亡与关卡切换，1-1 关卡中未出现的机制也不应期望能够迁移。阈值较低时搜索可能很慢，在 2013 年的 iMac 上单个关卡最长需两周，报告的实验使用零阈值。CNN 比较使用缩小后的灰度帧，游戏表现比较则通过 Infinite Mario 引擎中的智能体间接进行。",
+    "why_fits_en": "Adds a search-based method for reconstructing game rules from gameplay video, complementing the section’s neural and LLM-based world-model and code-synthesis research.",
+    "why_fits_zh": "补充一种基于搜索、从游戏录像重建游戏规则的方法，与本节基于神经网络及大语言模型的世界模型与代码合成研究互补。",
+    "metadata_notes": "The IJCAI proceedings page and the 7-page PDF give the three authors, the IJCAI-17 main track and pages 3707–3713; the Crossref record matches the authors and DOI. The paper links no code, learned engines or parsed data, and the Super Mario Bros. footage and fan-made sprite sheet are third-party materials. No code or experiments were run.",
+    "metadata_notes_zh": "IJCAI 论文集页面与 7 页 PDF 给出三位作者、IJCAI-17 主赛道及第 3707–3713 页；Crossref 记录的作者与 DOI 与之一致。论文未链接代码、学得的引擎或解析数据，《超级马力欧兄弟》录像与爱好者制作的精灵图集均属第三方材料。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://www.ijcai.org/proceedings/2017/518",
+      "https://www.ijcai.org/proceedings/2017/0518.pdf",
+      "https://api.crossref.org/works/10.24963/ijcai.2017/518"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

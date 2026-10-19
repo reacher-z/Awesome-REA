@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 361](https://img.shields.io/badge/resources-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 361](https://img.shields.io/badge/resources-361-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 184](https://img.shields.io/badge/cases-184-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 84](https://img.shields.io/badge/papers-84-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (83) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
+- [Papers](#papers) (84) · [Agents and MCP](#agents-and-mcp) (31) · [References and Learning](#references-and-learning) (27)
 
 **More ways to browse**
 
@@ -2281,14 +2281,14 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**83 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**84 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
 - [Agent evaluation](#papers-agent-evaluation) (8) · [Decompilation](#papers-decompilation) (31) · [Websites](#papers-website-reconstruction) (15)
-- [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
+- [Games](#papers-game-reconstruction) (7) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
@@ -3210,6 +3210,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Assumes deterministic, fully observable dynamics and sufficiently detailed descriptions; this is not recovery from pixels or binaries alone. Accuracy uses the replay transitions supplied during synthesis, alongside planning-return evaluation, rather than proving correctness on all unseen states or full-engine equivalence. RTFM fixes the manual across episodes and keeps monsters stationary. CWMB also includes non-game control and physics tasks; some planning returns are unavailable and complex continuous-state models remain difficult.
 
   **Authors:** Nicola Dainese et al.
+
+  </details>
+
+- [**Game Engine Learning from Video**](https://www.ijcai.org/proceedings/2017/518)
+
+  Learns a rule-based forward simulator of a 2D game from gameplay video. Using a supplied sprite palette, OpenCV locates sprites in each frame; matched sprites are converted into hand-designed fact types for animation, position, relative distance, x and y velocity and camera offset. Game Engine Search then scans the frames, and whenever the current engine’s predicted next frame differs from the real one by more than a threshold, it runs a greedy search over engines that add or modify condition–effect rules or mark them as player-controlled. Engines are ranked by pixel error and rule count. Trained on one Super Mario Bros. Level 1-1 video, the learned engine predicts frames of a different player’s video more accurately than a CNN frame predictor and a previous-frame baseline, and a value-iteration agent planning with it shows no significant difference from one using the Infinite Mario engine’s native forward simulation.
+
+  IJCAI 2017 · Conference paper · [PDF](https://www.ijcai.org/proceedings/2017/0518.pdf) · [Full entry & citation](https://awesomerea.org/papers/paper-game-engine-learning/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The evaluation covers one level of one game: training uses a single “speedrunner” video of Super Mario Bros. Level 1-1 (1,569 frames), and testing uses an “explorer” video of the same level. Frame parsing depends on a fan-authored sprite sheet and hand-authored fact types, which the authors say makes the method less applicable to more complex domains such as real video. The learned engine is a set of search-derived rules for on-screen sprite behavior, not recovered game code or a binary; it does not represent player death or level transitions, and mechanics absent from Level 1-1 are not expected to transfer. Search can be slow at low thresholds, up to two weeks for one level on a 2013 iMac, and the reported run used a zero threshold. The CNN comparison used downscaled grayscale frames, and the gameplay comparison is indirect, through agents in the Infinite Mario engine.
+
+  **Authors:** Matthew Guzdial et al.
 
   </details>
 
