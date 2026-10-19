@@ -3724,5 +3724,14 @@
       "分析者需指定要附加或启动的进程或应用包名。不同库和平台的覆盖程度不同：README 的支持表将许多组合标为仅读写挂钩、仅密钥或尚未实现，因此明文捕获可能不完整。静态链接 BoringSSL 所需的字节模式可由作者另行提供的 BoringSecretHunter 工具生成，该工具分析的是使用者自有的库文件副本。",
       "采用 GPL-3.0；setup.py 声明 GPL-3.0-only，但其行内注释写的是 GPLv3 或更高版本。README 将该工具定位于恶意软件分析和应用隐私研究，并请使用者引用作者 2024 年发表于 Forensic Science International: Digital Investigation 的 TLS 密钥材料提取论文。本次未挂钩任何进程，也未捕获任何流量。"
     ]
+  },
+  "hrtng": {
+    "name": "hrtng IDA 反编译增强插件",
+    "requirements": [
+      "需要带 Hex-Rays 反编译器的 IDA。README 称只支持最新的 IDA 版本；插件仍可针对 IDA SDK 7.3 及以上版本编译，但新功能通常未在旧版本上充分测试。审阅时最新版本为 v3.9.114，发布于 2026-09-02，提供适用于 IDA 9.2、9.3 和 9.4 的预编译压缩包，另附一个 7z 压缩包；所审阅的 master 提交比该版本多一个更新日志中的修复，并在 ida-plugin.json 中声明版本 3.9.115。",
+      "CI 工作流构建 Linux x64、macOS（Apple 芯片和 Intel）和 Windows x64 二进制，并为 IDA 9.3 和 9.4 构建 Linux ARM 版本。从源码构建需使用 CMake、Crypto++ CMake 子模块和 IDA SDK，SDK 路径与版本在 src/CMakeLists.txt 中设置；README 给出了 SDK 8.5 和 9.1 需要手动修正的内容。API 哈希扫描和枚举替换需要把 bin/plugins 中的 apilist.txt 和 literal.txt 放在插件旁边。",
+      "样本和 IDA 数据库由分析人员自行提供。批量解密的 Appcall 引擎会在所选 IDA 调试器中运行被分析程序自身的解密函数，其文档称仅用 imul 模拟器和 IDA 的 Remote Windows 调试器测试过。混淆代码反编译和内联检测被标为实验性功能。",
+      "采用 GPL-3.0 许可。NOTICE.txt 列出了随附的第三方代码及其许可证，其中包括采用 Boost Software License 1.0 的 Crypto++ 8.9.0（用于 RC4、AES、ChaCha20 等密码算法），以及采用 MIT 许可的 GraphSlick 和 microavx 代码。本次未构建、安装或运行任何内容。"
+    ]
   }
 }

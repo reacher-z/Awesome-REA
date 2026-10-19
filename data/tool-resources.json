@@ -9855,5 +9855,42 @@
       "https://pypi.org/project/friTap/2.5.2/",
       "https://doi.org/10.1016/j.fsidi.2024.301766"
     ]
+  },
+  {
+    "id": "hrtng",
+    "name": "hrtng",
+    "url": "https://github.com/KasperskyLab/hrtng",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA plugin published by Kaspersky that extends the Hex-Rays decompiler with tools its author collected for reverse-engineering work, including malware analysis. It decrypts strings, data and constants with built-in ciphers or in bulk through IDA's Appcall debugger feature, resolves API-name hashes, unflattens control flow and forces decompilation of obfuscated code, and recognizes library code through microcode signatures, inlined-function detection and PAT files built from an IDA database. Pseudocode helpers cover automatic renaming, retyping and enum substitution, structure creation, virtual and indirect call navigation, and patching.",
+    "description_zh": "Kaspersky 发布的 IDA 插件，为 Hex-Rays 反编译器加入了作者在包括恶意软件分析在内的逆向工作中积累的各类工具。它可用内置密码算法解密字符串、数据和常量，或借助 IDA 的 Appcall 调试器功能批量解密；还能识别 API 名称哈希、消除控制流平坦化并强制反编译混淆代码，并通过微码签名、内联函数检测和从 IDA 数据库生成的 PAT 文件识别库代码。伪代码辅助功能包括自动重命名、类型修改和枚举替换、结构体创建、虚函数与间接调用导航以及补丁。",
+    "evidence_url": "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires IDA with the Hex-Rays decompiler. The README supports only the latest IDA version; the plugin can still be compiled against IDA SDK 7.3 or later, but new features are usually not well tested on older versions. Latest release at review: v3.9.114, published 2026-09-02, with prebuilt archives for IDA 9.2, 9.3 and 9.4 plus a separate 7z archive; the reviewed master commit is one changelog fix ahead and declares 3.9.115 in ida-plugin.json.",
+      "The CI workflow builds Linux x64, macOS (Apple silicon and Intel) and Windows x64 binaries, and Linux ARM for IDA 9.3 and 9.4. Source builds use CMake with the Crypto++ CMake submodule and an IDA SDK whose path and version are set in src/CMakeLists.txt; the README gives manual SDK fixes for 8.5 and 9.1. The apilist.txt and literal.txt files from bin/plugins must sit beside the plugin for API-hash scanning and enum substitution.",
+      "Samples and IDA databases come from the analyst. The Appcall engine for mass decryption runs the analyzed program's own decryption routine under the selected IDA debugger, and its documentation reports testing only with the imul emulator and IDA's Remote Windows debugger. Obfuscated-code decompilation and inline detection are described as experimental.",
+      "GPL-3.0. NOTICE.txt lists bundled third-party code and its licenses, including Crypto++ 8.9.0 under the Boost Software License 1.0, used for ciphers such as RC4, AES and ChaCha20, and MIT-licensed GraphSlick and microavx code. Nothing was built, installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/README.md#L13-L15",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/README.md#L112-L150",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/doc/decr.md",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/doc/appcall.md",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/doc/deob.md",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/doc/msig.md",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/.github/workflows/build.yml",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/ida-plugin.json",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/CHANGELOG.md",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/NOTICE.txt",
+      "https://github.com/KasperskyLab/hrtng/blob/2c7b78e5772cc8728d8b450fd5a87cb226a683fb/COPYING",
+      "https://github.com/KasperskyLab/hrtng/releases/tag/v3.9.114",
+      "https://securelist.com/hrtng-ida-pro-plugin/114780/"
+    ]
   }
 ]
