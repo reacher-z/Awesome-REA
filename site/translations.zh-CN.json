@@ -3151,5 +3151,14 @@
       "仓库测试使用 pytest 和 Hex-Rays 的 idapro 库，并以仓库自带的 manalyze.exe（作者的 PE 分析工具 Manalyze 的构建产物）为测试样本；仓库未提供 CI 工作流。README 中的前后对比截图，以及先请求解释再重命名效果更好的观察，均为作者所述。本合集仅审阅源码与文档，未运行插件、测试或任何模型。",
       "LICENSE 与 ida-plugin.json 标明采用 GPL-3.0；IDA Pro、Hex-Rays 反编译器和模型服务各有其许可与条款。README 感谢 Kaspersky 提供最初资助，并称 HarfangLab 为当前支持方。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "ghidrassistmcp": {
+    "name": "GhidrAssistMCP Ghidra 原生 MCP 扩展",
+    "requirements": [
+      "需要运行在 Java 25 或更新版本上的 Ghidra 12.0 或 12.1 Public；扩展 zip 与特定 Ghidra 版本对应。3.0.0 版（2026-10-09）的标签即所审阅的提交，该版本发布了适用于 Ghidra 12.1 的 zip；可通过 File → Install Extensions 安装，从源码构建则使用随附的 Gradle wrapper，并需要 Java 25 和 GHIDRA_INSTALL_DIR。服务器默认监听 localhost:8080，streamable HTTP 端点为 /mcp（MCP 2025-11-25），旧版 SSE 端点为 /sse（2024-11-05）；Java MCP SDK 2.0.1、Jetty 和 Jackson 以私有包名打包在扩展内。",
+      "待分析的程序来自用户自己的 Ghidra 项目或导入的文件，扩展本身不提供任何目标二进制。无界面模式在 analyzeHeadless 中运行随附的 GAMCPStartServerScript.java，作用于已加载的程序；设置 wait=true 可保持会话不退出，completion_file 选项则用于结束会话。项目生命周期类工具需要图形界面的项目管理器。",
+      "写入类工具会修改程序或项目，包括名称、类型、注释、结构体、反汇编、分析选项和保存操作；读写两类工具分别带有对应的 MCP 标注。import_file、export_program 和五个 Ghidra 脚本工具默认禁用；无界面模式下的 agent_lab 配置会开放沙箱内的程序导出，任意路径导入和脚本仍保持禁用。README 未说明任何客户端认证机制；服务器会拒绝 Origin 请求头不在允许范围内的浏览器请求。",
+      "项目的现代化评审文档称，在 Ghidra 12.0 和 12.1 上运行 buildExtension test 均通过 90 项测试，并记录了 2026-10-09 在 Ghidra 12.1 上的一次实机冒烟测试，而四个项目控制工具是在该测试之后加入的；以上均为项目自报结果。采用 MIT 许可。仓库已从 jtang613/GhidrAssistMCP 迁移，README 推荐作者自己的 GhidrAssist 客户端。本次未运行扩展、服务器或任何分析，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

@@ -7801,5 +7801,35 @@
       "https://github.com/JusticeRage/Gepetto/blob/f98e4c12decf86eae76ece9d6955bb6dfe472190/LICENSE",
       "https://github.com/JusticeRage/Gepetto/releases/tag/v1.5.1"
     ]
+  },
+  {
+    "id": "ghidrassistmcp",
+    "name": "GhidrAssistMCP",
+    "url": "https://github.com/symgraph/GhidrAssistMCP",
+    "category": "agent-mcp",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension that runs an MCP server inside Ghidra over streamable HTTP and legacy SSE, with 100 explicitly named tools (93 enabled by default) for pseudocode, disassembly, P-code, control-flow and call graphs, cross-references, strings, imports and exports, plus renaming, retyping, comments and structure inference. Since version 3.0.0 the server starts with the project manager, so agents can create, open, save and close projects and open programs before a CodeBrowser exists, while one shared server tracks whichever CodeBrowser window has focus. Six program resource templates, seven analysis prompts and a bundled script for running the server under analyzeHeadless complete the package.",
+    "description_zh": "在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，通过 streamable HTTP 和旧版 SSE 提供 100 个名称明确的工具（默认启用 93 个），涵盖伪代码、反汇编、P-code、控制流图与调用图、交叉引用、字符串、导入表和导出表，以及重命名、修改类型、注释和结构体推断。自 3.0.0 版起，服务器随项目管理器一同启动，智能体在 CodeBrowser 尚未打开时即可创建、打开、保存和关闭项目并打开程序；同一个共享服务器会跟踪当前获得焦点的 CodeBrowser 窗口。扩展另附六个程序资源模板、七个分析提示词，以及在 analyzeHeadless 下运行服务器的脚本。",
+    "evidence_url": "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ghidra 12.0 or 12.1 Public running on Java 25 or newer; extension zips are specific to one Ghidra version. Release 3.0.0 (2026-10-09), whose tag is the reviewed commit, publishes a zip for Ghidra 12.1; installation goes through File → Install Extensions, and source builds use the bundled Gradle wrapper with Java 25 and GHIDRA_INSTALL_DIR. The server listens on localhost:8080 by default, with streamable HTTP at /mcp (MCP 2025-11-25) and legacy SSE at /sse (2024-11-05); the Java MCP SDK 2.0.1, Jetty and Jackson are bundled under private package names.",
+      "Programs come from the user's own Ghidra project or imports; the extension supplies no target binaries. Headless mode runs the bundled GAMCPStartServerScript.java inside analyzeHeadless against the loaded program, with wait=true to keep the session open and a completion_file option to end it; the project lifecycle tools need the GUI project manager.",
+      "Write tools change the program or project, including names, types, comments, structures, disassembly, analysis options and saves, and read and write tools carry separate MCP annotations. import_file, export_program and the five Ghidra script tools are disabled by default; a headless agent_lab profile enables sandbox-local program export while arbitrary-path import and scripts stay disabled. The README describes no client authentication; the server rejects browser requests whose Origin header is not allowed.",
+      "The project's modernization review reports 90 passing tests in buildExtension test runs against Ghidra 12.0 and 12.1, and a live Ghidra 12.1 smoke test on 2026-10-09 that predates the four project-control tools; these are project-reported. MIT. The repository moved from jtang613/GhidrAssistMCP, and its README recommends the author's GhidrAssist client. No extension, server or analysis was run here, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/docs/modernization-review.md",
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/build.gradle",
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/src/main/java/ghidrassistmcp/GhidrAssistMCPServer.java",
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/ghidra_scripts/GAMCPStartServerScript.java",
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/LICENSE",
+      "https://github.com/symgraph/GhidrAssistMCP/releases/tag/3.0.0"
+    ]
   }
 ]
