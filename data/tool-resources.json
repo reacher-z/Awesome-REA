@@ -12487,5 +12487,39 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "pixmob-ir-protocol-case",
+    "name": "PixMob IR reverse engineering: controlling event wristbands at home",
+    "url": "https://github.com/danielweidman/pixmob-ir-reverse-engineering",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Recovers enough of the infrared protocol used by PixMob event wristbands to light them at home, starting from Flipper Zero recordings made at concerts and games and replaying them to bracelets. Pulse-timing analysis found 38 kHz signals with bit intervals of roughly 700 µs, and targeted brute forcing from an ESP32 discovered hundreds of colour, fade, random and motion-mode commands, now sent through Arduino, Python and web tools. The README calls the result far from exhaustive and points to a later repository that decoded most of the full IR protocol through MCU dumping.",
+    "description_zh": "从在演唱会和球赛现场用 Flipper Zero 录下的信号出发，把录音重放给手环，恢复出足以在家中点亮 PixMob 活动手环的部分红外协议。脉冲时序分析发现信号载波为 38 kHz、比特间隔约 700 微秒；项目再用 ESP32 做有针对性的暴力枚举，找到数百条颜色、渐变、随机和体感模式命令，现可通过 Arduino、Python 和网页工具发送。README 称这些结果远未穷尽，并指向一个后来通过 MCU 转储基本解出完整红外协议的仓库。",
+    "evidence_url": "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-02-06 main head; there are no releases. The write-up covers IR bracelets, while the rf folder adds 915 MHz and 868 MHz OOK recordings and notes for RF wristbands, where a further encoding layer and a likely CRC remain unresolved. The project reports testing six IR bracelet versions made between 2014 and 2021, and a hardware table lists boards and MCUs where known.",
+      "Needs the user’s own PixMob bracelets with fresh batteries and an Arduino-compatible board or ESP32 with a 940 nm IR emitter, using the IRremote or IRremoteESP8266 library; a Flipper Zero can instead send codes from a separate repository. The Python tools need pyserial, PySimpleGUI and clipboard, and the web interface runs in Chrome and connects directly to the Arduino.",
+      "The evidence is recordings and observed bracelet reactions: the repository holds raw Flipper IR captures from several events, edited RF captures, the discovered effect definitions, a record of brute-force attempts and a dump of one bracelet’s 24C02 EEPROM. The README says brute forcing targeted only a few packet lengths, so the code list is far from exhaustive, and the programming and choreography signals used at events remain undiscovered.",
+      "Python unit tests cover the conversion functions and Flipper-file parsing; there is no CI. Effects are reported by the author and contributors from their own bracelets, and this source review ran no code or hardware.",
+      "MIT (LICENSE). PixMob’s hardware, firmware and trademarks are outside that license, and the X-ray images are credited to Samy Kamkar. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/rf/README.md",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/hardware-table.md",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/python_tools/README.md",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/python_tools/requirements.txt",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/python_tools/pixmob_conversion_funcs.py",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/python_tools/tests/test_pixmob_conversion_funcs.py",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/arduino_sender/README.md",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
+      "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
+    ]
   }
 ]
