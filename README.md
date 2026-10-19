@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 402](https://img.shields.io/badge/resources-402-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 403](https://img.shields.io/badge/resources-403-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 185](https://img.shields.io/badge/cases-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 83](https://img.shields.io/badge/papers-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (24) · [Game](#game) (177) · [App](#app) (58)
-- [Native Binary](#native-binary) (39) · [Firmware and Hardware](#firmware) (17) · [Protocol](#protocol) (13)
+- [Native Binary](#native-binary) (39) · [Firmware and Hardware](#firmware) (18) · [Protocol](#protocol) (13)
 
 **Research and workflows**
 
@@ -1991,6 +1991,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   IDA Pro plugin and loader that automate static analysis of UEFI firmware. The plugin annotates Boot, Runtime, SMM and PEI service calls, lists the EFI protocols and known GUIDs a module installs or consumes, applies protocol interface types in the Hex-Rays decompiler, flags suspected SMM callout and GetVariable out-of-bounds write patterns for review and saves a JSON report. The efiXloader module opens a whole firmware image in one IDA database, with driver entry points, navigation between drivers and a DXE driver dependency graph.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/efixplorer/)
+
+- [**vmlinux-to-elf**](https://github.com/marin-m/vmlinux-to-elf)
+
+  Rebuild an analyzable ELF with function and variable symbols from a Linux kernel image, whether a raw or compressed vmlinux, vmlinuz, zImage or bzImage blob, certain Android boot.img files or a stripped kernel ELF, by locating and decoding the embedded kallsyms symbol table. It detects the compression format, instruction set, endianness, word size, entry point and an approximate base address and writes an ELF for IDA Pro or Ghidra; a kallsyms-finder listing, a standalone decompressor and a GTK GUI are included.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/vmlinux-to-elf/)
 
 <a id="protocol"></a>
 ### Protocol

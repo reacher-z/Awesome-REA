@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 402](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-402-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 403](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-403-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (24) · [游戏](#game) (177) · [应用](#app) (58)
-- [原生二进制](#native-binary) (39) · [固件与硬件](#firmware) (17) · [协议](#protocol) (13)
+- [原生二进制](#native-binary) (39) · [固件与硬件](#firmware) (18) · [协议](#protocol) (13)
 
 **论文与工作流**
 
@@ -1992,6 +1992,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于自动化 UEFI 固件静态分析的 IDA Pro 插件与加载器。插件可标注 Boot、Runtime、SMM 和 PEI 服务调用，列出模块安装或使用的 EFI 协议与已知 GUID，在 Hex-Rays 反编译器中应用协议接口类型，标记疑似 SMM callout 及 GetVariable 越界写入模式供人工复核，并保存 JSON 报告。efiXloader 加载模块可在单个 IDA 数据库中打开整个固件镜像，提供各驱动入口点、驱动间导航和 DXE 驱动依赖关系图。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/efixplorer/)
+
+- [**vmlinux-to-elf 内核符号恢复工具**](https://github.com/marin-m/vmlinux-to-elf)
+
+  通过定位并解码内嵌的 kallsyms 符号表，从 Linux 内核镜像重建带函数与变量符号、可供分析的 ELF 文件；输入可以是原始或压缩的 vmlinux、vmlinuz、zImage、bzImage 数据块，部分 Android boot.img 文件，或已去除符号的内核 ELF。工具会检测压缩格式、指令集、字节序、位宽、入口点和近似基址，并生成可在 IDA Pro 或 Ghidra 中分析的 ELF；另附列出符号的 kallsyms-finder、独立解压工具和 GTK 图形界面。
+
+  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
 
 <a id="protocol"></a>
 ### Protocol · 协议
