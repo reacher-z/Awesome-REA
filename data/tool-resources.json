@@ -7581,5 +7581,30 @@
       "https://github.com/fkie-cad/cwe_checker/releases/tag/v0.9",
       "https://docs.cwe-checker.io/index.html"
     ]
+  },
+  {
+    "id": "jnitrace",
+    "name": "jnitrace",
+    "url": "https://github.com/chame1eon/jnitrace",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Frida-based dynamic-analysis tool that traces an Android app's use of the JNI API, similar to frida-trace or strace but for the Java Native Interface. It logs the JNI calls that native libraries make through the JNIEnv and JavaVM structures, with include and exclude filters, backtraces and optional JSON output for later post-processing. The tracing engine is also published as a separate jnitrace-engine library.",
+    "description_zh": "基于 Frida 的动态分析工具，用于跟踪 Android 应用对 JNI API 的调用，类似 frida-trace 或 strace，但面向 Java 本地接口。它记录原生库通过 JNIEnv 与 JavaVM 结构发起的 JNI 调用，支持包含/排除过滤、回溯以及可选的 JSON 输出以便后续处理。其跟踪引擎另以 jnitrace-engine 库形式单独发布。",
+    "evidence_url": "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/LICENSE",
+      "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/setup.py"
+    ],
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Installed from PyPI as jnitrace (setup.py marks version 3.3.1 and Python 3) and runs on a Linux, macOS or Windows host; building from source additionally needs Node.js.",
+      "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
+      "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
+    ]
   }
 ]
