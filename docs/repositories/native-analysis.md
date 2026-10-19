@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**679 repositories** · 2026-10-16 UTC
+**680 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -37,6 +37,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE Obfuscated String Solver - Automatically extract obfuscated strings from malware. **[4,189 stars]** · Curated: [FLOSS (FLARE Obfuscated String Solver)](https://awesomerea.org/resources/flare-floss/)
 - [cea-sec/miasm](https://github.com/cea-sec/miasm) — Reverse engineering framework in Python **[3,992 stars]**
 - [rizinorg/rizin](https://github.com/rizinorg/rizin) — UNIX-like reverse engineering framework and command-line toolset. **[3,972 stars]** · Curated: [Rizin](https://awesomerea.org/resources/rizin/)
+- [icedland/iced](https://github.com/icedland/iced) — Blazing fast and correct x86/x64 disassembler, assembler, decoder, encoder for Rust, .NET, Java, Python, Lua **[3,592 stars]** · Curated: [iced](https://awesomerea.org/resources/iced/)
 - [joernio/joern](https://github.com/joernio/joern) — Open-source code analysis platform for C/C++/Java/Binary/Javascript/Python/Kotlin based on code property graphs. Discord https<span>:</span>//discord.gg/vv4MH284Hc **[3,576 stars]**
 - [JusticeRage/Gepetto](https://github.com/JusticeRage/Gepetto) — IDA plugin which queries language models to speed up reverse-engineering **[3,487 stars]** · Curated: [Gepetto](https://awesomerea.org/resources/gepetto/)
 - [ljagiello/ctf-skills](https://github.com/ljagiello/ctf-skills) — Agent skills for solving CTF challenges - web exploitation, binary pwn, crypto, reverse engineering, forensics, OSINT, and more **[3,459 stars]**

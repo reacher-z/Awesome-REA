@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 426](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-426-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 427](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-427-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 185](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-185-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 83](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-83-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (25) · [游戏](#game) (177) · [应用](#app) (60)
-- [原生二进制](#native-binary) (52) · [固件与硬件](#firmware) (20) · [协议](#protocol) (16)
+- [原生二进制](#native-binary) (53) · [固件与硬件](#firmware) (20) · [协议](#protocol) (16)
 
 **论文与工作流**
 
@@ -1977,6 +1977,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于查看 ELF 二进制的终端用户界面。它可像 stat 和 ldd 那样显示文件信息和所链接的共享库，像 readelf 那样浏览 ELF 头、注释、节区、段、符号、动态符号和重定位，按可调的最小长度提取字符串，并提供可搜索的十六进制视图。可选的动态分析会运行该二进制，像 strace 那样跟踪其系统调用，并按系统调用汇总耗时和调用次数；该界面还能作为 Rust 库嵌入 Ratatui 应用。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binsider/)
+
+- [**iced x86 指令解码与汇编库**](https://github.com/icedland/iced)
+
+  面向 16、32 和 64 位 x86 代码的指令库，可解码、格式化、汇编和编码指令，输出支持 masm、nasm、GNU AT&amp;T 和 Intel XED 语法。其指令信息 API 可报告指令读写的寄存器、内存操作数和 RFLAGS 标志位，以及所需的 CPUID 特性标志和控制流类型；编码器还能把已解码的指令重新编码到任意地址。同一仓库维护 Rust、C#（.NET）和 Java 三套实现，另有基于 Rust crate 的 Python、JavaScript（WebAssembly）和 Lua 绑定。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/iced/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

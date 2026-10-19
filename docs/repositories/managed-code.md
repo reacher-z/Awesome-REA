@@ -2,14 +2,13 @@
 
 [All categories](README.md) · [简体中文](managed-code.zh-CN.md)
 
-**127 repositories** · 2026-10-16 UTC
+**126 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
 - [icsharpcode/ILSpy](https://github.com/icsharpcode/ILSpy) — .NET Decompiler with support for PDB generation, ReadyToRun, Metadata (&amp;more) - cross-platform! **[26,662 stars]** · Curated: [ILSpy](https://awesomerea.org/resources/ilspy/)
 - [focus-creative-games/hybridclr](https://github.com/focus-creative-games/hybridclr) — HybridCLR is a fully featured, zero-cost, high-performance, low-memory solution for Unity's all-platform native C# hot updates. **[7,993 stars]**
 - [Tyrrrz/YoutubeExplode](https://github.com/Tyrrrz/YoutubeExplode) — Abstraction layer over YouTube's internal API **[3,741 stars]**
-- [icedland/iced](https://github.com/icedland/iced) — Blazing fast and correct x86/x64 disassembler, assembler, decoder, encoder for Rust, .NET, Java, Python, Lua **[3,592 stars]**
 - [SteamRE/SteamKit](https://github.com/SteamRE/SteamKit) — SteamKit2 is a .NET library designed to interoperate with Valve's Steam network. It aims to provide a simple, yet extensible, interface to perform various actions on the network. **[3,210 stars]**
 - [ErikEJ/EFCorePowerTools](https://github.com/ErikEJ/EFCorePowerTools) — Entity Framework Core Power Tools - reverse engineering, migrations and model visualization in Visual Studio &amp; CLI **[2,514 stars]**
 - [ValveResourceFormat/ValveResourceFormat](https://github.com/ValveResourceFormat/ValveResourceFormat) — Source 2 Viewer is an all-in-one tool to browse VPK archives, view, extract, and decompile Source 2 assets, including maps, models, materials, textures, sounds, and more. **[2,507 stars]**

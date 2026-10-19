@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**679 个仓库** · 2026-10-16 UTC
+**680 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -37,6 +37,7 @@
 - [mandiant/flare-floss](https://github.com/mandiant/flare-floss) — FLARE 混淆字符串求解器：自动提取恶意软件中的混淆字符串。 **[4,189 星标]** · 精选：[FLOSS 混淆字符串提取工具](https://awesomerea.org/zh/resources/flare-floss/)
 - [cea-sec/miasm](https://github.com/cea-sec/miasm) — Python 逆向工程框架。 **[3,992 星标]**
 - [rizinorg/rizin](https://github.com/rizinorg/rizin) — 类 UNIX 的逆向工程框架和命令行工具集。 **[3,972 星标]** · 精选：[Rizin 逆向工程框架](https://awesomerea.org/zh/resources/rizin/)
+- [icedland/iced](https://github.com/icedland/iced) — 极速且准确的 x86/x64 反汇编器、汇编器、解码器和编码器，支持 Rust、.NET、Java、Python 和 Lua。 **[3,592 星标]** · 精选：[iced x86 指令解码与汇编库](https://awesomerea.org/zh/resources/iced/)
 - [joernio/joern](https://github.com/joernio/joern) — 基于代码属性图的开源代码分析平台，支持 C/C++/Java/二进制文件/JavaScript/Python/Kotlin。Discord：https<span>:</span>//discord.gg/vv4MH284Hc **[3,576 星标]**
 - [JusticeRage/Gepetto](https://github.com/JusticeRage/Gepetto) — 通过查询语言模型来加速逆向工程的 IDA 插件。 **[3,487 星标]** · 精选：[Gepetto：调用大模型辅助逆向的 IDA 插件](https://awesomerea.org/zh/resources/gepetto/)
 - [ljagiello/ctf-skills](https://github.com/ljagiello/ctf-skills) — 用于解决 CTF 挑战的智能体技能，涵盖 Web 漏洞利用、二进制 pwn、密码学、逆向工程、取证、OSINT 等。 **[3,459 星标]**
