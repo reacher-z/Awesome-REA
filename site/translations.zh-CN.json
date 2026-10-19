@@ -4628,5 +4628,15 @@
       "kb.json 按原始目标文件分组，声明了 323 个原有函数和 71 个数据项及其地址；tools/knowledge.py 据此生成头文件、跳转桩和导入库，gen-struct-checks.py 为 types.h 生成静态大小检查。CI 只构建重新实现的映像（在 Ubuntu、Windows 和 macOS 上分别构建 Debug 与 Release），不使用原版文件，因此只检验能否编译，不检验行为。来源未记录逐字节比较或自动化的游戏行为比较，本合集也未运行任何内容。",
       "仓库没有许可证文件，GitHub 也未检测到许可证，因此项目代码的再利用条款未作说明；src/xboxkrnl.exe.def 带有 CC0-1.0 声明（2017，Stefan Schmidt）。README 将该工作定位为教育研究，进度页面说明项目与 Microsoft 或 Bungie 无关，游戏本身仍受其权利人的条款约束。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "paper-mario-ttyd-decomp-case": {
+    "name": "《纸片马力欧 RPG》：早期阶段的 GameCube 一致性反编译",
+    "requirements": [
+      "README 只列出一个支持版本 G8MJ01（Rev 0，日版）；configure.py 未定义其他版本，CI 也只构建 G8MJ01。README 仍留有模板残余：徽章指向另一个项目，克隆命令写的是 NWPlayer123/G8MJ01-dtk，另有一行把 G8MJ01 称为美版。产物是 GameCube DOL 和 REL 组，不是 PC 移植。",
+      "需将自己的 G8MJ01 光盘镜像复制到 orig/G8MJ01，可接受 ISO（GCM）、RVZ、WIA、WBFS、CISO、NFS、GCZ 和 TGC 格式。README 称仓库不含任何游戏素材或汇编：decomp-toolkit 依据仓库提交的符号表和拆分表拆分 main.dol 与各 REL，并从 DOL 中把记忆卡图标和横幅纹理提取为本地头文件。src/pmario_sound.c 等反编译源文件中也包含以 C 重建的游戏数据表。",
+      "构建需要 Python 与 ninja，可在 Windows（推荐原生工具）、macOS（需 wine-crossover）或 Linux（x86 上自动下载 wibo，其他架构用 Wine）上进行。configure.py 固定 decomp-toolkit v1.8.3、objdiff v3.7.1、binutils 2.42-2、sjiswrap v1.2.2、wibo 1.1.0 及 20260305 编译器包；游戏和 REL 代码使用 Metrowerks GC/2.6，Dolphin SDK 使用 GC/1.2.5n。tools/ttydasm 是一个 Rust 辅助工具，可从 build/G8MJ01 中链接好的 DOL 或 REL 产物里解码指定的事件脚本。",
+      "标为 Matching 的目标文件（configure.py 中 547 个里有 100 个）由源码编译，其余取自拆分出的原始文件；默认 ninja 目标会先按 config/G8MJ01/build.sha1 校验 DOL 和全部 REL，再报告进度。CI 在提供光盘文件和编译器的容器中构建 G8MJ01，并上传进度报告。decomp.dev 针对该固定提交的报告显示，3,784,980 个代码字节中有 457,800 个（12.10%）、9,770 个函数中有 2,029 个已匹配，1,239 个单元中有 100 个已完成；本合集未运行构建。",
+      "仓库采用 MIT 许可证（版权归 NWPlayer123），libs/musyx 另有其 MIT 许可证；两者都不涵盖任天堂的游戏、光盘内容或下载的编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
+    ]
   }
 }
