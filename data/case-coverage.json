@@ -6326,12 +6326,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110783611800522897"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@Sollersxl, 2026-10-15) describes a video of a Claude Opus 5.5 and REA clean-room run on a local game.exe: a reader agent writes tagged notes, a builder agent rebuilds functions from a spec alone, and byte, planted-bug and runtime oracles report 696 of 697 functions matched. The post itself says the figures come from the REA blog and are marked illustrative, and that nothing was uploaded; the quoted post is a general REA tutorial article, and the GitHub account named sollersxl has no public repositories. Retain the lead without a catalog mapping; no run, code or results are published for review.",
+      "reason_zh": "作者帖子（@Sollersxl，2026-10-15）介绍一段视频：Claude Opus 5.5 与 REA 在洁净室流程中处理本地 game.exe，由阅读智能体写出带标注的笔记，构建智能体只凭规格说明重写函数，再由字节、植入缺陷和运行三类判定器给出 697 个函数中 696 个匹配的结果。帖子自己说明这些数字取自 REA 博客并标为示意，且未上传任何内容；其引用的帖子是一篇 REA 通用教程文章，名为 sollersxl 的 GitHub 账号也没有公开仓库。保留此线索而不建立目录映射；没有可供核查的运行记录、代码或结果。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110783611800522897"
+      ],
       "catalog_matches": []
     },
     {
@@ -6346,12 +6348,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110784230687125852"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply (@SiilverTk_, 2026-10-15) says only that they finished reverse engineering H1Z1 and are now building their own MMO with Opus, Astra and Tripo, adding that animations remain too hard for AI. It names no method, findings, code or project page; the post it answers concerns another author’s AI-made 3D game, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; what was reverse engineered and what was produced are undocumented.",
+      "reason_zh": "作者回复（@SiilverTk_，2026-10-15）只说已完成对 H1Z1 的逆向工程，正在用 Opus、Astra 和 Tripo 制作自己的 MMO，并称动画对 AI 来说仍然太难。回复未说明方法、发现、代码或项目页面；它回应的帖子讲的是另一位作者用 AI 制作的 3D 游戏，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；逆向了什么、产出了什么均无记录。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110784230687125852"
+      ],
       "catalog_matches": []
     },
     {
@@ -6402,12 +6406,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110786958649684035"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s post (@JohnDonker, 2026-10-15) says Codex produced a good, remarkably faithful decompile of Slipstream 5000 in two days, after an attempt in March took days and got confused. It carries no code, comparison, build notes or link, and the GitHub account named johndonker holds only an unrelated 2013 repository. Slipstream 5000 ports by other authors exist on GitHub, but the post links none of them. Retain the lead without a catalog mapping; the decompile and its fidelity are not published for review.",
+      "reason_zh": "作者帖子（@JohnDonker，2026-10-15）称用 Codex 花两天得到了 Slipstream 5000 的良好反编译结果，且相当忠实，而 3 月份的尝试耗时数天并陷入混乱。帖子没有代码、对照、构建说明或链接，名为 johndonker 的 GitHub 账号只有一个 2013 年的无关仓库。GitHub 上另有其他作者的 Slipstream 5000 移植项目，但帖子未链接其中任何一个。保留此线索而不建立目录映射；该反编译结果及其忠实度均未公开供核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110786958649684035"
+      ],
       "catalog_matches": []
     },
     {
@@ -6422,12 +6428,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110797282308153562"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The author’s reply to @morluto (@Ciphered_Crypt, 2026-10-15) says they used REA to reverse engineer a Chrome dark-mode extension so they could improve it. It names neither the extension nor the changes and links no code; the post it answers is a general remark about REA, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; neither the analysis nor an improved extension is available, so REA’s contribution is not established.",
+      "reason_zh": "作者回复 @morluto 的帖子（@Ciphered_Crypt，2026-10-15）称，自己用 REA 逆向了一个 Chrome 深色模式扩展，以便加以改进。回复既未说明是哪个扩展，也未说明改了什么，且没有链接代码；它回应的帖子只是对 REA 的泛泛感想，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；分析过程和改进后的扩展均无从获取，REA 的作用也未确立。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110797282308153562"
+      ],
       "catalog_matches": []
     },
     {
@@ -6442,12 +6450,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2110802464786264210"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "The post (@Jadu100x, 2026-10-15) relays that a member of the Vibe Crew community used Claude Code to reverse engineer a failing decryptor that was blocking a ₩1B construction bid, added certificate handling, and traced the password error to “^^” having become “^6”. The member and the software are unnamed and no code or write-up is linked; the author’s company site and its GitHub organization list no related project. Retain the lead without a catalog mapping; this secondhand account cannot be checked.",
+      "reason_zh": "帖子（@Jadu100x，2026-10-15）转述：Vibe Crew 社区的一名成员用 Claude Code 逆向了一个出错的解密程序（它使一笔 10 亿韩元的建筑投标受阻），加入了证书处理，并查明密码错误源于“^^”变成了“^6”。帖子未说明该成员和软件的名称，也没有链接代码或说明；作者公司网站及其 GitHub 组织中也没有相关项目。保留此线索而不建立目录映射；这一转述无法核实。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110802464786264210"
+      ],
       "catalog_matches": []
     },
     {
@@ -6527,13 +6537,26 @@
         "https://x.com/i/status/2110989368454189268",
         "https://x.com/i/status/2110995475222466925"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
-      "catalog_matches": []
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-18",
+      "reason_en": "Three posts are cited. @autoaiadvantage (2026-10-15) says someone decompiled Pokémon HeartGold and SoulSilver in a month with several AI agents, using about 71 billion API tokens at an estimated $56k; the cited @Pirat_Nation post was deleted by its author, and @Alex_Vainshtein replies that the work builds on pret’s existing decompilation and tooling. None names or links the project. The fork ctrl-cheeb-del/pokeheartgold says it is fully decompiled with LLM agents and builds both ROMs byte-for-byte, but it reports no token use or cost and no post identifies it as the work described. Retain the lead without a curated case; the related mapping records only the pret baseline the reply names.",
+      "reason_zh": "所引三条帖子中：@autoaiadvantage（2026-10-15）称有人用多个 AI 智能体在一个月内反编译了《宝可梦 心金/魂银》，消耗约 710 亿个 API token，估算费用约 5.6 万美元；所引 @Pirat_Nation 的帖子已被作者删除；@Alex_Vainshtein 回复指出，这项工作建立在 pret 现有的反编译和工具之上。三帖均未点名或链接该项目。分支仓库 ctrl-cheeb-del/pokeheartgold 自称已借助 LLM 智能体完全反编译、两个 ROM 均可逐字节构建，但未报告 token 用量或费用，也没有帖子确认它就是所述工作。保留此线索而不建立整理案例；相关映射只记录回复中提到的 pret 基础工作。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2110816115718824296",
+        "https://x.com/i/status/2110989368454189268",
+        "https://x.com/i/status/2110995475222466925",
+        "https://github.com/ctrl-cheeb-del/pokeheartgold/blob/6c2ad28476e48e28401a35b5190c29b2d848f971/README.md",
+        "https://github.com/pret/pokeheartgold/blob/5bb4b3b4961cbf0f8a42360c58a3c045d8535069/README.md"
+      ],
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "pokemon-heartgold-soulsilver-disassembly-case",
+          "kind": "case-study",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:resend-agentic-email-rebuild",
@@ -16170,16 +16193,16 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 206,
-      "insufficient-evidence": 265,
-      "pending": 120
+      "insufficient-evidence": 271,
+      "pending": 114
     },
     "units_by_state": {
       "already-curated": 204,
-      "insufficient-evidence": 265,
-      "pending": 120
+      "insufficient-evidence": 271,
+      "pending": 114
     },
-    "primary_reviewed_units": 410,
-    "catalog_linked_occurrences": 219,
+    "primary_reviewed_units": 416,
+    "catalog_linked_occurrences": 220,
     "distinct_resource_ids": 209,
     "distinct_paper_ids": 2,
     "unique_projects": null
