@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fuji-cam-wifi-tool-protocol-case",
+    "name": "fuji-cam-wifi-tool: reconstructing Fujifilm X-series Wi-Fi remote control",
+    "url": "https://github.com/hkr/fuji-cam-wifi-tool",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reimplements the Wi-Fi remote-control protocol of Fujifilm X-series cameras as a C++ library and an interactive command-line client that joins the camera's access point. Its headers name the control, event and JPEG live-view ports, message types and camera property codes, and source comments keep hex traces of exchanges along with what \"the app\" sends; the client connects, fires the shutter, records video, adjusts exposure settings and focus point, and streams live view, optionally into a Linux webcam device. README calls the tool very limited and mostly undocumented, so the protocol knowledge lives in code and comments rather than a specification.",
+    "description_zh": "以 C++ 库和交互式命令行客户端重新实现 Fujifilm X 系列相机的 Wi-Fi 遥控协议，客户端需接入相机自建的无线接入点。头文件列出控制、事件和 JPEG 实时取景所用端口、报文类型及相机属性代码，源码注释保留了若干交互的十六进制记录，并注明“the app”发送的内容；客户端可连接相机、触发快门、录制视频、调整曝光参数与对焦点，并传输实时取景画面，还可选择输出到 Linux 摄像头设备。README 称该工具功能很有限、基本没有文档，因此协议知识只存在于代码和注释中，并无成文规范。",
+    "evidence_url": "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at master commit c597fc4 of 2021-03-17, the repository's last push; there are no releases or tags. The README describes an attempt to reverse-engineer the protocol, calls the tool very limited and mostly undocumented, and suggests reading the code. Its connection steps name the X-T10 and a source comment mentions focus-point ranges on the X-T100; no compatibility list for other X-series models is given.",
+      "Requires the user's own Fujifilm X-series camera with Wi-Fi remote control: the computer joins the camera's access point, the client connects to 192.168.0.1 on ports 55740–55742, and the first connection must be confirmed on the camera, where the tool registers as \"HackedClient\". The repository contains no camera firmware, Fujifilm app or capture files; the README gives Wireshark display filters for viewing control messages and streamed JPEG frames.",
+      "README documents CMake builds on macOS, Linux and Windows (CMake 2.8.11 minimum, C++11). The interactive shell needs the hkr/linenoise-ng submodule initialized, and Windows builds link Winsock. Optional OpenCV support adds stream_cv, which can feed live view into a Linux v4l2loopback device for use as a webcam.",
+      "The repository has no tests or CI. Message meanings are inferred in code comments, several of which are marked unknown or TODO, and command behavior on cameras remains contributor-reported; this review built and ran nothing.",
+      "Released under the Unlicense, a public-domain dedication; AUTHORS.txt lists five contributors. Fujifilm cameras, firmware, apps and trademarks keep their own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/lib/include/comm.hpp",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/lib/include/message.hpp",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/lib/include/capabilities.hpp",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/lib/src/commands.cpp",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/tool/src/main.cpp",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/tool/CMakeLists.txt",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/.gitmodules",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/AUTHORS.txt",
+      "https://github.com/hkr/fuji-cam-wifi-tool/blob/c597fc42151f0e4c726714e63dd13552b9fad3aa/LICENSE"
+    ]
   }
 ]
