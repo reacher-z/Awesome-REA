@@ -2604,5 +2604,30 @@
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
     ]
+  },
+  {
+    "id": "awesome-malware-analysis",
+    "name": "Awesome Malware Analysis",
+    "url": "https://github.com/rshipp/awesome-malware-analysis",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A long-running single-README list of malware analysis tools and resources, grouped into 17 top-level sections covering open-source threat intelligence, detection and classification, online scanners and sandboxes, document and shellcode analysis, deobfuscation, debugging and reverse engineering, network, memory forensics, Windows artifacts, plus books and other references. Each entry is a name linked to an external tool or resource with a short description. The repository also keeps a Simplified Chinese translation of the list.",
+    "description_zh": "长期维护的单 README 恶意软件分析工具与资源清单，分为 17 个一级章节，涵盖开源威胁情报、检测与分类、在线扫描器与沙箱、文档与 shellcode 分析、反混淆、调试与逆向、网络、内存取证、Windows 取证痕迹，以及书籍和其他参考资料。每个条目是链接到外部工具或资源的名称并附简短说明。仓库中另附有该清单的简体中文翻译。",
+    "evidence_url": "https://github.com/rshipp/awesome-malware-analysis/blob/179887b9bfb04bb736348b2dc9d331bc860c6ef7/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/rshipp/awesome-malware-analysis/blob/179887b9bfb04bb736348b2dc9d331bc860c6ef7/LICENSE"
+    ],
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last committed 2026-05-30, links roughly 428 entries across 17 top-level sections; it is a list of pointers, not reviewed or runtime-tested projects, and one tool can appear under several sections.",
+      "Entries give a name, an external link and a one-line description, and state no license, platform or maintenance status, so each linked tool or resource must be checked at its own source. Links point to varied destinations including project pages, vendors and online services.",
+      "A Malware Collection section links out to external malware corpora, sample feeds and honeypots; the list itself hosts no samples, and following those links means handling live malware, which requires an isolated environment and appropriate authorization. This record restates no collection or handling procedure.",
+      "The list text is licensed CC BY 4.0; linked tools and resources keep their own licenses and terms. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
