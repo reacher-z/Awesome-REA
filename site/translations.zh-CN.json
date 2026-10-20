@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "drakvuf": {
+    "name": "DRAKVUF 虚拟化黑盒二进制分析系统",
+    "requirements": [
+      "最新的带标签版本为 1.0，发布于 2022-12-29，附带 Debian 和 Ubuntu 软件包。所审阅的 2026-09-30 main 提交中，meson.build 声明版本为 1.1；独立的 drakvuf-builds 仓库按提交发布面向 Debian bookworm 以及 Ubuntu 22.04 和 24.04 的 drakvuf-bundle 1.1 软件包，并附配套的 Xen 4.20.1 虚拟机监控器软件包，其中包括所审阅提交的构建。",
+      "需要支持 VT-x 和扩展页表（EPT）的 Intel 处理器；README 称 DRAKVUF 无法在 AMD 处理器或缺少这些扩展的 Intel 处理器上运行。DRAKVUF 运行于 Xen 的 dom0 中。项目网站的安装指南最后更新于 2022-12-29，针对 Xen 4.17，主要在 Ubuntu 22.04 上测试：它从自带的子模块构建 Xen、设置 Xen 启动参数、要求 dom0 内核为 5.11 或更新版本，并把客户机磁盘放在 LVM 上；DRAKVUF 本身用 meson 和 ninja 构建。",
+      "README 列出的客户机包括 Windows 7 和 8（32 位与 64 位）、64 位 Windows 10 以及 Linux 2.6.x 至 6.x；较早的网站指南则称 Linux 支持到 5.x。分析者需用自己的操作系统安装介质安装客户机，并为 LibVMI 生成 JSON 内核配置文件：Windows 从内核 PDB 用自带的 Volatility 3 pdbconv 脚本生成，Linux 则用 dwarf2json 从内核调试符号生成；针对单个模块的额外配置文件（如 tcpip.sys 的配置）可启用 socketmon 等插件。",
+      "采用自定义许可：仅限 GPL 第 2 版，并附作者的澄清与例外条款，这些条款对衍生作品作宽泛解释，禁止将 DRAKVUF 与普通 GPL 软件结合，并为专有用途提供替代许可；GitHub 无法识别该许可。Xen、LibVMI、Volatility 3 和 dwarf2json 作为 git 子模块引入，各自适用其许可证。README 主要将其定位于恶意软件分析；本条目只涵盖执行跟踪，不涉及其隐蔽性说法或隐藏客户机特征的插件。本次未搭建虚拟机，也未运行任何组件。"
+    ]
   }
 }

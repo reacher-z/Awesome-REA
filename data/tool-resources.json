@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "drakvuf",
+    "name": "DRAKVUF",
+    "url": "https://github.com/tklengyel/drakvuf",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Tamas K Lengyel's virtualization-based, agentless black-box binary analysis system: running on the Xen hypervisor through LibVMI, it traces execution in Windows and Linux guests, from kernel functions to user-mode code, without installing software inside the analyzed virtual machine. Plugins log system calls, API calls and file, registry, process, socket and memory activity, extract files from memory before they are deleted and dump process memory, while an injector starts programs in the guest without an in-guest helper. CERT Polska's separate DRAKVUF Sandbox builds an automated sandbox with a GUI on top of it.",
+    "description_zh": "由 Tamas K Lengyel 开发的基于虚拟化、无需代理的黑盒二进制分析系统：它运行在 Xen 虚拟机监控器上并借助 LibVMI，跟踪 Windows 和 Linux 客户机中从内核函数到用户态代码的执行过程，且无需在被分析的虚拟机内安装任何软件。各插件可记录系统调用、API 调用以及文件、注册表、进程、套接字和内存活动，在文件被删除前从内存中提取文件并转储进程内存；注入器无需客户机内辅助程序即可在客户机中启动程序。CERT Polska 另行开发的 DRAKVUF Sandbox 在其基础上构建了带图形界面的自动化沙箱。",
+    "evidence_url": "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest tagged release: 1.0, published 2022-12-29 with Debian and Ubuntu packages. meson.build at the reviewed main commit of 2026-09-30 declares version 1.1, and the separate drakvuf-builds repository publishes per-commit drakvuf-bundle 1.1 packages for Debian bookworm and Ubuntu 22.04 and 24.04 with matching Xen 4.20.1 hypervisor packages, including a build of the reviewed commit.",
+      "Needs an Intel CPU with VT-x and Extended Page Tables; the README says DRAKVUF will not work on AMD or on Intel CPUs without them. DRAKVUF runs in Xen's dom0. The project website's installation guide, last updated 2022-12-29 for Xen 4.17 and mainly tested on Ubuntu 22.04, builds Xen from the bundled submodule, sets Xen boot options, asks for a dom0 kernel of 5.11 or newer and stores guest disks on LVM; DRAKVUF itself builds with meson and ninja.",
+      "The README lists Windows 7 and 8 (32- and 64-bit), Windows 10 64-bit and Linux 2.6.x to 6.x guests; the older website guide says Linux up to 5.x. The analyst installs the guest from their own operating-system media and generates a JSON kernel profile for LibVMI, from the Windows kernel's PDB with the bundled Volatility 3 pdbconv script or from Linux kernel debug symbols with dwarf2json; extra per-module profiles, such as one for tcpip.sys, enable plugins like socketmon.",
+      "Custom license: GPL version 2 only with the author's clarifications and exceptions, which read derivative works broadly, bar combining DRAKVUF with plain-GPL software and offer alternative licenses for proprietary use; GitHub does not classify it. Xen, LibVMI, Volatility 3 and dwarf2json are git submodules under their own licenses. The README presents it mainly for malware analysis; this entry covers execution tracing only, not its stealth claims or the guest-concealment plugins. No VM was set up and nothing was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/LICENSE",
+      "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/.gitmodules",
+      "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/meson.build",
+      "https://github.com/tklengyel/drakvuf/tree/b2f64d8d73d456840e5fc276c13f0df0b2b79231/src/plugins",
+      "https://github.com/tklengyel/drakvuf/blob/b2f64d8d73d456840e5fc276c13f0df0b2b79231/.github/workflows/ci.yml",
+      "https://drakvuf.com/",
+      "https://github.com/tklengyel/drakvuf/releases/tag/1.0",
+      "https://github.com/tklengyel/drakvuf-builds/releases/tag/build-b2f64d8d73d456840e5fc276c13f0df0b2b79231"
+    ]
   }
 ]
