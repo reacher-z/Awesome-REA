@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "vipermonkey": {
+    "name": "ViperMonkey VBA 恶意宏仿真分析引擎",
+    "requirements": [
+      "版本号为 1.0.3，于 2021 年写入 setup.py 和 vmonkey.py；项目没有 GitHub 发布版本、标签或 PyPI 包，需从 master 分支压缩包安装。所审阅的 master 提交日期为 2024-04-25，也是审阅时的最新提交，它将 oletools 版本上限设为 0.60.1。README 称自 2017 年 11 月起大部分开发在 Kirk Sayre 的分支中进行，并定期同步到本仓库；审阅时该分支的 master 比本仓库多 162 个提交、少 8 个提交，其最新提交日期为 2021-08-04。",
+      "运行于 Python 2.7：README 介绍了在 PyPy 2.7（推荐，速度约快五倍）或 CPython 2.7 下的安装方法，API 教程也使用 Python 2 的 print 语句。依赖版本按该解释器固定，包括 pyparsing 2.2.0（更新的版本会在部分样本上解析出错或耗尽内存）、unidecode 1.2.0 和 oletools 0.56.1–0.60.1，另需 olefile、xlrd、xlrd2、prettytable、colorlog 和 colorama。也可以使用 docker/dockermonkey.sh：它拉取第三方的 haroldogden/vipermonkey 镜像，用 git pull 更新镜像内的代码，启动无界面的 LibreOffice，断开容器网络，再以 -s、--iocs 和 --jit 选项运行 vmonkey。",
+      "可疑文档或 VBScript 文件由使用者提供；仓库不含任何样本，测试只有四个 Python 模块。README 称 ViperMonkey 仍属实验性质，只对部分恶意文档有效，且速度极慢，并建议使用 -s 去除无用语句。--jit 会把 VB 循环转换为 Python 并通过 eval 执行，README 指出这存在安全风险，建议使用 Docker 沙箱；释放的文件（包括在 Office 文件中发现的内嵌 PE 文件）会写入 <文件名>_artifacts 目录，并报告其 SHA-256 哈希。分析结果取决于引擎对 VBA、Office 对象以及所调用 DLL 或 ActiveX 对象的仿真程度，README 也说明这类仿真既困难又不完整。",
+      "README 和源码头部声明 BSD 两条款许可，版权归 Philippe Lagadec（2015–2020）；仓库没有许可证文件，因此 GitHub 未识别出许可证，README 中针对 thirdparty 文件夹的例外说明所指的文件夹在所审提交中并不存在。本条目只涉及恶意软件分析用途。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

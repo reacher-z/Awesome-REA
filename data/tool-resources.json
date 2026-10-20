@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "vipermonkey",
+    "name": "ViperMonkey",
+    "url": "https://github.com/decalage2/ViperMonkey",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "VBA parser and emulation engine, created by Philippe Lagadec and developed since 2017 mainly by Kirk Sayre and other contributors, for analyzing and deobfuscating malicious macros in Microsoft Office files such as Word, Excel, PowerPoint and Publisher documents, as well as VBScript files and HTA files carrying VBScript. The vmonkey command reads the macros through oletools' olevba, emulates them from their auto-run entry points or from functions the analyst names, and reports the recorded actions, such as process creation, along with optional intermediate IOCs and the files the code would write; vbashell is an interactive VBA shell. A Python API evaluates VBA snippets, walks and emulates individual code blocks, replaces functions and deobfuscates code.",
+    "description_zh": "VBA 解析与仿真引擎，由 Philippe Lagadec 创建，自 2017 年起主要由 Kirk Sayre 及其他贡献者开发，用于分析和去混淆 Microsoft Office 文件（如 Word、Excel、PowerPoint 和 Publisher 文档）中的恶意宏，也可处理 VBScript 文件和内含 VBScript 的 HTA 文件。vmonkey 命令通过 oletools 的 olevba 读取宏，从自动运行入口或分析人员指定的函数开始仿真，报告记录到的行为（例如创建进程），并可列出中间 IOC 和代码将写出的文件；vbashell 则是交互式 VBA shell。其 Python API 可求值 VBA 代码片段、遍历并仿真单个代码块、替换函数以及对代码去混淆。",
+    "evidence_url": "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Version 1.0.3, set in setup.py and vmonkey.py in 2021; there are no GitHub releases, tags or PyPI package, so it is installed from a master archive. The reviewed master commit, from 2024-04-25 and the latest at review, caps oletools at 0.60.1. The README says most development since November 2017 happens in Kirk Sayre's fork and is synchronised here regularly; at review that fork's master branch was 162 commits ahead of and 8 behind this one, with its latest commit from 2021-08-04.",
+      "Runs on Python 2.7: the README installs it under PyPy 2.7, recommended as about five times faster, or CPython 2.7, and the API tutorial uses Python 2 print statements. Dependencies are pinned for that interpreter, including pyparsing 2.2.0 because newer versions mis-parse or run out of memory on some samples, unidecode 1.2.0 and oletools 0.56.1–0.60.1, plus olefile, xlrd, xlrd2, prettytable, colorlog and colorama. Alternatively, docker/dockermonkey.sh pulls the third-party haroldogden/vipermonkey image, updates the checkouts inside it with git pull, starts headless LibreOffice, disconnects the container from the network and runs vmonkey with -s, --iocs and --jit.",
+      "The user supplies the suspicious documents or VBScript files; the repository includes no samples, and its tests are four Python modules. The README calls ViperMonkey experimental, working on some but not all maldocs, and extremely slow, recommending -s to strip useless statements. --jit converts VB loops to Python and runs them with eval, which the README flags as a security risk and suggests the Docker sandbox for; dropped files, including PE files found embedded in Office files, are written to a <file>_artifacts directory with their SHA-256 hashes reported. Results depend on how far the engine emulates VBA, Office objects and called DLLs or ActiveX objects, which the README describes as hard and incomplete.",
+      "BSD two-clause terms stated in the README and source headers, copyright 2015–2020 Philippe Lagadec; there is no license file, so GitHub detects none, and the README's exception for a thirdparty folder refers to a folder absent from the reviewed commit. This entry covers malware analysis only. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/setup.py",
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/requirements.txt",
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/vipermonkey/vmonkey.py",
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/vipermonkey/vbashell.py",
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/docker/dockermonkey.sh",
+      "https://github.com/decalage2/ViperMonkey/blob/73547cef7f82dbcb10e22e36b84b558a07f7d21d/docs/APITutorial.md",
+      "https://github.com/decalage2/ViperMonkey/tree/73547cef7f82dbcb10e22e36b84b558a07f7d21d/tests",
+      "https://github.com/kirk-sayre-work/ViperMonkey/tree/29078c1042645855a856fabc8db0a8e7780faa22"
+    ]
   }
 ]
