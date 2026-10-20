@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "game-and-watch-patch-cfw-case": {
+    "name": "game-and-watch-patch：任天堂 Game & Watch 自定义固件",
+    "requirements": [
+      "所审阅的 main 提交（2026-10-19）比最后一个标签 v0.12（2025-02-25）多 111 个提交，各版本均未附带二进制文件；代码重定位、合并镜像、分析工具和大部分测试都是在该标签之后加入的。README 列出的马里奥版功能（整个固件放入内部闪存、可移除歌曲彩蛋和睡眠插图、超时设置、时钟图形修改）多于塞尔达版，并称塞尔达版节省外部闪存的功能尚待实现。",
+      "需要使用者自己马里奥或塞尔达机型的内部与外部闪存备份，命名为 internal_flash_backup_<device>.bin 和 flash_backup_<device>.bin 放入仓库；补丁工具会拒绝 SHA-1 与原厂固件不符的镜像。仓库未提交任何固件、ROM 或密钥：tools/re/README.md 说明 .syms 文件只含项目自己的注释，并要求绝不提交由任天堂固件派生的 ELF；docs/mario.md 也说明仓库不托管任何 ROM 或 ROM 修改补丁。",
+      "目标硬件是掌机所用的 STM32H7B0 微控制器。构建需要 GNU Make、arm-none-eabi GCC 工具链和 Python 3.6+，以及 Pillow、NumPy、pycryptodome、pyelftools、capstone 和 colorama；烧录使用 gnwmanager，马里奥版的仅内部闪存模式还需要打过补丁的 OpenOCD，以使用未公开的额外 128 KB 内部闪存。基于 Ubuntu 22.04 的 Dockerfile 会为 x86-64 Linux 主机安装 gnwmanager 提供的 OpenOCD 和 Arm 工具链。",
+      "tests/test_golden.py 按固定选项组合重新构建，并将输出的 SHA-1 与 tests/golden.json 比对；这些哈希针对 Arm GNU Toolchain 15.2.Rel1 记录，缺少原厂备份或 GCC 版本不同时会跳过。其他单元测试涵盖重定位、Thumb 汇编、布局和符号，tools/emu 则在 GWemu 模拟器中对修补后的镜像运行菜单测试。CI 只运行 pre-commit 代码检查并构建 Docker 镜像；本次未运行任何内容。",
+      "COPYING 为 BSD-3-Clause（2020，Konrad Beckmann、Thomas Roth、STMicroelectronics）；随仓库提供的 ST CMSIS 与 HAL 源码保留各自声明，原厂固件和游戏仍归任天堂所有。仓库中的 CLAUDE.md 是写给 Claude Code 的指引，但不能据此认定由 AI 编写；所审阅的来源未表明使用 REA。"
+    ]
   }
 }

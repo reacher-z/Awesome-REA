@@ -11254,5 +11254,46 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "game-and-watch-patch-cfw-case",
+    "name": "game-and-watch-patch: Nintendo Game & Watch custom firmware",
+    "url": "https://github.com/BrianPugh/game-and-watch-patch",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "firmware",
+      "game"
+    ],
+    "description_en": "Custom firmware for the Mario and Zelda Game & Watch consoles that patches new C code into the user's own stock firmware backups, so the original firmware runs alongside the retro-go emulator. A Python patcher hooks stock function calls, relocates and LZMA-compresses stock code and data to free flash, and can merge both models' firmware into one image. Committed symbol maps, a cross-reference mapper and an analysis-ELF builder support the reverse engineering, and a journal records the author's first firmware-patching work.",
+    "description_zh": "面向马里奥和塞尔达两款 Game & Watch 掌机的自定义固件：把新编写的 C 代码修补进使用者自己的原厂固件备份，使原厂固件可与 retro-go 模拟器并存。Python 补丁工具会挂接原厂函数调用，重新定位原厂代码与数据并以 LZMA 压缩以腾出闪存，还能把两款机型的固件合并为一个镜像。仓库提交的符号表、交叉引用分析脚本和分析用 ELF 生成器支撑逆向工作，另有一份日志记录作者首次修补固件的过程。",
+    "evidence_url": "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit (2026-10-19) is 111 commits past the last tag, v0.12 of 2025-02-25, and no release attaches binaries; the relocation, merged-image, analysis tooling and most tests arrived after that tag. The README lists more Mario features (whole firmware in internal flash, removable song and sleep illustrations, timeouts, clock graphics mods) than Zelda ones and says Zelda's external-flash savings are still to come.",
+      "Requires the user's own internal and external flash backups of a Mario or Zelda unit, placed as internal_flash_backup_<device>.bin and flash_backup_<device>.bin; the patcher rejects images whose SHA-1 does not match the stock firmware. The repository commits no firmware, ROMs or keys: tools/re/README.md says the .syms files hold only the project's annotations and that ELFs derived from Nintendo's firmware must never be committed, and docs/mario.md says no ROMs or ROM-hack patches are hosted.",
+      "Targets the consoles' STM32H7B0 microcontroller. Builds need GNU Make, the arm-none-eabi GCC toolchain and Python 3.6+ with Pillow, NumPy, pycryptodome, pyelftools, capstone and colorama; flashing uses gnwmanager, and the Mario internal-only mode also needs a patched OpenOCD for an undocumented extra 128 KB of internal flash. An Ubuntu 22.04 Dockerfile installs gnwmanager's OpenOCD and Arm toolchain for x86-64 Linux hosts.",
+      "tests/test_golden.py rebuilds fixed option sets and compares output SHA-1 hashes with tests/golden.json, recorded for Arm GNU Toolchain 15.2.Rel1; it skips without the stock backups or under another GCC version. Other unit tests cover relocation, Thumb assembly, layout and symbols, and tools/emu runs patched images through menu tests in the GWemu emulator. CI only runs pre-commit lint checks and builds the Docker image; this review ran nothing.",
+      "COPYING is BSD-3-Clause (2020, Konrad Beckmann, Thomas Roth, STMicroelectronics); the vendored ST CMSIS and HAL sources keep their own notices, and the stock firmware and games remain Nintendo's. The repository's CLAUDE.md is guidance for Claude Code but does not establish AI authorship; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/COPYING",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/Makefile",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/requirements.txt",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/docker/Dockerfile",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/patches/firmware.py",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/patches/amalgam.py",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/tools/re/README.md",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/tools/emu/README.md",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/tests/test_golden.py",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/tests/golden.json",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/docs/journal.md",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/docs/mario.md",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/.pre-commit-config.yaml",
+      "https://github.com/BrianPugh/game-and-watch-patch/blob/857bb80fe77b60b6dabbadeae703577cc50f8645/CLAUDE.md",
+      "https://github.com/BrianPugh/game-and-watch-patch/releases/tag/v0.12"
+    ]
   }
 ]
