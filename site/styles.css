@@ -99,6 +99,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .source-field>label{font-size:12px;line-height:1.4;font-weight:600;color:var(--muted)}
 .source-field>input,.source-field>select{height:42px;border:1px solid var(--control);border-radius:8px;padding:8px 11px;width:174px;min-width:0;background:var(--surface);font-size:13px;line-height:1.4}
 .source-field>input:focus,.source-field>select:focus{border-color:var(--steel)}
+/* A field brought into view by script (the Topic field after a topic chip) keeps its label below the sticky header. */
+.source-field>input,.source-field>select{scroll-margin-top:32px}
 .collection-note{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap;color:var(--muted);font-size:12px;line-height:1.75;padding:0 0 19px;border-bottom:1px solid var(--line)}
 .collection-note>p{margin:0}
 .collection-note>a,.collection-note summary{color:var(--link);font-size:12px;cursor:pointer;text-decoration:underline;text-decoration-color:#b7cadd;text-underline-offset:4px}
