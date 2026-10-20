@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 201 | 199 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 141 | 141 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 249 | 249 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 140 | 140 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 250 | 250 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 214 个出现项含目录链接；共关联 206 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 391 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 392 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -409,6 +409,7 @@
 | Cursor: an account of custom relays and personal Codex/Claude Code quotas | 证据不足 | [来源](https://x.com/FoxSnowing/status/2111465121126207605) |
 | Open Scrantic：重建 Johnny Castaway 屏幕保护程序引擎 | 已收录 | [来源](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
 | ScooterLink：重建 Honda RoadSync 车把按键协议 | 已收录 | [来源](https://x.com/i/status/2111470520688665052) |
+| Samsung TV: Aswin DG's Claude/REA-skill web-remote account | 证据不足 | [来源](https://x.com/dg_aswin/status/2111471785946562815) |
 | REA 工作区模板 | 已收录 | [来源](https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/README.md) |
 | Hitachi combination oven: a Codex/REA account using an Android app for direct control | 证据不足 | [来源](https://x.com/i/status/2111474749855670664) |
 | Frontkick 与 Rikugan：基于 CREBench 的智能体对比 | 已收录 | [来源](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan) |
