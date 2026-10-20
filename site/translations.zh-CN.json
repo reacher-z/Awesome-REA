@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "idassist": {
+    "name": "IDAssist IDA Pro 大模型辅助分析插件",
+    "requirements": [
+      "审阅时最新版本为 2.4.0，于 2026-09-14 以仅含源码的 GitHub 发布形式推出；所审阅的 master 提交比它晚一个提交，只更新了模型选择建议。README 和入门指南要求 IDA Pro 9.0+ 及其自带的 Python 3.11+ 和 PySide6，而 ida-plugin.json 列出的是 IDA 9.1–9.4；2.3.0 的发布说明称修复了 Windows 上 IDA 9.3、9.4 搭配 Python 3.14 时的问题。建议配备 Hex-Rays 以使用伪代码，否则改用反汇编。可通过 Hex-Rays 的 hcli 插件管理器安装，也可把发布压缩包解压到 IDA 插件目录，再把 requirements.txt 中的依赖装入 IDA 的 Python 环境；该文件额外列出供 Bedrock 使用的 boto3，而插件清单的依赖列表没有包含它。",
+      "分析前至少需要配置一个大模型提供方。所审阅的提供方类型包括 Anthropic、OpenAI、Gemini 和 xAI 的 API 密钥，通过 OAuth 登录的 OpenAI 和 Gemini 订阅账号，本地的 Claude Code CLI，AWS Bedrock，LiteLLM 代理，以及本地的 Ollama、LM Studio 或 Open WebUI 端点；README 的表格还列出一种 Anthropic OAuth 类型，但源码中并未定义。函数解释、对话和智能体运行都会把伪代码或反汇编发送给当前提供方，只有使用本地或自托管端点时代码才不会离开本机。文档称对话、图谱、设置和反馈保存在用户主目录下 .idapro/idassist 文件夹中的本地 SQLite 数据库里，API 密钥在设置数据库中加密存储。",
+      "分析对象来自使用者自己的 IDA 数据库。重命名建议附带置信度评分，只有使用者选中的条目才会写入 IDB。对话过程中，内置工具和外部 MCP 服务器（通过 URL 以 SSE 或 streamable HTTP 连接，或以 stdio 方式启动）都可以读取和修改 IDB；在 Query 标签页中，名称看起来不属于只读操作的工具调用需要使用者选择允许一次、本会话内允许或拒绝，除非该对话开启了接受所有工具，而这种分类只依据工具名称中的关键词。",
+      "SymGraph 标签页无需密钥即可按 SHA-256 查询输入的二进制文件，但导入、发布和上传都需要 SymGraph API 密钥；若服务端尚无该文件，发布时会把原始二进制文件本身一并上传。仓库没有测试或 CI 工作流。依据 LICENSE 和 ida-plugin.json 采用 MIT 许可；IDA Pro、Hex-Rays 反编译器、各模型提供方和 SymGraph 各自适用其条款。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

@@ -90,7 +90,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — Python snippets for Ghidra's Program and Decompiler APIs **[893 stars]**
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Vulnerability detection framework by Binarly's REsearch team **[893 stars]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — An OSINT tool to quickly extract IP and URL endpoints from APKs by disassembling and decompiling **[880 stars]**
-- [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — AI-Powered Reverse Engineering Plugin for IDA Pro **[880 stars]**
+- [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — AI-Powered Reverse Engineering Plugin for IDA Pro **[880 stars]** · Curated: [IDAssist](https://awesomerea.org/resources/idassist/)
 - [GrammaTech/ddisasm](https://github.com/GrammaTech/ddisasm) — A fast and accurate disassembler **[876 stars]** · Curated: [Ddisasm](https://awesomerea.org/resources/ddisasm/)
 - [cyberkaida/reverse-engineering-assistant](https://github.com/cyberkaida/reverse-engineering-assistant) — MCP server for reverse engineering tasks in Ghidra 👩‍💻 **[875 stars]** · Curated: [ReVa (Reverse Engineering Assistant)](https://awesomerea.org/resources/reva-ghidra-mcp/)
 - [Adamkadaban/CTFs](https://github.com/Adamkadaban/CTFs) — CTF Cheat Sheet + Writeups / Files for some of the Security CTFs that I've done **[869 stars]**

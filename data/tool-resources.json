@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "idassist",
+    "name": "IDAssist",
+    "url": "https://github.com/symgraph/IDAssist",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin by Jason Tang, who also wrote GhidrAssist, that adds a dockable PySide6 panel for LLM-assisted analysis of the open database. Its tabs explain decompiled or disassembled functions with a security summary, keep persistent chats with context macros and an optional ReAct agent mode, propose function, variable and type renames for review before they are applied, and build a semantic knowledge graph of functions, calls, data flows and security traits, with retrieval over reference documents the analyst adds. Models can call built-in IDA tools or external MCP servers, and a SymGraph tab imports and publishes names, types and graph data through the hosted symgraph.ai service.",
+    "description_zh": "由 GhidrAssist 作者 Jason Tang 开发的 IDA Pro 插件，提供一个可停靠的 PySide6 面板，借助大语言模型分析当前打开的数据库。各标签页可解释反编译或反汇编后的函数并附安全摘要，保存带上下文宏和可选 ReAct 智能体模式的持久对话，为函数、变量和类型提出重命名建议并在审阅后应用，还能构建涵盖函数、调用、数据流和安全特征的语义知识图谱，并检索分析人员添加的参考文档。模型可以调用内置的 IDA 工具或外部 MCP 服务器；SymGraph 标签页则通过托管的 symgraph.ai 服务导入和发布名称、类型及图谱数据。",
+    "evidence_url": "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.4.0, published 2026-09-14 as a source-only GitHub release; the reviewed master commit is one commit later and only updates model guidance. The README and getting-started guide require IDA Pro 9.0+ with its bundled Python 3.11+ and PySide6, while ida-plugin.json lists IDA 9.1–9.4, and the 2.3.0 notes report fixes for IDA 9.3 and 9.4 on Windows with Python 3.14. Hex-Rays is recommended for pseudocode, with disassembly used otherwise. It installs with Hex-Rays' hcli plugin manager, or from a release archive in the IDA plugins directory with requirements.txt installed into IDA's Python; that file adds boto3 for Bedrock, which the manifest's dependency list omits.",
+      "Analysis needs at least one configured LLM provider. The reviewed provider types cover Anthropic, OpenAI, Gemini and xAI API keys, OpenAI and Gemini subscription sign-in through OAuth, the local Claude Code CLI, AWS Bedrock, a LiteLLM proxy, and local Ollama, LM Studio or Open WebUI endpoints; the README's table also lists an Anthropic OAuth type that the source does not define. Explanations, chats and agent runs send pseudocode or disassembly to the active provider, so only a local or self-hosted endpoint keeps code on the machine. The documentation says chats, graphs, settings and feedback are kept in local SQLite databases in the .idapro/idassist folder of the user's home directory, with API keys encrypted in the settings database.",
+      "Programs come from the user's own IDA databases. Rename suggestions show confidence scores and are written to the IDB only for the rows the user selects. During a chat, built-in tools and external MCP servers, reached by URL over SSE or streamable HTTP or launched over stdio, can read and modify the IDB; in the Query tab, calls to tools whose names do not look read-only wait for an allow-once, allow-for-session or deny decision unless the chat accepts all tools, and this classification relies on tool-name keywords.",
+      "The SymGraph tab looks up the input binary by SHA-256 without a key, but importing, publishing and uploading need a SymGraph API key, and publishing uploads the raw binary itself when the service does not already hold it. The repository has no tests or CI workflows. MIT, per LICENSE and ida-plugin.json; IDA Pro, the Hex-Rays decompiler, model providers and SymGraph keep their own terms. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/docs/getting-started.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/docs/index.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/docs/tabs/settings-tab.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/docs/tabs/symgraph-tab.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/docs/tabs/query-tab.md",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/ida-plugin.json",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/requirements.txt",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/src/services/models/provider_types.py",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/src/services/tool_approval_service.py",
+      "https://github.com/symgraph/IDAssist/blob/09dd910d70016c7b3f7e8bc01a4d5bc1035ec302/LICENSE",
+      "https://github.com/symgraph/IDAssist/releases/tag/2.3.0",
+      "https://github.com/symgraph/IDAssist/releases/tag/2.4.0",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/README.md"
+    ]
   }
 ]

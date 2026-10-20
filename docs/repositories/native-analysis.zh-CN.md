@@ -90,7 +90,7 @@
 - [HackOvert/GhidraSnippets](https://github.com/HackOvert/GhidraSnippets) — 适用于 Ghidra Program 和 Decompiler API 的 Python 代码片段。 **[893 星标]**
 - [vulhunt-re/vulhunt](https://github.com/vulhunt-re/vulhunt) — Binarly 研究团队开发的漏洞检测框架。 **[893 星标]**
 - [n0mi1k/apk2url](https://github.com/n0mi1k/apk2url) — 通过反汇编与反编译，快速从 APK 中提取 IP 和 URL 端点的 OSINT 工具。 **[880 星标]**
-- [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — 面向 IDA Pro 的 AI 驱动逆向工程插件。 **[880 星标]**
+- [symgraph/IDAssist](https://github.com/symgraph/IDAssist) — 面向 IDA Pro 的 AI 驱动逆向工程插件。 **[880 星标]** · 精选：[IDAssist IDA Pro 大模型辅助分析插件](https://awesomerea.org/zh/resources/idassist/)
 - [GrammaTech/ddisasm](https://github.com/GrammaTech/ddisasm) — 快速且准确的反汇编器。 **[876 星标]** · 精选：[Ddisasm Datalog 可重汇编反汇编器](https://awesomerea.org/zh/resources/ddisasm/)
 - [cyberkaida/reverse-engineering-assistant](https://github.com/cyberkaida/reverse-engineering-assistant) — 用于 Ghidra 逆向工程任务的 MCP 服务器 👩‍💻。 **[875 星标]** · 精选：[ReVa 面向大模型工具设计的 Ghidra MCP 扩展](https://awesomerea.org/zh/resources/reva-ghidra-mcp/)
 - [Adamkadaban/CTFs](https://github.com/Adamkadaban/CTFs) — CTF 速查表，以及我参加过的一些安全 CTF 的题解和文件。 **[869 星标]**
