@@ -382,6 +382,13 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 /* Both language names still fit beside the wordmark inside the 16px gutters at 320px. */
 @media(max-width:340px){.language-switch{padding-inline:1px}.language-switch a{padding-inline:3px;font-size:12px}}
 .clear-button{white-space:nowrap}
+.active-filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;padding:0;list-style:none}
+.active-filter{display:inline-flex;align-items:baseline;gap:6px;max-width:100%;min-height:36px;padding:6px 12px;border:1px solid var(--control);border-radius:999px;background:var(--surface);font-size:14px;line-height:1.5;color:var(--ink);text-align:left}
+.active-filter:hover{border-color:var(--steel);background:var(--soft)}
+.active-filter-field{color:var(--muted)}
+.active-filter-value{font-weight:600;overflow-wrap:anywhere}
+.active-filter-remove{color:var(--link);font-size:16px;line-height:1}
+@media(max-width:700px){.active-filter{min-height:44px;align-items:center}}
 
 /* Compact entries follow one reading path: title, summary, then links and evidence. */
 .layout-control{display:flex;align-items:center;gap:8px;margin-left:auto;padding-bottom:12px;font-size:14px;color:var(--muted)}
