@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 474](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (27) · [游戏](#game) (187) · [应用](#app) (72)
+- [网站](#website) (27) · [游戏](#game) (187) · [应用](#app) (73)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1800,6 +1800,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于检查已编译 Java 与 Android 程序的桌面套件：拖入 class、JAR、WAR、APK、DEX、XAPK 或 APKM 文件即可浏览其中的类和资源，并可并排显示最多三个反编译器或反汇编器视图。README 列出六个内置 Java 反编译器（Krakatau、CFR、Procyon、FernFlower、JADX 和 JD-GUI）、Krakatau 与 Smali/baksmali 反汇编器和汇编器以及 javap，还有用于 APK/DEX 转换的 Dex2Jar 和 Enjarify、用于编辑的内置 Java 编译器和静态搜索。Java 和 JavaScript 插件会收到全部已加载类的 ASM ClassNode，可用于字符串去混淆或恶意代码搜索等任务。
 
   工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/bytecode-viewer/)
+
+- [**ARSCLib Android 二进制资源读写库**](https://github.com/REAndroid/ARSCLib)
+
+  参照 AOSP androidfw 中 ResourceTypes.h 的结构开发、旨在取代 aapt/aapt2 的 Java 库，可读取、写入、修改和创建 Android 资源表（resources.arsc）以及 AndroidManifest.xml 等二进制 XML 文件。它能将资源解码为可读的 JSON（也适用于名称已混淆的资源），或在名称完好时解码为 XML 源码，并把这两种形式重新构建为二进制资源；APK 模块类可解码、合并并写出整个安装包。库中另有实验性的 DEX 读写组件，命令行工具 APKEditor 即基于该库开发。
+
+  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/arsclib/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制

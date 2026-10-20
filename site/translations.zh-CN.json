@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "arsclib": {
+    "name": "ARSCLib Android 二进制资源读写库",
+    "requirements": [
+      "审阅时最新版本为 V1.4.0，发布于 2026-07-01，附带 ARSCLib-1.4.0.jar；Maven Central 上的 io.github.reandroid:ARSCLib 也是该版本。所审阅的 main 提交日期为 2026-10-19，比该版本多 34 个提交，build.gradle 已将版本设为 1.4.1，且该提交被标为库核心重构的第一部分，因此其 API 可能与发布版不同。",
+      "纯 Java 实现，没有运行时依赖（测试使用 JUnit 4.12）；Gradle 构建以 Java 8 为目标，./gradlew jar 生成 JAR，CI 在 JDK 8 上运行单元测试并构建 JAR。README 称其可在 Android、Linux、macOS 和 Windows 等 Java 平台上运行。它以 Maven 依赖或 JAR 的形式使用，并非独立的命令行工具；README 指向 APKEditor 作为命令行用法。",
+      "处理对象为使用者提供的 APK 与资源文件。README 指出，解码为 XML 需要资源名称未经混淆且合法，因此混淆过的资源表应改为解码成 JSON；构建时的校验也远少于 aapt/aapt2，使用者需自行了解 Android 接受哪些取值。dex 组件的 README 称其仍属实验性质，尚未完整实现。",
+      "src/main/resources/frameworks 附带 API 级别 23 至 37 的 Android 框架资源表，每个都是只含 resources.arsc 和 AndroidManifest.xml 的小型 APK，用于解析对框架资源的引用；加入 API 37 的提交注明其来源为 Google 的 platform-37.2-beta3 SDK 包。测试中另有一个小型 type_id_offset.apk 夹具。",
+      "采用 Apache-2.0 许可。所审来源未提及 REA 的使用，本收录未构建该库，也未处理任何 APK。"
+    ]
   }
 }

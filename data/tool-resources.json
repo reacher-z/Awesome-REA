@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "arsclib",
+    "name": "ARSCLib",
+    "url": "https://github.com/REAndroid/ARSCLib",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Java library, modeled on AOSP's androidfw ResourceTypes.h and meant to replace aapt/aapt2, that reads, writes, modifies and creates Android resource tables (resources.arsc) and binary XML files such as AndroidManifest.xml. It decodes resources to readable JSON, which also handles obfuscated names, or to XML source when names are intact, and builds either form back into binary resources; APK module classes decode, merge and write whole packages. It also has an experimental DEX read/write package, and the APKEditor command-line tool is built on it.",
+    "description_zh": "参照 AOSP androidfw 中 ResourceTypes.h 的结构开发、旨在取代 aapt/aapt2 的 Java 库，可读取、写入、修改和创建 Android 资源表（resources.arsc）以及 AndroidManifest.xml 等二进制 XML 文件。它能将资源解码为可读的 JSON（也适用于名称已混淆的资源），或在名称完好时解码为 XML 源码，并把这两种形式重新构建为二进制资源；APK 模块类可解码、合并并写出整个安装包。库中另有实验性的 DEX 读写组件，命令行工具 APKEditor 即基于该库开发。",
+    "evidence_url": "https://github.com/REAndroid/ARSCLib/blob/bd7221b43bc63544e712f3114dac635aa5142519/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: V1.4.0, published 2026-07-01 with an attached ARSCLib-1.4.0.jar; the same version is on Maven Central as io.github.reandroid:ARSCLib. The reviewed main commit, from 2026-10-19, is 34 commits ahead, already sets version 1.4.1 in build.gradle and is labeled part 1 of an overhaul of the library core, so its APIs may differ from the release.",
+      "Pure Java with no runtime dependencies (JUnit 4.12 for tests); the Gradle build targets Java 8, ./gradlew jar builds the JAR, and CI runs the unit tests and JAR build on JDK 8. The README says it works on Java platforms including Android, Linux, macOS and Windows. It is used as a Maven dependency or a JAR, not as a standalone command-line tool; the README points to APKEditor for that.",
+      "Works on APKs and resource files the user supplies. The README says decoding to XML needs un-obfuscated, valid resource names, so obfuscated tables are decoded to JSON instead, and that building validates far less than aapt/aapt2, leaving the user to know which values Android accepts. The dex package's README calls it experimental and not fully implemented.",
+      "src/main/resources/frameworks bundles Android framework resource tables for API levels 23 to 37, each a small APK holding only resources.arsc and AndroidManifest.xml, used to resolve framework references; the commit adding API 37 names Google's platform-37.2-beta3 SDK package as its source. The tests include one small type_id_offset.apk fixture.",
+      "Apache-2.0. The reviewed sources state no REA use, and this collection did not build the library or process any APK."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/REAndroid/ARSCLib/blob/bd7221b43bc63544e712f3114dac635aa5142519/build.gradle",
+      "https://github.com/REAndroid/ARSCLib/blob/bd7221b43bc63544e712f3114dac635aa5142519/.github/workflows/gradle-test.yml",
+      "https://github.com/REAndroid/ARSCLib/blob/bd7221b43bc63544e712f3114dac635aa5142519/src/main/java/com/reandroid/dex/README.md",
+      "https://github.com/REAndroid/ARSCLib/tree/bd7221b43bc63544e712f3114dac635aa5142519/src/main/java/com/reandroid/apk",
+      "https://github.com/REAndroid/ARSCLib/tree/bd7221b43bc63544e712f3114dac635aa5142519/src/main/resources/frameworks/android",
+      "https://github.com/REAndroid/ARSCLib/commit/f08adf80672cb7e1a4d1a786e861327fcd3934c5",
+      "https://github.com/REAndroid/ARSCLib/blob/bd7221b43bc63544e712f3114dac635aa5142519/LICENSE",
+      "https://github.com/REAndroid/ARSCLib/releases/tag/V1.4.0",
+      "https://repo1.maven.org/maven2/io/github/reandroid/ARSCLib/maven-metadata.xml",
+      "https://github.com/REAndroid/APKEditor/blob/5621fe6750b828ce0bfd99ec7f42ee8b5fe75497/README.md"
+    ]
   }
 ]
