@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 198 | 196 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 190 | 190 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 203 | 203 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 184 | 184 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 209 | 209 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 210 个出现项含目录链接；共关联 203 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 341 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 347 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -372,6 +372,12 @@
 | DeepSeek V4.1: a reported V8 n-day to Electron IPC investigation | 证据不足 | [来源](https://x.com/i/status/2111587595750637954) |
 | Cursor: an account of custom relays and personal Codex/Claude Code quotas | 证据不足 | [来源](https://x.com/FoxSnowing/status/2111465121126207605) |
 | Open Scrantic：重建 Johnny Castaway 屏幕保护程序引擎 | 已收录 | [来源](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
+| Non-open-hardware Xiaozhi box: AI firmware changes for a personal VPS and shared memory | 证据不足 | [来源](https://x.com/i/status/2111511824751599721) |
+| Pandemic-relief websites: an idea for AI-assisted investigation of legacy backdoors | 证据不足 | [来源](https://x.com/i/status/2111516584976273866) |
+| Forked pi and two Sparks: starting a GLM-5.3-flash/REA trial | 证据不足 | [来源](https://x.com/i/status/2111519607928520794) |
+| Mac video downloader: an author-reported rebuild adding transcription | 证据不足 | [来源](https://x.com/i/status/2111520950814453895) |
+| Codex/Claude clients: asking whether tokens are hidden in the app package | 证据不足 | [来源](https://x.com/i/status/2111521972849193128) |
+| Old game saves in the browser: a REA rules-and-progress migration idea | 证据不足 | [来源](https://x.com/i/status/2111527329331638455) |
 | LG TV smoothness: an idea for REA-assisted responsiveness research | 证据不足 | [来源](https://x.com/i/status/2111528528374353931) |
 | 《声名狼藉：次子》原生 PC 移植 | 已收录 | [来源](https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md) |
 | Illustrative legacy/billing demo: 212 files to a spec and twelve Sonnet agents | 证据不足 | [来源](https://x.com/i/status/2111530936441446417) |
