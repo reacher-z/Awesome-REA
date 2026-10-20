@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "readpe",
+    "name": "readpe (formerly pev)",
+    "url": "https://github.com/mentebinaria/readpe",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Command-line toolkit, formerly named pev, for analyzing 32- and 64-bit Windows PE files. readpe prints the DOS, COFF and optional headers, sections, data directories, imports and exports, while companion tools disassemble code (pedis), hash the file, headers or sections with ssdeep and imphash among others (pehash), list and extract resources (peres), match packer signatures (pepack), flag traits such as TLS callbacks, high entropy or an unusual entry point (pescan), report ASLR, DEP/NX, SEH and stack-cookie flags and dump certificates (pesec), find strings and convert between file offsets and RVAs. Output plugins write text, CSV, XML, HTML or JSON, and the bundled libpe C library provides the parser.",
+    "description_zh": "命令行工具集（原名 pev），用于分析 32 位和 64 位 Windows PE 文件。readpe 输出 DOS、COFF 与可选头、节区、数据目录以及导入和导出表；配套工具可反汇编代码（pedis），以 ssdeep、imphash 等算法对整个文件、文件头或节区计算哈希（pehash），列出并提取资源（peres），匹配加壳签名（pepack），标出 TLS 回调、高熵值或异常入口点等特征（pescan），报告 ASLR、DEP/NX、SEH 与栈 cookie 标志并导出证书（pesec），还能查找字符串以及在文件偏移和 RVA 之间换算。输出插件支持文本、CSV、XML、HTML 和 JSON，附带的 libpe C 库提供解析功能。",
+    "evidence_url": "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.85.1, published 2025-08-29 to correct the version string reported by v0.85 (2025-08-08); only the older v0.81 and v0.82 releases attach Windows ZIP builds. The reviewed master commit, from 2026-07-08, is five commits ahead, fixing peres version output and ordinal-only imports and moving the macOS CI build to a newer OpenSSL. The README explains the rename from pev and that libpe was merged into this repository.",
+      "Built from source with make and a C compiler and needs OpenSSL development headers. On Linux, make install puts files under /usr/local, and /usr/local/lib must be registered with ldconfig so libpe.so is found; macOS builds pass Homebrew OpenSSL paths in CFLAGS and LDFLAGS, and Windows builds use Cygwin with gcc-core, binutils, make, zip and libssl-devel, where make zip also builds cpload and bundles the needed Cygwin DLLs. CI only compiles on Linux, macOS and Cygwin.",
+      "Input is a PE file the user supplies. The other tools parse it, but the Windows-only cpload loads a Control Panel (.cpl) item and sends it CPL messages for debugging, so it runs that item's code. pepack depends on the bundled userdb.txt list of PEiD-style signatures, whose header counts 3,520 entries without naming their source, and pescan and pesec report heuristic indicators and header flags rather than verdicts.",
+      "tests/run.sh runs each tool in every output format and diffs the results against an expected_outputs directory that is not in the repository; valgrind scripts and a helloworld.exe sample built from tests/samples_src with MinGW are also included. CI does not run these tests.",
+      "The tools are GPL-2.0-or-later with an OpenSSL linking exception, lib/libpe is LGPL-3.0, and the bundled udis86 disassembler keeps its BSD notice. The reviewed sources state no REA use, and this collection did not build the tools or analyze any file."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/doc/manual/en_us/tools.docbook",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/lib/libpe/README.md",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/Makefile",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/.github/workflows/multi-os-build.yml",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/src/windows/cpload.c",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/src/userdb.txt#L1-L2",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/tests/run.sh",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/src/readpe.c#L1-L34",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/LICENSE",
+      "https://github.com/mentebinaria/readpe/blob/967ab57f7cfbebf340a8f85744a1d095029cfbfe/lib/libpe/LICENSE",
+      "https://github.com/mentebinaria/readpe/releases/tag/v0.85.1",
+      "https://github.com/mentebinaria/readpe/releases/tag/v0.85"
+    ]
   }
 ]

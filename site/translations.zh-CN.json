@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "readpe": {
+    "name": "readpe（原名 pev）PE 文件分析工具集",
+    "requirements": [
+      "审阅时最新版本为 v0.85.1，发布于 2025-08-29，用于更正 v0.85（2025-08-08）报告的版本号；只有较早的 v0.81 和 v0.82 版本附带 Windows ZIP 构建。所审阅的 master 提交日期为 2026-07-08，比该版本多五个提交，修复了 peres 的版本信息输出和仅按序号导入的函数识别，并让 macOS CI 构建改用较新的 OpenSSL。README 说明了从 pev 改名的经过，以及 libpe 已并入本仓库。",
+      "需用 make 和 C 编译器从源码构建，并需要 OpenSSL 开发头文件。在 Linux 上，make install 将文件安装到 /usr/local，还需用 ldconfig 登记 /usr/local/lib 才能找到 libpe.so；macOS 构建需在 CFLAGS 和 LDFLAGS 中传入 Homebrew 的 OpenSSL 路径；Windows 构建使用安装了 gcc-core、binutils、make、zip 和 libssl-devel 的 Cygwin，其中 make zip 还会构建 cpload 并打包所需的 Cygwin DLL。CI 仅在 Linux、macOS 和 Cygwin 上编译。",
+      "输入为使用者提供的 PE 文件。其他工具只解析文件，而仅限 Windows 的 cpload 会载入控制面板（.cpl）项并向其发送 CPL 消息以便调试，因此会运行该项的代码。pepack 依赖附带的 userdb.txt，这是一份 PEiD 格式的签名列表，文件头称共 3,520 条，但未注明来源；pescan 和 pesec 报告的是启发式迹象和文件头标志，而非判定结论。",
+      "tests/run.sh 以每种输出格式运行各个工具，并将结果与 expected_outputs 目录比较，但该目录不在仓库中；另附有 valgrind 脚本，以及由 tests/samples_src 用 MinGW 构建的 helloworld.exe 样本。CI 不运行这些测试。",
+      "各工具采用 GPL-2.0-or-later 许可并附 OpenSSL 链接例外，lib/libpe 采用 LGPL-3.0，附带的 udis86 反汇编器保留其 BSD 声明。所审来源未提及 REA 的使用，本收录未构建这些工具，也未分析任何文件。"
+    ]
   }
 }
