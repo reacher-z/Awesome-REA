@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 204 | 202 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 128 | 128 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 259 | 259 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 122 | 122 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 265 | 265 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 217 occurrences have catalog links. They reference 208 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 402 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 408 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -176,8 +176,14 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | REA in Claude Code: an isolated static-analysis A/B trial | Already curated | [Source](https://zenn.dev/keigoly/articles/8738d8d241b5a1) |
 | REA 6.4.0: Windows .NET and Electron sample tests | Insufficient evidence | [Source](https://x.com/i/status/2110563764886266167) |
 | CPU kernels: Claude Code orchestrates Astra with REA | Insufficient evidence | [Source](https://x.com/nkeilar/status/2110566660113625486) |
+| A saved website investigated with WorkBuddy International | Insufficient evidence | [Source](https://x.com/Muma102kMichael/status/2110593537872175256) |
 | apk-reverse: an Android analysis skill for coding agents | Insufficient evidence | [Source](https://github.com/zzusec/apk-reverse/blob/1b94651b1e3c4479336406b8b5c06d4c1fd7082e/README.md) |
+| Hailo: a planned agent-assisted reverse-engineering run | Insufficient evidence | [Source](https://x.com/TheCogArchitect/status/2110600631144919232) |
+| Wyze scale: weight data in a custom iOS app | Insufficient evidence | [Source](https://x.com/Boards86/status/2110604057287217339) |
 | A license-compliance comparison during reverse engineering | Insufficient evidence | [Source](https://x.com/i/status/2110614074941927618) |
+| Codex: a personal library following REA research | Insufficient evidence | [Source](https://x.com/LinearUncle/status/2110616441611542781) |
+| Richman 4: REA research to a Flutter iPhone rebuild | Insufficient evidence | [Source](https://x.com/iam678/status/2110618564608880843) |
+| Tuya AC: local Mac controls exposed to Claude over MCP | Insufficient evidence | [Source](https://x.com/sarequl_basar/status/2110620776915411243) |
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
 | DOOM and Terraria: reported no-source mod experiments | Insufficient evidence | [Source](https://x.com/i/status/2110641024389271883) |
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |

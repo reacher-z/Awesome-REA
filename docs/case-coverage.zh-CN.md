@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 204 | 202 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 128 | 128 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 259 | 259 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 122 | 122 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 265 | 265 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 217 个出现项含目录链接；共关联 208 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 402 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 408 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -176,8 +176,14 @@
 | Claude Code 中的 REA：隔离配置下的静态分析 A/B 试验 | 已收录 | [来源](https://zenn.dev/keigoly/articles/8738d8d241b5a1) |
 | REA 6.4.0: Windows .NET and Electron sample tests | 证据不足 | [来源](https://x.com/i/status/2110563764886266167) |
 | CPU kernels: Claude Code orchestrates Astra with REA | 证据不足 | [来源](https://x.com/nkeilar/status/2110566660113625486) |
+| A saved website investigated with WorkBuddy International | 证据不足 | [来源](https://x.com/Muma102kMichael/status/2110593537872175256) |
 | apk-reverse: an Android analysis skill for coding agents | 证据不足 | [来源](https://github.com/zzusec/apk-reverse/blob/1b94651b1e3c4479336406b8b5c06d4c1fd7082e/README.md) |
+| Hailo: a planned agent-assisted reverse-engineering run | 证据不足 | [来源](https://x.com/TheCogArchitect/status/2110600631144919232) |
+| Wyze scale: weight data in a custom iOS app | 证据不足 | [来源](https://x.com/Boards86/status/2110604057287217339) |
 | A license-compliance comparison during reverse engineering | 证据不足 | [来源](https://x.com/i/status/2110614074941927618) |
+| Codex: a personal library following REA research | 证据不足 | [来源](https://x.com/LinearUncle/status/2110616441611542781) |
+| Richman 4: REA research to a Flutter iPhone rebuild | 证据不足 | [来源](https://x.com/iam678/status/2110618564608880843) |
+| Tuya AC: local Mac controls exposed to Claude over MCP | 证据不足 | [来源](https://x.com/sarequl_basar/status/2110620776915411243) |
 | IsaacRecomp：将 Flash 游戏字节码转换为原生 C++ | 已收录 | [来源](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
 | DOOM and Terraria: reported no-source mod experiments | 证据不足 | [来源](https://x.com/i/status/2110641024389271883) |
 | 飞书：作者报告的隔离第二应用实例 | 已收录 | [来源](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
