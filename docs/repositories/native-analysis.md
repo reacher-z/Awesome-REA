@@ -128,7 +128,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — An agent-first decompiler designed to be refined by other agents. Kuna is written in Rust and was originally ported from Ghidra. **[614 stars]** · Curated: [Kuna](https://awesomerea.org/resources/kuna/)
 - [wargio/r2dec-js](https://github.com/wargio/r2dec-js) — r2dec-js is a JavaScript-based decompiler that converts assembly code into pseudo-C. It aids users in understanding assembly by providing readable high-level explanations, making low-level programming more accessible and facilitating debugging across diverse hardware platforms. **[611 stars]**
 - [boricj/ghidra-delinker-extension](https://github.com/boricj/ghidra-delinker-extension) — Ghidra extension for exporting relocatable object files **[608 stars]** · Curated: [ghidra-delinker-extension](https://awesomerea.org/resources/ghidra-delinker-extension/)
-- [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — A Binary Genetic Traits Lexer Framework **[604 stars]**
+- [c3rb3ru5d3d53c/binlex](https://github.com/c3rb3ru5d3d53c/binlex) — A Binary Genetic Traits Lexer Framework **[604 stars]** · Curated: [Binlex](https://awesomerea.org/resources/binlex/)
 - [falconre/falcon](https://github.com/falconre/falcon) — Binary Analysis Framework in Rust **[593 stars]**
 - [JonathanSalwan/PinTools](https://github.com/JonathanSalwan/PinTools) — Pintool example and PoC for dynamic binary analysis **[593 stars]**
 - [nikolaydubina/go-binsize-treemap](https://github.com/nikolaydubina/go-binsize-treemap) — 🔍 Go binary size SVG treemap **[587 stars]**

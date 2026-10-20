@@ -11254,5 +11254,33 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "binlex",
+    "name": "Binlex",
+    "url": "https://github.com/c3rb3ru5d3d53c/binlex",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary trait-lexer framework that extracts instructions, basic blocks and functions from executables and emits searchable JSON traits for similarity, hunting and signature work. It models code with a genomics-inspired hierarchy and computes features such as MinHash, TLSH, SHA256, entropy and wildcard byte patterns, so samples can be compared, clustered and turned into signatures at scale. It ships a CLI suite, a Rust API, Python bindings and an IDA plugin, can generate YARA rules from its patterns, and runs processors locally or over IPC and HTTP.",
+    "description_zh": "二进制特征词法框架，从可执行文件中提取指令、基本块和函数，并输出可检索的 JSON 特征，用于相似度分析、威胁狩猎和签名工作。它以仿基因组学的层级结构对代码建模，计算 MinHash、TLSH、SHA256、熵和通配字节模式等特征，从而在大规模样本间进行比较、聚类并生成签名。它提供命令行工具套件、Rust API、Python 绑定和 IDA 插件，可依据其模式生成 YARA 规则，并支持本地或通过 IPC 与 HTTP 运行处理器。",
+    "evidence_url": "https://github.com/c3rb3ru5d3d53c/binlex/blob/f02f270c378b652dcfaca8a88f7d65bd4a95347b/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit declares a Rust 2024-edition workspace at version 2.0.0. The latest stable GitHub release is v1.1.1 (2023-03-04); the v2.0.0 line is still at release candidates, the most recent being v2.0.0-rc2 (2025-01-14), whose prebuilt zips cover Linux (Debian and Arch), macOS (amd64 and aarch64) and Windows, plus an IDA plugin archive and a server archive. The reviewed master is ahead of those tags.",
+      "The README lists Linux, macOS and Windows; input formats PE, ELF and Mach-O; and AMD64, I386 and CIL architectures, with disassembly through Capstone 0.12. Build and install with cargo build --release --workspace, build the Python bindings with maturin, package with make zst/deb/wheel, install the IDA plugin with pip and python -m binlex_ida install, and the repository also provides Docker Compose files for its server, web, MCP and Python images.",
+      "Supply the binaries to analyze yourself; the repository commits no sample binaries, and its tests are Rust source. Binlex extracts static traits and hashes and generates patterns and YARA rules; it does not run the target, and derived signatures and similarity scores still need analyst validation.",
+      "MIT license; contributions require signing the repository's CLA. No binaries were analyzed for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/c3rb3ru5d3d53c/binlex/blob/f02f270c378b652dcfaca8a88f7d65bd4a95347b/Cargo.toml",
+      "https://github.com/c3rb3ru5d3d53c/binlex/blob/f02f270c378b652dcfaca8a88f7d65bd4a95347b/LICENSE",
+      "https://github.com/c3rb3ru5d3d53c/binlex/releases/tag/v2.0.0-rc2",
+      "https://github.com/c3rb3ru5d3d53c/binlex/releases/tag/v1.1.1"
+    ]
   }
 ]

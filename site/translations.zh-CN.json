@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "binlex": {
+    "name": "Binlex 二进制特征词法框架",
+    "requirements": [
+      "所审阅的 master 分支提交声明了一个版本号为 2.0.0 的 Rust 2024 edition 工作区。GitHub 上最新的稳定发行版是 v1.1.1（2023-03-04）；2.0.0 系列仍处于候选发布阶段，最新为 v2.0.0-rc2（2025-01-14），其预构建压缩包覆盖 Linux（Debian 和 Arch）、macOS（amd64 与 aarch64）和 Windows，另含一个 IDA 插件压缩包和一个服务端压缩包。所审阅的 master 分支比这些标签更新。",
+      "README 列出 Linux、macOS 和 Windows；输入格式为 PE、ELF 和 Mach-O；支持 AMD64、I386 和 CIL 架构，反汇编通过 Capstone 0.12 完成。构建安装使用 cargo build --release --workspace，用 maturin 构建 Python 绑定，用 make zst/deb/wheel 打包，用 pip 和 python -m binlex_ida install 安装 IDA 插件；仓库还提供用于服务端、Web、MCP 和 Python 镜像的 Docker Compose 文件。",
+      "需自行提供要分析的二进制文件；仓库未提交任何样本二进制，其测试均为 Rust 源码。Binlex 提取静态特征与哈希并生成模式和 YARA 规则，不运行目标程序；得到的签名和相似度结果仍需分析人员验证。",
+      "采用 MIT 许可证；贡献代码需签署仓库的 CLA。本次未分析任何二进制。"
+    ]
   }
 }
