@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 485](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-485-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 202](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-202-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 486](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-486-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 202](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-202-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -540,6 +540,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Hermes Agent 的 REA 插件**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea) - Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。 <sub>集成 · REA 社区 · 目标：网站、应用、二进制、固件 · [完整条目](https://awesomerea.org/zh/resources/hermes-rea-plugin/)</sub>
 - [**crashlens 崩溃分诊工具**](https://github.com/mingleiw/crashlens) - 崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。 <sub>集成 · REA 社区 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)</sub>
 - [**REA 工作区模板**](https://github.com/dobest1024/rea-workspace-template) - 一个可直接克隆的中文工作区模板，用于在 Claude Code 或 Codex 中借助 REA，按“一个目标一个工作区”开展分析。 <sub>集成 · REA 社区 · 目标：网站、应用、二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-workspace-template/)</sub>
+- [**REA Reconstruction Companion 重建配套技能**](https://github.com/ShadowSwaps/REA-Reconstruction-Companion) - 第三方 Agent Skill，与 REA 自身的技能配合使用，把逆向分析证据整理成限定范围的需求、设计、分阶段实现与验证，范围可从单个功能或格式扩展到整个应用。 <sub>集成 · REA 社区 · 目标：应用、二进制 · [完整条目](https://awesomerea.org/zh/resources/rea-reconstruction-companion/)</sub>
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp) - Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。 <sub>集成 · 独立 MCP · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)</sub>
 - [**GhidraMCP**](https://github.com/LaurieWired/GhidraMCP) - 通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。 <sub>集成 · 独立 MCP · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/ghidramcp/)</sub>
 - [**Binary Ninja MCP（官方）**](https://docs.binary.ninja/guide/mcp.html) - Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。 <sub>集成 · 独立 MCP · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/binary-ninja-official-mcp/)</sub>

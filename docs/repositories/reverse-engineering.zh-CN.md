@@ -284,7 +284,7 @@
 - [pop-rip/vtil2](https://github.com/pop-rip/vtil2) — VTIL2 从零重新构想 VTIL 项目，使用现代 C# 完全重写，具备企业级架构、性能优化和开发体验增强。在与原 C++ 代码库保持 100% 功能兼容的同时，VTIL2 在各个方面引入重大改进。 **[75 星标]**
 - [thewhiteninja/deobshell](https://github.com/thewhiteninja/deobshell) — 在 Python 中使用 AST 对 PowerShell 脚本去混淆 **[75 星标]**
 - [schdub/protodec](https://github.com/schdub/protodec) — Protobuf 反编译器。 **[74 星标]**
-- [ShadowSwaps/REA-Reconstruction-Companion](https://github.com/ShadowSwaps/REA-Reconstruction-Companion) — 开源、不依赖特定模型的 Agent Skill，用于借助 REA 基于证据重建软件。提供可选集成、便携式安装程序和验证工作流。 **[74 星标]**
+- [ShadowSwaps/REA-Reconstruction-Companion](https://github.com/ShadowSwaps/REA-Reconstruction-Companion) — 开源、不依赖特定模型的 Agent Skill，用于借助 REA 基于证据重建软件。提供可选集成、便携式安装程序和验证工作流。 **[74 星标]** · 精选：[REA Reconstruction Companion 重建配套技能](https://awesomerea.org/zh/resources/rea-reconstruction-companion/)
 - [camila314/gdp](https://github.com/camila314/gdp) — Geometry Dash 物理函数的完整反编译。 **[73 星标]**
 - [ChimpsAtSea/Reach](https://github.com/ChimpsAtSea/Reach) — Halo: Reach 逆向工程项目。 **[72 星标]**
 - [Drahsid/mischief-makers](https://github.com/Drahsid/mischief-makers) — 正在进行中的 N64 游戏 Mischief Makers 反编译项目。 **[72 星标]**
