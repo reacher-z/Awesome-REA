@@ -11,6 +11,7 @@ import re
 import shutil
 from urllib.parse import unquote, urlsplit
 
+from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
 from build_readme import KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from evidence_links import evidence_link
@@ -90,6 +91,8 @@ def _url(value: str) -> str:
 
 
 def _asset(site_dir: Path, filename: str) -> str:
+    if filename.endswith(FINGERPRINTED_SUFFIXES):
+        return fingerprinted_href(site_dir, filename)
     path = site_dir / filename
     revision = hashlib.sha256(path.read_bytes()).hexdigest()[:16] if path.is_file() else ''
     return '/' + filename + ('?v=' + revision if revision else '')
