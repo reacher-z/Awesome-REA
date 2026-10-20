@@ -11254,5 +11254,43 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "embark",
+    "name": "EMBArk",
+    "url": "https://github.com/e-m-b-a/embark",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Web-based enterprise interface for the EMBA firmware security scanner, which it installs and runs as its scanning backend. In the browser, users upload firmware, configure and follow EMBA scans, open the full EMBA HTML report and a security overview per firmware, and compare results in an aggregated dashboard; results are access-controlled per user and can be archived. The current main branch adds a REST API for upload, scan status and SBOM retrieval, and an orchestrator that distributes scans to EMBA worker nodes reached over SSH.",
+    "description_zh": "EMBA 固件安全扫描器的 Web 企业级界面，会安装 EMBA 并将其作为扫描后端运行。用户可在浏览器中上传固件、配置并跟踪 EMBA 扫描，查看完整的 EMBA HTML 报告和每个固件的安全概览，并在汇总仪表板中比较结果；结果按用户控制访问，也可归档隐藏。当前 main 分支还加入了用于上传、查询扫描状态和获取 SBOM 的 REST API，以及通过 SSH 将扫描分派到 EMBA 工作节点的编排器。",
+    "evidence_url": "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.3, published 2025-06-24. The reviewed main commit is 941 commits ahead of it and identifies itself as 0.3-630649d1 in VERSION.txt; the REST API and worker orchestrator described here come from that branch. The installation wiki calls the software alpha and strongly recommends a virtual machine, and the README notes that the new tracking application does not work offline and that device, vendor and version tracking is not yet in every dashboard.",
+      "The README names Ubuntu 24 LTS as the only supported OS. installer.sh -d installs Docker, pipenv and EMBA and configures the MySQL and Redis containers defined in docker-compose.yml; EMBA is pinned as a git submodule (at review an EMBA commit from 2026-04-07, older than EMBA's latest releases) and runs in its Docker mode, while -s skips it. The wiki suggests 8–32+ GB RAM, 4–16+ CPUs, at least 20 GB of disk (100+ GB recommended) and an isolated network, and EMBA's own requirements also apply.",
+      "run-server.sh serves HTTP on port 80 on all interfaces under the default name embark.local, which must resolve through a hosts file or DNS; -a adds names or addresses and -b opens the admin pages beyond localhost. The installer and server script run with sudo, and the server is deployed to /var/www under a dedicated service user. API calls carry an API key in a header or query parameter, and the orchestrator scans an IP range and installs EMBA on workers using SSH credentials the user supplies.",
+      "Supply the firmware images yourself; the repository contains no firmware, and its test fixtures are EMBA result exports such as a CycloneDX SBOM and module CSV/JSON files. Scan findings come from EMBA and still need analyst interpretation. CI installs the server without EMBA and runs Django and server tests, linters, ShellCheck and CodeQL, so no firmware scan is part of it.",
+      "MIT license, copyright The AMOS Projects and Siemens Energy AG; EMBA and the tools it installs keep their own licenses. Neither EMBArk nor EMBA was installed or run, and no firmware was scanned for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/e-m-b-a/embark/wiki/Installation/f792ea4c9b1f2d3c495e942bcb780c654e7cd6e5",
+      "https://github.com/e-m-b-a/embark/wiki/Web-interface/282863ab5b9c20f834e57c7aaa396171ab9a11ec",
+      "https://github.com/e-m-b-a/embark/wiki/Orchestrator/2b58d1eda4bc9c5550db9e051db4dc894786fe26",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/installer.sh",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/run-server.sh",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/docs/openapi.yaml",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/VERSION.txt",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/.gitmodules",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/docker-compose.yml",
+      "https://github.com/e-m-b-a/embark/tree/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/test",
+      "https://github.com/e-m-b-a/embark/tree/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/.github/workflows",
+      "https://github.com/e-m-b-a/embark/blob/d578c8b102bd6a74f9efaeb5c7e93c601a5a9663/LICENSE",
+      "https://github.com/e-m-b-a/embark/releases/tag/v0.3"
+    ]
   }
 ]

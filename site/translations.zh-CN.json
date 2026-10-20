@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "embark": {
+    "name": "EMBArk EMBA 固件扫描 Web 平台",
+    "requirements": [
+      "审阅时最新版本为 v0.3，发布于 2025-06-24。所审阅的 main 分支提交比它多 941 个提交，VERSION.txt 标为 0.3-630649d1；这里描述的 REST API 和工作节点编排器均来自该分支。安装文档称软件仍处于 alpha 阶段，强烈建议在虚拟机中运行；README 说明新的追踪应用无法离线使用，设备、厂商和版本追踪也尚未接入所有仪表板。",
+      "README 写明目前只支持 Ubuntu 24 LTS。installer.sh -d 会安装 Docker、pipenv 和 EMBA，并配置 docker-compose.yml 中定义的 MySQL 与 Redis 容器；EMBA 以 git 子模块固定版本（审阅时为 2026-04-07 的一个 EMBA 提交，早于 EMBA 最新发行版），以 Docker 模式运行；-s 选项则跳过 EMBA。文档建议 8–32+ GB 内存、4–16+ 个 CPU、至少 20 GB 磁盘（建议 100 GB 以上）及隔离网络，EMBA 自身的资源要求同样适用。",
+      "run-server.sh 在所有网络接口的 80 端口提供 HTTP 服务，默认主机名为 embark.local，需要通过 hosts 文件或 DNS 解析；-a 可添加主机名或地址，-b 可让本机以外访问管理页面。安装脚本和服务启动脚本均需 sudo 运行，服务端以专用服务账户部署到 /var/www。API 调用需在请求头或查询参数中携带 API 密钥；编排器会扫描指定的 IP 范围，并使用用户提供的 SSH 凭据在工作节点上安装 EMBA。",
+      "需自行提供要分析的固件镜像；仓库不含任何固件，测试数据是 EMBA 结果导出，例如一份 CycloneDX SBOM 和若干模块 CSV/JSON 文件。扫描结论来自 EMBA，仍需分析人员解读。CI 在不安装 EMBA 的情况下安装服务端，运行 Django 与服务端测试、代码检查、ShellCheck 和 CodeQL，并不包含固件扫描。",
+      "采用 MIT 许可证，版权归 The AMOS Projects 与 Siemens Energy AG；EMBA 及其安装的工具各自保留许可证。本次未安装或运行 EMBArk 和 EMBA，也未扫描任何固件。"
+    ]
   }
 }
