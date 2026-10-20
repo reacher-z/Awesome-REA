@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "binary-refinery",
+    "name": "Binary Refinery",
+    "url": "https://github.com/binref/refinery",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Large collection of composable Python command-line units for transforming binary data: encodings, compression, encryption, archive and executable-format extraction, carving and pattern search. Each unit reads stdin and writes stdout, so units chain into shell pipelines, while framing, multibin arguments and meta variables let one pipeline process many chunks, and the binref command searches unit help. The author describes it as a command-line take on CyberChef focused on malware triage; the README also points to a separate binref/agent repository of instructions for language-model agents that use refinery.",
+    "description_zh": "由大量可组合的 Python 命令行单元组成的二进制数据转换工具集，涵盖编码、压缩、加密、归档与可执行文件格式提取、数据切割（carving）和模式搜索。各单元从标准输入读取、向标准输出写入，因此可串联成 shell 管道；分帧（framing）、multibin 参数和元变量使一条管道能处理多个数据块，binref 命令可检索各单元的帮助文本。作者称其为面向恶意软件初步分析、在命令行上实现类似 CyberChef 功能的工具；README 还指向独立的 binref/agent 仓库，其中提供供语言模型智能体使用 refinery 的说明。",
+    "evidence_url": "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 0.11.2, uploaded to PyPI on 2026-07-14 and requiring Python 3.10+. The reviewed master commit of 2026-10-11 is 1,138 commits past that tag and still reports version 0.11.2, while its changelog already lists breaking 0.11.3 changes, including Python 3.11+ and renamed meta variables. The README says refinery is still in alpha and that units and parameters can be renamed or removed.",
+      "Installed with pip as binary-refinery, preferably into its own virtual environment. The default, extended and all extras add progressively more optional dependencies, and units name a missing dependency when run. Installation creates one shell command per unit, optionally with a prefix to avoid name clashes. The README rates Bash and CMD support as good, PowerShell 7.4+ as reasonable, and Zsh and Fish as having minor issues. Several decompression and cipher routines have Cython extensions next to pure-Python versions.",
+      "Inputs are the analyst's own files or data piped on stdin. CI runs pytest on Windows, macOS and Ubuntu with Python 3.11 and 3.13. Tests that need real-world inputs fetch encrypted files from the separate binref/refinery-test-data repository, which this review did not open. Unit output depends on the parameters chosen and needs analyst validation; nothing was installed or run for this review.",
+      "LICENSE.md is the 3-Clause BSD License, which GitHub does not classify. refinery/lib/thirdparty keeps third-party modules under their own licenses, and refinery/lib/seven ports compression code from 7-Zip. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/README.md#L124-L126",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/CHANGELOG.md",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/setup.py",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/pyproject.toml",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/refinery/__init__.py",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/.github/workflows/test.yml",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/samples/__init__.py",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/refinery/lib/thirdparty/__init__.py",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/refinery/lib/seven/__init__.py",
+      "https://github.com/binref/refinery/blob/13d8c68863c3d11d4e6cd36007fdd6c53459eda6/LICENSE.md",
+      "https://pypi.org/project/binary-refinery/0.11.2/",
+      "https://github.com/binref/agent/blob/be019a500f1827c9359c51e9879d6144cb7453de/README.md"
+    ]
   }
 ]

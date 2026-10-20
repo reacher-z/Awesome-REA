@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "binary-refinery": {
+    "name": "Binary Refinery 二进制数据转换工具集",
+    "requirements": [
+      "审阅时最新版本为 0.11.2，于 2026-07-14 上传到 PyPI，要求 Python 3.10+。所审阅的 master 分支提交日期为 2026-10-11，比该标签多 1,138 个提交，版本号仍为 0.11.2，但其更新日志已列出 0.11.3 的不兼容变更，包括要求 Python 3.11+ 以及元变量改名。README 称 refinery 仍处于 alpha 阶段，单元和参数可能被改名或移除。",
+      "通过 pip 安装 binary-refinery，建议装在独立的虚拟环境中。default、extended 和 all 三组附加选项依次加入更多可选依赖，运行单元时会提示缺少哪个依赖。安装时会为每个单元创建一条 shell 命令，可加前缀以避免命名冲突。README 将 Bash 和 CMD 的支持评为良好，PowerShell 7.4+ 为尚可，Zsh 和 Fish 存在小问题。若干解压缩和加密例程同时提供 Cython 扩展和纯 Python 版本。",
+      "输入为分析者自有的文件或经标准输入管道传入的数据。CI 在 Windows、macOS 和 Ubuntu 上以 Python 3.11 和 3.13 运行 pytest。需要真实样本输入的测试会从独立的 binref/refinery-test-data 仓库获取加密文件，本次审阅未打开这些文件。单元输出取决于所选参数，需要分析者核实；本次未安装或运行任何内容。",
+      "LICENSE.md 为三条款 BSD 许可证，GitHub 未能识别。refinery/lib/thirdparty 中的第三方模块保留各自的许可证，refinery/lib/seven 移植了 7-Zip 的压缩代码。所审阅的来源未表明与 REA 有关。"
+    ]
   }
 }
