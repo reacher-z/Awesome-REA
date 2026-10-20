@@ -16,7 +16,7 @@ from urllib.parse import unquote, urlsplit
 from artifact_links import github_repository
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warnings
 from catalog import ROOT, RESOURCE_FILES
-from localization import read_localizations, validate_localizations
+from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from requirement_facets import facet_errors
 from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
 from source_scope import read_scope, validate_scope
@@ -1180,9 +1180,14 @@ def main():
                     and all(isinstance(record, dict) and isinstance(record.get('id'), str)
                             for record in source_records)):
                 try:
-                    validate_localizations(source_records, read_localizations(ROOT), errors)
+                    translations = read_localizations(ROOT)
+                    validate_localizations(source_records, translations, errors)
+                    warnings = []
+                    validate_fingerprints(source_records, translations, read_fingerprints(ROOT), errors, warnings)
+                    for warning in warnings:
+                        print(f'Warning: {warning}', file=sys.stderr)
                 except (OSError, ValueError):
-                    errors.append('Repository localizations could not be read as valid JSON.')
+                    errors.append('Repository localizations or their source fingerprints could not be read as valid JSON.')
                 try:
                     validate_scope(source_records, read_scope(ROOT), errors)
                 except (OSError, ValueError):
