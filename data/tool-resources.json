@@ -11191,5 +11191,36 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "restore-symbol",
+    "name": "restore-symbol",
+    "url": "https://github.com/tobefuturer/restore-symbol",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "macOS command-line tool that writes a stripped iOS app's Mach-O executable back out with a rebuilt symbol table, so a debugger such as lldb can break on and display Objective-C method names. It recovers method names and addresses from the binary's Objective-C metadata through class-dump, and can merge extra name and address pairs from a JSON file, such as the block symbols found by the bundled IDA script.",
+    "description_zh": "运行于 macOS 的命令行工具，为已剥离符号的 iOS 应用 Mach-O 可执行文件重建符号表并输出新文件，使 lldb 等调试器能按 Objective-C 方法名设置断点并显示名称。它借助 class-dump 从二进制的 Objective-C 元数据中恢复方法名和地址，也可以从 JSON 文件合并额外的名称与地址，例如随附 IDA 脚本找到的 block 符号。",
+    "evidence_url": "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no releases or tags; the reviewed master commit of 2019-04-27 is the latest, and the repository has no tests or CI. The README covers Objective-C methods and blocks only and does not mention Swift symbols; compatibility with current Xcode, macOS and iOS binaries was not checked.",
+      "Builds on macOS with Xcode: make initializes the pinned class-dump submodule (0xced's fork) and runs xcodebuild on a project targeting macOS 10.11. The block-symbol script search_oc_block/ida_search_block.py runs inside IDA, uses Python 2 print statements and the legacy idaapi.get_inf_structure call, and writes block_symbol.json.",
+      "Input is a thin armv7 or arm64 Mach-O executable from an app the user is authorized to analyze; the tool rejects fat files with a request to thin them using lipo, and writes a new output file instead of changing the input. The README then re-signs the bundle with the user's own developer certificate and debugs it on a device with lldb. The repository contains source and a README screenshot, no app binaries.",
+      "There is no license file and GitHub detects none, so reuse terms for restore-symbol's own code are not stated; the build links the MachObjC library from the class-dump submodule, which is GPL-2.0-or-later. The reviewed sources state no REA use, and no binary was processed for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/source/restore-symbol.m",
+      "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/makefile",
+      "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/.gitmodules",
+      "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/restore-symbol.xcodeproj/project.pbxproj",
+      "https://github.com/tobefuturer/restore-symbol/blob/83ccb9085339750fd777b0707641b68c7661a388/search_oc_block/ida_search_block.py",
+      "https://github.com/0xced/class-dump/blob/a8877b6695f317816322134944a410de09da4911/README.md"
+    ]
   }
 ]

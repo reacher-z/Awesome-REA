@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "restore-symbol": {
+    "name": "restore-symbol iOS 符号表恢复工具",
+    "requirements": [
+      "项目没有发布版本或标签；所审阅的 2019-04-27 master 提交即最新提交，仓库也没有测试或 CI。README 只涉及 Objective-C 方法和 block，没有提到 Swift 符号；未核实与当前 Xcode、macOS 及 iOS 二进制的兼容性。",
+      "需在 macOS 上用 Xcode 构建：make 会初始化固定版本的 class-dump 子模块（0xced 的分支），并用 xcodebuild 构建面向 macOS 10.11 的工程。block 符号脚本 search_oc_block/ida_search_block.py 在 IDA 中运行，使用 Python 2 的 print 语句和旧版 idaapi.get_inf_structure 调用，并输出 block_symbol.json。",
+      "输入是使用者有权分析的应用中的单架构 armv7 或 arm64 Mach-O 可执行文件；遇到 fat 文件时工具会拒绝处理并提示先用 lipo 拆分，处理结果写入新的输出文件而不改动输入文件。README 随后用使用者自己的开发者证书重新签名应用包，并在设备上用 lldb 调试。仓库只有源码和 README 截图，不含任何应用二进制。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证，因此 restore-symbol 自身代码的复用条款未说明；构建会链接 class-dump 子模块中的 MachObjC 库，该库采用 GPL-2.0-or-later。所审来源未提及 REA 的使用，本条目未处理任何二进制。"
+    ]
   }
 }
