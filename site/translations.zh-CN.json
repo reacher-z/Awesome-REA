@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "joern": {
+    "name": "Joern 代码属性图分析平台",
+    "requirements": [
+      "审阅时的版本为 v4.0.660，发布于 2026-10-19；README 称每天自动生成一次发布，所审阅的 master 提交比该标签多三个提交。每个版本都提供适用于 Linux、macOS 和 Windows（x86_64 与 arm64）的 joern-cli 压缩包及 joern-install.sh；README 还介绍了 ghcr.io/joernio/joern Docker 镜像，并为不支持 SSE4.2 的 CPU 提供 AlmaLinux 8 版本。",
+      "README 要求 JDK 21，并称其他版本未经充分测试；gcc 和 g++ 为可选项，用于查找 C/C++ 系统头文件。从源码构建使用 sbt，另有实验性的部分 Bazel 构建配置。输入为使用者自己的源码目录、class、JAR、APK 或 DEX 文件，或可执行文件。",
+      "二进制支持由 ghidra2cpg 前端提供，基于随附的 Ghidra 12.2 软件包。它为 MIPS 和 ARM/AArch64 设有专门的处理流程，其他处理器一律走 x86 流程；其 README 指出可变参数尚未正确处理。文档中的成熟度表将 C/C++ 和 Java 评为很高，JavaScript、Python 以及基于 Ghidra 的 x86/x64 评为高，JVM 字节码、Kotlin、PHP、Go 和 Swift 评为中等，Ruby 和 C# 评为中低；所审源码中的 Rust 和 ABAP 前端未在表中评级。",
+      "采用 Apache-2.0 许可；CITATION.cff 仍写着 2024-01-18 发布的 2.0 版。项目自称用于漏洞挖掘和静态程序分析研究；查询与污点分析结果反映的是生成的代码图，而非实际运行行为。未确立与 REA 的关联，本次审阅未构建、安装或运行任何内容。"
+    ]
   }
 }
