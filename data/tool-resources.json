@@ -11191,5 +11191,40 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "fakenet-ng",
+    "name": "FakeNet-NG",
+    "url": "https://github.com/mandiant/flare-fakenet-ng",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "protocol"
+    ],
+    "description_en": "Mandiant FLARE's dynamic network analysis tool for malware analysts, a successor to the original Fakenet. Its Diverter redirects traffic from local processes on Windows, or from other hosts in Linux MultiHost mode, to configurable listeners that simulate DNS, HTTP and HTTPS, SMTP, FTP, TFTP, IRC, POP and raw TCP or UDP services, with process and host filters, custom responses and an option to launch a command such as a debugger on a connection. Sessions can be saved as PCAP and end with an interactive HTML report of network-based indicators grouped by process and protocol.",
+    "description_zh": "Mandiant FLARE 团队面向恶意软件分析人员的动态网络分析工具，是原版 Fakenet 的后继。其 Diverter 将 Windows 本机进程的流量，或在 Linux MultiHost 模式下将其他主机的流量，重定向到可配置的监听器；这些监听器模拟 DNS、HTTP 与 HTTPS、SMTP、FTP、TFTP、IRC、POP 以及原始 TCP 或 UDP 服务，并支持进程和主机过滤、自定义响应，以及在连接到来时启动调试器等命令。会话可保存为 PCAP，结束时生成交互式 HTML 报告，按进程和协议归类展示网络行为指标。",
+    "evidence_url": "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v3.5, published 2025-04-09, as fakenet3.5.zip with a PyInstaller fakenet.exe for Windows. The reviewed master commit, 11 commits later and still versioned 3.5, adds a Windows release-build workflow, CRL generation for TLS revocation checks and SingleHost as the default NetworkMode, although the README still recommends Auto.",
+      "Module installs use Python 3.10.11 and administrator rights; Windows needs the Visual C++ build tools, and Linux needs build tools, Python and libnetfilter-queue development packages and port 53 freed from systemd-resolved, with the README's Linux steps tested on Ubuntu 24.04.2. SingleHost mode needs Windows Vista or later and is experimental on Linux, without process and host filtering; MultiHost is Linux-only, only TCP, UDP and ICMP are intercepted, and the Linux Diverter mishandles packets over 4,016 bytes.",
+      "The README recommends a controlled, isolated VM, because the tool changes the system's network settings, and says antivirus and EDR products may flag it. The repository bundles runtime helpers: WinDivert 32- and 64-bit DLLs and drivers, a small FakeNetMini.exe and other placeholder files served from defaultFiles, and TLS listener keys plus a static CA certificate and private key. The repository states no separate license for the WinDivert files, and the README notes that some dynamically loaded libraries may be LGPL; since the CA private key is public, trust that CA only inside the analysis VM.",
+      "docs/testing.md describes an interactive test/test.py suite and manual tests on Windows and Linux VMs on a host-only network; the GitHub workflow only builds the Windows PyInstaller release. FakeNet-NG itself is Apache-2.0. The reviewed sources state no REA use, and the tool was not run for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/fakenet/configs/default.ini",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/CHANGELOG.txt",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/docs/testing.md",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/docs/CustomResponse.md",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/.github/workflows/build.yaml",
+      "https://github.com/mandiant/flare-fakenet-ng/tree/7c8e006198b9df6e7b511140288fc5113c25d729/windivert",
+      "https://github.com/mandiant/flare-fakenet-ng/tree/7c8e006198b9df6e7b511140288fc5113c25d729/fakenet/defaultFiles",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/setup.py",
+      "https://github.com/mandiant/flare-fakenet-ng/blob/7c8e006198b9df6e7b511140288fc5113c25d729/LICENSE.txt",
+      "https://github.com/mandiant/flare-fakenet-ng/releases/tag/v3.5"
+    ]
   }
 ]

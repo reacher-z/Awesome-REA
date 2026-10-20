@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "fakenet-ng": {
+    "name": "FakeNet-NG 动态网络分析工具",
+    "requirements": [
+      "审阅时最新版本为 v3.5，发布于 2025-04-09，以 fakenet3.5.zip 提供基于 PyInstaller 的 Windows 版 fakenet.exe。所审阅的 master 提交比该版本多 11 个提交，版本号仍为 3.5，新增了 Windows 发布构建工作流、用于 TLS 吊销检查的 CRL 生成，并把默认 NetworkMode 改为 SingleHost，而 README 仍建议使用 Auto。",
+      "以 Python 模块安装时使用 Python 3.10.11 并需要管理员权限；Windows 需安装 Visual C++ 构建工具，Linux 需安装编译工具、Python 与 libnetfilter-queue 开发包，并让 systemd-resolved 释放 53 端口，README 的 Linux 步骤在 Ubuntu 24.04.2 上测试过。SingleHost 模式需要 Windows Vista 或更高版本，在 Linux 上仍属实验性且不支持进程与主机过滤；MultiHost 仅支持 Linux，只拦截 TCP、UDP 和 ICMP 流量，Linux Diverter 无法正确处理超过 4,016 字节的数据包。",
+      "README 建议在受控、隔离的虚拟机中使用，因为该工具会修改系统网络设置，并提到杀毒软件和 EDR 产品可能将其标记为恶意。仓库附带运行时所需的辅助文件：WinDivert 32 位与 64 位 DLL 和驱动、defaultFiles 中用于响应请求的小型 FakeNetMini.exe 及其他占位文件，以及 TLS 监听器密钥和一套静态 CA 证书与私钥。仓库未说明 WinDivert 文件的单独许可证，README 提到部分动态加载的库可能采用 LGPL；由于该 CA 私钥是公开的，只应在分析虚拟机内信任此 CA。",
+      "docs/testing.md 介绍了交互式 test/test.py 测试套件，以及在仅主机网络中的 Windows 与 Linux 虚拟机上进行的手动测试；GitHub 工作流只构建 Windows 的 PyInstaller 发布包。FakeNet-NG 本身采用 Apache-2.0。所审来源未提及 REA 的使用，本条目未运行该工具。"
+    ]
   }
 }
