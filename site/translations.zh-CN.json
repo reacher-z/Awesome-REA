@@ -6104,5 +6104,14 @@
       "需自行提供要分析的固件镜像；仓库不含任何固件，测试数据是 EMBA 结果导出，例如一份 CycloneDX SBOM 和若干模块 CSV/JSON 文件。扫描结论来自 EMBA，仍需分析人员解读。CI 在不安装 EMBA 的情况下安装服务端，运行 Django 与服务端测试、代码检查、ShellCheck 和 CodeQL，并不包含固件扫描。",
       "采用 MIT 许可证，版权归 The AMOS Projects 与 Siemens Energy AG；EMBA 及其安装的工具各自保留许可证。本次未安装或运行 EMBArk 和 EMBA，也未扫描任何固件。"
     ]
+  },
+  "frida-labs": {
+    "name": "Frida Labs Android 插桩练习",
+    "requirements": [
+      "审阅对象为 2026-02-22 的 main 提交，该提交为 0x8 至 0xB 这几道原生 Hook 题的讲解加入了 Frida 17 的变通写法；第一篇讲解部署的是 frida-server 16.1.4。项目未发布版本，README 称会陆续加入新挑战。",
+      "每道挑战都是作者提交的预编译 APK，包名形如 com.ad2001.frida0x1；仓库不含这些应用的源码，题解为附截图的 Markdown 讲解。讲解假定使用已 root 的 Android 设备或模拟器、adb、通过 pip 安装的 frida-tools 以及与设备架构匹配的 frida-server，并用 jadx 阅读 Java 代码、用 Ghidra 分析原生库；0xB 的讲解分别演示了 x86 和 ARM64 版本的指令修补。",
+      "flag 和题解脚本都与对应 APK 一同公开，因此这套挑战适合作为有指导的练习，而不是考核。README 推荐 learnfrida.info 和 Frida CodeShare 作为延伸资料。本次审阅阅读了 README 以及 0x1、0x8 和 0xB 的讲解，未安装或运行任何 APK。",
+      "仓库采用 MIT 许可证；Frida、jadx、Ghidra 及 Android 工具各有其条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
