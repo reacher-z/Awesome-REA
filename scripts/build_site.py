@@ -19,6 +19,7 @@ from build_readme import CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_manifest import write_build_manifest
+from language_fragment import add_language_fragment_script
 from data_downloads import build_data_downloads
 from open_graph import website_node
 from homepage_locales import HOMEPAGE_DESTINATIONS, localized_homepage
@@ -284,6 +285,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
     )
+    # Static pages with a language link keep the reader's card or section on the translated page.
+    add_language_fragment_script(output)
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
