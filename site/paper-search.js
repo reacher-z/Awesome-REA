@@ -16,12 +16,13 @@
           || ![paper.title, paper.title_zh, paper.description_en, paper.description_zh].every(text => typeof text === "string" && text.trim())
           || !Array.isArray(paper.authors) || !paper.authors.length || !paper.authors.every(name => typeof name === "string")
           || ![paper.doi, paper.arxiv_id].every(identifier => identifier === null || typeof identifier === "string")
+          || !(paper.venue === undefined || paper.venue === null || typeof paper.venue === "string")
           || !Number.isInteger(paper.year) || paper.year < 1000 || paper.year > 9999 || !STATUSES.has(paper.publication_status)
           || !Array.isArray(paper.targets) || !paper.targets.length || !paper.targets.every(target => TARGETS.has(target))) {
         throw new Error("Invalid paper search record");
       }
       ids.add(paper.id);
-      return {...paper, search: normalized([paper.id, paper.title, paper.title_zh, paper.description_en, paper.description_zh, ...paper.authors, paper.doi || "", paper.arxiv_id || ""].join(" "))};
+      return {...paper, search: normalized([paper.id, paper.title, paper.title_zh, paper.description_en, paper.description_zh, ...paper.authors, paper.venue || "", paper.doi || "", paper.arxiv_id || ""].join(" "))};
     });
   }
 

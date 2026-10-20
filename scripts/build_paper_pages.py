@@ -233,7 +233,7 @@ def build_paper_pages(
     search_script = (Path(__file__).resolve().parents[1] / 'site/paper-search.js').read_bytes()
     (site_dir / 'paper-search.js').write_bytes(search_script)
     search_href = '/paper-search.js?v=' + hashlib.sha256(search_script).hexdigest()[:16]
-    search_fields = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'doi', 'arxiv_id',
+    search_fields = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'venue', 'doi', 'arxiv_id',
                      'year', 'publication_status', 'targets')
     search_data = json.dumps({'schema_version': 1, 'papers': [
         {key: paper.get(key) for key in search_fields} for paper in ordered
@@ -315,14 +315,14 @@ def build_paper_pages(
   <div class="papers-actions"><a class="button button-outline" href="{web_url(repository_url + "/issues/new?template=paper.yml")}" target="_blank" rel="noopener noreferrer">{icon("document", use_pro)}{label("Suggest a paper", "推荐论文")}</a><a class="button button-outline" href="{browse}">{icon('layers', use_pro)}{label('Browse repositories', '浏览仓库')}</a><a class="papers-bibliography" href="/papers/references.bib" download="awesomerea-papers.bib" type="application/x-bibtex">{label('Download bibliography', '下载参考文献')} · BibTeX ↓</a></div>
   <p class="papers-review-policy">{label('We check primary sources; we do not rerun experiments or independently reproduce results.', '仅复核一手来源，未重新运行实验或独立复现结果。')}</p>
   <form id="paper-search" class="paper-search" role="search" aria-label="{label('Search research papers', '搜索研究论文')}" hidden>
-    <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, keyword, DOI or arXiv ID', '标题、作者、关键词、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
+    <div class="paper-search-field paper-search-query"><label for="paper-query">{label('Search papers', '搜索论文')}</label><input id="paper-query" name="q" type="search" maxlength="240" autocomplete="off" placeholder="{label('Title, author, venue, DOI or arXiv ID', '标题、作者、出处、DOI 或 arXiv 编号')}" aria-describedby="paper-search-help"></div>
     <div class="paper-search-field"><label for="paper-target">{label('Target', '目标')}</label><select id="paper-target" name="target"><option value="all">{label('All targets', '全部目标')}</option>{target_options}</select></div>
     <details class="paper-search-more" id="paper-more-filters"><summary>{label('More filters', '更多筛选')}</summary><div class="paper-search-options">
     <div class="paper-search-field"><label for="paper-status">{label('Publication status', '发表状态')}</label><select id="paper-status" name="status"><option value="all">{label('All statuses', '全部状态')}</option>{status_options}</select></div>
     <div class="paper-search-field"><label for="paper-year">{label('Year', '年份')}</label><select id="paper-year" name="year"><option value="all">{label('All years', '全部年份')}</option>{year_options}</select></div>
     <div class="paper-search-field paper-layout-field"><label for="paper-layout">{label('Layout', '布局')}</label><select id="paper-layout"><option value="compact">{label('Compact list', '紧凑列表')}</option><option value="cards">{label('Cards', '卡片')}</option></select></div>
     </div>
-    <p id="paper-search-help" class="paper-search-help">{label('Search in English or Chinese. Filters match every listed target; papers stay in their main section.', '支持中英文搜索。筛选匹配全部目标，论文仍按主要目标分组。')}</p>
+    <p id="paper-search-help" class="paper-search-help">{label('Search titles, authors, summaries and venues in English or Chinese. Filters match every listed target; papers stay in their main section.', '支持中英文搜索标题、作者、摘要及会议或期刊名称。筛选匹配全部目标，论文仍按主要目标分组。')}</p>
     </details>
     <button id="paper-clear" class="button button-outline" type="button">{label('Clear filters', '清除筛选')}</button>
     <p id="paper-results" class="paper-search-results" role="status" aria-live="polite" aria-atomic="true"></p>
