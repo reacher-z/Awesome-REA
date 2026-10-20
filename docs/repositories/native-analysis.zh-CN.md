@@ -186,7 +186,7 @@
 - [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — 面向 Ethereum 智能合约的二进制提升工具与分析框架。 **[388 星标]**
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust：Ghidra 的 Rust 反编译插件。 **[385 星标]**
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — 用于二进制分析与转换的中间表示。 **[382 星标]**
-- [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — 以终端为核心、使用 Rust 编写的逆向工程工具包，通过 CLI、TUI 和 MCP 分析 PE/ELF/Mach-O 文件，安装后的命令名为 knife。 **[380 星标]**
+- [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — 以终端为核心、使用 Rust 编写的逆向工程工具包，通过 CLI、TUI 和 MCP 分析 PE/ELF/Mach-O 文件，安装后的命令名为 knife。 **[380 星标]** · 精选：[knife 静态逆向工程工具包](https://awesomerea.org/zh/resources/knife/)
 - [Colton1skees/Dna](https://github.com/Colton1skees/Dna) — 基于 LLVM 的静态二进制分析框架。 **[380 星标]**
 - [feicong/macbook](https://github.com/feicong/macbook) — 《macOS 软件安全与逆向分析》随书源码。 **[377 星标]**
 - [Adubbz/Ghidra-Switch-Loader](https://github.com/Adubbz/Ghidra-Switch-Loader) — Ghidra 的 Nintendo Switch 加载器。 **[374 星标]**

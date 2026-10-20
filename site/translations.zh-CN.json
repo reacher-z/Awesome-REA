@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "knife": {
+    "name": "knife 静态逆向工程工具包",
+    "requirements": [
+      "仓库创建于 2026-08-08。v1.8.3 版本（2026-10-11）提供 Linux x86_64、macOS arm64/x86_64 和 Windows x86_64 压缩包，而 crates.io 上的 reknife crate 停在 1.8.0（2026-09-15）；所审阅的 main 提交比 v1.8.3 多 48 个提交，未发布的改动列在 CHANGELOG 中。从源码构建需要 Rust 1.88+，README 称除平台默认库外无需其他系统库；knife update 需要 curl。",
+      "输入为分析者提供的二进制，knife 只读取而不运行它。反汇编支持 x86/x64 和 AArch64，audit 的数据流检查仅限 x86/x64；README 指出可达性结果为空并不代表不可达，因为间接派发不在直接调用图之内。WebAssembly 只有节区、导入导出和 WAT 视图，不做代码分析。仓库不含任何目标二进制：测试在代码中生成合成的 PE 和 ELF 样本，data/loldrivers.json 是公开 LOLDrivers 列表的快照，用于 SHA-256 匹配。",
+      "knife mcp 通过 stdio 提供 MCP 服务；docs/MCP.md 列出 58 个工具，其中四个会把命名、注释、原型或暂存补丁写入项目数据库，而不修改二进制本身。可选的调查面板会把提示词和工具结果发送给使用者配置的模型服务（本地 Ollama、OpenRouter、OpenAI 或其他 OpenAI 兼容端点），托管服务的 API 密钥保存在操作系统凭据库中。可选适配器会调用另行安装的 Rizin，提供方文档还介绍了 Ghidra headless 和 capa 适配器；YARA-X 1.12 已内置用于规则扫描，GDB 运行时导出器有文档说明但尚未开放。",
+      "CI 在 Ubuntu、Windows 和 macOS 上运行 cargo build 与 test，并运行 cargo fmt 和 clippy。README 将 audit 结果描述为参数来源符合某种缺陷模式的调用点；其中关于 7z.dll、kernel32.dll 和 CVE-2017-11882 的数据均为作者自己的结果，本次未复现。",
+      "采用 MIT（2026，0xblack）。LOLDrivers 快照来自该项目的公开 API，Rizin、Ghidra、capa 和 YARA-X 保留各自许可证。仓库中的 AGENTS.md 是写给编程智能体的贡献指南；所审阅的来源未表明与 REA 有关，本次未安装或运行任何内容。"
+    ]
   }
 }

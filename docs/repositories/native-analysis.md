@@ -186,7 +186,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — A binary lifter and analysis framework for Ethereum smart contracts **[388 stars]**
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust: Rust decompiler plugin for Ghidra **[385 stars]**
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — Intermediate Representation for Binary analysis and transformation **[382 stars]**
-- [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife. **[380 stars]**
+- [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife. **[380 stars]** · Curated: [knife](https://awesomerea.org/resources/knife/)
 - [Colton1skees/Dna](https://github.com/Colton1skees/Dna) — LLVM based static binary analysis framework **[380 stars]**
 - [feicong/macbook](https://github.com/feicong/macbook) — Companion source code for the book macOS Software Security and Reverse Engineering. **[377 stars]**
 - [Adubbz/Ghidra-Switch-Loader](https://github.com/Adubbz/Ghidra-Switch-Loader) — Nintendo Switch loader for Ghidra **[374 stars]**
