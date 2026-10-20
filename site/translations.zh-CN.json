@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "jni-helper": {
+    "name": "jni_helper JNI 函数签名提取工具",
+    "requirements": [
+      "审阅时最新版本为 v0.6，发布于 2024-10-23，唯一的附件是 CI 构建的演示 APK；所审阅的 2025-02-24 master 提交只更新了 README 中的一个链接。CI 用 JDK 17 构建演示应用，并在其上运行 extract_jni.py 作为唯一的测试，既不检查输出，也不测试各反汇编器脚本。",
+      "extract_jni.py 需要 Python 3 以及 requirements.txt 中列出的 androguard、rich 和 pyelftools，输入为分析者已有的 APK；它只读取 lib/arm64-v8a 中的原生库。运行时通过 RegisterNatives 绑定的方法不在覆盖范围内，README 将其列为尚未完成的待办事项；各反汇编器脚本也只按 Java_ 修饰符号名查找函数。",
+      "Ghidra 脚本通过 Makefile 与自带的 jni.h.gdt 数据类型归档一起安装到用户主目录下的 ghidra_scripts 文件夹；IDA 插件分别提供适用于 IDA Pro 7.4 之前版本和 7.4 及以后版本的两个版本；Binary Ninja 脚本通过 File > Run Script 运行，并解析自带的 headers/jni.h。项目未说明所支持的 Ghidra、Binary Ninja 和 radare2 版本。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此这些脚本的复用条款并不明确。自带的头文件保留各自的声明：headers/jni.h 是 Oracle 采用 GPL-2.0 并附 Classpath 例外的文件，r2/jni.h 和 headers/art_method.h 则是采用 Apache-2.0 的 Android 开源项目文件。demo_apk 文件夹包含作者测试应用的源码。本次审阅未运行任何组件。"
+    ]
   }
 }

@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "jni-helper",
+    "name": "jni_helper",
+    "url": "https://github.com/evilpan/jni_helper",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Static helper by evilpan for reverse engineering Android JNI code. Its extract_jni.py script parses an APK's DEX files with Androguard, finds methods declared native, derives each one's mangled Java_ symbol name and C prototype, including overloaded methods, and saves them with the exported Java_ and JNI_OnLoad functions of the APK's arm64-v8a native libraries as a JSON signature file. Scripts for Ghidra, IDA Pro and Binary Ninja load that file and apply the prototypes and JNI types to the matching functions; a radare2 script is a work in progress.",
+    "description_zh": "evilpan 开发的 Android JNI 代码静态逆向辅助工具。其 extract_jni.py 脚本用 Androguard 解析 APK 中的 DEX 文件，找出声明为 native 的方法，推导出每个方法（包括重载方法）对应的 Java_ 修饰符号名和 C 函数原型，并连同 APK 中 arm64-v8a 原生库导出的 Java_ 函数和 JNI_OnLoad 一起保存为 JSON 签名文件。面向 Ghidra、IDA Pro 和 Binary Ninja 的脚本读取该文件，把函数原型和 JNI 类型应用到相应函数上；radare2 脚本仍在开发中。",
+    "evidence_url": "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.6, published 2024-10-23, whose only asset is the demo APK built by CI; the reviewed master commit of 2025-02-24 only updates a README link. CI builds the demo app with JDK 17 and runs extract_jni.py on it as its only test, without checking the output or exercising the disassembler scripts.",
+      "extract_jni.py needs Python 3 with androguard, rich and pyelftools from requirements.txt and takes an APK the analyst already has; it reads native libraries only from lib/arm64-v8a. Methods bound at run time through RegisterNatives are not covered, which the README lists as an open TODO, and the disassembler scripts find functions only by their mangled Java_ symbol names.",
+      "The Ghidra script is installed by a Makefile into the ghidra_scripts folder in the user's home directory, together with the bundled jni.h.gdt data-type archive; the IDA plugin has separate versions for IDA Pro before 7.4 and for 7.4 and later; the Binary Ninja script runs from File > Run Script and parses the bundled headers/jni.h. Supported versions of Ghidra, Binary Ninja and radare2 are not stated.",
+      "No license file, and GitHub detects none, so reuse terms for the scripts are unstated. Bundled headers keep their own notices: headers/jni.h is Oracle's GPL-2.0 file with the Classpath exception, while r2/jni.h and headers/art_method.h are Android Open Source Project files under Apache-2.0. The demo_apk folder holds the source of the author's test app. This review ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/extract_jni.py",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/requirements.txt",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/ghidra/README.md",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/ida/README.md",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/binary_ninja/jni_helper.py",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/r2/README.md",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/headers/jni.h",
+      "https://github.com/evilpan/jni_helper/blob/04b844c43438c2c0bbef29bf9b9695e5aba9a4bc/.github/workflows/main.yml",
+      "https://github.com/evilpan/jni_helper/releases/tag/v0.6"
+    ]
   }
 ]

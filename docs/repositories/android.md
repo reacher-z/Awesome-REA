@@ -64,7 +64,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda - Interactive Reverse Engineering Tool for Android Applications **[714 stars]**
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — Multiplatform and Feature-rich Port based on PSX decompilation of Silent Hill 1 made with Claude and Psycross. Still in beta and is in active development. **[682 stars]**
 - [darbra/sign](https://github.com/darbra/sign) — Ideas and experiences in reverse engineering app parameters, focused on Android. **[675 stars]**
-- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — Find JNI function signatures in APK and apply to reverse-engineering tools. **[675 stars]**
+- [evilpan/jni\_helper](https://github.com/evilpan/jni_helper) — Find JNI function signatures in APK and apply to reverse-engineering tools. **[675 stars]** · Curated: [jni\_helper](https://awesomerea.org/resources/jni-helper/)
 - [yazgx97/frida-android-hook](https://github.com/yazgx97/frida-android-hook) — A tool that helps you work with frida easily for Android platform **[654 stars]**
 - [bongtrop/hbctool](https://github.com/bongtrop/hbctool) — Hermes Bytecode Reverse Engineering Tool (Assemble/Disassemble Hermes Bytecode) **[642 stars]** · Curated: [hbctool](https://awesomerea.org/resources/hbctool/)
 - [sledgeh4w/chomper](https://github.com/sledgeh4w/chomper) — A lightweight emulation framework for emulating cryptographic algorithms in iOS executables and libraries. **[631 stars]**
