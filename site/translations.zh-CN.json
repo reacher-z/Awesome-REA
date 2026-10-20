@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "hollows-hunter": {
+    "name": "Hollows Hunter 进程内存植入扫描器",
+    "requirements": [
+      "审阅时最新版本为 v0.4.1.1，发布于 2025-09-13，提供 32 位和 64 位可执行文件、ZIP 压缩包以及 DLL 构建压缩包；README 还指向 Chocolatey 软件包，wiki 则提到不稳定的 AppVeyor 测试构建。所审阅的 master 提交标为尚未发布的 0.4.1.3，比该版本多 37 个提交，主要是 PE-sieve 子模块更新。",
+      "仅支持 Windows。从源码构建需递归克隆固定版本的 PE-sieve、paramkit 和 Microsoft krabsetw 子模块，并需要 CMake 3.12+；AppVeyor 使用 Visual Studio 2019 构建 x86 和 x64 版本，mingw_build.sh 展示了 MinGW-w64 交叉编译。ETW 模式仅适用于 64 位版本，需以管理员身份运行，并在当前目录写入 HH_ETWProfile.ini。",
+      "它扫描的是分析者自己系统或虚拟机中正在运行的进程，仓库中不含任何样本。钩子与补丁扫描默认关闭，需用 /hooks 启用；未指定 /dir 时转储写入当前目录；wiki 指出循环扫描全系统会占用大量处理器资源。wiki 提醒检测到的进程不一定是恶意的，并链接 PE-sieve 关于误报的 FAQ，因此报告和转储需人工复核；可选的 /suspend 与 /kill 会直接作用于正在运行的进程。",
+      "AppVeyor 在每次构建后运行 ctest：测试检查可执行文件能否启动，以及在干净的构建机上扫描时可疑进程数是否为零，随后执行 IAT、钩子、线程和 shellcode 模式扫描，但只检查报告格式。唯一的 GitHub 工作流用于发布 Doxygen 代码文档。",
+      "与 PE-sieve 一样采用 BSD-2-Clause；krabsetw 采用 MIT，固定版本的 paramkit 提交没有许可证文件。所审来源未提及 REA 的使用，本条目未扫描任何进程。"
+    ]
   }
 }

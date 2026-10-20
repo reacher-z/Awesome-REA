@@ -11191,5 +11191,40 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "hollows-hunter",
+    "name": "Hollows Hunter",
+    "url": "https://github.com/hasherezade/hollows_hunter",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Windows command-line memory scanner by hasherezade that runs the PE-sieve engine across many processes, or the whole system, instead of a single PID. It recognizes and dumps replaced or implanted PE modules, shellcode, hooks and other in-memory patches for further analysis, selecting processes by PID list, name list or creation time relative to the scan. Scans can repeat in a loop or, in the 64-bit build, run as an ETW listener whose INI profile chooses the triggering events.",
+    "description_zh": "hasherezade 开发的 Windows 命令行内存扫描器，把 PE-sieve 引擎从单个 PID 扩展到多个进程乃至整个系统。它识别并转储被替换或植入的 PE 模块、shellcode、钩子及其他内存补丁，供进一步分析，可按 PID 列表、进程名列表或相对于扫描开始时间的进程创建时间选择目标。扫描可以循环执行；64 位版本还能作为 ETW 监听器运行，由 INI 配置文件选择触发扫描的事件。",
+    "evidence_url": "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.4.1.1, published 2025-09-13, with 32- and 64-bit executables, ZIP archives and DLL-build archives; the README also points to a Chocolatey package, and the wiki to unstable AppVeyor test builds. The reviewed master commit identifies itself as the unreleased 0.4.1.3, 37 commits later and mostly PE-sieve submodule updates.",
+      "Windows only. Source builds need a recursive clone with the pinned PE-sieve, paramkit and Microsoft krabsetw submodules, plus CMake 3.12+; AppVeyor builds x86 and x64 with Visual Studio 2019, and mingw_build.sh shows a MinGW-w64 cross-build. ETW mode works only in the 64-bit build, must run as Administrator and writes HH_ETWProfile.ini to the current directory.",
+      "It scans processes running on the analyst's own system or VM, and the repository holds no samples. Hook and patch scanning is off by default and enabled with /hooks, dumps go to the current directory unless /dir is given, and the wiki calls looped full-system scans processor-intensive. The wiki warns that detected processes are not necessarily malicious and links PE-sieve's false-positive FAQ, so reports and dumps need review; the optional /suspend and /kill responses act on live processes.",
+      "AppVeyor runs ctest after each build: the tests check that the executable starts and that scans of the clean build machine report zero suspicious processes, then run IAT, hook, thread and shellcode-pattern scans that only check the report format. The only GitHub workflow publishes Doxygen code documentation.",
+      "BSD-2-Clause, like PE-sieve; krabsetw is MIT, and the pinned paramkit commit has no license file. The reviewed sources state no REA use, and no processes were scanned for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/hollows_hunter/wiki/Home/33d85ea58ca60980d911348a867488b957f13639",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/CMakeLists.txt",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/.appveyor.yml",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/.gitmodules",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/mingw_build.sh",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/hh_ver_short.h",
+      "https://github.com/hasherezade/hollows_hunter/blob/831561cd0c63d0d9c257ad3bc963327bd828b491/LICENSE",
+      "https://github.com/hasherezade/hollows_hunter/releases/tag/v0.4.1.1",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/README.md",
+      "https://github.com/microsoft/krabsetw/blob/6900de05d8ad7a38867719974f0406d5fd57af02/LICENSE"
+    ]
   }
 ]
