@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "kpwn-iosre",
+    "name": "iOSRE: iOS Reverse Engineering reference",
+    "url": "https://github.com/kpwn/iOSRE",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app",
+      "binary",
+      "firmware"
+    ],
+    "description_en": "A community-maintained reference on iOS reverse engineering started by kpwn, built from a wiki, a curated index of public technical papers and talks, and a few environment-setup scripts. The wiki pages introduce iOS internals such as the Mach-O executable format, the XNU kernel and IOKit, the boot chain and a history of platform mitigations, while the README states the project is an early, ongoing effort and several pages remain stubs. The repository hosts notes and external links rather than any Apple firmware, device images or app binaries.",
+    "description_zh": "由 kpwn 发起、社区维护的 iOS 逆向工程参考资料，由一个 wiki、一份公开技术论文与演讲的整理索引，以及几个环境配置脚本组成。wiki 页面介绍 iOS 的底层机制，如 Mach-O 可执行文件格式、XNU 内核与 IOKit、启动链，以及平台缓解措施的历史；README 说明项目尚处早期、仍在持续完善，多个页面仍是占位草稿。仓库只收录笔记和外部链接，并不包含任何 Apple 固件、设备镜像或应用二进制文件。",
+    "evidence_url": "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 20aff77 on the master branch; the repository was last pushed on 2018-06-30 and has not been updated since, so its iOS 8/9-era material is historical and does not track current iOS versions. The README calls the effort new and ongoing, and several wiki pages on topics such as auditing the XNU kernel, the boot ROM, the sandbox and userland subjects are still marked TODO.",
+      "The repository ships documentation and links, not target files: resources/papers/README.md is an index that links to publicly published papers and talks rather than hosting the PDFs, and no Apple firmware images, device keys or app binaries are committed. Working through the material assumes the reader supplies their own research device and Apple or third-party tooling, which the repository does not provide.",
+      "The setup scripts under resources/scripts target macOS with Xcode command-line tools and download third-party software at runtime, including Homebrew, ldid, Theos, Reveal, Hopper and class-dump, while a separate Install XPwn script builds tools on Linux through apt; each stays under its own license and none were installed or run for this review.",
+      "The README warns that files in the resources folder are mostly user-contributed and may be malicious and advises checking them before running; the project reports no testing or verified results.",
+      "LICENSE.txt is the author's Modified Anyone But Richard M Stallman (MABRMS) license, which GitHub cannot classify (NOASSERTION) and which permits broad reuse with the warranty disclaimer in that file; individual files may state otherwise, and the linked papers and tools keep their own terms. The reviewed sources establish no AI or REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/wiki/README.md",
+      "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/wiki/Mach-O.md",
+      "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/wiki/IOKit-RE.md",
+      "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/resources/papers/README.md",
+      "https://github.com/kpwn/iOSRE/tree/20aff7761b249cb2f76477ef39f8885bfcb404cf/resources/scripts",
+      "https://github.com/kpwn/iOSRE/blob/20aff7761b249cb2f76477ef39f8885bfcb404cf/LICENSE.txt",
+      "https://github.com/kpwn/iOSRE/tree/20aff7761b249cb2f76477ef39f8885bfcb404cf"
+    ]
   }
 ]

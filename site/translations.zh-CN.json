@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "kpwn-iosre": {
+    "name": "iOSRE：iOS 逆向工程参考资料",
+    "requirements": [
+      "审阅基于 master 分支提交 20aff77；仓库最后一次推送为 2018-06-30，此后未再更新，其 iOS 8/9 时代的内容属于历史资料，并不跟进当前 iOS 版本。README 称该项目尚新、仍在持续推进，关于审计 XNU 内核、BootROM、沙箱及用户态等主题的多个 wiki 页面仍标注为 TODO。",
+      "仓库提供的是文档与链接，而非目标文件：resources/papers/README.md 是一份索引，链接到公开发表的论文和演讲，而非托管 PDF；仓库未提交任何 Apple 固件镜像、设备密钥或应用二进制。按材料实践需要读者自备研究设备以及 Apple 或第三方工具链，仓库本身并不提供。",
+      "resources/scripts 下的配置脚本面向装有 Xcode 命令行工具的 macOS，并在运行时下载第三方软件，包括 Homebrew、ldid、Theos、Reveal、Hopper 和 class-dump；另有一个 Install XPwn 脚本在 Linux 上通过 apt 构建工具。各工具均保留自身许可证，本次审阅未安装或运行它们。",
+      "README 提醒 resources 目录中的文件大多由用户贡献，可能带有恶意，建议运行前自行检查；项目未报告任何测试或验证结果。",
+      "LICENSE.txt 为作者自拟的 Modified Anyone But Richard M Stallman（MABRMS）许可证，GitHub 无法识别（NOASSERTION），其条款允许在附带免责声明的前提下广泛复用；个别文件可能另有声明，所链接的论文和工具亦各自保留其条款。所审来源未确立与 AI 或 REA 的关联。"
+    ]
   }
 }
