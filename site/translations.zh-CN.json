@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "ponce": {
+    "name": "Ponce IDA 符号执行与污点分析插件",
+    "requirements": [
+      "审阅时的最新版本为 v0.3.7，发布于 2023-06-01，提供 Windows、Linux 和 macOS 的预编译压缩包；Windows 压缩包包含适用于 IDA 7.0 至 8.1 的 Ponce.dll 和 Ponce64.dll，没有更新 IDA 版本的构建。README 称 Ponce 适用于 IDA 7.0 及以上任意版本，但必须使用为所装 IDA 版本编译的二进制。所审阅的 master 提交（2025-06-06）在该版本之后只增加了一项尚未完成的 CI 修复。",
+      "安装时将对应构建复制到 IDA 的 plugins 目录；README 称原生支持 Windows、Linux 和 OS X。从源码构建需要 CMake 3.15+、目标版本的 IDA SDK（IDASDK_ROOT_DIR）以及 Triton，CI 通过 vcpkg 安装 Triton；伪代码反馈功能还需要来自附带 Hex-Rays 反编译器的 IDA 安装中的 hexrays.hpp，否则需使用 -DBUILD_HEXRAYS_SUPPORT=OFF。仓库中不含任何 SDK 文件，其 CI 从另一个非公开仓库克隆 SDK 压缩包，因此从源码构建需使用者自备 SDK。",
+      "Ponce 分析的是分析人员在 IDA 调试器中运行的程序，并逐条指令单步执行；README 称在作者测试中每秒约可处理 3000 条指令，printf 等常见库函数默认被列入黑名单、不参与分析。局限性文档指出，符号化的内存索引可能导致丢失对输入的跟踪，Triton 对浮点指令支持不佳，且混合执行只分析实际执行过的指令。",
+      "Ponce 本身采用 BSD 风格许可，LICENSE 中还收录了 Triton 的 BSD 许可和 Z3 的 MIT 许可；GitHub 未能识别该文件的许可类型。未确立与 REA 的关联，本次审阅未安装或运行任何内容。"
+    ]
   }
 }
