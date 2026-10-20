@@ -6465,5 +6465,15 @@
       "第二阶段的许多课程以及第 70、100 天的练习都以修改第三方应用为主线，包括绕过授权、付费功能、Root 检测、证书固定和反调试等检查。README 和课程均未就合法使用或授权作出任何说明；本条目不转述其中的具体步骤。",
       "仓库采用 MIT 许可证（版权归 Evil0ctal，2025 年）；Crackme 题目来自采用 CC BY-SA 4.0 的 OWASP MASTG 仓库，课程提到的工具适用各自的条款。本合集阅读了 README、课程文件树、Level 1 解题记录和部分课程，没有实际学习课程或运行 Crackme。课程只把 AI 作为逆向对象之一提及，未确立与 REA 的关联。"
     ]
+  },
+  "fuji-cam-wifi-tool-protocol-case": {
+    "name": "fuji-cam-wifi-tool：重建 Fujifilm X 系列相机 Wi-Fi 遥控协议",
+    "requirements": [
+      "审阅基于 master 分支 2021-03-17 的提交 c597fc4，即仓库最后一次推送；没有发布版本或标签。README 称这是逆向该协议的尝试，工具功能很有限、基本没有文档，并建议直接阅读代码。连接步骤以 X-T10 为例，源码注释另提到 X-T100 的对焦点范围；未给出其他 X 系列型号的兼容列表。",
+      "需要使用者自有、支持 Wi-Fi 遥控的 Fujifilm X 系列相机：电脑接入相机自建的无线接入点，客户端连接 192.168.0.1 的 55740–55742 端口，首次连接须在相机上确认，工具会以“HackedClient”名义注册。仓库不含相机固件、Fujifilm 应用或抓包文件；README 提供了用于查看控制报文和 JPEG 流帧的 Wireshark 显示过滤器。",
+      "README 说明可在 macOS、Linux 和 Windows 上用 CMake 构建（最低 CMake 2.8.11，C++11）。交互式命令行需要初始化 hkr/linenoise-ng 子模块，Windows 构建需链接 Winsock。可选的 OpenCV 支持增加 stream_cv 命令，可把实时取景送入 Linux v4l2loopback 设备作为摄像头使用。",
+      "仓库没有测试或 CI。报文含义是在代码注释中推断的，其中多处标为未知或待办，命令在相机上的表现仍属贡献者自述；本次审阅未构建或运行任何内容。",
+      "采用 Unlicense（公有领域贡献声明）；AUTHORS.txt 列出五位贡献者。Fujifilm 相机、固件、应用和商标仍归各自权利人所有。所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }
