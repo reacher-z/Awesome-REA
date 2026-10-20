@@ -16,6 +16,7 @@ from functools import lru_cache
 import json
 from pathlib import Path
 import re
+import signal
 import subprocess
 import threading
 import time
@@ -1074,7 +1075,14 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             break
     print(f'DISCOVERY_COMPLETE known_repositories={len(known_ids)} new_readme_candidates={len(candidates)}; starting actual README reads', flush=True)
     checkpoint()
-    deferred = False
+    deferred = interrupted = False
+
+    def interrupted_checkpoint():
+        # A record appended before the interruption is kept; an ID whose record was not is retried later.
+        attempted_ids.intersection_update(entry['id'] for entry in records + failures)
+        checkpoint()
+        print(f'INTERRUPTED success={len(records)} failed={len(failures)}; in-progress checkpoint saved', flush=True)
+
     def delivery_candidates():
         for candidate in candidates.values():
             if not delivery_block('scan-' + str(candidate['id'])):
@@ -1091,134 +1099,159 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
             'request_count': 0, 'response_bytes': 0, 'reported_query_cost': 0,
             'queries_with_cost': 0, 'queries_without_cost': 0, 'elapsed_seconds': 0.0, 'last_rate_limit': {}}
         checkpoint_attempts = len(attempted_ids)
-        while len(records) < args.target:
-            batch = []
-            for _ in range(min(readme_transport.batch_size, args.target - len(records))):
-                item = next(source, None)
-                if item is not None:
-                    batch.append(item)
-            if not batch:
-                break
-            batch_clock = time.monotonic()
-            results = readme_transport.fetch_batch(batch)
-            batch_seconds = time.monotonic() - batch_clock
-            transport_receipt = meta['current_run']['readme_transport']
-            receipts = getattr(readme_transport, 'last_batch_receipts', [])
-            transport_receipt['elapsed_seconds'] += batch_seconds
-            transport_receipt['request_count'] += len(receipts)
-            transport_receipt['queries_with_cost'] += sum('cost' in (row.get('rate_limit') or {}) for row in receipts)
-            transport_receipt['queries_without_cost'] += sum('cost' not in (row.get('rate_limit') or {}) for row in receipts)
-            transport_receipt['response_bytes'] += sum(row.get('response_bytes', 0) for row in receipts)
-            transport_receipt['reported_query_cost'] += sum((row.get('rate_limit') or {}).get('cost', 0) for row in receipts)
-            transport_receipt['last_rate_limit'] = dict(getattr(readme_transport, 'rate_limit', {}))
-            batch_paused = any(results.get(item['id'], {'status': 'retry'}).get('status') in ('retry', 'deferred') for item in batch)
-            batch_retry_after = max([60] + [int(value.get('retry_after') or 60) for value in results.values()])
-            for candidate in batch:
-                result = results.get(candidate['id'], {'status': 'retry'})
-                status = result.get('status')
-                if status not in transport_counts:
-                    raise ValueError('Unexpected README transport outcome')
-                transport_counts[status] += 1
-                if status in ('retry', 'deferred') or status == 'fallback' and batch_paused:
-                    deferred = True
-                    if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                        frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
-                            retry_after_seconds=max(60, min(604800, batch_retry_after)))
-                    continue
-                if status == 'rejected':
-                    if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                        frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='ineligible', retry_after_seconds=86400)
-                    continue  # Eligibility is metadata evidence, not a README attempt.
-                repo = dict(result['repository'])
-                repo.update({key: value for key, value in candidate.items() if key.startswith('_')})
-                repo['_metadata_observed_at'] = result['repository']['_metadata_observed_at']
-                if (repository_ineligibility(repo) or repo['id'] != candidate['id']
-                        or repo['full_name'].casefold() in retained_names):
-                    raise ValueError('README transport returned inconsistent repository identity')
-                if status == 'fallback':
-                    record, failure = scan_readme(api, repo)
-                    if failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable'):
-                        pending_delivery_blocked = True
-                        if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
-                            reason = 'not-found' if failure['reason'] == 'readme-repository-unavailable' else 'ineligible'
-                            frontier_api.defer_candidates(frontier_state, [candidate['id']], reason=reason,
-                                                          retry_after_seconds=86400)
-                        continue  # Only public-identity metadata was requested; no README attempt.
-                    if failure and (failure.get('http_status') in (401, 403, 408, 429)
-                                    or (failure.get('http_status') or 0) >= 500
-                                    or failure['reason'] in ('network-failure', 'retry-limit', 'rate-limited', 'invalid-api-json')):
-                        # An exhausted REST retry must not become a permanent
-                        # source failure or trigger another sibling fallback.
-                        deferred = batch_paused = True
+        try:
+            while len(records) < args.target:
+                batch = []
+                for _ in range(min(readme_transport.batch_size, args.target - len(records))):
+                    item = next(source, None)
+                    if item is not None:
+                        batch.append(item)
+                if not batch:
+                    break
+                batch_clock = time.monotonic()
+                results = readme_transport.fetch_batch(batch)
+                batch_seconds = time.monotonic() - batch_clock
+                transport_receipt = meta['current_run']['readme_transport']
+                receipts = getattr(readme_transport, 'last_batch_receipts', [])
+                transport_receipt['elapsed_seconds'] += batch_seconds
+                transport_receipt['request_count'] += len(receipts)
+                transport_receipt['queries_with_cost'] += sum('cost' in (row.get('rate_limit') or {}) for row in receipts)
+                transport_receipt['queries_without_cost'] += sum('cost' not in (row.get('rate_limit') or {}) for row in receipts)
+                transport_receipt['response_bytes'] += sum(row.get('response_bytes', 0) for row in receipts)
+                transport_receipt['reported_query_cost'] += sum((row.get('rate_limit') or {}).get('cost', 0) for row in receipts)
+                transport_receipt['last_rate_limit'] = dict(getattr(readme_transport, 'rate_limit', {}))
+                batch_paused = any(results.get(item['id'], {'status': 'retry'}).get('status') in ('retry', 'deferred') for item in batch)
+                batch_retry_after = max([60] + [int(value.get('retry_after') or 60) for value in results.values()])
+                for candidate in batch:
+                    result = results.get(candidate['id'], {'status': 'retry'})
+                    status = result.get('status')
+                    if status not in transport_counts:
+                        raise ValueError('Unexpected README transport outcome')
+                    transport_counts[status] += 1
+                    if status in ('retry', 'deferred') or status == 'fallback' and batch_paused:
+                        deferred = True
                         if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
                             frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
                                 retry_after_seconds=max(60, min(604800, batch_retry_after)))
                         continue
-                else:
-                    try:
-                        record = readme_record(repo, result['metadata'], result['content'])
-                    except ScanError as error:
-                        record, failure = None, {
-                            'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
-                            'url': repo['html_url'], 'observed_at': now(), 'scan_status': 'failed',
-                            'reason': error.reason, 'http_status': error.status}
+                    if status == 'rejected':
+                        if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                            frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='ineligible', retry_after_seconds=86400)
+                        continue  # Eligibility is metadata evidence, not a README attempt.
+                    repo = dict(result['repository'])
+                    repo.update({key: value for key, value in candidate.items() if key.startswith('_')})
+                    repo['_metadata_observed_at'] = result['repository']['_metadata_observed_at']
+                    if (repository_ineligibility(repo) or repo['id'] != candidate['id']
+                            or repo['full_name'].casefold() in retained_names):
+                        raise ValueError('README transport returned inconsistent repository identity')
+                    if status == 'fallback':
+                        record, failure = scan_readme(api, repo)
+                        if failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable'):
+                            pending_delivery_blocked = True
+                            if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                                reason = 'not-found' if failure['reason'] == 'readme-repository-unavailable' else 'ineligible'
+                                frontier_api.defer_candidates(frontier_state, [candidate['id']], reason=reason,
+                                                              retry_after_seconds=86400)
+                            continue  # Only public-identity metadata was requested; no README attempt.
+                        if failure and (failure.get('http_status') in (401, 403, 408, 429)
+                                        or (failure.get('http_status') or 0) >= 500
+                                        or failure['reason'] in ('network-failure', 'retry-limit', 'rate-limited', 'invalid-api-json')):
+                            # An exhausted REST retry must not become a permanent
+                            # source failure or trigger another sibling fallback.
+                            deferred = batch_paused = True
+                            if frontier_api is not None and str(candidate['id']) in frontier_state['candidates']:
+                                frontier_api.defer_candidates(frontier_state, [candidate['id']], reason='deferred',
+                                    retry_after_seconds=max(60, min(604800, batch_retry_after)))
+                            continue
                     else:
-                        record['readme_transport'] = 'github-graphql-blob'
-                        record['readme_graphql_endpoint'] = 'https://api.github.com/graphql'
-                        record['readme_commit_sha'] = result['metadata']['commit_oid']
-                        if record['readme_git_sha_matches_content'] is not True:
-                            raise ValueError('GraphQL README bytes do not match the immutable blob')
-                        failure = None
-                observed = record or failure
-                if observed['id'] in attempted_ids:
-                    raise ValueError('Duplicate repository attempt')
-                attempted_ids.add(observed['id'])
-                retained_names.add(observed['full_name'].casefold())
-                (records if record else failures).append(observed)
-            if len(attempted_ids) - checkpoint_attempts >= 100 or deferred:
-                checkpoint()
-                checkpoint_attempts = len(attempted_ids)
-                print(f'README_PROGRESS success={len(records)} failed={len(failures)} transport=graphql', flush=True)
-            if deferred:
-                break  # Do not evade rate/backpressure by switching transports.
+                        try:
+                            record = readme_record(repo, result['metadata'], result['content'])
+                        except ScanError as error:
+                            record, failure = None, {
+                                'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
+                                'url': repo['html_url'], 'observed_at': now(), 'scan_status': 'failed',
+                                'reason': error.reason, 'http_status': error.status}
+                        else:
+                            record['readme_transport'] = 'github-graphql-blob'
+                            record['readme_graphql_endpoint'] = 'https://api.github.com/graphql'
+                            record['readme_commit_sha'] = result['metadata']['commit_oid']
+                            if record['readme_git_sha_matches_content'] is not True:
+                                raise ValueError('GraphQL README bytes do not match the immutable blob')
+                            failure = None
+                    observed = record or failure
+                    if observed['id'] in attempted_ids:
+                        raise ValueError('Duplicate repository attempt')
+                    attempted_ids.add(observed['id'])
+                    retained_names.add(observed['full_name'].casefold())
+                    (records if record else failures).append(observed)
+                if len(attempted_ids) - checkpoint_attempts >= 100 or deferred:
+                    checkpoint()
+                    checkpoint_attempts = len(attempted_ids)
+                    print(f'README_PROGRESS success={len(records)} failed={len(failures)} transport=graphql', flush=True)
+                if deferred:
+                    break  # Do not evade rate/backpressure by switching transports.
+        except KeyboardInterrupt:
+            interrupted = True
+            interrupted_checkpoint()
     else:
         source = iter(delivery_candidates())
+
+        def accept(future, repo):
+            nonlocal pending_delivery_blocked
+            try:
+                record, failure = future.result()
+            except Exception as error:
+                record, failure = None, {
+                    'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
+                    'url': repo['html_url'], 'observed_at': now(),
+                    'scan_status': 'failed', 'reason': 'worker-' + type(error).__name__,
+                    'http_status': None,
+                }
+            metadata_only = failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable')
+            if metadata_only:
+                pending_delivery_blocked = True
+                return
+            result = record or failure
+            if result['id'] in attempted_ids:
+                raise ValueError('Duplicate repository attempt')
+            attempted_ids.add(result['id'])
+            (records if record else failures).append(result)
+            new_attempts = len(records) + len(failures) - retained_successes - retained_failures
+            if new_attempts % 100 == 0 and not interrupted:
+                print(f'README_PROGRESS success={len(records)} failed={len(failures)} new_attempts={new_attempts}', flush=True)
+                checkpoint()
+
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
             pending = {}
             for _ in range(min(args.workers, max(0, args.target - len(records)))):
                 repo = next(source, None)
                 if repo is not None:
                     pending[pool.submit(scan_readme, api, repo)] = repo
-            while pending:
-                completed, _ = wait(pending, return_when=FIRST_COMPLETED)
-                for future in completed:
-                    repo = pending.pop(future)
-                    try:
-                        record, failure = future.result()
-                    except Exception as error:
-                        record, failure = None, {
-                            'id': 'scan-' + str(repo['id']), 'full_name': repo['full_name'],
-                            'url': repo['html_url'], 'observed_at': now(),
-                            'scan_status': 'failed', 'reason': 'worker-' + type(error).__name__,
-                            'http_status': None,
-                        }
-                    metadata_only = failure and failure['reason'] in ('readme-repository-identity-unconfirmed', 'readme-repository-unavailable')
-                    if metadata_only:
-                        pending_delivery_blocked = True
-                    else:
-                        result = record or failure
-                        if result['id'] in attempted_ids:
-                            raise ValueError('Duplicate repository attempt')
-                        attempted_ids.add(result['id'])
-                        (records if record else failures).append(result)
-                        new_attempts = len(records) + len(failures) - retained_successes - retained_failures
-                        if new_attempts % 100 == 0:
-                            print(f'README_PROGRESS success={len(records)} failed={len(failures)} new_attempts={new_attempts}', flush=True)
-                            checkpoint()
-                    if len(records) + len(pending) < args.target:
-                        following = next(source, None)
-                        if following is not None:
-                            pending[pool.submit(scan_readme, api, following)] = following
+            try:
+                while pending:
+                    completed, _ = wait(pending, return_when=FIRST_COMPLETED)
+                    for future in completed:
+                        # Remove the future only after its result is recorded.
+                        accept(future, pending[future])
+                        del pending[future]
+                        if len(records) + len(pending) < args.target:
+                            following = next(source, None)
+                            if following is not None:
+                                pending[pool.submit(scan_readme, api, following)] = following
+            except KeyboardInterrupt:
+                interrupted = True
+                # Stop queued reads, record each already finished one once, and save before
+                # waiting for requests still in flight; their results are not retained.
+                for future in pending:
+                    future.cancel()
+                attempted_ids.intersection_update(entry['id'] for entry in records + failures)
+                for future, repo in pending.items():
+                    if (future.done() and not future.cancelled()
+                            and 'scan-' + str(repo['id']) not in attempted_ids):
+                        accept(future, repo)
+                interrupted_checkpoint()
+    if interrupted:
+        return 130
     # Keep the prior snapshot as an unchanged prefix; order only the new evidence.
     records[retained_successes:] = sorted(records[retained_successes:], key=lambda record: (-record['stars'], record['full_name'].casefold()))
     failures[retained_failures:] = sorted(failures[retained_failures:], key=lambda record: record['full_name'].casefold())
@@ -1316,6 +1349,9 @@ def main():
                                                   approved_queries=approved))
         search_frontier.save_frontier(args.frontier, state, approved_queries=approved)
         frontier = state, args.frontier, approved
+    def stop(signum, frame):
+        raise KeyboardInterrupt  # Termination saves completed reads like Ctrl-C.
+    signal.signal(signal.SIGTERM, stop)
     return run_scan(api, args, resumed, resume_sha256, readme_transport=transport, frontier=frontier)
 
 
