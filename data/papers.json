@@ -4974,5 +4974,69 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-waffle",
+    "title": "WAFFLE: Fine-tuning Multi-Modal Model for Automated Front-End Development",
+    "title_zh": "WAFFLE：面向自动化前端开发的多模态模型微调",
+    "authors": [
+      "Shanchao Liang",
+      "Nan Jiang",
+      "Shangshu Qian",
+      "Lin Tan"
+    ],
+    "year": 2025,
+    "publication_date": "2025-07",
+    "date_precision": "month",
+    "date_basis": "The official ACL Anthology record gives July 2025. Crossref records only the year; the July 27–August 1 conference dates printed in the PDF are not treated as a publication day.",
+    "date_basis_zh": "ACL Anthology 官方记录给出 2025 年 7 月。Crossref 仅记录年份；PDF 所印 7 月 27 日至 8 月 1 日的会议日期不作为出版日。",
+    "venue": "ACL 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2410.18362",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2024-10-24",
+    "doi": "10.18653/v1/2025.acl-long.1208",
+    "citation": {
+      "container_title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      "publisher": "Association for Computational Linguistics",
+      "pages": "24786-24802",
+      "sources": [
+        "https://aclanthology.org/2025.acl-long.1208/",
+        "https://api.crossref.org/works/10.18653/v1/2025.acl-long.1208"
+      ]
+    },
+    "url": "https://aclanthology.org/2025.acl-long.1208/",
+    "pdf_url": "https://aclanthology.org/2025.acl-long.1208.pdf",
+    "code_url": "https://github.com/lt-asset/Waffle/tree/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088",
+    "project_url": null,
+    "targets": [
+      "website"
+    ],
+    "description_en": "WAFFLE fine-tunes multimodal LLMs to generate HTML/CSS from UI screenshots. A quarter of the decoder's attention heads use a structure-aware mask that limits each element's tokens to its parent, preceding siblings and its own earlier tokens. A contrastive objective aligns image and code embeddings over groups of four mutated WebSight-v0.1 pages. With VLM-WebSight and Moondream2 backbones, the authors report up to 9.00 pp higher HTML-Match and 0.0982 higher CW-SSIM than standard fine-tuning on WebSight-Test, plus gains on every Design2Code metric.",
+    "description_zh": "WAFFLE 微调多模态大语言模型，使其根据界面截图生成 HTML/CSS。解码器中四分之一的注意力头使用结构感知掩码，使每个元素的词元只关注其父元素、前序兄弟元素及自身此前的词元。对比学习目标以四个经变异的 WebSight-v0.1 页面为一组，对齐图像与代码嵌入。以 VLM-WebSight 和 Moondream2 为骨干模型时，作者报告在 WebSight-Test 上比标准微调最多高 9.00 个百分点的 HTML-Match 和 0.0982 的 CW-SSIM，在 Design2Code 的各项指标上也均有提升。",
+    "scope_limitations_en": "Generates static HTML/CSS from a single screenshot; it does not recover a site's original source, scripts, interactions, navigation or backend. HTML-Match strips styles and attributes before requiring pixel-identical renders, while CW-SSIM, CLIP and LLEM are similarity scores; the authors note that these metrics do not fully capture human judgment. Training data and the 500-page WebSight-Test are synthetic WebSight-style pages; Design2Code supplies 484 real-world pages. Only two backbones were fine-tuned, and on Design2Code the Moondream2 model trained with WAFFLE stays below GPT-4o and GPT-4o mini. The Gemini 1.5 Pro baseline answered 384 Design2Code instances. Human ranking used 50 samples per dataset and two annotators. Commercial-model prompting results are historical baselines, not current rankings.",
+    "scope_limitations_zh": "方法根据单张截图生成静态 HTML/CSS，并不恢复网站原始源码、脚本、交互、导航或后端。HTML-Match 先去除样式和属性，再要求渲染结果逐像素一致；CW-SSIM、CLIP 与 LLEM 则是相似度分数，作者也指出这些指标不能完全反映人工判断。训练数据及含 500 个页面的 WebSight-Test 均为合成的 WebSight 风格页面；Design2Code 提供 484 个真实网页。仅微调了两种骨干模型；在 Design2Code 上，经 WAFFLE 训练的 Moondream2 模型仍低于 GPT-4o 和 GPT-4o mini。Gemini 1.5 Pro 基线只回答了 384 个 Design2Code 实例。人工排序每个数据集使用 50 个样本，由两名标注者完成。商业模型的提示结果是历史基线，并非当前排名。",
+    "why_fits_en": "Adds a training method for screenshot-to-HTML website reconstruction that builds DOM hierarchy into attention, complementing the collection's screenshot-to-code benchmarks, datasets and prompting pipelines.",
+    "why_fits_zh": "补充一种将 DOM 层级结构引入注意力机制、用于截图到 HTML 网站重建的训练方法，与本合集中的截图转代码基准、数据集及提示流程互补。",
+    "metadata_notes": "Publication identity follows the ACL Anthology record and PDF. Reviewed arXiv v3 of 2026-03-02 (v1 2024-10-24, v2 2025-06-24) is titled “WAFFLE: Finetuning Multi-Modal Models for Automated Front-End Development”; the repository README and model card use “WAFFLE: Multi-Modal Model for Automated Front-End Development” and cite the arXiv preprint. The paper's availability statement links lt-asset/Waffle. The reviewed 2025-05-28 snapshot is BSD-3-Clause and provides VLM-WebSight inference, Selenium/Chrome rendering, the HTML tree-attention utilities, a contrastive dataset class reading a local load_from_disk dataset, and 500 WebSight-Test PNG screenshots without reference HTML. Although README describes a training file, the snapshot has no training script, Moondream2 code, metric implementation or mutated training set; no public copy of the 231,940-pair set was found in the lt-asset Hugging Face organization. Weights are on Hugging Face as lt-asset/Waffle_VLM_WebSight (7B). The GitHub README releases them under Apache-2.0 subject to the base model's terms, while the model card declares bsd-3-clause-clear; no single license is inferred. Documented dependencies include Python 3.10.14, PyTorch 2.3.0, Transformers 4.41.1, PEFT 0.11.1 and DeepSpeed 0.14.1; the inference script expects a CUDA GPU and has placeholder paths. Source files were read without downloading weights or data, running code or reproducing results.",
+    "metadata_notes_zh": "出版身份以 ACL Anthology 记录与 PDF 为准。所审阅的 2026-03-02 arXiv v3（v1 为 2024-10-24，v2 为 2025-06-24）题为“WAFFLE: Finetuning Multi-Modal Models for Automated Front-End Development”；仓库 README 和模型卡则使用“WAFFLE: Multi-Modal Model for Automated Front-End Development”，并引用 arXiv 预印本。论文的可用性声明链接至 lt-asset/Waffle。所审阅的 2025-05-28 快照采用 BSD-3-Clause 许可，提供 VLM-WebSight 推理、Selenium/Chrome 渲染、HTML 树注意力工具、读取本地 load_from_disk 数据集的对比学习数据集类，以及 500 张不含参考 HTML 的 WebSight-Test PNG 截图。README 虽提及训练文件，快照中并无训练脚本、Moondream2 代码、指标实现或变异训练集；在 lt-asset 的 Hugging Face 组织中也未找到含 231,940 对样本的数据集公开副本。权重以 lt-asset/Waffle_VLM_WebSight（7B）发布于 Hugging Face。GitHub README 称在遵守基础模型条款的前提下以 Apache-2.0 发布，模型卡则声明 bsd-3-clause-clear；本条目不据此推定单一许可证。文档列出的依赖包括 Python 3.10.14、PyTorch 2.3.0、Transformers 4.41.1、PEFT 0.11.1 与 DeepSpeed 0.14.1；推理脚本需要 CUDA GPU，路径仍为占位值。本次仅阅读源码文件，未下载权重或数据、运行代码或复现结果。",
+    "evidence_urls": [
+      "https://aclanthology.org/2025.acl-long.1208/",
+      "https://aclanthology.org/2025.acl-long.1208.pdf",
+      "https://api.crossref.org/works/10.18653/v1/2025.acl-long.1208",
+      "https://arxiv.org/abs/2410.18362",
+      "https://github.com/lt-asset/Waffle/blob/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/README.md",
+      "https://github.com/lt-asset/Waffle/blob/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/LICENSE",
+      "https://github.com/lt-asset/Waffle/tree/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/vlm_websight",
+      "https://github.com/lt-asset/Waffle/blob/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/vlm_websight/eval_websight.py",
+      "https://github.com/lt-asset/Waffle/blob/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/vlm_websight/dataset.py",
+      "https://github.com/lt-asset/Waffle/tree/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088/WebSight-Test",
+      "https://huggingface.co/lt-asset/Waffle_VLM_WebSight/blob/296f6de57f8e646b1455ca00e3bc596ac0ea9429/README.md",
+      "https://huggingface.co/HuggingFaceM4/VLM_WebSight_finetuned"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

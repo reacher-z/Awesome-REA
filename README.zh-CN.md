@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 89](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (88) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (89) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -2954,13 +2954,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**88 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**89 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (35) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (35) · [网站](#papers-website-reconstruction) (16)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -3788,6 +3788,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 主要评估视觉与 HTML 重建技能。论文虽含初步交互研究，但并非完整流程或后端等价评测。官方仓库目前提供 README 和图片，未提供说明中提及的评估脚本。
 
   **作者:** Zhiyu Lin 等
+
+  </details>
+
+- [**WAFFLE：面向自动化前端开发的多模态模型微调**](https://aclanthology.org/2025.acl-long.1208/)
+
+  WAFFLE 微调多模态大语言模型，使其根据界面截图生成 HTML/CSS。解码器中四分之一的注意力头使用结构感知掩码，使每个元素的词元只关注其父元素、前序兄弟元素及自身此前的词元。对比学习目标以四个经变异的 WebSight-v0.1 页面为一组，对齐图像与代码嵌入。以 VLM-WebSight 和 Moondream2 为骨干模型时，作者报告在 WebSight-Test 上比标准微调最多高 9.00 个百分点的 HTML-Match 和 0.0982 的 CW-SSIM，在 Design2Code 的各项指标上也均有提升。
+
+  ACL 2025 · 会议论文 · [PDF](https://aclanthology.org/2025.acl-long.1208.pdf) · [代码](https://github.com/lt-asset/Waffle/tree/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-waffle/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 方法根据单张截图生成静态 HTML/CSS，并不恢复网站原始源码、脚本、交互、导航或后端。HTML-Match 先去除样式和属性，再要求渲染结果逐像素一致；CW-SSIM、CLIP 与 LLEM 则是相似度分数，作者也指出这些指标不能完全反映人工判断。训练数据及含 500 个页面的 WebSight-Test 均为合成的 WebSight 风格页面；Design2Code 提供 484 个真实网页。仅微调了两种骨干模型；在 Design2Code 上，经 WAFFLE 训练的 Moondream2 模型仍低于 GPT-4o 和 GPT-4o mini。Gemini 1.5 Pro 基线只回答了 384 个 Design2Code 实例。人工排序每个数据集使用 50 个样本，由两名标注者完成。商业模型的提示结果是历史基线，并非当前排名。
+
+  **作者:** Shanchao Liang 等
 
   </details>
 

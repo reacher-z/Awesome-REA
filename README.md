@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 89](https://img.shields.io/badge/papers-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (89) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2953,13 +2953,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**88 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**89 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (35) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (35) · [Websites](#papers-website-reconstruction) (16)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -3787,6 +3787,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Primarily evaluates visual and HTML reconstruction skills. The paper includes a preliminary interaction study, not a full workflow or backend-equivalence benchmark. The official repository currently exposes README and images but not the evaluation scripts described in its instructions.
 
   **Authors:** Zhiyu Lin et al.
+
+  </details>
+
+- [**WAFFLE: Fine-tuning Multi-Modal Model for Automated Front-End Development**](https://aclanthology.org/2025.acl-long.1208/)
+
+  WAFFLE fine-tunes multimodal LLMs to generate HTML/CSS from UI screenshots. A quarter of the decoder's attention heads use a structure-aware mask that limits each element's tokens to its parent, preceding siblings and its own earlier tokens. A contrastive objective aligns image and code embeddings over groups of four mutated WebSight-v0.1 pages. With VLM-WebSight and Moondream2 backbones, the authors report up to 9.00 pp higher HTML-Match and 0.0982 higher CW-SSIM than standard fine-tuning on WebSight-Test, plus gains on every Design2Code metric.
+
+  ACL 2025 · Conference paper · [PDF](https://aclanthology.org/2025.acl-long.1208.pdf) · [Code](https://github.com/lt-asset/Waffle/tree/5ca57f8b64b0fa8827f1f310afe6ac1afc63d088) · [Full entry & citation](https://awesomerea.org/papers/paper-waffle/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Generates static HTML/CSS from a single screenshot; it does not recover a site's original source, scripts, interactions, navigation or backend. HTML-Match strips styles and attributes before requiring pixel-identical renders, while CW-SSIM, CLIP and LLEM are similarity scores; the authors note that these metrics do not fully capture human judgment. Training data and the 500-page WebSight-Test are synthetic WebSight-style pages; Design2Code supplies 484 real-world pages. Only two backbones were fine-tuned, and on Design2Code the Moondream2 model trained with WAFFLE stays below GPT-4o and GPT-4o mini. The Gemini 1.5 Pro baseline answered 384 Design2Code instances. Human ranking used 50 samples per dataset and two annotators. Commercial-model prompting results are historical baselines, not current rankings.
+
+  **Authors:** Shanchao Liang et al.
 
   </details>
 
