@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](firmware.md)
 
-**211 个仓库** · 2026-10-16 UTC
+**212 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -24,6 +24,7 @@
 - [sigrokproject/pulseview](https://github.com/sigrokproject/pulseview) — 官方仓库 git<span>:</span>//sigrok.org/pulseview 的只读镜像。欢迎提交拉取请求。请在 sigrok.org/bugzilla 提交缺陷报告。 **[805 星标]** · 精选：[PulseView 信号与协议分析工具](https://awesomerea.org/zh/resources/pulseview/)
 - [airbus-seclab/cpu\_rec](https://github.com/airbus-seclab/cpu_rec) — 识别任意二进制文件中的 CPU 指令。 **[757 星标]** · 精选：[cpu\_rec CPU 指令集统计识别工具](https://awesomerea.org/zh/resources/cpu-rec/)
 - [avatartwo/avatar2](https://github.com/avatartwo/avatar2) — avatar² 的 Python 核心。 **[579 星标]** · 精选：[avatar² 多目标固件动态分析编排框架](https://awesomerea.org/zh/resources/avatar2/)
+- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]** · 精选：[FwAnalyzer 固件文件系统规则检查工具](https://awesomerea.org/zh/resources/fwanalyzer/)
 - [al3xtjames/ghidra-firmware-utils](https://github.com/al3xtjames/ghidra-firmware-utils) — 用于分析 PC 固件的 Ghidra 实用工具。 **[506 星标]** · 精选：[Ghidra 固件工具集](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
 - [scriptingxss/owasp-fstm](https://github.com/scriptingxss/owasp-fstm) — 固件安全测试方法（FSTM）包含九个阶段，专为帮助安全研究人员、软件开发人员、顾问及信息安全专业人员开展固件安全评估而设计。 **[502 星标]**
 - [ChrisTheCoolHut/Firmware\_Slap](https://github.com/ChrisTheCoolHut/Firmware_Slap) — 通过结合具体执行与符号执行的分析，以及函数聚类，发现固件中的漏洞。 **[476 星标]**

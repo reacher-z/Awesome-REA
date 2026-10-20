@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "fwanalyzer": {
+    "name": "FwAnalyzer 固件文件系统规则检查工具",
+    "requirements": [
+      "审阅时最新版本为 1.4.4，发布于 2022-10-24，未附带二进制文件；1.4.1 至 1.4.3 版附有预编译的 Linux 版 fwanalyzer。所审阅的 master 提交日期为 2023-10-08，仅在该版本之后修正拼写错误，也是最新提交；仓库未归档，Makefile 中的 VERSION 仍为 1.4.1。",
+      "需用 Go 从源码构建（go.mod 声明 Go 1.13，Makefile 默认 GOOS 为 linux），执行 make deps 和 make 后得到 build/fwanalyzer。各文件系统后端都调用外部程序：ext 镜像用 e2tools 的 e2ls 和 e2cp，FAT 用 mtools 的 mdir 和 mcopy，另需 unsquashfs、ubi_reader 的 ubireader_list_files 以及 cpio。读取 SELinux 与 capability 信息需要作者打过补丁的 e2tools 和 squashfs-tools 分支，处理 ext 中的符号链接需要 e2tools 的 link_support 分支；Dockerfile 在 golang:1.13 镜像上列出了完整依赖。",
+      "输入为使用者已有的文件系统镜像或已解包目录；FwAnalyzer 本身不解包固件包。check.py 需要一个把配置映射到镜像的解包脚本，附带的 Android OTA 解包脚本依赖独立的 extract_android_ota_payload 与 mkbootimg_tools 项目。检查结果完全取决于使用者的配置：devices 目录提供 Android user 构建、Android 属性和通用 Linux 根文件系统的示例规则，报告列出的是违反规则的文件，而非经过评估的漏洞。",
+      "make test 运行 Go 单元测试，集成测试目标运行为 Python 2 编写的 test/test.py，所用夹具均位于 test/ 中：小型 ext2、SquashFS、UBIFS、VFAT 和 cpio 镜像，ARM32、ARM64 与 x86-64 的 hello-world ELF 构建，以及预编译的 e2cp 和 unsquashfs 辅助程序；make testsetup 会用到 sudo setcap。CircleCI 在 Docker 镜像中构建并测试，GitHub 工作流仅用 golangci-lint v1.29 做代码检查。",
+      "采用 Apache-2.0 许可，版权属 Cruise LLC；外部文件系统工具各自适用其许可。所审来源未提及 REA 的使用，本收录未构建或运行该工具，也未分析任何镜像。"
+    ]
   }
 }

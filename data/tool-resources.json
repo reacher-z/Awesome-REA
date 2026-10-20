@@ -11254,5 +11254,43 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fwanalyzer",
+    "name": "FwAnalyzer",
+    "url": "https://github.com/cruise-automation/fwanalyzer",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Rule-based checker for filesystem images taken from firmware: it reads ext2/3/4, FAT/VFAT, SquashFS and UBIFS images, cpio archives or a directory, and writes a JSON report of every file that breaks the rules in a TOML configuration. Rules cover SUID and world-writable files, allowed owners, SELinux labels and Linux capabilities, per-file metadata, content regexes, SHA-256 digests, JSON fields and external scripts such as the bundled checksec wrapper; it can also extract values such as version strings and compare the file tree or selected files with a previous run. Cruise describes it as part of a firmware security check suite, and check.py with an Android OTA unpacker runs it over each image in a firmware package.",
+    "description_zh": "针对固件中文件系统镜像的规则检查工具：读取 ext2/3/4、FAT/VFAT、SquashFS 和 UBIFS 镜像、cpio 归档或目录，并以 JSON 报告列出所有违反 TOML 配置规则的文件。规则涵盖 SUID 与全局可写文件、允许的属主、SELinux 标签与 Linux capabilities、单个文件的元数据、内容正则、SHA-256 摘要、JSON 字段，以及外部脚本（例如附带的 checksec 包装脚本）；还能提取版本字符串等数值，并把文件树或指定文件与上一次运行的结果比较。Cruise 将其定位为固件安全检查流程的一环，check.py 搭配 Android OTA 解包脚本可对固件包中的每个镜像逐一运行检查。",
+    "evidence_url": "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Readme.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.4.4, published 2022-10-24 without an attached binary; releases 1.4.1 to 1.4.3 attach a prebuilt Linux fwanalyzer. The reviewed master commit, from 2023-10-08, only fixes typos after that release and is the latest commit; the repository is not archived, and the Makefile still sets VERSION=1.4.1.",
+      "Built from source with Go (go.mod declares Go 1.13; the Makefile defaults GOOS to linux) through make deps and make, giving build/fwanalyzer. Each filesystem backend calls external programs: e2ls and e2cp from e2tools for ext images, mdir and mcopy from mtools for FAT, unsquashfs, ubireader_list_files from ubi_reader, and cpio. SELinux and capability data need the author's patched e2tools and squashfs-tools forks, and ext symlink handling needs e2tools' link_support branch; the Dockerfile lists the full dependency set on a golang:1.13 image.",
+      "Input is a filesystem image or unpacked directory the user already has; FwAnalyzer itself does not unpack firmware packages. check.py needs an unpacker script that maps configurations to images, and the bundled Android OTA unpacker relies on the separate extract_android_ota_payload and mkbootimg_tools projects. Findings depend entirely on the user's configuration: the devices folder supplies sample Android user-build, Android property and generic Linux root-filesystem rules, and the report lists rule offenders rather than assessed vulnerabilities.",
+      "make test runs Go unit tests, and the integration target runs test/test.py, written for Python 2, against bundled fixtures in test/: small ext2, SquashFS, UBIFS, VFAT and cpio images, hello-world ELF builds for ARM32, ARM64 and x86-64, and prebuilt e2cp and unsquashfs helper executables; make testsetup uses sudo setcap. CircleCI builds and tests inside the Docker image, while the GitHub workflow only lints with golangci-lint v1.29.",
+      "Apache-2.0, copyright Cruise LLC; the external filesystem tools keep their own licenses. The reviewed sources state no REA use, and this collection did not build or run the tool or analyze any image."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Building.md",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Changelog.md",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Checksec.md",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Dockerfile",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/Makefile",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/go.mod",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/devices/Readme.md",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/devices/android/Readme.md",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/pkg/extparser/extparser.go#L40-L43",
+      "https://github.com/cruise-automation/fwanalyzer/tree/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/test",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/.circleci/config.yml",
+      "https://github.com/cruise-automation/fwanalyzer/blob/a0db45054642f89a5f855b0dcc0730ebd01c8c9e/LICENSE",
+      "https://github.com/cruise-automation/fwanalyzer/releases/tag/1.4.4"
+    ]
   }
 ]

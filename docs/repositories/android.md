@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**430 repositories** · 2026-10-16 UTC
+**429 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -73,7 +73,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [ImKKingshuk/LockKnife](https://github.com/ImKKingshuk/LockKnife) — LockKnife: The Ultimate Android Security Research Tool. A unified TUI workspace and headless CLI for deep Android security research, built for researchers and hackers. Powered by Python orchestration and a Rust-accelerated core, enabling AI agent–driven hacking, credential recovery/cracking, APK analysis, intelligence gathering, runtime inspection. **[549 stars]**
 - [CreditTone/android-reverse-engineering-skill](https://github.com/CreditTone/android-reverse-engineering-skill) — An Android reverse engineering skill tailored for Codex. It supports decompiling APK, XAPK, JAR, and AAR files within Codex sessions and uses jadx and Fernflower/Vineflower to map out the Manifest, package structure, network layer, and call chains. It helps extract interfaces, URLs, authorization headers, tokens, and signing logic, and provides static reconnaissance methods before Frida, traffic capture, and JNI/SO analysis. Suitable for interface analysis, security research, and authorized testing. **[547 stars]**
 - [damaiqiangpiao/damai](https://github.com/damaiqiangpiao/damai) — Damai Maoyan Piaoxingqiu ticket grabbing tech community | Android reverse engineering Frida hook ticket monitor | QQ 955767910 **[538 stars]**
-- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — a tool to analyze filesystem images for security **[516 stars]**
 - [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — A pattern based Dalvik deobfuscator which uses limited execution to improve semantic analysis **[503 stars]**
 - [lumirelle/android-killer](https://github.com/lumirelle/android-killer) — A classic, traditional, even old-fashioned Android decompilation tool. Make Android-killer Great Again! **[496 stars]**
 - [ivan-sincek/android-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/android-penetration-testing-cheat-sheet) — Work in progress... **[493 stars]**

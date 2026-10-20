@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**430 个仓库** · 2026-10-16 UTC
+**429 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -73,7 +73,6 @@
 - [ImKKingshuk/LockKnife](https://github.com/ImKKingshuk/LockKnife) — LockKnife：全面的 Android 安全研究工具。为研究人员与黑客打造的统一 TUI 工作区及无界面命令行工具，支持深入的 Android 安全研究。采用 Python 编排与 Rust 加速核心，支持 AI 智能体驱动的破解研究、凭据恢复/破解、APK 分析、情报收集和运行时检查。 **[549 星标]**
 - [CreditTone/android-reverse-engineering-skill](https://github.com/CreditTone/android-reverse-engineering-skill) — 专为 Codex 适配的 Android 逆向分析技能，支持在 Codex 会话中反编译 APK、XAPK、JAR、AAR，并结合 jadx、Fernflower/Vineflower 梳理 Manifest、包结构、网络层和调用链。可辅助提取接口、URL、鉴权头、token 与签名逻辑，并提供 Frida、抓包及 JNI/SO 分析前的静态侦察方法，适用于接口分析、安全研究和授权测试。 **[547 星标]**
 - [damaiqiangpiao/damai](https://github.com/damaiqiangpiao/damai) — 大麦、猫眼、票星球抢票技术社区 | Android 逆向、Frida hook、票务监控 | QQ 955767910 **[538 星标]**
-- [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]**
 - [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — 基于模式匹配的 Dalvik 去混淆工具，通过有限执行改善语义分析。 **[503 星标]**
 - [lumirelle/android-killer](https://github.com/lumirelle/android-killer) — 经典、传统乃至老旧的 Android 反编译工具。让 Android-killer 再次强大！ **[496 星标]**
 - [ivan-sincek/android-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/android-penetration-testing-cheat-sheet) — 开发中…… **[493 星标]**
