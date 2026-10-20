@@ -18,7 +18,7 @@ from site_footer import site_footer
 
 MARKER = '<!-- Generated curated entry page. -->'
 REPOSITORY_URL = 'https://github.com/reacher-z/Awesome-REA'
-# Issue forms whose `resource` input ("Resource URL or catalog ID") accepts a URL prefill.
+# Issue forms whose `resource` input (a catalog ID or resource URL) accepts a URL prefill.
 FEEDBACK_FORMS = (('broken-resource.yml', 'Correction', 'Report an outdated entry', '报告条目过时'),
                   ('translation.yml', 'Translation', 'Suggest a translation fix', '建议修正翻译'))
 

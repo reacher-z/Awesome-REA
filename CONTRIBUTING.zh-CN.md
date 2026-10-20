@@ -22,7 +22,7 @@ Agent 请先阅读 [AGENTS.md（英文）](AGENTS.md)和 [Agent 投稿与 PR 指
 
 第一次提交 pull request，可参照[完整示例](docs/first-resource.zh-CN.md)：它以一条已有记录为例，说明需要编辑和重新生成的每个文件。
 
-发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
+发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)，写明受影响的条目 ID、观察到的状态、检查日期和一手证据；HTTP 403、429、登录页、超时或单纯的重定向都不能证明资源已删除或迁移，详见[来源链接检查结果的处理（英文）](docs/automation.md#triage-source-link-results)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
 
 ## 推荐论文
 
