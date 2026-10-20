@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fwhunt-scan",
+    "name": "FwHunt Community Scanner (fwhunt-scan)",
+    "url": "https://github.com/binarly-io/fwhunt-scan",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Binarly's Python scanner that checks UEFI firmware modules against FwHunt rules, the YAML detection format for known UEFI firmware vulnerabilities whose rules are kept in the separate fwhunt repository. Its rizin-based analyzer reports a PE or TE module's Boot, Runtime and PEI service calls, protocols, PPIs, GUIDs, NVRAM variables and SMI handlers, which rules combine with code patterns, strings and hex strings. The CLI analyzes or scans one module, or extracts the modules of a whole firmware image and scans them, and the same classes work as a Python library.",
+    "description_zh": "Binarly 推出的 Python 扫描器，用 FwHunt 规则检查 UEFI 固件模块；FwHunt 是针对已知 UEFI 固件漏洞的 YAML 检测规则格式，规则本身存放在独立的 fwhunt 仓库中。其基于 rizin 的分析器可报告 PE 或 TE 模块的 Boot、Runtime 与 PEI 服务调用、协议、PPI、GUID、NVRAM 变量和 SMI 处理程序，规则将这些信息与代码模式、字符串和十六进制串组合匹配。命令行工具可分析或扫描单个模块，也可从整个固件镜像中提取模块后逐一扫描，相同的类也能作为 Python 库调用。",
+    "evidence_url": "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has no GitHub releases or tags. The reviewed master commit, from 2025-05-02 and the latest at review, follows the setup.py bump to 2.3.8, the version uploaded to PyPI that day; a separate release branch publishes Docker images to GHCR tagged by commit.",
+      "Needs Python 3 (README: tested on 3.6 and above; CI runs on 3.9 to 3.13) with click, rzpipe 0.4.0, PyYAML and uefi_firmware, plus an installed rizin. The README names rizin v0.6.2, and the Dockerfile builds that release from source on a python:3.11 image; newer rizin releases were not checked. Passing an in-memory blob instead of a file path works only on Linux.",
+      "Input is a UEFI module or firmware image the user already has, plus FwHunt rule files; no rules are bundled, and the README's rules/ and test/fw.bin example paths are not in this repository. scan-firmware applies firmware-target rules to the whole image and module rules only to modules from the volumes their volume_guids name, unless --force applies them to every module; extract writes all found modules to a directory.",
+      "The only test checks GUID table lookups, and CI runs it after a flake8 syntax check. A scan reports, per rule and variant, whether a known pattern matched, printed as threat detected or not; no match does not show that a module is free of other vulnerabilities.",
+      "GPL-3.0: setup.py declares GPL-3.0 and source headers GPL-3.0+; the separate fwhunt rule repository is CC0-1.0. The reviewed sources state no REA use, and this collection did not install the scanner or analyze any firmware."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/fwhunt_scan_analyzer.py",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/fwhunt_scan/uefi_analyzer.py#L781-L820",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/fwhunt_scan/uefi_scanner.py",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/requirements.txt",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/setup.py",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/Dockerfile",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/.github/workflows/ci.yml",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/fwhunt_scan/test_internal.py",
+      "https://github.com/binarly-io/fwhunt-scan/blob/6fc7115959e4825199882f5b397a0d7c34cbbfd1/LICENSE",
+      "https://pypi.org/project/fwhunt-scan/2.3.8/",
+      "https://github.com/binarly-io/fwhunt/blob/a2e3be630e407a49c8076178c712bcf6cccda1bf/README.md"
+    ]
   }
 ]
