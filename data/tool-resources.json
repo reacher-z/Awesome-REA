@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "efiseek",
+    "name": "efiSeek",
+    "url": "https://github.com/DSecurity/efiSeek",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Ghidra analyzer extension from Digital Security for individual UEFI modules, enabled by default during auto-analysis of x86 and x64 PE images with an EFI subsystem. It labels known GUIDs from a bundled database, applies UEFI types from bundled data-type archives, passes the image handle and system table from the entry point into called functions, and marks protocols located with LocateProtocol or installed with InstallProtocolInterface, protocol-notify callbacks and SMI handlers registered for software, hardware and child interrupts. Findings are also kept as JSON in the program, which a headless-mode script uses to sort SMM modules into project folders by handler type.",
+    "description_zh": "Digital Security 开发的 Ghidra 分析器扩展，面向单个 UEFI 模块，在自动分析带 EFI 子系统的 x86 和 x64 PE 映像时默认启用。它依据自带的数据库标注已知 GUID，从自带的数据类型归档应用 UEFI 类型，把入口点的映像句柄和系统表参数传递到被调用的函数中，并标记通过 LocateProtocol 定位或通过 InstallProtocolInterface 安装的协议、协议通知回调，以及为软件、硬件和子中断注册的 SMI 处理函数。分析结果还以 JSON 形式保存在程序中，无界面模式脚本据此按处理函数类型把 SMM 模块分到不同的项目文件夹。",
+    "evidence_url": "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has no releases or tags; the latest master commit, from 2022-04-26, adds compatibility with a Ghidra 10.2 development build. Open issues report that the pinned Gradle 7.4.2 wrapper does not work with Ghidra 11.2 and newer and that a PE header API change in Ghidra 12.0 causes errors; the pull requests proposing fixes were unmerged at review, so building for current Ghidra releases may need those or similar changes.",
+      "Built from source with the bundled Gradle wrapper against a Ghidra installation named by GHIDRA_INSTALL_DIR; the build fetches the org.json library from Maven Central. The README then has the zip from dist copied into Ghidra's Extensions/Ghidra folder and the extension enabled, after which the analyzer is preselected when an EFI file is opened.",
+      "Input is a single UEFI module the analyst already has: the analyzer accepts only PE images with an EFI subsystem and only the x86 and x64 machine types, so modules must first be taken out of a full firmware image. It rebases the program to 0x80000000 and makes every memory block readable, writable and executable.",
+      "Apache-2.0, per LICENSE and the source headers. The repository bundles the Behemotx32.gdt and Behemotx64.gdt data-type archives and the guids-db.ini GUID database that the analyzer loads, plus the Gradle wrapper JAR. Labels and handler classifications are heuristic annotations for analyst review; no firmware was analyzed and nothing was built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/src/main/java/efiSeek/EfiSeekAnalyzer.java",
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/src/main/java/efiSeek/EfiSeek.java",
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/ghidra_scripts/TransferEfiFilesToProject.java",
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/build.gradle",
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/gradle/wrapper/gradle-wrapper.properties",
+      "https://github.com/DSecurity/efiSeek/blob/573f4b9b5ba2731cdecafc6594d0fd0570e28fff/LICENSE",
+      "https://github.com/DSecurity/efiSeek/commit/573f4b9b5ba2731cdecafc6594d0fd0570e28fff",
+      "https://github.com/DSecurity/efiSeek/issues/15",
+      "https://github.com/DSecurity/efiSeek/pull/18"
+    ]
   }
 ]
