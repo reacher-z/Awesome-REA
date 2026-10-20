@@ -52,7 +52,7 @@
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — 用于评估 Android 应用、逆向工程及恶意软件分析的虚拟机。 **[1,175 星标]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — 无需修改 DLL 文件（如 UnityEditor.dll），即可在运行时 hook C# 方法，支持 Windows、Mac 和 Android il2cpp（armv7a 与 armv8a）。 **[1,065 星标]**
-- [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — 易用、高性能的 Dex 去混淆库。 **[1,061 星标]**
+- [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — 易用、高性能的 Dex 去混淆库。 **[1,061 星标]** · 精选：[DexKit 混淆 DEX 代码检索库](https://awesomerea.org/zh/resources/dexkit/)
 - [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — 移除 APK 中的证书锁定。 **[1,053 星标]** · 精选：[Android Unpinner](https://awesomerea.org/zh/resources/android-unpinner/)
 - [suifei/fridare](https://github.com/suifei/fridare) — 适用于 iOS 和 Android 的强大 Frida 重打包工具，便于修改 Frida 特征、增强隐蔽性并绕过检测，简化逆向工程与安全测试。 **[949 星标]**
 - [tp7309/TTDeDroid](https://github.com/tp7309/TTDeDroid) — 一键快速反编译 APK/AAR/DEX/JAR 的工具，由 jadx、dex2jar 和 enjarify 提供支持。 **[949 星标]**

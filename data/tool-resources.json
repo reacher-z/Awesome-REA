@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "dexkit",
+    "name": "DexKit",
+    "url": "https://github.com/LuckyPray/DexKit",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "C++ DEX parsing library with Kotlin and Java APIs that loads an APK, DEX bytes or an app’s class loader and finds classes, methods and fields by their characteristics rather than their obfuscated names. Matchers combine package scope, modifiers and raw access flags, field, parameter and return types, annotations, the strings and numeric constants a method uses and the methods it calls, while batch queries locate many targets from strings at once; results expose opcodes, callers, invoked methods and fields used. Its guides centre on keeping Xposed hook points working across obfuscated app versions, and the same queries serve as a fast, scriptable search over an app’s bytecode.",
+    "description_zh": "以 C++ 实现的 DEX 解析库，提供 Kotlin 与 Java API，可加载 APK、DEX 字节数据或应用的类加载器，并按特征而非混淆后的名称查找类、方法和字段。匹配条件可组合包名范围、修饰符与原始访问标志、字段类型、参数类型和返回类型、注解、方法使用的字符串与数值常量以及其调用的方法；批量查询可依据字符串一次定位多个目标，查询结果还提供操作码、调用者、被调用方法和所用字段。其文档以让 Xposed Hook 点在混淆后的不同应用版本间保持可用为主要场景，同样的查询也可用来快速、可编程地检索应用字节码。",
+    "evidence_url": "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.3.0, published 2026-09-22 with no attached files, which added numeric-literal reading and raw DEX access-flag matching and optimized caching and string queries. The reviewed master commit of 2026-10-10 is two core fixes ahead of that tag. Packages are published on Maven Central as org.luckypray:dexkit; the artifact ID changed from DexKit with 2.0.",
+      "Android projects need JDK 11+, Kotlin 1.5+, AGP 4.2+ and minSdkVersion 21+, with 23+ recommended because libdexkit.so may not load from compressed APK libraries on older settings. Since 1.1.0 it also runs on Windows, Linux and macOS from a source checkout built with gcc or clang, CMake and Ninja or Make, using MSYS2 on Windows, and CI builds the native libraries on all three. The APK, DEX data or class loader to query comes from the user; the repository’s only app is its own demo.",
+      "The guides present DexKit as a tool for Xposed module developers, and the README examples run inside an Xposed hook; this record covers its querying and inspection of DEX code. Matches depend on the conditions the user writes, so they identify candidate classes and members rather than recover original names. Unit tests with smali fixtures are in the repository, but the reviewed workflows only build the native libraries and packages, and this review built and ran nothing.",
+      "Everything outside Core/ is Apache-2.0, while the native code in Core/ is LGPL-3.0, although the README’s license badge links only to the LGPL. The README credits AOSP’s slicer, ThreadPool and parallel-hashmap as third-party sources. Apps analysed with it keep their own terms, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/doc-source/src/en/guide/home.md",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/doc-source/src/en/guide/quick-start.md",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/doc-source/src/en/guide/run-on-desktop.md",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/dexkit/src/main/java/org/luckypray/dexkit/DexKitBridge.kt",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/.github/workflows/build-native.yml",
+      "https://github.com/LuckyPray/DexKit/tree/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/dexkit/src/test",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/LICENSE",
+      "https://github.com/LuckyPray/DexKit/blob/f86a036ef2f000e3b42a2e52a25ae3f27770e7f0/Core/LICENSE",
+      "https://github.com/LuckyPray/DexKit/releases/tag/2.3.0"
+    ]
   }
 ]
