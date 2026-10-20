@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**680 个仓库** · 2026-10-16 UTC
+**679 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -110,7 +110,6 @@
 - [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite：通过二进制重写将编译器处理流程应用于现有程序。 **[751 星标]**
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — 精选基于 Radare2 的优质项目、文章及其他资料列表。 **[739 星标]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — 面向 x86-64 的 RISC-V 模拟器。 **[727 星标]**
-- [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — 在 Android 上反汇编任意文件，包括 .so（NDK、JNI）、Windows PE（EXE、DLL、SYS 等）、Linux 二进制文件和库，甚至图片、音频等其他文件（仅供娱乐）。这是基于 Capstone 的 Android 反汇编应用，可用于 Android NDK 共享库、Windows 二进制文件等的逆向分析。 **[717 星标]**
 - [0xb0bb/pwndra](https://github.com/0xb0bb/pwndra) — Ghidra 的 pwn/CTF 相关实用工具合集。 **[710 星标]**
 - [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit：用于自动分析嵌入式设备固件的 IDAPython 脚本 **[690 星标]**
 - [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing 是一个 iOS 安全利用工具集，主要包括应用信息收集、静态分析和动态分析，可用于逆向工程、二进制分析和漏洞挖掘。 **[687 星标]**

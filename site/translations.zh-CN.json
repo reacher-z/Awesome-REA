@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "android-disassembler": {
+    "name": "Android-Disassembler 安卓端反汇编应用",
+    "requirements": [
+      "审阅时最新的正式版本为 v2.1.5，发布于 2021-08-06，附带调试版 APK。滚动更新的 Preview latest 预发布版最近一次发布于 2026-03-20，提供由最新分支构建、使用调试签名的 APK，CI 每次运行也会上传调试版 APK。README 称维护已经恢复，但项目仍处于恢复与现代化阶段；所审阅的 2026-03-22 master 提交属于这项工作。",
+      "应用支持 Android 5.0（API 21）及以上版本，targetSdk 与 compileSdk 均为 35。默认通过存储访问框架（SAF）选择器打开文件；另有面向高级用户的 Advanced import 入口，用于浏览原始文件系统、root 路径和已安装应用，需要 root 权限的系统文件只能在已 root 的手机上读取。",
+      "构建前需初始化 git 子模块，并使用配置了 Android SDK 和 NDK 的 Android Studio 或 Gradle；build.gradle 固定 NDK 23.1.7779620，原生代码用 CMake 构建，CI 使用 JDK 17 运行单元测试、调试构建，并在 API 30 与 35 模拟器上运行插桩 UI 测试。应用启用了 Firebase Analytics 和 Crashlytics；README 的隐私说明称，发送 FileCorruptedException 等类型的崩溃报告时，正在分析的文件可能附在错误报告邮件中，并被上传到 GitHub 仓库。",
+      "采用 MIT 许可，版权归 Hyeonseo Yang（2018）。仓库提交了预编译的 Capstone 库、pecoff4j、facile、RootTools 和 jep 等库 JAR、应用资源中供 ARM 和 x86 使用的小型 ls 辅助可执行文件，以及 Test subject files 文件夹中的示例 ELF 库和 arm-linux-androideabi-ar 程序；这些捆绑组件各自适用其许可证。待分析的文件由使用者提供；本次未安装或运行任何组件。"
+    ]
   }
 }

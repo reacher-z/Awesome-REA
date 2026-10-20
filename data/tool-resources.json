@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "android-disassembler",
+    "name": "Android-Disassembler",
+    "url": "https://github.com/yhs0602/Android-Disassembler",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "On-device disassembler and binary viewer for Android, built on Capstone, that opens ELF shared libraries and executables, object files, Windows PE files, .NET assemblies, dex files and APKs chosen from storage or from installed apps. It shows ELF details and symbol tables, PE import and export tables, disassembly with jump following and navigation by symbol or address, a hex view, ASCII string search and byte statistics such as entropy and chi-square tests to help tell whether data is encrypted. Analyses are kept as projects and can be exported as raw, text, JSON or database files.",
+    "description_zh": "基于 Capstone 的 Android 设备端反汇编器与二进制查看器，可打开从存储中选取或从已安装应用中选择的 ELF 共享库与可执行文件、目标文件、Windows PE 文件、.NET 程序集、dex 文件和 APK。它可显示 ELF 详细信息和符号表、PE 导入与导出表，提供支持跳转跟随及按符号或地址定位的反汇编视图、十六进制视图、ASCII 字符串搜索，以及熵和卡方检验等字节统计，帮助判断数据是否经过加密。分析结果以项目形式保存，并可导出为原始文件、文本、JSON 或数据库文件。",
+    "evidence_url": "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest formal release at review: v2.1.5, published 2021-08-06 with a debug APK. A rolling Preview latest prerelease, last published 2026-03-20, carries a debug-signed APK built from the newest branch, and CI uploads a debug APK on every run. The README says maintenance has resumed but the project is still in a recovery and modernization phase; the reviewed master commit of 2026-03-22 is part of that work.",
+      "The app supports Android 5.0 (API 21) and newer, with target and compile SDK 35. Files open through the Storage Access Framework picker by default; a separate Advanced import path for raw-filesystem, root and installed-app browsing is meant for power users, and system files that need root permission can be read only on rooted phones.",
+      "Building needs initialized git submodules and Android Studio or Gradle with an Android SDK and NDK; build.gradle pins NDK 23.1.7779620 and builds the native code with CMake, and CI uses JDK 17 to run unit tests, a debug build and instrumentation UI tests on API 30 and 35 emulators. The app applies Firebase Analytics and Crashlytics, and the README's privacy note says crash reports of types such as FileCorruptedException may attach the file being analyzed to the bug-report email and upload it to the GitHub repository.",
+      "MIT license, copyright 2018 Hyeonseo Yang. The repository commits prebuilt Capstone libraries, library JARs including pecoff4j, facile, RootTools and jep, small ls helper executables for ARM and x86 in the app assets, and a Test subject files folder of sample ELF libraries and an arm-linux-androideabi-ar binary; bundled components keep their own licenses. Users supply the files they analyze; this review installed or ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/app/build.gradle",
+      "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/.github/workflows/ci.yml",
+      "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/.github/workflows/preview.yml",
+      "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/docs/maintenance/roadmap.md",
+      "https://github.com/yhs0602/Android-Disassembler/blob/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/LICENSE",
+      "https://github.com/yhs0602/Android-Disassembler/tree/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/Test%20subject%20files",
+      "https://github.com/yhs0602/Android-Disassembler/tree/dde36d9b9ae4a62380607ae8eaba8d1ff5ea2888/app/src/main/assets",
+      "https://github.com/yhs0602/Android-Disassembler/releases/tag/v2.1.5",
+      "https://github.com/yhs0602/Android-Disassembler/releases/tag/preview-latest"
+    ]
   }
 ]

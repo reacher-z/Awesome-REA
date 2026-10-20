@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**430 个仓库** · 2026-10-16 UTC
+**431 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -61,6 +61,7 @@
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 APK 反编译。 **[823 星标]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — 适用于 JADX-AI 插件的 MCP 服务器。 **[803 星标]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — 《爬虫逆向进阶实战》书籍代码库。 **[768 星标]**
+- [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — 在 Android 上反汇编任意文件，包括 .so（NDK、JNI）、Windows PE（EXE、DLL、SYS 等）、Linux 二进制文件和库，甚至图片、音频等其他文件（仅供娱乐）。这是基于 Capstone 的 Android 反汇编应用，可用于 Android NDK 共享库、Windows 二进制文件等的逆向分析。 **[717 星标]** · 精选：[Android-Disassembler 安卓端反汇编应用](https://awesomerea.org/zh/resources/android-disassembler/)
 - [secrary/Andromeda](https://github.com/secrary/Andromeda) — Andromeda：面向 Android 应用的交互式逆向工程工具。 **[714 星标]**
 - [SlickAmogus/silent-hill-decomp](https://github.com/SlickAmogus/silent-hill-decomp) — 基于《寂静岭 1》PSX 反编译成果，借助 Claude 和 Psycross 制作的多平台、功能丰富的移植版。目前仍处于 beta 阶段，正在积极开发。 **[682 星标]**
 - [darbra/sign](https://github.com/darbra/sign) — 逆向分析应用参数的思路与经验，聚焦 Android 逆向。 **[675 星标]**

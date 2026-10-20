@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**680 repositories** · 2026-10-16 UTC
+**679 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -110,7 +110,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [HexHive/retrowrite](https://github.com/HexHive/retrowrite) — RetroWrite -- Retrofitting compiler passes through binary rewriting **[751 stars]**
 - [radareorg/awesome-radare2](https://github.com/radareorg/awesome-radare2) — A curated list of awesome projects, articles and the other materials powered by Radare2 **[739 stars]**
 - [larkmjc/rv8](https://github.com/larkmjc/rv8) — RISC-V simulator for x86-64 **[727 stars]**
-- [yhs0602/Android-Disassembler](https://github.com/yhs0602/Android-Disassembler) — Disassemble any file on Android, including .so (NDK, JNI), Windows PE (EXE, DLL, SYS, etc.), Linux binaries and libraries, and even pictures, audio, and other files for fun. A Capstone-based Android disassembler and reversing app for Android NDK shared libraries, Windows binaries, and more. **[717 stars]**
 - [0xb0bb/pwndra](https://github.com/0xb0bb/pwndra) — A collection of pwn/CTF related utilities for Ghidra **[710 stars]**
 - [maddiestone/IDAPythonEmbeddedToolkit](https://github.com/maddiestone/IDAPythonEmbeddedToolkit) — IDA Python Embedded Toolkit -- IDAPython scripts for automating analysis of firmware of embedded devices **[690 stars]**
 - [Soulghost/iblessing](https://github.com/Soulghost/iblessing) — iblessing is an iOS security exploiting toolkit, it mainly includes application information gathering, static analysis and dynamic analysis. It can be used for reverse engineering, binary analysis and vulnerability mining. **[687 stars]**
