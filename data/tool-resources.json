@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "google-pawn",
+    "name": "Pawn",
+    "url": "https://github.com/google/pawn",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Linux command-line tool from Google that reads the BIOS/UEFI firmware image out of the SPI flash of Intel-based workstations and laptops. Running as root, it identifies the chipset's LPC bridge over PCI, maps the chipset's root-complex registers through /dev/mem, and reports the flash descriptor regions and the BIOS write- and read-protection settings it finds. It then reads the flash through the SPI controller's hardware sequencing into a single image file, which the README suggests processing further with tools such as UEFITool.",
+    "description_zh": "Google 发布的 Linux 命令行工具，可从基于 Intel 平台的工作站和笔记本电脑的 SPI 闪存中读出 BIOS/UEFI 固件镜像。它以 root 权限运行，通过 PCI 识别芯片组的 LPC 桥，借助 /dev/mem 映射芯片组的根复合体寄存器，并报告读到的闪存描述符分区以及 BIOS 写保护和读保护设置。随后它通过 SPI 控制器的硬件时序读取闪存，写入单个镜像文件；README 建议再用 UEFITool 等工具进一步处理。",
+    "evidence_url": "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Releases v0.1 and v0.2, published 2017-08-30 and 2017-09-09, each ship a Debian amd64 package with its source; the reviewed main commit, from 2026-02-17, updates dependencies and GitHub Actions and still declares version 0.2. The README states that Pawn is not an official Google product. Builds need Linux on x86_64 (FreeBSD might also work, per the README), CMake 3.31+, GCC or Clang 7+ and Ninja or Make; CMake fetches Abseil, and GoogleTest for tests, at pinned commits. CI builds and runs the unit test on Ubuntu 24.04 and keeps the binary only as a workflow artifact.",
+      "Runs as root on the machine whose firmware is read, using I/O-port access to PCI configuration space and /dev/mem. On Linux kernels newer than 4.8.4 the README requires CONFIG_IO_DEVMEM=n or booting with iomem=relaxed; the program's own error message names IO_STRICT_DEVMEM. Only Intel ICH8, ICH9 and ICH10 and 6 to 9 Series chipsets are recognized, the newest being the 9 Series whose datasheet the source cites from May 2014; the BIOS must boot from SPI flash in descriptor mode.",
+      "It always reads 16 MiB from flash address 0, so flash beyond that size is not dumped, and failed block reads are ignored; the default output name is bios_via_spi_hs.bin. The repository contains only source, build and Debian packaging files, with no firmware images; a dump is the machine vendor's firmware and keeps the vendor's rights.",
+      "Apache-2.0. Nothing was built or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/pawn/pawn.cc",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/pawn/chipset.cc",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/pawn/chipset_intel_9_series.h",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/CMakeLists.txt",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/cmake/PawnDeps.cmake",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/.github/workflows/ubuntu-cmake.yml",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/debian/changelog",
+      "https://github.com/google/pawn/blob/45b7b3865c3d4f2aa6e0defebb477dacb8b8a3b9/LICENSE",
+      "https://github.com/google/pawn/releases/tag/v0.2"
+    ]
   }
 ]

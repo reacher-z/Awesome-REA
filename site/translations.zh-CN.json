@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "google-pawn": {
+    "name": "Pawn Intel 平台 BIOS 固件提取工具",
+    "requirements": [
+      "v0.1 和 v0.2 两个版本分别于 2017-08-30 和 2017-09-09 发布，均附带 Debian amd64 软件包及其源码；所审阅的 main 提交日期为 2026-02-17，更新了依赖和 GitHub Actions，版本号仍为 0.2。README 声明 Pawn 不是 Google 的官方产品。构建需要 x86_64 上的 Linux（README 称 FreeBSD 或许也可行）、CMake 3.31+、GCC 或 Clang 7+ 以及 Ninja 或 Make；CMake 会按固定提交拉取 Abseil，测试时另拉取 GoogleTest。CI 在 Ubuntu 24.04 上构建并运行单元测试，生成的二进制文件仅作为工作流产物保留。",
+      "需在要读取固件的机器上以 root 权限运行，通过 I/O 端口访问 PCI 配置空间并使用 /dev/mem。对于高于 4.8.4 的 Linux 内核，README 要求设置 CONFIG_IO_DEVMEM=n 或以 iomem=relaxed 启动；程序自身的错误提示写的是 IO_STRICT_DEVMEM。只能识别 Intel ICH8、ICH9、ICH10 以及 6 至 9 系列芯片组，其中最新的是 9 系列，源码引用的其数据手册日期为 2014 年 5 月；BIOS 必须以描述符模式从 SPI 闪存启动。",
+      "它总是从闪存地址 0 读取 16 MiB，超出此大小的闪存内容不会被转储，读取失败的数据块也会被忽略；默认输出文件名为 bios_via_spi_hs.bin。仓库只包含源码、构建文件和 Debian 打包文件，不含任何固件镜像；转储得到的是机器厂商的固件，仍受厂商权利约束。",
+      "采用 Apache-2.0 许可。本次未构建或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
