@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](game-analysis.md)
 
-**391 个仓库** · 2026-10-16 UTC
+**392 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -66,6 +66,7 @@
 - [jkdansereau/goldeneye-pc-port](https://github.com/jkdansereau/goldeneye-pc-port) — 将 GoldenEye 007（N64，1997）移植为 Windows、Linux、Steam Deck 和 macOS 原生 PC 游戏。基于开放的反编译项目构建，支持宽屏、键鼠或手柄操作及分屏，并非模拟器。 **[255 星标]** · 精选：[GoldenEye 007：基于反编译成果的智能体辅助原生移植](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
 - [open-ead/sead](https://github.com/open-ead/sead) — sead 反编译项目：任天堂第一方游戏使用的标准 C++ 库 **[252 星标]**
 - [kylesmile1103/Learn-Frida](https://github.com/kylesmile1103/Learn-Frida) — 使用 Frida 修改 Unity 应用的教程。 **[249 星标]**
+- [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — 为 Clickteam Fusion 重新设计的反编译器，目前仍在开发中。 **[226 星标]** · 精选：[Nebula（NebulaFD）Clickteam Fusion 反编译器](https://awesomerea.org/zh/resources/nebulafd/)
 - [dbalatoni13/nfsmw](https://github.com/dbalatoni13/nfsmw) — 对多个版本的《极品飞车：最高通缉》进行 1:1 反编译，仍在开发中 **[226 星标]**
 - [MetaMystia/MetaMystia](https://github.com/MetaMystia/MetaMystia) — 《东方夜雀食堂》的模组 **[204 星标]**
 - [parappadev/parappa2](https://github.com/parappadev/parappa2) — PaRappa the Rapper 2（2001，PS2）反编译项目 **[202 星标]**

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](managed-code.zh-CN.md)
 
-**126 repositories** · 2026-10-16 UTC
+**125 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -27,7 +27,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [Cysharp/RuntimeUnitTestToolkit](https://github.com/Cysharp/RuntimeUnitTestToolkit) — CLI/GUI Frontend of Unity Test Runner to test on any platform. **[326 stars]**
 - [Washi1337/ghidra-nativeaot](https://github.com/Washi1337/ghidra-nativeaot) — Ghidra .NET Native AOT Analyzer Plugin **[295 stars]**
 - [Ether2023/Ether-Uprotector](https://github.com/Ether2023/Ether-Uprotector) — An Integrated Obfuscation &amp; Protection Scheme for Unity Project(Mono &amp; IL2CPP) **[245 stars]**
-- [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — A work in progress, reimagined decompiler for Clickteam Fusion. **[226 stars]**
 - [enkomio/ManagedInjector](https://github.com/enkomio/ManagedInjector) — A C# DLL injection library **[224 stars]**
 - [d-edge/fasmi](https://github.com/d-edge/fasmi) — F# -&gt; ASM disassembler **[194 stars]**
 - [astra1dev/AUnlocker](https://github.com/astra1dev/AUnlocker) — 🔓Unlock Among Us: cosmetics, account, chat and more!🎉 **[187 stars]**

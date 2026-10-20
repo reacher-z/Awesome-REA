@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 466](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-466-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 193](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-193-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 467](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-467-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 193](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-193-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (27) · [游戏](#game) (184) · [应用](#app) (71)
+- [网站](#website) (27) · [游戏](#game) (185) · [应用](#app) (71)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1341,6 +1341,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于将 PlayStation 3 游戏静态重编译为原生可执行文件的工具包与运行时。Python 工具解析 PS3 ELF 和 PRX 文件，识别函数与固件导入，并将 PPU 和 SPU 代码提升为 C/C++；项目模板再将这些代码与 C/C++ 运行时链接，由运行时提供 LV2 系统调用、系统库的高层仿真，以及转换到 Direct3D 12、Metal 或 Vulkan 的 RSX 图形层。
 
   工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ps3recomp/)
+
+- [**Nebula（NebulaFD）Clickteam Fusion 反编译器**](https://github.com/AITYunivers/NebulaFD)
+
+  面向 Clickteam Fusion 2.5 游戏的反编译器，仍在开发中，也针对更早的 Multimedia Fusion 1.5 文件做了修复。其 .NET 控制台程序可读取 Windows 可执行文件、Android APK、iOS IPA、CCN 数据文件以及现有的 MFA 项目，再运行插件式工具：MFA Parser 将游戏重新写成可编辑的 Fusion 项目，Asset Dumper 则导出图像、音效、音乐、字体、图标、着色器和打包文件。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/nebulafd/)
 
 <a id="app"></a>
 ### App · 应用

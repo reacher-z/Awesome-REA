@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](managed-code.md)
 
-**126 个仓库** · 2026-10-16 UTC
+**125 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -27,7 +27,6 @@
 - [Cysharp/RuntimeUnitTestToolkit](https://github.com/Cysharp/RuntimeUnitTestToolkit) — Unity Test Runner 的命令行/图形界面前端，可在任意平台运行测试。 **[326 星标]**
 - [Washi1337/ghidra-nativeaot](https://github.com/Washi1337/ghidra-nativeaot) — Ghidra .NET Native AOT 分析插件 **[295 星标]**
 - [Ether2023/Ether-Uprotector](https://github.com/Ether2023/Ether-Uprotector) — 面向 Unity 项目（Mono 和 IL2CPP）的集成混淆与保护方案 **[245 星标]**
-- [AITYunivers/NebulaFD](https://github.com/AITYunivers/NebulaFD) — 为 Clickteam Fusion 重新设计的反编译器，目前仍在开发中。 **[226 星标]**
 - [enkomio/ManagedInjector](https://github.com/enkomio/ManagedInjector) — C# DLL 注入库 **[224 星标]**
 - [d-edge/fasmi](https://github.com/d-edge/fasmi) — F# 到汇编的反汇编器 **[194 星标]**
 - [astra1dev/AUnlocker](https://github.com/astra1dev/AUnlocker) — 🔓 解锁 Among Us 的装饰物、账户、聊天等功能！🎉 **[187 星标]**
