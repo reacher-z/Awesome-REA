@@ -11254,5 +11254,31 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "osx-re-101",
+    "name": "osx & ios re 101",
+    "url": "https://github.com/michalmalik/osx-re-101",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "A single-README reading list for macOS (OS X) and iOS reverse engineering, kept by Michal Malik from 2015 to 2019 and labelled a work in progress. Its 98 entries in nine sections run from must-read blogs and Mach-O, ABI and system-call references through Mach-O basics, malware, anti-debugging and obfuscation write-ups, kernel, sandbox and jailbreak research, kernel-extension development and kernel debugging, and forensics and monitoring material, to crackmes and six books. Entries are bare links or titles, mostly with no annotation.",
+    "description_zh": "以单个 README 维护的 macOS（OS X）与 iOS 逆向工程阅读清单，由 Michal Malik 于 2015 至 2019 年间整理，并标注为仍在进行中。九个部分共 98 个条目，依次涵盖必读博客与 Mach-O、ABI 和系统调用参考资料，Mach-O 基础知识，恶意软件、反调试和混淆相关文章，内核、沙箱与越狱研究，内核扩展开发与内核调试，取证与监控资料，以及 crackme 练习和六本书。条目只有链接或标题，大多没有说明。",
+    "evidence_url": "https://github.com/michalmalik/osx-re-101/blob/486f33adf35848735327d9a83a05f9abd0f18af7/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit, from 2019-12-19 and the latest, closes a history of 69 commits that began on 2015-07-13. Most linked material targets OS X 10.x and iOS 8–10 era internals, such as El Capitan kernels and iOS 9 and 10 jailbreak analyses, and the list predates current macOS and iOS releases and Apple silicon Macs. A December 2019 commit replaced some broken and outdated links, but this collection did not check whether the remaining links still resolve.",
+      "No target files are supplied or needed by the list itself; the linked tutorials and crackmes bring their own samples, and the books are listed by title only. Following the material assumes a Mac or iOS device and the tools each article uses, such as LLDB, Hopper, and VMware Fusion or VirtualBox for kernel debugging.",
+      "The list mixes analysis tutorials with malware infection, rootkit, privilege-escalation and jailbreak write-ups; this entry presents it as background reading for analysis only. The repository contains only README.md and no license file, so the list states no reuse terms, and linked works keep their own rights. This collection reviewed the README and commit history without reading the linked works, and the list makes no mention of AI or REA."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/michalmalik/osx-re-101/tree/486f33adf35848735327d9a83a05f9abd0f18af7",
+      "https://github.com/michalmalik/osx-re-101/commits/486f33adf35848735327d9a83a05f9abd0f18af7"
+    ]
   }
 ]
