@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bread-bios-debugger",
+    "name": "BREAD",
+    "url": "https://github.com/Theldus/bread",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Injectable real-mode x86 debugger for legacy BIOS code, boot code and DOS programs on real hardware or in a virtual machine. A small 16-bit assembly stub placed in the target code installs interrupt handlers, single-steps the processor and talks over a serial line to a Linux bridge, which translates its simple packets into the GDB remote protocol so GDB can read and write memory and registers, step, continue and set one hardware breakpoint and one watchpoint at a time. A companion script turns an address–label list into a minimal ELF symbol file for GDB.",
+    "description_zh": "可注入的 x86 实模式调试器，用于在真实硬件或虚拟机上调试传统 BIOS 代码、引导代码和 DOS 程序。放入目标代码中的 16 位汇编小程序会安装中断处理程序、让处理器单步执行，并通过串口与 Linux 上的桥接程序通信；桥接程序把这些简化报文转换为 GDB 远程协议，使 GDB 能读写内存和寄存器、单步、继续执行，并可同时设置一个硬件断点和一个观察点。配套脚本可将地址与标签列表转换为供 GDB 加载的最小 ELF 符号文件。",
+    "evidence_url": "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases are published. The reviewed master commit of 2025-10-21 fixes EIP handling in the interrupt-based mode; the previous code change, adding the symbolify tool, dates from 2023-10-19. Building needs a Linux host with GNU Make, a C compiler such as GCC, Clang or TCC, and NASM. The default build polls the UART at full CPU load, while UART_POLLING=no selects the interrupt-based mode, which is not the default because interrupts are not always enabled.",
+      "dbg.asm must be edited for each target, changing its ORG and return path and restoring any instructions replaced by the call into it, and the assembled dbg.bin then goes into the user’s own BIOS ROM image or runs as a DOS .COM program from a minimal FreeDOS or DOS boot floppy. Real hardware needs a serial connection to the Linux host. The repository ships no ROM; symbols/ami_ipm41d3.txt holds the author’s symbol names for one PCWare IPM41-D3 AMI legacy BIOS, which its header calls the author’s interpretation, not official or leaked symbols.",
+      "The README lists limits: the debugged code is unaware of the debugger, so a switch to protected mode, a changed IDT or a missing stack stops it from working, and BIOS code cannot be followed from the boot block because RAM must already be set up; a warm reboot can replay initialisation but may take a different path from a cold boot. Virtual machines need debug-register support, from a Bochs build with its x86 debugger enabled or QEMU with KVM, which the bundled qemu target uses with a floppy built from the included boot sector and debugger.",
+      "The repository has no tests or CI; the README links a demonstration video that changes the CPU name string. This review built and ran nothing. MIT license by Davidson Francis; firmware and programs being debugged keep their own rights, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/README.md#L99-L134",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/README.md#L136-L282",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/Makefile",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/dbg.asm",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/symbolify.py",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/.gdbinit",
+      "https://github.com/Theldus/bread/blob/700807ef312db8bb765f88eb4f702bc22b7b2858/LICENSE",
+      "https://github.com/Theldus/bread/commit/700807ef312db8bb765f88eb4f702bc22b7b2858"
+    ]
   }
 ]
