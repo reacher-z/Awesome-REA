@@ -11254,5 +11254,43 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "gymnasticon-exercise-bike-bridge-case",
+    "name": "Gymnasticon: bridging proprietary exercise-bike data to standard cycling sensors",
+    "url": "https://github.com/ptx2/gymnasticon",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Node.js bridge that reads power and cadence from exercise bikes whose own apps or services are gone or closed, and re-broadcasts them as standard Bluetooth LE Cycling Power and Cycling Speed and Cadence sensors and as an ANT+ bike power profile, so that Zwift, TrainerRoad, bike computers and watches can use the bike. The author's development notes describe working out the Flywheel Home Bike's stats packets on its Bluetooth UART service after the vendor shut its home service down; Peloton support reads the bike's data cable through a USB serial adapter, while the Schwinn IC4 and Keiser M clients parse the standard Fitness Machine Service and Keiser's documented broadcasts. Bike and app compatibility is project-reported.",
+    "description_zh": "一个 Node.js 桥接程序：从官方应用或服务已停用或不开放的健身单车读取功率和踏频，再以标准的低功耗蓝牙 Cycling Power、Cycling Speed and Cadence 传感器及 ANT+ 自行车功率配置文件重新广播，使 Zwift、TrainerRoad、码表和运动手表能够使用这辆单车。作者的开发笔记记录了在厂商关停家用服务后，如何在 Flywheel Home Bike 的蓝牙 UART 服务上解析出其统计数据包；Peloton 支持通过 USB 串口适配器读取单车的数据线，Schwinn IC4 和 Keiser M 客户端则分别解析标准的 Fitness Machine Service 和 Keiser 公开文档中的广播数据。单车与应用的兼容性均为项目报告。",
+    "evidence_url": "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: v1.4.0, published 2021-02-21 with a Raspberry Pi SD card image; npm's latest is 1.4.1 from 2021-03-24, and the reviewed main commit of 2021-04-21, which adds autodetection for all supported bikes, is still the newest on main. The README lists the Flywheel, Peloton (with an additional cable), Schwinn IC4/IC8 aka Bowflex C6 and Keiser M3i, M3i-TBT and M3iX bikes as tested and the LifeFitness IC5 as probably working; a simulated bot bike serves testing.",
+      "Needs the user's own supported bike; no vendor app, firmware or account is used. A Raspberry Pi Zero W is recommended, and the tested hosts are Raspbian Buster on Pi Zero W, 3B+ and 4, macOS 10.14+ and Debian Buster on x86-64. BLE bikes need a Bluetooth 4.1+ adapter with multi-role support, or two adapters; ANT+ output needs an ANT+ USB stick, and Peloton bikes need the extra serial cable linked from the README.",
+      "The SD card image is the project's own Raspbian Buster build made with pi-gen scripts in deploy/, with the default pi/raspberry account and SSH disabled; on first boot it switches the root filesystem to an overlay with a read-only boot partition and reads gymnasticon.json from the boot partition. Manual installs use Node.js 12.16.1+ from npm, with libudev-dev on Linux and cap_net_raw or a systemd unit for Bluetooth access, and depend on the abandonware noble and bleno libraries, gd-ant-plus and serialport.",
+      "CI builds the package and runs tape unit tests on Node.js 12 and 14; they cover the Flywheel, IC4, Keiser and Peloton parsers on sample packets, the simulated bike and utilities, not live bikes or training apps. power-scale and power-offset options let riders correct bikes that report inaccurate power.",
+      "MIT. Bike and app names belong to their owners. Nothing was installed or run, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/CHANGELOG.md",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/package.json",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/src/bikes/flywheel.js",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/src/bikes/peloton.js",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/src/bikes/ic4.js",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/src/bikes/keiser.js",
+      "https://github.com/ptx2/gymnasticon/tree/e142f539c518d6d4ced3abdd587a825b918a9367/src/test",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/.github/workflows/node.js.yml",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/deploy/pi-sdcard/build.sh",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/deploy/pi-sdcard/config",
+      "https://github.com/ptx2/gymnasticon/blob/e142f539c518d6d4ced3abdd587a825b918a9367/LICENSE.txt",
+      "https://github.com/ptx2/gymnasticon/releases/tag/v1.4.0",
+      "https://ptx2.net/posts/unbricking-a-bike-with-a-raspberry-pi"
+    ]
   }
 ]
