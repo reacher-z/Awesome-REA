@@ -1,6 +1,6 @@
 # 运行时与调试
 
-[全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/dynamic-analysis/) · [English](dynamic-analysis.md)
 
 **104 个仓库** · 2026-10-16 UTC
 

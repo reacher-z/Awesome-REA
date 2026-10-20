@@ -1,6 +1,6 @@
 # Apps · Android
 
-[All categories](README.md) · [简体中文](android.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/android/) · [简体中文](android.zh-CN.md)
 
 **430 repositories** · 2026-10-16 UTC
 

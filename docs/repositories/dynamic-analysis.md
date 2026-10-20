@@ -1,6 +1,6 @@
 # Runtime and debugging
 
-[All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
 **104 repositories** · 2026-10-16 UTC
 

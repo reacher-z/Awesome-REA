@@ -1,6 +1,6 @@
 # 应用 · 托管代码
 
-[全部分类](README.zh-CN.md) · [English](managed-code.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/managed-code/) · [English](managed-code.md)
 
 **125 个仓库** · 2026-10-16 UTC
 

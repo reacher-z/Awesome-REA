@@ -1,6 +1,6 @@
 # 游戏
 
-[全部分类](README.zh-CN.md) · [English](game-analysis.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
 **392 个仓库** · 2026-10-16 UTC
 

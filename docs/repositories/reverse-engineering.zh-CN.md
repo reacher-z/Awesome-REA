@@ -1,6 +1,6 @@
 # 通用工具与资源合集
 
-[全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
 **605 个仓库** · 2026-10-16 UTC
 

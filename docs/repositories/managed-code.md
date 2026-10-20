@@ -1,6 +1,6 @@
 # Apps · Managed code
 
-[All categories](README.md) · [简体中文](managed-code.zh-CN.md)
+[All categories](README.md) · [On the website](https://awesomerea.org/browse/managed-code/) · [简体中文](managed-code.zh-CN.md)
 
 **125 repositories** · 2026-10-16 UTC
 

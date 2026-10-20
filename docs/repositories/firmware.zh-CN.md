@@ -1,6 +1,6 @@
 # 固件
 
-[全部分类](README.zh-CN.md) · [English](firmware.md)
+[全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/firmware/) · [English](firmware.md)
 
 **211 个仓库** · 2026-10-16 UTC
 
