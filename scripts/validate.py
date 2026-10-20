@@ -3,7 +3,6 @@
 import datetime as dt
 import html
 import ipaddress
-import json
 import os
 from pathlib import Path
 import re
@@ -20,6 +19,7 @@ from validate_papers import validate_papers
 from review_dates import review_date_is_future
 from source_descriptions import validate_description_capture
 from case_coverage import read_case_coverage, validate_case_coverage
+import strict_json
 
 
 RESOURCE_FIELDS = {
@@ -1013,9 +1013,9 @@ def validate_citation(text, errors, *, now=None):
 
 def read_array(path, errors):
     try:
-        value = json.loads(path.read_text(encoding='utf-8'))
+        value = strict_json.loads(path.read_text(encoding='utf-8'))
     except (OSError, ValueError) as error:
-        errors.append(f'{path.relative_to(ROOT)}: cannot read JSON: {error}')
+        errors.append(f'{path.relative_to(ROOT)}: cannot read strict JSON: {error}')
         return []
     if not isinstance(value, list) or not value:
         errors.append(f'{path.relative_to(ROOT)}: expected a nonempty JSON array')
@@ -1042,9 +1042,9 @@ def main():
     index_path = ROOT / 'data/source-index.json'
     if index_path.exists():
         try:
-            index_document = json.loads(index_path.read_text(encoding='utf-8'))
-        except (OSError, ValueError):
-            errors.append('Source index could not be read as JSON.')
+            index_document = strict_json.loads(index_path.read_text(encoding='utf-8'))
+        except (OSError, ValueError) as error:
+            errors.append(f'data/source-index.json: cannot read strict JSON: {error}')
         else:
             scanned = validate_source_index(index_document, errors)
             source_records = index_document.get('resources') if isinstance(index_document, dict) else None
