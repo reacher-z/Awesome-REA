@@ -11254,5 +11254,29 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "awesome-ai-reverse",
+    "name": "Awesome AI Reverse Engineering",
+    "url": "https://github.com/darbra/awesome-ai-reverse",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "website",
+      "app",
+      "binary"
+    ],
+    "description_en": "A single-README, Chinese-language list of AI-assisted reverse-engineering projects, grouped into JavaScript reversing, binary and native analysis, Android and iOS security, and browser automation and traffic analysis. Its entries are mostly MCP servers, agent skills for Claude, Cursor and Codex, and IDE plugins that connect large language models to tools such as IDA Pro, Ghidra, Binary Ninja, JADX and Frida. Each row is a project name, a link and a one-line Chinese blurb.",
+    "description_zh": "以单个 README 维护的中文清单，收录与 AI 结合的逆向工程项目，按 JavaScript 逆向、二进制与原生分析、Android 与 iOS 安全、浏览器自动化与流量分析分组。条目大多是 MCP 服务器、面向 Claude、Cursor、Codex 的智能体技能，以及把大语言模型接入 IDA Pro、Ghidra、Binary Ninja、JADX、Frida 等工具的 IDE 插件。每一行是项目名称、链接和一句中文说明。",
+    "evidence_url": "https://github.com/darbra/awesome-ai-reverse/blob/6459523eb2570a9f0da7b9589d9f7dfed54cead7/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, from the commit dated 2026-09-29, lists 35 projects across four sections: 11 under JavaScript reversing, 9 under binary and native analysis, 9 under Android and iOS security, and 6 under browser automation and traffic analysis. These are list rows, not projects verified here, and the list carries a last-updated 2026-04 badge.",
+      "Each entry gives only a name, a link to a third-party repository and a short Chinese description, with no stated completion, accuracy or maintenance status. The list mixes MCP servers, agent skills and IDE plugins, and several entries are dual-use — anti-bot/WAF traffic evasion, anti-detection browsers, and APK ad or bloat removal with repackaging — so each linked project must be reviewed at its own source for scope, rights and lawful, authorized use.",
+      "The list links out and bundles no tools or target files of its own; the GhidraMCP server and the SimoneAvogadro Android reverse-engineering skill it points to are already in this catalog. Linked projects and the software they analyze keep their own licenses.",
+      "The README shows an MIT license badge, but the repository contains only README.md with no LICENSE file, and GitHub detects no license, so the list itself states no clear reuse terms. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
