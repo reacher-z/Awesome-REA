@@ -6843,5 +6843,15 @@
       "无需任何第三方固件：练习对象都是作者自己编写的程序，仓库提交了它们的源码和构建产物（ELF、BIN、UF2、HEX、反汇编与 map 文件）、两个 Binary Ninja 数据库、CTF-02 的静态库（其 auth 模块、mbedTLS 子集和 Argon2 参考实现）、RP2350 SVD 文件，以及自定义引导程序的签名镜像。datasheets/ 目录收录 RP2350 数据手册、Pico C/C++ SDK 手册、Arm Cortex-M33 技术参考手册、Armv8-M 架构参考手册、AAPCS32 和 Application Note 132 的副本，这些文档适用各自发布者的条款。",
       "仓库采用 Apache-2.0 许可证。README 的法律声明将用途限定为教育、研究和防御性工作，且只能针对用户自有或已获明确授权测试的设备。仓库附带的 OpenCode 技能只用于检查作者的 C 代码规范，未确立与 REA 的关联。本合集阅读了 README、仓库文件树和部分挑战文件，没有实际学习课程、构建或烧录固件，也未审阅教材、幻灯片或链接的仓库。"
     ]
+  },
+  "apple-continuity-tools": {
+    "name": "Apple Continuity 逆向工程工具包",
+    "requirements": [
+      "仓库只有三个提交：2021-04-12 的初始发布与论文链接，以及 2026-08-17 对 README 的修改，把原 Open Wireless Link 网站链接换成说明该网站已与项目无关的提示。没有发布版本。process_recon 的示例记录于 macOS 11.0，断点针对的是私有 Rapport 框架的方法；未说明是否支持当前 macOS 版本。",
+      "在分析者自己的 Mac 上运行，需要虚拟环境中的 Python 3 和 Node.js；make install 会安装锁定版本的依赖，包括 2021 年的 frida 14.2.7 和 frida-tools 9.1.0，以及开发依赖 prettier。continuity_messages 需要 lldb，并需关闭 SIP 的调试保护；keychain_access 用于系统进程时需完全关闭 SIP；README 提醒注意其安全影响。",
+      "输入来自分析者自己的设备和账号：rapportd 示例涉及放在 Mac 旁的 iPhone 以及分析者 iCloud 设备的密钥，因此 keychain_access 的输出包含真实机密，应妥善处理。keychain_access/tests 中有小型 Swift 和 Objective-C hackme 程序，以及先存入再提取一个虚拟钥匙串密码的 test.sh；除此之外没有测试。",
+      "这些工具观察的是主机上的日志、钥匙串调用和守护进程消息，并不捕获或解码空中的蓝牙低功耗或 AWDL 流量；这一点不同于另行收录、针对 Continuity 广播的 furiousMAC Continuity 笔记与 Wireshark 解析器。README 将作者的 USENIX Security 2021 Continuity 论文、2019 年 AWDL 论文和一篇 2020 年博士论文列为相关出版物。",
+      "采用 GPL-3.0。本次未安装或运行任何内容，所审阅的来源也未表明与 REA 有关。"
+    ]
   }
 }
