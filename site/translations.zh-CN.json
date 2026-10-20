@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "budspro-headtracking-case": {
+    "name": "BudsPro-Headtracking：通过 Samsung 串口协议获取 Galaxy Buds Pro 头部追踪数据",
+    "requirements": [
+      "所审阅的 master 分支提交 63b321a（2024-12-30）合并了一位贡献者的修改，使脚本也能识别据报告用于 Galaxy Buds2 的 FACTORY 服务名；README 只涉及 Galaxy Buds Pro，项目没有发布版本、测试，也没有列出测试过的耳机固件版本。Headtracking.py 输出原始的 x、y、z、w 四元数（四个有符号 16 位数值除以 10000），使用 -b 时则输出帧间隔统计，陀螺仪偏差和传感器卡滞事件只在详细模式下提示。",
+      "需要使用者自己已配对的 Galaxy Buds Pro，并通过其蓝牙 MAC 地址指定设备；运行时不使用任何 Samsung 应用或固件，仓库中也不包含这些文件。仓库未说明消息 ID 和帧格式是如何推断出来的；代码注释指向作者另一个 Galaxy Buds 桌面客户端项目中的完整解析器和四元数转换代码，本条目不涵盖该项目。",
+      "需要 Python 3 与 PyBluez，可在 Windows 或 Linux 上运行；README 要求在 Windows 上使用 PyBluez 0.22，因为 0.23 无法枚举蓝牙设备。buds_to_unity.py 还需要 NumPy，脚本内写死了设备地址并发送到 127.0.0.1:12562；getBudsUDP.cs 是一个 Unity MonoBehaviour，改编自注明出自 KAIST UVR Lab 的接收端代码。",
+      "README 展示了四元数示例输出，基准模式可报告运动帧之间的平均、最短和最长间隔，但项目没有公开抓包记录、测试或基准结果。在所审阅的 SpatialSensorManager.py 中，命令负载用 Python 的 bytes(n) 构造，得到的是 n 个零字节而非数值 n，因此实际发送的字节可能与常量名称所示含义不同；本合集未运行这些脚本。",
+      "LICENSE 声明采用 MIT 许可（2021，Tim Schneeberger）；Unity 脚本保留了原作者署名，但没有单独的许可证。Galaxy Buds 及其服务归 Samsung 所有。所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }

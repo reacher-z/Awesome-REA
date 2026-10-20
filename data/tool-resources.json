@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "budspro-headtracking-case",
+    "name": "BudsPro-Headtracking: streaming Galaxy Buds Pro head tracking over Samsung’s serial protocol",
+    "url": "https://github.com/timschneeb/BudsPro-Headtracking",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reimplements the Samsung Galaxy Buds Pro’s proprietary spatial-audio messages in a small Python script so that a PC can stream the earbuds’ head-tracking data in real time. It connects to the earbuds’ GEARMANAGER (or FACTORY) RFCOMM serial service, frames packets with start and end markers and a CRC16-CCITT checksum, enables the sensor stream with attach and two-second keep-alive messages, and decodes the rotation quaternion from the data events. A contributed script converts the quaternion to Euler angles and forwards it over local UDP to a Unity receiver; results are shown only as author-provided sample output.",
+    "description_zh": "用一个小型 Python 脚本重新实现 Samsung Galaxy Buds Pro 专有的空间音频消息，使电脑能实时获取耳机的头部追踪数据。脚本连接耳机的 GEARMANAGER（或 FACTORY）RFCOMM 串口服务，以起止标记和 CRC16-CCITT 校验封装数据包，通过 attach 消息和每两秒一次的保活消息开启传感器数据流，并从数据事件中解码旋转四元数。另有贡献者编写的脚本把四元数转换为欧拉角，经本机 UDP 转发给 Unity 接收端；效果仅以作者给出的示例输出展示。",
+    "evidence_url": "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit 63b321a (2024-12-30) merges a contributor change that also accepts the FACTORY service name reported for Galaxy Buds2; the README covers only the Galaxy Buds Pro, and the project has no releases, tests or list of tested earbud firmware. Headtracking.py prints the raw x, y, z, w quaternion (four signed 16-bit values divided by 10,000) or, with -b, frame-timing statistics, and reports gyro-bias and stuck-sensor events only in verbose mode.",
+      "It needs the user’s own paired Galaxy Buds Pro, addressed by its Bluetooth MAC address; no Samsung app or firmware is used at runtime or included in the repository. The repository does not document how the message IDs and framing were derived; code comments point to the author’s separate Galaxy Buds desktop client for the full parser and quaternion conversion, which this record does not cover.",
+      "Python 3 with PyBluez on Windows or Linux; the README requires PyBluez 0.22 on Windows because 0.23 fails to enumerate Bluetooth devices. buds_to_unity.py also needs NumPy, hardcodes a device address and sends to 127.0.0.1:12562, and getBudsUDP.cs is a Unity MonoBehaviour adapted from a receiver credited to KAIST UVR Lab.",
+      "The README shows sample quaternion output, and benchmark mode reports the average, minimum and maximum time between motion frames, but no captures, tests or recorded benchmark results are published. In the reviewed SpatialSensorManager.py the command payloads are built with Python’s bytes(n), which yields n zero bytes rather than the value n, so the bytes sent may differ from what the constant names suggest; this collection did not run the scripts.",
+      "LICENSE grants MIT (2021, Tim Schneeberger); the Unity script carries an attribution to its original author but no separate license. Galaxy Buds and its services belong to Samsung. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/Headtracking.py",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/SpatialSensorManager.py",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/BluetoothService.py",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/Crc16.py",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/buds_to_unity.py",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/getBudsUDP.cs",
+      "https://github.com/timschneeb/BudsPro-Headtracking/blob/63b321aa0536fd28233eaaf3a05c4f3b3f8201fe/LICENSE"
+    ]
   }
 ]
