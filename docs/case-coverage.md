@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 203 | 201 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 136 | 136 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 252 | 252 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 135 | 135 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 253 | 253 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 216 occurrences have catalog links. They reference 207 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 394 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 395 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -223,6 +223,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Grok Bot + REA: a reported software-investigation chat template | Insufficient evidence | [Source](https://x.com/ChaiWithAi/status/2111184500093026340) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | Pending | [Source](https://www.anthropic.com/research/ecdsa-curve-origins) |
 | Niuniu AI / MT5: an REA rebuild report after a reseller relationship ended | Insufficient evidence | [Source](https://x.com/sera00111/status/2111206851606159655) |
+| Wiki Lab: a claimed REA-based Wikipedia for agents | Insufficient evidence | [Source](https://x.com/BrianDevoor/status/2111215569047314589) |
 | Base arbitrage contract: an unverified REA/Opus bytecode report | Insufficient evidence | [Source](https://x.com/i/status/2111220274226217276) |
 | System UI from video: Claude measures frames and infers animation parameters | Insufficient evidence | [Source](https://x.com/i/status/2111222217849946308) |
 | Linux mouse driver: reverse engineering among a week's AI projects | Insufficient evidence | [Source](https://x.com/i/status/2111224894297870413) |
