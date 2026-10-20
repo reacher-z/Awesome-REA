@@ -11191,5 +11191,34 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "lazyida",
+    "name": "LazyIDA",
+    "url": "https://github.com/L4ys/LazyIDA",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Single-file IDA plugin of convenience actions first written for CTF work. In the disassembly and hex views it dumps a selection as a string, hex string, C/C++ array or Python list of bytes, words, dwords or qwords and copies the result to the clipboard, shows a selection XORed with one byte, fills it with NOPs, and copies or jumps to addresses and file offsets by hotkey. With Hex-Rays it toggles a function’s return type to void, copies item names and jumps to the member function behind an obj->func call on double-click, while a heuristic scan lists printf-family calls whose format argument is not a read-only constant.",
+    "description_zh": "最初为 CTF 解题编写的单文件 IDA 便捷操作插件。在反汇编和十六进制视图中，它可把选区导出为字符串、十六进制字符串，或按字节、字、双字、四字导出为 C/C++ 数组或 Python 列表，并复制到剪贴板；还能显示选区与单个字节异或后的结果、用 NOP 填充选区，并通过快捷键复制或跳转到地址和文件偏移。配合 Hex-Rays 时，它可把函数返回类型切换为 void、复制条目名称，双击 obj->func 形式的调用时跳转到对应成员函数；另有启发式扫描，列出格式参数并非只读常量的 printf 系列调用。",
+    "evidence_url": "https://github.com/L4ys/LazyIDA/blob/0ecdf8d62554405fecdd000c750644499f4eccc0/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit is three commits after the v1.1.0 release of 2026-01-25; LazyIDA.py now declares 1.1.1 while ida-plugin.json still says 1.1.0. The plugin is the single LazyIDA.py file, installed with Hex-Rays’ hcli plugin command or copied into the IDA plugins directory. ida-plugin.json asks for IDA 7.4 or later on Windows x86-64, Linux x86-64 and macOS x86-64 or arm64; the changelog adds IDA 9.0 and 9.2 support, and clipboard access uses PySide6 on IDA 9.2+ and PyQt5 on earlier GUI builds.",
+      "It works on whatever database the user opens in IDA and bundles no sample binaries. The Hex-Rays actions load only when a Hex-Rays decompiler initialises. The format-string scan is offered in the disassembly view only for 32- and 64-bit x86 and 32-bit ARM databases; it walks back from each call to printf-family functions in .text, .plt, .idata or .plt.got using fixed register and stack-slot conventions, so its hits are leads to check by hand, not confirmed vulnerabilities.",
+      "The README says the project was written casually about ten years ago and that several features are now outdated: return-type removal is built into IDA 7.5+, IDA’s Shift-E export can replace the dump actions, and the format-string scan should be reimplemented with the Hex-Rays API; it points users to HappyIDA instead. Multi-byte dumps decode little-endian values, and Fill with NOPs writes x86 0x90 bytes into the database whatever the architecture.",
+      "The repository has no tests or CI; this collection reviewed source and documentation without running the plugin. MIT per LICENSE and ida-plugin.json; IDA Pro and the Hex-Rays decompiler keep their own licences. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/L4ys/LazyIDA/blob/0ecdf8d62554405fecdd000c750644499f4eccc0/LazyIDA.py",
+      "https://github.com/L4ys/LazyIDA/blob/0ecdf8d62554405fecdd000c750644499f4eccc0/ida-plugin.json",
+      "https://github.com/L4ys/LazyIDA/blob/0ecdf8d62554405fecdd000c750644499f4eccc0/CHANGELOG.md",
+      "https://github.com/L4ys/LazyIDA/blob/0ecdf8d62554405fecdd000c750644499f4eccc0/LICENSE",
+      "https://github.com/L4ys/LazyIDA/releases/tag/v1.1.0"
+    ]
   }
 ]

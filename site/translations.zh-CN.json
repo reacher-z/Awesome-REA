@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "lazyida": {
+    "name": "LazyIDA：IDA 便捷操作插件",
+    "requirements": [
+      "所审阅的 master 提交位于 2026-01-25 发布的 v1.1.0 之后三个提交；LazyIDA.py 已标注 1.1.1，ida-plugin.json 仍为 1.1.0。插件只有 LazyIDA.py 一个文件，可用 Hex-Rays 的 hcli 插件命令安装，或复制到 IDA 插件目录。ida-plugin.json 要求 IDA 7.4 或更高版本，平台为 Windows x86-64、Linux x86-64 以及 macOS x86-64 或 arm64；更新日志记载了对 IDA 9.0 和 9.2 的支持，剪贴板功能在 IDA 9.2+ 使用 PySide6，在更早的图形界面版本中使用 PyQt5。",
+      "插件作用于使用者在 IDA 中打开的任意数据库，不附带样本二进制。Hex-Rays 相关操作仅在 Hex-Rays 反编译器成功初始化时加载。格式化字符串扫描只在 32 位和 64 位 x86 以及 32 位 ARM 数据库的反汇编视图中提供；它从 .text、.plt、.idata 或 .plt.got 中 printf 系列函数的每个调用处向前回溯，依据固定的寄存器与栈槽约定判断格式参数，因此结果只是需要人工核实的线索，并非已确认的漏洞。",
+      "README 称该项目约十年前随手写成，部分功能已经过时：IDA 7.5+ 已内置移除返回类型功能，IDA 的 Shift-E 导出可替代导出操作，格式化字符串扫描应改用 Hex-Rays API 重新实现；README 建议改用 HappyIDA。多字节导出按小端序解码，“Fill with NOPs”无论架构如何都向数据库写入 x86 的 0x90 字节。",
+      "仓库没有测试或 CI；本合集仅审阅源码与文档，未运行插件。LICENSE 与 ida-plugin.json 标明采用 MIT 许可；IDA Pro 与 Hex-Rays 反编译器各有其许可。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
