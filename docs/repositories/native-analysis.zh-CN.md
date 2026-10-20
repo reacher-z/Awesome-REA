@@ -155,7 +155,7 @@
 - [patois/HexraysToolbox](https://github.com/patois/HexraysToolbox) — Hexrays Toolbox：在 Hex-Rays ctree 中查找代码模式。 **[483 星标]**
 - [A200K/IDA-Pro-SigMaker](https://github.com/A200K/IDA-Pro-SigMaker) — 适用于 IDA 9.x 和 8.x 的签名生成插件。 **[481 星标]**
 - [Zfinix/eleven](https://github.com/Zfinix/eleven) — 面向智能体的 macOS、Windows 和 Linux 逆向工程工具：任意 ACP 智能体均可与你协作，读取、重命名并修补二进制文件、Android 应用和 GPU 内核。 **[478 星标]** · 精选：[Eleven](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
-- [VoidSec/DriverBuddyReloaded](https://github.com/VoidSec/DriverBuddyReloaded) — Driver Buddy Reloaded 是 IDA Pro 的 Python 插件，可自动完成部分繁琐的 Windows 内核驱动逆向工程任务。 **[472 星标]**
+- [VoidSec/DriverBuddyReloaded](https://github.com/VoidSec/DriverBuddyReloaded) — Driver Buddy Reloaded 是 IDA Pro 的 Python 插件，可自动完成部分繁琐的 Windows 内核驱动逆向工程任务。 **[472 星标]** · 精选：[Driver Buddy Reloaded Windows 内核驱动分析插件](https://awesomerea.org/zh/resources/driver-buddy-reloaded/)
 - [mewmew/dissection](https://github.com/mewmew/dissection) — 剖析一个简单的“hello world” ELF 二进制文件。 **[470 星标]**
 - [radareorg/radare2-r2pipe](https://github.com/radareorg/radare2-r2pipe) — 通过管道从任意编程语言访问 radare2！ **[466 星标]**
 - [patois/dsync](https://github.com/patois/dsync) — 同步反汇编与反编译视图的 IDAPython 插件。 **[459 星标]**

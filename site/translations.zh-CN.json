@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "driver-buddy-reloaded": {
+    "name": "Driver Buddy Reloaded Windows 内核驱动分析插件",
+    "requirements": [
+      "审阅时最新版本为 2.5.1，于 2026-07-08 以 zip 包发布；所审阅的 main 分支提交（2026-10-19）比它晚四个提交，加入了针对 issue #41 的 IOCTL 恢复修复及新的回归测试样例、为 MajorFunction 标注功能补全 DriverEntry 类型，以及下文提到的许可证变更。README 称插件可在使用 Python 3 的 IDA 7.6+、8.x 和 9.0+ 上运行，版本间的 API 差异由 ida_compat.py 处理；ida-plugin.json 列出 Windows、Linux 和 macOS 宿主。IDA 9.0+ 可通过 hcli plugin install 安装；7.6 和 8.x 需将脚本及其包目录复制到 plugins 目录的顶层。",
+      "分析者在 IDA 中加载自备的 Windows 内核驱动（.sys）。Hex-Rays 反编译器为可选项，但最有效的 IOCTL 扫描依赖它，switch 跳转表和立即数操作数扫描作为后备；实验性的 DispatchDeviceControl 搜索仅适用于 x64 驱动。每次运行都会在 IDB 所在目录写入 findings.json、report.html、pooltags.txt 和分析日志，可选分析阶段在 config.py 中开关。",
+      "tests/test_dbr.py 是无需 IDA 的纯 Python 回归测试；run_cross_version.ps1 在 IDA 7.6 SP1、8.4 和 Free 9.3 下运行完整流程，run_golden.ps1 则将参考驱动上的分析结果与用 IDA 8.4 反编译器生成并提交的基准 JSON 比较。README 称基于反编译器的扫描使 HEVD 的 IOCTL 恢复数从 7/28 提高到 28/28，ALSysIO64 从 4/17 提高到 17/17，且无误报。仓库没有 CI，上述结果均为项目自报。",
+      "tests/drivers 附带八个参考驱动的 IDA 数据库（.i64）及基准结果，作为回归测试样例：ALSysIO64、HEVD、IObitUnlocker、MODAPI、WinRing0x64、amp、beep 和 zam64 .sys。这些驱动仍受其各自厂商条款约束。",
+      "LICENSE 已于 2026-07-10 改为 PolyForm Noncommercial License 1.0.0，仅允许非商业用途；而 2.5.1 及更早版本采用 GPL-3.0，ida-plugin.json 也仍声明 GPL-3.0。IDA Pro 和 Hex-Rays 仍受各自条款约束。README 称其结果是供人工复核的启发式线索，而非已确认的漏洞。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

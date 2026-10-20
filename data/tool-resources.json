@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "driver-buddy-reloaded",
+    "name": "Driver Buddy Reloaded",
+    "url": "https://github.com/VoidSec/DriverBuddyReloaded",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro Python plugin for triaging Windows kernel drivers, building on NCC Group's original DriverBuddy. Its auto-analysis identifies the driver model (WDM, KMDF, UMDF, WDF, Mini-Filter, Stream Minidriver, AVStream or PortCls), locates the device-control dispatch routines, labels IRP, IO_STACK_LOCATION and WDF structures and calls, and discovers and decodes IOCTL codes through Hex-Rays ctree, switch-table and immediate-operand scans. It also reports device names, symbolic links and device ACLs, pool tags, flagged APIs and opcodes, name-based call chains and heuristic vulnerability leads with per-IOCTL risk scores, in an IDA findings window, a JSON file and an HTML report.",
+    "description_zh": "用于分诊 Windows 内核驱动的 IDA Pro Python 插件，在 NCC Group 最初的 DriverBuddy 基础上发展而来。其自动分析可识别驱动模型（WDM、KMDF、UMDF、WDF、Mini-Filter、Stream Minidriver、AVStream 或 PortCls），定位设备控制派遣例程，标注 IRP、IO_STACK_LOCATION 和 WDF 结构及调用，并通过 Hex-Rays ctree、switch 跳转表和立即数操作数三种扫描发现并解码 IOCTL 码。它还会报告设备名、符号链接与设备 ACL、池标记、被标记的 API 和指令、基于名称的调用链，以及带逐个 IOCTL 风险评分的启发式漏洞线索，结果显示在 IDA 结果窗口中，并写入 JSON 文件和 HTML 报告。",
+    "evidence_url": "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/README.MD",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.5.1, published 2026-07-08 as a zip; the reviewed main commit of 2026-10-19 is four commits later, adding an IOCTL-recovery fix for issue #41 with a new regression fixture, DriverEntry typing for the MajorFunction annotator and the licence change noted below. The README says it runs on IDA 7.6+, 8.x and 9.0+ with Python 3, with API differences handled by ida_compat.py, and ida-plugin.json lists Windows, Linux and macOS hosts. IDA 9.0+ installs it with hcli plugin install; 7.6 and 8.x need the script and its package folder copied to the top level of the plugins directory.",
+      "Analysts load their own Windows kernel driver (.sys) in IDA. The Hex-Rays decompiler is optional but drives the strongest IOCTL scan, with switch-table and immediate-operand scans as fallbacks, and the experimental DispatchDeviceControl search works only for x64 drivers. Each run writes findings.json, report.html, pooltags.txt and an analysis log next to the IDB, and optional stages are toggled in config.py.",
+      "tests/test_dbr.py is a pure-Python regression suite that needs no IDA; run_cross_version.ps1 runs the pipeline under IDA 7.6 SP1, 8.4 and Free 9.3, and run_golden.ps1 compares findings on reference drivers with committed golden JSON captured with the IDA 8.4 decompiler. The README reports that decompiler-based scanning raised IOCTL recovery from 7/28 to 28/28 on HEVD and from 4/17 to 17/17 on ALSysIO64 with no false positives. There is no CI, and these results are project-reported.",
+      "tests/drivers bundles IDA databases (.i64) and golden findings for eight reference drivers as regression fixtures: ALSysIO64, HEVD, IObitUnlocker, MODAPI, WinRing0x64, amp, beep and zam64 .sys. Those drivers keep their own vendors' terms.",
+      "LICENSE was replaced on 2026-07-10 with the PolyForm Noncommercial License 1.0.0, which permits only noncommercial purposes, while release 2.5.1 and earlier carry GPL-3.0 and ida-plugin.json still declares GPL-3.0. IDA Pro and Hex-Rays keep their own terms. The README calls its findings heuristic lead generators for manual review rather than confirmed vulnerabilities. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/CHANGELOG.md",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/ida-plugin.json",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/DriverBuddyReloaded/config.py",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/DriverBuddyReloaded/ida_compat.py",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/tests/test_dbr.py",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/tests/run_cross_version.ps1",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/tests/run_golden.ps1",
+      "https://github.com/VoidSec/DriverBuddyReloaded/tree/72bf7c862de01f389fa38651d9adc0f1042cbcba/tests/drivers",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/72bf7c862de01f389fa38651d9adc0f1042cbcba/LICENSE",
+      "https://github.com/VoidSec/DriverBuddyReloaded/commit/8a94d75179de6aafa348ec89b4efc66bfa3efce9",
+      "https://github.com/VoidSec/DriverBuddyReloaded/blob/f983af7be5e00421881c6223b6638880a242f9ba/LICENSE",
+      "https://github.com/VoidSec/DriverBuddyReloaded/releases/tag/2.5.1"
+    ]
   }
 ]
