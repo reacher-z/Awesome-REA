@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 199 | 197 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 166 | 166 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 200 | 198 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 165 | 165 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 226 | 226 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-211 occurrences have catalog links. They reference 204 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+212 occurrences have catalog links. They reference 205 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 365 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 366 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -386,6 +386,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Open Scrantic: reconstructing the Johnny Castaway screensaver engine | Already curated | [Source](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
 | ScooterLink: reconstructing Honda RoadSync’s handlebar-button protocol | Already curated | [Source](https://x.com/i/status/2111470520688665052) |
 | Hitachi combination oven: a Codex/REA account using an Android app for direct control | Insufficient evidence | [Source](https://x.com/i/status/2111474749855670664) |
+| Frontkick vs Rikugan: a CREBench agent comparison | Already curated | [Source](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan) |
 | Ableton Live 12: an agent reversing attempt running for 96 hours | Insufficient evidence | [Source](https://x.com/i/status/2111506869395337318) |
 | Makara game maker: an idea for scoped analysis of authorized inputs | Insufficient evidence | [Source](https://x.com/i/status/2111507612646699286) |
 | ROM analysis setup: Gemini Argon with REA, Ghidra and libretro | Insufficient evidence | [Source](https://x.com/i/status/2111507777336098897) |
@@ -432,6 +433,7 @@ Partial or related catalog mappings:
 - `hao-games:row-135` — Pinned README, generated progress, oracle and runtime-issue notes, tool lock, bootstrap script, CI and license support the named TH095 1.02a reconstruction report. Full mapping covers this repository’s function-level reconstruction and playable Windows i386 build, not whole-executable identity, planned ports or independently reproduced play; REA’s Touhou method essay is linked as related. Original-executable requirements and project-reported counts remain explicit.
 - `hao-games:row-136` — Pinned README, generated progress, DOS build, toolchain, oracle, runtime and reference notes, CI and license support the named TH04 reconstruction report. Full mapping covers this repository’s four-program DOS reconstruction and its author-reported differential replays, not byte identity, complete campaigns, the native x64 branch or independent reproduction. REA’s one-helper showcase remains a partial match and its Touhou essay a related one.
 - `hao-games:row-137` — Pinned README, REA worked example, matching, build and progress notes, target and tool locks, a differential test, CI and license support the named DX-Ball reconstruction with author-documented REA and Codex use. Full mapping covers this in-progress function-level reconstruction, not byte identity, a finished playable VC4 build or independent reproduction; REA’s one-function sound-pan showcase remains a partial match. The original-archive requirement and its unverified download source remain explicit.
+- `song:synacktiv-frontkick-rikugan-crebench` — The Synacktiv article documents a dated comparison of the Frontkick and Rikugan Binary Ninja agents on two CREBench tasks, with the setup, a per-run table and the author’s own finding that a prompt difference, rather than the agent design, explains most of the gap. The full mapping covers it as a learning resource, and the related mapping links the CREBench paper it uses. Frontkick has no public release, transcripts are unpublished, and nothing was rerun here.
 
 Alias decisions:
 
