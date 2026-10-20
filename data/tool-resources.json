@@ -11191,5 +11191,31 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "ios-app-reverse-engineering-book",
+    "name": "iOS App Reverse Engineering",
+    "url": "https://github.com/iosre/iOSAppReverseEngineering",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Freely published 2015 book by snakeninny and hangcom on reverse engineering iOS apps, distributed in its repository as a 442-page English PDF. Its four parts cover the iOS filesystem and file types; OS X and on-device tools such as class-dump, Theos, Reveal, IDA, Cycript and LLDB with debugserver; an Objective-C and ARM assembly methodology for locating the code behind a feature; and four worked practices that locate the relevant code in Notes, Mail, WeChat and Messages and then extend those apps with tweaks.",
+    "description_zh": "snakeninny 与 hangcom 于 2015 年免费公开的 iOS 应用逆向工程图书，仓库中以 442 页英文 PDF 形式发布。全书分为四部分：iOS 文件系统与文件类型；class-dump、Theos、Reveal、IDA、Cycript 以及 LLDB 与 debugserver 等 OS X 端和设备端工具；基于 Objective-C 与 ARM 汇编、定位功能背后代码的方法论；以及四个实践案例，先在备忘录、邮件、微信和信息应用中定位相关代码，再编写插件（tweak）为这些应用增加功能。",
+    "evidence_url": "https://github.com/iosre/iOSAppReverseEngineering/blob/a09c2cff202e1b1640c7f7ff8069693b709244a8/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A historical resource: the repository has not changed since 2015-09-17 and holds only the README, an MIT LICENSE and the PDF. The book states that its examples were done on an iPhone 5 with iOS 8.1, and its tooling chapters date from the Xcode 6 and Cydia Substrate era, so tools, file locations and app internals described there may no longer match current iOS releases.",
+      "Reading needs only a PDF reader. The practices assume an OS X host with the tools the book names and a jailbroken test device, and they examine Apple's bundled apps and WeChat as installed on that device; this entry records the book as background on methodology and reproduces none of its device-preparation or app-preparation steps.",
+      "The cover credits the English translation to Ziqi Wu, 0xBBC, tianqing and Fei Cheng, and the preface warns that the book may contain errors and inaccuracies. The README invites readers who find it useful to buy the paid ebook edition.",
+      "MIT license, copyright 2015 snakeninny; the apps examined in the practices keep their owners' rights. The book establishes no REA connection, and none of its practices were followed for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/iosre/iOSAppReverseEngineering/blob/a09c2cff202e1b1640c7f7ff8069693b709244a8/iOSAppReverseEngineering.pdf",
+      "https://github.com/iosre/iOSAppReverseEngineering/blob/a09c2cff202e1b1640c7f7ff8069693b709244a8/LICENSE"
+    ]
   }
 ]
