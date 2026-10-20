@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**104 repositories** · 2026-10-16 UTC
+**105 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -34,6 +34,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ChiChou/vscode-frida](https://github.com/ChiChou/vscode-frida) — Unofficial frida extension for VSCode **[592 stars]** · Curated: [Frida Workbench for VSCode](https://awesomerea.org/resources/vscode-frida/)
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless is a multipurpose IDA Pro plugin system for labels/comments synchronization with a debugger backend, with complex memory dumping and interactive Python scripting capabilities. **[587 stars]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet WeChat Windows Protocol **[551 stars]**
+- [HynekPetrak/malware-jail](https://github.com/HynekPetrak/malware-jail) — Sandbox for semi-automatic Javascript malware analysis, deobfuscation and payload extraction. Written for Node.js **[480 stars]** · Curated: [malware-jail](https://awesomerea.org/resources/malware-jail/)
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — tool to extract passwords from TeamViewer memory using Frida **[465 stars]**
 - [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — Bidirectional XPC message interception and more. Powered by Frida **[452 stars]**
 - [Exo1i/MagiskHluda](https://github.com/Exo1i/MagiskHluda) — Run a more undetectable frida server on boot using magisk 🔐✅ **[433 stars]**

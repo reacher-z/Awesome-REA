@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "malware-jail",
+    "name": "malware-jail",
+    "url": "https://github.com/HynekPetrak/malware-jail",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "binary"
+    ],
+    "description_en": "Node.js sandbox for semi-automatic analysis of JavaScript malware: it runs a sample in Node's vm module against emulated Windows Script Host and ActiveX objects such as WScript.Shell, MSXML2.XMLHTTP, ADODB.Stream, Scripting.FileSystemObject and WMI, plus a partial browser context with selectable browser profiles. It logs the objects created and methods called, keeps every eval() argument to help deobfuscation, records requested URLs and WMI queries, and saves the files a dropper tries to write so payloads can be examined. When the run ends, the whole sandbox context is dumped to JSON for review.",
+    "description_zh": "用于半自动分析 JavaScript 恶意代码的 Node.js 沙箱：在 Node 的 vm 模块中运行样本，并模拟 Windows Script Host 与 ActiveX 对象，例如 WScript.Shell、MSXML2.XMLHTTP、ADODB.Stream、Scripting.FileSystemObject 和 WMI，另有可选择浏览器配置的部分浏览器环境。它记录创建的对象和调用的方法，保留每次 eval() 的参数以辅助去混淆，记下请求的 URL 和 WMI 查询，并保存投放器试图写入的文件，便于检查载荷。运行结束时，整个沙箱上下文会导出为 JSON 供复查。",
+    "evidence_url": "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no releases or tags, and the README says an npm package is not yet available. The reviewed master commit, from 2023-06-16, only edits the README; the last code change, adding newly analyzed malware and ADODB methods, dates from 2019-08-08. Version labels disagree: package.json says 0.18.0, the README 0.19 and jailme.js 0.20.",
+      "Requires Node.js and npm: package.json declares Node 6 or later, and the README says the tool was developed and tested on Linux with Node.js v6.6.0; current Node releases were not checked. npm install fetches minimist, iconv-lite, entities and sync-request, npm test runs a small tap suite for the WScript emulation, and native_test holds scripts meant to run under Windows cscript for comparison. Emulation covers the WScript and ActiveX features the author saw malware use and only part of the browser context, so a sample may stop early or diverge from real Windows behavior; the logs and dumps are traces for an analyst, not a verdict.",
+      "Node's vm module is not a security boundary: the README warns that sandbox-aware malware may try to escape and recommends an unprivileged Linux account or a virtualized Windows machine. By default HTTP requests are not sent and receive dummy responses; --down lets the sample contact remote servers and download payloads, while --h404 and --t404 answer every request with HTTP 404 so all remote URLs can be listed. Execution stops after 60 seconds unless -t sets another limit.",
+      "The malware folder holds real-world samples, most of them downloaded from malwr.com according to the README, with their logs and dumps. Besides scripts and HTML pages it includes two extracted Windows payload files, a .exe under malware/20171004 and a .tmp under malware/20190808, and the README states that the Angler files are not disarmed, so a clone contains live malware.",
+      "MIT, per the LICENSE file and README. The reviewed sources state no REA use, and this collection did not run the sandbox or any sample."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/jailme.js#L10-L40",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/jailme.js#L184-L192",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/env/wscript.js",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/env/browser.js",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/config.json",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/package.json",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/test/wscript_test.js",
+      "https://github.com/HynekPetrak/malware-jail/blob/ec370f1433652fdd346995f1d6f00b26368aa611/LICENSE"
+    ]
   }
 ]

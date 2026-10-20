@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "malware-jail": {
+    "name": "malware-jail JavaScript 恶意代码沙箱",
+    "requirements": [
+      "没有发布版本或标签，README 称 npm 包尚未提供。所审阅的 master 提交日期为 2023-06-16，只修改了 README；最后一次代码改动在 2019-08-08，新增了已分析的恶意样本和若干 ADODB 方法。各处版本号并不一致：package.json 为 0.18.0，README 为 0.19，jailme.js 为 0.20。",
+      "需要 Node.js 和 npm：package.json 声明需 Node 6 或更高版本，README 称该工具在 Linux 上以 Node.js v6.6.0 开发和测试；未核实其在当前 Node 版本上的表现。npm install 会获取 minimist、iconv-lite、entities 和 sync-request，npm test 运行针对 WScript 模拟的小型 tap 测试，native_test 目录中的脚本则用于在 Windows 的 cscript 下运行以作对照。模拟范围限于作者见到恶意代码使用的 WScript 与 ActiveX 功能，浏览器环境也只实现了一部分，因此样本可能提前中止，或与真实 Windows 上的行为不同；日志和导出内容是供分析人员解读的执行记录，而非判定结论。",
+      "Node 的 vm 模块并非安全边界：README 警告，能识别该沙箱的恶意代码可能尝试逃逸，建议在无特权的 Linux 账户或虚拟化的 Windows 机器中运行。默认情况下不会真正发送 HTTP 请求，而是返回虚拟响应；--down 允许样本联系远程服务器并下载载荷，--h404 与 --t404 则对所有请求返回 HTTP 404，以便列出全部远程 URL。除非用 -t 另设时限，执行 60 秒后即被终止。",
+      "malware 目录收录了真实的恶意样本，README 称多数下载自 malwr.com，并附有对应的日志和导出文件。除脚本和 HTML 页面外，其中还有两个提取出的 Windows 载荷文件，即 malware/20171004 下的一个 .exe 和 malware/20190808 下的一个 .tmp；README 还说明 Angler 相关文件未经解除威胁处理，因此克隆仓库即会获得活体恶意代码。",
+      "依据 LICENSE 文件与 README，采用 MIT 许可。所审来源未提及 REA 的使用，本收录未运行该沙箱或任何样本。"
+    ]
   }
 }
