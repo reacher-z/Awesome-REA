@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 461](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-461-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 192](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 462](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-462-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 192](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (26) · [游戏](#game) (182) · [应用](#app) (71)
+- [网站](#website) (26) · [游戏](#game) (183) · [应用](#app) (71)
 - [原生二进制](#native-binary) (62) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1323,6 +1323,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Unity Mono、Unity IL2CPP 以及 XNA、FNA、MonoGame 等 .NET Framework 游戏的插件与修补框架，可将模组和分析插件加载到本地安装的游戏中。插件借助随附的 HarmonyX 和 MonoMod.RuntimeDetour 在运行时修补方法，预加载修补器则在游戏加载托管程序集之前用 Mono.Cecil 改写它们；在 IL2CPP 游戏上，它会调用 Cpp2IL 和 Il2CppInterop，从游戏二进制和 global-metadata.dat 生成互操作程序集。其指南还介绍了配置、日志，以及用 dnSpy 调试插件和游戏程序集。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/bepinex/)
+
+- [**ReXGlue Xbox 360 静态重编译 SDK**](https://github.com/rexglue/rexglue-sdk)
+
+  实验性 SDK，可将 Xbox 360 可执行文件静态重编译为可移植的 C++23 代码，在 Windows、Linux 和 macOS 上原生运行。其 rexglue 命令行工具为单个游戏搭建 CMake 项目，并根据 TOML 配置分析 XEX 二进制（导入解析、PDATA、基本块发现、空隙填充、跳转解析和调用目标校验），再将每条 PowerPC 指令翻译为 C++；生成的代码由派生自 Xenia 模拟器核心的运行时承载，图形后端为 D3D12 或 Vulkan。生成的函数均为弱别名，可用原生 C++ 覆盖或在函数内插入钩子来替换，从而逐个函数完善移植。
+
+  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rexglue-sdk/)
 
 <a id="app"></a>
 ### App · 应用

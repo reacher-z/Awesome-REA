@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 461](https://img.shields.io/badge/resources-461-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 462](https://img.shields.io/badge/resources-462-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (26) · [Game](#game) (182) · [App](#app) (71)
+- [Website](#website) (26) · [Game](#game) (183) · [App](#app) (71)
 - [Native Binary](#native-binary) (62) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1322,6 +1322,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Plugin and patching framework for Unity Mono, Unity IL2CPP and .NET Framework games such as XNA, FNA and MonoGame titles, which loads mods and analysis plugins into a locally installed game. Plugins patch methods at runtime with the bundled HarmonyX and MonoMod.RuntimeDetour, while preloader patchers rewrite managed assemblies with Mono.Cecil before the game loads them; on IL2CPP games it runs Cpp2IL and Il2CppInterop to generate interop assemblies from the game binary and global-metadata.dat. Its guides also cover configuration, logging, and debugging plugins and game assemblies with dnSpy.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/bepinex/)
+
+- [**ReXGlue SDK**](https://github.com/rexglue/rexglue-sdk)
+
+  Experimental SDK for statically recompiling Xbox 360 executables into portable C++23 that runs natively on Windows, Linux and macOS. Its rexglue CLI scaffolds a per-game CMake project and, from a TOML config, analyzes a XEX binary (import resolution, PDATA, block discovery, gap filling, jump resolution and call-target validation) before translating each PowerPC instruction into C++; a runtime derived from Xenia's emulator core, with D3D12 or Vulkan graphics, hosts the generated code. Generated functions are weak aliases that native C++ overrides or mid-function hooks can replace, so a port can be refined one function at a time.
+
+  Tool · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rexglue-sdk/)
 
 <a id="app"></a>
 ### App
