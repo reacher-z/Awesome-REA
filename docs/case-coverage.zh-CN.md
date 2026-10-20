@@ -26,7 +26,7 @@
 | 待核查 (`pending`) | 140 | 140 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 250 | 250 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-214 个出现项含目录链接；共关联 206 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+217 个出现项含目录链接；共关联 207 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
 此记录为 392 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
@@ -435,6 +435,9 @@
 
 - `song:touhou-reconstruction` — REA 发表的文章、其固定版本的证据说明及已合并的 REA PR #1475 覆盖了这份组合报告：TH08、TH095 与 TH04 的里程碑、各自定义下的进度计数，以及 TH08 浮点字面量判定依据的漏洞。完整映射指向该方法案例；TH08 项目条目仍为部分匹配。结果仍为作者报告，未单独审阅 TH095 与 TH04 仓库，也未主张构建或运行复现。
 - `song:artcraft-boundary` — ArtCraft 应用页面称每个 Crafting App 都用 Rust 从零编写，并未声称进行了逆向工程；所审阅的四份 README 描述的是依据公开规范与观察到的行为完成的净室实现，不含专有代码。没有一手来源记录对 Adobe 或 Microsoft 软件的反编译或代码恢复，也没有来源确立第三方帖子所称的 REA 使用。PhotoCraft、WordCraft、GridCraft 与 DeckCraft 保留指向各自实现条目的部分映射；页面列出的 FilmCraft、LightCraft、CADCraft 等其他应用另有公开仓库，本次未审阅。保留此线索而不建立完整映射；这并非对这些应用质量的评价。
+- `song:unity-valheim` — 两个关联的 REA issue 都是工具缺陷报告，而非重建案例。#1801 报告 rea-agents 6.4.0 受托管解码预算限制，对一个 Unity Assembly-CSharp.dll 和 Valheim 的 assembly_valheim.dll 均未返回任何类型或方法；#1371 报告 CLI 在一个未具名 Unity 游戏程序集上输出 JSON 时崩溃，报告者随后确认 main 分支已修复。两个讨论串均未公开恢复的 Valheim 逻辑、修改、重建产物或对照结果，也未报告对 Valheim 的复测。相关映射指向 REA 托管代码分析指南，该指南说明了这一 64 MiB 预算、以部分覆盖报告的资源限制结果和用 --type 选择已知类型的方法，但未涉及 Unity、Valheim 或该 JSON 崩溃。这不是对 REA 托管代码支持能力的评判。
+- `song:large-android-apk` — 关联的 REA issue 是工具缺陷报告，而非重建案例：rea-agents 4.1.0 的 JADX 提供方在一个未具名、133 MB、含 11 个 DEX 文件的生产 APK 上耗尽 Java 堆内存。关闭时的回复说明 main 分支已加入堆内存控制和内存优化，但明确表示未针对该 APK 复测；讨论串也未写明应用名称，没有恢复的功能、重建产物或对照结果。相关映射指向 REA Android 静态分析指南，该指南说明了只用一个 JADX 工作线程且不设默认堆大小、可通过 REA_JADX_HEAP_MIB 或 Java 选项设置堆内存、Evidence 记录观测到的堆上限以及每次操作的限制，但没有针对这种规模 APK 的测试。这不是对 REA 当前 Android 支持能力的评判。
+- `song:android-apidemos` — 已合并的 REA PR #738 通过无界面 JADX 新增五项静态 Android 操作：包与清单检查、类搜索、成员及选定方法的 Java／smali 检查，以及静态调用者追踪。PR 报告了一条基于 Appium 公开 ApiDemos 6.0.18 APK 的验证流程，五项 CLI 与 MCP 操作均通过，且未执行该 APK。这验证的是工具集成，而非重建：没有重建或对照 ApiDemos 的任何功能或行为。相关映射指向 REA Android 静态分析指南，其真实验证流程使用同一个以哈希固定的测试样本；该指南记录的是工具检查而非重建，因此不作完整映射。这不质疑所报告的验证结果。
 - `song:dlss-amd-compute-report` — 所链接的 DLSSNR-AMD 仓库经固定版本审阅，记录了 DLSS 5 神经渲染网络的 Vulkan 重新实现，权重由使用者自行提取，并与 NVIDIA DLL 的输出对比；该项目已另行收录，此处仅作为相关映射。被回复的帖子串引用的是另一个项目 HelixSR 的发布消息（在 AMD 上运行 DLSS 3.7 网络），因此不能确定该评论指的是 DLSSNR-AMD。DLSSNR-AMD 的文档和 HelixSR 的 README 都未描述 AI 辅助的逆向工程。完整映射需先审阅该帖子串所指项目；AI 主张仍未确立。
 - `song:arwing-littleplanet-ai-port-report` — 帖文中的三个链接分别指向 carlosrmz009 的 arwing、arwing2 和 littleplanet 仓库，现各自作为独立案例收录：固定版本 README 记录了以运行覆盖率为种子、可重新汇编为原映像的反汇编，带解释器回退的 C 静态重编译，以及重编译与解释执行的哈希对照。每个映射只覆盖一个项目，因此这份合并报告仍为待定。三个仓库均未将工作归因于 AI、REA 或 Opus 5.5，帖文所称单一提示即完成的说法仍无依据；一致性与运行结果均为项目报告，未经复现。
 - `song:virtua-fighter-ai-decompilation` — 帖文中的两个链接指向 celsowm 的两个仓库。固定版本的 vf2-decomp 记录了 Virtua Fighter 2 Version 2.1 的 BSD-3-Clause、非一致性 C17 恢复，只有与参考 i960 执行器一致的路径才被接受；该项目现已收录，但映射仅为部分覆盖。固定版本的 vf3-decomp 是进行中的 Dreamcast 版 Virtua Fighter 3tb C 移植，有代理说明和覆盖率日志，但没有 README 或许可证文件，因此暂不收录，合并报告仍为待定。REA 的使用未确立；结果均为项目报告。
