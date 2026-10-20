@@ -14,7 +14,7 @@ from urllib.parse import unquote, urlsplit
 
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS
 from catalog import ROOT, RESOURCE_FILES
-from localization import read_localizations, validate_localizations
+from localization import read_fingerprints, read_localizations, validate_fingerprints, validate_localizations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import review_date_is_future
@@ -1052,9 +1052,14 @@ def main():
                     and all(isinstance(record, dict) and isinstance(record.get('id'), str)
                             for record in source_records)):
                 try:
-                    validate_localizations(source_records, read_localizations(ROOT), errors)
+                    translations = read_localizations(ROOT)
+                    validate_localizations(source_records, translations, errors)
+                    warnings = []
+                    validate_fingerprints(source_records, translations, read_fingerprints(ROOT), errors, warnings)
+                    for warning in warnings:
+                        print(f'Warning: {warning}', file=sys.stderr)
                 except (OSError, ValueError):
-                    errors.append('Repository localizations could not be read as valid JSON.')
+                    errors.append('Repository localizations or their source fingerprints could not be read as valid JSON.')
                 try:
                     validate_scope(source_records, read_scope(ROOT), errors)
                 except (OSError, ValueError):
