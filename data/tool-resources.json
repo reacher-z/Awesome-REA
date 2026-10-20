@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "attify-firmware-analysis-toolkit",
+    "name": "Firmware Analysis Toolkit (FAT)",
+    "url": "https://github.com/attify/firmware-analysis-toolkit",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Attify's firmware security toolkit, rewritten for version 2 as a Rust command-line tool built around per-image projects. It classifies unknown blobs and firmware images, extracts filesystems, inventories startup scripts, credential strings and crypto material, triages ELF binaries with radare2-based decompilation and source-to-sink taint, and inspects bare-metal MCU images, BMC flash, Edge AI model files and Android APKs. Projects can then go through preflight checks and QEMU emulation on native, FirmAE, Firmadyne or EMUX backends.",
+    "description_zh": "Attify 的固件安全研究工具包，第 2 版改写为以单个镜像项目为中心的 Rust 命令行工具。它可识别未知数据块和固件镜像、提取文件系统，梳理启动脚本、凭据字符串和密码学材料，借助基于 radare2 的反编译与源到汇的污点分析初筛 ELF 二进制，还能检查裸机 MCU 镜像、BMC 闪存、边缘 AI 模型文件和 Android APK。之后可对项目做运行前检查，并通过原生、FirmAE、Firmadyne 或 EMUX 后端进行 QEMU 仿真。",
+    "evidence_url": "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.0.1, published 2026-09-26, with archives for macOS (Apple Silicon and Intel), Linux x86-64 (glibc 2.35+) and ARM64 (glibc 2.39+) and Windows x86-64, plus a separate runtime-data bundle. The reviewed master commit adds unreleased BMC inspection, native JFFS2 recovery, hash-pinned BMC emulation profiles and Redfish session and process debugging. Version 2 is a rewrite; the FAT 1.x setup.sh and fat.py workflow belongs to the older release.",
+      "Source builds need Rust 1.91+ and Python 3; the installer can add system packages and builds pinned binwalk-ng 4.0.0 and Sasquatch. The Windows build covers native analysis commands only, and workflows that need Linux filesystem semantics or Unix tools run under WSL. Optional workflows need radare2 with r2ghidra, Ghidra, Joern, angr, QEMU, GDB, tmux or Docker, and FirmAE, Firmadyne and EMUX backends are configured separately; fat doctor reports what is missing.",
+      "Users supply the firmware images, extracted filesystems, binaries or APKs to analyze. The third-party notices state that the source tree and release bundles contain no firmware images, kernel or U-Boot binaries, proprietary model files or extracted device filesystems. BMC emulation profiles require an exact input SHA-256 for a named OpenBMC or ASUS BMC image, and the README warns that emulation executes untrusted vendor code.",
+      "docs/epistemics.md treats results as bounded observations: startup intent does not prove reachability, Edge AI hits do not show that a model executes, shell taint is deliberately unsound and reports weak candidates, and an emulation validator proves only what it checked in that run. Test fixtures are synthetic, including Cortex-M images built from in-repo C sources with arm-none-eabi-gcc; a prebuilt MIPS PID-1 trampoline ships with its assembly source. DEVELOPMENT.md documents local cargo tests, while the GitHub workflows build and smoke-test release archives.",
+      "FAT 2.0 is source available under FSL-1.1-ALv2, which GitHub reports as NOASSERTION: use, modification and redistribution are permitted except a commercial Competing Use, and each version also becomes available under Apache-2.0 two years after Attify first makes it available. FAT 1.x history stays MIT, the optional QEMU hook plugin source is GPL-2.0-or-later, and third-party dependencies and external assets keep their own terms. Users must be authorized to analyze their targets; the reviewed sources state no REA use, and nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/INSTALL.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/CHANGELOG.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/docs/epistemics.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/docs/bmc-emulation.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/tests/fixtures/mcu/init-table/Makefile",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/scripts/fat-init-trampoline-mipsel.S",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/DEVELOPMENT.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/LICENSE",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/LICENSING.md",
+      "https://github.com/attify/firmware-analysis-toolkit/blob/54dd1a2a4705f2cafc14924497df6791813aab55/THIRD_PARTY_NOTICES.md",
+      "https://github.com/attify/firmware-analysis-toolkit/releases/tag/v2.0.1"
+    ]
   }
 ]

@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "attify-firmware-analysis-toolkit": {
+    "name": "FAT 固件分析工具包",
+    "requirements": [
+      "审阅时最新版本为 v2.0.1，发布于 2026-09-26，提供 macOS（Apple Silicon 与 Intel）、Linux x86-64（需 glibc 2.35+）与 ARM64（需 glibc 2.39+）以及 Windows x86-64 压缩包，另有单独的运行时数据包。所审阅的 master 提交加入了尚未发布的 BMC 检查、原生 JFFS2 恢复、以哈希固定的 BMC 仿真配置，以及 Redfish 会话和进程调试。第 2 版是重写版本；FAT 1.x 的 setup.sh 和 fat.py 流程仅适用于旧版。",
+      "从源码构建需要 Rust 1.91+ 和 Python 3；安装脚本可安装系统软件包，并构建固定版本的 binwalk-ng 4.0.0 和 Sasquatch。Windows 版只支持原生分析命令，依赖 Linux 文件系统语义或 Unix 工具的流程需在 WSL 中运行。可选流程需要 radare2 与 r2ghidra、Ghidra、Joern、angr、QEMU、GDB、tmux 或 Docker；FirmAE、Firmadyne 和 EMUX 后端需另行配置，fat doctor 会报告缺少的组件。",
+      "待分析的固件镜像、已提取文件系统、二进制或 APK 由使用者自备。第三方声明称，源码树和发布包均不含固件镜像、内核或 U-Boot 二进制、专有模型文件或已提取的设备文件系统。BMC 仿真配置要求输入与指定 OpenBMC 或 ASUS BMC 镜像的 SHA-256 完全一致；README 提醒，仿真会执行不可信的厂商代码。",
+      "docs/epistemics.md 将结果视为有边界的观察：启动意图不能证明可达性，边缘 AI 命中不能说明模型会实际执行，shell 污点分析有意不追求可靠性、只报告弱候选，仿真验证器也只证明它在该次运行中检查过的内容。测试夹具为合成数据，包括用 arm-none-eabi-gcc 从仓库内 C 源码构建的 Cortex-M 镜像；仓库还附带一个预构建的 MIPS PID-1 跳板程序及其汇编源码。DEVELOPMENT.md 说明了本地运行的 cargo 测试，GitHub 工作流则用于构建发布包并做冒烟测试。",
+      "FAT 2.0 以 FSL-1.1-ALv2 源码可得方式发布，GitHub 将其识别为 NOASSERTION：除商业性的竞争用途外，允许使用、修改和再分发，且每个版本在 Attify 首次提供两年后也可按 Apache-2.0 使用。FAT 1.x 历史仍为 MIT，可选的 QEMU hook 插件源码采用 GPL-2.0-or-later，第三方依赖和外部资源保留各自条款。使用者需获得分析目标的授权；所审来源未提及 REA 的使用，本次未安装或运行任何程序。"
+    ]
   }
 }

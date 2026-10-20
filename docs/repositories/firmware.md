@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](firmware.zh-CN.md)
 
-**211 repositories** · 2026-10-16 UTC
+**212 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -14,6 +14,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — Platform for emulation and dynamic analysis of Linux-based firmware **[2,114 stars]** · Paper: [Towards Automated Dynamic Analysis for Linux-based Embedded Firmware](https://awesomerea.org/papers/paper-firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK: unpack, modify, and repack binaries. **[2,080 stars]** · Curated: [OFRAK](https://awesomerea.org/resources/ofrak/)
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — A tool to recover a fully analyzable .ELF from a raw kernel, through extracting the kernel symbol table (kallsyms) **[1,832 stars]** · Curated: [vmlinux-to-elf](https://awesomerea.org/resources/vmlinux-to-elf/)
+- [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — Firmware security research platform combining binary analysis, taint tracing, and emulation across IoT, edge AI, mobile devices, and robotics. **[1,615 stars]** · Curated: [Firmware Analysis Toolkit (FAT)](https://awesomerea.org/resources/attify-firmware-analysis-toolkit/)
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — Firmware Analysis and Comparison Tool **[1,468 stars]** · Curated: [Firmware Analysis and Comparison Tool (FACT)](https://awesomerea.org/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine &amp; Graphics Firmware Analysis Tool **[1,335 stars]** · Curated: [ME Analyzer](https://awesomerea.org/resources/me-analyzer/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — IDA plugin and loader for UEFI firmware analysis and reverse engineering automation **[1,138 stars]** · Curated: [efiXplorer](https://awesomerea.org/resources/efixplorer/)

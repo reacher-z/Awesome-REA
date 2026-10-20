@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](firmware.md)
 
-**211 个仓库** · 2026-10-16 UTC
+**212 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -14,6 +14,7 @@
 - [firmadyne/firmadyne](https://github.com/firmadyne/firmadyne) — 用于仿真和动态分析基于 Linux 的固件的平台 **[2,114 星标]** · 论文：[面向基于 Linux 的嵌入式固件的自动化动态分析](https://awesomerea.org/zh/papers/paper-firmadyne/)
 - [redballoonsecurity/ofrak](https://github.com/redballoonsecurity/ofrak) — OFRAK：解包、修改并重新打包二进制文件。 **[2,080 星标]** · 精选：[OFRAK](https://awesomerea.org/zh/resources/ofrak/)
 - [marin-m/vmlinux-to-elf](https://github.com/marin-m/vmlinux-to-elf) — 通过提取内核符号表（kallsyms），从原始内核恢复可完整分析的 .ELF 文件的工具。 **[1,832 星标]** · 精选：[vmlinux-to-elf 内核符号恢复工具](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
+- [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — 结合二进制分析、污点追踪和模拟执行的固件安全研究平台，覆盖物联网、边缘 AI、移动设备和机器人。 **[1,615 星标]** · 精选：[FAT 固件分析工具包](https://awesomerea.org/zh/resources/attify-firmware-analysis-toolkit/)
 - [fkie-cad/FACT\_core](https://github.com/fkie-cad/FACT_core) — 固件分析与比较工具。 **[1,468 星标]** · 精选：[固件分析与比较工具（FACT）](https://awesomerea.org/zh/resources/fact-core/)
 - [platomav/MEAnalyzer](https://github.com/platomav/MEAnalyzer) — Intel Engine 与图形固件分析工具 **[1,335 星标]** · 精选：[ME Analyzer Intel 引擎与图形固件分析工具](https://awesomerea.org/zh/resources/me-analyzer/)
 - [REhints/efiXplorer](https://github.com/REhints/efiXplorer) — 用于自动化 UEFI 固件分析与逆向工程的 IDA 插件和加载器。 **[1,138 星标]** · 精选：[efiXplorer UEFI 固件分析 IDA 插件](https://awesomerea.org/zh/resources/efixplorer/)
