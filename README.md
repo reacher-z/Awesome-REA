@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 488](https://img.shields.io/badge/resources-488-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 204](https://img.shields.io/badge/cases-204-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 489](https://img.shields.io/badge/resources-489-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 205](https://img.shields.io/badge/cases-205-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (76)
+- [Website](#website) (29) · [Game](#game) (193) · [App](#app) (77)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (204) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (205) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -340,6 +340,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Galaxy Buds Client: an unofficial manager built on Samsung’s earbud protocol**](https://github.com/timschneeb/GalaxyBudsClient) - Reimplements control of Samsung Galaxy Buds over their proprietary RFCOMM serial protocol in a cross-platform desktop and Android manager. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/galaxy-buds-client-protocol-case/)</sub>
 - [**Wino Mail: recreating Windows Mail and Calendar**](https://github.com/bkaankose/Wino-Mail) - Native Windows client that aims to preserve the familiar Windows Mail and Calendar experience while rebuilding its functionality. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/wino-mail-case/)</sub>
 - [**ScooterLink: reconstructing Honda RoadSync’s handlebar-button protocol**](https://github.com/gdorgian/ScooterLink) - Replaces Honda RoadSync’s Apple Music-only media control with an iOS app that pairs with a Honda PCX 2025 TFT dash over Bluetooth Low Energy and turns handlebar presses into system-wide commands for any player. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/scooterlink-honda-roadsync-case/)</sub>
+- [**iX500 Scan: a macOS client for the reverse-engineered ScanSnap Wi-Fi protocol**](https://github.com/jonaswagnr/ix500-scan) - Replaces ScanSnap Home for a Fujitsu/PFU ScanSnap iX500 on macOS with a SwiftUI app and Python service that scan over Wi-Fi through the community-reverse-engineered VENS protocol, or over USB through SANE, and produce searchable PDFs. <sub>Case study · Independent reconstruction · Also: Protocol · [Full entry](https://awesomerea.org/resources/ix500-scan-scansnap-wifi-case/)</sub>
 
 #### Tools, projects and integrations
 

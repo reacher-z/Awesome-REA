@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 208 | 206 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 110 | 110 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 273 | 273 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 209 | 207 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 104 | 104 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 278 | 278 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-222 occurrences have catalog links. They reference 212 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+223 occurrences have catalog links. They reference 213 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 419 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 425 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -184,12 +184,18 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Codex: a personal library following REA research | Insufficient evidence | [Source](https://x.com/LinearUncle/status/2110616441611542781) |
 | Richman 4: REA research to a Flutter iPhone rebuild | Insufficient evidence | [Source](https://x.com/iam678/status/2110618564608880843) |
 | Tuya AC: local Mac controls exposed to Claude over MCP | Insufficient evidence | [Source](https://x.com/sarequl_basar/status/2110620776915411243) |
+| A HyperOS monitor: exploring exposed control services | Insufficient evidence | [Source](https://x.com/binaryify/status/2110622119419838752) |
+| Notes example: tracing a CSV export button | Insufficient evidence | [Source](https://x.com/0xCortexq/status/2110623921611432090) |
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
+| A legacy binary: an agent invents nonexistent APIs | Insufficient evidence | [Source](https://x.com/harden_369741/status/2110630792049115198) |
+| Codex next-input prediction recreated for Pi | Insufficient evidence | [Source](https://x.com/a1chzt/status/2110631522403512760) |
 | DOOM and Terraria: reported no-source mod experiments | Insufficient evidence | [Source](https://x.com/i/status/2110641024389271883) |
 | Feishu: an author-reported isolated second app instance | Already curated | [Source](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Roko Input: Apple on-device dictation after Typeless research | Insufficient evidence | [Source](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | Insufficient evidence | [Source](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
 | REA and archify: interactive architecture diagrams | Insufficient evidence | [Source](https://x.com/i/status/2110570919169286424) |
+| A colony-simulation engine: a decompilation research plan | Insufficient evidence | [Source](https://x.com/Promptmethus/status/2110642225361371219) |
+| iX500 Scan: a macOS client for the reverse-engineered ScanSnap Wi-Fi protocol | Already curated | [Source](https://x.com/jonaswagnr/status/2110647905027604700) |
 | Sonic physics in Elden Ring: an unverified REA mod report | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110648710606557644) |
 | iriver E30: personalizing an unsupported player's main screen | Insufficient evidence | [Source](https://x.com/MikeS190477/status/2110651009181851731) |
 | A radiator-control app bridged to Home Assistant with AI | Insufficient evidence | [Source](https://x.com/Madsoulswe/status/2110651982323310818) |

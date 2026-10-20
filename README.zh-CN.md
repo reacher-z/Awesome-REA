@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 488](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-488-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 204](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-204-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 489](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-489-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 205](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-205-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (76)
+- [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (77)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (23) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (204) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (205) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -341,6 +341,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Galaxy Buds Client：基于三星耳机协议的非官方管理器**](https://github.com/timschneeb/GalaxyBudsClient) - 在跨平台桌面与 Android 管理器中，通过三星 Galaxy Buds 专有的 RFCOMM 串口协议重新实现耳机控制。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)</sub>
 - [**Wino Mail：重建 Windows 邮件与日历体验**](https://github.com/bkaankose/Wino-Mail) - 原生 Windows 客户端，以重建 Windows 邮件与日历的功能、保留熟悉的使用体验为目标。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/wino-mail-case/)</sub>
 - [**ScooterLink：重建 Honda RoadSync 车把按键协议**](https://github.com/gdorgian/ScooterLink) - 以一个 iOS 应用替代 Honda RoadSync 仅支持 Apple Music 的媒体控制：通过低功耗蓝牙与 Honda PCX 2025 的 TFT 仪表配对，把车把按键转换为对任意播放器生效的系统级命令。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/scooterlink-honda-roadsync-case/)</sub>
+- [**iX500 Scan：基于逆向 ScanSnap Wi-Fi 协议的 macOS 客户端**](https://github.com/jonaswagnr/ix500-scan) - 在 macOS 上以 SwiftUI 应用和 Python 后台服务替代 ScanSnap Home，为富士通／PFU ScanSnap iX500 提供扫描：Wi-Fi 经由社区逆向的 VENS 协议，USB 经由 SANE，输出可搜索的 PDF。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/ix500-scan-scansnap-wifi-case/)</sub>
 
 #### 工具、项目与集成
 

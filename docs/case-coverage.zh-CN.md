@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 208 | 206 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 110 | 110 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 273 | 273 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 209 | 207 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 104 | 104 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 278 | 278 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-222 个出现项含目录链接；共关联 212 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+223 个出现项含目录链接；共关联 213 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 419 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 425 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -184,12 +184,18 @@
 | Codex: a personal library following REA research | 证据不足 | [来源](https://x.com/LinearUncle/status/2110616441611542781) |
 | Richman 4: REA research to a Flutter iPhone rebuild | 证据不足 | [来源](https://x.com/iam678/status/2110618564608880843) |
 | Tuya AC: local Mac controls exposed to Claude over MCP | 证据不足 | [来源](https://x.com/sarequl_basar/status/2110620776915411243) |
+| A HyperOS monitor: exploring exposed control services | 证据不足 | [来源](https://x.com/binaryify/status/2110622119419838752) |
+| Notes example: tracing a CSV export button | 证据不足 | [来源](https://x.com/0xCortexq/status/2110623921611432090) |
 | IsaacRecomp：将 Flash 游戏字节码转换为原生 C++ | 已收录 | [来源](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
+| A legacy binary: an agent invents nonexistent APIs | 证据不足 | [来源](https://x.com/harden_369741/status/2110630792049115198) |
+| Codex next-input prediction recreated for Pi | 证据不足 | [来源](https://x.com/a1chzt/status/2110631522403512760) |
 | DOOM and Terraria: reported no-source mod experiments | 证据不足 | [来源](https://x.com/i/status/2110641024389271883) |
 | 飞书：作者报告的隔离第二应用实例 | 已收录 | [来源](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/) |
 | Roko Input: Apple on-device dictation after Typeless research | 证据不足 | [来源](https://github.com/bassnova42/rokoinput/blob/3cd2da84ae83905b961a2de9f06bdf6bac888294/README.en.md) |
 | Mi Health: timestamp repair and a cloud-data exporter | 证据不足 | [来源](https://github.com/LilZeeCN/mi-health-exporter/blob/1dc9274a90ccc83f02cbb3706aae2a4d55c8e90a/README.md) |
 | REA and archify: interactive architecture diagrams | 证据不足 | [来源](https://x.com/i/status/2110570919169286424) |
+| A colony-simulation engine: a decompilation research plan | 证据不足 | [来源](https://x.com/Promptmethus/status/2110642225361371219) |
+| iX500 Scan：基于逆向 ScanSnap Wi-Fi 协议的 macOS 客户端 | 已收录 | [来源](https://x.com/jonaswagnr/status/2110647905027604700) |
 | Sonic physics in Elden Ring: an unverified REA mod report | 证据不足 | [来源](https://x.com/Capslock404/status/2110648710606557644) |
 | iriver E30: personalizing an unsupported player's main screen | 证据不足 | [来源](https://x.com/MikeS190477/status/2110651009181851731) |
 | A radiator-control app bridged to Home Assistant with AI | 证据不足 | [来源](https://x.com/Madsoulswe/status/2110651982323310818) |
