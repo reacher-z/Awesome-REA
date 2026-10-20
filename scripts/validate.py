@@ -15,6 +15,7 @@ from urllib.parse import unquote, urlsplit
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
+from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import review_date_is_future
@@ -1033,6 +1034,10 @@ def main():
     for warning in evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_benchmarks(benchmarks, errors)
+    try:
+        validate_curated_translations(records, read_curated_translations(ROOT), errors)
+    except (OSError, ValueError):
+        errors.append(f'{CURATED_TRANSLATIONS}: could not be read as strict JSON.')
     try:
         validate_case_coverage(read_case_coverage(ROOT), records, papers, errors,
                                url_check=public_https_error)

@@ -13,18 +13,20 @@ import urllib.request
 from validate import validate_benchmarks, validate_resources, validate_source_index, public_https_error
 from validate_papers import validate_papers
 from localization import LOCALE_FILES, validate_localizations
+from curated_translations import CURATED_TRANSLATIONS, validate_curated_translations
 from source_scope import validate_scope
 from case_coverage import validate_case_coverage
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- awesome-rea-automated-review -->'
 CATALOGS = ('data/rea-resources.json', 'data/tool-resources.json')
+CURATED_INPUTS = (*CATALOGS, CURATED_TRANSLATIONS)
 SOURCE_INDEX = 'data/source-index.json'
 SOURCE_SCOPE = 'data/source-scope.json'
 SOURCE_INPUTS = (SOURCE_INDEX, SOURCE_SCOPE, *LOCALE_FILES)
 CASE_COVERAGE = 'data/case-coverage.json'
 CASE_INPUTS = (CASE_COVERAGE, *CATALOGS, 'data/papers.json')
-REVIEW_FILES = frozenset((*CATALOGS, 'data/benchmarks.json', 'data/papers.json', *SOURCE_INPUTS, CASE_COVERAGE))
+REVIEW_FILES = frozenset((*CURATED_INPUTS, 'data/benchmarks.json', 'data/papers.json', *SOURCE_INPUTS, CASE_COVERAGE))
 LOCALE_FIELDS = {'description_en', 'description_zh', 'english_retains_name', 'technical_only'}
 SENSITIVE = re.compile(r'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY(?: BLOCK)?-----')
 # Personal paths: macOS/Linux homes, Windows or WSL profiles with either separator, /root, ~ and $HOME.
@@ -199,8 +201,8 @@ def review_localizations(records, contents, errors):
 
 def load_review_contents(repository, sha, token, files, changed, errors):
     needed = set(changed & REVIEW_FILES)
-    if set(CATALOGS) & changed:
-        needed.update(CATALOGS)
+    if set(CURATED_INPUTS) & changed:
+        needed.update(CURATED_INPUTS)
     if set(SOURCE_INPUTS) & changed:
         needed.update(SOURCE_INPUTS)
     if set(CASE_INPUTS) & changed:
@@ -257,6 +259,16 @@ def review_data(contents, changed):
                 records.extend(data)
         validate_resources(records, errors)
         reviewed.append(f'{len(records)} curated records checked together for schema, duplicate IDs/URLs, provenance, targets, dates, and review labels.')
+    if set(CURATED_INPUTS) & changed and CURATED_TRANSLATIONS in contents:
+        records = []
+        for filename in CATALOGS:
+            data = parse_json(contents[filename])
+            records.extend(data if isinstance(data, list) else [])
+        # IDs in the base catalogs are not coverage findings: the PR head may predate them.
+        base_ids = {record.get('id') for filename in CATALOGS
+                    for record in parse_json((ROOT / filename).read_text(encoding='utf-8')) if isinstance(record, dict)}
+        validate_curated_translations(records, parse_json(contents[CURATED_TRANSLATIONS]), errors, known_ids=base_ids)
+        reviewed.append('Chinese resource names and requirements checked for value shapes and one entry per curated record the PR adds.')
     if 'data/benchmarks.json' in changed:
         data = parse_json(contents['data/benchmarks.json'])
         if not isinstance(data, list):
@@ -370,7 +382,7 @@ def main():
         reviewed.extend(checked)
     except (ValueError, TypeError, KeyError):
         errors.append('Required catalog, localization, or source-scope JSON could not be parsed or validated. Check its shape locally.')
-    manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
+    manual = any(path.startswith(('scripts/', '.github/', 'site/')) and path not in REVIEW_FILES for path in changed)
     if errors:
         status = '**Changes need attention.**'
     elif not_inspected:
