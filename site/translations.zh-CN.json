@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "pyrrha": {
+    "name": "Pyrrha 固件测绘工具",
+    "requirements": [
+      "审阅时最新版本为 v2.0.3，于 2026-09-21 发布到 GitHub，并以 pyrrha-mapper 名称发布到 PyPI；所审阅的 main 提交设定的也是该版本。v2.0.0（2026-07-07）新增 Ghidra 后端，并移除了原先对 Quokka 的依赖。pyproject.toml 将该软件包标为 Beta，并列出 Linux 和 Windows。",
+      "输入为使用者已提取或挂载的固件根文件系统；decomp 的输入则是单个可执行文件。Pyrrha 本身不解包固件镜像。fs 的快速入门示例使用从 OpenWrt 项目下载的 OpenWrt x86-64 根文件系统。",
+      "pyproject.toml 要求 Python 3.11+，而安装页面写的是 3.10。fs 不需要反汇编器，但 fs-cg 和 decomp 需要本地安装 IDA Pro 9.1+ 或 Ghidra 12.0+，可放在 PATH 中，或通过 IDADIR 或 GHIDRA_INSTALL_DIR 指定位置；GitHub 镜像仓库提供基于 Ghidra 的 Docker 镜像，而用于 CI 的 IDA 镜像须以使用者自己的 Hex-Rays 安装程序和许可证构建。结果可在 NumbatUI 中查看，也可用 Sourcetrail 2021.4.19 查看，但无法使用节点重命名等新功能。",
+      "GitLab CI 配置运行 pytest 单元测试以及各映射器的命令行测试，其中 fs-cg 和 decomp 使用 IDA 与 Ghidra 镜像；GitHub 工作流只构建文档和发布版本。tests/test_fw 是一个小型 32 位 ARM Linux 测试样例，包含以 Buildroot 构建的 OpenSSL 1.1.1n 可执行文件和 glibc 库。",
+      "采用 Apache-2.0 许可；NumbatUI 是采用 GPL-3.0 的独立项目，IDA Pro 是商业软件。README 列出了作者在 SSTIC、Hack.lu、Pass The SALT 和 RE//verse 的演讲。所审来源未提及 REA 的使用，本收录未对任何固件进行测绘。"
+    ]
   }
 }

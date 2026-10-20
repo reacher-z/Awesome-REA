@@ -11254,5 +11254,46 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "pyrrha",
+    "name": "Pyrrha",
+    "url": "https://github.com/quarkslab/pyrrha",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Quarkslab's firmware cartography tool, which indexes an extracted firmware filesystem into a database browsed with NumbatUI, Quarkslab's fork of the Sourcetrail code explorer. The fs mapper uses LIEF to map ELF and PE files, their imports and exports and the symlinks that point to them; fs-cg disassembles every executable with IDA Pro or Ghidra and links their call graphs across binaries, and decomp indexes one executable's decompiled functions with call cross-references. JSON exports can be post-processed in Python, for example to diff two firmware versions.",
+    "description_zh": "Quarkslab 的固件“测绘”工具，将已提取的固件文件系统编入数据库，再用 NumbatUI（Quarkslab 基于 Sourcetrail 代码浏览器的分支）浏览。fs 映射器借助 LIEF 映射 ELF 和 PE 文件、其导入与导出，以及指向这些文件的符号链接；fs-cg 用 IDA Pro 或 Ghidra 反汇编每个可执行文件，并把各二进制的调用图跨文件连接起来；decomp 则为单个可执行文件的反编译函数建立索引并附调用交叉引用。JSON 导出可用 Python 进一步处理，例如比较两个固件版本的差异。",
+    "evidence_url": "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.0.3, published to GitHub and PyPI as pyrrha-mapper on 2026-09-21; the reviewed main commit sets the same version. v2.0.0 (2026-07-07) added the Ghidra backend and removed the earlier Quokka dependency. pyproject.toml marks the package Beta and lists Linux and Windows.",
+      "Input is a firmware root filesystem that the user has already extracted or mounted, or a single executable for decomp; Pyrrha does not unpack firmware images. The fs quick start uses an OpenWrt x86-64 rootfs downloaded from the OpenWrt project.",
+      "pyproject.toml requires Python 3.11+, although the installation page says 3.10. fs needs no disassembler, but fs-cg and decomp need a local IDA Pro 9.1+ or Ghidra 12.0+, found on PATH or through IDADIR or GHIDRA_INSTALL_DIR; a Ghidra-based Docker image is published on GitHub's registry, and the IDA CI image is built from the user's own Hex-Rays installer and licence. Results are viewed in NumbatUI or, without newer features such as node renaming, Sourcetrail 2021.4.19.",
+      "The GitLab CI file runs pytest unit tests and CLI runs of each mapper, with IDA and Ghidra images for fs-cg and decomp; the GitHub workflows only build documentation and publish releases. tests/test_fw is a small 32-bit ARM Linux fixture holding an OpenSSL 1.1.1n executable built with Buildroot and glibc libraries.",
+      "Apache-2.0; NumbatUI is a separate GPL-3.0 project, and IDA Pro is commercial software. The README lists SSTIC, Hack.lu, Pass The SALT and RE//verse talks by the authors. The reviewed sources state no REA use, and this collection mapped no firmware."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/installation.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/index.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/mappers/index.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/mappers/fs.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/mappers/fs-cg.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/mappers/exe-decomp.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/docs/.snippets/diffing_pyrrha_exports.py",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/pyproject.toml",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/CHANGELOG.md",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/.gitlab-ci.yml",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/ci/ida/Dockerfile",
+      "https://github.com/quarkslab/pyrrha/tree/54cfe78055740336283a02a75cfd8694f48cf2b9/tests/test_fw",
+      "https://github.com/quarkslab/pyrrha/blob/54cfe78055740336283a02a75cfd8694f48cf2b9/LICENSE",
+      "https://github.com/quarkslab/pyrrha/releases/tag/v2.0.3",
+      "https://pypi.org/project/pyrrha-mapper/2.0.3/"
+    ]
   }
 ]

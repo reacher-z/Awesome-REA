@@ -35,7 +35,7 @@
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — 用于解密 Samsung SSD 固件文件的工具 **[238 星标]**
 - [D3CRYPT-1/Infiltra-Firmware](https://github.com/D3CRYPT-1/Infiltra-Firmware) — Infiltra Firmware 是用于无线安全测试、网络分析和硬件探索的开源固件。可使用下方的网页刷写器进行刷写！ **[205 星标]**
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link 固件解密概念验证 **[201 星标]**
-- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — 固件结构测绘工具 **[172 星标]**
+- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — 固件结构测绘工具 **[172 星标]** · 精选：[Pyrrha 固件测绘工具](https://awesomerea.org/zh/resources/pyrrha/)
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 个逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与去混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[162 星标]**
 - [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]**
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — 修补 AMI Aptio V UEFI 固件以绕过安全启动检查的指南 **[144 星标]**

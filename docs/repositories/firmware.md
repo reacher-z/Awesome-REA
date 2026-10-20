@@ -35,7 +35,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — Tool for decrypting the firmware files for Samsung SSDs **[238 stars]**
 - [D3CRYPT-1/Infiltra-Firmware](https://github.com/D3CRYPT-1/Infiltra-Firmware) — Infiltra Firmware is an open-source firmware for wireless security testing, network analysis, and hardware hacking. FLASH IT BELOW USING OUR WEB FLAHSER! **[205 stars]**
 - [0xricksanchez/dlink-decrypt](https://github.com/0xricksanchez/dlink-decrypt) — D-Link firmware decryption PoC **[201 stars]**
-- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — A tool for firmware cartography **[172 stars]**
+- [quarkslab/pyrrha](https://github.com/quarkslab/pyrrha) — A tool for firmware cartography **[172 stars]** · Curated: [Pyrrha](https://awesomerea.org/resources/pyrrha/)
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 AI skills for reverse engineering: malware analysis, software reversing, firmware and embedded systems, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensics and intelligence, and CTFs. **[162 stars]**
 - [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]**
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — Guide for patching AMI Aptio V UEFI firmware to circumvent Secure Boot checks **[144 stars]**
