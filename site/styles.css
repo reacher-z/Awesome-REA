@@ -499,3 +499,10 @@ body.data-dialog-open{overflow:hidden}
 .source-scan-evidence>summary{font-weight:500;color:var(--link)}
 .source-scan-evidence code{font:12px/1.8 var(--mono);overflow-wrap:anywhere}
 .source-record-details .source-context-label{margin-bottom:8px;font-weight:600}
+
+/* Entry pages link back to their listing card by fragment; mark that card so it stands out from its neighbours.
+   Borderless rows extend the tint past their text with a shadow instead of changing their padding; the target
+   paints above the following card so that card's background cannot cover the outline. */
+.resource-card:target,.case-row:target,.paper-card:target{position:relative;z-index:1;background:var(--tint);outline:3px solid var(--link);outline-offset:3px}
+.case-row:target,html[data-paper-layout="compact"] .paper-card:target{box-shadow:0 0 0 10px var(--tint);outline-offset:10px}
+@media(forced-colors:active){.resource-card:target,.case-row:target,.paper-card:target{outline-color:Highlight}}
