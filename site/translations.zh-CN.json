@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "gtirb": {
+    "name": "GTIRB 二进制中间表示",
+    "requirements": [
+      "PyPI 上最新的 gtirb 为 2.3.2，于 2026-06-16 以纯 Python wheel 上传，需要 Python 3.8+；更新日志称 PyPI 包需要 protobuf 4.21.1 或更新版本。同日所审阅的 master 提交把 version.txt 升至 2.3.3，CHANGELOG 将其标为尚未发布。GitHub 发布页止于 v2.0.0（2023-12-14，未附文件），之后的版本只有 git 标签。README 说明目前任何版本变化之间都不提供 ABI 兼容，并要求 stable 或 unstable 软件包与已安装的 ddisasm 和 gtirb-pprinter 保持一致。",
+      "预编译方式包括 GrammaTech 下载服务器上的 Windows .zip 构建和 Ubuntu 20.04（focal）apt 软件包，以及内含 GTIRB、ddisasm 和 gtirb-pprinter 的 grammatech/ddisasm Docker 镜像；README 提醒，stable gtirb 2.0.0 及更早版本的 apt 元软件包在升级时会冲突。从源码构建需要支持 C++17 的 64 位编译器（GCC、Clang 或 Visual Studio）、CMake 3.10+、Protobuf 3.0.0+ 和 Boost 1.68+；Common Lisp API 还需额外的手动配置，Java API 被标为不完整。",
+      "GTIRB 是数据结构而非分析器：IR 来自 ddisasm 等生成工具。其模式中列出的文件格式包括 ELF、PE、COFF、XCOFF、Mach-O 和原始镜像，指令集从 IA-32、x64 到 ARM、MIPS、PowerPC，2.3.2 起还有 RISC-V；具体支持哪些取决于生成工具本身。doc/examples 中的程序演示 C++ API，并以多种语言计算 CFG 路径、数据符号和函数。",
+      "GitLab CI 配置在 Ubuntu 20.04、22.04 和 24.04 上用 GCC 和 Clang 构建并测试，另有静态构建、Java、Common Lisp、Python 和覆盖率任务；GitHub Actions 工作流只负责构建并发布文档。本次未查看任何流水线结果，也未进行构建。",
+      "LICENSE.txt 规定 GTIRB 采用 MIT（2018，GrammaTech），并附上适用于所含第三方代码的 Apache-2.0 with LLVM Exceptions，GitHub 因而未能归类；贡献者须签署 GrammaTech 的 CLA。gtirb-pprinter 和 gtirb-rewriting 是独立项目，本次未审阅；所审阅的来源未表明与 REA 有关。"
+    ]
   }
 }
