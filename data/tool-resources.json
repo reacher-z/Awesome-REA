@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "mergen",
+    "name": "Mergen",
+    "url": "https://github.com/NaC-L/Mergen",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Function-level lifter that symbolically lifts one x86-64 function from a Windows PE binary into LLVM IR, then iterates LLVM and custom passes to a fixpoint so obfuscated or virtualized code reduces to simpler control flow and semantics for analysis. Its scope document lists 119 instruction handlers, two-way branches and tested jump-table shapes; README examples lift small test functions the authors protected with VMProtect and Themida, and the IR can be compiled for viewing in a decompiler.",
+    "description_zh": "函数级提升器：对 Windows PE 二进制中的单个 x86-64 函数进行符号化提升，生成 LLVM IR，再反复运行 LLVM 与自定义优化 pass 直至收敛，使经混淆或虚拟化的代码化简为更清晰的控制流和语义，便于分析。其范围文档列出 119 个指令处理器，支持双向分支和若干已测试的跳转表形态；README 示例提升的是作者自己用 VMProtect 和 Themida 保护的小型测试函数，输出的 IR 可编译后在反编译器中查看。",
+    "evidence_url": "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.7, published 2026-03-29, with Windows lifter and microtest executables for the iced and Zydis decoder backends. The reviewed main commit, dated 2026-05-08, is 150 commits past the later v0.8 tag, which has no release. docs/SCOPE.md limits support to x86-64 PE files and one function per run: 32-bit x86, other formats and architectures, self-modifying code, floating-point or AVX code beyond the listed SSE2 integer instructions and whole-binary lifting are unsupported, and general-purpose decompilation is a non-goal.",
+      "The lifter takes a PE file and the target function's address, with optional --outline addresses; analysts supply their own binaries. The VMProtect check runs against local protected samples that are not committed, and the reviewed tree holds source, assembly and C test sources and documentation rather than prebuilt executables. Output is LLVM IR text plus output_diagnostics.json, which records unresolved indirect jumps and returns.",
+      "Developed and CI-tested mainly on Windows with CMake, Ninja, clang-cl using MSVC headers and libraries, LLVM 18 and Rust/Cargo for the default iced backend; the Zydis-only lane builds from a vendored Zydis 4.1.0 amalgamation, and linux-pe is a git submodule. A secondary Ubuntu 22.04 Dockerfile builds and exports a Linux lifter.",
+      "docs/SCOPE.md reports 115 of 119 handlers covered by a Unicorn-generated oracle suite, 33 semantic samples with 177 runtime cases checked under lli, golden IR hashes and Windows build lanes in CI, and says reliability on protected code varies by protection level. The README's branch example still says jumps with more than two targets are unsupported, while the newer scope document lists tested jump-table shapes. These gates cover the project's own compiled samples, not arbitrary protected software; nothing was built or run for this review.",
+      "LICENSE is GPL-3.0; the vendored Zydis source and the submodule keep their own licenses. Lifted IR still needs analyst validation, and the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/docs/SCOPE.md",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/docs/BUILDING.md",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/docs/REWRITE_BASELINE.md",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/ARCHITECTURE.md",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/README.md#L181",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/lifter/core/Utils.cpp",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/Dockerfile",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/.gitmodules",
+      "https://github.com/NaC-L/Mergen/blob/199805706ac00e156cc7e2a53ccc647c380f1786/LICENSE",
+      "https://github.com/NaC-L/Mergen/releases/tag/v0.7"
+    ]
   }
 ]
