@@ -286,6 +286,97 @@ def validate_benchmarks(records, errors):
                 errors.append(f'{where}.observed_at: snapshot is in the future')
 
 
+def validate_readme_evidence(record, where, errors, *, complete=True):
+    """Identity, URL, hash and README-transport checks for one successful scan record.
+
+    Publication and scan resume share these checks. With `complete=False`, as for a resumed
+    checkpoint, `readme_url` is checked only when present; publication requires every field.
+    """
+    for field in ('url', 'readme_url'):
+        if (complete or field == 'url' or field in record) and public_https_error(record.get(field)):
+            errors.append(f'{where}: invalid public {field}')
+    if not isinstance(record.get('full_name'), str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', record['full_name']):
+        errors.append(f'{where}: invalid GitHub repository name')
+    if record.get('url') != 'https://github.com/' + str(record.get('full_name', '')):
+        errors.append(f'{where}: repository URL and full_name disagree')
+    if 'readme_api_url' in record:
+        api_url = record['readme_api_url']
+        if public_https_error(api_url):
+            errors.append(f'{where}: invalid public readme_api_url')
+        else:
+            parsed = urlsplit(api_url)
+            if (parsed.netloc != 'api.github.com'
+                    or parsed.path != '/repos/' + str(record.get('full_name', '')) + '/readme'):
+                errors.append(f'{where}: README API URL must match the public GitHub repository')
+    graphql_fields = {'readme_transport', 'readme_graphql_endpoint', 'readme_commit_sha'}
+    if 'readme_blob_api_url' in record:
+        expected = ('https://api.github.com/repos/' + str(record.get('full_name', ''))
+                    + '/git/blobs/' + str(record.get('readme_git_sha', '')))
+        if (record['readme_blob_api_url'] != expected or 'readme_api_url' not in record
+                or graphql_fields.intersection(record)
+                or record.get('readme_git_sha_matches_content') is not True):
+            errors.append(f'{where}: REST blob recovery must identify the verified immutable GitHub blob and README lookup')
+    if graphql_fields.intersection(record):
+        commit = record.get('readme_commit_sha')
+        path = record.get('readme_path')
+        if (not graphql_fields.issubset(record) or record.get('readme_transport') != 'github-graphql-blob'
+                or record.get('readme_graphql_endpoint') != 'https://api.github.com/graphql'
+                or not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit)
+                or not isinstance(path, str) or not path or path.startswith('/')
+                or any(part in ('', '.', '..') for part in path.split('/'))
+                or 'readme_api_url' in record or record.get('readme_git_sha_matches_content') is not True
+                or not isinstance(record.get('readme_url'), str) or not isinstance(record.get('url'), str)
+                or unquote(record.get('readme_url', '')) != record['url'] + '/blob/' + str(commit) + '/' + str(path)):
+            errors.append(f'{where}: GraphQL README evidence needs a verified blob and immutable commit URL')
+    if (record.get('private', False) is not False or record.get('visibility', 'public') != 'public'
+            or record.get('archived', False) is not False or record.get('fork', False) is not False):
+        errors.append(f'{where}: repository metadata must describe a public, non-fork, non-archived repository')
+    if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
+        errors.append(f'{where}: missing README SHA-256')
+    if 'readme_content_git_sha' in record or 'readme_git_sha_matches_content' in record:
+        content_sha = record.get('readme_content_git_sha')
+        if (not isinstance(content_sha, str) or not re.fullmatch(r'[0-9a-f]{40}', content_sha)
+                or type(record.get('readme_git_sha_matches_content')) is not bool
+                or record['readme_git_sha_matches_content'] != (content_sha == record.get('readme_git_sha'))):
+            errors.append(f'{where}: computed README Git hash and comparison flag disagree')
+    if 'readme_integrity_review' in record:
+        review = record['readme_integrity_review']
+        expected = {'reviewed_at', 'method', 'advertised_blob_sha256', 'advertised_blob_bytes'}
+        if (not isinstance(review, dict) or set(review) != expected
+                or review.get('method') != 'readme-json-and-raw-match-captured-sha256'
+                or record.get('readme_git_sha_matches_content') is not False
+                or not re.fullmatch(r'[0-9a-f]{64}', str(review.get('advertised_blob_sha256', '')))
+                or type(review.get('advertised_blob_bytes')) is not int or review['advertised_blob_bytes'] <= 0):
+            errors.append(f'{where}: invalid README integrity review')
+        else:
+            try:
+                parse_iso(review['reviewed_at'], require_time=True)
+            except (ValueError, TypeError):
+                errors.append(f'{where}: invalid README integrity-review timestamp')
+
+
+def failure_url_error(failure):
+    name = failure.get('full_name')
+    return (not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', name)
+            or failure.get('url') != 'https://github.com/' + name or bool(public_https_error(failure.get('url'))))
+
+
+def validate_retained_evidence(document, errors):
+    """Evidence checks for a snapshot that scanning resumes from, run before any authentication.
+
+    In-progress checkpoints and legacy count-only snapshots qualify. Publication additionally
+    requires a complete snapshot, its population guard and every field of a finished record.
+    """
+    meta, records, failures = document['meta'], document['resources'], document.get('failures', [])
+    for index, record in enumerate(records):
+        if isinstance(record, dict):
+            validate_readme_evidence(record, f'source index record {index}', errors, complete=False)
+    for index, failure in enumerate(failures):
+        if isinstance(failure, dict) and failure_url_error(failure):
+            errors.append(f'source index failure {index}: invalid public GitHub repository URL')
+    validate_scan_discovery(meta, records, errors, failures)
+
+
 def scan_run_entries(meta):
     """Known run containers only; no arbitrary nested metadata is trusted."""
     yield 'current_run', meta.get('current_run')
@@ -522,67 +613,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
         if record.get('scan_status') != 'readme-scanned' or record.get('verification') != 'automated-readme-scan':
             errors.append(f'{where}: preserve automated scan labels')
         validate_description_capture(record, errors, where)
-        for field in ('url', 'readme_url'):
-            if public_https_error(record.get(field)):
-                errors.append(f'{where}: invalid public {field}')
-        if not isinstance(record.get('full_name'), str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', record['full_name']):
-            errors.append(f'{where}: invalid GitHub repository name')
-        if record.get('url') != 'https://github.com/' + str(record.get('full_name', '')):
-            errors.append(f'{where}: repository URL and full_name disagree')
-        if 'readme_api_url' in record:
-            api_url = record['readme_api_url']
-            if public_https_error(api_url):
-                errors.append(f'{where}: invalid public readme_api_url')
-            else:
-                parsed = urlsplit(api_url)
-                if (parsed.netloc != 'api.github.com'
-                        or parsed.path != '/repos/' + str(record.get('full_name', '')) + '/readme'):
-                    errors.append(f'{where}: README API URL must match the public GitHub repository')
-        graphql_fields = {'readme_transport', 'readme_graphql_endpoint', 'readme_commit_sha'}
-        if 'readme_blob_api_url' in record:
-            expected = ('https://api.github.com/repos/' + str(record.get('full_name', ''))
-                        + '/git/blobs/' + str(record.get('readme_git_sha', '')))
-            if (record['readme_blob_api_url'] != expected or 'readme_api_url' not in record
-                    or graphql_fields.intersection(record)
-                    or record.get('readme_git_sha_matches_content') is not True):
-                errors.append(f'{where}: REST blob recovery must identify the verified immutable GitHub blob and README lookup')
-        if graphql_fields.intersection(record):
-            commit = record.get('readme_commit_sha')
-            path = record.get('readme_path')
-            if (not graphql_fields.issubset(record) or record.get('readme_transport') != 'github-graphql-blob'
-                    or record.get('readme_graphql_endpoint') != 'https://api.github.com/graphql'
-                    or not isinstance(commit, str) or not re.fullmatch(r'[0-9a-f]{40}', commit)
-                    or not isinstance(path, str) or not path or path.startswith('/')
-                    or any(part in ('', '.', '..') for part in path.split('/'))
-                    or 'readme_api_url' in record or record.get('readme_git_sha_matches_content') is not True
-                    or not isinstance(record.get('readme_url'), str) or not isinstance(record.get('url'), str)
-                    or unquote(record.get('readme_url', '')) != record['url'] + '/blob/' + str(commit) + '/' + str(path)):
-                errors.append(f'{where}: GraphQL README evidence needs a verified blob and immutable commit URL')
-        if (record.get('private', False) is not False or record.get('visibility', 'public') != 'public'
-                or record.get('archived', False) is not False or record.get('fork', False) is not False):
-            errors.append(f'{where}: repository metadata must describe a public, non-fork, non-archived repository')
-        if not re.fullmatch(r'[0-9a-f]{64}', str(record.get('readme_sha256', ''))):
-            errors.append(f'{where}: missing README SHA-256')
-        if 'readme_content_git_sha' in record or 'readme_git_sha_matches_content' in record:
-            content_sha = record.get('readme_content_git_sha')
-            if (not isinstance(content_sha, str) or not re.fullmatch(r'[0-9a-f]{40}', content_sha)
-                    or type(record.get('readme_git_sha_matches_content')) is not bool
-                    or record['readme_git_sha_matches_content'] != (content_sha == record.get('readme_git_sha'))):
-                errors.append(f'{where}: computed README Git hash and comparison flag disagree')
-        if 'readme_integrity_review' in record:
-            review = record['readme_integrity_review']
-            expected = {'reviewed_at', 'method', 'advertised_blob_sha256', 'advertised_blob_bytes'}
-            if (not isinstance(review, dict) or set(review) != expected
-                    or review.get('method') != 'readme-json-and-raw-match-captured-sha256'
-                    or record.get('readme_git_sha_matches_content') is not False
-                    or not re.fullmatch(r'[0-9a-f]{64}', str(review.get('advertised_blob_sha256', '')))
-                    or type(review.get('advertised_blob_bytes')) is not int or review['advertised_blob_bytes'] <= 0):
-                errors.append(f'{where}: invalid README integrity review')
-            else:
-                try:
-                    parse_iso(review['reviewed_at'], require_time=True)
-                except (ValueError, TypeError):
-                    errors.append(f'{where}: invalid README integrity-review timestamp')
+        validate_readme_evidence(record, where, errors)
         if type(record.get('readme_bytes')) is not int or record['readme_bytes'] <= 0:
             errors.append(f'{where}: missing positive README byte count')
         targets = record.get('targets')
@@ -606,10 +637,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
         if identifier in ids:
             errors.append(f'source index failure {index}: source ID also has a successful scan')
         failed_ids.add(identifier)
-        name = failure.get('full_name')
-        if (not isinstance(name, str) or not re.fullmatch(r'[A-Za-z0-9-]+/[A-Za-z0-9_.-]+', name)
-                or failure.get('url') != 'https://github.com/' + name
-                or public_https_error(failure.get('url'))):
+        if failure_url_error(failure):
             errors.append(f'source index failure {index}: invalid public GitHub repository URL')
 
     def nonnegative_integer(value):

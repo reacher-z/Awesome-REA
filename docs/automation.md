@@ -94,7 +94,7 @@ The scanner saves actual capture evidence before acknowledging its numeric IDs i
 
 When the published index advances, reconciliation preserves checkpoint-only captures and the pending-ID union. Success takes precedence over a failed attempt for the same ID; published successful versions take precedence over older versions. Input hashes, original counters and superseded-record hashes preserve provenance. Different numeric IDs claiming the same repository name stop for review with both validated inputs retained. Counts are recomputed from unique identities, not added across snapshots.
 
-A checkpoint marked `in-progress` is resumable but remains rejected by the normal publication validator. The scheduler requests explicit incomplete-checkpoint validation without changing that status. Review relevance, source scope, attribution and bilingual descriptions separately before a normal publication PR.
+A checkpoint marked `in-progress` is resumable but remains rejected by the normal publication validator. Before any authentication, resuming applies the publication validator's hash, URL, repository-visibility and discovery-provenance checks to the retained evidence; completion, the population guard and the remaining fields of a finished record stay publication-only. The scheduler requests explicit incomplete-checkpoint validation without changing that status. Review relevance, source scope, attribution and bilingual descriptions separately before a normal publication PR.
 
 ### Bounds and retention
 

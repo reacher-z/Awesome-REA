@@ -22,6 +22,7 @@ import time
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, unquote, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
+from validate import validate_retained_evidence
 from source_descriptions import SOURCE_DESCRIPTION_POLICY, capture_description
 from source_scope import DUPLICATE_README_REASON, read_scope
 
@@ -716,6 +717,11 @@ def load_resume(path):
     elif (not isinstance(meta.get('unique_repos'), int) or meta['unique_repos'] < len(identifiers)
           or meta.get('unattempted_candidates') != meta['unique_repos'] - len(identifiers)):
         raise ValueError('Legacy resume snapshot candidate counts are inconsistent')
+    # The hash, URL and discovery checks publication applies; completion and size are publication-only.
+    errors = []
+    validate_retained_evidence(document, errors)
+    if errors:
+        raise ValueError(f'Resume snapshot retains invalid evidence ({len(errors)} finding(s)), first: {errors[0]}')
     return document, hashlib.sha256(raw).hexdigest()
 
 
