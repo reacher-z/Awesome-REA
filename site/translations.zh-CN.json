@@ -6294,5 +6294,14 @@
       "所审阅的分析任务均为静态分析或外部查询，流程中没有动态执行或沙箱运行；规则、相似度和信誉服务的结果只是需要分析者复核的迹象。pytest 测试模拟了 Elasticsearch 和存储，并使用 tests/_data/test.apk，这是项目自行构建、包名为 com.pithus.basicapp 的示例应用。CI 中的 pytest 任务已被注释掉，因此 CI 只做代码检查、运行 bandit，并构建和推送 Docker 镜像。Quark-Engine 从一个分支仓库安装，quark-rules 目录收录 280 个规则文件。",
       "采用 AGPL-3.0 许可；随附的前端库及其调用的分析工具（包括 MobSF）各自保留其许可证。所审来源未提及 REA 的使用，本收录未部署该平台，也未分析任何样本。"
     ]
+  },
+  "angryghidra": {
+    "name": "AngryGhidra Ghidra 符号执行插件",
+    "requirements": [
+      "审阅时最新版本为 1.1，发布于 2024-02-13，提供适用于 Ghidra 11.0 和 11.0.1 的预构建扩展包；较早的 0.1 版本附有 Ghidra 9.1.2 至 10.3 的构建。所审阅的 master 分支提交日期为 2024-07-29，比该版本多两个提交，改动了插件类型和 README。项目未说明与更新 Ghidra 版本的兼容性。",
+      "需用 pip 为 Python 3 安装 angr，并将 python3 加入 PATH；插件以外部进程运行随附的 angryghidra.py，并通过临时文件 angr_options.json 传递分析者的设置。项目未固定 angr 版本。从源码构建时需设置 GHIDRA_INSTALL_DIR 并使用 Gradle，再在 Ghidra 中通过 File → Install Extensions 安装；若未弹出新插件提示，可在 File → Configure → Miscellaneous 中启用 AngryGhidraPlugin。",
+      "angr 会从 Ghidra 导入时记录的路径加载二进制文件，因此原始文件必须仍在该位置；原始二进制（Raw Binary）会按 Ghidra 语言对应的架构以 blob 方式加载。二进制文件以及寻找、避开、钩子和符号输入等设置都由分析者提供。路径爆炸、未建模的环境行为和求解器限制仍取决于 angr；找到的路径只给出一个满足条件的输入，并不能证明程序的性质。",
+      "README 以 angr 示例中的 SecurityFest 2016 fairlight CTF 题目作演示；项目未发布其他结果或测试。采用 MIT 许可证。本次未运行该扩展或 angr。"
+    ]
   }
 }
