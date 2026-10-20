@@ -2604,5 +2604,31 @@
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
     ]
+  },
+  {
+    "id": "awesome-connected-things-sec",
+    "name": "Awesome Connected Things Security",
+    "url": "https://github.com/V33RU/awesome-connected-things-sec",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "A single-README list of security-research references for IoT, embedded, industrial and automotive systems, organized into sections on hardware attacks, wireless protocols (BLE, Zigbee/Z-Wave, LoRa, Matter/Thread, cellular, NFC/RFID, Wi-Fi, USB), firmware security including extraction, static and dynamic analysis and secure boot, network and web protocols, cloud backends, mobile apps, and industrial and automotive topics. Each entry links out to an external tool, talk, paper, write-up or course with a short note. The README reports 900+ resources.",
+    "description_zh": "面向 IoT、嵌入式、工业和汽车系统的单 README 安全研究资料清单，按章节组织，涵盖硬件攻击、无线协议（BLE、Zigbee/Z-Wave、LoRa、Matter/Thread、蜂窝、NFC/RFID、Wi-Fi、USB）、固件安全（含提取、静态与动态分析和安全启动）、网络与 Web 协议、云后端、移动应用，以及工业和汽车相关主题。每个条目链接到外部的工具、演讲、论文、文章或课程并附简短说明。README 称收录 900 多项资源。",
+    "evidence_url": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/LICENSE"
+    ],
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last committed 2026-10-16, links roughly 979 entries and states 900+ resources; it is a list of pointers, not reviewed or runtime-tested projects, and one entry can fit several sections.",
+      "Entries give a name, an external link and a short note, and state no license, platform or maintenance status, so each linked tool, talk, paper or course must be checked at its own source.",
+      "The list is oriented toward security research and exploitation, with sections such as hardware attacks, memory extraction, side-channel and fault injection, firmware extraction and secure-boot bypasses; this record names the analysis scope only and restates no attack or bypass procedure. Hardware and radio work needs physical access, appropriate equipment and authorization.",
+      "The list text is released under CC0-1.0; linked tools and resources keep their own licenses and terms. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
