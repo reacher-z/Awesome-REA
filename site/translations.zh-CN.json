@@ -6644,5 +6644,14 @@
       "CI 针对 ESP8266 D1 mini 以及 ESP32 开发板包 1.0.6、2.0.17 和最新版编译示例程序，并以严格模式运行 Arduino Lint，但不涉及实际总线。PacketParser 称其报文解释“高度实验性”，综合自多方资料以及作者在自己的 2003 款标致 406 上所做的实验；README 还指向外部整理的已知 IDEN 值列表，因此解码含义并非厂商规范。",
       "采用 MIT 许可证。本次审阅未编译示例程序、未连接硬件，也未采集或发送总线数据；所审阅的资料未确立与 REA 的关联。"
     ]
+  },
+  "class-informer": {
+    "name": "Class Informer MSVC RTTI 类信息插件",
+    "requirements": [
+      "审阅时最新版本为 v6.0.3，发布于 2026-08-04，该标签指向所审阅的 master 提交，附带的 zip 中只有一个 Windows 插件 DLL；发布说明称该版本修复了 IDA 9.4 上的问题，此前 2025 年 9 月的一次提交已将插件更新到 IDA 9.2 和 Qt 6。插件只会为 x86/x64（metapc）数据库加载。",
+      "README 中关于 IDA 9.4 的说明称，必须修改插件标志 IDA 才能识别该插件，这导致无法再通过 plugins.cfg 加载，因此现已内置 Alt-2 快捷键，也可从 Edit > Plugins 菜单运行。安装步骤仍沿用旧的 Class_Informer.plw 文件名；README 给出的用于关闭演示场景风格片头及其音乐的 plugins.cfg 参数，早于这一说明。",
+      "从源码构建需要 Windows 和 Visual Studio 2022（v143 工具集），以及面向 MSVC 2022 x64 的 Qt 6 与 Qt Visual Studio 工具、位于 IDA 目录中的 IDA SDK，还需要作者另行维护的 IDA_Support 仓库和 libxmp，这两者都不在本仓库中。没有 CI，也没有测试。IDA 数据库由分析者自行提供；README 称该插件专为 MSVC 编译的二进制设计，用于其他编译器的产物时结果可能难以预料。",
+      "README 声明采用 MIT 许可证，但仓库中没有单独的许可证文件；据 README 说明，res 目录中的 tracker 音乐模块经其作曲者 Drax 许可使用。本次未构建、安装或运行任何内容。"
+    ]
   }
 }
