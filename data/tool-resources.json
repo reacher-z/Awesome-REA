@@ -11191,5 +11191,43 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "niimblue-niimbot-printer-client-case",
+    "name": "NiimBlue: an independent web client for NIIMBOT label printers",
+    "url": "https://github.com/MultiMote/niimblue",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Replaces NIIMBOT's own label app with a browser client that designs labels and prints them over Web Bluetooth or Web Serial, with Android (Capacitor) and Windows (Tauri) builds of the same interface. Printer communication comes from the same author's NiimBlueLib, which the README calls the most complete implementation of the NIIMBOT protocol; the protocol is documented on the NIIMBOT Community Wiki, and owners of models that do not print are asked for a packet capture of a print made with the official app. The README says the client runs entirely in the browser and keeps label data there.",
+    "description_zh": "以浏览器客户端替代 NIIMBOT 官方标签应用，可设计标签并通过 Web Bluetooth 或 Web Serial 打印，同一界面另有 Android（Capacitor）和 Windows（Tauri）版本。与打印机的通信由同一作者的 NiimBlueLib 实现，README 称其为最完整的 NIIMBOT 协议实现；协议记录在 NIIMBOT Community Wiki 上，打印失败机型的用户会被请求提供用官方应用打印时的数据包抓包。README 称客户端完全在浏览器中运行，标签数据也保存在浏览器里。",
+    "evidence_url": "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is the v2026.9.0 release of 2026-09-27; newer work lands on the dev branch, which CONTRIBUTING names as the base for pull requests. The README keeps no list of supported models and points to a NiimBlueLib issue that collects tested models; it suggests trying a different print-task version in the preview dialog when printing fails.",
+      "Needs the user's own NIIMBOT printer over Bluetooth or USB serial and a browser with the Web Bluetooth or Web Serial API, usually Chrome-based; some systems need Chrome flags enabled, Safari needs a third-party extension, and deployments other than localhost need HTTPS. No vendor app or firmware is needed to print. The optional firmware updater only flashes a .bin file the user selects.",
+      "Built with Node.js and npm from Svelte 5, Vite and Fabric.js, with @mmote/niimbluelib pinned at 0.47.0; npm run build writes static files, and the Dockerfile serves them with nginx. Releases attach the static site as niimblue-dist.zip plus an Android APK and a Windows executable, built by the repository's Gitea workflows.",
+      "The repository has no automated test suite: the Dockerfile and deployment workflow run svelte-check before building, and the Gitea workflows build and publish the site and apps. The protocol code and its tests live in the separate NiimBlueLib repository, which this review read only at its README. Model support rests on user reports, and this review built and ran nothing.",
+      "MIT (LICENSE, 2024 MultiMote); NiimBlueLib is also MIT, and its README says the work is for informational and educational purposes, is not affiliated with or endorsed by the vendor and is not meant for commercial use without the vendor's consent. CONTRIBUTING says AI-generated code is not appreciated and must be reviewed if used; the reviewed sources establish no AI or REA use in the project."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/package.json",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/CHANGELOG.md",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/CONTRIBUTING.md",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/Dockerfile",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/LICENSE",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/src/components/basic/FirmwareUpdater.svelte",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/.gitea/workflows/deploy-to-server.yml",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/.gitea/workflows/build-android-app.yml",
+      "https://github.com/MultiMote/niimblue/blob/82c5605780818299422a6acdf3180d87c569578d/.gitea/workflows/build-tauri-app.yml",
+      "https://github.com/MultiMote/niimblue/releases/tag/v2026.9.0",
+      "https://github.com/MultiMote/niimbluelib/blob/a9bc3f5c20c95e3a31ea3f5f2302ce7b27c34abe/README.md",
+      "https://printers.niim.blue/interfacing/proto/"
+    ]
   }
 ]

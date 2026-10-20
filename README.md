@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 471](https://img.shields.io/badge/resources-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 472](https://img.shields.io/badge/resources-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 196](https://img.shields.io/badge/cases-196-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (27) · [Game](#game) (185) · [App](#app) (72)
+- [Website](#website) (27) · [Game](#game) (185) · [App](#app) (73)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (195) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (196) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1545,6 +1545,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Replaces Honda RoadSync’s Apple Music-only media control with an iOS app that pairs with a Honda PCX 2025 TFT dash over Bluetooth Low Energy and turns handlebar presses into system-wide commands for any player. The author documents the dash’s BLE services, key exchange, button registration and event bytes, reportedly worked out from the official Android app and logged traffic. Results are author-reported on one PCX125, and the protocol notes separate confirmed from unverified parts.
 
   Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/scooterlink-honda-roadsync-case/)
+
+- [**NiimBlue: an independent web client for NIIMBOT label printers**](https://github.com/MultiMote/niimblue)
+
+  Replaces NIIMBOT's own label app with a browser client that designs labels and prints them over Web Bluetooth or Web Serial, with Android (Capacitor) and Windows (Tauri) builds of the same interface. Printer communication comes from the same author's NiimBlueLib, which the README calls the most complete implementation of the NIIMBOT protocol; the protocol is documented on the NIIMBOT Community Wiki, and owners of models that do not print are asked for a packet capture of a print made with the official app. The README says the client runs entirely in the browser and keeps label data there.
+
+  Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/niimblue-niimbot-printer-client-case/)
 
 #### Tools, projects and integrations
 

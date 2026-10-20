@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "niimblue-niimbot-printer-client-case": {
+    "name": "NiimBlue：NIIMBOT 标签打印机的独立网页客户端",
+    "requirements": [
+      "所审阅的 main 提交即 2026-09-27 发布的 v2026.9.0；更新的开发在 dev 分支进行，CONTRIBUTING 要求以该分支作为拉取请求的基础。README 不维护支持机型列表，而是指向 NiimBlueLib 中汇总已测试机型的 issue；打印失败时，建议在预览对话框中尝试其他打印任务版本。",
+      "需要使用者自己的 NIIMBOT 打印机（蓝牙或 USB 串口连接），以及支持 Web Bluetooth 或 Web Serial API 的浏览器，通常为 Chrome 系浏览器；部分系统需开启 Chrome 实验选项，Safari 需要第三方扩展，localhost 以外的部署需要 HTTPS。打印不需要厂商应用或固件。可选的固件更新功能只会刷写使用者自选的 .bin 文件。",
+      "使用 Node.js 和 npm 构建，基于 Svelte 5、Vite 和 Fabric.js，并固定 @mmote/niimbluelib 0.47.0；npm run build 生成静态文件，Dockerfile 用 nginx 提供这些文件。发布版本附带静态站点包 niimblue-dist.zip、Android APK 和 Windows 可执行文件，均由仓库中的 Gitea 工作流构建。",
+      "仓库没有自动化测试：Dockerfile 和部署工作流在构建前运行 svelte-check，Gitea 工作流负责构建和发布站点与应用。协议代码及其测试位于独立的 NiimBlueLib 仓库，本次审阅仅阅读了它的 README。机型支持依据用户报告；本次审阅未构建或运行任何程序。",
+      "采用 MIT 许可证（LICENSE，2024 MultiMote）；NiimBlueLib 同样采用 MIT，其 README 称项目仅供信息和教育用途，与厂商无关联、未获厂商认可，未经厂商同意不应用于商业用途。CONTRIBUTING 表示不欢迎 AI 生成的代码，如有使用须经审查；所审来源未确立项目使用 AI 或 REA。"
+    ]
   }
 }
