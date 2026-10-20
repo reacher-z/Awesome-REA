@@ -13,6 +13,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Security policy](../SECURITY.md) | English, with a Chinese summary | Current | Private reporting of security problems |
 | [Catalog format](../data/README.md) | English | Current | Curated, paper, benchmark, scan and case-coverage data |
 | [Repository locales](../data/locales/README.md) | English | Current | English and Chinese descriptions of scanned repositories |
+| Index-to-curated review worksheet: [English](promotion-worksheet.md), [Chinese](promotion-worksheet.zh-CN.md) | English, Chinese | Current | Tracing a scanned repository to a curated record or a hold, with a completed example |
 
 ## Maintenance guides
 

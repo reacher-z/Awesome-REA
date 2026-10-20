@@ -54,7 +54,7 @@ These descriptions derive from attributed upstream text, not independent editori
 - Stars and license identifiers are GitHub metadata snapshots. A license identifier is not a review of a project's complete licensing terms.
 - `failures` records attempted repositories that did not produce a successful README scan. `unattempted_candidates` records the discovered candidates left over after reaching the requested successful-scan target.
 
-The curated `source-reviewed` records remain in [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json). Promotion from this source index requires a separate human or agent editorial review under the [contribution rules](../CONTRIBUTING.md).
+The curated `source-reviewed` records remain in [rea-resources.json](../data/rea-resources.json) and [tool-resources.json](../data/tool-resources.json). Promotion from this source index requires a separate human or agent editorial review under the [contribution rules](../CONTRIBUTING.md); the [review worksheet](promotion-worksheet.md) traces a scan record to a curated claim or a hold, and leaves the scan record unchanged.
 
 ## Run a fresh scan
 
