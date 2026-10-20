@@ -18,7 +18,7 @@ from localization import localized_records, read_localizations
 from source_scope import apply_scope, read_scope
 from source_browser import BROWSER_FILENAME, FULL_EXPORT_FILENAME, validate_source_browser
 from validate_discovery import expected_entry_routes, validate_route_inventory
-from build_readme import CATEGORIES, collection_section
+from build_readme import CATEGORIES, REQUIREMENTS_LABEL, collection_section
 from homepage_locales import _ui_strings
 from open_graph import OG_LOCALES, SITE_ALTERNATE_NAMES, SITE_NAME, SOCIAL_IMAGE_ALT, png_size
 
@@ -270,6 +270,14 @@ def validate_homepage_destinations(pages, app_source=None):
             assert not ARROWS.search(name), f'Homepage ItemList name contains an arrow: {name!r} ({route})'
             assert name not in strings[language].values(), f'Homepage ItemList name reuses interface link text: {name!r} ({route})'
             assert destination in pages and pages[destination].h1_texts == [name], f'Homepage ItemList name differs from the H1 of {destination}: {name!r}'
+
+
+def validate_requirements_label(app_source=None):
+    """Homepage cards name the requirements disclosure exactly as the generated pages and README do."""
+    strings = _ui_strings(app_source if app_source is not None else (ROOT / 'site/app.js').read_text(encoding='utf-8'))
+    for language, expected in zip(('en', 'zh'), REQUIREMENTS_LABEL):
+        for key in ('requirements', 'requirementsShort'):
+            assert strings[language][key] == expected, f'app.js {language}.{key} must read {expected!r}'
 
 
 def validate_open_graph(route, page, card_size):
@@ -866,6 +874,7 @@ def main():
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
+    validate_requirements_label()
     validate_paper_outputs(OUTPUT, pages)
     validate_entry_outputs(pages, resources, papers)
     validate_case_outputs(pages, resources)

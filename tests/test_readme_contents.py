@@ -95,8 +95,8 @@ class ReadmeContentsTest(unittest.TestCase):
         before = deepcopy(record)
         for language, title, description, label, prefix in [
             ('en', r'Fixture \[tool\]', 'Recovers a view, not the original backend. Requires A &amp; B.',
-             'Requirements & evidence', ''),
-            ('zh', r'测试 \[工具\]', '恢复界面，并非原后端。需要 A &amp; B。', '使用条件与证据', 'zh/'),
+             'Requirements & limits', ''),
+            ('zh', r'测试 \[工具\]', '恢复界面，并非原后端。需要 A &amp; B。', '使用条件与局限', 'zh/'),
         ]:
             with self.subTest(language=language):
                 rendered = render_catalog([record], language)

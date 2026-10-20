@@ -42,7 +42,7 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
                 self.assertEqual(collection_section(record), section)
                 self.assertEqual(other_targets(record, section, 'en'), '')
                 self.assertEqual(other_targets(record, section, 'zh'), '')
-                self.assertIn(f'  {entry_type(record, "en")} · [Requirements & evidence]', render_catalog([record], 'en'))
+                self.assertIn(f'  {entry_type(record, "en")} · [Requirements & limits]', render_catalog([record], 'en'))
 
     def test_sections_without_a_target_list_every_target(self):
         record = resource(category='agent-mcp', kind='integration', relationship='independent-agent-integration',

@@ -11,7 +11,7 @@ import re
 import shutil
 from urllib.parse import unquote, urlsplit
 
-from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
+from build_readme import KIND_LABELS, RELATIONSHIPS, REQUIREMENTS_LABEL, TARGETS, collection_section
 from open_graph import open_graph_meta, website_reference
 from source_scope import exclusion_counts, unavailable_clause
 
@@ -145,7 +145,7 @@ def _resource_card(record: dict, language: str) -> str:
   <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
   <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a></div>
-  <details class="requirements"><summary>{('使用条件与来源' if zh else 'Requirements & sources')}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{PRIMARY_SOURCE_LABEL[zh]} ↗</a></div></details>
+  <details class="requirements"><summary>{escape(REQUIREMENTS_LABEL[zh])}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{PRIMARY_SOURCE_LABEL[zh]} ↗</a></div></details>
 </article>'''
 
 
@@ -168,7 +168,7 @@ def _case_row(record: dict, language: str, section: str) -> str:
   <div class="case-heading"><h3><a href="{_url(record['url'])}" target="_blank" rel="noopener noreferrer">{escape(name)}<span class="browse-text-arrow" aria-hidden="true">↗</span></a></h3><span class="case-relationship">{escape(relationship)}</span></div>
   <p class="case-description">{escape(record[f'description_{language}'])}</p>
   <div class="case-footer"><div class="case-meta"><span class="case-targets">{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{identifier}" href="{detail_path}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a><a class="case-source" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener noreferrer">{PRIMARY_SOURCE_LABEL[zh]} <span aria-hidden="true">↗</span></a></div>
-  <details class="case-evidence"><summary>{('使用条件与证据' if zh else 'Requirements and evidence')}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul>{('<ul class="case-evidence-links">' + evidence_links + '</ul>' if evidence_links else '')}<p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
+  <details class="case-evidence"><summary>{escape(REQUIREMENTS_LABEL[zh])}</summary><div class="case-evidence-body"><ul class="case-requirements">{requirements}</ul>{('<ul class="case-evidence-links">' + evidence_links + '</ul>' if evidence_links else '')}<p class="case-review-date"><time datetime="{escape(reviewed, quote=True)}">{('来源复核日期：' if zh else 'Source review: ')}{escape(reviewed[:10])}</time></p></div></details>
   </div>
 </article>'''
 

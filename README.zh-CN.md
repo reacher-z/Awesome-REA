@@ -49,7 +49,7 @@
 <a id="resource-catalog"></a>
 ## 资源
 
-名称链接指向原始来源。完整说明后列出类型、关系，以及包含使用前提、限制与核查来源的“使用条件与证据”链接。
+名称链接指向原始来源。完整说明后列出类型、关系，以及包含使用前提、限制与核查来源的“使用条件与局限”链接。
 
 每项资源按主要用途列出一次，案例复用这些条目；[研究论文单独列出](#papers)。[浏览精选资源目录](https://awesomerea.org/zh/resources/)。
 
@@ -69,49 +69,49 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 的教学案例检查 HTTP 版 t-rex-runner，并重建其速度更新规则。单独进行的受控原游戏检查与新演示对比更新次数，包含浮点递增越过名义速度阈值的一步。
 
-  案例 · REA 官方 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
+  案例 · REA 官方 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
 
 - [**rauchg.com：根据捕获的 Flight 输出重建 RSC 博客**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
 
   记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)
 
 - [**BaoCut Slides：交互式网页编辑器改编**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)
 
   记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。
 
-  案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)
+  案例 · 独立重建 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)
 
 - [**Claude Code 中的 REA：隔离配置下的静态分析 A/B 试验**](https://zenn.dev/keigoly/articles/8738d8d241b5a1)
 
   一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。
 
-  案例 · 混合工具流程 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-claude-code-isolated-ab-case/)
+  案例 · 混合工具流程 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-claude-code-isolated-ab-case/)
 
 - [**恐龙跑酷：经 REA 检查、由 Codex 重建的速度规则**](https://github.com/zhxunzh84/rea-dino-reverse-engineering)
 
   作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。
 
-  案例 · 混合工具流程 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)
+  案例 · 混合工具流程 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)
 
 - [**BaoCut Design：移植重建的设计稿与设计系统编辑器**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 
   记录 BaoCut 的设计稿（画布）与设计系统编辑器；项目称其按 1:1 移植自 Claude Design 编辑器的 TypeScript 重建，并在智能体会话中提供标注与导出。运行时说明记录了对照原脚本修正的标识符，以及画布主页面 20463 个函数中有 19111 个结构完全一致的比对结果。未审阅的差异、未公开的重建记录及复用权利仍待确认；不主张恢复任何托管后端。
 
-  案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-design-canvas-case/)
+  案例 · 独立重建 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/baocut-design-canvas-case/)
 
 - [**whatsapp-web-reveng：记录旧版 WhatsApp Web 协议**](https://github.com/sigalor/whatsapp-web-reveng)
 
   记录并重新实现 WhatsApp Web 在浏览器会话镜像已配对手机时期使用的 WebSocket 协议：二维码配对、Curve25519/HKDF 密钥建立、经 AES/HMAC 保护的二进制报文、基于字符串令牌表的节点编码，以及端到端媒体加密。Python 后端、Node.js 中继和浏览器前端把已登录会话的报文解码成可查看的 JSON，README 还列出了 Baileys、go-whatsapp 等独立再实现。这是 WhatsApp 2021 年多设备架构之前的旧一代协议，不能当作对当前 WhatsApp Web 的描述。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/whatsapp-web-reveng-legacy-protocol-case/)
 
 - [**Ruffle：用 Rust 重新实现的 Adobe Flash Player**](https://github.com/ruffle-rs/ruffle)
 
   用 Rust 重新实现 Adobe Flash Player，使从 ActionScript 1/2（AVM1）到 ActionScript 3（AVM2）的 SWF 内容能在原生桌面播放器中运行，或通过 WebAssembly 以自托管脚本或浏览器扩展的形式在浏览器中运行。其贡献指南称，行为依据对 Flash Player 输出的观察或 Adobe 开源的 avmplus 等许可兼容来源确定，并禁止反编译 Flash Player、Flash Professional 或 Animate。回归测试运行贡献者自制的 SWF，将其 trace 输出（以及可选的渲染图像）与官方调试版 Flash Player 的记录进行比较。
 
-  案例 · 独立重建 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/ruffle-flash-player-case/)
+  案例 · 独立重建 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/ruffle-flash-player-case/)
 
 #### 工具、项目与集成
 
@@ -119,115 +119,115 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   识别支持的 JavaScript 混淆模式，并拆解 webpack/Browserify 打包文件，改善代码可读性。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/webcrack/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/webcrack/)
 
 - [**humanify JavaScript 标识符重命名工具**](https://github.com/jehna/humanify)
 
   借助 LLM 为压缩后的 JavaScript 标识符建议名称，并通过遵循作用域的 AST 改写完成重命名，程序结构保持不变。新名称是模型给出的推测，并非恢复出的原始标识符。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/humanify/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/humanify/)
 
 - [**WABT**](https://github.com/WebAssembly/wabt)
 
   WebAssembly 二进制与文本转换、节区检查、验证、解释执行及 C 转换工具集。
 
-  工具 · WebAssembly · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/wabt/)
+  工具 · WebAssembly · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/wabt/)
 
 - [**wasm-tools**](https://github.com/bytecodealliance/wasm-tools)
 
   Bytecode Alliance 提供的 CLI 与 Rust 库，用于检查 WebAssembly 模块、元数据、组件和 WIT 接口。
 
-  工具 · WebAssembly · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/wasm-tools/)
+  工具 · WebAssembly · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/wasm-tools/)
 
 - [**Chrome DevTools MCP**](https://github.com/ChromeDevTools/chrome-devtools-mcp)
 
   连接智能体与 Chrome，检查实时页面、调试网络并记录性能轨迹。
 
-  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)
+  集成 · 独立 MCP · [使用条件与局限](https://awesomerea.org/zh/resources/chrome-devtools-mcp/)
 
 - [**mitmproxy**](https://github.com/mitmproxy/mitmproxy)
 
   通过交互代理、Web 界面或可脚本化命令行检查和记录 HTTP 流量。
 
-  工具 · 也适用：应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/mitmproxy/)
+  工具 · 也适用：应用、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/mitmproxy/)
 
 - [**Playwright MCP**](https://github.com/microsoft/playwright-mcp)
 
   通过结构化无障碍快照驱动浏览器交互，调查可复现的网页行为。
 
-  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/playwright-mcp/)
+  集成 · 独立 MCP · [使用条件与局限](https://awesomerea.org/zh/resources/playwright-mcp/)
 
 - [**Burp Suite MCP Server 扩展**](https://github.com/PortSwigger/mcp-server)
 
   PortSwigger 官方 Burp Suite 扩展，提供 MCP 端点并附带 stdio 代理，使智能体可以查询代理中的 HTTP 与 WebSocket 历史记录、发送 HTTP/1.1 或 HTTP/2 请求，并打开 Repeater 或 Intruder 标签页。
 
-  集成 · 独立 MCP · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)
+  集成 · 独立 MCP · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/burp-suite-mcp-server/)
 
 - [**Wakaru**](https://github.com/pionxzh/wakaru)
 
   通过还原已识别的压缩与转译模式，从发布后的 JavaScript 包中恢复可读模块，支持拆包与现代语法恢复，便于分析生产环境前端代码。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/wakaru/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/wakaru/)
 
 - [**Spectral**](https://github.com/spectral-mcp/spectral)
 
   用 LLM 分析捕获的应用 HTTP 流量，生成 MCP 工具、OpenAPI 3.1 规范或 GraphQL 模式；完成抓包与认证配置后，生成的工具可直接调用已观察到的 API。
 
-  集成 · 独立智能体 · 也适用：应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/spectral-mcp/)
+  集成 · 独立智能体 · 也适用：应用、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/spectral-mcp/)
 
 - [**jsdeob-workbench**](https://github.com/Owl4444/jsdeob-workbench)
 
   在查看 JavaScript AST 和变量作用域的同时，可视化编排 Babel 转换链；保存分析项目与可复用插件，逐步简化混淆脚本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/jsdeob-workbench/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/jsdeob-workbench/)
 
 - [**Browser Reverse Engineering Toolkit 浏览器逆向工程工具集**](https://github.com/Dvurechensky/Browser.Reverse.Engineering.Toolkit)
 
   采集浏览器会话证据，在持久 Chromium 会话中抓取网站，并根据已保存的捕获数据生成离线架构／API 报告，以及 OpenAPI、SDK 和模拟服务器草稿。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/browser-reverse-engineering-toolkit/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/browser-reverse-engineering-toolkit/)
 
 - [**screenshot-to-code 截图转前端代码工具**](https://github.com/abi/screenshot-to-code)
 
   借助多模态模型，根据截图、设计稿、Figma 设计或屏幕录像生成 HTML/CSS、Tailwind、React、Vue、Bootstrap 或 Ionic 前端代码；可选的无头浏览器预览可让模型渲染并自查输出。结果是对界面外观的视觉重建，并非恢复原始源码或后端行为。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/screenshot-to-code/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/screenshot-to-code/)
 
 - [**Dembrandt 网站设计系统提取工具**](https://github.com/dembrandt/dembrandt)
 
   Node.js 命令行工具，通过 Playwright 驱动 Chromium 或 Firefox 渲染网站，并从 DOM 读取计算样式来提取其设计系统：标志、附带判定依据的颜色角色、字体排版、间距、边框、阴影、动效、断点，以及按钮、输入框等组件样式。结果可导出为 W3C 设计令牌（DTCG）、Tailwind v4 或 shadcn/ui 主题、DESIGN.md、HTML 报告或品牌指南 PDF，还能对页面中实际的前景与背景组合做 WCAG 对比度检查，并在 CI 中与已提交的基线比较、拦截设计漂移。它也能作为 MCP 服务器供智能体客户端调用。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dembrandt/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/dembrandt/)
 
 - [**shuji 源映射源码恢复工具**](https://github.com/paazmaya/shuji)
 
   命令行工具，可把源映射（source map）中内嵌的原始 JavaScript 和 CSS 源码重新写出为文件。它能读取 .map 文件，也能读取 sourceMappingURL 中内联了 Base64 或 URL 编码映射、或指向同一目录下映射文件的 JavaScript 和 CSS 文件，并可按正则表达式筛选、递归遍历目录。默认只按文件名平铺输出，使用 --preserve 则保留映射中的目录结构。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/shuji/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/shuji/)
 
 - [**Obfuscator.io 专用反混淆工具**](https://github.com/ben-sb/obfuscator-io-deobfuscator)
 
   专门处理 Obfuscator.io（javascript-obfuscator）所生成 JavaScript 的反混淆工具，README 称也能处理其大部分分支版本。它在 Babel AST 上进行静态处理，可还原隐藏在经过轮转、Base64 或 RC4 编码的字符串数组中的字符串，内联代理函数，化简对象、算术表达式和字符串拼接，删除死代码和混淆器的防篡改包装代码，并还原控制流平坦化。配置会自动检测，作者另提供在线版本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/obfuscator-io-deobfuscator/)
 
 - [**javascript-deobfuscator 通用 JavaScript 反混淆工具**](https://github.com/ben-sb/javascript-deobfuscator)
 
   通用的 JavaScript 反混淆工具，针对常见混淆手法，以 js-deobfuscator 之名发布在 npm 上，可作为库或命令行工具使用。它能展开字面量数组并替换对其的引用，移除简单代理函数、数组代理函数和算术代理函数，化简算术表达式和字符串拼接，删除死分支，把计算属性访问转为静态属性，重命名 \_0xca830a 这类十六进制标识符，并美化输出代码。作者另提供在线版本，并单独维护一个针对 Obfuscator.io 输出的反混淆工具。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ben-sb-javascript-deobfuscator/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/ben-sb-javascript-deobfuscator/)
 
 - [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger)
 
   命令行工具，从捕获的流量还原未公开的 REST API。它读取 mitmproxy 流文件或浏览器 DevTools 导出的 HAR，生成描述所观察端点的 OpenAPI 3.0 规范。对更多捕获再次运行时，会将新数据安全合并到已有规范中。
 
-  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/mitmproxy2swagger/)
+  工具 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/mitmproxy2swagger/)
 
 - [**JPEXS Flash 反编译器（FFDec）**](https://github.com/jindrapetrik/jpexs-decompiler)
 
   面向 Adobe Flash SWF 文件的 Java 桌面反编译与编辑工具。它可反编译 ActionScript 1/2 和 AS3，并与对应的 P-code 对照显示；既能以源码形式（实验性）编辑脚本，也能通过汇编视图编辑，还可导出或替换图像、形状、声音、视频、字体和文本，支持 SWF 转 FLA、SWF 与 XML 互转，以及输出 SVG 或 HTML5 Canvas。它还能打开 SWC、ABC 文件以及 Scaleform GFx 和 64 位 Iggy 文件，内置 ActionScript 调试器和针对混淆 AS3 的反混淆处理，并以 ffdec\_lib Java 库和命令行形式提供其解析与反编译功能。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/jpexs-decompiler/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/jpexs-decompiler/)
 
 <a id="game"></a>
 ### Game · 游戏
@@ -240,871 +240,871 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   根据指令与常量重建单个声像函数；上游报告 3,205 例与 63 字节匹配。
 
-  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dxball-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-dxball-case/)
 
 - [**TH04：恢复 DOS 子弹环辅助函数**](https://rea.tools/showcase/th04/)
 
   检查 PC-98 DOS 的 16 位弹幕角度辅助函数，并关联固定版本重建与历史编译器检查。
 
-  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-th04-case/)
 
 - [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp)
 
   将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)
 
 - [**GoldenEye 007：基于反编译成果的智能体辅助原生移植**](https://github.com/jkdansereau/goldeneye-pc-port)
 
   在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/goldeneye-pc-port-case/)
 
 - [**ssbu-recomp：明确玩法边界的静态重编译**](https://github.com/Denkishi/ssbu-recomp)
 
   将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ssbu-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ssbu-recomp-case/)
 
 - [**KartPad：Mario Kart Wii 重编译的平台集成**](https://github.com/chrissotraidis/kartpad)
 
   围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/kartpad-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/kartpad-case/)
 
 - [**BattleShip：AI 辅助的 Super Smash Bros. 原生移植**](https://github.com/JRickey/BattleShip)
 
   使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者早期的 README 介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/battleship-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/battleship-port-case/)
 
 - [**智能体反编译：字节匹配验收复盘**](https://momo5502.com/posts/2026-10-09-game-decompilation/)
 
   Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/agent-decompilation-oracle-case/)
 
 - [**Snowboard Kids 2：大模型辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids2-decomp)
 
   N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。作者在按日期发布的文章中记录了 Claude、Codex 和 GLM 的使用流程，包括无界面的一次性匹配循环、按函数相似度安排任务，以及由钩子约束、经哈希校验的构建，直至报告全部函数完成匹配。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
 
 - [**IsaacRecomp：将 Flash 游戏字节码转换为原生 C++**](https://github.com/whylurking/IsaacRecomp)
 
   将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/isaacrecomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/isaacrecomp-case/)
 
 - [**Nanolathe：附研究文档的 Total Annihilation 引擎重实现**](https://github.com/nanolathe-gg/nanolathe)
 
   用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/nanolathe-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/nanolathe-case/)
 
 - [**TH08：精确源码重建与单独验证的移植**](https://github.com/N0zoM1z0/th08)
 
   依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th08-reconstruction-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/th08-reconstruction-case/)
 
 - [**Zelda 64: Recompiled：无需完整源码反编译的《姆吉拉的假面》原生移植**](https://github.com/Zelda64Recomp/Zelda64Recomp)
 
   通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。项目区分静态重编译与源码反编译，同时借用反编译项目的头文件和部分函数实现补丁与增强功能。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zelda64recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/zelda64recomp-case/)
 
 - [**OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏**](https://github.com/open-goal/jak-project)
 
   从 Jak 原二进制重建可读的 GOAL 代码，再用新编写的 GOAL 编译器为现代 PC 编译。流程结合专用反编译器、人工补充的类型信息、素材提取和交互式开发运行时。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/opengoal-jak-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/opengoal-jak-case/)
 
 - [**LEGO Island：源码重建与单独记录的精确重构建**](https://github.com/isledecomp/isle)
 
   针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。项目区分函数对比报告、ReproBit 报告的零售版逐字节一致重构建，以及普通开发构建；现代跨平台适配位于另一仓库。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lego-island-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/lego-island-decomp-case/)
 
 - [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction)
 
   作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。公开笔记区分恢复的数据表和机制、近似实现以及有意调整的表现效果。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
 
 - [**SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball)
 
   将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。README 标明 Windows XP 可执行文件及公开 PDB、Full Tilt 可执行文件，并描述恢复结构、命名变量和适配反编译例程的工作。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/space-cadet-pinball-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/space-cadet-pinball-case/)
 
 - [**Super Mario 64：带明确比较开关的 ROM 重建**](https://github.com/n64decomp/sm64)
 
   为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。构建文件区分原 ROM 哈希比较与非匹配或修改配置；源码命名和文档工作仍在推进。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sm64-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sm64-decomp-case/)
 
 - [**Unleashed Recompiled：转换 Xbox 360 游戏代码与着色器**](https://github.com/hedge-dev/UnleashedRecomp)
 
   使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。项目增加现代显示与模组选项，同时记录原引擎限制和仍存在的兼容性问题。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/unleashed-recompiled-case/)
 
 - [**OpenMW：复用原内容并替代 Morrowind 引擎**](https://github.com/OpenMW/openmw)
 
   提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。这是引擎替代实现，而非恢复出的 Bethesda 源码树。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openmw-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openmw-engine-case/)
 
 - [**REDRIVER2：借助 PlayStation 兼容层重建 Driver 2**](https://github.com/OpenDriver2/REDRIVER2)
 
   将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。项目记录借助符号的 Ghidra/IDA 分析，同时明确包含有意修复的错误和玩法改动。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/redriver2-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/redriver2-case/)
 
 - [**DevilutionX：移植重建后的 Diablo 引擎**](https://github.com/diasurgical/DevilutionX)
 
   基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。项目记录了早期借助符号信息的重建过程，并包含特定地牢生成与存档回归检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/devilutionx-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/devilutionx-case/)
 
 - [**东方 Project 重建：贯穿三款游戏的智能体驱动方法**](https://rea.tools/blog/touhou-reconstruction/)
 
   REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。
 
-  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
 
 - [**TicTacToe-AI：REA 分叉对单个游戏方法的有限重建**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
 
   作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。差分探针在一个状态判定方法的全部 19,683 种棋盘赋值上运行原版与重建代码，并比较六张窗体渲染图。报告只判定该方法通过，整个游戏仍属部分重建。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-engine-tictactoe-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-engine-tictactoe-case/)
 
 - [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon)
 
   作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)
 
 - [**DX-Ball：借助 REA 并由 Codex 完成的函数级重建**](https://github.com/N0zoM1z0/dx-ball)
 
   作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。同一套源码还可构建 MinGW Windows 游戏和可移植核心库。精确重建仍在进行中；REA 另行发布的声像展示只覆盖其中一个函数。
 
-  案例 · 混合工具流程 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/dx-ball-rea-reconstruction-case/)
+  案例 · 混合工具流程 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/dx-ball-rea-reconstruction-case/)
 
 - [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds)
 
   在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。辅助脚本把 PS1 可执行文件包装成 ELF，供 REA 的 Ghidra 通道分析；分析笔记注明各部分所依据的 PS1 函数与数据表，链接该项目的 Reddit 帖称其借助 REA 和 Claude Code 完成。据报告 Leon 第一张光盘已可游玩，Claire 光盘、多数敌人类型和部分菜单仍未完成。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)
 
 - [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp)
 
   通过静态重编译，将 2019 年 Switch 版《塞尔达传说：织梦岛》重建为原生桌面程序。作者称大部分代码、工具与逆向工作由 Claude Code 完成，人类负责指导和复核。
 
-  案例 · 独立重建 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/lasrecomp/)
+  案例 · 独立重建 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/lasrecomp/)
 
 - [**ArkWeb：双游戏动作与碰撞桥接实验**](https://github.com/luki-1/ArkWeb)
 
   同时运行《漫威蜘蛛侠：重制版》与《蝙蝠侠：阿卡姆骑士》，将哥谭碰撞数据传入蜘蛛侠的物理世界，再将其渲染画面合成到阿卡姆中。这是实验性的运行时桥接，并非恢复出的独立游戏或新引擎。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/arkweb-two-game-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/arkweb-two-game-case/)
 
 - [**Perfect Dark：生成一致 ROM 的 Nintendo 64 反编译重建**](https://github.com/n64decomp/perfect_dark)
 
   重建 Perfect Dark 的 Nintendo 64 代码，并提供生成一致 ROM 的构建流程。项目将重建源码与使用者自备原 ROM 中的素材结合，再检查各版本产物的哈希。这是可复现构建研究案例，与独立的原生 PC 移植不同；此处的一致性结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/perfect-dark-matching-decomp-case/)
 
 - [**Super Mario Sunshine：基于 AI 辅助反编译的原生 PC 移植**](https://github.com/chasem-dev/sms-pc-port)
 
   以固定版本的一致性反编译分支为基础，构建 Super Mario Sunshine 北美版的原生 PC 移植，并为图形、光盘、音频、输入和系统服务提供宿主平台层。该分支的 README 称，其代码的重建与匹配大量借助 AI；移植项目记录了脚本化回归哈希，以及与原版捕获数据的逐步对照。尚未匹配的函数仍可能与原版行为不同，游戏数据须来自使用者自己的光盘镜像。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sms-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sms-pc-port-case/)
 
 - [**《姆吉拉的假面》：生成一致美版 N64 ROM 的反编译重建**](https://github.com/zeldaret/mm)
 
   依据游戏内信息和静态或动态分析，为《塞尔达传说：姆吉拉的假面》重建 C 源码库，并重新构建美版 Nintendo 64 ROM。构建流程从使用者自备的 ROM 中取得素材和汇编，再用仓库保存的 MD5 校验输出。团队声明不会制作 PC 移植；另行收录的 Zelda 64: Recompiled 只注明借用了其头文件和部分函数。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zelda-mm-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/zelda-mm-decomp-case/)
 
 - [**DLSSNR-AMD：为 RDNA4 重新实现 DLSS 5 神经渲染**](https://github.com/mochizuki0323/DLSSNR-AMD)
 
   将 NVIDIA DLSS 5 库中的神经渲染网络重新实现为面向 AMD RX 9000（RDNA4）显卡的 Vulkan 计算着色器，并通过兼容 NGX 的核心模块以及 ReShade 或 Vulkan 层等途径提供给游戏。项目不分发权重：安装程序从使用者自己的 nvngx\_dlssnr.dll 310.9.16 或 310.8.0 中提取权重并核对哈希。项目将输出与 NVIDIA DLL 在 RTX 5090 上的结果对比，报告画面接近但并非逐位一致。
 
-  案例 · 独立重建 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/dlssnr-amd-neural-rendering-case/)
+  案例 · 独立重建 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/dlssnr-amd-neural-rendering-case/)
 
 - [**《旷野之息》：Switch 主程序的逐函数一致性反编译**](https://github.com/zeldaret/botw)
 
   以 C++ 重新实现《塞尔达传说 旷野之息》Switch v1.5.0 主程序的部分代码，并逐个函数与原始机器码比对。项目自称是反编译与重新实现的混合体：不含游戏素材，生成的 ELF 仅包含已重新实现的函数、无法运行游戏，移植到其他平台也明确不是目标。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/botw-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/botw-decomp-case/)
 
 - [**《天空之剑》：以哈希校验重新链接的 Wii 版反编译**](https://github.com/zeldaret/ss)
 
   以使用者自备的 NTSC-U 1.0（SOUE01）光盘文件为起点，为《塞尔达传说 天空之剑》Wii 版的 main.dol 和 REL 模块重建 C++ 源码。标为一致的对象由源码编译，再与从原文件拆分出的其余对象链接，并以 SHA-1 哈希校验结果；仓库不含素材或汇编，也不是移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/skyward-sword-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/skyward-sword-decomp-case/)
 
 - [**2 Ship 2 Harkinian：基于反编译的《姆吉拉的假面》原生移植**](https://github.com/2ship2harkinian/2ship2harkinian)
 
   以改编自 zeldaret/mm 反编译的源码为基础，构建《塞尔达传说：姆吉拉的假面》的原生 Windows、Linux 和 macOS 版本，并由 libultraship 重新实现 N64 SDK 函数。游戏数据来自使用者自备的 ROM，打包为可被自定义素材包覆盖的存档文件。它面向带增强功能的可玩 PC 移植，而不是逐字节一致的 ROM。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/2ship2harkinian-mm-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/2ship2harkinian-mm-port-case/)
 
 - [**Ship of Harkinian：基于反编译源码的《时之笛》原生移植**](https://github.com/HarbourMasters/Shipwright)
 
   以《时之笛》反编译项目的源码为基础，将游戏构建为原生 PC 程序，用 libultraship 替代 N64 的 libultra SDK，并以 DirectX 11、OpenGL 或 Metal 渲染。不随附游戏素材，而是从使用者自备的受支持 ROM 转换生成 .o2r 归档；移植版还加入了即时存档、替换与自定义素材等增强功能。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ship-of-harkinian-oot-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ship-of-harkinian-oot-port-case/)
 
 - [**《缩小帽》：面向五个 ROM 的 GBA 反编译重建**](https://github.com/zeldaret/tmc)
 
   依据游戏内信息和静态或动态分析，为《塞尔达传说：缩小帽》重建 C 源码库，可构建美版、欧版、日版及两个演示版共五个 Game Boy Advance ROM。每个版本的素材都来自使用者自备的原始 ROM，常规构建会核对产物的 SHA-1 哈希。项目仍在进行中，ROM 的部分内容可能尚不能移动。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zelda-tmc-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/zelda-tmc-decomp-case/)
 
 - [**《时之笛》：16 个版本均以 MD5 校验 ROM 构建的反编译**](https://github.com/zeldaret/oot)
 
   借助游戏本身的信息以及静态与动态分析，为《时之笛》重建 C 源码库，可重新构建 Nintendo 64、GameCube 和 iQue Player 共 16 个 ROM 版本。素材取自使用者自备的 ROM，默认构建会以对应版本的 MD5 校验；README 说明项目不制作 PC 移植，并仍称仓库处于开发中。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ocarina-of-time-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ocarina-of-time-decomp-case/)
 
 - [**Project Arwing：由一致性反汇编重编译的 Star Fox**](https://github.com/carlosrmz009/arwing)
 
   依据运行覆盖率和递归下降反汇编 Star Fox 的 65816 与 SuperFX 代码，重新汇编出与原 ROM 一致的文件，再静态翻译为 C，运行于从零编写的 SNES 运行时，支持 Windows、macOS 和 Linux。录制会话中未执行到的代码，以及与 ROM 不再一致的 RAM 代码，回退到解释器执行；README 报告两条路径的逐帧哈希一致。生成的 C 是机械翻译而非手工反编译的源码，结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/project-arwing-star-fox-recomp-case/)
 
 - [**Project Arwing (2)：由一致性反汇编重编译的 Star Fox 2**](https://github.com/carlosrmz009/arwing2)
 
   从以运行覆盖率为种子的 65816 与 SuperFX 反汇编重建 Star Fox 2：反汇编可重新汇编为与原 ROM 一致的文件，再静态翻译为 C，生成原生 Windows、macOS 和 Linux 版本。未执行到的代码及与 ROM 不一致的 RAM 代码由解释器执行，README 报告其与解释运行的逐帧哈希一致。项目接受 SNES Classic 版映像，不支持 1995 年的原型版；结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/project-arwing-2-star-fox-2-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/project-arwing-2-star-fox-2-recomp-case/)
 
 - [**Little Planet：由一致性反汇编重编译的 Sonic CD**](https://github.com/carlosrmz009/littleplanet)
 
   依据运行覆盖率和递归下降，反汇编 Sonic CD 光盘上的全部可执行文件并逐字节一致地重新汇编，再将代码静态翻译为 C，运行于从零编写、以高层实现替代 BIOS 的 Mega-CD 运行时。重编译代码块只在内存仍为其来源代码时执行，并有脚本以 96 段关卡运行逐帧对照解释器。项目还以补丁加入宽屏和逐区存档；结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/little-planet-sonic-cd-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/little-planet-sonic-cd-recomp-case/)
 
 - [**vf2-decomp：经差分验证的 Virtua Fighter 2 代码恢复**](https://github.com/celsowm/vf2-decomp)
 
   将 Virtua Fighter 2 Version 2.1 的 Sega Model 2A i960 程序恢复为可移植、非一致性的 C17 代码，每条恢复路径须在受控边界上与参考 i960 执行器一致才被接受。仓库还提供 ROM 校验、i960 与 68000 分析工具、有限范围的 Model 2A 硬件模型，以及基于快照的差分运行器。README 说明它尚不是可游玩的移植；对战流程、格斗、物理、AI、光栅化及大部分音频仍未完成。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/vf2-decomp-differential-recovery-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/vf2-decomp-differential-recovery-case/)
 
 - [**z2rs：以模拟器对照逐步重建《塞尔达传说 II》的 Rust 项目**](https://github.com/troyedwardsjr/z2rs)
 
   以 Rust 重建 NES 游戏《塞尔达传说 II：林克的冒险》，逐个替换游戏的 6502 例程，可运行于桌面、浏览器和 Android。内置解释器仍执行使用者的 ROM，并把已移植例程交给 Rust 实现；验证工具将 RAM、精灵、调色板和画面与参考模拟器逐帧比较。它是参考社区反汇编、以行为为准的类净室重建，而不是反编译，也还不是独立完整的引擎。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/z2rs-zelda2-reconstruction-case/)
 
 - [**sm64ex：基于反编译成果的 Super Mario 64 增强版 PC 移植**](https://github.com/sm64pc/sm64ex)
 
   基于反编译源码构建原生 Super Mario 64 可执行文件，在 n64decomp 重建成果的 sm64-port 分支之上，增加渲染器、输入、视角、存档格式和外部数据等选项。游戏素材在构建时从使用者自备的 ROM 中提取。这是非一致性的增强移植，而不是逐字节一致的 ROM 重建。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sm64ex-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sm64ex-pc-port-case/)
 
 - [**Ghostship：基于 libultraship 的 Super Mario 64 原生移植**](https://github.com/HarbourMasters/Ghostship)
 
   将反编译风格的游戏源码编译到 libultraship 平台库上，把 Super Mario 64 构建为原生 PC、Switch 和 Android 程序。附带的提取工具会在首次启动或构建时，把使用者自备的美版或日版 ROM 转换为 O2R 存档。项目提供现代渲染器、配置菜单和模组存档加载，而不是生成一致的 ROM。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ghostship-sm64-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ghostship-sm64-port-case/)
 
 - [**Super Mario Sunshine：仍在推进的 GameCube 一致性反编译重建**](https://github.com/doldecomp/sms)
 
   重建 Super Mario Sunshine 的 C++ 源码，目标是让原版 Metrowerks 编译器为四个 GameCube 发行版本及 Switch 版 3D All-Stars 生成逐字节一致的目标文件。目标二进制取自使用者自备的光盘镜像，objdiff 按函数比对重建出的目标文件。工作尚未完成，仓库在人工流程之外还发布了面向 AI 智能体的贡献规则。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sms-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sms-matching-decomp-case/)
 
 - [**Dusklight：基于反编译的《黄昏公主》原生移植**](https://github.com/TwilitRealm/dusklight)
 
   以 zeldaret/tp 反编译项目和 Aurora GameCube／Wii 兼容层为基础，将《塞尔达传说 黄昏公主》重新实现为桌面与移动平台的原生应用。程序读取使用者自备的光盘镜像运行，不附带任何素材；项目力求忠于原作，同时加入新选项、增强功能和模组。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/dusklight-twilight-princess-port-case/)
 
 - [**Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现**](https://github.com/AxioDL/metaforce)
 
   Metaforce 于 2015 年作为《密特罗德 Prime》引擎的逆向重实现项目启动，现已在 PrimeDecomp 一致性反编译之上重写。其原生应用借助 Aurora GameCube 兼容层，将这些游戏代码以非一致模式编译为桌面和移动端程序，并读取使用者选择的光盘镜像。README 表示重写稳定之前暂不提供构建版本。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
 
 - [**Super Mario Sunshine（美版）：AI 辅助的一致性反编译分支**](https://github.com/chasem-dev/sms-english)
 
   将 doldecomp 的 Super Mario Sunshine 反编译工作扩展到北美 GMSE01 版本。README 称大量使用了 AI，仓库中的智能体规则、工作顺序和进度文件也记录了按批次编排 Claude 与 Codex 的方式。项目报告重建的 DOL 逐字节一致，但尚未完成的目标文件仍取自使用者光盘中提取的代码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sms-english-gmse01-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sms-english-gmse01-decomp-case/)
 
 - [**Donkey Kong 64: Recompiled：基于 N64Recomp 的原生移植**](https://github.com/Rainchus/Donkey-Kong-64-Recompiled)
 
   使用 N64Recomp 将美版 Nintendo 64《大金刚 64》静态重编译为原生移植版，并以 RT64 作为渲染器。该移植并非基于反编译源码构建，但借用仍在进行中的 DK64 反编译项目的头文件和部分函数来实现补丁与增强。其重编译配置读取仓库内的符号转储和 ROM，而非反编译生成的 ELF。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dk64-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/dk64-recompiled-case/)
 
 - [**《黄昏公主》：GameCube 版代码完全一致的反编译**](https://github.com/zeldaret/tp)
 
   重建《塞尔达传说 黄昏公主》的源码，使其能重新编译出与原版一致的二进制文件；GameCube、Wii 与 Nvidia Shield 各版本通过条件编译共用同一套代码。README 报告 GameCube 版代码已完全一致，但尚未链接全部翻译单元，调试版与 Wii 版的对齐仍在进行；仓库不含素材或汇编，也不会制作移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/twilight-princess-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/twilight-princess-decomp-case/)
 
 - [**Castlevania: Symphony of the Night：覆盖 PlayStation、PSP 与 Saturn 版本的一致性反编译**](https://github.com/Xeeynamo/sotn-decomp)
 
   从《恶魔城 月下夜想曲》的 PlayStation、PSP 和 Saturn 版二进制重建 C 源码，目标是逐字节编译出与原游戏文件一致的产物。这一进行中的构建将已反编译代码与从使用者自备光盘镜像提取的素材和汇编结合，再按版本检查 SHA-1 哈希。同一仓库中的原生 PC 实验被文档说明为尚未完成，并不是已发布的移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sotn-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sotn-matching-decomp-case/)
 
 - [**LEGO Island 可移植版：反编译源码的多平台移植**](https://github.com/isledecomp/isle-portable)
 
   将 LEGO Island 反编译源码改造为可在桌面、移动设备、游戏主机、DOS 及 Web 上构建的移植版本。项目以 SDL3、miniaudio、iniparser 和自行重新实现的 Direct3D Retained Mode 替代仅限 Windows 的子系统，并力求保持核心玩法不变。它移植的是重建源码，而不校验与原版逐字节一致的二进制文件，因此有别于精确重构建的反编译案例。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lego-island-portable-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/lego-island-portable-case/)
 
 - [**c1：PlayStation 版《古惑狼》的 C 语言移植**](https://github.com/wurlyfox/c1)
 
   将 PlayStation 版《古惑狼》的原始游戏代码逐函数移植为 C 语言；其编码规范要求为函数标注原实现的地址。目前只有基于 OpenGL、SDL2 和 FluidSynth 的 PC 构建可用；它读取用户自备游戏光盘中的素材文件，仅能部分游玩。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/crash-bandicoot-c1-port-case/)
 
 - [**Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植**](https://github.com/Odrannnn/MetroidPrimePort)
 
   将 PrimeDecomp 对《密特罗德 Prime》游戏与引擎代码的反编译结果编译为原生 C++20 程序，支持 Linux、Windows 和 Android，另有实验性 macOS 版本。Aurora 提供 GameCube SDK 兼容层和渲染，移植版在运行时读取使用者自备的光盘镜像。作者声明部分代码是在其监督下借助 AI 编程助手编写的。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/metroid-prime-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/metroid-prime-port-case/)
 
 - [**《风之杖》：以哈希校验重新链接的 GameCube 版反编译**](https://github.com/zeldaret/tww)
 
   为《塞尔达传说 风之杖》GameCube 版的可执行文件和 REL 模块重建源码，涵盖美版／韩版、PAL 版、日版及日本体验版。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含素材或汇编，范围是 GameCube 版而非 HD 重制版。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wind-waker-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/wind-waker-decomp-case/)
 
 - [**Sonic Mania：面向 RSDKv5 引擎的游戏代码反编译重建**](https://github.com/RSDKModding/Sonic-Mania-Decompilation)
 
   以 C 重建《索尼克狂欢》的游戏代码，并与另行反编译的 RSDKv5 或 RSDKv5U 引擎一起构建，支持 Windows、Linux、Switch 和 Android。素材必须来自官方发行的 Sonic Mania (Plus)；项目加入了模组加载器，并可构建多个零售版本。其许可证称代码大多在功能上与原作相同，而不是逐字节一致。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sonic-mania-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sonic-mania-decomp-case/)
 
 - [**MediEvil Recomp：PlayStation 游戏静态重编译为 C#**](https://github.com/BlackLabelHQ/MediEvilRecomp)
 
   使用 RecompOne 重编译器及运行时，将北美版 PlayStation《MediEvil》静态重编译为 C# 代码。运行时代为提供 BIOS、GPU、CD-ROM 等硬件服务，项目补丁则修改渲染、宽屏和地形表现。README 强调这是重编译而非反编译，并将其标为公开测试版。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/medievil-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/medievil-recomp-case/)
 
 - [**Crash Bandicoot 2 Recompiled：基于 PSXRecomp 的原生构建**](https://github.com/Zumbo06/Crash2Recomp)
 
   一个 Windows 启动器，借助 PSXRecomp 重编译器与运行时，将用户自备的《古惑狼 2》光盘转换为 C 代码并在本地编译，使游戏以原生代码配合模拟的 PlayStation 硬件层运行。仓库包含启动器、打过补丁的内置运行时以及详细的调试记录，不分发任何游戏代码或数据。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/crash2recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/crash2recomp-case/)
 
 - [**Petari：Super Mario Galaxy 一致性反编译重建**](https://github.com/SMGCommunity/Petari)
 
   将 Super Mario Galaxy 的 Wii 代码重建为 C++，并以使用者从自有日版、北美版、PAL 版或韩版光盘中提取的 main.dol 为目标，逐个目标文件重建。已匹配的目标文件由源码链接，并通过 objdiff 和目标哈希检查。项目自称仍在进行中，与任何 PC 移植无关，并表示不接受 AI 生成的反编译代码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/petari-smg-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/petari-smg-decomp-case/)
 
 - [**Wind Waker HD Recomp：通过静态重编译实现的 Wii U 游戏原生移植**](https://github.com/ZeldaWWHDRecomp/ZeldaWWHDRecomp)
 
   将《塞尔达传说 风之杖 HD》Wii U 版的 PowerPC 代码预先静态重编译为 C，原生重新实现游戏所用的 Cafe OS 库，并在 Metal 或 Vulkan 上实现 GX2 图形，生成无需 Cemu 运行时的 macOS、Linux、Windows 和 Android 原生版本。所有游戏代码和数据都由使用者自己的转储在本地生成；另有仅限 macOS 的实验性构建，可改为运行独立的 ZeldaWWHDDecomp/wwhd 反编译中的函数。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wind-waker-hd-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/wind-waker-hd-recomp-case/)
 
 - [**Castlevania 64: Recompiled：测试版静态重编译移植**](https://github.com/RevoSucks/CV64Recomp)
 
   使用 N64Recomp 将 Nintendo 64 版 Castlevania 美版 1.0 静态重编译为原生 PC 移植，并以 RT64 渲染。游戏专用的 C 补丁基于另一个 Castlevania 64 反编译项目的头文件构建。在所审提交上标记的测试版发布报告构建可用并列出已知问题，而同一提交的 README 仍称项目尚未完成。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cv64-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/cv64-recompiled-case/)
 
 - [**RSDKv5 Decompilation：重建 Retro Engine v5 与 v5U**](https://github.com/RSDKModding/RSDKv5-Decompilation)
 
   重建 Retro Engine（RSDK）v5 及 v5 Ultimate 运行时，即运行《索尼克狂欢》游戏代码的引擎，可构建 Windows、Linux、Switch 和 Android 版本。RSDKv5U 还能运行 RSDKv3 与 RSDKv4 游戏，例如 Sonic CD 和 Sonic 1 &amp; 2。项目增加了模组加载器、着色器编译器和额外的 Windows 后端，且不附带任何游戏数据。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rsdkv5-engine-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/rsdkv5-engine-decomp-case/)
 
 - [**C2C：《古惑狼 2》的混合重编译与手工反编译**](https://github.com/ughman/c2c)
 
   一个早期的 PlayStation《古惑狼 2》逆向工程项目：把引擎的 MIPS 机器码直接转换为一个体量巨大的 C 文件，并调用改造后的 PCSX-R 模拟器库处理硬件 I/O。转换出的函数计划逐个手工反编译为普通 C 代码，逐步替换机械转换的部分。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/c2c-crash2-hybrid-recompilation-case/)
 
 - [**MediEvil 反编译：早期阶段、以校验值把关的 PlayStation 项目**](https://github.com/MediEvilDecompilation/medievil-decomp)
 
   将美版 PlayStation《MediEvil》逐步反编译为 C 源码，目标是重新生成其主程序、游戏程序及 26 个覆盖模块。splat 拆分使用者自备的光盘文件，默认构建会将全部 28 个产物与 SHA-1 校验值比较。README 称项目仍在进行中，未公布进度数据。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/medievil-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/medievil-decomp-case/)
 
 - [**Conker's Bad Fur Day: Recompiled：基于 N64Recomp 的原生移植**](https://github.com/sciaschi/CBFD-Recompiled)
 
   使用 N64Recomp 将美版 Nintendo 64《Conker's Bad Fur Day》静态重编译为基于 N64ModernRuntime 和 RT64 的原生 Windows、Linux 与 macOS 移植版。函数名称与边界来自仓库内置、仍以汇编为主的反编译项目，而重编译的代码取自用户的 ROM，因此尚未匹配的反编译 C 代码不会改变游戏行为。作者称整个项目大量使用了 Claude Code。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cbfd-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/cbfd-recompiled-case/)
 
 - [**ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植**](https://github.com/theclub654/ProjectCane)
 
   将 PlayStation 2 版《Sly Cooper and the Thievius Raccoonus》美版重建为 Windows 和 Linux 上的原生 C++ 游戏，运行时使用从玩家自有光盘镜像中提取的数据。README 报告整部游戏均可游玩，同时仍在改进准确性并处理与原版的剩余差异。项目未说明其逆向工程方法，也未说明与另一个 sly1 反编译项目的关系。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)
 
 - [**Firefighter：将反编译的 DOS 游戏移植为 Rust**](https://gitlab.com/esr/firefighter)
 
   Eric S. Raymond 将 Eben Sprinsock 于 1985 年发布的 DOS 共享软件游戏 Firefighter 移植为终端游戏。项目历史记载，ChatGPT 5.5 先将 DOS 二进制反编译为 Borland Pascal，再译为 Rust；之后 Raymond 改进了界面，并修正一处计分不符。玩法未变是作者的说法；中间 Pascal 代码及任何对照运行均未公开。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/firefighter-rust-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/firefighter-rust-port-case/)
 
 - [**Kingdom Hearts 358/2 Days：基于一致性反编译的原生 PC 移植**](https://github.com/Yokimitsuro/khdays-port)
 
   将 khdays-decomp 一致性反编译的 C 代码编译为 Windows x64 程序，并以原生平台层替代 Nintendo DS 硬件、SDK 服务及声音驱动。README 报告整款游戏无需 ARM 解释器即可运行；渲染、操作、模组支持与网络联机均为移植自身新增。这是基于反编译的移植，与其所依托的逐字节一致 DS 重建并非同一产物。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/khdays-native-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/khdays-native-pc-port-case/)
 
 - [**ico-pc：由 PS2 反编译源码编译而成的《ICO》原生移植**](https://github.com/nathanialf/ico-pc)
 
   将 PlayStation 2 游戏《ICO》的反编译 C 源码原生编译到 Windows、Linux、Android、iPhone 及 Apple 芯片 Mac 上，并以宿主代码替代 PS2 硬件和 Sony 函数库。项目不解释执行或重编译任何 PS2 代码，程序在首次启动时读取玩家自备的 PAL 光盘镜像。它是另一个逐字节匹配的反编译项目的原生移植，记录了与原版的差异，并提供可选增强功能。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ico-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ico-pc-port-case/)
 
 - [**Sly Cooper and the Thievius Raccoonus：PlayStation 2 一致性反编译**](https://github.com/TheOnlyZac/sly1)
 
   将《Sly Cooper and the Thievius Raccoonus》PlayStation 2 美版可执行文件 SCUS\_971.98 重建为源码，属于进行中的一致性反编译。尚未匹配的函数仍由从使用者自备可执行文件中拆分出的汇编构建，构建会检查链接后 ELF 的 SHA-1。产物需在 PCSX2 中配合原版光盘素材运行，并不是原生 PC 移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sly1-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sly1-matching-decomp-case/)
 
 - [**《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建**](https://github.com/pret/pokeemerald)
 
   为 Game Boy Advance 版《宝可梦 绿宝石》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。默认的 agbcc 构建生成 pokeemerald.gba，make compare 将其与英文原版 ROM 的 SHA-1 比对；可选的现代 GCC 构建不做哈希校验。图像和音频源文件已提交在仓库中，因此文档所述的构建流程不读取原 ROM。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-emerald-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokemon-emerald-decomp-case/)
 
 - [**Paper Mario：覆盖四个版本的一致性 Nintendo 64 反编译**](https://github.com/pmret/papermario)
 
   将 Paper Mario 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版、PAL 版和 iQue 版 ROM。构建流程从使用者自备的原 ROM 取得素材和比较输入，再将每个产物与记录的 SHA-1 比对。项目可变的进度报告显示已无未匹配函数，但 README 仍称反编译在进行中；该项目与 PaperBoat 原生移植不同。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
 
 - [**Budokai Tenkaichi 3：基于一致性反编译的原生 PC 移植**](https://github.com/z3xox/Tenkaichi3Decomp)
 
   将 Dragon Ball Z: Budokai Tenkaichi 3（PS2 美版 SLUS-21678）的反编译代码编译到 PC，运行在新的渲染、音频、输入和平台层上，而非借助模拟器。游戏代码来自独立的 BT3-Decompiled 一致性反编译项目，游戏数据从使用者自备的光盘镜像读取。README 报告完整游戏流程可运行、联网对战处于实验阶段，并称项目借助 AI 完成；这些结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/tenkaichi3-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/tenkaichi3-pc-port-case/)
 
 - [**D2R Mobile：在 Apple 设备上重新托管 Diablo II: Resurrected 的 Switch 程序**](https://github.com/jhaizhou-ops/d2r-mobile)
 
   在 iPhone、iPad 和 Apple 芯片 Mac 上原生运行 Nintendo Switch 版自身的 aarch64 程序，仅改写依赖 Horizon 内核的指令，并以 Metal 提供其系统服务与 NVN 图形 API。着色器由使用者自有文件离线转译，项目另行加入触控界面与终局玩法。这是重新托管的兼容层，不是反编译或重编译出的源码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/d2r-mobile-switch-rehost-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/d2r-mobile-switch-rehost-case/)
 
 - [**Ratchet &amp; Clank：记录了代理流程的 PS2 一致性反编译**](https://github.com/OpenRAC/rac1-decomp)
 
   为 2002 年《Ratchet &amp; Clank》PlayStation 2 欧版 v2.00 可执行文件 SCES\_509.16 重建 C 源码，每个函数都链接在零售版的原地址。尚未反编译的函数仍由从使用者自备可执行文件生成的反汇编构建，构建会对照零售版审核函数、布局和整个映像。项目记录了由 LLM 代理执行匹配的流程，并以成文的构建保真规则界定何为匹配。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rac1-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/rac1-matching-decomp-case/)
 
 - [**Banjo: Recompiled：基于 N64Recomp 的《Banjo-Kazooie》原生移植**](https://github.com/BanjoRecomp/BanjoRecomp)
 
   使用 N64Recomp 将美版 1.0 Nintendo 64《Banjo-Kazooie》静态重编译为基于 N64ModernRuntime 的原生移植版，由 RT64 渲染并加入模组支持。与 Zelda 64: Recompiled 一样，它并非基于反编译源码构建；由《Banjo-Kazooie》反编译项目生成的符号仓库提供函数名称，用于在 ROM 中定位代码和编写补丁。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/banjo-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/banjo-recompiled-case/)
 
 - [**《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建**](https://github.com/pret/pokefirered)
 
   为 Game Boy Advance 英文版《宝可梦 火红／叶绿》重建可构建的 C 源码，游戏脚本和数据以汇编指令形式保存。默认的 agbcc 构建可生成六个 ROM 镜像，涵盖两款游戏的 1.0 与 1.1 版本及两个标为 switch 的变体，并分别按各自的 SHA-1 清单校验。图像和音频源文件已提交在仓库中，因此文档所述的构建流程不读取原 ROM。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-firered-leafgreen-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokemon-firered-leafgreen-decomp-case/)
 
 - [**PaperBoat：基于反编译成果的 Paper Mario 原生移植**](https://github.com/HarbourMasters/PaperBoat)
 
   以 pmret 和 Paper Mario DX 项目为基础，将 Paper Mario 反编译源码编译为基于 libultraship 的原生美版应用。Torch 把使用者自己的 ROM 转换为本地素材归档，移植另加入多种渲染后端、增强功能和归档式模组。桌面版已有正式发布；Android、iOS 和网页构建则在开发分支中有文档说明。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/paperboat-paper-mario-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/paperboat-paper-mario-port-case/)
 
 - [**Halo 2：智能体辅助的 LTCG Xbox 版一致性反编译**](https://github.com/kirklandsig/halo2-decompiled)
 
   Halo 2（初代 Xbox）的进行中一致性反编译：贡献者编写 C 与 C++ 代码，由原时代编译器以链接时代码生成方式构建整个程序，须逐函数还原出零售版可执行文件的字节。README 报告游戏函数字节的匹配比例接近一半，原生移植留待后续阶段。项目披露维护者的大量工作在 Claude 与 Codex 编程智能体流水线中进行。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/halo2-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/halo2-matching-decomp-case/)
 
 - [**DiabloWeb：基于 Devilution 的 WebAssembly 浏览器移植**](https://github.com/d07RiV/diabloweb)
 
   将社区重建 Diablo 原始源码的 Devilution 精简分支编译为 WebAssembly，并配合 React 前端，使 Diablo 可在网页浏览器中运行。该分支移除了 Storm、DiabloUI、DirectX 和 Windows 依赖，并为浏览器改写事件处理。这是基于重建成果的移植，本身未报告一致性或行为等价检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/diabloweb-devilution-wasm-port-case/)
 
 - [**pokered：一致构建的《精灵宝可梦 红／蓝》反汇编**](https://github.com/pret/pokered)
 
   以 RGBDS 汇编重建 Game Boy 游戏《精灵宝可梦 红／蓝》，图像和数据以可编辑的源文件保存。同一源码树可构建美版／欧版红、蓝 ROM、一个蓝版调试构建以及 Virtual Console 版本的补丁，并逐一与记录的 SHA-1 比对。它是完整的反汇编项目，而非反编译为高级语言的源码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokered-disassembly-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokered-disassembly-case/)
 
 - [**Lighthouse：基于反编译项目的《Banjo-Kazooie》PC 移植**](https://github.com/HarbourMasters/Lighthouse)
 
   一个面向 Windows、Linux 和 macOS 的《Banjo-Kazooie》原生移植，将游戏 C 源码（其中许多标注了《Banjo-Kazooie》反编译项目中的文件路径）与重新实现 N64 SDK 的 libultraship 一起编译。Torch 将用户的 ROM 提取为素材归档；移植版还加入了 Anchor 联机、ROM 修改版与语言包支持以及随机器。与 Banjo: Recompiled 不同，它基于反编译源码构建，而非对 ROM 代码进行静态重编译。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/lighthouse-banjo-kazooie-port-case/)
 
 - [**Lost Odyssey Recomp：将 Xbox 360 角色扮演游戏静态重编译为原生移植**](https://github.com/freefrank/LostOdysseyRecomp)
 
   使用打过补丁的 XenonRecomp 工具转换 Lost Odyssey 的 Xbox 360 PowerPC 可执行文件，并在原生运行时上运行生成代码，经 Direct3D 12、Vulkan 或 Metal 渲染。Windows、Linux、macOS 和 Android 安装包导入使用者自己的光盘数据。维护者记录了借助 Claude Code 与 Codex CLI 的开发过程，并把每次发布与验证、验收分开记录。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lost-odyssey-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/lost-odyssey-recomp-case/)
 
 - [**Super Smash Bros. Melee：可移位构建的 GameCube 一致性反编译**](https://github.com/doldecomp/melee)
 
   Super Smash Bros. Melee 美版 1.02（GALE01）的一致性反编译：使用原版 Metrowerks 编译器从 C 代码重建 main.dol，并与零售版的 SHA-1 比对。decomp.dev 报告所审提交的代码已完全反编译并链接，README 称目前工作主要是命名与清理。由于构建可以移位，另有非一致性模式，供模组作者加入代码，再配合自己转储的光盘运行生成的 DOL。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/melee-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/melee-matching-decomp-case/)
 
 - [**pokecrystal：一致构建的《精灵宝可梦 水晶》反汇编**](https://github.com/pret/pokecrystal)
 
   以 RGBDS 汇编重建 Game Boy Color 游戏《精灵宝可梦 水晶》，图像、地图和数据以可编辑的源文件保存。同一源码树可构建国际版 1.0 与 1.1、澳大利亚版、两个调试构建以及一个 Virtual Console 补丁，并逐一与记录的 SHA-1 比对。配套文档说明脚本命令格式以及原版游戏中的已知错误。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokecrystal-disassembly-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokecrystal-disassembly-case/)
 
 - [**《宝可梦 心金／魂银》：校验一致的进行中 DS 反汇编项目**](https://github.com/pret/pokeheartgold)
 
   以进行中的反汇编项目重建美版 Nintendo DS《宝可梦 心金／魂银》，其中部分代码已反编译为 C。每次默认构建都会按各游戏的 SHA-1 清单校验 ARM9 与 ARM7 二进制、文件系统及完整 ROM。README 提醒，由于反编译尚未完成，改变代码或数据布局的修改可能导致游戏崩溃。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokemon-heartgold-soulsilver-disassembly-case/)
 
 - [**FFTARecomp：Final Fantasy Tactics Advance 的静态重编译**](https://github.com/Jorge262007/FFTARecomp)
 
   基于 JRickey 的 gba-recomp 工具链，将使用者自有的 Final Fantasy Tactics Advance（美版）Game Boy Advance ROM 预先重编译为可在 Windows、Linux 和 Steam Deck 上运行的原生代码。ARM 与 Thumb 代码被转译为 C 并在本地编译，Rust 运行时则模拟主机的图形、声音、DMA、定时器及 BIOS 调用。移植另行加入宽屏、缩放、快进和可重映射操作。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/fftarecomp-gba-static-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/fftarecomp-gba-static-recomp-case/)
 
 - [**SymphonyRecomp：用 RecompOne 静态重编译《恶魔城：月下夜想曲》**](https://github.com/BlackLabelHQ/SymphonyRecomp)
 
   使用 BlackLabelHQ 的 RecompOne 将北美 PlayStation 版《恶魔城：月下夜想曲》静态重编译为 C#；其运行时模拟 BIOS、内存映射 I/O、GPU 和光驱，使游戏无需主机 BIOS 即可原生运行。按覆盖段划分的函数映射与补丁加入了宽屏、便利性改进、随机器和作弊功能。项目借助 SOTN 反编译项目的资料为函数命名，但强调它是重编译而非反编译。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/symphonyrecomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/symphonyrecomp-case/)
 
 - [**The Two Towers Recompiled：初代 Xbox 静态重编译移植**](https://github.com/Gumpolas/TooTawersRecomp)
 
   使用随附的 xboxrecomp 工具包，将《The Lord of the Rings: The Two Towers》（Xbox 美版，2002）的 x86 代码静态重编译为 C，生成原生 Windows、Linux 及实验性 macOS 构建。重编译源码由玩家自己的 default.xbe 在本地生成，游戏数据来自其光盘镜像或已提取的文件夹。README 报告游戏可以完整游玩，并列出画面、帧率和模组方面的问题。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/two-towers-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/two-towers-recompiled-case/)
 
 - [**Melee Unlocked：Melee 的 Windows 源码移植与静态重编译**](https://github.com/Hero88go/melee-unlocked)
 
   Super Smash Bros. Melee（NTSC 1.02）的 Windows 测试版构建，包含两套引擎：源码移植将 doldecomp 反编译编译为原生库，静态重编译则将零售版 DOL 的 PowerPC 代码及 Slippi 的 Gecko 代码转换为 C++。两者都运行在原生运行时上，提供 Direct3D 渲染、解锁的显示帧率和原生实现的 Slippi 回滚对战。全部游戏数据来自使用者自备的 ISO，README 称开发借助了 AI。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/melee-unlocked-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/melee-unlocked-case/)
 
 - [**pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译**](https://github.com/pret/pokeruby)
 
   以 C 源码重建 Game Boy Advance 游戏《精灵宝可梦 红宝石／蓝宝石》，使用 pret 的 agbcc 编译器构建，并附有汇编数据脚本和可编辑图像。一致构建涵盖英文版 1.0、1.1、1.2 修订版、调试构建以及德文初版，并逐一与保存的 SHA-1 比对。另有使用现代 GCC 的构建目标，不以一致为目标。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokeruby-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokeruby-decomp-case/)
 
 - [**Vandal Hearts：基于一致性反编译的原生 PC 移植**](https://github.com/HalmyLyseas/VandalHearts-PcPort)
 
   以 shao113 的 PlayStation 版 Vandal Hearts 一致性反编译为基础，新增日版一致性代码树，并将两者延伸为原生 Windows 与 Linux 移植。SDL2、OpenGL 或 Metal 及 OpenAL 后端替代主机的 GPU、GTE、CD-ROM／XA、SPU、MDEC 和手柄接口，同一可执行文件可运行美版、亚洲版和日版光盘。每次修改仍须通过一致性构建检查；Tactical Mode、高清包等 PC 专属功能均为可选。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/vandal-hearts-pc-port-case/)
 
 - [**《宝可梦 白金》：校验一致的 Nintendo DS 反编译重建**](https://github.com/pret/pokeplatinum)
 
   将美版 Nintendo DS《宝可梦 白金》重建为 C 源码，默认重建修订版 1，也可按需构建修订版 0。默认的 make 目标会运行 Meson 检查，按 SHA-1 清单校验代码二进制、文件系统及完整 ROM。README 仍称项目在进行中；贡献指南表示代码已全部为 C，但其中大量仍晦涩难懂，因此主要工作是文档和工具。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokemon-platinum-decomp-case/)
 
 - [**Saints Reborn：基于 ReXGlue 的 Saints Row 静态重编译**](https://github.com/whompay/SaintsReborn)
 
   Saints Row（Xbox 360，2006）的非官方原生 Windows 移植：借助 ReXGlue SDK 将游戏的 PowerPC 可执行文件静态重编译为面向 x86-64 的 C++ 代码，该 SDK 还重新实现了主机的内核、GPU（基于 Direct3D 12）、音频与输入。重编译清单、游戏专用的函数替换和 SDK 补丁使结果得以运行，每位使用者都用自己的光盘在本地构建。README 报告游戏可完整通关、内置合作模式，并列出已知问题。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/saints-reborn-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/saints-reborn-recomp-case/)
 
 - [**Pokémon Platinum PC Port：基于 pret 反编译的原生移植**](https://github.com/cybervisi0n/pokeplatinum)
 
   基于 pret 反编译项目的分支，为《宝可梦 白金》构建原生 64 位 Windows 和 Linux 可执行文件，并以作者的 libntr 库替代 NitroSDK；同一源码树仍保留 DS ROM 构建和实验性的 Switch 目标。README 称游戏应可从头玩到尾，但可能出现崩溃和图形错误。预构建程序需要玩家自备美版 ROM，且该分支的默认构建不再运行 pret 的校验测试。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pokemon-platinum-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pokemon-platinum-pc-port-case/)
 
 - [**MikuPan：基于 Himuro 反编译的 Fatal Frame 原生 PC 移植**](https://github.com/Mikompilation/MikuPan)
 
   将 PS2 游戏 Fatal Frame（《零》）移植为无需模拟器的原生 PC 版本；仓库简介称其基于 Himuro 反编译项目。PS2 内核调用由桩函数替代，渲染、音频和界面由基于 SDL3 的新层实现，游戏数据则来自使用者自有的光盘。README 称移植仍处于很早期阶段，未发布一致性或还原度检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/mikupan-fatal-frame-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/mikupan-fatal-frame-port-case/)
 
 - [**Starfox 64: Recompiled：基于 N64Recomp 的静态重编译移植**](https://github.com/sonicdcer/Starfox64Recomp)
 
   使用 N64: Recompiled 将 Nintendo 64 版 Star Fox 64 美版 1.1（Rev A）静态重编译为面向 Windows、Linux 和 macOS 的原生移植，并以 RT64 渲染。补丁与增强功能借用独立的 sf64 反编译项目中的头文件和部分函数，但移植本身并非由该反编译源码编译而成。README 报告支持高帧率、宽屏与模组，素材从使用者自备的 ROM 载入。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/starfox64-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/starfox64-recompiled-case/)
 
 - [**Syphon Filter: The Omega Strain：可逐字节重建 PS2 可执行文件的一致性反编译**](https://github.com/zm2283145/syphon-filter-omega-strain-decomp)
 
   将 Syphon Filter: The Omega Strain 北美版 PlayStation 2 可执行文件的大部分代码重建为 C；其余函数保留为拆分出的汇编，整体构建可逐字节重现零售版 SCUS\_972.64。仓库提交的 objdiff 报告以使用者自备的可执行文件为基准，追踪逐函数的匹配进度。这是一致性反编译案例，不是 PC 移植；进度数字仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/syphon-filter-omega-strain-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/syphon-filter-omega-strain-decomp-case/)
 
 - [**Animal Crossing：基于 GameCube 反编译成果的原生 PC 移植**](https://github.com/flyngmt/ACGC-PC-Port)
 
   让 Animal Crossing 反编译所得的 GameCube C 代码在 32 位 x86 上原生运行，用转换层把 GX 图形 API 映射到 OpenGL 3.3，并以基于 SDL2 的平台代码替代主机服务。游戏素材在启动时从使用者自己的光盘镜像读取，不随项目分发。这是基于 ACreTeam ac-decomp 的移植，而非与原可执行文件一致的重建。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/animal-crossing-pc-port-case/)
 
 - [**GoldenEye 007：覆盖三个版本的一致性 Nintendo 64 反编译**](https://github.com/n64decomp/007)
 
   将 GoldenEye 007 的 Nintendo 64 代码重建为 C 源码，可重新构建美版、日版和 PAL 版 ROM。素材取自使用者自备的美版 ROM，日版与 PAL 版的差异部分则取自各自的 ROM；默认构建会将每个产物与记录的 SHA-1 比对。README 仍称项目在进行中，而可变的状态页报告全部 208 个文件已完成；它与另行收录的 PC 移植不同。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/goldeneye-007-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/goldeneye-007-matching-decomp-case/)
 
 - [**Starship：基于反编译的 Star Fox 64 PC 移植**](https://github.com/HarbourMasters/Starship)
 
   Star Fox 64 的原生 PC 移植：将游戏的反编译 C 代码与 libultraship 一同编译，该 N64 移植库重新实现了 libultra，并通过 Fast3D 渲染。首次运行时借助 Torch 工具把使用者的美版 ROM 转换为素材资源包，提供 Windows、Linux、macOS 和 Switch 版本。独立的静态重编译项目 Starfox 64: Recompiled 在其 README 中称本移植为采用不同技术的姊妹项目。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/starship-sf64-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/starship-sf64-pc-port-case/)
 
 - [**CTR Turbocharged：基于 Crash Team Racing 反编译成果的 PC 移植**](https://github.com/CameronRedmore/Crash-Team-Racing-Turbocharged)
 
   在 Crash Team Racing: High Octane 移植版基础上扩展而成；High Octane 源自基于 CTR-ModSDK PlayStation 反编译成果的 CTR Native 移植。本分支面向 Windows 与 Linux，提供原生 3D 渲染器、可选画面比例及最高 240 FPS 帧率。反编译游戏代码仍假定 32 位指针，并从玩家自备的 NTSC-U 光盘镜像读取素材。项目附有渲染、计时和选项测试，但设备覆盖与还原度仍为项目自述。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/ctr-turbocharged-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/ctr-turbocharged-port-case/)
 
 - [**The Darkness Recomp：配有原生 D3D11 渲染器的 Xbox 360 静态重编译**](https://github.com/portingpete/The-Darkness-Recomp)
 
   使用打过补丁的 XenonRecomp 将 Xbox 360 可执行文件提前转换为 C++，构建 The Darkness 的原生 Windows x64 移植。D3D11 渲染器直接使用引擎原有的几何数据、着色器源码和设备状态绘制，而不解释主机 GPU 命令包。游戏覆盖范围与 Linux 测试结果均为项目报告，作者披露开发中使用了 OpenAI Codex 辅助。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/the-darkness-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/the-darkness-recomp-case/)
 
 - [**MarioKart 64: Recompiled：通过 N64Recomp 静态重编译实现的原生移植**](https://github.com/sonicdcer/MarioKart64Recomp)
 
   使用 N64Recomp 将北美版 Nintendo 64《马力欧卡丁车 64》静态重编译为 Windows、Linux 与 macOS 原生应用，并通过 RT64 渲染。README 将其与源码移植区分开：游戏代码由使用者提供的 ROM 转换而来，反编译分支中的头文件和部分函数用于实现补丁与增强。增强功能、还原度和输入延迟等说法均为项目自述。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/mariokart64-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/mariokart64-recompiled-case/)
 
 - [**Animal Crossing：生成一致产物的 GameCube 反编译重建**](https://github.com/ACreTeam/ac-decomp)
 
   将 Animal Crossing 的 GameCube 代码重建为 C 与 C++ 源码，可重新构建美版的主可执行文件及 foresta.rel 模块。基于 dtk-template 的构建从使用者自备的光盘镜像读取原始二进制与素材，再用 SHA-1 哈希校验两个产物。另有原生 PC 移植以它为基础；此处的完成度数字仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-gamecube-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/animal-crossing-gamecube-decomp-case/)
 
 - [**《王国之心 358/2 Days》：逐字节一致的 Nintendo DS 反编译重建**](https://github.com/Yokimitsuro/khdays-decomp)
 
   将 Nintendo DS 欧版《王国之心 358/2 Days》的 ARM9 程序及覆盖模块重建为 C 源码，以 CodeWarrior 重新编译后逐字节一致。README 报告全部 306 个模块字节一致，约 99.5% 的函数为真正的 C，库自身的汇编另行统计；ARM7 二进制不在范围内。仓库不含 ROM、游戏素材或提取的反汇编，也不生成可玩版本。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/kingdom-hearts-days-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/kingdom-hearts-days-matching-decomp-case/)
 
 - [**TonyWasAProSkater：派生自一致性反编译的 THPS1 原生移植**](https://github.com/LANCommander/TonyWasAProSkater)
 
   从一个仍在进行中的零售版可执行文件一致性反编译项目派生分支，将 Tony Hawk’s Pro Skater（PlayStation 美版）移植为原生 Windows 与 Linux 程序。反编译部分用 Psy-Q 工具链重新编译已重建的函数，并与使用者自备的零售可执行文件逐字节比对；移植部分则以 SDL2 和 OpenGL 服务取代 PlayStation 硬件和库。运行需使用者自备光盘镜像；一致性与可玩性结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/thps1-decomp-native-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/thps1-decomp-native-port-case/)
 
 - [**P.T. PC 版：基于行为重新实现、读取 PS4 数据的引擎**](https://github.com/LoreanXavier/pt-pc)
 
   在新的 Vulkan 引擎上用 C++ 重新实现 P.T. 的游戏逻辑，运行时从使用者自有的 PS4 版本读取关卡、模型、贴图、声音、脚本和过场动画。作者记录了逆向得出的文件格式，并以 shadPS4 模拟器作为行为与画面的对照参考。与原作的一致程度为作者报告，项目也披露使用了 AI 编程工具。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/pt-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/pt-pc-port-case/)
 
 - [**SpaghettiKart：基于反编译源码的《马力欧卡丁车 64》原生移植**](https://github.com/HarbourMasters/SpaghettiKart)
 
   基于沿用《马力欧卡丁车 64》反编译项目文件结构的源码，构建适用于 Windows、Linux、macOS 和 Switch 的原生移植，运行在 libultraship 重新实现的 N64 SDK 之上。随附的 Torch 提取器将使用者自备的美版 ROM 转换为素材归档，移植还增加了模组、自定义赛道和编辑器。README 未写明其上游反编译项目，也未发布一致性或还原度检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/spaghettikart-mk64-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/spaghettikart-mk64-port-case/)
 
 - [**Animal Crossing: Wild World：附差分运行检查的韩版 DS 一致性反编译重建**](https://github.com/banatic/acww-decomp)
 
   将 Animal Crossing: Wild World 韩版 DS 游戏的 ARM9 游戏代码重建为每个函数一个 C 或 C++ 源文件，并用原版 Metrowerks 编译器和链接器对照使用者自己的 ROM 校验。每个函数另有可读的 Clean 改写版本，仓库自带的 DS 解释器在录制的游玩过程中比较 ROM 代码、原生编译的源码和改写版本。数据段、ARM7 程序、链接的 SDK 库及按原始源文件重新归组仍不在重建范围内。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/animal-crossing-wild-world-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/animal-crossing-wild-world-decomp-case/)
 
 - [**King Kong Recompiled：由 AI 开发的 Xbox 360 静态重编译**](https://github.com/TekRantGaming/king-kong-recompiled)
 
   借助 ReXGlue 静态重编译 SDK，将 Xbox 360 版 Peter Jackson's King Kong 转译为原生 Windows 代码，并加入启动器以及显示、操控和图形选项。项目代码按主机的方式完成流式光盘读取；README 称这使游戏越过了在 Xenia 中出现的开场卡死。作者披露，该移植几乎完全由 Claude Code 完成，仓库所有者负责指导和测试。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/king-kong-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/king-kong-recompiled-case/)
 
 - [**Mario Party 4：美版 GameCube 一致性反编译重建**](https://github.com/mariopartyrd/marioparty4)
 
   将 Mario Party 4 的 GameCube 主程序和 REL 模块重建为 C 源码，可重新构建两个美版发行版本。构建会分析使用者自备的光盘镜像，并按各版本的 SHA-1 清单检查每个链接产物。欧版和日版工作已停滞，也尚无 PC 移植；此处的一致性结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/mario-party-4-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/mario-party-4-decomp-case/)
 
 - [**SpeedBreaker：对 Xbox 360 版《极品飞车：最高通缉》的静态重编译**](https://github.com/SpeedBreakerProject/speedbreaker)
 
   使用打过补丁的 XenonRecomp 将 Xbox 360 版《极品飞车：最高通缉》（2005）的可执行文件转换为原生 C++，并在项目自建的运行时上执行，由运行时代替主机的内核、Xenos GPU、XMA 音频和控制器。发布版面向 SteamOS、Linux 和 Apple 芯片 Mac，另有实验性的 iPhone 与 iPad 版本，所有游戏数据均来自玩家自有的美版光盘。渲染与帧节奏方面的改进均为项目自述。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/speedbreaker-nfs-most-wanted-case/)
 
 - [**The Sims: Bustin' Out：AI 驱动的部分 GBA 一致性反编译重建**](https://github.com/DaBrown95/tsbodp)
 
   逐字节重建 The Sims: Bustin' Out 的 Game Boy Advance 美欧版，并逐步用 agbcc 编译、结果一致的 C 代码替换 ROM 区域。README 称这是由 AI 驱动的实验，几乎所有代码、分析与工具都由 AI 生成。ROM 的大部分仍从使用者的转储中复制，因此整个 ROM 一致并不代表游戏已完成反编译。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sims-bustin-out-gba-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sims-bustin-out-gba-decomp-case/)
 
 - [**Destiny 2 build 86657：Sunrise／Dawn 重建研究报告**](https://github.com/isinternets/d2-research)
 
   一份注明版本日期的研究报告，记录已归档 Destiny 2 build 86657 客户端的 Sunrise／Dawn 重建：在本地模拟平台登录与所考察的 Bungie 服务契约，并补充重建的任务主机策略。报告把传输、解码、对象创建、呈现与游戏玩法结果分开记录，并连同所引来源保留已被推翻的结论。它记录案例本身，不提供运行时实现，也不是恢复出的 Bungie 后端；通关与原生实验结果仍为项目报告。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/destiny2-build-86657-reconstruction-report-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/destiny2-build-86657-reconstruction-report-case/)
 
 - [**SVR2011-Recomp：借助 ReXGlue 重编译 WWE SmackDown vs. Raw 2011**](https://github.com/shaneomac1337/SVR2011-Recomp)
 
   借助 ReXGlue 将 WWE SmackDown vs. Raw 2011 的 Xbox 360 可执行文件提前转换为 C++，并在源自 Xenia 的 Vulkan 运行时上构建为 Windows 程序。手工维护的清单补充自动分析遗漏的函数入口，项目补丁则处理帧节奏、音乐播放器延迟和渲染管线卡顿。作者仅在一款 AMD GPU 上测试了表演赛等模式；生涯模式与在线功能仍未测试。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/svr2011-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/svr2011-recomp-case/)
 
 - [**Snap64 Recomp：Pokémon Snap 的静态重编译移植**](https://github.com/JackandBeans/Snap64Recomp)
 
   使用 N64Recomp 将 Pokémon Snap 美版 Nintendo 64 发行版静态重编译为原生 Windows、Linux、Steam Deck 和 macOS 移植，由 RT64 负责渲染。重编译器读取从一致性 ethteck/pokemonsnap 反编译项目链接出的可重定位 ELF 及使用者自备的 ROM，游戏侧补丁则是反编译函数的修改副本。作者报告借助 Claude Code 完成移植；各项结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/snap64-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/snap64-recomp-case/)
 
 - [**Dead Rising 2: Case Zero：Xbox 360 XBLA 游戏的静态重编译移植**](https://github.com/wivi514/Dead_Rising_2_Case_Zero_Xenon_Recomp)
 
   使用打过补丁的 XenonRecomp 静态重编译 Xbox 360 代码，并用打过补丁的 XenosRecomp 转换着色器，为 XBLA 游戏 Dead Rising 2: Case Zero 构建可在 Windows、Linux、Steam Deck 和 Apple Silicon Mac 上运行的原生移植。专门编写的运行时提供 Vulkan 渲染器、XMA 音频、键鼠输入，以及通过作者的 XenonLive 服务实现的在线合作。通关情况与各平台结果均为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/dead-rising-2-case-zero-recomp-case/)
 
 - [**OpenRA：重新诠释早期 Westwood 即时战略游戏的引擎重新实现**](https://github.com/OpenRA/OpenRA)
 
   为早期 Westwood 即时战略游戏提供以 C# 编写的引擎，并以模组形式重新诠释 Command &amp; Conquer: Red Alert、Tiberian Dawn 和 Dune 2000。它通过自己的文件系统、MiniYAML 规则和 Lua 任务层加载原游戏内容，而不是运行或恢复 Westwood 的代码。玩法和界面有意遵循 OpenRA 自身的设计，因此并非对原可执行文件的忠实重现。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openra-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openra-engine-case/)
 
 - [**Dead Rising 2: Case West：同系列的 Xbox 360 XBLA 静态重编译移植**](https://github.com/wivi514/Dead_Rising_2_Case_West_Xenon_Recomp)
 
   使用打过补丁的 XenonRecomp 静态重编译 Xbox 360 代码，并用打过补丁的 XenosRecomp 转换着色器，为 XBLA 尾声篇 Dead Rising 2: Case West 构建可在 Windows、Linux、Steam Deck 和 Apple Silicon Mac 上运行的原生移植。它与作者另一个 Case Zero 移植共用大部分运行时，在 Vulkan 上执行主机 GPU 命令流，并提供 XMA 音频和键鼠输入。通关情况与各平台结果均为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/dead-rising-2-case-west-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/dead-rising-2-case-west-recomp-case/)
 
 - [**The Simpsons Wrestling Recompiled：基于 psxrecomp 的 PlayStation 静态重编译**](https://github.com/TekRantGaming/simpsons-wrestling-recompiled)
 
   借助固定版本的 psxrecomp 分支，将这款 PlayStation 游戏的 MIPS 代码转换为 C，并基于其模拟硬件行为的运行时构建 Windows 与 Linux 程序，另附启动器和专用插件。插件在不修补游戏代码的前提下，实现比赛中的 16:9 画面、通过提高模拟 CPU 频率并修正移动量达到 60 FPS、跳过片头及全部解锁。需使用者自备 NTSC-U 光盘镜像；测量结果为作者报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/simpsons-wrestling-recompiled-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/simpsons-wrestling-recompiled-case/)
 
 - [**OpenRCT2：RollerCoaster Tycoon 2 的开源重新实现**](https://github.com/OpenRCT2/OpenRCT2)
 
   以 C++ 引擎重新实现原本用 x86 汇编编写的 RollerCoaster Tycoon 2，并在原游戏数据上运行。它可载入 RCT2 存档和场景，具备相应文件时也能载入 RCT1 场景，而保存时使用自己有文档说明的乐园格式。现代平台支持、界面与 AI 改动、更高上限和多人游戏都是有意扩展，并非对原版的复现。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openrct2-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openrct2-engine-case/)
 
 - [**Touhou 6：重建东方红魔乡 1.02h 版源码**](https://github.com/GensokyoClub/th06)
 
   为 Touhou 6：东方红魔乡 1.02h 版的 Windows 可执行文件重建 C++ 源码，目标是用原版 Visual Studio .NET 2002 与 DirectX 8 工具链精确重新构建。reccmp 和 objdiff 将重建的二进制与使用者自备的原可执行文件逐函数比较。仓库内的进度徽章报告函数已全部实现、字节准确率为 98.03%，因此不主张整个二进制完全一致。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th06-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/th06-decomp-case/)
 
 - [**Driver Recompiled：在本地构建游戏的 psxrecomp 安装宿主**](https://github.com/alexbeavs-ps1-ports/driver-recomp)
 
   将 Driver（PlayStation 美版）的 psxrecomp 静态重编译项目打包为“安装宿主”：发布包含重编译器、运行时和 recomp-ui 启动器，再由玩家电脑依据使用者自备的光盘镜像生成并编译游戏。仓库只包含配置、来自 Ghidra 的函数种子和发布自动化脚本，不含游戏代码。文档记录的状态较为有限：维护者确认一个私有构建可以进入游戏，而发布包的验收门槛仍未完成。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/driver-recomp-setup-host-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/driver-recomp-setup-host-case/)
 
 - [**Himuro：Fatal Frame（《零》）PS2 一致性反编译**](https://github.com/Mikompilation/Himuro)
 
   将 Fatal Frame（《零》）PS2 可执行文件的美版、欧版和日版重建为 C，使用原始的 EE-GCC 2.9 工具链构建，并以使用者自备可执行文件的 SHA-1 校验结果。仓库提交的 objdiff 报告显示美版和欧版代码已全部匹配、日版仅部分匹配，少数例程仍依赖汇编或字节补丁。移植到现代硬件是项目声明的后续目标，不在本仓库范围内。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/himuro-fatal-frame-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/himuro-fatal-frame-decomp-case/)
 
 - [**DOAXVB Native PC Port：对《Dead or Alive Xtreme Beach Volleyball》的静态重编译**](https://github.com/NoRain211/doaxvb-re)
 
   借助 xboxrecomp 的分支将原版 Xbox《Dead or Alive Xtreme Beach Volleyball》可执行文件提升为 C 代码，并与手写运行时链接，由运行时替代内核导入、音频以及关键的 Direct3D 8 和 DirectSound API。安装程序依据使用者自有的美版光盘镜像在本地构建运行程序，并按经认证配方中的哈希校验生成文件；发布包只含工具和源码。将游戏逻辑改写为可读源码的工作目前只完成了启动线程入口。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/doaxvb-native-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/doaxvb-native-port-case/)
 
 - [**TH08 Web：基于重建源码的 WebAssembly 移植**](https://github.com/N0zoM1z0/th08-web)
 
   使用 Emscripten 将日版 Touhou 8 1.00d 的重建 C++ 源码编译为 WebAssembly，并在游戏原有的 D3D8、DirectSound 与 DirectInput 形态接口之后接入 WebGL 2 渲染、Web Audio、浏览器输入和 IndexedDB 存档。玩家在本地选择自备的正版 DAT 文件。网页构建不主张与原二进制逐字节一致，是独立于已收录 TH08 重建的移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th08-web-wasm-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/th08-web-wasm-port-case/)
 
 - [**OpenXcom：X-COM: UFO Defense 与 Terror from the Deep 的开源克隆**](https://github.com/OpenXcom/OpenXcom)
 
   以 C++/SDL 引擎重新实现 MicroProse 的 UFO: Enemy Unknown（X-COM: UFO Defense）与 X-COM: Terror from the Deep，并在使用者自己的原游戏资源上运行。物品、飞行器、研究和任务等游戏数据以 YAML 规则集表达，这些规则集也承载其标准模组及更广泛的模组生态。这是复用原内容的克隆实现，而非恢复出的 MicroProse 代码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openxcom-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openxcom-engine-case/)
 
 - [**Skate 3 Recomp：通过 ReXGlue 实现的 Xbox 360 原生重编译**](https://github.com/mchughalex/skate3recomp)
 
   借助 ReXGlue SDK 的 Skate 专用分支，将 Xbox 360 版《Skate 3》重编译为 Windows、Linux 与 macOS 原生版本。自 v2.0.0 起，基于 Direct3D 12 和 Vulkan、移植了游戏自身材质着色的原生渲染器取代对 Xbox 360 GPU 的模拟，模拟渲染器保留为后备。游戏文件来自使用者的光盘镜像；作者称原生渲染器尚处早期，且尚未完整测试整个游戏。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/skate3-recomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/skate3-recomp-case/)
 
 - [**《神秘海域：内森·德雷克合集》原生 Windows 移植**](https://github.com/bc160201983/Uncharted-The-Nathan-Drake-Collection-PC-port)
 
   在 Windows 上原生运行 PS4 版《神秘海域：内森·德雷克合集》自身的 x86-64 可执行文件：由运行时提供 PS4 系统库，并以源自 shadPS4 的 Vulkan 渲染器执行 GPU 工作。该移植提供按游戏保存设置的启动器、分辨率补丁与现代超分辨率技术，其状态表报告三部游戏均可游玩，并列出未解决问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/uncharted-collection-pc-port-case/)
 
 - [**TH095：东方文花帖 1.02a 的函数级重建**](https://github.com/N0zoM1z0/th095)
 
   为日版 Touhou 9.5：东方文花帖 1.02a 原可执行文件重建源码；只有使用固定版本 Visual C++ .NET 2003 构建、并与单一经哈希核验的目标进行可复现字节比较后，才认定函数级一致。整个程序也能编译链接为可游玩的 Windows i386 可执行文件，而 README 将可玩性、函数匹配与整个可执行文件一致性列为相互独立的状态。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th095-reconstruction-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/th095-reconstruction-case/)
 
 - [**CorsixTH：Theme Hospital 的开源重新实现**](https://github.com/CorsixTH/CorsixTH)
 
   重新实现 Bullfrog 1997 年游戏 Theme Hospital 的引擎：游戏逻辑以 Lua 编写，图形、声音、影片和寻路由 C++ 处理，并建立在原游戏数据文件之上。README 报告完整战役已可通关，列出仍缺失的功能，并加入高分辨率和地图编辑器等扩展。它在原内容上重现游戏行为，而不是恢复 Bullfrog 的源码。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/corsixth-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/corsixth-engine-case/)
 
 - [**OpenRiseOfNations：原生 macOS 引擎重新实现**](https://github.com/ben-wright-1/OpenRiseOfNations)
 
   以原生 macOS 应用重新实现 Rise of Nations: Extended Edition 引擎，包含 Metal 渲染器、确定性模拟、电脑对手，以及兼容的 BigHugeScript 编译器与虚拟机；美术、地图、规则和脚本均从使用者自有的 Windows 版安装目录读取。项目依据对带调试符号的可执行文件进行 Ghidra 研究后撰写的子系统规范及 JavaScript 参考工具，在大量使用 Claude Code 的情况下编写 C++17 实现。该早期版本可游玩教程与场景，其逐位一致性检查仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openriseofnations-engine-case/)
 
 - [**TH04：从源码重建东方幻想乡的四个 PC-98 程序**](https://github.com/N0zoM1z0/th04)
 
   为日版 PC-98 Touhou 4：东方幻想乡重建源码，并在 Wine 下用固定版本的 Borland 工具链重新构建全部四个 DOS 程序：MAIN.EXE、OP.EXE、MAINE.EXE 和 ZUN.COM。针对原二进制的函数认定，与在模拟器中对照原游戏比较输入、随机数、对象池和画面的回放分开记录。完整流程、原始时序与字节一致性目标仍未完成。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/th04-reconstruction-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/th04-reconstruction-case/)
 
 - [**《声名狼藉：次子》原生 PC 移植**](https://github.com/HayatoG/iss_pc)
 
   在 Windows 与 Linux 上原生运行 PS4 版《声名狼藉：次子》自身的 x86-64 代码：由运行时重新实现游戏所用的 PS4 系统库，并以源自 shadPS4 的核心将其 GPU 命令与着色器转换为 Vulkan。项目报告该移植可以游玩但仍在开发中，能进入游戏并通过最初几章，性能仍不稳定，也有尚未解决的图形问题。这是兼容运行时移植而非反编译重建，结果仍为项目报告。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/infamous-second-son-pc-port-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/infamous-second-son-pc-port-case/)
 
 - [**xoreos：BioWare Aurora 引擎家族的开源重新实现**](https://github.com/xoreos/xoreos)
 
   以可移植的 C++ 引擎重新实现 BioWare 的 Aurora 引擎及其后续衍生版本，在使用者已安装的游戏数据上运行，目标涵盖从《无冬之夜》到《龙腾世纪 II》的九款游戏。资源管理、大量 Aurora 文件格式、图形和声音均已实现，所有目标游戏都能在可自由飞行的旁观模式下显示部分游戏内场景。README 说明尚未实现正常的游戏流程，因此这是一个早期阶段的引擎案例，而非可以替代原版游玩的实现。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/xoreos-aurora-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/xoreos-aurora-engine-case/)
 
 - [**librw：RenderWare Graphics 引擎的重新实现**](https://github.com/aap/librw)
 
   以可移植的 C++ 库重新实现 RenderWare Graphics 中间件 API 的大部分内容，可读写其 PS2、D3D8、D3D9 和 Xbox 平台的 DFF 模型与 TXD 纹理文件，并旨在于各平台格式之间转换。场景由 Direct3D 9 和 OpenGL 后端渲染，PS2 渲染仅作为测试可用。README 称其用途是渲染 GTA 游戏；BSP 世界文件尚不支持。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/librw-renderware-reimplementation-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/librw-renderware-reimplementation-case/)
 
 - [**《超级马力欧 奥德赛》：Switch 主程序的逐函数一致性反编译**](https://github.com/MonsterDruide1/OdysseyDecomp)
 
   为《超级马力欧 奥德赛》Switch 1.0 版主程序重建 C++ 源码，并用共享的 nx-decomp-tools 检查器逐个函数与原始 AArch64 机器码比对。在所审固定提交中，其函数清单将 74,171 个函数中的 18,996 个标为一致。README 提醒构建结果不是可游玩的游戏；仓库不含游戏素材，sead、agl 等任天堂库则来自 open-ead 另行维护的重建项目。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/odyssey-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/odyssey-decomp-case/)
 
 - [**《星际火狐 64》：完整的 Nintendo 64 版一致性反编译**](https://github.com/sonicdcer/sf64)
 
   为 Nintendo 64 版《星际火狐 64》美版 1.1（Rev A）重建 C 源码；借助静态重编译运行的 IDO 编译器编译后，可重建出 MD5 与公布值一致的 ROM，README 徽章显示全部 2,951 个函数均已一致。构建时从使用者自备的 ROM 中拆分代码与素材，仓库本身不含素材或汇编。另行收录的 Starship PC 移植直接编译这份 C 代码，Starfox 64: Recompiled 则从中取用头文件和部分函数来编写补丁。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/sf64-matching-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/sf64-matching-decomp-case/)
 
 - [**《密特罗德 Prime》：PrimeDecomp 的 GameCube 版一致性反编译**](https://github.com/PrimeDecomp/prime)
 
   为《密特罗德 Prime》GameCube 版的可执行文件及其 NES 模拟器模块重建 C++ 源码，使 CodeWarrior 编译结果与原文件一致，涵盖美版、韩版、PAL 版与日版，另有针对体验版光盘和三个 Wii 版本的早期配置。已匹配的单元由源码编译，再与从使用者光盘中拆分出的对象链接，并按各版本的 SHA-1 哈希校验；仓库不含游戏素材或汇编。另行收录的 Metaforce 与 Metroid Prime Port 都在这份代码之上构建原生移植。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/primedecomp-metroid-prime-decomp-case/)
 
 - [**Batla 3D 服务端模拟器（2015 年客户端）**](https://github.com/Serega25511s/Batla-3D-server-emu)
 
   面向 Batla 3D 2015 年 Steam 客户端的 C# 服务端模拟器，涵盖账户、商店、房间 HTTP 服务与 Lidgren UDP 对战。项目包含客户端程序集补丁工具，协议文档区分了从客户端恢复的证据与模拟器自行选择的规则。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/batla-3d-server-emulator-case/)
 
 - [**RSDKv4 Decompilation：Retro Engine v4 与《索尼克》1、2（2013）菜单的反编译**](https://github.com/RSDKModding/RSDKv4-Decompilation)
 
   反编译 Retro Engine（RSDK）v4——《索尼克》与《索尼克 2》（2013）所用的引擎——以及两款游戏中以原生代码实现的菜单，可构建 Windows、Linux 与 Android 版本。引擎运行官方发行版数据文件中的游戏脚本，这些文件需由使用者自备。项目增加了脚本编译器、模组加载器，以及《索尼克 2》双人对战的实验性联网模式；它是同一团队 RSDKv5 反编译项目的前身。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rsdkv4-sonic-1-2-decomp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/rsdkv4-sonic-1-2-decomp-case/)
 
 - [**OpenRW：《侠盗猎车手 III》引擎的开源重新实现**](https://github.com/rwengine/openrw)
 
   以跨平台 C++ 引擎重新实现 Rockstar Games 的《侠盗猎车手 III》（2001），在正版 PC 游戏的数据上运行。项目自行实现了游戏 RenderWare 模型、纹理和归档的加载器，提供执行原版任务脚本的脚本机，并附带可选的 Qt 数据查看器。可玩程度有限：项目的任务追踪清单只将波特兰的六个早期剧情任务标为可完成。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openrw-gta3-engine-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/openrw-gta3-engine-case/)
 
 #### 工具、项目与集成
 
@@ -1112,241 +1112,241 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   检查自己游戏或图形应用的帧捕获、绘制调用、着色器和图形资源。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/renderdoc/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/renderdoc/)
 
 - [**AssetRipper**](https://github.com/AssetRipper/AssetRipper)
 
   分析 Unity 游戏文件，检查资源依赖并将支持的资源转换为 Unity 工程格式。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/assetripper/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/assetripper/)
 
 - [**Cpp2IL**](https://github.com/SamboyCoding/Cpp2IL)
 
   结合二进制与元数据分析，从 Unity IL2CPP 构建恢复托管表示；重建能力仍在开发中。
 
-  工具 · 也适用：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/cpp2il/)
+  工具 · 也适用：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/cpp2il/)
 
 - [**Il2CppDumper**](https://github.com/Perfare/Il2CppDumper)
 
   恢复 IL2CPP 元数据及占位程序集，为原生分析工具生成辅助脚本；不会还原方法代码。
 
-  工具 · 也适用：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/il2cppdumper/)
+  工具 · 也适用：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/il2cppdumper/)
 
 - [**RenderDoc MCP**](https://github.com/scarletfantasy/renderdoc-mcp)
 
   向智能体开放已有 RenderDoc 捕获文件，分步检查帧、管线、资源和着色器。
 
-  集成 · 独立 MCP · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/renderdoc-mcp/)
+  集成 · 独立 MCP · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/renderdoc-mcp/)
 
 - [**UndertaleModTool**](https://github.com/UnderminersTeam/UndertaleModTool)
 
   浏览和修改受支持的 GameMaker 数据文件、提取资源，以及反编译或编译 GML VM 代码；提供房间编辑、脚本化修改、CLI 和可复用的 UndertaleModLib 库。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/undertalemodtool/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/undertalemodtool/)
 
 - [**frida-il2cpp-bridge**](https://github.com/vfsfitvnm/frida-il2cpp-bridge)
 
   在运行中的进程里检查 IL2CPP 类、方法和字段，无需提供 global-metadata.dat 即可跟踪或拦截方法调用，为静态 IL2CPP 转储工具补充运行时观察能力。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/frida-il2cpp-bridge/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/frida-il2cpp-bridge/)
 
 - [**objdiff**](https://github.com/encounter/objdiff)
 
   比较参考目标文件与重新编译目标文件中的函数和数据，辅助匹配反编译；显示指令级差异、还原 C++ 符号，并可在源码变更时自动重新构建。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/objdiff/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/objdiff/)
 
 - [**decomp-permuter**](https://github.com/simonlindholm/decomp-permuter)
 
   随机或系统地改写单个 C 函数，逐个重新编译变体并与目标文件评分对比，以寻找与原编译输出一致的写法。可用 PERM 宏指定手动备选写法，可选的 permuter<span>@</span>home 模式能把运行分发给其他工作节点。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-permuter/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp-permuter/)
 
 - [**asm-differ**](https://github.com/simonlindholm/asm-differ)
 
   对比单个函数或 ROM 地址的原始汇编与重新编译后的汇编，辅助匹配反编译；监视模式可在源码变更时重新运行 make。README 称它是 decomp.me 的默认差异查看器，并推荐 objdiff 作为现代替代方案。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/asm-differ/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/asm-differ/)
 
 - [**UE Explorer**](https://github.com/UE-Explorer/UE-Explorer)
 
   通过类、属性与依赖树浏览 Unreal 包，反编译和导出 UnrealScript 类、检查字节码，并查看结构化二进制数据。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ue-explorer/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ue-explorer/)
 
 - [**GARbro**](https://github.com/morkt/GARbro)
 
   像浏览文件夹一样查看已识别的视觉小说资源归档，预览内容，并在提取图像或音频时转换为常用格式。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/garbro/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/garbro/)
 
 - [**Godot 逆向工程工具**](https://github.com/GDRETools/gdsdecomp)
 
   从已导出的游戏中恢复受支持的 Godot 工程文件、GDScript 与导入资源，提供 PCK 检查与提取、脚本反编译及资源转换，便于分析和重建工程结构。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/godot-re-tools/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/godot-re-tools/)
 
 - [**UE4SS（虚幻引擎脚本系统）**](https://github.com/UE4SS-RE/RE-UE4SS)
 
   通过实时 UObject 属性视图、反射 C++ 头文件导出、属性映射和 Actor 转储分析虚幻引擎游戏；Lua 与 C++ API 可辅助实验和重建游戏结构。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ue4ss/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/ue4ss/)
 
 - [**FModel 游戏资源浏览器**](https://github.com/4sval/FModel)
 
   基于 CUE4Parse 浏览虚幻引擎游戏归档，检查资源包和属性，预览并导出资源；2026 年夏季发行版新增 USD 世界导出，可辅助重建受支持的场景内容。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/fmodel/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/fmodel/)
 
 - [**PSP Web Recomp 浏览器游戏重编译项目**](https://github.com/snuri00/psp-web-recomp)
 
   将 PSP MIPS 可执行文件转换为 C++ 与 WebAssembly，配合 PSP 高层仿真运行时和 WebGL2 渲染器；原生跟踪、画面捕获及音频工具可辅助调查游戏移植中缺失的行为。
 
-  项目 · 也适用：网站 · [使用条件与证据](https://awesomerea.org/zh/resources/psp-web-recomp/)
+  项目 · 也适用：网站 · [使用条件与局限](https://awesomerea.org/zh/resources/psp-web-recomp/)
 
 - [**N64: Recompiled**](https://github.com/N64Recomp/N64Recomp)
 
   依据符号元数据将 N64 MIPS 二进制静态重编译为 C 函数，并生成函数查找与重定位宏，供运行时处理静态链接和可重定位的覆盖段。输出需配合 N64ModernRuntime 等运行时；仓库还包含 RSP 微码重编译与模组工具。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/n64recomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/n64recomp/)
 
 - [**XenonRecomp**](https://github.com/hedge-dev/XenonRecomp)
 
   将 Xbox 360 PowerPC 可执行文件转换为可在其他平台编译的 C++ 代码，配套的 XenonAnalyse 负责检测跳转表和函数边界。输出是逐条指令的直译而非反编译代码，并需要项目本身不提供的运行时。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/xenonrecomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/xenonrecomp/)
 
 - [**decomp.me 协作匹配反编译平台**](https://decomp.me)
 
   面向匹配反编译的协作网站：其编译服务用选定平台的编译器编译候选源码，汇编目标汇编代码，并用 asm-differ 对比两个目标文件。对其 MIPS、PowerPC、ARM 和 SuperH 平台，m2c 可生成初步反编译代码。18 个平台定义涵盖 N64、PlayStation、PS2、PSP、GameCube/Wii、Wii U、DS、GBA、3DS、Switch、Saturn、Dreamcast 和 Xbox 360，以及 IRIX、Mac OS X、MS-DOS、Win32 和 Android x86。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-me/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp-me/)
 
 - [**splat 二进制拆分工具**](https://github.com/ethteck/splat)
 
   面向反编译与模组项目的二进制拆分工具：由 YAML 配置指定在何处、以何种方式把 N64 ROM 或 PSX、PS2、PSP 二进制切分为代码、数据和素材段。扫描阶段反汇编代码与数据，MIPS 部分由 spimdisasm 处理；拆分阶段写出文件以及用于重新构建输入文件的链接脚本。可编写自定义段类型扩展该流程。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/splat/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/splat/)
 
 - [**m2c 匹配反编译器**](https://github.com/matt-kempster/m2c)
 
   面向匹配反编译项目的反编译器，将 GNU as 格式的 32 位 MIPS、ARM、PowerPC 和 SuperH 汇编转换为 C 代码初稿，并部分支持 C++。目标由平台、编译器（IDO、GCC 或 MetroWerks CodeWarrior）和语言组成；上下文文件提供类型信息，还能推断未知的结构体字段并生成全局变量初始化代码。README 将它与 splat、asm-differ 和 decomp-permuter 并列使用，decomp.me 也调用它生成初步反编译结果。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/m2c/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/m2c/)
 
 - [**decomp-toolkit GameCube/Wii 反编译工具包**](https://github.com/encounter/decomp-toolkit)
 
   面向 GameCube/Wii 匹配反编译的工具包：分析 DOL 和 REL 可执行文件，按项目配置将其拆分为可重定位目标文件，并为 CodeWarrior 链接器生成 ldscript.lcf，使反编译出的目标文件可逐个替换原有部分，同时将重新链接的二进制与原版核对。分析涵盖函数边界、Metrowerks/SDK 签名库、重定位、节区和数据对象，且无需汇编器即可直接写出目标文件。其命令行还可处理光盘镜像、归档、压缩格式、CodeWarrior 符号还原和 DWARF 转储。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-toolkit/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp-toolkit/)
 
 - [**Cheat Engine MCP Bridge 进程内存分析桥接**](https://github.com/miscusi-peek/cheatengine-mcp-bridge)
 
   通过 Lua 桥接脚本和 Python MCP 服务器把 MCP 客户端连接到 Cheat Engine，使智能体能够检查用户在 Cheat Engine 下运行的进程：读取内存与扫描数值、解析指针链、剖析结构体、识别 RTTI 类名、反汇编、查找交叉引用，以及设置硬件或 DBVM 断点。另有工具组可写入内存、注入 DLL 或代码、自动化输入，并调用 Cheat Engine 的内核模式驱动。README 将其限定于教学和研究用途，并声明不支持多人游戏作弊或违反服务条款的行为。
 
-  集成 · 独立 MCP · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/)
+  集成 · 独立 MCP · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/cheatengine-mcp-bridge/)
 
 - [**ido-static-recomp IRIX IDO 编译器静态重编译工具**](https://github.com/decompals/ido-static-recomp)
 
   将 SGI IDO 5.3 与 7.1 C 工具链中的 IRIX MIPS 程序（如 cc、cfe、uopt、ugen 和 as1）静态重编译为原生 Linux、macOS 和 Windows 可执行文件，使匹配式反编译项目能在现代主机上以原始编译器代码进行构建。它重编译的是编译器而非游戏，本身既不反编译也不转换游戏代码。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ido-static-recomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ido-static-recomp/)
 
 - [**PS2Recomp PlayStation 2 静态重编译器**](https://github.com/ran-j/PS2Recomp)
 
   实验性的静态重编译器，将 PlayStation 2 ELF 可执行文件中的 MIPS R5900 代码转换为 C++，并与随附的运行时链接。ps2xAnalyzer 或 Ghidra 导出脚本为每款游戏生成包含函数、存根、跳过项和指令补丁的 TOML 配置；ps2xRecomp 输出逐条指令的直译代码；ps2xRuntime 与 ps2xIOP 提供客户机内存、系统调用分发、带 HLE 回退的 IOP 模块执行，以及仅部分实现、大多为存根的 GS/VU 硬件。输出不是反编译源码，让游戏真正运行仍需针对每款游戏进行移植。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ps2recomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ps2recomp/)
 
 - [**Xenosaga I 反编译兼容性工具包**](https://github.com/LinuxJessi/decomp-compat-kit)
 
   在匹配反编译项目自身的构建之外进行检查：用未打补丁的原版 ee-gcc 2.96 及汇编器重新编译其 C 代码，再逐函数与原程序逐字节比较，并按可能的工具链原因对每处差异分类。配套脚本可将 ELF 符号表导出为 CSV，并转换为 splat 符号文件。默认配置针对 Xenosaga Episode I；README 称方法可推广，默认配置则不能。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-compat-kit/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp-compat-kit/)
 
 - [**GB Recompiled Game Boy 静态重编译器**](https://github.com/arcanite24/gb-recompiled)
 
   将 Game Boy 和 Game Boy Color ROM 转换为可移植 C 项目的静态重编译器：它解码并分析分 bank 的 LR35902 代码，生成 C 代码及机器可读的元数据，再与共享的 SDL2 运行时链接，由运行时处理视频、音频、输入、存档和硬件时序。静态分析未覆盖的跳转目标会回退到解释器执行。仓库还提供差分对比、回放以及画面和音频捕获工具，并附有一个 Pokémon Crystal 移植，借助对特定 ROM 的挂钩实现原生功能。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/gb-recompiled/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/gb-recompiled/)
 
 - [**dtk-template GameCube/Wii 反编译项目模板**](https://github.com/encounter/dtk-template)
 
   用于围绕 decomp-toolkit 创建 GameCube 和 Wii 匹配反编译仓库的项目模板。其 configure.py 生成 ninja 构建：依据各版本的 config.yml、symbols.txt 和 splits.txt 分析并拆分游戏的 DOL 和 REL 文件，用当年的 Metrowerks 编译器编译反编译出的 C/C++ 代码，重新链接后与记录的 SHA-1 哈希核对。模板还集成了用于逐目标文件比对的 objdiff、面向 decomp.dev 的进度报告，以及一个 GitHub Actions 工作流示例。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dtk-template/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/dtk-template/)
 
 - [**N64ModernRuntime N64 重编译运行时**](https://github.com/N64Recomp/N64ModernRuntime)
 
   供 N64Recomp 静态重编译项目和传统源码移植使用的 N64 游戏运行时，由两个库组成。ultramodern 重新实现 libultra 的核心服务（线程、消息队列、计时器、控制器、音频、RSP 任务处理和 VI 时序），并将手柄输入、音频播放和图形渲染器（推荐 RT64）交给宿主项目注册的回调处理。librecomp 负责将 N64Recomp 生成的代码与 ultramodern 衔接，并补充覆盖段处理、PI DMA 读取 ROM，以及 EEPROM、SRAM 和 Flash RAM 存档。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/n64modernruntime/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/n64modernruntime/)
 
 - [**REDscript《赛博朋克 2077》脚本编译与反编译工具集**](https://github.com/jac3km4/redscript)
 
   REDscript 的编译器与反编译器工具集。REDscript 是一种静态类型、面向对象的语言，用于为 CD Projekt 在《赛博朋克 2077》中使用的 REDengine 引擎编写脚本。其 Rust crate 负责解析和分析源码、生成字节码并对泛型做单态化、将 .redscripts 字节码包反编译回 REDscript 源码、读写 REDengine 原生二进制格式，并提供可直接替代 CD Projekt scc 脚本编译器的实现，以及带源码映射的 C API。命令行提供 decompile、compile、lint 和 format 命令；语言服务器和调试器位于单独的 redscript-ide 仓库。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/redscript/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/redscript/)
 
 - [**Spice86 实模式 DOS 逆向与重写模拟器**](https://github.com/OpenRakis/Spice86)
 
   用于执行、逆向分析并重写无源码实模式 DOS 程序的 PC 模拟器。程序运行时它会构建控制流图，退出时转储内存、执行流、Ghidra 兼容的符号，以及一个可独立运行的 C# 项目，其中生成的函数会覆盖原有汇编代码，分析者可以在程序始终可运行的前提下逐个函数将其改写为可读代码。它还提供带自定义分析命令的 GDB 远程服务器、配有 C 头文件结构查看器的内置调试器、可选的 HTTP 内存 API，以及工具覆盖 CPU、内存、断点、控制流图和设备状态的 MCP 服务器；可选的 Ghidra 插件可导入这些转储。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/spice86/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/spice86/)
 
 - [**PS2 Web Recomp 浏览器游戏重编译工具**](https://github.com/snuri00/ps2-web-recomp)
 
   将 PlayStation 2 游戏静态重编译后在浏览器中运行：eerecomp 把游戏启动程序中的 Emotion Engine 代码转换为 C++，再编译为 WebAssembly；运行时负责仿真主机的其余部分，包括高层仿真的 EE 内核、以解释器运行光盘 IRX 模块的 I/O 处理器、向量单元、SPU2 音频，以及基于 WebGPU 计算着色器的 Graphics Synthesizer。其移植脚本会反复进行无界面运行，找出经指针调用的函数和需要预先编译的向量单元微程序，最后构建网页和原生运行程序。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ps2-web-recomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ps2-web-recomp/)
 
 - [**xboxrecomp 初代 Xbox 静态重编译工具包**](https://github.com/sp00nznet/xboxrecomp)
 
   面向初代 Xbox 游戏的静态重编译工具包：Python 流水线解析零售版 XBE，进行反汇编、识别库函数、恢复调用约定，并将每个 x86 函数提升为 C 代码。生成的代码在独立的游戏项目中编译，并链接工具包的运行时库；这些库替代 Xbox 内核，并将 Direct3D 8、NV2A、音频和输入转换到 Direct3D 11 与 Win32 API，在 Linux 和 macOS 上则转换到 SDL2 与 OpenGL。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/xboxrecomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/xboxrecomp/)
 
 - [**PCSX-Redux PlayStation 1 调试模拟器**](https://github.com/grumpycoders/pcsx-redux)
 
   基于 PCSX 分支、面向开发与逆向工程的 PlayStation 1 模拟器，提供解释器与动态重编译器、软件和 OpenGL 渲染器、MIPS 调试器、显存查看器、SPU 与 GPU 调试工具，以及内置 GDB 服务器；其文档说明了如何用 gdb、IDA Pro 和 Ghidra 调试器连接它。LuaJIT API 提供断点、内存与寄存器、汇编器和 ISO 构建器等接口，可选的 REST Web 服务器还能转储内存和显存。仓库另含替代 BIOS OpenBIOS、PS-EXE 转换与打包工具、Psy-Q 目标文件转换器、用于与模拟器交换符号和覆盖段的 Ghidra 脚本，以及 PS1 硬件设计。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/pcsx-redux/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/pcsx-redux/)
 
 - [**Il2CppInspector Unity IL2CPP 静态分析工具**](https://github.com/djkaty/Il2CppInspector)
 
   面向 Unity IL2CPP 应用的静态分析工具：读取 IL2CPP 二进制及其 global-metadata.dat，将应用的类型结构和方法地址输出为 C# 存根代码、供 ILSpy 和 dnSpy 等反编译器使用的 .NET 程序集垫片 DLL、为 IDA 和 Ghidra 套用符号与类型的 Python 脚本、C++ 类型脚手架以及 JSON 地址映射。三套 API（另以 NuGet 包发布）和插件 SDK 开放二进制元数据、.NET 类型模型和 C++ 模型，供自定义分析使用。README 说明它不是反编译器，不会还原方法源码。
 
-  工具 · 也适用：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/il2cppinspector/)
+  工具 · 也适用：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/il2cppinspector/)
 
 - [**MelonLoader Unity 游戏模组加载器**](https://github.com/LavaGang/MelonLoader)
 
   面向 Mono 和 IL2CPP 两种运行时 Unity 游戏的模组加载器，从本地安装游戏目录中的文件夹加载插件和模组；在 Windows 上通过代理 DLL（默认为 version.dll）随游戏一同启动。对于 IL2CPP 游戏，其程序集生成器会调用 Cpp2IL 和 Il2CppInterop 生成托管互操作程序集，并随附 HarmonyX 与 MonoMod 用于运行时修补。其日志可捕获 Unity 播放器输出与 Harmony 消息，调试选项还为 Mono 游戏提供 Mono 调试服务器，为 IL2CPP 游戏提供等待调试器附加的选项。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/melonloader/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/melonloader/)
 
 - [**BepInEx Unity/.NET 游戏插件与修补框架**](https://github.com/BepInEx/BepInEx)
 
   面向 Unity Mono、Unity IL2CPP 以及 XNA、FNA、MonoGame 等 .NET Framework 游戏的插件与修补框架，可将模组和分析插件加载到本地安装的游戏中。插件借助随附的 HarmonyX 和 MonoMod.RuntimeDetour 在运行时修补方法，预加载修补器则在游戏加载托管程序集之前用 Mono.Cecil 改写它们；在 IL2CPP 游戏上，它会调用 Cpp2IL 和 Il2CppInterop，从游戏二进制和 global-metadata.dat 生成互操作程序集。其指南还介绍了配置、日志，以及用 dnSpy 调试插件和游戏程序集。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/bepinex/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/bepinex/)
 
 - [**ReXGlue Xbox 360 静态重编译 SDK**](https://github.com/rexglue/rexglue-sdk)
 
   实验性 SDK，可将 Xbox 360 可执行文件静态重编译为可移植的 C++23 代码，在 Windows、Linux 和 macOS 上原生运行。其 rexglue 命令行工具为单个游戏搭建 CMake 项目，并根据 TOML 配置分析 XEX 二进制（导入解析、PDATA、基本块发现、空隙填充、跳转解析和调用目标校验），再将每条 PowerPC 指令翻译为 C++；生成的代码由派生自 Xenia 模拟器核心的运行时承载，图形后端为 D3D12 或 Vulkan。生成的函数均为弱别名，可用原生 C++ 覆盖或在函数内插入钩子来替换，从而逐个函数完善移植。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rexglue-sdk/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rexglue-sdk/)
 
 - [**ps3recomp PS3 静态重编译工具包**](https://github.com/sp00nznet/ps3recomp)
 
   用于将 PlayStation 3 游戏静态重编译为原生可执行文件的工具包与运行时。Python 工具解析 PS3 ELF 和 PRX 文件，识别函数与固件导入，并将 PPU 和 SPU 代码提升为 C/C++；项目模板再将这些代码与 C/C++ 运行时链接，由运行时提供 LV2 系统调用、系统库的高层仿真，以及转换到 Direct3D 12、Metal 或 Vulkan 的 RSX 图形层。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ps3recomp/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ps3recomp/)
 
 - [**Nebula（NebulaFD）Clickteam Fusion 反编译器**](https://github.com/AITYunivers/NebulaFD)
 
   面向 Clickteam Fusion 2.5 游戏的反编译器，仍在开发中，也针对更早的 Multimedia Fusion 1.5 文件做了修复。其 .NET 控制台程序可读取 Windows 可执行文件、Android APK、iOS IPA、CCN 数据文件以及现有的 MFA 项目，再运行插件式工具：MFA Parser 将游戏重新写成可编辑的 Fusion 项目，Asset Dumper 则导出图像、音效、音乐、字体、图标、着色器和打包文件。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/nebulafd/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/nebulafd/)
 
 <a id="app"></a>
 ### App · 应用
@@ -1359,193 +1359,193 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   追踪 Aegis APK 的 TOTP 计算，官方公开目标指纹与选取的调查证据。
 
-  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-aegis-case/)
+  案例 · REA 官方 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-aegis-case/)
 
 - [**Notion：追踪剪贴板桥接**](https://rea.tools/showcase/notion/)
 
   结合 REA 发现与独立源码阅读追踪剪贴板桥；动态包装器仍有明确限制。
 
-  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-notion-case/)
+  案例 · REA 官方 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-notion-case/)
 
 - [**PicoPrint：LX-D02 打印机调查**](https://github.com/bigtower17/picoprint)
 
   作者报告以 REA 开始 Android 调查，再借助独立 Hermes 工具实现 Windows BLE 打印。
 
-  案例 · 混合工具流程 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
+  案例 · 混合工具流程 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/picoprint-rea-investigation/)
 
 - [**ReaCut：视频编辑器重建案例**](https://github.com/Xiangyu-CAS/rea-capcut)
 
   独立视频编辑器，作者公开了利用 REA 研究剪映／CapCut 行为与项目格式的过程。实现包含本地时间线、FFmpeg 导出，以及实验性的有损草稿导入。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/reacut-reconstruction/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/reacut-reconstruction/)
 
 - [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble)
 
   根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/cf632ble-case/)
 
 - [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp)
 
   通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/zee-rp-case/)
 
 - [**Virtual Desktop Streamer：在 Linux 上重建平台适配层**](https://github.com/cudanexus/vd-streamer-linux)
 
   作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/vd-streamer-linux-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/vd-streamer-linux-case/)
 
 - [**Open Claude UI：基于 REA 调查的界面参考组件**](https://github.com/Caho1/open-claude-ui)
 
   发布 React 组件、动效辅助模块和设计系统笔记，作者将其归因于使用 REA 调查 Claude Desktop。它可作为界面重建案例；观察结果受版本约束，不能证明已完整复刻助手应用或后端。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-claude-ui-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/open-claude-ui-case/)
 
 - [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native)
 
   作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/plx-native-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/plx-native-case/)
 
 - [**Windows Calculator：重建百分比规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator)
 
   REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。
 
-  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-calculator-percent-case/)
 
 - [**飞书：作者报告的隔离第二应用实例**](https://benx.ai/blog/posts/rea-reverse-engineer-feishu-dual-instance/)
 
   作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/feishu-dual-instance-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/feishu-dual-instance-case/)
 
 - [**PhotoCraft：编辑流程重建与 PSD 往返边界**](https://github.com/storytold/photocraft)
 
   作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/photocraft-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/photocraft-case/)
 
 - [**WordCraft：文档流程重建与有限范围 DOCX 兼容**](https://github.com/storytold/wordcraft)
 
   作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wordcraft-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/wordcraft-case/)
 
 - [**GridCraft：电子表格流程重建与 XLSX 往返边界**](https://github.com/storytold/gridcraft)
 
   作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gridcraft-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/gridcraft-case/)
 
 - [**DeckCraft：演示文稿流程重建与有限范围 PPTX 交换**](https://github.com/storytold/deckcraft)
 
   作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/deckcraft-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/deckcraft-case/)
 
 - [**Ledger Reborn：基于 QuickBooks 研究的独立记账实现**](https://github.com/lxistired/ledger-reborn)
 
   维护者报告使用 REA 与 Ghidra 研究 QuickBooks Desktop for Mac 的选定行为，随后独立实现本地记账应用。Python／SQLite 引擎持久保存复式分录、发票、库存和付款；公开合成样例检查有限范围的记账与回滚行为。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/ledger-reborn-accounting-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/ledger-reborn-accounting-case/)
 
 - [**Pocket Tasks：重建任务状态与持久保存行为**](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/tree/main/evals/reference/reconstruction)
 
   此教学案例明确披露作者先前接触过源码，将一次 REA 辅助的小型命令行应用调查推进为另行编写的 Node 实现。它保留所观察到的任务编辑、持久保存及选择行为，再将限定范围的输出与固定期望值及捕获的参考会话比较。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/pocket-tasks-reconstruction-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/pocket-tasks-reconstruction-case/)
 
 - [**Open Scrantic：重建 Johnny Castaway 屏幕保护程序引擎**](https://github.com/glauberlima/open-scrantic)
 
   以 Rust 重建 Johnny Castaway 屏幕保护程序引擎，作者明确披露使用 REA 与 Claude Code。它读取原始文件，在现代桌面上运行恢复的动画脚本及按日历推进的故事状态；文档保留实现差异与有限测试范围，未确立完整行为等价。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-scrantic-screensaver-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/open-scrantic-screensaver-case/)
 
 - [**Screen Studio：作者报告的 REA 自动缩放规则研究**](https://x.com/i/article/2109834677343432704)
 
   作者报告借助 REA 梳理 Screen Studio 的 Electron 安装包，在 Claude Code 协助下从混淆代码中读出六条自动缩放与光标规则，再让 Claude Code 依据这些规则编写独立的录屏和渲染程序。文章介绍了所用命令、证据、光标对齐检查以及复刻版的不足；复刻版和解出的代码均未公开。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/screen-studio-auto-zoom-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/screen-studio-auto-zoom-case/)
 
 - [**Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现**](https://github.com/Henry-fan88/claude-code-background)
 
   将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近，但不是逐像素一致的提取。
 
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)
+  案例 · 混合工具流程 · [使用条件与局限](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)
 
 - [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume)
 
   根据实测 USB 音量行为，通过 macOS 音频代理将音量键映射到 KEF LSX II 的局域网控制。项目报告音量步进更均匀，同时转发 USB 音频；扬声器固件未修改。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/kef-lsx-volume-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/kef-lsx-volume-case/)
 
 - [**Linux 上的 UU 远程：非官方协议实现**](https://github.com/VallierDev/uu-remote-linux)
 
   实现网易 UU 远程的非官方原生 Linux 被控端；维护者称协议行为来自对官方客户端流量及已发布程序的调查。Rust 实现将选定的桌面、输入和辅助工具通道连接到 Linux 服务，另有仍处于实验阶段的 Linux 控制端。作者将开发归因于 Claude 与 Codex，未确立 REA 使用。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/uu-remote-linux-protocol-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/uu-remote-linux-protocol-case/)
 
 - [**TCLimate：重建选定的 TCL Home 云端控制**](https://github.com/umarz317/TCLimate)
 
   在原生 macOS 菜单栏应用中实现选定的 TCL Home 空调控制与用电量报告。项目改编既有社区协议实现，并记录通过调查 Android 模块恢复另一条统计请求的过程。报告的验证检查云端状态，不等于独立核实设备实际运行或完整设备等价性。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/tclimate-cloud-controls-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/tclimate-cloud-controls-case/)
 
 - [**Browserbase 插件：将 Claude in Chrome 浏览器桥接转接到云端**](https://github.com/browserbase/claude-code-plugin)
 
   在 Claude Code 本地浏览器桥接中替代 Claude in Chrome 扩展一端，把请求的操作交给 Browserbase 云端浏览器执行。作者的帖子串描述了逆向得到的消息格式，即每条 JSON 工具调用前加 4 字节小端长度；插件则将 17 个具名工具映射为 Stagehand／CDP 操作。这是已归档的互操作适配层，部分工具仅为占位实现，并非恢复出的 Anthropic 代码，也未经验证与扩展等价。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/browserbase-claude-chrome-bridge-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/browserbase-claude-chrome-bridge-case/)
 
 - [**Visor：独立的 Ray-Ban Meta 眼镜客户端**](https://github.com/macedonga/visor)
 
   实现可替代 Meta AI 配套应用的 Android 客户端：直接使用 Ray-Ban Meta 眼镜自有的蓝牙与 Wi-Fi Direct 协议，导入媒体、提供设置，并用用户选择的模型回应“Hey Meta”。项目 wiki 记录了链路分层、加密、服务及 Meta 端的所有权流程，并列出 153 个未解问题。项目以实机试用代替测试套件，因此所述型号和固件之外的行为仍未经验证。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/visor-ray-ban-meta-client-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/visor-ray-ban-meta-client-case/)
 
 - [**wine-uwp：在修改版 Wine 上运行打包的 Windows 商店应用**](https://github.com/designgears/wine-uwp)
 
   扩展 Wine 11.17，使已签名的 MSIX 商店应用（主要目标为 Shapr3D）无需源码或符号即可在 Linux 上安装运行。约 49,000 行改动新增了 DirectComposition 实现、合成交换链和应用模型宿主；微软自己的 XAML 与应用模型 DLL 则在使用者机器上从 Windows 11 镜像中提取后原样运行。作者称大部分逆向工程和代码由 Claude 完成；各应用支持程度不一，由项目回归测试检查。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wine-uwp-store-apps-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/wine-uwp-store-apps-case/)
 
 - [**RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据**](https://github.com/sam-dumont/rkd-telemetry-extractor)
 
   记录 Race-Keeper “Instant Video” 记录仪所写的专有 .rkd 遥测格式（随附播放器仅支持 Windows），并以结果一致的 Python 与 Go 解析器把 GPS 和 IMU 通道导出为 Telemetry Overlay CSV 与 GPX。作者称十六进制分析和假设检验由 Claude Code 协助完成，并以已知车辆编号、赛道位置和车速作为锚点。字段含义依据作者自有录制数据的物理交叉核对得出，若干记录类型仍未完全解读。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rkd-telemetry-extractor-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/rkd-telemetry-extractor-case/)
 
 - [**Elgato HDR：为 Elgato 4K X 的 10 位模式提供用户态采集通路**](https://github.com/talkaboutdesign/elgato-hdr)
 
   一款原生 macOS 应用，用于获取 Elgato 4K X 采集卡的 10 位 P010 视频模式；项目称苹果内置的摄像头驱动不会向应用开放该模式。一个 root 权限辅助程序卸下该驱动，通过 libusb 直接执行采集卡的 USB 视频类（UVC）串流，为 Metal HDR 预览、HDR10 录制和编辑器提供画面。延迟数据和设备覆盖范围仍为作者报告。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/elgato-hdr-uvc-capture-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/elgato-hdr-uvc-capture-case/)
 
 - [**LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器**](https://github.com/gabrielgreco1/LGwebOS-menubar)
 
   一款原生 macOS 菜单栏应用，通过 LG webOS 电视在局域网内的加密 WebSocket 接口完成配对，可启动应用、切换输入源、调节音量和画面设置、发送指针输入并投放所选媒体。项目称 webOS 协议行为参考了公开的 Connect SDK，并沿用 PyWebOSTV 的注册清单。测试仅覆盖一台 webOS 5.0 电视。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lgwebos-menubar-remote-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/lgwebos-menubar-remote-case/)
 
 - [**Galaxy Buds Client：基于三星耳机协议的非官方管理器**](https://github.com/timschneeb/GalaxyBudsClient)
 
   在跨平台桌面与 Android 管理器中，通过三星 Galaxy Buds 专有的 RFCOMM 串口协议重新实现耳机控制。作者称通过分析耳机发出的二进制数据流并反汇编三星官方 Android 应用来恢复报文格式，并公开了 2019 款 Buds 和 Buds+ 的部分数据包笔记。除官方应用的设置外，它还提供电池统计、诊断、出厂自检、隐藏调试信息，以及适用型号的固件刷写。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
 
 - [**Wino Mail：重建 Windows 邮件与日历体验**](https://github.com/bkaankose/Wino-Mail)
 
   原生 Windows 客户端，以重建 Windows 邮件与日历的功能、保留熟悉的使用体验为目标。上游 README 说明了 WinUI 3 界面、邮件与日历服务、联系人、待办及离线工作流。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wino-mail-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/wino-mail-case/)
 
 - [**ScooterLink：重建 Honda RoadSync 车把按键协议**](https://github.com/gdorgian/ScooterLink)
 
   以一个 iOS 应用替代 Honda RoadSync 仅支持 Apple Music 的媒体控制：通过低功耗蓝牙与 Honda PCX 2025 的 TFT 仪表配对，把车把按键转换为对任意播放器生效的系统级命令。作者记录了仪表的 BLE 服务、密钥交换、按键注册与事件字节，据称依据官方 Android 应用及通信日志推断得出。结果为作者在一台 PCX125 上的报告，协议说明区分了已确认与未验证的部分。
 
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/scooterlink-honda-roadsync-case/)
+  案例 · 独立重建 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/scooterlink-honda-roadsync-case/)
 
 #### 工具、项目与集成
 
@@ -1553,241 +1553,241 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   结合 JADX 插件与 Python MCP 服务，读取 Android 反编译代码、资源、交叉引用和调试上下文。
 
-  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
+  集成 · 独立 MCP · [使用条件与局限](https://awesomerea.org/zh/resources/jadx-ai-mcp/)
 
 - [**apktool-mcp-server Apktool MCP 服务**](https://github.com/zinja-coder/apktool-mcp-server)
 
   基于 Python 的 MCP 服务，调用本地安装的 Apktool，使智能体能够解码 APK，列出、读取、搜索和修改 smali 与资源文件，读取 AndroidManifest.xml 与 apktool.yml，并重新构建项目。
 
-  集成 · 独立 MCP · [使用条件与证据](https://awesomerea.org/zh/resources/apktool-mcp-server/)
+  集成 · 独立 MCP · [使用条件与局限](https://awesomerea.org/zh/resources/apktool-mcp-server/)
 
 - [**frida-mcp (yfe404)**](https://github.com/yfe404/frida-mcp)
 
   Frida MCP 服务，提供持久插桩会话、运行时检查和 Android 静态代码与动态现场之间的导航。
 
-  集成 · 独立 MCP · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
+  集成 · 独立 MCP · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/frida-mcp-yfe404/)
 
 - [**Super Trouper**](https://github.com/crissyfield/super-trouper)
 
   单个可执行文件形式的 Frida MCP 服务，用于发现设备、管理进程会话和加载插桩脚本。
 
-  集成 · 独立 MCP · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/super-trouper/)
+  集成 · 独立 MCP · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/super-trouper/)
 
 - [**Frida**](https://github.com/frida/frida)
 
   动态插桩工具，用脚本观察和分析运行中的原生及托管进程行为。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/frida/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/frida/)
 
 - [**JADX**](https://github.com/skylot/jadx)
 
   将 Dex 反编译为 Java 的 CLI/GUI 工具，提供 Android 资源解码、代码导航和引用搜索。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/jadx/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/jadx/)
 
 - [**Apktool**](https://github.com/iBotPeaches/Apktool)
 
   将 Android 资源与 smali 解码为项目目录，并支持重新构建修改后的安装包。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apktool/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/apktool/)
 
 - [**Androguard**](https://github.com/androguard/androguard)
 
   用于 APK/DEX 元数据、字节码及引用分析的 Python 工具集；v5 源码分支还提供智能体技能和 MCP 文档。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/androguard/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/androguard/)
 
 - [**ILSpy**](https://github.com/icsharpcode/ILSpy)
 
   .NET 程序集浏览器与 C# 反编译器，支持完整项目导出、元数据检查和命令行处理。
 
-  工具 · .NET · [使用条件与证据](https://awesomerea.org/zh/resources/ilspy/)
+  工具 · .NET · [使用条件与局限](https://awesomerea.org/zh/resources/ilspy/)
 
 - [**dnSpyEx**](https://github.com/dnSpyEx/dnSpy)
 
   dnSpy 的社区延续项目，可在没有原始源码时调试和编辑 .NET 程序集。
 
-  工具 · .NET · [使用条件与证据](https://awesomerea.org/zh/resources/dnspyex/)
+  工具 · .NET · [使用条件与局限](https://awesomerea.org/zh/resources/dnspyex/)
 
 - [**<span>@</span>electron/asar**](https://github.com/electron/asar)
 
   Electron 官方归档工具，可列出和提取 ASAR 内容，便于检查打包后的 JavaScript 与应用资源。
 
-  工具 · 也适用：网站 · [使用条件与证据](https://awesomerea.org/zh/resources/electron-asar/)
+  工具 · 也适用：网站 · [使用条件与局限](https://awesomerea.org/zh/resources/electron-asar/)
 
 - [**Mobile Security Framework（MobSF）**](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
 
   通过 Web 界面与 API 检查移动应用包，结合静态分析及受支持设备上的动态测试，分析运行时行为与网络流量。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/mobsf/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/mobsf/)
 
 - [**objection**](https://github.com/sensepost/objection)
 
   通过基于 Frida 的命令界面探索运行中的 Android 与 iOS 应用，检查应用存储、内存、运行时对象和插桩后的行为。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/objection/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/objection/)
 
 - [**Grapefruit 移动应用动态插桩工具**](https://github.com/ChiChou/grapefruit)
 
   通过基于 Frida 的 Web 界面检查并 Hook 运行中的 iOS 与 Android 应用，提供方法与加密 API 拦截、文件系统与 SQLite 浏览、iOS 钥匙串与界面层级查看，以及常见网络库的 HTTP 流量捕获。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/grapefruit/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/grapefruit/)
 
 - [**Blutter**](https://github.com/worawit/blutter)
 
   利用匹配的 Dart 运行时分析 Flutter Android ARM64 AOT 二进制，生成带符号的汇编、对象池转储及面向目标的 Frida 脚本模板，辅助研究编译后的 Dart 应用逻辑。
 
-  工具 · Android · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/blutter/)
+  工具 · Android · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/blutter/)
 
 - [**hermes-dec**](https://github.com/P1sec/hermes-dec)
 
   解析、反汇编并部分反编译 React Native 的 Hermes 字节码包，展示 HBC 文件头和指令，并生成伪代码以帮助理解编译后的应用逻辑。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-dec/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/hermes-dec/)
 
 - [**Recaf 字节码分析与编辑工具**](https://github.com/Col-E/Recaf)
 
   通过集成反编译器、字节码汇编、引用搜索、映射与去混淆工具检查和修改已编译的 JVM 应用；所审阅的 4.0 预览版还提供基础的只读 Android 字节码分析。
 
-  工具 · JVM · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/recaf/)
+  工具 · JVM · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/recaf/)
 
 - [**nibkit 原生界面结构分析工具**](https://github.com/tokenbleed/nibkit)
 
   将已编译的 iOS/macOS 界面归档解码为对象树、Outlet／Action 连接、自定义类及导航关系，可导出 JSON 或 Mermaid 图，并通过 MCP 提供只读检查命令。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/nibkit/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/nibkit/)
 
 - [**AOTopsy Flutter/Dart 静态分析工具**](https://github.com/BroNils/aotopsy)
 
   静态检查 Flutter/Dart AOT libapp.so 文件，恢复可用元数据、类结构、调用关系及伪代码，无需嵌入 Dart VM 或编译匹配的 SDK，提供 ARM64 与 x86\_64 分析路径。
 
-  工具 · Android · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/aotopsy/)
+  工具 · Android · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/aotopsy/)
 
 - [**hbctool Hermes 字节码汇编与反汇编工具**](https://github.com/bongtrop/hbctool)
 
   通过 HASM 文件反汇编和重新汇编受支持的 React Native Hermes 字节码包，为明确支持的旧版 HBC 提供字节码检查与修改能力。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hbctool/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/hbctool/)
 
 - [**Vineflower Java 反编译器**](https://github.com/Vineflower/vineflower)
 
   源自 Fernflower 的 Java 及其他 JVM 语言反编译器，延续了 ForgeFlower、Fabric 和 Quiltflower 等分支的工作，注重输出质量和对现代 Java 的支持，包括 Java 21+ 的记录、密封类、switch 表达式和模式匹配。其命令行接受 JAR、ZIP、文件夹或 class 文件，可输出到文件夹、归档或控制台，支持多线程反编译和自动格式化。它也可作为 Maven Central 上的库嵌入使用，或通过替换 Fernflower 的插件在 IntelliJ IDEA 中使用；常规发布 JAR 内置三个插件，包括 Kotlin 支持和变量重命名。
 
-  工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/vineflower/)
+  工具 · JVM · [使用条件与局限](https://awesomerea.org/zh/resources/vineflower/)
 
 - [**Droid ASC Android 反编译器**](https://github.com/MG1937/ASC)
 
   用 Python 编写的 Android 反编译器，直接对 APK 执行查询，而不必先解包并建立索引。它在压缩的 DEX 条目中就地探测数据，利用 R8 编译器的常量重定位和指令去重所留下的布局，跨 DEX 文件搜索字符串、类型、方法和字段引用；对指定的类，则在内存中重建一个最小且自洽的 DEX，再由内置的 Androguard 反编译器副本转换为 Java 代码。droidasc 命令行和 Tk 图形界面可列出类、反编译单个类、解码 AndroidManifest.xml，并查找子类或接口实现；README 将其定位为供智能体批量分析 APK 的轻量后端。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/droid-asc/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/droid-asc/)
 
 - [**APKEditor**](https://github.com/REAndroid/APKEditor)
 
   基于 ARSCLib 的命令行 APK 编辑器，不依赖 aapt 与 aapt2，可将 APK 的二进制资源与 DEX 解码为可编辑的 JSON、XML 或 smali 并重新构建安装包。还能合并 XAPK、APKM、APKS 等分包，还原被混淆的资源名称，并打印包信息。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apkeditor/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/apkeditor/)
 
 - [**jnitrace**](https://github.com/chame1eon/jnitrace)
 
   基于 Frida 的动态分析工具，用于跟踪 Android 应用对 JNI API 的调用，类似 frida-trace 或 strace，但面向 Java 本地接口。它记录原生库通过 JNIEnv 与 JavaVM 结构发起的 JNI 调用，支持包含/排除过滤、回溯以及可选的 JSON 输出以便后续处理。其跟踪引擎另以 jnitrace-engine 库形式单独发布。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/jnitrace/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/jnitrace/)
 
 - [**AsmResolver PE 与 .NET 模块编辑库**](https://github.com/Washi1337/AsmResolver)
 
   用于读取、修改和重建 PE（可移植可执行）文件的 C# 库，既支持 Windows 原生映像，也支持带 .NET 元数据的映像。它提供三个抽象层次：原始文件头和节区（PEFile）；导入、导出、TLS、异常、调试信息和 Win32 资源等数据目录的解析结果（PEImage）；以及类似 System.Reflection 的 .NET 程序集和模块模型，涵盖托管、原生和动态方法体。它还能从 AppHost／单文件捆绑包中提取文件，支持 ReadyToRun 映像，无需 DIA 即可读取 PDB 和 Portable PDB 符号；上游的设计目标是在面对格式异常或经过混淆的二进制时保持稳健。
 
-  工具 · .NET · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/asmresolver/)
+  工具 · .NET · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/asmresolver/)
 
 - [**CodemerxDecompile .NET 反编译器**](https://github.com/codemerx/CodemerxDecompile)
 
   由 JustDecompile 原班开发者维护的跨平台桌面 .NET 反编译器，是其 JustDecompile 引擎的延续，基于 Mono.Cecil 并采用 Avalonia 界面。它把程序集加载为由命名空间、类型、成员和已解析引用组成的树，以 C#、VB.NET 或 IL 显示反编译结果，支持转到定义和前进／后退导航，并可搜索名称、类型、字符串字面量和指令。“创建项目”命令可将程序集导出为 Visual Studio 2015、2017 或 2019 项目。
 
-  工具 · .NET · [使用条件与证据](https://awesomerea.org/zh/resources/codemerxdecompile/)
+  工具 · .NET · [使用条件与局限](https://awesomerea.org/zh/resources/codemerxdecompile/)
 
 - [**wxapkg 微信小程序解包工具**](https://github.com/wux1an/wxapkg)
 
   基于 Wails 构建的 Windows 与 macOS 桌面图形工具，用于解包微信小程序 .wxapkg 包以供研究。它会扫描本机微信 3.x 和 4.x 安装中的小程序包目录（包括各用户目录），也可处理用户选定的文件或目录；PC 客户端以加密形式存储的包会先行解密。包内每个文件都按其记录的路径写出，并可选择美化 JSON、HTML 和 JavaScript 代码。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/wux1an-wxapkg/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/wux1an-wxapkg/)
 
 - [**React Native 反编译器**](https://github.com/numandev1/react-native-decompiler)
 
   处于 Alpha 阶段的 Node.js 命令行工具，可把 React Native 的 JavaScript 包（index.android.bundle 或 main.jsbundle）、未打包应用的 js-modules 目录，或 Webpack 入口包与分块包拆分为每个模块一个、便于阅读的文件。基于 Babel AST 的标注器、编辑器和反编译器插件会消除 Babel 辅助函数、逗号运算符链和缩写布尔值等编译痕迹，把元素创建调用还原为 JSX，并可将模块改写为 ES6 import／export 形式，最后用 ESLint 和 Prettier 整理输出。被识别为 npm 包的模块默认跳过，也可指定一个模块 ID，只输出该模块及其依赖。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/react-native-decompiler/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/react-native-decompiler/)
 
 - [**hermes-decomp Hermes 字节码反编译器**](https://github.com/SymbioticSec/hermes-decomp)
 
   面向 Hermes 字节码（.hbc）的 Rust 反编译与分析工具包；.hbc 是 React Native 应用为 Hermes 引擎打包的编译格式，README 列出支持 HBC 40 至 99 版本。其 hermes-decomp 命令行可显示文件信息、反汇编，并将整个包或单个函数反编译为 JavaScript，较慢的深度模式还能恢复更多名称；此外提供终端界面、交叉引用、调用图、控制流图、Metro 模块与闭包视图以及字节码差异比较。独立的 hermes-mcp 服务器将读取和分析功能作为 MCP 工具提供，hbc-decomp crate 则以 Rust 库的形式提供这些功能。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-decomp/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/hermes-decomp/)
 
 - [**MEDUSA**](https://github.com/Ch0pin/medusa)
 
   基于 Frida 的模块化框架，用于对分析者有权测试的 Android 与 iOS 应用进行运行时分析。通过单个协调脚本加载插件模块，检查网络与 WebView 活动、跟踪 API 调用、查看内存与加密操作、监控恶意软件行为，并处理 SSL 固定等保护。README 称其内置 90 多个可复用模块。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/medusa-framework/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/medusa-framework/)
 
 - [**Android Unpinner**](https://github.com/mitmproxy/android-unpinner)
 
   来自 mitmproxy 项目的工具，可在无需 root 的情况下移除使用者拥有或有权测试的 Android APK 的证书固定。它将应用标记为可调试（仅改动 AndroidManifest.xml），并通过 ADB 注入 Frida Gadget，复用 HTTP Toolkit 的解固定脚本，使检查代理能够读取应用流量。工具自带所需的 Android SDK 辅助程序，并可处理以 XAPK 形式提供的分包。
 
-  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/android-unpinner/)
+  工具 · Android · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/android-unpinner/)
 
 - [**apk-mitm**](https://github.com/niklashigi/apk-mitm)
 
   命令行工具，为使用者拥有或有权测试的 Android APK 准备 HTTPS 流量检查。它用 Apktool 解码安装包、调整网络安全配置以信任用户添加的证书、关闭证书固定，再重新编码并签名修补后的 APK，使代理无需 root 设备即可读取应用流量。也支持以 .xapk 或 .apks 形式提供的应用捆绑包。
 
-  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/apk-mitm/)
+  工具 · Android · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/apk-mitm/)
 
 - [**Frida 移动端拦截脚本**](https://github.com/httptoolkit/frida-interception-and-unpinning)
 
   来自 HTTP Toolkit 的一组 Frida 脚本，用于在分析自有或经授权测试的应用时检查移动应用的 HTTPS 流量。将其注入运行中的 Android 或 iOS 应用后，可把连接重定向到检查代理、将用户提供的 CA 证书加入信任库，并关闭证书固定与证书透明度检查，使代理能够读取流量。各脚本也可单独使用以挂钩特定行为。
 
-  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/frida-interception-and-unpinning/)
+  工具 · Android · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/frida-interception-and-unpinning/)
 
 - [**reFlutter**](https://github.com/Impact-I/reFlutter)
 
   面向分析者有权检查的应用的 Flutter 逆向框架。它通过替换为预编译的已打补丁 Dart 引擎（repack 模式）或在运行时插桩应用自带引擎（attach 模式），导出包含每个函数名称、类、库以及其在 Dart 指令镜像中代码偏移的 JSONL 清单，供 Frida 或 IDA/Ghidra 使用。它还能在关闭 Flutter 证书固定的情况下，将应用的 HTTPS 流量路由到检查代理。
 
-  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/reflutter/)
+  工具 · Android · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/reflutter/)
 
 - [**ddc Android DEX 反编译器**](https://github.com/ejfkdev/ddc)
 
   用 Rust 编写的反编译器，可将 APK、多 DEX 应用以及 XAPK/APKS/APKM 容器中 035 至 041 版本的 Android DEX 字节码转换为 Java，把 lambda 和字符串拼接还原为 Java 语法，并按 jadx 的风格为局部变量命名。默认情况下，每个文件还会经过一道据称保持语义的源码级整理，内联拷贝链、恢复三元表达式和 for-each 循环并删除无用赋值；--fast 可跳过这一步。除完整反编译外，15 个查询子命令可按需返回应用与清单信息、资源、字符串、交叉引用、类层次结构、反汇编以及单个类或方法，同样的查询也可通过 REST 和 MCP 提供。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/ddc/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/ddc/)
 
 - [**Simplify Android 反混淆工具**](https://github.com/CalebFenton/simplify)
 
   基于 smalivm 的通用 Android 反混淆工具。smalivm 是一个沙箱化的 Dalvik 虚拟机，会逐个执行方法并记录所有执行路径上可能的寄存器与类取值；遇到文件或网络输入等未知值时，两个分支都会执行。Simplify 随后对 APK 或 DEX 反复进行常量传播、死代码删除、反射还原和窥孔优化，可在保持行为不变的前提下解密字符串、去除反射；它不会重命名类或方法。smalivm 也可作为库使用，最新发布版还附带基于它的单步 Smali 调试器 sdbg。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)
 
 - [**GDA Android 反编译器**](https://github.com/charles2gan/GDA-android-reversing-Tool)
 
   以 C++ 编写、原生运行于 Windows 的 Dalvik 反编译器与 Android 分析工作台，无需安装即可打开 APK、DEX、ODEX、OAT、JAR、AAR 和 class 文件。除带交叉引用、重命名和注释的 Java 与 Smali 视图外，它还能识别加固壳、反混淆并解密字符串、追踪数据流与污点、求解路径，运行基于规则的恶意行为、漏洞和隐私泄露扫描，并可转储设备内存或用 Frida 钩挂方法。Shell 与服务器两种命令行模式、Python 和 Java 脚本以及一个恶意软件分诊智能体技能示例，让脚本和智能体也能调用这些分析功能。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/gda-android-decompiler/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/gda-android-decompiler/)
 
 - [**APKLab Android 逆向工作台**](https://github.com/APKLab/APKLab)
 
   把 VS Code 变成 Android 逆向工作台的扩展，整合 Apktool、Jadx、smali-lsp 和 uber-apk-signer。它可将 APK 解码为资源文件和 Smali 并反编译为 Java，借助语言服务器为 Smali 提供定义跳转、引用查找和诊断，还能重新构建、签名并安装修改后的应用。此外，它可为 Smali 方法生成 Frida 钩子、加入 Frida gadget、借助 apk-mitm 为 HTTPS 流量检查做准备，并生成 Quark-Engine 恶意软件分析报告。
 
-  工具 · Android · [使用条件与证据](https://awesomerea.org/zh/resources/apklab/)
+  工具 · Android · [使用条件与局限](https://awesomerea.org/zh/resources/apklab/)
 
 - [**Fernflower Java 反编译器**](https://github.com/JetBrains/fernflower)
 
   JetBrains 的分析型反编译器，可将 Java class 文件还原为 Java 源码；IntelliJ IDEA 内置了它，用于在调试或浏览 class 文件时显示代码。独立的控制台反编译器接受 class 文件、JAR、ZIP 或目录，可通过 -e 加载仅作为分析上下文的库文件，并将 Java 源码写入输出目录。选项涵盖泛型签名、lambda、内部类、记录模式与 switch 模式、单个方法的处理时限，以及对含糊或混淆标识符的重命名，也可由使用者提供的重命名类来实现。
 
-  工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/fernflower/)
+  工具 · JVM · [使用条件与局限](https://awesomerea.org/zh/resources/fernflower/)
 
 - [**Bytecode Viewer Java/Android 逆向工程套件**](https://github.com/Konloch/bytecode-viewer)
 
   用于检查已编译 Java 与 Android 程序的桌面套件：拖入 class、JAR、WAR、APK、DEX、XAPK 或 APKM 文件即可浏览其中的类和资源，并可并排显示最多三个反编译器或反汇编器视图。README 列出六个内置 Java 反编译器（Krakatau、CFR、Procyon、FernFlower、JADX 和 JD-GUI）、Krakatau 与 Smali/baksmali 反汇编器和汇编器以及 javap，还有用于 APK/DEX 转换的 Dex2Jar 和 Enjarify、用于编辑的内置 Java 编译器和静态搜索。Java 和 JavaScript 插件会收到全部已加载类的 ASM ClassNode，可用于字符串去混淆或恶意代码搜索等任务。
 
-  工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/bytecode-viewer/)
+  工具 · JVM · [使用条件与局限](https://awesomerea.org/zh/resources/bytecode-viewer/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
@@ -1800,7 +1800,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   官方教育 CTF 案例：从检查函数得到方程，并记录原程序验证过程。
 
-  案例 · REA 官方 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ctf-case/)
+  案例 · REA 官方 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-ctf-case/)
 
 #### 工具、项目与集成
 
@@ -1808,373 +1808,373 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   开源二进制分析套件，提供反汇编、反编译、图形分析及 Java/Python 自动化接口。
 
-  工具 · 也适用：游戏、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra/)
+  工具 · 也适用：游戏、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidra/)
 
 - [**radare2**](https://github.com/radareorg/radare2)
 
   可脚本化的命令行逆向框架，支持多架构二进制检查、反汇编、调试和修改。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/radare2/)
 
 - [**Cutter**](https://github.com/rizinorg/cutter)
 
   基于 Rizin 的图形逆向工作台，提供可扩展视图及 Ghidra 反编译器集成。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/cutter/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/cutter/)
 
 - [**Qiling**](https://github.com/qilingframework/qiling)
 
   在 CPU 仿真之上补充操作系统、文件系统和 API 行为的 Python 框架，用于可插桩的二进制分析。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/qiling/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/qiling/)
 
 - [**Unicorn Engine**](https://github.com/unicorn-engine/unicorn)
 
   多架构 CPU 仿真引擎，可控制寄存器、内存和钩子，执行选定的指令片段。
 
-  工具 · 程序库 · 也适用：游戏、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/unicorn/)
+  工具 · 程序库 · 也适用：游戏、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/unicorn/)
 
 - [**angr**](https://github.com/angr/angr)
 
   结合控制流恢复、符号执行、数据流分析和反编译的 Python 二进制分析框架。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/angr/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/angr/)
 
 - [**LIEF**](https://github.com/lief-project/LIEF)
 
   对 ELF、PE、Mach-O 等可执行文件格式进行结构化解析与修改的库。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/lief/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/lief/)
 
 - [**Capstone**](https://github.com/capstone-engine/capstone)
 
   提供统一 API 和指令细节的多架构反汇编库，适合构建自定义二进制分析流程。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/capstone/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/capstone/)
 
 - [**ImHex**](https://github.com/WerWolv/ImHex)
 
   带二进制模式语言、结构化数据检查及可视化功能的十六进制编辑器，适合理解文件格式。
 
-  工具 · 也适用：游戏、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/imhex/)
+  工具 · 也适用：游戏、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/imhex/)
 
 - [**x64dbg**](https://github.com/x64dbg/x64dbg)
 
   Windows 二进制调试器，通过反汇编、内存视图和插件分析没有源码的程序。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/x64dbg/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/x64dbg/)
 
 - [**GDB**](https://sourceware.org/gdb/)
 
   支持本地与远程调试，可控制执行并检查运行中或崩溃后的程序状态。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/gdb/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/gdb/)
 
 - [**rr**](https://github.com/rr-debugger/rr)
 
   记录进程执行并在 GDB 下重放，便于重复检查现场和反向执行。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rr/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/rr/)
 
 - [**Diaphora**](https://github.com/joxeankoret/diaphora)
 
   基于 IDA 的二进制差异分析工具，可匹配函数并迁移名称、注释与类型信息。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/diaphora/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/diaphora/)
 
 - [**BinDiff**](https://github.com/google/bindiff)
 
   比较反汇编后的二进制文件，定位不同版本中的对应函数与代码变化。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/bindiff/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/bindiff/)
 
 - [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy)
 
   结合格式解析器、签名和可编程启发式规则进行文件识别与静态检查。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/detect-it-easy/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/detect-it-easy/)
 
 - [**r2frida**](https://github.com/nowsecure/r2frida)
 
   结合 radare2 命令与 Frida 插桩，检查桌面和移动目标中本地或远程进程的内存、符号、类及运行时调用。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/r2frida/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/r2frida/)
 
 - [**Kaitai Struct 二进制格式描述与解析工具**](https://github.com/kaitai-io/kaitai_struct)
 
   将已描述的二进制布局转换为可复用的文件与网络报文解析器；同一份 .ksy 规范可通过可视化工具检查，并编译为多种语言，便于把逆向获得的格式知识落实为可互操作的实现。
 
-  工具 · 程序库 · 也适用：固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/kaitai-struct/)
+  工具 · 程序库 · 也适用：固件、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/kaitai-struct/)
 
 - [**GoReSym Go 符号恢复工具**](https://github.com/mandiant/GoReSym)
 
   从 Go 二进制中恢复构建元数据、函数名与地址范围、源文件和行号表、内嵌类型及字符串，也可处理已剥离符号以及部分经 UPX 等脱壳后结构异常的样本。JSON 输出可借助附带的 IDAPython 脚本导入 IDA Pro。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/goresym/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/goresym/)
 
 - [**rev.ng 二进制分析框架与反编译器**](https://github.com/revng/revng)
 
   开源反编译流水线：借助 QEMU 将 x86-64、AArch64、i386、ARM 和 MIPS 代码提升为与架构无关的表示，以 LLVM 进行分析，并输出以合法、可重新编译为设计目标的 C 代码。数据布局分析可根据指针用法推断数据结构；可编辑的 YAML 模型及 Python、TypeScript 封装便于自动化。基于 VSCode 的界面是单独的产品，目前处于封闭测试阶段，并计划推出商业方案。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/revng/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/revng/)
 
 - [**Rizin 逆向工程框架**](https://github.com/rizinorg/rizin)
 
   源自 radare2 分支的命令行逆向工程框架。rizin 交互环境可分析和反汇编二进制、调试程序，并可用作可脚本化的十六进制编辑器；rz-\* 系列工具提供二进制格式信息、汇编、差异比较、哈希、模式搜索和 FLIRT 签名等功能。README 列出数十种架构、字节码格式和文件格式，从 ELF、PE、Mach-O 到 dyld 缓存和 BIOS/UEFI 镜像；可通过 rzpipe 用 Python、Rust、Go 等语言编写脚本。Cutter 是基于它的独立图形界面。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rizin/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/rizin/)
 
 - [**Decompiler Explorer 反编译器对比服务**](https://dogbolt.org)
 
   位于 dogbolt.org 的网络服务：将上传的单个小型可执行文件交给多款反编译器处理，并排显示它们输出的类 C 代码，自称“反向的 Compiler Explorer”。所固定版本的源码包含 angr、Binary Ninja、Boomerang、dewolf、Ghidra、Hex-Rays、Kuna、REC Studio、Reko、Relyze、RetDec、rev.ng 和 Snowman 的运行器，便于比较不同反编译器如何呈现同一段代码。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decompiler-explorer/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/decompiler-explorer/)
 
 - [**pwndbg GDB/LLDB 调试增强插件**](https://github.com/pwndbg/pwndbg)
 
   可加载到 GDB 中、或作为 LLDB 外层 REPL 运行的 Python 插件，使运行中程序的状态更易检查。每次停下时都会打印寄存器、栈、调用帧和带注释的反汇编等上下文，并递归解引用指针；命令涵盖内存映射、搜索、内存链式查看、堆分配器和 Go 值，还借助 Capstone/Unicorn 模拟执行指令，并可与 IDA、Binary Ninja、Ghidra 和 angr-management 反编译器集成。README 列出 Linux ELF、macOS Mach-O、QEMU 用户态／系统态以及嵌入式 Cortex-M 或 RISC-V/32 调试场景。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/pwndbg/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/pwndbg/)
 
 - [**DynamoRIO 动态二进制插桩框架**](https://github.com/DynamoRIO/dynamorio)
 
   运行时代码操作系统，用于构建在未修改程序运行期间观察或变换其任意部分的动态工具。其 API 与 IA-32/AMD64/ARM/AArch64 指令操作库允许任意修改应用指令，而不仅限于插入回调。发布包附带 drcov 代码覆盖率、drltrace 库调用跟踪、drstrace Windows 系统调用跟踪、drmemtrace 指令与内存访问跟踪以及 drdisas 反汇编器等工具。它是用于构建插桩工具的框架，与 Frida 对运行中进程编写脚本的方式不同。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dynamorio/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/dynamorio/)
 
 - [**Decompyle++（pycdc）Python 字节码反编译器**](https://github.com/zrax/pycdc)
 
   用 C++ 编写的 Python 字节码反汇编器与反编译器，目标是支持任意 Python 版本的字节码。pycdas 输出 .pyc 文件的反汇编结果，pycdc 则把重建出的 Python 源码输出到标准输出，错误信息输出到标准错误；在命令行中指定 Python 版本后，两者也能处理原始的 marshal 代码对象。源码中包含 Python 1.0 至 3.13 的操作码表。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pycdc/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/pycdc/)
 
 - [**cwe\_checker 二进制漏洞模式检查工具**](https://github.com/fkie-cad/cwe_checker)
 
   Fraunhofer FKIE 开发的静态分析工具，在二进制可执行文件（主要是 Linux 和 Unix 的 ELF 文件）中查找符合通用缺陷枚举（CWE）漏洞类别的代码路径，例如缓冲区溢出、释放后使用与重复释放、空指针解引用、格式化字符串和整数溢出。它先由 Ghidra 把二进制反汇编为统一的中间表示，再在其上运行从简单启发式到基于抽象解释的数据流分析等各类检查，因此适用于 Ghidra 支持的 CPU 架构，包括 x86、ARM、MIPS 和 PowerPC。告警以文本或 JSON 输出，随附的 Ghidra 脚本可把告警标注在反汇编中，便于人工复核。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/cwe-checker/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/cwe-checker/)
 
 - [**FLARE-VM 恶意软件分析虚拟机安装工具**](https://github.com/mandiant/flare-vm)
 
   Mandiant FLARE 团队的安装脚本，用于搭建并维护一台面向逆向工程和恶意软件分析的 Windows 虚拟机。其 PowerShell 脚本借助 Boxstarter 和 Chocolatey，从独立的 VM-Packages 软件源和 Chocolatey 社区源安装软件包；软件包可在图形界面中选择，也可通过自定义 config.xml 指定，该文件还可设置环境变量路径、任务栏布局以及安装后的注册表、服务和路径设置。所审阅的默认配置列出 137 个软件包，包括 Ghidra、IDA Free、x64dbg、dnSpyEx、capa、FLOSS、PE-sieve、FakeNet-NG 和 Wireshark；virtualbox 目录中的脚本可在 VirtualBox 中构建 FLARE-VM 和 REMnux 虚拟机，并管理和导出其快照。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/flare-vm/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/flare-vm/)
 
 - [**B2R2 二进制分析框架**](https://github.com/B2R2-org/B2R2)
 
   KAIST SoftSec 实验室开发的二进制分析框架，以 F# 编写、运行于 .NET。它可解析 ELF、PE、Mach-O 和 WebAssembly 文件，对指令进行解析、反汇编并提升为自有中间表示，还能恢复控制流图和汇编代码；README 的功能表涵盖 x86/x86-64、ARMv7/AArch64、MIPS、PowerPC、RISC-V、SPARC、S390 等指令集，以及 CIL、EVM、eBPF、WebAssembly 和 Python 字节码。其 b2r2 启动器可调用类似 readelf 的格式扫描器、线性扫描反汇编器、带 Web 图形界面的递归下降式探索工具、面向 IR 与汇编的 REPL 以及汇编器。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/b2r2/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/b2r2/)
 
 - [**rz-ghidra Rizin 的 Ghidra 反编译器插件**](https://github.com/rizinorg/rz-ghidra)
 
   Rizin 插件，内嵌 Ghidra 的 C++ 反编译器和 Sleigh 反汇编器，因此无需安装 Java 版 Ghidra。其 pdg 系列命令可反编译当前函数，也可与偏移量并排显示或以 XML、JSON 格式输出，还能把结果作为注释写回 Rizin，并列出已加载的 Sleigh 语言；配置变量可调整输出格式，也可覆盖自动检测到的 Sleigh 语言。反编译器使用 Rizin 已加载的二进制、类型和注释；另有可选插件将其接入 Cutter 图形界面。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rz-ghidra/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/rz-ghidra/)
 
 - [**dewolf 研究型反编译器**](https://github.com/fkie-cad/dewolf)
 
   由 Fraunhofer FKIE 与新加坡 DSO 国家实验室在 2019 至 2021 年合作研发的研究型反编译器，以 Binary Ninja 插件形式运行，并以 Binary Ninja 的中级中间语言（Medium Level IL）为起点。它通过预处理、SSA、数据流和控制流等阶段组成的流水线，按照 DREAM/DREAM++ 方法重建控制结构，输出类 C 代码。结果可在 Binary Ninja 的停靠窗口中查看，也可在批量场景下用 decompile.py 对整个二进制或指定函数进行反编译，并输出到终端或文件。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dewolf/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/dewolf/)
 
 - [**decomp2dbg 反编译器-调试器符号同步工具**](https://github.com/mahaloz/decomp2dbg)
 
   连通反编译器与调试器的桥接工具：通过 XML-RPC 连接，把 IDA Pro、Binary Ninja、Ghidra 或 angr-management 中的函数名、全局变量、栈变量与寄存器变量名以及反编译代码提供给 GDB。同步过来的函数和全局变量成为普通的 GDB 符号，可直接下断点和查看内存；局部变量以便利变量的形式出现，每次在断点处停下时还会打印当前地址对应的反编译代码行。它支持原生 GDB、GEF 和 pwndbg；提供共享库的加载地址范围后，也能为该库映射符号。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp2dbg/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp2dbg/)
 
 - [**E9Patch 静态二进制重写工具**](https://github.com/GJDuck/e9patch)
 
   面向 x86-64 Linux ELF 可执行文件和共享库的静态二进制重写工具，无需恢复控制流即可插入插桩代码，并生成可直接替换原文件的二进制，方法源自 PLDI 2020 论文 Binary Rewriting without Control Flow Recovery。前端 e9tool 用一套基于反汇编属性的匹配语言选择指令，再通过内置跳板、调用以 e9compile.sh 编译的 C/C++ 函数或手写的插件跳板进行修补；后端 e9patch 接收 JSON-RPC 命令，便于其他工具调用。可选模式包括借助启发式控制流恢复获得更快的重写结果，或借助 SIGILL 回退实现完全的修补覆盖。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/e9patch/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/e9patch/)
 
 - [**Rellic LLVM bitcode 转 C 反编译器**](https://github.com/lifting-bits/rellic)
 
   Trail of Bits 对 No More Gotos 论文中模式无关结构化算法的实现，可把 LLVM bitcode 转换为不含 goto 的 C 代码，定位为小巧、易于修改且能与 LLVM 和 Remill 互操作的反编译器后端。rellic-decomp 批量将 bitcode 模块转换为 C；rellic-xref 提供 Web 界面，可选择要应用的细化遍，并将 C AST 节点与生成它的 bitcode 相互对应；rellic-headergen 根据模块中的 DWARF 元数据生成描述数据结构布局的 C 代码。机器码须先由其他工具提升为 bitcode；仓库附带的 IDA 脚本借助 Anvill 完成这一步。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/rellic/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/rellic/)
 
 - [**ghidra-delinker-extension Ghidra 目标文件反链接扩展**](https://github.com/boricj/ghidra-delinker-extension)
 
   Ghidra 扩展，可把程序中选定的部分“反链接”回可重定位目标文件。其重定位表合成分析器根据 Ghidra 数据库重建链接器通常会丢弃的重定位信息，导出器则写出带符号表和重定位表、可由工具链重新链接的 COFF（x86、x86-64）、ELF（x86、x86-64、MIPS）或 OMF（x86）目标文件。README 列出的用途包括借助链接器打二进制补丁、软件移植、格式转换、提取库，以及逐个目标文件重新实现程序的反编译项目。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-delinker-extension/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidra-delinker-extension/)
 
 - [**BinExport 反汇编导出插件**](https://github.com/google/binexport)
 
   BinDiff 的导出组件：为 IDA Pro 和 Binary Ninja 提供插件、为 Ghidra 提供扩展，把已分析的反汇编结果写成 BinDiff 所需的 Protocol Buffer 格式。BinExport2 模式涵盖带操作数和表达式的指令、基本块、流程图、调用图、节区、字符串、注释和数据引用；导出器还可输出统计文本文件或用于调试的文本转储。在 IDA 中可通过 IDC 或 IDAPython 脚本导出，在 Ghidra 中可使用同样能在无界面分析器中运行的 BinExport.java 脚本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binexport/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/binexport/)
 
 - [**Karta 开源库匹配插件**](https://github.com/CheckPointSW/Karta)
 
   Check Point Research 开发的源码辅助 IDA Python 插件，用于在大型二进制和固件中查找并匹配编译进去的开源库。识别脚本会列出二进制中存在哪些受支持的库（如 OpenSSL、zlib、libpng 和 net-snmp），并识别其版本；匹配脚本再借助由该库版本生成的 JSON 配置，按原始函数顺序定位各个编译单元，匹配其中的函数及其调用的外部 libc 函数，并可把选定的匹配结果作为名称导入 IDA。附带的 Thumbs Up 脚本可预先改进 IDA 的函数分析，包括区分固件中的 ARM 与 Thumb 代码。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/karta/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/karta/)
 
 - [**VTIL-Core 虚拟机翻译中间语言核心库**](https://github.com/vtil-project/VTIL-Core)
 
   VTIL（Virtual-machine Translation Intermediate Language，虚拟机翻译中间语言）项目的 C++20 核心库。VTIL 是一种中间语言及优化编译器，README 称其专为二进制去混淆与去虚拟化分析而设计。与 LLVM IR 不同，VTIL 保留原生栈、物理寄存器和非 SSA 形式，因此寄存器机或栈机代码都能提升到其中，原生指令可直接嵌入 IL 流，代码也能重新输出到任意虚拟地址。该库提供包含例程、基本块和序列化的 IL、符号表达式引擎与化简器、死代码消除、传播和栈固定等优化遍，以及基于 Capstone/Keystone 的 AMD64 与 ARM64 反汇编和汇编辅助功能。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/vtil-core/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/vtil-core/)
 
 - [**Frida Workbench VS Code 扩展**](https://github.com/ChiChou/vscode-frida)
 
   非官方的 Visual Studio Code 扩展，用于 Frida 相关工作。侧边栏列出本地、Apple 模拟器、USB 和远程设备上的应用与进程，可附加、启动或结束它们；运行时面板可浏览已附加进程的原生模块与导出函数，以及 Java 和 Objective-C 的类、方法与协议，并根据所选项目生成 Interceptor、Objective-C 或 Java 的 Hook 代码框架（可选用 GitHub Copilot 推断原生函数签名），还能导出 Objective-C 头文件或 Java 类存根。语言服务器根据运行中的目标补全类名、选择器和模块名；扩展还提供 Frida agent 与 C 模块项目脚手架、脚本调试配置、系统日志流以及 Android frida-server 部署。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/vscode-frida/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/vscode-frida/)
 
 - [**ghidriff Ghidra 二进制差异分析引擎**](https://github.com/clearbluejar/ghidriff)
 
   命令行二进制差异分析引擎，通过 pyghidra 以无界面方式驱动 Ghidra：导入并分析新旧两个版本的二进制，列出新增、删除和修改的函数，主要用于补丁比对。默认的 VersionTrackingDiff 引擎组合了多个 Ghidra 版本跟踪关联器和 BSim 匹配，另有基于符号名和结构图的较简单引擎，并提供 GhidraDiffEngine 基类供编写自定义比对器。结果以 JSON 和带 Mermaid 图表的 Markdown 输出，附有字符串、被调用与调用函数及二进制元数据的元差异，也可另外生成并排对照的 HTML。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidriff/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidriff/)
 
 - [**Ddisasm Datalog 可重汇编反汇编器**](https://github.com/GrammaTech/ddisasm)
 
   GrammaTech 开发的 Datalog 反汇编器，可将 x86-32、x86-64、ARM32、ARM64 和 MIPS32 架构的 ELF 与 PE 二进制转换为 GTIRB 中间表示。它先解码所有可能指令的超集，再用 Soufflé Datalog 规则和加权启发式推断代码位置、符号化结果和函数边界；gtirb-pprinter 可将结果输出为可重新汇编的汇编代码或重建的二进制，期间还可借助 GTIRB API 或 gtirb-rewriting 修改程序。推断出错时，用户可通过提示文件添加 Datalog 事实或调整启发式权重。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ddisasm/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/ddisasm/)
 
 - [**PINCE GDB 前端与内存分析工具**](https://github.com/korcankaraokcu/PINCE)
 
   面向 Linux 的 GNU 调试器（GDB）前端，以游戏为主要对象，也可用于其他逆向工程；名称意为“PINCE is not Cheat Engine”。它借助 libmemscan 扫描进程内存和指针，并将结果放入带类型的地址表；内存视图提供反汇编、即时汇编、对引用的调用、跳转和字符串进行代码剖析、函数/内存区域/指令搜索以及结构体叠加查看，其中结构体可由对原生 Linux 或 Wine/Proton 进程中 Mono/IL2CPP 类的剖析自动生成。调试功能包括可链式关联的断点与观察点、追踪访问某地址的指令、执行跟踪和调用栈查看，并提供 GDB 控制台和可复用的 libpince Python 库。
 
-  工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/pince/)
+  工具 · 也适用：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/pince/)
 
 - [**uncompyle6 跨版本 Python 字节码反编译器**](https://github.com/rocky/python-uncompyle6)
 
   跨版本的 Python 反编译器，可把 Python 字节码还原为等价的 Python 源码，支持 Python 1.0 至 3.8 的字节码，以及部分 PyPy 字节码和 Dropbox 的 Python 2.5 字节码。它借助配套的 xdis 库反汇编代码对象，再把指令流解析成基于语法的树并据此输出源码；它还能只反解析给定字节码偏移附近的代码片段，作者的 trepan 调试器即用此功能精确报告位置。它是早期 decompyle、uncompyle 和 uncompyle2 等分支的后继项目。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/uncompyle6/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/uncompyle6/)
 
 - [**ret-sync 调试器与反汇编器同步插件**](https://github.com/bootleg/ret-sync)
 
   ret-sync 即“逆向工程工具同步”：一组插件，让 IDA、Ghidra 或 Binary Ninja 的图形与反编译视图跟随运行中的 WinDbg、GDB、LLDB、OllyDbg 1.10/2 或 x64dbg 调试会话，并实时重定基址，使 ASLR 不影响地址对应。调试器命令可将注释、标签、重定基后的地址和命令输出写入反汇编数据库，并从中解析符号；反汇编器中的快捷键则可设置断点、单步执行调试器。可同时同步多个数据库，两端也可运行在不同主机上。独立的 Python 库可为自定义跟踪工具提供同样的位置同步。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ret-sync/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/ret-sync/)
 
 - [**PyInstaller Extractor（pyinstxtractor）PyInstaller 程序提取工具**](https://github.com/extremecoders-re/pyinstxtractor)
 
   单文件 Python 脚本，用于提取由 PyInstaller 构建的可执行文件的内容，Linux ELF 构建也无需借助其他工具即可提取。它在可执行文件中定位 PyInstaller 归档，报告 PyInstaller 和 Python 版本以及可能的入口脚本，并导出打包在 CArchive 中的文件和 PYZ 归档中的模块。它还会修复导出的 .pyc 文件头，使 uncompyle6、Decompyle++（pycdc）等 Python 字节码反编译器能够识别。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pyinstxtractor/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/pyinstxtractor/)
 
 - [**BAP 二进制分析平台**](https://github.com/BinaryAnalysisPlatform/bap)
 
   卡内基梅隆大学开发的 OCaml 二进制分析平台。其 bap 命令可加载程序、进行反汇编、将指令提升为与架构无关的中间表示、构建控制流图并运行分析遍；objdump、raw 加载器和 mc 模式分别用于线性反汇编、原始代码块和单条指令编码。README 列出对 x86、x86-64、ARM、MIPS 和 PowerPC 的支持，以及解释器、微执行解释器、符号执行器和 Primus Lisp 语言，后者可用于编写分析、为函数编写桩模型和调用 SMT 求解器；分析以 OCaml 插件形式编写，或将 BAP 作为库嵌入应用，C 绑定和最基本的 Python 支持位于独立仓库。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/bap/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/bap/)
 
 - [**Reko 通用反编译器**](https://github.com/uxmal/reko)
 
   通用反编译器：加载可执行文件或原始镜像，把机器码扫描转换为与机器无关的寄存器传输语言，再归并为过程并反编译为高级 C 代码。所审阅的源码包含 64 个架构目录，从 6502、Z80、PDP-11 到 ARM、MIPS、PowerPC、RISC-V 和 x86，并提供 ELF、PE/MZ、Mach-O、COFF、Amiga Hunk、VMS、WebAssembly、Xbox XBE 及 Xbox 360 XEX 等格式的加载器。可作为 Windows Forms 图形界面、命令行客户端或 .NET 库使用，用户还可通过项目文件和脚本补充名称、类型和注释。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/reko/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/reko/)
 
 - [**Dyninst 二进制插桩与分析库**](https://github.com/dyninst/dyninst)
 
   源自 Paradyn 项目的二进制插桩、分析与修改库。DyninstAPI 可在运行中的程序里插入和修改插桩代码，也可改写磁盘上的可执行文件或库并写回修改后的副本；同一套与机器无关的接口还支持静态和动态分析。各组件有独立手册，分别负责符号表、行号与类型（SymtabAPI）、指令解码与反汇编（InstructionAPI）、解析为基本块、函数和循环（ParseAPI）、切片等数据流分析（DataFlowAPI），以及进程控制、栈回溯和代码修补。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/dyninst/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/dyninst/)
 
 - [**goblin 二进制格式解析库**](https://github.com/m4b/goblin)
 
   以零拷贝、感知字节序的方式解析二进制格式的 Rust crate，支持 ELF32/64、32/64 位 Mach-O 及多架构 fat 容器、PE32/PE32+、COFF 目标文件、Terse Executable（TE）镜像以及 Unix/BSD 归档；Object::parse 根据魔数自动识别格式。解析结果涵盖 ELF 的文件头、节区、符号、动态段条目、重定位和 note，Mach-O 的加载命令及导入导出，以及 PE 的导入导出、重定位、TLS、资源、异常与展开信息、Authenticode 证书和 .NET CLR 头。借助特性开关，它还可精简为不依赖 std 的 #\[repr(C)\] 结构体定义，供内核等 no\_std 代码使用。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/goblin/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/goblin/)
 
 - [**FLOSS 混淆字符串提取工具**](https://github.com/mandiant/flare-floss)
 
   Mandiant FLARE 团队的恶意软件字符串提取工具，用法与 strings.exe 相同，但还能还原混淆字符串。除了静态的 ASCII 和 UTF-16LE 字符串，它还能提取栈字符串、紧凑栈字符串（tight strings）以及由函数解码出的字符串：先用启发式方法识别解码函数，通过控制流分析取得调用参数，再模拟执行这些函数，并比较模拟前后的内存状态。它还能提取 Go 和 Rust 字符串，支持 PE、ELF 以及 32 位或 64 位原始 shellcode；JSON 结果可转换为 IDA Pro、Ghidra、Binary Ninja、radare2 和 x64dbg 的导入脚本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/flare-floss/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/flare-floss/)
 
 - [**Zydis x86 反汇编与代码生成库**](https://github.com/zyantific/zydis)
 
   轻量级 C11 x86/x86-64 反汇编与代码生成库。解码器可报告每条指令的操作数、所访问的 CPU 与 FPU 标志、ISA 集与扩展以及分支类型；格式化器可输出 Intel、MASM 或 AT&amp;T 语法，编码器则根据编码请求生成指令，请求也可由已解码的指令转换而来。仓库附带 ZydisDisasm 与 ZydisInfo 命令行工具，官方 Rust 与 Python 3 绑定位于独立仓库。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/zydis/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/zydis/)
 
 - [**QBDI 动态二进制插桩框架**](https://github.com/QBDI/QBDI)
 
   Quarkslab 开发的模块化动态二进制插桩（DBI）框架：在目标进程内部按基本块对程序进行 JIT 重编译，使插桩工具可以在指令执行前后、内存读写以及虚拟机事件上注册回调。引擎以库的形式提供，可在进程中任意位置启动插桩执行，并可通过 C、C++、Python（PyQBDI）或 Frida JavaScript 编写脚本。它不绑定特定注入方式：自带基于 LD\_PRELOAD 的 QBDIPreload，用于 Linux 和 macOS 动态可执行文件，并已与 Frida 集成。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/qbdi/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/qbdi/)
 
 - [**binsider ELF 二进制分析终端界面**](https://github.com/orhun/binsider)
 
   用于查看 ELF 二进制的终端用户界面。它可像 stat 和 ldd 那样显示文件信息和所链接的共享库，像 readelf 那样浏览 ELF 头、注释、节区、段、符号、动态符号和重定位，按可调的最小长度提取字符串，并提供可搜索的十六进制视图。可选的动态分析会运行该二进制，像 strace 那样跟踪其系统调用，并按系统调用汇总耗时和调用次数；该界面还能作为 Rust 库嵌入 Ratatui 应用。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binsider/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/binsider/)
 
 - [**iced x86 指令解码与汇编库**](https://github.com/icedland/iced)
 
   面向 16、32 和 64 位 x86 代码的指令库，可解码、格式化、汇编和编码指令，输出支持 masm、nasm、GNU AT&amp;T 和 Intel XED 语法。其指令信息 API 可报告指令读写的寄存器、内存操作数和 RFLAGS 标志位，以及所需的 CPUID 特性标志和控制流类型；编码器还能把已解码的指令重新编码到任意地址。同一仓库维护 Rust、C#（.NET）和 Java 三套实现，另有基于 Rust crate 的 Python、JavaScript（WebAssembly）和 Lua 绑定。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/iced/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/iced/)
 
 - [**hrtng IDA 反编译增强插件**](https://github.com/KasperskyLab/hrtng)
 
   Kaspersky 发布的 IDA 插件，为 Hex-Rays 反编译器加入了作者在包括恶意软件分析在内的逆向工作中积累的各类工具。它可用内置密码算法解密字符串、数据和常量，或借助 IDA 的 Appcall 调试器功能批量解密；还能识别 API 名称哈希、消除控制流平坦化并强制反编译混淆代码，并通过微码签名、内联函数检测和从 IDA 数据库生成的 PAT 文件识别库代码。伪代码辅助功能包括自动重命名、类型修改和枚举替换、结构体创建、虚函数与间接调用导航以及补丁。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/hrtng/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/hrtng/)
 
 - [**BinCAT 二进制静态分析工具包**](https://github.com/airbus-seclab/bincat)
 
   面向逆向工程人员的二进制代码静态分析工具包。它从选定的地址和初始状态出发，计算寄存器与内存的值、污点和重建出的类型，支持前向与后向分析，并能检测堆上的释放后使用和重复释放；无法确定的位会标为未知。分析可在 IDA 插件中进行，分析人员可覆盖值或污点、跳过函数或把指令替换为 NOP 后重新运行；也可通过 Python 和 .ini 配置文件实现自动化。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/bincat/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/bincat/)
 
 - [**GEF GDB 增强扩展**](https://github.com/hugsy/gef)
 
   单文件 Python 扩展 gef.py，为 GDB 增加动态分析命令。每次程序停下时都会显示寄存器、栈、代码、线程和调用轨迹等上下文视图，命令涵盖内存映射、指针解引用、在进程内存中搜索模式、ELF 与安全属性信息、进程状态以及 glibc 堆检查。其架构抽象层覆盖 x86-32/64、ARMv5–v7、AArch64、SPARC、MIPS 和 PowerPC；gef-remote 命令可通过 gdbserver 或 qemu-user、qemu-system 的 GDB stub 增强远程调试会话。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/gef/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/gef/)
 
 - [**Triton 动态二进制分析库**](https://github.com/JonathanSalwan/Triton)
 
   面向 x86、x86-64、ARM32、AArch64 和 RISC-V 32/64 代码动态二进制分析的 C++ 库，提供 Python 绑定。调用方逐条处理指令，并可设置具体的寄存器和内存值；Triton 依据每条指令的语义构建符号表达式、进行污点跟踪，并通过 Z3 或 Bitwuzla 求解路径约束。它还能合成与化简表达式，并将其提升为 LLVM IR 或 Z3 表达式后再转换回来，可用于构建分析工具、自动化逆向工程、软件验证或模拟执行代码。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/triton/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/triton/)
 
 - [**PyLingual Python 字节码反编译器**](https://github.com/syssec-utd/pylingual)
 
   面向 Python 3.6 及以后版本 CPython 字节码的研究型反编译器，将按版本训练的 Transformer 模型与控制流重建相结合。分段模型把字节码切分为语句，语句模型将每段翻译为源码，再由模板重建循环、条件分支、异常处理、with 块和 match 语句。生成结果会用目标 Python 版本重新编译，并与原字节码比较控制流，未通过的片段会改用其他分段方案重试；其设计见 IEEE S&amp;P 2025 论文《PyLingual: Toward Perfect Decompilation of Evolving High-Level Languages》。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pylingual/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/pylingual/)
 
 - [**Miasm 逆向工程框架**](https://github.com/cea-sec/miasm)
 
   用于分析、修改和生成二进制程序的 Python 逆向工程框架。它可读取、修改和生成 32 位与 64 位 PE 和 ELF 文件，汇编和反汇编 x86、ARM、AArch64、MIPS、PowerPC、SH4、MSP430 与 MeP 代码，并将其提升到自有的中间语言，用于符号执行、SSA 与数据流分析、依赖图以及面向反混淆的表达式化简。其 JIT 模拟器可借助 LLVM、GCC、Clang 或纯 Python 后端运行 shellcode 或二进制中的部分代码，用 Python 回调代替库函数，提供模拟部分 Windows API 和 Linux 行为的沙箱，并可通过 Z3 进行动态符号执行。
 
-  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/miasm/)
+  工具 · 程序库 · [使用条件与局限](https://awesomerea.org/zh/resources/miasm/)
 
 - [**HyperDbg 虚拟化辅助调试器**](https://github.com/HyperDbg/HyperDbg)
 
   借助虚拟化技术的 Windows 调试器：利用 Intel VT-x 和扩展页表（EPT）将正在运行的系统虚拟化，从而调试内核态和用户态代码；既可在本机作为跟踪与内省工具运行，也可从宿主机通过串行连接附加到客户虚拟机进行调试。其事件包括基于 EPT 的隐藏断点与钩子、不受硬件调试寄存器限制的内存读写和执行监控，对系统调用、CPUID、MSR、I/O 端口、MMIO、异常和中断的监控，以及 Intel PT 与 LBR 分支跟踪。内核侧脚本引擎、PDB 符号支持和 SDK 可用于自动化分析。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/hyperdbg/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/hyperdbg/)
 
 - [**Kuna 智能体优先反编译器**](https://github.com/Noelo-Lab/kuna)
 
   以智能体为核心、用 Rust 编写的反编译器，最初移植自 Ghidra 的 C++ 反编译器和 SLEIGH 编译器，此后加入了可按选项开关的功能（部分移植自 angr），已与上游分化。单个自包含的 kuna 程序可反编译单个函数，也可将整个二进制导出为 C、头文件和汇编文件；同一引擎还能通过 WebAssembly 在浏览器中运行，或在 Ghidra 中充当反编译后端。项目自称是让 LLM 智能体持续改进反编译器的实验，大部分代码由智能体编写，并以回归测试和基准结果为导向。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/kuna/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/kuna/)
 
 - [**Binary Ninja 公开 API**](https://github.com/Vector35/binaryninja-api)
 
   Vector 35 为 Binary Ninja 公开的 C++、Python 和 Rust API，附带文档、示例以及基于这些 API 的开源插件。Binary Ninja 本身是闭源商业软件，本仓库不包含其分析核心。开源插件涵盖 x86/x86\_64、ARM64、ARMv7、PowerPC、MIPS、RISC-V 和 MSP430 架构，ELF、PE/COFF、Mach-O 以及 Apple 共享缓存和内核缓存加载器，DWARF、PDB 与 IDB 导入，以及 Objective-C、RTTI 和 SVD 分析；示例则演示如何遍历低级与中级中间语言，并通过工作流扩展分析流程。
 
-  工具 · 也适用：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/binary-ninja-api/)
+  工具 · 也适用：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/binary-ninja-api/)
 
 - [**capa 可执行文件功能识别工具**](https://github.com/mandiant/capa)
 
   Mandiant FLARE 团队的工具，将 YAML 规则集与从 PE、ELF、.NET 文件或 32/64 位 shellcode 中提取的 API 调用、导入、字符串和常量等特征进行匹配，报告可执行文件具备哪些功能。匹配结果按功能命名空间归类并标注 ATT&amp;CK 和 MBC，详细输出会列出每项匹配所依据的函数或基本块地址及特征，为分析人员指出值得深入研究的代码。它还能读取 CAPE、DRAKVUF 和 VMRay 沙箱报告以利用动态特征，可选用 vivisect、IDA Pro、Ghidra 或 Binary Ninja 进行分析，并提供 IDA 和 Ghidra 的 explorer 插件以及查看 JSON 结果的浏览器界面。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/capa/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/capa/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
@@ -2187,25 +2187,25 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。公开的 CPFF／AIQB 解析器、内核补丁及 libcamera 修改，配有作者报告的 Claude 辅助调查和有限范围的前后测量。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/thinkpad-imx471-camera-case/)
 
 - [**flipper-telink：Tuya Zigbee 遥控器的替换固件**](https://github.com/ngxson/flipper-telink)
 
   一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。针对 Tuya TS0044/TS0046 场景遥控器，笔记将原厂约 500 ms 的单击延迟追溯到双击判定窗口；替换固件取消该窗口，同时向 Zigbee2MQTT 呈现原厂型号标识。最新 Zigbee 版本的配对、动作及电量上报被标注为尚未验证。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)
 
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel)
 
   为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。Pro-1000 是通过 SCSI 连接主机的图像生成器，世嘉 Model 3 的图形硬件即由其衍生。该实现可启动使用者自备的、来自 SDK 光盘的 Pro-1000 固件，模拟板上的中断、JTAG 与 UART 硬件，并在控制台中提供固件内置的监控程序。目前尚无任何画面输出，与 SCSI 主机的通信也尚未实现。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)
 
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm)
 
   用 C 语言重新实现 Wii U 的 DMCU 固件。DMCU 是其 AMD 图形控制器中兼容 M68HC11 的显示微控制器，在 Wii 模式下读取视频接口（VI）状态，并配置显示输出、去隔行、缩放与过扫描。README 称这项工作基于对原固件的逆向工程，但并非逐字节一致的反编译，并说明项目仍在开发中。构建出的镜像经 evWii 插件载入后，在 Wii 模式下替代原厂固件。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)
 
 #### 工具、项目与集成
 
@@ -2213,109 +2213,109 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   识别固件中的嵌入格式并按需提取内容，辅以熵分析帮助初步分诊。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/binwalk/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/binwalk/)
 
 - [**unblob**](https://github.com/onekey-sec/unblob)
 
   递归提取二进制数据中的归档与文件系统，同时报告数据块边界和未识别区域。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/unblob/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/unblob/)
 
 - [**Ghidra 固件工具集**](https://github.com/al3xtjames/ghidra-firmware-utils)
 
   面向 PCI Option ROM、UEFI 固件卷、Intel Flash Descriptor 和 coreboot 镜像的 Ghidra 加载器与辅助脚本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidra-firmware-utils/)
 
 - [**EMBA**](https://github.com/e-m-b-a/emba)
 
   提取固件，结合静态检查与仿真分析，整理软件组件清单，并生成 Web 报告和 SBOM，供进一步调查。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/emba/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/emba/)
 
 - [**固件分析与比较工具（FACT）**](https://github.com/fkie-cad/FACT_core)
 
   通过可扩展平台解包和分析固件，使用 Web 界面与 HTTP API 搜索组件内容和分析结果，并比较不同样本。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/fact-core/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/fact-core/)
 
 - [**OFRAK**](https://github.com/redballoonsecurity/ofrak)
 
   通过资源树图形界面与 Python API，递归识别、解包、分析、修改和重新打包固件及二进制格式，并可接入可选反汇编后端。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ofrak/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ofrak/)
 
 - [**FirmAE**](https://github.com/pr0v3rbs/FirmAE)
 
   仿真路由器与 IP 摄像机固件，检查网络服务和运行时行为，提供自动仿真检查，以及独立的分析、运行和调试模式。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/firmae/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/firmae/)
 
 - [**PulseView 信号与协议分析工具**](https://github.com/sigrokproject/pulseview)
 
   通过 sigrok 的图形前端检查逻辑与模拟波形；协议解码器及分层解码可展示总线消息和更高层的设备操作，便于利用硬件通信记录开展固件与互操作性分析。
 
-  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/pulseview/)
+  工具 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/pulseview/)
 
 - [**UEFITool 固件镜像分析工具**](https://github.com/LongSoft/UEFITool)
 
   将 UEFI 固件镜像解析为可检查的树状结构，并检查其结构；配套的 UEFIExtract 与 UEFIFind 可提取解析后的内容、查找模式，辅助分析固件组件与厂商格式。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/uefitool/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/uefitool/)
 
 - [**Glasgow Interface Explorer 数字接口探索工具**](https://github.com/GlasgowEmbedded/glasgow)
 
   借助基于 FPGA 的开源硬件和 Python 小程序（applet），读写 SPI 闪存、I2C EEPROM 及并行存储芯片，自动确定 JTAG 引脚，调试受支持的处理器，并分析实体设备上的 UART、SPI 和 QSPI 事务。
 
-  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/glasgow-interface-explorer/)
+  工具 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/glasgow-interface-explorer/)
 
 - [**Penguin 固件重托管工具**](https://github.com/rehosting/penguin)
 
   以提取出的根文件系统为输入，生成可编辑的仿真变换配置来重托管嵌入式 Linux 固件，再借助客户机 root shell、转发到主机的网络服务和记录下的动态分析输出，逐步完善配置。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/penguin/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/penguin/)
 
 - [**ipsw Apple 固件研究工具包**](https://github.com/blacktop/ipsw)
 
   面向 Apple 固件研究与逆向工程的命令行工具包。可下载并解包 IPSW、OTA 和 KDK 并比较不同构建；检查 Mach-O 的加载命令、符号、签名和权限，并反汇编 ARM64 代码；在 dyld 共享缓存中查找符号和交叉引用、提取 dylib、导出 Objective-C 头文件并查看 Swift 元数据；提取 KEXT 并比较 kernelcache；还能解析 IMG4、解密 AEA 归档，以及检查 iBoot 和协处理器固件。
 
-  工具 · 也适用：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ipsw/)
+  工具 · 也适用：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ipsw/)
 
 - [**avatar² 多目标固件动态分析编排框架**](https://github.com/avatartwo/avatar2)
 
   由 EURECOM S3 小组开发的 Python 框架，可协调模拟器、调试器和物理设备，对嵌入式固件进行动态分析。分析脚本先声明目标（如修改版 QEMU、PANDA、Unicorn、gdbserver，或 OpenOCD、J-Link 调试探针），再定义内存布局（其中的内存区间可把访问从一个目标转发到另一个目标）和执行计划。执行过程以及寄存器、内存状态可在目标之间转移，从而让固件在模拟器中运行，同时把外设访问转发给真实设备。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/avatar2/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/avatar2/)
 
 - [**efiXplorer UEFI 固件分析 IDA 插件**](https://github.com/REhints/efiXplorer)
 
   用于自动化 UEFI 固件静态分析的 IDA Pro 插件与加载器。插件可标注 Boot、Runtime、SMM 和 PEI 服务调用，列出模块安装或使用的 EFI 协议与已知 GUID，在 Hex-Rays 反编译器中应用协议接口类型，标记疑似 SMM callout 及 GetVariable 越界写入模式供人工复核，并保存 JSON 报告。efiXloader 加载模块可在单个 IDA 数据库中打开整个固件镜像，提供各驱动入口点、驱动间导航和 DXE 驱动依赖关系图。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/efixplorer/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/efixplorer/)
 
 - [**vmlinux-to-elf 内核符号恢复工具**](https://github.com/marin-m/vmlinux-to-elf)
 
   通过定位并解码内嵌的 kallsyms 符号表，从 Linux 内核镜像重建带函数与变量符号、可供分析的 ELF 文件；输入可以是原始或压缩的 vmlinux、vmlinuz、zImage、bzImage 数据块，部分 Android boot.img 文件，或已去除符号的内核 ELF。工具会检测压缩格式、指令集、字节序、位宽、入口点和近似基址，并生成可在 IDA Pro 或 Ghidra 中分析的 ELF；另附列出符号的 kallsyms-finder、独立解压工具和 GTK 图形界面。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/vmlinux-to-elf/)
 
 - [**Sony-PMCA-RE Sony 数码相机逆向工具**](https://github.com/ma1co/Sony-PMCA-RE)
 
   基于逆向 Sony 数码相机而开发的 USB 工具。在受支持的机型上，它可读取相机信息，并借助 PlayMemories Camera Apps 机制安装 Android 应用；其固件更新模式和服务模式下的 shell 可转储固件、执行 Linux 命令并调整设置。仓库中的说明文档记录了 Sony 应用商店、浏览器插件与相机之间的应用安装交互过程。
 
-  工具 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/sony-pmca-re/)
+  工具 · 也适用：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/sony-pmca-re/)
 
 - [**cpu\_rec CPU 指令集统计识别工具**](https://github.com/airbus-seclab/cpu_rec)
 
   对任意二进制文件（例如来历不明的固件镜像）中的 CPU 指令集进行统计识别：把字节的马尔可夫链统计与默认语料库比较，语料库涵盖数十种架构，从 6502、8051 到 ARM、MIPS、PowerPC、RISC-V、x86-64 和 WebAssembly。它先给出整个文件的匹配结果，再找出与单一架构匹配的最大数据块，并显示熵值，以便排除加密或压缩区域。可独立运行，也可作为 Python 函数或 binwalk 模块使用。
 
-  工具 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/cpu-rec/)
+  工具 · 也适用：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/cpu-rec/)
 
 - [**ME Analyzer Intel 引擎与图形固件分析工具**](https://github.com/platomav/MEAnalyzer)
 
   解析 Intel 管理引擎 (CS)ME、TXE 和 SPS 固件、图形系统控制器（GSC）固件，以及与之配套的独立 PMC、PCHC、PHY 和 Option ROM 镜像，报告系列、版本、发布类型、SKU、平台、大小和健康状态。研究用参数可显示 Flash 分区表、BPDT/IFWI 和 CSE 布局表，校验 RSA 签名与校验和，并解包所支持的 CSE、GSC 代码及文件系统。附带的数据库能识别已知镜像，并报告社区固件仓库尚未收录的镜像。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/me-analyzer/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/me-analyzer/)
 
 <a id="protocol"></a>
 ### Protocol · 协议
@@ -2328,31 +2328,31 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/open-appleremote-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/open-appleremote-case/)
 
 - [**GAMEKB-K17：重建宏键盘配置协议**](https://github.com/dvdarkin/gamekb-k17)
 
   实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gamekb-k17-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/gamekb-k17-case/)
 
 - [**cooler-lcd：Thermalright 显示屏协议实现**](https://github.com/kristjaningi/cooler-lcd)
 
   为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/cooler-lcd-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/cooler-lcd-case/)
 
 - [**NJFE：用于电脑检查的 Soulear 相机协议桥接**](https://github.com/WildweaselMS/NJFE)
 
   在 ESP32-C3 桥接器与 Python 电脑查看器中复用 otoscope 经逆向得到的 i4season／Soulear 协议。作者将实现归功于 Claude Code 辅助，报告把一台 Hopefox Find T 的视频传到 Windows 电脑，并提供录像、方向调整及 LED 控制。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/njfe-ear-camera-bridge-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/njfe-ear-camera-bridge-case/)
 
 - [**hw-harness：扫描仪 USB 协议调查**](https://github.com/cschalle/hw-harness)
 
   记录作者报告的扫描仪调查：比较厂商驱动的 USB 控制传输与 Linux 驱动的记录，推断初始化、时序及分辨率参数。公开工具负责组织参考采集与比较，并不自动恢复完整协议规范。
 
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/hw-harness-reference-case/)
+  案例 · 独立重建 · [使用条件与局限](https://awesomerea.org/zh/resources/hw-harness-reference-case/)
 
 #### 工具、项目与集成
 
@@ -2360,79 +2360,79 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   将捕获的应用与设备流量解析为协议字段，支持过滤，并由 GUI 与 TShark 共用解析逻辑；自定义解析器可将新识别的报文格式固化下来，辅助比较协议实现。
 
-  工具 · 也适用：应用、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark/)
+  工具 · 也适用：应用、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/wireshark/)
 
 - [**Netzob 协议建模与推断框架**](https://github.com/netzob/netzob)
 
   对通信协议建模并从流量记录推断报文布局，通过配置主动学习来推断协议状态机。Python API 提供报文字段、符号和自动机，用于解析、流量生成及模糊测试。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/netzob/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/netzob/)
 
 - [**Scapy 报文分析与构造工具**](https://github.com/secdev/scapy)
 
   使用 Python 编写报文解析、构造、请求／响应匹配及捕获文件分析流程；自定义报文字段与层绑定可将已理解的线格式编码为可操作模型，辅助研究协议行为。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/scapy/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/scapy/)
 
 - [**Universal Radio Hacker（URH）无线协议分析工具**](https://github.com/jopohl/urh)
 
   解调并解码通过软件无线电捕获的信号，支持自动检测调制参数和自定义解码。分析者可手动标注协议字段与消息类型，或复核基于规则的字段自动推断结果；模糊测试组件面向无状态协议，仿真环境则用于有状态交互。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-radio-hacker/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/universal-radio-hacker/)
 
 - [**SavvyCAN CAN 总线分析工具**](https://github.com/collin80/SavvyCAN)
 
   捕获或载入 CAN 总线流量，通过嗅探、绘图、文件比对及 ISO-TP／UDS 解码视图分析帧；借助载入或由分析者编辑的 DBC 文件，将原始字节映射为具名信号。自定义发送、模糊测试和 UDS 扫描则是独立窗口，会主动向实时总线发送帧。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/savvycan/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/savvycan/)
 
 - [**AALpy 自动机学习库**](https://github.com/DES-Lab/AALpy)
 
   通用的 Python 自动机学习库，可通过主动查询或被动轨迹数据，推断黑盒系统的确定性、非确定性、随机及下推自动机模型。其 README 链接了一项独立的低功耗蓝牙（BLE）研究，该研究的仓库报告了学习得到的设备连接与传统配对（legacy pairing）状态机；该库本身不推断报文格式。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/aalpy/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/aalpy/)
 
 - [**rtl\_433 ISM 频段设备无线协议解码器**](https://github.com/merbanan/rtl_433)
 
   接收并解码 ISM 频段设备（如气象传感器、遥控器、门铃和报警传感器）的无线传输，可使用 RTL-SDR 或 SoapySDR 接收机，也可读取录制的 I/Q 文件，并以 JSON、CSV、MQTT 等格式输出解码字段。对内置解码器无法识别的信号，脉冲分析器会报告 OOK/FSK 时序，并给出灵活 -X 解码器的提示，用于将帧切分为比特；按其分析指南，把这些比特对应到具体数值仍需分析者依据已知读数完成。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/rtl-433/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/rtl-433/)
 
 - [**Blackbox Protobuf 无定义 Protobuf 解码与重编码工具**](https://github.com/nccgroup/blackboxprotobuf)
 
   NCC Group 推出的工具集，可在没有对应 .proto 定义的情况下解码并重新编码 Protocol Buffers 报文。解码器返回报文数据，以及根据线路类型尽力推测生成、可编辑的类型定义；分析者可以为字段命名、修正类型并重新编码修改后的报文，这是 protoc --decode\_raw 做不到的。它提供 Python 库及 bbpb 命令行工具、基于 Jython 的 Burp Suite 扩展和 mitmproxy 插件，README 说明它最初用于在移动应用渗透测试中修改报文。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/blackbox-protobuf/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/blackbox-protobuf/)
 
 - [**furiousMAC Apple Continuity 协议逆向与解析器**](https://github.com/furiousMAC/continuity)
 
   针对 Apple 专有 Continuity 蓝牙低功耗广播的逆向工程笔记与 Wireshark 解析器，是作者 PETS 2019 隐私研究的延续。各报文页面记录了 AirDrop、Handoff、Proximity Pairing、Nearby Info、Find My 等 14 种报文类型的字段布局和观测到的取值；解析器替换 Wireshark 的 packet-bthci\_cmd.c，使捕获到的广播能解码为具名的 btcommon.apple 字段。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/furiousmac-continuity/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/furiousmac-continuity/)
 
 - [**opendbc 汽车 CAN 报文定义库**](https://github.com/commaai/opendbc)
 
   comma.ai 维护的 DBC 文件库，描述多个汽车品牌的 CAN 报文与信号，并附带一个依据这些定义解析和构造 CAN 报文的 Python 库；其车型移植指南要求贡献者在 cabana 工具中利用行车记录逆向分析新的报文。基于它的各品牌车型移植代码可解析车辆状态、根据 ECU 固件版本识别车型，并生成 openpilot 的转向、油门和制动报文；面向 comma panda 接口的安全代码则限制哪些报文可以发出。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/opendbc/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/opendbc/)
 
 - [**FISSURE 射频信号分析与协议发现框架**](https://github.com/ainfosec/FISSURE)
 
   基于 GNU Radio 的射频框架，可将信号从频谱巡查与检测，经 IQ 采集、检查、调理、特征提取和分类，一路带入协议发现流程。其解调工作区可为 OOK/ASK 和二进制 FSK 录制估计符号速率；比特流与成帧阶段则结合曼彻斯特或差分解码、同步模式与 CRC 证据以及重复报文检测，推断报文边界。Qt 仪表盘负责协调本地或远程的 SDR 传感节点，资料库保存协议与数据包定义、解析器和归档录制，插件还可加入雷达脉冲分析等检查模块。
 
-  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/fissure/)
+  工具 · [使用条件与局限](https://awesomerea.org/zh/resources/fissure/)
 
 - [**friTap TLS 密钥提取与流量解密工具**](https://github.com/fkie-cad/friTap)
 
   基于 Frida 的工具，在运行中的进程内挂钩 OpenSSL、BoringSSL、NSS、GnuTLS 等 TLS 库，输出 NSS 格式的密钥日志和解密后的 PCAP 明文，便于分析者在 Wireshark 中检查应用的加密流量。对于去除符号或静态链接的库，可通过字节模式或偏移量定位函数、扫描被重命名的库，也可不挂钩而改为扫描堆内存来恢复 TLS 密钥。终端界面、Python API 和 Wireshark extcap 集成都基于同一套捕获功能。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/fritap/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/fritap/)
 
 - [**pbtk Protobuf 逆向工具集**](https://github.com/marin-m/pbtk)
 
   从已编译程序中恢复 Protobuf 消息定义，并还原为可读的 .proto 文件。提取器覆盖 JAR、DEX 和 APK 中的各类 Java 运行时（包括经 ProGuard 混淆的代码）、内嵌 Protobuf 反射元数据的二进制文件，以及使用 Protobuf-URL 格式的 Web 应用。随后可在图形界面中把恢复出的消息类型绑定到 HTTP 端点，将十六进制形式的抓包样本解码为可编辑的字段树，并重新发送修改后的消息，帮助分析者把每个字段与响应对应起来。
 
-  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pbtk/)
+  工具 · 也适用：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/pbtk/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP · 智能体与 MCP
@@ -2445,259 +2445,259 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 官方 CLI 与 MCP 服务，连接分析工具并保留调查证据及限制。
 
-  项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-upstream/)
+  项目 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-upstream/)
 
 - [**官方 reverse-engineer-anything 技能**](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything)
 
   官方面向使用者的调查技能，包含目标路由、连接恢复与证据工作流。
 
-  集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-official-skill/)
+  集成 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-official-skill/)
 
 - [**dsh-mcp-rea**](https://github.com/Ersith/dsh-mcp-rea)
 
   社区 MCP 适配桥，以精选工具和 CLI 转发缩小宿主需要处理的工具面。
 
-  集成 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
+  集成 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/dsh-mcp-rea/)
 
 - [**rea-jev**](https://github.com/juan-viox/rea-jev)
 
   Claude Code 社区插件，在固定版本 REA MCP 外增加 Jev 路由和证据检查。
 
-  集成 · REA 社区 · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-jev/)
+  集成 · REA 社区 · 目标：网站、应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-jev/)
 
 - [**rea-casebook**](https://github.com/pablodiazjorge/rea-casebook)
 
   Claude Code mod 汇集收到的 REA Evidence、追踪 unknown，并校验发现所引用的证据 ID。
 
-  集成 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-casebook/)
+  集成 · REA 社区 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-casebook/)
 
 - [**Eleven**](https://github.com/Zfinix/eleven)
 
   以智能体为核心的桌面逆向工程应用，可打开 Mach-O、ELF、PE 二进制、Android 安装包和 GPU 内核，让任何支持 Agent Client Protocol 的智能体在同一窗口中阅读代码、重命名函数、添加笔记并提出补丁。原生代码通过内置的 REA 构建交由 Ghidra 反编译，也可改用 Rizin 和 jadx。它是围绕现有引擎的工作台，并非新的反编译器或重建案例。
 
-  集成 · REA 社区 · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
+  集成 · REA 社区 · 目标：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/eleven-agent-re-workbench/)
 
 - [**Hermes Agent 的 REA 插件**](https://github.com/NousResearch/hermes-official-plugins/tree/main/rea)
 
   Nous Research 在 Hermes Agent 官方插件库中发布的 REA 插件包。一次目录安装即可注册 REA 的 MCP 服务（固定为 rea-agents 6.4.0，经 npx 以 stdio 启动），并附带为 Hermes 改编的 REA 工作流技能和独立的崩溃分诊技能。约 170 个 REA 工具通过 Hermes 的按需工具检索提供；改编技能要求在运行程序、驱动应用或改动已连接 Android 设备的工具前先征得同意。
 
-  集成 · REA 社区 · 目标：网站、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
+  集成 · REA 社区 · 目标：网站、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/hermes-rea-plugin/)
 
 - [**crashlens 崩溃分诊工具**](https://github.com/mingleiw/crashlens)
 
   崩溃分诊工具，将 Linux 核心转储、运行时 panic、异常堆栈和 sanitizer 报告整理为 Markdown 缺陷报告，指出崩溃类型、首个用户代码帧和稳定签名。核心转储分析通过 REA 命令行读取崩溃记录与二进制布局，并可调用 REA 的 Ghidra 引擎为无符号函数生成伪代码；附带的 Claude Code 插件包含技能与只读 MCP 工具。它是围绕 REA 的调试集成，不是重建案例，诊断准确性仍为作者报告。
 
-  集成 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
+  集成 · REA 社区 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/crashlens-rea-crash-triage/)
 
 - [**REA 工作区模板**](https://github.com/dobest1024/rea-workspace-template)
 
   一个可直接克隆的中文工作区模板，用于在 Claude Code 或 Codex 中借助 REA，按“一个目标一个工作区”开展分析。它提供项目级 REA MCP 配置、要求结论标注 CONFIRMED／GUESS 并附证据位置的智能体规则、七套任务提示词，以及仅依赖标准库的脚本：为导入的原件生成哈希基线、创建可写分析副本，并去除 HAR 抓包中的取值。它负责组织分析而非完成分析，其验收只使用了合成样本。
 
-  集成 · REA 社区 · 目标：网站、应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-workspace-template/)
+  集成 · REA 社区 · 目标：网站、应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-workspace-template/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
   Hex-Rays 官方 MCP 服务，让智能体操作 IDA 数据库，支持无界面分析和可选 GUI 联动。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/hex-rays-ida-mcp/)
 
 - [**GhidraMCP**](https://github.com/LaurieWired/GhidraMCP)
 
   通过 Ghidra 扩展和 MCP 桥接提供反编译、符号导航与重命名，支持 GUI 和无界面运行。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidramcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidramcp/)
 
 - [**Binary Ninja MCP（官方）**](https://docs.binary.ninja/guide/mcp.html)
 
   Binary Ninja 自带的 MCP 接口向智能体提供函数、符号、反汇编、中间语言和反编译文本。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/binary-ninja-official-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/binary-ninja-official-mcp/)
 
 - [**Binary Ninja MCP（fosdickio）**](https://github.com/fosdickio/binary_ninja_mcp)
 
   社区维护的 Binary Ninja 插件与 MCP 桥接，支持在多个已打开的二进制目标间切换。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/binary-ninja-community-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/binary-ninja-community-mcp/)
 
 - [**IDA Pro MCP（mrexodia）**](https://github.com/mrexodia/ida-pro-mcp)
 
   已有工作流可参考的社区 IDA 集成；维护者目前推荐迁移到 Hex-Rays 官方 MCP 服务。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ida-pro-mcp-community/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ida-pro-mcp-community/)
 
 - [**Radare2 MCP Server**](https://github.com/radareorg/radare2-mcp)
 
   基于 radare2 原生接口的 MCP 服务，提供二进制分析、会话复用和可配置的只读访问。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/radare2-mcp/)
 
 - [**r2ai**](https://github.com/radareorg/r2ai)
 
   在 radare2 内使用本地或远程模型，辅助解释函数、改善命名和反编译结果。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/r2ai/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/r2ai/)
 
 - [**DAILA**](https://github.com/mahaloz/DAILA)
 
   跨 IDA、Ghidra、Binary Ninja 与 angr-management 的 AI 助手，用于函数摘要和命名辅助。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/daila/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/daila/)
 
 - [**RevEng.AI Ghidra 插件**](https://github.com/RevEngAI/plugin-ghidra)
 
   将 Ghidra 接入 RevEng.AI，用于函数相似性匹配、名称恢复、AI 解释及辅助标注。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/revengai-ghidra/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/revengai-ghidra/)
 
 - [**LLDB MCP**](https://lldb.llvm.org/use/mcp.html)
 
   LLDB 官方 MCP 接口提供调试会话与命令，使智能体可以设置断点、检查内存和单步执行。
 
-  集成 · 独立 MCP · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/lldb-mcp/)
+  集成 · 独立 MCP · 目标：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/lldb-mcp/)
 
 - [**Claude 逆向工程技能**](https://github.com/EncidXVII/claude-reverse-engineering-skill)
 
   社区智能体技能，覆盖分诊、无界面导出和证据报告，并明确说明 REA 及其他 MCP 服务的工作流。
 
-  集成 · 独立智能体 · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/claude-reverse-engineering-skill/)
+  集成 · 独立智能体 · 目标：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/claude-reverse-engineering-skill/)
 
 - [**SpecterOps 逆向工程技能**](https://github.com/SpecterOps/skills/tree/main/plugins/reverse-engineering)
 
   针对 Binary Ninja 与 Ghidra 的分析技能，提供 MCP 工具使用、分析步骤和标注方法。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/specterops-re-skills/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/specterops-re-skills/)
 
 - [**pyghidra-mcp 项目级 Ghidra MCP 服务器**](https://github.com/clearbluejar/pyghidra-mcp)
 
   基于 PyGhidra 的 MCP 服务器，可分析 Ghidra 项目中的全部二进制，提供反编译、交叉引用、调用图、符号与字符串搜索、基于索引的语义代码检索，以及重命名、类型和注释编辑。另附基于 HTTP 的独立命令行客户端，以及可选的图形界面模式：由服务器自行启动 Ghidra 图形界面并加以操控。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/pyghidra-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/pyghidra-mcp/)
 
 - [**LeanREA 命令行逆向分析技能**](https://github.com/aicodeking/leanrea)
 
   独立智能体技能，使用普通命令行工具开展应用与二进制调查，提供批量初查、针对性源码／反汇编阅读，以及明确的已观察／推断／未知证据标记，并附有作者报告的 REA MCP 工作流小规模对照。
 
-  集成 · 独立智能体 · 目标：应用、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/leanrea-skill/)
+  集成 · 独立智能体 · 目标：应用、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/leanrea-skill/)
 
 - [**Universal Modder 游戏模组智能体工具包**](https://github.com/rehan-remade/universal-modder)
 
   为修改用户自有的 PC 游戏打包智能体技能、三份角色说明、Python 命令行工具及预配置的 fal MCP 设置。其逆向分析指南把托管代码、原生代码和数据格式工作交给外部反编译器与调试器，并要求逆向得到的文件格式先通过往返检查再投入使用；其中一个示例附带按此方法实现的 Age of Empires II 精灵写入器。它是附带智能体实践笔记的模组工具包，不是游戏反编译重建，示例结果仍为项目报告。
 
-  集成 · 独立智能体 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
+  集成 · 独立智能体 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/universal-modder-agent-toolkit/)
 
 - [**ReVa 面向大模型工具设计的 Ghidra MCP 扩展**](https://github.com/cyberkaida/reverse-engineering-assistant)
 
   在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，为智能体提供附带命名空间与交叉引用上下文的反编译、符号、字符串、数据类型、结构体与调用图工具，以及程序比对、重命名和 PyGhidra 脚本执行。其 README 将项目的特点归于面向大模型使用的工具设计：提供许多小工具，其模式在给定结构之外也能容忍其他输入，把可纠正的错误反馈给模型，并返回附带相关信息链接的简短片段。助手模式可让多个客户端同时连接已打开的 Ghidra 项目；无界面模式则由 ReVa 自行启动 Ghidra，项目仅在会话期间存在。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reva-ghidra-mcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/reva-ghidra-mcp/)
 
 - [**x64dbg-MCP Server 调试器 MCP 插件**](https://github.com/duty1g/x64dbg-mcp-server)
 
   以 Zig 编写、同时支持 x32dbg 与 x64dbg 的原生 x64dbg 插件，在调试器内部通过 streamable HTTP 和 SSE 提供 MCP 端点。智能体可以加载或附加进程，设置软件、硬件、内存及条件断点，单步与跟踪执行，读取寄存器、调用栈、线程、内存映射、导入表、字符串和交叉引用，并执行任意 x64dbg 命令。随附的 SKILL.md 指南要求智能体在每次操作前先确认调试器状态。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/x64dbg-mcp-server/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/x64dbg-mcp-server/)
 
 - [**mcp-windbg WinDbg 调试 MCP 服务器**](https://github.com/svnscha/mcp-windbg)
 
   由社区独立开发的 MCP 服务器，以无界面方式运行微软的 cdb.exe 和 kd.exe，使智能体能够打开并初步分析用户态与内核崩溃转储，连接 cdb 远程调试服务器和 KD 内核目标，并在可分别寻址的会话中执行任意调试器命令。其 README 建议希望在 WinDbg 内使用 AI 的用户选择微软官方的 WinDbg MCP，并把本项目定位为面向其他 MCP 客户端、远程 HTTP 使用和批量转储分析的替代方案；项目自称只是执行真实调试器命令的封装，而非自动修复工具。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/mcp-windbg/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/mcp-windbg/)
 
 - [**Wireshark MCP 基于 tshark 的协议解析服务器**](https://github.com/bx33661/Wireshark-MCP)
 
   封装 tshark 及可选的其他 Wireshark 命令行工具的 MCP 服务器，使智能体能借助 Wireshark 的解析器查询已保存的抓包文件：数据包列表与详情、流追踪、任意字段提取、协议层级与会话统计、针对非标准端口的 decode-as 规则、协议首选项、使用用户提供的密钥进行 TLS 与 WPA 解密，以及一个为 Modbus、S7comm、MQTT、Zigbee、BLE 等 25 种协议套用预设字段和过滤器的工具。解析类工具之外，另有安全启发式检测、实时抓包和抓包文件编辑等独立工具。
 
-  集成 · 独立 MCP · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/wireshark-mcp/)
+  集成 · 独立 MCP · 目标：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/wireshark-mcp/)
 
 - [**BINNY 逆向分析智能体框架**](https://github.com/openbin-ai/binny)
 
   OpenBin 推出的开源终端智能体框架，让使用者自选的托管或本地模型处理二进制分析数据。它从 OpenBin 或 OpenAPK 项目、或本地 Ghidra 容器的分析结果中读取反编译函数、字符串、导入表和数据，按分诊、调查与起草流程工作，并保存恶意软件分析或漏洞研究报告草稿供人工审阅。它是输出草稿的分析框架，而非重建项目。
 
-  集成 · 独立智能体 · 目标：应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/binny-agent-harness/)
+  集成 · 独立智能体 · 目标：应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/binny-agent-harness/)
 
 - [**decomp.wtf 智能体反编译工具**](https://github.com/i12bp8/decomp.wtf)
 
   一款已停止开发的本地应用与 MCP 服务，把用户自有主机游戏的函数逐个交给 AI 编程智能体，用该游戏当年的编译器编译每次提交的 C 代码，只有链接后的结果与原始字节一致才算通过。它可从 ROM 或光盘镜像新建项目，也可在 decomp.dev 所列公开反编译项目的分叉中工作，由 objdiff 判定结果。其 2026 年 10 月 15 日的最后一次提交宣布停止开发，理由是反编译社区的反对；代码仍以 MIT 许可保留，但不再修复或发布新版本。
 
-  集成 · 独立智能体 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/decomp-wtf-agent-decompilation/)
+  集成 · 独立智能体 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/decomp-wtf-agent-decompilation/)
 
 - [**Claude Intercept 流量捕获分析工具**](https://github.com/whaesemeyer/claude-intercept)
 
   本地中间人代理与控制面板，捕获使用者自有电脑和设备的 HTTP/S 流量，存入 SQLite，并通过 /intercept 技能和命令行交给 Claude Code。API 文档、流量摘要等导出模式可用于调查请求模式与未公开接口。这是面向智能体、用于授权测试的抓包工具，不是重建案例，也未确立与 REA 的关联。
 
-  集成 · 独立智能体 · 目标：应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/claude-intercept-traffic-capture/)
+  集成 · 独立智能体 · 目标：应用、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/claude-intercept-traffic-capture/)
 
 - [**Ghidra MCP Server（bethington）**](https://github.com/bethington/ghidra-mcp)
 
   由 Ghidra 图形界面插件、独立无界面服务器和 Python MCP 桥接组成，提供含 209 个工具的目录：反编译、交叉引用、重命名、类型设定、结构体、注释与批量编辑，另有 P-code 模拟执行、经 Ghidra TraceRmi 框架的实时调试、共享 Ghidra Server 仓库与版本控制操作，以及基于哈希在不同版本二进制之间迁移函数文档。桥接在连接时只加载三组工具，其余由模型按需搜索并加载；命名与类型规范在工具层强制执行。其 NOTICE 说明，项目于 2025 年 8 月由 LaurieWired 的 GhidraMCP 衍生而来，此后已大幅重写和扩展。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidra-mcp-bethington/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidra-mcp-bethington/)
 
 - [**DecompilerServer .NET 反编译 MCP 服务器**](https://github.com/pardeike/DecompilerServer)
 
   基于 ICSharpCode.Decompiler 引擎的 stdio MCP 服务器，智能体可借此加载托管 .NET 程序集（包括从游戏目录中定位到的 Unity 游戏 Assembly-CSharp.dll），继而搜索符号、字符串字面量和特性，阅读反编译得到的 C# 或 IL，并追踪调用方、被调用方、使用位置和继承关系。多个程序集可以用别名同时保持加载，便于智能体对两个版本做结构比较或逐个比对方法体，README 举的例子是 RimWorld 模组移植。面向模组开发的工具还能根据所查看的成员，以文本形式生成 Harmony 补丁骨架、绕行存根和 Transpiler 锚点建议。
 
-  集成 · 独立 MCP · 目标：游戏、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/decompilerserver-dotnet-mcp/)
+  集成 · 独立 MCP · 目标：游戏、应用 · [使用条件与局限](https://awesomerea.org/zh/resources/decompilerserver-dotnet-mcp/)
 
 - [**Gepetto：调用大模型辅助逆向的 IDA 插件**](https://github.com/JusticeRage/Gepetto)
 
   IDA Pro 插件，把 Hex-Rays 伪代码发送给使用者选定的托管或本地大模型，用于解释函数、添加注释或提出新的变量名与函数名，由使用者勾选后再应用。IDA 内的对话控制台还允许模型调用工具，读取反汇编、反编译结果、交叉引用、字符串和类型，对数据库进行重命名和注释，并运行 Python。README 提醒这些通用模型很可能出错，要求使用者审慎对待每一个结果。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/gepetto/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/gepetto/)
 
 - [**GhidrAssistMCP Ghidra 原生 MCP 扩展**](https://github.com/symgraph/GhidrAssistMCP)
 
   在 Ghidra 内运行 MCP 服务器的 Ghidra 扩展，通过 streamable HTTP 和旧版 SSE 提供 100 个名称明确的工具（默认启用 93 个），涵盖伪代码、反汇编、P-code、控制流图与调用图、交叉引用、字符串、导入表和导出表，以及重命名、修改类型、注释和结构体推断。自 3.0.0 版起，服务器随项目管理器一同启动，智能体在 CodeBrowser 尚未打开时即可创建、打开、保存和关闭项目并打开程序；同一个共享服务器会跟踪当前获得焦点的 CodeBrowser 窗口。扩展另附六个程序资源模板、七个分析提示词，以及在 analyzeHeadless 下运行服务器的脚本。
 
-  集成 · 独立 MCP · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ghidrassistmcp/)
+  集成 · 独立 MCP · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ghidrassistmcp/)
 
 - [**Android Reverse Engineering Skill 安卓反编译智能体技能**](https://github.com/SimoneAvogadro/android-reverse-engineering-skill)
 
   Claude Code 插件及智能体技能，驱动 jadx 与 Fernflower/Vineflower 反编译 Android 的 APK、XAPK、JAR 和 AAR 文件并记录其 HTTP 接口。它先用指纹步骤识别应用的框架、HTTP 栈、混淆程度和原生库，再通过 shell 脚本在 Retrofit、OkHttp、Volley、Ktor 和 Apollo/GraphQL 等栈中提取接口与鉴权特征，追踪从界面到网络层的调用链，并利用 R8 无法剥除的元数据还原原始的 Kotlin 类名。技能通过自带的 Claude Code marketplace 安装，其脚本也可独立运行，并提供 /decompile 斜杠命令。
 
-  集成 · 独立智能体 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/android-reverse-engineering-skill/)
+  集成 · 独立智能体 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/android-reverse-engineering-skill/)
 
 - [**Reverify：用确定性工具核验模型二进制分析断言**](https://github.com/2akouwu/reverify)
 
   Python 命令行工具和 stdio MCP 服务器，用于检查模型对二进制文件提出的结构化断言，例如某偏移处的字节或类型化数值、字符串、导入与导出、指令助记符、模拟执行结果，以及经测试或经 Z3 证明的等价性，并连同工具实际观察到的证据返回 VERIFIED、REFUTED 或 INCONCLUSIVE。已确证和已驳斥的结果保存在磁盘上按二进制文件划分的台账中，重置后或之后的会话可据此继续，而不依赖摘要；reconstruct 循环则让模型不断提出断言，直至一组有信息量的断言通过验证。另有 rollover 命令，用文件交接和新会话取代 Claude Code、Codex、Gemini CLI 或 OpenCode 的上下文压缩。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reverify-claim-verifier/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/reverify-claim-verifier/)
 
 - [**DecompAI：在 Kali 容器中分析二进制的对话智能体**](https://github.com/louisgthier/decompai)
 
   Gradio 对话应用，其 LangGraph ReAct 智能体分析使用者上传的 x86 Linux ELF 二进制文件：列出并反汇编函数，用 Ghidra 反编译，调用 radare2 和 gdb，并在特权模式的 Kali Linux 运行容器中执行 shell 命令和 Python 脚本。工作区以二进制文件的 SHA-256 为键，再次上传同一文件即可恢复会话。该项目源自一项学校研究计划，其 CTF 成绩为作者自述。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decompai/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decompai/)
 
 - [**Kong：基于 Ghidra 的大模型去符号二进制分析流水线**](https://github.com/amruth-sn/kong)
 
   命令行分析流水线，通过 PyGhidra 在进程内运行 Ghidra，请 Claude、OpenAI 或兼容 OpenAI 接口的模型为去符号二进制文件中的函数、类型和参数命名，并沿调用图自底向上处理，使调用者能看到已命名的被调函数。它先匹配已知库函数与密码算法特征，再把反编译结果疑似混淆的函数交给可调用工具、借助 z3 化简的去混淆环节，将结果应用到 Ghidra 程序中，并导出带注释的 C 代码和 analysis.json 文件。README 称其为首个智能体逆向工程师，这一说法以及其中的准确性和成本数据均为作者陈述。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/kong-agentic-reverse-engineer/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/kong-agentic-reverse-engineer/)
 
 - [**Co-op Anything：为单人游戏加入合作模式的智能体手册**](https://github.com/cranebeaker/coop-anything)
 
   为玩家已安装的单人游戏加入联机或分屏合作模式的智能体操作手册、技能集与 stdio MCP 服务器。智能体或修复已有的合作模组，或逆向分析游戏及其引擎从头实现，再用游戏内机器人测试并把笔记回馈给仓库；MCP 服务器则可检索收录 223 个合作项目和 32 处空缺的目录，根据安装目录识别游戏引擎，并记录可执行文件的身份信息。其 README 和逆向分析技能建议原生代码部分搭配 REA 使用，另有两份游戏笔记报告了借助 REA 的 Ghidra 通道得到的观察结果。
 
-  集成 · REA 社区 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/coop-anything/)
+  集成 · REA 社区 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/coop-anything/)
 
 - [**DeepExtract：把 PE 文件导出给 AI 智能体的 IDA 插件**](https://github.com/marcosd4h/DeepExtractIDA)
 
   IDA Pro 9.x 插件与 PowerShell 批量提取脚本，可把 Windows PE 文件转换为 AI 编程智能体能够读取的材料：每个二进制文件对应一个 SQLite 数据库，内含 PE 元数据、函数签名、反汇编、Hex-Rays 伪代码、交叉引用、字符串、栈帧、循环与危险 API 调用；还可选择输出分组的 C++ 与汇编文件，每个函数附带调用者、被调者与字符串信息头，并生成 JSON 索引。它可以无界面地处理目录、文件列表或正在运行进程加载的模块，也可以在已打开的 IDA 数据库上交互运行，并保留分析者所做的重命名和注释。处理这些输出的智能体命令来自独立的 DeepExtractRuntime 项目。
 
-  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/deepextract-ida/)
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/deepextract-ida/)
 
 - [**Mizuchi 匹配反编译流水线**](https://github.com/macabeus/mizuchi)
 
   面向匹配反编译的插件式流水线，在现有反编译项目中逐个处理函数：m2c 生成 C 初稿，decomp-permuter 对其做变异，Claude 借助编译并比对的工具改写代码，只有编译出的目标文件与目标汇编一致时才由 objdiff 判定通过。本地 Decomp Atlas 网页应用为已匹配和未匹配函数建立索引，附调用图和代码向量，帮助挑选下一个函数并生成提示词；HTML 报告汇总每次运行结果。可选的集成插件会把匹配成功的 C 代码放入 git 工作树，检查构建，并可提交、推送或发起 PR。
 
-  集成 · 独立智能体 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/mizuchi-matching-decompilation-pipeline/)
+  集成 · 独立智能体 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/mizuchi-matching-decompilation-pipeline/)
 
 - [**ReAgent C/C++ 函数重建智能体**](https://github.com/Dryxio/reagent)
 
   开源 Python 智能体，以 auto-re-agent 之名发布于 PyPI。它依据 Ghidra 提供的证据为已编译程序中的函数起草 C/C++ 实现，再由可单独配置的检查模型在有轮数上限的修复循环中审阅每份草稿。候选代码须先与反编译、汇编、控制流和 P-code 证据做结构比对，再通过项目自己的构建、测试及可选的差分命令和 11 项启发式一致性信号，才会被接受。README 称这些关卡只是保守的证据，并非等价性证明；工具把候选代码写入覆盖层，而不直接修改源码树。
 
-  集成 · 独立智能体 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reagent-cpp-reconstruction-agent/)
+  集成 · 独立智能体 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/reagent-cpp-reconstruction-agent/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
@@ -2708,37 +2708,37 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   REA 维护者整理的通用逆向资源目录，适合查找基础知识与相邻工具。
 
-  合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/morluto-awesome-re/)
+  合集 · REA 维护者 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/morluto-awesome-re/)
 
 - [**Awesome REA Cases**](https://github.com/songshikang0111/awesome-REA-cases)
 
   中英双语的 REA 与其他 AI 辅助逆向案例合集，附来源并区分作者报告、进行中的工作和复现状态。
 
-  合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-rea-cases/)
+  合集 · REA 社区 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/awesome-rea-cases/)
 
 - [**awesome-rea（yibie）：关注验证的项目与实践报告**](https://github.com/yibie/awesome-rea)
 
   围绕明确的验收检查整理 AI 辅助游戏反编译、原生移植、静态重编译和工具，并另设实践文章与讨论分类。适合寻找一手报告，比较不同项目如何定义正确性。
 
-  合集 · REA 社区 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
+  合集 · REA 社区 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/yibie-awesome-rea/)
 
 - [**Awesome REA/Decompiled Games：按游戏组织的重建项目目录**](https://github.com/HaozheH3/awesome-rea-games)
 
   按原游戏整理反编译、源码重建、重编译、原生移植和演示，通过对照表链接相关项目，并区分启动器、引擎工作、作者分享的展示与源码重建成果。
 
-  合集 · REA 社区 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
+  合集 · REA 社区 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/haozhe-awesome-rea-games/)
 
 - [**Reversed with AI：AI 辅助逆向项目目录**](https://reversedwithai.com/)
 
   经人工审核的网站目录，收录游戏、固件、文件格式、API 与协议、应用及旧软件领域的 AI 辅助逆向项目。每个条目链接一手来源，记录作者报告的模型、工具、耗时、费用与结果，并标注源码公开、复现步骤、真实硬件测试和第三方确认四项检查。
 
-  合集 · REA 社区 · 目标：游戏、应用、二进制、固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)
+  合集 · REA 社区 · 目标：游戏、应用、二进制、固件、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/reversed-with-ai-directory/)
 
 - [**awesome-game-decompilations 游戏反编译项目清单**](https://github.com/CharlotteCross1998/awesome-game-decompilations)
 
   以单个 README 维护的游戏反编译、重编译和反汇编项目清单，约 480 项，按主机平台分组，从 NES、Game Boy 到 Xbox 360、PC 和移动平台，另有规模较大的未分类部分。每个条目是链接到对应项目的游戏名，大多指向 GitHub；按维护者的披露政策，有 AI 参与的条目以警告符号标出。
 
-  合集 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/awesome-game-decompilations/)
+  合集 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/awesome-game-decompilations/)
 
 <a id="references-and-learning"></a>
 ### References and Learning · 文档与学习资源
@@ -2749,193 +2749,193 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   安装、客户端配置、分析引擎依赖及按任务检查就绪状态的官方入口。
 
-  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-installation/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-installation/)
 
 - [**CLI 与 Evidence**](https://github.com/morluto/rea/blob/main/docs/cli.md)
 
   保存完整 Evidence，再提取摘要或模块视图，适合脚本与可复现记录。
 
-  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-cli-evidence/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-cli-evidence/)
 
 - [**MCP 接口约定与生成目录**](https://github.com/morluto/rea/blob/main/docs/mcp-contracts.md#generated-catalog)
 
   官方工具协议、能力发现和 Evidence 语义；适合集成与核对实际工具边界。
 
-  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
+  文档 · REA 官方 · 目标：网站、游戏、应用、二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-mcp-contracts/)
 
 - [**原生二进制调查**](https://github.com/morluto/rea/blob/main/docs/native-investigation.md)
 
   从函数清单到指令、伪代码和引用链的原生二进制调查流程。
 
-  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-native-workflow/)
+  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-native-workflow/)
 
 - [**跨层 JavaScript 应用工作流**](https://github.com/morluto/rea/blob/main/docs/javascript-application-workflows.md)
 
   从 JavaScript 应用图追踪功能、比较版本，同时保留静态分析的不确定性。
 
-  文档 · REA 官方 · 目标：网站、应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-js-workflows/)
+  文档 · REA 官方 · 目标：网站、应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-js-workflows/)
 
 - [**Android APK 静态分析**](https://github.com/morluto/rea/blob/main/docs/android-analysis.md)
 
   经 REA 的 JADX 集成检查 APK、类、方法与引用；结果不等于运行时验证。
 
-  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-android-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-android-guide/)
 
 - [**托管代码分析**](https://github.com/morluto/rea/blob/main/docs/managed-code-analysis.md)
 
   静态读取 .NET 元数据与 CIL，比较成员并检查声明的原生代码边界。
 
-  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-managed-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-managed-guide/)
 
 - [**历史网站网络记录**](https://github.com/morluto/rea/blob/main/docs/web-network-captures.md)
 
   离线检查已有 HAR、SAZ 等网页流量记录；不会自动抓包或访问记录中的 URL。
 
-  文档 · REA 官方 · 目标：网站、应用、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-web-captures/)
+  文档 · REA 官方 · 目标：网站、应用、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-web-captures/)
 
 - [**固件分析**](https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md)
 
   用 Binwalk 检查固件区域、用 Unblob 显式提取，并记录工具与制品身份。
 
-  文档 · REA 官方 · 目标：固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-firmware-guide/)
+  文档 · REA 官方 · 目标：固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-firmware-guide/)
 
 - [**抓包记录检查**](https://github.com/morluto/rea/blob/main/docs/packet-captures.md)
 
   用 TShark 字段、显示过滤器和 decode-as 规则检查已有的网络、USB 或蓝牙抓包，并可查询已安装的字段名；不抓取流量、不打开网络接口，也不控制设备。
 
-  文档 · REA 官方 · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-packet-captures/)
+  文档 · REA 官方 · 目标：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-packet-captures/)
 
 - [**抓包摘要**](https://github.com/morluto/rea/blob/main/docs/pcap-analysis.md)
 
   把已保存 pcap/pcapng 文件中的端点、DNS 查询与地址、TLS SNI、协议栈和 HTTP URI 汇总为可分页的 Evidence 视图；不抓取流量，也不访问记录中的目标。
 
-  文档 · REA 官方 · 目标：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-pcap-summaries/)
+  文档 · REA 官方 · 目标：协议 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-pcap-summaries/)
 
 - [**信号记录解码**](https://github.com/morluto/rea/blob/main/docs/signal-recordings.md)
 
   用调用方指定的 sigrok 协议解码器（如 UART、I2C）解码已有的逻辑信号记录，并保留带采样区间的注释文本；不采集样本，也不与硬件通信。
 
-  文档 · REA 官方 · 目标：固件、协议 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-signal-recordings/)
+  文档 · REA 官方 · 目标：固件、协议 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-signal-recordings/)
 
 - [**浏览器观察指南**](https://rea.tools/guides/browser/)
 
   通过官方 Notes 示例关联用户点击、导出请求与下载结果；REA 负责观察。
 
-  文档 · REA 官方 · 目标：网站 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-browser-guide/)
+  文档 · REA 官方 · 目标：网站 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-browser-guide/)
 
 - [**JavaScript 与 Electron：追踪 CSV 导出**](https://rea.tools/guides/javascript/)
 
   官方自建 Notes 样例，从 renderer、preload、IPC 到 CSV 导出建立证据链。
 
-  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-electron-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-electron-guide/)
 
 - [**rea-playbook**](https://github.com/jinshi666888/rea-playbook)
 
   提供 Electron 练习目标、Evidence 提取与 MCP 探测，区分离线展示和真正调用 REA。
 
-  学习资源 · REA 社区 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-playbook/)
+  学习资源 · REA 社区 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-playbook/)
 
 - [**rea-lab**](https://github.com/pablodiazjorge/rea-lab)
 
   Windows REA/Ghidra 实验室，提供已知答案挑战、公开研究、上游贡献与限制说明。
 
-  研究 · REA 社区 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-lab/)
+  研究 · REA 社区 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-lab/)
 
 - [**Flutter 构建识别**](https://github.com/morluto/rea/blob/main/docs/flutter-analysis.md)
 
   通过 REA 的纯解析命令行与 MCP 工具，识别 Flutter APK 的 Dart 快照哈希、各 ABI 库摘要与引擎构建来源，再检查单个 ABI 的 AOT 快照段。字符串池输出是对 package 与 SDK URI 的有界字节模式投影，并非反序列化的 Dart 类或恢复的源码。
 
-  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-flutter-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-flutter-guide/)
 
 - [**HarmonyOS 应用包静态清点**](https://github.com/morluto/rea/blob/main/docs/harmony-analysis.md)
 
   通过 REA 加固的 ZIP 读取器清点 HarmonyOS 的 HAP、HSP 与 App Pack 文件，并投影出无需执行的应用图：组件路径、ID 与哈希、Stage／FA 打包模型提示、运行时类别提示，以及基于路径的原生桥接假设。所有结论仅基于路径存在；清单、Ark 字节码、资源和签名均未被解码或验证。
 
-  文档 · REA 官方 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-harmony-guide/)
+  文档 · REA 官方 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-harmony-guide/)
 
 - [**通过 Ghidra 分析 MIPS ELF**](https://github.com/morluto/rea/blob/main/docs/ghidra-mips.md)
 
   说明 REA 通过 Ghidra 分析 MIPS ELF 可执行文件、可重定位目标文件与 MIPS16 共享镜像的流程，包括为缺少 ABI 记录的旧式固件可执行文件固定 32 位语言，以免 Ghidra 将其按 64 位导入。准入以文件头声明和 ABI 记录为界；验证将项目自有的测试样本与独立的 readelf 输出对照，而不执行或重新托管固件。
 
-  文档 · REA 官方 · 目标：二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-mips-guide/)
+  文档 · REA 官方 · 目标：二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-ghidra-mips-guide/)
 
 - [**通过 Ghidra 静态分析 PSP ELF**](https://github.com/morluto/rea/blob/main/docs/ghidra-psp.md)
 
   说明 REA 针对静态 PSP ELF 可执行文件的受限 Ghidra 配置：Allegrex 指令、PSP 加载与调用约定交由使用者安装的 ghidra-allegrex 扩展处理，同时沿用 REA 的命令行、MCP、证据与快照流程。它仅在 Linux x64 上接受一种 PSPSDK 文件头与 ABI 声明，并在自行构建的测试样本上验证选定的静态事实，不涉及商业游戏或 PRX 模块。
 
-  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-psp-guide/)
+  文档 · REA 官方 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-ghidra-psp-guide/)
 
 - [**借助 Ghidra 恢复 NativeAOT 元数据**](https://github.com/morluto/rea/blob/main/docs/ghidra-nativeaot.md)
 
   在 REA 的 Ghidra 分析中，从 x64 PE 可执行文件恢复 .NET 8 NativeAOT 元数据：通过内置只读解析器或可选的无界面适配器（会为 Ghidra 数据库添加注释），从 RTR 9.1 数据中取得 MethodTable 关系、虚表槽位与冻结字符串。生成的名称、推断的原型和恢复的原生伪代码，与未知的原始 C# 名称、字段和源码明确区分。
 
-  文档 · REA 官方 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-ghidra-nativeaot-guide/)
+  文档 · REA 官方 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/rea-ghidra-nativeaot-guide/)
 
 - [**OpenSecurityTraining2**](https://ost2.fyi/)
 
   免费的自主学习课程，提供逆向工程、固件和系统基础等学习路线。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/ost2/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/ost2/)
 
 - [**pwn.college：逆向工程**](https://pwn.college/program-security/reverse-engineering/)
 
   包含托管练习的逆向工程课程，覆盖函数、数据访问、静态工具和动态工具。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/pwn-college-re/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/pwn-college-re/)
 
 - [**逆向工程入门**](https://beginners.re/)
 
   Dennis Yurichev 编写的免费逆向入门书，以汇编与编译后程序理解为核心，提供多语言版本。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/re-for-beginners/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/re-for-beginners/)
 
 - [**radare2 官方手册**](https://book.rada.re/)
 
   radare2 官方实践参考，覆盖分析、反汇编、脚本、调试及相关插件。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/radare2-book/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/radare2-book/)
 
 - [**寻找 Jingle Town：在没有调试符号时调试 N64 游戏**](https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/)
 
   Snowboard Kids 2 反编译项目的一篇操作说明：在一致性构建仍无法加入调试信息时，把 gdb-multiarch 接到 Ares 模拟器上。文中按 ELF 符号名在函数处设断点，再手动读取结构体中的一个字节，检验它是否决定加载哪个关卡 overlay。这是在运行时检验反编译假设的简短方法记录，而非重建成果。
 
-  学习资源 · 目标：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/finding-jingle-town-n64-debugging/)
+  学习资源 · 目标：游戏 · [使用条件与局限](https://awesomerea.org/zh/resources/finding-jingle-town-n64-debugging/)
 
 - [**JPCERT/CC：攻击服务器上的 APK 解析与 API 探测**](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html)
 
   JPCERT/CC 于 2026 年 10 月 15 日发布的博客文章，调查日本国内一系列不正当访问事件背后的攻击基础设施。文章报告攻击者利用 AI 扫描已知漏洞并经由 API 发动攻击，攻击服务器上存有 APK 文件、与 jadx 和 Blutter 相关的文件、APK 解包目录，以及用于探测应用 API 的 SSRF 验证脚本。这是防御方对所观察到的攻击者工具的记述并附缓解建议，而非公开的 AI 辅助分析方法或可复现的工作流程。
 
-  学习资源 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/jpcert-apk-api-attack-infrastructure-report/)
+  学习资源 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/jpcert-apk-api-attack-infrastructure-report/)
 
 - [**逆向工程教程（mytechnotalent）**](https://github.com/mytechnotalent/Reverse-Engineering)
 
   mytechnotalent 维护的免费英文课程索引，几乎每天更新：共 490 节编号课程，多数课程让学习者先编写小程序，再对其调试和打补丁（文中称 "hack"），覆盖 x86、x64、32/64 位 ARM、RISC-V 和 AVR。前期课程从数制、寄存器、内存和栈讲起；后期转向 Raspberry Pi Pico/Pico 2、STM32F401、ESP32-C3、ATmega328P 和 micro:bit 等开发板上的微控制器固件，以及 Windows、Go、Rust 和 WebAssembly 程序。README 本身只是链接目录，课程正文位于一个 GitBook 以及作者其他仓库中的课程文件和 PDF 书。
 
-  学习资源 · 目标：二进制、固件 · [使用条件与证据](https://awesomerea.org/zh/resources/mytechnotalent-reverse-engineering/)
+  学习资源 · 目标：二进制、固件 · [使用条件与局限](https://awesomerea.org/zh/resources/mytechnotalent-reverse-engineering/)
 
 - [**Z0FCourse 逆向工程课程**](https://github.com/0xZ0F/Z0FCourse_ReverseEngineering)
 
   Z0F 编写的免费英文课程，讲解如何逆向 64 位 Windows 程序，README 称目标是帮助学习者从入门进阶到中级。Markdown 课程从数制、x64 寄存器、内存布局和调用约定讲起，过渡到 x64dbg 与 Ghidra，再逆向若干小样本以及作者自己编写的 DLL，还原其中的 Player 类，并在自己编写的程序中调用该 DLL 的导出函数。尚未完成的后续章节介绍 Windows 内部机制，并逆向 ntdll 中的 generic table 系列函数。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/z0f-reverse-engineering-course/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/z0f-reverse-engineering-course/)
 
 - [**OWASP 移动应用安全测试指南（MASTG）**](https://mas.owasp.org/MASTG/)
 
   OWASP 维护的开放手册，讲解 Android 和 iOS 应用的安全测试与逆向工程，发布于 mas.owasp.org。除平台原理、测试环境搭建以及应用篡改与逆向工程等章节外，还收录可单独引用的测试、技术、工具页面、知识条目、最佳实践和可运行的演示，均与 MASVS 控制项和 MASWE 弱点对应。OWASP 自己的 UnCrackable 破解练习应用用作练习目标和示例。
 
-  学习资源 · 目标：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/owasp-mastg/)
+  学习资源 · 目标：应用 · [使用条件与局限](https://awesomerea.org/zh/resources/owasp-mastg/)
 
 - [**Decompilation Wiki 反编译维基**](https://decompilation.wiki/)
 
   社区维护的维基，讲解反编译器如何工作，从反汇编、提升和控制流恢复，到类型恢复、控制流结构化、质量评估和神经反编译，并为各项技术注明研究出处。它还整理了反编译器、插件、博客和演讲目录，设有符号恢复、代码相似性和漏洞发现等应用研究页面，以及按原平台列出的约 240 个游戏重建项目表。
 
-  学习资源 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/decompilation-wiki/)
+  学习资源 · 目标：游戏、二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/decompilation-wiki/)
 
 - [**Frontkick 与 Rikugan：基于 CREBench 的智能体对比**](https://www.synacktiv.com/en/publications/ufc-666-frontkick-vs-rikugan)
 
   Matthieu Breuil 在 Synacktiv 发表的文章讲解了调用预定义工具与执行生成代码两类智能体设计，并介绍在 Binary Ninja 内运行生成的 Python 代码的 CodeAct 智能体 Frontkick。文章在 CREBench 的两个密码二进制任务上将 Frontkick 与开源插件 Rikugan 对比，随后指出 Frontkick 的优势主要来自提示词中列出已安装 Python 库的做法，而非其架构本身。这是一篇附逐次运行结果的小规模评估文章，不是已发布的工具，也不是普遍性的基准结论。
 
-  学习资源 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/frontkick-rikugan-crebench-comparison/)
+  学习资源 · 目标：二进制 · [使用条件与局限](https://awesomerea.org/zh/resources/frontkick-rikugan-crebench-comparison/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

@@ -63,6 +63,9 @@ RELATIONSHIPS = {
     'foundation': ('Foundation tool', '基础工具'),
     'learning': ('Learning resource', '学习资源'),
 }
+# One name for each entry's requirements disclosure: README links, homepage cards, /resources/, /cases/ and entry pages.
+# site/app.js repeats it in its UI strings; validate_site.py checks that copy.
+REQUIREMENTS_LABEL = ('Requirements & limits', '使用条件与局限')
 TARGETS = {
     'website': ('Website', '网站'),
     'game': ('Game', '游戏'),
@@ -276,7 +279,7 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 description = plain_text(record[f'description_{language}'])
                 metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
                 detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                detail_label = '使用条件与证据' if language == 'zh' else 'Requirements & evidence'
+                detail_label = REQUIREMENTS_LABEL[language == 'zh']
                 lines.extend([
                     f"- [**{name}**]({record['url']})", '',
                     f'  {description}', '',
