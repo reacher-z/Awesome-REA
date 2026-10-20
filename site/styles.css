@@ -60,7 +60,7 @@ input::placeholder{color:var(--muted);opacity:1}
 .submit-link{display:inline-flex;align-items:center;gap:9px;min-height:40px;padding:8px 15px;border:1px solid var(--strong);border-radius:8px;font-size:13px;font-weight:600;background:var(--surface)}
 .submit-link:hover{background:var(--tint);border-color:var(--steel)}
 .collection-intro{padding:46px 0 34px}
-.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 16px;color:var(--link);font:650 11px/1.5 var(--sans);letter-spacing:1.4px}
+.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 16px;color:var(--link);font:650 12px/1.5 var(--sans);letter-spacing:1.4px}
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--steel);border-radius:2px}
 .collection-intro h1{margin:0;max-width:1160px;font-size:clamp(34px,3.25vw,48px);line-height:1.16;font-weight:700;letter-spacing:-1.65px}
 .mobile-title-break{display:none}
@@ -205,14 +205,14 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .submit-link{font-size:12px;padding:8px 11px}
   .submit-link>.icon{display:none}
   .collection-intro{padding:24px 0 18px}
-  .eyebrow{font-size:10px;letter-spacing:1.1px;margin-bottom:10px}
+  .eyebrow{letter-spacing:1.1px;margin-bottom:10px}
   .collection-intro h1{font-size:34px;line-height:1.2;letter-spacing:-1.15px}
   .mobile-title-break{display:inline}
   .collection-intro>p:last-child{margin-top:12px;font-size:15px;line-height:1.7}
   .index-mode-switch{gap:22px;margin-bottom:16px}
   .index-mode{min-height:44px;font-size:14px;gap:7px;padding-bottom:10px}
   .index-mode>.icon{width:17px;height:17px;font-size:17px}
-  .index-mode>.mono{font-size:11px;padding:1px 6px}
+  .index-mode>.mono{padding:1px 6px}
   .search-box{height:52px;padding:0 15px;gap:11px}
   .search-box kbd{display:none}
   .source-target-filters,.group-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%}
@@ -241,7 +241,6 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   html[lang="zh-CN"] .collection-intro h1{font-size:33px;letter-spacing:-.6px}
   .index-mode-switch{gap:20px}
   .index-mode{font-size:13px;gap:6px}
-  .index-mode>.mono{font-size:11px}
   .index-mode>.icon{width:16px;height:16px;font-size:16px}
 }
 @media(max-width:390px){
@@ -304,7 +303,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .collection-home .resource-card,.collection-home .source-card{box-shadow:none;border-radius:10px}
 .collection-home .resource-card:hover,.collection-home .source-card:hover{box-shadow:0 7px 28px #2b234b07}
 .contributors-section{display:grid;grid-template-columns:1fr 2fr;gap:30px;border-top:1px solid var(--line);padding-top:30px;padding-bottom:35px;align-items:center}
-.contributors-section .eyebrow{font-size:9px;letter-spacing:1.3px;margin-bottom:8px}
+.contributors-section .eyebrow{letter-spacing:1.3px;margin-bottom:8px}
 .contributors-section h2{font-size:22px;font-weight:600;letter-spacing:-.5px;margin:0}
 .contributor-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
 .contributor-entry{display:flex;gap:16px;align-items:flex-start}
@@ -316,9 +315,11 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 html[lang="zh-CN"] .home-intro h1{font-size:clamp(36px,3.6vw,52px);letter-spacing:0;line-height:1.25}
 html[lang="zh-CN"] .home-intro h1 em{font-family:var(--sans);font-style:normal;letter-spacing:-1px}
 html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
+/* Chinese eyebrow labels drop the wide tracking meant for Latin capitals. */
+html[lang="zh-CN"] .eyebrow{letter-spacing:0}
 @media(max-width:1100px){.hero-layout{gap:32px;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}.home-intro h1{font-size:48px;letter-spacing:-2.3px}.subject-directory{gap:8px}.subject-directory a{padding:11px 10px}}
 @media(max-width:850px){.hero-layout{grid-template-columns:1fr}.collection-shelf{display:none}.home-intro h1{font-size:48px;max-width:720px}.home-intro .collection-description{max-width:650px}.home-intro{padding-top:24px}.subject-directory{grid-template-columns:repeat(3,minmax(0,1fr))}.home-intro .collection-directory{gap:12px 24px}.home-intro .collection-directory .directory-about{margin-left:0}}
-@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{font-size:11px;margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}.contributors-section{grid-template-columns:1fr;gap:22px;padding-top:26px;padding-bottom:30px}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
+@media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}.contributors-section{grid-template-columns:1fr;gap:22px;padding-top:26px;padding-bottom:30px}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
 @media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow{transform:none}}
 @media(max-width:520px){.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.hero-actions .button,.hero-actions .hero-text-link{min-width:0;min-height:44px;justify-content:center;font-size:13px;line-height:1.5}.hero-actions .button{padding:10px}.hero-text-link{font-size:11px}.home-intro .collection-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.home-intro .collection-directory a:not(.directory-about){display:flex;flex-direction:column;align-items:flex-start;gap:0}.home-intro .collection-directory .directory-about{grid-column:1/-1;width:auto}.home-intro .collection-directory a{font-size:10px}}
 
@@ -359,7 +360,7 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
   .more-filters{display:inline-flex}
   .more-filters>.icon{width:13px;height:13px;font-size:13px;transition:transform .15s}
   .more-filters[aria-expanded="true"]>.icon{transform:rotate(180deg)}
-  .more-filters-count{min-width:19px;padding:0 5px;border-radius:999px;background:var(--ink);color:var(--surface);font-size:11px;line-height:19px;text-align:center}
+  .more-filters-count{min-width:19px;padding:0 5px;border-radius:999px;background:var(--ink);color:var(--surface);font-size:12px;line-height:19px;text-align:center}
   #curated-view .curated-selectors:not(.is-open){display:none}
   #curated-view .filter-row:has(>.curated-selectors:not(.is-open)){padding-bottom:0}
   #curated-view>.results-topline{min-height:0}
@@ -469,7 +470,7 @@ html[lang="zh-CN"][data-layout="compact"] .collection-home .card-description,htm
 .data-dialog::backdrop{background:#20233555;backdrop-filter:blur(3px)}
 body.data-dialog-open{overflow:hidden}
 .data-dialog-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-.data-dialog .eyebrow{margin-bottom:12px;font-size:10px;letter-spacing:1px}
+.data-dialog .eyebrow{margin-bottom:12px;letter-spacing:1px}
 .data-dialog h2{font-size:27px;line-height:1.25;letter-spacing:-.7px;margin:0;font-weight:650}
 .data-close{display:flex;flex:none;align-items:center;justify-content:center;width:36px;height:36px;margin:-9px -9px 0 0;border-radius:8px;background:transparent;color:var(--muted);font-size:27px;line-height:1}
 .data-close:hover{background:var(--soft);color:var(--ink)}
