@@ -11191,5 +11191,35 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "firerpa-lamda",
+    "name": "FIRERPA (lamda)",
+    "url": "https://github.com/firerpa/lamda",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Client/server Android automation and dynamic-analysis platform for devices the analyst is authorized to test. An on-device server exposes UI automation, a browser-based remote desktop, HTTPS traffic capture (MITM), and bundled Frida instrumentation through one service, driven from a Python client library of 160+ APIs. The README reports it works on Android 6.0+ with or without root, maps Frida RPC to Python and JSON-RPC calls, and includes an MCP server and a natural-language agent command.",
+    "description_zh": "采用客户端／服务器架构的 Android 自动化与动态分析平台，用于分析者有权测试的设备。设备端服务通过单一服务对外提供 UI 自动化、基于浏览器的远程桌面、HTTPS 流量抓取（MITM）和内置的 Frida 插桩，由包含 160 多个 API 的 Python 客户端库驱动。README 称其支持 Android 6.0+，可在有无 root 的情况下运行，将 Frida RPC 映射为 Python 与 JSON-RPC 调用，并内置 MCP 服务器和自然语言 agent 命令。",
+    "evidence_url": "https://github.com/firerpa/lamda/blob/a980a38130ba00711311e509e3009301e8ff705a/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v10.9, published 2026-09-27 from the default branch 10; the reviewed commit a980a38 is that release's auto-commit. The Python client requires Python 3.6+ (setup.py pins >=3.6,<3.15); the README lists Android 6.0+ targets on arm64-v8a, armeabi-v7a, x86 and x86_64, including emulators and cloud phones.",
+      "This repository holds the Python client library, the gRPC/protobuf service definitions and helper scripts; the on-device server and its Debian environment are distributed as prebuilt per-architecture release tarballs and a Magisk module, not committed to the tree. Deployment uses a one-click app (root or Shizuku), a Magisk module, manual extraction or ROM integration.",
+      "Operates only on a device the server is installed on, over a single service port with TLS and certificate-based access control; the README positions it for security testing and compliance analysis. The committed tools directory includes the project's own default MITM CA and SSH material, described in the repository as open defaults; this record restates no keys, stealth patches or protection-circumvention procedures.",
+      "MIT-licensed. A DISCLAIMER.TXT requires use only for lawful study, research or authorized application analysis on a virtual or dedicated device, and states the software itself provides no capability to intrude on other applications. The client, protobuf definitions and tool scripts were read; nothing was deployed or run, and no device was connected."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/firerpa/lamda/blob/a980a38130ba00711311e509e3009301e8ff705a/README.md#L58-L63",
+      "https://github.com/firerpa/lamda/blob/a980a38130ba00711311e509e3009301e8ff705a/setup.py",
+      "https://github.com/firerpa/lamda/blob/a980a38130ba00711311e509e3009301e8ff705a/LICENSE",
+      "https://github.com/firerpa/lamda/blob/a980a38130ba00711311e509e3009301e8ff705a/DISCLAIMER.TXT",
+      "https://github.com/firerpa/lamda/tree/a980a38130ba00711311e509e3009301e8ff705a/lamda/rpc",
+      "https://github.com/firerpa/lamda/releases/tag/v10.9"
+    ]
   }
 ]

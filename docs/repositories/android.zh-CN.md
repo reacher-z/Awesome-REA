@@ -14,7 +14,7 @@
 - [OWASP/mastg](https://github.com/OWASP/mastg) — OWASP 移动应用安全测试指南（MASTG）是一部涵盖移动应用安全测试和逆向工程的全面手册，介绍验证 OWASP 移动安全弱点枚举（MASWE）中各项弱点的技术流程，并与 OWASP MASVS 保持一致。 **[13,258 星标]**
 - [sensepost/objection](https://github.com/sensepost/objection) — 📱 objection：移动端运行时探索工具。 **[9,446 星标]** · 精选：[objection](https://awesomerea.org/zh/resources/objection/)
 - [We5ter/Scanners-Box](https://github.com/We5ter/Scanners-Box) — 面向黑客、企业与 AI 智能体的全域开源安全工具库。 **[9,108 星标]**
-- [firerpa/lamda](https://github.com/firerpa/lamda) — Android 全栈设备控制平台：提供 WebRTC/H.264 远程桌面、UI/OCR/图像匹配自动化、一键 MITM、内置 Frida、代理/VPN/frp/P2P 网络、MCP/Agent 和 160 多个 API，面向多设备集群与工程化部署。 **[8,610 星标]**
+- [firerpa/lamda](https://github.com/firerpa/lamda) — Android 全栈设备控制平台：提供 WebRTC/H.264 远程桌面、UI/OCR/图像匹配自动化、一键 MITM、内置 Frida、代理/VPN/frp/P2P 网络、MCP/Agent 和 160 多个 API，面向多设备集群与工程化部署。 **[8,610 星标]** · 精选：[FIRERPA（lamda）Android 自动化与动态分析平台](https://awesomerea.org/zh/resources/firerpa-lamda/)
 - [SimoneAvogadro/android-reverse-engineering-skill](https://github.com/SimoneAvogadro/android-reverse-engineering-skill) — 支持 Android 应用逆向工程的 Claude Code 技能。 **[8,152 星标]** · 精选：[Android Reverse Engineering Skill 安卓反编译智能体技能](https://awesomerea.org/zh/resources/android-reverse-engineering-skill/)
 - [androguard/androguard](https://github.com/androguard/androguard) — Android 应用逆向工程与渗透测试。 **[6,355 星标]** · 精选：[Androguard](https://awesomerea.org/zh/resources/androguard/)
 - [dwisiswant0/apkleaks](https://github.com/dwisiswant0/apkleaks) — 扫描 APK 文件中的 URI、端点与秘密信息。 **[6,353 星标]**
