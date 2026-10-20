@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "jsxer",
+    "name": "Jsxer",
+    "url": "https://github.com/AngeloD2022/jsxer",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "C++ decompiler for JSXBIN, the binary format of Adobe's legacy ExtendScript, the ECMAScript 3 dialect used to script applications such as Photoshop, InDesign and After Effects. It reads a JSXBIN 1.0, 2.0 or 2.1 literal, parses it into a syntax tree and prints JavaScript source with a header naming the format version. An experimental --unblind option renames symbols obfuscated by JsxBlind, and the same decompiler is exposed as a shared library with a ctypes-based Python binding.",
+    "description_zh": "面向 JSXBIN 的 C++ 反编译器。JSXBIN 是 Adobe 旧版 ExtendScript 的二进制格式，ExtendScript 则是用于为 Photoshop、InDesign、After Effects 等应用编写脚本的 ECMAScript 3 方言。它读取 JSXBIN 1.0、2.0 或 2.1 字面量，解析为语法树，再输出 JavaScript 源码，并在文件头注明格式版本。实验性的 --unblind 选项可为经 JsxBlind 混淆的符号重新命名；同一反编译器还以共享库形式提供，并附基于 ctypes 的 Python 绑定。",
+    "evidence_url": "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.7.4, published 2025-03-31 with macOS arm64, macOS x86 and Windows archives. The reviewed master commit, from 2025-04-22, is one commit later and only makes the README's notice more visible: it says the project is being rewritten in Rust on a separate rust-rewrite branch, whose latest commit is from 2025-03-11. This entry describes the C++ code on master.",
+      "Input is a file holding only the JSXBIN literal, usually beginning with @JSXBIN@; the README warns that other content around it must be removed first. The CLI writes a .jsx file next to the input unless -o names another path; input that fails the JSXBIN signature check yields an error message and no decompiled code.",
+      "Source builds need CMake 3.26+ and a C++17 compiler; configuring fetches fmt 9.1.0, plog 1.1.9 and CLI11 2.3.2 from GitHub. The README documents only the macOS build, while CMakeLists.txt also has Windows and Linux branches and builds a static library and a shared library, the latter loaded by bindings/python/decompiler.py from the build directory.",
+      "ctest builds four small programs that decompile embedded array, object, member-expression and for-statement samples and print the result; they report the decompiler's status code but do not compare output with the original source, and CI runs them on macOS and Windows for pull requests. TODO.md lists open problems with function argument order, comma-expression declarations, number printing and some XML nodes producing improper code.",
+      "AGPL-3.0. The README says Jsxer was made for source code recovery and security research and asks users not to use it to pirate scripts from their authors; it credits Andrin Meier's format research and jsxbin-to-jsx-converter, whose original repository it says was removed after an Adobe DMCA takedown. Decompiled scripts keep their authors' rights. The reviewed sources state no REA use, and this collection decompiled no files."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/CMakeLists.txt",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/src/cli/main.cpp",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/src/jsxer/jsxer.cpp",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/include/jsxer.h",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/bindings/python/decompiler.py",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/TODO.md",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/tests/src/array-expr.cpp",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/.github/workflows/run-tests.yaml",
+      "https://github.com/AngeloD2022/jsxer/blob/0340bd3321be529cf775215cfac860cf2cf8b477/LICENSE",
+      "https://github.com/AngeloD2022/jsxer/releases/tag/v1.7.4"
+    ]
   }
 ]

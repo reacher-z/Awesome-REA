@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**605 repositories** · 2026-10-16 UTC
+**604 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -136,7 +136,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [sztupy/luadec51](https://github.com/sztupy/luadec51) — Lua Decompiler for Lua version 5.1 **[353 stars]**
 - [we11cheng/WCShadowrocket](https://github.com/we11cheng/WCShadowrocket) — iOS Shadowrocket (decrypted and re-signed; for reference only; adding nodes has issues). For the source of another censorship-circumvention project, Potatso, see: https<span>:</span>//github.com/we11cheng/WCPotatso **[353 stars]**
 - [mildsunrise/darter](https://github.com/mildsunrise/darter) — <span>:</span>detective: Dart / Flutter VM snapshot analyzer **[345 stars]**
-- [AngeloD2022/jsxer](https://github.com/AngeloD2022/jsxer) — A fast and accurate JSXBIN decompiler. **[327 stars]**
 - [rrika/cdcEngineDXHR](https://github.com/rrika/cdcEngineDXHR) — Decompilation of Deus Ex: Human Revolution **[323 stars]**
 - [everettjf/Yolo](https://github.com/everettjf/Yolo) — 😈Scripts or demo projects on iOS development or reverse engineering **[321 stars]**
 - [projectPiki/pikmin](https://github.com/projectPiki/pikmin) — A decompilation of Pikmin brought to you by fans of the series. **[319 stars]**

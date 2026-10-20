@@ -10,7 +10,7 @@
 
 | 分类 | 仓库数 | 关联精选或论文 |
 | --- | ---: | ---: |
-| [网站](web-analysis.zh-CN.md) | 183 | 20 |
+| [网站](web-analysis.zh-CN.md) | 184 | 21 |
 | [游戏](game-analysis.zh-CN.md) | 392 | 45 |
 | [应用 · Android](android.zh-CN.md) | 430 | 28 |
 | [应用 · 托管代码](managed-code.zh-CN.md) | 125 | 3 |
@@ -18,7 +18,7 @@
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 104 | 18 |
 | [固件](firmware.zh-CN.md) | 211 | 16 |
 | [协议](protocol-analysis.zh-CN.md) | 106 | 7 |
-| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 605 | 37 |
+| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 604 | 37 |
 
 [扫描方法（英文）](../source-scan.md) · [范围排除记录](../../data/source-scope.json)
 

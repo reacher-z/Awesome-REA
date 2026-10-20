@@ -10,7 +10,7 @@ Scan date: **2026-10-16 UTC**.
 
 | Category | Repositories | Linked to curated entries or papers |
 | --- | ---: | ---: |
-| [Websites](web-analysis.md) | 183 | 20 |
+| [Websites](web-analysis.md) | 184 | 21 |
 | [Games](game-analysis.md) | 392 | 45 |
 | [Apps · Android](android.md) | 430 | 28 |
 | [Apps · Managed code](managed-code.md) | 125 | 3 |
@@ -18,7 +18,7 @@ Scan date: **2026-10-16 UTC**.
 | [Runtime and debugging](dynamic-analysis.md) | 104 | 18 |
 | [Firmware](firmware.md) | 211 | 16 |
 | [Protocols](protocol-analysis.md) | 106 | 7 |
-| [General tools and collections](reverse-engineering.md) | 605 | 37 |
+| [General tools and collections](reverse-engineering.md) | 604 | 37 |
 
 [Scan methodology](../source-scan.md) · [Scope exclusions](../../data/source-scope.json)
 
