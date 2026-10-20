@@ -94,6 +94,10 @@ const UI = {
     "sourceLoading": "Loading repositories…",
     "clearFilters": "Clear filters ×",
     "exportMatches": "Export matches (JSON) ↓",
+    "activeFilters": "Active filters",
+    "removeFilter": "Remove filter {filter}",
+    "filterSearch": "Search",
+    "groupLabel": "Group",
     "emptyTitle": "No matching resources.",
     "sourceEmptyDescription": "Try another search term or broaden your filters.",
     "resetFilters": "Reset filters",
@@ -289,6 +293,10 @@ const UI = {
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
     "exportMatches": "导出匹配项（JSON）↓",
+    "activeFilters": "当前筛选",
+    "removeFilter": "移除筛选条件「{filter}」",
+    "filterSearch": "搜索",
+    "groupLabel": "分组",
     "emptyTitle": "没有匹配的资源。",
     "sourceEmptyDescription": "换一个关键词，或扩大筛选范围。",
     "resetFilters": "重置筛选",
@@ -482,6 +490,23 @@ function renderCategories() {
   [...new Set(state.records.map(r => r.category))].sort((a,b) => compareLabels(label(state.categoryLabels,a), label(state.categoryLabels,b))).forEach(category => { const option = node("option", "", label(state.categoryLabels, category)); option.value = category; select.append(option); });
   if (state.loaded && ![...select.options].some(o => o.value === state.category)) state.category = "all"; select.value = [...select.options].some(o => o.value === state.category) ? state.category : "all"; renderKinds();
 }
+// The group filter has no control of its own; a shared ?group= link still shows and removes it as a chip.
+const GROUP = {"rea":["REA ecosystem","REA 生态"],"agents":["Independent agents","独立智能体"],"tools":["Foundation tools","基础工具"],"learn":["Learning and related lists","学习资源与相关目录"]};
+// Active constraints render as removable chips in both views, including valid filters without a visible control
+// (a ?group= link, or a Protocol target whose button is hidden). Removing one keeps every other choice; focus moves
+// to the chip that takes its place, else the previous chip, else the collection's search field.
+function renderActiveFilters(container, items, search) {
+  container.replaceChildren(); container.hidden = !items.length;
+  items.forEach(([field, value, remove], index) => {
+    const name = field + (state.lang === "zh" ? "：" : ":"); const item = node("li"); const button = node("button", "active-filter");
+    button.type = "button"; button.setAttribute("aria-label", t("removeFilter").replace("{filter}", () => name + (state.lang === "zh" ? "" : " ") + value));
+    const close = node("span", "active-filter-remove", "×"); close.setAttribute("aria-hidden", "true");
+    button.append(node("span", "active-filter-field", name), node("span", "active-filter-value", value), close);
+    button.addEventListener("click", () => { remove(); const chips = [...container.children].map(chip => chip.children[0]); (chips[index] || chips[index - 1] || search).focus(); });
+    item.append(button); container.append(item);
+  });
+}
+function targetLabel(target) { return t("target" + target[0].toUpperCase() + target.slice(1)); }
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
@@ -583,6 +608,14 @@ function render(shown = 0) {
   showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
+  const removeCurated = change => () => { change(); state.visible = 15; updateURL(true); render(); };
+  renderActiveFilters($("#active-filters"), [
+    state.q.trim() && [t("filterSearch"), `“${state.q.trim()}”`, removeCurated(() => { state.q = ""; $("#search-input").value = ""; })],
+    state.target !== "all" && [t("targetFilterLabel"), targetLabel(state.target), removeCurated(() => { state.target = "all"; })],
+    state.kind !== "all" && [t("kindLabel"), label(KIND, state.kind), removeCurated(() => { state.kind = "all"; $("#kind-select").value = "all"; })],
+    state.category !== "all" && [t("categoryLabel"), label(state.categoryLabels, state.category), removeCurated(() => { state.category = "all"; $("#category-select").value = "all"; })],
+    state.group !== "all" && [t("groupLabel"), label(GROUP, state.group), removeCurated(() => { state.group = "all"; })],
+  ].filter(Boolean), $("#search-input"));
   renderMoreFilters();
   $$('[data-group]').forEach(el => { const active = el.dataset.group === state.group; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
   $$('[data-target]').forEach(el => { const active = el.dataset.target === state.target; el.classList.toggle("active", active); el.setAttribute("aria-pressed", String(active)); });
@@ -861,6 +894,12 @@ function renderSources(shown = 0) {
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
   showExport("source-");
+  const removeSource = change => () => { change(); sourceState.visible = 24; sourceURL(true); renderSources(); };
+  renderActiveFilters($("#source-active-filters"), [
+    sourceState.q.trim() && [t("filterSearch"), `“${sourceState.q.trim()}”`, removeSource(() => { sourceState.q = ""; $("#source-search").value = ""; })],
+    sourceState.target !== "all" && [t("targetFilterLabel"), targetLabel(sourceState.target), removeSource(() => { sourceState.target = "all"; })],
+    topic && [t("sourceTopicLabel"), topicDisplay(sourceState.topic.trim()), removeSource(() => { sourceState.topic = ""; $("#source-topic").value = ""; renderTopicOptions(""); })],
+  ].filter(Boolean), $("#source-search"));
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }
 function sourceBrowserPayload(data) {
