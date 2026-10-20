@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 201 | 199 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 152 | 152 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 238 | 238 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 146 | 146 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 244 | 244 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 213 个出现项含目录链接；共关联 206 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 379 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 385 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -382,6 +382,12 @@
 | TH04：从源码重建东方幻想乡的四个 PC-98 程序 | 已收录 | [来源](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
 | DX-Ball：借助 REA 并由 Codex 完成的函数级重建 | 已收录 | [来源](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
 | Pre-CU Star Wars Galaxies: an idea to accelerate emulator reverse engineering with AI | 证据不足 | [来源](https://x.com/i/status/2111615624678088837) |
+| Animal Jam / Burrow: an unconfirmed account of Claude-assisted decompilation | 证据不足 | [来源](https://x.com/i/status/2111623879487795255) |
+| Kernel anticheat privacy: using REA to investigate machine information sent to a vendor | 证据不足 | [来源](https://x.com/i/status/2111627155449004086) |
+| LittleBigPlanet: an AI-decompilation idea for a moddable native PC port | 证据不足 | [来源](https://x.com/i/status/2111639768270594300) |
+| REDOC: a claimed on-chain platform for agent reverse engineering and capability reconstruction | 证据不足 | [来源](https://x.com/i/status/2111668130489549026) |
+| A 231-function reversing studio: a REA and Opus multi-tool workflow demonstration | 证据不足 | [来源](https://x.com/i/status/2111563711005745602) |
+| Codex ad-free app reconstruction: a 20-minute report includes wireless ADB troubleshooting | 证据不足 | [来源](https://x.com/i/status/2111479225890865430) |
 | A pro-software licensing algorithm: an unverified report of a REA keygen in hours | 证据不足 | [来源](https://x.com/i/status/2111423397095723483) |
 | Game ad behavior: a reported Claude inspection of obfuscated JavaScript | 证据不足 | [来源](https://x.com/i/status/2111582817251738031) |
 | LG OLED pause ads: an idea to modify firmware with Codex | 证据不足 | [来源](https://x.com/i/status/2111556091712581745) |

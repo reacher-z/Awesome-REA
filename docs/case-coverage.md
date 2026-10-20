@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 201 | 199 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 152 | 152 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 238 | 238 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 146 | 146 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 244 | 244 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 213 occurrences have catalog links. They reference 206 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 379 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 385 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -382,6 +382,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | TH04: rebuilding Lotus Land Story’s four PC-98 programs from source | Already curated | [Source](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
 | DX-Ball: an REA-guided function-level reconstruction with Codex | Already curated | [Source](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
 | Pre-CU Star Wars Galaxies: an idea to accelerate emulator reverse engineering with AI | Insufficient evidence | [Source](https://x.com/i/status/2111615624678088837) |
+| Animal Jam / Burrow: an unconfirmed account of Claude-assisted decompilation | Insufficient evidence | [Source](https://x.com/i/status/2111623879487795255) |
+| Kernel anticheat privacy: using REA to investigate machine information sent to a vendor | Insufficient evidence | [Source](https://x.com/i/status/2111627155449004086) |
+| LittleBigPlanet: an AI-decompilation idea for a moddable native PC port | Insufficient evidence | [Source](https://x.com/i/status/2111639768270594300) |
+| REDOC: a claimed on-chain platform for agent reverse engineering and capability reconstruction | Insufficient evidence | [Source](https://x.com/i/status/2111668130489549026) |
+| A 231-function reversing studio: a REA and Opus multi-tool workflow demonstration | Insufficient evidence | [Source](https://x.com/i/status/2111563711005745602) |
+| Codex ad-free app reconstruction: a 20-minute report includes wireless ADB troubleshooting | Insufficient evidence | [Source](https://x.com/i/status/2111479225890865430) |
 | A pro-software licensing algorithm: an unverified report of a REA keygen in hours | Insufficient evidence | [Source](https://x.com/i/status/2111423397095723483) |
 | Game ad behavior: a reported Claude inspection of obfuscated JavaScript | Insufficient evidence | [Source](https://x.com/i/status/2111582817251738031) |
 | LG OLED pause ads: an idea to modify firmware with Codex | Insufficient evidence | [Source](https://x.com/i/status/2111556091712581745) |
