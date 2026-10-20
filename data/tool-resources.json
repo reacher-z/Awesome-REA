@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ghidrassist",
+    "name": "GhidrAssist",
+    "url": "https://github.com/symgraph/GhidrAssist",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension by Jason Tang, who also wrote GhidrAssistMCP, that adds a tabbed GhidrAssist window to CodeBrowser for LLM-assisted analysis of the open program. Its tabs explain decompiled or disassembled functions with a security summary, keep persistent chats with context macros, MCP tool calling and an optional ReAct agent mode, propose function and variable renames, retypes and structures for review before they are applied, and build a semantic knowledge graph of functions, calls and security features with community detection, alongside Lucene retrieval over reference documents the analyst adds. A SymGraph tab imports and publishes names, types, graph data and documents through the hosted symgraph.ai service.",
+    "description_zh": "由 GhidrAssistMCP 作者 Jason Tang 开发的 Ghidra 扩展，在 CodeBrowser 中加入多标签页的 GhidrAssist 窗口，借助大语言模型分析当前打开的程序。各标签页可解释反编译或反汇编后的函数并附安全摘要，保存支持上下文宏、MCP 工具调用和可选 ReAct 智能体模式的持久对话，为函数和变量提出重命名、类型修改及结构体建议并在审阅后应用，还能构建涵盖函数、调用关系和安全特征的语义知识图谱并进行社区检测，同时可借助 Lucene 检索分析人员添加的参考文档。SymGraph 标签页则通过托管的 symgraph.ai 服务导入和发布名称、类型、图谱数据及文档。",
+    "evidence_url": "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.2.0, published 2026-05-29 with extension zips for Ghidra 12.0 and 12.1 Public; the reviewed master commit is three commits later and only updates model guidance and max-token handling. The README and getting-started guide state a Ghidra 11.0 minimum, but release zips are built per Ghidra version and recent ones cover only 12.x. Installation goes through File → Install Extensions, after which the plugin is enabled under CodeBrowser's File → Configure → Miscellaneous; source builds use Gradle with GHIDRA_INSTALL_DIR.",
+      "Analysis needs at least one configured LLM provider. The reviewed provider types cover Anthropic, OpenAI, Azure OpenAI, Gemini and xAI APIs, OpenAI and Gemini subscription sign-in through OAuth, the local Claude Code CLI, a LiteLLM proxy, and local Ollama, LM Studio or Open WebUI endpoints; the documentation's provider tables also list an Anthropic OAuth type that the source does not define. Explanations, chats, Actions, agent runs and the graph's Semantic Analysis step send pseudocode or disassembly to the active provider, so only a local or self-hosted endpoint keeps code on the machine, while graph re-indexing and Security Analysis run without the model. Chats, explanations, graph data and feedback are kept in local SQLite databases and a Lucene index whose paths are set in Settings.",
+      "Programs come from the user's own Ghidra projects. Actions suggestions are applied only for the rows the user checks. Chats can reach MCP servers over SSE or streamable HTTP or launch them over stdio; built-in tools read the current function and address, apply the Actions edits and query the semantic graph, and the README pairs the plugin with GhidrAssistMCP for decompilation, cross-reference and other Ghidra-specific tools. Calls to tools whose names do not look read-only wait for an allow-once, allow-for-session or deny decision, and this classification relies on tool-name keywords.",
+      "The SymGraph tab looks up the program by SHA-256 without a key, but importing, publishing and uploading need a SymGraph API key, and publishing uploads the raw binary itself when the service does not already hold it. The repository has no tests or CI workflows.",
+      "MIT, per LICENSE and the README; Ghidra, model providers and SymGraph keep their own terms. The repository moved from jtang613/GhidrAssist. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/getting-started.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/index.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/tabs/settings-tab.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/tabs/symgraph-tab.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/tabs/query-tab.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/docs/tabs/actions-tab.md",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/build.gradle",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/src/main/java/ghidrassist/apiprovider/APIProvider.java",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/src/main/java/ghidrassist/tools/approval/ToolApprovalService.java",
+      "https://github.com/symgraph/GhidrAssist/blob/798a5d708124535aeb2ad8b7580ee08cfd14171b/LICENSE",
+      "https://github.com/symgraph/GhidrAssist/releases/tag/2.2.0",
+      "https://github.com/symgraph/GhidrAssistMCP/blob/b575acc1412cafcfd4dc9fedb7f99ecf219c68ab/README.md"
+    ]
   }
 ]

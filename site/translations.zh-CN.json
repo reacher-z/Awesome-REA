@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ghidrassist": {
+    "name": "GhidrAssist Ghidra 大模型辅助分析扩展",
+    "requirements": [
+      "审阅时最新版本为 2.2.0，于 2026-05-29 发布，提供适用于 Ghidra 12.0 和 12.1 Public 的扩展 zip；所审阅的 master 分支提交比它晚三个提交，仅更新了模型建议和最大 token 数处理。README 和入门指南写明最低需要 Ghidra 11.0，但发布的 zip 按 Ghidra 版本分别构建，近期版本只覆盖 12.x。通过 File → Install Extensions 安装后，需在 CodeBrowser 的 File → Configure → Miscellaneous 中启用插件；从源码构建使用 Gradle，并需设置 GHIDRA_INSTALL_DIR。",
+      "分析需要至少配置一个大模型服务。所审阅的服务类型包括 Anthropic、OpenAI、Azure OpenAI、Gemini 和 xAI 的 API，通过 OAuth 登录的 OpenAI 与 Gemini 订阅，本地 Claude Code CLI，LiteLLM 代理，以及本地 Ollama、LM Studio 或 Open WebUI 端点；文档的服务类型表还列出了一个源码中并未定义的 Anthropic OAuth 类型。解释、对话、Actions、智能体运行以及图谱的 Semantic Analysis 步骤都会把伪代码或反汇编发送给当前服务，只有本地或自托管端点才能让代码不离开本机；图谱重建索引和 Security Analysis 则无需调用模型。对话、解释、图谱数据和反馈保存在本地 SQLite 数据库和 Lucene 索引中，路径可在 Settings 中设置。",
+      "待分析程序来自用户自己的 Ghidra 项目。Actions 的建议只对用户勾选的行生效。对话可通过 SSE 或 streamable HTTP 连接 MCP 服务器，也可通过 stdio 启动；内置工具可读取当前函数和地址、执行 Actions 修改并查询语义图谱，README 建议搭配 GhidrAssistMCP 获取反编译、交叉引用等 Ghidra 专用工具。名称看起来并非只读的工具，调用前需等待用户选择允许一次、本会话允许或拒绝，而这种分类依赖工具名称中的关键词。",
+      "SymGraph 标签页无需密钥即可按 SHA-256 查询程序，但导入、发布和上传需要 SymGraph API 密钥；若服务中尚无该二进制，发布时会上传原始二进制文件本身。仓库没有测试或 CI 工作流。",
+      "依据 LICENSE 和 README 采用 MIT 许可；Ghidra、各模型服务和 SymGraph 仍受各自条款约束。仓库已从 jtang613/GhidrAssist 迁移。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
