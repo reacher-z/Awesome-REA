@@ -104,6 +104,7 @@ RUN_SCHEMA = {
              'new_failed_readme_scans', int),
     **fields('seed_curated seed_papers', bool), 'query_plan': [str], 'held_repository_ids': [str],
     'readme_transport': TRANSPORT_SCHEMA,
+    'scanner_provenance': {'policy': str, **fields('implementation seed_inputs', [{**fields('path sha256', str), 'bytes': int}])},
 }
 ARTIFACT_REFERENCE_SCHEMA = fields('paper_id field url', str)
 QUERY_SCHEMA = {

@@ -22,6 +22,7 @@ from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
 from source_descriptions import validate_description_capture
+from scan_sources import CURATED_SEED_FILES, PAPER_SEED_FILE, RUN_PROVENANCE_POLICY
 from case_coverage import catalog_revision_warning, read_case_coverage, validate_case_coverage
 import strict_json
 
@@ -360,6 +361,31 @@ def scan_run_entries(meta):
         if isinstance(reconciliation, dict):
             for key in ('canonical_current_run', 'checkpoint_current_run'):
                 yield f'checkpoint_reconciliations[{index}].{key}', reconciliation.get(key)
+
+
+def validate_run_provenance(meta, errors):
+    """Recorded run provenance names only repository files: scanner code and the seed inputs the run enabled."""
+    seed_flags = {**dict.fromkeys(CURATED_SEED_FILES, 'seed_curated'), PAPER_SEED_FILE: 'seed_papers'}
+    for location, run in scan_run_entries(meta):
+        if not isinstance(run, dict) or 'scanner_provenance' not in run:
+            continue  # Earlier runs did not record it; absence is never backfilled.
+        provenance = run['scanner_provenance']
+        if (not isinstance(provenance, dict) or set(provenance) != {'policy', 'implementation', 'seed_inputs'}
+                or provenance['policy'] != RUN_PROVENANCE_POLICY
+                or not all(isinstance(provenance[field], list) for field in ('implementation', 'seed_inputs'))
+                or any(not isinstance(row, dict) or set(row) != {'path', 'sha256', 'bytes'}
+                       or not isinstance(row['path'], str) or not re.fullmatch(r'[0-9a-f]{64}', str(row['sha256']))
+                       or type(row['bytes']) is not int or row['bytes'] < 0
+                       for row in provenance['implementation'] + provenance['seed_inputs'])):
+            errors.append(f'Source index {location} scanner_provenance must list path, sha256 and bytes under its policy.')
+            continue
+        code = [row['path'] for row in provenance['implementation']]
+        seeds = [row['path'] for row in provenance['seed_inputs']]
+        if (len(set(code)) != len(code) or 'scripts/scan_sources.py' not in code
+                or any(not re.fullmatch(r'scripts/[a-z0-9_]+\.py', path) for path in code)):
+            errors.append(f'Source index {location} scanner_provenance must name unique repository scanner scripts.')
+        if len(set(seeds)) != len(seeds) or any(run.get(seed_flags.get(path)) is not True for path in seeds):
+            errors.append(f'Source index {location} scanner_provenance lists a seed input the run did not enable.')
 
 
 def validate_scan_discovery(meta, records, errors, failures=()):
@@ -805,6 +831,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                                         if isinstance(entry, dict) and isinstance(entry.get('id'), str)}
                         if retained_ids.intersection(current_ids):
                             errors.append('Source index current_run metadata lookups must exclude retained README attempts.')
+    validate_run_provenance(meta, errors)
     validate_scan_discovery(meta, records, errors, failures)
     return len(records)
 
