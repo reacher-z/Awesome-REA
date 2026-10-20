@@ -5889,5 +5889,14 @@
       "test/ 中是针对各种控制流结构的小型 Lua 源码用例，test-compiled/lua-5.1 则附带编译后的 Lua 5.1 代码块作为反编译输入，其中包括以迅雷下载器、JX3 插件和 Defense Witches 游戏命名的文件；仓库未说明这些文件的来源或权利。仓库还包含各 Lua 版本的 ChunkSpy 列表工具和 Ruby 比较脚本。本合集仅审阅源码与文档，未构建或运行这些工具。",
       "README 称 LuaDec 是自由软件，采用与原版 LuaDec 相同的许可，但未写明具体许可；仓库中没有许可证文件，GitHub 也未识别出许可证，因此再使用条款并不明确。Lua、LuaAssemblyTools、ilua 和 memwatch 子模块以及随附的 ChunkSpy 脚本各有其条款。所审来源未确立与 REA 的关联。"
     ]
+  },
+  "xpcspy": {
+    "name": "xpcspy XPC 消息拦截工具",
+    "requirements": [
+      "审阅版本为标签 v0.9.0（即所审阅的提交，最后推送于 2026-05-11）；对应的 xpcspy 0.9.0 版当天上传至 PyPI。requirements.txt 固定 frida ~=17.9.7 和 frida-tools ~=14.8.2，因此需要存在兼容的 Frida，且拦截只能在该 Frida 能够插桩目标的场景下进行：本地 macOS 进程，或可通过 USB（-U）或远程（-R/-H）由 frida-server 访问的 iOS 设备。",
+      "通过 pip3 install xpcspy 安装命令行工具。从源码构建使用 Makefile：agent/ 下的 Frida 代理是用 frida-compile 编译的 TypeScript 项目（需要 Node.js 和 npm），随后用 python3 setup.py sdist 打包 Python 工具。包元数据标注作者为 hot3eed，并将主页指向 github.com/hot3eed/xpcspy。",
+      "分析者通过名称、PID、前台应用或启动的文件来选择要检查的进程；工具不附带任何样本文件。它读取运行中目标的 XPC 流量用于分析，不会修改或注入消息。bplist 解析部分仍属实验性，README 的 TODO 列表也提到递归 bplist 反序列化等尚未完成的工作。",
+      "采用 Apache-2.0 许可。所审来源未确立与 REA 的关联，本次审阅也未安装或运行任何内容。"
+    ]
   }
 }
