@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**430 repositories** · 2026-10-16 UTC
+**429 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -21,7 +21,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [CreditTone/hooker](https://github.com/CreditTone/hooker) — 🔥🔥 hooker is a Frida-based reverse engineering toolkit for Android. It offers a user-friendly CLI, universal scripts, auto hook generation, memory roaming to detect activities/services, one-click SOCKS5 proxy setup, Frida JustTrustMe, and BoringSSL unpinning for all apps. **[5,328 stars]**
 - [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — Unofficial Galaxy Buds Manager for Windows, macOS, Linux, and Android **[5,294 stars]** · Curated: [Galaxy Buds Client: an unofficial manager built on Samsung’s earbud protocol](https://awesomerea.org/resources/galaxy-buds-client-protocol-case/)
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 A CLI application that automatically prepares Android APK files for HTTPS inspection **[5,128 stars]** · Curated: [apk-mitm](https://awesomerea.org/resources/apk-mitm/)
-- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — Reverse Engineering Resources About All Platforms(Windows/Linux/macOS/Android/iOS/IoT) And Every Aspect! (More than 3500 open source tools and 2300 posts&amp;videos) **[5,127 stars]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — the fastest and most powerful android decompiler(native tool working without Java VM) for the APK, DEX, ODEX, OAT, JAR, AAR, and CLASS file. which supports malicious behavior detection, privacy leaking detection, vulnerability detection, path solving, packer identification, variable tracking, deobfuscation, python&amp;java scripts, device memory extraction, data decryption, and encryption, etc. **[4,859 stars]** · Curated: [GDA (GJoy Dex Analyzer)](https://awesomerea.org/resources/gda-android-decompiler/)
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — Open-source, cross platform Qt6 based IDE for reverse-engineering Android application packages. It features a friendly IDE-like layout including code editor with syntax highlighting support for \*.smali code files. **[4,683 stars]**
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android virtual machine and deobfuscator **[4,671 stars]** · Curated: [Simplify](https://awesomerea.org/resources/simplify-android-deobfuscator/)

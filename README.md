@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 471](https://img.shields.io/badge/resources-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 472](https://img.shields.io/badge/resources-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (195) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (195) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -2738,6 +2738,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A single-README list of about 480 game decompilation, recompilation and disassembly projects, grouped by console from the NES and Game Boy to the Xbox 360, PC and mobile, with a large uncategorised section. Each entry is a game title linked to its project, mostly on GitHub, and entries with AI involvement are marked with a warning emoji under the maintainer’s disclosure policy.
 
   Collection · Targets: Game · [Requirements & evidence](https://awesomerea.org/resources/awesome-game-decompilations/)
+
+- [**awesome-reverse-engineering (alphaSeclab)**](https://github.com/alphaSeclab/awesome-reverse-engineering)
+
+  Large reverse-engineering link list, auto-exported in 2019 in English and Chinese, with abridged and full README versions. The full English README lists about 3,600 open-source tools and 2,300 posts and videos, grouped under Windows, Linux, Apple platforms and Android, and under tool sections for IDA, Ghidra, x64dbg, OllyDbg, WinDbg, radare2, Cuckoo, Binary Ninja and dynamic binary instrumentation. Tool rows carry a star count, language and upstream description captured at export time.
+
+  Collection · Targets: App, Binary · [Requirements & evidence](https://awesomerea.org/resources/alphaseclab-awesome-reverse-engineering/)
 
 <a id="references-and-learning"></a>
 ### References and Learning

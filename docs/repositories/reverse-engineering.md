@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**605 repositories** · 2026-10-16 UTC
+**606 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -23,6 +23,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — Export iMessage data + run iMessage Diagnostics **[5,675 stars]**
 - [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — Reverse Engineer's Toolkit **[5,315 stars]**
 - [Naituw/IPAPatch](https://github.com/Naituw/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[5,294 stars]**
+- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — Reverse Engineering Resources About All Platforms(Windows/Linux/macOS/Android/iOS/IoT) And Every Aspect! (More than 3500 open source tools and 2300 posts&amp;videos) **[5,127 stars]** · Curated: [awesome-reverse-engineering (alphaSeclab)](https://awesomerea.org/resources/alphaseclab-awesome-reverse-engineering/)
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — reverse engineering Gemini's SynthID detection **[4,991 stars]**
 - [johnno1962/InjectionIII](https://github.com/johnno1962/InjectionIII) — Re-write of Injection for Xcode in (mostly) Swift **[4,654 stars]**
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — The definitive guide to CTF competitions **[4,511 stars]**

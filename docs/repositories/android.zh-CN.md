@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](android.md)
 
-**430 个仓库** · 2026-10-16 UTC
+**429 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -21,7 +21,6 @@
 - [CreditTone/hooker](https://github.com/CreditTone/hooker) — 🔥🔥 hooker 是基于 Frida 的 Android 逆向工程工具包，提供易用的命令行界面、通用脚本、自动生成 hook、通过内存漫游检测 Activity/Service、一键 SOCKS5 代理、Frida JustTrustMe，以及面向所有应用的 BoringSSL 证书锁定绕过功能。 **[5,328 星标]**
 - [timschneeb/GalaxyBudsClient](https://github.com/timschneeb/GalaxyBudsClient) — 适用于 Windows、macOS、Linux 和 Android 的非官方 Galaxy Buds 管理工具。 **[5,294 星标]** · 精选：[Galaxy Buds Client：基于三星耳机协议的非官方管理器](https://awesomerea.org/zh/resources/galaxy-buds-client-protocol-case/)
 - [niklashigi/apk-mitm](https://github.com/niklashigi/apk-mitm) — 🤖 自动处理 Android APK 文件，使其便于进行 HTTPS 检查的命令行应用。 **[5,128 星标]** · 精选：[apk-mitm](https://awesomerea.org/zh/resources/apk-mitm/)
-- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]**
 - [charles2gan/GDA-android-reversing-Tool](https://github.com/charles2gan/GDA-android-reversing-Tool) — 面向 APK、DEX、ODEX、OAT、JAR、AAR 和 CLASS 文件的高速强大 Android 反编译器，无需 Java 虚拟机即可运行的原生工具。支持恶意行为检测、隐私泄露检测、漏洞检测、路径求解、加壳识别、变量追踪、去混淆、Python/Java 脚本、设备内存提取、数据解密与加密等。 **[4,859 星标]** · 精选：[GDA Android 反编译器](https://awesomerea.org/zh/resources/gda-android-decompiler/)
 - [vaibhavpandeyvpz/apkstudio](https://github.com/vaibhavpandeyvpz/apkstudio) — 基于 Qt6 的开源跨平台 Android 应用包逆向工程 IDE，提供友好的 IDE 风格布局，包含支持 \*.smali 代码语法高亮的编辑器。 **[4,683 星标]**
 - [CalebFenton/simplify](https://github.com/CalebFenton/simplify) — Android 虚拟机与去混淆工具。 **[4,671 星标]** · 精选：[Simplify Android 反混淆工具](https://awesomerea.org/zh/resources/simplify-android-deobfuscator/)

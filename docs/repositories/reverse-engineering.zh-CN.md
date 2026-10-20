@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**605 个仓库** · 2026-10-16 UTC
+**606 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -23,6 +23,7 @@
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — 导出 iMessage 数据并运行 iMessage 诊断。 **[5,675 星标]**
 - [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — 逆向工程师工具包。 **[5,315 星标]**
 - [Naituw/IPAPatch](https://github.com/Naituw/IPAPatch) — 无需越狱，轻松为 iOS 应用打补丁。 **[5,294 星标]**
+- [alphaSeclab/awesome-reverse-engineering](https://github.com/alphaSeclab/awesome-reverse-engineering) — 覆盖所有平台（Windows/Linux/macOS/Android/iOS/IoT）及各个方面的逆向工程资源！包含 3500 多个开源工具与 2300 多篇文章和视频。 **[5,127 星标]** · 精选：[awesome-reverse-engineering 全平台逆向资源清单（alphaSeclab）](https://awesomerea.org/zh/resources/alphaseclab-awesome-reverse-engineering/)
 - [aloshdenny/reverse-SynthID](https://github.com/aloshdenny/reverse-SynthID) — 逆向分析 Gemini 的 SynthID 检测机制。 **[4,991 星标]**
 - [johnno1962/InjectionIII](https://github.com/johnno1962/InjectionIII) — 主要使用 Swift 重写的 Xcode Injection。 **[4,654 星标]**
 - [firmianay/CTF-All-In-One](https://github.com/firmianay/CTF-All-In-One) — CTF 竞赛权威指南。 **[4,511 星标]**
