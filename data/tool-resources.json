@@ -11254,5 +11254,43 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fa-firmware-analysis",
+    "name": "FA (Firmware Analysis)",
+    "url": "https://github.com/doronz88/fa",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Python framework, mainly used as an IDA plugin, that turns the manual steps of locating symbols, such as finding a string, following its cross-reference and taking the function start, into reusable signatures. Hjson SIG files, grouped into per-platform projects, chain commands that search bytes, strings, immediates or Keystone-assembled opcodes, filter by operands and cross-references, and then set names, types, constants, enums and struct members; Python scripts can drive the same interpreter. In IDA it adds an FA menu and toolbar to find all of a project's symbols, draft a temporary signature from the current function and export symbols plus a C header, and a separate loader runs signatures over a raw ELF file without IDA.",
+    "description_zh": "一个主要以 IDA 插件形式使用的 Python 框架，把定位符号时的手工步骤（例如查找字符串、跟随交叉引用、跳到函数起始处）写成可复用的签名。Hjson 格式的 SIG 文件按平台归入不同项目，其中串联的命令可搜索字节、字符串、立即数或用 Keystone 汇编出的指令，按操作数和交叉引用筛选，再设置名称、类型、常量、枚举和结构体成员；也可用 Python 脚本调用同一解释器。在 IDA 中，它添加 FA 菜单和工具栏，用于查找项目的全部符号、根据当前函数生成临时签名草稿，以及导出符号和 C 头文件；另有一个加载器可在不使用 IDA 的情况下对原始 ELF 文件运行签名。",
+    "evidence_url": "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.11, published 2026-03-25 without attached files; it tags the reviewed master commit, and the same version is on PyPI as fa 1.0.11. The README installs it by cloning the repository and running pip install -e, says the code base is very IDA-oriented and only considers Ghidra, radare2 or other disassemblers for the future.",
+      "The README supports IDA 8.0+, and a March 2026 commit added IDA 9.0 support to make-offset. The package requires Python 3.8+; its dependencies, including keystone-engine, capstone, hjson and rpyc, are installed into IDA's Python. IDA can also run the plugin in script mode to write a symbols file, while the ELF loader script imports pyelftools, which is listed only in the testing requirements.",
+      "The binaries, IDA databases and signatures come from the analyst: the repository ships only two small test projects under fa/signatures and no signature sets for real firmware. The README groups signatures into projects partly to lower false positives, and the ELF loader reports symbols with several matches instead of choosing one.",
+      "CI lints with flake8 and runs pytest on Python 3.8 to 3.12; the tests check find-bytes on mocked memory segments and ELF symbol search on a small ARM ELF built at test time with Keystone and simpleelf, and neither runs IDA. GPL-3.0 license text; pyproject.toml classifies it as GPLv3 or later. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/commands.md",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/fa/ida_plugin.py",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/elf_loader.py",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/pyproject.toml",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/requirements.txt",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/requirements_testing.txt",
+      "https://github.com/doronz88/fa/tree/b584a37f920995310f257d428e1a0b387cbf489e/fa/signatures",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/tests/conftest.py",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/.github/workflows/python-app.yml",
+      "https://github.com/doronz88/fa/blob/b584a37f920995310f257d428e1a0b387cbf489e/LICENSE",
+      "https://github.com/doronz88/fa/commit/bc88577a0af4e9a91bcfcae4d88bbf9c012fe646",
+      "https://github.com/doronz88/fa/releases/tag/v1.0.11",
+      "https://pypi.org/project/fa/1.0.11/"
+    ]
   }
 ]

@@ -347,7 +347,7 @@
 - [acuarica/evm](https://github.com/acuarica/evm) — 符号化以太坊虚拟机（EVM）字节码解释器、解析器和反编译器，以及多种以编程方式提取 EVM 字节码信息的实用工具。 **[114 星标]**
 - [zxgio/r2-cheatsheet](https://github.com/zxgio/r2-cheatsheet) — Radare2 速查表 **[114 星标]**
 - [giladreich/ida\_migrator](https://github.com/giladreich/ida_migrator) — IDA Migrator 是 IDA Pro 插件，可将现有工作从一个数据库实例迁移至另一个，方便地迁移函数名、结构体和枚举。 **[113 星标]**
-- [doronz88/fa](https://github.com/doronz88/fa) — 自动定位二进制文件中符号与结构体的工具，主要面向 IDA **[112 星标]**
+- [doronz88/fa](https://github.com/doronz88/fa) — 自动定位二进制文件中符号与结构体的工具，主要面向 IDA **[112 星标]** · 精选：[FA（Firmware Analysis）符号定位自动化工具](https://awesomerea.org/zh/resources/fa-firmware-analysis/)
 - [guedou/jupyter-radare2](https://github.com/guedou/jupyter-radare2) — 一个简单的 radare2 Jupyter 内核 **[110 星标]**
 - [abenkhadra/spedi](https://github.com/abenkhadra/spedi) — 对已剥离符号的二进制文件进行推测式反汇编、控制流图恢复和调用图恢复。 **[109 星标]**
 - [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — 上游仓库未提供项目简介。 **[109 星标]**

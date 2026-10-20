@@ -347,7 +347,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [acuarica/evm](https://github.com/acuarica/evm) — A Symbolic Ethereum Virtual Machine (EVM) bytecode interpreter, parser and decompiler, along with several other utils for programmatically extracting information from EVM bytecode. **[114 stars]**
 - [zxgio/r2-cheatsheet](https://github.com/zxgio/r2-cheatsheet) — Radare2 cheat-sheet **[114 stars]**
 - [giladreich/ida\_migrator](https://github.com/giladreich/ida_migrator) — IDA Migrator is an IDA Pro plugin which helps migrate existing work from one database instance to another. It Conveniently migrates function names, structures and enums. **[113 stars]**
-- [doronz88/fa](https://github.com/doronz88/fa) — Automation tool for locating symbols &amp; structs in binary (primary IDA focused) **[112 stars]**
+- [doronz88/fa](https://github.com/doronz88/fa) — Automation tool for locating symbols &amp; structs in binary (primary IDA focused) **[112 stars]** · Curated: [FA (Firmware Analysis)](https://awesomerea.org/resources/fa-firmware-analysis/)
 - [guedou/jupyter-radare2](https://github.com/guedou/jupyter-radare2) — Just a simple radare2 Jupyter kernel **[110 stars]**
 - [abenkhadra/spedi](https://github.com/abenkhadra/spedi) — Speculative disassembly, CFG recovery, and call-graph recovery from stripped binaries. **[109 stars]**
 - [Accenture/FirmLoader](https://github.com/Accenture/FirmLoader) — No description supplied by the upstream repository. **[109 stars]**

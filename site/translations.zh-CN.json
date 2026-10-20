@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "fa-firmware-analysis": {
+    "name": "FA（Firmware Analysis）符号定位自动化工具",
+    "requirements": [
+      "审阅时最新版本为 v1.0.11，发布于 2026-03-25，未附带任何文件；该标签指向所审阅的 master 提交，PyPI 上也有同版本的 fa 1.0.11。README 的安装方式是克隆仓库后运行 pip install -e，并说明代码库高度面向 IDA，对 Ghidra、radare2 等其他反汇编器的支持仅在未来考虑之列。",
+      "README 称支持 IDA 8.0+，2026 年 3 月的一次提交为 make-offset 加入了 IDA 9.0 支持。软件包要求 Python 3.8+；keystone-engine、capstone、hjson、rpyc 等依赖需安装到 IDA 自带的 Python 中。IDA 也可在脚本模式下运行该插件并写出符号文件；ELF 加载器脚本则需要 pyelftools，而它只列在测试依赖中。",
+      "二进制文件、IDA 数据库和签名均由分析者自行提供：仓库在 fa/signatures 下只附带两个小型测试项目，没有面向真实固件的签名集。README 将签名按项目划分，部分目的在于降低误报；ELF 加载器遇到多处匹配的符号时会如实报告，而不会替用户选定其一。",
+      "CI 使用 flake8 做静态检查，并在 Python 3.8 至 3.12 上运行 pytest；测试在模拟内存段上检查 find-bytes，并在测试时用 Keystone 和 simpleelf 生成的小型 ARM ELF 上检查 ELF 符号搜索，均不运行 IDA。许可证文本为 GPL-3.0，pyproject.toml 的分类标注为 GPLv3 或更高版本。本次未安装或运行任何内容。"
+    ]
   }
 }
