@@ -11191,5 +11191,37 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "luadec",
+    "name": "LuaDec",
+    "url": "https://github.com/viruscamp/luadec",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Lua bytecode decompiler that turns compiled chunks back into Lua source, with a disassembly mode, selection of single nested functions by number and a guesser for local variable declarations that can be overridden by hand. Its -fc option recompiles each decompiled function and compares it instruction by instruction with the original. It targets Lua 5.1, marks Lua 5.2 and 5.3 support as experimental, and continues Hisham Muhammad’s LuaDec for Lua 5.0 and Zsolt Sztupak’s LuaDec51.",
+    "description_zh": "Lua 字节码反编译器，可把编译后的代码块还原为 Lua 源码，提供反汇编模式，可按编号只处理某个嵌套函数，并能推测局部变量声明，推测结果也可手动指定。其 -fc 选项会重新编译每个反编译出的函数，并与原函数逐条指令比较。它以 Lua 5.1 为主要目标，Lua 5.2 和 5.3 的支持标为实验性，延续了 Hisham Muhammad 面向 Lua 5.0 的 LuaDec 和 Zsolt Sztupak 的 LuaDec51。",
+    "evidence_url": "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/ReadMe.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit, the latest on the default branch, dates from 2017-01-06, and the repository has no releases or tags. A build initialises one Lua submodule from the author’s lua5 fork (branch 5.1, 5.2 or 5.3), builds that Lua, then runs make LUAVER=5.x in luadec/, which also builds the luareplace and luaopswap helpers; Visual C++ 2008 project files are included, which the README says were tested with VC 2008 and 2013. A Travis CI configuration builds each Lua version with gcc and clang but runs no tests.",
+      "Input is a chunk compiled by the matching standard Lua version, or a Lua source file compiled on the fly for testing. For bytecode from a virtual machine with a reordered opcode table, luaopswap compares that VM’s compilation of a bundled script using every opcode with a standard compilation, derives an opcode map and rewrites files to standard opcodes; luareplace swaps a nested function between two files. The -fc check reports per function whether the decompiled code recompiles to the same instructions, and the README’s own example shows failures, so output must be checked function by function.",
+      "test/ holds small Lua source cases for control-flow constructs, and test-compiled/lua-5.1 bundles compiled Lua 5.1 chunks as decompiler inputs, including files named for the Xunlei downloader, JX3 add-ons and the Defense Witches game; the repository does not state their origin or rights. ChunkSpy listers for each Lua version and Ruby comparison scripts are also included. This collection reviewed source and documentation without building or running the tools.",
+      "The README says LuaDec is free software under the same license as the original LuaDec but does not name it, the repository has no license file and GitHub detects none, so reuse terms are unclear; the Lua, LuaAssemblyTools, ilua and memwatch submodules and the bundled ChunkSpy scripts keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/.gitmodules",
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/luadec/Makefile",
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/luadec/luadec.c",
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/luadec/luaopswap.c",
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/luadec/luareplace.c",
+      "https://github.com/viruscamp/luadec/blob/895d92313fabaee260121c758c8320d1b21dd741/.travis.yml",
+      "https://github.com/viruscamp/luadec/tree/895d92313fabaee260121c758c8320d1b21dd741/test"
+    ]
   }
 ]
