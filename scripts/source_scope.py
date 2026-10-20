@@ -1,8 +1,10 @@
 """Keep collection scope decisions separate from the original README scan."""
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 import json
 from pathlib import Path
 import re
+
+from review_dates import review_date_is_future
 
 ROOT = Path(__file__).resolve().parents[1]
 SCOPE_FILE = 'data/source-scope.json'
@@ -109,8 +111,9 @@ def read_scope(root=ROOT):
     return scope
 
 
-def validate_scope(records, scope, errors):
+def validate_scope(records, scope, errors, *, now=None):
     """Validate decisions against the exact recorded source snapshot."""
+    now = datetime.now(timezone.utc) if now is None else now.astimezone(timezone.utc)
     if not isinstance(scope, dict):
         errors.append('Source scope must be an object keyed by source ID.')
         return
@@ -164,6 +167,19 @@ def validate_scope(records, scope, errors):
                 raise ValueError
         except ValueError:
             errors.append(f'{identifier}: scope reviewed_at must be an ISO date or timezone-aware timestamp')
+        if reviewed is not None:
+            scanned = timestamp(source.get('observed_at')) if source is not None else None
+            if type(reviewed) is date:
+                # A calendar date may be a reviewer's local date, up to a day either side of UTC.
+                future = review_date_is_future(reviewed, now)
+                early = scanned is not None and reviewed < scanned.astimezone(timezone.utc).date() - timedelta(days=1)
+            else:
+                future = reviewed > now + timedelta(days=1)
+                early = scanned is not None and reviewed < scanned
+            if future:
+                errors.append(f'{identifier}: scope reviewed_at is in the future')
+            if early:
+                errors.append(f'{identifier}: scope review precedes the README scan it reviews')
         if unavailable:
             validate_availability(identifier, entry, source, reviewed, errors)
 
