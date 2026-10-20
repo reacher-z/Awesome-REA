@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "oletools": {
+    "name": "oletools Office 文档与 OLE 文件分析工具集",
+    "requirements": [
+      "审阅时最新版本为 v0.60.2，于 2024-07-02 在 GitHub 和 PyPI 发布。所审阅的 master 提交（2026-01-26）已将版本设为 0.60.3，README 的更新记录也在 2025-05-22 下列出 0.60.3，其中包括修复 olevba 命令行输出中 ANSI 转义码导致的安全问题；但审阅时并不存在 0.60.3 标签或 PyPI 上传。SECURITY.md 将 0.60.x 及之后版本列为受支持版本。",
+      "通过 pip 安装 oletools，或安装 oletools[full] 以加入可选的 XLMMacroDeobfuscator。依赖 pyparsing、olefile、easygui、colorclass 和 pcodedmp，并依赖 msoffcrypto-tool 处理加密文档（在 Windows、macOS 或 Python 2 上使用 PyPy 时除外）。setup.py 的分类标签列出 Python 2.7 及 3.4 至 3.12；GitHub 工作流在 Linux、Windows 和 macOS 上用当前 CPython 3 与 PyPy 3.9 运行 pylint -E 和单元测试，较旧的 Travis 配置则针对 Python 2.7 至 3.8 及 PyPy。",
+      "输入为使用者提供的文档，在恶意软件分析中可能是恶意文件；单元测试使用 tests/test-data 下提交的示例文档。README 称 oleid 用于检测恶意文件中常见的特征、MacroRaptor 用于检测恶意 VBA 宏，因此结果只是需要分析者复核的迹象。本次未分析任何文档。",
+      "LICENSE.md 对该工具包采用两条款 BSD 许可证（版权 2012–2025 Philippe Lagadec）；olevba 包含来自 officeparser 的 MIT 许可代码，thirdparty 目录保留各自条款，其中 xxxswf 为 GPL-3.0，oledump 插件代码为公有领域。README 说明 python-oletools 与 BeCubed Software 的 OLETools 无关。"
+    ]
   }
 }

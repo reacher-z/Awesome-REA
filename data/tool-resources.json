@@ -11191,5 +11191,39 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "oletools",
+    "name": "oletools",
+    "url": "https://github.com/decalage2/oletools",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python package by Philippe Lagadec for analyzing Microsoft OLE2 (Compound File Binary) files such as Office 97–2003 documents, MSI files and Outlook messages, as well as RTF and OpenXML documents, mainly for malware analysis, forensics and debugging. Its command-line tools detect and extract VBA and Excel 4 (XLM) macros, embedded OLE and Flash objects and DDE links (olevba, MacroRaptor, oleobj, rtfobj, pyxswf, msodde), flag characteristics common in malicious files with oleid and ftguess, and show directory entries, metadata, timestamps and sector maps with oledir, olemeta, oletimes and olemap. It is built on the same author's olefile parser.",
+    "description_zh": "Philippe Lagadec 开发的 Python 工具包，用于分析 Microsoft OLE2（复合文件二进制格式）文件，如 Office 97–2003 文档、MSI 文件和 Outlook 邮件，也支持 RTF 与 OpenXML 文档，主要面向恶意软件分析、取证和调试。其命令行工具可检测并提取 VBA 与 Excel 4（XLM）宏、嵌入的 OLE 和 Flash 对象以及 DDE 链接（olevba、MacroRaptor、oleobj、rtfobj、pyxswf、msodde），用 oleid 和 ftguess 标记恶意文件中常见的特征，并通过 oledir、olemeta、oletimes 和 olemap 查看目录项、元数据、时间戳和扇区布局。它基于同一作者的 olefile 解析器。",
+    "evidence_url": "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.60.2, published 2024-07-02 on GitHub and PyPI. The reviewed master commit (2026-01-26) already sets version 0.60.3, and its README news lists 0.60.3 under 2025-05-22 with an olevba fix for a security issue with ANSI escape codes in CLI output, but no 0.60.3 tag or PyPI upload existed at review. SECURITY.md lists 0.60.x and later as supported.",
+      "Install with pip as oletools, or oletools[full] to add the optional XLMMacroDeobfuscator. Dependencies are pyparsing, olefile, easygui, colorclass and pcodedmp, plus msoffcrypto-tool for encrypted documents except on PyPy under Windows, macOS or Python 2. setup.py classifiers list Python 2.7 and 3.4 to 3.12; the GitHub workflow runs pylint -E and the unit tests on Linux, Windows and macOS with current CPython 3 and PyPy 3.9, while the older Travis configuration targets Python 2.7 to 3.8 and PyPy.",
+      "Inputs are user-supplied documents, which in malware analysis may be malicious; the unit tests use sample documents committed under tests/test-data. The README describes oleid as detecting characteristics usually found in malicious files and MacroRaptor as detecting malicious VBA macros, so results are indicators that need analyst review. No documents were analyzed.",
+      "LICENSE.md applies a two-clause BSD license (copyright 2012–2025 Philippe Lagadec) to the package; olevba contains MIT-licensed code from officeparser, and the thirdparty folder keeps its own terms, including GPL-3.0 for xxxswf and public-domain oledump plugin code. The README notes that python-oletools is unrelated to BeCubed Software's OLETools."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/setup.py",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/requirements.txt",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/SECURITY.md",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/.github/workflows/unittests.yml",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/.travis.yml",
+      "https://github.com/decalage2/oletools/tree/ec10260989dbc48b9109e3d05d22beee19cf2333/tests/test-data",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/LICENSE.md",
+      "https://github.com/decalage2/oletools/blob/ec10260989dbc48b9109e3d05d22beee19cf2333/oletools/thirdparty/xxxswf/LICENSE.txt",
+      "https://github.com/decalage2/oletools/releases/tag/v0.60.2",
+      "https://pypi.org/project/oletools/0.60.2/"
+    ]
   }
 ]
