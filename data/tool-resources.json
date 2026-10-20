@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "reverser-ai",
+    "name": "ReverserAI",
+    "url": "https://github.com/mrphrazer/reverser_ai",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Binary Ninja plugin that suggests function names from HLIL decompiler output with a language model run locally through llama.cpp; the README says it operates entirely offline once the model is downloaded. It can rename the current function, every function still carrying a default sub_ name in call-graph post-order, or only those referencing strings and imported or library symbols. The author presents it as a research proof of concept whose only implemented task is function naming.",
+    "description_zh": "Binary Ninja 插件，借助 llama.cpp 在本机运行语言模型，依据 HLIL 反编译输出建议函数名；README 称下载模型后即可完全离线运行。它可以重命名当前函数，按调用图后序遍历重命名所有仍沿用默认 sub_ 名称的函数，或只处理其中引用字符串、导入符号或库符号的函数。作者把它定位为研究性概念验证，目前唯一实现的任务是函数命名。",
+    "evidence_url": "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is the v1.2 release of 2026-05-20, and plugin.json and setup.py both declare version 1.2. It installs through Binary Ninja’s plugin manager, or by cloning into Binary Ninja’s plugins folder and installing requirements.txt (huggingface-hub, llama-cpp-python, networkx, toml, typer) and the package; setup.py asks for Python 3.10+, and plugin.json lists macOS, Windows and Linux with minimum Binary Ninja build 2487.",
+      "On first use the plugin downloads the selected GGUF model from Hugging Face: by default mistral-7b-instruct-v0.2.Q4_K_M.gguf, about 5 GB and needing about 5 GB of RAM, or a Mixtral-8x7B-Instruct quantization needing about 25 GB. Inference then runs on the local CPU or GPU, which the README describes as entirely offline. It advises at least 16 GB of RAM and 12 CPU threads and reports 20 to 30 seconds per query on CPU, or 2 to 5 seconds with GPU offload such as on Apple silicon. Model, memory mapping, CPU threads, GPU layers and seed are Binary Ninja settings that take effect after a restart.",
+      "Three Plugins → ReverserAI commands cover the naming modes: Rename Current Function, Rename All Functions, and Enhance Function Naming with Context, which limits renaming to default-named functions referencing strings or import, library or external symbols. Each request puts one function’s HLIL text into a fixed prompt asking for a name of up to 20 characters, keeps the first line of the reply and writes it to the database as the function name without a confirmation step, logging the old and new names. Functions whose decompiler output exceeds the 4,000-token context fail with a logged warning.",
+      "The README calls ReverserAI a proof of concept, notes that local models do not match cloud models, and plans code explanation, other decompilers and server-hosted inference only as future work. The examples folder ships a password-protected samples.zip of test samples, including the PowerPC stub triton_inject.bin from the Triton malware, and its README describes their results qualitatively. CI runs only ruff formatting and lint checks, a setup.py metadata check and a Python syntax parse; there are no tests. This collection reviewed source and documentation without running the plugin or any model.",
+      "GPL-2.0 per LICENSE; plugin.json and setup.py state version 2 or later. Binary Ninja and the downloaded model weights keep their own licences and terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/plugin.json",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/setup.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/requirements.txt",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/__init__.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/reverser_ai/binary_ninja/__init__.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/reverser_ai/binary_ninja/function_name_gpt_wrapper.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/reverser_ai/gpt/function_name_gpt.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/reverser_ai/gpt/models.py",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/examples/README.md",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/.github/workflows/ci.yml",
+      "https://github.com/mrphrazer/reverser_ai/blob/1d572da70479ea822875b9350135d7e3402f5557/LICENSE",
+      "https://github.com/mrphrazer/reverser_ai/releases/tag/v1.2"
+    ]
   }
 ]

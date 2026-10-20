@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "reverser-ai": {
+    "name": "ReverserAI：本地大模型函数命名 Binary Ninja 插件",
+    "requirements": [
+      "所审阅的 main 提交即 2026-05-20 发布的 v1.2，plugin.json 与 setup.py 均标注 1.2 版。可通过 Binary Ninja 插件管理器安装，或克隆到 Binary Ninja 的 plugins 目录后安装 requirements.txt（huggingface-hub、llama-cpp-python、networkx、toml、typer）及本软件包；setup.py 要求 Python 3.10+，plugin.json 列出 macOS、Windows 和 Linux，最低 Binary Ninja 构建号为 2487。",
+      "首次使用时插件会从 Hugging Face 下载所选 GGUF 模型：默认是 mistral-7b-instruct-v0.2.Q4_K_M.gguf，约 5 GB，需要约 5 GB 内存；也可选用需要约 25 GB 内存的 Mixtral-8x7B-Instruct 量化模型。此后推理在本机 CPU 或 GPU 上运行，README 称完全离线。README 建议至少 16 GB 内存和 12 个 CPU 线程，并称纯 CPU 每次查询需 20 至 30 秒，借助 GPU（如 Apple 芯片）可缩短到 2 至 5 秒。模型、内存映射、CPU 线程数、GPU 层数和随机种子均在 Binary Ninja 设置中配置，重启后生效。",
+      "Plugins → ReverserAI 下的三个命令对应三种命名方式：Rename Current Function、Rename All Functions，以及 Enhance Function Naming with Context，后者只重命名引用字符串或导入、库、外部符号的默认名称函数。每次请求把单个函数的 HLIL 文本放进固定提示词，要求给出不超过 20 个字符的名称，取回复的第一行直接写入数据库作为函数名，不经确认，并在日志中记录新旧名称。反编译输出超出 4,000 token 上下文的函数会失败并记录警告。",
+      "README 称 ReverserAI 是概念验证，指出本地模型不及云端模型，代码解释、支持其他反编译器和服务器端推理仅列为未来工作。examples 目录附带一个加密的 samples.zip 测试样本包，其中包括 Triton 恶意软件的 PowerPC 存根 triton_inject.bin，其 README 只定性描述了这些样本上的结果。CI 只运行 ruff 格式与代码检查、setup.py 元数据检查和 Python 语法解析，没有测试。本合集仅审阅源码与文档，未运行插件或任何模型。",
+      "LICENSE 为 GPL-2.0；plugin.json 与 setup.py 声明可适用第 2 版或更高版本。Binary Ninja 及下载的模型权重各有其许可与条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

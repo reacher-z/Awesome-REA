@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 472](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (87) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (87) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -2698,6 +2698,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   开源 Python 智能体，以 auto-re-agent 之名发布于 PyPI。它依据 Ghidra 提供的证据为已编译程序中的函数起草 C/C++ 实现，再由可单独配置的检查模型在有轮数上限的修复循环中审阅每份草稿。候选代码须先与反编译、汇编、控制流和 P-code 证据做结构比对，再通过项目自己的构建、测试及可选的差分命令和 11 项启发式一致性信号，才会被接受。README 称这些关卡只是保守的证据，并非等价性证明；工具把候选代码写入覆盖层，而不直接修改源码树。
 
   集成 · 独立智能体 · 目标：游戏、二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reagent-cpp-reconstruction-agent/)
+
+- [**ReverserAI：本地大模型函数命名 Binary Ninja 插件**](https://github.com/mrphrazer/reverser_ai)
+
+  Binary Ninja 插件，借助 llama.cpp 在本机运行语言模型，依据 HLIL 反编译输出建议函数名；README 称下载模型后即可完全离线运行。它可以重命名当前函数，按调用图后序遍历重命名所有仍沿用默认 sub\_ 名称的函数，或只处理其中引用字符串、导入符号或库符号的函数。作者把它定位为研究性概念验证，目前唯一实现的任务是函数命名。
+
+  集成 · 独立智能体 · 目标：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/reverser-ai/)
 
 <a id="related-collections"></a>
 ### Related Collections · 相关合集
