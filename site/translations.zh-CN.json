@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "tiny-tracer": {
+    "name": "Tiny Tracer API 调用跟踪工具",
+    "requirements": [
+      "审阅时的版本为 4.0，发布于 2026-05-28，已针对 Intel Pin 4.x 重构；所审阅的 master 提交比该版本多两个提交。发布版本只提供源码，因为发布说明和安装指南指出，Pin 的许可不允许分发编译好的 Pin 工具。使用者需自行下载 Pin，并在 Pin 的 source/tools 目录下构建本工具；README 称已测试的版本为 Pin 4.2，Pin 4.0 以前的版本需使用 4.0 之前的发布版本及其旧版构建方式，Windows 8 以前的系统同样需要旧版构建。",
+      "Windows 构建使用 MSYS2 的 make 和 clang-cl，Visual Studio 2019 及以上版本可选用作编辑器；Linux 构建使用 g++ 和 make。两种构建脚本都会在 install32_64 中生成 32 位和 64 位版本，该目录还包含配合右键菜单 .reg 文件使用的 run_me.bat、用于附加到运行中进程的 pin_attach.bat、Linux 上使用的 tiny_runner.sh，以及 TinyTracer.ini、params.txt 和 excluded.txt 配置文件。README 指出必须禁用内核调试，Pin 才能正常工作。",
+      "install32_64 中还提交了作者预编译的 Windows 辅助程序 dll_load32.exe、dll_load64.exe、kdb_check.exe、pe_check.exe 和 syscall_extract.exe，其源码位于独立的 hasherezade/pe_utils 仓库；README 提到 Windows Defender 有时会将 kdb_check.exe 误报为恶意软件，这是已知的误报。反调试与反虚拟机模式仅支持 Windows，文档称深度反调试模式可能产生误报。被跟踪的程序由分析人员自行提供，并在 Pin 下原生执行。",
+      "LICENSE.txt 采用 GPL-2.0；Intel Pin 沿用其自身许可。跟踪结果只覆盖本次运行中实际执行的代码。未确立与 REA 的关联，本次审阅未构建或跟踪任何程序。"
+    ]
   }
 }

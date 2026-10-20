@@ -11191,5 +11191,37 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "tiny-tracer",
+    "name": "Tiny Tracer",
+    "url": "https://github.com/hasherezade/tiny_tracer",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Intel Pin tool by hasherezade that traces a 32- or 64-bit program while it runs on Windows or Linux, logging API calls (with arguments and return values for watched functions), chosen local and statically linked functions, inline system calls, RDTSC, CPUID and INT instructions, and transitions between sections of the traced module, which helps find the original entry point of a packed module. It can follow code the module unpacks into new memory, disassemble selected ranges and, on Windows, flag the anti-debug and anti-VM checks a sample performs. Each run writes a .tag file of RVA;event lines that PE-bear reads natively and that the wiki shows loading into IDA Pro, Binary Ninja, x64dbg, Ghidra and Cutter to annotate code.",
+    "description_zh": "hasherezade 开发的 Intel Pin 插桩工具，在 Windows 或 Linux 上跟踪运行中的 32 位或 64 位程序，记录 API 调用（对监视的函数还会记录参数和返回值）、指定的本地函数和静态链接库函数、内联系统调用、RDTSC、CPUID 和 INT 指令，以及被跟踪模块各节区之间的跳转，有助于找到加壳模块的原始入口点。它可以继续跟踪模块解包到新内存中的代码，对选定范围进行反汇编，并可在 Windows 上标记样本执行的反调试和反虚拟机检查。每次运行都会生成由“RVA;事件”行组成的 .tag 文件，PE-bear 可直接读取，Wiki 还演示了将其导入 IDA Pro、Binary Ninja、x64dbg、Ghidra 和 Cutter 以标注代码。",
+    "evidence_url": "https://github.com/hasherezade/tiny_tracer/blob/99618fc0569a4a06b7955e507e1707792ad1bef5/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Release at review: 4.0, published 2026-05-28 and refactored for Intel Pin 4.x; the reviewed master commit is two commits ahead of it. Releases contain source only, because, as the release notes and installation guide explain, Pin's license does not allow distributing compiled Pin tools. Users download Pin themselves and build the tool inside Pin's source/tools tree; the README names Pin 4.2 as the version tested, Pin before 4.0 needs a pre-4.0 release with the legacy build, and Windows versions older than 8 also need the legacy build.",
+      "Windows builds use MSYS2 make with clang-cl, with Visual Studio 2019 or later optional as an editor; Linux builds use g++ and make. Both scripts produce 32- and 64-bit builds in install32_64, which holds run_me.bat with context-menu .reg files, pin_attach.bat for attaching to a running process, tiny_runner.sh for Linux, and the TinyTracer.ini, params.txt and excluded.txt settings. The README says kernel debugging must be disabled for Pin to work.",
+      "install32_64 also commits the author's prebuilt Windows helpers dll_load32.exe, dll_load64.exe, kdb_check.exe, pe_check.exe and syscall_extract.exe, whose sources are in the separate hasherezade/pe_utils repository; the README notes that Windows Defender sometimes flags kdb_check.exe, a known false positive. The anti-debug and anti-VM modes are Windows-only, and the deep anti-debug mode is documented as prone to false positives. The analyst supplies the program to trace, which executes natively under Pin.",
+      "GPL-2.0 in LICENSE.txt; Intel Pin keeps its own license. Traces cover only code that executes during the run. No REA connection is established, and nothing was built or traced for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/tiny_tracer/wiki/Installation/bfcee7fad835f06437b3a6c2410cc38d276b855b",
+      "https://github.com/hasherezade/tiny_tracer/wiki/The-INI-file/e48e12d46454008e8d2a1b55a247329c554cc4b7",
+      "https://github.com/hasherezade/tiny_tracer/wiki/Using-the-TAGs-with-disassemblers-and-debuggers/215f7cae78a12ffdc1f646000e216fdb517658cd",
+      "https://github.com/hasherezade/tiny_tracer/wiki/Tracing-shellcodes/4f8169a1a84f11f773b148f65913fdc486e5c1b9",
+      "https://github.com/hasherezade/tiny_tracer/blob/99618fc0569a4a06b7955e507e1707792ad1bef5/install32_64/README.md",
+      "https://github.com/hasherezade/tiny_tracer/tree/99618fc0569a4a06b7955e507e1707792ad1bef5/install32_64",
+      "https://github.com/hasherezade/tiny_tracer/blob/99618fc0569a4a06b7955e507e1707792ad1bef5/LICENSE.txt",
+      "https://github.com/hasherezade/tiny_tracer/releases/tag/4.0"
+    ]
   }
 ]
