@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 89](https://img.shields.io/badge/papers-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (89) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2953,7 +2953,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**88 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**89 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2961,7 +2961,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
 - [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (35) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
-- [Protocols](#papers-protocol-analysis) (10)
+- [Protocols](#papers-protocol-analysis) (11)
 
 Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.
 
@@ -4317,6 +4317,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Requires plaintext payloads. Evaluation covers DNS, DHCP and NTP with protocol-tuned parameters. Single-byte fields are not inferred; zero-filled fields, character sequences and pseudo-random values can cause errors. FMS needs known field boundaries for validation. The output is approximate segmentation, not field semantics, a state machine or complete application/device behavior.
 
   **Authors:** Stephan Kleber et al.
+
+  </details>
+
+- [**Tupni: Automatic Reverse Engineering of Input Formats**](https://dl.acm.org/doi/10.1145/1455770.1455820)
+
+  Tupni infers an input format from an execution trace of an x86 program parsing one input, using byte-level dynamic taint tracking. It segments the input into fields from the instructions that operate on tainted bytes, finds record sequences from parsing loops, groups records into types by the code that handles them, and emits an enhanced BNF grammar with length, value and some inter-message constraints. Grammars from several inputs can be merged into a more complete specification. The evaluation covers five file formats (WMF, BMP, JPG, PNG, TIF) and five network protocols (DNS, RPC, TFTP, HTTP, FTP), and the output is used for zero-day vulnerability signature generation with ShieldGen.
+
+  ACM CCS 2008 · Conference paper · [PDF](https://dl.acm.org/doi/pdf/10.1145/1455770.1455820) · [Full entry & citation](https://awesomerea.org/papers/paper-tupni/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** Tupni needs the parsing program and a recorded execution trace for every input; it does not work from captured traffic or files alone. The prototype combined iDNA traces with a re-implemented Vigilante taint engine, and the traces came from Windows XP SP2 binaries such as gdi32.dll, gdiplus.dll, nslookup.exe and IIS components. Single-input accuracy uses one input per format, scored by the authors against published specifications; WMF, DNS and HTTP guided the design, compressed image data was skipped in favor of container structure, and no quantitative baseline was run because earlier tools were unavailable. All record sequences were found, with some false-positive sequences, and 889 of 1,551 PNG fields were misidentified because the program ignored repeated chunk data. Coverage depends on input diversity, constraints can be specific to the samples, byte-level taint handles fields that do not align with bytes poorly (including many encrypted or compressed formats), and formats beyond regular expressions are out of scope. Inter-message constraints were evaluated only for TFTP, and multi-input aggregation only on 150 WMF files.
+
+  **Authors:** Weidong Cui et al.
 
   </details>
 <!-- END GENERATED PAPERS -->

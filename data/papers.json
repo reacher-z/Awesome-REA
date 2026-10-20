@@ -4974,5 +4974,56 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-tupni",
+    "title": "Tupni: Automatic Reverse Engineering of Input Formats",
+    "title_zh": "Tupni：输入格式的自动逆向工程",
+    "authors": [
+      "Weidong Cui",
+      "Marcus Peinado",
+      "Karl Chen",
+      "Helen J. Wang",
+      "Luis Irun-Briz"
+    ],
+    "year": 2008,
+    "publication_date": "2008-10-27",
+    "date_precision": "day",
+    "date_basis": "ACM’s Crossref deposit records print and online publication on 2008-10-27, and an archived copy of the ACM article page shows the same date. The CCS meeting dates are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将印刷与在线出版日期均记为 2008-10-27，ACM 论文页面的存档副本显示相同日期。本条目不以 CCS 会议日期替代。",
+    "venue": "ACM CCS 2008",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": "10.1145/1455770.1455820",
+    "url": "https://dl.acm.org/doi/10.1145/1455770.1455820",
+    "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/1455770.1455820",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "protocol",
+      "binary"
+    ],
+    "description_en": "Tupni infers an input format from an execution trace of an x86 program parsing one input, using byte-level dynamic taint tracking. It segments the input into fields from the instructions that operate on tainted bytes, finds record sequences from parsing loops, groups records into types by the code that handles them, and emits an enhanced BNF grammar with length, value and some inter-message constraints. Grammars from several inputs can be merged into a more complete specification. The evaluation covers five file formats (WMF, BMP, JPG, PNG, TIF) and five network protocols (DNS, RPC, TFTP, HTTP, FTP), and the output is used for zero-day vulnerability signature generation with ShieldGen.",
+    "description_zh": "Tupni 利用字节级动态污点跟踪，从 x86 程序解析单个输入时的执行轨迹推断输入格式。它依据处理污点字节的指令把输入切分为字段，从解析循环中找出记录序列，按处理代码将记录归为不同记录类型，并输出带有长度、取值及部分跨报文约束的增强 BNF 文法。多个输入得到的文法可以合并为更完整的规范。评测覆盖五种文件格式（WMF、BMP、JPG、PNG、TIF）和五种网络协议（DNS、RPC、TFTP、HTTP、FTP），并将输出用于 ShieldGen 的零日漏洞签名生成。",
+    "scope_limitations_en": "Tupni needs the parsing program and a recorded execution trace for every input; it does not work from captured traffic or files alone. The prototype combined iDNA traces with a re-implemented Vigilante taint engine, and the traces came from Windows XP SP2 binaries such as gdi32.dll, gdiplus.dll, nslookup.exe and IIS components. Single-input accuracy uses one input per format, scored by the authors against published specifications; WMF, DNS and HTTP guided the design, compressed image data was skipped in favor of container structure, and no quantitative baseline was run because earlier tools were unavailable. All record sequences were found, with some false-positive sequences, and 889 of 1,551 PNG fields were misidentified because the program ignored repeated chunk data. Coverage depends on input diversity, constraints can be specific to the samples, byte-level taint handles fields that do not align with bytes poorly (including many encrypted or compressed formats), and formats beyond regular expressions are out of scope. Inter-message constraints were evaluated only for TFTP, and multi-input aggregation only on 150 WMF files.",
+    "scope_limitations_zh": "Tupni 需要解析程序以及每个输入对应的已记录执行轨迹，不能仅凭捕获的流量或文件工作。原型将 iDNA 轨迹与重新实现的 Vigilante 污点引擎结合，轨迹来自 Windows XP SP2 上的二进制，例如 gdi32.dll、gdiplus.dll、nslookup.exe 及 IIS 组件。单输入准确性评测每种格式只用一个输入，由作者对照公开规范判定；WMF、DNS 与 HTTP 用于指导设计，压缩图像数据被跳过，只分析容器结构；由于早期工具不可获得，未运行定量基线。所有记录序列均被识别，但存在部分误报序列；PNG 的 1,551 个字段中有 889 个识别错误，原因是程序忽略了重复数据块的内容。覆盖范围取决于输入的多样性，约束可能只适用于样本；字节级污点难以处理与字节边界不对齐的字段（包括许多加密或压缩格式），超出正则表达式描述能力的格式也不在适用范围内。跨报文约束只在 TFTP 上评估，多输入聚合只在 150 个 WMF 文件上评估。",
+    "why_fits_en": "Adds a classic execution-based input-format inference method that recovers record sequences, record types and field constraints, complementing the collection’s traffic-based and binary-assisted protocol-format research.",
+    "why_fits_zh": "补充一种经典的基于执行的输入格式推断方法，可恢复记录序列、记录类型与字段约束，与合集中基于流量及借助二进制的协议格式研究互补。",
+    "metadata_notes": "Crossref and the archived ACM page give the five authors in this order, CCS ’08 pages 391–402, and the main title “Tupni” with subtitle “automatic reverse engineering of input formats”; the record uses the paper’s capitalization. The text was reviewed in the 12-page copy on the Microsoft Research publication page, whose byline spells the fifth author “Luiz Irun-Briz”; the record follows the ACM and Crossref spelling. The paper states that the prototype has 14,000 lines of C++ and 4,100 lines of Perl outside Vigilante and iDNA, and it links no code or data; the Windows test binaries and the 150 WMF files from an internal Microsoft repository are not public artifacts. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 ACM 页面存档按此顺序列出五位作者，记载 CCS ’08 第 391–402 页，主标题为“Tupni”，副标题为“automatic reverse engineering of input formats”；本条目采用论文中的大小写。正文审阅依据 Microsoft Research 出版物页面提供的 12 页副本，其署名将第五位作者写作“Luiz Irun-Briz”；本条目沿用 ACM 与 Crossref 的拼写。论文说明，不计 Vigilante 与 iDNA，原型含 14,000 行 C++ 与 4,100 行 Perl；论文未链接代码或数据，Windows 测试二进制及来自 Microsoft 内部库的 150 个 WMF 文件也不是公开产物。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/1455770.1455820",
+      "https://web.archive.org/web/20250206195542/https://dl.acm.org/doi/10.1145/1455770.1455820",
+      "https://api.crossref.org/works/10.1145/1455770.1455820",
+      "https://dl.acm.org/doi/pdf/10.1145/1455770.1455820",
+      "https://www.microsoft.com/en-us/research/publication/tupni-automatic-reverse-engineering-of-input-formats/",
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tupni-ccs08.pdf"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

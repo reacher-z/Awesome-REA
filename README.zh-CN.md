@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 89](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (88) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (89) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -2954,7 +2954,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**88 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**89 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
@@ -2962,7 +2962,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
 - [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (35) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
-- [协议](#papers-protocol-analysis) (10)
+- [协议](#papers-protocol-analysis) (11)
 
 展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。
 
@@ -4318,6 +4318,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 需要明文载荷。评测覆盖 DNS、DHCP 和 NTP，并针对各协议调节参数。方法无法推断单字节字段；全零字段、字符序列和伪随机值可能导致误差。FMS 验证需要已知字段边界。输出是近似报文分段，不是字段语义、状态机或完整应用／设备行为。
 
   **作者:** Stephan Kleber 等
+
+  </details>
+
+- [**Tupni：输入格式的自动逆向工程**](https://dl.acm.org/doi/10.1145/1455770.1455820)
+
+  Tupni 利用字节级动态污点跟踪，从 x86 程序解析单个输入时的执行轨迹推断输入格式。它依据处理污点字节的指令把输入切分为字段，从解析循环中找出记录序列，按处理代码将记录归为不同记录类型，并输出带有长度、取值及部分跨报文约束的增强 BNF 文法。多个输入得到的文法可以合并为更完整的规范。评测覆盖五种文件格式（WMF、BMP、JPG、PNG、TIF）和五种网络协议（DNS、RPC、TFTP、HTTP、FTP），并将输出用于 ShieldGen 的零日漏洞签名生成。
+
+  ACM CCS 2008 · 会议论文 · [PDF](https://dl.acm.org/doi/pdf/10.1145/1455770.1455820) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-tupni/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** Tupni 需要解析程序以及每个输入对应的已记录执行轨迹，不能仅凭捕获的流量或文件工作。原型将 iDNA 轨迹与重新实现的 Vigilante 污点引擎结合，轨迹来自 Windows XP SP2 上的二进制，例如 gdi32.dll、gdiplus.dll、nslookup.exe 及 IIS 组件。单输入准确性评测每种格式只用一个输入，由作者对照公开规范判定；WMF、DNS 与 HTTP 用于指导设计，压缩图像数据被跳过，只分析容器结构；由于早期工具不可获得，未运行定量基线。所有记录序列均被识别，但存在部分误报序列；PNG 的 1,551 个字段中有 889 个识别错误，原因是程序忽略了重复数据块的内容。覆盖范围取决于输入的多样性，约束可能只适用于样本；字节级污点难以处理与字节边界不对齐的字段（包括许多加密或压缩格式），超出正则表达式描述能力的格式也不在适用范围内。跨报文约束只在 TFTP 上评估，多输入聚合只在 150 个 WMF 文件上评估。
+
+  **作者:** Weidong Cui 等
 
   </details>
 <!-- END GENERATED PAPERS -->
