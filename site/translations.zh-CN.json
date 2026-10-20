@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "lostmycode-javascript-deobfuscator": {
+    "name": "javascript-deobfuscator Obfuscator.io 字符串还原网页工具",
+    "requirements": [
+      "没有版本发布：package.json 标为 0.1.0 并设为私有包，仓库没有 GitHub Release，也未发布 npm 包；所审阅的 master 分支提交日期为 2024-05-31，即最近一次推送。README 只列出 Vue CLI 4 项目命令（npm install、serve、build 和 lint）；GitHub Actions 工作流用 Node.js 16 构建网站并部署到 GitHub Pages。本次未审阅在线演示，README 唯一的结果展示是一张示例截图。",
+      "需自行提供混淆脚本并找出目标函数名；内置提示列出 _0x439c[103]、_0x439c('0x4') 和 _0x439c('0x2','f]Xg') 等调用形式。工具只处理这些字符串数组模式，另有第四种模式标为实验性，无法识别的输入会报错。代码中没有处理控制流平坦化、代理函数、死代码或 Obfuscator.io 其他变换的步骤，这些内容会保留在输出中。",
+      "解码时会在浏览器 Web Worker 中用 eval 执行粘贴的脚本，因此输入代码本身会运行；这不是静态的 AST 变换。页面模板还会从 cdnjs 加载 js-beautify，并包含 Google Analytics 统计代码。",
+      "仓库没有许可证文件，GitHub 也未检测到许可证，因此未声明任何复用条款。本次未对任何脚本进行反混淆。"
+    ]
   }
 }

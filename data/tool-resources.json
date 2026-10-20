@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "lostmycode-javascript-deobfuscator",
+    "name": "javascript-deobfuscator",
+    "url": "https://github.com/LostMyCode/javascript-deobfuscator",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Browser-based Vue app that restores the strings Obfuscator.io hides behind string-array lookups in JavaScript. The user pastes the obfuscated script and names its string array or decoder function, such as _0x439c; the tool classifies the calls as plain array indexing, a one-argument decoder or a two-argument RC4-style decoder, runs the script's own decoder to replace each call with its string literal, rewrites bracketed property access as dot notation and beautifies the result. The author hosts a demo at deo.sigr.io.",
+    "description_zh": "基于浏览器的 Vue 应用，用于还原 Obfuscator.io 藏在字符串数组查找背后的 JavaScript 字符串。用户粘贴混淆脚本，并填写其中的字符串数组或解码函数名（如 _0x439c）；工具会把调用识别为直接数组下标、单参数解码函数或双参数 RC4 式解码函数，借助脚本自带的解码函数把每次调用替换为字符串字面量，再把方括号属性访问改写为点号形式并美化输出。作者在 deo.sigr.io 提供演示站点。",
+    "evidence_url": "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Unversioned: package.json reports 0.1.0 and marks the package private, there are no GitHub releases or npm package, and the reviewed master commit of 2024-05-31 is the latest push. The README covers only the Vue CLI 4 project commands (npm install, serve, build and lint); a GitHub Actions workflow builds the site with Node.js 16 and deploys it to GitHub Pages. The hosted demo was not reviewed, and the README's only result is an example screenshot.",
+      "Supply the obfuscated script and identify the target function name yourself; a built-in tip shows call shapes such as _0x439c[103], _0x439c('0x4') and _0x439c('0x2','f]Xg'). Only these string-array patterns are handled, with a fourth pattern marked experimental, and unrecognized input returns an error. The code has no passes for control-flow flattening, proxy functions, dead code or Obfuscator.io's other transformations, so those remain in the output.",
+      "Decoding evaluates the pasted script with eval inside a browser web worker, so the input's own code runs; it is not a static AST transformation. The page template also loads js-beautify from cdnjs and a Google Analytics tag.",
+      "The repository has no license file and GitHub detects no license, so it grants no stated reuse terms. No scripts were deobfuscated for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/xDecoder.js",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/Analyzer.js",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/components/Main.vue",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/components/TargetFuncTip.vue",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/src/worker.js",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/package.json",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/public/index.html",
+      "https://github.com/LostMyCode/javascript-deobfuscator/blob/2cc31bf07d9f870ea0871aabf3af5568d165f57d/.github/workflows/deploy.yml"
+    ]
   }
 ]

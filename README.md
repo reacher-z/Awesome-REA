@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
+- [Website](#website) (28) · [Game](#game) (187) · [App](#app) (72)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -227,6 +227,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Java desktop decompiler and editor for Adobe Flash SWF files. It decompiles ActionScript 1/2 and AS3 side by side with the P-code they came from, edits scripts as source (experimental) or through the assembler view, and exports or replaces images, shapes, sounds, video, fonts and texts, with SWF-to-FLA conversion, SWF-to-XML round trips and SVG or HTML5 Canvas output. It also opens SWC and ABC files, Scaleform GFx and 64-bit Iggy files, has an ActionScript debugger and deobfuscation passes for obfuscated AS3, and offers its parser and decompiler as the ffdec\_lib Java library and a command line.
 
   Tool · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/jpexs-decompiler/)
+
+- [**javascript-deobfuscator**](https://github.com/LostMyCode/javascript-deobfuscator)
+
+  Browser-based Vue app that restores the strings Obfuscator.io hides behind string-array lookups in JavaScript. The user pastes the obfuscated script and names its string array or decoder function, such as \_0x439c; the tool classifies the calls as plain array indexing, a one-argument decoder or a two-argument RC4-style decoder, runs the script's own decoder to replace each call with its string literal, rewrites bracketed property access as dot notation and beautifies the result. The author hosts a demo at deo.sigr.io.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/lostmycode-javascript-deobfuscator/)
 
 <a id="game"></a>
 ### Game
