@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "idapython-embedded-toolkit",
+    "name": "IDAPython Embedded Toolkit",
+    "url": "https://github.com/maddiestone/IDAPythonEmbeddedToolkit",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "app"
+    ],
+    "description_en": "Maddie Stone's IDAPython scripts for triaging and annotating embedded-device firmware images in IDA Pro, presented at RECON Montreal and DerbyCon in 2017. Triage scripts define code and functions from per-architecture prologue and epilogue patterns, mark address ranges as bytes, words or double words and turn unexplored bytes into strings; analysis scripts resolve memory accesses made at offsets from a known base value and add cross-references and value comments, and annotation scripts list CPU port (GPIO) use, tag functions without cross-references as possible dead code and trace where an operand is used. An Android folder adds a script that comments JNIEnv function calls in native libraries and one that decrypts the strings of ARM32 libraries packed with the WeddingCake anti-analysis wrapper.",
+    "description_zh": "Maddie Stone 编写的 IDAPython 脚本集，用于在 IDA Pro 中对嵌入式设备固件镜像进行初步梳理和标注，曾于 2017 年在 RECON Montreal 和 DerbyCon 上介绍。梳理类脚本依据各架构的函数序言和尾声模式定义代码与函数，把地址范围标记为字节、字或双字，并把未探索的字节转换为字符串；分析类脚本根据已知基址解析以偏移方式进行的内存访问，并添加交叉引用和数值注释；标注类脚本列出 CPU 端口（GPIO）的使用位置，把没有交叉引用的函数标为可能的死代码，并追踪某个操作数的使用位置。Android 文件夹另有一个为原生库中的 JNIEnv 函数调用添加注释的脚本，以及一个解密经 WeddingCake 反分析外壳打包的 ARM32 库中字符串的脚本。",
+    "evidence_url": "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Ten Python scripts and the slides of the two 2017 talks as PDFs, with no releases or tags; the reviewed master commit, from 2019-08-14, is the latest. The README says the scripts have only been tested on IDA Pro 6.95, with IDA 7.0 testing in progress, and runs each one separately through File > Script file in an open IDA database with IDAPython. Most use Python 2 print statements and pre-7.0 IDC calls such as MakeCode, MakeComm, MakeStr and AskAddr; jni_translate.py, added in 2019, uses Python 3-compatible print calls but still calls idc.MakeComm. The reviewed sources claim no compatibility with later IDA releases or Python 3.",
+      "The user supplies the firmware image or Android native library and its IDA database, and enters address ranges, regular expressions or base values at prompts or in each script's user-defined section. Processor-specific syntax is chosen from IDA's processor name: define_code_functions.py covers 8051, PIC18, Mitsubishi M32R, TI TMS320C28x and AVR, and find_mem_accesses.py only 8051, while identify_port_use_locations.py ships one active PIC18 pattern with commented 8051 alternatives. Unsupported processors stop with an error until the analyst adds patterns, and find_mem_accesses.py cannot create references into segments that do not yet exist.",
+      "Several scripts rewrite the database: define_data_as_types.py first undefines the range, overwriting code or strings there, and WeddingCake_decrypt.py overwrites encrypted strings with their decrypted contents and needs JNI_OnLoad defined and exported. The WeddingCake files accompany Maddie Stone's Black Hat USA 2018 talk on that packer; this entry covers their use for analysis only.",
+      "MIT, copyright 2017 Maddie Stone, in LICENSE; the README's copyright notice instead names The Johns Hopkins University Applied Physics Laboratory, and the Android README and WeddingCake script carry a Google LLC 2018 copyright line without separate license terms. Nothing was run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/Android/README.md",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/define_code_functions.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/find_mem_accesses.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/identify_port_use_locations.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/define_data_as_types.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/Android/jni_translate.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/Android/WeddingCake_decrypt.py",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/tree/3cf0346f93eb3c009f4bf274c91bd00398a56d77/presentations",
+      "https://github.com/maddiestone/IDAPythonEmbeddedToolkit/blob/3cf0346f93eb3c009f4bf274c91bd00398a56d77/LICENSE"
+    ]
   }
 ]

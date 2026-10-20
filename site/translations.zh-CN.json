@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "idapython-embedded-toolkit": {
+    "name": "IDAPython Embedded Toolkit 嵌入式固件分析脚本集",
+    "requirements": [
+      "包含十个 Python 脚本以及两场 2017 年演讲的 PDF 幻灯片，没有发布版本或标签；所审阅的 master 提交日期为 2019-08-14，也是最新提交。README 称这些脚本只在 IDA Pro 6.95 上测试过，IDA 7.0 的测试仍在进行；每个脚本需在已打开且带 IDAPython 的 IDA 数据库中通过 File > Script file 单独运行。多数脚本使用 Python 2 的 print 语句和 7.0 之前的 IDC 调用，例如 MakeCode、MakeComm、MakeStr 和 AskAddr；2019 年加入的 jni_translate.py 使用兼容 Python 3 的 print 调用，但仍调用 idc.MakeComm。所审来源未声称兼容更新的 IDA 版本或 Python 3。",
+      "固件镜像或 Android 原生库及其 IDA 数据库由使用者提供，地址范围、正则表达式或基址需在提示框中或各脚本的用户自定义部分填写。处理器相关的语法依据 IDA 的处理器名称选择：define_code_functions.py 支持 8051、PIC18、三菱 M32R、TI TMS320C28x 和 AVR，find_mem_accesses.py 只支持 8051，identify_port_use_locations.py 则只启用一条 PIC18 模式，另以注释形式给出 8051 的备选模式。遇到不支持的处理器时脚本会报错退出，需分析人员自行补充模式；find_mem_accesses.py 也无法为尚未创建的段建立引用。",
+      "部分脚本会改写数据库：define_data_as_types.py 会先取消该范围内的已有定义，覆盖其中的代码或字符串；WeddingCake_decrypt.py 会用解密后的内容覆盖加密字符串，并要求 JNI_OnLoad 已被定义和导出。WeddingCake 相关文件配合 Maddie Stone 在 Black Hat USA 2018 上关于该加壳工具的演讲；本条目只涉及将其用于分析。",
+      "LICENSE 采用 MIT 许可，版权归 Maddie Stone（2017）；README 中的版权声明则写的是约翰斯·霍普金斯大学应用物理实验室，Android 文件夹的 README 和 WeddingCake 脚本另有 Google LLC 2018 的版权声明，但未给出单独的许可条款。本次未运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
