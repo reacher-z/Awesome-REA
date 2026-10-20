@@ -401,6 +401,14 @@ html[data-layout="compact"] .collection-home .requirements summary,html[data-lay
 html[data-layout="compact"] .collection-home .requirements[open],html[data-layout="compact"] .collection-home .source-record-details[open]{grid-area:auto;grid-column:1/-1;border:1px solid var(--line);border-radius:8px;background:var(--soft);padding:12px 18px;margin-top:8px}
 html[data-layout="compact"] .collection-home .requirements[open] ul{color:var(--body)}
 html[data-layout="compact"] .collection-home .source-record-details[open] dl{max-width:76ch;color:var(--body)}
+/* A hint names the hidden field a query matched (other language, requirements, topics); compact rows give it a row. */
+.match-hint{margin:6px 0 0;font-size:14px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}
+.match-hint-label{font-weight:600}
+.match-field{color:var(--ink)}
+.match-hint mark{padding:0 2px;border-radius:3px;background:var(--cyan);color:var(--ink)}
+html[data-layout="compact"] .collection-home .resource-card:has(>.match-hint),html[data-layout="compact"] .collection-home .source-card:has(>.match-hint){grid-template-areas:"heading heading" "description description" "hint hint" "meta details"}
+html[data-layout="compact"] .collection-home .match-hint{grid-area:hint;margin:0;max-width:70ch}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .resource-card:has(>.match-hint),html[data-layout="compact"] .collection-home .source-card:has(>.match-hint){grid-template-areas:"heading meta" "description meta" "description details" "hint details"}html[data-layout="compact"] .collection-home .match-hint{margin-top:6px}}
 .source-context-label{font-size:14px;line-height:1.7;overflow-wrap:anywhere;margin:0 0 14px}
 @media(max-width:1050px){
   html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{grid-template-columns:fit-content(65%) minmax(0,1fr);column-gap:20px}

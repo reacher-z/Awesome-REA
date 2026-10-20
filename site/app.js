@@ -125,6 +125,16 @@ const UI = {
     "viewSource": "GitHub ↗",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Primary source",
+    "matchedIn": "Matched in",
+    "matchNameEn": "English name",
+    "matchNameZh": "Chinese name",
+    "matchDescriptionEn": "English description",
+    "matchDescriptionZh": "Chinese description",
+    "matchDescriptionOriginal": "Original description",
+    "matchRequirementsEn": "English requirements",
+    "matchRequirementsZh": "Chinese requirements",
+    "matchRelationship": "Relationship",
+    "matchRelated": "Related entry",
     "requirements": "Details & requirements",
     "reviewed": "Reviewed",
     "sourceReviewed": "Source-reviewed",
@@ -276,6 +286,16 @@ const UI = {
     "viewSource": "GitHub ↗",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "一手来源",
+    "matchedIn": "匹配于",
+    "matchNameEn": "英文名称",
+    "matchNameZh": "中文名称",
+    "matchDescriptionEn": "英文简介",
+    "matchDescriptionZh": "中文简介",
+    "matchDescriptionOriginal": "上游原文简介",
+    "matchRequirementsEn": "英文使用条件",
+    "matchRequirementsZh": "中文使用条件",
+    "matchRelationship": "关联类型",
+    "matchRelated": "相关条目",
     "requirements": "详情与使用条件",
     "reviewed": "复核于",
     "sourceReviewed": "来源已复核",
@@ -388,9 +408,48 @@ function renderCategories() {
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
-function card(record) {
+// Search also covers text a card does not show: the other language, requirements, topics and related titles.
+// When a query term is missing from the visible text, the card names the first field that holds it and quotes a
+// short excerpt. Text is inserted as text, excerpts are cut on code points, and order and focus are untouched.
+function matchExcerpt(text, term) {
+  const chars = Array.from(text); const index = []; let lowered = "";
+  chars.forEach((char, position) => { const lower = char.toLocaleLowerCase(); lowered += lower; for (let i = 0; i < lower.length; i++) index.push(position); });
+  const quote = node("q", "match-excerpt"); const at = lowered.indexOf(term);
+  if (at < 0) { quote.append(node("span", "", chars.length > 60 ? chars.slice(0, 60).join("") + "…" : text)); return quote; }
+  const start = index[at], end = index[at + term.length - 1] + 1, from = Math.max(0, start - 30), to = Math.min(chars.length, end + 30);
+  quote.append(node("span", "", (from ? "…" : "") + chars.slice(from, start).join("")), node("mark", "", chars.slice(start, end).join("")), node("span", "", chars.slice(end, to).join("") + (to < chars.length ? "…" : "")));
+  return quote;
+}
+function matchHint(terms, visible, fields) {
+  const shown = visible.filter(Boolean).join(" ").toLocaleLowerCase(); const matches = [];
+  for (const term of terms) {
+    if (shown.includes(term)) continue;
+    const field = fields.find(([, text]) => text && String(text).toLocaleLowerCase().includes(term));
+    if (field && !matches.some(match => match[0] === field[0])) matches.push([field[0], String(field[1]), term]);
+  }
+  if (!matches.length) return null;
+  const hint = node("p", "match-hint"); hint.append(node("span", "match-hint-label", t("matchedIn")));
+  matches.slice(0, 2).forEach(([key, text, term], position) => {
+    // Excerpts from a known language carry it, so the other language's text is announced and shaped correctly.
+    const excerpt = matchExcerpt(text, term); const language = /Zh$/.test(key) ? "zh-CN" : /En$/.test(key) ? "en" : ""; if (language) excerpt.setAttribute("lang", language);
+    hint.append(node("span", "", position ? " · " : " "), node("span", "match-field", t(key) + " "), excerpt);
+  });
+  return hint;
+}
+const searchTerms = query => query.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+function curatedMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const requirements = language => [].concat((language === "zh" ? record.requirements_zh : record.requirements) || []);
+  return matchHint(terms, [zh ? (record.name_zh || record.name) : record.name, record[zh ? "description_zh" : "description_en"], label(KIND, record.kind), label(state.categoryLabels, record.category), targetLabels(record)], [
+    zh ? ["matchNameEn", record.name] : ["matchNameZh", record.name_zh], zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh],
+    ...[zh ? "zh" : "en", zh ? "en" : "zh"].flatMap(language => requirements(language).map(item => [language === "zh" ? "matchRequirementsZh" : "matchRequirementsEn", item])),
+    ["categoryLabel", [record.category, ...(state.categoryLabels[record.category] || [])].join(" · ")], ["kindLabel", (KIND[record.kind] || []).join(" · ")],
+    ["matchRelationship", record.relationship], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+}
+function card(record, terms = []) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
+  const hint=curatedMatchHint(record,terms);if(hint)article.append(hint);
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");const requirements=state.lang==="zh"?(record.requirements_zh||record.requirements):record.requirements;(Array.isArray(requirements)?requirements:[requirements]).forEach(item=>list.append(node("li","",item)));details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
@@ -400,7 +459,7 @@ function card(record) {
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
   details.append(context);article.append(details);return article;
 }
-function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+function filtered() { const terms=searchTerms(state.q);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
 function renderEmptySearchActions(foundCount = state.loaded ? filtered().length : null) {
   const show = state.loaded && !state.error && sourceState.mode === "curated"
     && foundCount === 0 && state.q.trim() !== "";
@@ -422,7 +481,7 @@ function renderEmptySearchActions(foundCount = state.loaded ? filtered().length 
 }
 function render() {
   const expanded = expandedRecords(".resource-card");
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); const terms = searchTerms(state.q); found.slice(0, state.visible).forEach(r => fragment.append(card(r, terms))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   renderEmptySearchActions(found.length);
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
@@ -597,11 +656,21 @@ function sourceTopicButtons(record, limit = 4) {
   });
   return topics;
 }
-function sourceCard(record) {
+function sourceMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const related = sourceRelatedEntries(record);
+  return matchHint(terms, [record.full_name, record[zh ? "description_zh" : "description_en"]], [
+    zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh], ["matchDescriptionOriginal", record.description_original],
+    ...record.topics.map(topic => ["sourceTopicsLabel", [topic, state.topicLabels[topic]?.en, state.topicLabels[topic]?.zh].filter(Boolean).join(" · ")]),
+    ...related.flatMap(entry => (zh ? [entry.title_zh, entry.title_en] : [entry.title_en, entry.title_zh]).map(title => ["matchRelated", title])),
+    ["categoryLabel", record.category], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+}
+function sourceCard(record, terms = []) {
   const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) { link.append(node("span","source-owner",record.full_name.slice(0,separator+1)),node("span","source-project",record.full_name.slice(separator+1))); } else { link.append(node("span","source-project",record.full_name)); } link.append(icon("external",true)); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
   const description = record[state.lang === "zh" ? "description_zh" : "description_en"];
   article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t(record.description_omission ? "sourceOmittedDescription" : "sourceNoDescription")));
+  const hint = sourceMatchHint(record, terms); if (hint) article.append(hint);
 
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails")));
@@ -616,7 +685,7 @@ function sourceCard(record) {
   evidence.append(dl); details.append(context,dates,evidence); article.append(details); return article;
 }
 function renderSources() {
-  if (!sourceState.loaded) return; const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record))); $("#source-results").replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); $("#source-results").setAttribute("aria-busy","false");
+  if (!sourceState.loaded) return; const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); const found = sourceFiltered(); const fragment = document.createDocumentFragment(); const terms = searchTerms(sourceState.q); found.slice(0,sourceState.visible).forEach(record => fragment.append(sourceCard(record, terms))); $("#source-results").replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); $("#source-results").setAttribute("aria-busy","false");
   $("#source-status").textContent = state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`);
   const topic = sourceState.topic.toLocaleLowerCase().trim(); const hint = $("#source-topic-match");
   hint.hidden = !topic; hint.textContent = topic ? t(sourceState.topicIDs.has(topic) ? "sourceTopicExact" : "sourceTopicContains") : "";
