@@ -6614,5 +6614,15 @@
       "待分析的 iOS 二进制或 kernelcache 由分析者自行提供。虚函数调用导航要求数据库中存在 vtable 符号；为带类型的 operator new 返回值设置类型前，需先执行 Locate all kalloc_type_view 操作。2026 年 6 月加入、README 未作说明的 Swift 导入器会对输入文件运行独立工具 ipsw 的 swift-dump 命令，为 Swift 类方法命名并设置类型。",
       "CI 只用 vermin 检查 Python 3.10 兼容性，并运行 ruff 的静态检查和格式检查，没有自动化测试。仓库中还有开发插件时使用的无界面 idat 探测脚本和一个 Claude Code 技能，它们并不能确立与 REA 的关联。采用 GPL-3.0 许可。本次未安装或运行任何内容。"
     ]
+  },
+  "mambo": {
+    "name": "MAMBO 动态二进制修改框架",
+    "requirements": [
+      "所审阅的 master 提交（2025-01-21）更新了 HiPEAC 2025 教程。项目没有带版本号的发布；GitHub 上的 1 和 2 两个发布只用于存放演讲幻灯片。README 称会按需改进应用兼容性，列出 SPEC CPU2006、PARSEC 3.0、GCC、LibreOffice 和 GIMP 等可在 Arm 上正常运行的程序，并说明大部分开发在私有仓库中进行。",
+      "需在 Armv7、Armv8 或 RV64GC 的 Linux 系统（物理机或虚拟机）上构建和运行，依赖 GCC、libelf 开发文件和 Ruby 1.9.1+；构建时会根据随附的 PIE 规格生成指令编码器与解码器，并静态链接 dbm。作者使用 armhf/arm64 版 Debian、Ubuntu 和 Arch Linux ARM，以及 RISC-V 上的 Ubuntu 22.04；对于其他主机，Dockerfile 会下载 Arm64 和 RISC-V 的 Ubuntu 24.04 预装服务器镜像并在 QEMU 中运行。插件需通过 makefile 的 PLUGINS 列表编译进来。",
+      "README 列出的已知问题：SA_SIGINFO 处理函数收到的 siginfo_t 数据不正确，同步信号的处理函数无法 sigreturn，munmap 或缓存刷新后的代码缓存失效只在发起调用的线程中进行，RISC-V 上的信号处理也不完整。MAMBO 并非为防范被翻译程序的攻击而设计，因此 README 指出未经加固不能用作安全沙箱。",
+      "CI 在 QEMU 用户态模拟下的 Ubuntu 20.04 chroot 中为 arm64、armhf 和 riscv64 构建 MAMBO，且只在其下运行 /bin/ls；test/ 中的指令、信号与自修改代码测试程序不在 CI 中运行。作者请使用者引用其 2016 年的 ACM TACO 论文，并列出之后的 ICPE 2018、CC 2020、VEE 2020 和 ISPASS 2023 论文。",
+      "采用 Apache-2.0，pie/ 目录中也附有相同许可证。待插桩的程序由使用者提供。所审阅的来源未表明与 REA 有关，本次未构建或运行任何内容。"
+    ]
   }
 }
