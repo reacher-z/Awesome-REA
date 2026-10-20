@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (33)
 
 **More ways to browse**
 
@@ -2947,6 +2947,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Matthieu Breuil’s Synacktiv article explains tool-calling and code-executing agent designs and describes Frontkick, a CodeAct agent that runs generated Python inside Binary Ninja. It compares Frontkick with the open-source Rikugan plugin on two CREBench cryptographic binary tasks, then attributes most of Frontkick’s advantage to a prompt that listed installed Python libraries rather than to its architecture. It is a small evaluation write-up with per-run results, not a released tool or a general benchmark finding.
 
   Learning resource · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/frontkick-rikugan-crebench-comparison/)
+
+- [**linux-re-101**](https://github.com/michalmalik/linux-re-101)
+
+  Michal Malik’s single-README reading list for Linux reverse engineering, with about 230 links and book titles that run from quick references on system calls, ELF and processor ABIs through 101 and 201 tiers on program start-up, linking and relocations. Later sections gather material on packers and obfuscation, anti-debugging, ELF infection, kernel modules and rootkits, exploitation, crackmes, radare2 walkthroughs, detection tools and books. It is a lightly annotated link list last changed in January 2022, useful as a background syllabus rather than a maintained course.
+
+  Learning resource · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/linux-re-101/)
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->

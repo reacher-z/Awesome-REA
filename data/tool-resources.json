@@ -11254,5 +11254,28 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "linux-re-101",
+    "name": "linux-re-101",
+    "url": "https://github.com/michalmalik/linux-re-101",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Michal Malik’s single-README reading list for Linux reverse engineering, with about 230 links and book titles that run from quick references on system calls, ELF and processor ABIs through 101 and 201 tiers on program start-up, linking and relocations. Later sections gather material on packers and obfuscation, anti-debugging, ELF infection, kernel modules and rootkits, exploitation, crackmes, radare2 walkthroughs, detection tools and books. It is a lightly annotated link list last changed in January 2022, useful as a background syllabus rather than a maintained course.",
+    "description_zh": "Michal Malik 以单个 README 维护的 Linux 逆向工程阅读清单，收录约 230 条链接与书目：从系统调用、ELF 和各处理器 ABI 的速查资料，到讲解程序启动、链接与重定位的 101、201 两级阅读。后续部分汇集加壳与混淆、反调试、ELF 感染、内核模块与 rootkit、漏洞利用、crackme、radare2 实战、检测工具及书籍等资料。这是一份注释很少、最后改动于 2022 年 1 月的链接清单，适合作为背景阅读提纲，而不是持续维护的课程。",
+    "evidence_url": "https://github.com/michalmalik/linux-re-101/blob/f858da0f325aa4eb77008ba63d1bddfaf8d53d80/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit f858da0, dated 2022-01-16, contains a single file, README.md, which calls the list a work in progress. It holds 231 bullet entries under 15 headings; the largest are Linux kernel, rootkits and LKM development (40), 101 (22) and viruses and infection techniques (20), and several articles appear in more than one section. These are list rows, not reviewed or ranked resources.",
+      "Entries give a title and a link, sometimes marked Optional or followed by a short remark; beyond the 101 and 201 headings they state no level, prerequisites or exercises. 148 of the 229 URLs use plain HTTP, and most dated links point to posts from 2008–2017; this review did not check whether the links still resolve.",
+      "The material centres on Linux ELF binaries on x86, x86-64, ARM, ARM64 and MIPS, and the hands-on section mostly uses radare2, with GDB, IDA and LIEF references elsewhere. The repository supplies no labs, sample binaries or setup; crackme and challenge links lead to external archives, and readers need a Linux system plus whatever tools each linked article names.",
+      "The packer, anti-debugging, infection, rootkit and exploitation sections link offensive write-ups, rootkit source repositories and external virus collections alongside detection material. This catalog lists the page as analysis background only; linked code and samples are third-party material with their own risks and terms.",
+      "GitHub detects no license and the repository has no license file, so the list states no reuse terms; linked articles, books and code keep their own rights. An independent learning list; the reviewed source establishes no REA or AI connection."
+    ]
   }
 ]
