@@ -8769,12 +8769,16 @@
         "https://x.com/i/status/2111130295692849212",
         "https://x.com/i/status/2111187043779068036"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "@TheTJKennedy (2026-10-16) planned to reverse engineer a Google Home speaker over a weekend so it could run open-source smart-home software. After @ryantcwynar suggested Onju Voice, a replacement ESP32-S3 board for the second-generation Nest Mini, he declined hardware changes and said he was blocked by the locked bootloader and by OpenAI’s cybersecurity safeguards. No firmware, notes or code are linked, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; the attempt was blocked, and no bootloader details are recorded here.",
+      "reason_zh": "@TheTJKennedy（2026-10-16）计划用一个周末逆向一台 Google Home 音箱，让它运行开源智能家居软件。@ryantcwynar 建议改用 Onju Voice（一块用于替换第二代 Nest Mini 主板的 ESP32-S3 电路板）后，他表示不愿改动硬件，并称目前受阻于锁定的引导加载程序以及 OpenAI 的网络安全防护措施。帖子没有链接固件、笔记或代码，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这次尝试受阻，此处也不记录任何引导加载程序细节。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111215951857246251",
+        "https://x.com/i/status/2111130295692849212",
+        "https://x.com/i/status/2111187043779068036"
+      ],
       "catalog_matches": []
     },
     {
@@ -8885,12 +8889,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111251559275487538"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@briandecoded, 2026-10-17) says the author has his Hermes agent watch Grok bot’s real-time features and has been reverse engineering them, with audio the one part not yet solved. It names no features, method or output and links nothing, and none of the author’s nine public GitHub repositories concerns Grok. Retain the lead without a catalog mapping.",
+      "reason_zh": "回复（@briandecoded，2026-10-17）称，作者让自己的 Hermes 智能体观察 Grok bot 的实时功能并一直在逆向这些功能，唯一尚未解决的是音频。回复未说明具体功能、方法或输出，也没有任何链接，作者的九个公开 GitHub 仓库中也没有与 Grok 相关的内容。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111251559275487538"
+      ],
       "catalog_matches": []
     },
     {
@@ -8906,12 +8912,15 @@
         "https://x.com/i/status/2111251131665940519",
         "https://x.com/i/status/2111254840772829549"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "@_0xKenny (2026-10-17) starts flashing Muse firmware onto a Jiuchuan Xiaozhi AI speaker and, in a follow-up, describes reading the ESP32-S3 flash ID, backing up the stock firmware over USB, and asking Muse to adapt the Muse Gadgets source on GitHub to the hardware specification. The thread shows a start, not a result: it links no adapted source, build or test outcome, and no matching GitHub account was found. Retain the lead without a catalog mapping.",
+      "reason_zh": "@_0xKenny（2026-10-17）开始为九川的小智 AI 音箱刷入 Muse 固件，并在后续帖子中介绍读取 ESP32-S3 闪存信息、通过 USB 备份原厂固件，再让 Muse 根据硬件规格调整 Muse Gadgets 在 GitHub 上的源码以适配该硬件。这组帖子只展示了开端而非结果：没有链接适配后的源码、构建或测试结果，也未找到对应的 GitHub 账号。保留此线索而不建立目录映射。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111251131665940519",
+        "https://x.com/i/status/2111254840772829549"
+      ],
       "catalog_matches": []
     },
     {
@@ -8926,12 +8935,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111262935293038623"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The reply (@imjustnewatai, 2026-10-17) says that once Claude fully reverse engineered Fallout 4, it could fix things it could never have guessed or brute-forced; the reply it answers argues that only the relevant parts need decompiling. It names no fixes, tools or output and links nothing, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; this is an unsupported remark, not a documented case.",
+      "reason_zh": "回复（@imjustnewatai，2026-10-17）称，Claude 完整逆向《辐射 4》后，修好了原本无法靠猜测或穷举解决的问题；它所回应的帖子则认为只需反编译相关部分。回复未说明修复内容、工具或输出，也没有任何链接，且未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；这只是一句缺乏依据的评论，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111262935293038623"
+      ],
       "catalog_matches": []
     },
     {
@@ -8947,12 +8958,15 @@
         "https://x.com/i/status/2111269740249489643",
         "https://x.com/i/status/2111269743000998301"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "@mayank_8127 (2026-10-17) says he gave Claude his keyboard configuration software’s Windows-only .exe, “the reverse engineering repo” and camera access, and that it decompiled the program, made a Linux version, verified it with the camera, and later added a larger configuration palette, a better UI and an Omarchy status-bar plugin. The posts name neither the keyboard nor the software and link no code; their attachments are a video and images, and no GitHub account matching the handle was found. Retain the lead without a catalog mapping; a published Linux version would allow review.",
+      "reason_zh": "@mayank_8127（2026-10-17）称，他把只有 Windows .exe 的键盘配置软件、“那个逆向工程仓库”和摄像头权限交给 Claude，Claude 反编译了程序、做出可在 Linux 上运行的版本并用摄像头完成验证；之后他又加入了更大的自定义配置面板、更好的界面，以及一个可在 Omarchy 状态栏操作的插件。帖子既未说明键盘型号，也未说明软件名称，且没有链接代码；附件为一段视频和几张图片，也未找到与该账号名对应的 GitHub 账号。保留此线索而不建立目录映射；公开的 Linux 版本可支持再次核查。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111269740249489643",
+        "https://x.com/i/status/2111269743000998301"
+      ],
       "catalog_matches": []
     },
     {
@@ -9001,12 +9015,14 @@
       "reported_source_urls": [
         "https://x.com/i/status/2111275332989059193"
       ],
-      "state": "pending",
-      "review_level": "inventory-only",
-      "reviewed_at": "2026-10-17",
-      "reason_en": "A newly inventoried collection lead awaiting primary-source review; listing does not verify implementation or results.",
-      "reason_zh": "新清点的合集线索，等待一手来源核查；被列入合集不代表实现或结果已获验证。",
-      "primary_evidence_urls": [],
+      "state": "insufficient-evidence",
+      "review_level": "primary-source-reviewed",
+      "reviewed_at": "2026-10-19",
+      "reason_en": "The post (@tualatrix, 2026-10-17) says that while merely researching a feature, Opus read the Claude desktop app’s app.asar without being asked to reverse engineer anything and worked out how the feature is built; it attaches one screenshot. It names neither the feature nor the findings and links no notes, and the author’s recently updated public GitHub repositories include no related project. Retain the lead without a catalog mapping; this is an anecdote about agent behavior, not a documented case.",
+      "reason_zh": "帖子（@tualatrix，2026-10-17）称，作者只是让 Opus 调研一个功能，并未要求它逆向，它却直接读取了 Claude 桌面端的 app.asar，弄清了该功能的实现方式；帖子附一张截图。帖子既未说明是哪个功能，也未给出分析结果或链接笔记，作者近期更新的公开 GitHub 仓库中也没有相关项目。保留此线索而不建立目录映射；这是关于智能体行为的轶事，而非有记录的案例。",
+      "primary_evidence_urls": [
+        "https://x.com/i/status/2111275332989059193"
+      ],
       "catalog_matches": []
     },
     {
@@ -16068,15 +16084,15 @@
     "alias_merges": 2,
     "occurrences_by_state": {
       "already-curated": 201,
-      "insufficient-evidence": 250,
-      "pending": 140
+      "insufficient-evidence": 256,
+      "pending": 134
     },
     "units_by_state": {
       "already-curated": 199,
-      "insufficient-evidence": 250,
-      "pending": 140
+      "insufficient-evidence": 256,
+      "pending": 134
     },
-    "primary_reviewed_units": 392,
+    "primary_reviewed_units": 398,
     "catalog_linked_occurrences": 214,
     "distinct_resource_ids": 206,
     "distinct_paper_ids": 2,

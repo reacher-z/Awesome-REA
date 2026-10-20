@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 201 | 199 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 140 | 140 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 250 | 250 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 134 | 134 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 256 | 256 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 214 occurrences have catalog links. They reference 206 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 392 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 398 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -227,9 +227,15 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Roadster video: a Claude-assisted three.js visual teardown experiment | Insufficient evidence | [Source](https://x.com/i/status/2111225325531074716) |
 | ENS v2 phishing email: a Claude-assisted investigation of dangerous agent repositories | Insufficient evidence | [Source](https://x.com/i/status/2111234225022067029) |
 | Game-function matcher: an audit account of wrong constants passing checks | Pending | [Source](https://x.com/i/status/2111241506006700380) |
+| Google Home: a blocked attempt to revive an old speaker without replacing hardware | Insufficient evidence | [Source](https://x.com/i/status/2111215951857246251) |
 | A 3D home model: a reported REA-assisted Mac menu-bar controller | Insufficient evidence | [Source](https://x.com/0xProbabillity/status/2109978137794883621) |
 | AMABOO Frameo: Claude Code adapts an existing Home HQ frame setup | Insufficient evidence | [Source](https://x.com/InvestingVault/status/2111250941886226471) |
+| Grok Bot real-time features: a Hermes investigation with audio unresolved | Insufficient evidence | [Source](https://x.com/i/status/2111251559275487538) |
+| Jiuchuan Xiaozhi AI speaker: give Muse stock firmware and hardware specifications | Insufficient evidence | [Source](https://x.com/i/status/2111251131665940519) |
+| Fallout 4: a brief claim of fixes after Claude reverse engineering | Insufficient evidence | [Source](https://x.com/i/status/2111262935293038623) |
+| A Windows keyboard utility: Claude builds a Linux version and checks it with a camera | Insufficient evidence | [Source](https://x.com/i/status/2111269740249489643) |
 | REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | Pending | [Source](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
+| Claude Desktop app.asar: Opus reportedly opens the package during feature research | Insufficient evidence | [Source](https://x.com/i/status/2111275332989059193) |
 | CLO3D DLLs: an idea to rebuild a garment-design tool with Claude/Codex | Insufficient evidence | [Source](https://x.com/i/status/2111281354910704058) |
 | NJFE: a Soulear camera protocol bridge for desktop inspection | Already curated | [Source](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA | Already curated | [Source](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |

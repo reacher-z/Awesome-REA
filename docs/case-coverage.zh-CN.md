@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 201 | 199 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 140 | 140 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 250 | 250 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 134 | 134 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 256 | 256 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 214 个出现项含目录链接；共关联 206 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 392 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 398 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -227,9 +227,15 @@
 | Roadster video: a Claude-assisted three.js visual teardown experiment | 证据不足 | [来源](https://x.com/i/status/2111225325531074716) |
 | ENS v2 phishing email: a Claude-assisted investigation of dangerous agent repositories | 证据不足 | [来源](https://x.com/i/status/2111234225022067029) |
 | Game-function matcher: an audit account of wrong constants passing checks | 待核查 | [来源](https://x.com/i/status/2111241506006700380) |
+| Google Home: a blocked attempt to revive an old speaker without replacing hardware | 证据不足 | [来源](https://x.com/i/status/2111215951857246251) |
 | A 3D home model: a reported REA-assisted Mac menu-bar controller | 证据不足 | [来源](https://x.com/0xProbabillity/status/2109978137794883621) |
 | AMABOO Frameo: Claude Code adapts an existing Home HQ frame setup | 证据不足 | [来源](https://x.com/InvestingVault/status/2111250941886226471) |
+| Grok Bot real-time features: a Hermes investigation with audio unresolved | 证据不足 | [来源](https://x.com/i/status/2111251559275487538) |
+| Jiuchuan Xiaozhi AI speaker: give Muse stock firmware and hardware specifications | 证据不足 | [来源](https://x.com/i/status/2111251131665940519) |
+| Fallout 4: a brief claim of fixes after Claude reverse engineering | 证据不足 | [来源](https://x.com/i/status/2111262935293038623) |
+| A Windows keyboard utility: Claude builds a Linux version and checks it with a camera | 证据不足 | [来源](https://x.com/i/status/2111269740249489643) |
 | REA Reconstruction Companion: connect evidence to specifications, implementation and acceptance | 待核查 | [来源](https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/reconstruction/README.md) |
+| Claude Desktop app.asar: Opus reportedly opens the package during feature research | 证据不足 | [来源](https://x.com/i/status/2111275332989059193) |
 | CLO3D DLLs: an idea to rebuild a garment-design tool with Claude/Codex | 证据不足 | [来源](https://x.com/i/status/2111281354910704058) |
 | NJFE：用于电脑检查的 Soulear 相机协议桥接 | 已收录 | [来源](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA 命令行逆向分析技能 | 已收录 | [来源](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
