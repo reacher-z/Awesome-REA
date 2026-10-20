@@ -11254,5 +11254,36 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "dyld-cache-extract",
+    "name": "dyld_cache_extract",
+    "url": "https://github.com/macmade/dyld_cache_extract",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "macOS application and command-line tool that reads a dyld_shared_cache file from macOS or iOS, shows its header, mappings and image list, and copies one library or every library out to a directory. The CLI offers --info, --extract and --extract-all; the GUI presents the same header details and lets users select images to extract. The README marks the project obsolete and points to the author's dyld-cache-dump.",
+    "description_zh": "macOS 应用及命令行工具，可读取 macOS 或 iOS 的 dyld_shared_cache 文件，显示其头部、映射区和镜像列表，并将单个或全部动态库复制到指定目录。命令行提供 --info、--extract 和 --extract-all，图形界面显示同样的头部信息，并可选择要提取的镜像。README 已将项目标为过时，并推荐作者的 dyld-cache-dump。",
+    "evidence_url": "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README marks the project obsolete and refers users to dyld-cache-dump. The last commits, on 2023-06-12, fix the build for the then-current Xcode and update CI and the README. Releases 0.1.0 (2017-03-06) and 0.1.1 (2017-06-18) each attach a zipped Dyld Cache Extractor app; there is no newer release.",
+      "Builds on macOS with Xcode from dyld_cache_extract.xcodeproj, whose schemes cover the CLI tool, the GUI app and the DCE static library; the PIMPL, GitHubUpdates and xcconfig submodules must be initialized. CI builds and analyzes Debug and Release configurations of the CLI and GUI on macos-latest, with tests disabled.",
+      "Needs a dyld_shared_cache file from the user's own macOS or iOS system; the repository contains no caches or extracted libraries. The parser reads only the original header fields (magic, mapping and image tables, dyld base address) of a single cache file and copies each image's bytes plus the __LINKEDIT region; the reviewed code has no split sub-cache handling, and support for current macOS or iOS caches is not documented.",
+      "MIT license (2016, Jean-David Gadina, XS-Labs). Nothing was built or run, and no cache was parsed for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/LICENSE",
+      "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/.gitmodules",
+      "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/.github/workflows/ci-mac.yaml",
+      "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/DCE/source/CacheFile.cpp",
+      "https://github.com/macmade/dyld_cache_extract/blob/b29fbb9266c3c3b072c37c18bef3251105cd40b6/dyld_cache_extract/main.cpp",
+      "https://github.com/macmade/dyld_cache_extract/releases/tag/0.1.1"
+    ]
   }
 ]

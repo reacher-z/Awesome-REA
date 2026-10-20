@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "dyld-cache-extract": {
+    "name": "dyld_cache_extract dyld 共享缓存提取工具",
+    "requirements": [
+      "README 已将项目标为过时，并建议改用 dyld-cache-dump。最近的提交发生在 2023-06-12，修复了当时最新 Xcode 下的构建，并更新 CI 与 README。0.1.0（2017-03-06）和 0.1.1（2017-06-18）两个版本各附带一个压缩的 Dyld Cache Extractor 应用，此后没有新版本。",
+      "在 macOS 上用 Xcode 构建 dyld_cache_extract.xcodeproj，其中的 scheme 涵盖命令行工具、图形界面应用和 DCE 静态库；需要初始化 PIMPL、GitHubUpdates 和 xcconfig 子模块。CI 在 macos-latest 上构建并静态分析命令行与图形界面的 Debug 和 Release 配置，未启用测试。",
+      "需要使用者自己 macOS 或 iOS 系统中的 dyld_shared_cache 文件；仓库不含任何缓存或提取出的库。解析器只读取单个缓存文件中原始头部的字段（magic、映射表与镜像表、dyld 基址），并复制每个镜像的字节及 __LINKEDIT 区域；所审阅的代码不处理拆分的子缓存，也未说明是否支持当前 macOS 或 iOS 的缓存。",
+      "采用 MIT 许可（2016，Jean-David Gadina，XS-Labs）。本次未构建或运行该工具，也未解析任何缓存。"
+    ]
   }
 }

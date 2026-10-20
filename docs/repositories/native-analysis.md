@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**680 repositories** · 2026-10-16 UTC
+**681 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -252,6 +252,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [quarkslab/quokka](https://github.com/quarkslab/quokka) — Quokka: A Fast and Accurate Binary Exporter **[227 stars]**
 - [cesena/ghidra2dwarf](https://github.com/cesena/ghidra2dwarf) — 🐉 Export ghidra decompiled code to dwarf sections inside ELF binary **[226 stars]**
 - [mahmoudimus/ida-sigmaker](https://github.com/mahmoudimus/ida-sigmaker) — sigmaker is a zero-dependency IDA Pro 9.0+ cross-platform signature maker plugin with optional SIMD (e.g. AVX2/NEON/SSE2) speedups that works on MacOS/Linux/Windows. It allows configurable wildcard operand patterns, nibbles, and signature generation just by right clicking. **[226 stars]**
+- [macmade/dyld\_cache\_extract](https://github.com/macmade/dyld_cache_extract) — A macOS utility to extract dynamic libraries from the dyld\_shared\_cache of macOS and iOS. **[225 stars]** · Curated: [dyld\_cache\_extract](https://awesomerea.org/resources/dyld-cache-extract/)
 - [tintinweb/ethereum-dasm](https://github.com/tintinweb/ethereum-dasm) — An ethereum evm bytecode disassembler and static/dynamic analysis tool **[223 stars]**
 - [vicnaum/bun-demincer](https://github.com/vicnaum/bun-demincer) — Decompiler, deminifier and deobfuscator for Bun-compiled standalone JavaScript binaries **[223 stars]**
 - [angr/pypcode](https://github.com/angr/pypcode) — Python bindings to Ghidra's SLEIGH library for disassembly and lifting to P-Code IR **[222 stars]**
