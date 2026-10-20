@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "speakeasy": {
+    "name": "Speakeasy Windows 恶意软件仿真框架",
+    "requirements": [
+      "审阅时最新版本为 v2.0.0b9，是 2026-10-11 发布的 GitHub 预发布版，指向所审阅的 master 提交，并将报告格式升级为 5.0.0 版。PyPI 上 speakeasy-emulator 的最新稳定版仍是 2022 年的 1.5.11，而 pip 默认跳过预发布版本，因此除非明确指定 2.0 测试版，README 中直接 pip install 的命令会装到 1.5.11。",
+      "需要 Python 3.10+；依赖包括 Unicorn 2.1.4+、pefile、Capstone 和 pycryptodome，包元数据标注为与操作系统无关。从源码安装需递归克隆 win32json 和 phnt 子模块，并运行两个生成 API 签名库的脚本；Dockerfile 构建 Python 3.13 镜像，样本挂载在 /sandbox。GDB 调试需用 gdb-multiarch 或其他 GDB 连接调试桩，文档提醒该调试桩没有任何身份验证。",
+      "样本由使用者自行提供。测试使用 tests/bins 下的小型测试可执行文件、DLL、WDM 驱动和一个 shellcode 样本，以及 capa-testfiles 子模块中 Mandiant 的 capa 测试数据，后者提供《Practical Malware Analysis》实验样本；两者都应按恶意软件分析材料处理。",
+      "局限说明页指出，只有精选的一部分 API 有手写处理程序：仅凭签名仿真的 API 只返回成功值而没有真实副作用，未知导入会终止运行，缺失的文件、注册表项或网络响应可能看起来像反分析行为，因此报告需要分析者自行解读。采用 MIT 许可；win32json、phnt 和 capa-testfiles 子模块适用各自条款。本次未安装或运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }
