@@ -73,6 +73,9 @@ html[lang="zh-CN"] .source-card.browse-repository .source-related-label::after{c
 .browse-main .entry-source-context{display:block;margin-top:2px;color:var(--muted);font-size:14px;line-height:1.6;overflow-wrap:anywhere}
 .browse-main .requirements ul a{color:var(--link);text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
+/* /resources/ cards end with the primary source, a counted link to the entry page's requirements, and the review date. */
+.browse-main .resource-card>.resource-detail-meta{align-items:center;gap:0 18px;margin-top:14px;padding-top:6px;border-top:1px solid var(--line)}
+.browse-main .resource-detail-meta a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
 html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
 html[lang="zh-CN"] .source-card.browse-repository .source-card-description{max-width:none;line-height:1.7}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
