@@ -12,7 +12,9 @@ function application(query = '', {pathname = '/', unavailable = false, catalogFa
   app.replacements = [];
   const replace = app.context.history.replaceState;
   app.context.history.replaceState = (...args) => { app.replacements.push(String(args[2])); replace(...args); };
-  app.context.history.pushState = () => { throw new Error('Normalization must not add history entries'); };
+  // Deliberate choices add entries; tests/filter_history_ui.cjs checks that normalization never does.
+  app.pushes = [];
+  app.context.history.pushState = (...args) => { app.pushes.push(String(args[2])); replace(...args); };
   const fetch = app.context.fetch;
   app.context.fetch = async (...args) => {
     const response = await fetch(...args);

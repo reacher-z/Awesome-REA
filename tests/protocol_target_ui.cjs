@@ -62,7 +62,7 @@ function setup(query, {curatedProtocol = true, sourceProtocol = true, pathname =
   location.assign = next => { location.lastNavigation = String(next); };
   const windowListeners = {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener(event, callback) { windowListeners[event] = callback; }},
-    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
+    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }, pushState(_, __, next) { location.href = String(next); }},
     fetch: async url => { requests.push(String(url)); return {ok: true, json: async () => new URL(url).pathname.endsWith('catalog.json') ? {resources: curatedRows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser}; }};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,filtered,sourceFiltered,applyLanguage,reset,resetSources,setIndexMode,sourceRelatedEntries};', context);

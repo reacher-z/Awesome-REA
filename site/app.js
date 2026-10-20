@@ -303,7 +303,9 @@ const ZH_REPOSITORY_PATHS = {"blob/main/CONTRIBUTING.md": "blob/main/CONTRIBUTIN
 const params = new URLSearchParams(location.search);
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false };
+// Startup and Back/Forward read URL-held choices the same way; catalog-dependent values are validated after load.
+function curatedURLState(query) { return { layout: query.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(query.get("lang")) ? query.get("lang") : pathLanguage, q: query.get("q") || "", group: query.get("group") || "all", category: query.get("category") || "all", kind: query.get("kind") || "all", target: query.get("target") || "all" }; }
+const state = { ...curatedURLState(params), visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -339,8 +341,10 @@ function curatedURL() {
 // and the path, not a legacy ?lang override, selects the language.
 function languageHref(language) { const next = new URL(location.href); next.pathname = language === "zh" ? "/zh/" : "/"; next.searchParams.delete("lang"); return next.pathname + next.search + next.hash; }
 function syncLanguageLinks() { $$('[data-language-link]').forEach(link => { link.href = languageHref(link.dataset.languageLink); link.setAttribute("aria-current", String(link.dataset.languageLink === state.lang)); }); }
-function replaceURL(next) { if (next.href !== location.href) { history.replaceState(null, "", next); syncLanguageLinks(); } }
-function updateURL() { replaceURL(curatedURL()); }
+// Deliberate choices (collection, targets, Type, Category, sort, topic chips, resets) add a history entry so Back and
+// Forward revisit them; typing, layout and normalization replace the current entry instead of flooding history.
+function writeURL(next, push = false) { if (next.href !== location.href) { history[push ? "pushState" : "replaceState"](null, "", next); syncLanguageLinks(); } }
+function updateURL(push = false) { writeURL(curatedURL(), push); }
 function applyLayout() {
   document.documentElement.dataset.layout = state.layout;
   $("#layout-select").value = state.layout;
@@ -429,7 +433,11 @@ function renderMoreFilters() {
   const active = (state.kind !== "all") + (state.category !== "all"); const count = $("#more-filters-count"); count.textContent = String(active); count.hidden = !active;
   if (state.loaded && !moreFiltersSynced) { moreFiltersSynced = true; if (active) setMoreFilters(true); }
 }
-function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(); render(); }
+function validateCuratedFilters() {
+  if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
+  if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
+}
+function reset() { state.q = ""; state.group = "all"; state.category = "all"; state.kind = "all"; $("#kind-select").value="all"; state.target = "all"; state.visible = 15; $("#search-input").value = ""; $("#category-select").value = "all"; updateURL(true); render(); }
 async function load() {
   state.error = false; $("#error-state").hidden = true; $("#resource-grid").setAttribute("aria-busy", "true"); $("#results-status").textContent = t("loading");
   try {
@@ -438,9 +446,8 @@ async function load() {
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
     state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
-    if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
-    if (!["all","website","game","app","binary","firmware","protocol"].includes(state.target)) state.target = "all";
+    validateCuratedFilters();
     $$('[data-count]').forEach(el => el.textContent = el.dataset.count === "all" ? state.records.length : state.records.filter(r => r.group === el.dataset.count).length);
     $$('[data-repo-path]').forEach(el => { const path = (state.lang === "zh" && ZH_REPOSITORY_PATHS[el.dataset.repoPath]) || el.dataset.repoPath; el.href = data.meta.repository_url + (path ? "/" + path : ""); });
     state.loaded = true; renderCategories(); render(); configureSourceIndex(data.meta.source_index);
@@ -448,10 +455,10 @@ async function load() {
 }
 $("#search-input").value = state.q;
 $("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
-$("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
-$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
-$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
-$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
+$("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(true); if(state.loaded)render(); });
+$("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(true); if (state.loaded) render(); });
+$$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(true); if (state.loaded) render(); }));
+$$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(true); if (state.loaded) render(); }));
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
 $("#more-filters").addEventListener("click", () => setMoreFilters($("#more-filters").getAttribute("aria-expanded") !== "true"));
 window.addEventListener("hashchange", syncLanguageLinks);
@@ -459,8 +466,12 @@ $("#clear-filters").addEventListener("click",reset); $("#empty-reset").addEventL
 $("#load-more").addEventListener("click", () => { const previous = state.visible; state.visible += 15; render(); const next = $$(".card-title-link")[previous]; if (next) next.focus({preventScroll:true}); });
 document.addEventListener("keydown", event => { if (event.key === "/" && !$("#data-dialog")?.open && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
 
-const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set(), topicCounts: [] };
-function sourceURL() {
+function sourceURLState(query) {
+  const target = query.get("source-target") || "all"; const sort = query.get("sort") === "updated" ? "pushed" : query.get("sort") || "relevance";
+  return { q: query.get("sourceq") || "", target: ["all","website","game","app","binary","firmware","protocol"].includes(target) ? target : "all", topic: query.get("topic") || "", sort: ["relevance","stars","pushed","name"].includes(sort) ? sort : "relevance" };
+}
+const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, ...sourceURLState(params), visible: 24, topicIDs: new Set(), topicCounts: [] };
+function sourceURL(push = false) {
   // Called after catalog filter validation as well as on repository interactions.
   const next = curatedURL();
   if (sourceState.mode === "source-index") next.searchParams.set("view", "source-index");
@@ -469,18 +480,19 @@ function sourceURL() {
     if (value !== defaultValue) next.searchParams.set(key, value);
     else next.searchParams.delete(key);
   }
-  replaceURL(next);
+  writeURL(next, push);
 }
 function configureSourceIndex(meta) {
   const count=Number(meta?.resource_count||0);sourceState.available=count>0;$("#mode-sources").hidden=!sourceState.available;$("#mode-source-count").textContent=count?count.toLocaleString():"";$("#mode-curated-count").textContent=state.records.length;
   $("#download-source-index").hidden = !sourceState.available;
-  const query=new URLSearchParams(location.search);const requested=query.get("view");setIndexMode(sourceState.available&&(requested==="source-index"||requested==="repositories")?"source-index":"curated");
+  setIndexMode(requestedMode(new URLSearchParams(location.search)));
 }
-function setIndexMode(mode) {
+function requestedMode(query) { return sourceState.available && ["source-index","repositories"].includes(query.get("view")) ? "source-index" : "curated"; }
+function setIndexMode(mode, push = false) {
   if (mode === "source-index" && !sourceState.available) return; sourceState.mode = mode; const isSource = mode === "source-index"; $("#curated-view").hidden = isSource; $("#source-view").hidden = !isSource;
   for (const [id,active] of [["#mode-curated",!isSource],["#mode-sources",isSource]]) { $(id).classList.toggle("active",active); $(id).setAttribute("aria-pressed",String(active)); }
   renderEmptySearchActions();
-  sourceURL(); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
+  sourceURL(push); if (isSource && !sourceState.loaded) loadSources(); else if (isSource) renderSources();
 }
 function searchRepositoriesFromEmpty() {
   if (!state.loaded || state.error || !sourceState.available || sourceState.mode !== "curated"
@@ -488,7 +500,7 @@ function searchRepositoriesFromEmpty() {
   sourceState.q = state.q;
   sourceState.visible = 24;
   $("#source-search").value = sourceState.q;
-  setIndexMode("source-index");
+  setIndexMode("source-index", true);
   $("#source-search").focus();
 }
 $("#empty-search-repositories").addEventListener("click", searchRepositoriesFromEmpty);
@@ -576,7 +588,7 @@ function sourceTopicButtons(record, limit = 4) {
   record.topics.slice(0, limit).forEach(topic => {
     const button = node("button", "source-topic-chip", topicLabel(topic));
     button.type = "button"; button.title = t("sourceTopicHint") + ": " + topic;
-    button.addEventListener("click", () => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(); renderSources(); });
+    button.addEventListener("click", () => { sourceState.topic = topic; sourceState.visible = 24; syncTopicInput(); sourceURL(true); renderSources(); });
     topics.append(button);
   });
   return topics;
@@ -643,14 +655,31 @@ async function loadSources() {
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
   finally { sourceState.loading = false; }
 }
-function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(); renderSources(); }
-$("#mode-curated").addEventListener("click",() => setIndexMode("curated")); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index"));
-if (!["all","website","game","app","binary","firmware","protocol"].includes(sourceState.target)) sourceState.target="all";
-if (sourceState.sort === "updated") sourceState.sort = "pushed";
-if (!["relevance","stars","pushed","name"].includes(sourceState.sort)) sourceState.sort="relevance";
+function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(true); renderSources(); }
+$("#mode-curated").addEventListener("click",() => setIndexMode("curated", true)); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index", true));
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
-for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
-$$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
+for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(key === "sort"); renderSources(); });
+$$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(true); renderSources(); }));
+// Back/Forward restore every URL-held choice without writing history; an entry that differs only by fragment
+// keeps the current results, Show More count and expanded details.
+window.addEventListener("popstate", () => {
+  const query = new URLSearchParams(location.search); const curated = curatedURLState(query); const source = sourceURLState(query);
+  const differs = (current, next, keys) => keys.some(key => current[key] !== next[key]);
+  const curatedChanged = differs(state, curated, ["q","group","category","kind","target"]); const sourceChanged = differs(sourceState, source, ["q","target","topic","sort"]); const languageChanged = state.lang !== curated.lang;
+  Object.assign(state, curated); Object.assign(sourceState, source);
+  if (curatedChanged) { state.visible = 15; $("#search-input").value = state.q; }
+  if (sourceChanged) { sourceState.visible = 24; $("#source-search").value = sourceState.q; $("#source-topic").value = sourceState.topic; $("#source-sort").value = sourceState.sort; }
+  if (state.loaded) validateCuratedFilters();
+  if (languageChanged) applyLanguage();
+  else {
+    applyLayout();
+    if (curatedChanged && state.loaded) { renderCategories(); render(); }
+    if (sourceChanged && sourceState.loaded) { syncTopicInput(); renderSources(); }
+  }
+  // Like a shared link, an entry with rejected values is normalized by replacement once the catalog has loaded.
+  const mode = requestedMode(query); if (state.loaded && mode !== sourceState.mode) setIndexMode(mode); else if (state.loaded) sourceURL();
+  syncLanguageLinks();
+});
 $("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");
