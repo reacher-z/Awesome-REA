@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 471](https://img.shields.io/badge/resources-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 472](https://img.shields.io/badge/resources-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (27) · [Game](#game) (185) · [App](#app) (72)
+- [Website](#website) (28) · [Game](#game) (185) · [App](#app) (72)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -227,6 +227,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Java desktop decompiler and editor for Adobe Flash SWF files. It decompiles ActionScript 1/2 and AS3 side by side with the P-code they came from, edits scripts as source (experimental) or through the assembler view, and exports or replaces images, shapes, sounds, video, fonts and texts, with SWF-to-FLA conversion, SWF-to-XML round trips and SVG or HTML5 Canvas output. It also opens SWC and ABC files, Scaleform GFx and 64-bit Iggy files, has an ActionScript debugger and deobfuscation passes for obfuscated AS3, and offers its parser and decompiler as the ffdec\_lib Java library and a command line.
 
   Tool · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/jpexs-decompiler/)
+
+- [**decode-js**](https://github.com/echo094/decode-js)
+
+  Babel-based AST processor that turns obfuscated JavaScript back into readable source, with one target selected per run: javascript-obfuscator (obfuscator.io), JS-Confuser 2.x up to its high preset, sojson and its v7 variant for jsjiami.com.v7, sojson's jjencode variant, and a generic pass for unreachable code, nested blocks and constant expressions. A second, version-aware obfuscator.io target reports the encoder era it detects and returns nothing, with a reason, rather than a half-decoded program when a string-array layer cannot be read. The JS-Confuser notes list each transform it reverses and those, such as variable renaming, that destroy information and cannot be recovered.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/decode-js/)
 
 <a id="game"></a>
 ### Game

@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "decode-js": {
+    "name": "decode-js JavaScript 反混淆 AST 工具",
+    "requirements": [
+      "仓库未发布 Release 或标签；所审阅的 main 分支提交日期为 2026-10-17，需从源码运行。package.json 要求 Node.js 26.x，以配合原生依赖 isolated-vm 7；README 提醒先查看 isolated-vm 的构建要求。执行 npm i 后，可通过 npm run decode -- -t <目标> 运行命令行工具，并可指定输入和输出路径，也可使用 deob、deobx、dejsc、deso、desov7 等快捷命令。",
+      "输入为单个混淆脚本，默认是 input.js；README 说明该文件中不能夹杂其他未混淆的代码。适用范围取决于混淆器及其版本：按版本区分的目标覆盖 javascript-obfuscator 2.x 各阶段和 5.5.0，3.0.0–4.2.2 尚未验证，落在该区间的样本会报告为未知；JS-Confuser 目标无法还原 RenameVariables、RenameLabels 和 ObjectExtraction。",
+      "解码时会执行输入中的部分代码：字符串数组解码函数和 JS-Confuser 运行时辅助函数在 isolated-vm 沙箱中运行，但 obfuscator、sojson 和 sojsonv7 目标会在解码器自身进程中用 Node.js 的 eval 解开最外层的 eval 包装。应把输入视为不受信任的代码，还原出的字符串和控制流也需对照原始脚本核实。",
+      "CI 在 Node.js 26 上运行 Vitest 测试套件；测试样例针对 JS-Confuser、obfuscator.io 和 sojson v7 目标，把混淆样本（大多由仓库内附的源文件生成）与预期解码结果配对，检验的是解码器在项目样例上的表现，而非任意真实脚本。README、LICENSE 和 package.json 均声明 GPL-3.0-or-later。本次未对任何脚本进行反混淆，也未运行测试。"
+    ]
   }
 }
