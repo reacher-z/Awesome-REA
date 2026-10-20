@@ -269,7 +269,7 @@
 - [cdlewis/snowboardkids2-decomp](https://github.com/cdlewis/snowboardkids2-decomp) — Snowboard Kids 2（N64）反编译项目 **[193 星标]** · 精选：[Snowboard Kids 2：大模型辅助的 N64 匹配反编译](https://awesomerea.org/zh/resources/snowboardkids2-decomp-case/)
 - [lifting-bits/sleigh](https://github.com/lifting-bits/sleigh) — Ghidra C++ SLEIGH 代码的非官方 CMake 构建 **[193 星标]**
 - [MahdiSafsafi/DebugEngine](https://github.com/MahdiSafsafi/DebugEngine) — Delphi 调试框架 **[193 星标]**
-- [yoavst/ida-ios-helper](https://github.com/yoavst/ida-ios-helper) — 简化 iOS 项目逆向分析的插件 **[193 星标]**
+- [yoavst/ida-ios-helper](https://github.com/yoavst/ida-ios-helper) — 简化 iOS 项目逆向分析的插件 **[193 星标]** · 精选：[IDA iOS Helper iOS 逆向辅助插件](https://awesomerea.org/zh/resources/ida-ios-helper/)
 - [msm-code/ghidralib](https://github.com/msm-code/ghidralib) — 符合 Python 风格的 Ghidra 标准库 **[191 星标]**
 - [ax330d/hrdev](https://github.com/ax330d/hrdev) — Hex-Rays 反编译器增强视图 **[186 星标]**
 - [fugue-re/fugue-core](https://github.com/fugue-re/fugue-core) — 使用 Rust 编写的二进制分析框架。 **[186 星标]**

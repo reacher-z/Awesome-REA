@@ -269,7 +269,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [cdlewis/snowboardkids2-decomp](https://github.com/cdlewis/snowboardkids2-decomp) — Decompilation of snowboard kids 2 (N64) **[193 stars]** · Curated: [Snowboard Kids 2: an LLM-assisted N64 matching decompilation](https://awesomerea.org/resources/snowboardkids2-decomp-case/)
 - [lifting-bits/sleigh](https://github.com/lifting-bits/sleigh) — Unofficial CMake build for Ghidra's C++ SLEIGH code **[193 stars]**
 - [MahdiSafsafi/DebugEngine](https://github.com/MahdiSafsafi/DebugEngine) — Delphi debug framework **[193 stars]**
-- [yoavst/ida-ios-helper](https://github.com/yoavst/ida-ios-helper) — Plugin to ease reversing iOS projects **[193 stars]**
+- [yoavst/ida-ios-helper](https://github.com/yoavst/ida-ios-helper) — Plugin to ease reversing iOS projects **[193 stars]** · Curated: [IDA iOS Helper](https://awesomerea.org/resources/ida-ios-helper/)
 - [msm-code/ghidralib](https://github.com/msm-code/ghidralib) — A Pythonic Ghidra standard library **[191 stars]**
 - [ax330d/hrdev](https://github.com/ax330d/hrdev) — Hex-Rays Decompiler Enhanced View **[186 stars]**
 - [fugue-re/fugue-core](https://github.com/fugue-re/fugue-core) — A binary analysis framework written in Rust. **[186 stars]**

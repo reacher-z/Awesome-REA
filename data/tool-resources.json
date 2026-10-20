@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ida-ios-helper",
+    "name": "IDA iOS Helper",
+    "url": "https://github.com/yoavst/ida-ios-helper",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin that cleans up Hex-Rays pseudocode and adds navigation helpers for iOS user-mode binaries and the kernelcache, enabling its components according to the loaded file. For Objective-C and Swift code it hides reference-counting calls, selectors and static class arguments, collapses os_log sequences, turns property helpers into plain assignments or field reads, lists cross-references to a method's selector, and adds Swift type declarations and readable stack strings. For kernelcaches it types the results of safeMetaCast and typed operator new, names and types kalloc_type_view globals, fixes this arguments and lists the possible implementations of a virtual call, while shared helpers remove __break calls, rewrite ranged conditions, collapse block initializers and mark outlined functions.",
+    "description_zh": "一款 IDA Pro 插件，用于清理 Hex-Rays 伪代码，并为 iOS 用户态二进制和 kernelcache 提供导航辅助，会根据所加载的文件启用相应组件。对 Objective-C 和 Swift 代码，它可隐藏引用计数调用、选择器和静态类参数，折叠 os_log 调用序列，把属性辅助函数还原为普通赋值或字段读取，列出方法选择器的交叉引用，并加入 Swift 类型声明和可读的栈上字符串。对 kernelcache，它可为 safeMetaCast 和带类型的 operator new 的返回值设置类型，为 kalloc_type_view 全局变量命名并设置类型，修正 this 参数，并列出虚函数调用的所有可能实现；通用辅助功能则会移除 __break 调用、改写范围条件、折叠 block 初始化代码并标记外提（outlined）函数。",
+    "evidence_url": "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires IDA Pro 9.0+, and most listed features rewrite Hex-Rays pseudocode, so they assume IDA's decompiler is available. Installation uses IDA's own pip to install the ida-ios-helper package, which needs Python 3.10+ and pins the author's idahelper library at 1.0.18, and then copies ida-plugin.json and ida_plugin_stub.py into IDA's plugins folder.",
+      "Latest release at review: 1.0.23, published 2026-06-25 with the wheel and source archive that are also on PyPI. The reviewed master commit is six commits ahead, adding an Objective-C fast-enumeration component and Swift type fixes that are not yet released, and its ida-plugin.json still declares version 1.0.19 and pins ida-ios-helper==1.0.19.",
+      "The iOS binaries or kernelcaches come from the analyst. Virtual-call navigation needs vtable symbols in the database, and typing typed operator new results first needs the Locate all kalloc_type_view action. A Swift importer added in June 2026 and not described in the README runs the separate ipsw tool's swift-dump command on the input file to name and type Swift class methods.",
+      "CI only checks Python 3.10 compatibility with vermin and runs ruff lint and format checks; there are no automated tests. The repository also holds headless idat probing scripts and a Claude Code skill used while developing the plugin, which establish no REA connection. GPL-3.0. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/src/ioshelper/core.py",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/pyproject.toml",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/ida-plugin.json",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/src/ioshelper/plugins/swift/swift_dump_import/importer.py",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/.github/workflows/main.yml",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/.claude/skills/probe-ida-function/SKILL.md",
+      "https://github.com/yoavst/ida-ios-helper/blob/65c7b03171f006c4fe476bca4bceefe25d24769f/LICENSE",
+      "https://github.com/yoavst/ida-ios-helper/releases/tag/1.0.23",
+      "https://pypi.org/project/ida-ios-helper/1.0.23/"
+    ]
   }
 ]

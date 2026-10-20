@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ida-ios-helper": {
+    "name": "IDA iOS Helper iOS 逆向辅助插件",
+    "requirements": [
+      "需要 IDA Pro 9.0+；所列功能大多改写 Hex-Rays 伪代码，因此默认可使用 IDA 的反编译器。安装时先用 IDA 自带的 pip 安装 ida-ios-helper 软件包（需要 Python 3.10+，并将作者的 idahelper 库固定为 1.0.18 版），再把 ida-plugin.json 和 ida_plugin_stub.py 复制到 IDA 的插件目录。",
+      "审阅时最新版本为 1.0.23，发布于 2026-06-25，附带与 PyPI 上相同的 wheel 和源码包。所审阅的 master 提交比该版本多六个提交，新增了 Objective-C 快速枚举组件和 Swift 类型修正，这些改动尚未发布；该提交中的 ida-plugin.json 仍声明版本 1.0.19，并固定依赖 ida-ios-helper==1.0.19。",
+      "待分析的 iOS 二进制或 kernelcache 由分析者自行提供。虚函数调用导航要求数据库中存在 vtable 符号；为带类型的 operator new 返回值设置类型前，需先执行 Locate all kalloc_type_view 操作。2026 年 6 月加入、README 未作说明的 Swift 导入器会对输入文件运行独立工具 ipsw 的 swift-dump 命令，为 Swift 类方法命名并设置类型。",
+      "CI 只用 vermin 检查 Python 3.10 兼容性，并运行 ruff 的静态检查和格式检查，没有自动化测试。仓库中还有开发插件时使用的无界面 idat 探测脚本和一个 Claude Code 技能，它们并不能确立与 REA 的关联。采用 GPL-3.0 许可。本次未安装或运行任何内容。"
+    ]
   }
 }
