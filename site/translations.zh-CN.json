@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "quark-engine": {
+    "name": "Quark-Engine Android 恶意软件分析引擎",
+    "requirements": [
+      "审阅时最新版本为 v26.10.1，于 2026-10-10 发布到 GitHub 和 PyPI，要求 Python 3.10+。所审阅的 master 分支提交日期为 2026-10-17，与该版本相比只在文档中新增了一份恶意软件家族报告。",
+      "可从 PyPI 安装，或用 Pipenv 从源码安装，之后运行 freshquark，它会把独立的 quark-rules 仓库 git clone 到用户主目录下的 .quark-engine 文件夹；本次审阅未检查该规则集。默认核心库为 dextrace，Androguard 固定为 4.1.4；rizin 和 radare2 后端需安装可选依赖及对应原生工具，另有 Shuriken 后端；生成调用图需要 Graphviz。Quark Agent 需要 OpenAI API 密钥，Claude Code 技能需要已安装 Quark 的 Claude Code 环境。",
+      "每次运行输入一个 APK；文档用 shell 循环或 Python API 扫描整个目录。报告是静态规则匹配的结果，置信度取决于规则通过的阶段数，因此覆盖范围取决于规则集；setup.py 称 Quark 是不受混淆影响的评分系统，本次审阅未测试这一点。可疑样本应在隔离的分析环境中处理；测试套件会从独立的样本仓库下载真实恶意软件和刻意留有漏洞的 APK，本条目不链接该仓库。",
+      "CI 会构建 rizin 0.7.3 和 radare2 5.9.0，并在 Python 3.10 上运行带覆盖率统计的 pytest。文档中的恶意软件家族报告是项目自行完成的分析，本次未复现。LICENSE 和 setup.py 的分类信息均为 GPL-3.0。本次未分析任何 APK，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

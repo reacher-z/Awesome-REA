@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "quark-engine",
+    "name": "Quark-Engine",
+    "url": "https://github.com/ev-flow/quark-engine",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Rule-based engine for analysing suspicious Android apps: it loads an APK's Dalvik bytecode and checks JSON behaviour rules, each naming permissions and a pair of framework API calls, through five confidence stages, from the permission being requested and either API being called up to both calls appearing in order in one method and passing the same register. Weighted rule matches produce a threat score, with summary, detail, JSON, web, call-graph and label reports, and Quark Script exposes the analysis as a Python API that the project presents for finding vulnerabilities. The repository also ships two Claude Code skills, for running an analysis and generating a rule, and an optional LangChain agent that uses the OpenAI API.",
+    "description_zh": "基于规则分析可疑 Android 应用的引擎：载入 APK 的 Dalvik 字节码，用 JSON 行为规则逐条检查；每条规则列出若干权限和一对框架 API 调用，并按五个置信阶段判定，从申请了该权限、调用了其中一个 API，到两个调用在同一方法中按顺序出现并传递同一寄存器。加权后的规则命中结果给出威胁分数，并可输出摘要、详情、JSON、网页、调用图和标签报告；Quark Script 把这套分析以 Python API 形式提供，项目将其用于挖掘漏洞。仓库还附带两个 Claude Code 技能（分别用于运行分析和生成规则），以及一个可选的、调用 OpenAI API 的 LangChain 智能体。",
+    "evidence_url": "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v26.10.1, published on GitHub and PyPI on 2026-10-10 and requiring Python 3.10+. The reviewed master commit of 2026-10-17 differs from it only by an added malware-family report in the documentation.",
+      "Install from PyPI, or from source with Pipenv, then run freshquark, which git-clones the separate quark-rules repository into a .quark-engine folder in the user's home directory; this review did not examine that rule set. dextrace is the default core library, with Androguard 4.1.4 pinned, rizin and radare2 backends through optional extras plus the native tools, and a Shuriken backend; call graphs need Graphviz. The Quark Agent needs an OpenAI API key, and the Claude Code skills need Claude Code with Quark installed.",
+      "Input is one APK per run; the documentation scans directories with a shell loop or the Python API. Reports are static rule matches whose confidence counts the stages a rule passes, so coverage depends on the rule set; setup.py calls Quark an obfuscation-neglect scoring system, a resilience this review did not test. Suspicious samples belong in an isolated analysis environment, and the test suite downloads live malware and deliberately vulnerable APKs from a separate sample repository that this record does not link.",
+      "CI builds rizin 0.7.3 and radare2 5.9.0 and runs pytest with coverage on Python 3.10. The malware-family reports in the documentation are project analyses, not reproduced here. GPL-3.0 per LICENSE and the setup.py classifier. No APKs were analysed for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/docs/source/index.rst",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/docs/source/install.rst",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/docs/source/integration.rst",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/quark/core/quark.py",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/quark/rules/sendLocation_SMS.json",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/quark/freshquark.py",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/setup.py",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/quark-ai-plugin/README.md",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/quark/agent/quarkAgent.py",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/.github/workflows/pytest.yml",
+      "https://github.com/ev-flow/quark-engine/blob/7accc95f104c6f30b8f64908ca022c30059121fd/LICENSE",
+      "https://github.com/ev-flow/quark-engine/releases/tag/v26.10.1",
+      "https://pypi.org/project/quark-engine/26.10.1/"
+    ]
   }
 ]
