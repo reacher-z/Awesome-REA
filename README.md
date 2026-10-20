@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (44) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2709,6 +2709,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   An open-source Python agent, published on PyPI as auto-re-agent, that drafts C/C++ implementations of functions in a compiled program from Ghidra evidence and has a separately configurable checker model review each draft in a bounded fix loop. A candidate is accepted only after a structural comparison with the decompile, assembly, control-flow and P-code evidence, the project’s own build, test and optional differential commands, and 11 heuristic parity signals. The README calls these gates conservative evidence, not proof of equivalence, and the tool writes candidates to an overlay rather than patching the source tree.
 
   Integration · Independent agent · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/reagent-cpp-reconstruction-agent/)
+
+- [**GhidraGPT**](https://github.com/weirdmachine64/GhidraGPT)
+
+  Ghidra extension that sends one function’s decompiled C to a hosted or local language model the user selects and streams the answer into a GhidraGPT console. Its three actions, offered in the Decompiler and Listing context menus, explain the function; rewrite it by writing recovered function, parameter and variable names, types, the prototype and inline comments back into the program; or audit it for likely security issues. Every action uses only the current function’s decompiler output, and the README calls audit findings leads to verify rather than sound static analysis.
+
+  Integration · Independent agent · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/ghidragpt/)
 
 <a id="related-collections"></a>
 ### Related Collections

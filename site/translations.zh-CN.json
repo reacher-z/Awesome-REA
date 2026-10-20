@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ghidragpt": {
+    "name": "GhidraGPT：调用大模型辅助逆向的 Ghidra 扩展",
+    "requirements": [
+      "所审阅的 main 提交即 2026-07-22 发布的 v1.4.0，该版本附带 GhidraGPT-1.4.0.zip。extension.properties 声明 Ghidra 12.1.2，README 要求 Ghidra 12.1.x，并说明扩展声明的兼容版本就是构建时所用的 Ghidra 版本。从源码构建需要 JDK 21+、Maven，并将 GHIDRA_INSTALL_DIR 指向本地 Ghidra；随后通过 Ghidra 的 Install Extensions 对话框添加生成的 zip。",
+      "每次请求都会把函数名及其反编译代码发送给配置的服务商；改写操作还会在每行前标注指令地址，并附上变量列表。可选服务商包括 OpenAI、Anthropic、Google Gemini、Cohere、Mistral AI、DeepSeek、Grok、OpenRouter、本地 Ollama 模型，以及任何兼容 OpenAI 接口的端点。托管服务需使用者自备 API 密钥，README 说明密钥保存在用户主目录下 .ghidragpt 文件夹的 config.properties 中，仅经 XOR 混淆而非加密；除 Ollama 外均需联网。",
+      "改写操作在 Ghidra 事务中直接应用解析出的名称、类型、函数原型和注释，没有单独的确认步骤。README 说明它不做跨过程或全程序分析，因此函数之外的调用者、被调用者和数据流都不会提供给模型。",
+      "CI 下载 Ghidra 12.1.2、配置 JDK 21，并运行 Maven 单元测试，覆盖配置处理、提示词构建以及模型回复与改写编辑的解析；这些测试不涉及 Ghidra 界面或模型输出。本次审阅未运行扩展或其测试。",
+      "采用 Apache-2.0 许可证；README 署名作者为 Mohamed Benchikh。Ghidra 和各模型服务商各有其许可与条款，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

@@ -97,7 +97,7 @@
 - [fjh658/IDA7.0\_SP](https://github.com/fjh658/IDA7.0_SP) — IDA7.0\_SP 是 IDA 的错误修复补丁。 **[863 星标]**
 - [eset/ipyida](https://github.com/eset/ipyida) — 为 IDA Pro 集成 IPython 控制台。 **[857 星标]**
 - [decaf-project/DECAF](https://github.com/decaf-project/DECAF) — DECAF（Dynamic Executable Code Analysis Framework，动态可执行代码分析框架）是基于 QEMU 的二进制分析平台。这里也托管 DroidScope 动态 Android 恶意软件分析平台，DroidScope 现已成为 DECAF 的扩展。 **[841 星标]**
-- [weirdmachine64/GhidraGPT](https://github.com/weirdmachine64/GhidraGPT) — 将 LLM 模型直接集成到 Ghidra 中，以 AI 增强逆向工程。 **[826 星标]**
+- [weirdmachine64/GhidraGPT](https://github.com/weirdmachine64/GhidraGPT) — 将 LLM 模型直接集成到 Ghidra 中，以 AI 增强逆向工程。 **[826 星标]** · 精选：[GhidraGPT：调用大模型辅助逆向的 Ghidra 扩展](https://awesomerea.org/zh/resources/ghidragpt/)
 - [Cisco-Talos/GhIDA](https://github.com/Cisco-Talos/GhIDA) — 上游仓库未提供项目简介。 **[820 星标]**
 - [clearbluejar/ghidriff](https://github.com/clearbluejar/ghidriff) — 基于 Python 命令行的 Ghidra 二进制差异比较引擎。 **[813 星标]** · 精选：[ghidriff Ghidra 二进制差异分析引擎](https://awesomerea.org/zh/resources/ghidriff/)
 - [mentebinaria/readpe](https://github.com/mentebinaria/readpe) — PE 文件分析工具包。 **[789 星标]**

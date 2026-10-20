@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ghidragpt",
+    "name": "GhidraGPT",
+    "url": "https://github.com/weirdmachine64/GhidraGPT",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension that sends one function’s decompiled C to a hosted or local language model the user selects and streams the answer into a GhidraGPT console. Its three actions, offered in the Decompiler and Listing context menus, explain the function; rewrite it by writing recovered function, parameter and variable names, types, the prototype and inline comments back into the program; or audit it for likely security issues. Every action uses only the current function’s decompiler output, and the README calls audit findings leads to verify rather than sound static analysis.",
+    "description_zh": "Ghidra 扩展，把单个函数的反编译 C 代码发送给使用者选定的托管或本地大模型，并将回复流式显示在 GhidraGPT 控制台中。反编译视图和列表视图的右键菜单提供三项操作：解释函数；改写函数，把恢复出的函数名、参数名与变量名、类型、函数原型及行内注释写回程序；以及审查函数中可能存在的安全问题。每项操作只使用当前函数的反编译输出，README 称审查结果只是需要核实的线索，并非严谨的静态分析。",
+    "evidence_url": "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit is the v1.4.0 release of 2026-07-22, which attaches GhidraGPT-1.4.0.zip. extension.properties declares Ghidra 12.1.2, and the README requires Ghidra 12.1.x, noting that the extension declares compatibility with the Ghidra version it is built against. Building from source needs JDK 21+, Maven and GHIDRA_INSTALL_DIR pointing at a local Ghidra; the zip is then added through Ghidra’s Install Extensions dialog.",
+      "Each request sends the function name and its decompiled code, prefixed with instruction addresses for Rewrite together with a list of its variables, to the configured provider: OpenAI, Anthropic, Google Gemini, Cohere, Mistral AI, DeepSeek, Grok, OpenRouter, a local Ollama model or any OpenAI-compatible endpoint. Hosted providers need the user’s own API key, which the README says is stored in config.properties in a .ghidragpt folder under the user’s home directory with XOR obfuscation that is not encryption; every provider except Ollama needs network access.",
+      "Rewrite applies the parsed names, types, prototype and comments in Ghidra transactions without a separate confirmation step. The README states that there is no interprocedural or whole-program analysis, so callers, callees and data flow outside the function are not given to the model.",
+      "CI downloads Ghidra 12.1.2, sets up JDK 21 and runs Maven unit tests for configuration handling, prompt building and parsing of model responses and rewrite edits; these do not exercise the Ghidra interface or model output. This review ran neither the extension nor its tests.",
+      "Apache-2.0 license; the README names Mohamed Benchikh as author. Ghidra and each model provider keep their own licences and terms, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/extension.properties",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/pom.xml",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/src/main/java/ghidragpt/ui/Provider.java",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/src/main/java/ghidragpt/service/FunctionRewrite.java",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/src/main/java/ghidragpt/utils/PromptBuilder.java",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/src/main/java/ghidragpt/config/ConfigurationManager.java",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/.github/workflows/tests.yml",
+      "https://github.com/weirdmachine64/GhidraGPT/blob/364e3f51e97736bea752132a2db06f8c7a6a10e4/LICENSE",
+      "https://github.com/weirdmachine64/GhidraGPT/releases/tag/v1.4.0"
+    ]
   }
 ]
