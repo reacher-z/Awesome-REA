@@ -5608,5 +5608,14 @@
       "输入为使用者提供的文档，在恶意软件分析中可能是恶意文件；单元测试使用 tests/test-data 下提交的示例文档。README 称 oleid 用于检测恶意文件中常见的特征、MacroRaptor 用于检测恶意 VBA 宏，因此结果只是需要分析者复核的迹象。本次未分析任何文档。",
       "LICENSE.md 对该工具包采用两条款 BSD 许可证（版权 2012–2025 Philippe Lagadec）；olevba 包含来自 officeparser 的 MIT 许可代码，thirdparty 目录保留各自条款，其中 xxxswf 为 GPL-3.0，oledump 插件代码为公有领域。README 说明 python-oletools 与 BeCubed Software 的 OLETools 无关。"
     ]
+  },
+  "binder-trace": {
+    "name": "Binder Trace Android Binder 消息拦截与解析工具",
+    "requirements": [
+      "审阅时 PyPI 版本为 binder-trace 1.4.1，发布于 2024-08-01，要求 Python 3.9+。所审阅的 main 分支提交日期为 2025-09-11，比该版本多一个只修改 README 的提交，修正了 frida-server 步骤和所列 Android 版本，也是仓库最近一次活动。",
+      "需要已 root 的 Android 设备或模拟器、以 root 身份运行的 adb，以及与已安装的 Frida Python 包版本一致的 frida-server；requirements.txt 未固定 Frida 版本。工具可按 PID 或进程名附加到进程，也可先启动再附加，应仅用于分析者有权分析的设备和应用。在 Linux 上使用剪贴板复制需安装 xclip 或 xsel。",
+      "默认结构文件覆盖 Android 9 至 14，另有 8.1 及部分小版本的结构集。STRUCTURES.md 说明 AIDL 方法编号和 parcel 布局会随构建版本变化，因此设备构建与随附的 AOSP 标签不一致时，解析结果可能有误，结构文件可能需要手动修改。只捕获被附加进程经由 libbinder 的 IPCThreadState::transact 发出的事务及其回复。",
+      "CI 通过 tox 在多个 Python 版本上运行 isort、black、flake8、pydocstyle 和 pytest；测试覆盖参数解析、parcel 解析和终端界面，不涉及真实设备。采用 MIT 许可。本次未对任何设备或应用进行跟踪。"
+    ]
   }
 }
