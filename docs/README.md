@@ -12,6 +12,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Chinese contribution quick start](../CONTRIBUTING.zh-CN.md) | Chinese | Current summary | Main contribution rules and the Chinese terminology glossary |
 | [Security policy](../SECURITY.md) | English, with a Chinese summary | Current | Private reporting of security problems |
 | [Catalog format](../data/README.md) | English | Current | Curated, paper, benchmark, scan and case-coverage data |
+| Artifact and license evidence: [English](artifact-evidence.md), [Chinese](artifact-evidence.zh-CN.md) | English, Chinese | Current | Wording for unavailable, gated or demo-only artifacts, version differences and conflicting licenses |
 | [Repository locales](../data/locales/README.md) | English | Current | English and Chinese descriptions of scanned repositories |
 
 ## Maintenance guides
