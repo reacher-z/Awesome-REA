@@ -165,6 +165,16 @@ const UI = {
     "shortlistWriteFailed": "This browser couldn’t save the shortlist.",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Primary source",
+    "matchedIn": "Matched in",
+    "matchNameEn": "English name",
+    "matchNameZh": "Chinese name",
+    "matchDescriptionEn": "English description",
+    "matchDescriptionZh": "Chinese description",
+    "matchDescriptionOriginal": "Original description",
+    "matchRequirementsEn": "English requirements",
+    "matchRequirementsZh": "Chinese requirements",
+    "matchRelationship": "Relationship",
+    "matchRelated": "Related entry",
     "requirements": "Requirements & limits",
     "requirementsLoading": "Loading requirements…",
     "requirementsError": "Requirements couldn’t load. Close and reopen these details to try again.",
@@ -364,6 +374,16 @@ const UI = {
     "shortlistWriteFailed": "此浏览器无法保存收藏清单。",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "一手来源",
+    "matchedIn": "匹配于",
+    "matchNameEn": "英文名称",
+    "matchNameZh": "中文名称",
+    "matchDescriptionEn": "英文简介",
+    "matchDescriptionZh": "中文简介",
+    "matchDescriptionOriginal": "上游原文简介",
+    "matchRequirementsEn": "英文使用条件",
+    "matchRequirementsZh": "中文使用条件",
+    "matchRelationship": "关联类型",
+    "matchRelated": "相关条目",
     "requirements": "使用条件与局限",
     "requirementsLoading": "正在加载使用条件…",
     "requirementsError": "使用条件未能加载。请收起后重新展开以重试。",
@@ -518,9 +538,48 @@ function requirementItems(record) {
     const item = node("li"); item.append(node("strong", "requirement-facet", t("facet" + facet[0].toUpperCase() + facet.slice(1)) + (state.lang === "zh" ? "：" : ": ")), node("span", "", text)); return item;
   });
 }
-function card(record) {
+// Search also covers text a card does not show: the other language, requirements, topics and related titles.
+// When a query term is missing from the visible text, the card names the first field that holds it and quotes a
+// short excerpt. Matching uses normalizeSearchText like the search index; text is inserted as text, excerpts are cut
+// on code points, and order and focus are untouched. Requirement matches appear once catalog.json has loaded.
+function matchExcerpt(text, term) {
+  const chars = Array.from(text); const index = []; let normalized = "";
+  chars.forEach((char, position) => { const folded = normalizeSearchText(char); normalized += folded; for (let i = 0; i < folded.length; i++) index.push(position); });
+  const quote = node("q", "match-excerpt"); const at = normalized.indexOf(term);
+  if (at < 0) { quote.append(node("span", "", chars.length > 60 ? chars.slice(0, 60).join("") + "…" : text)); return quote; }
+  const start = index[at], end = index[at + term.length - 1] + 1, from = Math.max(0, start - 30), to = Math.min(chars.length, end + 30);
+  quote.append(node("span", "", (from ? "…" : "") + chars.slice(from, start).join("")), node("mark", "", chars.slice(start, end).join("")), node("span", "", chars.slice(end, to).join("") + (to < chars.length ? "…" : "")));
+  return quote;
+}
+function matchHint(terms, visible, fields) {
+  const shown = normalizeSearchText(visible.filter(Boolean).join(" ")); const matches = [];
+  for (const term of terms) {
+    if (shown.includes(term)) continue;
+    const field = fields.find(([, text]) => text && normalizeSearchText(text).includes(term));
+    if (field && !matches.some(match => match[0] === field[0])) matches.push([field[0], String(field[1]), term]);
+  }
+  if (!matches.length) return null;
+  const hint = node("p", "match-hint"); hint.append(node("span", "match-hint-label", t("matchedIn")));
+  matches.slice(0, 2).forEach(([key, text, term], position) => {
+    // Excerpts from a known language carry it, so the other language's text is announced and shaped correctly.
+    const excerpt = matchExcerpt(text, term); const language = /Zh$/.test(key) ? "zh-CN" : /En$/.test(key) ? "en" : ""; if (language) excerpt.setAttribute("lang", language);
+    hint.append(node("span", "", position ? " · " : " "), node("span", "match-field", t(key) + " "), excerpt);
+  });
+  return hint;
+}
+function curatedMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const requirements = language => [].concat((language === "zh" ? record.requirements_zh : record.requirements) || []);
+  return matchHint(terms, [zh ? (record.name_zh || record.name) : record.name, record[zh ? "description_zh" : "description_en"], label(KIND, record.kind), label(state.categoryLabels, record.category), targetLabels(record)], [
+    zh ? ["matchNameEn", record.name] : ["matchNameZh", record.name_zh], zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh],
+    ...[zh ? "zh" : "en", zh ? "en" : "zh"].flatMap(language => requirements(language).map(item => [language === "zh" ? "matchRequirementsZh" : "matchRequirementsEn", item])),
+    ["categoryLabel", [record.category, ...(state.categoryLabels[record.category] || [])].join(" · ")], ["kindLabel", (KIND[record.kind] || []).join(" · ")],
+    ["matchRelationship", record.relationship], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+}
+function card(record, terms = []) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
+  const hint=curatedMatchHint(record,terms);if(hint)article.append(hint);
   const meta=node("div","card-meta");meta.append(node("span","card-category",label(state.categoryLabels,record.category)));article.append(meta);
   const details=node("details","requirements");const summary=node("summary");summary.append(node("span","detail-label-full",t("requirements")),node("span","detail-label-compact",t("requirementsShort")));details.append(summary);const list=node("ul");if(!fillRequirements(list,record)){state.pendingRequirements.push([list,record]);details.addEventListener("toggle",()=>{if(details.open)loadDetails();});}details.append(list);
   const context=node("div","resource-detail-meta");const time=node("time","",t("reviewed")+" "+record.verified_at.slice(0,10));time.dateTime=record.verified_at;time.title=record.verified_at;context.append(node("span","",label(RELATION,record.relationship)),node("span","",t("sourceReviewed")),time);
@@ -612,7 +671,7 @@ function announceRevealed(prefix, shown, visible, total) {
 function render(shown = 0) {
   // A full rebuild replaces every card; appended batches keep the earlier cards and their pending requirement lists.
   if (!shown) state.pendingRequirements = [];
-  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r)));
+  const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); const terms = queryTerms(); found.slice(shown, state.visible).forEach(r => fragment.append(card(r, terms)));
   if (shown) grid.append(fragment); else { const expanded = expandedRecords(".resource-card"); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); } grid.setAttribute("aria-busy", "false");
   setStatus($("#results-status"), state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`));
   renderEmptySearchActions(found.length);
@@ -876,11 +935,21 @@ function sourceTopicButtons(record, limit = 4) {
   });
   return topics;
 }
-function sourceCard(record) {
+function sourceMatchHint(record, terms) {
+  if (!terms.length) return null;
+  const zh = state.lang === "zh"; const related = sourceRelatedEntries(record);
+  return matchHint(terms, [record.full_name, record[zh ? "description_zh" : "description_en"]], [
+    zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh], ["matchDescriptionOriginal", record.description_original],
+    ...record.topics.map(topic => ["sourceTopicsLabel", [topic, state.topicLabels[topic]?.en, state.topicLabels[topic]?.zh].filter(Boolean).join(" · ")]),
+    ...related.flatMap(entry => (zh ? [entry.title_zh, entry.title_en] : [entry.title_en, entry.title_zh]).map(title => ["matchRelated", title])),
+    ["categoryLabel", record.category], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+}
+function sourceCard(record, terms = []) {
   const article = node("article","source-card"); article.dataset.recordId=record.id; const head = node("div","source-card-head"); const title = node("h3"); const link = external(record.url,"source-title-link"); const separator = record.full_name.indexOf("/"); if (separator > 0) { link.append(node("span","source-owner",record.full_name.slice(0,separator+1)),node("span","source-project",record.full_name.slice(separator+1))); } else { link.append(node("span","source-project",record.full_name)); } link.append(icon("external",true)); title.append(link); head.append(title);
   if (Number.isFinite(record.stars)) { const stars = node("span","source-stars",record.stars.toLocaleString(state.lang === "zh" ? "zh-CN" : "en-US") + " " + t("sourceStars")); stars.title = t("sourceStarsTitle"); head.append(stars); } article.append(head);
   const description = record[state.lang === "zh" ? "description_zh" : "description_en"];
   article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t(record.description_omission ? "sourceOmittedDescription" : "sourceNoDescription")));
+  const hint = sourceMatchHint(record, terms); if (hint) article.append(hint);
 
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
   const save = saveToggle("repository", record.id, record.full_name); if (save) footer.append(save);
@@ -897,7 +966,7 @@ function sourceCard(record) {
 }
 // Like render(): Show More appends the next batch after the cards already shown.
 function renderSources(shown = 0) {
-  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record)));
+  if (!sourceState.loaded) return; const found = sourceFiltered(); const results = $("#source-results"); const fragment = document.createDocumentFragment(); const terms = normalizeSearchText(sourceState.q).trim().split(/\s+/).filter(Boolean); found.slice(shown,sourceState.visible).forEach(record => fragment.append(sourceCard(record, terms)));
   if (shown) results.append(fragment); else { const expanded = expandedRecords(".source-card", ".source-record-details[open]"); const expandedEvidence = expandedRecords(".source-card", ".source-scan-evidence[open]"); results.replaceChildren(fragment); restoreExpanded(".source-card", expanded, ".source-record-details"); restoreExpanded(".source-card", expandedEvidence, ".source-scan-evidence"); } results.setAttribute("aria-busy","false");
   setStatus($("#source-status"), state.lang === "zh" ? (found.length === sourceState.records.length ? `${found.length.toLocaleString()} 个仓库` : `${found.length.toLocaleString()} 个匹配仓库 · 共 ${sourceState.records.length.toLocaleString()} 个仓库`) : (found.length === sourceState.records.length ? `${found.length.toLocaleString()} ${found.length === 1 ? "repository" : "repositories"}` : `${found.length.toLocaleString()} ${found.length === 1 ? "result" : "results"} · ${sourceState.records.length.toLocaleString()} ${sourceState.records.length === 1 ? "repository" : "repositories"}`));
   const topic = normalizeSearchText(sourceState.topic).trim(); const hint = $("#source-topic-match");
