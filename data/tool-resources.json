@@ -11254,5 +11254,32 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "awesome-executable-packing",
+    "name": "Awesome Executable Packing",
+    "url": "https://github.com/packing-box/awesome-executable-packing",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "A single-README list of resources on executable packing, meaning the bundling, compression, encryption, mutation, protection or virtualization of PE, ELF and other executables, including Android apps, and on detecting and unpacking packed files. About 770 entries are grouped into documentation, dated scientific papers, sample datasets, packers sorted by era from before 2000 to after 2010, and tools for packer identification, unpacking and binary analysis.",
+    "description_zh": "以单个 README 维护的可执行文件加壳资源清单。加壳指对 PE、ELF 等可执行文件（包括 Android 应用）进行打包、压缩、编码、加密、变形、保护或虚拟化，清单也涵盖已加壳文件的检测与脱壳。约 770 个条目分为文档、注明日期的学术论文、样本数据集、按年代（2000 年以前至 2010 年以后）排列的加壳工具，以及用于加壳识别、脱壳和二进制分析的工具。",
+    "evidence_url": "https://github.com/packing-box/awesome-executable-packing/blob/9e41a9b10b45535c1278259129ec8eaf287b8a42/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, committed 2026-10-10, has 768 list rows: 94 documentation links and 328 scientific publications under Literature, 37 datasets, 190 packers (90 after 2010, 41 from 2000 to 2010 and 59 before 2000) and 119 tools. All but one publication give a month and year; Literature rows carry emoji type markers and 110 publications carry a star, neither of which the README explains. These are list rows, not verified resources, and one documentation row links to the list itself.",
+      "Rows give a name, a link and usually a one-line description, with no license, maintenance or platform fields, and many packers and tools are specific to Windows PE files. Packer rows point to vendor sites, SourceForge, GitHub projects, blog analyses and 30 Internet Archive copies of old pages or download archives, so availability and terms must be checked at each source.",
+      "The Datasets section lists public malware repositories and feeds next to packed and benign PE and ELF sample sets and benchmark datasets such as EMBER and SOREL-20M. Samples obtained through them can be live malicious software and fall under each provider's access terms; this collection followed none of those links to obtain samples.",
+      "CC0-1.0 for the list; CONTRIBUTING.md asks for alphabetically sorted rows and one commit per suggestion. Linked papers, packers, tools and datasets keep their own licenses. An independent discovery list; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/packing-box/awesome-executable-packing/blob/9e41a9b10b45535c1278259129ec8eaf287b8a42/CONTRIBUTING.md",
+      "https://github.com/packing-box/awesome-executable-packing/blob/9e41a9b10b45535c1278259129ec8eaf287b8a42/LICENSE"
+    ]
   }
 ]

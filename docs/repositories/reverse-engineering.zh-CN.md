@@ -66,7 +66,7 @@
 - [pret/pokefirered](https://github.com/pret/pokefirered) — 《宝可梦 火红/叶绿》的反编译代码。 **[1,664 星标]** · 精选：[《宝可梦 火红／叶绿》：生成一致 ROM 的 Game Boy Advance 反编译重建](https://awesomerea.org/zh/resources/pokemon-firered-leafgreen-decomp-case/)
 - [scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools) — 精选 AI 安全与 AI 辅助网络安全工具列表，涵盖公开源码、研究和商业工具：自动分诊、智能体安全、AI/ML 供应链、渗透测试智能体、AI SAST、LLM 驱动的模糊测试、威胁情报、SOC/SIEM 分诊、逆向工程、LLM 红队测试等。 **[1,658 星标]**
 - [pmret/papermario](https://github.com/pmret/papermario) — 《纸片马里奥》（Nintendo 64）的反编译代码。 **[1,632 星标]** · 精选：[Paper Mario：覆盖四个版本的一致性 Nintendo 64 反编译](https://awesomerea.org/zh/resources/paper-mario-matching-decomp-case/)
-- [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — 精选可执行文件加壳相关资源列表。 **[1,631 星标]**
+- [packing-box/awesome-executable-packing](https://github.com/packing-box/awesome-executable-packing) — 精选可执行文件加壳相关资源列表。 **[1,631 星标]** · 精选：[Awesome Executable Packing 可执行文件加壳资源清单](https://awesomerea.org/zh/resources/awesome-executable-packing/)
 - [mgechev/ngrev](https://github.com/mgechev/ngrev) — 用于逆向工程 Angular 应用的工具。 **[1,573 星标]**
 - [JonathanSalwan/VMProtect-devirtualization](https://github.com/JonathanSalwan/VMProtect-devirtualization) — 探索 VMProtect 软件保护，利用符号执行与 LLVM 自动对纯函数去混淆。 **[1,536 星标]**
 - [HACKE-RC/awesome-reversing](https://github.com/HACKE-RC/awesome-reversing) — 从零开始学习逆向工程的资源合集！ **[1,530 星标]**
