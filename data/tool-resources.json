@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "abcde",
+    "name": "ABCDE",
+    "url": "https://github.com/Yricky/abcde",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Kotlin toolkit for OpenHarmony reverse engineering that parses Ark bytecode (.abc) files, the format HarmonyOS app packages carry in modules.abc, along with HAP packages and resource index (.index) files. Its Compose desktop viewer browses classes, methods, fields, literal arrays, imports and exports and disassembles methods, showing imported modules and resource references in readable form; an experimental mode translates some methods literally into JavaScript, and a CLI dumps class lists and resource indexes. The parsing core is also published as a JVM library, and the separate abc-decompiler builds on a patched fork of it.",
+    "description_zh": "使用 Kotlin 编写的 OpenHarmony 逆向工具包，可解析方舟字节码（.abc）文件，即 HarmonyOS 应用包中 modules.abc 的格式，也能解析 HAP 包和资源索引（.index）文件。其基于 Compose 的桌面查看器可浏览类、方法、字段、字面量数组及导入导出信息，并反汇编方法，以可读形式显示导入模块和资源引用；实验性功能可把部分方法直译为 JavaScript，命令行则可导出类列表和资源索引。解析核心也作为 JVM 库发布，另一个项目 abc-decompiler 即基于它的补丁分支。",
+    "evidence_url": "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags are published. The README points to GitHub Actions builds, but no workflow artifacts remained available at review, so the jar has to be built locally; the reviewed main commit of 2025-11-28 is also the latest push. Decompilation to JavaScript is labelled experimental: functions containing try/catch and some instructions, such as the async ones, are unsupported, and the output is a literal, unoptimized translation.",
+      "Building needs JDK 17+. ./gradlew :abcdecoder:packageReleaseUberJarForCurrentOS produces a desktop uber-jar for the current OS, while CI's -Puniversal build bundles the Compose runtimes for Linux x64/arm64, Windows x64 and macOS x64/arm64; Gradle resolves dependencies through Aliyun Maven mirrors as well as Maven Central and Google. ./gradlew publishToMavenLocal publishes the core modules for use as io.github.yricky.oh:abcde-jvm, and the abclen size-report and findStr string-search examples show library use.",
+      "Inputs are .abc, .hap and resources.index files from the user's own OpenHarmony or HarmonyOS app packages; the repository ships no sample apps. The committed isa.json instruction table is generated from OpenHarmony's arkcompiler_runtime_core isa.yaml, which the updateIsaDefine Gradle property fetches again from Gitee.",
+      "CI only builds the universal jar. Most JUnit tests read sample .abc, .hap or resources.index files from the author's local paths or an abcPath environment variable, so only a few encoding and checksum tests run from the repository alone, and no disassembly or decompilation accuracy results are reported.",
+      "Apache-2.0; the GUI bundles the JetBrains Mono font under the SIL OFL. No files were parsed or decompiled here, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/docs/libabcde.md",
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/.github/workflows/universal-jar.yml",
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/abcdecoder/build.gradle.kts",
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/modules/abcde/build.gradle.kts",
+      "https://github.com/Yricky/abcde/tree/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/modules/abcde/src/commonMain/kotlin/me/yricky/oh/abcd/decompiler",
+      "https://github.com/Yricky/abcde/tree/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/modules/abcde/src/jvmTest/java/me/yricky/oh",
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/abcdecoder/src/jvmMain/kotlin/me/yricky/abcde/cli/CliFunc.kt",
+      "https://github.com/Yricky/abcde/blob/62f7fc6a0d455d478db1bf3bcb61f2b79d5a473a/LICENSE",
+      "https://github.com/ohos-decompiler/abc-decompiler/blob/427c4cd9f80496236a4a3548d29a6b8aaf74b8e0/README.md"
+    ]
   }
 ]

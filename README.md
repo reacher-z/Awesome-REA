@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
+- [Website](#website) (27) · [Game](#game) (187) · [App](#app) (73)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -1799,6 +1799,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Desktop suite for inspecting compiled Java and Android programs: drop in a class, JAR, WAR, APK, DEX, XAPK or APKM file to browse its classes and resources, with up to three decompiler or disassembler views side by side. The README lists six bundled Java decompilers (Krakatau, CFR, Procyon, FernFlower, JADX and JD-GUI), Krakatau and Smali/baksmali disassemblers and assemblers plus javap, Dex2Jar and Enjarify for APK/DEX conversion, a built-in Java compiler for editing, and static search. Java and JavaScript plugins receive every loaded class as an ASM ClassNode for jobs such as string deobfuscation or malicious-code searches.
 
   Tool · JVM · [Requirements & evidence](https://awesomerea.org/resources/bytecode-viewer/)
+
+- [**ABCDE**](https://github.com/Yricky/abcde)
+
+  Kotlin toolkit for OpenHarmony reverse engineering that parses Ark bytecode (.abc) files, the format HarmonyOS app packages carry in modules.abc, along with HAP packages and resource index (.index) files. Its Compose desktop viewer browses classes, methods, fields, literal arrays, imports and exports and disassembles methods, showing imported modules and resource references in readable form; an experimental mode translates some methods literally into JavaScript, and a CLI dumps class lists and resource indexes. The parsing core is also published as a JVM library, and the separate abc-decompiler builds on a patched fork of it.
+
+  Tool · Android · [Requirements & evidence](https://awesomerea.org/resources/abcde/)
 
 <a id="native-binary"></a>
 ### Native Binary

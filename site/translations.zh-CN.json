@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "abcde": {
+    "name": "ABCDE OpenHarmony 逆向工具包",
+    "requirements": [
+      "项目未发布任何版本或标签。README 指向 GitHub Actions 构建产物，但审阅时已无可用的工作流产物，因此需自行在本地构建 jar；所审阅的 main 分支提交（2025-11-28）也是最近一次推送。反编译为 JavaScript 的功能标为实验性：不支持含 try/catch 的函数及部分指令（如 async 相关指令），输出为未经优化的直译代码。",
+      "构建需要 JDK 17+。./gradlew :abcdecoder:packageReleaseUberJarForCurrentOS 生成适用于当前系统的桌面版 uber-jar，CI 使用 -Puniversal 构建时则打包 Linux x64/arm64、Windows x64 和 macOS x64/arm64 的 Compose 运行时；Gradle 除 Maven Central 和 Google 外，还通过阿里云 Maven 镜像解析依赖。./gradlew publishToMavenLocal 可将核心模块发布为 io.github.yricky.oh:abcde-jvm 供其他工程引用，abclen 包体积分析和 findStr 字符串查找两个示例演示了库的用法。",
+      "输入为用户自有 OpenHarmony 或 HarmonyOS 应用包中的 .abc、.hap 和 resources.index 文件；仓库不附带示例应用。仓库中的 isa.json 指令表由 OpenHarmony arkcompiler_runtime_core 的 isa.yaml 生成，设置 Gradle 属性 updateIsaDefine 时会重新从 Gitee 获取。",
+      "CI 只构建通用 jar。大多数 JUnit 测试从作者本机路径或 abcPath 环境变量读取示例 .abc、.hap 或 resources.index 文件，因此仅凭仓库只能运行少数编码与校验和测试，也未报告反汇编或反编译准确性结果。",
+      "采用 Apache-2.0 许可；图形界面附带的 JetBrains Mono 字体采用 SIL OFL。本次未解析或反编译任何文件，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
