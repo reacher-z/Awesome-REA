@@ -71,18 +71,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · REA 官方 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dinosaur-speed-case/)
 
-- [**rauchg.com：根据捕获的 Flight 输出重建 RSC 博客**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
-
-  记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)
-
-- [**BaoCut Slides：交互式网页编辑器改编**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)
-
-  记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。
-
-  案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)
-
 - [**Claude Code 中的 REA：隔离配置下的静态分析 A/B 试验**](https://zenn.dev/keigoly/articles/8738d8d241b5a1)
 
   一篇日文实践报告在单独的项目目录中把 REA 6.4.0 接入 Claude Code，屏蔽其 170 个工具中的 43 个以及常见的命令行启动方式，并在两个真实任务上比较启用与禁用 REA 的运行：一个 Electron 终端的分发文件，以及一份保存的 HAR 通信记录。两组都给出正确答案，而启用 REA 的一组耗时最多为 2.00 倍、按 API 计价的费用最多为 1.67 倍。这是分析评估与安全配置案例，而非重建案例。
@@ -94,6 +82,18 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   作者使用 REA 的 MCP 浏览器工具被动捕获 wayou 开源 T-Rex Runner 页面已加载的 JavaScript，再由 Codex 在一个自包含的 HTML5 Canvas 游戏中重建其加速规则。报告以 SHA-256 标识所捕获的脚本，并区分已核实的源码事实与重建选择；只主张速度规则一致，不主张完整玩法等价。
 
   案例 · 混合工具流程 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-dino-runner-community-case/)
+
+- [**rauchg.com：根据捕获的 Flight 输出重建 RSC 博客**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
+
+  记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rauchg-rsc-reconstruction-case/)
+
+- [**BaoCut Slides：交互式网页编辑器改编**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)
+
+  记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。
+
+  案例 · 独立重建 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/baocut-slides-editor-case/)
 
 - [**BaoCut Design：移植重建的设计稿与设计系统编辑器**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 
@@ -248,6 +248,42 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-th04-case/)
 
+- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction)
+
+  作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。公开笔记区分恢复的数据表和机制、近似实现以及有意调整的表现效果。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
+
+- [**东方 Project 重建：贯穿三款游戏的智能体驱动方法**](https://rea.tools/blog/touhou-reconstruction/)
+
+  REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。
+
+  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
+
+- [**TicTacToe-AI：REA 分叉对单个游戏方法的有限重建**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
+
+  作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。差分探针在一个状态判定方法的全部 19,683 种棋盘赋值上运行原版与重建代码，并比较六张窗体渲染图。报告只判定该方法通过，整个游戏仍属部分重建。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-engine-tictactoe-case/)
+
+- [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon)
+
+  作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)
+
+- [**DX-Ball：借助 REA 并由 Codex 完成的函数级重建**](https://github.com/N0zoM1z0/dx-ball)
+
+  作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。同一套源码还可构建 MinGW Windows 游戏和可移植核心库。精确重建仍在进行中；REA 另行发布的声像展示只覆盖其中一个函数。
+
+  案例 · 混合工具流程 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/dx-ball-rea-reconstruction-case/)
+
+- [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds)
+
+  在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。辅助脚本把 PS1 可执行文件包装成 ELF，供 REA 的 Ghidra 通道分析；分析笔记注明各部分所依据的 PS1 函数与数据表，链接该项目的 Reddit 帖称其借助 REA 和 Claude Code 完成。据报告 Leon 第一张光盘已可游玩，Claire 光盘、多数敌人类型和部分菜单仍未完成。
+
+  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)
+
 - [**Super Mario 64 DS：带重定位核对的匹配反编译**](https://github.com/tangosdev/sm64ds-decomp)
 
   将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。
@@ -326,12 +362,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/lego-island-decomp-case/)
 
-- [**Snowball War：范围明确的 REA 辅助小游戏重建**](https://github.com/tuunanet/rea-ski-or-die-reconstruction)
-
-  作者通过 REA 的 Ghidra 工作流调查 DOS 版 Ski or Die 二进制，记录 Snowball War 的规则，再用 Rust 与 SDL2 重建这一小游戏。公开笔记区分恢复的数据表和机制、近似实现以及有意调整的表现效果。
-
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/snowball-war-rea-case/)
-
 - [**SpaceCadetPinball：将反编译游戏逻辑适配到 SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball)
 
   将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。README 标明 Windows XP 可执行文件及公开 PDB、Full Tilt 可执行文件，并描述恢复结构、命名变量和适配反编译例程的工作。
@@ -367,36 +397,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。项目记录了早期借助符号信息的重建过程，并包含特定地牢生成与存档回归检查。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/devilutionx-case/)
-
-- [**东方 Project 重建：贯穿三款游戏的智能体驱动方法**](https://rea.tools/blog/touhou-reconstruction/)
-
-  REA 网站发表的一篇文章及其固定版本的证据说明，介绍一位作者以智能体驱动重建 TH08、TH095 与 TH04 的过程。文章依据公开提交与进度记录标注里程碑，区分精确比对与可游玩构建两类判定依据，并记录 TH08 一项检查漏查错误浮点字面量数据的问题。项目结果仍为作者报告；REA 的作用是为智能体提供分析证据，而非完成重建本身。
-
-  案例 · REA 官方 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-touhou-reconstruction-method-case/)
-
-- [**TicTacToe-AI：REA 分叉对单个游戏方法的有限重建**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
-
-  作者的 REA 分叉（发帖时名为 rea-engine，后更名为 RE-Agent）反编译 GPL 许可的 TicTacToe-AI 游戏所发布的 .NET 可执行文件，重新编译恢复出的 C# 与资源，并依据原始 IL 修复一处反编译错误。差分探针在一个状态判定方法的全部 19,683 种棋盘赋值上运行原版与重建代码，并比较六张窗体渲染图。报告只判定该方法通过，整个游戏仍属部分重建。
-
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/rea-engine-tictactoe-case/)
-
-- [**UltraSunnyMoon：以 REA 主导的部分《宝可梦 究极之日》重建**](https://github.com/tylergraydev/UltraSunnyMoon)
-
-  作者使用固定版本的 REA 与 Ghidra，分析使用者自备的《宝可梦 究极之日》基础版可执行文件，由拆分出的对象逐字节重建该文件，并替换进两个编译后的小型 C 运行时例程。两处替换均经行为测试但与原字节不一致，其余字节均保持原样；同一段录制输入在 Azahar 模拟器中让原版与混合构建到达相同的卧室移动场景。零售编译器识别、精确匹配、模块加载及更广泛的游戏行为仍待解决。
-
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/ultrasunnymoon-rea-case/)
-
-- [**DX-Ball：借助 REA 并由 Codex 完成的函数级重建**](https://github.com/N0zoM1z0/dx-ball)
-
-  作者让 Codex 通过 REA 的 Ghidra 工具检查英文版 DX-Ball 1.07 可执行文件并恢复为带类型的 C/C++，再用同时代的 Visual C++ 4.0 编译每个函数，在映射重定位后与原文件逐字节比较。同一套源码还可构建 MinGW Windows 游戏和可移植核心库。精确重建仍在进行中；REA 另行发布的声像展示只覆盖其中一个函数。
-
-  案例 · 混合工具流程 · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/dx-ball-rea-reconstruction-case/)
-
-- [**re2ds：Resident Evil 2 的原生 Nintendo DS 引擎**](https://github.com/eray1605/re2ds)
-
-  在原生 Nintendo DS 引擎中重新实现 Resident Evil 2 PS1 版的游戏规则，并用转换工具把使用者自有光盘中的数据转为 DS 格式。辅助脚本把 PS1 可执行文件包装成 ELF，供 REA 的 Ghidra 通道分析；分析笔记注明各部分所依据的 PS1 函数与数据表，链接该项目的 Reddit 帖称其借助 REA 和 Claude Code 完成。据报告 Leon 第一张光盘已可游玩，Claire 光盘、多数敌人类型和部分菜单仍未完成。
-
-  案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/re2ds-nds-engine-case/)
 
 - [**LASRecomp：《织梦岛》静态重编译案例**](https://github.com/peiikai/LASRecomp)
 
@@ -1379,18 +1379,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/reacut-reconstruction/)
 
-- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble)
-
-  根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
-
-  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
-
-- [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp)
-
-  通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
-
 - [**Virtual Desktop Streamer：在 Linux 上重建平台适配层**](https://github.com/cudanexus/vd-streamer-linux)
 
   作者报告通过 Claude Code 与 REA，将 macOS 串流端的捕获、编码、音频和输入层替换为 Linux 实现，同时复用厂商协议库。文档中的目标是桌面串流和视频播放，而非仅 Windows 串流端提供的 VR 游戏串流。
@@ -1403,12 +1391,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/open-claude-ui-case/)
 
-- [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native)
-
-  作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/plx-native-case/)
-
 - [**Windows Calculator：重建百分比规则**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator)
 
   REA 案例追踪已安装 Windows Calculator 的模型 DLL，解释乘除运算与其他运算中不同的百分比行为。分析人员选定函数后，对照微软公开源码解释，并通过固定输入的浏览器示例演示。
@@ -1420,30 +1402,6 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   作者报告借助 Codex 与 REA 分析，修改独立的 macOS 飞书副本，为其设置不同的应用身份、数据目录和单实例锁。文章描述本地签名与隔离检查，并称原应用保持不变。
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/feishu-dual-instance-case/)
-
-- [**PhotoCraft：编辑流程重建与 PSD 往返边界**](https://github.com/storytold/photocraft)
-
-  作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/photocraft-case/)
-
-- [**WordCraft：文档流程重建与有限范围 DOCX 兼容**](https://github.com/storytold/wordcraft)
-
-  作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wordcraft-case/)
-
-- [**GridCraft：电子表格流程重建与 XLSX 往返边界**](https://github.com/storytold/gridcraft)
-
-  作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gridcraft-case/)
-
-- [**DeckCraft：演示文稿流程重建与有限范围 PPTX 交换**](https://github.com/storytold/deckcraft)
-
-  作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。
-
-  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/deckcraft-case/)
 
 - [**Ledger Reborn：基于 QuickBooks 研究的独立记账实现**](https://github.com/lxistired/ledger-reborn)
 
@@ -1474,6 +1432,48 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   将 Claude 桌面应用中 Claude Code“新会话”界面的字符风场背景，重新实现为可离线运行的 WebGL2 页面，并附带 38 个滑块的控制面板。作者报告先用 REA 对桌面外壳及其远程网页包进行静态调查，再以新编写的渲染器复用恢复出的时序与布局参数。它与原效果的视觉语言和交互方式相近，但不是逐像素一致的提取。
 
   案例 · 混合工具流程 · [使用条件与证据](https://awesomerea.org/zh/resources/claude-code-background-lab-case/)
+
+- [**CF632BLE：基于体脂秤协议研究的本地客户端**](https://github.com/guyru/cf632ble)
+
+  根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。
+
+  案例 · 独立重建 · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/cf632ble-case/)
+
+- [**zee-rp：重建 Axure RP 11 的受支持文档操作**](https://github.com/LilZeeCN/zee-rp)
+
+  通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/zee-rp-case/)
+
+- [**PlxNative：重建原生 webOS 媒体客户端接口**](https://github.com/GLinnik21/plx-native)
+
+  作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/plx-native-case/)
+
+- [**PhotoCraft：编辑流程重建与 PSD 往返边界**](https://github.com/storytold/photocraft)
+
+  作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/photocraft-case/)
+
+- [**WordCraft：文档流程重建与有限范围 DOCX 兼容**](https://github.com/storytold/wordcraft)
+
+  作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/wordcraft-case/)
+
+- [**GridCraft：电子表格流程重建与 XLSX 往返边界**](https://github.com/storytold/gridcraft)
+
+  作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/gridcraft-case/)
+
+- [**DeckCraft：演示文稿流程重建与有限范围 PPTX 交换**](https://github.com/storytold/deckcraft)
+
+  作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/deckcraft-case/)
 
 - [**LSX II 音量修正器：重建音量行为**](https://github.com/roberdorfer/kef-lsx-volume)
 

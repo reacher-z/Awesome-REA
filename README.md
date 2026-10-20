@@ -70,18 +70,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Official REA · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/rea-dinosaur-speed-case/)
 
-- [**rauchg.com: rebuilding an RSC blog from captured Flight output**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
-
-  Documents a website-rebuild-skill case that decodes browser-delivered React Server Component Flight streams, reconstructs a buildable Next project and compares its output with a captured site. The reported rauchg.com campaign uses route-tree comparison and module-reference mapping; the new server source is inferred from observable output.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/rauchg-rsc-reconstruction-case/)
-
-- [**BaoCut Slides: adapting an interactive web editor**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)
-
-  Documents BaoCut’s interactive slide editor, whose author says the implementation draws on Claude Slides. It adds a local deck store, HTML/CSS compiler and annotation-to-agent bridge for browser and desktop hosts; the design reports a Web-flow check, without establishing original backend recovery or full behavioral parity.
-
-  Case study · Independent reconstruction · Also: App · [Requirements & evidence](https://awesomerea.org/resources/baocut-slides-editor-case/)
-
 - [**REA in Claude Code: an isolated static-analysis A/B trial**](https://zenn.dev/keigoly/articles/8738d8d241b5a1)
 
   A Japanese field report connects REA 6.4.0 to Claude Code in a separate project directory, denies 43 of its 170 tools and common shell launch forms, and compares REA-enabled and REA-disabled runs on two real tasks: an Electron terminal’s packaged files and a saved HAR capture. Both arms answered correctly, while the REA arm took up to 2.00× the time and 1.67× the API-equivalent cost. It is an analysis-evaluation and safety-configuration case, not a reconstruction.
@@ -93,6 +81,18 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   The author uses REA’s MCP browser tools to passively capture the JavaScript loaded by wayou’s open-source T-Rex Runner page, then has Codex rebuild its acceleration rule in one self-contained HTML5 Canvas game. The report identifies the captured script by SHA-256 and separates verified source facts from reconstruction choices; only the speed rule is claimed, not full gameplay equivalence.
 
   Case study · Mixed workflow · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/rea-dino-runner-community-case/)
+
+- [**rauchg.com: rebuilding an RSC blog from captured Flight output**](https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md)
+
+  Documents a website-rebuild-skill case that decodes browser-delivered React Server Component Flight streams, reconstructs a buildable Next project and compares its output with a captured site. The reported rauchg.com campaign uses route-tree comparison and module-reference mapping; the new server source is inferred from observable output.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/rauchg-rsc-reconstruction-case/)
+
+- [**BaoCut Slides: adapting an interactive web editor**](https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime)
+
+  Documents BaoCut’s interactive slide editor, whose author says the implementation draws on Claude Slides. It adds a local deck store, HTML/CSS compiler and annotation-to-agent bridge for browser and desktop hosts; the design reports a Web-flow check, without establishing original backend recovery or full behavioral parity.
+
+  Case study · Independent reconstruction · Also: App · [Requirements & evidence](https://awesomerea.org/resources/baocut-slides-editor-case/)
 
 - [**BaoCut Design: porting reconstructed canvas and design-system editors**](https://github.com/JimLiu/baocut/tree/7aa049e82e1367da013b7aba80f0b79033fa04ad/packages/design-runtime)
 
@@ -247,6 +247,42 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-th04-case/)
 
+- [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction)
+
+  The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. The public notes distinguish recovered tables and mechanics from approximations and deliberate presentation changes.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/snowball-war-rea-case/)
+
+- [**Touhou reconstructions: an agent-driven method across three games**](https://rea.tools/blog/touhou-reconstruction/)
+
+  An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. It dates milestones from public commits and progress ledgers, separates exact-comparison and playable-build oracles, and documents a TH08 check that missed wrong floating-literal data. Project results remain author-reported, and REA is credited with supplying analysis evidence, not the reconstructions themselves.
+
+  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)
+
+- [**TicTacToe-AI: a bounded REA-fork reconstruction of one game method**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
+
+  The author’s REA fork, posted as rea-engine and since renamed RE-Agent, decompiles the shipped .NET executable of the GPL-licensed TicTacToe-AI game, recompiles the recovered C# and resources, and repairs one decompiler error against the original IL. A differential probe runs original and rebuilt code on all 19,683 board assignments for one status method and compares six form renders. The report passes only that method; the whole game remains partial.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/rea-engine-tictactoe-case/)
+
+- [**UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction**](https://github.com/tylergraydev/UltraSunnyMoon)
+
+  The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. Both replacements are behavior-tested but nonmatching and every other byte stays original; one recorded input movie drives the original and hybrid builds to the same bedroom movement in the Azahar emulator. Retail compiler identity, exact matching, module loading and broader gameplay remain open.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/ultrasunnymoon-rea-case/)
+
+- [**DX-Ball: an REA-guided function-level reconstruction with Codex**](https://github.com/N0zoM1z0/dx-ball)
+
+  The author has Codex use REA’s Ghidra tools to inspect the English DX-Ball 1.07 executable and recover it as typed C/C++, then compiles each function with the original-era Visual C++ 4.0 and compares it byte for byte with the original after mapping relocations. The same source also builds a MinGW Windows game and a portable core library. Exact reconstruction is still in progress; REA’s separate sound-pan showcase covers just one function.
+
+  Case study · Mixed workflow · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/dx-ball-rea-reconstruction-case/)
+
+- [**re2ds: a native Nintendo DS engine for Resident Evil 2**](https://github.com/eray1605/re2ds)
+
+  Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. A helper wraps the PS1 executable as an ELF for REA’s Ghidra lane, analysis notes name the PS1 functions and tables each part follows, and the Reddit post linking it credits REA and Claude Code. Leon’s disc 1 is reported playable, while Claire’s disc, most enemy types and some menus remain unfinished.
+
+  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/re2ds-nds-engine-case/)
+
 - [**Super Mario 64 DS: matching decompilation with relocation checks**](https://github.com/tangosdev/sm64ds-decomp)
 
   Reconstructs Super Mario 64 DS functions as C/C++ and permitted assembly primitives, comparing compiled output with a user-supplied cartridge dump. Independent relocation-destination checks strengthen the matching gate; integration into the PC port is tracked separately.
@@ -325,12 +361,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/lego-island-decomp-case/)
 
-- [**Snowball War: a bounded REA-assisted minigame reconstruction**](https://github.com/tuunanet/rea-ski-or-die-reconstruction)
-
-  The author uses REA’s Ghidra workflow to investigate the DOS Ski or Die binary, document Snowball War rules and rebuild that one minigame in Rust with SDL2. The public notes distinguish recovered tables and mechanics from approximations and deliberate presentation changes.
-
-  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/snowball-war-rea-case/)
-
 - [**SpaceCadetPinball: decompiled game logic adapted to SDL2**](https://github.com/k4zmu2a/SpaceCadetPinball)
 
   Converts the reverse-engineered Space Cadet pinball game into compilable C++ for desktop platforms. The README identifies the Windows XP executable and public PDB, a Full Tilt executable, and the work of recovering structures, naming variables and adapting the decompiled routines.
@@ -366,36 +396,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Builds a modern Diablo and Hellfire port on the Devilution reconstruction, with platform support, bug fixes and optional quality-of-life features. The project documents the original symbol-assisted reconstruction and includes selected dungeon-generation and saved-game regression checks.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/devilutionx-case/)
-
-- [**Touhou reconstructions: an agent-driven method across three games**](https://rea.tools/blog/touhou-reconstruction/)
-
-  An essay published on REA’s site, with pinned evidence notes, describes one author’s agent-driven reconstructions of TH08, TH095 and TH04. It dates milestones from public commits and progress ledgers, separates exact-comparison and playable-build oracles, and documents a TH08 check that missed wrong floating-literal data. Project results remain author-reported, and REA is credited with supplying analysis evidence, not the reconstructions themselves.
-
-  Case study · Official REA · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-touhou-reconstruction-method-case/)
-
-- [**TicTacToe-AI: a bounded REA-fork reconstruction of one game method**](https://github.com/heaven-hm/re-agent/tree/develop/benchmarks/tictactoe)
-
-  The author’s REA fork, posted as rea-engine and since renamed RE-Agent, decompiles the shipped .NET executable of the GPL-licensed TicTacToe-AI game, recompiles the recovered C# and resources, and repairs one decompiler error against the original IL. A differential probe runs original and rebuilt code on all 19,683 board assignments for one status method and compares six form renders. The report passes only that method; the whole game remains partial.
-
-  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/rea-engine-tictactoe-case/)
-
-- [**UltraSunnyMoon: a partial, REA-led Pokémon Ultra Sun reconstruction**](https://github.com/tylergraydev/UltraSunnyMoon)
-
-  The author uses a pinned REA build with Ghidra to analyze a user-supplied Pokémon Ultra Sun base executable, rebuild it byte for byte from split objects, and swap in two small compiled C runtime routines. Both replacements are behavior-tested but nonmatching and every other byte stays original; one recorded input movie drives the original and hybrid builds to the same bedroom movement in the Azahar emulator. Retail compiler identity, exact matching, module loading and broader gameplay remain open.
-
-  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/ultrasunnymoon-rea-case/)
-
-- [**DX-Ball: an REA-guided function-level reconstruction with Codex**](https://github.com/N0zoM1z0/dx-ball)
-
-  The author has Codex use REA’s Ghidra tools to inspect the English DX-Ball 1.07 executable and recover it as typed C/C++, then compiles each function with the original-era Visual C++ 4.0 and compares it byte for byte with the original after mapping relocations. The same source also builds a MinGW Windows game and a portable core library. Exact reconstruction is still in progress; REA’s separate sound-pan showcase covers just one function.
-
-  Case study · Mixed workflow · Also: Binary · [Requirements & evidence](https://awesomerea.org/resources/dx-ball-rea-reconstruction-case/)
-
-- [**re2ds: a native Nintendo DS engine for Resident Evil 2**](https://github.com/eray1605/re2ds)
-
-  Reimplements Resident Evil 2’s PS1 game rules in a native Nintendo DS engine, with converters that turn data from the user’s own disc into DS formats. A helper wraps the PS1 executable as an ELF for REA’s Ghidra lane, analysis notes name the PS1 functions and tables each part follows, and the Reddit post linking it credits REA and Claude Code. Leon’s disc 1 is reported playable, while Claire’s disc, most enemy types and some menus remain unfinished.
-
-  Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/re2ds-nds-engine-case/)
 
 - [**LASRecomp: Link’s Awakening static recompilation**](https://github.com/peiikai/LASRecomp)
 
@@ -1378,18 +1378,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/reacut-reconstruction/)
 
-- [**CF632BLE: a local client from scale-protocol research**](https://github.com/guyru/cf632ble)
-
-  Reimplements the CF632BLE scale’s BLE protocol and body-composition calculations from research on the vendor’s Unique Health Android app. A static Web Bluetooth client receives measurements, manages device profiles and keeps its history in browser storage.
-
-  Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/cf632ble-case/)
-
-- [**zee-rp: reconstructing supported Axure RP 11 document operations**](https://github.com/LilZeeCN/zee-rp)
-
-  Reads and rewrites supported native Axure RP 11 documents through a binary-record codec, reference-aware cloning and constrained interaction writers. CLI and MCP interfaces expose inspected edits while keeping offline structure checks separate from native application acceptance.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/zee-rp-case/)
-
 - [**Virtual Desktop Streamer: rehosting the platform layer on Linux**](https://github.com/cudanexus/vd-streamer-linux)
 
   An author-reported Claude Code and REA workflow replaces the macOS streamer’s capture, encoding, audio and input layer with Linux implementations while reusing vendor protocol libraries. The documented result targets desktop streaming and video playback, not Windows-only VR game streaming.
@@ -1402,12 +1390,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/open-claude-ui-case/)
 
-- [**PlxNative: reconstructing a native webOS media-client interface**](https://github.com/GLinnik21/plx-native)
-
-  An unofficial Plex client built after the author investigated LG webOS native media interfaces with Ghidra and coding agents. It draws its own Rust/OpenGL interface and uses the television’s decoder, with documented host, simulator and real-device test tiers.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/plx-native-case/)
-
 - [**Windows Calculator: reconstructing percentage rules**](https://github.com/morluto/rea/blob/c360cfcd6d7901514b16dd6113eba2e0b0fdf422/website/evidence/calculator-and-dino.md#windows-calculator)
 
   REA’s case traces the installed Windows Calculator model DLL to explain different percentage behavior for multiplication/division and other operations. An analyst-selected function is interpreted against public Microsoft source and demonstrated with fixed browser examples.
@@ -1419,30 +1401,6 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   The author reports using Codex and REA analysis to adapt a separate macOS Feishu copy with its own application identity, data directory and single-instance lock. The account describes local signing and separation checks while retaining the original app unchanged.
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/feishu-dual-instance-case/)
-
-- [**PhotoCraft: editor workflow reconstruction and PSD round-trip boundaries**](https://github.com/storytold/photocraft)
-
-  The authors describe this Rust image editor as a clean-room reimplementation of Photoshop-style workflows. Its document engine, UI and automation interfaces share editing commands, while the source distinguishes PSD editor round trips from byte preservation in the standalone file codec.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/photocraft-case/)
-
-- [**WordCraft: document workflow reconstruction and bounded DOCX compatibility**](https://github.com/storytold/wordcraft)
-
-  The authors describe WordCraft as a clean-room Rust implementation of familiar Microsoft Word workflows. It provides its own document model, layout engine and DOCX reader/writer, with desktop and browser interfaces; source tests exercise selected editing and file-preservation behavior.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/wordcraft-case/)
-
-- [**GridCraft: spreadsheet workflow reconstruction and XLSX round-trip limits**](https://github.com/storytold/gridcraft)
-
-  The authors describe GridCraft as a clean-room Rust implementation of Excel-style spreadsheet workflows. A workbook model, formula parser and dependency-driven recalculation are connected to XLSX I/O and a shared editing-command layer for desktop, browser and automation interfaces.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/gridcraft-case/)
-
-- [**DeckCraft: presentation workflow reconstruction and bounded PPTX interchange**](https://github.com/storytold/deckcraft)
-
-  The authors describe DeckCraft as a clean-room Rust implementation of PowerPoint-style presentation workflows. Its slide model, rendering and command layers support desktop/browser editing and PPTX interchange; reviewed source tests check constructed decks and selected preserved package parts.
-
-  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/deckcraft-case/)
 
 - [**Ledger Reborn: an independent accounting app informed by QuickBooks study**](https://github.com/lxistired/ledger-reborn)
 
@@ -1473,6 +1431,48 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Reimplements the glyph-wind background of the Claude desktop app’s Claude Code New session view as an offline WebGL2 page with a 38-slider control panel. The author reports a static REA investigation of the desktop shell and its remote web bundle, followed by a newly written renderer that reuses recovered timing and layout values. It shares the original’s visual vocabulary and interaction model but is not a pixel-identical extraction.
 
   Case study · Mixed workflow · [Requirements & evidence](https://awesomerea.org/resources/claude-code-background-lab-case/)
+
+- [**CF632BLE: a local client from scale-protocol research**](https://github.com/guyru/cf632ble)
+
+  Reimplements the CF632BLE scale’s BLE protocol and body-composition calculations from research on the vendor’s Unique Health Android app. A static Web Bluetooth client receives measurements, manages device profiles and keeps its history in browser storage.
+
+  Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/cf632ble-case/)
+
+- [**zee-rp: reconstructing supported Axure RP 11 document operations**](https://github.com/LilZeeCN/zee-rp)
+
+  Reads and rewrites supported native Axure RP 11 documents through a binary-record codec, reference-aware cloning and constrained interaction writers. CLI and MCP interfaces expose inspected edits while keeping offline structure checks separate from native application acceptance.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/zee-rp-case/)
+
+- [**PlxNative: reconstructing a native webOS media-client interface**](https://github.com/GLinnik21/plx-native)
+
+  An unofficial Plex client built after the author investigated LG webOS native media interfaces with Ghidra and coding agents. It draws its own Rust/OpenGL interface and uses the television’s decoder, with documented host, simulator and real-device test tiers.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/plx-native-case/)
+
+- [**PhotoCraft: editor workflow reconstruction and PSD round-trip boundaries**](https://github.com/storytold/photocraft)
+
+  The authors describe this Rust image editor as a clean-room reimplementation of Photoshop-style workflows. Its document engine, UI and automation interfaces share editing commands, while the source distinguishes PSD editor round trips from byte preservation in the standalone file codec.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/photocraft-case/)
+
+- [**WordCraft: document workflow reconstruction and bounded DOCX compatibility**](https://github.com/storytold/wordcraft)
+
+  The authors describe WordCraft as a clean-room Rust implementation of familiar Microsoft Word workflows. It provides its own document model, layout engine and DOCX reader/writer, with desktop and browser interfaces; source tests exercise selected editing and file-preservation behavior.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/wordcraft-case/)
+
+- [**GridCraft: spreadsheet workflow reconstruction and XLSX round-trip limits**](https://github.com/storytold/gridcraft)
+
+  The authors describe GridCraft as a clean-room Rust implementation of Excel-style spreadsheet workflows. A workbook model, formula parser and dependency-driven recalculation are connected to XLSX I/O and a shared editing-command layer for desktop, browser and automation interfaces.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/gridcraft-case/)
+
+- [**DeckCraft: presentation workflow reconstruction and bounded PPTX interchange**](https://github.com/storytold/deckcraft)
+
+  The authors describe DeckCraft as a clean-room Rust implementation of PowerPoint-style presentation workflows. Its slide model, rendering and command layers support desktop/browser editing and PPTX interchange; reviewed source tests check constructed decks and selected preserved package parts.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/deckcraft-case/)
 
 - [**LSX II Volume Fixer: reconstructing volume behavior**](https://github.com/roberdorfer/kef-lsx-volume)
 

@@ -209,6 +209,20 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f'{where}.verified_at: invalid ISO date or timezone-aware timestamp')
 
 
+# Independent reconstruction cases have one home, so their README and site order never depends on which file
+# a case joined; REA-linked cases in rea-resources.json are listed before them.
+RECONSTRUCTION_FILE = 'data/tool-resources.json'
+
+
+def validate_resource_file(filename, records, errors):
+    """Checks that depend on which catalog file holds a record; validate_resources checks the merged list."""
+    if filename == RECONSTRUCTION_FILE:
+        return
+    for record in records:
+        if isinstance(record, dict) and record.get('relationship') == 'independent-reconstruction':
+            errors.append(f"resource {record.get('id')!r}: relationship 'independent-reconstruction' records belong in {RECONSTRUCTION_FILE}, not {filename}")
+
+
 def validate_benchmarks(records, errors):
     ids, names, urls = set(), set(), set()
     for index, record in enumerate(records):
@@ -1025,7 +1039,11 @@ def read_array(path, errors):
 
 def main():
     errors = []
-    records = [record for path in RESOURCE_FILES for record in read_array(path, errors)]
+    records = []
+    for path in RESOURCE_FILES:
+        file_records = read_array(path, errors)
+        validate_resource_file(path.relative_to(ROOT).as_posix(), file_records, errors)
+        records.extend(file_records)
     benchmarks = read_array(ROOT / 'data/benchmarks.json', errors)
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)

@@ -26,7 +26,7 @@
 
 ## kind、relationship、category 与 targets
 
-精选记录保存在 `data/rea-resources.json` 和 `data/tool-resources.json`。中英文描述都应简洁；网站使用的中文名称和使用条件在 `site/translations.zh-CN.json`。下面四个字段各自独立选择，一个字段不能决定另一个：
+精选记录保存在 `data/rea-resources.json` 和 `data/tool-resources.json`；所有独立重建案例（`relationship: independent-reconstruction`）都放在 `data/tool-resources.json`。中英文描述都应简洁；网站使用的中文名称和使用条件在 `site/translations.zh-CN.json`。下面四个字段各自独立选择，一个字段不能决定另一个：
 
 - `kind`：分享的是什么，例如工具、集成或案例。
 - `relationship`：证据证明了它与 REA 是什么关系，例如 REA 官方或社区资源、独立智能体集成或基础工具。
@@ -44,6 +44,8 @@
 使用[重建案例推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=case-study.yml)，可用英文或简体中文填写。分别说明原始输入、重建输出与证据；部分重建或未测试的案例也可推荐。
 
 案例可以使用 REA、其他智能体或独立的逆向工具。有记录的重建项目如果与 REA 没有已确认的关联，使用 `relationship: independent-reconstruction` 和 `category: reconstruction-cases`，targets 按实际涉及的领域填写。说明中要区分作者报告的结果、尚未完成的行为、平台限制，以及需要用户自备的原始资源。尽量提供固定版本的公开来源；不要包含专有目标二进制文件或私人抓包数据。
+
+独立重建案例添加到 `data/tool-resources.json` 末尾；放在 `data/rea-resources.json` 中会被校验拒绝。README 各分区和网站的案例列表按目录顺序排列：先 `data/rea-resources.json`，再 `data/tool-resources.json`，各自保持文件内顺序。因此每个“案例”列表都先列与 REA 相关的案例，再列独立重建案例。
 
 ## 来源已复核不等于运行验证
 

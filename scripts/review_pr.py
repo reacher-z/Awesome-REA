@@ -10,7 +10,7 @@ import sys
 import urllib.parse
 import urllib.request
 
-from validate import validate_benchmarks, validate_resources, validate_source_index, public_https_error
+from validate import validate_benchmarks, validate_resource_file, validate_resources, validate_source_index, public_https_error
 from validate_papers import validate_papers
 from localization import LOCALE_FILES, validate_localizations
 from source_scope import validate_scope
@@ -254,6 +254,7 @@ def review_data(contents, changed):
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array.')
             else:
+                validate_resource_file(filename, data, errors)
                 records.extend(data)
         validate_resources(records, errors)
         reviewed.append(f'{len(records)} curated records checked together for schema, duplicate IDs/URLs, provenance, targets, dates, and review labels.')

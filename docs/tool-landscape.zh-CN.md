@@ -15,7 +15,7 @@
 | `independent-agent-integration` | 独立于 REA 的 MCP、AI 插件或 agent skill。“官方”指相应工具厂商的官方实现，不表示 REA 官方维护。 |
 | `foundation` | 可辅助理解文件、代码和运行时的基础工具；收录不代表 REA 已内置或验证其集成。 |
 | `learning` | 训练逆向分析能力的课程、书籍和实践入口。 |
-| `independent-reconstruction` | 首发后加入的独立重建案例：有记录的重建项目，与 REA 没有已确认的关联。这类记录同时存放在 tool-resources.json 和 rea-resources.json 中，不属于 REA 生态项目；是否集中到一个文件需另行评审。 |
+| `independent-reconstruction` | 首发后加入的独立重建案例：有记录的重建项目，与 REA 没有已确认的关联。这类记录统一存放在 tool-resources.json 中（放在 rea-resources.json 会被校验拒绝），不属于 REA 生态项目。 |
 
 [Claude Reverse Engineering Skill](https://github.com/EncidXVII/claude-reverse-engineering-skill/blob/main/README.md) 的作者明确提到 REA 工作流；这仍是社区项目的说明。其余资源应按各自文档配置，不能从“都支持 MCP”推导出它们与 REA 存在官方集成关系。
 

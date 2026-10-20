@@ -1568,6 +1568,1006 @@
     "kind": "research"
   },
   {
+    "id": "open-appleremote-case",
+    "name": "open-appleremote: Siri Remote protocol reconstruction",
+    "url": "https://github.com/a-funk/open-appleremote",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs first-generation Siri Remote Bluetooth reports for Linux, decoding buttons, touch and tvOS-style gestures. The Python implementation and protocol notes distinguish measured behavior, historical reports and inferred meanings.",
+    "description_zh": "重建第一代 Siri Remote 在 Linux 上的蓝牙报告，解析按键、触摸与 tvOS 风格手势。Python 实现和协议文档区分实测行为、历史报告与推测含义。",
+    "evidence_url": "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Package 0.1.0; live use requires Linux, BlueZ, Python 3.8+ and access to the device’s hidraw interface. The core uses the Python standard library.",
+      "Project hardware checks cover A1962 with BlueZ 5.72 and Linux 6.17. A1513 is expected but untested; second- and third-generation Siri Remotes are unsupported.",
+      "The virtual keyboard has not been hardware-tested. Voice is unreleased and checked with synthetic or recorded frames, not live use in this package; it additionally needs libopus and HCI-monitor privileges.",
+      "Protocol notes label measured, previously reported and guessed facts. The public sample does not reproduce every claim from the larger unpublished capture.",
+      "MIT-licensed repository. REA use is not established by the reviewed project sources; device behavior was not independently reproduced."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/docs/PROTOCOL.md",
+      "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/pyproject.toml",
+      "https://github.com/a-funk/open-appleremote/blob/1e6e190c3c29a3d2d8cad2c38c09f8953e9633e3/LICENSE"
+    ]
+  },
+  {
+    "id": "gamekb-k17-case",
+    "name": "GAMEKB-K17: reconstructing a macropad configuration protocol",
+    "url": "https://github.com/dvdarkin/gamekb-k17",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Implements the vendor HID configuration protocol for the GAMEKB-K17/HCY-K017 macropad. It writes key mappings, firmware macros and RGB settings, then reads them back; protocol notes separate tested commands from unconfirmed observations and other-device findings.",
+    "description_zh": "实现 GAMEKB-K17/HCY-K017 宏键盘的厂商 HID 配置协议，写入按键映射、固件宏和 RGB 设置后再读回核对。协议文档区分已测试命令、未确认观察和其他设备的研究结果。",
+    "evidence_url": "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Package 3.0.0 requires Python 3.11+ and hidapi; the optional editor uses tkinter. Hardware identity is USB 0816:0220.",
+      "Windows is project-tested; other hidapi platforms are untested. Linux configuration requires suitable device permissions.",
+      "The documented scope includes 18 remappable controls and up to 16 firmware macros. The volume dial is fixed in firmware; family resemblance does not establish another model’s compatibility.",
+      "Read-back verification and interruption ordering are project claims backed by protocol documentation, not independent device tests by this catalog.",
+      "MIT license. The reviewed primary files establish reverse engineering of the vendor WebHID configurator, but do not establish REA involvement."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/docs/PROTOCOL.md",
+      "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/pyproject.toml",
+      "https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/LICENSE"
+    ]
+  },
+  {
+    "id": "cf632ble-case",
+    "name": "CF632BLE: a local client from scale-protocol research",
+    "url": "https://github.com/guyru/cf632ble",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reimplements the CF632BLE scale’s BLE protocol and body-composition calculations from research on the vendor’s Unique Health Android app. A static Web Bluetooth client receives measurements, manages device profiles and keeps its history in browser storage.",
+    "description_zh": "根据对厂商 Unique Health 安卓应用的研究，重实现 CF632BLE 体脂秤的 BLE 协议和体成分计算。静态 Web Bluetooth 客户端接收测量数据、管理设备档案，并将历史记录保存在浏览器中。",
+    "evidence_url": "https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the CF632BLE hardware and a Chromium browser supporting Web Bluetooth in a secure context. Firefox and Safari/iOS cannot connect to the scale through this app.",
+      "The SvelteKit/Vite application builds with npm and a static adapter. Its documented measurement path has no application server or vendor backend dependency.",
+      "Single-user browser storage is localStorage. The Device tab can explicitly write device profiles and settings; local history and scale memory are different stores.",
+      "The reviewed README and package manifest give no project license, and no root LICENSE file was present at the pinned commit; public source availability is not a reuse grant.",
+      "Device compatibility and formula accuracy are project claims not independently tested here. The reviewed primary files do not establish REA use."
+    ],
+    "targets": [
+      "protocol",
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/guyru/cf632ble/blob/c029ef5cfefbd323ffe2a194a75db5cc47aa6d5c/package.json"
+    ]
+  },
+  {
+    "id": "zee-rp-case",
+    "name": "zee-rp: reconstructing supported Axure RP 11 document operations",
+    "url": "https://github.com/LilZeeCN/zee-rp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reads and rewrites supported native Axure RP 11 documents through a binary-record codec, reference-aware cloning and constrained interaction writers. CLI and MCP interfaces expose inspected edits while keeping offline structure checks separate from native application acceptance.",
+    "description_zh": "通过二进制记录编解码、考虑引用关系的克隆和受约束的交互写入器，读取并修改受支持的 Axure RP 11 原生文档。CLI 与 MCP 接口提供可检查的编辑操作，并区分离线结构检查和原生应用验收。",
+    "evidence_url": "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Package 0.1.1 requires Node.js 18+; MCP additionally uses the optional SDK dependency. Native creation needs the user’s Axure blank template and compatible libraries.",
+      "Recorded native acceptance uses macOS arm64 and Axure RP 11.0.0.4137. Linux CI covers public core checks; native GUI jobs require macOS and Accessibility permission.",
+      "Unsupported document forms, external references and interaction expressions may be rejected. Numbered lists and true native merged table cells are not supported.",
+      "Release evidence separates public/generated tests from historical assertions needing an unpublished exact fixture pack. One GUI sample checked load/save/close/reopen, not preview behavior or manual editing; newly synchronized features still need native acceptance.",
+      "Authored code/docs are MIT; Axure, its libraries and third-party assets are separate. Collection reports of REA use are not confirmed by the reviewed pinned project files; no tests were independently rerun."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/validation.md",
+      "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/docs/release-evidence.json",
+      "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/package.json",
+      "https://github.com/LilZeeCN/zee-rp/blob/473761e6a08f051e1666944db690332ef27a6038/LICENSE"
+    ]
+  },
+  {
+    "id": "sm64ds-decomp-case",
+    "name": "Super Mario 64 DS: matching decompilation with relocation checks",
+    "url": "https://github.com/tangosdev/sm64ds-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs Super Mario 64 DS functions as C/C++ and permitted assembly primitives, comparing compiled output with a user-supplied cartridge dump. Independent relocation-destination checks strengthen the matching gate; integration into the PC port is tracked separately.",
+    "description_zh": "将 Super Mario 64 DS 函数重建为 C/C++ 和规则允许的汇编原语，并将编译结果与用户提供的卡带转储对比。独立的重定位目标核对强化匹配检查；PC 移植中的集成进度另行统计。",
+    "evidence_url": "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s cartridge dump, the pinned mwccarm matching compiler, its separate linker/setup and Python tooling such as ndspy, Capstone and pyelftools.",
+      "The pinned README reports 11,389/11,389 matched functions, including 108 byte-exact assembly primitives, but only 10,957 linked into the PC port. These counters describe different gates.",
+      "The same README retains older near-finished prose, and port/README.md describes a historical smoke-build stage. Treat matching and port-playability statements as source-specific reports, not a verified complete playable port.",
+      "Agent-assisted matching is documented, together with source review and relocation checks. This review did not obtain a ROM, run the compiler or reproduce any counter.",
+      "The repository has an MIT license; original game data and external compiler rights remain separate. No REA affiliation is established."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/port/README.md",
+      "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/notes/link-verification.md",
+      "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/tools/requirements.txt",
+      "https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/LICENSE"
+    ]
+  },
+  {
+    "id": "goldeneye-pc-port-case",
+    "name": "GoldenEye 007: an agent-assisted native port from a decompilation",
+    "url": "https://github.com/jkdansereau/goldeneye-pc-port",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Builds a native PC port on the existing GoldenEye 007 decompilation, with a host platform layer and assets extracted from the user’s ROM. The project documents agent collaboration, rendering comparisons, playtest scope and unresolved platform support.",
+    "description_zh": "在已有 GoldenEye 007 反编译成果之上构建原生 PC 移植，提供宿主平台适配层，并从用户自己的 ROM 提取资产。项目记录智能体协作、渲染对比、试玩范围和尚未解决的平台支持。",
+    "evidence_url": "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed v0.5.0 documentation supports Windows 10/11 x64 and x86-64 Linux/Steam Deck with glibc 2.31+; both need OpenGL 3.0 drivers. macOS and ARM builds remain planned, despite the broader repository About description.",
+      "Release packages require the user’s US NTSC-U ROM; PAL and Japanese releases are not yet supported. This is a native port from decompiled source, not static binary recompilation.",
+      "Source builds need CMake 3.16+, C/C++, SDL2, zlib, OpenGL, Python 3 and the documented asset-extraction tools.",
+      "v0.5.0 playtests were campaign spot-checks and multiplayer sessions; the full Agent-difficulty campaign was last reported end-to-end at v0.4.0. Frame comparisons and playtests were not independently repeated here.",
+      "MIT covers original port/build/tooling/docs work only. NOTICE states inherited n64decomp/007 material has no explicit upstream license, and vendored components have separate terms; the MIT file is not a blanket grant over all contents."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/NOTICE",
+      "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/LICENSE",
+      "https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/docs/ROADMAP.md"
+    ]
+  },
+  {
+    "id": "ssbu-recomp-case",
+    "name": "ssbu-recomp: static recompilation with explicit mode limits",
+    "url": "https://github.com/Denkishi/ssbu-recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Translates Super Smash Bros. Ultimate 13.0.4 AArch64 code ahead of time and supplies a Windows runtime with Vulkan/OpenGL rendering. It also reconstructs selected fighter scripts as editable C++ and compares translated/source behavior through differential and deterministic tests.",
+    "description_zh": "将 Super Smash Bros. Ultimate 13.0.4 的 AArch64 代码提前转换，并提供带 Vulkan/OpenGL 渲染的 Windows 运行时。项目还将部分角色脚本重建为可编辑 C++，通过差分与确定性测试对比转换代码和源码行为。",
+    "evidence_url": "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Running requires Windows 10/11 x64, a Vulkan 1.3-capable GPU and the user’s own 13.0.4 game dump. Linux and Steam Deck support have not started.",
+      "Building requires Python 3.10+ with the documented packages, LLVM/clang 9.0.0 (8.0.0 is also documented as working), MSVC/Windows SDK, SDL3, Vulkan headers, glslang and reference tooling. Music needs libopus; movies need Media Foundation, VP9 Video Extensions and Web Media Extensions 2.x, with Media Feature Pack additionally required on Windows N.",
+      "Only some modes have reported play coverage. Adventure maps/fights and several multiplayer modes are untested; online is unavailable. Physical controllers are not yet confirmed despite virtual-device tests.",
+      "The author credits Claude agents. Reported frame rates, differential equivalence and selected fighter match traces do not establish full-game equivalence; this catalog did not run them.",
+      "The README grants GPL version 3 or later. The public repository supplies tools/runtime rather than the game dump, keys or assets; game-derived output is a separate requirement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/BUILDING.md",
+      "https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/LICENSE"
+    ]
+  },
+  {
+    "id": "kartpad-case",
+    "name": "KartPad: platform integration for a Mario Kart Wii recompilation",
+    "url": "https://github.com/chrissotraidis/kartpad",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Builds Apple and Android integration around WiiCompiled’s ahead-of-time translation of Mario Kart Wii, with native graphics, input and optional Retro Rewind support. Its status and rights documents distinguish platform acceptance, unresolved device defects and game-content requirements.",
+    "description_zh": "围绕 WiiCompiled 对 Mario Kart Wii 的提前转换实现 Apple 与 Android 平台集成，提供原生图形、输入及可选 Retro Rewind 支持。状态和权利文档区分平台验收、未解决的设备缺陷及游戏内容要求。",
+    "evidence_url": "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires user-supplied supported PAL RMCP01 revision 0 game data. Retro Rewind 6.13.3 needs matching separately obtained content and a compatible compiled profile in the reviewed 0.8.3 build.",
+      "Android targets ARM64/Vulkan on Android 9+; iPhone/iPad require iOS/iPadOS 16+. The README documents a PadMint/source route for Apple Silicon macOS 14+, while the pinned status table still labels Mac experimental. tvOS 17+ is also an experimental preview.",
+      "Physical-device and emulator checks cover specific builds and devices. Missing graphics, freezes, controller and performance problems remain on some hardware; a successful Pixel or iPad test is not universal compatibility.",
+      "Substantial AI assistance is disclosed without an audited generated-code percentage. This catalog did not compile the project, obtain game data or reproduce tests.",
+      "KartPad-owned work is GPL-3.0-only, with upstream component terms retained. RIGHTS_AND_LICENSES separates software obligations from game-derived logic and assets; GPL does not relicense Mario Kart Wii."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/RIGHTS_AND_LICENSES.md",
+      "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/docs/STATUS.md",
+      "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/docs/KNOWN-ISSUES.md",
+      "https://github.com/chrissotraidis/kartpad/blob/7e99c6776263caa85dccde2de6281cb092778877/LICENSE"
+    ]
+  },
+  {
+    "id": "battleship-port-case",
+    "name": "BattleShip: an AI-assisted Super Smash Bros. native port",
+    "url": "https://github.com/JRickey/BattleShip",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Ports the existing Super Smash Bros. N64 decompilation using libultraship and Torch. The author’s earlier README describes agent-built graphics/audio comparison tools and differential debugging against emulator behavior, rather than claiming AI recovered the game from a cartridge without prior community work.",
+    "description_zh": "使用 libultraship 和 Torch 移植已有的 Super Smash Bros. N64 反编译成果。作者早期的 README 介绍了智能体构建的图形、音频对比工具和对照模拟器行为的差分调试，并未将其说成脱离社区既有成果、仅靠卡带自动恢复游戏。",
+    "evidence_url": "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s own Super Smash Bros. N64 dump matching a documented hash: US NTSC-U v1.0 (NALE) or Japanese v1.0 (NALJ). Each region is a separate build; Torch extracts assets locally during a source build or on a packaged build’s first run.",
+      "The README lists native Windows, Linux, Apple Silicon macOS and Android builds; native C mods and the GameCube adapter driver are desktop-only. BUILDING.md covers desktop source builds with Git/submodules, CMake and Python 3, plus Ninja on Linux/macOS or Visual Studio 2022 and the Windows SDK on Windows.",
+      "The author reports developing the port alone with Claude until v0.3-beta and says it is no longer a pure AI project, crediting community testing, fixes and features. These statements are self-reported; ROM identity checks and described rendering/audio comparisons do not prove complete behavioral equivalence.",
+      "The LICENSE grants MIT only to port-specific code, build scripts, tools and docs. The decomp submodule and decomp-derived files defer to the upstream decompilation, which publishes no explicit license; libultraship/Torch, bundled fonts and controller mappings keep their own terms; game rights are separate.",
+      "This review read documentation and license scope only, without a game dump, build, emulator session or independent runtime reproduction. REA use is not established."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/BUILDING.md",
+      "https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/LICENSE",
+      "https://github.com/JRickey/BattleShip/blob/5c3e6bf58f19ba07d0fa33cfc324294bf4c658a2/README.md"
+    ]
+  },
+  {
+    "id": "agent-decompilation-oracle-case",
+    "name": "Agent decompilation: a byte-matching retrospective",
+    "url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Maurice Heumann describes replacing plausible-looking agent output with compiler-based checks of reconstructed functions, relocations, data and types. The retrospective reports 99% function presence and 83% of all functions byte-exact, while keeping the reconstruction code private.",
+    "description_zh": "Maurice Heumann 介绍如何用基于编译器的函数、重定位、数据和类型检查，取代看似合理的智能体输出。复盘报告 99% 的函数已进入重建源码，全部函数中 83% 达到字节一致；重建代码仍不公开。",
+    "evidence_url": "https://momo5502.com/posts/2026-10-09-game-decompilation/",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Author retrospective dated 2026-10-09; the reviewed article leaves the game unnamed.",
+      "The project uses the original compiler and binary as references; no public implementation or reproducible artifact is supplied.",
+      "Coverage figures and runtime success are author-reported, not independently reproduced.",
+      "A documented case study, not an available game port or an established REA integration."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study"
+  },
+  {
+    "id": "snowboardkids2-decomp-case",
+    "name": "Snowboard Kids 2: an LLM-assisted N64 matching decompilation",
+    "url": "https://github.com/cdlewis/snowboardkids2-decomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "A public matching decompilation of the N64 game Snowboard Kids 2, begun in 2024 with community decompilation tools. The author’s dated posts document Claude, Codex and GLM workflows, including headless one-shot loops, similarity-based function scheduling and hook-guarded, hash-checked builds, through a reported complete function match.",
+    "description_zh": "N64 游戏 Snowboard Kids 2 的公开匹配反编译项目，2024 年借助社区反编译工具启动。作者在按日期发布的文章中记录了 Claude、Codex 和 GLM 的使用流程，包括无界面的一次性匹配循环、按函数相似度安排任务，以及由钩子约束、经哈希校验的构建，直至报告全部函数完成匹配。",
+    "evidence_url": "https://github.com/cdlewis/snowboardkids2-decomp/blob/352a26fae08b3394e11f5e2b589e41a572d53288/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Building needs the user’s own big-endian Snowboard Kids 2 ROM, make, Python 3, MIPS binutils and the toolchain installed by make setup; the README reports testing only on x86 Debian/Ubuntu and macOS. It states the repository has no game assets or assembly, although the reviewed tree tracks menu-sprite PNG and palette files under assets/.",
+      "Progress figures are author-reported. The 2026-02-16 post describes matched code rising from about 25% to 58% with one-shot loops, then to about 75%, with 124 functions left; the 2026-05-17 post reports every function matched. The 2025-11-27 post’s 79% figure was a projection. This catalog did not build the ROM or check any figure.",
+      "Byte-matching C is not documented or idiomatic source. The 2026-05-17 post notes remaining __asm__ coercions, many generated names and structures still needing cleanup, and graphics/audio assets mostly handled as binary blobs; the 2026-02-16 post describes brittle agent matches.",
+      "Agent assistance is not quantified beyond the posts. The 2026-05-17 post dates the first commit to September 2024 and credits four named N64 decomp community members with significant contributions, especially across the final ten functions; the 2025-11-04 post describes a human-led loop. The work relies on community tools such as splat, m2c, decomp.me, asm-differ and decomp-permuter.",
+      "No license file is present at the reviewed commit. The June 2026 Snowboard Kids 2: Recompiled release and the August 2026 decompilation of the original Snowboard Kids are separate projects outside this record; no REA integration is established."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/",
+      "https://blog.chrislewis.au/the-unexpected-effectiveness-of-one-shot-decompilation-with-claude/",
+      "https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/",
+      "https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/",
+      "https://github.com/cdlewis/snowboardkids2-decomp/tree/352a26fae08b3394e11f5e2b589e41a572d53288/assets/sprite_sheets/menuUiSprites"
+    ]
+  },
+  {
+    "id": "cooler-lcd-case",
+    "name": "cooler-lcd: a Thermalright display protocol implementation",
+    "url": "https://github.com/kristjaningi/cooler-lcd",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Implements a USB picture-transfer driver for Thermalright Vision cooler displays, with a Rust dashboard replacing the vendor display application. The documented protocol sends a header and JPEG frames, with periodic resends to prevent the device reverting to its logo.",
+    "description_zh": "为 Thermalright Vision 散热器显示屏实现 USB 图像传输驱动，并用 Rust 仪表盘替代厂商显示应用。文档所述协议发送报头和 JPEG 帧，通过定期重发避免设备退回品牌标志画面。",
+    "evidence_url": "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Package 0.1.0 uses Rust edition 2024 and targets the 480×480 USB 87ad:70db display family; other cooler/display models are not established by this review.",
+      "Its documented environment is Linux with udev/systemd and Omarchy integration. Hyprland supplies away/lock state; NVIDIA telemetry uses NVML, and individual screens need their own optional services.",
+      "The driver cites TRCC Linux reverse-engineering notes for its 64-byte frame header and JPEG payload, with one-second keepalive resends. Device handling and reported CPU/memory figures were not independently measured here.",
+      "Only one process can own the display at once; the vendor TRCC application must relinquish it. Preview rendering is not a hardware compatibility test.",
+      "MIT-licensed code. Optional traffic/map feeds and other external services retain their own terms. The primary files do not establish REA use."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/Cargo.toml",
+      "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/src/device.rs",
+      "https://github.com/kristjaningi/cooler-lcd/blob/9a343678ba102de784b2302f79c53fd6ddc31ab9/LICENSE"
+    ]
+  },
+  {
+    "id": "isaacrecomp-case",
+    "name": "IsaacRecomp: translating Flash game bytecode to native C++",
+    "url": "https://github.com/whylurking/IsaacRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Translates The Binding of Isaac’s Flash AVM1 bytecode into C++ functions and supplies a native rendering/input runtime. The project reads graphics and audio from the user’s original game and documents deterministic input, headless runs and screenshot regression checks.",
+    "description_zh": "将 The Binding of Isaac 的 Flash AVM1 字节码转换为 C++ 函数，并提供原生渲染与输入运行时。项目从用户自己的原游戏读取图像和音频，并记录了确定性输入、无界面运行和截图回归检查。",
+    "evidence_url": "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s original Steam Isaac.exe; Wrath of the Lamb and Eternal Edition depend on the corresponding game version. This is ahead-of-time translation, not recovery of the original authored ActionScript project.",
+      "Documented targets include 64-bit Windows/Linux, Android 7.0+ on 64-bit ARM and Switch homebrew. Source builds use CMake/Ninja and SDL2/OpenGL 3.3 or ES 3.0; mobile/console builds have separate SDK/toolchain requirements.",
+      "The author credits AI assistance and reports 30 Hz game logic with higher-rate interpolated rendering. Performance, gameplay parity and stability claims were not independently reproduced.",
+      "Reported regression tests compare deterministic logic and screenshots across engine revisions; they do not by themselves establish every behavior matches the original Flash game.",
+      "MIT covers the authored engine, tools, build files and docs only. LICENSE explicitly excludes gen/, gen720/, patch1080/ and patch720/ translated game-code directories; third-party and original-game rights remain separate."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/LICENSE",
+      "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/CMakeLists.txt",
+      "https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/THIRD-PARTY-LICENSES.txt"
+    ]
+  },
+  {
+    "id": "nanolathe-case",
+    "name": "Nanolathe: a documented Total Annihilation engine reimplementation",
+    "url": "https://github.com/nanolathe-gg/nanolathe",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reimplements a Total Annihilation-compatible strategy-game engine in Go, with public file-format research and separate gameplay profiles. It distinguishes intended retail 3.1 behavior from community-patch research and deliberate modern changes, and separates synthetic checks from tests requiring original game data.",
+    "description_zh": "用 Go 重实现兼容 Total Annihilation 的策略游戏引擎，公开文件格式研究并提供不同玩法配置。项目区分拟复现的零售版3.1行为、社区补丁研究和有意加入的现代改动，也区分合成检查与依赖原始游戏数据的测试。",
+    "evidence_url": "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Native use requires the user’s installed Total Annihilation HPI archives. The reference installation includes Core Contingency, Battle Tactics and patch 3.1; other combinations remain under testing.",
+      "The pinned source requires Go 1.27.1 or newer and Ebitengine 2.10.5. Native targets include Windows, macOS 13+ and Linux with graphical/audio libraries; the browser build remains experimental.",
+      "The project is beta. Modern rules intentionally change behavior, while Strict 3.1 expresses a compatibility aim rather than independent proof of full retail equivalence.",
+      "Synthetic tests run without retail assets; the separate retail tier requires an installed game. This catalog did not build, obtain game files or reproduce gameplay/rendering claims.",
+      "Original engine code is MIT; original game assets and dependency licenses are separate. The publication note describes curated integration snapshots, omitted raw research and unresolved attribution questions; those snapshots are not individually certified releases."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/go.mod",
+      "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/NOTICE.md",
+      "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/docs/PUBLICATION.md",
+      "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/research/retail-executable-spec/README.md",
+      "https://github.com/nanolathe-gg/nanolathe/blob/5007ba75354c06fc9752a2822d37ff1e1443b77b/LICENSE"
+    ]
+  },
+  {
+    "id": "plx-native-case",
+    "name": "PlxNative: reconstructing a native webOS media-client interface",
+    "url": "https://github.com/GLinnik21/plx-native",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "An unofficial Plex client built after the author investigated LG webOS native media interfaces with Ghidra and coding agents. It draws its own Rust/OpenGL interface and uses the television’s decoder, with documented host, simulator and real-device test tiers.",
+    "description_zh": "作者用 Ghidra 和编程智能体调查 LG webOS 原生媒体接口后构建的非官方 Plex 客户端。它自行绘制 Rust/OpenGL 界面并使用电视解码器，文档区分宿主测试、模拟器测试和实体设备测试。",
+    "evidence_url": "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires a Plex account/server and a compatible LG TV. The baseline is webOS 4.0+, with explicitly documented 3.4.3/3.9.3 exceptions; the latter needs a newer source build than prebuilt v0.8.0.",
+      "Developer Mode normally needs no root but requires renewal. Some k5lp/k3lp devices cannot play under its sandbox, and k6hp crashes remain unresolved; no universal LG-TV compatibility is claimed.",
+      "Product builds need macOS (x86_64 or arm64) or arm64 Linux, the webOS NDK, the pinned Rust toolchain and CMake. The desktop simulator has a different host/setup path.",
+      "The scope is movies and TV shows, excluding music, photos, live TV and DVR. Selected relay/encrypted-server paths lack end-to-end viewing tests; timing and playback results remain author/device-specific.",
+      "GPL-3.0-or-later for project code, with separate brand and third-party terms including bundled FFmpeg. This catalog did not install the client or reproduce TV tests; REA involvement is not established."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/building.md",
+      "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/docs/install-and-verify.md",
+      "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/LICENSE",
+      "https://github.com/GLinnik21/plx-native/blob/0b0b22092b204432834c75f32148dbd16ec3493b/THIRD-PARTY-NOTICES.md",
+      "https://www.reddit.com/r/ClaudeCode/comments/1x043yp/i_used_claude_code_to_reverseengineer_an_lg_tv/"
+    ]
+  },
+  {
+    "id": "th08-reconstruction-case",
+    "name": "TH08: exact-source reconstruction and separately tested ports",
+    "url": "https://github.com/N0zoM1z0/th08",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs the original Japanese Touhou 8 version 1.00d against its binary and original compiler, then adapts the recovered code for other platforms. Source presence, strict function matching, whole-executable identity and playable-port checks are recorded as different milestones.",
+    "description_zh": "依据原二进制和原编译器重建日版 Touhou 8 的 1.00d 版本，再将恢复的代码适配到其他平台。项目分别记录源码存在、严格函数匹配、完整可执行文件一致性和移植可玩性里程碑。",
+    "evidence_url": "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Exact checks require the user’s original Japanese TH08 1.00d executable and Visual C++ .NET 2002 toolchain. Ledgers and analysis helpers need Python 3.11+; Linux/macOS toolchain setup also needs Wine and msiextract. Playable products still need original game data.",
+      "The pinned main README reports source for 1,107 authored functions and strict acceptance of 1,106, with whole-executable identity still in progress. Linux/web playability and the separate portable-64bit branch do not imply complete binary identity.",
+      "The VC7 i386 runtime checkpoint is distinct from a redistributable modern Windows release; macOS remains in progress. Exact normal-build checks and bugfix playtests have different purposes.",
+      "A historical oracle accepted instruction bytes while missing wrong floating-literal data. The linked issue/PR records later data-reference checks; matching results support only the properties actually checked.",
+      "MIT covers repository code/docs, not the original game. Historical source lineage and agent contributions retain their attribution. No compiler, original game, replay or port was independently run for this catalog."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/BUILD_MATCHING.md",
+      "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/docs/REPLAY_RESULTS.md",
+      "https://github.com/N0zoM1z0/th08/blob/08c7f00f81e35db8206d917b14f47883930beef6/LICENSE",
+      "https://github.com/N0zoM1z0/th08/issues/10",
+      "https://github.com/N0zoM1z0/th08/pull/13"
+    ]
+  },
+  {
+    "id": "zelda64recomp-case",
+    "name": "Zelda 64: Recompiled — a native Majora’s Mask port without a full source decompilation",
+    "url": "https://github.com/Zelda64Recomp/Zelda64Recomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Uses N64Recomp to translate Majora’s Mask into a native application and RT64 for rendering. The project separates static recompilation from source decompilation while reusing decompilation headers and selected functions for patches and enhancements.",
+    "description_zh": "通过 N64Recomp 将《姆吉拉的假面》转为原生应用，并使用 RT64 渲染。项目区分静态重编译与源码反编译，同时借用反编译项目的头文件和部分函数实现补丁与增强功能。",
+    "evidence_url": "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed build accepts the US Nintendo 64 Majora’s Mask ROM supplied by the user; game assets are not included. Ocarina of Time remains planned, and this is not an emulator for arbitrary ROMs.",
+      "Runtime graphics require Direct3D 12.0 with Shader Model 6, Vulkan 1.2, or Metal Argument Buffers Tier 2. x86-64 needs SSE4.1; the README lists macOS 13.0+ with Apple Silicon or a 7th-generation Intel CPU.",
+      "Source builds additionally require submodules, CMake 3.20+, C++20 tooling, N64Recomp/RSPRecomp and the specified decompressed ROM. The build guide lists SDL2 and platform dependencies; ordinary play uses the standard ROM.",
+      "The project documents high-frame-rate, widescreen, camera and save enhancements, plus overlay and cutscene issues. These are project claims, not independently rerun fidelity or performance checks.",
+      "GPLv3 project license; original game content and dependencies retain separate terms. The team states that it does not use generative AI and bans contributions using GenAI tooling in any capacity; this is not an REA-assisted case."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CMakeLists.txt",
+      "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/COPYING",
+      "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/BUILDING.md",
+      "https://github.com/Zelda64Recomp/Zelda64Recomp/blob/b65c482ed672258eb684ab94a4e8c8aa662615ee/CONTRIBUTING.md"
+    ]
+  },
+  {
+    "id": "opengoal-jak-case",
+    "name": "OpenGOAL: recovering GOAL code and rebuilding the Jak games",
+    "url": "https://github.com/open-goal/jak-project",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs readable GOAL code from the original Jak binaries and compiles it with a new GOAL compiler for modern PCs. Its workflow combines a specialized decompiler, manually supplied type information, asset extraction and an interactive development runtime.",
+    "description_zh": "从 Jak 原二进制重建可读的 GOAL 代码，再用新编写的 GOAL 编译器为现代 PC 编译。流程结合专用反编译器、人工补充的类型信息、素材提取和交互式开发运行时。",
+    "evidence_url": "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s original PS2 game copy and extracted assets. The README covers retail PAL, NTSC and NTSC-J editions, including Greatest Hits, and excludes later PS3/PS4/PS5 releases.",
+      "The pinned README reports Jak 1 as complete, Jak 2 as beta with remaining issues, and substantial work still needed for Jak 3. These are distinct milestones, not a claim that the entire trilogy is finished.",
+      "The supported runtime is x86-64 on Windows, Linux and macOS. The macOS guide requires Rosetta 2 on Apple Silicon and lists macOS Sequoia; native ARM64 builds are experimental and unsupported. No mobile release is planned.",
+      "Development uses C++20, CMake, NASM and platform libraries, then the project’s asset-extraction and GOAL compilation steps. The documented task commands need the corresponding task runner; runtime code editing is a development feature.",
+      "ISC license for project work; original game assets and third-party components retain their own rights. REA involvement is not established, and this catalog did not build or run the games."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/CMakeLists.txt",
+      "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/LICENSE",
+      "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/linux.md",
+      "https://github.com/open-goal/jak-project/blob/32c3cf73970f885c0a588623208232db72a74a58/docs/setup/system/macos.md"
+    ]
+  },
+  {
+    "id": "lego-island-decomp-case",
+    "name": "LEGO Island: source reconstruction with separately reported exact rebuilds",
+    "url": "https://github.com/isledecomp/isle",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs the English LEGO Island 1.1 source for its original 32-bit Windows target. The project distinguishes function-comparison reports, ReproBit’s reported byte-identical retail rebuilds and ordinary developer builds; its modern portable adaptation is a separate repository.",
+    "description_zh": "针对英文版 LEGO Island 1.1 的原始 32 位 Windows 目标重建源码。项目区分函数对比报告、ReproBit 报告的零售版逐字节一致重构建，以及普通开发构建；现代跨平台适配位于另一仓库。",
+    "evidence_url": "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Exact verification requires the user’s matching English 1.1 CONFIG.EXE, ISLE.EXE and LEGO1.DLL, the original Visual C++ 4.2 toolchain, Python 3.11+, Git and ReproBit; Linux/macOS also need Wine.",
+      "The pinned README reports a cold rebuild matching all three retail binaries byte for byte. This catalog reviewed that report description and did not execute ReproBit or independently reproduce the result.",
+      "The ordinary CMake path is for development and is not the release-verification path. This repository targets 32-bit Windows only; cross-platform and Web support belongs to isle-portable.",
+      "Running the rebuilt executables still requires the original installed game data and the documented data paths. The README notes that d3drm.dll may also be needed on newer Windows systems.",
+      "The repository carries the LGPLv3 license; original game data and toolchain rights remain separate. REA involvement is not established, and no original binaries or game assets were downloaded for this review."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/CMakeLists.txt",
+      "https://github.com/isledecomp/isle/blob/8119bd013645972c72480e4de21529f1e91ce5c7/LICENSE"
+    ]
+  },
+  {
+    "id": "space-cadet-pinball-case",
+    "name": "SpaceCadetPinball: decompiled game logic adapted to SDL2",
+    "url": "https://github.com/k4zmu2a/SpaceCadetPinball",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Converts the reverse-engineered Space Cadet pinball game into compilable C++ for desktop platforms. The README identifies the Windows XP executable and public PDB, a Full Tilt executable, and the work of recovering structures, naming variables and adapting the decompiled routines.",
+    "description_zh": "将逆向分析后的 Space Cadet 弹球游戏转为可编译的 C++，面向桌面平台。README 标明 Windows XP 可执行文件及公开 PDB、Full Tilt 可执行文件，并描述恢复结构、命名变量和适配反编译例程的工作。",
+    "evidence_url": "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires original game resources supplied separately. The project supports resource data from Windows and Full Tilt editions; its releases do not supply those assets.",
+      "The main project targets desktop Windows, Linux and macOS. Its list of console, mobile and browser ports points to separate projects and does not establish identical support in this repository.",
+      "Source builds require C++11, CMake, SDL2 and SDL2_mixer. The README gives Visual Studio, GCC/Clang and Xcode build paths, including x86_64 or arm64 selection on macOS.",
+      "The README reports that all subroutines were decompiled and converted to C++; this is not an independently checked byte-identical rebuild. Full Tilt feature work and possible support for its other two tables remain separate plans.",
+      "MIT license for this repository; original game resources and dependencies retain their own terms. REA use is not established; no game, compiler or external port was run for this catalog."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
+      "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE"
+    ]
+  },
+  {
+    "id": "sm64-decomp-case",
+    "name": "Super Mario 64: ROM reconstruction with explicit comparison gates",
+    "url": "https://github.com/n64decomp/sm64",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reconstructs Super Mario 64 source for Japanese, North American, European, Shindou and iQue releases. Its build files distinguish original-ROM hash comparison from nonmatching or modified configurations, while source naming and documentation remain ongoing.",
+    "description_zh": "为日版、北美版、欧洲版、Shindou 版和 iQue 版 Super Mario 64 重建源码。构建文件区分原 ROM 哈希比较与非匹配或修改配置；源码命名和文档工作仍在推进。",
+    "evidence_url": "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s matching original ROM for asset extraction. The five target releases are separate; this repository’s reconstruction should not be confused with the separately maintained sm64ex, Ghostship or multiplayer ports.",
+      "The documented build uses GNU make, Python 3.6+, MIPS binutils, pkgconf and host development tools. Windows instructions use WSL/Linux; macOS instructions require an appropriate MIPS toolchain and newer GNU make.",
+      "The Makefile normally checks the output ROM’s SHA-1 against the selected reference. NON_MATCHING, a non-N64 target or nonstandard configurations disable comparison; a successful modified build is not a matching-result claim.",
+      "The pinned Jenkins configuration explicitly sets COMPARE=0 for iQue and enhancement builds. Its five-version build matrix therefore must not be described as five independently confirmed byte-identical results; no build or game was run for this catalog.",
+      "The repository carries CC0-1.0; original Nintendo content and any separate third-party rights are not supplied by that declaration. No REA or coding-agent involvement is established by the reviewed files."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/LICENSE.md"
+    ]
+  },
+  {
+    "id": "unleashed-recompiled-case",
+    "name": "Unleashed Recompiled: translating Xbox 360 game code and shaders",
+    "url": "https://github.com/hedge-dev/UnleashedRecomp",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Builds an unofficial Sonic Unleashed PC port by statically recompiling Xbox 360 PowerPC code with XenonRecomp and Xenos shaders with XenosRecomp. The port adds modern display and modding options while documenting original-engine limits and remaining compatibility issues.",
+    "description_zh": "使用 XenonRecomp 静态重编译 Xbox 360 PowerPC 代码，并用 XenosRecomp 转换 Xenos 着色器，构建非官方 Sonic Unleashed PC 移植。项目增加现代显示与模组选项，同时记录原引擎限制和仍存在的兼容性问题。",
+    "evidence_url": "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s US or EU Xbox 360 game files and the title update; the Japanese release and PS3 files are unsupported by the reviewed installation guide. DLC is optional, and the project does not provide game assets.",
+      "The README’s Windows/Linux baseline includes an AVX-capable CPU, 8 GB RAM and Direct3D 12.0 with Shader Model 6 or Vulkan 1.2 graphics. It lists Windows 10 version 1909 and a modern Linux distribution such as Ubuntu 22.04.",
+      "Source builds require submodules, CMake 3.20+, C++20 tooling, vcpkg with VCPKG_ROOT configured, and matching executable/update/shader inputs. At the same revision, BUILDING.md documents Xcode 16.3+ and macOS presets while the README says macOS is not on the roadmap; this inconsistency does not establish verified macOS support.",
+      "High-frame-rate gameplay glitches, loading stutters and ultrawide cutscene issues remain documented. Mods replacing the original executable or shaders are unsupported; improvements and performance claims were not independently reproduced here.",
+      "GPLv3 project license, with separate original-game and dependency terms. This is static recompilation, not a claim to recover the original authored source; reviewed primary files do not establish REA or coding-agent involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/docs/BUILDING.md",
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/CMakeLists.txt",
+      "https://github.com/hedge-dev/UnleashedRecomp/blob/cf829a9eca8fb680fba4b0409ddeb6ca92f22e3c/COPYING"
+    ]
+  },
+  {
+    "id": "openmw-engine-case",
+    "name": "OpenMW: replacing Morrowind’s engine while reusing original content",
+    "url": "https://github.com/OpenMW/openmw",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Provides an independent engine for playing Morrowind and an alternative editor, OpenMW-CS. It loads original game content through its own runtime and documents script and mod compatibility differences; it is an engine replacement rather than a recovered Bethesda source tree.",
+    "description_zh": "提供用于运行 Morrowind 的独立引擎和替代编辑器 OpenMW-CS，通过自己的运行时加载原游戏内容，并记录脚本及模组兼容性差异。这是引擎替代实现，而非恢复出的 Bethesda 源码树。",
+    "evidence_url": "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Playing Morrowind requires the user’s original game data, including Morrowind.esm and the installation settings. Tribunal and Bloodmoon are optional expansions; the installation guide recommends both for best results. OpenMW-CS can also support separately authored projects.",
+      "The pinned README and build files identify version 0.52.0; this is a source-snapshot identifier, not a claim that a release was tested. The README lists Windows 10+, macOS 14.8+ and Linux, with no 32-bit support.",
+      "The source configuration uses CMake 3.16+, C++20, SDL2 2.26+, OpenSceneGraph 3.6.5+, Boost 1.70+ and OpenAL; launcher/editor/wizard builds use Qt6. Additional dependencies depend on enabled components.",
+      "The project reports the main quests as completable, but warns about side quests and mods that depend on original-engine quirks. Example Suite integration tests and the separate Morrowind-content test setup cover selected behavior, not complete original-game or mod equivalence; none was rerun here.",
+      "The official GitHub mirror points to the main GitLab project. GPLv3 covers project code, with separate font/dependency terms and original-game data rights. No REA or coding-agent involvement is established by the reviewed sources."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CMakeLists.txt",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/LICENSE",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/docs/source/manuals/installation/install-game-files.rst",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/scripts/data/morrowind_tests/README.md",
+      "https://github.com/OpenMW/openmw/blob/5fdc0f1c4d1d07575f9b360b8cf1d6562232bf8e/CI/run_integration_tests.sh"
+    ]
+  },
+  {
+    "id": "redriver2-case",
+    "name": "REDRIVER2: reconstructing Driver 2 through a PlayStation compatibility layer",
+    "url": "https://github.com/OpenDriver2/REDRIVER2",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Translates reverse-engineered Driver 2 MIPS routines into C/C++ and uses Psy-X/Psy-Cross to adapt PlayStation interfaces for desktop systems. The project documents symbol-assisted Ghidra/IDA work alongside intentional bug fixes and gameplay changes.",
+    "description_zh": "将逆向分析的 Driver 2 MIPS 例程转为 C/C++，并用 Psy-X/Psy-Cross 将 PlayStation 接口适配到桌面系统。项目记录借助符号的 Ghidra/IDA 分析，同时明确包含有意修复的错误和玩法改动。",
+    "evidence_url": "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Requires the user’s copies of both Driver 2 discs. The pinned installation wiki lists English PAL EU and NTSC US revisions 1.0/1.1; other languages remain planned. Italian/Spanish SYM files cited as decompilation inputs do not imply support for those game-data editions.",
+      "Documented play paths cover Windows and Linux; installation converts disc video/audio using Java. Linux runtime instructions list SDL2 and OpenAL; original game content is not supplied by the project.",
+      "Source builds use submodules, Premake5 and a C++ toolchain. The Windows guide uses Visual Studio 2022; Linux builds link SDL2, OpenAL, OpenGL and libjpeg. The wiki’s old Premake beta download example is not treated as a general minimum-version requirement.",
+      "The README reports a playable reconstruction but explicitly excludes the memory-card menu from its decompilation claim. Original bugs and some gameplay are deliberately changed; [D], [T] and [A] annotations distinguish decompiled, tested and altered code rather than proving whole-game fidelity.",
+      "MIT license for project code; original game data and third-party components retain their own rights. No byte-identical rebuild, independent runtime test or REA/coding-agent involvement is established by this review."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/src_rebuild/premake5.lua",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/data/install/conv.sh",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/appveyor.yml",
+      "https://github.com/OpenDriver2/REDRIVER2/blob/b2d8857426f815007486def9bd23f9a6007a2c64/LICENSE",
+      "https://github.com/OpenDriver2/REDRIVER2/wiki/Installation-instructions/35c32de044cc80e10574838860489e5fe773fed3",
+      "https://github.com/OpenDriver2/REDRIVER2/wiki/Contributing-to-project/35c32de044cc80e10574838860489e5fe773fed3"
+    ]
+  },
+  {
+    "id": "photocraft-case",
+    "name": "PhotoCraft: editor workflow reconstruction and PSD round-trip boundaries",
+    "url": "https://github.com/storytold/photocraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe this Rust image editor as a clean-room reimplementation of Photoshop-style workflows. Its document engine, UI and automation interfaces share editing commands, while the source distinguishes PSD editor round trips from byte preservation in the standalone file codec.",
+    "description_zh": "作者将这款 Rust 图像编辑器描述为 Photoshop 风格流程的净室重实现。文档引擎、界面与自动化接口共用编辑命令；源码区分编辑器中的 PSD 往返处理与独立文件编解码器的字节保留。",
+    "evidence_url": "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinned workspace identifies version 0.9.0 and declares Rust 1.95+ for source builds with Cargo. Native and WebAssembly paths have platform-specific dependencies; optional font inputs and reference documents are separate. No build or installer was run here.",
+      "This is an implemented document/compositing engine and editing interface, not merely a screenshot mockup. It does not establish recovery of Adobe’s source code or Photoshop cloud services; the author’s clean-room characterization was not independently audited.",
+      "The editor-level corpus tests compare rendering before and after export/reimport. Separate PSD codec tests compare bytes for parseable files, with a named malformed-file exception. Editor saves are explicitly not byte-identical to their inputs; these finite test definitions are not results independently reproduced by this catalog.",
+      "The project remains alpha and distinguishes menu-command coverage from behavioral fidelity. Its dated parity assessment retains gaps in PSD exchange, typography, professional workflows, performance and plug-in compatibility; no complete Photoshop-equivalence percentage is asserted here.",
+      "Project code is MIT OR Apache-2.0, subject to NOTICE; fonts, artwork and other assets retain separate terms. ArtCraft branding is excluded; published modified versions must remove it, apart from contribution-only forks. REA use is not established, and no application assets or corpus files were downloaded for this review."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/Cargo.toml",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/docs/target-app-parity.md",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/crates/io/tests/corpus.rs",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/crates/psd/tests/corpus.rs",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/LICENSE-MIT",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/LICENSE-APACHE",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/NOTICE",
+      "https://github.com/storytold/photocraft/blob/5f65579ecb44047c2a619036c18ff273202e1389/docs/brand/LICENSE-brand.txt"
+    ]
+  },
+  {
+    "id": "wordcraft-case",
+    "name": "WordCraft: document workflow reconstruction and bounded DOCX compatibility",
+    "url": "https://github.com/storytold/wordcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe WordCraft as a clean-room Rust implementation of familiar Microsoft Word workflows. It provides its own document model, layout engine and DOCX reader/writer, with desktop and browser interfaces; source tests exercise selected editing and file-preservation behavior.",
+    "description_zh": "作者将 WordCraft 描述为以 Rust 净室重实现熟悉的 Microsoft Word 流程。项目提供自己的文档模型、排版引擎和 DOCX 读写器，以及桌面与浏览器界面；源码测试覆盖选定的编辑与文件保留行为。",
+    "evidence_url": "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinned workspace identifies version 0.7.0 and declares Rust 1.95+ with Cargo. The documented browser build uses Trunk; native builds and faithful layout require the relevant platform dependencies and fonts. The catalog did not build the app or download reference documents.",
+      "The outcome is a document-engine and interaction implementation, not recovery of Microsoft’s source tree or Microsoft 365’s hosted backend. CLI/MCP and control-channel support are automation surfaces, not evidence that REA was used.",
+      "The reviewed DOCX tests use constructed documents and specification-based XML fixtures to check modeled properties and passthrough parts. They do not establish arbitrary-document byte identity or Word-equivalent pagination. The dated assessment against Word for Mac 16.113.4 explicitly says real-world side-by-side file/page comparisons were not performed in that assessment pass.",
+      "The project is alpha. File fidelity, page layout, advanced typography, stability and ecosystem compatibility remain limited; ribbon-command counts and author readiness estimates are not acceptance-test pass rates. No original-versus-rebuilt application test was rerun here.",
+      "Code is MIT OR Apache-2.0 with NOTICE obligations; fonts and other assets retain separate rights, and ArtCraft branding has separate restricted terms. Clean-room is the authors’ characterization, not an independently established process or legal finding; no Microsoft code or assets are provided by this catalog."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/Cargo.toml",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/docs/target-app-parity.md",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/crates/docx/tests/passthrough.rs",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/crates/docx/tests/roundtrip.rs",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/LICENSE-MIT",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/LICENSE-APACHE",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/NOTICE",
+      "https://github.com/storytold/wordcraft/blob/eae242176108d328c5dd81fbc10370c51ab90706/docs/brand/LICENSE-brand.txt"
+    ]
+  },
+  {
+    "id": "gridcraft-case",
+    "name": "GridCraft: spreadsheet workflow reconstruction and XLSX round-trip limits",
+    "url": "https://github.com/storytold/gridcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe GridCraft as a clean-room Rust implementation of Excel-style spreadsheet workflows. A workbook model, formula parser and dependency-driven recalculation are connected to XLSX I/O and a shared editing-command layer for desktop, browser and automation interfaces.",
+    "description_zh": "作者将 GridCraft 描述为以 Rust 净室重实现 Excel 风格的电子表格流程。工作簿模型、公式解析器与依赖驱动的重新计算连接到 XLSX 读写，以及供桌面、浏览器和自动化接口共用的编辑命令层。",
+    "evidence_url": "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinned workspace identifies version 0.7.0 and declares Rust 1.90+ with Cargo. Browser builds use Trunk and wasm32-unknown-unknown; native Linux CI lists X11/Wayland, GTK, fontconfig/FreeType and graphics dependencies. Fonts and input workbooks are separate; no build was run here.",
+      "Reviewed XLSX tests construct workbooks and OOXML packages, compare modeled values after writing and reading, and check selected unmodeled parts and relationships. These checks do not establish arbitrary-workbook byte identity; preserving a connection part is not implementing or refreshing its data source.",
+      "Calculation tests use expected values for selected formulas, dependency changes and spilled arrays. The dated assessment against Excel for Mac 16.113.4 says Excel was not launched and no build or test ran in that assessment pass; it also records the absence of Excel-computed conformance oracles.",
+      "The project remains alpha. Ribbon/function-name counts and readiness estimates are not behavioral-compatibility pass rates. File fidelity, advanced workflows, performance and ecosystem compatibility remain bounded, and the README documents graphics-driver startup issues. No Microsoft source tree or Microsoft 365 backend recovery is established.",
+      "Code is MIT OR Apache-2.0 with NOTICE obligations; optional fonts and ArtCraft branding have separate terms. Published modified versions must remove the ArtCraft marks, except contribution-only forks. Clean-room is the authors’ characterization, not an independently audited process; CLI/MCP support does not establish REA involvement."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/Cargo.toml",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/.github/workflows/ci.yml",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/docs/target-app-parity.md",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/crates/xlsx/src/tests/roundtrip.rs",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/crates/xlsx/src/tests/passthrough_tests.rs",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/crates/calc/src/tests.rs",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/LICENSE-MIT",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/LICENSE-APACHE",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/NOTICE",
+      "https://github.com/storytold/gridcraft/blob/f1894c6da64d4326022ae644c767581816a23c2c/docs/brand/LICENSE-brand.txt"
+    ]
+  },
+  {
+    "id": "deckcraft-case",
+    "name": "DeckCraft: presentation workflow reconstruction and bounded PPTX interchange",
+    "url": "https://github.com/storytold/deckcraft",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "The authors describe DeckCraft as a clean-room Rust implementation of PowerPoint-style presentation workflows. Its slide model, rendering and command layers support desktop/browser editing and PPTX interchange; reviewed source tests check constructed decks and selected preserved package parts.",
+    "description_zh": "作者将 DeckCraft 描述为以 Rust 净室重实现 PowerPoint 风格的演示文稿流程。其幻灯片模型、渲染与命令层支撑桌面／浏览器编辑及 PPTX 交换；所审阅源码测试检查构造的文稿和选定的保留包部件。",
+    "evidence_url": "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The pinned workspace identifies version 0.7.0 and declares Rust 1.95+ with Cargo. Linux source builds need ALSA headers and display/window dependencies; the browser path uses Trunk and wasm32-unknown-unknown. Optional craft-fonts inputs affect rendering, with system-font fallback documented; no application or asset package was downloaded or run here.",
+      "The reviewed PPTX corpus is authored in code, not collected from PowerPoint. Tests check retained text and content-part counts after saving, then part names and text after another save. Separate tests preserve selected XML metadata; they do not prove arbitrary-deck byte identity or original PowerPoint rendering.",
+      "The dated assessment against PowerPoint for Mac 16.113.4 explicitly says rendering fidelity, performance against PowerPoint and end-to-end workflows with real users’ decks were not measured in that assessment. Feature breadth and readiness percentages are checklist counts or author estimates, not acceptance-test pass rates.",
+      "The project is alpha and has documented file-exchange, presentation-workflow, stability and ecosystem gaps. Source snapshots and older assessment rows differ; no complete PowerPoint/Office equivalence, recovery of Microsoft’s authored source or reconstruction of its hosted services is asserted. The catalog did not rerun any original-versus-reimplementation comparison.",
+      "Code is MIT OR Apache-2.0 with NOTICE obligations. Fonts/icons retain separate terms, and NOTICE lists the Symphonia audio decoder under MPL-2.0. ArtCraft marks have restricted terms and must be removed from published modified versions except contribution-only forks. Clean-room remains author-attributed; automation interfaces do not establish REA use."
+    ],
+    "targets": [
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/Cargo.toml",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/.github/workflows/ci.yml",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/apps/deckcraft-web/Trunk.toml",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/docs/target-app-parity.md",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/crates/pptx/tests/corpus.rs",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/crates/pptx/tests/roundtrip.rs",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/crates/pptx/tests/kept_parts.rs",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/LICENSE-MIT",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/LICENSE-APACHE",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/NOTICE",
+      "https://github.com/storytold/deckcraft/blob/1dc69720db64323370dda061226becb09ad79fd4/docs/brand/LICENSE-brand.txt"
+    ]
+  },
+  {
+    "id": "devilutionx-case",
+    "name": "DevilutionX: porting Diablo’s reconstructed engine",
+    "url": "https://github.com/diasurgical/DevilutionX",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Builds a modern Diablo and Hellfire port on the Devilution reconstruction, with platform support, bug fixes and optional quality-of-life features. The project documents the original symbol-assisted reconstruction and includes selected dungeon-generation and saved-game regression checks.",
+    "description_zh": "基于 Devilution 重建成果提供现代平台上的 Diablo 与 Hellfire 移植，加入平台支持、错误修复及可选便利功能。项目记录了早期借助符号信息的重建过程，并包含特定地牢生成与存档回归检查。",
+    "evidence_url": "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Full Diablo play requires the user’s original DIABDAT.MPQ. Hellfire additionally needs hellfire.mpq, hfmonk.mpq, hfmusic.mpq and hfvoice.mpq. The separately offered spawn.mpq supports only the shareware portion; source availability does not supply rights to original game content.",
+      "The pinned source identifies 1.6.0-dev and requires CMake 3.22 and C++23. SDL2 is the default, with separate SDL1/SDL3 options; build documentation lists platform-dependent libraries and packaging steps. This is a source snapshot, not a tested release.",
+      "The background describes Devilution’s use of PlayStation debug symbols, assertion strings, compiler information and assembly comparisons. Its historical binary-matching milestone does not establish that the current cross-platform port, with intentional fixes and enhancements, is byte-identical to the original executable.",
+      "The reviewed timedemo test replays a warrior’s level-1-to-2 session and compares saved hero state; it skips without MPQ data and explicitly selects shareware mode. Separate dungeon tests compare seeded fixtures. These are bounded regression checks, not a complete original-versus-port equivalence result; none was run here.",
+      "The root LICENSE.md declares Sustainable Use License 1.0: use/modification is limited to internal business purposes, non-commercial use or personal use, while distribution must be free and non-commercial. Components and original game data retain separate terms.",
+      "The same snapshot retains conflicting Public Domain wording in the Windows package README and Unlicense metadata in the Apple bundle configuration. Those notices are recorded without treating the complete current project as permissively licensed or resolving the conflict. The reviewed sources do not establish REA or coding-agent involvement."
+    ],
+    "targets": [
+      "game"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/docs/BACKGROUND.md",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/VERSION",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/CMakeLists.txt",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/docs/building.md",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/test/timedemo_test.cpp",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/test/drlg_l1_test.cpp",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/LICENSE.md",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/Packaging/windows/README.txt",
+      "https://github.com/diasurgical/DevilutionX/blob/94433061f847d22863e5d705c398f7c13d7bab85/Packaging/resources/README-SDL.txt"
+    ]
+  },
+  {
+    "id": "thinkpad-imx471-camera-case",
+    "name": "ThinkPad IMX471: recovering camera tuning for Linux",
+    "url": "https://github.com/cschalle/mipi-fixes-x1-aura",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Recovers selected camera-tuning structures from an Intel Windows driver package and uses them to repair Linux image capture on one ThinkPad model. Public CPFF/AIQB parsers, kernel patches and libcamera changes accompany the author’s Claude-assisted investigation and bounded before/after measurements.",
+    "description_zh": "从 Intel Windows 驱动包中恢复选定的相机调校结构，用于修复一个 ThinkPad 型号在 Linux 下的图像采集。公开的 CPFF／AIQB 解析器、内核补丁及 libcamera 修改，配有作者报告的 Claude 辅助调查和有限范围的前后测量。",
+    "evidence_url": "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed target is a Lenovo ThinkPad X1 Carbon Gen 14 (Aura Edition), with a Sony IMX471 sensor behind Intel IPU7. The author tested Fedora 44 kernel 7.2.8 and a libcamera 0.7.1 backport. The published kernel package omits BTF/debug information and is described as a test kernel, not a daily-driver recommendation.",
+      "The Python 3 analysis tools use NumPy and assume a 1928x1088 RG10 stream with a 3904-byte stride. Some scripts embed the author’s local layout and need path adaptation. Repeating the tuning analysis requires the corresponding vendor driver-package data or device captures; these are separate inputs, not original-driver source recovered by this project.",
+      "The author’s controlled low-light comparison holds 400 frames for convergence and reports frame brightness rising from 31.1 to 90.9. The test record describes crop-selection, colour-bar and analogue-gain checks on the affected device. Its 46/46 v4l2-compliance passes occurred before and after the crop fix, so that pass count alone did not detect the defect. These measurements were not reproduced by this collection.",
+      "The work adds three kernel fixes plus lens-shading and white-balance-statistics changes to an existing Linux driver and software ISP. Low-light blue remains about 17% short, an 18.8 ms exposure ceiling is not fixed here, and the second IR camera is outside scope. It does not recover the entire Windows driver, emulate the laptop or establish compatibility across camera models.",
+      "The dated investigation includes corrected and withdrawn hypotheses; its final README and test record should not be replaced by earlier intermediate claims. The patch cover letter attributes Claude assistance and hardware checking to the author. The later blog reports submission/review activity, not a verified upstream merge; REA use is not established.",
+      "No top-level project license is present at the pinned revision. Newly added libcamera implementation files in the patch declare LGPL-2.1-or-later, and the tuning-data section declares CC0-1.0; these are component notices, not a blanket license for every script or vendor-derived input. Existing kernel/libcamera code and vendor materials retain their separate terms."
+    ],
+    "targets": [
+      "firmware"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/WINDOWS-DRIVER.md",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/findings/TESTING.md",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/kernel/README.md",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/libcamera/README.md",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/kernel/patches/0000-cover-letter.patch",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/libcamera/patches/libcamera-lsc-0.7.1.patch",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/tools/aiqb.py",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/tools/gen-tuning.py",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/rpms/README.md",
+      "https://blogs.gnome.org/uraeus/2026/10/15/aiandreverseengineerhardware/",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/tools/README.md",
+      "https://github.com/cschalle/mipi-fixes-x1-aura/blob/533d995b7acbd6965e5b0b85c97f8bafab9fed4e/tools/raw.py"
+    ]
+  },
+  {
+    "id": "rauchg-rsc-reconstruction-case",
+    "name": "rauchg.com: rebuilding an RSC blog from captured Flight output",
+    "url": "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Documents a website-rebuild-skill case that decodes browser-delivered React Server Component Flight streams, reconstructs a buildable Next project and compares its output with a captured site. The reported rauchg.com campaign uses route-tree comparison and module-reference mapping; the new server source is inferred from observable output.",
+    "description_zh": "记录 website-rebuild-skill 的一个案例：解码浏览器收到的 React 服务端组件 Flight 流，重建可构建的 Next 项目，再与捕获站点的输出比较。作者报告的 rauchg.com 重建过程采用路由树比较与模块引用映射；新服务端源码由可观察输出推断。",
+    "evidence_url": "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/rsc-reconstruction.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The documented rauchg.com snapshot used Next 16.1.1, Turbopack and React 19 canary. The tooling requires Node.js 22+ and a local Chrome/Chromium for comparison; some stages invoke version-pinned external tools. Repeating the method needs an authorized target snapshot and a separately built reconstruction, not just the skill repository.",
+      "Flight decoding exposes delivered element trees, route state and client-module references. The reconstructed server-component source is explicitly an inference from that output; flight-to-mdx also needs site-specific shape/link adaptations. This is not extraction of undistributed server source or automatic recovery of an arbitrary Next.js application.",
+      "The author reports 18/18 routes passing a Flight semantic gate and a runtime sweep for this case. The gate compares normalized trees and enforces a global module-ID bijection. It normalizes build-hash namespaces and selected encoding differences; configured prop/class exclusions can omit registered fields or subtrees. A pass is not byte identity or full behavioral equivalence.",
+      "The gate does not check CSS, so layout, fonts and rendered pixels need separate comparisons. Public synthetic self-tests include changed-text rejection and rejection of a one-to-many module mapping. This review inspected those checks as source and did not run them or reproduce the reported website campaign.",
+      "The method explicitly leaves unobserved error responses, database/write paths, server caches, dynamic-image generator source and unlinked routes unresolved. Historical public-source comparisons and reported reconstruction percentages do not prove access to hidden backend logic; the author also notes possible model-training familiarity with a nominally blind target.",
+      "MIT applies to the skill and tooling, not to reconstructed websites, their scripts, fonts or other assets. The source documents separate authorization/publication decisions and private, noindex output defaults. No original-site assets or model payloads were downloaded, and no browser session or upstream script was run in this review."
+    ],
+    "targets": [
+      "website"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/README.en.md",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/references/case-studies/rsc-reconstruction.md",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/scripts/flight-decode.mjs",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/scripts/verify-flight.mjs",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/skills/website-rebuild/tools/flight-to-mdx.mjs",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/selftest/run.mjs",
+      "https://github.com/boyang-hu/website-rebuild-skill/blob/ac60c9d8a2ab40045a89b5403c3457f1404e92b3/LICENSE"
+    ]
+  },
+  {
+    "id": "njfe-ear-camera-bridge-case",
+    "name": "NJFE: a Soulear camera protocol bridge for desktop inspection",
+    "url": "https://github.com/WildweaselMS/NJFE",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Reuses otoscope's reverse-engineered i4season/Soulear protocol in an ESP32-C3 bridge and Python desktop viewer. The author credits Claude Code for implementation and reports streaming one Hopefox Find T to a Windows PC, with recording, orientation and LED controls.",
+    "description_zh": "在 ESP32-C3 桥接器与 Python 电脑查看器中复用 otoscope 经逆向得到的 i4season／Soulear 协议。作者将实现归功于 Claude Code 辅助，报告把一台 Hopefox Find T 的视频传到 Windows 电脑，并提供录像、方向调整及 LED 控制。",
+    "evidence_url": "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The input is the camera's Wi-Fi i4season/Soulear UDP traffic. An ESP32-C3 SuperMini with the documented 0.42-inch, 72×40 SSD1306 OLED reassembles JPEG frames and forwards them with accelerometer metadata over custom USB CDC serial to the supplied Python viewer. This is not a UVC webcam output; the camera's own USB port is described as charge-only. No vendor-camera firmware or complete companion-app source is recovered.",
+      "The documented build uses PlatformIO espressif32 6.11.0, Arduino core 2.0.17 and U8g2 ^2.35.30. The desktop tools require Python with Tkinter plus pyserial >=3.5, opencv-python >=4.8, NumPy >=1.24 and Pillow >=12.3.0. The project reports Windows testing; it does not establish support for every desktop OS or compatible-looking ear camera.",
+      "The README and NOTICE credit rbeilvert/otoscope by rubec for the packet format, commands, frame assembly and accelerometer/rotation logic. That project documents reverse engineering Soulear's libWifiCamera.so. NJFE reports Claude Code assistance across research, implementation, tools and documentation, with the human supplying hardware, decisions and device testing. This does not establish Claude as the original protocol discoverer, or any REA involvement; NJFE does not pin the exact otoscope revision it borrowed.",
+      "The author reports one Hopefox Find T with HKV41B firmware, 480×480 JPEG at about 17 fps, plus photos, MJPG AVI recording, rotation and LED control. The public --test N viewer mode receives and decodes N live frames, saves the last image and prints frame rate; it needs the hardware. The reviewed tree has no separate offline conformance-fixture suite. These reports and source-level framing checks do not establish full protocol compatibility; this collection did not run the tools or reproduce the hardware result.",
+      "The camera network remains open and unauthenticated. SECURITY.md states that the bridge accepts UDP traffic without source authentication and can receive injected images or replies; serial access is trusted and recordings are stored unencrypted. A local USB bridge does not remove these camera-network limitations. The project describes an inspection tool, not a medical device for diagnosis or treatment.",
+      "NJFE declares GPL-3.0-or-later in its README, NOTICE and REUSE metadata, and identifies protocol code and roll calculation derived from GPL otoscope. Third-party build/runtime libraries retain their own licenses. Public source review does not grant rights to vendor software or images; no proprietary app, firmware binary, image capture, device or upstream runtime was used in this review."
+    ],
+    "targets": [
+      "protocol"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/NOTICE",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/REUSE.toml",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/LICENSE",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/SECURITY.md",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/wifi_scanner/platformio.ini",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/wifi_scanner/tools/requirements.txt",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/wifi_scanner/src_i4season/main.cpp",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/wifi_scanner/tools/viewer.py",
+      "https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/wifi_scanner/tools/gui.py",
+      "https://github.com/rbeilvert/otoscope/blob/d14ac8e368854146ded4f3347614a24539e6696a/README.md",
+      "https://github.com/rbeilvert/otoscope/blob/d14ac8e368854146ded4f3347614a24539e6696a/app/src/main/kotlin/dev/rubec/otoscope/stream/i4season/I4seasonProtocol.kt",
+      "https://github.com/rbeilvert/otoscope/blob/d14ac8e368854146ded4f3347614a24539e6696a/app/src/main/kotlin/dev/rubec/otoscope/stream/i4season/FrameAssembler.kt"
+    ]
+  },
+  {
+    "id": "baocut-slides-editor-case",
+    "name": "BaoCut Slides: adapting an interactive web editor",
+    "url": "https://github.com/JimLiu/baocut/tree/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "description_en": "Documents BaoCut’s interactive slide editor, whose author says the implementation draws on Claude Slides. It adds a local deck store, HTML/CSS compiler and annotation-to-agent bridge for browser and desktop hosts; the design reports a Web-flow check, without establishing original backend recovery or full behavioral parity.",
+    "description_zh": "记录 BaoCut 交互式幻灯片编辑器，作者称其实现借鉴自 Claude Slides。它为浏览器与桌面宿主加入本地文稿存储、HTML/CSS 编译器及标注到智能体的桥接；设计说明报告了 Web 流程检查，但未确立原有后端恢复或完整行为一致性。",
+    "evidence_url": "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/docs/design/slides/slides-design.md",
+    "verified_at": "2026-10-17",
+    "verification": "source-reviewed",
+    "requirements": [
+      "This entry covers the pinned Slides component, whose author says the implementation draws on Claude Slides, not the whole BaoCut product. It contains an editor runtime, a restricted HTML/CSS slide compiler and a new BaoCut host. Decks use a v4 deck.json index, per-slide HTML and local assets. The reviewed design/runtime notes do not identify the exact Claude Slides release or extraction record; they do not establish a clean-room process or recovery of Anthropic’s original hosted backend.",
+      "Building the editor requires Node.js >=22.12.0, npm workspace dependencies and the apps/slides-editor build; a BaoCut Runtime/host supplies file, annotation and download capabilities. The runtime declares React ^19.3.0 and PptxGenJS 3.12.0 with project patches. Full BaoCut source builds also require Rust/Cargo, CMake and platform C++ tools; Apple Silicon native inference needs full Xcode/Metal. Agent-driven deck creation requires a configured agent engine such as Codex CLI or Claude Code, with its own account and service terms.",
+      "The documented implementation is single-user and file-backed: it supports local saves with version/conflict checks, asset routes and external-change notifications. Conflict checks precede writes; individual-file writes do not establish whole-batch transactional rollback. Shared rooms/presence, share links, persistent comment threads and sending to Google Drive/Google Slides are explicitly out of scope. External updates may reload the editor and lose selection/scroll position. Export code exists, but the design still places PPTX/PDF downloads in P1; these documents do not establish complete export compatibility.",
+      "The design note reports end-to-end Web annotation validation and explicitly says Electron was not tested for that flow. Published tests exercise local file publication/conflicts, HTTP read/write boundaries and annotation forwarding; some host tests use fake fetch and agent-harness tests use a fake driver. HTML/CSS compiler and round-trip checks are skipped when the built compiler is unavailable. These are implementation tests, not an original-Claude differential oracle or proof of full visual/behavioral parity; this collection did not run them.",
+      "The root BaoCut Community License 1.0 is source-available: it permits stated personal/internal uses and content creation, while commercialization of the software/code or commercial hosting needs a separate license. Third-party components keep their own terms, including the documented PptxGenJS MIT and embedded mediabunny MPL-2.0 notices. Those dependency notices do not establish reuse rights in any reused Claude material or the bundled icon font; the runtime notes say that font needs replacement. This source review does not supply such rights or treat the whole component as permissively open source.",
+      "BaoCut documents agent-assisted creation and annotation workflows, but the reviewed case sources do not establish which model produced the adaptation or any REA involvement. Support for Claude Code/Codex as agent engines is not evidence of the reconstruction method. Use independently authorized slide content and respect external asset/font terms. This review inspected pinned source and test definitions without running the app, models or checks, or retrieving bundled fonts, media or application packages."
+    ],
+    "targets": [
+      "website",
+      "app"
+    ],
+    "kind": "case-study",
+    "additional_evidence_urls": [
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime/README.md",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/LICENSE",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/THIRD_PARTY_NOTICES.md",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/package.json",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides-runtime/package.json",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/apps/slides-editor/build.mjs",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-store.ts",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-store.test.ts",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-routes.test.ts",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/deck-check.test.ts",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/slides/src/editor/editor-host.test.ts",
+      "https://github.com/JimLiu/baocut/blob/b8585e0c8d7a82bdee9f0ed019cf6edb075e41c1/packages/harness/src/slide-annotations.test.ts"
+    ]
+  },
+  {
     "id": "lasrecomp",
     "name": "LASRecomp: Link’s Awakening static recompilation",
     "url": "https://github.com/peiikai/LASRecomp",
