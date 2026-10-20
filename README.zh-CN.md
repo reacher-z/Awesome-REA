@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 490](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 206](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 491](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 206](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (193) · [应用](#app) (77)
-- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (23) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (24) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -498,6 +498,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Sony-PMCA-RE Sony 数码相机逆向工具**](https://github.com/ma1co/Sony-PMCA-RE) - 基于逆向 Sony 数码相机而开发的 USB 工具。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/sony-pmca-re/)</sub>
 - [**cpu\_rec CPU 指令集统计识别工具**](https://github.com/airbus-seclab/cpu_rec) - 对任意二进制文件（例如来历不明的固件镜像）中的 CPU 指令集进行统计识别：把字节的马尔可夫链统计与默认语料库比较，语料库涵盖数十种架构，从 6502、8051 到 ARM、MIPS、PowerPC、RISC-V、x86-64 和 WebAssembly。 <sub>工具 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/cpu-rec/)</sub>
 - [**ME Analyzer Intel 引擎与图形固件分析工具**](https://github.com/platomav/MEAnalyzer) - 解析 Intel 管理引擎 (CS)ME、TXE 和 SPS 固件、图形系统控制器（GSC）固件，以及与之配套的独立 PMC、PCHC、PHY 和 Option ROM 镜像，报告系列、版本、发布类型、SKU、平台、大小和健康状态。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/me-analyzer/)</sub>
+- [**Quarkslab Titan M 安全芯片研究工具**](https://github.com/quarkslab/titanm) - Quarkslab 发布的 Google Pixel 手机 Titan M 安全芯片研究工具：包括用于 Titan M（Citadel）固件文件的 Ghidra 加载器；可在 Android 上跟踪并发送芯片基于 protobuf 的命令的 nosclient，内含基于 libprotobuf-mutator 的黑盒模糊测试器；sigrok SPI 抓包解析器；以及把固件镜像转换为芯片 SPI rescue 功能所用 rec 文件的脚本。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/quarkslab-titanm-tools/)</sub>
 
 <a id="protocol"></a>
 ### Protocol · 协议

@@ -11727,5 +11727,41 @@
       "https://github.com/jonaswagnr/ix500-scan/blob/24a5f7c89fc6d0c35a4d83d0879348ced153844a/LICENSE",
       "https://github.com/bramheerink/scansnap/blob/5706688db58f45a4d3db239de6e2e93bab36bb0f/LICENSE"
     ]
+  },
+  {
+    "id": "quarkslab-titanm-tools",
+    "name": "Titan M tools (Quarkslab)",
+    "url": "https://github.com/quarkslab/titanm",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Tools Quarkslab published from its research on Google's Titan M security chip in Pixel phones: a Ghidra loader for Titan M (Citadel) firmware files, nosclient for tracing and sending the chip's protobuf-based commands from Android with a black-box fuzzer built on libprotobuf-mutator, a parser for sigrok SPI captures, and scripts that convert firmware images to the rec files of the chip's SPI rescue feature. The repository also holds the Black Hat Europe 2021 white paper and slides, the ROOTS'21 paper and the Black Hat USA 2022 slides, which describe reverse engineering the firmware, sniffing its SPI communication with the application processor, and black-box and emulation-based fuzzing; the authors say the vulnerabilities they found were disclosed to Google.",
+    "description_zh": "Quarkslab 发布的 Google Pixel 手机 Titan M 安全芯片研究工具：包括用于 Titan M（Citadel）固件文件的 Ghidra 加载器；可在 Android 上跟踪并发送芯片基于 protobuf 的命令的 nosclient，内含基于 libprotobuf-mutator 的黑盒模糊测试器；sigrok SPI 抓包解析器；以及把固件镜像转换为芯片 SPI rescue 功能所用 rec 文件的脚本。仓库还收录 Black Hat Europe 2021 白皮书与幻灯片、ROOTS'21 论文和 Black Hat USA 2022 幻灯片，介绍固件逆向、嗅探芯片与应用处理器之间的 SPI 通信，以及黑盒与基于仿真的模糊测试；作者称所发现的漏洞均已向 Google 披露。",
+    "evidence_url": "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A research release with no tags or packages: the last commit, on 2022-08-22, added the Black Hat USA 2022 slides two days after nosclient was updated for that talk. The emulation-based fuzzer those slides describe is not in the repository, and no Titan M firmware images, Boot ROM dumps or keys are committed.",
+      "Firmware files must come from the analyst's own Pixel device; the white paper notes that Titan M first shipped with the Pixel 3. Sending commands with nosclient needs root access on the device, as the white paper explains, and the SPI parser expects a sigrok CSV export of the analyst's own capture.",
+      "citadelimgloader builds with Gradle against a local Ghidra installation named by GHIDRA_INSTALL_DIR; no supported Ghidra version is stated. nosclient builds with CMake for Linux, for Android arm64 with the NDK, or in the provided Debian 10 Docker image with NDK r21e, after the libnos (AOSP), protobuf, libprotobuf-mutator and sqlite submodules are initialized.",
+      "The ROOTS'21 paper reports that the black-box fuzzer rediscovered several known vulnerabilities within seconds and found a new one in the then-latest firmware; these are the authors' results on their own devices. The README says the toolkit also contains an exploit for a known vulnerability; this entry describes only the analysis tooling.",
+      "LICENSE is Apache-2.0. The fuzzer bundles a generated libradamsa.c without its own license notice, the client includes protobuf sources generated from the nugget/app message definitions and small KeyMint enum headers, and the presentation PDFs state no license. No tool was built or run, and the sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/citadelimgloader/README.md",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/nugget_toolkit/README.md",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/nugget_toolkit/fuzzer/README.md",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/nugget_toolkit/Dockerfile",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/bin2rec/Readme.md",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/.gitmodules",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/BHEU_2021/EU-21-Rossi_Bellom-2021_A_Titan_M_Odyssey-wp.pdf",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/ROOTS/DamianoMelotti_ReversingAndFuzzingTheGoogleTitanMChip_paper.pdf",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/BHUSA_2022/Titan_BHUSA.pdf",
+      "https://github.com/quarkslab/titanm/blob/7b6c2524600185a819b3f7b0113f258bcf0ff36a/LICENSE"
+    ]
   }
 ]

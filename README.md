@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 490](https://img.shields.io/badge/resources-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 491](https://img.shields.io/badge/resources-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 206](https://img.shields.io/badge/cases-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (193) · [App](#app) (77)
-- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -497,6 +497,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Sony-PMCA-RE**](https://github.com/ma1co/Sony-PMCA-RE) - USB tool built from reverse engineering Sony digital cameras. <sub>Tool · Also: Protocol · [Full entry](https://awesomerea.org/resources/sony-pmca-re/)</sub>
 - [**cpu\_rec**](https://github.com/airbus-seclab/cpu_rec) - Statistically recognize the CPU instruction set in an arbitrary binary file, such as an unknown firmware image, by comparing Markov-chain byte statistics with a default corpus covering dozens of architectures, from 6502 and 8051 to ARM, MIPS, PowerPC, RISC-V, x86-64 and WebAssembly. <sub>Tool · Also: Binary · [Full entry](https://awesomerea.org/resources/cpu-rec/)</sub>
 - [**ME Analyzer**](https://github.com/platomav/MEAnalyzer) - Parse Intel Management Engine (CS)ME, TXE and SPS firmware, Graphics System Controller firmware and their independent PMC, PCHC, PHY and option-ROM images to report family, version, release, SKU, platform, size and health status. <sub>Tool · [Full entry](https://awesomerea.org/resources/me-analyzer/)</sub>
+- [**Titan M tools (Quarkslab)**](https://github.com/quarkslab/titanm) - Tools Quarkslab published from its research on Google's Titan M security chip in Pixel phones: a Ghidra loader for Titan M (Citadel) firmware files, nosclient for tracing and sending the chip's protobuf-based commands from Android with a black-box fuzzer built on libprotobuf-mutator, a parser for sigrok SPI captures, and scripts that convert firmware images to the rec files of the chip's SPI rescue feature. <sub>Tool · Also: Protocol · [Full entry](https://awesomerea.org/resources/quarkslab-titanm-tools/)</sub>
 
 <a id="protocol"></a>
 ### Protocol
