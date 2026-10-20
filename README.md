@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 462](https://img.shields.io/badge/resources-462-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 463](https://img.shields.io/badge/resources-463-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (41) · [References and Learning](#references-and-learning) (31)
+- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (42) · [References and Learning](#references-and-learning) (31)
 
 **More ways to browse**
 
@@ -2649,6 +2649,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Plugin pipeline for matching decompilation that loops over functions in an existing decomp project: m2c drafts C, decomp-permuter mutates it, Claude rewrites it through a compile-and-diff tool, and objdiff accepts a result only when the compiled object matches the target assembly. A local Decomp Atlas web app indexes matched and unmatched functions with call graphs and code embeddings, helps pick the next function and builds prompts, while HTML reports summarise each run. An optional integrator places matched C into a git worktree, checks the build and can commit, push or open a PR.
 
   Integration · Independent agent · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/mizuchi-matching-decompilation-pipeline/)
+
+- [**ReAgent**](https://github.com/Dryxio/reagent)
+
+  An open-source Python agent, published on PyPI as auto-re-agent, that drafts C/C++ implementations of functions in a compiled program from Ghidra evidence and has a separately configurable checker model review each draft in a bounded fix loop. A candidate is accepted only after a structural comparison with the decompile, assembly, control-flow and P-code evidence, the project’s own build, test and optional differential commands, and 11 heuristic parity signals. The README calls these gates conservative evidence, not proof of equivalence, and the tool writes candidates to an overlay rather than patching the source tree.
+
+  Integration · Independent agent · Targets: Game, Binary · [Requirements & evidence](https://awesomerea.org/resources/reagent-cpp-reconstruction-agent/)
 
 <a id="related-collections"></a>
 ### Related Collections

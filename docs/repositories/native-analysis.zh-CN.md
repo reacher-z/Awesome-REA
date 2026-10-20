@@ -45,7 +45,7 @@
 - [plasma-disassembler/plasma](https://github.com/plasma-disassembler/plasma) — Plasma 是面向 x86/ARM/MIPS 的交互式反汇编器，可生成带缩进和语法着色的伪代码。 **[3,071 星标]**
 - [uxmal/reko](https://github.com/uxmal/reko) — Reko 是一款二进制反编译器。 **[2,617 星标]** · 精选：[Reko 通用反编译器](https://awesomerea.org/zh/resources/reko/)
 - [BinaryAnalysisPlatform/bap](https://github.com/BinaryAnalysisPlatform/bap) — 二进制分析平台。 **[2,262 星标]** · 精选：[BAP 二进制分析平台](https://awesomerea.org/zh/resources/bap/)
-- [Dryxio/reagent](https://github.com/Dryxio/reagent) — 利用 AI 从已编译程序中重建并验证 C/C++ 代码。 **[2,100 星标]**
+- [Dryxio/reagent](https://github.com/Dryxio/reagent) — 利用 AI 从已编译程序中重建并验证 C/C++ 代码。 **[2,100 星标]** · 精选：[ReAgent C/C++ 函数重建智能体](https://awesomerea.org/zh/resources/reagent-cpp-reconstruction-agent/)
 - [KasperskyLab/hrtng](https://github.com/KasperskyLab/hrtng) — 功能丰富的 IDA Pro 插件，支持解密、去混淆、打补丁、库代码识别及各种伪代码转换。 **[1,949 星标]** · 精选：[hrtng IDA 反编译增强插件](https://awesomerea.org/zh/resources/hrtng/)
 - [yetone/native-feel-skill](https://github.com/yetone/native-feel-skill) — 用于设计具有原生体验的跨平台桌面应用的智能体技能，提炼自对 Raycast 2.0 的深入研究与 Raycast Beta.app 的逆向分析。包含八项架构原则、四层架构、WebKit/WebView2 生存指南和 75 项发布审核清单。 **[1,931 星标]**
 - [airbus-seclab/bincat](https://github.com/airbus-seclab/bincat) — 集成 IDA 的二进制代码静态分析器，可执行值分析、污点分析、类型重建、释放后使用及重复释放检测。 **[1,880 星标]** · 精选：[BinCAT 二进制静态分析工具包](https://awesomerea.org/zh/resources/bincat/)
