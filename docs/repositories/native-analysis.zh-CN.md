@@ -191,7 +191,7 @@
 - [yukiarrr/Il2cppSpy](https://github.com/yukiarrr/Il2cppSpy) — Unity IL2CPP 反汇编器，适用于 APK。 **[360 星标]**
 - [trailofbits/CoBRA](https://github.com/trailofbits/CoBRA) — 基于系数的算术重建：用于去混淆的混合布尔算术（MBA）表达式化简工具。 **[355 星标]**
 - [rcx/classinformer-ida7](https://github.com/rcx/classinformer-ida7) — 为 IDA Pro 7.0 向后移植的 ClassInformer。 **[354 星标]**
-- [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer 插件。 **[350 星标]**
+- [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer 插件。 **[350 星标]** · 精选：[Class Informer MSVC RTTI 类信息插件](https://awesomerea.org/zh/resources/class-informer/)
 - [patois/abyss](https://github.com/patois/abyss) — abyss：增强 Hex-Rays 反编译器输出。 **[349 星标]**
 - [ret42/RE-Thing](https://github.com/ret42/RE-Thing) — 逆向工程工具，包括去混淆、反编译等。 **[348 星标]**
 - [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — Super NES ROM 反汇编器。 **[343 星标]**

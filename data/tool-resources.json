@@ -11254,5 +11254,34 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "class-informer",
+    "name": "Class Informer",
+    "url": "https://github.com/kweatherman/IDA_ClassInformer_PlugIn",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDA Pro plugin that scans Microsoft Visual C++ binaries for virtual function tables (vftables) through their C++ run-time type information (RTTI), names, labels and comments the vftables it finds, defines the RTTI data structures and identifies single, multiple and virtual inheritance in each class hierarchy. It also processes static initializer and terminator tables, and opens a list window of the vftables with their method counts and class hierarchies, where each line jumps to its vftable. Its author notes that IDA 9's built-in RTTI plugin now finds nearly all of this data, so the current version only sets types that IDA missed and serves mainly as a gathering and browsing view.",
+    "description_zh": "一款 IDA Pro 插件，借助 C++ 运行时类型信息（RTTI）扫描 Microsoft Visual C++ 编译的二进制中的虚函数表（vftable），为找到的虚函数表命名、添加标签和注释，定义 RTTI 数据结构，并识别各类层次结构中的单继承、多继承和虚继承。它还会处理静态初始化与终止函数表，并打开一个列表窗口，显示各虚函数表的方法数量和类层次结构，点击任一行即可跳转到对应的虚函数表。作者指出，IDA 9 内置的 RTTI 插件现已能找到几乎全部此类数据，因此当前版本只为 IDA 遗漏的结构设置类型，主要用作汇总和浏览视图。",
+    "evidence_url": "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/blob/dfb865248d38684d06bf0e53799430b068a5d2d0/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v6.0.3, published 2026-08-04, which tags the reviewed master commit and attaches a zip holding a single Windows plugin DLL; its notes describe it as a fix for IDA 9.4, and a September 2025 commit had updated the plugin for IDA 9.2 and Qt 6. The plugin loads only for x86/x64 (metapc) databases.",
+      "The README's IDA 9.4 note says the plugin flags had to change before IDA would recognize the plugin, which broke loading it through plugins.cfg, so the Alt-2 hotkey is now built in and the plugin also runs from Edit > Plugins. The installation steps still name an older Class_Informer.plw file, and the plugins.cfg arguments the README gives for turning off the demoscene-style intro and its music predate that note.",
+      "Source builds need Windows and Visual Studio 2022 (v143 toolset) with Qt 6 for MSVC 2022 x64 and the Qt Visual Studio tools, the IDA SDK inside the IDA directory, and the author's separate IDA_Support repository and libxmp, neither of which is in this repository. There is no CI and there are no tests. The analyst supplies the IDA database; the README says the plugin is tailored to MSVC-compiled binaries and results with other compilers may be unpredictable.",
+      "The README states the MIT License, but the repository has no separate license file; according to the README, the tracker module in res is used with the permission of its composer, Drax. Nothing was built, installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/blob/dfb865248d38684d06bf0e53799430b068a5d2d0/Main.cpp",
+      "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/blob/dfb865248d38684d06bf0e53799430b068a5d2d0/RTTI.cpp",
+      "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/blob/dfb865248d38684d06bf0e53799430b068a5d2d0/IDA_ClassInformer_PlugIn.vcxproj",
+      "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/commit/7c2b5d86f89b2eaed934592bbf87cc7aac5e6bc7",
+      "https://github.com/kweatherman/IDA_ClassInformer_PlugIn/releases/tag/v6.0.3"
+    ]
   }
 ]

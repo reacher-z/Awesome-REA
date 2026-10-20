@@ -191,7 +191,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [yukiarrr/Il2cppSpy](https://github.com/yukiarrr/Il2cppSpy) — Unity IL2CPP Disassembler (for apk) **[360 stars]**
 - [trailofbits/CoBRA](https://github.com/trailofbits/CoBRA) — Coefficient-Based Reconstruction of Arithmetic — a Mixed Boolean-Arithmetic (MBA) expression simplifier for deobfuscation **[355 stars]**
 - [rcx/classinformer-ida7](https://github.com/rcx/classinformer-ida7) — ClassInformer backported for IDA Pro 7.0 **[354 stars]**
-- [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer PlugIn **[350 stars]**
+- [kweatherman/IDA\_ClassInformer\_PlugIn](https://github.com/kweatherman/IDA_ClassInformer_PlugIn) — IDA ClassInformer PlugIn **[350 stars]** · Curated: [Class Informer](https://awesomerea.org/resources/class-informer/)
 - [patois/abyss](https://github.com/patois/abyss) — abyss - augmentation of Hexrays decompiler output **[349 stars]**
 - [ret42/RE-Thing](https://github.com/ret42/RE-Thing) — Reverse Engineering Tools (deobf, decompiler etc..) **[348 stars]**
 - [DizTools/DiztinGUIsh](https://github.com/DizTools/DiztinGUIsh) — A Super NES ROM Disassembler **[343 stars]**
