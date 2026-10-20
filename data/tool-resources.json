@@ -11254,5 +11254,35 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ghidra-ninja-scripts",
+    "name": "Ghidra Ninja ghidra_scripts",
+    "url": "https://github.com/ghidraninja/ghidra_scripts",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Thomas Roth's (Ghidra Ninja) collection of Ghidra Python scripts, which appear under a Ghidra Ninja category in the Script Manager. binwalk.py and yara.py run binwalk or bundled YARA crypto-constant rules over the loaded program and bookmark the findings, YaraSearch.py does the same with a rule file the user chooses, swift_demangler.py demangles Swift function names, golang_renamer.py restores function names in stripped Go binaries from the .gopclntab table, and export_gameboy_rom.py writes a working ROM back out of a Game Boy program imported with GhidraBoy.",
+    "description_zh": "Thomas Roth（Ghidra Ninja）编写的 Ghidra Python 脚本合集，脚本会出现在 Script Manager 的 Ghidra Ninja 分类下。binwalk.py 和 yara.py 对已加载的程序运行 binwalk 或自带的 YARA 密码常量规则，并为发现的结果添加书签；YaraSearch.py 则使用用户选择的规则文件完成同样的工作；swift_demangler.py 还原 Swift 函数名；golang_renamer.py 依据 .gopclntab 表恢复去符号 Go 二进制中的函数名；export_gameboy_rom.py 可将用 GhidraBoy 导入的 Game Boy 程序重新导出为可运行的 ROM。",
+    "evidence_url": "https://github.com/ghidraninja/ghidra_scripts/blob/99f2a8644a29479618f51e2d4e28f10ba5e9ac48/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the last commit is a merge from 2020-10-07. Open issues filed between 2020 and 2025 report problems including golang_renamer data-type errors, a binwalk.py temporary-file error and an out-of-memory failure, with no later commits.",
+      "Installed by adding the checked-out repository as a script directory in Ghidra's Script Manager. The scripts are Python 2 code for Ghidra's Jython interpreter, and the README names no supported Ghidra version. binwalk.py, yara.py and YaraSearch.py need binwalk or yara on PATH, swift_demangler.py needs the swift toolchain, and export_gameboy_rom.py needs the GhidraBoy extension.",
+      "Input is a program the analyst has loaded into Ghidra; export_gameboy_rom.py works on a Game Boy ROM the user imported, and an open issue says it fails for single-page ROMs. golang_renamer.py only searches for the .gopclntab header used before Go 1.16, and an open issue asks for Go 1.16 support. YARA and binwalk hits are signature matches for analyst review.",
+      "GPL-3.0 (LICENSE). The README says the bundled yara-crypto.yar rules are licensed under GPLv2, with an added SHA256 rule credited to @phoul, and credits golang_renamer.py as a port of George Zaytsev's go_renamer.py. No script was run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ghidraninja/ghidra_scripts/blob/99f2a8644a29479618f51e2d4e28f10ba5e9ac48/golang_renamer.py",
+      "https://github.com/ghidraninja/ghidra_scripts/blob/99f2a8644a29479618f51e2d4e28f10ba5e9ac48/YaraSearch.py",
+      "https://github.com/ghidraninja/ghidra_scripts/blob/99f2a8644a29479618f51e2d4e28f10ba5e9ac48/yara-crypto.yar",
+      "https://github.com/ghidraninja/ghidra_scripts/blob/99f2a8644a29479618f51e2d4e28f10ba5e9ac48/LICENSE",
+      "https://github.com/ghidraninja/ghidra_scripts/issues/12",
+      "https://github.com/ghidraninja/ghidra_scripts/issues/19"
+    ]
   }
 ]

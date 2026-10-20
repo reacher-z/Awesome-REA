@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ghidra-ninja-scripts": {
+    "name": "Ghidra Ninja Ghidra 脚本合集",
+    "requirements": [
+      "没有发布版本或标签；最后一次提交是 2020-10-07 的合并。2020 年至 2025 年间提交的未关闭 issue 报告了 golang_renamer 数据类型错误、binwalk.py 临时文件错误和内存不足等问题，此后再无新的提交。",
+      "安装方法是在 Ghidra 的 Script Manager 中把克隆下来的仓库添加为脚本目录。这些脚本是为 Ghidra 的 Jython 解释器编写的 Python 2 代码，README 未注明支持的 Ghidra 版本。binwalk.py、yara.py 和 YaraSearch.py 需要 PATH 中有 binwalk 或 yara，swift_demangler.py 需要 swift 工具链，export_gameboy_rom.py 需要 GhidraBoy 扩展。",
+      "输入为分析者已加载到 Ghidra 中的程序；export_gameboy_rom.py 处理的是用户自行导入的 Game Boy ROM，一个未关闭的 issue 指出它无法处理单页 ROM。golang_renamer.py 只查找 Go 1.16 之前使用的 .gopclntab 头部，另有未关闭的 issue 请求支持 Go 1.16。YARA 和 binwalk 的结果只是签名匹配，需分析者复核。",
+      "采用 GPL-3.0（见 LICENSE）。README 称自带的 yara-crypto.yar 规则采用 GPLv2 许可，另加入了一条署名 @phoul 的 SHA256 规则，并说明 golang_renamer.py 移植自 George Zaytsev 的 go_renamer.py。本次审阅未运行任何脚本。"
+    ]
   }
 }
