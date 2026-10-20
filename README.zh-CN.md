@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 472](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (27) · [游戏](#game) (185) · [应用](#app) (72)
+- [网站](#website) (27) · [游戏](#game) (185) · [应用](#app) (73)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -1788,6 +1788,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   用于检查已编译 Java 与 Android 程序的桌面套件：拖入 class、JAR、WAR、APK、DEX、XAPK 或 APKM 文件即可浏览其中的类和资源，并可并排显示最多三个反编译器或反汇编器视图。README 列出六个内置 Java 反编译器（Krakatau、CFR、Procyon、FernFlower、JADX 和 JD-GUI）、Krakatau 与 Smali/baksmali 反汇编器和汇编器以及 javap，还有用于 APK/DEX 转换的 Dex2Jar 和 Enjarify、用于编辑的内置 Java 编译器和静态搜索。Java 和 JavaScript 插件会收到全部已加载类的 ASM ClassNode，可用于字符串去混淆或恶意代码搜索等任务。
 
   工具 · JVM · [使用条件与证据](https://awesomerea.org/zh/resources/bytecode-viewer/)
+
+- [**Binder Trace Android Binder 消息拦截与解析工具**](https://github.com/foundryzero/binder-trace)
+
+  基于 Frida 的终端工具，作者称其为“Binder 版 Wireshark”，用于拦截 Android 进程发出的 Binder IPC 事务，并解析每条消息及其回复。随附针对特定 Android 版本的结构文件，可把事务编号映射回 AIDL 接口和方法名，并把 parcel 参数解码为带类型的字段，与十六进制视图并列显示。频率面板和 JSON 过滤配置可按接口、方法或类型筛选消息流，从而看出应用调用了哪些系统服务、传递了什么数据。
+
+  工具 · Android · 也适用：协议 · [使用条件与证据](https://awesomerea.org/zh/resources/binder-trace/)
 
 <a id="native-binary"></a>
 ### Native Binary · 原生二进制
