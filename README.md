@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 469](https://img.shields.io/badge/resources-469-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 194](https://img.shields.io/badge/cases-194-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 470](https://img.shields.io/badge/resources-470-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 194](https://img.shields.io/badge/cases-194-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (42) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2481,6 +2481,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   A crash-triage tool that turns Linux core dumps, runtime panics, exception traces and sanitizer reports into Markdown bug reports naming the crash type, the first frame in the user’s code and a stable signature. Its core-dump path calls the REA CLI to read the recorded crash and the binary layout, and can ask REA’s Ghidra provider for pseudocode of stripped functions; a Claude Code plugin bundles a skill and read-only MCP tools. It is a debugging integration around REA, not a reconstruction case, and its diagnostic accuracy remains author-reported.
 
   Integration · Community REA · Targets: Binary · [Requirements & evidence](https://awesomerea.org/resources/crashlens-rea-crash-triage/)
+
+- [**REA Workspace Template**](https://github.com/dobest1024/rea-workspace-template)
+
+  A clone-first Chinese workspace template for analyzing one target per workspace with REA from Claude Code or Codex. It ships project-level REA MCP settings, agent rules that require CONFIRMED/GUESS labels with evidence locations, seven task prompts and standard-library scripts that hash imported originals, stage writable copies and strip values from HAR captures. It organizes analysis rather than performing it, and its acceptance run used only synthetic samples.
+
+  Integration · Community REA · Targets: Website, App, Binary · [Requirements & evidence](https://awesomerea.org/resources/rea-workspace-template/)
 
 - [**Hex-Rays IDA MCP**](https://github.com/HexRaysSA/ida-mcp)
 
