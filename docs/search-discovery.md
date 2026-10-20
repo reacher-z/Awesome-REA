@@ -45,6 +45,8 @@ The site's existing `User-agent: *` / `Allow: /` policy permits search crawling,
 
 Do not place account emails, dashboard URLs with private identifiers, session cookies, screenshots of account details, or access credentials in this public repository. Search verification files are intended to be publicly reachable ownership proofs; keep the exact issued contents and filename.
 
+Posting to public communities such as Hacker News or Reddit is a separate, manual step with its own rules; see [community outreach](community-outreach.md).
+
 ## Measurement
 
 Keep a dated private log using the [versioned EN/ZH query set](discovery/queries.v1.json) and [empty observation template](discovery/observation.template.json). The [bilingual observation guide](discovery/README.md) defines provider/version fields, exact-query matching, bounded inspection, distinct failure and citation outcomes, and privacy review before publishing a summary. These files contain no measured results and do not run or schedule searches.
