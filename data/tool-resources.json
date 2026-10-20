@@ -12056,6 +12056,13 @@
       "docs/PROTOCOL.md marks key exchange, per-connection validation, button registration, the phone-screen request and button events as confirmed on a real PCX125 2025, and dash drawing as unverified. A Mac-run Swift self-test checks CRC values, a simulated key exchange, validation parsing and registration and screen byte layouts; this review ran neither the tests nor the app. README reports that experimental colour slots and a drawn screen left the dash refusing phone mode until re-pairing, keeps that code switched off and warns never to write to the firmware-update service.",
       "MIT covers the project code. README says the project is independent of Honda and contains no Honda code or files, only original code and a description of the Bluetooth messages written for interoperability; Honda, PCX and RoadSync remain trademarks of their owners. The author’s post credits Claude with the reverse engineering, but the repository does not document that workflow, and no REA use is established."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/README.md",
       "https://github.com/gdorgian/ScooterLink/blob/a089f6210e863d56b590ed4625b92f886ff6a097/App/Sources/SABProtocol.swift",
@@ -12115,6 +12122,13 @@
       "The compiler is GCC 3.3.6-m68hc1x-20060122 from the GNU 68HC11/12 packages. The Dockerfile sets it up on Ubuntu 24.04 from the checksum-verified Windows installer run under Wine, and a prebuilt garyodernichts/dmcubuilder image is offered; Python 3 runs hexconv.py to turn the S19 output into the DMCU hex format.",
       "CI only builds dmcu.d.hex in that container and uploads it as an artifact. The reviewed files contain no test suite, hardware test log or comparison with the stock firmware’s behavior, and this review built or ran nothing.",
       "The repository has no license file and GitHub detects none; project source files state only that they are part of OpenDMCUFirm. The bundled 68HC11 and stdint headers keep their FSF GPL and BSD notices, evWii is GPL-2.0, and the original firmware keeps its own rights. The reviewed sources establish no AI or REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/GaryOderNichts/OpenDMCUFirm/blob/9e6747f71cb91f2c182869b4df1091f6d5d8218d/Makefile",
