@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "manticore": {
+    "name": "Manticore 符号执行工具",
+    "requirements": [
+      "已归档且不再维护：README 声明项目已不再由内部开发和维护，GitHub 也将仓库标为已归档。所审阅的 master 提交日期为 2026-06-24，只改动了这一状态；manticore/ 目录下的最后一次改动在 2022-08-07。最新版本为 GitHub 与 PyPI 上的 0.3.7（2022-02-17），PyPI 上的每日 0.3.8.dev 构建止于 2024-02-27。",
+      "需要 Python 3.7 或更高版本。pip install manticore 涵盖 EVM 与 WASM 分析，manticore[native] 还会安装分析原生二进制所需、版本固定的 capstone 5.0.0rc2 和 unicorn 2.x；另提供 trailofbits/manticore Docker 镜像。README 将 GitHub Actions 提供的最新 Ubuntu LTS 列为正式支持平台，macOS 上对 EVM 与 WASM 仅为实验性支持，且不支持原生二进制，并建议调大栈空间限制；所审提交的 CI 仍在 ubuntu-20.04 上使用 Python 3.7，未核实更新的 Python 版本。",
+      "输入为使用者自己的 ELF 二进制、Solidity 或 Vyper 源码或 EVM 字节码，或 WASM 模块。合约分析需要 PATH 中有 solc，并通过 crytic-compile 编译；README 称 EVM Istanbul 语义尚未完整实现，部分操作码可能不受支持。用命令行分析整个程序容易出现状态爆炸，README 建议通过 API 定制初始状态来加以限制。",
+      "CI 在下载 Yices 2.6.2 和 solc 0.4.24 后运行 ethereum、native、WASM、examples 等测试套件。tests/native/binaries 与 examples/linux/binaries 中存放面向 amd64 和 ARMv7 的小型预编译 Linux 测试程序，部分附有 C 源码；包括 CTF 题目在内的更大示例位于独立的 manticore-examples 仓库，server/ 目录则是为 Manticore UI 提供的、未发布的 gRPC 封装。",
+      "采用 AGPL-3.0 许可；README 称可联系 Trail of Bits 申请例外授权。ASE 2019 论文（arXiv 1907.03890）介绍了该工具。所审来源未提及 REA 的使用，本收录未安装 Manticore，也未分析任何程序。"
+    ]
   }
 }

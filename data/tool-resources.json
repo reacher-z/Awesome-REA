@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "manticore",
+    "name": "Manticore",
+    "url": "https://github.com/trailofbits/manticore",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Trail of Bits' now-archived symbolic execution tool for Linux ELF binaries on x86, x86-64, AArch64 and ARMv7, Ethereum smart contracts as EVM bytecode, and WebAssembly modules. It runs a program on symbolic inputs to explore the states it can reach, generates concrete inputs that lead to a chosen state and detects crashes and other failures, solving constraints with an external Yices, Z3 or CVC4 solver. The manticore CLI writes generated test cases to an mcore_ workspace, while the Python API adds instruction hooks, event callbacks and custom initial states; manticore-verifier checks contract properties written in the contract's own language.",
+    "description_zh": "Trail of Bits 开发、现已归档的符号执行工具，可分析 x86、x86-64、AArch64 和 ARMv7 上的 Linux ELF 二进制、以 EVM 字节码表示的以太坊智能合约以及 WebAssembly 模块。它以符号输入运行程序，探索可到达的各个状态，生成能到达指定状态的具体输入，并检测崩溃等错误情形，约束由外部的 Yices、Z3 或 CVC4 求解器求解。manticore 命令行工具把生成的测试用例写入 mcore_ 工作目录，Python API 则支持指令钩子、事件回调和自定义初始状态；manticore-verifier 用于检查以合约自身语言编写的属性。",
+    "evidence_url": "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Archived and unmaintained: the README states that the project is no longer internally developed and maintained, and GitHub marks the repository archived. The reviewed master commit, from 2026-06-24, only changes that status; the last change under manticore/ dates from 2022-08-07. The latest release is 0.3.7 on GitHub and PyPI (2022-02-17), and PyPI's nightly 0.3.8.dev builds end on 2024-02-27.",
+      "Requires Python 3.7 or later. pip install manticore covers EVM and WASM, manticore[native] adds the pinned capstone 5.0.0rc2 and unicorn 2.x needed for native binaries, and a trailofbits/manticore Docker image is offered. The README names the latest Ubuntu LTS on GitHub Actions as the supported platform, gives macOS experimental EVM and WASM support but no native-binary support, and recommends a larger stack limit; CI at the reviewed commit still runs Python 3.7 on ubuntu-20.04, and newer Python releases were not checked.",
+      "Inputs are the user's own ELF binaries, Solidity or Vyper sources or EVM bytecode, or WASM modules. Contract analysis needs solc on PATH and compiles through crytic-compile; the README says EVM Istanbul semantics are not fully implemented, so some opcodes may be unsupported. Whole-program CLI runs are prone to state explosion, which the README suggests limiting by tailoring the initial state through the API.",
+      "CI runs ethereum, native, WASM, examples and other test suites after downloading Yices 2.6.2 and solc 0.4.24. tests/native/binaries and examples/linux/binaries hold small prebuilt Linux test programs for amd64 and ARMv7, some with their C sources; larger examples, including CTF problems, live in the separate manticore-examples repository, and server/ holds an unpublished gRPC wrapper for the Manticore UI.",
+      "AGPL-3.0; the README says Trail of Bits can be contacted for an exception to its terms. The ASE 2019 paper (arXiv 1907.03890) describes the tool. The reviewed sources state no REA use, and this collection did not install Manticore or analyze any program."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/README.md#L225-L236",
+      "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/setup.py",
+      "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/.github/workflows/ci.yml",
+      "https://github.com/trailofbits/manticore/tree/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/tests/native/binaries",
+      "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/server/README.md",
+      "https://github.com/trailofbits/manticore/blob/cdf6c4b49603cc1d70a09cabe74e0f786df1e13f/LICENSE",
+      "https://github.com/trailofbits/manticore/releases/tag/0.3.7",
+      "https://pypi.org/project/manticore/0.3.7/",
+      "https://arxiv.org/abs/1907.03890"
+    ]
   }
 ]
