@@ -134,7 +134,7 @@ class CasePageTests(unittest.TestCase):
                     self.assertTrue(rendered['description_outside_details'])
                     self.assertIn(record['url'], rendered['links'])
                     self.assertIn(record['evidence_url'], rendered['links'])
-                    self.assertIn(record['additional_evidence_urls'][0], rendered['links'])
+                    self.assertIn(f'/{prefix}resources/{record["id"]}/#entry-requirements', rendered['links'])
                     self.assertEqual(rendered['times'], [record['verified_at']])
                 self.assertIn('Binary · Game' if language == 'en' else '二进制 · 游戏', content)
                 self.assertIn('Game · Website' if language == 'en' else '游戏 · 网站', content)
@@ -157,7 +157,7 @@ class CasePageTests(unittest.TestCase):
             text = ''.join(page.cases[0]['text'])
             self.assertIn(record['name' if language == 'en' else 'name_zh'], text)
             self.assertIn(record['description_' + language], text)
-            self.assertIn(record['requirements' if language == 'en' else 'requirements_zh'][0], text)
+            self.assertNotIn(record['requirements' if language == 'en' else 'requirements_zh'][0], text)  # On the entry page.
             self.assertIn('independent' if language == 'en' else '本合集', content)
             self.assertEqual(schema(content)['mainEntity']['itemListElement'][0]['description'], record['description_' + language])
 

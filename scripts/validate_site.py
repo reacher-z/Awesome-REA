@@ -689,7 +689,7 @@ def validate_source_browser_output(output):
 
 
 def validate_case_outputs(pages, resources):
-    """Bind the script-free case subset, its full evidence, and its navigation."""
+    """Bind the script-free case subset, its links to each entry page's requirements and sources, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
     normalize = lambda value: ' '.join(value.split())
     for language, prefix in (('en', ''), ('zh', '/zh')):
@@ -714,11 +714,10 @@ def validate_case_outputs(pages, resources):
             assert row['anchor'] == row['id'] and row['section'] == collection_section(record), f'Case placement mismatch: {row["id"]}'
             assert row['parent_section'] == row['section'] and row['parent_anchor'] == 'cases-' + row['section'], f'Case belongs to the wrong subject section: {row["id"]}'
             assert len(row['headings']) == 1 and normalize(name) in normalize(''.join(row['headings'][0])), f'Case heading lost localized name: {row["id"]}'
-            requirements = record['requirements_zh' if language == 'zh' else 'requirements']
-            requirements = requirements if isinstance(requirements, list) else [requirements]
+            # Requirements and additional sources are on the entry page (validate_entry_outputs); the row links to them.
             text = normalize(' '.join(row['text']))
-            assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}'], *requirements]), f'Case directory lost full localized content: {row["id"]}'
-            links = {detail, record['url'], record['evidence_url'], *record.get('additional_evidence_urls', [])}
+            assert all(normalize(phrase) in text for phrase in [name, record[f'description_{language}']]), f'Case directory lost full localized content: {row["id"]}'
+            links = {detail, detail + '#entry-requirements', record['url'], record['evidence_url']}
             assert links <= set(row['links']), f'Case directory lost entry/source links: {row["id"]}'
             assert len(row['times']) == 1 and row['times'][0]['datetime'] == record['verified_at'], f'Case review timestamp mismatch: {row["id"]}'
             assert record['verified_at'][:10] in normalize(''.join(row['times'][0]['text'])), f'Case review date is missing: {row["id"]}'
@@ -751,7 +750,8 @@ def validate_entry_outputs(pages, resources, papers):
                 label = '完整条目' if language == 'zh' else 'Full entry'
                 accessible = f'{label}：{title}' if language == 'zh' else f'{label}: {title}'
                 assert normalize(' '.join(link['text'])) == label and link['aria_label'] == accessible, f'Detail link label must identify its localized entry: {expected}'
-                upstream = {record['url'], record['evidence_url']} if kind == 'resource' else {record['url'], record['pdf_url']}
+                upstream = ({record['url'], record['evidence_url'], expected + '#entry-requirements'} if kind == 'resource'
+                            else {record['url'], record['pdf_url']})
                 recorded_links = listing.record_links if kind == 'resource' else listing.paper_links
                 assert upstream <= set(recorded_links.get(link['id'], [])), f'External listing title/source links missing: {expected}'
 

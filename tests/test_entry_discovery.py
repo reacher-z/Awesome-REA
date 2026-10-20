@@ -73,21 +73,6 @@ class EntryDiscoveryValidationTests(unittest.TestCase):
                     self.assertEqual(''.join(link['text']), label)
                     self.assertEqual(link['aria_label'], label + ('：' if prefix else ': ') + title)
 
-    def test_resource_disclosure_retains_primary_and_additional_evidence(self):
-        for language in ('en', 'zh'):
-            for original in self.resources:
-                record = deepcopy(original)
-                record['additional_evidence_urls'] = ['https://example.org/secondary-evidence']
-                html = _resource_card(record, language)
-                disclosure = re.search(r'<details class="requirements">(.*?)</details>', html, re.S)[1]
-                self.assertIn('使用条件与来源' if language == 'zh' else 'Requirements & sources', disclosure)
-                for url in (record['evidence_url'], *record['additional_evidence_urls']):
-                    self.assertIn('href="' + escape(url, quote=True) + '"', disclosure)
-                for requirement in record['requirements_zh' if language == 'zh' else 'requirements']:
-                    self.assertIn(escape(requirement), disclosure)
-                self.assertIn(record['verified_at'], disclosure)
-                self.assertIn(escape(record['description_' + language]), html.split('<details', 1)[0])
-
     def test_sitemap_inventory_is_derived_and_rejects_missing_extra_duplicate_pages(self):
         base = [ORIGIN + prefix + path for prefix in ('', '/zh')
                 for path in ('/', '/resources/', '/cases/', '/papers/', '/survey/', '/about/', '/browse/',

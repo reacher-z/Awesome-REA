@@ -75,7 +75,8 @@ class EntryLinkTargetTests(unittest.TestCase):
                             self.assertEqual([text for href, text, _ in links if href == record['evidence_url']], [source + ' ↗'])
                             self.assertEqual([text for href, text, _ in links if href == f"/{prefix}resources/{record['id']}/"],
                                              ['完整条目' if zh else 'Full entry'])
-                            self.assertLessEqual({record['url'], record['evidence_url'], *record['additional_evidence_urls']},
+                            # Additional sources and requirements are on the entry page, linked from its requirements section.
+                            self.assertLessEqual({record['url'], record['evidence_url'], f"/{prefix}resources/{record['id']}/#entry-requirements"},
                                                  {href for href, _, _ in links})
                 for record in records:
                     html = (output / prefix / 'resources' / record['id'] / 'index.html').read_text(encoding='utf-8')

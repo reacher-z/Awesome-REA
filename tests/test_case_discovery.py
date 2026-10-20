@@ -67,7 +67,7 @@ class CaseDiscoveryTests(unittest.TestCase):
 
     def test_script_text_or_other_language_cannot_replace_visible_case_content(self):
         route = '/zh/cases/'
-        for field in ('description_zh', 'requirements_zh'):
+        for field in ('description_zh',):
             value = self.resources[0][field]
             value = value[0] if isinstance(value, list) else value
             broken = dict(self.html)
@@ -80,7 +80,7 @@ class CaseDiscoveryTests(unittest.TestCase):
 
     def test_primary_additional_detail_links_and_date_are_required(self):
         route = '/zh/cases/'
-        for old in (self.resources[0]['evidence_url'], self.resources[0]['additional_evidence_urls'][0],
+        for old in (self.resources[0]['evidence_url'], '/zh/resources/web-case/#entry-requirements',
                     '/zh/resources/web-case/'):
             with self.subTest(url=old):
                 broken = dict(self.html)

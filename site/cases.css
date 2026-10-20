@@ -21,18 +21,13 @@
 .case-meta{display:flex;align-items:center;flex-wrap:wrap;gap:2px 18px;min-width:0;font-size:14px;line-height:1.6}
 .case-meta a{display:inline-flex;align-items:center;gap:5px;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
 .case-targets{color:var(--muted);overflow-wrap:anywhere}
-.case-evidence{min-width:0;max-width:100%;margin-left:auto;font-size:15px;line-height:1.7}
-.case-evidence summary{min-height:44px;padding:10px 0;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
-.case-evidence[open]{width:100%;margin-left:0}
-.case-evidence-body{max-width:76ch;padding:2px 0 8px;color:var(--body);overflow-wrap:anywhere}
-.case-requirements{margin:2px 0 12px;padding-left:24px}
-.case-requirements li+li{margin-top:10px}
-.case-evidence-links{display:flex;flex-wrap:wrap;gap:0 18px;margin:0;padding:0;list-style:none}
-.case-evidence-links a{display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px}
-.case-review-date{margin:5px 0 0;font-size:14px;color:var(--muted)}
+/* Requirements and further sources live on the entry page; the row links there with their counts. */
+.case-evidence{display:flex;align-items:center;flex-wrap:wrap;gap:0 18px;min-width:0;max-width:100%;margin:0 0 0 auto;font-size:14px;line-height:1.6}
+.case-evidence a{display:inline-flex;align-items:center;min-height:44px;color:var(--link);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.case-review-date{color:var(--muted)}
 .cases-empty{padding:24px 0;font-size:16px;color:var(--body)}
 .cases-main a:focus-visible,.cases-main summary:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:2px}
-html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-description,html[lang="zh-CN"] .case-evidence-body{max-width:38em;line-height:1.85}
+html[lang="zh-CN"] .cases-note>p,html[lang="zh-CN"] .case-description{max-width:38em;line-height:1.85}
 @media(max-width:700px){
   .case-heading h3{flex-basis:100%}
   .case-row{padding-top:16px}
