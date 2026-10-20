@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**605 个仓库** · 2026-10-16 UTC
+**604 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -38,7 +38,6 @@
 - [momo5502/sogen](https://github.com/momo5502/sogen) — 🪅 Windows 与 Linux 用户态模拟器。 **[3,730 星标]**
 - [pret/pokeemerald](https://github.com/pret/pokeemerald) — 《宝可梦 绿宝石》的反编译代码。 **[3,595 星标]** · 精选：[《宝可梦 绿宝石》：生成一致 ROM 的 Game Boy Advance 反编译重建](https://awesomerea.org/zh/resources/pokemon-emerald-decomp-case/)
 - [open-goal/jak-project](https://github.com/open-goal/jak-project) — 复兴曾造就《Jak &amp; Daxter》系列的编程语言。 **[3,574 星标]** · 精选：[OpenGOAL：恢复 GOAL 代码并重建 Jak 系列游戏](https://awesomerea.org/zh/resources/opengoal-jak-case/)
-- [kevoreilly/CAPEv2](https://github.com/kevoreilly/CAPEv2) — 恶意软件配置与载荷提取。 **[3,570 星标]**
 - [vaib25vicky/awesome-mobile-security](https://github.com/vaib25vicky/awesome-mobile-security) — 致力于集中收集所有实用的 Android 与 iOS 安全相关资源。所有引用和工具均归各自所有者所有，我仅负责维护。 **[3,561 星标]**
 - [V33RU/awesome-connected-things-sec](https://github.com/V33RU/awesome-connected-things-sec) — 面向各种联网设备的精选安全资源列表。 **[3,559 星标]**
 - [dweinstein/awesome-frida](https://github.com/dweinstein/awesome-frida) — Awesome Frida：Frida 精选资源列表，http<span>:</span>//www<span>.</span>frida.re/（https<span>:</span>//github.com/frida/frida）。 **[3,548 星标]**

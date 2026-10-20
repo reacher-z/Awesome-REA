@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "capev2": {
+    "name": "CAPEv2 恶意软件沙箱",
+    "requirements": [
+      "项目没有发布版本或标签：所审阅的 2026-10-18 master 提交是滚动快照，变更记录在 changelog.md 中，pyproject.toml 中的版本号 0.1.0 只是占位。README 建议使用 Ubuntu 24.04 LTS 宿主机、KVM 以及 Python 3.10 或 3.12，客户机为 Windows 10 或 Windows 11 23H2，并在其中用 32 位 Python 3.7.2 或 3.8 运行 agent.py。kvm-qemu.sh 与 cape2.sh 安装脚本需先修改再使用，只有 rooter 组件以 root 运行，README 还要求用户通读 conf/ 中的所有文件。",
+      "样本和 Windows 客户虚拟机由使用者自备；仓库不提供客户机操作系统。Windows 分析组件附带若干辅助二进制：capemon.dll 与 capemon_x64.dll 监控组件以及 loader.exe 与 loader_x64.exe 加载器，由独立的 GPL-3.0 capemon 仓库构建；PPLinject 和 version.dll 辅助程序，所审文件未说明其源码出处；以及受各自发行方条款约束的第三方工具，即 Sysinternals PsExec、Windows SDK 中的 signtool.exe 和 AutoIt3 解释器。",
+      "CI 在递归检出后于 Ubuntu 22.04 和 Python 3.10 上运行 ruff、核心、Web 界面与 Linux 分析组件的 pytest 测试套件以及 mypy，并在 Windows 上运行 Windows 分析组件的 pytest 测试。这些测试检查框架代码，并不衡量检测或脱壳效果；README 也提醒，配置解析器可能因恶意软件家族变化而失效。递归克隆还会拉取 CAPE-TestFiles 单元测试子模块，其中包含一个恶意软件目录。",
+      "LICENSE 在 Cuckoo Foundation 声明下采用 GPL-3.0，GitHub 将其识别为 NOASSERTION；随附的 Microsoft 与 AutoIt 可执行文件不受该许可证覆盖。分析过程会执行恶意文件，README 说明应在隔离环境中进行。所审来源未提及 REA 的使用，本条目未运行任何样本。"
+    ]
   }
 }
