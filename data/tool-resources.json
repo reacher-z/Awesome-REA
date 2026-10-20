@@ -11254,5 +11254,35 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "house",
+    "name": "House",
+    "url": "https://github.com/nccgroup/house",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "NCC Group’s Python and Flask web interface for Frida-based runtime analysis of Android apps, intended to make writing Frida scripts simpler. From a local browser page the analyst can enumerate loaded classes, the classes in a DEX file, class loaders and a class’s methods, then generate and keep tracing scripts for several functions, including ones in dynamically loaded DEX or JAR files. A configurable monitor logs file, HTTP, WebView, SQL, IPC and SharedPreferences calls.",
+    "description_zh": "NCC Group 基于 Python 和 Flask 开发的网页界面，用于借助 Frida 对 Android 应用进行运行时分析，旨在简化 Frida 脚本的编写。分析者可在本地浏览器页面中枚举已加载的类、DEX 文件中的类、类加载器及某个类的方法，再为多个函数生成并保存跟踪脚本，其中包括动态加载的 DEX 或 JAR 文件中的函数。可配置的监控功能会记录文件、HTTP、WebView、SQL、IPC 和 SharedPreferences 相关调用。",
+    "evidence_url": "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit c3641e3 dates from 2020-12-27; the project has no releases or tags. The README says House was tested with Frida 12.8.6 and needs Frida 12.8.3 or later for DEX/JAR hooking, while requirements.txt and the Pipfile leave frida unpinned, so current Frida releases may not work without changes.",
+      "Runs from source with Python 3 and pip or pipenv (Flask, Flask-SocketIO 4.3.2, Flask-Login, Jinja2, IPython and frida), serving the interface on 127.0.0.1, port 8000 by default. The README requires a rooted Android device connected over USB with a frida-server matching the local frida-python version, and recommends attaching only one USB device. The Stetho sideload option expects the analyst to place a stetho.jar on the device; it is not bundled.",
+      "The repository bundles the README’s demo app test_apk/overloads.apk (package com.ha0k3.overloads) and a small test_apk/dyhello.dex as test fixtures, plus copies of the Ace editor and Bootstrap for the web interface. The monitor’s hook list in scripts/monitor/monitor_hook.json is described as experimental. Intended for apps the analyst is authorized to test.",
+      "MIT (NCC Group). Frida and the bundled web libraries keep their own licenses. The reviewed sources establish no REA connection; nothing was installed or run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/requirements.txt",
+      "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/Pipfile",
+      "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/app.py",
+      "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/scripts/monitor/monitor_hook.json",
+      "https://github.com/nccgroup/house/tree/c3641e300d9c40568cd57dce1884f1a96c4c7849/test_apk",
+      "https://github.com/nccgroup/house/blob/c3641e300d9c40568cd57dce1884f1a96c4c7849/LICENSE"
+    ]
   }
 ]

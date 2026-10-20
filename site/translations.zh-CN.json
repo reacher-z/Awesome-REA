@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "house": {
+    "name": "House Android 运行时分析工具",
+    "requirements": [
+      "所审阅的 master 分支提交 c3641e3 日期为 2020-12-27；项目没有发布版本或标签。README 称 House 在 Frida 12.8.6 上测试，DEX/JAR 挂钩需要 Frida 12.8.3 或更高版本，而 requirements.txt 与 Pipfile 未固定 frida 版本，因此当前的 Frida 版本可能需要修改后才能使用。",
+      "从源码运行，需要 Python 3 及 pip 或 pipenv（Flask、Flask-SocketIO 4.3.2、Flask-Login、Jinja2、IPython 和 frida），界面默认在 127.0.0.1 的 8000 端口提供。README 要求一台通过 USB 连接、已 root 的 Android 设备，并运行与本地 frida-python 版本一致的 frida-server，建议只连接一台 USB 设备。Stetho 侧载选项要求分析者自行把 stetho.jar 放到设备上，仓库不附带该文件。",
+      "仓库附带 README 演示所用的测试应用 test_apk/overloads.apk（包名 com.ha0k3.overloads）和一个小型 test_apk/dyhello.dex 作为测试样本，并为网页界面附带 Ace 编辑器与 Bootstrap 的副本。scripts/monitor/monitor_hook.json 中的监控挂钩列表被标为实验性功能。仅用于分析者有权测试的应用。",
+      "采用 MIT 许可（NCC Group）。Frida 及附带的网页库保留各自许可证。所审来源未确立与 REA 的关联；本次核查未安装或运行任何内容。"
+    ]
   }
 }
