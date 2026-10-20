@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "open-steam-controller-firmware-case": {
+    "name": "Open Steam Controller：逆向工程得来的 Steam Controller 固件",
+    "requirements": [
+      "项目没有发布版本或标签，最新提交在 2019-09-17。README 称逆向工程工作已基本告一段落，作者也说这是自己第一次尝试逆向工程。init.c 将固件限定在作者能够测试的 Luna_mainboard V000456-00 rev3 主板上；项目只替换 LPC11U37F 的固件，不涉及 nRF51822 蓝牙芯片的固件。",
+      "运行自制固件或提示音流程需要一台使用该主板的 Steam Controller，提示音流程结束后会把手柄切换回 Valve 的固件。若要重复模拟过程，需要 Valve 的 vcf_wired_controller_d0g_57bf5c10.bin 固件以及 LPC11U37 的 16 kB 启动 ROM 转储，两者都不在仓库中。",
+      "构建固件时，需将 OpenSteamController 工程和随附的 NXP lpc_chip_11uxx_lib 导入 LPCXpresso IDE v8.2.2，并在 fw_cfg.h 中选择 DEV_BOARD_FW 或 SWITCH_WIRED_POWERA_FW；预构建的开发板与 Switch 固件镜像已提交在 Firmware/bin 和 Jingle/bin 下。SCJingleConverter 在 Qt Creator 中用 Qt 5.12 构建，作者报告在 macOS 10.12.6、Windows 10 和 Ubuntu 18.04.2 上可用；SteamControllerConfig.py 借助 PyUSB 向官方固件发送播放乐曲和设置亮度的请求。",
+      "项目没有自动化测试或 CI。Jingle/tests 收录了以频率准确度、音符时长、重复音符和长时间漂移命名的 MusicXML 乐曲，README 以视频展示成果。init.c 和 jingle_data.c 说明，其中的初始化序列和默认提示音数据来自对官方固件的模拟。本次审阅未构建或运行任何程序。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；作者的源文件带有 MIT 声明，随附的 NXP LPCOpen 库只允许与 NXP 微控制器配合使用。ReverseEngineering 目录还提交了一份通过模拟 Valve 固件生成的 17 MB 类 C 日志以及内存与 EEPROM 注释；自制固件内嵌了该固件的默认提示音数据，以及从 PowerA 手柄复制的 HID 报告描述符。Valve 的固件保留其自身权利。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
