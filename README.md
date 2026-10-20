@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
-- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2186,6 +2186,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. Matches are grouped into capability namespaces with ATT&amp;CK and MBC tags, and verbose output shows the function or basic-block addresses and features behind each match, pointing analysts to code worth studying. It also reads CAPE, DRAKVUF and VMRay sandbox reports for dynamic features and can use vivisect, IDA Pro, Ghidra or Binary Ninja for analysis, with explorer plugins for IDA and Ghidra and a browser viewer for its JSON results.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/capa/)
+
+- [**Dwarf**](https://github.com/iGio90/Dwarf)
+
+  PyQt5 debugger built on Frida that attaches to or spawns processes on Android and iOS devices, the local machine or a remote Frida server. A session offers breakpoints, watchpoints, register context, backtraces and threads, a Capstone disassembly view for x86, x64, ARM and ARM64, a hex editor and panels for modules, memory ranges and memory search, while Java explorer, inspector and trace panels and an Objective-C inspector cover mobile app runtimes. User Frida scripts and Python plugins extend a session, and companion commands trace Java methods or native addresses (dwarf-trace), log syscalls from one module on arm64 (dwarf-strace) and scaffold scripting projects with Dwarf API typings (dwarf-creator).
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/dwarf-debugger/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

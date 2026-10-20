@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**430 repositories** · 2026-10-16 UTC
+**429 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -47,7 +47,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 Run frida-server on boot with Magisk, always up-to-date **[1,473 stars]**
 - [nccgroup/house](https://github.com/nccgroup/house) — A runtime mobile application analysis toolkit with a Web GUI, powered by Frida, written in Python. **[1,468 stars]**
 - [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]**
-- [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]** · Curated: [hermes-dec](https://awesomerea.org/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**

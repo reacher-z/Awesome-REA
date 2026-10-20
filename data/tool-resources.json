@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "dwarf-debugger",
+    "name": "Dwarf",
+    "url": "https://github.com/iGio90/Dwarf",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "PyQt5 debugger built on Frida that attaches to or spawns processes on Android and iOS devices, the local machine or a remote Frida server. A session offers breakpoints, watchpoints, register context, backtraces and threads, a Capstone disassembly view for x86, x64, ARM and ARM64, a hex editor and panels for modules, memory ranges and memory search, while Java explorer, inspector and trace panels and an Objective-C inspector cover mobile app runtimes. User Frida scripts and Python plugins extend a session, and companion commands trace Java methods or native addresses (dwarf-trace), log syscalls from one module on arm64 (dwarf-strace) and scaffold scripting projects with Dwarf API typings (dwarf-creator).",
+    "description_zh": "基于 Frida 构建的 PyQt5 调试器，可附加或启动 Android、iOS 设备、本机或远程 Frida 服务器上的进程。调试会话提供断点、观察点、寄存器上下文、调用栈和线程视图，支持 x86、x64、ARM 与 ARM64 的 Capstone 反汇编视图、十六进制编辑器，以及模块、内存区域和内存搜索面板；Java 浏览、检查与跟踪面板和 Objective-C 检查器则面向移动应用运行时。用户编写的 Frida 脚本和 Python 插件可扩展会话，配套命令可跟踪 Java 方法或原生地址（dwarf-trace）、在 arm64 上记录单个模块发起的系统调用（dwarf-strace），并生成带 Dwarf API 类型声明的脚本项目（dwarf-creator）。",
+    "evidence_url": "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: dwarf-debugger 1.1.3 on PyPI, uploaded 2022-04-09; the repository has no GitHub releases or tags. The reviewed master commit, from 2024-05-16 and the most recent at review, merges a small type fix after that release. The README still says a Dwarf 2.0 release is being worked on, and none has been published.",
+      "Installed with pip from PyPI or a master archive. setup.py accepts any Python 3 and declares Linux, Windows and macOS, depending on frida 12.8+, PyQt5 5.11.3+ (requirements.txt pins 5.13.*), Capstone 4.0.1+, requests and pyperclip. The bundled core.js agent is built from the core1 branch of the separate DwarfCore repository; the reviewed sources do not state which current Frida releases it works with.",
+      "The user supplies the apps, processes and devices to debug; the repository holds only Dwarf's own code, agent, icons and examples. Android sessions use adb and a device running frida-server: the device bar can download the latest frida-server from Frida's GitHub releases and install it with su on a rooted device, and flags devices where it finds no root access. iOS sessions use a USB-connected Frida device, local sessions spawn a given path or attach to a PID, and remote sessions use Frida's remote device.",
+      "GPL-3.0 (setup.py: GPLv3+). The README lists two known JavaTraceView display problems, and dwarf-strace handles only arm64 processes. The README pitches the tool to reverse engineers, crackers and security analysts; this entry covers debugging and tracing for analysis only. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/setup.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/requirements.txt",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/dwarf_debugger/dwarf.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/dwarf_debugger/ui/app.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/dwarf_debugger/ui/widgets/device_bar.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/dwarf_debugger/lib/disassembler.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/dwarf_debugger/strace.py",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/PLUGINS.md",
+      "https://github.com/iGio90/Dwarf/blob/fd859aeeb9fd14d97db1d95a194eb632ae109a46/LICENSE",
+      "https://pypi.org/project/dwarf-debugger/1.1.3/"
+    ]
   }
 ]
