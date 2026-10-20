@@ -447,6 +447,8 @@ async function load() {
     state.topicLabels = data.topic_labels || {};
     // build_site.py writes build_readme.CATEGORIES here, the same labels the entry pages use.
     state.categoryLabels = data.category_labels || {};
+    // Repository categories come from build_repository_index.CATEGORIES; an unknown ?source-category= falls back to all.
+    state.sourceCategoryLabels = data.source_category_labels || {}; if (!Object.hasOwn(state.sourceCategoryLabels, sourceState.category)) sourceState.category = "all";
     state.records = data.resources.map((r,index) => ({...r, order:index, targets: r.targets || [], search: [r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...r.requirements,...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ").toLocaleLowerCase()}));
     if (!["all","rea","agents","tools","learn"].includes(state.group)) state.group = "all";
     $('[data-target="protocol"]').hidden = !state.records.some(record => record.targets.includes("protocol"));
@@ -470,6 +472,8 @@ $("#load-more").addEventListener("click", () => { const previous = state.visible
 document.addEventListener("keydown", event => { if (event.key === "/" && !$("#data-dialog")?.open && !event.ctrlKey && !event.metaKey && !event.altKey && !["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName) && !document.activeElement.isContentEditable) { event.preventDefault(); const search = sourceState.mode === "source-index" ? $("#source-search") : $("#search-input"); search.focus(); search.scrollIntoView({block:"center",behavior:"smooth"}); } });
 
 const sourceState = { available: false, loaded: false, loading: false, error: false, mode: "curated", records: [], meta: {}, q: params.get("sourceq") || "", target: params.get("source-target") || "all", topic: params.get("topic") || "", sort: params.get("sort") || "relevance", visible: 24, topicIDs: new Set(), topicCounts: [] };
+// Static category pages link here with ?source-category=; it combines with every other repository filter.
+sourceState.category = params.get("source-category") || "all";
 function sourceURL() {
   // Called after catalog filter validation as well as on repository interactions.
   const next = curatedURL();
@@ -479,6 +483,7 @@ function sourceURL() {
     if (value !== defaultValue) next.searchParams.set(key, value);
     else next.searchParams.delete(key);
   }
+  if (sourceState.category !== "all") next.searchParams.set("source-category", sourceState.category); else next.searchParams.delete("source-category");
   replaceURL(next);
 }
 function configureSourceIndex(meta) {
@@ -565,7 +570,7 @@ function sourceRelatedLinks(record) {
 }
 function sourceFiltered() {
   const terms = sourceState.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean); const topic = sourceState.topic.toLocaleLowerCase().trim();
-  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
+  const result = sourceState.records.filter(r => (sourceState.target === "all" || r.targets.includes(sourceState.target)) && (sourceState.category === "all" || r.category === sourceState.category) && (!topic || r.topics.some(item => sourceState.topicIDs.has(topic) ? item === topic : topicSearch(item).includes(topic))) && terms.every(term => r.search.includes(term)));
   const score = r => terms.reduce((sum,term) => sum + (r.full_name.toLocaleLowerCase().includes(term) ? 4 : 0) + (r.topics.some(topic => topicSearch(topic).includes(term)) ? 2 : 0),0);
   if (sourceState.sort === "stars") result.sort((a,b) => (b.stars ?? -1)-(a.stars ?? -1) || compareIDs(a.full_name,b.full_name));
   else if (sourceState.sort === "pushed") result.sort((a,b) => compareIDs(String(b.pushed_at || ""),String(a.pushed_at || "")) || compareIDs(a.full_name,b.full_name));
@@ -627,6 +632,7 @@ function renderSources() {
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
+  renderSourceCategories();
 }
 function sourceBrowserPayload(data) {
   const meta = data?.meta; const resources = data?.resources; const scope = meta?.scope;
@@ -659,7 +665,7 @@ async function loadSources() {
   } catch (_) { sourceState.error = true; $("#source-status").textContent = t("sourceErrorTitle"); $("#source-results").setAttribute("aria-busy","false"); $("#source-error").hidden = false; $("#source-empty").hidden = true; $("#source-more-row").hidden = true; }
   finally { sourceState.loading = false; }
 }
-function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(); renderSources(); }
+function resetSources() { sourceState.q=""; sourceState.topic=""; sourceState.target="all"; sourceState.category="all"; $("#source-category").value="all"; sourceState.sort="relevance"; sourceState.visible=24; $("#source-search").value=""; $("#source-topic").value=""; $("#source-sort").value="relevance"; renderTopicOptions(); sourceURL(); renderSources(); }
 $("#mode-curated").addEventListener("click",() => setIndexMode("curated")); $("#mode-sources").addEventListener("click",() => setIndexMode("source-index"));
 if (!["all","website","game","app","binary","firmware","protocol"].includes(sourceState.target)) sourceState.target="all";
 if (sourceState.sort === "updated") sourceState.sort = "pushed";
@@ -667,6 +673,16 @@ if (!["relevance","stars","pushed","name"].includes(sourceState.sort)) sourceSta
 $("#source-search").value=sourceState.q; $("#source-topic").value=sourceState.topic; $("#source-sort").value=sourceState.sort;
 for (const [selector,key,event] of [["#source-search","q","input"],["#source-topic","topic","input"],["#source-sort","sort","change"]]) $(selector).addEventListener(event,e => { sourceState[key]=key === "topic" ? canonicalTopic(e.target.value) : e.target.value; if (key === "topic") renderTopicOptions(e.target.value); sourceState.visible=24; sourceURL(); renderSources(); });
 $$('[data-source-target]').forEach(button => button.addEventListener("click",() => { sourceState.target=button.dataset.sourceTarget; sourceState.visible=24; sourceURL(); renderSources(); }));
+$("#source-category").addEventListener("change", event => { sourceState.category = event.target.value; sourceState.visible = 24; sourceURL(); renderSources(); });
+// Options list the categories the loaded repositories use, in the directory's order and the active language.
+function renderSourceCategories() {
+  const select = $("#source-category"); const labels = state.sourceCategoryLabels || {}; const present = new Set(sourceState.records.map(record => record.category));
+  const all = node("option", "", t("allCategories")); all.value = "all";
+  const options = Object.keys(labels).filter(category => present.has(category) || category === sourceState.category).map(category => {
+    const option = node("option", "", labels[category][state.lang === "zh" ? 1 : 0]); option.value = category; return option; });
+  select.replaceChildren(all, ...options); select.value = sourceState.category;
+  if (sourceState.category !== "all") $("#source-clear").hidden = false;
+}
 $("#source-clear").addEventListener("click",resetSources); $("#source-reset").addEventListener("click",resetSources); $("#source-retry").addEventListener("click",loadSources); $("#source-more").addEventListener("click",() => { const previous=sourceState.visible; sourceState.visible+=24; renderSources(); $$(".source-title-link")[previous]?.focus({preventScroll:true}); });
 
 $("#download-source-index").href = dataURL("source-index.json");

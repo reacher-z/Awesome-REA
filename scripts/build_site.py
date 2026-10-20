@@ -16,6 +16,7 @@ from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_readme import CATEGORIES
+from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_manifest import write_build_manifest
@@ -215,6 +216,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     # The homepage reads category labels from here, so filters, cards and entry pages share one wording.
     category_labels = {category: list(labels) for category, labels in CATEGORIES.items()}
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
+    # The repository view's Category filter labels the same categories as the /browse/ pages.
+    catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (output / "papers.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for key, value in {"BROWSE_COUNT": metadata["source_index"]["resource_count"], "SCANNED_COUNT": metadata["source_index"].get("scanned_count", 0), "PAPER_COUNT": len(papers)}.items():

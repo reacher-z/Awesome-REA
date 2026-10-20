@@ -92,7 +92,8 @@ class LanguageLinkTests(unittest.TestCase):
                         validate_language_links('/' + prefix + route, Page(html))
                         search = searches.get(route.split('/')[0])
                         if search:
-                            self.assertIn(f'href="{search[language == "en"]}"', html)
+                            # Category pages add their own &source-category= (tests/test_source_category.py).
+                            self.assertIn(f'href="{search[language == "en"]}', html)
 
 
 if __name__ == '__main__':
