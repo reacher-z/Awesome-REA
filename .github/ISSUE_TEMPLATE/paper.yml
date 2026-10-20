@@ -6,6 +6,8 @@ body:
     attributes:
       value: |
         Issues are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste, including logs and screenshots. See the [contribution guide](https://github.com/reacher-z/Awesome-REA/blob/main/CONTRIBUTING.md#review-and-publication), and report security problems privately under the [security policy](https://github.com/reacher-z/Awesome-REA/security/policy).
+
+        A promising paper is welcome even when some metadata is unresolved: answer "unknown" for anything you could not confirm. A suggestion is not a source review; the catalog record is checked against primary sources before it is added.
   - type: input
     id: url
     attributes:
@@ -32,16 +34,55 @@ body:
     validations:
       required: true
   - type: textarea
+    id: publication_evidence
+    attributes:
+      label: Publication and full-text links
+      description: Label each link, such as the publisher or proceedings page, DOI, arXiv abstract or a public PDF. Write "unknown" or "none found" for any you could not find.
+      placeholder: "Version of record: https://... / unknown\nPublic full text: https://... / none found"
+    validations:
+      required: false
+  - type: textarea
+    id: dates
+    attributes:
+      label: Dates and their sources
+      description: These are different dates; give each only to the precision its source states, and name the source. A conference event date or an arXiv version date is not the publisher's publication date.
+      placeholder: "Publisher publication date: YYYY, YYYY-MM or YYYY-MM-DD / unknown (source: ...)\narXiv first submission and version checked: YYYY-MM-DD, v1 / not on arXiv / unknown\nConference or event dates: ... / not applicable / unknown\nAcceptance evidence: https://... / unknown"
+    validations:
+      required: false
+  - type: textarea
     id: relevance
     attributes:
       label: Reverse-engineering task and contribution
       description: Explain what is reconstructed or analyzed and why the paper belongs in the collection.
     validations:
       required: true
+  - type: dropdown
+    id: artifact_status
+    attributes:
+      label: Author-provided artifacts
+      description: Choose every status that applies to the paper's code, data or benchmark.
+      multiple: true
+      options:
+        - Public code, data or benchmark linked by the authors
+        - Announced or promised, not yet available
+        - Hosted demo or service only
+        - Access-restricted, such as by request, registration or license terms
+        - Not available
+        - Unknown
+    validations:
+      required: false
+  - type: textarea
+    id: artifacts
+    attributes:
+      label: Artifact links and availability
+      description: For each code, dataset or benchmark link, say where the authors provide it (the paper, their project page or their repository) and whether it is public, access-restricted or unavailable. A later release may differ from the version evaluated in the paper. Link files rather than attaching them.
+      placeholder: "Code: https://... — linked from: paper / project page / unknown — public / access-restricted / unavailable\nDataset or benchmark: https://... — linked from: ... — ..."
+    validations:
+      required: false
   - type: textarea
     id: evidence
     attributes:
-      label: Evidence, artifacts, and limitations
-      description: Link author-provided code or data if available. Note evaluation scope, unavailable artifacts, and whether results were independently reproduced.
+      label: Evaluation scope and limitations
+      description: Note what the evaluation covers and leaves out, and whether results were independently reproduced. Write "unknown" if you have not checked.
     validations:
       required: true
