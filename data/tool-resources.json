@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "dex-oracle",
+    "name": "dex-oracle",
+    "url": "https://github.com/CalebFenton/dex-oracle",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Pattern-based Dalvik deobfuscator that takes an APK, a DEX file or a Smali directory, disassembles it with baksmali and runs plugins that look for obfuscation patterns in the Smali code. To learn what a matched call returns, such as a decrypted string, it merges a small driver into the app's DEX, pushes it to a connected Android device or emulator and invokes the static method there through reflection; the result replaces the call as a constant before the APK or DEX is reassembled. Plugins cover simple string encryption, indexed string and class lookups, certain DexGuard patterns and some reflection, and the author describes it as the inspiration for Simplify.",
+    "description_zh": "基于模式匹配的 Dalvik 反混淆工具，可处理 APK、DEX 文件或 Smali 目录：先用 baksmali 反汇编，再由各插件在 Smali 代码中查找混淆模式。为得知匹配到的调用会返回什么（例如解密后的字符串），它把一个小型驱动程序合并进应用的 DEX，推送到已连接的 Android 设备或模拟器，并通过反射在设备上调用对应的静态方法；返回值以常量替换原调用，之后再重新组装 APK 或 DEX。插件涵盖简单字符串加密、按索引查找字符串和类、部分 DexGuard 模式以及部分反射调用；作者称它启发了另一个反混淆工具 Simplify。",
+    "evidence_url": "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Development is inactive: the latest RubyGems and GitHub release is 1.0.5 of 2016-07-26, while the reviewed master commit of 2018-12-13 already declares an unpublished 1.0.6. It is installed as a Ruby gem or from source with Bundler; the repository pins Ruby 2.5.3 and needs Java, adb, and smali and baksmali on the PATH, with the README's setup snippet using smali 2.2.5.",
+      "Input is the user's own APK, DEX or Smali directory, and a running emulator or attached device with Android 5.0 or later is required because matched methods really execute on it. The README prefers an emulator and warns that the executed code may be hostile; its troubleshooting section instead suggests Android 4.4.2 (API level 19, ARM) if the driver crashes. Only static methods can be executed, and plugins can be disabled when a pattern matches code that is not obfuscation.",
+      "The res directory ships the prebuilt driver.dex and a copy of the Android SDK's dx.jar, which the tool uses for DEX merging; rebuilding the driver needs Gradle and the SDK's dx tool. The README lists three plugins, while the plugins directory holds six, adding indexed string and class lookups and a bitwise string-decryption pattern.",
+      "RSpec tests with tiny hello-world APK and DEX fixtures and Smali pattern samples ran through a Travis CI configuration on Ruby 2.5.3; the repository has no GitHub Actions workflow, and nothing was run in this review.",
+      "MIT (LICENSE.txt and the gemspec); dx.jar and the smali tools keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/lib/dex-oracle/driver.rb",
+      "https://github.com/CalebFenton/dex-oracle/tree/d6be172b925e52421c092c574b74a3783b9e7901/lib/dex-oracle/plugins",
+      "https://github.com/CalebFenton/dex-oracle/tree/d6be172b925e52421c092c574b74a3783b9e7901/res",
+      "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/dex-oracle.gemspec",
+      "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/lib/dex-oracle/version.rb",
+      "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/.travis.yml",
+      "https://github.com/CalebFenton/dex-oracle/blob/d6be172b925e52421c092c574b74a3783b9e7901/LICENSE.txt",
+      "https://rubygems.org/gems/dex-oracle/versions/1.0.5"
+    ]
   }
 ]

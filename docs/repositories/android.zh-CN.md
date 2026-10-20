@@ -74,7 +74,7 @@
 - [CreditTone/android-reverse-engineering-skill](https://github.com/CreditTone/android-reverse-engineering-skill) — 专为 Codex 适配的 Android 逆向分析技能，支持在 Codex 会话中反编译 APK、XAPK、JAR、AAR，并结合 jadx、Fernflower/Vineflower 梳理 Manifest、包结构、网络层和调用链。可辅助提取接口、URL、鉴权头、token 与签名逻辑，并提供 Frida、抓包及 JNI/SO 分析前的静态侦察方法，适用于接口分析、安全研究和授权测试。 **[547 星标]**
 - [damaiqiangpiao/damai](https://github.com/damaiqiangpiao/damai) — 大麦、猫眼、票星球抢票技术社区 | Android 逆向、Frida hook、票务监控 | QQ 955767910 **[538 星标]**
 - [cruise-automation/fwanalyzer](https://github.com/cruise-automation/fwanalyzer) — 用于安全分析文件系统镜像的工具。 **[516 星标]**
-- [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — 基于模式匹配的 Dalvik 去混淆工具，通过有限执行改善语义分析。 **[503 星标]**
+- [CalebFenton/dex-oracle](https://github.com/CalebFenton/dex-oracle) — 基于模式匹配的 Dalvik 去混淆工具，通过有限执行改善语义分析。 **[503 星标]** · 精选：[dex-oracle Dalvik 反混淆工具](https://awesomerea.org/zh/resources/dex-oracle/)
 - [lumirelle/android-killer](https://github.com/lumirelle/android-killer) — 经典、传统乃至老旧的 Android 反编译工具。让 Android-killer 再次强大！ **[496 星标]**
 - [ivan-sincek/android-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/android-penetration-testing-cheat-sheet) — 开发中…… **[493 星标]**
 - [Hrishikesh7665/Android-Pentesting-Checklist](https://github.com/Hrishikesh7665/Android-Pentesting-Checklist) — 全面的 Android 应用渗透测试清单，帮助轻松识别网络、数据、存储和权限方面的漏洞。通过实用工具与易懂指南提升安全技能，让 Android 安全测试更加顺畅！ **[484 星标]**
