@@ -6662,5 +6662,15 @@
       "需要 Python 2.6 或 2.7（CPython 或 PyPy）；requirements.txt 固定 construct 2.0.6 和 Pillow 2.4.0，并要求 Twisted 11.0+（含 Twisted Conch），IRC 和网页插件另需 Twisted Words 或 Web。它以 twistd 的 bravo 插件运行，按 bravo.ini.example 配置世界路径、创造或生存模式及 anvil 序列化器；数据包解析脚本仍导入 2.0 之前的模块路径。",
       "Travis CI 曾在 Python 2.6、2.7 和 PyPy 上用 trial 运行仓库内针对协议数据包、区块、背包、插件和序列化器的测试；这些测试检查 Bravo 自身代码，而非与 Mojang 服务端的等价性，本次审阅未运行任何程序。采用 MIT/X11 许可证，bravo/nbt.py 取自 Thomas Woolford 的 MIT 许可 NBT 库；Minecraft 及其客户端仍归 Mojang 所有。所审来源未确立 REA 或 AI 的使用。"
     ]
+  },
+  "dex-oracle": {
+    "name": "dex-oracle Dalvik 反混淆工具",
+    "requirements": [
+      "项目已不再活跃：RubyGems 与 GitHub 上的最新发布版均为 1.0.5，发布于 2016-07-26；所审阅的 master 提交日期为 2018-12-13，已标注尚未发布的 1.0.6。可作为 Ruby gem 安装，或用 Bundler 从源码安装；仓库固定 Ruby 2.5.3，还需要 Java、adb，以及位于 PATH 中的 smali 和 baksmali，README 的安装示例使用 smali 2.2.5。",
+      "输入为使用者自己的 APK、DEX 或 Smali 目录；由于匹配到的方法会真正在设备上执行，必须有正在运行的模拟器或已连接的 Android 5.0 及以上设备。README 推荐使用模拟器，并提醒所执行的代码可能有害；其故障排查部分则建议在驱动崩溃时改用 Android 4.4.2（API 19，ARM）。只能执行静态方法；若某个模式误匹配到并非混淆的代码，可单独禁用相应插件。",
+      "res 目录附带预编译的 driver.dex，以及工具用于合并 DEX 的 Android SDK dx.jar 副本；重新构建驱动需要 Gradle 和 SDK 中的 dx 工具。README 列出三个插件，而插件目录实际有六个，另含按索引查找字符串和类的插件以及一种按位运算字符串解密模式。",
+      "RSpec 测试使用极小的 hello-world APK、DEX 样例和 Smali 模式片段，曾通过使用 Ruby 2.5.3 的 Travis CI 配置运行；仓库没有 GitHub Actions 工作流，本次审阅未运行任何内容。",
+      "采用 MIT 许可（见 LICENSE.txt 与 gemspec）；dx.jar 和 smali 工具保留各自条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
