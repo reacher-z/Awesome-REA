@@ -1179,14 +1179,22 @@
       ],
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "Both linked REA issues are tool bug reports, not a reconstruction. #1801 reports that rea-agents 6.4.0 returned no types or methods for a Unity Assembly-CSharp.dll and Valheim's assembly_valheim.dll under the managed decode budget; #1371 reports a CLI JSON-output crash on an unnamed Unity game assembly, which its reporter later found fixed on main. Neither thread publishes recovered Valheim logic, a modification, reconstructed output or a comparison, and no Valheim retest is reported. Retain the lead without a catalog mapping; this is not a judgment of REA's managed-code support.",
-      "reason_zh": "两个关联的 REA issue 都是工具缺陷报告，而非重建案例。#1801 报告 rea-agents 6.4.0 受托管解码预算限制，对一个 Unity Assembly-CSharp.dll 和 Valheim 的 assembly_valheim.dll 均未返回任何类型或方法；#1371 报告 CLI 在一个未具名 Unity 游戏程序集上输出 JSON 时崩溃，报告者随后确认 main 分支已修复。两个讨论串均未公开恢复的 Valheim 逻辑、修改、重建产物或对照结果，也未报告对 Valheim 的复测。保留此线索而不建立目录映射；这不是对 REA 托管代码支持能力的评判。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "Both linked REA issues are tool bug reports, not a reconstruction. #1801 reports that rea-agents 6.4.0 returned no types or methods for a Unity Assembly-CSharp.dll and Valheim's assembly_valheim.dll under the managed decode budget; #1371 reports a CLI JSON-output crash on an unnamed Unity game assembly, which its reporter later found fixed on main. Neither thread publishes recovered Valheim logic, a modification, reconstructed output or a comparison, and no Valheim retest is reported. The related mapping points to REA's managed-code guide, which documents that 64 MiB budget, partial resource-limit results and --type selection of known types, but not Unity, Valheim or the JSON crash. This is not a judgment of REA's managed-code support.",
+      "reason_zh": "两个关联的 REA issue 都是工具缺陷报告，而非重建案例。#1801 报告 rea-agents 6.4.0 受托管解码预算限制，对一个 Unity Assembly-CSharp.dll 和 Valheim 的 assembly_valheim.dll 均未返回任何类型或方法；#1371 报告 CLI 在一个未具名 Unity 游戏程序集上输出 JSON 时崩溃，报告者随后确认 main 分支已修复。两个讨论串均未公开恢复的 Valheim 逻辑、修改、重建产物或对照结果，也未报告对 Valheim 的复测。相关映射指向 REA 托管代码分析指南，该指南说明了这一 64 MiB 预算、以部分覆盖报告的资源限制结果和用 --type 选择已知类型的方法，但未涉及 Unity、Valheim 或该 JSON 崩溃。这不是对 REA 托管代码支持能力的评判。",
       "primary_evidence_urls": [
         "https://github.com/morluto/rea/issues/1801",
-        "https://github.com/morluto/rea/issues/1371"
+        "https://github.com/morluto/rea/issues/1371",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/managed-code-analysis.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-managed-guide",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:large-android-apk",
@@ -1202,13 +1210,21 @@
       ],
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "The linked REA issue is a tool bug report, not a reconstruction: rea-agents 4.1.0's JADX provider ran out of Java heap on an unnamed 133 MB production APK with 11 DEX files. The closing reply describes heap-control and memory changes on main but states that they were not retested against that APK. The thread names no app, recovered feature, reconstructed output or comparison. Retain the lead without a catalog mapping; this is not a judgment of REA's current Android support.",
-      "reason_zh": "关联的 REA issue 是工具缺陷报告，而非重建案例：rea-agents 4.1.0 的 JADX 提供方在一个未具名、133 MB、含 11 个 DEX 文件的生产 APK 上耗尽 Java 堆内存。关闭时的回复说明 main 分支已加入堆内存控制和内存优化，但明确表示未针对该 APK 复测。讨论串未写明应用名称，也没有恢复的功能、重建产物或对照结果。保留此线索而不建立目录映射；这不是对 REA 当前 Android 支持能力的评判。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "The linked REA issue is a tool bug report, not a reconstruction: rea-agents 4.1.0's JADX provider ran out of Java heap on an unnamed 133 MB production APK with 11 DEX files. The closing reply describes heap-control and memory changes on main but states that they were not retested against that APK, and the thread names no app, recovered feature, reconstructed output or comparison. The related mapping points to REA's Android guide, which documents one JADX worker with no default heap, optional REA_JADX_HEAP_MIB or Java heap settings, the observed heap in Evidence and per-operation limits, but no test on an APK of this size. This is not a judgment of REA's current Android support.",
+      "reason_zh": "关联的 REA issue 是工具缺陷报告，而非重建案例：rea-agents 4.1.0 的 JADX 提供方在一个未具名、133 MB、含 11 个 DEX 文件的生产 APK 上耗尽 Java 堆内存。关闭时的回复说明 main 分支已加入堆内存控制和内存优化，但明确表示未针对该 APK 复测；讨论串也未写明应用名称，没有恢复的功能、重建产物或对照结果。相关映射指向 REA Android 静态分析指南，该指南说明了只用一个 JADX 工作线程且不设默认堆大小、可通过 REA_JADX_HEAP_MIB 或 Java 选项设置堆内存、Evidence 记录观测到的堆上限以及每次操作的限制，但没有针对这种规模 APK 的测试。这不是对 REA 当前 Android 支持能力的评判。",
       "primary_evidence_urls": [
-        "https://github.com/morluto/rea/issues/893"
+        "https://github.com/morluto/rea/issues/893",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/android-analysis.md"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-android-guide",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:nativeaot",
@@ -1288,13 +1304,22 @@
       ],
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "Merged REA PR #738 adds five static Android operations through headless JADX: package and manifest inspection, class search, member and selected-method Java/smali inspection, and static caller tracing. It reports a verification lane on Appium's public ApiDemos 6.0.18 APK in which all five CLI and MCP operations passed without executing the APK. This validates a tool integration, not a reconstruction: no ApiDemos feature or behavior is rebuilt or compared. Retain the lead without a catalog mapping; this does not question the reported verification.",
-      "reason_zh": "已合并的 REA PR #738 通过无界面 JADX 新增五项静态 Android 操作：包与清单检查、类搜索、成员及选定方法的 Java／smali 检查，以及静态调用者追踪。PR 报告了一条基于 Appium 公开 ApiDemos 6.0.18 APK 的验证流程，五项 CLI 与 MCP 操作均通过，且未执行该 APK。这验证的是工具集成，而非重建：没有重建或对照 ApiDemos 的任何功能或行为。保留此线索而不建立目录映射；这不质疑所报告的验证结果。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "Merged REA PR #738 adds five static Android operations through headless JADX: package and manifest inspection, class search, member and selected-method Java/smali inspection, and static caller tracing. It reports a verification lane on Appium's public ApiDemos 6.0.18 APK in which all five CLI and MCP operations passed without executing the APK. This validates a tool integration, not a reconstruction: no ApiDemos feature or behavior is rebuilt or compared. The related mapping points to REA's Android guide, whose real-verification lane uses the same hash-pinned fixture; the guide documents that tool check, not a reconstruction, so the mapping is not full. This does not question the reported verification.",
+      "reason_zh": "已合并的 REA PR #738 通过无界面 JADX 新增五项静态 Android 操作：包与清单检查、类搜索、成员及选定方法的 Java／smali 检查，以及静态调用者追踪。PR 报告了一条基于 Appium 公开 ApiDemos 6.0.18 APK 的验证流程，五项 CLI 与 MCP 操作均通过，且未执行该 APK。这验证的是工具集成，而非重建：没有重建或对照 ApiDemos 的任何功能或行为。相关映射指向 REA Android 静态分析指南，其真实验证流程使用同一个以哈希固定的测试样本；该指南记录的是工具检查而非重建，因此不作完整映射。这不质疑所报告的验证结果。",
       "primary_evidence_urls": [
-        "https://github.com/morluto/rea/pull/738"
+        "https://github.com/morluto/rea/pull/738",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/docs/android-analysis.md",
+        "https://github.com/morluto/rea/blob/808339f0b1cf3837445f392b5d5f1f362d64a27d/scripts/fixtures/android/apidemos.json"
       ],
-      "catalog_matches": []
+      "catalog_matches": [
+        {
+          "catalog": "resource",
+          "id": "rea-android-guide",
+          "kind": "documentation",
+          "scope": "related"
+        }
+      ]
     },
     {
       "id": "song:harmony-package-inventory",
@@ -16529,8 +16554,8 @@
       "pending": 34
     },
     "primary_reviewed_units": 498,
-    "catalog_linked_occurrences": 229,
-    "distinct_resource_ids": 219,
+    "catalog_linked_occurrences": 232,
+    "distinct_resource_ids": 220,
     "distinct_paper_ids": 2,
     "unique_projects": null
   }
