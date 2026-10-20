@@ -11191,5 +11191,38 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "vdexextractor",
+    "name": "vdexExtractor",
+    "url": "https://github.com/anestisb/vdexExtractor",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Command-line C tool that extracts the Dex bytecode held in the Vdex containers that ART's dex2oat compiler writes beside Oat files since Android 8.0 (API 26), and by default reverts ART's dex-to-dex quickening so the output is ordinary Dex again. It can also dump the verified-dependency records stored in a Vdex file, disassemble the bytecode in a dexdump-like format and report the Android API level of a Vdex version. Android 9 and 10 Vdex files hold CompactDex, which the bundled deodex helper converts back to standard Dex through a separately built compact_dex_converter.",
+    "description_zh": "C 语言命令行工具，用于从 ART 的 dex2oat 编译器自 Android 8.0（API 26）起在 Oat 文件旁生成的 Vdex 容器中提取 Dex 字节码，并默认撤销 ART 的 dex-to-dex quickening 优化，使输出重新成为普通 Dex。它还能转储 Vdex 文件中保存的验证依赖记录，以类似 dexdump 的格式反汇编字节码，并报告某个 Vdex 版本对应的 Android API 级别。Android 9 和 10 的 Vdex 文件存放的是 CompactDex，随附的 deodex 辅助脚本会借助单独构建的 compact_dex_converter 将其转换回标准 Dex。",
+    "evidence_url": "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Inactive: the last tag is 0.6.0 (2019-12-30), there are no GitHub releases, and the reviewed master commit (2020-05-13) is seven commits past that tag. Backends exist for Vdex versions 006, 010, 019 and 021, which the README and changelog place between Android 8 (Oreo) and Android 10 (Q); there is no backend for later Vdex versions.",
+      "Build with make.sh using gcc (default) or clang on Linux or macOS, or under Cygwin on Windows; zlib development files are required, and the cross-android target uses the Android NDK's ndk-build to produce armeabi-v7a, arm64-v8a, x86 and x86_64 executables. Binaries are written under bin/; the repository commits no prebuilt executables.",
+      "Inputs are Vdex files, or directories of them, that the user takes from their own device or system image; scripts/extract-apps-from-device.sh pulls the oat, art and vdex outputs, and optionally the APKs, of installed packages over ADB, and some system app data needs root. tools/deodex/run.sh needs wget, shasum and unzip and downloads the author's prebuilt compact_dex_converter archives from OneDrive with SHA-256 checks; the API 29 converter is Linux-only, and the converter's own source builds only as an AOSP module.",
+      "Apache-2.0 (copyright CENSUS S.A.). The README notes that equivalent unquickening was contributed to AOSP's oatdump. Recovered Dex code remains subject to the rights of the app or system-image owner. Nothing was built or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/README.md#L239-L349",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/README.md#L350-L422",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/make.sh",
+      "https://github.com/anestisb/vdexExtractor/tree/78f283b60ab6991fa27eeaff7d7be16409401c08/src/vdex",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/scripts/extract-apps-from-device.sh",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/tools/deodex/run.sh",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/tools/deodex/constants.sh",
+      "https://github.com/anestisb/vdexExtractor/blob/78f283b60ab6991fa27eeaff7d7be16409401c08/LICENSE",
+      "https://github.com/anestisb/vdexExtractor/commit/5f36debb03fccbb245af60129b1f94d369d7544c"
+    ]
   }
 ]

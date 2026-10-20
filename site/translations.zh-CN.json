@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "vdexextractor": {
+    "name": "vdexExtractor Vdex 字节码提取工具",
+    "requirements": [
+      "项目已不再活跃：最后一个标签是 0.6.0（2019-12-30），没有 GitHub 发布版，所审阅的 master 提交（2020-05-13）比该标签多七个提交。后端支持 Vdex 006、010、019 和 021 版本，README 和更新日志将其对应到 Android 8（Oreo）至 Android 10（Q）；更新的 Vdex 版本没有对应后端。",
+      "使用 make.sh 构建，可在 Linux 或 macOS 上选用 gcc（默认）或 clang，Windows 上可在 Cygwin 下构建；需要 zlib 开发文件，cross-android 目标借助 Android NDK 的 ndk-build 生成 armeabi-v7a、arm64-v8a、x86 和 x86_64 可执行文件。二进制输出到 bin/ 目录；仓库未提交任何预编译的可执行文件。",
+      "输入为使用者从自己的设备或系统镜像中取得的 Vdex 文件或其所在目录；scripts/extract-apps-from-device.sh 可通过 ADB 拉取已安装应用的 oat、art 和 vdex 产物，并可选拉取 APK，部分系统应用数据需要 root 权限。tools/deodex/run.sh 需要 wget、shasum 和 unzip，会从 OneDrive 下载作者预编译的 compact_dex_converter 压缩包并校验 SHA-256；API 29 版转换器仅有 Linux 版本，转换器源码本身只能作为 AOSP 模块构建。",
+      "采用 Apache-2.0 许可（版权归 CENSUS S.A.）。README 提到，等效的 unquickening 功能已贡献给 AOSP 的 oatdump。恢复出的 Dex 代码仍受应用或系统镜像权利人的权利约束。本次未构建或运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

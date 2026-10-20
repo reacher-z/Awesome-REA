@@ -50,7 +50,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]** · Curated: [hermes-dec](https://awesomerea.org/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
-- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**
+- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]** · Curated: [vdexExtractor](https://awesomerea.org/resources/vdexextractor/)
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — hook C# method at runtime without modify dll file (such as UnityEditor.dll), works on Windows, Mac, Android il2cpp(armv7a and armv8a) **[1,065 stars]**
 - [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — An easy-to-use, high-performance dex deobfuscation library. **[1,061 stars]**
 - [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — Remove Certificate Pinning from APKs **[1,053 stars]** · Curated: [Android Unpinner](https://awesomerea.org/resources/android-unpinner/)

@@ -50,7 +50,7 @@
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — 用于反编译和反汇编 React Native Hermes 字节码的逆向工程工具。 **[1,213 星标]** · 精选：[hermes-dec](https://awesomerea.org/zh/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — 用于评估 Android 应用、逆向工程及恶意软件分析的虚拟机。 **[1,175 星标]**
-- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]**
+- [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — 从 Vdex 文件中反编译并提取 Android Dex 字节码的工具。 **[1,142 星标]** · 精选：[vdexExtractor Vdex 字节码提取工具](https://awesomerea.org/zh/resources/vdexextractor/)
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — 无需修改 DLL 文件（如 UnityEditor.dll），即可在运行时 hook C# 方法，支持 Windows、Mac 和 Android il2cpp（armv7a 与 armv8a）。 **[1,065 星标]**
 - [LuckyPray/DexKit](https://github.com/LuckyPray/DexKit) — 易用、高性能的 Dex 去混淆库。 **[1,061 星标]**
 - [mitmproxy/android-unpinner](https://github.com/mitmproxy/android-unpinner) — 移除 APK 中的证书锁定。 **[1,053 星标]** · 精选：[Android Unpinner](https://awesomerea.org/zh/resources/android-unpinner/)
