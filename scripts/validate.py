@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Validate catalog data, benchmark snapshots, local Markdown links and generated READMEs."""
 import datetime as dt
+import difflib
 import html
 import ipaddress
 import json
@@ -27,6 +28,7 @@ RESOURCE_FIELDS = {
     'id', 'name', 'url', 'category', 'relationship', 'description_en',
     'description_zh', 'evidence_url', 'verified_at', 'verification', 'requirements', 'targets', 'kind',
 }
+OPTIONAL_RESOURCE_FIELDS = {'additional_evidence_urls'}
 BENCHMARK_FIELDS = {
     'id', 'full_name', 'url', 'category', 'stars', 'stars_display',
     'stars_precision', 'observed_at', 'description_zh', 'mechanisms',
@@ -158,6 +160,30 @@ def evidence_pin_warnings(records):
     return warnings
 
 
+def unknown_resource_fields(record):
+    """Return (field, closest supported field or None) for each key outside the record schema."""
+    supported = RESOURCE_FIELDS | OPTIONAL_RESOURCE_FIELDS
+    return [(field, next(iter(difflib.get_close_matches(field, supported, n=1, cutoff=0.9)), None))
+            for field in sorted(set(record) - supported)]
+
+
+def unknown_field_warnings(records):
+    """Advisory only: unlisted resource fields that are not near-misspellings of a supported one.
+
+    validate_resources rejects near-misspellings such as `requirementz`. Any other new field only
+    warns, so a pull request that proposes one together with its schema change keeps passing the
+    trusted base-branch review.
+    """
+    users = {}
+    for record in records:
+        if isinstance(record, dict):
+            for field, suggestion in unknown_resource_fields(record):
+                if suggestion is None:
+                    users.setdefault(field, []).append(record.get('id'))
+    return [f'resource {ids[0]!r}.{field}: unsupported field (in {len(ids)} record(s)); add it to the '
+            'catalog format guide and validator, or remove it' for field, ids in users.items()]
+
+
 def validate_resources(records, errors, *, now=None):
     now = dt.datetime.now(dt.timezone.utc) if now is None else now.astimezone(dt.timezone.utc)
     ids, urls = set(), set()
@@ -167,6 +193,9 @@ def validate_resources(records, errors, *, now=None):
             errors.append(f'{where}: must be an object')
             continue
         where = f"resource {record.get('id', index)!r}"
+        for field, suggestion in unknown_resource_fields(record):
+            if suggestion:
+                errors.append(f'{where}.{field}: unknown field; did you mean {suggestion}?')
         missing = RESOURCE_FIELDS - record.keys()
         if missing:
             errors.append(f"{where}: missing fields {', '.join(sorted(missing))}")
@@ -1065,7 +1094,7 @@ def main():
     papers = read_array(ROOT / 'data/papers.json', errors)
     validate_papers(papers, errors, url_check=public_https_error)
     validate_resources(records, errors)
-    for warning in evidence_pin_warnings(records):
+    for warning in unknown_field_warnings(records) + evidence_pin_warnings(records):
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
     validate_benchmarks(benchmarks, errors)
