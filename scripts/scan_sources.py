@@ -13,10 +13,12 @@ from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 import datetime as dt
 import hashlib
 from functools import lru_cache
+import inspect
 import json
 from pathlib import Path
 import re
 import subprocess
+import sys
 import threading
 import time
 from urllib.error import HTTPError, URLError
@@ -82,6 +84,12 @@ CLASSIFICATION_POLICY = ('Automatic labels use repository names, URL-stripped pu
 PROTOCOL_TOPICS = frozenset({'protocol-analysis', 'protocol-analyser', 'packet-analysis', 'pcap', 'wireshark', 'network-forensics'})
 PROTOCOL_WORDING = r'\bpcap\b|\bwireshark\b|\bnetwork[- ]protocol\b|\bprotocol[- ](?:analy|revers)'
 MCP_WORDING = r'model[\s-]*context[\s-]*protocol|\bmodelcontextprotocol\b|\bmcp\b'
+# Each new run records repository-relative paths and SHA-256 digests of its scanner code and of the
+# seed files it actually read; nothing else about the environment is retained.
+RUN_PROVENANCE_POLICY = 'scanner-files-and-seed-inputs-sha256-v1'
+CURATED_SEED_FILES = ('data/rea-resources.json', 'data/tool-resources.json')
+PAPER_SEED_FILE = 'data/papers.json'
+SEED_INPUT_DIGESTS = {}
 
 
 def now():
@@ -207,15 +215,42 @@ class GitHub:
             raise ScanError('invalid-api-json') from None
 
 
+def file_digest(path):
+    """Describe a repository file by relative path, size and SHA-256 of its bytes."""
+    content = path.read_bytes()
+    return {'path': path.resolve().relative_to(ROOT).as_posix(),
+            'sha256': hashlib.sha256(content).hexdigest(), 'bytes': len(content)}
+
+
+def read_seed_input(relative):
+    """Parse a seed file once and remember the digest of exactly the bytes that were parsed."""
+    path = ROOT / relative
+    if not path.exists():
+        return None
+    content = path.read_bytes()
+    SEED_INPUT_DIGESTS[relative] = {'path': relative, 'sha256': hashlib.sha256(content).hexdigest(), 'bytes': len(content)}
+    return json.loads(content.decode('utf-8'))
+
+
+def scanner_implementation(*components):
+    """Digest this scanner, its imported helpers and the modules defining the run's transport and frontier."""
+    modules = [sys.modules[name] for name in ('source_descriptions', 'source_scope')]
+    modules += [inspect.getmodule(component) for component in components if component is not None]
+    files = {Path(__file__).resolve()} | {Path(module.__file__).resolve() for module in modules
+                                          if getattr(module, '__file__', None)}
+    # Only repository files are named, so no local checkout path is recorded.
+    return sorted((file_digest(path) for path in files if path.is_relative_to(ROOT)), key=lambda row: row['path'])
+
+
 @lru_cache(maxsize=1)
 def curated_references():
     """Seed explicit curated GitHub repositories; labels are derived at build time."""
     result = {}
-    for filename in ('rea-resources.json', 'tool-resources.json'):
-        path = ROOT / 'data' / filename
-        if not path.exists():
+    for relative in CURATED_SEED_FILES:
+        records = read_seed_input(relative)
+        if records is None:
             continue
-        for record in json.loads(path.read_text(encoding='utf-8')):
+        for record in records:
             parsed = urlsplit(record['url'])
             parts = parsed.path.strip('/').split('/')
             if parsed.hostname != 'github.com' or len(parts) < 2:
@@ -229,10 +264,10 @@ def curated_references():
 def paper_references():
     """Seed only explicit bibliography artifact links, without changing labels."""
     result = {}
-    path = ROOT / 'data/papers.json'
-    if not path.exists():
+    papers = read_seed_input(PAPER_SEED_FILE)
+    if papers is None:
         return result
-    for paper in json.loads(path.read_text(encoding='utf-8')):
+    for paper in papers:
         for field in ('code_url', 'project_url'):
             url = paper.get(field)
             if not isinstance(url, str):
@@ -827,6 +862,11 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
         'retained_unattempted_repository_ids': len(known_ids - attempted_ids),
         'query_plan': list(args.queries),
         'held_repository_ids': sorted(held_ids, key=lambda value: int(value[5:])),
+        'scanner_provenance': {'policy': RUN_PROVENANCE_POLICY,
+                               # A scheduled wrapper keeps the GraphQL reader as its `transport`.
+                               'implementation': scanner_implementation(readme_transport, getattr(readme_transport, 'transport', None),
+                                                                        frontier_api),
+                               'seed_inputs': []},
     }
     candidates, candidate_names, exhausted = {}, set(), set()
     meta.setdefault('seed_observations', [])
@@ -980,11 +1020,15 @@ def run_scan(api, args, resumed=None, resume_sha256=None, *, readme_transport=No
                 checkpoint()
         print(f'RESUME_METADATA_COMPLETE observations={len(meta["resume_observations"]) - meta["current_run"]["resume_observation_start_index"]} new_readme_candidates={len(candidates)}', flush=True)
         checkpoint()
-    seed_groups = []
+    seed_groups, seed_files = [], []
     if args.seed_curated:
         seed_groups.append(('curated-repository-reference', curated_references()))
+        seed_files += CURATED_SEED_FILES
     if args.seed_papers:
         seed_groups.append(('paper-artifact-reference', paper_references()))
+        seed_files.append(PAPER_SEED_FILE)
+    meta['current_run']['scanner_provenance']['seed_inputs'] = [
+        SEED_INPUT_DIGESTS[relative] for relative in seed_files if relative in SEED_INPUT_DIGESTS]
     for method, references in seed_groups:
         for name, reference in sorted(references.items()):
             if name in retained_names:
