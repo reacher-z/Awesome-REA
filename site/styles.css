@@ -137,6 +137,12 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .card-meta a:hover,.source-card-footer a:hover{text-decoration:underline;text-underline-offset:4px}
 .card-meta .card-category{font:inherit}
 .card-meta .card-targets{color:var(--body)}
+/* Copy link: an icon button after a card's entry or README link; without clipboard access a selected field follows it. */
+:is(.card-meta,.source-card-footer)>.copy-link{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;margin:-3px 0;padding:0;border-radius:6px;background:none;color:var(--link)}
+:is(.card-meta,.source-card-footer)>.copy-link:hover{background:var(--soft)}
+:is(.card-meta,.source-card-footer)>.copy-link>.icon{width:15px;height:15px;font-size:15px}
+.copy-link-fallback{flex:1 1 100%;width:100%;min-width:0;padding:4px 8px;border:1px solid var(--control);border-radius:6px;background:var(--soft);color:var(--body);font:12px/1.6 var(--mono)}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .card-meta>:is(.copy-link,.copy-link-fallback){order:2}}
 .source-card-license{font-size:14px}
 .requirements,.source-record-details{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
 .requirements summary,.source-record-details summary{color:var(--link);font-size:14px;font-weight:550;line-height:1.7;cursor:pointer;width:fit-content;min-height:44px;padding:9px 0}

@@ -92,6 +92,45 @@
     return apply;
   }
 
+  // Copy link: each paper card gets a button that copies its entry page on this site, built from the validated ID.
+  // Without clipboard access the link appears selected beside the button for a manual copy.
+  function initializeCopyLinks(document, browser) {
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    const main = document.querySelector("main");
+    if (!cards.length || !main) return false;
+    const zh = document.documentElement.lang === "zh-CN";
+    let origin = browser.location.origin;
+    try { origin = new URL(document.querySelector('link[rel="canonical"]').href).origin; } catch (_) { /* keep this page's origin */ }
+    const status = document.createElement("p"); status.className = "sr-only"; status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
+    main.append(status);
+    const label = zh ? "复制此论文条目的链接" : "Copy link to this paper's entry";
+    for (const card of cards) {
+      const id = card.dataset.paperId; const links = card.querySelector(".paper-links");
+      if (!/^paper-[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || !links) continue;
+      const href = new URL(`${zh ? "/zh" : ""}/papers/${id}/`, origin).href;
+      const name = (card.querySelector("h3")?.textContent || id).trim();
+      const button = document.createElement("button"); button.type = "button"; button.className = "paper-link copy-link";
+      button.title = label; button.setAttribute("aria-label", `${label}${zh ? "：" : ": "}${name}`); button.dataset.copyLink = href;
+      button.textContent = zh ? "复制链接" : "Copy link";
+      button.addEventListener("click", async () => {
+        try {
+          await browser.navigator.clipboard.writeText(href);
+          status.textContent = zh ? `已复制 ${name} 的链接。` : `Link to ${name} copied.`;
+        } catch (_) {
+          let field = button.nextElementSibling;
+          if (!field || field.className !== "copy-link-fallback") { field = document.createElement("input"); field.className = "copy-link-fallback"; button.after(field); }
+          field.type = "text"; field.readOnly = true; field.value = href; field.setAttribute("aria-label", zh ? `${name} 的链接` : `Link to ${name}`);
+          field.focus(); field.select();
+          status.textContent = zh ? `无法直接复制。${name} 的链接已选中，请按 Ctrl+C 或 ⌘C 复制。` : `Copying isn’t available here. The link to ${name} is selected; press Ctrl+C or ⌘C to copy it.`;
+        }
+      });
+      const entry = links.querySelector(".entry-detail-link");
+      if (entry) entry.after(button); else links.append(button);
+    }
+    return true;
+  }
+  if (typeof document !== "undefined") initializeCopyLinks(document, window);
+
   function initialize(document, browser) {
     const form = document.getElementById("paper-search");
     const data = document.getElementById("paper-search-data");

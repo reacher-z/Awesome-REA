@@ -28,6 +28,8 @@ const UI = {
     "layoutCards": "Cards",
     "requirementsShort": "Details & limits",
     "openEntry": "Open full entry",
+    "copyEntryLink": "Copy link to this entry",
+    "copyCardLink": "Copy link to this repository on its category page",
     "sourceTopicsLabel": "Topics",
     "noscriptNote": "JavaScript enables search and filters. Read the complete <a href=\"/browse/\">repository directory</a>, <a href=\"/resources/\">curated collection</a> and <a href=\"/papers/\">research papers</a> without JavaScript. <a href=\"/zh/\" lang=\"zh-CN\">简体中文</a>.",
     "exploreResources": "Browse resources",
@@ -179,6 +181,8 @@ const UI = {
     "layoutCards": "卡片",
     "requirementsShort": "详情与局限",
     "openEntry": "查看完整条目",
+    "copyEntryLink": "复制此条目的链接",
+    "copyCardLink": "复制此仓库在分类页上的链接",
     "sourceTopicsLabel": "主题",
     "noscriptNote": "JavaScript 用于搜索和筛选。关闭 JavaScript 仍可阅读完整的<a href=\"/zh/browse/\">仓库目录</a>、<a href=\"/zh/resources/\">精选资源</a>与<a href=\"/zh/papers/\">研究论文</a>。<a href=\"/\" lang=\"en\">English</a>。",
     "exploreResources": "浏览资源",
@@ -388,6 +392,36 @@ function renderCategories() {
 const KIND = {"project":["Project","项目"],"tool":["Tool","工具"],"integration":["Integration","集成"],"case-study":["Case study","案例"],"collection":["Collection","合集"],"documentation":["Documentation","文档"],"learning-resource":["Learning resource","学习资源"],"research":["Research","研究"]};
 const FEATURED = ["rea-upstream","chrome-devtools-mcp","renderdoc","jadx-ai-mcp","ghidra","webcrack","assetripper","ilspy","awesome-rea-cases","rea-dxball-case","mitmproxy","rea-notion-case","hex-rays-ida-mcp","picoprint-rea-investigation","morluto-awesome-re"];
 function renderKinds() { const select=$("#kind-select"); select.replaceChildren(); const all=node("option","",t("allKinds")); all.value="all"; select.append(all); [...new Set(state.records.map(r=>r.kind).filter(Boolean))].sort((a,b)=>compareLabels(label(KIND,a),label(KIND,b))).forEach(kind=>{const option=node("option","",label(KIND,kind));option.value=kind;select.append(option);});if(state.loaded&&![...select.options].some(o=>o.value===state.kind))state.kind="all";select.value=[...select.options].some(o=>o.value===state.kind)?state.kind:"all"; }
+// Copy link: a curated card copies its entry page and a repository card copies its card on the static category page.
+// Routes are fixed and IDs validated, so neither an upstream URL nor typed text can become the copied link.
+const SITE_ORIGIN = (() => { try { return new URL($('link[rel="canonical"]').href).origin; } catch (_) { return location.origin; } })();
+function permalink(kind, record) {
+  const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const path = kind === "curated" ? entryHref("curated", record.id)
+    : slug.test(record.id) && slug.test(record.category || "") ? `${state.lang === "zh" ? "/zh" : ""}/browse/${record.category}/#${record.id}` : null;
+  return path ? new URL(path, SITE_ORIGIN).href : null;
+}
+function copyLinkButton(kind, record, name) {
+  const href = permalink(kind, record); if (!href) return null;
+  const label = t(kind === "curated" ? "copyEntryLink" : "copyCardLink"); const button = node("button", "copy-link"); button.type = "button";
+  button.title = label; button.setAttribute("aria-label", `${label}${state.lang === "zh" ? "：" : ": "}${name}`); button.dataset.copyLink = href; button.append(icon("copy", true));
+  button.addEventListener("click", () => copyLink(button, href, name)); return button;
+}
+async function copyLink(button, href, name) {
+  const zh = state.lang === "zh"; const status = $("#copy-link-status");
+  try {
+    await navigator.clipboard.writeText(href);
+    button.replaceChildren(icon("check", true)); status.textContent = zh ? `已复制 ${name} 的链接。` : `Link to ${name} copied.`;
+    setTimeout(() => button.replaceChildren(icon("copy", true)), 2000);
+  } catch (_) {
+    // Without clipboard access the link appears selected beside the button for a manual copy.
+    const field = button.nextElementSibling?.classList.contains("copy-link-fallback") ? button.nextElementSibling : node("input", "copy-link-fallback");
+    field.type = "text"; field.readOnly = true; field.value = href; field.setAttribute("aria-label", zh ? `${name} 的链接` : `Link to ${name}`);
+    if (field !== button.nextElementSibling) button.after(field);
+    field.focus(); field.select();
+    status.textContent = zh ? `无法直接复制。${name} 的链接已选中，请按 Ctrl+C 或 ⌘C 复制。` : `Copying isn’t available here. The link to ${name} is selected; press Ctrl+C or ⌘C to copy it.`;
+  }
+}
 function card(record) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
   article.append(node("p","card-description",record[state.lang==="zh"?"description_zh":"description_en"]));
@@ -398,6 +432,7 @@ function card(record) {
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
+  const copy=copyLinkButton("curated",record,state.lang==="zh"?(record.name_zh||record.name):record.name);if(copy)meta.append(copy);
   details.append(context);article.append(details);return article;
 }
 function filtered() { const terms=state.q.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);const found=state.records.filter(r=>(state.group==="all"||r.group===state.group)&&(state.target==="all"||r.targets.includes(state.target))&&(state.category==="all"||r.category===state.category)&&(state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
@@ -605,6 +640,7 @@ function sourceCard(record) {
 
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails")));
+  const copy = copyLinkButton("repository", record, record.full_name); if (copy) footer.append(copy);
   const context = node("div", "source-record-context");
   const related = sourceRelatedLinks(record); if (related) context.append(related);
   const topics = sourceTopicButtons(record, Infinity); if (topics) context.append(node("p", "source-context-label", t("sourceTopicsLabel")), topics);
