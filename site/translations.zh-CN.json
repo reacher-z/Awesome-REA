@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "validity90-fingerprint-protocol-case": {
+    "name": "Validity90：逆向分析 Validity/Synaptics 指纹读取器协议",
+    "requirements": [
+      "所审阅的 master 提交日期为 2019-02-25；仓库没有发布版本或标签。README 状态表称：138a:0090 的扫描、图像输出和内部数据库校验在原型中可用；138a:0097 的扫描和数据库校验可用；06cb:009a 可初始化并控制指示灯，但还不能扫描；138a:0094 与 06cb:0081 尚不可用。规范中的配置、TLS 前密钥交换、设备操作和图像格式仍标为进行中，驱动一栏的所有任务均为未开始。",
+      "README 建议 138a:0090 用户使用 @3v1n0 基于该原型另行编写的主机端比对 libfprint 驱动，并说明协议不同的 138a:0091 由 Validity91 项目处理。libfprint 目录是作者 libfprint 分支的 git-subrepo，README 已将其划掉并注明尚未就绪。",
+      "运行原型需要通过 USB 连接上述某款读取器，并能读取本机 DMI 产品序列号，原型在派生会话密钥时会用到它；Makefile 的 permissions 目标会用 sudo 修改设备及序列号文件的权限。原型在 Linux 上用 make 和 C 编译器构建，依赖 NSS、OpenSSL、libgcrypt、libusb-1.0、libpng 和 GLib；解析器需要 Wireshark 的 Lua 支持以及 lua-lockbox 子模块。",
+      "make test 会构建一个 GLib gtester 测试集，覆盖原型的工具函数及其对一条初始化响应的解析；仓库没有 CI。设备结果依据 README 状态表，以及提交的 138a:0090 原型成功和失败运行日志。本次审阅未构建或运行任何程序。",
+      "COPYING 与源码文件头采用 LGPL-2.1-or-later；libfprint 副本保留其自身的 LGPL 声明，子模块保留其自身许可证。规范和原型还公开了项目从设备通信及调试厂商 Windows 驱动中获得的静态密钥和初始化、配置字节序列；仓库未说明这些内容的权利归属，读取器固件和厂商驱动仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }
