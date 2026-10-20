@@ -77,7 +77,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [petoolse/petools](https://github.com/petoolse/petools) — PE Tools - Portable executable (PE) manipulation toolkit **[1,201 stars]**
 - [HexRaysSA/ida-mcp](https://github.com/HexRaysSA/ida-mcp) — Official Hex-Rays IDA MCP Server. **[1,196 stars]** · Curated: [Hex-Rays IDA MCP](https://awesomerea.org/resources/hex-rays-ida-mcp/)
 - [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — Scripts for the Ghidra software reverse engineering suite. **[1,177 stars]**
-- [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm is a fast, lightweight, x86/x64 instruction decoder. The project also features a fast, basic, x86/x64 instruction emulator, designed specifically to detect shellcode-like behavior. **[1,089 stars]**
+- [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm is a fast, lightweight, x86/x64 instruction decoder. The project also features a fast, basic, x86/x64 instruction emulator, designed specifically to detect shellcode-like behavior. **[1,089 stars]** · Curated: [bddisasm](https://awesomerea.org/resources/bddisasm/)
 - [wisk/medusa](https://github.com/wisk/medusa) — An open source interactive disassembler **[1,089 stars]**
 - [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) — Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux **[1,009 stars]** · Curated: [LASRecomp: Link’s Awakening static recompilation](https://awesomerea.org/resources/lasrecomp/)
 - [vivisect/vivisect](https://github.com/vivisect/vivisect) — No description supplied by the upstream repository. **[1,003 stars]**

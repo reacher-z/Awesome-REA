@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bddisasm",
+    "name": "bddisasm",
+    "url": "https://github.com/bitdefender/bddisasm",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Bitdefender’s dependency-free C decoder for x86/x64 instructions, reporting explicit and implicit operands with their access modes, CPUID feature flags, flag accesses and valid modes, and printing Intel/MASM-style text. A minimal API with a 64-byte instruction structure trades detail for speed, and the companion bdshemu library emulates basic x86/x64 code in a raw buffer to flag shellcode-like behaviour such as NOP sleds, reading the instruction pointer, self-modification, TEB/PEB access and system calls. The disasmtool command-line example decodes or emulates files and hex strings.",
+    "description_zh": "Bitdefender 开发的 x86/x64 指令解码库，以 C 编写且无外部依赖，可报告显式与隐式操作数及其访问方式、CPUID 特性标志、标志位访问和有效模式，并输出 Intel／MASM 风格的反汇编文本。精简 API 使用 64 字节的指令结构，以较少的信息换取速度；配套的 bdshemu 库在原始缓冲区中模拟基本的 x86/x64 代码，用于标记类似 shellcode 的行为，例如 NOP 滑板、读取指令指针、自修改、访问 TEB/PEB 和系统调用。命令行示例 disasmtool 可对文件或十六进制字符串进行解码或模拟。",
+    "evidence_url": "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit is the v3.1.0 release of 2026-10-14, which attaches a Linux .deb package and x86 and x64 Windows zip bundles; the README says releases newer than 2.1.4 can be checked with GitHub artifact attestations. v3.1.0 removed the Python and Rust bindings, whose directories now hold only notices that they are unsupported and must not be used in production, and the README warns that the vcpkg package may lag behind.",
+      "Builds use CMake 3.16+ with optional Ninja, tested with GCC and Clang on Linux and MSVC on Windows; a Makefile builds only the static libraries, and the Visual Studio 2019 solution with Windows SDK 10.0.18362.0 adds Windows kernel configurations that need WDK 1903. Python 3 is needed only to regenerate the instruction tables with isagenerator, and Make or MSBuild builds leave nd_vsnprintf_s and nd_memset for the integrator to supply.",
+      "The caller supplies code bytes and a 16-, 32- or 64-bit mode, optionally with vendor and feature preferences, and only Intel/MASM-style syntax is printed. No executable-format loader is documented, so code in PE, ELF or firmware images must be located with another tool. The README says bdshemu handles only basic instructions, emulates no API calls and supports memory accesses only inside the shellcode and its emulated stack, so its flags describe shellcode-like behaviour rather than a full program run.",
+      "CI builds on Linux, Windows and macOS, runs cppcheck and runs the repository’s decoder and emulator regression suites, which compare disasmtool output for bundled test byte files, many with their .asm sources, against expected results. The README also reports internal fuzzing, testing with mishegos and per-instruction speed figures. This review ran none of these and decoded or emulated no code.",
+      "Apache-2.0 license. The documentation says Bitdefender uses the library in Windows and Linux user mode, Windows kernel mode and its Napoca hypervisor; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/README.md#L22-L176",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/CHANGELOG.md",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/CMakeLists.txt",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/inc/bdshemu.h",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/disasmtool/disasmtool.c",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/tests/README.md",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/.github/workflows/ci.yml",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/bindings/pybddisasm/README.md",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/docs/source/index.rst",
+      "https://github.com/bitdefender/bddisasm/blob/f0c0e90497d8905d81b7ed650646ea4dbf40bf65/LICENSE",
+      "https://github.com/bitdefender/bddisasm/releases/tag/v3.1.0"
+    ]
   }
 ]

@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "bddisasm": {
+    "name": "bddisasm x86/x64 指令解码库",
+    "requirements": [
+      "所审阅的 master 提交即 2026-10-14 发布的 v3.1.0，该版本附带 Linux .deb 软件包以及 x86 和 x64 Windows 压缩包；README 说明 2.1.4 之后的版本可用 GitHub 制品证明进行校验。v3.1.0 移除了 Python 和 Rust 绑定，其目录中只剩说明，称绑定已不再支持、不得用于生产环境；README 还提醒 vcpkg 上的版本可能滞后。",
+      "可使用 CMake 3.16+ 构建，Ninja 为可选项，已在 Linux 上用 GCC 和 Clang、在 Windows 上用 MSVC 测试；Makefile 只构建静态库，Visual Studio 2019 解决方案配合 Windows SDK 10.0.18362.0 另提供 Windows 内核配置，需安装 WDK 1903。只有用 isagenerator 重新生成指令表时才需要 Python 3；使用 Make 或 MSBuild 构建时，nd_vsnprintf_s 和 nd_memset 需由集成方自行提供。",
+      "调用方需提供代码字节并选择 16、32 或 64 位模式，可另设厂商与特性偏好；反汇编文本只支持 Intel／MASM 风格语法。文档未描述可执行文件格式加载器，因此要在 PE、ELF 或固件镜像中定位代码需借助其他工具。README 说明 bdshemu 只支持基本指令，不模拟任何 API 调用，内存访问也仅限于 shellcode 本身及模拟栈，因此其标志反映的是类似 shellcode 的行为，而非完整的程序运行。",
+      "CI 在 Linux、Windows 和 macOS 上构建，运行 cppcheck，并运行仓库自带的解码器与模拟器回归测试，将 disasmtool 对随附测试字节文件（多数附有 .asm 源文件）的输出与预期结果比较。README 还报告了内部模糊测试、mishegos 测试以及每条指令的速度数据。本次审阅均未运行，也未解码或模拟任何代码。",
+      "采用 Apache-2.0 许可证。文档称 Bitdefender 在 Windows 和 Linux 用户态、Windows 内核态及其 Napoca 虚拟机监控器中使用该库；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
