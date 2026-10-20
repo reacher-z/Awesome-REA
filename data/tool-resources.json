@@ -11254,5 +11254,36 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "sniffrom",
+    "name": "sniffROM",
+    "url": "https://github.com/alainiamburg/sniffROM",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Python tool that reconstructs serial flash contents from passive bus captures: it parses SPI or I²C analyzer exports from Saleae Logic, recorded while a device reads and writes its own flash chip, and writes the observed data into a binary image at the original memory addresses. It recognizes more than 100 SPI flash commands from vendors such as Winbond, Macronix, Spansion and GigaDevice and currently parses 12 of them, reports manufacturer and device IDs seen in JEDEC ID reads, and can print a command summary, show a visual map of the captured address ranges and plot the timing of reads and writes.",
+    "description_zh": "通过被动总线抓包重建串行闪存内容的 Python 工具：它解析 Saleae Logic 的 SPI 或 I²C 分析器导出文件（这些数据记录了设备读写自身闪存芯片的过程），并把观察到的数据按原始内存地址写入二进制镜像。它可识别 Winbond、Macronix、Spansion、GigaDevice 等厂商的 100 多条 SPI 闪存命令，目前可解析其中 12 条，能报告 JEDEC ID 读取中出现的厂商和设备 ID，还可输出命令摘要、显示已捕获地址范围的可视化分布图，并绘制读写操作的时序图。",
+    "evidence_url": "https://github.com/alainiamburg/sniffROM/blob/a32be6150bc100ffa62dc996d045757fce2e5f67/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags; the script was last changed in July 2020. A README note added on 2023-12-07 says Saleae Logic 2 breaks the SPI analyzer export that sniffROM depends on, so it currently works only with data exported from Logic 1.x, and that it was unknown when this would be fixed.",
+      "A single Python 2 script (it uses print statements) that needs matplotlib for the data map and timing plot; the README's usage text calls it sniffROM_new.py. Input is a CSV export from Saleae Logic's SPI or I²C analyzer, with options for 2-, 3- or 4-byte SPI addresses, byte endianness and analyzing only read or only write commands.",
+      "Capturing needs a Saleae logic analyzer connected to the flash bus of a device the analyst is permitted to examine; the wiki's Getting Started page points to an external guide for the capture itself. Only data the device accessed during the capture is recovered, and unseen bytes are filled with a padding value; the wiki's boot-time SPI examples captured about 29% and 42% of the rebuilt images.",
+      "GPL-3.0 (COPYING). The repository also stores manufacturers' datasheet PDFs for the supported SPI and I²C chips and a commands.xlsx command table; the datasheets remain their vendors' documents. No firmware images or bus captures are committed, and nothing was run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/alainiamburg/sniffROM/blob/a32be6150bc100ffa62dc996d045757fce2e5f67/sniffROM.py",
+      "https://github.com/alainiamburg/sniffROM/blob/a32be6150bc100ffa62dc996d045757fce2e5f67/COPYING",
+      "https://github.com/alainiamburg/sniffROM/tree/a32be6150bc100ffa62dc996d045757fce2e5f67/SPI/datasheets",
+      "https://github.com/alainiamburg/sniffROM/wiki/Home/2172a35b47fab5ee4adc5703b7c0de64857f68f0",
+      "https://github.com/alainiamburg/sniffROM/wiki/Getting-Started/63cbaca6d5519a70ead845ef28a19757dd01f41a",
+      "https://github.com/alainiamburg/sniffROM/wiki/Usage-Examples/1b18e9bde42895386caaf2f1c74e07a6605a2208"
+    ]
   }
 ]
