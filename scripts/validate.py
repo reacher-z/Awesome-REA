@@ -723,7 +723,76 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                         if retained_ids.intersection(current_ids):
                             errors.append('Source index current_run metadata lookups must exclude retained README attempts.')
     validate_scan_discovery(meta, records, errors, failures)
+    validate_scan_chronology(meta, records, failures, errors, now=dt.datetime.now(dt.timezone.utc))
     return len(records)
+
+
+def validate_scan_chronology(meta, records, failures, errors, *, now):
+    """Reject impossible scan times without rewriting or re-dating historical evidence.
+
+    No recorded time may be more than a day after `now`, and each README success follows its
+    metadata lookup. Only the current run's new attempts and observations must fall inside its
+    window: retained rows and observations keep the provenance of earlier runs or reconciled
+    checkpoints, and later rechecks such as README integrity reviews keep their own times.
+    """
+    def time_of(value):
+        try:
+            return parse_iso(value, require_time=True)
+        except (ValueError, TypeError):
+            return None  # Shape checks report missing or malformed timestamps.
+
+    times = []  # (location, time) pairs compared with the future limit at the end.
+
+    def recorded(where, value):
+        parsed = time_of(value)
+        if parsed is not None:
+            times.append((where, parsed))
+        return parsed
+
+    for field in ('started_at', 'completed_at', 'last_checkpoint_at'):
+        recorded(f'source index meta.{field}', meta.get(field))
+    histories = meta.get('resume_history')
+    for index, history in enumerate(histories if isinstance(histories, list) else []):
+        for field in ('started_at', 'completed_at', 'last_checkpoint_at'):
+            if isinstance(history, dict):
+                recorded(f'source index resume_history[{index}].{field}', history.get(field))
+    run = meta.get('current_run') if isinstance(meta.get('current_run'), dict) else {}
+    start = recorded('source index current_run.started_at', run.get('started_at'))
+    # An in-progress checkpoint has no completion time yet; its last save closes the window.
+    end = recorded('source index current_run.completed_at', run.get('completed_at')) or time_of(meta.get('last_checkpoint_at'))
+    window = (start, end) if start is not None and end is not None else None
+    if window and end < start:
+        errors.append('source index current_run: the run ends before it starts')
+        window = None
+    for kind, rows, retained_key in (('record', records, 'retained_successful_readme_scans'),
+                                     ('failure', failures, 'retained_failed_readme_scans')):
+        retained = run.get(retained_key)
+        for position, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            where = f"source index {kind} {row.get('id')}"
+            observed = recorded(f'{where}.observed_at', row.get('observed_at'))
+            metadata = recorded(f'{where}.metadata_observed_at', row.get('metadata_observed_at'))
+            review = row.get('readme_integrity_review')
+            if isinstance(review, dict):
+                recorded(f'{where}.readme_integrity_review.reviewed_at', review.get('reviewed_at'))
+            if observed is not None and metadata is not None and metadata > observed:
+                errors.append(f'{where}: metadata_observed_at follows its README observation')
+            if (window and type(retained) is int and position >= retained and observed is not None
+                    and not window[0] <= observed <= window[1]):
+                errors.append(f'{where}: new README attempt lies outside the current run window')
+    for key, offset_key in (('queries', 'query_start_index'), ('seed_observations', 'seed_observation_start_index'),
+                            ('resume_observations', 'resume_observation_start_index')):
+        observations, offset = meta.get(key), run.get(offset_key)
+        for index, entry in enumerate(observations if isinstance(observations, list) else []):
+            if not isinstance(entry, dict):
+                continue
+            observed = recorded(f'source index {key}[{index}].observed_at', entry.get('observed_at'))
+            if (window and type(offset) is int and index >= offset and observed is not None
+                    and not window[0] <= observed <= window[1]):
+                errors.append(f'source index {key}[{index}]: current-run observation lies outside the run window')
+    limit = now + dt.timedelta(days=1)
+    errors.extend(f'{where}: recorded time is in the future' for where, parsed in times if parsed > limit)
 
 
 def list_item_prefix(line):
