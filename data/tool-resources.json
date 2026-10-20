@@ -11759,5 +11759,41 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "apple-continuity-tools",
+    "name": "Apple Continuity Reverse Engineering Toolkit",
+    "url": "https://github.com/seemoo-lab/apple-continuity-tools",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Three macOS helpers from SEEMOO Lab that the Open Wireless Link project used to study Apple wireless services such as AirDrop, Wi-Fi Password Sharing, Handoff and Offline Finding from the host side. process_recon summarizes which processes, log categories and subsystems emit log entries matching chosen keywords; keychain_access uses Frida to hook SecItemCopyMatching in a process and exports the keychain items it accesses to JSON; and lldb breakpoint commands print the Handoff and Universal Clipboard messages that the rapportd daemon sends and receives.",
+    "description_zh": "SEEMOO 实验室的三个 macOS 辅助工具，Open Wireless Link 项目曾用它们从主机一侧研究 AirDrop、Wi-Fi 密码共享、Handoff 和离线查找等 Apple 无线服务。process_recon 汇总哪些进程、日志类别和子系统产生了含指定关键词的日志；keychain_access 借助 Frida 挂接某一进程中的 SecItemCopyMatching，把该进程访问的钥匙串条目导出为 JSON；另有一组 lldb 断点命令，可打印 rapportd 守护进程收发的 Handoff 与通用剪贴板消息。",
+    "evidence_url": "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository has three commits: the initial release and a paper link on 2021-04-12, and a 2026-08-17 README edit that replaces the former Open Wireless Link website link with a note that the site is no longer associated with the project. There are no releases. The process_recon example was recorded on macOS 11.0 and the breakpoints name private Rapport framework methods; support for current macOS releases is not documented.",
+      "Runs on the analyst's own Mac with Python 3 in a virtual environment and Node.js; make install installs the pinned requirements, including frida 14.2.7 and frida-tools 9.1.0 from 2021, plus the prettier dev dependency. continuity_messages needs lldb and SIP's debugging protection turned off, and keychain_access needs SIP fully disabled for system processes; the README warns about the security implications.",
+      "Inputs are the analyst's own devices and accounts: the rapportd examples involve an iPhone next to the Mac and keys for the analyst's iCloud devices, so keychain_access output holds real secrets and should be handled accordingly. keychain_access/tests has small Swift and Objective-C hackme programs and a test.sh that stores and then extracts a dummy keychain password; there are no other tests.",
+      "The tools watch logs, keychain calls and daemon messages on the host; they do not capture or decode over-the-air Bluetooth LE or AWDL traffic, unlike the separately listed furiousMAC Continuity notes and Wireshark dissector for Continuity advertisements. The README lists the authors' USENIX Security 2021 Continuity and 2019 AWDL papers and a 2020 dissertation as related publications.",
+      "GPL-3.0. Nothing was installed or run for this review, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/LICENSE",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/Makefile",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/requirements.txt",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/process_recon/README.md",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/keychain_access/README.md",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/keychain_access/keychain_access.py",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/keychain_access/tests/test.sh",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/continuity_messages/README.md",
+      "https://github.com/seemoo-lab/apple-continuity-tools/blob/b93207b5887c6bef8c9e0e16a442149fb3520e28/continuity_messages/packet_breakpoints.txt",
+      "https://github.com/seemoo-lab/apple-continuity-tools/commit/b93207b5887c6bef8c9e0e16a442149fb3520e28",
+      "https://www.usenix.org/conference/usenixsecurity21/presentation/stute"
+    ]
   }
 ]

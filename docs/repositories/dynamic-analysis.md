@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/dynamic-analysis/) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**145 repositories** · 2026-10-20 UTC
+**144 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -91,7 +91,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [miyagaw61/exgdb](https://github.com/miyagaw61/exgdb) — Extension for GDB **[107 stars]**
 - [CYRUS-STUDIO/frida\_stalker](https://github.com/CYRUS-STUDIO/frida_stalker) — Using Frida Stalker to Bypass OLLVM and Restore (Function Call Analysis, Parameter Analysis, Stack Trace Printing, Instruction &amp; Registers Trace). **[103 stars]**
 - [axhlzy/ARTHookScripts](https://github.com/axhlzy/ARTHookScripts) — frida runtime resolves smali **[94 stars]**
-- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — Reverse engineering toolkit for Apple's wireless ecosystem **[90 stars]**
 - [rubaljain/frida-jb-bypass](https://github.com/rubaljain/frida-jb-bypass) — Frida script to bypass the iOS application Jailbreak Detection **[88 stars]**
 - [freehuntx/frida-inject](https://github.com/freehuntx/frida-inject) — This module allows you to easily inject javascript using frida and frida-load. **[81 stars]**
 - [icloudza/algokiller-plugin](https://github.com/icloudza/algokiller-plugin) — ARM64 trace evidence analysis &amp; cipher algorithm recovery — Claude Desktop plugin with skills + local MCP server driving the native ak\_search engine over GB-scale trace files **[79 stars]**

@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/protocol-analysis/) · [简体中文](protocol-analysis.zh-CN.md)
 
-**109 repositories** · 2026-10-20 UTC
+**110 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -22,6 +22,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — MAPS cloud scanner and response parser for Microsoft Defender research. **[96 stars]**
 - [leodesigner/powmr\_comm](https://github.com/leodesigner/powmr_comm) — PowMr Inverter serial communication protocol reverse engineering **[96 stars]**
+- [seemoo-lab/apple-continuity-tools](https://github.com/seemoo-lab/apple-continuity-tools) — Reverse engineering toolkit for Apple's wireless ecosystem **[90 stars]** · Curated: [Apple Continuity Reverse Engineering Toolkit](https://awesomerea.org/resources/apple-continuity-tools/)
 - [yapengye/NetPlier](https://github.com/yapengye/NetPlier) — NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces **[75 stars]** · Paper: [NetPlier: Probabilistic Network Protocol Reverse Engineering from Message Traces](https://awesomerea.org/papers/paper-netplier/)
 - [seemoo-lab/aristoteles](https://github.com/seemoo-lab/aristoteles) — A Wireshark dissector for the Apple Remote Invocation (ARI) protocol, used between Intel base band chips and the iOS CommCenter for various management purposes, SMS, telephony and much more. **[74 stars]**
 - [HalilDeniz/ICMPWatch](https://github.com/HalilDeniz/ICMPWatch) — ICMPWatch: ICMP Packet Sniffer **[60 stars]**
