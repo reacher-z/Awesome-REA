@@ -11191,5 +11191,41 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "esp32-bit-pirate",
+    "name": "ESP32 Bit Pirate",
+    "url": "https://github.com/geo-tp/ESP32-Bit-Pirate",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "protocol"
+    ],
+    "description_en": "Open-source firmware that turns ESP32-S3 boards into a Bus Pirate-inspired multi-protocol hardware tool, operated from a USB serial terminal, a Wi-Fi web CLI or the M5 Cardputer's own keyboard and screen. Its modes talk to, sniff and script I2C, SPI, UART, 1-Wire, CAN and other buses, read EEPROM and flash chips, and scan for JTAG and SWD pinouts. USB adapter modes let host tools such as flashrom, OpenOCD and sigrok/PulseView use the board as an SPI programmer, debug adapter or logic analyzer.",
+    "description_zh": "开源固件，可把 ESP32-S3 开发板变成受 Bus Pirate 启发的多协议硬件工具，通过 USB 串口终端、Wi-Fi 网页命令行，或直接用 M5 Cardputer 自带的键盘和屏幕操作。各模式可与 I2C、SPI、UART、1-Wire、CAN 等总线通信、嗅探并编写脚本，读取 EEPROM 和闪存芯片，还能扫描 JTAG 与 SWD 引脚。USB 适配器模式让 flashrom、OpenOCD、sigrok/PulseView 等主机工具把开发板当作 SPI 编程器、调试适配器或逻辑分析仪使用。",
+    "evidence_url": "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.8, published 2026-10-11, with prebuilt images for 17 board builds that the README installs through the project's web flasher or, for M5Stack devices, M5Burner; the reviewed pioarduino branch commit is identical to that tag. Source builds use PlatformIO with the Arduino framework on a pinned pioarduino ESP32 platform, and CI runs the native unit tests.",
+      "Needs an ESP32-S3 board with at least 4 MB of flash. The README lists ESP32-S3 dev kits and M5Stack, LILYGO, Heltec, Seeed Studio, Waveshare and Unexpected Maker boards with the same feature set, warns that the default pin mapping may not match other boards, and notes that some features need additional hardware. Connected devices must run at 3.3 V or 5 V.",
+      "Analysis needs physical access and wiring to the target's buses, memory chips or debug pins; the firmware talks to and captures what it is connected to and does not interpret recovered firmware. The README also lists Wi-Fi, Bluetooth, sub-GHz, RFID and cellular modes, some of which transmit, and limits use to educational, diagnostic and interoperability testing on authorized devices; this record covers only the bus, memory-chip and debug-interface functions.",
+      "MIT-licensed; the lib directory vendors third-party drivers under their own licenses, including GPL-2.0 for RF24. The repository holds firmware sources, board profiles, tests and images, with no target firmware. No board was flashed and no hardware was tested."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/README.md#L16-L54",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/README.md#L56-L105",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/README.md#L183-L191",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/platformio.ini",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/.github/workflows/native-tests.yml",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/LICENSE",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/blob/8a91778e25b699c59f34542d8ea8d405fa7e4020/lib/RF24/LICENSE",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/tree/8a91778e25b699c59f34542d8ea8d405fa7e4020/src/Adapters",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/wiki/15-JTAG/0b54b00dc6272cbb125d5293c30178cf2255371d",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/wiki/99-Adapters/08c0046c1c84da6d301c9c4bb330f71d744526f2",
+      "https://github.com/geo-tp/ESP32-Bit-Pirate/releases/tag/v1.8"
+    ]
   }
 ]
