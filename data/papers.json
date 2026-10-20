@@ -7294,5 +7294,79 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-latcoder",
+    "title": "LaTCoder: Converting Webpage Design to Code with Layout-as-Thought",
+    "title_zh": "LaTCoder：以“布局即思维”将网页设计转换为代码",
+    "authors": [
+      "Yi Gui",
+      "Zhen Li",
+      "Zhongyi Zhang",
+      "Guohao Wang",
+      "Tianpeng Lv",
+      "Gaoyang Jiang",
+      "Yi Liu",
+      "Dongping Chen",
+      "Yao Wan",
+      "Hongyu Zhang",
+      "Wenbin Jiang",
+      "Xuanhua Shi",
+      "Hai Jin"
+    ],
+    "year": 2025,
+    "publication_date": "2025-08-03",
+    "date_precision": "day",
+    "date_basis": "ACM-deposited Crossref metadata gives 3 August 2025 for both online and print publication; this date is not inferred solely from the August 3–7 conference schedule.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将在线及印刷出版日期均列为 2025 年 8 月 3 日；该日期并非仅根据 8 月 3 日至 7 日的会议日程推定。",
+    "venue": "KDD 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2508.03560",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2025-08-05",
+    "doi": "10.1145/3711896.3737016",
+    "citation": {
+      "container_title": "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2",
+      "publisher": "ACM",
+      "pages": "721-732",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3711896.3737016"
+      ]
+    },
+    "url": "https://doi.org/10.1145/3711896.3737016",
+    "pdf_url": "https://arxiv.org/pdf/2508.03560v1",
+    "code_url": "https://github.com/CGCL-codes/naturalcc/tree/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder",
+    "project_url": null,
+    "targets": [
+      "website"
+    ],
+    "description_en": "LaTCoder converts webpage design images to HTML/CSS by making layout an explicit intermediate step. A rule-based divider recursively finds solid-colored horizontal or vertical lines that avoid OCR-detected text, then merges small regions into grid-aligned blocks. An MLLM writes code for each block with a chain-of-thought prompt. The blocks are then assembled by absolute positioning or by the MLLM, and a reference-free verifier combining MAE and CLIP picks the better result. The paper also introduces CC-HARD, 128 complex-layout pages manually sampled from Common Crawl.",
+    "description_zh": "LaTCoder 将布局作为显式的中间步骤，把网页设计图转换为 HTML/CSS。基于规则的分割器递归寻找不穿过 OCR 识别文本的纯色水平或垂直线，再将过小区域合并为网格对齐的图块。多模态大语言模型使用思维链提示为每个图块编写代码；随后以绝对定位或由模型组装各图块，并由结合 MAE 与 CLIP、无需参考答案的验证器选出较优结果。论文还提出 CC-HARD，包含从 Common Crawl 人工抽取的 128 个复杂布局网页。",
+    "scope_limitations_en": "Targets static HTML/CSS from a design image; JavaScript behavior, interactions, navigation and backends are outside the method, and it does not recover a site's original source. Evaluation uses Design2Code-HARD (80 pages) and CC-HARD (128 pages), scoring generated code and screenshots against references with TreeBLEU, CLIP, Visual Score and MAE. Reported gains are relative changes on small absolute scores: with DeepSeek-VL2 on CC-HARD, TreeBLEU rises from 0.09 to 0.15 (+66.67%), and CLIP falls slightly on Design2Code-HARD. The divider assumes rectangular, solid-colored separators and fixed pixel thresholds; the block-merge area was tuned on CC-HARD. Short-context models use absolute positioning only, which fixes block positions from the design. Block content can still be misplaced, and Gemini sometimes omitted blocks during assembly. Pairwise human preference (at least 60% for LaTCoder) covers GPT-4o on CC-HARD only, by majority vote of six annotators. GPT-4o, Gemini and DeepSeek-VL2 results are historical baselines, not current rankings.",
+    "scope_limitations_zh": "方法面向根据设计图生成静态 HTML/CSS；JavaScript 行为、交互、导航和后端均不在方法范围内，也不恢复网站原始源码。评测使用 Design2Code-HARD（80 个页面）与 CC-HARD（128 个页面），以 TreeBLEU、CLIP、Visual Score 和 MAE 将生成的代码与截图同参考答案比较。报告的提升是较小绝对分数上的相对变化：在 CC-HARD 上使用 DeepSeek-VL2 时，TreeBLEU 从 0.09 升至 0.15（+66.67%），而在 Design2Code-HARD 上 CLIP 略有下降。分割器假定存在矩形纯色分隔线，并使用固定像素阈值；图块合并面积阈值在 CC-HARD 上调定。短上下文模型只使用绝对定位，图块位置由设计图固定。图块内容仍可能错位，Gemini 在组装时有时会遗漏图块。成对人工偏好评测（LaTCoder 至少获 60% 偏好）仅覆盖 CC-HARD 上的 GPT-4o，由六名标注者多数投票决定。GPT-4o、Gemini 与 DeepSeek-VL2 的结果是历史基线，并非当前排名。",
+    "why_fits_en": "Adds layout-first, block-wise screenshot-to-code generation with explicit assembly and verification, complementing DCGen's divide-and-conquer prompting and end-to-end website reconstruction benchmarks.",
+    "why_fits_zh": "补充先确定布局、再按图块生成截图对应代码，并显式组装与验证的方法，与 DCGen 的分治提示及端到端网站重建基准互补。",
+    "metadata_notes": "Crossref and arXiv agree on the 13-author order and DOI. arXiv v1 of 2025-08-05 is the KDD-formatted paper, with comment “KDD 2025 v2”; the ACM landing page refused automated retrieval, so bibliographic details follow Crossref. The paper links examples/latcoder on the naturalcc main branch. The reviewed snapshot is main at 5f840620 (2026-06-02); the directory was added on 2025-09-25. The repository is MIT-licensed at its root; the example README also says MIT but links a LICENSE file absent from that directory, and its project-page link is malformed. The directory contains the divider, generation and assembly agents, adapted Design2Code baselines, evaluation for MAE, Visual Score, CLIP and TreeBLEU, a human-evaluation notebook, and data/CC-HARD.parquet. That file matches the byte size of the Hugging Face dataset xcodemind/CC-HARD, which has 128 image–HTML rows under a CC-BY-4.0 card; rights in the sampled Common Crawl pages were not reviewed. Design2Code-HARD and the DCGen baseline must be obtained separately. requirements.txt pins openai 1.55.3, google-generativeai 0.8.3 and transformers 4.45.2, but installs CLIP and DeepSeek-VL from moving main branches plus a vLLM nightly wheel. GPT-4o is called through Azure OpenAI with placeholder credentials; DeepSeek-VL2 is served through vLLM. The paper reports runs on four A800 80 GB GPUs. Source files were read; no data was downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "Crossref 与 arXiv 的 13 位作者顺序及 DOI 一致。2025-08-05 的 arXiv v1 为 KDD 排版论文，备注为“KDD 2025 v2”；ACM 页面拒绝自动访问，因此书目信息以 Crossref 为准。论文链接至 naturalcc 主分支中的 examples/latcoder。所审阅的快照为 main 分支 5f840620（2026-06-02）；该目录于 2025-09-25 加入。仓库根目录采用 MIT 许可；示例 README 也称 MIT，但其链接的 LICENSE 文件不在该目录中，项目主页链接格式也有误。目录包含分割器、生成与组装代理、改编的 Design2Code 基线、MAE／Visual Score／CLIP／TreeBLEU 评测、人工评测笔记本以及 data/CC-HARD.parquet。该文件与 Hugging Face 数据集 xcodemind/CC-HARD 的字节大小一致；该数据集含 128 条图像—HTML 记录，数据卡声明 CC-BY-4.0；本次未审查所抽取 Common Crawl 页面本身的权利。Design2Code-HARD 与 DCGen 基线需另行获取。requirements.txt 固定 openai 1.55.3、google-generativeai 0.8.3 与 transformers 4.45.2，但 CLIP 和 DeepSeek-VL 从变动的主分支安装，并使用 vLLM 夜间构建 wheel。GPT-4o 通过 Azure OpenAI 调用，凭据为占位值；DeepSeek-VL2 通过 vLLM 提供服务。论文报告在四张 A800 80 GB GPU 上运行。本次仅阅读源码文件，未下载数据，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://doi.org/10.1145/3711896.3737016",
+      "https://api.crossref.org/works/10.1145/3711896.3737016",
+      "https://arxiv.org/abs/2508.03560",
+      "https://arxiv.org/pdf/2508.03560v1",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/README.md",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/requirements.txt",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/main.py",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/smart_blocker.py",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/my_datasets.py",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/vendors/openai__.py",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/evaluation/evaluate.py",
+      "https://github.com/CGCL-codes/naturalcc/tree/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/examples/latcoder/data",
+      "https://github.com/CGCL-codes/naturalcc/blob/5f84062064947a0e2137ebda0bd3a9ae8ceb1736/LICENSE",
+      "https://huggingface.co/datasets/xcodemind/CC-HARD/blob/f9339b3d2098fd856bef000d9ce6234032176f7b/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
