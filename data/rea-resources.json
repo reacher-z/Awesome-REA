@@ -2604,5 +2604,31 @@
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
     ]
+  },
+  {
+    "id": "awesome-canbus",
+    "name": "Awesome CAN Bus",
+    "url": "https://github.com/iDoka/awesome-canbus",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "protocol",
+      "firmware"
+    ],
+    "description_en": "A single-README list of CAN bus tools, hardware and resources for automotive and embedded work, grouped into sections for reverse-engineering tools, test equipment and simulators, higher-layer protocols (OBD-II, UDS, ISO-TP, J1939, J2534), general and Linux utilities, CAN database formats (DBC, KCD) with converters, and hardware for ARM, Arduino, ESP32, single-board computers and FPGA cores. Each entry links out to an external project or resource with a short description.",
+    "description_zh": "面向汽车和嵌入式领域的单 README CAN 总线工具、硬件与资源清单，分为逆向工程工具、测试设备与模拟器、上层协议（OBD-II、UDS、ISO-TP、J1939、J2534）、通用与 Linux 实用工具、CAN 数据库格式（DBC、KCD）及转换器，以及面向 ARM、Arduino、ESP32、单板计算机和 FPGA 核心的硬件等章节。每个条目链接到外部项目或资源并附简短说明。",
+    "evidence_url": "https://github.com/iDoka/awesome-canbus/blob/77c59133db2fcdd4e4f891a55e440629e0178b8e/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/iDoka/awesome-canbus/blob/77c59133db2fcdd4e4f891a55e440629e0178b8e/license"
+    ],
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last committed 2026-08-07, links roughly 260 entries across its sections; it is a list of pointers, not reviewed or runtime-tested projects, and one project can appear under several sections.",
+      "Entries give a name, an external link and a short description, and state no license, platform or maintenance status, so each linked tool, library or hardware project must be checked at its own source.",
+      "CAN bus analysis and the listed hardware need physical access to a vehicle or bus and appropriate interface hardware; the list covers the CAN protocol and higher-layer automotive protocols as its subject, and this record restates no specific procedure.",
+      "The list text is released under CC0-1.0; linked projects and resources keep their own licenses and terms. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
