@@ -1049,14 +1049,18 @@
     "verified_at": "2026-10-16T01:05:01Z",
     "verification": "source-reviewed",
     "requirements": [
-      "Matching IL2CPP executable and global-metadata.dat; documented Unity support is 5.3–2022.2."
+      "Matching IL2CPP executable and global-metadata.dat; documented Unity support is 5.3–2022.2.",
+      "As checked on 2026-10-20, the latest release is v6.7.46 (2024-07-06) and the master head is a same-day commit, four commits after the reviewed one with the README unchanged; GitHub’s last recorded push was 2024-08-18, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ],
     "targets": [
       "game",
       "app",
       "binary"
     ],
-    "kind": "tool"
+    "kind": "tool",
+    "additional_evidence_urls": [
+      "https://github.com/Perfare/Il2CppDumper/releases/tag/v6.7.46"
+    ]
   },
   {
     "id": "renderdoc-mcp",
@@ -1414,7 +1418,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Requires Windows and .NET Framework 4.6 or newer; archive browsing and conversion depend on the supported game/format list. Encrypted archives may require credentials or a recognized game selection.",
-      "Latest GitHub release at review remains v1.5.44 (2019-03-31). Treat it as a legacy format tool and check format support for the specific title rather than assuming compatibility with newer games."
+      "Latest GitHub release at review remains v1.5.44 (2019-03-31). Treat it as a legacy format tool and check format support for the specific title rather than assuming compatibility with newer games. As checked on 2026-10-20, the reviewed 2023-10-27 commit is still the master head, GitHub’s last recorded push was 2024-07-08, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ],
     "additional_evidence_urls": [
       "https://github.com/morkt/GARbro/releases/tag/v1.5.44",
@@ -2176,12 +2180,13 @@
     "evidence_url": "https://github.com/bongtrop/hbctool/blob/389b351bfdd988e93da5cce1a9e3bfd860548e7a/README.md",
     "additional_evidence_urls": [
       "https://github.com/bongtrop/hbctool/blob/389b351bfdd988e93da5cce1a9e3bfd860548e7a/pyproject.toml",
-      "https://github.com/bongtrop/hbctool/blob/389b351bfdd988e93da5cce1a9e3bfd860548e7a/LICENSE"
+      "https://github.com/bongtrop/hbctool/blob/389b351bfdd988e93da5cce1a9e3bfd860548e7a/LICENSE",
+      "https://pypi.org/project/hbctool/0.1.5/"
     ],
     "verified_at": "2026-10-16",
     "verification": "source-reviewed",
     "requirements": [
-      "The reviewed package metadata is 0.1.5 and classified Alpha; it declares Python ^3.6 and docopt ^0.6.2. Compatibility with current Python interpreters was not tested for this catalog.",
+      "The reviewed package metadata is 0.1.5 and classified Alpha; it declares Python ^3.6 and docopt ^0.6.2. Compatibility with current Python interpreters was not tested for this catalog. As checked on 2026-10-20, v0.1.5 is the latest tag and PyPI release (uploaded 2021-09-17) and there are no GitHub releases; the reviewed 2023-04-10 commit is still the main head, GitHub’s last recorded push was 2023-12-10, the repository is not archived and the README does not mark it as maintained, superseded or archived.",
       "README support is limited to HBC versions 59, 62, 74 and 76. Supply a compatible Hermes bytecode bundle; do not assume support for current Hermes bytecode versions.",
       "This is a bytecode assembler/disassembler, not complete original-JavaScript recovery. Overflow patching is listed as future work. MIT-licensed."
     ]
@@ -2300,7 +2305,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "The upstream README requires Python 3.8+; the reviewed release metadata lists Linux x86/x64. Source builds need native build tools, Python headers, libpcap/libffi development libraries and the documented Graph::Easy dependency.",
-      "Latest PyPI release at review: 2.0.0, uploaded 2023-01-08. The reviewed source head identifies itself as 2.0.1.dev0, not a newer stable release. Its build pins Cython 0.29.32 and older dependencies including NumPy 1.24.1; compatibility with newer Python environments was not tested.",
+      "Latest PyPI release at review: 2.0.0, uploaded 2023-01-08. The reviewed source head identifies itself as 2.0.1.dev0, not a newer stable release. Its build pins Cython 0.29.32 and older dependencies including NumPy 1.24.1; compatibility with newer Python environments was not tested. As checked on 2026-10-20, the reviewed 2023-01-08 commit is still the master head and GitHub’s latest release is also 2.0.0; GitHub’s last recorded push was 2024-04-18, the repository is not archived and the README does not mark it as maintained, superseded or archived.",
       "Provide representative raw/PCAP messages and analyst-selected models or symbols. Active grammar learning requires input/output symbols, a communication channel and target process control. The current inference documentation is explicitly unfinished; older GUI tutorials should not be treated as the current Python-library workflow.",
       "GPL-3.0-or-later in the reviewed source notices; documentation uses CC-BY-SA. Inference and generated models require analyst validation and do not establish complete protocol semantics or device/application recovery. No installation, active queries or fuzzing were run."
     ],
@@ -4332,7 +4337,7 @@
     "verification": "source-reviewed",
     "requirements": [
       "Running needs the user’s own PAL Crash Bandicoot 2 disc as a raw BIN image with full sector headers and that disc’s SCES_009.67 executable, plus third-party PlayStation emulator GPU, SPU and two gamepad plugins and a 128 KB memory-card file; the repository ships no game data.",
-      "Windows only: the main program builds under Cygwin with GNU Make, GCC and SDL2, the emulator library needs Microsoft Visual C++ 2005 or later, and the optional C# disassembler needs Visual C# 2005 or later. Development ran on the develop branch from January to April 2015, and there are no releases.",
+      "Windows only: the main program builds under Cygwin with GNU Make, GCC and SDL2, the emulator library needs Microsoft Visual C++ 2005 or later, and the optional C# disassembler needs Visual C# 2005 or later. Development ran on the develop branch from January to April 2015, and there are no releases. As checked on 2026-10-20, GitHub’s last recorded push was 2020-09-30, the repository is not archived and the README does not mark it as maintained, superseded or archived.",
       "The README warns that the software is not intended for regular use and reports no playability status. Its translator does little decompiling and does not resolve indirect branches or jump tables, so code regions must be listed by hand; docs/FUNCTIONS.md names 18 of 818 listed function entry points.",
       "No matching or equivalence check is published, and nothing was built or run here. The repository has no license file; the PCSX-R-derived emulator sources carry GPL-2.0-or-later headers, and the original game retains its own rights. No REA or AI involvement is documented."
     ],
@@ -8580,14 +8585,15 @@
     "evidence_url": "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/README.md",
     "additional_evidence_urls": [
       "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/LICENSE",
-      "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/setup.py"
+      "https://github.com/chame1eon/jnitrace/blob/5be47cb52b448bb0f39153d6c2c71b6744ad982a/setup.py",
+      "https://github.com/chame1eon/jnitrace/releases/tag/v3.3.1"
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Installed from PyPI as jnitrace (setup.py marks version 3.3.1 and Python 3) and runs on a Linux, macOS or Windows host; building from source additionally needs Node.js.",
       "Tracing a target needs an arm, arm64, x86 or x64 Android device running a Frida server, which the README states must provide Frida support greater than 14, with the target package already installed on the device.",
-      "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API."
+      "Intended for apps the analyst is authorized to inspect. MIT licensed; the repository ships the tool only. The last reviewed upstream commit dates to 2023 and targets the Frida 14-era API. As checked on 2026-10-20, that 2023-04-01 commit is still the master head and the latest release is v3.3.1 from the same day; GitHub’s last recorded push was 2023-07-18, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ]
   },
   {
@@ -9584,7 +9590,7 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "Reviewed at the 2024-04-22 master head, a README-only change; the backend and Node relay last changed in August 2021, the protobuf schema in March 2020, and there are no releases or tags. The README’s pairing flow has the phone supply session details such as its battery level, the phone-mirroring companion model that WhatsApp’s July 2021 engineering post says multi-device replaces. A 2022 issue reports the server answering a QR scan with an upgrade_md_prod command; whether the flow still connects was not tested.",
+      "Reviewed at the 2024-04-22 master head, a README-only change; the backend and Node relay last changed in August 2021, the protobuf schema in March 2020, and there are no releases or tags. The README’s pairing flow has the phone supply session details such as its battery level, the phone-mirroring companion model that WhatsApp’s July 2021 engineering post says multi-device replaces. A 2022 issue reports the server answering a QR scan with an upgrade_md_prod command; whether the flow still connects was not tested. As checked on 2026-10-20, the 2024-04-22 head is still GitHub’s last recorded push, the repository is not archived and the README does not mark it as maintained, superseded or archived.",
       "Use needs the user’s own WhatsApp account and phone to scan the pairing code, and the backend connects to WhatsApp’s servers. The protobuf definitions come from a helper script that parses the public WhatsApp Web JavaScript bundle. The README’s task list still names growing binary-decoding errors, writing binary messages and a less technical interface as open work.",
       "Bare-metal setup needs Node.js 8+ and Python 2.7 with websocket-client, simple-websocket-server, curve25519-donna, pycrypto (pycryptodome in requirements.txt), pyqrcode and protobuf; Windows also needs Visual C++ for Python 9.0 and a supplied header. A shell.nix (Python 2.7, Node.js 13) and a Dockerfile are provided, and npm start runs the backend, Node API and front end together. The README says the Docker version is not stable enough for production.",
       "There is no test suite: the package.json test script only starts the components. The documented correctness checks are HMAC validation of the server’s key data and of each binary message, and an in-browser JavaScript demo prints decrypted messages after a QR scan. This source review opened no session and decoded no traffic.",
@@ -10483,7 +10489,7 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "Latest release at review: v0.18, published 2022-04-08, with Windows and macOS builds of the pmca-console command line and the more limited pmca-gui. The reviewed master commit, from 2022-08-18, is 22 commits ahead of it. On Linux the Python 3 sources run with the listed requirements and libusb; the CI builds use Python 3.6 and PyInstaller.",
+      "Latest release at review: v0.18, published 2022-04-08, with Windows and macOS builds of the pmca-console command line and the more limited pmca-gui. The reviewed master commit, from 2022-08-18, is 22 commits ahead of it. On Linux the Python 3 sources run with the listed requirements and libusb; the CI builds use Python 3.6 and PyInstaller. As checked on 2026-10-20, the reviewed 2022-08-18 commit is still the master head, GitHub’s last recorded push was 2024-07-27, the repository is not archived and the README does not mark it as maintained, superseded or archived.",
       "Needs a supported Sony camera connected over USB; the README links an external OpenMemories compatibility list. App installation needs a camera with PlayMemories Camera Apps support. Firmware-updater mode uses the operating system's mass-storage driver and excludes CXD90045 and CXD90057 devices, whose firmware is cryptographically signed. Service mode is console-only and needs libusb drivers on Windows; macOS mass-storage access needs Sony's camera driver.",
       "The README calls the project an early-stage experiment based on reverse engineering and warns that it could harm the camera, with no responsibility taken. Firmware-file unpacking lives in the separate fwtool project, which was not reviewed, nor were the OpenMemories apps and framework it recommends.",
       "MIT. The repository holds no Sony firmware or apps; the prebuilt updater payloads under updatershell/fdat are packed by pack.py from the project's own sources. No camera was connected and nothing was run."
@@ -10731,7 +10737,7 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
-      "Latest release at review: v1.1, published 2024-03-19 and tagged at the reviewed commit; it adds an optional pickled corpus for faster startup and LIEF as an alternative to elfesteem. There is no package: cpu_rec.py and the cpu_rec_corpus directory are copied into the same directory.",
+      "Latest release at review: v1.1, published 2024-03-19 and tagged at the reviewed commit; it adds an optional pickled corpus for faster startup and LIEF as an alternative to elfesteem. There is no package: cpu_rec.py and the cpu_rec_corpus directory are copied into the same directory. As checked on 2026-10-20, nothing has been pushed since v1.1 and the repository is not archived; the README’s Development status section holds only CI badges and does not mark the project as maintained, superseded or archived.",
       "Runs on Python 3 or Python 2; the portability workflow covers Python 3.10, PyPy 2.7 and 3.9 and GraalPy on Ubuntu and macOS. Without the lzma module the .xz corpus files must be decompressed first. Optional elfesteem or LIEF extracts the text section of ELF, PE, Mach-O or COFF files. The README reports about one minute of analysis per MB, and 1 GB of RAM to build signatures for 70 architectures, on the author's laptop.",
       "Binwalk mode installs into binwalk's module directory and needs a binwalk that includes devttys0/binwalk pull request 241; these instructions point to the earlier Python binwalk, and compatibility with the current Rust-based v3 was not checked.",
       "Results are heuristic: the README warns that files can contain several architectures, small chunks can be misdetected, and results for data with entropy above 0.9 are probably meaningless. 78k and TriCore are left out of the default corpus for licensing reasons and can only be added from the user's own binaries.",
@@ -10801,14 +10807,16 @@
     "evidence_url": "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/README.md",
     "additional_evidence_urls": [
       "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/LICENSE",
-      "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/package.json"
+      "https://github.com/niklashigi/apk-mitm/blob/5a96363fc9112b97d60fc2bd3799d6bbfd8e4e00/package.json",
+      "https://github.com/niklashigi/apk-mitm/releases/tag/v1.3.0"
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "requirements": [
       "Installed from npm as a global CLI and requires Node.js 14+ and Java 8+ per the README; patching app bundles on Linux also needs zip and unzip available.",
       "Operates on an APK or app bundle the analyst supplies and is intended only for apps you own or are authorized to test; rooting the device is not required because the changes are applied statically before install.",
-      "The README notes the static Apktool-based approach can fail on large or complex apps and cannot address certificate pinning enforced inside native binaries such as Flutter. MIT licensed; the repository ships the tool only, no application packages."
+      "The README notes the static Apktool-based approach can fail on large or complex apps and cannot address certificate pinning enforced inside native binaries such as Flutter. MIT licensed; the repository ships the tool only, no application packages.",
+      "As checked on 2026-10-20, the latest release, v1.3.0 (2024-04-21, also the latest npm version), is the reviewed commit and still the main head; GitHub’s last recorded push was 2024-07-24, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ]
   },
   {

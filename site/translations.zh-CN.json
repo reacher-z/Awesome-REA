@@ -483,7 +483,8 @@
   "il2cppdumper": {
     "name": "Il2CppDumper",
     "requirements": [
-      "需要匹配的 IL2CPP 可执行文件和 global-metadata.dat；文档支持 Unity 5.3–2022.2。"
+      "需要匹配的 IL2CPP 可执行文件和 global-metadata.dat；文档支持 Unity 5.3–2022.2。",
+      "据 2026-10-20 核查，最新发布版本为 v6.7.46（2024-07-06），master 分支最新提交为同日提交，比所审阅的提交晚四个提交，README 未改动；GitHub 记录的最后一次推送为 2024-08-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "renderdoc-mcp": {
@@ -586,7 +587,7 @@
   "garbro": {
     "requirements": [
       "需要 Windows 与 .NET Framework 4.6 或更新版本；归档浏览和转换取决于已支持的游戏及格式。加密归档可能需要凭据或选择已识别的游戏。",
-      "审阅时最新 GitHub 版本仍为 v1.5.44（2019-03-31）。应将其视为旧版格式工具，按具体游戏确认支持情况，不应默认兼容新游戏。"
+      "审阅时最新 GitHub 版本仍为 v1.5.44（2019-03-31）。应将其视为旧版格式工具，按具体游戏确认支持情况，不应默认兼容新游戏。据 2026-10-20 核查，所审阅的 2023-10-27 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-07-08，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "mobsf": {
@@ -828,7 +829,7 @@
   "hbctool": {
     "name": "hbctool Hermes 字节码汇编与反汇编工具",
     "requirements": [
-      "所审阅的软件包元数据版本为 0.1.5，标记为 Alpha，声明依赖 Python ^3.6 和 docopt ^0.6.2。本目录未测试其与当前 Python 解释器的兼容性。",
+      "所审阅的软件包元数据版本为 0.1.5，标记为 Alpha，声明依赖 Python ^3.6 和 docopt ^0.6.2。本目录未测试其与当前 Python 解释器的兼容性。据 2026-10-20 核查，v0.1.5 是最新标签和 PyPI 版本（上传于 2021-09-17），没有 GitHub 发布版本；所审阅的 2023-04-10 提交仍是 main 分支最新提交，GitHub 记录的最后一次推送为 2023-12-10，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "README 明确仅支持 HBC 版本 59、62、74 和 76。需提供兼容的 Hermes 字节码包，不能默认支持当前 Hermes 字节码版本。",
       "这是字节码汇编与反汇编工具，不代表完整恢复原始 JavaScript。溢出修补仍列为后续工作。采用 MIT 许可证。"
     ]
@@ -863,7 +864,7 @@
     "name": "Netzob 协议建模与推断框架",
     "requirements": [
       "上游 README 要求 Python 3.8+；核查的版本元数据列出 Linux x86/x64。源码构建需要原生编译工具、Python 头文件、libpcap／libffi 开发库，以及文档指定的 Graph::Easy 依赖。",
-      "核查时最新 PyPI 版本为 2.0.0，上传于 2023-01-08。所审阅源码头版本标为 2.0.1.dev0，不能视为更新的稳定版。其构建固定使用 Cython 0.29.32，并依赖 NumPy 1.24.1 等较旧版本；未测试与较新 Python 环境的兼容性。",
+      "核查时最新 PyPI 版本为 2.0.0，上传于 2023-01-08。所审阅源码头版本标为 2.0.1.dev0，不能视为更新的稳定版。其构建固定使用 Cython 0.29.32，并依赖 NumPy 1.24.1 等较旧版本；未测试与较新 Python 环境的兼容性。据 2026-10-20 核查，所审阅的 2023-01-08 提交仍是 master 分支最新提交，GitHub 最新发布版本同样是 2.0.0；GitHub 记录的最后一次推送为 2024-04-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "需要有代表性的原始报文／PCAP 记录，以及分析者选择的模型或符号。主动语法学习需要输入／输出符号、通信通道和目标进程控制。当前协议推断文档明确尚未完成；旧 GUI 教程不能视为当前 Python 库工作流。",
       "核查的源码声明 GPL-3.0-or-later，文档采用 CC-BY-SA。推断结果及生成模型需要分析者验证，不代表完整恢复协议语义、设备或应用。本次未安装，也未执行主动查询或模糊测试。"
     ]
@@ -1150,7 +1151,8 @@
       "主项目面向桌面 Windows、Linux 和 macOS。列表中的主机、移动端和浏览器移植指向其他项目，不代表此仓库具有同样的平台支持。",
       "源码构建需要 C++11、CMake、SDL2 和 SDL2_mixer。README 给出 Visual Studio、GCC/Clang 和 Xcode 构建路径，macOS 可选择 x86_64 或 arm64。",
       "README 报告所有子程序均已反编译并转为 C++；这不等于独立核验过逐字节一致重构建。Full Tilt 的功能完善及其另外两张球桌的潜在支持仍是单独计划。",
-      "此仓库采用 MIT 许可；原游戏资源和依赖保留各自条款。未证实 REA 使用，本合集未运行游戏、编译器或外部移植项目。"
+      "此仓库采用 MIT 许可；原游戏资源和依赖保留各自条款。未证实 REA 使用，本合集未运行游戏、编译器或外部移植项目。",
+      "据 2026-10-20 核查，最新发布版本为 Release_2.1.0（2023-10-16）；所审阅的 2024-08-21 提交仍是 master 分支最新提交，也是 GitHub 记录的最后一次推送，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "universal-radio-hacker": {
@@ -1230,7 +1232,8 @@
       "文档中的构建使用 GNU make、Python 3.6+、MIPS binutils、pkgconf 和宿主开发工具。Windows 指南采用 WSL/Linux；macOS 指南要求合适的 MIPS 工具链及较新的 GNU make。",
       "Makefile 通常把输出 ROM 的 SHA-1 与所选参考哈希比较；NON_MATCHING、非 N64 目标或非标准配置会关闭比较。修改构建成功不等于获得匹配结果。",
       "固定版本 Jenkins 配置明确为 iQue 和增强补丁构建设置 COMPARE=0，因此不能把五版本构建矩阵称为五个已独立确认的逐字节一致结果。本合集未构建或运行游戏。",
-      "仓库包含 CC0-1.0 声明；该声明不提供原 Nintendo 内容或其他第三方权利。所审阅文件未证实 REA 或编程智能体参与。"
+      "仓库包含 CC0-1.0 声明；该声明不提供原 Nintendo 内容或其他第三方权利。所审阅文件未证实 REA 或编程智能体参与。",
+      "据 2026-10-20 核查，所审阅的 2023-08-17 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-02-04；仅有的 GitHub 发布版本是 2019 年的 qemu-irix 辅助程序，并非游戏构建，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "unleashed-recompiled-case": {
@@ -1914,7 +1917,7 @@
     "name": "C2C：《古惑狼 2》的混合重编译与手工反编译",
     "requirements": [
       "运行需要用户自有的 PAL 版《古惑狼 2》光盘原始 BIN 镜像（含完整扇区头）及该光盘中的 SCES_009.67 可执行文件，另需第三方 PlayStation 模拟器的 GPU、SPU 和两个手柄插件，以及一个 128 KB 记忆卡文件；仓库不附带游戏数据。",
-      "仅支持 Windows：主程序在 Cygwin 下使用 GNU Make、GCC 和 SDL2 构建，模拟器库需要 Microsoft Visual C++ 2005 或更高版本，可选的 C# 反汇编器需要 Visual C# 2005 或更高版本。develop 分支的开发集中在 2015 年 1 月至 4 月，没有发布版本。",
+      "仅支持 Windows：主程序在 Cygwin 下使用 GNU Make、GCC 和 SDL2 构建，模拟器库需要 Microsoft Visual C++ 2005 或更高版本，可选的 C# 反汇编器需要 Visual C# 2005 或更高版本。develop 分支的开发集中在 2015 年 1 月至 4 月，没有发布版本。据 2026-10-20 核查，GitHub 记录的最后一次推送为 2020-09-30，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "README 警告该软件不适合日常使用，也未报告可游玩程度。其转换器几乎不做反编译，也不解析间接跳转或跳转表，因此代码区域须手工列出；docs/FUNCTIONS.md 在列出的 818 个函数入口中仅为 18 个命名。",
       "项目未公布字节一致或等价性检查，本合集也未构建或运行。仓库没有许可证文件；源自 PCSX-R 的模拟器源码带有 GPL-2.0 或更高版本的文件头，原游戏保留各自权利。所审来源未记录 REA 或 AI 参与。"
     ]
@@ -3095,7 +3098,7 @@
     "requirements": [
       "通过 PyPI 以 jnitrace 安装（setup.py 标注版本 3.3.1，要求 Python 3），可在 Linux、macOS 或 Windows 主机上运行；从源码构建还需 Node.js。",
       "跟踪目标需要一台 arm、arm64、x86 或 x64 的 Android 设备，并运行 Frida server，README 要求其 Frida 支持版本大于 14，且目标应用包已安装在设备上。",
-      "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。"
+      "仅用于分析者有权检查的应用。采用 MIT 许可证；仓库仅包含工具本身。所审阅的上游最新提交为 2023 年，面向 Frida 14 时期的 API。据 2026-10-20 核查，这一 2023-04-01 的提交仍是 master 分支最新提交，最新发布版本为同日的 v3.3.1；GitHub 记录的最后一次推送为 2023-07-18，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "flare-vm": {
@@ -3380,7 +3383,7 @@
   "whatsapp-web-reveng-legacy-protocol-case": {
     "name": "whatsapp-web-reveng：记录旧版 WhatsApp Web 协议",
     "requirements": [
-      "审阅对象为 2024-04-22 的 master 最新提交，该提交只修改了 README；后端和 Node 中继最后修改于 2021 年 8 月，protobuf 结构定义最后修改于 2020 年 3 月，没有发布版本或标签。README 描述的配对流程由手机提供电量等会话信息，也就是 WhatsApp 2021 年 7 月工程博客所说被多设备架构取代的手机镜像式配套设备模式。2022 年的一个 issue 报告扫描二维码后服务器返回 upgrade_md_prod 命令；本次未测试该流程目前能否连接。",
+      "审阅对象为 2024-04-22 的 master 最新提交，该提交只修改了 README；后端和 Node 中继最后修改于 2021 年 8 月，protobuf 结构定义最后修改于 2020 年 3 月，没有发布版本或标签。README 描述的配对流程由手机提供电量等会话信息，也就是 WhatsApp 2021 年 7 月工程博客所说被多设备架构取代的手机镜像式配套设备模式。2022 年的一个 issue 报告扫描二维码后服务器返回 upgrade_md_prod 命令；本次未测试该流程目前能否连接。据 2026-10-20 核查，2024-04-22 的最新提交仍是 GitHub 记录的最后一次推送，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "使用时需要用户自己的 WhatsApp 账号和手机来扫描配对码，后端会连接 WhatsApp 服务器。protobuf 定义由一个辅助脚本解析公开的 WhatsApp Web JavaScript 包生成。README 的任务清单仍把二进制解码错误增多、二进制报文写入以及更易用的界面列为待完成工作。",
       "直接安装需要 Node.js 8+ 和 Python 2.7，以及 websocket-client、simple-websocket-server、curve25519-donna、pycrypto（requirements.txt 中为 pycryptodome）、pyqrcode 和 protobuf；Windows 还需要 Visual C++ for Python 9.0 和仓库提供的头文件。项目提供 shell.nix（Python 2.7、Node.js 13）和 Dockerfile，npm start 会同时启动后端、Node API 和前端。README 说明 Docker 版本还不够稳定，不适合生产部署。",
       "项目没有测试套件：package.json 的 test 脚本只是启动各组件。文档给出的正确性检查是对服务器密钥数据和每条二进制报文做 HMAC 校验，另有浏览器内 JavaScript 演示在扫描二维码后输出解密后的报文。本次来源核查没有建立会话，也没有解码任何流量。",
@@ -3622,7 +3625,7 @@
   "sony-pmca-re": {
     "name": "Sony-PMCA-RE Sony 数码相机逆向工具",
     "requirements": [
-      "审阅时最新版本为 v0.18，发布于 2022-04-08，提供 pmca-console 命令行工具和功能较少的 pmca-gui 的 Windows 与 macOS 版本。所审阅的 master 分支提交（2022-08-18）比该版本多 22 个提交。在 Linux 上需按所列依赖和 libusb 运行 Python 3 源码；CI 构建使用 Python 3.6 和 PyInstaller。",
+      "审阅时最新版本为 v0.18，发布于 2022-04-08，提供 pmca-console 命令行工具和功能较少的 pmca-gui 的 Windows 与 macOS 版本。所审阅的 master 分支提交（2022-08-18）比该版本多 22 个提交。在 Linux 上需按所列依赖和 libusb 运行 Python 3 源码；CI 构建使用 Python 3.6 和 PyInstaller。据 2026-10-20 核查，所审阅的 2022-08-18 提交仍是 master 分支最新提交，GitHub 记录的最后一次推送为 2024-07-27，仓库未归档，README 未标注其仍在维护、已被取代或已归档。",
       "需要通过 USB 连接受支持的 Sony 相机；README 链接了外部的 OpenMemories 兼容机型列表。安装应用要求相机支持 PlayMemories Camera Apps。固件更新模式使用操作系统自带的大容量存储驱动，不适用于固件经过加密签名的 CXD90045 和 CXD90057 机型。服务模式仅限命令行使用，在 Windows 上需安装 libusb 驱动；macOS 上以大容量存储模式访问相机需安装 Sony 的相机驱动。",
       "README 称该项目是基于逆向工程的早期实验，并警告可能损坏相机，开发者不承担任何责任。固件文件的解包由独立的 fwtool 项目负责，本次未审阅；其推荐的 OpenMemories 应用和框架也未审阅。",
       "采用 MIT 许可。仓库中没有 Sony 固件或应用；updatershell/fdat 下预先构建的更新程序载荷由 pack.py 用项目自身的源码打包生成。本次未连接相机，也未运行任何程序。"
@@ -3693,7 +3696,7 @@
   "cpu-rec": {
     "name": "cpu_rec CPU 指令集统计识别工具",
     "requirements": [
-      "审阅时最新版本为 v1.1，发布于 2024-03-19，标签正对应所审阅的提交；该版本新增可选的 pickle 语料缓存以加快启动，并可用 LIEF 代替 elfesteem。没有安装包：只需把 cpu_rec.py 和 cpu_rec_corpus 目录复制到同一目录。",
+      "审阅时最新版本为 v1.1，发布于 2024-03-19，标签正对应所审阅的提交；该版本新增可选的 pickle 语料缓存以加快启动，并可用 LIEF 代替 elfesteem。没有安装包：只需把 cpu_rec.py 和 cpu_rec_corpus 目录复制到同一目录。据 2026-10-20 核查，v1.1 发布后没有新的推送，仓库未归档；README 的“Development status”一节只有 CI 徽章，未标注项目仍在维护、已被取代或已归档。",
       "可在 Python 3 或 Python 2 上运行；可移植性工作流在 Ubuntu 和 macOS 上测试 Python 3.10、PyPy 2.7 与 3.9 以及 GraalPy。若没有 lzma 模块，需先解压 .xz 语料文件。可选的 elfesteem 或 LIEF 能提取 ELF、PE、Mach-O 或 COFF 文件的代码段。README 称在作者的笔记本上，每 MB 约需一分钟分析时间，为 70 种架构建立签名需要 1 GB 内存。",
       "binwalk 模式需安装到 binwalk 的模块目录，并要求 binwalk 包含 devttys0/binwalk 第 241 号合并请求的补丁；这些说明针对的是早期的 Python 版 binwalk，未核实其与当前基于 Rust 的 v3 是否兼容。",
       "结果属于启发式判断：README 提醒，一个文件可能包含多种架构，小数据块可能被误判，熵值高于 0.9 的数据所得结果大概没有意义。78k 和 TriCore 因许可问题未收入默认语料库，只能由使用者用自有二进制补充。",
@@ -3713,7 +3716,8 @@
     "requirements": [
       "通过 npm 以全局命令行工具安装，README 要求 Node.js 14+ 与 Java 8+；在 Linux 上修补应用捆绑包还需具备 zip 与 unzip。",
       "对使用者提供的 APK 或应用捆绑包进行操作，仅适用于使用者拥有或有权测试的应用；因修改在安装前静态完成，无需 root 设备。",
-      "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。"
+      "README 指出基于 Apktool 的静态方式在大型或复杂应用上可能失败，且无法处理在原生二进制（如 Flutter）中强制执行的证书固定。采用 MIT 许可证；仓库仅包含工具本身，不含任何应用安装包。",
+      "据 2026-10-20 核查，最新发布版本 v1.3.0（2024-04-21，也是 npm 上的最新版本）即所审阅的提交，仍是 main 分支最新提交；GitHub 记录的最后一次推送为 2024-07-24，仓库未归档，README 未标注其仍在维护、已被取代或已归档。"
     ]
   },
   "fritap": {
