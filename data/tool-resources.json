@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bn-binary-ninja-agent-cli",
+    "name": "bn",
+    "url": "https://github.com/banteg/bn",
+    "category": "agent-workflows",
+    "relationship": "independent-agent-integration",
+    "kind": "integration",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Agent-oriented command-line interface for the Binary Ninja database already open in the GUI, reached through a companion plugin that listens on a local Unix-domain socket. Agents read decompilation, IL, disassembly, cross-references, callsites, types and data, export multi-function bundles and run unrestricted Python inside Binary Ninja; renames and prototype, structure and type edits can be previewed, are verified after they apply and roll back on failure. Large text output spills to hashed artifact files, and a packaged Codex skill describes the workflow.",
+    "description_zh": "面向智能体的命令行工具，用于操作已在 Binary Ninja 图形界面中打开的数据库，通过监听本地 Unix 域套接字的配套插件连接。智能体可读取反编译结果、中间语言、反汇编、交叉引用、调用点、类型和数据，导出多函数打包结果，并在 Binary Ninja 内运行不受限制的 Python；重命名以及函数原型、结构体和类型修改可先预览，应用后会校验结果，失败时回滚。较大的文本输出会转存为附带哈希的产物文件，随包提供的 Codex 技能说明了使用流程。",
+    "evidence_url": "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.15.0, published on GitHub and PyPI as bn-cli on 2026-09-04; the reviewed master commit is that tag and the repository's last push. It needs Python 3.12+ and installs as a uv tool; bn plugin install links the BN Agent Bridge plugin into Binary Ninja, and bn skill install links the skill into the skills folder of the Codex home directory. The CLI and the loaded plugin must share bridge protocol 2, so Binary Ninja is restarted or its plugins reloaded after upgrades.",
+      "Work happens against a database open in the Binary Ninja GUI; the README says the companion works with a personal license and needs no headless license. The bridge socket lives in the user's cache directory, and the README names no supported operating systems or Binary Ninja versions. With several views open, commands need an explicit --target selector instead of silently using the active tab.",
+      "The analyst supplies the binary and database; the repository holds no target binaries. bn py runs unrestricted Python with the user's privileges inside Binary Ninja, and its writes bypass the preview, verification and rollback of built-in mutations; the reviewed bridge code adds no authentication beyond access to the socket path. Whole-database text and constant searches stop after a default five-second analysis budget and report incomplete results.",
+      "CI runs pytest on Python 3.12 and 3.14 against a stub binaryninja module, checks release metadata and smoke-tests plugin and skill installation from the built wheel, so no real Binary Ninja instance is exercised. Mutations report verified, noop, unsupported or verification_failed, and the README notes that decompiled output can stay stale after type changes until types are read back or analysis is refreshed.",
+      "MIT, added to the repository in v0.14.1; Binary Ninja keeps its own license terms. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/src/bn/assets/skills/bn/SKILL.md",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/src/bn/assets/plugin/bn_agent_bridge/bridge.py",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/src/bn/assets/plugin/bn_agent_bridge/server.py",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/src/bn/paths.py",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/pyproject.toml",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/CHANGELOG.md",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/.github/workflows/ci.yml",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/tests/test_bridge.py",
+      "https://github.com/banteg/bn/blob/bd910329547303c787a68fcd8309e83ab1be6590/LICENSE",
+      "https://github.com/banteg/bn/releases/tag/v0.15.0",
+      "https://pypi.org/project/bn-cli/0.15.0/"
+    ]
   }
 ]

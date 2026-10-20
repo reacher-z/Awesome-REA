@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "bn-binary-ninja-agent-cli": {
+    "name": "bn：面向智能体的 Binary Ninja 命令行工具",
+    "requirements": [
+      "审阅时最新版本为 v0.15.0，于 2026-09-04 在 GitHub 和 PyPI（包名 bn-cli）发布；所审阅的 master 提交即该标签，也是仓库最近一次推送。需要 Python 3.12+，以 uv 工具方式安装；bn plugin install 将 BN Agent Bridge 插件链接到 Binary Ninja，bn skill install 将技能链接到 Codex 主目录下的 skills 文件夹。命令行工具与已加载的插件须使用相同的桥接协议版本 2，因此升级后需重启 Binary Ninja 或重新加载插件。",
+      "操作对象是在 Binary Ninja 图形界面中打开的数据库；README 称配套插件可配合个人许可证使用，无需无界面许可证。桥接套接字位于用户缓存目录，README 未列出支持的操作系统或 Binary Ninja 版本。同时打开多个视图时，命令需显式指定 --target 选择器，而不会默认使用当前标签页。",
+      "二进制文件和数据库由分析者自行提供，仓库中没有目标二进制。bn py 以用户权限在 Binary Ninja 内运行不受限制的 Python，其写入不经过内置修改操作的预览、校验和回滚；所审阅的桥接代码除套接字路径的访问权限外未设其他身份验证。全库文本和常量搜索默认在五秒分析预算后停止，并报告结果不完整。",
+      "CI 在 Python 3.12 和 3.14 上针对模拟的 binaryninja 模块运行 pytest，检查发布元数据，并用构建出的 wheel 冒烟测试插件与技能安装，因此并未在真实的 Binary Ninja 中运行。修改操作返回 verified、noop、unsupported 或 verification_failed；README 提示类型修改后反编译显示可能仍是旧内容，需回读类型或刷新分析。",
+      "采用 MIT 许可，v0.14.1 起加入仓库；Binary Ninja 保留自身的许可条款。本次未安装或运行任何内容，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }
