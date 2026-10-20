@@ -2604,5 +2604,31 @@
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/02-reconstruct-api.md",
       "https://github.com/dobest1024/rea-workspace-template/blob/fc15b9a4ba2a8b40510d19a2dd80209f665711c5/prompts/04-native.md"
     ]
+  },
+  {
+    "id": "awesome-automotive-can-id",
+    "name": "Awesome CAN ID",
+    "url": "https://github.com/iDoka/awesome-automotive-can-id",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A single-README list that gathers links to CAN message identifier and payload decodings in one place, grouped by vehicle make and model under about 30 car brands and brand groups plus BMW, Ducati and KTM motorcycles. Its links lead to DBC files, decoding spreadsheets, wiki pages, sniffing notes and small libraries maintained elsewhere, after a Common section of general databases such as comma.ai’s opendbc and the OpenGarages CAN ID references.",
+    "description_zh": "以单个 README 维护的清单，把 CAN 报文标识符与载荷解码资料的链接汇集在一处，按车辆品牌和车型分组，涵盖约 30 个汽车品牌及品牌集团，另有 BMW、Ducati 和 KTM 摩托车。条目链接到其他地方维护的 DBC 文件、解码表格、wiki 页面、抓包笔记和小型库；开头的 Common 部分收录 comma.ai 的 opendbc 和 OpenGarages CAN ID 参考等通用数据库。",
+    "evidence_url": "https://github.com/iDoka/awesome-automotive-can-id/blob/8eff640cd49984df4b37d996da46deaf81e53b52/README.md",
+    "additional_evidence_urls": [
+      "https://github.com/iDoka/awesome-automotive-can-id/blob/8eff640cd49984df4b37d996da46deaf81e53b52/license",
+      "https://github.com/iDoka/awesome-automotive-can-id/blob/8eff640cd49984df4b37d996da46deaf81e53b52/contributing.md",
+      "https://github.com/iDoka/awesome-automotive-can-id/blob/8eff640cd49984df4b37d996da46deaf81e53b52/.github/workflows/main.yml"
+    ],
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last changed by a merge on 2026-08-12, holds 148 links under 57 headings, the Common section and make, model and brand-group headings; the Acura, Lotus, Peugeot, DS, SAAB, Porsche and Seat headings are still empty. About 107 links go to GitHub and the rest to Google spreadsheets, wikis, forums and blog posts, several of them in Russian; two already point to Web Archive copies.",
+      "Entries give only the make or model, a link and a short note such as a model year, ECU or bus name. They state no license, verification status or coverage, so each decoding must be checked at its own source before it is relied on. Applying the decodings means reading traffic on a vehicle bus with suitable interface hardware; this record restates no procedure.",
+      "Repository CI runs only awesome-lint. The list text is dedicated under CC0-1.0; linked databases, documents and code keep their own licenses and terms. Its footnotes point to the same maintainer’s CAN bus and LIN bus tool lists. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
