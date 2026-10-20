@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 198 | 196 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 194 | 194 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 199 | 199 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 190 | 190 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 203 | 203 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 210 occurrences have catalog links. They reference 203 distinct resource IDs and 1 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 337 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 341 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -372,7 +372,11 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | DeepSeek V4.1: a reported V8 n-day to Electron IPC investigation | Insufficient evidence | [Source](https://x.com/i/status/2111587595750637954) |
 | Cursor: an account of custom relays and personal Codex/Claude Code quotas | Insufficient evidence | [Source](https://x.com/FoxSnowing/status/2111465121126207605) |
 | Open Scrantic: reconstructing the Johnny Castaway screensaver engine | Already curated | [Source](https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/README.md) |
+| LG TV smoothness: an idea for REA-assisted responsiveness research | Insufficient evidence | [Source](https://x.com/i/status/2111528528374353931) |
 | inFAMOUS Second Son native PC port | Already curated | [Source](https://github.com/HayatoG/iss_pc/blob/d3995feb0cea1e2edc0c71fab139d1e89f0a7305/README.md) |
+| Illustrative legacy/billing demo: 212 files to a spec and twelve Sonnet agents | Insufficient evidence | [Source](https://x.com/i/status/2111530936441446417) |
+| Windows XP/7: an AI compatibility idea instead of rewriting the whole OS | Insufficient evidence | [Source](https://x.com/i/status/2111546180207317426) |
+| Switch Diablo II to Android: an unverified AI-assisted native-port report | Insufficient evidence | [Source](https://x.com/i/status/2111454921589710905) |
 
 ## Partial coverage and aliases
 
