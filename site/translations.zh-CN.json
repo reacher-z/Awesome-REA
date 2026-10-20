@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "angryghidra": {
+    "name": "AngryGhidra Ghidra 符号执行插件",
+    "requirements": [
+      "审阅时最新版本为 1.1，发布于 2024-02-13，提供适用于 Ghidra 11.0 和 11.0.1 的预构建扩展包；较早的 0.1 版本附有 Ghidra 9.1.2 至 10.3 的构建。所审阅的 master 分支提交日期为 2024-07-29，比该版本多两个提交，改动了插件类型和 README。项目未说明与更新 Ghidra 版本的兼容性。",
+      "需用 pip 为 Python 3 安装 angr，并将 python3 加入 PATH；插件以外部进程运行随附的 angryghidra.py，并通过临时文件 angr_options.json 传递分析者的设置。项目未固定 angr 版本。从源码构建时需设置 GHIDRA_INSTALL_DIR 并使用 Gradle，再在 Ghidra 中通过 File → Install Extensions 安装；若未弹出新插件提示，可在 File → Configure → Miscellaneous 中启用 AngryGhidraPlugin。",
+      "angr 会从 Ghidra 导入时记录的路径加载二进制文件，因此原始文件必须仍在该位置；原始二进制（Raw Binary）会按 Ghidra 语言对应的架构以 blob 方式加载。二进制文件以及寻找、避开、钩子和符号输入等设置都由分析者提供。路径爆炸、未建模的环境行为和求解器限制仍取决于 angr；找到的路径只给出一个满足条件的输入，并不能证明程序的性质。",
+      "README 以 angr 示例中的 SecurityFest 2016 fairlight CTF 题目作演示；项目未发布其他结果或测试。采用 MIT 许可证。本次未运行该扩展或 angr。"
+    ]
   }
 }

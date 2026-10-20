@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "angryghidra",
+    "name": "AngryGhidra",
+    "url": "https://github.com/Nalen98/AngryGhidra",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension that runs angr symbolic execution from a CodeBrowser panel. The analyst marks a destination address, an optional start address and addresses to avoid with hotkeys, and can make program arguments, memory ranges or registers symbolic, write concrete values into memory and registers, hook instructions or apply bytes patched in Ghidra to the angr project. A bundled Python script runs angr's explorer on the program's original file, the listing highlights the instructions along the path it finds, and the panel shows the argument, memory and stdin values that reach the destination.",
+    "description_zh": "在 CodeBrowser 面板中调用 angr 符号执行的 Ghidra 扩展。分析者可用快捷键标记目标地址、可选的起始地址和需要避开的地址，并可将程序参数、内存区域或寄存器设为符号值，向内存和寄存器写入具体值，钩住指定指令，或把在 Ghidra 中修补的字节应用到 angr 项目。随附的 Python 脚本对程序的原始文件运行 angr 路径探索，反汇编列表会高亮找到的路径上的指令，面板则显示能到达目标地址的参数、内存和标准输入取值。",
+    "evidence_url": "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.1, published 2024-02-13, with prebuilt extension archives for Ghidra 11.0 and 11.0.1; the older 0.1 release carries builds for Ghidra 9.1.2 through 10.3. The reviewed master commit of 2024-07-29 is two commits later, changing the plugin type and the README. Compatibility with newer Ghidra releases is not stated.",
+      "Install angr with pip for Python 3 and put python3 on the PATH; the plugin starts the bundled angryghidra.py as an external process and passes the analyst's settings through a temporary angr_options.json file. No angr version is pinned. Building from source uses Gradle with GHIDRA_INSTALL_DIR, followed by File → Install Extensions in Ghidra; if no new-plugin prompt appears, enable AngryGhidraPlugin under File → Configure → Miscellaneous.",
+      "angr loads the binary from the path Ghidra recorded at import, so the original file must still be there; raw binaries are loaded as blobs with the architecture of the Ghidra language. The analyst supplies the binary and chooses the find, avoid, hook and symbolic-input settings. Path explosion, unmodeled environment behavior and solver limits remain angr's, and a found path gives one satisfying input rather than a proof about the program.",
+      "The README demonstrates it on the SecurityFest 2016 fairlight CTF challenge from angr's examples; no other results or tests are published. MIT license. Neither the extension nor angr was run for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/angryghidra_script/angryghidra.py",
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/src/main/java/angryghidra/AngrProcessing.java",
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/src/main/java/angryghidra/AngryGhidraProvider.java",
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/build.gradle",
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/extension.properties",
+      "https://github.com/Nalen98/AngryGhidra/blob/0e6dc9c695de654367fbc0d9cd123a86791bff4d/LICENSE.md",
+      "https://github.com/Nalen98/AngryGhidra/releases/tag/1.1",
+      "https://github.com/Nalen98/AngryGhidra/releases/tag/0.1"
+    ]
   }
 ]
