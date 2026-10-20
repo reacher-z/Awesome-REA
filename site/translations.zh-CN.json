@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "pithus-bazaar": {
+    "name": "Pithus（bazaar）Android 应用分析平台",
+    "requirements": [
+      "审阅时最新版本为 v1.0.1-beta，发布于 2026-10-12，是对 2026-09-21 发布的 v1.0.0-beta 的缺陷修复与依赖更新。v1.0.0-beta 升级了 2021 年的旧代码库，重写了 API 并另行提供 Python 客户端，且与早期 Pithus 数据不兼容；其发布说明称导入文档将在日后提供。所审阅的 master 提交日期为 2026-10-16，比该版本多 27 个提交，新增了 MISP 连接器。托管的测试版服务位于 beta.pithus.org。",
+      "README 说明的是在 Linux 上用 docker-compose -f local.yml 启动的开发环境，服务地址为 localhost:8001，并提醒首次打开时可能出现缺少索引的错误。该环境运行基于 Python 3.13 和 Django 6 的应用及 django-q 工作进程，以及 PostgreSQL、Redis、Elasticsearch 和 Kibana 8.19（Elasticsearch 堆内存设为 2 GB）、MobSF v4.5.3、兼容 S3 的 RustFS 存储和 Prometheus；另有用于 Apple M1、预发布和生产环境的 compose 文件。",
+      "输入为通过网页界面或 API 上传的 APK，也可从 URL 获取。VirusTotal 与 MalwareBazaar 查询会使用已配置的 API 密钥，把样本的 SHA-256 发送给这些服务；MISP 匹配需要 MISP 地址和密钥；Google Play 元数据按包名抓取；跟踪器特征在分析时从 Exodus Privacy 下载；运维人员运行 upload_to_mb 管理命令时，会把已存样本上传到 MalwareBazaar。",
+      "所审阅的分析任务均为静态分析或外部查询，流程中没有动态执行或沙箱运行；规则、相似度和信誉服务的结果只是需要分析者复核的迹象。pytest 测试模拟了 Elasticsearch 和存储，并使用 tests/_data/test.apk，这是项目自行构建、包名为 com.pithus.basicapp 的示例应用。CI 中的 pytest 任务已被注释掉，因此 CI 只做代码检查、运行 bandit，并构建和推送 Docker 镜像。Quark-Engine 从一个分支仓库安装，quark-rules 目录收录 280 个规则文件。",
+      "采用 AGPL-3.0 许可；随附的前端库及其调用的分析工具（包括 MobSF）各自保留其许可证。所审来源未提及 REA 的使用，本收录未部署该平台，也未分析任何样本。"
+    ]
   }
 }

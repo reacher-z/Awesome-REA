@@ -11254,5 +11254,45 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "pithus-bazaar",
+    "name": "Pithus (bazaar)",
+    "url": "https://github.com/Pithus/bazaar",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Self-hostable Django platform behind the Pithus Android analysis service, which its README describes as built for activists, journalists, NGOs and researchers. An uploaded APK is stored under its SHA-256 and queued for static analyses: Androguard attribute and class extraction, APKiD compiler and packer identification, ssdeep and Dexofuzzy similarity, Quark-Engine behavior rules, androcfg call graphs, Exodus tracker signatures, a MobSF static report, APK signing-block metadata and analyst-written YARA rules with retrohunts over stored samples. Results are indexed in Elasticsearch and shown as web reports and through a REST API, optionally enriched with MalwareBazaar, VirusTotal, MISP and Google Play lookups.",
+    "description_zh": "Pithus Android 应用分析服务背后的可自托管 Django 平台，README 称其面向活动人士、记者、非政府组织和研究人员。上传的 APK 以 SHA-256 为名保存，并排队执行多项静态分析：用 Androguard 提取属性与类，用 APKiD 识别编译器与加壳工具，用 ssdeep 和 Dexofuzzy 计算相似度，用 Quark-Engine 规则识别行为，用 androcfg 生成调用图，匹配 Exodus 跟踪器特征，生成 MobSF 静态报告，读取 APK 签名块元数据，并运行分析者编写的 YARA 规则，还可对已存样本进行回溯检索。结果写入 Elasticsearch，以网页报告和 REST API 呈现，并可选用 MalwareBazaar、VirusTotal、MISP 和 Google Play 查询补充信息。",
+    "evidence_url": "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.1-beta, published 2026-10-12, a bug-fix and dependency update to v1.0.0-beta of 2026-09-21. That release upgraded the 2021 code base, rewrote the API with a separate Python client and is not compatible with earlier Pithus data; its notes say import documentation will follow. The reviewed master commit, from 2026-10-16, is 27 commits later and adds a MISP connector. A hosted beta runs at beta.pithus.org.",
+      "The README documents a Linux development stack started with docker-compose -f local.yml and served at localhost:8001, and warns that a missing-index error may appear on first load. The stack runs a Python 3.13 Django 6 app with a django-q worker, PostgreSQL, Redis, Elasticsearch and Kibana 8.19 with a 2 GB Elasticsearch heap, MobSF v4.5.3, RustFS S3-compatible storage and Prometheus; separate compose files cover Apple M1, staging and production.",
+      "Input is an APK uploaded through the web interface or API, or fetched from a URL. VirusTotal and MalwareBazaar lookups send the sample's SHA-256 to those services with configured API keys, MISP matching needs a MISP URL and key, Google Play metadata is scraped by package name, tracker signatures are downloaded from Exodus Privacy at analysis time, and an upload_to_mb management command uploads stored samples to MalwareBazaar when an operator runs it.",
+      "The reviewed analysis tasks are static or lookup-based; no dynamic or sandboxed execution is part of the pipeline, and rule, similarity and reputation results are indicators for an analyst to review. The pytest suite mocks Elasticsearch and storage and uses tests/_data/test.apk, a project-built sample app with the package com.pithus.basicapp. The CI pytest job is commented out, so CI lints, runs bandit and builds and pushes Docker images. Quark-Engine is installed from a fork, and quark-rules holds 280 rule files.",
+      "AGPL-3.0; the bundled front-end libraries and the analyzers it calls, including MobSF, keep their own licenses. The reviewed sources state no REA use, and this collection deployed nothing and analyzed no samples."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/tasks.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/modules/pithus.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/modules/virus_total.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/modules/malware_bazaar.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/management/commands/upload_to_mb.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/bazaar/core/services/apk.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/local.yml",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/requirements/base.txt",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/config/settings/base.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/compose/local/django/Dockerfile",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/.github/workflows/ci.yml",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/tests/conftest.py",
+      "https://github.com/Pithus/bazaar/blob/3217f72f90fb95afcc9454ba8814b57a02acd56b/LICENSE",
+      "https://github.com/Pithus/bazaar/releases/tag/v1.0.1-beta",
+      "https://github.com/Pithus/bazaar/releases/tag/v1.0.0-beta"
+    ]
   }
 ]
