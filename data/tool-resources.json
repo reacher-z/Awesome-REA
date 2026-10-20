@@ -11383,6 +11383,13 @@
       "The default build links source-built objects only for units marked Matching, uses original extracted objects for the rest and checks main.dol and the NES REL against the version’s build.sha1. decomp.dev’s reports for the pinned commit list 93.89% of GM8E01_00 code (16,478 of 16,685 functions) and 98.47% of its data matched, with 739 of 829 units complete; the other USA and Korean releases report 92.5–93.83% of code, PAL 84.37%, Japan 82.91%, and the demo and Wii builds early figures. CI builds all eleven configurations in a container that supplies the original files; this collection ran no build.",
       "The repository carries CC0-1.0, which does not cover Nintendo’s game, the disc content or the downloaded compilers; the vendored zlib 1.1.3 keeps its own license and MusyX is a separate repository. Metaforce, rewritten on this decompilation, and Metroid Prime Port, a fork of it compiled natively, are curated separately. The reviewed sources establish no AI or REA involvement."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/configure.py",
       "https://github.com/PrimeDecomp/prime/blob/2fd31790998c0486744a6289cac7e2fecc22d143/tools/download_tool.py",
@@ -11411,6 +11418,12 @@
       "MIT covers the repository code; game files must come from your own installation. Client patches also change packet fields and gameplay behavior beyond the server address.",
       "Some combat, economy and objective values are emulator policies. Client evidence does not establish every original server rule or full behavioral equivalence.",
       "The README declares this stack frozen and unsupported. The referenced Batla.UdpSmoke harness is absent from the reviewed tree. No runtime reproduction or REA integration was verified."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "license",
+      "limits",
+      "limits"
     ],
     "url": "https://github.com/Serega25511s/Batla-3D-server-emu",
     "category": "reconstruction-cases",
@@ -11479,6 +11492,13 @@
       "Clone recursively, because GitHub’s source ZIPs omit the stb, tinyxml2, asio and Flatpak submodules. CMake 3.10+ builds use Visual Studio with vcpkg (GLEW, SDL2, libogg, libvorbis) on Windows, the listed GLEW, SDL2 and Ogg/Vorbis packages on Linux, and a separate Android guide; Xcode, UWP and Flatpak projects are included, while Vita, Switch, 3DS and WebAssembly ports are unofficial forks. Sonic 2’s online 2P VS needs a Python 3.8+ server that README calls a very unstable proof of concept.",
       "CI builds Windows x86 and x64, Android and Linux binaries with the Plus DLC disabled; it runs no tests, and the project publishes no comparison with the original engine binaries. The FAQ says bugs present in official releases will mostly not be fixed. This collection did not build or run it.",
       "The custom RSDKv3/v4 Decompilation Source Code License v2 requires distributed prebuilt executables to default to DLC off, forbids commercial use and distributing game assets other than unique modded ones, requires crediting the original RSDK author Christian “Taxman” Whitehead and the decompilation authors Rubberduckycooly and st×tic, and binds forks to the same terms. The reviewed sources establish no AI or REA use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/RSDKModding/RSDKv4-Decompilation/blob/a7f5195e21fdad7b75e4587e249013feeea9e6f3/FAQ.md",
@@ -11773,6 +11793,13 @@
       "GitHub Actions jobs on Arch Linux, Fedora and Ubuntu and an AppVeyor Visual Studio 2017 job run a CTest script that builds the code and its Boost.Test unit suite; tests that need game data sit behind the TEST_DATA option, which that script does not enable. No comparison with the original executable is published, and this collection did not build or run OpenRW.",
       "README applies GPL-3.0-or-later and lists FFmpeg (LGPL-2.1 or later), Bullet and SDL 2.0 (zlib) as third-party licences; the microprofile and imgui submodules are separate projects, and the game’s own assets keep their rights. The reviewed sources establish no REA or AI use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "additional_evidence_urls": [
       "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/CMakeLists.txt",
       "https://github.com/rwengine/openrw/blob/5c5f266b71aa55aeec8cb4d823f19e7c4348f3bd/cmake_options.cmake",
@@ -11921,6 +11948,13 @@
       "Building needs the latest stable Rust (the workspace uses the 2024 edition) and Java on PATH to compile the ActionScript 3 built-in classes; Linux builds need ALSA, udev, fontconfig, FreeType and OpenSSL development packages. Web builds also need the wasm32-unknown-unknown target, Node.js with npm 7+, wasm-bindgen-cli 0.2.127 and Binaryen. Bundled scanner and exporter tools bulk-parse SWFs and render PNG screenshots.",
       "Contributors are asked to commit each test SWF with its source, and expected trace output and screenshots come from running the debug Flash Player; known failures can be marked in a test's test.toml. These tests check Ruffle's behavior on authored test files, not equivalence with Flash Player on all content; this review ran none of them.",
       "Dual-licensed MIT or Apache-2.0 (GitHub reports NOASSERTION); LICENSE.md lists third-party dependency licenses, and the repository includes asc.jar from the Flex SDK to compile its ActionScript classes. SWF content keeps its own rights. The reviewed sources establish no REA or AI use."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/ruffle-rs/ruffle/blob/ea24ef78aa6c898e8170c1a603a496dd1131bd6c/CONTRIBUTING.md#L30-L36",

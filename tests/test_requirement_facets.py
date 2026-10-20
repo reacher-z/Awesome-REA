@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 from tempfile import TemporaryDirectory
 import unittest
@@ -101,6 +102,11 @@ class RequirementFacetTests(unittest.TestCase):
             self.assertEqual((strings['en'][key], strings['zh'][key]), (english, chinese))
         self.assertEqual(len([key for key in strings['en'] if re.fullmatch(r'facet[A-Z]\w*', key)]), len(FACETS))
 
+
+    def test_homepage_cards_render_facets(self):
+        result = subprocess.run(['node', str(ROOT / 'tests/requirement_facets_ui.cjs')], cwd=ROOT, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn('Requirement facets render on homepage cards in both languages', result.stdout)
 
 if __name__ == '__main__':
     unittest.main()
