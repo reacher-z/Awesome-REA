@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 474](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (27) · [游戏](#game) (187) · [应用](#app) (72)
-- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -2187,6 +2187,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Mandiant FLARE 团队的工具，将 YAML 规则集与从 PE、ELF、.NET 文件或 32/64 位 shellcode 中提取的 API 调用、导入、字符串和常量等特征进行匹配，报告可执行文件具备哪些功能。匹配结果按功能命名空间归类并标注 ATT&amp;CK 和 MBC，详细输出会列出每项匹配所依据的函数或基本块地址及特征，为分析人员指出值得深入研究的代码。它还能读取 CAPE、DRAKVUF 和 VMRay 沙箱报告以利用动态特征，可选用 vivisect、IDA Pro、Ghidra 或 Binary Ninja 进行分析，并提供 IDA 和 Ghidra 的 explorer 插件以及查看 JSON 结果的浏览器界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/capa/)
+
+- [**pyinstxtractor-ng 新一代 PyInstaller 程序提取工具**](https://github.com/pyinstxtractor/pyinstxtractor-ng)
+
+  PyInstaller Extractor（pyinstxtractor）的同一作者所做的分支版本，可从 PyInstaller 构建的 Linux ELF 和 Windows PE 可执行文件中提取打包的 CArchive 文件和 PYZ 模块，并输出修复了文件头的 .pyc 文件，供另行使用的字节码反编译器处理。与原脚本不同，它借助 xdis 库反序列化 PYZ 归档，因此无须在构建该可执行文件时所用的 Python 版本下运行；对于经 PyInstaller 可选 AES 加密保护的 PYZ 条目，它会利用同一可执行文件中打包的密钥模块自动解密。单目录模式会把 PYZ 内容提取到其他文件旁边，便于直接运行提取结果；--info 选项则只输出版本、入口点和加密情况等归档元数据，而不写入任何文件。
+
+  工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pyinstxtractor-ng/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件

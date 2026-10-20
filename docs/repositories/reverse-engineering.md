@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**605 repositories** · 2026-10-16 UTC
+**604 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -96,7 +96,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [chenxiancai/STCObfuscator](https://github.com/chenxiancai/STCObfuscator) — An automated, project-wide code obfuscation tool for iOS! Supports obfuscating CocoaPods component code too, while perfectly avoiding hardcoded methods, static-library methods, and system-library methods! **[822 stars]**
 - [devploit/awesome-ctf-resources](https://github.com/devploit/awesome-ctf-resources) — A list of Capture The Flag (CTF) frameworks, libraries, resources and software for started/experienced CTF players 🚩 **[809 stars]**
 - [jbro129/android-modding](https://github.com/jbro129/android-modding) — A large collection of github repositories related to android modding. **[757 stars]**
-- [pyinstxtractor/pyinstxtractor-ng](https://github.com/pyinstxtractor/pyinstxtractor-ng) — PyInstaller Extractor Next Generation **[741 stars]**
 - [OpenStrap/edge](https://github.com/OpenStrap/edge) — App which allows you to use your health devices beyond subscriptions. Supports Workout Tracking, Nutrition Tracking, Wellness Excercise, Sleep, Recovery, Strain, and Many more. **[722 stars]**
 - [SpecterOps/skills](https://github.com/SpecterOps/skills) — A marketplace for LLM skills **[716 stars]**
 - [CharlotteCross1998/awesome-game-decompilations](https://github.com/CharlotteCross1998/awesome-game-decompilations) — A curated list of awesome game decompilations, recompilations and disassemblies. **[711 stars]** · Curated: [awesome-game-decompilations](https://awesomerea.org/resources/awesome-game-decompilations/)

@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "pyinstxtractor-ng": {
+    "name": "pyinstxtractor-ng 新一代 PyInstaller 程序提取工具",
+    "requirements": [
+      "审阅时最新版本为 2026.07.03，发布于 2026-07-03，附带由 PyInstaller 构建的 Linux 二进制和 Windows .exe，因此使用这些构建无需安装 Python；PyPI 上也有同版本的 pyinstxtractor-ng 2026.7.3。所审阅的 main 提交比该标签多两个提交，仅把 pycryptodome 的版本要求从固定的 3.17 放宽为 3.19.1 及以上、低于 4。",
+      "直接运行脚本需要 Python 3.8+、固定为 6.3.0 版的 xdis 以及 pycryptodome；pyproject.toml 中残留的 Poetry 配置段仍把 Python 限制在 3.13 以下。发布的二进制由手动触发的工作流使用 Python 3.8 和 PyInstaller 5.10.1 构建；仓库中没有测试，也没有测试用可执行文件。",
+      "脚本头部列出所支持的 PyInstaller 版本为 2.0 至 5.10.1，README 未说明版本范围。既无法解压也无法解密的条目会原样保存并加上 .encrypted 后缀。",
+      "PyInstaller 可执行文件由使用者自行提供；要把恢复出的字节码还原为源码，还需另用反编译器。恢复出的代码仍受原程序权利人的权利约束。",
+      "采用 GPL-3.0-only 许可。本次未运行任何内容。"
+    ]
   }
 }

@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "pyinstxtractor-ng",
+    "name": "pyinstxtractor-ng (PyInstaller Extractor Next Generation)",
+    "url": "https://github.com/pyinstxtractor/pyinstxtractor-ng",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Fork of PyInstaller Extractor (pyinstxtractor) by the same author that extracts the bundled CArchive files and PYZ modules from Linux ELF and Windows PE executables built with PyInstaller, writing .pyc files with repaired headers for a separate bytecode decompiler. Unlike the original script, it unmarshals the PYZ archive with the xdis library, so it does not have to run under the Python version that built the executable, and it automatically decrypts PYZ entries that PyInstaller's optional AES encryption protected, using the key module bundled in the same executable. A one-directory mode extracts the PYZ next to the other files so the result can be run directly, and --info prints archive metadata such as versions, entry points and encryption without writing files.",
+    "description_zh": "PyInstaller Extractor（pyinstxtractor）的同一作者所做的分支版本，可从 PyInstaller 构建的 Linux ELF 和 Windows PE 可执行文件中提取打包的 CArchive 文件和 PYZ 模块，并输出修复了文件头的 .pyc 文件，供另行使用的字节码反编译器处理。与原脚本不同，它借助 xdis 库反序列化 PYZ 归档，因此无须在构建该可执行文件时所用的 Python 版本下运行；对于经 PyInstaller 可选 AES 加密保护的 PYZ 条目，它会利用同一可执行文件中打包的密钥模块自动解密。单目录模式会把 PYZ 内容提取到其他文件旁边，便于直接运行提取结果；--info 选项则只输出版本、入口点和加密情况等归档元数据，而不写入任何文件。",
+    "evidence_url": "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2026.07.03, published 2026-07-03, with a Linux binary and a Windows .exe built by PyInstaller, so those builds need no Python installation; the same version is on PyPI as pyinstxtractor-ng 2026.7.3. The reviewed main commit is two commits ahead of that tag and only relaxes the pycryptodome requirement from exactly 3.17 to 3.19.1 or later below 4.",
+      "Running the script needs Python 3.8+, xdis pinned to 6.3.0 and pycryptodome; a leftover Poetry section in pyproject.toml still caps Python below 3.13. Release binaries come from a manually triggered workflow that builds with Python 3.8 and PyInstaller 5.10.1, and the repository has no tests or test executables.",
+      "The script header lists PyInstaller 2.0 through 5.10.1 as supported, and the README states no version range. Entries that can be neither decompressed nor decrypted are saved unchanged with an .encrypted suffix.",
+      "The PyInstaller executable comes from the user, and turning the recovered bytecode into source needs a separate decompiler. Recovered code remains subject to the rights of the original program’s owner.",
+      "GPL-3.0-only. Nothing was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/pyinstxtractor_ng.py",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/pyinstxtractor_ng.py#L1-L15",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/pyproject.toml",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/requirements-dev.txt",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/.github/workflows/build.yaml",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/blob/1ed86ccc575cf10a42454a217e72540adf359f2e/LICENSE",
+      "https://github.com/pyinstxtractor/pyinstxtractor-ng/releases/tag/2026.07.03",
+      "https://pypi.org/project/pyinstxtractor-ng/2026.7.3/",
+      "https://github.com/extremecoders-re/pyinstxtractor/blob/815d31cf26bc71e62f851b2e549452e7b7c9dd98/README.md"
+    ]
   }
 ]
