@@ -11,6 +11,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Contribution guide](../CONTRIBUTING.md) | English | Current, authoritative | Suggestions, catalog fields, papers, validation and review |
 | [Chinese contribution quick start](../CONTRIBUTING.zh-CN.md) | Chinese | Current summary | Main contribution rules and the Chinese terminology glossary |
 | [Security policy](../SECURITY.md) | English, with a Chinese summary | Current | Private reporting of security problems |
+| Paper update guide: [English](paper-updates.md), [Chinese](paper-updates.zh-CN.md) | English, Chinese | Current | Updating a preprint record in place after acceptance or publication, with a worked example |
 | [Catalog format](../data/README.md) | English | Current | Curated, paper, benchmark, scan and case-coverage data |
 | [Repository locales](../data/locales/README.md) | English | Current | English and Chinese descriptions of scanned repositories |
 
