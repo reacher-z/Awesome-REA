@@ -348,6 +348,10 @@
       "Upstream case: Aegis 3.4.3, REA 6.1.0, jadx-headless-mcp 0.7.1 and OpenJDK 21 on Linux x64.",
       "Use the matching official APK for reproduction; this listing did not rerun the case."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites"
+    ],
     "targets": [
       "app"
     ],
@@ -368,6 +372,10 @@
       "Upstream case: public DownUnderCTF 2023 challenge, REA 4.1.0 and Ghidra 12.1.4 on Linux x64.",
       "Target hash and source revision are documented; author-reported execution was not repeated here."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing"
+    ],
     "targets": [
       "binary"
     ],
@@ -387,6 +395,10 @@
     "requirements": [
       "The matching DX-Ball 1.07 executable and the documented native-analysis environment.",
       "The cited reconstruction checks concern one function, not full-game equivalence; no checks were rerun here."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing"
     ],
     "targets": [
       "game",
@@ -409,6 +421,10 @@
       "Upstream case uses Notion Desktop 7.6.1 packaged JavaScript and REA 4.1.0.",
       "The full clipboard route was not automatically paired or observed as a desktop execution."
     ],
+    "requirement_facets": [
+      "scope",
+      "limits"
+    ],
     "targets": [
       "app"
     ],
@@ -428,6 +444,10 @@
     "requirements": [
       "The matching original TH04 MAIN.EXE and the documented Ghidra DOS load profile.",
       "The showcase covers one helper; full-game reconstruction claims are outside its scope."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope"
     ],
     "targets": [
       "game",
@@ -580,6 +600,11 @@
       "REA's stated role was readiness/device discovery and investigation framing; hermes-dec handled Hermes v98.",
       "Hardware behavior and author-reported results were not reproduced here."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing"
+    ],
     "targets": [
       "app",
       "protocol"
@@ -657,6 +682,11 @@
       "The v0.5.0 preview reports macOS Apple Silicon testing; Windows/Linux builds still need device validation. The macOS package is ad-hoc signed and not notarized.",
       "The experimental importer is documented against controlled Jianying 11.0.12922 drafts. Basic conversions are lossy: effects, keyframes and styles can be lost, and projects cannot be written back.",
       "REA supports the reported research workflow but is not a runtime dependency. The project uses its own code and format; MIT source and bundled third-party components retain separate licenses."
+    ],
+    "requirement_facets": [
+      "testing",
+      "limits",
+      "attribution"
     ]
   },
   {
@@ -676,6 +706,13 @@
       "The virtual keyboard has not been hardware-tested. Voice is unreleased and checked with synthetic or recorded frames, not live use in this package; it additionally needs libopus and HCI-monitor privileges.",
       "Protocol notes label measured, previously reported and guessed facts. The public sample does not reproduce every claim from the larger unpublished capture.",
       "MIT-licensed repository. REA use is not established by the reviewed project sources; device behavior was not independently reproduced."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "limits",
+      "license"
     ],
     "targets": [
       "protocol"
@@ -705,6 +742,13 @@
       "Read-back verification and interruption ordering are project claims backed by protocol documentation, not independent device tests by this catalog.",
       "MIT license. The reviewed primary files establish reverse engineering of the vendor WebHID configurator, but do not establish REA involvement."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "scope",
+      "testing",
+      "license"
+    ],
     "targets": [
       "protocol"
     ],
@@ -733,6 +777,13 @@
       "The reviewed README and package manifest give no project license, and no root LICENSE file was present at the pinned commit; public source availability is not a reuse grant.",
       "Device compatibility and formula accuracy are project claims not independently tested here. The reviewed primary files do not establish REA use."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "license",
+      "testing"
+    ],
     "targets": [
       "protocol",
       "app"
@@ -759,6 +810,13 @@
       "Unsupported document forms, external references and interaction expressions may be rejected. Numbered lists and true native merged table cells are not supported.",
       "Release evidence separates public/generated tests from historical assertions needing an unpublished exact fixture pack. One GUI sample checked load/save/close/reopen, not preview behavior or manual editing; newly synchronized features still need native acceptance.",
       "Authored code/docs are MIT; Axure, its libraries and third-party assets are separate. Collection reports of REA use are not confirmed by the reviewed pinned project files; no tests were independently rerun."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "testing",
+      "license"
     ],
     "targets": [
       "app"
@@ -789,6 +847,13 @@
       "Agent-assisted matching is documented, together with source review and relocation checks. This review did not obtain a ROM, run the compiler or reproduce any counter.",
       "The repository has an MIT license; original game data and external compiler rights remain separate. No REA affiliation is established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "attribution",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -818,6 +883,13 @@
       "v0.5.0 playtests were campaign spot-checks and multiplayer sessions; the full Agent-difficulty campaign was last reported end-to-end at v0.4.0. Frame comparisons and playtests were not independently repeated here.",
       "MIT covers original port/build/tooling/docs work only. NOTICE states inherited n64decomp/007 material has no explicit upstream license, and vendored components have separate terms; the MIT file is not a blanket grant over all contents."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -846,6 +918,13 @@
       "The author credits Claude agents. Reported frame rates, differential equivalence and selected fighter match traces do not establish full-game equivalence; this catalog did not run them.",
       "The README grants GPL version 3 or later. The public repository supplies tools/runtime rather than the game dump, keys or assets; game-derived output is a separate requirement."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -872,6 +951,13 @@
       "Physical-device and emulator checks cover specific builds and devices. Missing graphics, freezes, controller and performance problems remain on some hardware; a successful Pixel or iPad test is not universal compatibility.",
       "Substantial AI assistance is disclosed without an audited generated-code percentage. This catalog did not compile the project, obtain game data or reproduce tests.",
       "KartPad-owned work is GPL-3.0-only, with upstream component terms retained. RIGHTS_AND_LICENSES separates software obligations from game-derived logic and assets; GPL does not relicense Mario Kart Wii."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "attribution",
+      "license"
     ],
     "targets": [
       "game"
@@ -902,6 +988,13 @@
       "The LICENSE grants MIT only to port-specific code, build scripts, tools and docs. The decomp submodule and decomp-derived files defer to the upstream decompilation, which publishes no explicit license; libultraship/Torch, bundled fonts and controller mappings keep their own terms; game rights are separate.",
       "This review read documentation and license scope only, without a game dump, build, emulator session or independent runtime reproduction. REA use is not established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "attribution",
+      "license",
+      "testing"
+    ],
     "targets": [
       "game"
     ],
@@ -929,6 +1022,12 @@
       "Coverage figures and runtime success are author-reported, not independently reproduced.",
       "A documented case study, not an available game port or an established REA integration."
     ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "testing",
+      "scope"
+    ],
     "targets": [
       "game"
     ],
@@ -951,6 +1050,13 @@
       "Byte-matching C is not documented or idiomatic source. The 2026-05-17 post notes remaining __asm__ coercions, many generated names and structures still needing cleanup, and graphics/audio assets mostly handled as binary blobs; the 2026-02-16 post describes brittle agent matches.",
       "Agent assistance is not quantified beyond the posts. The 2026-05-17 post dates the first commit to September 2024 and credits four named N64 decomp community members with significant contributions, especially across the final ten functions; the 2025-11-04 post describes a human-led loop. The work relies on community tools such as splat, m2c, decomp.me, asm-differ and decomp-permuter.",
       "No license file is present at the reviewed commit. The June 2026 Snowboard Kids 2: Recompiled release and the August 2026 decompilation of the original Snowboard Kids are separate projects outside this record; no REA integration is established."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "limits",
+      "attribution",
+      "license"
     ],
     "targets": [
       "game"
@@ -1012,6 +1118,13 @@
       "Only one process can own the display at once; the vendor TRCC application must relinquish it. Preview rendering is not a hardware compatibility test.",
       "MIT-licensed code. Optional traffic/map feeds and other external services retain their own terms. The primary files do not establish REA use."
     ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "scope",
+      "limits",
+      "license"
+    ],
     "targets": [
       "protocol"
     ],
@@ -1039,6 +1152,13 @@
       "The author credits AI assistance and reports 30 Hz game logic with higher-rate interpolated rendering. Performance, gameplay parity and stability claims were not independently reproduced.",
       "Reported regression tests compare deterministic logic and screenshots across engine revisions; they do not by themselves establish every behavior matches the original Flash game.",
       "MIT covers the authored engine, tools, build files and docs only. LICENSE explicitly excludes gen/, gen720/, patch1080/ and patch720/ translated game-code directories; third-party and original-game rights remain separate."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"
@@ -1068,6 +1188,13 @@
       "The scroll fix was checked at device/libinput level without directly observing the receiving X11 app. This catalog did not repeat those tests or validate headset compatibility.",
       "MIT applies to this repository’s code only. Vendor libraries remain proprietary; the project limits redistribution of packages containing them and does not grant rights to the headset application."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "testing",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -1093,6 +1220,13 @@
       "The package exposes build/typecheck and a component preview; production-grade or high-fidelity wording remains the author’s assertion, without an independent comparison performed by this catalog.",
       "UI component examples do not supply Claude model access, account services or a recovered complete desktop application. Native desktop effects require their own host integration.",
       "MIT repository license. The asset policy documents system-font fallbacks and synthesized audio instead of bundled proprietary font/audio files; it does not grant rights in upstream Claude assets or branding."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "limits",
+      "license"
     ],
     "targets": [
       "app"
@@ -1122,6 +1256,13 @@
       "The project is beta. Modern rules intentionally change behavior, while Strict 3.1 expresses a compatibility aim rather than independent proof of full retail equivalence.",
       "Synthetic tests run without retail assets; the separate retail tier requires an installed game. This catalog did not build, obtain game files or reproduce gameplay/rendering claims.",
       "Original engine code is MIT; original game assets and dependency licenses are separate. The publication note describes curated integration snapshots, omitted raw research and unresolved attribution questions; those snapshots are not individually certified releases."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"
@@ -1179,6 +1320,13 @@
       "The scope is movies and TV shows, excluding music, photos, live TV and DVR. Selected relay/encrypted-server paths lack end-to-end viewing tests; timing and playback results remain author/device-specific.",
       "GPL-3.0-or-later for project code, with separate brand and third-party terms including bundled FFmpeg. This catalog did not install the client or reproduce TV tests; REA involvement is not established."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "limits",
+      "prerequisites",
+      "scope",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -1209,6 +1357,13 @@
       "A historical oracle accepted instruction bytes while missing wrong floating-literal data. The linked issue/PR records later data-reference checks; matching results support only the properties actually checked.",
       "MIT covers repository code/docs, not the original game. Historical source lineage and agent contributions retain their attribution. No compiler, original game, replay or port was independently run for this catalog."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "scope",
+      "testing",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1238,6 +1393,12 @@
       "The reconstructed claim is limited to acceleration. Drawing, jumping, collisions and controls in the teaching game are newly authored, not independently recovered original gameplay.",
       "Public result tables and code document the author’s checks; this catalog did not rerun them. The cited original-source excerpts retain Chromium attribution and BSD-3-Clause terms."
     ],
+    "requirement_facets": [
+      "scope",
+      "attribution",
+      "limits",
+      "testing"
+    ],
     "targets": [
       "game",
       "website"
@@ -1263,6 +1424,12 @@
       "Function selection was analyst-assisted; the illustrative agent conversation is not a recording of fully autonomous discovery. No PDB symbols were loaded.",
       "Microsoft source tests were inspected, not run, and no completed Windows GUI input check is claimed. Browser checks exercise the explanatory examples only.",
       "This reconstructs a bounded arithmetic rule, not the Calculator application. Public Microsoft source is MIT-licensed; access and rights to the installed target remain separate."
+    ],
+    "requirement_facets": [
+      "scope",
+      "attribution",
+      "testing",
+      "license"
     ],
     "targets": [
       "app",
@@ -1290,6 +1457,12 @@
       "The author attributes some architecture tracing directly to Codex and cites prior feishu-clone work; the outcome should not be credited solely to REA.",
       "Original hash/signature and process/data separation checks are author-reported. This case does not establish compatibility with later versions, vendor approval or rights to redistribute a patched application."
     ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "attribution",
+      "limits"
+    ],
     "targets": [
       "app"
     ],
@@ -1312,6 +1485,13 @@
       "Source builds additionally require submodules, CMake 3.20+, C++20 tooling, N64Recomp/RSPRecomp and the specified decompressed ROM. The build guide lists SDL2 and platform dependencies; ordinary play uses the standard ROM.",
       "The project documents high-frame-rate, widescreen, camera and save enhancements, plus overlay and cutscene issues. These are project claims, not independently rerun fidelity or performance checks.",
       "GPLv3 project license; original game content and dependencies retain separate terms. The team states that it does not use generative AI and bans contributions using GenAI tooling in any capacity; this is not an REA-assisted case."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"
@@ -1342,6 +1522,13 @@
       "Development uses C++20, CMake, NASM and platform libraries, then the project’s asset-extraction and GOAL compilation steps. The documented task commands need the corresponding task runner; runtime code editing is a development feature.",
       "ISC license for project work; original game assets and third-party components retain their own rights. REA involvement is not established, and this catalog did not build or run the games."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1371,6 +1558,13 @@
       "Running the rebuilt executables still requires the original installed game data and the documented data paths. The README notes that d3drm.dll may also be needed on newer Windows systems.",
       "The repository carries the LGPLv3 license; original game data and toolchain rights remain separate. REA involvement is not established, and no original binaries or game assets were downloaded for this review."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "scope",
+      "prerequisites",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1397,6 +1591,13 @@
       "Only Snowball War is reconstructed. Other events and the original engine are excluded; menus are new, and the close-up animation is deliberately restricted to the fort zone rather than reproducing every original placement.",
       "The frame rate is approximated at 35 Hz, the original PRNG was not recovered, pause/exit keys are approximations, and audio playback is missing. Gameplay tests and static evidence do not replace the explicitly absent side-by-side comparison with the running DOS original.",
       "The pinned LICENSE.md and Cargo.toml offer MIT OR Apache-2.0, while the README’s license sentence mentions MIT only. Original art/audio must be extracted separately; no game or test was run for this catalog."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "scope",
+      "limits",
+      "license"
     ],
     "targets": [
       "game"
@@ -1427,6 +1628,13 @@
       "The README reports that all subroutines were decompiled and converted to C++; this is not an independently checked byte-identical rebuild. Full Tilt feature work and possible support for its other two tables remain separate plans.",
       "MIT license for this repository; original game resources and dependencies retain their own terms. REA use is not established; no game, compiler or external port was run for this catalog."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "prerequisites",
+      "scope",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1453,6 +1661,13 @@
       "The Makefile normally checks the output ROM’s SHA-1 against the selected reference. NON_MATCHING, a non-N64 target or nonstandard configurations disable comparison; a successful modified build is not a matching-result claim.",
       "The pinned Jenkins configuration explicitly sets COMPARE=0 for iQue and enhancement builds. Its five-version build matrix therefore must not be described as five independently confirmed byte-identical results; no build or game was run for this catalog.",
       "The repository carries CC0-1.0; original Nintendo content and any separate third-party rights are not supplied by that declaration. No REA or coding-agent involvement is established by the reviewed files."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"
@@ -1482,6 +1697,13 @@
       "High-frame-rate gameplay glitches, loading stutters and ultrawide cutscene issues remain documented. Mods replacing the original executable or shaders are unsupported; improvements and performance claims were not independently reproduced here.",
       "GPLv3 project license, with separate original-game and dependency terms. This is static recompilation, not a claim to recover the original authored source; reviewed primary files do not establish REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1509,6 +1731,13 @@
       "The source configuration uses CMake 3.16+, C++20, SDL2 2.26+, OpenSceneGraph 3.6.5+, Boost 1.70+ and OpenAL; launcher/editor/wizard builds use Qt6. Additional dependencies depend on enabled components.",
       "The project reports the main quests as completable, but warns about side quests and mods that depend on original-engine quirks. Example Suite integration tests and the separate Morrowind-content test setup cover selected behavior, not complete original-game or mod equivalence; none was rerun here.",
       "The official GitHub mirror points to the main GitLab project. GPLv3 covers project code, with separate font/dependency terms and original-game data rights. No REA or coding-agent involvement is established by the reviewed sources."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"
@@ -1540,6 +1769,13 @@
       "The README reports a playable reconstruction but explicitly excludes the memory-card menu from its decompilation claim. Original bugs and some gameplay are deliberately changed; [D], [T] and [A] annotations distinguish decompiled, tested and altered code rather than proving whole-game fidelity.",
       "MIT license for project code; original game data and third-party components retain their own rights. No byte-identical rebuild, independent runtime test or REA/coding-agent involvement is established by this review."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1570,6 +1806,13 @@
       "The editor-level corpus tests compare rendering before and after export/reimport. Separate PSD codec tests compare bytes for parseable files, with a named malformed-file exception. Editor saves are explicitly not byte-identical to their inputs; these finite test definitions are not results independently reproduced by this catalog.",
       "The project remains alpha and distinguishes menu-command coverage from behavioral fidelity. Its dated parity assessment retains gaps in PSD exchange, typography, professional workflows, performance and plug-in compatibility; no complete Photoshop-equivalence percentage is asserted here.",
       "Project code is MIT OR Apache-2.0, subject to NOTICE; fonts, artwork and other assets retain separate terms. ArtCraft branding is excluded; published modified versions must remove it, apart from contribution-only forks. REA use is not established, and no application assets or corpus files were downloaded for this review."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "limits",
+      "license"
     ],
     "targets": [
       "app"
@@ -1604,6 +1847,13 @@
       "The project is alpha. File fidelity, page layout, advanced typography, stability and ecosystem compatibility remain limited; ribbon-command counts and author readiness estimates are not acceptance-test pass rates. No original-versus-rebuilt application test was rerun here.",
       "Code is MIT OR Apache-2.0 with NOTICE obligations; fonts and other assets retain separate rights, and ArtCraft branding has separate restricted terms. Clean-room is the authors’ characterization, not an independently established process or legal finding; no Microsoft code or assets are provided by this catalog."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "limits",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -1636,6 +1886,13 @@
       "Calculation tests use expected values for selected formulas, dependency changes and spilled arrays. The dated assessment against Excel for Mac 16.113.4 says Excel was not launched and no build or test ran in that assessment pass; it also records the absence of Excel-computed conformance oracles.",
       "The project remains alpha. Ribbon/function-name counts and readiness estimates are not behavioral-compatibility pass rates. File fidelity, advanced workflows, performance and ecosystem compatibility remain bounded, and the README documents graphics-driver startup issues. No Microsoft source tree or Microsoft 365 backend recovery is established.",
       "Code is MIT OR Apache-2.0 with NOTICE obligations; optional fonts and ArtCraft branding have separate terms. Published modified versions must remove the ArtCraft marks, except contribution-only forks. Clean-room is the authors’ characterization, not an independently audited process; CLI/MCP support does not establish REA involvement."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "testing",
+      "limits",
+      "license"
     ],
     "targets": [
       "app"
@@ -1671,6 +1928,13 @@
       "The dated assessment against PowerPoint for Mac 16.113.4 explicitly says rendering fidelity, performance against PowerPoint and end-to-end workflows with real users’ decks were not measured in that assessment. Feature breadth and readiness percentages are checklist counts or author estimates, not acceptance-test pass rates.",
       "The project is alpha and has documented file-exchange, presentation-workflow, stability and ecosystem gaps. Source snapshots and older assessment rows differ; no complete PowerPoint/Office equivalence, recovery of Microsoft’s authored source or reconstruction of its hosted services is asserted. The catalog did not rerun any original-versus-reimplementation comparison.",
       "Code is MIT OR Apache-2.0 with NOTICE obligations. Fonts/icons retain separate terms, and NOTICE lists the Symphonia audio decoder under MPL-2.0. ArtCraft marks have restricted terms and must be removed from published modified versions except contribution-only forks. Clean-room remains author-attributed; automation interfaces do not establish REA use."
+    ],
+    "requirement_facets": [
+      "prerequisites",
+      "testing",
+      "testing",
+      "limits",
+      "license"
     ],
     "targets": [
       "app"
@@ -1709,6 +1973,14 @@
       "The root LICENSE.md declares Sustainable Use License 1.0: use/modification is limited to internal business purposes, non-commercial use or personal use, while distribution must be free and non-commercial. Components and original game data retain separate terms.",
       "The same snapshot retains conflicting Public Domain wording in the Windows package README and Unlicense metadata in the Apple bundle configuration. Those notices are recorded without treating the complete current project as permissively licensed or resolving the conflict. The reviewed sources do not establish REA or coding-agent involvement."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "prerequisites",
+      "scope",
+      "testing",
+      "license",
+      "license"
+    ],
     "targets": [
       "game"
     ],
@@ -1743,6 +2015,14 @@
       "The work adds three kernel fixes plus lens-shading and white-balance-statistics changes to an existing Linux driver and software ISP. Low-light blue remains about 17% short, an 18.8 ms exposure ceiling is not fixed here, and the second IR camera is outside scope. It does not recover the entire Windows driver, emulate the laptop or establish compatibility across camera models.",
       "The dated investigation includes corrected and withdrawn hypotheses; its final README and test record should not be replaced by earlier intermediate claims. The patch cover letter attributes Claude assistance and hardware checking to the author. The later blog reports submission/review activity, not a verified upstream merge; REA use is not established.",
       "No top-level project license is present at the pinned revision. Newly added libcamera implementation files in the patch declare LGPL-2.1-or-later, and the tuning-data section declares CC0-1.0; these are component notices, not a blanket license for every script or vendor-derived input. Existing kernel/libcamera code and vendor materials retain their separate terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "testing",
+      "limits",
+      "attribution",
+      "license"
     ],
     "targets": [
       "firmware"
@@ -1782,6 +2062,14 @@
       "The preview is single-user, local and USD-only. Payroll, tax filing, live bank/payment services, multicurrency and complete QuickBooks migration are outside the implementation. Its cash-basis output is a defined management cash view, not established equivalence with all original or tax rules; full visual/interaction parity also remains unverified.",
       "MIT covers the authored application; vendor inputs and bundled runtime dependencies keep separate terms. The preview is not Developer ID-signed or notarized on macOS and lacks Windows publisher signing. Package smoke tests and selected native-window observations have separate scopes; no installer, original application, vendor company data or runtime package was downloaded or executed for this review."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "attribution",
+      "testing",
+      "testing",
+      "limits",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -1820,6 +2108,14 @@
       "The method explicitly leaves unobserved error responses, database/write paths, server caches, dynamic-image generator source and unlinked routes unresolved. Historical public-source comparisons and reported reconstruction percentages do not prove access to hidden backend logic; the author also notes possible model-training familiarity with a nominally blind target.",
       "MIT applies to the skill and tooling, not to reconstructed websites, their scripts, fonts or other assets. The source documents separate authorization/publication decisions and private, noindex output defaults. No original-site assets or model payloads were downloaded, and no browser session or upstream script was run in this review."
     ],
+    "requirement_facets": [
+      "prerequisites",
+      "scope",
+      "testing",
+      "testing",
+      "limits",
+      "license"
+    ],
     "targets": [
       "website"
     ],
@@ -1852,6 +2148,14 @@
       "The author reports one Hopefox Find T with HKV41B firmware, 480×480 JPEG at about 17 fps, plus photos, MJPG AVI recording, rotation and LED control. The public --test N viewer mode receives and decodes N live frames, saves the last image and prints frame rate; it needs the hardware. The reviewed tree has no separate offline conformance-fixture suite. These reports and source-level framing checks do not establish full protocol compatibility; this collection did not run the tools or reproduce the hardware result.",
       "The camera network remains open and unauthenticated. SECURITY.md states that the bridge accepts UDP traffic without source authentication and can receive injected images or replies; serial access is trusted and recordings are stored unencrypted. A local USB bridge does not remove these camera-network limitations. The project describes an inspection tool, not a medical device for diagnosis or treatment.",
       "NJFE declares GPL-3.0-or-later in its README, NOTICE and REUSE metadata, and identifies protocol code and roll calculation derived from GPL otoscope. Third-party build/runtime libraries retain their own licenses. Public source review does not grant rights to vendor software or images; no proprietary app, firmware binary, image capture, device or upstream runtime was used in this review."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "attribution",
+      "testing",
+      "limits",
+      "license"
     ],
     "targets": [
       "protocol"
@@ -1890,6 +2194,14 @@
       "The design note reports end-to-end Web annotation validation and explicitly says Electron was not tested for that flow. Published tests exercise local file publication/conflicts, HTTP read/write boundaries and annotation forwarding; some host tests use fake fetch and agent-harness tests use a fake driver. HTML/CSS compiler and round-trip checks are skipped when the built compiler is unavailable. These are implementation tests, not an original-Claude differential oracle or proof of full visual/behavioral parity; this collection did not run them.",
       "The root BaoCut Community License 1.0 is source-available: it permits stated personal/internal uses and content creation, while commercialization of the software/code or commercial hosting needs a separate license. Third-party components keep their own terms, including the documented PptxGenJS MIT and embedded mediabunny MPL-2.0 notices. Those dependency notices do not establish reuse rights in any reused Claude material or the bundled icon font; the runtime notes say that font needs replacement. This source review does not supply such rights or treat the whole component as permissively open source.",
       "BaoCut documents agent-assisted creation and annotation workflows, but the reviewed case sources do not establish which model produced the adaptation or any REA involvement. Support for Claude Code/Codex as agent engines is not evidence of the reconstruction method. Use independently authorized slide content and respect external asset/font terms. This review inspected pinned source and test definitions without running the app, models or checks, or retrieving bundled fonts, media or application packages."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license",
+      "attribution"
     ],
     "targets": [
       "website",
@@ -1934,6 +2246,14 @@
       "The six recorded target/candidate/observation/validator/checker/packet-tool hashes and the oracle digest match the reviewed source. The report’s TASK.md packet hash instead matches an earlier instruction revision: a later edit changed review/authorization wording without changing the behavioral contract. Treat the packet record as historical evidence, not fresh validation of every file in the current package. The failure history also retains an initial restricted-Windows attempt with five passes and four failures, followed by nine passes with unchanged candidate code in a permitted local environment.",
       "The contract bounds each invocation to 64 commands and 65,536 UTF-8 bytes, stores to 32 tasks and titles to 80 UTF-16 code units. Coverage is limited to named behaviors and tests; concurrent writers, crash durability, hostile filesystem races, UI behavior, hidden backends and production performance are outside the parity claim. MIT covers the authored example; upstream REA and other linked material remain separate. No target, candidate, checker, installer, model or upstream test was executed in this review."
     ],
+    "requirement_facets": [
+      "scope",
+      "attribution",
+      "attribution",
+      "testing",
+      "testing",
+      "limits"
+    ],
     "additional_evidence_urls": [
       "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/WALKTHROUGH.md",
       "https://github.com/ShadowSwaps/REA-Reconstruction-Companion/blob/590e65dd99596c7fb66598eaa5d6c051c2ec9a5f/evals/reference/TASK.md",
@@ -1973,6 +2293,14 @@
       "Deliberate differences include full-frame redraw, potentially one-pixel line/ellipse differences, bounded final-scene selection and a fixed two-second title display. Optional dedithering and softened audio default off. The original settings dialog and password feature are absent, as are unused animated-palette, 256-color and ADS-variable features.",
       "The headless test runs 6,000 steps and requires three completed scenes, without original-frame comparison. Data-dependent tests silently return when OPEN_SCRANTIC_DATA is unset; other tests cover parsing and arithmetic. CI checks formatting, lint, three-platform builds and --version, not cargo test or original-data playback. Snapshot output supports inspection, not an automated original-output oracle.",
       "MIT covers project source, not original executable content, art, scripts or sounds, which users must supply with appropriate authorization. The author describes independent, non-commercial interoperability without Sierra/Dynamix endorsement. This collection reviewed sources and test definitions; it did not reproduce the implementation or results."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "limits",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/glauberlima/open-scrantic/blob/2db75008931eb744f79d0c3fb12e0d89950466ff/docs/ENGINE.md",
@@ -2170,6 +2498,13 @@
       "The essay and notes supply no game files, compilers or builds; each project’s repository documents its own original-game and toolchain requirements, and game rights stay with their owners. GensokyoClub’s TH08 history keeps its attribution and license, and its public policy excluding AI-primary contributions is paraphrased rather than adopted. TH08 has a separate catalog record; this review did not separately review the TH095 or TH04 repositories or run any project.",
       "REA is described as supplying analysis evidence to agents; the projects also used their own analysis bridges and tooling, and historical results are not relabeled as REA output. The author presents the method and its industrial analogy as an account and argument, not a measured agent-versus-human comparison or proof that it transfers to other fields."
     ],
+    "requirement_facets": [
+      "scope",
+      "testing",
+      "testing",
+      "prerequisites",
+      "attribution"
+    ],
     "additional_evidence_urls": [
       "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/website/public/blog/touhou-reconstruction/index.html",
       "https://github.com/morluto/rea/pull/1475",
@@ -2199,6 +2534,13 @@
       "The fork needs Node.js 22.19+ or 24.11+; recovery uses ilspycmd plus a host Roslyn compiler and Mono references, with script defaults pointing at Homebrew paths on macOS. Verification needs a local X11 display and Mono/libgdiplus. The recorded run used macOS 15.3.1 on ARM64 with Xvfb, so both renders come from the same Mono runtime rather than native Windows.",
       "Scripts recover a fresh replica, then a probe executes the original and rebuilt assemblies, compares return values and indicator bytes for every board, and captures Form.DrawToBitmap images after button sequences. The current result JSON records zero board-record mismatches and terminalBytesEqual false. This collection read the reports and scripts without running the executables, tools or probe.",
       "The fork is MIT with morluto’s REA copyright retained and lists optional engines such as Ghidra and Frida under their own licenses; the game and its reconstruction carry GPL-3.0 obligations. Fork-specific code is not part of upstream REA releases, and the repository was renamed after the posts, whose rea-engine link now redirects to RE-Agent."
+    ],
+    "requirement_facets": [
+      "testing",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "additional_evidence_urls": [
       "https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/README.md",
@@ -2236,6 +2578,13 @@
       "The tasks were MIT-licensed Orca terminal v1.4.224 (128 MB of distributed Electron files) and a 2.5 MB HAR from an unnamed venue website; answers were checked against Orca’s public source and the HAR data. The author excluded DRM or license circumvention, online multiplayer games, business or customer data and malware from scope.",
       "Each condition ran once (n=1), the REA arm was told to prefer REA tools, parallel processes make timings approximate, and only static JavaScript/web work with one model was tested; an interrupted run was excluded and repeated. One REA analysis result exceeded the 10 MB MCP response limit. Scripts and JSONL logs are excerpted rather than published, so this collection could not and did not rerun the trials.",
       "The author reports that REA helped with extraction, such as asar unpacking and HAR element extraction, while grep and small scripts carried code reading in both arms. Nothing was reconstructed: the HAR task identified an existing request path. Native binaries and APKs are deferred to a planned second step; Orca, the venue site, REA and the model service keep their own terms."
+    ],
+    "requirement_facets": [
+      "scope",
+      "limits",
+      "scope",
+      "limits",
+      "attribution"
     ]
   },
   {
@@ -2286,6 +2635,13 @@
       "SETUP.md uses Ubuntu WSL on Windows with Node.js 22, Python 3, GCC and readelf. Its bootstrap builds REA from source revision 7ae3c50a9d49c480035855de9fcc4484befacd92 (package version 6.4.0) and runs it with Ghidra 12.1.4 and Temurin JDK 21, with Capstone 5.0.7 as an independent decoder. Rebuilds use a pinned 3DS Decomp Pipeline revision, the C replacements were compiled with Ubuntu’s gcc-arm-none-eabi (GCC 10.3.1), and runtime checks use Azahar 2126.2 and its RPC interface.",
       "The project reports independent byte checks of the unchanged rebuilds, isolated behavior tests and live RPC readbacks for the replaced routines, and 60 passing source-owned tests. Runtime evidence is a bounded startup, setup and bedroom comparison under one input movie; routine execution counts, battles, overworld coverage, full-movie completion and timing determinism remain unverified. The tests use source-owned fixtures, not retail bytes; this collection ran neither the tools nor the game.",
       "README directs agent-accessible analysis through REA and Ghidra and requires AI-assisted reconstructions to be reviewed against binary evidence; AGENTS.md and HANDOFF.md are written for continuing agent sessions, and RUNTIME.md records frame review by an independent reviewing agent. The repository has no license file and GitHub detects none; it describes itself as an independent fan project unaffiliated with Nintendo, Game Freak or The Pokémon Company. No runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "attribution"
     ],
     "targets": [
       "game"
@@ -2426,6 +2782,13 @@
       "The author reports 67 of 67 embedded tests passing (15 unit, 52 integration), ten rejected in-memory mutations and seven owner-reported manual browser checks on 2026-10-13 without browser or OS details. Floating-point results such as the extra step past 13 at update 7,001 were measured in the reconstruction, not sampled from the original. There is no CI or cross-browser coverage, and this collection ran nothing.",
       "The project is MIT-licensed; short original-source excerpts keep the Chromium BSD-style header, and THIRD_PARTY_NOTICES.md reproduces the upstream BSD-3-Clause terms. This third-party repository is separate from REA’s own dinosaur-speed teaching case."
     ],
+    "requirement_facets": [
+      "scope",
+      "attribution",
+      "prerequisites",
+      "testing",
+      "license"
+    ],
     "targets": [
       "game",
       "website"
@@ -2458,6 +2821,13 @@
       "The author lists gaps: no graphical editor, three cursor types, simplified motion blur, no typing zoom or click sounds, and camera and microphone code that has not been tested with a real camera; the clone is far from replacing Screen Studio. Its source is unpublished, so none of these results can be checked here.",
       "The author says the clone uses no Screen Studio code or assets and advises reading a product’s user agreement first. This study of a commercial app establishes no vendor approval or redistribution right, and the reported rules may not hold for other versions."
     ],
+    "requirement_facets": [
+      "scope",
+      "attribution",
+      "testing",
+      "limits",
+      "license"
+    ],
     "targets": [
       "app"
     ],
@@ -2483,6 +2853,13 @@
       "Running it needs only a WebGL2 browser opening index.html, or a local static server where the browser restricts local files; there is no Canvas2D fallback, and system monospace fonts change glyph metrics. Development needs Python 3 and Node.js 18+, with no third-party runtime or build dependencies.",
       "CI runs six Node tests of deterministic helpers, rebuilds the offline page, checks that it is current and runs a release check for offline output, syntax, local links and excluded extracted assets and local paths. VALIDATION.md reports manual Chrome-on-macOS checks of rendering and controls, but not a browser-verified settings import, runtime testing of Claude or a pixel comparison with the original. The reference recording’s remote build, seed, theme and font are unknown, and this collection did not run the page or tests.",
       "MIT covers the original code and documentation. The repository states that it distributes no recovered Anthropic source, shaders, fonts, ASAR files, screenshots of the original, recordings or account data, and that its license grants no rights in Anthropic’s software, fonts or trademarks. It is unofficial and unaffiliated with Anthropic; REA is credited as the investigation tool rather than bundled, and the author also credits AI-assisted development."
+    ],
+    "requirement_facets": [
+      "scope",
+      "scope",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "app"
@@ -2516,6 +2893,13 @@
       "The documented host is Linux x86-64 with Git, Python 3.11+, Node.js 22.19.0, 32-bit Wine, Xvfb, CMake, Ninja and GCC or Clang, plus i686 MinGW for Windows cross-builds. Bootstrap scripts fetch a hash-pinned JDK, Ghidra and a Visual C++ 4.0 compiler from a third-party archive repository. The REA lock file pins rea-agents 6.5.0 with Ghidra 12.1.4, while docs/REA.md still names 6.4.0; the Codex goal workflow needs Codex 0.128.0 or newer.",
       "An exact unit has zero differences across the whole function after COFF relocations are mapped to original functions, imports and data, with literal data also checked; match-units.toml records the inputs needed to replay each unit. Differential tests run original x86 routines under Unicorn emulation against the compiled maintained C, and public CI builds the portable source, validates recorded evidence and compiles the Windows adapter without game resources. All results are project-reported; this collection ran nothing.",
       "MIT covers repository code; the original game, credited to Michael P. Welch with 3D graphics by Seumas McNally, is supplied separately and keeps its own rights, as do the downloaded compiler and tools. REA use is documented through saved responses and a worked projectile-list example, but agent effectiveness is not independently measured, and no runtime reproduction is claimed."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game",
@@ -2553,6 +2937,13 @@
       "Building uses devkitARM and libnds (devkitPro nds-dev), Python 3, FFmpeg with its development libraries, a C compiler and pkg-config. Windows builds run in WSL Ubuntu, and make falls back to devkitPro’s Docker image when no local devkitARM is found. The README plays the ROM in melonDS, needs DLDI SD-card setup for saves and shows a photo captioned as running on a Nintendo DSi XL.",
       "Host tests compile the platform-independent script, enemy and cutscene code for a PC and run it against the user’s converted data; the script test reports unknown opcodes, and scd_disasm.py --check validates jump targets across rooms. Analysis notes cite PS1 addresses and mark observed versus assumed behavior. psxexe_to_elf.py wraps the executable and symbol lists as a MIPS ELF accepted by REA’s Ghidra lane; Claude Code use is stated only in the Reddit post and is not quantified. This catalog did not build or run the engine.",
       "No license file is present at the reviewed commit. The README credits the MIT-licensed OpenBiohazard2 reimplementation’s file-format work and script opcode table as the starting point for several converters. Capcom’s game data, movies and audio stay outside the repository and retain their own rights."
+    ],
+    "requirement_facets": [
+      "scope",
+      "prerequisites",
+      "prerequisites",
+      "testing",
+      "license"
     ],
     "targets": [
       "game"

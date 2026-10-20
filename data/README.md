@@ -17,6 +17,7 @@
 | `verified_at` | ISO date or timestamp of source review |
 | `verification` | `source-reviewed`; not a runtime compatibility claim |
 | `requirements` | Platform, engine, release, license, or input prerequisites |
+| `requirement_facets` | Optional: one facet ID per `requirements` item, in the same order |
 
 The validator accepts the category keys defined in `CATEGORIES` in [build_readme.py](../scripts/build_readme.py). Their English and Chinese labels are the only category wording on the site: the build copies them into `catalog.json` for the homepage filter and cards, and entry pages read the same map. It accepts exactly these `relationship` values from `RELATIONSHIPS` in the same file, shown with their English labels. REA here is the upstream [REA project](https://github.com/morluto/rea).
 
@@ -33,6 +34,8 @@ The validator accepts the category keys defined in `CATEGORIES` in [build_readme
 - `independent-reconstruction` (Independent reconstruction project): a documented reconstruction with no established REA connection.
 - `foundation` (Foundation tool): an established analysis tool, library or framework that works independently of REA.
 - `learning` (Learning resource): a course, book, reference or research resource with no established REA connection.
+
+`requirement_facets` labels each `requirements` item with one of: `prerequisites` (Prerequisites / 前提条件: inputs, platforms, toolchains and setup a reader must supply), `scope` (Scope / 范围: what the project or report is and covers), `limits` (Limits / 局限: known gaps and caveats), `testing` (Testing evidence / 测试证据: tests, checks and reported results, or their absence), `license` (License / 许可: code licenses and rights to original assets) and `attribution` (Attribution / 署名: authorship, provenance and AI or REA involvement). The list is parallel to `requirements` and to the Chinese items in `site/translations.zh-CN.json`, so both languages carry the same facets. The field is optional, and existing case studies carry it; when present, validation rejects unknown IDs and count mismatches. Records without it keep a plain requirements list. Pages show each facet as a bold lead-in and list prerequisites first; the item text itself is unchanged. [requirement_facets.py](../scripts/requirement_facets.py) defines the vocabulary.
 
 Source review dates are snapshots; upstream requirements may change. GitHub file and directory evidence links (`/blob/`, `/tree/`) name the reviewed commit, so they keep showing the reviewed text, while `url` remains the moving project link. GitHub wiki evidence names the page revision from its history (`/wiki/<Page>/<revision>`), and an evidence link is never a bare repository root: link the README or tree at the reviewed commit instead. `python3 scripts/validate.py` prints a non-blocking warning for either case. Resource and paper review dates allow at most the next UTC calendar day to accommodate reviewers ahead of UTC. Resource review timestamps retain an exact 24-hour allowance; publication and first-arXiv dates must not be in the future. A documentation link on `main` may describe functionality that is not in a released package; keep that distinction in the description or requirements.
 
