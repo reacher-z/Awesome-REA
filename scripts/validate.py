@@ -12,6 +12,7 @@ import subprocess
 import sys
 from urllib.parse import unquote, urlsplit
 
+from artifact_links import github_repository
 from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
@@ -95,6 +96,10 @@ def parse_iso(value, require_time=False):
 
 def normalized_url(value):
     parsed = urlsplit(value)
+    repository = github_repository(value)
+    if repository:
+        # Root repository URLs compare as artifact matching does: case, one trailing slash and `.git` are aliases.
+        return 'https', 'github.com', '/' + repository, parsed.query, parsed.fragment
     path = parsed.path.rstrip('/')
     if parsed.hostname and parsed.hostname.lower() == 'github.com':
         parts = path.split('/')
