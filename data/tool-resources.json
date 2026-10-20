@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "androidreverse101",
+    "name": "AndroidReverse101",
+    "url": "https://github.com/Evil0ctal/AndroidReverse101",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A Chinese-language Android reverse-engineering course by Evil0ctal, planned as 100 daily lessons. It starts from number systems, ARM assembly, the Dalvik/ART runtime and APK loading, then covers APK and DEX structure, Smali editing and repackaging, Frida and Xposed hooking, JNI and native-library analysis, traffic analysis, obfuscation and app hardening, with commands and code for tools such as jadx, apktool, readelf, GDB/LLDB, Frida and Burp Suite. A Crackmes folder adds copies of OWASP's UnCrackable and r2pay practice apps, and a community Indonesian translation follows the published lessons.",
+    "description_zh": "Evil0ctal 编写的中文 Android 逆向课程，计划分 100 天、每天一课。课程从进制、ARM 汇编、Dalvik/ART 运行时和 APK 加载机制讲起，继而介绍 APK 与 DEX 结构、Smali 修改与重新打包、Frida 和 Xposed Hook、JNI 与 Native 库分析、抓包分析、代码混淆及应用加固，并结合 jadx、apktool、readelf、GDB/LLDB、Frida、Burp Suite 等工具给出命令和代码。Crackmes 目录收录 OWASP UnCrackable 与 r2pay 练习应用的副本，另有社区贡献的印度尼西亚语译本与已发布课程对应。",
+    "evidence_url": "https://github.com/Evil0ctal/AndroidReverse101/blob/9b72d20439155893ab2ce1b8af56af41c17d0411/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 9b72d20 (2025-12-31), the merge of a community Indonesian translation; the Chinese lessons and crackmes were committed between 22 and 25 February 2025, and there are no releases. The README outlines 100 days in three phases, but the tree holds 44 lessons (Days 1–41, 60, 70 and 100), and the Indonesian translation covers the same 44, many in shortened form.",
+      "No outside target files are needed to begin: the Day 20 lesson supplies crackme source for learners to compile, and the Crackmes folder commits five practice APKs, UnCrackable-Level1.apk, UnCrackable-Level2.apk, UnCrackable-Level3.apk, r2pay-v0.9.apk and r2pay-v1.0.apk, whose Git blobs are identical to the crackmes in OWASP's MASTG repository. Only Level 1 has a written walkthrough; the README's Crackme 2 link points to a file that is not in the tree.",
+      "Lessons assume a desktop host with adb and an Android device, and name tools including jadx, apktool, baksmali, readelf, GDB/LLDB, IDA Pro, Ghidra, Frida with frida-server on the device, Burp Suite and Wireshark; the Xposed lesson starts from a device rooted with Magisk.",
+      "Many phase-two lessons and the Day 70 and Day 100 exercises are framed around modifying third-party apps, including defeating licence, paid-feature, root-detection, certificate-pinning and anti-debugging checks. The README and lessons carry no note on legal use or authorization; this record reproduces none of those steps.",
+      "The repository is MIT-licensed (copyright 2025 Evil0ctal); the crackmes come from OWASP's CC BY-SA 4.0 MASTG repository, and the tools named keep their own terms. This collection read the README, the lesson tree, the Level 1 walkthrough and a sample of lessons without working through them or running the crackmes. The lessons mention AI only as a reverse-engineering subject, and no REA connection is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Evil0ctal/AndroidReverse101/tree/9b72d20439155893ab2ce1b8af56af41c17d0411",
+      "https://github.com/Evil0ctal/AndroidReverse101/blob/9b72d20439155893ab2ce1b8af56af41c17d0411/AndroidReverse101/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80_%E9%80%86%E5%90%91%E6%A6%82%E8%AE%BA/Day_20_CTF_%E9%80%86%E5%90%91%E6%8C%91%E6%88%98_%E5%88%9D%E7%BA%A7.md",
+      "https://github.com/Evil0ctal/AndroidReverse101/blob/9b72d20439155893ab2ce1b8af56af41c17d0411/AndroidReverse101/%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5_APK%E9%80%86%E5%90%91%E5%9F%BA%E7%A1%80/Day_31_Xposed_%E5%85%A5%E9%97%A8.md",
+      "https://github.com/Evil0ctal/AndroidReverse101/blob/9b72d20439155893ab2ce1b8af56af41c17d0411/Crackmes/Android/Level_01/README.md",
+      "https://github.com/Evil0ctal/AndroidReverse101/tree/9b72d20439155893ab2ce1b8af56af41c17d0411/AndroidReverse101_Indonesian",
+      "https://github.com/Evil0ctal/AndroidReverse101/blob/9b72d20439155893ab2ce1b8af56af41c17d0411/LICENSE",
+      "https://github.com/OWASP/mastg/tree/02ffd85fb74383ec2a30b42866d38f89d72c0ead/Crackmes/Android"
+    ]
   }
 ]

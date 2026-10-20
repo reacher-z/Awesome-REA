@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "androidreverse101": {
+    "name": "AndroidReverse101（Android 逆向 100 天教程）",
+    "requirements": [
+      "审阅提交为 9b72d20（2025-12-31），即合并社区印度尼西亚语译本的提交；中文课程和 Crackme 题目提交于 2025 年 2 月 22 日至 25 日，项目没有发布版本。README 规划了分三个阶段的 100 天课程，但仓库中只有 44 节课（第 1–41 天及第 60、70、100 天）；印度尼西亚语译本覆盖同样的 44 节，其中不少篇幅有所压缩。",
+      "入门无需额外的目标文件：第 20 天课程提供 Crackme 源码供学习者自行编译，Crackmes 目录提交了五个练习 APK，即 UnCrackable-Level1.apk、UnCrackable-Level2.apk、UnCrackable-Level3.apk、r2pay-v0.9.apk 和 r2pay-v1.0.apk，其 Git blob 与 OWASP MASTG 仓库中的 Crackme 完全相同。只有 Level 1 附有解题记录；README 中 Crackme 2 的链接指向的文件并不在仓库中。",
+      "课程默认使用装有 adb 的桌面主机和一台 Android 设备，提到的工具包括 jadx、apktool、baksmali、readelf、GDB/LLDB、IDA Pro、Ghidra、需在设备上运行 frida-server 的 Frida、Burp Suite 和 Wireshark；Xposed 一课要求设备先用 Magisk 获取 Root。",
+      "第二阶段的许多课程以及第 70、100 天的练习都以修改第三方应用为主线，包括绕过授权、付费功能、Root 检测、证书固定和反调试等检查。README 和课程均未就合法使用或授权作出任何说明；本条目不转述其中的具体步骤。",
+      "仓库采用 MIT 许可证（版权归 Evil0ctal，2025 年）；Crackme 题目来自采用 CC BY-SA 4.0 的 OWASP MASTG 仓库，课程提到的工具适用各自的条款。本合集阅读了 README、课程文件树、Level 1 解题记录和部分课程，没有实际学习课程或运行 Crackme。课程只把 AI 作为逆向对象之一提及，未确立与 REA 的关联。"
+    ]
   }
 }

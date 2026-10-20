@@ -85,7 +85,7 @@
 - [BryanGIG/PADumper](https://github.com/BryanGIG/PADumper) — Android 进程内存转储工具。 **[463 星标]**
 - [t0thkr1s/allsafe-android](https://github.com/t0thkr1s/allsafe-android) — 刻意包含漏洞的 Android 应用。 **[441 星标]**
 - [Odrannnn/MetroidPrimePort](https://github.com/Odrannnn/MetroidPrimePort) — 基于 PrimeDecomp 反编译成果，为 Linux、Windows 和 Android 构建的《密特罗德 Prime》（GameCube）原生移植版。无需模拟器，不包含游戏资源，需自行提供光盘镜像。 **[434 星标]** · 精选：[Metroid Prime Port：AI 辅助完成的 PrimeDecomp 反编译原生移植](https://awesomerea.org/zh/resources/metroid-prime-port-case/)
-- [Evil0ctal/AndroidReverse101](https://github.com/Evil0ctal/AndroidReverse101) — 📖 从 0 到 1 系统学习 Android 逆向，让学习变得有趣、好玩、易上手！ **[427 星标]**
+- [Evil0ctal/AndroidReverse101](https://github.com/Evil0ctal/AndroidReverse101) — 📖 从 0 到 1 系统学习 Android 逆向，让学习变得有趣、好玩、易上手！ **[427 星标]** · 精选：[AndroidReverse101（Android 逆向 100 天教程）](https://awesomerea.org/zh/resources/androidreverse101/)
 - [cxapython/mybackup-IT](https://github.com/cxapython/mybackup-IT) — 技术文章备份，涵盖 Android、JavaScript、汇编及相关逆向分析。 **[420 星标]**
 - [ucsb-seclab/BootStomp](https://github.com/ucsb-seclab/BootStomp) — BootStomp：引导加载程序漏洞查找工具。 **[417 星标]**
 - [TheQmaks/phantom-frida](https://github.com/TheQmaks/phantom-frida) — 从源码构建抗检测 Frida 服务器，约 90 个补丁覆盖 16 类检测途径，每周以随机名称自动构建。 **[395 星标]**
