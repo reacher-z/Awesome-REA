@@ -87,6 +87,7 @@ const UI = {
     "sourceLanguageNote": "Repository descriptions are available in English and Chinese. Translations are AI-assisted; original descriptions remain in the downloadable data.",
     "sourceLoading": "Loading repositories…",
     "clearFilters": "Clear filters ×",
+    "exportMatches": "Export matches (JSON) ↓",
     "emptyTitle": "No matching resources.",
     "sourceEmptyDescription": "Try another search term or broaden your filters.",
     "resetFilters": "Reset filters",
@@ -233,6 +234,7 @@ const UI = {
     "sourceLanguageNote": "项目简介提供中英双语，翻译由 AI 辅助完成；下载数据中保留上游原文。",
     "sourceLoading": "正在加载仓库…",
     "clearFilters": "清除筛选 ×",
+    "exportMatches": "导出匹配项（JSON）↓",
     "emptyTitle": "没有匹配的资源。",
     "sourceEmptyDescription": "换一个关键词，或扩大筛选范围。",
     "resetFilters": "重置筛选",
@@ -415,6 +417,7 @@ function render() {
   const found = filtered(); const grid = $("#resource-grid"); const fragment = document.createDocumentFragment(); found.slice(0, state.visible).forEach(r => fragment.append(card(r))); grid.replaceChildren(fragment); restoreExpanded(".resource-card", expanded); grid.setAttribute("aria-busy", "false");
   $("#results-status").textContent = state.lang === "zh" ? (found.length === state.records.length ? `${found.length} 项资源` : `${found.length} 项匹配资源 · 目录共 ${state.records.length} 项`) : (found.length === state.records.length ? `${found.length} ${found.length === 1 ? "resource" : "resources"}` : `${found.length} ${found.length === 1 ? "result" : "results"} · ${state.records.length} ${state.records.length === 1 ? "resource" : "resources"}`);
   renderEmptySearchActions(found.length);
+  showExport("");
   $("#empty-state").hidden = found.length !== 0; $("#error-state").hidden = true; $("#load-more-row").hidden = found.length <= state.visible; $("#remaining-count").textContent = "+" + Math.min(15, Math.max(0, found.length - state.visible)); $("#shown-count").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length, state.visible)} / ${found.length} 项` : `${Math.min(found.length, state.visible)} of ${found.length} ${found.length === 1 ? "resource" : "resources"} shown`;
   $("#clear-filters").hidden = !state.q && state.group === "all" && state.category === "all" && state.kind === "all" && state.target === "all";
   renderMoreFilters();
@@ -492,6 +495,49 @@ function searchRepositoriesFromEmpty() {
   $("#source-search").focus();
 }
 $("#empty-search-repositories").addEventListener("click", searchRepositoriesFromEmpty);
+// Filtered exports hold every match in display order, including cards Show More has not revealed, and name the filters
+// and data snapshot. Curated records keep their own source review; repository records stay automatic README observations.
+function showExport(prefix) { $(`#${prefix}export-matches`).hidden = false; $(`#${prefix}export-matches-status`).textContent = ""; }
+const exportRecords = records => records.map(({order, search, ...record}) => record);
+function exportMetadata(collection, recordClass, description, filters, order, matched, total) {
+  return {schema_version: 1, collection, record_class: recordClass, subset: "filtered", description, filters, order,
+    matched_count: matched, total_count: total, data_revision: document.documentElement.dataset.catalogRevision || null,
+    page: location.href, language: state.lang, exported_at: new Date().toISOString()};
+}
+function curatedExport() {
+  const found = filtered();
+  return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
+    "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
+    full_download: dataURL("catalog.json").href}, resources: exportRecords(found)}};
+}
+function sourceExport() {
+  const found = sourceFiltered(); const meta = sourceState.meta;
+  return {count: found.length, filename: "awesomerea-repository-matches.json", value: {export: {...exportMetadata("repository-index", "automatically-indexed-repository",
+    "Automatically indexed repositories matching the homepage filters, copied from the browsing projection source-browser.json. READMEs were fetched automatically; these records are not curated, individually reviewed or executed, and their target labels are inferred. Repositories excluded from browsing are omitted; the full source-index.json download keeps them.",
+    {sourceq: sourceState.q, "source-target": sourceState.target, topic: sourceState.topic, sort: sourceState.sort}, sourceState.sort, found.length, sourceState.records.length),
+    snapshot: {status: meta.status || null, completed_at: meta.completed_at || null, scope: meta.scope || null, full_export_sha256: meta.full_export_sha256 || null},
+    full_download: dataURL("source-index.json").href}, repositories: exportRecords(found)}};
+}
+function downloadJSON(filename, value) {
+  const href = URL.createObjectURL(new Blob([JSON.stringify(value, null, 2) + "\n"], {type: "application/json"}));
+  const link = node("a"); link.href = href; link.download = filename; link.hidden = true;
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(href), 1000);
+}
+function exportMatches(prefix) {
+  const source = prefix === "source-", zh = state.lang === "zh", status = $(`#${prefix}export-matches-status`);
+  if (source ? !sourceState.loaded : !state.loaded) return;
+  const result = source ? sourceExport() : curatedExport(); const count = result.count.toLocaleString(zh ? "zh-CN" : "en-US");
+  if (!result.count) { status.textContent = zh ? `没有可导出的匹配${source ? "仓库" : "资源"}。` : `No matching ${source ? "repositories" : "resources"} to export.`; return; }
+  try {
+    downloadJSON(result.filename, result.value);
+    status.textContent = zh ? `已下载 ${count} ${source ? "个匹配仓库" : "项匹配资源"}（JSON）。` : `Downloaded ${count} matching ${source ? (result.count === 1 ? "repository" : "repositories") : (result.count === 1 ? "resource" : "resources")} as JSON.`;
+  } catch (_) {
+    status.textContent = zh ? `此浏览器无法生成导出文件；页脚的完整${source ? "仓库索引" : "精选目录"} JSON 仍可下载。` : `This browser couldn’t create the export. The full ${source ? "repository index" : "curated catalog"} JSON in the footer still works.`;
+  }
+}
+for (const prefix of ["", "source-"]) $(`#${prefix}export-matches`).addEventListener("click", () => exportMatches(prefix));
 function topicLabel(topic) { return state.topicLabels[topic]?.[state.lang] || topic; }
 function topicSearch(topic) { const entry = state.topicLabels[topic]; return [topic, entry?.en || "", entry?.zh || ""].join(" ").toLocaleLowerCase(); }
 function topicDisplay(topic) { const translated = topicLabel(topic); return translated === topic ? topic : `${translated} · ${topic}`; }
@@ -610,6 +656,7 @@ function renderSources() {
   $("#source-snapshot").textContent = (state.lang === "zh" ? "自动目标标签仅用于发现项目。星标为采集时快照。" : "Automatic target labels aid discovery. Stars are collection-time snapshots.") + (completed ? (state.lang === "zh" ? " 扫描完成于 " : " Scan completed ") + sourceTime(completed) + (state.lang === "zh" ? "。" : ".") : "") + (sourceState.meta.status === "in-progress" ? (state.lang === "zh" ? " 扫描进行中；此处显示已读取的快照。" : " Scan in progress; this is the successfully fetched snapshot.") : "") + scopeNote;
   $("#source-empty").hidden = found.length > 0; $("#source-error").hidden = true; $("#source-more-row").hidden = found.length <= sourceState.visible; $("#source-more-count").textContent = "+"+Math.min(24,Math.max(0,found.length-sourceState.visible)); $("#source-shown").textContent = state.lang === "zh" ? `已显示 ${Math.min(found.length,sourceState.visible)} / ${found.length} 个仓库` : `${Math.min(found.length,sourceState.visible)} of ${found.length} ${found.length === 1 ? "repository" : "repositories"} shown`;
   $("#source-clear").hidden = !sourceState.q && !sourceState.topic && sourceState.target === "all" && sourceState.sort === "relevance";
+  showExport("source-");
   $$('[data-source-target]').forEach(button => { const active = button.dataset.sourceTarget === sourceState.target; button.classList.toggle("active",active); button.setAttribute("aria-pressed",String(active)); });
 }
 function sourceBrowserPayload(data) {
