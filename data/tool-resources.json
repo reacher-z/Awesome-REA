@@ -11254,5 +11254,30 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ghidra-snippets",
+    "name": "Ghidra Snippets",
+    "url": "https://github.com/HackOvert/GhidraSnippets",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A single-page collection of 30 commented Python examples for scripting Ghidra, grouped by task: projects, programs, functions and cross-references, basic blocks, instructions, stack variables, decompiler output, comments, P-code emulation and dumps, call graphs and program slices. It starts from the Flat Program, Flat Decompiler and Flat Debugger APIs, then shows where a task needs Ghidra's fuller API; most snippets include an example of their output.",
+    "description_zh": "单页汇集 30 个带注释的 Ghidra Python 脚本示例，按任务分组：项目、程序、函数与交叉引用、基本块、指令、栈变量、反编译输出、注释、P-code 模拟与导出、调用图和程序切片。示例从 Flat Program、Flat Decompiler 和 Flat Debugger API 入手，再说明哪些任务需要 Ghidra 更完整的 API；大多数示例附有输出样例。",
+    "evidence_url": "https://github.com/HackOvert/GhidraSnippets/blob/9bcd718e8958387ff5695194b83a52df4e0a3de7/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Everything is in one README, with no script files or releases. The last change, on 2023-07-19, fixed a typo; the one before, on 2022-11-09, added Flat API notes for Ghidra 10.2. Version remarks range from Ghidra 9.1 and 9.2.2 to 10.2, so names and behavior in current Ghidra releases may differ; the README points to Ghidra's built-in API help and to the ghidra.re online docs, which it says may not be up to date.",
+      "The examples run in Ghidra's Python scripting environment, which the README calls the Jython console, against a program the user has loaded. Plotting a function AST also needs GraphViz's dot plus networkx and pydot importable from Jython, and the README notes that Python modules with native code do not work there. Compatibility with PyGhidra or Python 3 is not stated.",
+      "Released under CC0 1.0. The README calls the snippets a verbose mashup with more than one way to do each task and invites pull requests. No snippet was run for this review, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HackOvert/GhidraSnippets/blob/9bcd718e8958387ff5695194b83a52df4e0a3de7/LICENSE",
+      "https://github.com/HackOvert/GhidraSnippets/commit/643bbee5d287c79cb92d93112f89346ce3023a1f"
+    ]
   }
 ]
