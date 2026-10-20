@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fpicker",
+    "name": "fpicker",
+    "url": "https://github.com/ttdennis/fpicker",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Frida-based fuzzing suite for closed-source programs, listed here for its in-process instrumentation and coverage layer. A JavaScript harness injected with Frida starts Stalker at an analyst-chosen function and records the basic blocks executed in the target module on each call, feeding either AFL++'s coverage bitmap or fpicker's own standalone mode. Its passive mode works as a tracer: it attaches to a running process without sending inputs and stores each input that reaches the function together with new coverage, on the local host or on USB and network devices running frida-server.",
+    "description_zh": "基于 Frida 的闭源程序模糊测试套件，本条目收录的是其进程内插桩与覆盖率采集部分。经 Frida 注入的 JavaScript 测试框架会在分析者选定的函数处启动 Stalker，记录每次调用时目标模块中执行过的基本块，再提供给 AFL++ 的覆盖率位图或 fpicker 自己的独立模式。其被动模式相当于跟踪器：附加到正在运行的进程而不发送输入，并在出现新覆盖时保存到达该函数的输入及对应覆盖信息，可用于本机，也可用于通过 USB 或网络连接、运行 frida-server 的设备。",
+    "evidence_url": "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no releases or tags. The reviewed main commit, from 2025-07-24, moves the harness to the Frida 17 APIs, and the Makefile pins frida-core 17.2.14. The README points to a 2021 blog post for background and says fpicker builds on ToothPicker, developed during the author's master's thesis, and was mostly written at ERNW.",
+      "make fpicker-macos, fpicker-linux or fpicker-ios builds the C host program; the Makefile downloads the matching frida-core devkit from Frida's GitHub releases, although the README still describes placing the devkit files by hand. iOS builds use Xcode's iPhoneOS SDK on macOS, harness scripts are bundled with frida-compile, and AFL++ is needed only for AFL++ mode, built with USEMMAP on macOS and iOS.",
+      "Each target needs a hand-written harness that names the function where instrumentation starts and, for in-process input, how to call it, so that function and its arguments must first be identified in the target. The README warns that coverage becomes unreliable if the function runs more than once per iteration. Shared-memory communication is unavailable for USB-attached devices, and attach mode does not respawn a target that crashes.",
+      "Coverage covers basic blocks in the target module during the instrumented call, not a whole-program trace. The examples are small project-written C programs with seed inputs and slides from a WiSec 2021 tutorial; the repository has no automated tests or CI.",
+      "MIT; Frida and AFL++ are separate projects with their own licenses. The reviewed sources state no REA use, and this collection built and ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/Makefile",
+      "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/harness/fuzzer.js",
+      "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/harness/stalker-instrumentation.js",
+      "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/examples/protocol_example/README.md",
+      "https://github.com/ttdennis/fpicker/tree/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/examples",
+      "https://github.com/ttdennis/fpicker/blob/04f4b06b6c7a209986594a51bd51c8d8af7a75ea/LICENSE",
+      "https://github.com/ttdennis/fpicker/commit/04f4b06b6c7a209986594a51bd51c8d8af7a75ea"
+    ]
   }
 ]

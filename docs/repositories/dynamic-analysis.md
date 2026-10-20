@@ -49,7 +49,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra - a visual bridge between a GDB session and GHIDRA **[324 stars]**
 - [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢- A binary instrumentation workshop, with Frida, for beginners! **[320 stars]**
 - [libdebug/libdebug](https://github.com/libdebug/libdebug) — A Python library to debug binary executables, your own way. **[315 stars]**
-- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker is a Frida-based fuzzing suite supporting various modes (including AFL++ in-process fuzzing) **[298 stars]**
+- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker is a Frida-based fuzzing suite supporting various modes (including AFL++ in-process fuzzing) **[298 stars]** · Curated: [fpicker](https://awesomerea.org/resources/fpicker/)
 - [iGio90/frick](https://github.com/iGio90/frick) — frick - aka the first debugger built on top of frida **[296 stars]**
 - [patois/IDACyber](https://github.com/patois/IDACyber) — Data Visualization Plugin for IDA Pro **[296 stars]**
 - [andreafioraldi/IDAngr](https://github.com/andreafioraldi/IDAngr) — Use angr in the IDA Pro debugger generating a state from the current debug session **[286 stars]**

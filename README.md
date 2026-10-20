@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
-- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -2186,6 +2186,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. Matches are grouped into capability namespaces with ATT&amp;CK and MBC tags, and verbose output shows the function or basic-block addresses and features behind each match, pointing analysts to code worth studying. It also reads CAPE, DRAKVUF and VMRay sandbox reports for dynamic features and can use vivisect, IDA Pro, Ghidra or Binary Ninja for analysis, with explorer plugins for IDA and Ghidra and a browser viewer for its JSON results.
 
   Tool · [Requirements & evidence](https://awesomerea.org/resources/capa/)
+
+- [**fpicker**](https://github.com/ttdennis/fpicker)
+
+  Frida-based fuzzing suite for closed-source programs, listed here for its in-process instrumentation and coverage layer. A JavaScript harness injected with Frida starts Stalker at an analyst-chosen function and records the basic blocks executed in the target module on each call, feeding either AFL++'s coverage bitmap or fpicker's own standalone mode. Its passive mode works as a tracer: it attaches to a running process without sending inputs and stores each input that reaches the function together with new coverage, on the local host or on USB and network devices running frida-server.
+
+  Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/fpicker/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

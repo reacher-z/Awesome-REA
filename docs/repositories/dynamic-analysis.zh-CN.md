@@ -49,7 +49,7 @@
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra：连接 GDB 会话与 Ghidra 的可视化桥梁。 **[324 星标]**
 - [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢：面向初学者的 Frida 二进制插桩工作坊！ **[320 星标]**
 - [libdebug/libdebug](https://github.com/libdebug/libdebug) — 让你以自己的方式调试二进制可执行文件的 Python 库。 **[315 星标]**
-- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker 是基于 Frida 的模糊测试套件，支持多种模式，包括 AFL++ 进程内模糊测试。 **[298 星标]**
+- [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker 是基于 Frida 的模糊测试套件，支持多种模式，包括 AFL++ 进程内模糊测试。 **[298 星标]** · 精选：[fpicker Frida 插桩与覆盖率采集套件](https://awesomerea.org/zh/resources/fpicker/)
 - [iGio90/frick](https://github.com/iGio90/frick) — frick：首个基于 Frida 构建的调试器 **[296 星标]**
 - [patois/IDACyber](https://github.com/patois/IDACyber) — IDA Pro 数据可视化插件 **[296 星标]**
 - [andreafioraldi/IDAngr](https://github.com/andreafioraldi/IDAngr) — 在 IDA Pro 调试器中使用 angr，根据当前调试会话生成状态 **[286 星标]**
