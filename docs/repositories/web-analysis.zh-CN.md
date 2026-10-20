@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](web-analysis.md)
 
-**183 个仓库** · 2026-10-16 UTC
+**184 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -34,6 +34,7 @@
 - [wwwg/wasmdec](https://github.com/wwwg/wasmdec) — 将 WebAssembly 反编译为 C 的工具。 **[428 星标]**
 - [numandev1/react-native-decompiler](https://github.com/numandev1/react-native-decompiler) — 反编译 React Native Android/iOS Bundle。 **[371 星标]** · 精选：[React Native 反编译器](https://awesomerea.org/zh/resources/react-native-decompiler/)
 - [helins/wasm.cljc](https://github.com/helins/wasm.cljc) — 符合规范的 WebAssembly 编译器、反编译器及生成器 **[264 星标]**
+- [vicnaum/bun-demincer](https://github.com/vicnaum/bun-demincer) — 针对 Bun 编译的独立 JavaScript 二进制文件的反编译、反压缩和去混淆工具 **[223 星标]** · 精选：[bun-demincer Bun 可执行文件 JavaScript 还原工具](https://awesomerea.org/zh/resources/bun-demincer/)
 - [L018/Trace](https://github.com/L018/Trace) — 用于网页分析的 Chrome 扩展 **[199 星标]**
 - [LostMyCode/javascript-deobfuscator](https://github.com/LostMyCode/javascript-deobfuscator) — 针对 Obfuscator.io 生成的 JavaScript 代码的去混淆工具 **[191 星标]**
 - [irelance/jsc-decompile-mozjs-34](https://github.com/irelance/jsc-decompile-mozjs-34) — Mozilla SpiderMonkey 34 版的 JavaScript 字节码解码器，可用于反编译 Cocos2d-x 编译的 JSC 文件 **[189 星标]**

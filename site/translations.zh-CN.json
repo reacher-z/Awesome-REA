@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "bun-demincer": {
+    "name": "bun-demincer Bun 可执行文件 JavaScript 还原工具",
+    "requirements": [
+      "所审阅的 master 提交（2026-03-06）是仓库的第九个提交，距 2026-03-03 的初始发布提交仅三天；没有标签或发布版本。需要 Node.js 18+ 及 package.json 中的 npm 依赖，其中 node-canvas 用于生成聚类 PNG；只有运行提取出的代码时才需要 Bun。README 称 Bun 将代码存放在 Mach-O 的 __BUN 节、追加在 ELF 末尾的数据或 PE 的 .bun 节中；extract.mjs 会解析 Mach-O 节头，否则直接搜索 Bun 的结尾标记。",
+      "输入是使用者有权分析的 Bun 编译可执行文件；仓库不含任何目标二进制或恢复出的代码，.gitignore 也排除了流程输出。data/vendor-fingerprints-1000.json（26 MB）收录 1,668 个 npm 包中 23,746 个文件的属性名与字符串字面量指纹，可从本地 node_modules 重建。README 称第 1–4 步全自动，而聚类命名需要手工完成或借助 LLM。",
+      "ai-rename.mjs 和 ai-rename-scoped.mjs 会使用 GEMINI_API_KEY 把模块源码发送到 Google Gemini API（默认模型 gemini-3-flash-preview），所得名称只是模型建议。README 的回装步骤调用一个标明位于使用者项目中的 build.mjs，本仓库并不包含它，因此未核实输出能重新组装为可运行二进制的说法。",
+      "所审阅的文件树中没有测试或 CI。README 声明 MIT，但仓库没有许可证文件，package.json 也没有 license 字段。九个提交中有四个带有 Claude Opus 4.6 的共同作者标记；未确立与 REA 的关联。本次未安装或运行任何内容。"
+    ]
   }
 }

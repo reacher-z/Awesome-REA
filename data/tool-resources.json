@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bun-demincer",
+    "name": "bun-demincer",
+    "url": "https://github.com/vicnaum/bun-demincer",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Node.js pipeline that recovers readable JavaScript from Bun-compiled standalone executables. It extracts the embedded module graph and assets, splits the bundle into one file per module, flags npm vendor code with a fingerprint database, and deobfuscates with wakaru, format-preserving renames recovered from export mappings and optional Gemini-suggested names. Dependency-graph clustering, manual or LLM-assisted cluster labels and cross-version artifact transfer then organize and update the output.",
+    "description_zh": "从 Bun 编译的独立可执行文件中恢复可读 JavaScript 的 Node.js 流程。它提取内嵌的模块图和资源，把打包代码拆成每个模块一个文件，用指纹库标记 npm 第三方代码，再借助 wakaru、依据导出映射恢复名称的保格式重命名以及可选的 Gemini 命名建议进行反混淆。之后通过依赖图聚类、手工或借助 LLM 的聚类命名，以及跨版本迁移已有成果，来整理和更新输出。",
+    "evidence_url": "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2026-03-06 is the repository’s ninth, three days after its initial release commit of 2026-03-03; there are no tags or releases. It needs Node.js 18+ and the npm dependencies in package.json, including node-canvas for cluster PNGs; Bun is needed only to run extracted code. The README says Bun stores the code in a __BUN Mach-O section, appended ELF data or a .bun PE section; extract.mjs parses the Mach-O section header and otherwise searches for Bun's trailer.",
+      "Input is a Bun-compiled executable the user is entitled to analyze; the repository contains no target binaries or recovered code, and .gitignore excludes pipeline output. data/vendor-fingerprints-1000.json (26 MB) holds property-name and string-literal fingerprints for 23,746 files from 1,668 npm packages and can be rebuilt from a local node_modules. The README says steps 1–4 are automated, while cluster labels need manual input or an LLM.",
+      "ai-rename.mjs and ai-rename-scoped.mjs send module source to Google's Gemini API with a GEMINI_API_KEY (default model gemini-3-flash-preview); their names are model suggestions. The README's round-trip reassembly calls a build.mjs it marks as part of the user's project, which this repository does not contain, so the claim that output reassembles into a working binary was not checked.",
+      "The reviewed tree has no tests or CI. The README states MIT, but there is no license file and package.json has no license field. Four of the nine commits carry a Claude Opus 4.6 co-author trailer; REA use is not established. Nothing was installed or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/package.json",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/.env.example",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/.gitignore",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/docs/BUN.md",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/src/extract.mjs",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/src/match-vendors.mjs",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/src/ai-rename.mjs",
+      "https://github.com/vicnaum/bun-demincer/blob/7cfe9254bca0ce7428a5574d7da8d4d8e51f511c/src/cluster-graph.mjs",
+      "https://github.com/vicnaum/bun-demincer/commit/4ff57a9fff40b2a509b32cfd93d76a22fd37933a"
+    ]
   }
 ]
