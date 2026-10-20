@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "cobra-mba-simplifier",
+    "name": "CoBRA (Coefficient-Based Reconstruction of Arithmetic)",
+    "url": "https://github.com/trailofbits/CoBRA",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Trail of Bits' C++23 simplifier for Mixed Boolean-Arithmetic (MBA) expressions, an obfuscation technique that rewrites simple computations as interleaved arithmetic, bitwise and shift operations. Given an expression and a bit width from 1 to 64, cobra-cli returns a simpler equivalent: a worklist scheduler combines signature-vector and change-of-basis techniques, semilinear handling of constant masks, polynomial recovery, decomposition of mixed products and subexpression lifting, and each result is checked on random inputs or, optionally, with a Z3 equivalence proof. The same engine is available as a library and as an optional LLVM pass plugin that simplifies MBA expressions it detects in LLVM IR.",
+    "description_zh": "Trail of Bits 开发的 C++23 混合布尔-算术（MBA）表达式化简器。MBA 是一种混淆技术，会把简单运算改写为算术、按位与移位运算交织的复杂形式。cobra-cli 接受一个表达式和 1 至 64 位的位宽，输出更简单的等价式：工作列表调度器组合签名向量与基变换技术、带常量掩码的半线性处理、多项式恢复、混合乘积分解和子表达式提升，每个结果都会用随机输入抽查，也可选用 Z3 做等价性证明。同一引擎还以库的形式提供，并可编译为 LLVM 优化遍插件，对其在 LLVM IR 中检测到的 MBA 表达式进行化简。",
+    "evidence_url": "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.3.0, published 2026-06-30 without prebuilt binaries. The reviewed master commit is eight commits ahead: README edits, a CI dependency bump, a fix that requires LLVM only when the pass is built, and a fix that lets cobra-core build under MSVC. This entry pins it for documentation only.",
+      "Builds from source with CMake 3.20+ and a C++23 compiler (GCC 13+, Clang 17+ or Apple Clang 16+); a dependency superbuild builds Abseil and Highway, and GoogleTest when tests are enabled. The LLVM pass plugin needs LLVM 19 to 22, runs through opt as cobra-simplify, replaces an expression only when the simplified form is cheaper and drops nuw/nsw flags. Z3 checking is compiled in only when CMake finds Z3; otherwise cobra-cli warns that --verify is ignored. CI builds with Clang 22 and LLVM 22 on Ubuntu 24.04 on every run, and with GCC 14 and on macOS 15 only for version tags; Windows is not in CI.",
+      "cobra-cli takes the obfuscated expression as text, with at most 16 variables by default, so expressions in a binary must first be recovered with other tools or reach the pass as LLVM IR. The README's known limitations are deeply interleaved mixed-polynomial MBAs that exhaust the worklist budget, a few candidates that are correct only on Boolean inputs and are reported as verify-failed, and no general logic minimization.",
+      "The README reports 1,195 tests, and DATASETS.md reports 75,023 of 75,126 parsed expressions from 35 dataset files and seven sources simplified and spot-checked (99.86%). The OSES subsets are disabled for running out of memory or taking minutes per expression, so their figures come from an earlier run; DATASETS.md says the numbers are checked on every CI run, but the reviewed CI workflow excludes the dataset benchmark tests.",
+      "Apache-2.0 for CoBRA. The test/datasets files are redistributed from third-party research projects: THIRD_PARTY_LICENSES lists most as effectively GPL-3.0-only, Loki's as AGPL-3.0-only, and the OSES and ObfuscatorX sets with unspecified or unknown licenses. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/BUILD.md",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/DATASETS.md",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/THIRD_PARTY_LICENSES",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/docs/methodology/README.md",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/CMakeLists.txt",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/tools/cobra-cli/main.cpp",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/lib/llvm/CobraPass.cpp",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/test/llvm/CMakeLists.txt",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/.github/workflows/ci.yml",
+      "https://github.com/trailofbits/CoBRA/blob/af44b8ad7c8ec548d431463475e93b0118e77a29/LICENSE",
+      "https://github.com/trailofbits/CoBRA/releases/tag/v1.3.0"
+    ]
   }
 ]

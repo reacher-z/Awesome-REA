@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 474](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (27) · [游戏](#game) (187) · [应用](#app) (72)
-- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (64) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -2187,6 +2187,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   Mandiant FLARE 团队的工具，将 YAML 规则集与从 PE、ELF、.NET 文件或 32/64 位 shellcode 中提取的 API 调用、导入、字符串和常量等特征进行匹配，报告可执行文件具备哪些功能。匹配结果按功能命名空间归类并标注 ATT&amp;CK 和 MBC，详细输出会列出每项匹配所依据的函数或基本块地址及特征，为分析人员指出值得深入研究的代码。它还能读取 CAPE、DRAKVUF 和 VMRay 沙箱报告以利用动态特征，可选用 vivisect、IDA Pro、Ghidra 或 Binary Ninja 进行分析，并提供 IDA 和 Ghidra 的 explorer 插件以及查看 JSON 结果的浏览器界面。
 
   工具 · [使用条件与证据](https://awesomerea.org/zh/resources/capa/)
+
+- [**CoBRA 混合布尔-算术表达式化简器**](https://github.com/trailofbits/CoBRA)
+
+  Trail of Bits 开发的 C++23 混合布尔-算术（MBA）表达式化简器。MBA 是一种混淆技术，会把简单运算改写为算术、按位与移位运算交织的复杂形式。cobra-cli 接受一个表达式和 1 至 64 位的位宽，输出更简单的等价式：工作列表调度器组合签名向量与基变换技术、带常量掩码的半线性处理、多项式恢复、混合乘积分解和子表达式提升，每个结果都会用随机输入抽查，也可选用 Z3 做等价性证明。同一引擎还以库的形式提供，并可编译为 LLVM 优化遍插件，对其在 LLVM IR 中检测到的 MBA 表达式进行化简。
+
+  工具 · 程序库 · [使用条件与证据](https://awesomerea.org/zh/resources/cobra-mba-simplifier/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
