@@ -56,7 +56,7 @@ function setup({brokenDetails = false} = {}) {
   const location = new URL('https://awesomerea.org/?view=curated');
   location.assign = () => {};
   const context = {document, location, URL, URLSearchParams, console, window: {addEventListener() {}},
-    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }},
+    history: {replaceState(_, __, next) { location.href = String(next); location.search = new URL(next).search; }, pushState(_, __, next) { location.href = String(next); }},
     fetch: async url => ({ok: true, json: async () => /^\/catalog(-index)?\.json$/.test(new URL(url).pathname) ? {resources: rows, meta: {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: rows.length}}} : browser})};
   vm.createContext(context);
   vm.runInContext(script.replace('applyLanguage(); load();', '') + '\nglobalThis.audit = {state,sourceState,load,loadSources,applyLanguage,setIndexMode};', context);
