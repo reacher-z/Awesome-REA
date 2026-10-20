@@ -5726,5 +5726,14 @@
       "README 建议在受控、隔离的虚拟机中使用，因为该工具会修改系统网络设置，并提到杀毒软件和 EDR 产品可能将其标记为恶意。仓库附带运行时所需的辅助文件：WinDivert 32 位与 64 位 DLL 和驱动、defaultFiles 中用于响应请求的小型 FakeNetMini.exe 及其他占位文件，以及 TLS 监听器密钥和一套静态 CA 证书与私钥。仓库未说明 WinDivert 文件的单独许可证，README 提到部分动态加载的库可能采用 LGPL；由于该 CA 私钥是公开的，只应在分析虚拟机内信任此 CA。",
       "docs/testing.md 介绍了交互式 test/test.py 测试套件，以及在仅主机网络中的 Windows 与 Linux 虚拟机上进行的手动测试；GitHub 工作流只构建 Windows 的 PyInstaller 发布包。FakeNet-NG 本身采用 Apache-2.0。所审来源未提及 REA 的使用，本条目未运行该工具。"
     ]
+  },
+  "joern": {
+    "name": "Joern 代码属性图分析平台",
+    "requirements": [
+      "审阅时的版本为 v4.0.660，发布于 2026-10-19；README 称每天自动生成一次发布，所审阅的 master 提交比该标签多三个提交。每个版本都提供适用于 Linux、macOS 和 Windows（x86_64 与 arm64）的 joern-cli 压缩包及 joern-install.sh；README 还介绍了 ghcr.io/joernio/joern Docker 镜像，并为不支持 SSE4.2 的 CPU 提供 AlmaLinux 8 版本。",
+      "README 要求 JDK 21，并称其他版本未经充分测试；gcc 和 g++ 为可选项，用于查找 C/C++ 系统头文件。从源码构建使用 sbt，另有实验性的部分 Bazel 构建配置。输入为使用者自己的源码目录、class、JAR、APK 或 DEX 文件，或可执行文件。",
+      "二进制支持由 ghidra2cpg 前端提供，基于随附的 Ghidra 12.2 软件包。它为 MIPS 和 ARM/AArch64 设有专门的处理流程，其他处理器一律走 x86 流程；其 README 指出可变参数尚未正确处理。文档中的成熟度表将 C/C++ 和 Java 评为很高，JavaScript、Python 以及基于 Ghidra 的 x86/x64 评为高，JVM 字节码、Kotlin、PHP、Go 和 Swift 评为中等，Ruby 和 C# 评为中低；所审源码中的 Rust 和 ABAP 前端未在表中评级。",
+      "采用 Apache-2.0 许可；CITATION.cff 仍写着 2024-01-18 发布的 2.0 版。项目自称用于漏洞挖掘和静态程序分析研究；查询与污点分析结果反映的是生成的代码图，而非实际运行行为。未确立与 REA 的关联，本次审阅未构建、安装或运行任何内容。"
+    ]
   }
 }
