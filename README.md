@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 486](https://img.shields.io/badge/resources-486-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 202](https://img.shields.io/badge/cases-202-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 487](https://img.shields.io/badge/resources-487-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 203](https://img.shields.io/badge/cases-203-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 134](https://img.shields.io/badge/papers-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (29) · [Game](#game) (192) · [App](#app) (76)
-- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (23) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (202) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (203) · [Related Collections](#related-collections) (7) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -472,6 +472,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**flipper-telink: replacement firmware for Tuya Zigbee remotes**](https://github.com/ngxson/flipper-telink) - A Flipper Zero app that bit-bangs Telink’s SWire debug interface to dump and reflash TLSR825x Zigbee devices, with static-analysis notes on the dumps and freshly written firmware for two of them. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**Supermodel: initial Real3D Pro-1000 image-generator emulation**](https://github.com/trzy/Supermodel) - Adds emulation of Real3D’s Pro-1000, the SCSI-attached image generator from which Sega’s Model 3 graphics hardware derives, to the Supermodel arcade emulator. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**OpenDMCUFirm: a reimplemented Wii U DMCU display firmware**](https://github.com/GaryOderNichts/OpenDMCUFirm) - Reimplements in C the firmware of the Wii U’s DMCU, the M68HC11-compatible display microcontroller in its AMD graphics controller, which in Wii mode reads the Video Interface state and configures display output, deinterlacing, scaling and overscan. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
+- [**reflecticon-224: running Lexicon 224 reverb firmware on emulated hardware**](https://github.com/joelanders/reflecticon-224) - Emulates the Lexicon 224, 224X and 224XL digital reverbs so that their own firmware runs in a browser page or a JUCE plugin. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 
 #### Tools, projects and integrations
 

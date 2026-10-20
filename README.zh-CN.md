@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 486](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-486-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 202](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-202-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 487](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-487-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 203](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-203-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (192) · [应用](#app) (76)
-- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (23) · [协议](#protocol) (18)
 
 **论文与工作流**
 
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (202) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (203) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -473,6 +473,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**flipper-telink：Tuya Zigbee 遥控器的替换固件**](https://github.com/ngxson/flipper-telink) - 一款 Flipper Zero 应用，以位操作驱动 Telink 的 SWire 调试接口，用于转储并重刷 TLSR825x Zigbee 设备；仓库还附有对转储固件的静态分析笔记，以及为其中两款设备全新编写的固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/flipper-telink-tuya-remote-firmware-case/)</sub>
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
+- [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
 
 #### 工具、项目与集成
 

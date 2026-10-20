@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 207 | 205 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 113 | 113 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 271 | 271 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 112 | 112 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 272 | 272 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-220 个出现项含目录链接；共关联 210 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+221 个出现项含目录链接；共关联 211 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 416 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 417 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -255,6 +255,7 @@
 | NJFE：用于电脑检查的 Soulear 相机协议桥接 | 已收录 | [来源](https://github.com/WildweaselMS/NJFE/blob/992866c6609f8c813f459ff79840cf04d5883f8e/README.md) |
 | LeanREA 命令行逆向分析技能 | 已收录 | [来源](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
 | MISE.exe: Claude proposes Ghidra-derived rules instead of screenshot guesses | 证据不足 | [来源](https://x.com/i/status/2111312368840126836) |
+| Guitar effects: emulate the original firmware, then compare a standalone C++ library | 证据不足 | [来源](https://news.ycombinator.com/item?id=50104955) |
 | RetroScope: a local-LLM assistant for ROM instruction references | 证据不足 | [来源](https://x.com/i/status/2111332462811087061) |
 | China Mobile app: AI investigates number-selection pages and protocols for local filtering | 证据不足 | [来源](https://x.com/i/status/2111337934406484446) |
 | Roku TV: a firmware-modification inquiry blocked by Claude's bootloader assessment | 证据不足 | [来源](https://x.com/i/status/2111349282745757858) |
@@ -469,6 +470,7 @@
 - `song:schaller-opticfilm-thinkpad-linux` — 既有扫描仪调查和独立的 ThinkPad IMX471 调校／驱动案例，覆盖此报告中的两个有限范围组成部分。映射仍为部分覆盖：均不确立完整扫描仪／相机行为、全设备兼容性或独立运行复现。
 - `song:rea-game-function-matcher-audit-report` — 帖子（@xmyttle，2026-10-16）转述了 REA 的计算器演示，以及 REA 博客文章《Does reverse engineering need a bigger model?》（N0zoM1z0，2026-10-13）：多个 GPT-6 系列模型接力完成《东方》系列中难以匹配的函数，另有一次审计发现部分已被接受的函数常量有误，例如原程序加 32.0f 的地方重建源码写成了 1.0f。该文固定版本的证据说明和 TH08 提交 a393f400 记录了这次浮点字面量审计，文章也说明对奖励学习的风险只是推断，并非实际观察到的利用。目录已通过《东方》重建方法一文覆盖该审计，因此此处为部分映射；关于模型接力的这篇文章本身尚未收录，此线索保持待处理。
 - `song:rea-reconstruction-companion` — 固定版本仓库确立了具名的 Companion：一个采用 MIT 的 Agent Skill，与 REA 配合把证据整理成限定范围的需求、设计、分阶段实现与验证，并提供由安装程序管理、可选写入 REA 技能的路由段落，以及已接触源码的评估套件。完整映射以社区 REA 集成覆盖该技能；原有的部分映射覆盖另立条目的 Pocket Tasks 重建示例。示例与检查结果仍是维护者报告的教学材料，未确立模型试验、独立评估或运行复现。
+- `song:valdiorn-audio-effects-firmware-report` — valdiorn 在 Hacker News 的评论（2026-10-15，经 @RealYDT 转述）称，借助 Opus 5.5 在模拟器中运行三家竞争对手的效果器固件，再转换成独立 C++ 库并比较结果，另外还处理了 Lexicon 224 与 Ursa Major 产品。评论没有公开代码、模拟器、库、比较数据或产品版本，也未指明所说的 Lexicon 仓库。公开的 reflecticon-224 模拟项目作者在回复中猜测被找到的就是该项目；该项目另立条目并以相关映射关联，并不视为本报告的成果。保留此线索并标为证据不足；所报告的反编译与比较均未确立。
 - `yibie:all-games-are-open-source-now` — 作者的 X 长文（@rehan_shei，2026-10-04）是一篇探讨 AI 反编译与模组对游戏产业影响的随笔。文中称让 Opus 5.5 运行一夜后得到了一个可运行的逆向版 Terraria，作者又在其中加入了武器和怪物；文章还罗列了他人报告的模组与反编译案例，并称作者已把 Claude 在此过程中积累的经验开源为 universal-modder。Terraria 重建本身没有公开产物；相关映射指向文章提及、另行收录的 Universal Modder 工具包。保留此线索而不建立完整映射；该文属于评论，其中的数字与第三方案例未在此核实。
 - `yibie:how-are-y-all-using-ai-to-make-recompilations` — 该来源是一场讨论：r/recomps 上 2026-10-05 的提问，询问大家如何用 AI 制作重编译移植、是否有教程。回复多为一般性建议和观点，例如订阅方案的选择、让智能体参照现有重编译工具工作以及维护重编译引擎，但都没有代码、结果或对照；其中一条回复指向 freefrank/LostOdysseyRecomp 的文档，该项目已作为独立案例收录，此处仅记为相关匹配。保留此线索，不为其单独建立重建映射。
 - `yibie:finding-jingle-town-debugging-an-n64-game-without-symbols` — 这篇注明日期的文章记录了在 Snowboard Kids 2 反编译中用 GDB 与 Ares 手动检验一个运行时假设的流程，包括所用工具、步骤、观察到的三个值及作者说明的局限。完整映射将这篇调试记录作为学习资源收录；其研究的反编译项目另有案例条目，此处以相关映射链接。文中观察未经重做，文章也未声称使用 AI 或 REA。
