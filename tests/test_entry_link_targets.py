@@ -17,7 +17,7 @@ APP = (ROOT / 'site/app.js').read_text(encoding='utf-8')
 
 
 class Links(HTMLParser):
-    """Links per record: (href, visible text, inside the h3 title)."""
+    """Links per record: (href, visible text, inside the title heading; h4 within a /resources/ sub-group)."""
     def __init__(self):
         super().__init__()
         self.records, self.current, self.depth, self.h3, self.link = {}, None, 0, False, None
@@ -29,7 +29,7 @@ class Links(HTMLParser):
             if 'data-resource-id' in attrs:
                 self.current, self.depth = attrs['data-resource-id'], 1
                 self.records[self.current] = []
-        elif tag == 'h3':
+        elif tag in ('h3', 'h4'):
             self.h3 = True
         elif tag == 'a' and self.current:
             self.link = [attrs.get('href'), '', self.h3]
@@ -39,7 +39,7 @@ class Links(HTMLParser):
             self.depth -= 1
             if not self.depth:
                 self.current = None
-        elif tag == 'h3':
+        elif tag in ('h3', 'h4'):
             self.h3 = False
         elif tag == 'a' and self.link:
             self.link[1] = ' '.join(self.link[1].split())

@@ -46,6 +46,12 @@ SECTION_TARGETS = {'website': 'website', 'game': 'game', 'app': 'app', 'native-b
                    'firmware': 'firmware', 'protocol': 'protocol'}
 # Up to this many entries filed under other sections are named individually after a section's tag count.
 NAMED_ELSEWHERE_LIMIT = 9
+# As in the README, a section holding both case studies and other kinds lists them in two sub-groups, cases first.
+# Sub-group IDs use a double hyphen, which record IDs and section keys cannot contain.
+SUBGROUPS = (
+    ('case-studies', ('Case studies', '案例'), lambda record: record['kind'] == 'case-study'),
+    ('tools', ('Tools, projects and integrations', '工具、项目与集成'), lambda record: record['kind'] != 'case-study'),
+)
 
 
 def jsonld_script(value: dict) -> str:
@@ -153,7 +159,7 @@ def _requirements(record: dict, language: str) -> list[str]:
     return value
 
 
-def _resource_card(record: dict, language: str) -> str:
+def _resource_card(record: dict, language: str, heading: str = 'h3') -> str:
     zh = language == 'zh'
     detail_path = f"{'/zh' if zh else ''}/resources/{record['id']}/"
     name = (record.get('name_zh') or record['name']) if zh else record['name']
@@ -167,7 +173,7 @@ def _resource_card(record: dict, language: str) -> str:
                          for url in record.get('additional_evidence_urls', []))
     reviewed = str(record['verified_at'])
     return f'''<article class="resource-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}" data-resource-id="{escape(record['id'], quote=True)}">
-  <div class="card-heading"><h3><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></h3><span class="resource-kind">{escape(kind)}</span></div>
+  <div class="card-heading"><{heading}><a class="card-title-link" href="{_url(record['url'])}" target="_blank" rel="noopener">{escape(name)}{EXTERNAL_TITLE_ARROW}</a></{heading}><span class="resource-kind">{escape(kind)}</span></div>
   <p class="card-description">{escape(description)}</p>
   <div class="card-meta"><span>{escape(targets)}</span><a class="entry-detail-link" data-entry-link="{escape(record['id'], quote=True)}" href="{escape(detail_path, quote=True)}" aria-label="{escape(detail_label, quote=True)}">{('完整条目' if zh else 'Full entry')}</a></div>
   <details class="requirements"><summary>{escape(REQUIREMENTS_LABEL[zh])}</summary><ul>{requirements}</ul>{('<ul>' + additional + '</ul>' if additional else '')}<div class="resource-detail-meta"><span>{('来源已复核' if zh else 'Source-reviewed')}</span><time datetime="{escape(reviewed, quote=True)}">{('复核于' if zh else 'Reviewed')} {escape(reviewed[:10])}</time><a class="resource-evidence-link" href="{_url(record['evidence_url'])}" target="_blank" rel="noopener">{PRIMARY_SOURCE_LABEL[zh]} ↗</a></div></details>
@@ -214,6 +220,12 @@ def _target_coverage(section: str, records: list[dict], language: str, *, cases:
         text += f' · <a href="{href}" aria-label="{escape(accessible, quote=True)}">{escape(show)} →</a>'
     return (f'<p class="section-target-count" data-section-target="{target}" data-target-tagged="{count}"'
             f' data-target-elsewhere="{len(elsewhere)}">{text}</p>')
+
+
+def _subgroup_count(slug: str, count: int, zh: bool) -> str:
+    if slug == 'case-studies':
+        return f'{count} 个案例' if zh else f'{count} {"case study" if count == 1 else "case studies"}'
+    return f'{count} 项资源' if zh else f'{count} {"resource" if count == 1 else "resources"}'
 
 
 def _case_row(record: dict, language: str, section: str) -> str:
@@ -423,8 +435,19 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
                 continue
             label = labels[1 if zh else 0]
             navigation.append(f'<a href="#{key}">{escape(label)}<span>{len(groups[key])}</span></a>')
-            sections.append(f'<section aria-labelledby="heading-{key}"><div class="browse-topline"><h2 id="heading-{key}"><a id="{key}"></a>{escape(label)}</h2><p>{len(groups[key])} {("项资源" if zh else "resources")}</p>{_section_index_link('resource-categories', zh)}</div>{_target_coverage(key, resources, language)}<div class="resource-grid">' + '\n'.join(_resource_card(record, language) for record in groups[key]) + '</div></section>')
-            for record in groups[key]:
+            subgroups = [(slug, labels, [record for record in groups[key] if belongs(record)]) for slug, labels, belongs in SUBGROUPS]
+            if all(entries for _, _, entries in subgroups):
+                # h2 section, h3 sub-group, h4 card: heading levels never skip.
+                body = ''.join(
+                    f'<section class="resource-subgroup" aria-labelledby="{key}--{slug}"><div class="browse-topline resource-subgroup-topline"><h3 id="{key}--{slug}">{escape(names[1 if zh else 0])}</h3>'
+                    f'<p>{_subgroup_count(slug, len(entries), zh)}</p></div><div class="resource-grid">' + '\n'.join(_resource_card(record, language, 'h4') for record in entries) + '</div></section>'
+                    for slug, names, entries in subgroups)
+                ordered = [record for _, _, entries in subgroups for record in entries]
+            else:
+                body = '<div class="resource-grid">' + '\n'.join(_resource_card(record, language) for record in groups[key]) + '</div>'
+                ordered = groups[key]
+            sections.append(f'<section aria-labelledby="heading-{key}"><div class="browse-topline"><h2 id="heading-{key}"><a id="{key}"></a>{escape(label)}</h2><p>{len(groups[key])} {("项资源" if zh else "resources")}</p>{_section_index_link('resource-categories', zh)}</div>{_target_coverage(key, resources, language)}{body}</section>')
+            for record in ordered:
                 name = (record.get('name_zh') or record['name']) if zh else record['name']
                 # Items identify the site's own entry pages, as /cases/ does; card titles still link upstream.
                 items.append({'name': name, 'url': f"{site_url}{prefix}/resources/{record['id']}/", 'description': record[f'description_{language}']})

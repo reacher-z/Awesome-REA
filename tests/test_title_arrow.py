@@ -43,10 +43,10 @@ class TitleArrowTests(unittest.TestCase):
         # On phones a badge moves under the title only when a title word cannot fit beside it; break-word (not
         # anywhere) keeps the title's min-content at its longest word so flex wrapping can detect that.
         self.assertIn('@media(max-width:700px){.browse-main .card-heading{flex-wrap:wrap;gap:9px 11px}'
-                      '.browse-main .card-heading h3{flex:1 1 min-content;overflow-wrap:break-word}}', css)
+                      '.browse-main .card-heading :is(h3,h4){flex:1 1 min-content;overflow-wrap:break-word}}', css)
         # On the narrowest phones the badge moves under the title so a long last word keeps its arrow.
         self.assertIn('@media(max-width:380px){.browse-main .card-heading{flex-wrap:wrap;gap:9px}'
-                      '.browse-main .card-heading h3{flex-basis:100%}}', css)
+                      '.browse-main .card-heading :is(h3,h4){flex-basis:100%}}', css)
 
 
 if __name__ == '__main__':
