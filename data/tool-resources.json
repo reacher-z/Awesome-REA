@@ -11254,5 +11254,36 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "de4py",
+    "name": "de4py",
+    "url": "https://github.com/Fadi002/de4py",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Python deobfuscation and analysis toolkit with a PySide6 GUI and a CLI mode, aimed at analysts examining obfuscated or packed Python programs. It bundles deobfuscators for named Python obfuscators such as Jawbreaker, BlankOBF, PlusOBF, Wodx, Hyperion and pyobfuscate, and an AI-assisted \"Onyx\" engine that pairs a local Ollama LLM (default qwen2.5-coder:1.5b) with AST cleaning and pattern matching. A file analyzer detects packers such as PyInstaller, computes hashes, looks up suspicious strings and extracts metadata, while a behavior monitor and a Python-code execution shell support dynamic inspection of a target process. It has a plugin API and can be used as a library.",
+    "description_zh": "带 PySide6 图形界面和命令行模式的 Python 反混淆与分析工具包，面向分析被混淆或打包的 Python 程序的人员。它内置针对多种 Python 混淆器（如 Jawbreaker、BlankOBF、PlusOBF、Wodx、Hyperion 和 pyobfuscate）的反混淆器，以及一个 AI 辅助的 \"Onyx\" 引擎，将本地 Ollama 大模型（默认 qwen2.5-coder:1.5b）与 AST 清理和模式匹配结合。文件分析器可检测 PyInstaller 等打包器、计算哈希、查找可疑字符串并提取元数据；行为监视器和一个执行 Python 代码的交互壳则用于对目标进程做动态检查。它提供插件 API，也可作为库使用。",
+    "evidence_url": "https://github.com/Fadi002/de4py/blob/0f66191b514e8c5a4de82aef7b01704385066629/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit (2026-08-17) is 18 commits past the v3.3.2-stable release (2026-08-12) and carries the same 3.3.2 version. The README asks for Python 3.10+ and recommends Windows for full feature support, while pyproject.toml declares requires-python >=3.8. There is no PyPI package: install from source with git clone then pip install . (entry point de4py, or python -m de4py / python main.py).",
+      "Dependencies include PySide6 for the GUI, xdis, pefile and pyinstaller for the analyzers, plus requests, psutil, pycryptodome, colorama, pypresence and sentry-sdk; the project also ships a remote API client and Sentry telemetry. The optional Onyx AI engine needs a separately installed Ollama with the configured model pulled; the model and thresholds are set in the UI.",
+      "Inputs are the user's own obfuscated Python scripts or packed executables. The repository's samples directory bundles the project's own test fixtures: obfuscated Python files for each supported obfuscator and small packer-built sample executables (PyInstaller, Nuitka and py2exe outputs). No third-party application files are required.",
+      "Licensed CC BY-NC 4.0 (non-commercial); the README states the tool is free and open source and that any paid copies are misrepresentations, and GitHub does not classify this license. The disclaimer says the tool is for educational purposes and that software should not be deobfuscated without permission; this record covers its deobfuscation and analysis use only. Nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Fadi002/de4py/blob/0f66191b514e8c5a4de82aef7b01704385066629/pyproject.toml",
+      "https://github.com/Fadi002/de4py/blob/0f66191b514e8c5a4de82aef7b01704385066629/requirements.txt",
+      "https://github.com/Fadi002/de4py/tree/0f66191b514e8c5a4de82aef7b01704385066629/samples",
+      "https://github.com/Fadi002/de4py/blob/0f66191b514e8c5a4de82aef7b01704385066629/INFO/version",
+      "https://github.com/Fadi002/de4py/blob/0f66191b514e8c5a4de82aef7b01704385066629/LICENSE",
+      "https://github.com/Fadi002/de4py/releases/tag/v3.3.2-stable"
+    ]
   }
 ]

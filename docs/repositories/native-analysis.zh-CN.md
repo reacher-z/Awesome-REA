@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**680 个仓库** · 2026-10-16 UTC
+**681 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -79,6 +79,7 @@
 - [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — 适用于 Ghidra 软件逆向工程套件的脚本。 **[1,177 星标]**
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm 是快速、轻量的 x86/x64 指令解码器。项目还提供快速、基础的 x86/x64 指令模拟器，专门用于检测类似 shellcode 的行为。 **[1,089 星标]**
 - [wisk/medusa](https://github.com/wisk/medusa) — 开源交互式反汇编器。 **[1,089 星标]**
+- [Fadi002/de4py](https://github.com/Fadi002/de4py) — 全面的 AI 驱动 Python 逆向工程工具包。 **[1,009 星标]** · 精选：[de4py Python 反混淆与分析工具包](https://awesomerea.org/zh/resources/de4py/)
 - [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) — 将 Switch 版《Link's Awakening》静态重编译为 macOS、Windows 和 Linux 原生程序 **[1,009 星标]** · 精选：[LASRecomp：《织梦岛》静态重编译案例](https://awesomerea.org/zh/resources/lasrecomp/)
 - [vivisect/vivisect](https://github.com/vivisect/vivisect) — 上游仓库未提供项目简介。 **[1,003 星标]**
 - [ioncodes/idacode](https://github.com/ioncodes/idacode) — 连接 IDA 与 VS Code 的集成工具，便于执行和调试 IDAPython 脚本。 **[994 星标]**

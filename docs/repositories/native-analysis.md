@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](native-analysis.zh-CN.md)
 
-**680 repositories** · 2026-10-16 UTC
+**681 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -79,6 +79,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [ghidraninja/ghidra\_scripts](https://github.com/ghidraninja/ghidra_scripts) — Scripts for the Ghidra software reverse engineering suite. **[1,177 stars]**
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm is a fast, lightweight, x86/x64 instruction decoder. The project also features a fast, basic, x86/x64 instruction emulator, designed specifically to detect shellcode-like behavior. **[1,089 stars]**
 - [wisk/medusa](https://github.com/wisk/medusa) — An open source interactive disassembler **[1,089 stars]**
+- [Fadi002/de4py](https://github.com/Fadi002/de4py) — The ultimate AI-powered toolkit for python reverse engineering **[1,009 stars]** · Curated: [de4py](https://awesomerea.org/resources/de4py/)
 - [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) — Static recompilation of Link's Awakening (Switch) to native macOS, Windows and Linux **[1,009 stars]** · Curated: [LASRecomp: Link’s Awakening static recompilation](https://awesomerea.org/resources/lasrecomp/)
 - [vivisect/vivisect](https://github.com/vivisect/vivisect) — No description supplied by the upstream repository. **[1,003 stars]**
 - [ioncodes/idacode](https://github.com/ioncodes/idacode) — An integration for IDA and VS Code which connects both to easily execute and debug IDAPython scripts. **[994 stars]**

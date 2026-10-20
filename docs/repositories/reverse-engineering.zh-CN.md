@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**605 个仓库** · 2026-10-16 UTC
+**604 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -84,7 +84,6 @@
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — 逆向分析新的“无验证码”ReCaptcha 系统…… **[1,051 星标]**
 - [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — 研究 PixMob 红外协议（现也支持射频！），让你能在家中控制 PixMob 手环。 **[1,040 星标]**
 - [ent0n29/polybot](https://github.com/ent0n29/polybot) — 逆向分析各类 Polymarket 策略及其高频交易基础设施。 **[1,024 星标]**
-- [Fadi002/de4py](https://github.com/Fadi002/de4py) — 全面的 AI 驱动 Python 逆向工程工具包。 **[1,009 星标]**
 - [pret/pokeruby](https://github.com/pret/pokeruby) — 《宝可梦 红宝石/蓝宝石》的反编译代码。 **[1,002 星标]** · 精选：[pokeruby：一致构建的《精灵宝可梦 红宝石／蓝宝石》反编译](https://awesomerea.org/zh/resources/pokeruby-decomp-case/)
 - [BlackSnufkin/BYOVD](https://github.com/BlackSnufkin/BYOVD) — BYOVD 研究案例，涵盖易受攻击驱动的发现与逆向工程方法，包括 CVE-2025-52915、CVE-2025-1055、CVE-2026-3609 和 CVE-2026-8501。 **[977 星标]**
 - [LING71671/Open-ClaudeCode](https://github.com/LING71671/Open-ClaudeCode) — Claude Code 源码与运行时产物的研究档案，由公开 npm 源码映射重建而来。 **[968 星标]**

@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "de4py": {
+    "name": "de4py Python 反混淆与分析工具包",
+    "requirements": [
+      "所审阅的 main 提交（2026-08-17）比 v3.3.2-stable 发布版（2026-08-12）多 18 个提交，版本号同为 3.3.2。README 要求 Python 3.10+ 并建议使用 Windows 以获得完整功能，而 pyproject.toml 声明 requires-python >=3.8。没有 PyPI 包：需从源码安装，先 git clone 再 pip install .（入口命令 de4py，或 python -m de4py / python main.py）。",
+      "依赖包括用于图形界面的 PySide6，用于分析的 xdis、pefile 和 pyinstaller，以及 requests、psutil、pycryptodome、colorama、pypresence 和 sentry-sdk；项目还附带远程 API 客户端和 Sentry 遥测。可选的 Onyx AI 引擎需要另行安装 Ollama 并拉取所配置的模型；模型和阈值在界面中设置。",
+      "输入为使用者自己的被混淆 Python 脚本或打包的可执行文件。仓库的 samples 目录附带项目自有的测试样本：针对各受支持混淆器的混淆 Python 文件，以及由 PyInstaller、Nuitka 和 py2exe 构建的小型示例可执行文件。无需任何第三方应用文件。",
+      "采用 CC BY-NC 4.0（非商业）许可；README 声明本工具免费开源，任何付费版本都属误导，GitHub 未能识别该许可证。免责声明称本工具仅供教育用途，未经许可不应对软件进行反混淆；本条目仅记录其反混淆与分析用途。本次未安装或运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }
