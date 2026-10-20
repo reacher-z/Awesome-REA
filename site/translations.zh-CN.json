@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "sony-headphones-client-case": {
+    "name": "Sony Headphones Client：Sony 耳机控制协议的桌面客户端",
+    "requirements": [
+      "所审阅的 master 提交日期为 2025-07-19，位于 2023-04-26 发布的 v1.3.2 之后十个提交，增加了构建说明、一处 GCC 头文件修复和归档声明；CMakeLists.txt 仍内嵌 1.3.1 版本号。仓库已归档：README 称应用对已支持的设备仍可继续使用，其他设备可尝试未经测试的分支。已实现的控制包括环境声（含人声聚焦）、关闭降噪，以及 Virtual Sound 的 VPT 和声音定位预设；从耳机读取电量或当前设置以及均衡器从未实现，因此客户端只发送设置。",
+      "无需也不包含任何 Sony 软件或文件；客户端通过 RFCOMM 连接耳机的控制服务 UUID。README 报告 WH-1000XM3 和 MDR-XB950BT 完全可用、WH-1000XM4 部分可用，其他型号见用户报告议题；序列化代码把环境声级别上限设为 WH-1000XM3 的 19 档。README 称出于互操作目的逆向了该应用，代码中只包含部分枚举和数据，其余需通过静态或动态方式获取，并链接了一条关于抓取报文的评论；仓库中没有反编译的应用代码、抓包记录或方法说明。",
+      "发布页提供预编译的 Windows x64、Linux x64 和 macOS 版本，Windows 版需要 Microsoft VC++ 运行库。Windows 与 Linux 构建使用 CMake、C++20 编译器和 Dear ImGui 子模块，Windows 上需要 Visual Studio 2022 和 Windows SDK，Linux 上需要 BlueZ、GLEW、GLFW、D-Bus 和 OpenGL 开发包；macOS 使用随附的 Xcode 项目构建。",
+      "CI 只用 CMake 构建 Linux 和 Windows 客户端、用 xcodebuild 构建 macOS 应用并上传产物；没有协议测试，耳机兼容性来自用户报告。本合集仅审阅源码与文档，未构建客户端，也未连接耳机。",
+      "LICENSE 为 MIT；随附的 Cascadia Code 字体采用 SIL Open Font License，Dear ImGui 有其自身许可。README 声明本程序与 Sony 无关，应用和耳机的相关权利仍归 Sony 所有。所审来源未确立 AI 或 REA 的使用。"
+    ]
   }
 }

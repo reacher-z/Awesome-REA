@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "sony-headphones-client-case",
+    "name": "Sony Headphones Client: a desktop client for Sony’s headset control protocol",
+    "url": "https://github.com/Plutoberth/SonyHeadphonesClient",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Recreates part of Sony’s mobile-only Headphones app as a Windows, Linux and macOS desktop client that changes noise-cancelling, ambient-sound and virtual-sound settings over a Bluetooth RFCOMM connection to a paired headset. The author reports reverse engineering the phone app to define its control protocol, and the code rebuilds its message framing, with start and end markers, byte escaping, sequence numbers, a sum checksum and acknowledgements, together with the two set-parameter commands the client sends. Full support is reported for few models, mainly the WH-1000XM3, and the project is archived.",
+    "description_zh": "把 Sony 仅限手机的 Headphones 应用的部分功能重建为 Windows、Linux 和 macOS 桌面客户端，通过蓝牙 RFCOMM 连接已配对的耳机，调整降噪、环境声和虚拟音效设置。作者称通过逆向手机应用定义了其控制协议；代码重建了报文封装，包括起止标记、字节转义、序列号、求和校验和确认应答，以及客户端发送的两条参数设置命令。据报告只有少数型号完全可用，主要是 WH-1000XM3，项目现已归档。",
+    "evidence_url": "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2025-07-19 is ten commits after the v1.3.2 release of 2023-04-26, adding build notes, a GCC include fix and the archival notice; CMakeLists.txt still embeds version 1.3.1. The repository is archived: the README says the app keeps working for the devices it supports and points to untested forks for others. Implemented controls are ambient sound with focus on voice, disabling noise cancelling, and the Virtual Sound VPT and sound-position presets; reading battery or current settings from the headset and the equalizer were never done, so the client only sends settings.",
+      "No Sony software or files are needed or included; the client connects over RFCOMM to the headset’s control service UUID. The README reports the WH-1000XM3 and MDR-XB950BT as fully working and the WH-1000XM4 as partial, with other models in a user report issue, and the serializer caps ambient-sound levels at the WH-1000XM3’s 19 steps. The README says the app was reverse engineered for interoperability and that only some enums and data are in the code, the rest to be obtained statically or dynamically, linking a comment on sniffing messages; no decompiled app code, captures or method notes are in the repository.",
+      "Releases provide prebuilt Windows x64, Linux x64 and macOS builds, and the Windows build needs the Microsoft VC++ Redistributable. Windows and Linux builds use CMake, a C++20 compiler and the Dear ImGui submodule, with Visual Studio 2022 and the Windows SDK on Windows and BlueZ, GLEW, GLFW, D-Bus and OpenGL development packages on Linux; macOS builds use the bundled Xcode project.",
+      "CI only builds the Linux and Windows clients with CMake and the macOS app with xcodebuild and uploads them; there are no protocol tests, and headset compatibility is user-reported. This collection reviewed source and documentation without building the client or connecting to a headset.",
+      "MIT per LICENSE; the bundled Cascadia Code font is under the SIL Open Font License, and Dear ImGui keeps its own license. The README states the program is not affiliated with Sony, which keeps its rights in the app and headsets. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/Constants.h",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/CommandSerializer.cpp",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/BluetoothWrapper.cpp",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/Headphones.cpp",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/CMakeLists.txt",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/.gitmodules",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/.github/workflows/cmake.yml",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/.github/workflows/xcodebuild.yml",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/Client/Fonts/FontLicense.txt",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/blob/5620e8ed5deccb957338b54e371b215146080819/LICENSE",
+      "https://github.com/Plutoberth/SonyHeadphonesClient/releases/tag/v1.3.2"
+    ]
   }
 ]
