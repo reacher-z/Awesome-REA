@@ -11191,5 +11191,31 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "hexrayspytools",
+    "name": "HexRaysPyTools",
+    "url": "https://github.com/igogo-x86/HexRaysPyTools",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "IDAPython plugin for IDA Pro's Hex-Rays decompiler that helps rebuild structures and classes from pseudocode. Its structure builder collects the fields a variable accesses within one function or, with deep scan, across the functions it is passed to, marks virtual tables, resolves conflicting fields and finalizes a C declaration applied to every scanned variable; a Classes view edits classes and their virtual functions, and a graph shows how local types relate. Pseudocode helpers recast and rename across assignments and calls, propagate names, rewrite out-of-bounds pointers as CONTAINING_RECORD for a containing structure, edit function signatures, rename functions from assert strings and untangle if statements.",
+    "description_zh": "面向 IDA Pro Hex-Rays 反编译器的 IDAPython 插件，帮助根据伪代码重建结构体和类。其结构体构建器可在单个函数内，或通过深度扫描在变量被传入的各个函数中，收集该变量访问的字段，识别虚表，解决字段冲突，并生成 C 声明应用到所有已扫描的变量；Classes 视图可编辑类及其虚函数，结构图则展示本地类型之间的关系。伪代码辅助功能可沿赋值和调用两侧统一类型与名称、传播名称、将越界指针改写为包含结构体的 CONTAINING_RECORD、修改函数签名、根据 assert 字符串批量重命名函数，以及整理 if 语句。",
+    "evidence_url": "https://github.com/igogo-x86/HexRaysPyTools/blob/b8ebf757a92fda934c35c418fc55bfdd6fc8e67c/readme.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No commits since 2020-02-15 and no releases; the tags ida_6_8 and ida_7_2 mark older code. The README states support for IDA Pro 7.x with Python 2 or 3 and says nothing about later IDA releases; it notes that IDA 7.4 added an official implementation of its structure cross-references (Shift+X), describes Guessing Allocation as a very raw feature and marks its API as under construction.",
+      "Needs IDA Pro with the Hex-Rays decompiler. Installation copies HexRaysPyTools.py and the HexRaysPyTools directory into IDA's plugins folder; settings live in IDADIR\\cfg\\HexRaysPyTools.cfg, and by default the cross-references collected during decompilation are stored in the database (store_xrefs). It works on the analyst's own IDA databases and type libraries.",
+      "The repository has no license file and GitHub detects no license, so it grants no explicit reuse terms. No REA connection is established, and nothing was installed or run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/igogo-x86/HexRaysPyTools/blob/b8ebf757a92fda934c35c418fc55bfdd6fc8e67c/HexRaysPyTools/settings.py#L11",
+      "https://github.com/igogo-x86/HexRaysPyTools/tree/b8ebf757a92fda934c35c418fc55bfdd6fc8e67c/HexRaysPyTools",
+      "https://github.com/igogo-x86/HexRaysPyTools/wiki/History/a83ae2746d63e55aa215ffb595642163101d5003"
+    ]
   }
 ]

@@ -57,7 +57,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [attify/firmware-analysis-toolkit](https://github.com/attify/firmware-analysis-toolkit) — Firmware security research platform combining binary analysis, taint tracing, and emulation across IoT, edge AI, mobile devices, and robotics. **[1,615 stars]**
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — Virtual-machine Translation Intermediate Language **[1,607 stars]** · Curated: [VTIL-Core](https://awesomerea.org/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — An impish, cross-platform binary parsing crate, written in Rust **[1,555 stars]** · Curated: [goblin](https://awesomerea.org/resources/goblin/)
-- [igogo-x86/HexRaysPyTools](https://github.com/igogo-x86/HexRaysPyTools) — IDA Pro plugin which improves work with HexRays decompiler and helps in process of reconstruction structures and classes **[1,541 stars]**
+- [igogo-x86/HexRaysPyTools](https://github.com/igogo-x86/HexRaysPyTools) — IDA Pro plugin which improves work with HexRays decompiler and helps in process of reconstruction structures and classes **[1,541 stars]** · Curated: [HexRaysPyTools](https://awesomerea.org/resources/hexrayspytools/)
 - [mandiant/flare-learning-hub](https://github.com/mandiant/flare-learning-hub) — Free educational content on reverse engineering and malware analysis from the FLARE team **[1,496 stars]**
 - [angusdevgo/Seep-Reverse-Lab](https://github.com/angusdevgo/Seep-Reverse-Lab) — Agent-Native multi-platform reverse engineering and CWE-602 client-side authorization audit workbench. **[1,462 stars]**
 - [hteso/iaito](https://github.com/hteso/iaito) — This project has been moved to: **[1,461 stars]**

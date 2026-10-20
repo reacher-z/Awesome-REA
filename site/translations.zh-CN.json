@@ -4113,5 +4113,13 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "hexrayspytools": {
+    "name": "HexRaysPyTools 结构体重建插件",
+    "requirements": [
+      "自 2020-02-15 以来没有新的提交，也没有发布版本；ida_6_8 和 ida_7_2 标签对应较早的代码。README 称支持使用 Python 2 或 3 的 IDA Pro 7.x，未提及之后的 IDA 版本；README 还指出 IDA 7.4 已官方实现其结构体交叉引用功能（Shift+X），称 Guessing Allocation 是非常初步的功能，并将 API 标为尚在建设中。",
+      "需要带 Hex-Rays 反编译器的 IDA Pro。安装时将 HexRaysPyTools.py 和 HexRaysPyTools 目录复制到 IDA 的 plugins 目录；配置位于 IDADIR\\cfg\\HexRaysPyTools.cfg，默认会把反编译时收集的交叉引用保存到数据库中（store_xrefs）。插件作用于分析人员自己的 IDA 数据库和类型库。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证，因此未明确授予任何复用条款。未确立与 REA 的关联，本次审阅未安装或运行任何内容。"
+    ]
   }
 }
