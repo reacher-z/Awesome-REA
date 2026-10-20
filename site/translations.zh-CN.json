@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "dexcalibur": {
+    "name": "Dexcalibur（Reversense）Android 逆向分析平台",
+    "requirements": [
+      "GitHub 最新发布版和 npm 包仍是初代 Dexcalibur v0.7.10（2021-09-27，其包元数据标注 Apache-2.0）；所审阅的 master 提交（2026-10-02）声明为尚未发布的 2.0.0 重写版。README 中的入门、前置条件和安装章节，以及所链接文档站的安装页面，都还是未完成的占位内容；TESTED.md 只列出少量引擎、Web 服务、平台、设备、项目和 ADB 桥接方面的基本检查项。",
+      "package.json 面向 macOS、Linux 和 Windows 上的 Node.js（.nvmrc 固定为 22.14.0），所审阅的提交还把 Deno 加为第二种运行时；文档站称 Windows 不受官方支持。README 要求先在用户主目录下创建 .dexcalibur 设置目录，并写明 Frida 16.1.4，而 package.json 依赖 frida ^17.6.2。项目数据库使用 MongoDB（Docker Compose 文件采用 MongoDB 6.0.9），SSO 通过 OpenID Connect 与 KeyCloak 实现，Web 界面和设备端代理则由 reversenseorg 下的其他仓库构建。",
+      "分析从使用者自备的应用包开始；动态分析还需要一台可通过 ADB 连接并运行 Frida 的 Android 设备或模拟器。第三方组件准备脚本会从各自的上游地址下载 Android platform-tools、apktool 2.7.0、baksmali 2.5.2 和 binwalk。仓库的测试工作区附带 apktool.jar、OWASP 的 UnCrackable Level 1 训练 APK 及其经 apktool 解码的文件，以及用于解析器测试的小型 ELF、Mach-O、plist 和 nib 样本。",
+      "2.0 源码采用 AGPL-3.0-only 许可；第三方声明涉及 EFF 的 apkeep（MIT）。自动化 SAST/DAST 扫描、设备农场管理和内置 MCP 服务器等 README 功能均为项目自述，Reversense 另行提供专业支持和付费模块。仅用于分析者有权检查的应用；本次未安装或运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

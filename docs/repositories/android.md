@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](android.zh-CN.md)
 
-**430 repositories** · 2026-10-16 UTC
+**431 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -49,6 +49,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]**
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]** · Curated: [hermes-dec](https://awesomerea.org/resources/hermes-dec/)
+- [reversenseorg/dexcalibur](https://github.com/reversenseorg/dexcalibur) — Reversense (Dexcalibur2) is a fully rewriting and rethinking of Dexcalibur. Reversense is a binary intelligence platform that automates the reverse engineering of mobile and embedded applications. **[1,180 stars]** · Curated: [Dexcalibur (Reversense)](https://awesomerea.org/resources/dexcalibur/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
 - [anestisb/vdexExtractor](https://github.com/anestisb/vdexExtractor) — Tool to decompile &amp; extract Android Dex bytecode from Vdex files **[1,142 stars]**
 - [Misaka-Mikoto-Tech/MonoHook](https://github.com/Misaka-Mikoto-Tech/MonoHook) — hook C# method at runtime without modify dll file (such as UnityEditor.dll), works on Windows, Mac, Android il2cpp(armv7a and armv8a) **[1,065 stars]**

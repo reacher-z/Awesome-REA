@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "dexcalibur",
+    "name": "Dexcalibur (Reversense)",
+    "url": "https://github.com/reversenseorg/dexcalibur",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Android reverse-engineering platform that combines static analysis with Frida-based dynamic instrumentation; the master branch is Reversense (Dexcalibur 2.0), a rewrite that runs as a Node.js web server for collaborative projects. Its README describes modeling an app's files, Smali and native code into one searchable representation with Radare2 integration, generating hooks for Java methods, Objective-C and native functions, and building dynamic cross-references from traces collected on attached devices. Inspector plugins in the repository observe areas such as permissions, cryptography, file-system, network and UI activity.",
+    "description_zh": "结合静态分析与基于 Frida 的动态插桩的 Android 逆向分析平台；master 分支是重写后的 Reversense（Dexcalibur 2.0），以 Node.js Web 服务形式运行，支持多人协作项目。README 介绍了如何把应用的文件、Smali 和原生代码建模为统一的可搜索表示（集成 Radare2），为 Java 方法、Objective-C 和原生函数生成钩子，并依据在已连接设备上采集的跟踪构建动态交叉引用。仓库中的 Inspector 插件分别观察权限、加密、文件系统、网络和界面等方面的活动。",
+    "evidence_url": "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The latest GitHub release and npm package are still the original Dexcalibur v0.7.10 (2021-09-27, Apache-2.0 in its package metadata); the reviewed master commit (2026-10-02) declares the unreleased 2.0.0 rewrite. Its README getting-started, prerequisite and installation sections, and the installation page of the linked documentation site, are unfinished placeholders, and TESTED.md lists only a short set of basic engine, web-server, platform, device, project and ADB-bridge checks.",
+      "package.json targets Node.js on macOS, Linux and Windows (.nvmrc pins 22.14.0), and the reviewed commit adds Deno as a second runner; the documentation site says Windows is not officially supported. The README asks for a .dexcalibur settings folder in the user's home directory and names Frida 16.1.4, while package.json depends on frida ^17.6.2. MongoDB backs the project database (the Docker Compose file uses MongoDB 6.0.9), OpenID Connect with KeyCloak provides SSO, and the web UIs and device agent are built from separate reversenseorg repositories.",
+      "Analysis starts from the user's own app package and, for dynamic work, an Android device or emulator reachable over ADB with Frida. The third-party setup script downloads Android platform-tools, apktool 2.7.0, baksmali 2.5.2 and binwalk from their upstream hosts. The repository's test workspace bundles apktool.jar, OWASP's UnCrackable Level 1 training APK with its apktool-decoded files, and small ELF, Mach-O, plist and nib parser fixtures.",
+      "The 2.0 source is AGPL-3.0-only; the third-party notice covers EFF's apkeep (MIT). README features such as automated SAST/DAST scanning, device-farm management and the built-in MCP server are project-reported, and Reversense offers professional support and modules separately. Intended for apps the analyst is authorized to inspect; nothing was installed or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/package.json",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/.nvmrc",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/TESTED.md",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/LICENSE",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/3TH_LICENSES.md",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/scripts/prepare_thirdparty.sh",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/docker/Docker-compose.yml",
+      "https://github.com/reversenseorg/dexcalibur/blob/2408f791ba869e7dba8f901332e44a5fee96a973/.github/workflows/CI.yml",
+      "https://github.com/reversenseorg/dexcalibur/tree/2408f791ba869e7dba8f901332e44a5fee96a973/inspectors",
+      "https://github.com/reversenseorg/dexcalibur/tree/2408f791ba869e7dba8f901332e44a5fee96a973/test/ws",
+      "https://github.com/reversenseorg/dexcalibur/commit/2408f791ba869e7dba8f901332e44a5fee96a973",
+      "https://github.com/reversenseorg/dexcalibur/releases/tag/v0.7.10",
+      "https://github.com/reversenseorg/rs-doc/blob/e33b0d15e84ed49aa43d9733b94a9df1b884e42e/docs/getting-started/installation.md"
+    ]
   }
 ]
