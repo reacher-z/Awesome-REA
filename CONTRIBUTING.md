@@ -18,6 +18,8 @@ Use the resource issue template or submit a pull request with:
 
 Check the existing collection before adding a duplicate. A resource does not need a minimum number of Stars. Prefer original, maintained projects over copied forks. Claims about REA integration should be supported by the project's own documentation.
 
+For a first pull request, the [worked example](docs/first-resource.md) follows one existing record through every file you edit and regenerate.
+
 Use Protocol when primary evidence describes communication-format analysis, traffic dissection, message exchanges or protocol-state inference, including hardware buses. Generic network access, API usage or an MCP interface alone does not qualify. Binary-encoded messages do not imply executable Binary analysis. Preserve existing targets when adding another reviewed task area; do not retag historical scan records automatically.
 
 ## Update the catalog
