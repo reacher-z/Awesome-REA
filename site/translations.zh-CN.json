@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "gxpc": {
+    "name": "gxpc XPC 通信嗅探工具",
+    "requirements": [
+      "审阅时最新版本为 v2.2.1，发布于 2025-08-12，提供由 GoReleaser 针对 Frida 17.2.16 core devkit 链接构建的 macOS x86_64 与 arm64 压缩包；所审阅的 main 分支提交只多了一次 cobra 依赖升级（2025-09-02）。若改用 go install 安装，需要 Go、cgo，并按 frida-go 文档配置 Frida devkit；go.mod 声明 Go 1.20 和 frida-go 1.0.0。",
+      "首次运行时，程序会把内嵌的 TypeScript 代理及包文件写入系统临时目录下的 gxpc 文件夹，执行 npm install 安装 frida-objc-bridge，再用 Frida 编译器编译代理，因此至少需要一次 Node.js、npm 和网络访问；之后会复用已编译的代理。分析者可按 PID、进程名或待启动的文件选择目标，设备可以是本机（-i local）、USB 设备（默认）或远程 Frida 服务；README 未说明设备配置方法，也未列出测试过的系统版本。",
+      "发出的消息通过挂钩公开的 libxpc 发送、回复与通知函数获取，新建连接则通过 xpc_connection_create_mach_service 和 xpc_connection_set_event_handler 记录。接收的消息依赖私有的 _xpc_connection_call_event_handler 和 __CFBinaryPlistCreate15，代理通过调试符号解析其地址，并按机型与系统构建号把偏移缓存到用户主目录下的 gxpc.conf（或以 -c 指定的文件）。bplist16 负载仅在宿主机安装了外部 jlutil 程序时由其解码，否则交给代理自带的解析器或以 base64 输出。在所审阅的 main.go 中，--whitelistp 选项读取的是 --whitelist 的值，因此按 PID 设置白名单可能无法按文档工作。",
+      "采用 MIT 许可。frida-go、Frida devkit 与 frida-objc-bridge 保留各自许可证，jlutil 是另行提供的第三方工具，不随 gxpc 分发。所审来源未确立与 REA 的关联；本次核查未安装或运行任何内容。"
+    ]
   }
 }

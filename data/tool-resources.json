@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "gxpc",
+    "name": "gxpc",
+    "url": "https://github.com/ReverseApple/gxpc",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "macOS command-line XPC sniffer, inspired by xpcspy, that injects a Frida agent into an attached or newly spawned process and logs the XPC messages it sends and receives, labelled with the libxpc function, connection name, peer PID and process name. The agent recursively converts xpc_object_t dictionaries, arrays and scalar values into readable output and decodes binary-plist payloads, while a Go host built on frida-go selects a local, USB or remote Frida device, filters connections by name or PID and can save the trace to a file. It observes how Apple-platform apps and services communicate over XPC and does not alter or inject messages.",
+    "description_zh": "受 xpcspy 启发的 macOS 命令行 XPC 嗅探工具：把 Frida 代理注入已附加或新启动的进程，记录其收发的 XPC 消息，并标出对应的 libxpc 函数、连接名、对端 PID 与进程名。代理会递归地把 xpc_object_t 字典、数组和标量值转换为可读输出，并解码二进制 plist 负载；基于 frida-go 的 Go 主程序负责选择本地、USB 或远程 Frida 设备，按名称或 PID 过滤连接，并可将跟踪结果保存到文件。它用于观察 Apple 平台应用与服务如何通过 XPC 通信，不会修改或注入消息。",
+    "evidence_url": "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.2.1, published 2025-08-12, with macOS x86_64 and arm64 archives that GoReleaser links against the Frida 17.2.16 core devkit; the reviewed main commit adds only a cobra dependency bump (2025-09-02). Installing with go install instead needs Go, cgo and the Frida devkit set up as frida-go documents; go.mod declares Go 1.20 and frida-go 1.0.0.",
+      "On first run the binary writes its embedded TypeScript agent and package files to a gxpc folder in the system temp directory, runs npm install for frida-objc-bridge and compiles the agent with Frida’s compiler, so Node.js, npm and network access are needed at least once; the compiled agent is then reused. The analyst picks the target by PID, process name or a file to spawn, on a local device (-i local), a USB device (the default) or a remote Frida server; the README documents no device setup or tested OS versions.",
+      "Outgoing messages come from hooks on the public libxpc send, reply and notification functions, and new connections from xpc_connection_create_mach_service and xpc_connection_set_event_handler. Incoming messages rely on the private _xpc_connection_call_event_handler and __CFBinaryPlistCreate15, which the agent resolves from debug symbols and caches as offsets per machine and OS build in gxpc.conf in the user’s home directory (or a file given with -c). bplist16 payloads are decoded through an external jlutil executable when one is installed on the host, otherwise by the agent’s own parser or as base64. In the reviewed main.go the --whitelistp option reads the --whitelist value, so PID allow-listing may not work as documented.",
+      "MIT. frida-go, the Frida devkit and frida-objc-bridge keep their own licenses, and jlutil is a separate third-party tool not shipped with gxpc. The reviewed sources establish no REA connection; nothing was installed or run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/main.go",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/script.ts",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/offsets.go",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/go.mod",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/.goreleaser.yaml",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/.github/workflows/release.yml",
+      "https://github.com/ReverseApple/gxpc/blob/4fad36db87126c0b29b987472b5863206fb77ac2/LICENSE",
+      "https://github.com/ReverseApple/gxpc/releases/tag/v2.2.1"
+    ]
   }
 ]
