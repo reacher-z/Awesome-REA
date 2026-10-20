@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "garmin-ble-gfdi-protocol-case",
+    "name": "garmin-ble: a Python client for Garmin's GFDI watch protocol",
+    "url": "https://github.com/gwerneckp/garmin-ble",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python library that talks to Garmin watches over their proprietary GFDI V2 Bluetooth LE protocol, with no Garmin Connect, phone or cloud service. It implements the handshake, multi-link routing, COBS framing, CRC16 checks and protobuf service messages, streams typed readings such as heart rate, HRV, SpO2, stress, Body Battery and accelerometer data, and adds a simulator and recorded-session replay for work without hardware. Its acknowledgements credit Gadgetbridge for the protocol logic and schemas, while a published journal shows how the author decoded the accelerometer payload, which Gadgetbridge only logged, from labelled recordings.",
+    "description_zh": "一个 Python 库，通过 Garmin 手表专有的 GFDI V2 低功耗蓝牙协议与手表通信，无需 Garmin Connect、手机或云服务。它实现了握手、多链路路由、COBS 分帧、CRC16 校验和 protobuf 服务报文，可流式读取心率、HRV、血氧、压力、Body Battery 和加速度计等类型化数据，并提供模拟器和录制会话回放，便于在没有硬件时开发。致谢部分说明协议逻辑和 schema 源自 Gadgetbridge；另有一份公开的分析记录，展示作者如何依据带标注的录制数据解出加速度计载荷，而 Gadgetbridge 此前只记录其十六进制内容。",
+    "evidence_url": "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main commit b662032 (2026-09-27), four commits after v0.3.2 of 2026-08-01, which is also the latest PyPI release; those commits add examples and an announcement video. pyproject marks the package Alpha and the CHANGELOG warns that the pre-1.0 API may change. The README roadmap lists BLE transport, live telemetry, the Watch API, simulator and replay as done, protobuf settings and device state as in progress, and notifications, media control and FIT/GPX file transfers as planned.",
+      "Requires the user's own Garmin watch and a Bluetooth LE adapter on the computer; the README warns that the watch allows one BLE connection at a time, so it must be disconnected from the phone first. No Garmin Connect, firmware or SDK is used, and the repository's data files are the author's labelled accelerometer recordings. The README gives no list of tested watches; the bundled simulator profiles model a fenix 7 and a Venu 3, and the CHANGELOG notes that GFDI has no capability query, so a metric's support shows only when the watch accepts or declines its service.",
+      "Python 3.10+ with bleak and protobuf, installed from PyPI or from source; development extras add pytest, pytest-mock and pytest-asyncio. Compiled protobuf modules are committed next to their .proto sources, and most examples accept --simulate.",
+      "CI runs the pytest suite on Ubuntu with Python 3.10–3.13. Tests cover COBS, CRC16, GFDI, MLR and Smart framing, the bleak-backed transport with mocks, frame tracing, capture files and replay, and watch lifecycle, protobuf and telemetry behavior against the simulator. rev_eng.md documents how the 17-byte accelerometer packet was decoded from nine labelled recordings. Behavior on real watches remains author-reported, and this review ran no tests.",
+      "AGPL-3.0-only, matching the Gadgetbridge-derived code the README acknowledges, although the README also calls the library clean-room. Garmin watches, apps and trademarks keep their own rights. One commit message calls the tilt game example a test of unsupervised vibe coding; the sources make no AI claim about the protocol work, and no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/reverse_engineering/accelerometer/rev_eng.md",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/CHANGELOG.md",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/pyproject.toml",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/.github/workflows/test.yml",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/garmin_ble/protocol/gfdi.py",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/garmin_ble/transport/simulated.py",
+      "https://github.com/gwerneckp/garmin-ble/tree/b66203232f0abb314aeb7dc9e448680184f28ed3/proto",
+      "https://github.com/gwerneckp/garmin-ble/tree/b66203232f0abb314aeb7dc9e448680184f28ed3/tests",
+      "https://github.com/gwerneckp/garmin-ble/blob/b66203232f0abb314aeb7dc9e448680184f28ed3/LICENSE",
+      "https://github.com/gwerneckp/garmin-ble/commit/69b6ed1cccfce79482fd13ca3fad292551b99a18",
+      "https://github.com/gwerneckp/garmin-ble/releases/tag/v0.3.2",
+      "https://pypi.org/project/garmin-ble/0.3.2/"
+    ]
   }
 ]

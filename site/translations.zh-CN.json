@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "garmin-ble-gfdi-protocol-case": {
+    "name": "garmin-ble：Garmin 手表 GFDI 协议的 Python 客户端",
+    "requirements": [
+      "审阅基于 main 分支 2026-09-27 的提交 b662032，比 2026-08-01 发布的 v0.3.2 多四个提交，v0.3.2 也是 PyPI 上的最新版本；这些提交只增加了示例和一段发布视频。pyproject 将其标为 Alpha，CHANGELOG 提醒 1.0 之前的 API 可能变化。README 路线图显示 BLE 传输、实时遥测、Watch API、模拟器和回放已完成，protobuf 设置与设备状态仍在开发中，通知、媒体控制和 FIT/GPX 文件传输尚在计划中。",
+      "需要使用者自有的 Garmin 手表，以及电脑上的低功耗蓝牙适配器；README 提醒手表同一时间只允许一个 BLE 连接，因此须先断开与手机的连接。不使用 Garmin Connect、固件或 SDK，仓库中的数据文件是作者自己录制并标注的加速度计数据。README 未列出已测试的手表；内置模拟器配置模拟 fenix 7 和 Venu 3，CHANGELOG 指出 GFDI 没有能力查询，某项指标是否受支持只能在手表接受或拒绝相应服务时得知。",
+      "需要 Python 3.10+ 以及 bleak 和 protobuf，可从 PyPI 或源码安装；开发依赖另含 pytest、pytest-mock 和 pytest-asyncio。编译好的 protobuf 模块与对应的 .proto 源文件一同提交，大多数示例支持 --simulate。",
+      "CI 在 Ubuntu 上用 Python 3.10–3.13 运行 pytest 测试套件。测试覆盖 COBS、CRC16、GFDI、MLR 和 Smart 分帧，以模拟对象测试基于 bleak 的传输，检查帧追踪、抓包文件与回放，并在模拟器上检查手表生命周期、protobuf 与遥测行为。rev_eng.md 记录了如何依据九组带标注的录制数据解出 17 字节的加速度计数据包。在真实手表上的表现仍属作者报告，本次审阅未运行测试。",
+      "采用 AGPL-3.0-only，与 README 致谢的 Gadgetbridge 衍生代码一致，尽管 README 同时称其为净室实现。Garmin 手表、应用和商标仍归各自权利人所有。一条提交信息称倾斜游戏示例是对无人监督 vibe coding 的一次测试；所审来源未就协议工作提出 AI 相关说法，也未确立 REA 使用。"
+    ]
   }
 }
