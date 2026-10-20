@@ -1810,9 +1810,9 @@
       ],
       "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "Pinned port README, build notes, developer guide and license, with the pinned decompilation fork’s README, progress file, build notes and agent guide, support the reported native PC port and the fork’s author-stated extensive AI assistance. Full mapping covers this port built on that decompilation; GMSE01-only scope, disc-image dependence, incomplete matching, per-platform status and project-reported regression checks remain explicit. No REA use or independent runtime reproduction is established.",
-      "reason_zh": "固定版本的移植 README、构建说明、开发指南和许可，连同固定版本反编译分支的 README、进度文件、构建说明和智能体指南，支持所报告的原生 PC 移植及分支作者自述的大量 AI 辅助。完整映射覆盖基于该反编译的这一移植；仅限 GMSE01、依赖光盘镜像、匹配尚未完成、各平台状态及项目自报的回归检查均明确保留。未确立 REA 使用或独立运行复现。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "Pinned port README, build notes, developer guide and license, with the pinned decompilation fork’s README, progress file, build notes and agent guide, support the reported native PC port and the fork’s author-stated extensive AI assistance. Full mapping covers this port built on that decompilation; GMSE01-only scope, disc-image dependence, incomplete matching, per-platform status and project-reported regression checks remain explicit. No REA use or independent runtime reproduction is established. A related mapping links the separately curated sms-english fork, which the port’s README names as its matching decompilation and decompilation submodule.",
+      "reason_zh": "固定版本的移植 README、构建说明、开发指南和许可，连同固定版本反编译分支的 README、进度文件、构建说明和智能体指南，支持所报告的原生 PC 移植及分支作者自述的大量 AI 辅助。完整映射覆盖基于该反编译的这一移植；仅限 GMSE01、依赖光盘镜像、匹配尚未完成、各平台状态及项目自报的回归检查均明确保留。未确立 REA 使用或独立运行复现。相关映射链接另行收录的 sms-english 分支，移植的 README 将其列为所依据的一致性反编译及反编译子模块。",
       "primary_evidence_urls": [
         "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/README.md",
         "https://github.com/chasem-dev/sms-pc-port/blob/a2ff4eef099b22b2af487d1b5e3ac09ffe667d31/BUILD.md",
@@ -1821,7 +1821,8 @@
         "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/README.md",
         "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/PROGRESS.md",
         "https://github.com/chasem-dev/sms-english/blob/967436b8c623834d38a57d34923775f45eca8861/AGENTS.md",
-        "https://x.com/Edenwoodfilm/status/2109468542437310510"
+        "https://x.com/Edenwoodfilm/status/2109468542437310510",
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md"
       ],
       "catalog_matches": [
         {
@@ -1829,6 +1830,12 @@
           "id": "sms-pc-port-case",
           "kind": "case-study",
           "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "sms-english-gmse01-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
         }
       ]
     },
@@ -10409,9 +10416,9 @@
       ],
       "state": "insufficient-evidence",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "The pinned README, wiki and build files present an online-multiplayer and Lua-modding project for the Super Mario 64 PC port, continuing sm64ex-coop, itself a fork of sm64ex. Source checks a user-supplied US ROM, and PC builds force non-matching code. No reconstruction work of its own is documented: no decompilation account, comparison or matching evidence. The related mapping records only its descent from the separately curated decompilation. This is not a finding about the multiplayer project itself.",
-      "reason_zh": "固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录它源自另行收录的反编译重建项目，并非对多人项目本身的评价。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "The pinned README, wiki and build files present an online-multiplayer and Lua-modding project for the Super Mario 64 PC port, continuing sm64ex-coop, itself a fork of sm64ex. Source checks a user-supplied US ROM, and PC builds force non-matching code. No reconstruction work of its own is documented: no decompilation account, comparison or matching evidence. The related mappings record only its descent: credits.txt says it was built on sm64ex-coop, which was built on the separately curated sm64ex port and, through it, the sm64 decompilation. This is not a finding about the multiplayer project itself.",
+      "reason_zh": "固定版本的 README、wiki 与构建文件表明，这是面向 Super Mario 64 PC 移植的在线多人与 Lua 模组项目，延续 sm64ex-coop，后者又是 sm64ex 的分支。源码会校验使用者自备的美版 ROM，PC 构建强制采用非一致性代码。项目没有记录自身的重建工作：没有反编译过程说明、对照或一致性证据。相关映射仅记录其来源：credits.txt 称它构建于 sm64ex-coop 之上，后者基于另行收录的 sm64ex 移植，并由此基于 sm64 反编译项目，并非对多人项目本身的评价。",
       "primary_evidence_urls": [
         "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/README.md",
         "https://github.com/coop-deluxe/sm64coopdx/blob/8cd6e5977d9f920d51ca71f2c61801d019ed79c6/Makefile",
@@ -10420,12 +10427,19 @@
         "https://github.com/coop-deluxe/sm64coopdx/wiki/Home/aa0f5a9c0e56d9faa44ce185b8a8bc2f63e97742",
         "https://github.com/coop-deluxe/sm64coopdx/wiki/Build-Flags/0d5716ff916791c28f3444917786a4135c8a832f",
         "https://github.com/djoslin0/sm64ex-coop",
-        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md"
+        "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/README.md",
+        "https://github.com/sm64pc/sm64ex/blob/d7ca2c04364a6dd0dac58b47151e04e26887e6f0/README.md"
       ],
       "catalog_matches": [
         {
           "catalog": "resource",
           "id": "sm64-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
+        },
+        {
+          "catalog": "resource",
+          "id": "sm64ex-pc-port-case",
           "kind": "case-study",
           "scope": "related"
         }
@@ -10478,9 +10492,9 @@
       ],
       "state": "already-curated",
       "review_level": "primary-source-reviewed",
-      "reviewed_at": "2026-10-18",
-      "reason_en": "The pinned README, progress file, GMSE01 build notes, agent rules and CI workflow document this fork’s own North American matching work, with AI assistance stated by its author. Full mapping covers the fork, not upstream doldecomp/sms or the separate native PC port. Its byte-identical DOL still links unfinished objects from the original disc, its GMSE01 figures are author-reported, and its US map provenance is internally inconsistent.",
-      "reason_zh": "固定版本的 README、进度文件、GMSE01 构建说明、智能体规则和 CI 工作流记录了该分支自身的北美版一致性工作，作者明确说明使用了 AI 辅助。完整映射覆盖此分支，不包括上游 doldecomp/sms 或独立的原生 PC 移植。其逐字节一致的 DOL 仍链接取自原光盘的未完成目标文件，GMSE01 数字为作者报告，美版映射文件的来源说明也前后不一。",
+      "reviewed_at": "2026-10-20",
+      "reason_en": "The pinned README, progress file, GMSE01 build notes, agent rules and CI workflow document this fork’s own North American matching work, with AI assistance stated by its author. Full mapping covers the fork, not upstream doldecomp/sms or the separate native PC port. Its byte-identical DOL still links unfinished objects from the original disc, its GMSE01 figures are author-reported, and its US map provenance is internally inconsistent. A related mapping records that the README calls it a hobby fork of the separately curated doldecomp/sms decompilation, begun when the upstream Japanese decompilation was about 38% matched.",
+      "reason_zh": "固定版本的 README、进度文件、GMSE01 构建说明、智能体规则和 CI 工作流记录了该分支自身的北美版一致性工作，作者明确说明使用了 AI 辅助。完整映射覆盖此分支，不包括上游 doldecomp/sms 或独立的原生 PC 移植。其逐字节一致的 DOL 仍链接取自原光盘的未完成目标文件，GMSE01 数字为作者报告，美版映射文件的来源说明也前后不一。相关映射记录 README 称其为另行收录的 doldecomp/sms 反编译的业余分支，分出时上游日版反编译约有 38% 的代码已匹配。",
       "primary_evidence_urls": [
         "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/README.md",
         "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/PROGRESS.md",
@@ -10488,7 +10502,8 @@
         "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/AGENTS.md",
         "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/STRATEGY.md",
         "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/.github/workflows/build.yml",
-        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE"
+        "https://github.com/chasem-dev/sms-english/blob/d5f4eb3eb54ac49638b5513efb1fc368068805da/LICENSE",
+        "https://github.com/doldecomp/sms/blob/b2350a119b0e113e6cebc389fda9af00328ee85e/README.md"
       ],
       "catalog_matches": [
         {
@@ -10496,6 +10511,12 @@
           "id": "sms-english-gmse01-decomp-case",
           "kind": "case-study",
           "scope": "full"
+        },
+        {
+          "catalog": "resource",
+          "id": "sms-matching-decomp-case",
+          "kind": "case-study",
+          "scope": "related"
         }
       ]
     },
