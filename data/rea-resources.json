@@ -1425,7 +1425,8 @@
       "The main project targets desktop Windows, Linux and macOS. Its list of console, mobile and browser ports points to separate projects and does not establish identical support in this repository.",
       "Source builds require C++11, CMake, SDL2 and SDL2_mixer. The README gives Visual Studio, GCC/Clang and Xcode build paths, including x86_64 or arm64 selection on macOS.",
       "The README reports that all subroutines were decompiled and converted to C++; this is not an independently checked byte-identical rebuild. Full Tilt feature work and possible support for its other two tables remain separate plans.",
-      "MIT license for this repository; original game resources and dependencies retain their own terms. REA use is not established; no game, compiler or external port was run for this catalog."
+      "MIT license for this repository; original game resources and dependencies retain their own terms. REA use is not established; no game, compiler or external port was run for this catalog.",
+      "As checked on 2026-10-20, the latest release is Release_2.1.0 (2023-10-16); the reviewed 2024-08-21 commit is still the master head and GitHub’s last recorded push, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ],
     "targets": [
       "game"
@@ -1433,7 +1434,8 @@
     "kind": "case-study",
     "additional_evidence_urls": [
       "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/CMakeLists.txt",
-      "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE"
+      "https://github.com/k4zmu2a/SpaceCadetPinball/blob/cb9b7b886244a27773f66b0b19fdc2998392565e/LICENSE",
+      "https://github.com/k4zmu2a/SpaceCadetPinball/releases/tag/Release_2.1.0"
     ]
   },
   {
@@ -1452,7 +1454,8 @@
       "The documented build uses GNU make, Python 3.6+, MIPS binutils, pkgconf and host development tools. Windows instructions use WSL/Linux; macOS instructions require an appropriate MIPS toolchain and newer GNU make.",
       "The Makefile normally checks the output ROM’s SHA-1 against the selected reference. NON_MATCHING, a non-N64 target or nonstandard configurations disable comparison; a successful modified build is not a matching-result claim.",
       "The pinned Jenkins configuration explicitly sets COMPARE=0 for iQue and enhancement builds. Its five-version build matrix therefore must not be described as five independently confirmed byte-identical results; no build or game was run for this catalog.",
-      "The repository carries CC0-1.0; original Nintendo content and any separate third-party rights are not supplied by that declaration. No REA or coding-agent involvement is established by the reviewed files."
+      "The repository carries CC0-1.0; original Nintendo content and any separate third-party rights are not supplied by that declaration. No REA or coding-agent involvement is established by the reviewed files.",
+      "As checked on 2026-10-20, the reviewed 2023-08-17 commit is still the master head and GitHub’s last recorded push was 2024-02-04; the only GitHub releases are 2019 qemu-irix helper binaries, not game builds, the repository is not archived and the README does not mark it as maintained, superseded or archived."
     ],
     "targets": [
       "game"
@@ -1461,7 +1464,8 @@
     "additional_evidence_urls": [
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Makefile",
       "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/Jenkinsfile",
-      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/LICENSE.md"
+      "https://github.com/n64decomp/sm64/blob/9921382a68bb0c865e5e45eb594d9c64db59b1af/LICENSE.md",
+      "https://github.com/n64decomp/sm64/releases/tag/irix2"
     ]
   },
   {
