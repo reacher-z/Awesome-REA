@@ -114,7 +114,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .resource-card,.source-card{min-width:0;padding:24px 24px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow);transition:border-color .15s ease,box-shadow .15s ease}
 .resource-card:hover,.source-card:hover{border-color:var(--strong);box-shadow:0 5px 18px #1737540c}
 .card-heading,.source-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-.resource-card h3,.source-card h3{flex:1;min-width:0;margin:0;color:var(--ink);font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
+.resource-card h3,.resource-card h4,.source-card h3{flex:1;min-width:0;margin:0;color:var(--ink);font:700 18px/1.5 var(--sans);letter-spacing:0;overflow-wrap:anywhere}
 .source-owner{color:var(--muted);font-weight:450}
 .source-project{color:var(--ink);font-weight:700}
 .card-title-link:hover,.source-title-link:hover{text-decoration:underline;text-decoration-color:var(--steel);text-underline-offset:4px}
@@ -192,7 +192,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .resource-grid,.source-results{gap:14px}
   .resource-card,.source-card{padding:21px 20px 17px}
   .source-card-head,.card-heading{flex-wrap:wrap;gap:9px}
-  .source-card-head h3,.card-heading h3{flex-basis:100%}
+  .source-card-head h3,.card-heading h3,.card-heading h4{flex-basis:100%}
 }
 @media(max-width:700px){
   html{scroll-padding-top:86px}
@@ -226,7 +226,7 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
   .results-topline p{font-size:12px}
   .resource-grid,.source-results{grid-template-columns:1fr;gap:14px}
   .resource-card,.source-card{padding:22px 20px 17px}
-  .source-card-head h3,.card-heading h3{flex-basis:auto}
+  .source-card-head h3,.card-heading h3,.card-heading h4{flex-basis:auto}
   .source-card-head,.card-heading{flex-wrap:nowrap;gap:11px}
   .source-stars,.resource-kind{padding:3px 6px}
   .source-record-details dl{grid-template-columns:112px minmax(0,1fr);gap:8px 12px}

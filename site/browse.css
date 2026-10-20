@@ -26,6 +26,10 @@
 .browse-topline p{margin:0}
 .browse-topline h2{margin:0;max-width:100%;font-size:22px;line-height:1.4;color:var(--ink);overflow-wrap:break-word;text-wrap:balance}
 .browse-topline p:last-child{font-size:14px}
+/* /resources/ sections with both case studies and other kinds show them as two labelled sub-groups. */
+.resource-subgroup+.resource-subgroup{margin-top:30px}
+.resource-subgroup-topline{padding:6px 0 14px}
+.resource-subgroup-topline h3{margin:0;font-size:18px;line-height:1.4;font-weight:650;color:var(--ink);overflow-wrap:break-word}
 .browse-category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .browse-category-card{display:flex;align-items:center;gap:15px;min-height:126px;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 2px 5px var(--shadow)}
 .browse-category-card:hover{border-color:var(--strong);background:var(--soft)}
