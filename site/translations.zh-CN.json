@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "dumpulator": {
+    "name": "dumpulator 内存转储模拟库",
+    "requirements": [
+      "README 称其为仍在开发中的原型。审阅时 PyPI 最新版本为 0.2.6，上传于 2023-10-02。所审阅的 main 分支提交日期为 2024-02-02，也是该仓库最近一次推送，比 v0.2.6 标签多四个提交；其 setup.cfg 已声明版本 v1.0.0，但该版本没有发布。",
+      "输入为分析者自有目标进程的完整内存 minidump，例如用 x64dbg 的 MiniDump 命令生成的转储。模拟从该快照开始，并依赖 dumpulator 已实现的系统调用：在所审阅提交中，ntsyscalls.py 声明了 463 个 Zw* 原型，其中 38 个含处理代码，其余 425 个只抛出 NotImplementedError。",
+      "需要 Python 3.9+，以及 unicorn ~=2.0.0、pefile 和 capstone ~=4.0.2；src/minidump 下附带经修补的 skelsec minidump 解析器副本。setup.cfg 声明与操作系统无关，而 CI 在 Windows Server 2019 上用 Python 3.9 安装并测试。",
+      "CI 下载托管在项目发布页上的测试 minidump（StringEncryptionFun、ExceptionTest、HarnessMinimal 和 HarnessFull 的 x64 与 x86 版本），并运行入门脚本、run-tests.py 和异常测试。测试目录包含这些程序的 Visual Studio 源码，以及由附带 .def 文件生成的小型导入库（msvcrt_x86.lib、exception_handler_x64.lib、exception_handler_x86.lib）。这些托管的测试文件是完整的进程转储，因此也包含这些进程中已加载的 Windows 系统模块；本次未下载或运行任何内容。",
+      "LICENSE 为 BSL-1.0。模拟结果只反映单个内存快照和已实现的系统调用，需要分析者核实；所审阅的来源未表明与 REA 有关。"
+    ]
   }
 }

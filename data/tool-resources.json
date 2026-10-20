@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "dumpulator",
+    "name": "dumpulator",
+    "url": "https://github.com/mrexodia/dumpulator",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python library that emulates user-mode code from minidumps of 64-bit and 32-bit Windows processes with Unicorn. Because the dump supplies the full process memory, only system calls are emulated, and analysts can call functions, run code between two addresses, trace instructions and read results such as decrypted strings. The README presents it for malware analysis, such as configuration extraction and unpacking, and for dynamic analysis generally; syscalls can be reimplemented or hooked in Python with typed structure declarations.",
+    "description_zh": "基于 Unicorn 的 Python 库，用于模拟 Windows 64 位和 32 位进程 minidump 中的用户态代码。由于转储提供了完整的进程内存，只需模拟系统调用，分析者即可调用函数、在两个地址之间运行代码、跟踪指令，并读取解密后的字符串等结果。README 将其用于恶意软件分析（如配置提取和脱壳）及一般的动态分析；可用 Python 重新实现或挂钩系统调用，并以类型化方式声明结构体。",
+    "evidence_url": "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README calls it a work-in-progress prototype. Latest PyPI release at review: 0.2.6, uploaded 2023-10-02. The reviewed main commit of 2024-02-02, the repository's latest push, is four commits past the v0.2.6 tag; its setup.cfg already declares v1.0.0, which has no release.",
+      "Input is a full-memory minidump of the analyst's own target process, for example one written with x64dbg's MiniDump command. Emulation starts from that snapshot and relies on the syscalls dumpulator implements: ntsyscalls.py declares 463 Zw* prototypes, of which 38 contain handler code and 425 only raise NotImplementedError at the reviewed commit.",
+      "Python 3.9+ with unicorn ~=2.0.0, pefile and capstone ~=4.0.2; a patched copy of skelsec's minidump parser is vendored under src/minidump. setup.cfg declares it OS-independent, while CI installs and tests it on Windows Server 2019 with Python 3.9.",
+      "CI downloads test minidumps hosted on the project's releases (StringEncryptionFun, ExceptionTest, HarnessMinimal and HarnessFull, x64 and x86) and runs the getting-started scripts, run-tests.py and the exception tests. The test tree holds the Visual Studio sources for those programs and small import libraries (msvcrt_x86.lib, exception_handler_x64.lib, exception_handler_x86.lib) built from bundled .def files. As full process dumps, the hosted fixtures also capture the Windows system modules loaded in those processes; nothing was downloaded or run for this review.",
+      "LICENSE is BSL-1.0. Emulation reflects one memory snapshot and the implemented syscalls, so results need analyst validation; the reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/setup.cfg",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/src/dumpulator/ntsyscalls.py",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/src/dumpulator/dumpulator.py",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/src/minidump/README.md",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/.github/workflows/build.yml",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/tests/download_artifacts.py",
+      "https://github.com/mrexodia/dumpulator/tree/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/tests/DumpulatorTests",
+      "https://github.com/mrexodia/dumpulator/blob/18a64d7ab6ccded24c5ffe72ba17ac03fd853f8b/LICENSE",
+      "https://pypi.org/project/dumpulator/0.2.6/",
+      "https://github.com/mrexodia/dumpulator/releases/tag/artifacts"
+    ]
   }
 ]
