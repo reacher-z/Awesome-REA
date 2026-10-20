@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 import sys
-from urllib.parse import parse_qsl, urlsplit
+from urllib.parse import parse_qsl, unquote, urlsplit
 
 from review_dates import review_date_is_future
 
@@ -34,6 +34,8 @@ CITATION_PATTERNS = {
     'pages': re.compile(r'([1-9]\d*)(?:-([1-9]\d*))?'), 'article_number': re.compile(r'[A-Za-z0-9]+'),
 }
 ARXIV_ID = re.compile(r'\d{4}\.\d{4,5}')
+ARXIV_URL_PATH = re.compile(r'/(?:abs|pdf|html)/(\d{4}\.\d{4,5})(v[1-9]\d*)?(?:\.pdf)?')
+DOI_RESOLVERS = {'doi.org', 'dx.doi.org', 'www.doi.org'}
 
 
 def read_papers(root=ROOT):
@@ -67,6 +69,35 @@ def canonical_paper_url(value):
         # OpenReview identifies a paper by its id query parameter rather than its path.
         host, path = 'openreview.net', f"{path}?id={dict(parse_qsl(parsed.query)).get('id', '')}"
     return parsed.scheme.casefold(), host, path
+
+
+def url_identifier_error(record, field):
+    """Offline check that an arXiv or DOI-resolver `url`/`pdf_url` names this record's identifiers.
+
+    Publisher landing pages and other hosts are not interpreted. Code, project and evidence links
+    can name software or dataset DOIs, so they are never compared with the paper DOI.
+    """
+    parsed = urlsplit(record[field])
+    host = (parsed.hostname or '').casefold()
+    arxiv, doi = record.get('arxiv_id'), record.get('doi')
+    if host in {'arxiv.org', 'www.arxiv.org'}:
+        match = ARXIV_URL_PATH.fullmatch(parsed.path.rstrip('/'))
+        if not match:
+            return None
+        named, version = match.groups()
+        reviewed = record.get('arxiv_version_reviewed')
+        if named != arxiv:
+            return f'{field}: links arXiv {named}, but arxiv_id is {arxiv!r}'
+        # An unversioned link follows the latest version; a versioned one must be the reviewed version.
+        if version and isinstance(reviewed, str) and version != reviewed:
+            return f'{field}: links arXiv {named}{version}, but arxiv_version_reviewed is {reviewed}'
+    elif host in DOI_RESOLVERS:
+        named = unquote(parsed.path).strip('/')
+        # arXiv registers 10.48550/arXiv.<arxiv_id> for every paper, recorded in `doi` or not.
+        arxiv_doi = re.fullmatch(r'10\.48550/arxiv\.(\d{4}\.\d{4,5})', named, re.IGNORECASE)
+        if named.casefold() != str(doi).casefold() and not (arxiv_doi and arxiv_doi[1] == arxiv):
+            return f'{field}: resolves DOI {named}, but doi is {doi!r}'
+    return None
 
 
 def has_reviewed_publisher_identity(record, evidence):
@@ -229,7 +260,11 @@ def validate_papers(records, errors, *, url_check, now=None):
             problem = url_check(value)
             if problem:
                 errors.append(f'{where}.{field}: {problem}')
-            elif field == 'url':
+                continue
+            mismatch = url_identifier_error(record, field) if field in {'url', 'pdf_url'} else None
+            if mismatch:
+                errors.append(f'{where}.{mismatch}')
+            if field == 'url':
                 key = canonical_paper_url(value)
                 if key in seen['url']:
                     errors.append(f'{where}: duplicate canonical paper URL')
