@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 199 | 197 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 178 | 178 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 214 | 214 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 172 | 172 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 220 | 220 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 211 个出现项含目录链接；共关联 204 个不同资源 ID 和 1 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 353 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 359 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -228,6 +228,11 @@
 | LeanREA 命令行逆向分析技能 | 已收录 | [来源](https://github.com/aicodeking/leanrea/blob/09ba4aa0217f82cd880f855a60b877f59f39b22b/README.md) |
 | Reverse Engineering Assistant: a framework advertised for offline file-analysis reports | 待核查 | [来源](https://x.com/i/status/2111230457568227404) |
 | re2ds：Resident Evil 2 的原生 Nintendo DS 引擎 | 已收录 | [来源](https://www.reddit.com/r/ReverseEngineering/comments/1x85dp5/a_port_of_resident_evil_2_for_the_nintendo_ds/) |
+| Starshield signals: a reader's idea to investigate frequencies with REA | 证据不足 | [来源](https://x.com/i/status/2111395824991097074) |
+| Windows kernel: an REA collaboration idea for a free operating system | 证据不足 | [来源](https://x.com/i/status/2111405429486211272) |
+| Amazon Prime tvOS: investigating IPA Universal Links to open shows from a personal app | 证据不足 | [来源](https://x.com/i/status/2111424789827228006) |
+| Claude and Codex limits: an REA-assisted top-bar display report | 证据不足 | [来源](https://x.com/i/status/2111426952162947310) |
+| LLVM ABI: gingerBill's account of using LLMs to investigate undocumented internals | 证据不足 | [来源](https://x.com/i/status/2111396413066363009) |
 | Super Mario 64 DS：带重定位核对的匹配反编译 | 已收录 | [来源](https://github.com/tangosdev/sm64ds-decomp/blob/af8636d638322b88738ef7ad4b4f28ed9c5be24f/README.md) |
 | Define correctness as PASS/FAIL, then let agents iterate | 证据不足 | [来源](https://x.com/arpit_bhayani/status/2109505311904309621) |
 | Where "software is solved" is overstated | 证据不足 | [来源](https://x.com/wangdou/status/2109404200513708307) |
@@ -364,6 +369,7 @@
 | TH095：东方文花帖 1.02a 的函数级重建 | 已收录 | [来源](https://github.com/N0zoM1z0/th095/blob/6084b36cfa90ac1720f0cba36caec3ee56fc5e1f/README.md) |
 | TH04：从源码重建东方幻想乡的四个 PC-98 程序 | 已收录 | [来源](https://github.com/N0zoM1z0/th04/blob/11577b35392c706f3bd39ff1ea932c003e1eaa6b/README.md) |
 | DX-Ball：借助 REA 并由 Codex 完成的函数级重建 | 已收录 | [来源](https://github.com/N0zoM1z0/dx-ball/blob/d1251ea4bd000c7204c895c029194cae1d269731/README.md) |
+| Pre-CU Star Wars Galaxies: an idea to accelerate emulator reverse engineering with AI | 证据不足 | [来源](https://x.com/i/status/2111615624678088837) |
 | A pro-software licensing algorithm: an unverified report of a REA keygen in hours | 证据不足 | [来源](https://x.com/i/status/2111423397095723483) |
 | Game ad behavior: a reported Claude inspection of obfuscated JavaScript | 证据不足 | [来源](https://x.com/i/status/2111582817251738031) |
 | LG OLED pause ads: an idea to modify firmware with Codex | 证据不足 | [来源](https://x.com/i/status/2111556091712581745) |
