@@ -43,7 +43,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [paradiseduo/IPAPatch](https://github.com/paradiseduo/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[412 stars]**
 - [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — A low-overhead dynamic binary instrumentation and modification tool for ARM (both AArch32 and AArch64 support) and RISC-V (RV64GC). **[400 stars]**
 - [nowsecure/frida-cycript](https://github.com/nowsecure/frida-cycript) — Cycript fork powered by Frida. **[396 stars]**
-- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — Human-friendly cross-platform system call tracing and hooking library based on Frida's Stalker **[360 stars]**
+- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — Human-friendly cross-platform system call tracing and hooking library based on Frida's Stalker **[360 stars]** · Curated: [Interruptor](https://awesomerea.org/resources/interruptor/)
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — Use Frida to retrieve functions dynamically registered through JNI RegisterNatives. **[353 stars]**
 - [roger1337/JDBG](https://github.com/roger1337/JDBG) — Java Dynamic Reverse Engineering and Debugging Tool **[331 stars]**
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra - a visual bridge between a GDB session and GHIDRA **[324 stars]**

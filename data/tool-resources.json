@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "interruptor",
+    "name": "Interruptor",
+    "url": "https://github.com/FrenchYeti/interruptor",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Frida library, taken from the Dexcalibur project, that uses Frida’s Stalker to trace a process’s system calls and print strace-like lines with the calling thread, module and offset, decoded flag values and file paths resolved from descriptors. A trace can be limited to chosen modules and syscalls by name or pattern, started when a given library loads, extended with Interceptor-style per-syscall callbacks, and used to write drcov basic-block coverage files. The README documents Linux and Android on AArch64 and x64; the source also contains AArch32 Linux and macOS arm64 and x64 entry points.",
+    "description_zh": "源自 Dexcalibur 项目的 Frida 库，借助 Frida 的 Stalker 跟踪进程的系统调用，输出类似 strace 的记录，标明调用线程、模块与偏移，解码标志位取值，并根据文件描述符还原文件路径。跟踪范围可按名称或模式限定到指定模块和系统调用，可在某个库加载时启动，可附加 Interceptor 风格的逐系统调用回调，还能生成 drcov 基本块覆盖率文件。README 说明支持 AArch64 与 x64 上的 Linux 和 Android；源码中另有 AArch32 Linux 以及 macOS arm64、x64 的入口。",
+    "evidence_url": "https://github.com/FrenchYeti/interruptor/blob/6faa9f641884f90953080dde0a1a45cf96a76801/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest npm release at review: @reversense/interruptor 1.0.12, published 2023-04-02; the newest GitHub release is v1.0.9 (2023-03-29). The reviewed main commit of 2026-09-23 adds unreleased changes, including refactored arm64 register handling and a preadv2/pwritev2 argument fix, without a version bump, and the README still calls the project a work in progress.",
+      "It is used inside the analyst’s own Frida agent: install the npm package, build from source with npm and TypeScript, or load a webpack-bundled per-architecture script. The README says passing a TypeScript agent directly to frida needs Frida 16 or later, and package.json depends on @types/frida-gum ^17.3.0. Android examples attach to a USB device with frida -U; the README warns that the CodeShare quick-start cannot be configured and may fail on obfuscated or multi-threaded apps.",
+      "The README’s support list names the Linux syscall API on AArch64 (SVC, with HVC marked work in progress) and x64 (SYSCALL); the AArch32 Linux and macOS factories in the source have no documented status. The agent tracer cannot follow child or multiple processes, and a standalone host-side tracer is marked TODO. Coverage needs an output path the target process can write. CI runs Mocha tests of the Linux AArch32 and arm64 factories on Node 16; no device test results are published. Intended for software the analyst is authorized to inspect.",
+      "package.json and the npm metadata declare GPL-3.0-only, but the LICENSE file is x64dbg’s modified GPL-3.0 text, whose added exception concerns x64dbg plugins rather than this project, so GitHub cannot classify it. The README also promotes the separate commercial Dexcalibur Pro. The reviewed sources establish no REA connection; nothing was installed or run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/FrenchYeti/interruptor/blob/6faa9f641884f90953080dde0a1a45cf96a76801/package.json",
+      "https://github.com/FrenchYeti/interruptor/blob/6faa9f641884f90953080dde0a1a45cf96a76801/LICENSE",
+      "https://github.com/FrenchYeti/interruptor/blob/6faa9f641884f90953080dde0a1a45cf96a76801/.github/workflows/ci.yml",
+      "https://github.com/FrenchYeti/interruptor/tree/6faa9f641884f90953080dde0a1a45cf96a76801/src/arch",
+      "https://github.com/FrenchYeti/interruptor/blob/6faa9f641884f90953080dde0a1a45cf96a76801/src/utilities/Coverage.ts",
+      "https://github.com/FrenchYeti/interruptor/releases/tag/v1.0.9",
+      "https://www.npmjs.com/package/@reversense/interruptor/v/1.0.12"
+    ]
   }
 ]

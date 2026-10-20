@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "interruptor": {
+    "name": "Interruptor 系统调用跟踪库",
+    "requirements": [
+      "审阅时 npm 上的最新版本为 @reversense/interruptor 1.0.12，发布于 2023-04-02；GitHub 上最新的发布版本为 v1.0.9（2023-03-29）。所审阅的 main 分支提交（2026-09-23）包含尚未发布的改动，例如重构 arm64 寄存器处理、修正 preadv2/pwritev2 参数，但没有更新版本号；README 仍称项目处于开发中。",
+      "需在分析者自己的 Frida 代理中使用：安装 npm 包、用 npm 和 TypeScript 从源码构建，或加载按架构用 webpack 打包的脚本。README 指出，直接把 TypeScript 代理交给 frida 运行需要 Frida 16 或更高版本；package.json 依赖 @types/frida-gum ^17.3.0。Android 示例通过 frida -U 连接 USB 设备；README 提醒 CodeShare 快速上手方式无法配置，面对混淆或多线程应用时可能失败。",
+      "README 的支持列表只列出 AArch64（SVC，HVC 标为开发中）和 x64（SYSCALL）上的 Linux 系统调用 API；源码中的 AArch32 Linux 与 macOS 工厂没有说明支持状态。代理跟踪器无法跟随子进程或多个进程，主机端独立跟踪器标为待办。生成覆盖率需要目标进程可写的输出路径。CI 在 Node 16 上运行针对 Linux AArch32 与 arm64 工厂的 Mocha 测试；没有公开设备上的测试结果。仅用于分析者有权检查的软件。",
+      "package.json 与 npm 元数据声明 GPL-3.0-only，但 LICENSE 文件是 x64dbg 修改过的 GPL-3.0 文本，其中新增的例外条款针对 x64dbg 插件而非本项目，因此 GitHub 无法识别其许可证。README 还推广另行提供的商业版 Dexcalibur Pro。所审来源未确立与 REA 的关联；本次核查未安装或运行任何内容。"
+    ]
   }
 }

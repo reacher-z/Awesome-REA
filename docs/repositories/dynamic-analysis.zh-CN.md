@@ -43,7 +43,7 @@
 - [paradiseduo/IPAPatch](https://github.com/paradiseduo/IPAPatch) — 无需越狱，轻松为 iOS 应用打补丁。 **[412 星标]**
 - [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — 面向 ARM（支持 AArch32 和 AArch64）及 RISC-V（RV64GC）的低开销动态二进制插桩与修改工具。 **[400 星标]**
 - [nowsecure/frida-cycript](https://github.com/nowsecure/frida-cycript) — 由 Frida 驱动的 Cycript 分支。 **[396 星标]**
-- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — 基于 Frida Stalker、易于使用的跨平台系统调用跟踪与 hook 库。 **[360 星标]**
+- [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — 基于 Frida Stalker、易于使用的跨平台系统调用跟踪与 hook 库。 **[360 星标]** · 精选：[Interruptor 系统调用跟踪库](https://awesomerea.org/zh/resources/interruptor/)
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — 使用 Frida 获取通过 JNI RegisterNatives 动态注册的函数。 **[353 星标]**
 - [roger1337/JDBG](https://github.com/roger1337/JDBG) — Java 动态逆向工程与调试工具。 **[331 星标]**
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra：连接 GDB 会话与 Ghidra 的可视化桥梁。 **[324 星标]**
