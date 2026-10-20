@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "retrowrite",
+    "name": "RetroWrite",
+    "url": "https://github.com/HexHive/retrowrite",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "HexHive's static binary rewriter for x64 and aarch64 Linux ELF binaries, which turns a binary into symbolized, reassemblable assembly so instrumentation can be inserted without source code and without heuristics. Bundled passes add a binary-only AddressSanitizer and AFL coverage instrumentation, plus a coarse-grained control-flow-integrity pass on aarch64, and the symbolized assembly can also be edited by hand or by other tools before reassembly. The KRetrowrite variant of the x64 rewriter instruments Linux kernel modules with BASan or kcov for kernel fuzzing.",
+    "description_zh": "HexHive 开发的静态二进制改写工具，面向 x64 与 aarch64 的 Linux ELF 二进制：将二进制转换为符号化、可重新汇编的汇编代码，从而无需源码、也不依赖启发式规则即可插入插桩。附带的改写模块可添加仅针对二进制的 AddressSanitizer 和 AFL 覆盖率插桩，aarch64 上另有函数入口粗粒度控制流完整性模块；符号化的汇编也可在重新汇编前手工或用其他工具修改。x64 改写器的 KRetrowrite 变体可用 BASan 或 kcov 为 Linux 内核模块插桩，用于内核模糊测试。",
+    "evidence_url": "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "There are no releases or tags, and setup.py says 1.0.0. The reviewed master commit, from 2025-04-26, adjusts an x64 pass added four days earlier that randomizes instruction order within functions; before that, the latest commits, from 2023 and 2024, fixed capstone options and executable stacks on older kernels.",
+      "Written in Python 3 (the README names 3.6) with pyelftools, capstone 4.0.2 or later, intervaltree and archinfo pinned to 9.1.11752, which the README says to install with pip rather than from distribution packages. x64 output is reassembled with an ordinary compiler such as gcc, linking -lasan for BASan, or with afl-gcc or afl-clang for AFL coverage; on aarch64, retrowrite -a assembles and links. The README's KRetrowrite setup calls a setup.sh that sits in the demo folders rather than at the repository root.",
+      "Inputs are the user's own binaries or kernel modules. Per the README feature table, the x64 rewriter needs position-independent, unstripped binaries from standard compilers and has no C++ support, while the aarch64 rewriter also takes stripped and non-PIE binaries but not kernel modules or C++; --ignore-no-pie and --ignore-stripped skip the checks, to be used with caution. The two architectures use different rewriting algorithms: the IEEE S&P 2020 paper describes the x64 version and a separate HexHive thesis the aarch64 version.",
+      "CI runs a SPEC CPU benchmark script on a self-hosted runner, and test scripts clone and rewrite coreutils, SQLite and Debian packages. Demos cover userspace, kernel-module and fuzzing setups; the Docker fuzzing demo bundles fuzz seeds and a patched AFL 2.52b archive but also needs a self-built clang 8, a git bundle of the repository and the separately downloaded LAVA-M corpus, and kernel fuzzing setup downloads about 10 GB of syzkaller VM files.",
+      "MIT according to the LICENSE file and README, although GitHub does not recognize the license; capstone is included as a submodule under its own license. The reviewed sources state no REA use, and this collection did not install RetroWrite or rewrite any binary."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/retrowrite#L160-L200",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/requirements.txt",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/setup.py",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/.github/workflows/action.yml",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/demos/fuzzing/README.md",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/demos/fuzzing/docker/README.md",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/demos/kernel_demo/README.md",
+      "https://github.com/HexHive/retrowrite/blob/3b1e366ff8d2449a4f4c3157dd95c6f39c0a310b/LICENSE",
+      "https://doi.org/10.1109/SP40000.2020.00009",
+      "https://hexhive.epfl.ch/theses/20-dibartolomeo-thesis.pdf"
+    ]
   }
 ]

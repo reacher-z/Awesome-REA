@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "retrowrite": {
+    "name": "RetroWrite 静态二进制改写框架",
+    "requirements": [
+      "没有发布版本或标签，setup.py 标注的版本为 1.0.0。所审阅的 master 提交日期为 2025-04-26，调整了四天前新增的一个 x64 改写模块，该模块会打乱函数内的指令顺序；在此之前的最近提交来自 2023 和 2024 年，修复了 capstone 选项以及旧内核上的可执行栈问题。",
+      "以 Python 3 编写（README 写明 3.6），依赖 pyelftools、capstone 4.0.2 或更高版本、intervaltree，以及固定为 9.1.11752 的 archinfo；README 建议用 pip 安装这些依赖，而不要使用发行版软件包。x64 输出可用 gcc 等普通编译器重新汇编，BASan 需链接 -lasan，AFL 覆盖率则改用 afl-gcc 或 afl-clang；在 aarch64 上由 retrowrite -a 完成汇编和链接。README 中 KRetrowrite 的安装步骤调用 setup.sh，但该脚本位于各演示目录中，而不在仓库根目录。",
+      "输入为使用者自己的二进制或内核模块。根据 README 的功能表，x64 改写器要求位置无关、未去除符号且由标准编译器生成的二进制，不支持 C++；aarch64 改写器还能处理去除符号和非 PIE 的二进制，但不支持内核模块和 C++；--ignore-no-pie 与 --ignore-stripped 可跳过这些检查，需谨慎使用。两种架构采用不同的改写算法：IEEE S&P 2020 论文介绍 x64 版本，另一篇 HexHive 学位论文介绍 aarch64 版本。",
+      "CI 在自托管运行器上执行 SPEC CPU 基准脚本，测试脚本会克隆并改写 coreutils、SQLite 和 Debian 软件包。演示涵盖用户态、内核模块和模糊测试环境；Docker 模糊测试演示附带模糊测试种子和打过补丁的 AFL 2.52b 压缩包，但还需要自行构建的 clang 8、仓库的 git bundle 以及另行下载的 LAVA-M 语料；内核模糊测试的安装会下载约 10 GB 的 syzkaller 虚拟机文件。",
+      "依据 LICENSE 文件与 README 采用 MIT 许可，但 GitHub 未能识别该许可；capstone 以子模块形式引入，适用其自身许可。所审来源未提及 REA 的使用，本收录未安装 RetroWrite，也未改写任何二进制。"
+    ]
   }
 }
