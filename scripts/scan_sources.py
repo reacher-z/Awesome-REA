@@ -24,6 +24,7 @@ from urllib.parse import quote, unquote, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from source_descriptions import SOURCE_DESCRIPTION_POLICY, capture_description
 from source_scope import DUPLICATE_README_REASON, read_scope
+import strict_json
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -683,7 +684,10 @@ def save(output, meta, records, failures, complete=False):
 def load_resume(path):
     """Validate retained evidence before any authentication or network access."""
     raw = path.read_bytes()
-    document = json.loads(raw)
+    try:
+        document = strict_json.loads(raw)
+    except ValueError as error:
+        raise ValueError(f'{path}: {error}') from error
     if not isinstance(document, dict):
         raise ValueError('Resume snapshot must be an object')
     meta, records, failures = document.get('meta'), document.get('resources'), document.get('failures', [])

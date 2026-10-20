@@ -16,6 +16,7 @@ from validate_papers import validate_papers
 from localization import LOCALE_FILES, validate_localizations
 from source_scope import validate_scope
 from case_coverage import validate_case_coverage
+import strict_json
 
 ROOT = Path(__file__).resolve().parents[1]
 MARKER = '<!-- awesome-rea-automated-review -->'
@@ -160,19 +161,18 @@ def json_privacy_findings(filename, text):
     return findings
 
 
-def parse_json(text):
-    def unique_object(pairs):
-        result = {}
-        for key, value in pairs:
-            if key in result:
-                raise ValueError('Duplicate JSON key')
-            result[key] = value
-        return result
+class InvalidJSON(ValueError):
+    """A review input that is not strict JSON; the message names only its allowlisted path."""
 
-    def invalid_constant(value):
-        raise ValueError('Non-JSON numeric constant')
 
-    return json.loads(text, object_pairs_hook=unique_object, parse_constant=invalid_constant)
+def parse_json(text, filename=None):
+    # The same parser as local validation, so both reject duplicate keys and NaN/Infinity.
+    try:
+        return strict_json.loads(text)
+    except ValueError as error:
+        if filename is None:
+            raise
+        raise InvalidJSON(f'{filename}: expected strict JSON without duplicate keys or NaN/Infinity.') from error
 
 
 def review_localizations(records, contents, errors):
@@ -289,26 +289,26 @@ def review_data(contents, changed):
     if set(CASE_INPUTS) & changed:
         case_records = []
         for filename in CATALOGS:
-            data = parse_json(contents[filename])
+            data = parse_json(contents[filename], filename)
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array for coverage mappings.')
             else:
                 case_records.extend(data)
-        case_papers = parse_json(contents['data/papers.json'])
+        case_papers = parse_json(contents['data/papers.json'], 'data/papers.json')
         if not isinstance(case_papers, list):
             errors.append('Research papers must be an array for coverage mappings.')
         else:
-            validate_case_coverage(parse_json(contents[CASE_COVERAGE]), case_records,
+            validate_case_coverage(parse_json(contents[CASE_COVERAGE], CASE_COVERAGE), case_records,
                                    case_papers, errors, url_check=public_https_error)
             reviewed.append('Case inventory checked for pinned sources, typed catalog mappings, alias decisions and occurrence/report counts; no project count or runtime reproduction inferred.')
     if 'data/papers.json' in changed:
-        papers = parse_json(contents['data/papers.json'])
+        papers = parse_json(contents['data/papers.json'], 'data/papers.json')
         validate_papers(papers, errors, url_check=public_https_error)
         reviewed.append('Research papers checked separately for bibliography, bilingual scope, dates, duplicate identifiers and public source URLs.')
     if set(CATALOGS) & changed:
         records = []
         for filename in CATALOGS:
-            data = parse_json(contents[filename])
+            data = parse_json(contents[filename], filename)
             if not isinstance(data, list):
                 errors.append(f'{filename}: expected a JSON array.')
             else:
@@ -316,14 +316,14 @@ def review_data(contents, changed):
         validate_resources(records, errors)
         reviewed.append(f'{len(records)} curated records checked together for schema, duplicate IDs/URLs, provenance, targets, dates, and review labels.')
     if 'data/benchmarks.json' in changed:
-        data = parse_json(contents['data/benchmarks.json'])
+        data = parse_json(contents['data/benchmarks.json'], 'data/benchmarks.json')
         if not isinstance(data, list):
             errors.append('Benchmarks must be an array.')
         else:
             validate_benchmarks(data, errors)
             reviewed.append(f'{len(data)} benchmark records checked for timestamp, count, and source consistency.')
     if set(SOURCE_INPUTS) & changed:
-        data = parse_json(contents[SOURCE_INDEX])
+        data = parse_json(contents[SOURCE_INDEX], SOURCE_INDEX)
         validate_source_index(data, errors)
         reviewed.append('Automated source-index records checked separately from curated resources.')
         if (isinstance(data, dict) and isinstance(data.get('resources'), list)
@@ -444,6 +444,8 @@ def main():
         findings, checked = review_data(contents, changed & REVIEW_FILES)
         errors.extend(findings)
         reviewed.extend(checked)
+    except InvalidJSON as error:
+        errors.append(str(error))
     except (ValueError, TypeError, KeyError):
         errors.append('Required catalog, localization, or source-scope JSON could not be parsed or validated. Check its shape locally.')
     manual = any(path.startswith(('scripts/', '.github/', 'site/')) for path in changed)
