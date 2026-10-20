@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "bm2-battery-monitor-ble-case": {
+    "name": "BM2 Battery Monitor：重建加密的 BLE 电压协议",
+    "requirements": [
+      "所审阅的 master 分支提交（2026-10-13）合并了一位贡献者的修复：按 AES 块逐一解密历史数据，并以 PyCryptodome 替换已过时的 pycrypto 依赖；项目没有发布版本，pyproject.toml 将包名定为 bm2 0.1.0，要求 Python 3.8+。客户端只提供读取当前电压和电压历史两种调用。历史记录的时间戳并非从设备读取，而是以当前时间为终点、按两分钟间隔倒推得出；ESPHome 模板只解码当前电压。",
+      "使用时需要一台 BM2 监测器及其蓝牙地址。运行时无需厂商应用或固件，仓库也不含应用代码、反编译源码或抓包记录；作者说明中称从厂商 Android 应用中恢复的 AES-128-CBC 密钥，被硬编码在 Python 客户端和 ESPHome YAML 中。",
+      "Python 客户端使用 Bleak ~0.14.2 和 PyCryptodome，找不到设备时会调用 bluetoothctl 强制断开连接，因此这一恢复路径依赖 Linux BlueZ；MQTT 示例还需要 paho-mqtt ~1.6.1。ESPHome 模板面向采用 Arduino 框架的 nodemcu-32s ESP32 开发板，使用 mbedtls，并需在 secrets 文件中填写 Wi-Fi、MQTT 及监测器 MAC 地址。",
+      "除一个 mypy 检查脚本外，项目没有测试或 CI。说明文档展示了解密后的示例数据包解码为 12.88 V，历史数据修复则报告在 Linux Mint 22.3 上配合 PowerHouse BM2 N2099A 测试；其他 BM2 型号和固件版本未见记录。",
+      "依据 LICENSE.txt 采用 MIT 许可；BM2 设备和 Battery Monitor 2 应用仍归其厂商所有。本次未连接设备，也未运行任何代码，所审来源未确立 AI 或 REA 使用。"
+    ]
   }
 }

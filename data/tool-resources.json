@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bm2-battery-monitor-ble-case",
+    "name": "BM2 Battery Monitor: reconstructing an encrypted BLE voltage protocol",
+    "url": "https://github.com/KrystianD/bm2-battery-monitor",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reimplements the Bluetooth Low Energy protocol of the BM2 (Battery Monitor 2) car battery monitor so that its readings can be used without the vendor's Android app. A Python client built on Bleak decrypts the monitor's AES-encrypted notifications to read the current voltage and request the stored voltage history, an ESPHome template exposes the voltage from an ESP32, and example apps view and dump readings or forward them over MQTT. The author's write-up reports that the key and packet layout were recovered from the vendor app; results are author- and contributor-reported.",
+    "description_zh": "重新实现 BM2（Battery Monitor 2）汽车电池监测器的低功耗蓝牙协议，使其读数无需厂商的 Android 应用即可使用。基于 Bleak 的 Python 客户端会解密监测器以 AES 加密的通知，读取当前电压并请求设备存储的电压历史；ESPHome 模板可在 ESP32 上提供电压读数，示例应用则用于查看、导出读数或通过 MQTT 转发。作者的说明称密钥和数据包格式是从厂商应用中恢复的；结果均为作者及贡献者报告。",
+    "evidence_url": "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2026-10-13 merges a contributor fix that decrypts history data block by block and replaces the obsolete pycrypto dependency with PyCryptodome; there are no releases, and pyproject.toml names package bm2 0.1.0 for Python 3.8+. The client offers two calls, current voltage and voltage history. History timestamps are not read from the device but assigned backwards from the current time at two-minute intervals, and the ESPHome template decodes only the current voltage.",
+      "Use needs a BM2 monitor and its Bluetooth address. No vendor app or firmware is needed at runtime, and the repository contains no app code, decompiled sources or captures; the AES-128-CBC key that the write-up reports recovering from the vendor's Android app is hard-coded in both the Python client and the ESPHome YAML.",
+      "The Python client uses Bleak ~0.14.2 and PyCryptodome and calls bluetoothctl to force a disconnection when the device is not found, tying that recovery path to Linux BlueZ; the MQTT example adds paho-mqtt ~1.6.1. The ESPHome template targets a nodemcu-32s ESP32 board with the Arduino framework, mbedtls and a secrets file for Wi-Fi, MQTT and the monitor's MAC address.",
+      "There are no tests or CI beyond a mypy check script. The write-up shows decrypted sample packets decoding to 12.88 V, and the history fix reports testing on Linux Mint 22.3 with a PowerHouse BM2 N2099A; other BM2 models and firmware versions are not documented.",
+      "MIT, per LICENSE.txt; the BM2 device and the Battery Monitor 2 app keep their vendor's rights. No device was connected and no code was run here, and the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/.docs/reverse_engineering.md",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/bm2_python/src/bm2/client.py",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/bm2_python/src/bm2/encryption.py",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/bm2_esphome/bm2.yaml",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/bm2_esphome/main.yaml",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/bm2_python/requirements.txt",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/pyproject.toml",
+      "https://github.com/KrystianD/bm2-battery-monitor/blob/494a39c5edfbf5c76906469f0da545e42882b28c/LICENSE.txt",
+      "https://github.com/KrystianD/bm2-battery-monitor/pull/28"
+    ]
   }
 ]
