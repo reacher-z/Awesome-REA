@@ -107,6 +107,10 @@ const UI = {
     "allKinds": "All types",
     "categoryLabel": "Category",
     "allCategories": "All categories",
+    "curatedSortLabel": "Sort",
+    "curatedSortFeatured": "Featured first",
+    "curatedSortName": "Name",
+    "curatedSortReviewed": "Latest source review",
     "reviewNote": "Reviewed against original sources. Names open the resource; details explain requirements and limits.",
     "aboutCurated": "Collection notes →",
     "loading": "Loading resources…",
@@ -290,6 +294,10 @@ const UI = {
     "allKinds": "所有类型",
     "categoryLabel": "类别",
     "allCategories": "所有类别",
+    "curatedSortLabel": "排序",
+    "curatedSortFeatured": "精选优先",
+    "curatedSortName": "名称",
+    "curatedSortReviewed": "最近来源复核",
     "reviewNote": "已核对原始来源。点击名称访问原始资源，展开详情查看使用条件与局限。",
     "aboutCurated": "收录说明 →",
     "loading": "正在加载资源…",
@@ -379,7 +387,7 @@ const params = new URLSearchParams(location.search);
 document.documentElement.dataset.indexMode = ["source-index", "repositories"].includes(params.get("view")) ? "source-index" : "curated";
 // The path selects the default language; valid legacy query overrides still work.
 const pathLanguage = location.pathname.startsWith("/zh/") ? "zh" : "en";
-const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
+const state = { layout: params.get("layout") === "cards" ? "cards" : "compact", lang: ["en", "zh"].includes(params.get("lang")) ? params.get("lang") : pathLanguage, q: params.get("q") || "", group: params.get("group") || "all", category: params.get("category") || "all", kind: params.get("kind") || "all", target: params.get("target") || "all", order: ["name", "reviewed"].includes(params.get("order")) ? params.get("order") : "featured", visible: 15, topicLabels: {}, categoryLabels: {}, records: [], loaded: false, error: false, details: null, detailsError: false, pendingRequirements: [] };
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const t = (key) => UI[state.lang][key] || UI.en[key] || key;
@@ -408,7 +416,7 @@ function entryHref(kind, identifier, language = state.lang) {
 }
 function curatedURL() {
   const next = new URL(location.href);
-  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["lang", pathLanguage], ["layout", "compact"]]) {
+  for (const [key, defaultValue] of [["q", ""], ["group", "all"], ["category", "all"], ["kind", "all"], ["target", "all"], ["order", "featured"], ["lang", pathLanguage], ["layout", "compact"]]) {
     if (state[key] !== defaultValue) next.searchParams.set(key, state[key]);
     else next.searchParams.delete(key);
   }
@@ -502,7 +510,15 @@ function loadDetails() {
 function queryTerms() { return normalizeSearchText(state.q).trim().split(/\s+/).filter(Boolean); }
 // skip leaves one facet out, so that facet's choices can be counted against every other active filter.
 function matches(r, terms, skip = "") { return (state.group==="all"||r.group===state.group)&&(skip==="target"||state.target==="all"||r.targets.includes(state.target))&&(skip==="category"||state.category==="all"||r.category===state.category)&&(skip==="kind"||state.kind==="all"||r.kind===state.kind)&&terms.every(term=>r.search.includes(term)); }
-function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};return found.sort((a,b)=>rank(a)-rank(b)||a.order-b.order); }
+function filtered() { const terms=queryTerms();const found=state.records.filter(r=>matches(r,terms));const rank=r=>{const featured=FEATURED.indexOf(r.id);if(featured>=0)return featured;return 100+({"tool":0,"integration":1,"project":2,"case-study":3,"collection":4,"research":5,"learning-resource":6,"documentation":7}[r.kind]??8);};const byFeatured=(a,b)=>rank(a)-rank(b)||a.order-b.order;return found.sort(curatedOrder(byFeatured)); }
+// Optional orders: localized display name (the active language's collator, ties by ID) or the displayed
+// source-review date, newest first. Both fall back deterministically; the default order is unchanged.
+function curatedOrder(byFeatured) {
+  const name = record => state.lang === "zh" ? (record.name_zh || record.name) : record.name;
+  if (state.order === "name") return (a,b) => compareLabels(name(a), name(b)) || compareIDs(a.id, b.id);
+  if (state.order === "reviewed") return (a,b) => compareIDs(b.verified_at.slice(0,10), a.verified_at.slice(0,10)) || byFeatured(a,b);
+  return byFeatured;
+}
 // Each target button and Type/Category option shows how many results it would give with the other filters and the query.
 // Empty choices are disabled unless selected, so a shared URL still shows its own choice; counts are not announced.
 function renderFacets() {
@@ -581,6 +597,8 @@ $("#search-input").value = state.q;
 $("#search-input").addEventListener("input", event => { state.q = event.target.value; state.visible = 15; updateURL(); if (state.loaded) { loadDetails(); render(); } });
 $("#kind-select").addEventListener("change", event => { state.kind=event.target.value; state.visible=15; updateURL(); if(state.loaded)render(); });
 $("#category-select").addEventListener("change", event => { state.category = event.target.value; state.visible = 15; updateURL(); if (state.loaded) render(); });
+$("#curated-sort").value = state.order;
+$("#curated-sort").addEventListener("change", event => { state.order = ["name","reviewed"].includes(event.target.value) ? event.target.value : "featured"; state.visible = 15; updateURL(); if (state.loaded) render(); });
 $$('[data-group]').forEach(el => el.addEventListener("click", () => { state.group = el.dataset.group; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $$('[data-target]').forEach(el => el.addEventListener("click", () => { state.target = el.dataset.target; state.visible = 15; updateURL(); if (state.loaded) render(); }));
 $("#layout-select").addEventListener("change", event => changeLayout(event.target.value));
@@ -649,7 +667,7 @@ function curatedExport() {
   const found = filtered();
   return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
     "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
-    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
+    {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group, order: state.order}, "displayed", found.length, state.records.length),
     full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
 }
 function sourceExport() {
