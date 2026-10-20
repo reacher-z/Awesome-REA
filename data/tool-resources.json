@@ -11254,5 +11254,43 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fujihack",
+    "name": "FujiHack",
+    "url": "https://github.com/fujihack/fujihack",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Research codebase for reverse engineering Fujifilm cameras so that custom code can run on them under a patched firmware. It holds ARM firmware patches, chiefly a PTP/USB debugger that adds memory read, write and execute commands, a host CLI that uploads code and dumps memory over USB, and C headers documenting Fujifilm’s RTOS API with per-model firmware addresses and function stubs. On-camera code adds POSIX, graphics and I/O wrappers over that RTOS, a video record-limit mod, button remapping and the Frontier UI and module system.",
+    "description_zh": "以逆向 Fujifilm 相机为目标的研究代码库，使自定义代码能够在打过补丁的固件下于相机上运行。其中包括 ARM 固件补丁，最主要的是为 PTP/USB 增加内存读、写和执行命令的调试器补丁；一个通过 USB 上传代码并转储内存的主机命令行工具；以及记录 Fujifilm RTOS API 的 C 头文件，附各机型的固件地址和函数桩。相机端代码在该 RTOS 之上提供 POSIX、图形和 I/O 封装，并包含解除录像时长限制的修改、按键重映射，以及名为 Frontier 的界面与模块系统。",
+    "evidence_url": "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit dates from 2024-08-17. Its two GitHub releases carry no files: 0.1.0, the debugger release of 2022-10-27, is marked deprecated in favour of a separate fffw project, and 0.2.0, a 2023 DOOM-port demo for the X-A2, is marked no longer supported. The README says FujiHack runs only under a patched firmware, that custom firmware is always dangerous and can damage the camera, and that recovery of bricked devices through the SoC boot ROM has not been reverse engineered. It reports the debugger patch ported to the XF1 and X-A2; model headers with firmware addresses cover ten cameras, from the Z3 and HS20EXR to the X-T4.",
+      "The repository contains no Fujifilm firmware, dumps or keys: model headers reference the vendor’s own firmware download URLs, and patching happens in the separate browser-based patcher, which the README says unpacks, injects, patches, repacks and downgrades a firmware DAT file the user selects. Helper programs in etc/, including a Unicorn emulation script, read firmware or RAM dumps the user makes from their own camera; this record restates no patching or installation procedure.",
+      "On-camera code is built per model with arm-none-eabi-gcc, plus rustc for a few Rust files, through make hack.bin model=<model>. The host fuji CLI needs libusb-1.0 and the camlib PTP library submodule, and its Windows build downloads the author’s libwpd DLL. A workflow that compiled the X-A2 target sits in a disabled .github/workflows_ directory, so no CI runs, and there are no tests. This collection reviewed source and documentation without building anything or connecting a camera.",
+      "GPL-3.0 per LICENSE and the README, copyright 2021–2024 Daniel C and contributors; usb/dbg.c carries another contributor’s copyright notice, and the camlib submodule keeps its own license. The README frames the work as interoperability research; Fujifilm’s firmware and trademarks remain the vendor’s. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/Makefile",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/src/Makefile",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/usb/Makefile",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/usb/main.c",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/src/patch/debug.S",
+      "https://github.com/fujihack/fujihack/tree/754acff9aa0322df19446cf7eca699b221c3330d/model",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/model/xf1_101.h",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/etc/NOTES.md",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/etc/unicorn/main.py",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/.github/workflows_/makefile.yml",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/.gitmodules",
+      "https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/LICENSE",
+      "https://github.com/fujihack/fujihack/releases/tag/0.2.0",
+      "https://github.com/fujihack/fujihack/releases/tag/0.1.0"
+    ]
   }
 ]
