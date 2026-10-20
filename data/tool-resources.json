@@ -11191,5 +11191,38 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "pe-sieve",
+    "name": "PE-sieve",
+    "url": "https://github.com/hasherezade/pe-sieve",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Windows process scanner by hasherezade that finds and dumps implants in one running process: replaced or injected PE modules, shellcode, inline and IAT hooks and other in-memory patches, with the README naming Process Hollowing, Process Doppelgänging and reflective DLL injection among the techniques it detects. Options add shellcode detection by patterns or statistics, scans of thread call stacks, non-executable pages and encrypted or obfuscated content, a choice of dump mode with import-table recovery for dumped PEs, minidumps and JSON reports. It builds as an EXE, as a DLL with a small API that Python, Go and Rust bindings use, or as a static library, and is the engine behind HollowsHunter and MalUnpack.",
+    "description_zh": "hasherezade 开发的 Windows 进程扫描工具，可在单个运行中的进程里发现并转储植入内容：被替换或注入的 PE 模块、shellcode、内联钩子与 IAT 钩子以及其他内存补丁；README 列出的可检测技术包括 Process Hollowing、Process Doppelgänging 和反射式 DLL 注入。可选功能包括按特征模式或统计方法检测 shellcode，扫描线程调用栈、不可执行内存页以及加密或混淆内容，选择转储模式并为转储的 PE 恢复导入表，生成 minidump 和 JSON 报告。它可构建为 EXE、提供简单 API 的 DLL（Python、Go 和 Rust 绑定均基于该 API）或静态库，也是 HollowsHunter 和 MalUnpack 的扫描引擎。",
+    "evidence_url": "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.4.1.1, published 2025-09-13, with 32- and 64-bit EXEs and DLLs; the README also lists Chocolatey and Scoop packages. The reviewed master commit (2026-06-06) reports version 0.4.1.5, so the pinned sources may describe unreleased changes. PE-sieve runs on Windows and scans one process per run, selected by PID; the separate HollowsHunter scans many processes or the whole system.",
+      "Source builds use CMake 3.12+ (or the MinGW build script) and a recursive clone for the libpeconv, paramkit and sig_finder submodules, with an option to build an EXE, a DLL or a static library. The Python bindings in the repository and the separate Go and Rust bindings load pe-sieve32.dll or pe-sieve64.dll from PESIEVE_DIR or the current directory. Optional symbol download fetches symbols for the scanned modules.",
+      "Inputs are running processes on a machine the analyst controls, and the README describes the results as potentially malicious material collected for further analysis, so detections and dumps need review. AppVeyor builds x86 and x64 Release and Debug configurations, and its only CTest check runs pe-sieve -? and expects a version string; the GitHub workflow publishes Doxygen documentation. No process was scanned.",
+      "BSD-2-Clause (LICENSE, 2017-2026 @hasherezade); the submodules keep their own licenses."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/params.h",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/CMakeLists.txt",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/pe_sieve_ver_short.h",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/.gitmodules",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/bindings/README.md",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/.appveyor.yml",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/.github/workflows/main.yml",
+      "https://github.com/hasherezade/pe-sieve/blob/98788a6ef98cd3c1a0ee481dc5a6847cb4f92432/LICENSE",
+      "https://github.com/hasherezade/pe-sieve/releases/tag/v0.4.1.1"
+    ]
   }
 ]
