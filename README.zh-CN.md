@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 484](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-484-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 201](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-201-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 485](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-485-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 202](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-202-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (29) · [游戏](#game) (191) · [应用](#app) (76)
+- [网站](#website) (29) · [游戏](#game) (192) · [应用](#app) (76)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (201) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (202) · [相关合集](#related-collections) (7) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -255,6 +255,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Underworld Exhumed：重建 Ultima Underworld I 与 II**](https://github.com/abedegno/underworld-exhumed) - 将 Ultima Underworld I 与 II 的 DOS 源码重建与原生移植结合。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/underworld-exhumed-case/)</sub>
 - [**LineWars II：可移植的 SDL3 重建版**](https://github.com/fredangstadt-lang/LineWarsII-SDL) - 为 1994 年 DOS 游戏的可移植 C 重建提供 SDL3 后端。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/linewars-ii-sdl-case/)</sub>
 - [**BFM-decomp：Brave Fencer Musashi 匹配反编译**](https://github.com/Druthulu/BFM-decomp) - 记录美版 PlayStation 游戏的智能体辅助重建，使用固定编译器及完整二进制 SHA-1 检查。 <sub>案例 · 独立重建 · 也适用：二进制 · [完整条目](https://awesomerea.org/zh/resources/bfm-decomp-case/)</sub>
+- [**Snowboard Kids：智能体辅助的 N64 匹配反编译**](https://github.com/cdlewis/snowboardkids-decomp) - 原版 Nintendo 64 游戏 Snowboard Kids 的匹配反编译，利用使用者自备的 ROM 重新构建 SHA1 一致的北美版与日版 ROM。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/snowboardkids-matching-decomp-case/)</sub>
 
 #### 工具、项目与集成
 

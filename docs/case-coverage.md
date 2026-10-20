@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 205 | 203 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 121 | 121 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 206 | 204 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 120 | 120 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 265 | 265 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-218 occurrences have catalog links. They reference 208 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+219 occurrences have catalog links. They reference 209 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 409 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 410 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -270,6 +270,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Define correctness as PASS/FAIL, then let agents iterate | Insufficient evidence | [Source](https://x.com/arpit_bhayani/status/2109505311904309621) |
 | Where "software is solved" is overstated | Insufficient evidence | [Source](https://x.com/wangdou/status/2109404200513708307) |
 | Reverse Engineer Anything, tried on a live game | Insufficient evidence | [Source](https://x.com/AIWarper/status/2109060856466264566) |
+| Snowboard Kids: an agent-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/decompiling-a-nintendo-64-game-in-84-days/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/the-long-tail-of-llm-assisted-decompilation/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/using-coding-agents-to-decompile-nintendo-64-games/) |
 | All games are open source now | Insufficient evidence | [Source](https://x.com/rehan_shei/status/2106548006350942533) |
