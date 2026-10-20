@@ -1,0 +1,72 @@
+{
+  "scan-160741966": [
+    {
+      "field": "description_zh",
+      "kind": "number-missing",
+      "literal": "4",
+      "reason": "The source uses \"4\" as wordplay for \"for\" (Utilities 4 Newbies); 面向新手 renders that meaning.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-186421571": [
+    {
+      "field": "description_zh",
+      "kind": "number-missing",
+      "literal": "101",
+      "reason": "\"101\" names an introductory workshop, rendered as 入门.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-238915980": [
+    {
+      "field": "description_zh",
+      "kind": "number-missing",
+      "literal": "101",
+      "reason": "\"101\" names an introductory workshop, rendered as 入门.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-820114900": [
+    {
+      "field": "description_zh",
+      "kind": "identifier-missing",
+      "literal": "CCS24",
+      "reason": "The conference abbreviation CCS24 is written out as CCS 2024.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-829733236": [
+    {
+      "field": "description_zh",
+      "kind": "number-added",
+      "literal": "123",
+      "reason": "The Chinese title of Ace Attorney Trilogy, 逆转裁判123, contains the number.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-1079603075": [
+    {
+      "field": "description_zh",
+      "kind": "identifier-missing",
+      "literal": "W8.1",
+      "reason": "The platform abbreviation W8.1 is written out as Windows 8.1.",
+      "reviewed_at": "2026-10-19"
+    },
+    {
+      "field": "description_zh",
+      "kind": "identifier-missing",
+      "literal": "W10M",
+      "reason": "The platform abbreviation W10M is written out as Windows 10 Mobile.",
+      "reviewed_at": "2026-10-19"
+    }
+  ],
+  "scan-1362394351": [
+    {
+      "field": "description_zh",
+      "kind": "number-missing",
+      "literal": "0",
+      "reason": "\"at residue 0\" is rendered as 无剩余字节, no remaining bytes.",
+      "reviewed_at": "2026-10-19"
+    }
+  ]
+}
