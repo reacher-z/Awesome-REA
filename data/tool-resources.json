@@ -7779,7 +7779,7 @@
   {
     "id": "lgwebos-menubar-remote-case",
     "name": "LGwebOS-menubar: a native macOS remote for LG webOS TVs",
-    "url": "https://github.com/gabrielgreco1/LGwebOS-menubar",
+    "url": "https://github.com/gabrielgreco1/TVmenubar-MacOS",
     "category": "reconstruction-cases",
     "relationship": "independent-reconstruction",
     "kind": "case-study",
@@ -7788,11 +7788,11 @@
     ],
     "description_en": "A native macOS menu-bar app that pairs with an LG webOS TV over its local encrypted WebSocket interface to launch apps, switch inputs, adjust volume and picture settings, send pointer input and cast selected media. The project credits the public Connect SDK for webOS protocol behavior and reuses PyWebOSTV’s registration manifest. Testing covers one TV on webOS 5.0.",
     "description_zh": "一款原生 macOS 菜单栏应用，通过 LG webOS 电视在局域网内的加密 WebSocket 接口完成配对，可启动应用、切换输入源、调节音量和画面设置、发送指针输入并投放所选媒体。项目称 webOS 协议行为参考了公开的 Connect SDK，并沿用 PyWebOSTV 的注册清单。测试仅覆盖一台 webOS 5.0 电视。",
-    "evidence_url": "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/README.md",
-    "verified_at": "2026-10-18",
+    "evidence_url": "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/README.md",
+    "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "requirements": [
-      "Reviewed at the 2026-10-13 head. It needs macOS 14 or later, Xcode Command Line Tools with Swift 5.9 or later, and an LG webOS TV on the same network; the only tested set is an LG 50UN7310PSC on webOS 5.0, and other models and versions are unverified. Pairing must be accepted on the TV, an IPv4 address is required, and Wake-on-LAN needs the TV’s MAC address.",
+      "Reviewed at the 2026-10-13 head, when the repository held only this app. By 2026-10-20 GitHub serves it as TVmenubar-MacOS, and its head README splits it into separate LG webOS 5.0 and Roku OS 15.3.4 apps; this entry covers only the webOS app at the pinned commit. It needs macOS 14 or later, Xcode Command Line Tools with Swift 5.9 or later, and an LG webOS TV on the same network; the only tested set is an LG 50UN7310PSC on webOS 5.0, and other models and versions are unverified. Pairing must be accepted on the TV, an IPv4 address is required, and Wake-on-LAN needs the TV’s MAC address.",
       "scripts/build.sh produces a locally signed, unnotarized app bundle. Pairing uses encrypted WebSockets on port 3001; the app pins the TV certificate after explicit approval and keeps pairing keys in Keychain. The repository ships no device addresses or pairing keys, and a privacy-check script scans files before publishing.",
       "The offline --self-check runs preference, certificate, pointer, Home, usage, resource and loopback media tests without a TV. These are implementation checks, not conformance tests against LG’s interface, and this review ran neither them nor a TV.",
       "The README narrows the author’s post: screen time is counted locally only while the app is connected, AirPlay support is limited to guidance for macOS Screen Mirroring, picture-setting changes depend on TV permissions, and casting depends on the TV’s codecs and DLNA service.",
@@ -7806,12 +7806,13 @@
       "license"
     ],
     "additional_evidence_urls": [
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md",
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Sources/LGwebOSMenubar/WebOS.swift",
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Sources/LGwebOSMenubar/FeatureChecks.swift",
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Package.swift",
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/scripts/build.sh",
-      "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/LICENSE",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Sources/LGwebOSMenubar/WebOS.swift",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Sources/LGwebOSMenubar/FeatureChecks.swift",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/Package.swift",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/scripts/build.sh",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/LICENSE",
+      "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8641101827b8a847e3c4091df4e7a336c68ba431/README.md",
       "https://x.com/greco_dev/status/2109842197654692349"
     ]
   },

@@ -2836,7 +2836,7 @@
   "lgwebos-menubar-remote-case": {
     "name": "LGwebOS-menubar：LG webOS 电视的原生 macOS 遥控器",
     "requirements": [
-      "审阅版本为 2026-10-13 的最新提交。需要 macOS 14 及以上、带 Swift 5.9 及以上的 Xcode Command Line Tools，以及位于同一网络的 LG webOS 电视；唯一测试过的机型是 webOS 5.0 的 LG 50UN7310PSC，其他型号和版本未经验证。配对须在电视上确认，需使用 IPv4 地址，网络唤醒还需要电视的 MAC 地址。",
+      "审阅版本为 2026-10-13 的最新提交，当时仓库只包含这一款应用。截至 2026-10-20，GitHub 已将仓库更名为 TVmenubar-MacOS，最新 README 将其拆分为 LG webOS 5.0 和 Roku OS 15.3.4 两款独立应用；本条目只涵盖固定提交中的 webOS 应用。需要 macOS 14 及以上、带 Swift 5.9 及以上的 Xcode Command Line Tools，以及位于同一网络的 LG webOS 电视；唯一测试过的机型是 webOS 5.0 的 LG 50UN7310PSC，其他型号和版本未经验证。配对须在电视上确认，需使用 IPv4 地址，网络唤醒还需要电视的 MAC 地址。",
       "scripts/build.sh 生成本地签名、未经公证的应用包。配对使用 3001 端口上的加密 WebSocket；应用在用户明确同意后固定电视证书，并把配对密钥保存在钥匙串中。仓库不含任何设备地址或配对密钥，另有隐私检查脚本在发布前扫描文件。",
       "离线 --self-check 无需电视即可运行偏好设置、证书、指针、主页、使用统计、资源和本地回环媒体测试。这些属于实现层面的检查，而非针对 LG 接口的一致性测试；本次核查既未运行这些测试，也未连接电视。",
       "README 收窄了作者帖子中的说法：屏幕使用时间只在应用连接期间于本地统计，AirPlay 仅提供 macOS 屏幕镜像的操作指引，画面设置能否修改取决于电视权限，投放媒体则取决于电视支持的编码和 DLNA 服务。",
