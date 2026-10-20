@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "even-g2-ble-protocol-case",
+    "name": "Even G2 protocol: reverse-engineering Even Realities G2 smart-glasses BLE traffic",
+    "url": "https://github.com/i-soxi/even-g2-protocol",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the Bluetooth Low Energy protocol between the Even app and Even Realities G2 smart glasses, worked out from captured traffic: GATT characteristic UUIDs, an 8-byte transport header with sequence, multi-packet and two-byte service-ID fields, a CRC-16/CCITT over the payload, and protobuf payloads with draft .proto definitions. A Python example built on bleak sends the seven-packet session handshake and drives the teleprompter service to show custom text. The README’s status table marks connection, handshake, teleprompter and calendar widget as working, notifications as partial, and Even AI and navigation as still under research.",
+    "description_zh": "记录 Even 应用与 Even Realities G2 智能眼镜之间的低功耗蓝牙协议，依据抓取的通信流量推断得出：包括 GATT 特征 UUID、含序号、分包和双字节服务 ID 字段的 8 字节传输头、针对载荷计算的 CRC-16/CCITT，以及 protobuf 编码的载荷和初步的 .proto 定义。基于 bleak 的 Python 示例会发送七个报文的会话握手，并调用提词器服务显示自定义文字。README 的状态表将连接、握手、提词器和日历小组件标为可用，通知标为部分可用，Even AI 和导航仍在研究中。",
+    "evidence_url": "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2026-01-03 is a documentation snapshot with no releases or tags. Only the teleprompter has example code, and docs/teleprompter.md is marked work in progress; the .proto header says field numbers and types are inferred from captured packets and may be incomplete or wrong, and several field meanings carry question marks. The README reports the calendar widget working but includes no calendar example or detailed format, and CONTRIBUTING.md labels Even AI “Cracked!” with its request format unclear while the README still lists it as research.",
+      "Using the example needs Even G2 glasses and a host with BLE and Python with bleak 0.21+; it scans for device names containing G2 and connects to the left arm’s device, or the right one with --right. The README says the glasses use standard BLE with no special pairing, and the example’s handshake consists of fixed capability messages and the current time, with no keys. The repository contains no Even app or glasses firmware.",
+      "CONTRIBUTING.md describes collecting Android Bluetooth HCI snoop logs while using features in the official app, and the repository commits four such raw logs from the author’s sessions; they are not limited to the glasses’ traffic, and this record does not link them. No tests or verification beyond the README’s status table are provided, and this review ran nothing.",
+      "No license file is present and GitHub detects none, so the documentation and code carry no reuse grant. The README calls this an unofficial community project for educational purposes, not affiliated with Even Realities, and credits the Even Realities community with the protocol research. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/docs/ble-uuids.md",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/docs/packet-structure.md",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/docs/services.md",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/docs/teleprompter.md",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/proto/g2_protocol.proto",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/examples/teleprompter/teleprompter.py",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/examples/teleprompter/README.md",
+      "https://github.com/i-soxi/even-g2-protocol/blob/b227335f5fbecb7d4ede3748c36e098ef88850fa/CONTRIBUTING.md"
+    ]
   }
 ]
