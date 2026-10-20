@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "wasmdec": {
+    "name": "wasmdec：WebAssembly 到 C 的反编译器",
+    "requirements": [
+      "所审阅的 master 提交日期为 2018-11-29，在 2018-09-17 发布的 1.2.1 之后加入了 macOS 安装目标；该版本唯一的下载是 Linux x86-64 压缩包，由 mkrelease.sh 用 wasmdec 二进制、libbinaryen.so 和仅限 root 运行的安装脚本打包而成，源码仍标注 1.2.1。从源码构建需克隆 Binaryen、cxxopts 和 WebAssembly testsuite 子模块，并以 C++14 模式用 make 和 g++ 编译。make all 会用 CMake 构建固定的 2018-11-27 Binaryen 提交，并把库和二进制复制到系统目录，因此 README 用 sudo 运行它；README 建议使用 GCC 7 或更高版本。",
+      "输入为 .wasm 二进制或 .wast 文本模块，按文件扩展名区分；asm.js 模式只在编译时设置特定标志后才可用，而 Makefile 未设置该标志。解析依赖这一 2018 年的 Binaryen，README 也未说明支持的特性范围，因此使用较新 WebAssembly 特性的模块可能无法载入。README 称输出为伪 C 代码，未说明任何重新编译或等价性检查；-e 选项会以注释形式附上原始函数名和局部变量数量。",
+      "test/tests.sh 对随附的七个由小型 C 程序生成的 .wasm 与 .wast 测试样本进行反编译，只检查退出状态；test-spec.sh 以同样方式遍历规范测试套件子模块。仓库没有 CI。README 链接了一篇使用 wasmdec 的 CTF 解题文章。本合集仅审阅源码与文档，未构建或运行该工具。",
+      "examples/ 目录提交了三个模块的完整反编译输出：wasmdec 自身、WebDSP 库，以及商业网页游戏 diep.io 的游戏二进制，后者为 7.7 MB 的 C 文件。该文件是由第三方商业程序机器转换得到的代码，仓库的 MIT 许可并不能确立对它的权利。",
+      "LICENSE 为 MIT；Binaryen、cxxopts 和 testsuite 子模块各有其许可。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

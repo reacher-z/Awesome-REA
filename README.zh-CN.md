@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 472](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (27) · [游戏](#game) (185) · [应用](#app) (72)
+- [网站](#website) (28) · [游戏](#game) (185) · [应用](#app) (72)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -228,6 +228,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   面向 Adobe Flash SWF 文件的 Java 桌面反编译与编辑工具。它可反编译 ActionScript 1/2 和 AS3，并与对应的 P-code 对照显示；既能以源码形式（实验性）编辑脚本，也能通过汇编视图编辑，还可导出或替换图像、形状、声音、视频、字体和文本，支持 SWF 转 FLA、SWF 与 XML 互转，以及输出 SVG 或 HTML5 Canvas。它还能打开 SWC、ABC 文件以及 Scaleform GFx 和 64 位 Iggy 文件，内置 ActionScript 调试器和针对混淆 AS3 的反混淆处理，并以 ffdec\_lib Java 库和命令行形式提供其解析与反编译功能。
 
   工具 · 也适用：游戏 · [使用条件与证据](https://awesomerea.org/zh/resources/jpexs-decompiler/)
+
+- [**wasmdec：WebAssembly 到 C 的反编译器**](https://github.com/wwwg/wasmdec)
+
+  命令行反编译器，借助 Binaryen 解析 WebAssembly 二进制或文本格式模块，输出伪 C 代码：包括全局变量、导入与已定义的函数及其局部变量和控制流，并附带实现 WebAssembly 运算的 C 辅助函数前导部分。可将多个模块反编译到同一文件并以模块名作前缀；memdump 模式则改为把模块的内存和表写入文件。wasmdec 自身的 Emscripten 构建支撑着一个在线演示。开发停留在 2018 年的 1.2.1 版。
+
+  工具 · WebAssembly · 也适用：二进制 · [使用条件与证据](https://awesomerea.org/zh/resources/wasmdec/)
 
 <a id="game"></a>
 ### Game · 游戏

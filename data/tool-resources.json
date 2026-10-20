@@ -11191,5 +11191,42 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "wasmdec",
+    "name": "wasmdec",
+    "url": "https://github.com/wwwg/wasmdec",
+    "category": "webassembly",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website",
+      "binary"
+    ],
+    "description_en": "Command-line decompiler that parses a WebAssembly binary or text-format module with Binaryen and emits pseudo-C: globals, imported and defined functions with their locals and control flow, and a preamble of C helpers for WebAssembly operations. Several modules can be decompiled into one file with module-name prefixes, a memdump mode writes the module’s memory and table to files instead, and an Emscripten build of wasmdec powers an online demo. Development stopped at version 1.2.1 in 2018.",
+    "description_zh": "命令行反编译器，借助 Binaryen 解析 WebAssembly 二进制或文本格式模块，输出伪 C 代码：包括全局变量、导入与已定义的函数及其局部变量和控制流，并附带实现 WebAssembly 运算的 C 辅助函数前导部分。可将多个模块反编译到同一文件并以模块名作前缀；memdump 模式则改为把模块的内存和表写入文件。wasmdec 自身的 Emscripten 构建支撑着一个在线演示。开发停留在 2018 年的 1.2.1 版。",
+    "evidence_url": "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2018-11-29 adds macOS install targets after the 1.2.1 release of 2018-09-17, whose only download is a Linux x86-64 tarball, which mkrelease.sh assembles from the wasmdec binary, libbinaryen.so and a root-only install script; the source still declares 1.2.1. Source builds clone the Binaryen, cxxopts and WebAssembly testsuite submodules and use make with g++ in C++14 mode. make all builds the pinned Binaryen commit of 2018-11-27 with CMake and copies the library and binary into system directories, which is why the README runs it with sudo; it recommends GCC 7 or later.",
+      "Input is a .wasm binary or .wast text module chosen by file extension; an asm.js mode exists only behind a compile-time flag the Makefile does not set. Parsing relies on that 2018 Binaryen, and the README documents no supported feature set, so modules using later WebAssembly features may not load. The README calls the output pseudo-C, documents no recompilation or equivalence check, and the -e option adds raw function names and local counts as comments.",
+      "test/tests.sh decompiles seven bundled .wasm and .wast fixtures built from small C programs and checks only the exit status, and test-spec.sh runs the same check over the spec testsuite submodule; there is no CI. The README links one CTF write-up that used wasmdec. This collection reviewed source and documentation without building or running it.",
+      "examples/ commits complete decompiler output for three modules: wasmdec itself, the WebDSP library and the game binary of diep.io, a commercial web game, as a 7.7 MB C file. That file is machine-translated code from a third-party commercial program, and the repository’s MIT license does not establish rights to it.",
+      "MIT per LICENSE; the Binaryen, cxxopts and testsuite submodules keep their own licences. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/Makefile",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/.gitmodules",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/src/wasmdec.cc",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/src/decompiler/Decompiler.cc",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/test/tests.sh",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/test/test-spec.sh",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/release/install.sh",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/mkrelease.sh",
+      "https://github.com/wwwg/wasmdec/blob/3d9e5ca66ece79efe8f6550fd03623bd1dea3ec5/LICENSE",
+      "https://github.com/wwwg/wasmdec/releases/tag/1.2.1",
+      "https://github.com/WebAssembly/binaryen/tree/9f49e3d9c92703c3f5cf3589a78a3318bfe2bca4"
+    ]
   }
 ]
