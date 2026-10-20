@@ -146,6 +146,30 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .resource-detail-meta{display:flex;flex-wrap:wrap;gap:8px 13px;color:var(--muted);font:14px/1.75 var(--sans)}
 .resource-entry-link{display:inline-flex;align-items:center;gap:6px;color:var(--link);font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .resource-entry-link .icon{width:14px;height:14px;font-size:14px}
+/* Browser-local shortlist: Save toggles on cards, a count button beside the collection tabs once something is saved,
+   and a dialog that reuses the data dialog's frame. In wide compact rows the toggle joins the links' line. */
+.save-toggle{display:inline-flex;align-items:center;gap:5px;min-height:32px;padding:0;background:none;color:var(--link);font:600 14px/1.5 var(--sans)}
+.save-toggle:hover{text-decoration:underline;text-underline-offset:4px}
+.save-toggle[aria-pressed="true"]{color:var(--ink)}
+.save-toggle>.icon{width:13px;height:13px;font-size:13px;color:var(--link)}
+@media(min-width:1101px){html[data-layout="compact"] .collection-home .card-meta>.save-toggle{order:2}}
+.shortlist-open{display:inline-flex;align-items:center;gap:8px;align-self:center;min-height:40px;margin:0 0 8px auto;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:600 14px/1 var(--sans)}
+.shortlist-open:hover{border-color:var(--steel);background:var(--soft)}
+.shortlist-open>.mono{color:var(--muted);background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font:500 12px/1.65 var(--sans);font-variant-numeric:tabular-nums}
+.shortlist-open+.layout-control{margin-left:0}
+.shortlist-group{margin-top:20px}
+.shortlist-group h3{margin:0 0 4px;font-size:14px;font-weight:650}
+.shortlist-group>p{margin:0 0 6px;font-size:12px;color:var(--muted)}
+.shortlist-group ul{margin:6px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.shortlist-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.6}
+.shortlist-text{min-width:0}
+.shortlist-link{color:var(--link);font-weight:600;overflow-wrap:anywhere}
+.shortlist-link:hover{text-decoration:underline;text-underline-offset:4px}
+.shortlist-missing{font:13px var(--mono);overflow-wrap:anywhere}
+.shortlist-note{display:block;font-size:12px;color:var(--muted)}
+.shortlist-remove{flex:none;min-height:36px;padding:0 2px;background:none;color:var(--link);font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.shortlist-empty{margin:20px 0 0;font-size:14px;line-height:1.7;color:var(--muted)}
+.shortlist-dialog #shortlist-clear{font-size:13px}
 .source-record-details dl{display:grid;grid-template-columns:132px minmax(0,1fr);gap:8px 14px;margin:14px 0 2px;color:var(--body);font:14px/1.75 var(--sans)}
 .source-record-details dt{font-weight:600}
 .source-record-details dd{min-width:0;margin:0;overflow-wrap:anywhere}

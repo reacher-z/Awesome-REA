@@ -118,6 +118,26 @@ const UI = {
     "browseDirectory": "Browse by category ↗",
     "downloadCuratedData": "Curated catalog JSON ↓",
     "viewSource": "GitHub ↗",
+    "shortlistOpen": "Shortlist",
+    "shortlistSave": "Save",
+    "shortlistSaved": "Saved",
+    "shortlistEyebrow": "SAVED IN THIS BROWSER",
+    "shortlistTitle": "Your shortlist",
+    "shortlistClose": "Close shortlist",
+    "shortlistDescription": "Only entry IDs are saved, in this browser on this device. Nothing is sent to a server, and there is no account or sync.",
+    "shortlistEmpty": "Nothing saved yet. Use Save on a curated resource, repository or paper to keep it here.",
+    "shortlistClear": "Clear shortlist",
+    "shortlistCleared": "Shortlist cleared.",
+    "shortlistRemove": "Remove",
+    "shortlistCurated": "Curated resources",
+    "shortlistRepositories": "Repositories",
+    "shortlistPapers": "Research papers",
+    "shortlistLoading": "Loading details…",
+    "shortlistLoadFailed": "Details couldn’t load. The saved ID is kept.",
+    "shortlistGoneCurated": "No longer in the curated collection.",
+    "shortlistGoneRepository": "No longer in the browsable repository index.",
+    "shortlistGonePaper": "No longer in the paper directory.",
+    "shortlistWriteFailed": "This browser couldn’t save the shortlist.",
     "footerLicense": "Original content: MIT. Linked projects keep their own licenses.",
     "readSource": "Primary source",
     "requirements": "Details & requirements",
@@ -264,6 +284,26 @@ const UI = {
     "browseDirectory": "按分类浏览 ↗",
     "downloadCuratedData": "精选目录 JSON ↓",
     "viewSource": "GitHub ↗",
+    "shortlistOpen": "收藏清单",
+    "shortlistSave": "收藏",
+    "shortlistSaved": "已收藏",
+    "shortlistEyebrow": "仅保存在本浏览器",
+    "shortlistTitle": "我的收藏清单",
+    "shortlistClose": "关闭收藏清单",
+    "shortlistDescription": "仅在本设备的浏览器中保存条目 ID，不会发送到服务器，也没有账户或同步。",
+    "shortlistEmpty": "尚未收藏任何条目。在精选资源、仓库或论文上点击“收藏”即可保存到这里。",
+    "shortlistClear": "清空收藏清单",
+    "shortlistCleared": "收藏清单已清空。",
+    "shortlistRemove": "移除",
+    "shortlistCurated": "精选资源",
+    "shortlistRepositories": "仓库",
+    "shortlistPapers": "研究论文",
+    "shortlistLoading": "正在加载详情…",
+    "shortlistLoadFailed": "详情加载失败，已保留收藏的 ID。",
+    "shortlistGoneCurated": "已不在精选资源中。",
+    "shortlistGoneRepository": "已不在可浏览的仓库索引中。",
+    "shortlistGonePaper": "已不在论文目录中。",
+    "shortlistWriteFailed": "此浏览器无法保存收藏清单。",
     "footerLicense": "原创内容采用 MIT 许可。链接项目保留各自的许可。",
     "readSource": "一手来源",
     "requirements": "详情与使用条件",
@@ -387,6 +427,7 @@ function card(record) {
   const href=entryHref("curated",record.id);
   if(record.targets.length)meta.prepend(node("span","card-targets",targetLabels(record)));
   if(href){const entry=node("a","resource-entry-link",t("openEntry"));entry.href=href;entry.setAttribute("aria-label",t("openEntry")+": "+(state.lang==="zh"?(record.name_zh||record.name):record.name));entry.append(icon("arrow",true));meta.append(entry);}
+  const save=saveToggle("curated",record.id,state.lang==="zh"?(record.name_zh||record.name):record.name);if(save)meta.append(save);
   context.append(external(record.evidence_url,"resource-evidence-link",t("readSource")+" ↗"));
   details.append(context);article.append(details);return article;
 }
@@ -588,6 +629,7 @@ function sourceCard(record) {
   article.append(node("p","source-card-description" + (!description ? " source-card-empty" : ""),description || t(record.description_omission ? "sourceOmittedDescription" : "sourceNoDescription")));
 
   const footer = node("div","source-card-footer"); footer.append(external(record.readme_url || record.url,"","README ↗")); const license = typeof record.license === "string" && record.license.trim() && record.license.toUpperCase() !== "NOASSERTION" ? record.license : t("sourceLicenseUnknown"); footer.append(node("span","source-card-license",license)); article.append(footer);
+  const save = saveToggle("repository", record.id, record.full_name); if (save) footer.append(save);
   const details = node("details","source-record-details"); details.append(node("summary","",t("sourceScanDetails")));
   const context = node("div", "source-record-context");
   const related = sourceRelatedLinks(record); if (related) context.append(related);
@@ -656,6 +698,108 @@ $("#source-clear").addEventListener("click",resetSources); $("#source-reset").ad
 $("#download-source-index").href = dataURL("source-index.json");
 $("#download-curated-catalog").href = dataURL("catalog.json");
 // Ordinary download links remain usable without JavaScript or native dialog support.
+// Browser-local shortlist: only "type:id" keys, kept in this browser and never sent anywhere. paper-search.js adds paper
+// keys in the same format. Saved entries resolve against current data; one that is gone stays listed as unavailable.
+const SHORTLIST_KEY = "awesomerea-shortlist";
+const SHORTLIST_ITEM = /^(curated|repository|paper):[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const SHORTLIST_GROUPS = [["curated", "shortlistCurated", "catalog.json"], ["repository", "shortlistRepositories", "source-browser.json"], ["paper", "shortlistPapers", "papers.json"]];
+const shortlist = {available: false, keys: [], data: {}};
+const shortlistDialog = $("#shortlist");
+function shortlistStorage() { try { return window.localStorage; } catch (_) { return null; } }
+function readShortlist() {
+  try { const storage = shortlistStorage(); storage.setItem("awesomerea-storage-check", "1"); storage.removeItem("awesomerea-storage-check"); shortlist.available = true; }
+  catch (_) { shortlist.available = false; shortlist.keys = []; return; }
+  try { const value = JSON.parse(shortlistStorage().getItem(SHORTLIST_KEY) || "[]"); shortlist.keys = Array.isArray(value) ? [...new Set(value.filter(key => typeof key === "string" && SHORTLIST_ITEM.test(key)))] : []; }
+  catch (_) { shortlist.keys = []; }
+}
+function saveToggle(type, id, name) {
+  const key = type + ":" + id;
+  if (!shortlist.available || !SHORTLIST_ITEM.test(key)) return null;
+  const button = node("button", "save-toggle"); button.type = "button"; button.dataset.shortlistKey = key; button.dataset.shortlistName = name;
+  button.addEventListener("click", () => toggleShortlist(key, name)); syncSaveToggle(button); return button;
+}
+function syncSaveToggle(button) {
+  const saved = shortlist.keys.includes(button.dataset.shortlistKey); button.setAttribute("aria-pressed", String(saved));
+  button.replaceChildren(...(saved ? [icon("check", true)] : []), node("span", "", t(saved ? "shortlistSaved" : "shortlistSave")), node("span", "sr-only", " " + button.dataset.shortlistName));
+}
+function announceShortlist(message) { $(shortlistDialog?.open ? "#shortlist-dialog-status" : "#shortlist-status").textContent = message; }
+function syncShortlist() {
+  $$(".save-toggle").forEach(syncSaveToggle); $("#shortlist-open").hidden = !shortlist.keys.length; $("#shortlist-count").textContent = String(shortlist.keys.length);
+  if (shortlistDialog?.open) renderShortlist();
+}
+function writeShortlist(keys) {
+  try { const storage = shortlistStorage(); if (keys.length) storage.setItem(SHORTLIST_KEY, JSON.stringify(keys)); else storage.removeItem(SHORTLIST_KEY); }
+  catch (_) { announceShortlist(t("shortlistWriteFailed")); return false; }
+  shortlist.keys = keys; syncShortlist(); return true;
+}
+function toggleShortlist(key, name) {
+  const saved = shortlist.keys.includes(key);
+  if (!writeShortlist(saved ? shortlist.keys.filter(item => item !== key) : [...shortlist.keys, key])) return;
+  const count = shortlist.keys.length;
+  announceShortlist(state.lang === "zh" ? `已${saved ? "移除" : "收藏"} ${name}。收藏清单共 ${count} 项。` : `${saved ? "Removed" : "Saved"} ${name}. ${count} ${count === 1 ? "entry" : "entries"} in your shortlist.`);
+}
+// Current records for one entry type: the loaded collection when there is one, otherwise a fetch for this dialog only.
+function shortlistRecords(type, filename) {
+  if (type === "curated" && state.loaded) return new Map(state.records.map(record => [record.id, record]));
+  if (type === "repository" && sourceState.loaded) return new Map(sourceState.records.map(record => [record.id, record]));
+  if (shortlist.data[type] === undefined) {
+    shortlist.data[type] = "loading";
+    fetch(dataURL(filename), {cache: "no-cache"}).then(response => { if (!response.ok) throw new Error(filename + " HTTP " + response.status); return response.json(); })
+      .then(data => { const records = type === "curated" ? data.resources : type === "repository" ? sourceBrowserPayload(data).resources : data; if (!Array.isArray(records)) throw new Error("Invalid " + filename); shortlist.data[type] = new Map(records.map(record => [record.id, record])); })
+      .catch(() => { shortlist.data[type] = "error"; })
+      .finally(() => { if (shortlistDialog?.open) renderShortlist(); });
+  }
+  return shortlist.data[type];
+}
+function shortlistName(type, record) {
+  if (type === "repository") return record.full_name || record.id;
+  return state.lang === "zh" ? (record[type === "paper" ? "title_zh" : "name_zh"] || record[type === "paper" ? "title" : "name"]) : record[type === "paper" ? "title" : "name"];
+}
+function shortlistItem(type, id, records) {
+  const record = records instanceof Map ? records.get(id) : null; const name = record ? shortlistName(type, record) : id;
+  const item = node("li", "shortlist-item"); const text = node("div", "shortlist-text");
+  if (record) {
+    const href = type === "repository" ? record.url : entryHref(type, id);
+    const link = type === "repository" ? external(href, "shortlist-link", name) : node("a", "shortlist-link", name); link.href = href; text.append(link);
+  } else {
+    const gone = "shortlistGone" + type[0].toUpperCase() + type.slice(1);
+    text.append(node("span", "shortlist-missing", id), node("span", "shortlist-note", t(records === "error" ? "shortlistLoadFailed" : records instanceof Map ? gone : "shortlistLoading")));
+  }
+  const remove = node("button", "shortlist-remove", t("shortlistRemove")); remove.type = "button";
+  remove.setAttribute("aria-label", t("shortlistRemove") + " " + name); remove.addEventListener("click", () => toggleShortlist(type + ":" + id, name));
+  item.append(text, remove); return item;
+}
+function renderShortlist() {
+  const groups = [];
+  for (const [type, labelKey, filename] of SHORTLIST_GROUPS) {
+    const ids = shortlist.keys.filter(key => key.startsWith(type + ":")).map(key => key.slice(type.length + 1));
+    if (!ids.length) continue;
+    const records = shortlistRecords(type, filename); const group = node("section", "shortlist-group"); const list = node("ul");
+    group.append(node("h3", "", `${t(labelKey)} · ${ids.length}`));
+    if (type === "repository") group.append(node("p", "", t("sourceIntro")));
+    ids.forEach(id => list.append(shortlistItem(type, id, records))); group.append(list); groups.push(group);
+  }
+  $("#shortlist-items").replaceChildren(...groups); $("#shortlist-empty").hidden = groups.length > 0; $("#shortlist-clear").hidden = !groups.length;
+}
+function openShortlist() {
+  if (!shortlist.available || typeof shortlistDialog?.showModal !== "function") return;
+  for (const type of Object.keys(shortlist.data)) if (shortlist.data[type] === "error") delete shortlist.data[type];
+  $("#shortlist-dialog-status").textContent = ""; renderShortlist(); shortlistDialog.showModal(); document.body.classList.add("data-dialog-open");
+}
+readShortlist(); syncShortlist();
+$("#shortlist-open").addEventListener("click", openShortlist);
+$("#shortlist-close").addEventListener("click", () => shortlistDialog.close());
+$("#shortlist-clear").addEventListener("click", () => { if (writeShortlist([])) announceShortlist(t("shortlistCleared")); });
+shortlistDialog?.addEventListener("close", () => {
+  document.body.classList.remove("data-dialog-open");
+  if (location.hash === "#shortlist") { const next = new URL(location.href); next.hash = ""; replaceURL(next); }
+  // Clearing the list hides the Shortlist button, so focus then returns to the search field.
+  if (document.activeElement === document.body) $(shortlist.keys.length ? "#shortlist-open" : "#search-input").focus({preventScroll: true});
+});
+window.addEventListener("storage", event => { if (event.key === SHORTLIST_KEY || event.key === null) { readShortlist(); syncShortlist(); } });
+// The paper directory links here with #shortlist.
+if (location.hash === "#shortlist") openShortlist();
+
 const dataDialog = $("#data-dialog");
 if (dataDialog && typeof dataDialog.showModal === "function") {
   let returnFocus = null;

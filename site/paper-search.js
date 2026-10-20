@@ -202,6 +202,61 @@
     return true;
   }
 
-  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout};
+  // Browser-local shortlist shared with the homepage (app.js): only "type:id" keys, kept in this browser and never sent.
+  const SHORTLIST_KEY = "awesomerea-shortlist";
+  const SHORTLIST_ITEM = /^(curated|repository|paper):[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  function shortlistStorage(browser) {
+    try { const storage = browser.localStorage; storage.setItem("awesomerea-storage-check", "1"); storage.removeItem("awesomerea-storage-check"); return storage; } catch (_) { return null; }
+  }
+  function readShortlist(storage) {
+    try { const value = JSON.parse(storage.getItem(SHORTLIST_KEY) || "[]"); return Array.isArray(value) ? [...new Set(value.filter(key => typeof key === "string" && SHORTLIST_ITEM.test(key)))] : []; }
+    catch (_) { return []; }
+  }
+
+  // Adds a Save toggle to each paper's links and, once something is saved, a link to the homepage shortlist.
+  // Without storage nothing changes.
+  function initializeShortlist(document, browser) {
+    const storage = shortlistStorage(browser);
+    const actions = document.querySelector(".papers-actions");
+    const cards = [...document.querySelectorAll("[data-paper-id]")];
+    if (!storage || !actions || !cards.length) return false;
+    const zh = document.documentElement.lang === "zh-CN";
+    const element = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
+    const count = element("span", "mono");
+    const link = element("a", "button button-outline papers-shortlist");
+    link.href = (zh ? "/zh/" : "/") + "#shortlist"; link.append(element("span", "", zh ? "收藏清单" : "Shortlist"), count);
+    const status = element("p", "sr-only"); status.setAttribute("role", "status"); status.setAttribute("aria-live", "polite");
+    const buttons = [];
+    function sync() {
+      const keys = readShortlist(storage); count.textContent = String(keys.length); link.hidden = !keys.length;
+      for (const button of buttons) {
+        const saved = keys.includes(button.dataset.shortlistKey);
+        button.setAttribute("aria-pressed", String(saved)); button.firstChild.textContent = saved ? (zh ? "已收藏" : "Saved") : (zh ? "收藏" : "Save");
+      }
+      return keys;
+    }
+    for (const card of cards) {
+      const key = "paper:" + card.dataset.paperId; const links = card.querySelector(".paper-links");
+      if (!SHORTLIST_ITEM.test(key) || !links) continue;
+      const title = (card.querySelector("h3")?.textContent || card.dataset.paperId).trim();
+      const button = element("button", "paper-link save-toggle"); button.type = "button"; button.dataset.shortlistKey = key;
+      button.append(element("span"), element("span", "sr-only", " " + title));
+      button.addEventListener("click", () => {
+        const keys = readShortlist(storage); const saved = keys.includes(key); const next = saved ? keys.filter(item => item !== key) : [...keys, key];
+        try { if (next.length) storage.setItem(SHORTLIST_KEY, JSON.stringify(next)); else storage.removeItem(SHORTLIST_KEY); }
+        catch (_) { status.textContent = zh ? "此浏览器无法保存收藏清单。" : "This browser couldn’t save the shortlist."; return; }
+        sync();
+        status.textContent = zh ? `已${saved ? "移除" : "收藏"} ${title}。收藏清单共 ${next.length} 项。` : `${saved ? "Removed" : "Saved"} ${title}. ${next.length} ${next.length === 1 ? "entry" : "entries"} in your shortlist.`;
+      });
+      links.append(button); buttons.push(button);
+    }
+    actions.append(link); actions.after(status);
+    browser.addEventListener("storage", event => { if (event.key === SHORTLIST_KEY || event.key === null) sync(); });
+    sync();
+    return true;
+  }
+
+  if (typeof module === "object" && module.exports) module.exports = {readRecords, allowedValues, readState, matches, stateURL, initialize, initializeLayout, readLayout, initializeShortlist, readShortlist};
   if (typeof document !== "undefined") initialize(document, window);
+  if (typeof document !== "undefined") initializeShortlist(document, window);
 }());
