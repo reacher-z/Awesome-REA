@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 203 | 201 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 129 | 129 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 已收录 (`already-curated`) | 204 | 202 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 128 | 128 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
 | 证据不足 (`insufficient-evidence`) | 259 | 259 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-216 个出现项含目录链接；共关联 207 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+217 个出现项含目录链接；共关联 208 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 401 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 402 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -271,6 +271,7 @@
 | Zelda and Banjo Recompiled dev slams the slew of poor-quality "slopcomps" | 证据不足 | [来源](https://www.reddit.com/r/technology/comments/1ww1twg/) |
 | Snowboard Kids 2：大模型辅助的 N64 匹配反编译 | 已收录 | [来源](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | 寻找 Jingle Town：在没有调试符号时调试 N64 游戏 | 已收录 | [来源](https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/) |
+| Awesome Decomp Games：附评分、每日刷新的游戏重建项目目录 | 已收录 | [来源](https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/README.md) |
 | GoldenEye 007：基于反编译成果的智能体辅助原生移植 | 已收录 | [来源](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip：AI 辅助的 Super Smash Bros. 原生移植 | 已收录 | [来源](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |
 | ssbu-recomp：明确玩法边界的静态重编译 | 已收录 | [来源](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |

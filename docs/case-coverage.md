@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 203 | 201 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 129 | 129 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Already curated (`already-curated`) | 204 | 202 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 128 | 128 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
 | Insufficient evidence (`insufficient-evidence`) | 259 | 259 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-216 occurrences have catalog links. They reference 207 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+217 occurrences have catalog links. They reference 208 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 401 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 402 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -271,6 +271,7 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Zelda and Banjo Recompiled dev slams the slew of poor-quality "slopcomps" | Insufficient evidence | [Source](https://www.reddit.com/r/technology/comments/1ww1twg/) |
 | Snowboard Kids 2: an LLM-assisted N64 matching decompilation | Already curated | [Source](https://blog.chrislewis.au/snowboard-kids-2-is-100-decompiled/) |
 | Finding Jingle Town: Debugging an N64 Game without Symbols | Already curated | [Source](https://blog.chrislewis.au/finding-jingle-town-debugging-an-n64-game-without-symbols/) |
+| Awesome Decomp Games | Already curated | [Source](https://github.com/SubmitGame/awesome-decomp-games/blob/02727e90fe10c7b55fad3fdd4bd671c55e1fe587/README.md) |
 | GoldenEye 007: an agent-assisted native port from a decompilation | Already curated | [Source](https://github.com/jkdansereau/goldeneye-pc-port/blob/fda76b69837e6c5aae436e0d3e798989e49b06d2/README.md) |
 | BattleShip: an AI-assisted Super Smash Bros. native port | Already curated | [Source](https://github.com/JRickey/BattleShip/blob/39e978fbffe06a24f718bdf1ca740f27ad6a7dec/README.md) |
 | ssbu-recomp: static recompilation with explicit mode limits | Already curated | [Source](https://github.com/Denkishi/ssbu-recomp/blob/938e66bb7be0ba4123e291211895412da421b705/README.md) |
