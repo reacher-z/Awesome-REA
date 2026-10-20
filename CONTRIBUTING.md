@@ -50,7 +50,7 @@ npm ci --prefix tests/browser --ignore-scripts
 node tests/browser/smoke.cjs
 ```
 
-Use `python3 scripts/check_links.py` for live source checks. Rate limits and temporary network failures are reported separately from confirmed missing links.
+Use `python3 scripts/check_links.py` for live source checks. Rate limits and temporary network failures are reported separately from confirmed missing links. Report a dead or outdated entry with the [outdated-resource form](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml), giving the affected IDs, observed status, check date and primary evidence. HTTP 403 or 429 responses, login pages, timeouts and redirects alone do not establish a removal or move; see [triaging source-link results](docs/automation.md#triage-source-link-results).
 
 ### Choose kind, relationship, category and targets
 

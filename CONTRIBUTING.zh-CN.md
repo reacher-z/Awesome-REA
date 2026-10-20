@@ -16,7 +16,7 @@
 
 提交前请先确认合集中没有重复条目。收录不设最低 Star 数；优先收录原创、仍在维护的项目，而不是复制的 fork。关于 REA 集成的说法须有项目自身文档支持。
 
-发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
+发现中文翻译不准确时，可使用[翻译修正表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=translation.yml)；链接失效或信息过时，可使用[过时条目表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=broken-resource.yml)，写明受影响的条目 ID、观察到的状态、检查日期和一手证据；HTTP 403、429、登录页、超时或单纯的重定向都不能证明资源已删除或迁移，详见[来源链接检查结果的处理（英文）](docs/automation.md#triage-source-link-results)。资源、论文和修正表单目前为英文界面；重建案例表单提供双语提示。
 
 ## 推荐论文
 
