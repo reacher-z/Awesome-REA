@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "xapkdetector": {
+    "name": "XAPKDetector APK/DEX 检测工具",
+    "requirements": [
+      "审阅时最新版本为 0.03，发布于 2022-03-14，提供 Windows 便携版 zip（含 Windows XP 版本）、包括 Qt 6 版本在内的 macOS 安装包、Linux AppImage 以及 Debian 和 Ubuntu 软件包；release_version.txt 仍为 0.03。审阅时 master 分支仍在持续更新子模块，例如 2026-10-19 加入了新的 Detect-It-Easy 签名，因此源码比已发布的二进制版本更新。",
+      "构建需要递归克隆来自作者其他仓库的 55 个 git 子模块（包括 Formats、XDEX、SpecAbstract、签名库和 Detect-It-Easy），并需要 Qt。docs/BUILD.md 介绍了 Docker 构建、在 Ubuntu 14.04 至 20.04 上测试过的 Debian 软件包构建、autotools 和 CMake 构建、使用 Qt 5.15.2 的 macOS 构建，以及使用 Visual Studio 2019 和 Qt 5.15.2 的 Windows 构建；Windows XP 版本则使用 Visual Studio 2013 和 Qt 5.6.3。",
+      "输入为分析者已有的 APK、APKS 或 DEX 文件；更新日志显示 0.03 版加入了 APKS 支持。检测结果基于签名和启发式识别，需分析者确认，不能证明应用的实际构建或保护方式。仓库本身没有测试或 CI 工作流。",
+      "采用 MIT 许可，版权归 hors（2020-2026）；各子模块是独立仓库，其许可证未逐一审阅。本次未扫描任何软件包，也未进行构建。"
+    ]
   }
 }

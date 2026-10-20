@@ -11254,5 +11254,37 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "xapkdetector",
+    "name": "XAPKDetector",
+    "url": "https://github.com/horsicq/XAPKDetector",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "APK and DEX detector from hors, the author of Detect-It-Easy, that reports the build tools, libraries and protections it identifies in Android packages, using scan engines and signature databases from the Detect-It-Easy family. The Qt GUI also shows AndroidManifest.xml, MANIFEST.MF, DEX and ELF contents, strings, hex, entropy, hashes and the APK signature, and can scan whole directories. A console build runs recursive, deep, heuristic or all-types scans and writes XML, JSON, CSV or TSV results.",
+    "description_zh": "由 Detect-It-Easy 作者 hors 开发的 APK 与 DEX 检测工具，借助 Detect-It-Easy 系列的扫描引擎和签名库，报告在 Android 软件包中识别出的构建工具、库和保护措施。其 Qt 图形界面还可查看 AndroidManifest.xml、MANIFEST.MF、DEX 和 ELF 内容，以及字符串、十六进制、熵、哈希和 APK 签名，并能扫描整个目录。命令行版本支持递归、深度、启发式或全类型扫描，并以 XML、JSON、CSV 或 TSV 格式输出结果。",
+    "evidence_url": "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 0.03, published 2022-03-14, with Windows portable zips (including a Windows XP build), macOS packages including a Qt 6 build, a Linux AppImage and Debian and Ubuntu packages; release_version.txt still reads 0.03. The master branch was still receiving submodule updates at review, such as new Detect-It-Easy signatures on 2026-10-19, so the source is ahead of the released binaries.",
+      "Building needs a recursive clone of 55 git submodules from the author's other repositories, including Formats, XDEX, SpecAbstract, the signatures database and Detect-It-Easy, plus Qt. docs/BUILD.md covers Docker, a Debian package build tested on Ubuntu 14.04 to 20.04, autotools and CMake, macOS with Qt 5.15.2, and Windows with Visual Studio 2019 and Qt 5.15.2 or, for Windows XP, Visual Studio 2013 and Qt 5.6.3.",
+      "Input is APK, APKS or DEX files the analyst already has; the changelog adds APKS support in 0.03. Detections are signature and heuristic identifications for analyst confirmation, not proof of how an app was built or protected. The repository itself contains no tests or CI workflows.",
+      "MIT license, copyright 2020-2026 hors; the submodules are separate repositories whose licenses were not reviewed individually. No package was scanned and nothing was built."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/docs/BUILD.md",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/docs/RUN.md",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/changelog.txt",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/.gitmodules",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/console_source/main_console.cpp",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/gui_source/guimainwindow.ui",
+      "https://github.com/horsicq/XAPKDetector/blob/09ce272fd312325678c864e9dd05f22070fe8b36/LICENSE",
+      "https://github.com/horsicq/XAPKDetector/releases/tag/0.03"
+    ]
   }
 ]
