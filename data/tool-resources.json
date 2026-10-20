@@ -11254,5 +11254,45 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "reark",
+    "name": "ReArk",
+    "url": "https://github.com/lkimuk/ReArk",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "binary"
+    ],
+    "description_en": "Desktop reverse-engineering and AI-assisted analysis workbench for HarmonyOS NEXT packages (.hap, .app and .abc), whose binary releases add Android .apk/.aab, iOS .ipa and standalone PE, ELF and Mach-O analysis. The README describes browsing package structure, resources, signatures and metadata, ABC bytecode disassembly and decompilation with strings and cross-references, Java-like Android decompilation, native header, import and mitigation views, and HDC/ADB device workflows for installing apps, reading logs and mirroring screens. Its built-in ReArk Agent answers questions about the open package with OpenAI-compatible or local Ollama models, retrieving package evidence on demand behind approval flows for host and device actions.",
+    "description_zh": "面向 HarmonyOS NEXT 安装包（.hap、.app 和 .abc）的桌面逆向与 AI 辅助分析工作台，其二进制发行版还加入了 Android .apk/.aab、iOS .ipa 以及独立 PE、ELF 和 Mach-O 文件的分析。README 介绍的功能包括浏览包结构、资源、签名和元数据，反汇编和反编译 ABC 字节码并查看字符串与交叉引用，Android 类 Java 反编译，原生文件的头部、导入表和安全缓解措施视图，以及通过 HDC/ADB 安装应用、读取日志和投屏的设备工作流。内置的 ReArk Agent 借助 OpenAI 兼容接口或本地 Ollama 模型回答关于当前包的问题，按需检索包内证据，主机和设备操作需经审批流程。",
+    "evidence_url": "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.1.1, published 2026-10-15, with a Windows x64 installer and macOS arm64 and x86_64 disk images; the README lists Windows 10+ and macOS 14.0+ and says Linux is coming in the next release. According to the release notes, Android support arrived in v1.0.0, and iOS, PE, ELF and Mach-O analysis with packer detection in v1.1.0.",
+      "The published source lags those releases: the v1.0.0, v1.1.0 and v1.1.1 tags point to commits with no source changes after 2026-07-10, VERSION still reads 0.2.0, and the tree holds HarmonyOS and HDC code but no Android, iOS or native-format backends. Building it needs Qt 6, CMake 3.21+ and C++20 plus the author's hyle package, which CMake requires but which is not published; the optional Wuwe agent runtime is a separate Apache-2.0 repository.",
+      "Supply the packages or binaries to analyze yourself. For device and signing workflows the repository bundles plugin/hdc/hdc.exe with libusb_shared.dll and the OpenHarmony hap-sign-tool.jar and app_packing_tool.jar. samples/ holds small HarmonyOS packages (Bridge.hap, contacts.hap, EasyHap-default-unsigned.app and fpt-default-signed.app), the shctf.app and shctf.zip CTF sample documented in docs/shctf-analysis-path.md, and 倩倩手机逆向包.rar, an archive of the fpt sample with its app-data files. THIRD_PARTY_NOTICES lists only Font Awesome icons.",
+      "ReArk Agent needs a configured model provider: an OpenAI-compatible endpoint, a provider named in the release notes or a local Ollama model. The README asks users not to send secrets, certificates, user data or trade secrets to remote providers, and limits use to legally authorized reverse engineering, interoperability, malware and security research. The app checks GitHub's latest-release API for updates.",
+      "The repository is Apache-2.0; the bundled OpenHarmony tools and icons keep their own licenses, and the release installers contain components absent from the published source. Decompiled output and agent answers still need analyst review. Neither the app nor the samples were run for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/README.zh-CN.md",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/CMakeLists.txt",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/VERSION",
+      "https://github.com/lkimuk/ReArk/tree/b4e83376dc0dfd82d26855c07610b135429328e3/src",
+      "https://github.com/lkimuk/ReArk/tree/b4e83376dc0dfd82d26855c07610b135429328e3/plugin",
+      "https://github.com/lkimuk/ReArk/tree/b4e83376dc0dfd82d26855c07610b135429328e3/samples",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/docs/shctf-analysis-path.md",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/docs/release-management.md",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/THIRD_PARTY_NOTICES.md",
+      "https://github.com/lkimuk/ReArk/blob/b4e83376dc0dfd82d26855c07610b135429328e3/LICENSE",
+      "https://github.com/lkimuk/ReArk/releases/tag/v1.1.1",
+      "https://github.com/lkimuk/ReArk/releases/tag/v1.1.0",
+      "https://github.com/lkimuk/ReArk/releases/tag/v1.0.0",
+      "https://github.com/lkimuk/Wuwe/blob/98c3be7a2d337695bfe9fda89fc08a7a377432e9/README.md"
+    ]
   }
 ]

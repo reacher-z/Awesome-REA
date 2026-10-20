@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "reark": {
+    "name": "ReArk 鸿蒙与移动应用逆向分析工作台",
+    "requirements": [
+      "审阅时最新版本为 v1.1.1，发布于 2026-10-15，提供 Windows x64 安装程序以及 macOS arm64 和 x86_64 磁盘镜像；README 列出 Windows 10+ 和 macOS 14.0+，并称 Linux 版将在下一版本推出。据发行说明，Android 支持始于 v1.0.0，iOS、PE、ELF、Mach-O 分析及加壳检测则在 v1.1.0 加入。",
+      "公开源码落后于这些发行版：v1.0.0、v1.1.0 和 v1.1.1 标签所指的提交在 2026-07-10 之后都没有源码改动，VERSION 仍为 0.2.0，源码树只有 HarmonyOS 与 HDC 相关代码，没有 Android、iOS 或原生格式后端。构建需要 Qt 6、CMake 3.21+ 和 C++20，并依赖作者的 hyle 软件包；CMake 将其列为必需项，但该包并未公开。可选的 Wuwe 智能体运行时是另一个 Apache-2.0 仓库。",
+      "需自行提供要分析的安装包或二进制文件。为支持设备与签名工作流，仓库附带 plugin/hdc/hdc.exe 及 libusb_shared.dll，以及 OpenHarmony 的 hap-sign-tool.jar 和 app_packing_tool.jar。samples/ 中有几个小型 HarmonyOS 示例包（Bridge.hap、contacts.hap、EasyHap-default-unsigned.app 和 fpt-default-signed.app）、docs/shctf-analysis-path.md 所记录的 shctf.app 与 shctf.zip CTF 样本，以及 倩倩手机逆向包.rar，即 fpt 示例及其应用数据文件的压缩包。THIRD_PARTY_NOTICES 只列出 Font Awesome 图标。",
+      "ReArk Agent 需要配置模型服务：OpenAI 兼容接口、发行说明中列出的服务商，或本地 Ollama 模型。README 提醒不要向远程服务商提交密钥、证书、用户数据或商业秘密，并将用途限定为经合法授权的逆向工程、互操作研究、恶意软件分析和安全研究。应用会访问 GitHub 最新版本 API 检查更新。",
+      "仓库采用 Apache-2.0 许可证；附带的 OpenHarmony 工具和图标各自保留许可证，发行版安装程序还包含公开源码中没有的组件。反编译结果和智能体回答仍需分析人员复核。本次未运行该应用，也未运行任何示例。"
+    ]
   }
 }
