@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 89](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (88) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (89) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -2954,13 +2954,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**88 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**89 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (35) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (36) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -3513,6 +3513,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 函数名被预测为来自固定训练词表的无序单词集合，并按单词级精确率、召回率和 F1 评分，CodeWordNet 会将语义相近的单词计为匹配。这并非精确恢复源码名称，且无法生成词表外的单词。二进制由 GCC 7.5 为 Linux 构建，并在同样的 27 个项目内按二进制划分数据集。在来自 12 个未见项目的 540 个二进制上，整体表现仍然较低，作者将部分原因归于词表不匹配；后来一项 NDSS 2025 研究在去重数据上比较时，报告 SymLM 的平均 F1 为 0.105。与 NFRE 的比较仅针对 x64，与 NERO 的比较使用 NERO 的数据集。混淆实验覆盖四种 Hikari 混淆，不包括加壳或加密。固件案例中，八个 32 位 ARM 固件映像的 1,061 个函数里有 172 个得到部分正确的名称。
 
   **作者:** Xin Jin 等
+
+  </details>
+
+- [**机器学习如何解决二进制函数相似性问题**](https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli)
+
+  在统一的、基于 IDA Pro 的框架中重新实现来自安全、程序语言与机器学习三个研究社区的十种代表性方法，对二进制函数相似性研究开展测量，方法涵盖模糊哈希（Catalog1、FunctionSimSearch）以及图神经网络、NLP 编码器与 Transformer 模型。两个新数据集支撑六项改变优化级别、编译器、位宽与架构的任务，以 AUC 和排序指标评分，另含一项固件漏洞搜索案例。作者报告称，模糊哈希在较难的跨架构场景中失效，基于图神经网络的模型几乎在所有任务中表现最佳，许多近期模型在相同数据上的得分相近。
+
+  USENIX Security 2022 · 会议论文 · [PDF](https://www.usenix.org/system/files/sec22-marcelli.pdf) · [代码](https://github.com/Cisco-Talos/binary_function_similarity) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-binary-function-similarity/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这是 2022 年对作者自行重新实现版本的比较，并非对原论文代码或所报告数值的比较，作者也未尝试复现这些数值；CodeCMR 由其原作者运行，Trex 仅在 Dataset-2 上使用其作者提供的模型测试。研究按设计排除了动态分析、符号执行及其他较慢的直接比较方法，也不涵盖基于大语言模型的相似性模型。Dataset-1 使用 GCC 与 Clang，在关闭函数内联的条件下，将七个开源项目（ClamAV、Curl、Nmap、OpenSSL、Unrar、Z3、Zlib）编译为 x86-64、ARM 与 MIPS 的 32 位及 64 位版本，优化级别为 O0–O3 与 Os，并剔除少于五个基本块的函数。Dataset-2 复用 Trex 作者发布的十个 GCC 7.5 项目。特征提取依赖 IDA Pro 7.3；由于缺少较新的 Hex-Rays MIPS 反编译器许可证，BinaryAI 仅覆盖部分数据。固件案例在两个映像中搜索十个 OpenSSL 函数。研究未评估混淆代码，结果也不代表当前排名。
+
+  **作者:** Andrea Marcelli 等
 
   </details>
 

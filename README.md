@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 89](https://img.shields.io/badge/papers-89-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (89) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2953,13 +2953,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**88 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**89 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (35) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (36) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -3512,6 +3512,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Names are predicted as unordered word sets from a fixed training vocabulary and scored with word-level precision, recall and F1, with CodeWordNet counting semantically similar words as matches. This is not exact source-name recovery, and out-of-vocabulary words cannot be produced. Binaries were built with GCC 7.5 for Linux and split by binary within the same 27 projects. On 540 binaries from 12 unseen projects, overall performance remains lower, which the authors partly attribute to vocabulary mismatch; a later NDSS 2025 comparison on deduplicated data reports SymLM’s average F1 at 0.105. NFRE comparisons are x64-only, and NERO comparisons use NERO’s dataset. Obfuscation covers four Hikari passes, not packing or encryption. In the firmware case study, 172 of 1,061 functions in eight 32-bit ARM firmware images received partially correct names.
 
   **Authors:** Xin Jin et al.
+
+  </details>
+
+- [**How Machine Learning Is Solving the Binary Function Similarity Problem**](https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli)
+
+  Measures binary function similarity research by re-implementing ten representative approaches from the security, programming-language and machine-learning communities in one IDA Pro-based framework, from fuzzy hashing (Catalog1, FunctionSimSearch) to graph neural network, NLP-encoder and transformer models. Two new datasets support six tasks that vary optimization, compiler, bitness and architecture, scored by AUC and ranking metrics, plus a firmware vulnerability-search case. The authors report that fuzzy hashing fails in harder cross-architecture settings, GNN-based models perform best in almost all tasks, and many recent models score similarly on common data.
+
+  USENIX Security 2022 · Conference paper · [PDF](https://www.usenix.org/system/files/sec22-marcelli.pdf) · [Code](https://github.com/Cisco-Talos/binary_function_similarity) · [Full entry & citation](https://awesomerea.org/papers/paper-binary-function-similarity/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** A 2022 comparison of the authors’ re-implementations, not of the original papers’ code or reported numbers, which the authors did not try to reproduce; CodeCMR was run by its own authors, and Trex was tested only on Dataset-2 with its authors’ model. Dynamic-analysis, symbolic-execution and other slow direct-comparison approaches were excluded by design, and LLM-based similarity models are not covered. Dataset-1 compiles seven open-source projects (ClamAV, Curl, Nmap, OpenSSL, Unrar, Z3, Zlib) with GCC and Clang for x86-64, ARM and MIPS in 32 and 64 bit at O0–O3 and Os with function inlining disabled, and drops functions under five basic blocks. Dataset-2 reuses ten GCC 7.5 projects released by the Trex authors. Feature extraction depends on IDA Pro 7.3; BinaryAI covered only part of the data because a recent Hex-Rays MIPS decompiler license was unavailable. The firmware case searches ten OpenSSL functions in two images. Obfuscated code is not evaluated, and the results are not a current ranking.
+
+  **Authors:** Andrea Marcelli et al.
 
   </details>
 

@@ -4974,5 +4974,66 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-binary-function-similarity",
+    "title": "How Machine Learning Is Solving the Binary Function Similarity Problem",
+    "title_zh": "机器学习如何解决二进制函数相似性问题",
+    "authors": [
+      "Andrea Marcelli",
+      "Mariano Graziano",
+      "Xabier Ugarte-Pedrero",
+      "Yanick Fratantonio",
+      "Mohamad Mansouri",
+      "Davide Balzarotti"
+    ],
+    "year": 2022,
+    "publication_date": "2022-08",
+    "date_precision": "month",
+    "date_basis": "Publication month from the official USENIX BibTeX (month = aug) and the final PDF cover for the 31st USENIX Security Symposium, August 10–12, 2022; no exact publication day is asserted.",
+    "date_basis_zh": "采用 USENIX 官方 BibTeX（month = aug）及第 31 届 USENIX Security Symposium（2022 年 8 月 10–12 日）最终版 PDF 封面所载的出版月份，不推定具体出版日。",
+    "venue": "USENIX Security 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "citation": {
+      "container_title": "31st USENIX Security Symposium (USENIX Security 22)",
+      "publisher": "USENIX Association",
+      "pages": "2099-2116",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli",
+        "https://www.usenix.org/system/files/sec22-marcelli.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli",
+    "pdf_url": "https://www.usenix.org/system/files/sec22-marcelli.pdf",
+    "code_url": "https://github.com/Cisco-Talos/binary_function_similarity",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Measures binary function similarity research by re-implementing ten representative approaches from the security, programming-language and machine-learning communities in one IDA Pro-based framework, from fuzzy hashing (Catalog1, FunctionSimSearch) to graph neural network, NLP-encoder and transformer models. Two new datasets support six tasks that vary optimization, compiler, bitness and architecture, scored by AUC and ranking metrics, plus a firmware vulnerability-search case. The authors report that fuzzy hashing fails in harder cross-architecture settings, GNN-based models perform best in almost all tasks, and many recent models score similarly on common data.",
+    "description_zh": "在统一的、基于 IDA Pro 的框架中重新实现来自安全、程序语言与机器学习三个研究社区的十种代表性方法，对二进制函数相似性研究开展测量，方法涵盖模糊哈希（Catalog1、FunctionSimSearch）以及图神经网络、NLP 编码器与 Transformer 模型。两个新数据集支撑六项改变优化级别、编译器、位宽与架构的任务，以 AUC 和排序指标评分，另含一项固件漏洞搜索案例。作者报告称，模糊哈希在较难的跨架构场景中失效，基于图神经网络的模型几乎在所有任务中表现最佳，许多近期模型在相同数据上的得分相近。",
+    "scope_limitations_en": "A 2022 comparison of the authors’ re-implementations, not of the original papers’ code or reported numbers, which the authors did not try to reproduce; CodeCMR was run by its own authors, and Trex was tested only on Dataset-2 with its authors’ model. Dynamic-analysis, symbolic-execution and other slow direct-comparison approaches were excluded by design, and LLM-based similarity models are not covered. Dataset-1 compiles seven open-source projects (ClamAV, Curl, Nmap, OpenSSL, Unrar, Z3, Zlib) with GCC and Clang for x86-64, ARM and MIPS in 32 and 64 bit at O0–O3 and Os with function inlining disabled, and drops functions under five basic blocks. Dataset-2 reuses ten GCC 7.5 projects released by the Trex authors. Feature extraction depends on IDA Pro 7.3; BinaryAI covered only part of the data because a recent Hex-Rays MIPS decompiler license was unavailable. The firmware case searches ten OpenSSL functions in two images. Obfuscated code is not evaluated, and the results are not a current ranking.",
+    "scope_limitations_zh": "这是 2022 年对作者自行重新实现版本的比较，并非对原论文代码或所报告数值的比较，作者也未尝试复现这些数值；CodeCMR 由其原作者运行，Trex 仅在 Dataset-2 上使用其作者提供的模型测试。研究按设计排除了动态分析、符号执行及其他较慢的直接比较方法，也不涵盖基于大语言模型的相似性模型。Dataset-1 使用 GCC 与 Clang，在关闭函数内联的条件下，将七个开源项目（ClamAV、Curl、Nmap、OpenSSL、Unrar、Z3、Zlib）编译为 x86-64、ARM 与 MIPS 的 32 位及 64 位版本，优化级别为 O0–O3 与 Os，并剔除少于五个基本块的函数。Dataset-2 复用 Trex 作者发布的十个 GCC 7.5 项目。特征提取依赖 IDA Pro 7.3；由于缺少较新的 Hex-Rays MIPS 反编译器许可证，BinaryAI 仅覆盖部分数据。固件案例在两个映像中搜索十个 OpenSSL 函数。研究未评估混淆代码，结果也不代表当前排名。",
+    "why_fits_en": "Adds a common-framework measurement of binary function matching, which reverse engineers use to transfer labels from known functions to stripped code, complementing single-model records such as jTrans and BinaryAI.",
+    "why_fits_zh": "补充在统一框架下对二进制函数匹配的测量研究；逆向工程人员借助函数匹配，将已知函数的标签迁移到剥离符号的代码上。该研究与 jTrans、BinaryAI 等单一模型条目互补。",
+    "metadata_notes": "No paper DOI or arXiv identifier was verified; the record uses the reviewed USENIX Security presentation-page and sec22-marcelli.pdf profile. The USENIX BibTeX gives the 31st USENIX Security Symposium, pages 2099–2116, USENIX Association and month August; the presentation page also links a prepublication PDF and slides. The repository README lists errata for a Section 3.2 statement on BinDiff and Diaphora cross-architecture support and for the Figure 2 captions. At reviewed commit f0da093 (2024-05-15), repository code is MIT-licensed, but the README lists GPL-3.0 (Catalog1, SAFE, IDA CodeCMR plugin), LGPL-2.1 (Gensim-based Asm2vec), Apache-2.0 (FunctionSimSearch, GGSNN/GMN) and CC BY-NC-SA 4.0 (GNN-s2v) components; compiled binaries keep their own licenses. Binaries (about 15 GB) and extracted features (about 38 GB) download from Google Drive, and generating new IDBs or features requires IDA Pro. Only documentation files were read; no datasets were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "未核实论文 DOI 或 arXiv 标识符；本条目采用经审阅的 USENIX Security 报告页面与 sec22-marcelli.pdf 配对规则。USENIX BibTeX 给出第 31 届 USENIX Security Symposium、页码 2099–2116、出版方 USENIX Association 及八月份；报告页面另链接预发表版 PDF 与幻灯片。仓库 README 列出勘误，涉及第 3.2 节关于 BinDiff 与 Diaphora 跨架构支持的表述及图 2 说明。在所审阅的提交 f0da093（2024-05-15）中，仓库代码采用 MIT 许可证，但 README 列出 GPL-3.0（Catalog1、SAFE、IDA CodeCMR 插件）、LGPL-2.1（基于 Gensim 的 Asm2vec）、Apache-2.0（FunctionSimSearch、GGSNN/GMN）及 CC BY-NC-SA 4.0（GNN-s2v）组件；编译出的二进制保留各自许可证。二进制（约 15 GB）与提取的特征（约 38 GB）需从 Google Drive 下载，生成新的 IDB 或特征需要 IDA Pro。本次仅阅读文档文件，未下载数据集，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity22/presentation/marcelli",
+      "https://www.usenix.org/system/files/sec22-marcelli.pdf",
+      "https://github.com/Cisco-Talos/binary_function_similarity/blob/f0da093ed5662de51182822991ebee68c1a93cc2/README.md",
+      "https://github.com/Cisco-Talos/binary_function_similarity/blob/f0da093ed5662de51182822991ebee68c1a93cc2/LICENSE",
+      "https://github.com/Cisco-Talos/binary_function_similarity/blob/f0da093ed5662de51182822991ebee68c1a93cc2/Binaries/README.md",
+      "https://github.com/Cisco-Talos/binary_function_similarity/blob/f0da093ed5662de51182822991ebee68c1a93cc2/DBs/README.md",
+      "https://github.com/Cisco-Talos/binary_function_similarity/blob/f0da093ed5662de51182822991ebee68c1a93cc2/IDA_scripts/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
