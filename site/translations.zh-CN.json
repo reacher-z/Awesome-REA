@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "monkeydev": {
+    "name": "MonkeyDev iOS 应用插桩开发工具包",
+    "requirements": [
+      "所审阅的 master 提交 f906af1（最后推送于 2026-10-20）对应版本 4.10；仓库未发布带标签的版本。README 称非越狱流程在搭载 Xcode 27.0 的 Apple Silicon Mac 与 iOS 18.6.2 的 iPhone 14 Pro 上完成验证，覆盖构建、重复安装、Hook、符号断点、头文件导出和 Reveal；越狱场景下 rootless 的 Tweak 与命令行工具已在真机验证，rootful 仅完成构建和打包检查。",
+      "安装需要完整 Xcode、原生 arm64 shell，以及用户自行安装在其主目录下的 Theos；它安装到 /opt/MonkeyDev，并在用户的 Xcode 模板目录注册模板，不修改 Xcode.app。仓库提交了预编译的原生辅助二进制（项目自带的 monkeyparser 和一份 class-dump 构建）以及 libsubstitute.dylib 库，另有 Resource/TargetApp.app 下的演示应用作为内置验证输入。",
+      "每个 MonkeyApp 需要开发者提供一个目标输入：放入工程 TargetApp 目录的已解密 .app 或已砸壳 IPA，未提供时则使用内置 Demo。README 说明 MonkeyDev 不在非越狱设备上对应用砸壳。签名需要当前团队可用的证书、匹配的描述文件和设备授权，保留 Bundle ID 的开关不会绕过签名权限。",
+      "采用 GPL-3.0 许可；Librarys/roothide 下捆绑的 roothide SDK 为 MIT。仓库提供 Xcode 模板、安装与打包脚本、辅助二进制和演示应用，不含任何第三方目标应用。本次未安装、未构建、未运行任何内容。"
+    ]
   }
 }

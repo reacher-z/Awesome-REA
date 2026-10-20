@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**104 repositories** · 2026-10-16 UTC
+**105 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -11,6 +11,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — Exploit Development and Reverse Engineering with GDB &amp; LLDB Made Easy **[11,064 stars]** · Curated: [pwndbg](https://awesomerea.org/resources/pwndbg/)
 - [rr-debugger/rr](https://github.com/rr-debugger/rr) — Record and Replay Framework **[10,707 stars]** · Curated: [rr](https://awesomerea.org/resources/rr/)
 - [hugsy/gef](https://github.com/hugsy/gef) — GEF (GDB Enhanced Features) - a modern experience for GDB with advanced debugging capabilities for exploit devs &amp; reverse engineers on Linux **[8,399 stars]** · Curated: [GEF (GDB Enhanced Features)](https://awesomerea.org/resources/gef/)
+- [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — Patch iOS apps without jailbreaking using CaptainHook Tweak, Logos Tweak, and command-line tools. **[6,800 stars]** · Curated: [MonkeyDev](https://awesomerea.org/resources/monkeydev/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — A True Instrumentable Binary Emulation Framework **[6,139 stars]** · Curated: [Qiling](https://awesomerea.org/resources/qiling/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — State-of-the-art native debugging tools **[4,133 stars]** · Curated: [HyperDbg](https://awesomerea.org/resources/hyperdbg/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — Dynamic Instrumentation Tool Platform **[3,181 stars]** · Curated: [DynamoRIO](https://awesomerea.org/resources/dynamorio/)

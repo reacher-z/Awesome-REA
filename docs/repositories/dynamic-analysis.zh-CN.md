@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
 
-**104 个仓库** · 2026-10-16 UTC
+**105 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -11,6 +11,7 @@
 - [pwndbg/pwndbg](https://github.com/pwndbg/pwndbg) — 让使用 GDB 和 LLDB 进行漏洞利用开发与逆向工程变得简单。 **[11,064 星标]** · 精选：[pwndbg GDB/LLDB 调试增强插件](https://awesomerea.org/zh/resources/pwndbg/)
 - [rr-debugger/rr](https://github.com/rr-debugger/rr) — 录制与回放框架。 **[10,707 星标]** · 精选：[rr](https://awesomerea.org/zh/resources/rr/)
 - [hugsy/gef](https://github.com/hugsy/gef) — GEF（GDB Enhanced Features）：为 Linux 上的漏洞利用开发人员和逆向工程师提供现代化 GDB 体验及高级调试功能。 **[8,399 星标]** · 精选：[GEF GDB 增强扩展](https://awesomerea.org/zh/resources/gef/)
+- [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — 无需越狱，利用 CaptainHook Tweak、Logos Tweak 和命令行工具为 iOS 应用打补丁。 **[6,800 星标]** · 精选：[MonkeyDev iOS 应用插桩开发工具包](https://awesomerea.org/zh/resources/monkeydev/)
 - [qilingframework/qiling](https://github.com/qilingframework/qiling) — 真正支持插桩的二进制模拟框架。 **[6,139 星标]** · 精选：[Qiling](https://awesomerea.org/zh/resources/qiling/)
 - [HyperDbg/HyperDbg](https://github.com/HyperDbg/HyperDbg) — 先进的原生调试工具。 **[4,133 星标]** · 精选：[HyperDbg 虚拟化辅助调试器](https://awesomerea.org/zh/resources/hyperdbg/)
 - [DynamoRIO/dynamorio](https://github.com/DynamoRIO/dynamorio) — 动态插桩工具平台。 **[3,181 星标]** · 精选：[DynamoRIO 动态二进制插桩框架](https://awesomerea.org/zh/resources/dynamorio/)

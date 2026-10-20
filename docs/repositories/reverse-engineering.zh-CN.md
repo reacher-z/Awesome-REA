@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**605 个仓库** · 2026-10-16 UTC
+**604 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -18,7 +18,6 @@
 - [majd/ipatool](https://github.com/majd/ipatool) — 命令行工具，可在 App Store 搜索 iOS、iPadOS、tvOS、watchOS、visionOS 和 macOS 应用，并下载 .ipa 或 macOS .pkg 应用安装包。 **[11,709 星标]**
 - [wtsxDev/reverse-engineering](https://github.com/wtsxDev/reverse-engineering) — 优质逆向工程资源列表。 **[10,580 星标]**
 - [Col-E/Recaf](https://github.com/Col-E/Recaf) — 现代化 Java 字节码编辑器。 **[7,437 星标]** · 精选：[Recaf 字节码分析与编辑工具](https://awesomerea.org/zh/resources/recaf/)
-- [AloneMonkey/MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) — 无需越狱，利用 CaptainHook Tweak、Logos Tweak 和命令行工具为 iOS 应用打补丁。 **[6,800 星标]**
 - [rmusser01/Infosec\_Reference](https://github.com/rmusser01/Infosec_Reference) — 一份靠谱的信息安全参考资料；非微软 Git 托管版本见 https<span>:</span>//rmusser.net/git/admin-2/Infosec\_Reference。 **[6,007 星标]**
 - [ReagentX/imessage-exporter](https://github.com/ReagentX/imessage-exporter) — 导出 iMessage 数据并运行 iMessage 诊断。 **[5,675 星标]**
 - [mentebinaria/retoolkit](https://github.com/mentebinaria/retoolkit) — 逆向工程师工具包。 **[5,315 星标]**

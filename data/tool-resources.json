@@ -11191,5 +11191,32 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "monkeydev",
+    "name": "MonkeyDev",
+    "url": "https://github.com/AloneMonkey/MonkeyDev",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Based on iOSOpenDev, MonkeyDev adds a MonkeyApp project template to Xcode for instrumenting iOS apps the developer is authorized to analyze. From Xcode it injects a developer-written dylib into a supplied decrypted app, builds Objective-C or Logos (CaptainHook) hooks, and re-signs, installs and debugs the result with source-level breakpoints; optional build settings restore Objective-C symbols, export the target's Objective-C headers and enable Reveal view inspection. The current version also builds jailbreak Logos/CaptainHook tweaks and command-line tools for rootless, rootful or roothide environments.",
+    "description_zh": "MonkeyDev 基于 iOSOpenDev，为 Xcode 增加 MonkeyApp 工程模板，用于对开发者有权分析的 iOS 应用进行插桩。它在 Xcode 中将开发者编写的 dylib 注入到提供的已解密应用，编写 Objective-C 或 Logos（CaptainHook）Hook，并完成重签名、安装与带源码级断点的调试；可选的构建设置支持还原 Objective-C 符号、导出目标应用的 Objective-C 头文件以及启用 Reveal 视图检查。当前版本还可为 rootless、rootful 或 roothide 环境构建越狱 Logos/CaptainHook Tweak 和命令行工具。",
+    "evidence_url": "https://github.com/AloneMonkey/MonkeyDev/blob/f906af1d90adc03bc6a6e4c1f39098a32371faae/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit f906af1 (last pushed 2026-10-20) documents version 4.10; the repository has no tagged release. The README reports the non-jailbreak flow verified on Apple Silicon Macs with Xcode 27.0 and an iPhone 14 Pro on iOS 18.6.2, covering build, repeat install, hooking, symbol breakpoints, header export and Reveal, and separately reports rootless tweak and command-line builds verified on device with rootful only build- and package-checked.",
+      "Installation needs a full Xcode, a native arm64 shell and Theos installed separately under the current user's home directory; it installs to /opt/MonkeyDev and registers the templates in the user's Xcode template directory without modifying Xcode.app. The repository commits prebuilt native helper binaries (its own monkeyparser and a build of class-dump) and the libsubstitute.dylib library, plus a demo app under Resource/TargetApp.app used as the built-in validation input.",
+      "Each MonkeyApp needs one target input the developer supplies: a decrypted .app or already-dumped IPA placed in the project's TargetApp folder, or the built-in demo when none is provided. The README states MonkeyDev does not decrypt apps on non-jailbroken devices. Signing requires a certificate available to the current team, a matching provisioning profile and device authorization, and the keep-bundle-ID toggle does not bypass signing entitlements.",
+      "GPL-3.0 licensed; the bundled roothide SDK under Librarys/roothide is MIT. The repository ships the Xcode templates, install/packaging scripts, the helper binaries and the demo app, and contains no third-party target application. Nothing was installed, built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/AloneMonkey/MonkeyDev/blob/f906af1d90adc03bc6a6e4c1f39098a32371faae/change.log",
+      "https://github.com/AloneMonkey/MonkeyDev/blob/f906af1d90adc03bc6a6e4c1f39098a32371faae/LICENSE",
+      "https://github.com/AloneMonkey/MonkeyDev/blob/f906af1d90adc03bc6a6e4c1f39098a32371faae/Librarys/roothide/LICENSE"
+    ]
   }
 ]
