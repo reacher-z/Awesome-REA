@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "bravo-minecraft-server-case": {
+    "name": "Bravo：逆向实现的 Minecraft 服务端",
+    "requirements": [
+      "项目已停止维护：GitHub 简介标为 UNMAINTAINED，所审阅的 master 提交日期为 2014-09-09，比 2.0 标签（2013-01-10，也是 PyPI 上的最新版本）多 90 个提交。2.0 更新日志称新增 1.4.x 协议支持但不含服务端加密，停用了已失效的在线验证，并以 Anvil 取代 Alpha 和 Beta 存档格式；源码固定协议版本为 78。简介称运行创造模式大概是安全的，但仍缺少部分生存多人模式要素；功能列表等较早的页面早于这些 2.0 改动。",
+      "服务端不需要任何原游戏文件；玩家用自己拥有的对应版本 Minecraft 客户端连接，FAQ 表示 Bravo 不会替代客户端。仓库未提交游戏素材或 Mojang 代码：方块、物品和配方定义以 Python 表格写成，文档称 Bravo 未继承其他 Minecraft 项目的代码。",
+      "需要 Python 2.6 或 2.7（CPython 或 PyPy）；requirements.txt 固定 construct 2.0.6 和 Pillow 2.4.0，并要求 Twisted 11.0+（含 Twisted Conch），IRC 和网页插件另需 Twisted Words 或 Web。它以 twistd 的 bravo 插件运行，按 bravo.ini.example 配置世界路径、创造或生存模式及 anvil 序列化器；数据包解析脚本仍导入 2.0 之前的模块路径。",
+      "Travis CI 曾在 Python 2.6、2.7 和 PyPy 上用 trial 运行仓库内针对协议数据包、区块、背包、插件和序列化器的测试；这些测试检查 Bravo 自身代码，而非与 Mojang 服务端的等价性，本次审阅未运行任何程序。采用 MIT/X11 许可证，bravo/nbt.py 取自 Thomas Woolford 的 MIT 许可 NBT 库；Minecraft 及其客户端仍归 Mojang 所有。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }

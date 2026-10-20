@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "bravo-minecraft-server-case",
+    "name": "Bravo: a reverse-engineered Minecraft server",
+    "url": "https://github.com/bravoserver/bravo",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "protocol"
+    ],
+    "description_en": "Reimplements the server side of Minecraft’s Alpha- and Beta-era multiplayer in Python on Twisted; its documentation calls it a reverse-engineered implementation written from scratch, credits network traffic dumps and says general Minecraft data went to a community wiki. The final 2.0 release speaks the 1.4.x client protocol for login, chunk transfer, entities, server-side inventories, lighting, physics and Anvil saves, while deliberately changing behaviour such as chunk loading and item stacking. A pluggable architecture adds terrain generation, seasons and commands, and small scripts inspect packets, NBT and region files.",
+    "description_zh": "以 Python 基于 Twisted 重新实现 Minecraft Alpha 与 Beta 时期多人游戏的服务端；其文档称这是从零编写的逆向实现，致谢了网络流量转储的提供者，并说明通用的 Minecraft 资料已贡献给社区 wiki。最终的 2.0 版支持 1.4.x 客户端协议，涵盖登录、区块传输、实体、服务端背包、光照、物理和 Anvil 存档，同时有意改变了区块加载和物品堆叠等行为。可插拔架构提供地形生成、季节和命令，另有几个小脚本用于查看数据包、NBT 和区域文件。",
+    "evidence_url": "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/README.rst",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Unmaintained: the GitHub description marks the project UNMAINTAINED, and the reviewed master commit dates from 2014-09-09, 90 commits after the 2.0 tag (2013-01-10, also the latest PyPI release). The 2.0 changelog adds 1.4.x protocol support without server-side encryption, disables broken online authentication and replaces the Alpha and Beta save formats with Anvil; source pins protocol version 78. The introduction says creative games are probably safe but some Survival-Multiplayer elements are missing, and older pages such as the feature list predate these 2.0 changes.",
+      "The server needs no original game files; clients connect with the matching Minecraft client the player owns, which the FAQ says Bravo will not replace. The repository commits no game assets or Mojang code: block, item and recipe definitions are written as Python tables, and the documentation says Bravo inherits no code from other Minecraft projects.",
+      "Python 2.6 or 2.7 (CPython or PyPy); requirements.txt pins construct 2.0.6 and Pillow 2.4.0 and needs Twisted 11.0+, including Twisted Conch, with Twisted Words or Web for the IRC and web plugins. It runs as the twistd bravo plugin, configured from bravo.ini.example with a world path, creative or survival mode and the anvil serializer; the packet-parser script still imports a pre-2.0 module path.",
+      "Travis CI ran trial over the in-tree tests for protocol packets, chunks, inventories, plugins and serializers on Python 2.6, 2.7 and PyPy; they test Bravo’s own code, not equivalence with Mojang’s server, and this review ran nothing. MIT/X11 license, with bravo/nbt.py taken from Thomas Woolford’s MIT NBT library; Minecraft and its client keep Mojang’s rights. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/docs/introduction.rst",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/docs/differences.rst",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/CHANGELOG.rst",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/bravo/beta/protocol.py",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/bravo.ini.example",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/requirements.txt",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/.travis.yml",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/LICENSE",
+      "https://github.com/bravoserver/bravo/blob/7be5d792871a8447499911fa1502c6a7c1437dc3/tools/parser-cli.py",
+      "https://pypi.org/project/Bravo/2.0/"
+    ]
   }
 ]
