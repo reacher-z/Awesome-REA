@@ -34,6 +34,18 @@ Different repositories can carry the same README. `python3 scripts/scan_sources.
 
 The remaining 2,836 entries have not all received individual relevance or functionality review. They are a discovery collection, separate from the [curated, source-reviewed catalog](../data/README.md). Missing target tags alone do not justify exclusion: the unclassified records include game decompilations, language decompilers, and hardware protocol research. Scope decisions are also separate from licensing, safety, and REA compatibility judgments.
 
+### Exact-README review receipts
+
+Before writing a scope decision, re-read the captured README with the [scope review helper](../scripts/source_scope_review.py). Like the [availability recheck](#recheck-availability), it is opt-in: it needs a token in `GH_TOKEN` or `GITHUB_TOKEN`, uses the scanner's guarded API client, and no test, validator or workflow calls it. It accepts at most 50 explicitly named source IDs.
+
+```sh
+GH_TOKEN="$(gh auth token)" python3 scripts/source_scope_review.py scan-361197329 scan-1209966933 --print-readme
+```
+
+A requested ID that is not a successful scan is reported as `not-scanned` without any request. For every other ID, one [repository metadata](https://docs.github.com/en/rest/repos/repos#get-a-repository) request by numeric ID must confirm the recorded public name; a renamed, missing or private repository stops there as `identity-changed`, `unavailable` or `ineligible`. A second request reads the record's advertised immutable [Git blob](https://docs.github.com/en/rest/git/blobs#get-a-blob), whose bytes must hash to that identifier. Only when they also match the captured byte count and SHA-256 is the outcome `match`, and its receipt then carries the `readme_sha256` and `evidence_url` that a scope decision binds. A `mismatch` yields no scope evidence and is never accepted automatically: the receipt keeps the advertised identifier, the identifier computed from the captured bytes where the record stores one, and the identifier computed from the blob as separate fields. Rate limits, server errors, network failures and malformed blobs are `inconclusive`. `--print-readme` prints each verified README to standard output for the reviewer; it is untrusted upstream text and is not saved.
+
+The receipt is written to `.cache/source-scope-review-<UTC date>.json` by default, and the helper refuses to write into `data/`. It records the source snapshot's SHA-256, the request count and, per ID, the README and blob URLs, byte counts, hashes and a short note, but no README text. No upstream code is run, and no source record or scope decision is changed; the bilingual reason and review date remain a separate reviewed change.
+
 ## What was scanned
 
 Queries cover reverse engineering, binary analysis, Ghidra, IDA, Frida, decompilers, disassemblers, firmware analysis, Android, game reconstruction, JavaScript deobfuscation, protocol analysis and related tools. Every executed query, page, result count, timestamp and incomplete-result flag is recorded. Repositories are deduplicated by GitHub's numeric repository ID; private repositories, forks and archived repositories are excluded.
