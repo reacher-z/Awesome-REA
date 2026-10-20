@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ember-mug-ble-protocol-case",
+    "name": "Ember Mug: reverse-engineered Bluetooth LE characteristics",
+    "url": "https://github.com/orlopau/ember-mug",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Documents the Bluetooth Low Energy GATT interface of Ember smart mugs, worked out from an Ember Mug 2 and a decompiled copy of the Android Ember app. Per-characteristic pages give UUIDs, read, write and notify methods and byte layouts for the mug name, LED colour, current and target temperature, temperature unit, battery and charging status, liquid level and state, date and time zone, firmware and hardware versions, and push events. A separate page lists the analytics fields that the decompiled app sends to Ember’s collection server.",
+    "description_zh": "记录 Ember 智能马克杯的低功耗蓝牙 GATT 接口，依据一只 Ember Mug 2 和反编译的 Android 版 Ember 应用推断得出。各特征页面给出 UUID、读取／写入／通知方式及字节布局，涵盖杯子名称、LED 颜色、当前温度与目标温度、温度单位、电量与充电状态、液位与液体状态、日期与时区、固件与硬件版本以及推送事件。另有一页列出反编译应用向 Ember 数据收集服务器发送的分析字段。",
+    "evidence_url": "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Documentation only, with no client code, tests or releases. Paul Orlob wrote the first pages in 2020; the reviewed master commit of 2022-12-14 merges a contributor’s additional investigation, which added the liquid, name, time, version and push-event pages and the data-collection page. The README says the findings come from an Ember Mug 2 and may not apply to other Ember mugs, and several pages present values as observations or likely meanings, such as a battery byte that is most likely voltage and a liquid level that seems to update only while charging.",
+      "Applying it needs an Ember mug and any BLE client that can read, write and subscribe to characteristics under the documented service UUID fc543622236c4c948fa9944a3e5353fa. Writable characteristics change the mug’s name, LED colour, temperature unit and target temperature, and writing 0000 as the target turns the heater off. The repository contains no Ember app, firmware or traffic captures.",
+      "The stated method is decompiling the Android APK with an online Java decompiler. data-collection.md quotes short decompiled excerpts of the Ember app’s analytics code alongside the contributor’s commentary on it; these excerpts are vendor code. Apart from example values, no verification is reported, and this review ran nothing.",
+      "MIT license, copyright 2020 Paul Orlob, for the documentation; the quoted Ember app code keeps Ember’s rights. The reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/target-temp.md",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/battery.md",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/liquid-level.md",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/push-events.md",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/ota.md",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/docs/mug-color.md",
+      "https://github.com/orlopau/ember-mug/tree/8a62bd582c97b124cce8701f04098294b1e3865f/docs",
+      "https://github.com/orlopau/ember-mug/commit/401dbb0ea5aea0343457c13f23a21868f740b28e",
+      "https://github.com/orlopau/ember-mug/blob/8a62bd582c97b124cce8701f04098294b1e3865f/LICENSE"
+    ]
   }
 ]
