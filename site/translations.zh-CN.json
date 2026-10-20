@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "can-reverse-engineering": {
+    "name": "CAN 负载自动逆向分析流水线",
+    "requirements": [
+      "这是论文研究代码，没有发布版或标签；所审阅的提交日期为 2022-02-01。README 称脚本在 Python 3.6 上开发和测试，需要 requirements.txt 中列出的 NumPy、Pandas、scikit-learn 和（用于绘图的）matplotlib；R 脚本需要安装了 rEDM 包的 R 环境。没有打包或安装步骤，README 也说明克隆后脚本无法立即运行。",
+      "两个 Python 文件夹实现同一套思路：Pipeline 是由 Main.py 驱动的基础单文件版本，Pipeline_multi-file 是更完整的批处理版本，README 称其中包含未回移到 Pipeline 的缺陷修复。输入为随附 loggerProgram0.log 所示的 delta 时间/ID/DLC/十六进制格式 CAN 采集；2020 年 4 月新增可通过 -c/--can-utils 参数读取 can-utils 日志格式，其他格式需修改 PreProcessor.py。",
+      "使用者需自备 CAN 采集数据。仓库附带作者自有的示例数据：loggerProgram0.log 车辆采集、示例流水线输出、一份 OBD2 PID 表，以及 R 文件夹中不同驾驶条件下发动机转速、刹车压力和车速的 CSV 时间序列，另含作者的博士论文 PDF。其结果是信号边界和聚类的估计值，需要分析者验证，而非已确认的信号定义。",
+      "仓库包含 GPL-3.0 许可证文件，而 README 声明该代码属于美国政府作品，在美国不受版权保护，并已获准公开发布（案号 88ABW-2019-0910）。脚本读取被动日志、仅做分析，未描述任何设备交互或帧发送。本次未运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }
