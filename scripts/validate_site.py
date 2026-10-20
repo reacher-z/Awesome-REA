@@ -8,6 +8,7 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
+from asset_paths import ASSET_PATH, FINGERPRINTED_SUFFIXES, UNHASHED_STYLESHEETS, digest
 from build_entry_pages import entry_path, matching_entries
 from build_manifest import read_build_manifest
 from build_paper_pages import TARGET_LABELS, bibtex_text, papers_newest_first
@@ -438,6 +439,36 @@ def validate_security_headers(output):
             # The icon stylesheet loads its fonts relative to its own origin.
             if urlsplit(url).path.endswith('/fontawesome.css'):
                 assert csp_allows(directives, 'font-src', url), f'CSP font-src blocks the fonts of {url}'
+
+
+IMMUTABLE_ASSETS = 'public, max-age=31536000, immutable'
+
+
+def validate_fingerprinted_assets(output):
+    """Pages load same-origin stylesheets and scripts only from content-addressed /assets/ paths cached for a year."""
+    output = Path(output)
+    rules = header_rules((output / '_headers').read_text(encoding='utf-8'))
+    assert rules.get('/assets/*', {}).get('cache-control') == IMMUTABLE_ASSETS, f'/assets/* needs Cache-Control: {IMMUTABLE_ASSETS}'
+    for pattern, headers in rules.items():
+        assert pattern == '/assets/*' or 'immutable' not in headers.get('cache-control', ''), f'Only content-addressed assets may be immutable: {pattern}'
+    stray = sorted(path.relative_to(output).as_posix() for path in output.rglob('*')
+                   if path.suffix in FINGERPRINTED_SUFFIXES and path.parent.name != 'assets'
+                   and path.relative_to(output).as_posix() not in UNHASHED_STYLESHEETS)
+    assert not stray, 'Stylesheets or scripts outside /assets/: ' + ', '.join(stray)
+    checked = set()
+    for path in sorted(output.rglob('*.html')):
+        page = PageResources(path.read_text(encoding='utf-8'))
+        where = '/' + path.relative_to(output).as_posix()
+        for href in page.stylesheets + page.scripts:
+            target = urlsplit(urljoin(ORIGIN + where, href))
+            if target.netloc != urlsplit(ORIGIN).netloc or target.path.lstrip('/') in UNHASHED_STYLESHEETS:
+                continue
+            match = ASSET_PATH.fullmatch(target.path)
+            assert match and not target.query, f'Unhashed stylesheet or script on {where}: {href}'
+            if target.path not in checked:
+                file = output / target.path.lstrip('/')
+                assert file.is_file() and digest(file.read_bytes()) == match['digest'], f'Asset name does not match its content: {target.path}'
+                checked.add(target.path)
 
 
 def validate_catalog_preload(output):
@@ -876,13 +907,14 @@ def main():
     assert not_found.noindex, '404 must be noindex'
     validate_open_graph(None, not_found, png_size(OUTPUT / 'social-card.png'))
     validate_security_headers(OUTPUT)
+    validate_fingerprinted_assets(OUTPUT)
     validate_catalog_preload(OUTPUT)
     validate_website_identity(pages)
     validate_category_labels(OUTPUT)
     assert (OUTPUT / 'llms.txt').read_text(encoding='utf-8').startswith('# '), 'llms.txt must contain Markdown'
     assert re.fullmatch(r'[a-f0-9]{32}\n?', (OUTPUT / 'indexnow.txt').read_text(encoding='utf-8')), 'Invalid public ownership proof'
     read_build_manifest(OUTPUT)
-    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, security headers, the homepage catalog preload and the deployment manifest.')
+    print(f'Validated {len(urls)} canonical HTML pages, paper/source/citation coverage, language alternatives, JSON-LD, Open Graph, local links, linked stylesheets, content-addressed assets, security headers, the homepage catalog preload and the deployment manifest.')
 
 
 if __name__ == '__main__':

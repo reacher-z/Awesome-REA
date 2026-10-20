@@ -3,13 +3,13 @@
 from __future__ import annotations
 
 from collections import defaultdict
-import hashlib
 from html import escape
 import json
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
+from asset_paths import fingerprinted_href
 from open_graph import open_graph_meta, website_reference
 
 STATUS_LABELS = {
@@ -232,7 +232,7 @@ def build_paper_pages(
 
     search_script = (Path(__file__).resolve().parents[1] / 'site/paper-search.js').read_bytes()
     (site_dir / 'paper-search.js').write_bytes(search_script)
-    search_href = '/paper-search.js?v=' + hashlib.sha256(search_script).hexdigest()[:16]
+    search_href = fingerprinted_href(site_dir, 'paper-search.js')
     search_fields = ('id', 'title', 'title_zh', 'description_en', 'description_zh', 'authors', 'doi', 'arxiv_id',
                      'year', 'publication_status', 'targets')
     search_data = json.dumps({'schema_version': 1, 'papers': [

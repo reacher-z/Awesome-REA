@@ -12,6 +12,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from xml.sax.saxutils import escape as xml_escape
 
+from asset_paths import fingerprinted_href, remove_unhashed_copies
 from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
@@ -225,11 +226,12 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         {"@type": "CollectionPage", "@id": SITE_URL + "/#collection", "url": SITE_URL + "/", "name": "Awesome Reverse Engineering Anything", "inLanguage": "en", "isPartOf": {"@id": SITE_URL + "/#website"}, "description": "An independent collection of reverse-engineering tools, projects, case studies and research papers for websites, games, apps, binaries, firmware and communication protocols.", "mainEntity": {"@type": "ItemList", "numberOfItems": len(navigation), "itemListElement": [{"@type": "ListItem", "position": i, "name": name, "url": f"{SITE_URL}/{path}/"} for i, (path, name) in enumerate(navigation, 1)]}}
     ]}
     html = html.replace("</head>", '<script type="application/ld+json">' + json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c") + '</script>\n</head>')
-    asset_hrefs = {}
+    # Stylesheets and scripts move to content-addressed /assets/ paths; the favicon keeps a ?v= revision.
+    favicon_revision = hashlib.sha256((output / "favicon.svg").read_bytes()).hexdigest()[:16]
+    asset_hrefs = {"app.js": fingerprinted_href(output, "app.js"), "styles.css": fingerprinted_href(output, "styles.css"),
+                   "favicon.svg": f"/favicon.svg?v={favicon_revision}"}
     for filename, attribute in (("app.js", "src"), ("styles.css", "href"), ("favicon.svg", "href")):
-        revision = hashlib.sha256((output / filename).read_bytes()).hexdigest()[:16]
-        asset_hrefs[filename] = f'/{filename}?v={revision}'
-        html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{filename}?v={revision}"')
+        html = html.replace(f'{attribute}="{filename}"', f'{attribute}="{asset_hrefs[filename]}"')
     html = html.replace('src="favicon.svg"', f'src="{asset_hrefs["favicon.svg"]}"')
     social_revision = hashlib.sha256((output / "social-card.png").read_bytes()).hexdigest()[:16]
     html = html.replace(f'{SITE_URL}/social-card.png"', f'{SITE_URL}/social-card.png?v={social_revision}"')
@@ -242,7 +244,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     html = html.replace('<html ', f'<html data-catalog-revision="{data_revision}" ', 1)
     # Start the catalog request while the page parses. The URL and CORS mode match app.js's
     # fetch(dataURL("catalog.json")), so that fetch reuses this response; source-browser.json stays on demand.
-    script_tag = f'<script src="{asset_hrefs["app.js"].lstrip("/")}" defer></script>'
+    script_tag = f'<script src="{asset_hrefs["app.js"]}" defer></script>'
     if html.count(script_tag) != 1:
         raise ValueError("Homepage needs exactly one deferred app.js script")
     html = html.replace(script_tag, f'<link rel="preload" href="/catalog.json?v={data_revision}" as="fetch" crossorigin>\n  ' + script_tag)
@@ -251,21 +253,19 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     (output / "index.html").write_text(localized_homepage(html, app_source, "en"), encoding="utf-8")
     (output / "zh").mkdir(exist_ok=True)
     (output / "zh/index.html").write_text(localized_homepage(html, app_source, "zh"), encoding="utf-8")
-    browse_revision = hashlib.sha256((output / "browse.css").read_bytes()).hexdigest()[:16]
     icon_stylesheet = "/fontawesome.css" if fontawesome_dir else (fontawesome_assets_url.rstrip("/") + "/fontawesome.css" if fontawesome_assets_url else None)
     browse_urls = build_browse_pages(
         output, browse_document, curated_count=len(resources), site_url=SITE_URL,
         repository_url=REPOSITORY_URL, styles_href=asset_hrefs["styles.css"],
-        browse_styles_href=f"/browse.css?v={browse_revision}",
+        browse_styles_href=fingerprinted_href(output, "browse.css"),
         favicon_href=asset_hrefs["favicon.svg"],
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         data_revision=data_revision, icon_stylesheet_href=icon_stylesheet,
     )
     discovery_paths = build_discovery_pages(output, catalog, browse_document)
-    papers_revision = hashlib.sha256((output / "papers.css").read_bytes()).hexdigest()[:16]
     paper_urls = build_paper_pages(
         output, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
-        styles_href=asset_hrefs["styles.css"], papers_styles_href=f"/papers.css?v={papers_revision}",
+        styles_href=asset_hrefs["styles.css"], papers_styles_href=fingerprinted_href(output, "papers.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet,
     )
@@ -277,13 +277,13 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
         social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet,
     )
-    entry_revision = hashlib.sha256((output / "entry.css").read_bytes()).hexdigest()[:16]
     entry_urls = build_entry_pages(
         output, resources, papers, site_url=SITE_URL, repository_url=REPOSITORY_URL,
-        styles_href=asset_hrefs["styles.css"], entry_styles_href=f"/entry.css?v={entry_revision}",
+        styles_href=asset_hrefs["styles.css"], entry_styles_href=fingerprinted_href(output, "entry.css"),
         favicon_href=asset_hrefs["favicon.svg"], social_image_href=f"{SITE_URL}/social-card.png?v={social_revision}",
         icon_stylesheet_href=icon_stylesheet, survey_discussions=discussion_sections(survey_document),
     )
+    remove_unhashed_copies(output, [path.name for path in SOURCE.iterdir()])
     (output / ".nojekyll").write_text("", encoding="utf-8")
     (output / "CNAME").write_text("awesomerea.org\n", encoding="utf-8")
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")

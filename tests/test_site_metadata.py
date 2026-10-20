@@ -139,6 +139,7 @@ class SecurityHeaderTests(unittest.TestCase):
             **{route: no_cache for route in ('/', '/index.html', '/catalog.json', '/source-index.json',
                                              '/source-browser.json', '/papers.json', '/build-manifest.json',
                                              '/data-manifest.json', '/downloads/*')},
+            '/assets/*': {'cache-control': 'public, max-age=31536000, immutable'},
             '/papers/references.bib': bibtex, '/papers/citations/*.bib': bibtex,
             '/downloads/references.bib': bibtex,
             '/downloads/records.jsonl': {'content-type': 'application/x-ndjson; charset=utf-8'},

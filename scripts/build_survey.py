@@ -4,11 +4,11 @@ from __future__ import annotations
 from collections import defaultdict
 from datetime import date
 from html import escape
-import hashlib
 import json
 from pathlib import Path
 import re
 
+from asset_paths import fingerprinted_href
 from build_discovery_pages import jsonld_script
 from build_paper_pages import STATUS_LABELS, bibtex_text, icon
 from open_graph import open_graph_meta, website_reference
@@ -227,8 +227,7 @@ def build_survey(site_dir, papers, resources, *, document=None, site_url='https:
     records = {r['id']: r for r in document['reference_records']}
     paper_ids = set(document['paper_ids'])
     order = reference_order(document)
-    css = site_dir / 'survey.css'
-    css_href = '/survey.css' + ('?v=' + hashlib.sha256(css.read_bytes()).hexdigest()[:16] if css.is_file() else '')
+    css_href = fingerprinted_href(site_dir, 'survey.css')
     bibliography = '% Frozen survey paper corpus. Project evidence is cited through its original and reviewed entry links.\n\n'
     bibliography += '\n'.join(bibtex_text(records[i]) for i in order if i in paper_ids)
     citation = repository_bibtex()

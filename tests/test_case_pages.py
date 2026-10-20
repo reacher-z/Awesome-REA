@@ -173,7 +173,7 @@ class CasePageTests(unittest.TestCase):
                                              'zh-CN': 'https://awesomerea.org/zh/cases/',
                                              'x-default': 'https://awesomerea.org/cases/'})
             self.assertIn('https://awesome-rea.pages.dev/fontawesome.css', page.styles)
-            self.assertIn('/cases.css?v=' + css_hash, page.styles)
+            self.assertIn('/assets/cases.' + css_hash + '.css', page.styles)
             self.assertIn('class="shell browse-main cases-main"', content)
             self.assertIn('data-case-count="0" data-curated-count="1"', content)
             self.assertEqual(schema(content)['mainEntity']['numberOfItems'], 0)

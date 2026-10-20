@@ -30,7 +30,7 @@ class PaperSearchTests(unittest.TestCase):
                 self.assertNotRegex(html, r'<article[^>]*\bhidden\b')
                 self.assertIn('data-paper-layout="compact"', html)
                 self.assertIn('适用范围与来源' if lang == 'zh' else 'Scope & sources', html)
-                self.assertIn('/paper-search.js?v=' + hashlib.sha256(script).hexdigest()[:16], html)
+                self.assertIn('/assets/paper-search.' + hashlib.sha256(script).hexdigest()[:16] + '.js', html)
                 projection = json.loads(re.search(r'<script id="paper-search-data" type="application/json">(.*?)</script>', html, re.S)[1])
                 self.assertEqual(projection['schema_version'], 1)
                 self.assertEqual([row['id'] for row in projection['papers']], re.findall(r'data-paper-id="([^"]+)"', html))

@@ -23,6 +23,10 @@
   Cache-Control: no-cache, must-revalidate
 /build-manifest.json
   Cache-Control: no-cache, must-revalidate
+# Stylesheets and scripts live at content-addressed /assets/<name>.<sha256 prefix>.<ext> paths: a changed file
+# gets a new URL, so browsers may keep each one for a year without revalidating.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
 /papers/references.bib
   Content-Type: application/x-bibtex; charset=utf-8
 /papers/citations/*.bib
