@@ -18,6 +18,7 @@ from build_readme import CATEGORIES, RELATIONSHIPS, TARGETS, readme_size_warning
 from catalog import ROOT, RESOURCE_FILES
 from localization import read_localizations, validate_localizations
 from requirement_facets import facet_errors
+from curated_translations import CURATED_TRANSLATIONS, read_curated_translations, validate_curated_translations
 from source_scope import read_scope, validate_scope
 from validate_papers import validate_papers
 from review_dates import inclusion_date_error, review_date_is_future
@@ -1152,6 +1153,10 @@ def main():
         print(f'Warning: {warning}', file=sys.stderr)
     validate_requirement_facets(records, json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')), errors)
     validate_benchmarks(benchmarks, errors)
+    try:
+        validate_curated_translations(records, read_curated_translations(ROOT), errors)
+    except (OSError, ValueError):
+        errors.append(f'{CURATED_TRANSLATIONS}: could not be read as strict JSON.')
     try:
         coverage = read_case_coverage(ROOT)
         validate_case_coverage(coverage, records, papers, errors, url_check=public_https_error)
