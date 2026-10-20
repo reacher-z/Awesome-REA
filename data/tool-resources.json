@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ghidra-golanganalyzerextension",
+    "name": "GolangAnalyzerExtension",
+    "url": "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra extension whose Golang Analyzer reads the runtime header and module data in Go binaries built with go1.6 through go1.27 to identify the Go version, rename functions, correct their arguments, comment source files and line numbers, add Go types to the Data Type Manager and label Go strings. A plugin window lists the recovered functions, types, source files and strings with links to Go source, and WebAssembly builds are handled when a separate Wasm loader such as ghidra-wasm-plugin is installed. A bundled script also renames functions that decode gobfuscate-style obfuscated strings and comments the decoded text.",
+    "description_zh": "Ghidra 扩展，其 Golang Analyzer 读取 go1.6 至 go1.27 所编译 Go 二进制中的运行时头部和模块数据，用以识别 Go 版本、重命名函数、修正参数、以注释标出源文件与行号，把 Go 类型加入数据类型管理器，并标注 Go 字符串。插件窗口列出恢复出的函数、类型、源文件和字符串，并可链接到 Go 源码；另行安装 ghidra-wasm-plugin 等 Wasm 加载器后，也能处理 WebAssembly 构建。随附的脚本还会为解码 gobfuscate 式混淆字符串的函数重命名，并以注释写出解码后的文本。",
+    "evidence_url": "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 1.4.0, published 2026-07-21 from the reviewed master commit, with notes stating support for go1.6 through go1.27. It provides prebuilt zips for Ghidra 12.0 through 12.0.4 and for 12.1, 12.1.2, 12.1.3 and 12.1.4, the last two built on 2026-10-14; install the zip matching the Ghidra release through File > Install Extensions and restart Ghidra. Source builds use Gradle with GHIDRA_INSTALL_DIR set to a Ghidra installation.",
+      "Analysis runs on Go executables the user supplies, and the analyzer is enabled by default. Source has function handlers for x86, ARM, PowerPC and RISC-V; WebAssembly needs a separate Wasm loader. Function disassembly is off by default, and optional PcHeader-address and Go-version settings override detection. Function-name guessing by pattern matching and BSim exists in source, but its option is not registered and stays off.",
+      "The repository commits generated name-guessing data: a 4.3 MB list of calling-function names under test resources and a 53 KB H2 BSim database under scripts, with scripts that produce them by compiling a small sample Go program with each listed Go toolchain and running Ghidra headless. The copy under src/main/resources is empty at this commit, and no target binaries are committed. JUnit tests cover version, header, string and name-data parsing; there is no CI workflow, and this review built, installed and ran nothing.",
+      "The MIT license sits in GolangAnalyzerExtension/LICENSE (2021, mooncat-greenpy); it is not at the repository root, so GitHub detects no license. Output annotates the Ghidra program and needs analyst checking; it does not produce Go source. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/releases/tag/1.4.0",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/LICENSE",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/build.gradle",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/src/main/java/golanganalyzerextension/AnalyzerOption.java",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/src/main/java/golanganalyzerextension/GolangAnalyzerExtensionAnalyzer.java",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/src/main/java/golanganalyzerextension/function/GolangFunction.java",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/GolangAnalyzerExtension/ghidra_scripts/degobfuscate.py",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/scripts/extract.sh",
+      "https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension/blob/c0d1540f16409c8b0b202b10a005ce484f9e7705/scripts/build/build.sh"
+    ]
   }
 ]

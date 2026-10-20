@@ -226,7 +226,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA is a minimalist recursive disassembler library that is optimized for accurate Control Flow Graph (CFG) recovery from memory dumps. **[264 stars]**
 - [blacktop/docker-ghidra](https://github.com/blacktop/docker-ghidra) — Ghidra Client/Server Docker Image **[263 stars]**
 - [JustasMasiulis/ida\_bitfields](https://github.com/JustasMasiulis/ida_bitfields) — IDA Pro plugin to make bitfield accesses easier to grep **[262 stars]**
-- [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — Analyze Golang with Ghidra **[262 stars]**
+- [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — Analyze Golang with Ghidra **[262 stars]** · Curated: [GolangAnalyzerExtension](https://awesomerea.org/resources/ghidra-golanganalyzerextension/)
 - [radareorg/radare2-extras](https://github.com/radareorg/radare2-extras) — Source graveyard and random candy for radare2 **[262 stars]**
 - [extremecoders-re/re-list](https://github.com/extremecoders-re/re-list) — A list of open source reverse engineering tools with a focus on binary analysis **[261 stars]**
 - [StarCrossPortal/sleighcraft](https://github.com/StarCrossPortal/sleighcraft) — sleigh craft! **[261 stars]**

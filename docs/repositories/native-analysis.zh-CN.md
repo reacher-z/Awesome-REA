@@ -226,7 +226,7 @@
 - [danielplohmann/smda](https://github.com/danielplohmann/smda) — SMDA 是精简的递归反汇编库，专门优化了从内存转储中准确恢复控制流图（CFG）的能力。 **[264 星标]**
 - [blacktop/docker-ghidra](https://github.com/blacktop/docker-ghidra) — Ghidra 客户端/服务器 Docker 镜像 **[263 星标]**
 - [JustasMasiulis/ida\_bitfields](https://github.com/JustasMasiulis/ida_bitfields) — 让位域访问更易于使用 grep 搜索的 IDA Pro 插件 **[262 星标]**
-- [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — 使用 Ghidra 分析 Golang **[262 星标]**
+- [mooncat-greenpy/Ghidra\_GolangAnalyzerExtension](https://github.com/mooncat-greenpy/Ghidra_GolangAnalyzerExtension) — 使用 Ghidra 分析 Golang **[262 星标]** · 精选：[GolangAnalyzerExtension Ghidra Go 分析扩展](https://awesomerea.org/zh/resources/ghidra-golanganalyzerextension/)
 - [radareorg/radare2-extras](https://github.com/radareorg/radare2-extras) — radare2 的废弃源码存档与各类小工具 **[262 星标]**
 - [extremecoders-re/re-list](https://github.com/extremecoders-re/re-list) — 侧重二进制分析的开源逆向工程工具列表 **[261 星标]**
 - [StarCrossPortal/sleighcraft](https://github.com/StarCrossPortal/sleighcraft) — 打造 sleigh！ **[261 星标]**

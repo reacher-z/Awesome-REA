@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ghidra-golanganalyzerextension": {
+    "name": "GolangAnalyzerExtension Ghidra Go 分析扩展",
+    "requirements": [
+      "审阅时最新版本为 1.4.0，于 2026-07-21 由所审阅的 master 提交发布，发行说明称支持 go1.6 至 go1.27。它为 Ghidra 12.0 至 12.0.4 以及 12.1、12.1.2、12.1.3 和 12.1.4 提供预构建 zip，后两个构建于 2026-10-14；通过 File > Install Extensions 安装与 Ghidra 版本对应的 zip，再重启 Ghidra。从源码构建使用 Gradle，并将 GHIDRA_INSTALL_DIR 设为某个 Ghidra 安装目录。",
+      "分析对象是使用者自行提供的 Go 可执行文件，该分析器默认启用。源码包含 x86、ARM、PowerPC 和 RISC-V 的函数处理逻辑；WebAssembly 需另装 Wasm 加载器。函数反汇编默认关闭，可选的 PcHeader 地址和 Go 版本设置会覆盖自动检测结果。源码中虽有基于模式匹配和 BSim 的函数名推测，但其选项未注册，始终处于关闭状态。",
+      "仓库提交了生成的函数名推测数据：测试资源中一份 4.3 MB 的调用函数名列表，以及 scripts 下一个 53 KB 的 H2 BSim 数据库；配套脚本用所列的各个 Go 工具链编译一个小型示例 Go 程序，再以无界面方式运行 Ghidra 生成这些数据。在此提交中，src/main/resources 下的副本为空，仓库也未提交任何目标二进制。JUnit 测试覆盖版本、头部、字符串和名称数据的解析；仓库没有 CI 工作流，本次审阅未构建、安装或运行任何程序。",
+      "MIT 许可证位于 GolangAnalyzerExtension/LICENSE（2021 年，mooncat-greenpy），因不在仓库根目录，GitHub 未识别出许可证。输出是对 Ghidra 程序的标注，仍需分析人员核对，不会生成 Go 源码。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }
