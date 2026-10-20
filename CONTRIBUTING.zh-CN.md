@@ -22,7 +22,7 @@
 
 ## 推荐论文
 
-使用[论文推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)，写明论文的规范页面或 DOI、发表状态、研究的逆向任务，以及作者提供的代码或数据链接（如有）。论文可以公开访问，不代表其基准或评测服务也已公开。
+使用[论文推荐表单](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)，写明论文的规范页面或 DOI、发表状态和研究的逆向任务。表单还会分别询问：发表与全文链接；每个日期及其来源；作者提供的代码、数据或基准链接及其可用状态（公开、已宣布、仅托管演示、访问受限或不可用）。出版方的发表日期、arXiv 版本日期和会议举办日期是不同的事实。无法确认的内容填写“unknown”（未知）即可；推荐本身不等于来源复核。论文可以公开访问，不代表其基准或评测服务也已公开。
 
 书目记录保存在 `data/papers.json`，与工具目录和自动扫描索引分开维护。提交 pull request 时，请参照[目录格式（英文）](data/README.md)中的论文字段表和已有记录，保留原始标题和作者全名；只记录已核实的日期精度，不要编造发表日期或会议日期。DOI、arXiv 标识和出版方身份等规则见英文指南的[论文部分](CONTRIBUTING.md#suggest-a-research-paper)。
 
