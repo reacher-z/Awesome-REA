@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "flare-ida": {
+    "name": "FLARE IDA Pro 实用脚本合集",
+    "requirements": [
+      "仓库已归档、只读，没有发布版本或标签；所审阅的 master 分支提交（2024-10-29）是最后一次提交。脚本不经打包：README 说明需将 plugins/ 复制到 IDA 的 plugins 文件夹，将 python/ 复制到 IDA 的 python 文件夹或加入 PYTHONPATH；annotate_IDB_MSDN.py、ironstrings.py 和 code_grafter.py 等脚本则通过 File → Script file 运行。",
+      "需要带 IDAPython 的 IDA Pro；README 给出的是 Windows 的 %PROGRAMFILES% 路径，未注明支持的 IDA 版本。代码横跨多代 IDA：apply_callee_type 针对 IDA 7.6 SP1 做过修复，idb2pat 已移植到 Python 3，而 stackstrings、argtracker 和 decompiler_scripts 仍使用 Python 2 语法，StackStrings 插件也提示因依赖 vivisect 只能在 Python 2 下运行。带对话框的工具导入 PyQt5；ironstrings、objc2_analyzer 和 revil_string_decrypt 需要 flare-emu 与 Unicorn，decompiler_scripts 需要 Hex-Rays 反编译器，code_grafter 则面向 IDA 的 Bochs IDB 模拟模式。",
+      "样本和 IDB 由分析者自备。仓库附带 sc_hashes.db，这是约 50 MB 的 SQLite 数据库，保存 Microsoft DLL 导出名称的预计算哈希；make_sc_hash_db.py 可根据用户指定的 DLL 目录重新生成。MSDN 注释工具需要一个仓库未提供的 MSDN_data 目录；MSDN_crawler 脚本使用 Python 2.7，从解压后的 MSDN 文档副本和 IDA 的 tilib 生成该目录。",
+      "仓库没有测试或 CI。各工具的行为由 README、各工具的说明文件以及所链接的 FireEye 和 Mandiant 博客文章记录，本次也未在当前 IDA 版本上检验这些脚本。",
+      "仓库整体采用 Apache-2.0，而 msdn_crawler.py 是基于 zynamics msdn-crawler 的衍生作品，采用 GPL-2.0-or-later。IDA Pro、Hex-Rays 反编译器以及 Microsoft DLL 和文档仍受各自条款约束。本次未运行脚本，也未分析任何样本；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

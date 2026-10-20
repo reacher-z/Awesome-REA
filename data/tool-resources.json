@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "flare-ida",
+    "name": "FLARE IDA Pro utilities",
+    "url": "https://github.com/mandiant/flare-ida",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Archived collection of IDAPython plugins and scripts from Mandiant's FLARE team for malware and native-code analysis in IDA Pro. It searches code for precomputed API-name hashes used by shellcode, recovers strings built on the stack (statically, or by emulation with flare-emu in ironstrings), applies function types to structure fields and indirect calls, annotates imports with MSDN function, argument and constant information, and uses idb2pat to generate pattern files from an IDB's functions for building FLIRT signatures. Other scripts track static arguments to functions such as string decoders, link Objective-C selector references to their implementations in Mach-O files, and graft stub implementations of common Windows API imports so that decoding or unpacking code can run under IDA's Bochs emulation.",
+    "description_zh": "Mandiant FLARE 团队已归档的 IDAPython 插件与脚本合集，用于在 IDA Pro 中分析恶意软件和原生代码。它可在代码中搜索 shellcode 使用的预计算 API 名称哈希，恢复在栈上拼接的字符串（静态分析，或在 ironstrings 中借助 flare-emu 模拟执行），为结构体字段和间接调用应用函数类型，用 MSDN 中的函数、参数和常量信息注释导入函数，并通过 idb2pat 从 IDB 中的函数生成可用于制作 FLIRT 签名的模式文件。其他脚本可追踪字符串解码函数等调用的静态参数，在 Mach-O 文件中把 Objective-C 选择器引用关联到其实现，还能为常见 Windows API 导入函数植入简易实现，使解码或解包代码可在 IDA 的 Bochs 模拟模式下运行。",
+    "evidence_url": "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository is archived and read-only, with no releases or tags; the reviewed master commit of 2024-10-29 is its last. Nothing is packaged: the README says to copy plugins/ into IDA's plugins folder and python/ into IDA's python folder or onto PYTHONPATH, and scripts such as annotate_IDB_MSDN.py, ironstrings.py and code_grafter.py are run through File → Script file.",
+      "Needs IDA Pro with IDAPython; the README gives Windows %PROGRAMFILES% paths and names no supported IDA version. The code spans several IDA generations: apply_callee_type was fixed for IDA 7.6 SP1 and idb2pat was ported to Python 3, while stackstrings, argtracker and the decompiler_scripts still use Python 2 syntax, and the StackStrings plugin warns that it only works under Python 2 because of its vivisect dependency. Dialog-based tools import PyQt5; ironstrings, objc2_analyzer and revil_string_decrypt need flare-emu and Unicorn, the decompiler_scripts need the Hex-Rays decompiler, and code_grafter targets IDA's Bochs IDB emulation mode.",
+      "Samples and IDBs come from the analyst. The repository bundles sc_hashes.db, a SQLite database of about 50 MB holding precomputed hashes of export names from Microsoft DLLs, with make_sc_hash_db.py to rebuild it from a DLL directory the user chooses. The MSDN annotator expects an MSDN_data directory that is not shipped; the MSDN_crawler script builds it with Python 2.7 from an extracted copy of the MSDN documentation and IDA's tilib.",
+      "There are no tests or CI. Behaviour is documented through the README, per-tool READMEs and linked FireEye and Mandiant blog posts, and the scripts were not checked against current IDA releases here.",
+      "Apache-2.0 for the repository, while msdn_crawler.py is a GPL-2.0-or-later derivative of the zynamics msdn-crawler. IDA Pro, the Hex-Rays decompiler and Microsoft DLLs and documentation keep their own terms. No scripts were run and no samples were analyzed; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/python/flare/ironstrings/README.md",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/code_grafter/README.md",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/shellcode_hashes/README.md",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/plugins/stackstrings_plugin.py",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/python/flare/argtracker.py",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/python/flare/annotate_IDB_MSDN.py",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/MSDN_crawler/msdn_crawler.py",
+      "https://github.com/mandiant/flare-ida/blob/fc667de6db279c6f8ec8bcc2f3eedff348db450f/LICENSE",
+      "https://github.com/mandiant/flare-ida/commit/14c771f456fd3c1fcd3fb7d681db92279a0e63d7",
+      "https://github.com/mandiant/flare-ida/commit/c9a39c4328fc39004d18e80b750a720fbe56af7d"
+    ]
   }
 ]
