@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
+- [Website](#website) (28) · [Game](#game) (187) · [App](#app) (72)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -94,6 +94,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**javascript-deobfuscator**](https://github.com/ben-sb/javascript-deobfuscator) - General-purpose JavaScript deobfuscator for common obfuscation patterns, published on npm as js-deobfuscator and usable as a library or CLI. <sub>Tool · [Full entry](https://awesomerea.org/resources/ben-sb-javascript-deobfuscator/)</sub>
 - [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger) - Command-line tool that reverse-engineers undocumented REST APIs from captured traffic. <sub>Tool · Also: Protocol · [Full entry](https://awesomerea.org/resources/mitmproxy2swagger/)</sub>
 - [**JPEXS Free Flash Decompiler (FFDec)**](https://github.com/jindrapetrik/jpexs-decompiler) - Java desktop decompiler and editor for Adobe Flash SWF files. <sub>Tool · Also: Game · [Full entry](https://awesomerea.org/resources/jpexs-decompiler/)</sub>
+
+- [**minusone**](https://github.com/airbus-cert/minusone)
+
+  Airbus CERT's Rust deobfuscation engine for scripts: it parses PowerShell or JavaScript with tree-sitter, applies rules that infer the values of syntax-tree nodes and prints a simplified script. The PowerShell rules fold arithmetic, string operations, casts, -join, -replace and format operators, Base64 and UTF decoding, predictable variables and loops, and also resolve Gzip or Deflate streams and AES decryption when the data and key are in the script; the newer JavaScript rules cover literals, operators, string and array built-ins, atob and btoa, Buffer calls, predictable function calls and JSFuck constructs. The CLI can list, select or skip rules and export every rewrite step as HTML or JSON, and Python and WebAssembly bindings embed the engine, including in an online version linked from the README.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/minusone-script-deobfuscator/)
 
 <a id="game"></a>
 ### Game

@@ -44,7 +44,7 @@
 - [lfi-project/lfi](https://github.com/lfi-project/lfi) — LFI 顶层仓库：实用、高效且安全的软件沙箱方案 **[120 星标]**
 - [Owl4444/jsdeob-workbench](https://github.com/Owl4444/jsdeob-workbench) — 以可视化方式逆向分析混淆的 JavaScript，串联转换、检查 AST 变化，并编写可复用的去混淆插件。 **[120 星标]** · 精选：[jsdeob-workbench](https://awesomerea.org/zh/resources/jsdeob-workbench/)
 - [X-3306/Project-Onyx](https://github.com/X-3306/Project-Onyx) — 通过 AI 遥测伪装与 WASM 沙箱实现高级 EDR 规避。Project Onyx 是红队概念验证流程，用于演示针对现代 EDR 系统的高级规避技术，从传统的基于特征的混淆转向行为伪装。 **[118 星标]**
-- [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — 基于 tree-sitter 的 PowerShell/JavaScript 去混淆工具 **[103 星标]**
+- [airbus-cert/minusone](https://github.com/airbus-cert/minusone) — 基于 tree-sitter 的 PowerShell/JavaScript 去混淆工具 **[103 星标]** · 精选：[minusone 脚本去混淆引擎](https://awesomerea.org/zh/resources/minusone-script-deobfuscator/)
 - [NotDec/NotDec](https://github.com/NotDec/NotDec) — 基于 LLVM IR 的 WebAssembly（Wasm）反编译器与静态分析框架，仍在开发中 **[94 星标]**
 - [proofofbots/web-re-toolkit](https://github.com/proofofbots/web-re-toolkit) — 无需浏览器的无界面 Akamai 和 Kasada 解题工具，以及用于构建它的逆向工程工具包 **[93 星标]**
 - [wxyz-abcd/node-haxball](https://github.com/wxyz-abcd/node-haxball) — 功能最强大且轻量的 API，可在 Node.js 和浏览器环境中开发自己的 Haxball（www<span>.</span>haxball.com）主机、客户端和独立应用，涵盖各种可想象的修改方式与功能。 **[63 星标]**

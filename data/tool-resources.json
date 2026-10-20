@@ -11254,5 +11254,45 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "minusone-script-deobfuscator",
+    "name": "minusone",
+    "url": "https://github.com/airbus-cert/minusone",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Airbus CERT's Rust deobfuscation engine for scripts: it parses PowerShell or JavaScript with tree-sitter, applies rules that infer the values of syntax-tree nodes and prints a simplified script. The PowerShell rules fold arithmetic, string operations, casts, -join, -replace and format operators, Base64 and UTF decoding, predictable variables and loops, and also resolve Gzip or Deflate streams and AES decryption when the data and key are in the script; the newer JavaScript rules cover literals, operators, string and array built-ins, atob and btoa, Buffer calls, predictable function calls and JSFuck constructs. The CLI can list, select or skip rules and export every rewrite step as HTML or JSON, and Python and WebAssembly bindings embed the engine, including in an online version linked from the README.",
+    "description_zh": "Airbus CERT 开发的 Rust 脚本去混淆引擎：用 tree-sitter 解析 PowerShell 或 JavaScript，应用一组推断语法树节点取值的规则，再输出化简后的脚本。PowerShell 规则可折叠算术与字符串运算、类型转换、-join、-replace 和格式化运算符、Base64 与 UTF 解码、可预测的变量和循环；当数据和密钥都在脚本中时，还能还原 Gzip 或 Deflate 流以及 AES 解密。较新的 JavaScript 规则涵盖字面量、运算符、字符串与数组内置方法、atob 与 btoa、Buffer 调用、可预测的函数调用以及 JSFuck 写法。命令行工具可列出、选用或跳过规则，并把每一步改写导出为 HTML 或 JSON；Python 和 WebAssembly 绑定可嵌入该引擎，README 中链接的在线版本即基于此。",
+    "evidence_url": "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No prebuilt CLI binaries: the latest GitHub release, v0.4.2 from 2025-10-01, has no attached files, and the published packages are minusone 0.4.1 on crates.io, pyminusone 0.4.1 on PyPI with Linux x86_64 and Windows wheels, and minusonejs 0.5.0 on npm. The reviewed main commit is 538 commits past v0.4.2 and declares the core library 0.5.0 and minusone-cli 0.6.1.",
+      "Build with Cargo; the crates use Rust edition 2024, Cargo.lock is not committed, and the PowerShell grammar comes from an unpinned Git dependency on a tree-sitter-powershell fork. The CLI needs --lang powershell or --lang javascript. The project's devenv/Nix environment uses nightly Rust, the Python bindings build with maturin, and the WebAssembly module targets wasm32-wasip2 and is transpiled to JavaScript with jco.",
+      "The README still lists only PowerShell as supported, names basic JavaScript support as a roadmap item and links rule files at older src/ paths; the JavaScript backend dates from March 2026, after the crates.io and PyPI packages and the v0.4.2 release. Rules rewrite the script statically from values they can infer, and the analyst supplies the scripts; the samples folder holds only small JSFuck test files next to their plain sources.",
+      "CI runs devenv test, which runs cargo test and the Python binding test script; the core has unit tests for both languages. MIT license; Cargo metadata names Airbus CERT as author, and the LICENSE copyright line names Sylvain Peyrefitte. Nothing was built or run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/core/src/ps/mod.rs",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/core/src/js/mod.rs",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/core/src/ps/compression.rs",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/core/src/ps/crypto.rs",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/crates/minusone-cli/src/cli.rs",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/core/Cargo.toml",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/crates/minusone-cli/Cargo.toml",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/crates/minusonejs/justfile",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/devenv.nix",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/.github/workflows/cargo_test.yml",
+      "https://github.com/airbus-cert/minusone/tree/48d85ed29a293359c5a990569de70561dd2c312c/samples",
+      "https://github.com/airbus-cert/minusone/blob/48d85ed29a293359c5a990569de70561dd2c312c/LICENSE",
+      "https://github.com/airbus-cert/minusone/releases/tag/v0.4.2",
+      "https://crates.io/crates/minusone/0.4.1",
+      "https://pypi.org/project/pyminusone/0.4.1/",
+      "https://www.npmjs.com/package/minusonejs/v/0.5.0"
+    ]
   }
 ]

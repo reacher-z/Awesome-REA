@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "minusone-script-deobfuscator": {
+    "name": "minusone 脚本去混淆引擎",
+    "requirements": [
+      "没有预编译的命令行二进制：最新的 GitHub 版本 v0.4.2 发布于 2025-10-01，未附带任何文件；已发布的软件包有 crates.io 上的 minusone 0.4.1、PyPI 上提供 Linux x86_64 与 Windows wheel 的 pyminusone 0.4.1，以及 npm 上的 minusonejs 0.5.0。所审阅的 main 提交比 v0.4.2 多 538 个提交，核心库声明版本为 0.5.0，minusone-cli 为 0.6.1。",
+      "使用 Cargo 构建；各 crate 采用 Rust 2024 版次，仓库未提交 Cargo.lock，PowerShell 语法来自一个 tree-sitter-powershell 分支的 Git 依赖，未固定版本。命令行工具需指定 --lang powershell 或 --lang javascript。项目的 devenv/Nix 开发环境使用 nightly Rust；Python 绑定用 maturin 构建，WebAssembly 模块以 wasm32-wasip2 为目标，并用 jco 转译为 JavaScript。",
+      "README 仍只把 PowerShell 列为受支持语言，把基础 JavaScript 支持列为路线图项目，规则文件链接也仍指向旧的 src/ 路径；JavaScript 后端始于 2026 年 3 月，晚于 crates.io 和 PyPI 软件包以及 v0.4.2 版本。规则依据可推断出的值对脚本做静态改写，待分析的脚本由分析者自行提供；samples 目录中只有少量 JSFuck 测试文件及其对应的明文源码。",
+      "CI 运行 devenv test，即执行 cargo test 和 Python 绑定的测试脚本；核心库对两种语言都有单元测试。采用 MIT 许可；Cargo 元数据将作者列为 Airbus CERT，LICENSE 中的版权行署名为 Sylvain Peyrefitte。本次未构建或运行任何内容。"
+    ]
   }
 }

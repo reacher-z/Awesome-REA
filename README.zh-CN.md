@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 473](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 474](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 197](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (27) · [游戏](#game) (187) · [应用](#app) (72)
+- [网站](#website) (28) · [游戏](#game) (187) · [应用](#app) (72)
 - [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -95,6 +95,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**javascript-deobfuscator 通用 JavaScript 反混淆工具**](https://github.com/ben-sb/javascript-deobfuscator) - 通用的 JavaScript 反混淆工具，针对常见混淆手法，以 js-deobfuscator 之名发布在 npm 上，可作为库或命令行工具使用。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/ben-sb-javascript-deobfuscator/)</sub>
 - [**mitmproxy2swagger**](https://github.com/alufers/mitmproxy2swagger) - 命令行工具，从捕获的流量还原未公开的 REST API。 <sub>工具 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/mitmproxy2swagger/)</sub>
 - [**JPEXS Flash 反编译器（FFDec）**](https://github.com/jindrapetrik/jpexs-decompiler) - 面向 Adobe Flash SWF 文件的 Java 桌面反编译与编辑工具。 <sub>工具 · 也适用：游戏 · [完整条目](https://awesomerea.org/zh/resources/jpexs-decompiler/)</sub>
+
+- [**minusone 脚本去混淆引擎**](https://github.com/airbus-cert/minusone)
+
+  Airbus CERT 开发的 Rust 脚本去混淆引擎：用 tree-sitter 解析 PowerShell 或 JavaScript，应用一组推断语法树节点取值的规则，再输出化简后的脚本。PowerShell 规则可折叠算术与字符串运算、类型转换、-join、-replace 和格式化运算符、Base64 与 UTF 解码、可预测的变量和循环；当数据和密钥都在脚本中时，还能还原 Gzip 或 Deflate 流以及 AES 解密。较新的 JavaScript 规则涵盖字面量、运算符、字符串与数组内置方法、atob 与 btoa、Buffer 调用、可预测的函数调用以及 JSFuck 写法。命令行工具可列出、选用或跳过规则，并把每一步改写导出为 HTML 或 JSON；Python 和 WebAssembly 绑定可嵌入该引擎，README 中链接的在线版本即基于此。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/minusone-script-deobfuscator/)
 
 <a id="game"></a>
 ### Game · 游戏
