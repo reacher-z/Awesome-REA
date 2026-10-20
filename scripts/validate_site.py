@@ -885,6 +885,17 @@ def validate_entry_outputs(pages, resources, papers):
         assert detail_links == expected_related, f'Related detail links differ from exact repository or publication matches: {route}'
 
 
+def validate_unique_descriptions(pages):
+    """A count change alone must not distinguish two indexable page descriptions."""
+    seen = {}
+    for route, page in pages.items():
+        description = page.meta.get('description', '')
+        normalized = re.sub(r'\s+', ' ', re.sub(r'[\d,]', '', description)).strip()
+        assert normalized, f'Missing description: {route}'
+        assert normalized not in seen, f'Duplicate page description: {seen.get(normalized)} and {route}'
+        seen[normalized] = route
+
+
 def main():
     urls = [element.text for element in ET.parse(OUTPUT / 'sitemap.xml').findall('{*}url/{*}loc')]
     resources = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))['resources']
@@ -923,6 +934,7 @@ def main():
             if target.fragment:
                 fragment_links.append((parsed.path, link, local))
         validate_open_graph(parsed.path, page, png_size(OUTPUT / 'social-card.png'))
+    validate_unique_descriptions(pages)
     validate_link_fragments(OUTPUT, pages, fragment_links)
     validate_homepage_destinations(pages)
     validate_paper_outputs(OUTPUT, pages)
