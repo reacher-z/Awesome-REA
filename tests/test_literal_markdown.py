@@ -13,7 +13,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import build_repository_index
-from build_readme import plain_text, render_catalog, render_papers
+from build_readme import lead_sentence, plain_text, render_catalog, render_papers
 from validate import document_links
 
 FIXTURE = ROOT / 'tests/fixtures/literal_markdown_gfm.json'
@@ -114,12 +114,10 @@ class LiteralMarkdownTests(unittest.TestCase):
                     before = deepcopy((resource, paper))
                     catalog = render_catalog([resource], language)
                     bibliography = render_papers([paper], language)
-                    self.assertIn('- [**' + encoded + '**](https://example.org/approved)', catalog)
-                    self.assertIn('\n\n  ' + encoded + '\n', catalog)
-                    self.assertIn('- [**' + encoded + '**](https://example.org/paper)', bibliography)
-                    self.assertIn('\n\n  ' + encoded + '\n', bibliography)
-                    scope_label = '范围与限制' if language == 'zh' else 'Scope and limits'
-                    self.assertIn('**' + scope_label + ':** ' + encoded, bibliography)
+                    # None of these sources has a sentence break, so each README line keeps the whole text.
+                    self.assertEqual(lead_sentence(source, language), ' '.join(source.split()))
+                    self.assertIn('- [**' + encoded + '**](https://example.org/approved) - ' + encoded + ' <sub>', catalog)
+                    self.assertIn('- [**' + encoded + '**](https://example.org/paper) - ' + encoded + ' <sub>', bibliography)
                     for url in (paper['pdf_url'], paper['code_url']):
                         self.assertIn('](' + url + ')', bibliography)
                     prefix = 'zh/' if language == 'zh' else ''

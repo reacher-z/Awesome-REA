@@ -103,7 +103,7 @@ class PaperOrderTests(unittest.TestCase):
             for section, identifiers in [('website-reconstruction', WEBSITE_ORDER), ('game-reconstruction', ['paper-multi']),
                                          ('app-reconstruction', ['paper-app']), ('protocol-analysis', GROUP_ORDER['research-protocol'])]:
                 content = text.split(f'<a id="papers-{section}"></a>', 1)[1].split('<a id="papers-', 1)[0]
-                actual = re.findall(r'^- \[\*\*.*?\*\*\]\(https://example.org/papers/(paper-[a-z-]+)\)$', content, re.M)
+                actual = re.findall(r'^- \[\*\*.*?\*\*\]\(https://example.org/papers/(paper-[a-z-]+)\) - ', content, re.M)
                 self.assertEqual(actual, identifiers)
             agent = paper('paper-programbench', 2026, None, 'Agent benchmark', ('protocol',))
             special = render_papers([agent], language)

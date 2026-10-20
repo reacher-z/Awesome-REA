@@ -1,4 +1,4 @@
-"""README paper entries show the venue and year once on the visible line, outside the disclosure."""
+"""README paper lines show the venue and year once, with the first author, in their metadata."""
 from copy import deepcopy
 import json
 from pathlib import Path
@@ -19,9 +19,9 @@ def paper(**changes):
 
 
 def visible_line(rendered, record):
-    """The metadata line is the one before the entry's disclosure."""
-    entry = rendered.split(f']({record["url"]})', 1)[1].split('  <details>', 1)[0]
-    return [line for line in entry.splitlines() if line.strip()][-1]
+    """The metadata that follows the opening sentence on the paper's one README line."""
+    line = next(line for line in rendered.splitlines() if line.startswith('- ') and f']({record["url"]}) - ' in line)
+    return line.split(' <sub>', 1)[1].removesuffix('</sub>')
 
 
 class ReadmePaperVenueTest(unittest.TestCase):
@@ -44,17 +44,16 @@ class ReadmePaperVenueTest(unittest.TestCase):
                 with self.subTest(venue=venue, language=language):
                     rendered = render_papers([record], language)
                     line = visible_line(rendered, record)
-                    self.assertTrue(line.startswith(f'  {plain_text(paper_venue(record))} · '
-                                                    f'{PAPER_STATUSES[status][index]} · [PDF]('), line)
+                    author = record['authors'][0] + (' 等' if index else ' et al.')
+                    self.assertTrue(line.startswith(f'{plain_text(paper_venue(record))} · '
+                                                    f'{PAPER_STATUSES[status][index]} · {plain_text(author)} · [PDF]('), line)
                     self.assertEqual(len(re.findall(rf'(?<!\d){year}(?!\d)', line)), 1, line)
                     self.assertIn('](https://example.com/code)', line)
                     self.assertIn(f'papers/{record["id"]}/)', line)
-                    details = rendered.split('<details>', 1)[1]
-                    self.assertNotIn(plain_text(venue), details)
-                    self.assertIn(plain_text(record['authors'][0]), details)
+                    self.assertNotIn('<details>', rendered)
             self.assertEqual(record, before)
 
-    def test_generated_readmes_show_every_venue_outside_the_disclosure(self):
+    def test_generated_readmes_show_every_venue_on_the_paper_line(self):
         papers = json.loads((ROOT / 'data/papers.json').read_text(encoding='utf-8'))
         for name, index in (('README.md', 0), ('README.zh-CN.md', 1)):
             text = (ROOT / name).read_text(encoding='utf-8')
@@ -62,7 +61,7 @@ class ReadmePaperVenueTest(unittest.TestCase):
                 with self.subTest(readme=name, paper=record['id']):
                     line = visible_line(text, record)
                     status = PAPER_STATUSES[record['publication_status']][index]
-                    self.assertTrue(line.startswith(f'  {plain_text(paper_venue(record))} · {status} · '), line)
+                    self.assertTrue(line.startswith(f'{plain_text(paper_venue(record))} · {status} · '), line)
 
 
 if __name__ == '__main__':

@@ -31,7 +31,7 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
         self.assertEqual(other_targets(record, 'native-binary', 'zh'), ' · 也适用：游戏、固件')
         for language in ('en', 'zh'):
             rendered = render_catalog([record], language)
-            self.assertIn(f'  {entry_type(record, language)}{other_targets(record, "native-binary", language)} · [', rendered)
+            self.assertIn(f'<sub>{entry_type(record, language)}{other_targets(record, "native-binary", language)} · [', rendered)
         self.assertEqual(record, before)
 
     def test_single_target_in_its_own_section_adds_nothing(self):
@@ -42,7 +42,7 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
                 self.assertEqual(collection_section(record), section)
                 self.assertEqual(other_targets(record, section, 'en'), '')
                 self.assertEqual(other_targets(record, section, 'zh'), '')
-                self.assertIn(f'  {entry_type(record, "en")} · [Requirements & evidence]', render_catalog([record], 'en'))
+                self.assertIn(f'<sub>{entry_type(record, "en")} · [Full entry]', render_catalog([record], 'en'))
 
     def test_sections_without_a_target_list_every_target(self):
         record = resource(category='agent-mcp', kind='integration', relationship='independent-agent-integration',
@@ -56,7 +56,7 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
         paper_urls = {paper['url'] for paper in read_papers(ROOT)}
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             text = (ROOT / name).read_text(encoding='utf-8')
-            entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\)$', text, re.M))
+            entries = Counter(re.findall(r'^- \[\*\*.*?\*\*\]\((\S+?)\) - ', text, re.M))
             for record in records:
                 if record['url'] in paper_urls:
                     continue
@@ -64,9 +64,9 @@ class ReadmeSecondaryTargetTest(unittest.TestCase):
                     self.assertEqual(entries[record['url']], 1)
                     section = collection_section(record)
                     suffix = other_targets(record, section, language)
-                    detail = f"/resources/{record['id']}/)"
-                    line = next(line for line in text.splitlines() if line.endswith(detail) and line.startswith('  '))
-                    self.assertTrue(line.startswith(f'  {entry_type(record, language)}{suffix} · ['), line)
+                    detail = f"/resources/{record['id']}/)</sub>"
+                    line = next(line for line in text.splitlines() if line.endswith(detail) and line.startswith('- '))
+                    self.assertTrue(line.split(' <sub>', 1)[1].startswith(f'{entry_type(record, language)}{suffix} · ['), line)
                     implied = {'native-binary': 'binary'}.get(section, section)
                     for target, labels in TARGETS.items():
                         shown = labels[language == 'zh'] in suffix

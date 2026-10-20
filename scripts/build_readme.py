@@ -63,6 +63,12 @@ RELATIONSHIPS = {
     'foundation': ('Foundation tool', '基础工具'),
     'learning': ('Learning resource', '学习资源'),
 }
+# Same link label as the website's collection pages; the entry page holds what a README line leaves out.
+FULL_ENTRY = ('Full entry', '完整条目')
+# GitHub truncates a README's rendered view after 500 KiB. The builder warns well before that so a
+# reduction can be planned; the warning never fails a build, so open pull requests keep passing.
+GITHUB_README_LIMIT = 512_000
+README_SIZE_WARNING = 420_000
 TARGETS = {
     'website': ('Website', '网站'),
     'game': ('Game', '游戏'),
@@ -102,6 +108,39 @@ def requirements_text(value):
     if isinstance(value, str):
         return plain_text(value)
     return plain_text(' '.join(value))
+
+
+# A period after these words does not end an English sentence ("Super Smash Bros. Melee", "SmackDown vs. Raw").
+ABBREVIATIONS = {'al', 'approx', 'bros', 'cf', 'dr', 'e.g', 'etc', 'fig', 'i.e', 'jr', 'mr', 'mrs', 'ms', 'no', 'sr',
+                 'st', 'u.s', 'vol', 'vs'}
+# Sentence punctuation plus any closing quotes or brackets. English sentences may start with a lowercase
+# project name ("... two libraries. ultramodern reimplements ..."), so only the following space is required.
+SENTENCE_END = {
+    'en': re.compile(r'(?P<word>\S*?)[.!?]+[”"’)]*(?=\s)'),
+    'zh': re.compile(r'(?P<word>)[。！？]+[”」）)]*(?=.)'),
+}
+PAIRS = ('()', '（）', '“”', '「」', '[]')
+# Shorter openings ("ExeBench is a dataset, not a decompiler." is 40) read as fragments and keep the next sentence.
+LEAD_MINIMUM = {'en': 40, 'zh': 16}
+
+
+def lead_sentence(text, language):
+    """README lines show a description's opening sentence; the linked entry page keeps the full text."""
+    text = ' '.join(text.split())
+    for match in SENTENCE_END[language].finditer(text):
+        word = re.sub(r'^\W+', '', match['word']).lower()
+        if word in ABBREVIATIONS:
+            continue
+        # An initial after a capitalized name ("Eric S. Raymond") does not end a sentence; "decompiled to C." does.
+        before = text[:match.start()].split()
+        if re.fullmatch(r'[a-z]', word) and before and before[-1][:1].isupper():
+            continue
+        lead = text[:match.end()]
+        if any(lead.count(opening) != lead.count(closing) for opening, closing in PAIRS):
+            continue
+        if len(lead) >= LEAD_MINIMUM[language]:
+            return lead
+    return text
 
 
 # English and Chinese section names. Headings and Contents both use these labels so they cannot drift;
@@ -242,7 +281,8 @@ def tag_legend(records, language):
 
 
 def render_catalog(records, language, paper_urls=frozenset()):
-    """Keep each source title and full description distinct; bibliography overlaps appear only there."""
+    """One list line per resource: source link, opening sentence, tags and the entry page that holds
+    the full description, requirements and evidence. Bibliography overlaps appear only under Papers."""
     index = 0 if language == 'en' else 1
     translations = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8')) if language == 'zh' else {}
     groups = defaultdict(list)
@@ -273,15 +313,12 @@ def render_catalog(records, language, paper_urls=frozenset()):
                 lines.extend([f'#### {label}', ''])
             for record in entries:
                 name = plain_text((record.get('name_zh') or translations.get(record['id'], {}).get('name') or record['name']) if language == 'zh' else record['name'])
-                description = plain_text(record[f'description_{language}'])
+                description = plain_text(lead_sentence(record[f'description_{language}'], language))
                 metadata = plain_text(entry_type(record, language) + other_targets(record, section, language))
                 detail_url = f"https://awesomerea.org/{'zh/' if language == 'zh' else ''}resources/{record['id']}/"
-                detail_label = '使用条件与证据' if language == 'zh' else 'Requirements & evidence'
-                lines.extend([
-                    f"- [**{name}**]({record['url']})", '',
-                    f'  {description}', '',
-                    f"  {metadata} · [{detail_label}]({detail_url})", '',
-                ])
+                lines.append(f"- [**{name}**]({record['url']}) - {description} "
+                             f"<sub>{metadata} · [{FULL_ENTRY[index]}]({detail_url})</sub>")
+            lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -433,8 +470,8 @@ def render_papers(papers, language):
     index = int(zh)
     directory = 'https://awesomerea.org/zh/papers/' if zh else 'https://awesomerea.org/papers/'
     lines = ['<a id="papers"></a>', '## 论文' if zh else '## Papers', '',
-             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。'
-              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.'), '',
+             (f'**{len(papers)} 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。'
+              if zh else f'**{len(papers)} papers**, grouped by topic and ordered newest first. Each line shows the study’s opening sentence, venue, publication status and first author.'), '',
              f"[{'浏览论文目录' if zh else 'Browse the paper directory'}]({directory}) · [{'完整书目 JSON' if zh else 'Complete bibliography JSON'}](data/papers.json) · [{'推荐论文' if zh else 'Suggest a paper'}](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)", '']
     groups = defaultdict(list)
     for paper in papers:
@@ -448,8 +485,8 @@ def render_papers(papers, language):
     lines.extend([f"**{'按主题' if zh else 'By topic'}**", ''])
     lines.extend('- ' + ' · '.join(topics[start:start + 3]) for start in range(0, len(topics), 3))
     lines.extend(['',
-                  ('展开“范围与发表信息”查看完整研究边界。部分论文也出现在精选资源目录中，两者数量不可相加。'
-                   if zh else 'Open “Scope and publication details” for each study’s full limitations. Some papers also appear among curated resources; counts are not additive.'), ''])
+                  ('每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。'
+                   if zh else 'Each paper’s “Full entry” holds its complete summary, scope and limitations, all authors and citation. Some papers also appear among curated resources; counts are not additive.'), ''])
     for section, labels in PAPER_SECTIONS.items():
         if not groups[section]:
             continue
@@ -458,24 +495,16 @@ def render_papers(papers, language):
         for paper in papers_newest_first(groups[section]):
             title = plain_text(paper['title_zh'] if zh else paper['title'])
             status = PAPER_STATUSES[paper['publication_status']][index]
-            metadata = plain_text(f'{paper_venue(paper)} · {status}')
-            author = plain_text(paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else ''))
+            author = paper['authors'][0] + ((' 等' if zh else ' et al.') if len(paper['authors']) > 1 else '')
+            metadata = plain_text(f'{paper_venue(paper)} · {status} · {author}')
             detail_url = f"https://awesomerea.org/{'zh/' if zh else ''}papers/{paper['id']}/"
             links = [f"[PDF]({paper['pdf_url']})"]
             if paper['code_url']:
                 links.append(f"[{'代码' if zh else 'Code'}]({paper['code_url']})")
-            links.append(f"[{'完整条目与引用' if zh else 'Full entry & citation'}]({detail_url})")
-            lines.extend([
-                f"- [**{title}**]({paper['url']})", '',
-                '  ' + plain_text(paper[f'description_{language}']), '',
-                f'  {metadata} · ' + ' · '.join(links), '',
-                '  <details>',
-                f"  <summary>{'范围与发表信息' if zh else 'Scope and publication details'}</summary>", '',
-                f"  **{'范围与限制' if zh else 'Scope and limits'}:** "
-                + plain_text(paper[f'scope_limitations_{language}']), '',
-                f"  **{'作者' if zh else 'Authors'}:** {author}", '',
-                '  </details>', '',
-            ])
+            links.append(f'[{FULL_ENTRY[index]}]({detail_url})')
+            description = plain_text(lead_sentence(paper[f'description_{language}'], language))
+            lines.append(f"- [**{title}**]({paper['url']}) - {description} <sub>{metadata} · " + ' · '.join(links) + '</sub>')
+        lines.append('')
     return '\n'.join(lines).rstrip() + '\n'
 
 
@@ -503,6 +532,24 @@ def replace_papers(content, rendered, language):
     return content
 
 
+def size_warning(name, size):
+    """Advisory size note for a README of `size` UTF-8 bytes, or None while it is within the budget."""
+    if size <= README_SIZE_WARNING:
+        return None
+    if size > GITHUB_README_LIMIT:
+        headroom = f'its last {size - GITHUB_README_LIMIT:,} bytes are already cut off'
+    else:
+        headroom = f'{GITHUB_README_LIMIT - size:,} bytes are left'
+    return (f'{name} is {size:,} bytes, above the {README_SIZE_WARNING:,}-byte budget. GitHub stops rendering a README '
+            f'after {GITHUB_README_LIMIT:,} bytes and {headroom}; move more detail from README lines to entry pages.')
+
+
+def readme_size_warnings(root=ROOT):
+    """Size notes for both READMEs on disk; validate.py prints them without failing."""
+    notes = (size_warning(name, (root / name).stat().st_size) for name in ('README.md', 'README.zh-CN.md'))
+    return [note for note in notes if note]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true', help='Report stale generated blocks without writing files')
@@ -512,6 +559,7 @@ def main():
         papers = read_papers(ROOT)
         index_count = browsable_index_count()
         stale = []
+        sizes = []
         for name, language in [('README.md', 'en'), ('README.zh-CN.md', 'zh')]:
             path = ROOT / name
             current = path.read_text(encoding='utf-8')
@@ -519,6 +567,11 @@ def main():
             expected = replace_papers(expected, render_papers(papers, language), language)
             expected = replace_contents(expected, render_contents(records, papers, index_count, language))
             expected = replace_badges(expected, render_badges(records, papers, language))
+            size = len(expected.encode('utf-8'))
+            sizes.append(f'{name} {size:,} bytes')
+            note = size_warning(name, size)
+            if note:
+                print(f'Warning: {note}', file=sys.stderr)
             if current != expected:
                 stale.append(name)
                 if not args.check:
@@ -527,10 +580,11 @@ def main():
             print('Stale generated README blocks: ' + ', '.join(stale), file=sys.stderr)
             print('Run python3 scripts/build_readme.py', file=sys.stderr)
             return 1
+        budget = f"{', '.join(sizes)} (budget {README_SIZE_WARNING:,})"
         if args.check:
-            print(f'Both READMEs match {len(records)} resources and {len(papers)} separate research papers.')
+            print(f'Both READMEs match {len(records)} resources and {len(papers)} separate research papers; {budget}.')
         else:
-            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into both READMEs; updated {len(stale)} files.")
+            print(f"Rendered {len(records)} resources and {len(papers)} separate research papers into both READMEs; updated {len(stale)} files; {budget}.")
         return 0
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f'Catalog generation failed: {error}', file=sys.stderr)

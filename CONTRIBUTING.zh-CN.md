@@ -67,6 +67,8 @@ python3 scripts/build_site.py
 node --check site/app.js
 ```
 
+两个 README 中每个条目只占一行：名称链接、说明首句、标签，以及指向网站条目页的“完整条目”链接；完整说明、使用条件和证据保留在条目页上，因此说明首句应能独立概括条目。GitHub 只渲染 README 的前 500 KiB（512,000 字节），所以 `build_readme.py` 会报告两个文件的大小；任一 README 超过 420,000 字节时，它和 `validate.py` 会给出警告，但不会使检查失败。
+
 运行全部测试（需要 Node.js，不访问网络）：
 
 ```sh

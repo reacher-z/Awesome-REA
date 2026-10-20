@@ -34,6 +34,8 @@ python3 scripts/build_site.py
 node --check site/app.js
 ```
 
+Each README entry is one line: the linked name, the first sentence of its description, its tags and a “Full entry” link to the website page that keeps the full description, requirements and evidence. Write that first sentence so it summarizes the entry on its own. GitHub stops rendering a README after 500 KiB (512,000 bytes), so `build_readme.py` reports both file sizes, and it and `validate.py` print a warning, without failing, once either README passes 420,000 bytes.
+
 Run every test with one command from the repository root. It needs Node.js for the browser tests and makes no network requests. A single module also runs from the root, for example `python3 -m unittest tests.test_protocol_target`.
 
 ```sh

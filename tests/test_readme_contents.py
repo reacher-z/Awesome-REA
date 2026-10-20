@@ -8,7 +8,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import (BADGES_BEGIN, BADGES_END, CONTENTS_BEGIN, CONTENTS_END, plain_text,
+from build_readme import (BADGES_BEGIN, BADGES_END, CONTENTS_BEGIN, CONTENTS_END, lead_sentence, plain_text,
                          render_badges, replace_badges, render_catalog, render_contents, render_papers)
 
 
@@ -88,41 +88,43 @@ class ReadmeContentsTest(unittest.TestCase):
         self.assertIn('[完整仓库索引](#完整仓库索引) (10)', rendered)
         self.assertIn('https://awesomerea.org/zh/cases/', rendered)
 
-    def test_resource_title_and_full_caveat_keep_separate_bilingual_paragraphs(self):
+    def test_resource_line_keeps_title_opening_sentence_tags_and_full_entry(self):
         record = resource(name='Fixture [tool]', name_zh='测试 [工具]',
-                          description_en='Recovers a view, not the original backend. Requires A & B.',
-                          description_zh='恢复界面，并非原后端。需要 A & B。')
+                          description_en='Recovers a readable view of the interface, not the original backend. Requires A & B.',
+                          description_zh='恢复已发布界面的可读视图，但并非原始后端实现。需要 A & B。')
         before = deepcopy(record)
         for language, title, description, label, prefix in [
-            ('en', r'Fixture \[tool\]', 'Recovers a view, not the original backend. Requires A &amp; B.',
-             'Requirements & evidence', ''),
-            ('zh', r'测试 \[工具\]', '恢复界面，并非原后端。需要 A &amp; B。', '使用条件与证据', 'zh/'),
+            ('en', r'Fixture \[tool\]', 'Recovers a readable view of the interface, not the original backend.', 'Full entry', ''),
+            ('zh', r'测试 \[工具\]', '恢复已发布界面的可读视图，但并非原始后端实现。', '完整条目', 'zh/'),
         ]:
             with self.subTest(language=language):
                 rendered = render_catalog([record], language)
-                self.assertEqual(rendered.count(f'- [**{title}**]({record["url"]})'), 1)
-                self.assertEqual(rendered.count('\n\n  ' + description + '\n'), 1)
-                self.assertIn(f'[{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)', rendered)
-                self.assertLess(rendered.index(description), rendered.index(f'[{label}]'))
-                self.assertNotIn('<sub>', rendered)
+                tag = '工具' if language == 'zh' else 'Tool'
+                line = (f'- [**{title}**]({record["url"]}) - {description} '
+                        f'<sub>{tag} · [{label}](https://awesomerea.org/{prefix}resources/{record["id"]}/)</sub>')
+                self.assertEqual(rendered.splitlines().count(line), 1, rendered)
+                # The remaining sentences, like requirements and evidence, stay on the entry page.
+                self.assertNotIn('A &amp; B', rendered)
         self.assertEqual(record, before)
 
-    def test_paper_source_scope_and_publication_survive_detail_navigation(self):
+    def test_paper_line_keeps_source_publication_and_full_entry(self):
         record = paper(id='paper-readme-fixture', targets=['website'], code_url='https://example.com/code')
         before = deepcopy(record)
-        for language, label, prefix in [('en', 'Full entry & citation', ''), ('zh', '完整条目与引用', 'zh/')]:
+        for language, label, prefix in [('en', 'Full entry', ''), ('zh', '完整条目', 'zh/')]:
             with self.subTest(language=language):
                 rendered = render_papers([record], language)
-                self.assertIn(f']({record["url"]})', rendered)
-                self.assertIn(f'[PDF]({record["pdf_url"]})', rendered)
-                self.assertIn('](https://example.com/code)', rendered)
-                self.assertIn(f'[{label}](https://awesomerea.org/{prefix}papers/paper-readme-fixture/)', rendered)
-                self.assertIn(plain_text(record[f'description_{language}']), rendered)
-                self.assertLess(rendered.index(plain_text(record[f'description_{language}'])),
-                                rendered.index('[PDF]'))
-                self.assertIn(plain_text(record[f'scope_limitations_{language}']), rendered)
-                self.assertIn(str(record['year']), rendered)
-                self.assertIn(plain_text(record['venue']), rendered)
+                line = next(line for line in rendered.splitlines() if line.startswith('- [**'))
+                description = plain_text(lead_sentence(record[f'description_{language}'], language))
+                self.assertIn(f']({record["url"]}) - {description} <sub>', line)
+                self.assertIn(f'[PDF]({record["pdf_url"]})', line)
+                self.assertIn('](https://example.com/code)', line)
+                self.assertTrue(line.endswith(f' · [{label}](https://awesomerea.org/{prefix}papers/paper-readme-fixture/)</sub>'), line)
+                self.assertIn(str(record['year']), line)
+                self.assertIn(plain_text(record['venue']), line)
+                self.assertIn(plain_text(record['authors'][0]), line)
+                # Scope and limitations are on the paper's entry page, not in the README.
+                self.assertNotIn(plain_text(record[f'scope_limitations_{language}']), rendered)
+                self.assertNotIn('<details>', rendered)
         self.assertEqual(record, before)
 
 
