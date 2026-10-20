@@ -57,7 +57,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [suifei/fridare](https://github.com/suifei/fridare) — Powerful Frida repackaging tool for iOS and Android. Easily modify Frida signatures to enhance stealth and bypass detection. Streamlines reverse engineering and security testing. **[949 stars]**
 - [tp7309/TTDeDroid](https://github.com/tp7309/TTDeDroid) — One-click tool for quickly decompiling APK/AAR/DEX/JAR files, powered by jadx, dex2jar, and enjarify. **[949 stars]**
 - [Margular/frida-skeleton](https://github.com/Margular/frida-skeleton) — A Frida-based Android hooking framework that provides many features Frida does not support itself, making Android hooking simple and accessible to everyone. **[882 stars]**
-- [neocanable/garlic](https://github.com/neocanable/garlic) — The world's fastest apk (android)/java open source decompiler **[861 stars]**
+- [neocanable/garlic](https://github.com/neocanable/garlic) — The world's fastest apk (android)/java open source decompiler **[861 stars]** · Curated: [Garlic](https://awesomerea.org/resources/garlic-decompiler/)
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 Decompile APK **[823 stars]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — MCP server for JADX-AI Plugin **[803 stars]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — Code repository for the book Advanced Practical Web Scraping Reverse Engineering. **[768 stars]**

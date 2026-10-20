@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "garlic-decompiler": {
+    "name": "Garlic APK/Java 反编译器",
+    "requirements": [
+      "审阅时 garlic 的最新版本为 v1.8-release，发布于 2026-08-17，提供适用于 Linux（x64、i686、aarch64）、macOS（x64、aarch64）和 Windows（win32、win64）的独立二进制；所审阅的 main 提交比该版本多 34 个提交。之后的 v1.8-release-thyme 标签提供的则是 Thyme 的安装包，这是仓库主页介绍的另一款付费逆向工程 IDE。",
+      "从源码构建时，Linux 和 macOS 使用 CMake 3.26+，主机构建和交叉编译可使用 Zig 0.16.0+，Windows 使用 MinGW-w64，arm64-v8a 版本使用 Android NDK（r21 及以上，已在 r28 上验证）。MCP 服务器的 analyze、cg_import 和 cg_query 工具需要 PATH 中有 DuckDB 命令行工具。输入为使用者自己的 class、JAR、WAR、DEX 或 APK 文件。",
+      "-n 原生库分析功能（README 列出的内容为 AArch64 ELF 文件的控制流、IR、导入、导出、字符串和调用图）来自 librosemarylib：这是一个闭源库，以预编译的 librosemarylib.so、.dylib 和 .dll 文件形式按各桌面平台提交在 libs/ 下，并在构建时嵌入 garlic 二进制。缺少该库时以及在 Android 上，-n 功能被禁用。garlic 的 -l 选项用于为该库安装购买的许可证密钥，所审源码未说明哪些功能需要许可证。",
+      "仓库的 LICENSE 为 Apache-2.0；librosemarylib 没有单独公布条款或源码。README 未报告对反编译结果正确性的评估，发布说明列出了针对特定应用的反编译错误和崩溃修复。未确立与 REA 的关联，本次审阅未构建或运行任何内容。"
+    ]
   }
 }

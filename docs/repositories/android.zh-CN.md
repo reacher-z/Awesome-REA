@@ -57,7 +57,7 @@
 - [suifei/fridare](https://github.com/suifei/fridare) — 适用于 iOS 和 Android 的强大 Frida 重打包工具，便于修改 Frida 特征、增强隐蔽性并绕过检测，简化逆向工程与安全测试。 **[949 星标]**
 - [tp7309/TTDeDroid](https://github.com/tp7309/TTDeDroid) — 一键快速反编译 APK/AAR/DEX/JAR 的工具，由 jadx、dex2jar 和 enjarify 提供支持。 **[949 星标]**
 - [Margular/frida-skeleton](https://github.com/Margular/frida-skeleton) — 基于 Frida 的 Android hook 框架，提供多种 Frida 自身不支持的功能，让 Android hook 简单便捷、人人可用。 **[882 星标]**
-- [neocanable/garlic](https://github.com/neocanable/garlic) — 全球最快的开源 APK（Android）/Java 反编译器。 **[861 星标]**
+- [neocanable/garlic](https://github.com/neocanable/garlic) — 全球最快的开源 APK（Android）/Java 反编译器。 **[861 星标]** · 精选：[Garlic APK/Java 反编译器](https://awesomerea.org/zh/resources/garlic-decompiler/)
 - [venshine/decompile-apk](https://github.com/venshine/decompile-apk) — 🔥 APK 反编译。 **[823 星标]**
 - [zinja-coder/jadx-mcp-server](https://github.com/zinja-coder/jadx-mcp-server) — 适用于 JADX-AI 插件的 MCP 服务器。 **[803 星标]**
 - [lixi5338619/lxBook](https://github.com/lixi5338619/lxBook) — 《爬虫逆向进阶实战》书籍代码库。 **[768 星标]**

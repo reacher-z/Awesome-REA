@@ -11191,5 +11191,38 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "garlic-decompiler",
+    "name": "Garlic",
+    "url": "https://github.com/neocanable/garlic",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Java and Android decompiler written in C that recovers Java source from class, JAR, WAR, DEX and APK files on multiple threads; it also prints javap- or dexdump-style class listings, converts APK and DEX files to smali, searches their strings with regular expressions and generates call graphs for DEX and APK files. Running garlic -m starts a stdio MCP server whose seven tools decompile files, dump class information, build call graphs, load them into DuckDB for SQL queries and read the extracted AndroidManifest.xml. The README reports decompiling an APK of more than 200 MB with about 190,000 classes in 12 seconds.",
+    "description_zh": "用 C 语言编写的 Java 与 Android 反编译器，可多线程地从 class、JAR、WAR、DEX 和 APK 文件还原 Java 源码；还能输出类似 javap 或 dexdump 的类信息，将 APK 和 DEX 转换为 smali，用正则表达式搜索其中的字符串，并为 DEX 和 APK 生成调用图。运行 garlic -m 会启动基于 stdio 的 MCP 服务器，提供七个工具，可反编译文件、输出类信息、构建调用图、将调用图导入 DuckDB 以便用 SQL 查询，以及读取提取出的 AndroidManifest.xml。README 称反编译一个超过 200 MB、约 19 万个类的 APK 只需 12 秒。",
+    "evidence_url": "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest garlic release at review: v1.8-release, published 2026-08-17, with standalone binaries for Linux x64, i686 and aarch64, macOS x64 and aarch64, and Windows win32 and win64; the reviewed main commit is 34 commits ahead of it. The later v1.8-release-thyme tag instead carries installers for Thyme, a separate paid reverse-engineering IDE presented on the repository's homepage.",
+      "Source builds use CMake 3.26+ on Linux and macOS, Zig 0.16.0+ for host and cross-compiled builds, MinGW-w64 for Windows, or the Android NDK (r21 or later, verified on r28) for an arm64-v8a binary. The MCP server needs the DuckDB CLI on PATH for its analyze, cg_import and cg_query tools. Inputs are the user's own class, JAR, WAR, DEX or APK files.",
+      "The -n native-library analysis, which the README lists as control flow, IR, imports, exports, strings and call graphs for AArch64 ELF files, comes from librosemarylib: a closed-source library committed in prebuilt form as librosemarylib.so, .dylib and .dll files under libs/ for each desktop platform and embedded into the garlic binary at build time. Without it, and on Android, -n is disabled. garlic's -l option installs a purchased license key for that library, and the reviewed sources do not say which functions need one.",
+      "The repository's LICENSE is Apache-2.0; no separate terms or source are published for librosemarylib. The README reports no correctness evaluation of decompiled output, and release notes list fixes for decompilation errors and crashes on specific apps. No REA connection is established, and nothing was built or run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/MCP-SERVER.md",
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/src/garlic.c#L133-L144",
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/src/garlic.c#L320-L343",
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/CMakeLists.txt#L135-L196",
+      "https://github.com/neocanable/garlic/tree/700a7f4ea650f5ba5162604987f5a414a2e27026/libs",
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/docs/garlic-on-windows.md",
+      "https://github.com/neocanable/garlic/blob/700a7f4ea650f5ba5162604987f5a414a2e27026/LICENSE",
+      "https://github.com/neocanable/garlic/releases/tag/v1.8-release",
+      "https://github.com/neocanable/garlic/releases/tag/v1.8-release-thyme"
+    ]
   }
 ]
