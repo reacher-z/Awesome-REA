@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "ollvm-unflattener": {
+    "name": "ollvm-unflattener OLLVM 控制流平坦化去混淆工具",
+    "requirements": [
+      "审阅时最新版本为 v2.0，发布于 2025-04-16，未附带二进制文件；发布说明称这很可能是最后一个版本，所审阅的 master 提交即该标签，也是仓库最近一次推送。工具从克隆的仓库运行，命令为 python unflattener -i <输入> -o <输出> -t <十六进制地址>，加 -a 可沿调用继续处理；仓库没有测试或 CI。",
+      "README 要求 Python 3.10+ 和 Git；requirements.txt 列出 miasm、graphviz 和 keystone-engine，均未固定版本。代码支持 x86_32 和 x86_64 的 PE 与 ELF 文件，遇到其他格式或架构会报错。",
+      "分析者需提供被混淆的二进制以及目标函数的地址。在基于支配树的平坦化评分中低于 0.9 的函数不会被改动；分发器和状态变量依据对 OLLVM 代码布局的结构性假设来定位，-a 只跟进指向 .text 节的调用。输出是一份修改后的副本：原函数的字节被 int3 填充覆盖，重新汇编的函数写在其起始地址处。",
+      "samples 目录附带面向 32 位与 64 位 Linux 和 Windows 的小型混淆测试程序（CFF.bin、CFF_full.bin、CFF_full_linux64.bin、CFF_win.exe、CFF_win_full.exe、CFF_win64.exe 和 CFF_win64_full.exe）、对应的 deob_* 输出，以及其中大多数程序的 C/C++ 源码；CFF_full.c 中的注释称该测试程序由 Claude 生成。README 唯一报告的结果是 CFF_full.bin 中 target_function 去混淆前后的控制流图，没有检验去混淆后的二进制与原程序行为是否一致。",
+      "采用 Apache-2.0 许可；依赖保留各自的许可证，其中 Miasm 为 GPL-2.0-only，Keystone 为附带 FOSS 例外的 GPL-2.0。本条目仅涵盖对分析者有权研究的代码进行分析，重写后的函数只是分析辅助，并非经验证的等价代码。本次未对任何二进制去混淆或运行，所审来源也未确立与 REA 的关联。"
+    ]
   }
 }

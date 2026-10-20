@@ -219,7 +219,7 @@
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — 现代、模块化且稳健的终端界面十六进制编辑器。 **[294 星标]**
 - [LittleBitUA/DownpourRecomp](https://github.com/LittleBitUA/DownpourRecomp) — Silent Hill: Downpour 的原生 Windows PC 移植版，通过静态重编译 Xbox 360 二进制实现。v1.0 稳定版：解锁 60 FPS、ROV 预热缓存、独立启动器、DualSense 自适应扳机及可迁移存档。已在美版与欧版 X360 转储上测试。 **[293 星标]**
 - [clojure-goes-fast/clj-java-decompiler](https://github.com/clojure-goes-fast/clj-java-decompiler) — 与 REPL 集成的 Clojure 到 Java 反编译器 **[285 星标]**
-- [cdong1012/ollvm-unflattener](https://github.com/cdong1012/ollvm-unflattener) — Obfuscator-LLVM 控制流平坦化去混淆工具 **[284 星标]**
+- [cdong1012/ollvm-unflattener](https://github.com/cdong1012/ollvm-unflattener) — Obfuscator-LLVM 控制流平坦化去混淆工具 **[284 星标]** · 精选：[ollvm-unflattener OLLVM 控制流平坦化去混淆工具](https://awesomerea.org/zh/resources/ollvm-unflattener/)
 - [secrary/DrSemu](https://github.com/secrary/DrSemu) — DrSemu：基于动态行为的沙箱恶意软件检测与分类工具 **[280 星标]**
 - [mebeim/systrack](https://github.com/mebeim/systrack) — 📡🐧 Linux 内核系统调用实现追踪工具 **[275 星标]**
 - [argp/iBoot64helper](https://github.com/argp/iBoot64helper) — 辅助 AArch64 iBoot、iBEC 和 SecureROM 逆向工程的 IDAPython 加载器 **[266 星标]**

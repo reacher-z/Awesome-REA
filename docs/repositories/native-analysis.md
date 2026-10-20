@@ -219,7 +219,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [thetacom/hexabyte](https://github.com/thetacom/hexabyte) — A modern, modular, and robust TUI hex editor. **[294 stars]**
 - [LittleBitUA/DownpourRecomp](https://github.com/LittleBitUA/DownpourRecomp) — Silent Hill: Downpour — native Windows PC port via static recompilation of the Xbox 360 binary. v1.0 stable: 60 FPS unlocked, ROV warm-cache, standalone launcher, DualSense adaptive triggers, portable saves. Tested on USA + Europe X360 dumps. **[293 stars]**
 - [clojure-goes-fast/clj-java-decompiler](https://github.com/clojure-goes-fast/clj-java-decompiler) — REPL-integrated Clojure-to-Java decompiler **[285 stars]**
-- [cdong1012/ollvm-unflattener](https://github.com/cdong1012/ollvm-unflattener) — Obfuscator-llvm Control Flow Flattening Deobfuscator **[284 stars]**
+- [cdong1012/ollvm-unflattener](https://github.com/cdong1012/ollvm-unflattener) — Obfuscator-llvm Control Flow Flattening Deobfuscator **[284 stars]** · Curated: [ollvm-unflattener](https://awesomerea.org/resources/ollvm-unflattener/)
 - [secrary/DrSemu](https://github.com/secrary/DrSemu) — DrSemu - Sandboxed Malware Detection and Classification Tool Based on Dynamic Behavior **[280 stars]**
 - [mebeim/systrack](https://github.com/mebeim/systrack) — 📡🐧 Linux kernel syscall implementation tracker **[275 stars]**
 - [argp/iBoot64helper](https://github.com/argp/iBoot64helper) — IDAPython loader to help with AArch64 iBoot, iBEC, and SecureROM reverse engineering **[266 stars]**

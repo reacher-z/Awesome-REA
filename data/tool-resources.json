@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "ollvm-unflattener",
+    "name": "ollvm-unflattener",
+    "url": "https://github.com/cdong1012/ollvm-unflattener",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python command-line deobfuscator for the control-flow flattening applied by Obfuscator-LLVM (OLLVM). Given a flattened function's address, it uses Miasm's symbolic execution to track the dispatcher's state variable, records which blocks each state value selects and which state follows it, and writes a copy of the binary in which the function is reassembled with Keystone in its recovered order; an optional mode also follows the function's calls. The README covers 32- and 64-bit x86 Windows and Linux binaries and contrasts this approach with MODeflattener's static one.",
+    "description_zh": "针对 Obfuscator-LLVM（OLLVM）控制流平坦化的 Python 命令行去混淆工具。给定被平坦化函数的地址后，它借助 Miasm 的符号执行跟踪分发器的状态变量，记录每个状态值对应的基本块及其后继状态，再用 Keystone 按恢复出的顺序重新汇编该函数，并写出一份修改后的二进制副本；可选模式还会沿该函数的调用继续处理。README 涵盖 32 位和 64 位 x86 的 Windows 与 Linux 二进制，并将这种做法与 MODeflattener 的静态方法作了对比。",
+    "evidence_url": "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.0, published 2025-04-16 without attached binaries; its notes call it most likely the final release, and the reviewed master commit is that tag and the repository's last push. The tool runs from a clone as python unflattener -i <input> -o <output> -t <hex address>, with -a to follow calls; there are no tests or CI.",
+      "The README requires Python 3.10+ and Git; requirements.txt lists miasm, graphviz and keystone-engine without version pins. The code handles PE and ELF files for x86_32 and x86_64 and raises an error for other formats or architectures.",
+      "The analyst supplies the obfuscated binary and the target function's address. Functions scoring below 0.9 on a dominator-based flattening heuristic are left unchanged, the dispatcher and state variable are located by structural assumptions about OLLVM's layout, and -a only follows calls into the .text section. Output is a patched copy in which the original function bytes are overwritten with int3 padding and the reassembled function is written at its start.",
+      "The samples folder bundles small obfuscated test programs for 32- and 64-bit Linux and Windows (CFF.bin, CFF_full.bin, CFF_full_linux64.bin, CFF_win.exe, CFF_win_full.exe, CFF_win64.exe and CFF_win64_full.exe), their deob_* outputs and C/C++ sources for most of them; a comment in CFF_full.c says Claude generated that test program. The README's only reported result is a before/after control-flow graph of target_function in CFF_full.bin, with no check that deobfuscated binaries behave like the originals.",
+      "Apache-2.0; the dependencies keep their own licenses, including GPL-2.0-only for Miasm and GPL-2.0 with a FOSS exception for Keystone. This entry covers analysis of code the analyst is entitled to study, and rewritten functions are analysis aids rather than verified equivalents. No binaries were deobfuscated or run, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/requirements.txt",
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/unflattener/__main__.py",
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/unflattener/unflattener.py",
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/unflattener/binrewrite.py",
+      "https://github.com/cdong1012/ollvm-unflattener/tree/d0062012b66ab2c845207c733216900d5e99f0a9/samples",
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/samples/linux/CFF_full.c",
+      "https://github.com/cdong1012/ollvm-unflattener/blob/d0062012b66ab2c845207c733216900d5e99f0a9/LICENSE",
+      "https://github.com/cdong1012/ollvm-unflattener/releases/tag/v2.0",
+      "https://github.com/cea-sec/miasm/blob/3671fc24d6e625c2d75f3311724eb6b0c97664f8/LICENSE",
+      "https://github.com/keystone-engine/keystone/blob/dc7932ef2b2c4a793836caec6ecab485005139d6/EXCEPTIONS-CLIENT"
+    ]
   }
 ]
