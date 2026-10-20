@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**605 repositories** · 2026-10-16 UTC
+**604 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -75,7 +75,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [tobefuturer/restore-symbol](https://github.com/tobefuturer/restore-symbol) — A reverse engineering tool to restore stripped symbol table for iOS app. **[1,338 stars]**
 - [viruscamp/luadec](https://github.com/viruscamp/luadec) — Lua Decompiler for lua 5.1 , 5.2 and 5.3 **[1,334 stars]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — An open source Minecraft reimplementation written from scratch. Mirror of https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft **[1,309 stars]**
-- [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — Python decompiler for 3.7-3.8 Stripped down from uncompyle6 so we can refactor and start to fix up some long-standing problems **[1,275 stars]**
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — reverse engineering on msm8916 based 4G modem. **[1,192 stars]**
 - [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS Reverse Engineering **[1,183 stars]**
 - [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — Provides automated reverse engineering assistance through the use of local large language models (LLMs) on consumer hardware. **[1,158 stars]**

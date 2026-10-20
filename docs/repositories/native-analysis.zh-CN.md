@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](native-analysis.md)
 
-**680 个仓库** · 2026-10-16 UTC
+**681 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -70,6 +70,7 @@
 - [gdabah/distorm](https://github.com/gdabah/distorm) — 功能强大的 x86/AMD64 反汇编库。 **[1,340 星标]**
 - [Vector35/binaryninja-api](https://github.com/Vector35/binaryninja-api) — Binary Ninja 的公共 API、示例、文档与问题跟踪。 **[1,327 星标]** · 精选：[Binary Ninja 公开 API](https://awesomerea.org/zh/resources/binary-ninja-api/)
 - [2akouwu/reverify](https://github.com/2akouwu/reverify) — 阻止 AI 凭空编造：由 AI 提出建议，确定性工具作出判定，每项断言均依据真实数据与证据核验。经过验证的事实和上下文可在重置后保留，以逆向工程作为验证场景。提供 MCP 服务器与命令行工具。 **[1,297 星标]** · 精选：[Reverify：用确定性工具核验模型二进制分析断言](https://awesomerea.org/zh/resources/reverify-claim-verifier/)
+- [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — 适用于 Python 3.7–3.8 的反编译器，从 uncompyle6 精简而来，以便重构并着手修复一些长期存在的问题。 **[1,275 星标]** · 精选：[decompyle3 Python 3.7–3.8 字节码反编译器](https://awesomerea.org/zh/resources/decompyle3/)
 - [rdbo/libmem](https://github.com/rdbo/libmem) — 适用于 C、现代 C++、Rust 和 Python 的高级游戏破解库，支持 Windows/Linux/FreeBSD、进程/内存操作、Hook/Detour、跨平台、x86/x64、DLL/SO 注入、内部/外部模式及汇编/反汇编。 **[1,263 星标]**
 - [horsicq/XPEViewer](https://github.com/horsicq/XPEViewer) — 适用于 Windows、Linux 和 macOS 的 PE 文件查看器与编辑器。 **[1,241 星标]**
 - [amruth-sn/kong](https://github.com/amruth-sn/kong) — 全球首个智能体式逆向工程师。 **[1,227 星标]** · 精选：[Kong：基于 Ghidra 的大模型去符号二进制分析流水线](https://awesomerea.org/zh/resources/kong-agentic-reverse-engineer/)

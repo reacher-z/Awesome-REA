@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "decompyle3",
+    "name": "decompyle3",
+    "url": "https://github.com/rocky/python-decompile3",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "Reworking of uncompyle6 by the same author that translates Python 3.7 and 3.8 bytecode, including some PyPy 3.7 and 3.8 bytecode, back into equivalent Python source; older bytecode stays with uncompyle6. It disassembles code objects with the companion xdis library, then tokenizes and parses the instruction stream with a refactored grammar into a tree from which source is printed, and it can decompile between given start and stop offsets or, through decompyle3-code, only a file's lambdas, generators and comprehensions. The README says the grammar rewrite does not by itself fix uncompyle6's control-flow problem, which the author is addressing with dominator-based analysis in a separate, non-public project.",
+    "description_zh": "uncompyle6 作者对该项目的重构版本，可把 Python 3.7 和 3.8 的字节码（包括部分 PyPy 3.7 和 3.8 字节码）还原为等价的 Python 源码；更早版本的字节码仍由 uncompyle6 处理。它借助配套的 xdis 库反汇编代码对象，再用重构后的语法对指令流进行词法处理和解析，生成语法树并据此输出源码；它还能只反编译给定起止偏移之间的代码，或通过 decompyle3-code 只反编译文件中的 lambda、生成器和各类推导式。README 指出，仅靠语法重写并不能解决 uncompyle6 在控制流上的根本问题，作者正在另一个未公开的项目中用基于支配关系的分析来解决。",
+    "evidence_url": "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/README.rst",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 3.9.3, published 2025-10-01 on GitHub and PyPI; the reviewed master commit, from 2026-07-21, is 18 commits later and reports 3.9.4.dev0. The README says the code runs on Python 3.7 or 3.8, whereas pyproject.toml requires Python 3.7+ with classifiers through 3.13, master CI tests under Python 3.13, and a separate python-3.7-to-3.10 branch is tested under 3.8; the 3.9.3 release also ships wheels and eggs for 3.7, 3.8 and 3.9. It depends on xdis newer than 6.2, spark-parser 1.8.9 up to but not including 1.9.2, and click; master CI installs xdis from its git repository until the next xdis release.",
+      "The README reports testing on bytecode from Python 3.7 and 3.8, and the regression suite keeps compiled 3.7 and 3.8 samples plus a few PyPy ones; the release notes state that bytecode newer than 3.8 is not decompiled. The author warns of numerous decompilation bugs and does not intend serious work on 3.8 or 3.9 until the project is better funded. Candidate-release magic numbers, PJOrion or otherwise obfuscated code, Cython and MicroPython are not handled, and pathologically long expression or statement lists are slow.",
+      "Input .pyc or .pyo files come from the user; it cannot decompile Py2EXE executables directly, and bytecode bundled by such packagers has to be extracted first. The README's --syntax-verify option appears in the reviewed CLI as --verify syntax, next to --verify run; a syntax check is meaningful only when the checking interpreter matches the bytecode version, so the README suggests cross-checking with another decompiler such as unpyc37 and with programs that test themselves, including Python's standard-library tests. Recovered source remains subject to the rights of the original program’s owner.",
+      "GPL-3.0-or-later per pyproject.toml, with the GPL-3.0 text in COPYING. Nothing was installed or decompiled, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/NEWS.md",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/pyproject.toml",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/decompyle3/version.py",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/decompyle3/bin/decompile.py",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/decompyle3/bin/decompile_code_type.py",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/.github/workflows/ubuntu.yml",
+      "https://github.com/rocky/python-decompile3/tree/0b97289634ffed8b785be5463ebab7cdf1743a15/test",
+      "https://github.com/rocky/python-decompile3/blob/0b97289634ffed8b785be5463ebab7cdf1743a15/COPYING",
+      "https://github.com/rocky/python-decompile3/releases/tag/3.9.3",
+      "https://pypi.org/project/decompyle3/3.9.3/"
+    ]
   }
 ]

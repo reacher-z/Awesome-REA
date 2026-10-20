@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](reverse-engineering.md)
 
-**605 个仓库** · 2026-10-16 UTC
+**604 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -75,7 +75,6 @@
 - [tobefuturer/restore-symbol](https://github.com/tobefuturer/restore-symbol) — 用于恢复 iOS 应用中已剥离符号表的逆向工程工具。 **[1,338 星标]**
 - [viruscamp/luadec](https://github.com/viruscamp/luadec) — 支持 Lua 5.1、5.2 和 5.3 的 Lua 反编译器。 **[1,334 星标]**
 - [Bixilon/Minosoft](https://github.com/Bixilon/Minosoft) — 从零编写的 Minecraft 开源重新实现。https<span>:</span>//gitlab.bixilon.de/bixilon/minosoft 的镜像。 **[1,309 星标]**
-- [rocky/python-decompile3](https://github.com/rocky/python-decompile3) — 适用于 Python 3.7–3.8 的反编译器，从 uncompyle6 精简而来，以便重构并着手修复一些长期存在的问题。 **[1,275 星标]**
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — 对基于 msm8916 的 4G 调制解调器进行逆向工程。 **[1,192 星标]**
 - [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS 逆向工程。 **[1,183 星标]**
 - [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — 在消费级硬件上使用本地大语言模型（LLM），提供自动化逆向工程辅助。 **[1,158 星标]**
