@@ -64,7 +64,7 @@
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF：跨平台开源二进制分析与逆向工程框架。 **[1,455 星标]**
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — 让你的 IDA 更省事！ **[1,447 星标]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — 精选 Ghidra 优质资料列表。 **[1,442 星标]**
-- [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — 由 OpenAI、DeepSeek 等 AI 模型驱动的 IDA 二进制文件分析插件。 **[1,425 星标]**
+- [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — 由 OpenAI、DeepSeek 等 AI 模型驱动的 IDA 二进制文件分析插件。 **[1,425 星标]** · 精选：[WPeGPT IDA AI 分析插件](https://awesomerea.org/zh/resources/wpegpt/)
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — 支持现代 Python 版本的 Python 反编译器。 **[1,420 星标]** · 精选：[PyLingual Python 字节码反编译器](https://awesomerea.org/zh/resources/pylingual/)
 - [fkie-cad/cwe\_checker](https://github.com/fkie-cad/cwe_checker) — cwe\_checker 可在二进制可执行文件中查找易受攻击的模式。 **[1,362 星标]** · 精选：[cwe\_checker 二进制漏洞模式检查工具](https://awesomerea.org/zh/resources/cwe-checker/)
 - [gdabah/distorm](https://github.com/gdabah/distorm) — 功能强大的 x86/AMD64 反汇编库。 **[1,340 星标]**

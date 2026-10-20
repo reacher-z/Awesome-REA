@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "wpegpt": {
+    "name": "WPeGPT IDA AI 分析插件",
+    "requirements": [
+      "审阅版本为标签 v3.0（2026-05-27），即所审阅的 main 提交；该 GitHub 发布版未附带文件。安装方法是把 WPeGPT.py 和 WPeGPT_Config 文件夹（含 config.py 与 wpe_ai_controller.py）复制到 IDA 的 plugins 目录。IDA 必须使用 Python 3；插件导入 ida_hexrays，因此需要适用于目标架构的 Hex-Rays 反编译器。Python 依赖为 openai >= 0.27.0 和 httpx。",
+      "config.py 中的 API_KEY、API_BASE_URL 和 MODEL 默认为空，需按兼容 OpenAI 接口的服务商填写；另可配置正向代理、并发数和默认分析模式（light），界面默认使用中文（ZH_CN = True）。README 估计 light、full 和 vuln 模式分别约需 2–5、10–30 和 5–20 分钟。WPeServer 绑定在 127.0.0.1 上由系统分配的端口，无界面分析可从 IDA 菜单启动，或通过另行维护的 wpegpt-analyzer 技能发起。",
+      "分析对象是使用者在 IDA 中打开的二进制文件；仓库只包含插件、配置和截图。每次请求都会把反编译伪代码发送给所配置的模型服务商，自动分析会发送大量函数，因此分析敏感样本前应考虑保密性和 API 费用。README 称 AI 结果仅供参考；生成的注释和报告属于模型建议，需要分析者核实。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证，因此未授予任何复用条款。IDA、Hex-Rays 反编译器和模型 API 各自另行授权。本条目仅记录该插件的分析功能。本次未安装或运行任何内容，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

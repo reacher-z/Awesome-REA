@@ -64,7 +64,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF : A multiplatform open source Binary Analysis and Reverse engineering Framework **[1,455 stars]**
 - [L4ys/LazyIDA](https://github.com/L4ys/LazyIDA) — Make your IDA Lazy! **[1,447 stars]**
 - [AllsafeCyberSecurity/awesome-ghidra](https://github.com/AllsafeCyberSecurity/awesome-ghidra) — A curated list of awesome Ghidra materials **[1,442 stars]**
-- [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — An IDA plugin for binary file analysis, powered by AI models such as OpenAI and DeepSeek. **[1,425 stars]**
+- [WPeace-HcH/WPeGPT](https://github.com/WPeace-HcH/WPeGPT) — An IDA plugin for binary file analysis, powered by AI models such as OpenAI and DeepSeek. **[1,425 stars]** · Curated: [WPeGPT](https://awesomerea.org/resources/wpegpt/)
 - [syssec-utd/pylingual](https://github.com/syssec-utd/pylingual) — Python decompiler for modern Python versions. **[1,420 stars]** · Curated: [PyLingual](https://awesomerea.org/resources/pylingual/)
 - [fkie-cad/cwe\_checker](https://github.com/fkie-cad/cwe_checker) — cwe\_checker finds vulnerable patterns in binary executables **[1,362 stars]** · Curated: [cwe\_checker](https://awesomerea.org/resources/cwe-checker/)
 - [gdabah/distorm](https://github.com/gdabah/distorm) — Powerful Disassembler Library For x86/AMD64 **[1,340 stars]**
