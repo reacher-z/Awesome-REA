@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "vanbus",
+    "name": "VanBus",
+    "url": "https://github.com/0xCAFEDECAF/VanBus",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Arduino library for ESP8266/ESP8285 and ESP32 boards that receives and transmits packets on the VAN (Vehicle Area Network) comfort bus that PSA fitted to Peugeot and Citroën models until about 2009. It decodes the signal from a GPIO pin, wired through a CAN transceiver or a receive-only resistor divider, in software into packets with identifier, command flags, data and a 15-bit CRC that it can check or try to repair by flipping single bits, and reports queue and error statistics. Example sketches dump raw packets, send a packet, and parse comfort-bus traffic into readable fields on the serial port or a live web page.",
+    "description_zh": "面向 ESP8266/ESP8285 和 ESP32 开发板的 Arduino 库，可在 VAN（Vehicle Area Network）舒适系统总线上收发报文；PSA 在 2009 年前的部分标致和雪铁龙车型中使用这种总线。它用软件解码经 CAN 收发器或仅供接收的电阻分压电路接入 GPIO 引脚的信号，得到包含标识符、命令标志、数据和 15 位 CRC 的报文，可校验 CRC，或通过逐位翻转尝试修复，并提供队列与错误统计。示例程序可转储原始报文、发送报文，并在串口或实时网页上把舒适总线流量解析为可读字段。",
+    "evidence_url": "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.5.1, published 2026-05-29, the version library.properties and VanBusVersion.h declare; the single later master commit (2026-08-22) only adds a pin-swap note to two example sketches. The README says the library supports only the 125 kbit/s VAN rate, with other rates such as 62.5 kbit/s still to be added.",
+      "Builds in the Arduino IDE (the author uses 1.8.19) with the ESP8266 board package (tested 2.6.3–3.1.2, CPU at 160 MHz) or the ESP32 package (tested 1.0.6, 2.0.17 and 3.3.5, CPU at 240 MHz), installing the library through the Arduino Library Manager. The LiveWebPage example also needs the arduinoWebSockets library and has the browser load jQuery from Google's CDN; dumping packets into a character buffer needs PrintEx.",
+      "Live use needs a PSA vehicle with a VAN comfort bus: the README locates it on pins 2 and 3 of ISO block A at the head unit and documents wiring through an MCP2551 transceiver with a 5 V–3.3 V level converter, an SN65HVD230 transceiver, or a receive-only resistor divider that it says works well only with ESP8266 boards. It warns that the transceiver boards' CAN terminator resistors may make other equipment on the bus malfunction, and transmitting puts packets on the car's bus. The only bundled traffic is the author's serial-monitor log, examples/PacketParser/example_log.txt.",
+      "CI compiles the example sketches for an ESP8266 D1 mini and for ESP32 board packages 1.0.6, 2.0.17 and the latest, and runs Arduino Lint in strict mode; it does not exercise a bus. PacketParser calls its packet interpretation highly experimental, gathered from various sources and from experiments on the author's own 2003 Peugeot 406, and the README points to external lists of known IDEN values, so decoded meanings are not a manufacturer specification.",
+      "MIT. No sketch was compiled, no hardware was connected and no traffic was captured or sent for this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/library.properties",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/CHANGES.txt",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/examples/PacketParser/PacketParser.ino#L12-L52",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/examples/LiveWebPage/LiveWebPage.ino",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/examples/PacketParser/example_log.txt",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/.github/workflows/compile.yml",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/.github/workflows/arduino-lint.yml",
+      "https://github.com/0xCAFEDECAF/VanBus/blob/0c22517eb1a94fa65df98faecd2cf86abbf8fc85/LICENSE",
+      "https://github.com/0xCAFEDECAF/VanBus/releases/tag/v0.5.1"
+    ]
   }
 ]
