@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "mambo",
+    "name": "MAMBO",
+    "url": "https://github.com/beehive-lab/mambo",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Dynamic binary modification framework from the University of Manchester that runs unmodified Linux user-space programs on 32-bit Arm (A32/T32), AArch64 and RV64GC RISC-V, translating their code into a code cache as it executes. An event-driven C plugin API registers callbacks on code-scanning and execution events and emits instrumentation; sample plugins count instruction mixes, branches and blocks, trace memory accesses and system calls, find hotspots, simulate caches, check memory errors and detect data races.",
+    "description_zh": "曼彻斯特大学开发的动态二进制修改框架，可在 32 位 Arm（A32/T32）、AArch64 和 RV64GC RISC-V 上运行未经修改的 Linux 用户态程序，并在执行过程中把代码翻译到代码缓存里运行。事件驱动的 C 插件 API 可在代码扫描与执行事件上注册回调并生成插桩代码；示例插件可统计指令构成、分支与基本块次数，跟踪内存访问和系统调用，查找热点，模拟缓存，检查内存错误并检测数据竞争。",
+    "evidence_url": "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit of 2025-01-21 updates the HiPEAC 2025 tutorial. There are no versioned releases; GitHub releases 1 and 2 only host talk slides. The README says application compatibility is improved as needed, lists SPEC CPU2006, PARSEC 3.0, GCC, LibreOffice and GIMP among programs that work on Arm, and notes that most development happens in a private tree.",
+      "Builds and runs on an Armv7, Armv8 or RV64GC Linux system, physical or virtual, with GCC, libelf development files and Ruby 1.9.1+; the build generates instruction encoders and decoders from the bundled PIE specifications and links dbm statically. The authors use armhf/arm64 Debian, Ubuntu and Arch Linux ARM and Ubuntu 22.04 on RISC-V; for other hosts, a Dockerfile downloads Ubuntu 24.04 preinstalled server images for Arm64 and RISC-V and runs them under QEMU. Plugins are compiled in through the makefile's PLUGINS list.",
+      "Known issues listed in the README: SA_SIGINFO handlers receive incorrect siginfo_t data, synchronous-signal handlers cannot sigreturn, code-cache invalidation after munmap or cache flushes only happens in the calling thread, and RISC-V signal handling is incomplete. MAMBO is not designed to protect itself from the program it translates, so the README says it cannot serve as a secure sandbox without hardening.",
+      "CI builds MAMBO in Ubuntu 20.04 chroots under QEMU user emulation for arm64, armhf and riscv64 and only runs /bin/ls under it; the instruction, signal and self-modifying-code programs in test/ are not run by CI. The authors ask users to cite their 2016 ACM TACO paper and list later ICPE 2018, CC 2020, VEE 2020 and ISPASS 2023 papers.",
+      "Apache-2.0, with the same license in pie/. Programs to instrument are supplied by the user. The reviewed sources establish no REA connection, and nothing was built or run for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/LICENSE",
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/makefile",
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/.github/workflows/main.yml",
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/docker/README.md",
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/docker/Dockerfile",
+      "https://github.com/beehive-lab/mambo/blob/dcdf19a751092c18cccc1e31fea684dfc599c8b8/api/plugin_support.h",
+      "https://github.com/beehive-lab/mambo/tree/dcdf19a751092c18cccc1e31fea684dfc599c8b8/plugins",
+      "https://github.com/beehive-lab/mambo/tree/dcdf19a751092c18cccc1e31fea684dfc599c8b8/test",
+      "https://doi.org/10.1145/2896451"
+    ]
   }
 ]

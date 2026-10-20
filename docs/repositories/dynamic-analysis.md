@@ -41,7 +41,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [hanbinglengyue/FridaManager](https://github.com/hanbinglengyue/FridaManager) — A persistence solution for Frida **[420 stars]**
 - [zeropointdynamics/zelos](https://github.com/zeropointdynamics/zelos) — A comprehensive binary emulation and instrumentation platform. **[420 stars]**
 - [paradiseduo/IPAPatch](https://github.com/paradiseduo/IPAPatch) — Patch iOS Apps, The Easy Way, Without Jailbreak. **[412 stars]**
-- [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — A low-overhead dynamic binary instrumentation and modification tool for ARM (both AArch32 and AArch64 support) and RISC-V (RV64GC). **[400 stars]**
+- [beehive-lab/mambo](https://github.com/beehive-lab/mambo) — A low-overhead dynamic binary instrumentation and modification tool for ARM (both AArch32 and AArch64 support) and RISC-V (RV64GC). **[400 stars]** · Curated: [MAMBO](https://awesomerea.org/resources/mambo/)
 - [nowsecure/frida-cycript](https://github.com/nowsecure/frida-cycript) — Cycript fork powered by Frida. **[396 stars]**
 - [FrenchYeti/interruptor](https://github.com/FrenchYeti/interruptor) — Human-friendly cross-platform system call tracing and hooking library based on Frida's Stalker **[360 stars]**
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — Use Frida to retrieve functions dynamically registered through JNI RegisterNatives. **[353 stars]**
