@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "findcrypt-ghidra": {
+    "name": "FindCrypt Ghidra 版密码常量识别脚本",
+    "requirements": [
+      "README 称作者已无法维护，项目已停止开发，并推荐 TorgoTorgo/ghidra-findcrypt 等分支。所审阅的 master 提交日期为 2021-03-18；最后一个版本 1.5 发布于 2020-04-17，附带 FindCrypt.java 和 database.d3v，脚本与签名库的版本号均为 7。未注明支持哪些 Ghidra 版本，安装示例路径中写的是 Ghidra 9.0。",
+      "需要手动安装：将 FindCrypt.java 复制到 Ghidra 的 Features/BytePatterns/ghidra_scripts 目录，将 findcrypt_ghidra 签名库文件夹复制到用户主目录，然后对已在 Ghidra 中载入的程序，从脚本管理器运行该脚本。无界面运行时会直接打印结果，而不打开结果表。",
+      "默认情况下，每次运行都会连接 raw.githubusercontent.com，将脚本和签名库版本与本仓库比较，并把更新的 database.d3v 下载到主目录下的文件夹中；README 说明可通过脚本中的 __FORCE_NO_DBUPDATE 和 __FORCE_NO_SCRIPTUPDATE 标志关闭此功能。",
+      "检测方式是按字节搜索已知常量，因此命中结果只标出候选位置，并不能确认程序确实使用了某种算法；不含常量表的代码无法被发现。新增签名需使用 Utils 中的 FCExporter Visual Studio 项目构建，该项目依赖 Crypto++ 进行压缩。",
+      "采用 GPL-3.0 许可，并为导出工具附带 Crypto++ 许可声明。README 致谢 Ilfak Guilfanov 的原始插件，签名库更新说明则注明当前格式由贡献者 Pawlos 开发。所审来源未提及 REA 的使用，本收录未运行任何程序。"
+    ]
   }
 }

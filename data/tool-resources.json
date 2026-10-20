@@ -11254,5 +11254,36 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "findcrypt-ghidra",
+    "name": "FindCrypt - Ghidra Edition",
+    "url": "https://github.com/d3v1l401/FindCrypt-Ghidra",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Ghidra script that ports Ilfak Guilfanov's FindCrypt plugin for IDA, searching a program's memory or the current selection for constants of cryptographic and compression algorithms. Its serialized signature database keeps the original plugin's 79 algorithm constant sets and, by the README's count, holds 122 detectable constants for hash functions, block and stream ciphers, Curve25519 code, Keccak and zlib; when a whole constant is absent, the script also looks for its individual elements and reports partial matches above a detection threshold. Hits become Ghidra bookmarks and a results table from which matching data can be defined.",
+    "description_zh": "移植自 Ilfak Guilfanov 为 IDA 编写的 FindCrypt 插件的 Ghidra 脚本，在程序内存或当前选区中查找密码算法与压缩算法的常量。其序列化签名库保留了原插件的 79 组算法常量，按 README 的统计共含 122 个可检测常量，涵盖哈希函数、分组密码与流密码、Curve25519 代码、Keccak 和 zlib；若找不到完整常量，脚本还会查找其中的单个元素，并报告超过检测阈值的部分匹配。命中结果会生成 Ghidra 书签和结果表，可从表中将匹配位置定义为数据。",
+    "evidence_url": "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The README says the project is discontinued because its author cannot keep it maintained, and points to forks such as TorgoTorgo/ghidra-findcrypt. The reviewed master commit dates from 2021-03-18; the last release, 1.5 of 2020-04-17, attaches FindCrypt.java and database.d3v, and the script and database both report version 7. No supported Ghidra versions are stated; the installation example path names Ghidra 9.0.",
+      "Installation is manual: copy FindCrypt.java into Ghidra's Features/BytePatterns/ghidra_scripts directory and the findcrypt_ghidra database folder into the user's home directory, then run the script from the Script Manager on a program already loaded in Ghidra. Headless runs print the results instead of opening the table.",
+      "By default each run contacts raw.githubusercontent.com to compare script and database versions with this repository and downloads a newer database.d3v into the home-directory folder; the README describes the __FORCE_NO_DBUPDATE and __FORCE_NO_SCRIPTUPDATE flags in the script that turn this off.",
+      "Detection is a byte search for known constants, so hits mark candidate locations rather than confirming that an algorithm is used, and code that carries no table constants is not found. New signatures are built with the FCExporter Visual Studio project in Utils, which needs Crypto++ for compression.",
+      "GPL-3.0, with the Crypto++ license notice included for the exporter. The README credits Ilfak Guilfanov's original plugin, and the database changelog credits contributor Pawlos with its current format. The reviewed sources state no REA use, and this collection ran nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/FindCrypt.java",
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/findcrypt_ghidra/last_chlog.txt",
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/Utils/FCExporter/README.txt",
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/LICENSE",
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/blob/71660fddbe7300acb39e013ad6ad96cd001c0d99/Licenses/Crypto++.txt",
+      "https://github.com/d3v1l401/FindCrypt-Ghidra/releases/tag/1.5"
+    ]
   }
 ]
