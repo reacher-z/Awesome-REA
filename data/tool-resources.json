@@ -11254,5 +11254,41 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "de4js",
+    "name": "de4js",
+    "url": "https://github.com/lelinhtinh/de4js",
+    "category": "javascript-electron",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Browser-based JavaScript deobfuscator and unpacker, built as a Jekyll site that also works offline as a progressive web app. It detects or lets the user pick an encoding and reverses Dean Edwards' Packer, eval- and array-based obfuscators, some Obfuscator.IO output, JSFuck, JJencode, AAencode, URL encoding, My Obfuscate and WiseLoop, then beautifies and highlights the result, with options to unescape strings, merge strings, recover object paths and evaluate constant expressions. An optional userscript sends the code to the JS Nice service to rename unreadable identifiers.",
+    "description_zh": "在浏览器中运行的 JavaScript 反混淆与解包工具，以 Jekyll 网站形式构建，也可作为渐进式 Web 应用离线使用。它可自动识别或由使用者选择编码方式，还原 Dean Edwards 的 Packer、基于 eval 和数组的混淆器、部分 Obfuscator.IO 输出、JSFuck、JJencode、AAencode、URL 编码、My Obfuscate 和 WiseLoop，再对结果进行美化和语法高亮，并提供反转义字符串、合并字符串、恢复对象路径和计算常量表达式等选项。另有可选的用户脚本把代码发送到 JS Nice 服务，为难以阅读的标识符重新命名。",
+    "evidence_url": "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository is archived. The last release, v1.12.0, was published 2021-03-28, and the reviewed master commit from 2021-11-12 adds only dependency updates and a fix to how option values are converted to booleans. The README notes that Obfuscator.IO is always up to date and that automatic tools, this one included, usually do not match its latest version. The homepage, lelinhtinh.github.io/de4js, still served the app through a redirect at review.",
+      "No installation is needed for the hosted page. Local copies run with docker-compose, or with Ruby 2.1+, Bundler and the GitHub Pages Jekyll gems, at localhost:4000/de4js/; npm run build also needs workbox-cli to generate the offline service worker. The Wise unpackers load from the NotSoWise git submodule, which must be checked out.",
+      "Input is pasted code, an opened file or a script fetched from a URL. The Eval, JSFuck, Array, _Number, Obfuscator.IO and AAencode decoders and the expression-evaluation option run all or part of the input with eval inside a Web Worker, so untrusted code executes in the browser's worker context. The JS Nice userscript sends code to jsnice.org over plain HTTP and does not work offline.",
+      "package.json defines no tests and the repository has no automated tests or CI. Whether a decoder succeeds depends on the obfuscator and its version, so output should be checked by reading it.",
+      "MIT; the bundled js-beautify, highlight.js, clipboard.js, math.js, Workbox and magic-check code and the AAencode and JJencode decoders keep their own notices. The reviewed sources state no REA use, and this collection deobfuscated nothing."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/worker/decode.js",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/lib/evaldecode.js",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/lib/utils.js",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/_data/methods.yml",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/_data/options.yml",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/userscript/de4js_helper.user.js",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/.gitmodules",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/package.json",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/docker-compose.yml",
+      "https://github.com/lelinhtinh/de4js/blob/b06fff977739dd50eeaf42f602a712348aa01c84/LICENSE",
+      "https://github.com/lelinhtinh/de4js/releases/tag/v1.12.0"
+    ]
   }
 ]

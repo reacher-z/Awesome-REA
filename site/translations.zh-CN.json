@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "de4js": {
+    "name": "de4js JavaScript 反混淆与解包工具",
+    "requirements": [
+      "仓库已归档。最后一个版本 v1.12.0 发布于 2021-03-28；所审阅的 master 提交日期为 2021-11-12，此后只增加了依赖更新，以及对选项值转换为布尔值方式的修复。README 指出 Obfuscator.IO 始终在更新，包括本工具在内的自动化工具通常跟不上其最新版本。审阅时主页 lelinhtinh.github.io/de4js 经重定向后仍可使用该应用。",
+      "使用托管页面无需安装。本地运行可用 docker-compose，或使用 Ruby 2.1+、Bundler 和 GitHub Pages 的 Jekyll gem，地址为 localhost:4000/de4js/；npm run build 还需要 workbox-cli 来生成离线用的 service worker。Wise 解包器从 NotSoWise git 子模块载入，须一并检出该子模块。",
+      "输入可以是粘贴的代码、打开的文件或从 URL 获取的脚本。Eval、JSFuck、Array、_Number、Obfuscator.IO 和 AAencode 解码器以及表达式计算选项，会在 Web Worker 中用 eval 执行输入的全部或部分内容，因此不可信代码会在浏览器的 worker 环境中运行。JS Nice 用户脚本通过未加密的 HTTP 把代码发送到 jsnice.org，且无法离线使用。",
+      "package.json 未定义测试，仓库也没有自动化测试或 CI。解码能否成功取决于混淆工具及其版本，因此需要阅读输出结果加以核对。",
+      "采用 MIT 许可；随附的 js-beautify、highlight.js、clipboard.js、math.js、Workbox、magic-check 代码以及 AAencode 和 JJencode 解码器保留各自的声明。所审来源未提及 REA 的使用，本收录未对任何代码进行反混淆。"
+    ]
   }
 }
