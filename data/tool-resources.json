@@ -11254,5 +11254,40 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "fiano",
+    "name": "fiano",
+    "url": "https://github.com/linuxboot/fiano",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "LinuxBoot's Go tools and libraries for parsing and modifying UEFI firmware images. Its utk command shows an image's firmware volumes and files as a table or JSON, finds, dumps, inserts, removes or replaces files, and extracts an image into a directory that can be reassembled, with a DXE cleaner for deleting unneeded DXE drivers. Further commands cover flash maps (fmap), coreboot CBFS, Intel FIT tables, FSP headers, microcode and LZMA data, and its Go packages also parse Intel ME regions, Boot Guard and CBnT manifests and AMD firmware structures.",
+    "description_zh": "LinuxBoot 项目用 Go 编写的 UEFI 固件镜像解析与修改工具及库。其 utk 命令可用表格或 JSON 展示镜像中的固件卷和文件，查找、转储、插入、删除或替换文件，并把镜像解包到可重新组装的目录中，还提供用于删除多余 DXE 驱动的 DXE 清理功能。其他命令涵盖闪存布局（fmap）、coreboot CBFS、Intel FIT 表、FSP 头部、微码和 LZMA 数据；其 Go 包还能解析 Intel ME 区域、Boot Guard 与 CBnT 清单以及 AMD 固件结构。",
+    "evidence_url": "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No GitHub releases; the newest tags, v7.0.2 and v6.0.1, both point to commits from 2021-12-01, while main keeps receiving fixes, documentation and dependency updates, the reviewed commit being from 2026-05-14. The README installs utk and fmap with go install at @latest and still says Go 1.13 is required, whereas go.mod declares Go 1.21 and CircleCI uses Go 1.22.",
+      "Pure-Go command-line tools; go install places the executables in the go/bin folder of the user's home directory. Input is a firmware image the analyst already has, such as a full flash ROM, and fspinfo supports only FSP 2.0 files. CI checks formatting, runs ineffassign and the unit and race tests, and the Go tests include an extract, reassemble and extract round trip and a JSON regression check on a bundled OVMF image.",
+      "BSD-3-Clause, copyright LinuxBoot. Test fixtures include an OVMF.rom built from EDK2's open-source vUDK2018 tag, coreboot ROMs, compression samples and manifest samples, plus two Intel binaries kept under Intel's own redistribution terms with their license files: the Apollo Lake FSP blob Fsp.fd under the FSP License, and the Purley ME Ignition firmware MeRegion.bin for Cascade Lake servers, whose binary-only license forbids reverse engineering that image.",
+      "Modification commands rewrite firmware images; the README does not discuss flashing or recovery, and this entry records parsing and image editing only. No tool was installed or run and no image was modified for this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/go.mod",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/LICENSE",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/.circleci/config.yml",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/integration/utk_test.go",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/integration/roms/OVMF.md",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/cmds/fspinfo/README.md",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/cmds/fspinfo/test_blobs/README.md",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/data/PurleySiliconBinPkg/MeFirmware/IgnitionFirmware/License.txt",
+      "https://github.com/linuxboot/fiano/blob/162b021e54496b89b2f9028f88234b2caec70a0c/pkg/intel/metadata/README.md",
+      "https://github.com/linuxboot/fiano/tree/162b021e54496b89b2f9028f88234b2caec70a0c/cmds",
+      "https://github.com/linuxboot/fiano/commit/cf677b458e86128635e911b2a8124c70bc7a2d0f"
+    ]
   }
 ]

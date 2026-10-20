@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "fiano": {
+    "name": "fiano UEFI 固件解析与修改工具集",
+    "requirements": [
+      "没有 GitHub 发布版本；最新的标签 v7.0.2 和 v6.0.1 都指向 2021-12-01 的提交，而 main 分支仍在持续加入修复、文档和依赖更新，所审阅的提交日期为 2026-05-14。README 用 go install 以 @latest 安装 utk 和 fmap，并仍称需要 Go 1.13，而 go.mod 声明 Go 1.21，CircleCI 使用 Go 1.22。",
+      "均为纯 Go 命令行工具；go install 会把可执行文件放到用户主目录下的 go/bin 文件夹。输入为分析者已有的固件镜像，例如完整的闪存 ROM；fspinfo 只支持 FSP 2.0 文件。CI 检查代码格式、运行 ineffassign 以及单元测试和竞态测试；Go 测试还包括对自带 OVMF 镜像执行的解包、重新组装、再解包往返测试和 JSON 回归检查。",
+      "采用 BSD-3-Clause 许可，版权归 LinuxBoot。测试样本包括由 EDK2 开源标签 vUDK2018 构建的 OVMF.rom、coreboot ROM、压缩样本和清单样本，以及两个按 Intel 自身再分发条款保留并附许可文件的 Intel 二进制：适用 FSP License 的 Apollo Lake FSP 文件 Fsp.fd，以及面向 Cascade Lake 服务器的 Purley ME Ignition 固件 MeRegion.bin，后者的仅限二进制许可禁止对该镜像进行逆向工程。",
+      "修改类命令会改写固件镜像；README 未涉及刷写或恢复，本条目只记录解析和镜像编辑功能。本次审阅未安装或运行任何工具，也未修改任何镜像。"
+    ]
   }
 }
