@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](dynamic-analysis.zh-CN.md)
 
-**104 repositories** · 2026-10-16 UTC
+**103 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -58,7 +58,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — Trace APIs declaratively through Frida. **[237 stars]**
 - [std-microblock/fripack](https://github.com/std-microblock/fripack) — Package your Frida script into an executable. **[233 stars]**
 - [dmaivel/ntoseye](https://github.com/dmaivel/ntoseye) — WinDbg-like kernel debugger for Windows, from Linux and macOS **[218 stars]**
-- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder is a tool for intercepting traffic of proxy unaware applications. Currently, Deluder supports OpenSSL, GnuTLS, SChannel, WinSock and Linux Sockets out of the box. ⚡ **[215 stars]**
 - [enovella/r2frida-wiki](https://github.com/enovella/r2frida-wiki) — This repo aims at providing practical examples on how to use r2frida **[203 stars]**
 - [index-login/MobileRE-Skill](https://github.com/index-login/MobileRE-Skill) — An AI-agent skill system for mobile reverse engineering: Frida hooks, one-click unpacking, anti-detection bypasses, in-memory DEX dumps, and symbol/structure recovery through Ghidra MCP. **[185 stars]**
 - [as0ler/r2flutch](https://github.com/as0ler/r2flutch) — Tool to decrypt iOS apps using r2frida **[184 stars]**

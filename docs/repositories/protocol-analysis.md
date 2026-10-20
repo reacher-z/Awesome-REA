@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](protocol-analysis.zh-CN.md)
 
-**106 repositories** · 2026-10-16 UTC
+**107 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -17,6 +17,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [brent-stone/CAN\_Reverse\_Engineering](https://github.com/brent-stone/CAN_Reverse_Engineering) — Automated Payload Reverse Engineering Pipeline for the Controller Area Network (CAN) protocol **[456 stars]**
 - [0xMH/fichero-printer](https://github.com/0xMH/fichero-printer) — Fichero D11s thermal label printer - BLE protocol reverse engineering and Python CLI tool **[302 stars]**
 - [niloofarkheirkhah/nili](https://github.com/niloofarkheirkhah/nili) — Nili is a Tool for Network Scan, Man in the Middle, Protocol Reverse Engineering and Fuzzing. **[219 stars]**
+- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder is a tool for intercepting traffic of proxy unaware applications. Currently, Deluder supports OpenSSL, GnuTLS, SChannel, WinSock and Linux Sockets out of the box. ⚡ **[215 stars]** · Curated: [Deluder](https://awesomerea.org/resources/deluder/)
 - [symbolicsoft/verifpal](https://github.com/symbolicsoft/verifpal) — Cryptographic protocol analysis for real-world protocols. **[133 stars]**
 - [Annyfee/spider-js-reverse](https://github.com/Annyfee/spider-js-reverse) — Selected JavaScript reverse-engineering examples from various websites, with detailed explanations, concept summaries, cryptographic algorithms, difficulty comparisons, and links. Covers challenges including environment reconstruction, extracting JavaScript, webpack, and Ruishu. **[111 stars]**
 - [HackingLZ/maps\_scanner](https://github.com/HackingLZ/maps_scanner) — MAPS cloud scanner and response parser for Microsoft Defender research. **[96 stars]**

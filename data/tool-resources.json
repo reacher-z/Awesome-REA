@@ -11254,5 +11254,39 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "deluder",
+    "name": "Deluder",
+    "url": "https://github.com/Warxim/deluder",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Frida-based interceptor for the traffic of proxy-unaware applications. JavaScript hook scripts on the send and receive functions of WinSock, Linux libc sockets, OpenSSL, GnuTLS and SChannel pass plaintext buffers to Python interceptor modules, which log them or forward them to a proxy for inspection. It spawns or attaches to a process, optionally through a remote frida-server, and was designed mainly as the backend for the author's PETEP proxy; a proxifier interceptor works with other proxy tools, and new scripts and interceptors can be added.",
+    "description_zh": "基于 Frida 的拦截工具，用于捕获不支持代理设置的应用程序的流量。JavaScript 挂钩脚本作用于 WinSock、Linux libc 套接字、OpenSSL、GnuTLS 和 SChannel 的收发函数，将明文缓冲区交给 Python 拦截模块记录日志，或转发到代理中查看。它可启动或附加到进程，也可通过远程 frida-server 操作，主要作为作者 PETEP 代理的后端而设计；proxifier 拦截模块可配合其他代理工具使用，并可添加新的脚本和拦截模块。",
+    "evidence_url": "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.2.1, published 2025-11-14; the reviewed main commit is identical to that tag. The changelog adds remote frida-server support in 1.1 and GnuTLS and Linux sockets in 1.2. The README lists the hooked functions for each library and their Windows, Linux and macOS module names; other libraries need custom Frida scripts.",
+      "Python 3.9+ with the pinned frida 16.4.10, psutil 6.0.0 and argparse 1.4.0. It is installed from a release or clone with setup.py, or run as a module after installing requirements.txt. Analysts choose the process to spawn or attach to by path, PID or name, remote targets need a frida-server for their platform, and child processes are hooked unless that is disabled.",
+      "Captured messages go to log, debug, proxifier or PETEP interceptors. PETEP integration uses its own protocol on port 8008 by default, and the proxifier frames data by length prefix, suffix or buffer size. The README warns that dropping intercepted messages is unsupported and breaks interception.",
+      "Scripts resolve exported functions in loaded modules whose names match a configurable list, so applications that link these libraries statically or use other TLS stacks need custom scripts. The tests directory has pytest cases for the PETEP and proxifier interceptors and for byte formatting. The reviewed tree has no CI workflow and no automated tests for the Frida hook scripts. Nothing was installed, hooked or captured for this review.",
+      "LICENSE.md is GPL-3.0. The reviewed sources establish no REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/CHANGELOG.md",
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/requirements.txt",
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/setup.cfg",
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/deluder/scripts/openssl.js",
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/deluder/scripts/common.js",
+      "https://github.com/Warxim/deluder/tree/068bb06429fa053011a61b0c91c26b7bef0996ed/tests",
+      "https://github.com/Warxim/deluder/blob/068bb06429fa053011a61b0c91c26b7bef0996ed/LICENSE.md",
+      "https://github.com/Warxim/deluder/releases/tag/v1.2.1"
+    ]
   }
 ]

@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [English](dynamic-analysis.md)
 
-**104 个仓库** · 2026-10-16 UTC
+**103 个仓库** · 2026-10-16 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -58,7 +58,6 @@
 - [nowsecure/frida-trace](https://github.com/nowsecure/frida-trace) — 通过 Frida 以声明式方式跟踪 API。 **[237 星标]**
 - [std-microblock/fripack](https://github.com/std-microblock/fripack) — 将 Frida 脚本打包为可执行文件。 **[233 星标]**
 - [dmaivel/ntoseye](https://github.com/dmaivel/ntoseye) — 可从 Linux 和 macOS 使用、类似 WinDbg 的 Windows 内核调试器 **[218 星标]**
-- [Warxim/deluder](https://github.com/Warxim/deluder) — Deluder 用于拦截不支持代理的应用流量，目前开箱即用地支持 OpenSSL、GnuTLS、SChannel、WinSock 和 Linux Sockets。⚡ **[215 星标]**
 - [enovella/r2frida-wiki](https://github.com/enovella/r2frida-wiki) — 本仓库提供 r2frida 使用方法的实践示例 **[203 星标]**
 - [index-login/MobileRE-Skill](https://github.com/index-login/MobileRE-Skill) — AI 智能体驱动的移动端逆向技能集：Frida Hook、一键脱壳、反检测绕过、内存 DEX 转储，以及通过 Ghidra MCP 恢复符号和结构。 **[185 星标]**
 - [as0ler/r2flutch](https://github.com/as0ler/r2flutch) — 使用 r2frida 解密 iOS 应用的工具 **[184 星标]**
