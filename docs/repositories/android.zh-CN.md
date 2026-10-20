@@ -35,7 +35,7 @@
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter 逆向工程框架。 **[2,775 星标]** · 精选：[reFlutter](https://awesomerea.org/zh/resources/reflutter/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter 移动应用逆向工程工具。 **[2,750 星标]** · 精选：[Blutter](https://awesomerea.org/zh/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — 高级模糊测试库：使用 Rust 组合构建你的模糊测试器！可扩展到多核心和多机器，支持 Windows、Android、macOS、Linux、no\_std 等。 **[2,660 星标]**
-- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]**
+- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — 精心编写的 Frida 示例。 **[2,539 星标]** · 精选：[Frida Snippets Frida 插桩示例集](https://awesomerea.org/zh/resources/frida-snippets/)
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC 是为智能体和移动端研究人员设计的超快、轻量 Android 反编译器。 **[2,410 星标]** · 精选：[Droid ASC Android 反编译器](https://awesomerea.org/zh/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — 功能强大的 Android APK 编辑器，不依赖 aapt/aapt2。 **[2,363 星标]** · 精选：[APKEditor](https://awesomerea.org/zh/resources/apkeditor/)
 - [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — 移动边缘动态统一安全分析。 **[2,357 星标]** · 精选：[MEDUSA](https://awesomerea.org/zh/resources/medusa-framework/)

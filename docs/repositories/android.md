@@ -35,7 +35,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) — Flutter Reverse Engineering Framework **[2,775 stars]** · Curated: [reFlutter](https://awesomerea.org/resources/reflutter/)
 - [worawit/blutter](https://github.com/worawit/blutter) — Flutter Mobile Application Reverse Engineering Tool **[2,750 stars]** · Curated: [Blutter](https://awesomerea.org/resources/blutter/)
 - [AFLplusplus/LibAFL](https://github.com/AFLplusplus/LibAFL) — Advanced Fuzzing Library - Slot your Fuzzer together in Rust! Scales across cores and machines. For Windows, Android, MacOS, Linux, no\_std, ... **[2,660 stars]**
-- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — Hand-crafted Frida examples **[2,539 stars]**
+- [iddoeldor/frida-snippets](https://github.com/iddoeldor/frida-snippets) — Hand-crafted Frida examples **[2,539 stars]** · Curated: [Frida Snippets](https://awesomerea.org/resources/frida-snippets/)
 - [MG1937/ASC](https://github.com/MG1937/ASC) — ASC is a super FAST and lightweight Android decompiler designed for Agents/Mobile Researchers. **[2,410 stars]** · Curated: [Droid ASC](https://awesomerea.org/resources/droid-asc/)
 - [REAndroid/APKEditor](https://github.com/REAndroid/APKEditor) — Powerful android apk editor - aapt/aapt2 independent **[2,363 stars]** · Curated: [APKEditor](https://awesomerea.org/resources/apkeditor/)
 - [Ch0pin/medusa](https://github.com/Ch0pin/medusa) — Mobile Edge-Dynamic Unified Security Analysis **[2,357 stars]** · Curated: [MEDUSA](https://awesomerea.org/resources/medusa-framework/)
