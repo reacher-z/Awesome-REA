@@ -13,6 +13,8 @@ Use the resource issue template or submit a pull request with:
 - **Target area** — Website, Game, App, Binary, Firmware, or Protocol; multiple areas are allowed.
 - **Short description** — explain what the resource provides in your own words.
 - **Relevant conditions** — include platform, license, release, or external-tool requirements when they affect the description.
+- **Existing entry** — search the collection and open issues and pull requests first; the resource form asks you to confirm this. If the resource is already listed, give its catalog ID, the last part of its `/resources/<id>/` page address, and describe the update instead of requesting a second entry.
+- **Your connection** — say whether you maintain or contribute to the resource, have another connection, have none, or prefer not to say. This is separate from the resource's relationship to REA, implies no endorsement, official status or runtime verification, and needs no real name, employer or account details.
 
 Check the existing collection before adding a duplicate. A resource does not need a minimum number of Stars. Prefer original, maintained projects over copied forks. Claims about REA integration should be supported by the project's own documentation.
 
