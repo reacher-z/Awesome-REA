@@ -490,6 +490,26 @@ def validate_scan_discovery(meta, records, errors, failures=()):
             errors.append(f'{where}: paper references require paper discovery')
 
 
+def validate_failure_metadata(failure, where, errors):
+    """Check the outcome fields the scanner writes for a failed README attempt."""
+    if failure.get('scan_status') != 'failed':
+        errors.append(f'{where}: preserve the failed scan status')
+    reason = failure.get('reason')
+    # Codes such as `http-404`, `empty-readme` or `worker-TimeoutError`; never free-form error text.
+    if not isinstance(reason, str) or len(reason) > 100 or not re.fullmatch(r'[A-Za-z0-9]+(?:[-_.][A-Za-z0-9]+)*', reason):
+        errors.append(f'{where}: reason must be a nonempty error code of at most 100 characters')
+        reason = None
+    status = failure.get('http_status')
+    if 'http_status' not in failure or status is not None and (type(status) is not int or not 100 <= status <= 599):
+        errors.append(f'{where}: http_status must be an HTTP status code, or null for a transport or content failure')
+    elif reason and re.fullmatch(r'http-[0-9]{3}', reason) and status != int(reason[5:]):
+        errors.append(f'{where}: http_status does not match the {reason} reason')
+    try:
+        parse_iso(failure.get('observed_at'), require_time=True)
+    except (ValueError, TypeError):
+        errors.append(f'{where}: invalid timezone-aware observed_at timestamp')
+
+
 def validate_source_index(document, errors, *, allow_incomplete=False):
     if not isinstance(document, dict) or not isinstance(document.get('meta'), dict) or not isinstance(document.get('resources'), list):
         errors.append('Source index must contain meta and resources.')
@@ -611,6 +631,7 @@ def validate_source_index(document, errors, *, allow_incomplete=False):
                 or failure.get('url') != 'https://github.com/' + name
                 or public_https_error(failure.get('url'))):
             errors.append(f'source index failure {index}: invalid public GitHub repository URL')
+        validate_failure_metadata(failure, f'source index failure {index}', errors)
 
     def nonnegative_integer(value):
         return type(value) is int and value >= 0
