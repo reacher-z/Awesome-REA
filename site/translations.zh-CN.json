@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "retracker": {
+    "name": "RETracker Polyend Tracker 逆向工程框架",
+    "requirements": [
+      "仅支持 Polyend Tracker 1.5.0 固件；README 称已有一个未公开的 1.6.0 移植版本，因 Polyend 移除了补丁所依赖的代码而没有发布。所审阅的 main 分支提交（2024-06-19）只是发布讨论区公告，最后一次代码改动在 2022 年，项目没有发布版本或标签。",
+      "打补丁需要用户自备原版 PolyendTracker_1.5.0.ptf 固件镜像，仓库不提供该文件；打过补丁的镜像通过设备正常的固件更新菜单刷入。README 提醒刷入补丁镜像时更新界面的表现会有所不同，建议事先备份 SD 卡，并指出可通过 Tracker 的紧急更新流程恢复。",
+      "需要 Python 3 及 capstone、keystone-engine、pyusb、intelhex 和 simple-hexdump；主机通过 USB 厂商 ID 和产品 ID 查找设备。README 的逆向笔记认为该硬件是与 Teensy 3.6 同类的 MK66FX 微控制器，给出了固件加载地址和用于运行 Polyp 的 RAM 地址，并称 IDA Pro（可能还有 Ghidra 或 Binary Ninja）可直接载入 Intel HEX 镜像。",
+      "项目没有测试或 CI。其行为由 README 示例和链接的演示视频记录，本次未刷写固件，也未运行任何代码。",
+      "仓库中没有许可证文件，GitHub 也未检测到许可证，因此复用条款未予说明；源码公开并不等于授予复用权。Polyend 固件仍归其权利人所有，README 的免责声明指出设备损坏风险由用户自行承担。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

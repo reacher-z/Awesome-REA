@@ -39,7 +39,7 @@
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 个逆向工程 AI 技能，涵盖恶意软件分析、软件逆向、固件与嵌入式、协议逆向、移动应用、脱壳与去混淆、软件破解、漏洞挖掘、托管代码、取证情报及 CTF。 **[162 星标]**
 - [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — 不依赖任何硬件、用于动态分析的通用 MCU 固件仿真器。 **[152 星标]**
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — 修补 AMI Aptio V UEFI 固件以绕过安全启动检查的指南 **[144 星标]**
-- [patois/RETracker](https://github.com/patois/RETracker) — Polyend Tracker 逆向工程框架 **[136 星标]**
+- [patois/RETracker](https://github.com/patois/RETracker) — Polyend Tracker 逆向工程框架 **[136 星标]** · 精选：[RETracker Polyend Tracker 逆向工程框架](https://awesomerea.org/zh/resources/retracker/)
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — FNIRSI 2C53T 示波器/万用表/信号发生器的开源逆向工程与固件开发 **[119 星标]**
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — 面向 Nokia DCT3 手机（3310/3410/5210/8210/8250/8850 等）的开源仿真器与分析工具集，可在浏览器（WASM）和原生 SDL 图形界面中启动真实固件。需自行提供固件，项目不附带固件。采用 GPL-2 许可证。 **[92 星标]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — 用于各种固件分析任务的一组脚本和工具 **[90 星标]**

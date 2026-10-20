@@ -11254,5 +11254,36 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "retracker",
+    "name": "RETracker",
+    "url": "https://github.com/patois/RETracker",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python reverse-engineering framework for the Polyend Tracker music device that patches the vendor's stock firmware, replacing an unused USB RAWHID handler with its own command handler. With the patched firmware flashed, a host CLI reads, hex-dumps and disassembles device memory in ARM or Thumb mode, writes memory, runs code at an address, assembles and executes position-independent \"Polyp\" modules such as a pad text scroller and screen fades, and copies files to the SD card over USB. Its fwtool.py also unpacks and repacks the Intel HEX .ptf firmware images for loading into a disassembler.",
+    "description_zh": "面向 Polyend Tracker 音乐设备的 Python 逆向工程框架：为厂商原版固件打补丁，用自己的命令处理程序替换一个未使用的 USB RAWHID 处理程序。刷入打过补丁的固件后，主机命令行工具即可按 ARM 或 Thumb 模式读取、十六进制转储和反汇编设备内存，还能写入内存、在指定地址执行代码，汇编并运行称为“Polyp”的位置无关模块（如在打击垫上显示滚动文字和屏幕淡入淡出），以及通过 USB 向 SD 卡复制文件。其 fwtool.py 还可解包和重新打包 Intel HEX 格式的 .ptf 固件镜像，便于载入反汇编器。",
+    "evidence_url": "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Only Polyend Tracker firmware 1.5.0 is supported; the README says a private 1.6.0 port was not released because Polyend removed the code the patches relied on. The reviewed main commit of 2024-06-19 only announces a discussion thread, the last code change dates from 2022, and there are no releases or tags.",
+      "Patching needs the user's own copy of the stock PolyendTracker_1.5.0.ptf image, which the repository does not include, and the patched image is flashed through the device's normal firmware-update menu. The README warns that the update screen behaves differently with patched images, recommends backing up the SD card first and points to the Tracker's emergency update procedure for recovery.",
+      "Needs Python 3 with capstone, keystone-engine, pyusb, intelhex and simple-hexdump; the host finds the device over USB by vendor and product ID. The README's reverse-engineering notes treat the hardware as a Teensy 3.6-class MK66FX microcontroller, give the firmware load address and a RAM address used for Polyps, and say IDA Pro, and probably Ghidra or Binary Ninja, can load the Intel HEX image directly.",
+      "There are no tests or CI. Behaviour is documented through README examples and a linked demo video, and nothing was flashed or run here.",
+      "No license file was found and GitHub detects none, so reuse terms are unstated; public source availability is not a reuse grant. Polyend's firmware keeps its own rights, and the README disclaimer places any device damage at the user's risk. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/DEPENDENCIES.md",
+      "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/fwtool.py",
+      "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/retracker.py",
+      "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/tracker/firmware.py",
+      "https://github.com/patois/RETracker/blob/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/tracker/tracker.py",
+      "https://github.com/patois/RETracker/tree/f6698f602fe41fededfd9f19fbe1b74bf68a85f0/polyp"
+    ]
   }
 ]

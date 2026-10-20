@@ -39,7 +39,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [dslsdzc/rev-skills](https://github.com/dslsdzc/rev-skills) — 122 AI skills for reverse engineering: malware analysis, software reversing, firmware and embedded systems, protocol reversing, mobile apps, unpacking and deobfuscation, software cracking, vulnerability research, managed code, forensics and intelligence, and CTFs. **[162 stars]**
 - [MCUSec/uEmu](https://github.com/MCUSec/uEmu) — A Universal MCU Firmware Emulator for Dynamic Analysis without Any Hardware Dependence. **[152 stars]**
 - [SamuelTulach/PatchBoot](https://github.com/SamuelTulach/PatchBoot) — Guide for patching AMI Aptio V UEFI firmware to circumvent Secure Boot checks **[144 stars]**
-- [patois/RETracker](https://github.com/patois/RETracker) — Reverse Engineering Framework for the Polyend Tracker **[136 stars]**
+- [patois/RETracker](https://github.com/patois/RETracker) — Reverse Engineering Framework for the Polyend Tracker **[136 stars]** · Curated: [RETracker](https://awesomerea.org/resources/retracker/)
 - [DavidClawson/OpenScope-2C53T](https://github.com/DavidClawson/OpenScope-2C53T) — Open-source reverse engineering and firmware development for the FNIRSI 2C53T oscilloscope/multimeter/signal generator **[119 stars]**
 - [djr-747/nokia-dct3-emulator](https://github.com/djr-747/nokia-dct3-emulator) — Open-source emulator + analysis toolkit for Nokia DCT3 phones (3310/3410/5210/8210/8250/8850…). Boots real firmware in the browser (WASM) and a native SDL GUI. Bring-your-own firmware — none included. GPL-2. **[92 stars]**
 - [nmatt0/firmwaretools](https://github.com/nmatt0/firmwaretools) — a set of scripts and tools for various firmware analysis tasks **[90 stars]**
