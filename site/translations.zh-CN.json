@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "frida-labs": {
+    "name": "Frida Labs Android 插桩练习",
+    "requirements": [
+      "审阅对象为 2026-02-22 的 main 提交，该提交为 0x8 至 0xB 这几道原生 Hook 题的讲解加入了 Frida 17 的变通写法；第一篇讲解部署的是 frida-server 16.1.4。项目未发布版本，README 称会陆续加入新挑战。",
+      "每道挑战都是作者提交的预编译 APK，包名形如 com.ad2001.frida0x1；仓库不含这些应用的源码，题解为附截图的 Markdown 讲解。讲解假定使用已 root 的 Android 设备或模拟器、adb、通过 pip 安装的 frida-tools 以及与设备架构匹配的 frida-server，并用 jadx 阅读 Java 代码、用 Ghidra 分析原生库；0xB 的讲解分别演示了 x86 和 ARM64 版本的指令修补。",
+      "flag 和题解脚本都与对应 APK 一同公开，因此这套挑战适合作为有指导的练习，而不是考核。README 推荐 learnfrida.info 和 Frida CodeShare 作为延伸资料。本次审阅阅读了 README 以及 0x1、0x8 和 0xB 的讲解，未安装或运行任何 APK。",
+      "仓库采用 MIT 许可证；Frida、jadx、Ghidra 及 Android 工具各有其条款。所审来源未确立与 REA 的关联。"
+    ]
   }
 }

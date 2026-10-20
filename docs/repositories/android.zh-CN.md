@@ -46,7 +46,7 @@
 - [deathmemory/FridaContainer](https://github.com/deathmemory/FridaContainer) — FridaContainer 整合网上流行的及自行编写的常用 Frida 脚本，提升逆向工作效率，支持 Frida 脚本模块化以及 Java 与 JNI 跟踪。 **[1,520 星标]**
 - [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 通过 Magisk 在开机时运行 frida-server，并始终保持最新。 **[1,473 星标]**
 - [nccgroup/house](https://github.com/nccgroup/house) — 基于 Frida、使用 Python 编写的移动应用运行时分析工具包，带有 Web GUI。 **[1,468 星标]**
-- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — 本仓库包含一系列挑战，用于学习使用 Frida 进行 Android 漏洞利用。 **[1,331 星标]**
+- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — 本仓库包含一系列挑战，用于学习使用 Frida 进行 Android 漏洞利用。 **[1,331 星标]** · 精选：[Frida Labs Android 插桩练习](https://awesomerea.org/zh/resources/frida-labs/)
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — 基于 PyQt5 和 Frida 构建、功能全面的多架构/多操作系统调试器。 **[1,321 星标]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — 用于反编译和反汇编 React Native Hermes 字节码的逆向工程工具。 **[1,213 星标]** · 精选：[hermes-dec](https://awesomerea.org/zh/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — 用于评估 Android 应用、逆向工程及恶意软件分析的虚拟机。 **[1,175 星标]**

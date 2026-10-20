@@ -11254,5 +11254,35 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "frida-labs",
+    "name": "Frida Labs",
+    "url": "https://github.com/DERE-ad2001/Frida-Labs",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Eleven Android challenge apps with step-by-step write-ups for learning Frida instrumentation, progressing from setting up frida-server and hooking a Java method through calling static methods, changing fields, creating instances and hooking constructors to hooking, calling and patching native functions. The author presents them as beginner-to-intermediate exercises rather than hard CTF challenges: each app hides a flag, but the stated goal is learning Frida’s common APIs and being able to read scripts written by others.",
+    "description_zh": "收录十一个 Android 挑战应用及逐步讲解，用于学习 Frida 插桩：从部署 frida-server、Hook Java 方法开始，依次练习调用静态方法、修改变量、创建实例和 Hook 构造函数，最后到 Hook、调用及修补原生函数。作者将其定位为入门到中级的练习，而非高难度 CTF：每个应用都藏有 flag，但目标是掌握 Frida 常用 API，并能读懂他人编写的脚本。",
+    "evidence_url": "https://github.com/DERE-ad2001/Frida-Labs/blob/b01f2f8e4c479231ebf5763e94f695c88350c4f2/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the 2026-02-22 main commit, which adds Frida 17 workarounds to the native-hooking write-ups for challenges 0x8 to 0xB; the first write-up deploys frida-server 16.1.4. There are no releases, and the README says new challenges will be added over time.",
+      "Each challenge is a prebuilt APK committed by the author, with package names such as com.ad2001.frida0x1; the apps’ source code is not in the repository, and the solutions are Markdown write-ups with screenshots. They assume a rooted Android device or emulator, adb, frida-tools from pip and a frida-server build matching the device architecture, with jadx for the Java code and Ghidra for the native libraries; the 0xB write-up shows instruction patches for both x86 and ARM64 builds.",
+      "Flags and solution scripts are published next to each APK, so the set works as guided practice rather than an assessment. The README points to learnfrida.info and Frida CodeShare for further material. This review read the README and the 0x1, 0x8 and 0xB write-ups without installing or running any APK.",
+      "MIT license for the repository; Frida, jadx, Ghidra and the Android tools keep their own terms. The reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/DERE-ad2001/Frida-Labs/blob/b01f2f8e4c479231ebf5763e94f695c88350c4f2/Frida%200x1/Solution/Solution.md",
+      "https://github.com/DERE-ad2001/Frida-Labs/blob/b01f2f8e4c479231ebf5763e94f695c88350c4f2/Frida%200x8/Solution/Solution.md",
+      "https://github.com/DERE-ad2001/Frida-Labs/blob/b01f2f8e4c479231ebf5763e94f695c88350c4f2/Frida%200xB/Solution/Solution.md",
+      "https://github.com/DERE-ad2001/Frida-Labs/tree/b01f2f8e4c479231ebf5763e94f695c88350c4f2",
+      "https://github.com/DERE-ad2001/Frida-Labs/commit/d7e9fce053a6e4be9d3b91ac80c1345a778960b2",
+      "https://github.com/DERE-ad2001/Frida-Labs/blob/b01f2f8e4c479231ebf5763e94f695c88350c4f2/LICENSE"
+    ]
   }
 ]

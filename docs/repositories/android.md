@@ -46,7 +46,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [deathmemory/FridaContainer](https://github.com/deathmemory/FridaContainer) — FridaContainer brings together popular online and custom-written Frida scripts to improve reverse engineering efficiency, with modular Frida scripts and Java/JNI tracing. **[1,520 stars]**
 - [ViRb3/magisk-frida](https://github.com/ViRb3/magisk-frida) — 🔐 Run frida-server on boot with Magisk, always up-to-date **[1,473 stars]**
 - [nccgroup/house](https://github.com/nccgroup/house) — A runtime mobile application analysis toolkit with a Web GUI, powered by Frida, written in Python. **[1,468 stars]**
-- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]**
+- [DERE-ad2001/Frida-Labs](https://github.com/DERE-ad2001/Frida-Labs) — The repo contains a series of challenges for learning Frida for Android Exploitation. **[1,331 stars]** · Curated: [Frida Labs](https://awesomerea.org/resources/frida-labs/)
 - [iGio90/Dwarf](https://github.com/iGio90/Dwarf) — Full featured multi arch/os debugger built on top of PyQt5 and frida **[1,321 stars]**
 - [P1sec/hermes-dec](https://github.com/P1sec/hermes-dec) — A reverse engineering tool for decompiling and disassembling the React Native Hermes bytecode **[1,213 stars]** · Curated: [hermes-dec](https://awesomerea.org/resources/hermes-dec/)
 - [sh4hin/Androl4b](https://github.com/sh4hin/Androl4b) — A Virtual Machine For Assessing Android applications, Reverse Engineering and Malware Analysis **[1,175 stars]**
