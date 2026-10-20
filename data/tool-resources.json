@@ -11191,5 +11191,26 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "awesome-mobile-security",
+    "name": "awesome-mobile-security",
+    "url": "https://github.com/vaib25vicky/awesome-mobile-security",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "app"
+    ],
+    "description_en": "A single-README list of Android and iOS application security resources, about 245 links in all, divided by platform into blogs, papers and how-tos, books, courses, tools, deliberately vulnerable lab apps, talks and miscellany. Android tools are further split into static analysis, dynamic analysis and online APK analyzers, and reverse-engineering entries such as smali/baksmali, radare2, Cutter, Bytecode Viewer, Frida and Objection sit alongside pentesting guides and vulnerability write-ups.",
+    "description_zh": "以单个 README 维护的 Android 与 iOS 应用安全资源清单，共约 245 个链接，按平台分为博客、论文与教程、书籍、课程、工具、故意留有漏洞的练习应用、演讲及杂项。Android 工具又细分为静态分析、动态分析和在线 APK 分析服务；smali/baksmali、radare2、Cutter、Bytecode Viewer、Frida、Objection 等逆向工程条目与渗透测试指南和漏洞分析文章并列。",
+    "evidence_url": "https://github.com/vaib25vicky/awesome-mobile-security/blob/490ed366b448d4635a8263be62c51a92a619d060/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last changed 2021-01-20, has 168 Android and 78 iOS list entries, a few of them repeated. It has not changed since, so listed versions and services date from that time; for example, it names Magisk v20.2. These are list rows, not verified resources, and the links were not checked for this record.",
+      "Entries give a name and link, sometimes with a short note, and state no license, maintenance status, platform requirement or test result. The list mixes open-source projects, commercial and online scanning services, books, courses and conference talks, and includes rooting and jailbreak tools, so check each resource's own terms and use it only on devices and apps you are authorized to test.",
+      "The repository holds only README.md and has no license file, so the list states no reuse terms; its GitHub description says the references and tools belong to their respective owners. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]
