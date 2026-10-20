@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](reverse-engineering.zh-CN.md)
 
-**605 repositories** · 2026-10-16 UTC
+**604 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -79,7 +79,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [OpenStick/OpenStick](https://github.com/OpenStick/OpenStick) — reverse engineering on msm8916 based 4G modem. **[1,192 stars]**
 - [kpwn/iOSRE](https://github.com/kpwn/iOSRE) — iOS Reverse Engineering **[1,183 stars]**
 - [mrphrazer/reverser\_ai](https://github.com/mrphrazer/reverser_ai) — Provides automated reverse engineering assistance through the use of local large language models (LLMs) on consumer hardware. **[1,158 stars]**
-- [MatthewKuKanich/CAN\_Commander](https://github.com/MatthewKuKanich/CAN_Commander) — CAN Commander is a comprehensive tool designed for the reverse engineering of CAN (Controller Area Network) bus systems. This project aims to provide a robust platform for automotive enthusiasts, engineers, and security researchers to interact with and analyze CAN networks, facilitating a deeper understanding and manipulation of communication. **[1,078 stars]**
 - [toniebox-reverse-engineering/teddycloud](https://github.com/toniebox-reverse-engineering/teddycloud) — teddyCloud is an open source server replacement for the Boxine Cloud **[1,072 stars]**
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — Reverse-engineering the new “captchaless” ReCaptcha system... **[1,051 stars]**
 - [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — Hacking the PixMob infrared (and now also RF!) protocol to enable control of PixMob wristbands at home. **[1,040 stars]**

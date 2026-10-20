@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [简体中文](protocol-analysis.zh-CN.md)
 
-**106 repositories** · 2026-10-16 UTC
+**107 repositories** · 2026-10-16 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -10,6 +10,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [commaai/opendbc](https://github.com/commaai/opendbc) — a Python API for your car **[3,493 stars]** · Curated: [opendbc](https://awesomerea.org/resources/opendbc/)
 - [ainfosec/FISSURE](https://github.com/ainfosec/FISSURE) — The RF and reverse engineering framework for everyone. Follow and ★ to show your support! **[2,069 stars]** · Curated: [FISSURE](https://awesomerea.org/resources/fissure/)
 - [marin-m/pbtk](https://github.com/marin-m/pbtk) — A toolset for reverse engineering and fuzzing Protobuf-based apps **[1,691 stars]** · Curated: [pbtk](https://awesomerea.org/resources/pbtk/)
+- [MatthewKuKanich/CAN\_Commander](https://github.com/MatthewKuKanich/CAN_Commander) — CAN Commander is a comprehensive tool designed for the reverse engineering of CAN (Controller Area Network) bus systems. This project aims to provide a robust platform for automotive enthusiasts, engineers, and security researchers to interact with and analyze CAN networks, facilitating a deeper understanding and manipulation of communication. **[1,078 stars]** · Curated: [CAN Commander](https://awesomerea.org/resources/can-commander/)
 - [alphaSeclab/awesome-network-stuff](https://github.com/alphaSeclab/awesome-network-stuff) — Resources about network security, including: Proxy/GFW/ReverseProxy/Tunnel/VPN/Tor/I2P, and MiTM/PortKnocking/NetworkSniff/NetworkAnalysis/etc。More than 1700 open source tools for now. Post incoming. **[926 stars]**
 - [netzob/netzob](https://github.com/netzob/netzob) — Netzob: Protocol Reverse Engineering, Modeling and Fuzzing **[838 stars]** · Curated: [Netzob](https://awesomerea.org/resources/netzob/)
 - [furiousMAC/continuity](https://github.com/furiousMAC/continuity) — Apple Continuity Protocol Reverse Engineering and Dissector **[688 stars]** · Curated: [furiousMAC Continuity](https://awesomerea.org/resources/furiousmac-continuity/)

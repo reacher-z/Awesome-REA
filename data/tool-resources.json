@@ -11191,5 +11191,35 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "can-commander",
+    "name": "CAN Commander",
+    "url": "https://github.com/MatthewKuKanich/CAN_Commander",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "A Flipper Zero app and earlier Arduino sketches for reverse engineering CAN bus traffic, chiefly in vehicles. The current app is a UART front end for a CAN Commander ESP32 board: it streams all or filtered frames, lists unique IDs, measures message rates, tracks per-bit and per-byte changes, and runs a two-phase Auto Reverse Engineer that first calibrates out background traffic and then shows which IDs change during an action. It also decodes live signals from DBC-based profiles and reads OBD-II PIDs, the VIN and trouble codes.",
+    "description_zh": "用于逆向 CAN 总线流量（主要是车辆总线）的 Flipper Zero 应用及早期 Arduino 程序。当前应用通过 UART 为 CAN Commander ESP32 板提供操作界面：可显示全部或过滤后的帧、列出唯一 ID、测量报文速率、跟踪逐位和逐字节变化，并提供两阶段的自动逆向功能，先校准排除背景流量，再显示执行某个操作时哪些 ID 发生变化。它还能依据基于 DBC 的配置解码实时信号，并读取 OBD-II PID、VIN 和故障码。",
+    "evidence_url": "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/README.md",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed main commit of 2026-04-25 sets app version v2.3.1 (fap_version 2.3), and there are no GitHub releases. The app needs a CAN Commander board connected to the Flipper's GPIO and running ESP32 firmware v2.2 or newer. That firmware, and the converter from .dbc files to the app's .dbcprof and .injprof profiles, are offered at cancommander.com rather than in this repository.",
+      "The README lists limits such as 16 cached DBC signals, 10 tracked changed IDs on the reverse-engineering dashboard and 384 frames per replay recording, and warns that heavy traffic needs filtering and that streaming the Flipper screen during DBC decoding can exhaust RAM. A Wi-Fi TCP command line mirrors the USB command set; dedicated companion clients are described as planned.",
+      "Legacy/ keeps the earlier Arduino sketches for Arduino, ESP8266, ESP32 or RP2040 boards with an MCP2515 controller, a bundled MCP2515 library copy with an MIT notice, a JavaScript BLE companion app, OBD-II PID tables and about 80 vehicle DBC files without a stated source or license. The repository has no tests or CI.",
+      "The write, Smart Injection, Replay and Clear DTCs tools transmit on the bus and can change vehicle state; use them only on vehicles and networks you own or are authorized to test. This record covers the monitoring, discovery and decoding functions. There is no license file and GitHub detects none, so reuse terms for the project's own code are not stated. The reviewed sources state no REA use, and no hardware was connected for this record."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/README.md#L554-L615",
+      "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/CAN_Commander_FlipperZero/can_commander/application.fam",
+      "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/CAN_Commander_FlipperZero/can_commander/can_commander.h",
+      "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/Legacy/README.md",
+      "https://github.com/MatthewKuKanich/CAN_Commander/tree/6079fe05d5a340b445317e89998d78b390e90a62/Legacy/CAN_Resources/DBC_Files",
+      "https://github.com/MatthewKuKanich/CAN_Commander/blob/6079fe05d5a340b445317e89998d78b390e90a62/Legacy/ArduinoEnvironment/libraries/mcp2515/LICENSE.md"
+    ]
   }
 ]

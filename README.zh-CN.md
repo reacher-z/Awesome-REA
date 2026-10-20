@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 472](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-472-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -24,7 +24,7 @@
 **按目标找工具与案例**
 
 - [网站](#website) (27) · [游戏](#game) (185) · [应用](#app) (72)
-- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (18)
+- [原生二进制](#native-binary) (63) · [固件与硬件](#firmware) (22) · [协议](#protocol) (19)
 
 **论文与工作流**
 
@@ -2433,6 +2433,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   从已编译程序中恢复 Protobuf 消息定义，并还原为可读的 .proto 文件。提取器覆盖 JAR、DEX 和 APK 中的各类 Java 运行时（包括经 ProGuard 混淆的代码）、内嵌 Protobuf 反射元数据的二进制文件，以及使用 Protobuf-URL 格式的 Web 应用。随后可在图形界面中把恢复出的消息类型绑定到 HTTP 端点，将十六进制形式的抓包样本解码为可编辑的字段树，并重新发送修改后的消息，帮助分析者把每个字段与响应对应起来。
 
   工具 · 也适用：应用 · [使用条件与证据](https://awesomerea.org/zh/resources/pbtk/)
+
+- [**CAN Commander CAN 总线逆向工具**](https://github.com/MatthewKuKanich/CAN_Commander)
+
+  用于逆向 CAN 总线流量（主要是车辆总线）的 Flipper Zero 应用及早期 Arduino 程序。当前应用通过 UART 为 CAN Commander ESP32 板提供操作界面：可显示全部或过滤后的帧、列出唯一 ID、测量报文速率、跟踪逐位和逐字节变化，并提供两阶段的自动逆向功能，先校准排除背景流量，再显示执行某个操作时哪些 ID 发生变化。它还能依据基于 DBC 的配置解码实时信号，并读取 OBD-II PID、VIN 和故障码。
+
+  工具 · [使用条件与证据](https://awesomerea.org/zh/resources/can-commander/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP · 智能体与 MCP

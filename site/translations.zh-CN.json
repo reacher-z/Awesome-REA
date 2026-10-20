@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "can-commander": {
+    "name": "CAN Commander CAN 总线逆向工具",
+    "requirements": [
+      "所审阅的 main 提交日期为 2026-04-25，将应用版本设为 v2.3.1（fap_version 2.3），GitHub 上没有发布版本。应用需要通过 Flipper 的 GPIO 连接一块 CAN Commander 板，且板上运行 v2.2 或更新的 ESP32 固件。该固件以及把 .dbc 文件转换为应用所用 .dbcprof 和 .injprof 配置的工具都在 cancommander.com 提供，而不在本仓库中。",
+      "README 列出若干限制，例如最多缓存 16 个 DBC 信号、逆向面板最多跟踪 10 个变化的 ID、每次回放录制最多 384 帧，并提醒流量过大时需要过滤，在 DBC 解码时串流 Flipper 屏幕可能耗尽内存。Wi-Fi TCP 命令行与 USB 命令集相同；专用配套客户端仍处于计划阶段。",
+      "Legacy/ 保留了早期的 Arduino 程序，适用于搭配 MCP2515 控制器的 Arduino、ESP8266、ESP32 或 RP2040 板，另有一份带 MIT 声明的 MCP2515 库副本、一个 JavaScript 编写的 BLE 配套应用、OBD-II PID 表，以及约 80 个未注明来源或许可证的车辆 DBC 文件。仓库没有测试或 CI。",
+      "写帧、Smart Injection、回放和清除故障码等工具会向总线发送数据，可能改变车辆状态，只应在自有或获授权测试的车辆和网络上使用。本条目只涉及监听、发现和解码功能。仓库没有许可证文件，GitHub 也未识别出许可证，因此项目自身代码的复用条款未说明。所审来源未提及 REA 的使用，本条目未连接任何硬件。"
+    ]
   }
 }
