@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 460](https://img.shields.io/badge/resources-460-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 191](https://img.shields.io/badge/cases-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 461](https://img.shields.io/badge/resources-461-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (26) · [Game](#game) (181) · [App](#app) (71)
+- [Website](#website) (26) · [Game](#game) (182) · [App](#app) (71)
 - [Native Binary](#native-binary) (62) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (191) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (192) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -1092,6 +1092,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Decompiles Retro Engine (RSDK) v4, the engine behind Sonic the Hedgehog and Sonic the Hedgehog 2 (2013), together with the games’ natively coded menus, and builds it for Windows, Linux and Android. The engine runs the game scripts contained in the official releases’ data files, which users must supply. The project adds a script compiler, a mod loader and an experimental online mode for Sonic 2’s 2P VS; it is the predecessor of the same group’s RSDKv5 decompilation.
 
   Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/rsdkv4-sonic-1-2-decomp-case/)
+
+- [**OpenRW: an open re-implementation of the Grand Theft Auto III engine**](https://github.com/rwengine/openrw)
+
+  Re-implements Rockstar Games’ Grand Theft Auto III (2001) as a cross-platform C++ engine that runs on the data of a legitimate PC copy. It has its own loaders for the game’s RenderWare models, textures and archives, a script machine for the original mission scripts, and an optional Qt data viewer. Playability is partial: the project’s mission tracker marks six early Portland story missions as completable.
+
+  Case study · Independent reconstruction · [Requirements & evidence](https://awesomerea.org/resources/openrw-gta3-engine-case/)
 
 #### Tools, projects and integrations
 

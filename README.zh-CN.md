@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 460](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-460-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 191](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-191-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 461](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-461-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 192](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -23,7 +23,7 @@
 <!-- BEGIN GENERATED CONTENTS -->
 **按目标找工具与案例**
 
-- [网站](#website) (26) · [游戏](#game) (181) · [应用](#app) (71)
+- [网站](#website) (26) · [游戏](#game) (182) · [应用](#app) (71)
 - [原生二进制](#native-binary) (62) · [固件与硬件](#firmware) (21) · [协议](#protocol) (18)
 
 **论文与工作流**
@@ -32,7 +32,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (191) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
+- [全部案例](https://awesomerea.org/zh/cases/) (192) · [相关合集](#related-collections) (6) · [完整仓库索引](#完整仓库索引) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -1093,6 +1093,12 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   反编译 Retro Engine（RSDK）v4——《索尼克》与《索尼克 2》（2013）所用的引擎——以及两款游戏中以原生代码实现的菜单，可构建 Windows、Linux 与 Android 版本。引擎运行官方发行版数据文件中的游戏脚本，这些文件需由使用者自备。项目增加了脚本编译器、模组加载器，以及《索尼克 2》双人对战的实验性联网模式；它是同一团队 RSDKv5 反编译项目的前身。
 
   案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/rsdkv4-sonic-1-2-decomp-case/)
+
+- [**OpenRW：《侠盗猎车手 III》引擎的开源重新实现**](https://github.com/rwengine/openrw)
+
+  以跨平台 C++ 引擎重新实现 Rockstar Games 的《侠盗猎车手 III》（2001），在正版 PC 游戏的数据上运行。项目自行实现了游戏 RenderWare 模型、纹理和归档的加载器，提供执行原版任务脚本的脚本机，并附带可选的 Qt 数据查看器。可玩程度有限：项目的任务追踪清单只将波特兰的六个早期剧情任务标为可完成。
+
+  案例 · 独立重建 · [使用条件与证据](https://awesomerea.org/zh/resources/openrw-gta3-engine-case/)
 
 #### 工具、项目与集成
 
