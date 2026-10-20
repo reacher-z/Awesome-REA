@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 471](https://img.shields.io/badge/resources-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 471](https://img.shields.io/badge/resources-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 195](https://img.shields.io/badge/cases-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -28,7 +28,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **Research and workflows**
 
-- [Papers](#papers) (87) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
+- [Papers](#papers) (88) · [Agents and MCP](#agents-and-mcp) (43) · [References and Learning](#references-and-learning) (32)
 
 **More ways to browse**
 
@@ -2941,13 +2941,13 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 <a id="papers"></a>
 ## Papers
 
-**87 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
+**88 papers**, grouped by topic and ordered newest first. Each entry shows its venue and publication status.
 
 [Browse the paper directory](https://awesomerea.org/papers/) · [Complete bibliography JSON](data/papers.json) · [Suggest a paper](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **By topic**
 
-- [Agent evaluation](#papers-agent-evaluation) (9) · [Decompilation](#papers-decompilation) (34) · [Websites](#papers-website-reconstruction) (15)
+- [Agent evaluation](#papers-agent-evaluation) (10) · [Decompilation](#papers-decompilation) (34) · [Websites](#papers-website-reconstruction) (15)
 - [Games](#papers-game-reconstruction) (6) · [Apps](#papers-app-reconstruction) (7) · [Firmware](#papers-firmware-analysis) (6)
 - [Protocols](#papers-protocol-analysis) (10)
 
@@ -2970,6 +2970,21 @@ Open “Scope and publication details” for each study’s full limitations. So
   **Scope and limits:** Understanding is graded on two compact challenges; the separate 4,000-binary study measures context capacity, not task-solving accuracy. The interface is static IDA/MCP without dynamic execution, and prior exposure to challenge source remains an acknowledged validity threat.
 
   **Authors:** Samuele Doria et al.
+
+  </details>
+
+- [**Training Language Model Agents to Find Vulnerabilities with CTF-Dojo**](https://proceedings.mlr.press/v306/zhuo26c.html)
+
+  CTF-Dojo is an execution environment for training LLM agents on capture-the-flag tasks: 658 challenges from 50 competitions held between 2011 and 2025, taken from pwn.college's CTF Archive and containerized with Docker. Its CTF-Forge pipeline prompts DeepSeek-V3-0324 to write each challenge's Dockerfile, docker-compose file and challenge metadata; across three independent runs, 650 challenges consistently built and answered on their expected ports. Qwen3-Coder and DeepSeek-V3-0324 agents in the EnIGMA+ scaffold, capped at 40 turns, collected trajectories. Matched CTFtime writeups served as hints during collection and were removed afterwards, and ports, paths, distractor code and other runtime details were randomized per rollout. Rejection-sampling fine-tuning of Qwen3 8B, 14B and 32B on 486 flag-capturing trajectories from 274 solved challenges raises average Pass<span>@</span>1 on InterCode-CTF, NYU CTF Bench and Cybench by up to 11.6 points; the 32B model reaches 31.9%.
+
+  ICML 2026 · Conference paper · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhuo26c/zhuo26c.pdf) · [Code](https://github.com/amazon-science/CTF-Dojo) · [Full entry & citation](https://awesomerea.org/papers/paper-ctf-dojo/)
+
+  <details>
+  <summary>Scope and publication details</summary>
+
+  **Scope and limits:** The environments span general CTF categories, not reverse engineering alone: of the 658 challenges, 228 are cryptography, 163 pwn, 123 reverse engineering, 85 miscellaneous, 38 forensics and 21 web. Among the 274 challenges with successful trajectories, cryptography is the largest category (141), followed by reverse engineering (52). Benchmark gains are reported per benchmark over 323 tasks, at temperature 0 with 40 turns, not per category, so they do not measure reverse-engineering accuracy. Decontamination matched competition and challenge names and removed 3 overlapping challenges; the authors note that it cannot exclude broader similarity between tasks. Only 150 challenges (23%) matched a writeup, all trajectories come from two teacher models, and only supervised fine-tuning is studied; the authors name the static 658-challenge scale as a limit. Hashed flag checkers in the upstream archive can be wrong, and the authors report four such bugs. The repository code is CC BY-NC 4.0. It holds CTF-Forge, the metadata and writeup-matching scripts and a challenge index, but not the challenge files, which are cloned separately from pwn.college's CTF Archive and are not covered by the repository license. The reviewed tree has no trajectories or trained weights, and writeups must be collected separately. Capturing a flag does not show recovered program structure.
+
+  **Authors:** Terry Yue Zhuo et al.
 
   </details>
 

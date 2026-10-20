@@ -4905,5 +4905,60 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-ctf-dojo",
+    "title": "Training Language Model Agents to Find Vulnerabilities with CTF-Dojo",
+    "title_zh": "使用 CTF-Dojo 训练语言模型智能体发现漏洞",
+    "authors": [
+      "Terry Yue Zhuo",
+      "Dingmin Wang",
+      "Hantian Ding",
+      "Varun Kumar",
+      "Zijian Wang"
+    ],
+    "year": 2026,
+    "publication_date": "2026-09-29",
+    "date_precision": "day",
+    "date_basis": "PMLR states that Volume 306 was published on 29 September 2026, matching the paper page's citation_publication_date of 2026/09/29. The July 6–11 conference dates and the arXiv dates are not used.",
+    "date_basis_zh": "PMLR 说明第 306 卷于 2026 年 9 月 29 日出版，与论文页面 citation_publication_date 所载 2026/09/29 一致；本条目不采用 7 月 6–11 日的会议日期，也不采用 arXiv 日期。",
+    "venue": "ICML 2026",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2508.18370",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2025-08-25",
+    "doi": null,
+    "url": "https://proceedings.mlr.press/v306/zhuo26c.html",
+    "pdf_url": "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhuo26c/zhuo26c.pdf",
+    "code_url": "https://github.com/amazon-science/CTF-Dojo",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "CTF-Dojo is an execution environment for training LLM agents on capture-the-flag tasks: 658 challenges from 50 competitions held between 2011 and 2025, taken from pwn.college's CTF Archive and containerized with Docker. Its CTF-Forge pipeline prompts DeepSeek-V3-0324 to write each challenge's Dockerfile, docker-compose file and challenge metadata; across three independent runs, 650 challenges consistently built and answered on their expected ports. Qwen3-Coder and DeepSeek-V3-0324 agents in the EnIGMA+ scaffold, capped at 40 turns, collected trajectories. Matched CTFtime writeups served as hints during collection and were removed afterwards, and ports, paths, distractor code and other runtime details were randomized per rollout. Rejection-sampling fine-tuning of Qwen3 8B, 14B and 32B on 486 flag-capturing trajectories from 274 solved challenges raises average Pass@1 on InterCode-CTF, NYU CTF Bench and Cybench by up to 11.6 points; the 32B model reaches 31.9%.",
+    "description_zh": "CTF-Dojo 是用于在夺旗赛任务上训练大语言模型智能体的可执行环境：它从 pwn.college 的 CTF Archive 中选取 658 道题目，来自 2011 年至 2025 年举办的 50 项竞赛，并以 Docker 容器化。其 CTF-Forge 流水线提示 DeepSeek-V3-0324 为每道题目编写 Dockerfile、docker-compose 文件和题目元数据；在三次独立运行中，650 道题目均能稳定构建并在预期端口上响应。Qwen3-Coder 与 DeepSeek-V3-0324 智能体在上限为 40 轮的 EnIGMA+ 框架中收集轨迹。收集过程中以匹配到的 CTFtime 题解作为提示，之后再从轨迹中删除；每次运行还会随机化端口、路径、干扰代码及其他运行时细节。作者以拒绝采样微调方式，用来自 274 道已解题目的 486 条成功夺旗轨迹训练 Qwen3 8B、14B 与 32B 模型，使其在 InterCode-CTF、NYU CTF Bench 与 Cybench 上的平均 Pass@1 最多提高 11.6 个百分点；32B 模型达到 31.9%。",
+    "scope_limitations_en": "The environments span general CTF categories, not reverse engineering alone: of the 658 challenges, 228 are cryptography, 163 pwn, 123 reverse engineering, 85 miscellaneous, 38 forensics and 21 web. Among the 274 challenges with successful trajectories, cryptography is the largest category (141), followed by reverse engineering (52). Benchmark gains are reported per benchmark over 323 tasks, at temperature 0 with 40 turns, not per category, so they do not measure reverse-engineering accuracy. Decontamination matched competition and challenge names and removed 3 overlapping challenges; the authors note that it cannot exclude broader similarity between tasks. Only 150 challenges (23%) matched a writeup, all trajectories come from two teacher models, and only supervised fine-tuning is studied; the authors name the static 658-challenge scale as a limit. Hashed flag checkers in the upstream archive can be wrong, and the authors report four such bugs. The repository code is CC BY-NC 4.0. It holds CTF-Forge, the metadata and writeup-matching scripts and a challenge index, but not the challenge files, which are cloned separately from pwn.college's CTF Archive and are not covered by the repository license. The reviewed tree has no trajectories or trained weights, and writeups must be collected separately. Capturing a flag does not show recovered program structure.",
+    "scope_limitations_zh": "这些环境涵盖夺旗赛的一般类别，并非只有逆向工程：658 道题目中，密码学 228 道、漏洞利用 163 道、逆向工程 123 道、杂项 85 道、取证 38 道、Web 21 道。在有成功轨迹的 274 道题目中，密码学是最大的类别（141 道），其次是逆向工程（52 道）。基准提升按基准（共 323 个任务，温度为 0、上限 40 轮）报告，而非按类别报告，因此不能衡量逆向工程准确率。去污染通过匹配竞赛名与题目名完成，移除了 3 道重叠题目；作者指出这无法排除任务之间更广泛的相似性。只有 150 道题目（23%）匹配到题解，所有轨迹都来自两个教师模型，研究也只考察监督微调；作者将 658 道题目的静态规模列为局限。上游归档中基于哈希的旗标检查程序可能有误，作者报告了四个此类错误。仓库代码采用 CC BY-NC 4.0 许可证，包含 CTF-Forge、元数据与题解匹配脚本以及题目索引，但不含题目文件；题目文件需另行从 pwn.college 的 CTF Archive 克隆，不受该仓库许可证覆盖。所审阅的目录中没有轨迹或训练好的权重，题解也需另行收集。夺得旗标并不表明恢复了程序结构。",
+    "why_fits_en": "Adds execution-grounded training of open-weight CTF agents on a task pool that includes reverse-engineering challenges; trajectories are collected and evaluated in EnIGMA+, an extension of the EnIGMA scaffold in this section.",
+    "why_fits_zh": "补充在包含逆向工程题目的任务池上、以执行结果为依据训练开放权重夺旗赛智能体的研究；其轨迹在 EnIGMA+ 中收集和评测，该框架扩展了本节收录的 EnIGMA。",
+    "metadata_notes": "The PMLR page, its BibTeX and the proceedings PDF give the same five authors in order, the booktitle 'Proceedings of the 43rd International Conference on Machine Learning', volume 306, pages 168265–168284 and no DOI. arXiv v1 is dated 2025-08-25 and v2 2025-09-23, with no comment or journal reference; v2 matches the PMLR title and headline numbers, though its training text says 7B where its tables and the PMLR text use 8B. The OpenReview forum could not be retrieved past a browser check, so the venue rests on the PMLR proceedings. At the reviewed 2026-01-10 commit, the LICENSE file is the CC BY-NC 4.0 text and NOTICE gives SPDX CC-BY-NC-4.0, while GitHub reports NOASSERTION. The README and NOTICE title the project 'Training Software Agents to Find Vulnerabilities with CTF-Dojo', and the README's second BibTeX entry gives the separate Cyber-Zero preprint (arXiv 2508.00910) the title 'CTF-Dojo: Training Cybersecurity Agents without Runtime'. ctf_archive.json lists 658 challenges, with 229 cryptography and 162 pwn against the paper's 228 and 163. Building environments needs a model endpoint through litellm (default deepseek-v3-0324), a clone of pwncollege/ctf-archive, whose reviewed commit has no root license file, a separately gathered writeups JSONL, and EnIGMA+ from the Cyber-Zero repository for trajectory collection. No code or experiments were run.",
+    "metadata_notes_zh": "PMLR 页面、其 BibTeX 与论文集 PDF 均列出顺序相同的五位作者、书名“Proceedings of the 43rd International Conference on Machine Learning”、第 306 卷、第 168265–168284 页，且没有 DOI。arXiv v1 发布于 2025-08-25，v2 为 2025-09-23，均无注释或期刊引用；v2 的标题与主要数字与 PMLR 版本一致，但其训练部分写作 7B，而其表格与 PMLR 正文均为 8B。OpenReview 论坛页因浏览器验证无法获取，因此发表场所依据 PMLR 论文集。在所审阅的 2026-01-10 提交中，LICENSE 文件为 CC BY-NC 4.0 文本，NOTICE 给出 SPDX 标识 CC-BY-NC-4.0，而 GitHub 显示为 NOASSERTION。README 与 NOTICE 将项目称为“Training Software Agents to Find Vulnerabilities with CTF-Dojo”，README 中第二条 BibTeX 则为另一篇 Cyber-Zero 预印本（arXiv 2508.00910）标注了“CTF-Dojo: Training Cybersecurity Agents without Runtime”的标题。ctf_archive.json 列出 658 道题目，其中密码学 229 道、漏洞利用 162 道，论文中则为 228 道与 163 道。构建环境需要通过 litellm 访问模型端点（默认 deepseek-v3-0324）、克隆 pwncollege/ctf-archive（所审阅提交的根目录没有许可证文件）、另行收集的题解 JSONL，以及 Cyber-Zero 仓库中用于收集轨迹的 EnIGMA+。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://proceedings.mlr.press/v306/zhuo26c.html",
+      "https://proceedings.mlr.press/v306/",
+      "https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhuo26c/zhuo26c.pdf",
+      "https://arxiv.org/abs/2508.18370",
+      "https://arxiv.org/pdf/2508.18370v2",
+      "https://github.com/amazon-science/CTF-Dojo/blob/8ef064a93c73bc66f8681b5648948c43f9c9a8ba/README.md",
+      "https://github.com/amazon-science/CTF-Dojo/blob/8ef064a93c73bc66f8681b5648948c43f9c9a8ba/LICENSE",
+      "https://github.com/amazon-science/CTF-Dojo/blob/8ef064a93c73bc66f8681b5648948c43f9c9a8ba/NOTICE",
+      "https://github.com/amazon-science/CTF-Dojo/blob/8ef064a93c73bc66f8681b5648948c43f9c9a8ba/ctf_archive.json",
+      "https://github.com/amazon-science/CTF-Dojo/blob/8ef064a93c73bc66f8681b5648948c43f9c9a8ba/requirements.txt",
+      "https://github.com/pwncollege/ctf-archive/tree/d1c3b204ae0b55ecbbc09b0cab4842c79f50819a"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-19",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 87](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 471](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-471-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 195](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-195-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 88](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (87) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (88) · [智能体与 MCP](#agents-and-mcp) (43) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -2942,13 +2942,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**87 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
+**88 篇论文**，按主题分组，组内按年份从新到旧排列。每项均标明发表场所与状态，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (34) · [网站](#papers-website-reconstruction) (15)
+- [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (34) · [网站](#papers-website-reconstruction) (15)
 - [游戏](#papers-game-reconstruction) (6) · [应用](#papers-app-reconstruction) (7) · [固件](#papers-firmware-analysis) (6)
 - [协议](#papers-protocol-analysis) (10)
 
@@ -2971,6 +2971,21 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
   **范围与限制:** 理解能力仅在两个紧凑挑战上评分；另一个包含 4,000 个二进制文件的实验测量上下文容量，并非解题准确率。接口为不含动态执行的静态 IDA/MCP，模型曾接触挑战源码的可能性仍是作者承认的有效性威胁。
 
   **作者:** Samuele Doria 等
+
+  </details>
+
+- [**使用 CTF-Dojo 训练语言模型智能体发现漏洞**](https://proceedings.mlr.press/v306/zhuo26c.html)
+
+  CTF-Dojo 是用于在夺旗赛任务上训练大语言模型智能体的可执行环境：它从 pwn.college 的 CTF Archive 中选取 658 道题目，来自 2011 年至 2025 年举办的 50 项竞赛，并以 Docker 容器化。其 CTF-Forge 流水线提示 DeepSeek-V3-0324 为每道题目编写 Dockerfile、docker-compose 文件和题目元数据；在三次独立运行中，650 道题目均能稳定构建并在预期端口上响应。Qwen3-Coder 与 DeepSeek-V3-0324 智能体在上限为 40 轮的 EnIGMA+ 框架中收集轨迹。收集过程中以匹配到的 CTFtime 题解作为提示，之后再从轨迹中删除；每次运行还会随机化端口、路径、干扰代码及其他运行时细节。作者以拒绝采样微调方式，用来自 274 道已解题目的 486 条成功夺旗轨迹训练 Qwen3 8B、14B 与 32B 模型，使其在 InterCode-CTF、NYU CTF Bench 与 Cybench 上的平均 Pass<span>@</span>1 最多提高 11.6 个百分点；32B 模型达到 31.9%。
+
+  ICML 2026 · 会议论文 · [PDF](https://raw.githubusercontent.com/mlresearch/v306/main/assets/zhuo26c/zhuo26c.pdf) · [代码](https://github.com/amazon-science/CTF-Dojo) · [完整条目与引用](https://awesomerea.org/zh/papers/paper-ctf-dojo/)
+
+  <details>
+  <summary>范围与发表信息</summary>
+
+  **范围与限制:** 这些环境涵盖夺旗赛的一般类别，并非只有逆向工程：658 道题目中，密码学 228 道、漏洞利用 163 道、逆向工程 123 道、杂项 85 道、取证 38 道、Web 21 道。在有成功轨迹的 274 道题目中，密码学是最大的类别（141 道），其次是逆向工程（52 道）。基准提升按基准（共 323 个任务，温度为 0、上限 40 轮）报告，而非按类别报告，因此不能衡量逆向工程准确率。去污染通过匹配竞赛名与题目名完成，移除了 3 道重叠题目；作者指出这无法排除任务之间更广泛的相似性。只有 150 道题目（23%）匹配到题解，所有轨迹都来自两个教师模型，研究也只考察监督微调；作者将 658 道题目的静态规模列为局限。上游归档中基于哈希的旗标检查程序可能有误，作者报告了四个此类错误。仓库代码采用 CC BY-NC 4.0 许可证，包含 CTF-Forge、元数据与题解匹配脚本以及题目索引，但不含题目文件；题目文件需另行从 pwn.college 的 CTF Archive 克隆，不受该仓库许可证覆盖。所审阅的目录中没有轨迹或训练好的权重，题解也需另行收集。夺得旗标并不表明恢复了程序结构。
+
+  **作者:** Terry Yue Zhuo 等
 
   </details>
 
