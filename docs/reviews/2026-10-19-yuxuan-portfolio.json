@@ -1,0 +1,1638 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-20T02:50:37.348934+00:00",
+  "repository": "Awesome-REA",
+  "scope": "Complete reconciliation of two author-supplied public lists, followed by repository-specific relevance selection; not a claim that every profile record is authored by the profile owner.",
+  "source_observations": {
+    "homepage": {
+      "url": "https://yuxuan.world/publications/",
+      "observed_at": "2026-10-19T18:49:40.247700+00:00",
+      "records": 31
+    },
+    "scholar": {
+      "url": "https://scholar.google.com/citations?user=CTY_8xgAAAAJ",
+      "observed_on": "2026-10-19",
+      "records": 40,
+      "method": "Visible public profile, SHOW MORE expanded; UI showed Articles 1-40 and disabled SHOW MORE. Titles and entry links transcribed from rendered DOM."
+    }
+  },
+  "normalized_work_count": 38,
+  "disclosure": "Requested by the profile owner/coauthor and prepared with AI assistance. Catalog additions use original sources; this review does not establish independent endorsement or reproduced results.",
+  "records": [
+    {
+      "work_key": "rewardharness",
+      "homepage_title": "RewardHarness: Learning Human Preferences for Image Editing with Only 100 Demonstrations",
+      "homepage_url": "https://yuxuan.world/publications/#pub-rewardharness",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/rewardharness/",
+        "Blog": "https://yuxuan.world/blog/autoresearch/",
+        "Project": "https://rewardharness.com/",
+        "arXiv": "https://arxiv.org/abs/2605.08703",
+        "Code": "https://github.com/TIGER-AI-Lab/RewardHarness",
+        "HuggingFace": "https://huggingface.co/papers/2605.08703",
+        "Video": "https://yuxuan.world/blog/papers/rewardharness/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "RewardHarness: Self-Evolving Agentic Post-Training",
+          "scholar_citation_id": "CTY_8xgAAAAJ:QIV2ME_5wuYC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:QIV2ME_5wuYC"
+        },
+        {
+          "title_as_displayed": "RewardHarness: Learning Human Preferences for Image Editing with Only 100 Demonstrations",
+          "scholar_citation_id": "CTY_8xgAAAAJ:J_g5lzvAfSwC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:J_g5lzvAfSwC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2605.08703",
+      "arxiv_id": "2605.08703",
+      "title": "RewardHarness: Self-Evolving Agentic Post-Training",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yuxuan Zhang",
+          "Cong Wei",
+          "Penghui Du",
+          "Bo Li",
+          "Junwen Miao",
+          "Huaisong Zhang",
+          "Songcheng Cai",
+          "Yubo Wang",
+          "Dongfu Jiang",
+          "Yuyu Zhang",
+          "Changqian Yu",
+          "Ping Nie",
+          "Wenhu Chen",
+          "Kelsey R. Allen"
+        ],
+        "published_at": "2026-05-09",
+        "updated_at": "2026-10-12",
+        "versioned_url": "https://arxiv.org/abs/2605.08703v2"
+      },
+      "reconciliation_notes": [
+        "Multiple Scholar records resolve to one work here; records and titles are retained, citation counts are not combined.",
+        "Homepage publication title and arXiv preprint title differ; retain separate source titles and do not combine edition author lists."
+      ],
+      "decision": "not_selected",
+      "reason": "Image-editing preference evaluation; no computer-interface or reverse-engineering application established in this review."
+    },
+    {
+      "work_key": "clawbench",
+      "homepage_title": "ClawBench: Can AI Agents Complete Everyday Online Tasks?",
+      "homepage_url": "https://yuxuan.world/publications/#pub-clawbench",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/clawbench/",
+        "Blog": "https://yuxuan.world/blog/web-agent-environments/",
+        "Project": "https://claw-bench.com",
+        "arXiv": "https://arxiv.org/abs/2604.08523",
+        "Code": "https://github.com/TIGER-AI-Lab/ClawBench",
+        "Dataset": "https://huggingface.co/datasets/TIGER-Lab/ClawBench",
+        "HuggingFace": "https://huggingface.co/papers/2604.08523",
+        "X": "https://x.com/WenhuChen/status/2042484962428096939",
+        "Video": "https://yuxuan.world/blog/papers/clawbench/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "ClawBench: Can AI Agents Complete Everyday Online Tasks?",
+          "scholar_citation_id": "CTY_8xgAAAAJ:hC7cP41nSMkC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:hC7cP41nSMkC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2604.08523",
+      "arxiv_id": "2604.08523",
+      "title": "ClawBench: Can AI Agents Complete Everyday Online Tasks?",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yuxuan Zhang",
+          "Yubo Wang",
+          "Yipeng Zhu",
+          "Penghui Du",
+          "Junwen Miao",
+          "Xuan Lu",
+          "Zhuofeng Li",
+          "Xingwei Qu",
+          "Zhengkang Guo",
+          "Yuanzhe Shen",
+          "Dingjie Song",
+          "Han Zhou",
+          "Tuney Zheng",
+          "Xian Wu",
+          "Hao Yu",
+          "Songcheng Cai",
+          "Yi Lu",
+          "Yunzhuo Hao",
+          "Minyi Lei",
+          "Liang Chen",
+          "Kai Zou",
+          "Huifeng Yin",
+          "Wendong Xu",
+          "Dongfu Jiang",
+          "Ping Nie",
+          "Jiaheng Liu",
+          "Wenhu Chen",
+          "Kelsey R. Allen"
+        ],
+        "published_at": "2026-04-09",
+        "updated_at": "2026-07-20",
+        "versioned_url": "https://arxiv.org/abs/2604.08523v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Live-web task execution evaluates agents, not software reconstruction; track the dedicated Awesome-CUA contribution."
+    },
+    {
+      "work_key": "vid-filter",
+      "homepage_title": "Watch Before You Answer: Learning from Visually Grounded Post-Training",
+      "homepage_url": "https://yuxuan.world/publications/#pub-vid-filter",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/vid-filter/",
+        "Project": "https://vidground.etuagi.com/",
+        "arXiv": "https://arxiv.org/abs/2604.05117",
+        "Code": "https://github.com/reacher-z/vidground",
+        "HuggingFace": "https://huggingface.co/papers/2604.05117",
+        "X": "https://x.com/DongfuJiang/status/2042002570793898078",
+        "Video": "https://yuxuan.world/blog/papers/watch-before-you-answer/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Watch before you answer: Learning from visually grounded post-training",
+          "scholar_citation_id": "CTY_8xgAAAAJ:mVmsd5A6BfQC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:mVmsd5A6BfQC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2604.05117",
+      "arxiv_id": "2604.05117",
+      "title": "Watch Before You Answer: Learning from Visually Grounded Post-Training",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yuxuan Zhang",
+          "EunJeong Hwang",
+          "Huaisong Zhang",
+          "Penghui Du",
+          "Yiming Jia",
+          "Dongfu Jiang",
+          "Xuan He",
+          "Shenhui Zhang",
+          "Ping Nie",
+          "Peter West",
+          "Kelsey R. Allen"
+        ],
+        "published_at": "2026-04-06",
+        "updated_at": "2026-04-06",
+        "versioned_url": "https://arxiv.org/abs/2604.05117v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Video evidence dependence and post-training, rather than GUI operation or software reconstruction."
+    },
+    {
+      "work_key": "persona-dose",
+      "homepage_title": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
+      "homepage_url": "https://yuxuan.world/publications/#pub-persona-dose",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/persona-dose/",
+        "arXiv": "https://arxiv.org/abs/2609.36388",
+        "Video": "https://yuxuan.world/blog/papers/persona-dosing/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
+          "scholar_citation_id": "CTY_8xgAAAAJ:70eg2SAEIzsC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:70eg2SAEIzsC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2609.36388",
+      "arxiv_id": "2609.36388",
+      "title": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Zehao Jin",
+          "Junran Wang",
+          "Ruixuan Deng",
+          "Jiahao Chen",
+          "Jingyuan Zhang",
+          "Yuxuan Zhang",
+          "Xinjie Shen"
+        ],
+        "published_at": "2026-09-28",
+        "updated_at": "2026-09-28",
+        "versioned_url": "https://arxiv.org/abs/2609.36388v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Activation steering and trait control; a direct catalog-specific application has not been established."
+    },
+    {
+      "work_key": "lots",
+      "homepage_title": "Self-Evolving Agents via Likelihood-Guided Tool-Space Optimization",
+      "homepage_url": "https://yuxuan.world/publications/#pub-lots",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/lots/",
+        "arXiv": "https://arxiv.org/abs/2609.34151",
+        "Video": "https://yuxuan.world/blog/papers/likelihood-tool-space/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Self-Evolving Agents via Likelihood-Guided Tool-Space Optimization",
+          "scholar_citation_id": "CTY_8xgAAAAJ:35N4QoGY0k4C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:35N4QoGY0k4C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2609.34151",
+      "arxiv_id": "2609.34151",
+      "title": "Self-Evolving Agents via Likelihood-Guided Tool-Space Optimization",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Xuanqi Zhang",
+          "Ruinan Jin",
+          "Running Yang",
+          "Yuxuan Zhang",
+          "Minghui Chen",
+          "Wenlong Deng",
+          "Xiaoxiao Li"
+        ],
+        "published_at": "2026-09-28",
+        "updated_at": "2026-09-28",
+        "versioned_url": "https://arxiv.org/abs/2609.34151v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General agent tool-space optimization; needs source-backed computer-use or reconstruction application before inclusion."
+    },
+    {
+      "work_key": "harnessdev",
+      "homepage_title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+      "homepage_url": "https://yuxuan.world/publications/#pub-harnessdev",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/harnessdev/",
+        "arXiv": "https://arxiv.org/abs/2609.01437",
+        "Project": "https://self-developing-agents.github.io/",
+        "Video": "https://yuxuan.world/blog/papers/harnessdev/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+          "scholar_citation_id": "CTY_8xgAAAAJ:blknAaTinKkC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:blknAaTinKkC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2609.01437",
+      "arxiv_id": "2609.01437",
+      "title": "HarnessDev: Can LLMs Create and Evolve Their Own Agent Harness?",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yuhao Wu",
+          "Jingyuan Zhang",
+          "Jiajun Shi",
+          "Xinping Lei",
+          "Qingshui Gu",
+          "Yuxuan Zhang",
+          "Zexuan Wang",
+          "Chen He",
+          "Chen Huang",
+          "Maojia Song",
+          "Zhiyuan Zeng",
+          "Shaowen Wang",
+          "Jinkai Liu",
+          "Yunfeng Shi",
+          "Jiaheng Liu",
+          "Shen Yan",
+          "Wenhao Huang",
+          "Ge Zhang",
+          "Wenxuan Zhang"
+        ],
+        "published_at": "2026-09-01",
+        "updated_at": "2026-09-01",
+        "versioned_url": "https://arxiv.org/abs/2609.01437v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General agent-harness evolution; retain for a separate task-specific relevance review."
+    },
+    {
+      "work_key": "dr-claw",
+      "homepage_title": "Dr. Claw: An AI Scientist Workspace for Vibe Research",
+      "homepage_url": "https://yuxuan.world/publications/#pub-dr-claw",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/dr-claw/",
+        "arXiv": "https://arxiv.org/abs/2609.00365",
+        "Project": "https://openlair.github.io/dr-claw/",
+        "Code": "https://github.com/OpenLAIR/dr-claw",
+        "Video": "https://yuxuan.world/blog/papers/dr-claw/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Dr. Claw: An AI Scientist Workspace for Vibe Research",
+          "scholar_citation_id": "CTY_8xgAAAAJ:YFjsv_pBGBYC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:YFjsv_pBGBYC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2609.00365",
+      "arxiv_id": "2609.00365",
+      "title": "Dr. Claw: An AI Scientist Workspace for Vibe Research",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Dingjie Song",
+          "Hanrong Zhang",
+          "Dawei Liu",
+          "Yixin Liu",
+          "Zongxia Li",
+          "Zhengqing Yuan",
+          "Siqi Zhang",
+          "Henry Peng Zou",
+          "Zhiling Yan",
+          "Yuxuan Zhang",
+          "Yanfang Ye",
+          "Philip S. Yu",
+          "Lichao Sun"
+        ],
+        "published_at": "2026-08-31",
+        "updated_at": "2026-08-31",
+        "versioned_url": "https://arxiv.org/abs/2609.00365v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Scientific research workspace; no direct GUI-operation or reverse-engineering contribution verified here."
+    },
+    {
+      "work_key": "aspire",
+      "homepage_title": "Aspire: Can Models Self-Evolve from Vague Goals?",
+      "homepage_url": "https://yuxuan.world/publications/#pub-aspire",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/aspire/",
+        "arXiv": "https://arxiv.org/abs/2608.31111",
+        "Project": "https://self-developing-agents.github.io/",
+        "Video": "https://yuxuan.world/blog/papers/aspire/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Aspire: Can Models Self-Evolve from Vague Goals?",
+          "scholar_citation_id": "CTY_8xgAAAAJ:NMxIlDl6LWMC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:NMxIlDl6LWMC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.31111",
+      "arxiv_id": "2608.31111",
+      "title": "Aspire: Can Models Self-Evolve from Vague Goals?",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yuhao Wu",
+          "Jingyuan Zhang",
+          "Jiajun Shi",
+          "Yuxuan Zhang",
+          "Xinping Lei",
+          "Junting Zhou",
+          "Zexuan Wang",
+          "Yuchen Wu",
+          "Huan Zhou",
+          "Duo Wang",
+          "Yinzhu Piao",
+          "Yongchang Peng",
+          "Yunfeng Shi",
+          "Jin Chen",
+          "Zuo Wang",
+          "Jinkai Liu",
+          "Jiaheng Liu",
+          "Wenxuan Zhang",
+          "Shen Yan",
+          "Wenhao Huang",
+          "Ge Zhang"
+        ],
+        "published_at": "2026-08-31",
+        "updated_at": "2026-08-31",
+        "versioned_url": "https://arxiv.org/abs/2608.31111v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General goal-driven self-evolution; a specific GUI or reconstruction evaluation needs review."
+    },
+    {
+      "work_key": "s3gym",
+      "homepage_title": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+      "homepage_url": "https://yuxuan.world/publications/#pub-s3gym",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/s3gym/",
+        "arXiv": "https://arxiv.org/abs/2608.31100",
+        "Project": "https://self-developing-agents.github.io/",
+        "Video": "https://yuxuan.world/blog/papers/s3gym/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+          "scholar_citation_id": "CTY_8xgAAAAJ:hMod-77fHWUC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:hMod-77fHWUC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.31100",
+      "arxiv_id": "2608.31100",
+      "title": "S3Gym: Can LLMs Turn Self-Testing and Self-Judging into Self-Improvement?",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Jiajun Shi",
+          "Siyuan Tao",
+          "Yuhao Wu",
+          "Zexuan Wang",
+          "Jingyuan Zhang",
+          "Jiaheng Liu",
+          "Xinping Lei",
+          "Xinrong Zhang",
+          "Siyuan Fang",
+          "Zhewen Tan",
+          "Tianle Cai",
+          "Junhao Fang",
+          "Jiameng Huang",
+          "Yueyang Wang",
+          "Jinkai Liu",
+          "Yuxuan Zhang",
+          "Jian Yang",
+          "Zhoujun Li",
+          "Shen Yan",
+          "Wenhao Huang",
+          "Ge Zhang"
+        ],
+        "published_at": "2026-08-31",
+        "updated_at": "2026-08-31",
+        "versioned_url": "https://arxiv.org/abs/2608.31100v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General self-testing and judging; no specific GUI or reconstruction application verified here."
+    },
+    {
+      "work_key": "webworld",
+      "homepage_title": "WebWorld: The Browser as a World Model for Self-Improving Web Code",
+      "homepage_url": "https://yuxuan.world/publications/#pub-webworld",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/webworld/",
+        "arXiv": "https://arxiv.org/abs/2608.30530",
+        "Video": "https://yuxuan.world/blog/papers/webworld/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "WebWorld: The Browser as a World Model for Self-Improving Web Code",
+          "scholar_citation_id": "CTY_8xgAAAAJ:JV2RwH3_ST0C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:JV2RwH3_ST0C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.30530",
+      "arxiv_id": "2608.30530",
+      "title": "WebWorld: The Browser as a World Model for Self-Improving Web Code",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Jiajun Wu",
+          "Jian Yang",
+          "Yaxin Du",
+          "Wei Zhang",
+          "Haowen Wang",
+          "Junhang Cheng",
+          "Yuxuan Zhang",
+          "Tuney Zheng",
+          "Xianglong Liu",
+          "Ming Zhou"
+        ],
+        "published_at": "2026-08-31",
+        "updated_at": "2026-08-31",
+        "versioned_url": "https://arxiv.org/abs/2608.30530v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "added_supporting_method",
+      "reason": "Browser-backed executable acceptance and preservation checks inform validation of reconstructed web artifacts; the study itself concerns web-code self-improvement."
+    },
+    {
+      "work_key": "vgi-bench",
+      "homepage_title": "VGI-BENCH: Probing Visual Intelligence in Video Generation Models",
+      "homepage_url": "https://yuxuan.world/publications/#pub-vgi-bench",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/vgi-bench/",
+        "arXiv": "https://arxiv.org/abs/2608.19583",
+        "Project": "https://hexuan21.github.io/VGI-Bench/",
+        "HuggingFace": "https://huggingface.co/papers/2608.19583",
+        "Video": "https://yuxuan.world/blog/papers/vgi-bench/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "VGI-BENCH: Probing Visual Intelligence in Video Generation Models",
+          "scholar_citation_id": "CTY_8xgAAAAJ:M3NEmzRMIkIC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:M3NEmzRMIkIC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.19583",
+      "arxiv_id": "2608.19583",
+      "title": "VGI-Bench: Probing Visual Intelligence in Video Generation Models",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Xuan He",
+          "Cong Wei",
+          "Yuhao Cheng",
+          "Linrui Ma",
+          "Yuxuan Zhang",
+          "Zuojun Li",
+          "Yuhao Wen",
+          "Jize Jiang",
+          "Zeyi Liu",
+          "Yuren Hao",
+          "Songcheng Cai",
+          "Keming Wu",
+          "Penghui Du",
+          "Kai Zou",
+          "Rui Yang",
+          "Chenkai Sun",
+          "Ke Yang",
+          "Ping Nie",
+          "Kelsey R Allen",
+          "Chenglong Wang",
+          "Michel Galley",
+          "Jianfeng Gao",
+          "ChengXiang Zhai"
+        ],
+        "published_at": "2026-08-20",
+        "updated_at": "2026-08-26",
+        "versioned_url": "https://arxiv.org/abs/2608.19583v3"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Video-generation intelligence evaluation; separate from software-interface operation and reconstruction."
+    },
+    {
+      "work_key": "medclaw",
+      "homepage_title": "MedClaw: Heuristic Agent Harness for Long-Horizon Surgical Video Reasoning",
+      "homepage_url": "https://yuxuan.world/publications/#pub-medclaw",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/medclaw/",
+        "arXiv": "https://arxiv.org/abs/2608.14015",
+        "Project": "https://fyycs.github.io/medclaw/",
+        "Video": "https://yuxuan.world/blog/papers/medclaw/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "MedClaw: Heuristic Agent Harness for Long-Horizon Surgical Video Reasoning",
+          "scholar_citation_id": "CTY_8xgAAAAJ:maZDTaKrznsC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:maZDTaKrznsC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.14015",
+      "arxiv_id": "2608.14015",
+      "title": "MedClaw: Heuristic Agent Harness for Long-Horizon Surgical Video Reasoning",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yingying Fan",
+          "Penghui Du",
+          "Leyan Zhu",
+          "Runze He",
+          "Zimeng Wu",
+          "Yuxuan Zhang",
+          "Liang Chen",
+          "Jiahao Xie",
+          "Jiangtang Wang",
+          "Shuai Shao",
+          "Anchao Yang",
+          "Yutong Bai",
+          "Yan Wang"
+        ],
+        "published_at": "2026-08-14",
+        "updated_at": "2026-08-14",
+        "versioned_url": "https://arxiv.org/abs/2608.14015v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Surgical-video reasoning rather than operating a software interface."
+    },
+    {
+      "work_key": "distributional-matching-vq",
+      "homepage_title": "Distributional Matching for Vector Quantization: A Unified Theoretical and Empirical Framework",
+      "homepage_url": "https://yuxuan.world/publications/#pub-distributional-matching-vq",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/distributional-matching-vq/",
+        "arXiv": "https://arxiv.org/abs/2607.15933",
+        "Code": "https://github.com/VQ-Research/Wasserstein-VQ",
+        "Project": "https://vq-research.github.io/Wasserstein-VQ/",
+        "Related 2025 paper": "https://arxiv.org/abs/2506.15078",
+        "Video": "https://yuxuan.world/blog/papers/distributional-vq/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Distributional Matching for Vector Quantization: A Unified Theoretical and Empirical Framework",
+          "scholar_citation_id": "CTY_8xgAAAAJ:r0BpntZqJG4C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:r0BpntZqJG4C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2607.15933",
+      "arxiv_id": "2607.15933",
+      "title": "Distributional Matching for Vector Quantization: A Unified Theoretical and Empirical Framework",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Xianghong Fang",
+          "Litao Guo",
+          "Hengchao Chen",
+          "Yuxuan Zhang",
+          "XiaofanXia",
+          "Dingjie Song",
+          "Yexin Liu",
+          "Hao Wang",
+          "Harry Yang",
+          "Qiang Sun",
+          "Yuan Yuan"
+        ],
+        "published_at": "2026-07-17",
+        "updated_at": "2026-07-31",
+        "versioned_url": "https://arxiv.org/abs/2607.15933v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Vector-quantization theory and experiments; no direct catalog-specific task established."
+    },
+    {
+      "work_key": "fim-midtraining",
+      "homepage_title": "Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models",
+      "homepage_url": "https://yuxuan.world/publications/#pub-fim-midtraining",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/fim-midtraining/",
+        "arXiv": "https://arxiv.org/abs/2607.12463",
+        "Code": "https://github.com/TIGER-AI-Lab/FIM-Midtraining",
+        "Dataset": "https://huggingface.co/datasets/TIGER-Lab/FIM-Midtraining-400K",
+        "Model": "https://huggingface.co/collections/TIGER-Lab/fim-midtraining",
+        "HuggingFace": "https://huggingface.co/papers/2607.12463",
+        "Video": "https://yuxuan.world/blog/papers/function-aware-fim/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models",
+          "scholar_citation_id": "CTY_8xgAAAAJ:j3f4tGmQtD8C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:j3f4tGmQtD8C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2607.12463",
+      "arxiv_id": "2607.12463",
+      "title": "Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yubo Wang",
+          "Jiarong Liang",
+          "Yuxuan Zhang",
+          "Xuye Liu",
+          "Cong Wei",
+          "Yuyu Zhang",
+          "Ping Nie",
+          "Wenhu Chen"
+        ],
+        "published_at": "2026-07-14",
+        "updated_at": "2026-07-19",
+        "versioned_url": "https://arxiv.org/abs/2607.12463v3"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Coding-model mid-training; does not itself establish GUI operation or reverse engineering."
+    },
+    {
+      "work_key": "lp-sft",
+      "homepage_title": "LP-SFT: Keeping Plausible Alternatives Alive in Supervised Fine-Tuning",
+      "homepage_url": "https://yuxuan.world/publications/#pub-lp-sft",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/lp-sft/",
+        "arXiv": "https://arxiv.org/abs/2607.04733",
+        "Video": "https://yuxuan.world/blog/papers/lp-sft/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "LP-SFT: Local-Preserving Supervised Fine-Tuning via Multimodal Entropy Structure",
+          "scholar_citation_id": "CTY_8xgAAAAJ:ldfaerwXgEUC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:ldfaerwXgEUC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2607.04733",
+      "arxiv_id": "2607.04733",
+      "title": "LP-SFT: Keeping Plausible Alternatives Alive in Supervised Fine-Tuning",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yueyang Wang",
+          "Baolong Bi",
+          "Shuo Lu",
+          "Jingyuan Zhang",
+          "Jiajun Shi",
+          "Yuxuan Zhang"
+        ],
+        "published_at": "2026-07-06",
+        "updated_at": "2026-10-03",
+        "versioned_url": "https://arxiv.org/abs/2607.04733v4"
+      },
+      "reconciliation_notes": [
+        "Scholar retains an earlier title; the current original arXiv record matches the homepage title and includes Yuxuan Zhang."
+      ],
+      "decision": "not_selected",
+      "reason": "General supervised fine-tuning; not a direct computer-use or reconstruction contribution."
+    },
+    {
+      "work_key": "self-future-dllm",
+      "homepage_title": "Learning from the Self-future: On-policy Self-distillation for dLLMs",
+      "homepage_url": "https://yuxuan.world/publications/#pub-self-future-dllm",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/self-future-dllm/",
+        "arXiv": "https://arxiv.org/abs/2606.18195",
+        "Code": "https://github.com/xingzhejun/d-opsd-code",
+        "HuggingFace": "https://huggingface.co/papers/2606.18195",
+        "Video": "https://yuxuan.world/blog/papers/self-future-dllm/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Learning from the Self-future: On-policy Self-distillation for dLLMs",
+          "scholar_citation_id": "CTY_8xgAAAAJ:ZeXyd9-uunAC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:ZeXyd9-uunAC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2606.18195",
+      "arxiv_id": "2606.18195",
+      "title": "Learning from the Self-future: On-policy Self-distillation for dLLMs",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Yifu Luo",
+          "Zeyu Chen",
+          "Haoyu Wang",
+          "Xinhao Hu",
+          "Yuxuan Zhang",
+          "Zhizhou Sha",
+          "Shiwei Liu"
+        ],
+        "published_at": "2026-06-16",
+        "updated_at": "2026-06-25",
+        "versioned_url": "https://arxiv.org/abs/2606.18195v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Diffusion-language-model self-distillation; no direct catalog-specific task established."
+    },
+    {
+      "work_key": "comprank",
+      "homepage_title": "CompRank: Efficient LLM Reranking via Token-Level Compression and Decoding-Free Scoring",
+      "homepage_url": "https://yuxuan.world/publications/#pub-comprank",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/comprank/",
+        "arXiv": "https://arxiv.org/abs/2606.11700",
+        "Video": "https://yuxuan.world/blog/papers/comprank/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "CompRank: Efficient LLM Reranking via Token-Level Compression and Decoding-Free Scoring",
+          "scholar_citation_id": "CTY_8xgAAAAJ:HDshCWvjkbEC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:HDshCWvjkbEC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2606.11700",
+      "arxiv_id": "2606.11700",
+      "title": "CompRank: Efficient LLM Reranking via Token-Level Compression and Decoding-Free Scoring",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Xuan Lu",
+          "Haohang Huang",
+          "Yingqi Fan",
+          "Junlong Tong",
+          "Yuxuan Zhang",
+          "Ping Nie",
+          "Rui Meng",
+          "Xiaoyu Shen"
+        ],
+        "published_at": "2026-06-10",
+        "updated_at": "2026-06-10",
+        "versioned_url": "https://arxiv.org/abs/2606.11700v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Retrieval reranking rather than interface operation or reconstruction."
+    },
+    {
+      "work_key": "openskill",
+      "homepage_title": "OpenSkill: Open-World Self-Evolution for LLM Agents",
+      "homepage_url": "https://yuxuan.world/publications/#pub-openskill",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/openskill/",
+        "arXiv": "https://arxiv.org/abs/2606.06741",
+        "Code": "https://github.com/OpenLAIR/OpenSkill",
+        "HuggingFace": "https://huggingface.co/papers/2606.06741",
+        "Video": "https://yuxuan.world/blog/papers/openskill/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "OpenSkill: Open-World Self-Evolution for LLM Agents",
+          "scholar_citation_id": "CTY_8xgAAAAJ:L8Ckcad2t8MC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:L8Ckcad2t8MC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2606.06741",
+      "arxiv_id": "2606.06741",
+      "title": "OpenSkill: Open-World Self-Evolution for LLM Agents",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Zhiling Yan",
+          "Dingjie Song",
+          "Hanrong Zhang",
+          "Wei Liang",
+          "Yuxuan Zhang",
+          "Yutong Dai",
+          "Lifang He",
+          "Philip S. Yu",
+          "Ran Xu",
+          "Xiang Li",
+          "Lichao Sun"
+        ],
+        "published_at": "2026-06-04",
+        "updated_at": "2026-06-04",
+        "versioned_url": "https://arxiv.org/abs/2606.06741v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General agent skill evolution; needs a separate review of computer-use-specific tasks and assets."
+    },
+    {
+      "work_key": "structured-defect-grounding",
+      "homepage_title": "Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback",
+      "homepage_url": "https://yuxuan.world/publications/#pub-structured-defect-grounding",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/structured-defect-grounding/",
+        "arXiv": "https://arxiv.org/abs/2606.06113",
+        "HuggingFace": "https://huggingface.co/papers/2606.06113",
+        "Video": "https://yuxuan.world/blog/papers/structured-defect-grounding/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback",
+          "scholar_citation_id": "CTY_8xgAAAAJ:7PzlFSSx8tAC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:7PzlFSSx8tAC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2606.06113",
+      "arxiv_id": "2606.06113",
+      "title": "Where, What, Why, and Importance: Structured Defect Grounding for Text-to-Image Feedback",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Huaisong Zhang",
+          "Hao Yu",
+          "Yuxuan Zhang",
+          "Jiahe Wang",
+          "Xinrui Chen",
+          "Haoxiang Cao",
+          "Feng Lu",
+          "Wendong Zhang",
+          "Changqian Yu",
+          "Chun Yuan"
+        ],
+        "published_at": "2026-06-04",
+        "updated_at": "2026-06-11",
+        "versioned_url": "https://arxiv.org/abs/2606.06113v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Text-to-image defect feedback; GUI-specific grounding is not established by this review."
+    },
+    {
+      "work_key": "mira",
+      "homepage_title": "MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection",
+      "homepage_url": "https://yuxuan.world/publications/#pub-mira",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/mira/",
+        "arXiv": "https://arxiv.org/abs/2605.30288",
+        "HuggingFace": "https://huggingface.co/papers/2605.30288",
+        "Video": "https://yuxuan.world/blog/papers/mira/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection",
+          "scholar_citation_id": "CTY_8xgAAAAJ:dhFuZR0502QC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:dhFuZR0502QC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2605.30288",
+      "arxiv_id": "2605.30288",
+      "title": "MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Haowen Wang",
+          "Yaxin Du",
+          "Jian Yang",
+          "Jiajun Wu",
+          "Shukai Liu",
+          "Yuxuan Zhang",
+          "Pingjie Wang",
+          "Siheng Chen",
+          "Tuney Zheng",
+          "Ming Zhou",
+          "Xianglong Liu",
+          "Bryan Dai"
+        ],
+        "published_at": "2026-05-28",
+        "updated_at": "2026-05-29",
+        "versioned_url": "https://arxiv.org/abs/2605.30288v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General mid-training data selection; direct GUI/reconstruction application not established."
+    },
+    {
+      "work_key": "deep-research-bench",
+      "homepage_title": "Dr. Bench: A Multidimensional Evaluation for Deep Research Agents, from Answers to Reports",
+      "homepage_url": "https://yuxuan.world/publications/#pub-deep-research-bench",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/deep-research-bench/",
+        "Paper": "https://arxiv.org/abs/2510.02190",
+        "Code": "https://github.com/EVIGBYEN/DrBench",
+        "Video": "https://yuxuan.world/blog/papers/dr-bench/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Dr. bench: A multidimensional evaluation for deep research agents, from answers to reports",
+          "scholar_citation_id": "CTY_8xgAAAAJ:RHpTSmoSYBkC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:RHpTSmoSYBkC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2510.02190",
+      "arxiv_id": "2510.02190",
+      "title": "Dr. Bench: A Multidimensional Evaluation for Deep Research Agents, from Answers to Reports",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Research-report evaluation; distinguish report generation from GUI execution or software reconstruction."
+    },
+    {
+      "work_key": "scholarcopilot",
+      "homepage_title": "ScholarCopilot: Training Large Language Models for Academic Writing with Accurate Citations",
+      "homepage_url": "https://yuxuan.world/publications/#pub-scholarcopilot",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/scholarcopilot/",
+        "Project": "https://tiger-ai-lab.github.io/ScholarCopilot/",
+        "Paper": "https://arxiv.org/abs/2504.00824",
+        "Code": "https://github.com/TIGER-AI-Lab/ScholarCopilot",
+        "Dataset": "https://huggingface.co/datasets/TIGER-Lab/ScholarCopilot-Data-v1",
+        "Model": "https://huggingface.co/TIGER-Lab/ScholarCopilot-v1",
+        "Demo": "https://huggingface.co/spaces/TIGER-Lab/ScholarCopilot"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Scholarcopilot: Training large language models for academic writing with accurate citations",
+          "scholar_citation_id": "CTY_8xgAAAAJ:_kc_bZDykSQC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:_kc_bZDykSQC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2504.00824",
+      "arxiv_id": "2504.00824",
+      "title": "ScholarCopilot: Training Large Language Models for Academic Writing with Accurate Citations",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Academic writing and citation retrieval; no direct GUI-execution or reconstruction task established."
+    },
+    {
+      "work_key": "retri3d",
+      "homepage_title": "Retri3D: 3D Neural Graphics Representation Retrieval",
+      "homepage_url": "https://yuxuan.world/publications/#pub-retri3d",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/retri3d/",
+        "Project": "https://gavinguan95.github.io/Retri3D/",
+        "Paper": "https://openreview.net/forum?id=q3EbOXb4y1",
+        "Code": "https://github.com/GavinGuan95/Retri3DCode"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Retri3D: 3D Neural Graphics Representation Retrieval",
+          "scholar_citation_id": "CTY_8xgAAAAJ:YOwf2qJgpHMC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:YOwf2qJgpHMC"
+        }
+      ],
+      "canonical_source": "https://openreview.net/forum?id=q3EbOXb4y1",
+      "arxiv_id": null,
+      "title": "Retri3D: 3D Neural Graphics Representation Retrieval",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Neural graphics representation retrieval; original-software or interface reconstruction is not established."
+    },
+    {
+      "work_key": "videoscore2",
+      "homepage_title": "VideoScore2: Think before You Score in Generative Video Evaluation",
+      "homepage_url": "https://yuxuan.world/publications/#pub-videoscore2",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/videoscore2/",
+        "Project": "https://tiger-ai-lab.github.io/VideoScore2/",
+        "Paper": "https://arxiv.org/abs/2509.22799",
+        "Code": "https://github.com/TIGER-AI-Lab/VideoScore2/",
+        "Dataset": "https://huggingface.co/datasets/TIGER-Lab/VideoFeedback2",
+        "Model": "https://huggingface.co/TIGER-Lab/VideoScore2",
+        "HF Space": "https://huggingface.co/spaces/TIGER-Lab/VideoScore2",
+        "Twitter": "https://x.com/DongfuJiang/status/1973465380028031463",
+        "Video": "https://yuxuan.world/blog/papers/videoscore2/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Videoscore2: Think before you score in generative video evaluation",
+          "scholar_citation_id": "CTY_8xgAAAAJ:4DMP91E08xMC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:4DMP91E08xMC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2509.22799",
+      "arxiv_id": "2509.22799",
+      "title": "VideoScore2: Think before You Score in Generative Video Evaluation",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Generated-video evaluation; useful promotion target elsewhere, but not a direct catalog-specific task."
+    },
+    {
+      "work_key": "structeval",
+      "homepage_title": "StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs",
+      "homepage_url": "https://yuxuan.world/publications/#pub-structeval",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/structeval/",
+        "Project": "https://tiger-ai-lab.github.io/StructEval/",
+        "Paper": "https://arxiv.org/abs/2505.20139",
+        "Code": "https://github.com/TIGER-AI-Lab/StructEval",
+        "Dataset": "https://huggingface.co/datasets/TIGER-Lab/StructEval",
+        "Video": "https://yuxuan.world/blog/papers/structeval/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "StructEval: Benchmarking LLMs' capabilities to generate structural outputs",
+          "scholar_citation_id": "CTY_8xgAAAAJ:4TOpqqG69KYC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:4TOpqqG69KYC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2505.20139",
+      "arxiv_id": "2505.20139",
+      "title": "StructEval: Benchmarking LLMs' Capabilities to Generate Structural Outputs",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Jialin Yang",
+          "Dongfu Jiang",
+          "Lipeng He",
+          "Sherman Siu",
+          "Yuxuan Zhang",
+          "Disen Liao",
+          "Zhuofeng Li",
+          "Huaye Zeng",
+          "Yiming Jia",
+          "Haozhe Wang",
+          "Benjamin Schneider",
+          "Chi Ruan",
+          "Wentao Ma",
+          "Zhiheng Lyu",
+          "Yifei Wang",
+          "Yi Lu",
+          "Quy Duc Do",
+          "Ziyan Jiang",
+          "Ping Nie",
+          "Wenhu Chen"
+        ],
+        "published_at": "2025-05-26",
+        "updated_at": "2026-04-02",
+        "versioned_url": "https://arxiv.org/abs/2505.20139v3"
+      },
+      "reconciliation_notes": [],
+      "decision": "added_supporting_method",
+      "reason": "Structured/rendered artifact validation for HTML, React and SVG is relevant to checking reconstructed frontend outputs; it does not establish original-source recovery."
+    },
+    {
+      "work_key": "wikigap",
+      "homepage_title": "WikiGap: Promoting Epistemic Equity by Surfacing Knowledge Gaps Between English Wikipedia and other Language Editions",
+      "homepage_url": "https://yuxuan.world/publications/#pub-wikigap",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/wikigap/",
+        "Paper": "https://arxiv.org/abs/2505.24195",
+        "Code": "https://github.com/reacher-z/WikiGap",
+        "Video": "https://yuxuan.world/blog/papers/wikigap/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "WikiGap: Promoting epistemic equity by surfacing knowledge gaps between English Wikipedia and other language editions",
+          "scholar_citation_id": "CTY_8xgAAAAJ:M3ejUd6NZC8C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:M3ejUd6NZC8C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2505.24195",
+      "arxiv_id": "2505.24195",
+      "title": "WikiGap: Promoting Epistemic Equity by Surfacing Knowledge Gaps Between English Wikipedia and other Language Editions",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Cross-language knowledge gaps; no direct GUI-operation or reconstruction task established."
+    },
+    {
+      "work_key": "plaicraft",
+      "homepage_title": "PLAICraft: Large-Scale Time-Aligned Vision-Speech-Action Dataset for Embodied AI",
+      "homepage_url": "https://yuxuan.world/publications/#pub-plaicraft",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/plaicraft/",
+        "Paper": "https://arxiv.org/abs/2505.12707"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Plaicraft: Large-scale time-aligned vision-speech-action dataset for embodied ai",
+          "scholar_citation_id": "CTY_8xgAAAAJ:qxL8FJ1GzNcC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:qxL8FJ1GzNcC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2505.12707",
+      "arxiv_id": "2505.12707",
+      "title": "PLAICraft: Large-Scale Time-Aligned Vision-Speech-Action Dataset for Embodied AI",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Minecraft vision/speech/action data; a separate review is needed before treating game interaction as this catalog's computer-use scope."
+    },
+    {
+      "work_key": "vq",
+      "homepage_title": "Enhancing Vector Quantization with Distributional Matching: A Theoretical and Empirical Study",
+      "homepage_url": "https://yuxuan.world/publications/#pub-vq",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/vq/",
+        "Paper": "https://arxiv.org/abs/2506.15078",
+        "Code": "https://github.com/VQ-Research/Wasserstein-VQ",
+        "Video": "https://yuxuan.world/blog/papers/enhancing-vector-quantization/#film-title"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Enhancing vector quantization with distributional matching: A theoretical and empirical study",
+          "scholar_citation_id": "CTY_8xgAAAAJ:aqlVkmm33-oC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:aqlVkmm33-oC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2506.15078",
+      "arxiv_id": "2506.15078",
+      "title": "Enhancing Vector Quantization with Distributional Matching: A Theoretical and Empirical Study",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Vector-quantization methods; direct GUI or reconstruction task not established."
+    },
+    {
+      "work_key": "dran",
+      "homepage_title": "Edge-Enhanced Dilated Residual Attention Network for Multimodal Medical Image Fusion",
+      "homepage_url": "https://yuxuan.world/publications/#pub-dran",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/dran/",
+        "Paper": "https://arxiv.org/abs/2411.11799",
+        "Code": "https://github.com/simonZhou86/en_dran",
+        "Dataset": "https://www.med.harvard.edu/aanlib/home.html"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Edge-enhanced dilated residual attention network for multimodal medical image fusion",
+          "scholar_citation_id": "CTY_8xgAAAAJ:ULOm3_A8WrAC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:ULOm3_A8WrAC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2411.11799",
+      "arxiv_id": "2411.11799",
+      "title": "Edge-Enhanced Dilated Residual Attention Network for Multimodal Medical Image Fusion",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Medical image fusion; outside this batch's computer-use and software-reconstruction scope."
+    },
+    {
+      "work_key": "dilran",
+      "homepage_title": "An Attention-based Multi-Scale Feature Learning Network for Multimodal Medical Image Fusion",
+      "homepage_url": "https://yuxuan.world/publications/#pub-dilran",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/dilran/",
+        "arXiv": "https://arxiv.org/abs/2212.04661"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "An attention-based multi-scale feature learning network for multimodal medical image fusion",
+          "scholar_citation_id": "CTY_8xgAAAAJ:isC4tDSrTZIC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:isC4tDSrTZIC"
+        },
+        {
+          "title_as_displayed": "An Attention-based Multi-Scale Feature Learning Network for Multimodal Medical Image Fusion. arXiv 2022",
+          "scholar_citation_id": "CTY_8xgAAAAJ:k_IJM867U9cC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:k_IJM867U9cC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2212.04661",
+      "arxiv_id": "2212.04661",
+      "title": "An Attention-based Multi-Scale Feature Learning Network for Multimodal Medical Image Fusion",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Meng Zhou",
+          "Xiaolan Xu",
+          "Yuxuan Zhang"
+        ],
+        "published_at": "2022-12-09",
+        "updated_at": "2022-12-09",
+        "versioned_url": "https://arxiv.org/abs/2212.04661v1"
+      },
+      "reconciliation_notes": [
+        "Multiple Scholar records resolve to one work here; records and titles are retained, citation counts are not combined."
+      ],
+      "decision": "not_selected",
+      "reason": "Medical image fusion; outside this batch's computer-use and software-reconstruction scope."
+    },
+    {
+      "work_key": "celebhair",
+      "homepage_title": "CelebHair: A New Large-Scale Dataset for Hairstyle Recommendation Based on CelebA",
+      "homepage_url": "https://yuxuan.world/publications/#pub-celebhair",
+      "homepage_links": {
+        "Research Guide": "https://yuxuan.world/research/papers/celebhair/",
+        "Paper": "https://link.springer.com/chapter/10.1007/978-3-030-82153-1_27",
+        "Video": "https://www.youtube.com/watch?v=hYm4kyfVcwc&ab_channel=Reacher"
+      },
+      "scholar_records": [
+        {
+          "title_as_displayed": "Celebhair: A new large-scale dataset for hairstyle recommendation based on celeba",
+          "scholar_citation_id": "CTY_8xgAAAAJ:KlAtU1dfN6UC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:KlAtU1dfN6UC"
+        }
+      ],
+      "canonical_source": "https://link.springer.com/chapter/10.1007/978-3-030-82153-1_27",
+      "arxiv_id": null,
+      "title": "CelebHair: A New Large-Scale Dataset for Hairstyle Recommendation Based on CelebA",
+      "primary_author_match": null,
+      "primary_metadata": null,
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Hairstyle recommendation data; outside computer-use and software-reconstruction scope."
+    },
+    {
+      "work_key": "intentionreasoner",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "Intentionreasoner: Facilitating adaptive llm safeguards through intent reasoning and selective query refinement",
+          "scholar_citation_id": "CTY_8xgAAAAJ:GnPB-g6toBAC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:GnPB-g6toBAC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2508.20151",
+      "arxiv_id": "2508.20151",
+      "title": "IntentionReasoner: Facilitating Adaptive LLM Safeguards through Intent Reasoning and Selective Query Refinement",
+      "primary_author_match": false,
+      "primary_metadata": {
+        "authors": [
+          "Yuanzhe Shen",
+          "Zisu Huang",
+          "Zhengkang Guo",
+          "Yide Liu",
+          "Guanxu Chen",
+          "Ruicheng Yin",
+          "Xiaoqing Zheng",
+          "Xuanjing Huang"
+        ],
+        "published_at": "2025-08-27",
+        "updated_at": "2025-08-27",
+        "versioned_url": "https://arxiv.org/abs/2508.20151v1"
+      },
+      "reconciliation_notes": [
+        "Yuxuan Zhang is absent from the retrieved full arXiv author list. Retain this profile-listed candidate without claiming authorship; resolve with the owner and original publication record."
+      ],
+      "decision": "not_selected",
+      "reason": "LLM safeguard reasoning, plus unresolved author attribution in the supplied profile."
+    },
+    {
+      "work_key": "workflow-gym",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "Workflow-gym: Towards long-horizon evaluation of computer-use agentic tasks in real-world professional fields",
+          "scholar_citation_id": "CTY_8xgAAAAJ:NaGl4SEjCO4C",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:NaGl4SEjCO4C"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2606.11042",
+      "arxiv_id": "2606.11042",
+      "title": "Workflow-GYM: Towards Long-Horizon Evaluation of Computer-use Agentic tasks in Real-World Professional Fields",
+      "primary_author_match": false,
+      "primary_metadata": {
+        "authors": [
+          "Liya Zhu",
+          "Jingzhe Ding",
+          "Jian Zhang",
+          "Jianbo Xue",
+          "Shihao Liang",
+          "Ge Zhang",
+          "Yi Zhu",
+          "Duju Zeng",
+          "Xiang Gao",
+          "Qingshui Gu",
+          "Mailun Gao",
+          "Huimin Che",
+          "Yan Zhao",
+          "Peiheng Zhou",
+          "Haojun Wang",
+          "Chaobo Xian",
+          "Lili Le",
+          "Chi Wu",
+          "Yiwei Liu",
+          "Shengda Long",
+          "Jiale Yang",
+          "Fangzhi Xu",
+          "Sijin Wu",
+          "Haodong Duan",
+          "Chao He",
+          "Zhaojian Li",
+          "Minchao Wang",
+          "Huan Zhou",
+          "Jiani Hou",
+          "Chuqian Yu",
+          "Weiran Shi",
+          "Hongwan Gao",
+          "Jiamin Chen",
+          "Guanhong Chen",
+          "Tingqin Luo",
+          "Kaiyuan Zhang",
+          "Zhixin Yao",
+          "Qing Hua",
+          "Yuhao Jiang",
+          "Jin Chen",
+          "Pu Chen",
+          "Zhenyu Hu",
+          "Xingyu Li",
+          "Zhengxuan Jiang",
+          "Meng Cao",
+          "Tianfeng Long",
+          "Haozhe Wang",
+          "Mingzhang Wang",
+          "Yichen Zhang",
+          "Yiming Dai",
+          "Chenchen Zhang",
+          "Jiaying Wang",
+          "Xinying Liu",
+          "Xingzu Liu",
+          "Lingling Zhang",
+          "Xinjie Chen",
+          "Yujia Qin",
+          "Wangchunshu Zhou",
+          "Zhiyong Wu",
+          "Yang Liu",
+          "Jiaheng Liu",
+          "Lei Zhang",
+          "Shen Yan",
+          "Wenhao Huang",
+          "Zaiyuan Wang",
+          "Xiaolong Chang"
+        ],
+        "published_at": "2026-06-09",
+        "updated_at": "2026-07-17",
+        "versioned_url": "https://arxiv.org/abs/2606.11042v4"
+      },
+      "reconciliation_notes": [
+        "Yuxuan Zhang is absent from the retrieved full arXiv author list. Retain this profile-listed candidate without claiming authorship; resolve with the owner and original publication record."
+      ],
+      "decision": "not_selected",
+      "reason": "Professional GUI task execution, not reconstruction; already curated in Awesome-CUA and author attribution remains unresolved."
+    },
+    {
+      "work_key": "startupbench",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows",
+          "scholar_citation_id": "CTY_8xgAAAAJ:ns9cj8rnVeAC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:ns9cj8rnVeAC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2608.17800",
+      "arxiv_id": "2608.17800",
+      "title": "StartupBench: Benchmarking General-Purpose Agents on Market-Validated End-to-End Workflows",
+      "primary_author_match": false,
+      "primary_metadata": {
+        "authors": [
+          "Liya Zhu",
+          "Xin Ma",
+          "Tao Liu",
+          "Haodong Wang",
+          "Ge Zhang",
+          "Jingzhe Ding",
+          "Qingshui Gu",
+          "Yongjie Zhong",
+          "Jinxiang Meng",
+          "Yuan Gao",
+          "Yunqiu Zhou",
+          "Hao Zhu",
+          "Jifeng He",
+          "Yongzhi Liao",
+          "Xinyi Zhang",
+          "Chaoxin Li",
+          "Yi Zhu",
+          "Xi Lin",
+          "Duju Zeng",
+          "Xiang Gao",
+          "Wen Zhang",
+          "Yunyang Wang",
+          "Duo Wang",
+          "Huan Zhou",
+          "Zuo Wang",
+          "Jin Chen",
+          "Kaiyuan Zhang",
+          "Chuqian Yu",
+          "Tianhao Yu",
+          "Longxiang Liu",
+          "Jianbo Xue",
+          "Huimin Che",
+          "Jiahao Wang",
+          "Yujia Qin",
+          "Jiaheng Liu",
+          "Shen Yan",
+          "Xiaolong Chang",
+          "Wenhao Huang"
+        ],
+        "published_at": "2026-08-18",
+        "updated_at": "2026-08-18",
+        "versioned_url": "https://arxiv.org/abs/2608.17800v1"
+      },
+      "reconciliation_notes": [
+        "Yuxuan Zhang is absent from the retrieved full arXiv author list. Retain this profile-listed candidate without claiming authorship; resolve with the owner and original publication record."
+      ],
+      "decision": "not_selected",
+      "reason": "Professional workflow evaluation merits a separate relevance review; owner authorship is not established by the original author list."
+    },
+    {
+      "work_key": "premisecheck",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "PremiseCheck: Efficient Fact-Checking of Human and AI Peer Reviews",
+          "scholar_citation_id": "CTY_8xgAAAAJ:g5m5HwL7SMYC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:g5m5HwL7SMYC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2610.21046",
+      "arxiv_id": "2610.21046",
+      "title": "PremiseCheck: Efficient Fact-Checking of Human and AI Peer Reviews",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Dingjie Song",
+          "Zhiling Yan",
+          "Ziqian Zhang",
+          "Yuxuan Zhang",
+          "Lichao Sun"
+        ],
+        "published_at": "2026-10-15",
+        "updated_at": "2026-10-15",
+        "versioned_url": "https://arxiv.org/abs/2610.21046v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Fact-checking peer reviews; not a GUI-operation or reconstruction benchmark."
+    },
+    {
+      "work_key": "lev",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "LEV: Thinking Fast and Deep with Looped Decision Models",
+          "scholar_citation_id": "CTY_8xgAAAAJ:pqnbT2bcN3wC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:pqnbT2bcN3wC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2610.20951",
+      "arxiv_id": "2610.20951",
+      "title": "LEV: Thinking Fast and Deep with Looped Decision Models",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Dingjie Song",
+          "Zhiling Yan",
+          "Yuxuan Zhang",
+          "Lichao Sun"
+        ],
+        "published_at": "2026-10-14",
+        "updated_at": "2026-10-14",
+        "versioned_url": "https://arxiv.org/abs/2610.20951v1"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "Typed decision models; no direct GUI/reconstruction application established."
+    },
+    {
+      "work_key": "harness-cost",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "Harnessing LLMs as Agents: What Does It Cost?",
+          "scholar_citation_id": "CTY_8xgAAAAJ:M05iB0D1s5AC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:M05iB0D1s5AC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2610.02488",
+      "arxiv_id": "2610.02488",
+      "title": "Harnessing LLMs as Agents: What Does It Cost?",
+      "primary_author_match": true,
+      "primary_metadata": {
+        "authors": [
+          "Zelin Zhao",
+          "Xinyu Guo",
+          "Jingyuan Zhang",
+          "Yuxuan Zhang",
+          "Yongxin Chen"
+        ],
+        "published_at": "2026-10-01",
+        "updated_at": "2026-10-06",
+        "versioned_url": "https://arxiv.org/abs/2610.02488v2"
+      },
+      "reconciliation_notes": [],
+      "decision": "not_selected",
+      "reason": "General agent-resource theory; retain for separate evaluation-method relevance review."
+    },
+    {
+      "work_key": "xdailybench",
+      "homepage_title": null,
+      "homepage_url": null,
+      "homepage_links": {},
+      "scholar_records": [
+        {
+          "title_as_displayed": "xDailyBench: Benchmarking LLMs on Professional Consultation for Real-Life Problems",
+          "scholar_citation_id": "CTY_8xgAAAAJ:RGFaLdJalmkC",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&user=CTY_8xgAAAAJ&citation_for_view=CTY_8xgAAAAJ:RGFaLdJalmkC"
+        }
+      ],
+      "canonical_source": "https://arxiv.org/abs/2609.07784",
+      "arxiv_id": "2609.07784",
+      "title": "xDailyBench: Benchmarking LLMs on Professional Consultation for Real-Life Problems",
+      "primary_author_match": false,
+      "primary_metadata": {
+        "authors": [
+          "Yongchang Peng",
+          "Qingshui Gu",
+          "Liya Zhu",
+          "Ge Zhang",
+          "Duo Wang",
+          "Haodong Wang",
+          "Jingzhe Ding",
+          "Tianhao Yu",
+          "Letian Gao",
+          "Yongjie Zhong",
+          "Chaoxin Li",
+          "Zixin Su",
+          "Jinchao Tao",
+          "Xingyu Ma",
+          "Xin'ao Guo",
+          "Feng Tian",
+          "Shiyuan Dong",
+          "Xiaoyan He",
+          "Sen Liu",
+          "Xin Chen",
+          "Jiajun Li",
+          "Zejia Zhang",
+          "Xi Lin",
+          "Wen Zhang",
+          "Yi Zhu",
+          "Duju Zeng",
+          "Xiang Gao",
+          "Yunyang Wang",
+          "Jiahao Wang",
+          "Yujia Qin",
+          "Jiaheng Liu",
+          "Shen Yan",
+          "Xiaolong Chang",
+          "Wenhao Huang"
+        ],
+        "published_at": "2026-09-07",
+        "updated_at": "2026-09-07",
+        "versioned_url": "https://arxiv.org/abs/2609.07784v1"
+      },
+      "reconciliation_notes": [
+        "Yuxuan Zhang is absent from the retrieved full arXiv author list. Retain this profile-listed candidate without claiming authorship; resolve with the owner and original publication record."
+      ],
+      "decision": "not_selected",
+      "reason": "Professional consultation tasks, plus unresolved author attribution; not automatically a GUI-execution benchmark."
+    }
+  ]
+}

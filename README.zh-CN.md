@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 490](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 206](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 490](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-490-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 206](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-206-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 136](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-136-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -28,7 +28,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (136) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -636,13 +636,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**134 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
+**136 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (24)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -738,6 +738,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**IChart2Code：面向交互图表代码生成的多模态大语言模型评测**](https://arxiv.org/abs/2609.32413) - 评测根据参照截图、本地数据和指定动作重建交互图表。 <sub>arXiv 2026 · 预印本 · Xu Zhang 等 · [PDF](https://arxiv.org/pdf/2609.32413v1) · [完整条目](https://awesomerea.org/zh/papers/paper-ichart2code/)</sub>
 - [**阶段监督的潜空间推理：单次生成的 JavaScript 去混淆**](https://arxiv.org/abs/2609.27058) - 利用 Webcrack 的中间重写结果监督 Coconut 式潜空间推理，以完成 JavaScript 去混淆。 <sub>arXiv 2026 · 预印本 · Rong Feng 等 · [PDF](https://arxiv.org/pdf/2609.27058v1) · [完整条目](https://awesomerea.org/zh/papers/paper-stage-supervised-js-deobfuscation/)</sub>
 - [**ProgramDistill：将交互式 Web 应用转化为可验证的参考驱动软件工程任务**](https://arxiv.org/abs/2609.18805) - 评测智能体从源码不可见的运行参考中恢复 Web 应用行为的能力，提供覆盖 26 个应用的 4,063 项功能恢复任务，以及独立的 12 应用重建设置，通过重放具有依赖关系的浏览器工作流评分。 <sub>arXiv 2026 · 预印本 · Jeonghye Kim 等 · [PDF](https://arxiv.org/pdf/2609.18805v1) · [代码](https://huggingface.co/datasets/microsoft/ProgramDistill) · [完整条目](https://awesomerea.org/zh/papers/paper-programdistill/)</sub>
+- [**WebWorld：将浏览器作为自改进网页代码的世界模型**](https://arxiv.org/abs/2608.30530) - 将网页改进目标编译成类型化浏览器交互契约，检查目标进展并保持已验证能力，只把通过验收的转移用于训练。 <sub>arXiv 2026 · 预印本 · Jiajun Wu 等 · [PDF](https://arxiv.org/pdf/2608.30530v1) · [完整条目](https://awesomerea.org/zh/papers/paper-webworld-browser-feedback/)</sub>
 - [**能否处处正确渲染？多模态模型生成网页的跨环境兼容性研究**](https://arxiv.org/abs/2608.12518) - WebCompat 评测由截图重建的网页在不同浏览器与设备中的表现。 <sub>arXiv 2026 · 预印本 · Ziyun Guo 等 · [PDF](https://arxiv.org/pdf/2608.12518v1) · [代码](https://github.com/ZiyunGuo/WebCompat) · [完整条目](https://awesomerea.org/zh/papers/paper-webcompat/)</sub>
 - [**UI2App：评测可执行 Web 应用生成中的视觉交互推断**](https://arxiv.org/abs/2607.06306) - UI2App 使用来自 95 个 Web 应用的 600 张截图，评测生成的可运行 React/TypeScript 应用。 <sub>arXiv 2026 · 预印本 · Grace Man Chen 等 · [PDF](https://arxiv.org/pdf/2607.06306v2) · [代码](https://github.com/chenmancm169/UI2App) · [完整条目](https://awesomerea.org/zh/papers/paper-ui2app/)</sub>
 - [**Dashboard2Code：评估多模态模型重建交互式仪表盘的能力**](https://aclanthology.org/2026.acl-long.1750/) - 评估智能体主动探索运行中的仪表盘后，重建其外观与交互逻辑的能力。 <sub>ACL 2026 · 会议论文 · Tianhao Niu 等 · [PDF](https://aclanthology.org/2026.acl-long.1750.pdf) · [代码](https://github.com/nth2000/Dashboard2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-dashboard2code/)</sub>
@@ -749,6 +750,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Interaction2Code：从交互原型生成网页代码的多模态大语言模型评测基准**](https://doi.org/10.1109/ASE63991.2025.00028) - 评测模型根据交互前后的截图重建可交互网页的能力。 <sub>ASE 2025 · 会议论文 · Jingyu Xiao 等 · [PDF](https://arxiv.org/pdf/2411.03292v3) · [代码](https://github.com/WebPAI/Interaction2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-interaction2code/)</sub>
 - [**WebUIBench：评估多模态大语言模型从网页界面生成代码能力的综合基准**](https://aclanthology.org/2025.findings-acl.815/) - 通过视觉感知、HTML 编程、图像与 HTML 对应理解，以及截图重建任务，诊断从网页界面生成代码的能力；利用来自真实网站的问答对，分别考察各项基础技能。 <sub>Findings of ACL 2025 · 会议论文 · Zhiyu Lin 等 · [PDF](https://aclanthology.org/2025.findings-acl.815.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-webuibench/)</sub>
 - [**分而治之：从截图生成界面代码**](https://doi.org/10.1145/3729364) - 沿视觉分隔线递归切分网页截图，由多模态模型为每个叶子片段生成 HTML/CSS，再将子片段代码逐级向上组装为完整页面；评估涵盖 GPT-4o、Gemini 与 Claude 系列模型以及一项小规模开发者研究。 <sub>Proceedings of the ACM on Software Engineering 2025 · 期刊论文 · Yuxuan Wan 等 · [PDF](https://arxiv.org/pdf/2406.16386v3) · [代码](https://github.com/WebPAI/DCGen) · [完整条目](https://awesomerea.org/zh/papers/paper-dcgen/)</sub>
+- [**StructEval：评测大语言模型生成结构化输出的能力**](https://arxiv.org/abs/2505.20139) - 评测结构化输出的生成与转换，包括 HTML、React 和 SVG，并分别检查格式遵循和结构正确性。 <sub>arXiv 2025 · 预印本 · Jialin Yang 等 · [PDF](https://arxiv.org/pdf/2505.20139v3) · [代码](https://github.com/TIGER-AI-Lab/StructEval) · [完整条目](https://awesomerea.org/zh/papers/paper-structeval/)</sub>
 - [**WebCode2M：面向网页设计稿代码生成的真实世界数据集**](https://dl.acm.org/doi/10.1145/3696410.3714889) - WebCode2M 将约 256 万张真实网页截图与净化后的 HTML/CSS 代码及元素边界框布局树配对。 <sub>WWW 2025 · 会议论文 · Yi Gui 等 · [PDF](https://arxiv.org/pdf/2404.06369v2) · [代码](https://github.com/CGCL-codes/naturalcc/tree/main/examples/webcode2m) · [完整条目](https://awesomerea.org/zh/papers/paper-webcode2m/)</sub>
 - [**Design2Code：面向自动化前端工程的多模态代码生成评测**](https://aclanthology.org/2025.naacl-long.199/) - 使用真实网页参考、视觉元素和布局指标及人工评估，测试从网页截图重建前端代码的能力。 <sub>NAACL 2025 · 会议论文 · Chenglei Si 等 · [PDF](https://aclanthology.org/2025.naacl-long.199.pdf) · [代码](https://github.com/NoviScl/Design2Code) · [完整条目](https://awesomerea.org/zh/papers/paper-design2code/)</sub>
 - [**面向代码分析的大语言模型：LLM 真的胜任吗？**](https://www.usenix.org/conference/usenixsecurity24/presentation/fang) - 评估 GPT-3.5-turbo、GPT-4、LLaMA-2-13B、Code-LLaMA-2-13B-Instruct 与 StarChat-Beta 解释已去除注释的 JavaScript、Python 和 C 代码功能的能力，再在经 JavaScript Obfuscator（标识符重命名、死代码注入、控制流平坦化与字符串拆分）及 Wobfuscator WebAssembly 变换混淆的 JavaScript 上重复该任务。 <sub>USENIX Security 2024 · 会议论文 · Chongzhou Fang 等 · [PDF](https://www.usenix.org/system/files/usenixsecurity24-fang.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-llm-code-analysis/)</sub>
