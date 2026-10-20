@@ -4113,5 +4113,15 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "drakvuf-sandbox": {
+    "name": "DRAKVUF Sandbox 虚拟机监控器级恶意软件分析沙箱",
+    "requirements": [
+      "所审阅的 master 提交即 2026-08-19 发布的 v0.21.0，GitHub 发布页以 Python wheel 形式提供；drakvuf-sandbox 软件包包含 drakrun 命令行、Web 应用和工作进程，要求 Python 3.9+ 并固定依赖版本，其中包括 flare-capa 7.4.0。主机需要支持 VT-x 和 EPT 的 Intel 处理器，运行 Debian 12 或 Ubuntu 22.04 并通过 GRUB 引导进入 Xen 4.17+（推荐 4.19）；入门指南要求至少两个核心和 8 GB 内存，README 则写 5 GB。Xen、LibVMI 和 DRAKVUF 引擎可使用预编译 .deb 软件包或从源码构建，另需安装 Redis、dnsmasq、tcpdump 等主机软件包，文档中的安装步骤均以 root 身份执行。",
+      "客户机为 Windows 10 x64（2004 或更高版本，推荐 22H2）或 Windows 7 x64，由 drakrun install 使用使用者自备的 Windows 安装 ISO 安装，经 VNC 完成设置，再由 drakrun postinstall 创建快照并生成配置文件。指南建议在参考快照中关闭 UAC 和 Windows Defender，并安装 Visual C++ 与 .NET 运行库；每次分析都可以切断客户机的互联网访问。嵌套虚拟化可在 Xen、KVM（实验性）以及启用虚拟化 EPT 的 VMware Workstation 下运行；不支持云主机、Hyper-V 和 VMware Fusion。",
+      "观测数据来自 DRAKVUF 插件：默认启用 apimon、filetracer、memdump、procmon、socketmon 和 tlsmon，regmon、syscalls、exmon 等为可选，Intel Processor Trace 相关插件在文档中标为实验性。文档提醒，插件过多会拖慢执行；监控在样本进程启动之后才开始；摘要中的观测基于 DRAKVUF 输出，确切的网络数据应查看 PCAP。S3 存储、ZFS 存储后端和 Karton 集成均为可选功能。",
+      "生成配置文件时，系统会把名为 drakshell 的小型 shellcode 代理注入 explorer.exe，用于执行准备命令。仓库包含 drakshell 及其他客户机辅助工具的源码、供完整性测试使用的 15 KB 样本 test/test.exe，以及固定版本的 DRAKVUF 和 Mandiant capa-rules 子模块。该测试套件需在需要项目凭据的 VM-runner 服务上安装沙箱，公开工作流只构建文档、工具、Web 包和 wheel，并检查 Python 代码规范。README 提醒维护沙箱并不容易，某些问题可能只在特定配置下复现；本合集仅审阅源码与文档，未安装该系统，也未分析任何样本。",
+      "LICENSE 采用附加了作者澄清与例外条款的 GPL-2.0，其中包括对衍生作品的宽泛解释，并禁止与普通 GPL 软件组合，因此 GitHub 未识别出标准许可证；DRAKVUF 和 capa 规则各有其许可，Windows 客户机仍受 Microsoft 条款约束。这是在隔离客户机中运行不可信样本的防御性分析平台，本条目不描述任何规避技术。所审来源未确立与 REA 的关联。"
+    ]
   }
 }
