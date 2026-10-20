@@ -4131,5 +4131,14 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "piccante": {
+    "name": "PiCCANTE 树莓派 Pico 车辆 CAN 总线工具",
+    "requirements": [
+      "审阅时唯一的正式版本为 v0.0.1，于 2025-05-03 发布，提供适用于 Pico、Pico W、Pico 2 和 Pico 2 W 的 UF2 与 ELF 固件；dev-latest 预发布版本由 main 分支自动重建，当前即由所审阅的提交（2026-01-26）构建。README 将 ELM327 模拟器标为部分实现，缺少 CAN 设置、协议自动检测和过滤功能，并把 SD 卡数据记录和软件 CAN 过滤列为计划中的功能。不支持 CAN FD 和 CAN XL。",
+      "硬件可使用任意 Raspberry Pi Pico 或 Pico 2 开发板，搭配一到三个 3.3 V CAN 收发器（如 SN65HVD）；需要 Wi-Fi 和蓝牙时推荐 Pico 2 W。README 提醒，大多数收发器扩展板自带 120 欧终端电阻，接入已端接的现有总线前必须拆除，并提醒连接车辆系统时务必谨慎。OBD-II 适配器还可加装降压模块、SD 卡槽以及用于测量电瓶电压的分压电路。",
+      "从源码构建需要 Raspberry Pi Pico SDK、CMake 3.13+ 和 GCC ARM 工具链，并以子模块形式引入 FreeRTOS-Kernel、can2040 分支、littlefs、TinyUSB、pico-extras 和 FreeRTOS-FAT-CLI；PICO_BOARD 默认为 pico2_w，网页界面是 Web/ 目录中独立的 Svelte 项目。CI 会在推送到 main 及提交拉取请求时为四种 Pico 开发板构建固件，未见测试套件说明。",
+      "依据 LICENSE.txt 和 README 中的声明采用 GPL-3.0-or-later；README 将仅支持 CAN 2.0B 归因于 can2040 的许可限制，附带的 DHCP 服务器代码带有 MIT 声明。KiCad、STL 和 STEP 硬件文件未另行声明许可证。本次未构建、刷写固件，也未连接任何车辆，所审来源未确立与 REA 的关联。"
+    ]
   }
 }

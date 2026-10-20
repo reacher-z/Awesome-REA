@@ -11254,5 +11254,38 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "piccante",
+    "name": "PiCCANTE",
+    "url": "https://github.com/Alia5/PiCCANTE",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Raspberry Pi Pico firmware and hardware designs for a low-cost CAN bus interface aimed at exploring and reverse engineering vehicle networks. It runs two CAN 2.0B channels on RP2040 boards or three on RP2350 boards through the PIO-based can2040 library and exposes them over USB as a GVRET device for SavvyCAN and as per-channel SLCAN devices for Linux SocketCAN via can-utils. A configuration shell, a partial ELM327 emulator for OBD-II PID requests with ISO-TP multi-frame replies, and Wi-Fi, Bluetooth and a web interface on Pico W boards complete the firmware, alongside perfboard and KiCad PCB designs with 3D-printable cases for an OBD-II dongle.",
+    "description_zh": "基于 Raspberry Pi Pico 的低成本 CAN 总线接口固件与硬件设计，用于探索和逆向分析车辆网络。它借助基于 PIO 的 can2040 库，在 RP2040 开发板上运行两路、在 RP2350 开发板上运行三路 CAN 2.0B 通道，并通过 USB 以 GVRET 设备的形式供 SavvyCAN 使用，同时为每个通道提供 SLCAN 设备，经 can-utils 接入 Linux SocketCAN。固件还包括配置命令行、可处理 OBD-II PID 请求（含 ISO-TP 多帧应答）的部分 ELM327 模拟器，以及 Pico W 开发板上的 Wi-Fi、蓝牙和网页界面；仓库另附 OBD-II 适配器的洞洞板与 KiCad PCB 设计及可 3D 打印的外壳。",
+    "evidence_url": "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/Readme.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Only release at review: v0.0.1, published 2025-05-03 with UF2 and ELF firmware for Pico, Pico W, Pico 2 and Pico 2 W; a dev-latest pre-release is rebuilt from main and was built from the reviewed commit of 2026-01-26. The README marks the ELM327 emulator as partial, lacking CAN setup, protocol auto-detection and filters, and lists SD-card logging and software CAN filters as planned. CAN FD and CAN XL are not supported.",
+      "Hardware is any Raspberry Pi Pico or Pico 2 board with one to three 3.3 V CAN transceivers such as the SN65HVD; the Pico 2 W is recommended for Wi-Fi and Bluetooth. The README warns that the 120-ohm termination resistor on most transceiver breakout boards must be removed before joining an existing, terminated bus, and urges caution when connecting to vehicle systems. The OBD-II dongle can add a buck converter, an SD card slot and a voltage divider for battery voltage.",
+      "Source builds need the Raspberry Pi Pico SDK, CMake 3.13+ and the GCC ARM toolchain, with FreeRTOS-Kernel, a can2040 fork, littlefs, TinyUSB, pico-extras and FreeRTOS-FAT-CLI as submodules; PICO_BOARD defaults to pico2_w, and the web interface is a separate Svelte project in Web/. CI builds firmware for the four Pico boards on pushes to main and on pull requests, and no test suite is documented.",
+      "GPL-3.0-or-later per LICENSE.txt and the README notice; the README attributes the CAN 2.0B-only limit to can2040's licensing, and the bundled DHCP server code carries an MIT notice. No separate license is stated for the KiCad, STL and STEP hardware files. Nothing was built, flashed or connected to a vehicle, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/.gitmodules",
+      "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/CMakeLists.txt",
+      "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/.github/workflows/build_base.yml",
+      "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/.github/workflows/PR_check.yml",
+      "https://github.com/Alia5/PiCCANTE/tree/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/hardware/PiCCANTE-OBD-Dongle",
+      "https://github.com/Alia5/PiCCANTE/tree/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/src/ELM327",
+      "https://github.com/Alia5/PiCCANTE/blob/62ede82f56ae1cc4addf9ef7b7bf20d447d8d712/LICENSE.txt",
+      "https://github.com/Alia5/PiCCANTE/releases/tag/v0.0.1",
+      "https://github.com/Alia5/PiCCANTE/releases/tag/dev-latest"
+    ]
   }
 ]

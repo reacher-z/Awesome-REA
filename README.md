@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
-- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (19)
 
 **Research and workflows**
 
@@ -2444,6 +2444,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Recover Protobuf message definitions from compiled programs as readable .proto files. Extractors cover the Java runtimes in JAR, DEX and APK files (including ProGuard-obfuscated code), binaries that embed Protobuf reflection metadata, and web apps using the Protobuf-URL format. A GUI then binds a recovered message type to an HTTP endpoint, decodes hex-encoded captured samples into an editable field tree and resends edited messages, so analysts can relate each field to the response.
 
   Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/pbtk/)
+
+- [**PiCCANTE**](https://github.com/Alia5/PiCCANTE)
+
+  Raspberry Pi Pico firmware and hardware designs for a low-cost CAN bus interface aimed at exploring and reverse engineering vehicle networks. It runs two CAN 2.0B channels on RP2040 boards or three on RP2350 boards through the PIO-based can2040 library and exposes them over USB as a GVRET device for SavvyCAN and as per-channel SLCAN devices for Linux SocketCAN via can-utils. A configuration shell, a partial ELM327 emulator for OBD-II PID requests with ISO-TP multi-frame replies, and Wi-Fi, Bluetooth and a web interface on Pico W boards complete the firmware, alongside perfboard and KiCad PCB designs with 3D-printable cases for an OBD-II dongle.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/piccante/)
 
 <a id="agents-and-mcp"></a>
 ### Agents and MCP
