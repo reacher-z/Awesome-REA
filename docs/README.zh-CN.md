@@ -21,6 +21,7 @@
 | [仓库自动化](automation.md) | 英文 | 当前 | Pull request 规则审核与 CI |
 | [网站维护](website.md) | 英文 | 当前 | 网站构建、预览与托管 |
 | [搜索发现](search-discovery.md) | 英文 | 当前 | 搜索与问答引擎的收录、提交和衡量限制 |
+| [社区推广](community-outreach.md) | 英文 | 当前，平台规则复核于 2026-10-20 | 向 Hacker News、Reddit 等公开社区发帖前的检查清单 |
 | [人工发现观察](discovery/README.md) | 英文 | 当前 | 版本化检索问题与人工观察模板 |
 | [扫描方法](source-scan.md) | 英文 | 当前 | 自动仓库索引的采集方法 |
 | 案例合集覆盖记录：[中文](case-coverage.zh-CN.md)、[英文](case-coverage.md) | 中英 | 自动生成 | 固定版本上游案例合集的清点记录 |

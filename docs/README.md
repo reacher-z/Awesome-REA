@@ -21,6 +21,7 @@ Guides describe the current process. Research notes are dated snapshots, kept fo
 | [Repository automation](automation.md) | English | Current | Pull request review and CI |
 | [Website maintenance](website.md) | English | Current | Site build, preview and hosting |
 | [Search discovery](search-discovery.md) | English | Current | Search and answer-engine discovery, submission and limits |
+| [Community outreach](community-outreach.md) | English | Current, rules reviewed 2026-10-20 | Checklist for posting to public communities such as Hacker News and Reddit |
 | [Discovery observations](discovery/README.md) | English | Current | Versioned queries and a manual observation template |
 | [Source scan method](source-scan.md) | English | Current | How the automated repository index is collected |
 | Case coverage: [English](case-coverage.md), [Chinese](case-coverage.zh-CN.md) | English, Chinese | Generated | Inventory of pinned upstream case collections |
