@@ -11191,5 +11191,38 @@
       "https://github.com/GaryOderNichts/OpenDMCUFirm/commit/58ab01fe071f0c6df8798b8b178f8160d1c3cacf",
       "https://github.com/GaryOderNichts/evwii/blob/978b0068e003a15cd85b2141c5d5248369ed3d87/README.md"
     ]
+  },
+  {
+    "id": "xpcspy",
+    "name": "xpcspy",
+    "url": "https://github.com/ab-rizk/xpcspy",
+    "category": "dynamic-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app",
+      "protocol"
+    ],
+    "description_en": "Frida-powered command-line tool that observes XPC messages exchanged between processes on iOS and macOS in both directions, for understanding how Apple-platform apps and services talk over XPC. It can spawn or attach to a target over a USB or remote Frida connection, filter the trace by direction (incoming or outgoing) and by service name with wildcards, and optionally parse the binary-plist payloads carried in XPC dictionaries, with bplist00 and bplist16 described as officially supported and bplist15 and bplist17 as experimental. A Python CLI drives a TypeScript Frida agent that is compiled to JavaScript.",
+    "description_zh": "基于 Frida 的命令行工具，可双向观察 iOS 和 macOS 上进程之间交换的 XPC 消息，用于理解 Apple 平台的应用与服务如何通过 XPC 通信。它可通过 USB 或远程 Frida 连接启动或附加到目标，按方向（传入或传出）和带通配符的服务名过滤跟踪，并可选解析 XPC 字典中携带的二进制 plist 负载，其中 bplist00 和 bplist16 被列为正式支持，bplist15 和 bplist17 为实验性。工具由 Python 命令行驱动一个编译为 JavaScript 的 TypeScript Frida 代理。",
+    "evidence_url": "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at tag v0.9.0 (the reviewed commit, last pushed 2026-05-11); the matching xpcspy 0.9.0 release was uploaded to PyPI the same day. requirements.txt pins frida ~=17.9.7 and frida-tools ~=14.8.2, so a compatible Frida must be present, and interception works only where that Frida can instrument the target: a local macOS process, or an iOS device reachable by a frida-server over USB (-U) or remotely (-R/-H).",
+      "Install with pip3 install xpcspy for the CLI. Building from source uses the Makefile: the Frida agent under agent/ is a TypeScript project compiled with frida-compile (needs Node.js and npm), then python3 setup.py sdist packages the Python tool. The package metadata credits author hot3eed and points its homepage at github.com/hot3eed/xpcspy.",
+      "The analyst chooses the process to inspect by name, PID, frontmost application or a spawned file; no sample files ship with the tool. It reads the XPC traffic of a running target for analysis and does not modify or inject messages. bplist parsing is partly experimental, and the README's TODO list notes recursive bplist deserialization and other unfinished work.",
+      "Apache-2.0. The reviewed sources establish no REA connection, and nothing was installed or run in this review."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/setup.py",
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/requirements.txt",
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/Makefile",
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/agent/package.json",
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/xpcspy/__init__.py",
+      "https://github.com/ab-rizk/xpcspy/blob/07c5a5b323d85c578d7892dbeffdd88d0700b174/LICENSE",
+      "https://github.com/ab-rizk/xpcspy/releases/tag/v0.9.0",
+      "https://pypi.org/project/xpcspy/0.9.0/"
+    ]
   }
 ]

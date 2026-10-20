@@ -35,7 +35,7 @@
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless 是多用途 IDA Pro 插件系统，可与调试器后端同步标签和注释，并具备复杂内存转储和交互式 Python 脚本能力。 **[587 星标]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet 微信 Windows 协议。 **[551 星标]**
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — 使用 Frida 从 TeamViewer 内存中提取密码的工具。 **[465 星标]**
-- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — 双向 XPC 消息拦截及更多功能，由 Frida 驱动。 **[452 星标]**
+- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — 双向 XPC 消息拦截及更多功能，由 Frida 驱动。 **[452 星标]** · 精选：[xpcspy XPC 消息拦截工具](https://awesomerea.org/zh/resources/xpcspy/)
 - [Exo1i/MagiskHluda](https://github.com/Exo1i/MagiskHluda) — 通过 Magisk 在开机时运行更难被检测到的 Frida 服务器 🔐✅。 **[433 星标]**
 - [ivan-sincek/ios-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/ios-penetration-testing-cheat-sheet) — 开发中…… **[425 星标]**
 - [hanbinglengyue/FridaManager](https://github.com/hanbinglengyue/FridaManager) — Frida 持久化解决方案。 **[420 星标]**

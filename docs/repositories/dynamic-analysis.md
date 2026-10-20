@@ -35,7 +35,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [a1ext/labeless](https://github.com/a1ext/labeless) — Labeless is a multipurpose IDA Pro plugin system for labels/comments synchronization with a debugger backend, with complex memory dumping and interactive Python scripting capabilities. **[587 stars]**
 - [wechaty/puppet-xp](https://github.com/wechaty/puppet-xp) — Wechaty Puppet WeChat Windows Protocol **[551 stars]**
 - [vah13/extractTVpasswords](https://github.com/vah13/extractTVpasswords) — tool to extract passwords from TeamViewer memory using Frida **[465 stars]**
-- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — Bidirectional XPC message interception and more. Powered by Frida **[452 stars]**
+- [ab-rizk/xpcspy](https://github.com/ab-rizk/xpcspy) — Bidirectional XPC message interception and more. Powered by Frida **[452 stars]** · Curated: [xpcspy](https://awesomerea.org/resources/xpcspy/)
 - [Exo1i/MagiskHluda](https://github.com/Exo1i/MagiskHluda) — Run a more undetectable frida server on boot using magisk 🔐✅ **[433 stars]**
 - [ivan-sincek/ios-penetration-testing-cheat-sheet](https://github.com/ivan-sincek/ios-penetration-testing-cheat-sheet) — Work in progress... **[425 stars]**
 - [hanbinglengyue/FridaManager](https://github.com/hanbinglengyue/FridaManager) — A persistence solution for Frida **[420 stars]**

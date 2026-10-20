@@ -4113,5 +4113,14 @@
       "CI 只在该容器中构建 dmcu.d.hex 并作为构件上传。所审文件中没有测试套件、硬件测试记录，也没有与原厂固件行为的比较；本次审阅未构建或运行任何程序。",
       "仓库没有许可证文件，GitHub 也未识别出许可证；项目源文件只注明属于 OpenDMCUFirm。随附的 68HC11 与 stdint 头文件保留各自的 FSF GPL 和 BSD 声明，evWii 采用 GPL-2.0，原始固件仍受其自身权利约束。所审来源未确立 AI 或 REA 的使用。"
     ]
+  },
+  "xpcspy": {
+    "name": "xpcspy XPC 消息拦截工具",
+    "requirements": [
+      "审阅版本为标签 v0.9.0（即所审阅的提交，最后推送于 2026-05-11）；对应的 xpcspy 0.9.0 版当天上传至 PyPI。requirements.txt 固定 frida ~=17.9.7 和 frida-tools ~=14.8.2，因此需要存在兼容的 Frida，且拦截只能在该 Frida 能够插桩目标的场景下进行：本地 macOS 进程，或可通过 USB（-U）或远程（-R/-H）由 frida-server 访问的 iOS 设备。",
+      "通过 pip3 install xpcspy 安装命令行工具。从源码构建使用 Makefile：agent/ 下的 Frida 代理是用 frida-compile 编译的 TypeScript 项目（需要 Node.js 和 npm），随后用 python3 setup.py sdist 打包 Python 工具。包元数据标注作者为 hot3eed，并将主页指向 github.com/hot3eed/xpcspy。",
+      "分析者通过名称、PID、前台应用或启动的文件来选择要检查的进程；工具不附带任何样本文件。它读取运行中目标的 XPC 流量用于分析，不会修改或注入消息。bplist 解析部分仍属实验性，README 的 TODO 列表也提到递归 bplist 反序列化等尚未完成的工作。",
+      "采用 Apache-2.0 许可。所审来源未确立与 REA 的关联，本次审阅也未安装或运行任何内容。"
+    ]
   }
 }
