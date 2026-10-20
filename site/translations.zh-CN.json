@@ -4301,5 +4301,15 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "ntrghidra": {
+    "name": "NTRGhidra Nintendo DS 程序 Ghidra 加载器",
+    "requirements": [
+      "审阅时最新版本为 v1.5.1，于 2026-03-24 以 NTRGhidra-build.zip 形式发布，适用于 Ghidra 12.0.4，其标签即所审阅的 master 提交；更早的版本分别针对各个 Ghidra 10.x 和 11.x 版本构建，README 写明当前支持的最新 Ghidra 版本为 12.0.4。该 zip 需在 Ghidra 项目窗口的 File → Install Extensions 中安装，覆盖模块管理器则需另在 CodeBrowser 的 File → Configure → Miscellaneous 中启用。README 称项目正在寻找维护者和贡献者。",
+      "从源码构建需要已安装的 Ghidra：build.gradle 会从 GHIDRA_INSTALL_DIR 引入 Ghidra 的 buildExtension.gradle，README 介绍的是借助 GhidraDev 扩展在 Eclipse 中构建，GitHub Actions 工作流则在每次推送时用 Gradle 构建 zip，并在创建新版本时附加到发布页。仓库没有测试，src/test 中只有一份占位 README。",
+      "输入为使用者自行提供的 .nds 文件；仓库不含任何 ROM 或 BIOS 文件。导入时，加载器会拒绝文件头 CRC 不符的文件，并询问该文件是使用任天堂 SDK 的商业游戏还是自制程序，以及要载入 ARM9 还是 ARM7 代码；商业游戏须带有预期的任天堂标志 CRC，其 ARM9 二进制会被解压。覆盖模块管理器只会从导入时路径上的原始文件，或 MD5 与 SHA-256 均与之一致的替代文件中重新读取覆盖模块。",
+      "fidb 文件夹中的 nitrosdk3.0.fidb 是一个 2 KB 的 Function ID 数据库，其 README 称收录的是商业游戏中 NitroSDK 3.0.0 函数的哈希，涵盖 ARM 代码中的 crt0 和文件系统例程，尚不支持 Thumb；加载器不会自动应用它。加载器将支持的格式命名为 Nintendo DS（NTR）和 DSi（TWL），源码中也有 DSi 寄存器和内存区域列表，但导入时只映射 DS 的 ARM9 和 ARM7 列表，CRT0 自动加载（autoload）处理也标为待办。",
+      "采用 Apache-2.0 许可。README 致谢 GBATEK 提供的 DS 技术资料，以及 Gericom 的 Every File Explorer 提供最初的文件头与 ARM9 解压代码。本次未安装或运行任何内容，也未载入任何程序；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
