@@ -3498,8 +3498,8 @@
       "reason_zh": "作者以葡萄牙语发布的帖子（@greco_dev，2026-10-13）称借助 REA 逆向了自家电视，并列出切换应用和输入源、音量、遥控、镜像 Mac 屏幕、屏幕使用时间及画面调节等功能；帖子附视频。资料中注明该 X 账号的 GitHub 账号在当天稍晚发布了 LGwebOS-menubar（此处固定到具体提交）：一款 LG webOS 电视的原生 macOS 遥控器，测试仅覆盖一台 webOS 5.0 电视。完整映射覆盖该项目。README 称协议行为参考了 Connect SDK 和 PyWebOSTV，屏幕镜像仅提供操作指引；仓库未提及 REA，因此 REA 的作用仍是作者说法。",
       "primary_evidence_urls": [
         "https://x.com/greco_dev/status/2109842197654692349",
-        "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/README.md",
-        "https://github.com/gabrielgreco1/LGwebOS-menubar/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md"
+        "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/README.md",
+        "https://github.com/gabrielgreco1/TVmenubar-MacOS/blob/8482f36aaeb2e6577cf58bba12306ba3701c0fd2/THIRD_PARTY_NOTICES.md"
       ],
       "catalog_matches": [
         {

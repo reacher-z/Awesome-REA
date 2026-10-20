@@ -1522,7 +1522,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 
   Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/elgato-hdr-uvc-capture-case/)
 
-- [**LGwebOS-menubar: a native macOS remote for LG webOS TVs**](https://github.com/gabrielgreco1/LGwebOS-menubar)
+- [**LGwebOS-menubar: a native macOS remote for LG webOS TVs**](https://github.com/gabrielgreco1/TVmenubar-MacOS)
 
   A native macOS menu-bar app that pairs with an LG webOS TV over its local encrypted WebSocket interface to launch apps, switch inputs, adjust volume and picture settings, send pointer input and cast selected media. The project credits the public Connect SDK for webOS protocol behavior and reuses PyWebOSTV’s registration manifest. Testing covers one TV on webOS 5.0.
 
