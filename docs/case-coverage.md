@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 203 | 201 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 135 | 135 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 253 | 253 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 129 | 129 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 259 | 259 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 216 occurrences have catalog links. They reference 207 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 395 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 401 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -165,11 +165,17 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Hongguo Short Drama: REA-assisted reverse engineering to remove ads and overlays | Insufficient evidence | [Source](https://x.com/web3_goto/status/2110320554049941661) |
 | Profound: a reported REA-assisted SaaS reconstruction | Insufficient evidence | [Source](https://github.com/yaojingang/profound-clone/blob/93e87c901b9c51f444b243110dd643e066aa6e22/README.md) |
 | Codex Desktop: author reports trying REA to study its differences from CLI | Insufficient evidence | [Source](https://x.com/ZhenHan261538/status/2110377021402661320) |
+| Mac desktop app: REA-assisted analysis and reference materials | Insufficient evidence | [Source](https://x.com/fantexi997/status/2110382256829386935) |
+| Apple Weather: reported REA-assisted rebuild | Insufficient evidence | [Source](https://x.com/jasonjias/status/2110459951365980334) |
 | Friday Night Funkin’: a Claude-assisted gameplay variant | Insufficient evidence | [Source](https://x.com/i/status/2110407024731439392) |
+| Linux cal: tracing the 1752 calendar switch | Insufficient evidence | [Source](https://x.com/fahdmirza/status/2110453427209916612) |
 | TicTacToe-AI: a bounded REA-fork reconstruction of one game method | Already curated | [Source](https://github.com/heaven-hm/re-agent/blob/a84c61e8baa65d445485722420a57ff4132b90d3/benchmarks/native-windows-ports/reports/targets/tictactoe.md) |
+| Home-device protocols connected to a local LLM | Insufficient evidence | [Source](https://x.com/bitfish/status/2110539823572463953) |
 | GAMEKB-K17: reconstructing a macropad configuration protocol | Already curated | [Source](https://github.com/dvdarkin/gamekb-k17/blob/e61f444793857c0e10a31692674335ee4ee9c89e/README.md) |
+| Kirby: a reported REA investigation in progress | Insufficient evidence | [Source](https://x.com/oh_Roach/status/2110553648787013950) |
 | REA in Claude Code: an isolated static-analysis A/B trial | Already curated | [Source](https://zenn.dev/keigoly/articles/8738d8d241b5a1) |
 | REA 6.4.0: Windows .NET and Electron sample tests | Insufficient evidence | [Source](https://x.com/i/status/2110563764886266167) |
+| CPU kernels: Claude Code orchestrates Astra with REA | Insufficient evidence | [Source](https://x.com/nkeilar/status/2110566660113625486) |
 | apk-reverse: an Android analysis skill for coding agents | Insufficient evidence | [Source](https://github.com/zzusec/apk-reverse/blob/1b94651b1e3c4479336406b8b5c06d4c1fd7082e/README.md) |
 | A license-compliance comparison during reverse engineering | Insufficient evidence | [Source](https://x.com/i/status/2110614074941927618) |
 | IsaacRecomp: translating Flash game bytecode to native C++ | Already curated | [Source](https://github.com/whylurking/IsaacRecomp/blob/7736f3d2961051b66cd315bcf5a719e9024d889d/README.md) |
