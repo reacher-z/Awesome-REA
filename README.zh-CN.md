@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 491](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 207](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-207-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 491](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-491-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 207](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-207-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-491 项精选资源（207 个案例）· 134 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 488。
+491 项精选资源（207 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 488。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -639,13 +639,13 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**134 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
+**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
-- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
+- [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (58) · [网站](#papers-website-reconstruction) (22)
 - [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
@@ -700,6 +700,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Idioms：以明确定义的类型显著增强局部神经反编译的简单有效框架**](https://www.ndss-symposium.org/ndss-paper/idioms-a-simple-and-effective-framework-for-turbo-charging-local-neural-decompilation-with-well-defined-types/) - Idioms 微调代码语言模型，把单个目标函数的 Hex-Rays 输出转换为预测的原始 C 代码，并同时给出其中使用的用户自定义结构体、联合体和类型别名定义。 <sub>NDSS 2026 · 会议论文 · Luke Dramko 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-f795-paper.pdf) · [代码](https://github.com/squaresLab/idioms) · [完整条目](https://awesomerea.org/zh/papers/paper-idioms/)</sub>
 - [**FidelityGPT：利用检索增强生成纠正反编译失真**](https://www.ndss-symposium.org/ndss-paper/fidelitygpt-correcting-decompilation-distortions-with-retrieval-augmented-generation/) - FidelityGPT 对现有反编译器输出进行后处理：由大语言模型为代码行标注六类失真（如非常规解引用、冗余变量和令人困惑的控制流），再改写被标注的行。 <sub>NDSS 2026 · 会议论文 · Zhiping Zhou 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s989-paper.pdf) · [代码](https://github.com/ZhouZhiping045/FidelityGPT) · [完整条目](https://awesomerea.org/zh/papers/paper-fidelitygpt/)</sub>
 - [**CHISEL：借助 AI 迭代恢复源码**](https://arxiv.org/abs/2608.27981) - CHISEL 利用编译诊断及针对原函数的类型感知差分模糊测试改进 Ghidra 伪代码，并保留反例与候选历史。 <sub>SURE <span>@</span> ACM CCS 2026 · 已接收 · Varun Kohli 等 · [PDF](https://arxiv.org/pdf/2608.27981v1) · [代码](https://github.com/VarunKohli18/chisel) · [完整条目](https://awesomerea.org/zh/papers/paper-chisel-iterative-recovery/)</sub>
+- [**这还是同一份代码吗？WebAssembly 二进制反编译技术的全面研究**](https://link.springer.com/chapter/10.1007/978-3-031-94448-2_6) - 以原生二进制反编译器为基线，衡量现有 WebAssembly 反编译器恢复 C 代码的能力。 <sub>SecureComm 2024 2025 · 会议论文 · Wei-Cheng Wu 等 · [PDF](https://arxiv.org/pdf/2411.02278v1) · [完整条目](https://awesomerea.org/zh/papers/paper-wasm-decompiler-study/)</sub>
 - [**BinMetric：面向大语言模型的综合二进制代码分析基准**](https://www.ijcai.org/proceedings/2025/858) - BinMetric 提供六类二进制分析任务共 1,000 道题目：调用点重建、反编译、函数签名恢复、二进制代码摘要、算法分类与汇编指令生成。 <sub>IJCAI 2025 · 会议论文 · Xiuwei Shang 等 · [PDF](https://www.ijcai.org/proceedings/2025/0858.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-binmetric/)</sub>
 - [**DecompileBench：面向真实场景的反编译器综合评测基准**](https://aclanthology.org/2025.findings-acl.1194/) - 利用真实程序中的函数、运行时行为检查，以及 LLM 辅助的代码可理解性评估，比较传统反编译器与基于 LLM 的方法。 <sub>Findings of ACL 2025 · 会议论文 · Zeyu Gao 等 · [PDF](https://aclanthology.org/2025.findings-acl.1194.pdf) · [代码](https://github.com/vul337/DecompileBench) · [完整条目](https://awesomerea.org/zh/papers/paper-decompilebench/)</sub>
 - [**DecLLM：借助大语言模型实现可重新编译的反编译，支持以程序化方式使用反编译代码**](https://dl.acm.org/doi/10.1145/3728958) - DecLLM 将无法重新编译的反编译伪代码修复为可编译、可运行的 C 代码，使 CodeQL 等源码级工具能够用于二进制分析。 <sub>Proceedings of the ACM on Software Engineering (ISSTA 2025) · 期刊论文 · Wai Kin Wong 等 · [PDF](https://dl.acm.org/doi/pdf/10.1145/3728958) · [完整条目](https://awesomerea.org/zh/papers/paper-decllm/)</sub>
