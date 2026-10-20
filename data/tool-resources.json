@@ -11254,5 +11254,42 @@
     ],
     "verified_at": "2026-10-19",
     "verification": "source-reviewed"
+  },
+  {
+    "id": "kam1n0",
+    "name": "Kam1n0",
+    "url": "https://github.com/McGill-DMaS/Kam1n0-Community",
+    "category": "binary-diffing",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Server platform from McGill University's Data Mining and Security Lab that indexes collections of disassembled binaries into shared repositories and searches them for cloned assembly functions. Its applications cover subgraph clone search within one instruction-set family (Asm-Clone), cross-architecture semantic search over VEX IR using symbolic and concrete execution (Sym1n0), Asm2Vec representation learning aimed at compiler optimization and obfuscation, and executable classification built on Asm2Vec. An IDA Pro plug-in sends functions to the server and shows flow-graph, text-diff and clone-group views; the README's accuracy and query-time figures come from the authors' own papers.",
+    "description_zh": "McGill 大学数据挖掘与安全实验室开发的服务端平台，可把大量已反汇编的二进制建立索引、存入可共享的仓库，并在其中搜索克隆的汇编函数。平台提供多种应用：在同一指令集家族内进行子图克隆搜索（Asm-Clone），借助符号执行与具体执行在 VEX IR 上进行跨架构语义搜索（Sym1n0），面向编译优化与混淆的 Asm2Vec 表示学习，以及基于 Asm2Vec 的可执行文件分类。IDA Pro 插件把函数发送到服务端，并以控制流图、文本差异和克隆分组视图展示结果；README 中的准确率与查询耗时数据出自作者自己的论文。",
+    "evidence_url": "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest stable release at review: 2.2.0, published 2020-11-15, with Windows installers and Linux tarballs for the server and the IDA Pro plug-in; a nightly-action pre-release from 2023-02-27 attaches Windows builds only. The reviewed master2.x commit of the same date is the default branch's latest, and README says repositories and configuration files from versions before 2.0.0 are no longer supported.",
+      "The server needs a 64-bit Java 11 runtime (README asks for Oracle's) and, to disassemble uploaded binaries, an IDA Pro installation with IDAPython set in kam1n0.properties; the shipped configuration requests a 12 GB maximum JVM heap and serves the web interface on port 8571. The plug-in needs IDA Pro newer than 6.7 with IDAPython and the CEF Python wheels its installer bundles. Source also contains an undocumented Ghidra disassembly backend, which was not checked.",
+      "Users supply the binaries to index and query. The repository commits test and example binaries built from open-source code: zlib and libpng builds for several architectures and optimization levels, a Chromium DLL, and IDA databases for PuTTY and zlib. Windows installer sources commit the Microsoft .NET Framework 4.0 and Visual C++ x64 redistributable installers and CEF Python wheels, and the server resources commit JavaFX SDK 11.0.2 DLLs, a prebuilt LibVEX library (VEXIRBB.dll) and a local Maven repository holding a z3 jar.",
+      "Maven builds the Java 11 modules against those pre-compiled LibVEX and z3 binaries; README says LibVEX comes from angr's fork, and z3 is a submodule. The Maven tests drive Chrome through chromedriver and, per the README, take about three hours; CI only builds the Windows distribution and WiX installers. Accuracy and timing figures are taken from the README and the authors' KDD 2016 and IEEE S&P 2019 papers; no binaries were indexed or searched for this review.",
+      "Apache-2.0 (LICENSE.txt), copyright McGill University and the researchers. Bundled runtimes, redistributable installers, wheels and test binaries keep their own licenses, and IDA Pro is separately licensed commercial software."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/documentation/server/server.md",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/documentation/ida-pro-plugin/ida-pro-plugin.md",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/kam1n0/kam1n0-resources/bin/kam1n0.properties",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/kam1n0/kam1n0-commons/src/main/java/ca/mcgill/sis/dmas/kam1n0/framework/disassembly/DisassemblyFactory.java",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/kam1n0-builds/README.md",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/.gitmodules",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/.github/workflows/msbuild.yml",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/tree/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/kam1n0/kam1n0-resources/bin-exclude-from-distr/test-cases",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/tree/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/kam1n0-builds/windows/installer-src-32-64/libs-server",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/blob/1c3c309acc8f5e50c6617f858aa3b5b84c121b26/LICENSE.txt",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/releases/tag/2.2.0",
+      "https://github.com/McGill-DMaS/Kam1n0-Community/releases/tag/nightly-action"
+    ]
   }
 ]

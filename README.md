@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 473](https://img.shields.io/badge/resources-473-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 474](https://img.shields.io/badge/resources-474-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 197](https://img.shields.io/badge/cases-197-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 88](https://img.shields.io/badge/papers-88-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -24,7 +24,7 @@ An independent collection of tools, case studies and research for websites, game
 **Tools and cases by target**
 
 - [Website](#website) (27) · [Game](#game) (187) · [App](#app) (72)
-- [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
+- [Native Binary](#native-binary) (64) · [Firmware and Hardware](#firmware) (22) · [Protocol](#protocol) (18)
 
 **Research and workflows**
 
@@ -449,6 +449,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**Kuna**](https://github.com/Noelo-Lab/kuna) - Agent-first decompiler written in Rust that began as a port of Ghidra’s C++ decompiler and SLEIGH compiler, and has since diverged with option-gated features, some ported from angr. <sub>Tool · [Full entry](https://awesomerea.org/resources/kuna/)</sub>
 - [**Binary Ninja API**](https://github.com/Vector35/binaryninja-api) - Vector 35’s public C++, Python and Rust APIs for Binary Ninja, with their documentation, examples and the open-source plugins built on them. <sub>Tool · Also: Firmware · [Full entry](https://awesomerea.org/resources/binary-ninja-api/)</sub>
 - [**capa**](https://github.com/mandiant/capa) - Mandiant FLARE tool that reports what an executable can do by matching a YAML rule set against features extracted from PE, ELF and .NET files or 32/64-bit shellcode, such as API calls, imports, strings and constants. <sub>Tool · [Full entry](https://awesomerea.org/resources/capa/)</sub>
+
+- [**Kam1n0**](https://github.com/McGill-DMaS/Kam1n0-Community)
+
+  Server platform from McGill University's Data Mining and Security Lab that indexes collections of disassembled binaries into shared repositories and searches them for cloned assembly functions. Its applications cover subgraph clone search within one instruction-set family (Asm-Clone), cross-architecture semantic search over VEX IR using symbolic and concrete execution (Sym1n0), Asm2Vec representation learning aimed at compiler optimization and obfuscation, and executable classification built on Asm2Vec. An IDA Pro plug-in sends functions to the server and shows flow-graph, text-diff and clone-group views; the README's accuracy and query-time figures come from the authors' own papers.
+
+  Tool · [Requirements & evidence](https://awesomerea.org/resources/kam1n0/)
 
 <a id="firmware"></a>
 ### Firmware and Hardware

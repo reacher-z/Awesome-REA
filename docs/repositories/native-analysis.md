@@ -122,7 +122,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [tmr232/Sark](https://github.com/tmr232/Sark) — IDAPython Made Easy **[672 stars]**
 - [mohitmishra786/reversingBits](https://github.com/mohitmishra786/reversingBits) — A comprehensive collection of cheatsheets for reverse engineering, binary analysis, and assembly programming tools. This repository serves as a one-stop reference for security researchers, reverse engineers, and low-level programmers. **[662 stars]**
 - [dmendel/bindata](https://github.com/dmendel/bindata) — BinData - Reading and Writing Binary Data in Ruby **[653 stars]**
-- [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — The Kam1n0 Assembly Analysis Platform **[627 stars]**
+- [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — The Kam1n0 Assembly Analysis Platform **[627 stars]** · Curated: [Kam1n0](https://awesomerea.org/resources/kam1n0/)
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — Use angr in Ghidra **[623 stars]**
 - [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic produces goto-free C output from LLVM bitcode **[621 stars]** · Curated: [Rellic](https://awesomerea.org/resources/rellic/)
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — An agent-first decompiler designed to be refined by other agents. Kuna is written in Rust and was originally ported from Ghidra. **[614 stars]** · Curated: [Kuna](https://awesomerea.org/resources/kuna/)

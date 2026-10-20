@@ -4131,5 +4131,15 @@
       "作者报告五个噩梦难度种子及两个保留种子的逐格对照，另以 200 个种子的三个难度进行逐关 CRC 检查。有限语料不能证明所有种子或整个引擎等价。",
       "game 和 net 包依据恢复出的规则及报文布局检查，而非原服务器运行对照；存档、物品与路径检查的证据深度不同。本次未独立复现实验。"
     ]
+  },
+  "kam1n0": {
+    "name": "Kam1n0 汇编代码克隆搜索平台",
+    "requirements": [
+      "审阅时最新稳定版本为 2.2.0，发布于 2020-11-15，提供服务端和 IDA Pro 插件的 Windows 安装程序及 Linux 压缩包；2023-02-27 的 nightly-action 预发布版只附带 Windows 构建。所审阅的 master2.x 提交日期相同，是默认分支的最新提交；README 称 2.0.0 之前版本的仓库和配置文件已不再支持。",
+      "服务端需要 64 位 Java 11 运行环境（README 要求 Oracle 版本）；若要反汇编上传的二进制，还需在 kam1n0.properties 中配置装有 IDAPython 的 IDA Pro。随附配置把 JVM 最大堆设为 12 GB，网页界面使用 8571 端口。插件需要高于 6.7 版、装有 IDAPython 的 IDA Pro，以及其安装程序附带的 CEF Python wheel 包。源码中还有一个 README 未说明的 Ghidra 反汇编后端，本次未加检查。",
+      "需由使用者提供要建立索引和查询的二进制。仓库提交了由开源代码构建的测试与示例二进制：多种架构和优化级别的 zlib、libpng 构建，一个 Chromium DLL，以及 PuTTY 和 zlib 的 IDA 数据库。Windows 安装程序源码目录提交了 Microsoft .NET Framework 4.0 与 Visual C++ x64 可再发行组件安装程序以及 CEF Python wheel 包；服务端资源目录提交了 JavaFX SDK 11.0.2 的 DLL、预编译的 LibVEX 库（VEXIRBB.dll），以及含 z3 jar 的本地 Maven 仓库。",
+      "Maven 依靠这些预编译的 LibVEX 与 z3 二进制构建各 Java 11 模块；README 称 LibVEX 来自 angr 的分支，z3 则以子模块引入。Maven 测试通过 chromedriver 驱动 Chrome，README 称全程约需三小时；CI 只构建 Windows 发行包和 WiX 安装程序。准确率与耗时数据来自 README 以及作者发表于 KDD 2016 和 IEEE S&P 2019 的论文；本次审阅未对任何二进制建立索引或进行搜索。",
+      "采用 Apache-2.0（LICENSE.txt），版权归 McGill 大学及研究人员所有。随附的运行库、可再发行组件安装程序、wheel 包和测试二进制适用各自的许可证，IDA Pro 是需另行授权的商业软件。"
+    ]
   }
 }

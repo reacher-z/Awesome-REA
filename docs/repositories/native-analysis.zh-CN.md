@@ -122,7 +122,7 @@
 - [tmr232/Sark](https://github.com/tmr232/Sark) — 让 IDAPython 变得简单。 **[672 星标]**
 - [mohitmishra786/reversingBits](https://github.com/mohitmishra786/reversingBits) — 涵盖逆向工程、二进制分析和汇编编程工具的全面速查表合集，为安全研究人员、逆向工程师和底层程序员提供一站式参考。 **[662 星标]**
 - [dmendel/bindata](https://github.com/dmendel/bindata) — BinData：在 Ruby 中读写二进制数据。 **[653 星标]**
-- [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — Kam1n0 汇编分析平台。 **[627 星标]**
+- [McGill-DMaS/Kam1n0-Community](https://github.com/McGill-DMaS/Kam1n0-Community) — Kam1n0 汇编分析平台。 **[627 星标]** · 精选：[Kam1n0 汇编代码克隆搜索平台](https://awesomerea.org/zh/resources/kam1n0/)
 - [Nalen98/AngryGhidra](https://github.com/Nalen98/AngryGhidra) — 在 Ghidra 中使用 angr。 **[623 星标]**
 - [lifting-bits/rellic](https://github.com/lifting-bits/rellic) — Rellic 可从 LLVM bitcode 生成不含 goto 的 C 代码。 **[621 星标]** · 精选：[Rellic LLVM bitcode 转 C 反编译器](https://awesomerea.org/zh/resources/rellic/)
 - [Noelo-Lab/kuna](https://github.com/Noelo-Lab/kuna) — 以智能体为核心、可由其他智能体持续改进的反编译器。Kuna 使用 Rust 编写，最初从 Ghidra 移植而来。 **[614 星标]** · 精选：[Kuna 智能体优先反编译器](https://awesomerea.org/zh/resources/kuna/)
