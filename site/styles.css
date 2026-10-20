@@ -38,6 +38,40 @@ input::placeholder{color:var(--muted);opacity:1}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .skip-link{position:fixed;top:-80px;left:16px;padding:12px 18px;background:var(--ink);color:var(--surface);border-radius:8px;z-index:100}
 .skip-link:focus{top:12px}
+/* Print: the static collection, directory, paper and entry pages print as plain documents without navigation, search,
+   filters or page actions. Listings print what the reader sees and every disclosure the reader opened; closed ones are
+   left out, except that each paper always prints its scope and limitations and the review notes always print. A
+   print-only line states this, and full entry pages, which have no disclosures, print every requirement and source.
+   Source links print their address and long identifiers wrap. Page stylesheets load after this one, hence !important. */
+@media print{
+  @page{margin:15mm 14mm}
+  html{scroll-behavior:auto!important;scroll-padding-top:0!important}
+  body{background:#fff!important;color:#111!important}
+  .site-header{position:static!important;background:#fff!important;border-bottom:1pt solid #999!important;box-shadow:none!important}
+  .skip-link,.header-nav,.site-footer .footer-links,.browse-actions,.papers-actions,.paper-search,.paper-search-empty,.browse-category-nav,.papers-topic-nav,.entry-detail-link,.paper-citation-download{display:none!important}
+  .shell{width:auto!important;max-width:none!important;margin-inline:0!important}
+  .resource-grid,.source-results,.paper-grid{display:block!important}
+  .resource-card,.source-card,.paper-card,.case-row{margin:0 0 8pt!important;padding:8pt 10pt!important;box-shadow:none!important;background:transparent!important;border-color:#bbb!important}
+  /* Long cards may continue on the next page; headings stay with their text and short items stay whole. */
+  :is(.card-heading,.source-card-head,.paper-card>header,.case-heading,.source-card,li,dt,dd){break-inside:avoid}
+  :is(h1,h2,h3,h4,summary,.browse-topline,.card-heading,.source-card-head,.paper-card>header,.case-heading){break-after:avoid}
+  :is(p,li,dd){orphans:3;widows:3}
+  main :is(a,summary,button){min-height:0!important}
+  details:not([open]):not(.browse-provenance,.cases-note,.paper-details){display:none!important}
+  :is(.browse-provenance,.cases-note,.paper-details:not([open]))::details-content{content-visibility:visible!important;display:block!important}
+  .paper-details:not([open])>:not(.paper-scope){display:none!important}
+  details>summary{list-style:none!important;width:auto!important;padding:4pt 0 2pt!important;color:#111!important;font-weight:650!important;text-decoration:none!important}
+  details>summary::-webkit-details-marker{display:none}
+  main a{color:#111!important}
+  main :is(.entry-link,.paper-link,.case-source,.resource-evidence-link){display:inline!important;min-height:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+  main :is(a,dd,code){overflow-wrap:anywhere!important}
+  main :is(.card-title-link,.source-title-link,.case-heading a,.paper-card h3 a,.paper-link,.resource-evidence-link,.case-source,.requirements li a,.case-evidence-links a,.source-card-footer a,.entry-link,.entry-sources a)[href^="http"]::after{content:" <" attr(href) ">";font-size:8.5pt;font-weight:400;color:#444}
+  :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after,.papers-intro::after{display:block;margin-top:6pt;padding:5pt 8pt;border:1pt solid #999;font-size:9pt;line-height:1.5;color:#333}
+  :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after{content:"Printed listing: every entry’s title, description and targets, plus the requirements and sources you opened before printing. Each entry’s full page prints all of its requirements, limitations and sources."}
+  .papers-intro::after{content:"Printed listing: every paper with its scope and limitations, plus the authors, citation details and sources you opened before printing. Each paper’s full page prints all of them."}
+  html[lang="zh-CN"] :is(.browse-main:has(.requirements),.cases-main) .browse-intro::after{content:"打印说明：列出每个条目的标题、简介与目标领域，以及打印前展开的条件与来源。每个条目的完整页面会打印其全部条件、局限与来源。"}
+  html[lang="zh-CN"] .papers-intro::after{content:"打印说明：列出每篇论文及其研究范围与局限，以及打印前展开的作者、引文与来源信息。每篇论文的完整页面会打印全部内容。"}
+}
 
 /* Masthead and collection introduction. */
 .site-header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:20}
