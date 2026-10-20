@@ -17,6 +17,7 @@ from build_browse_pages import build_browse_pages
 from build_discovery_pages import build_discovery_pages
 from build_paper_pages import build_paper_pages
 from build_readme import CATEGORIES
+from build_repository_index import CATEGORIES as REPOSITORY_CATEGORIES
 from build_survey import build_survey, discussion_sections
 from build_entry_pages import build_entry_pages
 from build_feed import build_feeds
@@ -57,7 +58,9 @@ FONT_AWESOME_BRANDS = {"github"}
 
 def catalog_index(catalog: dict) -> dict:
     """Project the complete catalog onto the lean index the homepage renders first."""
+    # source_category_labels name the repository view's Category filter options, which app.js builds from this file.
     return {"meta": catalog["meta"], "topic_labels": catalog["topic_labels"], "category_labels": catalog["category_labels"],
+            "source_category_labels": catalog["source_category_labels"],
             "resources": [{key: record[key] for key in CATALOG_INDEX_FIELDS if key in record} for record in catalog["resources"]]}
 
 
@@ -296,6 +299,8 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     # The homepage reads category labels from here, so filters, cards and entry pages share one wording.
     category_labels = {category: list(labels) for category, labels in CATEGORIES.items()}
     catalog = {"meta": metadata, "resources": resources, "topic_labels": topic_labels, "category_labels": category_labels}
+    # The repository view's Category filter labels the same categories as the /browse/ pages.
+    catalog["source_category_labels"] = {category: list(labels) for category, labels in REPOSITORY_CATEGORIES.items()}
     (output / "catalog.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     # Requirement lists and additional evidence stay out of the first-render index; app.js fetches catalog.json afterwards.
     (output / "catalog-index.json").write_text(json.dumps(catalog_index(catalog), ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")

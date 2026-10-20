@@ -32,7 +32,7 @@ function change(app, selector, value, event = 'change') { element(app, selector)
 function snapshot(app) {
   const {state, sourceState} = app.api;
   return {search: app.context.location.search, mode: sourceState.mode, q: state.q, target: state.target, kind: state.kind,
-    category: state.category, order: state.order, sourceq: sourceState.q, sourceTarget: sourceState.target, topic: sourceState.topic, sort: sourceState.sort,
+    category: state.category, order: state.order, sourceq: sourceState.q, sourceTarget: sourceState.target, topic: sourceState.topic, sourceCategory: sourceState.category, sort: sourceState.sort,
     searchInput: element(app, '#search-input').value, kindSelect: element(app, '#kind-select').value,
     sourceSearch: element(app, '#source-search').value, sortSelect: element(app, '#source-sort').value, orderSelect: element(app, '#curated-sort').value,
     cards: element(app, '#resource-grid').children.map(card => card.dataset.recordId).join(' '),
@@ -121,7 +121,7 @@ const tests = {
     assert.equal(link.href, '/zh/?target=app', 'language links follow the restored address');
   },
   async malformedEntriesUseSafeDefaults() {
-    for (const query of ['?category=bogus&kind=nope&target=moon&group=bogus&lang=invalid&view=unknown&layout=invalid&source-target=moon&sort=bogus&order=bogus',
+    for (const query of ['?category=bogus&kind=nope&target=moon&group=bogus&lang=invalid&view=unknown&layout=invalid&source-target=moon&sort=bogus&order=bogus&source-category=__proto__',
       '?view=repositories&sort=updated&layout=cards']) {
       // Shared links initialize from the URL and normalize by replacement only.
       const shared = application(query);
@@ -139,6 +139,7 @@ const tests = {
       assert.equal(app.api.state.lang, 'en');
       assert(['relevance', 'pushed'].includes(app.api.sourceState.sort));
       assert.equal(app.api.sourceState.target, 'all');
+      assert.equal(app.api.sourceState.category, 'all');
     }
   },
 };

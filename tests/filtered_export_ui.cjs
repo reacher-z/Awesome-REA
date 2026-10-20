@@ -96,7 +96,7 @@ function application(query, pathname = '/') {
     assert.equal(index.export.record_class, 'automatically-indexed-repository');
     assert.match(index.export.description, /not curated, individually reviewed or executed/);
     assert.match(index.export.description, /excluded from browsing are omitted/);
-    assert.deepEqual(index.export.filters, {sourceq: 'odd', 'source-target': 'all', topic: '', sort: 'stars'});
+    assert.deepEqual(index.export.filters, {sourceq: 'odd', 'source-target': 'all', topic: '', 'source-category': 'all', sort: 'stars'});
     assert.equal(index.export.order, 'stars');
     assert.equal(index.export.matched_count, 20);
     assert.equal(index.export.total_count, 40);
