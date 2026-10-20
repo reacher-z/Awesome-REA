@@ -173,7 +173,14 @@ def _case_row(record: dict, language: str, section: str) -> str:
 </article>'''
 
 
-def _case_collection(resources: list[dict], language: str, site_url: str) -> tuple[str, list[dict]]:
+def _suggest_link(repository_url: str, template: str, label: str) -> str:
+    """Open an existing issue form, styled like the papers page's suggestion button."""
+    return (f'<a class="button button-outline" href="{_url(repository_url + "/issues/new?template=" + template)}" '
+            f'target="_blank" rel="noopener">{escape(label)} <span aria-hidden="true">↗</span></a>')
+
+
+def _case_collection(resources: list[dict], language: str, site_url: str,
+                     repository_url: str = 'https://github.com/reacher-z/Awesome-REA') -> tuple[str, list[dict]]:
     zh = language == 'zh'
     prefix = '/zh' if zh else ''
     groups = defaultdict(list)
@@ -196,7 +203,7 @@ def _case_collection(resources: list[dict], language: str, site_url: str) -> tup
     nav = f'<nav class="browse-category-nav cases-nav" aria-label="{("案例主题" if zh else "Case subjects")}">{"".join(navigation)}</nav>' if navigation else ''
     empty = '' if items else f'<p class="cases-empty">{("当前目录还没有案例条目。" if zh else "No case studies are currently listed.")}</p>'
     content = f'''<div class="cases-collection" data-case-count="{len(items)}" data-curated-count="{len(resources)}">
-<div class="browse-actions"><a class="button button-primary" href="{search}">{('搜索案例' if zh else 'Search cases')}</a><a class="button button-outline" href="{prefix}/resources/">{('全部精选资源' if zh else 'All resources')}</a></div>
+<div class="browse-actions"><a class="button button-primary" href="{search}">{('搜索案例' if zh else 'Search cases')}</a><a class="button button-outline" href="{prefix}/resources/">{('全部精选资源' if zh else 'All resources')}</a>{_suggest_link(repository_url, 'case-study.yml', '推荐重建案例' if zh else 'Suggest a case study')}</div>
 <details class="cases-note"><summary>{('关于这些案例' if zh else 'About these cases')}</summary><p>{escape(note)}</p></details>{nav}{''.join(sections)}{empty}
 </div>'''
     return content, items
@@ -329,14 +336,14 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
             for record in groups[key]:
                 name = (record.get('name_zh') or record['name']) if zh else record['name']
                 items.append({'name': name, 'url': record['url'], 'description': record[f'description_{language}']})
-        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a><a class="browse-download" href="/catalog.json" download="awesomerea-curated-catalog.json">{('下载精选 JSON ↓' if zh else 'Download curated JSON ↓')}</a></div>
+        content = f'''<div class="browse-actions"><a class="button button-primary" href="{('/zh/?view=curated' if zh else '/?view=curated&amp;lang=en')}">{('搜索与筛选' if zh else 'Search and filter')}</a><a class="button button-outline" href="{prefix}/browse/">{('浏览仓库' if zh else 'Browse repositories')}</a><a class="button button-outline" href="{prefix}/papers/">{('研究论文' if zh else 'Research papers')}</a>{_suggest_link(repository_url, 'resource.yml', '推荐资源' if zh else 'Suggest a resource')}<a class="browse-download" href="/catalog.json" download="awesomerea-curated-catalog.json">{('下载精选 JSON ↓' if zh else 'Download curated JSON ↓')}</a></div>
 <details class="browse-provenance"><summary>{("来源复核与验证范围" if zh else "Source review and testing limits")}</summary><p>{escape(note)}</p></details><nav class="browse-category-nav" aria-label="{('资源分类' if zh else 'Resource categories')}">{''.join(navigation)}</nav>{''.join(sections)}'''
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href)
         paths.append(path)
 
         path = prefix + '/cases/'
         title = '逆向工程案例合集' if zh else 'Reverse-engineering case studies'
-        content, items = _case_collection(resources, language, site_url)
+        content, items = _case_collection(resources, language, site_url, repository_url)
         description = (f'从 {len(resources):,} 项精选资源中筛选出的 {len(items):,} 个案例，保留重建方法、成果边界与原始证据。'
                        if zh else f'{len(items):,} case studies from {len(resources):,} curated resources, with documented reconstruction methods, scope, and original evidence.')
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=collection_page_schema(site_url + path, title, description, locale, items, site_url), assets=assets, icon_stylesheet=icons.href, main_class='cases-main', extra_styles=(_asset(site_dir, 'cases.css'),))
