@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 464](https://img.shields.io/badge/resources-464-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 192](https://img.shields.io/badge/cases-192-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 465](https://img.shields.io/badge/resources-465-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 193](https://img.shields.io/badge/cases-193-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 87](https://img.shields.io/badge/papers-87-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -23,7 +23,7 @@ An independent collection of tools, case studies and research for websites, game
 <!-- BEGIN GENERATED CONTENTS -->
 **Tools and cases by target**
 
-- [Website](#website) (26) · [Game](#game) (183) · [App](#app) (71)
+- [Website](#website) (27) · [Game](#game) (183) · [App](#app) (71)
 - [Native Binary](#native-binary) (63) · [Firmware and Hardware](#firmware) (21) · [Protocol](#protocol) (18)
 
 **Research and workflows**
@@ -32,7 +32,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (192) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
+- [All cases](https://awesomerea.org/cases/) (193) · [Related Collections](#related-collections) (6) · [Full Repository Index](#full-repository-index) (2,836)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -105,6 +105,12 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
   Documents and reimplements the WebSocket protocol WhatsApp Web used while browser sessions mirrored a paired phone: QR pairing, Curve25519/HKDF key setup, AES/HMAC-protected binary messages, the token-based node encoding and end-to-end media encryption. A Python backend, Node.js relay and browser front end decode a logged-in session’s messages into inspectable JSON, and the README lists independent reimplementations such as Baileys and go-whatsapp. This is an older protocol generation from before WhatsApp’s 2021 multi-device architecture, not a description of current WhatsApp Web.
 
   Case study · Independent reconstruction · Also: Protocol · [Requirements & evidence](https://awesomerea.org/resources/whatsapp-web-reveng-legacy-protocol-case/)
+
+- [**Ruffle: a Rust reimplementation of Adobe Flash Player**](https://github.com/ruffle-rs/ruffle)
+
+  Reimplements Adobe Flash Player in Rust so that SWF content, from ActionScript 1/2 (AVM1) to ActionScript 3 (AVM2), runs in a native desktop player or in browsers through WebAssembly, as a self-hosted script or a browser extension. Its contributor guide says behavior comes from observing Flash Player's output or from license-compatible sources such as Adobe's open avmplus code, and forbids decompiling Flash Player, Flash Professional or Animate. Regression tests run contributor-made SWFs and compare their trace output, and optionally rendered images, with captures from the official debug Flash Player.
+
+  Case study · Independent reconstruction · Also: Game · [Requirements & evidence](https://awesomerea.org/resources/ruffle-flash-player-case/)
 
 #### Tools, projects and integrations
 
