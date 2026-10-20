@@ -385,7 +385,11 @@ html[lang="zh-CN"] .card-description,html[lang="zh-CN"] .source-card-description
 
 /* Compact entries follow one reading path: title, summary, then links and evidence. */
 .layout-control{display:flex;align-items:center;gap:8px;margin-left:auto;padding-bottom:12px;font-size:14px;color:var(--muted)}
-.layout-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
+.layout-control select,.sort-control select{min-height:44px;padding:7px 30px 7px 10px;border:1px solid var(--control);border-radius:7px;background:var(--surface);font-size:14px}
+/* Curated result order sits with the result count; Clear filters stays just before it when shown. */
+.results-topline{flex-wrap:wrap}
+.results-topline>.clear-button{margin-left:auto}
+.sort-control{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
 .source-record-context{margin-top:14px}
 html[data-layout="compact"] .collection-home .resource-grid,html[data-layout="compact"] .collection-home .source-results{grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--line)}
 html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:grid;grid-template-columns:fit-content(70%) minmax(0,1fr);grid-template-areas:"heading heading" "description description" "meta details";gap:8px 24px;padding:20px 8px;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;align-items:start}
@@ -408,7 +412,7 @@ html[data-layout="compact"] .collection-home .source-record-details[open] dl{max
 @media(max-width:700px){
   .index-mode-switch{flex-wrap:wrap;gap:0 22px}
   .layout-control{width:100%;justify-content:flex-end;margin-top:6px;padding-bottom:8px}
-  .layout-control select{min-height:44px;font-size:16px}
+  .layout-control select,.sort-control select{min-height:44px;font-size:16px}
   html[data-layout="compact"] .collection-home .resource-card,html[data-layout="compact"] .collection-home .source-card{display:block;padding:18px 2px}
   html[data-layout="compact"] .collection-home .card-heading,html[data-layout="compact"] .collection-home .source-card-head{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
   html[data-layout="compact"] .collection-home .card-heading h3,html[data-layout="compact"] .collection-home .source-card-head h3{flex-basis:100%;font-size:18px}
