@@ -313,7 +313,7 @@ def build_site(output: Path, *, fontawesome_dir: Path | None = None,
     (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     # Review timestamps describe sources, not every page's modification date.
     # Omit lastmod rather than advertising a fabricated build-time freshness signal.
-    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
+    sitemap_urls = [SITE_URL + "/", SITE_URL + "/zh/", SITE_URL + "/benchmark-map/", SITE_URL + "/zh/benchmark-map/", *browse_urls, *(SITE_URL + path for path in discovery_paths), *paper_urls, *survey_urls, *entry_urls]
     sitemap_entries = [f'<url><loc>{xml_escape(url)}</loc></url>' for url in sitemap_urls]
     (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(sitemap_entries) + '\n</urlset>\n', encoding="utf-8")
     build_data_downloads(output, catalog, papers,

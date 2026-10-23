@@ -70,6 +70,11 @@ input::placeholder{color:var(--muted);opacity:1}
 .collection-directory a{display:inline-flex;align-items:center;gap:6px;min-height:30px}
 .collection-directory a:hover{text-decoration:underline;text-underline-offset:4px}
 .collection-directory strong{font-weight:650;font-variant-numeric:tabular-nums;color:var(--ink)}
+.benchmark-map-preview{margin:22px 0 4px;padding:16px 16px 12px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}
+.benchmark-map-preview figcaption{display:flex;flex-direction:column;gap:4px;max-width:78ch;margin:0 0 12px}
+.benchmark-map-preview figcaption a{color:var(--ink);font-size:18px;font-weight:650;letter-spacing:-.2px}
+.benchmark-map-preview figcaption span{color:var(--muted);font-size:14px;line-height:1.6}
+.benchmark-map-preview img{display:block;width:100%;height:auto;background:#fff;border-radius:8px}
 section.collection-intro>p.collection-provenance{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
 html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .catalog-section{padding-bottom:56px}

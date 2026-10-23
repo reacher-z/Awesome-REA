@@ -32,7 +32,7 @@
 - [gorisanson/pikachu-volleyball](https://github.com/gorisanson/pikachu-volleyball) — 通过逆向分析原版游戏，以 JavaScript 重新实现《皮卡丘排球》。 **[1,089 星标]**
 - [focus-creative-games/hybridclr\_unity](https://github.com/focus-creative-games/hybridclr_unity) — 适用于 HybridCLR 的 Unity 软件包。 **[1,019 星标]**
 - [grumpycoders/pcsx-redux](https://github.com/grumpycoders/pcsx-redux) — PCSX-Redux 项目汇集了工具、研究、硬件设计和库，面向 PlayStation 1 开发与逆向工程。其核心产品 PCSX-Redux 本身也是 PlayStation 模拟器 PCSX 的一个分支。 **[1,014 星标]** · 精选：[PCSX-Redux PlayStation 1 调试模拟器](https://awesomerea.org/zh/resources/pcsx-redux/)
-- [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — 正在进行中的 PlayStation 1 游戏《寂静岭》美版 1.1 反编译项目。 **[902 星标]**
+- [shdecompilations/silent-hill-decomp](https://github.com/shdecompilations/silent-hill-decomp) — 正在进行中的 PlayStation 1 游戏《寂静岭》美版 1.1 反编译项目。 **[902 星标]** · 精选：[Silent Hill：进行中的 PlayStation 一致性反编译](https://awesomerea.org/zh/resources/silent-hill-ps1-decomp-case/)
 - [nmlgc/ReC98](https://github.com/nmlgc/ReC98) — 东方 PC-98 修复项目。 **[875 星标]**
 - [AxioDL/metaforce](https://github.com/AxioDL/metaforce) — Metroid Prime 引擎的原生重新实现。 **[808 星标]** · 精选：[Metaforce：在反编译之上重建的《密特罗德 Prime》引擎重实现](https://awesomerea.org/zh/resources/metaforce-metroid-prime-case/)
 - [EstebanPdN/zelda-tmc-3ds](https://github.com/EstebanPdN/zelda-tmc-3ds) — 基于 Project Picori 的 The Legend of Zelda: The Minish Cap 原生 Nintendo 3DS 移植版。 **[757 星标]**
@@ -93,7 +93,7 @@
 - [opentestdriveunlimited/OpenTestDriveUnlimited](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited) — Test Drive Unlimited（2006）的开源移植版 **[135 星标]**
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — 如何解密 Unity 游戏中的 global-metadata.dat？ **[129 星标]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — PlayStation 2 游戏《旺达与巨像》预览版的反编译项目，仍在开发中 **[125 星标]**
-- [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]**
+- [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]** · 精选：[HaloPad：在 iPhone、iPad 和 Mac 上运行 Halo Combat Evolved](https://awesomerea.org/zh/resources/halopad-projectreach-case/)
 - [spacefarergames/AloneInTheDarkReHaunted](https://github.com/spacefarergames/AloneInTheDarkReHaunted) — Alone in the Dark 1 的大幅增强移植版与动态重编译版本，提供纹理模型、HD–4K 背景替换、易用性改进、手柄支持等众多功能。 **[119 星标]**
 - [djkaty/Il2CppInspectorPlugins](https://github.com/djkaty/Il2CppInspectorPlugins) — Il2CppInspector 插件官方仓库 **[116 星标]**
 - [N0zoM1z0/th08](https://github.com/N0zoM1z0/th08) — 《东方永夜抄 ～ Imperishable Night》1.00d 源码重建项目 **[114 星标]** · 精选：[TH08：精确源码重建与单独验证的移植](https://awesomerea.org/zh/resources/th08-reconstruction-case/)

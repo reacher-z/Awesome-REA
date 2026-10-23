@@ -2666,5 +2666,31 @@
       "https://x.com/Noflag404/status/2111625626893660269",
       "https://x.com/Noflag404/status/2111626304097538278"
     ]
+  },
+  {
+    "id": "lezac-decompilation-case",
+    "name": "Larax & Zaco: an REA-backed partial decompilation",
+    "url": "https://github.com/Hubert-Rybak/lezac-decompilation",
+    "category": "community-case-studies",
+    "relationship": "community-reported-mixed-workflow",
+    "kind": "case-study",
+    "targets": [
+      "game",
+      "binary"
+    ],
+    "description_en": "Uses a pinned REA and Ghidra setup to export procedures from the Larax & Zaco v1.0 shareware executable and reconstruct a small set of them as Pascal and C. The author reports differential checks and says this is not a playable or byte-identical game.",
+    "description_zh": "用固定版本的 REA 和 Ghidra 从《Larax & Zaco》v1.0 共享版可执行文件导出过程，并把其中一小部分重建为 Pascal 和 C。作者报告了差异检查，并说明这不是可玩的完整游戏，也不是字节一致的重建。",
+    "evidence_url": "https://github.com/Hubert-Rybak/lezac-decompilation/blob/03f07ee753ee3c2cedd5f9f8c03abe49fabceb61/README.md",
+    "verified_at": "2026-10-22",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at commit 03f07ee7. The README names REA 6.3.0 and Ghidra 12.1.4, and the input LEZAC.EXE SHA-256 7579255148c2cb540b26f70dc8181c50b218b6808d8fa5208c832391bafa53ec. It reports 215 exported procedures, seven routines reconstructed in Pascal, sixteen packed storage layouts, and six earlier C reconstructions.",
+      "The README reports 174,777 native Pascal-versus-original comparisons and a rebuilt 16-bit DOS probe for seven operations. It also reports a DOSBox-X baseline in which level 1 was completed on the original game. Those are author-reported checks. This collection did not rerun them.",
+      "The same README says this is not a playable rebuild, not a bit-identical rebuild, and not the author's original source. Names in the packed layouts are inferred. The exact original compiler is not recovered.",
+      "The pinned root listing has no LICENSE file. The shareware executable remains separately owned. Analysis files under analysis/rea/verified/ are evidence notes, not a substitute for the original game."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/Hubert-Rybak/lezac-decompilation/blob/03f07ee753ee3c2cedd5f9f8c03abe49fabceb61/docs/pascal-recovery.md"
+    ]
   }
 ]

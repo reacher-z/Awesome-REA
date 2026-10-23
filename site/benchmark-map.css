@@ -1,0 +1,12 @@
+.benchmark-page{padding:8px 0 72px}
+.benchmark-page .browse-breadcrumbs{display:flex;gap:8px;margin:22px 0 8px;color:var(--muted);font-size:13px}
+.benchmark-page .browse-breadcrumbs a{color:var(--link)}
+.benchmark-page h1{margin:0;font-size:clamp(34px,4vw,52px);line-height:1.15;letter-spacing:-1.2px}
+.benchmark-page p{max-width:76ch}
+.benchmark-page img{display:block;width:min(100%,960px);height:auto;margin:18px 0 8px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.benchmark-table{width:min(100%,640px);border-collapse:collapse;margin:8px 0 24px;font-variant-numeric:tabular-nums}
+.benchmark-table caption{text-align:left;font-weight:650;padding:8px 0}
+.benchmark-table th,.benchmark-table td{text-align:left;padding:8px 12px 8px 0;border-bottom:1px solid var(--line)}
+.benchmark-table th:nth-child(n+2),.benchmark-table td:nth-child(n+2){text-align:right}
+.benchmark-links a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+html[lang="zh-CN"] .benchmark-page h1{letter-spacing:-.4px}
