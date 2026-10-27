@@ -60,7 +60,8 @@ class ReadmeTagTest(unittest.TestCase):
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             with self.subTest(readme=name):
                 text = (ROOT / name).read_text(encoding='utf-8')
-                legend = text.split(BEGIN + '\n', 1)[1].split('\n', 1)[0]
+                # The first line inside the block names its generator; the legend follows it.
+                legend = text.split(BEGIN + '\n', 1)[1].split('\n', 2)[1]
                 self.assertEqual(legend, tag_legend(listed, language))
                 self.assertNotRegex(text, r'(?m)^  [^\n]* · REA · \[')
                 tags = {tag for record in listed for tag in entry_type(record, language).split(' · ')[1:]}

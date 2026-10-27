@@ -91,6 +91,17 @@ Pull request 会收到由基础分支可信代码执行的[规则审核（英文
 
 快照版本在 `main` 上打 `vMAJOR.MINOR.PATCH` 标签，并在 GitHub Release 中附带数据快照。打标签前，维护者在发布提交中把 [CITATION.cff](CITATION.cff) 的 `version` 改为去掉 `v` 的标签号，`date-released` 改为发布当天的 UTC 日期；`validate.py` 会检查这两个字段同时出现、版本号符合语义化版本且日期不晚于当前。在正式取得 DOI 之前，不添加 DOI 或其他标识符。
 
+### 更新 pull request
+
+`main` 只合并与其同步的分支。多数目录 PR 会修改相同的生成文件，并向同一批 JSON 数组末尾追加记录，所以别的 PR 合并后，你的分支常会落后或出现冲突。请在本地运行 `git fetch origin` 和 `git rebase origin/main`，先解决数据冲突，再用合并后的数据重新生成文件：
+
+- **生成文件**：`README.md` 与 `README.zh-CN.md` 中的 `BEGIN GENERATED …` 和 `BEGIN REPOSITORY INDEX SUMMARY` 区块、`docs/repositories/` 下的全部页面，以及 `docs/case-coverage.md` 和 `docs/case-coverage.zh-CN.md`。直接采用 `main` 的版本（例如 `git checkout origin/main -- README.md README.zh-CN.md`），数据冲突解决后重新生成；不要手动合并或编辑这些文件。README 每个区块内的第一行注明了生成脚本和数据来源。若分支还修改了区块之外的手写 README 文字，请重新应用该修改。
+- **数据文件**：`data/*.json` 与 `site/translations.zh-CN.json` 要保留双方的记录，即 `main` 新增或修改的记录和你的分支新增或修改的记录。新记录追加在数组末尾，先放 `main` 的，再放你的。每个 ID 只能出现一次：验证器会拒绝重复的记录 ID，而 `site/translations.zh-CN.json` 中重复的键会悄悄覆盖前一个。`data/case-coverage.json` 合并双方的条目修改后，要用[英文指南](CONTRIBUTING.md#update-a-pull-request)中的命令重新计算 `counts`，否则 `validate.py` 会报告 `derived counts differ`。
+- **JSON 格式**：保持两个空格缩进、非 ASCII 字符直接写出（不转义为 `\u`）、原有键顺序和文件末尾换行，也就是 `json.dumps(value, ensure_ascii=False, indent=2)` 再加 `'\n'` 的输出。
+- **测试中的 ID 列表**（如 `tests/test_paper_citations.py` 中带引用元数据的论文集合）取双方的并集。
+
+然后运行 `python3 scripts/build_readme.py`、`python3 scripts/build_repository_index.py` 和 `python3 scripts/build_case_coverage.py`，执行 `git add -u` 和 `git rebase --continue`；每个停在冲突上的提交都重复这一步。变基完成后重新运行上面的本地检查，再用 `git push --force-with-lease` 推送，它不会覆盖你上次 fetch 之后别人推送到该分支的提交。
+
 ## 术语对照
 
 界面文字、生成器标签和 README 中手写的说明统一使用下列译法，精选条目的中文描述也尽量沿用。自动扫描仓库的中文简介按上游原文翻译，不据此批量改写。

@@ -6,7 +6,7 @@ import json
 import sys
 
 from artifact_links import with_artifact_links, with_curated_labels
-from build_readme import plain_text
+from build_readme import INDEX_SOURCES, plain_text, source_note
 from catalog import ROOT, load_resources
 from localization import localized_records, read_localizations
 from source_scope import apply_scope, exclusion_counts, read_scope, unavailable_clause
@@ -98,7 +98,8 @@ def rendered_files():
             raise ValueError(f'{root_name}: repository summary markers are required exactly once')
         before, rest = root_text.split(SUMMARY_BEGIN, 1)
         _, after = rest.split(SUMMARY_END, 1)
-        files[f'../../{root_name}'] = before + SUMMARY_BEGIN + '\n' + '\n'.join(summary) + '\n' + SUMMARY_END + after
+        generated = source_note(*INDEX_SOURCES, script='scripts/build_repository_index.py')
+        files[f'../../{root_name}'] = before + SUMMARY_BEGIN + '\n' + generated + '\n'.join(summary) + '\n' + SUMMARY_END + after
         navigation = ('[精选资源](../../README.zh-CN.md) · [搜索网站](https://awesomerea.org/zh/?view=source-index) · [下载双语 JSON](https://awesomerea.org/source-index.json) · [English](README.md)'
                       if zh else '[Curated collection](../../README.md) · [Search website](https://awesomerea.org/?lang=en&view=source-index) · [Download bilingual JSON](https://awesomerea.org/source-index.json) · [简体中文](README.zh-CN.md)')
         if published:

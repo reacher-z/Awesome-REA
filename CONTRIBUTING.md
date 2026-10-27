@@ -103,3 +103,44 @@ Snapshot releases are tagged `vMAJOR.MINOR.PATCH` on `main` and attach the data 
 Do not include credentials, private account details, personal filesystem paths, proprietary binaries, raw private captures, or licensed Font Awesome Pro files in the public repository. Original contributions use the repository's MIT license; linked resources retain their own licenses. The [artifact and license evidence guide](docs/artifact-evidence.md) shows how records describe unavailable or gated artifacts, demos and conflicting license signals.
 
 Issues and pull requests are public. Remove tokens, cookies, account identifiers, local filesystem paths and private captures from anything you paste into them, including logs and screenshots. Report security problems, such as a workflow weakness, an exposed credential or a listed resource that appears compromised, privately under the [security policy](SECURITY.md).
+
+### Update a pull request
+
+`main` merges only branches that are up to date with it, and most catalog pull requests change the same generated files and append to the same JSON arrays, so another merge can leave your branch behind or conflicting. Update it locally by rebasing on `main`:
+
+```sh
+git fetch origin
+git rebase origin/main
+```
+
+Resolve each conflicting file by kind, data first:
+
+- **Generated files:** the `BEGIN GENERATED …` and `BEGIN REPOSITORY INDEX SUMMARY` blocks in `README.md` and `README.zh-CN.md`, every page in `docs/repositories/`, and `docs/case-coverage.md` and `docs/case-coverage.zh-CN.md`. Take `main`'s copy, for example with `git checkout origin/main -- README.md README.zh-CN.md`, and rebuild it once the data conflicts are resolved. Do not merge or edit these files by hand; the first line inside each README block names its generator and source files. If your branch also changes hand-written README text outside the blocks, reapply that edit.
+- **Data files:** `data/*.json` and `site/translations.zh-CN.json`. Keep both sides: the records `main` added or changed and the ones your branch adds or changes. New records go at the end of each array, so such a conflict usually holds both sides' new records; keep `main`'s first, then yours. Each ID appears once: the validators reject a duplicate record ID, and a repeated key in `site/translations.zh-CN.json` silently replaces the earlier one. In `data/case-coverage.json`, keep both sides' entry edits, then recompute `counts` from the merged entries, since `validate.py` reports `derived counts differ` until they match:
+
+  ```sh
+  python3 - <<'EOF'
+  import json, sys
+  sys.path.insert(0, 'scripts')
+  from case_coverage import coverage_counts, read_case_coverage
+  document = read_case_coverage()
+  document['counts'] = coverage_counts(document['entries'])
+  with open('data/case-coverage.json', 'w', encoding='utf-8') as stream:
+      stream.write(json.dumps(document, ensure_ascii=False, indent=2) + '\n')
+  EOF
+  ```
+
+- **JSON format:** keep two-space indentation, non-ASCII text written as is rather than as `\u` escapes, the existing key order and a trailing newline. This is the output of `json.dumps(value, ensure_ascii=False, indent=2)` plus `'\n'`, so a script that rewrites a file this way leaves unrelated lines unchanged.
+- **ID lists in tests,** such as the set of papers with citation metadata in `tests/test_paper_citations.py`: keep the union of both sides.
+
+Then rebuild the generated files, stage the result and continue; repeat for each commit that stops with a conflict:
+
+```sh
+python3 scripts/build_readme.py
+python3 scripts/build_repository_index.py
+python3 scripts/build_case_coverage.py
+git add -u
+git rebase --continue
+```
+
+When the rebase finishes, rerun the checks under [Update the catalog](#update-the-catalog) and push with `git push --force-with-lease`, which refuses to overwrite commits pushed to the branch since your last fetch.
