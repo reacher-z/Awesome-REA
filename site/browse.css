@@ -44,6 +44,16 @@
 .browse-main .requirements li+li{margin-top:12px}
 .browse-main .requirements summary{min-height:44px;padding:10px 0;font-size:15px;line-height:1.6;color:var(--link)}
 html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-main .source-card-description,html[lang="zh-CN"] .browse-main .requirements ul{max-width:36em;line-height:1.85}
+/* /about/ link groups: site pages, downloads with format and size, and GitHub documents. */
+.about-link-groups{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1fr);gap:18px 36px;padding:18px 0 4px}
+.about-link-group h3{margin:0 0 4px;color:var(--muted);font:650 12px/1.6 var(--sans);letter-spacing:.08em;text-transform:uppercase}
+.about-link-group ul{margin:0;padding:0;list-style:none}
+.about-link-group li{padding:6px 0;font-size:15px;line-height:1.6}
+.about-link-group a{color:var(--link);text-decoration:underline;text-decoration-color:var(--strong);text-underline-offset:3px;overflow-wrap:anywhere}
+.about-link-group a:hover{text-decoration-color:currentColor}
+/* Inline blocks keep the format, size and arrows out of the link underline. */
+.about-file-meta,.about-link-group a>[aria-hidden]{display:inline-block;margin-left:6px}
+.about-file-meta{color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:1050px){.browse-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:900px){.browse-repository h2{flex-basis:100%}}
 @media(max-width:700px){
@@ -57,6 +67,9 @@ html[lang="zh-CN"] .browse-main .card-description,html[lang="zh-CN"] .browse-mai
   .browse-category-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-top:16px;padding-bottom:8px}
   .browse-category-nav a{min-width:0;white-space:normal;justify-content:space-between;font-size:14px;line-height:1.5;padding:8px 10px}.browse-category-nav a span{flex-shrink:0}
   .browse-repository h2{flex-basis:auto}
+  .about-link-groups{grid-template-columns:1fr;gap:12px}
+  .about-link-group ul{display:flex;flex-wrap:wrap;gap:0 18px}
+  .about-link-group li{padding:2px 0}
 }
 
 .browse-category-nav a{min-height:44px}

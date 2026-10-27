@@ -8,6 +8,7 @@ import re
 from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
+from build_discovery_pages import file_size_label
 from build_entry_pages import entry_path, matching_entries
 from build_manifest import read_build_manifest
 from build_paper_pages import TARGET_LABELS, bibtex_text, paper_entity_id, papers_newest_first
@@ -814,6 +815,50 @@ def validate_suggestion_links(pages, repository_url='https://github.com/reacher-
             assert pages[route].links.count(f'{repository_url}/issues/new?template={template}') == 1, f'Listing needs one link to its suggestion form: {route}'
 
 
+class AboutLinkGroups(HTMLParser):
+    """Collect the /about/ link groups as {group key: [(attributes, visible text)]}."""
+
+    def __init__(self, text):
+        super().__init__(convert_charrefs=True)
+        self.groups, self._group, self._link = {}, None, None
+        self.feed(text)
+
+    def handle_starttag(self, tag, attrs):
+        values = dict(attrs)
+        if tag == 'section' and 'about-link-group' in values.get('class', '').split():
+            self._group = self.groups.setdefault(values.get('aria-labelledby', '').removeprefix('about-links-'), [])
+        elif tag == 'a' and self._group is not None:
+            self._link = [values, '']
+            self._group.append(self._link)
+
+    def handle_data(self, data):
+        if self._link is not None:
+            self._link[1] += data
+
+    def handle_endtag(self, tag):
+        if tag == 'a':
+            self._link = None
+        elif tag == 'section':
+            self._group = None
+
+
+def validate_about_links(output):
+    """/about/ groups site pages, downloads labelled with format and built size, and GitHub documents."""
+    for prefix in ('', '/zh'):
+        route = prefix + '/about/'
+        groups = AboutLinkGroups((output / route.lstrip('/') / 'index.html').read_text(encoding='utf-8')).groups
+        assert list(groups) == ['browse', 'download', 'methods'] and all(groups.values()), f'About link groups mismatch: {route}'
+        expected_pages = [prefix + path for path in ('/resources/', '/cases/', '/browse/', '/papers/', '/survey/')]
+        assert [values['href'] for values, _ in groups['browse']] == expected_pages, f'About browse links mismatch: {route}'
+        for values, text in groups['download']:
+            size = file_size_label((output / unquote(urlsplit(values['href']).path).lstrip('/')).stat().st_size)
+            assert 'download' in values and re.search(r'\S (JSON|ZIP) · ' + re.escape(size) + ' ↓$', text), f'About download needs format, size and download: {route} {values["href"]}'
+            name = re.sub(r'\s*(JSON|ZIP) · .*$', '', text)
+            assert not re.search(r'(?<!run )(?<!运行 )(?<!\d)\d{6,}', name), f'About download is named by a bare run number: {route} {text}'
+        for values, text in groups['methods']:
+            assert values['href'].startswith('https://github.com/') and values.get('target') == '_blank' and text.endswith('↗'), f'About GitHub link needs an external marker: {route} {values["href"]}'
+
+
 def validate_case_outputs(pages, resources):
     """Bind the script-free case subset, its full evidence, and its navigation."""
     cases = {record['id']: record for record in resources if record['kind'] == 'case-study'}
@@ -1051,6 +1096,7 @@ def main():
     validate_entry_outputs(pages, resources, papers)
     validate_feeds(OUTPUT, pages, resources, papers)
     validate_case_outputs(pages, resources)
+    validate_about_links(OUTPUT)
     validate_unique_titles(OUTPUT, pages)
     validate_artifact_links(OUTPUT, pages)
     validate_suggestion_links(pages)
