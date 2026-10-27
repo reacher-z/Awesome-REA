@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "ktool": {
+    "name": "ktool Mach-O 与 Objective-C 分析工具包",
+    "requirements": [
+      "审阅时 PyPI 上的最新版本为 k2l 2.0.0，上传于 2024-01-10，GitHub 上也有对应标签。所审 master 分支 2026-03-07 的最新提交在 pyproject.toml 中声明版本 2.1.2，该版本尚未发布。README 注明终端图形界面仍在积极开发中，还列出了 file 和 img4 工具，但所审的命令解析代码中并未定义这两个命令。",
+      "用 pip install k2l 安装：该包要求 Python 3.6.2 或更高版本，依赖 Pygments，在 Windows 上还会安装 windows-curses。README 称可在 Windows、macOS、Linux（含 ARM64）、通过 iSH 运行的 iOS、通过 Termux 运行的 Android、WebAssembly 和 Brython 上运行。除非设置 KTOOL_NO_UPDATE_CHECK，每次运行都会在后台线程中向 PyPI 查询是否有更新的 k2l。",
+      "输入是使用者自行提供的 Mach-O 文件、fat 二进制文件或内核缓存；仓库未提交任何 Mach-O 二进制文件。tests/src 中有两个小型 Objective-C 测试源码、一个权限 plist，以及 libSystem.tbd——这是 Apple SDK 中常见的那类文本存根，列出 watchOS libSystem 的导出符号，用于链接 arm64_32 测试构建；tests/build.ninja 在本地用 Xcode 的 clang、lipo 和 codesign 编译测试二进制文件。",
+      "macOS 上的 GitHub Actions 工作流会构建这些测试二进制文件，运行 tests/unit.py，并测试 insert、edit、lipo、dump 和 symbols 命令；它在所审提交上的运行结果为失败。",
+      "MIT（LICENSE，版权 2021 _kritanta）。EXTERNAL_LICENSES 说明链式修复（chained fixup）代码基于作者为 Binary Ninja 的 Mach-O 视图插件编写的代码，并附有相应的 Apache-2.0 许可证。所审来源未提及任何 AI 或 REA 用途，本条目也未安装或运行该工具。"
+    ]
   }
 }
