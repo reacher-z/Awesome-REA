@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 511](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-511-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 216](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-216-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 137](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 512](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-512-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 217](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 137](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-137-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,12 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-511 项精选资源（216 个案例）· 137 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 508。
+512 项精选资源（217 个案例）· 137 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 509。
 
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (197) · [应用](#app) (83)
-- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (23) · [协议](#protocol) (21)
+- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (21)
 
 **论文与工作流**
 
@@ -34,7 +34,7 @@
 
 **更多浏览方式**
 
-- [全部案例](https://awesomerea.org/zh/cases/) (216) · [相关合集](#related-collections) (9) · [完整仓库索引](#完整仓库索引) (3,309)
+- [全部案例](https://awesomerea.org/zh/cases/) (217) · [相关合集](#related-collections) (9) · [完整仓库索引](#完整仓库索引) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## 按任务查找
@@ -490,6 +490,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Supermodel：Real3D Pro-1000 图像生成器的初步模拟**](https://github.com/trzy/Supermodel) - 为 Supermodel 街机模拟器加入对 Real3D Pro-1000 的模拟。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/supermodel-real3d-pro1000-emulation-case/)</sub>
 - [**OpenDMCUFirm：重新实现的 Wii U DMCU 显示固件**](https://github.com/GaryOderNichts/OpenDMCUFirm) - 用 C 语言重新实现 Wii U 的 DMCU 固件。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/opendmcufirm-wii-u-dmcu-firmware-case/)</sub>
 - [**reflecticon-224：在模拟硬件上运行 Lexicon 224 混响器固件**](https://github.com/joelanders/reflecticon-224) - 模拟 Lexicon 224、224X 与 224XL 数字混响器，使其原厂固件能在浏览器页面或 JUCE 插件中运行。 <sub>案例 · 独立重建 · [完整条目](https://awesomerea.org/zh/resources/reflecticon-224-lexicon-emulation-case/)</sub>
+- [**TeddyCloud：可自托管的 Toniebox 云端替代服务器**](https://github.com/toniebox-reverse-engineering/teddycloud) - 以可自托管的 C 服务器重新实现 Toniebox 所连接的 Boxine 云服务，使盒子能在本地获取音频、设置和无线下发内容，同时由用户控制哪些数据发往厂商。 <sub>案例 · 独立重建 · 也适用：协议 · [完整条目](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)</sub>
 
 #### 工具、项目与集成
 
