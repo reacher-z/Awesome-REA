@@ -7294,5 +7294,52 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-gamengen",
+    "title": "Diffusion Models Are Real-Time Game Engines",
+    "title_zh": "扩散模型即实时游戏引擎",
+    "authors": [
+      "Dani Valevski",
+      "Yaniv Leviathan",
+      "Moab Arar",
+      "Shlomi Fruchter"
+    ],
+    "year": 2025,
+    "publication_date": null,
+    "date_precision": "year",
+    "date_basis": "Publication year stated by the official ICLR proceedings; no finer publication date is asserted. The proceedings page's citation date of 2025-05-01 is not adopted, and the arXiv dates are not substituted.",
+    "date_basis_zh": "采用 ICLR 官方论文集标明的出版年份，不推定更精确的出版日期。论文集页面 2025-05-01 的引用日期未被采用，也不以 arXiv 日期代替。",
+    "venue": "ICLR 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2408.14837",
+    "arxiv_version_reviewed": "v2",
+    "first_arxiv_date": "2024-08-27",
+    "doi": null,
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b71ecea210f7159f31e46631fe5c838f-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b71ecea210f7159f31e46631fe5c838f-Paper-Conference.pdf",
+    "code_url": null,
+    "project_url": "https://gamengen.github.io/",
+    "targets": [
+      "game"
+    ],
+    "description_en": "GameNGen learns to simulate DOOM interactively with a diffusion model instead of game code. A PPO agent first plays the game in ViZDoom, and its recorded trajectories, from random to trained play, become the training data. Stable Diffusion v1.4 is then fine-tuned to predict the next frame from the last 64 frames and actions, with noise added to context frames to keep long autoregressive rollouts stable and a fine-tuned latent decoder for detail. With 4 sampling steps it runs at 20 frames per second on one TPU-v5. The authors report next-frame PSNR of 29.43 and human raters picking the real game in 58–60% of short clips.",
+    "description_zh": "GameNGen 以扩散模型而非游戏代码交互式地模拟 DOOM。首先由 PPO 智能体在 ViZDoom 中游玩，记录下从随机策略到训练后期的轨迹作为训练数据。随后微调 Stable Diffusion v1.4，使其根据最近 64 帧画面与动作预测下一帧；训练时向上下文帧加入噪声，以保持长时间自回归生成的稳定，并微调潜空间解码器以改善细节。使用 4 步采样时，它在单个 TPU-v5 上以每秒 20 帧运行。作者报告下一帧预测 PSNR 为 29.43，人工评估者在短片段中辨认出真实游戏的比例为 58%–60%。",
+    "scope_limitations_en": "A neural approximation trained on recorded gameplay of an existing game; it recovers no game logic, source code, assets or state representation and is not an exact simulation. The model sees just over 3 seconds of history, so state outside that window survives only through on-screen cues and learned heuristics, which can be wrong; for example, repeated shooting may spawn enemies. Locations and interactions the agent never explored are simulated poorly. Training used 128 TPU-v5e devices and 70M agent frames at 320×240, plus an environment-specific reward function. PSNR is a teacher-forced single-frame measure on 2,048 held-out trajectories from 5 levels; autoregressive rollouts diverge from ground truth after a few steps. Human evaluation used 10 raters on 1.6- and 3.2-second clips and 150 later 3-second clips; the authors say they could often spot the simulation within seconds. Only DOOM was tested, and the model cannot readily create new games.",
+    "scope_limitations_zh": "这是基于已有游戏的录制游玩数据训练的神经近似模型；它不恢复任何游戏逻辑、源码、素材或状态表示，也不是精确模拟。模型只能看到略多于 3 秒的历史，超出该窗口的状态只能依靠屏幕线索和习得的启发式维持，而这些启发式可能出错，例如连续射击可能导致生成敌人。对智能体从未探索过的位置与交互，模拟效果较差。训练使用 128 个 TPU-v5e 设备、7,000 万帧 320×240 的智能体数据，以及针对该环境的奖励函数。PSNR 是在 5 个关卡、2,048 条留出轨迹上以教师强制方式测得的单帧指标；自回归生成在数步后便会偏离真实轨迹。人工评估由 10 名评估者观看 1.6 秒和 3.2 秒片段，以及 150 段较晚时刻的 3 秒片段；作者表示自己常能在几秒内认出模拟画面。只在 DOOM 上做了测试，模型也无法便捷地创建新游戏。",
+    "why_fits_en": "Adds learned, non-symbolic reconstruction of a game's interactive behavior from gameplay, contrasting with the collection's code-based world models and visual game replication research.",
+    "why_fits_zh": "补充从游戏过程学习、非符号化地重建游戏交互行为的研究，与本合集中基于代码的世界模型及视觉游戏复刻研究形成对照。",
+    "metadata_notes": "Authors and title follow the ICLR 2025 proceedings page and PDF, which list pages 73754–73776 and print “Published as a conference paper at ICLR 2025”; no DOI is listed. arXiv has two versions with the same title and authors: v1 of 2024-08-27 and v2 of 2025-04-24, whose comment reads “ICLR 2025”. The OpenReview forum P8pqeEkn1H could not be retrieved automatically because of a challenge page. The project page links the paper and videos but no code or weights, and no author-provided code release was found; unofficial reimplementations are not linked. The paper's reproducibility statement relies on open Stable Diffusion v1.4 weights, the open-source ViZDoom environment and documented training settings. Its reported 50 frames per second uses a distilled single-step model with some quality loss. Sources were read only; nothing was trained or run.",
+    "metadata_notes_zh": "作者与标题依据 ICLR 2025 论文集页面及 PDF；论文集列出第 73754–73776 页，PDF 印有“Published as a conference paper at ICLR 2025”，未列出 DOI。arXiv 有两个标题与作者相同的版本：2024-08-27 的 v1 与 2025-04-24 的 v2，后者备注为“ICLR 2025”。OpenReview 论坛 P8pqeEkn1H 因验证页面无法自动获取。项目页面链接了论文与视频，但没有代码或权重，也未找到作者提供的代码发布；本条目不链接非官方复现。论文的可复现性说明依赖开放的 Stable Diffusion v1.4 权重、开源 ViZDoom 环境及文中记录的训练设置。其报告的每秒 50 帧使用经蒸馏的单步模型，画质有所下降。本次仅阅读资料，未训练或运行任何模型。",
+    "evidence_urls": [
+      "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b71ecea210f7159f31e46631fe5c838f-Abstract-Conference.html",
+      "https://proceedings.iclr.cc/paper_files/paper/2025/file/b71ecea210f7159f31e46631fe5c838f-Paper-Conference.pdf",
+      "https://arxiv.org/abs/2408.14837",
+      "https://gamengen.github.io/"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]

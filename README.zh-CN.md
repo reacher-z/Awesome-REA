@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 134](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-134-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 492](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-492-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 208](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-208-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 135](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-135-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-492 项精选资源（208 个案例）· 134 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 489。
+492 项精选资源（208 个案例）· 135 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 489。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (134) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
+- [论文](#papers) (135) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (32)
 
 **更多浏览方式**
 
@@ -640,14 +640,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**134 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
+**135 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (9) · [反编译](#papers-decompilation) (57) · [网站](#papers-website-reconstruction) (22)
-- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
+- [游戏](#papers-game-reconstruction) (9) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
 - [协议](#papers-protocol-analysis) (13)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -769,6 +769,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Tycho：面向 ARC-AGI-3 的程序化世界模型主动抽象**](https://arxiv.org/abs/2607.28287) - Tycho 根据陌生 ARC-AGI-3 游戏中的动作与观察历史，构建可编辑的 Python 模型，描述游戏状态、状态转移、渲染与结果。 <sub>arXiv 2026 · 预印本 · Jens Lehmann 等 · [PDF](https://arxiv.org/pdf/2607.28287v1) · [代码](https://github.com/NIMI-research/Tycho) · [完整条目](https://awesomerea.org/zh/papers/paper-tycho/)</sub>
 - [**RevengeBench：通过行为实验逆向恢复代码形式的策略**](https://arxiv.org/abs/2606.26094) - 使用五种游戏环境中的 75 个合成策略，测试智能体能否通过行为轨迹和自行设计的对手探测恢复可执行决策策略，并衡量留出状态上的动作一致性及后续对抗价值。 <sub>arXiv 2026 · 预印本 · Babak Rahmani 等 · [PDF](https://arxiv.org/pdf/2606.26094v1) · [代码](https://github.com/bethgelab/revenge-bench) · [完整条目](https://awesomerea.org/zh/papers/paper-revengebench/)</sub>
 - [**SPRITE：从静态设计稿重建可用于游戏引擎的界面**](https://doi.org/10.1145/3772363.3798742) - 通过层级化 YAML、视觉定位、素材提取和 Unity UXML／USS 生成，将游戏界面截图转化为可编辑的引擎资源，并在精选游戏界面基准上评估，由三位资深 UI／UX 设计师进行审阅。 <sub>CHI EA 2026 (poster/extended abstract) · 会议论文 · Yunshu Bai 等 · [PDF](https://baiyunshu.github.io/sprite.github.io/Source/chiea26-516.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-sprite-game-ui/)</sub>
+- [**扩散模型即实时游戏引擎**](https://proceedings.iclr.cc/paper_files/paper/2025/hash/b71ecea210f7159f31e46631fe5c838f-Abstract-Conference.html) - GameNGen 以扩散模型而非游戏代码交互式地模拟 DOOM。 <sub>ICLR 2025 · 会议论文 · Dani Valevski 等 · [PDF](https://proceedings.iclr.cc/paper_files/paper/2025/file/b71ecea210f7159f31e46631fe5c838f-Paper-Conference.pdf) · [完整条目](https://awesomerea.org/zh/papers/paper-gamengen/)</sub>
 - [**WorldCoder：通过编写代码并与环境交互构建世界模型的基于模型的语言智能体**](https://papers.nips.cc/paper_files/paper/2024/hash/820c61a0cd419163ccbd2c33b268816e-Abstract-Conference.html) - WorldCoder 根据环境交互和自然语言目标学习可执行的 Python 状态转移与奖励模型，利用已记录经验和乐观规划约束修正代码，并在 Sokoban、MiniGrid 与 ALFWorld 中研究迁移和任务求解。 <sub>NeurIPS 2024 · 会议论文 · Hao Tang 等 · [PDF](https://papers.neurips.cc/paper_files/paper/2024/file/820c61a0cd419163ccbd2c33b268816e-Paper-Conference.pdf) · [代码](https://github.com/haotang1995/WorldCoder) · [完整条目](https://awesomerea.org/zh/papers/paper-worldcoder/)</sub>
 - [**通过蒙特卡洛树搜索引导大语言模型生成代码世界模型**](https://proceedings.neurips.cc/paper_files/paper/2024/hash/6f479ea488e0908ac8b1b37b27fd134c-Abstract-Conference.html) - GIF-MCTS 根据环境的自然语言描述与离线状态转移轨迹生成可执行的 Python 状态转移和奖励模型，并利用预测反馈生成、改进和修复代码。 <sub>NeurIPS 2024 · 会议论文 · Nicola Dainese 等 · [PDF](https://proceedings.neurips.cc/paper_files/paper/2024/file/6f479ea488e0908ac8b1b37b27fd134c-Paper-Conference.pdf) · [代码](https://github.com/nicoladainese96/code-world-models) · [完整条目](https://awesomerea.org/zh/papers/paper-code-world-models/)</sub>
 
