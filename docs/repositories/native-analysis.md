@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**850 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -344,7 +344,6 @@ These are automatically discovered projects, not individually curated or tested 
 - [GaloisInc/grease](https://github.com/GaloisInc/grease) — CLI tool, Ghidra plug-in, and Haskell library for analyzing binaries using under-constrained symbolic execution **[134 stars]**
 - [0xdea/haruspex](https://github.com/0xdea/haruspex) — Vulnerability research assistant that extracts pseudocode from the IDA Hex-Rays decompiler. **[133 stars]**
 - [darx0r/Stingray](https://github.com/darx0r/Stingray) — IDAPython plugin for finding function strings recursively **[133 stars]**
-- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — Ghidra processor module adding support for the Allegrex CPU (PSP) **[132 stars]**
 - [x86byte/LummaC2-Stealer](https://github.com/x86byte/LummaC2-Stealer) — LummaC2 extracted binaries by reversing &amp; LummaC2 Stealer Analysis **[130 stars]**
 - [vgrichina/berrry-wine](https://github.com/vgrichina/berrry-wine) — Run real Windows 98 apps and games in your browser. An x86 emulator and Win32 layer written directly in WebAssembly Text, no OS image, no source ports. **[129 stars]**
 - [elliiot/ghidra\_darknight](https://github.com/elliiot/ghidra_darknight) — DarkNight theme for Ghidra **[128 stars]**

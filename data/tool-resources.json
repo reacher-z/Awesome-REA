@@ -11759,5 +11759,41 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "ghidra-allegrex",
+    "name": "ghidra-allegrex",
+    "url": "https://github.com/kotcrab/ghidra-allegrex",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game",
+      "binary",
+      "firmware"
+    ],
+    "description_en": "Ghidra processor module for the Allegrex CPU of the PlayStation Portable, derived from Ghidra's MIPS module. It adds Allegrex-specific instructions, VFPU disassembly and basic decompilation, the PSP calling convention, and an ELF loader that detects PSP executables and applies the PSP-specific type A and B relocation sections, with rebasing after import. Bundled scripts import and export PPSSPP .sym function-label files, and an exporter writes kernel modules as relocatable object files for linking.",
+    "description_zh": "面向 PlayStation Portable 所用 Allegrex CPU 的 Ghidra 处理器模块，由 Ghidra 的 MIPS 模块衍生而来。它补充了 Allegrex 特有指令、VFPU 指令的反汇编与基础反编译、PSP 调用约定，以及可识别 PSP 可执行文件的 ELF 加载器；加载器会处理 PSP 特有的 A 类和 B 类重定位节，并支持导入后重新设定基址。附带的脚本可导入和导出 PPSSPP 的 .sym 函数标签文件，另有导出器可把内核模块写成可供链接的可重定位目标文件。",
+    "evidence_url": "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v21.5, published 2026-10-25, built for Ghidra 12.2 and requiring JVM 25; the reviewed master commit is that tag. Each release zip targets one Ghidra version, so v21.4 of 2026-08-25 remains the build for Ghidra 12.1.3 and 12.1.4. Extension v19 and later install through Ghidra's File > Install Extensions; v18 and earlier are unpacked into Ghidra's Processors directory.",
+      "Source builds set GHIDRA_INSTALL_DIR and run the Gradle wrapper's buildExtension task, compiling Kotlin and Java against the local Ghidra installation with a JVM 25 toolchain. CI builds the extension against Ghidra 12.2 on Ubuntu and uploads the zip; the repository has no automated tests. The two PPSSPP scripts are written in Ghidra's Python 2 (Jython) dialect, and the .sym file comes from the user's own PPSSPP debugging session.",
+      "Inputs are PSP executables in ELF/PRX form, kernel modules or raw binaries that the user supplies; the README notes that game executables must already be decrypted, and the repository contains no PSP software or firmware. Raw binaries need the processor and image base set by hand, and some kernel modules need the reboot.bin type B relocation option at import.",
+      "The README lists limits: almost every VFPU operation decompiles to a function call such as vadd_q(...), the vpfxs, vpfxt and vpfxd prefix semantics are not modeled, vfim.s shows its half-float operand as an integer, object files cannot be rebased after import, and functions with 64-bit arguments need custom storage because of a Ghidra issue. Nothing was imported or analyzed for this record.",
+      "Apache-2.0; the README says it is derived from Ghidra's Apache-2.0 MIPS module and that type B relocation parsing is based on prxtool under AFL v2.0. The project's own sources do not mention REA. Separately, REA's PSP static ELF guide, listed in this collection, uses it as a caller-installed extension and pairs v21.4 with Ghidra 12.1.3."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/README.md#L73-L81",
+      "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/CHANGES.md",
+      "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/build.gradle",
+      "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/.github/workflows/build.yml",
+      "https://github.com/kotcrab/ghidra-allegrex/tree/abcf97659260b11a9a4781ff72fff30ede2f073f/ghidra_scripts",
+      "https://github.com/kotcrab/ghidra-allegrex/blob/abcf97659260b11a9a4781ff72fff30ede2f073f/LICENSE",
+      "https://github.com/kotcrab/ghidra-allegrex/releases/tag/v21.5",
+      "https://github.com/kotcrab/ghidra-allegrex/releases/tag/v21.4",
+      "https://github.com/morluto/rea/blob/c12d9eda87aa5a022ee7e18ea96d8d03bfd12e96/docs/ghidra-psp.md#L28-L37"
+    ]
   }
 ]

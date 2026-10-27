@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -344,7 +344,6 @@
 - [GaloisInc/grease](https://github.com/GaloisInc/grease) — 用于通过欠约束符号执行分析二进制文件的 CLI 工具、Ghidra 插件和 Haskell 库。 **[134 星标]**
 - [0xdea/haruspex](https://github.com/0xdea/haruspex) — 从 IDA Hex-Rays 反编译器提取伪代码的漏洞研究助手。 **[133 星标]**
 - [darx0r/Stingray](https://github.com/darx0r/Stingray) — 递归查找函数字符串的 IDAPython 插件 **[133 星标]**
-- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — 为 Ghidra 添加 Allegrex CPU（PSP）支持的处理器模块 **[132 星标]**
 - [x86byte/LummaC2-Stealer](https://github.com/x86byte/LummaC2-Stealer) — 通过逆向提取的 LummaC2 二进制文件及 LummaC2 窃密软件分析 **[130 星标]**
 - [vgrichina/berrry-wine](https://github.com/vgrichina/berrry-wine) — 在浏览器中运行真正的 Windows 98 应用和游戏。以 WebAssembly Text 直接编写的 x86 模拟器与 Win32 层，无需操作系统镜像，也不是源码移植。 **[129 星标]**
 - [elliiot/ghidra\_darknight](https://github.com/elliiot/ghidra_darknight) — Ghidra 的 DarkNight 主题 **[128 星标]**
