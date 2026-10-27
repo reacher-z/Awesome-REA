@@ -12456,5 +12456,39 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
     ]
+  },
+  {
+    "id": "xpeviewer",
+    "name": "XPEViewer",
+    "url": "https://github.com/horsicq/XPEViewer",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Qt-based PE file viewer and editor for Windows, Linux and macOS by horsicq, the author of the catalog's Detect It Easy. Its PE view parses the DOS, NT and optional headers, sections, normal, delay-load and bound imports, exports, resources including manifests, version data and string tables, relocations, TLS callbacks, exception, debug and load-configuration data, certificates, the Rich header and .NET metadata tables. Hex, disassembly, strings, entropy, hash, memory-map and extractor views sit beside Detect It Easy, Nauz File Detector and YARA scans and an optional VirusTotal lookup.",
+    "description_zh": "horsicq 开发的基于 Qt 的 PE 文件查看与编辑工具，支持 Windows、Linux 和 macOS；作者也是本目录所收录 Detect It Easy 的作者。其 PE 视图可解析 DOS 头、NT 头和可选头、节区、普通导入、延迟加载导入和绑定导入、导出、资源（包括清单、版本信息和字符串表）、重定位、TLS 回调、异常、调试和加载配置数据、证书、Rich 头以及 .NET 元数据表。另有十六进制、反汇编、字符串、熵、哈希、内存映射和提取器视图，并集成 Detect It Easy、Nauz File Detector 和 YARA 扫描，以及可选的 VirusTotal 查询。",
+    "evidence_url": "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest full release at review: 0.05, published 2024-07-02, with a Linux AppImage, Debian 10–12 and Ubuntu 14.04–24.04 .deb packages, macOS x86_64 and Qt 6 arm64 packages, Windows x86, x64 and XP portable zips and a source tarball. Release 0.06 (2025-12-22) is marked as a prerelease with no attached files; the rolling Beta prerelease carries 0.06 Ubuntu 22.04/24.04 packages and Windows portable zips, and release_version.txt on the reviewed master commit reads 0.06.",
+      "Source builds need a recursive clone of 56 horsicq submodules, including Detect-It-Easy, signatures and XYara. docs/BUILD.md covers Docker, a Debian package script, autotools, qmake6 with Qt 6, CMake, macOS with Qt 5.15.2, Windows 7–10 with Visual Studio 2019 and Qt 5.15.2, and Windows XP with Visual Studio 2013 and Qt 5.6.3.",
+      "Supply the PE file yourself. The main window opens files for writing when it can and falls back to read-only, so editing changes the opened file; work on a copy. The VirusTotal view uses that online service.",
+      "MIT (LICENSE). The README itself is brief: download, run and build links, a changelog and screenshots; the parsed structures listed here come from the PE widget source in the pinned FormatWidgets submodule. The main repository commits no sample binaries, and submodule contents were not reviewed beyond that widget. No files were opened for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/docs/BUILD.md",
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/changelog.txt",
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/.gitmodules",
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/gui_source/guimainwindow.cpp",
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/release_version.txt",
+      "https://github.com/horsicq/XPEViewer/blob/828a0fbe8ba5586cec173609cb33c6f1a4f754df/LICENSE",
+      "https://github.com/horsicq/FormatWidgets/blob/8de1efff3cf322943fb098dda6baf2dbbd9fea70/PE/pewidget.cpp",
+      "https://github.com/horsicq/XPEViewer/releases/tag/0.05",
+      "https://github.com/horsicq/XPEViewer/releases/tag/0.06",
+      "https://github.com/horsicq/XPEViewer/releases/tag/Beta"
+    ]
   }
 ]
