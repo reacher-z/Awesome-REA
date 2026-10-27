@@ -7321,5 +7321,14 @@
       "需要一台经 USB 连接或已配对 Wi-Fi 的 iOS 设备。列出和结束进程、启动应用及模拟定位都需要先挂载开发者磁盘映像；-I 选项使用使用者自备的签名文件与 .dmg 映像（例如来自 Xcode）进行挂载。拷贝应用数据经由 house_arrest 服务，因此只适用于沙盒允许访问的应用。",
       "GitHub 未检测到许可证，仓库根目录也没有许可证文件，因此工具的使用条款并未说明；process 目录附有 Hex-Rays 2018 年的 MIT 许可证，适用于其中的 Instruments 客户端代码，misc/InstrumentsPlugin.h 注明出自 codecolorist 的 FreeTheSandbox。本次审阅未对任何设备运行该工具；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "dalvikus": {
+    "name": "dalvikus Android 逆向与 smali 编辑工具",
+    "requirements": [
+      "审阅时最新版本为 v1.0.13，发布于 2025-10-16，提供 macOS dmg、Windows exe 与 msi 安装包以及 Linux amd64 deb 包。所审阅的 master 提交（2026-02-16）比该版本多一个提交，修改了文件树的拖放功能；README 提醒截图可能随项目演进而变化。",
+      "README 要求在 Windows、Linux 或 macOS 上使用 JDK 11 或更高版本；发布工作流用 Java 17 打包，从源码运行则执行 ./gradlew :composeApp:run。ADB 部署和 APK 签名需要包含 platform-tools 与 build-tools 的 Android SDK，可通过 ANDROID_HOME 或 ANDROID_SDK_ROOT 定位，也可在应用设置中指定；签名使用使用者自备的密钥库。",
+      "输入为使用者自备的 APK 或 DEX 文件。固定版本的依赖库包括 smali/baksmali 3.0.9、JADX 1.5.2、CFR 0.152、Vineflower 1.11.1、dex2jar 2.4.32、apktool 2.12.0、apksig 和 ddmlib；代码树中提交了 Gradle wrapper JAR、由 ANTLR 生成的 Java 词法与语法分析器源码以及 Monaspace Neon Frozen 字体文件，界面提供英语、德语、中文和印地语。",
+      "采用 GPL-3.0 许可；README 称该工具仅用于合乎道德的用途。未发现测试套件，CI 只负责打包发布。本次未构建或运行该应用，也未反编译、修改或部署任何 APK。"
+    ]
   }
 }
