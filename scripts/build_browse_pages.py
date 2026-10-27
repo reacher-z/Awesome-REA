@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from html import escape
 from pathlib import Path
+import re
 import shutil
 from urllib.parse import urlsplit
 
@@ -79,11 +80,16 @@ def repository_card(record: dict, language: str, use_pro: bool) -> str:
     license_name = record.get('license')
     if not isinstance(license_name, str) or not license_name.strip() or license_name.upper() == 'NOASSERTION':
         license_name = '许可证未识别' if zh else 'License not identified'
+    # The recorded GitHub push time is a collection-time snapshot, shown to the month without a maintenance judgement.
+    pushed = record.get('pushed_at')
+    pushed_html = (f'<span class="source-card-pushed" title="{("采集时记录的最近推送时间快照" if zh else "Last push recorded at collection time")}">'
+                   f'{("最近推送" if zh else "Last push")} <time datetime="{escape(pushed, quote=True)}">{pushed[:7]}</time></span>'
+                   if isinstance(pushed, str) and re.fullmatch(r'\d{4}-\d{2}-\d{2}T[^<>"&]*', pushed) else '')
     return f'''<article class="source-card browse-repository" id="{escape(record['id'], quote=True)}" data-record-id="{escape(record['id'], quote=True)}">
   <div class="source-card-head"><h2><a class="source-title-link" href="{external_url(record['url'])}" target="_blank" rel="noopener">{title}{icon('external', use_pro)}</a></h2>{star_html}</div>
   <p class="source-card-description">{escape(description)}</p>
 {related_links(record, language)}
-  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a><span class="source-card-license">{escape(license_name)}</span></div>
+  <div class="source-card-footer"><a href="{external_url(record.get('readme_url') or record['url'])}" target="_blank" rel="noopener">README ↗</a>{pushed_html}<span class="source-card-license">{escape(license_name)}</span></div>
 </article>'''
 
 
@@ -140,8 +146,8 @@ def build_browse_pages(
         curated_link = '/zh/resources/' if zh else '/resources/'
         scope_note = (f'共扫描 {len(scanned):,} 个仓库，提供 {len(records):,} 个浏览条目；{out_of_scope} 个超出范围的条目{unavailable_clause(unavailable, zh)}仍保留在完整 JSON 中。'
                       if zh else f'{len(records):,} repositories are available to browse from {len(scanned):,} successful README scans. The {out_of_scope} out-of-scope records{unavailable_clause(unavailable, zh)} remain in the full JSON.')
-        provenance = ('这是自动发现的仓库索引，未逐项精选或运行验证。分类依据元数据；简介提供 AI 辅助中英翻译。星标为采集时快照。'
-                      if zh else 'This automatically discovered repository index has not been individually curated or execution-tested. Categories come from metadata; descriptions have AI-assisted translations. Stars are collection-time snapshots.')
+        provenance = ('这是自动发现的仓库索引，未逐项精选或运行验证。分类依据元数据；简介提供 AI 辅助中英翻译。星标和最近推送月份均为采集时快照，不代表项目是否仍在维护。'
+                      if zh else 'This automatically discovered repository index has not been individually curated or execution-tested. Categories come from metadata; descriptions have AI-assisted translations. Stars and last-push months are collection-time snapshots and do not indicate whether a project is maintained.')
         if published:
             scope_note = (f'此发布选集包含 {len(scanned):,} 条已采集仓库记录，提供 {len(records):,} 个浏览条目；{out_of_scope} 个范围排除条目{unavailable_clause(unavailable, zh)}保留在发布 JSON 中。各原始扫描的累计数量保留在 JSON 来源信息中。'
                           if zh else f'This published selection contains {len(scanned):,} captured repository records and {len(records):,} browsable entries. The {out_of_scope} scope-excluded entries{unavailable_clause(unavailable, zh)} remain in the published JSON. Original capture totals remain separate in the JSON provenance.')

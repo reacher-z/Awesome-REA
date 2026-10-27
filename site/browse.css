@@ -38,6 +38,7 @@
 .browse-github-fallback{font:700 12px/22px var(--sans);text-align:center}
 .browse-text-arrow{display:inline-block;margin-left:6px;font-size:13px;color:var(--steel)}
 .browse-repository .source-card-footer{margin-top:18px;padding-top:13px;border-top:1px solid var(--line)}
+.browse-repository .source-card-pushed{white-space:nowrap;font-variant-numeric:tabular-nums}
 /* Scope static reading rules here; homepage cards keep their own layout. */
 .browse-main .card-description,.browse-main .source-card-description{max-width:68ch;font-size:16px;line-height:1.8;color:var(--body)}
 .browse-main .requirements ul{max-width:68ch;font-size:15px;line-height:1.8;color:var(--body)}
