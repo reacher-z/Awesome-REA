@@ -7355,5 +7355,66 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-sketch2code",
+    "title": "Sketch2Code: Evaluating Vision-Language Models for Interactive Web Design Prototyping",
+    "title_zh": "Sketch2Code：评估视觉语言模型的交互式网页设计原型生成能力",
+    "authors": [
+      "Ryan Li",
+      "Yanzhe Zhang",
+      "Diyi Yang"
+    ],
+    "year": 2025,
+    "publication_date": "2025-04",
+    "date_precision": "month",
+    "date_basis": "The ACL Anthology record gives the proceedings month as April 2025; Crossref records only the year. The conference ran from 29 April to 4 May 2025, and no publication day is inferred.",
+    "date_basis_zh": "ACL Anthology 记录的论文集出版月份为 2025 年 4 月；Crossref 只记录年份。会议于 2025 年 4 月 29 日至 5 月 4 日举行，本条目不推定具体出版日。",
+    "venue": "NAACL 2025",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2410.16232",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-10-21",
+    "doi": "10.18653/v1/2025.naacl-long.198",
+    "citation": {
+      "container_title": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+      "publisher": "Association for Computational Linguistics",
+      "pages": "3921-3955",
+      "sources": [
+        "https://aclanthology.org/2025.naacl-long.198/",
+        "https://api.crossref.org/works/10.18653/v1/2025.naacl-long.198"
+      ]
+    },
+    "url": "https://aclanthology.org/2025.naacl-long.198/",
+    "pdf_url": "https://aclanthology.org/2025.naacl-long.198.pdf",
+    "code_url": "https://github.com/SALT-NLP/Sketch2Code",
+    "project_url": "https://salt-nlp.github.io/Sketch2Code-Project-Page/",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Sketch2Code benchmarks vision-language models on turning rough hand-drawn wireframe sketches into HTML webpage prototypes. Crowd annotators drew 731 sketches of 484 real-world webpages from the Design2Code test set. Ten models, eight commercial and two 8B open-source, generate pages directly and in two multi-turn settings with a GPT-4o simulated user: following its feedback, or asking it clarification questions. Outputs are scored by Design2Code visual similarity and a new IoU-based layout similarity over component types such as text blocks, images, navigation bars, forms and buttons. Claude 3.5 Sonnet and GPT-4o lead single-turn layout similarity, and feedback rounds help commercial models more than question asking does.",
+    "description_zh": "Sketch2Code 评测视觉语言模型把粗略手绘线框草图转换为 HTML 网页原型的能力。众包标注者为来自 Design2Code 测试集的 484 个真实网页绘制了 731 张草图。十个模型（八个商业模型与两个 8B 开源模型）既直接生成页面，也在两种与 GPT-4o 模拟用户进行的多轮场景中工作：遵循其反馈，或向其提出澄清问题。输出依据 Design2Code 视觉相似度，以及基于文本块、图像、导航栏、表单与按钮等组件类型的新 IoU 布局相似度评分。Claude 3.5 Sonnet 与 GPT-4o 在单轮布局相似度上领先，而反馈轮次对商业模型的帮助大于提问方式。",
+    "scope_limitations_en": "The generated pages are prototypes scored by visual and layout similarity to reference screenshots, not recovered source code; behavior, interactivity and code equivalence are not evaluated, and page images are replaced with a placeholder. Sketches deliberately omit most text and styling, so similarity scores are low in absolute terms, with best single-turn layout similarity around 22%. The simulated user is GPT-4o, judged faithful in 83.3% of feedback and accurate in 86.7% of answers by human annotators. Only 8B open-source models were run, and a multi-turn example needs 40,000 to 160,000 input tokens. The user study interviewed eight UI/UX experts. Results describe 2024 model versions.",
+    "scope_limitations_zh": "生成的页面是原型，依据与参考截图的视觉和布局相似度评分，并非恢复的源代码；论文不评估行为、交互性或代码等价性，页面中的图片也被替换为占位图。草图有意省略了大部分文本与样式，因此相似度绝对值较低，单轮布局相似度最高约为 22%。模拟用户由 GPT-4o 担任，人工标注认为其 83.3% 的反馈可靠、86.7% 的回答准确。开源模型只运行了 8B 规模，每个多轮示例需要 40,000 至 160,000 个输入词元。用户研究访谈了八位 UI／UX 专家。结果对应 2024 年的模型版本。",
+    "why_fits_en": "Adds sketch-based and multi-turn interactive webpage generation, complementing the screenshot- and design-based website reconstruction benchmarks in this section.",
+    "why_fits_zh": "补充基于草图与多轮交互的网页生成研究，与本节基于截图和设计稿的网站重建基准互补。",
+    "metadata_notes": "The ACL Anthology page, final PDF and Crossref establish the three-author order, DOI, NAACL 2025 Volume 1 proceedings and pages 3921–3955. Reviewed arXiv v1 (2024-10-21), the only version, commented “preprint, 9 pages”; the description follows the 35-page proceedings PDF. The paper links its code and data through the project page. At the reviewed 21dfd1d commit, SALT-NLP/Sketch2Code is MIT-licensed, pins Python packages including torch 2.4.0, transformers 4.44.1 and playwright 1.43.0, and requires OpenAI, Anthropic or Gemini API keys for the commercial models. The Hugging Face dataset card declares ODC-By, and the paper says the source webpages were collected by Design2Code under ODC-By. No data was downloaded, and no code or experiments were run.",
+    "metadata_notes_zh": "ACL Anthology 页面、最终 PDF 与 Crossref 确认三位作者顺序、DOI、NAACL 2025 第 1 卷论文集及第 3921–3955 页。审阅了 arXiv v1（2024-10-21），即唯一版本，注释为“preprint, 9 pages”；简介依据 35 页的论文集 PDF。论文通过项目页面链接代码与数据。在所审阅的 21dfd1d 提交中，SALT-NLP/Sketch2Code 采用 MIT 许可证，固定了 torch 2.4.0、transformers 4.44.1 与 playwright 1.43.0 等 Python 依赖版本，并需要 OpenAI、Anthropic 或 Gemini API 密钥来运行商业模型。Hugging Face 数据卡声明 ODC-By 许可，论文也说明源网页由 Design2Code 以 ODC-By 许可收集。本次未下载数据，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://aclanthology.org/2025.naacl-long.198/",
+      "https://aclanthology.org/2025.naacl-long.198.pdf",
+      "https://aclanthology.org/2025.naacl-long.198.bib",
+      "https://api.crossref.org/works/10.18653/v1/2025.naacl-long.198",
+      "https://arxiv.org/abs/2410.16232v1",
+      "https://salt-nlp.github.io/Sketch2Code-Project-Page/",
+      "https://github.com/SALT-NLP/Sketch2Code/blob/21dfd1dd5d14033ac482167e29bcf984fa9fd310/README.md",
+      "https://github.com/SALT-NLP/Sketch2Code/blob/21dfd1dd5d14033ac482167e29bcf984fa9fd310/LICENSE",
+      "https://github.com/SALT-NLP/Sketch2Code/blob/21dfd1dd5d14033ac482167e29bcf984fa9fd310/requirements.txt",
+      "https://huggingface.co/datasets/SALT-NLP/Sketch2Code/blob/ce28bf4e62f9242cde5c5beaa8775efccfa8502b/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
