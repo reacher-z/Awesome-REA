@@ -12616,5 +12616,41 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "flowdroid",
+    "name": "FlowDroid",
+    "url": "https://github.com/secure-software-engineering/FlowDroid",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Static data-flow (taint) analysis for Android apps and Java programs, built on Soot and usable as a command-line tool or as Maven libraries. Given an APK, the Android SDK platforms directory and a definition of sources and sinks, it models component lifecycles and callbacks to build a call graph and reports flows from sensitive sources to sinks; the bundled SourcesAndSinks.txt is a starting point for privacy leaks, and StubDroid summaries model library methods. Options cover inter-component flows from a supplied ICC model file, path reconstruction, implicit flows, reflection and timeouts that trade precision and recall for speed, and the analysis is described in the PLDI 2014 paper “FlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps”.",
+    "description_zh": "面向 Android 应用和 Java 程序的静态数据流（污点）分析工具，基于 Soot 构建，可作为命令行工具使用，也可作为 Maven 库集成。输入 APK、Android SDK 的 platforms 目录以及源点和汇点定义后，它会对组件生命周期和回调建模以构建调用图，并报告从敏感源点流向汇点的数据流；随附的 SourcesAndSinks.txt 可作为分析隐私泄露的起点，StubDroid 摘要则用于对库方法建模。选项涵盖依据用户提供的 ICC 模型文件分析组件间数据流、路径重建、隐式流、反射，以及用精度和召回率换取速度的超时设置；其分析方法发表于 PLDI 2014 论文《FlowDroid: precise context, flow, field, object-sensitive and lifecycle-aware taint analysis for Android apps》。",
+    "evidence_url": "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/README.MD",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.15.1, tagged 2026-02-23 and published to Maven Central under de.fraunhofer.sit.sse.flowdroid, including soot-infoflow-cmd-2.15.1-jar-with-dependencies.jar for the command line. GitHub releases since v2.14 attach no files, the last with JARs being v2.13 of 2024-04-02, and the README's Maven example still names 2.12.0. The reviewed develop commit of 2026-09-28 declares 2.16.0-SNAPSHOT.",
+      "The command line needs an APK, the Android SDK platforms directory and a sources-and-sinks file, and users supply the apps they analyze. The README says FlowDroid runs on Windows, macOS and Linux and warns that large apps can take very long; options skip static-field or exceptional flows, and additive timeouts for the data-flow, callback-collection and result stages return partial results.",
+      "Building needs Maven, a JDK and the current Soot snapshot; the README asks for JDK 11 or above, but the reviewed pom.xml compiles for Java 17 against Soot 4.8.0-SNAPSHOT. The README says the full test suite takes about 30 minutes and also needs JDK 8 with its rt.jar, the ANDROID_JARS variable and the DroidBench submodule, a separate repository of benchmark apps.",
+      "The repository commits 25 APKs as test inputs: test apps named after the cases they exercise, such as SourceToSink1.apk and ThreadRunnable.apk, under soot-infoflow-android/testAPKs and soot-infoflow-integration/testAPKs, the deliberately vulnerable InsecureBank.apk, and one hash-named APK whose manifest identifies another developer's app (com.RZStudio.cube). soot-infoflow-android/lib holds JUnit, Hamcrest and protobuf-java JARs.",
+      "LGPL-2.1; the README notes that modified versions must be shared under the LGPL. Results depend on the configuration and on the chosen sources and sinks. No app was analyzed for this entry, and the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/pom.xml",
+      "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/.gitmodules",
+      "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/soot-infoflow-cmd/src/soot/jimple/infoflow/cmd/MainClass.java",
+      "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/soot-infoflow-android/SourcesAndSinks.txt",
+      "https://github.com/secure-software-engineering/FlowDroid/tree/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/soot-infoflow-android/testAPKs",
+      "https://github.com/secure-software-engineering/FlowDroid/tree/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/soot-infoflow-integration/testAPKs",
+      "https://github.com/secure-software-engineering/FlowDroid/blob/9bf10349ec6fdceebbcfda2d261a1f23b9e2e439/LICENSE",
+      "https://github.com/secure-software-engineering/FlowDroid/releases/tag/v2.15.1",
+      "https://github.com/secure-software-engineering/FlowDroid/releases/tag/v2.13",
+      "https://repo1.maven.org/maven2/de/fraunhofer/sit/sse/flowdroid/soot-infoflow-cmd/2.15.1/",
+      "https://doi.org/10.1145/2594291.2594299"
+    ]
   }
 ]
