@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 514](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 138](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 514](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 218](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 139](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-139-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-514 项精选资源（218 个案例）· 138 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 511。
+514 项精选资源（218 个案例）· 139 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 511。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (138) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
+- [论文](#papers) (139) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (38)
 
 **更多浏览方式**
 
@@ -662,14 +662,14 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 <a id="papers"></a>
 ## 论文
 
-**138 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
+**139 篇论文**，按主题分组，组内按年份从新到旧排列。每行列出摘要首句、英文原题、发表场所、状态与第一作者，中文标题为译名。
 
 [浏览论文目录](https://awesomerea.org/zh/papers/) · [完整书目 JSON](data/papers.json) · [推荐论文](https://github.com/reacher-z/Awesome-REA/issues/new?template=paper.yml)
 
 **按主题**
 
 - [智能体评测](#papers-agent-evaluation) (10) · [反编译](#papers-decompilation) (59) · [网站](#papers-website-reconstruction) (23)
-- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (13)
+- [游戏](#papers-game-reconstruction) (8) · [应用](#papers-app-reconstruction) (12) · [固件](#papers-firmware-analysis) (14)
 - [协议](#papers-protocol-analysis) (13)
 
 每篇论文的“完整条目”提供完整摘要、研究范围与局限、全部作者和引文。部分论文也出现在精选资源目录中，两者数量不可相加。
@@ -831,6 +831,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**面向 Linux 固件二进制的用户空间依赖感知重托管**](https://www.ndss-symposium.org/ndss-paper/user-space-dependency-aware-rehosting-for-linux-based-firmware-binaries/) - FIRMWELL 通过运行初始化进程、定位阻塞依赖并修补缺失的系统层行为，重建 Linux 固件服务的执行环境。 <sub>原题：*User-Space Dependency-Aware Rehosting for Linux-Based Firmware Binaries* · NDSS 2026 · 会议论文 · Chuan Qin 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2026-s249-paper.pdf) · [代码](https://github.com/qc9c/Firmwell) · [完整条目](https://awesomerea.org/zh/papers/paper-firmwell/)</sub>
 - [**使用 Penguin 进行以目标为中心的固件重托管**](https://www.ndss-symposium.org/ndss-paper/auto-draft-634/) - Penguin 以提取出的固件文件系统为输入，通过静态分析生成可编辑的仿真变换配置（如文件修改、伪文件、NVRAM 值和网络接口），用于重托管嵌入式 Linux 固件。 <sub>原题：*Target-Centric Firmware Rehosting with Penguin* · Workshop on Binary Analysis Research (BAR) 2025 · 会议论文 · Andrew Fasano 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/bar2025-final10.pdf) · [代码](https://github.com/rehosting/penguin) · [完整条目](https://awesomerea.org/zh/papers/paper-penguin/)</sub>
 - [**Fuzzware：利用精确的 MMIO 建模提升固件模糊测试效果**](https://www.usenix.org/conference/usenixsecurity22/presentation/scharnowski) - 重托管单体 ARM Cortex-M 固件以开展模糊测试，利用局部符号执行为内存映射 I/O 访问建模，使输入变异集中于影响固件逻辑的值。 <sub>原题：*Fuzzware: Using Precise MMIO Modeling for Effective Firmware Fuzzing* · USENIX Security 2022 · 会议论文 · Tobias Scharnowski 等 · [PDF](https://www.usenix.org/system/files/sec22-scharnowski.pdf) · [代码](https://github.com/fuzzware-fuzzer/fuzzware) · [完整条目](https://awesomerea.org/zh/papers/paper-fuzzware/)</sub>
+- [**基于无效性引导知识推断的自动化固件仿真**](https://www.usenix.org/conference/usenixsecurity21/presentation/zhou) - µEmu 将未知外设寄存器表示为符号，对固件映像进行符号执行，从而在没有真实硬件或人工编写外设模型的情况下仿真 ARM Cortex-M 微控制器固件。 <sub>原题：*Automatic Firmware Emulation through Invalidity-guided Knowledge Inference* · USENIX Security 2021 · 会议论文 · Wei Zhou 等 · [PDF](https://www.usenix.org/system/files/sec21-zhou.pdf) · [代码](https://github.com/MCUSec/uEmu/tree/c82fc0a36a28ab5f96001b0682adcf9783e20346) · [完整条目](https://awesomerea.org/zh/papers/paper-uemu/)</sub>
 - [**FirmAE：面向动态分析的物联网固件大规模仿真**](https://doi.org/10.1145/3427228.3427294) - 在 Firmadyne 基础上，针对启动、网络、NVRAM、内核行为及其他运行失败加入经验性干预，使 Linux 路由器与 IP 摄像机固件的 Web 服务能够运行并接受动态分析。 <sub>原题：*FirmAE: Towards Large-Scale Emulation of IoT Firmware for Dynamic Analysis* · ACSAC 2020 · 会议论文 · Mingeun Kim 等 · [PDF](https://syssec.kaist.ac.kr/pub/2020/kim_acsac2020.pdf) · [代码](https://github.com/pr0v3rbs/FirmAE) · [完整条目](https://awesomerea.org/zh/papers/paper-firmae/)</sub>
 - [**HALucinator：通过抽象层仿真实现固件重托管**](https://www.usenix.org/conference/usenixsecurity20/presentation/clements) - HALucinator 识别单体 ARM Cortex-M 固件中的硬件抽象库函数，并用人工编写的 Python 处理函数和外设模型替换它们，从而重托管固件。 <sub>原题：*HALucinator: Firmware Re-hosting Through Abstraction Layer Emulation* · USENIX Security 2020 · 会议论文 · Abraham A Clements 等 · [PDF](https://www.usenix.org/system/files/sec20-clements.pdf) · [代码](https://github.com/embedded-sec/halucinator) · [完整条目](https://awesomerea.org/zh/papers/paper-halucinator/)</sub>
 - [**面向基于 Linux 的嵌入式固件的自动化动态分析**](https://doi.org/10.14722/ndss.2016.23415) - Firmadyne 对路由器、IP 摄像头等联网商用设备中基于 Linux 的固件进行爬取、提取与仿真。 <sub>原题：*Towards Automated Dynamic Analysis for Linux-based Embedded Firmware* · NDSS 2016 · 会议论文 · Daming D. Chen 等 · [PDF](https://www.ndss-symposium.org/wp-content/uploads/2017/09/towards-automated-dynamic-analysis-linux-based-embedded-firmware.pdf) · [代码](https://github.com/firmadyne/firmadyne) · [完整条目](https://awesomerea.org/zh/papers/paper-firmadyne/)</sub>
