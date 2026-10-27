@@ -60,7 +60,7 @@
 - [vtil-project/VTIL-Core](https://github.com/vtil-project/VTIL-Core) — 虚拟机翻译中间语言。 **[1,607 星标]** · 精选：[VTIL-Core 虚拟机翻译中间语言核心库](https://awesomerea.org/zh/resources/vtil-core/)
 - [m4b/goblin](https://github.com/m4b/goblin) — 使用 Rust 编写的轻巧跨平台二进制解析 crate。 **[1,555 星标]** · 精选：[goblin 二进制格式解析库](https://awesomerea.org/zh/resources/goblin/)
 - [igogo-x86/HexRaysPyTools](https://github.com/igogo-x86/HexRaysPyTools) — IDA Pro 插件，可改善 Hex-Rays 反编译器的使用体验，并辅助重建结构体和类。 **[1,541 星标]**
-- [mandiant/flare-learning-hub](https://github.com/mandiant/flare-learning-hub) — FLARE 团队提供的免费逆向工程与恶意软件分析教学内容。 **[1,496 星标]**
+- [mandiant/flare-learning-hub](https://github.com/mandiant/flare-learning-hub) — FLARE 团队提供的免费逆向工程与恶意软件分析教学内容。 **[1,496 星标]** · 精选：[FLARE 学习中心](https://awesomerea.org/zh/resources/flare-learning-hub/)
 - [angusdevgo/Seep-Reverse-Lab](https://github.com/angusdevgo/Seep-Reverse-Lab) — 面向智能体原生设计的多平台逆向工程与 CWE-602 客户端授权审计工作台。 **[1,462 星标]**
 - [hteso/iaito](https://github.com/hteso/iaito) — 本项目已迁移至： **[1,461 星标]**
 - [programa-stic/barf-project](https://github.com/programa-stic/barf-project) — BARF：跨平台开源二进制分析与逆向工程框架。 **[1,455 星标]**
