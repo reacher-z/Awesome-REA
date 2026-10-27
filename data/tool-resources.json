@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "frida-boot-workshop",
+    "name": "Frida Boot: a beginner binary instrumentation workshop",
+    "url": "https://github.com/leonjza/frida-boot",
+    "category": "learning",
+    "relationship": "learning",
+    "kind": "learning-resource",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A beginner workshop by leonjza on binary instrumentation with Frida, served as offline pages from a Docker container that has gdb with GEF and frida-tools preinstalled. Three chapters move from a small Linux C program, LD_PRELOAD hooks and how library calls resolve through the PLT and GOT, to Frida’s Interceptor for reading arguments and changing return values, NativeFunction for calling a program’s own functions, Python injector tools, RPC exports, TypeScript agents, frida-server and frida-gadget. It deliberately leaves out Frida’s mobile-app uses, and every exercise targets sample programs shipped with the workshop.",
+    "description_zh": "leonjza 编写的 Frida 二进制插桩入门工作坊，课程页面由一个 Docker 容器离线提供，容器内已预装带 GEF 的 gdb 和 frida-tools。三个章节从一个小型 Linux C 程序、LD_PRELOAD 钩子以及库函数调用如何经由 PLT 和 GOT 解析讲起，再到用 Frida 的 Interceptor 读取参数和修改返回值、用 NativeFunction 调用程序自身的函数、编写 Python 注入工具、RPC 导出、TypeScript 代理，以及 frida-server 和 frida-gadget。课程有意不涉及 Frida 在移动应用上的用法，所有练习都针对工作坊自带的示例程序。",
+    "evidence_url": "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed master commit dates from 2021-04-28, with no releases or tags; the prebuilt leonjza/frida-boot image on Docker Hub (tag latest, amd64 only) was last updated the same day. The README links a YouTube recording of the workshop and keeps a PDF of the slides in slides/.",
+      "Needs a host with Docker. docker.sh pulls or builds the image and starts it with the SYS_PTRACE capability, serving the course at localhost:9999 and mounting a local code folder into the container. The Dockerfile builds on Debian bullseye-slim and downloads frida-server and frida-gadget 12.9.4 for linux-x86_64, but installs frida-tools, GEF and the frida-agent-example project unpinned, so a fresh build will not reproduce the 2021 tool versions.",
+      "Exercises compile and instrument the workshop’s own C samples in software/: a random sleep loop, a fake_sleep LD_PRELOAD library and a PIN-check program whose test_pin function the lessons call directly from Frida, with numbered JavaScript, TypeScript and Python snippets for each step. No third-party target binaries are included or needed; the material covers x86_64 Linux user-space processes.",
+      "The repository has no license file and GitHub detects none; the bundled docsify scripts and themes keep their own licenses, and Frida, GEF and the base image are fetched under theirs. This review read the course pages, scripts and Dockerfile without building the image or running the exercises. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/course/README.md",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/course/_sidebar.md",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/Dockerfile",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/docker.sh",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/course/1-chapter-1/internals.md",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/course/2-chapter-2/repurposing.md",
+      "https://github.com/leonjza/frida-boot/blob/73d1adf76275dd20a3da81bbc310cae58db78bfb/course/3-chapter-3/operating-modes.md",
+      "https://github.com/leonjza/frida-boot/tree/73d1adf76275dd20a3da81bbc310cae58db78bfb/software",
+      "https://hub.docker.com/r/leonjza/frida-boot"
+    ]
   }
 ]

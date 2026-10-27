@@ -49,7 +49,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — Use Frida to retrieve functions dynamically registered through JNI RegisterNatives. **[353 stars]**
 - [roger1337/JDBG](https://github.com/roger1337/JDBG) — Java Dynamic Reverse Engineering and Debugging Tool **[331 stars]**
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra - a visual bridge between a GDB session and GHIDRA **[324 stars]**
-- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢- A binary instrumentation workshop, with Frida, for beginners! **[320 stars]**
+- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢- A binary instrumentation workshop, with Frida, for beginners! **[320 stars]** · Curated: [Frida Boot: a beginner binary instrumentation workshop](https://awesomerea.org/resources/frida-boot-workshop/)
 - [libdebug/libdebug](https://github.com/libdebug/libdebug) — A Python library to debug binary executables, your own way. **[315 stars]**
 - [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker is a Frida-based fuzzing suite supporting various modes (including AFL++ in-process fuzzing) **[298 stars]**
 - [iGio90/frick](https://github.com/iGio90/frick) — frick - aka the first debugger built on top of frida **[296 stars]**

@@ -49,7 +49,7 @@
 - [deathmemory/fridaRegstNtv](https://github.com/deathmemory/fridaRegstNtv) — 使用 Frida 获取通过 JNI RegisterNatives 动态注册的函数。 **[353 星标]**
 - [roger1337/JDBG](https://github.com/roger1337/JDBG) — Java 动态逆向工程与调试工具。 **[331 星标]**
 - [Comsecuris/gdbghidra](https://github.com/Comsecuris/gdbghidra) — gdbghidra：连接 GDB 会话与 Ghidra 的可视化桥梁。 **[324 星标]**
-- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢：面向初学者的 Frida 二进制插桩工作坊！ **[320 星标]**
+- [leonjza/frida-boot](https://github.com/leonjza/frida-boot) — Frida Boot 👢：面向初学者的 Frida 二进制插桩工作坊！ **[320 星标]** · 精选：[Frida Boot：二进制插桩入门工作坊](https://awesomerea.org/zh/resources/frida-boot-workshop/)
 - [libdebug/libdebug](https://github.com/libdebug/libdebug) — 让你以自己的方式调试二进制可执行文件的 Python 库。 **[315 星标]**
 - [ttdennis/fpicker](https://github.com/ttdennis/fpicker) — fpicker 是基于 Frida 的模糊测试套件，支持多种模式，包括 AFL++ 进程内模糊测试。 **[298 星标]**
 - [iGio90/frick](https://github.com/iGio90/frick) — frick：首个基于 Frida 构建的调试器 **[296 星标]**
