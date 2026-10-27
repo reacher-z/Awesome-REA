@@ -52,7 +52,11 @@ const items = card => details(card).children.find(child => child.tag === 'ul').c
   assert.equal(app.grid().length, 0);
   search.value = ''; search.emit('input');
   const reopened = app.grid()[0]; details(reopened).open = true;
+  // Show more appends the next batch before the catalog arrives; earlier cards keep their pending lists.
+  app.elements.get('#load-more').emit('click');
+  assert.equal(app.grid().length, 20); assert.equal(app.grid()[0], reopened);
   app.release(); await settle();
+  assert.deepEqual(items(app.grid()[15]), [['', 'Requirement 15']]);
   // Without a query the open card is filled in place: same element, still open, no re-render.
   assert.equal(app.grid()[0], reopened);
   assert.equal(details(reopened).open, true);
