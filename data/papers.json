@@ -7519,5 +7519,64 @@
     "verified_at": "2026-10-19",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-semu",
+    "title": "What Your Firmware Tells You Is Not How You Should Emulate It: A Specification-Guided Approach for Firmware Emulation",
+    "title_zh": "固件所示并非应有的仿真方式：一种规范引导的固件仿真方法",
+    "authors": [
+      "Wei Zhou",
+      "Lan Zhang",
+      "Le Guan",
+      "Peng Liu",
+      "Yuqing Zhang"
+    ],
+    "year": 2022,
+    "publication_date": "2022-11-07",
+    "date_precision": "day",
+    "date_basis": "ACM's Crossref deposit gives 2022-11-07 for both print and online publication. The conference dates are not substituted.",
+    "date_basis_zh": "ACM 提交的 Crossref 元数据将纸质和在线出版日期均记为 2022-11-07。本条目不以会议日期代替。",
+    "venue": "ACM CCS 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2208.07833",
+    "arxiv_version_reviewed": "v3",
+    "first_arxiv_date": "2022-08-16",
+    "doi": "10.1145/3548606.3559386",
+    "citation": {
+      "container_title": "Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security",
+      "publisher": "ACM",
+      "pages": "3269-3283",
+      "sources": [
+        "https://api.crossref.org/works/10.1145/3548606.3559386"
+      ]
+    },
+    "url": "https://dl.acm.org/doi/10.1145/3548606.3559386",
+    "pdf_url": "https://arxiv.org/pdf/2208.07833v3",
+    "code_url": "https://github.com/MCUSec/SEmu/tree/6dc8be91f6809f34af972a93c9dd972f85145a00",
+    "project_url": null,
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "SEmu builds microcontroller peripheral models from vendor reference manuals rather than from the firmware itself. An NLP pipeline built on the Stanford tagger and parser turns register descriptions, interrupt tables and DMA channel tables taken from the manuals into structured condition-action rules, which the emulator checks, executes and chains at run time to answer MMIO accesses and raise interrupts or DMA requests. A symbolic-execution diagnostic tool built on S2E and µEmu traces invalid states back to the rules likely responsible, so that a person can correct them. The authors also use the models for fuzzing and to check driver code against specification rules.",
+    "description_zh": "SEmu 依据厂商参考手册而非固件本身构建微控制器外设模型。一条基于 Stanford 词性标注器和句法分析器的 NLP 流程，把取自手册的寄存器说明、中断表和 DMA 通道表转换为结构化的条件—动作规则；仿真器在运行时检查、执行并串联这些规则，以响应 MMIO 访问并触发中断或 DMA 请求。基于 S2E 和 µEmu 的符号执行诊断工具会把无效状态回溯到可能出错的规则，供人工修正。作者还将这些模型用于模糊测试，以及依据规范规则检查驱动代码。",
+    "scope_limitations_en": "Rule extraction is not fully automatic. The NLP engine mishandles cross-sentence references and nested conditions, and the raw rules for the clock peripherals of all three unit-test chips broke booting, so every one of P2IM's 66 unit tests failed until those rules were revised. After diagnosis-guided manual correction (26 rules added, 21 fixed and 3 removed, against 3,602 rules extracted from 23,424 sentences), the authors report that all 66 unit tests and 17 additional samples were emulated. Users must identify the MCU, configure memory maps and copy the needed manual sections into the pipeline, and diagnosis needs prepared test firmware; three developers took about two hours on average to fix the F103 I2C rules. The prototype covers 26 peripherals on five boards from three vendors (STM32F1, F4 and L1, NXP K64 and Atmel SAM3X), and trace-fidelity comparisons used real-hardware traces from only the K64F and F103RB boards. Rules model documented behaviour and do not establish equivalence with the silicon.",
+    "scope_limitations_zh": "规则提取并非完全自动。NLP 引擎难以处理跨句指代和嵌套条件；三款单元测试芯片上时钟外设的原始规则都导致启动失败，因此在修订这些规则之前，P2IM 的 66 个单元测试全部失败。经诊断引导的人工修正后（在从 23,424 个句子中提取的 3,602 条规则中新增 26 条、修正 21 条、删除 3 条），作者报告全部 66 个单元测试以及另外 17 个样本均能仿真。用户需要识别 MCU、配置内存映射，并把所需的手册章节复制到流程中；诊断还需要事先准备测试固件。三名开发者修正 F103 I2C 规则平均约需两小时。原型覆盖三家厂商五款开发板（STM32F1、F4、L1，NXP K64 与 Atmel SAM3X）上的 26 种外设；轨迹保真度比较只在 K64F 和 F103RB 两块开发板上使用了真实硬件轨迹。规则所建模的是文档记载的行为，不能证明与芯片实物等价。",
+    "why_fits_en": "Adds specification-derived peripheral modelling for rehosting microcontroller firmware, complementing firmware-guided approaches such as MMIO modelling and invalidity-guided inference.",
+    "why_fits_zh": "补充依据规范构建外设模型、用于重托管微控制器固件的方法，与 MMIO 建模和无效性引导推断等以固件为依据的方法互补。",
+    "metadata_notes": "Crossref records the title, subtitle, five-author order, pages 3269–3283 and print and online publication on 2022-11-07; the ACM full text is not open access and was not retrieved. arXiv v3 (2022-10-11; v1 2022-08-16) is the authors' 18-page extended version and states that Wei Zhou and Lan Zhang contributed equally; the figures in this record come from it and are not asserted to match the proceedings text exactly. The MCUSec/SEmu snapshot at 6dc8be9 (2025-04-22) declares Apache-2.0 for the rule extractor and the non-commercial Cyberhaven Research License of S2E 2.0 for the S2E-based rule doctor, and points to IoTS-P/SEmu-Fuzz, which is Apache-2.0, for fuzzing; GitHub reports NOASSERTION for the main repository. The repository also redistributes vendor reference-manual PDFs, whose terms are separate, and directs users to a Google Drive copy of the Stanford tagger and parser. Building the rule doctor follows µEmu's S2E 2.0 package list and repo manifest, with an estimated 30–60 minutes on four cores. No manuals, firmware or code were downloaded or run.",
+    "metadata_notes_zh": "Crossref 记录了标题、副标题、五位作者的顺序、页码 3269–3283，以及 2022-11-07 的纸质和在线出版日期；ACM 全文并非开放获取，本次未获取。arXiv v3（2022-10-11；v1 为 2022-08-16）是作者 18 页的扩展版，并注明 Wei Zhou 与 Lan Zhang 贡献相同；本条目中的数据取自该版本，不认定与论文集正文完全一致。MCUSec/SEmu 快照 6dc8be9（2025-04-22）声明规则提取器采用 Apache-2.0，基于 S2E 的规则诊断工具采用 S2E 2.0 的非商业 Cyberhaven Research License，模糊测试部分则指向采用 Apache-2.0 的 IoTS-P/SEmu-Fuzz；GitHub 对主仓库显示 NOASSERTION。仓库还转载了厂商参考手册 PDF，其使用条款另行适用，并引导用户从 Google Drive 获取 Stanford 词性标注器和句法分析器。构建规则诊断工具需按照 µEmu 的 S2E 2.0 软件包列表和 repo 清单进行，在四核机器上预计耗时 30–60 分钟。本次未下载或运行手册、固件或代码。",
+    "evidence_urls": [
+      "https://dl.acm.org/doi/10.1145/3548606.3559386",
+      "https://api.crossref.org/works/10.1145/3548606.3559386",
+      "https://arxiv.org/abs/2208.07833",
+      "https://arxiv.org/pdf/2208.07833v3",
+      "https://github.com/MCUSec/SEmu/blob/6dc8be91f6809f34af972a93c9dd972f85145a00/README.md",
+      "https://github.com/MCUSec/SEmu/blob/6dc8be91f6809f34af972a93c9dd972f85145a00/LICENSE",
+      "https://github.com/MCUSec/SEmu/tree/6dc8be91f6809f34af972a93c9dd972f85145a00/Manual"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
