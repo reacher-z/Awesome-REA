@@ -18,7 +18,7 @@
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 145 | 18 |
 | [固件](firmware.zh-CN.md) | 221 | 18 |
 | [协议](protocol-analysis.zh-CN.md) | 110 | 8 |
-| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 669 | 51 |
+| [通用工具与资源合集](reverse-engineering.zh-CN.md) | 669 | 52 |
 
 [扫描方法（英文）](../source-scan.md) · [范围排除记录](../../data/source-scope.json)
 

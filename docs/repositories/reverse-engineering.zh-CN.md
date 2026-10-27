@@ -87,7 +87,7 @@
 - [MatthewKuKanich/CAN\_Commander](https://github.com/MatthewKuKanich/CAN_Commander) — CAN Commander 是用于 CAN（控制器局域网）总线系统逆向工程的综合工具，旨在为汽车爱好者、工程师与安全研究人员提供可靠平台，与 CAN 网络交互并进行分析，从而深入理解和操控通信。 **[1,078 星标]**
 - [toniebox-reverse-engineering/teddycloud](https://github.com/toniebox-reverse-engineering/teddycloud) — teddyCloud 是 Boxine Cloud 的开源服务器替代实现。 **[1,072 星标]** · 精选：[TeddyCloud：可自托管的 Toniebox 云端替代服务器](https://awesomerea.org/zh/resources/teddycloud-toniebox-server-case/)
 - [neuroradiology/InsideReCaptcha](https://github.com/neuroradiology/InsideReCaptcha) — 逆向分析新的“无验证码”ReCaptcha 系统…… **[1,051 星标]**
-- [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — 研究 PixMob 红外协议（现也支持射频！），让你能在家中控制 PixMob 手环。 **[1,040 星标]**
+- [danielweidman/pixmob-ir-reverse-engineering](https://github.com/danielweidman/pixmob-ir-reverse-engineering) — 研究 PixMob 红外协议（现也支持射频！），让你能在家中控制 PixMob 手环。 **[1,040 星标]** · 精选：[PixMob 红外逆向工程：在家控制活动手环](https://awesomerea.org/zh/resources/pixmob-ir-protocol-case/)
 - [ent0n29/polybot](https://github.com/ent0n29/polybot) — 逆向分析各类 Polymarket 策略及其高频交易基础设施。 **[1,024 星标]**
 - [Fadi002/de4py](https://github.com/Fadi002/de4py) — 全面的 AI 驱动 Python 逆向工程工具包。 **[1,009 星标]**
 - [indetectables-net/toolkit](https://github.com/indetectables-net/toolkit) — 用于逆向分析、恶意软件分析和破解的必备工具包。 **[1,009 星标]**
