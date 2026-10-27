@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 213 | 211 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 51 | 51 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 327 | 327 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 214 | 212 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 45 | 45 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 332 | 332 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-228 occurrences have catalog links. They reference 218 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+229 occurrences have catalog links. They reference 219 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 480 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 486 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -291,6 +291,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Computer integrates REA: five app-feature rebuilding demos including Figma | Insufficient evidence | [Source](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept | Already curated | [Source](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
 | Claude client: inspecting environment telemetry with REA | Insufficient evidence | [Source](https://x.com/i/status/2111134289970765964) |
+| Codex cursor: recovering drawing geometry for a Windows pointer | Insufficient evidence | [Source](https://x.com/i/status/2111142820207837308) |
+| Gears of War 3: AI-assisted static recompilation and graphics work | Insufficient evidence | [Source](https://x.com/i/status/2111146922522402943) |
+| WristBeam: reconstructing Garmin’s watch protocol for a Mac companion | Already curated | [Source](https://x.com/i/status/2111155441077977138) |
+| Three open tools to personal apps: an REA recording, markup and dictation report | Insufficient evidence | [Source](https://x.com/i/status/2111156533002227870) |
+| LmDrum firmware: Claude reportedly stops after decompilation progress | Insufficient evidence | [Source](https://x.com/i/status/2111169026160480290) |
+| 1977 DES test vectors: Claude reportedly traces their random-generation environment | Insufficient evidence | [Source](https://x.com/i/status/2111170587792208361) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | Insufficient evidence | [Source](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | Insufficient evidence | [Source](https://x.com/ChaiWithAi/status/2111184500093026340) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | Pending | [Source](https://www.anthropic.com/research/ecdsa-curve-origins) |

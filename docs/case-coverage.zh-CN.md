@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 213 | 211 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 51 | 51 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 327 | 327 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 214 | 212 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 45 | 45 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 332 | 332 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-228 个出现项含目录链接；共关联 218 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+229 个出现项含目录链接；共关联 219 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 480 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 486 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -291,6 +291,12 @@
 | Computer integrates REA: five app-feature rebuilding demos including Figma | 证据不足 | [来源](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept 流量捕获分析工具 | 已收录 | [来源](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
 | Claude client: inspecting environment telemetry with REA | 证据不足 | [来源](https://x.com/i/status/2111134289970765964) |
+| Codex cursor: recovering drawing geometry for a Windows pointer | 证据不足 | [来源](https://x.com/i/status/2111142820207837308) |
+| Gears of War 3: AI-assisted static recompilation and graphics work | 证据不足 | [来源](https://x.com/i/status/2111146922522402943) |
+| WristBeam：为 Mac 配套应用重建佳明手表协议 | 已收录 | [来源](https://x.com/i/status/2111155441077977138) |
+| Three open tools to personal apps: an REA recording, markup and dictation report | 证据不足 | [来源](https://x.com/i/status/2111156533002227870) |
+| LmDrum firmware: Claude reportedly stops after decompilation progress | 证据不足 | [来源](https://x.com/i/status/2111169026160480290) |
+| 1977 DES test vectors: Claude reportedly traces their random-generation environment | 证据不足 | [来源](https://x.com/i/status/2111170587792208361) |
 | Notion app.asar: a Claude read-only file and domain-string inspection | 证据不足 | [来源](https://x.com/0xKurogamii/status/2111182893313613877) |
 | Grok Bot + REA: a reported software-investigation chat template | 证据不足 | [来源](https://x.com/ChaiWithAi/status/2111184500093026340) |
 | NIST ECDSA curves: Claude traces the generation of public parameters | 待核查 | [来源](https://www.anthropic.com/research/ecdsa-curve-origins) |
