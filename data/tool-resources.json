@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "uelib-unreal-package-library",
+    "name": "UELib (Unreal-Library)",
+    "url": "https://github.com/EliotVU/Unreal-Library",
+    "category": "game-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "game"
+    ],
+    "description_en": "C# library that reads Unreal Engine 1, 2 and 3 package files such as .u, .upk and .udk, auto-detects a matching game build and deserializes their exports, imports and properties. Its main goal is decompiling UnrealScript bytecode back to source by reconstructing classes, states, functions, structs, enums and default properties; it also deserializes fonts, sounds, palettes and textures. The README’s per-game compatibility table runs from Unreal and Deus Ex to Splinter Cell, Mass Effect and the Batman: Arkham games, and the separate UE Explorer GUI is built on it.",
+    "description_zh": "读取 Unreal Engine 1、2、3 包文件（如 .u、.upk 和 .udk）的 C# 库，可自动识别匹配的游戏构建，并反序列化其中的导出、导入对象和属性。其主要目标是通过重建类、状态、函数、结构体、枚举和默认属性，把 UnrealScript 字节码反编译回源码；它也能反序列化字体、声音、调色板和纹理。README 中的逐游戏兼容表从 Unreal、Deus Ex 一直列到 Splinter Cell、Mass Effect 和 Batman: Arkham 系列，独立的 UE Explorer 图形界面即基于此库构建。",
+    "evidence_url": "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Published on NuGet as Eliot.UELib: the latest stable package at review is 1.13.7, published 2026-07-17, targeting .NET Framework 4.8, .NET Standard 2.0 and 2.1 and .NET 10, while the newest GitHub release page is 1.12.0 from 2025-09-22. Versions come from Nerdbank.GitVersioning, and the reviewed master commit (2026-10-16) is later than both. The repository also holds a small .NET 10 command-line client, a separate decompiler project and a work-in-progress T3D decompiler.",
+      "Input is package files from the user’s own game installations. The README warns that opening an unsupported package could crash the system, that production UE3 packages are often compressed and must first be decompressed with a separate tool, and that some games need third-party decompression or extraction. Textures in .tfc caches, models and animations are not supported, and audio and texture output is expected to work for most games but not confirmed.",
+      "Compatibility rows are the author’s and contributors’ reports per game and package version, including known problems such as bad output at function starts for X-COM: Alliance, wrong UStruct offsets for Duke Nukem Forever (2001) and bad byte-codes for Medal of Honor (2010); some rows are marked unverified. The MSTest suite reads TestUC1–TestUC3 packages compiled from the project’s own UnrealScript test classes, and some tests point at local Unreal Tournament or UT2004 installations; this review ran nothing.",
+      "MIT license (Eliot van Uytfanghe). Game packages, scripts and assets keep their rights holders’ terms, and decompiled UnrealScript is a reconstruction, not the original source files. The GitHub description also mentions .uasset, but the README’s compatibility table covers only Unreal Engine 1–3 games. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/LICENSE",
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/Directory.Build.props",
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/version.json",
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/Test/Eliot.UELib.Test.csproj",
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/Test/Packages.resx",
+      "https://github.com/EliotVU/Unreal-Library/tree/8236c39b79e30887a487ecf9b018204e430a5ebc/Test/upk",
+      "https://github.com/EliotVU/Unreal-Library/blob/8236c39b79e30887a487ecf9b018204e430a5ebc/CLI/Program.cs",
+      "https://github.com/EliotVU/Unreal-Library/releases/tag/1.12.0",
+      "https://www.nuget.org/packages/Eliot.UELib/1.13.7"
+    ]
   }
 ]
