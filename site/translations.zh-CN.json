@@ -4500,5 +4500,14 @@
       "自定义 tonie JSON 接口的 Python API 测试和 WASM TAF 编码器测试通过 Makefile 目标运行；所审阅的工作流只构建并发布，不运行这些测试。dev-sandbox 提供模拟的 tonie、盒子和 TAF 数据。与真实盒子及 Boxine 云端配合的表现仍属项目报告，本次来源核查未运行任何内容。",
       "采用 GPL-2.0（LICENSE）；内置的 Cyclone 协议栈、Opus、Ogg、cJSON 和 FatFs 保留各自条款。tonie 音频、盒子固件和 Boxine 的服务保留各自权利。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "dex-editor-android": {
+    "name": "Dex-Editor-Android 设备端 DEX 编辑器",
+    "requirements": [
+      "审阅时最新版本为 v2.0-sora-editor，发布于 2026-06-09，只附一个 app-release.apk；README 中的示例应用链接仍指向 2025-04-29 的 v1.3_final。所审阅的 main 分支 2026-07-29 提交还包含此后的修复和合并的贡献者拉取请求。README 列出支持 DEX 格式版本 40，以及部分支持 41；其待办事项中仍有批量插入与提取类，以及直接重命名类。",
+      "构建需要 Android Studio、JDK 17 或 21、Gradle 9.5.0 和 Android Gradle Plugin 9.2.1；app/build.gradle 以 SDK 37 编译，minSdk 为 24，targetSdk 为 28，README 还提到可用 Sketchware Pro（Java 11）构建。依赖包括 jadx-core 1.4.7、Sora Editor 0.23.6，以及仓库内附带的 antlr 和 commons-io JAR。CI 构建调试版和未签名的发布版 APK，单元测试和仪器测试只有 Android Studio 的示例。",
+      "文件选择器用于选取使用者自备的 DEX 文件。README 未提及的“AI Explanation”界面会把从方法列表中选出的 smali 方法，连同默认的寄存器用法提示词或用户修改后的提示词，通过设置中填写的 API 密钥发送到 Google 的 Gemini 2.0 Flash API；方法流程图则使用内置的 Graphviz viz.js 在本地绘制。",
+      "LICENSE 为 Apache-2.0（版权 2024-26 Krushna Chandra），但 README 另称不得在私有项目中使用这些代码，且只欢迎在本仓库内贡献，这些限制并不在 Apache-2.0 条款之中，因此再利用条款并不明确；仓库内的 smali 代码保留了 Google 的 BSD 式许可声明。本次审阅未构建任何内容，也未编辑任何 DEX 文件；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

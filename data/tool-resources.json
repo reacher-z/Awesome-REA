@@ -12397,5 +12397,37 @@
       "https://github.com/toniebox-reverse-engineering/teddycloud/releases/tag/tc_v0.7.0",
       "https://tonies-wiki.revvox.de/docs/tools/teddycloud/setup/"
     ]
+  },
+  {
+    "id": "dex-editor-android",
+    "name": "Dex-Editor-Android",
+    "url": "https://github.com/developer-krushna/Dex-Editor-Android",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Work-in-progress Android app for editing DEX files on the device, built on a modified in-tree copy of Google's smali, baksmali and dexlib2. It loads one or more DEX files into a class tree and opens classes as smali in a Sora Editor view with method, field and string lists, label jumps, search and replace, method flow diagrams and Jadx decompilation of a class or method to Java, then deletes classes or recompiles the edited DEX files. The README credits MT Manager for the app's logic and interface ideas.",
+    "description_zh": "一款仍在开发中的 Android 应用，用于在设备上编辑 DEX 文件，构建在仓库内经修改的 Google smali、baksmali 和 dexlib2 副本之上。它把一个或多个 DEX 文件载入类树，在基于 Sora Editor 的编辑器中以 smali 打开类，提供方法、字段和字符串列表、标签跳转、搜索替换、方法流程图，以及借助 Jadx 把单个类或方法反编译为 Java，之后可删除类或重新编译修改后的 DEX 文件。README 称应用的逻辑与界面构思来自 MT Manager。",
+    "evidence_url": "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v2.0-sora-editor, published 2026-06-09 with one app-release.apk, while the README's sample-app link still points to v1.3_final of 2025-04-29; the reviewed main commit of 2026-07-29 adds later fixes and merged contributor pull requests. The README lists DEX format versions 40 and, partially, 41, and its to-do list still has batch class insertion and extraction and a direct class renamer.",
+      "Build with Android Studio, JDK 17 or 21, Gradle 9.5.0 and Android Gradle Plugin 9.2.1; app/build.gradle compiles against SDK 37 with minSdk 24 and targetSdk 28, and the README also mentions Sketchware Pro on Java 11. Dependencies include jadx-core 1.4.7, Sora Editor 0.23.6 and bundled antlr and commons-io JARs. CI builds debug and unsigned release APKs, and the only unit and instrumented tests are the Android Studio examples.",
+      "The file picker selects DEX files the user supplies. An AI Explanation screen that the README does not mention sends a smali method picked from the method list, with a default register-usage prompt or a user-edited one, to Google's Gemini 2.0 Flash API using an API key entered in settings; method flow diagrams are drawn locally with a bundled Graphviz viz.js build.",
+      "LICENSE is Apache-2.0 (copyright 2024-26 Krushna Chandra), but the README adds that the code may not be used in private projects and that contributions are welcome only in this repository, restrictions Apache-2.0 itself does not contain, so reuse terms are unclear; the in-tree smali code keeps Google's BSD-style notices. This review built nothing and edited no DEX files, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/app/build.gradle",
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/app/src/main/java/modder/hub/dexeditor/activity/AIOverViewActivity.java",
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/app/src/main/java/modder/hub/dexeditor/fragment/SmaliMethodFieldListFragment.java",
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/app/src/main/java/modder/hub/dexeditor/utils/DexFileSelector.java",
+      "https://github.com/developer-krushna/Dex-Editor-Android/tree/55fd9f03ae43b321e56b5b99677b7f6705e39158/app/src/main/java/com/android/tools/smali",
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/.github/workflows/android.yml",
+      "https://github.com/developer-krushna/Dex-Editor-Android/blob/55fd9f03ae43b321e56b5b99677b7f6705e39158/LICENSE",
+      "https://github.com/developer-krushna/Dex-Editor-Android/releases/tag/v2.0-sora-editor"
+    ]
   }
 ]
