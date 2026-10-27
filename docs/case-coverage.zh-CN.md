@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 212 | 210 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 65 | 65 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 314 | 314 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 59 | 59 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 320 | 320 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 227 个出现项含目录链接；共关联 217 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 466 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 472 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -271,11 +271,17 @@
 | Claude Code 背景动画实验室：基于 REA 调查的桌面动画重新实现 | 已收录 | [来源](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | ChatGPT Work Cloud: probing a cloud agent's tools through introspection | 证据不足 | [来源](https://x.com/i/status/2111009945865097386) |
 | Indian Kanoon: a reported Claude Code legal-search integration | 证据不足 | [来源](https://x.com/i/status/2111027056234627119) |
+| Amap anti-bot controls: a secondhand Tencent sandbox-agent incident report | 证据不足 | [来源](https://x.com/i/status/2111034426066956783) |
 | JPCERT/CC：攻击服务器上的 APK 解析与 API 探测 | 已收录 | [来源](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
+| Polymarket Up/Down bot: a promotional REA strategy-analysis and replay report | 证据不足 | [来源](https://x.com/i/status/2111049696630194596) |
 | crashlens 崩溃分诊工具 | 已收录 | [来源](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
+| Halo 3 Reforged: a reader's AI-decompilation and 128-player claim | 证据不足 | [来源](https://x.com/i/status/2111052865410375683) |
+| Samsung AC: local-network control with reported partial Claude assistance | 证据不足 | [来源](https://x.com/i/status/2111055239378018407) |
+| A 2000 stress.exe: a reported Opus/REA revival for Mac and the web | 证据不足 | [来源](https://x.com/i/status/2111061027211395485) |
 | RKD Telemetry Extractor：解读 Race-Keeper 赛道日录制数据 | 已收录 | [来源](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | 证据不足 | [来源](https://x.com/aigeeknews/status/2111095142790857087) |
 | Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | 证据不足 | [来源](https://x.com/0xPascual/status/2111096590387601489) |
+| Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | 证据不足 | [来源](https://x.com/i/status/2111100877083947405) |
 | OpenRiseOfNations：原生 macOS 引擎重新实现 | 已收录 | [来源](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
 | Computer integrates REA: five app-feature rebuilding demos including Figma | 证据不足 | [来源](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept 流量捕获分析工具 | 已收录 | [来源](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |

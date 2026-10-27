@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 212 | 210 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 65 | 65 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 314 | 314 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 59 | 59 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 320 | 320 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 227 occurrences have catalog links. They reference 217 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 466 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 472 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -271,11 +271,17 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | Claude Code background lab: an REA-informed reimplementation of a desktop animation | Already curated | [Source](https://github.com/Henry-fan88/claude-code-background/blob/3dbd1065835508be6027137927deeddb8c30fe55/README.md) |
 | ChatGPT Work Cloud: probing a cloud agent's tools through introspection | Insufficient evidence | [Source](https://x.com/i/status/2111009945865097386) |
 | Indian Kanoon: a reported Claude Code legal-search integration | Insufficient evidence | [Source](https://x.com/i/status/2111027056234627119) |
+| Amap anti-bot controls: a secondhand Tencent sandbox-agent incident report | Insufficient evidence | [Source](https://x.com/i/status/2111034426066956783) |
 | JPCERT/CC: APK analysis and API probing on attack servers | Already curated | [Source](https://blogs.jpcert.or.jp/ja/2026/10/web_api_attacks.html) |
+| Polymarket Up/Down bot: a promotional REA strategy-analysis and replay report | Insufficient evidence | [Source](https://x.com/i/status/2111049696630194596) |
 | crashlens | Already curated | [Source](https://github.com/mingleiw/crashlens/blob/7188611a506e058a8f4937acf3dfd3035545f2d1/README.md) |
+| Halo 3 Reforged: a reader's AI-decompilation and 128-player claim | Insufficient evidence | [Source](https://x.com/i/status/2111052865410375683) |
+| Samsung AC: local-network control with reported partial Claude assistance | Insufficient evidence | [Source](https://x.com/i/status/2111055239378018407) |
+| A 2000 stress.exe: a reported Opus/REA revival for Mac and the web | Insufficient evidence | [Source](https://x.com/i/status/2111061027211395485) |
 | RKD Telemetry Extractor: decoding Race-Keeper track-day recordings | Already curated | [Source](https://github.com/sam-dumont/rkd-telemetry-extractor/blob/8db9f373e1a7162d3f2efa297986bdfa86d9400f/RESEARCH_NOTES.md) |
 | QQPet: a cross-platform pet rebuilt from Arctic Penguin T800 | Insufficient evidence | [Source](https://x.com/aigeeknews/status/2111095142790857087) |
 | Website to Next.js: a reported Claude Code template with parallel DOM-based rebuilding | Insufficient evidence | [Source](https://x.com/0xPascual/status/2111096590387601489) |
+| Black Bot / Blacksidian: reported REA rebuilds with AI-provider choice | Insufficient evidence | [Source](https://x.com/i/status/2111100877083947405) |
 | OpenRiseOfNations: a native macOS engine reimplementation | Already curated | [Source](https://github.com/ben-wright-1/OpenRiseOfNations/blob/2a0dfde8acdb7185c6087b10ef89b4f66731e5a0/README.md) |
 | Computer integrates REA: five app-feature rebuilding demos including Figma | Insufficient evidence | [Source](https://x.com/AskPerplexity/status/2111120664543596957) |
 | Claude Intercept | Already curated | [Source](https://github.com/whaesemeyer/claude-intercept/blob/c2b7d01911e11e063533dbd61a22b404b503b48d/README.md) |
