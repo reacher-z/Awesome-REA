@@ -8,9 +8,11 @@ const rows = Array.from({length: 20}, (_, index) => ({id: 'fixture-' + index, na
   description_en: 'Fixture ' + index, description_zh: '测试 ' + index, targets: ['app'], category: 'dynamic-analysis', group: 'tools',
   kind: 'tool', relationship: 'foundation', verified_at: '2026-01-01',
   requirements: index === 17 ? ['Builds with Turbopack.', 'Node.js 22.'] : ['Requirement ' + index],
-  requirements_zh: index === 17 ? ['使用 Turbopack 构建。', 'Node.js 22。'] : ['条件 ' + index]}));
+  requirements_zh: index === 17 ? ['使用 Turbopack 构建。', 'Node.js 22。'] : ['条件 ' + index],
+  ...(index === 18 ? {requirements: ['Author-reported results.', 'Bring your own ROM.'], requirements_zh: ['作者报告的结果。', '自备 ROM。'],
+                      requirement_facets: ['testing', 'prerequisites']} : {})}));
 const meta = {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: 0}};
-const lean = rows.map(({requirements, requirements_zh, ...record}) => record);
+const lean = rows.map(({requirements, requirements_zh, requirement_facets, ...record}) => record);
 
 function application({fail = 0} = {}) {
   const app = setup('', {records: rows});
@@ -62,6 +64,11 @@ const items = card => details(card).children.find(child => child.tag === 'ul').c
   app.api.state.lang = 'zh'; app.api.applyLanguage();
   assert.deepEqual(items(app.grid()[0]), [['', '使用 Turbopack 构建。'], ['', 'Node.js 22。']]);
   assert.deepEqual(app.paths(), ['/catalog-index.json', '/catalog.json'], 'the complete catalog is fetched once');
+  // requirement_facets arrive with the complete catalog too, so faceted items render with their lead-ins.
+  search.value = '18'; search.emit('input');
+  const descendants = node => [node, ...node.children.flatMap(descendants)];
+  const facets = descendants(details(app.grid()[0])).filter(node => node.className === 'requirement-facet');
+  assert.deepEqual(facets.map(node => node.textContent), ['前提条件：', '测试证据：']);
 
   // A query typed before the catalog arrives is re-run against the requirement text.
   const early = application();
