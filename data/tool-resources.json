@@ -12548,5 +12548,38 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "uniden-r8-ble-telemetry-case",
+    "name": "uniden-r8-ble: reconstructing the Uniden R8 radar detector's BLE telemetry",
+    "url": "https://github.com/JeremyWhittaker/unidenr8_bluetooth",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Decodes the undocumented Bluetooth Low Energy output of a Uniden R8 radar detector into a receive-only collector for a Raspberry Pi, with live telemetry, alert start/update/end events, SQLite history and optional MQTT and Home Assistant publishing. The author worked the protocol out from the wire on a real detector, building on earlier R8w findings from AegisX86/UnidenR8wlink, and grades every claim in PROTOCOL.md by its evidence: measured on this R8, seen on another model, decompiled from an app but untested, or inference. Unknown fields are carried through raw rather than given invented meanings.",
+    "description_zh": "将 Uniden R8 雷达探测器未公开的低功耗蓝牙输出解码为可在 Raspberry Pi 上运行的只读采集程序，提供实时遥测、警报开始／更新／结束事件、SQLite 历史记录，以及可选的 MQTT 与 Home Assistant 发布。作者在真实设备上直接从通信数据推断协议，并以 AegisX86/UnidenR8wlink 先前针对 R8w 的发现为基础；PROTOCOL.md 中的每项结论都按证据分级：在这台 R8 上实测、在其他型号上见到、从应用反编译但未测试，或推断。未知字段按原始数据保留，而不赋予臆造的含义。",
+    "evidence_url": "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/docs/PROTOCOL.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at the main-branch head of 2026-09-09 (package version 0.1.0). README reports 1 Hz telemetry decoded without errors on a moving vehicle and one real Ka-band alert captured on the R8, while PROTOCOL.md still grades active-alert fields as inherited from R8w captures; it also states that the live stream carries no position, and that settings blocks remain undecoded.",
+      "Requires the user's own Uniden R8 and a Linux host with BlueZ, documented on a Raspberry Pi Zero 2 W with an optional systemd service, gpsd-connected GNSS receiver, PiSugar battery and MQTT broker. No vendor app, firmware or captures are committed; README says raw captures are kept in a git-ignored local store, and Bluetooth addresses and coordinates are redacted before publication.",
+      "Python 3.11+, with bleak as the optional BLE extra and paho-mqtt for publishing. README says the installed package sends no application commands to the detector and that an AST audit, run by selftest and in CI, checks this; commands used for the coordinate experiments were sent from separate scripts at the owner's instruction, as SAFETY.md records.",
+      "CI runs ruff and pytest on Python 3.11–3.13 plus a selftest job; README badges 754 tests, which need no hardware, broker, gpsd or network. README notes that MQTT and the dashboard have not met real hardware, and this review ran neither the tests nor a detector.",
+      "MIT license. README states the project is not affiliated with or endorsed by Uniden and is diagnostic software, not a substitute for the detector's own display or warnings. HANDOFF.md is written for a person or an agent taking over the project, but the reviewed sources do not attribute the analysis to AI, and no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/README.md",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/docs/SAFETY.md",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/docs/EVIDENCE.md",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/docs/CAPABILITIES.md",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/docs/HANDOFF.md",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/pyproject.toml",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/.github/workflows/ci.yml",
+      "https://github.com/JeremyWhittaker/unidenr8_bluetooth/blob/46c7e1af2fa86c9a5c18f58528bea0f22b4d77dc/LICENSE"
+    ]
   }
 ]

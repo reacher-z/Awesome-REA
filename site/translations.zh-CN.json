@@ -4547,5 +4547,15 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "uniden-r8-ble-telemetry-case": {
+    "name": "uniden-r8-ble：重建 Uniden R8 雷达探测器的蓝牙遥测",
+    "requirements": [
+      "在 2026-09-09 的 main 分支最新提交处审阅（软件包版本 0.1.0）。README 报告在行驶车辆上无差错地解码了 1 Hz 遥测，并在这台 R8 上捕获到一次真实的 Ka 波段警报；而 PROTOCOL.md 仍将活动警报字段评为来自 R8w 抓包的继承证据。文档还指出实时数据流不包含位置，设置数据块也仍未解码。",
+      "需要使用者自己的 Uniden R8，以及带 BlueZ 的 Linux 主机；文档以 Raspberry Pi Zero 2 W 为例，可选配 systemd 服务、经 gpsd 连接的 GNSS 接收器、PiSugar 电池和 MQTT 代理。仓库未收录厂商应用、固件或抓包记录；README 称原始抓包保存在被 git 忽略的本地目录中，蓝牙地址和坐标在发布前会被脱敏。",
+      "需要 Python 3.11+，bleak 作为可选的蓝牙扩展，paho-mqtt 用于发布。README 称已安装的软件包不会向探测器发送任何应用命令，并由 selftest 和 CI 中运行的 AST 审计加以检查；坐标实验所用的命令是在所有者指示下由独立脚本发送的，SAFETY.md 对此有记录。",
+      "CI 在 Python 3.11–3.13 上运行 ruff 与 pytest，并有一个 selftest 任务；README 徽章标示 754 项测试，无需硬件、代理、gpsd 或网络。README 指出 MQTT 与仪表板尚未在真实硬件上运行过，本次核查既未运行测试，也未连接探测器。",
+      "采用 MIT 许可。README 称项目与 Uniden 无关联、未获其认可，是诊断软件，不能替代探测器自身的显示或警告。HANDOFF.md 面向接手项目的人或智能体编写，但所审阅来源并未将分析工作归于 AI，也未确立任何 REA 使用。"
+    ]
   }
 }
