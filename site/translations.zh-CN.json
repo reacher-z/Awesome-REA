@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "qu1cksc0pe": {
+    "name": "Qu1cksc0pe 恶意软件分析工具",
+    "requirements": [
+      "项目在 master 分支上持续开发，没有标签或 GitHub 发布版本；所审提交（2026-09-18）新增了实时内存 YARA/IOC 扫描、Windows 注入与镂空检测，并扩展了 Android 动态分析。README 推荐 Parrot OS、Kali Linux 或 Windows 10/11；Mach-O 和 Go 二进制仅支持静态分析。",
+      "README 要求克隆仓库、在 Python 虚拟环境中运行 setup.sh（适用于 apt-get 或 pacman 系统），Windows 上则运行 setup.ps1。安装脚本会安装 requirements.txt，其中固定 androguard 3.4.0a1、yara-python 4.5.0 和 unicorn 2.1.4，并包含 lief、pefile、oletools、frida-tools、docker、flask 和 mcp>=2.0.0；另外还会安装 adb、binutils 的 strings、unzip、7-Zip、安装在用户主目录下 sc0pe_Base 文件夹中的 JADX 1.5.3，以及 Ollama 和配置中的模型。基于 Ubuntu 22.04 的 Dockerfile 可对挂载的文件运行命令行。哈希扫描会从独立的 CYB3RMX/MalwareHashDB 仓库下载 HashDB SQLite 数据库，VirusTotal 查询需要使用者自己的 API 密钥。",
+      "输入是分析者自己的可疑文件。仓库附带检测数据，包括约 300 个 YARA 规则文件、Android Frida 脚本以及 API 与 ATT&CK 映射表，另附一份 dnlib 3.6.0 .NET 库（Systems/Windows/dnlib.dll，来自开源的 de4dot 项目），所审脚本均未按名称引用它；仓库不含恶意软件样本。静态分析和脚本模拟器不会运行样本，但 Linux 二进制模拟会在禁用网络的 Docker 容器中用 qemu-user 运行样本，没有 Docker 时退回到宿主机上的 qemu；--watch 模式则附加到宿主机或所连 Android 设备上的运行中进程。只应在隔离的分析机器上处理样本。",
+      "--ai 默认把报告交给 Ollama；随附的 multiple.conf 指定带 cloud 标记的 kimi-k2.5:cloud 模型，setup.ps1 为此建议执行 ollama signin；Claude、OpenAI、DeepSeek、Kimi 和 GLM 后端需通过 --ai_provider 主动选择，此时报告数据会离开本机。MCP 服务器（--mcp）默认通过 127.0.0.1:8765 上的 streamable HTTP 提供 14 个工具，也可用 stdio；随附的 .mcp.json 会为 Claude Code 注册该服务器。家族候选、模拟轨迹和 AI 总结都属于启发式结果，需要分析者复核。",
+      "GPL-3.0 许可。本次审阅未安装或运行任何内容，也未分析任何样本；所审来源未确立与 REA 的关联。"
+    ]
   }
 }

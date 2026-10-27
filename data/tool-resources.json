@@ -12616,5 +12616,42 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "qu1cksc0pe",
+    "name": "Qu1cksc0pe",
+    "url": "https://github.com/CYB3RMX/Qu1cksc0pe",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "All-in-one malware triage tool that statically analyses Windows PE, Linux ELF (including Go binaries), macOS Mach-O and Android APK, JAR and DEX files as well as Office and PDF documents, scripts, shortcuts, archives, e-mails and PCAPs, reporting imports and API categories, sections, strings and IOCs, packers, embedded executables, Android permission risk, YARA matches and, for Windows and Linux, MITRE ATT&CK mappings. VBA/VBScript, JavaScript and PowerShell are run through bounded in-memory emulators instead of being executed, and --watch modes monitor live Windows, Linux and Android processes. A CLI, a Flask web UI and an MCP server expose the analyses, with optional LLM summaries of the JSON reports.",
+    "description_zh": "一体化恶意软件初筛工具，可对 Windows PE、Linux ELF（含 Go 二进制）、macOS Mach-O 和 Android APK、JAR、DEX 文件，以及 Office 与 PDF 文档、脚本、快捷方式、压缩包、电子邮件和 PCAP 做静态分析，报告导入表与 API 分类、节区、字符串与 IOC、加壳器、内嵌可执行文件、Android 权限风险和 YARA 匹配，并为 Windows 与 Linux 程序给出 MITRE ATT&CK 映射。VBA/VBScript、JavaScript 和 PowerShell 交由有界的内存内模拟器处理，而不会真正执行；--watch 模式可监视 Windows、Linux 和 Android 上运行中的进程。分析功能可通过命令行、Flask 网页界面和 MCP 服务器调用，还可选择用大语言模型总结 JSON 报告。",
+    "evidence_url": "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Actively developed from the master branch with no tags or GitHub releases; the reviewed commit of 2026-09-18 adds live-memory YARA/IOC scanning, Windows injection and hollowing checks and expanded Android dynamic analysis. README recommends Parrot OS, Kali Linux or Windows 10/11; Mach-O and Go binaries are analysed statically only.",
+      "README has users clone the repository into a Python virtual environment and run setup.sh (apt-get or pacman hosts) or setup.ps1 on Windows. Setup installs requirements.txt, which pins androguard 3.4.0a1, yara-python 4.5.0 and unicorn 2.1.4 and adds lief, pefile, oletools, frida-tools, docker, flask and mcp>=2.0.0, plus adb, binutils strings, unzip, 7-Zip, JADX 1.5.3 in a sc0pe_Base folder in the home directory and Ollama with its configured model. A Dockerfile based on Ubuntu 22.04 runs the CLI against a mounted file. Hash scans download the HashDB SQLite database from the separate CYB3RMX/MalwareHashDB repository, and VirusTotal lookups need the user's own API key.",
+      "Inputs are the analyst's own suspicious files. The repository ships detection data, about 300 YARA rule files, Android Frida scripts and API and ATT&CK mapping tables, plus a bundled dnlib 3.6.0 .NET library (Systems/Windows/dnlib.dll, from the open-source de4dot project) that the reviewed scripts do not reference by name; it contains no malware samples. Static analysis and the script emulators do not run samples, but Linux binary emulation runs them under qemu-user in a network-disabled Docker container, falling back to host qemu when Docker is unavailable, and the --watch modes attach to live processes on the host or a connected Android device. Handle samples only on an isolated analysis machine.",
+      "--ai sends a report to Ollama by default; the shipped multiple.conf names the cloud-tagged kimi-k2.5:cloud model, for which setup.ps1 suggests ollama signin, and Claude, OpenAI, DeepSeek, Kimi and GLM backends are opt-in through --ai_provider, in which case report data leaves the machine. The MCP server (--mcp) exposes 14 tools over streamable HTTP on 127.0.0.1:8765 by default, or over stdio, and a bundled .mcp.json registers it for Claude Code. Family candidates, emulation traces and AI summaries are heuristic findings for analyst review.",
+      "GPL-3.0. Nothing was installed or run and no samples were analysed in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/setup.sh",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/setup.ps1",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/requirements.txt",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/Dockerfile",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/Systems/Multiple/multiple.conf",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/Modules/hashScanner.py",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/Modules/analysis/linux/linux_emulator.py",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/Modules/mcp_server.py",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/.mcp.json",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/tree/180d44f44725bbce0296dc5346554fcf8852bbb2/Systems/Windows",
+      "https://github.com/CYB3RMX/Qu1cksc0pe/blob/180d44f44725bbce0296dc5346554fcf8852bbb2/LICENSE"
+    ]
   }
 ]
