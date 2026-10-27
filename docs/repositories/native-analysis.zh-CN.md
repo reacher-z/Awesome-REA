@@ -488,7 +488,7 @@
 - [TheRomanXpl0it/ghidra-emu-fun](https://github.com/TheRomanXpl0it/ghidra-emu-fun) — 使用 Ghidra 模拟函数。 **[59 星标]**
 - [partoftheworlD/GHIDRApy\_FunctionStringAssociate](https://github.com/partoftheworlD/GHIDRApy_FunctionStringAssociate) — 实现与 IDA 的 FunctionStringAssociate 插件相同的功能。目前脚本刚达到可用状态，未来计划提升运行速度，使其接近该插件。 **[57 星标]**
 - [BlackwingHQ/iBoot64Binja](https://github.com/BlackwingHQ/iBoot64Binja) — Binary Ninja 的 Binary View 插件，用于对 iBoot 一类的二进制文件进行逆向工程 **[56 星标]**
-- [nccgroup/ghidra-nanomips](https://github.com/nccgroup/ghidra-nanomips) — Ghidra 的 nanoMIPS 模块。 **[56 星标]**
+- [nccgroup/ghidra-nanomips](https://github.com/nccgroup/ghidra-nanomips) — Ghidra 的 nanoMIPS 模块。 **[56 星标]** · 精选：[ghidra-nanomips nanoMIPS 处理器模块](https://awesomerea.org/zh/resources/ghidra-nanomips/)
 - [YuAo/MetalLibraryExplorer](https://github.com/YuAo/MetalLibraryExplorer) — 在浏览器中解析和反汇编 .metallib 文件。 **[56 星标]**
 - [1rhino2/fnprint](https://github.com/1rhino2/fnprint) — 根据函数行为匹配二进制文件中的函数，而非比较字节形式；通过微执行生成函数行为指纹。 **[55 星标]**
 - [seifreed/r2inspect](https://github.com/seifreed/r2inspect) — r2inspect 是专业恶意软件分析框架，利用 radare2 生态系统自动深入静态检查 PE、ELF 和 Mach-O 二进制文件。结合格式解析、启发式检测与丰富报告，为逆向工程师、事件响应人员和威胁分析师提供支持。 **[55 星标]**
