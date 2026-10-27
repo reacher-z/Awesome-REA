@@ -36,7 +36,7 @@ function application(query, pathname = '/') {
   for (const [language, pathname] of [['en', '/'], ['zh', '/zh/']]) {
     const app = application('?target=app&q=decompiler', pathname);
     assert.equal(app.elements.get('#export-matches').hidden, undefined, 'app.js reveals the button only after the catalog loads');
-    await app.api.load();
+    await app.api.load(); await app.api.state.details;
     assert.equal(app.elements.get('#export-matches').hidden, false);
     const found = app.api.filtered();
     assert.equal(found.length, 20);
@@ -118,5 +118,31 @@ function application(query, pathname = '/') {
   failed.click('#export-matches');
   assert.equal(failed.downloads.length, 0);
   assert.equal(new URL(failed.elements.get('#download-curated-catalog').href).pathname, '/catalog.json');
+  // Cards render from the lean catalog-index.json; the export waits for and copies the complete catalog.json records.
+  const settle = async () => { for (let i = 0; i < 5; i++) await new Promise(resolve => setImmediate(resolve)); };
+  const full = rows.map(row => ({...row, additional_evidence_urls: [row.url + '#notes']}));
+  const leanRows = full.map(({requirements, requirements_zh, additional_evidence_urls, ...row}) => row);
+  for (const fail of [false, true]) {
+    const lean = application('?target=app&q=decompiler');
+    let release; const gate = new Promise(resolve => { release = resolve; });
+    lean.context.fetch = async url => {
+      const meta = {repository_url: 'https://github.com/reacher-z/Awesome-REA', source_index: {resource_count: 0}};
+      if (new URL(url).pathname === '/catalog-index.json') return {ok: true, json: async () => ({resources: leanRows, meta, topic_labels: {}})};
+      await gate; return fail ? {ok: false, status: 503} : {ok: true, json: async () => ({resources: full, meta, topic_labels: {}})};
+    };
+    await lean.api.load();
+    lean.click('#export-matches');
+    assert.equal(lean.downloads.length, 0);
+    assert.equal(lean.status('#export-matches-status'), 'Loading the complete catalog…');
+    release(); await settle();
+    if (fail) {
+      assert.equal(lean.downloads.length, 0);
+      assert.equal(lean.status('#export-matches-status'), 'The complete catalog couldn’t load, so nothing was exported. The full curated catalog JSON in the footer still works.');
+    } else {
+      assert.equal(lean.downloads.length, 1);
+      assert.deepEqual(lean.exported().resources, lean.api.filtered().map(record => full.find(row => row.id === record.id)));
+      assert(lean.exported().resources.every(record => record.additional_evidence_urls && record.requirements));
+    }
+  }
   console.log('Filtered export checks passed');
 })().catch(error => { console.error(error); process.exit(1); });

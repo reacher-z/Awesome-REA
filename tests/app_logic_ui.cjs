@@ -431,8 +431,8 @@ const urlParam = (app, key) => new URL(app.location.href).searchParams.get(key);
     assert.deepEqual(counts(), {all: '2', website: '0', game: '0', app: '1', binary: '1', firmware: '0', protocol: '0'});
     assert.deepEqual(options('kind-select').find(([value]) => value === 'tool').slice(1), [n(lang === 'zh' ? '工具' : 'Tool', 2), false]);
     assert.deepEqual(options('kind-select').find(([value]) => value === 'case-study').slice(1), [n(lang === 'zh' ? '案例' : 'Case study', 0), true]);
-    // The counts add no live region: only the page's existing status lines (results, repositories, Get data) are announced.
-    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['data-clone-status', 'data-copy-status', 'results-status', 'source-status']);
+    // The counts add no live region: only the page's status lines (results, repositories, Get data, exports) are announced.
+    assert.deepEqual(app.marked.filter(node => node.attrs['aria-live']).map(node => node.id).sort(), ['data-clone-status', 'data-copy-status', 'export-matches-status', 'results-status', 'source-export-matches-status', 'source-status']);
     assert(app.element('kind-select').children.every(option => !option.attrs['aria-live']));
   }
 

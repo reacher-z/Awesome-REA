@@ -446,7 +446,7 @@ function loadDetails() {
   if (!state.loaded || state.details) return state.details;
   if (state.detailsError) { state.detailsError = false; state.pendingRequirements.forEach(([list, record]) => fillRequirements(list, record)); }
   state.details = fetch(dataURL("catalog.json"), {cache: "no-cache"}).then(response => { if (!response.ok) throw new Error("Catalog HTTP " + response.status); return response.json(); }).then(data => {
-    const complete = new Map(data.resources.map(r => [r.id, r]));
+    const complete = new Map(data.resources.map(r => [r.id, r])); state.fullRecords = complete;
     for (const record of state.records) { const full = complete.get(record.id); if (full) { record.requirements = full.requirements; record.requirements_zh = full.requirements_zh; if (full.requirement_facets) record.requirement_facets = full.requirement_facets; record.search = searchText(record); } }
     const pending = state.pendingRequirements; state.pendingRequirements = [];
     if (state.q.trim()) render(); else pending.forEach(([list, record]) => fillRequirements(list, record));
@@ -602,7 +602,7 @@ function curatedExport() {
   return {count: found.length, filename: "awesomerea-curated-matches.json", value: {export: {...exportMetadata("curated-catalog", "curated-resource",
     "Curated resources matching the homepage filters, copied unchanged from catalog.json. Each record keeps its own source review (verification, verified_at, evidence_url); this export adds none.",
     {q: state.q, target: state.target, kind: state.kind, category: state.category, group: state.group}, "displayed", found.length, state.records.length),
-    full_download: dataURL("catalog.json").href}, resources: exportRecords(found)}};
+    full_download: dataURL("catalog.json").href}, resources: exportRecords(found.map(record => state.fullRecords?.get(record.id) || record))}};
 }
 function sourceExport() {
   const found = sourceFiltered(); const meta = sourceState.meta;
@@ -618,9 +618,15 @@ function downloadJSON(filename, value) {
   document.body.append(link); link.click(); link.remove();
   setTimeout(() => URL.revokeObjectURL(href), 1000);
 }
-function exportMatches(prefix) {
+async function exportMatches(prefix) {
   const source = prefix === "source-", zh = state.lang === "zh", status = $(`#${prefix}export-matches-status`);
   if (source ? !sourceState.loaded : !state.loaded) return;
+  // Cards render from the lean catalog-index.json; a curated export copies the complete catalog.json records, so it waits for them.
+  if (!source && !state.fullRecords) {
+    status.textContent = zh ? "正在加载完整目录…" : "Loading the complete catalog…";
+    await loadDetails();
+    if (!state.fullRecords) { status.textContent = zh ? "完整目录未能加载，未导出任何内容；页脚的完整精选目录 JSON 仍可下载。" : "The complete catalog couldn’t load, so nothing was exported. The full curated catalog JSON in the footer still works."; return; }
+  }
   const result = source ? sourceExport() : curatedExport(); const count = result.count.toLocaleString(zh ? "zh-CN" : "en-US");
   if (!result.count) { status.textContent = zh ? `没有可导出的匹配${source ? "仓库" : "资源"}。` : `No matching ${source ? "repositories" : "resources"} to export.`; return; }
   try {
