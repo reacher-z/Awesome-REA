@@ -11759,5 +11759,37 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "ghidrecomp",
+    "name": "ghidrecomp",
+    "url": "https://github.com/clearbluejar/ghidrecomp",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Python command-line decompiler that drives Ghidra through pyghidra to decompile every function of a binary into separate C files, or into one C file and header with Ghidra's C++ exporter, keeping the Ghidra project so later runs can reuse the analysis. Options filter functions by regex, apply PDB symbols from a local file or from Microsoft, Chromium, Mozilla, Intel, NVIDIA and AMD symbol servers, apply extra GDT data-type archives, write Mermaid call-graph Markdown, generate BSim function signatures, and scan the decompiled code with Semgrep rules into SARIF reports.",
+    "description_zh": "通过 pyghidra 驱动 Ghidra 的 Python 命令行反编译工具：把二进制中的所有函数分别反编译为独立的 C 文件，或借助 Ghidra 的 C++ 导出器生成一个 C 文件和头文件，并保留 Ghidra 项目以便后续运行复用分析结果。可按正则筛选函数，从本地文件或 Microsoft、Chromium、Mozilla、Intel、NVIDIA、AMD 符号服务器应用 PDB 符号，加载额外的 GDT 数据类型库，输出 Mermaid 调用图 Markdown，生成 BSim 函数签名，并用 Semgrep 规则扫描反编译代码、输出 SARIF 报告。",
+    "evidence_url": "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.5.9, published to PyPI and GitHub on 2026-01-06; the reviewed main commit is that tag. setup.cfg requires Python 3.10+ and pyghidra 2.2.1+ and marks the project as alpha; the CodeQL option is a placeholder that only prints a coming-soon message.",
+      "Needs a separate Ghidra installation and the Java runtime it requires, found through GHIDRA_INSTALL_DIR. The Dockerfile and devcontainer build on the author's ghidra-python image and pin pyghidra 2.2.1 for Ghidra 11; CI runs pytest in that image for the latest Ghidra and for 11.3, 11.3.2 and 11.4.2. SAST scanning needs Semgrep, installed with the sast extra.",
+      "Binaries to decompile are the analyst's own; symbol lookups contact the listed public symbol servers unless --skip-symbols is set. The tests bundle tests/data/afd.sys.10.0.22621.1415, a Microsoft Windows driver build also used in the README examples, an AArch64 ls binary and an ntddk_64.gdt data-type archive; these files keep their publishers' terms.",
+      "The README presents the output as decompilations for research and analysis and makes no recompilation claim; the tests check function counts, call graphs, one signature after GDT application, BSim and SAST output, not the accuracy of decompiled code in general. GPL-3.0 (LICENSE); Ghidra and Semgrep keep their own licenses. Nothing was decompiled for this review, and the sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/setup.cfg",
+      "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/ghidrecomp/sast.py",
+      "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/Dockerfile",
+      "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/.github/workflows/pytest-devcontainer-all.yml",
+      "https://github.com/clearbluejar/ghidrecomp/tree/7a82556b052268a53c734a769bd14eeabc1a4888/tests",
+      "https://github.com/clearbluejar/ghidrecomp/blob/7a82556b052268a53c734a769bd14eeabc1a4888/LICENSE",
+      "https://github.com/clearbluejar/ghidrecomp/releases/tag/v0.5.9",
+      "https://pypi.org/project/ghidrecomp/0.5.9/"
+    ]
   }
 ]

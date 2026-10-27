@@ -310,7 +310,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nlitsme/pyidbutil](https://github.com/nlitsme/pyidbutil) — A python library for reading IDA pro databases. **[161 stars]**
 - [AllsafeCyberSecurity/LazyGhidra](https://github.com/AllsafeCyberSecurity/LazyGhidra) — Make your Ghidra Lazy! **[159 stars]**
 - [cojocar/bin2llvm](https://github.com/cojocar/bin2llvm) — A binary to LLVM translator **[159 stars]**
-- [clearbluejar/ghidrecomp](https://github.com/clearbluejar/ghidrecomp) — Python Command-Line Ghidra Decompiler **[158 stars]**
+- [clearbluejar/ghidrecomp](https://github.com/clearbluejar/ghidrecomp) — Python Command-Line Ghidra Decompiler **[158 stars]** · Curated: [ghidrecomp](https://awesomerea.org/resources/ghidrecomp/)
 - [fuzziqersoftware/resource\_dasm](https://github.com/fuzziqersoftware/resource_dasm) — Classic Mac OS resource fork and application disassembler, with reverse-engineering tools for specific applications **[158 stars]**
 - [jiangzhengwenjz/katam](https://github.com/jiangzhengwenjz/katam) — WIP Decompilation of Kirby &amp; The Amazing Mirror (USA) **[158 stars]**
 - [evyatar9/Writeups](https://github.com/evyatar9/Writeups) — This repository contains writeups for various CTFs I've participated in (Including Hack The Box). **[157 stars]**

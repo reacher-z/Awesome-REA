@@ -310,7 +310,7 @@
 - [nlitsme/pyidbutil](https://github.com/nlitsme/pyidbutil) — 用于读取 IDA pro 数据库的 Python 库。 **[161 星标]**
 - [AllsafeCyberSecurity/LazyGhidra](https://github.com/AllsafeCyberSecurity/LazyGhidra) — 让你的 Ghidra 也能“偷懒”！ **[159 星标]**
 - [cojocar/bin2llvm](https://github.com/cojocar/bin2llvm) — 将二进制代码转换为 LLVM 的工具 **[159 星标]**
-- [clearbluejar/ghidrecomp](https://github.com/clearbluejar/ghidrecomp) — 基于 Python 命令行的 Ghidra 反编译器 **[158 星标]**
+- [clearbluejar/ghidrecomp](https://github.com/clearbluejar/ghidrecomp) — 基于 Python 命令行的 Ghidra 反编译器 **[158 星标]** · 精选：[ghidrecomp 命令行 Ghidra 批量反编译工具](https://awesomerea.org/zh/resources/ghidrecomp/)
 - [fuzziqersoftware/resource\_dasm](https://github.com/fuzziqersoftware/resource_dasm) — 经典 Mac OS 资源分支与应用程序反汇编器，附面向特定应用的逆向工程工具 **[158 星标]**
 - [jiangzhengwenjz/katam](https://github.com/jiangzhengwenjz/katam) — 《星之卡比：镜之大迷宫》美版反编译项目，仍在开发中 **[158 星标]**
 - [evyatar9/Writeups](https://github.com/evyatar9/Writeups) — 本仓库收录我参加的各种 CTF 的解题报告，包括 Hack The Box。 **[157 星标]**
