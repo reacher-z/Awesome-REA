@@ -12521,5 +12521,32 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "allyourbase",
+    "name": "allyourbase",
+    "url": "https://github.com/8051Enthusiast/allyourbase",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python script that estimates a firmware image's base address by comparing string addresses with the targets of every possible pointer, for any pointer size and either endianness. Instead of trying each base in turn, it computes the overlap as an FFT cross-correlation modulo several pairwise-coprime numbers and recovers the base with the Chinese remainder theorem, which keeps 64-bit address spaces tractable. The author keeps it small so that analysts can swap in their own heuristic, such as matching absolute call targets with the instructions that follow returns.",
+    "description_zh": "一个 Python 脚本，通过比较字符串地址与每个可能指针的目标地址来估算固件镜像的基址，支持任意指针长度和两种字节序。它不逐个尝试基址，而是在几个两两互素的模数下用 FFT 计算互相关来衡量重叠程度，再用中国剩余定理还原基址，因此也能处理 64 位地址空间。作者有意保持代码简短，方便分析者换用自己的启发式方法，例如把绝对调用的目标与返回指令之后的位置对应起来。",
+    "evidence_url": "https://github.com/8051Enthusiast/allyourbase/blob/78e98f7a592c5bfdb52590bdd26139202b602100/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The whole tool is allyourbase.py; the reviewed main commit of 2025-03-07 only added comments to code written in April 2023, and there are no releases, tags or packages. It needs Python 3 with NumPy (requirements.txt: numpy>=1).",
+      "Input is a raw image supplied by the user; no firmware or samples are included. -l, the pointer length in bytes, is required; -e selects endianness (little by default), -a the alignment (the pointer length by default), -n the minimum string length in code points (5 by default) and -f a slack factor that trades speed and memory for accuracy. Only NUL-terminated UTF-8 strings count. The README says memory grows linearly with file size with a high constant factor, so images of tens of megabytes are the practical range.",
+      "It prints a single best offset, which may be negative, or reports that none was found; there is no candidate ranking or confidence score, and the README models stray pointer matches as noise that the slack factor lowers. The README's only example runs on /usr/bin/ls rather than a firmware image. There are no tests or CI, and this review scanned no files.",
+      "MIT License (2023, 8051Enthusiast). Analyzed firmware keeps its own terms. The README calls it similar to rbasefind but gives no comparison on shared images."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/8051Enthusiast/allyourbase/blob/78e98f7a592c5bfdb52590bdd26139202b602100/allyourbase.py",
+      "https://github.com/8051Enthusiast/allyourbase/blob/78e98f7a592c5bfdb52590bdd26139202b602100/requirements.txt",
+      "https://github.com/8051Enthusiast/allyourbase/blob/78e98f7a592c5bfdb52590bdd26139202b602100/LICENSE"
+    ]
   }
 ]
