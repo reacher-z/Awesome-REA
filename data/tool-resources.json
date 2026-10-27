@@ -12487,5 +12487,39 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "cantools",
+    "name": "cantools",
+    "url": "https://github.com/cantools/cantools",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Python 3 library and command-line tool for CAN bus databases that parses DBC, KCD, SYM, ARXML 3/4 and CDD files and encodes and decodes CAN messages, including simple and extended signal multiplexing and diagnostic DIDs. Its CLI decodes candump output against a database, plots decoded signals from candump logs with matplotlib, dumps each message's bit layout, converts between database formats, generates C pack and unpack code, and monitors a live bus in a text interface through python-can.",
+    "description_zh": "面向 CAN 总线数据库的 Python 3 库和命令行工具，可解析 DBC、KCD、SYM、ARXML 3/4 和 CDD 文件，对 CAN 报文进行编码和解码，支持简单与扩展信号多路复用以及诊断 DID。其命令行可依据数据库解码 candump 输出、用 matplotlib 绘制 candump 日志中解码出的信号、转储每条报文的位布局、在数据库格式之间转换、生成 C 语言打包与解包代码，并通过 python-can 在文本界面中监视实时总线。",
+    "evidence_url": "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/README.rst",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 45.1.0, published 2026-10-20 on GitHub and PyPI; the reviewed master commit is 15 commits ahead of that tag. It installs with pip, and pyproject.toml requires Python 3.10+ with python-can, bitstruct, textparser, crccheck and argparse_addons, plus optional extras for plotting (matplotlib), caching (diskcache) and Windows curses support for the monitor.",
+      "Bring a database describing the target network and frames captured from it: decode reads candump output on standard input and plot reads candump log files, while monitor takes python-can bus arguments for a live interface, and the README's scripting example sends and receives frames on a SocketCAN channel. The repository's tests/files directory holds sample DBC, KCD, SYM, ARXML and CDD databases and generated C sources used by the examples and tests.",
+      "Decoding covers only what the supplied database defines; cantools applies existing message and signal definitions rather than inferring unknown layouts, and the README notes that generated C code is limited to signals of at most 64 bits. MIT licensed. No bus was connected and no captures were decoded."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/README.rst#L1-L35",
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/README.rst#L83-L130",
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/README.rst#L291-L310",
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/pyproject.toml",
+      "https://github.com/cantools/cantools/tree/5d37340b321c60cbf9b61f2abfad352751f5c835/src/cantools/subparsers",
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/src/cantools/subparsers/monitor.py",
+      "https://github.com/cantools/cantools/tree/5d37340b321c60cbf9b61f2abfad352751f5c835/tests/files",
+      "https://github.com/cantools/cantools/blob/5d37340b321c60cbf9b61f2abfad352751f5c835/LICENSE",
+      "https://github.com/cantools/cantools/releases/tag/45.1.0",
+      "https://pypi.org/project/cantools/45.1.0/",
+      "https://cantools.readthedocs.io/en/latest/"
+    ]
   }
 ]
