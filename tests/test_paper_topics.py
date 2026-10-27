@@ -19,8 +19,8 @@ def load_papers():
 
 
 def readme_topics(rendered):
-    """(topic, label, count) from the README's “By topic” list."""
-    block = rendered.split('**By topic**' if '**By topic**' in rendered else '**按主题**', 1)[1].split('\n\n', 2)[1]
+    """(topic, label, count) from the README's one-paragraph “By topic” navigation."""
+    block = next(line for line in rendered.splitlines() if line.startswith(('**By topic:** ', '**按主题：** ')))
     return [(key, label, int(count)) for label, key, count in re.findall(r'\[([^\]]+)\]\(#papers-([a-z-]+)\) \((\d+)\)', block)]
 
 
