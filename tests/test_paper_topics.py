@@ -11,7 +11,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 from build_paper_pages import STATUS_LABELS, build_paper_pages
-from build_readme import PAPER_SECTIONS, render_papers
+from build_readme import PAPER_SECTIONS, paper_venue, plain_text, render_papers
 
 
 def load_papers():
@@ -74,10 +74,11 @@ class PaperTopicTest(unittest.TestCase):
                     wording = STATUS_LABELS['conference-accepted'][language == 'zh']
                     html = (Path(directory) / route / 'index.html').read_text(encoding='utf-8')
                     self.assertIn(f'paper-status-conference-accepted">{wording}<', html)
-                    self.assertIn(f' · {wording} · [PDF](', render_papers([record], language))
+                    # README paper lines carry venue · status · first author in one metadata run.
+                    self.assertIn(f'{plain_text(paper_venue(record))} · {wording} · ', render_papers([record], language))
         for name, language in (('README.md', 'en'), ('README.zh-CN.md', 'zh')):
             text = (ROOT / name).read_text(encoding='utf-8')
-            self.assertNotRegex(text, r' · (Accepted|已接收) · \[PDF\]')
+            self.assertNotRegex(text, r' · (Accepted|已接收) · ')
 
 
 if __name__ == '__main__':
