@@ -27,6 +27,7 @@ class StagedSiteBuildTests(unittest.TestCase):
         self.source, self.output = self.root / 'site', self.root / 'dist'
         # Real renderers/assets, but only one resource and one paper; no scan snapshot.
         shutil.copytree(ROOT / 'site', self.source)
+        shutil.copytree(ROOT / 'assets', self.root / 'assets')
         data = self.root / 'data'
         data.mkdir()
         resources = json.loads((ROOT / 'data/rea-resources.json').read_text())
@@ -76,6 +77,7 @@ class StagedSiteBuildTests(unittest.TestCase):
             self.assertTrue(manifest['files'][route]['html_sha256'])
         self.assertIn('survey/references.bib', manifest['files'])
         self.assertIn('survey/citation.bib', manifest['files'])
+        self.assertIn('badges/' + build_site.LISTED_BADGE, manifest['files'])
         self.assertNotIn(str(self.root), json.dumps(manifest))
         self.assertEqual(self.unowned.read_bytes(), b'Not deployment output\n')
         self.assertEqual(list((self.root / '.cache').glob('site-build-*')), [])

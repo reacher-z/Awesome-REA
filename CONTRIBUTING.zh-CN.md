@@ -77,6 +77,16 @@ python3 -m unittest discover -s tests -v
 
 修改论文记录时，再运行 `python3 scripts/validate_papers.py`，重新生成两个 README，然后运行 `python3 scripts/build_production.py`。`python3 scripts/check_links.py` 用于在线检查来源链接，限流和临时网络故障会与确认失效的链接分开报告。CI 的完整步骤见英文指南的[目录更新部分](CONTRIBUTING.md#update-the-catalog)。
 
+## 收录项目徽章
+
+已收录的项目可以用下面的徽章链接回自己的条目。徽章是可选的：添加与否不是收录条件，也不影响审核，维护者不会要求项目添加。把 `ghidra` 换成条目 ID，即条目页网址的最后一段；英文条目页为 `https://awesomerea.org/resources/<id>/`，论文页为 `https://awesomerea.org/zh/papers/<id>/`。
+
+```markdown
+[![Featured by Awesome REA](https://awesomerea.org/badges/featured-by-awesome-rea-inline.svg)](https://awesomerea.org/zh/resources/ghidra/)
+```
+
+徽章是由合集网站提供的 184 × 20 静态 SVG，内容与 [assets/featured-by-awesome-rea-inline.svg](assets/featured-by-awesome-rea-inline.svg) 相同。
+
 ## 审核与发布
 
 Pull request 会收到由基础分支可信代码执行的[规则审核（英文）](docs/automation.md)，检查目录结构、重复项、来源字段和常见隐私问题，不运行贡献者的代码。资源是否相关、说法是否属实由维护者审核；自动检查通过不代表自动批准或合并。

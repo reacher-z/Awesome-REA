@@ -88,6 +88,16 @@ Use the [reconstruction-case form](https://github.com/reacher-z/Awesome-REA/issu
 
 Cases may use REA, other agents, or independent reverse-engineering tools. Use `independent-reconstruction` for a documented reconstruction project with no established REA connection, and `reconstruction-cases` as its category; validation rejects either value without the other. The `targets` describe the actual Website, Game, App, Binary, Firmware or Protocol domain. Identify author-reported results, incomplete behavior, platform limits and required original assets. Keep a pinned public source where possible; never include proprietary target binaries or private captures.
 
+## Badge for listed projects
+
+A listed project may link back to its entry with the badge below. It is optional: adding it is never a condition of listing and does not affect review, and maintainers do not ask projects to add it. Replace `ghidra` with the entry's ID, the last part of its page URL. A Chinese entry page is at `https://awesomerea.org/zh/resources/<id>/`, and a paper's page at `https://awesomerea.org/papers/<id>/`.
+
+```markdown
+[![Featured by Awesome REA](https://awesomerea.org/badges/featured-by-awesome-rea-inline.svg)](https://awesomerea.org/resources/ghidra/)
+```
+
+The badge is a static 184 × 20 SVG served from the collection website, a copy of [assets/featured-by-awesome-rea-inline.svg](assets/featured-by-awesome-rea-inline.svg).
+
 ## Review and publication
 
 Pull requests receive a [rule-based review](docs/automation.md) from trusted base-branch code. It checks catalog structure, duplicates, source fields, and common privacy mistakes without executing contributor code. Maintainers review resource relevance and factual claims. Passing automation does not automatically approve or merge a contribution.
