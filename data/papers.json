@@ -7294,5 +7294,64 @@
     "verified_at": "2026-10-20",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-wasm-decompiler-study",
+    "title": "Is This the Same Code? A Comprehensive Study of Decompilation Techniques for WebAssembly Binaries",
+    "title_zh": "这还是同一份代码吗？WebAssembly 二进制反编译技术的全面研究",
+    "authors": [
+      "Wei-Cheng Wu",
+      "Yutian Yan",
+      "Hallgrimur David Egilsson",
+      "David Park",
+      "Steven Chan",
+      "Christophe Hauser",
+      "Weihang Wang"
+    ],
+    "year": 2025,
+    "publication_date": "2025-09-01",
+    "date_precision": "day",
+    "date_basis": "Springer’s Crossref deposit gives published-online and issued date 2025-09-01, labelled First Online, and print year 2026. The October 2024 conference dates and the 2024-11-04 arXiv submission are not substituted for this publication date.",
+    "date_basis_zh": "Springer 提交的 Crossref 元数据将在线出版及 issued 日期记为 2025-09-01（标注为 First Online），纸质出版年份为 2026。本条目不以 2024 年 10 月的会议日期或 2024-11-04 的 arXiv 提交日期替代该出版日期。",
+    "venue": "SecureComm 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": "2411.02278",
+    "arxiv_version_reviewed": "v1",
+    "first_arxiv_date": "2024-11-04",
+    "doi": "10.1007/978-3-031-94448-2_6",
+    "citation": {
+      "container_title": "Security and Privacy in Communication Networks",
+      "series": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+      "publisher": "Springer Nature Switzerland",
+      "pages": "108-130",
+      "sources": [
+        "https://api.crossref.org/works/10.1007/978-3-031-94448-2_6"
+      ]
+    },
+    "url": "https://link.springer.com/chapter/10.1007/978-3-031-94448-2_6",
+    "pdf_url": "https://arxiv.org/pdf/2411.02278v1",
+    "code_url": null,
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Measures how well existing WebAssembly decompilers recover C, with native-binary decompilers as the baseline. The same C programs are compiled with Emscripten to WebAssembly and with clang to native code, then decompiled by wasm2c, w2c2 and wasm-decompile or by Ghidra and RetDec. Correctness reuses 1,000 Csmith programs from DecFuzzer, recompiling the output and comparing its execution with the original; code-complexity metrics and AST similarity to the original source are measured on PolyBenchC and CHStone at -O0 to -O2. wasm2c passed all 1,000 correctness programs, against 649 for wasm-decompile, 818 for Ghidra and 775 for RetDec.",
+    "description_zh": "以原生二进制反编译器为基线，衡量现有 WebAssembly 反编译器恢复 C 代码的能力。同一批 C 程序分别经 Emscripten 编译为 WebAssembly、经 clang 编译为原生代码，再由 wasm2c、w2c2 与 wasm-decompile，或由 Ghidra 与 RetDec 反编译。正确性评测复用 DecFuzzer 的 1,000 个 Csmith 程序，将输出重新编译并与原程序的执行结果比较；代码复杂度指标及与原始源码的 AST 相似度则在 PolyBenchC 和 CHStone 上以 -O0 至 -O2 测量。wasm2c 通过了全部 1,000 个正确性程序，wasm-decompile、Ghidra 和 RetDec 分别为 649、818 和 775 个。",
+    "scope_limitations_en": "Correctness covers only generated single functions with local-variable arithmetic and no library calls, pointers or global state, so the wasm2c result does not establish correctness on general programs. w2c2 is excluded from the correctness test, and wasm-decompile output could be parsed for structural similarity only at -O0. Native baselines pass through DecFuzzer’s syntax rewriter, and the authors note that some Ghidra and RetDec failures may come from that evaluation step rather than the decompilers. Readability is estimated from metrics such as lines of code, nesting depth, cyclomatic and Halstead complexity, gotos and casts, not from a human study. The benchmarks are C suites compiled by the authors with one Emscripten/clang toolchain, not real-world WebAssembly modules, and tool versions are described only as the latest available at the time.",
+    "scope_limitations_zh": "正确性评测仅覆盖生成的单个函数，其中只有局部变量算术运算，不含库调用、指针或全局状态，因此 wasm2c 的结果不能证明其在一般程序上的正确性。w2c2 未纳入正确性评测，wasm-decompile 的输出仅在 -O0 下能被解析用于结构相似度评测。原生基线经过 DecFuzzer 的语法改写器处理，作者指出 Ghidra 与 RetDec 的部分失败可能源于这一评测步骤而非反编译器本身。可读性依据代码行数、嵌套深度、圈复杂度、Halstead 复杂度、goto 与类型转换数量等指标估计，并非人工研究。基准是作者使用单一 Emscripten／clang 工具链编译的 C 程序集，而非真实环境中的 WebAssembly 模块；工具版本仅说明为当时的最新版本。",
+    "why_fits_en": "Adds an empirical baseline for existing WebAssembly decompilers, complementing the LLM-based WebAssembly decompilation papers and native decompiler correctness testing in this section.",
+    "why_fits_zh": "为现有 WebAssembly 反编译器提供实证基线，与本节基于大语言模型的 WebAssembly 反编译论文及原生反编译器正确性测试互补。",
+    "metadata_notes": "Crossref records the chapter in the LNICST book Security and Privacy in Communication Networks, pages 108–130, with conference information for SecureComm 2024 (the 20th edition, Dubai, 28–30 October 2024). Crossref gives no series volume number, so none is recorded. The Springer landing page refused automated requests; the description and limitations rest on the 13-page arXiv v1 manuscript, whose footer names SecureComm 2024. It is not claimed to match the published chapter page for page. The paper says its benchmark and analysis framework will be open-sourced but gives no URL, and no release was found. No code or experiments were run.",
+    "metadata_notes_zh": "Crossref 将该章节收录于 LNICST 丛书《Security and Privacy in Communication Networks》，第 108–130 页，会议信息为 SecureComm 2024（第 20 届，迪拜，2024 年 10 月 28–30 日）。Crossref 未给出丛书卷号，因此不予记录。Springer 文章页面拒绝自动化请求；简介与局限依据 13 页的 arXiv v1 稿件，其页脚标明 SecureComm 2024。本条目不声称其与正式出版章节逐页一致。论文称将开源其基准与分析框架，但未给出网址，也未找到相应发布。本次未运行代码或实验。",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.1007/978-3-031-94448-2_6",
+      "https://api.crossref.org/works/10.1007/978-3-031-94448-2",
+      "https://arxiv.org/abs/2411.02278v1",
+      "https://arxiv.org/pdf/2411.02278v1"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
