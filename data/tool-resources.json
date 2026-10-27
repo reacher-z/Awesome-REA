@@ -11759,5 +11759,35 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "xrefer",
+    "name": "XRefer",
+    "url": "https://github.com/mandiant/xrefer",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A Python plugin for IDA Pro from Google's FLARE team that adds a custom navigation interface. XRefer traces execution paths from entry points, groups the binary into clusters of related functions, and surfaces downstream behaviors and artifacts, with path graphs for context. It can ingest external data such as API traces from the VMRay and CAPE sandboxes, capa results and user-defined indirect cross-references. An optional integration sends extracted artifacts to Google's Gemini model to generate natural-language descriptions of code relationships and cluster-based function labels.",
+    "description_zh": "Google FLARE 团队为 IDA Pro 开发的 Python 插件，提供自定义导航界面。XRefer 从入口点追踪执行路径，将二进制划分为相关函数的聚类，并呈现下游行为和产物，配以路径图提供上下文。它可以摄入外部数据，如来自 VMRay 和 CAPE 沙箱的 API 跟踪、capa 结果以及用户自定义的间接交叉引用。可选的集成会把提取的产物发送给 Google 的 Gemini 模型，生成代码关系的自然语言描述和基于聚类的函数标签。",
+    "evidence_url": "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Reviewed at main 1aeda16 (2026-02-23; latest tag v1.0.3, 2025-01-22). Runs as a Python plugin inside IDA Pro: install with the hcli plugin manager (hcli install xrefer) or by copying plugins/ into IDA's plugins directory and running pip install -r requirements.txt, then restart IDA and use Edit -> XRefer. The asciinet dependency needs a JRE (java) on PATH.",
+      "Analysis targets a binary loaded in IDA that the analyst is authorized to examine. External enrichment is optional: XRefer can ingest API-trace files from the VMRay and CAPE sandboxes, capa output and user-defined indirect xrefs through the configuration dialog.",
+      "The LLM features are opt-in. The README's privacy notice states that when enabled they send extracted data such as APIs, strings, library references and function relationships to external services like Google's Gemini API, and that all LLM features can be disabled to keep analysis local; it directs users to Gemini's terms of service.",
+      "The repository commits two sample archives under test_samples/, each named by a SHA-256 hash and AES-encrypted: one holds a single ~3 MB binary, the other a ~2.5 MB binary alongside an encrypted VMRay report archive. These are redistributed third-party samples (consistent with malware test cases for a FLARE analysis tool) rather than the plugin's own fixtures, and the repository documents no password or provenance for them, so their redistribution rights are unclear. This entry is filed as a draft for maintainer review on that point; this collection did not decrypt or run them.",
+      "Apache-2.0 for the plugin. This collection read the README, usage documentation and repository tree at the reviewed commit without installing the plugin, running IDA or enabling any LLM feature. The Gemini integration is an optional third-party LLM aid and establishes no connection to the REA project."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/docs/usage.md",
+      "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/requirements.txt",
+      "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/ida-plugin.json",
+      "https://github.com/mandiant/xrefer/tree/1aeda163ccae9be7b01dd6172513c28878f758b6/test_samples",
+      "https://github.com/mandiant/xrefer/blob/1aeda163ccae9be7b01dd6172513c28878f758b6/LICENSE"
+    ]
   }
 ]
