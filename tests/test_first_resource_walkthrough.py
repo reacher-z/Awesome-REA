@@ -7,7 +7,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from build_readme import collection_section
+from build_readme import FULL_ENTRY, collection_section
 
 EXAMPLE = 'r2frida'
 GUIDES = {'en': ROOT / 'docs/first-resource.md', 'zh': ROOT / 'docs/first-resource.zh-CN.md'}
@@ -47,11 +47,17 @@ class WalkthroughTests(unittest.TestCase):
     def test_the_output_table_matches_what_the_generators_wrote(self):
         record = next(record for record in catalog_records() if record['id'] == EXAMPLE)
         self.assertEqual(collection_section(record), 'native-binary')
-        readme = (ROOT / 'README.md').read_text(encoding='utf-8')
-        entry = readme[readme.index(f'- [**{record["name"]}**]({record["url"]})'):]
-        self.assertIn(f'Tool · Also: App · [Requirements & evidence](https://awesomerea.org/resources/{EXAMPLE}/)',
-                      entry.split('\n- ', 1)[0])
-        self.assertLess(readme.index('<a id="native-binary"></a>'), readme.index(f'(https://awesomerea.org/resources/{EXAMPLE}/)'))
+        translation = json.loads((ROOT / 'site/translations.zh-CN.json').read_text(encoding='utf-8'))[EXAMPLE]
+        # Both guides say the entry sits under Native Binary with "Also: App" / "也适用：应用"; the line links its entry page.
+        for page, name, labels, prefix, language in (('README.md', record['name'], 'Tool · Also: App', '', 0),
+                                                     ('README.zh-CN.md', translation['name'], '工具 · 也适用：应用', '/zh', 1)):
+            with self.subTest(readme=page):
+                readme = (ROOT / page).read_text(encoding='utf-8')
+                entry = readme[readme.index(f'- [**{name}**]({record["url"]})'):]
+                self.assertIn(f'{labels} · [{FULL_ENTRY[language]}](https://awesomerea.org{prefix}/resources/{EXAMPLE}/)',
+                              entry.split('\n- ', 1)[0])
+                self.assertLess(readme.index('<a id="native-binary"></a>'),
+                                readme.index(f'(https://awesomerea.org{prefix}/resources/{EXAMPLE}/)'))
         for page, label in (('dynamic-analysis.md', 'Curated'), ('dynamic-analysis.zh-CN.md', '精选')):
             text = (ROOT / 'docs/repositories' / page).read_text(encoding='utf-8')
             line = next(line for line in text.splitlines() if line.startswith(f'- [nowsecure/r2frida]({record["url"]})'))
