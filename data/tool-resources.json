@@ -12548,5 +12548,38 @@
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/package.json",
       "https://github.com/wtsxDev/reverse-engineering/blob/b25498551c6d7110685896078afeb27097aa1e24/.travis.yml"
     ]
+  },
+  {
+    "id": "ghidra-nanomips",
+    "name": "ghidra-nanomips",
+    "url": "https://github.com/nccgroup/ghidra-nanomips",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Ghidra processor module that adds nanoMIPS disassembly and decompilation through a SLEIGH specification of the little-endian 32-bit nanoMIPS instruction set, including its multithreading instructions. NCC Group's announcement says it was written while reverse engineering MediaTek 5G baseband firmware, implements the instructions met in that firmware and leaves some complex P-Code emulation unimplemented, yet decompiles most of the baseband code the team analyzed.",
+    "description_zh": "为 Ghidra 增加 nanoMIPS 反汇编和反编译能力的处理器模块，以 SLEIGH 规范描述小端 32 位 nanoMIPS 指令集，包括其多线程指令。NCC Group 的发布文章称，该模块是在逆向分析 MediaTek 5G 基带固件时编写的，实现了该固件中遇到的指令，部分复杂 P-Code 仿真尚未实现，但已能反编译团队分析过的大部分基带代码。",
+    "evidence_url": "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.3.3, published 2025-11-06 from the reviewed main commit, with an extension zip built for Ghidra 11.4.2; v0.3.1 and v0.3.2 also target 11.4.2, while the README's build example uses Ghidra 11.0.3. For another Ghidra release, build from source with Gradle and GHIDRA_INSTALL_DIR, then add the zip through File > Install Extensions.",
+      "The module defines the single language nanomips:LE:32:default, and its importer opinion file is a commented-out template, so the language is chosen manually when importing, for example for a raw binary. The README lists the nanoMIPS32 ISA, privileged-architecture, multithreading, ELF ABI and I7200 core manuals it was written from; those documents are not included.",
+      "Release notes record p-code fixes for LWM/RESTORE, BITREVH and memory references, a compiler-spec fix for a decompiler varnode error and PC-relative address display for ADDIUPC. The repository has no tests or CI, and the specification still carries TODO notes on effective-address handling; this review loaded no binaries.",
+      "GPL-3.0; build.gradle keeps the Apache-2.0 header of Ghidra's extension skeleton. extension.properties names James Chambers and Robert Herrera as authors. Users supply the firmware to analyze; the announcement's MediaTek walkthrough is an illustration, not a bundled sample."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/data/languages/nanomips.ldefs",
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/data/languages/nanomips.opinion",
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/data/languages/nanomips.slaspec",
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/data/languages/nanomips.sinc",
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/extension.properties",
+      "https://github.com/nccgroup/ghidra-nanomips/blob/62ebe71bb858dd193bef9bb421e7b9888e140882/LICENSE",
+      "https://github.com/nccgroup/ghidra-nanomips/releases/tag/v0.3.3",
+      "https://www.nccgroup.com/research/ghidra-nanomips-isa-module/"
+    ]
   }
 ]

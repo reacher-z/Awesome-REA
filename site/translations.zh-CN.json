@@ -4547,5 +4547,14 @@
       "“练习”部分把 crackme 和 CTF 网站与公开的恶意软件样本库并列，只附有一句注意恶意软件的提醒；“Mac 解密”部分只列出工具名称，未说明用法。本记录仅把该清单视为分析资源目录。",
       "package.json 和 .travis.yml 在 Travis CI 上以 Node.js 8 配置了 remark-lint 检查，涵盖列表顺序、重复链接和失效链接。GitHub 未检测到许可证，仓库没有许可证文件，package.json 的 license 字段也为空，因此清单未声明复用条款；所链接的工具和书籍保留各自条款。这是独立的发现清单；所审来源未确立与 REA 的关联。"
     ]
+  },
+  "ghidra-nanomips": {
+    "name": "ghidra-nanomips nanoMIPS 处理器模块",
+    "requirements": [
+      "审阅时最新版本为 v0.3.3，于 2025-11-06 基于所审阅的 main 分支提交发布，附带为 Ghidra 11.4.2 构建的扩展 zip；v0.3.1 和 v0.3.2 同样面向 11.4.2，而 README 的构建示例使用 Ghidra 11.0.3。若使用其他 Ghidra 版本，需用 Gradle 并设置 GHIDRA_INSTALL_DIR 从源码构建，再通过 File > Install Extensions 安装 zip。",
+      "模块只定义了 nanomips:LE:32:default 一种语言，导入器判定文件仍是注释掉的模板，因此导入时（例如导入原始二进制）需手动选择该语言。README 列出了编写时参考的 nanoMIPS32 指令集、特权架构、多线程、ELF ABI 以及 I7200 内核手册；仓库不含这些文档。",
+      "发布说明记录了 LWM/RESTORE、BITREVH 及内存引用的 p-code 修正、一处导致反编译器 varnode 错误的编译器规范修正，以及 ADDIUPC 的 PC 相对地址显示。仓库没有测试或 CI，规范中仍有关于有效地址处理的 TODO 注释；本次审阅未加载任何二进制。",
+      "采用 GPL-3.0；build.gradle 保留了 Ghidra 扩展模板的 Apache-2.0 文件头。extension.properties 署名作者为 James Chambers 和 Robert Herrera。待分析的固件需由使用者提供；发布文章中的 MediaTek 演示仅为示例，并非随附样本。"
+    ]
   }
 }
