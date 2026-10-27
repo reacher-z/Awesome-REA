@@ -11799,5 +11799,32 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "awesome-re-mcp",
+    "name": "Awesome RE-MCP",
+    "url": "https://github.com/crowdere/Awesome-RE-MCP",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary",
+      "app"
+    ],
+    "description_en": "A single-README list, written in July 2025, of 28 MCP servers for reverse-engineering tools, grouped into disassemblers and decompilers (IDA Pro, Ghidra, Binary Ninja and others), debuggers, static and dynamic analysis, network analysis, Android and security testing, with a one-line note per entry. It also names tools the author found without an MCP server, links four talks and guides, and points to starting material for writing new servers.",
+    "description_zh": "以单个 README 维护的清单，编写于 2025 年 7 月，收录 28 个逆向工程工具的 MCP 服务器，按反汇编器与反编译器（IDA Pro、Ghidra、Binary Ninja 等）、调试器、静态与动态分析、网络分析、Android 和安全测试分组，每项附一句说明。清单还列出作者认为尚无 MCP 服务器的工具，链接四个演讲与教程，并给出编写新服务器的入门资料。",
+    "evidence_url": "https://github.com/crowdere/Awesome-RE-MCP/blob/e400b882965ef61302718c7fe7c4f1e2861bd664/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "All seven commits were made on 2025-07-26 and the list has not changed since, so its entries, star counts and status remarks are a July 2025 snapshot. Some of its gap lists no longer hold: for example, it reports no WinDbg MCP server, while this collection lists mcp-windbg.",
+      "Rows give a name, link and short description without language, transport, maintenance status or license, although the contribution guidelines ask submitters for implementation status and transport. One debugger row links a PulseMCP directory page rather than a project. Eight of the linked servers already have records here, including GhidraMCP, ReVa, mrexodia's ida-pro-mcp, radare2-mcp, LLDB's MCP support and the Burp Suite MCP Server.",
+      "The network and security-testing entries, such as a collection wrapping SQLMap, Nmap and other scanners, are dual-use tools; check each project's own documentation, scope and license before use. The list itself has no tests or verification of its entries.",
+      "The README says the list is released under the MIT license, but the repository has no license file and GitHub detects none. An independent discovery list; the reviewed source establishes no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/crowdere/Awesome-RE-MCP/blob/e400b882965ef61302718c7fe7c4f1e2861bd664/README.md#L22-L58",
+      "https://github.com/crowdere/Awesome-RE-MCP/tree/e400b882965ef61302718c7fe7c4f1e2861bd664"
+    ]
   }
 ]
