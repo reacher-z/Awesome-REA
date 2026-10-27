@@ -44,4 +44,4 @@
 html[lang="zh-CN"] .entry-heading h1{letter-spacing:0;line-height:1.4}
 html[lang="zh-CN"] .entry-description,html[lang="zh-CN"] .entry-section p,html[lang="zh-CN"] .entry-requirements{max-width:36em;line-height:1.9}
 @media(max-width:700px){.entry-main{padding-top:20px}.entry-breadcrumbs{margin-bottom:22px}.entry-heading h1{font-size:29px}.entry-description{font-size:17px;margin-top:17px}.entry-actions{gap:8px;margin:20px 0 24px}.entry-section{padding:22px 0}.entry-section h2{font-size:21px}}
-@media(max-width:520px){.entry-facts{grid-template-columns:minmax(0,1fr);gap:3px}.entry-facts dd+dt{margin-top:11px}.entry-link{font-size:14px;padding:9px 12px}.entry-language{padding-inline:9px}.entry-return{gap:8px 20px}}
+@media(max-width:520px){.entry-facts{grid-template-columns:minmax(7.5em,34%) minmax(0,1fr);gap:5px 12px;font-size:14px;line-height:1.6}.entry-link{font-size:14px;padding:9px 12px}.entry-language{padding-inline:9px}.entry-return{gap:8px 20px}}
