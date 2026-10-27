@@ -12616,5 +12616,37 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "payload-dumper-go",
+    "name": "payload-dumper-go",
+    "url": "https://github.com/ssut/payload-dumper-go",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Go command-line tool and library that extracts partition images from Android A/B OTA payloads, reading either a raw payload.bin or the OTA zip that contains it in place. It decompresses operations in parallel, can list partitions or dump only selected ones, and verifies operation data, source images and final images with SHA-256, exiting non-zero on any mismatch. Incremental (delta) payloads are applied onto previously extracted base images, and it regenerates the dm-verity hash tree and FEC parity that delta payloads omit, so the README reports bit-exact output.",
+    "description_zh": "用 Go 编写的命令行工具和库，可从 Android A/B OTA 载荷中提取分区镜像，既可读取原始 payload.bin，也可直接就地读取包含它的 OTA zip 包。它并行解压各项操作，可列出分区或只导出选定分区，并用 SHA-256 校验操作数据、源镜像和最终镜像，任何不一致都会以非零退出码结束。增量（差分）载荷会应用在先前提取的基础镜像之上，并重新生成差分载荷省略的 dm-verity 哈希树和 FEC 校验数据，因此 README 称输出可做到逐位一致。",
+    "evidence_url": "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: 2.1.0, published 2026-09-23 and identical to the reviewed main commit, with prebuilt binaries for Linux (amd64, amd64 AVX2, arm64, armv7), macOS (amd64, amd64 AVX2, arm64) and Windows (amd64, amd64 AVX2, arm64) and a checksum file; the README also lists a Homebrew package. The changelog says macOS builds need macOS 13 or later since 2.0.2 moved to Go 1.27. The README requires xz on the system because decompression uses the C xz library through cgo; the Dockerfile builds with CGO and liblzma-dev.",
+      "Input is an OTA zip or payload.bin the analyst supplies; an incremental OTA also needs the base images extracted from the matching earlier full OTA, passed with -old. The README says PUFFDIFF, ZUCCHINI and LZ4DIFF delta operations are not supported yet, so affected partitions, usually system, product or system_ext, fail with an error while the rest can be extracted with -p; images written with -no-fec skip FEC and final verification and must not be flashed.",
+      "The repository commits no OTA images: its tests build synthetic payloads, and two opt-in tests read a real payload path from environment variables (E2E_PAYLOAD, DBG_PAYLOAD). The payload format follows AOSP's update_metadata.proto. Apache-2.0. No payloads were extracted."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/README.md#L11-L25",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/README.md#L64-L102",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/CHANGELOG.md",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/go.mod",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/Dockerfile",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/payload/payload_test.go",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/payload/e2e_real_test.go",
+      "https://github.com/ssut/payload-dumper-go/blob/c3a50ba8d784764c06143c1f82971cd81a77f9d6/LICENSE",
+      "https://github.com/ssut/payload-dumper-go/releases/tag/2.1.0"
+    ]
   }
 ]

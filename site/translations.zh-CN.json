@@ -4566,5 +4566,13 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "payload-dumper-go": {
+    "name": "payload-dumper-go Android OTA 载荷提取工具",
+    "requirements": [
+      "审阅时最新版本为 2.1.0，发布于 2026-09-23，与所审阅的 main 提交相同，提供 Linux（amd64、amd64 AVX2、arm64、armv7）、macOS（amd64、amd64 AVX2、arm64）和 Windows（amd64、amd64 AVX2、arm64）预构建二进制及校验和文件；README 还列出了 Homebrew 软件包。更新日志称自 2.0.2 改用 Go 1.27 起，macOS 版本需要 macOS 13 或更高版本。README 要求系统安装 xz，因为解压通过 cgo 调用 C 版 xz 库；Dockerfile 启用 CGO 并安装 liblzma-dev 进行构建。",
+      "输入为分析者自行提供的 OTA zip 包或 payload.bin；增量 OTA 还需要从对应的前一版完整 OTA 中提取出的基础镜像，通过 -old 传入。README 称目前尚不支持 PUFFDIFF、ZUCCHINI 和 LZ4DIFF 差分操作，受影响的分区（通常是 system、product 或 system_ext）会报错失败，其余分区可用 -p 提取；使用 -no-fec 生成的镜像跳过了 FEC 和最终校验，不得刷入设备。",
+      "仓库不含任何 OTA 镜像：测试使用合成的载荷，另有两个需手动启用的测试通过环境变量（E2E_PAYLOAD、DBG_PAYLOAD）读取真实载荷路径。载荷格式依据 AOSP 的 update_metadata.proto。采用 Apache-2.0 许可。本次未提取任何载荷。"
+    ]
   }
 }
