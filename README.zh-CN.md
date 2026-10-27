@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 520](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 521](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-521-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 221](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-221-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 144](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-144-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)** · **[推荐资源](https://github.com/reacher-z/Awesome-REA/issues/new?template=resource.yml)** · **[参与贡献](#参与贡献)**
@@ -21,7 +21,7 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-520 项精选资源（221 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 517。
+521 项精选资源（221 个案例）· 144 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 518。
 
 **按目标找工具与案例**
 
@@ -30,7 +30,7 @@
 
 **论文与工作流**
 
-- [论文](#papers) (144) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (39)
+- [论文](#papers) (144) · [智能体与 MCP](#agents-and-mcp) (44) · [文档与学习资源](#references-and-learning) (40)
 
 **更多浏览方式**
 
@@ -662,6 +662,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**tiny-dec 教学用反编译器**](https://github.com/ZhangZhuoSJTU/tiny-dec) - Zhuo Zhang 用 Python 编写的小型教学用反编译器，面向 32 位 RISC-V（RV32I）ELF 文件，目的是讲清反编译的工作原理，而非与生产级反编译器竞争。 <sub>学习资源 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/tiny-dec/)</sub>
 - [**逆向工程阅读清单（onethawt）**](https://github.com/onethawt/reverseengineering-reading-list) - 由 One Thawt 编写的简短阅读清单，主要成形于 2015–2016 年，在一个 README 和单独的恶意软件分析页面中收录约 58 个链接，涵盖逆向工程工具、书籍、论文、演讲和博客文章。 <sub>学习资源 · 目标：二进制 · [完整条目](https://awesomerea.org/zh/resources/onethawt-re-reading-list/)</sub>
 - [**Decomp Academy 一致性反编译课程**](https://decomp-academy.dev/) - 由 Jack Price-Burns 维护的免费英文在线课程，在浏览器中教授一致性反编译：学习者阅读函数的目标汇编，编写 C 代码，再由原版主机编译器逐字节评判结果。 <sub>学习资源 · 目标：游戏、二进制 · [完整条目](https://awesomerea.org/zh/resources/decomp-academy/)</sub>
+- [**OWASP 固件安全测试方法论（FSTM）**](https://scriptingxss.gitbook.io/firmware-security-testing-methodology/) - 由 Aaron Guzman 维护、发布在 GitBook 上的免费英文方法论，用于嵌入式设备固件的安全测试与逆向工程。 <sub>学习资源 · 目标：固件 · [完整条目](https://awesomerea.org/zh/resources/owasp-fstm/)</sub>
 <!-- END GENERATED CATALOG -->
 
 <!-- BEGIN GENERATED PAPERS -->
