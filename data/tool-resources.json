@@ -12616,5 +12616,38 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "owl-awdl-open-implementation-case",
+    "name": "OWL: an open Apple Wireless Direct Link implementation",
+    "url": "https://github.com/seemoo-lab/owl",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Reimplements Apple Wireless Direct Link (AWDL), the proprietary Wi-Fi ad hoc protocol Apple devices use for peer-to-peer links such as AirDrop, as a user-space C daemon for Linux and macOS; the README calls it the result of reverse engineering by the Open Wireless Link project at TU Darmstadt's SEEMOO lab. OWL runs the master election, synchronises availability windows and the channel sequence, parses and crafts AWDL action and data frames, and provides an awdl0 virtual interface with a link-local IPv6 address, so unmodified IPv6 programs such as SEEMOO's OpenDrop AirDrop client can reach Apple devices. The authors describe the recovered protocol in a MobiCom 2018 paper.",
+    "description_zh": "以用户态 C 守护进程在 Linux 和 macOS 上重新实现 Apple 无线直连（AWDL）——Apple 设备用于 AirDrop 等点对点连接的专有 Wi-Fi 自组网协议；README 称其为达姆施塔特工业大学 SEEMOO 实验室 Open Wireless Link 项目逆向工程的成果。OWL 执行主节点选举，同步可用窗口和信道序列，解析并构造 AWDL 动作帧与数据帧，并提供带链路本地 IPv6 地址的 awdl0 虚拟网络接口，使未经修改的 IPv6 程序（如 SEEMOO 的 AirDrop 客户端 OpenDrop）能够与 Apple 设备通信。作者在 MobiCom 2018 论文中描述了还原出的协议。",
+    "evidence_url": "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Archived; the README calls OWL experimental and no longer maintained, says it does not support all AWDL features and may be incompatible with later AWDL versions, and states no affiliation with or endorsement by Apple. The last code change is a January 2022 buffer-overread fix; the 2026-08-17 and 2026-10-12 commits only replaced links to the former owlink website, which the README says is no longer associated with the project. There are no tags or releases.",
+      "Needs a Wi-Fi card with active monitor mode and frame injection, used directly: the authors developed and tested with an Atheros AR9280, and virtual machines without USB or PCIe passthrough and WSL are not supported. OWL runs with sudo on one wireless interface, which it then uses only for AWDL, so no access-point connection can run alongside it; channels 6, 44 and 149 are available subject to the local regulatory domain, and OWL can only monitor when it cannot use the chosen channel.",
+      "Builds with CMake 3.5+ and a C compiler against libpcap, libev and, on Linux, libnl; on macOS it uses CoreWLAN and needs a tun/tap driver such as tuntaposx. googletest and the radiotap library are git submodules. The workflow on ubuntu-latest and macos-latest builds the code and runs the googletest suite for frame-buffer parsing, election, peers and synchronisation; interoperation with Apple devices is the authors' report.",
+      "Nothing from Apple is needed to build it, and the repository holds only source code, tests, build files and an architecture diagram; using it requires nearby Apple devices with AWDL. README lists known gaps: static election metric and counter values, a channel sequence fixed at start-up because adapting it would need a better understanding of Apple's implementation, and no concurrent AP connection. It also cites the group's MobiCom 2018 protocol paper and demo and a USENIX Security 2019 security analysis of AWDL.",
+      "GPL-3.0 (COPYING); AWDL and AirDrop remain Apple's proprietary technology. Nothing was built or run with Wi-Fi hardware or Apple devices in this review; the reviewed sources establish no AI or REA use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/CMakeLists.txt",
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/.gitmodules",
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/daemon/owl.c",
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/src/frame.h",
+      "https://github.com/seemoo-lab/owl/tree/0ee3263f944ea721c355f826aa90d636d012a512/tests",
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/.github/workflows/test.yml",
+      "https://github.com/seemoo-lab/owl/blob/0ee3263f944ea721c355f826aa90d636d012a512/COPYING",
+      "https://doi.org/10.1145/3241539.3241566"
+    ]
   }
 ]

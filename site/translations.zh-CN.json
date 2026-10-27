@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "owl-awdl-open-implementation-case": {
+    "name": "OWL：开源的 Apple 无线直连（AWDL）实现",
+    "requirements": [
+      "仓库已归档；README 称 OWL 是实验性软件、已不再维护，并未支持 AWDL 的全部功能，可能与之后的 AWDL 版本不兼容，同时声明与 Apple 无关联、未获其认可。最后一次代码改动是 2022 年 1 月修复缓冲区越界读取；2026-08-17 和 2026-10-12 的提交只是替换了指向原 owlink 网站的链接，README 说明该网站已与本项目无关。仓库没有标签或发布版本。",
+      "需要支持主动监听模式和帧注入、且可直接访问的 Wi-Fi 网卡：作者使用 Atheros AR9280 开发和测试；不支持未做 USB 或 PCIe 直通的虚拟机，也不支持 WSL。OWL 需以 sudo 在一个无线接口上运行，运行后该接口只用于 AWDL，因此不能同时连接接入点；可用信道为 6、44 和 149，具体取决于当地的无线电管理规定，无法使用所选信道时 OWL 只能监听。",
+      "使用 CMake 3.5+ 和 C 编译器构建，依赖 libpcap、libev，Linux 上还需 libnl；macOS 上使用 CoreWLAN，并需要 tuntaposx 等 tun/tap 驱动。googletest 和 radiotap 库以 git 子模块引入。ubuntu-latest 与 macos-latest 上的工作流会构建代码并运行 googletest 测试，覆盖帧缓冲区解析、选举、对端管理和同步；与 Apple 设备的互通情况来自作者报告。",
+      "构建时不需要任何 Apple 文件，仓库只包含源代码、测试、构建文件和一张架构图；实际使用需要附近有启用 AWDL 的 Apple 设备。README 列出的已知不足包括：选举指标和计数器取静态值；信道序列在启动时固定，因为动态调整需要进一步了解 Apple 的实现；不能同时连接接入点。README 还引用了该团队的 MobiCom 2018 协议论文及演示，以及一篇 USENIX Security 2019 的 AWDL 安全分析论文。",
+      "GPL-3.0 许可（COPYING）；AWDL 和 AirDrop 仍是 Apple 的专有技术。本次审阅未使用 Wi-Fi 硬件或 Apple 设备构建或运行；所审来源未确立任何 AI 或 REA 使用。"
+    ]
   }
 }
