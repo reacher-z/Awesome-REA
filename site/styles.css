@@ -285,6 +285,8 @@ html[lang="zh-CN"] .collection-intro h1{letter-spacing:-.6px}
 .shelf-arrow{font-size:13px;color:#9390a5;transition:transform .15s ease}
 .shelf-link:hover strong{color:var(--link)}
 .shelf-link:hover .shelf-arrow{transform:translate(2px,-2px)}
+/* Same-site shelf links use → (↗ marks links that leave the site), so the hover nudge follows it. */
+.shelf-link[href^="/"]:hover .shelf-arrow{transform:translateX(2px)}
 .shelf-note{font-family:Georgia,serif;font-style:italic;font-size:11px;margin:1px 0 0;color:var(--muted)}
 .home-intro .collection-directory{margin-top:35px;padding:23px 0;gap:14px 34px;border-bottom:1px solid var(--line)}
 .home-intro .collection-directory a{gap:8px;color:var(--muted);font-size:12px}
@@ -319,7 +321,7 @@ html[lang="zh-CN"] .shelf-note{font-family:var(--sans);font-style:normal}
 @media(max-width:1100px){.hero-layout{gap:32px;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}.home-intro h1{font-size:48px;letter-spacing:-2.3px}.subject-directory{gap:8px}.subject-directory a{padding:11px 10px}}
 @media(max-width:850px){.hero-layout{grid-template-columns:1fr}.collection-shelf{display:none}.home-intro h1{font-size:48px;max-width:720px}.home-intro .collection-description{max-width:650px}.home-intro{padding-top:24px}.subject-directory{grid-template-columns:repeat(3,minmax(0,1fr))}.home-intro .collection-directory{gap:12px 24px}.home-intro .collection-directory .directory-about{margin-left:0}}
 @media(max-width:520px){.home-intro{padding:20px 0 18px}.home-intro h1{font-size:36px;line-height:1.15;letter-spacing:-1.5px}.home-intro h1 em{letter-spacing:-1.7px}.home-intro .eyebrow{font-size:11px;margin-bottom:10px;letter-spacing:1px}.home-intro .collection-description{font-size:16px;line-height:1.7;margin-top:14px}.hero-actions{gap:9px 18px;margin-top:20px}.hero-actions .button{padding:11px 14px;font-size:12px}.hero-text-link{font-size:12px}.home-intro .collection-directory{margin-top:16px;padding:12px 0;gap:12px 19px}.home-intro .collection-directory a{font-size:10px;gap:5px}.home-intro .collection-directory strong{font-size:20px}.home-intro .collection-directory .directory-about{width:100%;font-size:11px}.subject-directory{margin-top:15px;gap:7px}.subject-directory a{font-size:11px;padding:10px 9px;gap:7px}.subject-arrow{display:none}.contributors-section{grid-template-columns:1fr;gap:22px;padding-top:26px;padding-bottom:30px}html[lang="zh-CN"] .home-intro h1{font-size:35px}}
-@media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow{transform:none}}
+@media(prefers-reduced-motion:reduce){.shelf-arrow,.subject-directory a{transition:none}.shelf-link:hover .shelf-arrow,.shelf-link[href^="/"]:hover .shelf-arrow{transform:none}}
 @media(max-width:520px){.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}.hero-actions .button,.hero-actions .hero-text-link{min-width:0;min-height:44px;justify-content:center;font-size:13px;line-height:1.5}.hero-actions .button{padding:10px}.hero-text-link{font-size:11px}.home-intro .collection-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.home-intro .collection-directory a:not(.directory-about){display:flex;flex-direction:column;align-items:flex-start;gap:0}.home-intro .collection-directory .directory-about{grid-column:1/-1;width:auto}.home-intro .collection-directory a{font-size:10px}}
 
 @media(max-width:700px){.contributor-list{grid-template-columns:1fr;gap:24px}}

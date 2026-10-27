@@ -245,6 +245,29 @@ class HomepageLocaleTests(unittest.TestCase):
         self.assertEqual(nodes(html, 'input')[0]['attrs']['aria-label'], 'A "quoted" label')
         self.assertIn('aria-label="A &quot;quoted&quot; label"', html)
 
+    def test_only_links_that_leave_the_site_show_the_external_arrow(self):
+        # ↗ and the external-link icon mark new-tab links off awesomerea.org; same-site links use → or no glyph.
+        changed = ('surveyLink', 'directoryAbout', 'browseDirectory', 'dataManifest', 'dataResources', 'dataPapers')
+        for lang in ('en', 'zh'):
+            with self.subTest(language=lang):
+                html = localized_homepage(TEMPLATE, APP, lang)
+                internal, external = [], []
+                for node in nodes(html, 'a'):
+                    href = node['attrs'].get('href', '')
+                    (external if re.match(r'https?://', href) else internal).append((href, content(html, node)))
+                    if re.match(r'https?://', href):
+                        self.assertNotRegex(href, r'^https://awesomerea\.org(?:/|$)')
+                self.assertGreaterEqual(len([href for href, _ in internal if href.startswith('/')]), 14)
+                for href, inner in internal:
+                    self.assertNotIn('↗', inner, href)
+                    self.assertNotRegex(inner, r'i-external|fa-external', href)
+                # Off-site links keep the arrow, for example both external collections on the shelf.
+                arrowed = {href for href, inner in external if '↗' in inner}
+                self.assertTrue({'https://github.com/songshikang0111/awesome-REA-cases', 'https://github.com/HaozheH3/awesome-rea-games'} <= arrowed)
+                # The text of the changed links keeps its words; only the trailing glyph differs.
+                for key in changed:
+                    self.assertRegex(_ui_strings(APP)[lang][key], r'^[^↗→]+ →$', key)
+
     def test_noscript_internal_links_keep_their_explicit_language(self):
         en = '<em>Browse</em> <a href="/papers/#paper-example">papers</a> <a href="/zh/" lang="zh-CN">中文</a>'
         zh = '<em>浏览</em><a href="/zh/papers/#paper-example">论文</a><a href="/" lang="en">English</a>'
