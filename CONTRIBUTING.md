@@ -42,7 +42,13 @@ Run every test with one command from the repository root. It needs Node.js for t
 python3 -m unittest discover -s tests -v
 ```
 
-The `validate` check runs exactly these steps: it byte-compiles every script and test, runs the test command, then runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin. Last, the [browser smoke test](docs/website.md#browser-smoke-test) rebuilds the site and loads it in headless Chrome; locally it skips with a message when Chrome or its pinned driver is missing.
+The required `validate` check runs no step itself. It is the aggregate of the parallel jobs in the `Catalog checks` workflow and succeeds only when the `unit` shards, `production` and `browser` all succeed; a failed, skipped or cancelled job fails it. When `validate` fails, open the failed job in the check list:
+
+- `unit (0)` and `unit (1)` each byte-compile every script and test, then run every other test that the test command discovers. A syntax error fails both shards; a failing test appears in one of them.
+- `production` runs the production build with the asset-URL option used by Cloudflare Pages. That build repeats catalog validation, the JavaScript syntax check, the site build and both site validators without fetching the asset origin.
+- `browser` runs the [browser smoke test](docs/website.md#browser-smoke-test), which rebuilds the site and loads it in headless Chrome.
+
+These commands are the equivalent sequential run. Locally, the smoke test skips with a message when Chrome or its pinned driver is missing.
 
 ```sh
 python3 -m compileall -q scripts tests
