@@ -12616,5 +12616,39 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "btd-dnn-decompiler",
+    "name": "BTD (Bin To DNN)",
+    "url": "https://github.com/monkbai/DNN-decompiler",
+    "category": "native-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Research artifact for the USENIX Security 2023 paper “Decompiling x86 Deep Neural Network Executables”. BTD decompiles x86 executables emitted by the DNN compilers TVM, Glow and NNFusion into model specifications: operator types, network topology, dimensions and parameters such as weights and biases. It splits IDA disassembly into functions, infers each operator's type with a trained classifier over assembly tokens, records Intel Pin traces filtered by taint analysis, recovers dimensions and parameters with a trace-based symbolic execution engine, then rebuilds the model in PyTorch and compares its output with the original executable.",
+    "description_zh": "USENIX Security 2023 论文《Decompiling x86 Deep Neural Network Executables》的研究产物。BTD 将 DNN 编译器 TVM、Glow 和 NNFusion 生成的 x86 可执行文件反编译为模型规格：算子类型、网络拓扑、维度以及权重和偏置等参数。它把 IDA 的反汇编结果拆分为函数，用基于汇编词元训练的分类器推断每个算子的类型，用 Intel Pin 记录执行轨迹并经污点分析过滤，借助基于轨迹的符号执行引擎恢复维度和参数，最后在 PyTorch 中重建模型，并将其输出与原可执行文件对比。",
+    "evidence_url": "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Research artifact with no tagged releases; the reviewed master commit (2026-03-13) fixes README typos. The paper appears in the USENIX Security 2023 proceedings, arXiv 2210.01075 is the authors' 25-page extended version, and the README reports Available, Functional and Reproduced artifact-evaluation badges.",
+      "README prerequisites: Ubuntu 18.04, gcc/g++ 7.5, Python 3.6.9+ with numpy 1.19.5, torch 1.9+, torchvision 0.11.2, fastBPE and tqdm, Intel Pin 3.14, and IDA Pro 7.5 for disassembly. IDA is commercial and not included, so precomputed disassembly is supplied; the authors recommend their Docker image. Their server had 256 GB RAM, and logging and filtering traces for every executable took over a week and nearly 1 TB, so filtered traces are shipped and the rest of the evaluation takes about a day and under 120 GB.",
+      "Evaluation inputs are downloaded separately from Dropbox or the Zenodo dataset (DOI 10.5281/zenodo.7219867): 63 executables built from 7 ONNX models with Glow 2020–2022 and TVM v0.7–v0.9.dev at O0 and O3, their disassembly and filtered traces, operator-inference training data and checkpoints, and the Docker image. The repository itself commits scripts, Pin tool sources, per-executable JSON metadata and a cat test image stored as input tensors in cat.bin and cat_transpose.bin.",
+      "Scope is x86 CPU executables from the evaluated compiler versions; the main evaluation covers TVM and Glow, with NNFusion handled by separate scripts. Per-model decompilation scripts under evaluation/ serve as the interface rather than a general command-line tool.",
+      "HKUST Academic Software License (LICENSE, COPYING): academic or nonprofit researchers may use, copy and modify it for educational or academic research only, and publications must include the stated acknowledgment; GitHub reports no SPDX license. No executables, traces or models were downloaded or run for this entry."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/LICENSE",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/COPYING",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/operator_inference/README.md",
+      "https://github.com/monkbai/DNN-decompiler/tree/33227a0b34f87c490efc734d667ac56530f5074a/evaluation",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/se_engine.py",
+      "https://github.com/monkbai/DNN-decompiler/blob/33227a0b34f87c490efc734d667ac56530f5074a/trace_filter.py",
+      "https://www.usenix.org/conference/usenixsecurity23/presentation/liu-zhibo",
+      "https://arxiv.org/abs/2210.01075",
+      "https://doi.org/10.5281/zenodo.7219867"
+    ]
   }
 ]

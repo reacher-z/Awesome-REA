@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**669 个仓库** · 2026-10-20 UTC
+**668 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -186,7 +186,6 @@
 - [tangosdev/sm64ds-decomp](https://github.com/tangosdev/sm64ds-decomp) — 从零开始将《超级马力欧 64 DS》反编译为逐字节匹配的 C/C++ 代码，附实时进度图谱和匹配工具。 **[202 星标]** · 精选：[Super Mario 64 DS：带重定位核对的匹配反编译](https://awesomerea.org/zh/resources/sm64ds-decomp-case/)
 - [mrphrazer/r2con2021\_deobfuscation](https://github.com/mrphrazer/r2con2021_deobfuscation) — 基于虚拟机的去混淆工作坊资料 **[201 星标]**
 - [OpenGMK/GM8Decompiler](https://github.com/OpenGMK/GM8Decompiler) — GameMaker 8.x 可执行文件反编译器 **[201 星标]**
-- [monkbai/DNN-decompiler](https://github.com/monkbai/DNN-decompiler) — BTD（Bin To DNN）：DNN 可执行文件反编译器 **[199 星标]**
 - [DenuvoSoftwareSolutions/SiMBA](https://github.com/DenuvoSoftwareSolutions/SiMBA) — 高效去混淆线性布尔算术混合表达式 **[197 星标]**
 - [YuAo/MetalLibraryArchive](https://github.com/YuAo/MetalLibraryArchive) — 从 .metallib 文件中提取 Metal 函数。 **[193 星标]**
 - [CMUSTRUDEL/DIRTY](https://github.com/CMUSTRUDEL/DIRTY) — DIRTY：使用学习得到的变量名称和类型增强反编译器输出 **[191 星标]** · 论文：[利用学习得到的变量名称与类型增强反编译输出](https://awesomerea.org/zh/papers/paper-dirty/)

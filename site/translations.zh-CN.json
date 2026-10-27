@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "btd-dnn-decompiler": {
+    "name": "BTD（Bin To DNN）DNN 可执行文件反编译器",
+    "requirements": [
+      "研究产物，没有带标签的发布版本；所审阅的 master 分支提交（2026-03-13）修正了 README 中的错别字。论文收录于 USENIX Security 2023 论文集，arXiv 2210.01075 是作者 25 页的扩展版本；README 称该产物获得 Available、Functional 和 Reproduced 三项产物评审徽章。",
+      "README 列出的前提：Ubuntu 18.04、gcc/g++ 7.5、Python 3.6.9+（含 numpy 1.19.5、torch 1.9+、torchvision 0.11.2、fastBPE 和 tqdm）、Intel Pin 3.14，以及用于反汇编的 IDA Pro 7.5。IDA 为商业软件且未随附，因此仓库直接提供预先生成的反汇编结果；作者建议使用其 Docker 镜像。作者服务器配有 256 GB 内存，为全部可执行文件记录并过滤轨迹耗时一周以上、占用近 1 TB，因此改为提供过滤后的轨迹，其余评测约需一天、占用不到 120 GB。",
+      "评测输入需从 Dropbox 或 Zenodo 数据集（DOI 10.5281/zenodo.7219867）另行下载：由 7 个 ONNX 模型经 Glow 2020–2022 与 TVM v0.7–v0.9.dev（O0 和 O3）编译出的 63 个可执行文件、其反汇编结果和过滤后的轨迹、算子推断训练数据与检查点，以及 Docker 镜像。仓库本身只提交脚本、Pin 工具源码、各可执行文件的 JSON 元数据，以及以输入张量形式存于 cat.bin 和 cat_transpose.bin 的一张猫测试图片。",
+      "适用范围是所评测编译器版本生成的 x86 CPU 可执行文件；主要评测覆盖 TVM 和 Glow，NNFusion 由单独的脚本处理。evaluation/ 下按模型编写的反编译脚本即为使用接口，并没有通用的命令行工具。",
+      "香港科技大学 Academic Software License（LICENSE、COPYING）：仅允许学术或非营利研究人员为教育或学术研究目的使用、复制和修改，发表成果时须附上指定的致谢；GitHub 未识别出 SPDX 许可证。本条目未下载或运行任何可执行文件、轨迹或模型。"
+    ]
   }
 }
