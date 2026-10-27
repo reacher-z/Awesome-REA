@@ -4310,5 +4310,14 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "uefi-retool": {
+    "name": "uefi_retool UEFI 固件逆向工具",
+    "requirements": [
+      "该仓库已归档。最后一次提交（2024-12-28）只更新了 README，最后的代码改动在 2021-08-03，唯一的标签 1.2.0 发布于 2020-05-07，比当前提交早八个提交；没有 GitHub 发行版。所审阅的代码树只包含 IDA 插件，没有 Ghidra 组件。",
+      "需要已授权的 IDA Pro，并具备 IDAPython 和 PyQt5：将 uefi_analyser.py 和 uefi_analyser 包复制到 IDA 的插件目录，再在 config.json 中设置 IDA 与 IDA64 可执行文件路径以及模块、转储和日志目录；示例配置指向 Windows 上的 IDA Pro 7.6。脚本需要 Python 及 Click、colorama、terminaltables、tqdm，以及按 requirements.txt 中的压缩包地址安装的 uefi-firmware-parser 1.8。",
+      "输入是使用者自行提供的 UEFI 固件镜像；README 示例提到的 ThinkPad X1 Carbon 第五代镜像并不在仓库中，仓库也未提交任何固件镜像。分析器识别 x86 和 x86-64 指令模式，并根据每个镜像的机器类型选择 IDA 或 IDA64。随附的 GUID 表来自 EDK2 和 EDK、ida-efiutils 中的 AMI 列表，以及 Dell、Lenovo 和 ASRock 的列表，tools/update_edk2_guids.py 可刷新 EDK2 表。",
+      "采用 MIT 许可证（2018–2021，yeggor）。仓库没有测试或 CI，本次审阅未运行脚本或插件。标签和依赖图来自 GUID 匹配和指令模式，需由分析人员核对。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }

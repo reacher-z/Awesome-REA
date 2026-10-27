@@ -11759,5 +11759,38 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "uefi-retool",
+    "name": "uefi_retool",
+    "url": "https://github.com/yeggor/uefi_retool",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Python command-line tool and IDA Pro plugin for UEFI firmware reverse engineering. uefi_retool.py unpacks a firmware image with uefi-firmware-parser, collects its executable modules and runs IDA in batch mode on each one, writing their boot-service calls and protocol GUIDs to JSON; a separate command lists protocols whose GUIDs are absent from its EDK2, AMI and vendor GUID tables as proprietary. Inside IDA the plugin applies EFI system-table types and names, lists protocols in an explorer window and, from the JSON, shows a dependency browser and graph across the firmware’s modules.",
+    "description_zh": "用于 UEFI 固件逆向工程的 Python 命令行工具及 IDA Pro 插件。uefi_retool.py 用 uefi-firmware-parser 解包固件镜像，收集其中的可执行模块，并以批处理模式逐一交给 IDA 分析，把各模块的引导服务调用和协议 GUID 写入 JSON；另一条命令则把 GUID 不在其 EDK2、AMI 及厂商 GUID 表中的协议列为专有协议。在 IDA 中，插件会应用 EFI 系统表的类型和名称，在浏览窗口中列出协议，并根据该 JSON 展示固件各模块之间的依赖浏览器和依赖图。",
+    "evidence_url": "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository is archived. Its last commit (2024-12-28) only updates the README, the last code changes date from 2021-08-03, and the only tag, 1.2.0 from 2020-05-07, is eight commits older; there are no GitHub releases. The reviewed tree contains an IDA plugin only and no Ghidra component.",
+      "Needs a licensed IDA Pro with IDAPython and PyQt5: copy uefi_analyser.py and the uefi_analyser package into IDA’s plugins directory, then set the IDA and IDA64 executable paths and the module, dump and log directories in config.json, whose example points to IDA Pro 7.6 on Windows. The script uses Python with Click, colorama, terminaltables, tqdm and uefi-firmware-parser 1.8, installed from a tarball named in requirements.txt.",
+      "Input is a UEFI firmware image the user supplies; README examples name a ThinkPad X1 Carbon 5th-generation image that the repository does not include, and no firmware images are committed. The analyser recognizes x86 and x86-64 instruction patterns and chooses IDA or IDA64 from each image’s machine type. The bundled GUID tables come from EDK2 and EDK, from ida-efiutils for AMI, and from Dell, Lenovo and ASRock lists, and tools/update_edk2_guids.py refreshes the EDK2 table.",
+      "MIT license (2018–2021, yeggor). The repository has no tests or CI, and this review ran neither the script nor the plugin. Labels and dependency graphs come from GUID matching and instruction patterns, so they need analyst checking. The reviewed sources establish no REA or AI use."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/ida_plugin/README.md",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/uefi_retool.py",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/config.json",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/requirements.txt",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/ida_plugin/uefi_analyser/analyser.py",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/ida_plugin/uefi_analyser/log_pp_guids.py",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/tools/get_efi_images.py",
+      "https://github.com/yeggor/uefi_retool/tree/be13abf0a84179f53a9ac8858a4cb2686b312a67/ida_plugin/uefi_analyser/guids",
+      "https://github.com/yeggor/uefi_retool/blob/be13abf0a84179f53a9ac8858a4cb2686b312a67/LICENSE"
+    ]
   }
 ]
