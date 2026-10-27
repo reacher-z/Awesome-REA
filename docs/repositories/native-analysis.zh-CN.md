@@ -82,7 +82,7 @@
 - [bitdefender/bddisasm](https://github.com/bitdefender/bddisasm) — bddisasm 是快速、轻量的 x86/x64 指令解码器。项目还提供快速、基础的 x86/x64 指令模拟器，专门用于检测类似 shellcode 的行为。 **[1,089 星标]**
 - [wisk/medusa](https://github.com/wisk/medusa) — 开源交互式反汇编器。 **[1,089 星标]**
 - [peiikai/LASRecomp](https://github.com/peiikai/LASRecomp) — 将 Switch 版《Link's Awakening》静态重编译为 macOS、Windows 和 Linux 原生程序 **[1,009 星标]** · 精选：[LASRecomp：《织梦岛》静态重编译案例](https://awesomerea.org/zh/resources/lasrecomp/)
-- [vivisect/vivisect](https://github.com/vivisect/vivisect) — 上游仓库未提供项目简介。 **[1,003 星标]**
+- [vivisect/vivisect](https://github.com/vivisect/vivisect) — 上游仓库未提供项目简介。 **[1,003 星标]** · 精选：[Vivisect 二进制分析与调试框架](https://awesomerea.org/zh/resources/vivisect/)
 - [ioncodes/idacode](https://github.com/ioncodes/idacode) — 连接 IDA 与 VS Code 的集成工具，便于执行和调试 IDAPython 脚本。 **[994 星标]**
 - [rizinorg/rz-ghidra](https://github.com/rizinorg/rz-ghidra) — 为 rizin 深度集成 Ghidra 反编译器与 Sleigh 反汇编器。 **[993 星标]** · 精选：[rz-ghidra Rizin 的 Ghidra 反编译器插件](https://awesomerea.org/zh/resources/rz-ghidra/)
 - [x86byte/RE-MA-Roadmap](https://github.com/x86byte/RE-MA-Roadmap) — 逆向工程与恶意软件分析学习路线图。 **[951 星标]**
