@@ -156,7 +156,50 @@ class ReviewerDataSelectionTest(unittest.TestCase):
         status, output = run_review(github)
         self.assertEqual((status, sorted(github.fetched())), (0, names))
         self.assertNotIn('Findings:', github.body())
+        # Base records with evidence-pin warnings are unchanged here, so none is listed.
+        self.assertNotIn('Advisory', github.body())
         self.assertIn('0 finding(s), 0 file(s) not inspected', output)
+
+    def catalog_review(self, edit):
+        records = json.loads(base(review_pr.CATALOGS[1]))
+        edit({record['id']: record for record in records})
+        text = json.dumps(records, indent=2, ensure_ascii=False) + '\n'
+        github = FakeGitHub([entry(review_pr.CATALOGS[1], added('x'))], {review_pr.CATALOGS[1]: text})
+        return run_review(github)[0], github.body()
+
+    def test_unpinned_evidence_in_changed_records_is_advisory_only(self):
+        wiki = 'https://github.com/HexRaysSA/ida-mcp/wiki/Usage'
+        status, body = self.catalog_review(lambda records: records['hex-rays-ida-mcp'].update(additional_evidence_urls=[wiki]))
+        self.assertEqual(status, 0)
+        self.assertIn('**No issues found by these automatic checks.**', body)
+        self.assertNotIn('Findings:', body)
+        advisory = body.split('Advisory (does not affect this check)')[1].split('\n\n')[0]
+        self.assertIn(review_pr.safe_text(f"resource 'hex-rays-ida-mcp'.additional_evidence_urls"), advisory)
+        self.assertIn(review_pr.safe_text(wiki), advisory)
+        # Warnings on records the PR does not touch stay in the local validator's output only.
+        for untouched in ('rexglue-sdk', 'jpexs-decompiler', 'react-native-decompiler'):
+            self.assertNotIn(untouched, body)
+
+    def test_changed_record_with_existing_unpinned_evidence_is_listed(self):
+        status, body = self.catalog_review(lambda records: records['react-native-decompiler'].update(
+            description_en=records['react-native-decompiler']['description_en'] + ' Edited.'))
+        self.assertEqual(status, 0)
+        self.assertIn(review_pr.safe_text("resource 'react-native-decompiler'.additional_evidence_urls"), body)
+        self.assertIn('not the repository root', body)
+        self.assertNotIn('rexglue-sdk', body)
+
+    def test_advisories_do_not_change_a_failing_result_or_need_unreadable_catalogs(self):
+        def edit(records):
+            records['hex-rays-ida-mcp'].update(additional_evidence_urls=['https://github.com/HexRaysSA/ida-mcp/wiki/Usage'])
+            records['ghidra']['targets'] = ['unknown-target']
+        status, body = self.catalog_review(edit)
+        self.assertEqual(status, 1)
+        self.assertIn('**Changes need attention.**', body)
+        self.assertIn('Findings:', body)
+        self.assertIn('Advisory (does not affect this check)', body)
+        self.assertEqual(review_pr.review_advisories({}, {review_pr.CATALOGS[0]}), [])
+        self.assertEqual(review_pr.review_advisories({name: '{}' for name in review_pr.CATALOGS}, set(review_pr.CATALOGS)), [])
+        self.assertEqual(review_pr.review_advisories({}, {'data/papers.json'}), [])
 
     def test_removed_or_renamed_data_requires_maintainer_review(self):
         github = FakeGitHub([entry('data/benchmarks.json', '@@ -1 +0,0 @@\n-[]', status='removed'),
