@@ -11759,5 +11759,26 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "extremecoders-re-list",
+    "name": "RE list (extremecoders-re)",
+    "url": "https://github.com/extremecoders-re/re-list",
+    "category": "related-lists",
+    "relationship": "learning",
+    "kind": "collection",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "A single-README list of 71 open-source reverse-engineering tools with a focus on binary analysis, kept as one alphabetical list from Amoco to X86isa. Each entry gives the tool's name, a link and a one- to three-sentence description; the entries span binary analysis frameworks, lifters to LLVM and other intermediate representations, symbolic execution and emulation engines, dynamic instrumentation, whole-system and virtual-machine introspection platforms, decompilers, debugger front ends and deobfuscation tools.",
+    "description_zh": "以单个 README 维护的开源逆向工程工具清单，侧重二进制分析，共 71 项，按字母顺序从 Amoco 排到 X86isa，不分类别。每个条目给出工具名称、链接和一到三句说明，涵盖二进制分析框架、提升到 LLVM 及其他中间表示的工具、符号执行与模拟引擎、动态插桩、全系统分析与虚拟机自省平台、反编译器、调试器前端以及去混淆工具。",
+    "evidence_url": "https://github.com/extremecoders-re/re-list/blob/539b60e6f4a17f42f07089b82c7cd909a1056f6f/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed README, last changed on 2024-04-16 when Cannoli was added, links 71 entries in one alphabetical list without categories; the repository's 56 commits since October 2017 mostly add one tool at a time. These are list rows, not verified projects, and the links were not checked for this record.",
+      "Entries give only a name, a link and a short description: 56 point to GitHub and 15 to project, university or vendor pages, such as Intel's Pin page and Tetrane's REVEN Free Edition page rather than source repositories. They state no maintenance status, supported platforms, license or date added, so each tool must be checked at its own source before use.",
+      "The repository holds only README.md, with no license file or contribution guide, so the list states no reuse terms; linked tools keep their own licenses. An independent discovery list; the reviewed source establishes no REA connection."
+    ]
   }
 ]

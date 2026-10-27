@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/reverse-engineering/) · [简体中文](reverse-engineering.zh-CN.md)
 
-**670 repositories** · 2026-10-20 UTC
+**671 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -164,6 +164,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [pret/pmd-red](https://github.com/pret/pmd-red) — Decompilation of Pokémon Mystery Dungeon: Red Rescue Team **[286 stars]**
 - [sotasan/decompiler](https://github.com/sotasan/decompiler) — Java Decompiler GUI **[266 stars]**
 - [evilpenguin/SSLBypass](https://github.com/evilpenguin/SSLBypass) — iOS SSL Pinning Bypass (iOS 8 - 14) **[264 stars]**
+- [extremecoders-re/re-list](https://github.com/extremecoders-re/re-list) — A list of open source reverse engineering tools with a focus on binary analysis **[261 stars]** · Curated: [RE list (extremecoders-re)](https://awesomerea.org/resources/extremecoders-re-list/)
 - [theclub654/ProjectCane](https://github.com/theclub654/ProjectCane) — A playable PC port of Sly Cooper and the Thievius Raccoonus, rebuilt through reverse engineering. **[261 stars]** · Curated: [ProjectCane: a native PC port of Sly Cooper and the Thievius Raccoonus](https://awesomerea.org/resources/projectcane-sly1-pc-port-case/)
 - [decoderloop/rust-malware-gallery](https://github.com/decoderloop/rust-malware-gallery) — A collection of malware families and malware samples which use the Rust programming language. **[255 stars]**
 - [mahaloz/decompilation-wiki](https://github.com/mahaloz/decompilation-wiki) — The Decompilation Wiki: info on all things decompilation **[254 stars]**

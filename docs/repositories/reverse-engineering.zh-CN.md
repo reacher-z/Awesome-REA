@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**670 个仓库** · 2026-10-20 UTC
+**671 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -164,6 +164,7 @@
 - [pret/pmd-red](https://github.com/pret/pmd-red) — 《宝可梦不可思议迷宫：赤之救助队》的反编译项目 **[286 星标]**
 - [sotasan/decompiler](https://github.com/sotasan/decompiler) — Java 反编译器图形界面 **[266 星标]**
 - [evilpenguin/SSLBypass](https://github.com/evilpenguin/SSLBypass) — iOS SSL 证书固定绕过（iOS 8–14） **[264 星标]**
+- [extremecoders-re/re-list](https://github.com/extremecoders-re/re-list) — 侧重二进制分析的开源逆向工程工具列表 **[261 星标]** · 精选：[RE list 开源二进制逆向工具清单（extremecoders-re）](https://awesomerea.org/zh/resources/extremecoders-re-list/)
 - [theclub654/ProjectCane](https://github.com/theclub654/ProjectCane) — 通过逆向工程重建的《Sly Cooper and the Thievius Raccoonus》可玩 PC 移植版。 **[261 星标]** · 精选：[ProjectCane：《Sly Cooper and the Thievius Raccoonus》原生 PC 移植](https://awesomerea.org/zh/resources/projectcane-sly1-pc-port-case/)
 - [decoderloop/rust-malware-gallery](https://github.com/decoderloop/rust-malware-gallery) — 使用 Rust 编程语言的恶意软件家族与样本合集。 **[255 星标]**
 - [mahaloz/decompilation-wiki](https://github.com/mahaloz/decompilation-wiki) — 反编译维基：涵盖反编译各方面的信息 **[254 星标]**
