@@ -15,7 +15,7 @@ from asset_paths import FINGERPRINTED_SUFFIXES, fingerprinted_href
 from build_readme import KIND_LABELS, RELATIONSHIPS, TARGETS, collection_section
 from contribution_pages import TITLES as CONTRIBUTION_TITLES, contribution_content
 from open_graph import THEME_COLOR_META, open_graph_meta, website_reference
-from site_footer import SECTION_LINKS, download_label, download_link, site_footer
+from site_footer import SECTION_LINKS, download_link, site_footer
 from source_scope import exclusion_counts, unavailable_clause
 
 
@@ -102,6 +102,57 @@ def _url(value: str) -> str:
     if parsed.scheme not in {'http', 'https'} or not parsed.netloc or parsed.username or parsed.password:
         raise ValueError('Discovery pages require public web URLs without embedded credentials')
     return escape(value, quote=True)
+
+
+# /about/ lists every footer section except itself and the contribution page, which has its own header link.
+ABOUT_EXCLUDED_SECTIONS = ('/about/', '/contribute/')
+
+
+def file_size_label(size: int) -> str:
+    """Decimal megabytes with one place (2.3 MB); whole kilobytes below 0.1 MB."""
+    return f'{size / 1_000_000:.1f} MB' if size >= 100_000 else f'{max(1, round(size / 1000))} KB'
+
+
+def _about_link_groups(site_dir: Path, language: str, repository_url: str, source_index: dict | None,
+                       source_export: str, published: bool) -> str:
+    """Group the /about/ links by purpose: site pages, sized downloads, and GitHub documents.
+
+    Site pages and site-wide downloads keep the footer's names from site_footer.py; each download adds its built size."""
+    zh = language == 'zh'
+    prefix = '/zh' if zh else ''
+    browse_items = ''.join(f'<li><a href="{prefix}{path}">{(chinese if zh else english)}</a></li>'
+                           for path, english, chinese in SECTION_LINKS if path not in ABOUT_EXCLUDED_SECTIONS)
+    downloads = [(path, download_link(path, language)) for path in ('/catalog.json', '/' + source_export, '/papers.json')]
+    if published:
+        # The original baseline and capture archive are offered only here, so they have their own names.
+        baseline = '原始扫描基线 JSON ↓' if zh else 'Original scan baseline JSON ↓'
+        downloads.append(('/source-index.json', '<a href="/source-index.json" download="awesomerea-repository-scan-baseline.json" '
+                                                f'type="application/json">{baseline}</a>'))
+        for entry in source_index['meta']['capture_sources']:
+            # The archive keeps its run-specific filename; the name says what it holds.
+            run = entry['run']['id']
+            name = f'原始扫描证据（运行 {run}）ZIP ↓' if zh else f'Original scan evidence (run {run}) ZIP ↓'
+            downloads.append((entry['archive_url'], f'<a href="{escape(entry["archive_url"], quote=True)}" download '
+                                                    f'type="application/zip">{escape(name)}</a>'))
+    download_items = []
+    for url, link in downloads:
+        # Sizes describe the files already written to site_dir; a fixture without them shows the name only.
+        local = site_dir / unquote(urlsplit(url).path).lstrip('/')
+        size = f'<span class="about-file-meta">{file_size_label(local.stat().st_size)}</span>' if local.is_file() else ''
+        download_items.append(f'<li>{link}{size}</li>')
+    documents = [('README.zh-CN.md' if zh else 'README.md', 'GitHub README', 'GitHub README'),
+                 ('docs/source-scan.md', '扫描方法（英文）', 'Scan methodology'),
+                 ('data/source-scope.json', '范围排除记录', 'Scope exclusion records'),
+                 ('data/README.md', '数据格式与维护（英文）', 'Data format and maintenance'),
+                 ('LICENSE', 'MIT 许可证', 'MIT license'),
+                 ('CONTRIBUTING.zh-CN.md' if zh else 'CONTRIBUTING.md', '贡献指南', 'Contribution guide')]
+    document_items = ''.join(f'<li><a href="{_url(repository_url + "/blob/main/" + path)}" target="_blank" rel="noopener">'
+                             f'{escape(cn if zh else en)}<span aria-hidden="true"> ↗</span></a></li>' for path, cn, en in documents)
+    groups = [('browse', '浏览', 'Browse', browse_items), ('download', '下载', 'Download', ''.join(download_items)),
+              ('methods', 'GitHub 上的方法与规则', 'Methods and policy on GitHub', document_items)]
+    return '<div class="about-link-groups">' + ''.join(
+        f'<section class="about-link-group" aria-labelledby="about-links-{key}"><h3 id="about-links-{key}">{(cn if zh else en)}</h3><ul>{items}</ul></section>'
+        for key, cn, en, items in groups) + '</div>'
 
 
 def _asset(site_dir: Path, filename: str) -> str:
@@ -517,23 +568,8 @@ def build_discovery_pages(site_dir: Path, catalog: dict, source_index: dict | No
         companion_description = ('收录 AI 参与开发的游戏、网站与应用，以及智能体训练和评测使用的环境、基准和数据集。每个项目保留原始来源、开发方式说明和使用限制。'
                                  if zh else 'A directory of games, websites, and apps made with AI, plus environments, benchmarks, and datasets for training and evaluating agents. Each project retains original sources, development evidence, and practical limits.')
         fact_cards += f'<section class="source-card browse-repository"><h2>{("相关目录" if zh else "Companion directory")}</h2><p class="card-description"><a href="{companion_url}">AI Can What?</a> — {companion_description}</p></section>'
-        links = [
-            # The same names as the footer's sections and downloads.
-            *((prefix + path, chinese if zh else english) for path, english, chinese in SECTION_LINKS if path in ('/resources/', '/browse/', '/papers/', '/survey/')),
-            *((path, download_label(path, language)) for path in ('/catalog.json', '/' + source_export, '/papers.json')),
-            (repository_url + '/blob/main/' + ('README.zh-CN.md' if zh else 'README.md'), 'GitHub README'),
-            (repository_url + '/blob/main/docs/source-scan.md', '扫描方法（英文）' if zh else 'Scan methodology'),
-            (repository_url + '/blob/main/data/source-scope.json', '范围排除记录' if zh else 'Scope exclusion records'),
-            (repository_url + '/blob/main/data/README.md', '数据格式与维护（英文）' if zh else 'Data format and maintenance'),
-            (repository_url + '/blob/main/LICENSE', 'MIT 许可证' if zh else 'MIT license'),
-            (repository_url + '/blob/main/' + ('CONTRIBUTING.zh-CN.md' if zh else 'CONTRIBUTING.md'), '贡献指南' if zh else 'Contribution guide'),
-        ]
-        if published:
-            links.append(('/source-index.json', '原始规范扫描基线 JSON' if zh else 'Original canonical scan baseline JSON'))
-            links.extend((entry['archive_url'], ('原始公开采集证据 ' if zh else 'Original public capture evidence ')
-                          + str(entry['run']['id'])) for entry in source_index['meta']['capture_sources'])
-        link_html = ''.join(f'<a href="{(_url(url) if url.startswith("http") else escape(url, quote=True))}">{escape(label)}</a>' for url, label in links)
-        content = f'<div class="source-results">{fact_cards}</div><section><div class="browse-topline"><h2>{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div><nav class="browse-category-nav" aria-label="{("来源与下载" if zh else "Sources and downloads")}">{link_html}</nav></section>'
+        links = _about_link_groups(site_dir, language, repository_url, source_index, source_export, published)
+        content = f'<div class="source-results">{fact_cards}</div><section class="about-links" aria-labelledby="about-links-heading"><div class="browse-topline"><h2 id="about-links-heading">{("浏览、下载与来源" if zh else "Browse, download, and inspect sources")}</h2></div>{links}</section>'
         schema = {'@context': 'https://schema.org', '@type': 'AboutPage', 'url': site_url + path, 'name': title, 'description': description, 'inLanguage': locale, 'about': website_reference(site_url)}
         rendered[path] = _document(site_url=site_url, repository_url=repository_url, path=path, language=language, title=title, description=description, content=content, schema=schema, assets=assets, icon_stylesheet=icons.href, source_export=source_export)
         paths.append(path)
