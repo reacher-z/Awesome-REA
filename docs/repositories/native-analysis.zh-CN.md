@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/native-analysis/) · [English](native-analysis.md)
 
-**851 个仓库** · 2026-10-20 UTC
+**850 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -206,7 +206,6 @@
 - [manyuegong33/r0crawl\_skills](https://github.com/manyuegong33/r0crawl_skills) — r0crawl\_skills 是一个大型逆向工程技能库，覆盖 Web、Android、iOS、Frida、原生二进制文件、协议、恶意软件、固件和反分析；为初学者构建，为专业人士调优，并注重结果的可复现性。 **[332 星标]**
 - [gaasedelen/microavx](https://github.com/gaasedelen/microavx) — Hex-Rays 反编译器的 AVX 指令提升工具。 **[331 星标]**
 - [therealdreg/DbgChild](https://github.com/therealdreg/DbgChild) — 子进程调试工具，支持自动附加。 **[328 星标]**
-- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM 反汇编器，输出兼容 RGBDS。 **[327 星标]**
 - [reetamdan/hypervisor-crack-audit](https://github.com/reetamdan/hypervisor-crack-audit) — 对用于绕过 Denuvo 的 hypervisor DRM 方法进行安全分析，使用 Ghidra 逆向分析驱动加载器与启动组件。 **[327 星标]**
 - [radareorg/radare2-mcp](https://github.com/radareorg/radare2-mcp) — 适用于 radare2 的 MCP 标准输入输出服务器。 **[325 星标]** · 精选：[Radare2 MCP Server](https://awesomerea.org/zh/resources/radare2-mcp/)
 - [w00tzenheimer/d810-ng](https://github.com/w00tzenheimer/d810-ng) — D810-ng（Next Generation）是经过更新、测试、重构和优化的 IDA Pro 插件，通过修改 IDA Pro 微代码，在反编译时对代码去混淆。 **[325 星标]**

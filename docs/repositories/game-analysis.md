@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**484 repositories** · 2026-10-20 UTC
+**485 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -58,6 +58,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [adonis-singh/re4](https://github.com/adonis-singh/re4) — Resident Evil 4 (GameCube, G4BE08 debug build) — complete byte-identical decompilation to C/C++ **[345 stars]**
 - [xensik/gsc-tool](https://github.com/xensik/gsc-tool) — A utility to compile &amp; decompile IW engine game scripts. **[335 stars]**
 - [snuri00/psp-web-recomp](https://github.com/snuri00/psp-web-recomp) — PSP games in the browser, static recompilation to WebAssembly, an HLE kernel and a WebGL2 renderer **[329 stars]** · Curated: [PSP Web Recomp](https://awesomerea.org/resources/psp-web-recomp/)
+- [mattcurrie/mgbdis](https://github.com/mattcurrie/mgbdis) — Game Boy ROM disassembler with RGBDS compatible output **[327 stars]** · Curated: [mgbdis](https://awesomerea.org/resources/mgbdis/)
 - [SpeedBreakerProject/speedbreaker](https://github.com/SpeedBreakerProject/speedbreaker) — Unofficial static recompilation of the Xbox 360 version of Need for Speed: Most Wanted (2005): a native port for Steam Deck, Steam Machine, Steam Frame, Linux and Mac (iPhone/iPad: sideload the experimental IPA or build it yourself). Bring your own disc: no game files included. Not affiliated with EA or Valve. **[326 stars]** · Curated: [SpeedBreaker: statically recompiling Need for Speed: Most Wanted for Xbox 360](https://awesomerea.org/resources/speedbreaker-nfs-most-wanted-case/)
 - [g0aty/SickoMenu](https://github.com/g0aty/SickoMenu) — A powerful utility for Among Us designed to enrich your game experience with custom features! **[316 stars]**
 - [encounter/decomp-toolkit](https://github.com/encounter/decomp-toolkit) — A GameCube &amp; Wii decompilation toolkit **[311 stars]** · Curated: [decomp-toolkit](https://awesomerea.org/resources/decomp-toolkit/)
