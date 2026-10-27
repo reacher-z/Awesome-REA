@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "hetty": {
+    "name": "Hetty HTTP 安全研究工具包",
+    "requirements": [
+      "审阅时最新版本为 v0.7.0，发布于 2022-03-29，提供 x86_64 和 arm64 的 Linux、macOS 及 Windows 构建；README 还列出了 Homebrew、snap、Scoop 软件包和 Docker 镜像。所审阅的 main 提交（2026-06-27）比该版本多 14 个提交，其中包括 2025 年 1 月把 BadgerDB 换成单个 bbolt 数据库文件（默认为用户主目录下 .hetty 文件夹中的 hetty.db）。hetty.xyz 的入门指南仍描述旧的 BadgerDB 目录。README 称 Hetty 仍在积极开发中。",
+      "运行 hetty 后，打开 8080 端口上的管理界面并创建项目，之后经过代理的请求才会被记录。服务默认监听所有网络接口（:8080）。首次启动时，Hetty 会在该 .hetty 文件夹中生成根 CA 证书和私钥。如需检查自己浏览器中的 HTTPS 流量，分析者需信任该 CA（hetty cert install 可将其加入系统信任库，并可选加入 Firefox 和 Java 信任库），或使用 --chrome 选项启动一个已配置代理并忽略证书错误的 Chrome。Hetty 只记录分析者设置为使用该代理的客户端流量；文档推荐使用 --chrome 配置或浏览器代理扩展，而不是系统级代理设置。",
+      "从源码构建需要 Go 1.23 和 Yarn：Makefile 先构建 Next.js 管理界面，再在禁用 CGO 的情况下把它嵌入 Go 程序。README 中源码构建说明的链接仍标注为“即将提供”。",
+      "采用 MIT 许可（© 2019–2025 Hetty Software）。README 的功能列表包括可搜索的代理日志、请求发送器、拦截、范围和项目存储。本次未安装该工具，也未代理任何流量。"
+    ]
   }
 }

@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "hetty",
+    "name": "Hetty",
+    "url": "https://github.com/dstotijn/hetty",
+    "category": "web-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "website"
+    ],
+    "description_en": "Open-source HTTP toolkit for security research, which its author aims to make an alternative to Burp Suite Pro. A single Go binary runs a machine-in-the-middle HTTP proxy backed by its own generated root CA, logs proxied requests and responses in per-project databases with search filters and scope rules, and serves a web admin interface. From that interface an analyst can hold requests and responses for manual review, then edit, forward or cancel them, or copy logged requests into a Sender module to edit and resend them.",
+    "description_zh": "用于安全研究的开源 HTTP 工具包，作者希望把它做成 Burp Suite Pro 的替代品。单个 Go 程序即可运行一个使用自生成根 CA 的中间人 HTTP 代理，把经过代理的请求和响应记录到按项目划分的数据库中，支持搜索过滤和范围规则，并提供 Web 管理界面。分析者可在界面中拦下请求和响应进行人工检查，再编辑、放行或取消；也可把已记录的请求复制到 Sender 模块，修改后重新发送。",
+    "evidence_url": "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.7.0, published 2022-03-29, with Linux, macOS and Windows builds for x86_64 and arm64; the README also lists Homebrew, snap and Scoop packages and Docker images. The reviewed main commit (2026-06-27) is 14 commits ahead of that release, among them the January 2025 switch from BadgerDB to a single bbolt database file (by default hetty.db in the .hetty folder of the user's home directory). The hetty.xyz getting-started guide still describes the older BadgerDB directory. The README says Hetty is under active development.",
+      "Run hetty, open the admin interface on port 8080 and create a project; only then are proxied requests logged. By default the server listens on all interfaces (:8080). On first start Hetty creates a root CA certificate and private key in that .hetty folder. To inspect HTTPS from their own browser, analysts trust that CA (hetty cert install adds it to the system trust store, and optionally to Firefox and Java) or use --chrome, which launches Chrome with the proxy settings applied and certificate errors ignored. Hetty logs only traffic from clients the analyst points at the proxy; the docs recommend the --chrome profile or a browser proxy extension over system-wide proxy settings.",
+      "Source builds need Go 1.23 and Yarn: the Makefile builds the Next.js admin interface and embeds it into the Go binary with CGO disabled. The README's link to source-build instructions is still marked as coming soon.",
+      "MIT license (© 2019–2025 Hetty Software). The README's feature list covers proxy logs with search, the request sender, interception, scope and project storage. Nothing was installed and no traffic was proxied."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/cmd/hetty/hetty.go",
+      "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/cmd/hetty/cert.go#L13-L45",
+      "https://github.com/dstotijn/hetty/tree/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/pkg/proxy/intercept",
+      "https://github.com/dstotijn/hetty/tree/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/pkg/filter",
+      "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/Makefile",
+      "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/go.mod",
+      "https://github.com/dstotijn/hetty/blob/8ca6b07b75c2df85e4890b61748f9fbccbf4443c/LICENSE",
+      "https://github.com/dstotijn/hetty/commit/fcf0e1c51ebbb6ea0cfb1056164ff75bc056685f",
+      "https://github.com/dstotijn/hetty/releases/tag/v0.7.0",
+      "https://hetty.xyz/docs/getting-started",
+      "https://hetty.xyz/docs/guides/intercept"
+    ]
   }
 ]
