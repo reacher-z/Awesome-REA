@@ -11759,5 +11759,44 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "bosectl-bose-bmap-protocol-case",
+    "name": "bosectl: reconstructing Bose’s BMAP headphone protocol",
+    "url": "https://github.com/aaronsb/bosectl",
+    "category": "reconstruction-cases",
+    "relationship": "independent-reconstruction",
+    "kind": "case-study",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Controls Bose headphones from Linux and macOS without the Bose app, account or cloud, through Python, Rust and C++ libraries and command-line tools that implement Bose’s BMAP protocol over Bluetooth RFCOMM. The author documents BMAP’s function blocks, operators, payload layouts and error codes in NOTES.md, reportedly worked out by probing RFCOMM channels, capturing Bluetooth traffic while changing settings in the Bose app and testing each operator, and the libraries cover noise cancellation, EQ, spatial audio, button remapping, profiles and device settings. Support is reported per model by the author and contributors.",
+    "description_zh": "无需 Bose 应用、账号或云服务，即可在 Linux 和 macOS 上控制 Bose 耳机：项目提供 Python、Rust 和 C++ 库及命令行工具，在蓝牙 RFCOMM 上实现 Bose 的 BMAP 协议。作者在 NOTES.md 中记录了 BMAP 的功能块、操作符、载荷布局和错误码，据称是通过探测 RFCOMM 通道、在 Bose 应用中更改设置时抓取蓝牙通信并逐一测试各操作符得出的；这些库涵盖降噪、均衡器、空间音频、按键重映射、配置档和设备设置。各型号的支持情况由作者和贡献者报告。",
+    "evidence_url": "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/README.md",
+    "verified_at": "2026-10-20",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The reviewed commit is the v0.5.0 release of 2026-09-28, which ships Linux x86_64 bmapctl binaries built from the Rust and C++ code with SHA256SUMS; the Rust crate is also on crates.io as bose-bmap 0.5.0, while the Python package installs from the repository through its install scripts or pipx. The README’s device table marks six models, led by the QC Ultra Headphones 2, as verified to differing extents and the Ultra Open Earbuds as partial from a device report; other cataloged BMAP products are recognized by product ID but have no tested configuration.",
+      "Needs the user’s own paired Bose headphones and a Bluetooth adapter: BlueZ on Linux, or macOS 10.15+, where the Python library uses PyObjC’s IOBluetooth bindings. The Rust crate is Linux-only, and C++ builds on Linux need CMake, a C++17 compiler and the BlueZ development headers. No Bose software or files are needed at runtime.",
+      "README reports probing RFCOMM channels, capturing Bluetooth HCI traffic while toggling settings in the Bose app and testing operators on each function block, and NOTES.md cites class names from the Bose Android app. The app, decompiled code and raw HCI or network captures are not in the repository: captures/ holds eight before-and-after setting snapshots from bmap-capture.py with the MAC address, serial number and other identifiers partly masked, and fixtures/ holds a packet used by the tests.",
+      "README says the project uses only BMAP operations the headphones accept without authentication, and that no keys are extracted, no encryption is broken and no traffic is replayed; writes that the app performs after cloud-mediated authentication stay out of reach. USB control is not implemented, and NOTES.md treats the USB interface as being for firmware updates.",
+      "CI runs the Python, Rust and C++ test targets on Ubuntu and macOS without headphones; integration tests that need a paired device run only when enabled. Device behavior was not reproduced in this review. MIT license; no REA use is established."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/NOTES.md",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/docs/architecture.md",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/docs/quietcomfort-headphones-prince.md",
+      "https://github.com/aaronsb/bosectl/tree/70570b29c1d3c9ba775b08a29eaea72385de27b5/captures",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/bmap-capture.py",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/fixtures/README.md",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/python/pyproject.toml",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/rust/README.md",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/cpp/CMakeLists.txt",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/python/tests/test_integration.py",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/.github/workflows/test.yml",
+      "https://github.com/aaronsb/bosectl/blob/70570b29c1d3c9ba775b08a29eaea72385de27b5/LICENSE",
+      "https://github.com/aaronsb/bosectl/releases/tag/v0.5.0",
+      "https://crates.io/crates/bose-bmap/0.5.0"
+    ]
   }
 ]
