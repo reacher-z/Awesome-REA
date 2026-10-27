@@ -4301,5 +4301,14 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "frida-boot-workshop": {
+    "name": "Frida Boot：二进制插桩入门工作坊",
+    "requirements": [
+      "所审阅的 master 提交日期为 2021-04-28，没有发行版或标签；Docker Hub 上预构建的 leonjza/frida-boot 镜像（latest 标签，仅 amd64）也于同日最后更新。README 附有工作坊的 YouTube 录像链接，slides/ 中保存了幻灯片的 PDF。",
+      "需要装有 Docker 的主机。docker.sh 拉取或构建镜像，以 SYS_PTRACE 权限启动容器，在 localhost:9999 提供课程页面，并把本地代码文件夹挂载到容器中。Dockerfile 基于 Debian bullseye-slim，下载 linux-x86_64 版 frida-server 和 frida-gadget 12.9.4，但 frida-tools、GEF 和 frida-agent-example 项目均未固定版本，因此现在重新构建无法重现 2021 年的工具版本。",
+      "练习编译并插桩工作坊自带的 software/ 中的 C 示例：一个随机休眠循环、一个用于 LD_PRELOAD 的 fake_sleep 库，以及一个 PIN 校验程序，课程会从 Frida 直接调用其中的 test_pin 函数；每一步都配有编号的 JavaScript、TypeScript 和 Python 代码片段。不包含也不需要任何第三方目标二进制；内容针对 x86_64 Linux 用户态进程。",
+      "仓库没有许可证文件，GitHub 也未识别出许可证；随附的 docsify 脚本和主题保留各自的许可证，Frida、GEF 和基础镜像按各自条款下载。本次审阅阅读了课程页面、脚本和 Dockerfile，未构建镜像或运行练习。所审来源未确立 REA 或 AI 的使用。"
+    ]
   }
 }
