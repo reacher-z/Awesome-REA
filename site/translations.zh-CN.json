@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "axmlprinter": {
+    "name": "axmlprinter Android 二进制 XML 解析器",
+    "requirements": [
+      "最新发布版本 v2.0.1 于 2026-03-25 发布并附预编译 jar，其标签正对应所审阅的 master 分支提交 5a8d3e5。2026-01-16 发布的 v2.0.0 通过外部贡献的拉取请求加入了只读的 protobuf 支持；不支持在 AXML 与 protobuf 之间转换。",
+      "用 Gradle wrapper（./gradlew jar）构建为自包含 jar，以 java -jar axmlprinter-*.jar 加二进制 XML 文件运行，可选的输出路径只适用于 AXML。CI 在 JDK 17 上构建和测试，JitPack 也使用 OpenJDK 17；依赖 protobuf-java 4.34.1，并收录 AOSP 采用 Apache-2.0 的 aapt2 Resources.proto。框架资源 ID 只能解析常见的 Android 资源。",
+      "输入是分析者已从 APK 或 App Bundle 中取出的单个编译后 XML 文件，而非安装包本身。测试附带名为 large_from_malware.xml 和 qihoo_jiagu_issue8.xml 的二进制清单文件，后者来自一个关于清单无法解析的问题报告，另有较小的 test.xml。",
+      "采用 Apache-2.0 许可，同时署名 Android4ME 2008 年的代码与 Red Naga。未提及使用 REA，本次审阅未解码任何文件。"
+    ]
   }
 }
