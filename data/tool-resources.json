@@ -12487,5 +12487,39 @@
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/docs/audits/2026-10-17-catalog.json",
       "https://github.com/replicraft/remade/blob/ea8119f01c2fab14ef9e0c23a7d348b0a86660ff/LICENSE"
     ]
+  },
+  {
+    "id": "inspectrum",
+    "name": "inspectrum",
+    "url": "https://github.com/miek/inspectrum",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Desktop analyzer for recorded radio signals, primarily captures from software-defined radio receivers, which the README says handles files of 100 GB and more. A zoomable spectrogram with a tunable filter feeds sample, amplitude, frequency, phase and threshold plots, and cursors measure period and symbol rate and extract symbol values to stdout or the clipboard. Selected time spans, filtered samples and demodulated traces can be exported, and SigMF annotations can be displayed over the spectrogram.",
+    "description_zh": "用于分析已录制无线电信号的桌面工具，主要面向软件无线电接收机的录制文件，README 称可处理 100 GB 以上的文件。可缩放的频谱瀑布图配有可调滤波器，可派生出采样、幅度、频率、相位和阈值曲线；游标用于测量周期和符号速率，并可将符号值提取到标准输出或剪贴板。选定的时间段、滤波后的采样和解调曲线均可导出，频谱图上还能显示 SigMF 标注。",
+    "evidence_url": "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v0.4.0, published 2025-12-06 as a source-only GitHub release; the reviewed main commit is that tag. Its notes add Qt 6 and SigMF dataset support, raise the CMake minimum to 3.5 and fix a crash on small files. The README points Linux users to distribution packages, macOS users to Homebrew or MacPorts and Windows users to radioconda or conda-forge.",
+      "Source builds need CMake 3.5+ (the README still lists 3.1), a C++14 compiler, Qt 6 or, as a fallback, Qt 5 Core, Widgets and Concurrent, FFTW 3, liquid-dsp 1.3.0+ and pkg-config; distribution-specific steps are on the project wiki. CI builds against Qt 5 and Qt 6 on macOS and Ubuntu 22.04 and 24.04, but the repository defines no automated tests.",
+      "It reads recordings only; the source has no SDR device, capture or transmit code. Users supply their own SigMF recordings or raw sample files, from complex cf32, cf64, cs32, cs16, cs8 and cu8 to real f32, f64, s16, s8 and u8, selected by file extension or --format (unknown extensions are read as cf32), and set the sample rate with --rate or in the controls. 64-bit samples are truncated to 32-bit internally.",
+      "Symbol timing comes from cursors the analyst places; the tool does not infer modulation, framing or protocol fields. GPL-3.0, with source headers allowing version 3 or later; the repository holds only source code, CMake modules and a screenshot. No recording was opened or analyzed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/README.md#L42-L59",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/CMakeLists.txt",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/src/CMakeLists.txt",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/src/main.cpp",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/src/plots.h",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/src/plotview.cpp",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/.github/workflows/build.yml",
+      "https://github.com/miek/inspectrum/blob/82f5779ee3b82fc2b4d6d1360d9106392a71d4ab/LICENSE",
+      "https://github.com/miek/inspectrum/releases/tag/v0.4.0",
+      "https://github.com/miek/inspectrum/wiki/Build/750dc5b4a81a4c1c85169f053bd23b01fa8af88e"
+    ]
   }
 ]
