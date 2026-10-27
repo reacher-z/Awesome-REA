@@ -177,6 +177,7 @@ const UI = {
     "matchRequirementsZh": "Chinese requirements",
     "matchRelationship": "Relationship",
     "matchRelated": "Related entry",
+    "matchRepository": "GitHub repository",
     "requirements": "Requirements & limits",
     "requirementsLoading": "Loading requirements…",
     "requirementsError": "Requirements couldn’t load. Close and reopen these details to try again.",
@@ -388,6 +389,7 @@ const UI = {
     "matchRequirementsZh": "中文使用条件",
     "matchRelationship": "关联类型",
     "matchRelated": "相关条目",
+    "matchRepository": "GitHub 仓库",
     "requirements": "使用条件与局限",
     "requirementsLoading": "正在加载使用条件…",
     "requirementsError": "使用条件未能加载。请收起后重新展开以重试。",
@@ -608,7 +610,8 @@ function curatedMatchHint(record, terms) {
     zh ? ["matchNameEn", record.name] : ["matchNameZh", record.name_zh], zh ? ["matchDescriptionEn", record.description_en] : ["matchDescriptionZh", record.description_zh],
     ...[zh ? "zh" : "en", zh ? "en" : "zh"].flatMap(language => requirements(language).map(item => [language === "zh" ? "matchRequirementsZh" : "matchRequirementsEn", item])),
     ["categoryLabel", [record.category, ...(state.categoryLabels[record.category] || [])].join(" · ")], ["kindLabel", (KIND[record.kind] || []).join(" · ")],
-    ["matchRelationship", record.relationship], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")]]);
+    ["matchRelationship", record.relationship], ["targetFilterLabel", record.targets.flatMap(targetSearchLabels).join(" · ")],
+    ...repositoryPaths(record).map(path => ["matchRepository", path])]);
 }
 function card(record, terms = []) {
   const article=node("article","resource-card");article.dataset.recordId=record.id;const head=node("div","card-heading");const h3=node("h3");const title=external(record.url,"card-title-link",state.lang==="zh"?(record.name_zh||record.name):record.name);title.append(icon("external",true));h3.append(title);head.append(h3);if(record.kind)head.append(node("span","resource-kind",label(KIND,record.kind)));article.append(head);
@@ -632,7 +635,12 @@ function fillRequirements(list, record) {
   list.replaceChildren(...(Array.isArray(record.requirement_facets) ? requirementItems(record) : (Array.isArray(requirements) ? requirements : [requirements]).map(item => node("li", "", item))));
   return true;
 }
-function searchText(r) { return normalizeSearchText([r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels)].join(" ")); }
+// The lowercase owner/repo of a github.com URL, or "" for any other address.
+function githubRepo(value) { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } }
+// Curated search also finds an entry by the GitHub owner/repo of its URL and, when another, of its primary source.
+// Cards show a path only in the "Matched in" line when a query term occurs nowhere else; the catalog download is unchanged.
+function repositoryPaths(record) { return [...new Set([record.url, record.evidence_url].map(githubRepo).filter(Boolean))]; }
+function searchText(r) { return normalizeSearchText([r.name,r.name_zh,r.description_en,r.description_zh,r.category,...(state.categoryLabels[r.category] || []),...(KIND[r.kind] || []),r.relationship,...(r.requirements || []),...(r.requirements_zh || []),...(r.targets || []).flatMap(targetSearchLabels),...repositoryPaths(r)].join(" ")); }
 // The complete catalog.json follows the first render, so searches cover requirement text and open details fill in place.
 // Typing a query or opening details retries it after a failure.
 function loadDetails() {
@@ -988,7 +996,6 @@ function sourceFiltered() {
     result.sort((a,b) => scores.get(b)-scores.get(a) || a.order-b.order);
   }
   else {
-    const githubRepo = value => { try { const url = new URL(value); if (url.hostname.toLowerCase() !== "github.com") return ""; const parts = url.pathname.split("/").filter(Boolean); return parts.length >= 2 ? parts.slice(0,2).join("/").replace(/\.git$/i, "").toLowerCase() : ""; } catch (_) { return ""; } };
     const curatedRepos = new Set(state.records.map(record => githubRepo(record.url)).filter(Boolean));
     const reverseEngineering = /\b(?:reverse[-\s]engineering|binary[-\s]analysis|decompil\w*|disassembl\w*|ghidra|ida|frida|firmware[-\s]analysis)\b/i;
     const priority = record => curatedRepos.has(githubRepo(record.url)) ? 2 : reverseEngineering.test([...record.topics,record.description_en || ""].join(" ")) ? 1 : 0;
