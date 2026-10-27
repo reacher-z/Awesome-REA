@@ -4566,5 +4566,15 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "mithril-iot-scanner": {
+    "name": "mithril 物联网固件静态扫描器",
+    "requirements": [
+      "这是一个很新、更新很快的项目：仓库创建于 2026-09-07，审阅时最新版本为 v0.4.0，发布于 2026-10-22，提供 Linux x86_64 与 arm64、macOS arm64 压缩包，以及 amd64 与 arm64 的 Debian 软件包；所审提交即该版本的合并提交。",
+      "从源码构建需要 CMake 3.20+ 和支持 C++20 的编译器，不链接任何第三方库；仓库附带 flake.nix、package.nix 和 Debian 打包文件。输入是固件文件，或已由 moria 或其他解包工具提取的目录；--boot 检查还可读取原始的 AMI 或 EDK2 BIOS 镜像，报告 UEFI 安全启动状态。",
+      "扫描过程不发起网络请求。CVE 检查需要位于用户主目录下 .local/share/mithril（或 $MITHRIL_DB 指定位置）的本地镜像：可用 --fetch-db 从项目每周重建的 db-latest 发布下载一次，并按公布的 SHA-256 校验（需要 curl），也可用 --update-db 从 OSV.dev、NVD、CISA KEV、EPSS 及可选的 kernel.org 数据源自行重建。README 指出内核检查清单经过筛选而非穷尽，内核结果为空并不代表内核没有漏洞；机密信息的发现只表示格式正确，从不确认凭据仍然有效。",
+      "编译进程序的密钥语料库由 data/ 下附带的公钥和证书生成：rapid7 ssh-badkeys 的公钥部分、Vagrant 不安全公钥、eMudhra 中间 CA 证书、AOSP 测试密钥的公钥部分，以及 PKfail AMI 测试平台密钥（Platform Key）证书。THIRD_PARTY.md 声明仓库不存放任何私钥材料，密钥相关测试在运行时用 openssl 生成所需密钥。",
+      "MIT 许可；附带的密钥数据沿用上游的 MIT 或 Apache-2.0 条款，镜像的漏洞数据归各数据源所有。本次审阅未构建或运行，也未扫描任何固件；所审来源未确立与 REA 的关联。"
+    ]
   }
 }
