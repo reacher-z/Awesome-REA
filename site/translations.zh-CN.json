@@ -7737,5 +7737,14 @@
       "主机端工具都是支持 FT2232H 的独立项目：UART 使用 USB 串口驱动；SPI 和 I2C 使用 flashrom、pyftdi 或 libmpsse；JTAG 和 SWD 使用 OpenOCD（README 中的配置需要 v0.12+）或 Black Magic Debug；边界扫描使用 UrJTAG，或商业的、仅限 Windows 的 TopJTAG；另有 iceprog，以及自 7.1 版起内置 Tigard 支持的 avrdude。README 指出 FT2232H 在 I2C 上的限制（仅支持控制器模式、不支持时钟延展、可能与总线上其他控制器冲突），并报告 UrJTAG 的 TCK 实际频率约为设定值的五倍。",
       "CC-BY-SA 4.0（LICENSE.txt，版权 2020 Franklin Harding），GitHub 未能识别该许可证类别。README 鼓励自行制作板卡，但要求制作者使用不同颜色、填写准确的 USB 厂商描述符，并使用不以 TG 开头的序列号。从目标读取的数据仍归其所有者；所审来源未提及任何 AI 或 REA 用途，本条目也未测试任何硬件。"
     ]
+  },
+  "axmlprinter": {
+    "name": "axmlprinter Android 二进制 XML 解析器",
+    "requirements": [
+      "最新发布版本 v2.0.1 于 2026-03-25 发布并附预编译 jar，其标签正对应所审阅的 master 分支提交 5a8d3e5。2026-01-16 发布的 v2.0.0 通过外部贡献的拉取请求加入了只读的 protobuf 支持；不支持在 AXML 与 protobuf 之间转换。",
+      "用 Gradle wrapper（./gradlew jar）构建为自包含 jar，以 java -jar axmlprinter-*.jar 加二进制 XML 文件运行，可选的输出路径只适用于 AXML。CI 在 JDK 17 上构建和测试，JitPack 也使用 OpenJDK 17；依赖 protobuf-java 4.34.1，并收录 AOSP 采用 Apache-2.0 的 aapt2 Resources.proto。框架资源 ID 只能解析常见的 Android 资源。",
+      "输入是分析者已从 APK 或 App Bundle 中取出的单个编译后 XML 文件，而非安装包本身。测试附带名为 large_from_malware.xml 和 qihoo_jiagu_issue8.xml 的二进制清单文件，后者来自一个关于清单无法解析的问题报告，另有较小的 test.xml。",
+      "采用 Apache-2.0 许可，同时署名 Android4ME 2008 年的代码与 Red Naga。未提及使用 REA，本次审阅未解码任何文件。"
+    ]
   }
 }
