@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/native-analysis/) · [简体中文](native-analysis.zh-CN.md)
 
-**851 repositories** · 2026-10-20 UTC
+**852 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -185,6 +185,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [secrary/idenLib](https://github.com/secrary/idenLib) — idenLib - Library Function Identification \[This project is not maintained anymore\] **[395 stars]**
 - [nevillegrech/gigahorse-toolchain](https://github.com/nevillegrech/gigahorse-toolchain) — A binary lifter and analysis framework for Ethereum smart contracts **[388 stars]**
 - [DMaroo/GhidRust](https://github.com/DMaroo/GhidRust) — GhidRust: Rust decompiler plugin for Ghidra **[385 stars]**
+- [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill forges beautiful LLVM bitcode out of raw machine code **[384 stars]** · Curated: [Anvill](https://awesomerea.org/resources/anvill/)
 - [GrammaTech/gtirb](https://github.com/GrammaTech/gtirb) — Intermediate Representation for Binary analysis and transformation **[382 stars]**
 - [bl4ckr0ss3/knife](https://github.com/bl4ckr0ss3/knife) — A terminal-first reverse engineering toolkit in Rust: PE/ELF/Mach-O analysis through CLI, TUI, and MCP. Installs as knife. **[380 stars]**
 - [Colton1skees/Dna](https://github.com/Colton1skees/Dna) — LLVM based static binary analysis framework **[380 stars]**

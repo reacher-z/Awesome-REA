@@ -11759,5 +11759,44 @@
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/.github/workflows/docker-release.yml",
       "https://github.com/Python-roborock/local_roborock_server/blob/c3b32845c63a4bc9d1fc9dfb205b86a33ea06bf3/LICENSE"
     ]
+  },
+  {
+    "id": "anvill",
+    "name": "Anvill",
+    "url": "https://github.com/lifting-bits/anvill",
+    "category": "binary-libraries",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Trail of Bits machine-code lifter built on Remill that aims to produce high-quality LLVM bitcode, close to what Clang would emit for a semantically equivalent C function, for Rellic to decompile further into C. Its anvill-decompile-spec tool lifts the functions and global variables described in a Protobuf specification of a binary's low-level ABI information into LLVM IR or bitcode, and LLVM passes lower Remill intrinsics and recover stack frames, jump tables and switches. The README says the main branch reads specifications from an in-development, closed-source Ghidra plugin, while open-source Binary Ninja spec generation remains at the binja-final-version tag.",
+    "description_zh": "Trail of Bits 基于 Remill 开发的机器码提升器，目标是生成高质量的 LLVM bitcode，使其接近 Clang 编译语义等价的 C 函数时产生的结果，再交由 Rellic 进一步反编译为 C。其 anvill-decompile-spec 工具读取描述二进制底层 ABI 信息的 Protobuf 规格文件，把其中的函数和全局变量提升为 LLVM IR 或 bitcode；一组 LLVM 遍负责降级 Remill 内建函数，并恢复栈帧、跳转表和 switch 结构。README 称 main 分支读取的规格文件由一个仍在开发、尚未开源的 Ghidra 插件生成，开源的 Binary Ninja 规格生成脚本则保留在 binja-final-version 标签中。",
+    "evidence_url": "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest GitHub release at review: v0.1.39, published 2021-02-22. Later tags reach v0.2.1 (a 2022-11-14 commit) without release entries, and the reviewed master commit is six commits ahead of it; its last code change dates from 2022-12-06, and the reviewed commit itself, from 2023-07-05, only updates a README link. GitHub does not mark the repository archived. This entry pins that commit for documentation only.",
+      "The README supports Linux, tested on Ubuntu 20.04, and lists CMake 3.14+ (CMakeLists.txt requires 3.19), Clang 12+, Remill, Python 3.9 and Ghidra; most libraries, including LLVM, XED, Z3, gflags and glog, come from Trail of Bits' prebuilt cxx-common packages. CI builds against LLVM 14 and 15 on Ubuntu 20.04 and macOS 11, and the Dockerfile defaults to LLVM 15 on Ubuntu 20.04.",
+      "anvill-decompile-spec takes a Protobuf specification of functions, global variables, symbols, memory ranges and control-flow overrides, not a raw executable; its own flag help and docs/SpecificationFormat.md still describe JSON specifications. The Python package that writes specifications from Binary Ninja and the IDA plugin remain in the tree, but the README directs open-source users to the binja-final-version tag, and CI installs the Ghidra spec generator from a private Trail of Bits repository with a deploy key. Calling-convention support covers x86 cdecl, stdcall, fastcall and thiscall, x86-64 System V, AArch32, AArch64 and 32- and 64-bit SPARC.",
+      "The tree commits ci/BinaryNinja-headless.zip.gpg and ci/license.txt.gpg, GPG-encrypted archives added in 2020 so CI could install a headless Binary Ninja and its license with a secret passphrase; this entry does not link them. CI integration tests also fetch passphrase-protected AMP challenge binaries through the lifting-tools-ci submodule.",
+      "AGPL-3.0 license. Unit tests are enabled with -DANVILL_ENABLE_TESTS=true; they and the integration tests were not run, and nothing was lifted or decompiled. Lifted bitcode quality and its equivalence to the original code are project goals, not results checked here."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/bin/Decompile/Main.cpp",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/data_specifications/specification.proto",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/docs/SpecificationFormat.md",
+      "https://github.com/lifting-bits/anvill/tree/9948d26cd993952d6010a59f27a198cbe3c79c1d/lib/Passes",
+      "https://github.com/lifting-bits/anvill/tree/9948d26cd993952d6010a59f27a198cbe3c79c1d/lib/Arch",
+      "https://github.com/lifting-bits/anvill/tree/9948d26cd993952d6010a59f27a198cbe3c79c1d/python/anvill",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/CMakeLists.txt",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/Dockerfile",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/.github/workflows/build.yml",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/ci/install_binja.sh",
+      "https://github.com/lifting-bits/anvill/blob/9948d26cd993952d6010a59f27a198cbe3c79c1d/LICENSE",
+      "https://github.com/lifting-bits/anvill/releases/tag/v0.1.39",
+      "https://github.com/lifting-bits/anvill/tree/8662cdcca6e63ea10322928a89a0168a6a4270e9",
+      "https://github.com/lifting-bits/rellic/blob/370abaad86ae5adad82f85b81aff14557462b7f2/README.md"
+    ]
   }
 ]

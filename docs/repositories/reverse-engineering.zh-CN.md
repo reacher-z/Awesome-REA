@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/reverse-engineering/) · [English](reverse-engineering.md)
 
-**670 个仓库** · 2026-10-20 UTC
+**669 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -143,7 +143,6 @@
 - [ergrelet/themida-unmutate](https://github.com/ergrelet/themida-unmutate) — 针对 Themida、WinLicense 和 Code Virtualizer 3.x 基于变异的混淆机制的静态去混淆工具。 **[403 星标]**
 - [Arenukvern/mcp\_flutter](https://github.com/Arenukvern/mcp_flutter) — 面向 Flutter AI 智能体驱动开发的 MCP 工具集（MCP／CLI 加自定义客户端工具），通过闭环反馈（视觉与语义快照）和高度可定制的客户端能力适配任意 Flutter 应用。如今这类系统常被称为智能体执行框架。 **[389 星标]**
 - [ResistanceTo/MiniWatts](https://github.com/ResistanceTo/MiniWatts) — 基于 iOS 私有 API 构建的 iPhone 电池、充电与温度检测工具，可展示充电器实际功率、真正到达电芯的功率、全部 30 个温度传感器读数，以及 USB-PD 握手过程。 **[386 星标]**
-- [lifting-bits/anvill](https://github.com/lifting-bits/anvill) — anvill 将原始机器码转换为优雅的 LLVM bitcode。 **[384 星标]**
 - [projectPiki/pikmin2](https://github.com/projectPiki/pikmin2) — 由系列爱好者制作的《皮克敏 2》（美版）反编译项目。 **[380 星标]**
 - [richinfante/iphonebackuptools](https://github.com/richinfante/iphonebackuptools) — iOS 备份数据提取 **[361 星标]**
 - [GenericException/SkidSuite](https://github.com/GenericException/SkidSuite) — Java 逆向工程工具与资料链接合集。 **[355 星标]**

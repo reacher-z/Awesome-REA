@@ -4310,5 +4310,15 @@
       "把一条证据中的字段从 6 改为 999 并保留其 evidence_id 后，同一个 REA 服务端以 evidence_integrity_mismatch 拒绝导入，会话证据保持不变；作者补充说，这能发现篡改，却不能证明解释正确。文章还引用了 TH08 项目的一次修复：比较器曾漏掉一个被写成 0.0 的 128.0 常量，作者未重新运行该项目。",
       "分析与实现在同一个 Codex 上下文中完成，作者明确表示这不是洁净室隔离，文中的交接提示词只是建议，并非经过测试的流程。脚本、变异版本和输出均未公开，本目录无法重新运行；三个探针也不覆盖权限、写盘失败、并发或完整界面。分析对象是 REA 自带的教学示例，而非第三方产品。"
     ]
+  },
+  "anvill": {
+    "name": "Anvill 机器码到 LLVM bitcode 提升器",
+    "requirements": [
+      "审阅时最新的 GitHub 发行版为 v0.1.39，发布于 2021-02-22。此后的标签延续到 v0.2.1（对应 2022-11-14 的提交），但没有发行版条目；所审阅的 master 提交比它多六个提交，最后一次代码改动在 2022-12-06，而该提交本身（2023-07-05）只更新了 README 中的一个链接。GitHub 并未将仓库标为已归档。本条目固定该提交仅用于引用文档。",
+      "README 称支持 Linux，并在 Ubuntu 20.04 上测试过；列出的依赖为 CMake 3.14+（CMakeLists.txt 实际要求 3.19）、Clang 12+、Remill、Python 3.9 和 Ghidra。LLVM、XED、Z3、gflags、glog 等大部分库可由 Trail of Bits 预构建的 cxx-common 包提供。CI 在 Ubuntu 20.04 和 macOS 11 上针对 LLVM 14 与 15 构建，Dockerfile 默认使用 Ubuntu 20.04 和 LLVM 15。",
+      "anvill-decompile-spec 的输入是描述函数、全局变量、符号、内存区间和控制流覆盖信息的 Protobuf 规格文件，而不是原始可执行文件；其自身的参数说明和 docs/SpecificationFormat.md 仍按 JSON 规格描述。从 Binary Ninja 生成规格的 Python 包和 IDA 插件仍在代码树中，但 README 建议需要开源方案的用户使用 binja-final-version 标签；CI 则通过部署密钥从 Trail of Bits 的私有仓库安装 Ghidra 规格生成器。调用约定支持涵盖 x86 的 cdecl、stdcall、fastcall 和 thiscall，x86-64 System V，AArch32、AArch64，以及 32 位与 64 位 SPARC。",
+      "代码树提交了 ci/BinaryNinja-headless.zip.gpg 和 ci/license.txt.gpg，这是 2020 年加入的 GPG 加密压缩包，供 CI 用秘密口令安装无界面版 Binary Ninja 及其许可证；本条目不链接这些文件。CI 集成测试还会通过 lifting-tools-ci 子模块获取受口令保护的 AMP 挑战二进制。",
+      "采用 AGPL-3.0 许可。单元测试需用 -DANVILL_ENABLE_TESTS=true 启用；本次未运行单元测试和集成测试，也未提升或反编译任何内容。提升所得 bitcode 的质量及其与原始代码的等价性属于项目目标，并非本次核实的结果。"
+    ]
   }
 }
