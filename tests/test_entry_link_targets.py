@@ -71,7 +71,7 @@ class EntryLinkTargetTests(unittest.TestCase):
                             links = parser.records[record['id']]
                             self.assertEqual([href for href, _, title in links if title], [record['url']])
                             self.assertEqual([text for href, text, _ in links if href == record['url']],
-                                             [(record['name_zh'] if zh else record['name']) + '↗'])
+                                             [(record['name_zh'] if zh else record['name']) + '\u2060↗'])
                             self.assertEqual([text for href, text, _ in links if href == record['evidence_url']], [source + ' ↗'])
                             self.assertEqual([text for href, text, _ in links if href == f"/{prefix}resources/{record['id']}/"],
                                              ['完整条目' if zh else 'Full entry'])
