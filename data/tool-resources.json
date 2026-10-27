@@ -11799,5 +11799,37 @@
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/CHANGELOG.md",
       "https://github.com/kongdayan/wristbeam/blob/712f577ac55b476ff91e0b44565934ac0d4cad4d/LICENSE"
     ]
+  },
+  {
+    "id": "openpilot-cabana",
+    "name": "Cabana (standalone openpilot-cabana)",
+    "url": "https://github.com/deanlee/openpilot-cabana",
+    "category": "protocol-analysis",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "protocol"
+    ],
+    "description_en": "Qt desktop CAN and CAN FD analyzer for decoding signals and reverse engineering unknown messages, split out of openpilot's cabana by Dean Lee, a frequent contributor to it, and now maintained on its own. It shows live per-bit change heatmaps, colors bytes by trend such as counters, toggles or noisy data, searches for signals by value or for bits that change together across messages and buses, mutes known bits, plots signals and edits DBC files with undo, while replaying openpilot drives with synchronized camera video. Sources are openpilot routes, Vector ASC, candump and PEAK TRC logs, SocketCAN, comma.ai Panda devices and live streams from a comma device, with a bundled set of opendbc DBC files.",
+    "description_zh": "基于 Qt 的桌面 CAN 与 CAN FD 分析工具，用于解码信号和逆向分析未知报文；由 openpilot cabana 的活跃贡献者 Dean Lee 从 openpilot 中独立出来，现单独维护。它实时显示逐位变化热图，按计数器、切换位、噪声数据等趋势为字节着色，可按数值搜索信号或查找在不同报文和总线间同步变化的位，屏蔽已知位，绘制信号曲线，并以可撤销方式编辑 DBC 文件，同时能回放 openpilot 行车记录并同步显示摄像头视频。数据来源包括 openpilot 行车记录、Vector ASC、candump 和 PEAK TRC 日志、SocketCAN、comma.ai Panda 设备以及来自 comma 设备的实时流，并附带一组 opendbc DBC 文件。",
+    "evidence_url": "https://github.com/deanlee/openpilot-cabana/blob/0a4b189798b33e4267fbf854c6f27fe4832998ab/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "The repository was created on 2025-12-30; its README says Cabana was originally developed as openpilot's CAN analysis tool and is now maintained independently, while openpilot still carries its own cabana under openpilot/tools/cabana. Latest release at review: v1.1.2, published 2026-03-16 as a Linux x86_64 tarball; the reviewed main commit, of 2026-06-09, is 66 commits ahead of it.",
+      "Source builds use SCons, a C++20 compiler and Qt 6 with Charts, SVG, SerialBus and OpenGL, plus capnproto, ZeroMQ, FFmpeg, libusb and the other Ubuntu/Debian packages the README lists, after initializing the openpilot-replay submodule from the same author. The README also names an AUR package for Arch Linux; SConstruct has a macOS arm64 branch, but the release workflow builds only on Ubuntu 22.04.",
+      "Analysis needs the user's own CAN data: logs or live buses from their own vehicle and interface, a Panda, or openpilot routes from their own comma device or comma connect account; --demo opens a demo route instead. The tool highlights candidate bits and signals but does not establish what they mean, and no capture was analyzed for this review.",
+      "MIT (LICENSE, copyright 2025 Dean Lee); the openpilot-replay submodule is also MIT, and data/opendbc holds 93 DBC files from comma.ai's MIT-licensed opendbc. The reviewed sources state no REA or AI use, and no build was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/deanlee/openpilot-cabana/blob/0a4b189798b33e4267fbf854c6f27fe4832998ab/SConstruct",
+      "https://github.com/deanlee/openpilot-cabana/blob/0a4b189798b33e4267fbf854c6f27fe4832998ab/.gitmodules",
+      "https://github.com/deanlee/openpilot-cabana/blob/0a4b189798b33e4267fbf854c6f27fe4832998ab/.github/workflows/release.yml",
+      "https://github.com/deanlee/openpilot-cabana/tree/0a4b189798b33e4267fbf854c6f27fe4832998ab/src/tools",
+      "https://github.com/deanlee/openpilot-cabana/tree/0a4b189798b33e4267fbf854c6f27fe4832998ab/data/opendbc",
+      "https://github.com/deanlee/openpilot-cabana/blob/0a4b189798b33e4267fbf854c6f27fe4832998ab/LICENSE",
+      "https://github.com/deanlee/openpilot-cabana/releases/tag/v1.1.2",
+      "https://github.com/commaai/openpilot/blob/14652aacb2975e3836ee6b37e9595edaabd39332/openpilot/tools/cabana/README.md"
+    ]
   }
 ]
