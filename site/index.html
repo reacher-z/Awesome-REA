@@ -50,7 +50,7 @@
         <p class="eyebrow" data-i18n="collectionEyebrow">AN OPEN RESOURCE COLLECTION</p>
         <h1 id="collection-title" data-i18n="collectionTitle">Awesome Reverse<br>Engineering <em>Anything.</em></h1>
         <p class="collection-description" data-i18n="collectionDescription">Tools, reconstruction projects, case studies and research papers — organized by what you want to reverse engineer.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#catalog"><span data-i18n="exploreResources">Browse resources</span><svg class="icon icon-small" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="button button-outline get-data" href="https://github.com/reacher-z/Awesome-REA" data-open-data><svg class="icon icon-small" aria-hidden="true"><use href="#i-layers"/></svg><span data-i18n="getData">Get data</span></a><a class="hero-text-link" href="/cases/" data-locale-path="cases"><span data-i18n="exploreCases">Browse case studies</span><span aria-hidden="true">↗</span></a></div>
+        <div class="hero-actions"><a class="button button-primary" href="#catalog"><span data-i18n="exploreResources">Browse resources</span><svg class="icon icon-small" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="button button-outline get-data" href="https://github.com/reacher-z/Awesome-REA" data-open-data><svg class="icon icon-small" aria-hidden="true"><use href="#i-layers"/></svg><span data-i18n="getData">Get data</span></a><a class="hero-text-link" href="/cases/" data-locale-path="cases"><span data-i18n="exploreCases">Browse case studies</span><span aria-hidden="true">↗</span></a><a class="hero-text-link" href="/benchmark-map/" data-locale-path="benchmark-map"><span data-i18n="benchmarkMap">Benchmark map</span><span aria-hidden="true">↗</span></a></div>
       </div>
       <aside class="collection-shelf" aria-labelledby="shelf-title">
         <div class="shelf-heading"><span class="shelf-dot" aria-hidden="true"></span><h2 id="shelf-title" data-i18n="shelfTitle">Explore these collections</h2><span class="mono" aria-hidden="true">01—03</span></div>
@@ -66,6 +66,13 @@
       <a href="/browse/" data-locale-path="browse"><strong>{{BROWSE_COUNT}}</strong><span data-i18n="directoryRepositories">repositories</span></a>
       <a class="directory-about" href="/about/" data-locale-path="about" data-i18n="directoryAbout">About the collection ↗</a>
     </nav>
+    <figure class="benchmark-map-preview">
+      <figcaption>
+        <a href="/benchmark-map/" data-locale-path="benchmark-map"><strong data-i18n="benchmarkMap">Benchmark map</strong></a>
+        <span data-i18n="benchmarkMapCaption">Purple cells are long tasks with a shipped input and a checkable output. Gray cells are still open. Six targets share 1,000 slots evenly.</span>
+      </figcaption>
+      <a href="/benchmark-map/" data-locale-path="benchmark-map" data-i18n-aria="benchmarkMap" aria-label="Benchmark map"><img src="benchmark-map.svg" alt="" width="960" height="390"></a>
+    </figure>
     <details class="subject-browser">
     <summary data-i18n="subjectBrowse">Browse subject directories</summary>
     <nav class="subject-directory" aria-label="Explore reverse engineering by target" data-i18n-aria="subjectNav">

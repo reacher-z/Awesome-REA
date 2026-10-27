@@ -188,7 +188,7 @@
 - [divyansh9704/ine-product-price-tracker](https://github.com/divyansh9704/ine-product-price-tracker) — ⚡ 具备韧性的全栈电商价格监控引擎与分析仪表盘，采用 Node.js、WASM JIT、SHA-256 工作量证明求解器、Supabase Postgres RPC、React 18 和 Recharts，为 INE 作业构建。 **[0 星标]**
 - [Eabusham2/Minecraft-mod-malware-checker](https://github.com/Eabusham2/Minecraft-mod-malware-checker) — 离线浏览器扫描器，检查 Minecraft 模组中窃取令牌的恶意软件；读取代码而不运行，并说明代码的行为。 **[0 星标]**
 - [EmulationOnline/6502\_asm](https://github.com/EmulationOnline/6502_asm) — 6502 汇编器，最初为作者的在线汇编器和 chiplab 编写：https<span>:</span>//www<span>.</span>emulationonline.com/systems/chiplab/6502/assembler/ **[0 星标]**
-- [ferrolho/thermal-master-viewer](https://github.com/ferrolho/thermal-master-viewer) — 基于浏览器的 Thermal Master P3/P1 USB 热成像相机查看器。插入设备、打开页面即可，无需安装，直接通过 WebUSB 驱动。 **[0 星标]**
+- [ferrolho/thermal-master-viewer](https://github.com/ferrolho/thermal-master-viewer) — 基于浏览器的 Thermal Master P3/P1 USB 热成像相机查看器。插入设备、打开页面即可，无需安装，直接通过 WebUSB 驱动。 **[0 星标]** · 精选：[Thermal Master P3：厂商 USB 协议的浏览器客户端](https://awesomerea.org/zh/resources/thermal-master-p3-protocol-case/)
 - [Guillain-RDCDE/DS2-Anywhere](https://github.com/Guillain-RDCDE/DS2-Anywhere) — 在任意计算机上打开 Olympus 和 Grundig 听写录音，这种格式自 1994 年以来一直受限。它替代了付费许可证及一系列 Windows 机器；该修正正在进入 FFmpeg 上游。 **[0 星标]**
 - [hmallen99/VisualReconstructionWebApp](https://github.com/hmallen99/VisualReconstructionWebApp) — NeuroTech<span>@</span>Berkeley 视觉重建软件项目的网页基础设施。 **[0 星标]**
 - [IntrovertedTao/spa-bundle-recon](https://github.com/IntrovertedTao/spa-bundle-recon) — 对重度依赖 JavaScript 或受地域限制的单页应用进行静态分析：从公开 JS 打包文件中提取价格、套餐、API 端点和模型。仅使用标准库，无需浏览器。 **[0 星标]**

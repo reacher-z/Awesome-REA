@@ -432,6 +432,7 @@ Source review checks documentation, not successful execution, security, or REA c
 - [Research papers]({site_url}/papers/): A separate research bibliography.
 - [Editorial survey]({site_url}/survey/): A bilingual synthesis of the collection’s evidence, methods and limits; a versioned editorial companion, not an additional research paper.
 - [About and provenance]({site_url}/about/): Scope, source methods, counts, translations, and licenses.
+- [Benchmark map]({site_url}/benchmark-map/): Coverage of long input-to-output tasks against a target of 1,000, split evenly across six targets.
 
 ## 简体中文
 
@@ -441,6 +442,7 @@ Source review checks documentation, not successful execution, security, or REA c
 - [研究论文]({site_url}/zh/papers/): 单独维护的研究文献目录。
 - [专题综述]({site_url}/zh/survey/): 综合比较证据、方法与边界的双语编辑性综述，单独版本化，不计入研究论文数量。
 - [关于与来源]({site_url}/zh/about/): 收录范围、来源方法、数量、翻译与许可。
+- [基准图]({site_url}/zh/benchmark-map/): 六个目标平分 1,000 条具体任务，标出已覆盖的长任务和仍空着的位置。
 
 ## Public data and sources
 
