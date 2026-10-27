@@ -7355,5 +7355,62 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-decomperson",
+    "title": "Decomperson: How Humans Decompile and What We Can Learn From It",
+    "title_zh": "Decomperson：人类如何反编译以及我们能从中学到什么",
+    "authors": [
+      "Kevin Burk",
+      "Fabio Pagani",
+      "Christopher Kruegel",
+      "Giovanni Vigna"
+    ],
+    "year": 2022,
+    "publication_date": "2022-08",
+    "date_precision": "month",
+    "date_basis": "Publication month from the official USENIX BibTeX (month = aug) and the final PDF cover for the 31st USENIX Security Symposium, August 10–12, 2022; no exact publication day is asserted.",
+    "date_basis_zh": "采用 USENIX 官方 BibTeX（month = aug）及第 31 届 USENIX Security Symposium（2022 年 8 月 10–12 日）最终版 PDF 封面所载的出版月份，不推定具体出版日。",
+    "venue": "USENIX Security 2022",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "citation": {
+      "container_title": "31st USENIX Security Symposium (USENIX Security 22)",
+      "publisher": "USENIX Association",
+      "pages": "2765-2782",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+        "https://www.usenix.org/system/files/sec22-burk.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+    "pdf_url": "https://www.usenix.org/system/files/sec22-burk.pdf",
+    "code_url": "https://github.com/decompetition/server",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Reframes manual reverse engineering as perfect decompilation: writing source that, compiled with the original toolchain and options, reproduces the target functions’ binary code exactly. The authors built Decomperson, a web editor that compiles, disassembles, tests and diffs each submission, and used it in Decompetition, a 24-hour Jeopardy-style competition in November 2020 with 23 unstripped challenge binaries written in C, C++, Go, Rust and Swift. Over 150 participants made more than 35,000 submissions, including over 300 perfect ones; all but one challenge was perfectly decompiled, and the recorded edit histories are analyzed to describe how humans decompile.",
+    "description_zh": "将人工逆向工程重新表述为“完美反编译”：编写源码，使其在原始工具链与编译选项下编译后，能完全复现目标函数的二进制代码。作者开发了 Decomperson——一个对每次提交进行编译、反汇编、测试与差异比对的网页编辑器，并在 2020 年 11 月举办的 24 小时 Jeopardy 式竞赛 Decompetition 中使用；竞赛包含 23 个未剥离符号、以 C、C++、Go、Rust 与 Swift 编写的挑战二进制。150 余名参与者提交了 35,000 多份代码，其中 300 多份达到完美反编译；除一个挑战外，其余均被完美反编译。作者分析记录下的编辑历史，以描述人类的反编译过程。",
+    "scope_limitations_en": "Participants were self-selected competitors in a single 2020 event, mostly playing solo on teams of any size, and the follow-up survey drew only 12% of registrants. The challenges are 23 small competition binaries written by the organizers, not stripped and without debug information, and Decomperson assumed the original toolchain and compilation options were known. Perfect decompilation requires matching compiler output; the authors note that it is not a traditional reverse-engineering task, does not capture skills such as triaging large binaries, and can include time spent fighting compiler idiosyncrasies. The web editor took players out of their usual tools and may have influenced timings. Participants could paste automatic-decompiler output; about 20% of C function attempts resembled tool output, mostly Hex-Rays, Ghidra or Binary Ninja. The study observes humans and does not evaluate automated decompilers or agents.",
+    "scope_limitations_zh": "参与者是自愿参加 2020 年单次竞赛的选手，多数以单人队伍参赛（队伍人数不限），赛后问卷仅有 12% 的注册者填写。挑战为组织者编写的 23 个小型竞赛二进制，未剥离符号但不含调试信息，且 Decomperson 假定已知原始工具链与编译选项。完美反编译要求与编译器输出一致；作者指出，这并非传统的逆向工程任务，无法反映筛查大型二进制等技能，还可能包含与编译器特性“较劲”所花的时间。网页编辑器使选手离开了惯用工具，可能影响计时。选手可以粘贴自动反编译器的输出；约 20% 的 C 函数尝试与工具输出相似，主要来自 Hex-Rays、Ghidra 或 Binary Ninja。该研究观察的是人类，并未评估自动反编译器或智能体。",
+    "why_fits_en": "Adds a large, programmatically analyzable record of human decompilation, complementing studies that compare human reverse engineers with LLMs and agents.",
+    "why_fits_zh": "补充可通过程序分析的大规模人类反编译记录，与比较人类逆向工程人员和大语言模型、智能体的研究互补。",
+    "metadata_notes": "No paper DOI or arXiv identifier was verified; the record uses the reviewed USENIX Security presentation-page and sec22-burk.pdf profile. The USENIX BibTeX gives the 31st USENIX Security Symposium, pages 2765–2782, USENIX Association and month August. The paper states IRB exemption under Category 3 and that no personally identifiable information was used. Its Artifacts section links the challenges-2020, server, disassembler and data repositories and a Docker Hub builder image; the image was not checked. The code link uses the Decomperson server, reviewed at commit 0d381d4 (2026-04-13), which carries an Apache-2.0 license whose copyright line was filled in that day; the challenges and disassembler repositories first received Apache-2.0 license files the same day. The anonymized submission data, decompetition/data at 4b339e5 (2022-06-02), is a PostgreSQL dump from a 2020-12-10 snapshot with a Docker-based serve.sh, and that repository declares no license, so no redistribution rights are implied. No data was downloaded and no code was run.",
+    "metadata_notes_zh": "未核实论文 DOI 或 arXiv 标识符；本条目采用经审阅的 USENIX Security 报告页面与 sec22-burk.pdf 配对规则。USENIX BibTeX 给出第 31 届 USENIX Security Symposium、页码 2765–2782、出版方 USENIX Association 及八月份。论文说明该研究经 IRB 审查被认定为第 3 类豁免，且未使用个人身份信息。其“产物”一节链接 challenges-2020、server、disassembler 与 data 仓库及一个 Docker Hub 构建镜像；本次未检查该镜像。代码链接采用 Decomperson 服务端，审阅提交为 0d381d4（2026-04-13），采用 Apache-2.0 许可证，其版权行于当日补全；challenges 与 disassembler 仓库则在同日首次加入 Apache-2.0 许可证文件。匿名化提交数据位于 decompetition/data 的 4b339e5（2022-06-02），是基于 2020-12-10 快照的 PostgreSQL 转储，并附基于 Docker 的 serve.sh；该仓库未声明许可证，因此不能推定拥有再分发权利。本次未下载数据，也未运行代码。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+      "https://www.usenix.org/system/files/sec22-burk.pdf",
+      "https://github.com/decompetition/server/blob/0d381d414a256c016149d878d5a19d006d097a86/README.md",
+      "https://github.com/decompetition/server/blob/0d381d414a256c016149d878d5a19d006d097a86/LICENSE.txt",
+      "https://github.com/decompetition/data/blob/4b339e5a0f847510175605e7f7cd9b953b55b094/README.md"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
