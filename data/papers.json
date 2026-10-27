@@ -7355,5 +7355,64 @@
     "verified_at": "2026-10-18",
     "verification": "source-reviewed",
     "runtime_tested": false
+  },
+  {
+    "id": "paper-d-helix",
+    "title": "D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation",
+    "title_zh": "D-Helix：基于符号差分的通用反编译器测试框架",
+    "authors": [
+      "Muqi Zou",
+      "Arslan Khan",
+      "Ruoyu Wu",
+      "Han Gao",
+      "Antonio Bianchi",
+      "Dave (Jing) Tian"
+    ],
+    "year": 2024,
+    "publication_date": "2024-08",
+    "date_precision": "month",
+    "date_basis": "Publication month from the official USENIX BibTeX (month = aug) and the final PDF cover for the 33rd USENIX Security Symposium, August 14–16, 2024; no exact publication day is asserted.",
+    "date_basis_zh": "采用 USENIX 官方 BibTeX（month = aug）及第 33 届 USENIX Security Symposium（2024 年 8 月 14–16 日）最终版 PDF 封面所载的出版月份，不推定具体出版日。",
+    "venue": "USENIX Security 2024",
+    "publication_status": "conference-paper",
+    "arxiv_id": null,
+    "arxiv_version_reviewed": null,
+    "first_arxiv_date": null,
+    "doi": null,
+    "citation": {
+      "container_title": "33rd USENIX Security Symposium (USENIX Security 24)",
+      "publisher": "USENIX Association",
+      "pages": "397-414",
+      "sources": [
+        "https://www.usenix.org/conference/usenixsecurity24/presentation/zou",
+        "https://www.usenix.org/system/files/usenixsecurity24-zou.pdf"
+      ]
+    },
+    "url": "https://www.usenix.org/conference/usenixsecurity24/presentation/zou",
+    "pdf_url": "https://www.usenix.org/system/files/usenixsecurity24-zou.pdf",
+    "code_url": "https://github.com/purseclab/D-helix",
+    "project_url": null,
+    "targets": [
+      "binary"
+    ],
+    "description_en": "Tests decompilers function by function on binaries without needing source code. RECOMPILER repairs decompiled C so individual functions recompile, SYMDIFF compares symbolic models of the original binary function and the recompiled decompiled function using patched angr and PROMPT symbolic executors, and TUNER toggles decompiler heuristic rules to locate, and sometimes work around, the rule behind an inaccuracy. On Ghidra 10.0 and angr 9.2.30, 2,004 binaries and object files from coreutils, util-linux and six popular GitHub C projects yield 93K decompiled functions; the authors report 4,515 incorrectly decompiled functions, 8 reproduced known bugs, 17 previously unknown bugs and 7 bugs fixed automatically.",
+    "description_zh": "在无需源码的前提下，逐函数测试反编译器对二进制的处理。RECOMPILER 修复反编译所得的 C 代码，使单个函数能够重新编译；SYMDIFF 借助打过补丁的 angr 与 PROMPT 符号执行器，比较原始二进制函数与重新编译后的反编译函数的符号模型；TUNER 通过切换反编译器的启发式规则，定位造成偏差的规则，并在部分情况下予以规避。作者在 Ghidra 10.0 与 angr 9.2.30 上，使用来自 coreutils、util-linux 及六个热门 GitHub C 项目的 2,004 个二进制与目标文件，得到 93K 个反编译函数；报告发现 4,515 个反编译错误的函数，复现 8 个已知缺陷，发现 17 个此前未知的缺陷，并自动修复 7 个缺陷。",
+    "scope_limitations_en": "Only Ghidra and angr were tested; Hex-Rays, Binary Ninja, RetDec and LLM-based decompilers were not, and the authors estimate that supporting a decompiler with an unsupported IR would take at least 40 days of symbolic-engine work. Results are function-level symbolic equivalence checks on the authors’ 2,004 x86-64 Linux inputs, built with GCC 11.1.0 and Clang 16.0.0 at each project’s default optimization and excluding binaries over 30 MiB. Coverage is partial: RECOMPILER recompiled 72.4% of Ghidra’s and 45.0% of angr’s decompiled functions, and SYMDIFF analyzed 91.3% and 93.9% of those. Symbolic execution bounds loops, uses a two-minute default timeout, treats global variables as constants and does not parse floating-point constraints; accuracy trade-offs cause false positives, measured on 100-function samples per decompiler. TUNER automatically fixed 72 of the 443 inaccuracies it examined. A function passing the check is not proof of whole-program correctness.",
+    "scope_limitations_zh": "仅测试了 Ghidra 与 angr，未测试 Hex-Rays、Binary Ninja、RetDec 或基于大语言模型的反编译器；作者估计，若要支持中间表示尚未受支持的反编译器，至少需要 40 天的符号执行引擎开发工作。结果是对作者所选 2,004 个 x86-64 Linux 输入的函数级符号等价检查，这些输入由 GCC 11.1.0 与 Clang 16.0.0 按各项目默认优化选项构建，并排除了大于 30 MiB 的二进制。覆盖并不完整：RECOMPILER 能重新编译 Ghidra 反编译函数的 72.4% 与 angr 反编译函数的 45.0%，SYMDIFF 又分别成功分析其中的 91.3% 与 93.9%。符号执行限制循环次数，默认超时为两分钟，将全局变量视为常量，且不解析浮点约束；精度上的取舍会导致误报，误报情况基于每个反编译器 100 个函数的样本测量。TUNER 在其检查的 443 处偏差中自动修复了 72 处。函数通过检查并不能证明整个程序正确。",
+    "why_fits_en": "Adds automated, binary-level correctness testing for decompilers, complementing output benchmarks such as DecompileBench and qualitative studies of decompiler fidelity.",
+    "why_fits_zh": "补充直接基于二进制的反编译器自动正确性测试，与 DecompileBench 等输出基准及反编译保真度的定性研究互补。",
+    "metadata_notes": "No paper DOI or arXiv identifier was verified; the record uses the reviewed USENIX Security 2024 presentation-page and usenixsecurity24-zou.pdf profile. The USENIX BibTeX gives the 33rd USENIX Security Symposium, pages 397–414, USENIX Association and month August; the presentation page also links an appendix PDF, slides and a prepublication PDF. The paper prints github.com/purseclab/Dhelix, which the GitHub API reports as not found; the code link uses purseclab/D-helix, whose README cites this paper. At reviewed commit fda23ef (2024-09-12), the repository declares BSD-3-Clause. Its README pins angr, claripy and pyvex commits for P-code and VEX variants, supplies patches for angr, claripy, PROMPT (built with clang 3.8) and Ghidra commit 15d22e8, and uses Z3 4.9.1. A dataset directory holds 2,004 compiled input files, which remain subject to their upstream projects’ licenses. Only source and documentation files were read; no binaries were downloaded and no code or experiments were run.",
+    "metadata_notes_zh": "未核实论文 DOI 或 arXiv 标识符；本条目采用经审阅的 USENIX Security 2024 报告页面与 usenixsecurity24-zou.pdf 配对规则。USENIX BibTeX 给出第 33 届 USENIX Security Symposium、页码 397–414、出版方 USENIX Association 及八月份；报告页面另链接附录 PDF、幻灯片与预发表版 PDF。论文印有 github.com/purseclab/Dhelix，GitHub API 报告该仓库不存在；代码链接采用 purseclab/D-helix，其 README 引用了本论文。在所审阅的提交 fda23ef（2024-09-12）中，仓库声明 BSD-3-Clause 许可证。README 为 P-code 与 VEX 两种变体固定 angr、claripy 与 pyvex 的提交，提供针对 angr、claripy、PROMPT（使用 clang 3.8 构建）及 Ghidra 提交 15d22e8 的补丁，并使用 Z3 4.9.1。dataset 目录包含 2,004 个已编译的输入文件，这些文件仍受其上游项目许可证约束。本次仅阅读源码与文档文件，未下载二进制，也未运行代码或实验。",
+    "evidence_urls": [
+      "https://www.usenix.org/conference/usenixsecurity24/presentation/zou",
+      "https://www.usenix.org/system/files/usenixsecurity24-zou.pdf",
+      "https://github.com/purseclab/D-helix/blob/fda23efff257674ef8f09afd96b13450b043bb7d/README.md",
+      "https://github.com/purseclab/D-helix/blob/fda23efff257674ef8f09afd96b13450b043bb7d/LICENSE",
+      "https://github.com/purseclab/D-helix/tree/fda23efff257674ef8f09afd96b13450b043bb7d/dataset"
+    ],
+    "kind": "research",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "runtime_tested": false
   }
 ]
