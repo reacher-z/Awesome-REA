@@ -61,7 +61,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [HexLasso/FF-16-TUI](https://github.com/HexLasso/FF-16-TUI) — Interactive static pattern discovery tool to locate structures from frequent patterns **[39 stars]**
 - [zhang-xr/FirmLLM](https://github.com/zhang-xr/FirmLLM) — LLMs for autonomous reasoning and analysis of firmware **[35 stars]**
 - [schlarpc/insta360-link-firmware-re](https://github.com/schlarpc/insta360-link-firmware-re) — Reverse engineering of the Insta360 Link webcam firmware: UVC extension-unit control protocol, gesture pipeline, gimbal/PTZ command path, and firmware container format **[32 stars]**
-- [lumirth/pw](https://github.com/lumirth/pw) — A human-readable matching decompilation of the Pokéwalker firmware. **[31 stars]**
+- [lumirth/pw](https://github.com/lumirth/pw) — A human-readable matching decompilation of the Pokéwalker firmware. **[31 stars]** · Curated: [pw: a matching decompilation of the Pokéwalker firmware](https://awesomerea.org/resources/pokewalker-matching-decomp-case/)
 - [rweijnen/marstek-venus-e-firmware-notes](https://github.com/rweijnen/marstek-venus-e-firmware-notes) — Reverse engineering notes, firmware analysis, and extracted content from the Marstek Venus E plug-in home battery **[31 stars]**
 - [HelgeSverre/sony-vp-extract](https://github.com/HelgeSverre/sony-vp-extract) — Decrypt and extract voice guidance MP3 prompts from Sony WH-1000XM4 encrypted voice packs. AES key extracted via Bluetooth firmware dump of the Airoha MT2811 SoC. **[30 stars]**
 - [chris-ritsen/samsung-tv-root](https://github.com/chris-ritsen/samsung-tv-root) — Samsung QN90B and QN90F root **[28 stars]**

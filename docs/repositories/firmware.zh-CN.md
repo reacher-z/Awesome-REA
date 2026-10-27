@@ -61,7 +61,7 @@
 - [HexLasso/FF-16-TUI](https://github.com/HexLasso/FF-16-TUI) — 交互式静态模式发现工具，通过频繁模式定位结构 **[39 星标]**
 - [zhang-xr/FirmLLM](https://github.com/zhang-xr/FirmLLM) — 使用大语言模型对固件进行自主推理与分析 **[35 星标]**
 - [schlarpc/insta360-link-firmware-re](https://github.com/schlarpc/insta360-link-firmware-re) — Insta360 Link 网络摄像头固件逆向工程：UVC 扩展单元控制协议、手势处理流程、云台／PTZ 命令路径和固件容器格式 **[32 星标]**
-- [lumirth/pw](https://github.com/lumirth/pw) — Pokéwalker 固件的人类可读匹配反编译。 **[31 星标]**
+- [lumirth/pw](https://github.com/lumirth/pw) — Pokéwalker 固件的人类可读匹配反编译。 **[31 星标]** · 精选：[pw：Pokéwalker 固件的一致性反编译重建](https://awesomerea.org/zh/resources/pokewalker-matching-decomp-case/)
 - [rweijnen/marstek-venus-e-firmware-notes](https://github.com/rweijnen/marstek-venus-e-firmware-notes) — 针对 Marstek Venus E 插电式家用电池的逆向工程笔记、固件分析及提取内容 **[31 星标]**
 - [HelgeSverre/sony-vp-extract](https://github.com/HelgeSverre/sony-vp-extract) — 解密并提取 Sony WH-1000XM4 加密语音包中的语音提示 MP3。AES 密钥通过蓝牙转储 Airoha MT2811 SoC 固件获得。 **[30 星标]**
 - [chris-ritsen/samsung-tv-root](https://github.com/chris-ritsen/samsung-tv-root) — Samsung QN90B 和 QN90F 的 root 工具。 **[28 星标]**

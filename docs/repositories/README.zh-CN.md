@@ -16,7 +16,7 @@
 | [应用 · 托管代码](managed-code.zh-CN.md) | 136 | 5 |
 | [原生二进制](native-analysis.zh-CN.md) | 851 | 76 |
 | [运行时与调试](dynamic-analysis.zh-CN.md) | 145 | 18 |
-| [固件](firmware.zh-CN.md) | 221 | 17 |
+| [固件](firmware.zh-CN.md) | 221 | 18 |
 | [协议](protocol-analysis.zh-CN.md) | 109 | 7 |
 | [通用工具与资源合集](reverse-engineering.zh-CN.md) | 669 | 44 |
 
