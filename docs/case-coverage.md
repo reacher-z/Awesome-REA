@@ -22,13 +22,13 @@ Repository counts use normalized GitHub repository, tree and file links within e
 
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
-| Already curated (`already-curated`) | 210 | 208 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 87 | 87 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 294 | 294 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Already curated (`already-curated`) | 211 | 209 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
+| Pending (`pending`) | 81 | 81 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 299 | 299 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
-225 occurrences have catalog links. They reference 215 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
+226 occurrences have catalog links. They reference 216 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 442 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 448 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -209,10 +209,16 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | REA with local Qwen and pi: multi-target commercial-software tests | Insufficient evidence | [Source](https://x.com/deluxebear/status/2110696564335214807) |
 | QUICKSURFACE AI: announced scan-to-parametric-CAD automation | Insufficient evidence | [Source](https://x.com/ManMetrologyLTD/status/2110699093333000322) |
 | Spider-Man swinging in GTA V: an internally inconsistent REA claim | Insufficient evidence | [Source](https://x.com/vmrmax/status/2110699414792642732) |
+| Humidity readings through an agent-built Bluetooth app | Insufficient evidence | [Source](https://x.com/real_kai42/status/2110700189912912155) |
+| Grok Bot: a worker-network reverse-engineering idea not pursued | Insufficient evidence | [Source](https://x.com/leaf_sanren/status/2110702662270460232) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | Insufficient evidence | [Source](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | Insufficient evidence | [Source](https://x.com/i/status/2110726263392387158) |
+| A construction firm's SaaS workflows, observed and rebuilt | Insufficient evidence | [Source](https://x.com/andywalters/status/2110726879665660172) |
 | Reversed with AI | Already curated | [Source](https://reversedwithai.com/about) |
+| Mario Odyssey on macOS: a secondary Claude-assisted report | Insufficient evidence | [Source](https://x.com/swordBluesy/status/2110735780842999962) |
 | REA plugin for Hermes Agent | Already curated | [Source](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
+| Mario's jump in Halo: an unverified six-parameter REA claim | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110741739732435179) |
+| Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud | Already curated | [Source](https://x.com/whyamas/status/2110741945874350429) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | Insufficient evidence | [Source](https://x.com/i/status/2110759663822352852) |
 | BINNY | Already curated | [Source](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | Insufficient evidence | [Source](https://x.com/i/status/2110783611800522897) |

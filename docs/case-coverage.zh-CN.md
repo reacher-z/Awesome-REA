@@ -22,13 +22,13 @@
 
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
-| 已收录 (`already-curated`) | 210 | 208 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 87 | 87 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 294 | 294 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 已收录 (`already-curated`) | 211 | 209 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
+| 待核查 (`pending`) | 81 | 81 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 299 | 299 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
-225 个出现项含目录链接；共关联 215 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
+226 个出现项含目录链接；共关联 216 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 442 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 448 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -209,10 +209,16 @@
 | REA with local Qwen and pi: multi-target commercial-software tests | 证据不足 | [来源](https://x.com/deluxebear/status/2110696564335214807) |
 | QUICKSURFACE AI: announced scan-to-parametric-CAD automation | 证据不足 | [来源](https://x.com/ManMetrologyLTD/status/2110699093333000322) |
 | Spider-Man swinging in GTA V: an internally inconsistent REA claim | 证据不足 | [来源](https://x.com/vmrmax/status/2110699414792642732) |
+| Humidity readings through an agent-built Bluetooth app | 证据不足 | [来源](https://x.com/real_kai42/status/2110700189912912155) |
+| Grok Bot: a worker-network reverse-engineering idea not pursued | 证据不足 | [来源](https://x.com/leaf_sanren/status/2110702662270460232) |
 | From a Little Prince game to Dragon Ball-themed HTML 3D | 证据不足 | [来源](https://x.com/i/status/2110713533193453572) |
 | SentinelOne and Daybreak: a reported malware-analysis time reduction | 证据不足 | [来源](https://x.com/i/status/2110726263392387158) |
+| A construction firm's SaaS workflows, observed and rebuilt | 证据不足 | [来源](https://x.com/andywalters/status/2110726879665660172) |
 | Reversed with AI：AI 辅助逆向项目目录 | 已收录 | [来源](https://reversedwithai.com/about) |
+| Mario Odyssey on macOS: a secondary Claude-assisted report | 证据不足 | [来源](https://x.com/swordBluesy/status/2110735780842999962) |
 | Hermes Agent 的 REA 插件 | 已收录 | [来源](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
+| Mario's jump in Halo: an unverified six-parameter REA claim | 证据不足 | [来源](https://x.com/Capslock404/status/2110741739732435179) |
+| Roborock Local Server：自托管替代 Roborock 扫地机云端 | 已收录 | [来源](https://x.com/whyamas/status/2110741945874350429) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | 证据不足 | [来源](https://x.com/i/status/2110759663822352852) |
 | BINNY 逆向分析智能体框架 | 已收录 | [来源](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | 证据不足 | [来源](https://x.com/i/status/2110783611800522897) |
