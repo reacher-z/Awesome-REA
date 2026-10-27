@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "tigard": {
+    "name": "Tigard 多协议硬件接口板",
+    "requirements": [
+      "需要一块 Tigard 板卡：可从 README 列出的渠道（Crowd Supply、Mouser、1BitSquared 和 SecuringHardware.com）购买成品，或按公开设计自行制作；还需能物理接触目标并完成接线。README 的接线步骤要求先把电压开关置于 VTGT，并区分由目标供电、由 Tigard 供电和各自供电三种方式；在电路板上直接操作 SPI 时，README 要求确保没有其他器件同时与闪存芯片通信。",
+      "master 分支保存的是 KiCad 5 格式的 v1.1 设计文件（原理图、PCB、封装、3D 模型和渲染图），自 2021-09-21 发布 v1.1 以来，除 README 和 .gitignore 外没有改动；最新提交（2026-10-08）在 README 中加入了 Black Magic Debug。v1.2 于 2026-05-29 从独立的 v1.2 分支发布，把设计迁移到 KiCad 9 并附带 Tigard_v1.2.zip，发布说明称它与 v1.1 在功能上没有差别。仓库不含固件或主机软件。",
+      "主机端工具都是支持 FT2232H 的独立项目：UART 使用 USB 串口驱动；SPI 和 I2C 使用 flashrom、pyftdi 或 libmpsse；JTAG 和 SWD 使用 OpenOCD（README 中的配置需要 v0.12+）或 Black Magic Debug；边界扫描使用 UrJTAG，或商业的、仅限 Windows 的 TopJTAG；另有 iceprog，以及自 7.1 版起内置 Tigard 支持的 avrdude。README 指出 FT2232H 在 I2C 上的限制（仅支持控制器模式、不支持时钟延展、可能与总线上其他控制器冲突），并报告 UrJTAG 的 TCK 实际频率约为设定值的五倍。",
+      "CC-BY-SA 4.0（LICENSE.txt，版权 2020 Franklin Harding），GitHub 未能识别该许可证类别。README 鼓励自行制作板卡，但要求制作者使用不同颜色、填写准确的 USB 厂商描述符，并使用不以 TG 开头的序列号。从目标读取的数据仍归其所有者；所审来源未提及任何 AI 或 REA 用途，本条目也未测试任何硬件。"
+    ]
   }
 }
