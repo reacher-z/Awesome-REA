@@ -12616,5 +12616,40 @@
       "https://github.com/zeldaret/ph/blob/f0799bd6038be6858499ec68f0d03cdbbfa53d0b/LICENSE",
       "https://decomp.dev/zeldaret/ph"
     ]
+  },
+  {
+    "id": "mithril-iot-scanner",
+    "name": "mithril",
+    "url": "https://github.com/nmatt0/mithril",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware"
+    ],
+    "description_en": "Offline C++ scanner for the contents of firmware and IoT software, pointed at a single file or an already unpacked root filesystem, that reports embedded secrets, a software bill of materials, known CVEs, open-source licenses, boot-security configuration and weak or publicly known keys, each finding with its evidence and a confidence level. Its SBOM also recovers components from ELF version banners, libc filenames and the kernel banner in stripped images and is written as CycloneDX and SPDX, while the CVE pass joins it against a local OSV and NVD mirror annotated with CISA KEV and EPSS. It does not unpack images; the author's companion tool moria handles identification and extraction.",
+    "description_zh": "离线运行的 C++ 扫描器，用于分析固件和物联网软件的内容，可指向单个文件或已解包的根文件系统，报告其中嵌入的机密信息、软件物料清单（SBOM）、已知 CVE、开源许可证、启动安全配置，以及强度不足或私钥已公开的密钥，每项发现都附带证据和置信度。其 SBOM 还能在已剥离符号的镜像中，从 ELF 版本标识、libc 文件名和内核标识中识别组件，并输出为 CycloneDX 和 SPDX；CVE 检查则将 SBOM 与本地的 OSV 和 NVD 镜像比对，并标注 CISA KEV 与 EPSS 信息。它本身不解包镜像，识别和提取由作者的配套工具 moria 完成。",
+    "evidence_url": "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "A young, fast-moving project: the repository was created on 2026-09-07, and v0.4.0, published 2026-10-22, is the latest release at review, with Linux x86_64 and arm64 and macOS arm64 archives plus Debian packages for amd64 and arm64; the reviewed commit is the merge of that release.",
+      "Source builds need CMake 3.20+ and a C++20 compiler and link no third-party libraries; flake.nix, package.nix and Debian packaging are included. Input is a firmware file or a directory already extracted by moria or another unpacker; the --boot pass also reads a raw AMI or EDK2 BIOS image to report UEFI Secure Boot posture.",
+      "Scans make no network calls. The CVE pass needs a local mirror in .local/share/mithril under the home directory (or $MITHRIL_DB), downloaded once with --fetch-db from the project's weekly rebuilt db-latest release and checked against published SHA-256 sums (needs curl), or rebuilt from OSV.dev, NVD, CISA KEV, EPSS and the optional kernel.org feed with --update-db. README notes that the kernel checklist is curated rather than exhaustive, so an empty kernel result does not mean the kernel is clean, and that secret findings are well-formed matches, never confirmed live credentials.",
+      "The compiled-in key corpora are built from public keys and certificates vendored under data/: the public halves of rapid7 ssh-badkeys, the Vagrant insecure public key, eMudhra intermediate CA certificates, AOSP test-key public halves and the PKfail AMI test Platform Key certificate. THIRD_PARTY.md states that no private-key material is stored, and the key tests generate their keys with openssl at run time.",
+      "MIT; the vendored key data keeps its upstream MIT or Apache-2.0 terms, and the mirrored vulnerability feeds belong to their sources. Nothing was built or run and no firmware was scanned in this review; the reviewed sources establish no REA connection."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/CMakeLists.txt",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/THIRD_PARTY.md",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/docs/engine-design.md",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/docs/boot-security.md",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/docs/key-weakness.md",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/docs/cve-join.md",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/src/cveupdate.cpp",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/tests/test_der_keys.py",
+      "https://github.com/nmatt0/mithril/blob/3f5bf55f9481b6447f4a8fb410862baff55b07f8/LICENSE",
+      "https://github.com/nmatt0/mithril/releases/tag/v0.4.0"
+    ]
   }
 ]

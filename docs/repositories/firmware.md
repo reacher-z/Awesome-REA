@@ -30,7 +30,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [nmatt0/moria](https://github.com/nmatt0/moria) — IoT firmware identification and extraction **[418 stars]**
 - [e-m-b-a/embark](https://github.com/e-m-b-a/embark) — EMBArk - The firmware security scanning environment **[395 stars]**
 - [sgayou/rbasefind](https://github.com/sgayou/rbasefind) — A firmware base address search tool. **[375 stars]**
-- [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]**
+- [nmatt0/mithril](https://github.com/nmatt0/mithril) — IoT static scanner for secrets, SBOM, CVEs and more. **[363 stars]** · Curated: [mithril](https://awesomerea.org/resources/mithril-iot-scanner/)
 - [binarly-io/fwhunt-scan](https://github.com/binarly-io/fwhunt-scan) — Tools for analyzing UEFI firmware and checking UEFI modules with FwHunt rules **[246 stars]**
 - [chrivers/samsung-firmware-magic](https://github.com/chrivers/samsung-firmware-magic) — Tool for decrypting the firmware files for Samsung SSDs **[238 stars]**
 - [D3CRYPT-1/Infiltra-Firmware](https://github.com/D3CRYPT-1/Infiltra-Firmware) — Infiltra Firmware is an open-source firmware for wireless security testing, network analysis, and hardware hacking. FLASH IT BELOW USING OUR WEB FLAHSER! **[205 stars]**
