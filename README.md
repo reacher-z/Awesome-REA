@@ -11,7 +11,7 @@ An independent collection of tools, case studies and research for websites, game
 <a href="https://awesomerea.org/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — tools, cases and papers across six reverse-engineering domains" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![resources: 513](https://img.shields.io/badge/resources-513-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 217](https://img.shields.io/badge/cases-217-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
+[![resources: 514](https://img.shields.io/badge/resources-514-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/resources/) [![cases: 218](https://img.shields.io/badge/cases-218-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/cases/) [![papers: 138](https://img.shields.io/badge/papers-138-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/papers/) [![Catalog checks](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![license: MIT](https://img.shields.io/badge/license-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![website: awesomerea.org](https://img.shields.io/badge/website-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/)
 <!-- END GENERATED BADGES -->
 
 **[Search & filter](https://awesomerea.org/)** · **[Browse cases](https://awesomerea.org/cases/)** · **[Research papers](https://awesomerea.org/papers/)** · **[HTML survey](https://awesomerea.org/survey/)**
@@ -21,11 +21,11 @@ An independent collection of tools, case studies and research for websites, game
 ## Contents
 
 <!-- BEGIN GENERATED CONTENTS -->
-513 curated resources (217 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 510 because 3 of these appear only under Papers.
+514 curated resources (218 cases) · 138 papers · 3,309 indexed repositories · latest source review 2026-10-20. Section counts add up to 511 because 3 of these appear only under Papers.
 
 **Tools and cases by target**
 
-- [Website](#website) (29) · [Game](#game) (197) · [App](#app) (83)
+- [Website](#website) (29) · [Game](#game) (198) · [App](#app) (83)
 - [Native Binary](#native-binary) (65) · [Firmware and Hardware](#firmware) (24) · [Protocol](#protocol) (21)
 
 **Research and workflows**
@@ -34,7 +34,7 @@ An independent collection of tools, case studies and research for websites, game
 
 **More ways to browse**
 
-- [All cases](https://awesomerea.org/cases/) (217) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
+- [All cases](https://awesomerea.org/cases/) (218) · [Related Collections](#related-collections) (9) · [Full Repository Index](#full-repository-index) (3,309)
 <!-- END GENERATED CONTENTS -->
 
 ## Find by task
@@ -261,6 +261,7 @@ REA labels refer to the separate [upstream CLI and MCP project](https://github.c
 - [**pw: a matching decompilation of the Pokéwalker firmware**](https://github.com/lumirth/pw) - Reconstructs as C the firmware of the Pokéwalker, the pedometer accessory for Pokémon HeartGold and SoulSilver, for its Renesas H8/38606 microcontroller. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/pokewalker-matching-decomp-case/)</sub>
 - [**wii-ipl: a decompilation of the Wii Menu (System Menu 4.3)**](https://github.com/koopthekoopa/wii-ipl) - A work-in-progress decompilation of the Wii Menu, the console’s System Menu (IPL), targeting version 4.3 in its USA, European, Japanese and Korean builds. <sub>Case study · Independent reconstruction · Also: Firmware · [Full entry](https://awesomerea.org/resources/wii-menu-ipl-decomp-case/)</sub>
 - [**sead: a decompilation of Nintendo’s first-party C++ standard library**](https://github.com/open-ead/sead) - Decompiles sead, the C++ standard library that Nintendo statically links into its first-party games, covering containers, heaps, strings, math, file devices, threads, the game framework and graphics. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/sead-nintendo-library-decomp-case/)</sub>
+- [**Animal Forest: an in-progress matching N64 decompilation**](https://github.com/zeldaret/af) - Rebuilds the Japanese Nintendo 64 release of Animal Forest (Dōbutsu no Mori) from C code reverse-engineered from the ROM, combined with assets and assembly extracted from a user-supplied ROM. <sub>Case study · Independent reconstruction · [Full entry](https://awesomerea.org/resources/animal-forest-n64-decomp-case/)</sub>
 
 #### Tools, projects and integrations
 
