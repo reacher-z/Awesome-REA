@@ -11,7 +11,7 @@
 <a href="https://awesomerea.org/zh/"><img src="assets/readme-banner.svg" alt="Awesome Reverse Engineering Anything — 覆盖六类逆向目标的工具、案例与论文" width="960"></a>
 
 <!-- BEGIN GENERATED BADGES -->
-[![精选资源: 519](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-519-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 141](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
+[![精选资源: 520](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%B5%84%E6%BA%90-520-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/resources/) [![案例: 220](https://img.shields.io/badge/%E6%A1%88%E4%BE%8B-220-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/cases/) [![论文: 141](https://img.shields.io/badge/%E8%AE%BA%E6%96%87-141-53309C?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/papers/) [![目录检查](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml/badge.svg?branch=main)](https://github.com/reacher-z/Awesome-REA/actions/workflows/validate.yml) [![许可: MIT](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-MIT-606779?style=flat-square&labelColor=303447)](LICENSE) [![网站: awesomerea.org](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-awesomerea.org-6235B5?style=flat-square&labelColor=303447)](https://awesomerea.org/zh/)
 <!-- END GENERATED BADGES -->
 
 **[搜索与筛选](https://awesomerea.org/zh/)** · **[浏览案例](https://awesomerea.org/zh/cases/)** · **[研究论文](https://awesomerea.org/zh/papers/)** · **[HTML 综述](https://awesomerea.org/zh/survey/)**
@@ -21,12 +21,12 @@
 ## 目录
 
 <!-- BEGIN GENERATED CONTENTS -->
-519 项精选资源（220 个案例）· 141 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-20。其中 3 项仅列于论文部分，因此各分区计数合计 516。
+520 项精选资源（220 个案例）· 141 篇论文 · 3,309 个已索引仓库 · 最近来源复核 2026-10-27。其中 3 项仅列于论文部分，因此各分区计数合计 517。
 
 **按目标找工具与案例**
 
 - [网站](#website) (29) · [游戏](#game) (199) · [应用](#app) (83)
-- [原生二进制](#native-binary) (65) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
+- [原生二进制](#native-binary) (66) · [固件与硬件](#firmware) (24) · [协议](#protocol) (22)
 
 **论文与工作流**
 
@@ -479,6 +479,7 @@ REA 标签指向单独维护的[上游 CLI 与 MCP 项目](https://github.com/mo
 - [**Kuna 智能体优先反编译器**](https://github.com/Noelo-Lab/kuna) - 以智能体为核心、用 Rust 编写的反编译器，最初移植自 Ghidra 的 C++ 反编译器和 SLEIGH 编译器，此后加入了可按选项开关的功能（部分移植自 angr），已与上游分化。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/kuna/)</sub>
 - [**Binary Ninja 公开 API**](https://github.com/Vector35/binaryninja-api) - Vector 35 为 Binary Ninja 公开的 C++、Python 和 Rust API，附带文档、示例以及基于这些 API 的开源插件。 <sub>工具 · 也适用：固件 · [完整条目](https://awesomerea.org/zh/resources/binary-ninja-api/)</sub>
 - [**capa 可执行文件功能识别工具**](https://github.com/mandiant/capa) - Mandiant FLARE 团队的工具，将 YAML 规则集与从 PE、ELF、.NET 文件或 32/64 位 shellcode 中提取的 API 调用、导入、字符串和常量等特征进行匹配，报告可执行文件具备哪些功能。 <sub>工具 · [完整条目](https://awesomerea.org/zh/resources/capa/)</sub>
+- [**Qu1cksc0pe 恶意软件分析工具**](https://github.com/CYB3RMX/Qu1cksc0pe) - 一体化恶意软件初筛工具，可对 Windows PE、Linux ELF（含 Go 二进制）、macOS Mach-O 和 Android APK、JAR、DEX 文件，以及 Office 与 PDF 文档、脚本、快捷方式、压缩包、电子邮件和 PCAP 做静态分析，报告导入表与 API 分类、节区、字符串与 IOC、加壳器、内嵌可执行文件、Android 权限风险和 YARA 匹配，并为 Windows 与 Linux 程序给出 MITRE ATT&amp;CK 映射。 <sub>工具 · 也适用：应用 · [完整条目](https://awesomerea.org/zh/resources/qu1cksc0pe/)</sub>
 
 <a id="firmware"></a>
 ### Firmware and Hardware · 固件与硬件
