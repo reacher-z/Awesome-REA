@@ -12456,5 +12456,38 @@
       "https://github.com/zeldaret/af/blob/4ddba04604ee7b4c4cfc0b64f8ee4d094bb385be/LICENSE",
       "https://decomp.dev/zeldaret/af"
     ]
+  },
+  {
+    "id": "dalvikus",
+    "name": "dalvikus",
+    "url": "https://github.com/loerting/dalvikus",
+    "category": "android",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "app"
+    ],
+    "description_en": "Desktop Android reverse-engineering and modification workbench built with Kotlin Compose Multiplatform. It opens APK and DEX files, edits the DEX classes inside an APK as smali without manual unpacking, with syntax highlighting and code completion, and shows decompiled Java from JADX, CFR or Vineflower. It also browses resources and XML through apktool, searches the class tree, string constants and method and field references, re-signs modified APKs with apksig and zipalign, and installs and starts them on a connected device over ADB.",
+    "description_zh": "基于 Kotlin Compose Multiplatform 的桌面端 Android 逆向与修改工作台。它可打开 APK 和 DEX 文件，无需手动解包即可将 APK 内的 DEX 类作为 smali 编辑，提供语法高亮和代码补全，并可显示由 JADX、CFR 或 Vineflower 反编译出的 Java 代码。它还能通过 apktool 浏览资源和 XML 文件，在类树、字符串常量以及方法和字段引用中搜索，用 apksig 和 zipalign 为修改后的 APK 重新签名，并通过 ADB 将其安装到已连接的设备上运行。",
+    "evidence_url": "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/README.MD",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "Latest release at review: v1.0.13, published 2025-10-16, with a macOS dmg, Windows exe and msi installers and a Linux amd64 deb. The reviewed master commit (2026-02-16) is one commit ahead, with a drag-and-drop change in the file tree; the README notes that its screenshots may change as the project evolves.",
+      "The README requires JDK 11 or later on Windows, Linux or macOS; the release workflow packages with Java 17, and source builds run ./gradlew :composeApp:run. ADB deployment and APK signing need an Android SDK with platform-tools and build-tools, located through ANDROID_HOME or ANDROID_SDK_ROOT or set in the app's settings, and signing uses a keystore supplied by the user.",
+      "Inputs are APK or DEX files supplied by the user. The pinned libraries include smali/baksmali 3.0.9, JADX 1.5.2, CFR 0.152, Vineflower 1.11.1, dex2jar 2.4.32, apktool 2.12.0, apksig and ddmlib; the tree commits the Gradle wrapper JAR, ANTLR-generated Java lexer and parser sources and the Monaspace Neon Frozen font files, and the UI is translated into English, German, Chinese and Hindi.",
+      "GPL-3.0 license; the README says the tool is intended solely for ethical purposes. No test suite was found, and CI only packages releases. The application was not built or run, and no APK was decompiled, modified or deployed."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/gradle/libs.versions.toml",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/composeApp/build.gradle.kts",
+      "https://github.com/loerting/dalvikus/tree/931cbf3659b4caeb533239337179630185969d04/composeApp/src/commonMain/kotlin/me/lkl/dalvikus/decompiler",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/composeApp/src/commonMain/kotlin/me/lkl/dalvikus/tools/ApkSigner.kt",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/composeApp/src/commonMain/kotlin/me/lkl/dalvikus/tools/SdkLocator.kt",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/composeApp/src/commonMain/kotlin/me/lkl/dalvikus/tools/AdbDeployer.kt",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/.github/workflows/release.yml",
+      "https://github.com/loerting/dalvikus/blob/931cbf3659b4caeb533239337179630185969d04/LICENSE",
+      "https://github.com/loerting/dalvikus/releases/tag/v1.0.13"
+    ]
   }
 ]
