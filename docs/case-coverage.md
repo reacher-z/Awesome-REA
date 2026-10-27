@@ -23,12 +23,12 @@ Repository counts use normalized GitHub repository, tree and file links within e
 | State | Occurrences | Inventory units | Meaning |
 | --- | ---: | ---: | --- |
 | Already curated (`already-curated`) | 211 | 209 | Full-scope identity mapping to a catalog resource or paper; not independent runtime reproduction. |
-| Pending (`pending`) | 81 | 81 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
-| Insufficient evidence (`insufficient-evidence`) | 299 | 299 | An idea, request or unsupported reconstruction claim is retained as a lead. |
+| Pending (`pending`) | 76 | 76 | Primary review or complete catalog coverage remains pending; partial matches stay here. |
+| Insufficient evidence (`insufficient-evidence`) | 304 | 304 | An idea, request or unsupported reconstruction claim is retained as a lead. |
 
 226 occurrences have catalog links. They reference 216 distinct resource IDs and 2 paper ID. Match scope is recorded separately; do not add these populations as unique projects.
 
-This ledger records a new primary-source review for 448 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
+This ledger records a new primary-source review for 454 inventory units. Other catalog-linked entries inherit the catalog’s separate source-review record; a link does not mean the entire collection report was reviewed again. No runtime experiment was independently reproduced for this ledger.
 
 Repository README scan IDs and counts are deliberately absent. A successful README fetch, an upstream list entry and a source-reviewed case are different facts.
 
@@ -219,6 +219,12 @@ Repository README scan IDs and counts are deliberately absent. A successful READ
 | REA plugin for Hermes Agent | Already curated | [Source](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
 | Mario's jump in Halo: an unverified six-parameter REA claim | Insufficient evidence | [Source](https://x.com/Capslock404/status/2110741739732435179) |
 | Roborock Local Server: a self-hosted stand-in for Roborock’s vacuum cloud | Already curated | [Source](https://x.com/whyamas/status/2110741945874350429) |
+| Arkham: a Grok Bot/REA research-workbench rebuild | Insufficient evidence | [Source](https://x.com/monokern/status/2110743454959509801) |
+| A plate reader's filter-wheel fault: a Claude-assisted repair report | Insufficient evidence | [Source](https://x.com/r_gross_/status/2110745676875227179) |
+| Grok Build: exploratory code study with REA and Claude Code | Insufficient evidence | [Source](https://x.com/omerfrkdemiral/status/2110749141710028914) |
+| Codex CLI: inspecting model-identity prompts and routing fields | Insufficient evidence | [Source](https://x.com/jiangkoumo_/status/2110751118343164066) |
+| Rust Duty: reconstructing gameplay from video, not decompilation | Insufficient evidence | [Source](https://x.com/reidhslaughter/status/2110752844328419587) |
+| 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | Pending | [Source](https://x.com/thenuntheia/status/2110757135009112576) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | Insufficient evidence | [Source](https://x.com/i/status/2110759663822352852) |
 | BINNY | Already curated | [Source](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | Insufficient evidence | [Source](https://x.com/i/status/2110783611800522897) |

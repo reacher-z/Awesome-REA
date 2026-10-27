@@ -23,12 +23,12 @@
 | 状态 | 出现项 | 清单单元 | 含义 |
 | --- | ---: | ---: | --- |
 | 已收录 (`already-curated`) | 211 | 209 | 完整范围已对应目录资源或论文；不代表独立运行复现。 |
-| 待核查 (`pending`) | 81 | 81 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
-| 证据不足 (`insufficient-evidence`) | 299 | 299 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
+| 待核查 (`pending`) | 76 | 76 | 一手核查或完整目录覆盖尚待完成；部分映射也保留在此状态。 |
+| 证据不足 (`insufficient-evidence`) | 304 | 304 | 将想法、请求或尚缺支持的重建说法保留为线索。 |
 
 226 个出现项含目录链接；共关联 216 个不同资源 ID 和 2 个论文 ID。映射范围单独记录，不能将这些群体相加当作独立项目数。
 
-此记录为 448 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
+此记录为 454 个清单单元记载了新的一手来源核查。其他已有目录链接的条目对应目录中独立的来源核查记录；链接本身不代表重新核查了整篇合集报告。此记录没有独立复现运行实验。
 
 此记录刻意不包含仓库 README 扫描 ID 或扫描数量。成功读取 README、被上游合集列出和案例经过来源核查，是不同事实。
 
@@ -219,6 +219,12 @@
 | Hermes Agent 的 REA 插件 | 已收录 | [来源](https://github.com/NousResearch/hermes-official-plugins/blob/6dacaaddbfd8e98dfc524096c44f712f743246b8/rea/README.md) |
 | Mario's jump in Halo: an unverified six-parameter REA claim | 证据不足 | [来源](https://x.com/Capslock404/status/2110741739732435179) |
 | Roborock Local Server：自托管替代 Roborock 扫地机云端 | 已收录 | [来源](https://x.com/whyamas/status/2110741945874350429) |
+| Arkham: a Grok Bot/REA research-workbench rebuild | 证据不足 | [来源](https://x.com/monokern/status/2110743454959509801) |
+| A plate reader's filter-wheel fault: a Claude-assisted repair report | 证据不足 | [来源](https://x.com/r_gross_/status/2110745676875227179) |
+| Grok Build: exploratory code study with REA and Claude Code | 证据不足 | [来源](https://x.com/omerfrkdemiral/status/2110749141710028914) |
+| Codex CLI: inspecting model-identity prompts and routing fields | 证据不足 | [来源](https://x.com/jiangkoumo_/status/2110751118343164066) |
+| Rust Duty: reconstructing gameplay from video, not decompilation | 证据不足 | [来源](https://x.com/reidhslaughter/status/2110752844328419587) |
+| 2010 Rust Rewrite Mashup: Skate 3 in MW2 maps | 待核查 | [来源](https://x.com/thenuntheia/status/2110757135009112576) |
 | Linux EAC: an AI devirtualization claim via IDA Assist MCP | 证据不足 | [来源](https://x.com/i/status/2110759663822352852) |
 | BINNY 逆向分析智能体框架 | 已收录 | [来源](https://github.com/openbin-ai/binny/blob/000b6aca8c9d266b38252470102ac16c98575cd8/README.md) |
 | An illustrative game.exe demo: two rooms and three reconstruction oracles | 证据不足 | [来源](https://x.com/i/status/2110783611800522897) |
