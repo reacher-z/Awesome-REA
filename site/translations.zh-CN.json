@@ -4301,5 +4301,15 @@
       "技术说明称，在早期人工尝试受阻后，长时间运行的 Claude Code（Opus 4.6）与 Codex 会话借助维护者自己已 root 的 S7、其固件、python-roborock 及反编译后的应用，帮助找到了配网中剩余的关键一步。说明致谢了 Dennis Giese 的固件研究、Valetudo 及其他社区工作；未提及使用 REA。",
       "采用 MIT 许可并附“按现状提供”的免责声明；项目与 Roborock 无关联。这是兼容的服务器实现，并非恢复的 Roborock 服务端代码，厂商固件或应用的变化可能使其失效。"
     ]
+  },
+  "ghidra-allegrex": {
+    "name": "ghidra-allegrex PSP Allegrex 处理器模块",
+    "requirements": [
+      "审阅时的最新发布版为 v21.5，发布于 2026-10-25，面向 Ghidra 12.2，需要 JVM 25；所审阅的 master 分支提交即该标签。每个发布压缩包只对应一个 Ghidra 版本，因此 Ghidra 12.1.3 和 12.1.4 仍使用 2026-08-25 发布的 v21.4。扩展 v19 及更高版本通过 Ghidra 的 File > Install Extensions 安装；v18 及更早版本需解压后放入 Ghidra 的 Processors 目录。",
+      "从源码构建需设置 GHIDRA_INSTALL_DIR，并运行 Gradle wrapper 的 buildExtension 任务，使用 JVM 25 工具链，基于本地 Ghidra 安装编译 Kotlin 和 Java 代码。CI 在 Ubuntu 上针对 Ghidra 12.2 构建扩展并上传压缩包；仓库没有自动化测试。两个 PPSSPP 脚本采用 Ghidra 的 Python 2（Jython）写法，.sym 文件来自使用者自己的 PPSSPP 调试会话。",
+      "输入是使用者自备的 ELF/PRX 格式 PSP 可执行文件、内核模块或原始二进制；README 指出游戏可执行文件须为已解密版本，仓库本身不包含任何 PSP 软件或固件。原始二进制需手动选择处理器并设定映像基址，部分内核模块导入时需勾选 reboot.bin B 类重定位选项。",
+      "README 列出的限制包括：几乎所有 VFPU 运算都会被反编译为 vadd_q(...) 之类的函数调用；vpfxs、vpfxt 和 vpfxd 前缀的语义尚未建模；vfim.s 的半精度浮点操作数显示为整数；目标文件导入后不能再更改基址；带 64 位参数的函数因 Ghidra 的一个问题需要手动指定参数存储。本条目未导入或分析任何文件。",
+      "采用 Apache-2.0 许可；README 说明它衍生自采用 Apache-2.0 的 Ghidra MIPS 模块，B 类重定位解析参考了采用 AFL v2.0 的 prxtool。项目自身的资料未提及 REA。另外，本合集收录的 REA PSP 静态 ELF 指南把它作为需由使用者自行安装的扩展，并将 v21.4 与 Ghidra 12.1.3 配套使用。"
+    ]
   }
 }

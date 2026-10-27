@@ -2,7 +2,7 @@
 
 [All categories](README.md) · [On the website](https://awesomerea.org/browse/game-analysis/) · [简体中文](game-analysis.zh-CN.md)
 
-**484 repositories** · 2026-10-20 UTC
+**485 repositories** · 2026-10-20 UTC
 
 These are automatically discovered projects, not individually curated or tested recommendations. Categories derive from metadata and descriptions from upstream text. Stars are collection-time snapshots, not live rankings. Lines marked “Curated” or “Paper” link to the reviewed catalog entry or paper whose source is that exact repository.
 
@@ -91,6 +91,7 @@ These are automatically discovered projects, not individually curated or tested 
 - [Unchiga/YuGiOhForbiddenMemoriesRecomp](https://github.com/Unchiga/YuGiOhForbiddenMemoriesRecomp) — Static recompilation of Yu-Gi-Oh! Forbidden Memories (PS1) into a native executable - with a live duel-rank meter, a fusion assistant, adjustable card drops and a cheat menu. Bring your own disc. **[137 stars]**
 - [2003scape/rsc-c](https://github.com/2003scape/rsc-c) — 🍫 runescape classic client ported to C **[135 stars]**
 - [opentestdriveunlimited/OpenTestDriveUnlimited](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited) — Open source port of Test Drive Unlimited (2006) **[135 stars]**
+- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — Ghidra processor module adding support for the Allegrex CPU (PSP) **[132 stars]** · Curated: [ghidra-allegrex](https://awesomerea.org/resources/ghidra-allegrex/)
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — How do you decrypt global-metadata.dat from a Unity game? **[129 stars]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — An in-progress decompilation of the preview version of Shadow of the Colossus on the PlayStation 2 **[125 stars]**
 - [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — Halo: Combat Evolved on iPhone, iPad and Mac. The Xbox edition with online matches of up to 128 players and the original campaign, plus Halo Custom Edition with its community servers. Bring your own game and build it on your Mac. **[124 stars]**

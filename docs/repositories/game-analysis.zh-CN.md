@@ -2,7 +2,7 @@
 
 [全部分类](README.zh-CN.md) · [在网站浏览](https://awesomerea.org/zh/browse/game-analysis/) · [English](game-analysis.md)
 
-**484 个仓库** · 2026-10-20 UTC
+**485 个仓库** · 2026-10-20 UTC
 
 这些是自动发现的项目，不是逐项精选或运行验证后的推荐。分类来自元数据；简介由上游描述翻译而来。星标为采集时快照，不是实时排名。标有“精选”或“论文”的行指向以同一仓库为来源的已复核目录条目或论文。
 
@@ -91,6 +91,7 @@
 - [Unchiga/YuGiOhForbiddenMemoriesRecomp](https://github.com/Unchiga/YuGiOhForbiddenMemoriesRecomp) — 将 Yu-Gi-Oh! Forbidden Memories（PS1）静态重编译为原生可执行文件，带有实时决斗评级表、融合助手、可调卡片掉落及作弊菜单。需自备光盘。 **[137 星标]**
 - [2003scape/rsc-c](https://github.com/2003scape/rsc-c) — 🍫 将 RuneScape Classic 客户端移植到 C **[135 星标]**
 - [opentestdriveunlimited/OpenTestDriveUnlimited](https://github.com/opentestdriveunlimited/OpenTestDriveUnlimited) — Test Drive Unlimited（2006）的开源移植版 **[135 星标]**
+- [kotcrab/ghidra-allegrex](https://github.com/kotcrab/ghidra-allegrex) — 为 Ghidra 添加 Allegrex CPU（PSP）支持的处理器模块 **[132 星标]** · 精选：[ghidra-allegrex PSP Allegrex 处理器模块](https://awesomerea.org/zh/resources/ghidra-allegrex/)
 - [IroniaTheMaster/Descrypt-global-metadata.dat](https://github.com/IroniaTheMaster/Descrypt-global-metadata.dat) — 如何解密 Unity 游戏中的 global-metadata.dat？ **[129 星标]**
 - [Fantaskink/SOTC](https://github.com/Fantaskink/SOTC) — PlayStation 2 游戏《旺达与巨像》预览版的反编译项目，仍在开发中 **[125 星标]**
 - [chrissotraidis/projectreach](https://github.com/chrissotraidis/projectreach) — 在 iPhone、iPad 和 Mac 上运行《光环：战斗进化》。包含支持最多 128 人在线对战及原版战役的 Xbox 版本，以及支持社区服务器的 Halo Custom Edition。需自备游戏并在 Mac 上构建。 **[124 星标]**
