@@ -4538,5 +4538,14 @@
       "Python 单元测试覆盖转换函数和 Flipper 文件解析；项目没有 CI。各种效果由作者和贡献者在自己的手环上报告，本次来源核查未运行任何代码或硬件。",
       "采用 MIT 许可（LICENSE）。PixMob 的硬件、固件和商标不在该许可范围内，X 光图片注明来自 Samy Kamkar。所审阅来源未确立任何 AI 或 REA 的使用。"
     ]
+  },
+  "ghidra-kernelcache": {
+    "name": "ghidra_kernelcache Apple 内核缓存分析框架",
+    "requirements": [
+      "没有发布版本或标签。所审阅的 master 提交日期为 2022-01-19，也是最新提交。README 称该框架适用于 iOS 12–15 的 kernelcache，以及 macOS 11–12 的 kernelcache 和单个 KEXT（arm64e 与 x86_64）。它在 Ghidra 10.1_PUBLIC 和 10.2_DEV 上测试过，不向后兼容。文档没有说明对更新的 Ghidra 版本或 iOS 15、macOS 12 之后 kernelcache 的支持。",
+      "安装方式是把克隆的仓库加入 Ghidra 脚本管理器的目录列表，脚本随后出现在 iOS→kernel 分类下，并带有工具栏按钮和快捷键。这些脚本是采用 Python 2 语法的 Ghidra Jython 脚本。工具栏图标指向仓库中并不存在的 logos/ 文件夹；README 提到的 utils/class.py 在代码树中对应 utils/ios_kc.py。",
+      "内核镜像由分析者自行提供：作为单个 Mach-O 镜像载入的已解压 iOS kernelcache（README 提醒不要使用批量导入），或来自自有系统或 KDK 的 macOS 内核与 KEXT。恢复符号前，需要先运行 Siguza 的独立工具 iometa（MPL-2.0），该工具自述为 arm64 Darwin 内核类信息提取工具；jtool2 符号为可选。README 指出，撰写时 Ghidra 还无法解析完整的 macOS kernelcache，建议先在 IDA 中完成初步分析，再以 XML 形式导入 Ghidra，但这一步不在其说明范围内。为单个 KEXT 恢复符号前，需要先把内核符号化结果存入共享的 Ghidra 项目归档。",
+      "仓库只包含 Python 脚本、signatures/ 下的 C++ 签名文件和 README 截图，没有提交任何 Apple kernelcache、KEXT 或密钥。README 称类型传播功能比较基础，遇到复杂类型转换时很可能失败；还说 Ghidra 无法还原某些 C++ 符号时 kc.process_kernel_kext() 可能失败，需先运行 DemangleAllScript。采用 Apache-2.0 许可。本次未载入任何 kernelcache，也未运行任何脚本。"
+    ]
   }
 }

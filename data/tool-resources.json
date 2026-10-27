@@ -12521,5 +12521,39 @@
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/tree/b372420e1e1ff818a8d25ba50f0c71e97e62f138/raw_wild_ir_captures",
       "https://github.com/danielweidman/pixmob-ir-reverse-engineering/blob/b372420e1e1ff818a8d25ba50f0c71e97e62f138/LICENSE"
     ]
+  },
+  {
+    "id": "ghidra-kernelcache",
+    "name": "ghidra_kernelcache",
+    "url": "https://github.com/0x36/ghidra_kernelcache",
+    "category": "firmware",
+    "relationship": "foundation",
+    "kind": "tool",
+    "targets": [
+      "firmware",
+      "binary"
+    ],
+    "description_en": "Ghidra script framework for reverse engineering Apple kernelcaches and kernel extensions on iOS and macOS. Starting from the C++ class information that Siguza's iometa extracts, it symbolicates the kernel, rebuilds IOKit class hierarchies, structures, namespaces and virtual tables with typed method definitions, and resolves virtual call references, either through arm64e pointer-authentication constants or with a p-code data-flow pass. Other scripts fix the externalMethod and getTargetAndMethodForIndex dispatch tables, apply XNU function signatures from header files, propagate types, load KDK DWARF symbols and copy structures between projects.",
+    "description_zh": "用于逆向分析 iOS 与 macOS 上 Apple kernelcache 和内核扩展的 Ghidra 脚本框架。它以 Siguza 的 iometa 提取的 C++ 类信息为起点，为内核恢复符号，重建 IOKit 类层次、结构体、命名空间和带类型方法定义的虚表，并通过 arm64e 指针认证常量或基于 p-code 的数据流分析解析虚函数调用引用。其他脚本可修复 externalMethod 和 getTargetAndMethodForIndex 分派表、根据头文件应用 XNU 函数签名、传播类型、加载 KDK 的 DWARF 符号，以及在项目之间复制结构体定义。",
+    "evidence_url": "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/README.md",
+    "verified_at": "2026-10-27",
+    "verification": "source-reviewed",
+    "requirements": [
+      "No releases or tags. The reviewed master commit, from 2022-01-19, is the latest. The README says the framework works on iOS 12–15 kernelcaches and on macOS 11–12 kernelcaches and single KEXTs (arm64e and x86_64). It was tested on Ghidra 10.1_PUBLIC and 10.2_DEV and is not backward compatible. Support for later Ghidra releases or for kernelcaches after iOS 15 and macOS 12 is not documented.",
+      "Installation means adding the clone to Ghidra's Script Manager directories; the scripts then appear under iOS→kernel with toolbar buttons and key shortcuts. They are Ghidra Jython scripts with Python 2 syntax. Their toolbar icons point to a logos/ folder that the repository does not include, and the README's utils/class.py corresponds to utils/ios_kc.py in the tree.",
+      "Analysts supply their own kernel images: a decompressed iOS kernelcache loaded as a single Mach-O image (the README warns against batch import), or a macOS kernel and KEXTs from their own system or KDK. Symbolication first needs the output of Siguza's separate iometa tool (MPL-2.0), which describes itself as an arm64 Darwin class dumper; jtool2 symbols are optional. The README notes that Ghidra could not parse a whole macOS kernelcache at the time and suggests initial analysis in IDA followed by an XML import, a step it leaves out of scope. Symbolicating a single KEXT first needs the kernel symbolicated into a shared Ghidra project archive.",
+      "The repository holds only Python scripts, the C++ signature files under signatures/ and README screenshots; it commits no Apple kernelcaches, KEXTs or keys. The README calls type propagation basic and likely to fail with complex casts, and says kc.process_kernel_kext() can fail on symbols Ghidra could not demangle until DemangleAllScript is run. Apache-2.0 license. No kernelcache was loaded and no script was run."
+    ],
+    "additional_evidence_urls": [
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/README.md#L13-L56",
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/README.md#L137-L190",
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/README.md#L229-L318",
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/KC.py",
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/jsymbols.py",
+      "https://github.com/0x36/ghidra_kernelcache/tree/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/utils",
+      "https://github.com/0x36/ghidra_kernelcache/tree/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/signatures",
+      "https://github.com/0x36/ghidra_kernelcache/blob/b0961b3cdfb96e8b86c89d73fdedf84affc01c77/LICENSE",
+      "https://github.com/Siguza/iometa/blob/2af3602e7edb72f478aa8958a6386aba846a89de/README.md"
+    ]
   }
 ]
