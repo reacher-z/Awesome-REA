@@ -4566,5 +4566,14 @@
       "默认 ninja 目标会生成 objdiff 数据、运行 dsd 的模块与符号检查，并将构建出的 ROM 与 ph_eur.sha1 或 ph_usa.sha1 比对。CI 在提供提取文件和编译器的构建容器中构建两个版本，执行 ARM9 链接、objdiff 报告和各项检查，但不校验 ROM 哈希。decomp.dev 针对该固定提交的默认 usa 报告显示，3,622,306 个代码字节中有 102,202 个（2.82%）、24,610 个函数中有 1,351 个已匹配，190 个单元中有 28 个已完成；本合集未运行构建。",
       "仓库采用 CC0-1.0；该声明不涵盖任天堂的游戏及其提取文件、BIOS 或下载的 Metrowerks 编译器。所审来源未确立 AI 或 REA 使用，也不主张运行复现。"
     ]
+  },
+  "reverse-api-engineer": {
+    "name": "Reverse API Engineer 网站 API 客户端生成智能体",
+    "requirements": [
+      "审阅对象为 main 分支提交 4e15017（2026-10-26）。最新版本为 v0.14.0，于 2026-09-23 同时发布在 GitHub 和 PyPI；更新日志的未发布部分新增了若干安全相关的依赖升级。pyproject 将项目标为 beta，要求 Python 3.11+；由于 cryptography 依赖的限制，README 只支持 Linux、Apple Silicon macOS 和 64 位 Windows。CI 在 Linux、macOS 和 Windows 上以 Python 3.11 至 3.13 运行 ruff、mypy 和 pytest。",
+      "智能体模式通过 npx 启动浏览器工具，因此需要 Node.js；chrome-mcp 方式会驱动用户真实的 Chrome，沿用已有会话和 Cookie，需要 Chrome 146+ 和 Node.js 20.19+。手动模式需要安装 [manual] 扩展和 Playwright Chromium。生成代码需要模型后端：默认 SDK 为 Claude Agent SDK，默认模型为 Sonnet 4.6，README 说明智能体模式需要 API 密钥；OpenCode 默认使用一个免费模型，也可使用本地已安装、支持工具调用且上下文不少于 64k 的 Ollama 模型。",
+      "输入是用户所浏览网站产生的流量。engineer 提示词要求模型把 HAR 中出现的所有凭据、Cookie、令牌和会话数据直接写入代码，因此抓包文件和生成的客户端都必须当作机密处理。README 提醒生成的代码在本地运行，执行前应先审阅，并指出反爬虫检测严格的网站可能阻止抓取；生成的客户端调用的是可能随时变化的未公开内部接口，使用时仍须遵守各网站的条款。",
+      "examples 目录收录了针对 Apple 与 Uber 招聘页面、Ashby 职位看板、AutoScout24 车源列表、IKEA 商品目录和 Mintlify 文档助手公开接口生成的客户端。另有一项可选的本地检查：为一个测试网站生成客户端，并在服务器响应改变后验证其结果；这些检查和示例都属于项目自身的证据。采用 MIT 许可证。其缩写 RAE 指 Reverse API Engineer：所审来源未确立与 REA 的关联，本次审阅也未运行任何程序。"
+    ]
   }
 }
